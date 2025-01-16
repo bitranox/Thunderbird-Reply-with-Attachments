@@ -10,8 +10,8 @@
         const isGerman = userLanguage.startsWith('de');
 
         const githubUrl = isGerman
-            ? 'https://github.com/bitranox/Thunderbird-Reply-with-Attachment/blob/main/README_DE.md'
-            : 'https://github.com/bitranox/Thunderbird-Reply-with-Attachment';
+            ? 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/main/README_DE.md'
+            : 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments';
 
         // Add event listeners to the links
         githubLinks.forEach(link => {
