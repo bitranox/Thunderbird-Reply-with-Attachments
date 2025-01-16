@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px; /* Increased the width */
+            margin: 50px auto;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #0070ba;
+            color: #fff;
+            padding: 20px;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+        .header h1 {
+            display: inline;
+            margin-left: 15px;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+        .content {
+            padding: 20px;
+        }
+        button {
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #005ea6;
+        }
+        a {
+            color: #0070ba;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .github-logo {
+            margin-top: 20px;
+        }
+        .github-logo img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="icons/icon-128.png" alt="Reply with Attachments Icon">
+            <h1 id="header-title">Reply with Attachments</h1>
+        </div>
+        <div class="content">
+            <p id="options-text">There are currently no options to configure.</p>
+            <p id="support-text">Do you like this add-on? Support me with a small contribution:</p>
+            <button id="donate-button">Donate now</button>
+            <p id="github-text">For bug reports or other inquiries, please visit my <a id="github-link" href="#">GitHub page</a>.</p>
+            <div class="github-logo">
+                <a id="github-link-logo" href="#">
+                    <img src="icons/icon-github.png" alt="GitHub Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="handle_language.js"></script>
+    <script src="handle_donate_link.js"></script>
+    <script src="handle_github_link.js"></script>
+</body>
+</html>
