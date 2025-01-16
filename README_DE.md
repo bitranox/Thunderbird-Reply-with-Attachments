@@ -1,6 +1,6 @@
 # Antwort mit Anhängen
 
-## [🇺🇸 🇬🇧 Switch to English version](README.md)
+## ![US Flag](https://github.com/ashleedawg/flags/blob/master/US.png?raw=true) [Switch to English version](README.md)
 
 **Reply with Attachments** ist ein Thunderbird-Add-on, das automatisch Anhänge aus der ursprünglichen E-Mail hinzufügt, wenn auf eine Nachricht geantwortet wird. SMIME-Zertifikate werden dabei ausgeschlossen.
 
