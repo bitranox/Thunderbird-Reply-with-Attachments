@@ -17,8 +17,7 @@
 
 ### Schritt 1: ZIP-Datei herunterladen
 1. Gehe zum Bereich [Releases](https://github.com/bitranox/Thunderbird-Reply-with-Attachment/releases) dieses Repositorys.
-2. Lade die neueste Version des Add-ons als ZIP-Datei herunter
-3. entpacke das heruntergeladene Zipfile und verwende das File `reply-with-attachments-plugin.zip` (siehe Schritt 2)
+2. Lade die neueste Version des Add-ons als ZIP-Datei herunter (`reply-with-attachments-plugin.zip`)
 
 ### Schritt 2: Installation in Thunderbird
 1. Öffne Thunderbird.
