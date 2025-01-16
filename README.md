@@ -80,7 +80,7 @@ If you like this add-on, consider supporting its development with a small contri
 ## License
 
 This project is licensed under the GNU General Public License v3.  
-You can view the full license text [here](https://github.com/bitranox/Thunderbird-Reply-with-Attachment/LICENCE).
+You can view the full license text [here](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/LICENCE).
 
 ---
 

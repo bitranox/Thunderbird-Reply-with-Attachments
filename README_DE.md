@@ -80,7 +80,7 @@ Wenn dir dieses Add-on gefällt, unterstütze die Entwicklung mit einem kleinen 
 ## Lizenz
 
 Dieses Projekt ist unter der GNU General Public License v3 lizenziert.  
-Den vollständigen Lizenztext findest du [hier](https://github.com/bitranox/Thunderbird-Reply-with-Attachment/LICENCE).
+Den vollständigen Lizenztext findest du [hier](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/LICENCE).
 
 ---
 
