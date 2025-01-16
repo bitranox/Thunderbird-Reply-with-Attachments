@@ -1,6 +1,7 @@
 # Reply with Attachments
 
-## [🇩🇪 Zur deutschen Version](README_DE.md)
+## :de: [Zur deutschen Version](README_DE.md)
+## ![DE Flag](https://raw.githubusercontent.com/github/explore/main/topics/germany/germany.png) [Zur deutschen Version](README_DE.md)
 
 **Reply with Attachments** is a Thunderbird add-on that automatically includes attachments from the original email when replying to a message. Additionally, SMIME certificates are excluded from being attached.
 
