@@ -5,6 +5,7 @@
   "description": "Automatically include original attachments in email replies.",
   "browser_specific_settings": {
     "gecko": {
+      "id": "thunderbird-addon-reply-with-attachments_bitranox@gmail.com",
       "strict_min_version": "115.0"
     }
   },
