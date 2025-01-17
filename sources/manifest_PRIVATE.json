@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Reply with Attachments",
-  "version": "1.0",
+  "name": "Reply with Attachments - PRIVATE",
+  "version": "1.0.0",
   "description": "Automatically include original attachments in email replies.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "reply-with-attachments@example.com",
+      "id": "thunderbird-addon-reply-with-attachments_bitranox@gmail.com",
       "strict_min_version": "115.0"
     }
   },
