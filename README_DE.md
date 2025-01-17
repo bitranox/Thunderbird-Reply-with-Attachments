@@ -11,6 +11,10 @@
 - Fügt beim Antworten automatisch Anhänge aus der ursprünglichen E-Mail hinzu.
 - Überspringt SMIME-Zertifikate, um unnötige Anhänge zu vermeiden.
 
+Screenshot, der die Erweiterung in Aktion zeigt:
+
+![Reply with Attachments Screenshot](screenshot.png)
+
 ---
 
 ## Installation

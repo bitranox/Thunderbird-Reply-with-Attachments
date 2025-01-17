@@ -85,7 +85,7 @@ create_zip() {
   (
     cd ./sources || exit 1
     zip -r "../$zip_target" . \
-      -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md'
+      -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
   ) || {
     echo "ERROR: Failed to create ZIP file '$zip_target'!" >&2
     exit 1

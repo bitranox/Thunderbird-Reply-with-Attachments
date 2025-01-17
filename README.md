@@ -11,6 +11,11 @@
 - Automatically attaches files from the original email when replying.
 - Skips SMIME certificates to avoid unnecessary attachments.
 
+Screenshot demonstrating the add-on in action:
+
+![Reply with Attachments Screenshot](screenshot.png)
+
+
 ---
 
 ## Installation
