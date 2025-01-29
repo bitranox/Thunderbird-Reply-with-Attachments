@@ -2,7 +2,7 @@
 
 ## ![DE Flag](https://github.com/ashleedawg/flags/blob/master/DE.png?raw=true) [Zur deutschen Version](README_DE.md)
 
-**Reply with Attachments** is a Thunderbird add-on that automatically includes attachments from the original email when replying to a message. Additionally, SMIME certificates are excluded from being attached.
+**Reply with Attachments** is a official Thunderbird add-on that automatically includes attachments from the original email when replying to a message. Additionally, SMIME certificates are excluded from being attached.
 
 ---
 
@@ -18,11 +18,34 @@ Screenshot demonstrating the add-on in action:
 
 ---
 
-## Installation
+## Installation - in Thunderbird (recommended for automatic updates)
+1. in Thunderbird navigate to **Tools > Add-ons and Themes** and search for "reply with attachments" and add the Add-on
+
+---
+
+## Installation - PRIVATE - from the official Add-on Page (for development)
+
+### Step 1: Download the XPI File
+1. Go to the [Thunderbird Add-on Page](https://addons.thunderbird.net/de/thunderbird/search/?q=reply%20with%20attachments)
+2. Download the latest version of the add-on as XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
+
+### Step 2: Install in Thunderbird 
+1. In the **Add-ons Manager**, click on the gear icon in the top-right corner.
+2. Select **Install Add-on From File...** from the dropdown menu.
+3. Choose the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
+4. Confirm the installation when prompted.
+
+---
+
+## Installation - PRIVATE - latest Version from Github  (for development)
 
 ### Step 1: Download the ZIP File
 1. Go to the [Releases](https://github.com/bitranox/Thunderbird-Reply-with-Attachment/releases) section of this repository.
-2. Download the latest version of the add-on as a ZIP file (`reply-with-attachments-plugin-PRIVATE.zip`).
+2. Download the latest version of the add-on as ZIP file (`reply-with-attachments-plugin-PRIVATE.zip`).
+3. In the **Add-ons Manager**, click on the gear icon in the top-right corner.
+4. Select **Install Add-on From File...** from the dropdown menu.
+5. Choose the downloaded ``reply-with-attachments-plugin-PRIVATE.zip`` file.
+6. Confirm the installation when prompted.
 
 ### Step 2: Install in Thunderbird
 1. Open Thunderbird.
@@ -47,12 +70,6 @@ Screenshot demonstrating the add-on in action:
 
 - **Tested with Thunderbird Nebula 128.6.0esr (64-Bit).**
 - **Older Thunderbird versions are not supported.**
-
----
-
-## Future Plans
-
-I intend to apply to Mozilla to include this add-on in the official Mozilla Add-ons repository. Once approved, users will be able to install the add-on directly from Thunderbird's Add-ons Manager.
 
 ---
 
