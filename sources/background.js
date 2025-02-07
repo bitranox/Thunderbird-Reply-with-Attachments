@@ -79,49 +79,42 @@ function extractNumericTabId(tabId) {
 }
 
 /**
- * Processes attachments for replies by fetching and attaching files.
+ * Processes attachments for reply emails by fetching and attaching files.
  * @param {Number} tabId - ID of the compose tab.
  * @param {Number} messageId - ID of the original message.
  */
 async function processReplyAttachments(tabId, messageId) {
     try {
-        const originalMessage = await browser.messages.getFull(messageId);
-        if (!originalMessage) {
-            console.error("Failed to retrieve the original message.");
-            return;
-        }
-
-        console.log("Original message retrieved:", originalMessage);
-
-        const attachments = getAttachmentsFromMessage(originalMessage);
+        // Retrieve the list of attachments from the original message
+        const attachments = await browser.messages.listAttachments(messageId);
         if (attachments.length === 0) {
             console.log("No attachments found in the original message.");
             return;
         }
 
+        // Retrieve the set of already added attachments for this tab
         const addedAttachmentsForTab = processedTabs.get(tabId);
 
         for (const attachment of attachments) {
-            // Exclude SMIME certificate based on MIME type or file name
+            // Exclude SMIME certificates based on MIME type or file name
             if (
                 attachment.contentType === "application/pkcs7-signature" ||
                 attachment.contentType === "application/x-pkcs7-signature" ||
-                attachment.fileName === "smime.p7s" ||
                 attachment.name === "smime.p7s"
             ) {
                 console.log(
-                    `Skipping SMIME certificate: ${attachment.fileName || attachment.name} (Content-Type: ${attachment.contentType})`
+                    `Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`
                 );
                 continue;
             }
 
             // Avoid adding duplicate attachments within the same tab
             if (addedAttachmentsForTab.has(attachment.partName)) {
-                console.log(`Skipping duplicate attachment: ${attachment.name || attachment.fileName}`);
+                console.log(`Skipping duplicate attachment: ${attachment.name}`);
                 continue;
             }
 
-            console.log(`Attempting to add attachment: ${attachment.name || attachment.fileName}`);
+            console.log(`Attempting to add attachment: ${attachment.name}`);
             await addAttachmentToCompose(tabId, messageId, attachment);
             addedAttachmentsForTab.add(attachment.partName);
         }
@@ -131,6 +124,7 @@ async function processReplyAttachments(tabId, messageId) {
         console.error("Error in processReplyAttachments:", error);
     }
 }
+
 
 /**
  * Extracts attachments from the given message.

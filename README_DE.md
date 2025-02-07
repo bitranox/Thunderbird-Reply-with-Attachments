@@ -107,3 +107,14 @@ Den vollständigen Lizenztext findest du [hier](https://github.com/bitranox/Thun
 ## Danksagungen
 
 Vielen Dank an die Thunderbird-Add-on-Entwickler-Community für die hervorragende Dokumentation und Unterstützung.
+
+--- 
+
+## Versionsverlauf / Changelog
+
+### V1.0.1
+- Ersetzte die benutzerdefinierte Funktion `getAttachmentsFromMessage()`, die die MIME-Teile manuell durchlief, durch die Standardmethode `browser.messages.listAttachments()`.
+
+### V1.0.0
+- Erste Veröffentlichung.
+

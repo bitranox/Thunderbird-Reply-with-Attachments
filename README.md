@@ -109,3 +109,14 @@ You can view the full license text [here](https://github.com/bitranox/Thunderbir
 ## Acknowledgments
 
 Special thanks to the Thunderbird add-on developer community for their excellent documentation and support.
+
+
+---
+
+## Version History / Changelog
+
+### V1.0.1
+- Replaced the custom `getAttachmentsFromMessage()` function, which manually traversed MIME parts to find attachments, with the standard method `browser.messages.listAttachments()`.
+
+### V1.0.0
+- Initial release.
