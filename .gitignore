@@ -131,3 +131,6 @@ celerybeat-schedule
 # Windows
 Thumbs.db
 ehthumbs.db
+
+# Archives
+*.zip
