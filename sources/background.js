@@ -20,7 +20,7 @@ const SESSION_KEY = 'rwatt_processed';
             if (composeDetails?.type !== 'reply') return {};
 
             // If already marked processed, skip
-            const already = await browser.sessions?.getTabValue?.(tabId, SESSION_KEY);
+            let already = false; try { already = await browser.sessions?.getTabValue?.(tabId, SESSION_KEY); } catch (_) { already = false; }
             if (already) return {};
 
             const messageId = await resolveMessageId(tabId, composeDetails);
@@ -44,7 +44,10 @@ const SESSION_KEY = 'rwatt_processed';
     browser.tabs?.onRemoved?.addListener?.((closedTabId) => {
         const id = typeof closedTabId === 'number' ? closedTabId : (closedTabId && closedTabId.id);
         if (typeof id === 'number') {
-            try { browser.sessions?.removeTabValue?.(id, SESSION_KEY); } catch (_) {}
+            try {
+                const p = browser.sessions?.removeTabValue?.(id, SESSION_KEY);
+                if (p && typeof p.then === 'function') p.catch(() => {});
+            } catch (_) {}
             console.log(`Released processed state for closed tab ${id}.`);
         }
     });
@@ -69,7 +72,8 @@ async function handleComposeStateChanged(tabId, details) {
         console.log("Compose details retrieved:", composeDetails);
 
         // Check if this tabId has already been processed (persistently across background sleeps)
-        const already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY);
+        let already = false;
+        try { already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY); } catch (_) { already = false; }
         if (already) {
             console.log(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
             return;
