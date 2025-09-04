@@ -10,6 +10,7 @@
     "lint:webext": "npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources"
   },
   "devDependencies": {
+    "jsdom": "^24.1.3",
     "vitest": "^1.6.0"
   }
 }
