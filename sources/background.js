@@ -1,7 +1,9 @@
 // background.js
 
-// Use sessions API to mark a compose tab as processed.
+// Track processed tabs in-memory for this event page lifecycle,
+// and also via sessions API to survive background sleeps.
 const SESSION_KEY = 'rwatt_processed';
+const processedTabsMemory = new Set();
 
 // Initialize the background script
 (async () => {
@@ -20,18 +22,20 @@ const SESSION_KEY = 'rwatt_processed';
             if (composeDetails?.type !== 'reply') return {};
 
             // If already marked processed, skip
+            if (processedTabsMemory.has(tabId)) return {};
             let already = false; try { already = await browser.sessions?.getTabValue?.(tabId, SESSION_KEY); } catch (_) { already = false; }
             if (already) return {};
 
             const messageId = await resolveMessageId(tabId, composeDetails);
             if (!messageId) return {};
 
-            // If the compose already has attachments, assume user handled it
+            // If the compose already has attachments, assume user (or we) handled it
             const existing = await browser.compose.listAttachments?.(tabId).catch(() => []);
             if (Array.isArray(existing) && existing.length > 0) return {};
 
             const added = await processReplyAttachments(tabId, messageId);
             if (added > 0) {
+                processedTabsMemory.add(tabId);
                 try { await browser.sessions?.setTabValue?.(tabId, SESSION_KEY, true); } catch (_) {}
             }
         } catch (err) {
@@ -49,6 +53,7 @@ const SESSION_KEY = 'rwatt_processed';
                 if (p && typeof p.then === 'function') p.catch(() => {});
             } catch (_) {}
             console.log(`Released processed state for closed tab ${id}.`);
+            processedTabsMemory.delete(id);
         }
     });
 })();
@@ -72,6 +77,10 @@ async function handleComposeStateChanged(tabId, details) {
         console.log("Compose details retrieved:", composeDetails);
 
         // Check if this tabId has already been processed (persistently across background sleeps)
+        if (processedTabsMemory.has(numericTabId)) {
+            console.log(`Tab ID ${numericTabId} already processed (memory). Skipping duplicate processing.`);
+            return;
+        }
         let already = false;
         try { already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY); } catch (_) { already = false; }
         if (already) {
@@ -86,6 +95,7 @@ async function handleComposeStateChanged(tabId, details) {
             console.log(`Using messageId: ${messageId} for attachment processing.`);
             const added = await processReplyAttachments(numericTabId, messageId);
             if (added > 0) {
+                processedTabsMemory.add(numericTabId);
                 try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
             } else {
                 // Do not mark as processed if nothing was added; allow subsequent events to retry.

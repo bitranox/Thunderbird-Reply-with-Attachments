@@ -78,6 +78,27 @@ describe('background.js core logic', () => {
     }
   });
 
+  it('does not duplicate when already processed (memory or sessions)', async () => {
+    const attachments = [ { name: 'a.pdf', partName: '1', contentType: 'application/pdf', contentDisposition: 'attachment; filename="a.pdf"' } ];
+    const { handleComposeStateChanged } = ctx;
+    const tabId = 33;
+    // First event adds
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 330 });
+    browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+    await handleComposeStateChanged(tabId, {});
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+
+    // onBeforeSend should skip due to memory flag
+    const onBeforeSendFn = browser.compose.onBeforeSend.addListener?.mock?.calls?.[0]?.[0];
+    if (onBeforeSendFn) {
+      browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 330 });
+      // Simulate compose.listAttachments returning [] to test our memory guard
+      browser.compose.listAttachments = vi.fn().mockResolvedValue([]);
+      await onBeforeSendFn(tabId, {});
+      expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+    }
+  });
+
   it('relaxed fallback adds attachment even when contentId is present without inline disposition', async () => {
     // Arrange: attachment has contentId but no explicit inline disposition
     const attachments = [ { name: 'report.pdf', partName: '9', contentType: 'application/pdf', contentId: 'cid:maybe', contentDisposition: '' } ];
