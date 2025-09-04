@@ -6,7 +6,9 @@ import { vi } from 'vitest';
 export function createBrowserMock({ attachments = [], getAttachmentFileResult = {} } = {}) {
   const compose = {
     onComposeStateChanged: { addListener: vi.fn() },
+    onBeforeSend: { addListener: vi.fn() },
     getComposeDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 0 }),
+    listAttachments: vi.fn().mockResolvedValue([]),
     addAttachment: vi.fn().mockResolvedValue(undefined),
   };
 

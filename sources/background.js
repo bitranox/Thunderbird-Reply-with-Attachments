@@ -11,6 +11,35 @@ const SESSION_KEY = 'rwatt_processed';
     browser.compose.onComposeStateChanged.addListener(handleComposeStateChanged);
     console.log("onComposeStateChanged listener registered successfully.");
 
+    // Last‑chance hook before sending: ensure reply attachments are present
+    browser.compose.onBeforeSend?.addListener?.(async (tab, sendDetails) => {
+        try {
+            const tabId = extractNumericTabId(tab);
+            if (tabId == null) return {};
+            const composeDetails = await browser.compose.getComposeDetails(tabId);
+            if (composeDetails?.type !== 'reply') return {};
+
+            // If already marked processed, skip
+            const already = await browser.sessions?.getTabValue?.(tabId, SESSION_KEY);
+            if (already) return {};
+
+            const messageId = await resolveMessageId(tabId, composeDetails);
+            if (!messageId) return {};
+
+            // If the compose already has attachments, assume user handled it
+            const existing = await browser.compose.listAttachments?.(tabId).catch(() => []);
+            if (Array.isArray(existing) && existing.length > 0) return {};
+
+            const added = await processReplyAttachments(tabId, messageId);
+            if (added > 0) {
+                try { await browser.sessions?.setTabValue?.(tabId, SESSION_KEY, true); } catch (_) {}
+            }
+        } catch (err) {
+            console.error('onBeforeSend ensure attachments failed:', err);
+        }
+        return {};
+    });
+
     // Release per-tab state when a tab is closed
     browser.tabs?.onRemoved?.addListener?.((closedTabId) => {
         const id = typeof closedTabId === 'number' ? closedTabId : (closedTabId && closedTabId.id);
@@ -48,16 +77,8 @@ async function handleComposeStateChanged(tabId, details) {
 
         if (composeDetails.type === "reply") {
             console.log("Reply detected. Processing attachments...");
-
-            const messageId = composeDetails.referenceMessageId || composeDetails.relatedMessageId;
-            if (!messageId) {
-                console.error(
-                    "No referenceMessageId or relatedMessageId found in ComposeDetails. Cannot process attachments."
-                );
-                console.debug("Full ComposeDetails object:", composeDetails);
-                return;
-            }
-
+            const messageId = await resolveMessageId(numericTabId, composeDetails);
+            if (!messageId) { console.warn('Unable to resolve original messageId (retry or onBeforeSend will handle).'); return; }
             console.log(`Using messageId: ${messageId} for attachment processing.`);
             const added = await processReplyAttachments(numericTabId, messageId);
             if (added > 0) {
@@ -109,6 +130,30 @@ async function processReplyAttachments(tabId, messageId) {
         const addedPartNames = new Set();
         let addedCount = 0;
 
+        const isSmime = (att) => {
+            const nameLower = String(att.name || att.fileName || '').toLowerCase();
+            const typeLower = String(att.contentType || '').toLowerCase();
+            return (
+                nameLower === 'smime.p7s' ||
+                typeLower === 'application/pkcs7-signature' ||
+                typeLower === 'application/x-pkcs7-signature' ||
+                typeLower === 'application/pkcs7-mime'
+            );
+        };
+
+        const preferAdd = async (att) => {
+            if (addedPartNames.has(att.partName)) return false;
+            try {
+                console.log(`Attempting to add attachment: ${att.name}`);
+                await addAttachmentToCompose(tabId, messageId, att);
+                addedPartNames.add(att.partName);
+                return true;
+            } catch (e) {
+                console.error(`Failed to add ${att.name}:`, e);
+                return false;
+            }
+        };
+
         for (const attachment of attachments) {
             // Normalize commonly used fields
             const nameLower = String(attachment.name || attachment.fileName || '').toLowerCase();
@@ -117,25 +162,29 @@ async function processReplyAttachments(tabId, messageId) {
 
             // Exclude SMIME/PKCS7 artifacts (case-insensitive, broader set)
             if (
-                nameLower === 'smime.p7s' ||
-                typeLower === 'application/pkcs7-signature' ||
-                typeLower === 'application/x-pkcs7-signature' ||
-                typeLower === 'application/pkcs7-mime'
+                isSmime(attachment)
             ) {
                 console.log(`Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`);
                 continue;
             }
 
-            // Skip inline/related parts (avoid copying inline images)
-            if (attachment.contentId) {
+            // Skip clearly inline/related parts
+            if (attachment.contentId && (!attachment.contentDisposition || String(attachment.contentDisposition).toLowerCase().startsWith('inline'))) {
                 console.log(`Skipping inline/related part: ${attachment.name} (contentId present)`);
                 continue;
             }
 
-            // Optionally require explicit attachment disposition when available
-            if (dispLower && dispLower !== 'attachment') {
-                console.log(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
-                continue;
+            // If a contentDisposition is present, allow typical variants like
+            // "attachment; filename=...". Skip when it explicitly starts with inline.
+            if (dispLower) {
+                if (dispLower.startsWith('inline')) {
+                    console.log(`Skipping inline disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
+                    continue;
+                }
+                if (!dispLower.startsWith('attachment')) {
+                    console.log(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
+                    continue;
+                }
             }
 
             // Avoid adding duplicate attachments within this processing run
@@ -144,13 +193,23 @@ async function processReplyAttachments(tabId, messageId) {
                 continue;
             }
 
-            console.log(`Attempting to add attachment: ${attachment.name}`);
-            await addAttachmentToCompose(tabId, messageId, attachment);
-            addedPartNames.add(attachment.partName);
-            addedCount += 1;
+            if (await preferAdd(attachment)) addedCount += 1;
         }
 
-        console.log("All attachments added successfully.");
+        if (addedCount === 0) {
+            // Fallback: relax inline/contentId rules but still exclude SMIME
+            console.log('No attachments added on first pass; attempting relaxed fallback…');
+            for (const att of attachments) {
+                if (isSmime(att)) continue;
+                if (await preferAdd(att)) addedCount += 1;
+            }
+        }
+
+        if (addedCount > 0) {
+            console.log("All attachments added successfully.");
+        } else {
+            console.warn('No eligible attachments to add after fallback.');
+        }
         return addedCount;
     } catch (error) {
         console.error("Error in processReplyAttachments:", error);
@@ -187,5 +246,17 @@ async function addAttachmentToCompose(tabId, messageId, attachment) {
     } catch (error) {
         console.error(`Failed to add attachment ${attachment.name || attachment.fileName}:`, error);
     }
+}
+
+// Retry helper to obtain the original messageId for a reply compose.
+async function resolveMessageId(tabId, initialDetails, { attempts = 10, delayMs = 200 } = {}) {
+    let composeDetails = initialDetails;
+    for (let i = 0; i < attempts; i++) {
+        const id = composeDetails?.referenceMessageId || composeDetails?.relatedMessageId;
+        if (id) return id;
+        await new Promise(r => setTimeout(r, delayMs));
+        try { composeDetails = await browser.compose.getComposeDetails(tabId); } catch (_) {}
+    }
+    return null;
 }
 

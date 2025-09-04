@@ -24,9 +24,9 @@ describe('background.js core logic', () => {
     const attachments = [
       { name: 'smime.p7s', partName: '2', contentType: 'application/octet-stream' },
       { name: 'signature', partName: '3', contentType: 'application/pkcs7-signature' },
-      { name: 'normal.pdf', partName: '1', contentType: 'application/pdf' },
+      { name: 'normal.pdf', partName: '1', contentType: 'application/pdf', contentDisposition: 'attachment; filename="normal.pdf"' },
       { name: 'inline.png', partName: '4', contentType: 'image/png', contentId: 'cid:abc' },
-      { name: 'duplicate.pdf', partName: '1', contentType: 'application/pdf' },
+      { name: 'duplicate.pdf', partName: '1', contentType: 'application/pdf', contentDisposition: 'attachment; filename="normal.pdf"' },
     ];
 
     browser.messages.listAttachments.mockResolvedValueOnce(attachments);
@@ -55,6 +55,37 @@ describe('background.js core logic', () => {
     browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 500 });
     await handleComposeStateChanged(1, {});
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
+  });
+
+  it('onBeforeSend attaches if not yet processed and none present', async () => {
+    const attachments = [ { name: 'a.pdf', partName: '1', contentType: 'application/pdf', contentDisposition: 'attachment; filename="a.pdf"' } ];
+    browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+    const { handleComposeStateChanged } = ctx;
+    const tabId = 21;
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 777 });
+    // Simulate early state change with zero attachments found (none added)
+    browser.messages.listAttachments.mockResolvedValueOnce([]);
+    await handleComposeStateChanged(tabId, {});
+
+    // Now trigger onBeforeSend: ui handler is registered in background.js at load
+    const onBeforeSendFn = browser.compose.onBeforeSend.addListener?.mock?.calls?.[0]?.[0];
+    if (onBeforeSendFn) {
+      browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 777 });
+      browser.compose.listAttachments = vi.fn().mockResolvedValue([]);
+      browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+      await onBeforeSendFn(tabId, {});
+      expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+    }
+  });
+
+  it('relaxed fallback adds attachment even when contentId is present without inline disposition', async () => {
+    // Arrange: attachment has contentId but no explicit inline disposition
+    const attachments = [ { name: 'report.pdf', partName: '9', contentType: 'application/pdf', contentId: 'cid:maybe', contentDisposition: '' } ];
+    const { handleComposeStateChanged } = ctx;
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 909 });
+    browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+    await handleComposeStateChanged(77, {});
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 
   it('releases per-tab state on tab close (tabs.onRemoved)', async () => {
