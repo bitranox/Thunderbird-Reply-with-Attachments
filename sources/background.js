@@ -45,7 +45,6 @@ async function handleComposeStateChanged(tabId, details) {
             console.log(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
             return;
         }
-        try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
 
         if (composeDetails.type === "reply") {
             console.log("Reply detected. Processing attachments...");
@@ -60,7 +59,13 @@ async function handleComposeStateChanged(tabId, details) {
             }
 
             console.log(`Using messageId: ${messageId} for attachment processing.`);
-            await processReplyAttachments(numericTabId, messageId);
+            const added = await processReplyAttachments(numericTabId, messageId);
+            if (added > 0) {
+                try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
+            } else {
+                // Do not mark as processed if nothing was added; allow subsequent events to retry.
+                console.log('No attachments added; leaving tab eligible for retry.');
+            }
         } else {
             console.log("Compose type is not a reply. Skipping attachment handling.");
         }
@@ -97,11 +102,12 @@ async function processReplyAttachments(tabId, messageId) {
         const attachments = await browser.messages.listAttachments(messageId);
         if (attachments.length === 0) {
             console.log("No attachments found in the original message.");
-            return;
+            return 0;
         }
 
         // Track added partNames locally to avoid duplicates within one processing run
         const addedPartNames = new Set();
+        let addedCount = 0;
 
         for (const attachment of attachments) {
             // Normalize commonly used fields
@@ -141,11 +147,14 @@ async function processReplyAttachments(tabId, messageId) {
             console.log(`Attempting to add attachment: ${attachment.name}`);
             await addAttachmentToCompose(tabId, messageId, attachment);
             addedPartNames.add(attachment.partName);
+            addedCount += 1;
         }
 
         console.log("All attachments added successfully.");
+        return addedCount;
     } catch (error) {
         console.error("Error in processReplyAttachments:", error);
+        return 0;
     }
 }
 
