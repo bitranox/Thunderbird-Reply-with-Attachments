@@ -19,7 +19,7 @@ describe('background.js core logic', () => {
     expect(extractNumericTabId('x')).toBeNull();
   });
 
-  it('handleComposeStateChanged adds only non-SMIME, non-duplicate attachments (via processReplyAttachments)', async () => {
+  it('handleComposeStateChanged adds only non-SMIME, non-inline (contentId), non-duplicate attachments', async () => {
     // Arrange attachments: two SMIME variants, one normal, one inline image, and a duplicate
     const attachments = [
       { name: 'smime.p7s', partName: '2', contentType: 'application/octet-stream' },
@@ -39,14 +39,14 @@ describe('background.js core logic', () => {
 
     await handleComposeStateChanged(tabId, {});
 
-    // Expect addAttachment called for normal.pdf and inline.png only (current behavior)
-    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
+    // Expect addAttachment called only for normal.pdf; inline with contentId is skipped now
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
     const calls = browser.compose.addAttachment.mock.calls.map(args => args[1]);
     const names = calls.map(o => o && o.file && o.file.name).filter(Boolean);
     // getAttachmentFile currently returns {}, so no name; assert by partName via messages.getAttachmentFile args
     const getFileCalls = browser.messages.getAttachmentFile.mock.calls;
     const partNames = getFileCalls.map(c => c[1]);
-    expect(partNames).toEqual(['1', '4']);
+    expect(partNames).toEqual(['1']);
   });
 
   it('handleComposeStateChanged no-ops on empty attachment list', async () => {
@@ -55,5 +55,26 @@ describe('background.js core logic', () => {
     browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 500 });
     await handleComposeStateChanged(1, {});
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
+  });
+
+  it('releases per-tab state on tab close (tabs.onRemoved)', async () => {
+    const attachments = [ { name: 'a.pdf', partName: '1', contentType: 'application/pdf' } ];
+    browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+
+    const { handleComposeStateChanged } = ctx;
+    const tabId = 7;
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 10 });
+    await handleComposeStateChanged(tabId, {});
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+
+    // Trigger the onRemoved listener that background.js registered
+    const onRemovedFn = browser.tabs.onRemoved.addListener.mock.calls[0][0];
+    onRemovedFn(tabId, {});
+
+    // After cleanup, processing the same tab again should re-run
+    browser.messages.listAttachments.mockResolvedValueOnce(attachments);
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 10 });
+    await handleComposeStateChanged(tabId, {});
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
   });
 });

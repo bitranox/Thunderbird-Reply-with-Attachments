@@ -1,5 +1,8 @@
 // background.js
 
+// Global object to track processed tabs and added attachments
+const processedTabs = new Map();
+
 // Initialize the background script
 (async () => {
     console.log("Background script initialized for Reply with Attachments.");
@@ -7,10 +10,16 @@
     // Register the onComposeStateChanged listener
     browser.compose.onComposeStateChanged.addListener(handleComposeStateChanged);
     console.log("onComposeStateChanged listener registered successfully.");
-})();
 
-// Global object to track processed tabs and added attachments
-const processedTabs = new Map();
+    // Release per-tab state when a tab is closed
+    browser.tabs?.onRemoved?.addListener?.((closedTabId) => {
+        const id = typeof closedTabId === 'number' ? closedTabId : (closedTabId && closedTabId.id);
+        if (typeof id === 'number' && processedTabs.has(id)) {
+            processedTabs.delete(id);
+            console.log(`Released processed state for closed tab ${id}.`);
+        }
+    });
+})();
 
 /**
  * Handles the compose state change event.
@@ -96,15 +105,31 @@ async function processReplyAttachments(tabId, messageId) {
         const addedAttachmentsForTab = processedTabs.get(tabId);
 
         for (const attachment of attachments) {
-            // Exclude SMIME certificates based on MIME type or file name
+            // Normalize commonly used fields
+            const nameLower = String(attachment.name || attachment.fileName || '').toLowerCase();
+            const typeLower = String(attachment.contentType || '').toLowerCase();
+            const dispLower = String(attachment.contentDisposition || '').toLowerCase();
+
+            // Exclude SMIME/PKCS7 artifacts (case-insensitive, broader set)
             if (
-                attachment.contentType === "application/pkcs7-signature" ||
-                attachment.contentType === "application/x-pkcs7-signature" ||
-                attachment.name === "smime.p7s"
+                nameLower === 'smime.p7s' ||
+                typeLower === 'application/pkcs7-signature' ||
+                typeLower === 'application/x-pkcs7-signature' ||
+                typeLower === 'application/pkcs7-mime'
             ) {
-                console.log(
-                    `Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`
-                );
+                console.log(`Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`);
+                continue;
+            }
+
+            // Skip inline/related parts (avoid copying inline images)
+            if (attachment.contentId) {
+                console.log(`Skipping inline/related part: ${attachment.name} (contentId present)`);
+                continue;
+            }
+
+            // Optionally require explicit attachment disposition when available
+            if (dispLower && dispLower !== 'attachment') {
+                console.log(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
                 continue;
             }
 
