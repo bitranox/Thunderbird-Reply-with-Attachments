@@ -9,7 +9,8 @@
 ## Features
 
 - Automatically attaches files from the original email when replying.
-- Skips SMIME certificates to avoid unnecessary attachments.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Skips SMIME certificates and inline images to avoid unnecessary attachments.
 
 Screenshot demonstrating the add-on in action:
 
@@ -62,7 +63,27 @@ Screenshot demonstrating the add-on in action:
 1. Open an email in Thunderbird.
 2. Click **Reply** or **Reply All**.
 3. The add-on will automatically include any attachments from the original email in the reply.
-4. SMIME certificates will be skipped.
+4. If you attach your own files first, the add-on still adds the originals once and de‑duplicates by filename.
+5. SMIME certificates and inline images are skipped.
+
+---
+
+## Behavior Details
+
+- Duplicate prevention: The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
+- Respect existing attachments: If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
+- Exclusions: SMIME artifacts (e.g. `smime.p7s`, `application/pkcs7-signature`/`x-pkcs7-signature`/`pkcs7-mime`) and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑SMIME parts.
+
+---
+
+## Debug Logging
+
+Verbose debug logs can be toggled at runtime (errors and warnings are always shown):
+
+1. Open Thunderbird’s Error Console: Tools → Developer Tools → Error Console.
+2. Execute to enable: `messenger.storage.local.set({ debug: true })`
+3. Execute to disable: `messenger.storage.local.set({ debug: false })`
+4. Logs appear in the Error Console while composing or sending replies.
 
 ---
 

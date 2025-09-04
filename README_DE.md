@@ -8,8 +8,9 @@
 
 ## Funktionen
 
-- Fügt beim Antworten automatisch Anhänge aus der ursprünglichen E-Mail hinzu.
-- Überspringt SMIME-Zertifikate, um unnötige Anhänge zu vermeiden.
+- Fügt beim Antworten automatisch Anhänge aus der ursprünglichen E‑Mail hinzu.
+- Fügt die Originalanhänge auch dann hinzu, wenn du bereits eigene Dateien angehängt hast; verhindert Duplikate anhand des Dateinamens.
+- Überspringt SMIME‑Zertifikate und Inline‑Bilder, um unnötige Anhänge zu vermeiden.
 
 Screenshot, der die Erweiterung in Aktion zeigt:
 
@@ -59,8 +60,28 @@ Screenshot, der die Erweiterung in Aktion zeigt:
 
 1. Öffne eine E-Mail in Thunderbird.
 2. Klicke auf **Antworten** oder **Allen antworten**.
-3. Das Add-on fügt automatisch alle Anhänge der ursprünglichen E-Mail in die Antwort ein.
-4. SMIME-Zertifikate werden übersprungen.
+3. Das Add-on fügt automatisch alle Anhänge der ursprünglichen E‑Mail in die Antwort ein.
+4. Wenn du zuerst eigene Dateien anhängst, werden die Originalanhänge trotzdem genau einmal ergänzt; vorhandene Dateinamen werden übersprungen (keine Duplikate).
+5. SMIME‑Zertifikate und Inline‑Bilder werden übersprungen.
+
+---
+
+## Verhaltensdetails
+
+- Duplikat‑Schutz: Der Status wird pro Tab mittels Sitzungswert und in‑Memory‑Wächter markiert. Originalanhänge werden nicht doppelt hinzugefügt.
+- Respektiert vorhandene Anhänge: Enthält der Entwurf bereits Anhänge, werden die Originale einmalig ergänzt; schon vorhandene Dateinamen werden ausgelassen.
+- Ausschlüsse: SMIME‑Artefakte (z. B. `smime.p7s`, `application/pkcs7-signature`/`x-pkcs7-signature`/`pkcs7-mime`) sowie Inline‑Bilder werden ignoriert. Falls im ersten Durchlauf nichts geeignet ist, prüft ein entspannter Fallback erneut (SMIME weiterhin ausgeschlossen).
+
+---
+
+## Debug‑Logging
+
+Ausführliche Debug‑Logs können zur Laufzeit ein‑/ausgeschaltet werden (Fehler/Warnungen erscheinen immer):
+
+1. Öffne die Fehlerkonsole: Extras → Entwicklerwerkzeuge → Fehlerkonsole.
+2. Aktivieren: `messenger.storage.local.set({ debug: true })`
+3. Deaktivieren: `messenger.storage.local.set({ debug: false })`
+4. Die Ausgaben erscheinen in der Fehlerkonsole beim Antworten/Senden.
 
 ---
 
