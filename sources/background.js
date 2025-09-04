@@ -1,7 +1,7 @@
 // background.js
 
-// Global object to track processed tabs and added attachments
-const processedTabs = new Map();
+// Use sessions API to mark a compose tab as processed.
+const SESSION_KEY = 'rwatt_processed';
 
 // Initialize the background script
 (async () => {
@@ -14,8 +14,8 @@ const processedTabs = new Map();
     // Release per-tab state when a tab is closed
     browser.tabs?.onRemoved?.addListener?.((closedTabId) => {
         const id = typeof closedTabId === 'number' ? closedTabId : (closedTabId && closedTabId.id);
-        if (typeof id === 'number' && processedTabs.has(id)) {
-            processedTabs.delete(id);
+        if (typeof id === 'number') {
+            try { browser.sessions?.removeTabValue?.(id, SESSION_KEY); } catch (_) {}
             console.log(`Released processed state for closed tab ${id}.`);
         }
     });
@@ -39,14 +39,13 @@ async function handleComposeStateChanged(tabId, details) {
         const composeDetails = await browser.compose.getComposeDetails(numericTabId);
         console.log("Compose details retrieved:", composeDetails);
 
-        // Check if this tabId has already been processed
-        if (processedTabs.has(numericTabId)) {
-            console.log(`Tab ID ${numericTabId} already processed. Skipping duplicate processing.`);
+        // Check if this tabId has already been processed (persistently across background sleeps)
+        const already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY);
+        if (already) {
+            console.log(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
             return;
         }
-
-        // Mark tabId as processed
-        processedTabs.set(numericTabId, new Set());
+        try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
 
         if (composeDetails.type === "reply") {
             console.log("Reply detected. Processing attachments...");
@@ -101,8 +100,8 @@ async function processReplyAttachments(tabId, messageId) {
             return;
         }
 
-        // Retrieve the set of already added attachments for this tab
-        const addedAttachmentsForTab = processedTabs.get(tabId);
+        // Track added partNames locally to avoid duplicates within one processing run
+        const addedPartNames = new Set();
 
         for (const attachment of attachments) {
             // Normalize commonly used fields
@@ -133,15 +132,15 @@ async function processReplyAttachments(tabId, messageId) {
                 continue;
             }
 
-            // Avoid adding duplicate attachments within the same tab
-            if (addedAttachmentsForTab.has(attachment.partName)) {
+            // Avoid adding duplicate attachments within this processing run
+            if (addedPartNames.has(attachment.partName)) {
                 console.log(`Skipping duplicate attachment: ${attachment.name}`);
                 continue;
             }
 
             console.log(`Attempting to add attachment: ${attachment.name}`);
             await addAttachmentToCompose(tabId, messageId, attachment);
-            addedAttachmentsForTab.add(attachment.partName);
+            addedPartNames.add(attachment.partName);
         }
 
         console.log("All attachments added successfully.");
@@ -156,26 +155,7 @@ async function processReplyAttachments(tabId, messageId) {
  * @param {Object} message - The full message object.
  * @returns {Array} - List of attachments.
  */
-function getAttachmentsFromMessage(message) {
-    const attachments = [];
-
-    function traverseParts(parts) {
-        for (const part of parts) {
-            if (part.parts) {
-                traverseParts(part.parts);
-            } else if (part.name || part.fileName) {
-                attachments.push(part);
-            }
-        }
-    }
-
-    if (message.parts) {
-        traverseParts(message.parts);
-    }
-
-    console.log(`Extracted ${attachments.length} attachments from the message.`);
-    return attachments;
-}
+// Note: attachment discovery relies on browser.messages.listAttachments per MV3 guidance.
 
 /**
  * Adds a specific attachment to the compose window.

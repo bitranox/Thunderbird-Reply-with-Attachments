@@ -19,5 +19,19 @@ export function createBrowserMock({ attachments = [], getAttachmentFileResult = 
     onRemoved: { addListener: vi.fn() },
   };
 
-  return { compose, messages, tabs };
+  // Simple in-memory sessions storage
+  const _tabValues = new Map();
+  const sessions = {
+    async getTabValue(tabId, key) {
+      return _tabValues.get(`${tabId}:${key}`);
+    },
+    async setTabValue(tabId, key, value) {
+      _tabValues.set(`${tabId}:${key}`, value);
+    },
+    async removeTabValue(tabId, key) {
+      _tabValues.delete(`${tabId}:${key}`);
+    },
+  };
+
+  return { compose, messages, tabs, sessions };
 }
