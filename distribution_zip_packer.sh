@@ -75,10 +75,14 @@ create_zip() {
   # Remove existing ZIP file if it exists
   [ -f "$zip_target" ] && {
     echo "Removing existing ZIP file '$zip_target'..."
-    rm "$zip_target" || {
-      echo "ERROR: Failed to remove existing ZIP file!" >&2
-      exit 1
-    }
+    if ! rm -f "$zip_target"; then
+      echo "WARN: rm failed; attempting rename fallback..." >&2
+      ts=$(date +%s)
+      if ! mv -f "$zip_target" "$zip_target.$ts.old"; then
+        echo "ERROR: Failed to remove or rename existing ZIP file!" >&2
+        exit 1
+      fi
+    fi
   }
 
   # Create the ZIP file excluding specific files
