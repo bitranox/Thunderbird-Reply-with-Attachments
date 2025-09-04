@@ -135,3 +135,6 @@ ehthumbs.db
 
 # Archives
 *.zip
+
+# Thunderbird build artifact (created temporarily by pack script)
+sources/manifest.json
