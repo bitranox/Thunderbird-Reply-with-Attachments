@@ -89,6 +89,16 @@ Wenn du zu diesem Projekt beitragen möchtest:
 
 ---
 
+## Entwicklung
+
+- Add-on-ZIPs bauen: `make pack`
+- Tests ausführen (Vitest): `make test`
+- Befehle anzeigen: `make help`
+
+Die Pakete werden als `reply-with-attachments-plugin*.zip` im Repository-Root erstellt. Für manuelles Testen in Thunderbird: Extras → Add-ons und Themes → Zahnradsymbol → Add-on aus Datei installieren… und das erzeugte ZIP wählen.
+
+---
+
 ## Unterstütze dieses Projekt
 
 Wenn dir dieses Add-on gefällt, unterstütze die Entwicklung mit einem kleinen Beitrag:
@@ -117,4 +127,3 @@ Vielen Dank an die Thunderbird-Add-on-Entwickler-Community für die hervorragend
 
 ### V1.0.0
 - Erste Veröffentlichung.
-

@@ -18,7 +18,9 @@
 - Artifacts: `reply-with-attachments-plugin*.zip` are generated; do not edit by hand.
 
 ## Build, Test, and Development Commands
-- `bash distribution_zip_packer.sh`: builds ATN and PRIVATE ZIPs after verifying both manifest versions match.
+- `make help`: list available developer commands.
+- `make test`: run the Vitest test suite.
+- `make pack`: build ATN and PRIVATE ZIPs (wraps `bash distribution_zip_packer.sh`).
 - Manual install (dev): Thunderbird → Tools → Add-ons and Themes → gear menu → Install Add-on From File… → choose the built ZIP.
 - Tip: update version in both `sources/manifest_*.json` before packaging.
 

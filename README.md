@@ -91,6 +91,16 @@ If you'd like to contribute to this project:
 
 ---
 
+## Development
+
+- Build add-on ZIPs: `make pack`
+- Run tests (Vitest): `make test`
+- Discover commands: `make help`
+
+Packaged files are created as `reply-with-attachments-plugin*.zip` in the repository root. For manual testing in Thunderbird, use Tools → Add-ons and Themes → gear menu → Install Add-on From File… and select the built ZIP.
+
+---
+
 ## Support This Project
 
 If you like this add-on, consider supporting its development with a small contribution:
