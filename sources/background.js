@@ -168,10 +168,13 @@ async function processReplyAttachments(tabId, messageId) {
                 continue;
             }
 
-            // Skip clearly inline/related parts
-            if (attachment.contentId && (!attachment.contentDisposition || String(attachment.contentDisposition).toLowerCase().startsWith('inline'))) {
-                console.log(`Skipping inline/related part: ${attachment.name} (contentId present)`);
-                continue;
+            // Skip inline images only; allow PDFs/XLSX even if a contentId exists
+            if (attachment.contentId) {
+                const type = String(attachment.contentType || '').toLowerCase();
+                if (type.startsWith('image/')) {
+                    console.log(`Skipping inline image: ${attachment.name} (contentId present)`);
+                    continue;
+                }
             }
 
             // If a contentDisposition is present, allow typical variants like
