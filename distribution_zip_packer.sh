@@ -57,7 +57,6 @@ echo "Version numbers match. Proceeding with distribution packaging..."
 create_zip() {
   local manifest_source=$1
   local zip_target=$2
-  local zip_out=$zip_target
 
   echo "Creating ZIP file '$zip_target' with '$manifest_source' as manifest..."
 
@@ -80,8 +79,8 @@ create_zip() {
       echo "WARN: rm failed; attempting rename fallback..." >&2
       ts=$(date +%s)
       if ! mv -f "$zip_target" "$zip_target.$ts.old"; then
-        echo "WARN: rename failed; will write to '$zip_target.$ts.new' instead and leave existing file intact." >&2
-        zip_out="$zip_target.$ts.new"
+        echo "ERROR: Unable to remove or rename existing ZIP ('$zip_target'). File may be locked." >&2
+        exit 1
       fi
     fi
   }
@@ -89,14 +88,20 @@ create_zip() {
   # Create the ZIP file excluding specific files
   (
     cd ./sources || exit 1
-    zip -r "../$zip_out" . \
+    zip -r "../$zip_target" . \
       -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
   ) || {
-    echo "ERROR: Failed to create ZIP file '$zip_out'!" >&2
+    echo "ERROR: Failed to create ZIP file '$zip_target'!" >&2
     exit 1
   }
 
-  echo "ZIP file '$zip_out' created successfully."
+  # Verify the ZIP was created
+  if [ ! -f "$zip_target" ]; then
+    echo "ERROR: ZIP file '$zip_target' was not created as expected!" >&2
+    exit 1
+  fi
+
+  echo "ZIP file '$zip_target' created successfully."
 }
 
 # Create ZIP files
