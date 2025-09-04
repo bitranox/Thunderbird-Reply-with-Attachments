@@ -99,6 +99,18 @@ describe('background.js core logic', () => {
     }
   });
 
+  it('two rapid compose events do not duplicate', async () => {
+    const attachments = [ { name: 'r.pdf', partName: 'p1', contentType: 'application/pdf', contentDisposition: 'attachment; filename="r.pdf"' } ];
+    const { handleComposeStateChanged } = ctx;
+    browser.messages.listAttachments.mockResolvedValue(attachments);
+    browser.compose.getComposeDetails.mockResolvedValue({ type: 'reply', referenceMessageId: 44 });
+    await Promise.all([
+      handleComposeStateChanged(55, {}),
+      handleComposeStateChanged(55, {}),
+    ]);
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+  });
+
   it('relaxed fallback adds attachment even when contentId is present without inline disposition', async () => {
     // Arrange: attachment has contentId but no explicit inline disposition
     const attachments = [ { name: 'report.pdf', partName: '9', contentType: 'application/pdf', contentId: 'cid:maybe', contentDisposition: '' } ];
