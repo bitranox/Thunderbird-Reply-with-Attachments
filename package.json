@@ -1,0 +1,15 @@
+{
+  "name": "thunderbird-reply-with-attachments",
+  "private": true,
+  "version": "0.0.0-test",
+  "description": "Tests for Reply with Attachments Thunderbird add-on",
+  "type": "module",
+  "scripts": {
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "test:watch": "node node_modules/vitest/vitest.mjs",
+    "lint:webext": "npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
