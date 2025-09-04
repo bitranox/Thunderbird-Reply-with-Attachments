@@ -5,9 +5,21 @@
 const SESSION_KEY = 'rwatt_processed';
 const processedTabsState = new Map(); // tabId -> 'processing' | 'done'
 
+// Debug logging flag (set via storage.local { debug: true })
+let DEBUG = false;
+
 // Initialize the background script
 (async () => {
     console.log("Background script initialized for Reply with Attachments.");
+
+    // Load debug flag and gate console.log output if disabled
+    try {
+        const conf = await (browser.storage?.local?.get?.({ debug: false }) ?? {});
+        DEBUG = !!(conf?.debug);
+    } catch (_) { DEBUG = false; }
+    if (!DEBUG) {
+        try { console.log = () => {}; } catch (_) {}
+    }
 
     // Register the onComposeStateChanged listener
     browser.compose.onComposeStateChanged.addListener(handleComposeStateChanged);
@@ -19,7 +31,8 @@ const processedTabsState = new Map(); // tabId -> 'processing' | 'done'
             const tabId = extractNumericTabId(tab);
             if (tabId == null) return {};
             const composeDetails = await browser.compose.getComposeDetails(tabId);
-            if (composeDetails?.type !== 'reply') return {};
+            const t = String(composeDetails?.type || '').toLowerCase();
+            if (!t.startsWith('reply')) return {};
 
             // If already marked processed, skip
             const state = processedTabsState.get(tabId);
@@ -96,8 +109,20 @@ async function handleComposeStateChanged(tabId, details) {
             return;
         }
 
-        if (composeDetails.type === "reply") {
+        const typeStr = String(composeDetails?.type || '').toLowerCase();
+        if (typeStr.startsWith('reply')) {
             console.log("Reply detected. Processing attachments...");
+
+            // If compose already has attachments, assume handled and mark processed
+            try {
+                const existing = await browser.compose.listAttachments?.(numericTabId).catch(() => []);
+                if (Array.isArray(existing) && existing.length > 0) {
+                    processedTabsState.set(numericTabId, 'done');
+                    try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
+                    console.log('Compose already has attachments; skipping add.');
+                    return;
+                }
+            } catch (_) { /* ignore */ }
             const messageId = await resolveMessageId(numericTabId, composeDetails);
             if (!messageId) { console.warn('Unable to resolve original messageId (retry or onBeforeSend will handle).'); return; }
             console.log(`Using messageId: ${messageId} for attachment processing.`);
