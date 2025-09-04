@@ -1,29 +1,24 @@
 (() => {
-    document.addEventListener('DOMContentLoaded', () => {
-        const githubLinks = [
-            document.getElementById('github-link'),
-            document.getElementById('github-link-logo')
-        ];
+  document.addEventListener('DOMContentLoaded', () => {
+    const githubLinks = [
+      document.getElementById('github-link'),
+      document.getElementById('github-link-logo')
+    ];
 
-        // Detect user language
-        const userLanguage = navigator.language || navigator.userLanguage;
-        const isGerman = userLanguage.startsWith('de');
-
-        const githubUrl = isGerman
-            ? 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README_DE.md'
-            : 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README.md';
-
-        // Add event listeners to the links
-        githubLinks.forEach(link => {
-            if (link) {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    browser.tabs.create({
-                        url: githubUrl,
-                        active: true
-                    });
-                });
-            }
+    // Open the URL already present in the element's href (set via i18n)
+    githubLinks.forEach(link => {
+      if (link) {
+        link.addEventListener('click', (event) => {
+          const href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          event.preventDefault();
+          try {
+            browser.tabs.create({ url: href, active: true });
+          } catch (_) {
+            location.href = href;
+          }
         });
+      }
     });
+  });
 })();

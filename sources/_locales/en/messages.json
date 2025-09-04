@@ -1,0 +1,15 @@
+{
+  "extName": { "message": "Reply with Attachments" },
+  "extDescription": { "message": "Automatically include original attachments in email replies." },
+  "composeTitle": { "message": "Reply with Attachments" },
+
+  "uiHeader": { "message": "Reply with Attachments" },
+  "uiNoOptions": { "message": "There are currently no options to configure." },
+  "uiSupport": { "message": "Do you like this add-on? Support me with a small contribution:" },
+  "uiDonate": { "message": "Donate now" },
+  "uiGithubText": { "message": "For bug reports or other inquiries, please visit my" },
+
+  "donateUrl": { "message": "https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README.md" }
+}
+

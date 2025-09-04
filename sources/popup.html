@@ -74,21 +74,21 @@
     <div class="container">
         <div class="header">
             <img src="icons/icon-128.png" alt="Reply with Attachments Icon">
-            <h1 id="header-title">Reply with Attachments</h1>
+            <h1 id="header-title" data-i18n="uiHeader"></h1>
         </div>
         <div class="content">
-            <p id="options-text">There are currently no options to configure.</p>
-            <p id="support-text">Do you like this add-on? Support me with a small contribution:</p>
-            <button id="donate-button">Donate now</button>
-            <p id="github-text">For bug reports or other inquiries, please visit my <a id="github-link" href="#">GitHub page</a>.</p>
+            <p id="options-text" data-i18n="uiNoOptions"></p>
+            <p id="support-text" data-i18n="uiSupport"></p>
+            <a id="donate-link" class="button" data-i18n-attr="href:donateUrl"><button data-i18n="uiDonate"></button></a>
+            <p id="github-text"><span data-i18n="uiGithubText"></span> <a id="github-link" data-i18n-attr="href:githubUrl">GitHub page</a>.</p>
             <div class="github-logo">
-                <a id="github-link-logo" href="#">
+                <a id="github-link-logo" data-i18n-attr="href:githubUrl">
                     <img src="icons/icon-github.png" alt="GitHub Logo">
                 </a>
             </div>
         </div>
     </div>
-    <script src="handle_language.js"></script>
+    <script src="ui_i18n.js"></script>
     <script src="handle_donate_link.js"></script>
     <script src="handle_github_link.js"></script>
 </body>

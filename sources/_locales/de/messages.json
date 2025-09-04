@@ -1,0 +1,15 @@
+{
+  "extName": { "message": "Antwort mit Anhängen" },
+  "extDescription": { "message": "Beim Antworten Anhänge aus der ursprünglichen E-Mail automatisch übernehmen." },
+  "composeTitle": { "message": "Antwort mit Anhängen" },
+
+  "uiHeader": { "message": "Antwort mit Anhängen" },
+  "uiNoOptions": { "message": "Derzeit gibt es keine zu konfigurierenden Optionen." },
+  "uiSupport": { "message": "Gefällt Ihnen dieses Add-on? Unterstützen Sie mich mit einem kleinen Beitrag:" },
+  "uiDonate": { "message": "Jetzt spenden" },
+  "uiGithubText": { "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine" },
+
+  "donateUrl": { "message": "https://www.paypal.com/donate/?hosted_button_id=7KJN33DHTA8WE" },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README_DE.md" }
+}
+
