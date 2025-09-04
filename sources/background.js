@@ -8,22 +8,26 @@ const processedTabsState = new Map(); // tabId -> 'processing' | 'done'
 // Debug logging flag (set via storage.local { debug: true })
 let DEBUG = false;
 
+// Lightweight debug logger: avoid monkey‑patching console
+function debug(...args) {
+    if (DEBUG) {
+        try { console.log(...args); } catch (_) {}
+    }
+}
+
 // Initialize the background script
 (async () => {
-    console.log("Background script initialized for Reply with Attachments.");
+    debug("Background script initialized for Reply with Attachments.");
 
     // Load debug flag and gate console.log output if disabled
     try {
         const conf = await (browser.storage?.local?.get?.({ debug: false }) ?? {});
         DEBUG = !!(conf?.debug);
     } catch (_) { DEBUG = false; }
-    if (!DEBUG) {
-        try { console.log = () => {}; } catch (_) {}
-    }
 
     // Register the onComposeStateChanged listener
     browser.compose.onComposeStateChanged.addListener(handleComposeStateChanged);
-    console.log("onComposeStateChanged listener registered successfully.");
+    debug("onComposeStateChanged listener registered successfully.");
 
     // Last‑chance hook before sending: ensure reply attachments are present
     browser.compose.onBeforeSend?.addListener?.(async (tab, sendDetails) => {
@@ -43,10 +47,6 @@ let DEBUG = false;
 
             const messageId = await resolveMessageId(tabId, composeDetails);
             if (!messageId) return {};
-
-            // If the compose already has attachments, assume user (or we) handled it
-            const existing = await browser.compose.listAttachments?.(tabId).catch(() => []);
-            if (Array.isArray(existing) && existing.length > 0) return {};
 
             const added = await processReplyAttachments(tabId, messageId);
             if (added > 0) {
@@ -69,7 +69,7 @@ let DEBUG = false;
                 const p = browser.sessions?.removeTabValue?.(id, SESSION_KEY);
                 if (p && typeof p.then === 'function') p.catch(() => {});
             } catch (_) {}
-            console.log(`Released processed state for closed tab ${id}.`);
+            debug(`Released processed state for closed tab ${id}.`);
             processedTabsState.delete(id);
         }
     });
@@ -80,8 +80,8 @@ let DEBUG = false;
  * Triggered when a compose window is opened (e.g., new, reply, forward).
  */
 async function handleComposeStateChanged(tabId, details) {
-    console.log("onComposeStateChanged triggered.");
-    console.log("Compose state details:", details);
+    debug("onComposeStateChanged triggered.");
+    debug("Compose state details:", details);
 
     const numericTabId = extractNumericTabId(tabId);
     if (numericTabId === null) {
@@ -91,12 +91,12 @@ async function handleComposeStateChanged(tabId, details) {
 
     try {
         const composeDetails = await browser.compose.getComposeDetails(numericTabId);
-        console.log("Compose details retrieved:", composeDetails);
+        debug("Compose details retrieved:", composeDetails);
 
         // Check if this tabId has already been processed (persistently across background sleeps)
         let memState = processedTabsState.get(numericTabId);
         if (memState === 'processing' || memState === 'done') {
-            console.log(`Tab ID ${numericTabId} already processed (memory). Skipping duplicate processing.`);
+            debug(`Tab ID ${numericTabId} already processed (memory). Skipping duplicate processing.`);
             return;
         }
         // Reserve processing slot immediately to avoid races with parallel events
@@ -104,39 +104,28 @@ async function handleComposeStateChanged(tabId, details) {
         let already = false;
         try { already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY); } catch (_) { already = false; }
         if (already) {
-            console.log(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
+            debug(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
             processedTabsState.set(numericTabId, 'done');
             return;
         }
 
         const typeStr = String(composeDetails?.type || '').toLowerCase();
         if (typeStr.startsWith('reply')) {
-            console.log("Reply detected. Processing attachments...");
-
-            // If compose already has attachments, assume handled and mark processed
-            try {
-                const existing = await browser.compose.listAttachments?.(numericTabId).catch(() => []);
-                if (Array.isArray(existing) && existing.length > 0) {
-                    processedTabsState.set(numericTabId, 'done');
-                    try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
-                    console.log('Compose already has attachments; skipping add.');
-                    return;
-                }
-            } catch (_) { /* ignore */ }
+            debug("Reply detected. Processing attachments...");
             const messageId = await resolveMessageId(numericTabId, composeDetails);
             if (!messageId) { console.warn('Unable to resolve original messageId (retry or onBeforeSend will handle).'); return; }
-            console.log(`Using messageId: ${messageId} for attachment processing.`);
+            debug(`Using messageId: ${messageId} for attachment processing.`);
             const added = await processReplyAttachments(numericTabId, messageId);
             if (added > 0) {
                 processedTabsState.set(numericTabId, 'done');
                 try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
             } else {
                 // Do not mark as processed if nothing was added; allow subsequent events to retry.
-                console.log('No attachments added; leaving tab eligible for retry.');
+                debug('No attachments added; leaving tab eligible for retry.');
                 processedTabsState.delete(numericTabId);
             }
         } else {
-            console.log("Compose type is not a reply. Skipping attachment handling.");
+            debug("Compose type is not a reply. Skipping attachment handling.");
         }
     } catch (error) {
         console.error("Error in handleComposeStateChanged:", error);
@@ -170,9 +159,18 @@ async function processReplyAttachments(tabId, messageId) {
         // Retrieve the list of attachments from the original message
         const attachments = await browser.messages.listAttachments(messageId);
         if (attachments.length === 0) {
-            console.log("No attachments found in the original message.");
+            debug("No attachments found in the original message.");
             return 0;
         }
+
+        // Gather existing compose attachment names to avoid adding duplicates by name
+        let existingNames = new Set();
+        try {
+            const existingCompose = await browser.compose.listAttachments?.(tabId).catch(() => []);
+            if (Array.isArray(existingCompose)) {
+                existingNames = new Set(existingCompose.map(a => String(a.name || a.fileName || '').toLowerCase()));
+            }
+        } catch (_) { /* ignore */ }
 
         // Track added partNames locally to avoid duplicates within one processing run
         const addedPartNames = new Set();
@@ -191,10 +189,16 @@ async function processReplyAttachments(tabId, messageId) {
 
         const preferAdd = async (att) => {
             if (addedPartNames.has(att.partName)) return false;
+            const attNameKey = String(att.name || att.fileName || '').toLowerCase();
+            if (attNameKey && existingNames.has(attNameKey)) {
+                debug(`Skipping already present in compose: ${att.name}`);
+                return false;
+            }
             try {
-                console.log(`Attempting to add attachment: ${att.name}`);
+                debug(`Attempting to add attachment: ${att.name}`);
                 await addAttachmentToCompose(tabId, messageId, att);
                 addedPartNames.add(att.partName);
+                if (attNameKey) existingNames.add(attNameKey);
                 return true;
             } catch (e) {
                 console.error(`Failed to add ${att.name}:`, e);
@@ -212,7 +216,7 @@ async function processReplyAttachments(tabId, messageId) {
             if (
                 isSmime(attachment)
             ) {
-                console.log(`Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`);
+                debug(`Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`);
                 continue;
             }
 
@@ -220,7 +224,7 @@ async function processReplyAttachments(tabId, messageId) {
             if (attachment.contentId) {
                 const type = String(attachment.contentType || '').toLowerCase();
                 if (type.startsWith('image/')) {
-                    console.log(`Skipping inline image: ${attachment.name} (contentId present)`);
+                    debug(`Skipping inline image: ${attachment.name} (contentId present)`);
                     continue;
                 }
             }
@@ -229,18 +233,18 @@ async function processReplyAttachments(tabId, messageId) {
             // "attachment; filename=...". Skip when it explicitly starts with inline.
             if (dispLower) {
                 if (dispLower.startsWith('inline')) {
-                    console.log(`Skipping inline disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
+                    debug(`Skipping inline disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
                     continue;
                 }
                 if (!dispLower.startsWith('attachment')) {
-                    console.log(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
+                    debug(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
                     continue;
                 }
             }
 
             // Avoid adding duplicate attachments within this processing run
             if (addedPartNames.has(attachment.partName)) {
-                console.log(`Skipping duplicate attachment: ${attachment.name}`);
+                debug(`Skipping duplicate attachment: ${attachment.name}`);
                 continue;
             }
 
@@ -249,7 +253,7 @@ async function processReplyAttachments(tabId, messageId) {
 
         if (addedCount === 0) {
             // Fallback: relax inline/contentId rules but still exclude SMIME
-            console.log('No attachments added on first pass; attempting relaxed fallback…');
+            debug('No attachments added on first pass; attempting relaxed fallback…');
             for (const att of attachments) {
                 if (isSmime(att)) continue;
                 if (await preferAdd(att)) addedCount += 1;
@@ -257,7 +261,7 @@ async function processReplyAttachments(tabId, messageId) {
         }
 
         if (addedCount > 0) {
-            console.log("All attachments added successfully.");
+            debug("All attachments added successfully.");
         } else {
             console.warn('No eligible attachments to add after fallback.');
         }
@@ -293,7 +297,7 @@ async function addAttachmentToCompose(tabId, messageId, attachment) {
             file: attachmentFile,
         });
 
-        console.log(`Attachment added: ${attachment.name || attachment.fileName}`);
+        debug(`Attachment added: ${attachment.name || attachment.fileName}`);
     } catch (error) {
         console.error(`Failed to add attachment ${attachment.name || attachment.fileName}:`, error);
     }

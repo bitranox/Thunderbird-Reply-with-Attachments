@@ -15,7 +15,9 @@
           try {
             browser.tabs.create({ url: href, active: true });
           } catch (_) {
-            location.href = href;
+            if (/^https?:\/\//i.test(href)) {
+              location.href = href;
+            }
           }
         });
       }

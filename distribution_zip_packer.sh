@@ -26,10 +26,19 @@ done
 # Extract version numbers from the manifest files
 extract_version() {
   local file=$1
-  grep -o '"version":\s*"[^"]\+"' "$file" | sed 's/.*"version":\s*"\(.*\)"/\1/' || {
+  local ver=""
+  if command -v jq >/dev/null 2>&1; then
+    ver=$(jq -r '.version // empty' "$file") || ver=""
+  fi
+  if [ -z "$ver" ]; then
+    # Fallback to grep/sed if jq is unavailable
+    ver=$(grep -o '"version"\s*:\s*"[^\"]\+"' "$file" | sed 's/.*"version"\s*:\s*"\(.*\)"/\1/')
+  fi
+  if [ -z "$ver" ]; then
     echo "ERROR: Could not extract version from '$file'!" >&2
     exit 1
-  }
+  fi
+  printf '%s\n' "$ver"
 }
 plugin_version_number_ATN=$(extract_version "./sources/manifest_ATN.json")
 plugin_version_number_PRIVATE=$(extract_version "./sources/manifest_PRIVATE.json")
@@ -109,3 +118,4 @@ create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip"
 create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip"
 
 # Cleanup is automatically triggered on exit
+
