@@ -77,8 +77,26 @@
             <h1 id="header-title" data-i18n="uiHeader"></h1>
         </div>
         <div class="content">
-            <p id="options-text" data-i18n="uiNoOptions"></p>
+            <h2 data-i18n="uiConfirmHeader"></h2>
+            <label><input type="checkbox" id="confirm-before" /> <span data-i18n="uiConfirmLabel"></span></label>
+            <div style="margin-top:8px;">
+              <div data-i18n="uiConfirmDefaultHeader" style="margin-bottom:4px;"></div>
+              <label style="margin-right:12px;"><input type="radio" name="confirm-default" value="yes" checked> <span data-i18n="uiConfirmDefaultYes"></span></label>
+              <label><input type="radio" name="confirm-default" value="no"> <span data-i18n="uiConfirmDefaultNo"></span></label>
+            </div>
+            <p style="margin-top: 6px;" data-i18n="uiConfirmHelp"></p>
 
+            <h2 style="margin-top: 18px;" data-i18n="uiBlacklistHeader"></h2>
+            <p data-i18n="uiBlacklistHelp"></p>
+            <textarea id="blacklist-patterns" rows="8" style="width:100%; font-family:monospace;" placeholder="*.png\nsmime.*\n*.p7s"></textarea>
+            <div style="margin-top:10px;">
+                <button id="save-btn" data-i18n="uiSave"></button>
+                <button id="reset-btn" data-i18n="uiReset" style="margin-left:6px;"></button>
+                <span id="status-saved" style="display:none; margin-left:8px; color:green;" data-i18n="uiSaved"></span>
+                <span id="status-reset" style="display:none; margin-left:8px; color:green;" data-i18n="uiResetDone"></span>
+            </div>
+
+            <hr style="margin:24px 0;"/>
             <p id="support-text" data-i18n="uiSupport"></p>
             <a id="donate-link" class="button" data-i18n-attr="href:donateUrl"><button data-i18n="uiDonate"></button></a>
 
@@ -92,6 +110,7 @@
         </div>
     </div>
     <script src="ui_i18n.js"></script>
+    <script src="options.js"></script>
     <script src="handle_donate_link.js"></script>
     <script src="handle_github_link.js"></script>
 </body>

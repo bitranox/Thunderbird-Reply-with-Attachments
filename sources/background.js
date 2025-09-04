@@ -1,317 +1,42 @@
-// background.js
+// background.js — entry point (composition root is in app/composition.js)
 
-// Track processed tabs in-memory for this event page lifecycle (processing|done),
-// and also via sessions API to survive background sleeps.
-const SESSION_KEY = 'rwatt_processed';
-const processedTabsState = new Map(); // tabId -> 'processing' | 'done'
-
-// Debug logging flag (set via storage.local { debug: true })
-let DEBUG = false;
-
-// Lightweight debug logger: avoid monkey‑patching console
-function debug(...args) {
-    if (DEBUG) {
-        try { console.log(...args); } catch (_) {}
-    }
-}
-
-// Initialize the background script
 (async () => {
-    debug("Background script initialized for Reply with Attachments.");
+  // Optionally read debug flag to gate console noise
+  let cfg = {};
+  try { cfg = await (browser.storage?.local?.get?.({ debug: false }) ?? {}); } catch (_) {}
+  const DEBUG = !!cfg?.debug;
+  if (DEBUG) console.log('Reply with Attachments: wiring app…');
 
-    // Load debug flag and gate console.log output if disabled
-    try {
-        const conf = await (browser.storage?.local?.get?.({ debug: false }) ?? {});
-        DEBUG = !!(conf?.debug);
-    } catch (_) { DEBUG = false; }
+  // Expose helpers early for tests
+  let _ensure = null;
+  globalThis.extractNumericTabId = function extractNumericTabId(tabId) {
+    if (typeof tabId === 'number') return tabId;
+    if (tabId && typeof tabId === 'object' && typeof tabId.id === 'number') return tabId.id;
+    return null;
+  };
+  globalThis.getComposeDetails = async function getComposeDetails(tabId) {
+    try { return await browser.compose.getComposeDetails(tabId); } catch (_) { return null; }
+  };
+  globalThis.ensureReplyAttachments = async (...args) => { if (_ensure) return _ensure(...args); };
+  globalThis.handleComposeStateChanged = async function handleComposeStateChanged(tabId, _details) {
+    const id = extractNumericTabId(tabId);
+    if (id == null) return;
+    const details = await getComposeDetails(id);
+    if (!details) return;
+    await globalThis.ensureReplyAttachments(id, details);
+  };
+  // Placeholder; will be replaced after wiring
+  globalThis.processReplyAttachments = async () => 0;
 
-    // Register the onComposeStateChanged listener
-    browser.compose.onComposeStateChanged.addListener(handleComposeStateChanged);
-    debug("onComposeStateChanged listener registered successfully.");
+  const { ensureReplyAttachments, processedTabsState, SESSION_KEY } = App.Composition.createAppWiring(browser);
 
-    // Last‑chance hook before sending: ensure reply attachments are present
-    browser.compose.onBeforeSend?.addListener?.(async (tab, sendDetails) => {
-        try {
-            const tabId = extractNumericTabId(tab);
-            if (tabId == null) return {};
-            const composeDetails = await browser.compose.getComposeDetails(tabId);
-            const t = String(composeDetails?.type || '').toLowerCase();
-            if (!t.startsWith('reply')) return {};
-
-            // If already marked processed, skip
-            const state = processedTabsState.get(tabId);
-            if (state === 'processing' || state === 'done') return {};
-            processedTabsState.set(tabId, 'processing');
-            let already = false; try { already = await browser.sessions?.getTabValue?.(tabId, SESSION_KEY); } catch (_) { already = false; }
-            if (already) return {};
-
-            const messageId = await resolveMessageId(tabId, composeDetails);
-            if (!messageId) return {};
-
-            const added = await processReplyAttachments(tabId, messageId);
-            if (added > 0) {
-                processedTabsState.set(tabId, 'done');
-                try { await browser.sessions?.setTabValue?.(tabId, SESSION_KEY, true); } catch (_) {}
-            } else {
-                processedTabsState.delete(tabId);
-            }
-        } catch (err) {
-            console.error('onBeforeSend ensure attachments failed:', err);
-        }
-        return {};
-    });
-
-    // Release per-tab state when a tab is closed
-    browser.tabs?.onRemoved?.addListener?.((closedTabId) => {
-        const id = typeof closedTabId === 'number' ? closedTabId : (closedTabId && closedTabId.id);
-        if (typeof id === 'number') {
-            try {
-                const p = browser.sessions?.removeTabValue?.(id, SESSION_KEY);
-                if (p && typeof p.then === 'function') p.catch(() => {});
-            } catch (_) {}
-            debug(`Released processed state for closed tab ${id}.`);
-            processedTabsState.delete(id);
-        }
-    });
+  // Surface for legacy tests expecting globals
+  _ensure = ensureReplyAttachments;
+  globalThis.ensureReplyAttachments = ensureReplyAttachments;
+  globalThis.processedTabsState = processedTabsState;
+  globalThis.SESSION_KEY = SESSION_KEY;
+  globalThis.processReplyAttachments = App.UseCases.createProcessReplyAttachments({
+    compose: { listAttachments: (id) => browser.compose.listAttachments?.(id) || Promise.resolve([]), addAttachment: (id, a) => browser.compose.addAttachment(id, a) },
+    messages: { listAttachments: (id) => browser.messages.listAttachments(id), getAttachmentFile: (id, p) => browser.messages.getAttachmentFile(id, p) },
+  });
 })();
-
-/**
- * Handles the compose state change event.
- * Triggered when a compose window is opened (e.g., new, reply, forward).
- */
-async function handleComposeStateChanged(tabId, details) {
-    debug("onComposeStateChanged triggered.");
-    debug("Compose state details:", details);
-
-    const numericTabId = extractNumericTabId(tabId);
-    if (numericTabId === null) {
-        console.error("Invalid or missing tabId:", tabId);
-        return;
-    }
-
-    try {
-        const composeDetails = await browser.compose.getComposeDetails(numericTabId);
-        debug("Compose details retrieved:", composeDetails);
-
-        // Check if this tabId has already been processed (persistently across background sleeps)
-        let memState = processedTabsState.get(numericTabId);
-        if (memState === 'processing' || memState === 'done') {
-            debug(`Tab ID ${numericTabId} already processed (memory). Skipping duplicate processing.`);
-            return;
-        }
-        // Reserve processing slot immediately to avoid races with parallel events
-        processedTabsState.set(numericTabId, 'processing');
-        let already = false;
-        try { already = await browser.sessions?.getTabValue?.(numericTabId, SESSION_KEY); } catch (_) { already = false; }
-        if (already) {
-            debug(`Tab ID ${numericTabId} already processed (sessions). Skipping duplicate processing.`);
-            processedTabsState.set(numericTabId, 'done');
-            return;
-        }
-
-        const typeStr = String(composeDetails?.type || '').toLowerCase();
-        if (typeStr.startsWith('reply')) {
-            debug("Reply detected. Processing attachments...");
-            const messageId = await resolveMessageId(numericTabId, composeDetails);
-            if (!messageId) { console.warn('Unable to resolve original messageId (retry or onBeforeSend will handle).'); return; }
-            debug(`Using messageId: ${messageId} for attachment processing.`);
-            const added = await processReplyAttachments(numericTabId, messageId);
-            if (added > 0) {
-                processedTabsState.set(numericTabId, 'done');
-                try { await browser.sessions?.setTabValue?.(numericTabId, SESSION_KEY, true); } catch (_) {}
-            } else {
-                // Do not mark as processed if nothing was added; allow subsequent events to retry.
-                debug('No attachments added; leaving tab eligible for retry.');
-                processedTabsState.delete(numericTabId);
-            }
-        } else {
-            debug("Compose type is not a reply. Skipping attachment handling.");
-        }
-    } catch (error) {
-        console.error("Error in handleComposeStateChanged:", error);
-    }
-}
-
-/**
- * Extracts numeric tabId from the provided tab object or directly if numeric.
- * @param {Object|Number} tabId - The tabId or tab object.
- * @returns {Number|null} - The numeric tabId or null if invalid.
- */
-function extractNumericTabId(tabId) {
-    if (typeof tabId === "number") {
-        return tabId;
-    }
-
-    if (typeof tabId === "object" && typeof tabId.id === "number") {
-        return tabId.id;
-    }
-
-    return null;
-}
-
-/**
- * Processes attachments for reply emails by fetching and attaching files.
- * @param {Number} tabId - ID of the compose tab.
- * @param {Number} messageId - ID of the original message.
- */
-async function processReplyAttachments(tabId, messageId) {
-    try {
-        // Retrieve the list of attachments from the original message
-        const attachments = await browser.messages.listAttachments(messageId);
-        if (attachments.length === 0) {
-            debug("No attachments found in the original message.");
-            return 0;
-        }
-
-        // Gather existing compose attachment names to avoid adding duplicates by name
-        let existingNames = new Set();
-        try {
-            const existingCompose = await browser.compose.listAttachments?.(tabId).catch(() => []);
-            if (Array.isArray(existingCompose)) {
-                existingNames = new Set(existingCompose.map(a => String(a.name || a.fileName || '').toLowerCase()));
-            }
-        } catch (_) { /* ignore */ }
-
-        // Track added partNames locally to avoid duplicates within one processing run
-        const addedPartNames = new Set();
-        let addedCount = 0;
-
-        const isSmime = (att) => {
-            const nameLower = String(att.name || att.fileName || '').toLowerCase();
-            const typeLower = String(att.contentType || '').toLowerCase();
-            return (
-                nameLower === 'smime.p7s' ||
-                typeLower === 'application/pkcs7-signature' ||
-                typeLower === 'application/x-pkcs7-signature' ||
-                typeLower === 'application/pkcs7-mime'
-            );
-        };
-
-        const preferAdd = async (att) => {
-            if (addedPartNames.has(att.partName)) return false;
-            const attNameKey = String(att.name || att.fileName || '').toLowerCase();
-            if (attNameKey && existingNames.has(attNameKey)) {
-                debug(`Skipping already present in compose: ${att.name}`);
-                return false;
-            }
-            try {
-                debug(`Attempting to add attachment: ${att.name}`);
-                await addAttachmentToCompose(tabId, messageId, att);
-                addedPartNames.add(att.partName);
-                if (attNameKey) existingNames.add(attNameKey);
-                return true;
-            } catch (e) {
-                console.error(`Failed to add ${att.name}:`, e);
-                return false;
-            }
-        };
-
-        for (const attachment of attachments) {
-            // Normalize commonly used fields
-            const nameLower = String(attachment.name || attachment.fileName || '').toLowerCase();
-            const typeLower = String(attachment.contentType || '').toLowerCase();
-            const dispLower = String(attachment.contentDisposition || '').toLowerCase();
-
-            // Exclude SMIME/PKCS7 artifacts (case-insensitive, broader set)
-            if (
-                isSmime(attachment)
-            ) {
-                debug(`Skipping SMIME certificate: ${attachment.name} (Content-Type: ${attachment.contentType})`);
-                continue;
-            }
-
-            // Skip inline images only; allow PDFs/XLSX even if a contentId exists
-            if (attachment.contentId) {
-                const type = String(attachment.contentType || '').toLowerCase();
-                if (type.startsWith('image/')) {
-                    debug(`Skipping inline image: ${attachment.name} (contentId present)`);
-                    continue;
-                }
-            }
-
-            // If a contentDisposition is present, allow typical variants like
-            // "attachment; filename=...". Skip when it explicitly starts with inline.
-            if (dispLower) {
-                if (dispLower.startsWith('inline')) {
-                    debug(`Skipping inline disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
-                    continue;
-                }
-                if (!dispLower.startsWith('attachment')) {
-                    debug(`Skipping non-attachment disposition: ${attachment.name} (contentDisposition=${attachment.contentDisposition})`);
-                    continue;
-                }
-            }
-
-            // Avoid adding duplicate attachments within this processing run
-            if (addedPartNames.has(attachment.partName)) {
-                debug(`Skipping duplicate attachment: ${attachment.name}`);
-                continue;
-            }
-
-            if (await preferAdd(attachment)) addedCount += 1;
-        }
-
-        if (addedCount === 0) {
-            // Fallback: relax inline/contentId rules but still exclude SMIME
-            debug('No attachments added on first pass; attempting relaxed fallback…');
-            for (const att of attachments) {
-                if (isSmime(att)) continue;
-                if (await preferAdd(att)) addedCount += 1;
-            }
-        }
-
-        if (addedCount > 0) {
-            debug("All attachments added successfully.");
-        } else {
-            console.warn('No eligible attachments to add after fallback.');
-        }
-        return addedCount;
-    } catch (error) {
-        console.error("Error in processReplyAttachments:", error);
-        return 0;
-    }
-}
-
-
-/**
- * Extracts attachments from the given message.
- * @param {Object} message - The full message object.
- * @returns {Array} - List of attachments.
- */
-// Note: attachment discovery relies on browser.messages.listAttachments per MV3 guidance.
-
-/**
- * Adds a specific attachment to the compose window.
- * @param {Number} tabId - ID of the compose tab.
- * @param {Number} messageId - ID of the original message.
- * @param {Object} attachment - The attachment object to add.
- */
-async function addAttachmentToCompose(tabId, messageId, attachment) {
-    try {
-        const attachmentFile = await browser.messages.getAttachmentFile(messageId, attachment.partName);
-        if (!attachmentFile) {
-            throw new Error("Failed to retrieve attachment file.");
-        }
-
-        await browser.compose.addAttachment(tabId, {
-            file: attachmentFile,
-        });
-
-        debug(`Attachment added: ${attachment.name || attachment.fileName}`);
-    } catch (error) {
-        console.error(`Failed to add attachment ${attachment.name || attachment.fileName}:`, error);
-    }
-}
-
-// Retry helper to obtain the original messageId for a reply compose.
-async function resolveMessageId(tabId, initialDetails, { attempts = 10, delayMs = 200 } = {}) {
-    let composeDetails = initialDetails;
-    for (let i = 0; i < attempts; i++) {
-        const id = composeDetails?.referenceMessageId || composeDetails?.relatedMessageId;
-        if (id) return id;
-        await new Promise(r => setTimeout(r, delayMs));
-        try { composeDetails = await browser.compose.getComposeDetails(tabId); } catch (_) {}
-    }
-    return null;
-}
-

@@ -1,26 +1,25 @@
 (() => {
-  document.addEventListener('DOMContentLoaded', () => {
-    const githubLinks = [
-      document.getElementById('github-link'),
-      document.getElementById('github-link-logo')
-    ];
+  /**
+   * Open a link's current href in a new tab when possible, otherwise fall back
+   * to navigating the current page. No-ops for empty/placeholder hrefs.
+   * @param {HTMLAnchorElement} a
+   * @param {Event} e
+   */
+  function openHref(a, e) {
+    const href = a?.getAttribute('href');
+    if (!href || href === '#') return;
+    e.preventDefault();
+    try {
+      browser.tabs.create({ url: href, active: true });
+    } catch (_) {
+      if (/^https?:\/\//i.test(href)) location.href = href;
+    }
+  }
 
-    // Open the URL already present in the element's href (set via i18n)
-    githubLinks.forEach(link => {
-      if (link) {
-        link.addEventListener('click', (event) => {
-          const href = link.getAttribute('href');
-          if (!href || href === '#') return;
-          event.preventDefault();
-          try {
-            browser.tabs.create({ url: href, active: true });
-          } catch (_) {
-            if (/^https?:\/\//i.test(href)) {
-              location.href = href;
-            }
-          }
-        });
-      }
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    /** @type {HTMLAnchorElement|null} */ const link = document.getElementById('github-link');
+    /** @type {HTMLAnchorElement|null} */ const logo = document.getElementById('github-link-logo');
+    if (link) link.addEventListener('click', (e) => openHref(link, e));
+    if (logo) logo.addEventListener('click', (e) => openHref(logo, e));
   });
 })();

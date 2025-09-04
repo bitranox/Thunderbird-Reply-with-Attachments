@@ -16,6 +16,8 @@
     "compose",
     "messagesRead",
     "messagesModify",
+    "scripting",
+    "windows",
     "sessions",
     "storage",
     "tabs"
@@ -30,7 +32,11 @@
   },
   "compose_action": {
     "default_title": "__MSG_composeTitle__",
-    "default_popup": "popup.html"
+    "default_popup": "options.html"
+  },
+  "action": {
+    "default_title": "__MSG_composeTitle__",
+    "default_popup": "options.html"
   },
   "options_ui": {
     "page": "options.html",

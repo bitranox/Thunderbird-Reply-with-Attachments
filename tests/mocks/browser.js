@@ -3,7 +3,7 @@
 
 import { vi } from 'vitest';
 
-export function createBrowserMock({ attachments = [], getAttachmentFileResult = {} } = {}) {
+export function createBrowserMock({ attachments = [], getAttachmentFileResult = {}, storageLocalInit = {} } = {}) {
   const compose = {
     onComposeStateChanged: { addListener: vi.fn() },
     onBeforeSend: { addListener: vi.fn() },
@@ -35,5 +35,33 @@ export function createBrowserMock({ attachments = [], getAttachmentFileResult = 
     },
   };
 
-  return { compose, messages, tabs, sessions };
+  // storage.local mock with onChanged
+  const _storage = { ...storageLocalInit };
+  const storage = {
+    local: {
+      async get(defaults) {
+        if (!defaults) return { ..._storage };
+        const out = { ...defaults };
+        for (const k of Object.keys(defaults)) {
+          if (_storage[k] !== undefined) out[k] = _storage[k];
+        }
+        return out;
+      },
+      async set(obj) {
+        const changes = {};
+        for (const [k, v] of Object.entries(obj)) {
+          changes[k] = { oldValue: _storage[k], newValue: v };
+          _storage[k] = v;
+        }
+        storage.onChanged._fire(changes, 'local');
+      },
+    },
+    onChanged: {
+      _listeners: [],
+      addListener(fn) { this._listeners.push(fn); },
+      _fire(changes, area) { this._listeners.forEach((fn) => fn(changes, area)); },
+    },
+  };
+
+  return { compose, messages, tabs, sessions, storage };
 }

@@ -8,8 +8,33 @@
   "uiSupport": { "message": "Do you like this add-on? Support me with a small contribution:" },
   "uiDonate": { "message": "Donate now" },
   "uiGithubText": { "message": "For bug reports or other inquiries, please visit my" },
+  "uiBlacklistHeader": { "message": "Blacklist of filenames (glob patterns)" },
+  "uiBlacklistHelp": { "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s" },
+  "uiSave": { "message": "Save" },
+  "uiReset": { "message": "Reset to defaults" },
+  "uiSaved": { "message": "Saved." },
+  "uiResetDone": { "message": "Reset." },
+  "uiConfirmHeader": { "message": "Confirmation" },
+  "uiConfirmLabel": { "message": "Ask before adding attachments" },
+  "uiConfirmHelp": { "message": "A small confirmation dialog appears only when attachments would actually be added." },
+  "confirmAddOne": {
+    "message": "Add attachment: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Add attachments ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "Yes" },
+  "confirmNo": { "message": "No" },
+  "uiConfirmDefaultHeader": { "message": "Default answer" },
+  "uiConfirmDefaultYes": { "message": "Yes" },
+  "uiConfirmDefaultNo": { "message": "No" },
 
   "donateUrl": { "message": "https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" },
   "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README.md" }
 }
-

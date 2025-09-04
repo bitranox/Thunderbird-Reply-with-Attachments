@@ -66,6 +66,7 @@ echo "Version numbers match. Proceeding with distribution packaging..."
 create_zip() {
   local manifest_source=$1
   local zip_target=$2
+  local allow_ts_fallback=${3:-false} # when true, prefix timestamp on failure (PRIVATE build)
 
   echo "Creating ZIP file '$zip_target' with '$manifest_source' as manifest..."
 
@@ -82,17 +83,25 @@ create_zip() {
   }
 
   # Remove existing ZIP file if it exists
-  [ -f "$zip_target" ] && {
+  if [ -f "$zip_target" ]; then
     echo "Removing existing ZIP file '$zip_target'..."
     if ! rm -f "$zip_target"; then
-      echo "WARN: rm failed; attempting rename fallback..." >&2
-      ts=$(date +%s)
-      if ! mv -f "$zip_target" "$zip_target.$ts.old"; then
-        echo "ERROR: Unable to remove or rename existing ZIP ('$zip_target'). File may be locked." >&2
-        exit 1
+      if [ "$allow_ts_fallback" = true ]; then
+        # Keep original, switch to timestamped file name
+        local ts_prefix
+        ts_prefix=$(date +%F_%H-%M-%S)
+        echo "WARN: Unable to remove '$zip_target'. Will write to timestamped file instead." >&2
+        zip_target="${ts_prefix}_$(basename "$zip_target")"
+      else
+        echo "WARN: rm failed; attempting rename fallback..." >&2
+        ts=$(date +%s)
+        if ! mv -f "$zip_target" "$zip_target.$ts.old"; then
+          echo "ERROR: Unable to remove or rename existing ZIP ('$zip_target'). File may be locked." >&2
+          exit 1
+        fi
       fi
     fi
-  }
+  fi
 
   # Create the ZIP file excluding specific files
   (
@@ -100,8 +109,27 @@ create_zip() {
     zip -r "../$zip_target" . \
       -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
   ) || {
-    echo "ERROR: Failed to create ZIP file '$zip_target'!" >&2
-    exit 1
+    if [ "$allow_ts_fallback" = true ]; then
+      # Try once more with a timestamped file name if not already timestamped
+      case "$zip_target" in
+        [0-9][0-9][0-9][0-9]-* ) ;; # already timestamped prefix
+        * )
+          local ts_prefix
+          ts_prefix=$(date +%F_%H-%M-%S)
+          local ts_name="${ts_prefix}_$(basename "$zip_target")"
+          echo "WARN: Initial ZIP failed. Retrying as '$ts_name'." >&2
+          (
+            cd ./sources || exit 1
+            zip -r "../$ts_name" . \
+              -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
+          ) || { echo "ERROR: Failed to create ZIP file '$ts_name'!" >&2; exit 1; }
+          zip_target="$ts_name"
+        ;;
+      esac
+    else
+      echo "ERROR: Failed to create ZIP file '$zip_target'!" >&2
+      exit 1
+    fi
   }
 
   # Verify the ZIP was created
@@ -114,8 +142,7 @@ create_zip() {
 }
 
 # Create ZIP files
-create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip"
-create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip"
+create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip" false
+create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip" true
 
 # Cleanup is automatically triggered on exit
-
