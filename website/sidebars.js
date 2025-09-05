@@ -11,6 +11,7 @@ const sidebars = {
     'languages',
     'glossary',
     'support',
+    'donation',
     'licence',
     'changelog'
   ]

@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: website/package.json
+          cache-dependency-path: website/package-lock.json
       - name: Install deps
-        run: npm install
+        run: npm ci
       - name: "Build (PRs: en only)"
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
@@ -64,9 +64,9 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: website/package.json
+          cache-dependency-path: website/package-lock.json
       - name: Install deps
-        run: npm install
+        run: npm ci
       - name: Build all locales
         run: npm run build
       - name: Deploy to GitHub Pages

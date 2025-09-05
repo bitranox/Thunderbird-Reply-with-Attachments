@@ -6,29 +6,32 @@ The format is based on Keep a Changelog, and this project adheres to
 Semantic Versioning (where applicable for add-on releases).
 
 ## [Unreleased]
-- CI: consider adding GitHub Actions for `make test` and `web-ext lint`.
 - Permissions audit: verify if `messagesModify` can be dropped.
+- Docs: Donation page (EN/DE) and sidebar entry.
+- Docs CI: use `npm ci` and cache `website/package-lock.json` for better cache hits.
+- Testing: maintain high coverage; optional homepage smoke import.
 
 ## [2025-09-05] — Architecture, Tests, CSP, Docs
 ### Added
-- Extensive test suite expansion (53 → 59 tests):
+- Extensive test suite expansion (53 → 73 tests):
   - Dialog focus trap, keyboard shortcuts (Y/J, N/Escape, Tab/Arrows), overlay cleanup.
   - Composition storage listeners (blacklist/confirm) and scripting error handling.
-  - Scripting preregistration (register/skip/execute) coverage.
-  - Adapter port contract checks.
-- Clean Code micro‑refactor across modules; tiny functions that read like English.
-- JSDoc for modules and functions (intent, params, outputs).
-- CONTRIBUTING.md with principles, PR checklist, coverage notes.
-- README/README_DE: test/coverage sections and badges.
+  - Scripting preregistration (register/skip/execute) coverage; background apply‑settings integration test.
+  - Website config/sidebars smoke tests.
+- Codecov integration (action v5) and coverage badge; artifacts per Node version.
+- ESLint baseline and CI lint steps (web‑ext + ESLint).
 
 ### Changed
-- Confirm UI: removed header icon; text‑only, accessible dialog.
-- Options page: removed inline script (CSP‑friendly); `ui_i18n.js` sets `html.js` class.
-- Composition/background: clearer helpers; thin entrypoint; preregister confirm script.
-- Application use cases: robust fallbacks when domain helpers aren’t loaded yet.
+- Upgraded Vitest stack to v3.2.4 and @vitest/coverage‑v8.
+- Composition: injected logger used consistently; avoid redundant content‑script injection per tab.
+- Confirm UI: a11y labels (aria‑labelledby/aria‑describedby).
+- Options: extracted CSS to `sources/options.css` (CSP/theming‑friendly).
+- Docs site: safer local search plugin resolution; footer link fix; blog disabled.
 
 ### Fixed
-- Multiple edge‑case guards (API failures, missing permissions, scripting errors) now handled gracefully.
+- CI artifact name conflicts (unique per Node matrix, overwrite on reruns).
+- Noisy stderr in tests (muted expected warnings in error‑path cases).
+
 
 ## [1.0.1]
 ### Changed
