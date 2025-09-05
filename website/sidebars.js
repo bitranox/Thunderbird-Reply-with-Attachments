@@ -5,6 +5,7 @@ const sidebars = {
     'install',
     'configuration',
     'usage',
+    'compatibility',
     'permissions',
     'changelog'
   ]

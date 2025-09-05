@@ -17,10 +17,14 @@ function pickLocale(available, def) {
 }
 
 export default function Home() {
-  const { i18n: { defaultLocale, locales } } = useDocusaurusContext();
-  // Let Docusaurus i18n handle locale prefixes; avoid adding `/${loc}` manually,
-  // which caused `/de/de/…` on localized homepages.
-  const docsUrl = useBaseUrl('/docs/features');
+  const { i18n: { defaultLocale, locales, currentLocale } } = useDocusaurusContext();
+  // Compute a locale-aware docs URL:
+  // - If we're already on a localized page (currentLocale !== defaultLocale), use that.
+  // - Otherwise, detect the user's preferred locale and use it when different from default.
+  const detected = pickLocale(locales, defaultLocale);
+  const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
+  const docsUrl = useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/features`);
+  const docLink = (slug) => useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}`);
 
   return (
     <Layout
@@ -62,9 +66,10 @@ export default function Home() {
         <section style={{marginTop: 24}}>
           <h2 style={{fontSize: 18, margin: '0 0 12px 0'}}>Docs quick links</h2>
           <div className="ctaRow" style={{gap: 10, display: 'flex', flexWrap: 'wrap'}}>
-            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/install')}>Install</Link>
-            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/configuration')}>Configuration</Link>
-            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/usage')}>Usage</Link>
+            <Link className="button button--sm button--secondary" to={docLink('install')}>Install</Link>
+            <Link className="button button--sm button--secondary" to={docLink('configuration')}>Configuration</Link>
+            <Link className="button button--sm button--secondary" to={docLink('usage')}>Usage</Link>
+            <Link className="button button--sm button--secondary" to={docLink('compatibility')}>Compatibility</Link>
           </div>
         </section>
       </main>
