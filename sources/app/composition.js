@@ -19,7 +19,8 @@
   const injectedConfirmScriptTabs = new Set();
 
   // small utilities
-  const toNumericId = (v) => (typeof v === 'number' ? v : (v && typeof v.id === 'number' ? v.id : null));
+  const toNumericId = (v) =>
+    typeof v === 'number' ? v : v && typeof v.id === 'number' ? v.id : null;
   const yesNo = (v) => (String(v || 'yes').toLowerCase() === 'no' ? 'no' : 'yes');
 
   /**
@@ -33,8 +34,13 @@
    * @param {any} browser MailExtension browser/messenger object
    */
   function createAppWiring(browser) {
-    const { compose, messages, sessions, tabs, scriptingCompose } = App.Adapters.makeThunderbirdPorts(browser);
-    const logger = { info: console.info.bind(console), warn: console.warn.bind(console), error: console.error.bind(console) };
+    const { compose, messages, sessions, tabs, scriptingCompose } =
+      App.Adapters.makeThunderbirdPorts(browser);
+    const logger = {
+      info: console.info.bind(console),
+      warn: console.warn.bind(console),
+      error: console.error.bind(console),
+    };
 
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
@@ -53,7 +59,16 @@
     })();
 
     // confirm function, updated when settings change
-    let ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
+    let ensure = App.UseCases.createEnsureReplyAttachments({
+      compose,
+      messages,
+      sessions,
+      state: processedTabsState,
+      sessionKey: SESSION_KEY,
+      shouldExclude: (name) => exclude(name),
+      confirm: confirmAddSelectedFiles,
+      logger,
+    });
     /**
      * Ask the user to confirm adding the given files.
      * @param {number} tabId Compose tab id
@@ -64,20 +79,40 @@
       await ready;
       if (!shouldAsk(selected)) return true;
       await ensureConfirmInjected(tabId, scriptingCompose);
-      const files = selected.map(s => s.name).filter(Boolean);
+      const files = selected.map((s) => s.name).filter(Boolean);
       return await askUserForConfirmation({ files, def: defaultAnswer }, tabId, browser, tabs);
     }
-    function shouldAsk(selected) { return !!selected?.length && askBeforeAdd; }
+    function shouldAsk(selected) {
+      return !!selected?.length && askBeforeAdd;
+    }
 
     // react to settings updates
     browser.storage?.onChanged?.addListener?.((changes, area) => {
       if (area === 'local' && changes?.blacklistPatterns) {
         exclude = App.Domain.makeNameExcluder(changes.blacklistPatterns.newValue || []);
-        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
+        ensure = App.UseCases.createEnsureReplyAttachments({
+          compose,
+          messages,
+          sessions,
+          state: processedTabsState,
+          sessionKey: SESSION_KEY,
+          shouldExclude: (name) => exclude(name),
+          confirm: confirmAddSelectedFiles,
+          logger,
+        });
       }
       if (area === 'local' && changes?.confirmBeforeAdd) {
         askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
-        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
+        ensure = App.UseCases.createEnsureReplyAttachments({
+          compose,
+          messages,
+          sessions,
+          state: processedTabsState,
+          sessionKey: SESSION_KEY,
+          shouldExclude: (name) => exclude(name),
+          confirm: confirmAddSelectedFiles,
+          logger,
+        });
       }
       if (area === 'local' && changes?.confirmDefaultChoice) {
         defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
@@ -88,51 +123,94 @@
     // Register the confirm content script so it is available for new windows.
     const ensureRegistered = (async () => {
       try {
-        const regs = await scriptingCompose.getRegisteredScripts?.() || [];
-        if (!regs.find(r => r.id === 'rwa-confirm')) await scriptingCompose.registerScripts?.([{ id: 'rwa-confirm', js: ['content/confirm.js'] }]);
+        const regs = (await scriptingCompose.getRegisteredScripts?.()) || [];
+        if (!regs.find((r) => r.id === 'rwa-confirm'))
+          await scriptingCompose.registerScripts?.([
+            { id: 'rwa-confirm', js: ['content/confirm.js'] },
+          ]);
       } catch (_) {}
     })();
 
     // event wiring
     // On compose state changes, ensure tabs are processed once per reply.
     compose.onStateChanged.addListener(async (tabId) => {
-      const id = toNumericId(tabId); if (id == null) return;
-      await ensureRegistered; await ensureConfirmInjected(id, scriptingCompose);
-      const details = await compose.getDetails(id).catch(() => null); if (!details) return;
+      const id = toNumericId(tabId);
+      if (id == null) return;
+      await ensureRegistered;
+      await ensureConfirmInjected(id, scriptingCompose);
+      const details = await compose.getDetails(id).catch(() => null);
+      if (!details) return;
       await ensure(id, details);
     });
 
     // On send attempt, run a last ensure pass in case state change was missed.
     compose.onBeforeSend?.addListener?.(async (tab) => {
-      const id = toNumericId(tab); if (id == null) return {};
-      await ensureRegistered; await ensureConfirmInjected(id, scriptingCompose);
-      const details = await compose.getDetails(id).catch(() => null); if (!details) return {};
+      const id = toNumericId(tab);
+      if (id == null) return {};
+      await ensureRegistered;
+      await ensureConfirmInjected(id, scriptingCompose);
+      const details = await compose.getDetails(id).catch(() => null);
+      if (!details) return {};
       await ensure(id, details);
       return {};
     });
 
     // Cleanup per‑tab memory and session marker when a tab closes.
     tabs?.onRemoved?.addListener?.((closedTabId) => {
-      const id = toNumericId(closedTabId); if (id == null) return;
-      try { sessions.removeTabValue(id, SESSION_KEY)?.catch?.(() => {}); } catch (_) {}
+      const id = toNumericId(closedTabId);
+      if (id == null) return;
+      try {
+        sessions.removeTabValue(id, SESSION_KEY)?.catch?.(() => {});
+      } catch (_) {}
       processedTabsState.delete(id);
       injectedConfirmScriptTabs.delete(id);
     });
 
-    return { ensureReplyAttachments: (tabId, details) => ensure(tabId, details), processedTabsState, SESSION_KEY };
+    return {
+      ensureReplyAttachments: (tabId, details) => ensure(tabId, details),
+      processedTabsState,
+      SESSION_KEY,
+    };
   }
 
   // storage readers
   /** Load blacklist patterns from storage (empty array on error). */
-  async function readBlacklist(browser) { try { const r = await browser.storage?.local?.get?.({ blacklistPatterns: [] }); return Array.isArray(r?.blacklistPatterns) ? r.blacklistPatterns : []; } catch (_) { return []; } }
+  async function readBlacklist(browser) {
+    try {
+      const r = await browser.storage?.local?.get?.({ blacklistPatterns: [] });
+      return Array.isArray(r?.blacklistPatterns) ? r.blacklistPatterns : [];
+    } catch (_) {
+      return [];
+    }
+  }
   /** Load confirmation toggle from storage (false on error). */
-  async function readConfirmEnabled(browser) { try { const r = await browser.storage?.local?.get?.({ confirmBeforeAdd: false }); return !!r?.confirmBeforeAdd; } catch (_) { return false; } }
+  async function readConfirmEnabled(browser) {
+    try {
+      const r = await browser.storage?.local?.get?.({ confirmBeforeAdd: false });
+      return !!r?.confirmBeforeAdd;
+    } catch (_) {
+      return false;
+    }
+  }
   /** Load default answer for confirmation as 'yes' | 'no'. */
-  async function readConfirmDefault(browser) { try { const r = await browser.storage?.local?.get?.({ confirmDefaultChoice: 'yes' }); return yesNo(r?.confirmDefaultChoice); } catch (_) { return 'yes'; } }
+  async function readConfirmDefault(browser) {
+    try {
+      const r = await browser.storage?.local?.get?.({ confirmDefaultChoice: 'yes' });
+      return yesNo(r?.confirmDefaultChoice);
+    } catch (_) {
+      return 'yes';
+    }
+  }
 
   // confirm helpers
   /** Ensure the confirm content script is injected into the target compose tab. */
-  async function ensureConfirmInjected(tabId, scriptingCompose) { try { if (injectedConfirmScriptTabs.has(tabId)) return; await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']); injectedConfirmScriptTabs.add(tabId); } catch (_) {} }
+  async function ensureConfirmInjected(tabId, scriptingCompose) {
+    try {
+      if (injectedConfirmScriptTabs.has(tabId)) return;
+      await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']);
+      injectedConfirmScriptTabs.add(tabId);
+    } catch (_) {}
+  }
   /** Ask the user via content script; fall back progressively if needed. */
   /**
    * Ask the user via targeted tab → broadcast → popup fallback.
@@ -147,24 +225,53 @@
     return await askInPopup(browser, files, def, logger);
   }
   /** Try targeted tab messaging; return decision or null on error. */
-  async function tryTargetedConfirm(tabs, tabId, payload) { try { return await tabs.sendMessage(tabId, payload); } catch (_) { return null; } }
+  async function tryTargetedConfirm(tabs, tabId, payload) {
+    try {
+      return await tabs.sendMessage(tabId, payload);
+    } catch (_) {
+      return null;
+    }
+  }
   /** Try runtime broadcast; return decision or null on error. */
-  async function tryBroadcastConfirm(browser, payload) { try { return await browser.runtime?.sendMessage?.(payload); } catch (_) { return null; } }
-  function isDecision(x) { return x && typeof x.ok === 'boolean'; }
+  async function tryBroadcastConfirm(browser, payload) {
+    try {
+      return await browser.runtime?.sendMessage?.(payload);
+    } catch (_) {
+      return null;
+    }
+  }
+  function isDecision(x) {
+    return x && typeof x.ok === 'boolean';
+  }
   /** Last resort: open a small popup window to ask for confirmation. */
   async function askInPopup(browser, files, def, logger) {
     try {
       const token = Math.random().toString(36).slice(2);
       const url = buildConfirmUrl(browser, token, files, def);
       const result = waitForConfirm(browser, token);
-      const win = await browser.windows?.create?.({ url, type: 'popup', width: 520, height: 180, focused: true });
-      try { if (win && typeof win.id === 'number') await browser.windows?.update?.(win.id, { focused: true }); } catch (_) {}
+      const win = await browser.windows?.create?.({
+        url,
+        type: 'popup',
+        width: 520,
+        height: 180,
+        focused: true,
+      });
+      try {
+        if (win && typeof win.id === 'number')
+          await browser.windows?.update?.(win.id, { focused: true });
+      } catch (_) {}
       return await result;
-    } catch (err) { try { logger?.warn?.({ err }, 'askInPopup failed'); } catch (_) {} return false; }
+    } catch (err) {
+      try {
+        logger?.warn?.({ err }, 'askInPopup failed');
+      } catch (_) {}
+      return false;
+    }
   }
   /** Build confirm.html URL with query parameters. */
   function buildConfirmUrl(browser, token, files, def) {
-    const base = (browser.runtime?.getURL && browser.runtime.getURL('confirm.html')) || 'confirm.html';
+    const base =
+      (browser.runtime?.getURL && browser.runtime.getURL('confirm.html')) || 'confirm.html';
     const count = files.length;
     const list = files.slice(0, 5).join(', ');
     const more = count > 5 ? String(count - 5) : '';
@@ -177,11 +284,18 @@
     return new Promise((resolve) => {
       const listener = (msg) => {
         if (!msg || msg.type !== 'rwa:confirm-result' || msg.t !== token) return;
-        try { browser.runtime.onMessage.removeListener(listener); } catch (_) {}
+        try {
+          browser.runtime.onMessage.removeListener(listener);
+        } catch (_) {}
         resolve(!!msg.ok);
       };
       browser.runtime.onMessage.addListener(listener);
-      setTimeout(() => { try { browser.runtime.onMessage.removeListener(listener); } catch (_) {} resolve(false); }, 20000);
+      setTimeout(() => {
+        try {
+          browser.runtime.onMessage.removeListener(listener);
+        } catch (_) {}
+        resolve(false);
+      }, 20000);
     });
   }
 

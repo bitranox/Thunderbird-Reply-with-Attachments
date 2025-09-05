@@ -17,4 +17,3 @@ describe('Composition — safety around compose details', () => {
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });
 });
-

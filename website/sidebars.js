@@ -14,8 +14,8 @@ const sidebars = {
     'privacy',
     'donation',
     'licence',
-    'changelog'
-  ]
+    'changelog',
+  ],
 };
 
 module.exports = sidebars;

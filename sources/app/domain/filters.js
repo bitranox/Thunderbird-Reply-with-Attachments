@@ -14,7 +14,9 @@ function lower(s) {
 /** Resolve a canonical, case‑insensitive filename for an attachment. */
 function normalizedName(att) {
   let s = String(att?.name || att?.fileName || '');
-  try { if (s.normalize) s = s.normalize('NFC'); } catch (_) {}
+  try {
+    if (s.normalize) s = s.normalize('NFC');
+  } catch (_) {}
   // Trim outer whitespace and Windows-unfriendly trailing dots/spaces
   s = s.trim().replace(/[\.\s]+$/g, '');
   return lower(s);
@@ -24,10 +26,12 @@ function normalizedName(att) {
 function isSmime(att) {
   const n = normalizedName(att);
   const t = lower(att?.contentType);
-  return n === 'smime.p7s' ||
-         t === 'application/pkcs7-signature' ||
-         t === 'application/x-pkcs7-signature' ||
-         t === 'application/pkcs7-mime';
+  return (
+    n === 'smime.p7s' ||
+    t === 'application/pkcs7-signature' ||
+    t === 'application/x-pkcs7-signature' ||
+    t === 'application/pkcs7-mime'
+  );
 }
 
 /** Inline images referenced by CID should not be copied as file attachments. */
@@ -59,7 +63,15 @@ function includeRelaxed(att) {
 
 // Optional namespacing for clarity (does not affect globals used by tests)
 globalThis.App = globalThis.App || {};
-App.Domain = { lower, normalizedName, isSmime, isInlineImage, isInlineDisposition, includeStrict, includeRelaxed };
+App.Domain = {
+  lower,
+  normalizedName,
+  isSmime,
+  isInlineImage,
+  isInlineDisposition,
+  includeStrict,
+  includeRelaxed,
+};
 
 // --- Glob matching utilities for blacklist ---------------------------------
 
@@ -81,17 +93,32 @@ function globToRegExp(glob) {
       } else {
         re += String(next).replace(special, '\\$&');
       }
-      i += 2; continue;
+      i += 2;
+      continue;
     }
     if (ch === '*') {
       // ** -> match any path segments
-      if (glob[i + 1] === '*') { re += '.*'; i += 2; continue; }
-      re += '[^/]*'; i += 1; continue;
+      if (glob[i + 1] === '*') {
+        re += '.*';
+        i += 2;
+        continue;
+      }
+      re += '[^/]*';
+      i += 1;
+      continue;
     }
-    if (ch === '?') { re += '[^/]'; i += 1; continue; }
+    if (ch === '?') {
+      re += '[^/]';
+      i += 1;
+      continue;
+    }
     if (ch === '[') {
       const j = glob.indexOf(']', i + 1);
-      if (j !== -1) { re += glob.slice(i, j + 1); i = j + 1; continue; }
+      if (j !== -1) {
+        re += glob.slice(i, j + 1);
+        i = j + 1;
+        continue;
+      }
     }
     re += ch.replace(special, '\\$&');
     i += 1;
@@ -103,7 +130,11 @@ function globToRegExp(glob) {
 /** Build a predicate that checks if a filename should be excluded by patterns. */
 function makeNameExcluder(patterns) {
   const regs = (patterns || [])
-    .map((p) => String(p || '').trim().toLowerCase())
+    .map((p) =>
+      String(p || '')
+        .trim()
+        .toLowerCase()
+    )
     .filter(Boolean)
     .map((s) => globToRegExp(s));
   return function shouldExclude(name) {

@@ -16,6 +16,7 @@ This add‑on requires the following permissions:
 ```
 
 Notes
+
 - `compose`: read composer state, manage attachments, and react to compose events.
 - `messagesRead`: discover and read original attachments from the source message.
 - Removed: `messagesModify` — no longer required for the add‑on’s current flows (reading attachments and adding them to compose). If future features modify messages, we will document and reintroduce it explicitly.

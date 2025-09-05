@@ -7,15 +7,22 @@ describe('thunderbird adapter — thin and brave', () => {
         getComposeDetails: vi.fn().mockResolvedValue({ id: 1 }),
         addAttachment: vi.fn().mockResolvedValue(undefined),
         onBeforeSend: { addListener: vi.fn() },
-        onComposeStateChanged: { addListener: vi.fn() }
+        onComposeStateChanged: { addListener: vi.fn() },
       },
       messages: {
         listAttachments: vi.fn().mockResolvedValue([{ partName: '1' }]),
-        getAttachmentFile: vi.fn().mockResolvedValue(new Blob())
+        getAttachmentFile: vi.fn().mockResolvedValue(new Blob()),
       },
       tabs: { onRemoved: { addListener: vi.fn() }, sendMessage: vi.fn() },
       sessions: { getTabValue: vi.fn(), setTabValue: vi.fn(), removeTabValue: vi.fn() },
-      scripting: { compose: { executeScript: vi.fn(), registerScripts: vi.fn(), getRegisteredScripts: vi.fn().mockResolvedValue([]), unregisterScripts: vi.fn() } }
+      scripting: {
+        compose: {
+          executeScript: vi.fn(),
+          registerScripts: vi.fn(),
+          getRegisteredScripts: vi.fn().mockResolvedValue([]),
+          unregisterScripts: vi.fn(),
+        },
+      },
     };
     const { default: portsMod } = await import('../sources/app/adapters/thunderbird.js');
     // module exports to global App; access function from there
@@ -27,11 +34,17 @@ describe('thunderbird adapter — thin and brave', () => {
     expect(await ports.messages.listAttachments(9)).toHaveLength(1);
     expect(await ports.messages.getAttachmentFile(9, '1')).toBeInstanceOf(Blob);
     await ports.scriptingCompose.executeScript(5, ['a.js']);
-    expect(browser.scripting.compose.executeScript).toHaveBeenCalledWith({ tabId: 5, files: ['a.js'] });
+    expect(browser.scripting.compose.executeScript).toHaveBeenCalledWith({
+      tabId: 5,
+      files: ['a.js'],
+    });
   });
 
   it('gracefully handles missing optional APIs', async () => {
-    const browser = { compose: { getComposeDetails: vi.fn().mockResolvedValue({}) }, scripting: {} };
+    const browser = {
+      compose: { getComposeDetails: vi.fn().mockResolvedValue({}) },
+      scripting: {},
+    };
     await import('../sources/app/adapters/thunderbird.js');
     const ports = globalThis.App.Adapters.makeThunderbirdPorts(browser);
     // sessions/tabs/messages may be undefined; calls should not throw
@@ -39,4 +52,3 @@ describe('thunderbird adapter — thin and brave', () => {
     await expect(ports.tabs.sendMessage(1, {})).resolves.toBeUndefined();
   });
 });
-

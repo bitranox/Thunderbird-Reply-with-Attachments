@@ -36,7 +36,9 @@ describe('UseCases — unit', () => {
     ];
     const messages = {
       listAttachments: vi.fn().mockResolvedValue(attachments),
-      getAttachmentFile: vi.fn().mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
+      getAttachmentFile: vi
+        .fn()
+        .mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
     };
     const proc = App.UseCases.createProcessReplyAttachments({ compose, messages });
     const added = await proc(1, 100);
@@ -51,16 +53,28 @@ describe('UseCases — unit', () => {
       addAttachment: vi.fn().mockResolvedValue(undefined),
     };
     const messages = {
-      listAttachments: vi.fn().mockResolvedValue([{ name: 'a.txt', partName: 'p1', contentType: 'text/plain' }]),
+      listAttachments: vi
+        .fn()
+        .mockResolvedValue([{ name: 'a.txt', partName: 'p1', contentType: 'text/plain' }]),
       getAttachmentFile: vi.fn().mockResolvedValue({ name: 'a.txt' }),
     };
     const _tab = new Map();
     const sessions = {
-      async getTabValue(tab, key) { return _tab.get(`${tab}:${key}`); },
-      async setTabValue(tab, key, val) { _tab.set(`${tab}:${key}`, val); },
+      async getTabValue(tab, key) {
+        return _tab.get(`${tab}:${key}`);
+      },
+      async setTabValue(tab, key, val) {
+        _tab.set(`${tab}:${key}`, val);
+      },
     };
     const state = new Map();
-    const ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state, sessionKey: 'S' });
+    const ensure = App.UseCases.createEnsureReplyAttachments({
+      compose,
+      messages,
+      sessions,
+      state,
+      sessionKey: 'S',
+    });
     await ensure(5, { type: 'reply', referenceMessageId: 200 });
     await ensure(5, { type: 'reply', referenceMessageId: 200 });
     expect(compose.addAttachment).toHaveBeenCalledTimes(1);

@@ -14,6 +14,7 @@ Hilfe benötigt oder einen Fehler melden?
 - Add‑ons‑Seite (ATN): Feedback ist auch über die Add‑on‑Seite möglich.
 
 Tipps
+
 - Stelle sicher, dass eine unterstützte Thunderbird‑Version (128 ESR oder neuer) verwendet wird.
 - Sieh dir die Seiten „Konfiguration“ und „Verwendung“ für häufige Fragen an.
 - Für Entwicklung/Tests: siehe den Entwicklungsleitfaden.

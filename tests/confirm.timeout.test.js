@@ -7,7 +7,7 @@ describe('confirm popup timeout path', () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,
       messageAttachments: [{ name: 'a.txt', partName: '1' }],
-      getFileByPart: async () => new Blob(['x'], { type: 'text/plain' })
+      getFileByPart: async () => new Blob(['x'], { type: 'text/plain' }),
     });
     // Force targeted and broadcast confirm to fail to trigger popup timeout
     browser.tabs.sendMessage.mockRejectedValue(new Error('no targeted listener'));
@@ -18,9 +18,9 @@ describe('confirm popup timeout path', () => {
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
 
-    (await import('../sources/app/composition.js'));
+    await import('../sources/app/composition.js');
     const wiring = App.Composition.createAppWiring(browser);
-    
+
     // trigger onStateChanged handler registered by wiring
     const stateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
     const p = stateCb(1);

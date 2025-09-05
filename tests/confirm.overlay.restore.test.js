@@ -5,7 +5,16 @@ describe('confirm dialog — opens softly, leaves no trace', () => {
   let listener;
   beforeEach(async () => {
     document.body.innerHTML = '<div id="root"></div>';
-    globalThis.browser = { runtime: { onMessage: { addListener: (fn) => { listener = fn; } } }, i18n: { getMessage: vi.fn() } };
+    globalThis.browser = {
+      runtime: {
+        onMessage: {
+          addListener: (fn) => {
+            listener = fn;
+          },
+        },
+      },
+      i18n: { getMessage: vi.fn() },
+    };
     await import('../sources/content/confirm.js');
   });
 
@@ -23,5 +32,6 @@ describe('confirm dialog — opens softly, leaves no trace', () => {
   });
 });
 
-function tick() { return new Promise(r => setTimeout(r, 0)); }
-
+function tick() {
+  return new Promise((r) => setTimeout(r, 0));
+}

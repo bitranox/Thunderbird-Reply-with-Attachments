@@ -5,7 +5,7 @@ describe('Composition — cleanup on tab remove', () => {
   it('removes session flag and in-memory state on tab close', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
-      getFileByPart: async () => new Blob(['x'])
+      getFileByPart: async () => new Blob(['x']),
     });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
@@ -24,4 +24,3 @@ describe('Composition — cleanup on tab remove', () => {
     expect(browser.sessions.removeTabValue).toHaveBeenCalledWith(tabId, wiring.SESSION_KEY);
   });
 });
-

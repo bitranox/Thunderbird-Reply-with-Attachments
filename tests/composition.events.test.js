@@ -16,8 +16,13 @@ describe('Composition wiring — events', () => {
     await onStateCb(10);
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
 
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 99 });
-    browser.messages.listAttachments.mockResolvedValueOnce([{ name: 'x.pdf', partName: '1', contentType: 'application/pdf' }]);
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 99,
+    });
+    browser.messages.listAttachments.mockResolvedValueOnce([
+      { name: 'x.pdf', partName: '1', contentType: 'application/pdf' },
+    ]);
     browser.messages.getAttachmentFile = vi.fn().mockResolvedValue(new Blob(['x']));
     await onStateCb(11);
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);

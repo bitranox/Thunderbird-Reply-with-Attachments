@@ -10,8 +10,15 @@ function readFrontmatterId(file) {
 
 describe('Website i18n parity — EN vs DE docs presence', () => {
   const enDir = path.join(process.cwd(), 'website', 'docs');
-  const deDir = path.join(process.cwd(), 'website', 'i18n', 'de', 'docusaurus-plugin-content-docs', 'current');
-  const enFiles = fs.readdirSync(enDir).filter(f => f.endsWith('.md'));
+  const deDir = path.join(
+    process.cwd(),
+    'website',
+    'i18n',
+    'de',
+    'docusaurus-plugin-content-docs',
+    'current'
+  );
+  const enFiles = fs.readdirSync(enDir).filter((f) => f.endsWith('.md'));
 
   it('each EN doc has a DE counterpart', () => {
     const missing = [];
@@ -27,4 +34,3 @@ describe('Website i18n parity — EN vs DE docs presence', () => {
     expect(missing).toEqual([]);
   });
 });
-

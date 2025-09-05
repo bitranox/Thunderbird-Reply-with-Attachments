@@ -23,7 +23,9 @@
 
   // Open donate link in a new tab using the href set via i18n.
   document.addEventListener('DOMContentLoaded', () => {
-    const donateAnchor = /** @type {HTMLAnchorElement|null} */ (document.getElementById('donate-link'));
+    const donateAnchor = /** @type {HTMLAnchorElement|null} */ (
+      document.getElementById('donate-link')
+    );
     if (!donateAnchor) return;
     donateAnchor.addEventListener('click', (e) => openHref(donateAnchor, e));
   });

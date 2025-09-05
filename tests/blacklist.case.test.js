@@ -9,7 +9,7 @@ describe('Blacklist lowercase normalization', () => {
         { name: 'Doc.PDF', partName: 'a2', contentType: 'application/pdf' },
       ],
       blacklistPatterns: ['*.PNG'],
-      getFileByPart: async (id, part) => new Blob(['x'])
+      getFileByPart: async (id, part) => new Blob(['x']),
     });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
@@ -18,7 +18,10 @@ describe('Blacklist lowercase normalization', () => {
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
     const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 55 });
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 55,
+    });
     await onStateCb(1);
     const calls = browser.messages.getAttachmentFile.mock.calls.map((c) => c[1]);
     expect(calls).toEqual(['a2']);

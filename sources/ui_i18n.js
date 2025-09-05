@@ -8,10 +8,16 @@
  */
 (function () {
   // Mark that JS is active early to avoid layout shift (no inline script needed)
-  try { document.documentElement.classList.add('js'); } catch (_) {}
+  try {
+    document.documentElement.classList.add('js');
+  } catch (_) {}
   // Set document direction for RTL languages for better layout in options/popup.
   try {
-    const lang = (globalThis.browser?.i18n?.getUILanguage?.() || globalThis.messenger?.i18n?.getUILanguage?.() || '').toLowerCase();
+    const lang = (
+      globalThis.browser?.i18n?.getUILanguage?.() ||
+      globalThis.messenger?.i18n?.getUILanguage?.() ||
+      ''
+    ).toLowerCase();
     const primary = lang.split('-')[0];
     const RTL = new Set(['ar', 'he', 'fa', 'ur', 'ps']);
     if (RTL.has(primary)) {

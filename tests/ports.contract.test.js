@@ -31,15 +31,28 @@ describe('Ports contract — shapes are as promised', () => {
 function fakeBrowser() {
   return {
     compose: {
-      getComposeDetails: vi.fn(), listAttachments: vi.fn(), addAttachment: vi.fn(),
-      onComposeStateChanged: { addListener: vi.fn() }, onBeforeSend: { addListener: vi.fn() }
+      getComposeDetails: vi.fn(),
+      listAttachments: vi.fn(),
+      addAttachment: vi.fn(),
+      onComposeStateChanged: { addListener: vi.fn() },
+      onBeforeSend: { addListener: vi.fn() },
     },
     messages: { listAttachments: vi.fn(), getAttachmentFile: vi.fn() },
     sessions: { getTabValue: vi.fn(), setTabValue: vi.fn(), removeTabValue: vi.fn() },
     tabs: { onRemoved: { addListener: vi.fn() }, sendMessage: vi.fn() },
-    scripting: { compose: { registerScripts: vi.fn(), executeScript: vi.fn(), getRegisteredScripts: vi.fn(), unregisterScripts: vi.fn() } }
+    scripting: {
+      compose: {
+        registerScripts: vi.fn(),
+        executeScript: vi.fn(),
+        getRegisteredScripts: vi.fn(),
+        unregisterScripts: vi.fn(),
+      },
+    },
   };
 }
-function expectTypeOf(v) { return { toBeFunction: () => expect(typeof v).toBe('function') }; }
-function expectHasListener(obj) { expect(obj && typeof obj.addListener).toBe('function'); }
-
+function expectTypeOf(v) {
+  return { toBeFunction: () => expect(typeof v).toBe('function') };
+}
+function expectHasListener(obj) {
+  expect(obj && typeof obj.addListener).toBe('function');
+}

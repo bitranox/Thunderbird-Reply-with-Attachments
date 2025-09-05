@@ -1,65 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="optionsTitle">Options</title>
-    <link rel="stylesheet" href="options.css">
-    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="options.css" />
+    <meta name="color-scheme" content="light dark" />
     <!-- Removed inline script to satisfy CSP; ui_i18n.js sets the 'js' class -->
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrap">
-        <div class="card">
-            <div class="card-header">
-                <img src="icons/icon-128.png" data-i18n-attr="alt:iconAlt" alt="Reply with Attachments Icon">
-                <h1 id="header-title" data-i18n="uiHeader"></h1>
-            </div>
-            <div class="card-body">
-                <div class="section">
-                    <h2 data-i18n="uiConfirmHeader"></h2>
-                    <div class="stack">
-                        <label class="row"><input type="checkbox" id="confirm-before" data-testid="confirm-before"> <span data-i18n="uiConfirmLabel"></span></label>
-                        <div>
-                            <div class="desc" data-i18n="uiConfirmDefaultHeader"></div>
-                            <label class="row"><input type="radio" name="confirm-default" value="yes" data-testid="confirm-default-yes" checked> <span data-i18n="uiConfirmDefaultYes"></span></label>
-                            <label class="row"><input type="radio" name="confirm-default" value="no" data-testid="confirm-default-no"> <span data-i18n="uiConfirmDefaultNo"></span></label>
-                        </div>
-                        <div class="desc" data-i18n="uiConfirmHelp"></div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2 data-i18n="uiBlacklistHeader"></h2>
-                    <div class="desc" data-i18n="uiBlacklistHelp"></div>
-                    <textarea id="blacklist-patterns" data-testid="blacklist-patterns" rows="8" placeholder="*.png\nsmime.*\n*.p7s"></textarea>
-                </div>
-
-                <div class="actions">
-                    <div class="btns">
-                        <button id="save-btn" data-testid="save-btn" class="btn primary" data-i18n="uiSave"></button>
-                        <button id="reset-btn" data-testid="reset-btn" class="btn" data-i18n="uiReset"></button>
-                    </div>
-                    <div id="status" class="status" aria-live="polite"><span id="status-label" data-testid="status-label"></span></div>
-                </div>
-
-                <div class="footer">
-                    <div class="support">
-                        <span id="support-text" data-i18n="uiSupport"></span>
-                        <a id="donate-link" data-testid="donate-link" class="donate" data-i18n-attr="href:donateUrl"><button class="btn primary" data-i18n="uiDonate"></button></a>
-                    </div>
-                    <div class="gh">
-                        <span data-i18n="uiGithubText"></span> <a id="github-link" data-testid="github-link" data-i18n="uiGithubLinkLabel" data-i18n-attr="href:githubUrl">GitHub</a>
-                        <a id="github-link-logo" data-testid="github-link-logo" data-i18n-attr="href:githubUrl"><img src="icons/icon-github.png" data-i18n-attr="alt:githubAlt" alt="GitHub"></a>
-                    </div>
-                </div>
-            </div>
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="icons/icon-128.png"
+            data-i18n-attr="alt:iconAlt"
+            alt="Reply with Attachments Icon"
+          />
+          <h1 id="header-title" data-i18n="uiHeader"></h1>
         </div>
+        <div class="card-body">
+          <div class="section">
+            <h2 data-i18n="uiConfirmHeader"></h2>
+            <div class="stack">
+              <label class="row"
+                ><input type="checkbox" id="confirm-before" data-testid="confirm-before" />
+                <span data-i18n="uiConfirmLabel"></span
+              ></label>
+              <div>
+                <div class="desc" data-i18n="uiConfirmDefaultHeader"></div>
+                <label class="row"
+                  ><input
+                    type="radio"
+                    name="confirm-default"
+                    value="yes"
+                    data-testid="confirm-default-yes"
+                    checked />
+                  <span data-i18n="uiConfirmDefaultYes"></span
+                ></label>
+                <label class="row"
+                  ><input
+                    type="radio"
+                    name="confirm-default"
+                    value="no"
+                    data-testid="confirm-default-no" />
+                  <span data-i18n="uiConfirmDefaultNo"></span
+                ></label>
+              </div>
+              <div class="desc" data-i18n="uiConfirmHelp"></div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 data-i18n="uiBlacklistHeader"></h2>
+            <div class="desc" data-i18n="uiBlacklistHelp"></div>
+            <textarea
+              id="blacklist-patterns"
+              data-testid="blacklist-patterns"
+              rows="8"
+              placeholder="*.png\nsmime.*\n*.p7s"
+            ></textarea>
+          </div>
+
+          <div class="actions">
+            <div class="btns">
+              <button
+                id="save-btn"
+                data-testid="save-btn"
+                class="btn primary"
+                data-i18n="uiSave"
+              ></button>
+              <button
+                id="reset-btn"
+                data-testid="reset-btn"
+                class="btn"
+                data-i18n="uiReset"
+              ></button>
+            </div>
+            <div id="status" class="status" aria-live="polite">
+              <span id="status-label" data-testid="status-label"></span>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div class="support">
+              <span id="support-text" data-i18n="uiSupport"></span>
+              <a
+                id="donate-link"
+                data-testid="donate-link"
+                class="donate"
+                data-i18n-attr="href:donateUrl"
+                ><button class="btn primary" data-i18n="uiDonate"></button
+              ></a>
+            </div>
+            <div class="gh">
+              <span data-i18n="uiGithubText"></span>
+              <a
+                id="github-link"
+                data-testid="github-link"
+                data-i18n="uiGithubLinkLabel"
+                data-i18n-attr="href:githubUrl"
+                >GitHub</a
+              >
+              <a
+                id="github-link-logo"
+                data-testid="github-link-logo"
+                data-i18n-attr="href:githubUrl"
+                ><img src="icons/icon-github.png" data-i18n-attr="alt:githubAlt" alt="GitHub"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="ui_i18n.js"></script>
     <script src="options.js"></script>
     <script src="handle_donate_link.js"></script>
     <script src="handle_github_link.js"></script>
-</body>
+  </body>
 </html>

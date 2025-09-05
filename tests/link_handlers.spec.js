@@ -33,8 +33,13 @@ describe('Link handlers — donate/github', () => {
     document.getElementById('github-link').click();
     document.getElementById('github-link-logo').click();
     document.getElementById('donate-link').click();
-    expect(browser.tabs.create).toHaveBeenCalledWith({ url: 'https://example.com/repo', active: true });
-    expect(browser.tabs.create).toHaveBeenCalledWith({ url: 'https://example.com/donate', active: true });
+    expect(browser.tabs.create).toHaveBeenCalledWith({
+      url: 'https://example.com/repo',
+      active: true,
+    });
+    expect(browser.tabs.create).toHaveBeenCalledWith({
+      url: 'https://example.com/donate',
+      active: true,
+    });
   });
 });
-

@@ -23,4 +23,3 @@ describe('i18n parity — all locales share the same keys', () => {
     }
   });
 });
-

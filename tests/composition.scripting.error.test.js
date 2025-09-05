@@ -27,10 +27,34 @@ function makeBrowser() {
     onComposeStateChanged: { addListener: vi.fn() },
     onBeforeSend: { addListener: vi.fn() },
   };
-  const messages = { listAttachments: vi.fn().mockResolvedValue([]), getAttachmentFile: vi.fn().mockResolvedValue(new Blob()) };
-  const sessions = { getTabValue: vi.fn().mockResolvedValue(false), setTabValue: vi.fn(), removeTabValue: vi.fn() };
-  const tabs = { onRemoved: { addListener: vi.fn() }, query: vi.fn().mockResolvedValue([]), sendMessage: vi.fn() };
-  const scripting = { compose: { executeScript: vi.fn(), getRegisteredScripts: vi.fn().mockResolvedValue([]), registerScripts: vi.fn() } };
-  return { compose, messages, sessions, tabs, runtime: { onMessage: { addListener: vi.fn() } }, storage: { local: { get: vi.fn().mockResolvedValue({}) }, onChanged: { addListener: vi.fn() } }, scripting };
+  const messages = {
+    listAttachments: vi.fn().mockResolvedValue([]),
+    getAttachmentFile: vi.fn().mockResolvedValue(new Blob()),
+  };
+  const sessions = {
+    getTabValue: vi.fn().mockResolvedValue(false),
+    setTabValue: vi.fn(),
+    removeTabValue: vi.fn(),
+  };
+  const tabs = {
+    onRemoved: { addListener: vi.fn() },
+    query: vi.fn().mockResolvedValue([]),
+    sendMessage: vi.fn(),
+  };
+  const scripting = {
+    compose: {
+      executeScript: vi.fn(),
+      getRegisteredScripts: vi.fn().mockResolvedValue([]),
+      registerScripts: vi.fn(),
+    },
+  };
+  return {
+    compose,
+    messages,
+    sessions,
+    tabs,
+    runtime: { onMessage: { addListener: vi.fn() } },
+    storage: { local: { get: vi.fn().mockResolvedValue({}) }, onChanged: { addListener: vi.fn() } },
+    scripting,
+  };
 }
-

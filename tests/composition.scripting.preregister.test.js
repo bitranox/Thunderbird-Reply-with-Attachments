@@ -12,9 +12,14 @@ describe('composition — scripting preregistration', () => {
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
     await tick();
-    expect(browser.scripting.compose.registerScripts).toHaveBeenCalledWith([{ id: 'rwa-confirm', js: ['content/confirm.js'] }]);
+    expect(browser.scripting.compose.registerScripts).toHaveBeenCalledWith([
+      { id: 'rwa-confirm', js: ['content/confirm.js'] },
+    ]);
     const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 5 });
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 5,
+    });
     browser.messages.listAttachments.mockResolvedValueOnce([{ name: 'x.pdf', partName: '1' }]);
     await onStateCb(42);
     expect(browser.scripting.compose.executeScript).toHaveBeenCalled();
@@ -45,8 +50,13 @@ describe('composition — scripting preregistration', () => {
     App.Composition.createAppWiring(browser);
     await tick();
     const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 5 });
-    browser.messages.listAttachments.mockResolvedValueOnce([{ name: 'x.pdf', partName: '1', contentType: 'application/pdf' }]);
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 5,
+    });
+    browser.messages.listAttachments.mockResolvedValueOnce([
+      { name: 'x.pdf', partName: '1', contentType: 'application/pdf' },
+    ]);
     browser.messages.getAttachmentFile = vi.fn().mockResolvedValue(new Blob(['x']));
     await onStateCb(42);
     expect(browser.scripting.compose.executeScript).toHaveBeenCalled();
@@ -55,4 +65,6 @@ describe('composition — scripting preregistration', () => {
 
 // legacy helper removed — use shared createBrowserMock instead
 
-function tick() { return new Promise(r => setTimeout(r, 0)); }
+function tick() {
+  return new Promise((r) => setTimeout(r, 0));
+}

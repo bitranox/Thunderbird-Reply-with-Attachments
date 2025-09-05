@@ -18,7 +18,7 @@ describe('Scale sanity — ~200 attachments', () => {
     const messageAttachments = makeAttachments(200);
     const browser = createBrowserMock({
       messageAttachments,
-      getFileByPart: async () => new Blob(['x'])
+      getFileByPart: async () => new Blob(['x']),
     });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
@@ -35,8 +35,7 @@ describe('Scale sanity — ~200 attachments', () => {
     const expected = total - excludedInline - excludedSmime;
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(expected);
     // ensure part names are unique across calls
-    const files = browser.compose.addAttachment.mock.calls.map(c => c[1].file);
+    const files = browser.compose.addAttachment.mock.calls.map((c) => c[1].file);
     expect(files.length).toBe(expected);
   });
 });
-

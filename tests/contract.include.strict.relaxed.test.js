@@ -1,7 +1,9 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 
 describe('Domain includeStrict/Relaxed contract (SMIME/inline)', () => {
-  beforeAll(async () => { await import('../sources/app/domain/filters.js'); });
+  beforeAll(async () => {
+    await import('../sources/app/domain/filters.js');
+  });
   it('both exclude SMIME signatures and inline images', () => {
     const { App } = globalThis;
     const smime = { name: 'smime.p7s', contentType: 'application/pkcs7-signature' };

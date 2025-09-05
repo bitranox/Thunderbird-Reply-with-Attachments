@@ -9,4 +9,3 @@ describe('confirm.html — default <title> fallback is present', () => {
     expect(html).toMatch(/<title>\s*Confirm Attachments\s*<\/title>/);
   });
 });
-

@@ -1,95 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Popup</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .container {
-            max-width: 800px; /* Increased the width */
-            margin: 50px auto;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .header {
-            background-color: #0070ba;
-            color: #fff;
-            padding: 20px;
-        }
-        .header img {
-            width: 50px;
-            height: 50px;
-            vertical-align: middle;
-        }
-        .header h1 {
-            display: inline;
-            margin-left: 15px;
-            font-size: 24px;
-            vertical-align: middle;
-        }
-        .content {
-            padding: 20px;
-        }
-        button {
-            background-color: #0070ba;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #005ea6;
-        }
-        a {
-            color: #0070ba;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .github-logo {
-            margin-top: 20px;
-        }
-        .github-logo img {
-            width: 40px;
-            height: 40px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      .container {
+        max-width: 800px; /* Increased the width */
+        margin: 50px auto;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .header {
+        background-color: #0070ba;
+        color: #fff;
+        padding: 20px;
+      }
+      .header img {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+      }
+      .header h1 {
+        display: inline;
+        margin-left: 15px;
+        font-size: 24px;
+        vertical-align: middle;
+      }
+      .content {
+        padding: 20px;
+      }
+      button {
+        background-color: #0070ba;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #005ea6;
+      }
+      a {
+        color: #0070ba;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .github-logo {
+        margin-top: 20px;
+      }
+      .github-logo img {
+        width: 40px;
+        height: 40px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <img src="icons/icon-128.png" alt="Reply with Attachments Icon">
-            <h1 id="header-title" data-i18n="uiHeader"></h1>
+      <div class="header">
+        <img src="icons/icon-128.png" alt="Reply with Attachments Icon" />
+        <h1 id="header-title" data-i18n="uiHeader"></h1>
+      </div>
+      <div class="content">
+        <p id="options-text" data-i18n="uiNoOptions"></p>
+        <p id="support-text" data-i18n="uiSupport"></p>
+        <a id="donate-link" class="button" data-i18n-attr="href:donateUrl"
+          ><button data-i18n="uiDonate"></button
+        ></a>
+        <p id="github-text">
+          <span data-i18n="uiGithubText"></span>
+          <a id="github-link" data-i18n-attr="href:githubUrl">GitHub page</a>.
+        </p>
+        <div class="github-logo">
+          <a id="github-link-logo" data-i18n-attr="href:githubUrl">
+            <img src="icons/icon-github.png" alt="GitHub Logo" />
+          </a>
         </div>
-        <div class="content">
-            <p id="options-text" data-i18n="uiNoOptions"></p>
-            <p id="support-text" data-i18n="uiSupport"></p>
-            <a id="donate-link" class="button" data-i18n-attr="href:donateUrl"><button data-i18n="uiDonate"></button></a>
-            <p id="github-text"><span data-i18n="uiGithubText"></span> <a id="github-link" data-i18n-attr="href:githubUrl">GitHub page</a>.</p>
-            <div class="github-logo">
-                <a id="github-link-logo" data-i18n-attr="href:githubUrl">
-                    <img src="icons/icon-github.png" alt="GitHub Logo">
-                </a>
-            </div>
-        </div>
+      </div>
     </div>
     <script src="ui_i18n.js"></script>
     <script src="handle_donate_link.js"></script>
     <script src="handle_github_link.js"></script>
-</body>
+  </body>
 </html>

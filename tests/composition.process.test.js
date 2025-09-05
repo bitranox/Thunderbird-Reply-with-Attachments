@@ -5,14 +5,14 @@ describe('Composition processReplyAttachments via wiring', () => {
   it('adds only eligible attachments; skips S/MIME, inline and duplicates', async () => {
     const attachments = [
       { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'cid:logo' }, // inline
-      { name: 'smime.p7s', partName: 'p2', contentType: 'application/pkcs7-signature' },     // smime
+      { name: 'smime.p7s', partName: 'p2', contentType: 'application/pkcs7-signature' }, // smime
       { name: 'Report.pdf', partName: 'p3', contentType: 'application/pdf' },
       { name: 'notes.txt', partName: 'p4', contentType: 'text/plain' },
     ];
     const browser = createBrowserMock({
       composeExisting: [],
       messageAttachments: attachments,
-      getFileByPart: async (id, part) => new Blob(['x'])
+      getFileByPart: async (id, part) => new Blob(['x']),
     });
 
     await import('../sources/app/adapters/thunderbird.js');
@@ -35,7 +35,7 @@ describe('Composition processReplyAttachments via wiring', () => {
     ];
     const browser = createBrowserMock({
       messageAttachments: attachments,
-      getFileByPart: async (id, part) => (part === '1' ? null : new Blob(['ok']))
+      getFileByPart: async (id, part) => (part === '1' ? null : new Blob(['ok'])),
     });
 
     await import('../sources/app/adapters/thunderbird.js');

@@ -18,7 +18,13 @@
  * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
  * @returns {(tabId: number, messageId: number) => Promise<number>} processReplyAttachments
  */
-function createProcessReplyAttachments({ compose, messages, shouldExclude = () => false, confirm = async () => true, logger = console }) {
+function createProcessReplyAttachments({
+  compose,
+  messages,
+  shouldExclude = () => false,
+  confirm = async () => true,
+  logger = console,
+}) {
   return async function processReplyAttachments(tabId, messageId) {
     try {
       const all = await getAllAttachments(messages, messageId);
@@ -36,7 +42,9 @@ function createProcessReplyAttachments({ compose, messages, shouldExclude = () =
 
       return await attachSelectedFiles(compose, messages, tabId, messageId, selected);
     } catch (err) {
-      try { logger.warn?.({ err }, 'processReplyAttachments failed'); } catch (_) {}
+      try {
+        logger.warn?.({ err }, 'processReplyAttachments failed');
+      } catch (_) {}
       return 0;
     }
   };
@@ -44,19 +52,39 @@ function createProcessReplyAttachments({ compose, messages, shouldExclude = () =
 
 // — process helpers —
 /** Load all attachments for the source message. */
-async function getAllAttachments(messages, messageId) { return await messages.listAttachments(messageId); }
+async function getAllAttachments(messages, messageId) {
+  return await messages.listAttachments(messageId);
+}
 /** Load existing compose attachments and build a case-insensitive name set. */
-async function getExistingAttachmentNames(compose, tabId) { const a = await safe(() => compose.listAttachments(tabId), []); return makeNameSet(a); }
+async function getExistingAttachmentNames(compose, tabId) {
+  const a = await safe(() => compose.listAttachments(tabId), []);
+  return makeNameSet(a);
+}
 /** Select strictly eligible attachments (never inline/SMIME). */
-function selectStrict(all, existingNames, shouldExclude) { return selectEligible(all, existingNames, shouldExclude, domainIncludeStrict()); }
+function selectStrict(all, existingNames, shouldExclude) {
+  return selectEligible(all, existingNames, shouldExclude, domainIncludeStrict());
+}
 /** Select relaxed eligible attachments as a fallback. */
-function selectRelaxed(all, existingNames, shouldExclude) { return selectEligible(all, existingNames, shouldExclude, domainIncludeRelaxed()); }
+function selectRelaxed(all, existingNames, shouldExclude) {
+  return selectEligible(all, existingNames, shouldExclude, domainIncludeRelaxed());
+}
 /** Return the first non-empty array; otherwise an empty array. */
-function pickFirstNonEmpty(candidates) { return candidates.find((x) => x && x.length) || []; }
+function pickFirstNonEmpty(candidates) {
+  return candidates.find((x) => x && x.length) || [];
+}
 /** Ask the user to confirm selected files. */
-async function askUserToConfirm(confirm, tabId, selected) { return await confirm(tabId, selected.map(asSelection)); }
+async function askUserToConfirm(confirm, tabId, selected) {
+  return await confirm(tabId, selected.map(asSelection));
+}
 /** Attach selected files to the compose; returns the count added. */
-async function attachSelectedFiles(compose, messages, tabId, messageId, selected, logger = console) {
+async function attachSelectedFiles(
+  compose,
+  messages,
+  tabId,
+  messageId,
+  selected,
+  logger = console
+) {
   let added = 0;
   for (const att of selected) {
     try {
@@ -66,24 +94,46 @@ async function attachSelectedFiles(compose, messages, tabId, messageId, selected
       added += 1;
     } catch (err) {
       // Skip this part and continue with the rest
-      try { logger.warn?.({ err, part: att?.partName }, 'attachSelectedFiles: getAttachmentFile/addAttachment failed; skipping'); } catch (_) {}
+      try {
+        logger.warn?.(
+          { err, part: att?.partName },
+          'attachSelectedFiles: getAttachmentFile/addAttachment failed; skipping'
+        );
+      } catch (_) {}
       continue;
     }
   }
   return added;
 }
-function isEmpty(arr) { return !arr || arr.length === 0; }
+function isEmpty(arr) {
+  return !arr || arr.length === 0;
+}
 
 /**
  * Ensure original attachments for reply compose; idempotent per tab via memory + sessions.
  * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
  * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
-function createEnsureReplyAttachments({ compose, messages, sessions, state, sessionKey, shouldExclude = () => false, confirm = async () => true, logger = console }) {
-  const processReplyAttachments = createProcessReplyAttachments({ compose, messages, shouldExclude, confirm, logger });
+function createEnsureReplyAttachments({
+  compose,
+  messages,
+  sessions,
+  state,
+  sessionKey,
+  shouldExclude = () => false,
+  confirm = async () => true,
+  logger = console,
+}) {
+  const processReplyAttachments = createProcessReplyAttachments({
+    compose,
+    messages,
+    shouldExclude,
+    confirm,
+    logger,
+  });
   return async function ensureReplyAttachments(tabId, details) {
-    if (!isReply(details)) return;                       // only for replies
-    if (isProcessingOrDone(state, tabId)) return;        // skip duplicates in memory
+    if (!isReply(details)) return; // only for replies
+    if (isProcessingOrDone(state, tabId)) return; // skip duplicates in memory
     markProcessing(state, tabId);
 
     const already = await wasAlreadyProcessed(sessions, tabId, sessionKey);
@@ -93,19 +143,30 @@ function createEnsureReplyAttachments({ compose, messages, sessions, state, sess
     if (!messageId) return clearState(state, tabId);
 
     const added = await processReplyAttachments(tabId, messageId);
-    if (added > 0) { await markProcessed(sessions, tabId, sessionKey, state); } else { clearState(state, tabId); }
+    if (added > 0) {
+      await markProcessed(sessions, tabId, sessionKey, state);
+    } else {
+      clearState(state, tabId);
+    }
   };
 }
 
 // — ensure helpers —
-async function wasAlreadyProcessed(sessions, tabId, key) { return await safe(() => sessions.getTabValue(tabId, key), false); }
-async function markProcessed(sessions, tabId, key, state) { markDone(state, tabId); await safe(() => sessions.setTabValue(tabId, key, true)); }
+async function wasAlreadyProcessed(sessions, tabId, key) {
+  return await safe(() => sessions.getTabValue(tabId, key), false);
+}
+async function markProcessed(sessions, tabId, key, state) {
+  markDone(state, tabId);
+  await safe(() => sessions.setTabValue(tabId, key, true));
+}
 
 // — helpers —
 
 function isReply(details) {
   // Thunderbird composes label reply flavors like 'reply', 'replyAll', etc.
-  return String(details?.type || '').toLowerCase().startsWith('reply');
+  return String(details?.type || '')
+    .toLowerCase()
+    .startsWith('reply');
 }
 
 function isProcessingOrDone(state, tabId) {
@@ -114,9 +175,15 @@ function isProcessingOrDone(state, tabId) {
   return s === 'processing' || s === 'done';
 }
 
-function markProcessing(state, tabId) { state.set(tabId, 'processing'); }
-function markDone(state, tabId) { state.set(tabId, 'done'); }
-function clearState(state, tabId) { state.delete(tabId); }
+function markProcessing(state, tabId) {
+  state.set(tabId, 'processing');
+}
+function markDone(state, tabId) {
+  state.set(tabId, 'done');
+}
+function clearState(state, tabId) {
+  state.delete(tabId);
+}
 
 async function waitForMessageId(compose, tabId, initial, { attempts = 10, delayMs = 200 } = {}) {
   // Poll the compose details until Thunderbird provides a reference/related id.
@@ -174,7 +241,12 @@ function domainIncludeStrict() {
     const cd = String(att?.contentDisposition || '').toLowerCase();
     const cid = !!att?.contentId;
     if (name === 'smime.p7s') return false;
-    if (ct === 'application/pkcs7-signature' || ct === 'application/x-pkcs7-signature' || ct === 'application/pkcs7-mime') return false;
+    if (
+      ct === 'application/pkcs7-signature' ||
+      ct === 'application/x-pkcs7-signature' ||
+      ct === 'application/pkcs7-mime'
+    )
+      return false;
     if (cid && ct.startsWith('image/')) return false;
     if (cd.startsWith('inline')) return false;
     return true;
@@ -187,11 +259,21 @@ function domainIncludeRelaxed() {
   return domainIncludeStrict();
 }
 
-function asSelection(a) { return { name: a.name || a.fileName, partName: a.partName }; }
+function asSelection(a) {
+  return { name: a.name || a.fileName, partName: a.partName };
+}
 
-function delay(ms) { return new Promise((r) => setTimeout(r, ms)); }
+function delay(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
 
-async function safe(fn, fallback) { try { return await fn(); } catch (_) { return fallback; } }
+async function safe(fn, fallback) {
+  try {
+    return await fn();
+  } catch (_) {
+    return fallback;
+  }
+}
 
 globalThis.App = globalThis.App || {};
 App.UseCases = { createProcessReplyAttachments, createEnsureReplyAttachments };

@@ -13,6 +13,7 @@ The following tools and libraries are used during development, testing, or on th
 - web-ext (used via npx only) — MPL-2.0 (dev tool; not distributed with the add‑on)
 
 Notes
+
 - Thunderbird MailExtension APIs are platform APIs; no third‑party code is bundled from them.
 - Project icons in sources/icons are project assets (MIT unless stated otherwise). The GitHub logo/icon is a GitHub trademark and not covered by MIT; it is used per GitHub brand guidelines.
 

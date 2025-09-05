@@ -3,7 +3,11 @@
 
 import { vi } from 'vitest';
 
-export function createBrowserMock({ attachments = [], getAttachmentFileResult = {}, storageLocalInit = {} } = {}) {
+export function createBrowserMock({
+  attachments = [],
+  getAttachmentFileResult = {},
+  storageLocalInit = {},
+} = {}) {
   const compose = {
     onComposeStateChanged: { addListener: vi.fn() },
     onBeforeSend: { addListener: vi.fn() },
@@ -58,8 +62,12 @@ export function createBrowserMock({ attachments = [], getAttachmentFileResult = 
     },
     onChanged: {
       _listeners: [],
-      addListener(fn) { this._listeners.push(fn); },
-      _fire(changes, area) { this._listeners.forEach((fn) => fn(changes, area)); },
+      addListener(fn) {
+        this._listeners.push(fn);
+      },
+      _fire(changes, area) {
+        this._listeners.forEach((fn) => fn(changes, area));
+      },
     },
   };
 

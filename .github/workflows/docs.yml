@@ -2,10 +2,10 @@ name: Docs
 
 on:
   push:
-    branches: [ main, master ]
-    tags: [ 'v*', 'V*' ]
+    branches: [main, master]
+    tags: ['v*', 'V*']
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch: {}
 
 jobs:
@@ -27,19 +27,19 @@ jobs:
           cache-dependency-path: website/package-lock.json
       - name: Install deps
         run: npm ci
-      - name: "Build (PRs: en only)"
+      - name: 'Build (PRs: en only)'
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
-      - name: "Build (main/tags: all locales)"
+      - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
-      - name: "Upload build artifact (PRs)"
+      - name: 'Upload build artifact (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
           name: docs-preview
           path: website/build
-      - name: "Docs preview URL"
+      - name: 'Docs preview URL'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "View artifacts on this run:" \

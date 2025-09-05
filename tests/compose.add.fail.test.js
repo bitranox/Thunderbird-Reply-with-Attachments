@@ -7,9 +7,9 @@ describe('compose.addAttachment failure path', () => {
     const browser = createBrowserMock({
       messageAttachments: [
         { name: 'a.txt', partName: '1' },
-        { name: 'b.txt', partName: '2' }
+        { name: 'b.txt', partName: '2' },
       ],
-      getFileByPart: async (id, part) => new Blob(['x'])
+      getFileByPart: async (id, part) => new Blob(['x']),
     });
     // make first addAttachment throw, second succeed
     browser.compose.addAttachment
@@ -30,4 +30,3 @@ describe('compose.addAttachment failure path', () => {
     warnSpy.mockRestore();
   });
 });
-

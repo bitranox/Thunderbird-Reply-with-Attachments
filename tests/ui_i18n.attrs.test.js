@@ -7,7 +7,13 @@ describe('ui_i18n — attributes and class', () => {
       <div id="a" data-i18n="hello"></div>
       <img id="b" data-i18n-attr="alt:iconAlt,title:iconTitle" />
     `;
-    globalThis.browser = { i18n: { getMessage: vi.fn((key) => ({ hello: 'Hello', iconAlt: 'ALT', iconTitle: 'TITLE' }[key] || '') ) } };
+    globalThis.browser = {
+      i18n: {
+        getMessage: vi.fn(
+          (key) => ({ hello: 'Hello', iconAlt: 'ALT', iconTitle: 'TITLE' })[key] || ''
+        ),
+      },
+    };
   });
 
   it('applies text and attributes; sets .js class on <html>', async () => {
@@ -18,4 +24,3 @@ describe('ui_i18n — attributes and class', () => {
     expect(document.documentElement.classList.contains('js')).toBe(true);
   });
 });
-

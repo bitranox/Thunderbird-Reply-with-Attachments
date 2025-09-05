@@ -5,6 +5,7 @@ sidebar_label: Usage
 ---
 
 ## Usage
+
 - Reply and the add‑on adds originals automatically — or asks first, if enabled in Options.
 - De‑duplicated by filename; SMIME and inline images are always skipped.
 - blacklisted attachments are also skipped (not case sensitive, glob patterns)

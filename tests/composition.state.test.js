@@ -5,7 +5,7 @@ describe('Composition — state & sessions', () => {
   it('processes once per tab and marks as done in sessions', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
-      getFileByPart: async () => new Blob(['x'])
+      getFileByPart: async () => new Blob(['x']),
     });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
@@ -22,4 +22,3 @@ describe('Composition — state & sessions', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 });
-

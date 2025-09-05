@@ -33,6 +33,7 @@ Tipp: Standardwerte sind vorbelegt und können zurückgesetzt werden.
 ### Dateinamen‑Normalisierung (Duplikatschutz)
 
 Zur konsistenten Erkennung von Duplikaten werden Dateinamen vor dem Vergleich normalisiert:
+
 - Unicode nach NFC normalisiert.
 - Kleinschreibung (Case‑Folding).
 - Abschließende Punkte/Leerzeichen werden entfernt (Windows‑Kompatibilität).

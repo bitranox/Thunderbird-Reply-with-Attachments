@@ -14,6 +14,7 @@ Need help or want to report a bug?
 - Add‑ons site (ATN): You can also leave feedback via the add‑on page.
 
 Tips
+
 - Ensure you’re on a supported Thunderbird version (128 ESR or newer).
 - Check the Configuration and Usage docs for common setup questions.
 - For development/testing, see the Development guide.

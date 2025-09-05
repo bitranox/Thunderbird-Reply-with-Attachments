@@ -13,9 +13,20 @@ describe('content/confirm.js English fallback when i18n missing', () => {
   let textShown;
   beforeEach(() => {
     textShown = undefined;
-    globalThis.confirm = (t) => { textShown = t; return true; };
+    globalThis.confirm = (t) => {
+      textShown = t;
+      return true;
+    };
     // Provide only runtime messaging, no i18n
-    globalThis.browser = { runtime: { onMessage: { addListener: (fn) => { globalThis.__listener = fn; } } } };
+    globalThis.browser = {
+      runtime: {
+        onMessage: {
+          addListener: (fn) => {
+            globalThis.__listener = fn;
+          },
+        },
+      },
+    };
     loadScript(path.join(process.cwd(), 'sources', 'content', 'confirm.js'));
   });
 
@@ -29,4 +40,3 @@ describe('content/confirm.js English fallback when i18n missing', () => {
     expect(textShown.startsWith('Add attachments (3):')).toBe(true);
   });
 });
-

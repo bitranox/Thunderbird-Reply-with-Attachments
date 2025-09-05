@@ -31,4 +31,3 @@ describe('File sizes — zero byte and multi‑MB', () => {
     expect(browser.compose.addAttachment.mock.calls[0][1].file.size).toBe(big.size);
   });
 });
-

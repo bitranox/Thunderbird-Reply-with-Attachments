@@ -18,15 +18,18 @@ describe('ui_i18n + handlers integration', () => {
 
     browser = {
       i18n: {
-        getMessage: vi.fn((key) => ({
-          uiHeader: 'Reply with Attachments',
-          uiNoOptions: 'There are currently no options to configure.',
-          uiSupport: 'Do you like this add-on? Support me with a small contribution:',
-          uiDonate: 'Donate now',
-          uiGithubText: 'For bug reports or other inquiries, please visit my',
-          donateUrl: 'https://example.com/donate',
-          githubUrl: 'https://example.com/github',
-        })[key] || ''),
+        getMessage: vi.fn(
+          (key) =>
+            ({
+              uiHeader: 'Reply with Attachments',
+              uiNoOptions: 'There are currently no options to configure.',
+              uiSupport: 'Do you like this add-on? Support me with a small contribution:',
+              uiDonate: 'Donate now',
+              uiGithubText: 'For bug reports or other inquiries, please visit my',
+              donateUrl: 'https://example.com/donate',
+              githubUrl: 'https://example.com/github',
+            })[key] || ''
+        ),
       },
       tabs: { create: vi.fn() },
     };
@@ -47,9 +50,15 @@ describe('ui_i18n + handlers integration', () => {
     expect(document.querySelector('#donate-link button').textContent).toBe('Donate now');
 
     // Attributes populated
-    expect(document.getElementById('donate-link').getAttribute('href')).toBe('https://example.com/donate');
-    expect(document.getElementById('github-link').getAttribute('href')).toBe('https://example.com/github');
-    expect(document.getElementById('github-link-logo').getAttribute('href')).toBe('https://example.com/github');
+    expect(document.getElementById('donate-link').getAttribute('href')).toBe(
+      'https://example.com/donate'
+    );
+    expect(document.getElementById('github-link').getAttribute('href')).toBe(
+      'https://example.com/github'
+    );
+    expect(document.getElementById('github-link-logo').getAttribute('href')).toBe(
+      'https://example.com/github'
+    );
 
     // Load click handlers and simulate clicks
     await import('../sources/handle_github_link.js');
@@ -59,8 +68,13 @@ describe('ui_i18n + handlers integration', () => {
     document.getElementById('github-link').click();
     document.getElementById('donate-link').click();
 
-    expect(browser.tabs.create).toHaveBeenCalledWith({ url: 'https://example.com/github', active: true });
-    expect(browser.tabs.create).toHaveBeenCalledWith({ url: 'https://example.com/donate', active: true });
+    expect(browser.tabs.create).toHaveBeenCalledWith({
+      url: 'https://example.com/github',
+      active: true,
+    });
+    expect(browser.tabs.create).toHaveBeenCalledWith({
+      url: 'https://example.com/donate',
+      active: true,
+    });
   });
 });
-

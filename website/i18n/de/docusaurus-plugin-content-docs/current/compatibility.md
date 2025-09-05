@@ -15,4 +15,3 @@ sidebar_label: Kompatibilität
 
 - Wenn die Erweiterung nicht wie erwartet funktioniert, stelle sicher, dass du eine kompatible Thunderbird‑Version (128.6.0esr oder neuer) verwendest.
 - Prüfe die Thunderbird‑Fehlerkonsole (**Extras > Entwickler‑Werkzeuge > Fehlerkonsole**) auf Hinweise zur Erweiterung.
-

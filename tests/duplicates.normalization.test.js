@@ -2,7 +2,11 @@ import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 async function setup({ composeExisting, messageAttachments }) {
-  const browser = createBrowserMock({ composeExisting, messageAttachments, confirmBeforeAdd: false });
+  const browser = createBrowserMock({
+    composeExisting,
+    messageAttachments,
+    confirmBeforeAdd: false,
+  });
   await import('../sources/app/adapters/thunderbird.js');
   await import('../sources/app/application/usecases.js');
   await import('../sources/app/domain/filters.js');
@@ -15,12 +19,12 @@ async function setup({ composeExisting, messageAttachments }) {
 describe('Duplicate prevention with normalized names', () => {
   it('collapses NFC/NFD and case/trailing dot variants to a single logical file', async () => {
     const composeExisting = [
-      { name: 'cafe\u0301.pdf' },     // NFD
-      { name: 'file.txt' }
+      { name: 'cafe\u0301.pdf' }, // NFD
+      { name: 'file.txt' },
     ];
     const messageAttachments = [
       { name: 'CAFÉ.pdf', partName: '1' }, // NFC + upper
-      { name: 'file.txt.', partName: '2' } // trailing dot
+      { name: 'file.txt.', partName: '2' }, // trailing dot
     ];
     const browser = await setup({ composeExisting, messageAttachments });
     await triggerComposeState(browser, 3);
@@ -28,4 +32,3 @@ describe('Duplicate prevention with normalized names', () => {
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });
 });
-

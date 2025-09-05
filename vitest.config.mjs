@@ -2,7 +2,7 @@
 export default {
   test: {
     coverage: {
-            provider: 'v8',
+      provider: 'v8',
       reporter: ['text', 'html', 'lcov'],
       lines: 0.85,
       functions: 0.85,
@@ -13,10 +13,9 @@ export default {
           lines: 85,
           functions: 85,
           branches: 85,
-          statements: 85
-        }
-      }
-    }
-  }
+          statements: 85,
+        },
+      },
+    },
+  },
 };
-

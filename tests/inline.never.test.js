@@ -18,7 +18,10 @@ describe('Inline attachments are never added', () => {
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
     const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 7 });
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 7,
+    });
     await onStateCb(1);
     // Should add nothing: PDF excluded by blacklist; inline image must remain excluded even on fallback.
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
@@ -27,7 +30,12 @@ describe('Inline attachments are never added', () => {
   it('does not add attachments with contentDisposition inline', async () => {
     const browser = createBrowserMock({
       messageAttachments: [
-        { name: 'embed.txt', partName: 'e1', contentType: 'text/plain', contentDisposition: 'inline; filename=embed.txt' },
+        {
+          name: 'embed.txt',
+          partName: 'e1',
+          contentType: 'text/plain',
+          contentDisposition: 'inline; filename=embed.txt',
+        },
       ],
       getFileByPart: async () => new Blob(['x']),
     });
@@ -38,7 +46,10 @@ describe('Inline attachments are never added', () => {
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
     const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
-    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply', referenceMessageId: 8 });
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 8,
+    });
     await onStateCb(2);
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });

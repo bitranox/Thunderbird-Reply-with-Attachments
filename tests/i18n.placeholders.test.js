@@ -7,7 +7,9 @@ function locales() {
   return fs.readdirSync(dir).filter((d) => fs.existsSync(path.join(dir, d, 'messages.json')));
 }
 function messagesOf(loc) {
-  return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'sources', '_locales', loc, 'messages.json'), 'utf8'));
+  return JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), 'sources', '_locales', loc, 'messages.json'), 'utf8')
+  );
 }
 function tokensIn(str) {
   const m = String(str || '').match(/\$(\d+)/g) || [];
@@ -48,4 +50,3 @@ describe('i18n placeholders — consistent across locales', () => {
     }
   });
 });
-

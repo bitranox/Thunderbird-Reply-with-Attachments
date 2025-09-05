@@ -25,8 +25,24 @@ describe('background — apply settings to open composers', () => {
         setTabValue: vi.fn(),
         removeTabValue: vi.fn(),
       },
-      scripting: { compose: { getRegisteredScripts: vi.fn().mockResolvedValue([]), registerScripts: vi.fn(), executeScript: vi.fn() } },
-      storage: { local: { get: vi.fn().mockResolvedValue({ debug: false, blacklistPatterns: [], confirmBeforeAdd: false, confirmDefaultChoice: 'yes' }) }, onChanged: { addListener: vi.fn() } },
+      scripting: {
+        compose: {
+          getRegisteredScripts: vi.fn().mockResolvedValue([]),
+          registerScripts: vi.fn(),
+          executeScript: vi.fn(),
+        },
+      },
+      storage: {
+        local: {
+          get: vi.fn().mockResolvedValue({
+            debug: false,
+            blacklistPatterns: [],
+            confirmBeforeAdd: false,
+            confirmDefaultChoice: 'yes',
+          }),
+        },
+        onChanged: { addListener: vi.fn() },
+      },
       windows: { create: vi.fn(), update: vi.fn() },
     };
     globalThis.browser = browser;
@@ -56,4 +72,3 @@ describe('background — apply settings to open composers', () => {
     expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(4);
   });
 });
-

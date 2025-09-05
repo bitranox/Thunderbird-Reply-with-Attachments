@@ -36,4 +36,3 @@ describe('Website config — basic shape', () => {
     }
   });
 });
-

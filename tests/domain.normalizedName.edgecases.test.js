@@ -14,7 +14,12 @@ describe('Domain.normalizedName edge cases', () => {
 
   it('trims trailing spaces and dots, and folds case', () => {
     const { normalizedName } = globalThis.App.Domain;
-    expect(normalizedName({ name: ' Report .PDF ' })).toEqual('report .pdf'.trim().replace(/[.\s]+$/,'').toLowerCase());
+    expect(normalizedName({ name: ' Report .PDF ' })).toEqual(
+      'report .pdf'
+        .trim()
+        .replace(/[.\s]+$/, '')
+        .toLowerCase()
+    );
     expect(normalizedName({ name: 'file.txt   ' })).toEqual('file.txt');
     expect(normalizedName({ name: 'FILE.TXT.' })).toEqual('file.txt');
   });

@@ -24,4 +24,3 @@ describe('Website index page — smoke import', () => {
     }
   });
 });
-

@@ -51,4 +51,3 @@
 // Publish namespace for discoverability in the global App.* space.
 globalThis.App = globalThis.App || {};
 App.Ports = {};
-

@@ -1,7 +1,9 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 
 describe('Domain filters and utils', () => {
-  beforeAll(async () => { await import('../sources/app/domain/filters.js'); });
+  beforeAll(async () => {
+    await import('../sources/app/domain/filters.js');
+  });
 
   it('lower() normalizes values safely', () => {
     const { App } = globalThis;
@@ -28,9 +30,13 @@ describe('Domain filters and utils', () => {
   it('isInlineImage and isInlineDisposition', () => {
     const { App } = globalThis;
     expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(true);
-    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' })).toBe(false);
+    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' })).toBe(
+      false
+    );
     expect(App.Domain.isInlineDisposition({ contentDisposition: 'inline; filename=x' })).toBe(true);
-    expect(App.Domain.isInlineDisposition({ contentDisposition: 'attachment; filename=x' })).toBe(false);
+    expect(App.Domain.isInlineDisposition({ contentDisposition: 'attachment; filename=x' })).toBe(
+      false
+    );
   });
 
   it('includeStrict excludes S/MIME, inline images, and inline disposition', () => {
@@ -44,7 +50,9 @@ describe('Domain filters and utils', () => {
   it('includeRelaxed excludes S/MIME and inline content', () => {
     const { App } = globalThis;
     expect(App.Domain.includeRelaxed({ name: 'smime.p7s' })).toBe(false);
-    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
+    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(
+      false
+    );
     expect(App.Domain.includeRelaxed({ contentDisposition: 'inline' })).toBe(false);
   });
 });

@@ -17,6 +17,7 @@ Dieses Add‑on benötigt folgende Berechtigungen:
 ```
 
 Hinweise
+
 - `compose`: Composer‑Zustand lesen, Anhänge verwalten und auf Compose‑Ereignisse reagieren.
 - `messagesRead`: Originalanhänge der Ausgangsnachricht finden und lesen.
 - `messagesModify`: von Thunderbird für bestimmte Anhangs‑Operationen in Compose‑Flows benötigt.

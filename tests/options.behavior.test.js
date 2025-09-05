@@ -15,7 +15,9 @@ function mountOptionsDom() {
 }
 
 describe('options page — reads, writes, resets', () => {
-  beforeEach(() => { mountOptionsDom(); });
+  beforeEach(() => {
+    mountOptionsDom();
+  });
 
   it('auto-fills defaults when user list is empty', async () => {
     vi.resetModules();
@@ -26,14 +28,18 @@ describe('options page — reads, writes, resets', () => {
     await import('../sources/options.js');
     document.dispatchEvent(new Event('DOMContentLoaded'));
     await tick();
-    const ta = /** @type {HTMLTextAreaElement} */(document.getElementById('blacklist-patterns'));
+    const ta = /** @type {HTMLTextAreaElement} */ (document.getElementById('blacklist-patterns'));
     expect(ta.value).toContain('*intern*');
     expect(ta.value).toContain('*secret*');
   });
 
   it('save lowercases patterns and notifies background', async () => {
     vi.resetModules();
-    const get = vi.fn().mockResolvedValue({ blacklistPatterns: ['Foo.PDF'], confirmBeforeAdd: true, confirmDefaultChoice: 'no' });
+    const get = vi.fn().mockResolvedValue({
+      blacklistPatterns: ['Foo.PDF'],
+      confirmBeforeAdd: true,
+      confirmDefaultChoice: 'no',
+    });
     const set = vi.fn();
     const sendMessage = vi.fn();
     mockBrowser({ get, set, sendMessage });
@@ -41,7 +47,7 @@ describe('options page — reads, writes, resets', () => {
     document.dispatchEvent(new Event('DOMContentLoaded'));
     await tick();
     // change patterns and save
-    const ta = /** @type {HTMLTextAreaElement} */(document.getElementById('blacklist-patterns'));
+    const ta = /** @type {HTMLTextAreaElement} */ (document.getElementById('blacklist-patterns'));
     ta.value = 'IMG.PNG\nRePort.PDF\n';
     document.getElementById('save-btn').click();
     await tick();
@@ -53,7 +59,11 @@ describe('options page — reads, writes, resets', () => {
 
   it('reset writes defaults and reloads form', async () => {
     vi.resetModules();
-    const get = vi.fn().mockResolvedValue({ blacklistPatterns: ['x'], confirmBeforeAdd: false, confirmDefaultChoice: 'yes' });
+    const get = vi.fn().mockResolvedValue({
+      blacklistPatterns: ['x'],
+      confirmBeforeAdd: false,
+      confirmDefaultChoice: 'yes',
+    });
     const set = vi.fn();
     mockBrowser({ get, set });
     await import('../sources/options.js');
@@ -62,20 +72,27 @@ describe('options page — reads, writes, resets', () => {
     document.getElementById('reset-btn').click();
     await tick();
     // After reset, set called with defaults (we check known tokens)
-    const calls = set.mock.calls.map(c => c[0]);
+    const calls = set.mock.calls.map((c) => c[0]);
     const last = calls.at(-1);
     expect(last.blacklistPatterns).toContain('*intern*');
   });
 });
 
-function mockBrowser({ get, set, sendMessage = vi.fn(), getMessage = vi.fn().mockReturnValue('') }) {
+function mockBrowser({
+  get,
+  set,
+  sendMessage = vi.fn(),
+  getMessage = vi.fn().mockReturnValue(''),
+}) {
   globalThis.browser = {
     storage: { local: { get, set } },
     runtime: { sendMessage },
-    i18n: { getMessage }
+    i18n: { getMessage },
   };
 }
-function tick() { return new Promise(r => setTimeout(r, 0)); }
+function tick() {
+  return new Promise((r) => setTimeout(r, 0));
+}
 /*
  * Scope: options page read/save/reset behavior.
  * Intent: auto-fill defaults on empty lists; save lowercases patterns and

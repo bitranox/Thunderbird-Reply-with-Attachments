@@ -14,15 +14,26 @@ describe('content/confirm.js i18n', () => {
   beforeEach(() => {
     textShown = undefined;
     // Mock confirm to capture the text
-    globalThis.confirm = (t) => { textShown = t; return true; };
+    globalThis.confirm = (t) => {
+      textShown = t;
+      return true;
+    };
     // Mock i18n
     globalThis.browser = {
-      i18n: { getMessage: (k, args) => {
-        if (k === 'confirmAddOne') return `ONE:${args[0]}`;
-        if (k === 'confirmAddMany') return `MANY:${args[0]}:${args[1]}:${args[2]}`;
-        return '';
-      }},
-      runtime: { onMessage: { addListener: (fn) => { globalThis.__listener = fn; } }},
+      i18n: {
+        getMessage: (k, args) => {
+          if (k === 'confirmAddOne') return `ONE:${args[0]}`;
+          if (k === 'confirmAddMany') return `MANY:${args[0]}:${args[1]}:${args[2]}`;
+          return '';
+        },
+      },
+      runtime: {
+        onMessage: {
+          addListener: (fn) => {
+            globalThis.__listener = fn;
+          },
+        },
+      },
     };
     loadScript(path.join(process.cwd(), 'sources', 'content', 'confirm.js'));
   });
@@ -34,9 +45,11 @@ describe('content/confirm.js i18n', () => {
   });
 
   it('uses confirmAddMany for multiple files', async () => {
-    const res = await globalThis.__listener({ type: 'rwa:confirm-add', files: ['a.txt', 'b.txt', 'c.txt'] });
+    const res = await globalThis.__listener({
+      type: 'rwa:confirm-add',
+      files: ['a.txt', 'b.txt', 'c.txt'],
+    });
     expect(textShown.startsWith('MANY:3:a.txt, b.txt')).toBe(true);
     expect(res).toEqual({ ok: true });
   });
 });
-
