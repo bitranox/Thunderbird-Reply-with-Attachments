@@ -20,3 +20,16 @@
 .card h3 { margin: .2rem 0 .5rem; font-size: 1.1rem; }
 .brandIcon { width:56px; height:56px; border-radius: 12px; box-shadow: 0 8px 32px rgba(10,108,255,.25); }
 
+/* Improve inline <code> contrast in both themes */
+:root { --ifm-code-font-size: 95%; }
+code { padding: .12em .35em; border-radius: .35rem; }
+html[data-theme='light'] code {
+  background: #f6f8fa; /* subtle light gray */
+  color: #0b0e14;
+  border: 1px solid #e1e4e8;
+}
+html[data-theme='dark'] code {
+  background: #10161d; /* darker to stand off from #0f141a cards */
+  color: #ffd166;      /* warm yellow for strong contrast */
+  border: 1px solid #2d333b;
+}
