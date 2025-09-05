@@ -114,7 +114,7 @@ create_zip() {
   (
     cd ./sources || exit 1
     zip -r "../$zip_target" . \
-      -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*'
+      -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*' '../package-local.json'
   ) || {
     if [ "$allow_ts_fallback" = true ]; then
       # Try once more with a timestamped file name if not already timestamped
@@ -128,7 +128,7 @@ create_zip() {
           (
             cd ./sources || exit 1
             zip -r "../$ts_name" . \
-              -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*'
+              -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*' '../package-local.json'
           ) || { echo "ERROR: Failed to create ZIP file '$ts_name'!" >&2; exit 1; }
           zip_target="$ts_name"
         ;;
