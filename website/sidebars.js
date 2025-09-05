@@ -3,7 +3,7 @@ const sidebars = {
   docs: [
     'features',
     'install',
-    'options',
+    'configuration',
     'permissions',
     'changelog'
   ]
