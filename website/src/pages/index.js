@@ -18,8 +18,9 @@ function pickLocale(available, def) {
 
 export default function Home() {
   const { i18n: { defaultLocale, locales } } = useDocusaurusContext();
-  const loc = pickLocale(locales, defaultLocale);
-  const docsUrl = useBaseUrl(loc === defaultLocale ? '/docs/features' : `/${loc}/docs/features`);
+  // Let Docusaurus i18n handle locale prefixes; avoid adding `/${loc}` manually,
+  // which caused `/de/de/…` on localized homepages.
+  const docsUrl = useBaseUrl('/docs/features');
 
   return (
     <Layout
