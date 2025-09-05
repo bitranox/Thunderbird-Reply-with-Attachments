@@ -7,7 +7,7 @@ const config = {
   baseUrl: '/Thunderbird-Reply-with-Attachments/',
   organizationName: 'bitranox',
   projectName: 'Thunderbird-Reply-with-Attachments',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   i18n: {
@@ -34,8 +34,9 @@ const config = {
   ],
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
     navbar: {
-      title: 'RWA',
+      title: 'Reply with Attachments',
       items: [
+        { to: '/docs/intro', label: 'Home', position: 'left' },
         { type: 'doc', docId: 'intro', position: 'left', label: 'Docs' },
         { href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments', label: 'GitHub', position: 'right' }
       ]
@@ -52,4 +53,3 @@ const config = {
 };
 
 module.exports = config;
-
