@@ -19,7 +19,7 @@ function pickLocale(available, def) {
 export default function Home() {
   const { i18n: { defaultLocale, locales } } = useDocusaurusContext();
   const loc = pickLocale(locales, defaultLocale);
-  const docsUrl = useBaseUrl(loc === defaultLocale ? '/docs/intro' : `/${loc}/docs/intro`);
+  const docsUrl = useBaseUrl(loc === defaultLocale ? '/docs/features' : `/${loc}/docs/features`);
 
   return (
     <Layout

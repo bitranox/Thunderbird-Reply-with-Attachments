@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    'intro',
+    'features',
     'install',
     'options',
     'permissions',
@@ -10,4 +10,3 @@ const sidebars = {
 };
 
 module.exports = sidebars;
-

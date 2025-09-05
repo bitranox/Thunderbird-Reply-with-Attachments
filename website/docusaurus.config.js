@@ -41,8 +41,8 @@ const config = {
         href: '/docs/intro'
       },
       items: [
-        { to: '/docs/intro', label: 'Home', position: 'left' },
-        { type: 'doc', docId: 'intro', position: 'left', label: 'Docs' },
+        { to: '/docs/features', label: 'Features', position: 'left' },
+        { type: 'doc', docId: 'features', position: 'left', label: 'Docs' },
         { href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments', label: 'GitHub', position: 'right' }
       ]
     },

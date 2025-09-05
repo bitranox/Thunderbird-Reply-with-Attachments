@@ -20,8 +20,8 @@ function labelOf(loc) {
 
 function docsLink(loc) {
   const base = `${url.replace(/\/$/, '')}${baseUrl}`;
-  if (!defaultLocale || loc === defaultLocale) return `${base}docs/intro`;
-  return `${base}${loc}/docs/intro`;
+  if (!defaultLocale || loc === defaultLocale) return `${base}docs/features`;
+  return `${base}${loc}/docs/features`;
 }
 
 const lines = [];
@@ -38,4 +38,3 @@ lines.push('Note: The README remains minimal; full docs are maintained on the we
 const outPath = path.join(repoRoot, 'README_LANGUAGES.md');
 fs.writeFileSync(outPath, lines.join('\n'), 'utf8');
 console.log(`Wrote ${outPath}`);
-
