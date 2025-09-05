@@ -3,14 +3,25 @@ id: permissions
 title: Permissions
 ---
 
-This add‑on uses a minimal set of permissions:
+This add‑on requires the following permissions:
 
-- `compose`: read composer state, list existing attachments, add attachments, listen to compose events.
-- `messagesRead`: read message metadata to discover and fetch original attachments.
-- `messagesModify`: currently present; not used to mutate messages. Planned audit to remove if redundant.
-- `windows`: open a small popup confirmation when the in‑document confirmation isn’t available.
+```
+"compose",
+"messagesRead",
+"messagesModify",
+"scripting",
+"windows",
+"sessions",
+"storage",
+"tabs"
+```
 
-Other APIs used in Thunderbird contexts:
-
-- `storage`, `sessions`, `tabs`, `scripting.compose` (MV3)
-
+Notes
+- `compose`: read composer state, manage attachments, and react to compose events.
+- `messagesRead`: discover and read original attachments from the source message.
+- `messagesModify`: needed by Thunderbird for some attachment operations in compose flows.
+- `scripting`: register MV3 compose/messageDisplay scripts where applicable.
+- `windows`: show confirmation UI when needed.
+- `sessions`: remember per‑tab ephemeral state to avoid double‑adding.
+- `storage`: persist options and defaults.
+- `tabs`: minor tab interactions when opening options or docs.
