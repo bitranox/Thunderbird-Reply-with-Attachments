@@ -58,6 +58,17 @@ export default function Home() {
       </header>
 
       <main className="container">
+        <section style={{marginTop: 24}}>
+          <h2 style={{fontSize: 18, margin: '0 0 12px 0'}}>What’s New</h2>
+          <p style={{margin: 0}}>
+            Read the latest changes in the{' '}
+            <Link to={isDifferentLocale ? hrefFor('changelog') : toFor('changelog')} reloadDocument={isDifferentLocale}>
+              Changelog
+            </Link>
+            .
+          </p>
+        </section>
+
         <section className="featureGrid">
           <article className="card">
             <h3>Automatic or Confirm‑First</h3>

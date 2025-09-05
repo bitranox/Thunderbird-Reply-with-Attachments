@@ -23,6 +23,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */ ({
         blog: false,
+        sitemap: { changefreq: 'weekly', priority: 0.5, filename: 'sitemap.xml' },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove "Edit this page" links
