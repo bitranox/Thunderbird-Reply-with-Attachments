@@ -35,6 +35,11 @@ jobs:
         with:
           name: docs-preview
           path: website/build
+      - name: "Docs preview URL"
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "View artifacts on this run:" \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
   deploy:
     if: ${{ github.event_name != 'pull_request' }}
