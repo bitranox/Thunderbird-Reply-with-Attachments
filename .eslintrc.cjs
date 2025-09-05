@@ -1,0 +1,27 @@
+module.exports = {
+  root: true,
+  env: { es2022: true, browser: true, node: true },
+  parserOptions: { ecmaVersion: 2022, sourceType: 'module', ecmaFeatures: { jsx: true } },
+  ignorePatterns: [
+    'node_modules/',
+    'coverage/',
+    'website/**',
+    '.github/',
+  ],
+  globals: {
+    browser: 'readonly',
+    messenger: 'readonly',
+    App: 'readonly',
+    SESSION_KEY: 'readonly',
+    processedTabsState: 'readonly',
+    Blob: 'readonly',
+    describe: 'readonly', it: 'readonly', expect: 'readonly', vi: 'readonly', beforeEach: 'readonly',
+    globalThis: 'readonly', document: 'readonly', window: 'readonly'
+  },
+  rules: {
+    'no-var': 'error',
+    'prefer-const': 'warn',
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    'no-undef': 'off'
+  }
+};

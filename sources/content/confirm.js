@@ -97,6 +97,7 @@
     el.setAttribute('aria-modal', 'true');
     el.setAttribute('aria-labelledby', 'rwa-confirm-text');
     el.setAttribute('aria-describedby', 'rwa-confirm-text');
+    el.setAttribute('data-testid', 'rwa-confirm-overlay');
     el.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;pointer-events:auto;';
     el.tabIndex = -1;
     el.contentEditable = 'false';
@@ -127,8 +128,10 @@
     row.style.textAlign = 'right'; row.style.gap = '8px'; row.contentEditable = 'false';
     const btnNo = document.createElement('button');
     btnNo.textContent = noLabel; btnNo.style.marginRight = '8px'; btnNo.contentEditable = 'false';
+    btnNo.setAttribute('data-testid', 'rwa-confirm-no');
     const btnYes = document.createElement('button');
     btnYes.textContent = yesLabel; btnYes.contentEditable = 'false';
+    btnYes.setAttribute('data-testid', 'rwa-confirm-yes');
     row.appendChild(btnNo); row.appendChild(btnYes);
     return { row, btnYes, btnNo };
   }

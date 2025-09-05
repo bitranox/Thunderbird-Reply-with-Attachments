@@ -21,6 +21,10 @@ jobs:
           cache: npm
       - name: Install deps
         run: npm ci
+      - name: ESLint
+        run: npm run -s lint:eslint
+      - name: WebExt Lint
+        run: make lint
       - name: Run tests + coverage (thresholds via vitest.config)
         run: npm test
       - name: Upload coverage HTML
