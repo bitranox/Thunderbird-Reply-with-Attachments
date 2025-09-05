@@ -8,7 +8,8 @@
     "test": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage --coverage.reporter=text --coverage.reporter=html || node node_modules/vitest/vitest.mjs run",
     "test:i18n": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage --coverage.reporter=text tests/i18n.*.test.js || node node_modules/vitest/vitest.mjs run tests/i18n.*.test.js",
     "test:watch": "node node_modules/vitest/vitest.mjs",
-    "lint:webext": "npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources"
+    "lint:webext": "npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
+    "generate:readme-langs": "node scripts/generate-readme-langs.mjs"
   },
   "devDependencies": {
     "jsdom": "^24.1.3",
