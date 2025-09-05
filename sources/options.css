@@ -61,3 +61,6 @@ a:hover { text-decoration: underline; }
   textarea { background:#0b0d10; color: var(--text); }
   .btn { background:#0b0d10; color: var(--text); border-color: var(--border); }
 }
+
+/* RTL support */
+html[dir="rtl"] body { direction: rtl; }

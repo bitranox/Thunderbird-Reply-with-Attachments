@@ -1,46 +1,114 @@
 {
-  "extName": { "message": "Antwort mit Anhängen" },
-  "extDescription": { "message": "Beim Antworten Anhänge aus der ursprünglichen E-Mail automatisch übernehmen." },
-  "composeTitle": { "message": "Antwort mit Anhängen" },
-  "optionsTitle": { "message": "Antwort mit Anhängen — Einstellungen" },
-  "confirmTitle": { "message": "Anhänge bestätigen" },
-
-  "uiHeader": { "message": "Antwort mit Anhängen" },
-  "uiNoOptions": { "message": "Derzeit gibt es keine zu konfigurierenden Optionen." },
-  "uiSupport": { "message": "Gefällt Ihnen dieses Add-on? Unterstützen Sie mich mit einem kleinen Beitrag:" },
-  "uiDonate": { "message": "Jetzt spenden" },
-  "uiGithubText": { "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine" },
-  "uiGithubLinkLabel": { "message": "GitHub Seite" },
-  "iconAlt": { "message": "Symbol von Antwort mit Anhängen" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Blacklist von Dateinamen (Glob-Muster)" },
-  "uiBlacklistHelp": { "message": "Dateien, deren Namen einem der folgenden Muster entsprechen, werden nie automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s" },
-  "uiSave": { "message": "Speichern" },
-  "uiSaving": { "message": "Speichere…" },
-  "uiReset": { "message": "Auf Standard zurücksetzen" },
-  "uiSaved": { "message": "Gespeichert." },
-  "uiResetDone": { "message": "Zurückgesetzt." },
-  "uiConfirmHeader": { "message": "Bestätigung" },
-  "uiConfirmLabel": { "message": "Vor dem Hinzufügen bestätigen" },
-  "uiConfirmHelp": { "message": "Ein Bestätigungsdialog erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: J oder Y = Ja; N oder Esc = Nein." },
+  "extName": {
+    "message": "Antwort mit Anhängen"
+  },
+  "extDescription": {
+    "message": "Beim Antworten Anhänge aus der ursprünglichen E-Mail automatisch übernehmen."
+  },
+  "composeTitle": {
+    "message": "Antwort mit Anhängen"
+  },
+  "optionsTitle": {
+    "message": "Antwort mit Anhängen — Einstellungen"
+  },
+  "confirmTitle": {
+    "message": "Anhänge bestätigen"
+  },
+  "uiHeader": {
+    "message": "Antwort mit Anhängen"
+  },
+  "uiNoOptions": {
+    "message": "Derzeit gibt es keine zu konfigurierenden Optionen."
+  },
+  "uiSupport": {
+    "message": "Gefällt Ihnen dieses Add-on? Unterstützen Sie mich mit einem kleinen Beitrag:"
+  },
+  "uiDonate": {
+    "message": "Jetzt spenden"
+  },
+  "uiGithubText": {
+    "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub Seite"
+  },
+  "iconAlt": {
+    "message": "Symbol von Antwort mit Anhängen"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Blacklist von Dateinamen (Glob-Muster)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Dateien, deren Namen einem der folgenden Muster entsprechen, werden nie automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
+  },
+  "uiSave": {
+    "message": "Speichern"
+  },
+  "uiSaving": {
+    "message": "Speichere…"
+  },
+  "uiReset": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "uiSaved": {
+    "message": "Gespeichert."
+  },
+  "uiResetDone": {
+    "message": "Zurückgesetzt."
+  },
+  "uiConfirmHeader": {
+    "message": "Bestätigung"
+  },
+  "uiConfirmLabel": {
+    "message": "Vor dem Hinzufügen bestätigen"
+  },
+  "uiConfirmHelp": {
+    "message": "Ein Bestätigungsdialog erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: J oder Y = Ja; N oder Esc = Nein."
+  },
   "confirmAddOne": {
     "message": "Anhang hinzufügen: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Anhänge hinzufügen ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 mehr" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 mehr"
+      }
     }
   },
-  "confirmYes": { "message": "Ja" },
-  "confirmNo": { "message": "Nein" },
-  "uiConfirmDefaultHeader": { "message": "Standardantwort" },
-  "uiConfirmDefaultYes": { "message": "Ja" },
-  "uiConfirmDefaultNo": { "message": "Nein" },
-
-  "donateUrl": { "message": "https://www.paypal.com/donate/?hosted_button_id=7KJN33DHTA8WE" },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README_DE.md" }
+  "confirmYes": {
+    "message": "Ja"
+  },
+  "confirmNo": {
+    "message": "Nein"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Standardantwort"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ja"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nein"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README_DE.md"
+  }
 }
