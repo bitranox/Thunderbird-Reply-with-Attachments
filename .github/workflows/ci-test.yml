@@ -8,7 +8,21 @@ on:
   workflow_dispatch: {}
 
 jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install deps
+        run: npm ci
+
+
   test:
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,10 +35,6 @@ jobs:
           cache: npm
       - name: Install deps
         run: npm ci
-      - name: ESLint
-        run: npm run -s lint:eslint
-      - name: WebExt Lint
-        run: make lint
       - name: Run tests + coverage (thresholds via vitest.config)
         run: npm test
       - name: Upload coverage HTML
