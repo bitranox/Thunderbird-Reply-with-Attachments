@@ -2,41 +2,69 @@
 
 Thanks for helping improve Reply with Attachments! This guide keeps changes small, safe, and easy to review.
 
-## Quickstart
-- Build ZIPs: `make pack`
-- Run tests: `make test`
-- Open coverage (optional): install `@vitest/coverage-v8`, then see `coverage/index.html`
+## 1) Workflow at a Glance
+- Fork and clone the repo.
+- Install dependencies: `npm ci` (root). For docs: `cd website && npm ci`.
+- Run tests: `make test` (see coverage notes below).
+- Create a branch, make focused changes, open a PR.
 
-## Principles
-- Keep functions tiny and intention‑revealing (Clean Code).
-- Keep domain/application code framework‑free (Clean Architecture).
-- Change only what the request asks for; avoid drive‑by edits.
+## 2) Branches & Commits
+- Branch names: `feature/<short-name>`, `fix/<short-name>`, `docs/<short-name>`, `chore/<short-name>`
+- Commits: imperative, concise. Examples:
+  - `fix: skip SMIME attachments`
+  - `feat: add blacklist glob parsing`
+  - `docs: update configuration screenshots`
 
-## Branch & Commits
-- Branches: `feature/<short-name>` or `fix/<short-name>`
-- Commits: imperative, concise scope (e.g., `fix: skip SMIME attachments`)
+## 3) Coding Standards (JS)
+- Small, intention‑revealing functions; single responsibility.
+- Modern JS: ESM, async/await, `const/let`, no `var`.
+- Strings: prefer single quotes within a file; be consistent.
+- Indentation: 4 spaces.
+- Keep helpers small; file names lowercase with underscores (e.g., `handle_donate_link.js`).
+- Logging: `console.log/warn/error` with clear, actionable messages.
+- Follow the existing style; no sweeping refactors in unrelated code.
 
-## Pull Requests
+## 4) Build & Packaging
+- Build ZIPs: `make pack` (wraps `bash distribution_zip_packer.sh`).
+- Artifacts: `reply-with-attachments-plugin*.zip` (don’t edit or commit them).
+- Versioning tip: when bumping versions, update both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging.
+- Do NOT commit `sources/manifest.json` (the build generates it temporarily).
+
+## 5) Tests
+- Run all tests: `make test` (Vitest).
+- Coverage (optional):
+  1. `npm i -D @vitest/coverage-v8`
+  2. `make test` → see summary and `coverage/index.html`.
+- i18n checks only: `make test-i18n` (parity, placeholders, titles).
+- Add tests for changed behavior; keep tests tiny and focused.
+
+## 6) Docs (Website)
+- Live under `website/` (Docusaurus). EN in `website/docs/*.md`, DE in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`.
+- Local dev: `cd website && npm run start`.
+- Build: `cd website && npm run build` (CI deploys to GitHub Pages on push to default branch).
+- If UX changes, update docs and screenshots, and the German translation where applicable.
+
+## 7) Pull Requests
 Include:
-- Summary + rationale
-- Linked issues
-- Before/after behavior and screenshots if UX changes
-- Testing notes (what was tested, how to reproduce)
+- Summary & rationale; linked issues.
+- Before/after behavior; screenshots for UI changes.
+- Testing notes and reproduction steps.
 
 Checklist:
-- [ ] Tests added/updated and passing (`make test`)
-- [ ] README/Options text updated if UX changed
-- [ ] Packaging unaffected (no ZIPs committed)
+- [ ] Tests updated and passing (`make test`).
+- [ ] Docs updated (EN/DE) if UX/permissions changed.
+- [ ] No generated artifacts committed (ZIPs or temporary `manifest.json`).
+- [ ] Version bump in both manifests if you’re shipping a release change.
 
-## Testing & Coverage
-- Unit/integration tests live under `tests/` and run with Vitest.
-- `make test` prints coverage if `@vitest/coverage-v8` is installed.
-- Prefer tiny, “plain‑English” tests. One behavior per test.
+## 8) Troubleshooting & Debug Logs
+- Thunderbird 128 ESR+ required for testing.
+- Error Console: Tools → Developer Tools → Error Console.
+- Toggle verbose logs at runtime:
+  - Enable: `messenger.storage.local.set({ debug: true })`
+  - Disable: `messenger.storage.local.set({ debug: false })`
 
-## Do/Don’t
-- Do: log with `console.*` using actionable messages.
-- Do: keep IDs, time, and I/O injectable.
-- Don’t: commit `sources/manifest.json` or generated ZIPs.
-- Don’t: add heavy dependencies for simple tasks.
+## 9) Security & Configuration
+- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel.
+- No secrets in code or logs. Keep dependencies minimal.
 
 Happy hacking!
