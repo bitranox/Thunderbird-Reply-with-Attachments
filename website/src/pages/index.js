@@ -80,6 +80,9 @@ export default function Home() {
             <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('support') : toFor('support')} reloadDocument={isDifferentLocale}>Support</Link>
             <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('licence') : toFor('licence')} reloadDocument={isDifferentLocale}>Licence</Link>
           </div>
+          <p style={{marginTop: 10, color: 'var(--ifm-color-secondary-dark)'}}>
+            Tip: Press <kbd>/</kbd> or <kbd>Ctrl</kbd>+<kbd>K</kbd> to search the docs.
+          </p>
         </section>
       </main>
     </Layout>

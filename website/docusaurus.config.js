@@ -24,7 +24,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */ ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments/edit/main/website/'
+          // Remove "Edit this page" links
+          // editUrl removed intentionally
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -56,8 +59,26 @@ const config = {
         { title: 'Project', items: [{ label: 'GitHub', href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments' }] }
       ],
       copyright: `© ${new Date().getFullYear()} Reply with Attachments`
-    }
-  })
+    },
+    // Algolia DocSearch (enable via env vars DOCSEARCH_APP_ID, DOCSEARCH_API_KEY, DOCSEARCH_INDEX_NAME)
+    ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY ? {
+      algolia: {
+        appId: process.env.DOCSEARCH_APP_ID,
+        apiKey: process.env.DOCSEARCH_API_KEY,
+        indexName: process.env.DOCSEARCH_INDEX_NAME || 'thunderbird-reply-with-attachments',
+        contextualSearch: true,
+      }
+    } : {})
+  }),
+  // Fallback local search when DocSearch keys are not configured
+  plugins: [
+    ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY ? [] : [
+      [
+        require.resolve('@easyops-cn/docusaurus-search-local'),
+        { hashed: true, language: ['en', 'de'] }
+      ]
+    ])
+  ]
 };
 
 module.exports = config;
