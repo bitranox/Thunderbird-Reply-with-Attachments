@@ -13,7 +13,7 @@
 - `sources/`: main add-on code and assets.
   - JS: `background.js`, `handle_language.js`, `handle_donate_link.js`, `handle_github_link.js`.
   - UI: `options.html`, `popup.html`.
-  - Manifests: `manifest_ATN.json`, `manifest_PRIVATE.json` (copied to `manifest.json` during packaging).
+  - Manifests: `manifest_ATN.json`, `manifest_LOCAL.json` (copied to `manifest.json` during packaging).
   - Assets: `sources/icons/*.png`.
 - Artifacts: `reply-with-attachments-plugin*.zip` are generated; do not edit by hand.
 

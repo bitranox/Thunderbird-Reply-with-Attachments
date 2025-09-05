@@ -41,21 +41,21 @@ extract_version() {
   printf '%s\n' "$ver"
 }
 plugin_version_number_ATN=$(extract_version "./sources/manifest_ATN.json")
-plugin_version_number_PRIVATE=$(extract_version "./sources/manifest_LOCAL.json")
+plugin_version_number_LOCAL=$(extract_version "./sources/manifest_LOCAL.json")
 
 # Validate version format
 echo "Validating version format..."
-if [[ ! $plugin_version_number_ATN =~ ^[0-9]+\.[0-9]+\.[0-9]+$ || ! $plugin_version_number_PRIVATE =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+if [[ ! $plugin_version_number_ATN =~ ^[0-9]+\.[0-9]+\.[0-9]+$ || ! $plugin_version_number_LOCAL =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   echo "ERROR: Version numbers must follow the format 'X.Y.Z'!" >&2
   exit 1
 fi
 
 # Output the extracted version numbers
 echo "Manifest ATN Version is    : ${plugin_version_number_ATN}"
-echo "Manifest LOCAL Version is  : ${plugin_version_number_PRIVATE}"
+echo "Manifest LOCAL Version is  : ${plugin_version_number_LOCAL}"
 
 # Check if the version numbers are the same
-if [ "${plugin_version_number_ATN}" != "${plugin_version_number_PRIVATE}" ]; then
+if [ "${plugin_version_number_ATN}" != "${plugin_version_number_LOCAL}" ]; then
   echo "ERROR: Version Numbers are not the same!" >&2
   exit 1
 fi
@@ -70,7 +70,7 @@ create_zip() {
   local manifest_source=$1
   local zip_target=$2
   local allow_ts_fallback=${3:-false} # when true, prefix timestamp on failure
-  local force_timestamp=${4:-false}   # when true, always prefix timestamp (PRIVATE build)
+  local force_timestamp=${4:-false}   # when true, always prefix timestamp (LOCAL build)
 
   echo "Creating ZIP file '$zip_target' with '$manifest_source' as manifest..."
 
