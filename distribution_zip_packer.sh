@@ -62,11 +62,15 @@ fi
 
 echo "Version numbers match. Proceeding with distribution packaging..."
 
+# track created files
+created_files=()
+
 # Function to create ZIP file
 create_zip() {
   local manifest_source=$1
   local zip_target=$2
-  local allow_ts_fallback=${3:-false} # when true, prefix timestamp on failure (PRIVATE build)
+  local allow_ts_fallback=${3:-false} # when true, prefix timestamp on failure
+  local force_timestamp=${4:-false}   # when true, always prefix timestamp (PRIVATE build)
 
   echo "Creating ZIP file '$zip_target' with '$manifest_source' as manifest..."
 
@@ -82,8 +86,11 @@ create_zip() {
     exit 1
   }
 
-  # Remove existing ZIP file if it exists
-  if [ -f "$zip_target" ]; then
+  # Determine final output name (timestamped if requested)
+  if [ "$force_timestamp" = true ]; then
+    ts_prefix=$(date +%F_%H-%M-%S)
+    zip_target="${ts_prefix}_$(basename "$zip_target")"
+  elif [ -f "$zip_target" ]; then
     echo "Removing existing ZIP file '$zip_target'..."
     if ! rm -f "$zip_target"; then
       if [ "$allow_ts_fallback" = true ]; then
@@ -139,10 +146,22 @@ create_zip() {
   fi
 
   echo "ZIP file '$zip_target' created successfully."
+  # record created file
+  created_files+=("$zip_target")
 }
 
 # Create ZIP files
-create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip" false
-create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip" true
+create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip" false false
+create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip" true true
+
+# Print concise output filenames
+echo
+echo "Build artifacts:"
+if [ ${#created_files[@]} -ge 1 ]; then
+  echo "  ATN     : ${created_files[0]}"
+fi
+if [ ${#created_files[@]} -ge 2 ]; then
+  echo "  PRIVATE : ${created_files[1]}"
+fi
 
 # Cleanup is automatically triggered on exit
