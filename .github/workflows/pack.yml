@@ -21,8 +21,36 @@ jobs:
           cache: npm
       - name: Install deps
         run: npm ci
+      - name: Extract version from manifest
+        id: manifest
+        run: |
+          echo "Reading version from sources/manifest_ATN.json";
+          VER=$(node -e "console.log(require('./sources/manifest_ATN.json').version)")
+          echo "MANIFEST_VERSION=$VER" >> $GITHUB_ENV
+          echo "version=$VER" >> $GITHUB_OUTPUT
+      - name: Validate tag matches manifest version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "Ref name: $GITHUB_REF_NAME; Manifest: v$MANIFEST_VERSION";
+          if [ "$GITHUB_REF_NAME" != "v$MANIFEST_VERSION" ]; then
+            echo "Tag must be v$MANIFEST_VERSION (from manifest), but was $GITHUB_REF_NAME";
+            exit 1;
+          fi
       - name: Build ZIPs (ATN + LOCAL)
         run: make pack
+      - name: Build release notes from CHANGELOG
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          VER="$MANIFEST_VERSION"
+          if grep -qE "^## \[${VER}\]" CHANGELOG.md; then
+            sed -n "/^## \[${VER}\]/,/^## \[/p" CHANGELOG.md | sed "$d" > release_notes.md || true
+            if [ ! -s release_notes.md ]; then
+              awk "/^## \[${VER}\]/{flag=1;next}/^## \[/&&flag{flag=0}flag" CHANGELOG.md > release_notes.md || true
+            fi
+          else
+            echo "Release ${VER}" > release_notes.md
+            echo "\nSee CHANGELOG.md for details." >> release_notes.md
+          fi
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -35,4 +63,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: reply-with-attachments-plugin*.zip
-          generate_release_notes: true
+          body_path: release_notes.md
