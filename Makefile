@@ -18,7 +18,7 @@ test-i18n: ## Run i18n parity and placeholder checks only
 lint: ## Lint manifest and source via web-ext
 	@set -e; \
 	trap 'rm -f sources/manifest.json' EXIT; \
-	cp -f sources/manifest_PRIVATE.json sources/manifest.json; \
+	cp -f sources/manifest_LOCAL.json sources/manifest.json; \
 	$(NPM) run lint:webext
 
 pack: lint ## Build ATN and LOCAL ZIPs via packaging script

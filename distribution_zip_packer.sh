@@ -15,7 +15,7 @@ trap cleanup EXIT
 # pack zip files for distribution
 
 # Check if the manifest files exist
-manifest_files=("./sources/manifest_ATN.json" "./sources/manifest_PRIVATE.json")
+manifest_files=("./sources/manifest_ATN.json" "./sources/manifest_LOCAL.json")
 for file in "${manifest_files[@]}"; do
   if [ ! -f "$file" ]; then
     echo "ERROR: File '$file' not found!" >&2
@@ -41,7 +41,7 @@ extract_version() {
   printf '%s\n' "$ver"
 }
 plugin_version_number_ATN=$(extract_version "./sources/manifest_ATN.json")
-plugin_version_number_PRIVATE=$(extract_version "./sources/manifest_PRIVATE.json")
+plugin_version_number_PRIVATE=$(extract_version "./sources/manifest_LOCAL.json")
 
 # Validate version format
 echo "Validating version format..."
@@ -52,7 +52,7 @@ fi
 
 # Output the extracted version numbers
 echo "Manifest ATN Version is    : ${plugin_version_number_ATN}"
-echo "Manifest PRIVATE Version is: ${plugin_version_number_PRIVATE}"
+echo "Manifest LOCAL Version is  : ${plugin_version_number_PRIVATE}"
 
 # Check if the version numbers are the same
 if [ "${plugin_version_number_ATN}" != "${plugin_version_number_PRIVATE}" ]; then
@@ -114,7 +114,7 @@ create_zip() {
   (
     cd ./sources || exit 1
     zip -r "../$zip_target" . \
-      -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
+      -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*'
   ) || {
     if [ "$allow_ts_fallback" = true ]; then
       # Try once more with a timestamped file name if not already timestamped
@@ -128,7 +128,7 @@ create_zip() {
           (
             cd ./sources || exit 1
             zip -r "../$ts_name" . \
-              -x './manifest_ATN.json' './manifest_PRIVATE.json' './README.md' '*_bak*'
+              -x './manifest_ATN.json' './manifest_LOCAL.json' './README.md' '*_bak*'
           ) || { echo "ERROR: Failed to create ZIP file '$ts_name'!" >&2; exit 1; }
           zip_target="$ts_name"
         ;;
@@ -152,7 +152,7 @@ create_zip() {
 
 # Create ZIP files
 create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip" false false
-create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-LOCAL.zip" true true
+create_zip "./sources/manifest_LOCAL.json" "reply-with-attachments-plugin-LOCAL.zip" true true
 
 # Print concise output filenames
 echo
