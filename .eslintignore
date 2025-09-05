@@ -1,6 +1,0 @@
-node_modules/
-coverage/
-website/**
-.github/
-.idea/
-*.min.js
