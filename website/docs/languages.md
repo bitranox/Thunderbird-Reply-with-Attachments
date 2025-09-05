@@ -10,6 +10,8 @@ Massive language support, thanks to AI translation tools — covering 103 langua
 
 List below is sorted by the language code.
 
+See also: the [Glossary](glossary) for canonical UI terms used across locales.
+
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
 - `am`: Amharic (am-ET)

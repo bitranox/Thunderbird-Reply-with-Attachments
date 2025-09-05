@@ -10,6 +10,8 @@ Umfangreiche Sprachunterstützung dank KI‑Übersetzungswerkzeugen — derzeit 
 
 Die Liste ist nach Sprachcode sortiert.
 
+Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
+
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
 - `am`: Amharisch (am-ET)
@@ -113,4 +115,3 @@ Die Liste ist nach Sprachcode sortiert.
 - `zh-Hans`: Chinesisch (Vereinfacht) (zh-CN)
 - `zh-Hant`: Chinesisch (Traditionell) (zh-TW)
 - `zu`: Zulu (zu-ZA)
-
