@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrwa_docs=self.webpackChunkrwa_docs||[]).push([[634],{192:(r,s,a)=>{a.r(s),a.d(s,{default:()=>u});a(6540);var c=a(6347),e=a(6025),t=a(4848);function u(){var r=(0,e.Ay)("/docs/intro");return(0,t.jsx)(c.rd,{to:r})}}}]);
