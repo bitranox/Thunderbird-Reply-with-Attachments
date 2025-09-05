@@ -30,10 +30,11 @@ jobs:
           name: coverage-html-node-${{ matrix.node }}
           path: coverage
           overwrite: true
-      - name: Upload to Codecov
+      - name: Upload coverage reports to Codecov
         if: always()
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
           fail_ci_if_error: false
           verbose: true
