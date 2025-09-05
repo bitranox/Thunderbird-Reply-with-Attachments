@@ -72,6 +72,8 @@ export default function Home() {
             <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('configuration') } : { to: docLinkTo('configuration') })}>Configuration</Link>
             <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('usage') } : { to: docLinkTo('usage') })}>Usage</Link>
             <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('compatibility') } : { to: docLinkTo('compatibility') })}>Compatibility</Link>
+            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('support') } : { to: docLinkTo('support') })}>Support</Link>
+            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('licence') } : { to: docLinkTo('licence') })}>Licence</Link>
           </div>
         </section>
       </main>
