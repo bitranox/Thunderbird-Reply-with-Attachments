@@ -95,6 +95,8 @@
     const el = document.createElement('div');
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-labelledby', 'rwa-confirm-text');
+    el.setAttribute('aria-describedby', 'rwa-confirm-text');
     el.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;pointer-events:auto;';
     el.tabIndex = -1;
     el.contentEditable = 'false';
@@ -114,6 +116,7 @@
     header.style.cssText = 'display:flex;align-items:center;gap:10px;margin:0 0 12px 0;';
     header.contentEditable = 'false';
     const p = document.createElement('p');
+    p.id = 'rwa-confirm-text';
     p.textContent = text; p.style.margin = '0'; p.contentEditable = 'false';
     header.appendChild(p);
     return header;

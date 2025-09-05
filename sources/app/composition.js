@@ -15,6 +15,9 @@
   /** @type {Map<number,'processing'|'done'>} */
   const processedTabsState = new Map();
 
+  /** @type {Set<number>} Tabs where confirm content script has been injected */
+  const injectedConfirmScriptTabs = new Set();
+
   // small utilities
   const toNumericId = (v) => (typeof v === 'number' ? v : (v && typeof v.id === 'number' ? v.id : null));
   const yesNo = (v) => (String(v || 'yes').toLowerCase() === 'no' ? 'no' : 'yes');
@@ -113,6 +116,7 @@
       const id = toNumericId(closedTabId); if (id == null) return;
       try { sessions.removeTabValue(id, SESSION_KEY)?.catch?.(() => {}); } catch (_) {}
       processedTabsState.delete(id);
+      injectedConfirmScriptTabs.delete(id);
     });
 
     return { ensureReplyAttachments: (tabId, details) => ensure(tabId, details), processedTabsState, SESSION_KEY };
@@ -127,9 +131,8 @@
   async function readConfirmDefault(browser) { try { const r = await browser.storage?.local?.get?.({ confirmDefaultChoice: 'yes' }); return yesNo(r?.confirmDefaultChoice); } catch (_) { return 'yes'; } }
 
   // confirm helpers
-  /** Ensure the confirm content script is present in the given compose tab. */
   /** Ensure the confirm content script is injected into the target compose tab. */
-  async function ensureConfirmInjected(tabId, scriptingCompose) { try { await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']); } catch (_) {} }
+  async function ensureConfirmInjected(tabId, scriptingCompose) { try { if (injectedConfirmScriptTabs.has(tabId)) return; await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']); injectedConfirmScriptTabs.add(tabId); } catch (_) {} }
   /** Ask the user via content script; fall back progressively if needed. */
   /**
    * Ask the user via targeted tab → broadcast → popup fallback.
@@ -141,7 +144,7 @@
     if (isDecision(targeted)) return targeted.ok;
     const broadcast = await tryBroadcastConfirm(browser, payload);
     if (isDecision(broadcast)) return broadcast.ok;
-    return await askInPopup(browser, files, def);
+    return await askInPopup(browser, files, def, logger);
   }
   /** Try targeted tab messaging; return decision or null on error. */
   async function tryTargetedConfirm(tabs, tabId, payload) { try { return await tabs.sendMessage(tabId, payload); } catch (_) { return null; } }
@@ -149,8 +152,7 @@
   async function tryBroadcastConfirm(browser, payload) { try { return await browser.runtime?.sendMessage?.(payload); } catch (_) { return null; } }
   function isDecision(x) { return x && typeof x.ok === 'boolean'; }
   /** Last resort: open a small popup window to ask for confirmation. */
-  /** Last resort: open a tiny popup to ask the user. */
-  async function askInPopup(browser, files, def) {
+  async function askInPopup(browser, files, def, logger) {
     try {
       const token = Math.random().toString(36).slice(2);
       const url = buildConfirmUrl(browser, token, files, def);
@@ -158,9 +160,8 @@
       const win = await browser.windows?.create?.({ url, type: 'popup', width: 520, height: 180, focused: true });
       try { if (win && typeof win.id === 'number') await browser.windows?.update?.(win.id, { focused: true }); } catch (_) {}
       return await result;
-    } catch (err) { globalThis.log?.warn?.({ err }, 'askInPopup failed'); return false; }
+    } catch (err) { try { logger?.warn?.({ err }, 'askInPopup failed'); } catch (_) {} return false; }
   }
-  /** Build the URL for the popup confirmation page with parameters. */
   /** Build confirm.html URL with query parameters. */
   function buildConfirmUrl(browser, token, files, def) {
     const base = (browser.runtime?.getURL && browser.runtime.getURL('confirm.html')) || 'confirm.html';

@@ -4,71 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="optionsTitle">Options</title>
-    <style>
-        :root {
-            --brand: #0a6cff;
-            --brand-600: #0a5edb;
-            --text: #1f2328;
-            --muted: #6a727d;
-            --bg: #f6f8fa;
-            --panel: #ffffff;
-            --border: #d0d7de;
-            --radius: 10px;
-            --shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 24px rgba(0,0,0,.06);
-            --font: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
-        }
-        html, body { height: 100%; }
-        body {
-            font-family: var(--font);
-            font-size: 14px; /* smaller, cleaner base size */
-            line-height: 1.45;
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-        }
-        .wrap { max-width: 760px; margin: 28px auto; padding: 0 16px; }
-        .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: clip; }
-        .card-header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: linear-gradient(#f8fbff, #f6f8fa); border-bottom: 1px solid var(--border); }
-        .card-header img { width: 28px; height: 28px; } /* ~half the old size */
-        .card-header h1 { font-size: 18px; margin: 0; font-weight: 600; }
-        .card-body { padding: 14px; }
-
-        .section { border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-bottom: 12px; }
-        .section h2 { font-size: 15px; margin: 0 0 8px 0; font-weight: 600; }
-        .desc { color: var(--muted); margin: 6px 0 10px 0; }
-
-        .row { display: flex; align-items: center; gap: 10px; }
-        .stack { display: grid; gap: 8px; }
-
-        textarea { width: 100%; resize: vertical; min-height: 120px; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; border: 1px solid var(--border); border-radius: 6px; padding: 8px; background: #fff; color: var(--text); }
-
-        .actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
-        .btns { display: flex; align-items: center; gap: 8px; }
-        .btn { appearance: none; border: 1px solid var(--border); background: #fff; color: var(--text); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; }
-        .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
-        .btn.primary:hover { background: var(--brand-600); border-color: var(--brand-600); }
-        .btn:hover { filter: brightness(0.98); }
-
-        .status { min-height: 20px; min-width: 120px; text-align: right; color: var(--muted); }
-        .status .ok { color: #137333; }
-        .status .warn { color: #9a6700; }
-
-        .footer { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); display: grid; gap: 10px; }
-        .support { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .support .donate { display: inline-flex; align-items: center; gap: 8px; }
-        .support .donate .btn { font-weight: 600; }
-        .gh { display: flex; align-items: center; gap: 8px; }
-        .gh img { width: 28px; height: 28px; }
-        a { color: var(--brand); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="options.css">
     <meta name="color-scheme" content="light dark">
-    <style media="(prefers-color-scheme: dark)">
-        :root { --bg:#0b0d10; --panel:#0f141a; --border:#2d333b; --text:#e6edf3; --muted:#9aa7b2; --shadow:none; }
-        .card-header { background: linear-gradient(#0f141a,#0f141a); }
-        textarea { background:#0b0d10; color: var(--text); }
-        .btn { background:#0b0d10; color: var(--text); border-color: var(--border); }
-    </style>
     <!-- Removed inline script to satisfy CSP; ui_i18n.js sets the 'js' class -->
     
 </head>
