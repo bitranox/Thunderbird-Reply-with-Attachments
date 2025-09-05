@@ -49,8 +49,3 @@
 ## Security & Configuration Tips
 - Do not commit `sources/manifest.json`; the build script creates it temporarily.
 - Keep `browser_specific_settings.gecko.id` stable to preserve update channel.
-
-## Checkpoints
-- before changing anything always create a local checkpoint without pushing to origin. Name it "before <description>". Fill in a short description what the user asked to change
- 
-

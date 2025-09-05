@@ -5,13 +5,14 @@
     <title>Confirm Attachments</title>
     <style>
       body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; }
+      #hdr { display:flex; align-items:center; gap:10px; }
       #text { margin: 0 0 12px 0; }
       #row { text-align: right; }
       button { margin-left: 8px; padding: 6px 12px; }
     </style>
   </head>
   <body>
-    <p id="text"></p>
+    <div id="hdr"><p id="text"></p></div>
     <div id="row">
       <button id="no"></button>
       <button id="yes"></button>
@@ -19,4 +20,3 @@
     <script src="confirm_page.js"></script>
   </body>
 </html>
-

@@ -1,14 +1,31 @@
 # Reply with Attachments
 
+![Tests](https://img.shields.io/badge/tests-vitest-blue)
+![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
+![License](https://img.shields.io/badge/license-GPLv3-lightgrey)
+
 ## ![DE Flag](https://github.com/ashleedawg/flags/blob/master/DE.png?raw=true) [Zur deutschen Version](README_DE.md)
 
-**Reply with Attachments** is a official Thunderbird add-on that automatically includes attachments from the original email when replying to a message. Additionally, SMIME certificates are excluded from being attached.
+**Reply with Attachments** is a Thunderbird add‑on that automatically includes the original attachments when you reply.
 
 ---
 
-## Features
+## Quick Links
+
+- English Docs: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/en/
+- Deutsche Doku: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/
+
+## Features (short)
 
 - Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*.png`, `smime.*`, `*.p7s`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
 - Adds originals even if you already attached something yourself; avoids duplicates by filename.
 - Skips SMIME certificates and inline images to avoid unnecessary attachments.
 
@@ -19,52 +36,32 @@ Screenshot demonstrating the add-on in action:
 
 ---
 
-## Installation - in Thunderbird (recommended for automatic updates)
-1. in Thunderbird navigate to **Tools > Add-ons and Themes** and search for "reply with attachments" and add the Add-on
+## Configuration
+
+Open the add‑on’s Options page:
+
+- Thunderbird → Tools → Add‑ons and Themes → find “Reply with Attachments” → Preferences/Options
+
+Available settings:
+
+- Confirmation: toggle “Ask before adding attachments”.
+  - Default Answer: choose “Yes” or “No” for the dialog’s default focus.
+  - Keyboard shortcuts in the dialog: Y or J = Yes, N or Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
+- Blacklist (glob patterns): one pattern per line, case‑insensitive, matched against filenames only.
+  - Examples: `*.png`, `smime.*`, `*.p7s`
+  - Useful to suppress image/logo files or signature files from being added.
+
+Tip: Defaults are prefilled on first use. You can reset to defaults any time.
 
 ---
 
-## Installation - PRIVATE - from the official Add-on Page (for development)
-
-### Step 1: Download the XPI File
-1. Go to the [Thunderbird Add-on Page](https://addons.thunderbird.net/de/thunderbird/search/?q=reply%20with%20attachments)
-2. Download the latest version of the add-on as XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Step 2: Install in Thunderbird 
-1. In the **Add-ons Manager**, click on the gear icon in the top-right corner.
-2. Select **Install Add-on From File...** from the dropdown menu.
-3. Choose the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-4. Confirm the installation when prompted.
+For detailed Install/Options/Permissions, see Docs above.
 
 ---
 
-## Installation - PRIVATE - latest Version from Github  (for development)
-
-### Step 1: Download the ZIP File
-1. Go to the [Releases](https://github.com/bitranox/Thunderbird-Reply-with-Attachment/releases) section of this repository.
-2. Download the latest version of the add-on as ZIP file (`reply-with-attachments-plugin-PRIVATE.zip`).
-3. In the **Add-ons Manager**, click on the gear icon in the top-right corner.
-4. Select **Install Add-on From File...** from the dropdown menu.
-5. Choose the downloaded ``reply-with-attachments-plugin-PRIVATE.zip`` file.
-6. Confirm the installation when prompted.
-
-### Step 2: Install in Thunderbird
-1. Open Thunderbird.
-2. Navigate to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click on the gear icon in the top-right corner.
-4. Select **Install Add-on From File...** from the dropdown menu.
-5. Choose the downloaded `reply-with-attachments-plugin-PRIVATE.zip` file.
-6. Confirm the installation when prompted.
-
----
-
-## Usage
-
-1. Open an email in Thunderbird.
-2. Click **Reply** or **Reply All**.
-3. The add-on will automatically include any attachments from the original email in the reply.
-4. If you attach your own files first, the add-on still adds the originals once and de‑duplicates by filename.
-5. SMIME certificates and inline images are skipped.
+## Usage (short)
+- Reply and the add‑on adds originals automatically — or asks first, if enabled in Options.
+- De‑duplicated by filename; SMIME and inline images are always skipped.
 
 ---
 
@@ -117,6 +114,33 @@ If you'd like to contribute to this project:
 - Build add-on ZIPs: `make pack`
 - Run tests (Vitest): `make test`
 - Discover commands: `make help`
+
+## Permissions
+
+This add-on requests a minimal set of permissions required to provide its functionality. Rationale per permission:
+
+- `compose`: read composer state, list existing attachments, add attachments, and listen to compose events.
+- `messagesRead`: read message metadata to discover original attachments and fetch their files.
+- `messagesModify`: currently present in the manifest; not actively used to mutate messages. Planned: audit and remove if redundant.
+- `windows`: open a small popup window as a last‑resort confirmation UI when the in‑document confirmation isn’t available.
+
+Other APIs used without explicit permissions in Thunderbird contexts:
+
+- `storage`: persist options and small runtime flags.
+- `sessions`: track a per‑tab idempotency marker and clear it on tab close.
+- `tabs`: open GitHub/Donate links from the options page (extension page context).
+- `scripting.compose`: preregister and inject the confirmation content script into compose documents (MV3).
+
+### Testing & Coverage
+- `make test` runs the full Vitest suite. If the optional coverage plugin is installed, it also produces coverage reports.
+- To enable coverage locally:
+  1) `npm i -D @vitest/coverage-v8`
+  2) run `make test` again
+  3) See console summary and open `coverage/index.html` for the HTML report
+- In CI or restricted environments where the plugin can’t be installed, `make test` automatically falls back to running tests without coverage.
+
+#### i18n Checks Only
+- Quick locale audit: `make test-i18n` runs only parity/placeholder/title tests for translations.
 
 Packaged files are created as `reply-with-attachments-plugin*.zip` in the repository root. For manual testing in Thunderbird, use Tools → Add-ons and Themes → gear menu → Install Add-on From File… and select the built ZIP.
 

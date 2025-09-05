@@ -1,36 +1,27 @@
-// background.js — entry point (composition root is in app/composition.js)
+/*
+ * Module: background.js
+ * Purpose: Entry point for the add-on. Boots the composition root,
+ *          exposes tiny helpers for tests, and wires the primary
+ *          ensure-on-reply behavior into Thunderbird’s background context.
+ * Notes:
+ * - Composition and domain logic live in app/* to keep responsibilities clear.
+ * - This file stays thin: no business rules, only bootstrapping and facades.
+ */
 
 (async () => {
-  // Optionally read debug flag to gate console noise
-  let cfg = {};
-  try { cfg = await (browser.storage?.local?.get?.({ debug: false }) ?? {}); } catch (_) {}
-  const DEBUG = !!cfg?.debug;
-  if (DEBUG) console.log('Reply with Attachments: wiring app…');
+  const DEBUG = await readDebugFlag();
+  globalThis.log = makeLogger(DEBUG);
+  log.debug('Reply with Attachments: wiring app…');
 
-  // Expose helpers early for tests
+  // Expose small helpers early for tests
   let _ensure = null;
-  globalThis.extractNumericTabId = function extractNumericTabId(tabId) {
-    if (typeof tabId === 'number') return tabId;
-    if (tabId && typeof tabId === 'object' && typeof tabId.id === 'number') return tabId.id;
-    return null;
-  };
-  globalThis.getComposeDetails = async function getComposeDetails(tabId) {
-    try { return await browser.compose.getComposeDetails(tabId); } catch (_) { return null; }
-  };
+  globalThis.extractNumericTabId = toNumericId;
+  globalThis.getComposeDetails = safeGetComposeDetails;
   globalThis.ensureReplyAttachments = async (...args) => { if (_ensure) return _ensure(...args); };
-  globalThis.handleComposeStateChanged = async function handleComposeStateChanged(tabId, _details) {
-    const id = extractNumericTabId(tabId);
-    if (id == null) return;
-    const details = await getComposeDetails(id);
-    if (!details) return;
-    await globalThis.ensureReplyAttachments(id, details);
-  };
-  // Placeholder; will be replaced after wiring
-  globalThis.processReplyAttachments = async () => 0;
+  globalThis.handleComposeStateChanged = onComposeStateChangedFacade;
+  globalThis.processReplyAttachments = async () => 0; // placeholder
 
   const { ensureReplyAttachments, processedTabsState, SESSION_KEY } = App.Composition.createAppWiring(browser);
-
-  // Surface for legacy tests expecting globals
   _ensure = ensureReplyAttachments;
   globalThis.ensureReplyAttachments = ensureReplyAttachments;
   globalThis.processedTabsState = processedTabsState;
@@ -39,4 +30,70 @@
     compose: { listAttachments: (id) => browser.compose.listAttachments?.(id) || Promise.resolve([]), addAttachment: (id, a) => browser.compose.addAttachment(id, a) },
     messages: { listAttachments: (id) => browser.messages.listAttachments(id), getAttachmentFile: (id, p) => browser.messages.getAttachmentFile(id, p) },
   });
+
+  registerApplySettingsListener(applySettingsToOpenComposers);
+
+  /**
+   * Read the debug flag from storage.local.
+   * @returns {Promise<boolean>} true when debug logging is enabled
+   */
+  async function readDebugFlag() { try { const cfg = await (browser.storage?.local?.get?.({ debug: false }) ?? {}); return !!cfg?.debug; } catch (_) { return false; } }
+  /**
+   * Create a minimal logger (debug/info/warn/error) gated by a boolean.
+   * @param {boolean} enabled
+   * @returns {{debug:Function,info:Function,warn:Function,error:Function}}
+   */
+  function makeLogger(enabled) {
+    return {
+      debug: (...args) => { if (enabled) { try { console.debug('[RWA]', ...args); } catch (_) {} } },
+      info:  (...args) => { try { console.info('[RWA]', ...args); } catch (_) {} },
+      warn:  (...args) => { try { console.warn('[RWA]', ...args); } catch (_) {} },
+      error: (...args) => { try { console.error('[RWA]', ...args); } catch (_) {} },
+    };
+  }
+  /** Convert a tab reference (number or {id}) to a numeric id. */
+  function toNumericId(v) { return (typeof v === 'number' ? v : (v && typeof v.id === 'number' ? v.id : null)); }
+  /**
+   * Safely fetch compose details. Returns null if the API throws (tab closed or not a compose tab).
+   * @param {number} tabId
+   * @returns {Promise<any|null>}
+   */
+  async function safeGetComposeDetails(tabId) { try { return await browser.compose.getComposeDetails(tabId); } catch (_) { return null; } }
+  /**
+   * Facade for compose state changes used by tests.
+   * Resolves the id, loads details safely, delegates to ensureReplyAttachments.
+   * @param {number|{id:number}} tabId
+   */
+  async function onComposeStateChangedFacade(tabId, _details) {
+    const id = toNumericId(tabId); if (id == null) return;
+    const details = await safeGetComposeDetails(id); if (!details) return;
+    await globalThis.ensureReplyAttachments(id, details);
+  }
+  /**
+   * Apply current settings to all open reply composers.
+   * Clears per-tab markers and runs one ensure pass per eligible tab.
+   */
+  async function applySettingsToOpenComposers() {
+    try {
+      const tabs = await browser.tabs?.query?.({}) || [];
+      for (const t of tabs) {
+        const id = toNumericId(t); if (id == null) continue;
+        const details = await safeGetComposeDetails(id);
+        if (!details) continue;
+        const type = String(details?.type || '').toLowerCase();
+        if (!type.startsWith('reply')) continue;
+        try { await browser.sessions?.removeTabValue?.(id, globalThis.SESSION_KEY); } catch (_) {}
+        try { globalThis.processedTabsState?.delete?.(id); } catch (_) {}
+        try { await globalThis.ensureReplyAttachments?.(id, details); } catch (_) {}
+      }
+    } catch (err) { globalThis.log?.warn?.({ err }, 'applySettingsToOpenComposers failed'); }
+  }
+  /** Register the message listener that triggers applySettingsToOpenComposers. */
+  function registerApplySettingsListener(fn) {
+    try {
+      browser.runtime.onMessage.addListener((msg) => {
+        if (msg && msg.type === 'rwa:apply-settings-open-compose') { fn(); return Promise.resolve({ ok: true }); }
+      });
+    } catch (_) {}
+  }
 })();

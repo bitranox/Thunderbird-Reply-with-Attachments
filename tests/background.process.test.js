@@ -70,3 +70,8 @@ describe('background.js — processReplyAttachments', () => {
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });
 });
+/*
+ * Scope: processReplyAttachments behavior under background wiring.
+ * Intent: ensure only eligible attachments are added, null files are skipped,
+ *         and relaxed fallback does not include inline content.
+ */

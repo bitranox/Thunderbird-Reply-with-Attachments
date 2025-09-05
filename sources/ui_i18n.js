@@ -1,12 +1,20 @@
-// Simple i18n applier for options/popup pages
-// - data-i18n="key"                        -> sets textContent from i18n message
-// - data-i18n-attr="attr:key[,attr2:key2]" -> sets attributes from i18n messages
+/*
+ * Module: ui_i18n.js
+ * Purpose: Lightweight i18n applier for options/popup pages.
+ * Usage:
+ * - data-i18n="key"                        → sets textContent from i18n message
+ * - data-i18n-attr="attr:key[,attr2:key2]" → sets attributes from i18n messages
+ * Notes: Compatible with both browser.i18n and messenger.i18n.
+ */
 (function () {
+  // Mark that JS is active early to avoid layout shift (no inline script needed)
+  try { document.documentElement.classList.add('js'); } catch (_) {}
   /**
    * Lookup a localized string by key using the MailExtension i18n API.
    * @param {string} key
    * @returns {string}
    */
+  /** Read a localized string by key (empty string on failure). */
   function getMessage(key) {
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key) || '';
@@ -15,6 +23,7 @@
     return '';
   }
 
+  /** Apply i18n to nodes marked with data-i18n: sets textContent. */
   function applyTextI18n() {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
@@ -24,6 +33,7 @@
     });
   }
 
+  /** Apply i18n to attributes declared via data-i18n-attr: sets attributes. */
   function applyAttributeI18n() {
     document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
       const spec = el.getAttribute('data-i18n-attr');
@@ -37,6 +47,7 @@
     });
   }
 
+  /** Initialize i18n application once DOM is ready. */
   function init() {
     applyTextI18n();
     applyAttributeI18n();

@@ -1,13 +1,22 @@
-// Domain: attachment filtering and helpers (pure functions)
+/*
+ * Module: app/domain/filters.js
+ * Purpose: Pure domain helpers for attachment handling.
+ * Contains small predicates and utilities used by the application layer
+ * to decide whether an attachment should be included.
+ * Notes: These functions are pure and framework‑free.
+ */
 
+/** Return a case‑folded (lowercased) copy of a value. */
 function lower(s) {
   return String(s || '').toLowerCase();
 }
 
+/** Resolve a canonical, case‑insensitive filename for an attachment. */
 function normalizedName(att) {
   return lower(att?.name || att?.fileName);
 }
 
+/** Detect S/MIME signature and envelope types; these must never be copied. */
 function isSmime(att) {
   const n = normalizedName(att);
   const t = lower(att?.contentType);
@@ -17,17 +26,20 @@ function isSmime(att) {
          t === 'application/pkcs7-mime';
 }
 
+/** Inline images referenced by CID should not be copied as file attachments. */
 function isInlineImage(att) {
   const hasCid = Boolean(att?.contentId);
   const isImage = lower(att?.contentType).startsWith('image/');
   return hasCid && isImage;
 }
 
+/** Content-Disposition header explicitly set to inline should be skipped. */
 function isInlineDisposition(att) {
   const disp = lower(att?.contentDisposition);
   return disp.startsWith('inline');
 }
 
+/** Strict pass: exclude S/MIME, any inline image, and inline disposition. */
 function includeStrict(att) {
   if (isSmime(att)) return false;
   if (isInlineImage(att)) return false;
@@ -35,6 +47,7 @@ function includeStrict(att) {
   return true;
 }
 
+/** Relaxed pass: still exclude S/MIME and inline content, but be lenient otherwise. */
 function includeRelaxed(att) {
   // Even on relaxed pass, never include inline content or S/MIME artifacts.
   return !isSmime(att) && !isInlineImage(att) && !isInlineDisposition(att);
@@ -46,6 +59,7 @@ App.Domain = { lower, normalizedName, isSmime, isInlineImage, isInlineDispositio
 
 // --- Glob matching utilities for blacklist ---------------------------------
 
+/** Convert a simple glob to a RegExp (case‑insensitive via lowercasing). */
 function globToRegExp(glob) {
   // Always normalize pattern to lowercase first
   glob = lower(glob);
@@ -72,6 +86,7 @@ function globToRegExp(glob) {
   return new RegExp('^' + re + '$');
 }
 
+/** Build a predicate that checks if a filename should be excluded by patterns. */
 function makeNameExcluder(patterns) {
   const regs = (patterns || [])
     .map((p) => String(p || '').trim().toLowerCase())

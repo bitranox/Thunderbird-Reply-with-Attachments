@@ -1,15 +1,34 @@
 # Antwort mit Anhängen
 
+![Tests](https://img.shields.io/badge/tests-vitest-blue)
+![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
+![Lizenz](https://img.shields.io/badge/lizenz-GPLv3-lightgrey)
+
 ## ![US Flag](https://github.com/ashleedawg/flags/blob/master/US.png?raw=true) [Switch to English version](README.md)
 
-**Reply with Attachments** ist ein offizielles Thunderbird-Add-on, das automatisch Anhänge aus der ursprünglichen E-Mail hinzufügt, wenn auf eine Nachricht geantwortet wird. SMIME-Zertifikate werden dabei ausgeschlossen.
+**Antwort mit Anhängen** ist ein Thunderbird‑Add‑on, das beim Antworten automatisch die Originalanhänge übernimmt.
 
 ---
 
-## Funktionen
+## Schnellzugriff
+
+- English Docs: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/en/
+- Deutsche Doku: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/
+
+## Funktionen (kurz)
 
 - Fügt beim Antworten automatisch Anhänge aus der ursprünglichen E‑Mail hinzu.
-- Fügt die Originalanhänge auch dann hinzu, wenn du bereits eigene Dateien angehängt hast; verhindert Duplikate anhand des Dateinamens.
+- Konfigurierbares Verhalten: Anhänge können
+  - automatisch hinzugefügt werden oder
+  - erst nach Rückfrage (Bestätigungsdialog) hinzugefügt werden.
+    In den Einstellungen lässt sich die Rückfrage aktivieren sowie die
+    Standard‑Antwort (Ja/Nein) festlegen.
+- Blacklist: Dateinamen‑Blacklist (Glob‑Muster) verhindert das automatische
+  Anhängen bestimmter Dateien. Beispiele: `*.png`, `smime.*`, `*.p7s`.
+  Die Prüfung erfolgt nur auf den Dateinamen, ist nicht
+  Groß‑/Kleinschreibungs‑sensitiv und akzeptiert ein Muster pro Zeile.
+- Fügt die Originalanhänge auch dann hinzu, wenn du bereits eigene Dateien
+  angehängt hast; verhindert Duplikate anhand des Dateinamens.
 - Überspringt SMIME‑Zertifikate und Inline‑Bilder, um unnötige Anhänge zu vermeiden.
 
 Screenshot, der die Erweiterung in Aktion zeigt:
@@ -56,13 +75,28 @@ Screenshot, der die Erweiterung in Aktion zeigt:
 
 ---
 
-## Verwendung
+## Konfiguration
 
-1. Öffne eine E-Mail in Thunderbird.
-2. Klicke auf **Antworten** oder **Allen antworten**.
-3. Das Add-on fügt automatisch alle Anhänge der ursprünglichen E‑Mail in die Antwort ein.
-4. Wenn du zuerst eigene Dateien anhängst, werden die Originalanhänge trotzdem genau einmal ergänzt; vorhandene Dateinamen werden übersprungen (keine Duplikate).
-5. SMIME‑Zertifikate und Inline‑Bilder werden übersprungen.
+Optionen öffnen:
+
+- Thunderbird → Extras → Add-ons und Themes → „Antwort mit Anhängen“ → Einstellungen
+
+Einstellungen:
+
+- Bestätigung: „Vor dem Hinzufügen bestätigen“ aktivieren/deaktivieren.
+  - Standard‑Antwort: „Ja“ oder „Nein“ als Vorgabe für den Dialog.
+  - Tastatur im Dialog: J oder Y = Ja; N oder Esc = Nein. Tab/Shift+Tab und Pfeiltasten bewegen den Fokus.
+- Blacklist (Glob‑Muster): ein Muster pro Zeile, Groß‑/Kleinschreibung wird ignoriert, Abgleich nur gegen den Dateinamen.
+  - Beispiele: `*.png`, `smime.*`, `*.p7s`
+  - Nützlich, um Logos/Signaturen dauerhaft zu unterdrücken.
+
+Tipp: Standardwerte sind beim ersten Start vorbelegt und können jederzeit zurückgesetzt werden.
+
+---
+
+## Verwendung (kurz)
+- Antworten: Originale werden automatisch hinzugefügt – oder nach Rückfrage, wenn aktiviert.
+- Duplikate werden nach Dateiname vermieden; SMIME & Inline‑Bilder werden nie hinzugefügt.
 
 ---
 
@@ -115,6 +149,33 @@ Wenn du zu diesem Projekt beitragen möchtest:
 - Add-on-ZIPs bauen: `make pack`
 - Tests ausführen (Vitest): `make test`
 - Befehle anzeigen: `make help`
+
+## Berechtigungen
+
+Dieses Add-on verwendet nur die Berechtigungen, die für die Funktion erforderlich sind. Begründung pro Berechtigung:
+
+- `compose`: Lese Zugriff auf den Composer, vorhandene Anhänge auflisten, neue Anhänge hinzufügen, Compose‑Ereignisse abonnieren.
+- `messagesRead`: Nachrichten‑Metadaten lesen, um Originalanhänge zu finden und deren Dateien abzurufen.
+- `messagesModify`: Derzeit in der Manifestdatei vorhanden; wird nicht aktiv zum Ändern von Nachrichten genutzt. Geplant: prüfen, ob diese Berechtigung entfernt werden kann.
+- `windows`: Kleines Popup‑Fenster als letzte Bestätigungs‑Option öffnen, falls die In‑Dokument‑Bestätigung nicht verfügbar ist.
+
+Weitere APIs (ohne explizite Berechtigung im TB‑Kontext):
+
+- `storage`: Optionen und kleine Laufzeit‑Flags speichern.
+- `sessions`: Pro‑Tab‑Idempotenz‑Marker setzen/löschen.
+- `tabs`: GitHub/Spenden‑Links von der Optionsseite öffnen (Erweiterungsseite).
+- `scripting.compose`: Bestätigungs‑Content‑Script (MV3) vorregistrieren und injizieren.
+
+### Tests & Coverage
+- `make test` führt die gesamte Vitest‑Suite aus. Wenn das optionale Coverage‑Plugin installiert ist, wird zusätzlich ein Abdeckungsbericht erzeugt.
+- Coverage lokal aktivieren:
+  1) `npm i -D @vitest/coverage-v8`
+  2) `make test` erneut ausführen
+  3) Konsolen‑Zusammenfassung lesen und `coverage/index.html` im Browser öffnen
+- In CI oder eingeschränkten Umgebungen, in denen das Plugin nicht installiert werden kann, fällt `make test` automatisch auf einen Test‑Lauf ohne Coverage zurück.
+
+#### Nur i18n‑Prüfungen
+- Schneller Locale‑Check: `make test-i18n` führt nur Paritäts‑/Platzhalter‑/Titel‑Tests für Übersetzungen aus.
 
 Die Pakete werden als `reply-with-attachments-plugin*.zip` im Repository-Root erstellt. Für manuelles Testen in Thunderbird: Extras → Add-ons und Themes → Zahnradsymbol → Add-on aus Datei installieren… und das erzeugte ZIP wählen.
 

@@ -1,3 +1,8 @@
+/*
+ * Module: handle_donate_link.js
+ * Purpose: Open the localized Donate link in a new tab if possible,
+ *          otherwise fall back to navigating the current page.
+ */
 (() => {
   /**
    * Open a link's current href in a new tab when possible, otherwise fall back

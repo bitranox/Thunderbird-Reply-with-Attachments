@@ -35,4 +35,8 @@ describe('Composition wiring — events', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 });
-
+/*
+ * Scope: composition event wiring.
+ * Intent: onComposeStateChanged runs only for replies; onBeforeSend returns
+ *         {} and ensures attachments exactly once.
+ */

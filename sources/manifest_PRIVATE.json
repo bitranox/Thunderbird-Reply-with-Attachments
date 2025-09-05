@@ -31,11 +31,19 @@
     "128": "icons/icon-128.png"
   },
   "compose_action": {
-    "default_title": "__MSG_composeTitle__",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-48.png"
+    },
+    "default_title": "\u2009",
     "default_popup": "options.html"
   },
   "action": {
-    "default_title": "__MSG_composeTitle__",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-48.png"
+    },
+    "default_title": "\u2009",
     "default_popup": "options.html"
   },
   "options_ui": {

@@ -1,121 +1,191 @@
-// Application: use cases orchestrate domain + ports
+/*
+ * Module: app/application/usecases.js
+ * Purpose: Application layer orchestration. Small, intention‑revealing
+ *          functions that coordinate domain rules and adapter ports.
+ * Highlights:
+ * - Pure decision making; no UI/HTTP details leak in.
+ * - Two‑pass selection of attachments (strict → relaxed) for clarity.
+ * - Idempotency handled by the caller (composition) via sessions.
+ * Domain:
+ * - Helper predicates (includeStrict/Relaxed, normalizedName) come from App.Domain.
+ */
 
-// Expect domain helpers on global (loaded from domain/filters.js)
+// Application layer: small, intention-revealing functions
+// Domain helpers are exposed on global App.Domain (loaded from domain/filters.js)
 
 /**
- * Create a function that processes reply attachments (strict + relaxed passes).
- * @param {object} ports
- * @param {object} ports.compose
- * @param {function(number): Promise<Array>} ports.compose.listAttachments
- * @param {function(number, {file: any}): Promise<void>} ports.compose.addAttachment
- * @param {object} ports.messages
- * @param {function(number): Promise<Array>} ports.messages.listAttachments
- * @param {function(number,string): Promise<any>} ports.messages.getAttachmentFile
+ * Decide which attachments to add, in two passes (strict → relaxed).
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
+ * @returns {(tabId: number, messageId: number) => Promise<number>} processReplyAttachments
  */
 function createProcessReplyAttachments({ compose, messages, shouldExclude = () => false, confirm = async () => true }) {
   return async function processReplyAttachments(tabId, messageId) {
     try {
-      const attachments = await messages.listAttachments(messageId);
-      if (!attachments?.length) return 0;
+      const all = await getAllAttachments(messages, messageId);
+      if (isEmpty(all)) return 0;
 
-      const existing = await compose.listAttachments(tabId).catch(() => []);
-      const existingNames = new Set((existing || []).map((a) => normalizedName(a)).filter(Boolean));
-      const addedPartNames = new Set();
-      let added = 0;
+      const existingNames = await getExistingAttachmentNames(compose, tabId);
+      const selected = pickFirstNonEmpty([
+        selectStrict(all, existingNames, shouldExclude),
+        selectRelaxed(all, existingNames, shouldExclude),
+      ]);
+      if (isEmpty(selected)) return 0;
 
-      const selected = [];
+      const approved = await askUserToConfirm(confirm, tabId, selected);
+      if (!approved) return 0;
 
-      async function trySelect(att) {
-        if (addedPartNames.has(att.partName)) return false;
-        const key = normalizedName(att);
-        if (key && existingNames.has(key)) return false;
-        if (shouldExclude(key)) return false;
-        selected.push(att);
-        addedPartNames.add(att.partName);
-        if (key) existingNames.add(key);
-        return true;
-      }
-
-      for (const att of attachments) {
-        if (!shouldExclude(normalizedName(att)) && includeStrict(att)) {
-          if (await trySelect(att)) added += 1;
-        }
-      }
-      if (added === 0) {
-        for (const att of attachments) {
-          if (!shouldExclude(normalizedName(att)) && includeRelaxed(att)) {
-            if (await trySelect(att)) added += 1;
-          }
-        }
-      }
-
-      if (selected.length === 0) return 0;
-
-      // Ask caller whether to proceed (e.g., show confirm to user)
-      const proceed = await confirm(tabId, selected.map(a => ({ name: a.name || a.fileName, partName: a.partName })));
-      if (!proceed) return 0;
-
-      // Fetch and attach selected files
-      let actuallyAdded = 0;
-      for (const att of selected) {
-        const file = await messages.getAttachmentFile(messageId, att.partName);
-        if (!file) continue;
-        await compose.addAttachment(tabId, { file });
-        actuallyAdded += 1;
-      }
-      return actuallyAdded;
-    } catch (_) {
+      return await attachSelectedFiles(compose, messages, tabId, messageId, selected);
+    } catch (err) {
+      globalThis.log?.warn?.({ err }, 'processReplyAttachments failed');
       return 0;
     }
   };
 }
 
+// — process helpers —
+/** Load all attachments for the source message. */
+async function getAllAttachments(messages, messageId) { return await messages.listAttachments(messageId); }
+/** Load existing compose attachments and build a case-insensitive name set. */
+async function getExistingAttachmentNames(compose, tabId) { const a = await safe(() => compose.listAttachments(tabId), []); return makeNameSet(a); }
+/** Select strictly eligible attachments (never inline/SMIME). */
+function selectStrict(all, existingNames, shouldExclude) { return selectEligible(all, existingNames, shouldExclude, domainIncludeStrict()); }
+/** Select relaxed eligible attachments as a fallback. */
+function selectRelaxed(all, existingNames, shouldExclude) { return selectEligible(all, existingNames, shouldExclude, domainIncludeRelaxed()); }
+/** Return the first non-empty array; otherwise an empty array. */
+function pickFirstNonEmpty(candidates) { return candidates.find((x) => x && x.length) || []; }
+/** Ask the user to confirm selected files. */
+async function askUserToConfirm(confirm, tabId, selected) { return await confirm(tabId, selected.map(asSelection)); }
+/** Attach selected files to the compose; returns the count added. */
+async function attachSelectedFiles(compose, messages, tabId, messageId, selected) {
+  let added = 0;
+  for (const att of selected) {
+    const file = await messages.getAttachmentFile(messageId, att.partName);
+    if (!file) continue;
+    await compose.addAttachment(tabId, { file });
+    added += 1;
+  }
+  return added;
+}
+function isEmpty(arr) { return !arr || arr.length === 0; }
+
 /**
- * Create a function that ensures original attachments are present for reply compose.
- * Handles per-tab idempotency via sessions and an in-memory state map.
- * @param {object} deps
- * @param {object} deps.compose
- * @param {function(number): Promise<any>} deps.compose.getDetails
- * @param {object} deps.messages
- * @param {object} deps.sessions
- * @param {Map<number,'processing'|'done'>} deps.state
- * @param {string} deps.sessionKey
+ * Ensure original attachments for reply compose; idempotent per tab via memory + sessions.
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
+ * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
 function createEnsureReplyAttachments({ compose, messages, sessions, state, sessionKey, shouldExclude = () => false, confirm = async () => true }) {
   const processReplyAttachments = createProcessReplyAttachments({ compose, messages, shouldExclude, confirm });
+  return async function ensureReplyAttachments(tabId, details) {
+    if (!isReply(details)) return;                       // only for replies
+    if (isProcessingOrDone(state, tabId)) return;        // skip duplicates in memory
+    markProcessing(state, tabId);
 
-  async function resolveMessageId(tabId, initialDetails, { attempts = 10, delayMs = 200 } = {}) {
-    let details = initialDetails;
-    for (let i = 0; i < attempts; i++) {
-      const id = details?.referenceMessageId || details?.relatedMessageId;
-      if (id) return id;
-      await new Promise((r) => setTimeout(r, delayMs));
-      details = await compose.getDetails(tabId).catch(() => null);
-    }
-    return null;
-  }
+    const already = await wasAlreadyProcessed(sessions, tabId, sessionKey);
+    if (already) return markDone(state, tabId);
 
-  return async function ensureReplyAttachments(tabId, composeDetails) {
-    const type = lower(composeDetails?.type);
-    if (!type.startsWith('reply')) return;
-    const mem = state.get(tabId);
-    if (mem === 'processing' || mem === 'done') return;
-    state.set(tabId, 'processing');
-    try {
-      const already = await sessions.getTabValue(tabId, sessionKey).catch(() => false);
-      if (already) { state.set(tabId, 'done'); return; }
-    } catch (_) {}
-    const messageId = await resolveMessageId(tabId, composeDetails);
-    if (!messageId) { state.delete(tabId); return; }
+    const messageId = await waitForMessageId(compose, tabId, details);
+    if (!messageId) return clearState(state, tabId);
+
     const added = await processReplyAttachments(tabId, messageId);
-    if (added > 0) {
-      state.set(tabId, 'done');
-      try { await sessions.setTabValue(tabId, sessionKey, true); } catch (_) {}
-    } else {
-      state.delete(tabId);
-    }
+    if (added > 0) { await markProcessed(sessions, tabId, sessionKey, state); } else { clearState(state, tabId); }
   };
 }
+
+// — ensure helpers —
+async function wasAlreadyProcessed(sessions, tabId, key) { return await safe(() => sessions.getTabValue(tabId, key), false); }
+async function markProcessed(sessions, tabId, key, state) { markDone(state, tabId); await safe(() => sessions.setTabValue(tabId, key, true)); }
+
+// — helpers —
+
+function isReply(details) {
+  // Thunderbird composes label reply flavors like 'reply', 'replyAll', etc.
+  return String(details?.type || '').toLowerCase().startsWith('reply');
+}
+
+function isProcessingOrDone(state, tabId) {
+  // Memory guard to avoid duplicate runs within a single background session.
+  const s = state.get(tabId);
+  return s === 'processing' || s === 'done';
+}
+
+function markProcessing(state, tabId) { state.set(tabId, 'processing'); }
+function markDone(state, tabId) { state.set(tabId, 'done'); }
+function clearState(state, tabId) { state.delete(tabId); }
+
+async function waitForMessageId(compose, tabId, initial, { attempts = 10, delayMs = 200 } = {}) {
+  // Poll the compose details until Thunderbird provides a reference/related id.
+  let details = initial;
+  for (let i = 0; i < attempts; i++) {
+    const id = details?.referenceMessageId || details?.relatedMessageId;
+    if (id) return id;
+    await delay(delayMs);
+    details = await safe(() => compose.getDetails(tabId), null);
+  }
+  return null;
+}
+
+/** Core selection loop: unique by part, not excluded, not already present. */
+function selectEligible(all, existingNames, shouldExclude, includeFn) {
+  // Select unique, non‑excluded, and not‑already‑present attachments.
+  const takenParts = new Set();
+  const selected = [];
+  const nn = domainNormalizedName();
+  for (const att of all) {
+    const name = nn(att);
+    if (shouldExclude(name)) continue;
+    if (!includeFn(att)) continue;
+    if (takenParts.has(att.partName)) continue;
+    if (name && existingNames.has(name)) continue;
+    selected.push(att);
+    takenParts.add(att.partName);
+    if (name) existingNames.add(name);
+  }
+  return selected;
+}
+
+/** Build a case-insensitive set of names from compose attachments. */
+function makeNameSet(attachments) {
+  // Build a case‑insensitive set of attachment names for quick membership tests.
+  const nn = domainNormalizedName();
+  const names = (attachments || []).map((a) => nn(a)).filter(Boolean);
+  return new Set(names);
+}
+
+// — domain fallbacks —
+/** Domain fallback for normalizedName if App.Domain is not loaded. */
+function domainNormalizedName() {
+  const fn = globalThis.App?.Domain?.normalizedName;
+  if (typeof fn === 'function') return fn;
+  return (att) => String(att?.name || att?.fileName || '').toLowerCase();
+}
+/** Domain fallback for includeStrict if App.Domain is not loaded. */
+function domainIncludeStrict() {
+  const fn = globalThis.App?.Domain?.includeStrict;
+  if (typeof fn === 'function') return fn;
+  return (att) => {
+    const name = domainNormalizedName()(att);
+    const ct = String(att?.contentType || '').toLowerCase();
+    const cd = String(att?.contentDisposition || '').toLowerCase();
+    const cid = !!att?.contentId;
+    if (name === 'smime.p7s') return false;
+    if (ct === 'application/pkcs7-signature' || ct === 'application/x-pkcs7-signature' || ct === 'application/pkcs7-mime') return false;
+    if (cid && ct.startsWith('image/')) return false;
+    if (cd.startsWith('inline')) return false;
+    return true;
+  };
+}
+/** Domain fallback for includeRelaxed if App.Domain is not loaded. */
+function domainIncludeRelaxed() {
+  const fn = globalThis.App?.Domain?.includeRelaxed;
+  if (typeof fn === 'function') return fn;
+  return domainIncludeStrict();
+}
+
+function asSelection(a) { return { name: a.name || a.fileName, partName: a.partName }; }
+
+function delay(ms) { return new Promise((r) => setTimeout(r, ms)); }
+
+async function safe(fn, fallback) { try { return await fn(); } catch (_) { return fallback; } }
 
 globalThis.App = globalThis.App || {};
 App.UseCases = { createProcessReplyAttachments, createEnsureReplyAttachments };

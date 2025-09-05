@@ -1,3 +1,8 @@
+/*
+ * Module: handle_github_link.js
+ * Purpose: Open the localized GitHub link/logo in a new tab when clicked,
+ *          with a safe fallback to same‑page navigation.
+ */
 (() => {
   /**
    * Open a link's current href in a new tab when possible, otherwise fall back
