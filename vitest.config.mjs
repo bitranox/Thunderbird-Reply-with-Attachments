@@ -2,6 +2,8 @@
 export default {
   test: {
     coverage: {
+            provider: 'v8',
+      reporter: ['text', 'html', 'lcov'],
       lines: 0.85,
       functions: 0.85,
       branches: 0.85,

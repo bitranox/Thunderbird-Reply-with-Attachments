@@ -21,8 +21,6 @@ jobs:
           cache: npm
       - name: Install deps
         run: npm ci
-      - name: Install coverage plugin
-        run: npm i -D @vitest/coverage-v8
       - name: Run tests + coverage (thresholds via vitest.config)
         run: npm test
       - name: Upload coverage HTML
