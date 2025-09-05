@@ -22,6 +22,7 @@ const config = {
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */ ({
+        blog: false,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Remove "Edit this page" links
