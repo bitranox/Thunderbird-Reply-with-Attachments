@@ -3,6 +3,7 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 
 describe('compose.addAttachment failure path', () => {
   it('continues attaching subsequent files when one addAttachment throws', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const browser = createBrowserMock({
       messageAttachments: [
         { name: 'a.txt', partName: '1' },
@@ -26,6 +27,7 @@ describe('compose.addAttachment failure path', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
     // second call went through despite first failure
     expect(browser.compose.addAttachment.mock.calls[1][1].file).toBeInstanceOf(Blob);
+    warnSpy.mockRestore();
   });
 });
 

@@ -3,6 +3,7 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 
 describe('getAttachmentFile error handling', () => {
   it('skips a failing part and continues with others', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const browser = createBrowserMock({
       messageAttachments: [
         { name: 'a.txt', partName: '1' },
@@ -22,5 +23,6 @@ describe('getAttachmentFile error handling', () => {
     await triggerComposeState(browser, 101);
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
     expect(browser.compose.addAttachment.mock.calls[0][1].file).toBeInstanceOf(Blob);
+    warnSpy.mockRestore();
   });
 });
