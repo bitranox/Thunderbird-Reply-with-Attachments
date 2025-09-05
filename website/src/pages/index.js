@@ -25,6 +25,11 @@ export default function Home() {
   // Compute a locale-aware docs URL:
   // - If we're already on a localized page (currentLocale !== defaultLocale), use that.
   // - Otherwise, detect the user's preferred locale and use it when different from default.
+  const detected = pickLocale(locales, defaultLocale);
+  const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
+  const isDifferentLocale = targetLocale !== currentLocale;
+  const hrefFor = (slug) =>
+    useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}/`);
   const toFor = (slug) => useBaseUrl(`/docs/${slug}/`);
 
   return (
@@ -45,7 +50,11 @@ export default function Home() {
             quick confirmation.
           </p>
           <div className="ctaRow">
-            <Link className="button button--lg btnPrimary" to={toFor('features')}>
+            <Link
+              className="button button--lg btnPrimary"
+              to={isDifferentLocale ? hrefFor('features') : toFor('features')}
+              reloadDocument={isDifferentLocale}
+            >
               Open Docs
             </Link>
             <Link
@@ -60,7 +69,11 @@ export default function Home() {
             >
               GitHub
             </Link>
-            <Link className="button button--lg btnGhost" to={toFor('donation')}>
+            <Link
+              className="button button--lg btnGhost"
+              to={isDifferentLocale ? hrefFor('donation') : toFor('donation')}
+              reloadDocument={isDifferentLocale}
+            >
               Donate
             </Link>
           </div>
@@ -71,7 +84,14 @@ export default function Home() {
         <section style={{ marginTop: 24 }}>
           <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>What’s New</h2>
           <p style={{ margin: 0 }}>
-            Read the latest changes in the <Link to={toFor('changelog')}>Changelog</Link>.
+            Read the latest changes in the{' '}
+            <Link
+              to={isDifferentLocale ? hrefFor('changelog') : toFor('changelog')}
+              reloadDocument={isDifferentLocale}
+            >
+              Changelog
+            </Link>
+            .
           </p>
         </section>
 
@@ -106,22 +126,46 @@ export default function Home() {
         <section style={{ marginTop: 24 }}>
           <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>Docs quick links</h2>
           <div className="ctaRow" style={{ gap: 10, display: 'flex', flexWrap: 'wrap' }}>
-            <Link className="button button--sm button--secondary" to={toFor('install')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('install') : toFor('install')}
+              reloadDocument={isDifferentLocale}
+            >
               Install
             </Link>
-            <Link className="button button--sm button--secondary" to={toFor('configuration')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('configuration') : toFor('configuration')}
+              reloadDocument={isDifferentLocale}
+            >
               Configuration
             </Link>
-            <Link className="button button--sm button--secondary" to={toFor('usage')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('usage') : toFor('usage')}
+              reloadDocument={isDifferentLocale}
+            >
               Usage
             </Link>
-            <Link className="button button--sm button--secondary" to={toFor('compatibility')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('compatibility') : toFor('compatibility')}
+              reloadDocument={isDifferentLocale}
+            >
               Compatibility
             </Link>
-            <Link className="button button--sm button--secondary" to={toFor('support')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('support') : toFor('support')}
+              reloadDocument={isDifferentLocale}
+            >
               Support
             </Link>
-            <Link className="button button--sm button--secondary" to={toFor('licence')}>
+            <Link
+              className="button button--sm button--secondary"
+              to={isDifferentLocale ? hrefFor('licence') : toFor('licence')}
+              reloadDocument={isDifferentLocale}
+            >
               Licence
             </Link>
           </div>
