@@ -6,4 +6,5 @@
 - If a vulnerability involves sensitive details, open an issue stating you have a report and we will provide a secure channel.
 
 Supported versions
+
 - The current release line (latest tag) receives fixes; older releases are not maintained.
