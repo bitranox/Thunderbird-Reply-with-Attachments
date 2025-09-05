@@ -18,3 +18,8 @@ Optionen:
   - Beispiele: `*.png`, `smime.*`, `*.p7s`
 
 Tipp: Standardwerte sind vorbelegt und können zurückgesetzt werden.
+
+#### Einstellungen speichern
+
+- Klicke auf „Speichern“, um deine Änderungen zu übernehmen.
+- Mit „Zurücksetzen“ stellst du die Standardwerte wieder her.
