@@ -24,9 +24,8 @@ export default function Home() {
   const detected = pickLocale(locales, defaultLocale);
   const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
   const isDifferentLocale = targetLocale !== currentLocale;
-  const docsUrl = useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/features/`);
-  const docLinkHref = (slug) => useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}/`);
-  const docLinkTo = (slug) => useBaseUrl(`/docs/${slug}/`);
+  const hrefFor = (slug) => useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}/`);
+  const toFor = (slug) => useBaseUrl(`/docs/${slug}/`);
 
   return (
     <Layout
@@ -38,7 +37,13 @@ export default function Home() {
           <h1 className="heroTitle">Reply with Attachments</h1>
           <p className="heroSubtitle">Include original attachments when replying in Thunderbird — automatically or after a quick confirmation.</p>
           <div className="ctaRow">
-            <Link className="button button--lg btnPrimary" {...(isDifferentLocale ? { href: docsUrl } : { to: useBaseUrl('/docs/features/') })}>Open Docs</Link>
+            <Link
+              className="button button--lg btnPrimary"
+              to={isDifferentLocale ? hrefFor('features') : toFor('features')}
+              reloadDocument={isDifferentLocale}
+            >
+              Open Docs
+            </Link>
             <Link className="button button--lg btnGhost" href="https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments">Install from Add‑ons</Link>
             <Link className="button button--lg btnGhost" href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments">GitHub</Link>
           </div>
@@ -68,12 +73,12 @@ export default function Home() {
         <section style={{marginTop: 24}}>
           <h2 style={{fontSize: 18, margin: '0 0 12px 0'}}>Docs quick links</h2>
           <div className="ctaRow" style={{gap: 10, display: 'flex', flexWrap: 'wrap'}}>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('install') } : { to: docLinkTo('install') })}>Install</Link>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('configuration') } : { to: docLinkTo('configuration') })}>Configuration</Link>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('usage') } : { to: docLinkTo('usage') })}>Usage</Link>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('compatibility') } : { to: docLinkTo('compatibility') })}>Compatibility</Link>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('support') } : { to: docLinkTo('support') })}>Support</Link>
-            <Link className="button button--sm button--secondary" {...(isDifferentLocale ? { href: docLinkHref('licence') } : { to: docLinkTo('licence') })}>Licence</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('install') : toFor('install')} reloadDocument={isDifferentLocale}>Install</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('configuration') : toFor('configuration')} reloadDocument={isDifferentLocale}>Configuration</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('usage') : toFor('usage')} reloadDocument={isDifferentLocale}>Usage</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('compatibility') : toFor('compatibility')} reloadDocument={isDifferentLocale}>Compatibility</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('support') : toFor('support')} reloadDocument={isDifferentLocale}>Support</Link>
+            <Link className="button button--sm button--secondary" to={isDifferentLocale ? hrefFor('licence') : toFor('licence')} reloadDocument={isDifferentLocale}>Licence</Link>
           </div>
         </section>
       </main>
