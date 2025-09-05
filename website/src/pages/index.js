@@ -23,7 +23,7 @@ export default function Home() {
   // - Otherwise, detect the user's preferred locale and use it when different from default.
   const detected = pickLocale(locales, defaultLocale);
   const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
-  const docsUrl = useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/features`);
+  const docsUrl = useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/features/`);
   const docLink = (slug) => useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}`);
 
   return (
