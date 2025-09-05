@@ -8,7 +8,6 @@ This add‑on requires the following permissions:
 ```
 "compose",
 "messagesRead",
-"messagesModify",
 "scripting",
 "windows",
 "sessions",
@@ -19,7 +18,7 @@ This add‑on requires the following permissions:
 Notes
 - `compose`: read composer state, manage attachments, and react to compose events.
 - `messagesRead`: discover and read original attachments from the source message.
-- `messagesModify`: needed by Thunderbird for some attachment operations in compose flows.
+- Removed: `messagesModify` — no longer required for the add‑on’s current flows (reading attachments and adding them to compose). If future features modify messages, we will document and reintroduce it explicitly.
 - `scripting`: register MV3 compose/messageDisplay scripts where applicable.
 - `windows`: show confirmation UI when needed.
 - `sessions`: remember per‑tab ephemeral state to avoid double‑adding.

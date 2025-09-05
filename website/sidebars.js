@@ -11,6 +11,7 @@ const sidebars = {
     'languages',
     'glossary',
     'support',
+    'privacy',
     'donation',
     'licence',
     'changelog'

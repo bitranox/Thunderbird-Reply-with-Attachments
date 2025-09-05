@@ -15,7 +15,6 @@
   "permissions": [
     "compose",
     "messagesRead",
-    "messagesModify",
     "scripting",
     "windows",
     "sessions",
@@ -35,7 +34,7 @@
       "16": "icons/icon-16.png",
       "32": "icons/icon-48.png"
     },
-    "default_title": "\u2009",
+    "default_title": " ",
     "default_popup": "options.html"
   },
   "action": {
@@ -43,7 +42,7 @@
       "16": "icons/icon-16.png",
       "32": "icons/icon-48.png"
     },
-    "default_title": "\u2009",
+    "default_title": " ",
     "default_popup": "options.html"
   },
   "options_ui": {
