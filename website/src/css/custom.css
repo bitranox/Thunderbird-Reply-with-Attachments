@@ -2,3 +2,21 @@
   --ifm-color-primary: #0a6cff;
 }
 
+/* Modern hero styles */
+.heroGradient {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(10,108,255,0.25), rgba(10,108,255,0) 60%),
+              radial-gradient(1200px 600px at 90% -10%, rgba(108,10,255,0.18), rgba(108,10,255,0) 60%),
+              linear-gradient(180deg, #0b0e14 0%, #0f141a 100%);
+  color: #e6edf3;
+  padding: 6rem 0 4rem;
+}
+.heroTitle { font-size: 3rem; font-weight: 800; letter-spacing: .2px; }
+.heroSubtitle { opacity: .9; font-size: 1.2rem; }
+.ctaRow { display:flex; gap:12px; flex-wrap:wrap; margin-top: 1.5rem; }
+.btnPrimary { background:#0a6cff; color:#fff; border:0; padding:.7rem 1rem; border-radius: .6rem; font-weight:600; }
+.btnGhost { background:transparent; color:#e6edf3; border:1px solid rgba(255,255,255,.2); padding:.7rem 1rem; border-radius:.6rem; }
+.featureGrid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin: 2rem 0 3rem; }
+.card { border:1px solid var(--ifm-toc-border-color, #2d333b); border-radius: .8rem; padding:1rem; background:#0f141a; color:#e6edf3; }
+.card h3 { margin: .2rem 0 .5rem; font-size: 1.1rem; }
+.brandIcon { width:56px; height:56px; border-radius: 12px; box-shadow: 0 8px 32px rgba(10,108,255,.25); }
+

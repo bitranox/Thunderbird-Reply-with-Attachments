@@ -35,6 +35,11 @@ const config = {
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
     navbar: {
       title: 'Reply with Attachments',
+      logo: {
+        alt: 'Reply with Attachments',
+        src: 'https://raw.githubusercontent.com/bitranox/Thunderbird-Reply-with-Attachments/master/sources/icons/icon-48.png',
+        href: '/docs/intro'
+      },
       items: [
         { to: '/docs/intro', label: 'Home', position: 'left' },
         { type: 'doc', docId: 'intro', position: 'left', label: 'Docs' },
