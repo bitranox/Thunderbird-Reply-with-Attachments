@@ -2,10 +2,11 @@ name: Docs
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
     tags: [ 'v*', 'V*' ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
+  workflow_dispatch: {}
 
 jobs:
   build:
