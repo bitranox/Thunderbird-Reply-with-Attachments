@@ -2,6 +2,7 @@
 const sidebars = {
   docs: [
     'features',
+    'quickstart',
     'install',
     'configuration',
     'usage',
