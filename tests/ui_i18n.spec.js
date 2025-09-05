@@ -1,14 +1,6 @@
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import fs from 'fs';
-import path from 'path';
-
-function loadScript(filepath, context = {}) {
-  const code = fs.readFileSync(filepath, 'utf8');
-  // eslint-disable-next-line no-new-func
-  const fn = new Function(...Object.keys(context), code);
-  fn(...Object.values(context));
-}
+// Import scripts to ensure they are instrumented for coverage
 
 describe('ui_i18n + handlers integration', () => {
   let browser;
@@ -42,9 +34,9 @@ describe('ui_i18n + handlers integration', () => {
     globalThis.browser = browser;
   });
 
-  it('applies text and href via data-i18n / data-i18n-attr and handlers open links', () => {
-    // load ui_i18n and link handlers
-    loadScript(path.join(process.cwd(), 'sources', 'ui_i18n.js'));
+  it('applies text and href via data-i18n / data-i18n-attr and handlers open links', async () => {
+    // load ui_i18n
+    await import('../sources/ui_i18n.js');
     // Ensure DOMContentLoaded path is exercised
     document.dispatchEvent(new Event('DOMContentLoaded'));
 
@@ -60,8 +52,8 @@ describe('ui_i18n + handlers integration', () => {
     expect(document.getElementById('github-link-logo').getAttribute('href')).toBe('https://example.com/github');
 
     // Load click handlers and simulate clicks
-    loadScript(path.join(process.cwd(), 'sources', 'handle_github_link.js'));
-    loadScript(path.join(process.cwd(), 'sources', 'handle_donate_link.js'));
+    await import('../sources/handle_github_link.js');
+    await import('../sources/handle_donate_link.js');
     document.dispatchEvent(new Event('DOMContentLoaded'));
 
     document.getElementById('github-link').click();
