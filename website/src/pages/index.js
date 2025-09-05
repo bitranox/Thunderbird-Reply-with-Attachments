@@ -58,6 +58,15 @@ export default function Home() {
             <p>Case‑insensitive glob patterns like <code>*.png</code> or <code>smime.*</code> prevent adding noisy files.</p>
           </article>
         </section>
+
+        <section style={{marginTop: 24}}>
+          <h2 style={{fontSize: 18, margin: '0 0 12px 0'}}>Docs quick links</h2>
+          <div className="ctaRow" style={{gap: 10, display: 'flex', flexWrap: 'wrap'}}>
+            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/install')}>Install</Link>
+            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/configuration')}>Configuration</Link>
+            <Link className="button button--sm button--secondary" to={useBaseUrl('/docs/usage')}>Usage</Link>
+          </div>
+        </section>
       </main>
     </Layout>
   );
