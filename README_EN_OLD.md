@@ -22,7 +22,7 @@ If you like this add‑on, please consider supporting it:
 
 [![Donate via PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-## Features (short)
+## Features
 
 - Automatically attaches files from the original email when replying.
 - Configurable behavior: attachments can be

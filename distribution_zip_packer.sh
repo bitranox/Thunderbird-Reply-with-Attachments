@@ -152,7 +152,7 @@ create_zip() {
 
 # Create ZIP files
 create_zip "./sources/manifest_ATN.json" "reply-with-attachments-plugin.zip" false false
-create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-PRIVATE.zip" true true
+create_zip "./sources/manifest_PRIVATE.json" "reply-with-attachments-plugin-LOCAL.zip" true true
 
 # Print concise output filenames
 echo
@@ -161,7 +161,7 @@ if [ ${#created_files[@]} -ge 1 ]; then
   echo "  ATN     : ${created_files[0]}"
 fi
 if [ ${#created_files[@]} -ge 2 ]; then
-  echo "  PRIVATE : ${created_files[1]}"
+echo "  LOCAL   : ${created_files[1]}"
 fi
 
 # Cleanup is automatically triggered on exit

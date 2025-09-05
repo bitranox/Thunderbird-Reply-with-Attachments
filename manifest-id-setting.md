@@ -44,7 +44,7 @@ Use the same id across all versions you test locally.
 ### private packing (ID set to `thunderbird-addon-reply-with-attachments_bitranox@gmail.com`)
 
 - set the version number !
-- pack `manifest_PRIVATE.json` as `manifest.json` into the zip file "reply-with-attachments-plugin-PRIVATE.zip"
+- pack `manifest_PRIVATE.json` as `manifest.json` into the zip file "reply-with-attachments-plugin-LOCAL.zip"
 
 ### ATN packing (ID not set)
 

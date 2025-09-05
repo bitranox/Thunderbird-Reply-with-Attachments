@@ -20,7 +20,7 @@
 ## Build, Test, and Development Commands
 - `make help`: list available developer commands.
 - `make test`: run the Vitest test suite.
-- `make pack`: build ATN and PRIVATE ZIPs (wraps `bash distribution_zip_packer.sh`).
+- `make pack`: build ATN and LOCAL ZIPs (wraps `bash distribution_zip_packer.sh`).
 - Manual install (dev): Thunderbird → Tools → Add-ons and Themes → gear menu → Install Add-on From File… → choose the built ZIP.
 - Tip: update version in both `sources/manifest_*.json` before packaging.
 

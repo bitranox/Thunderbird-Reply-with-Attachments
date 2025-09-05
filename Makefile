@@ -21,5 +21,5 @@ lint: ## Lint manifest and source via web-ext
 	cp -f sources/manifest_PRIVATE.json sources/manifest.json; \
 	$(NPM) run lint:webext
 
-pack: lint ## Build ATN and PRIVATE ZIPs via packaging script
+pack: lint ## Build ATN and LOCAL ZIPs via packaging script
 	bash ./distribution_zip_packer.sh
