@@ -55,7 +55,7 @@ const config = {
     footer: {
       style: 'dark',
       links: [
-        { title: 'Docs', items: [{ label: 'Home', to: '/docs/intro' }, { label: 'Install', to: '/docs/install' }] },
+        { title: 'Docs', items: [{ label: 'Home', to: '/docs/features' }, { label: 'Install', to: '/docs/install' }] },
         { title: 'Project', items: [{ label: 'GitHub', href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments' }] }
       ],
       copyright: `© ${new Date().getFullYear()} Reply with Attachments`
@@ -72,12 +72,16 @@ const config = {
   }),
   // Fallback local search when DocSearch keys are not configured
   plugins: [
-    ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY ? [] : [
-      [
-        require.resolve('@easyops-cn/docusaurus-search-local'),
-        { hashed: true, language: ['en', 'de'] }
-      ]
-    ])
+    ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY
+      ? []
+      : (() => {
+          try {
+            const localSearch = require.resolve('@easyops-cn/docusaurus-search-local');
+            return [[localSearch, { hashed: true, language: ['en', 'de'] }]];
+          } catch (e) {
+            return [];
+          }
+        })())
   ]
 };
 
