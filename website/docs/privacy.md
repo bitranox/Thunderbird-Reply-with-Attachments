@@ -17,3 +17,7 @@ What the add‑on does not do:
 - No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
 
 Permissions are documented on the [Permissions](permissions) page.
+
+## Content Security Policy (CSP)
+
+The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.

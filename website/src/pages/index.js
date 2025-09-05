@@ -29,8 +29,8 @@ export default function Home() {
   const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
   const isDifferentLocale = targetLocale !== currentLocale;
   const hrefFor = (slug) =>
-    useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}/`);
-  const toFor = (slug) => useBaseUrl(`/docs/${slug}/`);
+    useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}`);
+  const toFor = (slug) => useBaseUrl(`/docs/${slug}`);
 
   return (
     <Layout
@@ -56,6 +56,13 @@ export default function Home() {
               reloadDocument={isDifferentLocale}
             >
               Open Docs
+            </Link>
+            <Link
+              className="button button--lg btnGhost"
+              to="{isDifferentLocale ? hrefFor('quickstart') : toFor('quickstart')}"
+              reloadDocument={isDifferentLocale}
+            >
+              Quickstart
             </Link>
             <Link
               className="button button--lg btnGhost"
