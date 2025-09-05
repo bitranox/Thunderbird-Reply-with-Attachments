@@ -17,8 +17,9 @@ function pickLocale(available, def) {
 }
 
 export default function Home() {
-  // Explicitly link to English docs/features as requested
-  const docsUrl = useBaseUrl('/docs/features');
+  const { i18n: { defaultLocale, locales } } = useDocusaurusContext();
+  const loc = pickLocale(locales, defaultLocale);
+  const docsUrl = useBaseUrl(loc === defaultLocale ? '/docs/features' : `/${loc}/docs/features`);
 
   return (
     <Layout
