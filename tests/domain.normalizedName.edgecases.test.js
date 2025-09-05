@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 
 describe('Domain.normalizedName edge cases', () => {
   beforeAll(async () => {
@@ -19,4 +19,3 @@ describe('Domain.normalizedName edge cases', () => {
     expect(normalizedName({ name: 'FILE.TXT.' })).toEqual('file.txt');
   });
 });
-

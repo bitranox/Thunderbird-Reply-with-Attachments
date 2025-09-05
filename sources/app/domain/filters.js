@@ -13,7 +13,11 @@ function lower(s) {
 
 /** Resolve a canonical, case‑insensitive filename for an attachment. */
 function normalizedName(att) {
-  return lower(att?.name || att?.fileName);
+  let s = String(att?.name || att?.fileName || '');
+  try { if (s.normalize) s = s.normalize('NFC'); } catch (_) {}
+  // Trim outer whitespace and Windows-unfriendly trailing dots/spaces
+  s = s.trim().replace(/[\.\s]+$/g, '');
+  return lower(s);
 }
 
 /** Detect S/MIME signature and envelope types; these must never be copied. */
@@ -69,6 +73,16 @@ function globToRegExp(glob) {
   const special = /[.+^${}()|\\]/g;
   while (i < glob.length) {
     const ch = glob[i];
+    // Support escaping the next character using a backslash to force literal
+    if (ch === '\\' && i + 1 < glob.length) {
+      const next = glob[i + 1];
+      if (next === '[' || next === ']') {
+        re += '\\' + next; // escape bracket literally in regex
+      } else {
+        re += String(next).replace(special, '\\$&');
+      }
+      i += 2; continue;
+    }
     if (ch === '*') {
       // ** -> match any path segments
       if (glob[i + 1] === '*') { re += '.*'; i += 2; continue; }
@@ -101,3 +115,5 @@ function makeNameExcluder(patterns) {
 }
 
 App.Domain.makeNameExcluder = makeNameExcluder;
+
+// Intentionally no ESM exports here to keep compatibility with VM/script loading in tests.

@@ -12,8 +12,8 @@ help: ## Show available make commands.
 test: ## Run all tests (Vitest)
 	$(NPM) test
 
-test-i18n: ## Run i18n parity and placeholder checks only
-	$(NPM) run test:i18n
+test-i18n: ## Run i18n parity and placeholder checks; verify EN↔DE parity in add-on and website
+	$(NPM) run test:i18n && $(NPM) run -s test:website-i18n
 
 lint: ## Lint manifest and source via web-ext
 	@set -e; \

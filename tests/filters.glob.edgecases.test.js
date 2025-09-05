@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 
 describe('Blacklist glob edge cases', () => {
   beforeAll(async () => {
@@ -27,4 +27,3 @@ describe('Blacklist glob edge cases', () => {
     expect(ex('doc.pdf')).toBe(false);
   });
 });
-

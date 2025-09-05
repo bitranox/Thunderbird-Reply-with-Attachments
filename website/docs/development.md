@@ -45,6 +45,7 @@ sidebar_label: Development
 - Dev server: `cd website && npm run start`
 - Build static site: `cd website && npm run build`
 - i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+ - Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
 
 ### Security & Configuration Tips
 - Do not commit `sources/manifest.json` (created temporarily by the build)
@@ -53,6 +54,10 @@ sidebar_label: Development
 ### Troubleshooting
 - Ensure Thunderbird is 128 ESR or newer
 - Use the Error Console for runtime issues
+
+### CI & Coverage
+- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
+- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
 
 ### Contributing
 - See CONTRIBUTING.md for branch/commit/PR guidelines

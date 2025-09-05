@@ -1,6 +1,7 @@
 # Reply with Attachments
 
 ![Tests](https://img.shields.io/badge/tests-vitest-blue)
+[![codecov](https://codecov.io/gh/bitranox/Thunderbird-Reply-with-Attachments/branch/master/graph/badge.svg)](https://codecov.io/gh/bitranox/Thunderbird-Reply-with-Attachments)
 ![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -12,6 +13,10 @@
 ## DOCS
 
 - [Full Docs here](https://bitranox.github.io/Thunderbird-Reply-with-Attachments/)
+
+CI & Coverage
+- Tests run in GitHub Actions on push/PR with coverage thresholds (85% lines/functions/branches/statements).
+- Coverage HTML is uploaded as a build artifact in the CI run (Actions → latest run → Artifacts → coverage-html).
 
 ## Support This Project
 

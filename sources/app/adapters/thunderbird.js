@@ -64,3 +64,5 @@ function makeThunderbirdPorts(browser) {
 
 globalThis.App = globalThis.App || {};
 App.Adapters = { makeThunderbirdPorts };
+
+// No ESM export — keep script compatibility for tests.

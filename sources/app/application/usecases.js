@@ -18,7 +18,7 @@
  * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
  * @returns {(tabId: number, messageId: number) => Promise<number>} processReplyAttachments
  */
-function createProcessReplyAttachments({ compose, messages, shouldExclude = () => false, confirm = async () => true }) {
+function createProcessReplyAttachments({ compose, messages, shouldExclude = () => false, confirm = async () => true, logger = console }) {
   return async function processReplyAttachments(tabId, messageId) {
     try {
       const all = await getAllAttachments(messages, messageId);
@@ -36,7 +36,7 @@ function createProcessReplyAttachments({ compose, messages, shouldExclude = () =
 
       return await attachSelectedFiles(compose, messages, tabId, messageId, selected);
     } catch (err) {
-      globalThis.log?.warn?.({ err }, 'processReplyAttachments failed');
+      try { logger.warn?.({ err }, 'processReplyAttachments failed'); } catch (_) {}
       return 0;
     }
   };
@@ -56,13 +56,19 @@ function pickFirstNonEmpty(candidates) { return candidates.find((x) => x && x.le
 /** Ask the user to confirm selected files. */
 async function askUserToConfirm(confirm, tabId, selected) { return await confirm(tabId, selected.map(asSelection)); }
 /** Attach selected files to the compose; returns the count added. */
-async function attachSelectedFiles(compose, messages, tabId, messageId, selected) {
+async function attachSelectedFiles(compose, messages, tabId, messageId, selected, logger = console) {
   let added = 0;
   for (const att of selected) {
-    const file = await messages.getAttachmentFile(messageId, att.partName);
-    if (!file) continue;
-    await compose.addAttachment(tabId, { file });
-    added += 1;
+    try {
+      const file = await messages.getAttachmentFile(messageId, att.partName);
+      if (!file) continue;
+      await compose.addAttachment(tabId, { file });
+      added += 1;
+    } catch (err) {
+      // Skip this part and continue with the rest
+      try { logger.warn?.({ err, part: att?.partName }, 'attachSelectedFiles: getAttachmentFile/addAttachment failed; skipping'); } catch (_) {}
+      continue;
+    }
   }
   return added;
 }
@@ -73,8 +79,8 @@ function isEmpty(arr) { return !arr || arr.length === 0; }
  * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
  * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
-function createEnsureReplyAttachments({ compose, messages, sessions, state, sessionKey, shouldExclude = () => false, confirm = async () => true }) {
-  const processReplyAttachments = createProcessReplyAttachments({ compose, messages, shouldExclude, confirm });
+function createEnsureReplyAttachments({ compose, messages, sessions, state, sessionKey, shouldExclude = () => false, confirm = async () => true, logger = console }) {
+  const processReplyAttachments = createProcessReplyAttachments({ compose, messages, shouldExclude, confirm, logger });
   return async function ensureReplyAttachments(tabId, details) {
     if (!isReply(details)) return;                       // only for replies
     if (isProcessingOrDone(state, tabId)) return;        // skip duplicates in memory

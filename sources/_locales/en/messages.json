@@ -42,5 +42,5 @@
   "uiConfirmDefaultNo": { "message": "No" },
 
   "donateUrl": { "message": "https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/README.md" }
+  "githubUrl": { "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/" }
 }

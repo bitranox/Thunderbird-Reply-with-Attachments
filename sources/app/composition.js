@@ -31,6 +31,7 @@
    */
   function createAppWiring(browser) {
     const { compose, messages, sessions, tabs, scriptingCompose } = App.Adapters.makeThunderbirdPorts(browser);
+    const logger = { info: console.info.bind(console), warn: console.warn.bind(console), error: console.error.bind(console) };
 
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
@@ -49,7 +50,7 @@
     })();
 
     // confirm function, updated when settings change
-    let ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles });
+    let ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
     /**
      * Ask the user to confirm adding the given files.
      * @param {number} tabId Compose tab id
@@ -69,11 +70,11 @@
     browser.storage?.onChanged?.addListener?.((changes, area) => {
       if (area === 'local' && changes?.blacklistPatterns) {
         exclude = App.Domain.makeNameExcluder(changes.blacklistPatterns.newValue || []);
-        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles });
+        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
       }
       if (area === 'local' && changes?.confirmBeforeAdd) {
         askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
-        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles });
+        ensure = App.UseCases.createEnsureReplyAttachments({ compose, messages, sessions, state: processedTabsState, sessionKey: SESSION_KEY, shouldExclude: (name) => exclude(name), confirm: confirmAddSelectedFiles, logger });
       }
       if (area === 'local' && changes?.confirmDefaultChoice) {
         defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);

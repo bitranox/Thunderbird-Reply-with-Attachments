@@ -1,59 +1,50 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import vm from 'vm';
-import { createBrowserMock } from './mocks/browser.js';
-import { executeBackgroundWith } from './helpers/execute-background.js';
+import { describe, it, expect, beforeAll } from 'vitest';
 
-describe('background.js — filters and utils', () => {
-  let ctx;
-
-  beforeEach(() => {
-    const browser = createBrowserMock();
-    ctx = executeBackgroundWith(browser);
-  });
+describe('Domain filters and utils', () => {
+  beforeAll(async () => { await import('../sources/app/domain/filters.js'); });
 
   it('lower() normalizes values safely', () => {
-    const lower = vm.runInContext('lower', ctx);
-    expect(lower('AbC')).toBe('abc');
-    expect(lower(null)).toBe('');
+    const { App } = globalThis;
+    expect(App.Domain.lower('AbC')).toBe('abc');
+    expect(App.Domain.lower(null)).toBe('');
   });
 
   it('normalizedName() picks name or fileName', () => {
-    const normalizedName = vm.runInContext('normalizedName', ctx);
-    expect(normalizedName({ name: 'Foo.PDF' })).toBe('foo.pdf');
-    expect(normalizedName({ fileName: 'Bar.txt' })).toBe('bar.txt');
-    expect(normalizedName({})).toBe('');
+    const { App } = globalThis;
+    expect(App.Domain.normalizedName({ name: 'Foo.PDF' })).toBe('foo.pdf');
+    expect(App.Domain.normalizedName({ fileName: 'Bar.txt' })).toBe('bar.txt');
+    expect(App.Domain.normalizedName({})).toBe('');
   });
 
   it('isSmime detects by name and content-type', () => {
-    const isSmime = vm.runInContext('isSmime', ctx);
-    expect(isSmime({ name: 'smime.p7s' })).toBe(true);
-    expect(isSmime({ contentType: 'application/pkcs7-signature' })).toBe(true);
-    expect(isSmime({ contentType: 'application/x-pkcs7-signature' })).toBe(true);
-    expect(isSmime({ contentType: 'application/pkcs7-mime' })).toBe(true);
-    expect(isSmime({ contentType: 'application/pdf' })).toBe(false);
+    const { App } = globalThis;
+    expect(App.Domain.isSmime({ name: 'smime.p7s' })).toBe(true);
+    expect(App.Domain.isSmime({ contentType: 'application/pkcs7-signature' })).toBe(true);
+    expect(App.Domain.isSmime({ contentType: 'application/x-pkcs7-signature' })).toBe(true);
+    expect(App.Domain.isSmime({ contentType: 'application/pkcs7-mime' })).toBe(true);
+    expect(App.Domain.isSmime({ contentType: 'application/pdf' })).toBe(false);
   });
 
   it('isInlineImage and isInlineDisposition', () => {
-    const isInlineImage = vm.runInContext('isInlineImage', ctx);
-    const isInlineDisposition = vm.runInContext('isInlineDisposition', ctx);
-    expect(isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(true);
-    expect(isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' })).toBe(false);
-    expect(isInlineDisposition({ contentDisposition: 'inline; filename=x' })).toBe(true);
-    expect(isInlineDisposition({ contentDisposition: 'attachment; filename=x' })).toBe(false);
+    const { App } = globalThis;
+    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(true);
+    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' })).toBe(false);
+    expect(App.Domain.isInlineDisposition({ contentDisposition: 'inline; filename=x' })).toBe(true);
+    expect(App.Domain.isInlineDisposition({ contentDisposition: 'attachment; filename=x' })).toBe(false);
   });
 
   it('includeStrict excludes S/MIME, inline images, and inline disposition', () => {
-    const includeStrict = vm.runInContext('includeStrict', ctx);
-    expect(includeStrict({ name: 'a.pdf', contentType: 'application/pdf' })).toBe(true);
-    expect(includeStrict({ name: 'smime.p7s' })).toBe(false);
-    expect(includeStrict({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
-    expect(includeStrict({ contentDisposition: 'inline' })).toBe(false);
+    const { App } = globalThis;
+    expect(App.Domain.includeStrict({ name: 'a.pdf', contentType: 'application/pdf' })).toBe(true);
+    expect(App.Domain.includeStrict({ name: 'smime.p7s' })).toBe(false);
+    expect(App.Domain.includeStrict({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
+    expect(App.Domain.includeStrict({ contentDisposition: 'inline' })).toBe(false);
   });
 
   it('includeRelaxed excludes S/MIME and inline content', () => {
-    const includeRelaxed = vm.runInContext('includeRelaxed', ctx);
-    expect(includeRelaxed({ name: 'smime.p7s' })).toBe(false);
-    expect(includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
-    expect(includeRelaxed({ contentDisposition: 'inline' })).toBe(false);
+    const { App } = globalThis;
+    expect(App.Domain.includeRelaxed({ name: 'smime.p7s' })).toBe(false);
+    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
+    expect(App.Domain.includeRelaxed({ contentDisposition: 'inline' })).toBe(false);
   });
 });
