@@ -2,7 +2,7 @@
 
 Massive language support, thanks to AI translation tools — covering 103 languages.
 
-Source of truth: `languages.json`. List below is sorted by the language code.
+List below is sorted by the language code.
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
