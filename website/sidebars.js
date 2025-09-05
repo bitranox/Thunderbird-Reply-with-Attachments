@@ -9,6 +9,7 @@ const sidebars = {
     'permissions',
     'development',
     'languages',
+    'glossary',
     'support',
     'licence',
     'changelog'
