@@ -9,8 +9,8 @@ export default [
       'website/build/**',
       'website/.docusaurus/**',
       '.github/**',
-      '*.zip'
-    ]
+      '*.zip',
+    ],
   },
   js.configs.recommended,
   {
@@ -29,20 +29,28 @@ export default [
         document: 'readonly',
         window: 'readonly',
         console: 'readonly',
-      }
+      },
     },
     rules: {
       'no-var': 'error',
       'prefer-const': 'warn',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_', caughtErrors: 'all', caughtErrorsIgnorePattern: '^_' }],
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
       'no-undef': 'off',
       'no-empty': ['error', { allowEmptyCatch: true }],
-      'no-useless-escape': 'off'
-    }
+      'no-useless-escape': 'off',
+    },
   },
   {
     files: ['**/*.cjs'],
-    languageOptions: { sourceType: 'commonjs' }
+    languageOptions: { sourceType: 'commonjs' },
   },
-  prettier
+  prettier,
 ];
