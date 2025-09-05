@@ -1,3 +1,9 @@
+---
+id: development
+title: Development
+sidebar_label: Development
+---
+
 ## Development Guide
 
 ### Prerequisites

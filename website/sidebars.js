@@ -7,6 +7,7 @@ const sidebars = {
     'usage',
     'compatibility',
     'permissions',
+    'development',
     'changelog'
   ]
 };
