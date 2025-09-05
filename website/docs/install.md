@@ -1,6 +1,8 @@
 ---
 id: install
 title: Installation
+slug: /install
+sidebar_label: Installation
 ---
 
 ## Installation — in Thunderbird (Recommended)
