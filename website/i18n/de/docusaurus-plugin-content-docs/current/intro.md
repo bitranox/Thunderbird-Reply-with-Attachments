@@ -1,17 +1,19 @@
 ---
 id: intro
-title: Antwort mit Anhängen
-sidebar_label: Start
+title: Features
+sidebar_label: Features
 ---
 
-„Antwort mit Anhängen“ fügt beim Antworten automatisch die Anhänge der ursprünglichen E‑Mail hinzu.
+## Features
 
-Highlights:
-
-- Automatisch oder nach Rückfrage (konfigurierbar)
-- Vermeidet Duplikate (Dateiname) und respektiert vorhandene Anhänge
-- Überspringt SMIME‑Artefakte und Inline‑Bilder
-- Dateinamen‑Blacklist mit Glob‑Mustern (z. B. `*.png`, `smime.*`, `*.p7s`)
-
-Nutze die Seitenleiste für Installation, Optionen, Berechtigungen und Changelog.
-
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*.png`, `smime.*`, `*.p7s`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Skips SMIME certificates and inline images to avoid unnecessary attachments.

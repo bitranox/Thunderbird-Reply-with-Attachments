@@ -1,17 +1,19 @@
 ---
 id: intro
-title: Reply with Attachments
-sidebar_label: Home
+title: Features
+sidebar_label: Features
 ---
 
-Reply with Attachments automatically includes the original email’s attachments when you reply in Thunderbird.
+## Features
 
-Highlights:
-
-- Automatic or confirm‑first behavior (configurable)
-- De‑duplicates by filename; respects existing attachments
-- Skips SMIME artifacts and inline images
-- Filename blacklist with glob patterns (e.g., `*.png`, `smime.*`, `*.p7s`)
-
-Use the sidebar to navigate Install, Options, Permissions and Changelog.
-
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*.png`, `smime.*`, `*.p7s`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Skips SMIME certificates and inline images to avoid unnecessary attachments.
