@@ -2,7 +2,7 @@
 
 ![Tests](https://img.shields.io/badge/tests-vitest-blue)
 ![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
-![Lizenz](https://img.shields.io/badge/lizenz-GPLv3-lightgrey)
+![Lizenz](https://img.shields.io/badge/lizenz-MIT-gr%C3%BCn)
 
 ## ![US Flag](https://github.com/ashleedawg/flags/blob/master/US.png?raw=true) [Switch to English version](README.md)
 
@@ -197,8 +197,8 @@ Wenn dir dieses Add-on gefällt, unterstütze die Entwicklung mit einem kleinen 
 
 ## Lizenz
 
-Dieses Projekt ist unter der GNU General Public License v3 lizenziert.  
-Den vollständigen Lizenztext findest du [hier](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/LICENCE).
+Dieses Projekt steht unter der **MIT‑Lizenz**.  
+Den vollständigen Lizenztext findest du in [`LICENSE`](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/LICENSE).
 
 ---
 

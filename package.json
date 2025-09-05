@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0-test",
   "description": "Tests for Reply with Attachments Thunderbird add-on",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "test": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage --coverage.reporter=text --coverage.reporter=html || node node_modules/vitest/vitest.mjs run",

@@ -2,7 +2,7 @@
 
 ![Tests](https://img.shields.io/badge/tests-vitest-blue)
 ![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
-![Lizenz](https://img.shields.io/badge/lizenz-GPLv3-lightgrey)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 
 **Reply with Attachments** is a Thunderbird add‑on that automatically includes the original attachments when you reply.
