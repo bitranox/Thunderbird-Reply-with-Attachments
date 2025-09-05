@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+website/build/
+website/.docusaurus/
+.idea/
+*.zip

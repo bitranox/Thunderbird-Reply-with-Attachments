@@ -19,8 +19,8 @@ Thanks for helping improve Reply with Attachments! This guide keeps changes smal
 - Small, intention‑revealing functions; single responsibility.
 - Modern JS: ESM, async/await, `const/let`, no `var`.
 - Strings: prefer single quotes within a file; be consistent.
-- Indentation: 4 spaces.
-- Keep helpers small; file names lowercase with underscores (e.g., `handle_donate_link.js`).
+- Indentation: 2 spaces (enforced by Prettier).
+- File naming: lowercase with underscores for add‑on UI scripts (e.g., `handle_donate_link.js`); kebab‑case for website routes/docs. Keep existing names stable and follow the convention for new files.
 - Logging: `console.log/warn/error` with clear, actionable messages.
 - Follow the existing style; no sweeping refactors in unrelated code.
 
@@ -30,13 +30,14 @@ Thanks for helping improve Reply with Attachments! This guide keeps changes smal
 - Versioning tip: when bumping versions, update both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging.
 - Do NOT commit `sources/manifest.json` (the build generates it temporarily).
 
-## 5) Tests
+## 5) Tests & Style
 - Run all tests: `make test` (Vitest).
 - Coverage (optional):
   1. `npm i -D @vitest/coverage-v8`
   2. `make test` → see summary and `coverage/index.html`.
 - i18n checks only: `make test-i18n` (parity, placeholders, titles).
 - Add tests for changed behavior; keep tests tiny and focused.
+- Style: run `npm run format:check` and `npm run lint:eslint` locally; CI runs both.
 
 ## 6) Docs (Website)
 - Live under `website/` (Docusaurus). EN in `website/docs/*.md`, DE in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`.
