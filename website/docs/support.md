@@ -18,3 +18,4 @@ Tips
 - Check the Configuration and Usage docs for common setup questions.
 - For development/testing, see the Development guide.
 
+If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!

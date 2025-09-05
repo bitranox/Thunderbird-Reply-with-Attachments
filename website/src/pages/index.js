@@ -46,6 +46,13 @@ export default function Home() {
             </Link>
             <Link className="button button--lg btnGhost" href="https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments">Install from Add‑ons</Link>
             <Link className="button button--lg btnGhost" href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments">GitHub</Link>
+            <Link
+              className="button button--lg btnGhost"
+              to={isDifferentLocale ? hrefFor('donation') : toFor('donation')}
+              reloadDocument={isDifferentLocale}
+            >
+              Donate
+            </Link>
           </div>
         </div>
       </header>

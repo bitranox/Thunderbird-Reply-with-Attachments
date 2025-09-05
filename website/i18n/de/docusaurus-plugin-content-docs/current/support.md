@@ -18,3 +18,4 @@ Tipps
 - Sieh dir die Seiten „Konfiguration“ und „Verwendung“ für häufige Fragen an.
 - Für Entwicklung/Tests: siehe den Entwicklungsleitfaden.
 
+Wenn du dieses Projekt unterstützen möchtest, erwäge bitte eine kleine Spende auf der Seite [Spenden](donation). Vielen Dank!
