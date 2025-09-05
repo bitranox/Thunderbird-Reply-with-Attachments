@@ -19,16 +19,16 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: website/package.json
+          cache-dependency-path: website/package-lock.json
       - name: Install deps
         run: npm ci
-      - name: Build (PRs: en only)
+      - name: "Build (PRs: en only)"
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
-      - name: Build (main/tags: all locales)
+      - name: "Build (main/tags: all locales)"
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
-      - name: Upload build artifact (PRs)
+      - name: "Upload build artifact (PRs)"
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
@@ -41,19 +41,22 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    defaults:
+      run:
+        working-directory: website
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docs-preview
-          path: website/build
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+      - name: Install deps
+        run: npm ci
+      - name: Build all locales
+        run: npm run build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: website/build
-
