@@ -15,7 +15,7 @@ jobs:
           node-version: '18'
       - name: Generate README_LANGUAGES.md
         run: |
-          npm run generate:readme-langs
+          node scripts/generate-readme-langs.mjs
       - name: Commit changes (if any)
         run: |
           if ! git diff --quiet README_LANGUAGES.md; then
@@ -25,4 +25,3 @@ jobs:
             git commit -m "docs(readme): update README_LANGUAGES from Docusaurus locales"
             git push
           fi
-
