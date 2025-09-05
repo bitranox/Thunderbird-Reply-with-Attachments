@@ -1,3 +1,9 @@
+---
+id: languages
+title: Languages
+sidebar_label: Languages
+---
+
 # Language Support
 
 Massive language support, thanks to AI translation tools — covering 103 languages.
@@ -107,4 +113,3 @@ List below is sorted by the language code.
 - `zh-Hans`: Chinese (Simplified) (zh-CN)
 - `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
-

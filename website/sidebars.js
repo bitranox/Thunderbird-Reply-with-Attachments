@@ -8,6 +8,9 @@ const sidebars = {
     'compatibility',
     'permissions',
     'development',
+    'languages',
+    'support',
+    'licence',
     'changelog'
   ]
 };
