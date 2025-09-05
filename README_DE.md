@@ -15,6 +15,12 @@
 - English Docs: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/en/
 - Deutsche Doku: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/
 
+## Unterstütze dieses Projekt
+
+Wenn dir dieses Add‑on gefällt, unterstütze die Entwicklung mit einem kleinen Beitrag:
+
+[![Spenden via PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=7KJN33DHTA8WE)
+
 ## Funktionen (kurz)
 
 - Fügt beim Antworten automatisch Anhänge aus der ursprünglichen E‑Mail hinzu.

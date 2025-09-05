@@ -14,6 +14,13 @@
 
 - English Docs: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/en/
 - Deutsche Doku: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/
+- All languages: see README_LANGUAGES.md
+
+## Support This Project
+
+If you like this add‑on, please consider supporting it:
+
+[![Donate via PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
 ## Features (short)
 
