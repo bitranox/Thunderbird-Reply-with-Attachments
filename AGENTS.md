@@ -57,3 +57,6 @@
 
 - Do not commit `sources/manifest.json`; the build script creates it temporarily.
 - Keep `browser_specific_settings.gecko.id` stable to preserve update channel.
+
+## commit/pusg/github policy
+- always make sure "make test" run successful before committing/pushing to GitHub
