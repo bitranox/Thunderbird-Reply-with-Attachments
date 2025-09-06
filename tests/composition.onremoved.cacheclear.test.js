@@ -4,7 +4,11 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 
 describe('composition — onRemoved clears injectedConfirmScriptTabs', () => {
   it('removes tab id from injected set on tab close', async () => {
-    const browser = createBrowserMock();
+    const browser = createBrowserMock({
+      confirmBeforeAdd: true,
+      messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
+      getFileByPart: async () => new Blob(['x'])
+    });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/application/usecases.js');

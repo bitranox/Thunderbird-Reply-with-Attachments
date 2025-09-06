@@ -24,6 +24,8 @@ describe('Composition — confirm disabled: no confirm messaging', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
     expect(browser.tabs.sendMessage).not.toHaveBeenCalled();
     expect(browser.runtime.sendMessage).not.toHaveBeenCalled();
+    // Ensure we did not inject the confirm content script when confirm is disabled
+    expect(globalThis.injectedConfirmScriptTabs.has(7)).toBe(false);
   });
 });
 

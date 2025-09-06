@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
-  "homepage_url": "https://addons.thunderbird.net/de/thunderbird/user/bitranox/",
+  "homepage_url": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/",
   "author": "bitranox",
   "browser_specific_settings": {
     "gecko": {
@@ -12,7 +12,15 @@
       "strict_min_version": "128.0"
     }
   },
-  "permissions": ["compose", "messagesRead", "scripting", "windows", "sessions", "storage", "tabs"],
+  "permissions": [
+    "compose",
+    "messagesRead",
+    "scripting",
+    "windows",
+    "sessions",
+    "storage",
+    "tabs"
+  ],
   "background": {
     "page": "background.html"
   },

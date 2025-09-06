@@ -37,11 +37,14 @@
   function createAppWiring(browser) {
     const { compose, messages, sessions, tabs, scriptingCompose } =
       App.Adapters.makeThunderbirdPorts(browser);
-    const logger = {
-      info: console.info.bind(console),
-      warn: console.warn.bind(console),
-      error: console.error.bind(console),
-    };
+    const makeLogger = (globalThis.App && App.Shared && App.Shared.makeLogger) ||
+      ((enabled) => ({
+        debug: (...args) => { if (enabled) try { console.debug('[RWA]', ...args); } catch(_){} },
+        info: (...args) => { try { console.info('[RWA]', ...args); } catch(_){} },
+        warn: (...args) => { try { console.warn('[RWA]', ...args); } catch(_){} },
+        error: (...args) => { try { console.error('[RWA]', ...args); } catch(_){} },
+      }));
+    const logger = makeLogger(false);
 
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
@@ -129,7 +132,7 @@
           await scriptingCompose.registerScripts?.([
             { id: 'rwa-confirm', js: ['content/confirm.js'] },
           ]);
-      } catch (_) {}
+      } catch (err) { try { logger.debug({ err }, "registerScripts failed"); } catch (_) {} }
     })();
 
     // event wiring
@@ -138,7 +141,6 @@
       const id = toNumericId(tabId);
       if (id == null) return;
       await ensureRegistered;
-      await ensureConfirmInjected(id, scriptingCompose);
       const details = await compose.getDetails(id).catch(() => null);
       if (!details) return;
       await ensure(id, details);
@@ -149,7 +151,6 @@
       const id = toNumericId(tab);
       if (id == null) return {};
       await ensureRegistered;
-      await ensureConfirmInjected(id, scriptingCompose);
       const details = await compose.getDetails(id).catch(() => null);
       if (!details) return {};
       await ensure(id, details);
@@ -210,7 +211,9 @@
       if (injectedConfirmScriptTabs.has(tabId)) return;
       await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']);
       injectedConfirmScriptTabs.add(tabId);
-    } catch (_) {}
+    } catch (err) {
+      try { logger.debug({ err, tabId }, 'ensureConfirmInjected failed'); } catch (_) {}
+    }
   }
   /** Ask the user via content script; fall back progressively if needed. */
   /**

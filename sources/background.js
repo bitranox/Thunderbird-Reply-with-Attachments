@@ -10,12 +10,14 @@
 
 (async () => {
   const DEBUG = await readDebugFlag();
-  globalThis.log = makeLogger(DEBUG);
+  const makeLoggerFn = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLogger;
+  globalThis.log = makeLoggerFn(DEBUG);
   log.debug('Reply with Attachments: wiring app…');
 
   // Expose small helpers early for tests
   let _ensure = null;
-  globalThis.extractNumericTabId = toNumericId;
+  const toNumericIdFn = (globalThis.App && App.Shared && App.Shared.toNumericId) || toNumericId;
+  globalThis.extractNumericTabId = toNumericIdFn;
   globalThis.getComposeDetails = safeGetComposeDetails;
   globalThis.ensureReplyAttachments = async (...args) => {
     if (_ensure) return _ensure(...args);
@@ -107,7 +109,7 @@
    * @param {number|{id:number}} tabId
    */
   async function onComposeStateChangedFacade(tabId, _details) {
-    const id = toNumericId(tabId);
+    const id = toNumericIdFn(tabId);
     if (id == null) return;
     const details = await safeGetComposeDetails(id);
     if (!details) return;
@@ -121,7 +123,7 @@
     try {
       const tabs = (await browser.tabs?.query?.({})) || [];
       for (const t of tabs) {
-        const id = toNumericId(t);
+        const id = toNumericIdFn(t);
         if (id == null) continue;
         const details = await safeGetComposeDetails(id);
         if (!details) continue;

@@ -65,6 +65,8 @@ jobs:
           rm -f sources/manifest.json
       - name: Run tests + coverage (thresholds via vitest.config)
         run: npm test
+      - name: Check coverage summary (belt-and-suspenders)
+        run: node scripts/check-coverage.mjs
       - name: Upload coverage HTML
         if: always()
         uses: actions/upload-artifact@v4

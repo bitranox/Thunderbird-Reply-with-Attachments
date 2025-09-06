@@ -3,7 +3,7 @@ export default {
   test: {
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'html', 'lcov'],
+      reporter: ['text', 'html', 'lcov', 'json-summary'],
       all: true,
       include: ['sources/**/*.js'],
       exclude: ['sources/app/application/ports.js','website/**','scripts/**'],

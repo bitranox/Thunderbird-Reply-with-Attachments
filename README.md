@@ -7,6 +7,10 @@
 
 **Reply with Attachments** is a Thunderbird add‑on that automatically includes the original attachments when you reply.
 
+What it does: When you reply to an email, it finds the original message’s attachments and adds them to your reply automatically. Optionally, a small confirmation dialog can ask before adding.
+
+Is it safe? Yes — it runs locally and uses a minimal set of permissions only to read original attachments and add them to your reply. See Permissions: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/permissions
+
 ---
 
 ## DOCS
@@ -22,6 +26,11 @@ CI & Coverage
 
 - Tests run in GitHub Actions on push/PR with coverage thresholds (85% lines/functions/branches/statements).
 - Coverage HTML is uploaded as a build artifact in the CI run (Actions → latest run → Artifacts → coverage-html).
+
+Release process
+
+- Bump versions in `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+- Tag the commit as `vX.Y.Z`. Pushing the tag triggers packaging and a GitHub Release with zips.
 
 ## Support This Project
 

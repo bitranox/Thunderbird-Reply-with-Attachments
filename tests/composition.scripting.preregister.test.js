@@ -4,7 +4,7 @@ import { createBrowserMock } from './helpers/browserMock.js';
 describe('composition — scripting preregistration', () => {
   it('registers confirm script when not present and injects on events', async () => {
     vi.resetModules();
-    const browser = createBrowserMock();
+    const browser = createBrowserMock({ confirmBeforeAdd: true });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
@@ -27,7 +27,7 @@ describe('composition — scripting preregistration', () => {
 
   it('does not re-register when already present', async () => {
     vi.resetModules();
-    const browser = createBrowserMock();
+    const browser = createBrowserMock({ confirmBeforeAdd: true });
     browser.scripting.compose.getRegisteredScripts.mockResolvedValueOnce([{ id: 'rwa-confirm' }]);
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
@@ -41,7 +41,7 @@ describe('composition — scripting preregistration', () => {
 
   it('injects confirm script on compose events', async () => {
     vi.resetModules();
-    const browser = createBrowserMock();
+    const browser = createBrowserMock({ confirmBeforeAdd: true });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
