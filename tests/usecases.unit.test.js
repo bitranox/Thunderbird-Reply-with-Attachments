@@ -1,7 +1,17 @@
+/*
+ * Test Module: usecases.unit.test.js
+ * Scope: Application use-cases — focused unit tests for selection/processing helpers.
+ * Intent: Validate two-pass selection, safe helpers, and edge cases.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
+/**
+ * Load a script file into the current context for tests (non-ESM helper).
+ * @param {string} filepath
+ * @param {Record<string,any>} context
+ */
 function loadScript(filepath, context = {}) {
   const code = fs.readFileSync(filepath, 'utf8');
   const fn = new Function(...Object.keys(context), code);
@@ -24,6 +34,7 @@ describe('UseCases — unit', () => {
     loadScript(path.join(process.cwd(), 'sources', 'app', 'application', 'usecases.js'), {});
   });
 
+  // Test: createProcessReplyAttachments skips duplicates and never adds inline content even on fallback
   it('createProcessReplyAttachments skips duplicates and never adds inline content even on fallback', async () => {
     const compose = {
       listAttachments: vi.fn().mockResolvedValue([{ name: 'doc.PDF' }]),
@@ -45,6 +56,7 @@ describe('UseCases — unit', () => {
     expect(compose.addAttachment).not.toHaveBeenCalled();
   });
 
+  // Test: createEnsureReplyAttachments marks sessions and avoids duplicates across calls
   it('createEnsureReplyAttachments marks sessions and avoids duplicates across calls', async () => {
     const compose = {
       getDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 200 }),

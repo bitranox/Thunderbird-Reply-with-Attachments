@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.cleanup.test.js
+ * Scope: Composition — cleanup on tab removal.
+ * Intent: Ensure per-tab memory and session markers are cleared when tabs close.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Composition — cleanup on tab remove', () => {
+  // Test: removes session flag and in-memory state on tab close
   it('removes session flag and in-memory state on tab close', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],

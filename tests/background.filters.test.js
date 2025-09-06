@@ -1,3 +1,8 @@
+/*
+ * Test Module: background.filters.test.js
+ * Scope: Domain filters and utils — lower, normalizedName, S/MIME/inline checks.
+ * Intent: Validate pure helpers used by selection logic.
+ */
 import { describe, it, expect, beforeAll } from 'vitest';
 
 describe('Domain filters and utils', () => {
@@ -5,12 +10,14 @@ describe('Domain filters and utils', () => {
     await import('../sources/app/domain/filters.js');
   });
 
+  // Test: lower() normalizes values safely
   it('lower() normalizes values safely', () => {
     const { App } = globalThis;
     expect(App.Domain.lower('AbC')).toBe('abc');
     expect(App.Domain.lower(null)).toBe('');
   });
 
+  // Test: normalizedName() picks name or fileName
   it('normalizedName() picks name or fileName', () => {
     const { App } = globalThis;
     expect(App.Domain.normalizedName({ name: 'Foo.PDF' })).toBe('foo.pdf');
@@ -18,6 +25,7 @@ describe('Domain filters and utils', () => {
     expect(App.Domain.normalizedName({})).toBe('');
   });
 
+  // Test: isSmime detects by name and content-type
   it('isSmime detects by name and content-type', () => {
     const { App } = globalThis;
     expect(App.Domain.isSmime({ name: 'smime.p7s' })).toBe(true);
@@ -27,6 +35,7 @@ describe('Domain filters and utils', () => {
     expect(App.Domain.isSmime({ contentType: 'application/pdf' })).toBe(false);
   });
 
+  // Test: isInlineImage and isInlineDisposition
   it('isInlineImage and isInlineDisposition', () => {
     const { App } = globalThis;
     expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(true);
@@ -39,6 +48,7 @@ describe('Domain filters and utils', () => {
     );
   });
 
+  // Test: includeStrict excludes S/MIME, inline images, and inline disposition
   it('includeStrict excludes S/MIME, inline images, and inline disposition', () => {
     const { App } = globalThis;
     expect(App.Domain.includeStrict({ name: 'a.pdf', contentType: 'application/pdf' })).toBe(true);
@@ -47,6 +57,7 @@ describe('Domain filters and utils', () => {
     expect(App.Domain.includeStrict({ contentDisposition: 'inline' })).toBe(false);
   });
 
+  // Test: includeRelaxed excludes S/MIME and inline content
   it('includeRelaxed excludes S/MIME and inline content', () => {
     const { App } = globalThis;
     expect(App.Domain.includeRelaxed({ name: 'smime.p7s' })).toBe(false);

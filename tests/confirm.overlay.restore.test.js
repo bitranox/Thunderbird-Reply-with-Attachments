@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.overlay.restore.test.js
+ * Scope: Content confirm — overlay restores document state.
+ * Intent: Ensure body overflow is restored after closing the modal.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -18,6 +23,7 @@ describe('confirm dialog — opens softly, leaves no trace', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: toggles body overflow and then restores it
   it('toggles body overflow and then restores it', async () => {
     // Start with a custom body overflow to ensure we restore the exact value
     document.body.style.overflow = 'scroll';

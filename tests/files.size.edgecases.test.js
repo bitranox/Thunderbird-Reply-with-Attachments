@@ -1,6 +1,16 @@
+/*
+ * Test Module: files.size.edgecases.test.js
+ * Scope: Messages — large number of attachments and boundaries.
+ * Intent: Ensure selection scales and respects limits/guards.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
+/**
+ * Setup a mocked browser and wiring for size edge cases.
+ * @param {any[]} messageAttachments
+ * @param {(id:number, part:string)=>Promise<Blob>} getFileByPart
+ */
 async function setup(messageAttachments, getFileByPart) {
   const browser = createBrowserMock({ messageAttachments, getFileByPart, confirmBeforeAdd: false });
   await import('../sources/app/adapters/thunderbird.js');
@@ -13,6 +23,7 @@ async function setup(messageAttachments, getFileByPart) {
 }
 
 describe('File sizes — zero byte and multi‑MB', () => {
+  // Test: attaches zero‑byte file without hanging
   it('attaches zero‑byte file without hanging', async () => {
     const messageAttachments = [{ name: 'empty.bin', partName: '1' }];
     const zero = new Blob([]);
@@ -22,6 +33,7 @@ describe('File sizes — zero byte and multi‑MB', () => {
     expect(browser.compose.addAttachment.mock.calls[0][1].file.size).toBe(0);
   });
 
+  // Test: attaches large multi‑MB file without hanging
   it('attaches large multi‑MB file without hanging', async () => {
     const messageAttachments = [{ name: 'big.bin', partName: '1' }];
     const big = new Blob([new Uint8Array(5 * 1024 * 1024)]); // 5MB

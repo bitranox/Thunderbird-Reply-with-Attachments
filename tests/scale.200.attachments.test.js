@@ -1,3 +1,8 @@
+/*
+ * Test Module: scale.200.attachments.test.js
+ * Scope: Scale sanity — many attachments.
+ * Intent: Ensure performance and correctness with ~200 candidates.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
@@ -14,6 +19,7 @@ function makeAttachments(n = 200) {
 }
 
 describe('Scale sanity — ~200 attachments', () => {
+  // Test: adds each eligible attachment exactly once; no duplicates across passes
   it('adds each eligible attachment exactly once; no duplicates across passes', async () => {
     const messageAttachments = makeAttachments(200);
     const browser = createBrowserMock({

@@ -1,8 +1,14 @@
+/*
+ * Test Module: composition.onremoved.cacheclear.test.js
+ * Scope: Composition — cleanup of injectedConfirmScriptTabs on tab removal.
+ * Intent: Ensure injected tab id is removed from the set when tab closes.
+ */
 import { describe, it, expect } from 'vitest';
 
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('composition — onRemoved clears injectedConfirmScriptTabs', () => {
+  // Test: removes tab id from injected set on tab close
   it('removes tab id from injected set on tab close', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,

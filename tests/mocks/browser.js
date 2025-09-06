@@ -1,3 +1,8 @@
+/*
+ * Test Helper: mocks/browser.js
+ * Scope: Minimal mock of Thunderbird’s WebExtension APIs used by background/composition.
+ * Intent: Provide spies via Vitest to assert calls, with in-memory sessions and storage.
+ */
 // Minimal mock of Thunderbird's WebExtension APIs used in background.js
 // Provides spies via Vitest's vi.fn to assert calls.
 

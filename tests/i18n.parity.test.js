@@ -1,8 +1,14 @@
+/*
+ * Test Module: i18n.parity.test.js
+ * Scope: UI i18n — ensures EN/DE message keys parity.
+ * Intent: Prevent missing or extra keys across locale files.
+ */
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 
 describe('i18n parity — en and de expose the same keys', () => {
+  // Test: locale key sets are identical
   it('locale key sets are identical', () => {
     const en = JSON.parse(
       fs.readFileSync(
@@ -21,6 +27,7 @@ describe('i18n parity — en and de expose the same keys', () => {
     expect(enKeys).toEqual(deKeys);
   });
 
+  // Test: must include confirmTitle in both
   it('must include confirmTitle in both', () => {
     const en = JSON.parse(
       fs.readFileSync(

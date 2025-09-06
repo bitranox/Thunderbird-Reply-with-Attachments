@@ -1,3 +1,8 @@
+/*
+ * Test Module: composition.storage.listeners.test.js
+ * Scope: Composition — reacts to storage changes (blacklist and confirm toggles).
+ * Intent: Ensure behavior updates without restart and messaging occurs when enabled.
+ */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 describe('composition — storage change listeners update behavior', () => {
@@ -22,6 +27,7 @@ describe('composition — storage change listeners update behavior', () => {
     ctx = globalThis;
   });
 
+  // Test: updates blacklist excluder from storage changes
   it('updates blacklist excluder from storage changes', async () => {
     // Initially allow *.png, then change to exclude it
     browser.messages.listAttachments.mockResolvedValueOnce([
@@ -57,6 +63,7 @@ describe('composition — storage change listeners update behavior', () => {
     expect(parts).not.toContain('p3');
   });
 
+  // Test: enables confirmation when confirmBeforeAdd flips to true
   it('enables confirmation when confirmBeforeAdd flips to true', async () => {
     browser.messages.listAttachments.mockResolvedValueOnce([{ name: 'a.pdf', partName: 'p1' }]);
     browser.compose.getComposeDetails.mockResolvedValueOnce({

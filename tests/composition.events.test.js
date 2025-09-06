@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.events.test.js
+ * Scope: Composition — compose events wiring and ensure behavior.
+ * Intent: Ensure onComposeStateChanged and onBeforeSend trigger ensure path once.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Composition wiring — events', () => {
+  // Test: onComposeStateChanged triggers ensureReplyAttachments only for replies
   it('onComposeStateChanged triggers ensureReplyAttachments only for replies', async () => {
     const browser = createBrowserMock({});
     await import('../sources/app/adapters/thunderbird.js');

@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.page.behavior.test.js
+ * Scope: Fallback confirm page — default focus and keyboard handling.
+ * Intent: Verify Yes/No focusing and Enter/Escape behavior with def=yes/no.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -22,6 +27,7 @@ describe('confirm_page — a tiny window with a clear mind', () => {
     vi.spyOn(window, 'close').mockImplementation(() => {});
   });
 
+  // Test: def=yes focuses Yes and Enter confirms
   it('def=yes focuses Yes and Enter confirms', async () => {
     vi.resetModules();
     vi.spyOn(window, 'focus').mockImplementation(() => {});
@@ -40,6 +46,7 @@ describe('confirm_page — a tiny window with a clear mind', () => {
     });
   });
 
+  // Test: def=no focuses No and Escape cancels
   it('def=no focuses No and Escape cancels', async () => {
     vi.resetModules();
     vi.spyOn(window, 'focus').mockImplementation(() => {});
@@ -57,12 +64,15 @@ describe('confirm_page — a tiny window with a clear mind', () => {
   });
 });
 
+/** Update location search to simulate query params. */
 function setSearch(qs) {
   window.history.replaceState({}, '', qs);
 }
+/** Advance microtasks one tick. */
 function tick() {
   return new Promise((r) => setTimeout(r, 0));
 }
+/** Dispatch a bubbling keyboard event with provided properties. */
 function dispatch(type, props) {
   document.dispatchEvent(new KeyboardEvent(type, { bubbles: true, ...props }));
 }

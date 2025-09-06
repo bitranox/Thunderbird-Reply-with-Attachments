@@ -1,7 +1,13 @@
+/*
+ * Test Module: blacklist.integration.test.js
+ * Scope: Blacklist integration — interaction with include rules and duplicates.
+ * Intent: Verify blacklist cooperates with relaxed/strict passes and UI flows.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Blacklist integration', () => {
+  // Test: skips attachments whose names match blacklist patterns
   it('skips attachments whose names match blacklist patterns', async () => {
     const browser = createBrowserMock({
       messageAttachments: [

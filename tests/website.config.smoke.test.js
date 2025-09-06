@@ -1,8 +1,14 @@
+/*
+ * Test Module: website.config.smoke.test.js
+ * Scope: Website — config sanity.
+ * Intent: Ensure docusaurus.config.js exports expected fields.
+ */
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { pathToFileURL } from 'url';
 
+/** Import a CommonJS config file in ESM tests by eval. */
 async function importCjs(filepath) {
   const url = pathToFileURL(filepath).href;
   const mod = await import(url);
@@ -10,6 +16,7 @@ async function importCjs(filepath) {
 }
 
 describe('Website config — basic shape', () => {
+  // Test: docusaurus.config.js parses and has expected fields
   it('docusaurus.config.js parses and has expected fields', async () => {
     const cfgPath = path.join(process.cwd(), 'website', 'docusaurus.config.js');
     const cfg = await importCjs(cfgPath);
@@ -24,6 +31,7 @@ describe('Website config — basic shape', () => {
     expect(Array.isArray(cfg.plugins)).toBe(true);
   });
 
+  // Test: sidebars.js lists docs that exist
   it('sidebars.js lists docs that exist', async () => {
     const sidebarsPath = path.join(process.cwd(), 'website', 'sidebars.js');
     const sidebars = await importCjs(sidebarsPath);

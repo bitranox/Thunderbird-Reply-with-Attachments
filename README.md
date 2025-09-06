@@ -13,6 +13,14 @@ Is it safe? Yes — it runs locally and uses a minimal set of permissions only t
 
 ---
 
+## Configuration Highlights
+
+- Ask before adding attachments (optional). Choose the default answer (Yes/No) for quick keyboard entry.
+- Blacklist (glob patterns) to skip files automatically, case‑insensitive filename matching.
+- Warn if attachments are excluded by blacklist (default: ON). Shows a small, accessible modal listing the excluded files and the matching pattern(s). Works even if all candidates are excluded.
+
+See Configuration for details and examples.
+
 ## DOCS
 
 - [Full Docs here](https://bitranox.github.io/Thunderbird-Reply-with-Attachments/)

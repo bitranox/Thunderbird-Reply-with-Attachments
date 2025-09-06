@@ -1,6 +1,12 @@
+/*
+ * Test Module: confirm.page.more.visibility.test.js
+ * Scope: Fallback confirm page — "+N more" rendering, button clicks, and visibility refocus.
+ * Intent: Ensure UI text, click handlers, and focus behavior are correct.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
+/** Mount minimal DOM nodes used by the fallback confirm page. */
 function mountDom() {
   document.body.innerHTML =
     '<div id="hdr"><p id="text"></p></div><div id="row"><button id="no"></button><button id="yes"></button></div>';
@@ -27,6 +33,7 @@ describe('confirm_page — more count, clicks, and visibility refocus', () => {
     vi.spyOn(window, 'focus').mockImplementation(() => {});
   });
 
+  // Test: renders +more and handles clicks on yes/no
   it('renders +more and handles clicks on yes/no', async () => {
     // Provide 7 files → list shows first 5 and "+2 more"
     setSearch('?c=7&list=a, b, c, d, e&more=2&def=no&t=t3');
@@ -57,6 +64,7 @@ describe('confirm_page — more count, clicks, and visibility refocus', () => {
     });
   });
 
+  // Test: refocuses default on visibilitychange to visible
   it('refocuses default on visibilitychange to visible', async () => {
     setSearch('?c=1&list=x&def=no&t=t5');
     await import('../sources/confirm_page.js');
@@ -72,9 +80,11 @@ describe('confirm_page — more count, clicks, and visibility refocus', () => {
   });
 });
 
+/** Update location search to simulate query params. */
 function setSearch(qs) {
   window.history.replaceState({}, '', qs);
 }
+/** Advance microtasks one tick. */
 function tick() {
   return new Promise((r) => setTimeout(r, 0));
 }

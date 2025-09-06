@@ -1,7 +1,13 @@
+/*
+ * Test Module: confirm.native.fallback.test.js
+ * Scope: Content confirm — native `confirm()` fallback.
+ * Intent: When no document.body, use global confirm and return boolean.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('content/confirm — native confirm fallback when no document.body', () => {
+  // Test: calls global confirm and returns its boolean
   it('calls global confirm and returns its boolean', async () => {
     await import('../sources/content/confirm.js');
     const { showDialogAndReturnResult } = globalThis.App.ContentConfirm.Internal;

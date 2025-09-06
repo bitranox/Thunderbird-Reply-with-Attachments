@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.runtime.baseurl.test.js
+ * Scope: Composition — confirm popup URL base.
+ * Intent: Ensure buildConfirmUrl uses runtime.getURL for base path.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('composition — buildConfirmUrl uses runtime.getURL base', () => {
+  // Test: prefers browser.runtime.getURL("confirm.html") for popup URL base
   it('prefers browser.runtime.getURL("confirm.html") for popup URL base', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,

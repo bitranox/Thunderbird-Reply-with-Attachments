@@ -1,5 +1,15 @@
+/*
+ * Test Module: background.error.paths.test.js
+ * Scope: Background — error paths and resilience of boot/wiring.
+ * Intent: Ensure background helpers handle API failures gracefully.
+ */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+/**
+ * Boot background.js with a provided fake browser and optional logger.
+ * @param {any} browser
+ * @param {any} [loggerImpl]
+ */
 async function bootBackgroundWith(browser, loggerImpl = null) {
   vi.resetModules();
   // Provide a controllable logger factory
@@ -54,6 +64,7 @@ describe('background — error/edge paths to increase branch coverage', () => {
     delete globalThis.ensureReplyAttachments;
   });
 
+  // Test: logs warn when tabs.query throws (outer catch)
   it('logs warn when tabs.query throws (outer catch)', async () => {
     const browser = {
       runtime: { onMessage: { addListener: vi.fn() } },
@@ -69,6 +80,7 @@ describe('background — error/edge paths to increase branch coverage', () => {
     expect(logs.warn).toHaveBeenCalled();
   });
 
+  // Test: covers null details, non-reply type, and inner try/catches
   it('covers null details, non-reply type, and inner try/catches', async () => {
     const sessions = {
       removeTabValue: vi.fn((id) =>
@@ -113,6 +125,7 @@ describe('background — error/edge paths to increase branch coverage', () => {
     expect(ensureSpy).toHaveBeenCalledWith(1, { type: 'replyAll' });
   });
 
+  // Test: safeGetComposeDetails returns null on error
   it('safeGetComposeDetails returns null on error', async () => {
     const browser = {
       runtime: { onMessage: { addListener: vi.fn() } },

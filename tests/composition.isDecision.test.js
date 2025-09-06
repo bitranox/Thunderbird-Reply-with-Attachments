@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.isDecision.test.js
+ * Scope: Composition — treat non-decision payloads and fall back to popup.
+ * Intent: When targeted/broadcast replies lack {ok:boolean}, use popup path.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('composition — isDecision negative (no ok prop) falls back to popup', () => {
+  // Test: treats {} from targeted and broadcast as non-decisions and uses popup
   it('treats {} from targeted and broadcast as non-decisions and uses popup', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,

@@ -1,6 +1,12 @@
+/*
+ * Test Module: ports.contract.test.js
+ * Scope: Port typedef contracts — shape expectations for adapter ports.
+ * Intent: Sanity-check presence and types of functions on port facades.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('Ports contract — shapes are as promised', () => {
+  // Test: makeThunderbirdPorts returns all port groups with expected methods
   it('makeThunderbirdPorts returns all port groups with expected methods', async () => {
     const browser = fakeBrowser();
     await import('../sources/app/adapters/thunderbird.js');
@@ -28,6 +34,7 @@ describe('Ports contract — shapes are as promised', () => {
 });
 
 // Tiny helpers
+/** Build a minimal fake browser API for contract checks. */
 function fakeBrowser() {
   return {
     compose: {
@@ -50,9 +57,11 @@ function fakeBrowser() {
     },
   };
 }
+/** Loose type helper for contract assertions. */
 function expectTypeOf(v) {
   return { toBeFunction: () => expect(typeof v).toBe('function') };
 }
+/** Ensure object has an `addListener` function. */
 function expectHasListener(obj) {
   expect(obj && typeof obj.addListener).toBe('function');
 }

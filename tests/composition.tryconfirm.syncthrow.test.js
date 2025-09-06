@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.tryconfirm.syncthrow.test.js
+ * Scope: Composition — synchronous throw handling in targeted/broadcast confirm.
+ * Intent: Ensure sync throws return null and popup fallback is used.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('composition — tryTargetedConfirm/tryBroadcastConfirm synchronous throws return null', () => {
+  // Test: falls back to popup when both throw synchronously
   it('falls back to popup when both throw synchronously', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,

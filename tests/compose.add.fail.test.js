@@ -1,7 +1,13 @@
+/*
+ * Test Module: compose.add.fail.test.js
+ * Scope: Compose — addAttachment failure resilience.
+ * Intent: Ensure failures for one file do not prevent subsequent attachments.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('compose.addAttachment failure path', () => {
+  // Test: continues attaching subsequent files when one addAttachment throws
   it('continues attaching subsequent files when one addAttachment throws', async () => {
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const browser = createBrowserMock({

@@ -1,6 +1,12 @@
+/*
+ * Test Module: options.error.load.test.js
+ * Scope: Options page — error paths while loading settings into the form.
+ * Intent: Ensure sane fallbacks and no crashes when storage APIs fail.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+/** Mount a minimal DOM for the options page used by tests. */
 function mountOptionsDom() {
   document.body.innerHTML = `
   <div>
@@ -21,6 +27,7 @@ describe('options page — error path on load()', () => {
     mountOptionsDom();
   });
 
+  // Test: handles storage.local.get failure and shows safe defaults
   it('handles storage.local.get failure and shows safe defaults', async () => {
     const get = vi.fn().mockRejectedValue(new Error('boom'));
     const set = vi.fn();

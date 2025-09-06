@@ -171,9 +171,23 @@ function createEnsureReplyAttachments({
 }
 
 // — ensure helpers —
+/**
+ * Read the per-tab session marker indicating processing has already happened.
+ * @param {import('./ports.js').SessionsPort} sessions
+ * @param {number} tabId
+ * @param {string} key
+ * @returns {Promise<boolean>}
+ */
 async function wasAlreadyProcessed(sessions, tabId, key) {
   return await safe(() => sessions.getTabValue(tabId, key), false);
 }
+/**
+ * Mark a tab as processed in memory and in session storage.
+ * @param {import('./ports.js').SessionsPort} sessions
+ * @param {number} tabId
+ * @param {string} key
+ * @param {Map<number,'processing'|'done'>} state
+ */
 async function markProcessed(sessions, tabId, key, state) {
   markDone(state, tabId);
   await safe(() => sessions.setTabValue(tabId, key, true));
@@ -181,6 +195,7 @@ async function markProcessed(sessions, tabId, key, state) {
 
 // — helpers —
 
+/** Return true when compose details represent a reply flavor. */
 function isReply(details) {
   // Thunderbird composes label reply flavors like 'reply', 'replyAll', etc.
   return String(details?.type || '')
@@ -188,18 +203,22 @@ function isReply(details) {
     .startsWith('reply');
 }
 
+/** In-memory guard to avoid duplicate runs for a tab in one background session. */
 function isProcessingOrDone(state, tabId) {
   // Memory guard to avoid duplicate runs within a single background session.
   const s = state.get(tabId);
   return s === 'processing' || s === 'done';
 }
 
+/** Mark a tab as being processed right now. */
 function markProcessing(state, tabId) {
   state.set(tabId, 'processing');
 }
+/** Mark a tab as processed. */
 function markDone(state, tabId) {
   state.set(tabId, 'done');
 }
+/** Clear any per-tab marker kept in memory. */
 function clearState(state, tabId) {
   state.delete(tabId);
 }
@@ -309,12 +328,20 @@ function asSelection(a) {
   return { name: a.name || a.fileName, partName: a.partName };
 }
 
+/** Delay for a number of milliseconds. */
 function delay(ms) {
   return new Promise((r) =>
     globalThis.setTimeout ? globalThis.setTimeout(r, ms) : setTimeout(r, ms)
   );
 }
 
+/**
+ * Run an async function and return a fallback on error.
+ * @template T
+ * @param {() => Promise<T>} fn
+ * @param {T} [fallback]
+ * @returns {Promise<T>}
+ */
 async function safe(fn, fallback) {
   try {
     return await fn();

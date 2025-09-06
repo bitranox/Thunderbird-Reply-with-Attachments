@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.keys.cancel.test.js
+ * Scope: Content confirm — keyboard cancel.
+ * Intent: Ensure 'n' cancels when focused on dialog.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -12,6 +17,7 @@ describe('content/confirm — N cancels', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: pressing n cancels dialog
   it('pressing n cancels dialog', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['a'], def: 'yes' });
     await new Promise((r) => setTimeout(r, 0));

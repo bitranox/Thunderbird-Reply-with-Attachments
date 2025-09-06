@@ -1,6 +1,12 @@
+/*
+ * Test Module: composition.internals.unit.test.js
+ * Scope: Composition internals — pure helper utilities.
+ * Intent: Validate yesNo, shouldAsk, isDecision, buildConfirmUrl, waitForConfirm.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('composition internals — small pure helpers', () => {
+  // Test: yesNo maps truthy to yes except explicit no
   it('yesNo maps truthy to yes except explicit no', async () => {
     await import('../sources/app/composition.js');
     const { yesNo } = globalThis.App.Composition.Internal;
@@ -10,6 +16,7 @@ describe('composition internals — small pure helpers', () => {
     expect(yesNo('yes')).toBe('yes');
   });
 
+  // Test: shouldAsk requires both toggle and non-empty selection
   it('shouldAsk requires both toggle and non-empty selection', async () => {
     await import('../sources/app/composition.js');
     const { shouldAsk } = globalThis.App.Composition.Internal;
@@ -19,6 +26,7 @@ describe('composition internals — small pure helpers', () => {
     expect(shouldAsk(true, null)).toBe(false);
   });
 
+  // Test: isDecision only true for explicit boolean ok
   it('isDecision only true for explicit boolean ok', async () => {
     await import('../sources/app/composition.js');
     const { isDecision } = globalThis.App.Composition.Internal;
@@ -28,6 +36,7 @@ describe('composition internals — small pure helpers', () => {
     expect(isDecision(null)).toBeFalsy();
   });
 
+  // Test: buildConfirmUrl includes def=no and counts
   it('buildConfirmUrl includes def=no and counts', async () => {
     await import('../sources/app/composition.js');
     const { buildConfirmUrl } = globalThis.App.Composition.Internal;
@@ -39,6 +48,7 @@ describe('composition internals — small pure helpers', () => {
     expect(url).toContain('def=no');
   });
 
+  // Test: waitForConfirm resolves false on timeout
   it('waitForConfirm resolves false on timeout', async () => {
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;

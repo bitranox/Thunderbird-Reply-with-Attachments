@@ -1,3 +1,8 @@
+/*
+ * Test Module: i18n.placeholders.test.js
+ * Scope: i18n — placeholder parity across locales and tokens.
+ * Intent: Keep placeholders consistent and mapped to $N tokens.
+ */
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
@@ -21,6 +26,7 @@ describe('i18n placeholders — consistent across locales', () => {
   const baseMsgs = messagesOf(base);
   const otherLocales = locales().filter((l) => l !== base);
 
+  // Test: locales define the same placeholder keys as base where applicable
   it('locales define the same placeholder keys as base where applicable', () => {
     for (const loc of otherLocales) {
       const msgs = messagesOf(loc);
@@ -37,6 +43,7 @@ describe('i18n placeholders — consistent across locales', () => {
     }
   });
 
+  // Test: every $N token present in a locale message has a corresponding placeholder entry
   it('every $N token present in a locale message has a corresponding placeholder entry', () => {
     for (const loc of locales()) {
       const msgs = messagesOf(loc);

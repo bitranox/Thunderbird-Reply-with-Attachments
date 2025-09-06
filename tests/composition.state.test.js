@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.state.test.js
+ * Scope: Composition — processed state map and session marker logic.
+ * Intent: Ensure idempotency per tab across events.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Composition — state & sessions', () => {
+  // Test: processes once per tab and marks as done in sessions
   it('processes once per tab and marks as done in sessions', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],

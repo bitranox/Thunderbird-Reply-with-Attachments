@@ -1,7 +1,13 @@
+/*
+ * Test Module: storage.corruption.blacklist.test.js
+ * Scope: Storage corruption — blacklistPatterns not an array.
+ * Intent: Treat invalid types as empty list and proceed safely.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('storage corruption: non-array blacklistPatterns', () => {
+  // Test: treats non-array blacklistPatterns as empty and proceeds safely
   it('treats non-array blacklistPatterns as empty and proceeds safely', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'a.txt', partName: '1' }],

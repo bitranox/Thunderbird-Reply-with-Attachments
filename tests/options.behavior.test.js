@@ -1,6 +1,12 @@
+/*
+ * Test Module: options.behavior.test.js
+ * Scope: Options page — load, save, reset, live apply behavior.
+ * Intent: Validate settings persistence, defaults, and messaging to background.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
+/** Mount a minimal DOM for the options page used by tests. */
 function mountOptionsDom() {
   document.body.innerHTML = `
   <div>
@@ -20,6 +26,7 @@ describe('options page — reads, writes, resets', () => {
     mountOptionsDom();
   });
 
+  // Test: auto-fills defaults when user list is empty
   it('auto-fills defaults when user list is empty', async () => {
     vi.resetModules();
     mockBrowser({
@@ -34,6 +41,7 @@ describe('options page — reads, writes, resets', () => {
     expect(ta.value).toContain('*secret*');
   });
 
+  // Test: save lowercases patterns and notifies background
   it('save lowercases patterns and notifies background', async () => {
     vi.resetModules();
     const get = vi.fn().mockResolvedValue({
@@ -58,6 +66,7 @@ describe('options page — reads, writes, resets', () => {
     expect(sendMessage).toHaveBeenCalledWith({ type: 'rwa:apply-settings-open-compose' });
   });
 
+  // Test: reset writes defaults and reloads form
   it('reset writes defaults and reloads form', async () => {
     vi.resetModules();
     const get = vi.fn().mockResolvedValue({
@@ -79,6 +88,10 @@ describe('options page — reads, writes, resets', () => {
   });
 });
 
+/**
+ * Create a mock `browser` object exposing i18n, storage and runtime.
+ * @param {{get:Function,set:Function,sendMessage?:Function,getMessage?:Function}} param0
+ */
 function mockBrowser({
   get,
   set,
@@ -91,6 +104,7 @@ function mockBrowser({
     i18n: { getMessage },
   };
 }
+/** Advance the microtask queue to flush pending promises. */
 function tick() {
   return new Promise((r) => setTimeout(r, 0));
 }

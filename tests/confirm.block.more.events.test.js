@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.block.more.events.test.js
+ * Scope: Content confirm — additional blocked events.
+ * Intent: Ensure pointerdown and input outside overlay are prevented.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -21,6 +26,7 @@ describe('content/confirm — more blocked events', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: prevents pointerdown and input outside overlay
   it('prevents pointerdown and input outside overlay', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['x'] });
     await new Promise((r) => setTimeout(r, 0));

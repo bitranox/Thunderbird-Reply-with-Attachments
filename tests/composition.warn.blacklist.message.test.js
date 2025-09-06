@@ -1,6 +1,15 @@
+/*
+ * Test Module: composition.warn.blacklist.message.test.js
+ * Scope: Composition wiring — emits a warn-blacklist message with proper rows.
+ * Intent: Verify that blacklist-excluded, non-inline attachments trigger a warning payload.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
+/**
+ * Setup a mocked browser and composition wiring for blacklist warning tests.
+ * @returns {Promise<{browser:any,wiring:any}>}
+ */
 async function setup() {
   const browser = createBrowserMock({
     confirmBeforeAdd: false,
@@ -25,6 +34,7 @@ async function setup() {
 }
 
 describe('composition — sends warn-blacklist message with rows', () => {
+  // Test: emits rwa:warn-blacklist for blacklisted non-inline attachments
   it('emits rwa:warn-blacklist for blacklisted non-inline attachments', async () => {
     const { browser, wiring } = await setup();
     await wiring.ensureReplyAttachments(42, { referenceMessageId: 100, type: 'reply' });

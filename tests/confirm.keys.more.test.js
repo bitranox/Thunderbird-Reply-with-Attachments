@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.keys.more.test.js
+ * Scope: Content confirm — more key handling.
+ * Intent: Enter, j/y confirmation and Tab focus cycling behaviors.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -25,6 +30,7 @@ describe('confirm dialog — quick keys (y/j/n/Enter/Tab)', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: Enter triggers focused action (def=no cancels)
   it('Enter triggers focused action (def=no cancels)', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['f'], def: 'no' });
     await tick();
@@ -33,6 +39,7 @@ describe('confirm dialog — quick keys (y/j/n/Enter/Tab)', () => {
     await p;
   });
 
+  // Test: j and y confirm
   it('j and y confirm', async () => {
     const p1 = listener({ type: 'rwa:confirm-add', files: ['f'], def: 'yes' });
     await tick();
@@ -45,6 +52,7 @@ describe('confirm dialog — quick keys (y/j/n/Enter/Tab)', () => {
     await p2;
   });
 
+  // Test: Tab cycles focus forward
   it('Tab cycles focus forward', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['f'], def: 'yes' });
     await tick();

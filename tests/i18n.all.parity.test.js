@@ -1,3 +1,8 @@
+/*
+ * Test Module: i18n.all.parity.test.js
+ * Scope: UI i18n — round-trip check for placeholder tokens across locales.
+ * Intent: Ensure placeholders and key sets remain consistent.
+ */
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
@@ -13,6 +18,7 @@ function readMessages(locale) {
 }
 
 describe('i18n parity — all locales share the same keys', () => {
+  // Test: every locale key set matches the base (en)
   it('every locale key set matches the base (en)', () => {
     const locales = readLocalesDir();
     const base = 'en';

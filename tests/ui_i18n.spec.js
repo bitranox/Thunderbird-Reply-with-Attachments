@@ -1,4 +1,9 @@
 /* @vitest-environment jsdom */
+/*
+ * Test Module: ui_i18n.spec.js
+ * Scope: UI i18n helper — text and attribute application on pages.
+ * Intent: Verify data-i18n and data-i18n-attr behaviors on DOMContentLoaded.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 // Import scripts to ensure they are instrumented for coverage
 
@@ -37,6 +42,7 @@ describe('ui_i18n + handlers integration', () => {
     globalThis.browser = browser;
   });
 
+  // Test: applies text and href via data-i18n / data-i18n-attr and handlers open links
   it('applies text and href via data-i18n / data-i18n-attr and handlers open links', async () => {
     // load ui_i18n
     await import('../sources/ui_i18n.js');

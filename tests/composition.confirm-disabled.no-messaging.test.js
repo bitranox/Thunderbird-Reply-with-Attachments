@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.confirm-disabled.no-messaging.test.js
+ * Scope: Composition — behavior when confirm is disabled.
+ * Intent: Verify no messaging/injection occurs and attachments still add.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('Composition — confirm disabled: no confirm messaging', () => {
+  // Test: does not send confirm messages and still adds attachments
   it('does not send confirm messages and still adds attachments', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: false,

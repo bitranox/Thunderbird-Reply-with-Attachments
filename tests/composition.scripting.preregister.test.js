@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.scripting.preregister.test.js
+ * Scope: Composition — pre-register confirm content script for compose docs.
+ * Intent: Ensure registerScripts is invoked and guarded.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('composition — scripting preregistration', () => {
+  // Test: registers confirm script when not present and injects on events
   it('registers confirm script when not present and injects on events', async () => {
     vi.resetModules();
     const browser = createBrowserMock({ confirmBeforeAdd: true });
@@ -25,6 +31,7 @@ describe('composition — scripting preregistration', () => {
     expect(browser.scripting.compose.executeScript).toHaveBeenCalled();
   });
 
+  // Test: does not re-register when already present
   it('does not re-register when already present', async () => {
     vi.resetModules();
     const browser = createBrowserMock({ confirmBeforeAdd: true });
@@ -39,6 +46,7 @@ describe('composition — scripting preregistration', () => {
     expect(browser.scripting.compose.registerScripts).not.toHaveBeenCalled();
   });
 
+  // Test: injects confirm script on compose events
   it('injects confirm script on compose events', async () => {
     vi.resetModules();
     const browser = createBrowserMock({ confirmBeforeAdd: true });
@@ -65,6 +73,7 @@ describe('composition — scripting preregistration', () => {
 
 // legacy helper removed — use shared createBrowserMock instead
 
+/** Advance microtasks to allow async tasks to flush. */
 function tick() {
   return new Promise((r) => setTimeout(r, 0));
 }

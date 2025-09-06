@@ -1,6 +1,12 @@
+/*
+ * Test Module: confirm.block.events.test.js
+ * Scope: Content confirm — event blocking outside the dialog.
+ * Intent: Ensure pointer/keyboard events do not leak to the editor.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
+/** Dispatch a document-level event outside the dialog. */
 function dispatchOutside(type, cancelable = true) {
   const outside = document.createElement('div');
   document.body.appendChild(outside);
@@ -21,6 +27,7 @@ describe('content/confirm — blocks background interactions', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: prevents mousedown/contextmenu/wheel outside overlay
   it('prevents mousedown/contextmenu/wheel outside overlay', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['a'] });
     await new Promise((r) => setTimeout(r, 0));
@@ -36,6 +43,7 @@ describe('content/confirm — blocks background interactions', () => {
     await p;
   });
 
+  // Test: Enter on default yes resolves ok:true
   it('Enter on default yes resolves ok:true', async () => {
     const resPromise = listener({ type: 'rwa:confirm-add', files: ['a'], def: 'yes' });
     await new Promise((r) => setTimeout(r, 0));

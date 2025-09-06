@@ -1,6 +1,12 @@
+/*
+ * Test Module: adapter.thunderbird.test.js
+ * Scope: Thunderbird adapter — wraps MailExtension APIs behind small ports.
+ * Intent: Validate method forwarding, optional chaining, and graceful fallbacks.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('thunderbird adapter — thin and brave', () => {
+  // Test: wraps compose/messages/tabs/sessions/scripting
   it('wraps compose/messages/tabs/sessions/scripting', async () => {
     const browser = {
       compose: {
@@ -40,6 +46,7 @@ describe('thunderbird adapter — thin and brave', () => {
     });
   });
 
+  // Test: gracefully handles missing optional APIs
   it('gracefully handles missing optional APIs', async () => {
     const browser = {
       compose: { getComposeDetails: vi.fn().mockResolvedValue({}) },

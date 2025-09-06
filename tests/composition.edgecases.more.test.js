@@ -1,3 +1,8 @@
+/*
+ * Test Module: composition.edgecases.more.test.js
+ * Scope: Composition — edge cases for boot readers, popup URL building, injection caching.
+ * Intent: Exercise error/fallback paths and ensure stability.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 async function bootWith({
@@ -65,6 +70,7 @@ async function bootWith({
 }
 
 describe('composition edgecases — boot readers, popup url, injection cache', () => {
+  // Test: readConfirmEnabled/Default error paths (storage.get throws) do not crash
   it('readConfirmEnabled/Default error paths (storage.get throws) do not crash', async () => {
     const storageGetFn = vi.fn().mockRejectedValue(new Error('boom'));
     await bootWith({ storageGetFn });
@@ -79,6 +85,7 @@ describe('composition edgecases — boot readers, popup url, injection cache', (
     expect(browser.compose.addAttachment).toHaveBeenCalled();
   });
 
+  // Test: buildConfirmUrl encodes >5 files and default def when targeted+broadcast fail and windows.update throws
   it('buildConfirmUrl encodes >5 files and default def when targeted+broadcast fail and windows.update throws', async () => {
     const browser = await bootWith({
       targetedOk: false,
@@ -111,6 +118,7 @@ describe('composition edgecases — boot readers, popup url, injection cache', (
     expect(browser.compose.addAttachment).toHaveBeenCalled();
   });
 
+  // Test: ensureConfirmInjected executes once per tab (second call early-returns)
   it('ensureConfirmInjected executes once per tab (second call early-returns)', async () => {
     const browser = await bootWith({ targetedOk: false, broadcastOk: true });
     browser.messages.listAttachments.mockResolvedValueOnce([

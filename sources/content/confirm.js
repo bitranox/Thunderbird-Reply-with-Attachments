@@ -36,9 +36,19 @@
   function isConfirmPayload(p) {
     return p && p.type === 'rwa:confirm-add';
   }
+  /**
+   * Normalize payload.files into a string array.
+   * @param {any} p
+   * @returns {string[]}
+   */
   function toFileList(p) {
     return Array.isArray(p.files) ? p.files : [];
   }
+  /**
+   * Coerce default answer to 'yes' | 'no'.
+   * @param {any} p
+   * @returns {'yes'|'no'}
+   */
   function defaultAnswer(p) {
     return p?.def === 'no' ? 'no' : 'yes';
   }
@@ -366,22 +376,34 @@
       focusDefault(def, btnNo, btnYes);
     }, 0);
   }
-  /** Focus the default answer button. */
+  /**
+   * Focus the default answer button.
+   * @param {'yes'|'no'} def Which button should be focused by default
+   * @param {HTMLButtonElement} btnNo
+   * @param {HTMLButtonElement} btnYes
+   */
   function focusDefault(def, btnNo, btnYes) {
     try {
       (def === 'no' ? btnNo : btnYes).focus({ preventScroll: true });
     } catch (_) {}
   }
+  /** Click the first focusable control (usually No). */
   function clickFirst(list) {
     try {
       list[0].click();
     } catch (_) {}
   }
+  /** Click the last focusable control (usually Yes). */
   function clickLast(list) {
     try {
       list[list.length - 1].click();
     } catch (_) {}
   }
+  /**
+   * Move focus between dialog buttons.
+   * @param {HTMLElement[]} list Focusable controls (order matters)
+   * @param {boolean} backwards When true, move focus backwards
+   */
   function focusNext(list, backwards) {
     const idx = list.indexOf(document.activeElement);
     const next = backwards
@@ -397,6 +419,7 @@
   }
 
   // — Document state —
+  /** Capture minimal document editing/scroll state to restore later. */
   function snapshotDocumentState() {
     return {
       overflow: document.body.style.overflow,
@@ -404,6 +427,7 @@
       designMode: document.designMode,
     };
   }
+  /** Restore document state captured by snapshotDocumentState. */
   function restoreDocumentState(prev) {
     document.body.style.overflow = prev.overflow;
     try {
@@ -413,6 +437,7 @@
       document.designMode = prev.designMode;
     } catch (_) {}
   }
+  /** Temporarily disable editing in the compose document while modal is open. */
   function disableEditing() {
     try {
       document.body.contentEditable = 'false';
@@ -437,6 +462,7 @@
     showDialogAndReturnResult,
   };
 
+  /** Detect dark color-scheme preference for basic theming of the modal. */
   function prefersDark() {
     try {
       return globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches;

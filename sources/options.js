@@ -13,12 +13,22 @@
   const KEY_WARN_BLACKLIST = 'warnOnBlacklistExcluded';
   const DEFAULT_PATTERNS = ['*intern*', '*secret*', '*passwor*'];
 
-  /** Get an element by id with a typed cast for readability. */
+  /**
+   * Get an element by id with a typed cast for readability.
+   * @param {string} id
+   * @returns {HTMLElement}
+   */
   function getEl(id) {
     return /** @type {HTMLElement} */ (document.getElementById(id));
   }
 
-  /** Read and normalize newline‑separated patterns from a textarea. */
+  /**
+   * Read and normalize newline‑separated patterns from a textarea.
+   * Parameters: `id` of the textarea element to read from.
+   * Output: array of lowercased, trimmed, non-empty patterns.
+   * @param {string} id
+   * @returns {string[]}
+   */
   function readTextareaLines(id) {
     const ta = /** @type {HTMLTextAreaElement} */ (getEl(id));
     // Normalize patterns to lowercase on save to ensure case-insensitive behavior
@@ -28,13 +38,21 @@
       .filter(Boolean);
   }
 
-  /** Write patterns to a textarea as a newline‑separated list. */
+  /**
+   * Write patterns to a textarea as a newline‑separated list.
+   * @param {string} id
+   * @param {string[]} arr
+   */
   function setTextareaLines(id, arr) {
     const ta = /** @type {HTMLTextAreaElement} */ (getEl(id));
     ta.value = (arr || []).join('\n');
   }
 
-  /** Load settings into the form; auto‑fill empty blacklist with defaults. */
+  /**
+   * Load settings into the form; auto‑fill empty blacklist with defaults.
+   * Intent: keep UX simple by providing sensible defaults.
+   * @returns {Promise<void>}
+   */
   async function load() {
     try {
       const res = await browser.storage?.local?.get?.({
@@ -92,7 +110,11 @@
     }
   }
 
-  /** Persist the form values and show a transient status. */
+  /**
+   * Persist the form values and show a transient status.
+   * Also notifies the background to re-apply settings to open compose windows.
+   * @returns {Promise<void>}
+   */
   async function save() {
     const patterns = readTextareaLines('blacklist-patterns');
     const cb = /** @type {HTMLInputElement} */ (getEl('confirm-before'));
@@ -115,7 +137,10 @@
     setTimeout(() => setStatus(''), 1500);
   }
 
-  /** Restore default settings and reload the form. */
+  /**
+   * Restore default settings and reload the form.
+   * @returns {Promise<void>}
+   */
   async function resetDefaults() {
     setStatus(getMessage('uiSaving') || 'Saving…');
     await browser.storage?.local?.set?.({
@@ -129,14 +154,21 @@
     setTimeout(() => setStatus(''), 1500);
   }
 
-  /** Update the fixed status area without shifting the layout. */
+  /**
+   * Update the fixed status area without shifting the layout.
+   * @param {string} text
+   */
   function setStatus(text) {
     const el = /** @type {HTMLElement} */ (document.getElementById('status-label'));
     if (!el) return;
     el.textContent = text || '';
   }
 
-  /** Convenience i18n lookup compatible with both namespaces. */
+  /**
+   * Convenience i18n lookup compatible with both namespaces.
+   * @param {string} key
+   * @returns {string}
+   */
   function getMessage(key) {
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key) || '';
@@ -145,6 +177,7 @@
     return '';
   }
 
+  /** Initialize event handlers and load settings on DOM ready. */
   function init() {
     getEl('save-btn')?.addEventListener('click', (e) => {
       e.preventDefault();

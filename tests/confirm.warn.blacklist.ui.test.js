@@ -1,4 +1,9 @@
 /* @vitest-environment jsdom */
+/*
+ * Test Module: confirm.warn.blacklist.ui.test.js
+ * Scope: Content confirm — blacklist warning modal UI behavior.
+ * Intent: Verify table rendering, focus trapping, and keyboard close.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import path from 'path';
 
@@ -23,6 +28,7 @@ describe('content/confirm — warn-blacklist dialog', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: renders rows and resolves on OK click
   it('renders rows and resolves on OK click', async () => {
     const rows = [
       { name: 'a.pdf', pattern: '*.pdf' },
@@ -57,6 +63,7 @@ describe('content/confirm — warn-blacklist dialog', () => {
     expect(document.querySelector('[role="dialog"]')).toBeNull();
   });
 
+  // Test: Enter or Escape closes the dialog
   it('Enter or Escape closes the dialog', async () => {
     const rows = [{ name: 'x.pdf', pattern: '*.pdf' }];
     const p = listener({ type: 'rwa:warn-blacklist', rows });

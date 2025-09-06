@@ -1,6 +1,12 @@
+/*
+ * Test Module: background.apply-settings.integration.test.js
+ * Scope: Background bootstrap — applying settings to open compose tabs.
+ * Intent: Verify per-tab markers cleared and ensure pass executes for reply tabs.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('background — apply settings to open composers', () => {
+  // Test: handles rwa:apply-settings-open-compose by clearing markers and ensuring tabs
   it('handles rwa:apply-settings-open-compose by clearing markers and ensuring tabs', async () => {
     const browser = {
       runtime: { onMessage: { addListener: vi.fn(), removeListener: vi.fn() } },

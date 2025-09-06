@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.onbeforesend.test.js
+ * Scope: Composition — onBeforeSend ensure path.
+ * Intent: Ensure it returns {} and triggers ensure when not yet processed.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Composition — onBeforeSend flow', () => {
+  // Test: returns {} and ensures attachments if not yet processed
   it('returns {} and ensures attachments if not yet processed', async () => {
     const browser = createBrowserMock({
       messageAttachments: [{ name: 'z.txt', partName: '1', contentType: 'text/plain' }],

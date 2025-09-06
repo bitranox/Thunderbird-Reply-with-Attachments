@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.safety.test.js
+ * Scope: Composition — resilience to compose.getComposeDetails failures.
+ * Intent: Ensure errors are caught and flow aborts safely.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Composition — safety around compose details', () => {
+  // Test: stays calm when compose.getComposeDetails rejects
   it('stays calm when compose.getComposeDetails rejects', async () => {
     const browser = createBrowserMock();
     await import('../sources/app/adapters/thunderbird.js');

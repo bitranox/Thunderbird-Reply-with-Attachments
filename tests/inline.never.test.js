@@ -1,7 +1,13 @@
+/*
+ * Test Module: inline.never.test.js
+ * Scope: Domain/Composition — inline content excluded always.
+ * Intent: Inline images and inline disposition remain excluded on all passes.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Inline attachments are never added', () => {
+  // Test: does not add inline image even when other attachments are blacklisted (fallback path)
   it('does not add inline image even when other attachments are blacklisted (fallback path)', async () => {
     const browser = createBrowserMock({
       messageAttachments: [
@@ -27,6 +33,7 @@ describe('Inline attachments are never added', () => {
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });
 
+  // Test: does not add attachments with contentDisposition inline
   it('does not add attachments with contentDisposition inline', async () => {
     const browser = createBrowserMock({
       messageAttachments: [

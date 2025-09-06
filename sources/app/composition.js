@@ -383,6 +383,7 @@
       return null;
     }
   }
+  /** Predicate: object has a boolean `ok` field (confirm/warn result). */
   function isDecision(x) {
     return x && typeof x.ok === 'boolean';
   }

@@ -1,6 +1,12 @@
+/*
+ * Test Module: composition.scripting.error.test.js
+ * Scope: Composition — error paths when registering/executing scripts.
+ * Intent: Ensure failures are caught and logged without breaking flow.
+ */
 import { describe, it, expect, vi } from 'vitest';
 
 describe('composition — scripting.executeScript may fail but flow continues', () => {
+  // Test: on compose state, injection errors are swallowed
   it('on compose state, injection errors are swallowed', async () => {
     vi.resetModules();
     const browser = makeBrowser();
@@ -19,6 +25,7 @@ describe('composition — scripting.executeScript may fail but flow continues', 
   });
 });
 
+/** Build a fake browser with failing scripting APIs to exercise error paths. */
 function makeBrowser() {
   const compose = {
     getComposeDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 1 }),

@@ -1,4 +1,9 @@
 /* @vitest-environment jsdom */
+/*
+ * Test Module: confirm.focuscycle.test.js
+ * Scope: Content confirm — cycling focus across controls.
+ * Intent: Ensure Arrow keys and Tab/Shift+Tab wrap focus correctly.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 function qs(sel) {
@@ -25,6 +30,7 @@ describe('confirm dialog — focus dances in a circle', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: Shift+Tab cycles backwards
   it('Shift+Tab cycles backwards', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['x'], def: 'yes' });
     await tick();
@@ -41,6 +47,7 @@ describe('confirm dialog — focus dances in a circle', () => {
     await p;
   });
 
+  // Test: ArrowLeft/Up move focus back; ArrowRight/Down move forward
   it('ArrowLeft/Up move focus back; ArrowRight/Down move forward', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['x'], def: 'no' });
     await tick();

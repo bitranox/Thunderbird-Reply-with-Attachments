@@ -1,3 +1,8 @@
+/*
+ * Test Module: shared.utils.test.js
+ * Scope: Shared utilities — toNumericId and logger behavior.
+ * Intent: Ensure utility functions are stable and predictable.
+ */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 describe('App.Shared utils', () => {
@@ -5,6 +10,7 @@ describe('App.Shared utils', () => {
     vi.resetModules();
   });
 
+  // Test: toNumericId handles number, object, and invalid
   it('toNumericId handles number, object, and invalid', async () => {
     await import('../sources/app/shared/utils.js');
     const { toNumericId } = globalThis.App.Shared;
@@ -14,6 +20,7 @@ describe('App.Shared utils', () => {
     expect(toNumericId(null)).toBe(null);
   });
 
+  // Test: makeLogger logs at all levels; debug definitely logs when enabled
   it('makeLogger logs at all levels; debug definitely logs when enabled', async () => {
     await import('../sources/app/shared/utils.js');
     const { makeLogger } = globalThis.App.Shared;

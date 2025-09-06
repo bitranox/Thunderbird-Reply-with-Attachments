@@ -1,3 +1,8 @@
+/*
+ * Test Module: composition.confirm.flow.test.js
+ * Scope: Composition — user confirmation flow (targeted, broadcast, popup fallback).
+ * Intent: Ensure fallback order and decision propagation.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
@@ -27,6 +32,7 @@ async function setup({
 }
 
 describe('composition — confirmation flow fallbacks', () => {
+  // Test: uses targeted tab messaging when available (ok)
   it('uses targeted tab messaging when available (ok)', async () => {
     const browser = await setup({ targetedOk: true, broadcastOk: false });
     await triggerComposeState(browser, 7);
@@ -35,6 +41,7 @@ describe('composition — confirmation flow fallbacks', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 
+  // Test: falls back to broadcast when targeted fails
   it('falls back to broadcast when targeted fails', async () => {
     const browser = await setup({ targetedOk: false, broadcastOk: true });
     await triggerComposeState(browser, 8);
@@ -43,6 +50,7 @@ describe('composition — confirmation flow fallbacks', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 
+  // Test: opens popup and resolves when confirm-result arrives (popup ok)
   it('opens popup and resolves when confirm-result arrives (popup ok)', async () => {
     // Force both targeted and broadcast to fail → popup path
     const browser = await setup({ targetedOk: false, broadcastOk: false });

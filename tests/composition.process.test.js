@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.process.test.js
+ * Scope: Composition — processReplyAttachments behavior through wiring.
+ * Intent: Ensure eligibility rules and error paths behave as expected.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('Composition processReplyAttachments via wiring', () => {
+  // Test: adds only eligible attachments; skips S/MIME, inline and duplicates
   it('adds only eligible attachments; skips S/MIME, inline and duplicates', async () => {
     const attachments = [
       { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'cid:logo' }, // inline
@@ -28,6 +34,7 @@ describe('Composition processReplyAttachments via wiring', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
   });
 
+  // Test: handles getAttachmentFile returning null by skipping that part
   it('handles getAttachmentFile returning null by skipping that part', async () => {
     const attachments = [
       { name: 'x.txt', partName: '1', contentType: 'text/plain' },

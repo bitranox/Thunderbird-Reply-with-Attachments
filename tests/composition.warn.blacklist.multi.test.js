@@ -1,6 +1,15 @@
+/*
+ * Test Module: composition.warn.blacklist.multi.test.js
+ * Scope: Composition wiring — merges multiple matching patterns per file.
+ * Intent: Ensure warn payload groups rows per filename with comma-separated patterns.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
+/**
+ * Setup a mocked browser and composition wiring for merged-pattern tests.
+ * @returns {Promise<{browser:any,wiring:any}>}
+ */
 async function setup() {
   const browser = createBrowserMock({
     confirmBeforeAdd: false,
@@ -23,6 +32,7 @@ async function setup() {
 }
 
 describe('composition — blacklist warning shows merged patterns per file', () => {
+  // Test: emits a single row with merged patterns for one file matched by two patterns
   it('emits a single row with merged patterns for one file matched by two patterns', async () => {
     const { browser, wiring } = await setup();
     await wiring.ensureReplyAttachments(7, { referenceMessageId: 200, type: 'reply' });

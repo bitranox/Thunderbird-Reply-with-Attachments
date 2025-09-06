@@ -1,4 +1,9 @@
 /* @vitest-environment jsdom */
+/*
+ * Test Module: confirm.keyboard.test.js
+ * Scope: Content confirm — keyboard shortcuts and focus management.
+ * Intent: Verify Y/J/N/Escape, arrows, and Tab handling.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 // Tiny helpers to keep tests poetic and clear
@@ -28,6 +33,7 @@ describe('confirm dialog — keys sing decisions', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: when I press y, it says yes
   it('when I press y, it says yes', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['doc.pdf'], def: 'yes' });
     const dlg = await tickThen(() => qs('[role="dialog"]'));
@@ -36,6 +42,7 @@ describe('confirm dialog — keys sing decisions', () => {
     expect(res).toEqual({ ok: true });
   });
 
+  // Test: when I press n, it says no
   it('when I press n, it says no', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['doc.pdf'], def: 'yes' });
     const dlg = await tickThen(() => qs('[role="dialog"]'));
@@ -44,6 +51,7 @@ describe('confirm dialog — keys sing decisions', () => {
     expect(res).toEqual({ ok: false });
   });
 
+  // Test: when I press Escape, it says no
   it('when I press Escape, it says no', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['doc.pdf'], def: 'yes' });
     const dlg = await tickThen(() => qs('[role="dialog"]'));
@@ -52,6 +60,7 @@ describe('confirm dialog — keys sing decisions', () => {
     expect(res).toEqual({ ok: false });
   });
 
+  // Test: Tab moves the focus between the two buttons
   it('Tab moves the focus between the two buttons', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['doc.pdf'], def: 'no' });
     await tick();

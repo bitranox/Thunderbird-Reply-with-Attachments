@@ -1,6 +1,12 @@
+/*
+ * Test Module: confirm.enter.mapping.test.js
+ * Scope: Content confirm — Enter key mapping when focus is on different controls.
+ * Intent: Ensure Enter activates the intended default/action.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
+/** Query a selector and cast to HTMLElement for convenience. */
 function qs(sel) {
   return /** @type {HTMLElement} */ (document.querySelector(sel));
 }
@@ -16,6 +22,7 @@ describe('content/confirm — Enter maps to focused button', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: Enter on No returns ok:false; Enter on Yes returns ok:true
   it('Enter on No returns ok:false; Enter on Yes returns ok:true', async () => {
     // def=no → focus No
     const p1 = listener({ type: 'rwa:confirm-add', files: ['a'], def: 'no' });

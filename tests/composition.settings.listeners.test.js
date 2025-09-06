@@ -1,3 +1,8 @@
+/*
+ * Test Module: composition.settings.listeners.test.js
+ * Scope: Composition — storage listeners and wiring updates.
+ * Intent: Validate settings changes rewire behavior; cleanup on tab removal.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
@@ -32,11 +37,13 @@ async function boot({
 }
 
 describe('composition — settings listeners and cleanup', () => {
+  // Test: registerScripts failure logs debug once on boot
   it('registerScripts failure logs debug once on boot', async () => {
     const { logs } = await boot();
     expect(logs.debug).toHaveBeenCalled();
   });
 
+  // Test: blacklistPatterns change updates excluder (png filtered)
   it('blacklistPatterns change updates excluder (png filtered)', async () => {
     const { browser } = await boot();
     const cb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
@@ -56,6 +63,7 @@ describe('composition — settings listeners and cleanup', () => {
     expect(addedNames.length).toBe(1);
   });
 
+  // Test: confirmBeforeAdd toggle and confirmDefaultChoice propagate to payload
   it('confirmBeforeAdd toggle and confirmDefaultChoice propagate to payload', async () => {
     const { browser } = await boot();
     const cb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
@@ -72,6 +80,7 @@ describe('composition — settings listeners and cleanup', () => {
     expect(payload.def).toBe('no');
   });
 
+  // Test: tabs.onRemoved clears session key and processed map
   it('tabs.onRemoved clears session key and processed map', async () => {
     const { browser } = await boot();
     // Put a value in processedTabsState via session marker path
@@ -82,6 +91,7 @@ describe('composition — settings listeners and cleanup', () => {
     expect(globalThis.processedTabsState.has(10)).toBe(false);
   });
 
+  // Test: ensureConfirmInjected error path logs debug
   it('ensureConfirmInjected error path logs debug', async () => {
     const { browser, logs } = await boot();
     // enable confirmation to exercise injection

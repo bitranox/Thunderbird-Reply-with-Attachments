@@ -1,7 +1,13 @@
+/*
+ * Test Module: confirm.timeout.test.js
+ * Scope: Composition — popup confirm timeout behavior.
+ * Intent: On timeout, treat as cancel and do not add attachments.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('confirm popup timeout path', () => {
+  // Test: returns false if popup closes without responding (timeout)
   it('returns false if popup closes without responding (timeout)', async () => {
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     vi.useFakeTimers();

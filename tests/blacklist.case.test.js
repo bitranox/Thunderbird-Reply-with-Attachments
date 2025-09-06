@@ -1,7 +1,13 @@
+/*
+ * Test Module: blacklist.case.test.js
+ * Scope: Blacklist matching — case-insensitive behavior.
+ * Intent: Ensure patterns and names are matched in a case-insensitive manner.
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('Blacklist lowercase normalization', () => {
+  // Test: upper/mixed-case patterns and filenames are normalized to lowercase
   it('upper/mixed-case patterns and filenames are normalized to lowercase', async () => {
     const browser = createBrowserMock({
       messageAttachments: [

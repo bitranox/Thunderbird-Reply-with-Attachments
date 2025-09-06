@@ -1,4 +1,9 @@
 /* @vitest-environment jsdom */
+/*
+ * Test Module: ui_i18n.attrs.test.js
+ * Scope: UI i18n helper — attribute application via data-i18n-attr.
+ * Intent: Ensure attributes are set from localized messages.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 describe('ui_i18n — attributes and class', () => {
@@ -16,6 +21,7 @@ describe('ui_i18n — attributes and class', () => {
     };
   });
 
+  // Test: applies text and attributes; sets .js class on <html>
   it('applies text and attributes; sets .js class on <html>', async () => {
     await import('../sources/ui_i18n.js');
     expect(document.getElementById('a').textContent).toBe('Hello');

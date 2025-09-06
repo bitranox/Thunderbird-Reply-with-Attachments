@@ -1,7 +1,13 @@
+/*
+ * Test Module: composition.popup.error.test.js
+ * Scope: Composition — popup fallback error handling.
+ * Intent: If creating popup fails, selection is canceled (no attachments added).
+ */
 import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('composition — askInPopup catch path when windows.create fails', () => {
+  // Test: returns false and does not add attachments
   it('returns false and does not add attachments', async () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,

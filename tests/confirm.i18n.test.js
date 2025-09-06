@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.i18n.test.js
+ * Scope: Content confirm — i18n happy path.
+ * Intent: Ensure localized strings are used for single/multiple files.
+ */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import fs from 'fs';
 import path from 'path';
@@ -37,12 +42,14 @@ describe('content/confirm.js i18n', () => {
     loadScript(path.join(process.cwd(), 'sources', 'content', 'confirm.js'));
   });
 
+  // Test: uses confirmAddOne for single file
   it('uses confirmAddOne for single file', async () => {
     const res = await globalThis.__listener({ type: 'rwa:confirm-add', files: ['x.pdf'] });
     expect(textShown.startsWith('ONE:x.pdf')).toBe(true);
     expect(res).toEqual({ ok: true });
   });
 
+  // Test: uses confirmAddMany for multiple files
   it('uses confirmAddMany for multiple files', async () => {
     const res = await globalThis.__listener({
       type: 'rwa:confirm-add',

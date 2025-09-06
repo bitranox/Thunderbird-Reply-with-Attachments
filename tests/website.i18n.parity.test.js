@@ -1,3 +1,8 @@
+/*
+ * Test Module: website.i18n.parity.test.js
+ * Scope: Website i18n — parity for docs across locales.
+ * Intent: Ensure DE docs have one-to-one ids with EN.
+ */
 import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
@@ -20,6 +25,7 @@ describe('Website i18n parity — EN vs DE docs presence', () => {
   );
   const enFiles = fs.readdirSync(enDir).filter((f) => f.endsWith('.md'));
 
+  // Test: each EN doc has a DE counterpart
   it('each EN doc has a DE counterpart', () => {
     const missing = [];
     for (const f of enFiles) {

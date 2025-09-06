@@ -1,5 +1,21 @@
+/*
+ * Test Helper: helpers/browserMock.js
+ * Scope: Provide a configurable fake `browser` API for tests.
+ * Intent: Centralize mocks for compose/messages/tabs/storage/runtime.
+ */
 import { vi } from 'vitest';
 
+/**
+ * Create a test browser mock with commonly used APIs and defaults.
+ * @param {Object} [opts]
+ * @param {any[]} [opts.composeExisting]
+ * @param {any[]} [opts.messageAttachments]
+ * @param {(id:number,part:string)=>Promise<Blob|null>} [opts.getFileByPart]
+ * @param {boolean} [opts.confirmBeforeAdd]
+ * @param {'yes'|'no'} [opts.confirmDefaultChoice]
+ * @param {string[]} [opts.blacklistPatterns]
+ * @param {boolean} [opts.warnOnBlacklistExcluded]
+ */
 export function createBrowserMock({
   composeExisting = [],
   messageAttachments = [],
@@ -59,6 +75,7 @@ export function createBrowserMock({
   return browser;
 }
 
+/** Trigger the registered onComposeStateChanged listener for the given tab. */
 export function triggerComposeState(browser, tabId = 1) {
   const cb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
   return cb(tabId);

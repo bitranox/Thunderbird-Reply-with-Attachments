@@ -1,7 +1,13 @@
+/*
+ * Test Module: messages.getAttachmentFile.error.test.js
+ * Scope: Messages — getAttachmentFile error paths.
+ * Intent: Errors skip the failing part; processing continues with others.
+ */
 import { describe, it, expect, vi } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('getAttachmentFile error handling', () => {
+  // Test: skips a failing part and continues with others
   it('skips a failing part and continues with others', async () => {
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     const browser = createBrowserMock({

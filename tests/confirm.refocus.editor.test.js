@@ -1,3 +1,8 @@
+/*
+ * Test Module: confirm.refocus.editor.test.js
+ * Scope: Content confirm — resilience to editor focus stealing.
+ * Intent: Ensure focus returns to default button when focusin occurs elsewhere.
+ */
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -12,6 +17,7 @@ describe('content/confirm — refocus when editor steals focus', () => {
     await import('../sources/content/confirm.js');
   });
 
+  // Test: focusin on a non-dialog element snaps focus back to default (def=no)
   it('focusin on a non-dialog element snaps focus back to default (def=no)', async () => {
     const p = listener({ type: 'rwa:confirm-add', files: ['f'], def: 'no' });
     await new Promise((r) => setTimeout(r, 0));
