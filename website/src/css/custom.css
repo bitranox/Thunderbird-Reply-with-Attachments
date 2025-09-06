@@ -103,8 +103,10 @@ html[data-theme='light'] pre .token,
 html[data-theme='light'] .theme-code-block .token,
 /* Docusaurus virtualized line container has a hashed class like codeBlockLines_xxx */
 html[data-theme='light'] [class^="codeBlockLines_"],
-html[data-theme='light'] [class^="codeBlockLines_"] .token-line {
-  color: var(--prism-color) !important; /* override inline token colors */
+html[data-theme='light'] [class^="codeBlockLines_"] .token-line,
+html[data-theme='light'] .theme-code-block .token-line,
+html[data-theme='light'] .theme-code-block .token.plain {
+  color: #0a0c10 !important; /* force much darker text */
 }
 /* Dark theme */
 html[data-theme='dark'] .theme-code-block,
