@@ -24,10 +24,10 @@ export default [
           argsIgnorePattern: '^(id|part|_.*)$',
           varsIgnorePattern: '^(vi|_.*)$',
           caughtErrors: 'all',
-          caughtErrorsIgnorePattern: '^_'
-        }
-      ]
-    }
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+    },
   },
   {
     files: ['**/*.js', '**/*.mjs', '**/*.cjs'],

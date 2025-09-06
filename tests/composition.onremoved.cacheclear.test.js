@@ -7,7 +7,7 @@ describe('composition — onRemoved clears injectedConfirmScriptTabs', () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
-      getFileByPart: async () => new Blob(['x'])
+      getFileByPart: async () => new Blob(['x']),
     });
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/domain/filters.js');

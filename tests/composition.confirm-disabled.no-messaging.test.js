@@ -28,4 +28,3 @@ describe('Composition — confirm disabled: no confirm messaging', () => {
     expect(globalThis.injectedConfirmScriptTabs.has(7)).toBe(false);
   });
 });
-

@@ -14,4 +14,3 @@ The add‑on requests a small, focused set of permissions only. Why each is need
 - tabs: targeted messaging to the compose tab for confirmation requests.
 
 These are documented in the source and tested in CI. The add‑on does not collect telemetry.
-

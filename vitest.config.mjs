@@ -6,7 +6,7 @@ export default {
       reporter: ['text', 'html', 'lcov', 'json-summary'],
       all: true,
       include: ['sources/**/*.js'],
-      exclude: ['sources/app/application/ports.js','website/**','scripts/**'],
+      exclude: ['sources/app/application/ports.js', 'website/**', 'scripts/**'],
       thresholds: {
         global: {
           lines: 85,

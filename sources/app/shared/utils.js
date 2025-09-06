@@ -8,12 +8,14 @@
     return typeof v === 'number' ? v : v && typeof v.id === 'number' ? v.id : null;
   }
   function makeLogger(enabled) {
-    const wrap = (fn) => (...args) => {
-      try {
-        if (fn === console.debug && !enabled) return;
-        fn('[RWA]', ...args);
-      } catch (_) {}
-    };
+    const wrap =
+      (fn) =>
+      (...args) => {
+        try {
+          if (fn === console.debug && !enabled) return;
+          fn('[RWA]', ...args);
+        } catch (_) {}
+      };
     return {
       debug: wrap(console.debug.bind(console)),
       info: wrap(console.info.bind(console)),
