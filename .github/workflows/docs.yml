@@ -42,6 +42,8 @@ jobs:
             START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
           fi
           if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
+          # Simulate GitHub Pages baseUrl by mounting build at /Thunderbird-Reply-with-Attachments/
+          ln -snf . ./build/Thunderbird-Reply-with-Attachments || true
           npx --yes http-server ./build -p 5050 -s >/dev/null 2>&1 &
           sleep 2
           npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
@@ -96,6 +98,8 @@ jobs:
             START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
           fi
           if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
+          # Simulate GitHub Pages baseUrl by mounting build at /Thunderbird-Reply-with-Attachments/
+          ln -snf . ./build/Thunderbird-Reply-with-Attachments || true
           npx --yes http-server ./build -p 5050 -s >/dev/null 2>&1 &
           sleep 2
           npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
