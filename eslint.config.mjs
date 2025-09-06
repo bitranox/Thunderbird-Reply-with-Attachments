@@ -35,7 +35,6 @@ export default [
       ecmaVersion: 2022,
       sourceType: 'module',
       parserOptions: { ecmaFeatures: { jsx: true } },
-      env: { browser: true },
       globals: {
         browser: 'readonly',
         messenger: 'readonly',
