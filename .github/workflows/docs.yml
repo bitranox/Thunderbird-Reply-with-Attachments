@@ -33,8 +33,8 @@ jobs:
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then ln -s . ./build/Thunderbird-Reply-with-Attachments; fi
           START="./build/Thunderbird-Reply-with-Attachments/index.html"
-          if [ ! -f "$START" ]; then START="./build/index.html"; fi
           echo "Link check start: $START"
           npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: 'Build (main/tags: all locales)'
@@ -78,8 +78,8 @@ jobs:
         run: npm run build
       - name: Link check
         run: |
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then ln -s . ./build/Thunderbird-Reply-with-Attachments; fi
           START="./build/Thunderbird-Reply-with-Attachments/index.html"
-          if [ ! -f "$START" ]; then START="./build/index.html"; fi
           echo "Link check start: $START"
           npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: Deploy to GitHub Pages
