@@ -30,6 +30,13 @@ jobs:
       - name: 'Build (PRs: en only)'
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
+      - name: 'Ensure baseUrl mirror (PRs)'
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then \
+            mkdir -p ./build/Thunderbird-Reply-with-Attachments; \
+            shopt -s dotglob; cp -R ./build/* ./build/Thunderbird-Reply-with-Attachments/; \
+          fi
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -76,6 +83,12 @@ jobs:
         run: npm ci
       - name: Build all locales
         run: npm run build
+      - name: Ensure baseUrl mirror
+        run: |
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then \
+            mkdir -p ./build/Thunderbird-Reply-with-Attachments; \
+            shopt -s dotglob; cp -R ./build/* ./build/Thunderbird-Reply-with-Attachments/; \
+          fi
       - name: Link check
         run: |
           if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then ln -s . ./build/Thunderbird-Reply-with-Attachments; fi
