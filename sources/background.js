@@ -11,7 +11,8 @@
 (async () => {
   const DEBUG = await readDebugFlag();
   const makeLoggerFn = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLogger;
-  globalThis.log = makeLoggerFn(DEBUG);
+  const log = makeLoggerFn(DEBUG);
+  globalThis.log = log;
   log.debug('Reply with Attachments: wiring app…');
 
   // Expose small helpers early for tests

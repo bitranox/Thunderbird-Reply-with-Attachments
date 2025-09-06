@@ -13,22 +13,6 @@ export default [
     ],
   },
   js.configs.recommended,
-
-  {
-    files: ['tests/**/*.js'],
-    rules: {
-      'no-undef': 'off',
-      'no-unused-vars': [
-        'warn',
-        {
-          argsIgnorePattern: '^(id|part|_.*)$',
-          varsIgnorePattern: '^(vi|_.*)$',
-          caughtErrors: 'all',
-          caughtErrorsIgnorePattern: '^_',
-        },
-      ],
-    },
-  },
   {
     files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
     languageOptions: {
@@ -45,6 +29,18 @@ export default [
         document: 'readonly',
         window: 'readonly',
         console: 'readonly',
+        // Web globals used across sources and tests
+        setTimeout: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        location: 'readonly',
+        confirm: 'readonly',
+        Event: 'readonly',
+        KeyboardEvent: 'readonly',
+        // Node-style globals for scripts and website configs
+        process: 'readonly',
+        require: 'readonly',
+        module: 'readonly',
       },
     },
     rules: {
@@ -67,6 +63,36 @@ export default [
   {
     files: ['**/*.cjs'],
     languageOptions: { sourceType: 'commonjs' },
+  },
+  {
+    // Docusaurus config files (CJS)
+    files: ['website/docusaurus.config.js', 'website/sidebars.js'],
+    languageOptions: { sourceType: 'commonjs' },
+  },
+  {
+    // Local scripts and configs run under Node
+    files: ['scripts/**/*.mjs', 'vitest.config.mjs', 'eslint.config.mjs'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+      },
+    },
+  },
+  {
+    // Tests: turn off no-undef; test runners provide globals
+    files: ['tests/**/*.js'],
+    rules: {
+      'no-undef': 'off',
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^(id|part|_.*)$',
+          varsIgnorePattern: '^(vi|_.*)$',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+    },
   },
   prettier,
 ];
