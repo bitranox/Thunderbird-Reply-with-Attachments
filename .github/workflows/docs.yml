@@ -33,11 +33,17 @@ jobs:
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          START=""
+          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
+            START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          elif [ -f "./build/index.html" ]; then
+            START="./build/index.html"
+          else
+            START=$(ls -1 ./build/**/index.html 2>/dev/null | head -n1 || true)
+          fi
+          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
           echo "Link check start: $START"
-          COUNT=$(ls ./build/**/*.html 2>/dev/null | wc -l || true)
-          if [ "$COUNT" = "0" ]; then echo "No HTML files in build — skipping link check"; exit 0; fi
-          npx --yes linkinator "./build/**/*.html" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          npx --yes linkinator "$START" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
@@ -79,11 +85,17 @@ jobs:
         run: npm run build
       - name: Link check
         run: |
-          START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          START=""
+          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
+            START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          elif [ -f "./build/index.html" ]; then
+            START="./build/index.html"
+          else
+            START=$(ls -1 ./build/**/index.html 2>/dev/null | head -n1 || true)
+          fi
+          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
           echo "Link check start: $START"
-          COUNT=$(ls ./build/**/*.html 2>/dev/null | wc -l || true)
-          if [ "$COUNT" = "0" ]; then echo "No HTML files in build — skipping link check"; exit 0; fi
-          npx --yes linkinator "./build/**/*.html" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          npx --yes linkinator "$START" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
