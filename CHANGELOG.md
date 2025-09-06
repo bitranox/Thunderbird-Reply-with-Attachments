@@ -7,7 +7,7 @@ Semantic Versioning (where applicable for add-on releases).
 
 ## [Unreleased]
 
-### complete rewrite to a full blown extension 
+### complete rewrite to a full blown extension
 
 ## [1.0.1]
 
