@@ -111,6 +111,6 @@
     } catch (_) {}
   }
   function defer(fn) {
-    (globalThis.setTimeout ? globalThis.setTimeout(fn, 0) : setTimeout(fn, 0));
+    globalThis.setTimeout ? globalThis.setTimeout(fn, 0) : setTimeout(fn, 0);
   }
 })();

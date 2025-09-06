@@ -264,7 +264,9 @@ function asSelection(a) {
 }
 
 function delay(ms) {
-  return new Promise((r) => (globalThis.setTimeout ? globalThis.setTimeout(r, ms) : setTimeout(r, ms)));
+  return new Promise((r) =>
+    globalThis.setTimeout ? globalThis.setTimeout(r, ms) : setTimeout(r, ms)
+  );
 }
 
 async function safe(fn, fallback) {

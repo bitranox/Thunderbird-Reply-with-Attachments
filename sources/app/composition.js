@@ -240,7 +240,9 @@
       await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']);
       injectedConfirmScriptTabs.add(tabId);
     } catch (err) {
-      try { logger.debug({ err, tabId }, 'ensureConfirmInjected failed'); } catch (_) {}
+      try {
+        logger.debug({ err, tabId }, 'ensureConfirmInjected failed');
+      } catch (_) {}
     }
   }
   /** Ask the user via content script; fall back progressively if needed. */
@@ -335,7 +337,11 @@
   globalThis.App = globalThis.App || {};
   App.Composition = { createAppWiring };
   try {
-    const __TEST__ = !!(globalThis.process && globalThis.process.env && globalThis.process.env.NODE_ENV === 'test');
+    const __TEST__ = !!(
+      globalThis.process &&
+      globalThis.process.env &&
+      globalThis.process.env.NODE_ENV === 'test'
+    );
     if (__TEST__) {
       globalThis.SESSION_KEY = SESSION_KEY;
       globalThis.processedTabsState = processedTabsState;

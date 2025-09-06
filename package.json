@@ -13,8 +13,8 @@
     "lint:webext": "web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
     "generate:readme-langs": "node scripts/generate-readme-langs.mjs",
     "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format": "node ./node_modules/prettier/bin/prettier.cjs --write .",
+    "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check ."
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

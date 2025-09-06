@@ -4,12 +4,15 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: help test test-i18n pack lint prettier prettier-write prettier-check commit
+.PHONY: help test test-i18n pack lint eslint prettier prettier-write prettier-check commit
 
 help: ## Show available make commands.
 	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_.-]+:.*##/ { printf "%-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
 
-test: ## Run all tests (Vitest)
+eslint: ## Run ESLint (flat config)
+	$(NPM) run -s lint:eslint
+
+test: eslint ## Run ESLint, then all tests (Vitest)
 	$(NPM) test
 
 test-i18n: ## Run i18n parity and placeholder checks; verify EN↔DE parity in add-on and website
@@ -61,4 +64,3 @@ commit: ## Format, run tests (incl. i18n), update changelog, commit & push
 	git commit -m "$$msg"; \
 	echo "✔ Pushing to origin/$$branch…"; \
 	git push -u origin $$branch
-
