@@ -60,4 +60,6 @@
 
 ## commit/pusg/github policy
 
-- always make sure "make test" run successful before committing/pushing to GitHub
+- run "make test" before any push to avoid lint/test breakage.
+- after push, monitor errors in the github actions and try to correct the errors
+- make sure the website is correctly created and published by github action

@@ -17,7 +17,7 @@
 .vscode/
 *.code-workspace
 todo.md
-
+backup/
 
 # ====================================
 # Python bytecode & caches
