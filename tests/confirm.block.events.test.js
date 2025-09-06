@@ -14,7 +14,10 @@ describe('content/confirm — blocks background interactions', () => {
   let listener;
   beforeEach(async () => {
     document.body.innerHTML = '<div id="root"></div>';
-    globalThis.browser = { runtime: { onMessage: { addListener: (fn) => (listener = fn) } }, i18n: { getMessage: vi.fn(() => '') } };
+    globalThis.browser = {
+      runtime: { onMessage: { addListener: (fn) => (listener = fn) } },
+      i18n: { getMessage: vi.fn(() => '') },
+    };
     await import('../sources/content/confirm.js');
   });
 
@@ -27,7 +30,9 @@ describe('content/confirm — blocks background interactions', () => {
       expect(ev.defaultPrevented).toBe(true);
     }
     // end dialog
-    document.querySelector('[data-testid="rwa-confirm-no"]').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    document
+      .querySelector('[data-testid="rwa-confirm-no"]')
+      .dispatchEvent(new MouseEvent('click', { bubbles: true }));
     await p;
   });
 
@@ -40,4 +45,3 @@ describe('content/confirm — blocks background interactions', () => {
     expect(res).toEqual({ ok: true });
   });
 });
-

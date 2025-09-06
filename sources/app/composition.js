@@ -24,6 +24,40 @@
     typeof v === 'number' ? v : v && typeof v.id === 'number' ? v.id : null;
   const yesNo = (v) => (String(v || 'yes').toLowerCase() === 'no' ? 'no' : 'yes');
 
+  /** Pure helper: should we ask based on toggle and selection list. */
+  function shouldAskHelper(askBeforeAdd, selected) {
+    return !!(selected && selected.length) && !!askBeforeAdd;
+  }
+
+  /**
+   * Small local logger factory used when App.Shared.makeLogger is not provided.
+   */
+  function makeLocalLogger(enabled) {
+    return {
+      debug: (...args) => {
+        if (enabled)
+          try {
+            console.debug('[RWA]', ...args);
+          } catch (_) {}
+      },
+      info: (...args) => {
+        try {
+          console.info('[RWA]', ...args);
+        } catch (_) {}
+      },
+      warn: (...args) => {
+        try {
+          console.warn('[RWA]', ...args);
+        } catch (_) {}
+      },
+      error: (...args) => {
+        try {
+          console.error('[RWA]', ...args);
+        } catch (_) {}
+      },
+    };
+  }
+
   /**
    * Create the production wiring for Thunderbird and return entry points
    * used by the background script and tests.
@@ -37,31 +71,7 @@
   function createAppWiring(browser) {
     const { compose, messages, sessions, tabs, scriptingCompose } =
       App.Adapters.makeThunderbirdPorts(browser);
-    const makeLogger =
-      (globalThis.App && App.Shared && App.Shared.makeLogger) ||
-      ((enabled) => ({
-        debug: (...args) => {
-          if (enabled)
-            try {
-              console.debug('[RWA]', ...args);
-            } catch (_) {}
-        },
-        info: (...args) => {
-          try {
-            console.info('[RWA]', ...args);
-          } catch (_) {}
-        },
-        warn: (...args) => {
-          try {
-            console.warn('[RWA]', ...args);
-          } catch (_) {}
-        },
-        error: (...args) => {
-          try {
-            console.error('[RWA]', ...args);
-          } catch (_) {}
-        },
-      }));
+    const makeLogger = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLocalLogger;
     const logger = makeLogger(false);
 
     let exclude = App.Domain.makeNameExcluder([]);
@@ -111,7 +121,7 @@
       );
     }
     function shouldAsk(selected) {
-      return !!selected?.length && askBeforeAdd;
+      return shouldAskHelper(askBeforeAdd, selected);
     }
 
     // react to settings updates
@@ -336,6 +346,21 @@
   // exports for background/tests
   globalThis.App = globalThis.App || {};
   App.Composition = { createAppWiring };
+  // Expose small internals for focused unit tests (non-breaking)
+  App.Composition.Internal = {
+    makeLogger: makeLocalLogger,
+    yesNo,
+    shouldAsk: shouldAskHelper,
+    readBlacklist,
+    readConfirmEnabled,
+    readConfirmDefault,
+    ensureConfirmInjected,
+    tryTargetedConfirm,
+    tryBroadcastConfirm,
+    isDecision,
+    buildConfirmUrl,
+    waitForConfirm,
+  };
   try {
     const __TEST__ = !!(
       globalThis.process &&

@@ -3,7 +3,11 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 
 describe('composition — askInPopup catch path when windows.create fails', () => {
   it('returns false and does not add attachments', async () => {
-    const browser = createBrowserMock({ confirmBeforeAdd: true, messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }], getFileByPart: async () => new Blob(['x']) });
+    const browser = createBrowserMock({
+      confirmBeforeAdd: true,
+      messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
+      getFileByPart: async () => new Blob(['x']),
+    });
     // Fail targeted and broadcast
     browser.tabs.sendMessage.mockRejectedValue(new Error('targeted fail'));
     browser.runtime.sendMessage.mockRejectedValue(new Error('broadcast fail'));
@@ -21,4 +25,3 @@ describe('composition — askInPopup catch path when windows.create fails', () =
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
   });
 });
-

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Changelog",
+  "description": "See the full history in the repository’s CHANGELOG.md.",
+  "source": "@site/docs/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757108078000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Changelog"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/licence"
+  }
+}

@@ -168,24 +168,25 @@
 
   // — Interaction management —
   /** Block interactions outside the dialog and return a disposer. */
+  const BLOCKED_EVENTS = [
+    'mousedown',
+    'mouseup',
+    'click',
+    'dblclick',
+    'contextmenu',
+    'keydown',
+    'keypress',
+    'keyup',
+    'wheel',
+    'touchstart',
+    'touchmove',
+    'pointerdown',
+    'pointerup',
+    'input',
+  ];
   function blockBackgroundInteractions(overlay) {
     disableEditing();
-    const types = [
-      'mousedown',
-      'mouseup',
-      'click',
-      'dblclick',
-      'contextmenu',
-      'keydown',
-      'keypress',
-      'keyup',
-      'wheel',
-      'touchstart',
-      'touchmove',
-      'pointerdown',
-      'pointerup',
-      'input',
-    ];
+    const types = BLOCKED_EVENTS;
     const blocker = (e) => {
       const t = /** @type {Node} */ (e.target);
       if (!overlay.contains(t)) {
@@ -317,4 +318,19 @@
       document.designMode = 'off';
     } catch (_) {}
   }
+  // Expose internals for focused tests
+  globalThis.App = globalThis.App || {};
+  App.ContentConfirm = App.ContentConfirm || {};
+  App.ContentConfirm.Internal = {
+    isConfirmPayload,
+    toFileList,
+    defaultAnswer,
+    buildConfirmationText,
+    i18n,
+    fallbackEnglish,
+    trapFocus,
+    focusNext,
+    BLOCKED_EVENTS,
+    showDialogAndReturnResult,
+  };
 })();

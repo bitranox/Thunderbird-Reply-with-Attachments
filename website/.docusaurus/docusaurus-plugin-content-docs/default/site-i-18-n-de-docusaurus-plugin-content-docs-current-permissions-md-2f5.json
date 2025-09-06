@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Berechtigungen",
+  "description": "Dieses Add‑on benötigt folgende Berechtigungen:",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757108078000,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Berechtigungen"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Kompatibilität",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/compatibility"
+  },
+  "next": {
+    "title": "Entwicklung",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/development"
+  }
+}

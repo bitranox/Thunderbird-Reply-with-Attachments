@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "Compatibility",
+  "description": "Compatibility",
+  "source": "@site/docs/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757084244000,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "Compatibility",
+    "sidebar_label": "Compatibility"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Usage",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/usage"
+  },
+  "next": {
+    "title": "Permissions",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/permissions"
+  }
+}

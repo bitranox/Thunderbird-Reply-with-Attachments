@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Features",
+  "description": "Features",
+  "source": "@site/docs/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757078571000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Features",
+    "sidebar_label": "Features"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/quickstart"
+  }
+}

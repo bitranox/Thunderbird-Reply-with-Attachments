@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Changelog",
+  "description": "Den vollständigen Verlauf findest du in der CHANGELOG.md im Repository.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757108078000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Changelog"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Lizenz",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/licence"
+  }
+}

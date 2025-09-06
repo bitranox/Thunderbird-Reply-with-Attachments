@@ -3,7 +3,11 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 
 describe('composition — isDecision negative (no ok prop) falls back to popup', () => {
   it('treats {} from targeted and broadcast as non-decisions and uses popup', async () => {
-    const browser = createBrowserMock({ confirmBeforeAdd: true, messageAttachments: [{ name: 'z.txt', partName: '1', contentType: 'text/plain' }], getFileByPart: async () => new Blob(['z']) });
+    const browser = createBrowserMock({
+      confirmBeforeAdd: true,
+      messageAttachments: [{ name: 'z.txt', partName: '1', contentType: 'text/plain' }],
+      getFileByPart: async () => new Blob(['z']),
+    });
     browser.tabs.sendMessage.mockResolvedValue({});
     browser.runtime.sendMessage.mockResolvedValue({});
     // Deterministic token
@@ -26,4 +30,3 @@ describe('composition — isDecision negative (no ok prop) falls back to popup',
     expect(browser.compose.addAttachment).toHaveBeenCalled();
   });
 });
-

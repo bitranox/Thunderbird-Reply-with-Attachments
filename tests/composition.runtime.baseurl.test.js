@@ -6,7 +6,7 @@ describe('composition — buildConfirmUrl uses runtime.getURL base', () => {
     const browser = createBrowserMock({
       confirmBeforeAdd: true,
       messageAttachments: [{ name: 'a.txt', partName: '1', contentType: 'text/plain' }],
-      getFileByPart: async () => new Blob(['a'])
+      getFileByPart: async () => new Blob(['a']),
     });
     // Force popup path and custom base url
     browser.tabs.sendMessage.mockRejectedValue(new Error('no targeted'));

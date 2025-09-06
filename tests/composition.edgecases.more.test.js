@@ -1,7 +1,11 @@
 import { describe, it, expect, vi } from 'vitest';
 
 async function bootWith({
-  storageGetFn = vi.fn().mockResolvedValue({ blacklistPatterns: [], confirmBeforeAdd: true, confirmDefaultChoice: 'yes' }),
+  storageGetFn = vi.fn().mockResolvedValue({
+    blacklistPatterns: [],
+    confirmBeforeAdd: true,
+    confirmDefaultChoice: 'yes',
+  }),
   targetedOk = false,
   broadcastOk = false,
   windowsUpdateThrows = true,
@@ -11,16 +15,35 @@ async function bootWith({
     storage: { local: { get: storageGetFn }, onChanged: { addListener: vi.fn() } },
     tabs: { onRemoved: { addListener: vi.fn() }, sendMessage: vi.fn() },
     windows: { create: vi.fn().mockResolvedValue({ id: 99 }), update: vi.fn() },
-    scripting: { compose: { getRegisteredScripts: vi.fn().mockResolvedValue([]), registerScripts: vi.fn(), executeScript: vi.fn() } },
+    scripting: {
+      compose: {
+        getRegisteredScripts: vi.fn().mockResolvedValue([]),
+        registerScripts: vi.fn(),
+        executeScript: vi.fn(),
+      },
+    },
     compose: {
       onComposeStateChanged: { addListener: vi.fn() },
       onBeforeSend: { addListener: vi.fn() },
       getComposeDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 1 }),
-      listAttachments: vi.fn().mockResolvedValue(Array.from({ length: 7 }, (_, i) => ({ name: `f${i+1}.txt`, partName: String(i+1), contentType: 'text/plain' }))),
+      listAttachments: vi.fn().mockResolvedValue(
+        Array.from({ length: 7 }, (_, i) => ({
+          name: `f${i + 1}.txt`,
+          partName: String(i + 1),
+          contentType: 'text/plain',
+        }))
+      ),
       addAttachment: vi.fn(),
     },
-    messages: { listAttachments: vi.fn().mockResolvedValue([]), getAttachmentFile: vi.fn().mockResolvedValue(new Blob(['x'])) },
-    sessions: { getTabValue: vi.fn().mockResolvedValue(false), setTabValue: vi.fn(), removeTabValue: vi.fn() },
+    messages: {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      getAttachmentFile: vi.fn().mockResolvedValue(new Blob(['x'])),
+    },
+    sessions: {
+      getTabValue: vi.fn().mockResolvedValue(false),
+      setTabValue: vi.fn(),
+      removeTabValue: vi.fn(),
+    },
   };
   if (!targetedOk) browser.tabs.sendMessage.mockRejectedValue(new Error('targeted fail'));
   else browser.tabs.sendMessage.mockResolvedValue({ ok: true });
@@ -57,10 +80,18 @@ describe('composition edgecases — boot readers, popup url, injection cache', (
   });
 
   it('buildConfirmUrl encodes >5 files and default def when targeted+broadcast fail and windows.update throws', async () => {
-    const browser = await bootWith({ targetedOk: false, broadcastOk: false, windowsUpdateThrows: true });
+    const browser = await bootWith({
+      targetedOk: false,
+      broadcastOk: false,
+      windowsUpdateThrows: true,
+    });
     const cb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
     browser.messages.listAttachments.mockResolvedValueOnce(
-      Array.from({ length: 7 }, (_, i) => ({ name: `m${i+1}.txt`, partName: String(i+1), contentType: 'text/plain' }))
+      Array.from({ length: 7 }, (_, i) => ({
+        name: `m${i + 1}.txt`,
+        partName: String(i + 1),
+        contentType: 'text/plain',
+      }))
     );
     const p = cb(2);
     // give waitForConfirm a tick to register listener then simulate ok

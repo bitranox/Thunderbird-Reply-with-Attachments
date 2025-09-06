@@ -4,7 +4,7 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: help test test-i18n pack lint eslint prettier prettier-write prettier-check commit
+.PHONY: help test test-i18n pack lint eslint prettier prettier-write prettier-check commit docs-build docs-link-check
 
 help: ## Show available make commands.
 	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_.-]+:.*##/ { printf "%-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
@@ -68,3 +68,13 @@ commit: ## Format, run tests (incl. i18n), update changelog, commit & push
 	git commit -m "$$msg"; \
 	echo "✔ Pushing to origin/$$branch…"; \
 	git push -u origin $$branch
+
+docs-build: ## Build Docusaurus website into website/build
+	@set -e; \
+	cd website; \
+	npm ci; \
+	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build
+
+docs-link-check: docs-build ## Check built site links via linkinator
+	@set -e; \
+	npx --yes linkinator website/build/Thunderbird-Reply-with-Attachments --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"

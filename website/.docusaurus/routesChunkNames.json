@@ -1,0 +1,88 @@
+{
+  "/Thunderbird-Reply-with-Attachments/de/search-89b": {
+    "__comp": "1a4e3797",
+    "__context": {
+      "plugin": "138e0e15"
+    }
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs-fc0": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs-d9e": {
+    "__comp": "a7bd4aaa",
+    "__props": "3184455f"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs-acc": {
+    "__comp": "a94703ab"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/changelog-c03": {
+    "__comp": "17896441",
+    "content": "0d63a2cf"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/compatibility-064": {
+    "__comp": "17896441",
+    "content": "3a400ce8"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/configuration-5de": {
+    "__comp": "17896441",
+    "content": "e0e848c9"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/development-353": {
+    "__comp": "17896441",
+    "content": "8d9408e2"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/donation-ee0": {
+    "__comp": "17896441",
+    "content": "3f419666"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/features-6c2": {
+    "__comp": "17896441",
+    "content": "77e9b3cc"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/glossary-9e7": {
+    "__comp": "17896441",
+    "content": "816a1214"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/install-dee": {
+    "__comp": "17896441",
+    "content": "f2bf247f"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/languages-7d9": {
+    "__comp": "17896441",
+    "content": "8372da40"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/licence-0a7": {
+    "__comp": "17896441",
+    "content": "743cbb10"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/permissions-5f9": {
+    "__comp": "17896441",
+    "content": "2f53c5f9"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/privacy-967": {
+    "__comp": "17896441",
+    "content": "acaed949"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/quickstart-43f": {
+    "__comp": "17896441",
+    "content": "1d977842"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/support-9e7": {
+    "__comp": "17896441",
+    "content": "4a8bea46"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/docs/usage-698": {
+    "__comp": "17896441",
+    "content": "7b939f63"
+  },
+  "/Thunderbird-Reply-with-Attachments/de/-df3": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}

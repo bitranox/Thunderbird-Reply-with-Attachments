@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Spenden",
+  "description": "Wenn dir „Antwort mit Anhängen“ gefällt und du die Entwicklung unterstützen möchtest, kannst du hier spenden:",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757105069000,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Spenden",
+    "sidebar_label": "Spenden"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Datenschutz",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/privacy"
+  },
+  "next": {
+    "title": "Lizenz",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/licence"
+  }
+}

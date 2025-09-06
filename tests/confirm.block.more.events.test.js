@@ -14,7 +14,10 @@ describe('content/confirm — more blocked events', () => {
   let listener;
   beforeEach(async () => {
     document.body.innerHTML = '<div id="root"></div>';
-    globalThis.browser = { runtime: { onMessage: { addListener: (fn) => (listener = fn) } }, i18n: { getMessage: vi.fn(() => '') } };
+    globalThis.browser = {
+      runtime: { onMessage: { addListener: (fn) => (listener = fn) } },
+      i18n: { getMessage: vi.fn(() => '') },
+    };
     await import('../sources/content/confirm.js');
   });
 
@@ -25,8 +28,9 @@ describe('content/confirm — more blocked events', () => {
     const ev2 = dispatchOutside('input');
     expect(ev1.defaultPrevented).toBe(true);
     expect(ev2.defaultPrevented).toBe(true);
-    document.querySelector('[data-testid="rwa-confirm-no"]').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    document
+      .querySelector('[data-testid="rwa-confirm-no"]')
+      .dispatchEvent(new MouseEvent('click', { bubbles: true }));
     await p;
   });
 });
-

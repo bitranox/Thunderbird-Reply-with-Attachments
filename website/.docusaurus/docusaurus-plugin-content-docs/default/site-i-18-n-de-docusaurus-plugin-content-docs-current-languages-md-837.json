@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Sprachen",
+  "description": "Umfangreiche Sprachunterstützung dank KI‑Übersetzungswerkzeugen — derzeit 103 Sprachen.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757094540000,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Sprachen",
+    "sidebar_label": "Sprachen"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Entwicklung",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/development"
+  },
+  "next": {
+    "title": "Glossar",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/glossary"
+  }
+}

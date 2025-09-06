@@ -6,11 +6,15 @@ describe('composition — tryTargetedConfirm/tryBroadcastConfirm synchronous thr
     const browser = createBrowserMock({
       confirmBeforeAdd: true,
       messageAttachments: [{ name: 'b.txt', partName: '1', contentType: 'text/plain' }],
-      getFileByPart: async () => new Blob(['b'])
+      getFileByPart: async () => new Blob(['b']),
     });
     // Force synchronous throws in targeted/broadcast
-    browser.tabs.sendMessage.mockImplementation(() => { throw new Error('sync targeted'); });
-    browser.runtime.sendMessage.mockImplementation(() => { throw new Error('sync broadcast'); });
+    browser.tabs.sendMessage.mockImplementation(() => {
+      throw new Error('sync targeted');
+    });
+    browser.runtime.sendMessage.mockImplementation(() => {
+      throw new Error('sync broadcast');
+    });
 
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');

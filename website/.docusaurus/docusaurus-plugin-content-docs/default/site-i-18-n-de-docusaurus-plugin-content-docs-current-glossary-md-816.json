@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n‑Glossar",
+  "description": "Kanonische Begriffe für UI und Doku. Dient der konsistenten Übersetzung.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757108078000,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n‑Glossar",
+    "sidebar_label": "Glossar"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Sprachen",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/languages"
+  },
+  "next": {
+    "title": "Support",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/support"
+  }
+}

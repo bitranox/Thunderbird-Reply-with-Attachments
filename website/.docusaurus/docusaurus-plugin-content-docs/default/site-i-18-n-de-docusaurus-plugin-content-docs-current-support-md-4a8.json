@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "Support",
+  "description": "Hilfe benötigt oder einen Fehler melden?",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757108078000,
+  "frontMatter": {
+    "id": "support",
+    "title": "Support",
+    "sidebar_label": "Support"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Glossar",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/glossary"
+  },
+  "next": {
+    "title": "Datenschutz",
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/privacy"
+  }
+}
