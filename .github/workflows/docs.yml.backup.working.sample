@@ -1,0 +1,118 @@
+name: Docs
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*', 'V*']
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DOCSEARCH_APP_ID: ${{ secrets.DOCSEARCH_APP_ID }}
+      DOCSEARCH_API_KEY: ${{ secrets.DOCSEARCH_API_KEY }}
+      DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: website/package.json
+      - name: Install deps
+        run: npm ci
+      - name: 'Build (PRs: en only)'
+        if: ${{ github.event_name == 'pull_request' }}
+        run: npm run build -- --locale en
+      - name: 'Link check (PRs)'
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          START=""
+          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
+            START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          elif [ -f "./build/index.html" ]; then
+            START="./build/index.html"
+          else
+            START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
+          fi
+          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
+          # Simulate GitHub Pages baseUrl without symlink loops by serving a copy under the base path
+          rm -rf ./build-linkcheck || true
+          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
+          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
+          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
+          sleep 2
+          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          kill %1 || true
+          rm -rf ./build-linkcheck || true
+      - name: 'Build (main/tags: all locales)'
+        if: ${{ github.event_name != 'pull_request' }}
+        run: npm run build
+      - name: 'Upload build artifact (PRs)'
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-preview
+          path: website/build
+      - name: 'Docs preview URL'
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "View artifacts on this run:" \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+  deploy:
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      DOCSEARCH_APP_ID: ${{ secrets.DOCSEARCH_APP_ID }}
+      DOCSEARCH_API_KEY: ${{ secrets.DOCSEARCH_API_KEY }}
+      DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: website/package.json
+      - name: Install deps
+        run: npm ci
+      - name: Build all locales
+        run: npm run build
+      - name: Link check
+        run: |
+          START=""
+          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
+            START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          elif [ -f "./build/index.html" ]; then
+            START="./build/index.html"
+          else
+            START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
+          fi
+          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
+          # Simulate GitHub Pages baseUrl without symlink loops by serving a copy under the base path
+          rm -rf ./build-linkcheck || true
+          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
+          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
+          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
+          sleep 2
+          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          kill %1 || true
+          rm -rf ./build-linkcheck || true
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: website/build
+          publish_branch: gh-pages
