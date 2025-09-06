@@ -42,8 +42,9 @@ jobs:
             START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
           fi
           if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          echo "Link check start: $START"
-          npx --yes linkinator "$START" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          START_ABS=$(realpath "$START")
+          echo "Link check start: $START_ABS"
+          npx --yes linkinator "$START_ABS" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
@@ -94,8 +95,9 @@ jobs:
             START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
           fi
           if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          echo "Link check start: $START"
-          npx --yes linkinator "$START" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          START_ABS=$(realpath "$START")
+          echo "Link check start: $START_ABS"
+          npx --yes linkinator "$START_ABS" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
