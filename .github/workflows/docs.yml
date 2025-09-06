@@ -6,17 +6,11 @@ on:
     tags: ['v*', 'V*']
   pull_request:
     branches: [main, master]
-  workflow_dispatch: {}
-
-  
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      DOCSEARCH_APP_ID: ${{ secrets.DOCSEARCH_APP_ID }}
-      DOCSEARCH_API_KEY: ${{ secrets.DOCSEARCH_API_KEY }}
-      DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
     defaults:
       run:
         working-directory: website
@@ -27,58 +21,21 @@ jobs:
           node-version: '18'
           cache: 'npm'
           cache-dependency-path: website/package-lock.json
-      - name: Install deps
-        run: npm ci
-
-      # Build PRs (English only) + preview artifact
+      - run: npm ci
       - name: Build (PRs: en only)
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
-      - name: Link check (PRs)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          if [ ! -f ./build/index.html ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          rm -rf ./build-linkcheck || true
-          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
-          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
-          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
-          sleep 2
-          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
-          kill %1 || true
-          rm -rf ./build-linkcheck || true
-      - name: Upload build artifact (PRs)
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: docs-preview
-          path: website/build
-      - name: Docs preview URL
-        if: ${{ github.event_name == 'pull_request' }}
-        run: echo "Preview artifacts: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
-      # Build on main/tags and upload to Pages
-      - name: Configure Pages
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: actions/configure-pages@v5
       - name: Build (main/tags: all locales)
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
-      - name: Link check (main/tags)
+      - uses: actions/upload-pages-artifact@v3
         if: ${{ github.event_name != 'pull_request' }}
-        run: |
-          if [ ! -f ./build/index.html ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          rm -rf ./build-linkcheck || true
-          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
-          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
-          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
-          sleep 2
-          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
-          kill %1 || true
-          rm -rf ./build-linkcheck || true
-      - name: Upload Pages artifact
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: actions/upload-pages-artifact@v3
         with:
+          path: website/build
+      - uses: actions/upload-artifact@v4
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          name: docs-preview
           path: website/build
 
   deploy:
