@@ -8,7 +8,8 @@ Semantic Versioning (where applicable for add-on releases).
 ## [Unreleased]
 
 ### Auto Update (2025-09-06 02:39)
-- Summary:  10 files changed, 55 insertions(+), 41 deletions(-)
+
+- Summary: 10 files changed, 55 insertions(+), 41 deletions(-)
 - Branch: master
 - Files:
   - eslint.config.mjs
@@ -21,7 +22,6 @@ Semantic Versioning (where applicable for add-on releases).
   - tests/composition.onremoved.cacheclear.test.js
   - vitest.config.mjs
   - website/docs/permissions.md
-
 
 - CI: run `web-ext lint` against both ATN and LOCAL manifests.
 - Docs: link checks also on PR builds.
