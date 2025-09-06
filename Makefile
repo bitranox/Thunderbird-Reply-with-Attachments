@@ -77,4 +77,4 @@ docs-build: ## Build Docusaurus website into website/build
 
 docs-link-check: docs-build ## Check built site links via linkinator
 	@set -e; \
-	npx --yes linkinator website/build/Thunderbird-Reply-with-Attachments --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"
+	npx --yes linkinator "website/build/Thunderbird-Reply-with-Attachments/index.html" --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"
