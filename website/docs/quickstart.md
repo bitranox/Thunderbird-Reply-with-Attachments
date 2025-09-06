@@ -10,9 +10,9 @@ sidebar_label: Quickstart
 4. Optional: Add blacklist patterns (one per line), e.g.:
 
 ```
-*intern*
-*secret*
-*passwor*
+*.png
+smime.*
+*.p7s
 ```
 
 Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
