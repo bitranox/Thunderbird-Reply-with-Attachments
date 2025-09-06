@@ -20,7 +20,7 @@ describe('confirm popup timeout path', () => {
     const { App } = globalThis;
 
     await import('../sources/app/composition.js');
-    const wiring = App.Composition.createAppWiring(browser);
+    const _wiring = App.Composition.createAppWiring(browser);
 
     // trigger onStateChanged handler registered by wiring
     const stateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];

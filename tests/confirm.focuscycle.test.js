@@ -32,6 +32,7 @@ describe('confirm dialog — focus dances in a circle', () => {
     const [noBtn, yesBtn] = /** @type {HTMLButtonElement[]} */ (
       Array.from(document.querySelectorAll('button'))
     );
+    void yesBtn; // mark as used for linting
     // Default def=yes → focus yes; Shift+Tab should move to no
     key(dlg, 'Tab', { shiftKey: true });
     expect(document.activeElement).toBe(noBtn);

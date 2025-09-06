@@ -16,7 +16,7 @@ describe('File sizes — zero byte and multi‑MB', () => {
   it('attaches zero‑byte file without hanging', async () => {
     const messageAttachments = [{ name: 'empty.bin', partName: '1' }];
     const zero = new Blob([]);
-    const browser = await setup(messageAttachments, async (msgId, part) => zero);
+    const browser = await setup(messageAttachments, async (id, part) => zero);
     await triggerComposeState(browser, 1);
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
     expect(browser.compose.addAttachment.mock.calls[0][1].file.size).toBe(0);

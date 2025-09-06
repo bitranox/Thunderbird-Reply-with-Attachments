@@ -24,7 +24,7 @@ describe('thunderbird adapter — thin and brave', () => {
         },
       },
     };
-    const { default: portsMod } = await import('../sources/app/adapters/thunderbird.js');
+    await import('../sources/app/adapters/thunderbird.js');
     // module exports to global App; access function from there
     const ports = globalThis.App.Adapters.makeThunderbirdPorts(browser);
     expect(await ports.compose.getDetails(7)).toEqual({ id: 1 });

@@ -4,7 +4,6 @@ import path from 'path';
 
 function loadScript(filepath, context = {}) {
   const code = fs.readFileSync(filepath, 'utf8');
-  // eslint-disable-next-line no-new-func
   const fn = new Function(...Object.keys(context), code);
   fn(...Object.values(context));
 }

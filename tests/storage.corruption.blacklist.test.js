@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
+import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('storage corruption: non-array blacklistPatterns', () => {
   it('treats non-array blacklistPatterns as empty and proceeds safely', async () => {
@@ -26,7 +26,7 @@ describe('storage corruption: non-array blacklistPatterns', () => {
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
     await import('../sources/app/composition.js');
-    const wiring = App.Composition.createAppWiring(browser);
+    const _wiring = App.Composition.createAppWiring(browser);
     // Directly invoke inner use case by simulating no blacklist via domain excluder
     // Trigger state change twice to ensure settings are applied and flow runs
     const cb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];

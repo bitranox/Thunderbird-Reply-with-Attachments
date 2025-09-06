@@ -99,7 +99,7 @@ const config = {
           try {
             const localSearch = require.resolve('@easyops-cn/docusaurus-search-local');
             return [[localSearch, { hashed: true, language: ['en', 'de'] }]];
-          } catch (e) {
+          } catch (_e) {
             return [];
           }
         })()),

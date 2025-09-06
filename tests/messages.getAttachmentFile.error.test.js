@@ -19,7 +19,7 @@ describe('getAttachmentFile error handling', () => {
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
     await import('../sources/app/composition.js');
-    const wiring = App.Composition.createAppWiring(browser);
+    const _wiring = App.Composition.createAppWiring(browser);
     await triggerComposeState(browser, 101);
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
     expect(browser.compose.addAttachment.mock.calls[0][1].file).toBeInstanceOf(Blob);
