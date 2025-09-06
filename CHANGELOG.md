@@ -22,5 +22,3 @@ Semantic Versioning (where applicable for add-on releases).
 - Initial public release.
 
 ---
-
-[Unreleased]: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/compare
