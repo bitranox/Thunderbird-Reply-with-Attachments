@@ -3,6 +3,7 @@ import { createBrowserMock } from './helpers/browserMock.js';
 
 describe('confirm popup timeout path', () => {
   it('returns false if popup closes without responding (timeout)', async () => {
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     vi.useFakeTimers();
     const browser = createBrowserMock({
       confirmBeforeAdd: true,
@@ -30,5 +31,6 @@ describe('confirm popup timeout path', () => {
     // Since confirmation timed out (treated as false), no attachments added
     expect(browser.compose.addAttachment).not.toHaveBeenCalled();
     vi.useRealTimers();
+    warnSpy.mockRestore();
   });
 });

@@ -23,6 +23,17 @@ jobs:
       - name: ESLint
         run: npm run -s lint:eslint
 
+      - name: web-ext lint (LOCAL manifest)
+        run: |
+          cp -f sources/manifest_LOCAL.json sources/manifest.json
+          npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources || true
+          rm -f sources/manifest.json
+      - name: web-ext lint (ATN manifest)
+        run: |
+          cp -f sources/manifest_ATN.json sources/manifest.json
+          npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources || true
+          rm -f sources/manifest.json
+
   test:
     needs: lint
     runs-on: ubuntu-latest
@@ -41,6 +52,17 @@ jobs:
         run: npm run -s format:check
       - name: ESLint
         run: npm run -s lint:eslint
+
+      - name: web-ext lint (LOCAL manifest)
+        run: |
+          cp -f sources/manifest_LOCAL.json sources/manifest.json
+          npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources || true
+          rm -f sources/manifest.json
+      - name: web-ext lint (ATN manifest)
+        run: |
+          cp -f sources/manifest_ATN.json sources/manifest.json
+          npx --yes web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources || true
+          rm -f sources/manifest.json
       - name: Run tests + coverage (thresholds via vitest.config)
         run: npm test
       - name: Upload coverage HTML

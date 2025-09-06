@@ -43,11 +43,10 @@ const config = {
       logo: {
         alt: 'Reply with Attachments',
         src: 'https://raw.githubusercontent.com/bitranox/Thunderbird-Reply-with-Attachments/master/sources/icons/icon-48.png',
-        href: '/',
+        to: '/',
         target: '_self',
       },
       items: [
-        { to: '/docs/features', label: 'Features', position: 'left' },
         { type: 'doc', docId: 'features', position: 'left', label: 'Docs' },
         { to: '/docs/support', label: 'Support', position: 'right' },
         { to: '/docs/licence', label: 'Licence', position: 'right' },

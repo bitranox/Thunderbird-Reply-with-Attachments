@@ -13,6 +13,11 @@
 
 - [Full Docs here](https://bitranox.github.io/Thunderbird-Reply-with-Attachments/)
 
+Quickstart
+
+- Install from Thunderbird Add‑ons, then reply to a message with attachments — originals will be added automatically or after a quick confirmation (toggle in Options).
+- Read the Quickstart guide: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/quickstart
+
 CI & Coverage
 
 - Tests run in GitHub Actions on push/PR with coverage thresholds (85% lines/functions/branches/statements).

@@ -59,7 +59,7 @@ export default function Home() {
             </Link>
             <Link
               className="button button--lg btnGhost"
-              to="{isDifferentLocale ? hrefFor('quickstart') : toFor('quickstart')}"
+              to={isDifferentLocale ? hrefFor('quickstart') : toFor('quickstart')}
               reloadDocument={isDifferentLocale}
             >
               Quickstart

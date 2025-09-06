@@ -11,6 +11,7 @@
 // Composition Root: wire adapters to use-cases and register events
 
 (function () {
+  const CONFIRM_TIMEOUT_MS = 20000;
   const SESSION_KEY = 'rwatt_processed';
   /** @type {Map<number,'processing'|'done'>} */
   const processedTabsState = new Map();
@@ -80,7 +81,7 @@
       if (!shouldAsk(selected)) return true;
       await ensureConfirmInjected(tabId, scriptingCompose);
       const files = selected.map((s) => s.name).filter(Boolean);
-      return await askUserForConfirmation({ files, def: defaultAnswer }, tabId, browser, tabs);
+      return await askUserForConfirmation({ files, def: defaultAnswer }, tabId, browser, tabs, logger);
     }
     function shouldAsk(selected) {
       return !!selected?.length && askBeforeAdd;
@@ -216,7 +217,7 @@
    * Ask the user via targeted tab → broadcast → popup fallback.
    * @param {{files:string[], def:'yes'|'no'}} opts
    */
-  async function askUserForConfirmation({ files, def }, tabId, browser, tabs) {
+  async function askUserForConfirmation({ files, def }, tabId, browser, tabs, logger = console) {
     const payload = { type: 'rwa:confirm-add', files, def };
     const targeted = await tryTargetedConfirm(tabs, tabId, payload);
     if (isDecision(targeted)) return targeted.ok;
@@ -295,13 +296,19 @@
           browser.runtime.onMessage.removeListener(listener);
         } catch (_) {}
         resolve(false);
-      }, 20000);
+      }, CONFIRM_TIMEOUT_MS);
     });
   }
 
   // exports for background/tests
   globalThis.App = globalThis.App || {};
   App.Composition = { createAppWiring };
-  globalThis.SESSION_KEY = SESSION_KEY;
-  globalThis.processedTabsState = processedTabsState;
+  try {
+    const __TEST__ = typeof process !== 'undefined' && process?.env?.NODE_ENV === 'test';
+    if (__TEST__) {
+      globalThis.SESSION_KEY = SESSION_KEY;
+      globalThis.processedTabsState = processedTabsState;
+      globalThis.injectedConfirmScriptTabs = injectedConfirmScriptTabs;
+    }
+  } catch (_) {}
 })();

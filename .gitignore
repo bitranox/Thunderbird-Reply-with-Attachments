@@ -133,6 +133,9 @@ celerybeat-schedule
 Thumbs.db
 ehthumbs.db
 
+node_modules/
+coverage/
+
 # Archives
 *.zip
 

@@ -3,25 +3,15 @@ id: permissions
 title: Permissions
 ---
 
-This add‑on requires the following permissions:
+The add‑on requests a small, focused set of permissions only. Why each is needed:
 
-```
-"compose",
-"messagesRead",
-"scripting",
-"windows",
-"sessions",
-"storage",
-"tabs"
-```
+- compose: observe compose events, list/add attachments in your reply.
+- messagesRead: read metadata and fetch attachment files from the original message.
+- scripting: inject the small in‑compose confirmation dialog when enabled.
+- windows: open a tiny confirmation popup as a last resort when messaging fails.
+- sessions: store a per‑tab flag to avoid duplicate processing.
+- storage: persist options (blacklist, confirmation toggle, default answer).
+- tabs: targeted messaging to the compose tab for confirmation requests.
 
-Notes
+These are documented in the source and tested in CI. The add‑on does not collect telemetry.
 
-- `compose`: read composer state, manage attachments, and react to compose events.
-- `messagesRead`: discover and read original attachments from the source message.
-- Removed: `messagesModify` — no longer required for the add‑on’s current flows (reading attachments and adding them to compose). If future features modify messages, we will document and reintroduce it explicitly.
-- `scripting`: register MV3 compose/messageDisplay scripts where applicable.
-- `windows`: show confirmation UI when needed.
-- `sessions`: remember per‑tab ephemeral state to avoid double‑adding.
-- `storage`: persist options and defaults.
-- `tabs`: minor tab interactions when opening options or docs.

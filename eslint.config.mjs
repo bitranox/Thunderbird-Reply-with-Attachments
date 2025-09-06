@@ -13,12 +13,29 @@ export default [
     ],
   },
   js.configs.recommended,
+
+  {
+    files: ['tests/**/*.js'],
+    rules: {
+      'no-undef': 'off',
+      'no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^(id|part|_.*)$',
+          varsIgnorePattern: '^(vi|_.*)$',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_'
+        }
+      ]
+    }
+  },
   {
     files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'module',
       parserOptions: { ecmaFeatures: { jsx: true } },
+      env: { browser: true },
       globals: {
         browser: 'readonly',
         messenger: 'readonly',
@@ -34,6 +51,7 @@ export default [
     rules: {
       'no-var': 'error',
       'prefer-const': 'warn',
+      'no-undef': 'error',
       'no-unused-vars': [
         'warn',
         {
@@ -43,7 +61,6 @@ export default [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'no-undef': 'off',
       'no-empty': ['error', { allowEmptyCatch: true }],
       'no-useless-escape': 'off',
     },

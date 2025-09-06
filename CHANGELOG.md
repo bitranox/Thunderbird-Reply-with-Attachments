@@ -7,10 +7,27 @@ Semantic Versioning (where applicable for add-on releases).
 
 ## [Unreleased]
 
-- Permissions audit: verify if `messagesModify` can be dropped.
-- Docs: Donation page (EN/DE) and sidebar entry.
-- Docs CI: use `npm ci` and cache `website/package-lock.json` for better cache hits.
-- Testing: maintain high coverage; optional homepage smoke import.
+- CI: run `web-ext lint` against both ATN and LOCAL manifests.
+- Docs: link checks also on PR builds.
+
+## [2025-09-06] — Coverage Scoping, Website Fixes, Test‑only Exports
+
+### Added
+
+- New test: confirm disabled path adds attachments without sending confirm messages.
+- Permissions doc: “Why we need each permission” table.
+
+### Changed
+
+- Coverage config now scopes to add‑on sources only and excludes typedef‑only `ports.js`, restoring coverage >85% with thresholds enforced.
+- Gate test‑only globals in composition to `NODE_ENV === 'test'`.
+- README: added Quickstart blurb and link.
+- Package version aligned with manifest (1.0.1).
+
+### Fixed
+
+- Website: Quickstart button link corrected; navbar logo respects baseUrl.
+- Repo hygiene: stop tracking `node_modules/` and `coverage/` (added to .gitignore).
 
 ## [2025-09-05] — Architecture, Tests, CSP, Docs
 
