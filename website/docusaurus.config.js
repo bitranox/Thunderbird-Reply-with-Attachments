@@ -43,7 +43,7 @@ const config = {
       logo: {
         alt: 'Reply with Attachments',
         src: 'https://raw.githubusercontent.com/bitranox/Thunderbird-Reply-with-Attachments/master/sources/icons/icon-48.png',
-        to: '/',
+        // omit href/to to use baseUrl root by default
         target: '_self',
       },
       items: [
