@@ -86,13 +86,25 @@ html[data-theme='dark'] code {
 
 /* Improve fenced code block contrast/readability (e.g., Quickstart patterns) */
 /* Light theme */
+/* Light theme code blocks: darker text + frame */
+html[data-theme='light'] {
+  --prism-background-color: #f6f8fa;
+  --prism-color: #0b0e14; /* very dark text */
+}
 html[data-theme='light'] .theme-code-block,
 html[data-theme='light'] pre {
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
+  background: var(--prism-background-color);
+  border: 1px solid #1f2937; /* much darker frame */
 }
-html[data-theme='light'] pre code {
-  color: #0b0e14;
+html[data-theme='light'] pre code,
+html[data-theme='light'] .theme-code-block code,
+html[data-theme='light'] .theme-code-block .prism-code,
+html[data-theme='light'] pre .token,
+html[data-theme='light'] .theme-code-block .token,
+/* Docusaurus virtualized line container has a hashed class like codeBlockLines_xxx */
+html[data-theme='light'] [class^="codeBlockLines_"],
+html[data-theme='light'] [class^="codeBlockLines_"] .token-line {
+  color: var(--prism-color) !important; /* override inline token colors */
 }
 /* Dark theme */
 html[data-theme='dark'] .theme-code-block,
