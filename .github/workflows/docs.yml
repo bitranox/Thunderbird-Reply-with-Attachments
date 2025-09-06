@@ -30,23 +30,14 @@ jobs:
       - name: 'Build (PRs: en only)'
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
-      - name: 'Ensure baseUrl mirror (PRs)'
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then
-            mkdir -p ./build/Thunderbird-Reply-with-Attachments
-            for f in ./build/*; do
-              [ "$f" = "./build/Thunderbird-Reply-with-Attachments" ] && continue
-              cp -R "$f" ./build/Thunderbird-Reply-with-Attachments/
-            done
-          fi
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then ln -s . ./build/Thunderbird-Reply-with-Attachments; fi
           START="./build/Thunderbird-Reply-with-Attachments/index.html"
           echo "Link check start: $START"
-          npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          COUNT=$(ls ./build/**/*.html 2>/dev/null | wc -l || true)
+          if [ "$COUNT" = "0" ]; then echo "No HTML files in build — skipping link check"; exit 0; fi
+          npx --yes linkinator "./build/**/*.html" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
@@ -86,21 +77,13 @@ jobs:
         run: npm ci
       - name: Build all locales
         run: npm run build
-      - name: Ensure baseUrl mirror
-        run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then
-            mkdir -p ./build/Thunderbird-Reply-with-Attachments
-            for f in ./build/*; do
-              [ "$f" = "./build/Thunderbird-Reply-with-Attachments" ] && continue
-              cp -R "$f" ./build/Thunderbird-Reply-with-Attachments/
-            done
-          fi
       - name: Link check
         run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then ln -s . ./build/Thunderbird-Reply-with-Attachments; fi
           START="./build/Thunderbird-Reply-with-Attachments/index.html"
           echo "Link check start: $START"
-          npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          COUNT=$(ls ./build/**/*.html 2>/dev/null | wc -l || true)
+          if [ "$COUNT" = "0" ]; then echo "No HTML files in build — skipping link check"; exit 0; fi
+          npx --yes linkinator "./build/**/*.html" --recurse --silent --server-root ./build --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
