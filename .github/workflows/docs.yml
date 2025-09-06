@@ -54,6 +54,18 @@ jobs:
       - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
+      - name: 'Link check (main/tags)'
+        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          # Serve a temp copy under the baseUrl to avoid path issues and loops
+          rm -rf ./build-linkcheck || true
+          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
+          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
+          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
+          sleep 2
+          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+          kill %1 || true
+          rm -rf ./build-linkcheck || true
       - name: 'Upload build artifact (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
