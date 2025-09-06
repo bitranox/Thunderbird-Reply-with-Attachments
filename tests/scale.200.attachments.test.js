@@ -27,7 +27,9 @@ describe('Scale sanity — ~200 attachments', () => {
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 
+    const t0 = Date.now();
     await triggerComposeState(browser, 5);
+    const dt = Date.now() - t0;
 
     const total = 200;
     const excludedInline = Math.floor(total / 10); // 20 inline excluded
@@ -37,5 +39,7 @@ describe('Scale sanity — ~200 attachments', () => {
     // ensure part names are unique across calls
     const files = browser.compose.addAttachment.mock.calls.map((c) => c[1].file);
     expect(files.length).toBe(expected);
+    // perf sanity check: should comfortably run under 2s on CI
+    expect(dt).toBeLessThan(2000);
   });
 });
