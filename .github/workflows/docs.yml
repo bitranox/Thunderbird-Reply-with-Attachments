@@ -86,17 +86,17 @@ jobs:
           path: website/build
 
       - name: 'Configure Pages'
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.event_name != 'pull_request' && startsWith(github.ref, 'refs/heads/') }}
         uses: actions/configure-pages@v5
 
       - name: 'Upload Pages artifact'
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.event_name != 'pull_request' && startsWith(github.ref, 'refs/heads/') }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: website/build
 
   deploy:
-    if: ${{ github.event_name != 'pull_request' }}
+    if: ${{ github.event_name != 'pull_request' && startsWith(github.ref, 'refs/heads/') }}
     needs: build
     runs-on: ubuntu-latest
     permissions:

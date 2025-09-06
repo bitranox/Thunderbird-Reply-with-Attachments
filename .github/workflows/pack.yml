@@ -62,6 +62,7 @@ jobs:
           if-no-files-found: error
           overwrite: true
       - name: Create GitHub Release and upload assets
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
           files: reply-with-attachments-plugin*.zip
