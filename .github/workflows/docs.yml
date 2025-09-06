@@ -8,6 +8,15 @@ on:
     branches: [main, master]
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,25 +33,18 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: website/package.json
+          cache-dependency-path: website/package-lock.json
       - name: Install deps
         run: npm ci
-      - name: 'Build (PRs: en only)'
+
+      # Build PRs (English only) + preview artifact
+      - name: Build (PRs: en only)
         if: ${{ github.event_name == 'pull_request' }}
         run: npm run build -- --locale en
-      - name: 'Link check (PRs)'
+      - name: Link check (PRs)
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          START=""
-          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
-            START="./build/Thunderbird-Reply-with-Attachments/index.html"
-          elif [ -f "./build/index.html" ]; then
-            START="./build/index.html"
-          else
-            START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
-          fi
-          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          # Simulate GitHub Pages baseUrl without symlink loops by serving a copy under the base path
+          if [ ! -f ./build/index.html ]; then echo "No index.html in build — skipping link check"; exit 0; fi
           rm -rf ./build-linkcheck || true
           mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
           rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
@@ -51,69 +53,27 @@ jobs:
           npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
           kill %1 || true
           rm -rf ./build-linkcheck || true
-      - name: 'Build (main/tags: all locales)'
-        if: ${{ github.event_name != 'pull_request' }}
-        run: npm run build
-      - name: 'Link check (main/tags)'
-        if: ${{ github.event_name != 'pull_request' }}
-        run: |
-          # Serve a temp copy under the baseUrl to avoid path issues and loops
-          rm -rf ./build-linkcheck || true
-          mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
-          rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
-          npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
-          sleep 2
-          npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
-          kill %1 || true
-          rm -rf ./build-linkcheck || true
-      - name: 'Upload build artifact (PRs)'
+      - name: Upload build artifact (PRs)
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v4
         with:
           name: docs-preview
           path: website/build
-      - name: 'Docs preview URL'
+      - name: Docs preview URL
         if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          echo "View artifacts on this run:" \
-            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        run: echo "Preview artifacts: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
-  deploy:
-    if: ${{ github.event_name != 'pull_request' }}
-    needs: build
-    runs-on: ubuntu-latest
-    env:
-      DOCSEARCH_APP_ID: ${{ secrets.DOCSEARCH_APP_ID }}
-      DOCSEARCH_API_KEY: ${{ secrets.DOCSEARCH_API_KEY }}
-      DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
-    permissions:
-      contents: write
-    defaults:
-      run:
-        working-directory: website
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: website/package.json
-      - name: Install deps
-        run: npm ci
-      - name: Build all locales
+      # Build on main/tags and upload to Pages
+      - name: Configure Pages
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/configure-pages@v5
+      - name: Build (main/tags: all locales)
+        if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
-      - name: Link check
+      - name: Link check (main/tags)
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
-          START=""
-          if [ -f "./build/Thunderbird-Reply-with-Attachments/index.html" ]; then
-            START="./build/Thunderbird-Reply-with-Attachments/index.html"
-          elif [ -f "./build/index.html" ]; then
-            START="./build/index.html"
-          else
-            START=$(find ./build -type f -name index.html -print -quit 2>/dev/null || true)
-          fi
-          if [ -z "$START" ]; then echo "No index.html in build — skipping link check"; exit 0; fi
-          # Simulate GitHub Pages baseUrl without symlink loops by serving a copy under the base path
+          if [ ! -f ./build/index.html ]; then echo "No index.html in build — skipping link check"; exit 0; fi
           rm -rf ./build-linkcheck || true
           mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
           rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
@@ -122,9 +82,21 @@ jobs:
           npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
           kill %1 || true
           rm -rf ./build-linkcheck || true
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Pages artifact
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: website/build
-          publish_branch: gh-pages
+          path: website/build
+
+  deploy:
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
