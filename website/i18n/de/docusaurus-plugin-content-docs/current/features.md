@@ -13,5 +13,7 @@ sidebar_label: Funktionen
     In den Einstellungen kannst du die Rückfrage aktivieren und die Standard‑Antwort (Ja/Nein) wählen.
 - Blacklist von Dateinamen (Glob‑Muster) verhindert das automatische Anhängen bestimmter Dateien. Beispiele: `*.png`, `smime.*`, `*.p7s`.
   Die Prüfung ist nicht groß/kleinschreibungssensitiv, prüft nur den Dateinamen und akzeptiert ein Muster pro Zeile in den Einstellungen.
+- Blacklist‑Warnung (optional, standardmäßig aktiviert): Wenn Dateien durch die Blacklist ausgeschlossen
+  werden, zeigt ein kleiner, modaler Hinweis die betroffenen Dateien und die passenden Muster an. Dark‑Mode‑freundlich und mit Tastatur bedienbar (Enter/Esc).
 - Ergänzt Originalanhänge auch dann, wenn du bereits eigene Dateien angehängt hast; vermeidet Duplikate anhand des Dateinamens.
 - Überspringt SMIME‑Zertifikate und Inline‑Bilder, um unnötige Anhänge zu vermeiden.

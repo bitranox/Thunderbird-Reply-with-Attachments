@@ -30,6 +30,13 @@ Blacklisted Files will not be added on reply automatically
 
 Tip: Defaults are prefilled on first open and can be reset anytime.
 
+#### Warning on excluded attachments
+
+- Toggle “Warn if attachments are excluded by blacklist” (default: ON).
+- When enabled, a small modal lists excluded files and the matching pattern(s). The
+  warning also appears when nothing will be attached because all candidates were
+  blacklisted.
+
 #### save Your settings
 
 ---

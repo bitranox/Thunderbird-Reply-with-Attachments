@@ -6,6 +6,7 @@ function mountOptionsDom() {
   <div>
     <textarea id="blacklist-patterns"></textarea>
     <input id="confirm-before" type="checkbox" />
+    <input id="warn-blacklist" type="checkbox" />
     <input type="radio" name="confirm-default" value="yes" checked />
     <input type="radio" name="confirm-default" value="no" />
     <button id="save-btn"></button>

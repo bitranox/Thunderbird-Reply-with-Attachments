@@ -17,3 +17,7 @@ sidebar_label: Usage
 - Duplicate prevention: The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
 - Respect existing attachments: If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
 - Exclusions: SMIME artifacts (e.g. `smime.p7s`, `application/pkcs7-signature`/`x-pkcs7-signature`/`pkcs7-mime`) and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑SMIME parts.
+- Blacklist warning (if enabled): When candidates are excluded by your blacklist,
+  the add‑on shows a small modal listing the affected files and the matching
+  pattern(s). This warning also appears in cases where no attachments will be
+  added because everything was excluded.

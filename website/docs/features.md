@@ -15,5 +15,8 @@ sidebar_label: Features
   attached automatically. Examples: `*.png`, `smime.*`, `*.p7s`.
   Matching is case‑insensitive and checks the filename only; provide one pattern
   per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
 - Adds originals even if you already attached something yourself; avoids duplicates by filename.
 - Skips SMIME certificates and inline images to avoid unnecessary attachments.

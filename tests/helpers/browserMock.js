@@ -7,6 +7,7 @@ export function createBrowserMock({
   confirmBeforeAdd = false,
   confirmDefaultChoice = 'yes',
   blacklistPatterns = [],
+  warnOnBlacklistExcluded = true,
 } = {}) {
   const compose = {
     onComposeStateChanged: { addListener: vi.fn() },
@@ -31,9 +32,12 @@ export function createBrowserMock({
     },
     storage: {
       local: {
-        get: vi
-          .fn()
-          .mockResolvedValue({ blacklistPatterns, confirmBeforeAdd, confirmDefaultChoice }),
+        get: vi.fn().mockResolvedValue({
+          blacklistPatterns,
+          confirmBeforeAdd,
+          confirmDefaultChoice,
+          warnOnBlacklistExcluded,
+        }),
       },
       onChanged: { addListener: vi.fn() },
     },

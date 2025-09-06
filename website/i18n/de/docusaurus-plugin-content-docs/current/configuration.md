@@ -23,6 +23,11 @@ Optionen:
 
 Tipp: Standardwerte sind vorbelegt und können zurückgesetzt werden.
 
+#### Warnung bei ausgeschlossenen Anhängen
+
+- „Warnen, wenn Anhänge durch Blacklist ausgeschlossen werden“ (Standard: AN)
+- Bei Aktivierung zeigt ein kleiner Hinweis die betroffenen Dateien und die passenden Muster. Die Warnung erscheint auch dann, wenn am Ende nichts angehängt wird, weil alle Kandidaten ausgeschlossen wurden.
+
 #### Einstellungen speichern
 
 - Klicke auf „Speichern“, um deine Änderungen zu übernehmen.

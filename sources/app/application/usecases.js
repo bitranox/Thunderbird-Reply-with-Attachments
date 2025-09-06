@@ -23,6 +23,9 @@ function createProcessReplyAttachments({
   messages,
   shouldExclude = () => false,
   confirm = async () => true,
+  warn = async () => {},
+  warnOnBlacklist = false,
+  matchBlacklist = null,
   logger = console,
 }) {
   return async function processReplyAttachments(tabId, messageId) {
@@ -31,6 +34,16 @@ function createProcessReplyAttachments({
       if (isEmpty(all)) return 0;
 
       const existingNames = await getExistingAttachmentNames(compose, tabId);
+
+      // Warn about blacklist-excluded attachments (not inline/SMIME), if enabled — even
+      // if ultimately no attachments will be added (e.g., everything was blacklisted).
+      if (warnOnBlacklist) {
+        try {
+          const rows = computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklist);
+          if (rows.length) await warn(tabId, rows);
+        } catch (_) {}
+      }
+
       const selected = pickFirstNonEmpty([
         selectStrict(all, existingNames, shouldExclude),
         selectRelaxed(all, existingNames, shouldExclude),
@@ -122,6 +135,9 @@ function createEnsureReplyAttachments({
   sessionKey,
   shouldExclude = () => false,
   confirm = async () => true,
+  warn = async () => {},
+  warnOnBlacklist = false,
+  matchBlacklist = null,
   logger = console,
 }) {
   const processReplyAttachments = createProcessReplyAttachments({
@@ -129,6 +145,9 @@ function createEnsureReplyAttachments({
     messages,
     shouldExclude,
     confirm,
+    warn,
+    warnOnBlacklist,
+    matchBlacklist,
     logger,
   });
   return async function ensureReplyAttachments(tabId, details) {
@@ -214,6 +233,33 @@ function selectEligible(all, existingNames, shouldExclude, includeFn) {
     if (name) existingNames.add(name);
   }
   return selected;
+}
+
+/** Build blacklist warning rows: [{name, pattern}] */
+function computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklist) {
+  // Aggregate all matching patterns per normalized file name, emit a single row per file
+  const nn = domainNormalizedName();
+  const includeR = domainIncludeRelaxed();
+  /** @type {Map<string,{display:string, patterns:Set<string>}>} */
+  const acc = new Map();
+  for (const att of all) {
+    if (!includeR(att)) continue; // skip inline/SMIME
+    const nameNorm = nn(att);
+    if (!nameNorm) continue;
+    if (existingNames.has(nameNorm)) continue;
+    if (!shouldExclude(nameNorm)) continue;
+    const displayName = att.name || att.fileName || nameNorm;
+    const entry = acc.get(nameNorm) || { display: displayName, patterns: new Set() };
+    const patterns = Array.isArray(matchBlacklist?.(nameNorm)) ? matchBlacklist(nameNorm) : [];
+    for (const p of patterns) entry.patterns.add(String(p));
+    acc.set(nameNorm, entry);
+  }
+  const rows = [];
+  for (const { display, patterns } of acc.values()) {
+    const list = Array.from(patterns.values());
+    rows.push({ name: display, pattern: list.join(', ') });
+  }
+  return rows;
 }
 
 /** Build a case-insensitive set of names from compose attachments. */

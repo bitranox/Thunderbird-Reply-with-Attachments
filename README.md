@@ -7,7 +7,7 @@
 
 **Reply with Attachments** is a Thunderbird add‑on that automatically includes the original attachments when you reply.
 
-What it does: When you reply to an email, it finds the original message’s attachments and adds them to your reply automatically. Optionally, a small confirmation dialog can ask before adding.
+What it does: When you reply to an email, it finds the original message’s attachments and adds them to your reply automatically. Optionally, a small confirmation dialog can ask before adding. If files are excluded by your blacklist, a short warning lists them (enabled by default).
 
 Is it safe? Yes — it runs locally and uses a minimal set of permissions only to read original attachments and add them to your reply. See Permissions: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/permissions
 

@@ -71,6 +71,7 @@ App.Domain = {
   isInlineDisposition,
   includeStrict,
   includeRelaxed,
+  globToRegExp,
 };
 
 // --- Glob matching utilities for blacklist ---------------------------------

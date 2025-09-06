@@ -10,6 +10,7 @@
   const KEY = 'blacklistPatterns';
   const KEY_CONFIRM = 'confirmBeforeAdd';
   const KEY_CONFIRM_DEFAULT = 'confirmDefaultChoice';
+  const KEY_WARN_BLACKLIST = 'warnOnBlacklistExcluded';
   const DEFAULT_PATTERNS = ['*intern*', '*secret*', '*passwor*'];
 
   /** Get an element by id with a typed cast for readability. */
@@ -40,6 +41,7 @@
         [KEY]: DEFAULT_PATTERNS,
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
+        [KEY_WARN_BLACKLIST]: true,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
       let patterns = DEFAULT_PATTERNS;
@@ -59,6 +61,8 @@
       setTextareaLines('blacklist-patterns', patterns);
       const cb = /** @type {HTMLInputElement} */ (getEl('confirm-before'));
       cb.checked = !!res?.[KEY_CONFIRM];
+      const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
+      warnCb.checked = res?.[KEY_WARN_BLACKLIST] !== false;
       const def = String(res?.[KEY_CONFIRM_DEFAULT] || 'yes');
       const yes = /** @type {HTMLInputElement} */ (
         document.querySelector('input[name="confirm-default"][value="yes"]')
@@ -75,6 +79,8 @@
       setTextareaLines('blacklist-patterns', []);
       const cb = /** @type {HTMLInputElement} */ (getEl('confirm-before'));
       cb.checked = false;
+      const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
+      warnCb.checked = true;
       const yes = /** @type {HTMLInputElement} */ (
         document.querySelector('input[name="confirm-default"][value="yes"]')
       );
@@ -98,6 +104,8 @@
       [KEY]: patterns,
       [KEY_CONFIRM]: !!cb.checked,
       [KEY_CONFIRM_DEFAULT]: def?.value === 'no' ? 'no' : 'yes',
+      [KEY_WARN_BLACKLIST]:
+        /** @type {HTMLInputElement} */ (getEl('warn-blacklist')).checked !== false,
     });
     setStatus(getMessage('uiSaved') || 'Saved.');
     // Ask background to re-apply settings to open reply composers once.
@@ -114,6 +122,7 @@
       [KEY]: DEFAULT_PATTERNS,
       [KEY_CONFIRM]: false,
       [KEY_CONFIRM_DEFAULT]: 'yes',
+      [KEY_WARN_BLACKLIST]: true,
     });
     await load();
     setStatus(getMessage('uiResetDone') || 'Reset.');

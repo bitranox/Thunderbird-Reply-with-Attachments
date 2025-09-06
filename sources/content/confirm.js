@@ -19,12 +19,19 @@
   // — Message handling —
   /** Handle a runtime message asking to confirm adding attachments. */
   function handleConfirmMessage(payload) {
-    if (!isConfirmPayload(payload)) return;
-    const files = toFileList(payload);
-    const def = defaultAnswer(payload);
-    const text = buildConfirmationText(files);
-    return showDialogAndReturnResult(text, def);
+    if (!payload) return;
+    if (isConfirmPayload(payload)) {
+      const files = toFileList(payload);
+      const def = defaultAnswer(payload);
+      const text = buildConfirmationText(files);
+      return showDialogAndReturnResult(text, def);
+    }
+    if (payload.type === 'rwa:warn-blacklist') {
+      const rows = Array.isArray(payload.rows) ? payload.rows : [];
+      return showWarningDialog(rows);
+    }
   }
+  // Also support blacklist warning with a simple ack dialog via the same handler.
 
   function isConfirmPayload(p) {
     return p && p.type === 'rwa:confirm-add';
@@ -74,6 +81,97 @@
     return Promise.resolve({ ok: confirm(text) });
   }
 
+  /** Show a warning dialog listing blacklist-excluded files; returns {ok:true}. */
+  function showWarningDialog(rows) {
+    try {
+      if (!document?.body) return Promise.resolve({ ok: true });
+    } catch (_) {
+      return Promise.resolve({ ok: true });
+    }
+    return new Promise((resolve) => {
+      const prev = snapshotDocumentState();
+      const dark = prefersDark();
+      const overlay = createOverlay();
+      const box = createDialogBox();
+      const header = createHeader(i18n('warnBlacklistTitle') || 'Excluded by blacklist');
+      try {
+        header.querySelector('p').style.fontWeight = '700'; // bold title for blacklist warning
+      } catch (_) {}
+      const intro = document.createElement('div');
+      intro.textContent = i18n('warnBlacklistIntro') || 'The following files will not be attached:';
+      intro.style.margin = '0 0 8px 0';
+      intro.style.fontSize = '12px';
+
+      const table = document.createElement('table');
+      table.style.width = '100%';
+      table.style.borderCollapse = 'collapse';
+      table.style.fontSize = '12px';
+      const thead = document.createElement('thead');
+      const trh = document.createElement('tr');
+      for (const h of [i18n('warnColFile') || 'File', i18n('warnColPattern') || 'Pattern']) {
+        const th = document.createElement('th');
+        th.textContent = h;
+        th.style.textAlign = 'left';
+        th.style.borderBottom = '1px solid ' + (dark ? '#444' : '#ccc');
+        th.style.padding = '4px 0';
+        th.style.fontSize = '12px';
+        th.style.fontWeight = '600';
+        th.style.color = dark ? '#eaeaea' : '#000';
+        trh.appendChild(th);
+      }
+      thead.appendChild(trh);
+      table.appendChild(thead);
+      const tbody = document.createElement('tbody');
+      (rows || []).slice(0, 200).forEach((r) => {
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td');
+        td1.textContent = String(r?.name || '');
+        td1.style.padding = '4px 0';
+        td1.style.fontSize = '12px';
+        td1.style.color = dark ? '#eaeaea' : '#000';
+        const td2 = document.createElement('td');
+        td2.textContent = String(r?.pattern || '');
+        td2.style.padding = '4px 0';
+        td2.style.fontSize = '12px';
+        td2.style.color = dark ? '#eaeaea' : '#666';
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+
+      const row = document.createElement('div');
+      row.style.textAlign = 'right';
+      row.style.marginTop = '12px';
+      const btnOk = document.createElement('button');
+      btnOk.textContent = i18n('warnOk') || 'OK';
+      row.appendChild(btnOk);
+
+      const cleanup = () => {
+        restoreDocumentState(prev);
+        releaseBlock();
+        releaseTrap();
+        releaseRefocus();
+        overlay.remove();
+        resolve({ ok: true });
+      };
+      btnOk.addEventListener('click', cleanup);
+      assembleDialog(overlay, box, header, intro);
+      box.appendChild(table);
+      box.appendChild(row);
+      const releaseBlock = blockBackgroundInteractions(overlay);
+      const releaseTrap = trapFocus([btnOk], overlay);
+      const releaseRefocus = refocusIfEditorStealsFocus('yes', btnOk, btnOk);
+      preventScrollAndFocusDialog(overlay, 'yes', btnOk, btnOk);
+      overlay.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === 'Escape') {
+          e.preventDefault();
+          cleanup();
+        }
+      });
+    });
+  }
+
   /** Render the dialog and return a promise resolving to { ok:boolean }. */
   function renderDialogInDocument(text, def) {
     return new Promise((resolve) => {
@@ -112,8 +210,10 @@
     el.setAttribute('aria-labelledby', 'rwa-confirm-text');
     el.setAttribute('aria-describedby', 'rwa-confirm-text');
     el.setAttribute('data-testid', 'rwa-confirm-overlay');
+    const dark = prefersDark();
     el.style.cssText =
-      'position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;pointer-events:auto;';
+      'position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;pointer-events:auto;' +
+      (dark ? 'background:rgba(0,0,0,0.6);' : 'background:rgba(0,0,0,0.4);');
     el.tabIndex = -1;
     el.contentEditable = 'false';
     document.body.appendChild(el);
@@ -122,8 +222,11 @@
   /** Create the dialog container. */
   function createDialogBox() {
     const box = document.createElement('div');
-    box.style.cssText =
-      'background:#fff;color:#000;min-width:320px;max-width:600px;padding:16px;border:1px solid #888;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);font:menu;';
+    const dark = prefersDark();
+    const bg = dark ? '#1e1e1e' : '#fff';
+    const fg = dark ? '#eaeaea' : '#000';
+    const br = dark ? '#444' : '#888';
+    box.style.cssText = `background:${bg};color:${fg};min-width:320px;max-width:600px;padding:14px;border:1px solid ${br};border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);font:12px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;`;
     box.contentEditable = 'false';
     return box;
   }
@@ -333,4 +436,12 @@
     BLOCKED_EVENTS,
     showDialogAndReturnResult,
   };
+
+  function prefersDark() {
+    try {
+      return globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch (_) {
+      return false;
+    }
+  }
 })();

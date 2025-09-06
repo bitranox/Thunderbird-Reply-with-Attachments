@@ -44,6 +44,9 @@
   "uiBlacklistHelp": {
     "message": "Dateien, deren Namen einem der folgenden Muster entsprechen, werden nie automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
   },
+  "uiWarnBlacklistLabel": {
+    "message": "Warnen, wenn Anhänge durch Blacklist ausgeschlossen werden"
+  },
   "uiSave": {
     "message": "Speichern"
   },
@@ -95,6 +98,21 @@
   },
   "confirmNo": {
     "message": "Nein"
+  },
+  "warnBlacklistTitle": {
+    "message": "Durch Blacklist ausgeschlossen"
+  },
+  "warnBlacklistIntro": {
+    "message": "Folgende Dateien werden nicht automatisch angehängt:"
+  },
+  "warnColFile": {
+    "message": "Datei"
+  },
+  "warnColPattern": {
+    "message": "Muster"
+  },
+  "warnOk": {
+    "message": "OK"
   },
   "uiConfirmDefaultHeader": {
     "message": "Standardantwort"

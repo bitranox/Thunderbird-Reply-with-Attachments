@@ -74,21 +74,53 @@
     const makeLogger = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLocalLogger;
     const logger = makeLogger(false);
 
+    let excludePatterns = [];
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
     let defaultAnswer = 'yes';
+    let warnOnBlacklist = true;
 
     // load settings once; confirm awaits readiness lazily
     const ready = (async () => {
-      const [patterns, ask, def] = await Promise.all([
+      const [patterns, ask, def, warnFlag] = await Promise.all([
         readBlacklist(browser),
         readConfirmEnabled(browser),
         readConfirmDefault(browser),
+        readWarnOnBlacklist(browser),
       ]);
+      excludePatterns = patterns;
       exclude = App.Domain.makeNameExcluder(patterns);
       askBeforeAdd = ask;
       defaultAnswer = def;
+      warnOnBlacklist = warnFlag;
     })();
+
+    async function reloadSettings() {
+      const [patterns, ask, def, warnFlag] = await Promise.all([
+        readBlacklist(browser),
+        readConfirmEnabled(browser),
+        readConfirmDefault(browser),
+        readWarnOnBlacklist(browser),
+      ]);
+      excludePatterns = patterns;
+      exclude = App.Domain.makeNameExcluder(patterns);
+      askBeforeAdd = ask;
+      defaultAnswer = def;
+      warnOnBlacklist = warnFlag;
+      ensure = App.UseCases.createEnsureReplyAttachments({
+        compose,
+        messages,
+        sessions,
+        state: processedTabsState,
+        sessionKey: SESSION_KEY,
+        shouldExclude: (name) => exclude(name),
+        confirm: confirmAddSelectedFiles,
+        warn: warnBlacklisted,
+        warnOnBlacklist,
+        matchBlacklist: matchBlacklist,
+        logger,
+      });
+    }
 
     // confirm function, updated when settings change
     let ensure = App.UseCases.createEnsureReplyAttachments({
@@ -99,8 +131,42 @@
       sessionKey: SESSION_KEY,
       shouldExclude: (name) => exclude(name),
       confirm: confirmAddSelectedFiles,
+      warn: warnBlacklisted,
+      warnOnBlacklist,
+      matchBlacklist: matchBlacklist,
       logger,
     });
+    /** Compute matching blacklist patterns for a given name. */
+    function matchBlacklist(name) {
+      try {
+        const pats = excludePatterns || [];
+        const lower = App.Domain?.lower || ((s) => String(s || '').toLowerCase());
+        const toRx = App.Domain?.globToRegExp;
+        if (!toRx) return [];
+        const n = lower(name);
+        const hits = [];
+        for (const p of pats) {
+          const pat = String(p || '')
+            .trim()
+            .toLowerCase();
+          if (!pat) continue;
+          try {
+            if (toRx(pat).test(n)) hits.push(pat);
+          } catch (_) {}
+        }
+        return hits;
+      } catch (_) {
+        return [];
+      }
+    }
+    async function warnBlacklisted(tabId, rows) {
+      try {
+        await ensureConfirmInjected(tabId, scriptingCompose);
+      } catch (_) {}
+      try {
+        await browser.tabs?.sendMessage?.(tabId, { type: 'rwa:warn-blacklist', rows });
+      } catch (_) {}
+    }
     /**
      * Ask the user to confirm adding the given files.
      * @param {number} tabId Compose tab id
@@ -127,7 +193,8 @@
     // react to settings updates
     browser.storage?.onChanged?.addListener?.((changes, area) => {
       if (area === 'local' && changes?.blacklistPatterns) {
-        exclude = App.Domain.makeNameExcluder(changes.blacklistPatterns.newValue || []);
+        excludePatterns = changes.blacklistPatterns.newValue || [];
+        exclude = App.Domain.makeNameExcluder(excludePatterns);
         ensure = App.UseCases.createEnsureReplyAttachments({
           compose,
           messages,
@@ -136,6 +203,9 @@
           sessionKey: SESSION_KEY,
           shouldExclude: (name) => exclude(name),
           confirm: confirmAddSelectedFiles,
+          warn: warnBlacklisted,
+          warnOnBlacklist,
+          matchBlacklist: matchBlacklist,
           logger,
         });
       }
@@ -149,11 +219,30 @@
           sessionKey: SESSION_KEY,
           shouldExclude: (name) => exclude(name),
           confirm: confirmAddSelectedFiles,
+          warn: warnBlacklisted,
+          warnOnBlacklist,
+          matchBlacklist: matchBlacklist,
           logger,
         });
       }
       if (area === 'local' && changes?.confirmDefaultChoice) {
         defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
+      }
+      if (area === 'local' && changes?.warnOnBlacklistExcluded) {
+        warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
+        ensure = App.UseCases.createEnsureReplyAttachments({
+          compose,
+          messages,
+          sessions,
+          state: processedTabsState,
+          sessionKey: SESSION_KEY,
+          shouldExclude: (name) => exclude(name),
+          confirm: confirmAddSelectedFiles,
+          warn: warnBlacklisted,
+          warnOnBlacklist,
+          matchBlacklist: matchBlacklist,
+          logger,
+        });
       }
     });
 
@@ -210,6 +299,7 @@
       ensureReplyAttachments: (tabId, details) => ensure(tabId, details),
       processedTabsState,
       SESSION_KEY,
+      reloadSettings,
     };
   }
 
@@ -239,6 +329,15 @@
       return yesNo(r?.confirmDefaultChoice);
     } catch (_) {
       return 'yes';
+    }
+  }
+  /** Load warn-on-blacklist toggle from storage (true on error). */
+  async function readWarnOnBlacklist(browser) {
+    try {
+      const r = await browser.storage?.local?.get?.({ warnOnBlacklistExcluded: true });
+      return !!r?.warnOnBlacklistExcluded;
+    } catch (_) {
+      return true;
     }
   }
 
@@ -322,6 +421,7 @@
     const q = new URLSearchParams({ t: token, c: String(count), list, more, def: def || 'yes' });
     return `${base}?${q.toString()}`;
   }
+  // matchBlacklist and warnBlacklisted are defined inside createAppWiring to access settings
   /** Wait for the popup page to send its decision back via runtime messaging. */
   /** Wait until confirm result arrives for the given token, with timeout. */
   function waitForConfirm(browser, token) {

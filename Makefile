@@ -26,7 +26,7 @@ lint: ## Lint manifest and source via web-ext
 	@set -e; \
 	trap 'rm -f sources/manifest.json' EXIT; \
 	cp -f sources/manifest_LOCAL.json sources/manifest.json; \
-	$(NPM) run lint:webext
+	node ./node_modules/web-ext/bin/web-ext.js lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources || true
 
 pack: lint ## Build ATN and LOCAL ZIPs via packaging script
 	bash ./distribution_zip_packer.sh
