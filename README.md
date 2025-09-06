@@ -21,6 +21,11 @@ Is it safe? Yes — it runs locally and uses a minimal set of permissions only t
 
 See Configuration for details and examples.
 
+## Install
+
+- Get the latest release: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/releases/tag/v2.0.0
+- Then follow the Quickstart guide below.
+
 ## DOCS
 
 - [Full Docs here](https://bitranox.github.io/Thunderbird-Reply-with-Attachments/)
