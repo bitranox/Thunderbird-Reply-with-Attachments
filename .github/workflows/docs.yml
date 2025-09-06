@@ -33,9 +33,12 @@ jobs:
       - name: 'Ensure baseUrl mirror (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then \
-            mkdir -p ./build/Thunderbird-Reply-with-Attachments; \
-            shopt -s dotglob; cp -R ./build/* ./build/Thunderbird-Reply-with-Attachments/; \
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then
+            mkdir -p ./build/Thunderbird-Reply-with-Attachments
+            for f in ./build/*; do
+              [ "$f" = "./build/Thunderbird-Reply-with-Attachments" ] && continue
+              cp -R "$f" ./build/Thunderbird-Reply-with-Attachments/
+            done
           fi
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
@@ -85,9 +88,12 @@ jobs:
         run: npm run build
       - name: Ensure baseUrl mirror
         run: |
-          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then \
-            mkdir -p ./build/Thunderbird-Reply-with-Attachments; \
-            shopt -s dotglob; cp -R ./build/* ./build/Thunderbird-Reply-with-Attachments/; \
+          if [ ! -d "./build/Thunderbird-Reply-with-Attachments" ]; then
+            mkdir -p ./build/Thunderbird-Reply-with-Attachments
+            for f in ./build/*; do
+              [ "$f" = "./build/Thunderbird-Reply-with-Attachments" ] && continue
+              cp -R "$f" ./build/Thunderbird-Reply-with-Attachments/
+            done
           fi
       - name: Link check
         run: |
