@@ -6,6 +6,8 @@ on:
     tags: ['v*', 'V*']
   pull_request:
     branches: [main, master]
+  schedule:
+    - cron: '0 6 * * *' # daily at 06:00 UTC
   workflow_dispatch: {}
 
 jobs:
