@@ -32,8 +32,11 @@ jobs:
         run: npm run build -- --locale en
       - name: 'Link check (PRs)'
         if: ${{ github.event_name == 'pull_request' }}
-        working-directory: website/build/Thunderbird-Reply-with-Attachments
-        run: npx --yes linkinator "./index.html" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+        run: |
+          START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          if [ ! -f "$START" ]; then START="./build/index.html"; fi
+          echo "Link check start: $START"
+          npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: 'Build (main/tags: all locales)'
         if: ${{ github.event_name != 'pull_request' }}
         run: npm run build
@@ -74,8 +77,11 @@ jobs:
       - name: Build all locales
         run: npm run build
       - name: Link check
-        working-directory: website/build/Thunderbird-Reply-with-Attachments
-        run: npx --yes linkinator "./index.html" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
+        run: |
+          START="./build/Thunderbird-Reply-with-Attachments/index.html"
+          if [ ! -f "$START" ]; then START="./build/index.html"; fi
+          echo "Link check start: $START"
+          npx --yes linkinator "$START" --recurse --silent --skip "mailto:|github\.com|bitranox\.github\.io|addons\.thunderbird\.net"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
