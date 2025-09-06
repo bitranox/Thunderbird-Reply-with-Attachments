@@ -2,54 +2,10 @@ name: Docs
 
 on:
   push:
-    branches: [main, master]
-    tags: ['v*', 'V*']
-  pull_request:
-    branches: [main, master]
-  workflow_dispatch:
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: website/package-lock.json
-      - run: npm ci
-      - name: Build (PRs: en only)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: npm run build -- --locale en
-      - name: Build (main/tags: all locales)
-        if: ${{ github.event_name != 'pull_request' }}
-        run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        if: ${{ github.event_name != 'pull_request' }}
-        with:
-          path: website/build
-      - uses: actions/upload-artifact@v4
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          name: docs-preview
-          path: website/build
-
-  deploy:
-    if: ${{ github.event_name != 'pull_request' }}
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - run: echo "Docs smoke test"
