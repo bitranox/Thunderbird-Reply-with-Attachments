@@ -97,11 +97,11 @@ html[data-theme='light'] pre code {
 /* Dark theme */
 html[data-theme='dark'] .theme-code-block,
 html[data-theme='dark'] pre {
-  background: #0b1118; /* slightly darker than cards for separation */
-  border: 1px solid #2d333b;
+  background: #060a10; /* much darker to increase contrast */
+  border: 1px solid #1f2937; /* darker frame */
 }
 html[data-theme='dark'] pre code {
-  color: #e6edf3; /* bright text for high contrast */
+  color: #e5e7eb; /* brighter text for stronger contrast */
 }
 /* Make code blocks a touch larger for legibility */
 .theme-code-block pre,
