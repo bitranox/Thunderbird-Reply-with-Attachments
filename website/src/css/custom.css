@@ -83,3 +83,29 @@ html[data-theme='dark'] code {
   color: #ffd166; /* warm yellow for strong contrast */
   border: 1px solid #2d333b;
 }
+
+/* Improve fenced code block contrast/readability (e.g., Quickstart patterns) */
+/* Light theme */
+html[data-theme='light'] .theme-code-block,
+html[data-theme='light'] pre {
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+}
+html[data-theme='light'] pre code {
+  color: #0b0e14;
+}
+/* Dark theme */
+html[data-theme='dark'] .theme-code-block,
+html[data-theme='dark'] pre {
+  background: #0b1118; /* slightly darker than cards for separation */
+  border: 1px solid #2d333b;
+}
+html[data-theme='dark'] pre code {
+  color: #e6edf3; /* bright text for high contrast */
+}
+/* Make code blocks a touch larger for legibility */
+.theme-code-block pre,
+pre code {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
