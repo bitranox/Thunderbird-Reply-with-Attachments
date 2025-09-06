@@ -6,7 +6,7 @@ async function bootBackgroundWith(browser, loggerImpl = null) {
   globalThis.App = globalThis.App || {};
   globalThis.App.Shared = globalThis.App.Shared || {};
   const logs = { debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn() };
-  globalThis.App.Shared.makeLogger = () => (loggerImpl || logs);
+  globalThis.App.Shared.makeLogger = () => loggerImpl || logs;
 
   // Fill minimal API shape expected by adapters/composition
   const compose = browser.compose || (browser.compose = {});
@@ -21,11 +21,20 @@ async function bootBackgroundWith(browser, loggerImpl = null) {
     getRegisteredScripts: vi.fn().mockResolvedValue([]),
     executeScript: vi.fn(),
   };
-  browser.sessions = browser.sessions || { getTabValue: vi.fn(), setTabValue: vi.fn(), removeTabValue: vi.fn() };
+  browser.sessions = browser.sessions || {
+    getTabValue: vi.fn(),
+    setTabValue: vi.fn(),
+    removeTabValue: vi.fn(),
+  };
   browser.messages = browser.messages || { listAttachments: vi.fn(), getAttachmentFile: vi.fn() };
   browser.windows = browser.windows || { create: vi.fn(), update: vi.fn() };
-  browser.runtime = browser.runtime || { onMessage: { addListener: vi.fn(), removeListener: vi.fn() } };
-  browser.storage = browser.storage || { local: { get: vi.fn().mockResolvedValue({ debug: false }) }, onChanged: { addListener: vi.fn() } };
+  browser.runtime = browser.runtime || {
+    onMessage: { addListener: vi.fn(), removeListener: vi.fn() },
+  };
+  browser.storage = browser.storage || {
+    local: { get: vi.fn().mockResolvedValue({ debug: false }) },
+    onChanged: { addListener: vi.fn() },
+  };
 
   globalThis.browser = browser;
   await import('../sources/app/adapters/thunderbird.js');
@@ -61,7 +70,11 @@ describe('background — error/edge paths to increase branch coverage', () => {
   });
 
   it('covers null details, non-reply type, and inner try/catches', async () => {
-    const sessions = { removeTabValue: vi.fn((id) => (id === 1 ? Promise.reject(new Error('rm')) : Promise.resolve())) };
+    const sessions = {
+      removeTabValue: vi.fn((id) =>
+        id === 1 ? Promise.reject(new Error('rm')) : Promise.resolve()
+      ),
+    };
     const browser = {
       runtime: { onMessage: { addListener: vi.fn() } },
       tabs: { query: vi.fn().mockResolvedValue([{ id: 1 }, { id: 2 }, { id: 3 }]) },
@@ -81,8 +94,13 @@ describe('background — error/edge paths to increase branch coverage', () => {
     await bootBackgroundWith(browser);
     // Monkey-patch the globals used inside applySettings to throw for id=1
     const origDelete = globalThis.processedTabsState.delete.bind(globalThis.processedTabsState);
-    globalThis.processedTabsState.delete = vi.fn((id) => { if (id === 1) throw new Error('del'); return origDelete(id); });
-    const ensureSpy = vi.fn((id) => (id === 1 ? Promise.reject(new Error('ensure')) : Promise.resolve()));
+    globalThis.processedTabsState.delete = vi.fn((id) => {
+      if (id === 1) throw new Error('del');
+      return origDelete(id);
+    });
+    const ensureSpy = vi.fn((id) =>
+      id === 1 ? Promise.reject(new Error('ensure')) : Promise.resolve()
+    );
     globalThis.ensureReplyAttachments = ensureSpy;
 
     const listener = browser.runtime.onMessage.addListener.mock.calls[0][0];

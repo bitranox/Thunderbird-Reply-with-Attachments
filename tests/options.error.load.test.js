@@ -33,12 +33,15 @@ describe('options page — error path on load()', () => {
     await new Promise((r) => setTimeout(r, 0));
     const ta = /** @type {HTMLTextAreaElement} */ (document.getElementById('blacklist-patterns'));
     const cb = /** @type {HTMLInputElement} */ (document.getElementById('confirm-before'));
-    const yes = /** @type {HTMLInputElement} */ (document.querySelector('input[name="confirm-default"][value="yes"]'));
-    const no = /** @type {HTMLInputElement} */ (document.querySelector('input[name="confirm-default"][value="no"]'));
+    const yes = /** @type {HTMLInputElement} */ (
+      document.querySelector('input[name="confirm-default"][value="yes"]')
+    );
+    const no = /** @type {HTMLInputElement} */ (
+      document.querySelector('input[name="confirm-default"][value="no"]')
+    );
     expect(ta.value).toBe('');
     expect(cb.checked).toBe(false);
     expect(yes.checked).toBe(true);
     expect(no.checked).toBe(false);
   });
 });
-

@@ -1,15 +1,25 @@
 /* @vitest-environment jsdom */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-function qs(sel) { return /** @type {HTMLElement} */ (document.querySelector(sel)); }
-function key(el, k, opts = {}) { el.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true, ...opts })); }
+function qs(sel) {
+  return /** @type {HTMLElement} */ (document.querySelector(sel));
+}
+function key(el, k, opts = {}) {
+  el.dispatchEvent(new KeyboardEvent('keydown', { key: k, bubbles: true, ...opts }));
+}
 
 describe('confirm dialog — quick keys (y/j/n/Enter/Tab)', () => {
   let listener;
   beforeEach(async () => {
     document.body.innerHTML = '<div id="root"></div>';
     globalThis.browser = {
-      runtime: { onMessage: { addListener: (fn) => { listener = fn; } } },
+      runtime: {
+        onMessage: {
+          addListener: (fn) => {
+            listener = fn;
+          },
+        },
+      },
       i18n: { getMessage: vi.fn(() => '') },
     };
     await import('../sources/content/confirm.js');
@@ -47,4 +57,6 @@ describe('confirm dialog — quick keys (y/j/n/Enter/Tab)', () => {
   });
 });
 
-function tick() { return new Promise((r) => setTimeout(r, 0)); }
+function tick() {
+  return new Promise((r) => setTimeout(r, 0));
+}

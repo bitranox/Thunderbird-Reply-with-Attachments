@@ -31,7 +31,10 @@ describe('App.Shared utils', () => {
     expect(w).toHaveBeenCalled();
     expect(e).toHaveBeenCalled();
 
-    d.mockClear(); i.mockClear(); w.mockClear(); e.mockClear();
+    d.mockClear();
+    i.mockClear();
+    w.mockClear();
+    e.mockClear();
     const on = makeLogger(true);
     on.debug('a');
     on.info('b');

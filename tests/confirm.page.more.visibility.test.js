@@ -37,7 +37,11 @@ describe('confirm_page — more count, clicks, and visibility refocus', () => {
     // Click No
     document.getElementById('no').click();
     await tick();
-    expect(browser.runtime.sendMessage).toHaveBeenCalledWith({ type: 'rwa:confirm-result', t: 't3', ok: false });
+    expect(browser.runtime.sendMessage).toHaveBeenCalledWith({
+      type: 'rwa:confirm-result',
+      t: 't3',
+      ok: false,
+    });
 
     // Re-mount to test Yes case
     vi.resetModules();
@@ -46,7 +50,11 @@ describe('confirm_page — more count, clicks, and visibility refocus', () => {
     await import('../sources/confirm_page.js');
     document.getElementById('yes').click();
     await tick();
-    expect(browser.runtime.sendMessage).toHaveBeenCalledWith({ type: 'rwa:confirm-result', t: 't4', ok: true });
+    expect(browser.runtime.sendMessage).toHaveBeenCalledWith({
+      type: 'rwa:confirm-result',
+      t: 't4',
+      ok: true,
+    });
   });
 
   it('refocuses default on visibilitychange to visible', async () => {
@@ -70,4 +78,3 @@ function setSearch(qs) {
 function tick() {
   return new Promise((r) => setTimeout(r, 0));
 }
-

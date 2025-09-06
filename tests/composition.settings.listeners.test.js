@@ -50,7 +50,9 @@ describe('composition — settings listeners and cleanup', () => {
     storageListener({ blacklistPatterns: { newValue: ['*.png'] } }, 'local');
     // new tab id → reprocess with updated excluder
     await cb(2);
-    const addedNames = browser.compose.addAttachment.mock.calls.map((c) => c[1].name || c[1].file?.name);
+    const addedNames = browser.compose.addAttachment.mock.calls.map(
+      (c) => c[1].name || c[1].file?.name
+    );
     expect(addedNames.length).toBe(1);
   });
 

@@ -12,7 +12,11 @@ help: ## Show available make commands.
 eslint: ## Run ESLint (flat config)
 	$(NPM) run -s lint:eslint
 
-test: eslint ## Run ESLint, then all tests (Vitest)
+test: ## Run Prettier (write + check), ESLint, then all tests (Vitest)
+	@set -e; \
+	$(MAKE) prettier-write; \
+	$(MAKE) prettier-check; \
+	$(NPM) run -s lint:eslint; \
 	$(NPM) test
 
 test-i18n: ## Run i18n parity and placeholder checks; verify EN↔DE parity in add-on and website
