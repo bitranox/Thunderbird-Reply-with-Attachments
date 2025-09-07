@@ -1,132 +1,60 @@
 {
-  "extName": {
-    "message": "Reply with Attachments"
-  },
+  "extName": { "message": "Répondre avec pièces jointes" },
   "extDescription": {
-    "message": "Automatically include original attachments in email replies."
+    "message": "Inclure automatiquement les pièces jointes d’origine dans les réponses."
   },
-  "composeTitle": {
-    "message": "Reply with Attachments"
-  },
-  "optionsTitle": {
-    "message": "Reply with Attachments — Options"
-  },
-  "confirmTitle": {
-    "message": "Confirm Attachments"
-  },
-  "uiHeader": {
-    "message": "Reply with Attachments"
-  },
-  "uiNoOptions": {
-    "message": "There are currently no options to configure."
-  },
-  "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
-  },
-  "uiDonate": {
-    "message": "Donate now"
-  },
-  "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
-  },
-  "uiGithubLinkLabel": {
-    "message": "GitHub page"
-  },
-  "iconAlt": {
-    "message": "Reply with Attachments Icon"
-  },
-  "githubAlt": {
-    "message": "GitHub"
-  },
-  "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
-  },
+  "composeTitle": { "message": "Répondre avec pièces jointes" },
+  "optionsTitle": { "message": "Répondre avec pièces jointes — Options" },
+  "confirmTitle": { "message": "Confirmer les pièces jointes" },
+  "uiHeader": { "message": "Répondre avec pièces jointes" },
+  "uiNoOptions": { "message": "Il n’y a actuellement aucun réglage à configurer." },
+  "uiSupport": { "message": "Vous aimez ce module ? Soutenez‑moi avec une petite contribution :" },
+  "uiDonate": { "message": "Faire un don" },
+  "uiGithubText": { "message": "Pour signaler un bogue ou pour toute question, rendez‑vous sur" },
+  "uiGithubLinkLabel": { "message": "ma page GitHub" },
+  "iconAlt": { "message": "Icône Répondre avec pièces jointes" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Liste d’exclusion de noms de fichiers (motifs glob)" },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "Les fichiers dont le nom correspond à l’un de ces motifs ne seront jamais joints automatiquement. Un motif par ligne. Exemples : *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
-  },
-  "uiSave": {
-    "message": "Save"
-  },
-  "uiSaving": {
-    "message": "Saving…"
-  },
-  "uiReset": {
-    "message": "Reset to defaults"
-  },
-  "uiSaved": {
-    "message": "Saved."
-  },
-  "uiResetDone": {
-    "message": "Reset."
-  },
-  "uiConfirmHeader": {
-    "message": "Confirmation"
-  },
-  "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
-  },
+  "uiWarnBlacklistLabel": { "message": "Avertir si des pièces jointes sont exclues par la liste" },
+  "uiSave": { "message": "Enregistrer" },
+  "uiSaving": { "message": "Enregistrement…" },
+  "uiReset": { "message": "Réinitialiser les valeurs par défaut" },
+  "uiSaved": { "message": "Enregistré." },
+  "uiResetDone": { "message": "Réinitialisé." },
+  "uiConfirmHeader": { "message": "Confirmation" },
+  "uiConfirmLabel": { "message": "Demander avant d’ajouter les pièces jointes" },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "Une petite fenêtre de confirmation s’affiche uniquement lorsque des pièces jointes doivent être ajoutées. Clavier : Y ou J = Oui ; N ou Échap = Non."
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
+    "message": "Ajouter la pièce jointe : $1 ?",
+    "placeholders": { "1": { "content": "$1" } }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "Ajouter les pièces jointes ($1) : $2$3 ?",
     "placeholders": {
-      "1": {
-        "content": "$1"
-      },
-      "2": {
-        "content": "$2"
-      },
-      "3": {
-        "content": ", +$3 more"
-      }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 de plus" }
     }
   },
-  "confirmYes": {
-    "message": "Yes"
-  },
-  "confirmNo": {
-    "message": "No"
-  },
-  "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
-  },
+  "confirmYes": { "message": "Oui" },
+  "confirmNo": { "message": "Non" },
+  "warnBlacklistTitle": { "message": "Exclues par la liste" },
   "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
+    "message": "Les fichiers suivants ne seront pas joints automatiquement :"
   },
-  "warnColFile": {
-    "message": "File"
-  },
-  "warnColPattern": {
-    "message": "Pattern"
-  },
-  "warnOk": {
-    "message": "OK"
-  },
-  "uiConfirmDefaultHeader": {
-    "message": "Default answer"
-  },
-  "uiConfirmDefaultYes": {
-    "message": "Yes"
-  },
-  "uiConfirmDefaultNo": {
-    "message": "No"
-  },
+  "warnColFile": { "message": "Fichier" },
+  "warnColPattern": { "message": "Motif" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Réponse par défaut" },
+  "uiConfirmDefaultYes": { "message": "Oui" },
+  "uiConfirmDefaultNo": { "message": "Non" },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
-  "githubUrl": {
-    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
-  }
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
 }

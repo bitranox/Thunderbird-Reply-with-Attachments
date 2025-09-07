@@ -17,7 +17,7 @@ ATN will automatically assign an ID to your extension upon submission.
 ATN assigns a unique ID to your extension when you first submit it. For subsequent updates, the id should match this assigned value.(?)
 Use the same ID You used on First time publishing (?)
 
-- Ensure the version number in manifest.json is incremented (e.g., 1.0 → 1.1).
+- Ensure the version number in manifest.json is incremented (e.g., 2.0.0 → 2.1.1).
 - Package and upload your updated extension to ATN.
 - ATN matches the id automatically with the one assigned previously.
 
@@ -31,7 +31,7 @@ Increment the version field with each update.
 ```json
 {
   "id": "thunderbird-addon-reply-with-attachments_bitranox@gmail.com",
-  "version": "1.0",
+  "version": "2.1.1",
   ...
 }
 ```

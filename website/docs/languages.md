@@ -6,7 +6,7 @@ sidebar_label: Languages
 
 # Language Support
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Massive language support, thanks to AI translation tools — covering 100 languages.
 
 List below is sorted by the language code.
 
@@ -68,7 +68,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +111,4 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)

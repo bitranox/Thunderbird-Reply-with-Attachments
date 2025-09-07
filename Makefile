@@ -4,7 +4,7 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: help test test-i18n pack lint eslint prettier prettier-write prettier-check commit docs-build docs-link-check
+.PHONY: help test test-i18n pack lint eslint prettier prettier-write prettier-check commit docs-build docs-link-check translation docs-deploy
 
 help: ## Show available make commands.
 	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_.-]+:.*##/ { printf "%-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
@@ -78,3 +78,14 @@ docs-build: ## Build Docusaurus website into website/build
 docs-link-check: docs-build ## Check built site links via linkinator
 	@set -e; \
 	npx --yes linkinator "website/build/Thunderbird-Reply-with-Attachments/index.html" --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"
+
+translation: ## Translate website/docs -> website/i18n (interactive or DOC=... TO=...)
+	@set -e; \
+	args=""; \
+	if [ -n "$(DOC)" ]; then args="$$args $(DOC)"; fi; \
+	if [ -n "$(TO)" ]; then args="$$args $(TO)"; fi; \
+	node scripts/translate_docs.js $$args
+
+docs-deploy: ## Build and deploy website to gh-pages locally (OPTS="--locales en|all --no-test --no-link-check --dry-run")
+	@set -e; \
+	bash scripts/docs-local-deploy.sh $(OPTS)

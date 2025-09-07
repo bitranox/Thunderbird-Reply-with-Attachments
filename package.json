@@ -11,7 +11,6 @@
     "test:website-i18n": "node node_modules/vitest/vitest.mjs run tests/website.i18n.parity.test.js",
     "test:watch": "node node_modules/vitest/vitest.mjs",
     "lint:webext": "web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
-    "generate:readme-langs": "node scripts/generate-readme-langs.mjs",
     "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
     "format": "node ./node_modules/prettier/bin/prettier.cjs --write .",
     "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check .",

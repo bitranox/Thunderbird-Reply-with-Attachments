@@ -24,6 +24,10 @@
 - `make help`: list available developer commands.
 - `make test`: run the Vitest test suite.
 - `make pack`: build ATN and LOCAL ZIPs (wraps `bash distribution_zip_packer.sh`).
+- `make translation`: translate one or more docs from `website/docs` into one or more locales under `website/i18n`. Use `DOC` (one or many, space/comma separated or `all`) and `TO` (one or many, space/comma separated or `all`). Examples:
+  - `make translation DOC=changelog.md TO=de`
+  - `make translation DOC="changelog.md features.md" TO="de fr"`
+  - `make translation DOC=all TO=all`
 - Manual install (dev): Thunderbird → Tools → Add-ons and Themes → gear menu → Install Add-on From File… → choose the built ZIP.
 - Tip: update version in both `sources/manifest_*.json` before packaging.
 
@@ -57,6 +61,25 @@
 
 - Do not commit `sources/manifest.json`; the build script creates it temporarily.
 - Keep `browser_specific_settings.gecko.id` stable to preserve update channel.
+
+## Translations (Docs)
+
+- Script: `scripts/translate_docs.js` (OpenAI only).
+- Reads API key and model from `.env` at repo root:
+  - `OPENAI_API_KEY=...`
+  - `OPENAI_MODEL=gpt-4o-mini` (example)
+  - Optional: `OPENAI_TEMPERATURE=0.2` (only set if your model supports non‑default temperatures; otherwise omit)
+- Source is always `website/docs/<filename>`; output goes to `website/i18n/<lang>/docusaurus-plugin-content-docs/current/<filename>`.
+- Usage:
+  - Interactive: `node scripts/translate_docs.js` (prompts for one/multiple filenames and one/multiple target languages or `all`).
+  - CLI examples:
+    - `node scripts/translate_docs.js changelog.md de`
+    - `node scripts/translate_docs.js changelog.md,features.md de,fr`
+    - `node scripts/translate_docs.js all all`
+- Make: see `make translation` examples above (note: use `DOC` and `TO`, not `LANG`).
+- Notes:
+  - Preserves code blocks/inline code and front‑matter `id`; translates `title`/`sidebar_label`.
+  - Target languages are inferred from subfolders of `website/i18n`.
 
 ## commit/pusg/github policy
 

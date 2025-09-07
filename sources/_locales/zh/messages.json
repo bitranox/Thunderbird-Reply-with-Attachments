@@ -1,132 +1,56 @@
 {
-  "extName": {
-    "message": "Reply with Attachments"
-  },
-  "extDescription": {
-    "message": "Automatically include original attachments in email replies."
-  },
-  "composeTitle": {
-    "message": "Reply with Attachments"
-  },
-  "optionsTitle": {
-    "message": "Reply with Attachments — Options"
-  },
-  "confirmTitle": {
-    "message": "Confirm Attachments"
-  },
-  "uiHeader": {
-    "message": "Reply with Attachments"
-  },
-  "uiNoOptions": {
-    "message": "There are currently no options to configure."
-  },
-  "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
-  },
-  "uiDonate": {
-    "message": "Donate now"
-  },
-  "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
-  },
-  "uiGithubLinkLabel": {
-    "message": "GitHub page"
-  },
-  "iconAlt": {
-    "message": "Reply with Attachments Icon"
-  },
-  "githubAlt": {
-    "message": "GitHub"
-  },
-  "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
-  },
+  "extName": { "message": "带附件回复" },
+  "extDescription": { "message": "在回复邮件时自动包含原始附件。" },
+  "composeTitle": { "message": "带附件回复" },
+  "optionsTitle": { "message": "带附件回复 — 选项" },
+  "confirmTitle": { "message": "确认附件" },
+  "uiHeader": { "message": "带附件回复" },
+  "uiNoOptions": { "message": "目前没有可配置的选项。" },
+  "uiSupport": { "message": "喜欢这个附加组件吗？欢迎小额支持：" },
+  "uiDonate": { "message": "立即捐赠" },
+  "uiGithubText": { "message": "如需报告问题或其他咨询，请访问我的" },
+  "uiGithubLinkLabel": { "message": "GitHub 页面" },
+  "iconAlt": { "message": "“带附件回复”图标" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "文件名黑名单（glob 模式）" },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "名称与下列任一模式匹配的文件将不会自动附加。每行一个模式。示例：*.png、smime.*、*.p7s"
   },
-  "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
-  },
-  "uiSave": {
-    "message": "Save"
-  },
-  "uiSaving": {
-    "message": "Saving…"
-  },
-  "uiReset": {
-    "message": "Reset to defaults"
-  },
-  "uiSaved": {
-    "message": "Saved."
-  },
-  "uiResetDone": {
-    "message": "Reset."
-  },
-  "uiConfirmHeader": {
-    "message": "Confirmation"
-  },
-  "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
-  },
+  "uiWarnBlacklistLabel": { "message": "当因黑名单而排除附件时警告" },
+  "uiSave": { "message": "保存" },
+  "uiSaving": { "message": "正在保存…" },
+  "uiReset": { "message": "恢复默认值" },
+  "uiSaved": { "message": "已保存。" },
+  "uiResetDone": { "message": "已重置。" },
+  "uiConfirmHeader": { "message": "确认" },
+  "uiConfirmLabel": { "message": "添加附件前先询问" },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "只有在确实要添加附件时才会显示一个小的确认对话框。键盘：Y 或 J = 是；N 或 Esc = 否。"
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
+    "message": "添加附件：$1？",
+    "placeholders": { "1": { "content": "$1" } }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "添加附件（$1）：$2$3？",
     "placeholders": {
-      "1": {
-        "content": "$1"
-      },
-      "2": {
-        "content": "$2"
-      },
-      "3": {
-        "content": ", +$3 more"
-      }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": "，另外 +$3 个" }
     }
   },
-  "confirmYes": {
-    "message": "Yes"
-  },
-  "confirmNo": {
-    "message": "No"
-  },
-  "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
-  },
-  "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
-  },
-  "warnColFile": {
-    "message": "File"
-  },
-  "warnColPattern": {
-    "message": "Pattern"
-  },
-  "warnOk": {
-    "message": "OK"
-  },
-  "uiConfirmDefaultHeader": {
-    "message": "Default answer"
-  },
-  "uiConfirmDefaultYes": {
-    "message": "Yes"
-  },
-  "uiConfirmDefaultNo": {
-    "message": "No"
-  },
+  "confirmYes": { "message": "是" },
+  "confirmNo": { "message": "否" },
+  "warnBlacklistTitle": { "message": "已被黑名单排除" },
+  "warnBlacklistIntro": { "message": "以下文件将不会自动附加：" },
+  "warnColFile": { "message": "文件" },
+  "warnColPattern": { "message": "模式" },
+  "warnOk": { "message": "确定" },
+  "uiConfirmDefaultHeader": { "message": "默认答案" },
+  "uiConfirmDefaultYes": { "message": "是" },
+  "uiConfirmDefaultNo": { "message": "否" },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
-  "githubUrl": {
-    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
-  }
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
 }

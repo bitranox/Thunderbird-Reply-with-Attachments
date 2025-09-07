@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# docs-local-deploy.sh — Build the Docusaurus site locally and deploy to gh-pages.
+#
+# Requirements:
+#   - git, rsync, bash
+#   - Node.js (>=20) + npm
+#   - npx (bundled with npm)
+#   - Repo Pages settings set to "Deploy from a branch" → branch: gh-pages, folder: / (root)
+#
+# Usage examples:
+#   scripts/docs-local-deploy.sh                   # tests, build all locales, link-check, push to origin gh-pages
+#   scripts/docs-local-deploy.sh --locales en      # faster: build only English
+#   scripts/docs-local-deploy.sh --no-test         # skip repo tests (useful for quick docs iterations)
+#   scripts/docs-local-deploy.sh --no-link-check   # skip linkinator step
+#   scripts/docs-local-deploy.sh --branch gh-pages --remote origin
+#   scripts/docs-local-deploy.sh --dry-run         # build + link-check, no push
+#
+# Options:
+#   --locales <en|all>   : Build only en or all locales (default: all)
+#   --no-test            : Skip make test at repo root (default: run tests)
+#   --no-link-check      : Skip link checking (default: run)
+#   --branch <name>      : Target branch (default: gh-pages)
+#   --remote <name>      : Remote name (default: origin)
+#   --dry-run            : Do not push to remote
+
+LOCALES=all
+RUN_TESTS=1
+LINK_CHECK=1
+BRANCH=gh-pages
+REMOTE=origin
+DRY_RUN=0
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --locales) LOCALES="${2:-all}"; shift 2;;
+    --no-test) RUN_TESTS=0; shift;;
+    --no-link-check) LINK_CHECK=0; shift;;
+    --branch) BRANCH="${2:-gh-pages}"; shift 2;;
+    --remote) REMOTE="${2:-origin}"; shift 2;;
+    --dry-run) DRY_RUN=1; shift;;
+    -h|--help)
+      sed -n '1,80p' "$0" | sed -n '1,60p'; exit 0;;
+    *) echo "Unknown option: $1"; exit 2;;
+  esac
+done
+
+echo "▶ Building docs (locales: ${LOCALES})"
+
+if [[ $RUN_TESTS -eq 1 ]]; then
+  echo "✔ Running repo tests (make test)…"
+  make test
+fi
+
+echo "✔ Installing website deps…"
+pushd website >/dev/null
+npm ci
+
+# Use the local Docusaurus binary directly to avoid PATH/.bin issues
+DOCUSAURUS_CMD="node ./node_modules/@docusaurus/core/bin/docusaurus.mjs"
+if [[ ! -f ./node_modules/@docusaurus/core/bin/docusaurus.mjs ]]; then
+  echo "✖ Docusaurus binary not found in node_modules. Did npm ci succeed?" >&2
+  exit 127
+fi
+
+if [[ "$LOCALES" == "en" ]]; then
+  echo "✔ Building Docusaurus (en)…"
+  $DOCUSAURUS_CMD build --locale en
+else
+  echo "✔ Building Docusaurus (all locales)…"
+  $DOCUSAURUS_CMD build
+fi
+
+if [[ $LINK_CHECK -eq 1 ]]; then
+  echo "✔ Running link check…"
+  rm -rf ./build-linkcheck || true
+  mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
+  rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
+  npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
+  SRV_PID=$!
+  sleep 2
+  set +e
+  npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"
+  STATUS=$?
+  kill $SRV_PID || true
+  rm -rf ./build-linkcheck || true
+  set -e
+  if [[ $STATUS -ne 0 ]]; then
+    echo "⚠ Link check reported issues (exit $STATUS). Continuing…"
+  fi
+fi
+popd >/dev/null
+
+if [[ $DRY_RUN -eq 1 ]]; then
+  echo "⏭ Dry-run: skipping deploy (build available in website/build)"
+  exit 0
+fi
+
+echo "✔ Preparing gh-pages worktree (branch: ${BRANCH}, remote: ${REMOTE})…"
+
+git fetch "$REMOTE" "$BRANCH" || true
+rm -rf .gh-pages || true
+git worktree add -B "$BRANCH" .gh-pages "${REMOTE}/${BRANCH}" 2>/dev/null || git worktree add -B "$BRANCH" .gh-pages
+
+echo "✔ Publishing build to gh-pages…"
+rsync -a --delete website/build/ .gh-pages/
+touch .gh-pages/.nojekyll
+
+pushd .gh-pages >/dev/null
+git add -A
+if git diff --cached --quiet; then
+  echo "No changes to publish." 
+else
+  TS=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+  git commit -m "docs: publish site (${LOCALES}) at ${TS}"
+  git push "$REMOTE" "$BRANCH"
+  echo "✔ Deployed to $REMOTE/$BRANCH"
+fi
+popd >/dev/null
+
+echo "Done."

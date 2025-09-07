@@ -1,8 +1,12 @@
+// VS Code workspace file for this repository.
+// Purpose: open the project as a single workspace and allow workspace-scoped
+// settings, tasks, and extension recommendations (optional for non‑VS Code users).
+// This file is ignored by most tools and does not affect builds/tests/CI.
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {}
 }

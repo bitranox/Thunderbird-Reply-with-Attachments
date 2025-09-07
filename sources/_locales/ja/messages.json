@@ -1,132 +1,56 @@
 {
-  "extName": {
-    "message": "Reply with Attachments"
-  },
-  "extDescription": {
-    "message": "Automatically include original attachments in email replies."
-  },
-  "composeTitle": {
-    "message": "Reply with Attachments"
-  },
-  "optionsTitle": {
-    "message": "Reply with Attachments — Options"
-  },
-  "confirmTitle": {
-    "message": "Confirm Attachments"
-  },
-  "uiHeader": {
-    "message": "Reply with Attachments"
-  },
-  "uiNoOptions": {
-    "message": "There are currently no options to configure."
-  },
-  "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
-  },
-  "uiDonate": {
-    "message": "Donate now"
-  },
-  "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
-  },
-  "uiGithubLinkLabel": {
-    "message": "GitHub page"
-  },
-  "iconAlt": {
-    "message": "Reply with Attachments Icon"
-  },
-  "githubAlt": {
-    "message": "GitHub"
-  },
-  "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
-  },
+  "extName": { "message": "添付ファイル付きで返信" },
+  "extDescription": { "message": "返信メールに元の添付ファイルを自動で含めます。" },
+  "composeTitle": { "message": "添付ファイル付きで返信" },
+  "optionsTitle": { "message": "添付ファイル付きで返信 — オプション" },
+  "confirmTitle": { "message": "添付ファイルの確認" },
+  "uiHeader": { "message": "添付ファイル付きで返信" },
+  "uiNoOptions": { "message": "現在、設定できるオプションはありません。" },
+  "uiSupport": { "message": "このアドオンが気に入りましたか？少額の寄付でご支援ください:" },
+  "uiDonate": { "message": "今すぐ寄付" },
+  "uiGithubText": { "message": "不具合報告やお問い合わせは私の" },
+  "uiGithubLinkLabel": { "message": "GitHub ページ" },
+  "iconAlt": { "message": "「添付ファイル付きで返信」アイコン" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ファイル名のブロックリスト（glob パターン）" },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "名前がこれらのパターンのいずれかに一致するファイルは自動的に添付されません。1 行に 1 つのパターン。例: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
-  },
-  "uiSave": {
-    "message": "Save"
-  },
-  "uiSaving": {
-    "message": "Saving…"
-  },
-  "uiReset": {
-    "message": "Reset to defaults"
-  },
-  "uiSaved": {
-    "message": "Saved."
-  },
-  "uiResetDone": {
-    "message": "Reset."
-  },
-  "uiConfirmHeader": {
-    "message": "Confirmation"
-  },
-  "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
-  },
+  "uiWarnBlacklistLabel": { "message": "ブロックリストで除外された添付ファイルを警告" },
+  "uiSave": { "message": "保存" },
+  "uiSaving": { "message": "保存中…" },
+  "uiReset": { "message": "既定値にリセット" },
+  "uiSaved": { "message": "保存しました。" },
+  "uiResetDone": { "message": "リセットしました。" },
+  "uiConfirmHeader": { "message": "確認" },
+  "uiConfirmLabel": { "message": "添付ファイルを追加する前に確認する" },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "添付ファイルが実際に追加される場合にのみ小さな確認ダイアログが表示されます。キーボード: Y または J = はい、N または Esc = いいえ。"
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
+    "message": "添付ファイルを追加: $1？",
+    "placeholders": { "1": { "content": "$1" } }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "添付ファイルを追加 ($1): $2$3？",
     "placeholders": {
-      "1": {
-        "content": "$1"
-      },
-      "2": {
-        "content": "$2"
-      },
-      "3": {
-        "content": ", +$3 more"
-      }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": "、さらに +$3 件" }
     }
   },
-  "confirmYes": {
-    "message": "Yes"
-  },
-  "confirmNo": {
-    "message": "No"
-  },
-  "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
-  },
-  "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
-  },
-  "warnColFile": {
-    "message": "File"
-  },
-  "warnColPattern": {
-    "message": "Pattern"
-  },
-  "warnOk": {
-    "message": "OK"
-  },
-  "uiConfirmDefaultHeader": {
-    "message": "Default answer"
-  },
-  "uiConfirmDefaultYes": {
-    "message": "Yes"
-  },
-  "uiConfirmDefaultNo": {
-    "message": "No"
-  },
+  "confirmYes": { "message": "はい" },
+  "confirmNo": { "message": "いいえ" },
+  "warnBlacklistTitle": { "message": "ブロックリストで除外" },
+  "warnBlacklistIntro": { "message": "次のファイルは自動で添付されません:" },
+  "warnColFile": { "message": "ファイル" },
+  "warnColPattern": { "message": "パターン" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "既定の応答" },
+  "uiConfirmDefaultYes": { "message": "はい" },
+  "uiConfirmDefaultNo": { "message": "いいえ" },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
-  "githubUrl": {
-    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
-  }
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
 }

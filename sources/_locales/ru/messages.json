@@ -1,132 +1,56 @@
 {
-  "extName": {
-    "message": "Reply with Attachments"
-  },
-  "extDescription": {
-    "message": "Automatically include original attachments in email replies."
-  },
-  "composeTitle": {
-    "message": "Reply with Attachments"
-  },
-  "optionsTitle": {
-    "message": "Reply with Attachments — Options"
-  },
-  "confirmTitle": {
-    "message": "Confirm Attachments"
-  },
-  "uiHeader": {
-    "message": "Reply with Attachments"
-  },
-  "uiNoOptions": {
-    "message": "There are currently no options to configure."
-  },
-  "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
-  },
-  "uiDonate": {
-    "message": "Donate now"
-  },
-  "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
-  },
-  "uiGithubLinkLabel": {
-    "message": "GitHub page"
-  },
-  "iconAlt": {
-    "message": "Reply with Attachments Icon"
-  },
-  "githubAlt": {
-    "message": "GitHub"
-  },
-  "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
-  },
+  "extName": { "message": "Ответ с вложениями" },
+  "extDescription": { "message": "Автоматически добавляет исходные вложения в ответы." },
+  "composeTitle": { "message": "Ответ с вложениями" },
+  "optionsTitle": { "message": "Ответ с вложениями — параметры" },
+  "confirmTitle": { "message": "Подтвердить вложения" },
+  "uiHeader": { "message": "Ответ с вложениями" },
+  "uiNoOptions": { "message": "В настоящее время нет параметров для настройки." },
+  "uiSupport": { "message": "Вам нравится это дополнение? Поддержите меня небольшим взносом:" },
+  "uiDonate": { "message": "Пожертвовать" },
+  "uiGithubText": { "message": "Для сообщений об ошибках и других вопросов посетите" },
+  "uiGithubLinkLabel": { "message": "мою страницу на GitHub" },
+  "iconAlt": { "message": "Значок «Ответ с вложениями»" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Список исключений имён файлов (шаблоны glob)" },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "Файлы, имя которых соответствует любому из этих шаблонов, не будут добавляться автоматически. Один шаблон на строку. Примеры: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
-  },
-  "uiSave": {
-    "message": "Save"
-  },
-  "uiSaving": {
-    "message": "Saving…"
-  },
-  "uiReset": {
-    "message": "Reset to defaults"
-  },
-  "uiSaved": {
-    "message": "Saved."
-  },
-  "uiResetDone": {
-    "message": "Reset."
-  },
-  "uiConfirmHeader": {
-    "message": "Confirmation"
-  },
-  "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
-  },
+  "uiWarnBlacklistLabel": { "message": "Предупреждать, если вложения исключены списком" },
+  "uiSave": { "message": "Сохранить" },
+  "uiSaving": { "message": "Сохранение…" },
+  "uiReset": { "message": "Сбросить по умолчанию" },
+  "uiSaved": { "message": "Сохранено." },
+  "uiResetDone": { "message": "Сброшено." },
+  "uiConfirmHeader": { "message": "Подтверждение" },
+  "uiConfirmLabel": { "message": "Спрашивать перед добавлением вложений" },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "Небольшое окно подтверждения появляется только когда вложения действительно будут добавлены. Клавиатура: Y или J = Да; N или Esc = Нет."
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
+    "message": "Добавить вложение: $1?",
+    "placeholders": { "1": { "content": "$1" } }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "Добавить вложения ($1): $2$3?",
     "placeholders": {
-      "1": {
-        "content": "$1"
-      },
-      "2": {
-        "content": "$2"
-      },
-      "3": {
-        "content": ", +$3 more"
-      }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ещё" }
     }
   },
-  "confirmYes": {
-    "message": "Yes"
-  },
-  "confirmNo": {
-    "message": "No"
-  },
-  "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
-  },
-  "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
-  },
-  "warnColFile": {
-    "message": "File"
-  },
-  "warnColPattern": {
-    "message": "Pattern"
-  },
-  "warnOk": {
-    "message": "OK"
-  },
-  "uiConfirmDefaultHeader": {
-    "message": "Default answer"
-  },
-  "uiConfirmDefaultYes": {
-    "message": "Yes"
-  },
-  "uiConfirmDefaultNo": {
-    "message": "No"
-  },
+  "confirmYes": { "message": "Да" },
+  "confirmNo": { "message": "Нет" },
+  "warnBlacklistTitle": { "message": "Исключено списком" },
+  "warnBlacklistIntro": { "message": "Следующие файлы не будут добавлены автоматически:" },
+  "warnColFile": { "message": "Файл" },
+  "warnColPattern": { "message": "Шаблон" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Ответ по умолчанию" },
+  "uiConfirmDefaultYes": { "message": "Да" },
+  "uiConfirmDefaultNo": { "message": "Нет" },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
-  "githubUrl": {
-    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
-  }
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
 }

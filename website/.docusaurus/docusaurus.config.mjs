@@ -7,7 +7,7 @@ export default {
   "title": "Reply with Attachments",
   "tagline": "Thunderbird Add-on: Reply including original attachments",
   "url": "https://bitranox.github.io",
-  "baseUrl": "/Thunderbird-Reply-with-Attachments/om/",
+  "baseUrl": "/Thunderbird-Reply-with-Attachments/",
   "organizationName": "bitranox",
   "projectName": "Thunderbird-Reply-with-Attachments",
   "onBrokenLinks": "warn",

@@ -1,132 +1,56 @@
 {
-  "extName": {
-    "message": "Reply with Attachments"
-  },
-  "extDescription": {
-    "message": "Automatically include original attachments in email replies."
-  },
-  "composeTitle": {
-    "message": "Reply with Attachments"
-  },
-  "optionsTitle": {
-    "message": "Reply with Attachments — Options"
-  },
-  "confirmTitle": {
-    "message": "Confirm Attachments"
-  },
-  "uiHeader": {
-    "message": "Reply with Attachments"
-  },
-  "uiNoOptions": {
-    "message": "There are currently no options to configure."
-  },
-  "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
-  },
-  "uiDonate": {
-    "message": "Donate now"
-  },
-  "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
-  },
-  "uiGithubLinkLabel": {
-    "message": "GitHub page"
-  },
-  "iconAlt": {
-    "message": "Reply with Attachments Icon"
-  },
-  "githubAlt": {
-    "message": "GitHub"
-  },
-  "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
-  },
+  "extName": { "message": "Responder com anexos" },
+  "extDescription": { "message": "Inclui automaticamente os anexos originais nas respostas." },
+  "composeTitle": { "message": "Responder com anexos" },
+  "optionsTitle": { "message": "Responder com anexos — Opções" },
+  "confirmTitle": { "message": "Confirmar anexos" },
+  "uiHeader": { "message": "Responder com anexos" },
+  "uiNoOptions": { "message": "No momento não há opções para configurar." },
+  "uiSupport": { "message": "Gosta deste complemento? Apoie‑me com uma pequena contribuição:" },
+  "uiDonate": { "message": "Doar agora" },
+  "uiGithubText": { "message": "Para relatar erros ou outras dúvidas, visite a minha" },
+  "uiGithubLinkLabel": { "message": "página no GitHub" },
+  "iconAlt": { "message": "Ícone Responder com anexos" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Lista de exclusão de nomes de arquivos (padrões glob)" },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "Arquivos cujos nomes correspondam a qualquer destes padrões não serão anexados automaticamente. Um padrão por linha. Exemplos: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
-  },
-  "uiSave": {
-    "message": "Save"
-  },
-  "uiSaving": {
-    "message": "Saving…"
-  },
-  "uiReset": {
-    "message": "Reset to defaults"
-  },
-  "uiSaved": {
-    "message": "Saved."
-  },
-  "uiResetDone": {
-    "message": "Reset."
-  },
-  "uiConfirmHeader": {
-    "message": "Confirmation"
-  },
-  "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
-  },
+  "uiWarnBlacklistLabel": { "message": "Avisar se anexos forem excluídos pela lista" },
+  "uiSave": { "message": "Salvar" },
+  "uiSaving": { "message": "Salvando…" },
+  "uiReset": { "message": "Restaurar padrões" },
+  "uiSaved": { "message": "Salvo." },
+  "uiResetDone": { "message": "Restaurado." },
+  "uiConfirmHeader": { "message": "Confirmação" },
+  "uiConfirmLabel": { "message": "Perguntar antes de adicionar anexos" },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "Uma pequena janela de confirmação aparece apenas quando anexos realmente serão adicionados. Teclado: Y ou J = Sim; N ou Esc = Não."
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
-    "placeholders": {
-      "1": {
-        "content": "$1"
-      }
-    }
+    "message": "Adicionar anexo: $1?",
+    "placeholders": { "1": { "content": "$1" } }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "Adicionar anexos ($1): $2$3?",
     "placeholders": {
-      "1": {
-        "content": "$1"
-      },
-      "2": {
-        "content": "$2"
-      },
-      "3": {
-        "content": ", +$3 more"
-      }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 a mais" }
     }
   },
-  "confirmYes": {
-    "message": "Yes"
-  },
-  "confirmNo": {
-    "message": "No"
-  },
-  "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
-  },
-  "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
-  },
-  "warnColFile": {
-    "message": "File"
-  },
-  "warnColPattern": {
-    "message": "Pattern"
-  },
-  "warnOk": {
-    "message": "OK"
-  },
-  "uiConfirmDefaultHeader": {
-    "message": "Default answer"
-  },
-  "uiConfirmDefaultYes": {
-    "message": "Yes"
-  },
-  "uiConfirmDefaultNo": {
-    "message": "No"
-  },
+  "confirmYes": { "message": "Sim" },
+  "confirmNo": { "message": "Não" },
+  "warnBlacklistTitle": { "message": "Excluídos pela lista" },
+  "warnBlacklistIntro": { "message": "Os seguintes arquivos não serão anexados automaticamente:" },
+  "warnColFile": { "message": "Arquivo" },
+  "warnColPattern": { "message": "Padrão" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Resposta padrão" },
+  "uiConfirmDefaultYes": { "message": "Sim" },
+  "uiConfirmDefaultNo": { "message": "Não" },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
-  "githubUrl": {
-    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
-  }
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
 }

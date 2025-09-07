@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "description": "Massive language support, thanks to AI translation tools — covering 100 languages.",
   "source": "@site/docs/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
