@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "استعمال",
+  "description": "استعمال",
+  "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "استعمال",
+    "sidebar_label": "استعمال"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "تشکیل",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/configuration"
+  },
+  "next": {
+    "title": "مطابقت",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/compatibility"
+  }
+}

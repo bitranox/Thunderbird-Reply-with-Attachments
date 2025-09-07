@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "Hỗ trợ",
+  "description": "Cần trợ giúp hoặc muốn báo lỗi?",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "Hỗ trợ",
+    "sidebar_label": "Hỗ trợ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Thuật ngữ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/glossary"
+  },
+  "next": {
+    "title": "Quyền riêng tư",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/privacy"
+  }
+}

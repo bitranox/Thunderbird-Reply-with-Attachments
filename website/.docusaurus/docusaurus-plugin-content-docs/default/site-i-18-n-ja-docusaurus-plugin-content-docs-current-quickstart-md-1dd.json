@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "クイックスタート",
+  "description": "1. Thunderbird Add‑ons からアドオンをインストールします。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "クイックスタート",
+    "sidebar_label": "クイックスタート"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "機能",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/features"
+  },
+  "next": {
+    "title": "インストール",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/install"
+  }
+}

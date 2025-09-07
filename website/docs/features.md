@@ -12,7 +12,7 @@ sidebar_label: Features
   - added only after confirmation (a small, accessible dialog). In Options you
     can enable the confirmation and choose the default answer (Yes/No).
 - Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*.png`, `smime.*`, `*.p7s`.
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
   Matching is case‑insensitive and checks the filename only; provide one pattern
   per line in Options.
 - Blacklist warning (optional, enabled by default): when files are excluded by your

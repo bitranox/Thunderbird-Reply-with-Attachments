@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Tontu ak njontu yi" },
+  "extDescription": { "message": "Yokk na boppam njontu yu njëkk ci tontu i‑meel yi." },
+  "composeTitle": { "message": "Tontu ak njontu yi" },
+  "optionsTitle": { "message": "Tontu ak njontu yi — Tànneef yi" },
+  "confirmTitle": { "message": "Dëggal njontu yi" },
+  "uiHeader": { "message": "Tontu ak njontu yi" },
+  "uiNoOptions": { "message": "Amul tànneef ci jamono jii." },
+  "uiSupport": {
+    "message": "Ndax bëgg nga luy mottali bii? Tànn naa la nga dimbali ci ndimbal bu ndaw:"
+  },
+  "uiDonate": { "message": "Joxe ndimbal leegi" },
+  "uiGithubText": { "message": "Ngir jox xibaari njumte walla laaj yu wuute, nga dem sama" },
+  "uiGithubLinkLabel": { "message": "xët GitHub" },
+  "iconAlt": { "message": "Màndarga Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Benn bant bu ñu tëye turu dencukaayi (màndarga glob)" },
+  "uiBlacklistHelp": {
+    "message": "Dencukaay yu turam yaaj na ci benn mooy lii doonte du yokk boppam. Benn mẫu ci benn rëdd. Misaal: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Artu bu njontu yi dëppee ci bant bi tëyee" },
+  "uiSave": { "message": "Aar" },
+  "uiSaving": { "message": "Mi aar…" },
+  "uiReset": { "message": "Dellusi ci ndigal" },
+  "uiSaved": { "message": "Aaru na." },
+  "uiResetDone": { "message": "Dellu na." },
+  "uiConfirmHeader": { "message": "Dëggal" },
+  "uiConfirmLabel": { "message": "Laaj laata ñu yokk njontu yi" },
+  "uiConfirmHelp": {
+    "message": "Ndombo bu ndaw bu dëggal day feeñ tekki bu ñuy yokk njontu yi dëgg dëgg. Taabal: Y walla J = Waaw; N walla Esc = Déedéet."
+  },
+  "confirmAddOne": {
+    "message": "Yokk njontu bi: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Yokk njontu yi ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 yu gën" }
+    }
+  },
+  "confirmYes": { "message": "Waaw" },
+  "confirmNo": { "message": "Déedéet" },
+  "warnBlacklistTitle": { "message": "Dëppoon na ko bant bi tëyee" },
+  "warnBlacklistIntro": { "message": "Dencukaayi ci suuf yi du ñuy yokk boppam boppam:" },
+  "warnColFile": { "message": "Dencukaay" },
+  "warnColPattern": { "message": "Màndarga" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Tontu bu ndaw" },
+  "uiConfirmDefaultYes": { "message": "Waaw" },
+  "uiConfirmDefaultNo": { "message": "Déedéet" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

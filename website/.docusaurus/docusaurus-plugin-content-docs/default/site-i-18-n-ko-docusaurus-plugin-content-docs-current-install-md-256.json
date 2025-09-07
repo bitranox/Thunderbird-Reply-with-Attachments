@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "설치",
+  "description": "설치 — Thunderbird 내(권장)",
+  "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "설치",
+    "slug": "/install",
+    "sidebar_label": "설치"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "빠른 시작",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/quickstart"
+  },
+  "next": {
+    "title": "구성",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/configuration"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "Pembangunan",
+  "description": "Panduan Pembangunan",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "Pembangunan",
+    "sidebar_label": "Pembangunan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Keizinan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/permissions"
+  },
+  "next": {
+    "title": "Bahasa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/languages"
+  }
+}

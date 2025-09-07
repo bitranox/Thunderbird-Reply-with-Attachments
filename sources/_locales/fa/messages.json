@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "پاسخ با پیوست‌ها" },
+  "extDescription": { "message": "پیوست‌های اصلی را به‌صورت خودکار در پاسخ‌های ایمیل درج کنید." },
+  "composeTitle": { "message": "پاسخ با پیوست‌ها" },
+  "optionsTitle": { "message": "پاسخ با پیوست‌ها — تنظیمات" },
+  "confirmTitle": { "message": "تأیید پیوست‌ها" },
+  "uiHeader": { "message": "پاسخ با پیوست‌ها" },
+  "uiNoOptions": { "message": "در حال حاضر گزینه‌ای برای پیکربندی وجود ندارد." },
+  "uiSupport": { "message": "این افزونه را می‌پسندید؟ با یک کمک کوچک از من حمایت کنید:" },
+  "uiDonate": { "message": "همین حالا کمک کنید" },
+  "uiGithubText": { "message": "برای گزارش باگ یا سایر پرسش‌ها، لطفاً به" },
+  "uiGithubLinkLabel": { "message": "صفحه GitHub من" },
+  "iconAlt": { "message": "نماد Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "فهرست سیاه نام فایل‌ها (الگوهای glob)" },
+  "uiBlacklistHelp": {
+    "message": "فایل‌هایی که با هر یک از این الگوها مطابقت داشته باشند هرگز به صورت خودکار پیوست نخواهند شد. هر خط یک الگو. مثال‌ها: *.png، ‎smime.*‎، ‎*.p7s‎"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "اگر پیوست‌ها به‌دلیل فهرست سیاه کنار گذاشته شدند هشدار بده"
+  },
+  "uiSave": { "message": "ذخیره" },
+  "uiSaving": { "message": "در حال ذخیره…" },
+  "uiReset": { "message": "بازگردانی به پیش‌فرض‌ها" },
+  "uiSaved": { "message": "ذخیره شد." },
+  "uiResetDone": { "message": "بازگردانی شد." },
+  "uiConfirmHeader": { "message": "تأیید" },
+  "uiConfirmLabel": { "message": "قبل از افزودن پیوست‌ها بپرس" },
+  "uiConfirmHelp": {
+    "message": "گفت‌وگوی تأیید کوچک فقط زمانی ظاهر می‌شود که واقعاً پیوست‌ها افزوده شوند. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
+  },
+  "confirmAddOne": {
+    "message": "پیوست افزوده شود: $1؟",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "پیوست‌ها افزوده شوند ($1): $2$3؟",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "بله" },
+  "confirmNo": { "message": "خیر" },
+  "warnBlacklistTitle": { "message": "به‌دلیل فهرست سیاه کنار گذاشته شد" },
+  "warnBlacklistIntro": { "message": "فایل‌های زیر به‌صورت خودکار پیوست نخواهند شد:" },
+  "warnColFile": { "message": "فایل" },
+  "warnColPattern": { "message": "الگو" },
+  "warnOk": { "message": "باشه" },
+  "uiConfirmDefaultHeader": { "message": "پاسخ پیش‌فرض" },
+  "uiConfirmDefaultYes": { "message": "بله" },
+  "uiConfirmDefaultNo": { "message": "خیر" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

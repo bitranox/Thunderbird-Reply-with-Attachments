@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "सुसंगतता",
+  "description": "सुसंगतता",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "सुसंगतता",
+    "sidebar_label": "सुसंगतता"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "वापर",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/usage"
+  },
+  "next": {
+    "title": "परवानग्या",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/permissions"
+  }
+}

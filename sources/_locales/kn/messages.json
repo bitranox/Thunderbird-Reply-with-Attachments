@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರ" },
+  "extDescription": {
+    "message": "ಇಮೇಲ್ ಪ್ರತಿಕ್ರಿಯೆಗಳಲ್ಲಿ ಮೂಲ ಲಗತ್ತುಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸುತ್ತದೆ."
+  },
+  "composeTitle": { "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರ" },
+  "optionsTitle": { "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರ — ಆಯ್ಕೆಗಳು" },
+  "confirmTitle": { "message": "ಲಗತ್ತುಗಳನ್ನು ದೃಢೀಕರಿಸಿ" },
+  "uiHeader": { "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರ" },
+  "uiNoOptions": { "message": "ಪ್ರಸ್ತುತ ಸಂರಚಿಸಲು ಯಾವುದೇ ಆಯ್ಕೆಗಳು ಇಲ್ಲ." },
+  "uiSupport": { "message": "ಈ ಅಡ್ಒನ್ ಇಷ್ಟವೇ? ಸಣ್ಣ ಕೊಡುಗೆಯಿಂದ ಬೆಂಬಲಿಸಿ:" },
+  "uiDonate": { "message": "ಈಗ ದೇಣಿಗೆ ನೀಡಿ" },
+  "uiGithubText": { "message": "ಬಗ್ ವರದಿ ಅಥವಾ ಇತರ ಪ್ರಶ್ನೆಗಳಿಗೆ, ದಯವಿಟ್ಟು ನನ್ನ" },
+  "uiGithubLinkLabel": { "message": "GitHub ಪುಟ" },
+  "iconAlt": { "message": "Reply with Attachments ಚಿಹ್ನೆ" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ಕಡತಹೆಸರುಗಳ ಕಪ್ಪುಪಟ್ಟಿ (glob ಮಾದರಿಗಳು)" },
+  "uiBlacklistHelp": {
+    "message": "ಈ ಮಾದರಿಗಳಲ್ಲಿ ಯಾವುದಕ್ಕೂ ಹೊಂದುವ ಕಡತಗಳನ್ನು ಎಂದಿಗೂ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ. ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ಮಾದರಿ. ಉದಾಹರಣೆಗಳು: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಹೊರಗಿಡಲಾದರೆ ಎಚ್ಚರಿಸು" },
+  "uiSave": { "message": "ಉಳಿಸಿ" },
+  "uiSaving": { "message": "ಉಳಿಸುತ್ತಿದೆ…" },
+  "uiReset": { "message": "ಪೂರ್ವನಿಯೋಗಕ್ಕೆ ಮರುಹೊಂದಿಸಿ" },
+  "uiSaved": { "message": "ಉಳಿಸಲಾಗಿದೆ." },
+  "uiResetDone": { "message": "ಮರುಹೊಂದಿಸಲಾಗಿದೆ." },
+  "uiConfirmHeader": { "message": "ದೃಢೀಕರಣ" },
+  "uiConfirmLabel": { "message": "ಲಗತ್ತನ್ನು ಸೇರಿಸುವ ಮೊದಲು ಕೇಳು" },
+  "uiConfirmHelp": {
+    "message": "ವಾಸ್ತವವಾಗಿ ಲಗತ್ತನ್ನು ಸೇರಿಸುವಾಗ ಮಾತ್ರ ಒಂದು ಚಿಕ್ಕ ದೃಢೀಕರಣ ಸಂವಾದ ಕಾಣಿಸುತ್ತದೆ. ಕೀಬೋರ್ಡ್: Y ಅಥವಾ J = ಹೌದು; N ಅಥವಾ Esc = ಇಲ್ಲ."
+  },
+  "confirmAddOne": {
+    "message": "ಲಗತ್ತನ್ನು ಸೇರಿಸಬೇಕೇ: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸಬೇಕೇ ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ಮತ್ತಷ್ಟು" }
+    }
+  },
+  "confirmYes": { "message": "ಹೌದು" },
+  "confirmNo": { "message": "ಇಲ್ಲ" },
+  "warnBlacklistTitle": { "message": "ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಹೊರಗಿಡಲಾಗಿದೆ" },
+  "warnBlacklistIntro": { "message": "ಕೆಳಗಿನ ಕಡತಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ:" },
+  "warnColFile": { "message": "ಕಡತ" },
+  "warnColPattern": { "message": "ಮಾದರಿ" },
+  "warnOk": { "message": "ಸರಿ" },
+  "uiConfirmDefaultHeader": { "message": "ಪೂರ್ವನಿಯೋಜಿತ ಉತ್ತರ" },
+  "uiConfirmDefaultYes": { "message": "ಹೌದು" },
+  "uiConfirmDefaultNo": { "message": "ಇಲ್ಲ" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

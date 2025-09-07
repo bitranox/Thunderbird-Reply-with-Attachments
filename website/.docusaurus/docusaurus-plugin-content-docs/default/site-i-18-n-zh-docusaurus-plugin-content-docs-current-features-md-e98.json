@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "功能",
+  "description": "功能",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "功能",
+    "sidebar_label": "功能"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "快速开始",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/quickstart"
+  }
+}

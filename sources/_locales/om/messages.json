@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Deebii waliin maxxansaawwan" },
+  "extDescription": {
+    "message": "Maxxansaawwan duraanii deebii imeelii keessatti of‑eeggannoo malee ida'a."
+  },
+  "composeTitle": { "message": "Deebii waliin maxxansaawwan" },
+  "optionsTitle": { "message": "Deebii waliin maxxansaawwan — Filannoo" },
+  "confirmTitle": { "message": "Maxxansaawwan mirkaneessi" },
+  "uiHeader": { "message": "Deebii waliin maxxansaawwan" },
+  "uiNoOptions": { "message": "Ammaaf filannoo qindeessu hin jiru." },
+  "uiSupport": { "message": "Add‑on kana jaallatta? Deeggarsa xiqqoo godhi:" },
+  "uiDonate": { "message": "Amma kenni" },
+  "uiGithubText": { "message": "Dogoggora gabaasuuf yookaan gaaffiiwwan biroo, fuula koo" },
+  "uiGithubLinkLabel": { "message": "GitHub daawwadhu" },
+  "iconAlt": { "message": "Ikoonii Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Tarree gurraacha maqaa faayilii (pattern glob)" },
+  "uiBlacklistHelp": {
+    "message": "Faayilota maqaan isaanii pattern kana keessaa kamiyyuu waliin yoo walsimu, ofumaan hin ida'aman. Patrootiin tokko sarara tokko irratti. Fakkeenya: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Maxxansaawwan tarree gurraachaatiin baafaman yoo jiraatan akeeki"
+  },
+  "uiSave": { "message": "Kuusi" },
+  "uiSaving": { "message": "Kuusaa jira…" },
+  "uiReset": { "message": "Deebisi gara duraanii" },
+  "uiSaved": { "message": "Kuufame." },
+  "uiResetDone": { "message": "Deebifame." },
+  "uiConfirmHeader": { "message": "Mirkaneessa" },
+  "uiConfirmLabel": { "message": "Maxxansaawwan dabaluu dura gaafadhu" },
+  "uiConfirmHelp": {
+    "message": "Sanduuqa xixiqqaan mirkaneessaa mul'ata yeroo maxxansaawwan dhugumaan dabalaman qofa. Kiiboordii: Y yookaan J = Eeyyee; N yookaan Esc = Lakki."
+  },
+  "confirmAddOne": {
+    "message": "Maxxansa dabaluu: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Maxxansaawwan dabaluu ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 dabalataa" }
+    }
+  },
+  "confirmYes": { "message": "Eeyyee" },
+  "confirmNo": { "message": "Lakki" },
+  "warnBlacklistTitle": { "message": "Tarree gurraachaatiin haquame" },
+  "warnBlacklistIntro": { "message": "Faayilota armaan gadii ofumaan hin ida'aman:" },
+  "warnColFile": { "message": "Faayilii" },
+  "warnColPattern": { "message": "Pattern" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Deebii duraanii" },
+  "uiConfirmDefaultYes": { "message": "Eeyyee" },
+  "uiConfirmDefaultNo": { "message": "Lakki" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

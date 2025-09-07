@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Pindura nezvakabatanidzwa" },
+  "extDescription": {
+    "message": "Inowedzera otomatiki zvinyorwa zvakatangira mumhinduro dze e‑mail."
+  },
+  "composeTitle": { "message": "Pindura nezvakabatanidzwa" },
+  "optionsTitle": { "message": "Pindura nezvakabatanidzwa — Zvirongwa" },
+  "confirmTitle": { "message": "Simbisa zvabatanidzwa" },
+  "uiHeader": { "message": "Pindura nezvakabatanidzwa" },
+  "uiNoOptions": { "message": "Parizvino hapana zviripo zvekugadzirisa." },
+  "uiSupport": { "message": "Unozvida here ichi chinowedzera? Tsigira nechipo chidiki:" },
+  "uiDonate": { "message": "Pa ipa zvino" },
+  "uiGithubText": { "message": "Kuti utaure nezvemakanganiso kana mimwe mibvunzo, ndapota shanya" },
+  "uiGithubLinkLabel": { "message": "peji rangu re GitHub" },
+  "iconAlt": { "message": "Chiratidzo che Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Rondedzero dema yemazita emafaira (mapatani e glob)" },
+  "uiBlacklistHelp": {
+    "message": "Mafaira anoenderana neimwe yemapatani aya haazombobatanidzwa otomatiki. Pati rimwe pamutsetse. Mienzaniso: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Yambira kana zvabatanidzwa zvabviswa nerondedzero dema" },
+  "uiSave": { "message": "Chengetedza" },
+  "uiSaving": { "message": "Kuchengetedza…" },
+  "uiReset": { "message": "Dzorerazve kune zvekutanga" },
+  "uiSaved": { "message": "Zachengetedzwa." },
+  "uiResetDone": { "message": "Zvadzorerwa." },
+  "uiConfirmHeader": { "message": "Kusimbisa" },
+  "uiConfirmLabel": { "message": "Bvunza usati wawedzera zvabatanidzwa" },
+  "uiConfirmHelp": {
+    "message": "Bhokisi diki rekusimbisa rinongobuda kana chaizvo pane kuwedzera zvabatanidzwa. Keyboard: Y kana J = Ehe; N kana Esc = Kwete."
+  },
+  "confirmAddOne": {
+    "message": "Wedzera chibatanidzwa: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Wedzera zvabatanidzwa ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 zvimwe" }
+    }
+  },
+  "confirmYes": { "message": "Ehe" },
+  "confirmNo": { "message": "Kwete" },
+  "warnBlacklistTitle": { "message": "Zabviswa nerondedzero dema" },
+  "warnBlacklistIntro": { "message": "Mafaira anotevera haazobatanidzwi otomatiki:" },
+  "warnColFile": { "message": "Faira" },
+  "warnColPattern": { "message": "Patan" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Mhinduro yekutanga" },
+  "uiConfirmDefaultYes": { "message": "Ehe" },
+  "uiConfirmDefaultNo": { "message": "Kwete" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

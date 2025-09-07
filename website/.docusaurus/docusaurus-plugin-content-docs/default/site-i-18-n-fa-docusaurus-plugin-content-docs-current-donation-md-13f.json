@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "کمک مالی",
+  "description": "اگر Reply with Attachments را می‌پسندید و می‌خواهید از توسعه آن حمایت کنید، می‌توانید از این‌جا کمک مالی کنید:",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "کمک مالی",
+    "sidebar_label": "کمک مالی"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "حریم خصوصی",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/privacy"
+  },
+  "next": {
+    "title": "مجوز",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/licence"
+  }
+}

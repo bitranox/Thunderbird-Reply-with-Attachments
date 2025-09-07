@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n 术语表",
+  "description": "在附加组件 UI 与文档中使用的规范术语。请根据这些术语在各语言中保持一致的翻译。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n 术语表",
+    "sidebar_label": "术语表"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "语言",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/languages"
+  },
+  "next": {
+    "title": "支持",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/support"
+  }
+}

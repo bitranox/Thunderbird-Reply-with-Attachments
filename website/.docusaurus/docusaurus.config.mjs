@@ -7,7 +7,7 @@ export default {
   "title": "Reply with Attachments",
   "tagline": "Thunderbird Add-on: Reply including original attachments",
   "url": "https://bitranox.github.io",
-  "baseUrl": "/Thunderbird-Reply-with-Attachments/de/",
+  "baseUrl": "/Thunderbird-Reply-with-Attachments/om/",
   "organizationName": "bitranox",
   "projectName": "Thunderbird-Reply-with-Attachments",
   "onBrokenLinks": "warn",
@@ -17,15 +17,507 @@ export default {
     "defaultLocale": "en",
     "locales": [
       "en",
-      "de"
+      "zh",
+      "hi",
+      "es",
+      "ar",
+      "fr",
+      "bn",
+      "pt",
+      "ru",
+      "id",
+      "ur",
+      "de",
+      "ja",
+      "pa",
+      "jv",
+      "ms",
+      "te",
+      "vi",
+      "ko",
+      "mr",
+      "ta",
+      "tr",
+      "it",
+      "th",
+      "gu",
+      "fa",
+      "pl",
+      "ps",
+      "kn",
+      "ml",
+      "or",
+      "my",
+      "uk",
+      "ro",
+      "nl",
+      "ha",
+      "sw",
+      "am",
+      "hu",
+      "az",
+      "uz",
+      "sd",
+      "he",
+      "el",
+      "cs",
+      "sv",
+      "bg",
+      "da",
+      "fi",
+      "no",
+      "sk",
+      "sr",
+      "hr",
+      "bs",
+      "sl",
+      "lt",
+      "lv",
+      "et",
+      "hy",
+      "ka",
+      "kk",
+      "ky",
+      "tg",
+      "tk",
+      "ne",
+      "si",
+      "km",
+      "lo",
+      "mn",
+      "su",
+      "yo",
+      "ig",
+      "om",
+      "zu",
+      "xh",
+      "af",
+      "so",
+      "rw",
+      "rn",
+      "ln",
+      "sn",
+      "ak",
+      "ff",
+      "bm",
+      "ny",
+      "ti",
+      "ug",
+      "ks",
+      "as",
+      "tl",
+      "ca",
+      "be",
+      "sq",
+      "qu",
+      "ht",
+      "mg",
+      "ku",
+      "wo",
+      "ga",
+      "is"
     ],
     "localeConfigs": {
       "en": {
         "label": "English",
+        "htmlLang": "en-US",
         "direction": "ltr"
+      },
+      "zh": {
+        "htmlLang": "zh",
+        "direction": "ltr"
+      },
+      "hi": {
+        "htmlLang": "hi-IN",
+        "direction": "ltr"
+      },
+      "es": {
+        "htmlLang": "es-ES",
+        "direction": "ltr"
+      },
+      "ar": {
+        "htmlLang": "ar",
+        "direction": "rtl"
+      },
+      "fr": {
+        "htmlLang": "fr-FR",
+        "direction": "ltr"
+      },
+      "bn": {
+        "htmlLang": "bn-BD",
+        "direction": "ltr"
+      },
+      "pt": {
+        "htmlLang": "pt-PT",
+        "direction": "ltr"
+      },
+      "ru": {
+        "htmlLang": "ru-RU",
+        "direction": "ltr"
+      },
+      "id": {
+        "htmlLang": "id-ID",
+        "direction": "ltr"
+      },
+      "ur": {
+        "htmlLang": "ur-PK",
+        "direction": "rtl"
       },
       "de": {
         "label": "Deutsch",
+        "htmlLang": "de-DE",
+        "direction": "ltr"
+      },
+      "ja": {
+        "htmlLang": "ja-JP",
+        "direction": "ltr"
+      },
+      "pa": {
+        "htmlLang": "pa-IN",
+        "direction": "ltr"
+      },
+      "jv": {
+        "htmlLang": "jv-ID",
+        "direction": "ltr"
+      },
+      "ms": {
+        "htmlLang": "ms-MY",
+        "direction": "ltr"
+      },
+      "te": {
+        "htmlLang": "te-IN",
+        "direction": "ltr"
+      },
+      "vi": {
+        "htmlLang": "vi-VN",
+        "direction": "ltr"
+      },
+      "ko": {
+        "htmlLang": "ko-KR",
+        "direction": "ltr"
+      },
+      "mr": {
+        "htmlLang": "mr-IN",
+        "direction": "ltr"
+      },
+      "ta": {
+        "htmlLang": "ta-IN",
+        "direction": "ltr"
+      },
+      "tr": {
+        "htmlLang": "tr-TR",
+        "direction": "ltr"
+      },
+      "it": {
+        "htmlLang": "it-IT",
+        "direction": "ltr"
+      },
+      "th": {
+        "htmlLang": "th-TH",
+        "direction": "ltr"
+      },
+      "gu": {
+        "htmlLang": "gu-IN",
+        "direction": "ltr"
+      },
+      "fa": {
+        "htmlLang": "fa-IR",
+        "direction": "rtl"
+      },
+      "pl": {
+        "htmlLang": "pl-PL",
+        "direction": "ltr"
+      },
+      "ps": {
+        "htmlLang": "ps-AF",
+        "direction": "rtl"
+      },
+      "kn": {
+        "htmlLang": "kn-IN",
+        "direction": "ltr"
+      },
+      "ml": {
+        "htmlLang": "ml-IN",
+        "direction": "ltr"
+      },
+      "or": {
+        "htmlLang": "or-IN",
+        "direction": "ltr"
+      },
+      "my": {
+        "htmlLang": "my-MM",
+        "direction": "ltr"
+      },
+      "uk": {
+        "htmlLang": "uk-UA",
+        "direction": "ltr"
+      },
+      "ro": {
+        "htmlLang": "ro-RO",
+        "direction": "ltr"
+      },
+      "nl": {
+        "htmlLang": "nl-NL",
+        "direction": "ltr"
+      },
+      "ha": {
+        "htmlLang": "ha-NG",
+        "direction": "ltr"
+      },
+      "sw": {
+        "htmlLang": "sw-TZ",
+        "direction": "ltr"
+      },
+      "am": {
+        "htmlLang": "am-ET",
+        "direction": "ltr"
+      },
+      "hu": {
+        "htmlLang": "hu-HU",
+        "direction": "ltr"
+      },
+      "az": {
+        "htmlLang": "az-AZ",
+        "direction": "ltr"
+      },
+      "uz": {
+        "htmlLang": "uz-UZ",
+        "direction": "ltr"
+      },
+      "sd": {
+        "htmlLang": "sd-PK",
+        "direction": "rtl"
+      },
+      "he": {
+        "htmlLang": "he-IL",
+        "direction": "rtl"
+      },
+      "el": {
+        "htmlLang": "el-GR",
+        "direction": "ltr"
+      },
+      "cs": {
+        "htmlLang": "cs-CZ",
+        "direction": "ltr"
+      },
+      "sv": {
+        "htmlLang": "sv-SE",
+        "direction": "ltr"
+      },
+      "bg": {
+        "htmlLang": "bg-BG",
+        "direction": "ltr"
+      },
+      "da": {
+        "htmlLang": "da-DK",
+        "direction": "ltr"
+      },
+      "fi": {
+        "htmlLang": "fi-FI",
+        "direction": "ltr"
+      },
+      "no": {
+        "htmlLang": "no-NO",
+        "direction": "ltr"
+      },
+      "sk": {
+        "htmlLang": "sk-SK",
+        "direction": "ltr"
+      },
+      "sr": {
+        "htmlLang": "sr-RS",
+        "direction": "ltr"
+      },
+      "hr": {
+        "htmlLang": "hr-HR",
+        "direction": "ltr"
+      },
+      "bs": {
+        "htmlLang": "bs-BA",
+        "direction": "ltr"
+      },
+      "sl": {
+        "htmlLang": "sl-SI",
+        "direction": "ltr"
+      },
+      "lt": {
+        "htmlLang": "lt-LT",
+        "direction": "ltr"
+      },
+      "lv": {
+        "htmlLang": "lv-LV",
+        "direction": "ltr"
+      },
+      "et": {
+        "htmlLang": "et-EE",
+        "direction": "ltr"
+      },
+      "hy": {
+        "htmlLang": "hy-AM",
+        "direction": "ltr"
+      },
+      "ka": {
+        "htmlLang": "ka-GE",
+        "direction": "ltr"
+      },
+      "kk": {
+        "htmlLang": "kk-KZ",
+        "direction": "ltr"
+      },
+      "ky": {
+        "htmlLang": "ky-KG",
+        "direction": "ltr"
+      },
+      "tg": {
+        "htmlLang": "tg-TJ",
+        "direction": "ltr"
+      },
+      "tk": {
+        "htmlLang": "tk-TM",
+        "direction": "ltr"
+      },
+      "ne": {
+        "htmlLang": "ne-NP",
+        "direction": "ltr"
+      },
+      "si": {
+        "htmlLang": "si-LK",
+        "direction": "ltr"
+      },
+      "km": {
+        "htmlLang": "km-KH",
+        "direction": "ltr"
+      },
+      "lo": {
+        "htmlLang": "lo-LA",
+        "direction": "ltr"
+      },
+      "mn": {
+        "htmlLang": "mn-MN",
+        "direction": "ltr"
+      },
+      "su": {
+        "htmlLang": "su-ID",
+        "direction": "ltr"
+      },
+      "yo": {
+        "htmlLang": "yo-NG",
+        "direction": "ltr"
+      },
+      "ig": {
+        "htmlLang": "ig-NG",
+        "direction": "ltr"
+      },
+      "om": {
+        "htmlLang": "om-ET",
+        "direction": "ltr"
+      },
+      "zu": {
+        "htmlLang": "zu-ZA",
+        "direction": "ltr"
+      },
+      "xh": {
+        "htmlLang": "xh-ZA",
+        "direction": "ltr"
+      },
+      "af": {
+        "htmlLang": "af-ZA",
+        "direction": "ltr"
+      },
+      "so": {
+        "htmlLang": "so-SO",
+        "direction": "ltr"
+      },
+      "rw": {
+        "htmlLang": "rw-RW",
+        "direction": "ltr"
+      },
+      "rn": {
+        "htmlLang": "rn-BI",
+        "direction": "ltr"
+      },
+      "ln": {
+        "htmlLang": "ln-CD",
+        "direction": "ltr"
+      },
+      "sn": {
+        "htmlLang": "sn-ZW",
+        "direction": "ltr"
+      },
+      "ak": {
+        "htmlLang": "ak-GH",
+        "direction": "ltr"
+      },
+      "ff": {
+        "htmlLang": "ff-SN",
+        "direction": "ltr"
+      },
+      "bm": {
+        "htmlLang": "bm-ML",
+        "direction": "ltr"
+      },
+      "ny": {
+        "htmlLang": "ny-MW",
+        "direction": "ltr"
+      },
+      "ti": {
+        "htmlLang": "ti-ER",
+        "direction": "ltr"
+      },
+      "ug": {
+        "htmlLang": "ug-CN",
+        "direction": "rtl"
+      },
+      "ks": {
+        "htmlLang": "ks-IN",
+        "direction": "rtl"
+      },
+      "as": {
+        "htmlLang": "as-IN",
+        "direction": "ltr"
+      },
+      "tl": {
+        "htmlLang": "tl-PH",
+        "direction": "ltr"
+      },
+      "ca": {
+        "htmlLang": "ca-ES",
+        "direction": "ltr"
+      },
+      "be": {
+        "htmlLang": "be-BY",
+        "direction": "ltr"
+      },
+      "sq": {
+        "htmlLang": "sq-AL",
+        "direction": "ltr"
+      },
+      "qu": {
+        "htmlLang": "qu-PE",
+        "direction": "ltr"
+      },
+      "ht": {
+        "htmlLang": "ht-HT",
+        "direction": "ltr"
+      },
+      "mg": {
+        "htmlLang": "mg-MG",
+        "direction": "ltr"
+      },
+      "ku": {
+        "htmlLang": "ku-TR",
+        "direction": "ltr"
+      },
+      "wo": {
+        "htmlLang": "wo-SN",
+        "direction": "ltr"
+      },
+      "ga": {
+        "htmlLang": "ga-IE",
+        "direction": "ltr"
+      },
+      "is": {
+        "htmlLang": "is-IS",
         "direction": "ltr"
       }
     },
@@ -284,8 +776,7 @@ export default {
       {
         "hashed": true,
         "language": [
-          "en",
-          "de"
+          "en"
         ]
       }
     ]

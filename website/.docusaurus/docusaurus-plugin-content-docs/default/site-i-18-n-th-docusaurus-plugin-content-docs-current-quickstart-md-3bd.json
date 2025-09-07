@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "เริ่มต้นอย่างรวดเร็ว",
+  "description": "1. ติดตั้งส่วนเสริมจาก Thunderbird Add‑ons",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "เริ่มต้นอย่างรวดเร็ว",
+    "sidebar_label": "เริ่มต้นอย่างรวดเร็ว"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "คุณสมบัติ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/features"
+  },
+  "next": {
+    "title": "การติดตั้ง",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/install"
+  }
+}

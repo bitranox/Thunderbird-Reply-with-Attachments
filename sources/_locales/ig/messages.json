@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Zaa na faịlụ etinyere" },
+  "extDescription": { "message": "Na‑etinye faịlụ etinyere mbụ na nzaghachi ozi‑e ozugbo." },
+  "composeTitle": { "message": "Zaa na faịlụ etinyere" },
+  "optionsTitle": { "message": "Zaa na faịlụ etinyere — Nhọrọ" },
+  "confirmTitle": { "message": "Kwenye faịlụ etinyere" },
+  "uiHeader": { "message": "Zaa na faịlụ etinyere" },
+  "uiNoOptions": { "message": "Enweghị nhọrọ a ga‑atụgharị ugbu a." },
+  "uiSupport": { "message": "Ị na‑amasị mgbakwunye a? Nye nkwado site n’onyinye nta:" },
+  "uiDonate": { "message": "Nyefee onyinye ugbu a" },
+  "uiGithubText": { "message": "Ikwu gbasara njehie ma ọ bụ ajụjụ ndị ọzọ, biko gara" },
+  "uiGithubLinkLabel": { "message": "ibe GitHub m" },
+  "iconAlt": { "message": "Ikọlọ Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Ndepụta ojii aha faịlụ (usoro glob)" },
+  "uiBlacklistHelp": {
+    "message": "Faịlụ ndị aha ha kwekọrọ na otu n’ime usoro ndị a agaghị etinyekarị ozugbo. Otu usoro n’ahịrị. Ihe atụ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Kwuo oche ma ọ bụrụ na e wepụsịrị faịlụ etinyere n’ihi ndepụta ojii"
+  },
+  "uiSave": { "message": "Chekwaa" },
+  "uiSaving": { "message": "Na‑echekwa…" },
+  "uiReset": { "message": "Tụgharịa na ndabara" },
+  "uiSaved": { "message": "Echekwala." },
+  "uiResetDone": { "message": "E tụgharịrị." },
+  "uiConfirmHeader": { "message": "Nkwenye" },
+  "uiConfirmLabel": { "message": "Jụọ tupu itinye faịlụ etinyere" },
+  "uiConfirmHelp": {
+    "message": "Obere igbe nkwenye na‑apụta naanị mgbe a ga‑etinye faịlụ etinyere n’eziokwu. Keyboard: Y ma ọ bụ J = Ee; N ma ọ bụ Esc = Mba."
+  },
+  "confirmAddOne": {
+    "message": "Tinye faịlụ etinyere: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Tinye faịlụ etinyere ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ọzọ" }
+    }
+  },
+  "confirmYes": { "message": "Ee" },
+  "confirmNo": { "message": "Mba" },
+  "warnBlacklistTitle": { "message": "Wepụrụ site n’ndekọ ojii" },
+  "warnBlacklistIntro": { "message": "Faịlụ ndị a ga‑adịghị etinyekarị ozugbo:" },
+  "warnColFile": { "message": "Faịlụ" },
+  "warnColPattern": { "message": "Usoro" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Azịza ndabara" },
+  "uiConfirmDefaultYes": { "message": "Ee" },
+  "uiConfirmDefaultNo": { "message": "Mba" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Përgjigju me bashkëngjitje" },
+  "extDescription": {
+    "message": "Shton automatikisht bashkëngjitjet origjinale në përgjigjet e e‑maileve."
+  },
+  "composeTitle": { "message": "Përgjigju me bashkëngjitje" },
+  "optionsTitle": { "message": "Përgjigju me bashkëngjitje — Opsione" },
+  "confirmTitle": { "message": "Konfirmo bashkëngjitjet" },
+  "uiHeader": { "message": "Përgjigju me bashkëngjitje" },
+  "uiNoOptions": { "message": "Aktualisht nuk ka opsione për konfigurim." },
+  "uiSupport": { "message": "Të pëlqen ky shtesë? Më mbështet me një donacion të vogël:" },
+  "uiDonate": { "message": "Dhuro tani" },
+  "uiGithubText": { "message": "Për raportim gabimesh ose pyetje të tjera, vizito" },
+  "uiGithubLinkLabel": { "message": "faqen time në GitHub" },
+  "iconAlt": { "message": "Ikona e Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Lista e zezë e emrave të skedarëve (modele glob)" },
+  "uiBlacklistHelp": {
+    "message": "Skedarët që përputhen me ndonjë nga këto modele nuk do të shtohen kurrë automatikisht. Një model për rresht. Shembuj: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë"
+  },
+  "uiSave": { "message": "Ruaj" },
+  "uiSaving": { "message": "Duke ruajtur…" },
+  "uiReset": { "message": "Rikthe tek parazgjedhjet" },
+  "uiSaved": { "message": "U ruajt." },
+  "uiResetDone": { "message": "U rikthye." },
+  "uiConfirmHeader": { "message": "Konfirmim" },
+  "uiConfirmLabel": { "message": "Pyet para se të shtosh bashkëngjitje" },
+  "uiConfirmHelp": {
+    "message": "Një dialog i vogël konfirmimi shfaqet vetëm kur realisht do të shtoheshin bashkëngjitje. Tastiera: Y ose J = Po; N ose Esc = Jo."
+  },
+  "confirmAddOne": {
+    "message": "Të shtohet bashkëngjitja: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Të shtohen bashkëngjitjet ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 më shumë" }
+    }
+  },
+  "confirmYes": { "message": "Po" },
+  "confirmNo": { "message": "Jo" },
+  "warnBlacklistTitle": { "message": "Përjashtuar nga lista e zezë" },
+  "warnBlacklistIntro": { "message": "Skedarët vijues nuk do të shtohen automatikisht:" },
+  "warnColFile": { "message": "Skedar" },
+  "warnColPattern": { "message": "Model" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Përgjigjja e parazgjedhur" },
+  "uiConfirmDefaultYes": { "message": "Po" },
+  "uiConfirmDefaultNo": { "message": "Jo" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

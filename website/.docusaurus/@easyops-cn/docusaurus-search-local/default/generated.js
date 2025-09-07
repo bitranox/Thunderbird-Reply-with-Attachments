@@ -1,12 +1,9 @@
 import lunr from "/media/srv-main-softdev/rnprivat/Thunderbird-Reply-with-Attachments/website/node_modules/lunr/lunr.js";
-require("/media/srv-main-softdev/rnprivat/Thunderbird-Reply-with-Attachments/website/node_modules/lunr-languages/lunr.stemmer.support.js")(lunr);
-require("/media/srv-main-softdev/rnprivat/Thunderbird-Reply-with-Attachments/website/node_modules/lunr-languages/lunr.de.js")(lunr);
-require("/media/srv-main-softdev/rnprivat/Thunderbird-Reply-with-Attachments/website/node_modules/lunr-languages/lunr.multi.js")(lunr);
-export const language = ["en","de"];
+export const language = ["en"];
 export const removeDefaultStopWordFilter = false;
 export const removeDefaultStemmer = false;
 export const Mark = null;
-export const searchIndexUrl = "search-index{dir}.json?_=78d3ff6f";
+export const searchIndexUrl = "search-index{dir}.json?_=c28ad421";
 export const searchResultLimits = 8;
 export const searchResultContextMaxLength = 50;
 export const explicitSearchResultPath = false;

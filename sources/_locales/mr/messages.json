@@ -1,0 +1,53 @@
+{
+  "extName": { "message": "जोडण्या सहित उत्तर द्या" },
+  "extDescription": { "message": "ईमेल उत्तरांमध्ये मूळ जोडण्या आपोआप समाविष्ट करा." },
+  "composeTitle": { "message": "जोडण्या सहित उत्तर द्या" },
+  "optionsTitle": { "message": "जोडण्या सहित उत्तर — पर्याय" },
+  "confirmTitle": { "message": "जोडण्यांची पुष्टी" },
+  "uiHeader": { "message": "जोडण्या सहित उत्तर द्या" },
+  "uiNoOptions": { "message": "सध्या संयोजित करण्यासाठी कोणतेही पर्याय नाहीत." },
+  "uiSupport": { "message": "हा अॅड‑ऑन आवडला? छोट्या देणगीने मला समर्थन द्या:" },
+  "uiDonate": { "message": "आता देणगी द्या" },
+  "uiGithubText": { "message": "बग अहवाल किंवा इतर चौकशीसाठी माझे" },
+  "uiGithubLinkLabel": { "message": "GitHub पृष्ठ" },
+  "iconAlt": { "message": "Reply with Attachments चिन्ह" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "फाइलनावांची ब्लॅकलिस्ट (ग्लोब नमुने)" },
+  "uiBlacklistHelp": {
+    "message": "या नमुन्यांशी जुळणाऱ्या फाइल्स कधीही आपोआप जोडल्या जाणार नाहीत. प्रत्येक ओळीत एक नमुना. उदाहरणे: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ब्लॅकलिस्टमुळे जोडण्या वगळल्या गेल्यास इशारा द्या" },
+  "uiSave": { "message": "जतन करा" },
+  "uiSaving": { "message": "जतन करत आहे…" },
+  "uiReset": { "message": "डीफॉल्टवर रीसेट करा" },
+  "uiSaved": { "message": "जतन झाले." },
+  "uiResetDone": { "message": "रीसेट झाले." },
+  "uiConfirmHeader": { "message": "पुष्टी" },
+  "uiConfirmLabel": { "message": "जोडण्या जोडण्यापूर्वी विचारा" },
+  "uiConfirmHelp": {
+    "message": "एक लहान पुष्टीकरण संवाद फक्त तेव्हाच दिसेल जेव्हा जोडण्या प्रत्यक्षात जोडल्या जातील. किबोर्ड: Y किंवा J = होय; N किंवा Esc = नाही."
+  },
+  "confirmAddOne": { "message": "जोडणी जोडा: $1?", "placeholders": { "1": { "content": "$1" } } },
+  "confirmAddMany": {
+    "message": "जोडण्या जोडा ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "होय" },
+  "confirmNo": { "message": "नाही" },
+  "warnBlacklistTitle": { "message": "ब्लॅकलिस्टमुळे वगळले" },
+  "warnBlacklistIntro": { "message": "खालील फाइल्स आपोआप जोडल्या जाणार नाहीत:" },
+  "warnColFile": { "message": "फाइल" },
+  "warnColPattern": { "message": "नमुना" },
+  "warnOk": { "message": "ठीक आहे" },
+  "uiConfirmDefaultHeader": { "message": "डीफॉल्ट उत्तर" },
+  "uiConfirmDefaultYes": { "message": "होय" },
+  "uiConfirmDefaultNo": { "message": "नाही" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

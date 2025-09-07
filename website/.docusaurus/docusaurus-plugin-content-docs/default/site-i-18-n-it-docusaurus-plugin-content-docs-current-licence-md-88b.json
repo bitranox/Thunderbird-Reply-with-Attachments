@@ -1,0 +1,28 @@
+{
+  "id": "licence",
+  "title": "Licenza",
+  "description": "Licenza del progetto: MIT",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/licence.md",
+  "sourceDirName": ".",
+  "slug": "/licence",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/licence",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "licence",
+    "title": "Licenza",
+    "sidebar_label": "Licenza"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Donazioni",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/donation"
+  },
+  "next": {
+    "title": "Registro delle modifiche",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/changelog"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "प्रतिष्ठापन",
+  "description": "प्रतिष्ठापन — Thunderbird मध्ये (शिफारसीय)",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "प्रतिष्ठापन",
+    "slug": "/install",
+    "sidebar_label": "प्रतिष्ठापन"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "क्विकस्टार्ट",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/quickstart"
+  },
+  "next": {
+    "title": "संरचना",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/configuration"
+  }
+}

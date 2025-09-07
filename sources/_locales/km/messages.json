@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់" },
+  "extDescription": { "message": "បន្ថែមឯកសារភ្ជាប់ដើមៗទៅក្នុងសារឆ្លើយតបដោយស្វ័យប្រវត្តិ។" },
+  "composeTitle": { "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់" },
+  "optionsTitle": { "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់ — ជម្រើស" },
+  "confirmTitle": { "message": "បញ្ជាក់ឯកសារភ្ជាប់" },
+  "uiHeader": { "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់" },
+  "uiNoOptions": { "message": "បច្ចុប្បន្នមិនមានជម្រើសសម្រាប់កំណត់រចនាសម្ព័ន្ធទេ។" },
+  "uiSupport": { "message": "ចូលចិត្តកម្មវិធីបន្ថែមនេះមែនទេ? គាំទ្រខ្ញុំដោយការបរិច្ចាគតិចតួច៖" },
+  "uiDonate": { "message": "បរិច្ចាគឥឡូវនេះ" },
+  "uiGithubText": { "message": "សម្រាប់រាយការណ៍បញ្ហា ឬសំណួរផ្សេងៗ សូមទស្សនាផ្នែក" },
+  "uiGithubLinkLabel": { "message": "GitHub របស់ខ្ញុំ" },
+  "iconAlt": { "message": "រូបតំណាង Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "បញ្ជីខ្មៅឈ្មោះឯកសារ (លំនាំ glob)" },
+  "uiBlacklistHelp": {
+    "message": "ឯកសារដែលឈ្មោះផ្គូផ្គងលំនាំណាមួយខាងក្រោម នឹងមិនភ្ជាប់ដោយស្វ័យប្រវត្តិទេ។ លំនាំមួយក្នុងមួយបន្ទាត់។ ឧទាហរណ៍: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ព្រមានបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ" },
+  "uiSave": { "message": "រក្សាទុក" },
+  "uiSaving": { "message": "កំពុងរក្សាទុក…" },
+  "uiReset": { "message": "កំណត់ទៅលំនាំដើម" },
+  "uiSaved": { "message": "បានរក្សាទុក។" },
+  "uiResetDone": { "message": "បានកំណត់ឡើងវិញ។" },
+  "uiConfirmHeader": { "message": "ការបញ្ជាក់" },
+  "uiConfirmLabel": { "message": "សួរសិនមុននឹងបន្ថែមឯកសារភ្ជាប់" },
+  "uiConfirmHelp": {
+    "message": "ប្រអប់បញ្ជាក់តូចមួយនឹងបង្ហាញតែពេលដែលមានបន្ថែមឯកសារភ្ជាប់ពិតប្រាកដ។ គ្រាប់ចុច៖ Y ឬ J = បាទ/ចាស; N ឬ Esc = ទេ។"
+  },
+  "confirmAddOne": {
+    "message": "បន្ថែមឯកសារភ្ជាប់៖ $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "បន្ថែមឯកសារភ្ជាប់ ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 បន្ថែម" }
+    }
+  },
+  "confirmYes": { "message": "បាទ/ចាស" },
+  "confirmNo": { "message": "ទេ" },
+  "warnBlacklistTitle": { "message": "បានដកចេញដោយបញ្ជីខ្មៅ" },
+  "warnBlacklistIntro": { "message": "ឯកសារខាងក្រោមនឹងមិនត្រូវបានភ្ជាប់ដោយស្វ័យប្រវត្តិទេ៖" },
+  "warnColFile": { "message": "ឯកសារ" },
+  "warnColPattern": { "message": "លំនាំ" },
+  "warnOk": { "message": "យល់ព្រម" },
+  "uiConfirmDefaultHeader": { "message": "ចម្លើយលំនាំដើម" },
+  "uiConfirmDefaultYes": { "message": "បាទ/ចាស" },
+  "uiConfirmDefaultNo": { "message": "ទេ" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

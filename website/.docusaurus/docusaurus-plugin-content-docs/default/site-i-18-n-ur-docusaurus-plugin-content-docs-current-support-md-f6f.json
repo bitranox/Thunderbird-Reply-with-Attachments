@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "معاونت",
+  "description": "مدد درکار ہے یا بَگ کی اطلاع دینی ہے؟",
+  "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "معاونت",
+    "sidebar_label": "معاونت"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "مسرد",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/glossary"
+  },
+  "next": {
+    "title": "رازداری",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/privacy"
+  }
+}

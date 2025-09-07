@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "Конфиденциальность",
+  "description": "Reply with Attachments не собирает аналитику и телеметрию и никуда не отправляет ваши данные.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "Конфиденциальность",
+    "sidebar_label": "Конфиденциальность"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Поддержка",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/support"
+  },
+  "next": {
+    "title": "Пожертвование",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/donation"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "开发",
+  "description": "开发指南",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "开发",
+    "sidebar_label": "开发"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "权限",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/permissions"
+  },
+  "next": {
+    "title": "语言",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/languages"
+  }
+}

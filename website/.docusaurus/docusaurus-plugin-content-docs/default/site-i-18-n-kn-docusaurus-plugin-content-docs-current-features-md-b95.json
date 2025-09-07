@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+  "description": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+  "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+    "sidebar_label": "ವೈಶಿಷ್ಟ್ಯಗಳು"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/quickstart"
+  }
+}

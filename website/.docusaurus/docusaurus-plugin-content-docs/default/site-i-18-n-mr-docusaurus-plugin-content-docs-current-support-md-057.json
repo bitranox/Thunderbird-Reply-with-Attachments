@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "सहाय्य",
+  "description": "मदत हवी आहे का किंवा बग नोंदवायचा आहे?",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "सहाय्य",
+    "sidebar_label": "सहाय्य"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "शब्दसंग्रह",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/glossary"
+  },
+  "next": {
+    "title": "गोपनीयता",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/privacy"
+  }
+}

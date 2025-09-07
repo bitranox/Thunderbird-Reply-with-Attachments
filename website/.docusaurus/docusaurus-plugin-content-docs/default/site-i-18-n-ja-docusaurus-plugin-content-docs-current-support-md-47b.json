@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "サポート",
+  "description": "ヘルプが必要ですか？ バグの報告をご希望ですか？",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "サポート",
+    "sidebar_label": "サポート"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "用語集",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/glossary"
+  },
+  "next": {
+    "title": "プライバシー",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/privacy"
+  }
+}

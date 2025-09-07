@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "பயன்பாடு",
+  "description": "பயன்பாடு",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "பயன்பாடு",
+    "sidebar_label": "பயன்பாடு"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "உள்ளமைவு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/configuration"
+  },
+  "next": {
+    "title": "இணக்கத்தன்மை",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/compatibility"
+  }
+}

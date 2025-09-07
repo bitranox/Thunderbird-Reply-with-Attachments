@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "Penggunaan",
+  "description": "Penggunaan",
+  "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "Penggunaan",
+    "sidebar_label": "Penggunaan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Konfigurasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/configuration"
+  },
+  "next": {
+    "title": "Kompatibilitas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/compatibility"
+  }
+}

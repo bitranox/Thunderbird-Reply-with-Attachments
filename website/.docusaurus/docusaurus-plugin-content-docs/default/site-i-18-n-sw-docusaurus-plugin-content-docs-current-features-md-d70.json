@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Vipengele",
+  "description": "Vipengele",
+  "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Vipengele",
+    "sidebar_label": "Vipengele"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/quickstart"
+  }
+}

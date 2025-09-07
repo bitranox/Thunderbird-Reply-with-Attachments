@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "使用方法",
+  "description": "使用方法",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "使用方法",
+    "sidebar_label": "使用方法"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "配置",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/configuration"
+  },
+  "next": {
+    "title": "兼容性",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/compatibility"
+  }
+}

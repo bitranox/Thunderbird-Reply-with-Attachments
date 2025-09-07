@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "Установка",
+  "description": "Установка — в Thunderbird (рекомендуется)",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "Установка",
+    "slug": "/install",
+    "sidebar_label": "Установка"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Быстрый старт",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/quickstart"
+  },
+  "next": {
+    "title": "Настройка",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/configuration"
+  }
+}

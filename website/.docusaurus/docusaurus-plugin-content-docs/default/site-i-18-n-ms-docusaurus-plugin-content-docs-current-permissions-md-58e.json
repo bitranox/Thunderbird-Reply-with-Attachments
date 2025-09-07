@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Keizinan",
+  "description": "Add‑on hanya meminta set keizinan yang kecil dan fokus. Sebab bagi setiap satu:",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Keizinan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Keserasian",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/compatibility"
+  },
+  "next": {
+    "title": "Pembangunan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/development"
+  }
+}

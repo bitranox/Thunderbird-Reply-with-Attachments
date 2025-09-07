@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "واژه‌نامه i18n",
+  "description": "واژگان معیار مورد استفاده در UI و مستندات افزونه. از این‌ها استفاده کنید تا ترجمه‌ها در همه زبان‌ها یکدست بماند.",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "واژه‌نامه i18n",
+    "sidebar_label": "واژه‌نامه"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "زبان‌ها",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/languages"
+  },
+  "next": {
+    "title": "پشتیبانی",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/support"
+  }
+}

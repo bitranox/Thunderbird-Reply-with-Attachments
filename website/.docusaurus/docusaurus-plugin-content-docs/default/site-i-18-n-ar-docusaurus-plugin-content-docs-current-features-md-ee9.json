@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "الميزات",
+  "description": "الميزات",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "الميزات",
+    "sidebar_label": "الميزات"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "البدء السريع",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/quickstart"
+  }
+}

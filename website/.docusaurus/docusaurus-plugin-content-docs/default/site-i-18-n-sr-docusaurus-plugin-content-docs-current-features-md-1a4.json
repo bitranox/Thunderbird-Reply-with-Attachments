@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Функције",
+  "description": "Функције",
+  "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Функције",
+    "sidebar_label": "Функције"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/quickstart"
+  }
+}

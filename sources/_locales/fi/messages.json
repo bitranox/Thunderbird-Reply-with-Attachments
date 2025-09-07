@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Vastaa liitteiden kanssa" },
+  "extDescription": {
+    "message": "Lisää automaattisesti alkuperäiset liitteet sähköpostivastauksiin."
+  },
+  "composeTitle": { "message": "Vastaa liitteiden kanssa" },
+  "optionsTitle": { "message": "Vastaa liitteiden kanssa — Asetukset" },
+  "confirmTitle": { "message": "Vahvista liitteet" },
+  "uiHeader": { "message": "Vastaa liitteiden kanssa" },
+  "uiNoOptions": { "message": "Tällä hetkellä ei ole asetuksia." },
+  "uiSupport": { "message": "Pidätkö tästä lisäosasta? Tue minua pienellä lahjoituksella:" },
+  "uiDonate": { "message": "Lahjoita nyt" },
+  "uiGithubText": { "message": "Vikaraportteja tai muita kysymyksiä varten vieraile" },
+  "uiGithubLinkLabel": { "message": "GitHub‑sivullani" },
+  "iconAlt": { "message": "Reply with Attachments -kuvake" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Tiedostonimien estolista (glob‑kuviot)" },
+  "uiBlacklistHelp": {
+    "message": "Tiedostoja, joiden nimi vastaa jotakin näistä kuvioista, ei koskaan liitetä automaattisesti. Yksi kuvio per rivi. Esimerkkejä: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Varoita, jos liitteet on suljettu pois estolistalla" },
+  "uiSave": { "message": "Tallenna" },
+  "uiSaving": { "message": "Tallennetaan…" },
+  "uiReset": { "message": "Palauta oletukset" },
+  "uiSaved": { "message": "Tallennettu." },
+  "uiResetDone": { "message": "Palautettu." },
+  "uiConfirmHeader": { "message": "Vahvistus" },
+  "uiConfirmLabel": { "message": "Kysy ennen liitteiden lisäämistä" },
+  "uiConfirmHelp": {
+    "message": "Pieni vahvistusikkuna näkyy vain, kun liitteitä todella lisättäisiin. Näppäimistö: Y tai J = Kyllä; N tai Esc = Ei."
+  },
+  "confirmAddOne": {
+    "message": "Lisätäänkö liite: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Lisätäänkö liitteet ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 lisää" }
+    }
+  },
+  "confirmYes": { "message": "Kyllä" },
+  "confirmNo": { "message": "Ei" },
+  "warnBlacklistTitle": { "message": "Suljettu pois estolistalla" },
+  "warnBlacklistIntro": { "message": "Seuraavia tiedostoja ei liitetä automaattisesti:" },
+  "warnColFile": { "message": "Tiedosto" },
+  "warnColPattern": { "message": "Kuvio" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Oletusvastaus" },
+  "uiConfirmDefaultYes": { "message": "Kyllä" },
+  "uiConfirmDefaultNo": { "message": "Ei" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

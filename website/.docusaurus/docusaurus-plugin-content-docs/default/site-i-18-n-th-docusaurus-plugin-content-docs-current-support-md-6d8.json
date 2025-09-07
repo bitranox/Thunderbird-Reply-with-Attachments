@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "การสนับสนุน",
+  "description": "ต้องการความช่วยเหลือหรืออยากรายงานบั๊ก?",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "การสนับสนุน",
+    "sidebar_label": "การสนับสนุน"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "คำศัพท์",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/glossary"
+  },
+  "next": {
+    "title": "ความเป็นส่วนตัว",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/privacy"
+  }
+}

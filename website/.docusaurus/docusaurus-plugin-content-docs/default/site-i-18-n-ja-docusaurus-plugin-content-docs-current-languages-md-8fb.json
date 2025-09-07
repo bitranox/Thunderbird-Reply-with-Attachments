@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "言語",
+  "description": "AI 翻訳ツールにより 103 言語を幅広くサポート。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "言語",
+    "sidebar_label": "言語"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "開発",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/development"
+  },
+  "next": {
+    "title": "用語集",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/glossary"
+  }
+}

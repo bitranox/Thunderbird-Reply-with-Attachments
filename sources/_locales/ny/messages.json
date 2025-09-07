@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Yankhani ndi zolumikizira" },
+  "extDescription": { "message": "Imawonjezera zokhoma zoyambirira zokha mumayankho a imelo." },
+  "composeTitle": { "message": "Yankhani ndi zolumikizira" },
+  "optionsTitle": { "message": "Yankhani ndi zolumikizira — Zosankha" },
+  "confirmTitle": { "message": "Tsimikizirani zolumikizira" },
+  "uiHeader": { "message": "Yankhani ndi zolumikizira" },
+  "uiNoOptions": { "message": "Palibe zosankha zoti mukonze panopa." },
+  "uiSupport": { "message": "Mukukonda pulagi‑iniyi? Thandizani ndi zopereka zing'ono:" },
+  "uiDonate": { "message": "Perekani tsopano" },
+  "uiGithubText": { "message": "Pofuna kulengeza zolakwika kapena mafunso ena, chonde pitani ku" },
+  "uiGithubLinkLabel": { "message": "tsamba langa la GitHub" },
+  "iconAlt": { "message": "Chizindikiro cha Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": {
+    "message": "Mndandanda wakuda wa maina a mafayilo (zojambulajambula za glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Mafayilo omwe amatsatira chimodzi mwazojambula izi sadzawonjezedwa zokha. Chitsanzo chimodzi pa mzere. Mwachitsanzo: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Chenjezani ngati zolumikizira zachotsedwa chifukwa cha mndandanda wakuda"
+  },
+  "uiSave": { "message": "Sungani" },
+  "uiSaving": { "message": "Kusunga…" },
+  "uiReset": { "message": "Bwezerani ku zofunikira" },
+  "uiSaved": { "message": "Zasungidwa." },
+  "uiResetDone": { "message": "Zabwezeretsedwa." },
+  "uiConfirmHeader": { "message": "Chitsimikiziro" },
+  "uiConfirmLabel": { "message": "Funsani musanawonjezere zolumikizira" },
+  "uiConfirmHelp": {
+    "message": "Bokosi laling'ono lotsimikizira limangowoneka ngati zolumikizira zidzawonjezedwa. Kiyibodi: Y kapena J = Inde; N kapena Esc = Ayi."
+  },
+  "confirmAddOne": {
+    "message": "Onjezani zolumikizira: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Onjezani zolumikizira ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 zina" }
+    }
+  },
+  "confirmYes": { "message": "Inde" },
+  "confirmNo": { "message": "Ayi" },
+  "warnBlacklistTitle": { "message": "Chotsedwa ndi mndandanda wakuda" },
+  "warnBlacklistIntro": { "message": "Mafayilo otsatirawa sadzawonjezedwa zokha:" },
+  "warnColFile": { "message": "Fayilo" },
+  "warnColPattern": { "message": "Chitsanzo" },
+  "warnOk": { "message": "Zabwino" },
+  "uiConfirmDefaultHeader": { "message": "Yankho losasintha" },
+  "uiConfirmDefaultYes": { "message": "Inde" },
+  "uiConfirmDefaultNo": { "message": "Ayi" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

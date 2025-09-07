@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "ویژگی‌ها",
+  "description": "ویژگی‌ها",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "ویژگی‌ها",
+    "sidebar_label": "ویژگی‌ها"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "شروع سریع",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/quickstart"
+  }
+}

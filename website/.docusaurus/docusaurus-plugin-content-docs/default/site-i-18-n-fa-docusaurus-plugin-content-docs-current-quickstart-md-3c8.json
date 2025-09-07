@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "شروع سریع",
+  "description": "1. افزونه را از Thunderbird Add‑ons نصب کنید.",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "شروع سریع",
+    "sidebar_label": "شروع سریع"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ویژگی‌ها",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/features"
+  },
+  "next": {
+    "title": "نصب",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/install"
+  }
+}

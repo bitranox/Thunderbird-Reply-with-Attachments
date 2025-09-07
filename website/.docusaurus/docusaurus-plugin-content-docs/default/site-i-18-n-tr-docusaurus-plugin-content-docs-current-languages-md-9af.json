@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Diller",
+  "description": "YZ destekli çeviri araçları sayesinde kapsamlı destek — 103 dil.",
+  "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Diller",
+    "sidebar_label": "Diller"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Geliştirme",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/development"
+  },
+  "next": {
+    "title": "Terimler",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/glossary"
+  }
+}

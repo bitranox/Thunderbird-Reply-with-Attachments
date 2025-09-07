@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "Development",
+  "description": "Development Guide",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "Development",
+    "sidebar_label": "Development"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Permissions",
+    "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/permissions"
+  },
+  "next": {
+    "title": "Languages",
+    "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/languages"
+  }
+}

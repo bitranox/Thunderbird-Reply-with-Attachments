@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "இணக்கத்தன்மை",
+  "description": "இணக்கத்தன்மை",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "இணக்கத்தன்மை",
+    "sidebar_label": "இணக்கத்தன்மை"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "பயன்பாடு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/usage"
+  },
+  "next": {
+    "title": "அனுமதிகள்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/permissions"
+  }
+}

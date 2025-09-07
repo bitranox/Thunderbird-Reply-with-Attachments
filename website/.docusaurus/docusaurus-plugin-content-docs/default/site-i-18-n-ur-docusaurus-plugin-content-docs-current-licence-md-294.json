@@ -1,0 +1,28 @@
+{
+  "id": "licence",
+  "title": "لائسنس",
+  "description": "پروجیکٹ کا لائسنس: MIT",
+  "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/licence.md",
+  "sourceDirName": ".",
+  "slug": "/licence",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/licence",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "licence",
+    "title": "لائسنس",
+    "sidebar_label": "لائسنس"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "عطیہ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/donation"
+  },
+  "next": {
+    "title": "تبدیلیوں کا ریکارڈ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/changelog"
+  }
+}

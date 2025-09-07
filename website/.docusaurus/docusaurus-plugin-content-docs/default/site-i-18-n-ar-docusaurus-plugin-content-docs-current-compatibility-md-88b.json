@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "التوافقية",
+  "description": "التوافقية",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "التوافقية",
+    "sidebar_label": "التوافقية"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "الاستخدام",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/usage"
+  },
+  "next": {
+    "title": "الأذونات",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/permissions"
+  }
+}

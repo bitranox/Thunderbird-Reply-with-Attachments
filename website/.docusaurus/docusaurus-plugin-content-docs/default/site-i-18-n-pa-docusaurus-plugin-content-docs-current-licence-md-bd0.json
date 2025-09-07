@@ -1,0 +1,28 @@
+{
+  "id": "licence",
+  "title": "ਲਾਇਸੈਂਸ",
+  "description": "ਪ੍ਰੋਜੈਕਟ ਲਾਇਸੈਂਸ: MIT",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/licence.md",
+  "sourceDirName": ".",
+  "slug": "/licence",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/licence",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "licence",
+    "title": "ਲਾਇਸੈਂਸ",
+    "sidebar_label": "ਲਾਇਸੈਂਸ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਦਾਨ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/donation"
+  },
+  "next": {
+    "title": "ਬਦਲਾਵ ਸੂਚੀ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/changelog"
+  }
+}

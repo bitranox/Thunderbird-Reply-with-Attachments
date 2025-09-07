@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "תגובה עם קבצים מצורפים" },
+  "extDescription": { "message": "מוסיף אוטומטית את הקבצים המצורפים המקוריים לתגובות דוא\"ל." },
+  "composeTitle": { "message": "תגובה עם קבצים מצורפים" },
+  "optionsTitle": { "message": "תגובה עם קבצים מצורפים — אפשרויות" },
+  "confirmTitle": { "message": "אישור קבצים מצורפים" },
+  "uiHeader": { "message": "תגובה עם קבצים מצורפים" },
+  "uiNoOptions": { "message": "אין כרגע אפשרויות להגדרה." },
+  "uiSupport": { "message": "אהבת את התוסף? תמכו בי בתרומה קטנה:" },
+  "uiDonate": { "message": "תרמו עכשיו" },
+  "uiGithubText": { "message": "לדיווח על תקלות או שאלות אחרות, בקרו ב" },
+  "uiGithubLinkLabel": { "message": "דף ה‑GitHub שלי" },
+  "iconAlt": { "message": "סמל Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "רשימת חסימה של שמות קבצים (תבניות glob)" },
+  "uiBlacklistHelp": {
+    "message": "קבצים ששמם תואם לאחת מהתבניות לא יצורפו אוטומטית. תבנית אחת בשורה. דוגמאות: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "התרע כשקבצים מצורפים נרשמו ברשימת החסימה" },
+  "uiSave": { "message": "שמירה" },
+  "uiSaving": { "message": "שומר…" },
+  "uiReset": { "message": "איפוס לברירת מחדל" },
+  "uiSaved": { "message": "נשמר." },
+  "uiResetDone": { "message": "אופס." },
+  "uiConfirmHeader": { "message": "אישור" },
+  "uiConfirmLabel": { "message": "שאל לפני הוספת קבצים מצורפים" },
+  "uiConfirmHelp": {
+    "message": "דו‑שיח אישור קטן יופיע רק כאשר באמת יתווספו קבצים מצורפים. מקלדת: Y או J = כן; N או Esc = לא."
+  },
+  "confirmAddOne": {
+    "message": "להוסיף קובץ מצורף: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "להוסיף קבצים מצורפים ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 נוספים" }
+    }
+  },
+  "confirmYes": { "message": "כן" },
+  "confirmNo": { "message": "לא" },
+  "warnBlacklistTitle": { "message": "נחסם לפי רשימת החסימה" },
+  "warnBlacklistIntro": { "message": "הקבצים הבאים לא יצורפו אוטומטית:" },
+  "warnColFile": { "message": "קובץ" },
+  "warnColPattern": { "message": "תבנית" },
+  "warnOk": { "message": "אישור" },
+  "uiConfirmDefaultHeader": { "message": "תשובת ברירת מחדל" },
+  "uiConfirmDefaultYes": { "message": "כן" },
+  "uiConfirmDefaultNo": { "message": "לא" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

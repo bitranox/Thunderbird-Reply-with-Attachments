@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Odpowiedź z załącznikami" },
+  "extDescription": {
+    "message": "Automatycznie dołącza oryginalne załączniki w odpowiedziach e‑mail."
+  },
+  "composeTitle": { "message": "Odpowiedź z załącznikami" },
+  "optionsTitle": { "message": "Odpowiedź z załącznikami — Opcje" },
+  "confirmTitle": { "message": "Potwierdź załączniki" },
+  "uiHeader": { "message": "Odpowiedź z załącznikami" },
+  "uiNoOptions": { "message": "Obecnie brak opcji do skonfigurowania." },
+  "uiSupport": { "message": "Podoba Ci się ten dodatek? Wesprzyj mnie drobną wpłatą:" },
+  "uiDonate": { "message": "Wesprzyj teraz" },
+  "uiGithubText": { "message": "Zgłoszenia błędów i inne pytania kieruj na" },
+  "uiGithubLinkLabel": { "message": "moją stronę GitHub" },
+  "iconAlt": { "message": "Ikona Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Czarna lista nazw plików (wzorce glob)" },
+  "uiBlacklistHelp": {
+    "message": "Pliki, których nazwy pasują do któregokolwiek z tych wzorców, nigdy nie będą dołączane automatycznie. Jeden wzorzec na linię. Przykłady: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Ostrzegaj, jeśli załączniki są wykluczone przez czarną listę"
+  },
+  "uiSave": { "message": "Zapisz" },
+  "uiSaving": { "message": "Zapisywanie…" },
+  "uiReset": { "message": "Przywróć domyślne" },
+  "uiSaved": { "message": "Zapisano." },
+  "uiResetDone": { "message": "Przywrócono." },
+  "uiConfirmHeader": { "message": "Potwierdzenie" },
+  "uiConfirmLabel": { "message": "Pytaj przed dodaniem załączników" },
+  "uiConfirmHelp": {
+    "message": "Małe okno potwierdzenia pojawia się tylko wtedy, gdy załączniki faktycznie mają zostać dodane. Klawiatura: Y lub J = Tak; N lub Esc = Nie."
+  },
+  "confirmAddOne": {
+    "message": "Dodać załącznik: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Dodać załączniki ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 więcej" }
+    }
+  },
+  "confirmYes": { "message": "Tak" },
+  "confirmNo": { "message": "Nie" },
+  "warnBlacklistTitle": { "message": "Wykluczono przez czarną listę" },
+  "warnBlacklistIntro": { "message": "Poniższe pliki nie zostaną dołączone automatycznie:" },
+  "warnColFile": { "message": "Plik" },
+  "warnColPattern": { "message": "Wzorzec" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Domyślna odpowiedź" },
+  "uiConfirmDefaultYes": { "message": "Tak" },
+  "uiConfirmDefaultNo": { "message": "Nie" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Autorizzazioni",
+  "description": "Il componente richiede solo un piccolo set di autorizzazioni mirate. Motivo per ciascuna:",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Autorizzazioni"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Compatibilità",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/compatibility"
+  },
+  "next": {
+    "title": "Sviluppo",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/development"
+  }
+}

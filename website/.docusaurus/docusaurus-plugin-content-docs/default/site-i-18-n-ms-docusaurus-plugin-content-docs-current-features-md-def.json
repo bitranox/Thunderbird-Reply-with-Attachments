@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Ciri-ciri",
+  "description": "Ciri-ciri",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Ciri-ciri",
+    "sidebar_label": "Ciri-ciri"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Mula Pantas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/quickstart"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Phendula nama‑fayela ananyathelisiwe" },
+  "extDescription": {
+    "message": "Yengeza ngokuzenzakalelayo amafayela okuqala ananyathelisiwe ezimpendulweni ze‑imeyili."
+  },
+  "composeTitle": { "message": "Phendula nama‑fayela ananyathelisiwe" },
+  "optionsTitle": { "message": "Phendula nama‑fayela ananyathelisiwe — Izinketho" },
+  "confirmTitle": { "message": "Qinisekisa amafayela ananyathelisiwe" },
+  "uiHeader": { "message": "Phendula nama‑fayela ananyathelisiwe" },
+  "uiNoOptions": { "message": "Okwamanje awekho izinketho ongazilungisa." },
+  "uiSupport": { "message": "Uyakuthanda lokhu okungeziwe? Ngisekele ngomnikelo omncane:" },
+  "uiDonate": { "message": "Nikela manje" },
+  "uiGithubText": { "message": "Ukuze ubike amaphutha noma eminye imibuzo, sicela uvakashele" },
+  "uiGithubLinkLabel": { "message": "ikhasi lami le‑GitHub" },
+  "iconAlt": { "message": "Isithonjana se Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Uhlu olumnyama lwamagama amafayela (amaphethini e‑glob)" },
+  "uiBlacklistHelp": {
+    "message": "Amafayela anegama elihambisana nanoma yimuphi wale maphathini ngeke ananyatheliswe ngokuzenzakalela. Iphethini eyodwa kulayini ngamunye. Izibonelo: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Yexwayisa uma amafayela ananyathelisiwe esuswe wuhlu olumnyama"
+  },
+  "uiSave": { "message": "Londoloza" },
+  "uiSaving": { "message": "Ilondoloza…" },
+  "uiReset": { "message": "Setha kabusha okuzenzakalelayo" },
+  "uiSaved": { "message": "Kugcinwe." },
+  "uiResetDone": { "message": "Kusethwe kabusha." },
+  "uiConfirmHeader": { "message": "Isiqinisekiso" },
+  "uiConfirmLabel": { "message": "Buza ngaphambi kokwengeza amafayela ananyathelisiwe" },
+  "uiConfirmHelp": {
+    "message": "Ibhokisi elincane lesiqinisekiso livela kuphela lapho amafayela ezokwengezwa ngempela. Ikhibhodi: Y noma J = Yebo; N noma Esc = Cha."
+  },
+  "confirmAddOne": {
+    "message": "Wengeza ifayela: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Wengeza amafayela ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 okwengeziwe" }
+    }
+  },
+  "confirmYes": { "message": "Yebo" },
+  "confirmNo": { "message": "Cha" },
+  "warnBlacklistTitle": { "message": "Kususwe ohlwini olumnyama" },
+  "warnBlacklistIntro": { "message": "La mafayela alandelayo ngeke engezwe ngokuzenzakalela:" },
+  "warnColFile": { "message": "Ifayela" },
+  "warnColPattern": { "message": "Iphethini" },
+  "warnOk": { "message": "Kulungile" },
+  "uiConfirmDefaultHeader": { "message": "Impendulo ezenzakalelayo" },
+  "uiConfirmDefaultYes": { "message": "Yebo" },
+  "uiConfirmDefaultNo": { "message": "Cha" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

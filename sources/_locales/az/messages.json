@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Qoşmalarla cavab ver" },
+  "extDescription": {
+    "message": "E‑poçt cavablarında orijinal qoşmaları avtomatik olaraq əlavə edir."
+  },
+  "composeTitle": { "message": "Qoşmalarla cavab ver" },
+  "optionsTitle": { "message": "Qoşmalarla cavab ver — Parametrlər" },
+  "confirmTitle": { "message": "Qoşmaları təsdiqləyin" },
+  "uiHeader": { "message": "Qoşmalarla cavab ver" },
+  "uiNoOptions": { "message": "Hazırda konfiqurasiya ediləcək seçim yoxdur." },
+  "uiSupport": { "message": "Bu əlavəni bəyənirsiniz? Kiçik bir ianə ilə dəstək olun:" },
+  "uiDonate": { "message": "İndi ianə et" },
+  "uiGithubText": { "message": "Səhv hesabatları və digər suallar üçün, zəhmət olmasa mənim" },
+  "uiGithubLinkLabel": { "message": "GitHub səhifəmə" },
+  "iconAlt": { "message": "Reply with Attachments ikonu" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Fayl adlarının qara siyahısı (glob şablonları)" },
+  "uiBlacklistHelp": {
+    "message": "Adı bu şablonlardan hər hansı birinə uyğun gələn fayllar heç vaxt avtomatik qoşulmayacaq. Hər sətirdə bir şablon. Nümunələr: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Qoşmalar qara siyahıya görə xaric edilərsə xəbərdar et" },
+  "uiSave": { "message": "Yadda saxla" },
+  "uiSaving": { "message": "Yadda saxlanılır…" },
+  "uiReset": { "message": "Standarta qaytar" },
+  "uiSaved": { "message": "Saxlandı." },
+  "uiResetDone": { "message": "Qaytarıldı." },
+  "uiConfirmHeader": { "message": "Təsdiq" },
+  "uiConfirmLabel": { "message": "Qoşmaları əlavə etməzdən əvvəl soruş" },
+  "uiConfirmHelp": {
+    "message": "Kiçik təsdiq dialoqu yalnız həqiqətən qoşma əlavə ediləndə görünür. Klaviatura: Y və ya J = Bəli; N və ya Esc = Xeyr."
+  },
+  "confirmAddOne": {
+    "message": "Qoşma əlavə edilsin: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Qoşmalar əlavə edilsin ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 daha" }
+    }
+  },
+  "confirmYes": { "message": "Bəli" },
+  "confirmNo": { "message": "Xeyr" },
+  "warnBlacklistTitle": { "message": "Qara siyahı ilə xaric edilib" },
+  "warnBlacklistIntro": { "message": "Aşağıdakı fayllar avtomatik qoşulmayacaq:" },
+  "warnColFile": { "message": "Fayl" },
+  "warnColPattern": { "message": "Şablon" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Defolt cavab" },
+  "uiConfirmDefaultYes": { "message": "Bəli" },
+  "uiConfirmDefaultNo": { "message": "Xeyr" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

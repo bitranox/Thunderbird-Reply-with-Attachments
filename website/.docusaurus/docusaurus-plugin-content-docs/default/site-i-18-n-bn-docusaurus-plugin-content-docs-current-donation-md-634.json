@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "অনুদান",
+  "description": "আপনার যদি Reply with Attachments পছন্দ হয় এবং উন্নয়নকে সমর্থন করতে চান, এখানে অনুদান দিতে পারেন:",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "অনুদান",
+    "sidebar_label": "অনুদান"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "গোপনীয়তা",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/privacy"
+  },
+  "next": {
+    "title": "লাইসেন্স",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/licence"
+  }
+}

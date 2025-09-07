@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "İzinler",
+  "description": "Eklenti yalnızca küçük ve hedefe yönelik bir izin kümesi ister. Her birinin nedeni:",
+  "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "İzinler"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Uyumluluk",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/compatibility"
+  },
+  "next": {
+    "title": "Geliştirme",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/development"
+  }
+}

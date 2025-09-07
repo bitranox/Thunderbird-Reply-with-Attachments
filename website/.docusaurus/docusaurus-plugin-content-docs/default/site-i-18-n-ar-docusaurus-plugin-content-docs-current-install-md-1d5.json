@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "التثبيت",
+  "description": "التثبيت — داخل Thunderbird (مُوصى به)",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "التثبيت",
+    "slug": "/install",
+    "sidebar_label": "التثبيت"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "البدء السريع",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/quickstart"
+  },
+  "next": {
+    "title": "الإعداد",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/configuration"
+  }
+}

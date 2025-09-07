@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Dəyişikliklər jurnalı",
+  "description": "Tam tarixçə üçün repodakı CHANGELOG.md faylına baxın.",
+  "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Dəyişikliklər jurnalı"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/licence"
+  }
+}

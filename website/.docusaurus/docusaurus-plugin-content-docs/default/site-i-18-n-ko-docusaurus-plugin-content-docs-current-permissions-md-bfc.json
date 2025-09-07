@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "권한",
+  "description": "이 부가 기능은 소수의 필수 권한만 요청합니다. 각 권한의 이유:",
+  "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "권한"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "호환성",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/compatibility"
+  },
+  "next": {
+    "title": "개발",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/development"
+  }
+}

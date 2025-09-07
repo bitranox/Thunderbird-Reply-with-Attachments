@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "Instalasi",
+  "description": "Instalasi — ing Thunderbird (Disaranake)",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "Instalasi",
+    "slug": "/install",
+    "sidebar_label": "Instalasi"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Mulai Cepat",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/quickstart"
+  },
+  "next": {
+    "title": "Konfigurasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/configuration"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Відповідь із вкладеннями" },
+  "extDescription": {
+    "message": "Автоматично додає оригінальні вкладення до відповідей електронною поштою."
+  },
+  "composeTitle": { "message": "Відповідь із вкладеннями" },
+  "optionsTitle": { "message": "Відповідь із вкладеннями — Параметри" },
+  "confirmTitle": { "message": "Підтвердження вкладень" },
+  "uiHeader": { "message": "Відповідь із вкладеннями" },
+  "uiNoOptions": { "message": "Наразі немає параметрів для налаштування." },
+  "uiSupport": { "message": "Подобається цей додаток? Підтримайте мене невеликим внеском:" },
+  "uiDonate": { "message": "Пожертвувати" },
+  "uiGithubText": { "message": "Для звітів про помилки чи інших питань, відвідайте мою" },
+  "uiGithubLinkLabel": { "message": "сторінку GitHub" },
+  "iconAlt": { "message": "Значок Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Чорний список назв файлів (шаблони glob)" },
+  "uiBlacklistHelp": {
+    "message": "Файли, імена яких відповідають будь-якому з цих шаблонів, ніколи не додаватимуться автоматично. Один шаблон на рядок. Приклади: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Попереджати, якщо вкладення виключені чорним списком" },
+  "uiSave": { "message": "Зберегти" },
+  "uiSaving": { "message": "Збереження…" },
+  "uiReset": { "message": "Скинути до стандартних" },
+  "uiSaved": { "message": "Збережено." },
+  "uiResetDone": { "message": "Скинуто." },
+  "uiConfirmHeader": { "message": "Підтвердження" },
+  "uiConfirmLabel": { "message": "Запитувати перед додаванням вкладень" },
+  "uiConfirmHelp": {
+    "message": "Невелике вікно підтвердження з’являється лише тоді, коли вкладення справді додаються. Клавіатура: Y або J = Так; N або Esc = Ні."
+  },
+  "confirmAddOne": {
+    "message": "Додати вкладення: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Додати вкладення ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ще" }
+    }
+  },
+  "confirmYes": { "message": "Так" },
+  "confirmNo": { "message": "Ні" },
+  "warnBlacklistTitle": { "message": "Виключено чорним списком" },
+  "warnBlacklistIntro": { "message": "Наступні файли не будуть додані автоматично:" },
+  "warnColFile": { "message": "Файл" },
+  "warnColPattern": { "message": "Шаблон" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Типова відповідь" },
+  "uiConfirmDefaultYes": { "message": "Так" },
+  "uiConfirmDefaultNo": { "message": "Ні" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

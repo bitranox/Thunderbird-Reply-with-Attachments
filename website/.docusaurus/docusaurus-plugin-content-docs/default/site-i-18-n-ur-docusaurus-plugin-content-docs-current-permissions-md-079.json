@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "اجازتیں",
+  "description": "ایڈ‑آن صرف چند مختصر اور ہدفی اجازتیں مانگتا ہے۔ ہر ایک کی وجہ:",
+  "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "اجازتیں"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "مطابقت",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/compatibility"
+  },
+  "next": {
+    "title": "ڈویلپمنٹ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/development"
+  }
+}

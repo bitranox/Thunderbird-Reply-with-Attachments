@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "การติดตั้ง",
+  "description": "การติดตั้ง — ใน Thunderbird (แนะนำ)",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "การติดตั้ง",
+    "slug": "/install",
+    "sidebar_label": "การติดตั้ง"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "เริ่มต้นอย่างรวดเร็ว",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/quickstart"
+  },
+  "next": {
+    "title": "การตั้งค่า",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/configuration"
+  }
+}

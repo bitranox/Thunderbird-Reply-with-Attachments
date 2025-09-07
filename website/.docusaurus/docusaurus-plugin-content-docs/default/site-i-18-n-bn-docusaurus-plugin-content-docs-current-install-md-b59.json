@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "ইনস্টলেশন",
+  "description": "ইনস্টলেশন — Thunderbird‑এ (প্রস্তাবিত)",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "ইনস্টলেশন",
+    "slug": "/install",
+    "sidebar_label": "ইনস্টলেশন"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "দ্রুত শুরু",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/quickstart"
+  },
+  "next": {
+    "title": "কনফিগারেশন",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/configuration"
+  }
+}

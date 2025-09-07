@@ -1,0 +1,53 @@
+{
+  "extName": { "message": "በአባሪ ፋይሎች መልስ" },
+  "extDescription": { "message": "በኢሜይል መልሶች ውስጥ የመጀመሪያ አባሪ ፋይሎችን በራስ-ሰር ያካትታል።" },
+  "composeTitle": { "message": "በአባሪ ፋይሎች መልስ" },
+  "optionsTitle": { "message": "በአባሪ ፋይሎች መልስ — ምርጫዎች" },
+  "confirmTitle": { "message": "አባሪዎችን አረጋግጥ" },
+  "uiHeader": { "message": "በአባሪ ፋይሎች መልስ" },
+  "uiNoOptions": { "message": "በአሁኑ ጊዜ ለማቀናበር ምንም አማራጭ የለም።" },
+  "uiSupport": { "message": "ይህን አድ‑ኦን ወደዳችሁ? በትንሽ እበል ድጋፍ ይስጡኝ:" },
+  "uiDonate": { "message": "አሁን ይለግሱ" },
+  "uiGithubText": { "message": "ስህተት ሪፖርት ወይም ሌሎች ጥያቄዎች ካሉ፣ እባክዎት ይጎብኙ" },
+  "uiGithubLinkLabel": { "message": "የኔ GitHub ገጽ" },
+  "iconAlt": { "message": "Reply with Attachments አዶ" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "የፋይል ስሞች ጥቁር ዝርዝር (glob ንድፎች)" },
+  "uiBlacklistHelp": {
+    "message": "ከእነዚህ ንድፎች አንዱን የሚዛመዱ ፋይሎች በራስ‑ሰር አይጨመሩም። በመስመር ላይ አንድ ንድፍ። ምሳሌዎች፡ *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "በጥቁር ዝርዝር ከተቀረጹ አሳውቀኝ" },
+  "uiSave": { "message": "አስቀምጥ" },
+  "uiSaving": { "message": "በመቀመጥ ላይ…" },
+  "uiReset": { "message": "ወደ ነባር መመለስ" },
+  "uiSaved": { "message": "ተቀምጧል።" },
+  "uiResetDone": { "message": "ተመልሷል።" },
+  "uiConfirmHeader": { "message": "ማረጋገጫ" },
+  "uiConfirmLabel": { "message": "አባሪዎችን ከመጨመር በፊት ጠይቀኝ" },
+  "uiConfirmHelp": {
+    "message": "ትንሽ የማረጋገጫ ንግግር እውነተኛ አባሪዎች ሲጨመሩ ብቻ ይታያል። የኪቦርድ ቁልፎች፡ Y ወይም J = አዎን፣ N ወይም Esc = አይደለም።"
+  },
+  "confirmAddOne": { "message": "አባሪ እጨምር: $1?", "placeholders": { "1": { "content": "$1" } } },
+  "confirmAddMany": {
+    "message": "አባሪዎችን እጨምር ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ተጨማሪ" }
+    }
+  },
+  "confirmYes": { "message": "አዎን" },
+  "confirmNo": { "message": "አይደለም" },
+  "warnBlacklistTitle": { "message": "በጥቁር ዝርዝር ተለይቷል" },
+  "warnBlacklistIntro": { "message": "የሚከተሉት ፋይሎች በራስ‑ሰር አይጨመሩም፦" },
+  "warnColFile": { "message": "ፋይል" },
+  "warnColPattern": { "message": "ንድፍ" },
+  "warnOk": { "message": "እሺ" },
+  "uiConfirmDefaultHeader": { "message": "ነባር መልስ" },
+  "uiConfirmDefaultYes": { "message": "አዎን" },
+  "uiConfirmDefaultNo": { "message": "አይደለም" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

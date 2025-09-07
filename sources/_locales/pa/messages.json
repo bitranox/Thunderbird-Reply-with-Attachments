@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "ਜੋੜਣੀਆਂ ਸਮੇਤ ਜਵਾਬ" },
+  "extDescription": { "message": "ਈਮੇਲ ਜਵਾਬਾਂ ਵਿੱਚ ਅਸਲੀ ਜੋੜਣੀਆਂ ਆਪਣੇ ਆਪ ਸ਼ਾਮਲ ਕਰੋ।" },
+  "composeTitle": { "message": "ਜੋੜਣੀਆਂ ਸਮੇਤ ਜਵਾਬ" },
+  "optionsTitle": { "message": "ਜੋੜਣੀਆਂ ਸਮੇਤ ਜਵਾਬ — ਚੋਣਾਂ" },
+  "confirmTitle": { "message": "ਜੋੜਣੀਆਂ ਪੁਸ਼ਟੀ" },
+  "uiHeader": { "message": "ਜੋੜਣੀਆਂ ਸਮੇਤ ਜਵਾਬ" },
+  "uiNoOptions": { "message": "ਫਿਲਹਾਲ ਸੰਰਚਨਾ ਲਈ ਕੋਈ ਚੋਣਾਂ ਨਹੀਂ।" },
+  "uiSupport": { "message": "ਕੀ ਤੁਹਾਨੂੰ ਇਹ ਐਡ‑ਆਨ ਪਸੰਦ ਹੈ? ਛੋਟੇ ਯੋਗਦਾਨ ਨਾਲ ਮੇਰੀ ਮਦਦ ਕਰੋ:" },
+  "uiDonate": { "message": "ਹੁਣੇ ਦਾਨ ਕਰੋ" },
+  "uiGithubText": { "message": "ਬੱਗ ਰਿਪੋਰਟ ਜਾਂ ਹੋਰ ਪੁੱਛਗਿੱਛ ਲਈ, ਮੇਰਾ" },
+  "uiGithubLinkLabel": { "message": "GitHub ਸਫ਼ਾ" },
+  "iconAlt": { "message": "Reply with Attachments ਆਈਕਨ" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ਫਾਇਲਨਾਂ ਦੀ ਬਲੈਕਲਿਸਟ (ਗਲੋਬ ਪੈਟਰਨ)" },
+  "uiBlacklistHelp": {
+    "message": "ਇਨ੍ਹਾਂ ਪੈਟਰਨਾਂ ਨਾਲ ਮੇਲ ਖਾਂਦੀਆਂ ਫਾਇਲਾਂ ਕਦੇ ਵੀ ਆਪਣੇ ਆਪ ਨਹੀਂ ਜੋੜੀਆਂ ਜਾਣਗੀਆਂ। ਹਰ ਲਾਈਨ ਵਿੱਚ ਇੱਕ ਪੈਟਰਨ। ਉਦਾਹਰਨਾਂ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ਜੇ ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਜੋੜਣੀਆਂ ਬਾਹਰ ਰਹਿ ਜਾਣ ਤਾਂ ਚੇਤਾਵਨੀ ਦਿਓ" },
+  "uiSave": { "message": "ਸੰਭਾਲੋ" },
+  "uiSaving": { "message": "ਸੰਭਾਲਿਆ ਜਾ ਰਿਹਾ ਹੈ…" },
+  "uiReset": { "message": "ਮੂਲ ਸੈਟਿੰਗਾਂ ‘ਤੇ ਰੀਸੈਟ ਕਰੋ" },
+  "uiSaved": { "message": "ਸੰਭਾਲਿਆ ਗਿਆ।" },
+  "uiResetDone": { "message": "ਰੀਸੈਟ ਹੋ ਗਿਆ।" },
+  "uiConfirmHeader": { "message": "ਪੁਸ਼ਟੀ" },
+  "uiConfirmLabel": { "message": "ਜੋੜਣੀਆਂ ਸ਼ਾਮਲ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਪੁੱਛੋ" },
+  "uiConfirmHelp": {
+    "message": "ਇੱਕ ਛੋਟੀ ਪੁਸ਼ਟੀ ਡਾਇਲਾਗ ਸਿਰਫ਼ ਤਦੋਂ ਦਿਖੇਗੀ ਜਦੋਂ ਵਾਸਤਵ ਵਿੱਚ ਜੋੜਣੀਆਂ ਸ਼ਾਮਲ ਕੀਤੀਆਂ ਜਾਣੀਆਂ ਹਨ। ਕੀਬੋਰਡ: Y ਜਾਂ J = ਹਾਂ; N ਜਾਂ Esc = ਨਹੀਂ।"
+  },
+  "confirmAddOne": {
+    "message": "ਜੋੜਣੀ ਸ਼ਾਮਲ ਕਰੋ: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "ਜੋੜਣੀਆਂ ਸ਼ਾਮਲ ਕਰੋ ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "ਹਾਂ" },
+  "confirmNo": { "message": "ਨਹੀਂ" },
+  "warnBlacklistTitle": { "message": "ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਬਾਹਰ ਕੀਤਾ" },
+  "warnBlacklistIntro": { "message": "ਹੇਠ ਲਿਖੀਆਂ ਫਾਇਲਾਂ ਆਪਣੇ ਆਪ ਨਹੀਂ ਜੋੜੀਆਂ ਜਾਣਗੀਆਂ:" },
+  "warnColFile": { "message": "ਫਾਇਲ" },
+  "warnColPattern": { "message": "ਪੈਟਰਨ" },
+  "warnOk": { "message": "ਠੀਕ ਹੈ" },
+  "uiConfirmDefaultHeader": { "message": "ਮੂਲ ਜਵਾਬ" },
+  "uiConfirmDefaultYes": { "message": "ਹਾਂ" },
+  "uiConfirmDefaultNo": { "message": "ਨਹੀਂ" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

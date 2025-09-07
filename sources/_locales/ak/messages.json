@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Mmuae a ɛka ntaaso" },
+  "extDescription": {
+    "message": "Ɛde mfonini/krataa a na wɔka krataa no ho kan no hyɛ krataa mmuae mu otomatik."
+  },
+  "composeTitle": { "message": "Mmuae a ɛka ntaaso" },
+  "optionsTitle": { "message": "Mmuae a ɛka ntaaso — Nhyehyɛe" },
+  "confirmTitle": { "message": "Si kakra hu fa ntaaso ho" },
+  "uiHeader": { "message": "Mmuae a ɛka ntaaso" },
+  "uiNoOptions": { "message": "Seisei de, nhyehyɛe bi nni hɔ." },
+  "uiSupport": { "message": "Wo pɛ saa kɔkɔbɔ‑kɔ so yi? Boa me kɔkɔbɔ ketewa bi mu:" },
+  "uiDonate": { "message": "Ma kɔkɔbɔ seisei ara" },
+  "uiGithubText": { "message": "Sɛ wo pɛ sɛ wokɔka mfomso anaa nsɛmmisa bi a, kɔ me" },
+  "uiGithubLinkLabel": { "message": "krataa GitHub" },
+  "iconAlt": { "message": "Reply with Attachments Logo" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "File din a wɔkyere (glob patterns)" },
+  "uiBlacklistHelp": {
+    "message": "File a ne din bɛtene saa nsɛso yi mu biara ho no, renka ho otomatik da. Fa nsɛso baako to ahyɛnsode koro mu. Mfatoho: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Ka kyerɛ me sɛ sɛe ho de a, ɛnyɛ atomatik" },
+  "uiSave": { "message": "Sie" },
+  "uiSaving": { "message": "Rɛsie…" },
+  "uiReset": { "message": "Fa no si fi" },
+  "uiSaved": { "message": "Asie." },
+  "uiResetDone": { "message": "Asiesiee." },
+  "uiConfirmHeader": { "message": "Si kakra hu" },
+  "uiConfirmLabel": { "message": "Bisa ansa na wobɛka ntaaso ho" },
+  "uiConfirmHelp": {
+    "message": "Akɔnkyen ketewa bi befi mu kɔsi sɛ wobɛka ntaaso ho ampa. Afidie keys: Y anaa J = Aane; N anaa Esc = Daabi."
+  },
+  "confirmAddOne": {
+    "message": "Fa ntaaso ka ho: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Fa ntaaso no ka ho ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 bio" }
+    }
+  },
+  "confirmYes": { "message": "Aane" },
+  "confirmNo": { "message": "Daabi" },
+  "warnBlacklistTitle": { "message": "Wɔpam fii liste tuntum so" },
+  "warnBlacklistIntro": { "message": "File yi nkyerɛwde yi renka ho otomatik da:" },
+  "warnColFile": { "message": "File" },
+  "warnColPattern": { "message": "Nsɛso" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Mmuae a edi kan" },
+  "uiConfirmDefaultYes": { "message": "Aane" },
+  "uiConfirmDefaultNo": { "message": "Daabi" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

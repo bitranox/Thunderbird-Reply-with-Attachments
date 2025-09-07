@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Quyên góp",
+  "description": "Nếu bạn thích Reply with Attachments và muốn ủng hộ phát triển, bạn có thể quyên góp tại đây:",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Quyên góp",
+    "sidebar_label": "Quyên góp"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Quyền riêng tư",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/privacy"
+  },
+  "next": {
+    "title": "Giấy phép",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/licence"
+  }
+}

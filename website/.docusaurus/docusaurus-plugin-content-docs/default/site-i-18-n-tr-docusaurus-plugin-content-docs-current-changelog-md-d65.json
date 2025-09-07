@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Değişiklik Günlüğü",
+  "description": "Tam geçmiş için depo içindeki CHANGELOG.md dosyasına bakın.",
+  "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Değişiklik Günlüğü"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Lisans",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/licence"
+  }
+}

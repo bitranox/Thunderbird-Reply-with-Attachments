@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "設定",
+  "description": "用語について：UI とドキュメントで一貫して用いるため、用語集 を参照してください。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "設定"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "インストール",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/install"
+  },
+  "next": {
+    "title": "使い方",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/usage"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "ఇన్‌స్టాలేషన్",
+  "description": "ఇన్‌స్టాలేషన్ — Thunderbird లో (సిఫారసు)",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "ఇన్‌స్టాలేషన్",
+    "slug": "/install",
+    "sidebar_label": "ఇన్‌స్టాలేషన్"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "క్విక్‌స్టార్ట్",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/quickstart"
+  },
+  "next": {
+    "title": "ఆకృతీకరణ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/configuration"
+  }
+}

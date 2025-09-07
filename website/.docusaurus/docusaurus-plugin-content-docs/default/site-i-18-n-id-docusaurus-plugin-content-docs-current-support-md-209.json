@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "Dukungan",
+  "description": "Perlu bantuan atau ingin melaporkan bug?",
+  "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "Dukungan",
+    "sidebar_label": "Dukungan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Glosarium",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/glossary"
+  },
+  "next": {
+    "title": "Privasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/privacy"
+  }
+}

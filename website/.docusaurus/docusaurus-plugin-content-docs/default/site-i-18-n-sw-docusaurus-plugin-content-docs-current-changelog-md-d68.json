@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Shajara ya mabadiliko",
+  "description": "Tazama historia kamili kwenye faili CHANGELOG.md ya hifadhi.",
+  "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Shajara ya mabadiliko"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/licence"
+  }
+}

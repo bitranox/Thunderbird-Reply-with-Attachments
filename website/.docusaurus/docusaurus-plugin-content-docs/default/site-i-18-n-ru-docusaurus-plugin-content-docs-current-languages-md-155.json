@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Языки",
+  "description": "Широкая поддержка благодаря инструментам ИИ‑перевода — охватывает 103 языка.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Языки",
+    "sidebar_label": "Языки"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Разработка",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/development"
+  },
+  "next": {
+    "title": "Глоссарий",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/glossary"
+  }
+}

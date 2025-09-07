@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "الإعداد",
+  "description": "ملاحظة حول المصطلحات: راجع المصطلحات للاطلاع على الألفاظ المستخدمة بشكل متّسق في الواجهة والوثائق.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "الإعداد"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "التثبيت",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/install"
+  },
+  "next": {
+    "title": "الاستخدام",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/usage"
+  }
+}

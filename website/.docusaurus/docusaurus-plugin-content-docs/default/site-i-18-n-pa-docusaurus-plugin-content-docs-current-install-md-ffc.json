@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "ਸਥਾਪਨਾ",
+  "description": "Thunderbird ਵਿੱਚ ਸਥਾਪਨਾ — (ਸਿਫ਼ਾਰਸ਼ੀ)",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "ਸਥਾਪਨਾ",
+    "slug": "/install",
+    "sidebar_label": "ਸਥਾਪਨਾ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/quickstart"
+  },
+  "next": {
+    "title": "ਸੰਰਚਨਾ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/configuration"
+  }
+}

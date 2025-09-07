@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Mula Pantas",
+  "description": "1. Pasang add‑on daripada Thunderbird Add‑ons.",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Mula Pantas",
+    "sidebar_label": "Mula Pantas"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Ciri-ciri",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/features"
+  },
+  "next": {
+    "title": "Pemasangan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/install"
+  }
+}

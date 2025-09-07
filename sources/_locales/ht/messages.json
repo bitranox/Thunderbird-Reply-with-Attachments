@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Reponn ak atachman" },
+  "extDescription": { "message": "Ajoute otomatikman atachman orijinal yo nan repons imel yo." },
+  "composeTitle": { "message": "Reponn ak atachman" },
+  "optionsTitle": { "message": "Reponn ak atachman — Opsyon" },
+  "confirmTitle": { "message": "Konfime atachman yo" },
+  "uiHeader": { "message": "Reponn ak atachman" },
+  "uiNoOptions": { "message": "Pa gen okenn opsyon pou konfigire kounye a." },
+  "uiSupport": { "message": "Ou renmen ekstansyon sa a? Sipòte m ak yon ti don:" },
+  "uiDonate": { "message": "Fè don kounye a" },
+  "uiGithubText": { "message": "Pou rapòte erè oswa lòt kesyon, tanpri vizite" },
+  "uiGithubLinkLabel": { "message": "paj GitHub mwen" },
+  "iconAlt": { "message": "Ikòn Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Lis nwa non fichye (modèl glob)" },
+  "uiBlacklistHelp": {
+    "message": "Fichye ki matche ak youn nan modèl sa yo pap janm ajoute otomatikman. Yon modèl pa liy. Egzanp: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Avèti si atachman yo eskli pa lis nwa a" },
+  "uiSave": { "message": "Sere" },
+  "uiSaving": { "message": "Ap sere…" },
+  "uiReset": { "message": "Reyajiste default yo" },
+  "uiSaved": { "message": "Sere." },
+  "uiResetDone": { "message": "Reyajiste." },
+  "uiConfirmHeader": { "message": "Konfimasyon" },
+  "uiConfirmLabel": { "message": "Mande anvan ou ajoute atachman yo" },
+  "uiConfirmHelp": {
+    "message": "Yon ti dyalòg konfimasyon ap parèt sèlman lè atachman yo ta reyèlman ajoute. Klavye: Y oswa J = Wi; N oswa Esc = Non."
+  },
+  "confirmAddOne": {
+    "message": "Ajoute atachman: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Ajoute atachman yo ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 an plis" }
+    }
+  },
+  "confirmYes": { "message": "Wi" },
+  "confirmNo": { "message": "Non" },
+  "warnBlacklistTitle": { "message": "Eskli pa lis nwa a" },
+  "warnBlacklistIntro": { "message": "Fichye sa yo pa pral ajoute otomatikman:" },
+  "warnColFile": { "message": "Fichye" },
+  "warnColPattern": { "message": "Modèl" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Repons default" },
+  "uiConfirmDefaultYes": { "message": "Wi" },
+  "uiConfirmDefaultNo": { "message": "Non" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

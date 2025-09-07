@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Atbildēt ar pielikumiem" },
+  "extDescription": { "message": "Automātiski pievieno oriģinālos pielikumus e‑pasta atbildēs." },
+  "composeTitle": { "message": "Atbildēt ar pielikumiem" },
+  "optionsTitle": { "message": "Atbildēt ar pielikumiem — Iestatījumi" },
+  "confirmTitle": { "message": "Apstiprināt pielikumus" },
+  "uiHeader": { "message": "Atbildēt ar pielikumiem" },
+  "uiNoOptions": { "message": "Pašlaik nav iestatījumu, ko konfigurēt." },
+  "uiSupport": { "message": "Patīk šis papildinājums? Atbalsti mani ar nelielu ziedojumu:" },
+  "uiDonate": { "message": "Ziedot tagad" },
+  "uiGithubText": { "message": "Kļūdu ziņojumiem vai citiem jautājumiem, lūdzu, apmeklē manu" },
+  "uiGithubLinkLabel": { "message": "GitHub lapu" },
+  "iconAlt": { "message": "Reply with Attachments ikona" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Failu nosaukumu melnais saraksts (glob raksti)" },
+  "uiBlacklistHelp": {
+    "message": "Faili, kuru nosaukumi atbilst kādam no šiem rakstiem, nekad netiks pievienoti automātiski. Viens raksts rindā. Piemēri: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Brīdināt, ja pielikumi izslēgti melnā saraksta dēļ" },
+  "uiSave": { "message": "Saglabāt" },
+  "uiSaving": { "message": "Saglabā…" },
+  "uiReset": { "message": "Atjaunot noklusētos" },
+  "uiSaved": { "message": "Saglabāts." },
+  "uiResetDone": { "message": "Atjaunots." },
+  "uiConfirmHeader": { "message": "Apstiprinājums" },
+  "uiConfirmLabel": { "message": "Jautāt pirms pielikumu pievienošanas" },
+  "uiConfirmHelp": {
+    "message": "Neliels apstiprinājuma dialoglodziņš parādās tikai tad, kad tiešām tiktu pievienoti pielikumi. Tastatūra: Y vai J = Jā; N vai Esc = Nē."
+  },
+  "confirmAddOne": {
+    "message": "Pievienot pielikumu: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Pievienot pielikumus ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 vēl" }
+    }
+  },
+  "confirmYes": { "message": "Jā" },
+  "confirmNo": { "message": "Nē" },
+  "warnBlacklistTitle": { "message": "Izslēgts melnā saraksta dēļ" },
+  "warnBlacklistIntro": { "message": "Šie faili netiks automātiski pievienoti:" },
+  "warnColFile": { "message": "Fails" },
+  "warnColPattern": { "message": "Raksts" },
+  "warnOk": { "message": "Labi" },
+  "uiConfirmDefaultHeader": { "message": "Noklusējuma atbilde" },
+  "uiConfirmDefaultYes": { "message": "Jā" },
+  "uiConfirmDefaultNo": { "message": "Nē" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

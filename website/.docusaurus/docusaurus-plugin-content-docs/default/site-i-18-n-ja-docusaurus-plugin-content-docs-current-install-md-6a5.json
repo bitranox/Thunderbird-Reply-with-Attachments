@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "インストール",
+  "description": "インストール — Thunderbird 内（推奨）",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "インストール",
+    "slug": "/install",
+    "sidebar_label": "インストール"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "クイックスタート",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/quickstart"
+  },
+  "next": {
+    "title": "設定",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/configuration"
+  }
+}

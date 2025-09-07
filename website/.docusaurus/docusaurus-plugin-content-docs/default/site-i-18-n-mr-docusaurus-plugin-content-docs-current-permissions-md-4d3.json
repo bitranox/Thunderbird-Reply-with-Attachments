@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "परवानग्या",
+  "description": "अॅड‑ऑन फक्त काही लहान आणि लक्षित परवानग्या मागते. प्रत्येकाची गरज:",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "परवानग्या"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "सुसंगतता",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/compatibility"
+  },
+  "next": {
+    "title": "विकास",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/development"
+  }
+}

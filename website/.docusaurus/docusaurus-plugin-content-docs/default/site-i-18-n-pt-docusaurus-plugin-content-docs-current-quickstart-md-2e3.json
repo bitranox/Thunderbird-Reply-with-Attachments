@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Início rápido",
+  "description": "1. Instale o extra a partir do Thunderbird Add‑ons.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Início rápido",
+    "sidebar_label": "Início rápido"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Recursos",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/features"
+  },
+  "next": {
+    "title": "Instalação",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/install"
+  }
+}

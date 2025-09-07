@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Donar",
+  "description": "Si te gusta Responder con adjuntos y quieres apoyar su desarrollo, puedes donar aquí:",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Donar",
+    "sidebar_label": "Donar"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Privacidad",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/privacy"
+  },
+  "next": {
+    "title": "Licencia",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/licence"
+  }
+}

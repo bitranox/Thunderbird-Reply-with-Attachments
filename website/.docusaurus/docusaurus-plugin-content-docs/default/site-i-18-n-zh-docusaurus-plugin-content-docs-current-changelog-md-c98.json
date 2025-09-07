@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "更新日志",
+  "description": "完整历史请参见仓库中的 CHANGELOG.md 文件。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "更新日志"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "许可证",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/licence"
+  }
+}

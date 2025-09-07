@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "配置",
+  "description": "术语说明：请参阅术语表，以了解界面和文档中使用的一致术语。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "配置"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "安装",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/install"
+  },
+  "next": {
+    "title": "使用方法",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/usage"
+  }
+}

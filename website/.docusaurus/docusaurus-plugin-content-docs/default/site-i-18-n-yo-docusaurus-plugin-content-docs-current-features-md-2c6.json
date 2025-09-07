@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Àwọn ànfààní",
+  "description": "Àwọn ànfààní",
+  "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Àwọn ànfààní",
+    "sidebar_label": "Àwọn ànfààní"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/quickstart"
+  }
+}

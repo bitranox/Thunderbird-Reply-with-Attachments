@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Rajistar canje-canje",
+  "description": "Dubi cikakken tarihi a fayil ɗin CHANGELOG.md na rumbun adana bayanai.",
+  "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Rajistar canje-canje"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/licence"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n शब्दसंग्रह",
+  "description": "अॅड‑ऑन UI आणि दस्तऐवजात वापरले जाणारे अधिकृत शब्द. स्थानिकांमध्ये अनुवाद सुसंगत ठेवण्यासाठी यांचा वापर करा.",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n शब्दसंग्रह",
+    "sidebar_label": "शब्दसंग्रह"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "भाषा",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/languages"
+  },
+  "next": {
+    "title": "सहाय्य",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/support"
+  }
+}

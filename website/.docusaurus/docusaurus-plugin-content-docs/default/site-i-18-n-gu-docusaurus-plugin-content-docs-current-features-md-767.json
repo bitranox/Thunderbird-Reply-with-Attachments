@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "વિશેષતાઓ",
+  "description": "વિશેષતાઓ",
+  "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "વિશેષતાઓ",
+    "sidebar_label": "વિશેષતાઓ"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "ઝડપી શરૂઆત",
+    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/quickstart"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "Keserasian",
+  "description": "Keserasian",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "Keserasian",
+    "sidebar_label": "Keserasian"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Penggunaan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/usage"
+  },
+  "next": {
+    "title": "Keizinan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/permissions"
+  }
+}

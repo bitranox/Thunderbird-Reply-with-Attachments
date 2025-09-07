@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Subiza uri kumwe n’inyongera" },
+  "extDescription": {
+    "message": "Yongeraho mu buryo bwikora inyongera z’umwimerere mu bisubizo bya imeri."
+  },
+  "composeTitle": { "message": "Subiza uri kumwe n’inyongera" },
+  "optionsTitle": { "message": "Subiza uri kumwe n’inyongera — Amahitamo" },
+  "confirmTitle": { "message": "Emeza inyongera" },
+  "uiHeader": { "message": "Subiza uri kumwe n’inyongera" },
+  "uiNoOptions": { "message": "Ubu nta mahitamo yo gushiraho ahari." },
+  "uiSupport": { "message": "Ukunze iyi nyongeramusaruro? Dufashe n’ituro rito:" },
+  "uiDonate": { "message": "Tanga ituro ubu" },
+  "uiGithubText": { "message": "Ku bijyanye n’inkomyi cyangwa ibindi bibazo, usuye" },
+  "uiGithubLinkLabel": { "message": "paji yanjye ya GitHub" },
+  "iconAlt": { "message": "Akamenyetso ka Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": {
+    "message": "Urutonde rw’umukara rw’amazina y’amadosiye (imiterere ya glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Amadosiye afite amazina ahuye n’imwe muri iyi miterere ntazajya yongerwaho byikora. Imiterere imwe kuri buri murongo. Ingero: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Tangaza niba inyongera zasitswe n’urutonde rw’umukara" },
+  "uiSave": { "message": "Bika" },
+  "uiSaving": { "message": "Kubika…" },
+  "uiReset": { "message": "Subiza ku mbanzirizamushinga" },
+  "uiSaved": { "message": "Bibitswe." },
+  "uiResetDone": { "message": "Byasubijwe." },
+  "uiConfirmHeader": { "message": "Kwemeza" },
+  "uiConfirmLabel": { "message": "Baza mbere yo kongeraho inyongera" },
+  "uiConfirmHelp": {
+    "message": "Agasanduku kemeza gato kaboneka gusa iyo koko inyongera zigiye kongerwaho. Mwandikisho: Y cyangwa J = Yego; N cyangwa Esc = Oya."
+  },
+  "confirmAddOne": {
+    "message": "Ongeraho inyongera: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Ongeraho inyongera ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 izindi" }
+    }
+  },
+  "confirmYes": { "message": "Yego" },
+  "confirmNo": { "message": "Oya" },
+  "warnBlacklistTitle": { "message": "Byasitswe n’urutonde rw’umukara" },
+  "warnBlacklistIntro": { "message": "Amadosiye akurikira ntazajya yongerwaho byikora:" },
+  "warnColFile": { "message": "Idosiye" },
+  "warnColPattern": { "message": "Imiterere" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Igisubizo cy’imbanzirizamushinga" },
+  "uiConfirmDefaultYes": { "message": "Yego" },
+  "uiConfirmDefaultNo": { "message": "Oya" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

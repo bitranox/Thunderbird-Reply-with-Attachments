@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "ความเข้ากันได้",
+  "description": "ความเข้ากันได้",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "ความเข้ากันได้",
+    "sidebar_label": "ความเข้ากันได้"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "วิธีใช้",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/usage"
+  },
+  "next": {
+    "title": "สิทธิ์ที่ต้องใช้",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/permissions"
+  }
+}

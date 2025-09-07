@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "ຄຸນລັກສະນະ",
+  "description": "ຄຸນລັກສະນະ",
+  "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "ຄຸນລັກສະນະ",
+    "sidebar_label": "ຄຸນລັກສະນະ"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/quickstart"
+  }
+}

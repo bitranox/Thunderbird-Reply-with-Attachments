@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "Panggunaan",
+  "description": "Panggunaan",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "Panggunaan",
+    "sidebar_label": "Panggunaan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Konfigurasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/configuration"
+  },
+  "next": {
+    "title": "Kompatibilitas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/compatibility"
+  }
+}

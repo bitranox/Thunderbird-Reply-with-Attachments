@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "คำศัพท์ i18n",
+  "description": "คำศัพท์มาตรฐานที่ใช้ใน UI และเอกสารของส่วนเสริม ใช้คำเหล่านี้เพื่อให้การแปลสอดคล้องกันระหว่างแต่ละภาษา",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "คำศัพท์ i18n",
+    "sidebar_label": "คำศัพท์"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ภาษา",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/languages"
+  },
+  "next": {
+    "title": "การสนับสนุน",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/support"
+  }
+}

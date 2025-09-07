@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "পরিবর্তনপঞ্জি",
+  "description": "রিপোজিটরির CHANGELOG.md‑এ সম্পূর্ণ ইতিহাস দেখুন।",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "পরিবর্তনপঞ্জি"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "লাইসেন্স",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/licence"
+  }
+}

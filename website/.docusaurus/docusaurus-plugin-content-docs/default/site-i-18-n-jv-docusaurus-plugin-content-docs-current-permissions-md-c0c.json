@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Ijin",
+  "description": "Add‑on mung njaluk sawetara ijin sing cilik lan fokus. Napa saben ijin dibutuhake:",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Ijin"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Kompatibilitas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/compatibility"
+  },
+  "next": {
+    "title": "Pangembangan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/development"
+  }
+}

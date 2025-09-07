@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "உள்ளமைவு",
+  "description": "சொற்களஞ்சிய குறிப்பு: UI மற்றும் ஆவணங்களில் பயன்படுத்தப்படும் ஒரே மாதிரியான சொற்களுக்காக Glossary பார்க்கவும்.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "உள்ளமைவு"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "நிறுவல்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/install"
+  },
+  "next": {
+    "title": "பயன்பாடு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/usage"
+  }
+}

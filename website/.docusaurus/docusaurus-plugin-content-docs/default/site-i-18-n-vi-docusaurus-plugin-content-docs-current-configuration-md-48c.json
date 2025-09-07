@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Cấu hình",
+  "description": "Ghi chú thuật ngữ: xem Glossary để dùng thuật ngữ thống nhất trong UI và tài liệu.",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Cấu hình"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Cài đặt",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/install"
+  },
+  "next": {
+    "title": "Cách dùng",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/usage"
+  }
+}

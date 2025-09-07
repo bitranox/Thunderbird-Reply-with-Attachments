@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Разрешения",
+  "description": "Дополнение запрашивает лишь небольшой, целевой набор разрешений. Зачем нужно каждое:",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Разрешения"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Совместимость",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/compatibility"
+  },
+  "next": {
+    "title": "Разработка",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/development"
+  }
+}

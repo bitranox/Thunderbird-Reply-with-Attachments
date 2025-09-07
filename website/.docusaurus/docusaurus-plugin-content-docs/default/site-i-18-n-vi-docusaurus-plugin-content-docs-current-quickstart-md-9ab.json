@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Bắt đầu nhanh",
+  "description": "1. Cài tiện ích từ Thunderbird Add‑ons.",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Bắt đầu nhanh",
+    "sidebar_label": "Bắt đầu nhanh"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tính năng",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/features"
+  },
+  "next": {
+    "title": "Cài đặt",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/install"
+  }
+}

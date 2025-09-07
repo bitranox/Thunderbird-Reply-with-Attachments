@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n పదకోశం",
+  "description": "అ్యాడ్‑ఆన్ UI మరియు డాక్యుమెంటేషన్‌లో ఉపయోగించే ప్రామాణిక పదాలు. లోకేల్‌లలో అనువాదాలను ఏకరీతిలో ఉంచేందుకు వీటినే వాడండి.",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n పదకోశం",
+    "sidebar_label": "పదకోశం"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "భాషలు",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/languages"
+  },
+  "next": {
+    "title": "సహాయం",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/support"
+  }
+}

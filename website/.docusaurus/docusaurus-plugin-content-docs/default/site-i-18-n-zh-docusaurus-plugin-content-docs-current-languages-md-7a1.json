@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "语言",
+  "description": "借助 AI 翻译工具，覆盖 103 种语言的大规模本地化支持。",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "语言",
+    "sidebar_label": "语言"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "开发",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/development"
+  },
+  "next": {
+    "title": "术语表",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/glossary"
+  }
+}

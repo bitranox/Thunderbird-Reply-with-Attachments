@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Wangsuli nganggo Lampiran" },
+  "extDescription": { "message": "Kalebu lampiran asli kanthi otomatis nalika wangsul ing email." },
+  "composeTitle": { "message": "Wangsuli nganggo Lampiran" },
+  "optionsTitle": { "message": "Wangsuli nganggo Lampiran — Opsi" },
+  "confirmTitle": { "message": "Konfirmasi Lampiran" },
+  "uiHeader": { "message": "Wangsuli nganggo Lampiran" },
+  "uiNoOptions": { "message": "Saiki ora ana opsi sing bisa disetel." },
+  "uiSupport": { "message": "Suka add‑on iki? Dukung aku kanthi sumbangan cilik:" },
+  "uiDonate": { "message": "Donasi saiki" },
+  "uiGithubText": { "message": "Kanggo laporan bug utawa pitakon liyane, bukak" },
+  "uiGithubLinkLabel": { "message": "kaca GitHubku" },
+  "iconAlt": { "message": "Ikon Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Daftar ireng jeneng berkas (pola glob)" },
+  "uiBlacklistHelp": {
+    "message": "Berkas sing cocog karo salah siji pola iki ora bakal otomatis dilampirake. Siji pola saben baris. Tuladha: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Peringatna yen lampiran ora dilebokake amarga daftar ireng"
+  },
+  "uiSave": { "message": "Simpen" },
+  "uiSaving": { "message": "Nyimpen…" },
+  "uiReset": { "message": "Balekna menyang standar" },
+  "uiSaved": { "message": "Wis kesimpen." },
+  "uiResetDone": { "message": "Wis direset." },
+  "uiConfirmHeader": { "message": "Konfirmasi" },
+  "uiConfirmLabel": { "message": "Takon sadurunge nambah lampiran" },
+  "uiConfirmHelp": {
+    "message": "Dialog konfirmasi cilik mung katon nalika lampiran pancen bakal ditambahake. Papan ketik: Y utawa J = Ya; N utawa Esc = Ora."
+  },
+  "confirmAddOne": {
+    "message": "Tambah lampiran: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Tambah lampiran ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "Ya" },
+  "confirmNo": { "message": "Ora" },
+  "warnBlacklistTitle": { "message": "Dikesampingake amarga daftar ireng" },
+  "warnBlacklistIntro": { "message": "Berkas ing ngisor iki ora bakal otomatis dilampirake:" },
+  "warnColFile": { "message": "Berkas" },
+  "warnColPattern": { "message": "Pola" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Wangsulan standar" },
+  "uiConfirmDefaultYes": { "message": "Ya" },
+  "uiConfirmDefaultNo": { "message": "Ora" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

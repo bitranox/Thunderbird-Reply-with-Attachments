@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "परिवर्तन सूची",
+  "description": "रिपॉज़िटरी की CHANGELOG.md फ़ाइल में पूरा इतिहास देखें।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "परिवर्तन सूची"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/licence"
+  }
+}

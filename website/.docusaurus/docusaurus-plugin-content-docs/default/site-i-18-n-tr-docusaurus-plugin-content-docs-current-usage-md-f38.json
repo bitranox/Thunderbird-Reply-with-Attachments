@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "Kullanım",
+  "description": "Kullanım",
+  "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "Kullanım",
+    "sidebar_label": "Kullanım"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Yapılandırma",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/configuration"
+  },
+  "next": {
+    "title": "Uyumluluk",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/compatibility"
+  }
+}

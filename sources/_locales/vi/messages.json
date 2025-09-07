@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Trả lời kèm tệp đính kèm" },
+  "extDescription": { "message": "Tự động bao gồm tệp đính kèm gốc trong thư trả lời." },
+  "composeTitle": { "message": "Trả lời kèm tệp đính kèm" },
+  "optionsTitle": { "message": "Trả lời kèm tệp đính kèm — Tùy chọn" },
+  "confirmTitle": { "message": "Xác nhận tệp đính kèm" },
+  "uiHeader": { "message": "Trả lời kèm tệp đính kèm" },
+  "uiNoOptions": { "message": "Hiện không có tùy chọn nào để cấu hình." },
+  "uiSupport": { "message": "Bạn thích tiện ích này? Hãy ủng hộ tôi bằng một khoản đóng góp nhỏ:" },
+  "uiDonate": { "message": "Quyên góp ngay" },
+  "uiGithubText": { "message": "Để báo lỗi hoặc thắc mắc khác, vui lòng truy cập" },
+  "uiGithubLinkLabel": { "message": "trang GitHub của tôi" },
+  "iconAlt": { "message": "Biểu tượng Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Danh sách đen tên tệp (mẫu glob)" },
+  "uiBlacklistHelp": {
+    "message": "Các tệp khớp với bất kỳ mẫu nào sau đây sẽ không bao giờ được tự động đính kèm. Mỗi dòng một mẫu. Ví dụ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Cảnh báo nếu tệp đính kèm bị loại do danh sách đen" },
+  "uiSave": { "message": "Lưu" },
+  "uiSaving": { "message": "Đang lưu…" },
+  "uiReset": { "message": "Đặt lại về mặc định" },
+  "uiSaved": { "message": "Đã lưu." },
+  "uiResetDone": { "message": "Đã đặt lại." },
+  "uiConfirmHeader": { "message": "Xác nhận" },
+  "uiConfirmLabel": { "message": "Hỏi trước khi thêm tệp đính kèm" },
+  "uiConfirmHelp": {
+    "message": "Một hộp thoại xác nhận nhỏ chỉ xuất hiện khi thực sự sẽ thêm tệp đính kèm. Bàn phím: Y hoặc J = Có; N hoặc Esc = Không."
+  },
+  "confirmAddOne": {
+    "message": "Thêm tệp đính kèm: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Thêm tệp đính kèm ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "Có" },
+  "confirmNo": { "message": "Không" },
+  "warnBlacklistTitle": { "message": "Bị loại bởi danh sách đen" },
+  "warnBlacklistIntro": { "message": "Các tệp sau sẽ không được tự động đính kèm:" },
+  "warnColFile": { "message": "Tệp" },
+  "warnColPattern": { "message": "Mẫu" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Câu trả lời mặc định" },
+  "uiConfirmDefaultYes": { "message": "Có" },
+  "uiConfirmDefaultNo": { "message": "Không" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

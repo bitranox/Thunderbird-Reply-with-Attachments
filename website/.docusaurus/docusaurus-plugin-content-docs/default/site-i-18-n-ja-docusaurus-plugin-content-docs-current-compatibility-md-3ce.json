@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "互換性",
+  "description": "互換性",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "互換性",
+    "sidebar_label": "互換性"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "使い方",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/usage"
+  },
+  "next": {
+    "title": "権限",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/permissions"
+  }
+}

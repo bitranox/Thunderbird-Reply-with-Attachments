@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Bahasa",
+  "description": "Dukungan luas berkat alat terjemahan berbasis AI — mencakup 103 bahasa.",
+  "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Bahasa",
+    "sidebar_label": "Bahasa"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Pengembangan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/development"
+  },
+  "next": {
+    "title": "Glosarium",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/glossary"
+  }
+}

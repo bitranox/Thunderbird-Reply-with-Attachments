@@ -14,7 +14,8 @@
     "generate:readme-langs": "node scripts/generate-readme-langs.mjs",
     "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
     "format": "node ./node_modules/prettier/bin/prettier.cjs --write .",
-    "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check ."
+    "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check .",
+    "translate:i18n": "node scripts/translate-i18n.mjs --locales all --docs --messages"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

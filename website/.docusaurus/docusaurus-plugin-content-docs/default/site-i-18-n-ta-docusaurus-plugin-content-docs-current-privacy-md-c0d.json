@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "தனியுரிமை",
+  "description": "Reply with Attachments எந்த பகுப்பாய்வும்/telemetry யும் சேகரிக்காது மற்றும் உங்கள் தரவை எங்கும் அனுப்பாது.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "தனியுரிமை",
+    "sidebar_label": "தனியுரிமை"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ஆதரவு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/support"
+  },
+  "next": {
+    "title": "நன்கொடை",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/donation"
+  }
+}

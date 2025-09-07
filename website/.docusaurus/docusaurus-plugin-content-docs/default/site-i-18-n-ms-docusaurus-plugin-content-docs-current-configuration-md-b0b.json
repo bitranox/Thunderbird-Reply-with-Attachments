@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Konfigurasi",
+  "description": "Nota istilah: rujuk Glossary untuk istilah yang konsisten dalam UI dan dokumentasi.",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Konfigurasi"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Pemasangan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/install"
+  },
+  "next": {
+    "title": "Penggunaan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/usage"
+  }
+}

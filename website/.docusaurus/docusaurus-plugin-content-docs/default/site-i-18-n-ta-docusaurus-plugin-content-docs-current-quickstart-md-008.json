@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "வேகத் தொடக்கம்",
+  "description": "1. Thunderbird Add‑ons இலிருந்து இணைப்பை (add‑on) நிறுவவும்.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "வேகத் தொடக்கம்",
+    "sidebar_label": "வேகத் தொடக்கம்"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "அம்சங்கள்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/features"
+  },
+  "next": {
+    "title": "நிறுவல்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/install"
+  }
+}

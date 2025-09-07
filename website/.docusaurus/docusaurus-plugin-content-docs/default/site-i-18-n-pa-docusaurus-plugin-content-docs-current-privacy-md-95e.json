@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "ਪਰਾਈਵੇਸੀ",
+  "description": "Reply with Attachments ਕੋਈ ਐਨਾਲਿਟਿਕਸ/ਟੈਲੀਮੀਟਰੀ ਇਕੱਠੀ ਨਹੀਂ ਕਰਦਾ ਅਤੇ ਤੁਹਾਡਾ ਡਾਟਾ ਕਿਤੇ ਨਹੀਂ ਭੇਜਦਾ।",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "ਪਰਾਈਵੇਸੀ",
+    "sidebar_label": "ਪਰਾਈਵੇਸੀ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਸਮਰਥਨ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/support"
+  },
+  "next": {
+    "title": "ਦਾਨ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/donation"
+  }
+}

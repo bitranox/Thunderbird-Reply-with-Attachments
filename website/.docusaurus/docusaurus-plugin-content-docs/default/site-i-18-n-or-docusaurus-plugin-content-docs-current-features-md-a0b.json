@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
+  "description": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
+  "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
+    "sidebar_label": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/quickstart"
+  }
+}

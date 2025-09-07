@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "ضمائم کے ساتھ جواب" },
+  "extDescription": { "message": "ای میل جواب میں اصل ضمائم خودکار طور پر شامل کریں۔" },
+  "composeTitle": { "message": "ضمائم کے ساتھ جواب" },
+  "optionsTitle": { "message": "ضمائم کے ساتھ جواب — اختیارات" },
+  "confirmTitle": { "message": "ضمائم کی تصدیق" },
+  "uiHeader": { "message": "ضمائم کے ساتھ جواب" },
+  "uiNoOptions": { "message": "فی الحال ترتیب دینے کے لیے کوئی اختیار نہیں۔" },
+  "uiSupport": { "message": "کیا آپ کو یہ ایڈ آن پسند ہے؟ ایک چھوٹی سی معاونت سے میرا ساتھ دیں:" },
+  "uiDonate": { "message": "ابھی عطیہ دیں" },
+  "uiGithubText": { "message": "بَگ رپورٹ یا دیگر سوالات کے لیے میری" },
+  "uiGithubLinkLabel": { "message": "GitHub صفحہ" },
+  "iconAlt": { "message": "Reply with Attachments آئیکن" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "فائل نام کی بلیک لسٹ (گلوب پیٹرن)" },
+  "uiBlacklistHelp": {
+    "message": "جو فائلیں ان پیٹرنز سے میل کھائیں گی وہ خود بخود منسلک نہیں ہوں گی۔ ہر سطر میں ایک پیٹرن۔ مثالیں: *.png، smime.*، *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "اگر بلیک لسٹ کی وجہ سے ضمائم خارج ہوں تو خبردار کریں" },
+  "uiSave": { "message": "محفوظ کریں" },
+  "uiSaving": { "message": "محفوظ کیا جا رہا ہے…" },
+  "uiReset": { "message": "طے شدہ حالت پر ری سیٹ کریں" },
+  "uiSaved": { "message": "محفوظ ہوگیا۔" },
+  "uiResetDone": { "message": "ری سیٹ ہوگیا۔" },
+  "uiConfirmHeader": { "message": "تصدیق" },
+  "uiConfirmLabel": { "message": "ضمائم شامل کرنے سے پہلے پوچھیں" },
+  "uiConfirmHelp": {
+    "message": "ایک چھوٹی کنفرمیشن ڈائیلاگ صرف اسی وقت ظاہر ہوگی جب واقعی ضمائم شامل کیے جائیں گے۔ کی بورڈ: Y یا J = ہاں؛ N یا Esc = نہیں۔"
+  },
+  "confirmAddOne": {
+    "message": "ضمیمہ شامل کریں: $1؟",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "ضمائم شامل کریں ($1): $2$3؟",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "ہاں" },
+  "confirmNo": { "message": "نہیں" },
+  "warnBlacklistTitle": { "message": "بلیک لسٹ کی بنا پر خارج" },
+  "warnBlacklistIntro": { "message": "مندرجہ ذیل فائلیں خودکار طور پر منسلک نہیں ہوں گی:" },
+  "warnColFile": { "message": "فائل" },
+  "warnColPattern": { "message": "پیٹرن" },
+  "warnOk": { "message": "ٹھیک ہے" },
+  "uiConfirmDefaultHeader": { "message": "پہلے سے طے شدہ جواب" },
+  "uiConfirmDefaultYes": { "message": "ہاں" },
+  "uiConfirmDefaultNo": { "message": "نہیں" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ur/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

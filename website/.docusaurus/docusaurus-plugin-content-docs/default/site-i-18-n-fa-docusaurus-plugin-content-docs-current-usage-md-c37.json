@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "شیوه استفاده",
+  "description": "شیوه استفاده",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "شیوه استفاده",
+    "sidebar_label": "شیوه استفاده"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "پیکربندی",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/configuration"
+  },
+  "next": {
+    "title": "سازگاری",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/compatibility"
+  }
+}

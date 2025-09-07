@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "स्थापना",
+  "description": "स्थापना — Thunderbird में (अनुशंसित)",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "स्थापना",
+    "slug": "/install",
+    "sidebar_label": "स्थापना"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "शीघ्र प्रारंभ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/quickstart"
+  },
+  "next": {
+    "title": "विन्यास",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/configuration"
+  }
+}

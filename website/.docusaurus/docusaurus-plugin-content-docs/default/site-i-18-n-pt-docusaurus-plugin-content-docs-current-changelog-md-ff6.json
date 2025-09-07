@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Registo de alterações",
+  "description": "Consulte o histórico completo no ficheiro CHANGELOG.md do repositório.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Registo de alterações"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licença",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/licence"
+  }
+}

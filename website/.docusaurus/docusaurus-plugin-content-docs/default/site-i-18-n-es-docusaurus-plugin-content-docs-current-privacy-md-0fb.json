@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "Privacidad",
+  "description": "Responder con adjuntos no recopila analíticas ni telemetría, ni envía tus datos a ningún sitio.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "Privacidad",
+    "sidebar_label": "Privacidad"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Soporte",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/support"
+  },
+  "next": {
+    "title": "Donar",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/donation"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "সংযুক্তিসহ উত্তর" },
+  "extDescription": {
+    "message": "ইমেইল উত্তরে স্বয়ংক্রিয়ভাবে মূল সংযুক্তিগুলি অন্তর্ভুক্ত করুন।"
+  },
+  "composeTitle": { "message": "সংযুক্তিসহ উত্তর" },
+  "optionsTitle": { "message": "সংযুক্তিসহ উত্তর — বিকল্পসমূহ" },
+  "confirmTitle": { "message": "সংযুক্তি নিশ্চিতকরণ" },
+  "uiHeader": { "message": "সংযুক্তিসহ উত্তর" },
+  "uiNoOptions": { "message": "বর্তমানে কনফিগার করার মতো কোনো বিকল্প নেই।" },
+  "uiSupport": { "message": "এই অ্যাড‑অনটি পছন্দ? একটি ছোট অনুদানে আমাকে সমর্থন করুন:" },
+  "uiDonate": { "message": "এখনই দান করুন" },
+  "uiGithubText": { "message": "বাগ রিপোর্ট বা অন্যান্য প্রশ্নের জন্য, দয়া করে আমার" },
+  "uiGithubLinkLabel": { "message": "GitHub পৃষ্ঠা" },
+  "iconAlt": { "message": "Reply with Attachments আইকন" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ফাইলনাম ব্ল্যাকলিস্ট (গ্লোব প্যাটার্ন)" },
+  "uiBlacklistHelp": {
+    "message": "এই প্যাটার্নগুলোর যেকোনটির সাথে মিললে সেই ফাইলগুলো কখনো স্বয়ংক্রিয়ভাবে সংযুক্ত হবে না। প্রতি লাইনে একটি প্যাটার্ন দিন। উদাহরণ: *.png, smime.* , *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ব্ল্যাকলিস্টে বাদ পড়লে সতর্ক করুন" },
+  "uiSave": { "message": "সংরক্ষণ করুন" },
+  "uiSaving": { "message": "সংরক্ষণ করা হচ্ছে…" },
+  "uiReset": { "message": "ডিফল্টে রিসেট করুন" },
+  "uiSaved": { "message": "সংরক্ষিত।" },
+  "uiResetDone": { "message": "রিসেট হয়েছে।" },
+  "uiConfirmHeader": { "message": "নিশ্চিতকরণ" },
+  "uiConfirmLabel": { "message": "সংযুক্তি যোগ করার আগে জিজ্ঞাসা করুন" },
+  "uiConfirmHelp": {
+    "message": "শুধুমাত্র যখন সংযুক্তি সত্যিই যোগ করা হবে তখনই একটি ছোট নিশ্চিতকরণ ডায়ালগ দেখাবে। কীবোর্ড: Y বা J = হ্যাঁ; N বা Esc = না।"
+  },
+  "confirmAddOne": {
+    "message": "সংযুক্তি যোগ করুন: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "সংযুক্তি যোগ করুন ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "হ্যাঁ" },
+  "confirmNo": { "message": "না" },
+  "warnBlacklistTitle": { "message": "ব্ল্যাকলিস্ট দ্বারা বাদ" },
+  "warnBlacklistIntro": { "message": "নিম্নলিখিত ফাইলগুলো স্বয়ংক্রিয়ভাবে সংযুক্ত হবে না:" },
+  "warnColFile": { "message": "ফাইল" },
+  "warnColPattern": { "message": "প্যাটার্ন" },
+  "warnOk": { "message": "ঠিক আছে" },
+  "uiConfirmDefaultHeader": { "message": "ডিফল্ট উত্তর" },
+  "uiConfirmDefaultYes": { "message": "হ্যাঁ" },
+  "uiConfirmDefaultNo": { "message": "না" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

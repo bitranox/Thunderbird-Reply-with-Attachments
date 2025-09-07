@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "مسرد i18n",
+  "description": "مصطلحات قياسية تُستخدم في واجهة الإضافة ووثائقها. استخدمها للحفاظ على اتساق الترجمات بين اللغات.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "مسرد i18n",
+    "sidebar_label": "المسرد"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "اللغات",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/languages"
+  },
+  "next": {
+    "title": "الدعم",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/support"
+  }
+}

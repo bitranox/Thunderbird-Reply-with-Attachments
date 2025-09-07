@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "اٹیچمنٹس سان جواب" },
+  "extDescription": { "message": "اِمیٖل جوابن منز اصلی اٹیچمنٹس خؤدکار طور شامل گژھان." },
+  "composeTitle": { "message": "اٹیچمنٹس سان جواب" },
+  "optionsTitle": { "message": "اٹیچمنٹس سان جواب — اختیارات" },
+  "confirmTitle": { "message": "اٹیچمنٹس تصدیق کرُن" },
+  "uiHeader": { "message": "اٹیچمنٹس سان جواب" },
+  "uiNoOptions": { "message": "ہندئ وقت کھوت کوئی اختیار نئ چھ۔" },
+  "uiSupport": { "message": "یہ ایڈ‑آن پسند آو؟ چھوٹے تعاون سِتھ می سہار کریو:" },
+  "uiDonate": { "message": "ہنٛز تعاون کریو" },
+  "uiGithubText": { "message": "بگ رپورٹ یا باقی سوالن خٲطرئ، مہربٲنی کرِت میون" },
+  "uiGithubLinkLabel": { "message": "GitHub صفح" },
+  "iconAlt": { "message": "Reply with Attachments آئیکن" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "فائل نٕاو کالٕی سُچی (glob پیٹرنز)" },
+  "uiBlacklistHelp": {
+    "message": "یِمن فائل نٕاون چھ یمن پیٹرنز سٕ نِرٲس موافقت، وہ خؤدکار طور اٹیچ نئ کرنٛد۔ ہر لائنس منز ایک پیٹرن۔ مثال: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "اگر اٹیچمنٹس کالٕی سُچی باعث نکالن، ہٕشیار کرِو" },
+  "uiSave": { "message": "محفوظ کرِو" },
+  "uiSaving": { "message": "محفوظ کران…" },
+  "uiReset": { "message": "ڈیفالٹ پٲٹھ واپس کرِو" },
+  "uiSaved": { "message": "محفوظ کرنٛمُت." },
+  "uiResetDone": { "message": "واپس گژھ." },
+  "uiConfirmHeader": { "message": "تصدیق" },
+  "uiConfirmLabel": { "message": "اٹیچمنٹس شامل کرنٛہ پٲٹھ پٲنسیو" },
+  "uiConfirmHelp": {
+    "message": "یِمئ چھکنٛز چھوٹ ڈائیلاگ ہٕندہ ژھالن، ییلہ واقعی اٹیچمنٹس شامل کرنٛہ بنٛن۔ کیبورڈ: Y یا J = آہ؛ N یا Esc = نئ."
+  },
+  "confirmAddOne": {
+    "message": "اٹیچمنٹ شامل کرِو: $1؟",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "اٹیچمنٹس شامل کرِو ($1): $2$3؟",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ہور" }
+    }
+  },
+  "confirmYes": { "message": "آہ" },
+  "confirmNo": { "message": "نئ" },
+  "warnBlacklistTitle": { "message": "کالٕی سُچی موجب نکالِتمت" },
+  "warnBlacklistIntro": { "message": "یہی فائلن چھنٛہ خؤدکار طور اٹیچ کرنٛمُت:" },
+  "warnColFile": { "message": "فائل" },
+  "warnColPattern": { "message": "پیٹرن" },
+  "warnOk": { "message": "ٹھیک" },
+  "uiConfirmDefaultHeader": { "message": "ڈیفالٹ جواب" },
+  "uiConfirmDefaultYes": { "message": "آہ" },
+  "uiConfirmDefaultNo": { "message": "نئ" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

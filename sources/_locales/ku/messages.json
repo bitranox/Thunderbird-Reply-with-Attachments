@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Bersiv bi pêvekên têketinê" },
+  "extDescription": {
+    "message": "Pêvekên orjînal ên peyamê bi xwerû li bersivên e‑peyaman zêde dike."
+  },
+  "composeTitle": { "message": "Bersiv bi pêvekên têketinê" },
+  "optionsTitle": { "message": "Bersiv bi pêvekên têketinê — Vebijêrk" },
+  "confirmTitle": { "message": "Pêvekên piştrast bike" },
+  "uiHeader": { "message": "Bersiv bi pêvekên têketinê" },
+  "uiNoOptions": { "message": "Niha tu vebijêrk tune ne bo mîhengkirinê." },
+  "uiSupport": { "message": "Ev pêvek hez dikî? Bi bexşêk biçûk alîkarî bike:" },
+  "uiDonate": { "message": "Niha bexşê bide" },
+  "uiGithubText": { "message": "Ji bo raporên çewtiyan an pirsên din, kerema xwe serî li" },
+  "uiGithubLinkLabel": { "message": "rûpela min a GitHub" },
+  "iconAlt": { "message": "Îkonê Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Lîsteya reş a navên pelan (şêwazên glob)" },
+  "uiBlacklistHelp": {
+    "message": "Pelên ku navên wan bi yek ji van şêwazan li hev digerin, tu carî bi xwerû nayên zêdekirin. Her rêzik yek şêwaz. Mînak: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Hişyar bike ger pêvek ji lîsteya reş ve hate derxistin" },
+  "uiSave": { "message": "Tomar bike" },
+  "uiSaving": { "message": "Tê tomarkirin…" },
+  "uiReset": { "message": "Vegere standardê" },
+  "uiSaved": { "message": "Hate tomarkirin." },
+  "uiResetDone": { "message": "Hate vegerandin." },
+  "uiConfirmHeader": { "message": "Piştrastkirin" },
+  "uiConfirmLabel": { "message": "Pêşî ji ber ku pêvek tê zêdekirin bipirse" },
+  "uiConfirmHelp": {
+    "message": "Diyalogeke piştrastkirina biçûk tenê dema ku bi rastî pêvek tê zêdekirin xuya dibe. Klavyeyê: Y an J = Erê; N an Esc = Na."
+  },
+  "confirmAddOne": {
+    "message": "Pêvek lê zêde bibe: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Pêvekan lê zêde bibe ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 zêdetir" }
+    }
+  },
+  "confirmYes": { "message": "Erê" },
+  "confirmNo": { "message": "Na" },
+  "warnBlacklistTitle": { "message": "Ji lîsteya reş ve hate derxistin" },
+  "warnBlacklistIntro": { "message": "Pelên jêrîn bi xwerû nayên zêdekirin:" },
+  "warnColFile": { "message": "Pel" },
+  "warnColPattern": { "message": "Şêwaz" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Bersiva standard" },
+  "uiConfirmDefaultYes": { "message": "Erê" },
+  "uiConfirmDefaultNo": { "message": "Na" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

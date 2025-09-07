@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "లక్షణాలు",
+  "description": "లక్షణాలు",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "లక్షణాలు",
+    "sidebar_label": "లక్షణాలు"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "క్విక్‌స్టార్ట్",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/quickstart"
+  }
+}

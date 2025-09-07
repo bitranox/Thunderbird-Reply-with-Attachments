@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Phendula kunye neziqhoboshelo" },
+  "extDescription": {
+    "message": "Yongeza ngokuzenzekelayo iziqhoboshelo zokuqala kwiimpendulo ze‑imeyile."
+  },
+  "composeTitle": { "message": "Phendula kunye neziqhoboshelo" },
+  "optionsTitle": { "message": "Phendula kunye neziqhoboshelo — Iinketho" },
+  "confirmTitle": { "message": "Qinisekisa iziqhoboshelo" },
+  "uiHeader": { "message": "Phendula kunye neziqhoboshelo" },
+  "uiNoOptions": { "message": "Okwangoku akukho zikhetho zokumisela." },
+  "uiSupport": { "message": "Uyayithanda le‑addon? Ndixhase ngomnikelo omncinci:" },
+  "uiDonate": { "message": "Nika ngoku" },
+  "uiGithubText": {
+    "message": "Ngokwerekhodi lweziphoso okanye eminye imibuzo, nceda undwendwele"
+  },
+  "uiGithubLinkLabel": { "message": "iphepha lam le‑GitHub" },
+  "iconAlt": { "message": "I‑icon ye Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Uluhlu olumnyama lwamagama eefayile (iipateni ze‑glob)" },
+  "uiBlacklistHelp": {
+    "message": "Iifayile ezihambelana nayo nayiphi na kwezi pateni azisoze zongezwe ngokuzenzekelayo. Ipateni enye kwilayini. Imizekelo: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Isilumkiso xa iziqhoboshelo zisuswa luluhlu olumnyama" },
+  "uiSave": { "message": "Gcina" },
+  "uiSaving": { "message": "Kugcinwa…" },
+  "uiReset": { "message": "Setha kwakhona kwimimiselo emiselweyo" },
+  "uiSaved": { "message": "Kugcinwe." },
+  "uiResetDone": { "message": "Kusetiwe ngokutsha." },
+  "uiConfirmHeader": { "message": "Isiqinisekiso" },
+  "uiConfirmLabel": { "message": "Buza phambi kokongeza iziqhoboshelo" },
+  "uiConfirmHelp": {
+    "message": "Ibhokisi encinci yokuqinisekisa ibonakala kuphela xa iziqhoboshelo ziza kongezwa ngenene. Iqhosha lebhodi: Y okanye J = Ewe; N okanye Esc = Hayi."
+  },
+  "confirmAddOne": {
+    "message": "Yongeza isiqhoboshelo: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Yongeza iziqhoboshelo ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ngakumbi" }
+    }
+  },
+  "confirmYes": { "message": "Ewe" },
+  "confirmNo": { "message": "Hayi" },
+  "warnBlacklistTitle": { "message": "Isuswe luluhlu olumnyama" },
+  "warnBlacklistIntro": { "message": "Ezi fayile zilandelayo azizukongezwa ngokuzenzekelayo:" },
+  "warnColFile": { "message": "Ifayile" },
+  "warnColPattern": { "message": "Iphetheni" },
+  "warnOk": { "message": "Kulungile" },
+  "uiConfirmDefaultHeader": { "message": "Impendulo emiselweyo" },
+  "uiConfirmDefaultYes": { "message": "Ewe" },
+  "uiConfirmDefaultNo": { "message": "Hayi" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/xh/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "वापर",
+  "description": "वापर",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "वापर",
+    "sidebar_label": "वापर"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "संरचना",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/configuration"
+  },
+  "next": {
+    "title": "सुसंगतता",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/compatibility"
+  }
+}

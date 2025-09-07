@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Kokutana na ba‑attachements" },
+  "extDescription": {
+    "message": "Ekobakisa na ndenge automatique ba attachements ya e‑mail ya liboso na biyano."
+  },
+  "composeTitle": { "message": "Kokutana na ba‑attachements" },
+  "optionsTitle": { "message": "Kokutana na ba‑attachements — Makambo ya kobongisa" },
+  "confirmTitle": { "message": "Kokangola ba‑attachements" },
+  "uiHeader": { "message": "Kokutana na ba‑attachements" },
+  "uiNoOptions": { "message": "Sik’oyo ezali na eloko te ya kobongisa." },
+  "uiSupport": { "message": "Olingi extension oyo? Sunga ngai na mwa donation moke:" },
+  "uiDonate": { "message": "Salá donation sik’oyo" },
+  "uiGithubText": { "message": "Po na rapport ya ba erreurs to mituna mosusu, tala" },
+  "uiGithubLinkLabel": { "message": "page na ngai ya GitHub" },
+  "iconAlt": { "message": "Icone ya Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Liste noire ya kombo ya fichier (ba modèles glob)" },
+  "uiBlacklistHelp": {
+    "message": "Ba fichiers oyo kombo na bango ekokokana na moko ya ba modèles oyo, ekozala te automatique kolongama. Modèle moko na ligne moko. Bato: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Loba soki ba‑attachements elongolami na liste noire" },
+  "uiSave": { "message": "Bomba" },
+  "uiSaving": { "message": "Ebombi…" },
+  "uiReset": { "message": "Zongisa na défaut" },
+  "uiSaved": { "message": "Ebombami." },
+  "uiResetDone": { "message": "Ezongi." },
+  "uiConfirmHeader": { "message": "Kondima" },
+  "uiConfirmLabel": { "message": "Tuna liboso ya kobakisa ba‑attachements" },
+  "uiConfirmHelp": {
+    "message": "Dialogue moke ya kondima emonana kaka soki tozali kobakisa nsolo ya koba‑attachements solo. Clavier: Y to J = Ee; N to Esc = Te."
+  },
+  "confirmAddOne": {
+    "message": "Tobakisa attachment: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Tobakisa ba‑attachments ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 mosusu" }
+    }
+  },
+  "confirmYes": { "message": "Ee" },
+  "confirmNo": { "message": "Te" },
+  "warnBlacklistTitle": { "message": "Elongolami na liste noire" },
+  "warnBlacklistIntro": { "message": "Ba fichier oyo elandi ekobakisama te na automatique:" },
+  "warnColFile": { "message": "Fichier" },
+  "warnColPattern": { "message": "Modèle" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Eyano ya défaut" },
+  "uiConfirmDefaultYes": { "message": "Ee" },
+  "uiConfirmDefaultNo": { "message": "Te" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

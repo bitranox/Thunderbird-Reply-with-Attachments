@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Ka jawaab lifaaqyo leh" },
+  "extDescription": {
+    "message": "Si toos ah ayuu ugu daraa lifaaqyadii asalka ahaa jawaabaha iimaylka."
+  },
+  "composeTitle": { "message": "Ka jawaab lifaaqyo leh" },
+  "optionsTitle": { "message": "Ka jawaab lifaaqyo leh — Xulashooyin" },
+  "confirmTitle": { "message": "Xaqiiji lifaaqyada" },
+  "uiHeader": { "message": "Ka jawaab lifaaqyo leh" },
+  "uiNoOptions": { "message": "Waqtigan xaadirka ah xulasho la dejiyo ma jiro." },
+  "uiSupport": { "message": "Ma jeceshahay ku‑daro‑gaankan? I taageer deeq yar:" },
+  "uiDonate": { "message": "Ku deeq hadda" },
+  "uiGithubText": { "message": "Warbixinnada khaladaadka ama su’aalo kale, fadlan booqo" },
+  "uiGithubLinkLabel": { "message": "boggayga GitHub" },
+  "iconAlt": { "message": "Summadda Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Liiska madow ee magacyada faylka (qaabab glob)" },
+  "uiBlacklistHelp": {
+    "message": "Faylasha magaca u dhigma mid ka mid ah qaababkan waligood si toos ah looma lifaaqi doono. Hal qaab halkii sadar. Tusaalooyin: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Digniin haddii lifaaqyada laga reebay liiska madow" },
+  "uiSave": { "message": "Kaydi" },
+  "uiSaving": { "message": "Kaydinaya…" },
+  "uiReset": { "message": "Ku celi caadiga" },
+  "uiSaved": { "message": "La kaydiyey." },
+  "uiResetDone": { "message": "La celyey." },
+  "uiConfirmHeader": { "message": "Xaqiijin" },
+  "uiConfirmLabel": { "message": "Weydii ka hor inta aadan lifaaqyo ku darin" },
+  "uiConfirmHelp": {
+    "message": "Sanduuq yar oo xaqiijin ah ayaa soo baxa oo keliya marka lifaaqyo dhab ahaan la dari lahaa. Kiiboodh: Y ama J = Haa; N ama Esc = Maya."
+  },
+  "confirmAddOne": {
+    "message": "Ku dar lifaaq: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Ku dar lifaaqyo ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 kale" }
+    }
+  },
+  "confirmYes": { "message": "Haa" },
+  "confirmNo": { "message": "Maya" },
+  "warnBlacklistTitle": { "message": "Waxaa laga reebay liiska madow" },
+  "warnBlacklistIntro": { "message": "Faylasha soo socda si toos ah looma lifaaqi doono:" },
+  "warnColFile": { "message": "Fayl" },
+  "warnColPattern": { "message": "Qaab" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Jawaabta caadiga ah" },
+  "uiConfirmDefaultYes": { "message": "Haa" },
+  "uiConfirmDefaultNo": { "message": "Maya" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

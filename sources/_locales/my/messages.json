@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "အလိုက်တွဲဖိုင်များဖြင့် ပြန်စာ" },
+  "extDescription": {
+    "message": "အီးမေးလ် အကြောင်းပြန်ရာတွင် မူရင်း အလိုက်တွဲဖိုင်များကို အလိုအလျောက် ထည့်ပေးသည်။"
+  },
+  "composeTitle": { "message": "အလိုက်တွဲဖိုင်များဖြင့် ပြန်စာ" },
+  "optionsTitle": { "message": "အလိုက်တွဲဖိုင်များဖြင့် ပြန်စာ — ရွေးချယ်စရာများ" },
+  "confirmTitle": { "message": "အလိုက်တွဲဖိုင်များ အတည်ပြုခြင်း" },
+  "uiHeader": { "message": "အလိုက်တွဲဖိုင်များဖြင့် ပြန်စာ" },
+  "uiNoOptions": { "message": "ယခုအခါ ဖွဲ့စည်းရန် ရွေးချယ်စရာ မရှိပါ။" },
+  "uiSupport": { "message": "ဤ add‑on ကို နှစ်သက်ပါသလား? သေးငယ်သော အကူအညီဖြင့် ကူညီပေးပါ:" },
+  "uiDonate": { "message": "ယခု လှူဒါန်းရန်" },
+  "uiGithubText": { "message": "bug တင်သွင်းမှု သို့ မေးခွန်းများအတွက် ကျွန်ုပ်၏" },
+  "uiGithubLinkLabel": { "message": "GitHub စာမျက်နှာ" },
+  "iconAlt": { "message": "Reply with Attachments အိုင်ကွန်" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ဖိုင်အမည်များ၏ ကာလာစာရင်း (glob ပုံစံများ)" },
+  "uiBlacklistHelp": {
+    "message": "ဤ ပုံစံများထဲမှ မည်သည့်တစ်ခုနဲ့မဆို ကိုက်ညီသော ဖိုင်များကို မည်သည့်အခါမျှ အလိုအလျောက် မပူးတွဲပါ။ တစ်ကြောင်းလျှင် ပုံစံတစ်ခု။ နမူနာများ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ကာလာစာရင်းကြောင့် ပူးတွဲခြင်းမှ ဖယ်ရှားပါက သတိပေးမည်" },
+  "uiSave": { "message": "သိမ်းမည်" },
+  "uiSaving": { "message": "သိမ်းနေသည်…" },
+  "uiReset": { "message": "စံသတ်မှတ်တန်ဖိုးများသို့ ပြန်ထား" },
+  "uiSaved": { "message": "သိမ်းပြီး" },
+  "uiResetDone": { "message": "ပြန်ထားပြီး" },
+  "uiConfirmHeader": { "message": "အတည်ပြုချက်" },
+  "uiConfirmLabel": { "message": "အလိုက်တွဲဖိုင်များ ထည့်မီ မေးမည်" },
+  "uiConfirmHelp": {
+    "message": "အလိုက်တွဲဖိုင်များ အမှန်တကယ် ထည့်မည်ဆိုလျှင်သာ အတည်ပြုစာမျက်နှာ သေးငယ်ငယ် ပေါ်လာမည်။ ကီးဘုတ်: Y သို့မဟုတ် J = ဟုတ်ကဲ့; N သို့မဟုတ် Esc = မဟုတ်။"
+  },
+  "confirmAddOne": {
+    "message": "အလိုက်တွဲဖိုင် ထည့်မလား: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "အလိုက်တွဲဖိုင်များ ထည်းမလား ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ထပ်မံ" }
+    }
+  },
+  "confirmYes": { "message": "ဟုတ်ကဲ့" },
+  "confirmNo": { "message": "မဟုတ်" },
+  "warnBlacklistTitle": { "message": "ကာလာစာရင်းကြောင့် ဖယ်ရှားထားသည်" },
+  "warnBlacklistIntro": { "message": "အောက်ပါ ဖိုင်များကို အလိုအလျောက် မပူးတွဲပါ:" },
+  "warnColFile": { "message": "ဖိုင်" },
+  "warnColPattern": { "message": "ပုံစံ" },
+  "warnOk": { "message": "ကောင်းပြီ" },
+  "uiConfirmDefaultHeader": { "message": "ပုံသေ ဖြေကြားချက်" },
+  "uiConfirmDefaultYes": { "message": "ဟုတ်ကဲ့" },
+  "uiConfirmDefaultNo": { "message": "မဟုတ်" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

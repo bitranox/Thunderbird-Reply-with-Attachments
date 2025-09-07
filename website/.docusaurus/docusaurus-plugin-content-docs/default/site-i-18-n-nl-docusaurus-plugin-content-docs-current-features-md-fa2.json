@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Functies",
+  "description": "Functies",
+  "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Functies",
+    "sidebar_label": "Functies"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/quickstart"
+  }
+}

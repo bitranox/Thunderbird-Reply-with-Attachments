@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Адказ з укладаннямі" },
+  "extDescription": {
+    "message": "Аўтаматычна дадае арыгінальныя ўкладанні ў адказы электроннай пошты."
+  },
+  "composeTitle": { "message": "Адказ з укладаннямі" },
+  "optionsTitle": { "message": "Адказ з укладаннямі — Налады" },
+  "confirmTitle": { "message": "Пацвердзіць укладанні" },
+  "uiHeader": { "message": "Адказ з укладаннямі" },
+  "uiNoOptions": { "message": "Цяпер няма параметраў для наладжвання." },
+  "uiSupport": {
+    "message": "Падабаецца гэтае пашырэнне? Падтрымайце мяне невялікім ахвяраваннем:"
+  },
+  "uiDonate": { "message": "Ахвяраваць" },
+  "uiGithubText": { "message": "Для справаздач аб памылках або іншых пытанняў наведайце" },
+  "uiGithubLinkLabel": { "message": "маю старонку GitHub" },
+  "iconAlt": { "message": "Значок Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Чорны спіс імёнаў файлаў (узоры glob)" },
+  "uiBlacklistHelp": {
+    "message": "Файлы, імёны якіх адпавядаюць любому з гэтых узораў, ніколі не будуць аўтаматычна далучацца. Адзін узор на радок. Прыклады: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Папярэджваць, калі ўкладанні выключаныя чорным спісам" },
+  "uiSave": { "message": "Захаваць" },
+  "uiSaving": { "message": "Захаванне…" },
+  "uiReset": { "message": "Скінуць да стандартных" },
+  "uiSaved": { "message": "Захавана." },
+  "uiResetDone": { "message": "Скінута." },
+  "uiConfirmHeader": { "message": "Пацвярджэнне" },
+  "uiConfirmLabel": { "message": "Пытацца перад даданнем укладанняў" },
+  "uiConfirmHelp": {
+    "message": "Невялікае дыялогавае акно пацвярджэння з'яўляецца толькі тады, калі ўкладанні сапраўды дадаюцца. Клавіятура: Y або J = Так; N або Esc = Не."
+  },
+  "confirmAddOne": {
+    "message": "Дадаць укладанне: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Дадаць укладанні ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 яшчэ" }
+    }
+  },
+  "confirmYes": { "message": "Так" },
+  "confirmNo": { "message": "Не" },
+  "warnBlacklistTitle": { "message": "Выключана чорным спісам" },
+  "warnBlacklistIntro": { "message": "Наступныя файлы не будуць аўтаматычна далучацца:" },
+  "warnColFile": { "message": "Файл" },
+  "warnColPattern": { "message": "Узор" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Стандартны адказ" },
+  "uiConfirmDefaultYes": { "message": "Так" },
+  "uiConfirmDefaultNo": { "message": "Не" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

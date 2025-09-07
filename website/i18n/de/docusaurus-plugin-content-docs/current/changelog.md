@@ -1,10 +1,10 @@
 ---
 id: changelog
-title: Changelog
+title: Änderungsprotokoll
 ---
 
 Den vollständigen Verlauf findest du in der CHANGELOG.md im Repository.
 
-- Architektur & Tests überarbeitet (2025‑09‑05)
-- 1.0.1: Wechsel zu messages.listAttachments()
-- 1.0.0: Erste Veröffentlichung
+- 2.0.0: Neufassung zur voll funktionsfähigen Version (EN/DE)
+- 1.0.1: Umstieg auf messages.listAttachments()
+- 1.0.0: Erstveröffentlichung

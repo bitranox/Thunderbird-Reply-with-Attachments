@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "Sviluppo",
+  "description": "Guida allo sviluppo",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "Sviluppo",
+    "sidebar_label": "Sviluppo"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Autorizzazioni",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/permissions"
+  },
+  "next": {
+    "title": "Lingue",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/languages"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "licence",
+  "title": "Licence",
+  "description": "Project license: MIT",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/licence.md",
+  "sourceDirName": ".",
+  "slug": "/licence",
+  "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/licence",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "licence",
+    "title": "Licence",
+    "sidebar_label": "Licence"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Donate",
+    "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/donation"
+  },
+  "next": {
+    "title": "Журнал змін",
+    "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/changelog"
+  }
+}

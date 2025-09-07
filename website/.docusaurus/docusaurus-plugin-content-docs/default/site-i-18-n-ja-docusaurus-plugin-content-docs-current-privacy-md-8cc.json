@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "プライバシー",
+  "description": "「添付ファイル付きで返信」は分析やテレメトリーを収集せず、あなたのデータをどこへも送信しません。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "プライバシー",
+    "sidebar_label": "プライバシー"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "サポート",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/support"
+  },
+  "next": {
+    "title": "寄付",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/donation"
+  }
+}

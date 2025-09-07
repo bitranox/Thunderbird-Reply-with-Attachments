@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "Glosari i18n",
+  "description": "Istilah kanonik yang digunakan dalam UI dan dokumentasi add‑on. Gunakan istilah ini untuk memastikan terjemahan konsisten merentas locale.",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "Glosari i18n",
+    "sidebar_label": "Glosari"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Bahasa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/languages"
+  },
+  "next": {
+    "title": "Sokongan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/support"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "அபிவிருத்தி",
+  "description": "அபிவிருத்தி வழிகாட்டி",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "அபிவிருத்தி",
+    "sidebar_label": "அபிவிருத்தி"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "அனுமதிகள்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/permissions"
+  },
+  "next": {
+    "title": "மொழிகள்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/languages"
+  }
+}

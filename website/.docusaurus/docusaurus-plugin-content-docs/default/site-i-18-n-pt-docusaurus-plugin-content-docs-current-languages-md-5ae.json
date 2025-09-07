@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Idiomas",
+  "description": "Amplo suporte graças a ferramentas de tradução por IA — 103 idiomas.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Idiomas",
+    "sidebar_label": "Idiomas"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Desenvolvimento",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/development"
+  },
+  "next": {
+    "title": "Glossário",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/glossary"
+  }
+}

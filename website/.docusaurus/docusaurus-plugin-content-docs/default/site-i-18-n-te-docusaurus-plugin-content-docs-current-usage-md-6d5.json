@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "వాడకం",
+  "description": "వాడకం",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "వాడకం",
+    "sidebar_label": "వాడకం"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ఆకృతీకరణ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/configuration"
+  },
+  "next": {
+    "title": "అనుకూలత",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/compatibility"
+  }
+}

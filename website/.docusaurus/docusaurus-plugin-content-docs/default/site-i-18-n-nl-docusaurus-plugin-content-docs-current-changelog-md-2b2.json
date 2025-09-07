@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Wijzigingslogboek",
+  "description": "Bekijk de volledige geschiedenis in het bestand CHANGELOG.md van de repository.",
+  "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Wijzigingslogboek"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/licence"
+  }
+}

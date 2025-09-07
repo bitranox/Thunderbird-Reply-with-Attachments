@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "Tương thích",
+  "description": "Tương thích",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "Tương thích",
+    "sidebar_label": "Tương thích"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Cách dùng",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/usage"
+  },
+  "next": {
+    "title": "Quyền",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/permissions"
+  }
+}

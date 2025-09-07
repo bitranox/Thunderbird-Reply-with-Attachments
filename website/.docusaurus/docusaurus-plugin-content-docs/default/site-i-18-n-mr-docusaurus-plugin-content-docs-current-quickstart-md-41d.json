@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "क्विकस्टार्ट",
+  "description": "1. Thunderbird Add‑ons मधून अॅड‑ऑन इन्स्टॉल करा.",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "क्विकस्टार्ट",
+    "sidebar_label": "क्विकस्टार्ट"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "वैशिष्ट्ये",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/features"
+  },
+  "next": {
+    "title": "प्रतिष्ठापन",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/install"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "മാറ്റങ്ങളുടെ രേഖ",
+  "description": "പൂർണ്ണമായ ചരിത്രം റീപോസിറ്ററിയിലെ CHANGELOG.md ഫയലിൽ കാണുക.",
+  "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "മാറ്റങ്ങളുടെ രേഖ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/licence"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Derma",
+  "description": "Jika anda menyukai Reply with Attachments dan mahu menyokong pembangunannya, anda boleh menderma di sini:",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Derma",
+    "sidebar_label": "Derma"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Privasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/privacy"
+  },
+  "next": {
+    "title": "Lesen",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/licence"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "extName": { "message": "ตอบกลับพร้อมไฟล์แนบ" },
+  "extDescription": { "message": "รวมไฟล์แนบต้นฉบับโดยอัตโนมัติในอีเมลตอบกลับ" },
+  "composeTitle": { "message": "ตอบกลับพร้อมไฟล์แนบ" },
+  "optionsTitle": { "message": "ตอบกลับพร้อมไฟล์แนบ — ตัวเลือก" },
+  "confirmTitle": { "message": "ยืนยันไฟล์แนบ" },
+  "uiHeader": { "message": "ตอบกลับพร้อมไฟล์แนบ" },
+  "uiNoOptions": { "message": "ขณะนี้ยังไม่มีตัวเลือกให้กำหนดค่า" },
+  "uiSupport": { "message": "ชอบส่วนเสริมนี้หรือไม่? สนับสนุนฉันด้วยการบริจาคเล็กน้อย:" },
+  "uiDonate": { "message": "บริจาคตอนนี้" },
+  "uiGithubText": { "message": "สำหรับการรายงานบั๊กหรือคำถามอื่น ๆ โปรดไปที่" },
+  "uiGithubLinkLabel": { "message": "หน้า GitHub ของฉัน" },
+  "iconAlt": { "message": "ไอคอน Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "บัญชีดำชื่อไฟล์ (รูปแบบ glob)" },
+  "uiBlacklistHelp": {
+    "message": "ไฟล์ที่ตรงกับรูปแบบใด ๆ เหล่านี้จะไม่ถูกแนบโดยอัตโนมัติ เส้นละหนึ่งรูปแบบ ตัวอย่าง: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "เตือนหากไฟล์แนบถูกตัดออกโดยบัญชีดำ" },
+  "uiSave": { "message": "บันทึก" },
+  "uiSaving": { "message": "กำลังบันทึก…" },
+  "uiReset": { "message": "รีเซ็ตเป็นค่าเริ่มต้น" },
+  "uiSaved": { "message": "บันทึกแล้ว" },
+  "uiResetDone": { "message": "รีเซ็ตแล้ว" },
+  "uiConfirmHeader": { "message": "การยืนยัน" },
+  "uiConfirmLabel": { "message": "ถามก่อนเพิ่มไฟล์แนบ" },
+  "uiConfirmHelp": {
+    "message": "กล่องโต้ตอบยืนยันขนาดเล็กจะแสดงเฉพาะเมื่อมีการเพิ่มไฟล์แนบจริง ๆ แป้นพิมพ์: Y หรือ J = ใช่; N หรือ Esc = ไม่ใช่"
+  },
+  "confirmAddOne": { "message": "เพิ่มไฟล์แนบ: $1?", "placeholders": { "1": { "content": "$1" } } },
+  "confirmAddMany": {
+    "message": "เพิ่มไฟล์แนบ ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "ใช่" },
+  "confirmNo": { "message": "ไม่" },
+  "warnBlacklistTitle": { "message": "ถูกตัดออกโดยบัญชีดำ" },
+  "warnBlacklistIntro": { "message": "ไฟล์ต่อไปนี้จะไม่ถูกแนบโดยอัตโนมัติ:" },
+  "warnColFile": { "message": "ไฟล์" },
+  "warnColPattern": { "message": "รูปแบบ" },
+  "warnOk": { "message": "ตกลง" },
+  "uiConfirmDefaultHeader": { "message": "คำตอบเริ่มต้น" },
+  "uiConfirmDefaultYes": { "message": "ใช่" },
+  "uiConfirmDefaultNo": { "message": "ไม่" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

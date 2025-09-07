@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Odpovědět s přílohami" },
+  "extDescription": { "message": "Automaticky přidá původní přílohy do odpovědí e‑mailem." },
+  "composeTitle": { "message": "Odpovědět s přílohami" },
+  "optionsTitle": { "message": "Odpovědět s přílohami — Možnosti" },
+  "confirmTitle": { "message": "Potvrdit přílohy" },
+  "uiHeader": { "message": "Odpovědět s přílohami" },
+  "uiNoOptions": { "message": "Momentálně není co nastavovat." },
+  "uiSupport": { "message": "Líbí se vám tento doplněk? Podpořte mě malým příspěvkem:" },
+  "uiDonate": { "message": "Přispět nyní" },
+  "uiGithubText": { "message": "Pro hlášení chyb nebo dotazy navštivte" },
+  "uiGithubLinkLabel": { "message": "mou stránku na GitHubu" },
+  "iconAlt": { "message": "Ikona Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Černá listina názvů souborů (glob vzory)" },
+  "uiBlacklistHelp": {
+    "message": "Soubory, jejichž název odpovídá některému z těchto vzorů, nebudou nikdy automaticky připojeny. Jeden vzor na řádek. Příklady: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Upozornit, pokud přílohy vyloučila černá listina" },
+  "uiSave": { "message": "Uložit" },
+  "uiSaving": { "message": "Ukládání…" },
+  "uiReset": { "message": "Obnovit výchozí" },
+  "uiSaved": { "message": "Uloženo." },
+  "uiResetDone": { "message": "Obnoveno." },
+  "uiConfirmHeader": { "message": "Potvrzení" },
+  "uiConfirmLabel": { "message": "Ptát se před přidáním příloh" },
+  "uiConfirmHelp": {
+    "message": "Malé potvrzovací okno se zobrazí pouze tehdy, když by se opravdu přidávaly přílohy. Klávesnice: Y nebo J = Ano; N nebo Esc = Ne."
+  },
+  "confirmAddOne": {
+    "message": "Přidat přílohu: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Přidat přílohy ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 další" }
+    }
+  },
+  "confirmYes": { "message": "Ano" },
+  "confirmNo": { "message": "Ne" },
+  "warnBlacklistTitle": { "message": "Vyloučeno černou listinou" },
+  "warnBlacklistIntro": { "message": "Následující soubory nebudou automaticky připojeny:" },
+  "warnColFile": { "message": "Soubor" },
+  "warnColPattern": { "message": "Vzor" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Výchozí odpověď" },
+  "uiConfirmDefaultYes": { "message": "Ano" },
+  "uiConfirmDefaultNo": { "message": "Ne" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

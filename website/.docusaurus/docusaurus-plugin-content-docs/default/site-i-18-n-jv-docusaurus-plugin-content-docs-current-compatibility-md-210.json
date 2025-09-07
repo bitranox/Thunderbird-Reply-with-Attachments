@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "Kompatibilitas",
+  "description": "Kompatibilitas",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "Kompatibilitas",
+    "sidebar_label": "Kompatibilitas"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Panggunaan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/usage"
+  },
+  "next": {
+    "title": "Ijin",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/permissions"
+  }
+}

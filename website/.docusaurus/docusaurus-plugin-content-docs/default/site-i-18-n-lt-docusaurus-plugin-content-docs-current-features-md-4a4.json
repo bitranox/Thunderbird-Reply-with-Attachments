@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Funkcijos",
+  "description": "Funkcijos",
+  "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Funkcijos",
+    "sidebar_label": "Funkcijos"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/quickstart"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Izin",
+  "description": "Add‑on ini hanya meminta sedikit izin yang spesifik. Alasan tiap izin:",
+  "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Izin"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Kompatibilitas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/compatibility"
+  },
+  "next": {
+    "title": "Pengembangan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/development"
+  }
+}

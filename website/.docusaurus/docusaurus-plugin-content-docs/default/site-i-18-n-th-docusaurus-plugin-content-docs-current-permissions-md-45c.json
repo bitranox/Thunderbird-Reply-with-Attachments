@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "สิทธิ์ที่ต้องใช้",
+  "description": "ส่วนเสริมขอนุญาตเพียงไม่กี่รายการที่จำเป็นและเจาะจงเหตุผล ดังนี้:",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "สิทธิ์ที่ต้องใช้"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ความเข้ากันได้",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/compatibility"
+  },
+  "next": {
+    "title": "การพัฒนา",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/development"
+  }
+}

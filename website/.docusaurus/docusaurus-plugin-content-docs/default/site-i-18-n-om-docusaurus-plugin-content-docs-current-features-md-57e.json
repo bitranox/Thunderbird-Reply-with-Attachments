@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Amaloota",
+  "description": "Amaloota",
+  "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Amaloota",
+    "sidebar_label": "Amaloota"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/quickstart"
+  }
+}

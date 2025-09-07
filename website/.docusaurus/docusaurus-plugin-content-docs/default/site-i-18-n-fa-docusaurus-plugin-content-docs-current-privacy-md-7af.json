@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "حریم خصوصی",
+  "description": "Reply with Attachments هیچ تحلیلی/telemetry گردآوری نمی‌کند و داده‌های شما را به جایی ارسال نمی‌کند.",
+  "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "حریم خصوصی",
+    "sidebar_label": "حریم خصوصی"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "پشتیبانی",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/support"
+  },
+  "next": {
+    "title": "کمک مالی",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/donation"
+  }
+}

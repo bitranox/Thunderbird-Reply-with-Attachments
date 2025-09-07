@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "మార్పుల చిట్టా",
+  "description": "పూర్తి చరిత్ర కోసం రిపోజిటరీలోని CHANGELOG.md ఫైలును చూడండి.",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "మార్పుల చిట్టా"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "లైసెన్స్",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/licence"
+  }
+}

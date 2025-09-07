@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "மொழிகள்",
+  "description": "AI மொழிபெயர்ப்பு கருவிகளின் உதவியால் விரிவான மொழி ஆதரவு — 103 மொழிகள்.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "மொழிகள்",
+    "sidebar_label": "மொழிகள்"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "அபிவிருத்தி",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/development"
+  },
+  "next": {
+    "title": "சொற்களஞ்சியம்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/glossary"
+  }
+}

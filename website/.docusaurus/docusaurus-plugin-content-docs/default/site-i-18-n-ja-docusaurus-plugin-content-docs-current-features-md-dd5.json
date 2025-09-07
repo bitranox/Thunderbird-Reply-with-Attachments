@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "機能",
+  "description": "機能",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "機能",
+    "sidebar_label": "機能"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "クイックスタート",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/quickstart"
+  }
+}

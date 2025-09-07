@@ -3,109 +3,109 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/Thunderbird-Reply-with-Attachments/de/search',
-    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/search', '89b'),
+    path: '/Thunderbird-Reply-with-Attachments/om/search',
+    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/search', '72b'),
     exact: true
   },
   {
-    path: '/Thunderbird-Reply-with-Attachments/de/docs',
-    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs', 'fc0'),
+    path: '/Thunderbird-Reply-with-Attachments/om/docs',
+    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs', 'f69'),
     routes: [
       {
-        path: '/Thunderbird-Reply-with-Attachments/de/docs',
-        component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs', 'd9e'),
+        path: '/Thunderbird-Reply-with-Attachments/om/docs',
+        component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs', '0c2'),
         routes: [
           {
-            path: '/Thunderbird-Reply-with-Attachments/de/docs',
-            component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs', 'acc'),
+            path: '/Thunderbird-Reply-with-Attachments/om/docs',
+            component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs', '0ba'),
             routes: [
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/changelog',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/changelog', 'c03'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/changelog',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/changelog', '7a5'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/compatibility',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/compatibility', '064'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/compatibility',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/compatibility', 'e47'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/configuration',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/configuration', '5de'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/configuration',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/configuration', 'b6f'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/development',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/development', '353'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/development',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/development', '480'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/donation',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/donation', 'ee0'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/donation',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/donation', 'ce2'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/features',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/features', '6c2'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/features',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/features', '26b'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/glossary',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/glossary', '9e7'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/glossary',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/glossary', '4ff'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/install',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/install', 'dee'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/install',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/install', 'ec6'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/languages',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/languages', '7d9'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/languages',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/languages', '54f'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/licence',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/licence', '0a7'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/licence',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/licence', 'cf8'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/permissions',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/permissions', '5f9'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/permissions',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/permissions', '9dc'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/privacy',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/privacy', '967'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/privacy',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/privacy', '0b9'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/quickstart',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/quickstart', '43f'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/quickstart',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/quickstart', '4b8'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/support',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/support', '9e7'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/support',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/support', '56d'),
                 exact: true,
                 sidebar: "docs"
               },
               {
-                path: '/Thunderbird-Reply-with-Attachments/de/docs/usage',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/docs/usage', '698'),
+                path: '/Thunderbird-Reply-with-Attachments/om/docs/usage',
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/docs/usage', '3ba'),
                 exact: true,
                 sidebar: "docs"
               }
@@ -116,8 +116,8 @@ export default [
     ]
   },
   {
-    path: '/Thunderbird-Reply-with-Attachments/de/',
-    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/de/', 'df3'),
+    path: '/Thunderbird-Reply-with-Attachments/om/',
+    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/om/', '4d3'),
     exact: true
   },
   {

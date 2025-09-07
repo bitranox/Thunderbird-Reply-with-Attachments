@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "兼容性",
+  "description": "兼容性",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "兼容性",
+    "sidebar_label": "兼容性"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "使用方法",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/usage"
+  },
+  "next": {
+    "title": "权限",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/permissions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "development",
+  "title": "డెవలప్మెంట్",
+  "description": "డెవలప్మెంట్ గైడ్",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "development",
+    "title": "డెవలప్మెంట్",
+    "sidebar_label": "డెవలప్మెంట్"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "అనుమతులు",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/permissions"
+  },
+  "next": {
+    "title": "భాషలు",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/languages"
+  }
+}

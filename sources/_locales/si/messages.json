@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
+  "extDescription": { "message": "ඉ‑තැපැල් පිළිතුරු වල ආදි ඇමුණුම් ස්වයංක්‍රියව එක් කරයි." },
+  "composeTitle": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
+  "optionsTitle": { "message": "ඇමුණුම් සමග පිළිතුරු දීම — විකල්ප" },
+  "confirmTitle": { "message": "ඇමුණුම් තහවුරු කිරීම" },
+  "uiHeader": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
+  "uiNoOptions": { "message": "දැනට වින්‍යාස කිරීමට විකල්ප නොමැත." },
+  "uiSupport": { "message": "මෙම ඇඩ්‑ඕනය ඔබට කැමතිද? කුඩා දානයකින් මා ත්‍යාග කරන්න:" },
+  "uiDonate": { "message": "දැන් දානය කරන්න" },
+  "uiGithubText": { "message": "දෝෂ වාර්තා හෝ වෙනත් ප්‍රශ්නයන් සඳහා, කරුණාකර මගේ" },
+  "uiGithubLinkLabel": { "message": "GitHub පිටුවට" },
+  "iconAlt": { "message": "Reply with Attachments අයිකනය" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ගොනු නාම කළු ලැයිස්තුව (glob රටා)" },
+  "uiBlacklistHelp": {
+    "message": "මෙම රටාවන්ගෙන් එක් එකකට ගැලපෙන ගොනු කිසි විටෙකත් ස්වයංක්‍රියව එක් නොකෙරේ. එක් පේළියකට එක් රටාවක්. උදාහරණ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "කළු ලැයිස්තුව නිසා ඇමුණුම් ඉවත් කර ඇත්නම් අවවාද දෙන්න" },
+  "uiSave": { "message": "සුරකින්න" },
+  "uiSaving": { "message": "සුරකිමින්…" },
+  "uiReset": { "message": "පෙරනිමි අගයන් වෙත නැවත සැකසුම්" },
+  "uiSaved": { "message": "සුරැකියි." },
+  "uiResetDone": { "message": "නැවත සකස් කරා." },
+  "uiConfirmHeader": { "message": "තහවුරු කිරීම" },
+  "uiConfirmLabel": { "message": "ඇමුණුම් එක් කිරීමට පෙර අසන්න" },
+  "uiConfirmHelp": {
+    "message": "කුඩාවක තහවුරුකිරීමේ සංවාදය ඇමුණුම් ඇත්තටම එකතු වන විට පමණක් පෙන්වනු ලැබේ. යතුරුපුවරුව: Y හෝ J = ඔව්; N හෝ Esc = නැහැ."
+  },
+  "confirmAddOne": {
+    "message": "ඇමුණුම එක් කරන්නද: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "ඇමුණුම් එක් කරන්නද ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 තවද" }
+    }
+  },
+  "confirmYes": { "message": "ඔව්" },
+  "confirmNo": { "message": "නැහැ" },
+  "warnBlacklistTitle": { "message": "කළු ලැයිස්තුවෙන් ඉවත් කරන ලදි" },
+  "warnBlacklistIntro": { "message": "පහත ගොනු ස්වයංක්‍රියව එක් නොකෙරේ:" },
+  "warnColFile": { "message": "ගොනුව" },
+  "warnColPattern": { "message": "රටාව" },
+  "warnOk": { "message": "හරි" },
+  "uiConfirmDefaultHeader": { "message": "පෙරනිමි පිළිතුර" },
+  "uiConfirmDefaultYes": { "message": "ඔව්" },
+  "uiConfirmDefaultNo": { "message": "නැහැ" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

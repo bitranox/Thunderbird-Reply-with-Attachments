@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Faire un don",
+  "description": "Si vous appréciez « Répondre avec pièces jointes » et souhaitez soutenir son développement, vous pouvez faire un don ici :",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Faire un don",
+    "sidebar_label": "Faire un don"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Confidentialité",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/privacy"
+  },
+  "next": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/licence"
+  }
+}

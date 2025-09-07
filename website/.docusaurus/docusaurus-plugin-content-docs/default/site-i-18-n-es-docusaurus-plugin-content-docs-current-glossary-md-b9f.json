@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "Glosario i18n",
+  "description": "Términos canónicos usados en la interfaz y la documentación del complemento. Úsalos para mantener traducciones coherentes entre idiomas.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "Glosario i18n",
+    "sidebar_label": "Glosario"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Idiomas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/languages"
+  },
+  "next": {
+    "title": "Soporte",
+    "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/support"
+  }
+}

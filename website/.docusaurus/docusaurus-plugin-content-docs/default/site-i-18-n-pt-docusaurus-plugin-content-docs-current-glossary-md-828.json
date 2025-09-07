@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "Glossário i18n",
+  "description": "Termos canónicos usados na interface e documentação do extra. Use‑os para manter as traduções consistentes entre idiomas.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "Glossário i18n",
+    "sidebar_label": "Glossário"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Idiomas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/languages"
+  },
+  "next": {
+    "title": "Suporte",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/support"
+  }
+}

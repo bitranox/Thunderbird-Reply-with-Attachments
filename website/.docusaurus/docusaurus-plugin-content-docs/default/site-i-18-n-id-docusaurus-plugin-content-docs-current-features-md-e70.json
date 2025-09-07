@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Fitur",
+  "description": "Fitur",
+  "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Fitur",
+    "sidebar_label": "Fitur"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Mulai cepat",
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/quickstart"
+  }
+}

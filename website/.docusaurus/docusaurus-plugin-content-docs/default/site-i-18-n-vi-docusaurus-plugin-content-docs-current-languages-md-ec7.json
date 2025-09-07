@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "Ngôn ngữ",
+  "description": "Hỗ trợ ngôn ngữ rất rộng nhờ các công cụ dịch AI — bao phủ 103 ngôn ngữ.",
+  "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "Ngôn ngữ",
+    "sidebar_label": "Ngôn ngữ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Phát triển",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/development"
+  },
+  "next": {
+    "title": "Thuật ngữ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/glossary"
+  }
+}

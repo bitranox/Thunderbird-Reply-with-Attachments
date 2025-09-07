@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Ändringslogg",
+  "description": "Se hela historiken i projektets CHANGELOG.md.",
+  "source": "@site/i18n/sv/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Ändringslogg"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/licence"
+  }
+}

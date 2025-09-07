@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Avvio rapido",
+  "description": "1. Installa il componente dai Thunderbird Add‑ons.",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Avvio rapido",
+    "sidebar_label": "Avvio rapido"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Caratteristiche",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/features"
+  },
+  "next": {
+    "title": "Installazione",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/install"
+  }
+}

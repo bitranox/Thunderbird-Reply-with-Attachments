@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "사용법",
+  "description": "사용법",
+  "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "사용법",
+    "sidebar_label": "사용법"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "구성",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/configuration"
+  },
+  "next": {
+    "title": "호환성",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/compatibility"
+  }
+}

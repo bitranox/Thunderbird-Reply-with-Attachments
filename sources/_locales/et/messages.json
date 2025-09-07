@@ -1,0 +1,53 @@
+{
+  "extName": { "message": "Vasta koos manustega" },
+  "extDescription": { "message": "Lisab automaatselt algsed manused e‑kirja vastustele." },
+  "composeTitle": { "message": "Vasta koos manustega" },
+  "optionsTitle": { "message": "Vasta koos manustega — Sätted" },
+  "confirmTitle": { "message": "Kinnita manused" },
+  "uiHeader": { "message": "Vasta koos manustega" },
+  "uiNoOptions": { "message": "Praegu pole ühtegi sätet seadistada." },
+  "uiSupport": { "message": "Meeldib see laiendus? Toeta mind väikese annetusena:" },
+  "uiDonate": { "message": "Anneta nüüd" },
+  "uiGithubText": { "message": "Vigade teatamiseks või muude küsimuste korral külasta" },
+  "uiGithubLinkLabel": { "message": "minu GitHubi lehte" },
+  "iconAlt": { "message": "Reply with Attachments ikoon" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Failinimede must nimekiri (glob mustrid)" },
+  "uiBlacklistHelp": {
+    "message": "Failid, mille nimi vastab mõnele neist mustritest, ei lisata kunagi automaatselt. Üks muster rea kohta. Näited: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Hoiata, kui manused jäetakse musta nimekirja tõttu välja" },
+  "uiSave": { "message": "Salvesta" },
+  "uiSaving": { "message": "Salvestatakse…" },
+  "uiReset": { "message": "Taasta vaikeseaded" },
+  "uiSaved": { "message": "Salvestatud." },
+  "uiResetDone": { "message": "Taastatud." },
+  "uiConfirmHeader": { "message": "Kinnitus" },
+  "uiConfirmLabel": { "message": "Küsi enne manuste lisamist" },
+  "uiConfirmHelp": {
+    "message": "Väike kinnitusdialoog kuvatakse ainult siis, kui manuseid tõesti lisatakse. Klaviatuur: Y või J = Jah; N või Esc = Ei."
+  },
+  "confirmAddOne": { "message": "Lisada manus: $1?", "placeholders": { "1": { "content": "$1" } } },
+  "confirmAddMany": {
+    "message": "Lisada manused ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 rohkem" }
+    }
+  },
+  "confirmYes": { "message": "Jah" },
+  "confirmNo": { "message": "Ei" },
+  "warnBlacklistTitle": { "message": "Jäetud välja musta nimekirja tõttu" },
+  "warnBlacklistIntro": { "message": "Järgmisi faile ei lisata automaatselt:" },
+  "warnColFile": { "message": "Fail" },
+  "warnColPattern": { "message": "Muster" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Vaikimisi vastus" },
+  "uiConfirmDefaultYes": { "message": "Jah" },
+  "uiConfirmDefaultNo": { "message": "Ei" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

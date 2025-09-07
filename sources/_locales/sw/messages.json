@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Jibu pamoja na viambatisho" },
+  "extDescription": {
+    "message": "Huongeza kiotomati viambatisho vya asili katika majibu ya barua pepe."
+  },
+  "composeTitle": { "message": "Jibu pamoja na viambatisho" },
+  "optionsTitle": { "message": "Jibu pamoja na viambatisho — Chaguo" },
+  "confirmTitle": { "message": "Thibitisha viambatisho" },
+  "uiHeader": { "message": "Jibu pamoja na viambatisho" },
+  "uiNoOptions": { "message": "Kwa sasa hakuna chaguo la kusanidi." },
+  "uiSupport": { "message": "Unapenda programu jalizi hii? Niunge mkono kwa mchango mdogo:" },
+  "uiDonate": { "message": "Changia sasa" },
+  "uiGithubText": { "message": "Kwa kuripoti hitilafu au maswali mengine, tafadhali tembelea" },
+  "uiGithubLinkLabel": { "message": "ukurasa wangu wa GitHub" },
+  "iconAlt": { "message": "Aikoni ya Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Orodha nyeusi ya majina ya faili (miundo ya glob)" },
+  "uiBlacklistHelp": {
+    "message": "Faili ambazo majina yake yanalingana na mojawapo ya miundo hii hazitaongezwa kiotomati kamwe. Muundo mmoja kwa kila mstari. Mifano: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Onya ikiwa viambatisho vimeondolewa kutokana na orodha nyeusi"
+  },
+  "uiSave": { "message": "Hifadhi" },
+  "uiSaving": { "message": "Inahifadhi…" },
+  "uiReset": { "message": "Rejesha chaguo-msingi" },
+  "uiSaved": { "message": "Imehifadhiwa." },
+  "uiResetDone": { "message": "Imerejeshwa." },
+  "uiConfirmHeader": { "message": "Uthibitisho" },
+  "uiConfirmLabel": { "message": "Uliza kabla ya kuongeza viambatisho" },
+  "uiConfirmHelp": {
+    "message": "Kisanduku kidogo cha uthibitisho huonekana tu wakati viambatisho vitaongezwa kweli. Kibodi: Y au J = Ndiyo; N au Esc = Hapana."
+  },
+  "confirmAddOne": {
+    "message": "Ongeza kiambatisho: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Ongeza viambatisho ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 zaidi" }
+    }
+  },
+  "confirmYes": { "message": "Ndiyo" },
+  "confirmNo": { "message": "Hapana" },
+  "warnBlacklistTitle": { "message": "Imeondolewa na orodha nyeusi" },
+  "warnBlacklistIntro": { "message": "Faili zifuatazo hazitaongezwa kiotomati:" },
+  "warnColFile": { "message": "Faili" },
+  "warnColPattern": { "message": "Muundo" },
+  "warnOk": { "message": "Sawa" },
+  "uiConfirmDefaultHeader": { "message": "Jibu chaguo-msingi" },
+  "uiConfirmDefaultYes": { "message": "Ndiyo" },
+  "uiConfirmDefaultNo": { "message": "Hapana" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

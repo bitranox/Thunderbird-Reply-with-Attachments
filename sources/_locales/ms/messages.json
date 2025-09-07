@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Balas dengan Lampiran" },
+  "extDescription": { "message": "Sertakan lampiran asal secara automatik dalam balasan emel." },
+  "composeTitle": { "message": "Balas dengan Lampiran" },
+  "optionsTitle": { "message": "Balas dengan Lampiran — Pilihan" },
+  "confirmTitle": { "message": "Sahkan Lampiran" },
+  "uiHeader": { "message": "Balas dengan Lampiran" },
+  "uiNoOptions": { "message": "Buat masa ini tiada pilihan untuk dikonfigur." },
+  "uiSupport": { "message": "Suka tambahan ini? Sokong saya dengan sumbangan kecil:" },
+  "uiDonate": { "message": "Derma sekarang" },
+  "uiGithubText": { "message": "Untuk laporan pepijat atau pertanyaan lain, sila lawati" },
+  "uiGithubLinkLabel": { "message": "halaman GitHub saya" },
+  "iconAlt": { "message": "Ikon Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Senarai hitam nama fail (pola glob)" },
+  "uiBlacklistHelp": {
+    "message": "Fail yang sepadan dengan mana-mana pola ini tidak akan dilampirkan secara automatik. Satu pola setiap baris. Contoh: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Amaran jika lampiran dikecualikan oleh senarai hitam" },
+  "uiSave": { "message": "Simpan" },
+  "uiSaving": { "message": "Menyimpan…" },
+  "uiReset": { "message": "Tetap semula kepada lalai" },
+  "uiSaved": { "message": "Disimpan." },
+  "uiResetDone": { "message": "Ditatar semula." },
+  "uiConfirmHeader": { "message": "Pengesahan" },
+  "uiConfirmLabel": { "message": "Tanya sebelum menambah lampiran" },
+  "uiConfirmHelp": {
+    "message": "Dialog pengesahan kecil muncul hanya apabila lampiran benar-benar akan ditambah. Papan kekunci: Y atau J = Ya; N atau Esc = Tidak."
+  },
+  "confirmAddOne": {
+    "message": "Tambah lampiran: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Tambah lampiran ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "Ya" },
+  "confirmNo": { "message": "Tidak" },
+  "warnBlacklistTitle": { "message": "Dikecualikan oleh senarai hitam" },
+  "warnBlacklistIntro": { "message": "Fail berikut tidak akan dilampirkan secara automatik:" },
+  "warnColFile": { "message": "Fail" },
+  "warnColPattern": { "message": "Pola" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Jawapan lalai" },
+  "uiConfirmDefaultYes": { "message": "Ya" },
+  "uiConfirmDefaultNo": { "message": "Tidak" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

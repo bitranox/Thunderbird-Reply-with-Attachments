@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n शब्दावली",
+  "description": "ऐड‑ऑन के UI और दस्तावेज़ में प्रयुक्त मानक शब्द। अनुवादों में निरंतरता बनाए रखने के लिए इन्हें आधार मानें।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n शब्दावली",
+    "sidebar_label": "शब्दावली"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "भाषाएँ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/languages"
+  },
+  "next": {
+    "title": "Support",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/support"
+  }
+}

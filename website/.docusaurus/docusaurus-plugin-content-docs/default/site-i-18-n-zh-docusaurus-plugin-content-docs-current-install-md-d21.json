@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "安装",
+  "description": "安装 — 在 Thunderbird 中（推荐）",
+  "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "安装",
+    "slug": "/install",
+    "sidebar_label": "安装"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "快速开始",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/quickstart"
+  },
+  "next": {
+    "title": "配置",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/configuration"
+  }
+}

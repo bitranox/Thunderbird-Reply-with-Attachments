@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "Installation",
+  "description": "Installation — in Thunderbird (Recommended)",
+  "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "Installation",
+    "slug": "/install",
+    "sidebar_label": "Installation"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/quickstart"
+  },
+  "next": {
+    "title": "Configuration",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/configuration"
+  }
+}

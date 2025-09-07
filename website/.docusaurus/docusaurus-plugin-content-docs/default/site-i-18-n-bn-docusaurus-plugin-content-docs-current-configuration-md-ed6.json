@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "কনফিগারেশন",
+  "description": "শব্দাবলী সংক্রান্ত নোট: UI ও ডকে ব্যবহৃত একরূপ শব্দের জন্য Glossary দেখুন।",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "কনফিগারেশন"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ইনস্টলেশন",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/install"
+  },
+  "next": {
+    "title": "ব্যবহার",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/usage"
+  }
+}

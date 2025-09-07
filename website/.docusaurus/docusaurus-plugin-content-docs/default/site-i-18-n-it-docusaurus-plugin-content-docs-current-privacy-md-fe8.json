@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "Privacy",
+  "description": "Reply with Attachments non raccoglie analisi o telemetria e non invia i tuoi dati da nessuna parte.",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "Privacy",
+    "sidebar_label": "Privacy"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Supporto",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/support"
+  },
+  "next": {
+    "title": "Donazioni",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/donation"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "విరాళం",
+  "description": "మీకు Reply with Attachments నచ్చితే మరియు అభివృద్ధిని మద్దతు ఇవ్వాలని అనుకుంటే, ఇక్కడ విరాళం ఇవ్వవచ్చు:",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "విరాళం",
+    "sidebar_label": "విరాళం"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "గోప్యత",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/privacy"
+  },
+  "next": {
+    "title": "లైసెన్స్",
+    "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/licence"
+  }
+}

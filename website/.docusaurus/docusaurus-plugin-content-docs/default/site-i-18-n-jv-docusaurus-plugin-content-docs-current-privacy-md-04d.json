@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "Privasi",
+  "description": "Reply with Attachments ora nglumpukake analytics utawa telemetry lan ora ngirim data panjenengan menyang endi wae.",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "Privasi",
+    "sidebar_label": "Privasi"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Dhukungan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/support"
+  },
+  "next": {
+    "title": "Donasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/donation"
+  }
+}

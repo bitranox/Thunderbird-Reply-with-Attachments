@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "நிறுவல்",
+  "description": "நிறுவல் — Thunderbird இல் (பரிந்துரைக்கப்படுகிறது)",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "நிறுவல்",
+    "slug": "/install",
+    "sidebar_label": "நிறுவல்"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "வேகத் தொடக்கம்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/quickstart"
+  },
+  "next": {
+    "title": "உள்ளமைவு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/configuration"
+  }
+}

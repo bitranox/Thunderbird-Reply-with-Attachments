@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Απάντηση με συνημμένα" },
+  "extDescription": { "message": "Προσθέτει αυτόματα τα αρχικά συνημμένα στις απαντήσεις email." },
+  "composeTitle": { "message": "Απάντηση με συνημμένα" },
+  "optionsTitle": { "message": "Απάντηση με συνημμένα — Ρυθμίσεις" },
+  "confirmTitle": { "message": "Επιβεβαίωση συνημμένων" },
+  "uiHeader": { "message": "Απάντηση με συνημμένα" },
+  "uiNoOptions": { "message": "Προς το παρόν δεν υπάρχουν επιλογές ρύθμισης." },
+  "uiSupport": { "message": "Σας αρέσει αυτό το πρόσθετο; Υποστηρίξτε με με μια μικρή δωρεά:" },
+  "uiDonate": { "message": "Δωρεά τώρα" },
+  "uiGithubText": { "message": "Για αναφορές σφαλμάτων ή άλλα ερωτήματα, επισκεφθείτε τη" },
+  "uiGithubLinkLabel": { "message": "σελίδα μου στο GitHub" },
+  "iconAlt": { "message": "Εικονίδιο Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Μαύρη λίστα ονομάτων αρχείων (μοτίβα glob)" },
+  "uiBlacklistHelp": {
+    "message": "Αρχεία των οποίων το όνομα ταιριάζει με οποιοδήποτε από αυτά τα μοτίβα δεν θα επισυνάπτονται αυτόματα. Ένα μοτίβο ανά γραμμή. Παραδείγματα: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Προειδοποίηση όταν τα συνημμένα αποκλείονται από τη μαύρη λίστα"
+  },
+  "uiSave": { "message": "Αποθήκευση" },
+  "uiSaving": { "message": "Αποθήκευση…" },
+  "uiReset": { "message": "Επαναφορά προεπιλογών" },
+  "uiSaved": { "message": "Αποθηκεύτηκε." },
+  "uiResetDone": { "message": "Επαναφέρθηκε." },
+  "uiConfirmHeader": { "message": "Επιβεβαίωση" },
+  "uiConfirmLabel": { "message": "Ερώτηση πριν την προσθήκη συνημμένων" },
+  "uiConfirmHelp": {
+    "message": "Ένα μικρό παράθυρο επιβεβαίωσης εμφανίζεται μόνο όταν πρόκειται να προστεθούν συνημμένα. Πληκτρολόγιο: Y ή J = Ναι· N ή Esc = Όχι."
+  },
+  "confirmAddOne": {
+    "message": "Προσθήκη συνημμένου: $1;",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Προσθήκη συνημμένων ($1): $2$3;",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 επιπλέον" }
+    }
+  },
+  "confirmYes": { "message": "Ναι" },
+  "confirmNo": { "message": "Όχι" },
+  "warnBlacklistTitle": { "message": "Αποκλείστηκε από τη μαύρη λίστα" },
+  "warnBlacklistIntro": { "message": "Τα παρακάτω αρχεία δεν θα επισυναφθούν αυτόματα:" },
+  "warnColFile": { "message": "Αρχείο" },
+  "warnColPattern": { "message": "Μοτίβο" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Προεπιλεγμένη απάντηση" },
+  "uiConfirmDefaultYes": { "message": "Ναι" },
+  "uiConfirmDefaultNo": { "message": "Όχι" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

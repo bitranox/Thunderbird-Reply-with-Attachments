@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "البدء السريع",
+  "description": "1. ثبّت الإضافة من Thunderbird Add‑ons.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "البدء السريع",
+    "sidebar_label": "البدء السريع"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "الميزات",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/features"
+  },
+  "next": {
+    "title": "التثبيت",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/install"
+  }
+}

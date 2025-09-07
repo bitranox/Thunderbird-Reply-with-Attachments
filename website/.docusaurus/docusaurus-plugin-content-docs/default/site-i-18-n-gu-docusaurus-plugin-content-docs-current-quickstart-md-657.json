@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "ઝડપી શરૂઆત",
+  "description": "1. Thunderbird Add‑ons માંથી ઍડ‑ઓન ઇન્સ્ટોલ કરો.",
+  "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "ઝડપી શરૂઆત",
+    "sidebar_label": "ઝડપી શરૂઆત"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "વિશેષતાઓ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/features"
+  },
+  "next": {
+    "title": "સ્થાપન",
+    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/install"
+  }
+}

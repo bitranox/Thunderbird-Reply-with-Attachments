@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "使い方",
+  "description": "使い方",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "使い方",
+    "sidebar_label": "使い方"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "設定",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/configuration"
+  },
+  "next": {
+    "title": "互換性",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/compatibility"
+  }
+}

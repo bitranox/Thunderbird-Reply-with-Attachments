@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "ব্যবহার",
+  "description": "ব্যবহার",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "ব্যবহার",
+    "sidebar_label": "ব্যবহার"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "কনফিগারেশন",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/configuration"
+  },
+  "next": {
+    "title": "সামঞ্জস্যতা",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/compatibility"
+  }
+}

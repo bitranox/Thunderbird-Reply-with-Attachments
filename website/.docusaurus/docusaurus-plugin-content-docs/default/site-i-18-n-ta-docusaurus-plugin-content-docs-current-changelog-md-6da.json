@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "மாற்றப் பதிவு",
+  "description": "முழு வரலாற்றை இருப்பிடத்தின் CHANGELOG.md கோப்பில் பார்க்கவும்.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "மாற்றப் பதிவு"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "உரிமம்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/licence"
+  }
+}

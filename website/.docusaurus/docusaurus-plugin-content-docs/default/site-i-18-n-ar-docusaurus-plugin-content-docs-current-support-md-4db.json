@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "الدعم",
+  "description": "بحاجة للمساعدة أم تريد الإبلاغ عن عطل؟",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "الدعم",
+    "sidebar_label": "الدعم"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "المسرد",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/glossary"
+  },
+  "next": {
+    "title": "الخصوصية",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/privacy"
+  }
+}

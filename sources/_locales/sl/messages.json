@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Odgovarjanje s prilogami" },
+  "extDescription": { "message": "Samodejno doda izvirne priloge v odgovore e‑pošte." },
+  "composeTitle": { "message": "Odgovarjanje s prilogami" },
+  "optionsTitle": { "message": "Odgovarjanje s prilogami — Možnosti" },
+  "confirmTitle": { "message": "Potrditev prilog" },
+  "uiHeader": { "message": "Odgovarjanje s prilogami" },
+  "uiNoOptions": { "message": "Trenutno ni možnosti za nastavitev." },
+  "uiSupport": { "message": "Vam je ta dodatek všeč? Podprite me z majhnim prispevkom:" },
+  "uiDonate": { "message": "Doniraj zdaj" },
+  "uiGithubText": { "message": "Za prijavo napak ali druga vprašanja obiščite" },
+  "uiGithubLinkLabel": { "message": "mojo stran GitHub" },
+  "iconAlt": { "message": "Ikona Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Črni seznam imen datotek (vzorce glob)" },
+  "uiBlacklistHelp": {
+    "message": "Datoteke, katerih imena ustrezajo kateremu od teh vzorcev, ne bodo nikoli samodejno dodane. En vzorec na vrstico. Primeri: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Opozori, če so priloge izključene s črnega seznama" },
+  "uiSave": { "message": "Shrani" },
+  "uiSaving": { "message": "Shranjevanje…" },
+  "uiReset": { "message": "Ponastavi na privzeto" },
+  "uiSaved": { "message": "Shranjeno." },
+  "uiResetDone": { "message": "Ponastavljeno." },
+  "uiConfirmHeader": { "message": "Potrditev" },
+  "uiConfirmLabel": { "message": "Vprašaj pred dodajanjem prilog" },
+  "uiConfirmHelp": {
+    "message": "Majhno potrditveno okno se prikaže le, ko bi se dejansko dodale priloge. Tipkovnica: Y ali J = Da; N ali Esc = Ne."
+  },
+  "confirmAddOne": {
+    "message": "Dodati prilogo: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Dodati priloge ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 več" }
+    }
+  },
+  "confirmYes": { "message": "Da" },
+  "confirmNo": { "message": "Ne" },
+  "warnBlacklistTitle": { "message": "Izključeno s črnega seznama" },
+  "warnBlacklistIntro": { "message": "Naslednje datoteke ne bodo samodejno dodane:" },
+  "warnColFile": { "message": "Datoteka" },
+  "warnColPattern": { "message": "Vzorec" },
+  "warnOk": { "message": "V redu" },
+  "uiConfirmDefaultHeader": { "message": "Privzeti odgovor" },
+  "uiConfirmDefaultYes": { "message": "Da" },
+  "uiConfirmDefaultNo": { "message": "Ne" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

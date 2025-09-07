@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Válasz mellékletekkel" },
+  "extDescription": {
+    "message": "Automatikusan csatolja az eredeti mellékleteket az e‑mail válaszokhoz."
+  },
+  "composeTitle": { "message": "Válasz mellékletekkel" },
+  "optionsTitle": { "message": "Válasz mellékletekkel — Beállítások" },
+  "confirmTitle": { "message": "Mellékletek megerősítése" },
+  "uiHeader": { "message": "Válasz mellékletekkel" },
+  "uiNoOptions": { "message": "Jelenleg nincs beállítható opció." },
+  "uiSupport": { "message": "Tetszik ez a kiegészítő? Támogass egy kis adománnyal:" },
+  "uiDonate": { "message": "Adományozás" },
+  "uiGithubText": { "message": "Hibajelentéshez vagy egyéb kérdésekhez keresd a" },
+  "uiGithubLinkLabel": { "message": "GitHub‑oldalamat" },
+  "iconAlt": { "message": "Reply with Attachments ikon" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Fájlnév feketelista (glob minták)" },
+  "uiBlacklistHelp": {
+    "message": "Azok a fájlok, amelyek neve illeszkedik bármelyik mintára, soha nem kerülnek automatikusan csatolásra. Soronként egy minta. Példák: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Figyelmeztetés, ha a feketelista kizárja a mellékleteket" },
+  "uiSave": { "message": "Mentés" },
+  "uiSaving": { "message": "Mentés…" },
+  "uiReset": { "message": "Alapértelmezések visszaállítása" },
+  "uiSaved": { "message": "Mentve." },
+  "uiResetDone": { "message": "Visszaállítva." },
+  "uiConfirmHeader": { "message": "Megerősítés" },
+  "uiConfirmLabel": { "message": "Kérdezzen csatolás előtt" },
+  "uiConfirmHelp": {
+    "message": "Egy kis megerősítő párbeszédablak csak akkor jelenik meg, amikor ténylegesen csatolnánk. Billentyűzet: Y vagy J = Igen; N vagy Esc = Nem."
+  },
+  "confirmAddOne": {
+    "message": "Csatolja a mellékletet: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Mellékletek csatolása ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 további" }
+    }
+  },
+  "confirmYes": { "message": "Igen" },
+  "confirmNo": { "message": "Nem" },
+  "warnBlacklistTitle": { "message": "Feketelista kizárta" },
+  "warnBlacklistIntro": { "message": "Az alábbi fájlok nem lesznek automatikusan csatolva:" },
+  "warnColFile": { "message": "Fájl" },
+  "warnColPattern": { "message": "Minta" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Alapértelmezett válasz" },
+  "uiConfirmDefaultYes": { "message": "Igen" },
+  "uiConfirmDefaultNo": { "message": "Nem" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

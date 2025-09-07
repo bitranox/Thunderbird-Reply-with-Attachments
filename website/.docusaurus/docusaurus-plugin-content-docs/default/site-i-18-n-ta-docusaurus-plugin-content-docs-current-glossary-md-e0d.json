@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n சொற்களஞ்சியம்",
+  "description": "இணைப்பு (add‑on) UI மற்றும் ஆவணங்களில் பயன்படுத்தப்படும் நிலையான சொற்கள். பல மொழிகளிலும் ஒரே மாதிரியான மொழிபெயர்ப்பை உறுதிசெய்ய இவற்றைப் பயன்படுத்தவும்.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n சொற்களஞ்சியம்",
+    "sidebar_label": "சொற்களஞ்சியம்"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "மொழிகள்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/languages"
+  },
+  "next": {
+    "title": "ஆதரவு",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/support"
+  }
+}

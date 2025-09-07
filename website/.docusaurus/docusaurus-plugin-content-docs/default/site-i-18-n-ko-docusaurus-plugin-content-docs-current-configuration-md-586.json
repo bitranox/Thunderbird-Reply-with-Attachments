@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "구성",
+  "description": "용어 안내: UI와 문서에서 일관되게 사용하는 용어는 용어 사전을 참고하세요.",
+  "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "구성"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "설치",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/install"
+  },
+  "next": {
+    "title": "사용법",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/usage"
+  }
+}

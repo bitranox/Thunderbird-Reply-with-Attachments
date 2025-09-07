@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "პასუხი მიმაგრებულებით" },
+  "extDescription": { "message": "ავტომატურად ამატებს ორიგინალ მიმაგრებულებს ელფოსტის პასუხებში." },
+  "composeTitle": { "message": "პასუხი მიმაგრებულებით" },
+  "optionsTitle": { "message": "პასუხი მიმაგრებულებით — პარამეტრები" },
+  "confirmTitle": { "message": "მიმაგრებულების დადასტურება" },
+  "uiHeader": { "message": "პასუხი მიმაგრებულებით" },
+  "uiNoOptions": { "message": "ამჟამად დასაკონფიგურირებელი პარამეტრები არ არის." },
+  "uiSupport": { "message": "მოგწონთ ეს დამატება? დამიჭირეთ მხარი მცირე შემოწირულობით:" },
+  "uiDonate": { "message": "შემოწირეთ ახლა" },
+  "uiGithubText": {
+    "message": "შეცდომების ანგარიშისთვის ან სხვა შეკითხვებისთვის, გთხოვთ ეწვიეთ ჩემს"
+  },
+  "uiGithubLinkLabel": { "message": "GitHub გვერდს" },
+  "iconAlt": { "message": "Reply with Attachments ხატულა" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ფაილების სახელების შავი სია (glob შაბლონები)" },
+  "uiBlacklistHelp": {
+    "message": "ფაილები, რომელთა სახელებიც ემთხვევა ამ შაბლონებიდან რომელიმეს, არასოდეს დაემატება ავტომატურად. თითო ხაზზე ერთი შაბლონი. მაგალითები: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "გააფრთხილე, თუ მიმაგრებულები გამორიცხულია შავი სიის მიერ" },
+  "uiSave": { "message": "შენახვა" },
+  "uiSaving": { "message": "ინახება…" },
+  "uiReset": { "message": "საწყის მნიშვნელობებზე დაბრუნება" },
+  "uiSaved": { "message": "შენახულია." },
+  "uiResetDone": { "message": "დაბრუნებულია." },
+  "uiConfirmHeader": { "message": "დადასტურება" },
+  "uiConfirmLabel": { "message": "კითხვა მიმაგრებულების დამატებამდე" },
+  "uiConfirmHelp": {
+    "message": " მცირე დადასტურების ფანჯარა ჩნდება მხოლოდ მაშინ, როდესაც რეალურად დაემატება მიმაგრებულები. კლავიატურა: Y ან J = კი; N ან Esc = არა."
+  },
+  "confirmAddOne": {
+    "message": "დავამატო მიმაგრებული: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "დავამატო მიმაგრებულები ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 კიდევ" }
+    }
+  },
+  "confirmYes": { "message": "კი" },
+  "confirmNo": { "message": "არა" },
+  "warnBlacklistTitle": { "message": "შავი სიით გამორიცხულია" },
+  "warnBlacklistIntro": { "message": "შემდეგი ფაილები ავტომატურად არ დაემატება:" },
+  "warnColFile": { "message": "ფაილი" },
+  "warnColPattern": { "message": "შაბლონი" },
+  "warnOk": { "message": "კარგად" },
+  "uiConfirmDefaultHeader": { "message": "ნაგულისხმევი პასუხი" },
+  "uiConfirmDefaultYes": { "message": "კი" },
+  "uiConfirmDefaultNo": { "message": "არა" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

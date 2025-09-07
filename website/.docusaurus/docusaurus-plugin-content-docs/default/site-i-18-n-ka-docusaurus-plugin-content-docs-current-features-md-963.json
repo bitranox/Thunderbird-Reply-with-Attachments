@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "ფუნქციები",
+  "description": "ფუნქციები",
+  "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "ფუნქციები",
+    "sidebar_label": "ფუნქციები"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/quickstart"
+  }
+}

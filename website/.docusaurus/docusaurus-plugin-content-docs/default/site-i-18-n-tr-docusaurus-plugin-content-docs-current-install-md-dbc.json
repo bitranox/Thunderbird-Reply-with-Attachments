@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "Kurulum",
+  "description": "Kurulum — Thunderbird içinde (önerilir)",
+  "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "Kurulum",
+    "slug": "/install",
+    "sidebar_label": "Kurulum"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Hızlı başlangıç",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/quickstart"
+  },
+  "next": {
+    "title": "Yapılandırma",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/configuration"
+  }
+}

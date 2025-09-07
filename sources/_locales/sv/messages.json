@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Svara med bilagor" },
+  "extDescription": {
+    "message": "Lägger automatiskt till de ursprungliga bilagorna i e‑postsvar."
+  },
+  "composeTitle": { "message": "Svara med bilagor" },
+  "optionsTitle": { "message": "Svara med bilagor — Alternativ" },
+  "confirmTitle": { "message": "Bekräfta bilagor" },
+  "uiHeader": { "message": "Svara med bilagor" },
+  "uiNoOptions": { "message": "Det finns för närvarande inga alternativ att konfigurera." },
+  "uiSupport": { "message": "Gillar du det här tillägget? Stöd mig med en liten donation:" },
+  "uiDonate": { "message": "Donera nu" },
+  "uiGithubText": { "message": "För felrapporter eller andra frågor, besök" },
+  "uiGithubLinkLabel": { "message": "min GitHub‑sida" },
+  "iconAlt": { "message": "Reply with Attachments‑ikon" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Svartlista för filnamn (globmönster)" },
+  "uiBlacklistHelp": {
+    "message": "Filer vars namn matchar något av dessa mönster kommer aldrig att bifogas automatiskt. Ett mönster per rad. Exempel: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Varna om bilagor utesluts av svartlistan" },
+  "uiSave": { "message": "Spara" },
+  "uiSaving": { "message": "Sparar…" },
+  "uiReset": { "message": "Återställ standard" },
+  "uiSaved": { "message": "Sparat." },
+  "uiResetDone": { "message": "Återställt." },
+  "uiConfirmHeader": { "message": "Bekräftelse" },
+  "uiConfirmLabel": { "message": "Fråga innan bilagor läggs till" },
+  "uiConfirmHelp": {
+    "message": "En liten bekräftelsedialog visas bara när bilagor faktiskt skulle läggas till. Tangentbord: Y eller J = Ja; N eller Esc = Nej."
+  },
+  "confirmAddOne": {
+    "message": "Lägg till bilaga: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Lägg till bilagor ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 till" }
+    }
+  },
+  "confirmYes": { "message": "Ja" },
+  "confirmNo": { "message": "Nej" },
+  "warnBlacklistTitle": { "message": "Uteslutet av svartlistan" },
+  "warnBlacklistIntro": { "message": "Följande filer kommer inte att bifogas automatiskt:" },
+  "warnColFile": { "message": "Fil" },
+  "warnColPattern": { "message": "Mönster" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Standard­svar" },
+  "uiConfirmDefaultYes": { "message": "Ja" },
+  "uiConfirmDefaultNo": { "message": "Nej" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "ပြောင်းလဲချက် မှတ်တမ်း",
+  "description": "ပြည့်စုံသောမှတ်တမ်းကို repository ထဲရှိ CHANGELOG.md ဖိုင်တွင်ကြည့်ပါ။",
+  "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "ပြောင်းလဲချက် မှတ်တမ်း"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/licence"
+  }
+}

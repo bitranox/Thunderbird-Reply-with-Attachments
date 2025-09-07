@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "الأذونات",
+  "description": "تطلب الإضافة مجموعة صغيرة ومحددة من الأذونات فقط. لماذا نحتاج كل إذن:",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "الأذونات"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "التوافقية",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/compatibility"
+  },
+  "next": {
+    "title": "التطوير",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/development"
+  }
+}

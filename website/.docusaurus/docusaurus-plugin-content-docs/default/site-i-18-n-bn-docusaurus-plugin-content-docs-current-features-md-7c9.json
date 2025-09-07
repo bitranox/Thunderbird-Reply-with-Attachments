@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "বৈশিষ্ট্যাবলি",
+  "description": "বৈশিষ্ট্যাবলি",
+  "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "বৈশিষ্ট্যাবলি",
+    "sidebar_label": "বৈশিষ্ট্যাবলি"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "দ্রুত শুরু",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/quickstart"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Одговор са прилозима" },
+  "extDescription": { "message": "Аутоматски додаје оригиналне прилоге у одговорима е‑поште." },
+  "composeTitle": { "message": "Одговор са прилозима" },
+  "optionsTitle": { "message": "Одговор са прилозима — Опције" },
+  "confirmTitle": { "message": "Потврда прилога" },
+  "uiHeader": { "message": "Одговор са прилозима" },
+  "uiNoOptions": { "message": "Тренутно нема опција за подешавање." },
+  "uiSupport": { "message": "Свиђа вам се овај додатак? Подржите ме малом донацијом:" },
+  "uiDonate": { "message": "Донирај сада" },
+  "uiGithubText": { "message": "За пријаве грешака или друга питања, посетите" },
+  "uiGithubLinkLabel": { "message": "моју GitHub страницу" },
+  "iconAlt": { "message": "Икона Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Црна листа назива датотека (glob обрасци)" },
+  "uiBlacklistHelp": {
+    "message": "Датотеке чија имена одговарају било ком од ових образаца никада неће бити аутоматски додате. Један образац по реду. Примери: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Упозори ако су прилози искључени црном листом" },
+  "uiSave": { "message": "Сачувај" },
+  "uiSaving": { "message": "Чува се…" },
+  "uiReset": { "message": "Врати на подразумевано" },
+  "uiSaved": { "message": "Сачувано." },
+  "uiResetDone": { "message": "Враћено." },
+  "uiConfirmHeader": { "message": "Потврда" },
+  "uiConfirmLabel": { "message": "Питати пре додавања прилога" },
+  "uiConfirmHelp": {
+    "message": "Мали дијалог за потврду појављује се само када би се заиста додали прилози. Тастатура: Y или J = Да; N или Esc = Не."
+  },
+  "confirmAddOne": {
+    "message": "Додати прилог: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Додати прилоге ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 више" }
+    }
+  },
+  "confirmYes": { "message": "Да" },
+  "confirmNo": { "message": "Не" },
+  "warnBlacklistTitle": { "message": "Искључено црном листом" },
+  "warnBlacklistIntro": { "message": "Следеће датотеке неће бити аутоматски додате:" },
+  "warnColFile": { "message": "Датотека" },
+  "warnColPattern": { "message": "Образац" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Подразумевани одговор" },
+  "uiConfirmDefaultYes": { "message": "Да" },
+  "uiConfirmDefaultNo": { "message": "Не" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

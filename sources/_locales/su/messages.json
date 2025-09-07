@@ -1,0 +1,56 @@
+{
+  "extName": { "message": "Waleran jeung lampiran" },
+  "extDescription": { "message": "Nambahkeun otomatis lampiran aslina kana waleran surélék." },
+  "composeTitle": { "message": "Waleran jeung lampiran" },
+  "optionsTitle": { "message": "Waleran jeung lampiran — Pilihan" },
+  "confirmTitle": { "message": "Konfirmasi lampiran" },
+  "uiHeader": { "message": "Waleran jeung lampiran" },
+  "uiNoOptions": { "message": "Ayeuna teu aya pilihan pikeun diatur." },
+  "uiSupport": { "message": "Suka kana add‑on ieu? Dukung ku sumbangan leutik:" },
+  "uiDonate": { "message": "Sumbang ayeuna" },
+  "uiGithubText": { "message": "Pikeun laporan kasalahan atawa patalékan séjén, mangga buka" },
+  "uiGithubLinkLabel": { "message": "kaca GitHub abdi" },
+  "iconAlt": { "message": "Ikon Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Daptar hideung ngaran berkas (pola glob)" },
+  "uiBlacklistHelp": {
+    "message": "Berkas nu ngaranna sarua jeung salah sahiji pola ieu moal otomatis dilampirkeun. Sabaraha pola per garis. Conto: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "Béjakeun lamun lampiran dileungitkeun ku daptar hideung" },
+  "uiSave": { "message": "Simpen" },
+  "uiSaving": { "message": "Nyimpen…" },
+  "uiReset": { "message": "Balikeun ka standar" },
+  "uiSaved": { "message": "Kasimpen." },
+  "uiResetDone": { "message": "Balik." },
+  "uiConfirmHeader": { "message": "Konfirmasi" },
+  "uiConfirmLabel": { "message": "Tanya saméméh nambahkeun lampiran" },
+  "uiConfirmHelp": {
+    "message": "Kotak dialog konfirmasi leutik mucunghul ngan lamun lampiran sabenerna baris ditambahkeun. Papan ketik: Y atawa J = Enya; N atawa Esc = Teu."
+  },
+  "confirmAddOne": {
+    "message": "Tambahkeun lampiran: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Tambahkeun lampiran ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 deui" }
+    }
+  },
+  "confirmYes": { "message": "Enya" },
+  "confirmNo": { "message": "Teu" },
+  "warnBlacklistTitle": { "message": "Dileungitkeun ku daptar hideung" },
+  "warnBlacklistIntro": { "message": "Berkas di handap moal otomatis dilampirkeun:" },
+  "warnColFile": { "message": "Berkas" },
+  "warnColPattern": { "message": "Pola" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Waleran standar" },
+  "uiConfirmDefaultYes": { "message": "Enya" },
+  "uiConfirmDefaultNo": { "message": "Teu" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

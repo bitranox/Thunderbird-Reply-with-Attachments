@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "寄付",
+  "description": "「添付ファイル付きで返信」を気に入っていただけましたら、開発支援のための寄付をご検討ください：",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "donation",
+    "title": "寄付",
+    "sidebar_label": "寄付"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "プライバシー",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/privacy"
+  },
+  "next": {
+    "title": "ライセンス",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/licence"
+  }
+}

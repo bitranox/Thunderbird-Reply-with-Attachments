@@ -1,0 +1,28 @@
+{
+  "id": "support",
+  "title": "Dhukungan",
+  "description": "Butuh pitulungan utawa arep nglaporake bug?",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/support.md",
+  "sourceDirName": ".",
+  "slug": "/support",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/support",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "support",
+    "title": "Dhukungan",
+    "sidebar_label": "Dhukungan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Glosarium",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/glossary"
+  },
+  "next": {
+    "title": "Privasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/privacy"
+  }
+}

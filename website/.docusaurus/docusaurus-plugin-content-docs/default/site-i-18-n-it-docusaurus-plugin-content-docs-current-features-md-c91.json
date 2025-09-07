@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Caratteristiche",
+  "description": "Caratteristiche",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Caratteristiche",
+    "sidebar_label": "Caratteristiche"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Avvio rapido",
+    "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/quickstart"
+  }
+}

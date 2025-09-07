@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "Glosarium i18n",
+  "description": "Istilah baku sing digunakake ing UI lan dokumentasi add‑on. Gunakna iki kanggo njaga konsistensi terjemahan ing macem‑macem lokal.",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "Glosarium i18n",
+    "sidebar_label": "Glosarium"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Basa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/languages"
+  },
+  "next": {
+    "title": "Dhukungan",
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/support"
+  }
+}

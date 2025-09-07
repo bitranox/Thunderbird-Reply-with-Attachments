@@ -1,0 +1,29 @@
+{
+  "id": "install",
+  "title": "Pemasangan",
+  "description": "Pemasangan — dalam Thunderbird (Disyorkan)",
+  "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/install.md",
+  "sourceDirName": ".",
+  "slug": "/install",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "install",
+    "title": "Pemasangan",
+    "slug": "/install",
+    "sidebar_label": "Pemasangan"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Mula Pantas",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/quickstart"
+  },
+  "next": {
+    "title": "Konfigurasi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/configuration"
+  }
+}

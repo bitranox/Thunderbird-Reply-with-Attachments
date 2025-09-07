@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Настройка",
+  "description": "Примечание о терминологии: см. Глоссарий для единообразных терминов в интерфейсе и документации.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Настройка"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Установка",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/install"
+  },
+  "next": {
+    "title": "Использование",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/usage"
+  }
+}

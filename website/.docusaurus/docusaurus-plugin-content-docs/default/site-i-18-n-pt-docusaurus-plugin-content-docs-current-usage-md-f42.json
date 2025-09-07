@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "Utilização",
+  "description": "Utilização",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "Utilização",
+    "sidebar_label": "Utilização"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Configuração",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/configuration"
+  },
+  "next": {
+    "title": "Compatibilidade",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/compatibility"
+  }
+}

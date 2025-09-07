@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Kutiy waqaychasqakunawan" },
+  "extDescription": {
+    "message": "Imaymana e‑mail kutiykunaqa, qhipaman waqaychasqakunata automaticomanta yapin."
+  },
+  "composeTitle": { "message": "Kutiy waqaychasqakunawan" },
+  "optionsTitle": { "message": "Kutiy waqaychasqakunawan — Akllanakuna" },
+  "confirmTitle": { "message": "Waqaychasqakunata ch’anin" },
+  "uiHeader": { "message": "Kutiy waqaychasqakunawan" },
+  "uiNoOptions": { "message": "Kunanqa mana akllanakuy kanchu." },
+  "uiSupport": { "message": "Kay add‑onqa gustawanqachu? Aswan uchuy yanapakuymi qusqayki:" },
+  "uiDonate": { "message": "Qullqi q’owa kunan" },
+  "uiGithubText": { "message": "Pantay willaykuna utaq wakmanta tapuykunaqa, chayqa qaway" },
+  "uiGithubLinkLabel": { "message": "GitHub p’anqa‑y" },
+  "iconAlt": { "message": "Reply with Attachments sutinpa ikuna" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Suti willañiqikunapa yana‑listan (glob patrón)" },
+  "uiBlacklistHelp": {
+    "message": "Kay patrónkunawan tinkiq willañiqikunaqa manaraq automaticomanta yapisqachu kachkan. Huk patrón huk siq’ispi. Ñawpaq: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Yana‑listamanta waqaychasqakunaqa qepachisqa kaptin willay"
+  },
+  "uiSave": { "message": "Waquy" },
+  "uiSaving": { "message": "Waqachkan…" },
+  "uiReset": { "message": "Qallarimuy ñawpaqman" },
+  "uiSaved": { "message": "Waqasqa." },
+  "uiResetDone": { "message": "Qallarimusqa." },
+  "uiConfirmHeader": { "message": "Ch’anin" },
+  "uiConfirmLabel": { "message": "Waqaychasqakuna yapaykama tapuy" },
+  "uiConfirmHelp": {
+    "message": "Uchuy ch’anin qhawanaqa chaylla waqaychasqakunaqa churakusqa kaptin qhawasun. Teclado: Y utaq J = Arí; N utaq Esc = Mana."
+  },
+  "confirmAddOne": {
+    "message": "Waqaychasqa yapana?: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Waqaychasqakunata yapana ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 aswan" }
+    }
+  },
+  "confirmYes": { "message": "Arí" },
+  "confirmNo": { "message": "Mana" },
+  "warnBlacklistTitle": { "message": "Yana‑listawan qepachisqa" },
+  "warnBlacklistIntro": { "message": "Kay willañiqikunaqa automaticomanta manañam yapisqachu:" },
+  "warnColFile": { "message": "Willañiqi" },
+  "warnColPattern": { "message": "Patrón" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Kutiy qallarikuq" },
+  "uiConfirmDefaultYes": { "message": "Arí" },
+  "uiConfirmDefaultNo": { "message": "Mana" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

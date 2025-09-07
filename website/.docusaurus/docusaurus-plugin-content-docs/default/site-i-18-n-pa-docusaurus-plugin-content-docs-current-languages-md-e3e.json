@@ -1,0 +1,28 @@
+{
+  "id": "languages",
+  "title": "ਭਾਸ਼ਾਵਾਂ",
+  "description": "AI ਅਨੁਵਾਦ ਟੂਲਾਂ ਦੀ ਮਦਦ ਨਾਲ ਵਿਸ਼ਾਲ ਭਾਸ਼ਾ ਸਮਰਥਨ — 103 ਭਾਸ਼ਾਂ।",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/languages.md",
+  "sourceDirName": ".",
+  "slug": "/languages",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/languages",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "languages",
+    "title": "ਭਾਸ਼ਾਵਾਂ",
+    "sidebar_label": "ਭਾਸ਼ਾਵਾਂ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਡਿਵੈਲਪਮੈਂਟ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/development"
+  },
+  "next": {
+    "title": "ਸ਼ਬਦਾਵਲੀ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/glossary"
+  }
+}

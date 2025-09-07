@@ -1,0 +1,28 @@
+{
+  "id": "usage",
+  "title": "วิธีใช้",
+  "description": "วิธีใช้",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/usage.md",
+  "sourceDirName": ".",
+  "slug": "/usage",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/usage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "usage",
+    "title": "วิธีใช้",
+    "sidebar_label": "วิธีใช้"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "การตั้งค่า",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/configuration"
+  },
+  "next": {
+    "title": "ความเข้ากันได้",
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/compatibility"
+  }
+}

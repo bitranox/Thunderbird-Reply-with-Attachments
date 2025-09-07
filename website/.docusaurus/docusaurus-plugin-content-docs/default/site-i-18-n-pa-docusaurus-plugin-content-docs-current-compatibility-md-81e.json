@@ -1,0 +1,28 @@
+{
+  "id": "compatibility",
+  "title": "ਅਨੁਕੂਲਤਾ",
+  "description": "ਅਨੁਕੂਲਤਾ",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/compatibility.md",
+  "sourceDirName": ".",
+  "slug": "/compatibility",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/compatibility",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "compatibility",
+    "title": "ਅਨੁਕੂਲਤਾ",
+    "sidebar_label": "ਅਨੁਕੂਲਤਾ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਵਰਤੋਂ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/usage"
+  },
+  "next": {
+    "title": "ਅਧਿਕਾਰ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/permissions"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "privacy",
+  "title": "गोपनीयता",
+  "description": "Reply with Attachments कोणतेही ऍनालिटिक्स/टेलिमेट्री गोळा करत नाही आणि तुमचा डेटा कुठेही पाठवत नाही.",
+  "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/privacy.md",
+  "sourceDirName": ".",
+  "slug": "/privacy",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/privacy",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "privacy",
+    "title": "गोपनीयता",
+    "sidebar_label": "गोपनीयता"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "सहाय्य",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/support"
+  },
+  "next": {
+    "title": "देणगी",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/donation"
+  }
+}

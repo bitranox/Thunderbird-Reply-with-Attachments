@@ -1,0 +1,28 @@
+{
+  "id": "glossary",
+  "title": "i18n ਸ਼ਬਦਾਵਲੀ",
+  "description": "ਐਡ‑ਆਨ UI ਅਤੇ ਡੌਕੂਮੈਂਟੇਸ਼ਨ ਵਿੱਚ ਵਰਤੇ ਜਾਣ ਵਾਲੇ ਕੈਨੋਨਿਕਲ ਸ਼ਬਦ। ਲੋਕਲਾਂ ਵਿੱਚ ਅਨੁਵਾਦ ਨੂੰ ਇਕਸਾਰ ਰੱਖਣ ਲਈ ਇਨ੍ਹਾਂ ਦਾ ਇਸਤੇਮਾਲ ਕਰੋ।",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "glossary",
+    "title": "i18n ਸ਼ਬਦਾਵਲੀ",
+    "sidebar_label": "ਸ਼ਬਦਾਵਲੀ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਭਾਸ਼ਾਵਾਂ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/languages"
+  },
+  "next": {
+    "title": "ਸਮਰਥਨ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/support"
+  }
+}

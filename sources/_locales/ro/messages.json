@@ -1,0 +1,62 @@
+{
+  "extName": { "message": "Răspuns cu atașamente" },
+  "extDescription": {
+    "message": "Include automat atașamentele originale în răspunsurile prin e‑mail."
+  },
+  "composeTitle": { "message": "Răspuns cu atașamente" },
+  "optionsTitle": { "message": "Răspuns cu atașamente — Opțiuni" },
+  "confirmTitle": { "message": "Confirmă atașamentele" },
+  "uiHeader": { "message": "Răspuns cu atașamente" },
+  "uiNoOptions": { "message": "Momentan nu există opțiuni de configurat." },
+  "uiSupport": { "message": "Îți place acest add‑on? Susține-mă cu o mică donație:" },
+  "uiDonate": { "message": "Donează acum" },
+  "uiGithubText": {
+    "message": "Pentru raportarea bug‑urilor sau alte întrebări, te rog vizitează"
+  },
+  "uiGithubLinkLabel": { "message": "pagina mea GitHub" },
+  "iconAlt": { "message": "Pictograma Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Listă neagră de nume de fișiere (șabloane glob)" },
+  "uiBlacklistHelp": {
+    "message": "Fișierele ale căror nume se potrivesc cu oricare dintre aceste șabloane nu vor fi atașate automat. Un șablon pe rând. Exemple: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Avertizează dacă atașamentele sunt excluse de lista neagră"
+  },
+  "uiSave": { "message": "Salvează" },
+  "uiSaving": { "message": "Se salvează…" },
+  "uiReset": { "message": "Resetează la implicite" },
+  "uiSaved": { "message": "Salvat." },
+  "uiResetDone": { "message": "Resetat." },
+  "uiConfirmHeader": { "message": "Confirmare" },
+  "uiConfirmLabel": { "message": "Întreabă înainte de a adăuga atașamente" },
+  "uiConfirmHelp": {
+    "message": "O mică fereastră de confirmare apare doar atunci când ar fi adăugate atașamente. Tastatură: Y sau J = Da; N sau Esc = Nu."
+  },
+  "confirmAddOne": {
+    "message": "Adăugăm atașamentul: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Adăugăm atașamentele ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 în plus" }
+    }
+  },
+  "confirmYes": { "message": "Da" },
+  "confirmNo": { "message": "Nu" },
+  "warnBlacklistTitle": { "message": "Exclus de lista neagră" },
+  "warnBlacklistIntro": { "message": "Următoarele fișiere nu vor fi atașate automat:" },
+  "warnColFile": { "message": "Fișier" },
+  "warnColPattern": { "message": "Șablon" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Răspuns implicit" },
+  "uiConfirmDefaultYes": { "message": "Da" },
+  "uiConfirmDefaultNo": { "message": "Nu" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

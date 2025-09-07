@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+  "description": "1. Thunderbird Add‑ons ਤੋਂ ਐਡ‑ਆਨ ਇੰਸਟਾਲ ਕਰੋ।",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+    "sidebar_label": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/features"
+  },
+  "next": {
+    "title": "ਸਥਾਪਨਾ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/install"
+  }
+}

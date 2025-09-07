@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി" },
+  "extDescription": {
+    "message": "ഇമെയിൽ മറുപടികളിൽ യഥാർത്ഥ അറ്റാച്ച്മെന്റുകൾ സ്വയം ഉൾപ്പെടുത്തുന്നു."
+  },
+  "composeTitle": { "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി" },
+  "optionsTitle": { "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി — ഓപ്ഷനുകൾ" },
+  "confirmTitle": { "message": "അറ്റാച്ച്മെന്റുകൾ സ്ഥിരീകരിക്കുക" },
+  "uiHeader": { "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി" },
+  "uiNoOptions": { "message": "ഇപ്പോൾ ക്രമീകരിക്കാൻ ഓപ്ഷനുകളൊന്നുമില്ല." },
+  "uiSupport": { "message": "ഈ അഡോൺ ഇഷ്ടമാണോ? ഒരു ചെറിയ സംഭാവനയോടെ എന്നെ പിന്തുണയ്ക്കൂ:" },
+  "uiDonate": { "message": "ഇപ്പോൾ സംഭാവന ചെയ്യുക" },
+  "uiGithubText": { "message": "ബഗ് റിപ്പോർട്ടുകൾക്കോ മറ്റ് ചോദ്യങ്ങൾക്കോ, ദയവായി എന്റെ" },
+  "uiGithubLinkLabel": { "message": "GitHub പേജ്" },
+  "iconAlt": { "message": "Reply with Attachments ഐക്കൺ" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ഫയൽനാമങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് (glob പാറ്റേണുകൾ)" },
+  "uiBlacklistHelp": {
+    "message": "ഈ പാറ്റേണുകളിൽ ഏതെങ്കിലും പൊരുത്തപ്പെടുന്ന ഫയലുകൾ ഒരിക്കലും സ്വയം ചേർക്കില്ല. ഓരോ വരിയിലും ഒരു പാറ്റേൺ. ഉദാഹരണങ്ങൾ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": { "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് മൂലം ഒഴിവാക്കിയാൽ മുന്നറിയിപ്പ് നൽകുക" },
+  "uiSave": { "message": "സേവ്" },
+  "uiSaving": { "message": "സേവ് ചെയ്യുന്നു…" },
+  "uiReset": { "message": "സ്ഥിരസ്ഥിതിയിലേക്ക് പുനഃസജ്ജമാക്കുക" },
+  "uiSaved": { "message": "സേവ് ചെയ്തു." },
+  "uiResetDone": { "message": "പുനഃസജ്ജമാക്കി." },
+  "uiConfirmHeader": { "message": "സ്ഥിരീകരണം" },
+  "uiConfirmLabel": { "message": "അറ്റാച്ച്മെന്റുകൾ ചേർക്കുന്നതിന് മുമ്പ് ചോദിക്കുക" },
+  "uiConfirmHelp": {
+    "message": "അറ്റാച്ച്മെന്റുകൾ യഥാർത്ഥത്തിൽ ചേർക്കുമ്പോൾ മാത്രമേ ഒരു ചെറിയ സ്ഥിരീകരണ ഡയലോഗ് പ്രത്യക്ഷപ്പെടൂ. കീബോർഡ്: Y അല്ലെങ്കിൽ J = അതെ; N അല്ലെങ്കിൽ Esc = ഇല്ല."
+  },
+  "confirmAddOne": {
+    "message": "അറ്റാച്ച്മെന്റ് ചേർക്കണോ: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "അറ്റാച്ച്മെന്റുകൾ ചേർക്കണോ ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 കൂടി" }
+    }
+  },
+  "confirmYes": { "message": "അതെ" },
+  "confirmNo": { "message": "ഇല്ല" },
+  "warnBlacklistTitle": { "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് മൂലം ഒഴിവാക്കി" },
+  "warnBlacklistIntro": { "message": "താഴെപ്പറയുന്ന ഫയലുകൾ സ്വയം ചേർക്കില്ല:" },
+  "warnColFile": { "message": "ഫയൽ" },
+  "warnColPattern": { "message": "പാറ്റേൺ" },
+  "warnOk": { "message": "ശരി" },
+  "uiConfirmDefaultHeader": { "message": "സ്ഥിരസ്ഥിതി ഉത്തരം" },
+  "uiConfirmDefaultYes": { "message": "അതെ" },
+  "uiConfirmDefaultNo": { "message": "ഇല്ല" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

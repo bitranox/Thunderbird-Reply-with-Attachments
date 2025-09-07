@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Мүмкүнчүлүктөр",
+  "description": "Мүмкүнчүлүктөр",
+  "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "features",
+    "title": "Мүмкүнчүлүктөр",
+    "sidebar_label": "Мүмкүнчүлүктөр"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/quickstart"
+  }
+}

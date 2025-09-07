@@ -1,0 +1,58 @@
+{
+  "extName": { "message": "Qo‘shimchalar bilan javob" },
+  "extDescription": { "message": "E‑pochta javoblarida asl qo‘shimchalarni avtomatik qo‘shadi." },
+  "composeTitle": { "message": "Qo‘shimchalar bilan javob" },
+  "optionsTitle": { "message": "Qo‘shimchalar bilan javob — Sozlamalar" },
+  "confirmTitle": { "message": "Qo‘shimchalarni tasdiqlash" },
+  "uiHeader": { "message": "Qo‘shimchalar bilan javob" },
+  "uiNoOptions": { "message": "Hozircha sozlash uchun hech qanday parametr yo‘q." },
+  "uiSupport": { "message": "Bu qo‘shimcha yoqdimi? Kichik ehson bilan qo‘llab‑quvvatlang:" },
+  "uiDonate": { "message": "Hozir ehson qiling" },
+  "uiGithubText": { "message": "Xatoliklar haqida xabar berish yoki savollar uchun mening" },
+  "uiGithubLinkLabel": { "message": "GitHub sahifam" },
+  "iconAlt": { "message": "Reply with Attachments belgisi" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Fayl nomlari qora ro‘yxati (glob andozalar)" },
+  "uiBlacklistHelp": {
+    "message": "Ushbu andozalardan biriga mos keladigan fayllar hech qachon avtomatik qo‘shilmaydi. Har bir qatorga bitta andoza. Misollar: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Qo‘shimchalar qora ro‘yxat tufayli chiqarib tashlansa ogohlantir"
+  },
+  "uiSave": { "message": "Saqlash" },
+  "uiSaving": { "message": "Saqlanmoqda…" },
+  "uiReset": { "message": "Standartlarga qaytarish" },
+  "uiSaved": { "message": "Saqlandi." },
+  "uiResetDone": { "message": "Qaytarildi." },
+  "uiConfirmHeader": { "message": "Tasdiqlash" },
+  "uiConfirmLabel": { "message": "Qo‘shimchalarni qo‘shishdan oldin so‘ra" },
+  "uiConfirmHelp": {
+    "message": "Kichik tasdiqlash oynasi faqat haqiqatan ham qo‘shmalar qo‘shilayotganda paydo bo‘ladi. Klaviatura: Y yoki J = Ha; N yoki Esc = Yo‘q."
+  },
+  "confirmAddOne": {
+    "message": "Qo‘shma qo‘shilsinmi: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Qo‘shmalar qo‘shilsinmi ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 ko‘proq" }
+    }
+  },
+  "confirmYes": { "message": "Ha" },
+  "confirmNo": { "message": "Yo‘q" },
+  "warnBlacklistTitle": { "message": "Qora ro‘yxat bilan chiqarildi" },
+  "warnBlacklistIntro": { "message": "Quyidagi fayllar avtomatik qo‘shilmaydi:" },
+  "warnColFile": { "message": "Fayl" },
+  "warnColPattern": { "message": "Andoza" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Standart javob" },
+  "uiConfirmDefaultYes": { "message": "Ha" },
+  "uiConfirmDefaultNo": { "message": "Yo‘q" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

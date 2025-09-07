@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "అటాచ్‌మెంట్‌లతో ప్రతిస్పందించండి" },
+  "extDescription": {
+    "message": "ఇమెయిల్ ప్రత్యుత్తరాల్లో అసలు అటాచ్‌మెంట్‌లను ఆటోమేటిక్‌గా చేర్చండి."
+  },
+  "composeTitle": { "message": "అటాచ్‌మెంట్‌లతో ప్రతిస్పందించండి" },
+  "optionsTitle": { "message": "అటాచ్‌మెంట్‌లతో ప్రతిస్పందించండి — ఎంపికలు" },
+  "confirmTitle": { "message": "అటాచ్‌మెంట్‌ల నిర్ధారణ" },
+  "uiHeader": { "message": "అటాచ్‌మెంట్‌లతో ప్రతిస్పందించండి" },
+  "uiNoOptions": { "message": "ప్రస్తుతం ఆకృతీకరించడానికి ఎటువంటి ఎంపికలు లేవు." },
+  "uiSupport": { "message": "ఈ యాడ్‑ఆన్ నచ్చిందా? చిన్న విరాళంతో నన్ను ఆదరించండి:" },
+  "uiDonate": { "message": "ఇప్పుడే విరాళమివ్వండి" },
+  "uiGithubText": { "message": "బగ్ నివేదికలు లేదా ఇతర ప్రశ్నల కోసం, నా" },
+  "uiGithubLinkLabel": { "message": "GitHub పేజీ" },
+  "iconAlt": { "message": "Reply with Attachments చిహ్నం" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "ఫైల్‌పేర్ల బ్లాక్‌లిస్ట్ (గ్లోబ్ నమూనాలు)" },
+  "uiBlacklistHelp": {
+    "message": "ఈ నమూనాల్లో ఏదైనా సరిపోలే ఫైళ్లు ఆటోమేటిక్‌గా ఎప్పుడూ జత చేయబడవు. ప్రతి పంక్తికి ఒక నమూనా. ఉదాహరణలు: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "బ్లాక్‌లిస్ట్ వల్ల అటాచ్‌మెంట్‌లు మినహాయించినప్పుడు హెచ్చరించండి"
+  },
+  "uiSave": { "message": "సేవ్ చేయండి" },
+  "uiSaving": { "message": "సేవ్ చేస్తున్నాం…" },
+  "uiReset": { "message": "డిఫాల్ట్‌లకు రీసెట్ చేయండి" },
+  "uiSaved": { "message": "సేవ్ అయింది." },
+  "uiResetDone": { "message": "రీసెట్ అయింది." },
+  "uiConfirmHeader": { "message": "నిర్ధారణ" },
+  "uiConfirmLabel": { "message": "అటాచ్‌మెంట్‌లు చేర్చే ముందు అడగండి" },
+  "uiConfirmHelp": {
+    "message": "అటాచ్‌మెంట్‌లు నిజంగా చేర్చబడే సమయంలో మాత్రమే చిన్న నిర్ధారణ డైలాగ్ కనిపిస్తుంది. కీబోర్డ్: Y లేదా J = అవును; N లేదా Esc = కాదు."
+  },
+  "confirmAddOne": {
+    "message": "అటాచ్‌మెంట్ చేర్చాలా: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "అటాచ్‌మెంట్‌లు చేర్చాలా ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 more" }
+    }
+  },
+  "confirmYes": { "message": "అవును" },
+  "confirmNo": { "message": "కాదు" },
+  "warnBlacklistTitle": { "message": "బ్లాక్‌లిస్ట్ కారణంగా మినహాయించబడింది" },
+  "warnBlacklistIntro": { "message": "క్రింది ఫైళ్లు ఆటోమేటిక్‌గా జత చేయబడవు:" },
+  "warnColFile": { "message": "ఫైల్" },
+  "warnColPattern": { "message": "నమూనా" },
+  "warnOk": { "message": "సరే" },
+  "uiConfirmDefaultHeader": { "message": "డిఫాల్ట్ సమాధానం" },
+  "uiConfirmDefaultYes": { "message": "అవును" },
+  "uiConfirmDefaultNo": { "message": "కాదు" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

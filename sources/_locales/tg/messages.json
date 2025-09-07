@@ -1,0 +1,60 @@
+{
+  "extName": { "message": "Ҷавоб бо замимаҳо" },
+  "extDescription": {
+    "message": "Замимаҳои аслиро дар ҷавобҳои почтаи электронӣ худкор илова мекунад."
+  },
+  "composeTitle": { "message": "Ҷавоб бо замимаҳо" },
+  "optionsTitle": { "message": "Ҷавоб бо замимаҳо — Танзимот" },
+  "confirmTitle": { "message": "Тасдиқи замимаҳо" },
+  "uiHeader": { "message": "Ҷавоб бо замимаҳо" },
+  "uiNoOptions": { "message": "Ҳоло имконоти танзим мавҷуд нест." },
+  "uiSupport": { "message": "Ин замимаро писанд кардед? Бо хайрияе хурд дастгирӣ кунед:" },
+  "uiDonate": { "message": "Ҳоло хайрия кунед" },
+  "uiGithubText": { "message": "Барои гузориш додани хатогиҳо ё саволҳои дигар, лутфан саҳифаи" },
+  "uiGithubLinkLabel": { "message": "GitHub‑и ман" },
+  "iconAlt": { "message": "Нишонаи Reply with Attachments" },
+  "githubAlt": { "message": "GitHub" },
+  "uiBlacklistHeader": { "message": "Рӯйхати сиёҳи номҳои файл (намунаҳои glob)" },
+  "uiBlacklistHelp": {
+    "message": "Файлҳое, ки номашон ба яке аз ин намунаҳо мувофиқат мекунад, ҳаргиз худкор замима намешаванд. Як намуна дар як сатр. Мисолҳо: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Огоҳ кардан агар замимаҳо бо рӯйхати сиёҳ хориҷ карда шаванд"
+  },
+  "uiSave": { "message": "Захира" },
+  "uiSaving": { "message": "Дар ҳоли захира…" },
+  "uiReset": { "message": "Барқарор ба пешфарз" },
+  "uiSaved": { "message": "Захира шуд." },
+  "uiResetDone": { "message": "Барқарор шуд." },
+  "uiConfirmHeader": { "message": "Тасдиқ" },
+  "uiConfirmLabel": { "message": "Пурсидан пеш аз иловаи замимаҳо" },
+  "uiConfirmHelp": {
+    "message": "Равзанаи хурди тасдиқ танҳо вақте пайдо мешавад, ки воқеан замимаҳо илова шаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
+  },
+  "confirmAddOne": {
+    "message": "Замимаро илова мекунем: $1?",
+    "placeholders": { "1": { "content": "$1" } }
+  },
+  "confirmAddMany": {
+    "message": "Замимаҳо илова шаванд ($1): $2$3?",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" },
+      "3": { "content": ", +$3 бештар" }
+    }
+  },
+  "confirmYes": { "message": "Ҳа" },
+  "confirmNo": { "message": "Не" },
+  "warnBlacklistTitle": { "message": "Бо рӯйхати сиёҳ хориҷ шуд" },
+  "warnBlacklistIntro": { "message": "Ин файлҳо худкор замима намешаванд:" },
+  "warnColFile": { "message": "Файл" },
+  "warnColPattern": { "message": "Намуна" },
+  "warnOk": { "message": "OK" },
+  "uiConfirmDefaultHeader": { "message": "Ҷавоби пешфарз" },
+  "uiConfirmDefaultYes": { "message": "Ҳа" },
+  "uiConfirmDefaultNo": { "message": "Не" },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/donation"
+  },
+  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Endringslogg",
+  "description": "Se hele historikken i filen CHANGELOG.md i repoet.",
+  "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Endringslogg"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/licence"
+  }
+}

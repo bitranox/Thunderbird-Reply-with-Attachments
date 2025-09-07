@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Дневник измена",
+  "description": "Потпуну историју погледајте у датотеци CHANGELOG.md у репозиторијуму.",
+  "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Дневник измена"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/licence"
+  }
+}

@@ -1,88 +1,88 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/Thunderbird-Reply-with-Attachments/de/docs",
+      "path": "/Thunderbird-Reply-with-Attachments/om/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/Thunderbird-Reply-with-Attachments/de/docs",
+          "path": "/Thunderbird-Reply-with-Attachments/om/docs",
           "mainDocId": "features",
           "docs": [
             {
               "id": "changelog",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/changelog",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/changelog",
               "sidebar": "docs"
             },
             {
               "id": "compatibility",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/compatibility",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/compatibility",
               "sidebar": "docs"
             },
             {
               "id": "configuration",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/configuration",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/configuration",
               "sidebar": "docs"
             },
             {
               "id": "development",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/development",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/development",
               "sidebar": "docs"
             },
             {
               "id": "donation",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/donation",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/donation",
               "sidebar": "docs"
             },
             {
               "id": "features",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/features",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/features",
               "sidebar": "docs"
             },
             {
               "id": "glossary",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/glossary",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/glossary",
               "sidebar": "docs"
             },
             {
               "id": "install",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/install",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/install",
               "sidebar": "docs"
             },
             {
               "id": "languages",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/languages",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/languages",
               "sidebar": "docs"
             },
             {
               "id": "licence",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/licence",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/licence",
               "sidebar": "docs"
             },
             {
               "id": "permissions",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/permissions",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/permissions",
               "sidebar": "docs"
             },
             {
               "id": "privacy",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/privacy",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/privacy",
               "sidebar": "docs"
             },
             {
               "id": "quickstart",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/quickstart",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/quickstart",
               "sidebar": "docs"
             },
             {
               "id": "support",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/support",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/support",
               "sidebar": "docs"
             },
             {
               "id": "usage",
-              "path": "/Thunderbird-Reply-with-Attachments/de/docs/usage",
+              "path": "/Thunderbird-Reply-with-Attachments/om/docs/usage",
               "sidebar": "docs"
             }
           ],
@@ -90,7 +90,7 @@
           "sidebars": {
             "docs": {
               "link": {
-                "path": "/Thunderbird-Reply-with-Attachments/de/docs/features",
+                "path": "/Thunderbird-Reply-with-Attachments/om/docs/features",
                 "label": "features"
               }
             }

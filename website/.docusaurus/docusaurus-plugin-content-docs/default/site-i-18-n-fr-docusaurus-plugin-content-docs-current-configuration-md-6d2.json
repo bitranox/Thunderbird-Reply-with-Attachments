@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Configuration",
+  "description": "Note terminologique : voir le Glossaire pour l’usage cohérent des termes dans l’interface et la documentation.",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Configuration"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/install"
+  },
+  "next": {
+    "title": "Utilisation",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fr/docs/usage"
+  }
+}
