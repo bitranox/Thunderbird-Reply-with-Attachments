@@ -8,6 +8,7 @@ export default [
       'coverage/**',
       'website/build/**',
       'website/.docusaurus/**',
+      '.gh-pages/**',
       '.github/**',
       '*.zip',
     ],
