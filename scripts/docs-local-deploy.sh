@@ -143,9 +143,11 @@ echo "✔ Publishing build to gh-pages…"
 # Ensure target worktree/clone is on the correct branch and up-to-date; then clean
 pushd "$WT_DIR" >/dev/null
 git fetch "$REMOTE" "$BRANCH" >/dev/null 2>&1 || true
-git checkout -B "$BRANCH" "$REMOTE/$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
-if git rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+if [[ $HAS_REMOTE_BRANCH -eq 0 ]]; then
+  git checkout -B "$BRANCH" "$REMOTE/$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
   git reset --hard "$REMOTE/$BRANCH" >/dev/null 2>&1 || true
+else
+  git checkout --orphan "$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
 fi
 git rm -rf . >/dev/null 2>&1 || true
 git clean -fdx >/dev/null 2>&1 || true
