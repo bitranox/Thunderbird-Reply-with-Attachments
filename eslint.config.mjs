@@ -7,6 +7,7 @@ export default [
       'node_modules/**',
       'coverage/**',
       'website/build/**',
+      'website/build-linkcheck/**',
       'website/.docusaurus/**',
       '.gh-pages/**',
       '.github/**',

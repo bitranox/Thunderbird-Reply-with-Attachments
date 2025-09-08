@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "తృతీయ పక్ష లైసెన్సులు",
+  "description": "ఈ పేజీ ఈ రిపాజిటరీలో ఉపయోగించిన తృతీయ‑పక్ష లైసెన్సులను సారాంశంగా చూపిస్తుంది. సోర్స్ ట్రీలోని",
+  "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "తృతీయ పక్ష లైసెన్సులు",
+    "sidebar_label": "మూడవ పక్ష లైసెన్సులు"
+  }
+}

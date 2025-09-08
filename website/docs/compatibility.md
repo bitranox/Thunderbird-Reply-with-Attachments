@@ -6,12 +6,19 @@ sidebar_label: Compatibility
 
 ## Compatibility
 
-- **Tested with Thunderbird Nebula 128.6.0esr (64-Bit).**
-- **Older Thunderbird versions are not supported.**
+- Thunderbird 128 ESR or newer is supported (128.x+).
+- Older Thunderbird versions are not supported.
+- Tested on Windows, macOS, and Linux.
 
 ---
 
 ## Troubleshooting
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128.6.0esr or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
+- If the addon does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
+- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the addon.
+
+---
+
+## Known conflicts
+
+- None known at this time.

@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "제3자 라이선스",
+  "description": "이 페이지는 이 저장소에서 사용된 서드파티 라이선스를 요약합니다. 소스 트리의 공식 목록은",
+  "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "제3자 라이선스",
+    "sidebar_label": "제3자 라이선스"
+  }
+}

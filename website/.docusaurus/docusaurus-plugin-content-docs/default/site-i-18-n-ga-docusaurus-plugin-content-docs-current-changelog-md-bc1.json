@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Loga athruithe",
+  "description": "Féach an stair iomlán sa chomhad CHANGELOG.md sa stór.",
+  "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Loga athruithe"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/licence"
+  }
+}

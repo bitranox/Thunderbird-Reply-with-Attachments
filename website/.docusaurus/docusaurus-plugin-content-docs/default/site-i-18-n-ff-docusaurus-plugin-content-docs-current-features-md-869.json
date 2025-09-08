@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Fannuji",
+  "description": "Fannuji",
+  "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Fannuji",
+    "sidebar_label": "Fannuji"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/quickstart"
+  }
+}

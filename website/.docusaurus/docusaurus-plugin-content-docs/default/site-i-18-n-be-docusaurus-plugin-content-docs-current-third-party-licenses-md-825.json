@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Ліцэнзіі трэціх бакоў",
+  "description": "Гэтая старонка падсумоўвае ліцэнзіі старонніх кампанентаў, якія выкарыстоўваюцца",
+  "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Ліцэнзіі трэціх бакоў",
+    "sidebar_label": "Ліцэнзіі трэціх бакоў"
+  }
+}

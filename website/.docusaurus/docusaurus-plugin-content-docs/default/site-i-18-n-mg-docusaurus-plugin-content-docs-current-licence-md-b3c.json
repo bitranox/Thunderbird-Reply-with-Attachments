@@ -1,0 +1,28 @@
+{
+  "id": "licence",
+  "title": "Licence",
+  "description": "Project license: MIT",
+  "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/licence.md",
+  "sourceDirName": ".",
+  "slug": "/licence",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/licence",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "licence",
+    "title": "Licence",
+    "sidebar_label": "Licence"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Donate",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/donation"
+  },
+  "next": {
+    "title": "Tantaran'ny fanovana",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/changelog"
+  }
+}

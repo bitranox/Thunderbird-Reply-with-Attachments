@@ -25,6 +25,15 @@ function writeFile(p, s) {
   fs.writeFileSync(p, s, 'utf8');
 }
 
+const LOGFILE = path.join(process.cwd(), 'translation.log');
+function logLine(line) {
+  try {
+    fs.appendFileSync(LOGFILE, line + '\n', 'utf8');
+  } catch {
+    // best-effort logging; ignore failures
+  }
+}
+
 function listWebsiteDocs() {
   const dir = 'website/docs';
   return fs
@@ -427,6 +436,12 @@ async function run() {
   function drawProgress() {
     process.stdout.write(`\r${renderBar(completedPairs, totalPairs)}`);
   }
+  // Log batch start
+  const startIso = new Date().toISOString();
+  logLine(
+    `[START] ${startIso} docs=${JSON.stringify(docsList)} locales=${JSON.stringify(locales)}`
+  );
+
   for (const doc of docsList) {
     const srcPath = path.join('website', 'docs', doc);
     if (!fs.existsSync(srcPath)) {
@@ -439,9 +454,11 @@ async function run() {
     for (const locale of locales) {
       try {
         // status line before processing this pair
+        const pairIso = new Date().toISOString();
         process.stdout.write(
           `\nStarting: ${doc} → ${locale} (${completedPairs + 1}/${totalPairs})\n`
         );
+        logLine(`[PAIR-START] ${pairIso} file=${doc} locale=${locale}`);
         const out = await translateMarkdown({ body, front }, locale);
         const outPath = path.join(
           'website/i18n',
@@ -457,6 +474,9 @@ async function run() {
         await sleep(200);
       } catch (e) {
         console.error(`Error translating ${doc} → ${locale}:`, e.message);
+        logLine(
+          `[PAIR-ERROR] ${new Date().toISOString()} file=${doc} locale=${locale} error=${JSON.stringify(e.message)}`
+        );
         completedPairs++;
         drawProgress();
         await sleep(500);
@@ -464,6 +484,7 @@ async function run() {
     }
   }
   process.stdout.write(`\nCompleted ${completedPairs} translation(s).\n`);
+  logLine(`[END] ${new Date().toISOString()} completed=${completedPairs}`);
 }
 
 run().catch((e) => {

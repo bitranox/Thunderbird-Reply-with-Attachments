@@ -8,13 +8,13 @@ sidebar_label: Development
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 18+ and npm (tested with Node 20)
 - Thunderbird 128 ESR or newer (for manual testing)
 
 ### Project Layout (high‑level)
 
 - Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add‑on code (background, options/popup UI, manifests, icons)
+- `sources/`: main addon code (background, options/popup UI, manifests, icons)
 - `tests/`: Vitest suite
 - `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
 
@@ -23,6 +23,92 @@ sidebar_label: Development
 - Install root deps: `npm ci`
 - Docs (optional): `cd website && npm ci`
 - Discover targets: `make help`
+
+### Make Targets (detailed)
+
+The repository provides a thin Makefile to standardize common dev flows. Run `make help` to list targets.
+
+- `make help`
+  - Lists all available targets with one‑line descriptions (anything annotated with `##` in the Makefile).
+
+- `make prettier`
+  - Formats the entire repo in place via Prettier (`node_modules/prettier/bin/prettier.cjs --write .`).
+  - Used by other targets to ensure consistent formatting.
+
+- `make prettier-write`
+  - Alias that simply runs `make prettier`.
+
+- `make prettier-check`
+  - Runs Prettier in check mode (no writes). Fails if files would be reformatted.
+
+- `make eslint`
+  - Runs ESLint using the flat config (`npm run -s lint:eslint`).
+
+- `make lint`
+  - Lints the MailExtension using `web-ext lint` against `sources/`.
+  - Implementation details:
+    - Temporarily copies `sources/manifest_LOCAL.json` to `sources/manifest.json` for the linter.
+    - Ensures the temporary file is removed on exit.
+    - Ignores built ZIP artifacts (`reply-with-attachments-plugin*.zip`).
+    - `web-ext` findings do not fail the pipeline (`|| true`), so review the output.
+
+- `make test`
+  - End‑to‑end developer check: format (write), format (check), ESLint, then Vitest.
+  - Vitest runs with coverage when `@vitest/coverage-v8` is installed; otherwise it runs without coverage.
+  - Coverage settings and thresholds are configured in `vitest.config.mjs` (global: 85% lines/funcs/stmts, 70% branches).
+
+- `make test-i18n`
+- Runs i18n‑focused test suites only, covering addon UI strings and website docs across all locales:
+  - `npm run test:i18n` → executes `tests/i18n.*.test.js` (with coverage if available) for UI keys, placeholders, titles, URLs, and cross‑locale parity in messages.
+  - `npm run -s test:website-i18n` → verifies website translations for every locale under `website/i18n/<lang>/...` with one test per EN doc per locale:
+    - Translation file exists (same filename or `<id>.md` based on EN front‑matter `id`).
+    - Translated front‑matter `id` exists and matches the EN `id`.
+    - Translated `title` is non‑empty.
+    - If EN has `sidebar_label`, the translation has a non‑empty `sidebar_label` too.
+
+- `make pack`
+  - Builds both ATN and LOCAL ZIPs using `distribution_zip_packer.sh`.
+  - Depends on `make lint` first.
+  - Outputs artifacts at the repo root (`reply-with-attachments-plugin*.zip`). Do not edit artifacts by hand.
+  - Tip: bump versions in `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging.
+
+- `make commit`
+  - Opinionated helper to stage typical changes and push:
+    - Prettier (write + check), `make test`, `make test-i18n`.
+    - Stages all changes; if there are staged diffs, appends a changelog entry (`scripts/append-changelog-entry.sh`).
+    - Commits with a standardized message and pushes to `origin/<current-branch>`.
+  - Requires a configured git remote and a clean repo state for best results.
+
+- `make docs-build`
+  - Builds the Docusaurus website into `website/build`.
+  - Internals: `cd website && npm ci && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build`.
+  - Run this before checking or deploying docs.
+
+- `make docs-link-check`
+  - Builds docs (depends on `docs-build`) and checks internal links using `linkinator` (installed as a devDependency at the repo root).
+  - Behavior is designed to be offline‑safe:
+    - Rewrites the GitHub Pages `baseUrl` (`/Thunderbird-Reply-with-Attachments/`) to `/` for local scanning.
+    - Skips all remote HTTP(S) links except `localhost` to avoid relying on the real website.
+  - Useful to catch broken in‑site navigation before publishing.
+
+- `make translation DOC=<file(s)|all> TO=<lang(s)|all>`
+  - Translates one or more docs from `website/docs` into the `website/i18n/<lang>/...` tree.
+  - Examples:
+    - `make translation DOC=changelog.md TO=de`
+    - `make translation DOC="changelog.md features.md" TO="de fr"`
+    - `make translation DOC=all TO=all`
+  - Notes:
+    - Reads API key/model from `.env` at the repo root (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
+    - Preserves code blocks and front‑matter `id`; translates `title`/`sidebar_label`.
+  - Alias: `make translate DOC=… TO=…` (identical behavior).
+
+- `make docs-deploy`
+  - Builds and deploys the website to a local `gh-pages` worktree via `scripts/docs-local-deploy.sh`.
+  - Customize with `OPTS`, for example:
+    - `make docs-deploy OPTS="--locales en --no-test --no-link-check"`
+    - `make docs-deploy OPTS="--locales all --dry-run"`
+
+Tip: You can override the package manager used by Make by setting `NPM=...` (defaults to `npm`).
 
 ### Build & Package
 
@@ -37,7 +123,7 @@ sidebar_label: Development
 - Coverage (optional):
   - `npm i -D @vitest/coverage-v8`
   - Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test-i18n` (parity, placeholders, titles)
+- i18n only: `make test-i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
 
 ### Debugging & Logs
 
@@ -51,6 +137,8 @@ sidebar_label: Development
 
 - Dev server: `cd website && npm run start`
 - Build static site: `cd website && npm run build`
+- Make equivalents: `make docs-build`, `make docs-link-check`, `make docs-deploy`
+- Before publishing, run the offline‑safe link check: `make docs-link-check`.
 - i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
 - Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
 
@@ -72,3 +160,8 @@ sidebar_label: Development
 ### Contributing
 
 - See CONTRIBUTING.md for branch/commit/PR guidelines
+- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+
+### Translations
+
+- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.

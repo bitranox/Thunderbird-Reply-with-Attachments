@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Característiques",
+  "description": "Característiques",
+  "source": "@site/i18n/ca/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ca/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Característiques",
+    "sidebar_label": "Característiques"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ca/docs/quickstart"
+  }
+}

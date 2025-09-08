@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Third‑party licenses",
+  "description": "This page summarizes third‑party licenses used by this repository. For the",
+  "source": "@site/docs/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Third‑party licenses",
+    "sidebar_label": "Third‑party licenses"
+  }
+}

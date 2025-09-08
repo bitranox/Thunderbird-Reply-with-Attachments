@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "तेस्रो पक्षका लाइसेन्सहरू",
+  "description": "यस पृष्ठले यो रेपोजिटरीद्वारा प्रयोग भएका तेस्रो‑पक्षका लाइसेन्सहरूको सार प्रस्तुत गर्छ। स्रोत ट्रीमा रहेको प्रामाणिक सूचीका लागि, रेपोजिटरीको root मा रहेको THIRDPARTYLICENSES.md हेर्नुहोस्।",
+  "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "तेस्रो पक्षका लाइसेन्सहरू",
+    "sidebar_label": "तृतीय पक्ष लाइसेन्सहरू"
+  }
+}

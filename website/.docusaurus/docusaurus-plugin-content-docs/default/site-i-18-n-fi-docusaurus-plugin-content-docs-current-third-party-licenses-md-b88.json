@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Kolmannen osapuolen lisenssit",
+  "description": "Tämä sivu kokoaa yhteen tässä tietovarastossa käytetyt kolmannen osapuolen lisenssit. Katso",
+  "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Kolmannen osapuolen lisenssit",
+    "sidebar_label": "Kolmannen osapuolen lisenssit"
+  }
+}

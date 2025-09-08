@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Licence trećih strana",
+  "description": "Ova stranica sažima licence trećih strana koje koristi ovaj repozitorij. Za",
+  "source": "@site/i18n/bs/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/bs/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Licence trećih strana",
+    "sidebar_label": "Licence trećih strana"
+  }
+}

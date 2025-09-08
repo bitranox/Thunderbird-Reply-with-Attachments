@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Nsakrae-krataa",
+  "description": "Hwɛ abakɔsɛm no nyinaa wɔ CHANGELOG.md a ɛwɔ repo no mu.",
+  "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Nsakrae-krataa"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/licence"
+  }
+}

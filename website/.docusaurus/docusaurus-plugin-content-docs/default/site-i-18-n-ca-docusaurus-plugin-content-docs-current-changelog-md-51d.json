@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Registre de canvis",
+  "description": "Consulta l’historial complet al fitxer CHANGELOG.md del repositori.",
+  "source": "@site/i18n/ca/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ca/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Registre de canvis"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ca/docs/licence"
+  }
+}

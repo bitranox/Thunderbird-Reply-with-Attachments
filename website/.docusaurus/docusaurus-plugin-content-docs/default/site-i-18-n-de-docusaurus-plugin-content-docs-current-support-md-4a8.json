@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Hilfe benötigt oder einen Fehler melden?",
+  "title": "Unterstützung",
+  "description": "Brauchen Sie Hilfe oder möchten Sie einen Fehler melden?",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757108078000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
+    "title": "Unterstützung",
     "sidebar_label": "Support"
   },
   "sidebar": "docs",

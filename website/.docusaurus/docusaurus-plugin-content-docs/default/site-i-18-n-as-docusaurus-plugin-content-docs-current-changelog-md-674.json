@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "পৰিবৰ্তনৰ তালিকা",
+  "description": "সম্পূৰ্ণ ইতিহাস ৰিপ’জিটৰিৰ CHANGELOG.md ফাইলত চাওক।",
+  "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "পৰিবৰ্তনৰ তালিকা"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/licence"
+  }
+}

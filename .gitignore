@@ -9,6 +9,15 @@
 # git push origin master --force
 
 # ====================================
+# APP
+# ====================================
+website/build/
+website/node_modules/
+node_modules/
+coverage/
+translation.log
+
+# ====================================
 # IDEs & Editors
 # ====================================
 # IntelliJ, PyCharm, etc.

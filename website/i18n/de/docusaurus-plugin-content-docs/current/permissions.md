@@ -3,26 +3,18 @@ id: permissions
 title: Berechtigungen
 ---
 
-Dieses Add‑on benötigt folgende Berechtigungen:
+Das Add-on fordert nur einen kleinen, gezielten Satz von Berechtigungen an. Warum jede erforderlich ist:
 
-```
-"compose",
-"messagesRead",
-"messagesModify",
-"scripting",
-"windows",
-"sessions",
-"storage",
-"tabs"
-```
+- `compose`: Ereignisse beim Verfassen beobachten, Anhänge in Ihrer Antwort auflisten/hinzufügen.
+- `messagesRead`: Metadaten lesen und Anhangsdateien aus der ursprünglichen Nachricht abrufen.
+- `scripting`: den kleinen Bestätigungsdialog beim Verfassen einblenden, wenn aktiviert.
+- `windows`: ein kleines Bestätigungs-Popup als letzte Möglichkeit öffnen, wenn die interne Nachrichtenübermittlung fehlschlägt.
+- `sessions`: eine Kennzeichnung pro Tab speichern, um doppelte Verarbeitung zu vermeiden.
+- `storage`: Optionen (Blockliste, Bestätigungsschalter, Standardantwort) dauerhaft speichern.
+- `tabs`: gezielte Nachrichtenübermittlung an den Verfassen-Tab für Bestätigungsanfragen.
 
-Hinweise
+Diese sind im Quellcode dokumentiert und in CI getestet. Das Add-on erhebt keine Telemetriedaten.
 
-- `compose`: Composer‑Zustand lesen, Anhänge verwalten und auf Compose‑Ereignisse reagieren.
-- `messagesRead`: Originalanhänge der Ausgangsnachricht finden und lesen.
-- `messagesModify`: von Thunderbird für bestimmte Anhangs‑Operationen in Compose‑Flows benötigt.
-- `scripting`: MV3‑Skripte für Compose/MessageDisplay registrieren, wo zutreffend.
-- `windows`: Bestätigungs‑UI anzeigen, wenn erforderlich.
-- `sessions`: pro Tab flüchtigen Zustand merken, um doppeltes Hinzufügen zu vermeiden.
-- `storage`: Optionen und Standardwerte speichern.
-- `tabs`: kleinere Tab‑Interaktionen (z. B. Optionen/Dokumentation öffnen).
+## Nicht angefordert
+
+- `compose.save`, `compose.send` — das Add-on speichert oder sendet keine E-Mails in Ihrem Namen.

@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Lisènsi pihak katelu",
+  "description": "Kaca iki nyimpulake lisènsi pihak katelu sing dienggo déning repositori iki. Kanggo dhaptar sing otoritatif ing wit sumber, waca THIRDPARTYLICENSES.md ing oyod repositori.",
+  "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Lisènsi pihak katelu",
+    "sidebar_label": "Lisènsi pihak katelu"
+  }
+}

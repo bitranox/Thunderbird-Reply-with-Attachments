@@ -6,6 +6,7 @@ sidebar_label: Languages
 
 # Language Support
 
+This list reflects both website documentation translations and addon UI strings.
 Massive language support, thanks to AI translation tools — covering 100 languages.
 
 List below is sorted by the language code.
@@ -112,3 +113,5 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Switch the docs locale via the language selector in the site header (URL prefix changes accordingly). Thunderbird’s UI language is independent of the website language and follows your Thunderbird settings.

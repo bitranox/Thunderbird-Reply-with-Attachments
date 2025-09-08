@@ -1,7 +1,7 @@
 {
   "id": "glossary",
   "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "description": "Canonical terms used in the addon UI and documentation. Use these to keep translations consistent across locales.",
   "source": "@site/docs/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",

@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Berechtigungen",
-  "description": "Dieses Add‑on benötigt folgende Berechtigungen:",
+  "description": "Das Add-on fordert nur einen kleinen, gezielten Satz von Berechtigungen an. Warum jede erforderlich ist:",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

@@ -31,3 +31,29 @@ translate from "en": "en-US" to following languages :
     "ti": "ti-ER", "ug": "ug-CN", "ks": "ks-IN", "as": "as-IN", "tl": "tl-PH",
     "ca": "ca-ES", "be": "be-BY", "sq": "sq-AL", "qu": "qu-PE", "ht": "ht-HT",
     "mg": "mg-MG", "ku": "ku-TR", "wo": "wo-SN", "ga": "ga-IE", "is": "is-IS",
+
+## comma separated list to make translation batches :
+
+```txt
+
+af,ak,am,ar,as,az,be,bg,bm,bn
+
+bs,ca,cs,da,de,el,es,et,fa,ff
+
+fi,fr,ga,gu,ha,he,hi,hr,ht,hu
+
+hy,id,ig,is,it,ja,jv,ka,kk,km
+
+kn,ko,ks,ku,ky,ln,lo,lt,lv,mg
+
+ml,mn,mr,ms,my,ne,nl,no,ny,om
+
+or,pa,pl,ps,pt,qu,rn,ro,ru,rw
+
+sd,si,sk,sl,sn,so,sq,sr,su,sv
+
+sw,ta,te,tg,th,ti,tk,tl,tr,ug
+
+uk,ur,uz,vi,wo,xh,yo,zh,zu
+
+```

@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Quickstart",
+  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Quickstart",
+    "sidebar_label": "Quickstart"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Makambo ya ntina",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/features"
+  },
+  "next": {
+    "title": "Installation",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/install"
+  }
+}

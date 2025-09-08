@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Tala ng pagbabago",
+  "description": "Tingnan ang buong kasaysayan sa file na CHANGELOG.md ng repository.",
+  "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Tala ng pagbabago"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/licence"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Tredjepartslisenser",
+  "description": "Denne siden oppsummerer tredjepartslisenser som brukes av dette kodelageret. For den",
+  "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Tredjepartslisenser",
+    "sidebar_label": "Tredjepartslisenser"
+  }
+}

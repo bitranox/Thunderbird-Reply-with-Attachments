@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "የሶስተኛ ወገን ፈቃዶች",
+  "description": "ይህ ገጽ በዚህ ሬፖዚቶሪ የተጠቀሱ የሶስተኛ ወገን ፈቃዶችን ያጠቃልላል። በምንጭ ዛፉ ውስጥ ያለውን ታማኝ ዝርዝር ለማየት THIRDPARTYLICENSES.md በሬፖዚቶሪ ሥር ይመልከቱ።",
+  "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "የሶስተኛ ወገን ፈቃዶች",
+    "sidebar_label": "የሶስተኛ ወገን ፈቃዶች"
+  }
+}

@@ -18,5 +18,7 @@ sidebar_label: Features
 - Blacklist warning (optional, enabled by default): when files are excluded by your
   blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
   friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this addon.
 - Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Skips SMIME certificates and inline images to avoid unnecessary attachments.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.

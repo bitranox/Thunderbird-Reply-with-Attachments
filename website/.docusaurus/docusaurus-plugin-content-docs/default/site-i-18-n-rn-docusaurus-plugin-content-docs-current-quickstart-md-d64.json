@@ -1,0 +1,28 @@
+{
+  "id": "quickstart",
+  "title": "Quickstart",
+  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/quickstart.md",
+  "sourceDirName": ".",
+  "slug": "/quickstart",
+  "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/quickstart",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "quickstart",
+    "title": "Quickstart",
+    "sidebar_label": "Quickstart"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Ibikora",
+    "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/features"
+  },
+  "next": {
+    "title": "Installation",
+    "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/install"
+  }
+}

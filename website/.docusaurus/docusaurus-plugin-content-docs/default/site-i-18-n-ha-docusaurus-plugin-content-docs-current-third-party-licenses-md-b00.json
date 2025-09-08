@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Lasisoshi na ɓangare na uku",
+  "description": "Wannan shafi yana taƙaita lasisin ɓangare na uku da wannan ma’ajin lamba ke amfani da su. Don jerin hukuma a cikin itacen tushe, duba THIRDPARTYLICENSES.md a tushen ma’ajin.",
+  "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Lasisoshi na ɓangare na uku",
+    "sidebar_label": "Lasisi na ɓangare na uku"
+  }
+}

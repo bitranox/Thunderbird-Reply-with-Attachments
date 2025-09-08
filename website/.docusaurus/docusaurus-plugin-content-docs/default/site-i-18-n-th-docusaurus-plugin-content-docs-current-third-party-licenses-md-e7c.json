@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "สัญญาอนุญาตของบุคคลที่สาม",
+  "description": "หน้านี้สรุปสัญญาอนุญาตของบุคคลที่สามที่ใช้โดยรีโพซิทอรีนี้ สำหรับ",
+  "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "สัญญาอนุญาตของบุคคลที่สาม",
+    "sidebar_label": "ใบอนุญาตของบุคคลที่สาม"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Licențe ale terților",
+  "description": "Această pagină rezumă licențele terților utilizate de acest depozit. Pentru",
+  "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Licențe ale terților",
+    "sidebar_label": "Licențe ale terților"
+  }
+}

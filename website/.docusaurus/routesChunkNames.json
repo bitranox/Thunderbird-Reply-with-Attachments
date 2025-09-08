@@ -1,84 +1,88 @@
 {
-  "/Thunderbird-Reply-with-Attachments/search-10b": {
+  "/Thunderbird-Reply-with-Attachments/is/search-418": {
     "__comp": "1a4e3797",
     "__context": {
       "plugin": "138e0e15"
     }
   },
-  "/Thunderbird-Reply-with-Attachments/docs-954": {
+  "/Thunderbird-Reply-with-Attachments/is/docs-cfa": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/Thunderbird-Reply-with-Attachments/docs-d03": {
+  "/Thunderbird-Reply-with-Attachments/is/docs-520": {
     "__comp": "a7bd4aaa",
-    "__props": "25b12772"
+    "__props": "6067f0cd"
   },
-  "/Thunderbird-Reply-with-Attachments/docs-76c": {
+  "/Thunderbird-Reply-with-Attachments/is/docs-b29": {
     "__comp": "a94703ab"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/changelog-fd9": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/changelog-960": {
     "__comp": "17896441",
-    "content": "9beb87c2"
+    "content": "9ea4dbee"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/compatibility-4c8": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/compatibility-5c2": {
     "__comp": "17896441",
-    "content": "e29b0ef0"
+    "content": "0e698d8c"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/configuration-c3f": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/configuration-b27": {
     "__comp": "17896441",
-    "content": "9ed00105"
+    "content": "eddbf7f7"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/development-672": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/development-812": {
     "__comp": "17896441",
-    "content": "8f030830"
+    "content": "b3eb27a3"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/donation-323": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/donation-7ae": {
     "__comp": "17896441",
-    "content": "41cd652c"
+    "content": "70db9771"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/features-99b": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/features-8cf": {
     "__comp": "17896441",
-    "content": "1a25ec0b"
+    "content": "8b2e69ef"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/glossary-86c": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/glossary-999": {
     "__comp": "17896441",
-    "content": "e747ec83"
+    "content": "d2c8f828"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/install-c77": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/install-322": {
     "__comp": "17896441",
-    "content": "c4de80f8"
+    "content": "81ede274"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/languages-ca9": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/languages-442": {
     "__comp": "17896441",
-    "content": "c86a35ae"
+    "content": "c07bae9d"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/licence-f12": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/licence-9f5": {
     "__comp": "17896441",
-    "content": "0a09d0a5"
+    "content": "97af20bd"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/permissions-fb4": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/permissions-eaf": {
     "__comp": "17896441",
-    "content": "ce85f662"
+    "content": "9b3c0d0c"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/privacy-adb": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/privacy-617": {
     "__comp": "17896441",
-    "content": "9b4185c1"
+    "content": "48dca1fe"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/quickstart-6af": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/quickstart-5c2": {
     "__comp": "17896441",
-    "content": "8070e160"
+    "content": "2bc72cae"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/support-0b5": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/support-c40": {
     "__comp": "17896441",
-    "content": "d9e16301"
+    "content": "46af4439"
   },
-  "/Thunderbird-Reply-with-Attachments/docs/usage-201": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/third-party-licenses-6fa": {
     "__comp": "17896441",
-    "content": "6476eba6"
+    "content": "5dd2aeb4"
   },
-  "/Thunderbird-Reply-with-Attachments/-e74": {
+  "/Thunderbird-Reply-with-Attachments/is/docs/usage-bfb": {
+    "__comp": "17896441",
+    "content": "3472a4cc"
+  },
+  "/Thunderbird-Reply-with-Attachments/is/-8e1": {
     "__comp": "c4f5d8e4",
     "__context": {
       "plugin": "a7456010"

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Diiwaannde bayleendi",
+  "description": "Ɗuum ɗii tariinde fof ndaaru e fiilde CHANGELOG.md dow repo.",
+  "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Diiwaannde bayleendi"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/licence"
+  }
+}

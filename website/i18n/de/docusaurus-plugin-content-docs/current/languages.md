@@ -6,11 +6,12 @@ sidebar_label: Sprachen
 
 # Sprachunterstützung
 
-Umfangreiche Sprachunterstützung dank KI‑Übersetzungswerkzeugen — derzeit 103 Sprachen.
+Diese Liste spiegelt sowohl Übersetzungen der Website-Dokumentation als auch Add-on-UI-Texte wider.
+Umfangreiche Sprachunterstützung dank KI-Übersetzungstools — mit Unterstützung für 100 Sprachen.
 
-Die Liste ist nach Sprachcode sortiert.
+Die Liste unten ist nach dem Sprachcode sortiert.
 
-Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
+Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sprachversionen verwendet werden.
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -32,7 +33,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `es`: Spanisch (es-ES)
 - `et`: Estnisch (et-EE)
 - `fa`: Persisch (Farsi) (fa-IR)
-- `ff`: Fulfulde (ff-SN)
+- `ff`: Fulah (ff-SN)
 - `fi`: Finnisch (fi-FI)
 - `fr`: Französisch (fr-FR)
 - `ga`: Irisch (ga-IE)
@@ -41,7 +42,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `he`: Hebräisch (he-IL)
 - `hi`: Hindi (hi-IN)
 - `hr`: Kroatisch (hr-HR)
-- `ht`: Haitianisch (ht-HT)
+- `ht`: Haitianisches Kreol (ht-HT)
 - `hu`: Ungarisch (hu-HU)
 - `hy`: Armenisch (hy-AM)
 - `id`: Indonesisch (id-ID)
@@ -55,7 +56,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `km`: Khmer (km-KH)
 - `kn`: Kannada (kn-IN)
 - `ko`: Koreanisch (ko-KR)
-- `ks`: Kaschmirisch (ks-IN)
+- `ks`: Kaschmiri (ks-IN)
 - `ku`: Kurdisch (ku-TR)
 - `ky`: Kirgisisch (ky-KG)
 - `ln`: Lingala (ln-CD)
@@ -68,14 +69,13 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malaiisch (ms-MY)
 - `my`: Birmanisch (my-MM)
-- `nb`: Norwegisch Bokmål (nb-NO)
 - `ne`: Nepalesisch (ne-NP)
 - `nl`: Niederländisch (nl-NL)
 - `no`: Norwegisch (no-NO)
 - `ny`: Chichewa (ny-MW)
 - `om`: Oromo (om-ET)
 - `or`: Odia (or-IN)
-- `pa`: Punjabi (pa-IN)
+- `pa`: Pandschabi (pa-IN)
 - `pl`: Polnisch (pl-PL)
 - `ps`: Paschtu (ps-AF)
 - `pt`: Portugiesisch (pt-PT)
@@ -98,8 +98,8 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `ta`: Tamil (ta-IN)
 - `te`: Telugu (te-IN)
 - `tg`: Tadschikisch (tg-TJ)
-- `th`: Thailändisch (th-TH)
-- `ti`: Tigrinya (ti-ER)
+- `th`: Thai (th-TH)
+- `ti`: Tigrinisch (ti-ER)
 - `tk`: Turkmenisch (tk-TM)
 - `tl`: Tagalog (tl-PH)
 - `tr`: Türkisch (tr-TR)
@@ -112,6 +112,6 @@ Siehe auch: das [Glossar](glossary) für kanonische UI‑Begriffe.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinesisch (zh)
-- `zh-Hans`: Chinesisch (Vereinfacht) (zh-CN)
-- `zh-Hant`: Chinesisch (Traditionell) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tipp: Wechseln Sie die Docs-Sprache über die Sprachauswahl in der Kopfzeile der Website (das URL-Präfix ändert sich entsprechend). Thunderbirds UI-Sprache ist unabhängig von der Website-Sprache und richtet sich nach Ihren Thunderbird-Einstellungen.

@@ -5,7 +5,6 @@
  * Intent: Verify table rendering, focus trapping, and keyboard close.
  */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import path from 'path';
 
 describe('content/confirm — warn-blacklist dialog', () => {
   let listener;

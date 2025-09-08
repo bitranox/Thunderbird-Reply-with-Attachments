@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Journal des modifications",
-  "description": "Consultez l’historique complet dans le fichier CHANGELOG.md du dépôt.",
+  "description": "Voir l’historique complet dans le CHANGELOG.md du dépôt.",
   "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": null,
+  "lastUpdatedAt": 1757248318000,
   "frontMatter": {
     "id": "changelog",
     "title": "Journal des modifications"

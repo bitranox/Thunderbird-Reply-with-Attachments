@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Магчымасці",
+  "description": "Магчымасці",
+  "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Магчымасці",
+    "sidebar_label": "Магчымасці"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/quickstart"
+  }
+}

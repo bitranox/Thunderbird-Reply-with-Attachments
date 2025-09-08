@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Гуравдагч этгээдийн лицензүүд",
+  "description": "Энэ хуудас нь энэ репозиторт ашигласан гуравдагч талын лицензүүдийг нэгтгэн харуулна. Эх кодын мод дахь албан ёсны жагсаалтыг",
+  "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Гуравдагч этгээдийн лицензүүд",
+    "sidebar_label": "Гуравдагч талын лицензүүд"
+  }
+}

@@ -72,42 +72,72 @@ else
   $DOCUSAURUS_CMD build
 fi
 
+popd >/dev/null
+
 if [[ $LINK_CHECK -eq 1 ]]; then
   echo "✔ Running link check…"
-  rm -rf ./build-linkcheck || true
-  mkdir -p ./build-linkcheck/Thunderbird-Reply-with-Attachments
-  rsync -a --delete --exclude 'Thunderbird-Reply-with-Attachments/**' ./build/ ./build-linkcheck/Thunderbird-Reply-with-Attachments/
-  npx --yes http-server ./build-linkcheck -p 5050 -s >/dev/null 2>&1 &
-  SRV_PID=$!
-  sleep 2
   set +e
-  npx --yes linkinator "http://127.0.0.1:5050/Thunderbird-Reply-with-Attachments/" --recurse --silent --skip "mailto:|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net"
+  if [[ -f node_modules/linkinator/build/src/cli.js ]]; then
+    node node_modules/linkinator/build/src/cli.js \
+      "website/build/index.html" \
+      --recurse \
+      --silent \
+      --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|raw\\.githubusercontent\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
+      --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
+      --url-rewrite-replace "/"
+  else
+    npx --yes linkinator \
+      "website/build/index.html" \
+      --recurse \
+      --silent \
+      --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|raw\\.githubusercontent\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
+      --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
+      --url-rewrite-replace "/"
+  fi
   STATUS=$?
-  kill $SRV_PID || true
-  rm -rf ./build-linkcheck || true
   set -e
   if [[ $STATUS -ne 0 ]]; then
     echo "⚠ Link check reported issues (exit $STATUS). Continuing…"
   fi
 fi
-popd >/dev/null
 
 if [[ $DRY_RUN -eq 1 ]]; then
   echo "⏭ Dry-run: skipping deploy (build available in website/build)"
   exit 0
 fi
 
-echo "✔ Preparing gh-pages worktree (branch: ${BRANCH}, remote: ${REMOTE})…"
+echo "✔ Preparing gh-pages target (branch: ${BRANCH}, remote: ${REMOTE})…"
 
+WT_DIR="gh-pages-worktree"
+REMOTE_URL=$(git remote get-url "$REMOTE" 2>/dev/null || true)
 git fetch "$REMOTE" "$BRANCH" || true
-rm -rf .gh-pages || true
-git worktree add -B "$BRANCH" .gh-pages "${REMOTE}/${BRANCH}" 2>/dev/null || git worktree add -B "$BRANCH" .gh-pages
+# Try worktree first
+set +e
+git worktree remove -f "$WT_DIR" 1>/dev/null 2>&1
+git worktree prune 1>/dev/null 2>&1
+rm -rf "$WT_DIR" 1>/dev/null 2>&1
+git worktree add -B "$BRANCH" "$WT_DIR" "${REMOTE}/${BRANCH}" 1>/dev/null 2>&1
+WT_STATUS=$?
+set -e
+if [[ $WT_STATUS -ne 0 ]]; then
+  # Fallback to a shallow clone of gh-pages
+  echo "⚠ worktree failed (status $WT_STATUS). Falling back to shallow clone…"
+  if [[ -z "$REMOTE_URL" ]]; then
+    echo "✖ Remote '$REMOTE' has no URL; cannot clone for fallback." >&2
+    exit 128
+  fi
+  rm -rf "$WT_DIR" || true
+  git clone --depth 1 --branch "$BRANCH" --single-branch "$REMOTE_URL" "$WT_DIR" 2>/dev/null || {
+    git clone "$REMOTE_URL" "$WT_DIR"
+    (cd "$WT_DIR" && git checkout -B "$BRANCH")
+  }
+fi
 
 echo "✔ Publishing build to gh-pages…"
-rsync -a --delete website/build/ .gh-pages/
-touch .gh-pages/.nojekyll
+rsync -a --delete website/build/ "$WT_DIR"/
+touch "$WT_DIR"/.nojekyll
 
-pushd .gh-pages >/dev/null
+pushd "$WT_DIR" >/dev/null
 git add -A
 if git diff --cached --quiet; then
   echo "No changes to publish." 

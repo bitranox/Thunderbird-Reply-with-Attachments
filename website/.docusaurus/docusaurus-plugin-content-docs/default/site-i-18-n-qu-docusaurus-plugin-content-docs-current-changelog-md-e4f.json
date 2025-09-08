@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Hukchaykuna yuyayñiqi",
+  "description": "Tukuy willakuykunata qhaway repo‑pi CHANGELOG.md nisqa willañiqipi.",
+  "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Hukchaykuna yuyayñiqi"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/licence"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "ತೃತೀಯ ಪಕ್ಷದ ಪರವಾನಗಿಗಳು",
+  "description": "ಈ ಪುಟವು ಈ ರೆಪೊಸಿಟರಿಯಲ್ಲಿ ಬಳಸುವ ತೃತೀಯ‑ಪಕ್ಷ ಪರವಾನಗಿಗಳನ್ನು ಸಾರಾಂಶಗೊಳಿಸುತ್ತದೆ. ಪ್ರಾಮಾಣಿಕ",
+  "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "ತೃತೀಯ ಪಕ್ಷದ ಪರವಾನಗಿಗಳು",
+    "sidebar_label": "ಮೂರನೇ ಪಕ್ಷದ ಪರವಾನಗಿಗಳು"
+  }
+}

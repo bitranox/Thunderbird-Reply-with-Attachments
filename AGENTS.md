@@ -21,15 +21,38 @@
 
 ## Build, Test, and Development Commands
 
-- `make help`: list available developer commands.
-- `make test`: run the Vitest test suite.
-- `make pack`: build ATN and LOCAL ZIPs (wraps `bash distribution_zip_packer.sh`).
-- `make translation`: translate one or more docs from `website/docs` into one or more locales under `website/i18n`. Use `DOC` (one or many, space/comma separated or `all`) and `TO` (one or many, space/comma separated or `all`). Examples:
-  - `make translation DOC=changelog.md TO=de`
-  - `make translation DOC="changelog.md features.md" TO="de fr"`
-  - `make translation DOC=all TO=all`
-- Manual install (dev): Thunderbird → Tools → Add-ons and Themes → gear menu → Install Add-on From File… → choose the built ZIP.
-- Tip: update version in both `sources/manifest_*.json` before packaging.
+- `make help` — list all targets with one‑line docs (reads lines annotated with `##`).
+
+- Formatting & linting
+  - `make prettier` — format the repository in place (writes changes).
+  - `make prettier-check` — Prettier in check mode (no writes); fails if reformat needed.
+  - `make eslint` — run ESLint via the flat config (`npm run -s lint:eslint`).
+  - `make lint` — web‑ext lint on `sources/` (creates a temporary `sources/manifest.json` from `manifest_LOCAL.json`, ignores ZIP artifacts; non‑fatal).
+
+- Tests
+  - `make test` — Prettier (write+check), ESLint, then Vitest. Coverage runs if `@vitest/coverage-v8` is installed (thresholds in `vitest.config.mjs`).
+  - `make test-i18n` — i18n‑focused tests only: addon UI strings (keys/placeholders/titles/URLs/parity) and website docs across all locales (one test per EN doc per locale verifying file existence, matching `id`, non‑empty `title`, and `sidebar_label` when EN has it).
+
+- Packaging
+  - `make pack` — run linter then build ATN and LOCAL ZIPs (wraps `distribution_zip_packer.sh`). Artifacts: `reply-with-attachments-plugin.zip` (ATN) and a timestamped `*-LOCAL.zip`.
+
+- Docs
+  - `make docs-build` — build the Docusaurus site into `website/build`.
+  - `make docs-link-check` — offline‑safe link check of `website/build` (rewrites GH Pages `baseUrl`, skips remote HTTP[S]).
+  - `make docs-deploy` — build and deploy the docs to a local gh‑pages worktree (configure via `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
+
+- Translations
+  - `make translation DOC=<file(s)|all> TO=<lang(s)|all>` — translate docs from `website/docs` into `website/i18n/<lang>/...`.
+    - Reads API key/model from `.env` (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
+    - Examples: `make translation DOC=changelog.md TO=de`, `make translation DOC="changelog.md features.md" TO="de fr"`, `make translation DOC=all TO=all`.
+    - Alias: `make translate DOC=… TO=…` (same semantics).
+
+- Manual install (dev)
+  - Thunderbird → Tools → Add‑ons and Themes → gear → Install Add-on From File… → select the built ZIP (use the LOCAL ZIP for development).
+
+- Tips
+  - Update version in both `sources/manifest_*.json` before packaging.
+  - You can override the package manager by setting `NPM=...` (defaults to `npm`).
 
 ## Coding Style & Naming Conventions
 

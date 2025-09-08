@@ -4,8 +4,14 @@ title: Spenden
 sidebar_label: Spenden
 ---
 
-Wenn dir „Antwort mit Anhängen“ gefällt und du die Entwicklung unterstützen möchtest, kannst du hier spenden:
+Wenn Ihnen Reply with Attachments gefällt und Sie die Entwicklung unterstützen möchten, können Sie hier spenden:
 
-[![Spenden via PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=7KJN33DHTA8WE)
+[![Über PayPal spenden](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-Vielen Dank! Deine Unterstützung hilft, die Kompatibilität mit neuen Thunderbird‑Versionen zu erhalten, die Barrierefreiheit und Tests zu verbessern und die Dokumentation aktuell zu halten.
+Vielen Dank! Ihre Unterstützung hilft, die Kompatibilität mit neuen Thunderbird-Versionen zu erhalten, die Barrierefreiheit und Tests zu verbessern und die Dokumentation aktuell zu halten.
+
+Wenn die Bildschaltfläche nicht geladen wird, verwenden Sie stattdessen diesen Link:
+
+- https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ
+
+Spenden sind freiwillig; es gibt keine Funktionsbeschränkungen.

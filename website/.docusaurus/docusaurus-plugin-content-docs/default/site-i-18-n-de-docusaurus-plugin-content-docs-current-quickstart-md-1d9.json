@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Schnellstart",
-  "description": "1. Add‑on über Thunderbird Add‑ons installieren.",
+  "description": "1. Installieren Sie das Add-on aus den Thunderbird-Add-ons.",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757174541000,
+  "lastUpdatedAt": 1757248318000,
   "frontMatter": {
     "id": "quickstart",
     "title": "Schnellstart",

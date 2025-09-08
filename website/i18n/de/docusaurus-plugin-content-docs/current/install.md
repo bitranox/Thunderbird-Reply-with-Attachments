@@ -5,46 +5,46 @@ slug: /install
 sidebar_label: Installation
 ---
 
-## Installation - in Thunderbird (Empfohlene Methode)
+## Installation — in Thunderbird (empfohlen)
 
-1. in Thunderbird gehe zu Gehe zu **Extras > Add-ons und Themes**
-2. suche nach "reply with attachments"
-3. füge das Addon hinzu
+1. Öffnen Sie in Thunderbird **Extras > Add-ons und Themes**.
+2. Suchen Sie nach "reply with attachments".
+3. Fügen Sie das Add-on hinzu.
 
 ---
 
-## lokale Installation in Thunderbird
+## Lokale Installation in Thunderbird
 
 ### XPI-Datei herunterladen
 
-1. Gehe zu [Thunderbird Add-on Seite](https://addons.thunderbird.net/de/thunderbird/search/?q=reply%20with%20attachments)
-2. Lade die neueste Version des Add-ons als XPI-Datei herunter (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Gehen Sie zur [Thunderbird-Add-on-Seite](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
+2. Laden Sie die neueste Version des Add-ons als XPI-Datei (`reply_with_attachments-x.y.z-tb.xpi`) herunter.
 
-### Installation in Thunderbird
+### In Thunderbird installieren
 
-1. Öffne Thunderbird.
-2. Gehe zu **Extras > Add-ons und Themes**.
-3. Klicke im **Add-ons-Manager** auf das Zahnrad-Symbol oben rechts.
-4. Wähle im Dropdown-Menü **Add-on aus Datei installieren...**.
-5. Wähle die heruntergeladene Datei `reply_with_attachments-x.y.z-tb.xpi` aus.
-6. Bestätige die Installation, wenn du dazu aufgefordert wirst.
+1. Öffnen Sie Thunderbird.
+2. Gehen Sie zu **Extras > Add-ons und Themes**.
+3. Klicken Sie im **Add-ons-Manager** oben rechts auf das Zahnrad-Symbol.
+4. Wählen Sie im Menü **Add-on aus Datei installieren…**.
+5. Wählen Sie die heruntergeladene `reply_with_attachments-x.y.z-tb.xpi`-Datei aus.
+6. Bestätigen Sie die Installation, wenn Sie dazu aufgefordert werden.
 
 ---
 
-## Installation für Entwicklung
+## Installation für die Entwicklung
 
 ### Repository herunterladen
 
-1. lade die letzte Version des Github Repositories herunter
-2. führe "make help" für weitere Informationen aus
+1. Laden Sie die neueste Version des GitHub-Repositorys herunter.
+2. Führen Sie `make help` für weitere Informationen aus.
 
-### Installation in Thunderbird
+### In Thunderbird installieren
 
-1. Öffne Thunderbird.
-2. Gehe zu **Extras > Add-ons und Themes**.
-3. Klicke im **Add-ons-Manager** auf das Zahnrad-Symbol oben rechts.
-4. Wähle im Dropdown-Menü **Add-on aus Datei installieren...**.
-5. Wähle die erzeugte Datei `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` aus.
-6. Bestätige die Installation, wenn du dazu aufgefordert wirst.
+1. Öffnen Sie Thunderbird.
+2. Gehen Sie zu **Extras > Add-ons und Themes**.
+3. Klicken Sie im **Add-ons-Manager** oben rechts auf das Zahnrad-Symbol.
+4. Wählen Sie im Menü **Add-on aus Datei installieren…**.
+5. Wählen Sie die generierte Datei `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` aus.
+6. Bestätigen Sie die Installation, wenn Sie dazu aufgefordert werden.
 
 ---

@@ -3,44 +3,68 @@ id: configuration
 title: Konfiguration
 ---
 
-Hinweis zur Terminologie: Siehe das [Glossar](glossary) für konsistente Bezeichnungen in UI und Doku.
+# Konfiguration
 
-Einstellungen öffnen:
+Hinweis zur Terminologie: Siehe das [Glossar](glossary) für einheitliche Begriffe in UI und Dokumentation.
 
-- Thunderbird → Extras → Add‑ons und Themes → „Antwort mit Anhängen“ → Einstellungen
+## Optionen in Thunderbird öffnen
 
-Optionen:
+- Thunderbird → Extras → Add‑ons und Themes → „Reply with Attachments“ finden → Einstellungen/Optionen
 
-- Bestätigung
-  - „Vor dem Hinzufügen bestätigen“ umschalten
-  - Standard‑Antwort: Ja/Nein (Fokus & Tastatur)
-  - Tastatur: J/Y = Ja; N/Esc = Nein; Tab/Shift+Tab & Pfeiltasten bewegen den Fokus
-- Blacklist (Glob‑Muster)
-  - Ein Muster pro Zeile; Groß/Klein wird ignoriert; Abgleich nur gegen den Dateinamen
-  - Beispiele: `*.png`, `smime.*`, `*.p7s`
-  - Unterstützte Tokens: `*` (beliebig viele Zeichen außer `/`), `?` (ein Zeichen), Zeichenklassen wie `[abc]`. Für ein literales `[` bitte `\\[` verwenden. Pfadangaben (`**/`) werden ignoriert, da nur Dateinamen geprüft werden.
-  - Nicht unterstützt: Negation (`!`), Brace‑Expansion (`{..}`) und komplexe Bereiche. Muster einfach halten.
+### Einstellungen:
 
-Tipp: Standardwerte sind vorbelegt und können zurückgesetzt werden.
+#### Bestätigung
+
+- Option „Vor dem Hinzufügen von Anhängen nachfragen“ ein-/ausschalten
+- Standardantwort: Ja oder Nein (Fokus & Tastaturstandard)
+- Tastatur: Y/J = Ja; N/Esc = Nein; Tab/Shift+Tab und Pfeiltasten wechseln den Fokus
+  - Siehe Tastaturdetails in [Verwendung](usage#keyboard-shortcuts).
+
+#### Blacklist (Glob‑Muster)
+
+Dateien auf der Blacklist werden beim Antworten nicht automatisch hinzugefügt. Siehe auch das [Glossar](glossary) für „Blacklist (Ausschlussliste)“.
+
+- Ein Muster pro Zeile; Groß-/Kleinschreibung wird ignoriert; es wird nur der Dateiname abgeglichen
+- Beispiele: `*.png`, `smime.*`, `*.p7s`
+- Unterstützte Glob‑Tokens: `*` (beliebige Zeichen außer `/`), `?` (ein Zeichen), Zeichenklassen wie `[abc]`. Verwenden Sie `\[`, um ein wörtliches `[` zu matchen. Pfade (`**/`) werden ignoriert, da nur Dateinamen abgeglichen werden.
+- Nicht unterstützt: Negation (`!`), Klammererweiterung (`{..}`) und komplexe Bereiche. Halten Sie die Muster einfach.
+- Warum das Beispiel `*passwor*`? Es erfasst sowohl die „password“- als auch die „Passwort“-Familien.
+- Vorrang: Wenn ein beliebiges Muster auf einen Dateinamen passt, wird die Datei ausgeschlossen (erster/irgendein Treffer — die Reihenfolge ändert das Ergebnis nicht).
+- Tipp — testen Sie Ihr Muster: Fügen Sie ein temporäres Muster hinzu, beantworten Sie eine Nachricht, die eine Datei mit passendem Namen enthält, und bestätigen Sie, dass sie in der Warnliste ausgeschlossen ist.
+
+Tipp: Standardwerte sind beim ersten Öffnen vorausgefüllt und können jederzeit zurückgesetzt werden.
 
 #### Warnung bei ausgeschlossenen Anhängen
 
-- „Warnen, wenn Anhänge durch Blacklist ausgeschlossen werden“ (Standard: AN)
-- Bei Aktivierung zeigt ein kleiner Hinweis die betroffenen Dateien und die passenden Muster. Die Warnung erscheint auch dann, wenn am Ende nichts angehängt wird, weil alle Kandidaten ausgeschlossen wurden.
+- Option „Warnen, wenn Anhänge durch die Blacklist ausgeschlossen werden“ ein-/ausschalten (Standard: EIN).
+- Wenn aktiviert, zeigt ein kleines Modal die ausgeschlossenen Dateien und die passenden Muster an. Die
+  Warnung erscheint auch, wenn nichts angehängt wird, weil alle Kandidaten auf der Blacklist stehen.
 
 #### Einstellungen speichern
 
-- Klicke auf „Speichern“, um deine Änderungen zu übernehmen.
-- Mit „Zurücksetzen“ stellst du die Standardwerte wieder her.
+Einstellungen werden automatisch gespeichert, sobald Schalter/Eingaben auf der Optionsseite geändert werden. Es gibt keine separate Speichern‑Schaltfläche. Sie können einzelne Felder manuell zurücknehmen oder die Standardwerte bei Bedarf zurücksetzen.
 
 ---
 
-### Dateinamen‑Normalisierung (Duplikatschutz)
+### Dateinamen‑Normalisierung (Vermeidung von Duplikaten)
 
-Zur konsistenten Erkennung von Duplikaten werden Dateinamen vor dem Vergleich normalisiert:
+Um sich plattformübergreifend konsistent zu verhalten, werden Dateinamen vor den Duplikatprüfungen normalisiert:
 
-- Unicode nach NFC normalisiert.
-- Kleinschreibung (Case‑Folding).
+- Unicode wird auf NFC normalisiert.
+- Groß-/Kleinschreibung wird vereinheitlicht (in Kleinbuchstaben umgewandelt).
 - Abschließende Punkte/Leerzeichen werden entfernt (Windows‑Kompatibilität).
 
-Beispiele: `café.pdf` vs. `café.pdf` (NFD) oder `FILE.txt.` vs. `file.txt`.
+Dies hält die Duplikaterkennung vorhersagbar für Namen wie `café.pdf` vs `café.pdf` (NFD) oder `FILE.txt.` vs `file.txt`.
+
+---
+
+## Bestätigungsverhalten
+
+- „Standardantwort“ legt die anfänglich fokussierte Schaltfläche im Bestätigungsdialog fest (hilfreich für Tastaturnutzer).
+- Funktioniert sowohl für „Antworten“ als auch „Allen antworten“. „Weiterleiten“ wird von diesem Add‑on nicht verändert.
+
+---
+
+## Fortgeschritten: Duplikaterkennung
+
+Die Duplikatvermeidung ist pro Verfassen‑Tab und nach Dateinamen implementiert. Siehe [Verwendung](usage#behavior-details) für eine ausführliche Erklärung.

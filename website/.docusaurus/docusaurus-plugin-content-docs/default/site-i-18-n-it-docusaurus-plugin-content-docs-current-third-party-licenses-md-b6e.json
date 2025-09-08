@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Licenze di terze parti",
+  "description": "Questa pagina riassume le licenze di terze parti utilizzate da questo repository. Per",
+  "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Licenze di terze parti",
+    "sidebar_label": "Licenze di terze parti"
+  }
+}

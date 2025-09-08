@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Mga Tampok",
+  "description": "Mga Tampok",
+  "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Mga Tampok",
+    "sidebar_label": "Mga Tampok"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/quickstart"
+  }
+}

@@ -5,11 +5,11 @@ slug: /install
 sidebar_label: Installation
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Installation — in Thunderbird (recommended)
 
 1. In Thunderbird, go to **Tools > Add-ons and Themes**.
 2. Search for "reply with attachments".
-3. Add the add-on.
+3. Add the addon.
 
 ---
 
@@ -18,7 +18,7 @@ sidebar_label: Installation
 ### Download the XPI file
 
 1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
+2. Download the latest version of the addon as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
 ### Install in Thunderbird
 

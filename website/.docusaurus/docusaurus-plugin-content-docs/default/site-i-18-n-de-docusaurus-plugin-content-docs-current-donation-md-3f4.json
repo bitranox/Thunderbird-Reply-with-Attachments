@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Spenden",
-  "description": "Wenn dir „Antwort mit Anhängen“ gefällt und du die Entwicklung unterstützen möchtest, kannst du hier spenden:",
+  "description": "Wenn Ihnen Reply with Attachments gefällt und Sie die Entwicklung unterstützen möchten, können Sie hier spenden:",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",

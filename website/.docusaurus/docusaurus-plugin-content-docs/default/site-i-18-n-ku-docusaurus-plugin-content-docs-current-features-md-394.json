@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Taybetmendî",
+  "description": "Taybetmendî",
+  "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Taybetmendî",
+    "sidebar_label": "Taybetmendî"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/quickstart"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Chinyorwa chezvachinja",
+  "description": "Ona nhoroondo yakazara mufaira CHANGELOG.md iri mudura (repository).",
+  "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Chinyorwa chezvachinja"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/licence"
+  }
+}

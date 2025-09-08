@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "ਤੀਜੇ ਧਿਰ ਦੇ ਲਾਇਸੰਸ",
+  "description": "ਇਹ ਪੰਨਾ ਇਸ ਰਿਪੋਜ਼ਟਰੀ ਦੁਆਰਾ ਵਰਤੀਆਂ ਤ੍ਰਿਤੀ‑ਪੱਖੀ ਲਾਇਸੰਸਾਂ ਦਾ ਸਾਰ ਦਿੰਦਾ ਹੈ। ਸੋਰਸ ਟਰੀ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸੂਚੀ ਲਈ, THIRDPARTYLICENSES.md ਨੂੰ",
+  "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "ਤੀਜੇ ਧਿਰ ਦੇ ਲਾਇਸੰਸ",
+    "sidebar_label": "ਤੀਸਰੇ ਪੱਖ ਦੇ ਲਾਇਸੈਂਸਾਂ"
+  }
+}

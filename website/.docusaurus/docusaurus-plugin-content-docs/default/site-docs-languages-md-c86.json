@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 100 languages.",
+  "description": "This list reflects both website documentation translations and addon UI strings.",
   "source": "@site/docs/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757094540000,
+  "lastUpdatedAt": 1757248318000,
   "frontMatter": {
     "id": "languages",
     "title": "Languages",

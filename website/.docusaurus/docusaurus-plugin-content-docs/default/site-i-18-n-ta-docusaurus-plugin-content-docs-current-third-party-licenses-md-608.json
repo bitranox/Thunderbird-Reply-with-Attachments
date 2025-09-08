@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "மூன்றாம் தரப்பு உரிமங்கள்",
+  "description": "இந்தப் பக்கம் இந்த களஞ்சியத்தில் பயன்படுத்தப்படும் மூன்றாம் தரப்பு உரிமங்களைச் சுருக்கமாகக் கூறுகிறது.",
+  "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "மூன்றாம் தரப்பு உரிமங்கள்",
+    "sidebar_label": "மூன்றாம் தரப்பு உரிமங்கள்"
+  }
+}

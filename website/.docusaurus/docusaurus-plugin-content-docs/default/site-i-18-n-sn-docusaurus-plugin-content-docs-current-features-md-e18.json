@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Zvimiro",
+  "description": "Zvimiro",
+  "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Zvimiro",
+    "sidebar_label": "Zvimiro"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/quickstart"
+  }
+}

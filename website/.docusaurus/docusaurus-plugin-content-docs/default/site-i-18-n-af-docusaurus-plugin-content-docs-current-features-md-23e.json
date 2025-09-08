@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Kenmerke",
+  "description": "Kenmerke",
+  "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Kenmerke",
+    "sidebar_label": "Kenmerke"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/quickstart"
+  }
+}

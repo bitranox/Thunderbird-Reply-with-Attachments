@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "Impusha z'uruhande rwa gatatu",
+  "description": "Iyi paje isubiramwo mu ncamake ilizensi za ba gatatu zikoreshwa n'ubu bubiko. Ku",
+  "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "Impusha z'uruhande rwa gatatu",
+    "sidebar_label": "Impusha z'uruhande rwa gatatu"
+  }
+}

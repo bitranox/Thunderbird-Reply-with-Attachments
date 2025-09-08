@@ -1,0 +1,28 @@
+{
+  "id": "donation",
+  "title": "Donate",
+  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/donation.md",
+  "sourceDirName": ".",
+  "slug": "/donation",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/donation",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "donation",
+    "title": "Donate",
+    "sidebar_label": "Donate"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Privacy",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/privacy"
+  },
+  "next": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/licence"
+  }
+}

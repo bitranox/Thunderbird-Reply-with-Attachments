@@ -1,0 +1,23 @@
+{
+  "id": "changelog",
+  "title": "Ditari i ndryshimeve",
+  "description": "Shih historikun e plotë në skedarin CHANGELOG.md të repos.",
+  "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/changelog.md",
+  "sourceDirName": ".",
+  "slug": "/changelog",
+  "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/changelog",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "changelog",
+    "title": "Ditari i ndryshimeve"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Licence",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/licence"
+  }
+}

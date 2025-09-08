@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Änderungsprotokoll",
-  "description": "Den vollständigen Verlauf findest du in der CHANGELOG.md im Repository.",
+  "description": "Siehe die vollständige Historie im CHANGELOG.md des Repositorys.",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757108078000,
+  "lastUpdatedAt": 1757248318000,
   "frontMatter": {
     "id": "changelog",
     "title": "Änderungsprotokoll"

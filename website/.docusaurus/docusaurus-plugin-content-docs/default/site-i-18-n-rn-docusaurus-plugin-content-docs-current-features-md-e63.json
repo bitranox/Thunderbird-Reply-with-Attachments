@@ -1,0 +1,24 @@
+{
+  "id": "features",
+  "title": "Ibikora",
+  "description": "Ibikora",
+  "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/features.md",
+  "sourceDirName": ".",
+  "slug": "/features",
+  "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/features",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "features",
+    "title": "Ibikora",
+    "sidebar_label": "Ibikora"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/quickstart"
+  }
+}

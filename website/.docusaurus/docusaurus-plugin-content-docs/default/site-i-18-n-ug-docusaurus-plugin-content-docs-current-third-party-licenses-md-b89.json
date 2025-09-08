@@ -1,0 +1,19 @@
+{
+  "id": "third-party-licenses",
+  "title": "ئۈچىنچى تەرەپنىڭ ئىجازەتنامىلىرى",
+  "description": "بۇ بەت بۇ خەزىنىدە ئىشلىتىلگەن ئۈچىنچى‑تاراپ لىتسېنسىيەلىرىنى خۇلاسىلەيدۇ. رەسمىي",
+  "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/third-party-licenses.md",
+  "sourceDirName": ".",
+  "slug": "/third-party-licenses",
+  "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/third-party-licenses",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "id": "third-party-licenses",
+    "title": "ئۈچىنچى تەرەپنىڭ ئىجازەتنامىلىرى",
+    "sidebar_label": "ئۈچىنچى تەرەپ ئىجازەتنامىلىرى"
+  }
+}

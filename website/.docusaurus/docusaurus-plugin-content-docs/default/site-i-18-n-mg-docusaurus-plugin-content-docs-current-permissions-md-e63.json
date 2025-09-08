@@ -1,0 +1,27 @@
+{
+  "id": "permissions",
+  "title": "Permissions",
+  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/permissions.md",
+  "sourceDirName": ".",
+  "slug": "/permissions",
+  "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "lastUpdatedAt": 1757205965000,
+  "frontMatter": {
+    "id": "permissions",
+    "title": "Permissions"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Compatibility",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/compatibility"
+  },
+  "next": {
+    "title": "Development",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/development"
+  }
+}
