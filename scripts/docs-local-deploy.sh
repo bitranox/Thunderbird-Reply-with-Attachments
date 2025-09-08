@@ -110,6 +110,11 @@ echo "✔ Preparing gh-pages target (branch: ${BRANCH}, remote: ${REMOTE})…"
 
 WT_DIR="gh-pages-worktree"
 REMOTE_URL=$(git remote get-url "$REMOTE" 2>/dev/null || true)
+# Detect if the remote branch exists (0 = exists, non-zero = missing)
+set +e
+git ls-remote --heads "$REMOTE" "$BRANCH" >/dev/null 2>&1
+HAS_REMOTE_BRANCH=$?
+set -e
 git fetch "$REMOTE" "$BRANCH" || true
 # Try worktree first
 set +e
@@ -157,7 +162,11 @@ if git diff --cached --quiet; then
 else
   TS=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
   git commit -m "docs: publish site (${LOCALES}) at ${TS}"
-  git push --force-with-lease "$REMOTE" "$BRANCH"
+  if [[ $HAS_REMOTE_BRANCH -eq 0 ]]; then
+    git push --force-with-lease "$REMOTE" "$BRANCH"
+  else
+    git push -u "$REMOTE" "$BRANCH"
+  fi
   echo "✔ Deployed to $REMOTE/$BRANCH"
 fi
 popd >/dev/null
