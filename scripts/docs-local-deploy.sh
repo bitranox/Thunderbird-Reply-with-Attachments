@@ -134,6 +134,19 @@ if [[ $WT_STATUS -ne 0 ]]; then
 fi
 
 echo "✔ Publishing build to gh-pages…"
+
+# Ensure target worktree/clone is on the correct branch and up-to-date; then clean
+pushd "$WT_DIR" >/dev/null
+git fetch "$REMOTE" "$BRANCH" >/dev/null 2>&1 || true
+git checkout -B "$BRANCH" "$REMOTE/$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
+if git rev-parse --verify "$REMOTE/$BRANCH" >/dev/null 2>&1; then
+  git reset --hard "$REMOTE/$BRANCH" >/dev/null 2>&1 || true
+fi
+git rm -rf . >/dev/null 2>&1 || true
+git clean -fdx >/dev/null 2>&1 || true
+popd >/dev/null
+
+# Copy fresh build
 rsync -a --delete website/build/ "$WT_DIR"/
 touch "$WT_DIR"/.nojekyll
 
@@ -144,7 +157,7 @@ if git diff --cached --quiet; then
 else
   TS=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
   git commit -m "docs: publish site (${LOCALES}) at ${TS}"
-  git push "$REMOTE" "$BRANCH"
+  git push --force-with-lease "$REMOTE" "$BRANCH"
   echo "✔ Deployed to $REMOTE/$BRANCH"
 fi
 popd >/dev/null

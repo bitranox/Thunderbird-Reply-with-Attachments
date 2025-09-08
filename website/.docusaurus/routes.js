@@ -9,15 +9,15 @@ export default [
   },
   {
     path: '/Thunderbird-Reply-with-Attachments/docs',
-    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '499'),
+    component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '084'),
     routes: [
       {
         path: '/Thunderbird-Reply-with-Attachments/docs',
-        component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '1f9'),
+        component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '339'),
         routes: [
           {
             path: '/Thunderbird-Reply-with-Attachments/docs',
-            component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '019'),
+            component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs', '8fe'),
             routes: [
               {
                 path: '/Thunderbird-Reply-with-Attachments/docs/changelog',
@@ -75,7 +75,7 @@ export default [
               },
               {
                 path: '/Thunderbird-Reply-with-Attachments/docs/licence',
-                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs/licence', 'aec'),
+                component: ComponentCreator('/Thunderbird-Reply-with-Attachments/docs/licence', 'c04'),
                 exact: true,
                 sidebar: "docs"
               },
