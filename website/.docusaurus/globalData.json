@@ -81,10 +81,6 @@
               "sidebar": "docs"
             },
             {
-              "id": "third-party-licenses",
-              "path": "/Thunderbird-Reply-with-Attachments/docs/third-party-licenses"
-            },
-            {
               "id": "usage",
               "path": "/Thunderbird-Reply-with-Attachments/docs/usage",
               "sidebar": "docs"

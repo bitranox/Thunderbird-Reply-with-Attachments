@@ -8,7 +8,6 @@ export default {
   "41cd652c": [() => import(/* webpackChunkName: "41cd652c" */ "@site/docs/donation.md"), "@site/docs/donation.md", require.resolveWeak("@site/docs/donation.md")],
   "5e95c892": [() => import(/* webpackChunkName: "5e95c892" */ "@theme/DocsRoot"), "@theme/DocsRoot", require.resolveWeak("@theme/DocsRoot")],
   "5e9f5e1a": [() => import(/* webpackChunkName: "5e9f5e1a" */ "@generated/docusaurus.config"), "@generated/docusaurus.config", require.resolveWeak("@generated/docusaurus.config")],
-  "63691581": [() => import(/* webpackChunkName: "63691581" */ "@site/docs/third-party-licenses.md"), "@site/docs/third-party-licenses.md", require.resolveWeak("@site/docs/third-party-licenses.md")],
   "6476eba6": [() => import(/* webpackChunkName: "6476eba6" */ "@site/docs/usage.md"), "@site/docs/usage.md", require.resolveWeak("@site/docs/usage.md")],
   "8070e160": [() => import(/* webpackChunkName: "8070e160" */ "@site/docs/quickstart.md"), "@site/docs/quickstart.md", require.resolveWeak("@site/docs/quickstart.md")],
   "8f030830": [() => import(/* webpackChunkName: "8f030830" */ "@site/docs/development.md"), "@site/docs/development.md", require.resolveWeak("@site/docs/development.md")],

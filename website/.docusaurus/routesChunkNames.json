@@ -5,17 +5,17 @@
       "plugin": "138e0e15"
     }
   },
-  "/Thunderbird-Reply-with-Attachments/docs-c51": {
+  "/Thunderbird-Reply-with-Attachments/docs-499": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/Thunderbird-Reply-with-Attachments/docs-7b3": {
+  "/Thunderbird-Reply-with-Attachments/docs-1f9": {
     "__comp": "a7bd4aaa",
     "__props": "25b12772"
   },
-  "/Thunderbird-Reply-with-Attachments/docs-c18": {
+  "/Thunderbird-Reply-with-Attachments/docs-019": {
     "__comp": "a94703ab"
   },
   "/Thunderbird-Reply-with-Attachments/docs/changelog-807": {
@@ -73,10 +73,6 @@
   "/Thunderbird-Reply-with-Attachments/docs/support-e8c": {
     "__comp": "17896441",
     "content": "d9e16301"
-  },
-  "/Thunderbird-Reply-with-Attachments/docs/third-party-licenses-73f": {
-    "__comp": "17896441",
-    "content": "63691581"
   },
   "/Thunderbird-Reply-with-Attachments/docs/usage-133": {
     "__comp": "17896441",
