@@ -55,7 +55,7 @@ find "$TMP_DIR" -maxdepth 2 -type f | sed 's/^/   /' | head -n 50
 # Commit bauen
 USER_NAME="$(git -C "$REPO_ROOT" config --get user.name || echo gh-pages)"
 USER_EMAIL="$(git -C "$REPO_ROOT" config --get user.email || echo gh-pages@noreply)"
-
+echo "here"
 git -C "$TMP_DIR" add -A
 git -C "$TMP_DIR" -c user.name="$USER_NAME" -c user.email="$USER_EMAIL" \
   commit -m "Publish $(date -u +'%Y-%m-%d %H:%M:%S') UTC" >/dev/null
