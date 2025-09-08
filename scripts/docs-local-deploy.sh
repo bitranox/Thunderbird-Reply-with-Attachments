@@ -165,9 +165,9 @@ else
   TS=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
   git commit -m "docs: publish site (${LOCALES}) at ${TS}"
   if [[ $HAS_REMOTE_BRANCH -eq 0 ]]; then
-    git push --force-with-lease "$REMOTE" "$BRANCH"
+    git push --force-with-lease "$REMOTE" "HEAD:$BRANCH"
   else
-    git push -u "$REMOTE" "$BRANCH"
+    git push -u "$REMOTE" "HEAD:$BRANCH"
   fi
   echo "✔ Deployed to $REMOTE/$BRANCH"
 fi
