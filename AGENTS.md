@@ -40,7 +40,7 @@
   - `make docs-build` — build the Docusaurus site into `website/build`.
   - `make docs-build-linkcheck` — offline‑safe link check; accepts `OPTS="--locales en|all"` (builds then scans; rewrites GH Pages `baseUrl`, skips remote HTTP[S]).
   - `make docs-deploy-local` — build and sync the docs into a local `gh-pages` worktree (configure via `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
-  - `make docs-push-github` — push the prepared `gh-pages` worktree to the `gh-pages` branch on the Git remote.
+  - `make docs-push-github` — build if needed and push `website/build` to the `gh-pages` branch on the Git remote.
 
 - Translations
   - `make translation DOC=<file(s)|all> TO=<lang(s)|all>` — translate docs from `website/docs` into `website/i18n/<lang>/...`.

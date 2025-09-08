@@ -50,7 +50,9 @@ fi
 : > "$TMP_DIR/.nojekyll"
 
 echo "==> Dateien, die committet werden (Anzahl): $(find "$TMP_DIR" -type f | wc -l)"
-find "$TMP_DIR" -maxdepth 2 -type f | sed 's/^/   /' | head -n 50
+# Mit 'set -o pipefail' kann ein frühzeitiger Abbruch durch 'head' SIGPIPE (141) erzeugen.
+# Anzeige ist rein informativ – Fehler der Pipeline daher ignorieren.
+find "$TMP_DIR" -maxdepth 2 -type f | sed 's/^/   /' | head -n 50 || true
 
 # Commit bauen
 USER_NAME="$(git -C "$REPO_ROOT" config --get user.name || echo gh-pages)"
@@ -77,4 +79,3 @@ else
   echo "FEHLER: Remote-Commit stimmt nicht überein oder Branch existiert nicht. Bitte Branch-Protection/Policies prüfen." >&2
   exit 1
 fi
-

@@ -78,10 +78,14 @@ docs-deploy-local: ## Build+sync docs into local gh-pages worktree (OPTS: --loca
 	  exit 1; \
 	fi
 
-docs-push-github: ## Push local gh-pages worktree to GitHub (uses scripts/docs-gh-push.sh; SRC_DIR=gh-pages-worktree)
+docs-push-github: ## Push built site (website/build) to GitHub Pages (uses scripts/docs-gh-push.sh)
 	@set -e; \
+	if [ ! -f website/build/index.html ]; then \
+	  echo "Docs not built yet. Running 'make docs-build'…"; \
+	  $(MAKE) docs-build; \
+	fi; \
 	if [ -x scripts/docs-gh-push.sh ]; then \
-	  SRC_DIR="gh-pages-worktree" bash scripts/docs-gh-push.sh; \
+	  SRC_DIR="website/build" bash scripts/docs-gh-push.sh; \
 	else \
 	  echo "scripts/docs-gh-push.sh not found; aborting"; \
 	  exit 1; \
