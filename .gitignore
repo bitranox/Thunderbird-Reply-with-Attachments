@@ -12,9 +12,11 @@
 # APP
 # ====================================
 website/build/
+website/build-linkcheck/
 website/node_modules/
 node_modules/
 coverage/
+gh-pages-worktree/
 translation.log
 
 # ====================================

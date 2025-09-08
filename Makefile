@@ -99,3 +99,6 @@ translate: ## Alias for 'make translation' (DOC=..., TO=...)
 docs-deploy: ## Build and deploy website to gh-pages worktree locally (OPTS="--locales en|all --no-test --no-link-check --dry-run")
 	@set -e; \
 	bash scripts/docs-local-deploy.sh $(OPTS)
+
+
+For subsequent quick updates: make docs-deploy OPTS="--no-test --locales en"
