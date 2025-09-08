@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Konfiguration",
-  "description": "Hinweis zur Terminologie: Siehe das Glossar für einheitliche Begriffe in UI und Dokumentation.",
+  "description": "Hinweis zur Terminologie: Siehe das Glossar für konsistente Begriffe in UI und Doku.",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/install"
   },
   "next": {
-    "title": "Nutzung",
+    "title": "Verwendung",
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/usage"
   }
 }

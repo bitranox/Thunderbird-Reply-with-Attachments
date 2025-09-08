@@ -25,14 +25,14 @@ Terminology note: see the [Glossary](glossary) for consistent terms used in UI a
 Blacklisted files will not be added on reply automatically. See also the [Glossary](glossary) for “Blacklist (Exclude list)”.
 
 - One pattern per line; case‑insensitive; filename‑only matching
-- Examples: `*.png`, `smime.*`, `*.p7s`
+- Examples: `*intern*`, `*secret*`, `*passwor*`
 - Supported glob tokens: `*` (any chars except `/`), `?` (one char), character classes like `[abc]`. Use `\[` to match a literal `[`. Paths (`**/`) are ignored since only filenames are matched.
 - Not supported: negation (`!`), brace expansion (`{..}`), and complex ranges. Keep patterns simple.
 - Why the example `*passwor*`? It matches both “password” and “Passwort” families.
 - Precedence: if any pattern matches a filename, the file is excluded (first/any match — order does not change the result).
 - Tip — test your pattern: add a temporary pattern, reply to a message containing a file with a matching name, and confirm it is excluded in the warning list.
 
-Tip: Defaults are prefilled on first open and can be reset anytime.
+Tip: Defaults are prefilled with "Reset to defaults" anytime.
 
 #### Warning on excluded attachments
 
@@ -43,7 +43,7 @@ Tip: Defaults are prefilled on first open and can be reset anytime.
 
 #### Save your settings
 
-Settings are saved automatically when toggles/inputs change in the Options page. There is no separate Save button. You can revert individual fields manually or reset defaults as needed.
+Settings are saved by pressing the Save button. You can revert individual fields manually or reset defaults as needed.
 
 ---
 

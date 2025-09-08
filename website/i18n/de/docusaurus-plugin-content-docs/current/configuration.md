@@ -5,7 +5,7 @@ title: Konfiguration
 
 # Konfiguration
 
-Hinweis zur Terminologie: Siehe das [Glossar](glossary) für einheitliche Begriffe in UI und Dokumentation.
+Hinweis zur Terminologie: Siehe das [Glossar](glossary) für konsistente Begriffe in UI und Doku.
 
 ## Optionen in Thunderbird öffnen
 
@@ -15,56 +15,56 @@ Hinweis zur Terminologie: Siehe das [Glossar](glossary) für einheitliche Begrif
 
 #### Bestätigung
 
-- Option „Vor dem Hinzufügen von Anhängen nachfragen“ ein-/ausschalten
-- Standardantwort: Ja oder Nein (Fokus & Tastaturstandard)
+- Umschalten „Vor dem Hinzufügen von Anhängen fragen“
+- Standardantwort: Ja oder Nein (Fokus- & Tastaturstandard)
 - Tastatur: Y/J = Ja; N/Esc = Nein; Tab/Shift+Tab und Pfeiltasten wechseln den Fokus
-  - Siehe Tastaturdetails in [Verwendung](usage#keyboard-shortcuts).
+  - Siehe Tastaturdetails unter [Verwendung](usage#keyboard-shortcuts).
 
-#### Blacklist (Glob‑Muster)
+#### Blacklist (Glob-Muster)
 
-Dateien auf der Blacklist werden beim Antworten nicht automatisch hinzugefügt. Siehe auch das [Glossar](glossary) für „Blacklist (Ausschlussliste)“.
+Dateien auf der Blacklist werden beim Antworten nicht automatisch hinzugefügt. Siehe auch das [Glossar](glossary) zu „Blacklist (Ausschlussliste)“.
 
-- Ein Muster pro Zeile; Groß-/Kleinschreibung wird ignoriert; es wird nur der Dateiname abgeglichen
-- Beispiele: `*.png`, `smime.*`, `*.p7s`
-- Unterstützte Glob‑Tokens: `*` (beliebige Zeichen außer `/`), `?` (ein Zeichen), Zeichenklassen wie `[abc]`. Verwenden Sie `\[`, um ein wörtliches `[` zu matchen. Pfade (`**/`) werden ignoriert, da nur Dateinamen abgeglichen werden.
+- Ein Muster pro Zeile; Groß-/Kleinschreibung wird ignoriert; Abgleich nur auf Dateinamen
+- Beispiele: `*intern*`, `*secret*`, `*passwor*`
+- Unterstützte Glob-Token: `*` (beliebige Zeichen außer `/`), `?` (ein Zeichen), Zeichenklassen wie `[abc]`. Verwenden Sie `\[`, um ein literales `[` zu treffen. Pfade (`**/`) werden ignoriert, da nur Dateinamen abgeglichen werden.
 - Nicht unterstützt: Negation (`!`), Klammererweiterung (`{..}`) und komplexe Bereiche. Halten Sie die Muster einfach.
-- Warum das Beispiel `*passwor*`? Es erfasst sowohl die „password“- als auch die „Passwort“-Familien.
-- Vorrang: Wenn ein beliebiges Muster auf einen Dateinamen passt, wird die Datei ausgeschlossen (erster/irgendein Treffer — die Reihenfolge ändert das Ergebnis nicht).
-- Tipp — testen Sie Ihr Muster: Fügen Sie ein temporäres Muster hinzu, beantworten Sie eine Nachricht, die eine Datei mit passendem Namen enthält, und bestätigen Sie, dass sie in der Warnliste ausgeschlossen ist.
+- Warum das Beispiel `*passwor*`? Es entspricht sowohl den „password“- als auch den „Passwort“-Familien.
+- Vorrang: Wenn irgendein Muster auf einen Dateinamen passt, wird die Datei ausgeschlossen (erster/irgendein Treffer — die Reihenfolge ändert das Ergebnis nicht).
+- Tipp — testen Sie Ihr Muster: Fügen Sie ein temporäres Muster hinzu, antworten Sie auf eine Nachricht mit einer Datei mit passendem Namen und bestätigen Sie, dass sie in der Warnliste ausgeschlossen wird.
 
-Tipp: Standardwerte sind beim ersten Öffnen vorausgefüllt und können jederzeit zurückgesetzt werden.
+Tipp: Mit „Auf Standardwerte zurücksetzen“ können die Vorgaben jederzeit wiederhergestellt werden.
 
 #### Warnung bei ausgeschlossenen Anhängen
 
-- Option „Warnen, wenn Anhänge durch die Blacklist ausgeschlossen werden“ ein-/ausschalten (Standard: EIN).
-- Wenn aktiviert, zeigt ein kleines Modal die ausgeschlossenen Dateien und die passenden Muster an. Die
+- Umschalten „Warnen, wenn Anhänge durch Blacklist ausgeschlossen werden“ (Standard: EIN).
+- Wenn aktiviert, listet ein kleines Modal die ausgeschlossenen Dateien und die übereinstimmenden Muster auf. Die
   Warnung erscheint auch, wenn nichts angehängt wird, weil alle Kandidaten auf der Blacklist stehen.
 
 #### Einstellungen speichern
 
-Einstellungen werden automatisch gespeichert, sobald Schalter/Eingaben auf der Optionsseite geändert werden. Es gibt keine separate Speichern‑Schaltfläche. Sie können einzelne Felder manuell zurücknehmen oder die Standardwerte bei Bedarf zurücksetzen.
+Einstellungen werden durch Drücken der Schaltfläche „Speichern“ gesichert. Sie können einzelne Felder manuell zurücksetzen oder die Standardwerte bei Bedarf wiederherstellen.
 
 ---
 
-### Dateinamen‑Normalisierung (Vermeidung von Duplikaten)
+### Dateinamen-Normalisierung (Vermeidung von Duplikaten)
 
-Um sich plattformübergreifend konsistent zu verhalten, werden Dateinamen vor den Duplikatprüfungen normalisiert:
+Um plattformübergreifend konsistent zu arbeiten, werden Dateinamen vor Duplikatprüfungen normalisiert:
 
-- Unicode wird auf NFC normalisiert.
-- Groß-/Kleinschreibung wird vereinheitlicht (in Kleinbuchstaben umgewandelt).
-- Abschließende Punkte/Leerzeichen werden entfernt (Windows‑Kompatibilität).
+- Unicode wird zu NFC normalisiert.
+- Namen werden in der Groß-/Kleinschreibung vereinheitlicht (in Kleinbuchstaben umgewandelt).
+- Nachgestellte Punkte/Leerzeichen werden entfernt (Windows-Freundlichkeit).
 
-Dies hält die Duplikaterkennung vorhersagbar für Namen wie `café.pdf` vs `café.pdf` (NFD) oder `FILE.txt.` vs `file.txt`.
+Dies hält die Duplikaterkennung vorhersehbar für Namen wie `café.pdf` vs. `café.pdf` (NFD) oder `FILE.txt.` vs. `file.txt`.
 
 ---
 
 ## Bestätigungsverhalten
 
-- „Standardantwort“ legt die anfänglich fokussierte Schaltfläche im Bestätigungsdialog fest (hilfreich für Tastaturnutzer).
-- Funktioniert sowohl für „Antworten“ als auch „Allen antworten“. „Weiterleiten“ wird von diesem Add‑on nicht verändert.
+- „Standardantwort“ legt die anfänglich fokussierte Schaltfläche im Bestätigungsdialog fest (hilfreich für Tastaturnutzende).
+- Funktioniert sowohl für „Antworten“ als auch „Allen antworten“. „Weiterleiten“ wird von diesem Add-on nicht verändert.
 
 ---
 
-## Fortgeschritten: Duplikaterkennung
+## Erweitert: Duplikaterkennung
 
-Die Duplikatvermeidung ist pro Verfassen‑Tab und nach Dateinamen implementiert. Siehe [Verwendung](usage#behavior-details) für eine ausführliche Erklärung.
+Die Vermeidung von Duplikaten ist pro Verfassen-Tab und nach Dateinamen implementiert. Siehe [Verwendung](usage#behavior-details) für eine detaillierte Erklärung.

@@ -15,19 +15,73 @@
   globalThis.log = log;
   log.debug('Reply with Attachments: wiring app…');
 
-  // Set initial defaults for blacklist on fresh install only.
+  // Settings initialization & migrations — never overwrite user values.
   try {
+    const SCHEMA_VERSION = 1;
     browser.runtime?.onInstalled?.addListener?.(async (details) => {
       try {
-        if (!details || details.reason !== 'install') return;
-        const DEFAULT_BLACKLIST = ['*intern*', '*secret*', '*passwor*'];
-        // Only set if nothing exists yet (first run)
-        const r = await browser.storage?.local?.get?.({ blacklistPatterns: undefined });
-        if (!Array.isArray(r?.blacklistPatterns)) {
-          await browser.storage?.local?.set?.({ blacklistPatterns: DEFAULT_BLACKLIST });
-        }
+        await initializeOrMigrateSettings(details, SCHEMA_VERSION);
       } catch (_) {}
     });
+
+    /**
+     * Initialize defaults on fresh install and migrate on updates.
+     * Rules:
+     * - Only set defaults when a key is strictly undefined (not present).
+     * - Never override user‑saved values (including empty arrays/false/no).
+     */
+    async function initializeOrMigrateSettings(details, targetVersion) {
+      const DEFAULTS = {
+        blacklistPatterns: ['*intern*', '*secret*', '*passwor*'],
+        confirmBeforeAdd: false,
+        confirmDefaultChoice: 'yes',
+        warnOnBlacklistExcluded: true,
+      };
+
+      const cur = await readSchemaVersion();
+      if (details?.reason === 'install') {
+        await seedDefaultsOnInstall(DEFAULTS, targetVersion);
+        return;
+      }
+      if (details?.reason === 'update' && cur < targetVersion) {
+        await migrateMissingDefaults(DEFAULTS, targetVersion);
+      }
+    }
+
+    async function readSchemaVersion() {
+      const now = await browser.storage?.local?.get?.({ settingsVersion: 0 });
+      return Number(now?.settingsVersion || 0);
+    }
+    async function seedDefaultsOnInstall(DEFAULTS, version) {
+      const existing = await browser.storage?.local?.get?.({
+        blacklistPatterns: undefined,
+        confirmBeforeAdd: undefined,
+        confirmDefaultChoice: undefined,
+        warnOnBlacklistExcluded: undefined,
+      });
+      const toSet = onlyMissing(existing, DEFAULTS);
+      if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);
+      await browser.storage?.local?.set?.({ settingsVersion: version });
+    }
+    async function migrateMissingDefaults(DEFAULTS, version) {
+      const snapshot = await browser.storage?.local?.get?.({
+        blacklistPatterns: undefined,
+        confirmBeforeAdd: undefined,
+        confirmDefaultChoice: undefined,
+        warnOnBlacklistExcluded: undefined,
+      });
+      const toSet = onlyMissing(snapshot, DEFAULTS);
+      if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);
+      await browser.storage?.local?.set?.({ settingsVersion: version });
+    }
+    function onlyMissing(existing, defaults) {
+      /** @type {Record<string, any>} */
+      const out = {};
+      for (const [k, v] of Object.entries(defaults)) {
+        if (typeof existing[k] === 'undefined') out[k] = v;
+      }
+      return out;
+    }
   } catch (_) {}
 
   // Expose small helpers early for tests

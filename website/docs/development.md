@@ -84,12 +84,23 @@ The repository provides a thin Makefile to standardize common dev flows. Run `ma
   - Internals: `cd website && npm ci && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build`.
   - Run this before checking or deploying docs.
 
-- `make docs-link-check`
-  - Builds docs (depends on `docs-build`) and checks internal links using `linkinator` (installed as a devDependency at the repo root).
-  - Behavior is designed to be offline‑safe:
+- `make docs-deploy-local`
+  - Builds and syncs the website into a local `gh-pages` worktree via `scripts/docs-local-deploy.sh`.
+  - Customize with `OPTS`, for example:
+    - `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
+    - `make docs-deploy-local OPTS="--locales all"`
+
+- `make docs-push-github`
+  - Pushes the prepared local `gh-pages` worktree to the `gh-pages` branch on the Git remote using `scripts/docs-gh-push.sh`.
+
+- `make docs-build-linkcheck`
+  - Builds then checks internal links using `linkinator` (offline‑safe).
+  - Accepts `OPTS="--locales en|all"` (default is all locales). Example:
+    - `make docs-build-linkcheck OPTS="--locales en"`
+  - Offline‑safe behavior:
     - Rewrites the GitHub Pages `baseUrl` (`/Thunderbird-Reply-with-Attachments/`) to `/` for local scanning.
     - Skips all remote HTTP(S) links except `localhost` to avoid relying on the real website.
-  - Useful to catch broken in‑site navigation before publishing.
+  - Use this to catch broken in‑site navigation before publishing.
 
 - `make translation DOC=<file(s)|all> TO=<lang(s)|all>`
   - Translates one or more docs from `website/docs` into the `website/i18n/<lang>/...` tree.
@@ -101,12 +112,6 @@ The repository provides a thin Makefile to standardize common dev flows. Run `ma
     - Reads API key/model from `.env` at the repo root (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
     - Preserves code blocks and front‑matter `id`; translates `title`/`sidebar_label`.
   - Alias: `make translate DOC=… TO=…` (identical behavior).
-
-- `make docs-deploy`
-  - Builds and deploys the website to a local `gh-pages` worktree via `scripts/docs-local-deploy.sh`.
-  - Customize with `OPTS`, for example:
-    - `make docs-deploy OPTS="--locales en --no-test --no-link-check"`
-    - `make docs-deploy OPTS="--locales all --dry-run"`
 
 Tip: You can override the package manager used by Make by setting `NPM=...` (defaults to `npm`).
 
@@ -137,8 +142,11 @@ Tip: You can override the package manager used by Make by setting `NPM=...` (def
 
 - Dev server: `cd website && npm run start`
 - Build static site: `cd website && npm run build`
-- Make equivalents: `make docs-build`, `make docs-link-check`, `make docs-deploy`
-- Before publishing, run the offline‑safe link check: `make docs-link-check`.
+- Make equivalents (alphabetical): `make docs-build`, `make docs-build-linkcheck`, `make docs-deploy-local`, `make docs-push-github`
+  - Usage examples:
+    - EN only, skip tests/link‑check, no push: `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
+    - All locales, with tests/link‑check, then push: `make docs-deploy-local && make docs-push-github`
+- Before publishing, run the offline‑safe link check: `make docs-build-linkcheck`.
 - i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
 - Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
 
@@ -146,6 +154,32 @@ Tip: You can override the package manager used by Make by setting `NPM=...` (def
 
 - Do not commit `sources/manifest.json` (created temporarily by the build)
 - Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+
+### Settings Persistence
+
+- Storage: All user settings live in `storage.local` and persist across add‑on updates.
+- Install: Defaults are applied only when a key is strictly missing (undefined).
+- Update: A migration fills only missing keys; existing values are never overwritten.
+- Schema marker: `settingsVersion` (currently `1`).
+- Keys and defaults:
+  - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
+  - `confirmBeforeAdd: boolean` → `false`
+  - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
+  - `warnOnBlacklistExcluded: boolean` → `true`
+- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+
+Dev workflow (adding a new setting)
+
+- Bump `SCHEMA_VERSION` in `sources/background.js`.
+- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
+- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
+- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
+- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+
+Manual testing tips
+
+- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
+- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
 
 ### Troubleshooting
 

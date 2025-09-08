@@ -74,6 +74,7 @@
     const makeLogger = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLocalLogger;
     const logger = makeLogger(false);
 
+    // Settings state (updated reactively; used by closures below)
     let excludePatterns = [];
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
@@ -81,32 +82,27 @@
     let warnOnBlacklist = true;
 
     // load settings once; confirm awaits readiness lazily
-    const ready = (async () => {
-      const [patterns, ask, def, warnFlag] = await Promise.all([
-        readBlacklist(browser),
-        readConfirmEnabled(browser),
-        readConfirmDefault(browser),
-        readWarnOnBlacklist(browser),
-      ]);
+    function applySettings({ patterns, ask, def, warnFlag }) {
       excludePatterns = patterns;
       exclude = App.Domain.makeNameExcluder(patterns);
       askBeforeAdd = ask;
       defaultAnswer = def;
       warnOnBlacklist = warnFlag;
+    }
+    const ready = (async () => {
+      const vals = await loadSettings(browser);
+      applySettings(vals);
+      rebuildEnsure();
     })();
 
     async function reloadSettings() {
-      const [patterns, ask, def, warnFlag] = await Promise.all([
-        readBlacklist(browser),
-        readConfirmEnabled(browser),
-        readConfirmDefault(browser),
-        readWarnOnBlacklist(browser),
-      ]);
-      excludePatterns = patterns;
-      exclude = App.Domain.makeNameExcluder(patterns);
-      askBeforeAdd = ask;
-      defaultAnswer = def;
-      warnOnBlacklist = warnFlag;
+      applySettings(await loadSettings(browser));
+      rebuildEnsure();
+    }
+
+    // confirm function, updated when settings change
+    let ensure = null;
+    function rebuildEnsure() {
       ensure = App.UseCases.createEnsureReplyAttachments({
         compose,
         messages,
@@ -121,21 +117,6 @@
         logger,
       });
     }
-
-    // confirm function, updated when settings change
-    let ensure = App.UseCases.createEnsureReplyAttachments({
-      compose,
-      messages,
-      sessions,
-      state: processedTabsState,
-      sessionKey: SESSION_KEY,
-      shouldExclude: (name) => exclude(name),
-      confirm: confirmAddSelectedFiles,
-      warn: warnBlacklisted,
-      warnOnBlacklist,
-      matchBlacklist: matchBlacklist,
-      logger,
-    });
     /** Compute matching blacklist patterns for a given name. */
     function matchBlacklist(name) {
       try {
@@ -195,54 +176,18 @@
       if (area === 'local' && changes?.blacklistPatterns) {
         excludePatterns = changes.blacklistPatterns.newValue || [];
         exclude = App.Domain.makeNameExcluder(excludePatterns);
-        ensure = App.UseCases.createEnsureReplyAttachments({
-          compose,
-          messages,
-          sessions,
-          state: processedTabsState,
-          sessionKey: SESSION_KEY,
-          shouldExclude: (name) => exclude(name),
-          confirm: confirmAddSelectedFiles,
-          warn: warnBlacklisted,
-          warnOnBlacklist,
-          matchBlacklist: matchBlacklist,
-          logger,
-        });
+        rebuildEnsure();
       }
       if (area === 'local' && changes?.confirmBeforeAdd) {
         askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
-        ensure = App.UseCases.createEnsureReplyAttachments({
-          compose,
-          messages,
-          sessions,
-          state: processedTabsState,
-          sessionKey: SESSION_KEY,
-          shouldExclude: (name) => exclude(name),
-          confirm: confirmAddSelectedFiles,
-          warn: warnBlacklisted,
-          warnOnBlacklist,
-          matchBlacklist: matchBlacklist,
-          logger,
-        });
+        rebuildEnsure();
       }
       if (area === 'local' && changes?.confirmDefaultChoice) {
         defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
       }
       if (area === 'local' && changes?.warnOnBlacklistExcluded) {
         warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
-        ensure = App.UseCases.createEnsureReplyAttachments({
-          compose,
-          messages,
-          sessions,
-          state: processedTabsState,
-          sessionKey: SESSION_KEY,
-          shouldExclude: (name) => exclude(name),
-          confirm: confirmAddSelectedFiles,
-          warn: warnBlacklisted,
-          warnOnBlacklist,
-          matchBlacklist: matchBlacklist,
-          logger,
-        });
+        rebuildEnsure();
       }
     });
 
@@ -295,13 +240,34 @@
       injectedConfirmScriptTabs.delete(id);
     });
 
+    async function ensureWrapper(tabId, details) {
+      if (!ensure) {
+        try {
+          await ready;
+        } catch (_) {}
+        if (!ensure) rebuildEnsure();
+      }
+      return ensure(tabId, details);
+    }
     return {
-      ensureReplyAttachments: (tabId, details) => ensure(tabId, details),
+      ensureReplyAttachments: ensureWrapper,
       processedTabsState,
       SESSION_KEY,
       reloadSettings,
     };
   }
+
+  // — settings helpers —
+  async function loadSettings(browser) {
+    const [patterns, ask, def, warnFlag] = await Promise.all([
+      readBlacklist(browser),
+      readConfirmEnabled(browser),
+      readConfirmDefault(browser),
+      readWarnOnBlacklist(browser),
+    ]);
+    return { patterns, ask, def, warnFlag };
+  }
+  // applySettings is defined inside createAppWiring to access its local state
 
   // storage readers
   /** Load blacklist patterns from storage (empty array on error). */

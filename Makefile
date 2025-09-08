@@ -4,7 +4,7 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: commit docs-build docs-deploy docs-link-check eslint help lint pack prettier prettier-check prettier-write test test-i18n translate translation
+.PHONY: commit docs-build docs-build-linkcheck docs-deploy-local docs-push-github eslint help lint pack prettier prettier-check prettier-write test test-i18n translate translation
 
 commit: ## Format, run tests (incl. i18n), append changelog, commit & push to current branch
 	@set -euo pipefail; \
@@ -35,18 +35,31 @@ commit: ## Format, run tests (incl. i18n), append changelog, commit & push to cu
 	echo "✔ Pushing to origin/$$branch…"; \
 	git push -u origin $$branch
 
-docs-build: ## Build Docusaurus site into website/build (cd website && npm ci && docusaurus build)
+docs-build: ## Build Docusaurus site into website/build (OPTS: --locales en|all)
 	@set -e; \
+	# Determine locale arguments for Docusaurus build
+	locale_args=""; \
+	case " $(OPTS) " in \
+	  *" --locales en "*) locale_args="--locale en" ;; \
+	  *) locale_args="" ;; \
+	esac; \
 	cd website; \
 	npm ci; \
-	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build
+	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args
 
-docs-deploy: ## Build and deploy website to gh-pages worktree locally (OPTS="--locales en|all --no-test --no-link-check --dry-run")
+docs-build-linkcheck: ## Offline-safe link check (builds site first). OPTS: --locales en|all
 	@set -e; \
-	bash scripts/docs-local-deploy.sh $(OPTS)
-
-docs-link-check: docs-build ## Offline-safe link check of website/build (rewrites baseUrl; skips remote HTTP[S])
-	@set -e; \
+	# Determine locale arguments for Docusaurus build
+	locale_args=""; \
+	case " $(OPTS) " in \
+	  *" --locales en "*) locale_args="--locale en" ;; \
+	  *) locale_args="" ;; \
+	esac; \
+	# Install website deps if missing and build with selected locale(s)
+	cd website; \
+	if [ ! -d node_modules/@docusaurus ]; then npm ci; fi; \
+	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args; \
+	cd ..; \
 	# Run the locally installed linkinator and rewrite GH Pages baseUrl to local paths
 	node node_modules/linkinator/build/src/cli.js \
 	  "website/build/index.html" \
@@ -56,11 +69,29 @@ docs-link-check: docs-build ## Offline-safe link check of website/build (rewrite
 	  --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
 	  --url-rewrite-replace "/"
 
+docs-deploy-local: ## Build+sync docs into local gh-pages worktree (OPTS: --locales en|all --no-test --no-link-check --dry-run). No push.
+	@set -e; \
+	if [ -x scripts/docs-local-deploy.sh ]; then \
+	  bash scripts/docs-local-deploy.sh $(OPTS); \
+	else \
+	  echo "scripts/docs-local-deploy.sh not found; aborting"; \
+	  exit 1; \
+	fi
+
+docs-push-github: ## Push local gh-pages worktree to GitHub (uses scripts/docs-gh-push.sh; SRC_DIR=gh-pages-worktree)
+	@set -e; \
+	if [ -x scripts/docs-gh-push.sh ]; then \
+	  SRC_DIR="gh-pages-worktree" bash scripts/docs-gh-push.sh; \
+	else \
+	  echo "scripts/docs-gh-push.sh not found; aborting"; \
+	  exit 1; \
+	fi
+
 eslint: ## Run ESLint via flat config (npm run -s lint:eslint).
 	$(NPM) run -s lint:eslint
 
-help: ## List all targets with one-line docs.
-	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_.-]+:.*##/ { printf "%-10s %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
+help: ## List all targets with one-line docs (sorted)
+	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_.-]+:.*##/ { printf "%-24s %s\n", $$1, $$2 }' $(MAKEFILE_LIST) | sort -f
 
 lint: ## web-ext lint on sources/ (temp manifest.json from manifest_LOCAL.json; ignores ZIP artifacts; non-fatal)
 	@set -e; \

@@ -84,11 +84,13 @@ Das Repository enthält ein schlankes Makefile zur Standardisierung üblicher De
   - Interna: `cd website && npm ci && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build`.
   - Vor dem Prüfen oder Deployen der Doku ausführen.
 
-- `make docs-link-check`
-  - Baut die Doku (hängt von `docs-build` ab) und prüft interne Links mit `linkinator` (als devDependency im Repo-Root installiert).
-  - Das Verhalten ist auf Offline‑Sicherheit ausgelegt:
-    - Schreibt die GitHub-Pages‑`baseUrl` (`/Thunderbird-Reply-with-Attachments/`) für das lokale Scannen zu `/` um.
-    - Überspringt alle entfernten HTTP(S)-Links außer `localhost`, um nicht von der echten Website abzuhängen.
+- `make docs-build-linkcheck`
+  - Baut dann prüft interne Links mit `linkinator` (offline‑sicher).
+  - Akzeptiert `OPTS="--locales en|all"` (Standard: alle Locales). Beispiel:
+    - `make docs-build-linkcheck OPTS="--locales en"`
+  - Offline‑sicheres Verhalten:
+    - Schreibt die GitHub‑Pages‑`baseUrl` (`/Thunderbird-Reply-with-Attachments/`) für das lokale Scannen zu `/` um.
+    - Überspringt alle entfernten HTTP(S)‑Links außer `localhost`, um nicht von der echten Website abhängig zu sein.
   - Nützlich, um defekte interne Navigation vor der Veröffentlichung aufzuspüren.
 
 - `make translation DOC=<file(s)|all> TO=<lang(s)|all>`
@@ -101,11 +103,14 @@ Das Repository enthält ein schlankes Makefile zur Standardisierung üblicher De
     - Liest API‑Schlüssel/Modell aus `.env` im Repo‑Root (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
     - Bewahrt Codeblöcke und Front‑Matter‑`id`; übersetzt `title`/`sidebar_label`.
 
-- `make docs-deploy`
-  - Baut und deployt die Website in einen lokalen `gh-pages`‑Worktree via `scripts/docs-local-deploy.sh`.
+- `make docs-deploy-local`
+  - Baut und synchronisiert die Website in einen lokalen `gh-pages`‑Worktree via `scripts/docs-local-deploy.sh`.
   - Konfigurierbar mit `OPTS`, zum Beispiel:
-    - `make docs-deploy OPTS="--locales en --no-test --no-link-check"`
-    - `make docs-deploy OPTS="--locales all --dry-run"`
+    - `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
+    - `make docs-deploy-local OPTS="--locales all"`
+
+- `make docs-push-github`
+  - Pusht den vorbereiteten lokalen `gh-pages`‑Worktree auf den Branch `gh-pages` des Git‑Remotes mittels `scripts/docs-gh-push.sh`.
 
 Tipp: Du kannst den von Make verwendeten Paketmanager über `NPM=...` überschreiben (Standard: `npm`).
 
@@ -136,8 +141,11 @@ Tipp: Du kannst den von Make verwendeten Paketmanager über `NPM=...` überschre
 
 - Dev-Server: `cd website && npm run start`
 - Statische Seite bauen: `cd website && npm run build`
-- Make-Äquivalente: `make docs-build`, `make docs-link-check`, `make docs-deploy`
-- Vor dem Veröffentlichen den offline‑sicheren Link‑Check ausführen: `make docs-link-check`.
+- Make-Äquivalente (alphabetisch): `make docs-build`, `make docs-build-linkcheck`, `make docs-deploy-local`, `make docs-push-github`
+  - Beispiele:
+    - Nur EN, ohne Tests/Link‑Check, kein Push: `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
+    - Alle Locales, mit Tests/Link‑Check, danach Push: `make docs-deploy-local && make docs-push-github`
+- Vor dem Veröffentlichen den offline‑sicheren Link‑Check ausführen: `make docs-build-linkcheck`.
 - i18n: Englisch lebt in `website/docs/*.md`; deutsche Übersetzungen in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
 - Suche: Wenn Algolia DocSearch-Umgebungsvariablen in CI gesetzt sind (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), verwendet die Seite Algolia-Suche; andernfalls fällt sie auf die lokale Suche zurück. Auf der Startseite `/` oder `Ctrl+K` drücken, um die Suchbox zu öffnen.
 
@@ -145,6 +153,13 @@ Tipp: Du kannst den von Make verwendeten Paketmanager über `NPM=...` überschre
 
 - `sources/manifest.json` nicht committen (wird temporär vom Build erzeugt)
 - `browser_specific_settings.gecko.id` stabil halten, um den Update-Kanal zu erhalten
+
+### Persistenz der Einstellungen
+
+- Nutzereinstellungen liegen in `storage.local` und bleiben über Updates hinweg erhalten.
+- Bei der Installation werden Standardwerte nur gesetzt, wenn ein Schlüssel fehlt.
+- Bei Updates füllt eine Migration nur fehlende Schlüssel; bestehende Werte werden nie überschrieben.
+- Schema‑Marker: `settingsVersion` (derzeit `1`).
 
 ### Fehlerbehebung
 

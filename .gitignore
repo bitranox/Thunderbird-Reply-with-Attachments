@@ -16,10 +16,10 @@ website/build-linkcheck/
 website/.docusaurus/
 website/node_modules/
 node_modules/
-coverage/
 gh-pages-worktree/
 translation.log
 .gh-pages/
+.ghpages-tmprepo/
 .eslintcache
 .vitest/
 npm-debug.log*
