@@ -3,7 +3,8 @@
  * Purpose: Drive the options page. Loads and saves settings, keeps
  *          the UI responsive, and shows a non‑shifting status message.
  * Notes:
- * - Defaults for the blacklist are auto‑filled when a user has an empty list.
+ * - Defaults for the blacklist are set only on fresh install (see background.js).
+ *   If a user clears the list later, we no longer auto‑fill it here.
  * - All texts are localized via browser.i18n / messenger.i18n.
  */
 (function () {
@@ -56,27 +57,14 @@
   async function load() {
     try {
       const res = await browser.storage?.local?.get?.({
-        [KEY]: DEFAULT_PATTERNS,
+        // do not inject defaults here; install flow handles first‑run defaults
+        [KEY]: undefined,
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
         [KEY_WARN_BLACKLIST]: true,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
-      let patterns = DEFAULT_PATTERNS;
-      if (Array.isArray(stored)) {
-        if (stored.length > 0) {
-          patterns = stored;
-        } else {
-          // Auto-fill empty user blacklist with defaults and persist
-          patterns = DEFAULT_PATTERNS;
-          try {
-            await browser.storage?.local?.set?.({
-              [KEY]: patterns.map((s) => String(s).trim().toLowerCase()).filter(Boolean),
-            });
-          } catch (_) {}
-        }
-      }
-      setTextareaLines('blacklist-patterns', patterns);
+      setTextareaLines('blacklist-patterns', Array.isArray(stored) ? stored : []);
       const cb = /** @type {HTMLInputElement} */ (getEl('confirm-before'));
       cb.checked = !!res?.[KEY_CONFIRM];
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));

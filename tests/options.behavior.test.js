@@ -26,8 +26,8 @@ describe('options page — reads, writes, resets', () => {
     mountOptionsDom();
   });
 
-  // Test: auto-fills defaults when user list is empty
-  it('auto-fills defaults when user list is empty', async () => {
+  // Test: does NOT auto-fill defaults after install — empty user list stays empty
+  it('shows empty textarea when user list is empty (no auto-fill)', async () => {
     vi.resetModules();
     mockBrowser({
       get: vi.fn().mockResolvedValue({ blacklistPatterns: [] }),
@@ -37,8 +37,7 @@ describe('options page — reads, writes, resets', () => {
     document.dispatchEvent(new Event('DOMContentLoaded'));
     await tick();
     const ta = /** @type {HTMLTextAreaElement} */ (document.getElementById('blacklist-patterns'));
-    expect(ta.value).toContain('*intern*');
-    expect(ta.value).toContain('*secret*');
+    expect(ta.value).toBe('');
   });
 
   // Test: save lowercases patterns and notifies background
@@ -110,6 +109,7 @@ function tick() {
 }
 /*
  * Scope: options page read/save/reset behavior.
- * Intent: auto-fill defaults on empty lists; save lowercases patterns and
- *         notifies background; reset restores defaults and UI.
+ * Intent: defaults are set only on fresh install; options page no longer
+ *         auto-fills when the user list is empty. Save lowercases patterns
+ *         and notifies background; reset restores defaults and UI.
  */

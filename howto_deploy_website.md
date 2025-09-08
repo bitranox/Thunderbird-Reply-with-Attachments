@@ -1,5 +1,6 @@
 # how to update the webpage
-```bash 
+
+```bash
 # change docs in /website/docs
 # make translate for the chenged docs and all languages
 make docs-build

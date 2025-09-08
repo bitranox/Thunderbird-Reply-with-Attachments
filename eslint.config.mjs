@@ -9,6 +9,7 @@ export default [
       'website/build/**',
       'website/build-linkcheck/**',
       'website/.docusaurus/**',
+      'gh-pages-worktree/**',
       '.gh-pages/**',
       '.github/**',
       '*.zip',

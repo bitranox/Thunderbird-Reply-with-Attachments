@@ -15,6 +15,21 @@
   globalThis.log = log;
   log.debug('Reply with Attachments: wiring app…');
 
+  // Set initial defaults for blacklist on fresh install only.
+  try {
+    browser.runtime?.onInstalled?.addListener?.(async (details) => {
+      try {
+        if (!details || details.reason !== 'install') return;
+        const DEFAULT_BLACKLIST = ['*intern*', '*secret*', '*passwor*'];
+        // Only set if nothing exists yet (first run)
+        const r = await browser.storage?.local?.get?.({ blacklistPatterns: undefined });
+        if (!Array.isArray(r?.blacklistPatterns)) {
+          await browser.storage?.local?.set?.({ blacklistPatterns: DEFAULT_BLACKLIST });
+        }
+      } catch (_) {}
+    });
+  } catch (_) {}
+
   // Expose small helpers early for tests
   let _ensure = null;
   const toNumericIdFn = (globalThis.App && App.Shared && App.Shared.toNumericId) || toNumericId;
