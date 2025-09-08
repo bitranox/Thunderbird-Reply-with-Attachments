@@ -55,7 +55,8 @@ fi
 
 echo "✔ Installing website deps…"
 pushd website >/dev/null
-npm ci
+# Prefer reproducible install; fall back to npm install if lock is out-of-sync
+npm ci || npm install
 
 # Use the local Docusaurus binary directly to avoid PATH/.bin issues
 DOCUSAURUS_CMD="node ./node_modules/@docusaurus/core/bin/docusaurus.mjs"
@@ -77,23 +78,22 @@ popd >/dev/null
 if [[ $LINK_CHECK -eq 1 ]]; then
   echo "✔ Running link check…"
   set +e
+  CLI=""
   if [[ -f node_modules/linkinator/build/src/cli.js ]]; then
-    node node_modules/linkinator/build/src/cli.js \
-      "website/build/index.html" \
-      --recurse \
-      --silent \
-      --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|raw\\.githubusercontent\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
-      --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
-      --url-rewrite-replace "/"
+    CLI="node node_modules/linkinator/build/src/cli.js"
+  elif [[ -f website/node_modules/linkinator/build/src/cli.js ]]; then
+    CLI="node website/node_modules/linkinator/build/src/cli.js"
   else
-    npx --yes linkinator \
-      "website/build/index.html" \
-      --recurse \
-      --silent \
-      --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|raw\\.githubusercontent\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
-      --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
-      --url-rewrite-replace "/"
+    CLI="npx --yes linkinator"
   fi
+  # shellcheck disable=SC2086
+  $CLI \
+    "website/build/index.html" \
+    --recurse \
+    --silent \
+    --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|raw\\.githubusercontent\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
+    --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
+    --url-rewrite-replace "/"
   STATUS=$?
   set -e
   if [[ $STATUS -ne 0 ]]; then
