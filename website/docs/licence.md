@@ -9,7 +9,7 @@ Project license: MIT
 This project is licensed under the **MIT License**.
 
 - Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox)
+- © Robert Nowotny (bitranoxx)
 
 ## Third‑party licenses
 
