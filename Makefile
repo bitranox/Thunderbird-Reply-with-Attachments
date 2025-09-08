@@ -82,7 +82,7 @@ docs-link-check: docs-build ## Offline-safe link check of website/build (rewrite
 	  "website/build/index.html" \
 	  --recurse \
 	  --silent \
-	  --skip "mailto:|^https?:\\/\\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\\/\\/|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net" \
+	  --skip 'mailto:|^https?:\/\/(?!(localhost|127\.0\.0\.1)([:/]|$$))|^\/\/|github\.com|bitranox\.github\.io|addons\.thunderbird\.net' \
 	  --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
 	  --url-rewrite-replace "/"
 
@@ -99,6 +99,3 @@ translate: ## Alias for 'make translation' (DOC=..., TO=...)
 docs-deploy: ## Build and deploy website to gh-pages worktree locally (OPTS="--locales en|all --no-test --no-link-check --dry-run")
 	@set -e; \
 	bash scripts/docs-local-deploy.sh $(OPTS)
-
-
-For subsequent quick updates: make docs-deploy OPTS="--no-test --locales en"

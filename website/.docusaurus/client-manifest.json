@@ -199,9 +199,9 @@
     "354": {
       "js": [
         {
-          "file": "assets/js/runtime~main.975462cf.js",
-          "hash": "7c584d05731f747b",
-          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/runtime~main.975462cf.js"
+          "file": "assets/js/runtime~main.68932d81.js",
+          "hash": "99393c874b9db884",
+          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/runtime~main.68932d81.js"
         }
       ]
     },
@@ -343,9 +343,9 @@
     "792": {
       "js": [
         {
-          "file": "assets/js/main.78eee95c.js",
-          "hash": "7928158ab11c32c1",
-          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/main.78eee95c.js"
+          "file": "assets/js/main.e07ffd4d.js",
+          "hash": "37777a1e23115110",
+          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/main.e07ffd4d.js"
         }
       ]
     },
@@ -370,9 +370,9 @@
     "861": {
       "js": [
         {
-          "file": "assets/js/0a09d0a5.1ea8b922.js",
-          "hash": "838b4472af416483",
-          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/0a09d0a5.1ea8b922.js"
+          "file": "assets/js/0a09d0a5.685beb3d.js",
+          "hash": "271f2fa8ff7a652d",
+          "publicPath": "/Thunderbird-Reply-with-Attachments/assets/js/0a09d0a5.685beb3d.js"
         }
       ]
     },
