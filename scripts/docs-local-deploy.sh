@@ -147,7 +147,9 @@ if [[ $HAS_REMOTE_BRANCH -eq 0 ]]; then
   git checkout -B "$BRANCH" "$REMOTE/$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
   git reset --hard "$REMOTE/$BRANCH" >/dev/null 2>&1 || true
 else
-  git checkout --orphan "$BRANCH" >/dev/null 2>&1 || git checkout -B "$BRANCH" >/dev/null 2>&1 || true
+  git checkout --orphan "$BRANCH" >/dev/null 2>&1 || true
+  # Ensure HEAD points to the new branch explicitly
+  git symbolic-ref -q HEAD "refs/heads/$BRANCH" >/dev/null 2>&1 || true
 fi
 git rm -rf . >/dev/null 2>&1 || true
 git clean -fdx >/dev/null 2>&1 || true
