@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  },
+  "homepage.meta.description": {
+    "message": "ਥੰਡਰਬਰਡ ਐਡ‑ਆਨ: ਜਵਾਬ ਵਿੱਚ ਮੂਲ ਅਟੈਚਮੈਂਟਾਂ ਸ਼ਾਮਲ"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ਆਈਕਨ"
+  },
+  "homepage.hero.title": {
+    "message": "ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ਥੰਡਰਬਰਡ ਵਿੱਚ ਜਵਾਬ ਦਿੰਦਿਆਂ ਮੂਲ ਅਟੈਚਮੈਂਟਾਂ ਸ਼ਾਮਲ ਕਰੋ — ਆਪਣੇ ਆਪ ਜਾਂ ਛੋਟੀ ਜਿਹੀ ਪੁਸ਼ਟੀ ਤੋਂ ਬਾਅਦ।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "ਡੌਕਸ ਖੋਲ੍ਹੋ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ਐਡ‑ਆਨਜ਼ ਤੋਂ ਇੰਸਟਾਲ ਕਰੋ"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ਦਾਨ ਕਰੋ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ਕੀ ਨਵਾਂ ਹੈ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ਤਾਜ਼ਾ ਬਦਲਾਵਾਂ {changelog} ਵਿੱਚ ਪੜ੍ਹੋ।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ਚੇਂਜਲੌਗ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ਸਵੈਚਾਲਿਤ ਜਾਂ ਪਹਿਲਾਂ ਪੁਸ਼ਟੀ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ਸਵੈਚਾਲਿਤ ਤੌਰ ‘ਤੇ ਜੋੜਣ ਜਾਂ ਸੁਵਿਧਾਜਨਕ ਕੀਬੋਰਡ ਸ਼ਾਰਟਕੱਟਾਂ ਵਾਲੇ ਛੋਟੇ ਪੁਸ਼ਟੀ ਡਾਇਲਾਗ ਵਿਚੋਂ ਚੋਣ ਕਰੋ।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ਸਮਝਦਾਰ ਡੁਪਲੀਕੇਟ ਹਟਾਉਣਾ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ਮੌਜੂਦਾ ਅਟੈਚਮੈਂਟਾਂ ਦਾ ਧਿਆਨ ਰੱਖਦਾ ਹੈ ਅਤੇ ਫ਼ਾਈਲ ਨਾਮ ਦੇ ਆਧਾਰ ‘ਤੇ ਡੁਪਲੀਕੇਟਾਂ ਤੋਂ ਬਚਦਾ ਹੈ—ਸਾਫ਼ ਅਤੇ ਅਨੁਮਾਨਯੋਗ।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ਅਤੇ ਇਨਲਾਈਨ ਛੱਡੋ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ਜਵਾਬ ਹਲਕੇ ਰੱਖਣ ਲਈ SMIME ਦਸਤਖਤ ਅਤੇ ਇਨਲਾਈਨ ਤਸਵੀਰਾਂ ਨੂੰ ਬਾਹਰ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ਬਲੈਕਲਿਸਟ ਪੈਟਰਨ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ਕੇਸ‑ਇੰਸੈਂਸਿਟਿਵ ਗਲੌਬ ਪੈਟਰਨ, ਜਿਵੇਂ {code1} ਜਾਂ {code2}, ਫ਼ਜ਼ੂਲ ਫ਼ਾਈਲਾਂ ਜੋੜਨ ਤੋਂ ਰੋਕਦੇ ਹਨ।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "ਡੌਕਸ ਲਈ ਤੁਰੰਤ ਲਿੰਕ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ਇੰਸਟਾਲ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ਕੰਫਿਗਰੇਸ਼ਨ"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ਵਰਤੋਂ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ਅਨੁਕੂਲਤਾ"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ਸਹਾਇਤਾ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ਲਾਈਸੈਂਸ"
+  },
+  "homepage.search.tip": {
+    "message": "ਸੁਝਾਅ: ਡੌਕਸ ਵਿੱਚ ਖੋਜਣ ਲਈ {slash} ਜਾਂ {ctrl}+{k} ਦਬਾਓ।"
+  },
+  "site.title": {
+    "message": "ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  },
+  "site.tagline": {
+    "message": "ਥੰਡਰਬਰਡ ਐਡ‑ਆਨ: ਜਵਾਬ ਵਿੱਚ ਮੂਲ ਅਟੈਚਮੈਂਟਾਂ ਸ਼ਾਮਲ"
+  },
+  "navbar.title": {
+    "message": "ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  },
+  "navbar.logo.alt": {
+    "message": "ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  },
+  "navbar.docs": {
+    "message": "ਡੌਕਸ"
+  },
+  "navbar.support": {
+    "message": "ਸਹਾਇਤਾ"
+  },
+  "navbar.license": {
+    "message": "ਲਾਈਸੈਂਸ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ਡੌਕਸ"
+  },
+  "footer.link.home": {
+    "message": "ਮੁੱਖ ਪੰਨਾ"
+  },
+  "footer.link.install": {
+    "message": "ਇੰਸਟਾਲ"
+  },
+  "footer.section.project": {
+    "message": "ਪ੍ਰੋਜੈਕਟ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ਅਟੈਚਮੈਂਟਾਂ ਸਮੇਤ ਜਵਾਬ"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Ka Jawaab oo wata Lifaaqyo"
+  },
+  "homepage.meta.description": {
+    "message": "Kordhin Thunderbird: Ku jawaab adigoo ku daraya lifaaqyadii asalka ahaa"
+  },
+  "homepage.icon.alt": {
+    "message": "Astaanta RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Ka Jawaab oo wata Lifaaqyo"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ku dar lifaaqyadii asalka ahaa markaad ku jawaabayso Thunderbird — si toos ah ama kadib xaqiijin degdeg ah."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Furo Dukumentiyada"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Bilow Degdeg ah"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Ka soo rakib Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ku tabaruc"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Maxaa Cusub"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Akhri isbeddelladii u dambeeyay ee ku jira {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Diiwaanka Isbeddellada"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Si Toos ah ama Xaqiiji Marka Hore"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Dooro u dhexeeya ku darid toos ah ama sanduuqa xaqiijinta ee yar oo leh gaabisyada kiiboodhka ee ku habboon."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ka‑fogaanshaha Nuqul‑Laba‑laab Caaqil ah"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Waxay dhowrtaa lifaaqyada hore u jiray waxayna ka fogaataa nuqulo magac-fayl ahaan; nadiif ah oo la saadaalin karo."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Ka bood SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Saxiixyada SMIME iyo sawirrada inline‑ka ayaa laga reebaa si jawaabaha ay u ahaadaan fudud."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Qaabab Liiska Madow"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Qaabab glob oo aan kala eegin xarfaha waaweyn/yaryar, sida {code1} ama {code2}, ayaa ka hortaga in lagu daro faylal buuq leh."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Xiriirro degdeg ah ee Dukumentiyada"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Rakib"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Habayn"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Isticmaal"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Iswaafajin"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Taageero"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Shati"
+  },
+  "homepage.search.tip": {
+    "message": "Talo: Riix {slash} ama {ctrl}+{k} si aad u raadiso dukumentiyada."
+  },
+  "site.title": {
+    "message": "Ka Jawaab oo wata Lifaaqyo"
+  },
+  "site.tagline": {
+    "message": "Kordhin Thunderbird: Ku jawaab adigoo ku daraya lifaaqyadii asalka ahaa"
+  },
+  "navbar.title": {
+    "message": "Ka Jawaab oo wata Lifaaqyo"
+  },
+  "navbar.logo.alt": {
+    "message": "Ka Jawaab oo wata Lifaaqyo"
+  },
+  "navbar.docs": {
+    "message": "Dukumentiyada"
+  },
+  "navbar.support": {
+    "message": "Taageero"
+  },
+  "navbar.license": {
+    "message": "Shati"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dukumentiyada"
+  },
+  "footer.link.home": {
+    "message": "Bogga Hore"
+  },
+  "footer.link.install": {
+    "message": "Rakib"
+  },
+  "footer.section.project": {
+    "message": "Mashruuca"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Ka Jawaab oo wata Lifaaqyo"
+  }
+}

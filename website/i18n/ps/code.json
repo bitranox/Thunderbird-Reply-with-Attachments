@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "homepage.meta.description": {
+    "message": "د Thunderbird اضافه توکی: له اصلي ضمیمو سره ځواب"
+  },
+  "homepage.icon.alt": {
+    "message": "د RWA انځورن"
+  },
+  "homepage.hero.title": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "homepage.hero.subtitle": {
+    "message": "په Thunderbird کې د ځواب پر مهال اصلي ضمیمې شاملې کړئ — پخپله يا د چټک تایید وروسته."
+  },
+  "homepage.cta.openDocs": {
+    "message": "لاسوندونه پرانیزئ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "چټک پیل"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "له اضافه توکو څخه لګول"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "بسپنه"
+  },
+  "homepage.whatsNew.title": {
+    "message": "څه نوي دي"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "وروستي بدلونونه په {changelog} کې ولولئ."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "بدلونونو ثبت"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "خپلسر يا لومړی تایید"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "د خپل‌سر زياتولو او يا د تایید يوې وړې کړکۍ ترمنځ انتخاب وکړئ، چې پکې د کېبورډ ګټورې لنډلارې شته."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "هوښیار د تکرار مخنیوی"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "موجودو ضمیمو ته درناوی کوي او د دوتنې د نوم پر بنسټ تکراري ضمیمې نه زیاتوي؛ پاکه او وړاندوينه کېدونکې پایله."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME او Inline پرېښودل"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "د SMIME لاسليکونه او Inline انځورونه نه شاملېږي څو ځوابونه سپک پاتې شي."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "تور لېست الګوګان"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "د غټو او وړو تورو په وړاندې بې‌پروا د glob الګوګانې لکه {code1} يا {code2} نااړينې دوتنې له زياتولو مخه نيسي."
+  },
+  "homepage.quicklinks.title": {
+    "message": "د لاسوندونو چټک تړوني"
+  },
+  "homepage.quicklinks.install": {
+    "message": "لګول"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "امستنې"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "کارونه"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "سازګاري"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ملاتړ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "جواز"
+  },
+  "homepage.search.tip": {
+    "message": "اشاره: د لاسوندونو د لټون لپاره {slash} يا {ctrl}+{k} کېکاږئ."
+  },
+  "site.title": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "site.tagline": {
+    "message": "د Thunderbird اضافه توکی: له اصلي ضمیمو سره ځواب"
+  },
+  "navbar.title": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "navbar.logo.alt": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "navbar.docs": {
+    "message": "لاسوندونه"
+  },
+  "navbar.support": {
+    "message": "ملاتړ"
+  },
+  "navbar.license": {
+    "message": "جواز"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "لاسوندونه"
+  },
+  "footer.link.home": {
+    "message": "کور"
+  },
+  "footer.link.install": {
+    "message": "لګول"
+  },
+  "footer.section.project": {
+    "message": "پروژه"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} له ضمیمو سره ځواب"
+  }
+}

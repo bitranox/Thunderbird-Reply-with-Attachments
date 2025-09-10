@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Хавсралттай хариулах" },
-  "extDescription": { "message": "И‑мэйл хариунд эхний хавсралтуудыг автоматаар нэмнэ." },
-  "composeTitle": { "message": "Хавсралттай хариулах" },
-  "optionsTitle": { "message": "Хавсралттай хариулах — Тохиргоо" },
-  "confirmTitle": { "message": "Хавсралтуудыг баталгаажуулах" },
-  "uiHeader": { "message": "Хавсралттай хариулах" },
-  "uiNoOptions": { "message": "Одоогоор тохируулах сонголт байхгүй." },
-  "uiSupport": { "message": "Энэ нэмэлтийг таалагдаж байна уу? Жижиг хандив өгч дэмжээрэй:" },
-  "uiDonate": { "message": "Одоо хандивлах" },
-  "uiGithubText": { "message": "Алдааны тайлан эсвэл бусад асуултад, миний" },
-  "uiGithubLinkLabel": { "message": "GitHub хуудас" },
-  "iconAlt": { "message": "Reply with Attachments дүрс" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Файлын нэрний хар жагсаалт (glob хэв маяг)" },
-  "uiBlacklistHelp": {
-    "message": "Эдгээр хэв маягуудын аль нэгэнд таарсан файлууд хэзээ ч автоматаар нэмэгдэхгүй. Нэг мөрт нэг хэв маяг. Жишээ нь: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Хавсралттай хариулах"
   },
-  "uiWarnBlacklistLabel": { "message": "Хар жагсаалтаас болж хавсралтууд хасагдвал анхааруул" },
-  "uiSave": { "message": "Хадгалах" },
-  "uiSaving": { "message": "Хадгалж байна…" },
-  "uiReset": { "message": "Анхны тохиргоонд сэргээх" },
-  "uiSaved": { "message": "Хадгалагдлаа." },
-  "uiResetDone": { "message": "Сэргээв." },
-  "uiConfirmHeader": { "message": "Баталгаажуулалт" },
-  "uiConfirmLabel": { "message": "Хавсралт нэмэхийн өмнө асуу" },
+  "extDescription": {
+    "message": "Имэйлд хариулахдаа анхны хавсралтуудыг автоматаар хамтад нь оруулна."
+  },
+  "composeTitle": {
+    "message": "Хавсралттай хариулах"
+  },
+  "optionsTitle": {
+    "message": "Хавсралттай хариулах — Тохиргоо"
+  },
+  "confirmTitle": {
+    "message": "Хавсралтыг баталгаажуулах"
+  },
+  "uiHeader": {
+    "message": "Хавсралттай хариулах"
+  },
+  "uiNoOptions": {
+    "message": "Одоогоор тохируулах зүйл байхгүй."
+  },
+  "uiSupport": {
+    "message": "Энэ нэмэлт танд таалагдаж байна уу? Жижигхэн хандив өгч намайг дэмжээрэй:"
+  },
+  "uiDonate": {
+    "message": "Одоо хандивлах"
+  },
+  "uiGithubText": {
+    "message": "Алдаа мэдээлэх эсвэл бусад асуулт байвал миний"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub хуудас"
+  },
+  "iconAlt": {
+    "message": "Хавсралттай хариулах дүрс"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Файлын нэрийн хар жагсаалт (glob загварууд)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Нэр нь эдгээр загваруудын аль нэгтэй таарах файлууд хэзээ ч автоматаар хавсаргагдахгүй. Мөр бүрт нэг загвар. Жишээ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Хар жагсаалтад орсны улмаас хавсралтууд хасагдвал анхааруулах"
+  },
+  "uiSave": {
+    "message": "Хадгалах"
+  },
+  "uiSaving": {
+    "message": "Хадгалж байна…"
+  },
+  "uiReset": {
+    "message": "Анхны тохиргоонд буцаах"
+  },
+  "uiSaved": {
+    "message": "Хадгаллаа."
+  },
+  "uiResetDone": {
+    "message": "Сэргээв."
+  },
+  "uiConfirmHeader": {
+    "message": "Баталгаажуулалт"
+  },
+  "uiConfirmLabel": {
+    "message": "Хавсралтуудыг нэмэхийн өмнө асуух"
+  },
   "uiConfirmHelp": {
-    "message": "Жижиг баталгаажуулах цонх зөвхөн үнэхээр хавсралт нэмэгдэх үед гарч ирнэ. Гар: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
+    "message": "Жижиг баталгаажуулах цонх зөвхөн хавсралтууд үнэхээр нэмэгдэх үед л гарч ирнэ. Гарны товчлуурууд: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
   },
   "confirmAddOne": {
     "message": "Хавсралт нэмэх: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Хавсралтууд нэмэх ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 илүү" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Тийм" },
-  "confirmNo": { "message": "Үгүй" },
-  "warnBlacklistTitle": { "message": "Хар жагсаалтаар хасагдсан" },
-  "warnBlacklistIntro": { "message": "Дараах файлууд автоматаар нэмэгдэхгүй:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Хэв маяг" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Анхдагч хариулт" },
-  "uiConfirmDefaultYes": { "message": "Тийм" },
-  "uiConfirmDefaultNo": { "message": "Үгүй" },
+  "confirmAddMany": {
+    "message": "Хавсралтуудыг нэмэх ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Тийм"
+  },
+  "confirmNo": {
+    "message": "Үгүй"
+  },
+  "warnBlacklistTitle": {
+    "message": "Хар жагсаалтаар хасагдсан"
+  },
+  "warnBlacklistIntro": {
+    "message": "Дараах файлууд автоматаар хавсаргагдахгүй:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Загвар"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Өгөгдмөл хариулт"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Тийм"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Үгүй"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

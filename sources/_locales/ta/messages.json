@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "இணைப்புகளுடன் பதிலளிக்கவும்" },
-  "extDescription": { "message": "மின்னஞ்சல் பதில்களில் அசல் இணைப்புகளை தானாகச் சேர்க்கவும்." },
-  "composeTitle": { "message": "இணைப்புகளுடன் பதிலளிக்கவும்" },
-  "optionsTitle": { "message": "இணைப்புகளுடன் பதிலளிக்கவும் — விருப்பங்கள்" },
-  "confirmTitle": { "message": "இணைப்புகளை உறுதிப்படுத்தவும்" },
-  "uiHeader": { "message": "இணைப்புகளுடன் பதிலளிக்கவும்" },
-  "uiNoOptions": { "message": "தற்போது உள்ளமைக்க எந்த விருப்பங்களும் இல்லை." },
-  "uiSupport": { "message": "இந்தச் சேர்க்கை பிடித்ததா? ஒரு சிறிய நன்கொடையால் என்னை ஆதரிக்கவும்:" },
-  "uiDonate": { "message": "இப்போதே நன்கொடை அளிக்கவும்" },
-  "uiGithubText": { "message": "பிழை அறிக்கைகள் அல்லது பிற கேள்விகளுக்கு, எனது" },
-  "uiGithubLinkLabel": { "message": "GitHub பக்கம்" },
-  "iconAlt": { "message": "Reply with Attachments சின்னம்" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "கோப்புப் பெயர்களின் கருப்புப் பட்டியல் (glob மாதிரிகள்)" },
+  "extName": {
+    "message": "இணைப்புகளுடன் பதிலளிக்க"
+  },
+  "extDescription": {
+    "message": "மின்னஞ்சல் பதில்களில் அசல் இணைப்புகளை தானாகச் சேர்க்கும்."
+  },
+  "composeTitle": {
+    "message": "இணைப்புகளுடன் பதிலளிக்க"
+  },
+  "optionsTitle": {
+    "message": "இணைப்புகளுடன் பதிலளிக்க — விருப்பங்கள்"
+  },
+  "confirmTitle": {
+    "message": "இணைப்புகளை உறுதிப்படுத்தவும்"
+  },
+  "uiHeader": {
+    "message": "இணைப்புகளுடன் பதிலளிக்க"
+  },
+  "uiNoOptions": {
+    "message": "தற்போது அமைக்க விருப்பங்கள் எதுவும் இல்லை."
+  },
+  "uiSupport": {
+    "message": "இந்தச் செருகுநிரல் உங்களுக்கு பிடித்ததா? சிறிய பங்களிப்பால் எனக்கு ஆதரவு அளிக்கவும்:"
+  },
+  "uiDonate": {
+    "message": "இப்போது நன்கொடை அளிக்கவும்"
+  },
+  "uiGithubText": {
+    "message": "பிழை அறிக்கைகள் அல்லது பிற விசாரணைகளுக்கு, தயவுசெய்து எனது"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub பக்கம்"
+  },
+  "iconAlt": {
+    "message": "இணைப்புகளுடன் பதிலளிக்க சின்னம்"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "கோப்புப் பெயர்களின் கருப்புப் பட்டியல் (glob வடிவங்கள்)"
+  },
   "uiBlacklistHelp": {
-    "message": "இந்த மாதிரிகளில் ஏதேனும் பொருந்தும் கோப்புகள் இனி தானாக இணைக்கப்படாது. வரிக்கு ஒரு மாதிரி. உதாரணங்கள்: *.png, smime.*, *.p7s"
+    "message": "இந்த வடிவங்களில் ஏதாவதொன்றுடன் பெயர் பொருந்தும் கோப்புகள் ஒருபோதும் தானாக இணைக்கப்படாது. ஒரு வரிக்கு ஒரு வடிவம். உதாரணங்கள்: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "கருப்புப் பட்டியலால் இணைப்புகள் நீக்கப்பட்டால் எச்சரிக்கவும்"
   },
-  "uiSave": { "message": "சேமிக்கவும்" },
-  "uiSaving": { "message": "சேமித்து வருகிறது…" },
-  "uiReset": { "message": "இயல்புநிலைக்கு மீட்டமைக்கவும்" },
-  "uiSaved": { "message": "சேமிக்கப்பட்டது." },
-  "uiResetDone": { "message": "மீட்டமைக்கப்பட்டது." },
-  "uiConfirmHeader": { "message": "உறுதிப்படுத்தல்" },
-  "uiConfirmLabel": { "message": "இணைப்புகளைச் சேர்ப்பதற்கு முன் கேளுங்கள்" },
+  "uiSave": {
+    "message": "சேமிக்கவும்"
+  },
+  "uiSaving": {
+    "message": "சேமித்து வருகிறது…"
+  },
+  "uiReset": {
+    "message": "இயல்புநிலைக்கு மீட்டமை"
+  },
+  "uiSaved": {
+    "message": "சேமிக்கப்பட்டது."
+  },
+  "uiResetDone": {
+    "message": "மீட்டமைக்கப்பட்டது."
+  },
+  "uiConfirmHeader": {
+    "message": "உறுதிப்படுத்தல்"
+  },
+  "uiConfirmLabel": {
+    "message": "இணைப்புகளைச் சேர்ப்பதற்கு முன் கேட்கவும்"
+  },
   "uiConfirmHelp": {
-    "message": "இணைப்புகள் உண்மையில் சேர்க்கப்படும் போது மட்டுமே ஒரு சிறிய உறுதிப்படுத்தல் உரையாடல் தோன்றும். விசைப்பலகை: Y அல்லது J = ஆம்; N அல்லது Esc = இல்லை."
+    "message": "சிறிய உறுதிப்படுத்தல் உரையாடல், இணைப்புகள் உண்மையில் சேர்க்கப்படும் போதுமே தோன்றும். விசைப்பலகை: Y அல்லது J = ஆம்; N அல்லது Esc = இல்லை."
   },
   "confirmAddOne": {
     "message": "இணைப்பைச் சேர்க்கவா: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "இணைப்புகளைச் சேர்க்கவா ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 more" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "ஆம்" },
-  "confirmNo": { "message": "இல்லை" },
-  "warnBlacklistTitle": { "message": "கருப்புப் பட்டியலால் நீக்கப்பட்டது" },
-  "warnBlacklistIntro": { "message": "பின்வரும் கோப்புகள் தானாக இணைக்கப்படாது:" },
-  "warnColFile": { "message": "கோப்பு" },
-  "warnColPattern": { "message": "மாதிரி" },
-  "warnOk": { "message": "சரி" },
-  "uiConfirmDefaultHeader": { "message": "இயல்புநிலை பதில்" },
-  "uiConfirmDefaultYes": { "message": "ஆம்" },
-  "uiConfirmDefaultNo": { "message": "இல்லை" },
+  "confirmYes": {
+    "message": "ஆம்"
+  },
+  "confirmNo": {
+    "message": "இல்லை"
+  },
+  "warnBlacklistTitle": {
+    "message": "கருப்புப் பட்டியலால் நீக்கப்பட்டுள்ளது"
+  },
+  "warnBlacklistIntro": {
+    "message": "பின்வரும் கோப்புகள் தானாக இணைக்கப்படாது:"
+  },
+  "warnColFile": {
+    "message": "கோப்பு"
+  },
+  "warnColPattern": {
+    "message": "வடிவம்"
+  },
+  "warnOk": {
+    "message": "சரி"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "இயல்புநிலை பதில்"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ஆம்"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "இல்லை"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

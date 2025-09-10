@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Deebii waliin maxxansaawwan" },
-  "extDescription": {
-    "message": "Maxxansaawwan duraanii deebii imeelii keessatti of‑eeggannoo malee ida'a."
+  "extName": {
+    "message": "Deebii faayiloota itti maxxanfaman waliin"
   },
-  "composeTitle": { "message": "Deebii waliin maxxansaawwan" },
-  "optionsTitle": { "message": "Deebii waliin maxxansaawwan — Filannoo" },
-  "confirmTitle": { "message": "Maxxansaawwan mirkaneessi" },
-  "uiHeader": { "message": "Deebii waliin maxxansaawwan" },
-  "uiNoOptions": { "message": "Ammaaf filannoo qindeessu hin jiru." },
-  "uiSupport": { "message": "Add‑on kana jaallatta? Deeggarsa xiqqoo godhi:" },
-  "uiDonate": { "message": "Amma kenni" },
-  "uiGithubText": { "message": "Dogoggora gabaasuuf yookaan gaaffiiwwan biroo, fuula koo" },
-  "uiGithubLinkLabel": { "message": "GitHub daawwadhu" },
-  "iconAlt": { "message": "Ikoonii Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Tarree gurraacha maqaa faayilii (pattern glob)" },
+  "extDescription": {
+    "message": "Deebii imeelii keessatti faayiloota duraan itti maxxanfaman ofumaan ni dabalata."
+  },
+  "composeTitle": {
+    "message": "Deebii faayiloota itti maxxanfaman waliin"
+  },
+  "optionsTitle": {
+    "message": "Deebii faayiloota itti maxxanfaman waliin — Filannoowwan"
+  },
+  "confirmTitle": {
+    "message": "Faayiloota itti maxxanfaman mirkaneessi"
+  },
+  "uiHeader": {
+    "message": "Deebii faayiloota itti maxxanfaman waliin"
+  },
+  "uiNoOptions": {
+    "message": "Ammaaf filannoowwan qindaa'uu hin jiran."
+  },
+  "uiSupport": {
+    "message": "Add-on kana jaallatta? Gumaacha xiqqoon na tumsaa:"
+  },
+  "uiDonate": {
+    "message": "Amma gumaachi"
+  },
+  "uiGithubText": {
+    "message": "Gabaasa dogoggoraa yookaan gaaffiiwwan birooaf, mee gara"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Fuula GitHub"
+  },
+  "iconAlt": {
+    "message": "Mallattoo Deebii faayiloota itti maxxanfaman waliin"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Tarree gurraachaa maqaa faayilootaa (patarnoota glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Faayilota maqaan isaanii pattern kana keessaa kamiyyuu waliin yoo walsimu, ofumaan hin ida'aman. Patrootiin tokko sarara tokko irratti. Fakkeenya: *.png, smime.*, *.p7s"
+    "message": "Faayiloonni maqaan isaanii patarnoota kana keessaa kamiyyuu waliin yoo walsime, ofumaan hin itti maxxanfaman. Sarara tokkoof patarnoo tokko. Fakkeenyawwan: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Maxxansaawwan tarree gurraachaatiin baafaman yoo jiraatan akeeki"
+    "message": "Faayiloonni itti maxxanfaman tarree gurraachaan haquaman taanaan akeekkachiisi"
   },
-  "uiSave": { "message": "Kuusi" },
-  "uiSaving": { "message": "Kuusaa jira…" },
-  "uiReset": { "message": "Deebisi gara duraanii" },
-  "uiSaved": { "message": "Kuufame." },
-  "uiResetDone": { "message": "Deebifame." },
-  "uiConfirmHeader": { "message": "Mirkaneessa" },
-  "uiConfirmLabel": { "message": "Maxxansaawwan dabaluu dura gaafadhu" },
+  "uiSave": {
+    "message": "Olkaa'i"
+  },
+  "uiSaving": {
+    "message": "Olkaa'aa jira…"
+  },
+  "uiReset": {
+    "message": "Gatii duraanii deebisi"
+  },
+  "uiSaved": {
+    "message": "Olkaa'ame."
+  },
+  "uiResetDone": {
+    "message": "Deebise."
+  },
+  "uiConfirmHeader": {
+    "message": "Mirkaneessa"
+  },
+  "uiConfirmLabel": {
+    "message": "Faayiloota itti maxxanfaman dabaluu dura gaafadhu"
+  },
   "uiConfirmHelp": {
-    "message": "Sanduuqa xixiqqaan mirkaneessaa mul'ata yeroo maxxansaawwan dhugumaan dabalaman qofa. Kiiboordii: Y yookaan J = Eeyyee; N yookaan Esc = Lakki."
+    "message": "Yoo dhugumaan faayiloonni itti maxxanfaman dabalaman ta'an qofa, gaaffii mirkaneessaa xiqqaan ni mul'ata. Kiiboordii: Y yookaan J = Eeyyee; N yookaan Esc = Lakki."
   },
   "confirmAddOne": {
-    "message": "Maxxansa dabaluu: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Maxxansaawwan dabaluu ($1): $2$3?",
+    "message": "Faayila maxxanfamu dabaluu: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 dabalataa" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Eeyyee" },
-  "confirmNo": { "message": "Lakki" },
-  "warnBlacklistTitle": { "message": "Tarree gurraachaatiin haquame" },
-  "warnBlacklistIntro": { "message": "Faayilota armaan gadii ofumaan hin ida'aman:" },
-  "warnColFile": { "message": "Faayilii" },
-  "warnColPattern": { "message": "Pattern" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Deebii duraanii" },
-  "uiConfirmDefaultYes": { "message": "Eeyyee" },
-  "uiConfirmDefaultNo": { "message": "Lakki" },
+  "confirmAddMany": {
+    "message": "Faayiloota maxxanfaman ($1) dabaluu: $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Eeyyee"
+  },
+  "confirmNo": {
+    "message": "Lakki"
+  },
+  "warnBlacklistTitle": {
+    "message": "Tarree gurraachaan keessaa baasame"
+  },
+  "warnBlacklistIntro": {
+    "message": "Faayiloonni armaan gadii ofumaan hin itti maxxanfaman:"
+  },
+  "warnColFile": {
+    "message": "Faayila"
+  },
+  "warnColPattern": {
+    "message": "Patarnoo"
+  },
+  "warnOk": {
+    "message": "Tole"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Deebii duraanii"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Eeyyee"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Lakki"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

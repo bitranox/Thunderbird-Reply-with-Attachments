@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "homepage.meta.description": {
+    "message": "Add-on ng Thunderbird: Tumugon na kasama ang mga orihinal na kalakip"
+  },
+  "homepage.icon.alt": {
+    "message": "Icon ng RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Isama ang mga orihinal na kalakip kapag tumutugon sa Thunderbird — awtomatiko o pagkatapos ng mabilis na kumpirmasyon."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Buksan ang Dokumentasyon"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mabilis na Pagsisimula"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "I-install mula sa Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Mag-donate"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ano ang Bago"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Basahin ang pinakabagong mga pagbabago sa {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Tala ng mga Pagbabago"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Awtomatiko o Kumpirmahin Muna"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Pumili sa pagitan ng awtomatikong pagdaragdag o isang maliit na dialog ng kumpirmasyon na may kapaki-pakinabang na mga shortcut sa keyboard."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Matalinong Pag-alis ng mga Duplikado"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Iginagalang ang umiiral na mga kalakip at iniiwasan ang mga duplikado batay sa pangalan ng file—malinis at madaling asahan."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Laktawan ang SMIME at Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Hindi isinasama ang mga lagdang SMIME at mga larawang inline upang maging magaan ang mga tugon."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Mga Pattern sa Blacklist"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Ang mga glob pattern na hindi case‑sensitive gaya ng {code1} o {code2} ay pumipigil sa pagdaragdag ng mga hindi kailangang file."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Mga mabilis na link sa Dokumentasyon"
+  },
+  "homepage.quicklinks.install": {
+    "message": "I-install"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konpigurasyon"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Paggamit"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Pagkakatugma"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Suporta"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisensya"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Pindutin ang {slash} o {ctrl}+{k} para maghanap sa dokumentasyon."
+  },
+  "site.title": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "site.tagline": {
+    "message": "Add-on ng Thunderbird: Tumugon na kasama ang mga orihinal na kalakip"
+  },
+  "navbar.title": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "navbar.logo.alt": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "navbar.docs": {
+    "message": "Dokumentasyon"
+  },
+  "navbar.support": {
+    "message": "Suporta"
+  },
+  "navbar.license": {
+    "message": "Lisensya"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentasyon"
+  },
+  "footer.link.home": {
+    "message": "Home"
+  },
+  "footer.link.install": {
+    "message": "I-install"
+  },
+  "footer.section.project": {
+    "message": "Proyekto"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

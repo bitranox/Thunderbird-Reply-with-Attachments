@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird ଆଡ୍-ଅନ୍: ମୂଳ ଅଟାଚମେଣ୍ଟ ସମେତ ଉତ୍ତର"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ଆଇକନ୍"
+  },
+  "homepage.hero.title": {
+    "message": "ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird ରେ ଉତ୍ତର ଦେବାବେଳେ ମୂଳ ଅଟାଚମେଣ୍ଟଗୁଡିକୁ ଅନ୍ତର୍ଭୁକ୍ତ କରନ୍ତୁ — ସ୍ୱୟଂଚାଳିତ ଭାବେ କିମ୍ବା ତ୍ୱରିତ ନିଶ୍ଚିତିକରଣ ପରେ।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "ଦଳିଲପତ୍ର ଖୋଲନ୍ତୁ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ତ୍ୱରିତ ଆରମ୍ଭ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Add‑ons ରୁ ସ୍ଥାପନ କରନ୍ତୁ"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ଦାନ କରନ୍ତୁ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ନୂତନ କଣ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ସବୁଠୁ ନୂତନ ପରିବର୍ତ୍ତନଗୁଡିକୁ {changelog} ରେ ପଢନ୍ତୁ।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ପରିବର୍ତ୍ତନ ତାଲିକା"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ସ୍ୱୟଂଚାଳିତ କିମ୍ବା ପ୍ରଥମେ ନିଶ୍ଚିତିକରଣ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ସ୍ୱୟଂଚାଳିତ ଭାବେ ଯୋଡିବା କିମ୍ବା ଉପଯୁକ୍ତ କୀବୋର୍ଡ ଶର୍ଟକଟ୍ ସହିତ ଏକ ଛୋଟ ନିଶ୍ଚିତିକରଣ ଡାଏଲଗ୍ ମଧ୍ୟରୁ ପସନ୍ଦ କରନ୍ତୁ।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ସ୍ମାର୍ଟ ନକଲ ହଟାଇବା"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ପୂର୍ବରୁ ଥିବା ଅଟାଚମେଣ୍ଟଗୁଡିକୁ ଅବିକଳ ରଖେ ଏବଂ ଫାଇଲ୍ ନାମ ଆଧାରରେ ନକଲକୁ ଏଡ଼ାଇଥାଏ— ସୁଚିତ୍ର ଏବଂ ପୂର୍ବାନୁମାନ ଯୋଗ୍ୟ।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ଏବଂ ଇନ୍ଲାଇନ୍ ଏଡ଼ାନ୍ତୁ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ଉତ୍ତରଗୁଡିକୁ ସଂକ୍ଷିପ୍ତ ରଖିବା ପାଇଁ SMIME ସହି ଏବଂ ଇନ୍ଲାଇନ୍ ଛବିଗୁଡିକୁ ଅନ୍ତର୍ଭୁକ୍ତ କରାଯାଏ ନାହିଁ।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ବ୍ଲାକଲିଷ୍ଟ ପ୍ୟାଟର୍ନଗୁଡିକ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "କେସ୍-ଅସମ୍ବେଦନଶୀଳ ଗ୍ଲୋବ୍ ପ୍ୟାଟର୍ନ, ଯେପରି {code1} କିମ୍ବା {code2}, ଅନାବଶ୍ୟକ ଫାଇଲ୍ ଯୋଡ଼ାଯିବାକୁ ରୋକେ।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "ଦଳିଲପତ୍ର ପାଇଁ ଶୀଘ୍ର ଲିଙ୍କଗୁଡିକ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ସ୍ଥାପନ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ବିନ୍ୟାସ"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ବ୍ୟବହାର"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ସଂଗତି"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ସମର୍ଥନ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ଲାଇସେନ୍ସ"
+  },
+  "homepage.search.tip": {
+    "message": "ସୁପରିଶ: ଦଳିଲପତ୍ର ଖୋଜିବା ପାଇଁ {slash} କିମ୍ବା {ctrl}+{k} ଦବାନ୍ତୁ।"
+  },
+  "site.title": {
+    "message": "ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  },
+  "site.tagline": {
+    "message": "Thunderbird ଆଡ୍-ଅନ୍: ମୂଳ ଅଟାଚମେଣ୍ଟ ସମେତ ଉତ୍ତର"
+  },
+  "navbar.title": {
+    "message": "ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  },
+  "navbar.logo.alt": {
+    "message": "ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  },
+  "navbar.docs": {
+    "message": "ଦଳିଲପତ୍ର"
+  },
+  "navbar.support": {
+    "message": "ସମର୍ଥନ"
+  },
+  "navbar.license": {
+    "message": "ଲାଇସେନ୍ସ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ଦଳିଲପତ୍ର"
+  },
+  "footer.link.home": {
+    "message": "ମୁଖ୍ୟ ପୃଷ୍ଠା"
+  },
+  "footer.link.install": {
+    "message": "ସ୍ଥାପନ"
+  },
+  "footer.section.project": {
+    "message": "ପ୍ରକଳ୍ପ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ଅଟାଚମେଣ୍ଟ ସହିତ ଉତ୍ତର"
+  }
+}

@@ -1,64 +1,132 @@
 {
-  "extName": { "message": "Sumagot na may mga attachment" },
+  "extName": {
+    "message": "Tumugon na may mga Kalakip"
+  },
   "extDescription": {
-    "message": "Awtomatikong idinadagdag ang mga orihinal na attachment sa mga tugon sa email."
+    "message": "Awtomatikong isama ang mga orihinal na kalakip sa mga tugon sa email."
   },
-  "composeTitle": { "message": "Sumagot na may mga attachment" },
-  "optionsTitle": { "message": "Sumagot na may mga attachment — Mga Opsyon" },
-  "confirmTitle": { "message": "Kumpirmahin ang mga attachment" },
-  "uiHeader": { "message": "Sumagot na may mga attachment" },
-  "uiNoOptions": { "message": "Walang mga opsyon na iko‑configure sa kasalukuyan." },
+  "composeTitle": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "optionsTitle": {
+    "message": "Tumugon na may mga Kalakip — Mga Opsyon"
+  },
+  "confirmTitle": {
+    "message": "Kumpirmahin ang mga Kalakip"
+  },
+  "uiHeader": {
+    "message": "Tumugon na may mga Kalakip"
+  },
+  "uiNoOptions": {
+    "message": "Sa ngayon, walang mga opsyon na maaaring i-configure."
+  },
   "uiSupport": {
-    "message": "Gusto mo ba ang add‑on na ito? Suportahan ako sa isang maliit na donasyon:"
+    "message": "Gusto mo ba ang add-on na ito? Suportahan ako sa pamamagitan ng maliit na ambag:"
   },
-  "uiDonate": { "message": "Mag‑donate ngayon" },
+  "uiDonate": {
+    "message": "Mag-donate ngayon"
+  },
   "uiGithubText": {
-    "message": "Para sa mga bug report o iba pang tanong, mangyaring bisitahin ang aking"
+    "message": "Para sa mga ulat ng bug o iba pang katanungan, pakibisita ang aking"
   },
-  "uiGithubLinkLabel": { "message": "pahinang GitHub" },
-  "iconAlt": { "message": "Icon ng Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Blacklist ng mga filename (mga pattern na glob)" },
+  "uiGithubLinkLabel": {
+    "message": "pahinang GitHub"
+  },
+  "iconAlt": {
+    "message": "Icon ng Tumugon na may mga Kalakip"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Blacklist ng mga filename (glob patterns)"
+  },
   "uiBlacklistHelp": {
-    "message": "Ang mga file na tumutugma sa alinman sa mga pattern na ito ay hindi kailanman awtomatikong idinadagdag. Isang pattern bawat linya. Mga halimbawa: *.png, smime.*, *.p7s"
+    "message": "Ang mga file na ang mga pangalan ay tumutugma sa alinman sa mga pattern na ito ay hindi kailanman awtomatikong ikakabit. Isang pattern bawat linya. Mga halimbawa: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Magbabala kung na‑exclude ang mga attachment ng blacklist"
+    "message": "Magbabala kung hindi maisasama ang mga kalakip dahil sa blacklist"
   },
-  "uiSave": { "message": "I‑save" },
-  "uiSaving": { "message": "Nagsa‑save…" },
-  "uiReset": { "message": "Ibalik sa default" },
-  "uiSaved": { "message": "Na‑save." },
-  "uiResetDone": { "message": "Na‑reset." },
-  "uiConfirmHeader": { "message": "Kumpirmasyon" },
-  "uiConfirmLabel": { "message": "Magtanong bago magdagdag ng mga attachment" },
+  "uiSave": {
+    "message": "I-save"
+  },
+  "uiSaving": {
+    "message": "Sine-save…"
+  },
+  "uiReset": {
+    "message": "I-reset sa mga default"
+  },
+  "uiSaved": {
+    "message": "Na-save."
+  },
+  "uiResetDone": {
+    "message": "Na-reset."
+  },
+  "uiConfirmHeader": {
+    "message": "Kumpirmasyon"
+  },
+  "uiConfirmLabel": {
+    "message": "Magtanong bago magdagdag ng mga kalakip"
+  },
   "uiConfirmHelp": {
-    "message": "Lalabas lamang ang maliit na dialog ng kumpirmasyon kapag talagang may idadagdag na mga attachment. Keyboard: Y o J = Oo; N o Esc = Hindi."
+    "message": "Lalabas lamang ang isang maliit na dialog ng kumpirmasyon kapag talagang may idadagdag na mga kalakip. Keyboard: Y o J = Oo; N o Esc = Hindi."
   },
   "confirmAddOne": {
-    "message": "Magdagdag ng attachment: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Magdagdag ng mga attachment ($1): $2$3?",
+    "message": "Idagdag ang kalakip: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 pa" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Oo" },
-  "confirmNo": { "message": "Hindi" },
-  "warnBlacklistTitle": { "message": "Na‑exclude ng blacklist" },
-  "warnBlacklistIntro": { "message": "Ang mga sumusunod na file ay hindi awtomatikong idadagdag:" },
-  "warnColFile": { "message": "File" },
-  "warnColPattern": { "message": "Pattern" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Default na sagot" },
-  "uiConfirmDefaultYes": { "message": "Oo" },
-  "uiConfirmDefaultNo": { "message": "Hindi" },
+  "confirmAddMany": {
+    "message": "Idagdag ang mga kalakip ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Oo"
+  },
+  "confirmNo": {
+    "message": "Hindi"
+  },
+  "warnBlacklistTitle": {
+    "message": "Hindi isinama dahil sa blacklist"
+  },
+  "warnBlacklistIntro": {
+    "message": "Ang mga sumusunod na file ay hindi awtomatikong ikakabit:"
+  },
+  "warnColFile": {
+    "message": "File"
+  },
+  "warnColPattern": {
+    "message": "Pattern"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Default na sagot"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Oo"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Hindi"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

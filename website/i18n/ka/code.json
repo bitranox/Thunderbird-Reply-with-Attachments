@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "პასუხი დანართებით"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-ის დამატება: პასუხი ორიგინალი დანართების ჩართვით"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ხატულა"
+  },
+  "homepage.hero.title": {
+    "message": "პასუხი დანართებით"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird-ში პასუხისას ჩართეთ ორიგინალი დანართები — ავტომატურად ან სწრაფი ਦადასტურების შემდეგ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "დოკუმენტაციის გახსნა"
+  },
+  "homepage.cta.quickstart": {
+    "message": "სწრაფი დაწყება"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "დაყენება Add‑ons-დან"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "დონაცია"
+  },
+  "homepage.whatsNew.title": {
+    "message": "რა არის ახალი"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "წაიკითხეთ ბოლო ცვლილებები {changelog}-ში."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ცვლილებების ჟურნალი"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ავტომატური ან წინასწარი დადასტურება"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "აირჩიეთ ავტომატური დამატება ან მცირე დასადასტურებელი ფანჯარა მოსახერხებელი კლავიატურის მალსახმობებით."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ჭკვიანი დუბლიკატების მოცილება"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "არსებულ დანართებს ითვალისწინებს და ფაილის სახელების მიხედვით დუბლიკატებს თავიდან იცილებს — სუფთა და პროგნოზირებადი."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME-ისა და ინლაინ-ობიექტების გამოტოვება"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "პასუხები რომ მსუბუქი იყოს, SMIME-ხელმოწერები და ინლაინ-სურათები გამოირიცხება."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "შავი სიის ნიმუშები"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "რეგისტრზე არამგრძნობიარე glob-ნიმუშები, როგორიცაა {code1} ან {code2}, ხმაურიანი ფაილების დამატებას უშლის ხელს."
+  },
+  "homepage.quicklinks.title": {
+    "message": "დოკუმენტაციის სწრაფი ბმულები"
+  },
+  "homepage.quicklinks.install": {
+    "message": "დაყენება"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "კონფიგურაცია"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "გამოყენება"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "თავსებადობა"
+  },
+  "homepage.quicklinks.support": {
+    "message": "მხარდაჭერა"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ლიცენზია"
+  },
+  "homepage.search.tip": {
+    "message": "რჩევა: დოკუმენტაციაში საძიებლად დააჭირეთ {slash} ან {ctrl}+{k}."
+  },
+  "site.title": {
+    "message": "პასუხი დანართებით"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-ის დამატება: პასუხი ორიგინალი დანართების ჩართვით"
+  },
+  "navbar.title": {
+    "message": "პასუხი დანართებით"
+  },
+  "navbar.logo.alt": {
+    "message": "პასუხი დანართებით"
+  },
+  "navbar.docs": {
+    "message": "დოკუმენტაცია"
+  },
+  "navbar.support": {
+    "message": "მხარდაჭერა"
+  },
+  "navbar.license": {
+    "message": "ლიცენზია"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "დოკუმენტაცია"
+  },
+  "footer.link.home": {
+    "message": "მთავარი"
+  },
+  "footer.link.install": {
+    "message": "დაყენება"
+  },
+  "footer.section.project": {
+    "message": "პროექტი"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} პასუხი დანართებით"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "description": "---",
   "source": "@site/docs/support.md",
   "sourceDirName": ".",
   "slug": "/support",

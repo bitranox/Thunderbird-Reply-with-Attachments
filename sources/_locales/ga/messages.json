@@ -1,64 +1,132 @@
 {
-  "extName": { "message": "Freagair le ceangaltáin" },
+  "extName": {
+    "message": "Freagair le hIatáin"
+  },
   "extDescription": {
-    "message": "Cuirtear na ceangaltáin bhunaidh leis go huathoibríoch i bhfreagraí ríomhphoist."
+    "message": "Cuir na hiatáin bunaidh leis go huathoibríoch i bhfreagraí ríomhphoist."
   },
-  "composeTitle": { "message": "Freagair le ceangaltáin" },
-  "optionsTitle": { "message": "Freagair le ceangaltáin — Roghanna" },
-  "confirmTitle": { "message": "Deimhnigh ceangaltáin" },
-  "uiHeader": { "message": "Freagair le ceangaltáin" },
-  "uiNoOptions": { "message": "Níl aon roghanna le cumrú faoi láthair." },
-  "uiSupport": { "message": "An maith leat an breiseán seo? Tacaigh liom le síntiús beag:" },
-  "uiDonate": { "message": "Deonaigh anois" },
+  "composeTitle": {
+    "message": "Freagair le hIatáin"
+  },
+  "optionsTitle": {
+    "message": "Freagair le hIatáin — Roghanna"
+  },
+  "confirmTitle": {
+    "message": "Deimhnigh Iatáin"
+  },
+  "uiHeader": {
+    "message": "Freagair le hIatáin"
+  },
+  "uiNoOptions": {
+    "message": "Níl aon roghanna le cumrú faoi láthair."
+  },
+  "uiSupport": {
+    "message": "An maith leat an breiseán seo? Tacaigh liom le síntiús beag:"
+  },
+  "uiDonate": {
+    "message": "Tabhair síntiús anois"
+  },
   "uiGithubText": {
-    "message": "Chun fabhtanna a thuairisciú nó le haghaidh ceisteanna eile, tabhair cuairt ar mo"
+    "message": "Le haghaidh tuairiscí fabhtanna nó fiosruithe eile, tabhair cuairt ar mo"
   },
-  "uiGithubLinkLabel": { "message": "leathanach GitHub" },
-  "iconAlt": { "message": "Deilbhín Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Liosta dubh d’ainmneacha comhad (patrúin glob)" },
+  "uiGithubLinkLabel": {
+    "message": "leathanach GitHub"
+  },
+  "iconAlt": {
+    "message": "Deilbhín Freagair le hIatáin"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Liosta dubh d’ainmneacha comhaid (patrúin glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Ní chuirfear comhaid a mheaitseálann aon cheann de na patrúin seo leis go huathoibríoch riamh. Patrún amháin sa líne. Samplaí: *.png, smime.*, *.p7s"
+    "message": "Ní chuirfear comhaid mar iatáin go huathoibríoch riamh má mheaitseálann a n-ainmneacha aon cheann de na patrúin seo. Patrún amháin sa líne. Samplaí: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Tabhair rabhadh má eisiatar ceangaltáin de bharr an liosta dhubh"
+    "message": "Tabhair rabhadh má eisiatar iatáin de bharr an liosta dubh"
   },
-  "uiSave": { "message": "Sábháil" },
-  "uiSaving": { "message": "Á shábháil…" },
-  "uiReset": { "message": "Athshocraigh go réamhshocruithe" },
-  "uiSaved": { "message": "Sábhálta." },
-  "uiResetDone": { "message": "Athshocraithe." },
-  "uiConfirmHeader": { "message": "Deimhniú" },
-  "uiConfirmLabel": { "message": "Fiafraigh sula gcuirtear ceangaltáin leis" },
+  "uiSave": {
+    "message": "Sábháil"
+  },
+  "uiSaving": {
+    "message": "Á shábháil…"
+  },
+  "uiReset": {
+    "message": "Athshocraigh chuig na réamhshocruithe"
+  },
+  "uiSaved": {
+    "message": "Sábháilte."
+  },
+  "uiResetDone": {
+    "message": "Athshocraithe."
+  },
+  "uiConfirmHeader": {
+    "message": "Deimhniú"
+  },
+  "uiConfirmLabel": {
+    "message": "Fiafraigh sula gcuirfear iatáin leis"
+  },
   "uiConfirmHelp": {
-    "message": "Ní thaispeántar dialóg bheag dheimhnithe ach nuair a chuirfí ceangaltáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
+    "message": "Ní thaispeántar dialóg bheag deimhnithe ach amháin nuair a chuirfí iatáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
   },
   "confirmAddOne": {
-    "message": "Cuir ceangaltán leis: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Cuir ceangaltáin leis ($1): $2$3?",
+    "message": "Cuir iatán leis: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 eile" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Tá" },
-  "confirmNo": { "message": "Níl" },
-  "warnBlacklistTitle": { "message": "Eisiata ag an liosta dhubh" },
-  "warnBlacklistIntro": {
-    "message": "Ní chuirfear na comhaid seo a leanas leis go huathoibríoch:"
+  "confirmAddMany": {
+    "message": "Cuir iatáin leis ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
   },
-  "warnColFile": { "message": "Comhad" },
-  "warnColPattern": { "message": "Patrún" },
-  "warnOk": { "message": "Ceart go leor" },
-  "uiConfirmDefaultHeader": { "message": "Freagra réamhshocraithe" },
-  "uiConfirmDefaultYes": { "message": "Tá" },
-  "uiConfirmDefaultNo": { "message": "Níl" },
+  "confirmYes": {
+    "message": "Tá"
+  },
+  "confirmNo": {
+    "message": "Níl"
+  },
+  "warnBlacklistTitle": {
+    "message": "Eisiata ag an liosta dubh"
+  },
+  "warnBlacklistIntro": {
+    "message": "Ní chuirfear na comhaid seo a leanas mar iatáin go huathoibríoch:"
+  },
+  "warnColFile": {
+    "message": "Comhad"
+  },
+  "warnColPattern": {
+    "message": "Patrún"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Freagra réamhshocraithe"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Tá"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Níl"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

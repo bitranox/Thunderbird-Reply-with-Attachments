@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Features",
-  "description": "Features",
+  "description": "---",
   "source": "@site/docs/features.md",
   "sourceDirName": ".",
   "slug": "/features",

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird アドオン: 返信時に元の添付ファイルを含める"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA アイコン"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird で返信するとき、元の添付ファイルを自動的に、または簡単な確認後に含めます。"
+  },
+  "homepage.cta.openDocs": {
+    "message": "ドキュメントを開く"
+  },
+  "homepage.cta.quickstart": {
+    "message": "クイックスタート"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "アドオンからインストール"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "寄付"
+  },
+  "homepage.whatsNew.title": {
+    "message": "最新情報"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "最新の変更は {changelog} でご覧ください。"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "変更履歴"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "自動追加 または 事前確認"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "自動追加と、便利なキーボードショートカットが使える小さな確認ダイアログのどちらかを選べます。"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "スマートな重複排除"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "既存の添付ファイルを尊重し、ファイル名で重複を回避。動作はクリーンで予測可能です。"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME とインラインをスキップ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "返信をシンプルに保つため、SMIME 署名やインライン画像は除外されます。"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ブラックリストパターン"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "大文字小文字を区別しないグロブパターン（{code1} や {code2} など）で、不要なファイルの追加を防げます。"
+  },
+  "homepage.quicklinks.title": {
+    "message": "ドキュメントへのクイックリンク"
+  },
+  "homepage.quicklinks.install": {
+    "message": "インストール"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "設定"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "使い方"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "互換性"
+  },
+  "homepage.quicklinks.support": {
+    "message": "サポート"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ライセンス"
+  },
+  "homepage.search.tip": {
+    "message": "ヒント: {slash} または {ctrl}+{k} を押すとドキュメントを検索できます。"
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird アドオン: 返信時に元の添付ファイルを含める"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "ドキュメント"
+  },
+  "navbar.support": {
+    "message": "サポート"
+  },
+  "navbar.license": {
+    "message": "ライセンス"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ドキュメント"
+  },
+  "footer.link.home": {
+    "message": "ホーム"
+  },
+  "footer.link.install": {
+    "message": "インストール"
+  },
+  "footer.section.project": {
+    "message": "プロジェクト"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

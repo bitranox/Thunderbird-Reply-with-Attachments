@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird ऐड‑ऑन: जवाब देते समय मूल संलग्नक शामिल करें"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA आइकन"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird में उत्तर देते समय मूल संलग्नकों को शामिल करें — स्वचालित रूप से या एक त्वरित पुष्टि के बाद।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "डॉक्स खोलें"
+  },
+  "homepage.cta.quickstart": {
+    "message": "त्वरित आरंभ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ऐड‑ऑन्स से इंस्टॉल करें"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "दान करें"
+  },
+  "homepage.whatsNew.title": {
+    "message": "नया क्या है"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "नवीनतम परिवर्तन {changelog} में पढ़ें।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "चेंजलॉग"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "स्वचालित या पहले पुष्टि"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "स्वचालित रूप से जोड़ने और सुविधाजनक कीबोर्ड शॉर्टकट के साथ एक छोटे पुष्टि संवाद के बीच चुनें।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "स्मार्ट डी‑डुप्लीकेशन"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "मौजूदा संलग्नकों का ध्यान रखता है और फ़ाइलनाम के आधार पर डुप्लीकेट से बचता है — साफ़ और पूर्वानुमेय।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME और इनलाइन छोड़ें"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "उत्तर हल्के रखने के लिए SMIME हस्ताक्षर और इनलाइन छवियां बाहर रखी जाती हैं।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ब्लैकलिस्ट पैटर्न"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "केस‑इनसेंसिटिव ग्लोब पैटर्न, जैसे {code1} या {code2}, शोर वाली फ़ाइलें जोड़ने से रोकते हैं।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "डॉक्स के त्वरित लिंक"
+  },
+  "homepage.quicklinks.install": {
+    "message": "इंस्टॉल"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "कॉन्फ़िगरेशन"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "उपयोग"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "संगतता"
+  },
+  "homepage.quicklinks.support": {
+    "message": "सहायता"
+  },
+  "homepage.quicklinks.license": {
+    "message": "लाइसेंस"
+  },
+  "homepage.search.tip": {
+    "message": "टिप: डॉक्स खोजने के लिए {slash} या {ctrl}+{k} दबाएँ।"
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird ऐड‑ऑन: जवाब देते समय मूल संलग्नक शामिल करें"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "डॉक्स"
+  },
+  "navbar.support": {
+    "message": "सहायता"
+  },
+  "navbar.license": {
+    "message": "लाइसेंस"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "डॉक्स"
+  },
+  "footer.link.home": {
+    "message": "होम"
+  },
+  "footer.link.install": {
+    "message": "इंस्टॉल"
+  },
+  "footer.section.project": {
+    "message": "प्रोजेक्ट"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

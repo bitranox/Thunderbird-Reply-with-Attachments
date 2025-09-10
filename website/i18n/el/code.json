@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Απάντηση με συνημμένα"
+  },
+  "homepage.meta.description": {
+    "message": "Πρόσθετο Thunderbird: Απάντηση με τα αρχικά συνημμένα"
+  },
+  "homepage.icon.alt": {
+    "message": "Εικονίδιο RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Απάντηση με συνημμένα"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Συμπεριλάβετε τα αρχικά συνημμένα όταν απαντάτε στο Thunderbird — αυτόματα ή μετά από μια γρήγορη επιβεβαίωση."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Άνοιγμα τεκμηρίωσης"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Γρήγορη εκκίνηση"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Εγκατάσταση από τα Πρόσθετα"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Δωρεά"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Τι νέο υπάρχει"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Διαβάστε τις πιο πρόσφατες αλλαγές στο {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Ιστορικό αλλαγών"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Αυτόματο ή με προηγούμενη επιβεβαίωση"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Επιλέξτε ανάμεσα σε αυτόματη προσθήκη ή σε ένα μικρό παράθυρο επιβεβαίωσης με εύχρηστες συντομεύσεις πληκτρολογίου."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Έξυπνη αποφυγή διπλοτύπων"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Σέβεται τα υπάρχοντα συνημμένα και αποφεύγει τα διπλότυπα βάσει ονόματος αρχείου, καθαρά και προβλέψιμα."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Παράλειψη SMIME και ενσωματωμένων"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Οι υπογραφές SMIME και οι ενσωματωμένες εικόνες εξαιρούνται ώστε οι απαντήσεις να παραμένουν ελαφριές."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Μοτίβα μαύρης λίστας"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Μοτίβα glob χωρίς διάκριση πεζών/κεφαλαίων, όπως {code1} ή {code2}, αποτρέπουν την προσθήκη περιττών αρχείων."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Γρήγοροι σύνδεσμοι τεκμηρίωσης"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Εγκατάσταση"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Ρύθμιση"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Χρήση"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Συμβατότητα"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Υποστήριξη"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Άδεια"
+  },
+  "homepage.search.tip": {
+    "message": "Συμβουλή: Πατήστε {slash} ή {ctrl}+{k} για αναζήτηση στην τεκμηρίωση."
+  },
+  "site.title": {
+    "message": "Απάντηση με συνημμένα"
+  },
+  "site.tagline": {
+    "message": "Πρόσθετο Thunderbird: Απάντηση με τα αρχικά συνημμένα"
+  },
+  "navbar.title": {
+    "message": "Απάντηση με συνημμένα"
+  },
+  "navbar.logo.alt": {
+    "message": "Απάντηση με συνημμένα"
+  },
+  "navbar.docs": {
+    "message": "Τεκμηρίωση"
+  },
+  "navbar.support": {
+    "message": "Υποστήριξη"
+  },
+  "navbar.license": {
+    "message": "Άδεια"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Τεκμηρίωση"
+  },
+  "footer.link.home": {
+    "message": "Αρχική"
+  },
+  "footer.link.install": {
+    "message": "Εγκατάσταση"
+  },
+  "footer.section.project": {
+    "message": "Έργο"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Απάντηση με συνημμένα"
+  }
+}

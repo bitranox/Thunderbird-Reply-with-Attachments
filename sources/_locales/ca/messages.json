@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Respondre amb adjunts" },
+  "extName": {
+    "message": "Respondre amb adjunts"
+  },
   "extDescription": {
-    "message": "Afegeix automàticament els adjunts originals a les respostes de correu."
+    "message": "Inclou automàticament els adjunts originals en les respostes de correu."
   },
-  "composeTitle": { "message": "Respondre amb adjunts" },
-  "optionsTitle": { "message": "Respondre amb adjunts — Opcions" },
-  "confirmTitle": { "message": "Confirma els adjunts" },
-  "uiHeader": { "message": "Respondre amb adjunts" },
-  "uiNoOptions": { "message": "Actualment no hi ha opcions per configurar." },
-  "uiSupport": { "message": "T'agrada aquest complement? Dona suport amb una petita donació:" },
-  "uiDonate": { "message": "Dona ara" },
-  "uiGithubText": { "message": "Per a informes d'errors o altres consultes, visita la meva" },
-  "uiGithubLinkLabel": { "message": "pàgina de GitHub" },
-  "iconAlt": { "message": "Icona de Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Llista negra de noms de fitxer (patrons glob)" },
+  "composeTitle": {
+    "message": "Respondre amb adjunts"
+  },
+  "optionsTitle": {
+    "message": "Respondre amb adjunts — Opcions"
+  },
+  "confirmTitle": {
+    "message": "Confirmació dels adjunts"
+  },
+  "uiHeader": {
+    "message": "Respondre amb adjunts"
+  },
+  "uiNoOptions": {
+    "message": "Actualment no hi ha opcions per configurar."
+  },
+  "uiSupport": {
+    "message": "Us agrada aquest complement? Doneu-me suport amb una petita contribució:"
+  },
+  "uiDonate": {
+    "message": "Feu una donació ara"
+  },
+  "uiGithubText": {
+    "message": "Per informar d'errors o altres consultes, visiteu la meva"
+  },
+  "uiGithubLinkLabel": {
+    "message": "pàgina de GitHub"
+  },
+  "iconAlt": {
+    "message": "Icona de Respondre amb adjunts"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Llista negra de noms de fitxer (patrons glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Els fitxers amb un nom que coincideixi amb qualsevol d'aquests patrons no s'adjuntaran mai automàticament. Un patró per línia. Exemples: *.png, smime.*, *.p7s"
+    "message": "Els fitxers amb noms que coincideixin amb qualsevol d’aquests patrons no s’adjuntaran mai automàticament. Un patró per línia. Exemples: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Avisa si els adjunts s'exclouen per la llista negra" },
-  "uiSave": { "message": "Desa" },
-  "uiSaving": { "message": "Desant…" },
-  "uiReset": { "message": "Restaura valors per defecte" },
-  "uiSaved": { "message": "Desat." },
-  "uiResetDone": { "message": "Restaurat." },
-  "uiConfirmHeader": { "message": "Confirmació" },
-  "uiConfirmLabel": { "message": "Pregunta abans d'afegir adjunts" },
+  "uiWarnBlacklistLabel": {
+    "message": "Avisa si la llista negra exclou adjunts"
+  },
+  "uiSave": {
+    "message": "Desa"
+  },
+  "uiSaving": {
+    "message": "Desant…"
+  },
+  "uiReset": {
+    "message": "Restableix els valors per defecte"
+  },
+  "uiSaved": {
+    "message": "Desat."
+  },
+  "uiResetDone": {
+    "message": "Restablert."
+  },
+  "uiConfirmHeader": {
+    "message": "Confirmació"
+  },
+  "uiConfirmLabel": {
+    "message": "Pregunta abans d'afegir els adjunts"
+  },
   "uiConfirmHelp": {
-    "message": "Un petit diàleg de confirmació només apareix quan realment s'afegirien adjunts. Teclat: Y o J = Sí; N o Esc = No."
+    "message": "Només apareix un petit diàleg de confirmació quan realment s'hagin d'afegir adjunts. Teclat: Y o J = Sí; N o Esc = No."
   },
   "confirmAddOne": {
-    "message": "Afegir adjunt: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "message": "Afegir l'adjunt: $1?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Afegir adjunts ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 més" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Sí" },
-  "confirmNo": { "message": "No" },
-  "warnBlacklistTitle": { "message": "Exclòs per la llista negra" },
-  "warnBlacklistIntro": { "message": "Els fitxers següents no s'adjuntaran automàticament:" },
-  "warnColFile": { "message": "Fitxer" },
-  "warnColPattern": { "message": "Patró" },
-  "warnOk": { "message": "D'acord" },
-  "uiConfirmDefaultHeader": { "message": "Resposta per defecte" },
-  "uiConfirmDefaultYes": { "message": "Sí" },
-  "uiConfirmDefaultNo": { "message": "No" },
+  "confirmYes": {
+    "message": "Sí"
+  },
+  "confirmNo": {
+    "message": "No"
+  },
+  "warnBlacklistTitle": {
+    "message": "Exclosos per la llista negra"
+  },
+  "warnBlacklistIntro": {
+    "message": "Els fitxers següents no s'adjuntaran automàticament:"
+  },
+  "warnColFile": {
+    "message": "Fitxer"
+  },
+  "warnColPattern": {
+    "message": "Patró"
+  },
+  "warnOk": {
+    "message": "D'acord"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Resposta per defecte"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Sí"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "No"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

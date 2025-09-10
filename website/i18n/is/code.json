@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Svara með viðhengjum"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird viðbót: svar með upprunalegum viðhengjum"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA táknmynd"
+  },
+  "homepage.hero.title": {
+    "message": "Svara með viðhengjum"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Bættu upprunalegum viðhengjum við þegar þú svarar í Thunderbird — sjálfvirkt eða eftir skjóta staðfestingu."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Opna skjölun"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Hraðbyrjun"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Setja upp úr viðbótum"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Styrkja"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Hvað er nýtt"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lestu nýjustu breytingarnar í {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Breytingaskrá"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Sjálfvirkt eða staðfesta fyrst"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Veldu á milli þess að bæta þeim við sjálfvirkt, eða fá lítinn staðfestingarglugga með þægilegum flýtilyklum."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Snjöll tvítekningarvörn"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Virðir fyrirliggjandi viðhengi og forðast tvítekningar eftir skráarheiti; hreint og fyrirsjáanlegt."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Sleppir SMIME og innfelldu efni"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME‑undirskriftum og innfelldum myndum er sleppt til að halda svörum léttum."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Svartlistamynstur"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob‑mynstur sem eru óháð há- og lágstöfum, eins og {code1} eða {code2}, koma í veg fyrir að bætt sé við óþarfa skrám."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Flýtitenglar í skjölun"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Uppsetning"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Stillingar"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Notkun"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Samhæfni"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Aðstoð"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Notkunarleyfi"
+  },
+  "homepage.search.tip": {
+    "message": "Ábending: Ýttu á {slash} eða {ctrl}+{k} til að leita í skjöluninni."
+  },
+  "site.title": {
+    "message": "Svara með viðhengjum"
+  },
+  "site.tagline": {
+    "message": "Thunderbird viðbót: svar með upprunalegum viðhengjum"
+  },
+  "navbar.title": {
+    "message": "Svara með viðhengjum"
+  },
+  "navbar.logo.alt": {
+    "message": "Svara með viðhengjum"
+  },
+  "navbar.docs": {
+    "message": "Skjölun"
+  },
+  "navbar.support": {
+    "message": "Aðstoð"
+  },
+  "navbar.license": {
+    "message": "Notkunarleyfi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Skjölun"
+  },
+  "footer.link.home": {
+    "message": "Heim"
+  },
+  "footer.link.install": {
+    "message": "Uppsetning"
+  },
+  "footer.section.project": {
+    "message": "Verkefni"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Svara með viðhengjum"
+  }
+}

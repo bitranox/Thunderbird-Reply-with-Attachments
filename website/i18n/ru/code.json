@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Ответ с вложениями"
+  },
+  "homepage.meta.description": {
+    "message": "Дополнение Thunderbird: ответ с исходными вложениями"
+  },
+  "homepage.icon.alt": {
+    "message": "Значок RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Ответ с вложениями"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Добавляйте исходные вложения при ответе в Thunderbird — автоматически или после быстрого подтверждения."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Открыть документацию"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Быстрый старт"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Установить из каталога дополнений"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Пожертвовать"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Что нового"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Читайте о последних изменениях в {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Журнал изменений"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автоматически или с подтверждением"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Выбирайте между автоматическим добавлением или небольшим диалогом подтверждения с удобными сочетаниями клавиш."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Умное удаление дубликатов"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Учитывает уже добавленные вложения и избегает дубликатов по имени файла — просто и предсказуемо."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Пропуск SMIME и встроенных изображений"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Подписи SMIME и встроенные изображения исключаются, чтобы сделать ответы компактными."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Шаблоны черного списка"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Шаблоны glob без учета регистра, например {code1} или {code2}, не допускают добавления лишних файлов."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Быстрые ссылки по документации"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Установка"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Настройка"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Использование"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Совместимость"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Поддержка"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Лицензия"
+  },
+  "homepage.search.tip": {
+    "message": "Совет: нажмите {slash} или {ctrl}+{k}, чтобы искать по документации."
+  },
+  "site.title": {
+    "message": "Ответ с вложениями"
+  },
+  "site.tagline": {
+    "message": "Дополнение Thunderbird: ответ с исходными вложениями"
+  },
+  "navbar.title": {
+    "message": "Ответ с вложениями"
+  },
+  "navbar.logo.alt": {
+    "message": "Ответ с вложениями"
+  },
+  "navbar.docs": {
+    "message": "Документация"
+  },
+  "navbar.support": {
+    "message": "Поддержка"
+  },
+  "navbar.license": {
+    "message": "Лицензия"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Документация"
+  },
+  "footer.link.home": {
+    "message": "Главная"
+  },
+  "footer.link.install": {
+    "message": "Установка"
+  },
+  "footer.section.project": {
+    "message": "Проект"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Ответ с вложениями"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "homepage.meta.description": {
+    "message": "Add‑on Thunderbird: Mbales kalebu lampiran asli"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikon RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Kalebu lampiran asli nalika mbales ing Thunderbird — kanthi otomatis utawa sawisé konfirmasi cepet."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Bukak Dokumentasi"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mulai Cepet"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Pasang saka Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Nyumbang"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Sing Anyar"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Waca owah-owahan paling anyar ing {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Cathetan Owah-owahan"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatis utawa Konfirmasi Dhisik"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Pilih antarane nambah otomatis utawa dialog konfirmasi cilik kanthi pintasan keyboard sing migunani."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "De‑duplikasi Pinter"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ngormati lampiran sing wis ana lan nyingkiri duplikat adhedhasar jeneng file, resik lan bisa ditebak."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Lewati SMIME lan Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Tandha tangan SMIME lan gambar inline ora kalebu supaya wangsulan tetep entheng."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Pola Dhaftar Ireng"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Pola glob tanpa mbedakaké huruf gedhé‑cilik kaya {code1} utawa {code2} nyegah nambah file sing ngganggu."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Pranala Cepet Dokumentasi"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Pasang"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasi"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Panggunaan"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilitas"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Dhukungan"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisensi"
+  },
+  "homepage.search.tip": {
+    "message": "Tips: Pencet {slash} utawa {ctrl}+{k} kanggo nggoleki dokumentasi."
+  },
+  "site.title": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "site.tagline": {
+    "message": "Add‑on Thunderbird: Mbales kalebu lampiran asli"
+  },
+  "navbar.title": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "navbar.logo.alt": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "navbar.docs": {
+    "message": "Dokumentasi"
+  },
+  "navbar.support": {
+    "message": "Dhukungan"
+  },
+  "navbar.license": {
+    "message": "Lisensi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentasi"
+  },
+  "footer.link.home": {
+    "message": "Kaca Ngarep"
+  },
+  "footer.link.install": {
+    "message": "Pasang"
+  },
+  "footer.section.project": {
+    "message": "Proyek"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Mbales nganggo Lampiran"
+  }
+}

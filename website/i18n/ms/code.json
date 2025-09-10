@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Balas dengan Lampiran"
+  },
+  "homepage.meta.description": {
+    "message": "Pengaya Thunderbird: Balas termasuk lampiran asal"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikon RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Balas dengan Lampiran"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Sertakan lampiran asal apabila membalas dalam Thunderbird — secara automatik atau selepas pengesahan ringkas."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Buka Dokumentasi"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mula Pantas"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Pasang daripada Pengaya"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Derma"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Apa Yang Baharu"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Baca perubahan terkini dalam {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Log Perubahan"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatik atau Sahkan Dahulu"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Pilih antara penambahan automatik atau dialog pengesahan ringkas dengan pintasan papan kekunci yang berguna."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Nyahpendua Pintar"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Menghormati lampiran sedia ada dan mengelakkan pendua mengikut nama fail, kemas dan boleh dijangka."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Langkau SMIME & Sebaris"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Tandatangan SMIME dan imej sebaris dikecualikan untuk memastikan balasan ringkas."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Pola Senarai Hitam"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Pola glob tidak peka huruf besar/kecil seperti {code1} atau {code2} menghalang penambahan fail yang tidak perlu."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Pautan Pantas Dokumentasi"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Pasang"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasi"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Penggunaan"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Keserasian"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Sokongan"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lesen"
+  },
+  "homepage.search.tip": {
+    "message": "Petua: Tekan {slash} atau {ctrl}+{k} untuk mencari dalam dokumentasi."
+  },
+  "site.title": {
+    "message": "Balas dengan Lampiran"
+  },
+  "site.tagline": {
+    "message": "Pengaya Thunderbird: Balas termasuk lampiran asal"
+  },
+  "navbar.title": {
+    "message": "Balas dengan Lampiran"
+  },
+  "navbar.logo.alt": {
+    "message": "Balas dengan Lampiran"
+  },
+  "navbar.docs": {
+    "message": "Dokumentasi"
+  },
+  "navbar.support": {
+    "message": "Sokongan"
+  },
+  "navbar.license": {
+    "message": "Lesen"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentasi"
+  },
+  "footer.link.home": {
+    "message": "Laman Utama"
+  },
+  "footer.link.install": {
+    "message": "Pasang"
+  },
+  "footer.section.project": {
+    "message": "Projek"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Balas dengan Lampiran"
+  }
+}

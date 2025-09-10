@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Bales jeung Lampiran"
+  },
+  "homepage.meta.description": {
+    "message": "Add-on Thunderbird: Bales kaasup lampiran aslina"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikon RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Bales jeung Lampiran"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ngasupkeun lampiran aslina nalika ngabales di Thunderbird — otomatis atawa sanggeus konfirmasi gancang."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Buka Dokuméntasi"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mimitian Gancang"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Pasang ti Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Nyumbang"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Naon Anu Anyar"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Maca parobahan panganyarna dina {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Catetan Parobahan"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatis atawa Konfirmasi Heula"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Pilih antara nambihan otomatis atawa dialog konfirmasi leutik kalayan pintasan kibor anu merenah."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "De‑duplikasi Calakan"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ngahémutan lampiran anu geus aya sarta ngahindarkeun duplikat dumasar kana ngaran payil, resik jeung bisa diprediksi."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Liwatkeun SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Tandatangan SMIME jeung gambar inline teu diasupkeun supaya balesan tetep enteng."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Pola Daptar Hideung"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Pola glob anu teu ngabédakeun gedé-leutik hurup, saperti {code1} atawa {code2}, nyegah nambahkeun payil nu ngaganggu."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Tumbu Gancang Dokuméntasi"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Pasang"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasi"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Pamakéan"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kacocokan"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Rojongan"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisénsi"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Pencét {slash} atawa {ctrl}+{k} pikeun néangan dina dokuméntasi."
+  },
+  "site.title": {
+    "message": "Bales jeung Lampiran"
+  },
+  "site.tagline": {
+    "message": "Add-on Thunderbird: Bales kaasup lampiran aslina"
+  },
+  "navbar.title": {
+    "message": "Bales jeung Lampiran"
+  },
+  "navbar.logo.alt": {
+    "message": "Bales jeung Lampiran"
+  },
+  "navbar.docs": {
+    "message": "Dokuméntasi"
+  },
+  "navbar.support": {
+    "message": "Rojongan"
+  },
+  "navbar.license": {
+    "message": "Lisénsi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokuméntasi"
+  },
+  "footer.link.home": {
+    "message": "Tepas"
+  },
+  "footer.link.install": {
+    "message": "Pasang"
+  },
+  "footer.section.project": {
+    "message": "Proyék"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Bales jeung Lampiran"
+  }
+}

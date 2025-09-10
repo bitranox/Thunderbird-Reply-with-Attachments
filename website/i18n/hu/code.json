@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-kiegészítő: Válasz az eredeti csatolmányokkal"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikon"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Az eredeti csatolmányok csatolása a Thunderbirdben történő válaszoláskor — automatikusan vagy egy gyors megerősítés után."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Dokumentáció megnyitása"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Gyorstalpaló"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Telepítés a Kiegészítőkből"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Adományozás"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Újdonságok"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Olvassa el a legújabb változásokat a {changelog} oldalán."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Változásnapló"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatikus vagy előzetes megerősítéssel"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Választhat az automatikus hozzáadás és egy kis megerősítő párbeszédablak között, hasznos gyorsbillentyűkkel."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Intelligens duplikátumkezelés"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Figyelembe veszi a meglévő csatolmányokat, és fájlnév alapján elkerüli a duplikátumokat — tisztán és kiszámíthatóan."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME és beágyazottak kihagyása"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Az SMIME‑aláírások és a beágyazott képek nem kerülnek csatolásra, így a válaszok tömörek maradnak."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Tiltólista‑minták"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "A kis‑ és nagybetűkre nem érzékeny glob minták, mint például a {code1} vagy a {code2}, megakadályozzák a zavaró fájlok hozzáadását."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Gyors hivatkozások a dokumentációhoz"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Telepítés"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Beállítások"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Használat"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilitás"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Támogatás"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licenc"
+  },
+  "homepage.search.tip": {
+    "message": "Tipp: Nyomja meg a {slash} vagy a {ctrl}+{k} billentyűt a dokumentáció kereséséhez."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-kiegészítő: Válasz az eredeti csatolmányokkal"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Dokumentáció"
+  },
+  "navbar.support": {
+    "message": "Támogatás"
+  },
+  "navbar.license": {
+    "message": "Licenc"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentáció"
+  },
+  "footer.link.home": {
+    "message": "Kezdőlap"
+  },
+  "footer.link.install": {
+    "message": "Telepítés"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

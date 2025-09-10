@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Installation",
-  "description": "Installation — in Thunderbird (recommended)",
+  "description": "---",
   "source": "@site/docs/install.md",
   "sourceDirName": ".",
   "slug": "/install",

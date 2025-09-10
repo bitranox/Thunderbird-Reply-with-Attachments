@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "الرد مع المرفقات"
+  },
+  "homepage.meta.description": {
+    "message": "إضافة لـThunderbird: الرد مع تضمين المرفقات الأصلية"
+  },
+  "homepage.icon.alt": {
+    "message": "أيقونة RWA"
+  },
+  "homepage.hero.title": {
+    "message": "الرد مع المرفقات"
+  },
+  "homepage.hero.subtitle": {
+    "message": "تضمين المرفقات الأصلية عند الرد في Thunderbird — تلقائيًا أو بعد تأكيد سريع."
+  },
+  "homepage.cta.openDocs": {
+    "message": "افتح الوثائق"
+  },
+  "homepage.cta.quickstart": {
+    "message": "البدء السريع"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ثبّت من الإضافات"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "تبرّع"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ما الجديد"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "اطّلع على أحدث التغييرات في {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "سجل التغييرات"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "تلقائي أو تأكيد أولاً"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "اختر بين الإضافة التلقائية أو مربع تأكيد صغير مع اختصارات لوحة مفاتيح مفيدة."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "إزالة التكرارات بذكاء"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "يراعي المرفقات الموجودة ويتجنب التكرارات حسب اسم الملف، بشكل نظيف ومتوقع."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "تخطي SMIME والعناصر المضمَّنة"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "تُستبعَد توقيعات SMIME والصور المضمّنة لإبقاء الردود خفيفة."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "أنماط قائمة الحظر"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "أنماط glob غير حساسة لحالة الأحرف مثل {code1} أو {code2} تمنع إضافة الملفات المزعجة."
+  },
+  "homepage.quicklinks.title": {
+    "message": "روابط سريعة للوثائق"
+  },
+  "homepage.quicklinks.install": {
+    "message": "التثبيت"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "الإعدادات"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "الاستخدام"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "التوافق"
+  },
+  "homepage.quicklinks.support": {
+    "message": "الدعم"
+  },
+  "homepage.quicklinks.license": {
+    "message": "الترخيص"
+  },
+  "homepage.search.tip": {
+    "message": "نصيحة: اضغط {slash} أو {ctrl}+{k} للبحث في الوثائق."
+  },
+  "site.title": {
+    "message": "الرد مع المرفقات"
+  },
+  "site.tagline": {
+    "message": "إضافة لـThunderbird: الرد مع تضمين المرفقات الأصلية"
+  },
+  "navbar.title": {
+    "message": "الرد مع المرفقات"
+  },
+  "navbar.logo.alt": {
+    "message": "الرد مع المرفقات"
+  },
+  "navbar.docs": {
+    "message": "الوثائق"
+  },
+  "navbar.support": {
+    "message": "الدعم"
+  },
+  "navbar.license": {
+    "message": "الترخيص"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "الوثائق"
+  },
+  "footer.link.home": {
+    "message": "الرئيسية"
+  },
+  "footer.link.install": {
+    "message": "التثبيت"
+  },
+  "footer.section.project": {
+    "message": "المشروع"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} الرد مع المرفقات"
+  }
+}

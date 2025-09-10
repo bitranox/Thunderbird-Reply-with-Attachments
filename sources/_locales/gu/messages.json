@@ -1,55 +1,132 @@
 {
-  "extName": { "message": "જોડાણો સાથે જવાબ આપો" },
-  "extDescription": { "message": "ઇમેઇલ જવાબોમાં મૂળ જોડાણો આપમેળે સામેલ કરો." },
-  "composeTitle": { "message": "જોડાણો સાથે જવાબ આપો" },
-  "optionsTitle": { "message": "જોડાણો સાથે જવાબ — વિકલ્પો" },
-  "confirmTitle": { "message": "જોડાણોની પુષ્ટિ" },
-  "uiHeader": { "message": "જોડાણો સાથે જવાબ આપો" },
-  "uiNoOptions": { "message": "હાલમાં રૂપરેખાંકિત કરવા માટે કોઈ વિકલ્પો નથી." },
-  "uiSupport": { "message": "શું તમને આ ઍડ‑ઓન ગમે છે? નાની ફાળવણી દ્વારા મને સહારો આપો:" },
-  "uiDonate": { "message": "હમણાં દાન કરો" },
-  "uiGithubText": { "message": "બગ અહેવાલ અથવા અન્ય પૂછપરછ માટે, મારું" },
-  "uiGithubLinkLabel": { "message": "GitHub પેજ" },
-  "iconAlt": { "message": "Reply with Attachments ચિહ્ન" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ફાઇલ નામોની બ્લેકલિસ્ટ (ગ્લોબ પેટર્ન)" },
+  "extName": {
+    "message": "સંલગ્નો સાથે જવાબ"
+  },
+  "extDescription": {
+    "message": "ઇમેઇલના જવાબોમાં મૂળ સંલગ્નો આપમેળે સામેલ કરો."
+  },
+  "composeTitle": {
+    "message": "સંલગ્નો સાથે જવાબ"
+  },
+  "optionsTitle": {
+    "message": "સંલગ્નો સાથે જવાબ — વિકલ્પો"
+  },
+  "confirmTitle": {
+    "message": "સંલગ્નોની પુષ્ટિ"
+  },
+  "uiHeader": {
+    "message": "સંલગ્નો સાથે જવાબ"
+  },
+  "uiNoOptions": {
+    "message": "હાલમાં ગોઠવવા માટે કોઈ વિકલ્પો નથી."
+  },
+  "uiSupport": {
+    "message": "આ એડ-ઓન તમને ગમે છે? નાનકડા યોગદાનથી મને સહયોગ આપો:"
+  },
+  "uiDonate": {
+    "message": "હમણાં દાન કરો"
+  },
+  "uiGithubText": {
+    "message": "બગ રિપોર્ટ્સ અથવા અન્ય પૂછપરછ માટે, કૃપા કરીને મારી"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub પેજ"
+  },
+  "iconAlt": {
+    "message": "સંલગ્નો સાથે જવાબનું આઇકન"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ફાઇલનામોની બ્લેકલિસ્ટ (ગ્લોબ પેટર્ન્સ)"
+  },
   "uiBlacklistHelp": {
-    "message": "આમાંથી કોઈપણ પેટર્નને મેળ ખાતી ફાઇલો ક્યારેય આપમેળે જોડાશે નહીં. દરેક પંક્તિ પર એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.p7s"
+    "message": "જેનાં નામો આ પેટર્ન્સમાંના કોઈ સાથે મેળ ખાતા હોય તે ફાઇલો ક્યારેય આપમેળે સંલગ્ન નહીં થાય. પ્રતિ પંક્તિ એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.p7સ"
   },
   "uiWarnBlacklistLabel": {
-    "message": "બ્લેકલિસ્ટ દ્વારા જોડાણો બહાર રાખવામાં આવ્યા હોય તો ચેતવો"
+    "message": "બ્લેકલિસ્ટથી સંલગ્નો બહાર રાખવામાં આવે તો ચેતવણી આપો"
   },
-  "uiSave": { "message": "સાચવો" },
-  "uiSaving": { "message": "સાચવી રહ્યા છીએ…" },
-  "uiReset": { "message": "ડિફોલ્ટ પર રીસેટ કરો" },
-  "uiSaved": { "message": "સાચવ્યું." },
-  "uiResetDone": { "message": "રીસેટ થયું." },
-  "uiConfirmHeader": { "message": "પુષ્ટિ" },
-  "uiConfirmLabel": { "message": "જોડાણો ઉમેરતા પહેલાં પૂછો" },
+  "uiSave": {
+    "message": "સાચવો"
+  },
+  "uiSaving": {
+    "message": "સાચવી રહ્યા છીએ…"
+  },
+  "uiReset": {
+    "message": "મૂળભૂત પર રીસેટ કરો"
+  },
+  "uiSaved": {
+    "message": "સાચવાયું."
+  },
+  "uiResetDone": {
+    "message": "રીસેટ થયું."
+  },
+  "uiConfirmHeader": {
+    "message": "પુષ્ટિ"
+  },
+  "uiConfirmLabel": {
+    "message": "સંલગ્નો ઉમેરતા પહેલા પૂછો"
+  },
   "uiConfirmHelp": {
-    "message": "એક નાનું પુષ્ટિ સંવાદ ફક્ત ત્યારે દેખાશે જ્યારે ખરેખર જોડાણો ઉમેરવામાં આવશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
+    "message": "સાચે જ સંલગ્નો ઉમેરવાના હોય ત્યારે જ નાનો પુષ્ટિ સંવાદ દેખાશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
   },
-  "confirmAddOne": { "message": "જોડાણ ઉમેરો: $1?", "placeholders": { "1": { "content": "$1" } } },
-  "confirmAddMany": {
-    "message": "જોડાણો ઉમેરો ($1): $2$3?",
+  "confirmAddOne": {
+    "message": "સંલગ્ન ઉમેરવું: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 more" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "હા" },
-  "confirmNo": { "message": "ના" },
-  "warnBlacklistTitle": { "message": "બ્લેકલિસ્ટ દ્વારા બહાર રાખ્યું" },
-  "warnBlacklistIntro": { "message": "નીચેની ફાઇલો આપમેળે જોડાઈ નહીં:" },
-  "warnColFile": { "message": "ફાઇલ" },
-  "warnColPattern": { "message": "પેટર્ન" },
-  "warnOk": { "message": "બરાબર" },
-  "uiConfirmDefaultHeader": { "message": "ડિફોલ્ટ જવાબ" },
-  "uiConfirmDefaultYes": { "message": "હા" },
-  "uiConfirmDefaultNo": { "message": "ના" },
+  "confirmAddMany": {
+    "message": "સંલગ્નો ઉમેરવા ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "હા"
+  },
+  "confirmNo": {
+    "message": "ના"
+  },
+  "warnBlacklistTitle": {
+    "message": "બ્લેકલિસ્ટ દ્વારા બહાર રાખવામાં આવ્યું"
+  },
+  "warnBlacklistIntro": {
+    "message": "નીચેની ફાઇલો આપમેળે સંલગ્ન નહીં થાય:"
+  },
+  "warnColFile": {
+    "message": "ફાઇલ"
+  },
+  "warnColPattern": {
+    "message": "પેટર્ન"
+  },
+  "warnOk": {
+    "message": "બરાબર"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "મૂળભૂત જવાબ"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "હા"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "ના"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Pindura nezvakabatanidzwa"
+  },
+  "homepage.meta.description": {
+    "message": "Chinowedzerwa cheThunderbird: Kupindura uchisanganisira zvakabatanidzwa zvekutanga"
+  },
+  "homepage.icon.alt": {
+    "message": "Chiratidzo che RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Pindura nezvakabatanidzwa"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Sanganisira zvakabatanidzwa zvekutanga paunopindura muThunderbird — otomatiki kana mushure mekusimbisa nekukurumidza."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Vhura Magwaro"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Kutanga nekukurumidza"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Isa kubva kuZvinowedzerwa"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Dhoneta"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Chii Chitsva"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Verenga shanduko dzichangoburwa mu {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Rondedzero yeShanduko"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatiki kana Kutanga Wosimbisa"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Sarudza pakati pekuwedzera otomatiki kana dhiarogi diki rekusimbisa rine mapfupiso ekhibhodi anobatsira."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Kubvisa Zvakapetwa Kwakangwara"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Inoremekedza zvibatanidzwa zviripo uye inodzivirira zvakapetwa zvichienderana nezita refaira, zvakachena uye zvinotarisika."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Svetuka SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Masiginecha eSMIME nemifananidzo ye-inline hazvisanganiswi kuti mhinduro dzigare dzakareruka."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Mapatani eKurambidza"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Mapatani eglob asingatarisise makuru kana madiki emavara akaita se {code1} kana {code2} anorambidza kuwedzera mafaira anokanganisa."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Zvinongedzo zvekukurumidza zveMagwaro"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Isa"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Kumisikidza"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Kushandisa"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kuwirirana"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Rubatsiro"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Layisensi"
+  },
+  "homepage.search.tip": {
+    "message": "Zano: Dzvanya {slash} kana {ctrl}+{k} kutsvaga magwaro."
+  },
+  "site.title": {
+    "message": "Pindura nezvakabatanidzwa"
+  },
+  "site.tagline": {
+    "message": "Chinowedzerwa cheThunderbird: Kupindura uchisanganisira zvakabatanidzwa zvekutanga"
+  },
+  "navbar.title": {
+    "message": "Pindura nezvakabatanidzwa"
+  },
+  "navbar.logo.alt": {
+    "message": "Pindura nezvakabatanidzwa"
+  },
+  "navbar.docs": {
+    "message": "Magwaro"
+  },
+  "navbar.support": {
+    "message": "Rubatsiro"
+  },
+  "navbar.license": {
+    "message": "Layisensi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Magwaro"
+  },
+  "footer.link.home": {
+    "message": "Kumba"
+  },
+  "footer.link.install": {
+    "message": "Isa"
+  },
+  "footer.section.project": {
+    "message": "Purojekiti"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Pindura nezvakabatanidzwa"
+  }
+}

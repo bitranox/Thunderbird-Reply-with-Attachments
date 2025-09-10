@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Répondre avec pièces jointes" },
+  "extName": {
+    "message": "Répondre avec les pièces jointes"
+  },
   "extDescription": {
-    "message": "Inclure automatiquement les pièces jointes d’origine dans les réponses."
+    "message": "Inclure automatiquement les pièces jointes d'origine dans les réponses aux messages."
   },
-  "composeTitle": { "message": "Répondre avec pièces jointes" },
-  "optionsTitle": { "message": "Répondre avec pièces jointes — Options" },
-  "confirmTitle": { "message": "Confirmer les pièces jointes" },
-  "uiHeader": { "message": "Répondre avec pièces jointes" },
-  "uiNoOptions": { "message": "Il n’y a actuellement aucun réglage à configurer." },
-  "uiSupport": { "message": "Vous aimez ce module ? Soutenez‑moi avec une petite contribution :" },
-  "uiDonate": { "message": "Faire un don" },
-  "uiGithubText": { "message": "Pour signaler un bogue ou pour toute question, rendez‑vous sur" },
-  "uiGithubLinkLabel": { "message": "ma page GitHub" },
-  "iconAlt": { "message": "Icône Répondre avec pièces jointes" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Liste d’exclusion de noms de fichiers (motifs glob)" },
+  "composeTitle": {
+    "message": "Répondre avec les pièces jointes"
+  },
+  "optionsTitle": {
+    "message": "Répondre avec les pièces jointes — Options"
+  },
+  "confirmTitle": {
+    "message": "Confirmer les pièces jointes"
+  },
+  "uiHeader": {
+    "message": "Répondre avec les pièces jointes"
+  },
+  "uiNoOptions": {
+    "message": "Il n’y a actuellement aucune option à configurer."
+  },
+  "uiSupport": {
+    "message": "Vous aimez ce module complémentaire ? Soutenez-moi avec une petite contribution :"
+  },
+  "uiDonate": {
+    "message": "Faire un don maintenant"
+  },
+  "uiGithubText": {
+    "message": "Pour les rapports de bogues ou autres demandes, veuillez visiter ma"
+  },
+  "uiGithubLinkLabel": {
+    "message": "page GitHub"
+  },
+  "iconAlt": {
+    "message": "Icône de Répondre avec les pièces jointes"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Liste noire de noms de fichiers (motifs glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Les fichiers dont le nom correspond à l’un de ces motifs ne seront jamais joints automatiquement. Un motif par ligne. Exemples : *.png, smime.*, *.p7s"
+    "message": "Les fichiers dont le nom correspond à l’un de ces motifs ne seront jamais joints automatiquement. Un motif par ligne. Exemples : *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Avertir si des pièces jointes sont exclues par la liste" },
-  "uiSave": { "message": "Enregistrer" },
-  "uiSaving": { "message": "Enregistrement…" },
-  "uiReset": { "message": "Réinitialiser les valeurs par défaut" },
-  "uiSaved": { "message": "Enregistré." },
-  "uiResetDone": { "message": "Réinitialisé." },
-  "uiConfirmHeader": { "message": "Confirmation" },
-  "uiConfirmLabel": { "message": "Demander avant d’ajouter les pièces jointes" },
+  "uiWarnBlacklistLabel": {
+    "message": "Avertir si des pièces jointes sont exclues par la liste noire"
+  },
+  "uiSave": {
+    "message": "Enregistrer"
+  },
+  "uiSaving": {
+    "message": "Enregistrement…"
+  },
+  "uiReset": {
+    "message": "Réinitialiser les valeurs par défaut"
+  },
+  "uiSaved": {
+    "message": "Enregistré."
+  },
+  "uiResetDone": {
+    "message": "Réinitialisé."
+  },
+  "uiConfirmHeader": {
+    "message": "Confirmation"
+  },
+  "uiConfirmLabel": {
+    "message": "Demander avant d’ajouter des pièces jointes"
+  },
   "uiConfirmHelp": {
-    "message": "Une petite fenêtre de confirmation s’affiche uniquement lorsque des pièces jointes doivent être ajoutées. Clavier : Y ou J = Oui ; N ou Échap = Non."
+    "message": "Une petite boîte de dialogue de confirmation apparaît uniquement lorsque des pièces jointes seraient effectivement ajoutées. Clavier : Y ou J = Oui ; N ou Esc = Non."
   },
   "confirmAddOne": {
-    "message": "Ajouter la pièce jointe : $1 ?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ajouter les pièces jointes ($1) : $2$3 ?",
+    "message": "Ajouter la pièce jointe : $1 ?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 de plus" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Oui" },
-  "confirmNo": { "message": "Non" },
-  "warnBlacklistTitle": { "message": "Exclues par la liste" },
+  "confirmAddMany": {
+    "message": "Ajouter les pièces jointes ($1) : $2$3 ?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Oui"
+  },
+  "confirmNo": {
+    "message": "Non"
+  },
+  "warnBlacklistTitle": {
+    "message": "Exclus par la liste noire"
+  },
   "warnBlacklistIntro": {
-    "message": "Les fichiers suivants ne seront pas joints automatiquement :"
+    "message": "Les fichiers suivants ne seront pas joints automatiquement :"
   },
-  "warnColFile": { "message": "Fichier" },
-  "warnColPattern": { "message": "Motif" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Réponse par défaut" },
-  "uiConfirmDefaultYes": { "message": "Oui" },
-  "uiConfirmDefaultNo": { "message": "Non" },
+  "warnColFile": {
+    "message": "Fichier"
+  },
+  "warnColPattern": {
+    "message": "Motif"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Réponse par défaut"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Oui"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Non"
+  },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

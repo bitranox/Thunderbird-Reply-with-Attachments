@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird အက်ဒွန် - ပြန်စာတွင် မူလတွဲဖက်ဖိုင်များကို ပါဝင်စေသည်"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA အိုင်ကွန်"
+  },
+  "homepage.hero.title": {
+    "message": "တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird တွင် ပြန်စာပို့သည့်အခါ မူလတွဲဖက်ဖိုင်များကို ထည့်ပေးသည် — အလိုအလျောက် သို့မဟုတ် အတည်ပြုချက်တိုတစ်ခုပြီးနောက်။"
+  },
+  "homepage.cta.openDocs": {
+    "message": "စာတမ်းများ ဖွင့်ရန်"
+  },
+  "homepage.cta.quickstart": {
+    "message": "အမြန်စတင်"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Add‑ons မှ ထည့်သွင်းရန်"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "လှူဒါန်းရန်"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ဘာအသစ်များ ရှိသလဲ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "နောက်ဆုံး ပြောင်းလဲမှုများကို {changelog} တွင် ဖတ်ရှုပါ။"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ပြောင်းလဲမှု မှတ်တမ်း"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "အလိုအလျောက် သို့မဟုတ် အရင်အတည်ပြု"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "အလိုအလျောက် ထည့်ခြင်း သို့မဟုတ် ကီးဘုတ်ဖြတ်လမ်းများ ပါသော အတည်ပြု ဒိုင်ယာလော့ဂ် သေးသေးလေး တစ်ခုအကြား ရွေးချယ်နိုင်သည်။"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "စမတ် ထပ်တူတားဆီးခြင်း"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ရှိပြီးသားတွဲဖက်ဖိုင်များကို လိုက်လျောထားပြီး ဖိုင်နာမည်အလိုက် ထပ်တူများကို ရှောင်ရှားပေးသည် — သန့်ရှင်းသပ်ရပ်ပြီး ခန့်မှန်းရလွယ်သည်။"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME နှင့် Inline ကို ကျော်လွှား"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ပြန်စာများကို ပေါ့ပါးစေရန် SMIME လက်မှတ်များနှင့် inline ရုပ်ပုံများကို ဖယ်ထားသည်။"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blacklist ပုံစံများ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "စာလုံးအကြီး/အသေး မဂရုမစိုက်သော glob ပုံစံများ ({code1} သို့မဟုတ် {code2} ကဲ့သို့) ကြောင့် အနှောင့်အယှက်ဖြစ်စေသော ဖိုင်များကို မထည့်သွင်းအောင် ကာကွယ်ပေးသည်။"
+  },
+  "homepage.quicklinks.title": {
+    "message": "စာတမ်းများ အမြန်လင့်များ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ထည့်သွင်းရန်"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ဆက်တင်"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "အသုံးပြုနည်း"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "သဟဇာတ"
+  },
+  "homepage.quicklinks.support": {
+    "message": "အကူအညီ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "လိုင်စင်"
+  },
+  "homepage.search.tip": {
+    "message": "အကြံပြုချက် - {slash} သို့မဟုတ် {ctrl}+{k} ကိုနှိပ်하여 စာတမ်းများကို ရှာဖွေပါ။"
+  },
+  "site.title": {
+    "message": "တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  },
+  "site.tagline": {
+    "message": "Thunderbird အက်ဒွန် - ပြန်စာတွင် မူလတွဲဖက်ဖိုင်များကို ပါဝင်စေသည်"
+  },
+  "navbar.title": {
+    "message": "တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  },
+  "navbar.logo.alt": {
+    "message": "တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  },
+  "navbar.docs": {
+    "message": "စာတမ်းများ"
+  },
+  "navbar.support": {
+    "message": "အကူအညီ"
+  },
+  "navbar.license": {
+    "message": "လိုင်စင်"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "စာတမ်းများ"
+  },
+  "footer.link.home": {
+    "message": "မူလစာမျက်နှာ"
+  },
+  "footer.link.install": {
+    "message": "ထည့်သွင်းရန်"
+  },
+  "footer.section.project": {
+    "message": "ပရိုဂျက်"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} တွဲဖက်ဖိုင်များပါ ပြန်စာ"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Yankhani ndi Zomangirizidwa"
+  },
+  "homepage.meta.description": {
+    "message": "Chowonjezera cha Thunderbird: Yankhani kuphatikiza zomangirizidwa zoyambirira"
+  },
+  "homepage.icon.alt": {
+    "message": "Chizindikiro cha RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Yankhani ndi Zomangirizidwa"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Phatikizani zomangirizidwa zoyambirira mukamayankha mu Thunderbird — zokha zokha kapena mutatsimikizira mwachangu."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Tsegulani Zolemba"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Kuyamba Mwachangu"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Ikani kuchokera ku Zowonjezera"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Pereka Thandizo"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Zatsopano"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Werengani zosintha zaposachedwa mu {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Mndandanda wa Zosintha"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Zokha kapena Tsimikizirani Kaye"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Sankhani pakati pa kuwonjezera zokha kapena bokosi latsimikizo laling'ono lokhala ndi zachidule za kiyibodi zothandiza."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Kuchotsa Zobwereza Mwanzeru"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Imalemekeza zomangirizidwa zomwe zilipo ndipo imapeŵa zobwereza potengera dzina la fayilo, zomveka bwino komanso zosavuta kuneneratu."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Dumphani SMIME & Zamkati"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Masaini a SMIME ndi zithunzi zamkati amachotsedwa kuti mayankho akhale ochepa komanso osavuta."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Zitsanzo za Mndandanda Wosaloleka"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Zitsanzo za glob zosasiyanitsa zilembo zazikulu ndi zazing'ono monga {code1} kapena {code2} zimalepheretsa kuwonjezera mafayilo osokoneza."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Maulalo Achangu a Zolemba"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Ikani"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Zikhazikiko"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Kugwiritsa Ntchito"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kugwirizana"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Thandizo"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Layisensi"
+  },
+  "homepage.search.tip": {
+    "message": "Malangizo: Dinani {slash} kapena {ctrl}+{k} kuti musake zolemba."
+  },
+  "site.title": {
+    "message": "Yankhani ndi Zomangirizidwa"
+  },
+  "site.tagline": {
+    "message": "Chowonjezera cha Thunderbird: Yankhani kuphatikiza zomangirizidwa zoyambirira"
+  },
+  "navbar.title": {
+    "message": "Yankhani ndi Zomangirizidwa"
+  },
+  "navbar.logo.alt": {
+    "message": "Yankhani ndi Zomangirizidwa"
+  },
+  "navbar.docs": {
+    "message": "Zolemba"
+  },
+  "navbar.support": {
+    "message": "Thandizo"
+  },
+  "navbar.license": {
+    "message": "Layisensi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Zolemba"
+  },
+  "footer.link.home": {
+    "message": "Tsamba Loyamba"
+  },
+  "footer.link.install": {
+    "message": "Ikani"
+  },
+  "footer.section.project": {
+    "message": "Pulojekiti"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Yankhani ndi Zomangirizidwa"
+  }
+}

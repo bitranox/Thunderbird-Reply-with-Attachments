@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the addon UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Glossary",
+  "description": "---",
   "source": "@site/docs/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757291135000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
+    "title": "Glossary",
     "sidebar_label": "Glossary"
   },
   "sidebar": "docs",

@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Zaa na faịlụ etinyere" },
-  "extDescription": { "message": "Na‑etinye faịlụ etinyere mbụ na nzaghachi ozi‑e ozugbo." },
-  "composeTitle": { "message": "Zaa na faịlụ etinyere" },
-  "optionsTitle": { "message": "Zaa na faịlụ etinyere — Nhọrọ" },
-  "confirmTitle": { "message": "Kwenye faịlụ etinyere" },
-  "uiHeader": { "message": "Zaa na faịlụ etinyere" },
-  "uiNoOptions": { "message": "Enweghị nhọrọ a ga‑atụgharị ugbu a." },
-  "uiSupport": { "message": "Ị na‑amasị mgbakwunye a? Nye nkwado site n’onyinye nta:" },
-  "uiDonate": { "message": "Nyefee onyinye ugbu a" },
-  "uiGithubText": { "message": "Ikwu gbasara njehie ma ọ bụ ajụjụ ndị ọzọ, biko gara" },
-  "uiGithubLinkLabel": { "message": "ibe GitHub m" },
-  "iconAlt": { "message": "Ikọlọ Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Ndepụta ojii aha faịlụ (usoro glob)" },
+  "extName": {
+    "message": "Zaghachi na Faịlụ Agbakwunyere"
+  },
+  "extDescription": {
+    "message": "Na-etinye faịlụ agbakwunyere nke mbụ na azịza email na-akpaghị aka."
+  },
+  "composeTitle": {
+    "message": "Zaghachi na Faịlụ Agbakwunyere"
+  },
+  "optionsTitle": {
+    "message": "Zaghachi na Faịlụ Agbakwunyere — Nhọrọ"
+  },
+  "confirmTitle": {
+    "message": "Kwenye faịlụ agbakwunyere"
+  },
+  "uiHeader": {
+    "message": "Zaghachi na Faịlụ Agbakwunyere"
+  },
+  "uiNoOptions": {
+    "message": "Enweghị nhọrọ ọ bụla ugbu a a ga-ehazi."
+  },
+  "uiSupport": {
+    "message": "Ị na-amasị gị mgbakwunye a? Kwado m site na onyinye nta:"
+  },
+  "uiDonate": {
+    "message": "Mee onyinye ugbu a"
+  },
+  "uiGithubText": {
+    "message": "Maka akụkọ njehie ma ọ bụ ajụjụ ndị ọzọ, biko gaa na"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Ibe GitHub m"
+  },
+  "iconAlt": {
+    "message": "Akara ngosi ‘Zaghachi na Faịlụ Agbakwunyere’"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Ndepụta ojii nke aha faịlụ (usoro nlereanya glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Faịlụ ndị aha ha kwekọrọ na otu n’ime usoro ndị a agaghị etinyekarị ozugbo. Otu usoro n’ahịrị. Ihe atụ: *.png, smime.*, *.p7s"
+    "message": "Faịlụ ndị aha ha kwekọrọ na otu n'ime nlereanya ndị a agaghị agbakwunyere na-akpaghị aka. Otu nlereanya kwa ahịrị. Ihe atụ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Kwuo oche ma ọ bụrụ na e wepụsịrị faịlụ etinyere n’ihi ndepụta ojii"
+    "message": "Dọ aka na ntị ma ọ bụrụ na e wepụrụ faịlụ agbakwunyere site na ndepụta ojii"
   },
-  "uiSave": { "message": "Chekwaa" },
-  "uiSaving": { "message": "Na‑echekwa…" },
-  "uiReset": { "message": "Tụgharịa na ndabara" },
-  "uiSaved": { "message": "Echekwala." },
-  "uiResetDone": { "message": "E tụgharịrị." },
-  "uiConfirmHeader": { "message": "Nkwenye" },
-  "uiConfirmLabel": { "message": "Jụọ tupu itinye faịlụ etinyere" },
+  "uiSave": {
+    "message": "Chekwaa"
+  },
+  "uiSaving": {
+    "message": "Na-echekwa…"
+  },
+  "uiReset": {
+    "message": "Tọgharịa na ntọala ndabara"
+  },
+  "uiSaved": {
+    "message": "E chekwara."
+  },
+  "uiResetDone": {
+    "message": "E tọgharịa."
+  },
+  "uiConfirmHeader": {
+    "message": "Nkwenye"
+  },
+  "uiConfirmLabel": {
+    "message": "Jụọ tupu itinye faịlụ agbakwunyere"
+  },
   "uiConfirmHelp": {
-    "message": "Obere igbe nkwenye na‑apụta naanị mgbe a ga‑etinye faịlụ etinyere n’eziokwu. Keyboard: Y ma ọ bụ J = Ee; N ma ọ bụ Esc = Mba."
+    "message": "Igbe nkwenye nta ga-apụta naanị mgbe a ga-etinyere faịlụ agbakwunyere n'ezie. Keyboard: Y ma ọ bụ J = Ee; N ma ọ bụ Esc = Mba."
   },
   "confirmAddOne": {
-    "message": "Tinye faịlụ etinyere: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Tinye faịlụ etinyere ($1): $2$3?",
+    "message": "Tinye faịlụ agbakwunyere: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ọzọ" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ee" },
-  "confirmNo": { "message": "Mba" },
-  "warnBlacklistTitle": { "message": "Wepụrụ site n’ndekọ ojii" },
-  "warnBlacklistIntro": { "message": "Faịlụ ndị a ga‑adịghị etinyekarị ozugbo:" },
-  "warnColFile": { "message": "Faịlụ" },
-  "warnColPattern": { "message": "Usoro" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Azịza ndabara" },
-  "uiConfirmDefaultYes": { "message": "Ee" },
-  "uiConfirmDefaultNo": { "message": "Mba" },
+  "confirmAddMany": {
+    "message": "Tinye faịlụ agbakwunyere ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ee"
+  },
+  "confirmNo": {
+    "message": "Mba"
+  },
+  "warnBlacklistTitle": {
+    "message": "E wepụrụ site na ndepụta ojii"
+  },
+  "warnBlacklistIntro": {
+    "message": "Faịlụ ndị a agaghị agbakwunyere na-akpaghị aka:"
+  },
+  "warnColFile": {
+    "message": "Faịlụ"
+  },
+  "warnColPattern": {
+    "message": "Nlereanya"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Azịza ndabara"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ee"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Mba"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

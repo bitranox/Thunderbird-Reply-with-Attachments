@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Jibu na Viambatisho"
+  },
+  "homepage.meta.description": {
+    "message": "Kiongezi cha Thunderbird: Jibu ukijumuisha viambatisho vya asili"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikoni ya RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Jibu na Viambatisho"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Jumuisha viambatisho vya asili unapojibu katika Thunderbird — kiotomatiki au baada ya uthibitisho wa haraka."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Fungua Nyaraka"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mwongozo wa Haraka"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Sakinisha kutoka kwa Viongezi"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Changia"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Nini Kipya"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Soma mabadiliko ya hivi karibuni katika {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Orodha ya Mabadiliko"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Kiotomatiki au Thibitisha Kwanza"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Chagua kati ya kuongeza kiotomatiki au kisanduku kidogo cha uthibitisho chenye njia za mkato rahisi za kibodi."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Uondoaji Marudio Mahiri"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Inaheshimu viambatisho vilivyopo na huepuka marudio kulingana na jina la faili — safi na inayotabirika."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Ruka SMIME na Vilivyopachikwa"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Saini za SMIME na picha zilizopachikwa hazijumuishwi ili kuweka majibu mepesi."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Miundo ya Orodha Nyeusi"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Miundo ya glob isiyotofautisha herufi kubwa/ndogo kama {code1} au {code2} huzuia kuongeza faili zisizohitajika."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Viungo vya Haraka vya Nyaraka"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Sakinisha"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Usanidi"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Matumizi"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Uoanifu"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Msaada"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Leseni"
+  },
+  "homepage.search.tip": {
+    "message": "Kidokezo: Bonyeza {slash} au {ctrl}+{k} kutafuta kwenye nyaraka."
+  },
+  "site.title": {
+    "message": "Jibu na Viambatisho"
+  },
+  "site.tagline": {
+    "message": "Kiongezi cha Thunderbird: Jibu ukijumuisha viambatisho vya asili"
+  },
+  "navbar.title": {
+    "message": "Jibu na Viambatisho"
+  },
+  "navbar.logo.alt": {
+    "message": "Jibu na Viambatisho"
+  },
+  "navbar.docs": {
+    "message": "Nyaraka"
+  },
+  "navbar.support": {
+    "message": "Msaada"
+  },
+  "navbar.license": {
+    "message": "Leseni"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Nyaraka"
+  },
+  "footer.link.home": {
+    "message": "Nyumbani"
+  },
+  "footer.link.install": {
+    "message": "Sakinisha"
+  },
+  "footer.section.project": {
+    "message": "Mradi"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Jibu na Viambatisho"
+  }
+}

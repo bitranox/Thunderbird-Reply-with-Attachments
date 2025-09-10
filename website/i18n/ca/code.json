@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Respondre amb adjunts"
+  },
+  "homepage.meta.description": {
+    "message": "Complement de Thunderbird: respon incloent els adjunts originals"
+  },
+  "homepage.icon.alt": {
+    "message": "Icona de RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Respondre amb adjunts"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Inclou els adjunts originals en respondre a Thunderbird — automàticament o després d’una confirmació ràpida."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Obre la documentació"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Guia ràpida"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instal·la des de Complements"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Fes una donació"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Novetats"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Consulta els canvis més recents al {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Registre de canvis"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automàtic o amb confirmació prèvia"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Trieu entre l’afegit automàtic o un petit diàleg de confirmació amb dreceres de teclat pràctiques."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Desduplicació intel·ligent"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respecta els adjunts existents i evita duplicats per nom de fitxer, de manera neta i previsible."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Omet SMIME i elements en línia"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "S’exclouen les signatures SMIME i les imatges en línia per mantenir les respostes lleugeres."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Patrons de bloqueig"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Patrons glob insensibles a majúscules/minúscules, com {code1} o {code2}, eviten afegir fitxers innecessaris."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Enllaços ràpids a la documentació"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instal·lació"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuració"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Ús"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibilitat"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Suport"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Llicència"
+  },
+  "homepage.search.tip": {
+    "message": "Consell: premeu {slash} o {ctrl}+{k} per cercar a la documentació."
+  },
+  "site.title": {
+    "message": "Respondre amb adjunts"
+  },
+  "site.tagline": {
+    "message": "Complement de Thunderbird: respon incloent els adjunts originals"
+  },
+  "navbar.title": {
+    "message": "Respondre amb adjunts"
+  },
+  "navbar.logo.alt": {
+    "message": "Respondre amb adjunts"
+  },
+  "navbar.docs": {
+    "message": "Documentació"
+  },
+  "navbar.support": {
+    "message": "Suport"
+  },
+  "navbar.license": {
+    "message": "Llicència"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentació"
+  },
+  "footer.link.home": {
+    "message": "Inici"
+  },
+  "footer.link.install": {
+    "message": "Instal·lació"
+  },
+  "footer.section.project": {
+    "message": "Projecte"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Respondre amb adjunts"
+  }
+}

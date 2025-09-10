@@ -52,4 +52,14 @@ describe('App.Shared utils', () => {
     expect(w).toHaveBeenCalled();
     expect(e).toHaveBeenCalled();
   });
+
+  it('yesNo coerces to yes/no with sensible defaults', async () => {
+    await import('../sources/app/shared/utils.js');
+    const { yesNo } = globalThis.App.Shared;
+    expect(yesNo('yes')).toBe('yes');
+    expect(yesNo('no')).toBe('no');
+    expect(yesNo('NO')).toBe('no');
+    expect(yesNo(undefined)).toBe('yes');
+    expect(yesNo('anything else')).toBe('yes');
+  });
 });

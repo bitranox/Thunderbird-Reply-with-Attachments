@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Svara med bilagor"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird‑tillägg: Svara med ursprungliga bilagor"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA‑ikon"
+  },
+  "homepage.hero.title": {
+    "message": "Svara med bilagor"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Inkludera ursprungliga bilagor när du svarar i Thunderbird — automatiskt eller efter en snabb bekräftelse."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Öppna dokumentationen"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Snabbstart"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installera från Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Donera"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Nyheter"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Läs de senaste ändringarna i {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Ändringslogg"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatiskt eller bekräfta först"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Välj mellan automatiskt tillägg av bilagor eller en liten bekräftelsedialog med smidiga kortkommandon."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Smart dubblettkontroll"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Tar hänsyn till befintliga bilagor och undviker dubbletter utifrån filnamn – rent och förutsägbart."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Hoppa över S/MIME och inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "S/MIME‑signaturer och inline‑bilder utesluts för att hålla svaren lätta."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Svartlistningsmönster"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Skiftlägesokänsliga globmönster som {code1} eller {code2} förhindrar att onödiga filer läggs till."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Snabblänkar till dokumentationen"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installera"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfiguration"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Användning"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilitet"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Support"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licens"
+  },
+  "homepage.search.tip": {
+    "message": "Tips: Tryck {slash} eller {ctrl}+{k} för att söka i dokumentationen."
+  },
+  "site.title": {
+    "message": "Svara med bilagor"
+  },
+  "site.tagline": {
+    "message": "Thunderbird‑tillägg: Svara med ursprungliga bilagor"
+  },
+  "navbar.title": {
+    "message": "Svara med bilagor"
+  },
+  "navbar.logo.alt": {
+    "message": "Svara med bilagor"
+  },
+  "navbar.docs": {
+    "message": "Dokumentation"
+  },
+  "navbar.support": {
+    "message": "Support"
+  },
+  "navbar.license": {
+    "message": "Licens"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentation"
+  },
+  "footer.link.home": {
+    "message": "Hem"
+  },
+  "footer.link.install": {
+    "message": "Installera"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Svara med bilagor"
+  }
+}

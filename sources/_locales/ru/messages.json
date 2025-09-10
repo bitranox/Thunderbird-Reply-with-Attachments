@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Ответ с вложениями" },
-  "extDescription": { "message": "Автоматически добавляет исходные вложения в ответы." },
-  "composeTitle": { "message": "Ответ с вложениями" },
-  "optionsTitle": { "message": "Ответ с вложениями — параметры" },
-  "confirmTitle": { "message": "Подтвердить вложения" },
-  "uiHeader": { "message": "Ответ с вложениями" },
-  "uiNoOptions": { "message": "В настоящее время нет параметров для настройки." },
-  "uiSupport": { "message": "Вам нравится это дополнение? Поддержите меня небольшим взносом:" },
-  "uiDonate": { "message": "Пожертвовать" },
-  "uiGithubText": { "message": "Для сообщений об ошибках и других вопросов посетите" },
-  "uiGithubLinkLabel": { "message": "мою страницу на GitHub" },
-  "iconAlt": { "message": "Значок «Ответ с вложениями»" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Список исключений имён файлов (шаблоны glob)" },
-  "uiBlacklistHelp": {
-    "message": "Файлы, имя которых соответствует любому из этих шаблонов, не будут добавляться автоматически. Один шаблон на строку. Примеры: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Ответ с вложениями"
   },
-  "uiWarnBlacklistLabel": { "message": "Предупреждать, если вложения исключены списком" },
-  "uiSave": { "message": "Сохранить" },
-  "uiSaving": { "message": "Сохранение…" },
-  "uiReset": { "message": "Сбросить по умолчанию" },
-  "uiSaved": { "message": "Сохранено." },
-  "uiResetDone": { "message": "Сброшено." },
-  "uiConfirmHeader": { "message": "Подтверждение" },
-  "uiConfirmLabel": { "message": "Спрашивать перед добавлением вложений" },
+  "extDescription": {
+    "message": "Автоматически включать исходные вложения в ответы на письма."
+  },
+  "composeTitle": {
+    "message": "Ответ с вложениями"
+  },
+  "optionsTitle": {
+    "message": "Ответ с вложениями — параметры"
+  },
+  "confirmTitle": {
+    "message": "Подтверждение вложений"
+  },
+  "uiHeader": {
+    "message": "Ответ с вложениями"
+  },
+  "uiNoOptions": {
+    "message": "Сейчас нет параметров для настройки."
+  },
+  "uiSupport": {
+    "message": "Вам нравится это дополнение? Поддержите меня небольшим вкладом:"
+  },
+  "uiDonate": {
+    "message": "Сделать пожертвование"
+  },
+  "uiGithubText": {
+    "message": "Для сообщений об ошибках и других вопросов посетите мою"
+  },
+  "uiGithubLinkLabel": {
+    "message": "страницу на GitHub"
+  },
+  "iconAlt": {
+    "message": "Значок «Ответ с вложениями»"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Черный список имён файлов (шаблоны glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Файлы, имена которых соответствуют любому из этих шаблонов, никогда не будут прикрепляться автоматически. По одному шаблону на строку. Примеры: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Предупреждать, если вложения исключены черным списком"
+  },
+  "uiSave": {
+    "message": "Сохранить"
+  },
+  "uiSaving": {
+    "message": "Сохранение…"
+  },
+  "uiReset": {
+    "message": "Сбросить к значениям по умолчанию"
+  },
+  "uiSaved": {
+    "message": "Сохранено."
+  },
+  "uiResetDone": {
+    "message": "Сброшено."
+  },
+  "uiConfirmHeader": {
+    "message": "Подтверждение"
+  },
+  "uiConfirmLabel": {
+    "message": "Спрашивать перед добавлением вложений"
+  },
   "uiConfirmHelp": {
-    "message": "Небольшое окно подтверждения появляется только когда вложения действительно будут добавлены. Клавиатура: Y или J = Да; N или Esc = Нет."
+    "message": "Небольшой диалог подтверждения появляется только тогда, когда вложения действительно будут добавлены. Клавиатура: Y или J = Да; N или Esc = Нет."
   },
   "confirmAddOne": {
     "message": "Добавить вложение: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Добавить вложения ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ещё" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Да" },
-  "confirmNo": { "message": "Нет" },
-  "warnBlacklistTitle": { "message": "Исключено списком" },
-  "warnBlacklistIntro": { "message": "Следующие файлы не будут добавлены автоматически:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Шаблон" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Ответ по умолчанию" },
-  "uiConfirmDefaultYes": { "message": "Да" },
-  "uiConfirmDefaultNo": { "message": "Нет" },
-  "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  "confirmYes": {
+    "message": "Да"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "confirmNo": {
+    "message": "Нет"
+  },
+  "warnBlacklistTitle": {
+    "message": "Исключено черным списком"
+  },
+  "warnBlacklistIntro": {
+    "message": "Следующие файлы не будут автоматически прикреплены:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Шаблон"
+  },
+  "warnOk": {
+    "message": "ОК"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Ответ по умолчанию"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Да"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Нет"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

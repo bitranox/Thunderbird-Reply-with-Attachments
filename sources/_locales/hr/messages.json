@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Odgovor s privicima" },
-  "extDescription": { "message": "Automatski dodaje izvorne privitke u odgovore e‑pošte." },
-  "composeTitle": { "message": "Odgovor s privicima" },
-  "optionsTitle": { "message": "Odgovor s privicima — Opcije" },
-  "confirmTitle": { "message": "Potvrda privitaka" },
-  "uiHeader": { "message": "Odgovor s privicima" },
-  "uiNoOptions": { "message": "Trenutačno nema opcija za konfiguriranje." },
-  "uiSupport": { "message": "Sviđa li vam se ovaj dodatak? Podržite me malom donacijom:" },
-  "uiDonate": { "message": "Doniraj sada" },
-  "uiGithubText": { "message": "Za prijave grešaka ili druga pitanja, posjetite" },
-  "uiGithubLinkLabel": { "message": "moju GitHub stranicu" },
-  "iconAlt": { "message": "Ikona Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Crna lista naziva datoteka (glob uzorci)" },
-  "uiBlacklistHelp": {
-    "message": "Datoteke čija se imena podudaraju s bilo kojim od ovih uzoraka nikada se neće automatski dodavati. Jedan uzorak po retku. Primjeri: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Odgovori s privitcima"
   },
-  "uiWarnBlacklistLabel": { "message": "Upozori ako su privitci isključeni crnom listom" },
-  "uiSave": { "message": "Spremi" },
-  "uiSaving": { "message": "Spremanje…" },
-  "uiReset": { "message": "Vrati zadane postavke" },
-  "uiSaved": { "message": "Spremljeno." },
-  "uiResetDone": { "message": "Vraćeno." },
-  "uiConfirmHeader": { "message": "Potvrda" },
-  "uiConfirmLabel": { "message": "Pitati prije dodavanja privitaka" },
+  "extDescription": {
+    "message": "Automatski uključi izvorne privitke u odgovore na e-poštu."
+  },
+  "composeTitle": {
+    "message": "Odgovori s privitcima"
+  },
+  "optionsTitle": {
+    "message": "Odgovori s privitcima — Opcije"
+  },
+  "confirmTitle": {
+    "message": "Potvrda privitaka"
+  },
+  "uiHeader": {
+    "message": "Odgovori s privitcima"
+  },
+  "uiNoOptions": {
+    "message": "Trenutačno nema opcija za konfiguriranje."
+  },
+  "uiSupport": {
+    "message": "Sviđa li vam se ovaj dodatak? Podržite me malom donacijom:"
+  },
+  "uiDonate": {
+    "message": "Donirajte sada"
+  },
+  "uiGithubText": {
+    "message": "Za prijave grešaka ili druge upite posjetite moju"
+  },
+  "uiGithubLinkLabel": {
+    "message": "stranicu na GitHubu"
+  },
+  "iconAlt": {
+    "message": "Ikona Odgovori s privitcima"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Crna lista naziva datoteka (glob uzorci)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Datoteke čiji nazivi odgovaraju bilo kojem od ovih uzoraka nikada se neće automatski priložiti. Jedan uzorak po retku. Primjeri: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Upozori ako su privitci izuzeti crnom listom"
+  },
+  "uiSave": {
+    "message": "Spremi"
+  },
+  "uiSaving": {
+    "message": "Spremanje…"
+  },
+  "uiReset": {
+    "message": "Vrati na zadane postavke"
+  },
+  "uiSaved": {
+    "message": "Spremljeno."
+  },
+  "uiResetDone": {
+    "message": "Vraćeno."
+  },
+  "uiConfirmHeader": {
+    "message": "Potvrda"
+  },
+  "uiConfirmLabel": {
+    "message": "Pitaj prije dodavanja privitaka"
+  },
   "uiConfirmHelp": {
-    "message": "Mali dijalog potvrde pojavljuje se samo kada bi se doista dodavali privitci. Tipkovnica: Y ili J = Da; N ili Esc = Ne."
+    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi se privitci doista dodali. Tipkovnica: Y ili J = Da; N ili Esc = Ne."
   },
   "confirmAddOne": {
     "message": "Dodati privitak: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Dodati privitke ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 više" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Da" },
-  "confirmNo": { "message": "Ne" },
-  "warnBlacklistTitle": { "message": "Isključeno crnom listom" },
-  "warnBlacklistIntro": { "message": "Sljedeće datoteke neće biti automatski dodane:" },
-  "warnColFile": { "message": "Datoteka" },
-  "warnColPattern": { "message": "Uzorak" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Zadani odgovor" },
-  "uiConfirmDefaultYes": { "message": "Da" },
-  "uiConfirmDefaultNo": { "message": "Ne" },
+  "confirmYes": {
+    "message": "Da"
+  },
+  "confirmNo": {
+    "message": "Ne"
+  },
+  "warnBlacklistTitle": {
+    "message": "Isključeno zbog crne liste"
+  },
+  "warnBlacklistIntro": {
+    "message": "Sljedeće datoteke neće se automatski priložiti:"
+  },
+  "warnColFile": {
+    "message": "Datoteka"
+  },
+  "warnColPattern": {
+    "message": "Uzorak"
+  },
+  "warnOk": {
+    "message": "U redu"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Zadani odgovor"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Da"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ne"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

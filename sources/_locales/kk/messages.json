@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Қосымшалармен жауап беру" },
-  "extDescription": {
-    "message": "Электрондық пошта жауаптарына бастапқы қосымшаларды автоматты түрде қосады."
+  "extName": {
+    "message": "Тіркемелермен жауап беру"
   },
-  "composeTitle": { "message": "Қосымшалармен жауап беру" },
-  "optionsTitle": { "message": "Қосымшалармен жауап беру — Параметрлер" },
-  "confirmTitle": { "message": "Қосымшаларды растау" },
-  "uiHeader": { "message": "Қосымшалармен жауап беру" },
-  "uiNoOptions": { "message": "Қазір баптайтын параметр жоқ." },
-  "uiSupport": { "message": "Бұл кеңейтім ұнай ма? Шағын қайырыммен қолдаңыз:" },
-  "uiDonate": { "message": "Қазір қайырым жасау" },
-  "uiGithubText": { "message": "Қателер туралы хабарлау немесе басқа сұрақтар үшін менің" },
-  "uiGithubLinkLabel": { "message": "GitHub бетіме" },
-  "iconAlt": { "message": "Reply with Attachments таңбашасы" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Файл атауларының қара тізімі (glob үлгілері)" },
+  "extDescription": {
+    "message": "Электрондық хатқа жауап бергенде бастапқы тіркемелерді автоматты түрде қосады."
+  },
+  "composeTitle": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "optionsTitle": {
+    "message": "Тіркемелермен жауап беру — Параметрлер"
+  },
+  "confirmTitle": {
+    "message": "Тіркемелерді растау"
+  },
+  "uiHeader": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "uiNoOptions": {
+    "message": "Қазіргі уақытта баптайтын параметрлер жоқ."
+  },
+  "uiSupport": {
+    "message": "Бұл қосымша ұнай ма? Шағын үлеспен қолдаңыз:"
+  },
+  "uiDonate": {
+    "message": "Қазір қайырымдылық жасаңыз"
+  },
+  "uiGithubText": {
+    "message": "Қателер туралы есептер немесе басқа сұраулар үшін кіріңіз:"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub парағыма"
+  },
+  "iconAlt": {
+    "message": "Тіркемелермен жауап беру белгішесі"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Файл атауларының қара тізімі (glob үлгілері)"
+  },
   "uiBlacklistHelp": {
     "message": "Атауы осы үлгілердің кез келгеніне сәйкес келетін файлдар ешқашан автоматты түрде қосылмайды. Әр жолға бір үлгі. Мысалдар: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Қосымшалар қара тізімге байланысты алынып тасталса, ескерту"
+    "message": "Тіркемелер қара тізім бойынша алынып тасталса, ескерту"
   },
-  "uiSave": { "message": "Сақтау" },
-  "uiSaving": { "message": "Сақталуда…" },
-  "uiReset": { "message": "Әдепкіге қайтару" },
-  "uiSaved": { "message": "Сақталды." },
-  "uiResetDone": { "message": "Қайтарылды." },
-  "uiConfirmHeader": { "message": "Растау" },
-  "uiConfirmLabel": { "message": "Қосымшаларды қоспас бұрын сұрау" },
+  "uiSave": {
+    "message": "Сақтау"
+  },
+  "uiSaving": {
+    "message": "Сақталуда…"
+  },
+  "uiReset": {
+    "message": "Әдепкіге қайтару"
+  },
+  "uiSaved": {
+    "message": "Сақталды."
+  },
+  "uiResetDone": {
+    "message": "Қалпына келтірілді."
+  },
+  "uiConfirmHeader": {
+    "message": "Растау"
+  },
+  "uiConfirmLabel": {
+    "message": "Тіркемелерді қоспас бұрын сұрау"
+  },
   "uiConfirmHelp": {
-    "message": "Кішкентай растау терезесі қосымшалар шынымен қосылатын кезде ғана пайда болады. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
+    "message": "Шағын растау терезесі тек шынымен тіркемелер қосылатын кезде ғана пайда болады. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
   },
   "confirmAddOne": {
-    "message": "Қосымшаны қосу: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Қосымшаларды қосу ($1): $2$3?",
+    "message": "Тіркеме қосу: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 тағы" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Иә" },
-  "confirmNo": { "message": "Жоқ" },
-  "warnBlacklistTitle": { "message": "Қара тізіммен алынған" },
-  "warnBlacklistIntro": { "message": "Келесі файлдар автоматты түрде қосылмайды:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Үлгі" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Әдепкі жауап" },
-  "uiConfirmDefaultYes": { "message": "Иә" },
-  "uiConfirmDefaultNo": { "message": "Жоқ" },
+  "confirmAddMany": {
+    "message": "Тіркемелерді қосу ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Иә"
+  },
+  "confirmNo": {
+    "message": "Жоқ"
+  },
+  "warnBlacklistTitle": {
+    "message": "Қара тізім бойынша алынып тасталды"
+  },
+  "warnBlacklistIntro": {
+    "message": "Келесі файлдар автоматты түрде қосылмайды:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Үлгі"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Әдепкі жауап"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Иә"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Жоқ"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

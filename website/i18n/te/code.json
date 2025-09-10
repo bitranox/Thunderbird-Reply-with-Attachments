@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
+  },
+  "homepage.meta.description": {
+    "message": "థండర్‌బర్డ్ అడ్‑ఆన్: ప్రత్యుత్తరాల్లో అసలు జోడింపులను చేర్చండి"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA చిహ్నం"
+  },
+  "homepage.hero.title": {
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
+  },
+  "homepage.hero.subtitle": {
+    "message": "థండర్‌బర్డ్‌లో ప్రత్యుత్తరం ఇస్తున్నప్పుడు అసలు జోడింపులను చేర్చండి — స్వయంచాలకంగా లేదా ఓ తక్షణ నిర్ధారణ తర్వాత."
+  },
+  "homepage.cta.openDocs": {
+    "message": "డాక్యుమెంటేషన్ తెరవండి"
+  },
+  "homepage.cta.quickstart": {
+    "message": "త్వరిత ప్రారంభం"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "అడ్‑ఆన్‌ల నుండి ఇన్‌స్టాల్ చేయండి"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "విరాళం ఇవ్వండి"
+  },
+  "homepage.whatsNew.title": {
+    "message": "కొత్తది ఏమిటి"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "తాజా మార్పులను {changelog}లో చదవండి."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "మార్పుల చిట్టా"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "స్వయంచాలకం లేదా ముందస్తు నిర్ధారణ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "స్వయంచాలకంగా జోడించడం లేదా ఉపయోగకరమైన కీబోర్డ్ షార్ట్‌కట్‌లతో చిన్న నిర్ధారణ డైలాగ్ మధ్య ఎంపిక చేసుకోండి."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "స్మార్ట్ డూప్లికేట్ తొలగింపు"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ఉన్న జోడింపులను గౌరవించి, ఫైల్ పేరుల ఆధారంగా డూప్లికేట్‌లను నివారిస్తుంది — శుభ్రంగా మరియు ఊహించదగ్గ విధంగా."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME & ఇన్‌లైన్‌ను స్కిప్ చేయండి"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ప్రత్యుత్తరాలు తేలికగా ఉండేలా SMIME సంతకాలు మరియు ఇన్‌లైన్ చిత్రాలు మినహాయించబడతాయి."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "బ్లాక్‌లిస్ట్ ప్యాటర్న్లు"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "కేస్‑ఇన్‌సెన్సిటివ్ గ్లోబ్ ప్యాటర్న్లు {code1} లేదా {code2} వంటి‌వి అనవసర ఫైళ్లను జోడించడం నుండి నిరోధిస్తాయి."
+  },
+  "homepage.quicklinks.title": {
+    "message": "డాక్యుమెంటేషన్ త్వరిత లింకులు"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ఇన్‌స్టాల్"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "అమరికలు"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "వినియోగం"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "అనుకూలత"
+  },
+  "homepage.quicklinks.support": {
+    "message": "మద్దతు"
+  },
+  "homepage.quicklinks.license": {
+    "message": "లైసెన్స్"
+  },
+  "homepage.search.tip": {
+    "message": "సూచన: డాక్యుమెంటేషన్‌లో శోధించడానికి {slash} లేదా {ctrl}+{k} నొక్కండి."
+  },
+  "site.title": {
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
+  },
+  "site.tagline": {
+    "message": "థండర్‌బర్డ్ అడ్‑ఆన్: ప్రత్యుత్తరాల్లో అసలు జోడింపులను చేర్చండి"
+  },
+  "navbar.title": {
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
+  },
+  "navbar.logo.alt": {
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
+  },
+  "navbar.docs": {
+    "message": "డాక్యుమెంటేషన్"
+  },
+  "navbar.support": {
+    "message": "మద్దతు"
+  },
+  "navbar.license": {
+    "message": "లైసెన్స్"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "డాక్యుమెంటేషన్"
+  },
+  "footer.link.home": {
+    "message": "హోమ్"
+  },
+  "footer.link.install": {
+    "message": "ఇన్‌స్టాల్"
+  },
+  "footer.section.project": {
+    "message": "ప్రాజెక్ట్"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} జోడింపులతో ప్రత్యుత్తరం"
+  }
+}

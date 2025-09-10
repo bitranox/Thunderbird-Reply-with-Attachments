@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird অ্যাড‑অন: উত্তরে মূল সংযুক্তিগুলো অন্তর্ভুক্ত করুন"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA আইকন"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird‑এ উত্তর দেওয়ার সময় মূল সংযুক্তিগুলো যুক্ত করুন — স্বয়ংক্রিয়ভাবে বা দ্রুত একটি নিশ্চিতকরণের পর।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "ডক্স খুলুন"
+  },
+  "homepage.cta.quickstart": {
+    "message": "দ্রুত শুরু"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "অ্যাড‑অনস থেকে ইনস্টল করুন"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "অনুদান দিন"
+  },
+  "homepage.whatsNew.title": {
+    "message": "নতুন কী"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog}-এ সর্বশেষ পরিবর্তনগুলো পড়ুন।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "চেঞ্জলগ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "স্বয়ংক্রিয় বা আগে নিশ্চিতকরণ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "স্বয়ংক্রিয়ভাবে যোগ করা অথবা সুবিধাজনক কিবোর্ড শর্টকাটসহ একটি ছোট নিশ্চিতকরণ ডায়ালগ—এই দুটির মধ্যে একটি বেছে নিন।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "স্মার্ট ডি‑ডুপ্লিকেশন"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "আগের সংযুক্তিগুলো রেখে দেয় এবং ফাইলনাম অনুযায়ী ডুপ্লিকেট এড়ায়—পরিষ্কার ও পূর্বানুমেয়।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ও ইনলাইন বাদ দিন"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "উত্তরকে হালকা রাখতে SMIME সিগনেচার ও ইনলাইন ছবি বাদ দেওয়া হয়।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ব্ল্যাকলিস্ট প্যাটার্ন"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "কেস‑নিরপেক্ষ গ্লোব প্যাটার্ন, যেমন {code1} বা {code2}, অপ্রয়োজনীয় ফাইল যোগ হওয়া ঠেকায়।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "ডক্সের দ্রুত লিংক"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ইনস্টল"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "কনফিগারেশন"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ব্যবহার"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "সামঞ্জস্যতা"
+  },
+  "homepage.quicklinks.support": {
+    "message": "সহায়তা"
+  },
+  "homepage.quicklinks.license": {
+    "message": "লাইসেন্স"
+  },
+  "homepage.search.tip": {
+    "message": "টিপ: ডক্স খুঁজতে {slash} বা {ctrl}+{k} চাপুন।"
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird অ্যাড‑অন: উত্তরে মূল সংযুক্তিগুলো অন্তর্ভুক্ত করুন"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "ডক্স"
+  },
+  "navbar.support": {
+    "message": "সহায়তা"
+  },
+  "navbar.license": {
+    "message": "লাইসেন্স"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ডক্স"
+  },
+  "footer.link.home": {
+    "message": "হোম"
+  },
+  "footer.link.install": {
+    "message": "ইনস্টল"
+  },
+  "footer.section.project": {
+    "message": "প্রকল্প"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

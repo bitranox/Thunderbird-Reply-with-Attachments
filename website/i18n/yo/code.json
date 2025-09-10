@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  },
+  "homepage.meta.description": {
+    "message": "Àfikún Thunderbird: Fèsì pẹ̀lú àwọn fáìlì asomọ ti ìfiranṣẹ́ àkọ́kọ́"
+  },
+  "homepage.icon.alt": {
+    "message": "Aàmì RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ṣàfikún àwọn fáìlì asomọ ti ìfiranṣẹ́ àkọ́kọ́ nígbà tí o bá ń fèsì nínú Thunderbird — láifọwọyi tàbí lẹ́yìn ìmúdájú kíákíá."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Ṣí Ìtọ́nisọ́nà"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Ìbẹ̀rẹ̀ Kíákíá"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Fi sori ẹrọ láti Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ṣe ìrànlọ́wọ́"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ohun Tuntun"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Ka àwọn ayípadà tuntun jù lọ nínú {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Ìtàn Àyípadà"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Láifọwọyi tàbí Kọ́kọ́ Mú Dájú"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Yan láàárin fifi kún laifọwọyi tàbí àpótí ìmúdájú kékeré pẹ̀lú àwọn ọ̀nà abújá bọ́tìnì ìtẹ̀wé tó wúlò."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Iyọkúrò Ẹ̀dá‑Méjì Ọlọ́gbọ́n"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Bójú tó àwọn fáìlì asomọ tó wà tẹ́lẹ̀, ó sì yàgò fún ẹ̀dá‑méjì nípasẹ̀ orúkọ fáìlì, kedere àti tó ṣeé retí."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Foju kọ SMIME àti Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "A yọ àwọn ìbùwọ̀lú SMIME àti àwọn àwòrán inline kúrò kí fèsì lè rọrùn."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Àwọn Àpẹrẹ Akójọ Ìdènà"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Àwọn àpẹrẹ glob tí kò bikita lẹ́tà ńlá/kékèké gẹ́gẹ́ bí {code1} tàbí {code2} ń dènà fífi àwọn fáìlì tí kò ṣe pàtàkì kún."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Ìjápọ̀ kíákíá sí Ìtọ́nisọ́nà"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Fi sori ẹrọ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Ìṣètò"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Lílo"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ìbámu"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ìtìlẹ́yìn"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ìyọ̀nda"
+  },
+  "homepage.search.tip": {
+    "message": "Ìmọ̀ràn: Tẹ {slash} tàbí {ctrl}+{k} láti ṣàwárí àwọn ìtọ́nisọ́nà."
+  },
+  "site.title": {
+    "message": "Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  },
+  "site.tagline": {
+    "message": "Àfikún Thunderbird: Fèsì pẹ̀lú àwọn fáìlì asomọ ti ìfiranṣẹ́ àkọ́kọ́"
+  },
+  "navbar.title": {
+    "message": "Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  },
+  "navbar.logo.alt": {
+    "message": "Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  },
+  "navbar.docs": {
+    "message": "Ìtọ́nisọ́nà"
+  },
+  "navbar.support": {
+    "message": "Ìtìlẹ́yìn"
+  },
+  "navbar.license": {
+    "message": "Ìyọ̀nda"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Ìtọ́nisọ́nà"
+  },
+  "footer.link.home": {
+    "message": "Ojú-ìwé Ilẹ̀"
+  },
+  "footer.link.install": {
+    "message": "Fi sori ẹrọ"
+  },
+  "footer.section.project": {
+    "message": "Ìṣẹ́ agbese"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Fèsì Pẹ̀lú Àwọn Fáìlì Asomọ"
+  }
+}

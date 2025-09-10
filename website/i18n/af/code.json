@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Antwoord met Aanhegsels"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-byvoeging: Antwoord met oorspronklike aanhegsels ingesluit"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-ikoon"
+  },
+  "homepage.hero.title": {
+    "message": "Antwoord met Aanhegsels"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Sluit oorspronklike aanhegsels in wanneer jy in Thunderbird antwoord — outomaties of ná ’n vinnige bevestiging."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Open dokumentasie"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Snelbegin"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installeer vanaf Byvoegings"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Skenk"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Wat is nuut"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lees die jongste veranderinge in die {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Wysigingslogboek"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Outomaties of eers bevestig"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Kies tussen outomatiese byvoeging of ’n klein bevestigingsdialoog met handige sleutelbordkortpaaie."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Slim deduplisering"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Hou bestaande aanhegsels in ag en vermy duplikate volgens lêernaam — netjies en voorspelbaar."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Slaan SMIME en inlyn oor"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME-handtekeninge en inlynbeelde word uitgesluit om antwoorde lig te hou."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Swartlys-patrone"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Hoofletterongevoelige glob-patrone soos {code1} of {code2} verhoed dat onnodige lêers bygevoeg word."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Vinnige skakels na dokumentasie"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installeer"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasie"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Gebruik"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Versoenbaarheid"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ondersteuning"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisensie"
+  },
+  "homepage.search.tip": {
+    "message": "Wenk: Druk {slash} of {ctrl}+{k} om in die dokumentasie te soek."
+  },
+  "site.title": {
+    "message": "Antwoord met Aanhegsels"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-byvoeging: Antwoord met oorspronklike aanhegsels ingesluit"
+  },
+  "navbar.title": {
+    "message": "Antwoord met Aanhegsels"
+  },
+  "navbar.logo.alt": {
+    "message": "Antwoord met Aanhegsels"
+  },
+  "navbar.docs": {
+    "message": "Dokumentasie"
+  },
+  "navbar.support": {
+    "message": "Ondersteuning"
+  },
+  "navbar.license": {
+    "message": "Lisensie"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentasie"
+  },
+  "footer.link.home": {
+    "message": "Tuis"
+  },
+  "footer.link.install": {
+    "message": "Installeer"
+  },
+  "footer.section.project": {
+    "message": "Projek"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Antwoord met Aanhegsels"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Ƴeewto e Filɗe Ceŋtiinde"
+  },
+  "homepage.meta.description": {
+    "message": "Ɓeydital Thunderbird: Ƴeewde e filɗe ceŋtiinde aslii"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikon RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Ƴeewto e Filɗe Ceŋtiinde"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ɗum ɓeyda filɗe ceŋtiinde aslii so aɗa ƴeewtaa e Thunderbird — otomaatiik walla caggal konfirmasioŋ ɓooynde."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Uddit Dokke"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Fuɗɗorde Ciggu"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Aaf e Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Wallit"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ko Hesɗe"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Tar wayle kese-kese nder {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Diiwaan Wayle"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatiik walla Konfirmeede ko Woornde"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Suɓo ko ɓeydude otomaatiik walla henorde konfirmasioŋ ɓooynde, e “raccourcis clavier” hawsiɗe."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "De‑duplication e Hakkille"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ɗum keɓa filɗe ceŋtiinde ɗe ngonɗe kisa, tee falii duɓɓitiiɗi huutoraade innde fiilde; ɗum feewi tee peewti."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Doggude SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Siŋaature SMIME e nate “inline” ɗe ko dagginaa ngam waɗde ƴeewte ɗe ɓooyɗe."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Paatereen “Blacklist”"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Paatereen “glob” ɗe “case‑insensitive” hono {code1} walla {code2} haɗata ɓeydude filɗe ɓuru‑ɓuru."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Jokke Ciggu e Dokke"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Aaf"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Teelte"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Huutoraade"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Jaɓɓitorde"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ballal"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisansi"
+  },
+  "homepage.search.tip": {
+    "message": "Tippu: Dobo {slash} walla {ctrl}+{k} ngam yiylugo dokke."
+  },
+  "site.title": {
+    "message": "Ƴeewto e Filɗe Ceŋtiinde"
+  },
+  "site.tagline": {
+    "message": "Ɓeydital Thunderbird: Ƴeewde e filɗe ceŋtiinde aslii"
+  },
+  "navbar.title": {
+    "message": "Ƴeewto e Filɗe Ceŋtiinde"
+  },
+  "navbar.logo.alt": {
+    "message": "Ƴeewto e Filɗe Ceŋtiinde"
+  },
+  "navbar.docs": {
+    "message": "Dokke"
+  },
+  "navbar.support": {
+    "message": "Ballal"
+  },
+  "navbar.license": {
+    "message": "Lisansi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokke"
+  },
+  "footer.link.home": {
+    "message": "Jaɓɓorde"
+  },
+  "footer.link.install": {
+    "message": "Aaf"
+  },
+  "footer.section.project": {
+    "message": "Projek"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Ƴeewto e Filɗe Ceŋtiinde"
+  }
+}

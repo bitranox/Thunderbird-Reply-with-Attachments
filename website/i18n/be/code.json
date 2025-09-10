@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Адказ з укладаннямі"
+  },
+  "homepage.meta.description": {
+    "message": "Дадатак Thunderbird: адказ з арыгінальнымі ўкладаннямі"
+  },
+  "homepage.icon.alt": {
+    "message": "значок RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Адказ з укладаннямі"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Дадавайце арыгінальныя ўкладанні пры адказе ў Thunderbird — аўтаматычна або пасля хуткага пацверджання."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Адкрыць дакументацыю"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Хуткі старт"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Усталяваць з Дадаткаў"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ахвяраваць"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Што новага"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Прачытайце апошнія змены ў {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Спіс змен"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Аўтаматычна або з пацвярджэннем"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Абярыце паміж аўтаматычным дадаваннем або невялікім акном пацвярджэння з зручнымі гарачымі клавішамі."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Разумнае пазбяганне дублікатаў"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Улічвае ўжо наяўныя ўкладанні і пазбягае дублікатаў па назве файла — чыста і прадказальна."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Прапускаць SMIME і ўбудаваныя выявы"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Падпісы SMIME і ўбудаваныя выявы выключаюцца, каб адказы заставаліся лаканічнымі."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Шаблоны чорнага спісу"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Шаблоны glob, нечуўлівыя да рэгістра, напрыклад {code1} або {code2}, не дазваляюць дадаваць лішнія файлы."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Хуткія спасылкі на дакументацыю"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Усталяванне"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Налады"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Выкарыстанне"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Сумяшчальнасць"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Падтрымка"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ліцэнзія"
+  },
+  "homepage.search.tip": {
+    "message": "Падказка: націсніце {slash} або {ctrl}+{k}, каб шукаць у дакументацыі."
+  },
+  "site.title": {
+    "message": "Адказ з укладаннямі"
+  },
+  "site.tagline": {
+    "message": "Дадатак Thunderbird: адказ з арыгінальнымі ўкладаннямі"
+  },
+  "navbar.title": {
+    "message": "Адказ з укладаннямі"
+  },
+  "navbar.logo.alt": {
+    "message": "Адказ з укладаннямі"
+  },
+  "navbar.docs": {
+    "message": "Дакументацыя"
+  },
+  "navbar.support": {
+    "message": "Падтрымка"
+  },
+  "navbar.license": {
+    "message": "Ліцэнзія"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Дакументацыя"
+  },
+  "footer.link.home": {
+    "message": "Галоўная"
+  },
+  "footer.link.install": {
+    "message": "Усталяванне"
+  },
+  "footer.section.project": {
+    "message": "Праект"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Адказ з укладаннямі"
+  }
+}

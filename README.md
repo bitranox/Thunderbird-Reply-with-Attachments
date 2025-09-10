@@ -49,4 +49,11 @@ Release process
 
 If you like this add‑on, please consider supporting it:
 
-[![Donate via PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
+[![Donate via PayPal](website/static/img/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
+
+## Developer Notes (docs translations)
+
+- Translate homepage/navbar/footer UI strings (requires `OPENAI_API_KEY`):
+  - `make translation-web-index` (all locales, skip `en`)
+  - `make translation-web-index OPTS="--locales de,fr --force"` to limit/overwrite
+- Translate docs pages: see `website/docs/development.md` (Translate the Website).

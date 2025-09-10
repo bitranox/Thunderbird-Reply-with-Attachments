@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Changelog",
-  "description": "See the full history in the repository’s CHANGELOG.md.",
+  "description": "---",
   "source": "@site/docs/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/docs/licence"
+    "title": "License",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/license"
   }
 }

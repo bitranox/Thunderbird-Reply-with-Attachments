@@ -269,7 +269,7 @@ function computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklis
     if (!shouldExclude(nameNorm)) continue;
     const displayName = att.name || att.fileName || nameNorm;
     const entry = acc.get(nameNorm) || { display: displayName, patterns: new Set() };
-    const patterns = Array.isArray(matchBlacklist?.(nameNorm)) ? matchBlacklist(nameNorm) : [];
+    const patterns = typeof matchBlacklist === 'function' ? matchBlacklist(nameNorm) : [];
     for (const p of patterns) entry.patterns.add(String(p));
     acc.set(nameNorm, entry);
   }

@@ -4,132 +4,199 @@ title: Entwicklung
 sidebar_label: Entwicklung
 ---
 
-## Entwicklungsleitfaden
+---
 
-### Voraussetzungen
+## Entwicklungsleitfaden {#development-guide}
 
-- Node.js 18+ und npm (getestet mit Node 20)
+### Voraussetzungen {#prerequisites}
+
+- Node.js 22+ und npm (getestet mit Node 22)
 - Thunderbird 128 ESR oder neuer (für manuelles Testen)
 
-### Projektstruktur (High-Level)
+---
 
-- Root: Packaging-Skript `distribution_zip_packer.sh`, Dokumentation, Screenshots
-- `sources/`: Haupt-Add-on-Code (Hintergrund, Optionen/Popup-UI, Manifeste, Icons)
+### Projektstruktur (High‑Level) {#project-layout-high-level}
+
+- Root: Packaging-Skript `distribution_zip_packer.sh`, Doku, Screenshots
+- `sources/`: Haupt-Add-on-Code (Hintergrund, Options-/Popup-UI, Manifeste, Icons)
 - `tests/`: Vitest-Suite
 - `website/`: Docusaurus-Dokumentation (mit i18n unter `website/i18n/de/...`)
 
-### Installation & Tooling
+---
+
+### Installation & Tooling {#install-and-tooling}
 
 - Root-Abhängigkeiten installieren: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Ziele auflisten: `make help`
+- Doku (optional): `cd website && npm ci`
+- Ziele entdecken: `make help`
 
-### Make-Ziele (detailliert)
+---
 
-Das Repository enthält ein schlankes Makefile zur Standardisierung üblicher Dev-Workflows. Führe `make help` aus, um die Ziele aufzulisten.
+### Live-Entwicklung (web‑ext run) {#live-dev-web-ext}
 
-- `make help`
-  - Listet alle verfügbaren Ziele mit Einzeilenbeschreibungen auf (alles, was im Makefile mit `##` annotiert ist).
+- Schnelle Schleife in Firefox Desktop (nur UI-Smoke-Tests):
+  - `npx web-ext run --source-dir sources --target=firefox-desktop`
+- In Thunderbird ausführen (bevorzugt für MailExtensions):
+  - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
+- Tipps:
+  - Lassen Sie Thunderbirds Fehlerkonsole geöffnet (Extras → Entwicklerwerkzeuge → Fehlerkonsole).
+  - MV3-Ereignisseiten werden bei Inaktivität angehalten; laden Sie das Add-on nach Codeänderungen neu oder lassen Sie web‑ext automatisch neu laden.
+  - Einige Firefox‑only-Verhalten unterscheiden sich; prüfen Sie API-Parität immer in Thunderbird.
+  - Thunderbird-Binärpfade (Beispiele):
+    - Linux: `thunderbird` (z. B. `/usr/bin/thunderbird`)
+    - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
+    - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
+  - Profilisolation: Verwenden Sie für die Entwicklung ein separates Thunderbird-Profil, um Ihr tägliches Setup nicht zu beeinträchtigen.
 
-- `make prettier`
-  - Formatiert das gesamte Repository in-place mit Prettier (`node_modules/prettier/bin/prettier.cjs --write .`).
-  - Wird von anderen Zielen verwendet, um eine konsistente Formatierung sicherzustellen.
+---
 
-- `make prettier-write`
-  - Alias, der einfach `make prettier` ausführt.
+### Make-Ziele (alphabetisch) {#make-targets-alphabetical}
 
-- `make prettier-check`
-  - Führt Prettier im Check-Modus aus (keine Schreibvorgänge). Schlägt fehl, wenn Dateien neu formatiert würden.
+Das Makefile standardisiert gängige Dev-Workflows. Führen Sie `make help` jederzeit aus, um eine einzeilige Zusammenfassung aller Ziele zu erhalten.
 
-- `make eslint`
-  - Führt ESLint mit der Flat-Konfiguration (`npm run -s lint:eslint`) aus.
+Syntax für Optionen
 
-- `make lint`
-  - Führt Linting der MailExtension mit `web-ext lint` gegen `sources/` durch.
-  - Implementierungsdetails:
-    - Kopiert `sources/manifest_LOCAL.json` vorübergehend nach `sources/manifest.json` für den Linter.
-    - Stellt sicher, dass die temporäre Datei beim Beenden entfernt wird.
-    - Ignoriert erzeugte ZIP-Artefakte (`reply-with-attachments-plugin*.zip`).
-    - `web-ext`-Feststellungen lassen die Pipeline nicht fehlschlagen (`|| true`), daher die Ausgabe prüfen.
+- Verwenden Sie `make <command> OPTS="…"`, um Optionen zu übergeben (Anführungszeichen empfohlen). Jedes Ziel unten zeigt eine Beispielverwendung.
 
-- `make test`
-  - End-to-End-Entwicklerprüfung: Formatieren (write), Formatieren (check), ESLint, dann Vitest.
-  - Vitest läuft mit Coverage, wenn `@vitest/coverage-v8` installiert ist; andernfalls ohne Coverage.
-  - Coverage-Einstellungen und -Schwellen sind in `vitest.config.mjs` konfiguriert (global: 85% Zeilen/Funktionen/Anweisungen, 70% Verzweigungen).
+---
 
-- `make test-i18n`
-- Führt ausschließlich i18n‑fokussierte Testsuiten aus, die Add-on-UI‑Strings und Website-Dokumente über alle Sprachen hinweg abdecken:
-  - `npm run test:i18n` → führt `tests/i18n.*.test.js` aus (mit Coverage, falls verfügbar) für UI‑Schlüssel, Platzhalter, Titel, URLs und Cross‑Locale‑Parität in Nachrichten.
-  - `npm run -s test:website-i18n` → prüft Website‑Übersetzungen für jede Sprache unter `website/i18n/<lang>/...` mit einem Test pro EN‑Dokument und Sprache:
-    - Übersetzungsdatei existiert (gleicher Dateiname oder `<id>.md` basierend auf EN‑Front‑Matter `id`).
-    - Übersetzte Front‑Matter `id` existiert und entspricht der EN‑`id`.
-    - Übersetzte `title` ist nicht leer.
-    - Wenn EN `sidebar_label` hat, besitzt die Übersetzung ebenfalls eine nicht leere `sidebar_label`.
+#### commit
 
-- `make pack`
-  - Erstellt sowohl ATN- als auch LOCAL-ZIPs mit `distribution_zip_packer.sh`.
-  - Setzt `make lint` voraus.
-  - Gibt Artefakte im Repo-Root aus (`reply-with-attachments-plugin*.zip`). Artefakte nicht von Hand bearbeiten.
-  - Tipp: Versionen in `sources/manifest_ATN.json` und `sources/manifest_LOCAL.json` vor dem Packaging erhöhen.
+- Zweck: formatieren, testen, Changelog aktualisieren, committen und pushen.
+- Verwendung: `make commit`
+- Details: führt Prettier (write + check), `make test`, `make test-i18n` aus; hängt Einträge an das Changelog an, wenn es gestagte Diffs gibt; pusht nach `origin/<branch>`.
 
-- `make commit`
-  - Konventionsstarker Helfer, um typische Änderungen zu stagen und zu pushen:
-    - Prettier (write + check), `make test`, `make test-i18n`.
-    - Staged alle Änderungen; wenn es gestagte Diffs gibt, hängt einen Changelog-Eintrag an (`scripts/append-changelog-entry.sh`).
-    - Commitet mit einer standardisierten Nachricht und pusht nach `origin/<current-branch>`.
-  - Erfordert ein konfiguriertes Git-Remote und einen sauberen Repo-Status für beste Ergebnisse.
+---
 
-- `make docs-build`
-  - Baut die Docusaurus‑Website in `website/build`.
-  - Interna: `cd website && npm ci && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build`.
-  - Vor dem Prüfen oder Deployen der Doku ausführen.
+#### eslint
 
-- `make docs-build-linkcheck`
-  - Baut dann prüft interne Links mit `linkinator` (offline‑sicher).
-  - Akzeptiert `OPTS="--locales en|all"` (Standard: alle Locales). Beispiel:
-    - `make docs-build-linkcheck OPTS="--locales en"`
-  - Offline‑sicheres Verhalten:
-    - Schreibt die GitHub‑Pages‑`baseUrl` (`/Thunderbird-Reply-with-Attachments/`) für das lokale Scannen zu `/` um.
-    - Überspringt alle entfernten HTTP(S)‑Links außer `localhost`, um nicht von der echten Website abhängig zu sein.
-  - Nützlich, um defekte interne Navigation vor der Veröffentlichung aufzuspüren.
+- Zweck: ESLint mit Flat-Config ausführen.
+- Verwendung: `make eslint`
 
-- `make translation DOC=<file(s)|all> TO=<lang(s)|all>`
-  - Übersetzt ein oder mehrere Dokumente aus `website/docs` in den `website/i18n/<lang>/...`-Baum.
-  - Beispiele:
-    - `make translation DOC=changelog.md TO=de`
-    - `make translation DOC="changelog.md features.md" TO="de fr"`
-    - `make translation DOC=all TO=all`
-  - Hinweise:
-    - Liest API‑Schlüssel/Modell aus `.env` im Repo‑Root (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
-    - Bewahrt Codeblöcke und Front‑Matter‑`id`; übersetzt `title`/`sidebar_label`.
+---
 
-- `make docs-deploy-local`
-  - Baut und synchronisiert die Website in einen lokalen `gh-pages`‑Worktree via `scripts/docs-local-deploy.sh`.
-  - Konfigurierbar mit `OPTS`, zum Beispiel:
-    - `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
-    - `make docs-deploy-local OPTS="--locales all"`
+#### help
 
-- `make docs-push-github`
-  - Pusht den vorbereiteten lokalen `gh-pages`‑Worktree auf den Branch `gh-pages` des Git‑Remotes mittels `scripts/docs-gh-push.sh`.
+- Zweck: alle Ziele mit Einzeiler-Doku auflisten.
+- Verwendung: `make help`
 
-Tipp: Du kannst den von Make verwendeten Paketmanager über `NPM=...` überschreiben (Standard: `npm`).
+---
 
-### Build & Paketierung
+#### lint
+
+- Zweck: die MailExtension mit `web-ext` linten.
+- Verwendung: `make lint`
+- Hinweise: kopiert temporär `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignoriert gebaute ZIPs; Warnungen lassen die Pipeline nicht fehlschlagen.
+
+---
+
+#### pack
+
+- Zweck: ATN- und LOCAL-ZIPs bauen (hängt von `lint` ab).
+- Verwendung: `make pack`
+- Tipp: Versionen in beiden `sources/manifest_*.json` vor dem Packen anheben.
+
+---
+
+#### prettier
+
+- Zweck: das Repo inplace formatieren.
+- Verwendung: `make prettier`
+
+#### prettier-check
+
+- Zweck: Formatierung prüfen (ohne Schreibvorgang).
+- Verwendung: `make prettier-check`
+
+#### prettier-write
+
+- Zweck: Alias für `prettier`.
+- Verwendung: `make prettier-write`
+
+---
+
+#### test
+
+- Zweck: Prettier (write+check), ESLint und anschließend Vitest ausführen (Coverage, falls installiert).
+- Verwendung: `make test`
+
+#### test-i18n
+
+- Zweck: i18n‑fokussierte Tests für Add-on‑Strings und Website‑Doku.
+- Verwendung: `make test-i18n`
+- Führt aus: `npm run test:i18n` und `npm run -s test:website-i18n`.
+
+---
+
+#### translate-app / translation-app
+
+- Zweck: Add-on‑UI‑Strings von EN in andere Sprachen übersetzen.
+- Verwendung: `make translation-app OPTS="--locales all|de,fr"`
+- Hinweise: erhält Schlüsselstruktur und Platzhalter; schreibt Logs nach `translation_app.log`. Skriptform: `node scripts/translate_app.js --locales …`.
+
+#### translate-web / translation-web
+
+- Zweck: Website‑Doku übersetzen.
+- Verwendung: `make translation-web OPTS="<doc|all> <lang|all>"`
+- Hinweise: interaktiv, wenn `OPTS` weggelassen wird; erhält Codeblöcke und Front‑Matter `id`; schreibt Logs nach `translation_web.log`.
+
+---
+
+#### web-build
+
+- Zweck: die Doku‑Site nach `website/build` bauen.
+- Verwendung: `make web-build OPTS="--locales en|de,en|all"` (oder `BUILD_LOCALES="en de"` setzen)
+- Interna: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Abhängigkeiten: führt `npm ci` in `website/` nur aus, wenn `website/node_modules/@docusaurus` fehlt.
+
+#### web-build-linkcheck
+
+- Zweck: offline‑sicherer Link‑Check.
+- Verwendung: `make web-build-linkcheck OPTS="--locales en|all"`
+- Hinweise: baut nach `tmp_linkcheck_web_pages`; schreibt GH‑Pages‑`baseUrl` zu `/` um; überspringt entfernte HTTP(S)-Links.
+
+#### web-build-local-preview
+
+- Zweck: lokales gh‑pages‑Preview mit optionalen Tests/Link‑Check.
+- Verwendung: `make web-build-local-preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Verhalten: versucht zuerst den Node‑Preview‑Server (`scripts/preview-server.mjs`, unterstützt `/__stop`), fällt zurück auf `python3 -m http.server`; läuft auf 8080–8090; PID unter `web-local-preview/.server.pid`.
+
+#### web-push-github
+
+- Zweck: `website/build` in den Branch `gh-pages` pushen.
+- Verwendung: `make web-push-github`
+
+Tipp: Setzen Sie `NPM=…`, um den vom Makefile verwendeten Paketmanager zu überschreiben (Standard ist `npm`).
+
+---
+
+#### Tipps zum Locale‑Build {#locale-build-tips}
+
+- Nur einen Teil der Locales bauen: `BUILD_LOCALES="en de"` setzen oder `OPTS="--locales en,de"` an Web‑Ziele übergeben.
+- Bestimmte Locale in der Vorschau: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
+
+---
+
+### Build & Paketierung {#build-and-package}
 
 - ZIPs bauen: `make pack`
-  - Erzeugt ATN- und LOCAL-ZIPs im Repo-Root (Artefakte nicht von Hand bearbeiten)
-  - Tipp: Version sowohl in `sources/manifest_ATN.json` als auch in `sources/manifest_LOCAL.json` vor dem Packaging aktualisieren
-- Manuelle Installation (Dev): Thunderbird → Extras → Add-ons und Themes → Zahnrad → Add-on aus Datei installieren… → das erstellte ZIP auswählen
+  - Erzeugt ATN‑ und LOCAL‑ZIPs im Repo‑Root (Artefakte nicht von Hand bearbeiten)
+  - Tipp: Version vor dem Packen in `sources/manifest_ATN.json` und `sources/manifest_LOCAL.json` aktualisieren
+- Manuelle Installation (Dev): Thunderbird → Extras → Add-ons und Themes → Zahnrad → Add-on aus Datei installieren … → das gebaute ZIP auswählen
 
-### Test
+---
 
-- Gesamte Test-Suite: `make test` (Vitest)
+### Testen {#test}
+
+- Gesamtsuite: `make test` (Vitest)
 - Coverage (optional):
   - `npm i -D @vitest/coverage-v8`
-  - Führe `make test` aus; öffne `coverage/index.html` für den HTML-Bericht
-- Nur i18n: `make test-i18n` (UI-Schlüssel/Platzhalter/Titel + Website Parität pro Locale und Dokument mit Prüfungen für id/title/sidebar_label)
+  - `make test` ausführen; `coverage/index.html` für HTML‑Report öffnen
+- Nur i18n: `make test-i18n` (UI‑Keys/Platzhalter/Titel + Website‑Parität pro Locale und Dokument mit Prüfungen für id/title/sidebar_label)
 
-### Debugging & Protokolle
+---
+
+### Debugging & Logs {#debugging-and-logs}
 
 - Fehlerkonsole: Extras → Entwicklerwerkzeuge → Fehlerkonsole
 - Ausführliche Logs zur Laufzeit umschalten:
@@ -137,45 +204,132 @@ Tipp: Du kannst den von Make verwendeten Paketmanager über `NPM=...` überschre
   - Deaktivieren: `messenger.storage.local.set({ debug: false })`
 - Logs erscheinen beim Verfassen/Senden von Antworten
 
-### Doku (Website)
+---
+
+### Doku (Website) {#docs-website}
 
 - Dev-Server: `cd website && npm run start`
-- Statische Seite bauen: `cd website && npm run build`
-- Make-Äquivalente (alphabetisch): `make docs-build`, `make docs-build-linkcheck`, `make docs-deploy-local`, `make docs-push-github`
-  - Beispiele:
-    - Nur EN, ohne Tests/Link‑Check, kein Push: `make docs-deploy-local OPTS="--locales en --no-test --no-link-check --dry-run"`
-    - Alle Locales, mit Tests/Link‑Check, danach Push: `make docs-deploy-local && make docs-push-github`
-- Vor dem Veröffentlichen den offline‑sicheren Link‑Check ausführen: `make docs-build-linkcheck`.
-- i18n: Englisch lebt in `website/docs/*.md`; deutsche Übersetzungen in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Suche: Wenn Algolia DocSearch-Umgebungsvariablen in CI gesetzt sind (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), verwendet die Seite Algolia-Suche; andernfalls fällt sie auf die lokale Suche zurück. Auf der Startseite `/` oder `Ctrl+K` drücken, um die Suchbox zu öffnen.
+- Statische Site bauen: `cd website && npm run build`
+- Make-Äquivalente (alphabetisch): `make web-build`, `make web-build-linkcheck`, `make web-build-local-preview`, `make web-push-github`
+  - Verwendungsbeispiele:
+    - Nur EN, Tests/Link‑Check überspringen, kein Push: `make web-build-local-preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+    - Alle Locales, mit Tests/Link‑Check, danach Push: `make web-build-local-preview && make web-push-github`
+- Vor dem Veröffentlichen den offline‑sicheren Link‑Check ausführen: `make web-build-linkcheck`.
+- i18n: Englisch liegt in `website/docs/*.md`; deutsche Übersetzungen in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Suche: Wenn Algolia-DocSearch-Umgebungsvariablen in CI gesetzt sind (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), verwendet die Site Algolia Search; andernfalls wird auf die lokale Suche zurückgefallen. Auf der Startseite `/` oder `Ctrl+K` drücken, um die Suche zu öffnen.
 
-### Sicherheits- & Konfigurationstipps
+---
 
-- `sources/manifest.json` nicht committen (wird temporär vom Build erzeugt)
-- `browser_specific_settings.gecko.id` stabil halten, um den Update-Kanal zu erhalten
+#### Vorschau-Tipps {#preview-tips}
 
-### Persistenz der Einstellungen
+- Node‑Vorschau sauber beenden: `http://localhost:<port>/__stop` öffnen (wird nach `Local server started` ausgegeben).
+- Wenn Bilder in MDX/JSX nicht laden, `useBaseUrl('/img/...')` verwenden, um die Site‑`baseUrl` zu berücksichtigen.
+- Die Vorschau startet zuerst; der Link‑Check läuft danach und ist nicht blockierend (defekte externe Links stoppen die Vorschau nicht).
+- Beispiel‑Preview‑URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (wird nach "Local server started" ausgegeben).
+- Externe Links im Link‑Check: Manche externen Sites (z. B. addons.thunderbird.net) blockieren automatisierte Crawler und zeigen im Link‑Check evtl. 403. Die Vorschau startet trotzdem; diese können ignoriert werden.
 
-- Nutzereinstellungen liegen in `storage.local` und bleiben über Updates hinweg erhalten.
-- Bei der Installation werden Standardwerte nur gesetzt, wenn ein Schlüssel fehlt.
-- Bei Updates füllt eine Migration nur fehlende Schlüssel; bestehende Werte werden nie überschrieben.
+---
+
+#### Website übersetzen {#translate-website}
+
+Was Sie übersetzen können
+
+- Nur die Website‑UI: Startseite, Navbar, Footer und andere UI‑Strings. Der Doku‑Inhalt bleibt vorerst nur auf Englisch.
+
+Wo bearbeiten
+
+- Bearbeiten Sie `website/i18n/<locale>/code.json` (verwenden Sie `en` als Referenz). Platzhalter wie `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unverändert lassen.
+
+Dateien erzeugen oder aktualisieren
+
+- Fehlende Stubs für alle Locales erzeugen: `npm --prefix website run i18n:stubs`
+- Stubs aus Englisch überschreiben (nachdem neue Strings hinzugefügt wurden): `npm --prefix website run i18n:stubs:force`
+- Alternative für eine einzelne Locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+
+UI‑Strings für Startseite/Navbar/Footer übersetzen (OpenAI)
+
+- Zugangsdaten einmalig setzen (Shell oder .env):
+  - `export OPENAI_API_KEY=sk-...`
+  - Optional: `export OPENAI_MODEL=gpt-4o-mini`
+- Einmalig (alle Locales, en überspringen): `make translation-web-index`
+- Auf bestimmte Locales beschränken: `make translation-web-index OPTS="--locales de,fr"`
+- Bestehende Werte überschreiben: `make translation-web-index OPTS="--force"`
+
+Validierung & Wiederholungen
+
+- Das Übersetzungsskript validiert die JSON‑Struktur, erhält geschweifte‑Klammer‑Platzhalter und stellt sicher, dass URLs unverändert bleiben.
+- Bei Validierungsfehlern wird mit Feedback bis zu 2-mal erneut versucht, bevor bestehende Werte beibehalten werden.
+
+Eigene Locale prüfen
+
+- Dev‑Server: `npm --prefix website run start`
+- Aufrufen: `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+
+Einreichen
+
+- Eröffnen Sie einen PR mit den bearbeiteten `code.json`-Dateien. Halten Sie die Änderungen fokussiert und fügen Sie nach Möglichkeit einen schnellen Screenshot bei.
+
+---
+
+### Sicherheits- & Konfigurationstipps {#security-and-configuration-tips}
+
+- `sources/manifest.json` nicht committen (wird vom Build temporär erstellt)
+- `browser_specific_settings.gecko.id` stabil halten, um den Update‑Kanal zu erhalten
+
+---
+
+### Persistenz der Einstellungen {#settings-persistence}
+
+- Speicherung: Alle Benutzereinstellungen liegen in `storage.local` und bleiben über Add‑on‑Updates hinweg erhalten.
+- Installation: Standardwerte werden nur angewendet, wenn ein Schlüssel strikt fehlt (undefined).
+- Update: Eine Migration füllt nur fehlende Schlüssel; bestehende Werte werden nie überschrieben.
 - Schema‑Marker: `settingsVersion` (derzeit `1`).
+- Schlüssel und Standardwerte:
+  - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
+  - `confirmBeforeAdd: boolean` → `false`
+  - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
+  - `warnOnBlacklistExcluded: boolean` → `true`
+- Code: siehe `sources/background.js` → `initializeOrMigrateSettings()` und `SCHEMA_VERSION`.
 
-### Fehlerbehebung
+Dev‑Workflow (neue Einstellung hinzufügen)
+
+- `SCHEMA_VERSION` in `sources/background.js` erhöhen.
+- Den neuen Schlüssel + Standardwert dem `DEFAULTS`-Objekt in `initializeOrMigrateSettings()` hinzufügen.
+- Beim Setzen von Defaults die "only-if-undefined"-Regel verwenden; bestehende Werte nicht überschreiben.
+- Wenn die Einstellung für Nutzer sichtbar ist, in `sources/options.js` verdrahten und lokalisierte Strings hinzufügen.
+- Tests hinzufügen/anpassen (siehe `tests/background.settings.migration.test.js`).
+
+Tipps für manuelles Testen
+
+- Frische Installation simulieren: Datenverzeichnis der Erweiterung leeren oder mit einem neuen Profil starten.
+- Update simulieren: `settingsVersion` in `storage.local` auf `0` setzen und neu laden; bestätigen, dass bestehende Werte unverändert bleiben und nur fehlende Schlüssel hinzugefügt werden.
+
+---
+
+### Fehlerbehebung {#troubleshooting}
 
 - Sicherstellen, dass Thunderbird 128 ESR oder neuer ist
-- Für Laufzeitprobleme die Fehlerkonsole verwenden
+- Die Fehlerkonsole für Laufzeitprobleme verwenden
+- Wenn gespeicherte Einstellungen scheinbar nicht korrekt angewendet werden, Thunderbird neu starten und erneut versuchen. (Thunderbird kann Zustand über Sitzungen hinweg cachen; ein Neustart stellt sicher, dass frische Einstellungen geladen werden.)
 
-### CI & Coverage
+---
 
-- GitHub Actions (`CI — Tests`) führt Vitest mit Coverage-Schwellen aus (85% Zeilen/Funktionen/Verzweigungen/Anweisungen). Wenn die Schwellen nicht erreicht werden, schlägt der Job fehl.
-- Der Workflow lädt ein Artefakt `coverage-html` mit dem HTML-Bericht hoch; lade es von der Run-Seite herunter (Actions → letzter Lauf → Artifacts).
+### CI & Testabdeckung {#ci-and-coverage}
 
-### Mitwirken
+- GitHub Actions (`CI — Tests`) führt Vitest mit Abdeckungs‑Schwellenwerten aus (85% Zeilen/Funktionen/Branches/Statements). Werden die Schwellen nicht erreicht, schlägt der Job fehl.
+- Der Workflow lädt ein Artefakt `coverage-html` mit dem HTML‑Report hoch; laden Sie es von der Run‑Seite herunter (Actions → letzter Lauf → Artifacts).
 
-- Siehe CONTRIBUTING.md für Branch-/Commit-/PR-Richtlinien
-- Tipp: Lege ein separates Thunderbird-Entwicklungsprofil zum Testen an, um dein tägliches Profil nicht zu beeinträchtigen.
+---
+
+### Mitwirken {#contributing}
+
+- Siehe CONTRIBUTING.md für Branch/Commit/PR‑Richtlinien
+- Tipp: Erstellen Sie ein separates Thunderbird‑Entwicklungsprofil zum Testen, um Ihr tägliches Profil nicht zu beeinträchtigen.
+
+---
 
 ### Übersetzungen
 
-- Große „all → all“-Übersetzungsaufträge können langsam und teuer sein. Starte mit einer Teilmenge (z. B. ein paar Dokus und 1–2 Sprachen), prüfe das Ergebnis und erweitere dann.
+- Große „all → all“-Übersetzungs‑Jobs können langsam und teuer sein. Beginnen Sie mit einer Teilmenge (z. B. ein paar Dokumente und 1–2 Locales), prüfen Sie das Ergebnis und erweitern Sie dann.
+
+---

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Module complémentaire Thunderbird : répondre en incluant les pièces jointes d’origine"
+  },
+  "homepage.icon.alt": {
+    "message": "Icône RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Incluez les pièces jointes d’origine lors d’une réponse dans Thunderbird — automatiquement ou après une brève confirmation."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Ouvrir la documentation"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Démarrage rapide"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installer depuis les modules complémentaires"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Faire un don"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Nouveautés"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Consultez les dernières modifications dans le {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Journal des modifications"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatique ou confirmation préalable"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Choisissez entre l’ajout automatique ou une petite boîte de dialogue de confirmation avec des raccourcis clavier pratiques."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Déduplication intelligente"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respecte les pièces jointes déjà présentes et évite les doublons par nom de fichier, de façon claire et prévisible."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Ignorer S/MIME et les éléments en ligne"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Les signatures S/MIME et les images intégrées sont exclues pour garder des réponses légères."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Modèles de liste de blocage"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Des modèles glob insensibles à la casse tels que {code1} ou {code2} empêchent l’ajout de fichiers parasites."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Liens rapides vers la documentation"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installer"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuration"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Utilisation"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibilité"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Assistance"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licence"
+  },
+  "homepage.search.tip": {
+    "message": "Astuce : appuyez sur {slash} ou {ctrl}+{k} pour rechercher dans la documentation."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Module complémentaire Thunderbird : répondre en incluant les pièces jointes d’origine"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Documentation"
+  },
+  "navbar.support": {
+    "message": "Assistance"
+  },
+  "navbar.license": {
+    "message": "Licence"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentation"
+  },
+  "footer.link.home": {
+    "message": "Accueil"
+  },
+  "footer.link.install": {
+    "message": "Installer"
+  },
+  "footer.section.project": {
+    "message": "Projet"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

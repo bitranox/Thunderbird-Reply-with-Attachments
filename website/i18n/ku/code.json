@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Bersîv bi Pêvekên"
+  },
+  "homepage.meta.description": {
+    "message": "Add‑on a Thunderbird: Bersîv bi pêvekên orîjînal"
+  },
+  "homepage.icon.alt": {
+    "message": "Îkona RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Bersîv bi Pêvekên"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Dema li Thunderbirdê bersîv dikî, pêvekên orîjînal jî tevlî bike — bixweber an jî piştî erêkirineke bilez."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Belgeyan veke"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Destpêka bilez"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Ji Add‑ons saz bike"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Bexşî bide"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Tiştên nû"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Guherandinên dawî di {changelog} de bixwîne."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Lîsteya Guherandinê"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Bixweber an Erêkirina Pêşî"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Di navbera zêdekirina bixweber an paceyeke piçûk a erêkirinê bi kurteriyên klavyeyê yên kêrhatî de hilbijêre."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Jêbirina Dubareyan ya Zîrek"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ji pêvekên heyî rêz dide û li gorî navê pelê dubareyan dûr dikeve; paqij û pêşxuyî."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME û Navxistî derbas bike"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Ji bo ku bersîv sadeyî bimîne, îmzeyên SMIME û wêneyên navxistî tên derxistin."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Şablonên Lîsteya Reş"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Şablonên glob ên bêhêrsî ya mezin‑beçûk wek {code1} an {code2} zêdekirina pelên bêkêrê asteng dikin."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Girêdanên bilez ên belgeyan"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Sazkirin"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Veavakirin"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Bikaranîn"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Hevbûn"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Piştgirî"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lîsans"
+  },
+  "homepage.search.tip": {
+    "message": "Şîret: Ji bo lêgerîna belgeyan {slash} an {ctrl}+{k} bitikîne."
+  },
+  "site.title": {
+    "message": "Bersîv bi Pêvekên"
+  },
+  "site.tagline": {
+    "message": "Add‑on a Thunderbird: Bersîv bi pêvekên orîjînal"
+  },
+  "navbar.title": {
+    "message": "Bersîv bi Pêvekên"
+  },
+  "navbar.logo.alt": {
+    "message": "Bersîv bi Pêvekên"
+  },
+  "navbar.docs": {
+    "message": "Belge"
+  },
+  "navbar.support": {
+    "message": "Piştgirî"
+  },
+  "navbar.license": {
+    "message": "Lîsans"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Belge"
+  },
+  "footer.link.home": {
+    "message": "Destpêk"
+  },
+  "footer.link.install": {
+    "message": "Sazkirin"
+  },
+  "footer.section.project": {
+    "message": "Proje"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Bersîv bi Pêvekên"
+  }
+}

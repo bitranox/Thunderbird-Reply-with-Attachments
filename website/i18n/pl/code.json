@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Odpowiedź z załącznikami"
+  },
+  "homepage.meta.description": {
+    "message": "Dodatek do Thunderbirda: odpowiedź z dołączeniem oryginalnych załączników"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikona RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Odpowiedź z załącznikami"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Dołączaj oryginalne załączniki podczas odpowiadania w Thunderbirdzie — automatycznie lub po szybkim potwierdzeniu."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Otwórz dokumentację"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Szybki start"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Zainstaluj z Dodatków"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Wesprzyj"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Co nowego"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Przeczytaj najnowsze zmiany w {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Lista zmian"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatycznie lub z potwierdzeniem"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Wybierz między automatycznym dodawaniem a niewielkim oknem potwierdzenia z wygodnymi skrótami klawiaturowymi."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Inteligentna deduplikacja"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Uwzględnia istniejące załączniki i unika duplikatów według nazwy pliku — przejrzyście i przewidywalnie."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Pomiń S/MIME i elementy inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Podpisy S/MIME i obrazy inline są wykluczane, aby odpowiedzi były zwięzłe."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Wzorce blokujące"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Niewrażliwe na wielkość liter wzorce glob, takie jak {code1} lub {code2}, zapobiegają dodawaniu zbędnych plików."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Szybkie odnośniki do dokumentacji"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalacja"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfiguracja"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Sposób użycia"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatybilność"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Wsparcie"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencja"
+  },
+  "homepage.search.tip": {
+    "message": "Wskazówka: naciśnij {slash} lub {ctrl}+{k}, aby przeszukać dokumentację."
+  },
+  "site.title": {
+    "message": "Odpowiedź z załącznikami"
+  },
+  "site.tagline": {
+    "message": "Dodatek do Thunderbirda: odpowiedź z dołączeniem oryginalnych załączników"
+  },
+  "navbar.title": {
+    "message": "Odpowiedź z załącznikami"
+  },
+  "navbar.logo.alt": {
+    "message": "Odpowiedź z załącznikami"
+  },
+  "navbar.docs": {
+    "message": "Dokumentacja"
+  },
+  "navbar.support": {
+    "message": "Wsparcie"
+  },
+  "navbar.license": {
+    "message": "Licencja"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentacja"
+  },
+  "footer.link.home": {
+    "message": "Strona główna"
+  },
+  "footer.link.install": {
+    "message": "Instalacja"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Odpowiedź z załącznikami"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Ilovalar bilan javob berish"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird qo‘shimchasi: Javobda asl ilovalarni qo‘shish"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA belgisi"
+  },
+  "homepage.hero.title": {
+    "message": "Ilovalar bilan javob berish"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird’da javob berganda asl ilovalarni ham qo‘shadi — avtomatik yoki tezkor tasdiqdan so‘ng."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Hujjatlarni ochish"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Tez boshlash"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Qo‘shimchalardan o‘rnatish"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Xayriya qilish"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Yangiliklar"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "So‘nggi o‘zgarishlarni {changelog} sahifasida o‘qing."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "O‘zgarishlar jurnali"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Avtomatik yoki avval tasdiqlash"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Avtomatik qo‘shish yoki qulay klaviatura tugma birikmalariga ega kichik tasdiqlash oynasi o‘rtasida tanlang."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Aqlli dublikatlarni bartaraf etish"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Mavjud ilovalarni inobatga oladi va fayl nomi bo‘yicha dublikatlarning oldini oladi — tartibli va bashoratli."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME va Inline-ni o‘tkazib yuborish"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Javoblarni yengil saqlash uchun SMIME imzolari va inline rasmlar qo‘shilmaydi."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Qora ro‘yxat shablonlari"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Harf katta‑kichikligini hisobga olmaydigan {code1} yoki {code2} kabi glob‑shablonlar keraksiz fayllar qo‘shilishining oldini oladi."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hujjatlar bo‘yicha tezkor havolalar"
+  },
+  "homepage.quicklinks.install": {
+    "message": "O‘rnatish"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Sozlash"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Foydalanish"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Moslik"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Qo‘llab-quvvatlash"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Litsenziya"
+  },
+  "homepage.search.tip": {
+    "message": "Maslahat: Hujjatlarda qidirish uchun {slash} yoki {ctrl}+{k} tugmalarini bosing."
+  },
+  "site.title": {
+    "message": "Ilovalar bilan javob berish"
+  },
+  "site.tagline": {
+    "message": "Thunderbird qo‘shimchasi: Javobda asl ilovalarni qo‘shish"
+  },
+  "navbar.title": {
+    "message": "Ilovalar bilan javob berish"
+  },
+  "navbar.logo.alt": {
+    "message": "Ilovalar bilan javob berish"
+  },
+  "navbar.docs": {
+    "message": "Hujjatlar"
+  },
+  "navbar.support": {
+    "message": "Qo‘llab-quvvatlash"
+  },
+  "navbar.license": {
+    "message": "Litsenziya"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Hujjatlar"
+  },
+  "footer.link.home": {
+    "message": "Bosh sahifa"
+  },
+  "footer.link.install": {
+    "message": "O‘rnatish"
+  },
+  "footer.section.project": {
+    "message": "Loyiha"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Ilovalar bilan javob berish"
+  }
+}

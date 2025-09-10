@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
-  "extDescription": { "message": "ඉ‑තැපැල් පිළිතුරු වල ආදි ඇමුණුම් ස්වයංක්‍රියව එක් කරයි." },
-  "composeTitle": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
-  "optionsTitle": { "message": "ඇමුණුම් සමග පිළිතුරු දීම — විකල්ප" },
-  "confirmTitle": { "message": "ඇමුණුම් තහවුරු කිරීම" },
-  "uiHeader": { "message": "ඇමුණුම් සමග පිළිතුරු දීම" },
-  "uiNoOptions": { "message": "දැනට වින්‍යාස කිරීමට විකල්ප නොමැත." },
-  "uiSupport": { "message": "මෙම ඇඩ්‑ඕනය ඔබට කැමතිද? කුඩා දානයකින් මා ත්‍යාග කරන්න:" },
-  "uiDonate": { "message": "දැන් දානය කරන්න" },
-  "uiGithubText": { "message": "දෝෂ වාර්තා හෝ වෙනත් ප්‍රශ්නයන් සඳහා, කරුණාකර මගේ" },
-  "uiGithubLinkLabel": { "message": "GitHub පිටුවට" },
-  "iconAlt": { "message": "Reply with Attachments අයිකනය" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ගොනු නාම කළු ලැයිස්තුව (glob රටා)" },
-  "uiBlacklistHelp": {
-    "message": "මෙම රටාවන්ගෙන් එක් එකකට ගැලපෙන ගොනු කිසි විටෙකත් ස්වයංක්‍රියව එක් නොකෙරේ. එක් පේළියකට එක් රටාවක්. උදාහරණ: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
   },
-  "uiWarnBlacklistLabel": { "message": "කළු ලැයිස්තුව නිසා ඇමුණුම් ඉවත් කර ඇත්නම් අවවාද දෙන්න" },
-  "uiSave": { "message": "සුරකින්න" },
-  "uiSaving": { "message": "සුරකිමින්…" },
-  "uiReset": { "message": "පෙරනිමි අගයන් වෙත නැවත සැකසුම්" },
-  "uiSaved": { "message": "සුරැකියි." },
-  "uiResetDone": { "message": "නැවත සකස් කරා." },
-  "uiConfirmHeader": { "message": "තහවුරු කිරීම" },
-  "uiConfirmLabel": { "message": "ඇමුණුම් එක් කිරීමට පෙර අසන්න" },
+  "extDescription": {
+    "message": "වි-තැපැල් පිළිතුරු තුළ මුල් ඇමුණුම් ස්වයංක්‍රීයව ඇතුළත් කරයි."
+  },
+  "composeTitle": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
+  },
+  "optionsTitle": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම — විකල්ප"
+  },
+  "confirmTitle": {
+    "message": "ඇමුණුම් තහවුරු කරන්න"
+  },
+  "uiHeader": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
+  },
+  "uiNoOptions": {
+    "message": "දැනට සකස් කළ හැකි විකල්ප නොමැත."
+  },
+  "uiSupport": {
+    "message": "මෙම ඇඩොනය ඔබට රුචිද? කුඩා දායකත්වයක් මඟින් මට සහය වන්න:"
+  },
+  "uiDonate": {
+    "message": "දැන් දායක වන්න"
+  },
+  "uiGithubText": {
+    "message": "දෝෂ වාර්තා හෝ අනෙකුත් විමසුම් සඳහා, කරුණාකර මාගේ"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub පිටුව"
+  },
+  "iconAlt": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම අයිකනය"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ගොනු නාම්වල කළු ලැයිස්තුව (glob රටා)"
+  },
+  "uiBlacklistHelp": {
+    "message": "මෙම රටාවලින් ඕනෑම එකකට ගැළපෙන නාම ඇති ගොනු කිසි විටෙකත් ස්වයංක්‍රීයව ඇමුණුම් නොකරයි. එක් රටාවක් එක් පේළියකට. උදාහරණ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "කළු ලැයිස්තුවක් නිසා ඇමුණුම් බැහැර කළහොත් අවවාද කරන්න"
+  },
+  "uiSave": {
+    "message": "සුරකින්න"
+  },
+  "uiSaving": {
+    "message": "සුරකිමින්…"
+  },
+  "uiReset": {
+    "message": "පෙර නිමි අගයන් වෙත යළි පිහිටුවන්න"
+  },
+  "uiSaved": {
+    "message": "සුරකින ලදී."
+  },
+  "uiResetDone": {
+    "message": "යළි පිහිටුවා ඇත."
+  },
+  "uiConfirmHeader": {
+    "message": "තහවුරු කිරීම"
+  },
+  "uiConfirmLabel": {
+    "message": "ඇමුණුම් එකතු කිරීමට පෙර අසන්න"
+  },
   "uiConfirmHelp": {
-    "message": "කුඩාවක තහවුරුකිරීමේ සංවාදය ඇමුණුම් ඇත්තටම එකතු වන විට පමණක් පෙන්වනු ලැබේ. යතුරුපුවරුව: Y හෝ J = ඔව්; N හෝ Esc = නැහැ."
+    "message": "ඇමුණුම් ඇත්තටම එක් කරන අවස්ථාවල පමණක් කුඩා තහවුරු කිරීමේ සංවාදයක් පෙනේ. යතුරු පුවරුව: Y හෝ J = ඔව්; N හෝ Esc = නැත."
   },
   "confirmAddOne": {
-    "message": "ඇමුණුම එක් කරන්නද: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "ඇමුණුම් එක් කරන්නද ($1): $2$3?",
+    "message": "ඇමුණුම එක් කරන්න: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 තවද" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "ඔව්" },
-  "confirmNo": { "message": "නැහැ" },
-  "warnBlacklistTitle": { "message": "කළු ලැයිස්තුවෙන් ඉවත් කරන ලදි" },
-  "warnBlacklistIntro": { "message": "පහත ගොනු ස්වයංක්‍රියව එක් නොකෙරේ:" },
-  "warnColFile": { "message": "ගොනුව" },
-  "warnColPattern": { "message": "රටාව" },
-  "warnOk": { "message": "හරි" },
-  "uiConfirmDefaultHeader": { "message": "පෙරනිමි පිළිතුර" },
-  "uiConfirmDefaultYes": { "message": "ඔව්" },
-  "uiConfirmDefaultNo": { "message": "නැහැ" },
+  "confirmAddMany": {
+    "message": "ඇමුණුම් එක් කරන්න ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "ඔව්"
+  },
+  "confirmNo": {
+    "message": "නැත"
+  },
+  "warnBlacklistTitle": {
+    "message": "කළු ලැයිස්තුව මඟින් බැහැර කර ඇත"
+  },
+  "warnBlacklistIntro": {
+    "message": "පහත ගොනු ස්වයංක්‍රීයව ඇමුණුම් නොකෙරේ:"
+  },
+  "warnColFile": {
+    "message": "ගොනුව"
+  },
+  "warnColPattern": {
+    "message": "රටාව"
+  },
+  "warnOk": {
+    "message": "හරි"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "පෙරනිමි පිළිතුර"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ඔව්"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "නැත"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

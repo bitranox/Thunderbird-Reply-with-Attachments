@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Complemento do Thunderbird: responder incluindo os anexos originais"
+  },
+  "homepage.icon.alt": {
+    "message": "Ícone do RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Inclua os anexos originais ao responder no Thunderbird — automaticamente ou após uma rápida confirmação."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Abrir documentação"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Início rápido"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instalar a partir dos Complementos"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Doar"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Novidades"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Consulte as alterações mais recentes no {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Registo de alterações"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automático ou confirmação prévia"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Escolha entre adicionar automaticamente ou uma pequena caixa de diálogo de confirmação, com práticos atalhos de teclado."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Desduplicação inteligente"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respeita os anexos existentes e evita duplicados pelo nome do ficheiro, de forma limpa e previsível."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Ignorar S/MIME e imagens incorporadas"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "As assinaturas S/MIME e as imagens incorporadas são excluídas para manter as respostas leves."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Padrões de bloqueio"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Padrões glob insensíveis a maiúsculas/minúsculas, como {code1} ou {code2}, evitam a adição de ficheiros indesejados."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Atalhos da documentação"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalar"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuração"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Utilização"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibilidade"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Suporte"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licença"
+  },
+  "homepage.search.tip": {
+    "message": "Dica: prima {slash} ou {ctrl}+{k} para pesquisar na documentação."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Complemento do Thunderbird: responder incluindo os anexos originais"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Documentação"
+  },
+  "navbar.support": {
+    "message": "Suporte"
+  },
+  "navbar.license": {
+    "message": "Licença"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentação"
+  },
+  "footer.link.home": {
+    "message": "Início"
+  },
+  "footer.link.install": {
+    "message": "Instalar"
+  },
+  "footer.section.project": {
+    "message": "Projeto"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "संलग्नकसहित जवाफ"
+  },
+  "homepage.meta.description": {
+    "message": "थन्डरबर्ड एड‑अन: मूल संलग्नकहरू सहित जवाफ"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA आइकन"
+  },
+  "homepage.hero.title": {
+    "message": "संलग्नकसहित जवाफ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "थन्डरबर्डमा जवाफ दिने बेला मूल संलग्नकहरू समावेश गर्नुहोस् — स्वचालित रूपमा वा छोटो पुष्टि पछि।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "दस्तावेज खोल्नुहोस्"
+  },
+  "homepage.cta.quickstart": {
+    "message": "छिटो सुरु"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "एड‑अनहरूबाट स्थापना गर्नुहोस्"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "दान गर्नुहोस्"
+  },
+  "homepage.whatsNew.title": {
+    "message": "के नयाँ छ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog} मा पछिल्ला परिवर्तनहरू पढ्नुहोस्।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "परिवर्तन लग"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "स्वचालित वा पहिले पुष्टि"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "स्वचालित रूपमा थप्ने वा किबोर्ड सर्टकटहरूसमेत भएको सानो पुष्टिकरण संवादबीच रोज्नुहोस्।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "स्मार्ट डुप्लिकेट हटाउने"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "अवस्थित संलग्नकलाई विचार गर्छ र फाइलनामका आधारमा डुप्लिकेटहरू टार्छ—सफा र पूर्वानुमेय।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME र इनलाइन छोड्नुहोस्"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "जवाफलाई सरल राख्न SMIME हस्ताक्षर र इनलाइन छविहरू समेटिँदैनन्।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ब्ल्याकलिस्ट ढाँचाहरू"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "केस‑इन्सेन्सिटिभ ग्लोब ढाँचाहरू जस्तै {code1} वा {code2} ले अनावश्यक फाइल थप्नबाट रोक्छन्।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "दस्तावेजका छिटो लिङ्कहरू"
+  },
+  "homepage.quicklinks.install": {
+    "message": "स्थापना"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "कन्फिगरेसन"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "प्रयोग"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "अनुकूलता"
+  },
+  "homepage.quicklinks.support": {
+    "message": "समर्थन"
+  },
+  "homepage.quicklinks.license": {
+    "message": "लाइसेन्स"
+  },
+  "homepage.search.tip": {
+    "message": "सुझाव: दस्तावेजमा खोज्न {slash} वा {ctrl}+{k} थिच्नुहोस्।"
+  },
+  "site.title": {
+    "message": "संलग्नकसहित जवाफ"
+  },
+  "site.tagline": {
+    "message": "थन्डरबर्ड एड‑अन: मूल संलग्नकहरू सहित जवाफ"
+  },
+  "navbar.title": {
+    "message": "संलग्नकसहित जवाफ"
+  },
+  "navbar.logo.alt": {
+    "message": "संलग्नकसहित जवाफ"
+  },
+  "navbar.docs": {
+    "message": "दस्तावेज"
+  },
+  "navbar.support": {
+    "message": "समर्थन"
+  },
+  "navbar.license": {
+    "message": "లाइసెన्स"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "दस्तावेज"
+  },
+  "footer.link.home": {
+    "message": "गृहपृष्ठ"
+  },
+  "footer.link.install": {
+    "message": "स्थापना"
+  },
+  "footer.section.project": {
+    "message": "परियोजना"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} संलग्नकसहित जवाफ"
+  }
+}

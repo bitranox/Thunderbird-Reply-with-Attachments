@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Ҷавоб бо замимаҳо" },
-  "extDescription": {
-    "message": "Замимаҳои аслиро дар ҷавобҳои почтаи электронӣ худкор илова мекунад."
+  "extName": {
+    "message": "Ҷавоб бо замимаҳо"
   },
-  "composeTitle": { "message": "Ҷавоб бо замимаҳо" },
-  "optionsTitle": { "message": "Ҷавоб бо замимаҳо — Танзимот" },
-  "confirmTitle": { "message": "Тасдиқи замимаҳо" },
-  "uiHeader": { "message": "Ҷавоб бо замимаҳо" },
-  "uiNoOptions": { "message": "Ҳоло имконоти танзим мавҷуд нест." },
-  "uiSupport": { "message": "Ин замимаро писанд кардед? Бо хайрияе хурд дастгирӣ кунед:" },
-  "uiDonate": { "message": "Ҳоло хайрия кунед" },
-  "uiGithubText": { "message": "Барои гузориш додани хатогиҳо ё саволҳои дигар, лутфан саҳифаи" },
-  "uiGithubLinkLabel": { "message": "GitHub‑и ман" },
-  "iconAlt": { "message": "Нишонаи Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Рӯйхати сиёҳи номҳои файл (намунаҳои glob)" },
+  "extDescription": {
+    "message": "Ҳангоми ҷавоб ба паёми электронӣ замимаҳои аслиро худкор ҳамроҳ мекунад."
+  },
+  "composeTitle": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "optionsTitle": {
+    "message": "Ҷавоб бо замимаҳо — Танзимот"
+  },
+  "confirmTitle": {
+    "message": "Тасдиқи замимаҳо"
+  },
+  "uiHeader": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "uiNoOptions": {
+    "message": "Дар ҳоли ҳозир ягон танзимот барои тағйир додан нест."
+  },
+  "uiSupport": {
+    "message": "Оё ин илова ба шумо писанд аст? Маро бо саҳми хурд дастгирӣ кунед:"
+  },
+  "uiDonate": {
+    "message": "Ҳоло хайрия кунед"
+  },
+  "uiGithubText": {
+    "message": "Барои гузориши хатоҳо ё дархостҳои дигар, лутфан ба"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Саҳифаи GitHub"
+  },
+  "iconAlt": {
+    "message": "Нишонаи «Ҷавоб бо замимаҳо»"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Рӯйхати сиёҳи номҳои файл (намунаҳои glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Файлҳое, ки номашон ба яке аз ин намунаҳо мувофиқат мекунад, ҳаргиз худкор замима намешаванд. Як намуна дар як сатр. Мисолҳо: *.png, smime.*, *.p7s"
+    "message": "Файлҳое, ки номи онҳо ба яке аз ин намунаҳо мутобиқат мекунад, ҳеҷ гоҳ худкор замима намешаванд. Ҳар сатр — як намуна. Мисолҳо: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Огоҳ кардан агар замимаҳо бо рӯйхати сиёҳ хориҷ карда шаванд"
+    "message": "Огоҳ кардан, агар замимаҳо аз ҷониби рӯйхати сиёҳ истисно шаванд"
   },
-  "uiSave": { "message": "Захира" },
-  "uiSaving": { "message": "Дар ҳоли захира…" },
-  "uiReset": { "message": "Барқарор ба пешфарз" },
-  "uiSaved": { "message": "Захира шуд." },
-  "uiResetDone": { "message": "Барқарор шуд." },
-  "uiConfirmHeader": { "message": "Тасдиқ" },
-  "uiConfirmLabel": { "message": "Пурсидан пеш аз иловаи замимаҳо" },
+  "uiSave": {
+    "message": "Захира"
+  },
+  "uiSaving": {
+    "message": "Захира мешавад…"
+  },
+  "uiReset": {
+    "message": "Барқарор ба пешфарз"
+  },
+  "uiSaved": {
+    "message": "Захира шуд."
+  },
+  "uiResetDone": {
+    "message": "Барқарор шуд."
+  },
+  "uiConfirmHeader": {
+    "message": "Тасдиқ"
+  },
+  "uiConfirmLabel": {
+    "message": "Пеш аз илова кардани замимаҳо пурсидан"
+  },
   "uiConfirmHelp": {
     "message": "Равзанаи хурди тасдиқ танҳо вақте пайдо мешавад, ки воқеан замимаҳо илова шаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
   },
   "confirmAddOne": {
-    "message": "Замимаро илова мекунем: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Замимаҳо илова шаванд ($1): $2$3?",
+    "message": "Илова кардани замима: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 бештар" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ҳа" },
-  "confirmNo": { "message": "Не" },
-  "warnBlacklistTitle": { "message": "Бо рӯйхати сиёҳ хориҷ шуд" },
-  "warnBlacklistIntro": { "message": "Ин файлҳо худкор замима намешаванд:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Намуна" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Ҷавоби пешфарз" },
-  "uiConfirmDefaultYes": { "message": "Ҳа" },
-  "uiConfirmDefaultNo": { "message": "Не" },
+  "confirmAddMany": {
+    "message": "Илова кардани замимаҳо ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ҳа"
+  },
+  "confirmNo": {
+    "message": "Не"
+  },
+  "warnBlacklistTitle": {
+    "message": "Аз ҷониби рӯйхати сиёҳ истисно шуд"
+  },
+  "warnBlacklistIntro": {
+    "message": "Файлҳои зерин худкор замима намешаванд:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Намуна"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Ҷавоби пешфарз"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ҳа"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Не"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

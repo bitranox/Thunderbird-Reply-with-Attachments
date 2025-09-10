@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Antworten mit Anhängen"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird‑Add-on: Antworten einschließlich der ursprünglichen Anhänge"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-Symbol"
+  },
+  "homepage.hero.title": {
+    "message": "Antworten mit Anhängen"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ursprüngliche Anhänge beim Antworten in Thunderbird mitübernehmen – automatisch oder nach kurzer Bestätigung."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Dokumentation öffnen"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Schnellstart"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Aus Add‑ons installieren"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Spenden"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Was ist neu"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lesen Sie die neuesten Änderungen im {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Änderungsprotokoll"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatisch oder zuerst bestätigen"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Wählen Sie zwischen automatischem Hinzufügen oder einem kleinen Bestätigungsdialog mit praktischen Tastenkürzeln."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Intelligente Deduplizierung"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Berücksichtigt vorhandene Anhänge und vermeidet Duplikate anhand des Dateinamens – sauber und vorhersehbar."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME & Inline überspringen"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME‑Signaturen und Inline‑Bilder werden ausgeschlossen, um Antworten schlank zu halten."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blacklist‑Muster"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob‑Muster ohne Beachtung der Groß‑/Kleinschreibung wie {code1} oder {code2} verhindern das Hinzufügen überflüssiger Dateien."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Schnelllinks zur Dokumentation"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installation"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfiguration"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Verwendung"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilität"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Support"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lizenz"
+  },
+  "homepage.search.tip": {
+    "message": "Tipp: Drücken Sie {slash} oder {ctrl}+{k}, um in der Dokumentation zu suchen."
+  },
+  "site.title": {
+    "message": "Antworten mit Anhängen"
+  },
+  "site.tagline": {
+    "message": "Thunderbird‑Add-on: Antworten einschließlich der ursprünglichen Anhänge"
+  },
+  "navbar.title": {
+    "message": "Antworten mit Anhängen"
+  },
+  "navbar.logo.alt": {
+    "message": "Antworten mit Anhängen"
+  },
+  "navbar.docs": {
+    "message": "Dokumentation"
+  },
+  "navbar.support": {
+    "message": "Support"
+  },
+  "navbar.license": {
+    "message": "Lizenz"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentation"
+  },
+  "footer.link.home": {
+    "message": "Startseite"
+  },
+  "footer.link.install": {
+    "message": "Installation"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Antworten mit Anhängen"
+  }
+}

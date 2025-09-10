@@ -1,53 +1,132 @@
 {
-  "extName": { "message": "Dáhùn pẹ̀lú àwọn ìkúnà" },
-  "extDescription": { "message": "Àfikún laifọwọyi àwọn ìkúnà ìpilẹ̀sí sí ìdáhùn ì‑meèlì." },
-  "composeTitle": { "message": "Dáhùn pẹ̀lú àwọn ìkúnà" },
-  "optionsTitle": { "message": "Dáhùn pẹ̀lú àwọn ìkúnà — Àṣàyàn" },
-  "confirmTitle": { "message": "Jẹ́rìí àwọn ìkúnà" },
-  "uiHeader": { "message": "Dáhùn pẹ̀lú àwọn ìkúnà" },
-  "uiNoOptions": { "message": "Kò sí àṣàyàn kankan láti ṣètò ní báyìí." },
-  "uiSupport": { "message": "Ṣe o fẹ́ràn àfikún yìí? Ṣe ìrànlọ́wọ́ pẹ̀lú ẹ̀bùn kékeré:" },
-  "uiDonate": { "message": "Ṣe ẹ̀bùn ní báyìí" },
-  "uiGithubText": { "message": "Fún ìrọ̀rùn ìjẹ́wọ̀ aṣiṣe tàbí ìbéèrè míì, jọ̀wọ́ bẹ̀ sí" },
-  "uiGithubLinkLabel": { "message": "ojú‑iwe GitHub mi" },
-  "iconAlt": { "message": "Àmì Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Àkójọ dídú dúdú ti orúkọ fáìlì (àpẹrẹ glob)" },
+  "extName": {
+    "message": "Dáhùn pẹ̀lú àwọn fáìlì àfikún"
+  },
+  "extDescription": {
+    "message": "Ṣe ìfikún àwọn àfikún atilẹ́ba laifọwọyi sí àwọn ìdáhùn ìmeèlì."
+  },
+  "composeTitle": {
+    "message": "Dáhùn pẹ̀lú àwọn fáìlì àfikún"
+  },
+  "optionsTitle": {
+    "message": "Dáhùn pẹ̀lú àwọn fáìlì àfikún — Àṣàyàn"
+  },
+  "confirmTitle": {
+    "message": "Ìmúlẹ̀ àwọn àfikún"
+  },
+  "uiHeader": {
+    "message": "Dáhùn pẹ̀lú àwọn fáìlì àfikún"
+  },
+  "uiNoOptions": {
+    "message": "Ní báyìí kò sí àṣàyàn kankan láti ṣètò."
+  },
+  "uiSupport": {
+    "message": "Ṣé o fẹ́ràn ẹ̀rọ àfikún yìí? Ṣe ìtìlẹ́yìn fún mi pẹ̀lú ìrànlọ́wọ́ owó kékeré:"
+  },
+  "uiDonate": {
+    "message": "Ṣe ìrànlọ́wọ́ báyìí"
+  },
+  "uiGithubText": {
+    "message": "Fún ìròyìn àṣìṣe tàbí ìbéèrè míì, jọ̀wọ́ ṣàbẹwò sí"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Ojú-ìwé GitHub"
+  },
+  "iconAlt": {
+    "message": "Ààmì ‘Dáhùn pẹ̀lú àwọn fáìlì àfikún’"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Àkójọ ìdènà orúkọ fáìlì (àpẹrẹ glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Fáìlì tí orúkọ rẹ̀ bá bá àpẹrẹ kankan nínú àwọn wọ̀nyí, kì yóò ṣeé fi kún laifọwọyi. Àpẹrẹ kan ní ìlà kan. Àpẹẹrẹ: *.png, smime.*, *.p7s"
+    "message": "Àwọn fáìlì tí orúkọ wọn bá bá ohunkóhun nínú àwọn àpẹrẹ wọ̀nyí mu kì yóò fi kún laifọwọyi rárá. Àpẹrẹ kan ní ìlà kọọkan. Àpẹẹrẹ: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Kìlọ̀ tí a bá yọ àwọn ìkúnà kúrò nítorí àkójọ dídú dúdú" },
-  "uiSave": { "message": "Fipamọ́" },
-  "uiSaving": { "message": "N jẹ́ kí a fipamọ́…" },
-  "uiReset": { "message": "Tún padà sí àkọ́kọ́" },
-  "uiSaved": { "message": "Ti fipamọ́." },
-  "uiResetDone": { "message": "Ti túnṣe." },
-  "uiConfirmHeader": { "message": "Ìmúlẹ̀" },
-  "uiConfirmLabel": { "message": "Béré kí o tó fi àwọn ìkúnà kún" },
+  "uiWarnBlacklistLabel": {
+    "message": "Kìlọ̀ bí àwọn àfikún bá yọkúrò nípasẹ̀ àkójọ ìdènà"
+  },
+  "uiSave": {
+    "message": "Fipamọ́"
+  },
+  "uiSaving": {
+    "message": "N ń fipamọ́…"
+  },
+  "uiReset": {
+    "message": "Tún padà sí aiyipada"
+  },
+  "uiSaved": {
+    "message": "Ti fipamọ́."
+  },
+  "uiResetDone": {
+    "message": "Tún pada."
+  },
+  "uiConfirmHeader": {
+    "message": "Ìmúlẹ̀"
+  },
+  "uiConfirmLabel": {
+    "message": "Béèrè kí o tó fi àwọn fáìlì àfikún kún"
+  },
   "uiConfirmHelp": {
-    "message": "Apoti ìjíròrò ìmúlẹ̀ kékeré yóò hàn nígbà nikan tí a bá ní láti fi àwọn ìkúnà kún gangan. Bọ́tìnì kíbọ́ọ̀dì: Y tàbí J = Béẹ̀ni; N tàbí Esc = Rárá."
+    "message": "Ferese ìmúlẹ̀ kékeré máa hàn nígbà nìkan tí a bá ní láti fi àwọn àfikún kún gangan. Bọ́tìnìbọ́ọ̀du: Y tàbí J = Bẹ́ẹ̀ni; N tàbí Esc = Rárá."
   },
-  "confirmAddOne": { "message": "Fi ìkúnà kún: $1?", "placeholders": { "1": { "content": "$1" } } },
-  "confirmAddMany": {
-    "message": "Fi àwọn ìkúnà kún ($1): $2$3?",
+  "confirmAddOne": {
+    "message": "Fi fáìlì àfikún kún: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 síi" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Bẹẹni" },
-  "confirmNo": { "message": "Rárá" },
-  "warnBlacklistTitle": { "message": "Yọ́ kúrò ní àkójọ dídú dúdú" },
-  "warnBlacklistIntro": { "message": "Àwọn fáìlì wọ̀nyí kì yóò ṣeé fi kún laifọwọyi:" },
-  "warnColFile": { "message": "Fáìlì" },
-  "warnColPattern": { "message": "Àpẹrẹ" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Ìdáhùn àkọ́kọ́" },
-  "uiConfirmDefaultYes": { "message": "Bẹẹni" },
-  "uiConfirmDefaultNo": { "message": "Rárá" },
+  "confirmAddMany": {
+    "message": "Fi àwọn fáìlì àfikún kún ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Bẹ́ẹ̀ni"
+  },
+  "confirmNo": {
+    "message": "Rárá"
+  },
+  "warnBlacklistTitle": {
+    "message": "Ti yọkúrò nípasẹ̀ àkójọ ìdènà"
+  },
+  "warnBlacklistIntro": {
+    "message": "Àwọn fáìlì wọ̀nyí kì yóò fi kún laifọwọyi:"
+  },
+  "warnColFile": {
+    "message": "Fáìlì"
+  },
+  "warnColPattern": {
+    "message": "Àpẹrẹ"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Ìdáhùn aiyipada"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Bẹ́ẹ̀ni"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Rárá"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/yo/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

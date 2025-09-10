@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Mmuae ka fael a wɔde aka ho"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird Add-on: Mmuae a ɛka fael a wɔde aka kan no ho"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikɔn"
+  },
+  "homepage.hero.title": {
+    "message": "Mmuae ka fael a wɔde aka ho"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ka fael a wɔde aka kan no ho bere a wubua asɛmmisa wɔ Thunderbird mu—otomatik anaa akyinnyeɛ‑kakra ansa."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Bue Nkyerɛkyerɛ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Fi ase ntɛm"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instɔl firi Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ma akyɛdeɛ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Nea ɛto so foforo"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Ken nsakrae foforo a etwa to no wɔ {changelog} mu."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Nsakrae"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatik anaa Bisa‑Ansa"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Paw ntam: ka‑ho otomatik anaa akyinnyeɛ‑kakra mpɔtam bi a ɛwɔ 'keyboard' kwan ntɛm‑ntɛm pa."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Nyansahu siw mmɔ‑bio"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Bu fael a wɔde aka dedaw so, na siw mmɔ‑bio fa fael‑din so; ho tew na ɛteɛ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Gyae SMIME ne Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Woyi SMIME nsain ne mfonini a ɛwɔ krataa no mu firi ho de ma mmuae no ntew."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blacklist Nhwɛsoɔ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob‑nhwɛsoɔ a ɛmmfa nkyerɛwee kɛse anaa ketewa ho, te sɛ {code1} anaa {code2}, siw fael a ɛnni hia ka ho."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Nkyerɛkyerɛ akɔnsode ntɛm"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instɔl"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Nhyehyɛe"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Sɛnea wode di dwuma"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Fata ho"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Mmoa"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Laesens"
+  },
+  "homepage.search.tip": {
+    "message": "Afotu: Mia {slash} anaa {ctrl}+{k} na hwehwɛ nkyerɛkyerɛ no."
+  },
+  "site.title": {
+    "message": "Mmuae ka fael a wɔde aka ho"
+  },
+  "site.tagline": {
+    "message": "Thunderbird Add-on: Mmuae a ɛka fael a wɔde aka kan no ho"
+  },
+  "navbar.title": {
+    "message": "Mmuae ka fael a wɔde aka ho"
+  },
+  "navbar.logo.alt": {
+    "message": "Mmuae ka fael a wɔde aka ho"
+  },
+  "navbar.docs": {
+    "message": "Nkyerɛkyerɛ"
+  },
+  "navbar.support": {
+    "message": "Mmoa"
+  },
+  "navbar.license": {
+    "message": "Laesens"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Nkyerɛkyerɛ"
+  },
+  "footer.link.home": {
+    "message": "Fie"
+  },
+  "footer.link.install": {
+    "message": "Instɔl"
+  },
+  "footer.section.project": {
+    "message": "Dwumadie"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Mmuae ka fael a wɔde aka ho"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Donate",
-  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "description": "---",
   "source": "@site/docs/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/docs/privacy"
   },
   "next": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/docs/licence"
+    "title": "License",
+    "permalink": "/Thunderbird-Reply-with-Attachments/docs/license"
   }
 }

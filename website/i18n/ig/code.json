@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Zaghachi na faịlụ mgbakwunye"
+  },
+  "homepage.meta.description": {
+    "message": "Mgbakwunye Thunderbird: Zaghachi tinyere faịlụ mgbakwunye mbụ"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikoni RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Zaghachi na faịlụ mgbakwunye"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Tinye faịlụ mgbakwunye mbụ mgbe ị na‑azaghachi na Thunderbird — akpaghị aka ma ọ bụ mgbe nkwenye ngwa ngwa."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Mepee Akwụkwọ ntuziaka"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mbido ngwa ngwa"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Wụnye site na Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Mee onyinye"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ihe ọhụrụ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Gụọ mgbanwe kacha ọhụrụ na {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Ndepụta mgbanwe"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Akpaghị aka ma ọ bụ Nkwenye‑Mbụ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Họrọ n'etiti itinye akpaghị aka ma ọ bụ obere igbe nkwenye nwere mkpirisi kịbọọdụ bara uru."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Iwepụ Oyiri n’Amamihe"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Na‑asọpụrụ faịlụ mgbakwunye ndị dị adị ma na‑ezere oyiri site n’aha faịlụ—dị ọcha ma a na‑atụ anya ya."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Hapụ SMIME na Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "A na‑ewepu mbinye aka SMIME na onyonyo dị n’ahịrị iji mee ka nzaghachi dị mfe."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Ụkpụrụ ndepụta ojii"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Ụkpụrụ glob na‑adịghị ele mkpụrụedemede ukwu/obere anya, dịka {code1} ma ọ bụ {code2}, na‑egbochi itinye faịlụ na‑adịghị mkpa."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Njikọ ngwa ngwa nke akwụkwọ ntuziaka"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Wụnye"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Nhazi"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Ojiji"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ndakọrịta"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Nkwado"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ikikere"
+  },
+  "homepage.search.tip": {
+    "message": "Ndụmọdụ: Pịa {slash} ma ọ bụ {ctrl}+{k} iji chọọ akwụkwọ ntuziaka."
+  },
+  "site.title": {
+    "message": "Zaghachi na faịlụ mgbakwunye"
+  },
+  "site.tagline": {
+    "message": "Mgbapụrịta Thunderbird: Zaghachi tinyere faịlụ mgbakwunye mbụ"
+  },
+  "navbar.title": {
+    "message": "Zaghachi na faịlụ mgbakwunye"
+  },
+  "navbar.logo.alt": {
+    "message": "Zaghachi na faịlụ mgbakwunye"
+  },
+  "navbar.docs": {
+    "message": "Akwụkwọ ntuziaka"
+  },
+  "navbar.support": {
+    "message": "Nkwado"
+  },
+  "navbar.license": {
+    "message": "Ikikere"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Akwụkwọ ntuziaka"
+  },
+  "footer.link.home": {
+    "message": "Mmalite"
+  },
+  "footer.link.install": {
+    "message": "Wụnye"
+  },
+  "footer.section.project": {
+    "message": "Ọrụ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Zaghachi na faịlụ mgbakwunye"
+  }
+}

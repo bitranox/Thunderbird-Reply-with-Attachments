@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Responder con adjuntos"
+  },
+  "homepage.meta.description": {
+    "message": "Complemento de Thunderbird: Responder incluyendo los adjuntos originales"
+  },
+  "homepage.icon.alt": {
+    "message": "Icono de RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Responder con adjuntos"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Incluye los adjuntos originales al responder en Thunderbird — automáticamente o tras una rápida confirmación."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Abrir la documentación"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Guía rápida"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instalar desde Complementos"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Donar"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Novedades"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Consulta los cambios más recientes en el {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Registro de cambios"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automático o con confirmación previa"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Elige entre añadir automáticamente o un breve diálogo de confirmación con prácticos atajos de teclado."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Eliminación inteligente de duplicados"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respeta los adjuntos existentes y evita duplicados por nombre de archivo; claro y predecible."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Omitir S/MIME e incrustados"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Se excluyen las firmas S/MIME y las imágenes incrustadas para mantener las respuestas ligeras."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Patrones de exclusión"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Patrones con comodines, insensibles a mayúsculas, como {code1} o {code2} evitan añadir archivos innecesarios."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Accesos rápidos a la documentación"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalación"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuración"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Uso"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibilidad"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Soporte"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencia"
+  },
+  "homepage.search.tip": {
+    "message": "Consejo: pulsa {slash} o {ctrl}+{k} para buscar en la documentación."
+  },
+  "site.title": {
+    "message": "Responder con adjuntos"
+  },
+  "site.tagline": {
+    "message": "Complemento de Thunderbird: Responder incluyendo los adjuntos originales"
+  },
+  "navbar.title": {
+    "message": "Responder con adjuntos"
+  },
+  "navbar.logo.alt": {
+    "message": "Responder con adjuntos"
+  },
+  "navbar.docs": {
+    "message": "Documentación"
+  },
+  "navbar.support": {
+    "message": "Soporte"
+  },
+  "navbar.license": {
+    "message": "Licencia"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentación"
+  },
+  "footer.link.home": {
+    "message": "Inicio"
+  },
+  "footer.link.install": {
+    "message": "Instalación"
+  },
+  "footer.section.project": {
+    "message": "Proyecto"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Responder con adjuntos"
+  }
+}

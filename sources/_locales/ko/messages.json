@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "첨부 파일과 함께 회신" },
-  "extDescription": { "message": "이메일 회신에 원본 첨부 파일을 자동으로 포함합니다." },
-  "composeTitle": { "message": "첨부 파일과 함께 회신" },
-  "optionsTitle": { "message": "첨부 파일과 함께 회신 — 옵션" },
-  "confirmTitle": { "message": "첨부 파일 확인" },
-  "uiHeader": { "message": "첨부 파일과 함께 회신" },
-  "uiNoOptions": { "message": "현재 설정할 옵션이 없습니다." },
-  "uiSupport": { "message": "이 부가 기능이 마음에 드시나요? 작은 기부로 응원해 주세요:" },
-  "uiDonate": { "message": "지금 기부" },
-  "uiGithubText": { "message": "버그 신고나 기타 문의는 제" },
-  "uiGithubLinkLabel": { "message": "GitHub 페이지" },
-  "iconAlt": { "message": "‘첨부 파일과 함께 회신’ 아이콘" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "파일 이름 차단 목록(글롭 패턴)" },
-  "uiBlacklistHelp": {
-    "message": "이러한 패턴과 이름이 일치하는 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴. 예: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "첨부 파일과 함께 회신"
   },
-  "uiWarnBlacklistLabel": { "message": "차단 목록으로 제외된 첨부 파일 경고" },
-  "uiSave": { "message": "저장" },
-  "uiSaving": { "message": "저장 중…" },
-  "uiReset": { "message": "기본값으로 재설정" },
-  "uiSaved": { "message": "저장되었습니다." },
-  "uiResetDone": { "message": "재설정됨." },
-  "uiConfirmHeader": { "message": "확인" },
-  "uiConfirmLabel": { "message": "첨부 파일 추가 전에 확인" },
+  "extDescription": {
+    "message": "이메일 회신에 원본 첨부 파일을 자동으로 포함합니다."
+  },
+  "composeTitle": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "optionsTitle": {
+    "message": "첨부 파일과 함께 회신 — 옵션"
+  },
+  "confirmTitle": {
+    "message": "첨부 파일 확인"
+  },
+  "uiHeader": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "uiNoOptions": {
+    "message": "현재 설정할 옵션이 없습니다."
+  },
+  "uiSupport": {
+    "message": "이 부가 기능이 마음에 드시나요? 작은 기부로 지원해 주세요:"
+  },
+  "uiDonate": {
+    "message": "지금 기부하기"
+  },
+  "uiGithubText": {
+    "message": "버그 신고 또는 기타 문의는 다음을 방문해 주세요:"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub 페이지"
+  },
+  "iconAlt": {
+    "message": "첨부 파일과 함께 회신 아이콘"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "파일 이름 블랙리스트(glob 패턴)"
+  },
+  "uiBlacklistHelp": {
+    "message": "이 패턴 중 하나와 이름이 일치하는 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴을 입력하세요. 예: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "블랙리스트로 인해 첨부 파일이 제외되면 경고"
+  },
+  "uiSave": {
+    "message": "저장"
+  },
+  "uiSaving": {
+    "message": "저장 중…"
+  },
+  "uiReset": {
+    "message": "기본값으로 재설정"
+  },
+  "uiSaved": {
+    "message": "저장되었습니다."
+  },
+  "uiResetDone": {
+    "message": "재설정되었습니다."
+  },
+  "uiConfirmHeader": {
+    "message": "확인"
+  },
+  "uiConfirmLabel": {
+    "message": "첨부 파일을 추가하기 전에 묻기"
+  },
   "uiConfirmHelp": {
-    "message": "첨부 파일이 실제로 추가될 때만 작은 확인 대화 상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니요."
+    "message": "첨부 파일이 실제로 추가되는 경우에만 작은 확인 대화상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니오."
   },
   "confirmAddOne": {
     "message": "첨부 파일 추가: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "첨부 파일 추가 ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3개 더" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "예" },
-  "confirmNo": { "message": "아니요" },
-  "warnBlacklistTitle": { "message": "차단 목록으로 제외됨" },
-  "warnBlacklistIntro": { "message": "다음 파일은 자동으로 첨부되지 않습니다:" },
-  "warnColFile": { "message": "파일" },
-  "warnColPattern": { "message": "패턴" },
-  "warnOk": { "message": "확인" },
-  "uiConfirmDefaultHeader": { "message": "기본 응답" },
-  "uiConfirmDefaultYes": { "message": "예" },
-  "uiConfirmDefaultNo": { "message": "아니요" },
-  "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  "confirmAddMany": {
+    "message": "첨부 파일 추가($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "confirmYes": {
+    "message": "예"
+  },
+  "confirmNo": {
+    "message": "아니오"
+  },
+  "warnBlacklistTitle": {
+    "message": "블랙리스트로 제외됨"
+  },
+  "warnBlacklistIntro": {
+    "message": "다음 파일은 자동으로 첨부되지 않습니다:"
+  },
+  "warnColFile": {
+    "message": "파일"
+  },
+  "warnColPattern": {
+    "message": "패턴"
+  },
+  "warnOk": {
+    "message": "확인"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "기본 응답"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "예"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "아니오"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

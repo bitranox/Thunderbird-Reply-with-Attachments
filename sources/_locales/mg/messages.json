@@ -1,62 +1,132 @@
 {
-  "extName": { "message": "Valio miaraka amin’ny fampiraisana" },
+  "extName": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
   "extDescription": {
-    "message": "Manampy ho azy ireo fampiraisana tany am-boalohany amin’ny valin-kafatra mailaka."
+    "message": "Ampidiro ho azy ao amin'ny valin-kiraro ny rakitra tany am-boalohany."
   },
-  "composeTitle": { "message": "Valio miaraka amin’ny fampiraisana" },
-  "optionsTitle": { "message": "Valio miaraka amin’ny fampiraisana — Safidy" },
-  "confirmTitle": { "message": "Hamarino ny fampiraisana" },
-  "uiHeader": { "message": "Valio miaraka amin’ny fampiraisana" },
-  "uiNoOptions": { "message": "Tsy misy safidy atokana amin’izao fotoana izao." },
-  "uiSupport": { "message": "Tianao ve ity fanitarana ity? Tohano amin’ny fanomezana kely:" },
-  "uiDonate": { "message": "Omeo izao" },
+  "composeTitle": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "optionsTitle": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra — Safidy"
+  },
+  "confirmTitle": {
+    "message": "Fanamafisana ny rakitra miraikitra"
+  },
+  "uiHeader": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "uiNoOptions": {
+    "message": "Amin'izao fotoana izao tsy misy safidy amboarina."
+  },
+  "uiSupport": {
+    "message": "Tianao ve ity fanitarana ity? Tohano aho amin'ny fandraisana anjara kely:"
+  },
+  "uiDonate": {
+    "message": "Manome izao"
+  },
   "uiGithubText": {
-    "message": "Ho an’ny tatitra momba ny lesoka na fanontaniana hafa, tsidiho azafady ny"
+    "message": "Ho an'ny tatitra momba ny hadisoana na fangatahana hafa, azafady tsidiho ny"
   },
-  "uiGithubLinkLabel": { "message": "pejy GitHub‑ko" },
-  "iconAlt": { "message": "Sary famantarana Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Lisitry ny anaran-drakitra voasakana (lamina glob)" },
+  "uiGithubLinkLabel": {
+    "message": "pejy GitHub"
+  },
+  "iconAlt": {
+    "message": "Famantarana Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Lisitra mainty anaran-drakitra (lamina glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Ny rakitra mifanaraka amin’ny iray amin’ireto lamina ireto dia tsy ho ampidirina ho azy mihitsy. Lamina iray isaky ny andalana. Ohatra: *.png, smime.*, *.p7s"
+    "message": "Ireo rakitra izay mifanaraka amin'ireto lamina ireto dia tsy ho ampidirina ho azy mihitsy. Lamina iray isaky ny andalana. Ohatra: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Mampitandrema raha voahilika amin’ny lisitra mainty ny fampiraisana"
+    "message": "Mampitandrina raha voahilika amin'ny lisitra mainty ny rakitra miraikitra"
   },
-  "uiSave": { "message": "Tehirizo" },
-  "uiSaving": { "message": "Mitahiry…" },
-  "uiReset": { "message": "Avereno amin’ny mahazatra" },
-  "uiSaved": { "message": "Voatahiry." },
-  "uiResetDone": { "message": "Voaverina." },
-  "uiConfirmHeader": { "message": "Fanamafisana" },
-  "uiConfirmLabel": { "message": "Anontanio alohan’ny hanampiana fampiraisana" },
+  "uiSave": {
+    "message": "Tehirizo"
+  },
+  "uiSaving": {
+    "message": "Mitehirizina…"
+  },
+  "uiReset": {
+    "message": "Avereno amin'ny fikirana voalohany"
+  },
+  "uiSaved": {
+    "message": "Voatahiry."
+  },
+  "uiResetDone": {
+    "message": "Naverina."
+  },
+  "uiConfirmHeader": {
+    "message": "Fanamafisana"
+  },
+  "uiConfirmLabel": {
+    "message": "Manontany mialoha alohan'ny hanampiana rakitra miraikitra"
+  },
   "uiConfirmHelp": {
-    "message": "Miseho ihany ny boaty kely fanamafisana raha tena hisy fampiraisana ampiana. Fitendry: Y na J = Eny; N na Esc = Tsia."
+    "message": "Hiseho fotsiny ny varavarankely fanamafisana kely rehefa tena hisy rakitra miraikitra ampiana. Fitendry: Y na J = Eny; N na Esc = Tsia."
   },
   "confirmAddOne": {
-    "message": "Hanampy fampiraisana: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Hanampy fampiraisana ($1): $2$3?",
+    "message": "Hanampy rakitra miraikitra: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 hafa" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Eny" },
-  "confirmNo": { "message": "Tsia" },
-  "warnBlacklistTitle": { "message": "Voahilika amin’ny lisitra mainty" },
-  "warnBlacklistIntro": { "message": "Ireo rakitra manaraka ireto dia tsy ho ampidirina ho azy:" },
-  "warnColFile": { "message": "Rakitra" },
-  "warnColPattern": { "message": "Lamina" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Valiny mahazatra" },
-  "uiConfirmDefaultYes": { "message": "Eny" },
-  "uiConfirmDefaultNo": { "message": "Tsia" },
+  "confirmAddMany": {
+    "message": "Hanampy rakitra miraikitra ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Eny"
+  },
+  "confirmNo": {
+    "message": "Tsia"
+  },
+  "warnBlacklistTitle": {
+    "message": "Voahilika amin'ny lisitra mainty"
+  },
+  "warnBlacklistIntro": {
+    "message": "Ireto rakitra manaraka ireto dia tsy ho ampidirina ho azy:"
+  },
+  "warnColFile": {
+    "message": "Rakitra"
+  },
+  "warnColPattern": {
+    "message": "Lamina"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Valiny fototra"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Eny"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Tsia"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

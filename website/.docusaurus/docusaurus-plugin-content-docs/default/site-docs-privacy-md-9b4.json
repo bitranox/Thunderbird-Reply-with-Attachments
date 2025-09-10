@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "description": "---",
   "source": "@site/docs/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

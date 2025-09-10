@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ከአባሪዎች ጋር መመለስ"
+  },
+  "homepage.meta.description": {
+    "message": "የThunderbird ተጨማሪ፡ መመለስ ከመጀመሪያ አባሪዎች ጋር"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA አይኮን"
+  },
+  "homepage.hero.title": {
+    "message": "ከአባሪዎች ጋር መመለስ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "በThunderbird ሲመልሱ የመጀመሪያውን አባሪዎች እንዲካተሉ — በራስ-ሰር ወይም ከፈጣን ማረጋገጫ በኋላ።"
+  },
+  "homepage.cta.openDocs": {
+    "message": "ሰነዶችን ክፈት"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ፈጣን መጀመሪያ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ከመጨመሪያዎች መጫን"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ልገሳ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ምን አዲስ ነው"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "በ {changelog} ውስጥ የቅርብ ለውጦችን ያንብቡ።"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "የለውጥ መዝገብ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ራስ-ሰር ወይም መጀመሪያ ማረጋገጥ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "በራስ-ሰር መጨመር ወይም ጠቃሚ የኪቦርድ አቋራጮች ያለው ትንሽ የማረጋገጫ ውይይት መስኮት መካከል ይምረጡ።"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ብልህ ድግግሞሽ ማስወገድ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "አሁን ያሉ አባሪዎችን ይከበራል እና በፋይል ስም የሚደጋገሙን ያስወግዳል፣ ንጹሕ እና በቀላሉ የሚገመት ነው።"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME እና ኢንላይን መተው"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ምላሾችን ቀላል ለማድረግ የSMIME ፊርማዎች እና ኢንላይን ምስሎች አይካተሉም።"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ጥቁር ዝርዝር ንድፎች"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ቁምፊ ልዩነት የማይከተሉ የglob ንድፎች እንደ {code1} ወይም {code2} ያሉ ያልተፈለጉ ፋይሎችን መጨመር ይከላከላሉ።"
+  },
+  "homepage.quicklinks.title": {
+    "message": "የሰነዶች ፈጣን አገናኞች"
+  },
+  "homepage.quicklinks.install": {
+    "message": "መጫን"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ማቀናበር"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "አጠቃቀም"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ተስማሚነት"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ድጋፍ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ፈቃድ"
+  },
+  "homepage.search.tip": {
+    "message": "ምክር፡ ሰነዶቹን ለመፈለግ {slash} ወይም {ctrl}+{k} ይጫኑ።"
+  },
+  "site.title": {
+    "message": "ከአባሪዎች ጋር መመለስ"
+  },
+  "site.tagline": {
+    "message": "የThunderbird ተጨማሪ፡ መመለስ ከመጀመሪያ አባሪዎች ጋር"
+  },
+  "navbar.title": {
+    "message": "ከአባሪዎች ጋር መመለስ"
+  },
+  "navbar.logo.alt": {
+    "message": "ከአባሪዎች ጋር መመለስ"
+  },
+  "navbar.docs": {
+    "message": "ሰነዶች"
+  },
+  "navbar.support": {
+    "message": "ድጋፍ"
+  },
+  "navbar.license": {
+    "message": "ፈቃድ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ሰነዶች"
+  },
+  "footer.link.home": {
+    "message": "መነሻ"
+  },
+  "footer.link.install": {
+    "message": "መጫን"
+  },
+  "footer.section.project": {
+    "message": "ፕሮጀክት"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ከአባሪዎች ጋር መመለስ"
+  }
+}

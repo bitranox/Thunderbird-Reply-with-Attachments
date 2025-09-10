@@ -220,12 +220,8 @@
         if (msg && msg.type === 'rwa:apply-settings-open-compose') {
           try {
             // Reload settings to ensure new replies honor the latest options
-            if (globalThis.App?.Composition?.createAppWiring) {
-              // Best-effort: if wiring exposes reloadSettings, call it
-              const wiring = { reloadSettings: globalThis.App?.Composition?.reloadSettings };
-              if (typeof wiring.reloadSettings === 'function') {
-                wiring.reloadSettings(browser).catch(() => {});
-              }
+            if (typeof globalThis.App?.Composition?.reloadSettings === 'function') {
+              globalThis.App.Composition.reloadSettings(browser).catch(() => {});
             }
           } catch (_) {}
           fn();

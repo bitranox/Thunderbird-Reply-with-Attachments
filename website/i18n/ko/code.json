@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird 부가 기능: 회신 시 원본 첨부 파일 포함"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA 아이콘"
+  },
+  "homepage.hero.title": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird에서 회신할 때 원본 첨부 파일을 자동으로 또는 간단한 확인 후 포함합니다."
+  },
+  "homepage.cta.openDocs": {
+    "message": "문서 열기"
+  },
+  "homepage.cta.quickstart": {
+    "message": "빠른 시작"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "부가 기능에서 설치"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "후원하기"
+  },
+  "homepage.whatsNew.title": {
+    "message": "새 소식"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog}에서 최신 변경 사항을 확인하세요."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "변경 로그"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "자동 또는 확인 후 추가"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "자동으로 추가할지, 유용한 키보드 단축키가 있는 작은 확인 대화상자를 사용할지 선택할 수 있습니다."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "스마트 중복 제거"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "이미 있는 첨부 파일을 존중하고 파일 이름 기준으로 중복을 방지하여 깔끔하고 예측 가능하게 동작합니다."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME 및 인라인 건너뛰기"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "회신을 간결하게 유지하기 위해 SMIME 서명과 인라인 이미지는 제외됩니다."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "블랙리스트 패턴"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "{code1} 또는 {code2} 같은 대소문자 구분 없는 글롭 패턴으로 불필요한 파일 추가를 막습니다."
+  },
+  "homepage.quicklinks.title": {
+    "message": "문서 바로가기"
+  },
+  "homepage.quicklinks.install": {
+    "message": "설치"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "설정"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "사용법"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "호환성"
+  },
+  "homepage.quicklinks.support": {
+    "message": "지원"
+  },
+  "homepage.quicklinks.license": {
+    "message": "라이선스"
+  },
+  "homepage.search.tip": {
+    "message": "팁: 문서를 검색하려면 {slash} 또는 {ctrl}+{k}를 누르세요."
+  },
+  "site.title": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "site.tagline": {
+    "message": "Thunderbird 부가 기능: 회신 시 원본 첨부 파일 포함"
+  },
+  "navbar.title": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "navbar.logo.alt": {
+    "message": "첨부 파일과 함께 회신"
+  },
+  "navbar.docs": {
+    "message": "문서"
+  },
+  "navbar.support": {
+    "message": "지원"
+  },
+  "navbar.license": {
+    "message": "라이선스"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "문서"
+  },
+  "footer.link.home": {
+    "message": "홈"
+  },
+  "footer.link.install": {
+    "message": "설치"
+  },
+  "footer.section.project": {
+    "message": "프로젝트"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} 첨부 파일과 함께 회신"
+  }
+}

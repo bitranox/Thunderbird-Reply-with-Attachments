@@ -1,24 +1,24 @@
 {
   "extName": {
-    "message": "Antwort mit Anhängen"
+    "message": "Antworten mit Anhängen"
   },
   "extDescription": {
-    "message": "Beim Antworten Anhänge aus der ursprünglichen E-Mail automatisch übernehmen."
+    "message": "Originalanhänge automatisch in E-Mail-Antworten einfügen."
   },
   "composeTitle": {
-    "message": "Antwort mit Anhängen"
+    "message": "Antworten mit Anhängen"
   },
   "optionsTitle": {
-    "message": "Antwort mit Anhängen — Einstellungen"
+    "message": "Antworten mit Anhängen — Optionen"
   },
   "confirmTitle": {
     "message": "Anhänge bestätigen"
   },
   "uiHeader": {
-    "message": "Antwort mit Anhängen"
+    "message": "Antworten mit Anhängen"
   },
   "uiNoOptions": {
-    "message": "Derzeit gibt es keine zu konfigurierenden Optionen."
+    "message": "Derzeit gibt es keine Optionen zum Konfigurieren."
   },
   "uiSupport": {
     "message": "Gefällt Ihnen dieses Add-on? Unterstützen Sie mich mit einem kleinen Beitrag:"
@@ -27,34 +27,34 @@
     "message": "Jetzt spenden"
   },
   "uiGithubText": {
-    "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine"
+    "message": "Für Fehlermeldungen oder andere Anfragen besuchen Sie bitte meine"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub Seite"
+    "message": "GitHub-Seite"
   },
   "iconAlt": {
-    "message": "Symbol von Antwort mit Anhängen"
+    "message": "Symbol „Antworten mit Anhängen“"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist von Dateinamen (Glob-Muster)"
+    "message": "Blacklist für Dateinamen (Glob-Muster)"
   },
   "uiBlacklistHelp": {
-    "message": "Dateien, deren Namen einem der folgenden Muster entsprechen, werden nie automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
+    "message": "Dateien, deren Namen einem dieser Muster entsprechen, werden niemals automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Warnen, wenn Anhänge durch Blacklist ausgeschlossen werden"
+    "message": "Warnen, wenn Anhänge aufgrund der Blacklist ausgeschlossen werden"
   },
   "uiSave": {
     "message": "Speichern"
   },
   "uiSaving": {
-    "message": "Speichere…"
+    "message": "Speichern…"
   },
   "uiReset": {
-    "message": "Auf Standard zurücksetzen"
+    "message": "Auf Standardwerte zurücksetzen"
   },
   "uiSaved": {
     "message": "Gespeichert."
@@ -66,10 +66,10 @@
     "message": "Bestätigung"
   },
   "uiConfirmLabel": {
-    "message": "Vor dem Hinzufügen bestätigen"
+    "message": "Vor dem Hinzufügen von Anhängen nachfragen"
   },
   "uiConfirmHelp": {
-    "message": "Ein Bestätigungsdialog erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: J oder Y = Ja; N oder Esc = Nein."
+    "message": "Ein kleines Bestätigungsfenster erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: Y oder J = Ja; N oder Esc = Nein."
   },
   "confirmAddOne": {
     "message": "Anhang hinzufügen: $1?",
@@ -89,7 +89,7 @@
         "content": "$2"
       },
       "3": {
-        "content": ", +$3 mehr"
+        "content": ", +$3 more"
       }
     }
   },
@@ -103,7 +103,7 @@
     "message": "Durch Blacklist ausgeschlossen"
   },
   "warnBlacklistIntro": {
-    "message": "Folgende Dateien werden nicht automatisch angehängt:"
+    "message": "Die folgenden Dateien werden nicht automatisch angehängt:"
   },
   "warnColFile": {
     "message": "Datei"

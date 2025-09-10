@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n-Glossar",
-  "description": "Kanonische Begriffe, die in der Add‑on‑Oberfläche und der Dokumentation verwendet werden. Verwenden Sie diese, um Übersetzungen über Sprachvarianten hinweg konsistent zu halten.",
+  "title": "Glossar",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757291135000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n-Glossar",
+    "title": "Glossar",
     "sidebar_label": "Glossar"
   },
   "sidebar": "docs",

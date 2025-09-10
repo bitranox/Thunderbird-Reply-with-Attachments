@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Atbilde ar pielikumiem"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird pievienojumprogramma: atbilde ar oriģinālajiem pielikumiem"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikona"
+  },
+  "homepage.hero.title": {
+    "message": "Atbilde ar pielikumiem"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Iekļauj oriģinālos pielikumus, atbildot programmā Thunderbird — automātiski vai pēc ātra apstiprinājuma."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Atvērt dokumentāciju"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Ātrā sākšana"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instalēt no papildinājumiem"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ziedot"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Kas jauns"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Izlasiet jaunākās izmaiņas sadaļā {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Izmaiņu žurnāls"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automātiski vai ar iepriekšēju apstiprinājumu"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Izvēlieties starp automātisku pievienošanu vai nelielu apstiprinājuma dialogu ar ērtiem tastatūras īsceļiem."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Gudra dublikātu novēršana"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ievēro esošos pielikumus un izvairās no dublikātiem pēc faila nosaukuma — tīri un paredzami."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Izlaist SMIME un iebūvēto saturu"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Lai atbildes būtu kompaktas, SMIME paraksti un iebūvētie attēli netiek iekļauti."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Melnā saraksta maskas"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Reģistrnejutīgas glob maskas, piemēram, {code1} vai {code2}, neļauj pievienot nevajadzīgus failus."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Ātrās saites uz dokumentāciju"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalēšana"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurēšana"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Lietošana"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Savietojamība"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Atbalsts"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licence"
+  },
+  "homepage.search.tip": {
+    "message": "Padoms: nospiediet {slash} vai {ctrl}+{k}, lai meklētu dokumentācijā."
+  },
+  "site.title": {
+    "message": "Atbilde ar pielikumiem"
+  },
+  "site.tagline": {
+    "message": "Thunderbird pievienojumprogramma: atbilde ar oriģinālajiem pielikumiem"
+  },
+  "navbar.title": {
+    "message": "Atbilde ar pielikumiem"
+  },
+  "navbar.logo.alt": {
+    "message": "Atbilde ar pielikumiem"
+  },
+  "navbar.docs": {
+    "message": "Dokumentācija"
+  },
+  "navbar.support": {
+    "message": "Atbalsts"
+  },
+  "navbar.license": {
+    "message": "Licence"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentācija"
+  },
+  "footer.link.home": {
+    "message": "Sākums"
+  },
+  "footer.link.install": {
+    "message": "Instalēšana"
+  },
+  "footer.section.project": {
+    "message": "Projekts"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Atbilde ar pielikumiem"
+  }
+}

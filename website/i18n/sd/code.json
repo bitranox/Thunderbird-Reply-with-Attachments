@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "اٽئچمينٽس سان جواب"
+  },
+  "homepage.meta.description": {
+    "message": "ٿنڊر برڊ ايڊ‑آن: اصل اٽئچمينٽس سميت جواب"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA آئيڪن"
+  },
+  "homepage.hero.title": {
+    "message": "اٽئچمينٽس سان جواب"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ٿنڊر برڊ ۾ جواب ڏيندي اصل اٽئچمينٽس شامل ڪريو — پاڻمرادو يا تڪڙي تصديق کان پوءِ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ڊاڪس کوليو"
+  },
+  "homepage.cta.quickstart": {
+    "message": "جلدي شروعات"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ايڊ‑آنز مان انسٽال ڪريو"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "عطيو ڏيو"
+  },
+  "homepage.whatsNew.title": {
+    "message": "نئون ڇا آهي"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "تازيون تبديليون {changelog} ۾ پڙهو."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "چينج لاگ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "پاڻمرادو يا پهرين تصديق"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "پاڻمرادي شامل ڪرڻ يا سُولا ڪي بورڊ شارٽ ڪٽن سان ننڍڙي تصديق واري ڊائلاگ مان چونڊيو."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "اسمارٽ ڊپليڪيٽ ختم ڪرڻ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "موجود اٽئچمينٽس کي برقرار رکي ٿو، ۽ فائل نالي مطابق ڊپليڪيٽ کان بچي ٿو—ساده ۽ اڳڪٿي لائق."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ۽ Inline ڇڏڻ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "جواب سادا رکڻ لاءِ SMIME دستخط ۽ اِن لائين تصويرون خارج ڪيون وڃن ٿيون."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "بليڪ لسٽ پيٽرنز"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "حرفن جي ڪيس کان آزاد گلوب پيٽرنز جهڙوڪ {code1} يا {code2} شور واريون فائلون شامل ٿيڻ کان روڪين ٿا."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ڊاڪس جا تڪڙا لنڪس"
+  },
+  "homepage.quicklinks.install": {
+    "message": "انسٽال"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ترتيب"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "استعمال"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "مطابقت"
+  },
+  "homepage.quicklinks.support": {
+    "message": "سپورٽ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "لائسنس"
+  },
+  "homepage.search.tip": {
+    "message": "ٽِپ: ڊاڪس ۾ ڳولا لاءِ {slash} يا {ctrl}+{k} دٻايو."
+  },
+  "site.title": {
+    "message": "اٽئچمينٽس سان جواب"
+  },
+  "site.tagline": {
+    "message": "ٿنڊر برڊ ايڊ‑آن: اصل اٽئچمينٽس سميت جواب"
+  },
+  "navbar.title": {
+    "message": "اٽئچمينٽس سان جواب"
+  },
+  "navbar.logo.alt": {
+    "message": "اٽئچمينٽس سان جواب"
+  },
+  "navbar.docs": {
+    "message": "ڊاڪس"
+  },
+  "navbar.support": {
+    "message": "سپورٽ"
+  },
+  "navbar.license": {
+    "message": "لائسنس"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ڊاڪس"
+  },
+  "footer.link.home": {
+    "message": "هوم"
+  },
+  "footer.link.install": {
+    "message": "انسٽال"
+  },
+  "footer.section.project": {
+    "message": "پروجيڪٽ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} اٽئچمينٽس سان جواب"
+  }
+}

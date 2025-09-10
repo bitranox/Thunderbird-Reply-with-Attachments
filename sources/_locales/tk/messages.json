@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Goşundylary bilen jogap ber" },
-  "extDescription": { "message": "E‑poçta jogaplaryna asyl goşundylary awtomatiki goşýar." },
-  "composeTitle": { "message": "Goşundylary bilen jogap ber" },
-  "optionsTitle": { "message": "Goşundylary bilen jogap — Saýlamalar" },
-  "confirmTitle": { "message": "Goşundylary tassykla" },
-  "uiHeader": { "message": "Goşundylary bilen jogap ber" },
-  "uiNoOptions": { "message": "Häzirki wagtda sazlamaga mümkinçilik ýok." },
-  "uiSupport": { "message": "Bu goşundyny haladynyzmy? Kiçi haýyr‑sahawat bilen goldaň:" },
-  "uiDonate": { "message": "Indi haýyr‑sahawat et" },
-  "uiGithubText": { "message": "Näsazlyklar ýa‑da beýleki soraglar üçin meniň" },
-  "uiGithubLinkLabel": { "message": "GitHub sahypam" },
-  "iconAlt": { "message": "Reply with Attachments nyşany" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Faýl atlarynyň gara sanawy (glob nagyşlar)" },
-  "uiBlacklistHelp": {
-    "message": "Ady şu nagyşlaryň islendik biri bilen deň gelýän faýllar hiç haçan awtomatiki goşulmaýar. Her setire bir nagyş. Mysallar: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Goşundylar bilen jogap bermek"
   },
-  "uiWarnBlacklistLabel": { "message": "Goşundylary gara sanaw sebäpli çykarylan bolsa duýduryň" },
-  "uiSave": { "message": "Sakla" },
-  "uiSaving": { "message": "Saklanýar…" },
-  "uiReset": { "message": "Bellenilenleri täzeden goý" },
-  "uiSaved": { "message": "Saklandy." },
-  "uiResetDone": { "message": "Tazelendildi." },
-  "uiConfirmHeader": { "message": "Tassyklama" },
-  "uiConfirmLabel": { "message": "Goşundylary goşmazdan ozal sora" },
+  "extDescription": {
+    "message": "Asyl goşundylary e-poçta jogaplaryna awtomatiki goşýar."
+  },
+  "composeTitle": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "optionsTitle": {
+    "message": "Goşundylar bilen jogap bermek — Sazlamalar"
+  },
+  "confirmTitle": {
+    "message": "Goşundylary tassyklaň"
+  },
+  "uiHeader": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "uiNoOptions": {
+    "message": "Häzirki wagtda sazlamak üçin hiç hili sazlama ýok."
+  },
+  "uiSupport": {
+    "message": "Bu goşmaça hoşňa gelýärmi? Meni kiçi goşant bilen goldaň:"
+  },
+  "uiDonate": {
+    "message": "Häzir goşant beriň"
+  },
+  "uiGithubText": {
+    "message": "Näsazlyk hasabatlary ýa-da beýleki soraglar üçin, meniň"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub sahypam"
+  },
+  "iconAlt": {
+    "message": "Goşundylar bilen jogap bermek nyşany"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Faýl atlarynyň gara sanawy (glob nagyşlary)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Atlary bu nagyşlaryň islendik biri bilen gabat gelýän faýllar hiç haçan awtomatiki goşulmaz. Her setire bir nagyş. Mysallar: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Goşundylary gara sanaw çykarsa, duýduryş ber"
+  },
+  "uiSave": {
+    "message": "Sakla"
+  },
+  "uiSaving": {
+    "message": "Saklanýar…"
+  },
+  "uiReset": {
+    "message": "Deslapky ýagdaýyna gaýtaryň"
+  },
+  "uiSaved": {
+    "message": "Saklandy."
+  },
+  "uiResetDone": {
+    "message": "Gaýtaryldy."
+  },
+  "uiConfirmHeader": {
+    "message": "Tassyklaýyş"
+  },
+  "uiConfirmLabel": {
+    "message": "Goşundylary goşmazdan ozal sora"
+  },
   "uiConfirmHelp": {
-    "message": "Kiçijik tassyklaýjy dialog diňe hakykatdan goşundylary goşjak bolanyňyzda peýda bolýar. Klawiatura: Y ýa‑da J = Hawa; N ýa‑da Esc = Ýok."
+    "message": "Kiçi tassyklaýyş penjiresi diňe goşundylar hakykatdanam goşuljak bolsa peýda bolýar. Klawiatura: Y ýa-da J = Hawa; N ýa-da Esc = Ýok."
   },
   "confirmAddOne": {
     "message": "Goşundy goşulsynmy: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Goşundylary goşsunmy ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 has köp" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Hawa" },
-  "confirmNo": { "message": "Ýok" },
-  "warnBlacklistTitle": { "message": "Gara sanaw boýunça çykaryldy" },
-  "warnBlacklistIntro": { "message": "Aşakdaky faýllar awtomatiki goşulmaz:" },
-  "warnColFile": { "message": "Faýl" },
-  "warnColPattern": { "message": "Nagyş" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Bellenilen jogap" },
-  "uiConfirmDefaultYes": { "message": "Hawa" },
-  "uiConfirmDefaultNo": { "message": "Ýok" },
+  "confirmAddMany": {
+    "message": "Goşundylar goşulsynmy ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Hawa"
+  },
+  "confirmNo": {
+    "message": "Ýok"
+  },
+  "warnBlacklistTitle": {
+    "message": "Gara sanaw sebäpli çykaryldy"
+  },
+  "warnBlacklistIntro": {
+    "message": "Aşakdaky faýllar awtomatiki goşulmaz:"
+  },
+  "warnColFile": {
+    "message": "Faýl"
+  },
+  "warnColPattern": {
+    "message": "Nagyş"
+  },
+  "warnOk": {
+    "message": "Bolýar"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Deslapky jogap"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Hawa"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ýok"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

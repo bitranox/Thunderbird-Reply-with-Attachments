@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "homepage.meta.description": {
+    "message": "Добавка за Thunderbird: Отговаряйте, включвайки оригиналните прикачени файлове"
+  },
+  "homepage.icon.alt": {
+    "message": "Икона RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Включвайте оригиналните прикачени файлове при отговор в Thunderbird — автоматично или след бързо потвърждение."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Отвори документацията"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Бърз старт"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Инсталирай от каталога с добавки"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Дарете"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Какво ново"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Прочетете последните промени в {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Дневник на промените"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автоматично или с предварително потвърждение"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Изберете между автоматично добавяне или малък диалог за потвърждение с удобни клавишни комбинации."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Интелигентно избягване на дубликати"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Съобразява се с вече прикачените файлове и избягва дубликати по име на файл — чисто и предвидимо."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Пропускане на S/MIME и вградено съдържание"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Подписите S/MIME и вградените изображения се изключват, за да останат отговорите изчистени."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Шаблони за изключване"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob шаблони без значение от регистъра, като {code1} или {code2}, предотвратяват добавянето на шумни файлове."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Бързи връзки към документацията"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Инсталиране"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Конфигурация"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Използване"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Съвместимост"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Поддръжка"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Лиценз"
+  },
+  "homepage.search.tip": {
+    "message": "Съвет: Натиснете {slash} или {ctrl}+{k}, за да търсите в документацията."
+  },
+  "site.title": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "site.tagline": {
+    "message": "Добавка за Thunderbird: Отговаряйте, включвайки оригиналните прикачени файлове"
+  },
+  "navbar.title": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "navbar.logo.alt": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "navbar.docs": {
+    "message": "Документация"
+  },
+  "navbar.support": {
+    "message": "Поддръжка"
+  },
+  "navbar.license": {
+    "message": "Лиценз"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Документация"
+  },
+  "footer.link.home": {
+    "message": "Начало"
+  },
+  "footer.link.install": {
+    "message": "Инсталиране"
+  },
+  "footer.section.project": {
+    "message": "Проект"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Отговор с прикачени файлове"
+  }
+}

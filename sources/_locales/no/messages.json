@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Svar med vedlegg" },
-  "extDescription": { "message": "Legger automatisk til de opprinnelige vedleggene i e‑postsvar." },
-  "composeTitle": { "message": "Svar med vedlegg" },
-  "optionsTitle": { "message": "Svar med vedlegg — Alternativer" },
-  "confirmTitle": { "message": "Bekreft vedlegg" },
-  "uiHeader": { "message": "Svar med vedlegg" },
-  "uiNoOptions": { "message": "Det finnes for øyeblikket ingen alternativer å konfigurere." },
-  "uiSupport": { "message": "Liker du denne utvidelsen? Støtt meg med et lite bidrag:" },
-  "uiDonate": { "message": "Doner nå" },
-  "uiGithubText": { "message": "For feilrapporter eller andre spørsmål, besøk" },
-  "uiGithubLinkLabel": { "message": "min GitHub‑side" },
-  "iconAlt": { "message": "Reply with Attachments‑ikon" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Svarteliste for filnavn (glob‑mønstre)" },
-  "uiBlacklistHelp": {
-    "message": "Filer med navn som samsvarer med et av disse mønstrene blir aldri lagt til automatisk. Ett mønster per linje. Eksempler: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Svar med vedlegg"
   },
-  "uiWarnBlacklistLabel": { "message": "Varsle hvis vedlegg er utelukket av svartelisten" },
-  "uiSave": { "message": "Lagre" },
-  "uiSaving": { "message": "Lagrer…" },
-  "uiReset": { "message": "Tilbakestill til standard" },
-  "uiSaved": { "message": "Lagret." },
-  "uiResetDone": { "message": "Tilbakestilt." },
-  "uiConfirmHeader": { "message": "Bekreftelse" },
-  "uiConfirmLabel": { "message": "Spør før vedlegg legges til" },
+  "extDescription": {
+    "message": "Inkluder automatisk de opprinnelige vedleggene i e-postsvar."
+  },
+  "composeTitle": {
+    "message": "Svar med vedlegg"
+  },
+  "optionsTitle": {
+    "message": "Svar med vedlegg — Alternativer"
+  },
+  "confirmTitle": {
+    "message": "Bekreft vedlegg"
+  },
+  "uiHeader": {
+    "message": "Svar med vedlegg"
+  },
+  "uiNoOptions": {
+    "message": "Det finnes for øyeblikket ingen alternativer å konfigurere."
+  },
+  "uiSupport": {
+    "message": "Liker du dette tillegget? Støtt meg med et lite bidrag:"
+  },
+  "uiDonate": {
+    "message": "Doner nå"
+  },
+  "uiGithubText": {
+    "message": "For feilrapporter eller andre henvendelser, besøk min"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-side"
+  },
+  "iconAlt": {
+    "message": "Ikon for Svar med vedlegg"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Blokkeringsliste for filnavn (glob-mønstre)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Filer hvis navn samsvarer med noen av disse mønstrene blir aldri lagt ved automatisk. Ett mønster per linje. Eksempler: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Advar hvis vedlegg utelates av blokkeringslisten"
+  },
+  "uiSave": {
+    "message": "Lagre"
+  },
+  "uiSaving": {
+    "message": "Lagrer…"
+  },
+  "uiReset": {
+    "message": "Tilbakestill til standardinnstillinger"
+  },
+  "uiSaved": {
+    "message": "Lagret."
+  },
+  "uiResetDone": {
+    "message": "Tilbakestilt."
+  },
+  "uiConfirmHeader": {
+    "message": "Bekreftelse"
+  },
+  "uiConfirmLabel": {
+    "message": "Spør før du legger til vedlegg"
+  },
   "uiConfirmHelp": {
-    "message": "En liten bekreftelsesdialog vises bare når vedlegg faktisk ville blitt lagt til. Tastatur: Y eller J = Ja; N eller Esc = Nei."
+    "message": "En liten bekreftelsesdialog vises bare når vedlegg faktisk vil bli lagt til. Tastatur: Y eller J = Ja; N eller Esc = Nei."
   },
   "confirmAddOne": {
-    "message": "Legge til vedlegg: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Legge til vedlegg ($1): $2$3?",
+    "message": "Legg til vedlegg: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 til" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ja" },
-  "confirmNo": { "message": "Nei" },
-  "warnBlacklistTitle": { "message": "Utelukket av svarteliste" },
-  "warnBlacklistIntro": { "message": "Følgende filer vil ikke bli lagt til automatisk:" },
-  "warnColFile": { "message": "Fil" },
-  "warnColPattern": { "message": "Mønster" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Standardsvar" },
-  "uiConfirmDefaultYes": { "message": "Ja" },
-  "uiConfirmDefaultNo": { "message": "Nei" },
+  "confirmAddMany": {
+    "message": "Legg til vedlegg ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ja"
+  },
+  "confirmNo": {
+    "message": "Nei"
+  },
+  "warnBlacklistTitle": {
+    "message": "Utelatt av blokkeringslisten"
+  },
+  "warnBlacklistIntro": {
+    "message": "Følgende filer vil ikke bli lagt ved automatisk:"
+  },
+  "warnColFile": {
+    "message": "Fil"
+  },
+  "warnColPattern": {
+    "message": "Mønster"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Standardsvar"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ja"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nei"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Phendula Nezinamathiselo"
+  },
+  "homepage.meta.description": {
+    "message": "Isandiso se‑Thunderbird: Phendula uhlanganisa izinamathiselo zokuqala"
+  },
+  "homepage.icon.alt": {
+    "message": "Isithonjana se‑RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Phendula Nezinamathiselo"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Faka izinamathiselo zokuqala uma uphendula ku‑Thunderbird — ngokuzenzakalela noma ngemva kokuqinisekisa okusheshayo."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Vula Imibhalo"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Ukuqalisa Okusheshayo"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Faka kusuka ku‑Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Nikela"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Okusha"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Funda izinguquko zakamuva ku‑{changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Uhlu lwezinguquko"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Okuzenzakalelayo noma Qinisekisa Kuqala"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Khetha phakathi kokwengeza okuzenzakalelayo noma ibhokisi lesiqinisekiso elincane elinezinqamuleli zekhibhodi ezilula."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ukugwema Okuphindaphindiwe Okuhlakaniphile"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ihlonipha izinamathiselo ezikhona futhi igwema okuphindaphindayo ngegama lefayela, kuhlanzekile futhi kulindelekile."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Yeqa i‑SMIME ne‑Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Izimpawu zokusayina ze‑SMIME nezithombe ezise‑inline ziyakhishwa ukuze izimpendulo zihlale zilula."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Amaphethini Ohlwini Lokuvimba"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Amaphethini e‑glob anganaki ubukhulu bohlamvu afana no‑{code1} noma u‑{code2} avimbela ukwengezwa kwamafayela angafuneki."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Izixhumanisi ezisheshayo zemibhalo"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Faka"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Ukusethwa"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Ukusetshenziswa"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ukuhambisana"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Usekelo"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ilayisense"
+  },
+  "homepage.search.tip": {
+    "message": "Iseluleko: Cindezela u‑{slash} noma u‑{ctrl}+{k} ukuze useshe imibhalo."
+  },
+  "site.title": {
+    "message": "Phendula Nezinamathiselo"
+  },
+  "site.tagline": {
+    "message": "Isandiso se‑Thunderbird: Phendula uhlanganisa izinamathiselo zokuqala"
+  },
+  "navbar.title": {
+    "message": "Phendula Nezinamathiselo"
+  },
+  "navbar.logo.alt": {
+    "message": "Phendula Nezinamathiselo"
+  },
+  "navbar.docs": {
+    "message": "Imibhalo"
+  },
+  "navbar.support": {
+    "message": "Usekelo"
+  },
+  "navbar.license": {
+    "message": "Ilayisense"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Imibhalo"
+  },
+  "footer.link.home": {
+    "message": "Ikhaya"
+  },
+  "footer.link.install": {
+    "message": "Faka"
+  },
+  "footer.section.project": {
+    "message": "Iphrojekthi"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Phendula Nezinamathiselo"
+  }
+}

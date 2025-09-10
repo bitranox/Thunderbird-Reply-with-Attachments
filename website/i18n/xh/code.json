@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Phendula neeFayile eziQhotyoshelweyo"
+  },
+  "homepage.meta.description": {
+    "message": "Isandiso seThunderbird: Phendula uquka iifayile zokuqala eziqhotyoshelweyo"
+  },
+  "homepage.icon.alt": {
+    "message": "i-icon ye-RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Phendula neeFayile eziQhotyoshelweyo"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Bandakanya iifayile zokuqala eziqhotyoshelweyo xa uphendula kwiThunderbird — ngokuzenzekela okanye emva kokuqinisekisa okukhawulezayo."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Vula amaxwebhu"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Ukuqalisa ngokukhawuleza"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Faka kwiZandiso"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Nika umnikelo"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Yintoni Entsha"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Funda utshintsho lwamva nje kwi {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Uluhlu lotshintsho"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Okuzenzekelayo okanye Qinisekisa Kuqala"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Khetha phakathi kokongeza okuzenzekelayo okanye incoko-yabini encinci yokuqinisekisa enezindlela ezimfutshane zekhibhodi eziluncedo."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ukuphelisa ukuphindaphinda okuhlakaniphile"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ihlonipha iifayile eziqhotyoshelweyo ezikhoyo kwaye iphepha okuphindwe kabini ngokwegama lefayile — icocekile kwaye ilindelekile."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Tsiba i-SMIME ne Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Iisayini ze-SMIME nemifanekiso ye-inline ziyashiywa ngaphandle ukugcina iimpendulo zilula."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Iipateni zoluhlu olumnyama"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Iipateni ze-glob ezingakhathaleliyo umahluko koonobumba abakhulu nabancinci ezifana ne {code1} okanye {code2} zithintela ukongezwa kweefayile ezingxolayo."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Amakhonkco akhawulezayo kumaxwebhu"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Faka"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Uqwalaselo"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Ukusetyenziswa"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ukuhambelana"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Inkxaso"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ilayisenisi"
+  },
+  "homepage.search.tip": {
+    "message": "Ingcebiso: Cinezela {slash} okanye {ctrl}+{k} ukukhangela kumaxwebhu."
+  },
+  "site.title": {
+    "message": "Phendula neeFayile eziQhotyoshelweyo"
+  },
+  "site.tagline": {
+    "message": "Isandiso seThunderbird: Phendula uquka iifayile zokuqala eziqhotyoshelweyo"
+  },
+  "navbar.title": {
+    "message": "Phendula neeFayile eziQhotyoshelweyo"
+  },
+  "navbar.logo.alt": {
+    "message": "Phendula neeFayile eziQhotyoshelweyo"
+  },
+  "navbar.docs": {
+    "message": "Amaxwebhu"
+  },
+  "navbar.support": {
+    "message": "Inkxaso"
+  },
+  "navbar.license": {
+    "message": "Ilayisenisi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Amaxwebhu"
+  },
+  "footer.link.home": {
+    "message": "Ekhaya"
+  },
+  "footer.link.install": {
+    "message": "Faka"
+  },
+  "footer.section.project": {
+    "message": "Iprojekthi"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Phendula neeFayile eziQhotyoshelweyo"
+  }
+}

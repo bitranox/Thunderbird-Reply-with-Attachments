@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Պատասխան կցորդներով" },
-  "extDescription": {
-    "message": "Ինքնաշխատ ավելացնում է սկզբնական կցորդները էլ.փոստի պատասխաններում։"
+  "extName": {
+    "message": "Պատասխանել կցորդներով"
   },
-  "composeTitle": { "message": "Պատասխան կցորդներով" },
-  "optionsTitle": { "message": "Պատասխան կցորդներով — Կարգավորումներ" },
-  "confirmTitle": { "message": "Հաստատել կցորդները" },
-  "uiHeader": { "message": "Պատասխան կցորդներով" },
-  "uiNoOptions": { "message": "Այս պահին կարգավորելու ընտրանքներ չկան։" },
-  "uiSupport": { "message": "Նախընտրում եք այս ընդլայնումը՞։ Աջակցեք փոքր նվիրատվությամբ." },
-  "uiDonate": { "message": "Նվիրաբերել հիմա" },
-  "uiGithubText": { "message": "Սխալների մասին զեկուցելու կամ այլ հարցերի համար այցելեք իմ" },
-  "uiGithubLinkLabel": { "message": "GitHub էջը" },
-  "iconAlt": { "message": "Reply with Attachments պատկերակ" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Ֆայլերի անունների սև ցուցակ (glob նախշեր)" },
+  "extDescription": {
+    "message": "Էլփոստի պատասխաններում ինքնաբար ներառել սկզբնական կցորդները։"
+  },
+  "composeTitle": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "optionsTitle": {
+    "message": "Պատասխանել կցորդներով — Կարգավորումներ"
+  },
+  "confirmTitle": {
+    "message": "Հաստատել կցորդները"
+  },
+  "uiHeader": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "uiNoOptions": {
+    "message": "Այս պահին կարգավորելու ընտրանքներ չկան։"
+  },
+  "uiSupport": {
+    "message": "Ձեզ դո՞ւր է գալիս այս հավելումը։ Աջակցեք ինձ փոքր նվիրատվությամբ:"
+  },
+  "uiDonate": {
+    "message": "Նվիրաբերել հիմա"
+  },
+  "uiGithubText": {
+    "message": "Սխալների մասին հաղորդումների կամ այլ հարցումների համար այցելեք իմ"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub էջը"
+  },
+  "iconAlt": {
+    "message": "«Պատասխանել կցորդներով» պատկերակ"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Ֆայլանունների սև ցուցակ (glob նախշեր)"
+  },
   "uiBlacklistHelp": {
-    "message": "Ֆայլերը, որոնց անունները համապատասխանում են այս նախշերից որևէ մեկին, երբեք ինքնաշխատ չեն կցվի։ Մեկ նախշ՝ յուրաքանչյուր տողում։ Օրինակներ՝ *.png, smime.*, *.p7s"
+    "message": "Ֆայլերը, որոնց անունները համապատասխանում են այս նախշերից որևէ մեկին, երբեք ինքնաբար չեն կցվի։ Ամեն տողում մեկ նախշ։ Օրինակներ՝ *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Զգուշացնել, եթե կցորդները բացակայում են սև ցուցակի պատճառով"
+    "message": "Զգուշացնել, եթե կցորդները բացառվել են սև ցուցակի պատճառով"
   },
-  "uiSave": { "message": "Պահել" },
-  "uiSaving": { "message": "Պահպանում…" },
-  "uiReset": { "message": "Վերականգնել լռելյայնները" },
-  "uiSaved": { "message": "Պահված է։" },
-  "uiResetDone": { "message": "Վերականգնված է։" },
-  "uiConfirmHeader": { "message": "Հաստատում" },
-  "uiConfirmLabel": { "message": "Հարցնել՝ նախքան կցորդների ավելացումը" },
+  "uiSave": {
+    "message": "Պահել"
+  },
+  "uiSaving": {
+    "message": "Պահվում է…"
+  },
+  "uiReset": {
+    "message": "Վերականգնել լռելյայն կարգավորումները"
+  },
+  "uiSaved": {
+    "message": "Պահված է։"
+  },
+  "uiResetDone": {
+    "message": "Վերականգնված է։"
+  },
+  "uiConfirmHeader": {
+    "message": "Հաստատում"
+  },
+  "uiConfirmLabel": {
+    "message": "Կցորդներ ավելացնելուց առաջ հարցնել"
+  },
   "uiConfirmHelp": {
-    "message": "Փոքր հաստատման պատուհանը երևում է միայն այն ժամանակ, երբ իսկապես կցորդներ են ավելացվելու։ Ստեղնաշար՝ Y կամ J = Այո; N կամ Esc = Ոչ։"
+    "message": "Փոքր հաստատման պատուհան կհայտնվի միայն այն դեպքում, երբ իրականում կավելացվեն կցորդներ։ Ստեղնաշար՝ Y կամ J = Այո, N կամ Esc = Ոչ։"
   },
   "confirmAddOne": {
-    "message": "Ավելացնել կցորդ՝ $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ավելացնել կցորդներ ($1)՝ $2$3?",
+    "message": "Ավելացնե՞լ կցորդ՝ $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ավել" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Այո" },
-  "confirmNo": { "message": "Ոչ" },
-  "warnBlacklistTitle": { "message": "Բացակացված է սև ցուցակով" },
-  "warnBlacklistIntro": { "message": "Հետևյալ ֆայլերը ինքնաշխատ չեն ավելացվի․" },
-  "warnColFile": { "message": "Ֆայլ" },
-  "warnColPattern": { "message": "Նախշ" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Լռելյայն պատասխան" },
-  "uiConfirmDefaultYes": { "message": "Այո" },
-  "uiConfirmDefaultNo": { "message": "Ոչ" },
+  "confirmAddMany": {
+    "message": "Ավելացնե՞լ կցորդներ ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Այո"
+  },
+  "confirmNo": {
+    "message": "Ոչ"
+  },
+  "warnBlacklistTitle": {
+    "message": "Սև ցուցակով բացառված"
+  },
+  "warnBlacklistIntro": {
+    "message": "Հետևյալ ֆայլերը ինքնաբար չեն կցվի:"
+  },
+  "warnColFile": {
+    "message": "Ֆայլ"
+  },
+  "warnColPattern": {
+    "message": "Նախշ"
+  },
+  "warnOk": {
+    "message": "Լավ"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Լռելյայն պատասխան"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Այո"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ոչ"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

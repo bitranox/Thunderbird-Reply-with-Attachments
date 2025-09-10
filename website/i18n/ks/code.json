@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "منسلکات سمیت جواب"
+  },
+  "homepage.meta.description": {
+    "message": "تھنڈر برڈ ایڈ-آن: اصل منسلکات سمیت جواب"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA آئیکن"
+  },
+  "homepage.hero.title": {
+    "message": "منسلکات سمیت جواب"
+  },
+  "homepage.hero.subtitle": {
+    "message": "تھنڈر برڈ میں جواب دیتے وقت اصل منسلکات شامل کریں — خودکار طور پر یا ایک تیز تصدیق کے بعد۔"
+  },
+  "homepage.cta.openDocs": {
+    "message": "دستاویزات کھولیو"
+  },
+  "homepage.cta.quickstart": {
+    "message": "فوری آغاز"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ایڈ‑آنز سے تنصیب کریں"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "عطیہ دیں"
+  },
+  "homepage.whatsNew.title": {
+    "message": "کیا نیا ہے"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "تازہ ترین تبدیلیاں {changelog} میں پڑھیں۔"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "چینج لاگ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "خودکار یا پہلے تصدیق"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "خودکار طور پر شامل کرنے یا ایک چھوٹے تصدیقی ڈائیلاگ کے درمیان انتخاب کریں، مفید کی بورڈ شارٹ کٹس کے ساتھ۔"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "سمارٹ ڈی‑ڈپلیکیشن"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "موجودہ منسلکات کا احترام کرتا ہے اور فائل نام کے مطابق ڈپلیکیٹس سے بچتا ہے—صاف اور قابلِ پیش گوئی۔"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME اور اِن لائن چھوڑیں"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "جوابات کو ہلکا رکھنے کے لیے SMIME دستخط اور اِن لائن تصاویر شامل نہیں کی جاتی ہیں۔"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "بلیک لسٹ پیٹرنز"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "کیس سے بے نیاز گلوب پیٹرنز، جیسے {code1} یا {code2}, غیر ضروری فائلیں شامل ہونے سے روکتے ہیں۔"
+  },
+  "homepage.quicklinks.title": {
+    "message": "دستاویزات کے فوری روابط"
+  },
+  "homepage.quicklinks.install": {
+    "message": "تنصیب"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ترتیب"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "استعمال"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "مطابقت"
+  },
+  "homepage.quicklinks.support": {
+    "message": "معاونت"
+  },
+  "homepage.quicklinks.license": {
+    "message": "لائسنس"
+  },
+  "homepage.search.tip": {
+    "message": "ٹِپ: دستاویزات تلاش کرنے کے لیے {slash} یا {ctrl}+{k} دبائیں۔"
+  },
+  "site.title": {
+    "message": "منسلکات سمیت جواب"
+  },
+  "site.tagline": {
+    "message": "تھنڈر برڈ ایڈ-آن: اصل منسلکات سمیت جواب"
+  },
+  "navbar.title": {
+    "message": "منسلکات سمیت جواب"
+  },
+  "navbar.logo.alt": {
+    "message": "منسلکات سمیت جواب"
+  },
+  "navbar.docs": {
+    "message": "دستاویزات"
+  },
+  "navbar.support": {
+    "message": "معاونت"
+  },
+  "navbar.license": {
+    "message": "لائسنس"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "دستاویزات"
+  },
+  "footer.link.home": {
+    "message": "صفحہ اول"
+  },
+  "footer.link.install": {
+    "message": "تنصیب"
+  },
+  "footer.section.project": {
+    "message": "پراجیکٹ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} منسلکات سمیت جواب"
+  }
+}

@@ -1,8 +1,9 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
-import Layout from '@theme/Layout'; // eslint-disable-line no-unused-vars
-import Link from '@docusaurus/Link'; // eslint-disable-line no-unused-vars
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate, { translate } from '@docusaurus/Translate';
 
 function pickLocale(available, def) {
   if (typeof window === 'undefined') return def;
@@ -20,11 +21,10 @@ function pickLocale(available, def) {
 
 export default function Home() {
   const {
+    siteConfig,
     i18n: { defaultLocale, locales, currentLocale },
   } = useDocusaurusContext();
-  // Compute a locale-aware docs URL:
-  // - If we're already on a localized page (currentLocale !== defaultLocale), use that.
-  // - Otherwise, detect the user's preferred locale and use it when different from default.
+
   const detected = pickLocale(locales, defaultLocale);
   const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : detected;
   const isDifferentLocale = targetLocale !== currentLocale;
@@ -32,22 +32,50 @@ export default function Home() {
     useBaseUrl(`${targetLocale !== defaultLocale ? `/${targetLocale}` : ''}/docs/${slug}`);
   const toFor = (slug) => useBaseUrl(`/docs/${slug}`);
 
+  // Redirect EN homepage subtree to preferred locale under baseUrl (e.g., /Thunderbird-Reply-with-Attachments/de/)
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const base = ((siteConfig && siteConfig.baseUrl) || '/').replace(/\/+/g, '/');
+      const preferred = pickLocale(locales, defaultLocale);
+      if (currentLocale === defaultLocale && preferred && preferred !== defaultLocale) {
+        const path = window.location.pathname.replace(/\/+/g, '/');
+        const prefix = `${base}${preferred}/`.replace(/\/+/g, '/');
+        const alreadyLocalized = path.startsWith(prefix);
+        const onBaseTree = path.startsWith(base) && !alreadyLocalized;
+        if (onBaseTree) {
+          const remainder = path.slice(base.length);
+          const newPath = `${prefix}${remainder}`.replace(/\/+/g, '/');
+          const url = `${newPath}${window.location.search || ''}${window.location.hash || ''}`;
+          window.location.replace(url);
+        }
+      }
+    } catch (_e) {}
+  }, [currentLocale, defaultLocale, locales, siteConfig]);
+
   return (
     <Layout
-      title="Reply with Attachments"
-      description="Thunderbird Add-on: Reply including original attachments"
+      title={translate({ id: 'homepage.meta.title', message: 'Reply with Attachments' })}
+      description={translate({
+        id: 'homepage.meta.description',
+        message: 'Thunderbird Add-on: Reply including original attachments',
+      })}
     >
       <header className="heroGradient">
         <div className="container" style={{ textAlign: 'center' }}>
           <img
             className="brandIcon"
-            alt="RWA"
-            src="https://raw.githubusercontent.com/bitranox/Thunderbird-Reply-with-Attachments/master/sources/icons/icon-128.png"
+            alt={translate({ id: 'homepage.icon.alt', message: 'RWA icon' })}
+            src={useBaseUrl('/img/icon-128.png')}
           />
-          <h1 className="heroTitle">Reply with Attachments</h1>
+          <h1 className="heroTitle">
+            <Translate id="homepage.hero.title">Reply with Attachments</Translate>
+          </h1>
           <p className="heroSubtitle">
-            Include original attachments when replying in Thunderbird — automatically or after a
-            quick confirmation.
+            <Translate id="homepage.hero.subtitle">
+              Include original attachments when replying in Thunderbird — automatically or after a
+              quick confirmation.
+            </Translate>
           </p>
           <div className="ctaRow">
             <Link
@@ -55,33 +83,33 @@ export default function Home() {
               to={isDifferentLocale ? hrefFor('features') : toFor('features')}
               reloadDocument={isDifferentLocale}
             >
-              Open Docs
+              <Translate id="homepage.cta.openDocs">Open Docs</Translate>
             </Link>
             <Link
               className="button button--lg btnGhost"
               to={isDifferentLocale ? hrefFor('quickstart') : toFor('quickstart')}
               reloadDocument={isDifferentLocale}
             >
-              Quickstart
+              <Translate id="homepage.cta.quickstart">Quickstart</Translate>
             </Link>
             <Link
               className="button button--lg btnGhost"
-              href="https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments"
+              href="https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments"
             >
-              Install from Add‑ons
+              <Translate id="homepage.cta.installFromAddons">Install from Add‑ons</Translate>
             </Link>
             <Link
               className="button button--lg btnGhost"
               href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
             >
-              GitHub
+              <Translate id="homepage.cta.github">GitHub</Translate>
             </Link>
             <Link
               className="button button--lg btnGhost"
               to={isDifferentLocale ? hrefFor('donation') : toFor('donation')}
               reloadDocument={isDifferentLocale}
             >
-              Donate
+              <Translate id="homepage.cta.donate">Donate</Translate>
             </Link>
           </div>
         </div>
@@ -89,95 +117,135 @@ export default function Home() {
 
       <main className="container">
         <section style={{ marginTop: 24 }}>
-          <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>What’s New</h2>
+          <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>
+            <Translate id="homepage.whatsNew.title">What’s New</Translate>
+          </h2>
           <p style={{ margin: 0 }}>
-            Read the latest changes in the{' '}
-            <Link
-              to={isDifferentLocale ? hrefFor('changelog') : toFor('changelog')}
-              reloadDocument={isDifferentLocale}
+            <Translate
+              id="homepage.whatsNew.desc"
+              values={{
+                changelog: (
+                  <Link
+                    to={isDifferentLocale ? hrefFor('changelog') : toFor('changelog')}
+                    reloadDocument={isDifferentLocale}
+                  >
+                    <Translate id="homepage.whatsNew.changelogLink">Changelog</Translate>
+                  </Link>
+                ),
+              }}
             >
-              Changelog
-            </Link>
-            .
+              {'Read the latest changes in the {changelog}.'}
+            </Translate>
           </p>
         </section>
 
         <section className="featureGrid">
           <article className="card">
-            <h3>Automatic or Confirm‑First</h3>
+            <h3>
+              <Translate id="homepage.features.autoConfirm.title">
+                Automatic or Confirm‑First
+              </Translate>
+            </h3>
             <p>
-              Choose between automatic adding or a small confirmation dialog with handy keyboard
-              shortcuts.
+              <Translate id="homepage.features.autoConfirm.body">
+                Choose between automatic adding or a small confirmation dialog with handy keyboard
+                shortcuts.
+              </Translate>
             </p>
           </article>
           <article className="card">
-            <h3>Smart De‑Duplication</h3>
+            <h3>
+              <Translate id="homepage.features.dedupe.title">Smart De‑Duplication</Translate>
+            </h3>
             <p>
-              Respects existing attachments and avoids duplicates by filename, clean and
-              predictable.
+              <Translate id="homepage.features.dedupe.body">
+                Respects existing attachments and avoids duplicates by filename, clean and
+                predictable.
+              </Translate>
             </p>
           </article>
           <article className="card">
-            <h3>Skip SMIME & Inline</h3>
-            <p>SMIME signatures and inline images are excluded to keep replies lean.</p>
+            <h3>
+              <Translate id="homepage.features.skipSmime.title">Skip SMIME & Inline</Translate>
+            </h3>
+            <p>
+              <Translate id="homepage.features.skipSmime.body">
+                SMIME signatures and inline images are excluded to keep replies lean.
+              </Translate>
+            </p>
           </article>
           <article className="card">
-            <h3>Blacklist Patterns</h3>
+            <h3>
+              <Translate id="homepage.features.blacklist.title">Blacklist Patterns</Translate>
+            </h3>
             <p>
-              Case‑insensitive glob patterns like <code>*.png</code> or <code>smime.*</code> prevent
-              adding noisy files.
+              <Translate
+                id="homepage.features.blacklist.body"
+                values={{ code1: <code>*.png</code>, code2: <code>smime.*</code> }}
+              >
+                {
+                  'Case‑insensitive glob patterns like {code1} or {code2} prevent adding noisy files.'
+                }
+              </Translate>
             </p>
           </article>
         </section>
 
         <section style={{ marginTop: 24 }}>
-          <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>Docs quick links</h2>
+          <h2 style={{ fontSize: 18, margin: '0 0 12px 0' }}>
+            <Translate id="homepage.quicklinks.title">Docs quick links</Translate>
+          </h2>
           <div className="ctaRow" style={{ gap: 10, display: 'flex', flexWrap: 'wrap' }}>
             <Link
               className="button button--sm button--secondary"
               to={isDifferentLocale ? hrefFor('install') : toFor('install')}
               reloadDocument={isDifferentLocale}
             >
-              Install
+              <Translate id="homepage.quicklinks.install">Install</Translate>
             </Link>
             <Link
               className="button button--sm button--secondary"
               to={isDifferentLocale ? hrefFor('configuration') : toFor('configuration')}
               reloadDocument={isDifferentLocale}
             >
-              Configuration
+              <Translate id="homepage.quicklinks.configuration">Configuration</Translate>
             </Link>
             <Link
               className="button button--sm button--secondary"
               to={isDifferentLocale ? hrefFor('usage') : toFor('usage')}
               reloadDocument={isDifferentLocale}
             >
-              Usage
+              <Translate id="homepage.quicklinks.usage">Usage</Translate>
             </Link>
             <Link
               className="button button--sm button--secondary"
               to={isDifferentLocale ? hrefFor('compatibility') : toFor('compatibility')}
               reloadDocument={isDifferentLocale}
             >
-              Compatibility
+              <Translate id="homepage.quicklinks.compatibility">Compatibility</Translate>
             </Link>
             <Link
               className="button button--sm button--secondary"
               to={isDifferentLocale ? hrefFor('support') : toFor('support')}
               reloadDocument={isDifferentLocale}
             >
-              Support
+              <Translate id="homepage.quicklinks.support">Support</Translate>
             </Link>
             <Link
               className="button button--sm button--secondary"
-              to={isDifferentLocale ? hrefFor('licence') : toFor('licence')}
+              to={isDifferentLocale ? hrefFor('license') : toFor('license')}
               reloadDocument={isDifferentLocale}
             >
-              Licence
+              <Translate id="homepage.quicklinks.license">License</Translate>
             </Link>
           </div>
           <p style={{ marginTop: 10, color: 'var(--ifm-color-secondary-dark)' }}>
-            Tip: Press <kbd>/</kbd> or <kbd>Ctrl</kbd>+<kbd>K</kbd> to search the docs.
+            <Translate
+              id="homepage.search.tip"
+              values={{ slash: <kbd>/</kbd>, ctrl: <kbd>Ctrl</kbd>, k: <kbd>K</kbd> }}
+            >
+              {'Tip: Press {slash} or {ctrl}+{k} to search the docs.'}
+            </Translate>
           </p>
         </section>
       </main>

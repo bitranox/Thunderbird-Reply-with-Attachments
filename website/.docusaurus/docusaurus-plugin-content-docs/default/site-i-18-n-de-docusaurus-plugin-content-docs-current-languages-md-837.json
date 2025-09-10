@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Sprachen",
-  "description": "Diese Liste spiegelt sowohl Übersetzungen der Website-Dokumentation als auch Add-on-UI-Texte wider.",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird قىستۇرمىسى: جاۋابقا ئەسلى قوشۇمچىلارنى قوشۇش"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA سىنبەلگىسى"
+  },
+  "homepage.hero.title": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird دا جاۋاب قايتۇرغاندا ئەسلى قوشۇمچىلارنى — ئاپتوماتىك ياكى تېز تەستىقلاشتىن كېيىن — قوشۇپ بېرىدۇ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "قوللانمىنى ئاچ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "تېز باشلاش"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "قىستۇرمىلاردىن ئورنىتىش"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ئىئانە"
+  },
+  "homepage.whatsNew.title": {
+    "message": "يېڭىلىقلار"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ئەڭ يېڭى ئۆزگەرتىشلەرنى {changelog} دىن بىلىڭ."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ئۆزگىرىش خاتىرىسى"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ئاپتوماتىك ياكى ئالدى بىلەن تەستىقلاش"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ئاپتوماتىك قوشۇش ياكى قولايلىق ھەرپتاختا قىسقا يوللىرى بولغان كىچىك تەستىقلاش سۆزلەشكۈسىنى تاللاڭ."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ئەقىللىق تەكرارنى يوقىتىش"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "بار قوشۇمچىلارنى ساقلاپ، ھۆججەت نامى بويىچە تەكرار قوشۇشنى توسىйدۇ — پاك ۋە ئالدىن بىلىشكە بولىدۇ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ۋە Inline نى ئۆتكۈزۈپ كېتىش"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "جاۋابلارنى يېنىك ساقلاش ئۈچۈن SMIME ئىمزالىرى ۋە inline سۈرەتلەر قوشۇلمايدۇ."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "قارا تىزىملىك ئەندىزىلىرى"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ھەرپلەرنىڭ چوڭ-كىچىكلىكىگە پەرۋا قىلمايدىغان {code1} ياكى {code2} قاتارلىق glob ئەندىزىلىرى كېرەكسىز ھۆججەتلەرنىڭ قوشۇلۇشىنى ئالدىنى ئالىدۇ."
+  },
+  "homepage.quicklinks.title": {
+    "message": "قوللانما تېز ئۇلانمىلىرى"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ئورنىتىش"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "سەپلىمە"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ئىشلىتىش"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ماسلىشىشچانلىق"
+  },
+  "homepage.quicklinks.support": {
+    "message": "قوللاش"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ئىجازەتنامە"
+  },
+  "homepage.search.tip": {
+    "message": "ئەسكەرتىش: قوللانمىنى ئىزدەش ئۈچۈن {slash} ياكى {ctrl}+{k} نى بېسىڭ."
+  },
+  "site.title": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "site.tagline": {
+    "message": "Thunderbird قىستۇرمىسى: جاۋابقا ئەسلى قوشۇمچىلارنى قوشۇش"
+  },
+  "navbar.title": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "navbar.logo.alt": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "navbar.docs": {
+    "message": "قوللانما"
+  },
+  "navbar.support": {
+    "message": "قوللاش"
+  },
+  "navbar.license": {
+    "message": "ئىجازەتنامە"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "قوللانما"
+  },
+  "footer.link.home": {
+    "message": "باش بەت"
+  },
+  "footer.link.install": {
+    "message": "ئورنىتىش"
+  },
+  "footer.section.project": {
+    "message": "پروژېكت"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  }
+}

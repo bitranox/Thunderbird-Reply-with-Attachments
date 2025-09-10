@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Përgjigju me Bashkëngjitje"
+  },
+  "homepage.meta.description": {
+    "message": "Shtesë për Thunderbird: Përgjigju duke përfshirë bashkëngjitjet origjinale"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikona RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Përgjigju me Bashkëngjitje"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Përfshi bashkëngjitjet origjinale kur i përgjigjesh në Thunderbird — automatikisht ose pas një konfirmimi të shpejtë."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Hap dokumentimin"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Nisje e shpejtë"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instalo nga Shtesat"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Dhuro"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Çfarë ka të re"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lexoni ndryshimet më të fundit në {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Regjistri i ndryshimeve"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatikisht ose Konfirmim paraprak"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Zgjidhni mes shtimit automatik ose një dialogu të vogël konfirmimi me shkurtesa praktike tastiere."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Dedublikim i zgjuar"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respekton bashkëngjitjet ekzistuese dhe shmang dublikatat sipas emrit të skedarit — sjellje e qartë dhe e parashikueshme."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Anashkalo SMIME dhe inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Nënshkrimet SMIME dhe imazhet inline përjashtohen për t’i mbajtur përgjigjet të lehta."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Modele të listës së zezë"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Modelet glob që nuk dallojnë shkronja të mëdha/të vogla, si {code1} ose {code2}, parandalojnë shtimin e skedarëve të panevojshëm."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Lidhje të shpejta për dokumentimin"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalim"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurim"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Përdorim"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Përputhshmëri"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Mbështetje"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencë"
+  },
+  "homepage.search.tip": {
+    "message": "Këshillë: Shtyp {slash} ose {ctrl}+{k} për të kërkuar në dokumentim."
+  },
+  "site.title": {
+    "message": "Përgjigju me Bashkëngjitje"
+  },
+  "site.tagline": {
+    "message": "Shtesë për Thunderbird: Përgjigju duke përfshirë bashkëngjitjet origjinale"
+  },
+  "navbar.title": {
+    "message": "Përgjigju me Bashkëngjitje"
+  },
+  "navbar.logo.alt": {
+    "message": "Përgjigju me Bashkëngjitje"
+  },
+  "navbar.docs": {
+    "message": "Dokumentim"
+  },
+  "navbar.support": {
+    "message": "Mbështetje"
+  },
+  "navbar.license": {
+    "message": "Licencë"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentim"
+  },
+  "footer.link.home": {
+    "message": "Kreu"
+  },
+  "footer.link.install": {
+    "message": "Instalim"
+  },
+  "footer.section.project": {
+    "message": "Projekti"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Përgjigju me Bashkëngjitje"
+  }
+}

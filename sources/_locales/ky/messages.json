@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Тиркемелер менен жооп берүү" },
+  "extName": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
   "extDescription": {
-    "message": "Э‑почта жоопторуна баштапкы тиркемелерди автоматтык түрдө кошот."
+    "message": "Электрондук катка жооп бергенде баштапкы тиркемелерди автоматтык түрдө кошот."
   },
-  "composeTitle": { "message": "Тиркемелер менен жооп берүү" },
-  "optionsTitle": { "message": "Тиркемелер менен жооп — Параметрлер" },
-  "confirmTitle": { "message": "Тиркемелерди ырастаңыз" },
-  "uiHeader": { "message": "Тиркемелер менен жооп берүү" },
-  "uiNoOptions": { "message": "Азырынча жөндөөлөр жок." },
-  "uiSupport": { "message": "Бул кошумча жагатпы? Кичине жардам менен колдоңуз:" },
-  "uiDonate": { "message": "Азыр кайрым жаса" },
-  "uiGithubText": { "message": "Ката тууралуу билдирүү же башка суроолор үчүн менин" },
-  "uiGithubLinkLabel": { "message": "GitHub барагым" },
-  "iconAlt": { "message": "Reply with Attachments белгиси" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Файл аттарынын кара тизмеси (glob үлгүлөрү)" },
+  "composeTitle": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "optionsTitle": {
+    "message": "Тиркемелер менен жооп берүү — Орнотуулар"
+  },
+  "confirmTitle": {
+    "message": "Тиркемелерди тастыктоо"
+  },
+  "uiHeader": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "uiNoOptions": {
+    "message": "Азырынча орнотуулар жок."
+  },
+  "uiSupport": {
+    "message": "Бул кошумча сизге жактыбы? Мени кичине салым менен колдоңуз:"
+  },
+  "uiDonate": {
+    "message": "Азыр кайрымдуулук кылыңыз"
+  },
+  "uiGithubText": {
+    "message": "Ката тууралуу билдирүүлөр же башка суроолор үчүн, сураныч, менин"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub барагым"
+  },
+  "iconAlt": {
+    "message": "Тиркемелер менен жооп берүүнүн сүрөтчөсү"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Файл аттарынын кара тизмеси (glob үлгүлөрү)"
+  },
   "uiBlacklistHelp": {
-    "message": "Аталышы бул үлгүлөрдүн кайсы бирине дал келген файлдар эч качан автоматтык түрдө кошулбайт. Ар бир сапка бир үлгү. Мисалдар: *.png, smime.*, *.p7s"
+    "message": "Аттары бул үлгүлөрдүн кайсы бирине дал келген файлдар эч качан автоматтык түрдө тиркелбейт. Ар бир сапка бир үлгү. Мисалдар: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Кара тизмеден улам тиркемелер четтетилсе, эскерт" },
-  "uiSave": { "message": "Сактоо" },
-  "uiSaving": { "message": "Сакталып жатат…" },
-  "uiReset": { "message": "Демейкиге кайтаруу" },
-  "uiSaved": { "message": "Сакталды." },
-  "uiResetDone": { "message": "Кайтарылды." },
-  "uiConfirmHeader": { "message": "Ырастоо" },
-  "uiConfirmLabel": { "message": "Тиркемелерди кошоордон мурда сура" },
+  "uiWarnBlacklistLabel": {
+    "message": "Эгер тиркемелер кара тизме боюнча четтетилсе, эскерт"
+  },
+  "uiSave": {
+    "message": "Сактоо"
+  },
+  "uiSaving": {
+    "message": "Сакталууда…"
+  },
+  "uiReset": {
+    "message": "Баштапкы абалга кайтаруу"
+  },
+  "uiSaved": {
+    "message": "Сакталды."
+  },
+  "uiResetDone": {
+    "message": "Кайтарылды."
+  },
+  "uiConfirmHeader": {
+    "message": "Тастыктоо"
+  },
+  "uiConfirmLabel": {
+    "message": "Тиркемелерди кошордун алдында сура"
+  },
   "uiConfirmHelp": {
-    "message": "Кичинекей ырастауу диалогу тиркемелер чындап кошулганда гана чыгат. Баскычтоп: Y же J = Ооба; N же Esc = Жок."
+    "message": "Тиркемелер чындап кошула турган учурда гана чакан тастыктоо диалогу чыгат. Баскычтоп: Y же J = Ооба; N же Esc = Жок."
   },
   "confirmAddOne": {
-    "message": "Тиркеме кошulsun: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Тиркемелер кошulsun ($1): $2$3?",
+    "message": "Тиркеме кошулсунбу: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 дагы" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ооба" },
-  "confirmNo": { "message": "Жок" },
-  "warnBlacklistTitle": { "message": "Кара тизмеден четтетилди" },
-  "warnBlacklistIntro": { "message": "Төмөнкү файлдар автоматтык түрдө кошулбайт:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Үлгү" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Демейки жооп" },
-  "uiConfirmDefaultYes": { "message": "Ооба" },
-  "uiConfirmDefaultNo": { "message": "Жок" },
+  "confirmAddMany": {
+    "message": "Тиркемелер кошулсунбу ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ооба"
+  },
+  "confirmNo": {
+    "message": "Жок"
+  },
+  "warnBlacklistTitle": {
+    "message": "Кара тизме боюнча четтетилди"
+  },
+  "warnBlacklistIntro": {
+    "message": "Төмөнкү файлдар автоматтык түрдө тиркелбейт:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Үлгү"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Демейки жооп"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ооба"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Жок"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

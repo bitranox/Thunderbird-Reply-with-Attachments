@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "د ضمیمو سره ځواب" },
-  "extDescription": { "message": "د ایمیل ځوابونو کې اصلي ضمیمې په اوتومات ډول شاملوي." },
-  "composeTitle": { "message": "د ضمیمو سره ځواب" },
-  "optionsTitle": { "message": "د ضمیمو سره ځواب — اختیارونه" },
-  "confirmTitle": { "message": "ضمیمې تایید کړئ" },
-  "uiHeader": { "message": "د ضمیمو سره ځواب" },
-  "uiNoOptions": { "message": "دا مهال د تنظیم لپاره کوم اختیارونه نشته." },
-  "uiSupport": { "message": "ایا دا اډ‑اون خوښوئ؟ د کوچني مرستې سره مې ملاتړ وکړئ:" },
-  "uiDonate": { "message": "اوس مرسته وکړئ" },
-  "uiGithubText": { "message": "د بګ راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما" },
-  "uiGithubLinkLabel": { "message": "د GitHub پاڼه" },
-  "iconAlt": { "message": "د ضمیمو سره ځواب نښه" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "د فایل‌نومونو تور لېست (glob بڼې)" },
-  "uiBlacklistHelp": {
-    "message": "هغه فایلونه چې نومونه یې له دغو بڼو سره سمون خوري، هېڅکله به په اوتومات ډول ونه نښلول شي. په هر کرښه کې یو بڼه. بېلګې: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "له ضمیمو سره ځواب"
   },
-  "uiWarnBlacklistLabel": { "message": "که ضمیمې د تور لېست له امله لرې شي خبر راکړه" },
-  "uiSave": { "message": "ساتل" },
-  "uiSaving": { "message": "ساتل کېږي…" },
-  "uiReset": { "message": "تلوالي ته بیاګرځول" },
-  "uiSaved": { "message": "وساتل شو." },
-  "uiResetDone": { "message": "بیا وټاکل شو." },
-  "uiConfirmHeader": { "message": "تایید" },
-  "uiConfirmLabel": { "message": "د ضمیمو له زیاتولو مخکې وپوښتئ" },
+  "extDescription": {
+    "message": "په برېښنالیک ځوابونو کې اصلي ضمیمې په اوتومات ډول ورګډوي."
+  },
+  "composeTitle": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "optionsTitle": {
+    "message": "له ضمیمو سره ځواب — غوراوي"
+  },
+  "confirmTitle": {
+    "message": "ضمیمې تایید کړئ"
+  },
+  "uiHeader": {
+    "message": "له ضمیمو سره ځواب"
+  },
+  "uiNoOptions": {
+    "message": "اوس مهال د امستنې لپاره هېڅ غوراوي نشته."
+  },
+  "uiSupport": {
+    "message": "دا اډان خوښېږي؟ له یوې وړې بسپنې سره مې ملاتړ وکړئ:"
+  },
+  "uiDonate": {
+    "message": "همدا اوس بسپنه ورکړئ"
+  },
+  "uiGithubText": {
+    "message": "د ستونزو راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما"
+  },
+  "uiGithubLinkLabel": {
+    "message": "د GitHub پاڼه"
+  },
+  "iconAlt": {
+    "message": "د له ضمیمو سره ځواب نښه"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "د دوتنې نومونو تور لیست (د ګلوب بېلګې)"
+  },
+  "uiBlacklistHelp": {
+    "message": "هغه فایلونه چې نومونه یې له دې بېلګو سره سمون خوري، هېڅکله به په اوتومات ډول ونه نښلول شي. په هره کرښه کې یوه بېلګه. بېلګې: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "که ضمیمې د تور لیست له امله مستثنا شي، خبرداری ورکړه"
+  },
+  "uiSave": {
+    "message": "ساتل"
+  },
+  "uiSaving": {
+    "message": "ساتل کېږي…"
+  },
+  "uiReset": {
+    "message": "اډاني ته بیا تنظیمول"
+  },
+  "uiSaved": {
+    "message": "وساتل شول."
+  },
+  "uiResetDone": {
+    "message": "بیا تنظیم شول."
+  },
+  "uiConfirmHeader": {
+    "message": "تایید"
+  },
+  "uiConfirmLabel": {
+    "message": "د ضمیمو له ورزیاتولو مخکې پوښتنه وکړه"
+  },
   "uiConfirmHelp": {
-    "message": "یو کوچنی د تایید کړکۍ یوازې هغه وخت څرګندېږي کله چې رښتیا هم ضمیمې زیاتېږي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
+    "message": "یوازې هغه مهال یو کوچنی د تایید کړکۍ ښکاري چې رښتیا هم ضمیمې ورزیاتې شي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
   },
   "confirmAddOne": {
-    "message": "ضمیمه اضافه کړم: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "ضمیمې اضافه کړم ($1): $2$3?",
+    "message": "ضمیمه ورزیات کړم: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 نور" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "هو" },
-  "confirmNo": { "message": "نه" },
-  "warnBlacklistTitle": { "message": "د تور لېست له امله لرې کړل شول" },
-  "warnBlacklistIntro": { "message": "لاندې فایلونه به په اوتومات ډول ونه نښلول شي:" },
-  "warnColFile": { "message": "فایل" },
-  "warnColPattern": { "message": "بڼه" },
-  "warnOk": { "message": "سمه ده" },
-  "uiConfirmDefaultHeader": { "message": "ډیفالټ ځواب" },
-  "uiConfirmDefaultYes": { "message": "هو" },
-  "uiConfirmDefaultNo": { "message": "نه" },
+  "confirmAddMany": {
+    "message": "ضمیمې ورزیات کړم ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "هو"
+  },
+  "confirmNo": {
+    "message": "نه"
+  },
+  "warnBlacklistTitle": {
+    "message": "د تور لیست له امله ایستل شوي"
+  },
+  "warnBlacklistIntro": {
+    "message": "لاندې فایلونه په اوتومات ډول نه نښلول کېږي:"
+  },
+  "warnColFile": {
+    "message": "فایل"
+  },
+  "warnColPattern": {
+    "message": "بېلګه"
+  },
+  "warnOk": {
+    "message": "سمه ده"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "اډاني ځواب"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "هو"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "نه"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

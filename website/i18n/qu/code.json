@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Kutichiy Hich'asqa Qillqakunawan"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird Yapasqa: Kutichispa, ñawpaq willaypi hich'asqa qillqakunata churanapaq"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikunu"
+  },
+  "homepage.hero.title": {
+    "message": "Kutichiy Hich'asqa Qillqakunawan"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbirdpi kutichispa, ñawpaq willaypi hich'asqa qillqakunata churanapaq — automátikoman icha utqhaylla chiqancha qhipapi."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Qillqakuna kichay"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Utqhay qallariy"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Yapasqakunamanta churay"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Qullqi qoway"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Musuq imaymana"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Musuq tikraykunata {changelog}pi ñawiy."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Tikray qillqa"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automátiko utaq Ñawpaq Chiqancha"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Automátikoman yapayta akllay, utaq uchuy chiqancha diálogota allin teclado ñit'iykunawan."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Yuyariq Iskayniykunata Amachaspa"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Kaq hich'asqa qillqakunata yupaycha, suti-manta iskayniykunataqa amachaspa; llamp'u, qhawarisqan hina."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME hina Inline qhisachiy"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Kutichiykuna llamp'uchakunampaq, SMIME firmaskuna hina inline rikch'akunaqa qhisachisqa kachkan."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Amachasqa Patrónkuna"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Mayúscula/minúscula mana riqsisqa glob patrónkuna, {code1} utaq {code2} hina, ch'aqrusqa archivokunata yapayta hark'an."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Qillqakunaman utqhay t'inkikuna"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Churay"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Kamachiynin"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Llamk'achiy"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "T'inkinakuy"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Yanapay"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencia"
+  },
+  "homepage.search.tip": {
+    "message": "Willakuy: Qillqakunata maskhaypaq {slash} utaq {ctrl}+{k} ñit'iy."
+  },
+  "site.title": {
+    "message": "Kutichiy Hich'asqa Qillqakunawan"
+  },
+  "site.tagline": {
+    "message": "Thunderbird Yapasqa: Kutichispa, ñawpaq willaypi hich'asqa qillqakunata churanapaq"
+  },
+  "navbar.title": {
+    "message": "Kutichiy Hich'asqa Qillqakunawan"
+  },
+  "navbar.logo.alt": {
+    "message": "Kutichiy Hich'asqa Qillqakunawan"
+  },
+  "navbar.docs": {
+    "message": "Qillqakuna"
+  },
+  "navbar.support": {
+    "message": "Yanapay"
+  },
+  "navbar.license": {
+    "message": "Licencia"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Qillqakuna"
+  },
+  "footer.link.home": {
+    "message": "Qallarina"
+  },
+  "footer.link.install": {
+    "message": "Churay"
+  },
+  "footer.section.project": {
+    "message": "Proyekto"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Kutichiy Hich'asqa Qillqakunawan"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird അഡോൺ: മൂല അറ്റാച്ച്മെന്റുകൾ ഉൾപ്പെടുത്തി മറുപടി"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ഐക്കൺ"
+  },
+  "homepage.hero.title": {
+    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird‑ൽ മറുപടി നൽകുമ്പോൾ മൂല അറ്റാച്ച്മെന്റുകൾ ഉൾപ്പെടുത്തുക — സ്വയം ചേർക്കുകയോ ചെറിയൊരു സ്ഥിരീകരണത്തിന് ശേഷം ചേർക്കുകയോ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ഡോക്യുമെന്റേഷൻ തുറക്കുക"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ദ്രുതാരംഭം"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ആഡ്‑ഓണുകളിൽ നിന്ന് ഇൻസ്റ്റാൾ ചെയ്യുക"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ദാനം ചെയ്യുക"
+  },
+  "homepage.whatsNew.title": {
+    "message": "പുതിയത് എന്താണ്"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ഏറ്റവും പുതിയ മാറ്റങ്ങൾ {changelog}-ൽ വായിക്കുക."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "മാറ്റപ്പട്ടിക"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "സ്വയം അല്ലെങ്കിൽ ആദ്യം സ്ഥിരീകരണം"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "സ്വയമേവ ചേർക്കൽ അല്ലെങ്കിൽ ഉപയോഗപ്രദമായ കീബോർഡ് ഷോർട്‌കട്ടുകളുള്ള ചെറുതായൊരു സ്ഥിരീകരണ ഡയലോഗ് — ഇവയിൽ നിന്ന് തിരഞ്ഞെടുക്കാം."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "സ്മാർട്ട് പകർപ്പുനീക്കം"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "നിലവിലുള്ള അറ്റാച്ച്മെന്റുകൾ മാനിക്കുകയും ഫയൽനാമത്തെ അടിസ്ഥാനമാക്കി പുനരാവർത്തനങ്ങൾ ഒഴിവാക്കുകയും ചെയ്യുന്നു — വൃത്തിയും പ്രവചിക്കാവുന്നതുമായ രീതിയിൽ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIMEയും ഇൻലൈനും ഒഴിവാക്കുക"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "മറുപടികൾ ലളിതമായി നിലനിർത്താൻ SMIME ഒപ്പുകളും ഇൻലൈൻ ചിത്രങ്ങളും ഒഴിവാക്കുന്നു."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് മാതൃകകൾ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "കേസ്‑ഇൻസെൻസിറ്റീവ് ഗ്ലോബ് മാതൃകകൾ {code1} അല്ലെങ്കിൽ {code2} പോലുള്ളവ ആവശ്യമില്ലാത്ത ഫയലുകൾ ചേർക്കുന്നത് തടയും."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ഡോക്യുമെന്റേഷന്റെ ദ്രുത ലിങ്കുകൾ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ഇൻസ്റ്റാൾ ചെയ്യുക"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ക്രമീകരണം"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ഉപയോഗം"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "പൊരുത്തം"
+  },
+  "homepage.quicklinks.support": {
+    "message": "പിന്തുണ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ലൈസൻസ്"
+  },
+  "homepage.search.tip": {
+    "message": "സൂചന: ഡോക്യുമെന്റേഷൻ തിരയാൻ {slash} അല്ലെങ്കിൽ {ctrl}+{k} അമർത്തുക."
+  },
+  "site.title": {
+    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  },
+  "site.tagline": {
+    "message": "Thunderbird അഡോൺ: മൂല അറ്റാച്ച്മെന്റുകൾ ഉൾപ്പെടുത്തി മറുപടി"
+  },
+  "navbar.title": {
+    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  },
+  "navbar.logo.alt": {
+    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  },
+  "navbar.docs": {
+    "message": "ഡോക്യുമെന്റേഷൻ"
+  },
+  "navbar.support": {
+    "message": "പിന്തുണ"
+  },
+  "navbar.license": {
+    "message": "ലൈസൻസ്"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ഡോക്യുമെന്റേഷൻ"
+  },
+  "footer.link.home": {
+    "message": "ഹോം"
+  },
+  "footer.link.install": {
+    "message": "ഇൻസ്റ്റാൾ ചെയ്യുക"
+  },
+  "footer.section.project": {
+    "message": "പ്രോജക്ട്"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+  }
+}

@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Ka dɛmɛ minɛn kɔrɔ" },
+  "extName": {
+    "message": "Jabi ni Piyɛsɛ Jɔnti"
+  },
   "extDescription": {
-    "message": "T’a ɲɛnabɔ minɛn kɔrɔw ka sɛbɛnna cɛ bamanankan i‑meeli dɛmɛw la."
+    "message": "A bɛ piyɛsɛ jɔnti kɔrɔw fara imeyili jabi la ɔtɔmatikima."
   },
-  "composeTitle": { "message": "Ka dɛmɛ minɛn kɔrɔ" },
-  "optionsTitle": { "message": "Ka dɛmɛ minɛn kɔrɔ — Sago" },
-  "confirmTitle": { "message": "K’a tilen dɛmɛw" },
-  "uiHeader": { "message": "Ka dɛmɛ minɛn kɔrɔ" },
-  "uiNoOptions": { "message": "Sago tɛ yen ka farafinna sisan." },
-  "uiSupport": { "message": "I b’a fɛ? Dɛmɛ ka di n’a bolo doni‑doni:" },
-  "uiDonate": { "message": "Doni sisan" },
-  "uiGithubText": { "message": "Ka b’a la bugu wala ko fɔ, ka taa n ma" },
-  "uiGithubLinkLabel": { "message": "GitHub jamana" },
-  "iconAlt": { "message": "Sankɔrɔba Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Fɛɛrɛ‑tɔnw ɲɛ taa (glob taara)" },
+  "composeTitle": {
+    "message": "Jabi ni Piyɛsɛ Jɔnti"
+  },
+  "optionsTitle": {
+    "message": "Jabi ni Piyɛsɛ Jɔnti — Sɛtɛriw"
+  },
+  "confirmTitle": {
+    "message": "Piyɛsɛ Jɔnti Kɔnfirimasi"
+  },
+  "uiHeader": {
+    "message": "Jabi ni Piyɛsɛ Jɔnti"
+  },
+  "uiNoOptions": {
+    "message": "Sisan, sɛtɛri tɛ yen k’a sɛbɛ."
+  },
+  "uiSupport": {
+    "message": "I b’a di add-on nin? Dɛmɛ n na ni don dɔgɔya dɔ:"
+  },
+  "uiDonate": {
+    "message": "Don sisan"
+  },
+  "uiGithubText": {
+    "message": "Bug rapɔrtew walima ɲiniw la, i ka taa n"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub pajɛ"
+  },
+  "iconAlt": {
+    "message": "Ikɔn: Jabi ni Piyɛsɛ Jɔnti"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Fichier tɔgɔw lisiti dibi (glob patɛrɛnw)"
+  },
   "uiBlacklistHelp": {
-    "message": "Fɛɛrɛw min bɛ taara taara ɲɛ, t’a ɲɛna kɛ cogo fe a ma taa kɛ. Taara kelen ka kelen fɛ. Misaliw: *.png, smime.*, *.p7s"
+    "message": "Fichier minnu tɔgɔ bɛ mɛn nin patɛrɛnw kan, o tɛ bɛ fara ɔtɔmatikima. Patɛrɛn kelen kɔfɛ sarali kelen. Misali: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Ka yɛrɛya b’a la kɔ dɛmɛw tɛ se ka taa ɲɛ taa la" },
-  "uiSave": { "message": "Dɛnnɛ" },
-  "uiSaving": { "message": "B’a dɛnnɛ…" },
-  "uiReset": { "message": "Ka segin ka kɛ fɔlɔ" },
-  "uiSaved": { "message": "Dɛnnɛnna." },
-  "uiResetDone": { "message": "Seginna." },
-  "uiConfirmHeader": { "message": "Tilen" },
-  "uiConfirmLabel": { "message": "Ka ɲini kɔ dɛmɛw ma taa" },
+  "uiWarnBlacklistLabel": {
+    "message": "Sɛgɛsɛgɛ ni piyɛsɛ jɔnti tugu lisiti dibi la"
+  },
+  "uiSave": {
+    "message": "Sɛbɛn"
+  },
+  "uiSaving": {
+    "message": "B’a sɛbɛn…"
+  },
+  "uiReset": {
+    "message": "Segin kɔrɔ min na"
+  },
+  "uiSaved": {
+    "message": "Sɛbɛnna."
+  },
+  "uiResetDone": {
+    "message": "Seginna."
+  },
+  "uiConfirmHeader": {
+    "message": "Kɔnfirimasi"
+  },
+  "uiConfirmLabel": {
+    "message": "Ka ɲini kɔ yan kɔ, ka piyɛsɛ jɔnti fara"
+  },
   "uiConfirmHelp": {
-    "message": "Fen minɛn dɔn kɔfε ka bɛɛ kɛra, tilen ɲɛ dɔn na. Kɔnɔbɔ: Y walima J = Awɔ; N walima Esc = Ayi."
+    "message": "Kɔnfirimasi dɔgɔya dɔ bɛ yera kelen sanni, sisan kɔnɔ sanni ni piyɛsɛ jɔnti bɛna fara diyara. Klaviyɛri: Y walima J = Awo; N walima Esc = Ayi."
   },
   "confirmAddOne": {
-    "message": "Ka dɛmɛ kelen taa: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ka dɛmɛw taa ($1): $2$3?",
+    "message": "Fara piyɛsɛ jɔnti: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ka taa wɛrɛ" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Awɔ" },
-  "confirmNo": { "message": "Ayi" },
-  "warnBlacklistTitle": { "message": "Taara ɲɛ taa na kɔ" },
-  "warnBlacklistIntro": { "message": "Fɛɛrɛw minnu bɛ sɛbɛnna cɛ tɛ:" },
-  "warnColFile": { "message": "Fɛɛrɛ" },
-  "warnColPattern": { "message": "Taara" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Daminɛ dɛmɛ" },
-  "uiConfirmDefaultYes": { "message": "Awɔ" },
-  "uiConfirmDefaultNo": { "message": "Ayi" },
+  "confirmAddMany": {
+    "message": "Fara piyɛsɛ jɔntiw ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Awo"
+  },
+  "confirmNo": {
+    "message": "Ayi"
+  },
+  "warnBlacklistTitle": {
+    "message": "Tugu lisiti dibi la"
+  },
+  "warnBlacklistIntro": {
+    "message": "Fichierw nin tɛ bɛ fara ɔtɔmatikima:"
+  },
+  "warnColFile": {
+    "message": "Fichier"
+  },
+  "warnColPattern": {
+    "message": "Patɛrɛn"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Jabi kɔrɔ"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Awo"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ayi"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,4 +1,14 @@
 // @ts-check
+// Optional runtime import: when running under Docusaurus, use its translate().
+// In test environments where '@docusaurus/Translate' isn't installed at repo root,
+// fall back to a no-op that returns the default message.
+let translate = (opts) => (typeof opts === 'string' ? opts : (opts?.message ?? ''));
+try {
+  // eslint-disable-next-line global-require
+  ({ translate } = require('@docusaurus/Translate'));
+} catch (_e) {
+  // no-op fallback used in tests
+}
 
 const I18N_LOCALES = [
   'en',
@@ -103,20 +113,31 @@ const I18N_LOCALES = [
   'is',
 ];
 
+// Allow overriding the built locales from environment (space or comma separated),
+// useful for CI/linkcheck and local selective builds.
+const SELECTED_LOCALES = (process.env.BUILD_LOCALES || '').trim();
+const LOCALES = SELECTED_LOCALES ? SELECTED_LOCALES.split(/[ ,]+/).filter(Boolean) : I18N_LOCALES;
+
+const DEFAULT_LOCALE = LOCALES.includes('en') ? 'en' : LOCALES[0] || 'en';
+
 const config = {
-  title: 'Reply with Attachments',
-  tagline: 'Thunderbird Add-on: Reply including original attachments',
+  title: translate({ id: 'site.title', message: 'Reply with Attachments' }),
+  tagline: translate({
+    id: 'site.tagline',
+    message: 'Thunderbird Add-on: Reply including original attachments',
+  }),
   url: 'https://bitranox.github.io',
   baseUrl: '/Thunderbird-Reply-with-Attachments/',
   organizationName: 'bitranox',
   projectName: 'Thunderbird-Reply-with-Attachments',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  // Use multi-resolution ICO for broad compatibility.
   favicon: 'img/favicon.ico',
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: DEFAULT_LOCALE,
     // Keep English as the source of truth; add all requested locales.
-    locales: I18N_LOCALES,
+    locales: LOCALES,
     // Map locales to htmlLang (BCP‑47) and mark RTL languages.
     localeConfigs: {
       en: { label: 'English', htmlLang: 'en-US' },
@@ -241,21 +262,41 @@ const config = {
     ],
   ],
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
+    colorMode: {
+      // Follow the browser/OS preference by default
+      respectPrefersColorScheme: true,
+      // Keep the toggle available; user choice is persisted automatically
+      disableSwitch: false,
+      defaultMode: 'light',
+    },
     navbar: {
-      title: 'Reply with Attachments',
+      title: translate({ id: 'navbar.title', message: 'Reply with Attachments' }),
       logo: {
-        alt: 'Reply with Attachments',
-        src: 'https://raw.githubusercontent.com/bitranox/Thunderbird-Reply-with-Attachments/master/sources/icons/icon-48.png',
+        alt: translate({ id: 'navbar.logo.alt', message: 'Reply with Attachments' }),
+        src: 'img/icon-48.png',
         // omit href/to to use baseUrl root by default
         target: '_self',
       },
       items: [
-        { type: 'doc', docId: 'features', position: 'left', label: 'Docs' },
-        { to: '/docs/support', label: 'Support', position: 'right' },
-        { to: '/docs/licence', label: 'Licence', position: 'right' },
+        {
+          type: 'doc',
+          docId: 'features',
+          position: 'left',
+          label: translate({ id: 'navbar.docs', message: 'Docs' }),
+        },
+        {
+          to: '/docs/support',
+          label: translate({ id: 'navbar.support', message: 'Support' }),
+          position: 'right',
+        },
+        {
+          to: '/docs/license',
+          label: translate({ id: 'navbar.license', message: 'License' }),
+          position: 'right',
+        },
         {
           href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments',
-          label: 'GitHub',
+          label: translate({ id: 'navbar.github', message: 'GitHub' }),
           position: 'right',
         },
       ],
@@ -264,23 +305,33 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: translate({ id: 'footer.section.docs', message: 'Docs' }),
           items: [
-            { label: 'Home', to: '/docs/features' },
-            { label: 'Install', to: '/docs/install' },
+            {
+              label: translate({ id: 'footer.link.home', message: 'Home' }),
+              to: '/docs/features',
+            },
+            {
+              label: translate({ id: 'footer.link.install', message: 'Install' }),
+              to: '/docs/install',
+            },
           ],
         },
         {
-          title: 'Project',
+          title: translate({ id: 'footer.section.project', message: 'Project' }),
           items: [
             {
-              label: 'GitHub',
+              label: translate({ id: 'footer.link.github', message: 'GitHub' }),
               href: 'https://github.com/bitranox/Thunderbird-Reply-with-Attachments',
             },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Reply with Attachments`,
+      copyright: translate({
+        id: 'footer.copyright',
+        message: '© {year} Reply with Attachments',
+        values: { year: new Date().getFullYear() },
+      }),
     },
     // Algolia DocSearch (enable via env vars DOCSEARCH_APP_ID, DOCSEARCH_API_KEY, DOCSEARCH_INDEX_NAME)
     ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY

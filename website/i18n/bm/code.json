@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird Add‑on: Jawa kɔfɛ ni piyɛs‑jɔntew orijiniw kɔnɔ"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikon"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ka jawa kɔfɛ Thunderbird kɔnɔ, k’a kɔ piyɛs‑jɔntew orijiniw la — ɔtomatikɔ walima kɔnfirimasiɔn dɔgɔya bɔ ma."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Bila dokimɛnti"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Daminɛ cɛma"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instale ni Add‑ons la"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Dɔni"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Kunnafoni kura"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Ka kalan cɛcɛliw kura minnu bɛ {changelog} kɔnɔ."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Changelog"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Ɔtomatikɔ walima Kɔnfirime Fɔlɔ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Ka filan ɲɛ ni ɔtomatikɔ ɲɛsi walima kɔnfirimasiɔn jalogi dɔgɔya min b’a la rakkursiw klaviyɛri ɲɛ."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "De‑dublikasiyɔn ɲɛ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "A bɛ piyɛs‑jɔntew minnu bɛ kɔfɛ kɔrɔ dan na, a bɛ dublikiw tɛmɛ ni tɔgɔla la (filename), k’a ɲɛ ni k’a jɛman dɔ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ni Inline tɛmɛ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME siɲɛturuw ni inline jɛlenuw bɛ tɛmɛ walasa ka jawaw dɔgɔya kɛ."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Patɛrɛn Blacklist"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob patɛrɛn minnu tɛ kan ka daminɛ (case‑insensitive), wɛrɛw fɛɛn bɛ {code1} walima {code2}, bɛ ka fayili sɔnsɔnw ma ɲɛsi."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Dokimɛnti dugukolo dɔgɔya"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instale"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Kɔnfigurasiya"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Utilizasiya"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilite"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Dɛmɛ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisansi"
+  },
+  "homepage.search.tip": {
+    "message": "Talimaw: {slash} bɔ walima {ctrl}+{k} bɔ ka ɲini dokimɛnti kɔnɔ."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird Add‑on: Jawa kɔfɛ ni piyɛs‑jɔntew orijiniw kɔnɔ"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Dokimɛnti"
+  },
+  "navbar.support": {
+    "message": "Dɛmɛ"
+  },
+  "navbar.license": {
+    "message": "Lisansi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokimɛnti"
+  },
+  "footer.link.home": {
+    "message": "Sɔfɛ"
+  },
+  "footer.link.install": {
+    "message": "Instale"
+  },
+  "footer.section.project": {
+    "message": "Porozɛ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

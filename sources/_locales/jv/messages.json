@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Wangsuli nganggo Lampiran" },
-  "extDescription": { "message": "Kalebu lampiran asli kanthi otomatis nalika wangsul ing email." },
-  "composeTitle": { "message": "Wangsuli nganggo Lampiran" },
-  "optionsTitle": { "message": "Wangsuli nganggo Lampiran — Opsi" },
-  "confirmTitle": { "message": "Konfirmasi Lampiran" },
-  "uiHeader": { "message": "Wangsuli nganggo Lampiran" },
-  "uiNoOptions": { "message": "Saiki ora ana opsi sing bisa disetel." },
-  "uiSupport": { "message": "Suka add‑on iki? Dukung aku kanthi sumbangan cilik:" },
-  "uiDonate": { "message": "Donasi saiki" },
-  "uiGithubText": { "message": "Kanggo laporan bug utawa pitakon liyane, bukak" },
-  "uiGithubLinkLabel": { "message": "kaca GitHubku" },
-  "iconAlt": { "message": "Ikon Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Daftar ireng jeneng berkas (pola glob)" },
+  "extName": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "extDescription": {
+    "message": "Kalebu lampiran asli kanthi otomatis ing wangsulan email."
+  },
+  "composeTitle": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "optionsTitle": {
+    "message": "Mbales nganggo Lampiran — Pilihan"
+  },
+  "confirmTitle": {
+    "message": "Konfirmasi Lampiran"
+  },
+  "uiHeader": {
+    "message": "Mbales nganggo Lampiran"
+  },
+  "uiNoOptions": {
+    "message": "Saiki ora ana pilihan sing bisa diatur."
+  },
+  "uiSupport": {
+    "message": "Apa sampeyan seneng karo add-on iki? Dhukungi aku nganggo sumbangan cilik:"
+  },
+  "uiDonate": {
+    "message": "Nyumbang saiki"
+  },
+  "uiGithubText": {
+    "message": "Kanggo laporan bug utawa pitakon liya, bukak"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Kaca GitHub"
+  },
+  "iconAlt": {
+    "message": "Ikon Mbales nganggo Lampiran"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Dhaptar ireng jeneng file (pola glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Berkas sing cocog karo salah siji pola iki ora bakal otomatis dilampirake. Siji pola saben baris. Tuladha: *.png, smime.*, *.p7s"
+    "message": "File sing jenenge cocog karo salah siji saka pola iki ora bakal tau dilampirake kanthi otomatis. Siji pola saben baris. Tuladha: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Peringatna yen lampiran ora dilebokake amarga daftar ireng"
+    "message": "Pengeti yen lampiran dikecualekake amarga dhaptar ireng"
   },
-  "uiSave": { "message": "Simpen" },
-  "uiSaving": { "message": "Nyimpen…" },
-  "uiReset": { "message": "Balekna menyang standar" },
-  "uiSaved": { "message": "Wis kesimpen." },
-  "uiResetDone": { "message": "Wis direset." },
-  "uiConfirmHeader": { "message": "Konfirmasi" },
-  "uiConfirmLabel": { "message": "Takon sadurunge nambah lampiran" },
+  "uiSave": {
+    "message": "Simpen"
+  },
+  "uiSaving": {
+    "message": "Nyimpen…"
+  },
+  "uiReset": {
+    "message": "Setel maneh menyang standar"
+  },
+  "uiSaved": {
+    "message": "Wis disimpen."
+  },
+  "uiResetDone": {
+    "message": "Wis direset."
+  },
+  "uiConfirmHeader": {
+    "message": "Konfirmasi"
+  },
+  "uiConfirmLabel": {
+    "message": "Takon dhisik sadurunge nambah lampiran"
+  },
   "uiConfirmHelp": {
-    "message": "Dialog konfirmasi cilik mung katon nalika lampiran pancen bakal ditambahake. Papan ketik: Y utawa J = Ya; N utawa Esc = Ora."
+    "message": "Dialog konfirmasi cilik mung bakal katon yen ana lampiran sing bener-bener bakal ditambahake. Keyboard: Y utawa J = Ya; N utawa Esc = Ora."
   },
   "confirmAddOne": {
     "message": "Tambah lampiran: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Tambah lampiran ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 more" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Ya" },
-  "confirmNo": { "message": "Ora" },
-  "warnBlacklistTitle": { "message": "Dikesampingake amarga daftar ireng" },
-  "warnBlacklistIntro": { "message": "Berkas ing ngisor iki ora bakal otomatis dilampirake:" },
-  "warnColFile": { "message": "Berkas" },
-  "warnColPattern": { "message": "Pola" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Wangsulan standar" },
-  "uiConfirmDefaultYes": { "message": "Ya" },
-  "uiConfirmDefaultNo": { "message": "Ora" },
+  "confirmYes": {
+    "message": "Ya"
+  },
+  "confirmNo": {
+    "message": "Ora"
+  },
+  "warnBlacklistTitle": {
+    "message": "Dikecualekake dening dhaptar ireng"
+  },
+  "warnBlacklistIntro": {
+    "message": "File ing ngisor iki ora bakal dilampirake kanthi otomatis:"
+  },
+  "warnColFile": {
+    "message": "File"
+  },
+  "warnColPattern": {
+    "message": "Pola"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Wangsulan standar"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ya"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ora"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

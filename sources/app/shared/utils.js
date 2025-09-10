@@ -13,6 +13,15 @@
     return typeof v === 'number' ? v : v && typeof v.id === 'number' ? v.id : null;
   }
   /**
+   * Coerce a value to 'yes' | 'no'. Any value other than a case‑insensitive 'no'
+   * maps to 'yes'. Undefined/empty defaults to 'yes'.
+   * @param {any} v
+   * @returns {'yes'|'no'}
+   */
+  function yesNo(v) {
+    return String(v ?? 'yes').toLowerCase() === 'no' ? 'no' : 'yes';
+  }
+  /**
    * Create a simple logger wrapper that prefixes messages and optionally mutes debug.
    * Intent: provide consistent logging without pulling a logging library.
    * @param {boolean} enabled When false, `debug` becomes a no-op; others always log.
@@ -35,5 +44,5 @@
     };
   }
   globalThis.App = globalThis.App || {};
-  App.Shared = { toNumericId, makeLogger };
+  App.Shared = { toNumericId, makeLogger, yesNo };
 })();

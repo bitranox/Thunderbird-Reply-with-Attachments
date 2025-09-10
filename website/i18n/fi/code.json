@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-lisäosa: Vastaa sisältäen alkuperäiset liitteet"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-kuvake"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Sisällytä alkuperäiset liitteet vastaukseen Thunderbirdissä — automaattisesti tai pikaisen vahvistuksen jälkeen."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Avaa dokumentaatio"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Pika-aloitus"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Asenna lisäosista"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Lahjoita"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Mitä uutta"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lue uusimmat muutokset kohdasta {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Muutosloki"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automaattinen tai vahvista ensin"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Valitse automaattisen lisäämisen ja pienen vahvistusikkunan välillä — mukana kätevät pikanäppäimet."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Älykäs kaksoiskappaleiden poisto"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Ottaa huomioon olemassa olevat liitteet ja välttää kaksoiskappaleet tiedostonimen perusteella — selkeä ja ennustettava."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Ohita SMIME ja upotetut"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME-allekirjoitukset ja upotetut kuvat jätetään pois, jotta vastaukset pysyvät kevyinä."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Estolistan kuviot"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Kirjainkoosta riippumattomat glob-kuviot, kuten {code1} tai {code2}, estävät turhien tiedostojen lisäämisen."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Dokumentaation pikalinkit"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Asennus"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Määritys"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Käyttö"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Yhteensopivuus"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Tuki"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisenssi"
+  },
+  "homepage.search.tip": {
+    "message": "Vinkki: Paina {slash} tai {ctrl}+{k} etsiäksesi dokumentaatiosta."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-lisäosa: Vastaa sisältäen alkuperäiset liitteet"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Dokumentaatio"
+  },
+  "navbar.support": {
+    "message": "Tuki"
+  },
+  "navbar.license": {
+    "message": "Lisenssi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentaatio"
+  },
+  "footer.link.home": {
+    "message": "Etusivu"
+  },
+  "footer.link.install": {
+    "message": "Asennus"
+  },
+  "footer.section.project": {
+    "message": "Projekti"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

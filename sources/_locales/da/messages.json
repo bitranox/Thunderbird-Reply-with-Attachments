@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Svar med vedhæftninger" },
-  "extDescription": { "message": "Tilføjer automatisk de oprindelige vedhæftninger i e‑mailsvar." },
-  "composeTitle": { "message": "Svar med vedhæftninger" },
-  "optionsTitle": { "message": "Svar med vedhæftninger — Indstillinger" },
-  "confirmTitle": { "message": "Bekræft vedhæftninger" },
-  "uiHeader": { "message": "Svar med vedhæftninger" },
-  "uiNoOptions": { "message": "Der er i øjeblikket ingen indstillinger at konfigurere." },
-  "uiSupport": { "message": "Kan du lide dette tilføjelsesprogram? Støt mig med et lille bidrag:" },
-  "uiDonate": { "message": "Donér nu" },
-  "uiGithubText": { "message": "Til fejlrapporter eller andre forespørgsler, besøg venligst min" },
-  "uiGithubLinkLabel": { "message": "GitHub‑side" },
-  "iconAlt": { "message": "Reply with Attachments ikon" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Sortliste over filnavne (glob‑mønstre)" },
-  "uiBlacklistHelp": {
-    "message": "Filer, hvis navne matcher et af disse mønstre, bliver aldrig automatisk vedhæftet. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Svar med vedhæftede filer"
   },
-  "uiWarnBlacklistLabel": { "message": "Advar hvis vedhæftninger udelukkes af sortlisten" },
-  "uiSave": { "message": "Gem" },
-  "uiSaving": { "message": "Gemmer…" },
-  "uiReset": { "message": "Gendan standard" },
-  "uiSaved": { "message": "Gemt." },
-  "uiResetDone": { "message": "Gendannet." },
-  "uiConfirmHeader": { "message": "Bekræftelse" },
-  "uiConfirmLabel": { "message": "Spørg før der tilføjes vedhæftninger" },
+  "extDescription": {
+    "message": "Medtag automatisk de oprindelige vedhæftede filer i e-mailsvar."
+  },
+  "composeTitle": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "optionsTitle": {
+    "message": "Svar med vedhæftede filer — Indstillinger"
+  },
+  "confirmTitle": {
+    "message": "Bekræft vedhæftede filer"
+  },
+  "uiHeader": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "uiNoOptions": {
+    "message": "Der er i øjeblikket ingen indstillinger at konfigurere."
+  },
+  "uiSupport": {
+    "message": "Kan du lide denne tilføjelse? Støt mig med et lille bidrag:"
+  },
+  "uiDonate": {
+    "message": "Donér nu"
+  },
+  "uiGithubText": {
+    "message": "For fejlrapporter eller andre henvendelser, besøg venligst min"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-side"
+  },
+  "iconAlt": {
+    "message": "Ikon for Svar med vedhæftede filer"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Sortliste over filnavne (glob-mønstre)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Filer, hvis navne matcher et af disse mønstre, vil aldrig blive vedhæftet automatisk. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Advar, hvis vedhæftede filer udelades på grund af sortlisten"
+  },
+  "uiSave": {
+    "message": "Gem"
+  },
+  "uiSaving": {
+    "message": "Gemmer…"
+  },
+  "uiReset": {
+    "message": "Nulstil til standardindstillinger"
+  },
+  "uiSaved": {
+    "message": "Gemt."
+  },
+  "uiResetDone": {
+    "message": "Nulstillet."
+  },
+  "uiConfirmHeader": {
+    "message": "Bekræftelse"
+  },
+  "uiConfirmLabel": {
+    "message": "Spørg, før der tilføjes vedhæftede filer"
+  },
   "uiConfirmHelp": {
-    "message": "En lille bekræftelsesdialog vises kun, når der faktisk ville blive tilføjet vedhæftninger. Tastatur: Y eller J = Ja; N eller Esc = Nej."
+    "message": "En lille bekræftelsesdialog vises kun, når der faktisk ville blive tilføjet vedhæftede filer. Tastatur: Y eller J = Ja; N eller Esc = Nej."
   },
   "confirmAddOne": {
-    "message": "Tilføj vedhæftning: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Tilføj vedhæftninger ($1): $2$3?",
+    "message": "Tilføj vedhæftet fil: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 mere" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ja" },
-  "confirmNo": { "message": "Nej" },
-  "warnBlacklistTitle": { "message": "Udelukket af sortliste" },
-  "warnBlacklistIntro": { "message": "Følgende filer bliver ikke automatisk vedhæftet:" },
-  "warnColFile": { "message": "Fil" },
-  "warnColPattern": { "message": "Mønster" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Standardsvar" },
-  "uiConfirmDefaultYes": { "message": "Ja" },
-  "uiConfirmDefaultNo": { "message": "Nej" },
+  "confirmAddMany": {
+    "message": "Tilføj vedhæftede filer ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ja"
+  },
+  "confirmNo": {
+    "message": "Nej"
+  },
+  "warnBlacklistTitle": {
+    "message": "Udeladt af sortlisten"
+  },
+  "warnBlacklistIntro": {
+    "message": "Følgende filer vil ikke blive vedhæftet automatisk:"
+  },
+  "warnColFile": {
+    "message": "Fil"
+  },
+  "warnColPattern": {
+    "message": "Mønster"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Standardsvar"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ja"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nej"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

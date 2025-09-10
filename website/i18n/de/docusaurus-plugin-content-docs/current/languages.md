@@ -4,14 +4,20 @@ title: Sprachen
 sidebar_label: Sprachen
 ---
 
-# Sprachunterstützung
+---
 
-Diese Liste spiegelt sowohl Übersetzungen der Website-Dokumentation als auch Add-on-UI-Texte wider.
-Umfangreiche Sprachunterstützung dank KI-Übersetzungstools — mit Unterstützung für 100 Sprachen.
+## Sprachen
 
-Die Liste unten ist nach dem Sprachcode sortiert.
+Diese Liste enthält sowohl Übersetzungen der Website‑Dokumentation als auch Add‑on‑UI‑Zeichenketten.
+Umfangreiche Sprachunterstützung dank KI‑Übersetzungstools — deckt 100 Sprachen ab.
 
-Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sprachversionen verwendet werden.
+Die folgende Liste ist nach dem Sprachcode sortiert.
+
+Siehe auch: das [Glossar](glossary) mit kanonischen UI‑Begriffen, die in allen Sprachen verwendet werden.
+
+---
+
+## Sprachliste {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -63,7 +69,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sp
 - `lo`: Laotisch (lo-LA)
 - `lt`: Litauisch (lt-LT)
 - `lv`: Lettisch (lv-LV)
-- `mg`: Malagasy (mg-MG)
+- `mg`: Madagassisch (mg-MG)
 - `ml`: Malayalam (ml-IN)
 - `mn`: Mongolisch (mn-MN)
 - `mr`: Marathi (mr-IN)
@@ -75,7 +81,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sp
 - `ny`: Chichewa (ny-MW)
 - `om`: Oromo (om-ET)
 - `or`: Odia (or-IN)
-- `pa`: Pandschabi (pa-IN)
+- `pa`: Punjabi (pa-IN)
 - `pl`: Polnisch (pl-PL)
 - `ps`: Paschtu (ps-AF)
 - `pt`: Portugiesisch (pt-PT)
@@ -88,7 +94,7 @@ Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sp
 - `si`: Singhalesisch (si-LK)
 - `sk`: Slowakisch (sk-SK)
 - `sl`: Slowenisch (sl-SI)
-- `sn`: Schona (sn-ZW)
+- `sn`: Shona (sn-ZW)
 - `so`: Somali (so-SO)
 - `sq`: Albanisch (sq-AL)
 - `sr`: Serbisch (sr-RS)
@@ -98,8 +104,8 @@ Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sp
 - `ta`: Tamil (ta-IN)
 - `te`: Telugu (te-IN)
 - `tg`: Tadschikisch (tg-TJ)
-- `th`: Thai (th-TH)
-- `ti`: Tigrinisch (ti-ER)
+- `th`: Thailändisch (th-TH)
+- `ti`: Tigrinya (ti-ER)
 - `tk`: Turkmenisch (tk-TM)
 - `tl`: Tagalog (tl-PH)
 - `tr`: Türkisch (tr-TR)
@@ -114,4 +120,18 @@ Siehe auch: das [Glossar](glossary) für kanonische UI-Begriffe, die in allen Sp
 - `zh`: Chinesisch (zh)
 - `zu`: Zulu (zu-ZA)
 
-Tipp: Wechseln Sie die Docs-Sprache über die Sprachauswahl in der Kopfzeile der Website (das URL-Präfix ändert sich entsprechend). Thunderbirds UI-Sprache ist unabhängig von der Website-Sprache und richtet sich nach Ihren Thunderbird-Einstellungen.
+Tipp: Wechseln Sie die Dokumentationssprache über den Sprachwähler in der Kopfzeile der Website (das URL‑Präfix ändert sich entsprechend). Die UI‑Sprache von Thunderbird ist unabhängig von der Website‑Sprache und richtet sich nach Ihren Thunderbird‑Einstellungen.
+
+---
+
+## Zu Übersetzungen beitragen {#contribute-translations}
+
+- Einen Fehler in einer Übersetzung gefunden? Bitte ein GitHub‑Issue oder einen PR eröffnen.
+- Bevorzugt Änderungen an der englischen Quelle unter `website/docs/`; die Werkzeuge der Maintainer übertragen Aktualisierungen in andere Sprachen.
+  Englisch ist die maßgebliche Quelle für die Dokumentation; Übersetzungsaktualisierungen werden im Workflow der Maintainer aus EN übernommen.
+
+### Website vs. UI {#website-vs-ui}
+
+- Website‑Sprache und Add‑on‑UI‑Sprache sind unabhängig; der Sprachwähler ändert nur die Dokumentation. Die UI‑Sprache von Thunderbird richtet sich nach Ihren Thunderbird‑Einstellungen.
+
+---

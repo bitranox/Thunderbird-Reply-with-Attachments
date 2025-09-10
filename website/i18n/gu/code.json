@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "જોડાણો સાથે જવાબ"
+  },
+  "homepage.meta.description": {
+    "message": "થન્ડરબર્ડ એડ‑ઓન: મૂળ જોડાણો સમાવીને જવાબ"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA આઇકન"
+  },
+  "homepage.hero.title": {
+    "message": "જોડાણો સાથે જવાબ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "થન્ડરબર્ડમાં જવાબ આપતી વખતે મૂળ જોડાણો સામેલ કરો — આપમેળે અથવા ઝડપી પુષ્ટિ પછી."
+  },
+  "homepage.cta.openDocs": {
+    "message": "દસ્તાવેજો ખોલો"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ઝડપી શરૂઆત"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "એડ‑ઓન્સમાંથી ઇન્સ્ટોલ કરો"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "દાન કરો"
+  },
+  "homepage.whatsNew.title": {
+    "message": "શું નવું છે"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog} માં તાજા ફેરફારો વાંચો."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ચેન્જલોગ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "આપમેળે અથવા પૂર્વ‑પુષ્ટિ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "સ્વચાલિત રીતે ઉમેરવું અથવા ઉપયોગી કીબોર્ડ શૉર્ટકટ્સ સાથેની નાની પુષ્ટિ સંવાદ વિંડો વચ્ચે પસંદ કરો."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "સ્માર્ટ ડી‑ડુપ્લિકેશન"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "હાલના જોડાણોનું માન રાખે છે અને ફાઈલનામ મુજબ નકલો ટાળે છે—સ્વચ્છ અને અનુમાનયોગ્ય."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME અને ઇનલાઇન છોડો"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "જવાબોને હલકા રાખવા SMIME સહી અને ઇનલાઇન છબીઓને બહાર રાખવામાં આવે છે."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "બ્લૅકલિસ્ટ પેટર્ન્સ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "કેસ‑અસંવેદનશીલ ગ્લોબ પેટર્ન્સ જેમ કે {code1} અથવા {code2} અનાવશ્યક ફાઈલો ઉમેરાતી અટકાવે છે."
+  },
+  "homepage.quicklinks.title": {
+    "message": "દસ્તાવેજોની ઝડપી કડીઓ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ઇન્સ્ટોલ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "રૂપરેખાંકન"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ઉપયોગ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "સુસંગતતા"
+  },
+  "homepage.quicklinks.support": {
+    "message": "સહાય"
+  },
+  "homepage.quicklinks.license": {
+    "message": "લાઇસન્સ"
+  },
+  "homepage.search.tip": {
+    "message": "ટીપ: દસ્તાવેજોમાં શોધવા {slash} અથવા {ctrl}+{k} દબાવો."
+  },
+  "site.title": {
+    "message": "જોડાણો સાથે જવાબ"
+  },
+  "site.tagline": {
+    "message": "થન્ડરબર્ડ એડ‑ઓન: મૂળ જોડાણો સમાવીને જવાબ"
+  },
+  "navbar.title": {
+    "message": "જોડાણો સાથે જવાબ"
+  },
+  "navbar.logo.alt": {
+    "message": "જોડાણો સાથે જવાબ"
+  },
+  "navbar.docs": {
+    "message": "દસ્તાવેજો"
+  },
+  "navbar.support": {
+    "message": "સહાય"
+  },
+  "navbar.license": {
+    "message": "લાઇસન્સ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "દસ્તાવેજો"
+  },
+  "footer.link.home": {
+    "message": "મુખ્ય પૃષ્ઠ"
+  },
+  "footer.link.install": {
+    "message": "ઇન્સ્ટોલ"
+  },
+  "footer.section.project": {
+    "message": "પ્રોજેક્ટ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} જોડાણો સાથે જવાબ"
+  }
+}

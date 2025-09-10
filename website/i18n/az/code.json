@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Qoşmalarla Cavab"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird əlavəsi: Cavabda orijinal qoşmalar"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikonu"
+  },
+  "homepage.hero.title": {
+    "message": "Qoşmalarla Cavab"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird‑də cavab verərkən orijinal qoşmaları avtomatik və ya qısa təsdiqdən sonra əlavə edin."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Sənədləri aç"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Sürətli başlanğıc"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Əlavələrdən quraşdır"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "İanə et"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Yeniliklər"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Ən son dəyişiklikləri {changelog}-də oxuyun."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Dəyişikliklər jurnalı"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Avtomatik və ya əvvəlcə təsdiq"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Avtomatik əlavə etmə və ya əlverişli klaviatura qısayolları olan kiçik təsdiq dialoqu arasında seçim edin."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ağıllı dublikatların qarşısını alma"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Mövcud qoşmaları nəzərə alır və fayl adına görə dublikatlardan qaçır, səliqəli və proqnozlaşdırıla biləndir."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME və daxili məzmunu keç"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Cavabları yığcam saxlamaq üçün SMIME imzaları və daxili şəkillər istisna edilir."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Qara siyahı şablonları"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Böyük‑kiçik hərfə həssas olmayan {code1} və ya {code2} kimi glob şablonları lazımsız faylların əlavə edilməsinin qarşısını alır."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Sənədlərə sürətli keçidlər"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Quraşdırma"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Tənzimləmə"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "İstifadə"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Uyğunluq"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Dəstək"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisenziya"
+  },
+  "homepage.search.tip": {
+    "message": "Məsləhət: Sənədlərdə axtarmaq üçün {slash} və ya {ctrl}+{k} düymələrini basın."
+  },
+  "site.title": {
+    "message": "Qoşmalarla Cavab"
+  },
+  "site.tagline": {
+    "message": "Thunderbird əlavəsi: Cavabda orijinal qoşmalar"
+  },
+  "navbar.title": {
+    "message": "Qoşmalarla Cavab"
+  },
+  "navbar.logo.alt": {
+    "message": "Qoşmalarla Cavab"
+  },
+  "navbar.docs": {
+    "message": "Sənədlər"
+  },
+  "navbar.support": {
+    "message": "Dəstək"
+  },
+  "navbar.license": {
+    "message": "Lisenziya"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Sənədlər"
+  },
+  "footer.link.home": {
+    "message": "Ana səhifə"
+  },
+  "footer.link.install": {
+    "message": "Quraşdırma"
+  },
+  "footer.section.project": {
+    "message": "Layihə"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Qoşmalarla Cavab"
+  }
+}

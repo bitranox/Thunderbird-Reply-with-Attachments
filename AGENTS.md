@@ -4,10 +4,13 @@
 
 - Connect to the `systemprompts` MCP filesystem.
 - Read following files and keep their guidance in working memory:
-  - core_programming_principles.md
+  - core_programming_solid.md
   - js_clean_architecture.md
   - js_clean_code.md
   - thunderbird_mail_extensions.md
+  - bash_clean_architecture.md
+  - bash_clean_code.md
+  - bash_small_functions.md
 
 ## Project Structure & Module Organization
 
@@ -36,17 +39,23 @@
 - Packaging
   - `make pack` — run linter then build ATN and LOCAL ZIPs (wraps `distribution_zip_packer.sh`). Artifacts: `reply-with-attachments-plugin.zip` (ATN) and a timestamped `*-LOCAL.zip`.
 
-- Docs (alphabetical)
-  - `make docs-build` — build the Docusaurus site into `website/build`.
-  - `make docs-build-linkcheck` — offline‑safe link check; accepts `OPTS="--locales en|all"` (builds then scans; rewrites GH Pages `baseUrl`, skips remote HTTP[S]).
-  - `make docs-deploy-local` — build and sync the docs into a local `gh-pages` worktree (configure via `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
-  - `make docs-push-github` — build if needed and push `website/build` to the `gh-pages` branch on the Git remote.
+- Web (alphabetical)
+  - `make web-build` — build the Docusaurus site into `website/build`.
+  - `make web-build-linkcheck` — offline‑safe link check; accepts `OPTS="--locales en|all"` (builds then scans; rewrites GH Pages `baseUrl`, skips remote HTTP[S]).
+  - `make web-build-local-preview` — build and sync the docs into a local `gh-pages` worktree (use `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
+  - `make web-push-github` — build if needed and push `website/build` to the `gh-pages` branch on the Git remote.
 
 - Translations
-  - `make translation DOC=<file(s)|all> TO=<lang(s)|all>` — translate docs from `website/docs` into `website/i18n/<lang>/...`.
+  - `make translation-web` — interactive by default; prompts for docs and target locales, then translates from `website/docs` into `website/i18n/<lang>/...`.
     - Reads API key/model from `.env` (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
-    - Examples: `make translation DOC=changelog.md TO=de`, `make translation DOC="changelog.md features.md" TO="de fr"`, `make translation DOC=all TO=all`.
-    - Alias: `make translate DOC=… TO=…` (same semantics).
+    - With `OPTS`, pass tokens directly to the script: first the doc(s) or `all`, then locales or `all`.
+      - Examples: `make translation-web OPTS="all de,fr"`, `make translation-web OPTS="changelog.md de,fr"`, `make translation-web OPTS="features.md all"`.
+    - Alias: `make translate-web` — runs `translation-web` with defaults (no OPTS forwarding; interactive prompts).
+  - `make translation-app` — translate app UI strings from `sources/_locales/en/messages.json` to all locales under `sources/_locales` (logs to `translation_app.log`).
+  - `make translation-web-index` — translate website UI strings (homepage/navbar/footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<lang>/code.json` (except `en`). Uses OpenAI only (hardcoded).
+    - Requirements: export `OPENAI_API_KEY` (and optionally `OPENAI_MODEL`, e.g., `gpt-4o-mini`).
+    - Optional `OPTS`: `--locales de,fr` to limit languages; `--force` to overwrite existing values; also accepts `--locale` and common typo `--localed`.
+    - Alias: `make translate-web-index`.
 
 - Manual install (dev)
   - Thunderbird → Tools → Add‑ons and Themes → gear → Install Add-on From File… → select the built ZIP (use the LOCAL ZIP for development).
@@ -88,22 +97,51 @@
 
 ## Translations (Docs)
 
-- Script: `scripts/translate_docs.js` (OpenAI only).
+- Script: `scripts/translate_web_docs.js` (OpenAI only).
 - Reads API key and model from `.env` at repo root:
   - `OPENAI_API_KEY=...`
   - `OPENAI_MODEL=gpt-4o-mini` (example)
   - Optional: `OPENAI_TEMPERATURE=0.2` (only set if your model supports non‑default temperatures; otherwise omit)
 - Source is always `website/docs/<filename>`; output goes to `website/i18n/<lang>/docusaurus-plugin-content-docs/current/<filename>`.
 - Usage:
-  - Interactive: `node scripts/translate_docs.js` (prompts for one/multiple filenames and one/multiple target languages or `all`).
+  - Interactive: `node scripts/translate_web_docs.js` (prompts for one/multiple filenames and one/multiple target languages or `all`).
   - CLI examples:
-    - `node scripts/translate_docs.js changelog.md de`
-    - `node scripts/translate_docs.js changelog.md,features.md de,fr`
-    - `node scripts/translate_docs.js all all`
-- Make: see `make translation` examples above (note: use `DOC` and `TO`, not `LANG`).
+    - `node scripts/translate_web_docs.js changelog.md de`
+    - `node scripts/translate_web_docs.js changelog.md,features.md de,fr`
+    - `node scripts/translate_web_docs.js all all`
+- Make: see `make translation-web` examples above (pass `OPTS` as `<doc|all> <lang|all>` when not using interactive mode).
+
+- Logging:
+  - The translator writes a summary log to `translation_web.log` in the repo root.
 - Notes:
   - Preserves code blocks/inline code and front‑matter `id`; translates `title`/`sidebar_label`.
   - Target languages are inferred from subfolders of `website/i18n`.
+
+## Translations (App UI Strings)
+
+- Script: `scripts/translate_app.js`.
+- Source → target:
+  - Reads `sources/_locales/en/messages.json` and writes translated `messages.json` for every other locale under `sources/_locales/<lang>/`.
+  - Copies the exact key/object structure; replaces only `message` values.
+  - Preserves placeholders like `$1`, `$2`, `$3` and leaves URL values unchanged.
+  - Never adds or removes keys — keeps all locales synchronized with EN.
+- Usage:
+  - One-shot: `node scripts/translate_app.js --locales all|de,fr`
+  - Make: `make translation-app OPTS="--locales all|de,fr"`
+- Logging:
+  - Writes a summary log to `translation_app.log` in the repo root.
+- Configuration:
+  - Reads API key/model from `.env` (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
+
+## Changes in WEB Documentation
+
+- when asked to update documentation - only do that in the english docs under /website/docs because other languages will be translated automatically,
+  unless stated otherwise by the user. In doubt - ask the user
+
+## Changes in APP Strings
+
+- when i18 strings are changed, only to that in sources/\_locales/en because other languages will be translated automatically,
+  unless stated otherwise by the user. In doubt - ask the user
 
 ## commit/pusg/github policy
 

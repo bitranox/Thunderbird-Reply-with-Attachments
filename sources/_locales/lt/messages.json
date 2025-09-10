@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Atsakyti su priedais" },
+  "extName": {
+    "message": "Atsakyti su priedais"
+  },
   "extDescription": {
-    "message": "Automatiškai prideda originalius priedus prie el. pašto atsakymų."
+    "message": "Automatiškai įtraukti originalius priedus į el. laiškų atsakymus."
   },
-  "composeTitle": { "message": "Atsakyti su priedais" },
-  "optionsTitle": { "message": "Atsakyti su priedais — Parinktys" },
-  "confirmTitle": { "message": "Patvirtinti priedus" },
-  "uiHeader": { "message": "Atsakyti su priedais" },
-  "uiNoOptions": { "message": "Šiuo metu nėra ką konfigūruoti." },
-  "uiSupport": { "message": "Patinka šis priedas? Paremkite mane maža auka:" },
-  "uiDonate": { "message": "Aukoti dabar" },
-  "uiGithubText": { "message": "Dėl klaidų pranešimų ar kitų klausimų, apsilankykite mano" },
-  "uiGithubLinkLabel": { "message": "GitHub puslapyje" },
-  "iconAlt": { "message": "Reply with Attachments piktograma" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Failų vardų juodasis sąrašas (glob šablonai)" },
+  "composeTitle": {
+    "message": "Atsakyti su priedais"
+  },
+  "optionsTitle": {
+    "message": "Atsakyti su priedais — parinktys"
+  },
+  "confirmTitle": {
+    "message": "Priedų patvirtinimas"
+  },
+  "uiHeader": {
+    "message": "Atsakyti su priedais"
+  },
+  "uiNoOptions": {
+    "message": "Šiuo metu nėra parinkčių, kurias būtų galima konfigūruoti."
+  },
+  "uiSupport": {
+    "message": "Patinka šis priedas? Paremkite mane nedidele auka:"
+  },
+  "uiDonate": {
+    "message": "Aukoti dabar"
+  },
+  "uiGithubText": {
+    "message": "Dėl klaidų pranešimų ar kitų užklausų apsilankykite mano"
+  },
+  "uiGithubLinkLabel": {
+    "message": "„GitHub“ puslapyje"
+  },
+  "iconAlt": {
+    "message": "„Atsakyti su priedais“ piktograma"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Failų pavadinimų juodasis sąrašas (glob šablonai)"
+  },
   "uiBlacklistHelp": {
-    "message": "Failai, kurių pavadinimai atitinka bet kurį iš šių šablonų, niekada nebus automatiškai pridedami. Po vieną šabloną eilutėje. Pavyzdžiai: *.png, smime.*, *.p7s"
+    "message": "Failai, kurių pavadinimai atitinka bet kurį iš šių šablonų, niekada nebus automatiškai prisegami. Po vieną šabloną eilutėje. Pavyzdžiai: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Įspėti, jei priedai neįtraukiami pagal juodąjį sąrašą" },
-  "uiSave": { "message": "Išsaugoti" },
-  "uiSaving": { "message": "Išsaugoma…" },
-  "uiReset": { "message": "Atkurti numatytąsias" },
-  "uiSaved": { "message": "Išsaugota." },
-  "uiResetDone": { "message": "Atkurta." },
-  "uiConfirmHeader": { "message": "Patvirtinimas" },
-  "uiConfirmLabel": { "message": "Klausti prieš pridedant priedus" },
+  "uiWarnBlacklistLabel": {
+    "message": "Įspėti, jei priedai neįtraukti dėl juodojo sąrašo"
+  },
+  "uiSave": {
+    "message": "Išsaugoti"
+  },
+  "uiSaving": {
+    "message": "Išsaugoma…"
+  },
+  "uiReset": {
+    "message": "Atkurti numatytuosius nustatymus"
+  },
+  "uiSaved": {
+    "message": "Išsaugota."
+  },
+  "uiResetDone": {
+    "message": "Atkurta."
+  },
+  "uiConfirmHeader": {
+    "message": "Patvirtinimas"
+  },
+  "uiConfirmLabel": {
+    "message": "Klausti prieš pridedant priedus"
+  },
   "uiConfirmHelp": {
-    "message": "Mažas patvirtinimo dialogas pasirodo tik tada, kai priedai iš tiesų būtų pridedami. Klaviatūra: Y arba J = Taip; N arba Esc = Ne."
+    "message": "Nedidelis patvirtinimo dialogas rodomas tik tada, kai priedai iš tiesų būtų pridedami. Klaviatūra: Y arba J = Taip; N arba Esc = Ne."
   },
   "confirmAddOne": {
     "message": "Pridėti priedą: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Pridėti priedus ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 daugiau" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Taip" },
-  "confirmNo": { "message": "Ne" },
-  "warnBlacklistTitle": { "message": "Neįtraukta pagal juodąjį sąrašą" },
-  "warnBlacklistIntro": { "message": "Šie failai nebus automatiškai pridedami:" },
-  "warnColFile": { "message": "Failas" },
-  "warnColPattern": { "message": "Šablonas" },
-  "warnOk": { "message": "Gerai" },
-  "uiConfirmDefaultHeader": { "message": "Numatytasis atsakymas" },
-  "uiConfirmDefaultYes": { "message": "Taip" },
-  "uiConfirmDefaultNo": { "message": "Ne" },
+  "confirmYes": {
+    "message": "Taip"
+  },
+  "confirmNo": {
+    "message": "Ne"
+  },
+  "warnBlacklistTitle": {
+    "message": "Neįtraukta dėl juodojo sąrašo"
+  },
+  "warnBlacklistIntro": {
+    "message": "Šie failai nebus automatiškai prisegti:"
+  },
+  "warnColFile": {
+    "message": "Failas"
+  },
+  "warnColPattern": {
+    "message": "Šablonas"
+  },
+  "warnOk": {
+    "message": "Gerai"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Numatytasis atsakymas"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Taip"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ne"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

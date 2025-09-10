@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reponn ak atachman yo"
+  },
+  "homepage.meta.description": {
+    "message": "Ekstansyon Thunderbird: Reponn enkli atachman orijinal yo"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikòn RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reponn ak atachman yo"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Mete atachman orijinal yo lè w ap reponn nan Thunderbird — otomatikman oswa apre yon ti konfimasyon rapid."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Louvri Dokiman yo"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Demaraj rapid"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Enstale soti nan Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Fè yon don"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Sa ki nouvo"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Li dènye chanjman yo nan {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Jounal chanjman"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatik oswa konfime avan"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Chwazi ant ajoute otomatikman oswa yon ti dyalòg konfimasyon ak kèk rakoursi klavye pratik."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Deduplikasyon entelijan"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Li respekte atachman ki egziste deja epi li evite kopi an doub dapre non fichye yo; pwòp e previzib."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Sote SMIME ak anliy"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Siyati SMIME ak imaj anliy yo pa enkli pou repons yo rete lejè."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Modèl lis nwa"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Modèl glob san distenksyon ant majiskil ak miniskil tankou {code1} oswa {code2} anpeche ajoute fichye parazit."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Lyens rapid pou dokiman yo"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Enstale"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigirasyon"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Itilizasyon"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Konpatibilite"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Sipò"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisans"
+  },
+  "homepage.search.tip": {
+    "message": "Konsèy: Peze {slash} oswa {ctrl}+{k} pou chèche nan dokiman yo."
+  },
+  "site.title": {
+    "message": "Reponn ak atachman yo"
+  },
+  "site.tagline": {
+    "message": "Ekstansyon Thunderbird: Reponn pandan w ap enkli atachman orijinal yo"
+  },
+  "navbar.title": {
+    "message": "Reponn ak atachman yo"
+  },
+  "navbar.logo.alt": {
+    "message": "Reponn ak atachman yo"
+  },
+  "navbar.docs": {
+    "message": "Dokiman"
+  },
+  "navbar.support": {
+    "message": "Sipò"
+  },
+  "navbar.license": {
+    "message": "Lisans"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokiman"
+  },
+  "footer.link.home": {
+    "message": "Akèy"
+  },
+  "footer.link.install": {
+    "message": "Enstale"
+  },
+  "footer.section.project": {
+    "message": "Pwojè"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reponn ak atachman yo"
+  }
+}

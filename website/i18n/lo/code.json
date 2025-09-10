@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "homepage.meta.description": {
+    "message": "ສ່ວນເສີມ Thunderbird: ຕອບກັບລວມໄຟລ໌ແນບຕົ້ນສະບັບ"
+  },
+  "homepage.icon.alt": {
+    "message": "ໄອຄອນ RWA"
+  },
+  "homepage.hero.title": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ລວມໄຟລ໌ແນບຕົ້ນສະບັບເມື່ອຕອບໃນ Thunderbird — ໂດຍອັດຕະໂນມັດ ຫຼື ຫຼັງຈາກຢືນຢັນໄວໆ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ເປີດເອກະສານ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ເລີ່ມຕົ້ນໄວ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ຕິດຕັ້ງຈາກ Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ບໍລິຈາກ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ມີຫຍັງໃໝ່"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ອ່ານການປ່ຽນແປງລ່າສຸດໃນ {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ບັນທຶກການປ່ຽນແປງ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ອັດຕະໂນມັດ ຫຼື ຢືນຢັນກ່ອນ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ເລືອກລະຫວ່າງການເພີ່ມໂດຍອັດຕະໂນມັດ ຫຼື ກ່ອງຢືນຢັນນ້ອຍໆພ້ອມທາງລັດແປ້ນພິມທີ່ສະດວກ."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ກຳຈັດຄວາມຊໍ້າຢ່າງສະຫຼາດ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ບໍ່ເພີ່ມຊ້ຳໄຟລ໌ແນບທີ່ມີຢູ່ແລ້ວ ແລະ ຫຼີກລ້ຽງຄວາມຊໍ້າຕາມຊື່ໄຟລ໌; ສະອາດ ແລະ ຄາດເດົາໄດ້."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "ຂ້າມ SMIME ແລະ ຮູບພາບແບບຝັງ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ລາຍເຊັນ SMIME ແລະ ຮູບພາບແບບຝັງຖືກຍົກເວັ້ນເພື່ອໃຫ້ການຕອບກັບເບົາ."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ແບບແບບບັນຊີດຳ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ແພດເຕີນ glob ທີ່ບໍ່ແຍກຕົວໃຫຍ່/ນ້ອຍ ເຊັ່ນ {code1} ຫຼື {code2} ຊ່ວຍປ້ອງກັນການເພີ່ມໄຟລ໌ທີ່ລົບກວນ."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ລິ້ງດ່ວນສຳລັບເອກະສານ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ຕິດຕັ້ງ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ການຕັ້ງຄ່າ"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ການໃຊ້ງານ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ຄວາມສອດຄ່ອງ"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ການຊ່ວຍເຫຼືອ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ໃບອະນຸຍາດ"
+  },
+  "homepage.search.tip": {
+    "message": "ເຄັດລັບ: ກົດ {slash} ຫຼື {ctrl}+{k} ເພື່ອຄົ້ນຫາເອກະສານ."
+  },
+  "site.title": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "site.tagline": {
+    "message": "ສ່ວນເສີມ Thunderbird: ຕອບກັບລວມໄຟລ໌ແນບຕົ້ນສະບັບ"
+  },
+  "navbar.title": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "navbar.logo.alt": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "navbar.docs": {
+    "message": "ເອກະສານ"
+  },
+  "navbar.support": {
+    "message": "ການຊ່ວຍເຫຼືອ"
+  },
+  "navbar.license": {
+    "message": "ໃບອະນຸຍາດ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ເອກະສານ"
+  },
+  "footer.link.home": {
+    "message": "ໜ້າຫຼັກ"
+  },
+  "footer.link.install": {
+    "message": "ຕິດຕັ້ງ"
+  },
+  "footer.section.project": {
+    "message": "ໂຄງການ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  }
+}

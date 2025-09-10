@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Permissions",
-  "description": "The addon requests a small, focused set of permissions only. Why each is needed:",
+  "description": "---",
   "source": "@site/docs/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

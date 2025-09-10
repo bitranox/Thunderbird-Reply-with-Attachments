@@ -4,7 +4,7 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: commit docs-build docs-build-linkcheck docs-deploy-local docs-push-github eslint help lint pack prettier prettier-check prettier-write test test-i18n translate translation
+.PHONY: commit eslint help lint pack prettier prettier-check prettier-write test test-i18n translate-web translation-web translate-web-index translation-web-index translate-app translation-app web-build web-build-linkcheck web-build-local-preview web-push-github -- --%
 
 commit: ## Format, run tests (incl. i18n), append changelog, commit & push to current branch
 	@set -euo pipefail; \
@@ -35,59 +35,57 @@ commit: ## Format, run tests (incl. i18n), append changelog, commit & push to cu
 	echo "✔ Pushing to origin/$$branch…"; \
 	git push -u origin $$branch
 
-docs-build: ## Build Docusaurus site into website/build (OPTS: --locales en|all)
+web-build: ## Build docs to website/build. Usage: make web-build OPTS="--locales <list|all>" (or BUILD_LOCALES="en de"). Defaults to all.
 	@set -e; \
-	# Determine locale arguments for Docusaurus build
 	locale_args=""; \
-	case " $(OPTS) " in \
-	  *" --locales en "*) locale_args="--locale en" ;; \
-	  *) locale_args="" ;; \
-	esac; \
-	cd website; \
-	npm ci; \
-	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args
-
-docs-build-linkcheck: ## Offline-safe link check (builds site first). OPTS: --locales en|all
-	@set -e; \
-	# Determine locale arguments for Docusaurus build
-	locale_args=""; \
-	case " $(OPTS) " in \
-	  *" --locales en "*) locale_args="--locale en" ;; \
-	  *) locale_args="" ;; \
-	esac; \
-	# Install website deps if missing and build with selected locale(s)
+	# Prefer explicit BUILD_LOCALES if provided
+	if [ -n "$$BUILD_LOCALES" ]; then \
+	  for l in $$BUILD_LOCALES; do locale_args="$$locale_args -l $$l"; done; \
+	else \
+	if echo " $(OPTS) " | grep -qE ' --locales(=| )'; then \
+	  val=""; pick_next=0; \
+	  for arg in $(OPTS); do \
+	    if [ "$$pick_next" = 1 ]; then val="$$arg"; break; fi; \
+	    case "$$arg" in \
+	      --locales=*) val="$${arg#--locales=}"; break;; \
+	      --locales) pick_next=1;; \
+	    esac; \
+	  done; \
+	  val=$$(echo "$$val" | tr ',' ' ' | tr '[:upper:]' '[:lower:]'); \
+	  list=""; \
+	  for l in $$val; do [ "$$l" != "all" ] && case " $$list " in *" $$l "*) ;; *) list="$$list $$l";; esac; done; \
+  if [ -n "$$list" ]; then \
+    locale_args=""; \
+    for l in $$list; do locale_args="$$locale_args -l $$l"; done; \
+    BUILD_LOCALES=$$(echo "$$list" | sed -e 's/^ *//' -e 's/  */ /g'); export BUILD_LOCALES; \
+  fi; \
+	fi; fi; \
 	cd website; \
 	if [ ! -d node_modules/@docusaurus ]; then npm ci; fi; \
-	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args; \
-	cd ..; \
-	# Run the locally installed linkinator and rewrite GH Pages baseUrl to local paths
-	node node_modules/linkinator/build/src/cli.js \
-	  "website/build/index.html" \
-	  --recurse \
-	  --silent \
-	  --skip 'mailto:|^https?:\/\/(?!(localhost|127\.0\.0\.1)([:/]|$$))|^\/\/|github\.com|bitranox\.github\.io|addons\.thunderbird\.net' \
-	  --url-rewrite-search "/Thunderbird-Reply-with-Attachments/" \
-	  --url-rewrite-replace "/"
+	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args
 
-docs-deploy-local: ## Build+sync docs into local gh-pages worktree (OPTS: --locales en|all --no-test --no-link-check --dry-run). No push.
+web-build-linkcheck: ## Offline-safe link check (builds to tmp_linkcheck_web_pages). Usage: make web-build-linkcheck OPTS="--locales <list|all>" (or BUILD_LOCALES). Skips external HTTP(S) links.
+	@bash scripts/make-web-build-linkcheck.sh $(OPTS)
+
+web-build-local-preview: ## Preview to web-local-preview/, auto-serve 8080–8090, print URL; PID at web-local-preview/.server.pid. Usage: make web-build-local-preview OPTS="--locales <list|all> [--no-test] [--no-link-check] [--dry-run] [--no-serve]". No push.
 	@set -e; \
-	if [ -x scripts/docs-local-deploy.sh ]; then \
-	  bash scripts/docs-local-deploy.sh $(OPTS); \
+	if [ -x scripts/web-build-local-preview.sh ]; then \
+	  bash scripts/web-build-local-preview.sh $(OPTS); \
 	else \
-	  echo "scripts/docs-local-deploy.sh not found; aborting"; \
+	  echo "scripts/web-build-local-preview.sh not found; aborting"; \
 	  exit 1; \
 	fi
 
-docs-push-github: ## Push built site (website/build) to GitHub Pages (uses scripts/docs-gh-push.sh)
+web-push-github: ## Push website/build to GitHub Pages (stages in tmp_github_web_pages; uses scripts/web-push-github.sh). OPTS not used.
 	@set -e; \
 	if [ ! -f website/build/index.html ]; then \
-	  echo "Docs not built yet. Running 'make docs-build'…"; \
-	  $(MAKE) docs-build; \
+	  echo "Docs not built yet. Running 'make web-build'…"; \
+	  $(MAKE) web-build; \
 	fi; \
-	if [ -x scripts/docs-gh-push.sh ]; then \
-	  SRC_DIR="website/build" bash scripts/docs-gh-push.sh; \
+	if [ -x scripts/web-push-github.sh ]; then \
+	  bash scripts/web-push-github.sh; \
 	else \
-	  echo "scripts/docs-gh-push.sh not found; aborting"; \
+	  echo "scripts/web-push-github.sh not found; aborting"; \
 	  exit 1; \
 	fi
 
@@ -125,12 +123,30 @@ test: ## Prettier (write+check), ESLint, then Vitest (coverage if plugin install
 test-i18n: ## i18n-only tests: add-on placeholders/parity + website i18n parity (Vitest)
 	$(NPM) run test:i18n && $(NPM) run -s test:website-i18n
 
-translate: ## Alias for 'make translation' (DOC=..., TO=...)
-	@$(MAKE) translation DOC="$(DOC)" TO="$(TO)"
+translate-web: ## Alias for 'make translation-web' (no OPTS forwarded)
+	@$(MAKE) translation-web
 
-translation: ## Translate docs -> i18n (interactive or DOC=... TO=...); reads .env OPENAI_*; preserves front-matter id
+translation-web: ## Translate website docs. Usage: make translation-web OPTS="<doc|all> <lang|all>" (interactive when OPTS omitted). Logs to translation_web.log
 	@set -e; \
-	args=""; \
-	if [ -n "$(DOC)" ]; then args="$$args $(DOC)"; fi; \
-	if [ -n "$(TO)" ]; then args="$$args $(TO)"; fi; \
-	node scripts/translate_docs.js $$args
+	if [ -z "$(OPTS)" ]; then \
+	  node scripts/translate_web_docs.js; \
+	else \
+	  node scripts/translate_web_docs.js $(OPTS); \
+	fi
+
+translate-web-index: ## Alias for 'make translation-web-index' (no args; translates website index UI strings)
+	@$(MAKE) translation-web-index
+
+translation-web-index: ## Translate website UI strings (homepage/navbar/footer) from website/i18n/en/code.json to all locales under website/i18n (except en). Usage: make translation-web-index [OPTS="--locales de,fr --force"]
+	@set -e; \
+	args="$(OPTS)"; \
+	node scripts/translate_web_index.js $$args
+
+translate-app: ## Alias for 'make translation-app' (no args; translates EN app strings to all locales)
+	@$(MAKE) translation-app
+
+translation-app: ## Translate app UI strings from sources/_locales/en/messages.json. Usage: make translation-app OPTS="--locales all|de,fr". Logs to translation_app.log
+	@set -e; \
+	args="$(OPTS)"; \
+	if [ -z "$$args" ]; then args="--locales all"; fi; \
+	node scripts/translate_app.js $$args

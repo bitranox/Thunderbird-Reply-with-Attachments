@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "homepage.meta.description": {
+    "message": "افزونهٔ تاندربرد: پاسخ شامل پیوست‌های اصلی"
+  },
+  "homepage.icon.alt": {
+    "message": "آیکون RWA"
+  },
+  "homepage.hero.title": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "homepage.hero.subtitle": {
+    "message": "هنگام پاسخ در تاندربرد، پیوست‌های اصلی را اضافه کنید — به‌صورت خودکار یا پس از یک تأیید سریع."
+  },
+  "homepage.cta.openDocs": {
+    "message": "باز کردن مستندات"
+  },
+  "homepage.cta.quickstart": {
+    "message": "شروع سریع"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "نصب از افزونه‌ها"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "حمایت مالی"
+  },
+  "homepage.whatsNew.title": {
+    "message": "تازه‌ها"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "آخرین تغییرات را در {changelog} بخوانید."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "گزارش تغییرات"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "خودکار یا با تأیید اولیه"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "می‌توانید بین افزودن خودکار یا یک گفت‌وگوی تأیید کوچک با میان‌برهای کاربردیِ صفحه‌کلید انتخاب کنید."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "حذف هوشمند موارد تکراری"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "به پیوست‌های موجود احترام می‌گذارد و با مقایسهٔ نام فایل‌ها از ایجاد موارد تکراری جلوگیری می‌کند؛ تمیز و قابل‌پیش‌بینی."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "نادیده‌گرفتن SMIME و درون‌خطی"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "برای سبک‌ماندن پاسخ‌ها، امضاهای SMIME و تصاویر درون‌خطی کنار گذاشته می‌شوند."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "الگوهای فهرست سیاه"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "الگوهای glob غیرحساس به بزرگی/کوچکی حروف مانند {code1} یا {code2} از افزودن فایل‌های مزاحم جلوگیری می‌کنند."
+  },
+  "homepage.quicklinks.title": {
+    "message": "پیوندهای سریع مستندات"
+  },
+  "homepage.quicklinks.install": {
+    "message": "نصب"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "پیکربندی"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "نحوهٔ استفاده"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "سازگاری"
+  },
+  "homepage.quicklinks.support": {
+    "message": "پشتیبانی"
+  },
+  "homepage.quicklinks.license": {
+    "message": "مجوز"
+  },
+  "homepage.search.tip": {
+    "message": "نکته: برای جست‌وجو در مستندات، {slash} یا {ctrl}+{k} را فشار دهید."
+  },
+  "site.title": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "site.tagline": {
+    "message": "افزونهٔ تاندربرد: پاسخ شامل پیوست‌های اصلی"
+  },
+  "navbar.title": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "navbar.logo.alt": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "navbar.docs": {
+    "message": "مستندات"
+  },
+  "navbar.support": {
+    "message": "پشتیبانی"
+  },
+  "navbar.license": {
+    "message": "مجوز"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "مستندات"
+  },
+  "footer.link.home": {
+    "message": "خانه"
+  },
+  "footer.link.install": {
+    "message": "نصب"
+  },
+  "footer.section.project": {
+    "message": "پروژه"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} پاسخ با پیوست‌ها"
+  }
+}

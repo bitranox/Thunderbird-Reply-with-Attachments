@@ -1,53 +1,132 @@
 {
-  "extName": { "message": "संलग्नहरूसहित जवाफ" },
-  "extDescription": { "message": "इमेल जवाफहरूमा मौलिक संलग्नहरू स्वचालित रूपमा थप्छ।" },
-  "composeTitle": { "message": "संलग्नहरूसहित जवाफ" },
-  "optionsTitle": { "message": "संलग्नहरूसहित जवाफ — विकल्प" },
-  "confirmTitle": { "message": "संलग्नहरू पुष्टि गर्नुहोस्" },
-  "uiHeader": { "message": "संलग्नहरूसहित जवाफ" },
-  "uiNoOptions": { "message": "हाल कन्फिगर गर्न कुनै विकल्प छैन।" },
-  "uiSupport": { "message": "यो एड‑अन मन पर्‍यो? सानो सहयोगद्वारा मलाई सहयोग गर्नुहोस्:" },
-  "uiDonate": { "message": "अहिले दान गर्नुहोस्" },
-  "uiGithubText": { "message": "बग रिपोर्ट वा अन्य प्रश्नहरूको लागि, कृपया मेरो" },
-  "uiGithubLinkLabel": { "message": "GitHub पृष्ठ" },
-  "iconAlt": { "message": "Reply with Attachments प्रतिक" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "फाइल नामको कालो सूची (glob ढाँचा)" },
+  "extName": {
+    "message": "संलग्न फाइलहरू सहित उत्तर"
+  },
+  "extDescription": {
+    "message": "इमेलका उत्तरमा मूल संलग्न फाइलहरू स्वचालित रूपमा समावेश गर्छ।"
+  },
+  "composeTitle": {
+    "message": "संलग्न फाइलहरू सहित उत्तर"
+  },
+  "optionsTitle": {
+    "message": "संलग्न फाइलहरू सहित उत्तर — विकल्पहरू"
+  },
+  "confirmTitle": {
+    "message": "संलग्न फाइलहरूको पुष्टि"
+  },
+  "uiHeader": {
+    "message": "संलग्न फाइलहरू सहित उत्तर"
+  },
+  "uiNoOptions": {
+    "message": "हाल कन्फिगर गर्न कुनै विकल्पहरू छैनन्।"
+  },
+  "uiSupport": {
+    "message": "के यो एड-अन मन पर्छ? सानो योगदान गरेर मलाई समर्थन गर्नुहोस्:"
+  },
+  "uiDonate": {
+    "message": "अहिल्यै दान गर्नुहोस्"
+  },
+  "uiGithubText": {
+    "message": "बग रिपोर्ट वा अन्य सोधपुछका लागि, कृपया मेरो"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub पृष्ठ"
+  },
+  "iconAlt": {
+    "message": "संलग्न फाइलहरू सहित उत्तरको आइकन"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "फाइल नामहरूको ब्ल्याकलिस्ट (ग्लोब ढाँचाहरू)"
+  },
   "uiBlacklistHelp": {
-    "message": "यी ढाँचाहरूमध्ये कुनै एकसँग मेल खाने फाइलहरू कहिल्यै स्वचालित रूपमा थपिँदैनन्। प्रति लाइन एक ढाँचा। उदाहरणहरू: *.png, smime.*, *.p7s"
+    "message": "यी ढाँचामध्ये कुनै एकसँग मेल खाने फाइलहरू कहिल्यै स्वचालित रूपमा संलग्न गरिने छैनन्। प्रत्येक पङ्क्तिमा एक ढाँचा। उदाहरणहरू: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "कालो सूचीका कारण संलग्नहरू हटाइएमा चेतावनी दिनुहोस्" },
-  "uiSave": { "message": "सेभ" },
-  "uiSaving": { "message": "सेभ हुँदै…" },
-  "uiReset": { "message": "पूर्वनिर्धारितमा फर्काउनुहोस्" },
-  "uiSaved": { "message": "सेभ भयो।" },
-  "uiResetDone": { "message": "रिसेट भयो।" },
-  "uiConfirmHeader": { "message": "पुष्टि" },
-  "uiConfirmLabel": { "message": "संलग्न थप्नु अघि सोध्नुहोस्" },
+  "uiWarnBlacklistLabel": {
+    "message": "ब्ल्याकलिस्टले संलग्न फाइलहरू बहिष्कृत गरेमा चेतावनी दिनुहोस्"
+  },
+  "uiSave": {
+    "message": "सेभ गर्नुहोस्"
+  },
+  "uiSaving": {
+    "message": "सेभ गर्दै…"
+  },
+  "uiReset": {
+    "message": "पूर्वनिर्धारितमा रिसेट गर्नुहोस्"
+  },
+  "uiSaved": {
+    "message": "सेभ भयो।"
+  },
+  "uiResetDone": {
+    "message": "रिसेट भयो।"
+  },
+  "uiConfirmHeader": {
+    "message": "पुष्टिकरण"
+  },
+  "uiConfirmLabel": {
+    "message": "संलग्न फाइलहरू थप्नुअघि सोध्नुहोस्"
+  },
   "uiConfirmHelp": {
-    "message": "सानो पुष्टि संवाद केवल संलग्नहरू साँच्चिकै थपिँदा मात्र देखिन्छ। किबोर्ड: Y वा J = हो; N वा Esc = होइन।"
+    "message": "संलग्न फाइलहरू वास्तवमै थपिँदा मात्र एउटा सानो पुष्टि संवाद देखिन्छ। किबोर्ड: Y वा J = हो; N वा Esc = होइन।"
   },
-  "confirmAddOne": { "message": "संलग्न थप्ने: $1?", "placeholders": { "1": { "content": "$1" } } },
-  "confirmAddMany": {
-    "message": "संलग्नहरू थप्ने ($1): $2$3?",
+  "confirmAddOne": {
+    "message": "संलग्न फाइल थप्ने: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 थप" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "हो" },
-  "confirmNo": { "message": "हैन" },
-  "warnBlacklistTitle": { "message": "कालो सूचीद्वारा हटाइयो" },
-  "warnBlacklistIntro": { "message": "निम्न फाइलहरू स्वचालित रूपमा थपिने छैनन्:" },
-  "warnColFile": { "message": "फाइल" },
-  "warnColPattern": { "message": "ढाँचा" },
-  "warnOk": { "message": "ठिक छ" },
-  "uiConfirmDefaultHeader": { "message": "पूर्वनिर्धारित जवाफ" },
-  "uiConfirmDefaultYes": { "message": "हो" },
-  "uiConfirmDefaultNo": { "message": "हैन" },
+  "confirmAddMany": {
+    "message": "संलग्न फाइलहरू थप्ने ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "हो"
+  },
+  "confirmNo": {
+    "message": "होइन"
+  },
+  "warnBlacklistTitle": {
+    "message": "ब्ल्याकलिस्टद्वारा बहिष्कृत"
+  },
+  "warnBlacklistIntro": {
+    "message": "निम्न फाइलहरू स्वचालित रूपमा संलग्न गरिने छैनन्:"
+  },
+  "warnColFile": {
+    "message": "फाइल"
+  },
+  "warnColPattern": {
+    "message": "ढाँचा"
+  },
+  "warnOk": {
+    "message": "ठीक छ"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "पूर्वनिर्धारित उत्तर"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "हो"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "होइन"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "قوشۇمچىلار بىلەن جاۋاب بېرۇش" },
-  "extDescription": { "message": "ئېلخەت جاۋابلارغا ئەسلى قوشۇمچىلارنى ئاپتومىتىك قوشىدۇ." },
-  "composeTitle": { "message": "قوشۇمچىلار بىلەن جاۋاب بېرۇش" },
-  "optionsTitle": { "message": "قوشۇمچىلار بىلەن جاۋاب — تاللانمىلار" },
-  "confirmTitle": { "message": "قوشۇمچىلارنى جەزملەش" },
-  "uiHeader": { "message": "قوشۇمچىلار بىلەن جاۋاب بېرۇش" },
-  "uiNoOptions": { "message": "ھازىرچە سەپلەيدىغان تاللانما يوق." },
-  "uiSupport": { "message": "بۇ قوشۇلما ياخشىمۇ؟ كىچىك ئىئانە بىلەن قوللاڭ:" },
-  "uiDonate": { "message": "ھازىر ئىئانە قىلىڭ" },
-  "uiGithubText": { "message": "خاتالىق دوكلاتى ياكى باشقا سوئاللار ئۈچۈن مېنىڭ" },
-  "uiGithubLinkLabel": { "message": "GitHub بېتىم" },
-  "iconAlt": { "message": "Reply with Attachments سىنبەلگىسى" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ھۆججەت ئاتلىرىنىڭ قارا تىزىملىكى (glob ئۇسلۇبى)" },
+  "extName": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "extDescription": {
+    "message": "ئاپتوماتىك ھالدا ئېلخەت جاۋابلىرىغا ئەسلى قوشۇمچىلارنى قوشىدۇ."
+  },
+  "composeTitle": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "optionsTitle": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش — تەڭشەكلەر"
+  },
+  "confirmTitle": {
+    "message": "قوشۇمچىلارنى تەستىقلاش"
+  },
+  "uiHeader": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش"
+  },
+  "uiNoOptions": {
+    "message": "نۆۋەتتە سەپلىگىلى بولىدىغان تاللانما يوق."
+  },
+  "uiSupport": {
+    "message": "بۇ قىستۇرمىنى ياقتامسىز؟ كىچىك بىر ئىئانە بىلەن قوللاڭ:"
+  },
+  "uiDonate": {
+    "message": "ھازىر ئىئانە قېلىڭ"
+  },
+  "uiGithubText": {
+    "message": "خاتالىق دوكلاتى ياكى باشقا سورىملار ئۈچۈن، مېنىڭ"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub بېتى"
+  },
+  "iconAlt": {
+    "message": "قوشۇمچىلار بىلەن جاۋاب قايتۇرۇش سىنبەلگىسى"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ھۆججەت ئاتلىرىنىڭ قارا تىزىملىكى (glob ئەندىزىلىرى)"
+  },
   "uiBlacklistHelp": {
-    "message": "ئاتى بۇ ئۇسلۇبلاردىن بىرگە ماس كەلگەن ھۆججەتلەر ھەرگىز ئاپتومىتىك قوشۇلمايدۇ. ھەر قۇرغا بىر ئۇسلۇب. مىساللار: *.png, smime.*, *.p7s"
+    "message": "بۇ ئەندىزىلەردىن ھەر قايسىسىغا ماس كەلگەن ھۆججەتلەر ھېچقاچان ئاپتوماتىك قىستۇرۇلمايدۇ. ھەر قۇرغا بىر ئەندىزە. مەسىلەن: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "قارا تىزىملىك سەۋەبىدىن قوشۇمچىلار چىقىرىۋېتىلسە ئاگاھلاندۇرۇش"
+    "message": "قارا تىزىملىك سەۋەبىدىن قوشۇمچىلار چىقىرىۋېتىلسە ئاگاھلاندۇر"
   },
-  "uiSave": { "message": "ساقلا" },
-  "uiSaving": { "message": "ساقلىنىۋاتىدۇ…" },
-  "uiReset": { "message": "كۆڭۈلدىكى قىممەتكە قايتۇرۇش" },
-  "uiSaved": { "message": "ساقلاندى." },
-  "uiResetDone": { "message": "قايتۇرۇلدى." },
-  "uiConfirmHeader": { "message": "جەزملەش" },
-  "uiConfirmLabel": { "message": "قوشۇمچىلارنى قوشۇشتىن بۇرۇن سوراش" },
+  "uiSave": {
+    "message": "ساقلا"
+  },
+  "uiSaving": {
+    "message": "ساقلانۋاتىدۇ…"
+  },
+  "uiReset": {
+    "message": "كۆڭۈلدىكى قىممەتلەرگە قايتۇر"
+  },
+  "uiSaved": {
+    "message": "ساقلاندى."
+  },
+  "uiResetDone": {
+    "message": "قايتۇرۇلدى."
+  },
+  "uiConfirmHeader": {
+    "message": "تەستىقلاش"
+  },
+  "uiConfirmLabel": {
+    "message": "قوشۇمچىلارنى قوشۇشتىن ئىلگىرى سورىسۇن"
+  },
   "uiConfirmHelp": {
-    "message": "كىچىك جەزملەش سۆزلەشكۈسى پەقەت راستىنلا قوشۇمچىلار قوشۇلىدىغان ۋاقىتتا كۆرۈنىدۇ. كۇنۇپكا تاختىسى: Y ياكى J = ھەئە؛ N ياكى Esc = ياق."
+    "message": "ھەقىقەتەن قوشۇمچىلار قوشۇلىدىغان ۋاقىتلاردىلا كىچىك بىر تەستىقلاش سۆزلەشكۈسى كۆرۈنىدۇ. كۇنۇپكا تاختىسى: Y ياكى J = ھەئە; N ياكى Esc = ياق."
   },
   "confirmAddOne": {
-    "message": "قوشۇمچا قوشۇلامدۇ: $1؟",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "قوشۇمچىلار قوشۇلامدۇ ($1): $2$3؟",
+    "message": "قوشۇمچە قوشسۇنمۇ: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 تېخىمۇ كۆپ" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "ھەئە" },
-  "confirmNo": { "message": "ياق" },
-  "warnBlacklistTitle": { "message": "قارا تىزىملىك تەرىپىدىن چىقىرىۋېتىلدى" },
-  "warnBlacklistIntro": { "message": "تۆۋەندىكى ھۆججەتلەر ئاپتومىتىك قوشۇلمايدۇ:" },
-  "warnColFile": { "message": "ھۆججەت" },
-  "warnColPattern": { "message": "ئۇسلۇب" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "كۆڭۈلدىكى جاۋاب" },
-  "uiConfirmDefaultYes": { "message": "ھەئە" },
-  "uiConfirmDefaultNo": { "message": "ياق" },
+  "confirmAddMany": {
+    "message": "قوشۇمچىلارنى قوشسۇنمۇ ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "ھەئە"
+  },
+  "confirmNo": {
+    "message": "ياق"
+  },
+  "warnBlacklistTitle": {
+    "message": "قارا تىزىملىك سەۋەبىدىن چىقىرىۋېتىلدى"
+  },
+  "warnBlacklistIntro": {
+    "message": "تۆۋەندىكى ھۆججەتلەر ئاپتوماتىك قوشۇلمايدۇ:"
+  },
+  "warnColFile": {
+    "message": "ھۆججەت"
+  },
+  "warnColPattern": {
+    "message": "ئەندىزە"
+  },
+  "warnOk": {
+    "message": "ماقۇل"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "كۆڭۈلدىكى جاۋاب"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ھەئە"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "ياق"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ug/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

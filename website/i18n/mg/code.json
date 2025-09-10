@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "homepage.meta.description": {
+    "message": "Fanitarana Thunderbird: Mamaly ka tafiditra ireo rakitra miraikitra tany am-boalohany"
+  },
+  "homepage.icon.alt": {
+    "message": "Kisary RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ampidiro ireo rakitra miraikitra tany am-boalohany rehefa mamaly ao amin'ny Thunderbird — ho azy na aorian'ny fanamafisana fohy."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Sokafy ny antontan-taratasy"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Fanombohana haingana"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Apetraka avy amin'ny Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Manomeza"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Inona no Vaovao"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Vakio ny fanovana farany ao amin'ny {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Tantaran'ny fanovana"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Ho azy na fanamafisana aloha"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Misafidiana eo amin'ny fampidirana ho azy na varavarankely fanamafisana kely miaraka amin'ny hitsin-dàlana amin'ny fitendry."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Fisorohana dika mitovy hendry"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Manaja ireo rakitra miraikitra efa misy ary misoroka dika mitovy araka ny anaran-drakitra, madio sy azo vinavinaina."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Hialàna amin'ny SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Esorina ny sonia SMIME sy ny sary inline mba hitazonana ny valiny ho maivana."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Lamina voasakana"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Lamina glob tsy miraharaha litera lehibe/kely toy ny {code1} na {code2} dia misakana tsy hampidirana rakitra manakorontana."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Rohy haingana amin'ny antontan-taratasy"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Fametrahana"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Fikirakirana"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Fampiasana"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Fifanentanana"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Fanohanana"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisansa"
+  },
+  "homepage.search.tip": {
+    "message": "Toro-hevitra: Tsindrio {slash} na {ctrl}+{k} hitady ao amin'ny antontan-taratasy."
+  },
+  "site.title": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "site.tagline": {
+    "message": "Fanitarana Thunderbird: Mamaly ka tafiditra ireo rakitra miraikitra tany am-boalohany"
+  },
+  "navbar.title": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "navbar.logo.alt": {
+    "message": "Mamaly miaraka amin'ny rakitra miraikitra"
+  },
+  "navbar.docs": {
+    "message": "Antontan-taratasy"
+  },
+  "navbar.support": {
+    "message": "Fanohanana"
+  },
+  "navbar.license": {
+    "message": "Lisansa"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Antontan-taratasy"
+  },
+  "footer.link.home": {
+    "message": "Fandraisana"
+  },
+  "footer.link.install": {
+    "message": "Fametrahana"
+  },
+  "footer.section.project": {
+    "message": "Tetikasa"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Mamaly miaraka amin'ny rakitra miraikitra"
+  }
+}

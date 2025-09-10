@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Freagair le Ceangaltáin"
+  },
+  "homepage.meta.description": {
+    "message": "Breiseán Thunderbird: Freagairt lena n-áirítear na ceangaltáin bhunaidh"
+  },
+  "homepage.icon.alt": {
+    "message": "Deilbhín RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Freagair le Ceangaltáin"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Cuir na ceangaltáin bhunaidh san áireamh agus tú ag freagairt i Thunderbird — go huathoibríoch nó tar éis dearbhú gasta."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Oscail an cháipéisíocht"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Tús tapa"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Suiteáil ó Bhreiseáin"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Deonaigh"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Cad atá Nua"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Léigh na hathruithe is déanaí sa {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Loga Athruithe"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Uathoibríoch nó Deimhniú ar Dtús"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Roghnaigh idir cur uathoibríoch leis nó dialóg bheag dhearbhaithe le haicearraí méarchláir áisiúla."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Dídúblú Cliste"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Aitheann sé na ceangaltáin atá ann cheana agus seachnaíonn sé dúblacha bunaithe ar ainm an chomhaid, glan agus intuartha."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Fág SMIME agus Inlíne ar Lár"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Fágtar sínithe SMIME agus íomhánna inlíne ar lár chun na freagraí a choinneáil éadroma."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Patrúin Liosta Dubh"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Coscann patrúin glob neamhíogaire do chás litreacha, ar nós {code1} nó {code2}, comhaid chiapacha a chur leis."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Naisc thapa don cháipéisíocht"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Suiteáil"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Cumraíocht"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Úsáid"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Comhoiriúnacht"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Tacaíocht"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ceadúnas"
+  },
+  "homepage.search.tip": {
+    "message": "Leid: Brúigh {slash} nó {ctrl}+{k} chun cuardach a dhéanamh sa cháipéisíocht."
+  },
+  "site.title": {
+    "message": "Freagair le Ceangaltáin"
+  },
+  "site.tagline": {
+    "message": "Breiseán Thunderbird: Freagairt lena n-áirítear na ceangaltáin bhunaidh"
+  },
+  "navbar.title": {
+    "message": "Freagair le Ceangaltáin"
+  },
+  "navbar.logo.alt": {
+    "message": "Freagair le Ceangaltáin"
+  },
+  "navbar.docs": {
+    "message": "Cáipéisíocht"
+  },
+  "navbar.support": {
+    "message": "Tacaíocht"
+  },
+  "navbar.license": {
+    "message": "Ceadúnas"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Cáipéisíocht"
+  },
+  "footer.link.home": {
+    "message": "Baile"
+  },
+  "footer.link.install": {
+    "message": "Suiteáil"
+  },
+  "footer.section.project": {
+    "message": "Tionscadal"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Freagair le Ceangaltáin"
+  }
+}

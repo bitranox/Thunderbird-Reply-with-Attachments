@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  },
+  "homepage.meta.description": {
+    "message": "ಥಂಡರ್‌ಬರ್ಡ್ ಆಡ್‑ಆನ್: ಉತ್ತರಿಸುವಾಗ ಮೂಲ ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸುವುದು"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ಐಕಾನ್"
+  },
+  "homepage.hero.title": {
+    "message": "ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ಥಂಡರ್‌ಬರ್ಡ್‌ನಲ್ಲಿ ಉತ್ತರಿಸುವಾಗ ಮೂಲ ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸಿ — ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಥವಾ ತ್ವರಿತ ದೃಢೀಕರಣದ ನಂತರ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ದಾಖಲೆಗಳನ್ನು ತೆರೆಯಿರಿ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ತ್ವರಿತ ಆರಂಭ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ಆಡ್‑ಆನ್‌ಗಳಿಂದ ಸ್ಥಾಪಿಸಿ"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ದೇಣಿಗೆ ನೀಡಿ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ಹೊಸದೇನು"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳನ್ನು {changelog} ನಲ್ಲಿ ಓದಿ."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "ಬದಲಾವಣೆ ಪಟ್ಟಿ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ಸ್ವಯಂಚಾಲಿತ ಅಥವಾ ಮೊದಲೇ ದೃಢೀಕರಣ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸುವಿಕೆ ಅಥವಾ ಅನುಕೂಲಕರ ಕೀಬೋರ್ಡ್ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳಿರುವ ಚಿಕ್ಕ ದೃಢೀಕರಣ ಸಂವಾದದ ನಡುವೆ ಆಯ್ಕೆಮಾಡಿರಿ."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ಚತುರ ನಕಲು ನಿವಾರಣೆ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ಈಗಿರುವ ಲಗತ್ತುಗಳನ್ನು ಗೌರವಿಸುತ್ತದೆ ಮತ್ತು ಕಡತ ಹೆಸರಿನ ಆಧಾರದ ಮೇಲೆ ನಕಲುಗಳನ್ನು ತಪ್ಪಿಸುತ್ತದೆ — ಸ್ವಚ್ಛ ಮತ್ತು ನಿರೀಕ್ಷಿತ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ಮತ್ತು ಇನ್‌ಲೈನ್ ಬಿಟ್ಟುಹೋಗಿ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ಉತ್ತರಗಳು ಸರಳವಾಗಿರಲು SMIME ಸಹಿಗಳು ಮತ್ತು ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಹೊರತುಪಡಿಸಲಾಗುತ್ತದೆ."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ತಡೆಪಟ್ಟಿ ಮಾದರಿಗಳು"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ಕೇಸ್‌ಗೆ ಸಂವೇದನಾಶೀಲವಲ್ಲದ ಗ್ಲೋಬ್ ಮಾದರಿಗಳು {code1} ಅಥವಾ {code2} ಇಂತಹವು ಅಗತ್ಯವಿಲ್ಲದ ಕಡತಗಳನ್ನು ಸೇರಿಸುವುದನ್ನು ತಡೆಯುತ್ತವೆ."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ದಾಖಲೆಗಳ ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ಸ್ಥಾಪನೆ"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ಸಂರಚನೆ"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ಬಳಕೆ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ಹೊಂದಾಣಿಕೆ"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ಬೆಂಬಲ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ಪರವಾನಗಿ"
+  },
+  "homepage.search.tip": {
+    "message": "ಸೂಚನೆ: ದಾಖಲೆಗಳನ್ನು ಹುಡುಕಲು {slash} ಅಥವಾ {ctrl}+{k} ಒತ್ತಿರಿ."
+  },
+  "site.title": {
+    "message": "ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  },
+  "site.tagline": {
+    "message": "ಥಂಡರ್‌ಬರ್ಡ್ ಆಡ್‑ಆನ್: ಉತ್ತರಿಸುವಾಗ ಮೂಲ ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸುವುದು"
+  },
+  "navbar.title": {
+    "message": "ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  },
+  "navbar.logo.alt": {
+    "message": "ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  },
+  "navbar.docs": {
+    "message": "ದಾಖಲೆಗಳು"
+  },
+  "navbar.support": {
+    "message": "ಬೆಂಬಲ"
+  },
+  "navbar.license": {
+    "message": "ಪರವಾನಗಿ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ದಾಖಲೆಗಳು"
+  },
+  "footer.link.home": {
+    "message": "ಮುಖಪುಟ"
+  },
+  "footer.link.install": {
+    "message": "ಸ್ಥಾಪನೆ"
+  },
+  "footer.section.project": {
+    "message": "ಪ್ರಾಜೆಕ್ಟ್"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ಲಗತ್ತುಗಳೊಂದಿಗೆ ಉತ್ತರಿಸಿ"
+  }
+}

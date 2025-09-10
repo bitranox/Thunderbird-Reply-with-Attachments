@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Eklerle Yanıtla"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird Eklentisi: Yanıtlarken orijinal ekleri dahil edin"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA simgesi"
+  },
+  "homepage.hero.title": {
+    "message": "Eklerle Yanıtla"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird'de yanıt verirken orijinal ekleri dahil edin — otomatik olarak ya da hızlı bir onayın ardından."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Belgeleri Aç"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Hızlı Başlangıç"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Eklentiler’den Yükle"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Bağış Yap"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Yenilikler"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "En son değişiklikleri {changelog} bölümünde okuyun."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Değişiklik Günlüğü"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatik veya Önce Onay"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Otomatik ekleme ile kullanışlı klavye kısayollarına sahip küçük bir onay iletişim kutusu arasında seçim yapın."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Akıllı Yinelenenleri Önleme"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Mevcut ekleri dikkate alır ve dosya adına göre yinelenenleri önler; temiz ve öngörülebilir."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ve Satır İçi İçerikleri Atla"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Yanıtları sade tutmak için SMIME imzaları ve satır içi görseller hariç tutulur."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Kara Liste Kalıpları"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Büyük/küçük harf duyarsız {code1} veya {code2} gibi glob kalıpları, gürültülü dosyaların eklenmesini engeller."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Belgeler için hızlı bağlantılar"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Yükleme"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Yapılandırma"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Kullanım"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Uyumluluk"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Destek"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisans"
+  },
+  "homepage.search.tip": {
+    "message": "İpucu: Belgelerde arama yapmak için {slash} veya {ctrl}+{k} tuşlarına basın."
+  },
+  "site.title": {
+    "message": "Eklerle Yanıtla"
+  },
+  "site.tagline": {
+    "message": "Thunderbird Eklentisi: Yanıtlarken orijinal ekleri dahil edin"
+  },
+  "navbar.title": {
+    "message": "Eklerle Yanıtla"
+  },
+  "navbar.logo.alt": {
+    "message": "Eklerle Yanıtla"
+  },
+  "navbar.docs": {
+    "message": "Belgeler"
+  },
+  "navbar.support": {
+    "message": "Destek"
+  },
+  "navbar.license": {
+    "message": "Lisans"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Belgeler"
+  },
+  "footer.link.home": {
+    "message": "Ana Sayfa"
+  },
+  "footer.link.install": {
+    "message": "Yükleme"
+  },
+  "footer.section.project": {
+    "message": "Proje"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Eklerle Yanıtla"
+  }
+}

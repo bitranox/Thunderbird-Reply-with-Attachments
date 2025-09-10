@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Válasz mellékletekkel" },
+  "extName": {
+    "message": "Válasz mellékletekkel"
+  },
   "extDescription": {
-    "message": "Automatikusan csatolja az eredeti mellékleteket az e‑mail válaszokhoz."
+    "message": "Automatikusan mellékli az eredeti mellékleteket az e‑mail‑válaszokhoz."
   },
-  "composeTitle": { "message": "Válasz mellékletekkel" },
-  "optionsTitle": { "message": "Válasz mellékletekkel — Beállítások" },
-  "confirmTitle": { "message": "Mellékletek megerősítése" },
-  "uiHeader": { "message": "Válasz mellékletekkel" },
-  "uiNoOptions": { "message": "Jelenleg nincs beállítható opció." },
-  "uiSupport": { "message": "Tetszik ez a kiegészítő? Támogass egy kis adománnyal:" },
-  "uiDonate": { "message": "Adományozás" },
-  "uiGithubText": { "message": "Hibajelentéshez vagy egyéb kérdésekhez keresd a" },
-  "uiGithubLinkLabel": { "message": "GitHub‑oldalamat" },
-  "iconAlt": { "message": "Reply with Attachments ikon" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Fájlnév feketelista (glob minták)" },
+  "composeTitle": {
+    "message": "Válasz mellékletekkel"
+  },
+  "optionsTitle": {
+    "message": "Válasz mellékletekkel — Beállítások"
+  },
+  "confirmTitle": {
+    "message": "Mellékletek megerősítése"
+  },
+  "uiHeader": {
+    "message": "Válasz mellékletekkel"
+  },
+  "uiNoOptions": {
+    "message": "Jelenleg nincs beállítható lehetőség."
+  },
+  "uiSupport": {
+    "message": "Tetszik ez a kiegészítő? Támogass egy kis hozzájárulással:"
+  },
+  "uiDonate": {
+    "message": "Adományozz most"
+  },
+  "uiGithubText": {
+    "message": "Hibajelentéshez vagy egyéb megkereséshez kérlek, látogasd meg a"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-oldalam"
+  },
+  "iconAlt": {
+    "message": "Válasz mellékletekkel ikon"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Tiltólista fájlnevekre (glob minták)"
+  },
   "uiBlacklistHelp": {
-    "message": "Azok a fájlok, amelyek neve illeszkedik bármelyik mintára, soha nem kerülnek automatikusan csatolásra. Soronként egy minta. Példák: *.png, smime.*, *.p7s"
+    "message": "Azok a fájlok, amelyek neve illeszkedik bármelyik mintára, soha nem kerülnek automatikusan csatolásra. Egy sorba egy minta. Példák: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Figyelmeztetés, ha a feketelista kizárja a mellékleteket" },
-  "uiSave": { "message": "Mentés" },
-  "uiSaving": { "message": "Mentés…" },
-  "uiReset": { "message": "Alapértelmezések visszaállítása" },
-  "uiSaved": { "message": "Mentve." },
-  "uiResetDone": { "message": "Visszaállítva." },
-  "uiConfirmHeader": { "message": "Megerősítés" },
-  "uiConfirmLabel": { "message": "Kérdezzen csatolás előtt" },
+  "uiWarnBlacklistLabel": {
+    "message": "Figyelmeztessen, ha a tiltólista kizár mellékleteket"
+  },
+  "uiSave": {
+    "message": "Mentés"
+  },
+  "uiSaving": {
+    "message": "Mentés…"
+  },
+  "uiReset": {
+    "message": "Alapértelmezések visszaállítása"
+  },
+  "uiSaved": {
+    "message": "Elmentve."
+  },
+  "uiResetDone": {
+    "message": "Visszaállítva."
+  },
+  "uiConfirmHeader": {
+    "message": "Megerősítés"
+  },
+  "uiConfirmLabel": {
+    "message": "Kérdezzen rá, mielőtt mellékleteket ad hozzá"
+  },
   "uiConfirmHelp": {
-    "message": "Egy kis megerősítő párbeszédablak csak akkor jelenik meg, amikor ténylegesen csatolnánk. Billentyűzet: Y vagy J = Igen; N vagy Esc = Nem."
+    "message": "Kis megerősítő párbeszédablak csak akkor jelenik meg, amikor ténylegesen mellékletek kerülnének hozzáadásra. Billentyűzet: Y vagy J = Igen; N vagy Esc = Nem."
   },
   "confirmAddOne": {
-    "message": "Csatolja a mellékletet: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Mellékletek csatolása ($1): $2$3?",
+    "message": "Melléklet hozzáadása: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 további" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Igen" },
-  "confirmNo": { "message": "Nem" },
-  "warnBlacklistTitle": { "message": "Feketelista kizárta" },
-  "warnBlacklistIntro": { "message": "Az alábbi fájlok nem lesznek automatikusan csatolva:" },
-  "warnColFile": { "message": "Fájl" },
-  "warnColPattern": { "message": "Minta" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Alapértelmezett válasz" },
-  "uiConfirmDefaultYes": { "message": "Igen" },
-  "uiConfirmDefaultNo": { "message": "Nem" },
+  "confirmAddMany": {
+    "message": "Mellékletek hozzáadása ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Igen"
+  },
+  "confirmNo": {
+    "message": "Nem"
+  },
+  "warnBlacklistTitle": {
+    "message": "Tiltólista miatt kizárva"
+  },
+  "warnBlacklistIntro": {
+    "message": "A következő fájlok nem kerülnek automatikusan csatolásra:"
+  },
+  "warnColFile": {
+    "message": "Fájl"
+  },
+  "warnColPattern": {
+    "message": "Minta"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Alapértelmezett válasz"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Igen"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nem"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

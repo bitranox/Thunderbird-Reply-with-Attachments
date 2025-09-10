@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Atsakyti su priedais"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird plėtinys: atsakant įtraukiami originalūs priedai"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA piktograma"
+  },
+  "homepage.hero.title": {
+    "message": "Atsakyti su priedais"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Įtraukite originalius priedus atsakydami Thunderbird — automatiškai arba po trumpo patvirtinimo."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Atverti dokumentaciją"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Greita pradžia"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Įdiegti iš Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Paremti"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Kas naujo"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Naujausius pakeitimus skaitykite {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Pakeitimų žurnalas"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatiškai arba su patvirtinimu"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Rinkitės automatinį pridėjimą arba nedidelį patvirtinimo dialogo langą su patogiais spartiaisiais klavišais."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Išmanus dublikatų šalinimas"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Atsižvelgia į jau esančius priedus ir pagal failo pavadinimą vengia dublikatų — tvarkingai ir nuspėjamai."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Praleisti SMIME ir įterptinius vaizdus"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME parašai ir įterptiniai vaizdai neįtraukiami, kad atsakymai būtų lengvi."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Juodojo sąrašo šablonai"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Raidžių dydžiui nejautrūs glob šablonai, tokie kaip {code1} ar {code2}, neleidžia pridėti nereikalingų failų."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Spartios nuorodos į dokumentaciją"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Įdiegimas"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigūracija"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Naudojimas"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Suderinamumas"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Pagalba"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencija"
+  },
+  "homepage.search.tip": {
+    "message": "Patarimas: paspauskite {slash} arba {ctrl}+{k}, kad ieškotumėte dokumentacijoje."
+  },
+  "site.title": {
+    "message": "Atsakyti su priedais"
+  },
+  "site.tagline": {
+    "message": "Thunderbird plėtinys: atsakant įtraukiami originalūs priedai"
+  },
+  "navbar.title": {
+    "message": "Atsakyti su priedais"
+  },
+  "navbar.logo.alt": {
+    "message": "Atsakyti su priedais"
+  },
+  "navbar.docs": {
+    "message": "Dokumentacija"
+  },
+  "navbar.support": {
+    "message": "Pagalba"
+  },
+  "navbar.license": {
+    "message": "Licencija"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentacija"
+  },
+  "footer.link.home": {
+    "message": "Pradžia"
+  },
+  "footer.link.install": {
+    "message": "Įdiegimas"
+  },
+  "footer.section.project": {
+    "message": "Projektas"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Atsakyti su priedais"
+  }
+}

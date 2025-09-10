@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Balas dengan Lampiran" },
-  "extDescription": { "message": "Secara otomatis menyertakan lampiran asli dalam balasan email." },
-  "composeTitle": { "message": "Balas dengan Lampiran" },
-  "optionsTitle": { "message": "Balas dengan Lampiran — Opsi" },
-  "confirmTitle": { "message": "Konfirmasi Lampiran" },
-  "uiHeader": { "message": "Balas dengan Lampiran" },
-  "uiNoOptions": { "message": "Saat ini tidak ada opsi untuk dikonfigurasi." },
-  "uiSupport": { "message": "Suka add-on ini? Dukung saya dengan kontribusi kecil:" },
-  "uiDonate": { "message": "Donasi sekarang" },
-  "uiGithubText": { "message": "Untuk laporan bug atau pertanyaan lain, kunjungi" },
-  "uiGithubLinkLabel": { "message": "halaman GitHub saya" },
-  "iconAlt": { "message": "Ikon Balas dengan Lampiran" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Daftar blokir nama berkas (pola glob)" },
+  "extName": {
+    "message": "Balas dengan Lampiran"
+  },
+  "extDescription": {
+    "message": "Secara otomatis menyertakan lampiran asli dalam balasan email."
+  },
+  "composeTitle": {
+    "message": "Balas dengan Lampiran"
+  },
+  "optionsTitle": {
+    "message": "Balas dengan Lampiran — Opsi"
+  },
+  "confirmTitle": {
+    "message": "Konfirmasi Lampiran"
+  },
+  "uiHeader": {
+    "message": "Balas dengan Lampiran"
+  },
+  "uiNoOptions": {
+    "message": "Saat ini tidak ada opsi yang dapat dikonfigurasi."
+  },
+  "uiSupport": {
+    "message": "Suka pengaya ini? Dukung saya dengan kontribusi kecil:"
+  },
+  "uiDonate": {
+    "message": "Donasi sekarang"
+  },
+  "uiGithubText": {
+    "message": "Untuk laporan bug atau pertanyaan lain, silakan kunjungi"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Halaman GitHub"
+  },
+  "iconAlt": {
+    "message": "Ikon Balas dengan Lampiran"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Daftar hitam nama file (pola glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Berkas dengan nama yang cocok dengan salah satu pola ini tidak akan pernah dilampirkan secara otomatis. Satu pola per baris. Contoh: *.png, smime.*, *.p7s"
+    "message": "File yang namanya cocok dengan salah satu pola ini tidak akan pernah dilampirkan secara otomatis. Satu pola per baris. Contoh: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Peringatkan jika lampiran dikecualikan oleh daftar blokir"
+    "message": "Peringatkan jika lampiran dikecualikan oleh daftar hitam"
   },
-  "uiSave": { "message": "Simpan" },
-  "uiSaving": { "message": "Menyimpan…" },
-  "uiReset": { "message": "Kembalikan ke bawaan" },
-  "uiSaved": { "message": "Tersimpan." },
-  "uiResetDone": { "message": "Dikembalikan." },
-  "uiConfirmHeader": { "message": "Konfirmasi" },
-  "uiConfirmLabel": { "message": "Tanyakan sebelum menambahkan lampiran" },
+  "uiSave": {
+    "message": "Simpan"
+  },
+  "uiSaving": {
+    "message": "Menyimpan…"
+  },
+  "uiReset": {
+    "message": "Atur ulang ke bawaan"
+  },
+  "uiSaved": {
+    "message": "Tersimpan."
+  },
+  "uiResetDone": {
+    "message": "Direset."
+  },
+  "uiConfirmHeader": {
+    "message": "Konfirmasi"
+  },
+  "uiConfirmLabel": {
+    "message": "Minta konfirmasi sebelum menambahkan lampiran"
+  },
   "uiConfirmHelp": {
-    "message": "Kotak dialog konfirmasi kecil akan muncul hanya ketika lampiran benar‑benar akan ditambahkan. Keyboard: Y atau J = Ya; N atau Esc = Tidak."
+    "message": "Dialog konfirmasi kecil akan muncul hanya ketika lampiran benar-benar akan ditambahkan. Papan ketik: Y atau J = Ya; N atau Esc = Tidak."
   },
   "confirmAddOne": {
     "message": "Tambahkan lampiran: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Tambahkan lampiran ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 lainnya" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Ya" },
-  "confirmNo": { "message": "Tidak" },
-  "warnBlacklistTitle": { "message": "Dikecualikan oleh daftar blokir" },
-  "warnBlacklistIntro": { "message": "Berkas berikut tidak akan dilampirkan secara otomatis:" },
-  "warnColFile": { "message": "Berkas" },
-  "warnColPattern": { "message": "Pola" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Jawaban bawaan" },
-  "uiConfirmDefaultYes": { "message": "Ya" },
-  "uiConfirmDefaultNo": { "message": "Tidak" },
-  "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  "confirmYes": {
+    "message": "Ya"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "confirmNo": {
+    "message": "Tidak"
+  },
+  "warnBlacklistTitle": {
+    "message": "Dikecualikan oleh daftar hitam"
+  },
+  "warnBlacklistIntro": {
+    "message": "File berikut tidak akan dilampirkan secara otomatis:"
+  },
+  "warnColFile": {
+    "message": "File"
+  },
+  "warnColPattern": {
+    "message": "Pola"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Jawaban bawaan"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ya"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Tidak"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird қосымшасы: Жауап бергенде бастапқы тіркемелерді қосу"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA белгішесі"
+  },
+  "homepage.hero.title": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird-та жауап бергенде бастапқы тіркемелерді қосыңыз — автоматты түрде немесе жылдам растаудан кейін."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Құжаттаманы ашу"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Жылдам бастау"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Қосымшалардан орнату"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Демеу көрсету"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Жаңалықтар"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Соңғы өзгерістерді {changelog}-те оқыңыз."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Өзгерістер тізімі"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автоматты немесе алдымен растау"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Автоматты қосуды немесе ыңғайлы пернетақта тіркесімдері бар шағын растау диалог терезесін таңдаңыз."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ақылды дубликаттарды жою"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Бар тіркемелерді ескереді және файл атауы бойынша дубликаттарды болдырмайды, айқын әрі болжамды."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME және ендірілгендерді өткізіп жіберу"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Жауаптарды ықшам ұстау үшін SMIME қолтаңбалары мен ендірілген кескіндер қосылмайды."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Қара тізім үлгілері"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Әріптің үлкен-кішілігін ескермейтін {code1} немесе {code2} сияқты glob үлгілері керексіз файлдардың қосылуына жол бермейді."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Құжаттамаға жылдам сілтемелер"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Орнату"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Баптау"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Пайдалану"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Үйлесімділік"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Қолдау"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Лицензия"
+  },
+  "homepage.search.tip": {
+    "message": "Кеңес: Құжаттамадан іздеу үшін {slash} немесе {ctrl}+{k} пернелерін басыңыз."
+  },
+  "site.title": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "site.tagline": {
+    "message": "Thunderbird қосымшасы: Жауап бергенде бастапқы тіркемелерді қосу"
+  },
+  "navbar.title": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "navbar.logo.alt": {
+    "message": "Тіркемелермен жауап беру"
+  },
+  "navbar.docs": {
+    "message": "Құжаттама"
+  },
+  "navbar.support": {
+    "message": "Қолдау"
+  },
+  "navbar.license": {
+    "message": "Лицензия"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Құжаттама"
+  },
+  "footer.link.home": {
+    "message": "Басты бет"
+  },
+  "footer.link.install": {
+    "message": "Орнату"
+  },
+  "footer.section.project": {
+    "message": "Жоба"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Тіркемелермен жауап беру"
+  }
+}

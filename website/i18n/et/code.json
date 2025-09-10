@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Vasta koos manustega"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbirdi lisandmoodul: vastamisel lisatakse algsed manused kaasa"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ikoon"
+  },
+  "homepage.hero.title": {
+    "message": "Vasta koos manustega"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Lisa Thunderbirdis vastates algsed manused — automaatselt või pärast kiiret kinnitust."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Ava dokumentatsioon"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Kiirjuhend"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Paigalda lisandmoodulite kataloogist"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Anneta"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Mis on uut"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Loe viimaseid muudatusi {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Muudatuste logi"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automaatne või esmalt kinnitusega"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Vali, kas manused lisatakse automaatselt või väikese kinnitusdialoogi kaudu koos mugavate kiirklahvidega."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Nutikas dublettide vältimine"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Arvestab olemasolevaid manuseid ja väldib dublette failinime järgi — puhas ja etteaimatav."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Jäta SMIME ja põimitud vahele"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME‑allkirjad ja põimitud pildid jäetakse vastustest välja, et need püsiksid kerged."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Mustloendi mustrid"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Tõstutundetud glob‑mustrid, nagu {code1} või {code2}, väldivad tarbetute failide lisamist."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Dokumentatsiooni kiirlingid"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Paigaldamine"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Seadistamine"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Kasutamine"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ühilduvus"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Tugi"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Litsents"
+  },
+  "homepage.search.tip": {
+    "message": "Vihje: Vajuta {slash} või {ctrl}+{k}, et dokumentatsioonis otsida."
+  },
+  "site.title": {
+    "message": "Vasta koos manustega"
+  },
+  "site.tagline": {
+    "message": "Thunderbirdi lisandmoodul: vastamisel lisatakse algsed manused kaasa"
+  },
+  "navbar.title": {
+    "message": "Vasta koos manustega"
+  },
+  "navbar.logo.alt": {
+    "message": "Vasta koos manustega"
+  },
+  "navbar.docs": {
+    "message": "Dokumentatsioon"
+  },
+  "navbar.support": {
+    "message": "Tugi"
+  },
+  "navbar.license": {
+    "message": "Litsents"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentatsioon"
+  },
+  "footer.link.home": {
+    "message": "Avaleht"
+  },
+  "footer.link.install": {
+    "message": "Paigaldamine"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Vasta koos manustega"
+  }
+}

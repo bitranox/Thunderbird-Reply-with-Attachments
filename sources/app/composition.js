@@ -22,7 +22,12 @@
   // small utilities
   const toNumericId = (v) =>
     typeof v === 'number' ? v : v && typeof v.id === 'number' ? v.id : null;
-  const yesNo = (v) => (String(v || 'yes').toLowerCase() === 'no' ? 'no' : 'yes');
+  const yesNo = (v) =>
+    globalThis.App && App.Shared && App.Shared.yesNo
+      ? App.Shared.yesNo(v)
+      : String(v || 'yes').toLowerCase() === 'no'
+        ? 'no'
+        : 'yes';
 
   /** Pure helper: should we ask based on toggle and selection list. */
   function shouldAskHelper(askBeforeAdd, selected) {
@@ -80,11 +85,29 @@
     let askBeforeAdd = false;
     let defaultAnswer = 'yes';
     let warnOnBlacklist = true;
+    /** @type {Array<{ pat: string, rx: RegExp }>} */
+    let compiledBlacklist = [];
 
     // load settings once; confirm awaits readiness lazily
     function applySettings({ patterns, ask, def, warnFlag }) {
       excludePatterns = patterns;
       exclude = App.Domain.makeNameExcluder(patterns);
+      // Precompile blacklist regexes once for efficient matching during warnings
+      try {
+        const lower = App.Domain?.lower || ((s) => String(s || '').toLowerCase());
+        const toRx = App.Domain?.globToRegExp;
+        compiledBlacklist = Array.isArray(patterns)
+          ? patterns
+              .map((p) => String(p || '').trim())
+              .filter(Boolean)
+              .map((p) => {
+                const pat = lower(p);
+                return { pat, rx: toRx ? toRx(pat) : new RegExp('^$') };
+              })
+          : [];
+      } catch (_) {
+        compiledBlacklist = [];
+      }
       askBeforeAdd = ask;
       defaultAnswer = def;
       warnOnBlacklist = warnFlag;
@@ -120,19 +143,12 @@
     /** Compute matching blacklist patterns for a given name. */
     function matchBlacklist(name) {
       try {
-        const pats = excludePatterns || [];
         const lower = App.Domain?.lower || ((s) => String(s || '').toLowerCase());
-        const toRx = App.Domain?.globToRegExp;
-        if (!toRx) return [];
         const n = lower(name);
         const hits = [];
-        for (const p of pats) {
-          const pat = String(p || '')
-            .trim()
-            .toLowerCase();
-          if (!pat) continue;
+        for (const { pat, rx } of compiledBlacklist) {
           try {
-            if (toRx(pat).test(n)) hits.push(pat);
+            if (rx.test(n)) hits.push(pat);
           } catch (_) {}
         }
         return hits;
@@ -249,6 +265,12 @@
       }
       return ensure(tabId, details);
     }
+    // Also expose a bound reloadSettings for background.js
+    try {
+      globalThis.App = globalThis.App || {};
+      App.Composition = App.Composition || {};
+      App.Composition.reloadSettings = () => reloadSettings();
+    } catch (_) {}
     return {
       ensureReplyAttachments: ensureWrapper,
       processedTabsState,

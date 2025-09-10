@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "সংলগ্ন নথিসহ উত্তৰ" },
-  "extDescription": { "message": "ইমেইল উত্তৰত স্বয়ংক্ৰিয়ভাৱে মূল সংলগ্ন নথিসমূহ যোগ কৰে।" },
-  "composeTitle": { "message": "সংলগ্ন নথিসহ উত্তৰ" },
-  "optionsTitle": { "message": "সংলগ্ন নথিসহ উত্তৰ — বিকল্প" },
-  "confirmTitle": { "message": "সংলগ্ন নথি নিশ্চিত কৰক" },
-  "uiHeader": { "message": "সংলগ্ন নথিসহ উত্তৰ" },
-  "uiNoOptions": { "message": "বৰ্তমান সংৰূপণ কৰাৰ বাবে কোনো বিকল্প নাই।" },
-  "uiSupport": { "message": "এই এড‑অনটো ভাল লাগিলেনে? সৰু দানৰে মোক সমর্থন কৰক:" },
-  "uiDonate": { "message": "এতিয়া দান কৰক" },
-  "uiGithubText": { "message": "বাগ ক’বলৈ বা অন্য প্ৰশ্নৰ বাবে, অনুগ্ৰহ কৰি মোৰ" },
-  "uiGithubLinkLabel": { "message": "GitHub পৃষ্ঠা" },
-  "iconAlt": { "message": "Reply with Attachments আইকন" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ফাইল নামৰ ক’লা তালিকা (glob pattern)" },
-  "uiBlacklistHelp": {
-    "message": "এই pattern সমূহৰ যিকোনো এটাৰ সৈতে মিলা ফাইলসমূহ কেতিয়াও স্বয়ংক্ৰিয়ভাৱে সংলগ্ন নহ’ব। প্ৰতি শাৰী এটাকৈ pattern দিয়ক। উদাহৰণ: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "সংযুক্তিসহ উত্তৰ"
   },
-  "uiWarnBlacklistLabel": { "message": "ক’লা তালিকাৰ বাবে সংলগ্ন নথিসমূহ বাদ পৰিলে সতৰ্ক কৰক" },
-  "uiSave": { "message": "সংৰক্ষিত" },
-  "uiSaving": { "message": "সংৰক্ষিত হৈছে…" },
-  "uiReset": { "message": "ডিফ’ল্টলৈ ঘুৰাই দিয়া" },
-  "uiSaved": { "message": "সংৰক্ষিত।" },
-  "uiResetDone": { "message": "ঘুৰাই দিয়া হ’ল।" },
-  "uiConfirmHeader": { "message": "নিশ্চিতকৰণ" },
-  "uiConfirmLabel": { "message": "সংলগ্ন নথি যোগ কৰাৰ আগতে সোধক" },
+  "extDescription": {
+    "message": "স্বয়ংক্ৰিয়ভাৱে ইমেইল উত্তৰত মূল সংযুক্তিসমূহ অন্তৰ্ভুক্ত কৰে।"
+  },
+  "composeTitle": {
+    "message": "সংযুক্তিসহ উত্তৰ"
+  },
+  "optionsTitle": {
+    "message": "সংযুক্তিসহ উত্তৰ — বিকল্পসমূহ"
+  },
+  "confirmTitle": {
+    "message": "সংযুক্তি নিশ্চিতকৰণ"
+  },
+  "uiHeader": {
+    "message": "সংযুক্তিসহ উত্তৰ"
+  },
+  "uiNoOptions": {
+    "message": "বৰ্তমানে সংৰূপণ কৰিবলৈ কোনো বিকল্প নাই।"
+  },
+  "uiSupport": {
+    "message": "আপুনি এই এড-অনটো ভালপালে নে? সৰু অনুদানৰ জৰিয়তে মোক সমৰ্থন কৰক:"
+  },
+  "uiDonate": {
+    "message": "এতিয়াই অনুদান কৰক"
+  },
+  "uiGithubText": {
+    "message": "বাগ প্ৰতিবেদন বা অন্য কোনো জিজ্ঞাসাৰ বাবে, অনুগ্ৰহ কৰি মোৰ"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub পৃষ্ঠা"
+  },
+  "iconAlt": {
+    "message": "সংযুক্তিসহ উত্তৰৰ আইকন"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ফাইল-নামসমূহৰ ক'লা তালিকা (glob পেটাৰ্নসমূহ)"
+  },
+  "uiBlacklistHelp": {
+    "message": "এই পেটাৰ্নসমূহৰ যিকোনো এটাৰ সৈতে নাম মিল থকা ফাইলসমূহ কেতিয়াও স্বয়ংক্ৰিয়ভাৱে সংযুক্ত নহ'ব। প্ৰতিটো শাৰীত এটা পেটাৰ্ন লিখক। উদাহৰণ: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "ক'লা তালিকাৰ বাবে সংযুক্তিসমূহ বাদ পৰিলে সতৰ্ক কৰক"
+  },
+  "uiSave": {
+    "message": "সংৰক্ষণ কৰক"
+  },
+  "uiSaving": {
+    "message": "সংৰক্ষণ কৰা হৈছে…"
+  },
+  "uiReset": {
+    "message": "ডিফ'ল্টলৈ ৰিছেট কৰক"
+  },
+  "uiSaved": {
+    "message": "সংৰক্ষণ কৰা হৈছে।"
+  },
+  "uiResetDone": {
+    "message": "ৰিছেট কৰা হৈছে।"
+  },
+  "uiConfirmHeader": {
+    "message": "নিশ্চিতকৰণ"
+  },
+  "uiConfirmLabel": {
+    "message": "সংযুক্তি যোগ কৰাৰ আগতে সোধক"
+  },
   "uiConfirmHelp": {
-    "message": "এটা সৰু নিশ্চিতকৰণ সংলাপ কেৱল তেতিয়াহে দেখিব লাগে, যেতিয়া সত্যই সংলগ্ন নথি যোগ হ’ব। কীব’ৰ্ড: Y বা J = হ’ব; N বা Esc = নহ’ব।"
+    "message": "সংযুক্তিসমূহ সঁচাকৈয়ে যোগ হ'ব লগা হলেহে এটাই সৰু নিশ্চিতকৰণ ডায়লগ দেখা যায়। কীব'ৰ্ড: Y বা J = হয়; N বা Esc = নহয়।"
   },
   "confirmAddOne": {
-    "message": "সংলগ্ন নথি যোগ কৰো নে: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "সংলগ্ন নথিসমূহ যোগ কৰো নে ($1): $2$3?",
+    "message": "সংযুক্তি যোগ কৰিব নে: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 অধিক" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "হ’ব" },
-  "confirmNo": { "message": "নহ’ব" },
-  "warnBlacklistTitle": { "message": "ক’লা তালিকাই বাদ দি দিলে" },
-  "warnBlacklistIntro": { "message": "তলৰ ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে সংলগ্ন নহ’ব:" },
-  "warnColFile": { "message": "ফাইল" },
-  "warnColPattern": { "message": "পেটাৰ্ণ" },
-  "warnOk": { "message": "ঠিক আছে" },
-  "uiConfirmDefaultHeader": { "message": "ডিফ’ল্ট উত্তৰ" },
-  "uiConfirmDefaultYes": { "message": "হ’ব" },
-  "uiConfirmDefaultNo": { "message": "নহ’ব" },
+  "confirmAddMany": {
+    "message": "সংযুক্তিসমূহ যোগ কৰিব নে ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "হয়"
+  },
+  "confirmNo": {
+    "message": "নহয়"
+  },
+  "warnBlacklistTitle": {
+    "message": "ক'লা তালিকাৰ বাবে বাদ দিয়া"
+  },
+  "warnBlacklistIntro": {
+    "message": "তলত দিয়া ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে সংযুক্ত নহ'ব:"
+  },
+  "warnColFile": {
+    "message": "ফাইল"
+  },
+  "warnColPattern": {
+    "message": "পেটাৰ্ন"
+  },
+  "warnOk": {
+    "message": "ঠিক আছে"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "পূৰ্বনির্ধাৰিত উত্তৰ"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "হয়"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "নহয়"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

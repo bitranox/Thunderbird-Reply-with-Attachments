@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Trả lời kèm tệp đính kèm"
+  },
+  "homepage.meta.description": {
+    "message": "Tiện ích bổ sung cho Thunderbird: Trả lời kèm các tệp đính kèm gốc"
+  },
+  "homepage.icon.alt": {
+    "message": "Biểu tượng RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Trả lời kèm tệp đính kèm"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Bao gồm các tệp đính kèm gốc khi trả lời trong Thunderbird — tự động hoặc sau một lần xác nhận nhanh."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Mở tài liệu"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Bắt đầu nhanh"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Cài đặt từ Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ủng hộ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Có gì mới"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Xem các thay đổi mới nhất trong {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Nhật ký thay đổi"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Tự động hoặc xác nhận trước"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Chọn giữa việc tự động thêm hoặc một hộp thoại xác nhận nhỏ với các phím tắt tiện lợi."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Khử trùng lặp thông minh"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Tôn trọng các tệp đính kèm hiện có và tránh trùng lặp theo tên tệp, gọn gàng và dễ dự đoán."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Bỏ qua SMIME & nội tuyến"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Chữ ký SMIME và hình ảnh nội tuyến sẽ bị loại trừ để phần trả lời gọn nhẹ."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Mẫu danh sách đen"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Các mẫu glob không phân biệt hoa thường như {code1} hoặc {code2} giúp ngăn thêm các tệp không cần thiết."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Liên kết nhanh tới tài liệu"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Cài đặt"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Cấu hình"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Cách dùng"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Tương thích"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Hỗ trợ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Giấy phép"
+  },
+  "homepage.search.tip": {
+    "message": "Mẹo: Nhấn {slash} hoặc {ctrl}+{k} để tìm kiếm trong tài liệu."
+  },
+  "site.title": {
+    "message": "Trả lời kèm tệp đính kèm"
+  },
+  "site.tagline": {
+    "message": "Tiện ích bổ sung cho Thunderbird: Trả lời kèm các tệp đính kèm gốc"
+  },
+  "navbar.title": {
+    "message": "Trả lời kèm tệp đính kèm"
+  },
+  "navbar.logo.alt": {
+    "message": "Trả lời kèm tệp đính kèm"
+  },
+  "navbar.docs": {
+    "message": "Tài liệu"
+  },
+  "navbar.support": {
+    "message": "Hỗ trợ"
+  },
+  "navbar.license": {
+    "message": "Giấy phép"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Tài liệu"
+  },
+  "footer.link.home": {
+    "message": "Trang chủ"
+  },
+  "footer.link.install": {
+    "message": "Cài đặt"
+  },
+  "footer.section.project": {
+    "message": "Dự án"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Trả lời kèm tệp đính kèm"
+  }
+}

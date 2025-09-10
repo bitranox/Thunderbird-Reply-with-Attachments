@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Spenden",
-  "description": "Wenn Ihnen Reply with Attachments gefällt und Sie die Entwicklung unterstützen möchten, können Sie hier spenden:",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Lizenz",
-    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/license"
   }
 }

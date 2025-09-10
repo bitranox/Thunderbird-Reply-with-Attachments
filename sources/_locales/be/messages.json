@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Адказ з укладаннямі" },
+  "extName": {
+    "message": "Адказ з укладаннямі"
+  },
   "extDescription": {
-    "message": "Аўтаматычна дадае арыгінальныя ўкладанні ў адказы электроннай пошты."
+    "message": "Аўтаматычна ўключае арыгінальныя ўкладанні ў адказы на электронныя лісты."
   },
-  "composeTitle": { "message": "Адказ з укладаннямі" },
-  "optionsTitle": { "message": "Адказ з укладаннямі — Налады" },
-  "confirmTitle": { "message": "Пацвердзіць укладанні" },
-  "uiHeader": { "message": "Адказ з укладаннямі" },
-  "uiNoOptions": { "message": "Цяпер няма параметраў для наладжвання." },
+  "composeTitle": {
+    "message": "Адказ з укладаннямі"
+  },
+  "optionsTitle": {
+    "message": "Адказ з укладаннямі — Налады"
+  },
+  "confirmTitle": {
+    "message": "Пацвярджэнне ўкладанняў"
+  },
+  "uiHeader": {
+    "message": "Адказ з укладаннямі"
+  },
+  "uiNoOptions": {
+    "message": "Зараз няма наладак."
+  },
   "uiSupport": {
-    "message": "Падабаецца гэтае пашырэнне? Падтрымайце мяне невялікім ахвяраваннем:"
+    "message": "Ці падабаецца вам гэта пашырэнне? Падтрымайце мяне невялікім унёскам:"
   },
-  "uiDonate": { "message": "Ахвяраваць" },
-  "uiGithubText": { "message": "Для справаздач аб памылках або іншых пытанняў наведайце" },
-  "uiGithubLinkLabel": { "message": "маю старонку GitHub" },
-  "iconAlt": { "message": "Значок Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Чорны спіс імёнаў файлаў (узоры glob)" },
+  "uiDonate": {
+    "message": "Ахвяраваць зараз"
+  },
+  "uiGithubText": {
+    "message": "Для паведамленняў пра памылкі або іншых запытаў, калі ласка, наведайце маю"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Старонка на GitHub"
+  },
+  "iconAlt": {
+    "message": "Значок «Адказ з укладаннямі»"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Чорны спіс імёнаў файлаў (шаблоны glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "Файлы, імёны якіх адпавядаюць любому з гэтых узораў, ніколі не будуць аўтаматычна далучацца. Адзін узор на радок. Прыклады: *.png, smime.*, *.p7s"
+    "message": "Файлы, імёны якіх адпавядаюць любому з гэтых шаблонаў, ніколі не будуць прымацоўвацца аўтаматычна. Адзін шаблон у радку. Прыклады: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Папярэджваць, калі ўкладанні выключаныя чорным спісам" },
-  "uiSave": { "message": "Захаваць" },
-  "uiSaving": { "message": "Захаванне…" },
-  "uiReset": { "message": "Скінуць да стандартных" },
-  "uiSaved": { "message": "Захавана." },
-  "uiResetDone": { "message": "Скінута." },
-  "uiConfirmHeader": { "message": "Пацвярджэнне" },
-  "uiConfirmLabel": { "message": "Пытацца перад даданнем укладанняў" },
+  "uiWarnBlacklistLabel": {
+    "message": "Папярэджваць, калі ўкладанні выключаюцца чорным спісам"
+  },
+  "uiSave": {
+    "message": "Захаваць"
+  },
+  "uiSaving": {
+    "message": "Захаванне…"
+  },
+  "uiReset": {
+    "message": "Скінуць да прадвызначаных наладак"
+  },
+  "uiSaved": {
+    "message": "Захавана."
+  },
+  "uiResetDone": {
+    "message": "Скінута."
+  },
+  "uiConfirmHeader": {
+    "message": "Пацвярджэнне"
+  },
+  "uiConfirmLabel": {
+    "message": "Пытацца перад прымацаваннем укладанняў"
+  },
   "uiConfirmHelp": {
-    "message": "Невялікае дыялогавае акно пацвярджэння з'яўляецца толькі тады, калі ўкладанні сапраўды дадаюцца. Клавіятура: Y або J = Так; N або Esc = Не."
+    "message": "Невялікае акно пацвярджэння з'яўляецца толькі калі ўкладанні сапраўды будуць дададзены. Клавіятура: Y або J = Так; N або Esc = Не."
   },
   "confirmAddOne": {
     "message": "Дадаць укладанне: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Дадаць укладанні ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 яшчэ" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Так" },
-  "confirmNo": { "message": "Не" },
-  "warnBlacklistTitle": { "message": "Выключана чорным спісам" },
-  "warnBlacklistIntro": { "message": "Наступныя файлы не будуць аўтаматычна далучацца:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Узор" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Стандартны адказ" },
-  "uiConfirmDefaultYes": { "message": "Так" },
-  "uiConfirmDefaultNo": { "message": "Не" },
+  "confirmYes": {
+    "message": "Так"
+  },
+  "confirmNo": {
+    "message": "Не"
+  },
+  "warnBlacklistTitle": {
+    "message": "Выключана чорным спісам"
+  },
+  "warnBlacklistIntro": {
+    "message": "Наступныя файлы не будуць прымацоўвацца аўтаматычна:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Шаблон"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Адказ па змаўчанні"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Так"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Не"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "homepage.meta.description": {
+    "message": "Иловаи Thunderbird: Ҷавоб бо дарбаргирии замимаҳои аслӣ"
+  },
+  "homepage.icon.alt": {
+    "message": "Нишонаи RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ҳангоми ҷавоб дар Thunderbird замимаҳои аслиро ҳамроҳ кунед — худкор ё пас аз тасдиқи зуд."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Кушодани ҳуҷҷатҳо"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Оғози зуд"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Аз Иловаҳо насб кунед"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Хайрия"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Навгониҳо"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Тағироти охиринро дар {changelog} бихонед."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Рӯйхати тағйирот"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Худкор ё бо тасдиқи пешакӣ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Интихоб кунед: иловаи худкор ё равзанаи тасдиқи хурд бо миёнбурҳои қулайи клавиатура."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Пешгирии такрори ҳушманд"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Замимаҳои мавҷударо ба назар мегирад ва такрорҳоро аз рӯи номи файл пешгирӣ мекунад — покиза ва қобили пешбинӣ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Нодида гирифтани SMIME ва Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Имзоҳои SMIME ва тасвирҳои дарунхаттӣ хориҷ карда мешаванд, то ҷавобҳо сабук бимонанд."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Намунаҳои рӯйхати сиёҳ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Намунаҳои glob, ки ба калон ё хурд будани ҳарфҳо аҳамият намедиҳанд, монанди {code1} ё {code2}, илова шудани файлҳои нолозимро пешгирӣ мекунанд."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Пайвандҳои зуд ба ҳуҷҷатҳо"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Насб"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Танзимот"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Истифода"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Мутобиқият"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Дастгирӣ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Иҷозатнома"
+  },
+  "homepage.search.tip": {
+    "message": "Маслиҳат: Барои ҷустуҷӯи ҳуҷҷатҳо {slash} ё {ctrl}+{k}-ро пахш кунед."
+  },
+  "site.title": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "site.tagline": {
+    "message": "Иловаи Thunderbird: Ҷавоб бо дарбаргирии замимаҳои аслӣ"
+  },
+  "navbar.title": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "navbar.logo.alt": {
+    "message": "Ҷавоб бо замимаҳо"
+  },
+  "navbar.docs": {
+    "message": "Ҳуҷҷатҳо"
+  },
+  "navbar.support": {
+    "message": "Дастгирӣ"
+  },
+  "navbar.license": {
+    "message": "Иҷозатнома"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Ҳуҷҷатҳо"
+  },
+  "footer.link.home": {
+    "message": "Саҳифаи асосӣ"
+  },
+  "footer.link.install": {
+    "message": "Насб"
+  },
+  "footer.section.project": {
+    "message": "Лоиҳа"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Ҷавоб бо замимаҳо"
+  }
+}

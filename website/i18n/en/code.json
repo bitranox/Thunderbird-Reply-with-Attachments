@@ -1,0 +1,132 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird Add-on: Reply including original attachments"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA icon"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Include original attachments when replying in Thunderbird — automatically or after a quick confirmation."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Open Docs"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Quickstart"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Install from Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Donate"
+  },
+  "homepage.whatsNew.title": {
+    "message": "What’s New"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Read the latest changes in the {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Changelog"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatic or Confirm‑First"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Choose between automatic adding or a small confirmation dialog with handy keyboard shortcuts."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Smart De‑Duplication"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respects existing attachments and avoids duplicates by filename, clean and predictable."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Skip SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME signatures and inline images are excluded to keep replies lean."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blacklist Patterns"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Case‑insensitive glob patterns like {code1} or {code2} prevent adding noisy files."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Docs quick links"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Install"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuration"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Usage"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibility"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Support"
+  },
+  "homepage.quicklinks.license": {
+    "message": "License"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Press {slash} or {ctrl}+{k} to search the docs."
+  },
+
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird Add-on: Reply including original attachments"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Docs"
+  },
+  "navbar.support": {
+    "message": "Support"
+  },
+  "navbar.license": {
+    "message": "License"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Docs"
+  },
+  "footer.link.home": {
+    "message": "Home"
+  },
+  "footer.link.install": {
+    "message": "Install"
+  },
+  "footer.section.project": {
+    "message": "Project"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

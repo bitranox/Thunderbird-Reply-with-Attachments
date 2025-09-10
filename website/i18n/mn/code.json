@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Хавсралттайгаар хариулах"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird нэмэлт: Хариу бичих үед анхны хавсралтуудыг хамтад нь оруулах"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA дүрс"
+  },
+  "homepage.hero.title": {
+    "message": "Хавсралттайгаар хариулах"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird-д хариу бичихдээ анхны хавсралтуудыг хамтад нь оруулна — автоматаар эсвэл түргэн баталгаажуулсны дараа."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Баримтыг нээх"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Түргэн эхлүүлэх"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Нэмэлтүүдээс суулгах"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Хандивлах"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Шинэ юу байна"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Сүүлийн өөрчлөлтүүдийг {changelog} хэсгээс уншаарай."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Өөрчлөлтийн түүх"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автомат эсвэл эхлээд баталгаажуулах"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Автоматаар нэмэх үү, эсвэл товчлуурын хослолтой жижиг баталгаажуулах цонхыг ашиглах уу гэдгийг сонгоорой."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ухаалаг давхардлыг арилгах"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Одоо байгаа хавсралтуудыг харгалзан үзэж, файлын нэрээр давхардлыг зайлсхийдэг — цэгцтэй, таамаглахад хялбар."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME ба Inline‑ийг алгасах"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Хариуг цомхон байлгахын тулд SMIME гарын үсэг болон inline зургуудыг оруулахгүй."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Хар жагсаалтын загварууд"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Том/жижиг үсгийг ялгахгүй {code1} эсвэл {code2} зэрэг glob загварууд нь шаардлагагүй файлуудыг нэмэгдэхээс сэргийлнэ."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Баримтын хурдан холбоосууд"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Суулгах"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Тохиргоо"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Хэрэглээ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Нийцтэй байдал"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Тусламж"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Лиценз"
+  },
+  "homepage.search.tip": {
+    "message": "Зөвлөмж: Баримтаас хайхын тулд {slash} эсвэл {ctrl}+{k} дарна уу."
+  },
+  "site.title": {
+    "message": "Хавсралттайгаар хариулах"
+  },
+  "site.tagline": {
+    "message": "Thunderbird нэмэлт: Хариу бичих үед анхны хавсралтуудыг хамтад нь оруулах"
+  },
+  "navbar.title": {
+    "message": "Хавсралттайгаар хариулах"
+  },
+  "navbar.logo.alt": {
+    "message": "Хавсралттайгаар хариулах"
+  },
+  "navbar.docs": {
+    "message": "Баримт"
+  },
+  "navbar.support": {
+    "message": "Тусламж"
+  },
+  "navbar.license": {
+    "message": "Лиценз"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Баримт"
+  },
+  "footer.link.home": {
+    "message": "Нүүр"
+  },
+  "footer.link.install": {
+    "message": "Суулгах"
+  },
+  "footer.section.project": {
+    "message": "Төсөл"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Хавсралттайгаар хариулах"
+  }
+}

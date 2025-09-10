@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Konfiguration",
-  "description": "Hinweis zur Terminologie: Siehe das Glossar für konsistente Begriffe in UI und Doku.",
+  "title": "Einstellungen",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757333707000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Konfiguration"
+    "title": "Einstellungen"
   },
   "sidebar": "docs",
   "previous": {

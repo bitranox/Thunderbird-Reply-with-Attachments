@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Отговор с прикачени файлове" },
-  "extDescription": {
-    "message": "Автоматично добавя оригиналните прикачени файлове към отговорите по имейл."
+  "extName": {
+    "message": "Отговор с прикачени файлове"
   },
-  "composeTitle": { "message": "Отговор с прикачени файлове" },
-  "optionsTitle": { "message": "Отговор с прикачени файлове — Настройки" },
-  "confirmTitle": { "message": "Потвърждение на прикачените файлове" },
-  "uiHeader": { "message": "Отговор с прикачени файлове" },
-  "uiNoOptions": { "message": "В момента няма опции за конфигуриране." },
-  "uiSupport": { "message": "Харесва ли ви това разширение? Подкрепете ме с малко дарение:" },
-  "uiDonate": { "message": "Дарете сега" },
-  "uiGithubText": { "message": "За докладване на грешки или други запитвания, моля посетете" },
-  "uiGithubLinkLabel": { "message": "моята страница в GitHub" },
-  "iconAlt": { "message": "Икона Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Черeн списък на имена на файлове (glob шаблони)" },
+  "extDescription": {
+    "message": "Автоматично включване на оригиналните прикачени файлове в отговорите."
+  },
+  "composeTitle": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "optionsTitle": {
+    "message": "Отговор с прикачени файлове — Настройки"
+  },
+  "confirmTitle": {
+    "message": "Потвърждение на прикачените файлове"
+  },
+  "uiHeader": {
+    "message": "Отговор с прикачени файлове"
+  },
+  "uiNoOptions": {
+    "message": "В момента няма настройки за конфигуриране."
+  },
+  "uiSupport": {
+    "message": "Харесва ли ви тази добавка? Подкрепете ме с малко дарение:"
+  },
+  "uiDonate": {
+    "message": "Дарете сега"
+  },
+  "uiGithubText": {
+    "message": "За сигнали за грешки или други запитвания, моля, посетете моята"
+  },
+  "uiGithubLinkLabel": {
+    "message": "страница в GitHub"
+  },
+  "iconAlt": {
+    "message": "Икона „Отговор с прикачени файлове“"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Черен списък с имена на файлове (glob шаблони)"
+  },
   "uiBlacklistHelp": {
-    "message": "Файлове, чиито имена отговарят на някой от тези шаблони, никога няма да бъдат добавяни автоматично. По един шаблон на ред. Примери: *.png, smime.*, *.p7s"
+    "message": "Файлове, чиито имена съвпадат с някой от тези шаблони, никога няма да се прикачват автоматично. По един шаблон на ред. Примери: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Предупреждавай, ако прикачените файлове са изключени от черния списък"
   },
-  "uiSave": { "message": "Запази" },
-  "uiSaving": { "message": "Запазване…" },
-  "uiReset": { "message": "Възстанови по подразбиране" },
-  "uiSaved": { "message": "Запазено." },
-  "uiResetDone": { "message": "Възстановено." },
-  "uiConfirmHeader": { "message": "Потвърждение" },
-  "uiConfirmLabel": { "message": "Питай преди добавяне на прикачени" },
+  "uiSave": {
+    "message": "Запази"
+  },
+  "uiSaving": {
+    "message": "Запазване…"
+  },
+  "uiReset": {
+    "message": "Възстанови настройките по подразбиране"
+  },
+  "uiSaved": {
+    "message": "Запазено."
+  },
+  "uiResetDone": {
+    "message": "Възстановено."
+  },
+  "uiConfirmHeader": {
+    "message": "Потвърждение"
+  },
+  "uiConfirmLabel": {
+    "message": "Питай преди добавяне на прикачени файлове"
+  },
   "uiConfirmHelp": {
-    "message": "Малък прозорец за потвърждение се появява само когато наистина ще бъдат добавени прикачени. Клавиатура: Y или J = Да; N или Esc = Не."
+    "message": "Малък диалог за потвърждение се показва само когато действително ще бъдат добавени прикачени файлове. Клавиатура: Y или J = Да; N или Esc = Не."
   },
   "confirmAddOne": {
     "message": "Да се добави прикачен файл: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Да се добавят прикачени файлове ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 още" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Да" },
-  "confirmNo": { "message": "Не" },
-  "warnBlacklistTitle": { "message": "Изключено от черния списък" },
-  "warnBlacklistIntro": { "message": "Следните файлове няма да бъдат добавяни автоматично:" },
-  "warnColFile": { "message": "Файл" },
-  "warnColPattern": { "message": "Шаблон" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Отговор по подразбиране" },
-  "uiConfirmDefaultYes": { "message": "Да" },
-  "uiConfirmDefaultNo": { "message": "Не" },
+  "confirmYes": {
+    "message": "Да"
+  },
+  "confirmNo": {
+    "message": "Не"
+  },
+  "warnBlacklistTitle": {
+    "message": "Изключени от черния списък"
+  },
+  "warnBlacklistIntro": {
+    "message": "Следните файлове няма да бъдат прикачени автоматично:"
+  },
+  "warnColFile": {
+    "message": "Файл"
+  },
+  "warnColPattern": {
+    "message": "Шаблон"
+  },
+  "warnOk": {
+    "message": "ОК"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Отговор по подразбиране"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Да"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Не"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bg/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

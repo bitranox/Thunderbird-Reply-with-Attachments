@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Odpovedať s prílohami"
+  },
+  "homepage.meta.description": {
+    "message": "Doplnok pre Thunderbird: odpoveď vrátane pôvodných príloh"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikona RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Odpovedať s prílohami"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Pri odpovedaní v Thunderbirde zahrňte pôvodné prílohy — automaticky alebo po rýchlom potvrdení."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Otvoriť dokumentáciu"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Rýchly štart"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Nainštalovať z doplnkov"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Prispeť"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Čo je nové"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Najnovšie zmeny si prečítajte v {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Zoznam zmien"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automaticky alebo najprv potvrdiť"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Vyberte si medzi automatickým pridaním alebo malým potvrdzovacím dialógom s praktickými klávesovými skratkami."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Inteligentná deduplikácia"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Rešpektuje existujúce prílohy a predchádza duplicitám podľa názvu súboru – čisté a predvídateľné."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Preskočiť SMIME a vložené"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Podpisy SMIME a vložené obrázky sú vylúčené, aby odpovede zostali odľahčené."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Zakázané vzory"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Globové vzory necitlivé na veľkosť písmen, napríklad {code1} alebo {code2}, zabránia pridávaniu zbytočných súborov."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Rýchle odkazy na dokumentáciu"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Inštalácia"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurácia"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Používanie"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilita"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Podpora"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licencia"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Stlačte {slash} alebo {ctrl}+{k} na vyhľadávanie v dokumentácii."
+  },
+  "site.title": {
+    "message": "Odpovedať s prílohami"
+  },
+  "site.tagline": {
+    "message": "Doplnok pre Thunderbird: odpoveď vrátane pôvodných príloh"
+  },
+  "navbar.title": {
+    "message": "Odpovedať s prílohami"
+  },
+  "navbar.logo.alt": {
+    "message": "Odpovedať s prílohami"
+  },
+  "navbar.docs": {
+    "message": "Dokumentácia"
+  },
+  "navbar.support": {
+    "message": "Podpora"
+  },
+  "navbar.license": {
+    "message": "Licencia"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentácia"
+  },
+  "footer.link.home": {
+    "message": "Domov"
+  },
+  "footer.link.install": {
+    "message": "Inštalácia"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Odpovedať s prílohami"
+  }
+}

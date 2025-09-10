@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "Antwoord met aanhegsels" },
+  "extName": {
+    "message": "Beantwoord met Aanhangsels"
+  },
   "extDescription": {
-    "message": "Voeg outomaties die oorspronklike aanhegsels by in e‑posantwoorde."
+    "message": "Sluit oorspronklike aanhangsels outomaties by e-posantwoorde in."
   },
-  "composeTitle": { "message": "Antwoord met aanhegsels" },
-  "optionsTitle": { "message": "Antwoord met aanhegsels — Opsies" },
-  "confirmTitle": { "message": "Bevestig aanhegsels" },
-  "uiHeader": { "message": "Antwoord met aanhegsels" },
-  "uiNoOptions": { "message": "Daar is tans geen opsies om te konfigureer nie." },
-  "uiSupport": { "message": "Hou jy van hierdie byvoeging? Steun my met 'n klein bydrae:" },
-  "uiDonate": { "message": "Skenk nou" },
-  "uiGithubText": { "message": "Vir foutverslae of ander navrae, besoek asseblief my" },
-  "uiGithubLinkLabel": { "message": "GitHub‑blad" },
-  "iconAlt": { "message": "Reply with Attachments‑ikoon" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Swartlys van lêernaam (glob‑patrone)" },
+  "composeTitle": {
+    "message": "Beantwoord met Aanhangsels"
+  },
+  "optionsTitle": {
+    "message": "Beantwoord met Aanhangsels — Opsies"
+  },
+  "confirmTitle": {
+    "message": "Bevestig Aanhangsels"
+  },
+  "uiHeader": {
+    "message": "Beantwoord met Aanhangsels"
+  },
+  "uiNoOptions": {
+    "message": "Daar is tans geen opsies om te konfigureer nie."
+  },
+  "uiSupport": {
+    "message": "Hou jy van hierdie byvoeging? Steun my met ’n klein bydrae:"
+  },
+  "uiDonate": {
+    "message": "Skenk nou"
+  },
+  "uiGithubText": {
+    "message": "Vir foutverslae of ander navrae, besoek asseblief my"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-bladsy"
+  },
+  "iconAlt": {
+    "message": "Ikoon van Beantwoord met Aanhangsels"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Swartlys van lêername (glob-patrone)"
+  },
   "uiBlacklistHelp": {
-    "message": "Lêers wie se name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
+    "message": "Lêers waarvan die name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "Waarsku as aanhegsels deur swartlys uitgesluit word" },
-  "uiSave": { "message": "Stoor" },
-  "uiSaving": { "message": "Stoor…" },
-  "uiReset": { "message": "Herstel na verstek" },
-  "uiSaved": { "message": "Gestoor." },
-  "uiResetDone": { "message": "Herstel." },
-  "uiConfirmHeader": { "message": "Bevestiging" },
-  "uiConfirmLabel": { "message": "Vra voordat aanhegsels bygevoeg word" },
+  "uiWarnBlacklistLabel": {
+    "message": "Waarsku as aanhangsels deur die swartlys uitgesluit word"
+  },
+  "uiSave": {
+    "message": "Stoor"
+  },
+  "uiSaving": {
+    "message": "Stoor…"
+  },
+  "uiReset": {
+    "message": "Terugstel na verstekinstellings"
+  },
+  "uiSaved": {
+    "message": "Gestoor."
+  },
+  "uiResetDone": {
+    "message": "Teruggestel."
+  },
+  "uiConfirmHeader": {
+    "message": "Bevestiging"
+  },
+  "uiConfirmLabel": {
+    "message": "Vra voordat aanhangsels bygevoeg word"
+  },
   "uiConfirmHelp": {
-    "message": "'n Klein bevestigingsdialoog verskyn net wanneer aanhegsels werklik bygevoeg sou word. Sleutelbord: Y of J = Ja; N of Esc = Nee."
+    "message": "’n Klein bevestigingsdialoogvenster verskyn net wanneer aanhangsels inderdaad bygevoeg sou word. Sleutelbord: Y of J = Ja; N of Esc = Nee."
   },
   "confirmAddOne": {
-    "message": "Voeg aanhegsel by: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Voeg aanhegsels by ($1): $2$3?",
+    "message": "Voeg aanhangsel by: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 meer" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ja" },
-  "confirmNo": { "message": "Nee" },
-  "warnBlacklistTitle": { "message": "Uitgesluit deur swartlys" },
-  "warnBlacklistIntro": { "message": "Die volgende lêers sal nie outomaties aangeheg word nie:" },
-  "warnColFile": { "message": "Lêer" },
-  "warnColPattern": { "message": "Patroon" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Verstekantwoord" },
-  "uiConfirmDefaultYes": { "message": "Ja" },
-  "uiConfirmDefaultNo": { "message": "Nee" },
+  "confirmAddMany": {
+    "message": "Voeg aanhangsels by ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Ja"
+  },
+  "confirmNo": {
+    "message": "Nee"
+  },
+  "warnBlacklistTitle": {
+    "message": "Uitgesluit deur swartlys"
+  },
+  "warnBlacklistIntro": {
+    "message": "Die volgende lêers sal nie outomaties aangeheg word nie:"
+  },
+  "warnColFile": {
+    "message": "Lêer"
+  },
+  "warnColPattern": {
+    "message": "Patroon"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Verstekantwoord"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ja"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nee"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Amsa tare da Haɗe‑haɗe"
+  },
+  "homepage.meta.description": {
+    "message": "Ƙarin kayan aikin Thunderbird: Amsa tare da haɗe‑haɗen asali"
+  },
+  "homepage.icon.alt": {
+    "message": "Tambarin RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Amsa tare da Haɗe‑haɗe"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Haɗa da haɗe‑haɗen asali lokacin amsawa a Thunderbird — ta atomatik ko bayan gajeriyar tabbatarwa."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Buɗe Takardun Bayani"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Fara da Sauri"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Shigar daga Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Ba da gudummawa"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Sabbin Abubuwa"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Karanta sabbin canje-canje a cikin {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Jerin canje-canje"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Ta atomatik ko Tabbatar da Farko"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Zaɓi tsakanin ƙara ta atomatik ko ƙaramin akwatin tabbatarwa tare da gajerun hanyoyin madannai masu amfani."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Cire maimaitawa mai hankali"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Yana girmama haɗe‑haɗen da suke akwai, kuma yana guje wa maimaitawa bisa sunan fayil — tsabta kuma abin da za a iya hasashe."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Tsallake SMIME & Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "An ware sa hannun SMIME da hotunan cikin jiki (inline) domin amsoshi su kasance masu sauƙi."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Alamomin Jerin‑Baƙi"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Alamomin glob da ba sa bambanta manyan da ƙananan haruffa kamar {code1} ko {code2} suna hana a ƙara fayilolin da ba su da amfani."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hanyoyin sauri na takardun bayani"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Shigar"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Saitawa"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Amfani"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Daidaituwa"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Taimako"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lasisi"
+  },
+  "homepage.search.tip": {
+    "message": "Shawara: Danna {slash} ko {ctrl}+{k} don bincika takardun bayani."
+  },
+  "site.title": {
+    "message": "Amsa tare da Haɗe‑haɗe"
+  },
+  "site.tagline": {
+    "message": "Ƙarin kayan aikin Thunderbird: Amsa tare da haɗe‑haɗen asali"
+  },
+  "navbar.title": {
+    "message": "Amsa tare da Haɗe‑haɗe"
+  },
+  "navbar.logo.alt": {
+    "message": "Amsa tare da Haɗe‑haɗe"
+  },
+  "navbar.docs": {
+    "message": "Takardun Bayani"
+  },
+  "navbar.support": {
+    "message": "Taimako"
+  },
+  "navbar.license": {
+    "message": "Lasisi"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Takardun Bayani"
+  },
+  "footer.link.home": {
+    "message": "Gida"
+  },
+  "footer.link.install": {
+    "message": "Shigar"
+  },
+  "footer.section.project": {
+    "message": "Aikin"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Amsa tare da Haɗe‑haɗe"
+  }
+}

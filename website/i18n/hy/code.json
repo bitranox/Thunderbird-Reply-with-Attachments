@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird հավելում. Պատասխան՝ ներառյալ բնօրինակ կցորդները"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA պատկերակ"
+  },
+  "homepage.hero.title": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird-ում պատասխանելիս ներառեք բնօրինակ կցորդները՝ ավտոմատ կամ արագ հաստատումից հետո."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Բացել փաստաթղթերը"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Արագ մեկնարկ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Տեղադրել հավելումներից"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Նվիրաբերել"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ինչն է նոր"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Կարդացեք վերջին փոփոխությունները՝ {changelog}-ում."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Փոփոխությունների մատյան"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Ավտոմատ կամ նախ՝ հաստատմամբ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Ընտրեք ավտոմատ ավելացման կամ փոքր հաստատման պատուհանի միջև՝ հեշտ ստեղնաշարային դյուրանցումներով."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Խելացի կրկնությունների վերացում"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Հաշվի է առնում արդեն առկա կցորդները և խուսափում է կրկնություններից՝ ֆայլանվան հիման վրա, մաքուր և կանխատեսելի."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Բաց թողնել SMIME-ը և ներդրվածը"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME ստորագրությունները և ներդրված պատկերները բացառվում են, որպեսզի պատասխանները թեթև մնան."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Սև ցուցակի շաբլոններ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Տառաչափից անկախ glob-շաբլոնները, օրինակ՝ {code1}-ը կամ {code2}-ը, կանխում են անցանկալի ֆայլերի ավելացումը."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Փաստաթղթերի արագ հղումներ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Տեղադրում"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Կարգավորում"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Օգտագործում"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Համատեղելիություն"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Աջակցություն"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Արտոնագիր"
+  },
+  "homepage.search.tip": {
+    "message": "Հուշում. Սեղմեք {slash} կամ {ctrl}+{k}՝ փաստաթղթերում որոնելու համար."
+  },
+  "site.title": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "site.tagline": {
+    "message": "Thunderbird հավելում. Պատասխան՝ ներառյալ բնօրինակ կցորդները"
+  },
+  "navbar.title": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "navbar.logo.alt": {
+    "message": "Պատասխանել կցորդներով"
+  },
+  "navbar.docs": {
+    "message": "Փաստաթղթեր"
+  },
+  "navbar.support": {
+    "message": "Աջակցություն"
+  },
+  "navbar.license": {
+    "message": "Արտոնագիր"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Փաստաթղթեր"
+  },
+  "footer.link.home": {
+    "message": "Գլխավոր"
+  },
+  "footer.link.install": {
+    "message": "Տեղադրել"
+  },
+  "footer.section.project": {
+    "message": "Նախագիծ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

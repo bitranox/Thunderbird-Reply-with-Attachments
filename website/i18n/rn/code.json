@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Gusubiza harimwo inyomeka"
+  },
+  "homepage.meta.description": {
+    "message": "Inyongera ya Thunderbird: Subiza urimwo inyomeka z'umwimerere"
+  },
+  "homepage.icon.alt": {
+    "message": "Akamenyetso ka RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Gusubiza harimwo inyomeka"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Shiramwo inyomeka z'umwimerere mugihe usubiza muri Thunderbird — vyikoreze canke hanyuma y'iyemezo ryihuta."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Fungura inyandiko"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Gutangura vuba"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Shiramwo kuri Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Tanga inkunga"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Ibishasha"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Soma impinduka nshasha muri {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Urutonde rw'impinduka"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Vyikoresha canke kubanza kwemeza"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Hitamwo hagati yo kwongerako vyikoresha canke akadirisha k'iyemezo gatoya kari n'inzira ngufi z'umwandikisho."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Gukuraho ibisubirako ku buryo bw'ubwenge"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Iubahiriza inyomeka zirimwo maze igakumira ibisubirako hashingiwe ku mazina y'idosiye; bisukuye kandi vyoroshe kwitega."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Kureka SMIME n'ibiri 'inline'"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Imikono ya SMIME n'amashusho ari 'inline' bikuwemwo kugira ibisubizo bigume vyoroheje."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Inyandikano zo kubuza"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Inyandikano za glob zidakurikiza itandukaniro ry'inyuguti nkuru n'into nka {code1} canke {code2} zirabuza kwongerako amadosiye atari ngombwa."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Amahuzo yihuta y'inyandiko"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Shiramwo"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Igenamiterere"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Uko bikoresha"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Ihuza"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ifashanyo"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Uruhushya"
+  },
+  "homepage.search.tip": {
+    "message": "Inama: Kanda {slash} canke {ctrl}+{k} kugira ushakishe mu nyandiko."
+  },
+  "site.title": {
+    "message": "Gusubiza harimwo inyomeka"
+  },
+  "site.tagline": {
+    "message": "Inyongera ya Thunderbird: Subiza urimwo inyomeka z'umwimerere"
+  },
+  "navbar.title": {
+    "message": "Gusubiza harimwo inyomeka"
+  },
+  "navbar.logo.alt": {
+    "message": "Gusubiza harimwo inyomeka"
+  },
+  "navbar.docs": {
+    "message": "Inyandiko"
+  },
+  "navbar.support": {
+    "message": "Ifashanyo"
+  },
+  "navbar.license": {
+    "message": "Uruhushya"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Inyandiko"
+  },
+  "footer.link.home": {
+    "message": "Ahabanza"
+  },
+  "footer.link.install": {
+    "message": "Shiramwo"
+  },
+  "footer.section.project": {
+    "message": "Umushinge"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Gusubiza harimwo inyomeka"
+  }
+}

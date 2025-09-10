@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Svara með viðhengjum" },
-  "extDescription": { "message": "Bætir sjálfkrafa upprunalegu viðhengjunum við tölvupóstsvar." },
-  "composeTitle": { "message": "Svara með viðhengjum" },
-  "optionsTitle": { "message": "Svara með viðhengjum — Valkostir" },
-  "confirmTitle": { "message": "Staðfesta viðhengi" },
-  "uiHeader": { "message": "Svara með viðhengjum" },
-  "uiNoOptions": { "message": "Engir valkostir til að stilla eins og er." },
-  "uiSupport": { "message": "Líkar þér þetta viðbót? Styðjið mig með smá framlagi:" },
-  "uiDonate": { "message": "Styrkja núna" },
-  "uiGithubText": { "message": "Fyrir villuskýrslur eða aðrar fyrirspurnir, farðu á" },
-  "uiGithubLinkLabel": { "message": "GitHub-síðuna mína" },
-  "iconAlt": { "message": "Tákn Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Svartlisti skráarheita (glob mynstur)" },
-  "uiBlacklistHelp": {
-    "message": "Skrár sem passa við eitthvað af þessum mynstrum verða aldrei sjálfkrafa hengdar við. Eitt mynstur á línu. Dæmi: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Svara með viðhengjum"
   },
-  "uiWarnBlacklistLabel": { "message": "Vara við ef viðhengi eru útilokuð af svartlista" },
-  "uiSave": { "message": "Vista" },
-  "uiSaving": { "message": "Vista…" },
-  "uiReset": { "message": "Endurstilla á sjálfgefið" },
-  "uiSaved": { "message": "Vistað." },
-  "uiResetDone": { "message": "Endurstillt." },
-  "uiConfirmHeader": { "message": "Staðfesting" },
-  "uiConfirmLabel": { "message": "Spyrja áður en viðhengi eru bætt við" },
+  "extDescription": {
+    "message": "Bæta sjálfkrafa upprunalegum viðhengjum við tölvupóstsvör."
+  },
+  "composeTitle": {
+    "message": "Svara með viðhengjum"
+  },
+  "optionsTitle": {
+    "message": "Svara með viðhengjum — Valkostir"
+  },
+  "confirmTitle": {
+    "message": "Staðfesta viðhengi"
+  },
+  "uiHeader": {
+    "message": "Svara með viðhengjum"
+  },
+  "uiNoOptions": {
+    "message": "Sem stendur eru engir valkostir til að stilla."
+  },
+  "uiSupport": {
+    "message": "Líkar þér þessi viðbót? Styðdu mig með litlu framlagi:"
+  },
+  "uiDonate": {
+    "message": "Styrkja núna"
+  },
+  "uiGithubText": {
+    "message": "Fyrir villutilkynningar eða aðrar fyrirspurnir, vinsamlegast heimsæktu"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-síðuna mína"
+  },
+  "iconAlt": {
+    "message": "Táknmynd Svara með viðhengjum"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Svartlisti skráarheita (glob-mynstur)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Skrár sem heiti þeirra samsvara einhverju af þessum mynstrum verða aldrei sjálfkrafa festar við. Eitt mynstur í hverja línu. Dæmi: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Vara við ef viðhengi eru undanskilin af svartlista"
+  },
+  "uiSave": {
+    "message": "Vista"
+  },
+  "uiSaving": {
+    "message": "Er að vista…"
+  },
+  "uiReset": {
+    "message": "Endurstilla á sjálfgefin gildi"
+  },
+  "uiSaved": {
+    "message": "Vistað."
+  },
+  "uiResetDone": {
+    "message": "Endurstillt."
+  },
+  "uiConfirmHeader": {
+    "message": "Staðfesting"
+  },
+  "uiConfirmLabel": {
+    "message": "Spyrja áður en bætt er við viðhengjum"
+  },
   "uiConfirmHelp": {
     "message": "Lítill staðfestingargluggi birtist aðeins þegar viðhengi yrðu raunverulega bætt við. Lyklaborð: Y eða J = Já; N eða Esc = Nei."
   },
   "confirmAddOne": {
     "message": "Bæta við viðhengi: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Bæta við viðhengjum ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 meira" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Já" },
-  "confirmNo": { "message": "Nei" },
-  "warnBlacklistTitle": { "message": "Útilokað af svartlista" },
-  "warnBlacklistIntro": { "message": "Eftirfarandi skrár verða ekki sjálfkrafa hengdar við:" },
-  "warnColFile": { "message": "Skrá" },
-  "warnColPattern": { "message": "Mynstur" },
-  "warnOk": { "message": "Í lagi" },
-  "uiConfirmDefaultHeader": { "message": "Sjálfgefið svar" },
-  "uiConfirmDefaultYes": { "message": "Já" },
-  "uiConfirmDefaultNo": { "message": "Nei" },
+  "confirmYes": {
+    "message": "Já"
+  },
+  "confirmNo": {
+    "message": "Nei"
+  },
+  "warnBlacklistTitle": {
+    "message": "Undanskilin af svartlista"
+  },
+  "warnBlacklistIntro": {
+    "message": "Eftirfarandi skrám verður ekki sjálfkrafa bætt við:"
+  },
+  "warnColFile": {
+    "message": "Skrá"
+  },
+  "warnColPattern": {
+    "message": "Mynstur"
+  },
+  "warnOk": {
+    "message": "Í lagi"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Sjálfgefið svar"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Já"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nei"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

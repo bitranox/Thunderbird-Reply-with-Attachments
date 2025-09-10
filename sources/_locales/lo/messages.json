@@ -1,53 +1,132 @@
 {
-  "extName": { "message": "ຕອບກັບດ້ວຍໄຟລ໌ແນບ" },
-  "extDescription": { "message": "ເພີ່ມໄຟລ໌ແນບຕົ້ນສະບັບໃນອີເມວຕອບກັບແບບອັດຕະໂນມັດ." },
-  "composeTitle": { "message": "ຕອບກັບດ້ວຍໄຟລ໌ແນບ" },
-  "optionsTitle": { "message": "ຕອບກັບດ້ວຍໄຟລ໌ແນບ — ຕັ້ງຄ່າ" },
-  "confirmTitle": { "message": "ຢືນຢັນໄຟລ໌ແນບ" },
-  "uiHeader": { "message": "ຕອບກັບດ້ວຍໄຟລ໌ແນບ" },
-  "uiNoOptions": { "message": "ຕອນນີ້ບໍ່ມີຕົວເລືອກໃຫ້ຕັ້ງຄ່າ." },
-  "uiSupport": { "message": "ມັກ Add‑on ນີ້ບໍ? ຊ່ວຍສະໜັບສະໜູນດ້ວຍການບໍລິຈາກນ້ອຍໆ:" },
-  "uiDonate": { "message": "ບໍລິຈາກເລີຍ" },
-  "uiGithubText": { "message": "ສຳລັບແຈ້ງບັນຫາ ຫຼື ຄຳຖາມອື່ນໆ ກະລຸນາໄປທີ່" },
-  "uiGithubLinkLabel": { "message": "ໜ້າ GitHub ຂອງຂ້ອຍ" },
-  "iconAlt": { "message": "ໄອຄອນ Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ລາຍຊື່ດຳຂອງຊື່ໄຟລ໌ (ແບບຮູບ glob)" },
+  "extName": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "extDescription": {
+    "message": "ໃຫ້ຮວມໄຟລ໌ແນບຕົ້ນສະບັບໃນການຕອບອີເມວໂດຍອັດຕະໂນມັດ."
+  },
+  "composeTitle": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "optionsTitle": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ — ຕົວເລືອກ"
+  },
+  "confirmTitle": {
+    "message": "ຢືນຢັນໄຟລ໌ແນບ"
+  },
+  "uiHeader": {
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "uiNoOptions": {
+    "message": "ຕອນນີ້ບໍ່ມີຕົວເລືອກໃຫ້ຕັ້ງຄ່າ."
+  },
+  "uiSupport": {
+    "message": "ທ່ານມັກສ່ວນເສີມນີ້ບໍ? ຊ່ວຍສະໜັບສະໜູນຂ້ອຍດ້ວຍການບໍລິຈາກເລັກນ້ອຍ:"
+  },
+  "uiDonate": {
+    "message": "ບໍລິຈາກຕອນນີ້"
+  },
+  "uiGithubText": {
+    "message": "ສຳລັບການລາຍງານບັກ ຫຼື ຄໍາຖາມອື່ນໆ, ກະລຸນາເຂົ້າໄປທີ່"
+  },
+  "uiGithubLinkLabel": {
+    "message": "ໜ້າ GitHub"
+  },
+  "iconAlt": {
+    "message": "ໄອຄອນ ຕອບກັບພ້ອມໄຟລ໌ແນບ"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ລາຍຊື່ຫ້າມຂອງຊື່ໄຟລ໌ (glob patterns)"
+  },
   "uiBlacklistHelp": {
-    "message": "ໄຟລ໌ທີ່ຊື່ກົງກັບແບບຮູບໃດໜຶ່ງໃນນີ້ ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ. ໜຶ່ງແບບຮູບຕໍ່ແຖວ. ຕົວຢ່າງ: *.png, smime.*, *.p7s"
+    "message": "ໄຟລ໌ທີ່ຊື່ກົງກັບແບບໃດໜຶ່ງໃນນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ. ໜຶ່ງແບບຕໍ່ແຖວ. ຕົວຢ່າງ: *.png, smime.*, *.p7s"
   },
-  "uiWarnBlacklistLabel": { "message": "ແຈ້ງເຕືອນຖ້າໄຟລ໌ແນບຖືກຕັດອອກໂດຍລາຍຊື່ດຳ" },
-  "uiSave": { "message": "ບັນທຶກ" },
-  "uiSaving": { "message": "ກຳລັງບັນທຶກ…" },
-  "uiReset": { "message": "ກັບຄືນຄ່າເລີ່ມຕົ້ນ" },
-  "uiSaved": { "message": "ບັນທຶກແລ້ວ." },
-  "uiResetDone": { "message": "ກັບຄືນແລ້ວ." },
-  "uiConfirmHeader": { "message": "ຢືນຢັນ" },
-  "uiConfirmLabel": { "message": "ຖາມກ່ອນເພີ່ມໄຟລ໌ແນບ" },
+  "uiWarnBlacklistLabel": {
+    "message": "ແຈ້ງເຕືອນຖ້າໄຟລ໌ແນບຖືກຍົກເວັ້ນໂດຍລາຍຊື່ຫ້າມ"
+  },
+  "uiSave": {
+    "message": "ບັນທຶກ"
+  },
+  "uiSaving": {
+    "message": "ກຳລັງບັນທຶກ…"
+  },
+  "uiReset": {
+    "message": "ກູ້ຄືນຄ່າເລີ່ມຕົ້ນ"
+  },
+  "uiSaved": {
+    "message": "ບັນທຶກແລ້ວ."
+  },
+  "uiResetDone": {
+    "message": "ກູ້ຄືນແລ້ວ."
+  },
+  "uiConfirmHeader": {
+    "message": "ການຢືນຢັນ"
+  },
+  "uiConfirmLabel": {
+    "message": "ຖາມກ່ອນທີ່ຈະເພີ່ມໄຟລ໌ແນບ"
+  },
   "uiConfirmHelp": {
-    "message": "ກ່ອງໂຕ້ຕອບຢືນຢັນນ້ອຍຈະປາກົດຕໍ່ເມື່ອຈະມີການເພີ່ມໄຟລ໌ແນບຈິງໆ. ແປ້ນພິມ: Y ຫຼື J = ແມ່ນ; N ຫຼື Esc = ບໍ່."
+    "message": "ກ່ອງຢືນຢັນນ້ອຍຈະປາກົດກໍ່ເມື່ອຈະມີການເພີ່ມໄຟລ໌ແນບຈິງ. ແປ້ນພິມ: Y ຫຼື J = ແມ່ນ; N ຫຼື Esc = ບໍ່."
   },
-  "confirmAddOne": { "message": "ເພີ່ມໄຟລ໌ແນບ: $1?", "placeholders": { "1": { "content": "$1" } } },
+  "confirmAddOne": {
+    "message": "ເພີ່ມໄຟລ໌ແນບ: $1?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
   "confirmAddMany": {
     "message": "ເພີ່ມໄຟລ໌ແນບ ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ເພີ່ມ" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "ແມ່ນ" },
-  "confirmNo": { "message": "ບໍ່" },
-  "warnBlacklistTitle": { "message": "ຖືກຕັດອອກໂດຍລາຍຊື່ດຳ" },
-  "warnBlacklistIntro": { "message": "ໄຟລ໌ດັ່ງຕໍ່ໄປນີ້ຈະບໍ່ໄດ້ແນບອັດຕະໂນມັດ:" },
-  "warnColFile": { "message": "ໄຟລ໌" },
-  "warnColPattern": { "message": "ແບບຮູບ" },
-  "warnOk": { "message": "ຕົກລົງ" },
-  "uiConfirmDefaultHeader": { "message": "ຄຳຕອບເລີ່ມຕົ້ນ" },
-  "uiConfirmDefaultYes": { "message": "ແມ່ນ" },
-  "uiConfirmDefaultNo": { "message": "ບໍ່" },
+  "confirmYes": {
+    "message": "ແມ່ນ"
+  },
+  "confirmNo": {
+    "message": "ບໍ່"
+  },
+  "warnBlacklistTitle": {
+    "message": "ຖືກຍົກເວັ້ນໂດຍລາຍຊື່ຫ້າມ"
+  },
+  "warnBlacklistIntro": {
+    "message": "ໄຟລ໌ຕໍ່ໄປນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ:"
+  },
+  "warnColFile": {
+    "message": "ໄຟລ໌"
+  },
+  "warnColPattern": {
+    "message": "ແບບແບບ"
+  },
+  "warnOk": {
+    "message": "ຕົກລົງ"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "ຄໍາຕອບໂດຍຄ່າເລີ່ມຕົ້ນ"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ແມ່ນ"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "ບໍ່"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

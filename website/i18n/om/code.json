@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Deebii Waliin Faayiloota Maxxanfaman"
+  },
+  "homepage.meta.description": {
+    "message": "Dabalataa Thunderbird: Deebii faayiloota duraanii dabalatee"
+  },
+  "homepage.icon.alt": {
+    "message": "Mallattoo RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Deebii Waliin Faayiloota Maxxanfaman"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird keessatti deebii kennuuf faayiloota duraanii dabaluu — otomaatiin yookaan mirkaneessa saffisaa booda."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Galmee Bani"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Eegalcha Saffisaa"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Dabalatoota Irraa Itti Fe'i"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Arjoomi"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Wanti Haaraa"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Jijjiirama haaraa {changelog} keessatti dubbisi."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Gabaasa Jijjiiramaa"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomaatiki yookaan Dura Mirkaneessi"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Dabaluu otomaatiin yookaan haasawa mirkaneessaa xiqqaa kan kiiboordii shortcuts salphaa qabu jidduu filadhu."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Ittisa Irra‑Deebii Ogummaa Qabu"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Faayiloota maxxanfaman jiran ni kabaja; maqaa faayiliin irra-deebii ni ittisa, qulqullaa'aa fi ifa ta'eedha."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME fi Inlayin Darbi"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Mallattoolee SMIME fi suuraawwan inlayin deebiin salphaa akka ta'uuf irraa haqamanii jiru."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Paaternoota Tarree Dhoorkaa"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Paaternoonni giloobii xiqqaa/guddaa adda hin baafne kan {code1} yookaan {code2} fakkaatan faayiloota jeequu dabaluu ni ittisu."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hidhannoowwan Saffisaa Galmee"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Itti Fe'i"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Qindaa'ina"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Fayyadama"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Walsimuu"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Deeggarsa"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Hayyama"
+  },
+  "homepage.search.tip": {
+    "message": "Gorsa: Galmee keessatti barbaaduuf {slash} yookaan {ctrl}+{k} tuqi."
+  },
+  "site.title": {
+    "message": "Deebii Waliin Faayiloota Maxxanfaman"
+  },
+  "site.tagline": {
+    "message": "Dabalataa Thunderbird: Deebii faayiloota duraanii dabalatee"
+  },
+  "navbar.title": {
+    "message": "Deebii Waliin Faayiloota Maxxanfaman"
+  },
+  "navbar.logo.alt": {
+    "message": "Deebii Waliin Faayiloota Maxxanfaman"
+  },
+  "navbar.docs": {
+    "message": "Galmee"
+  },
+  "navbar.support": {
+    "message": "Deeggarsa"
+  },
+  "navbar.license": {
+    "message": "Hayyama"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Galmee"
+  },
+  "footer.link.home": {
+    "message": "Fuula Jalqabaa"
+  },
+  "footer.link.install": {
+    "message": "Itti Fe'i"
+  },
+  "footer.section.project": {
+    "message": "Projektii"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Deebii Waliin Faayiloota Maxxanfaman"
+  }
+}

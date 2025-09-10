@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "الرد مع المرفقات" },
-  "extDescription": { "message": "إدراج المرفقات الأصلية تلقائيًا في الردود." },
-  "composeTitle": { "message": "الرد مع المرفقات" },
-  "optionsTitle": { "message": "الرد مع المرفقات — الخيارات" },
-  "confirmTitle": { "message": "تأكيد المرفقات" },
-  "uiHeader": { "message": "الرد مع المرفقات" },
-  "uiNoOptions": { "message": "لا توجد خيارات لإعدادها حاليًا." },
-  "uiSupport": { "message": "هل أعجبك هذا الملحق؟ ادعمني بمساهمة بسيطة:" },
-  "uiDonate": { "message": "تبرع الآن" },
-  "uiGithubText": { "message": "للإبلاغ عن الأخطاء أو للاستفسارات الأخرى، يرجى زيارة" },
-  "uiGithubLinkLabel": { "message": "صفحة GitHub الخاصة بي" },
-  "iconAlt": { "message": "أيقونة «الرد مع المرفقات»" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "قائمة حظر أسماء الملفات (أنماط glob)" },
-  "uiBlacklistHelp": {
-    "message": "الملفات التي تطابق أسماؤها أيًا من هذه الأنماط لن تُرفق تلقائيًا أبدًا. نمط واحد في كل سطر. أمثلة: ‎*.png‎، ‏smime.*‏، ‏‎*.p7s‎"
+  "extName": {
+    "message": "الرد مع المرفقات"
   },
-  "uiWarnBlacklistLabel": { "message": "تحذير إذا تم استثناء المرفقات بسبب قائمة الحظر" },
-  "uiSave": { "message": "حفظ" },
-  "uiSaving": { "message": "جارٍ الحفظ…" },
-  "uiReset": { "message": "إعادة التعيين إلى الافتراضي" },
-  "uiSaved": { "message": "تم الحفظ." },
-  "uiResetDone": { "message": "تمت إعادة التعيين." },
-  "uiConfirmHeader": { "message": "تأكيد" },
-  "uiConfirmLabel": { "message": "اسأل قبل إضافة المرفقات" },
+  "extDescription": {
+    "message": "إدراج المرفقات الأصلية تلقائيًا في الردود على البريد الإلكتروني."
+  },
+  "composeTitle": {
+    "message": "الرد مع المرفقات"
+  },
+  "optionsTitle": {
+    "message": "الرد مع المرفقات — الخيارات"
+  },
+  "confirmTitle": {
+    "message": "تأكيد المرفقات"
+  },
+  "uiHeader": {
+    "message": "الرد مع المرفقات"
+  },
+  "uiNoOptions": {
+    "message": "لا توجد حاليًا خيارات لتهيئتها."
+  },
+  "uiSupport": {
+    "message": "هل تعجبك هذه الإضافة؟ ادعمني بمساهمة صغيرة:"
+  },
+  "uiDonate": {
+    "message": "تبرع الآن"
+  },
+  "uiGithubText": {
+    "message": "للتبليغ عن الأخطاء أو الاستفسارات الأخرى، يُرجى زيارة"
+  },
+  "uiGithubLinkLabel": {
+    "message": "صفحة GitHub"
+  },
+  "iconAlt": {
+    "message": "أيقونة الرد مع المرفقات"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "قائمة حظر أسماء الملفات (أنماط glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "الملفات التي تطابق أسماؤها أيًا من هذه الأنماط لن تُرفق تلقائيًا أبدًا. نمط واحد في كل سطر. أمثلة: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "تحذير إذا تم استثناء المرفقات بواسطة قائمة الحظر"
+  },
+  "uiSave": {
+    "message": "حفظ"
+  },
+  "uiSaving": {
+    "message": "جارٍ الحفظ…"
+  },
+  "uiReset": {
+    "message": "إعادة التعيين إلى الإعدادات الافتراضية"
+  },
+  "uiSaved": {
+    "message": "تم الحفظ."
+  },
+  "uiResetDone": {
+    "message": "تمت إعادة التعيين."
+  },
+  "uiConfirmHeader": {
+    "message": "التأكيد"
+  },
+  "uiConfirmLabel": {
+    "message": "السؤال قبل إضافة المرفقات"
+  },
   "uiConfirmHelp": {
-    "message": "تظهر نافذة تأكيد صغيرة فقط عندما ستتم إضافة مرفقات فعليًا. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
+    "message": "سيظهر مربع تأكيد صغير فقط عندما تكون هناك مرفقات ستُضاف فعليًا. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
   },
   "confirmAddOne": {
-    "message": "إضافة مرفق: ‎$1؟",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "إضافة مرفقات (‎$1): ‎$2$3؟",
+    "message": "إضافة مرفق: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": "، +‏$3 إضافية" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "نعم" },
-  "confirmNo": { "message": "لا" },
-  "warnBlacklistTitle": { "message": "مستبعد بسبب قائمة الحظر" },
-  "warnBlacklistIntro": { "message": "لن تُرفق الملفات التالية تلقائيًا:" },
-  "warnColFile": { "message": "الملف" },
-  "warnColPattern": { "message": "النمط" },
-  "warnOk": { "message": "موافق" },
-  "uiConfirmDefaultHeader": { "message": "الإجابة الافتراضية" },
-  "uiConfirmDefaultYes": { "message": "نعم" },
-  "uiConfirmDefaultNo": { "message": "لا" },
-  "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  "confirmAddMany": {
+    "message": "إضافة مرفقات ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "confirmYes": {
+    "message": "نعم"
+  },
+  "confirmNo": {
+    "message": "لا"
+  },
+  "warnBlacklistTitle": {
+    "message": "تم الاستبعاد بواسطة قائمة الحظر"
+  },
+  "warnBlacklistIntro": {
+    "message": "لن تُرفق الملفات التالية تلقائيًا:"
+  },
+  "warnColFile": {
+    "message": "الملف"
+  },
+  "warnColPattern": {
+    "message": "النمط"
+  },
+  "warnOk": {
+    "message": "موافق"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "الخيار الافتراضي"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "نعم"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "لا"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

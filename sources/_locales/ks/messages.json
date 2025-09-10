@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "اٹیچمنٹس سان جواب" },
-  "extDescription": { "message": "اِمیٖل جوابن منز اصلی اٹیچمنٹس خؤدکار طور شامل گژھان." },
-  "composeTitle": { "message": "اٹیچمنٹس سان جواب" },
-  "optionsTitle": { "message": "اٹیچمنٹس سان جواب — اختیارات" },
-  "confirmTitle": { "message": "اٹیچمنٹس تصدیق کرُن" },
-  "uiHeader": { "message": "اٹیچمنٹس سان جواب" },
-  "uiNoOptions": { "message": "ہندئ وقت کھوت کوئی اختیار نئ چھ۔" },
-  "uiSupport": { "message": "یہ ایڈ‑آن پسند آو؟ چھوٹے تعاون سِتھ می سہار کریو:" },
-  "uiDonate": { "message": "ہنٛز تعاون کریو" },
-  "uiGithubText": { "message": "بگ رپورٹ یا باقی سوالن خٲطرئ، مہربٲنی کرِت میون" },
-  "uiGithubLinkLabel": { "message": "GitHub صفح" },
-  "iconAlt": { "message": "Reply with Attachments آئیکن" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "فائل نٕاو کالٕی سُچی (glob پیٹرنز)" },
-  "uiBlacklistHelp": {
-    "message": "یِمن فائل نٕاون چھ یمن پیٹرنز سٕ نِرٲس موافقت، وہ خؤدکار طور اٹیچ نئ کرنٛد۔ ہر لائنس منز ایک پیٹرن۔ مثال: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "منسلکات کے ساتھ جواب"
   },
-  "uiWarnBlacklistLabel": { "message": "اگر اٹیچمنٹس کالٕی سُچی باعث نکالن، ہٕشیار کرِو" },
-  "uiSave": { "message": "محفوظ کرِو" },
-  "uiSaving": { "message": "محفوظ کران…" },
-  "uiReset": { "message": "ڈیفالٹ پٲٹھ واپس کرِو" },
-  "uiSaved": { "message": "محفوظ کرنٛمُت." },
-  "uiResetDone": { "message": "واپس گژھ." },
-  "uiConfirmHeader": { "message": "تصدیق" },
-  "uiConfirmLabel": { "message": "اٹیچمنٹس شامل کرنٛہ پٲٹھ پٲنسیو" },
+  "extDescription": {
+    "message": "ای میل جوابات میں اصل منسلکات خودکار طور پر شامل کریں۔"
+  },
+  "composeTitle": {
+    "message": "منسلکات کے ساتھ جواب"
+  },
+  "optionsTitle": {
+    "message": "منسلکات کے ساتھ جواب — اختیارات"
+  },
+  "confirmTitle": {
+    "message": "منسلکات کی تصدیق"
+  },
+  "uiHeader": {
+    "message": "منسلکات کے ساتھ جواب"
+  },
+  "uiNoOptions": {
+    "message": "اس وقت ترتیب دینے کے لیے کوئی اختیارات نہیں ہیں۔"
+  },
+  "uiSupport": {
+    "message": "کیا آپ کو یہ ایڈ-آن پسند ہے؟ ایک چھوٹی سی معاونت کے ساتھ میری مدد کریں:"
+  },
+  "uiDonate": {
+    "message": "اب عطیہ دیں"
+  },
+  "uiGithubText": {
+    "message": "بگ رپورٹس یا دیگر استفسارات کے لیے، براہِ کرم میرا"
+  },
+  "uiGithubLinkLabel": {
+    "message": "گِٹ ہب صفحہ"
+  },
+  "iconAlt": {
+    "message": "منسلکات کے ساتھ جواب کا آئیکن"
+  },
+  "githubAlt": {
+    "message": "گِٹ ہب"
+  },
+  "uiBlacklistHeader": {
+    "message": "فائل ناموں کی بلیک لسٹ (گلوب پیٹرنز)"
+  },
+  "uiBlacklistHelp": {
+    "message": "جن فائلوں کے نام ان پیٹرنز میں سے کسی سے ملتے ہوں، وہ کبھی بھی خودکار طور پر منسلک نہیں کی جائیں گی۔ ہر لائن میں ایک پیٹرن۔ مثالیں: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "اگر بلیک لسٹ کی وجہ سے منسلکات خارج ہوں تو خبردار کریں"
+  },
+  "uiSave": {
+    "message": "محفوظ کریں"
+  },
+  "uiSaving": {
+    "message": "محفوظ کیا جا رہا ہے…"
+  },
+  "uiReset": {
+    "message": "طے شدہ پر ری سیٹ کریں"
+  },
+  "uiSaved": {
+    "message": "محفوظ ہو گیا۔"
+  },
+  "uiResetDone": {
+    "message": "ری سیٹ ہو گیا۔"
+  },
+  "uiConfirmHeader": {
+    "message": "تصدیق"
+  },
+  "uiConfirmLabel": {
+    "message": "منسلکات شامل کرنے سے پہلے پوچھیں"
+  },
   "uiConfirmHelp": {
-    "message": "یِمئ چھکنٛز چھوٹ ڈائیلاگ ہٕندہ ژھالن، ییلہ واقعی اٹیچمنٹس شامل کرنٛہ بنٛن۔ کیبورڈ: Y یا J = آہ؛ N یا Esc = نئ."
+    "message": "ایک چھوٹا سا تصدیقی ڈائیلاگ صرف تب ظاہر ہوگا جب واقعی منسلکات شامل کیے جائیں گے۔ کی بورڈ: Y یا J = ہاں; N یا Esc = نہیں۔"
   },
   "confirmAddOne": {
-    "message": "اٹیچمنٹ شامل کرِو: $1؟",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "اٹیچمنٹس شامل کرِو ($1): $2$3؟",
+    "message": "منسلک شامل کریں: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ہور" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "آہ" },
-  "confirmNo": { "message": "نئ" },
-  "warnBlacklistTitle": { "message": "کالٕی سُچی موجب نکالِتمت" },
-  "warnBlacklistIntro": { "message": "یہی فائلن چھنٛہ خؤدکار طور اٹیچ کرنٛمُت:" },
-  "warnColFile": { "message": "فائل" },
-  "warnColPattern": { "message": "پیٹرن" },
-  "warnOk": { "message": "ٹھیک" },
-  "uiConfirmDefaultHeader": { "message": "ڈیفالٹ جواب" },
-  "uiConfirmDefaultYes": { "message": "آہ" },
-  "uiConfirmDefaultNo": { "message": "نئ" },
+  "confirmAddMany": {
+    "message": "منسلکات شامل کریں ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "ہاں"
+  },
+  "confirmNo": {
+    "message": "نہیں"
+  },
+  "warnBlacklistTitle": {
+    "message": "بلیک لسٹ کی وجہ سے خارج"
+  },
+  "warnBlacklistIntro": {
+    "message": "ذیل کی فائلیں خودکار طور پر منسلک نہیں کی جائیں گی:"
+  },
+  "warnColFile": {
+    "message": "فائل"
+  },
+  "warnColPattern": {
+    "message": "پیٹرن"
+  },
+  "warnOk": {
+    "message": "ٹھیک ہے"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "پہلے سے طے شدہ جواب"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ہاں"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "نہیں"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

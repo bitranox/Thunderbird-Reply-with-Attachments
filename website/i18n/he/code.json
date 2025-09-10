@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "השב עם קבצים מצורפים"
+  },
+  "homepage.meta.description": {
+    "message": "תוסף ל‑Thunderbird: השבה הכוללת את הקבצים המצורפים המקוריים"
+  },
+  "homepage.icon.alt": {
+    "message": "סמל RWA"
+  },
+  "homepage.hero.title": {
+    "message": "השב עם קבצים מצורפים"
+  },
+  "homepage.hero.subtitle": {
+    "message": "הוספת הקבצים המצורפים המקוריים בעת השבה ב‑Thunderbird — אוטומטית או לאחר אישור מהיר."
+  },
+  "homepage.cta.openDocs": {
+    "message": "פתחו את התיעוד"
+  },
+  "homepage.cta.quickstart": {
+    "message": "תחילת עבודה מהירה"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "התקנה מ‑Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "תרמו"
+  },
+  "homepage.whatsNew.title": {
+    "message": "מה חדש"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "קראו את השינויים האחרונים ב{changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "יומן שינויים"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "אוטומטי או באישור מוקדם"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "בחרו בין הוספה אוטומטית לבין תיבת אישור קטנה עם קיצורי מקלדת נוחים."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "מניעת כפילויות חכמה"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "מכבדת קבצים מצורפים קיימים ומונעת כפילויות לפי שם קובץ — נקי וצפוי."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "דילוג על SMIME ותוכן מוטמע"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "חתימות SMIME ותמונות מוטמעות אינן נכללות כדי לשמור על הודעות תשובה קלילות."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "תבניות חסימה"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "תבניות glob שאינן תלויות רישיות כמו {code1} או {code2} מונעות הוספת קבצים מיותרים."
+  },
+  "homepage.quicklinks.title": {
+    "message": "קישורים מהירים לתיעוד"
+  },
+  "homepage.quicklinks.install": {
+    "message": "התקנה"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "תצורה"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "שימוש"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "תאימות"
+  },
+  "homepage.quicklinks.support": {
+    "message": "תמיכה"
+  },
+  "homepage.quicklinks.license": {
+    "message": "רישיון"
+  },
+  "homepage.search.tip": {
+    "message": "טיפ: לחצו {slash} או {ctrl}+{k} כדי לחפש בתיעוד."
+  },
+  "site.title": {
+    "message": "השב עם קבצים מצורפים"
+  },
+  "site.tagline": {
+    "message": "תוסף ל‑Thunderbird: השבה הכוללת את הקבצים המצורפים המקוריים"
+  },
+  "navbar.title": {
+    "message": "השב עם קבצים מצורפים"
+  },
+  "navbar.logo.alt": {
+    "message": "השב עם קבצים מצורפים"
+  },
+  "navbar.docs": {
+    "message": "תיעוד"
+  },
+  "navbar.support": {
+    "message": "תמיכה"
+  },
+  "navbar.license": {
+    "message": "רישיון"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "תיעוד"
+  },
+  "footer.link.home": {
+    "message": "דף הבית"
+  },
+  "footer.link.install": {
+    "message": "התקנה"
+  },
+  "footer.section.project": {
+    "message": "פרויקט"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} השב עם קבצים מצורפים"
+  }
+}

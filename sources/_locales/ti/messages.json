@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "መልስ ምስ ተዛማሪታት" },
-  "extDescription": { "message": "ብራስ‑ሰር ተዛማሪታት ኣብ መልሶታት ኢ‑መይል እዩ ዝወሃብ።" },
-  "composeTitle": { "message": "መልስ ምስ ተዛማሪታት" },
-  "optionsTitle": { "message": "መልስ ምስ ተዛማሪታት — ምርጫታት" },
-  "confirmTitle": { "message": "ተዛማሪታት ኣረጋግጽ" },
-  "uiHeader": { "message": "መልስ ምስ ተዛማሪታት" },
-  "uiNoOptions": { "message": "ሓደ ኣማራጺ ኣብ ሕጂ የለን ንምቅናት።" },
-  "uiSupport": { "message": "እዚ መተግበሪ ተፈቲኻ? ብሓላፍነት ንኸኣ ድግፍ ኣብ ሕጂ:" },
-  "uiDonate": { "message": "ሕጂ ለግስ" },
-  "uiGithubText": { "message": "ንተጋጊሙ ጌጋታት ወይ ሕቶታት ካልእ ብቕልጡፍ ይምረፁ" },
-  "uiGithubLinkLabel": { "message": "ገጽ GitHub የኔ" },
-  "iconAlt": { "message": "ምልክት Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "ምልክታት ጥቁር ምልክት ስም ፋይል (glob ናይ ኣበርክቲ)" },
-  "uiBlacklistHelp": {
-    "message": "ፋይላት ናብ እዚ ናይ ኣበርክቲ ንጥፈታት ዝምልከቱ ክኸውኑ ብራስ‑ሰር ኣይጸበሉን። ናይ መስመር ሓደ ንጥፈት። ናሳሲ: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "መልሲ ምሃብ ምስ ዝተጠጠሩ ፋይላት"
   },
-  "uiWarnBlacklistLabel": { "message": "እንተ ተዛማሪታት ካብ ጥቁር ምልክት እዩ ተሰርየ ንስኻ ናግር" },
-  "uiSave": { "message": "ኣቐምጥ" },
-  "uiSaving": { "message": "ኣቐምጥ እዩ…" },
-  "uiReset": { "message": "ናብ ዝወሰነ መመለሲ" },
-  "uiSaved": { "message": "ተቐምጢ።" },
-  "uiResetDone": { "message": "ተመሊሱ።" },
-  "uiConfirmHeader": { "message": "ምርግጋጽ" },
-  "uiConfirmLabel": { "message": "ብፅሑፍ የግበር ቅድሚ ብዘይ ኣዘዝ ኣብ ተዛማሪታት" },
+  "extDescription": {
+    "message": "ኣብ መልሲ ኢ‑መይል ናይ መጀመርታ ዝተጠጠሩ ፋይላት ብራስኡ ይጨመሩ።"
+  },
+  "composeTitle": {
+    "message": "መልሲ ምሃብ ምስ ዝተጠጠሩ ፋይላት"
+  },
+  "optionsTitle": {
+    "message": "መልሲ ምሃብ ምስ ዝተጠጠሩ ፋይላት — ቅንብሮታት"
+  },
+  "confirmTitle": {
+    "message": "ንዝተጠጠሩ ፋይላት ምርግጋጽ"
+  },
+  "uiHeader": {
+    "message": "መልሲ ምሃብ ምስ ዝተጠጠሩ ፋይላት"
+  },
+  "uiNoOptions": {
+    "message": "ሕጂ ንምትካል ቅንብሮታት የሉን።"
+  },
+  "uiSupport": {
+    "message": "እዚ ኣድ‑ኦን ደስ ኣለኻ? ብንእሽቶ ድግፍ ሓበኒ:"
+  },
+  "uiDonate": {
+    "message": "ሕጂ ድግፍ ሓብ"
+  },
+  "uiGithubText": {
+    "message": "ንሪፖርት ስህተት ወይ ካልእ ሕቶታት፣ ብግብሪ ይጎብኑ ናተይ"
+  },
+  "uiGithubLinkLabel": {
+    "message": "ገጽ GitHub"
+  },
+  "iconAlt": {
+    "message": "ኣይኮን መልሲ ምሃብ ምስ ዝተጠጠሩ ፋይላት"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "ብላክሊስት ናይ ስም ፋይላት (glob ፓተርን)"
+  },
+  "uiBlacklistHelp": {
+    "message": "ፋይላት ስማቶም ካብ እዚኦም ፓተርናት ምስ ዝምልከቱ ብራስኡ ኣይተጠጥሩን። ናይ መስመር ሓደ ፓተርን ጸዓት። ምሳሌታት: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "ዝተጠጠሩ ፋይላት ብብላክሊስት እንተ ተኣርፉ ምጠንቀቕ ኣሳዩ"
+  },
+  "uiSave": {
+    "message": "ኣቐምጥ"
+  },
+  "uiSaving": {
+    "message": "ኣቐምጥ እዩ…"
+  },
+  "uiReset": {
+    "message": "ናብ ነባሪ ቅንብሮታት መለስ"
+  },
+  "uiSaved": {
+    "message": "ተኣቐምጠ።"
+  },
+  "uiResetDone": {
+    "message": "ተመሊሰ።"
+  },
+  "uiConfirmHeader": {
+    "message": "ምርግጋጽ"
+  },
+  "uiConfirmLabel": {
+    "message": "ቅድሚ ምጨመር ዝተጠጠሩ ፋይላት ጠይቕ"
+  },
   "uiConfirmHelp": {
-    "message": "ንጥፈት ንምርግጋጽ ንእሽቶ ሓሳብ እዩ ዝርከብ እቲ እዚ ኣብ ምስ ተዛማሪታት ብተሓቐነ እዩ ዝተወሃበ። መርሓ መሳርሒ: Y ወይ J = እወ; N ወይ Esc = ኣይኮነን።"
+    "message": "ንምርግጋጽ ንእሽተይ መስኮት እቲ ፋይላት ሓቂ እንተ ይጨመሩ ጥራይ ይብጽሕ። መፅሓፍ ቁልፊ: Y ወይ J = እወ፣ N ወይ Esc = ኣይ።"
   },
   "confirmAddOne": {
-    "message": "ኣብ ተዛማሪት እንተ ክትወስድ: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "ተዛማሪታት እንተ ክትወስድ ($1): $2$3?",
+    "message": "ዝተጠጠረ ፋይል ክትጨመር: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ካልእ" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "እወ" },
-  "confirmNo": { "message": "ኣይኮነን" },
-  "warnBlacklistTitle": { "message": "ብጥቁር ምልክት ተለይቶ" },
-  "warnBlacklistIntro": { "message": "እዚ ኣብ ታሕቲ ዘሎ ፋይል ብራስ‑ሰር ኣይተዋህቦን።" },
-  "warnColFile": { "message": "ፋይል" },
-  "warnColPattern": { "message": "ናይ ኣበርክቲ" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "መልሲ ዝተመረጸ" },
-  "uiConfirmDefaultYes": { "message": "እወ" },
-  "uiConfirmDefaultNo": { "message": "ኣይኮነን" },
+  "confirmAddMany": {
+    "message": "ዝተጠጠሩ ፋይላት ክትጨመር ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "እወ"
+  },
+  "confirmNo": {
+    "message": "ኣይ"
+  },
+  "warnBlacklistTitle": {
+    "message": "ብብላክሊስት ተኣርፎ"
+  },
+  "warnBlacklistIntro": {
+    "message": "እነዚ ፋይላት ብራስኡ ኣይተጠጥሩን፦"
+  },
+  "warnColFile": {
+    "message": "ፋይል"
+  },
+  "warnColPattern": {
+    "message": "ፓተርን"
+  },
+  "warnOk": {
+    "message": "ኦኬ"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "ነባሪ መልሲ"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "እወ"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "ኣይ"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird goşmaçasy: asyl goşundylary goşup jogap bermek"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA nyşany"
+  },
+  "homepage.hero.title": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbirdde jogap bereniňizde asyl goşundylary goşuň — awtomatiki ýa-da çalt tassyklandan soň."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Resminamalary aç"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Çalt başlangyç"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Goşmaçalardan gurnamak"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Bagyş et"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Täzelikler"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Iň soňky üýtgeşmeleri {changelog}-de okaň."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Üýtgeşmeler gündeligi"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Awtomatiki ýa-da ilki tassykla"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Awtomatiki goşmagy ýa-da amatly klawiatura gysga ýollary bolan kiçi tassyklaýyş dialogyny saýlaň."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Akylly dublikatlary aýyrmak"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Bar bolan goşundylary göz öňünde tutýar we faýl ady boýunça dublikatlardan gaça durýar — arassa we öňünden çaklanyp boljak."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME we içine ýerleşdirilenleri geç"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Jogaplary ýeňil saklamak üçin SMIME goly we içine ýerleşdirilen suratlar goşulmaýar."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Gara sanaw şablonlary"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Harplaryň ululygyna garaşsyz {code1} ýa-da {code2} ýaly glob nusgalary gereksiz faýllaryň goşulmagynyň öňüni alýar."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Resminamalara çalt baglar"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Gurnamak"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Sazlama"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Ulanyş"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Utgaşyklyk"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Goldaw"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisenziýa"
+  },
+  "homepage.search.tip": {
+    "message": "Maslahat: Resminamalarda gözlemek üçin {slash} ýa-da {ctrl}+{k} basyň."
+  },
+  "site.title": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "site.tagline": {
+    "message": "Thunderbird goşmaçasy: asyl goşundylary goşup jogap bermek"
+  },
+  "navbar.title": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "navbar.logo.alt": {
+    "message": "Goşundylar bilen jogap bermek"
+  },
+  "navbar.docs": {
+    "message": "Resminamalar"
+  },
+  "navbar.support": {
+    "message": "Goldaw"
+  },
+  "navbar.license": {
+    "message": "Lisenziýa"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Resminamalar"
+  },
+  "footer.link.home": {
+    "message": "Baş sahypa"
+  },
+  "footer.link.install": {
+    "message": "Gurnamak"
+  },
+  "footer.section.project": {
+    "message": "Taslama"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Goşundylar bilen jogap bermek"
+  }
+}

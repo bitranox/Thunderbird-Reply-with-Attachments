@@ -4,14 +4,20 @@ title: Languages
 sidebar_label: Languages
 ---
 
-# Language Support
+---
 
-This list reflects both website documentation translations and addon UI strings.
+## Languages
+
+This list reflects both website documentation translations and add-on UI strings.
 Massive language support, thanks to AI translation tools — covering 100 languages.
 
 List below is sorted by the language code.
 
 See also: the [Glossary](glossary) for canonical UI terms used across locales.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -115,3 +121,27 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `zu`: Zulu (zu-ZA)
 
 Tip: Switch the docs locale via the language selector in the site header (URL prefix changes accordingly). Thunderbird’s UI language is independent of the website language and follows your Thunderbird settings.
+
+Landing page redirect
+
+- If the site is built with your browser’s preferred locale, visiting the base docs URL under the project’s baseUrl automatically redirects to that locale. Use the language switcher (or `/en/`) to stay in English.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Found an issue in a translation? Please open a GitHub issue or PR.
+- Prefer edits against the English source under `website/docs/`; the maintainer’s tooling propagates updates to other locales.
+  English is the source of truth for documentation; translation updates are pulled from EN during the maintainer’s workflow.
+
+### Homepage, Navbar, Footer UI
+
+- These strings live in `website/i18n/en/code.json` and are translated to all locales via the maintainer task:
+  - `make translation-web-index` (requires `OPENAI_API_KEY`)
+  - Limit languages with `OPTS="--locales de,fr"`; overwrite existing values with `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Website language and add‑on UI language are independent; the language selector changes docs only. Thunderbird’s UI language follows your Thunderbird settings.
+
+---

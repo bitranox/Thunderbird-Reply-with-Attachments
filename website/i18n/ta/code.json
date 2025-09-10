@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "இணைப்புகளுடன் பதிலளி"
+  },
+  "homepage.meta.description": {
+    "message": "தண்டர்பேர்டுக்கான செருகுநிரல்: பதில்களில் மூல இணைப்புகளைச் சேர்க்கவும்"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ஐகான்"
+  },
+  "homepage.hero.title": {
+    "message": "இணைப்புகளுடன் பதிலளி"
+  },
+  "homepage.hero.subtitle": {
+    "message": "தண்டர்பேர்டில் பதிலளிக்கும் போது மூல இணைப்புகளைச் சேர்க்கவும் — தானாகவோ அல்லது ஒரு விரைவான உறுதிப்படுத்தலுக்குப் பின்னரோ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ஆவணங்களைத் திறக்கவும்"
+  },
+  "homepage.cta.quickstart": {
+    "message": "விரைவு தொடக்கம்"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Add‑ons இலிருந்து நிறுவவும்"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "நன்கொடை அளிக்கவும்"
+  },
+  "homepage.whatsNew.title": {
+    "message": "புதியது என்ன"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog}-இல் சமீபத்திய மாற்றங்களைப் படிக்கவும்."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "மாற்றப் பதிவு"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "தானியங்கி அல்லது முன் உறுதிப்படுத்தல்"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "தானாகச் சேர்த்தலுக்கும் அல்லது பயனுள்ள விசைப்பலகை குறுக்குவழிகளுடன் கூடிய சிறிய உறுதிப்படுத்தல் உரையாடலுக்கும் இடையில் தேர்வு செய்யவும்."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "புத்திசாலித்தனமான நகல் நீக்கம்"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ஏற்கனவே உள்ள இணைப்புகளை மதித்து, கோப்புப் பெயரை அடிப்படையாகக் கொண்டு நகல்களைத் தவிர்க்கிறது; தெளிவாகவும் கணிக்கக்கூடியதாகவும் உள்ளது."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME & Inline தவிர்க்குதல்"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "பதில்கள் இலகுவாக இருக்க, SMIME கையொப்பங்களும் inline படங்களும் விலக்கப்படுகின்றன."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "கருப்புப்பட்டியல் வடிவங்கள்"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "எழுத்து பெரிய/சிறிய வேறுபாட்டைக் பொருட்படுத்தாத {code1} அல்லது {code2} போன்ற glob வடிவங்கள், தேவையற்ற கோப்புகள் சேர்வதைத் தடுக்கின்றன."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ஆவணங்களுக்கான விரைவு இணைப்புகள்"
+  },
+  "homepage.quicklinks.install": {
+    "message": "நிறுவல்"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "அமைப்பு"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "பயன்பாடு"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "இணக்கத்தன்மை"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ஆதரவு"
+  },
+  "homepage.quicklinks.license": {
+    "message": "உரிமம்"
+  },
+  "homepage.search.tip": {
+    "message": "குறிப்பு: ஆவணங்களைத் தேட {slash} அல்லது {ctrl}+{k} ஐ அழுத்தவும்."
+  },
+  "site.title": {
+    "message": "இணைப்புகளுடன் பதிலளி"
+  },
+  "site.tagline": {
+    "message": "தண்டர்பேர்டுக்கான செருகுநிரல்: பதில்களில் மூல இணைப்புகளைச் சேர்க்கவும்"
+  },
+  "navbar.title": {
+    "message": "இணைப்புகளுடன் பதிலளி"
+  },
+  "navbar.logo.alt": {
+    "message": "இணைப்புகளுடன் பதிலளி"
+  },
+  "navbar.docs": {
+    "message": "ஆவணங்கள்"
+  },
+  "navbar.support": {
+    "message": "ஆதரவு"
+  },
+  "navbar.license": {
+    "message": "உரிமம்"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ஆவணங்கள்"
+  },
+  "footer.link.home": {
+    "message": "முகப்பு"
+  },
+  "footer.link.install": {
+    "message": "நிறுவல்"
+  },
+  "footer.section.project": {
+    "message": "திட்டம்"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} இணைப்புகளுடன் பதிலளி"
+  }
+}

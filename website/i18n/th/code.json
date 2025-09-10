@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ตอบกลับพร้อมไฟล์แนบ"
+  },
+  "homepage.meta.description": {
+    "message": "ส่วนเสริม Thunderbird: ตอบกลับพร้อมไฟล์แนบเดิม"
+  },
+  "homepage.icon.alt": {
+    "message": "ไอคอน RWA"
+  },
+  "homepage.hero.title": {
+    "message": "ตอบกลับพร้อมไฟล์แนบ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "แนบไฟล์จากอีเมลต้นฉบับเมื่อคุณตอบกลับใน Thunderbird — อัตโนมัติหรือหลังยืนยันอย่างรวดเร็ว"
+  },
+  "homepage.cta.openDocs": {
+    "message": "เปิดเอกสาร"
+  },
+  "homepage.cta.quickstart": {
+    "message": "เริ่มต้นด่วน"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ติดตั้งจากส่วนเสริม"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "บริจาค"
+  },
+  "homepage.whatsNew.title": {
+    "message": "มีอะไรใหม่"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "อ่านการเปลี่ยนแปลงล่าสุดได้ใน {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "บันทึกการเปลี่ยนแปลง"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "อัตโนมัติหรือยืนยันก่อน"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "เลือกว่าจะให้เพิ่มไฟล์แนบอัตโนมัติ หรือแสดงกล่องยืนยันขนาดเล็กพร้อมปุ่มลัดที่สะดวก"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ขจัดไฟล์ซ้ำอย่างชาญฉลาด"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ไม่เพิ่มซ้ำกับไฟล์แนบที่มีอยู่ และหลีกเลี่ยงไฟล์ซ้ำตามชื่อไฟล์ ทำงานได้อย่างเรียบร้อยและคาดเดาได้"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "ข้าม SMIME และอินไลน์"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "จะไม่รวมลายเซ็น SMIME และรูปภาพแบบอินไลน์เพื่อให้การตอบกลับกระชับ"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "รูปแบบบัญชีดำ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "รูปแบบ glob ที่ไม่คำนึงถึงตัวพิมพ์ใหญ่เล็ก เช่น {code1} หรือ {code2} ช่วยป้องกันการเพิ่มไฟล์รก"
+  },
+  "homepage.quicklinks.title": {
+    "message": "ลิงก์ด่วนไปยังเอกสาร"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ติดตั้ง"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "การกำหนดค่า"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "การใช้งาน"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ความเข้ากันได้"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ช่วยเหลือ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "สัญญาอนุญาต"
+  },
+  "homepage.search.tip": {
+    "message": "เคล็ดลับ: กด {slash} หรือ {ctrl}+{k} เพื่อค้นหาในเอกสาร."
+  },
+  "site.title": {
+    "message": "ตอบกลับพร้อมไฟล์แนบ"
+  },
+  "site.tagline": {
+    "message": "ส่วนเสริม Thunderbird: ตอบกลับพร้อมไฟล์แนบเดิม"
+  },
+  "navbar.title": {
+    "message": "ตอบกลับพร้อมไฟล์แนบ"
+  },
+  "navbar.logo.alt": {
+    "message": "ตอบกลับพร้อมไฟล์แนบ"
+  },
+  "navbar.docs": {
+    "message": "เอกสาร"
+  },
+  "navbar.support": {
+    "message": "ช่วยเหลือ"
+  },
+  "navbar.license": {
+    "message": "สัญญาอนุญาต"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "เอกสาร"
+  },
+  "footer.link.home": {
+    "message": "หน้าแรก"
+  },
+  "footer.link.install": {
+    "message": "ติดตั้ง"
+  },
+  "footer.section.project": {
+    "message": "โครงการ"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ตอบกลับพร้อมไฟล์แนบ"
+  }
+}

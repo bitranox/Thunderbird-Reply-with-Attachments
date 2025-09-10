@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "منسلڪن سان جواب" },
-  "extDescription": { "message": "اي ميل جوابن ۾ اصلي منسلڪن کي پاڻمرادو شامل ڪري ٿو." },
-  "composeTitle": { "message": "منسلڪن سان جواب" },
-  "optionsTitle": { "message": "منسلڪن سان جواب — اختيار" },
-  "confirmTitle": { "message": "منسلڪن جي تصديق" },
-  "uiHeader": { "message": "منسلڪن سان جواب" },
-  "uiNoOptions": { "message": "في الحال ترتيب ڏيڻ لاءِ ڪوبه اختيار ناهي." },
-  "uiSupport": { "message": "ڇا هي ايڊ‑آن پسند آيو؟ معمولي مدد سان ساٿ ڏيو:" },
-  "uiDonate": { "message": "هاڻي مدد ڪريو" },
-  "uiGithubText": { "message": "بگ رپورٽ يا ٻين سوالن لاءِ مهرباني ڪري منهنجو" },
-  "uiGithubLinkLabel": { "message": "GitHub صفحو" },
-  "iconAlt": { "message": "Reply with Attachments آئيڪن" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "فائل نالن جي ڪاري فهرست (glob pattern)" },
-  "uiBlacklistHelp": {
-    "message": "جيڪا فائل هنن pattern مان ڪنهن سان به ملي ٿي سا ڪڏهن به پاڻمرادو شامل نه ٿيندي. هر سٽ ۾ هڪ pattern. مثال: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "منسلڪن سان جواب"
   },
-  "uiWarnBlacklistLabel": { "message": "جيڪڏهن ڪاري فهرست سبب منسلڪ خارج ٿين ته خبردار ڪر" },
-  "uiSave": { "message": "محفوظ" },
-  "uiSaving": { "message": "محفوظ پيو ٿئي…" },
-  "uiReset": { "message": "ڊي فالٽ تي موٽايو" },
-  "uiSaved": { "message": "محفوظ ٿي ويو." },
-  "uiResetDone": { "message": "موٽايو ويو." },
-  "uiConfirmHeader": { "message": "تصدیق" },
-  "uiConfirmLabel": { "message": "منسلڪ شامل ڪرڻ کان اڳ پڇو" },
+  "extDescription": {
+    "message": "ايميل جي جوابن ۾ اصلي منسلڪون پاڻمرادو شامل ڪري ٿو."
+  },
+  "composeTitle": {
+    "message": "منسلڪن سان جواب"
+  },
+  "optionsTitle": {
+    "message": "منسلڪن سان جواب — ترتيبون"
+  },
+  "confirmTitle": {
+    "message": "منسلڪن جي تصديق"
+  },
+  "uiHeader": {
+    "message": "منسلڪن سان جواب"
+  },
+  "uiNoOptions": {
+    "message": "هن وقت ترتيب ڏيڻ لاءِ ڪوبه اختيار موجود ناهي."
+  },
+  "uiSupport": {
+    "message": "ڇا اوهان کي هي ايڊ-آن پسند آهي؟ ننڍڙي تعاون سان منهنجي مدد ڪريو:"
+  },
+  "uiDonate": {
+    "message": "هاڻي چندو ڏيو"
+  },
+  "uiGithubText": {
+    "message": "بگ رپورٽن يا ٻين سوالن لاءِ، مهرباني ڪري منهنجي"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub صفحو"
+  },
+  "iconAlt": {
+    "message": "منسلڪن سان جواب جو آئڪن"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "فائل نالن جي بليڪ لسٽ (گلوب پيٽرنز)"
+  },
+  "uiBlacklistHelp": {
+    "message": "اهي فائلون جن جا نالا هنن مان ڪنهن به پيٽرن سان ملي وڃن، ڪڏهن به پاڻمرادو منسلڪ نه ڪيون وينديون. هر سٽ تي هڪ پيٽرن. مثال: *.png، smime.*، *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "جيڪڏهن منسلڪون بليڪ لسٽ سبب خارج ڪيون وڃن ته خبردار ڪريو"
+  },
+  "uiSave": {
+    "message": "محفوظ ڪريو"
+  },
+  "uiSaving": {
+    "message": "محفوظ ڪيو پيو وڃي…"
+  },
+  "uiReset": {
+    "message": "ڊي فالٽ تي ري سيٽ ڪريو"
+  },
+  "uiSaved": {
+    "message": "محفوظ ٿي ويو."
+  },
+  "uiResetDone": {
+    "message": "ري سيٽ ٿي ويو."
+  },
+  "uiConfirmHeader": {
+    "message": "تصديق"
+  },
+  "uiConfirmLabel": {
+    "message": "منسلڪون شامل ڪرڻ کان اڳ پڇو"
+  },
   "uiConfirmHelp": {
-    "message": "هڪ ننڍو تصديق dialog رڳو تڏهن ظاهر ٿيندو جڏهن واقعي منسلڪ شامل ٿيندا. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
+    "message": "هڪ ننڍڙو تصديقي ڊائلاگ تڏهن ئي ظاهر ٿيندو جڏهن واقعي منسلڪون شامل ڪبيون. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
   },
   "confirmAddOne": {
-    "message": "منسلڪ شامل ڪجي: $1؟",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "منسلڪ شامل ڪجن ($1): $2$3؟",
+    "message": "منسلڪ شامل ڪريو: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 وڌيڪ" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "ها" },
-  "confirmNo": { "message": "نه" },
-  "warnBlacklistTitle": { "message": "ڪاري فهرست سبب خارج" },
-  "warnBlacklistIntro": { "message": "هيٺيان فائلون پاڻمرادو شامل نه ٿينديون:" },
-  "warnColFile": { "message": "فائل" },
-  "warnColPattern": { "message": "Pattern" },
-  "warnOk": { "message": "ٺيڪ" },
-  "uiConfirmDefaultHeader": { "message": "ڊي فالٽ جواب" },
-  "uiConfirmDefaultYes": { "message": "ها" },
-  "uiConfirmDefaultNo": { "message": "نه" },
+  "confirmAddMany": {
+    "message": "منسلڪون شامل ڪريو ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "ها"
+  },
+  "confirmNo": {
+    "message": "نه"
+  },
+  "warnBlacklistTitle": {
+    "message": "بليڪ لسٽ موجب خارج ڪيو ويو"
+  },
+  "warnBlacklistIntro": {
+    "message": "هيٺيان فائلون پاڻمرادو منسلڪ نه ڪيون وينديون:"
+  },
+  "warnColFile": {
+    "message": "فائل"
+  },
+  "warnColPattern": {
+    "message": "پيٽرن"
+  },
+  "warnOk": {
+    "message": "ٺيڪ"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "ڊي فالٽ جواب"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "ها"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "نه"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

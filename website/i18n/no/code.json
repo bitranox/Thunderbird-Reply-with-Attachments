@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-tillegg: Svar som inkluderer originale vedlegg"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-ikon"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Ta med originale vedlegg når du svarer i Thunderbird — automatisk eller etter en rask bekreftelse."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Åpne dokumentasjonen"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Kom i gang"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installer fra Tillegg"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Doner"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Hva er nytt"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Les de siste endringene i {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Endringslogg"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatisk eller bekreft først"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Velg mellom automatisk tillegg av vedlegg eller en liten bekreftelsesdialog med praktiske hurtigtaster."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Smart deduplisering"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Tar hensyn til eksisterende vedlegg og unngår duplikater basert på filnavn – ryddig og forutsigbart."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Hopp over SMIME og innebygde bilder"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME-signaturer og innebygde bilder utelates for å holde svarene kompakte."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Svartelistemønstre"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob-mønstre som ikke skiller mellom store og små bokstaver, som {code1} eller {code2}, hindrer at støyende filer legges til."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hurtiglenker til dokumentasjon"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installasjon"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasjon"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Bruk"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilitet"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Brukerstøtte"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisens"
+  },
+  "homepage.search.tip": {
+    "message": "Tips: Trykk {slash} eller {ctrl}+{k} for å søke i dokumentasjonen."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-tillegg: Svar som inkluderer originale vedlegg"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Dokumentasjon"
+  },
+  "navbar.support": {
+    "message": "Brukerstøtte"
+  },
+  "navbar.license": {
+    "message": "Lisens"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentasjon"
+  },
+  "footer.link.home": {
+    "message": "Hjem"
+  },
+  "footer.link.install": {
+    "message": "Installasjon"
+  },
+  "footer.section.project": {
+    "message": "Prosjekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

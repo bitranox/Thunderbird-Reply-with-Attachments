@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird кошумчасы: жоопто баштапкы тиркемелерди кошуу"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA белгиси"
+  },
+  "homepage.hero.title": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird'де жооп бергенде баштапкы тиркемелерди кошуңуз — автоматтык түрдө же кыска тастыктоодон кийин."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Документацияны ачуу"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Ыкчам баштоо"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Кошумчалардан орнотуу"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Колдоо көрсөтүү"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Жаңылыктар"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Акыркы өзгөртүүлөрдү {changelog} ичинен окуңуз."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Өзгөртүүлөр журналы"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автоматтык же алгач тастыктоо"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Автоматтык кошууну же ыңгайлуу баскыч айкалыштары бар чакан тастыктоо диалог терезесин тандаңыз."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Акылдуу дубликаттарды жок кылуу"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Бар тиркемелерди эске алат жана файл аттары боюнча дубликаттарды болтурбайт — тартиптүү жана алдын ала божомолдоого оңой."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME жана inline'ды өткөрүп кетүү"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Жоопторду жеңил кылуу үчүн SMIME колтамгалары жана inline сүрөттөр кошулбайт."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Кара тизме үлгүлөрү"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Тамга чоң-кичинесине сезимсиз glob үлгүлөрү, мисалы {code1} же {code2}, керексиз файлдардын кошулушуна жол бербейт."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Документацияга ыкчам шилтемелер"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Орнотуу"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Жөндөө"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Колдонуу"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Шайкештик"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Колдоо"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Лицензия"
+  },
+  "homepage.search.tip": {
+    "message": "Кеңеш: документациядан издөө үчүн {slash} же {ctrl}+{k} басыңыз."
+  },
+  "site.title": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "site.tagline": {
+    "message": "Thunderbird кошумчасы: жоопто баштапкы тиркемелерди кошуу"
+  },
+  "navbar.title": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "navbar.logo.alt": {
+    "message": "Тиркемелер менен жооп берүү"
+  },
+  "navbar.docs": {
+    "message": "Документация"
+  },
+  "navbar.support": {
+    "message": "Колдоо"
+  },
+  "navbar.license": {
+    "message": "Лицензия"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Документация"
+  },
+  "footer.link.home": {
+    "message": "Башкы бет"
+  },
+  "footer.link.install": {
+    "message": "Орнотуу"
+  },
+  "footer.section.project": {
+    "message": "Долбоор"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Тиркемелер менен жооп берүү"
+  }
+}

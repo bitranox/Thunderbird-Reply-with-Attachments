@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "መልሲ ምስ ተያያዥ ፋይላት"
+  },
+  "homepage.meta.description": {
+    "message": "Add-on ናይ Thunderbird: መልሲ ኣብሪ ናይ መጀመርታ ተያያዥ ፋይላት ዝካትት"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA ኣይኮን"
+  },
+  "homepage.hero.title": {
+    "message": "መልሲ ምስ ተያያዥ ፋይላት"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ኣብ Thunderbird እትመልስ እንተኾይንካ ናይ መጀመርታ ተያያዥ ፋይላት ኣካትት — ኣውቶማቲካዊ ወይ ድሕሪ ቅልጡፍ ርግጋጽ."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ሰነድታት ክፈት"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ቅልጡፍ ጀመር"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ካብ Add‑ons ኢንስታል"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "ልገሳ ሃብ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "ሓድሽ እንታይ ኣሎ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "ናይ ቅሉል ለውጥታት ኣብ {changelog} ኣንብብ."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "መዝገብ ለውጥ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ኣውቶማቲካዊ ወይ ቀዳም ምርግጋጽ"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ካብ ኣውቶማቲካዊ ምካታት ወይ ብተስሓቢ ኪቦርድ ክፍተታት ዝተራኸበ ቅንዕ ዳያሎግ ርግጋጽ መርጽ."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ጥበባዊ ምከላከል ድገማት"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ዝነበሩ ተያያዥ ፋይላት ይክትል እና ብስም ፋይል ድገማት ይቆልዕ፤ ጽዑርን ተገመተሉን እዩ."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME እና ኢንላይን ኣልፍ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ፊርማታት SMIMEን ኢንላይን ምስልታትን ንመልሲ ንምቅናስ ኣይተካተቱን."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ፓተርናት ብላክሊስት"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "ከም {code1} ወይ {code2} ዝመሳሰሉ ካፒታል/ትንንሽ ቁምፊ ልዩነት ዘይምርካብ ናይ glob ፓተርናት ኣዘውትር ፋይላት ምካታት ይከልክሉ."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ቅልጡፍ ሊንካት ሰነድታት"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ኢንስታል"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ቅንብሮ"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "መጠቐም"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ተስማሚነት"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ድገት"
+  },
+  "homepage.quicklinks.license": {
+    "message": "ፈቃድ"
+  },
+  "homepage.search.tip": {
+    "message": "ምክር: ሰነድታት ንምድላይ {slash} ወይ {ctrl}+{k} ጸንቕ."
+  },
+  "site.title": {
+    "message": "መልሲ ምስ ተያያዥ ፋይላት"
+  },
+  "site.tagline": {
+    "message": "Add-on ናይ Thunderbird: መልሲ ኣብሪ ናይ መጀመርታ ተያያዥ ፋይላት ዝካትት"
+  },
+  "navbar.title": {
+    "message": "መልሲ ምስ ተያያዥ ፋይላት"
+  },
+  "navbar.logo.alt": {
+    "message": "መልሲ ምስ ተያያዥ ፋይላት"
+  },
+  "navbar.docs": {
+    "message": "ሰነድታት"
+  },
+  "navbar.support": {
+    "message": "ድገት"
+  },
+  "navbar.license": {
+    "message": "ፈቃድ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ሰነድታት"
+  },
+  "footer.link.home": {
+    "message": "መእተዊ"
+  },
+  "footer.link.install": {
+    "message": "ኢንስታል"
+  },
+  "footer.section.project": {
+    "message": "ፕሮጀክት"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} መልሲ ምስ ተያያዥ ፋይላት"
+  }
+}

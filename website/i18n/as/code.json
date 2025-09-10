@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird এড-অন: মূল সংলগ্ন ফাইলসমূহসহ উত্তৰ"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA আইকন"
+  },
+  "homepage.hero.title": {
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird-ত উত্তৰ দিয়োঁতে মূল সংলগ্ন ফাইলসমূহ অন্তৰ্ভুক্ত কৰক — স্বয়ংক্ৰিয়ভাৱে বা সোনকালে নিশ্চিত কৰাৰ পিছত।"
+  },
+  "homepage.cta.openDocs": {
+    "message": "দস্তাবেজ খোলক"
+  },
+  "homepage.cta.quickstart": {
+    "message": "দ্ৰুত আৰম্ভণি"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "এড-অনৰ পৰা সংস্থাপন কৰক"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "দান কৰক"
+  },
+  "homepage.whatsNew.title": {
+    "message": "নতুন কি"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog}-ত শেহতীয়া পৰিবর্তনসমূহ পঢ়ক।"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "পৰিবর্তনৰ তালিকা"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "স্বয়ংক্ৰিয় বা প্ৰথমে নিশ্চিত"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "স্বয়ংক্ৰিয়ভাৱে যোগ কৰা অথবা সুবিধাজনক কীবোৰ্ড চৰ্টকাট থকা এখন সৰু নিশ্চিতকৰণ ডাইলগৰ মাজত বাছনি কৰক।"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "বুদ্ধিমান ডুপ্লিকেট অপসাৰণ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "ই ইতিমধ্যে থকা সংলগ্নসমূহক সন্মান কৰে আৰু ফাইলনামৰ আধাৰত ডুপ্লিকেট এৰাই চলে — পৰিষ্কাৰ আৰু অনুমানযোগ্য।"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME আৰু ইনলাইন বাদ"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "উত্তৰসমূহ সৰল ৰাখিবলৈ SMIME স্বাক্ষৰ আৰু ইনলাইন ছবিসমূহ বাদ দিয়া হয়।"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "ব্লেকলিষ্ট পেটাৰ্ন"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "কেছ-অসংবেদনশীল glob পেটাৰ্নসমূহ, যেনে {code1} বা {code2}, অপ্ৰয়োজনীয় ফাইল যোগ হোৱাৰ পৰা বাধা দিয়ে।"
+  },
+  "homepage.quicklinks.title": {
+    "message": "দস্তাবেজৰ দ্ৰুত লিংক"
+  },
+  "homepage.quicklinks.install": {
+    "message": "সংস্থাপন"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "বিন্যাস"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ব্যৱহাৰ"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "সামঞ্জস্যতা"
+  },
+  "homepage.quicklinks.support": {
+    "message": "সহায়তা"
+  },
+  "homepage.quicklinks.license": {
+    "message": "অনুজ্ঞাপত্ৰ"
+  },
+  "homepage.search.tip": {
+    "message": "টিপ: দস্তাবেজ সন্ধান কৰিবলৈ {slash} বা {ctrl}+{k} টিপক।"
+  },
+  "site.title": {
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
+  },
+  "site.tagline": {
+    "message": "Thunderbird এড-অন: মূল সংলগ্ন ফাইলসমূহসহ উত্তৰ"
+  },
+  "navbar.title": {
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
+  },
+  "navbar.logo.alt": {
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
+  },
+  "navbar.docs": {
+    "message": "দস্তাবেজ"
+  },
+  "navbar.support": {
+    "message": "সহায়তা"
+  },
+  "navbar.license": {
+    "message": "অনুজ্ঞাপত্ৰ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "দস্তাবেজ"
+  },
+  "footer.link.home": {
+    "message": "মূলপৃষ্ঠা"
+  },
+  "footer.link.install": {
+    "message": "সংস্থাপন"
+  },
+  "footer.section.project": {
+    "message": "প্ৰকল্প"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} সংলগ্ন ফাইলসহ উত্তৰ"
+  }
+}

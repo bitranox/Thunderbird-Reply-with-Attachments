@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  },
+  "homepage.meta.description": {
+    "message": "កម្មវិធីបន្ថែម Thunderbird៖ ឆ្លើយតបរួមបញ្ចូលឯកសារភ្ជាប់ដើម"
+  },
+  "homepage.icon.alt": {
+    "message": "រូបតំណាង RWA"
+  },
+  "homepage.hero.title": {
+    "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  },
+  "homepage.hero.subtitle": {
+    "message": "បញ្ចូលឯកសារភ្ជាប់ដើមនៅពេលឆ្លើយតបនៅក្នុង Thunderbird — ដោយស្វ័យប្រវត្តិ ឬបន្ទាប់ពីការបញ្ជាក់ទាន់ចិត្តមួយ។"
+  },
+  "homepage.cta.openDocs": {
+    "message": "បើកឯកសារណែនាំ"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ការចាប់ផ្តើមរហ័ស"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "ដំឡើងពីកម្មវិធីបន្ថែម"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "បរិច្ចាគ"
+  },
+  "homepage.whatsNew.title": {
+    "message": "អ្វីថ្មី"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "អានការផ្លាស់ប្តូរចុងក្រោយបំផុតនៅក្នុង {changelog}។"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "កំណត់ហេតុ​ផ្លាស់ប្តូរ"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ស្វ័យប្រវត្តិ ឬ បញ្ជាក់ជាមុន"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ជ្រើសរើសរវាងការបន្ថែមដោយស្វ័យប្រវត្តិ ឬប្រអប់បញ្ជាក់តូចមួយ ជាមួយផ្លូវកាត់ក្ដារចុចដែលងាយស្រួល។"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "ការលុបស្ទួនឆ្លាតវៃ"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "គោរពឯកសារភ្ជាប់ដែលមានស្រាប់ និងជៀសវាងឯកសារស្ទួនតាមឈ្មោះឯកសារ ដោយស្អាត ហើយអាចទាយទុកជាមុនបាន។"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "រំលង SMIME និង Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "ហត្ថលេខា SMIME និងរូបភាពបញ្ចូលក្នុងខ្លឹមសារ មិនត្រូវបានរួមបញ្ចូល ដើម្បីរក្សាអ៊ីមែលឆ្លើយតបឱ្យស្រាល។"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "លំនាំបញ្ជីខ្មៅ"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "លំនាំ glob មិនប្រកាន់អក្សរធំតូច ដូចជា {code1} ឬ {code2} អាចទប់ស្កាត់ការបន្ថែមឯកសាររំខាន។"
+  },
+  "homepage.quicklinks.title": {
+    "message": "តំណភ្ជាប់រហ័សទៅឯកសារណែនាំ"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ដំឡើង"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "ការកំណត់"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "ការប្រើប្រាស់"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "ភាពឆបគ្នា"
+  },
+  "homepage.quicklinks.support": {
+    "message": "ការគាំទ្រ"
+  },
+  "homepage.quicklinks.license": {
+    "message": "អាជ្ញាបណ្ណ"
+  },
+  "homepage.search.tip": {
+    "message": "គន្លឹះ៖ ចុច {slash} ឬ {ctrl}+{k} ដើម្បីស្វែងរកនៅក្នុងឯកសារណែនាំ។"
+  },
+  "site.title": {
+    "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  },
+  "site.tagline": {
+    "message": "កម្មវិធីបន្ថែម Thunderbird៖ ឆ្លើយតបរួមបញ្ចូលឯកសារភ្ជាប់ដើម"
+  },
+  "navbar.title": {
+    "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  },
+  "navbar.logo.alt": {
+    "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  },
+  "navbar.docs": {
+    "message": "ឯកសារណែនាំ"
+  },
+  "navbar.support": {
+    "message": "ការគាំទ្រ"
+  },
+  "navbar.license": {
+    "message": "អាជ្ញាបណ្ណ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ឯកសារណែនាំ"
+  },
+  "footer.link.home": {
+    "message": "ទំព័រដើម"
+  },
+  "footer.link.install": {
+    "message": "ដំឡើង"
+  },
+  "footer.section.project": {
+    "message": "គម្រោង"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+  }
+}

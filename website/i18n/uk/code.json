@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Додаток для Thunderbird: відповідь із оригінальними вкладеннями"
+  },
+  "homepage.icon.alt": {
+    "message": "Піктограма RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Додавайте оригінальні вкладення у відповідях у Thunderbird — автоматично або після швидкого підтвердження."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Відкрити документацію"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Швидкий старт"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Встановити з каталогу додатків"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Підтримати"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Що нового"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Прочитайте останні зміни у {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Журнал змін"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Автоматично або з попереднім підтвердженням"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Обирайте між автоматичним додаванням або невеликим діалогом підтвердження зі зручними гарячими клавішами."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Розумне усунення дублікатів"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Враховує наявні вкладення та уникає дублювання за назвою файлу — чисто й передбачувано."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Пропускати SMIME і вбудовані зображення"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Підписи SMIME та вбудовані зображення не додаються, щоб відповіді залишалися лаконічними."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Шаблони чорного списку"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Нечутливі до регістру шаблони glob, як‑от {code1} або {code2}, запобігають додаванню зайвих файлів."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Швидкі посилання на документацію"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Встановлення"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Налаштування"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Використання"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Сумісність"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Підтримка"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Ліцензія"
+  },
+  "homepage.search.tip": {
+    "message": "Порада: натисніть {slash} або {ctrl}+{k}, щоб шукати в документації."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Додаток для Thunderbird: відповідь із оригінальними вкладеннями"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Документація"
+  },
+  "navbar.support": {
+    "message": "Підтримка"
+  },
+  "navbar.license": {
+    "message": "Ліцензія"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Документація"
+  },
+  "footer.link.home": {
+    "message": "Головна"
+  },
+  "footer.link.install": {
+    "message": "Встановлення"
+  },
+  "footer.section.project": {
+    "message": "Проєкт"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Odpoveď s prílohami" },
-  "extDescription": { "message": "Automaticky pridáva pôvodné prílohy do e‑mailových odpovedí." },
-  "composeTitle": { "message": "Odpoveď s prílohami" },
-  "optionsTitle": { "message": "Odpoveď s prílohami — Nastavenia" },
-  "confirmTitle": { "message": "Potvrdiť prílohy" },
-  "uiHeader": { "message": "Odpoveď s prílohami" },
-  "uiNoOptions": { "message": "Momentálne nie sú žiadne možnosti na konfiguráciu." },
-  "uiSupport": { "message": "Páči sa vám toto rozšírenie? Podporte ma malým príspevkom:" },
-  "uiDonate": { "message": "Prispejte teraz" },
-  "uiGithubText": { "message": "Pre hlásenia chýb alebo iné otázky navštívte" },
-  "uiGithubLinkLabel": { "message": "moju stránku GitHub" },
-  "iconAlt": { "message": "Ikona Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Čierna listina názvov súborov (glob vzory)" },
-  "uiBlacklistHelp": {
-    "message": "Súbory, ktorých názvy zodpovedajú niektorému z týchto vzorov, sa nikdy nebudú automaticky pripájať. Jeden vzor na riadok. Príklady: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Odpovedať s prílohami"
   },
-  "uiWarnBlacklistLabel": { "message": "Upozorniť, ak prílohy vylúčila čierna listina" },
-  "uiSave": { "message": "Uložiť" },
-  "uiSaving": { "message": "Ukladá sa…" },
-  "uiReset": { "message": "Obnoviť predvolené" },
-  "uiSaved": { "message": "Uložené." },
-  "uiResetDone": { "message": "Obnovené." },
-  "uiConfirmHeader": { "message": "Potvrdenie" },
-  "uiConfirmLabel": { "message": "Pýtať sa pred pridaním príloh" },
+  "extDescription": {
+    "message": "Automaticky zahrnúť pôvodné prílohy do odpovedí na e-maily."
+  },
+  "composeTitle": {
+    "message": "Odpovedať s prílohami"
+  },
+  "optionsTitle": {
+    "message": "Odpovedať s prílohami — Možnosti"
+  },
+  "confirmTitle": {
+    "message": "Potvrdiť prílohy"
+  },
+  "uiHeader": {
+    "message": "Odpovedať s prílohami"
+  },
+  "uiNoOptions": {
+    "message": "Momentálne nie sú k dispozícii žiadne možnosti konfigurácie."
+  },
+  "uiSupport": {
+    "message": "Páči sa vám toto rozšírenie? Podporte ma malým príspevkom:"
+  },
+  "uiDonate": {
+    "message": "Prispejte teraz"
+  },
+  "uiGithubText": {
+    "message": "Ak chcete nahlásiť chyby alebo máte iné otázky, navštívte moju"
+  },
+  "uiGithubLinkLabel": {
+    "message": "stránku na GitHube"
+  },
+  "iconAlt": {
+    "message": "Ikona Odpovedať s prílohami"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Čierna listina názvov súborov (glob vzory)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Súbory, ktorých názvy zodpovedajú niektorému z týchto vzorov, nebudú nikdy automaticky priložené. Jeden vzor na riadok. Príklady: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Upozorniť, ak sú prílohy vylúčené čiernou listinou"
+  },
+  "uiSave": {
+    "message": "Uložiť"
+  },
+  "uiSaving": {
+    "message": "Ukladá sa…"
+  },
+  "uiReset": {
+    "message": "Obnoviť predvolené nastavenia"
+  },
+  "uiSaved": {
+    "message": "Uložené."
+  },
+  "uiResetDone": {
+    "message": "Obnovené."
+  },
+  "uiConfirmHeader": {
+    "message": "Potvrdenie"
+  },
+  "uiConfirmLabel": {
+    "message": "Pýtať sa pred pridaním príloh"
+  },
   "uiConfirmHelp": {
-    "message": "Malé potvrdzovacie okno sa zobrazí len vtedy, keď by sa skutočne pridávali prílohy. Klávesnica: Y alebo J = Áno; N alebo Esc = Nie."
+    "message": "Malé potvrdzovacie okno sa zobrazí len vtedy, keď by sa skutočne pridali prílohy. Klávesnica: Y alebo J = Áno; N alebo Esc = Nie."
   },
   "confirmAddOne": {
     "message": "Pridať prílohu: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Pridať prílohy ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ďalšie" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Áno" },
-  "confirmNo": { "message": "Nie" },
-  "warnBlacklistTitle": { "message": "Vylúčené čiernou listinou" },
-  "warnBlacklistIntro": { "message": "Nasledujúce súbory nebudú automaticky pripojené:" },
-  "warnColFile": { "message": "Súbor" },
-  "warnColPattern": { "message": "Vzor" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Predvolená odpoveď" },
-  "uiConfirmDefaultYes": { "message": "Áno" },
-  "uiConfirmDefaultNo": { "message": "Nie" },
+  "confirmYes": {
+    "message": "Áno"
+  },
+  "confirmNo": {
+    "message": "Nie"
+  },
+  "warnBlacklistTitle": {
+    "message": "Vylúčené čiernou listinou"
+  },
+  "warnBlacklistIntro": {
+    "message": "Nasledujúce súbory nebudú automaticky priložené:"
+  },
+  "warnColFile": {
+    "message": "Súbor"
+  },
+  "warnColPattern": {
+    "message": "Vzor"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Predvolená odpoveď"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Áno"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nie"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

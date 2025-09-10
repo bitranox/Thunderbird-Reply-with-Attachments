@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Odgovor s prilogami"
+  },
+  "homepage.meta.description": {
+    "message": "Dodatek za Thunderbird: odgovor z vključenimi izvirnimi prilogami"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikona RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Odgovor s prilogami"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Pri odgovarjanju v Thunderbirdu vključi izvirne priloge — samodejno ali po hitri potrditvi."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Odpri dokumentacijo"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Hiter začetek"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Namesti iz dodatkov"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Prispevaj"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Kaj je novega"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Preberite najnovejše spremembe v {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Dnevnik sprememb"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Samodejno ali s predhodno potrditvijo"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Izbirajte med samodejnim dodajanjem ali majhnim potrditvenim oknom s priročnimi tipkovnimi bližnjicami."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Pametna deduplikacija"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Upošteva obstoječe priloge in glede na ime datoteke prepreči dvojnike — urejeno in predvidljivo."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Preskoči S/MIME in vdelano vsebino"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Podpisi S/MIME in vdelane slike so izključeni, da so odgovori lahki."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Vzorci črnega seznama"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Na velikost črk neobčutljivi vzorci z nadomestnimi znaki, kot sta {code1} ali {code2}, preprečujejo dodajanje nepotrebnih datotek."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hitre povezave do dokumentacije"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Namestitev"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Nastavitve"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Uporaba"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Združljivost"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Podpora"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licenca"
+  },
+  "homepage.search.tip": {
+    "message": "Namig: Za iskanje po dokumentaciji pritisnite {slash} ali {ctrl}+{k}."
+  },
+  "site.title": {
+    "message": "Odgovor s prilogami"
+  },
+  "site.tagline": {
+    "message": "Dodatek za Thunderbird: odgovor z vključenimi izvirnimi prilogami"
+  },
+  "navbar.title": {
+    "message": "Odgovor s prilogami"
+  },
+  "navbar.logo.alt": {
+    "message": "Odgovor s prilogami"
+  },
+  "navbar.docs": {
+    "message": "Dokumentacija"
+  },
+  "navbar.support": {
+    "message": "Podpora"
+  },
+  "navbar.license": {
+    "message": "Licenca"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentacija"
+  },
+  "footer.link.home": {
+    "message": "Domov"
+  },
+  "footer.link.install": {
+    "message": "Namestitev"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Odgovor s prilogami"
+  }
+}

@@ -4,7 +4,7 @@
  * Intent: Enter, j/y confirmation and Tab focus cycling behaviors.
  */
 /* @vitest-environment jsdom */
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, beforeEach, vi } from 'vitest';
 
 function qs(sel) {
   return /** @type {HTMLElement} */ (document.querySelector(sel));

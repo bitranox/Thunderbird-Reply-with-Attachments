@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Development",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/docs/development.md",
   "sourceDirName": ".",
   "slug": "/development",

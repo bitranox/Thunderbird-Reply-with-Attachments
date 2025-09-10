@@ -14,7 +14,7 @@ const sidebars = {
     'support',
     'privacy',
     'donation',
-    'licence',
+    'license',
     'changelog',
   ],
 };

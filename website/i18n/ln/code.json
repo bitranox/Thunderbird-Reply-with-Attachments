@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Extension ya Thunderbird: Eyano elongo na ba fisyé bakangami ya liboso"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikɔne RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Kokɔtisa ba fisyé bakangami ya liboso ntango ozongisa sango na Thunderbird — otomatikɛ to sima ya konfirmasyo ya noki."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Fungola Dokimantasion"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Mbandeli ya noki"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instala wuta na Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Pesá lisungi"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Makambo ya sika"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Tángá mbongwana ya sika na {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Etalisi ya mbongwana"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatikɛ to Konfirmá liboso"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Poná kati ya kobakisa otomatikɛ to diyaloge ya konfirmasyo moke elongo na ba rakursi ya klavir ya malonga."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Kolimwisa ba doublon na mayele"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Esimbaka ba fisyé bakangami oyo ezalaka déjà mpe eboyaka ba doublon kolanda nkombo ya fisyé; pɛto mpe ya kolandisama."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Lɛka SMIME mpe bililingi ya kati"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Ba sinyatire ya SMIME mpe bililingi ya kati (inline) babwakami mpo biyanoli ezala pɛto mpe pete."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Bamotifi ya Blacklist"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Bamotifi ya glob oyo etalelaka minúscule/majúscule te, lokola {code1} to {code2}, ekangaka kobakisa ba fisyé ya mpamba."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Ba lien ya noki ya dokimantasion"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instala"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfigurasyo"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Bosaleli"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilite"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Lisungi"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisansɛ"
+  },
+  "homepage.search.tip": {
+    "message": "Toli: Finá {slash} to {ctrl}+{k} mpo na koluka na dokimantasion."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Extension ya Thunderbird: Eyano elongo na ba fisyé bakangami ya liboso"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Dokimantasion"
+  },
+  "navbar.support": {
+    "message": "Lisungi"
+  },
+  "navbar.license": {
+    "message": "Lisansɛ"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokimantasion"
+  },
+  "footer.link.home": {
+    "message": "Ndako"
+  },
+  "footer.link.install": {
+    "message": "Instala"
+  },
+  "footer.section.project": {
+    "message": "Proje"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

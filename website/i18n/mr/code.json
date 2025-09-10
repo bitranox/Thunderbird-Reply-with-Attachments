@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "संलग्नकांसह उत्तर"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird अ‍ॅड‑ऑन: उत्तर देताना मूळ संलग्नके समाविष्ट करा"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA चिन्ह"
+  },
+  "homepage.hero.title": {
+    "message": "संलग्नकांसह उत्तर"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird मध्ये उत्तर देताना मूळ संलग्नके समाविष्ट करा — स्वयंचलितपणे किंवा द्रुत पुष्टीकरणानंतर."
+  },
+  "homepage.cta.openDocs": {
+    "message": "दस्तऐवज उघडा"
+  },
+  "homepage.cta.quickstart": {
+    "message": "द्रुत प्रारंभ"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "अ‍ॅड‑ऑन्समधून प्रतिष्ठापित करा"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "देणगी द्या"
+  },
+  "homepage.whatsNew.title": {
+    "message": "काय नवीन"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "नवीनतम बदल {changelog} मध्ये वाचा."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "बदलनोंद"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "स्वयंचलित किंवा आधी पुष्टीकरण"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "स्वयंचलित जोडणी किंवा सोयीचे कीबोर्ड शॉर्टकट असलेली छोटी पुष्टीकरण संवादपेटी — यापैकी निवडा."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "हुशार डुप्लिकेट टाळणी"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "अस्तित्वात असलेल्या संलग्नकांचा विचार करून, फाईलनावावरून डुप्लिकेट टाळते — स्वच्छ आणि अंदाज करता येण्याजोगे."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME आणि इनलाइन वगळा"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "उत्तर हलके ठेवण्यासाठी SMIME स्वाक्षऱ्या आणि इनलाइन प्रतिमा वगळल्या जातात."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "काळ्या यादीचे नमुने"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "केस‑निरपेक्ष ग्लोब नमुने, उदा. {code1} किंवा {code2}, अनावश्यक फाईली जोडण्यापासून प्रतिबंध करतात."
+  },
+  "homepage.quicklinks.title": {
+    "message": "दस्तऐवजांचे झटपट दुवे"
+  },
+  "homepage.quicklinks.install": {
+    "message": "प्रतिष्ठापन"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "संयोजना"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "वापर"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "सुसंगतता"
+  },
+  "homepage.quicklinks.support": {
+    "message": "समर्थन"
+  },
+  "homepage.quicklinks.license": {
+    "message": "परवाना"
+  },
+  "homepage.search.tip": {
+    "message": "टीप: दस्तऐवज शोधण्यासाठी {slash} किंवा {ctrl}+{k} दाबा."
+  },
+  "site.title": {
+    "message": "संलग्नकांसह उत्तर"
+  },
+  "site.tagline": {
+    "message": "Thunderbird अ‍ॅड‑ऑन: उत्तर देताना मूळ संलग्नके समाविष्ट करा"
+  },
+  "navbar.title": {
+    "message": "संलग्नकांसह उत्तर"
+  },
+  "navbar.logo.alt": {
+    "message": "संलग्नकांसह उत्तर"
+  },
+  "navbar.docs": {
+    "message": "दस्तऐवज"
+  },
+  "navbar.support": {
+    "message": "समर्थन"
+  },
+  "navbar.license": {
+    "message": "परवाना"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "दस्तऐवज"
+  },
+  "footer.link.home": {
+    "message": "मुख्यपृष्ठ"
+  },
+  "footer.link.install": {
+    "message": "प्रतिष्ठापन"
+  },
+  "footer.section.project": {
+    "message": "प्रकल्प"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} संलग्नकांसह उत्तर"
+  }
+}

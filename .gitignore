@@ -12,14 +12,14 @@
 # APP
 # ====================================
 website/build/
-website/build-linkcheck/
 website/.docusaurus/
 website/node_modules/
 node_modules/
-gh-pages-worktree/
-translation.log
-.gh-pages/
-.ghpages-tmprepo/
+web-local-preview/
+translation_app.log
+translation_web.log
+tmp_github_web_pages/
+tmp_linkcheck_web_pages/
 .eslintcache
 .vitest/
 npm-debug.log*
@@ -27,6 +27,8 @@ yarn-error.log*
 pnpm-debug.log*
 .env.*
 !.env.example
+todo.md
+tmp_*
 
 # ====================================
 # IDEs & Editors
@@ -36,8 +38,6 @@ pnpm-debug.log*
 # VS Code workspace settings
 .vscode/
 *.code-workspace
-todo.md
-backup/
 
 # ====================================
 # Python bytecode & caches
@@ -152,9 +152,6 @@ celerybeat-schedule
 # Windows
 Thumbs.db
 ehthumbs.db
-
-node_modules/
-coverage/
 
 # Archives
 *.zip

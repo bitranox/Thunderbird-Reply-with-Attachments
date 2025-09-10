@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "带附件回复"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird 附加组件：回复时包含原始附件"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA 图标"
+  },
+  "homepage.hero.title": {
+    "message": "带附件回复"
+  },
+  "homepage.hero.subtitle": {
+    "message": "在 Thunderbird 中回复时包含原始附件——可自动添加，或在快速确认后添加。"
+  },
+  "homepage.cta.openDocs": {
+    "message": "打开文档"
+  },
+  "homepage.cta.quickstart": {
+    "message": "快速开始"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "从附加组件站点安装"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "捐赠"
+  },
+  "homepage.whatsNew.title": {
+    "message": "最新动态"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "在 {changelog} 中阅读最新更改。"
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "更新日志"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "自动或先确认"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "可选择自动添加，或弹出一个小型确认对话框，并支持便捷的快捷键。"
+  },
+  "homepage.features.dedupe.title": {
+    "message": "智能去重"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "尊重已有附件，并按文件名避免重复，简洁且可预测。"
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "跳过 SMIME 和内联"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "为保持回复精简，会排除 SMIME 签名和内联图片。"
+  },
+  "homepage.features.blacklist.title": {
+    "message": "黑名单规则"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "不区分大小写的通配模式（如 {code1} 或 {code2}）可阻止添加噪声文件。"
+  },
+  "homepage.quicklinks.title": {
+    "message": "文档快速链接"
+  },
+  "homepage.quicklinks.install": {
+    "message": "安装"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "配置"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "使用"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "兼容性"
+  },
+  "homepage.quicklinks.support": {
+    "message": "支持"
+  },
+  "homepage.quicklinks.license": {
+    "message": "许可协议"
+  },
+  "homepage.search.tip": {
+    "message": "提示：按 {slash} 或 {ctrl}+{k} 搜索文档。"
+  },
+  "site.title": {
+    "message": "带附件回复"
+  },
+  "site.tagline": {
+    "message": "Thunderbird 附加组件：回复时包含原始附件"
+  },
+  "navbar.title": {
+    "message": "带附件回复"
+  },
+  "navbar.logo.alt": {
+    "message": "带附件回复"
+  },
+  "navbar.docs": {
+    "message": "文档"
+  },
+  "navbar.support": {
+    "message": "支持"
+  },
+  "navbar.license": {
+    "message": "许可协议"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "文档"
+  },
+  "footer.link.home": {
+    "message": "首页"
+  },
+  "footer.link.install": {
+    "message": "安装"
+  },
+  "footer.section.project": {
+    "message": "项目"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} 带附件回复"
+  }
+}

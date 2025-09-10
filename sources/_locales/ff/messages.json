@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Janngirde e jaaɓe" },
-  "extDescription": { "message": "Ɓeydu kabaruuji peewnii ɗee e jaaɓe iimeel e jaajol." },
-  "composeTitle": { "message": "Janngirde e jaaɓe" },
-  "optionsTitle": { "message": "Janngirde e jaaɓe — Cuɓe" },
-  "confirmTitle": { "message": "Teeŋtin jaaɓe" },
-  "uiHeader": { "message": "Janngirde e jaaɓe" },
-  "uiNoOptions": { "message": "Alaa cuɓe gooto ɗe ngoni jooni." },
-  "uiSupport": { "message": "Aɗa yiɗi ɓeydital ngal? Wallu am ko e moƴƴere ɓurnde ɗiɗi:" },
-  "uiDonate": { "message": "Jooɗndu jooni" },
-  "uiGithubText": { "message": "Ngam jaŋto carwo walla naamne goɗɗe, yillo" },
-  "uiGithubLinkLabel": { "message": "helloɓol am GitHub" },
-  "iconAlt": { "message": "Maanaa Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Doggol inɗe piije (formeeji glob)" },
-  "uiBlacklistHelp": {
-    "message": "Piije inɗe maaɗii e formayri ɗee wonaa laaɓa iwde e jaajol. Formaajo gooto e doggol. Misaluuji: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Jaabo e Piije Jontaaji"
   },
-  "uiWarnBlacklistLabel": { "message": "Yeeŋtu so jaaɓe ko momtaa ko doggol maa" },
-  "uiSave": { "message": "Danndu" },
-  "uiSaving": { "message": "Nana dannda…" },
-  "uiReset": { "message": "Ristu e goowaaɗe" },
-  "uiSaved": { "message": "Dannde." },
-  "uiResetDone": { "message": "Ristaa." },
-  "uiConfirmHeader": { "message": "Teeŋtingol" },
-  "uiConfirmLabel": { "message": "Naamndu ko adɗa ɓeydude jaaɓe" },
+  "extDescription": {
+    "message": "Ɓeydu e jaajol piije jontaaji ɓe udditiiɗe e jaabawuuji imeel."
+  },
+  "composeTitle": {
+    "message": "Jaabo e Piije Jontaaji"
+  },
+  "optionsTitle": {
+    "message": "Jaabo e Piije Jontaaji — Teelte"
+  },
+  "confirmTitle": {
+    "message": "Teeŋtin Piije Jontaaji"
+  },
+  "uiHeader": {
+    "message": "Jaabo e Piije Jontaaji"
+  },
+  "uiNoOptions": {
+    "message": "Alaa teelte ngam teeltude jooni."
+  },
+  "uiSupport": {
+    "message": "Aɗa yiɗi ɓeyditte ndee? Wallu am e jokkondiral seeɗa:"
+  },
+  "uiDonate": {
+    "message": "Wallu jooni"
+  },
+  "uiGithubText": {
+    "message": "Ngam jaŋtingol caɗe walla naamnaaji goɗɗi, tiiɗno yillo"
+  },
+  "uiGithubLinkLabel": {
+    "message": "Hello am e GitHub"
+  },
+  "iconAlt": {
+    "message": "Ikoon Jaabo e Piije Jontaaji"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Doggol daaƴngel innden fiilde (piilanɗe glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Fiilde ɗe innden mumen nanndii e kala piilannde ɗee wonaa maa ɓeydaa e jaajol. Piilannde gooto e layn gooto. Misalaji: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Reento so piije jontaaji ko daaƴaaɗe e doggol daaƴngel"
+  },
+  "uiSave": {
+    "message": "Danndu"
+  },
+  "uiSaving": {
+    "message": "Nana danndaa…"
+  },
+  "uiReset": {
+    "message": "Wakkit to goowaaji"
+  },
+  "uiSaved": {
+    "message": "Danndaa."
+  },
+  "uiResetDone": {
+    "message": "Wakkitaama."
+  },
+  "uiConfirmHeader": {
+    "message": "Teeŋtingol"
+  },
+  "uiConfirmLabel": {
+    "message": "Naamno hade ɓeyde piije jontaaji"
+  },
   "uiConfirmHelp": {
-    "message": "Henorde teeŋtingol nane njaɓɓude tan so jaaɓe maa njaɓɓa. Tappugol: Y walla J = Ee; N walla Esc = Ala."
+    "message": "Henorde teeŋtingol toɓɓere maa yaltu tan so piije jontaaji yoo ɓeyde e gooto. Kiiɓordu: Y walla J = Eey; N walla Esc = Alaa."
   },
   "confirmAddOne": {
-    "message": "Ɓeydu jaaɓngal: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ɓeydu jaaɓe ($1): $2$3?",
+    "message": "Ɓeydu pii jontaaɗo: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 goɗɗe" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Ee" },
-  "confirmNo": { "message": "Ala" },
-  "warnBlacklistTitle": { "message": "Momte ko doggol maa" },
-  "warnBlacklistIntro": { "message": "Piije ɗee goɗɗe wonaa njaɓɓude e jaajol:" },
-  "warnColFile": { "message": "Fiilde" },
-  "warnColPattern": { "message": "Formaajo" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Jaɓɓitol woowaande" },
-  "uiConfirmDefaultYes": { "message": "Ee" },
-  "uiConfirmDefaultNo": { "message": "Ala" },
+  "confirmAddMany": {
+    "message": "Ɓeydu piije jontaaji ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Eey"
+  },
+  "confirmNo": {
+    "message": "Alaa"
+  },
+  "warnBlacklistTitle": {
+    "message": "Daaƴaaɗe e doggol daaƴngel"
+  },
+  "warnBlacklistIntro": {
+    "message": "Fiilde ɗee wonaa maa ɓeydaa e jaajol:"
+  },
+  "warnColFile": {
+    "message": "Fiilde"
+  },
+  "warnColPattern": {
+    "message": "Piilannde"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Jaabatol goowaande"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Eey"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Alaa"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

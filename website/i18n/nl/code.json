@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird‑add‑on: Beantwoorden met originele bijlagen"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-pictogram"
+  },
+  "homepage.hero.title": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Voeg de originele bijlagen toe bij het beantwoorden in Thunderbird — automatisch of na een snelle bevestiging."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Documentatie openen"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Snelstart"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installeren vanuit Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Doneren"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Wat is er nieuw"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Lees de laatste wijzigingen in de {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Wijzigingslog"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatisch of eerst bevestigen"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Kies tussen automatisch toevoegen of een klein bevestigingsvenster met handige sneltoetsen."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Slimme ontdubbeling"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Houdt rekening met bestaande bijlagen en voorkomt duplicaten op basis van bestandsnaam, duidelijk en voorspelbaar."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME en inline overslaan"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME-handtekeningen en inline afbeeldingen worden uitgesloten om antwoorden compact te houden."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blokkeerlijstpatronen"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Hoofdletterongevoelige globpatronen zoals {code1} of {code2} voorkomen dat storende bestanden worden toegevoegd."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Snelle links naar de documentatie"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installeren"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configuratie"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Gebruik"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibiliteit"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ondersteuning"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licentie"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Druk op {slash} of {ctrl}+{k} om in de documentatie te zoeken."
+  },
+  "site.title": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "site.tagline": {
+    "message": "Thunderbird‑add‑on: Beantwoorden met originele bijlagen"
+  },
+  "navbar.title": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "navbar.logo.alt": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "navbar.docs": {
+    "message": "Documentatie"
+  },
+  "navbar.support": {
+    "message": "Ondersteuning"
+  },
+  "navbar.license": {
+    "message": "Licentie"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentatie"
+  },
+  "footer.link.home": {
+    "message": "Startpagina"
+  },
+  "footer.link.install": {
+    "message": "Installeren"
+  },
+  "footer.section.project": {
+    "message": "Project"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Beantwoorden met bijlagen"
+  }
+}

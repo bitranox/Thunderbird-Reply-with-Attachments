@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Datenschutz",
-  "description": "Reply with Attachments erfasst keine Analysen oder Telemetriedaten und sendet Ihre Daten nirgendwohin.",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

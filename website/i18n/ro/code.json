@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Supliment Thunderbird: răspunde incluzând atașamentele originale"
+  },
+  "homepage.icon.alt": {
+    "message": "Pictograma RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Include atașamentele originale când răspunzi în Thunderbird — automat sau după o confirmare rapidă."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Deschide documentația"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Pornire rapidă"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Instalează din Suplimente"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Donează"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Noutăți"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Citește cele mai recente modificări în {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Jurnal de modificări"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automat sau confirmare mai întâi"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Alege între adăugare automată sau o mică fereastră de confirmare, cu scurtături de tastatură la îndemână."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Eliminare inteligentă a duplicatelor"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respectă atașamentele existente și evită duplicatele după nume de fișier — curat și previzibil."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Omite SMIME și elemente inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Semnăturile SMIME și imaginile inline sunt excluse pentru a păstra răspunsurile ușoare."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Tipare de blocare"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Tipare glob, nesensibile la majuscule, precum {code1} sau {code2}, împiedică adăugarea fișierelor inutile."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Legături rapide către documentație"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Instalare"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Configurare"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Utilizare"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Compatibilitate"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Asistență"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licență"
+  },
+  "homepage.search.tip": {
+    "message": "Sfat: Apasă {slash} sau {ctrl}+{k} pentru a căuta în documentație."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Supliment Thunderbird: răspunde incluzând atașamentele originale"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Documentație"
+  },
+  "navbar.support": {
+    "message": "Asistență"
+  },
+  "navbar.license": {
+    "message": "Licență"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Documentație"
+  },
+  "footer.link.home": {
+    "message": "Acasă"
+  },
+  "footer.link.install": {
+    "message": "Instalare"
+  },
+  "footer.section.project": {
+    "message": "Proiect"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

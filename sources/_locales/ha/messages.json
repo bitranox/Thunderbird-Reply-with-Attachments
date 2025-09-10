@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Amsa tare da Haɗe‑haɗe" },
-  "extDescription": { "message": "Yana ƙara asalin haɗe‑haɗe ta atomatik a amsoshin imel." },
-  "composeTitle": { "message": "Amsa tare da Haɗe‑haɗe" },
-  "optionsTitle": { "message": "Amsa tare da Haɗe‑haɗe — Zaɓuɓɓuka" },
-  "confirmTitle": { "message": "Tabbatar da Haɗe‑haɗe" },
-  "uiHeader": { "message": "Amsa tare da Haɗe‑haɗe" },
-  "uiNoOptions": { "message": "A halin yanzu babu abin da za a daidaita." },
-  "uiSupport": { "message": "Kana son wannan ƙarin? Taimake ni da ƙaramar gudummawa:" },
-  "uiDonate": { "message": "Ba da gudummawa yanzu" },
-  "uiGithubText": { "message": "Don bayar da rahoton kuskure ko wasu tambayoyi, duba" },
-  "uiGithubLinkLabel": { "message": "shafin GitHub na" },
-  "iconAlt": { "message": "Icon ɗin Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Jerin baƙi na sunayen fayil (tsarin glob)" },
-  "uiBlacklistHelp": {
-    "message": "Fayilolin da sunayensu suka dace da ɗaya daga cikin waɗannan tsarin ba za a taɓa haɗa su ta atomatik ba. Tsari ɗaya a kowane layi. Misalai: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Amsa tare da Haɗe-haɗe"
   },
-  "uiWarnBlacklistLabel": { "message": "Gargaɗi idan an cire haɗe‑haɗe saboda jerin baƙi" },
-  "uiSave": { "message": "Ajiye" },
-  "uiSaving": { "message": "Ana ajiye…" },
-  "uiReset": { "message": "Sake saitawa zuwa tsoho" },
-  "uiSaved": { "message": "An ajiye." },
-  "uiResetDone": { "message": "An sake saita." },
-  "uiConfirmHeader": { "message": "Tabbatarwa" },
-  "uiConfirmLabel": { "message": "Tambaya kafin ƙara haɗe‑haɗe" },
+  "extDescription": {
+    "message": "Ƙara haɗe-haɗen asali cikin amsoshin imel ta atomatik."
+  },
+  "composeTitle": {
+    "message": "Amsa tare da Haɗe-haɗe"
+  },
+  "optionsTitle": {
+    "message": "Amsa tare da Haɗe-haɗe — Zaɓuɓɓuka"
+  },
+  "confirmTitle": {
+    "message": "Tabbatar da Haɗe-haɗe"
+  },
+  "uiHeader": {
+    "message": "Amsa tare da Haɗe-haɗe"
+  },
+  "uiNoOptions": {
+    "message": "A halin yanzu babu wani zaɓi da za a saita."
+  },
+  "uiSupport": {
+    "message": "Shin kana son wannan ƙarin-manhaja? Taimaka mini da ƙaramin gudummawa:"
+  },
+  "uiDonate": {
+    "message": "Ba da gudummawa yanzu"
+  },
+  "uiGithubText": {
+    "message": "Don bayar da rahoton kura-kurai ko wasu tambayoyi, don Allah ziyarci"
+  },
+  "uiGithubLinkLabel": {
+    "message": "shafina na GitHub"
+  },
+  "iconAlt": {
+    "message": "Alamar Amsa tare da Haɗe-haɗe"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Jerin sunayen fayil da aka hana (tsarin glob)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Fayilolin da sunayensu suka yi daidai da kowanne daga cikin waɗannan tsare-tsare ba za a taɓa haɗa su ta atomatik ba. Tsari ɗaya a kowane layi. Misalai: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Yi gargaɗi idan jerin haramta ya ware haɗe-haɗe"
+  },
+  "uiSave": {
+    "message": "Ajiye"
+  },
+  "uiSaving": {
+    "message": "Ana ajiye…"
+  },
+  "uiReset": {
+    "message": "Mayar da saitunan asali"
+  },
+  "uiSaved": {
+    "message": "An ajiye."
+  },
+  "uiResetDone": {
+    "message": "An sake saita."
+  },
+  "uiConfirmHeader": {
+    "message": "Tabbaci"
+  },
+  "uiConfirmLabel": {
+    "message": "Tambaya kafin ƙara haɗe-haɗe"
+  },
   "uiConfirmHelp": {
-    "message": "Ƙaramin taga na tabbatarwa yana bayyana ne kawai idan za a ƙara haɗe‑haɗe a zahiri. Maballin kwamfuta: Y ko J = Eh; N ko Esc = A'a."
+    "message": "Ƙaramin taga na tabbaci zai bayyana ne kawai idan za a ƙara haɗe-haɗe a zahiri. Maballan kwamfuta: Y ko J = Eh; N ko Esc = A'a."
   },
   "confirmAddOne": {
-    "message": "Ƙara haɗe‑haɗe: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ƙara haɗe‑haɗe ($1): $2$3?",
+    "message": "Ƙara haɗe: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 ƙari" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Eh" },
-  "confirmNo": { "message": "A'a" },
-  "warnBlacklistTitle": { "message": "An ware ta jerin baƙi" },
-  "warnBlacklistIntro": { "message": "Ba za a haɗa fayilolin da ke ƙasa ta atomatik ba:" },
-  "warnColFile": { "message": "Fayil" },
-  "warnColPattern": { "message": "Tsari" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Amsa ta tsoho" },
-  "uiConfirmDefaultYes": { "message": "Eh" },
-  "uiConfirmDefaultNo": { "message": "A'a" },
+  "confirmAddMany": {
+    "message": "Ƙara haɗe-haɗe ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Eh"
+  },
+  "confirmNo": {
+    "message": "A'a"
+  },
+  "warnBlacklistTitle": {
+    "message": "An ware saboda jerin haramta"
+  },
+  "warnBlacklistIntro": {
+    "message": "Waɗannan fayilolin ba za a haɗa su ta atomatik ba:"
+  },
+  "warnColFile": {
+    "message": "Fayil"
+  },
+  "warnColPattern": {
+    "message": "Tsari"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Amsa ta asali"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Eh"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "A'a"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

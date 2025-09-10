@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Antwoorden met bijlagen" },
-  "extDescription": {
-    "message": "Voegt automatisch de originele bijlagen toe aan e‑mailantwoorden."
+  "extName": {
+    "message": "Beantwoorden met bijlagen"
   },
-  "composeTitle": { "message": "Antwoorden met bijlagen" },
-  "optionsTitle": { "message": "Antwoorden met bijlagen — Opties" },
-  "confirmTitle": { "message": "Bijlagen bevestigen" },
-  "uiHeader": { "message": "Antwoorden met bijlagen" },
-  "uiNoOptions": { "message": "Er zijn momenteel geen opties om te configureren." },
-  "uiSupport": { "message": "Vind je deze add‑on leuk? Steun me met een kleine bijdrage:" },
-  "uiDonate": { "message": "Nu doneren" },
-  "uiGithubText": { "message": "Voor bugmeldingen of andere vragen, ga naar mijn" },
-  "uiGithubLinkLabel": { "message": "GitHub‑pagina" },
-  "iconAlt": { "message": "Pictogram Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Zwarte lijst van bestandsnamen (glob‑patronen)" },
+  "extDescription": {
+    "message": "Automatisch de oorspronkelijke bijlagen opnemen in e-mailantwoorden."
+  },
+  "composeTitle": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "optionsTitle": {
+    "message": "Beantwoorden met bijlagen — Opties"
+  },
+  "confirmTitle": {
+    "message": "Bijlagen bevestigen"
+  },
+  "uiHeader": {
+    "message": "Beantwoorden met bijlagen"
+  },
+  "uiNoOptions": {
+    "message": "Er zijn momenteel geen opties om in te stellen."
+  },
+  "uiSupport": {
+    "message": "Bevalt deze add-on? Steun me met een kleine bijdrage:"
+  },
+  "uiDonate": {
+    "message": "Doneer nu"
+  },
+  "uiGithubText": {
+    "message": "Voor bugmeldingen of andere vragen, bezoek mijn"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub-pagina"
+  },
+  "iconAlt": {
+    "message": "Icoon Beantwoorden met bijlagen"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Zwarte lijst van bestandsnamen (glob-patronen)"
+  },
   "uiBlacklistHelp": {
-    "message": "Bestanden waarvan de naam met een van deze patronen overeenkomt, worden nooit automatisch toegevoegd. Eén patroon per regel. Voorbeelden: *.png, smime.*, *.p7s"
+    "message": "Bestanden waarvan de naam overeenkomt met een van deze patronen worden nooit automatisch bijgevoegd. Eén patroon per regel. Voorbeelden: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Waarschuwen als bijlagen door zwarte lijst zijn uitgesloten"
+    "message": "Waarschuwen als bijlagen door de zwarte lijst worden uitgesloten"
   },
-  "uiSave": { "message": "Opslaan" },
-  "uiSaving": { "message": "Bezig met opslaan…" },
-  "uiReset": { "message": "Standaardwaarden herstellen" },
-  "uiSaved": { "message": "Opgeslagen." },
-  "uiResetDone": { "message": "Hersteld." },
-  "uiConfirmHeader": { "message": "Bevestiging" },
-  "uiConfirmLabel": { "message": "Vragen voordat bijlagen worden toegevoegd" },
+  "uiSave": {
+    "message": "Opslaan"
+  },
+  "uiSaving": {
+    "message": "Bezig met opslaan…"
+  },
+  "uiReset": {
+    "message": "Standaardinstellingen herstellen"
+  },
+  "uiSaved": {
+    "message": "Opgeslagen."
+  },
+  "uiResetDone": {
+    "message": "Hersteld."
+  },
+  "uiConfirmHeader": {
+    "message": "Bevestiging"
+  },
+  "uiConfirmLabel": {
+    "message": "Vragen voordat bijlagen worden toegevoegd"
+  },
   "uiConfirmHelp": {
-    "message": "Een kleine bevestigingsdialoog verschijnt alleen als er daadwerkelijk bijlagen zouden worden toegevoegd. Toetsenbord: Y of J = Ja; N of Esc = Nee."
+    "message": "Er verschijnt alleen een kleine bevestigingsdialoog wanneer er daadwerkelijk bijlagen zouden worden toegevoegd. Toetsenbord: Y of J = Ja; N of Esc = Nee."
   },
   "confirmAddOne": {
     "message": "Bijlage toevoegen: $1?",
-    "placeholders": { "1": { "content": "$1" } }
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
   },
   "confirmAddMany": {
     "message": "Bijlagen toevoegen ($1): $2$3?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 meer" }
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
     }
   },
-  "confirmYes": { "message": "Ja" },
-  "confirmNo": { "message": "Nee" },
-  "warnBlacklistTitle": { "message": "Uitgesloten door zwarte lijst" },
-  "warnBlacklistIntro": { "message": "De volgende bestanden worden niet automatisch toegevoegd:" },
-  "warnColFile": { "message": "Bestand" },
-  "warnColPattern": { "message": "Patroon" },
-  "warnOk": { "message": "OK" },
-  "uiConfirmDefaultHeader": { "message": "Standaardantwoord" },
-  "uiConfirmDefaultYes": { "message": "Ja" },
-  "uiConfirmDefaultNo": { "message": "Nee" },
+  "confirmYes": {
+    "message": "Ja"
+  },
+  "confirmNo": {
+    "message": "Nee"
+  },
+  "warnBlacklistTitle": {
+    "message": "Uitgesloten door zwarte lijst"
+  },
+  "warnBlacklistIntro": {
+    "message": "De volgende bestanden worden niet automatisch bijgevoegd:"
+  },
+  "warnColFile": {
+    "message": "Bestand"
+  },
+  "warnColPattern": {
+    "message": "Patroon"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Standaardantwoord"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Ja"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Nee"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

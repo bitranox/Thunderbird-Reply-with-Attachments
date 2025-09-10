@@ -1,58 +1,132 @@
 {
-  "extName": { "message": "پاسخ با پیوست‌ها" },
-  "extDescription": { "message": "پیوست‌های اصلی را به‌صورت خودکار در پاسخ‌های ایمیل درج کنید." },
-  "composeTitle": { "message": "پاسخ با پیوست‌ها" },
-  "optionsTitle": { "message": "پاسخ با پیوست‌ها — تنظیمات" },
-  "confirmTitle": { "message": "تأیید پیوست‌ها" },
-  "uiHeader": { "message": "پاسخ با پیوست‌ها" },
-  "uiNoOptions": { "message": "در حال حاضر گزینه‌ای برای پیکربندی وجود ندارد." },
-  "uiSupport": { "message": "این افزونه را می‌پسندید؟ با یک کمک کوچک از من حمایت کنید:" },
-  "uiDonate": { "message": "همین حالا کمک کنید" },
-  "uiGithubText": { "message": "برای گزارش باگ یا سایر پرسش‌ها، لطفاً به" },
-  "uiGithubLinkLabel": { "message": "صفحه GitHub من" },
-  "iconAlt": { "message": "نماد Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "فهرست سیاه نام فایل‌ها (الگوهای glob)" },
+  "extName": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "extDescription": {
+    "message": "پیوست‌های اصلی را به‌صورت خودکار در پاسخ‌های ایمیل درج می‌کند."
+  },
+  "composeTitle": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "optionsTitle": {
+    "message": "پاسخ با پیوست‌ها — گزینه‌ها"
+  },
+  "confirmTitle": {
+    "message": "تأیید پیوست‌ها"
+  },
+  "uiHeader": {
+    "message": "پاسخ با پیوست‌ها"
+  },
+  "uiNoOptions": {
+    "message": "در حال حاضر گزینه‌ای برای پیکربندی وجود ندارد."
+  },
+  "uiSupport": {
+    "message": "این افزونه را می‌پسندید؟ با یک کمک مالی کوچک از من حمایت کنید:"
+  },
+  "uiDonate": {
+    "message": "هم‌اکنون کمک مالی کنید"
+  },
+  "uiGithubText": {
+    "message": "برای گزارش باگ یا سایر پرسش‌ها، لطفاً به"
+  },
+  "uiGithubLinkLabel": {
+    "message": "صفحهٔ GitHub"
+  },
+  "iconAlt": {
+    "message": "آیکون پاسخ با پیوست‌ها"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "فهرست سیاه نام فایل‌ها (الگوهای glob)"
+  },
   "uiBlacklistHelp": {
-    "message": "فایل‌هایی که با هر یک از این الگوها مطابقت داشته باشند هرگز به صورت خودکار پیوست نخواهند شد. هر خط یک الگو. مثال‌ها: *.png، ‎smime.*‎، ‎*.p7s‎"
+    "message": "فایل‌هایی که نامشان با هر یک از این الگوها مطابقت داشته باشد، هرگز به‌صورت خودکار پیوست نمی‌شوند. هر خط یک الگو. مثال‌ها: *.png، smime.*، *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "اگر پیوست‌ها به‌دلیل فهرست سیاه کنار گذاشته شدند هشدار بده"
+    "message": "اگر پیوست‌ها به‌دلیل فهرست سیاه کنار گذاشته شدند، هشدار داده شود"
   },
-  "uiSave": { "message": "ذخیره" },
-  "uiSaving": { "message": "در حال ذخیره…" },
-  "uiReset": { "message": "بازگردانی به پیش‌فرض‌ها" },
-  "uiSaved": { "message": "ذخیره شد." },
-  "uiResetDone": { "message": "بازگردانی شد." },
-  "uiConfirmHeader": { "message": "تأیید" },
-  "uiConfirmLabel": { "message": "قبل از افزودن پیوست‌ها بپرس" },
+  "uiSave": {
+    "message": "ذخیره"
+  },
+  "uiSaving": {
+    "message": "در حال ذخیره…"
+  },
+  "uiReset": {
+    "message": "بازنشانی به پیش‌فرض‌ها"
+  },
+  "uiSaved": {
+    "message": "ذخیره شد."
+  },
+  "uiResetDone": {
+    "message": "بازنشانی شد."
+  },
+  "uiConfirmHeader": {
+    "message": "تأیید"
+  },
+  "uiConfirmLabel": {
+    "message": "پیش از افزودن پیوست‌ها سؤال شود"
+  },
   "uiConfirmHelp": {
-    "message": "گفت‌وگوی تأیید کوچک فقط زمانی ظاهر می‌شود که واقعاً پیوست‌ها افزوده شوند. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
+    "message": "تنها هنگامی که واقعاً قرار است پیوست‌ها افزوده شوند، یک پنجرهٔ تأیید کوچک نمایش داده می‌شود. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
   },
   "confirmAddOne": {
-    "message": "پیوست افزوده شود: $1؟",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "پیوست‌ها افزوده شوند ($1): $2$3؟",
+    "message": "افزودن پیوست: $1؟",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 more" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "بله" },
-  "confirmNo": { "message": "خیر" },
-  "warnBlacklistTitle": { "message": "به‌دلیل فهرست سیاه کنار گذاشته شد" },
-  "warnBlacklistIntro": { "message": "فایل‌های زیر به‌صورت خودکار پیوست نخواهند شد:" },
-  "warnColFile": { "message": "فایل" },
-  "warnColPattern": { "message": "الگو" },
-  "warnOk": { "message": "باشه" },
-  "uiConfirmDefaultHeader": { "message": "پاسخ پیش‌فرض" },
-  "uiConfirmDefaultYes": { "message": "بله" },
-  "uiConfirmDefaultNo": { "message": "خیر" },
+  "confirmAddMany": {
+    "message": "افزودن پیوست‌ها ($1): $2$3؟",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "بله"
+  },
+  "confirmNo": {
+    "message": "خیر"
+  },
+  "warnBlacklistTitle": {
+    "message": "کنار گذاشته‌شده توسط فهرست سیاه"
+  },
+  "warnBlacklistIntro": {
+    "message": "فایل‌های زیر به‌صورت خودکار پیوست نخواهند شد:"
+  },
+  "warnColFile": {
+    "message": "فایل"
+  },
+  "warnColPattern": {
+    "message": "الگو"
+  },
+  "warnOk": {
+    "message": "تأیید"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "پاسخ پیش‌فرض"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "بله"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "خیر"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

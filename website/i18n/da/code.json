@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird-tilføjelse: Svar med de originale vedhæftede filer"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA-ikon"
+  },
+  "homepage.hero.title": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Medtag de originale vedhæftede filer, når du svarer i Thunderbird — automatisk eller efter en hurtig bekræftelse."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Åbn dokumentationen"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Kom hurtigt i gang"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Installer fra Tilføjelser"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Doner"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Hvad er nyt"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Læs de seneste ændringer i {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Ændringslog"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Automatisk eller bekræft først"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Vælg mellem automatisk tilføjelse eller en lille bekræftelsesdialog med praktiske tastaturgenveje."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Smart deduplikering"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Respekterer eksisterende vedhæftede filer og undgår dubletter på baggrund af filnavn, enkelt og forudsigeligt."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Spring SMIME og inline over"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "SMIME-signaturer og indlejrede billeder udelades for at holde svarene lette."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Blokeringslistemønstre"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Glob‑mønstre uden skelnen mellem store og små bogstaver, såsom {code1} eller {code2}, forhindrer, at støjende filer tilføjes."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Hurtiglinks til dokumentation"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Installer"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Konfiguration"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Brug"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Kompatibilitet"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Support"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Licens"
+  },
+  "homepage.search.tip": {
+    "message": "Tip: Tryk på {slash} eller {ctrl}+{k} for at søge i dokumentationen."
+  },
+  "site.title": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "site.tagline": {
+    "message": "Thunderbird-tilføjelse: Svar med de originale vedhæftede filer"
+  },
+  "navbar.title": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "navbar.logo.alt": {
+    "message": "Svar med vedhæftede filer"
+  },
+  "navbar.docs": {
+    "message": "Dokumentation"
+  },
+  "navbar.support": {
+    "message": "Support"
+  },
+  "navbar.license": {
+    "message": "Licens"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Dokumentation"
+  },
+  "footer.link.home": {
+    "message": "Hjem"
+  },
+  "footer.link.install": {
+    "message": "Installer"
+  },
+  "footer.section.project": {
+    "message": "Projekt"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Svar med vedhæftede filer"
+  }
+}

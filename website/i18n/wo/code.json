@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.meta.description": {
+    "message": "Yokkute Thunderbird: Tontu, boole dencukaay yi asal"
+  },
+  "homepage.icon.alt": {
+    "message": "Ikon RWA"
+  },
+  "homepage.hero.title": {
+    "message": "Reply with Attachments"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Boo tontu ci Thunderbird, boole dencukaay yi asal — otomatik walla ginnaaw wóorlu bu gaaw."
+  },
+  "homepage.cta.openDocs": {
+    "message": "Ubbi Jukki yi"
+  },
+  "homepage.cta.quickstart": {
+    "message": "Tambali gaaw"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "Samp ci Add‑ons"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "Joxe ndimbal"
+  },
+  "homepage.whatsNew.title": {
+    "message": "Lu bees"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "Jàng yeesal yi mujj ci {changelog}."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "Li ñu soppi"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "Otomatik walla Wóorlu bu jëkk"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "Tànn ci diggante yokk otomatik walla palanteer bu ndaw bu wóorlu, ak rakkorsi yu wër ci klawje."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "Bañ benn-benn bu xel"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "Day séentu dencukaay yi am nañu ba noppi, te baña benn-benn ci turu dencukaay; set te mën nañu ko xaar."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "Bàyyi SMIME ak Inline"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "Siñatüür SMIME ak nataal yi 'inline' ñu bàyyil leen, ngir tontu yi tënku te yomb."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "Pàttarni ñu bàyyil"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "Pàttarni 'glob' yu dul jégleel araf yu mag/ndaw, ni {code1} walla {code2}, dana tere yokk dencukaay yu reyul solo."
+  },
+  "homepage.quicklinks.title": {
+    "message": "Jokkoo yu gaaw ci Jukki yi"
+  },
+  "homepage.quicklinks.install": {
+    "message": "Samp"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "Parameetar"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "Njëfandikoo"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "Mëngoo"
+  },
+  "homepage.quicklinks.support": {
+    "message": "Ndimbal"
+  },
+  "homepage.quicklinks.license": {
+    "message": "Lisans"
+  },
+  "homepage.search.tip": {
+    "message": "Ndigaale: Bësal {slash} walla {ctrl}+{k} ngir seet jukki yi."
+  },
+  "site.title": {
+    "message": "Reply with Attachments"
+  },
+  "site.tagline": {
+    "message": "Yokkute Thunderbird: Tontu, boole dencukaay yi asal"
+  },
+  "navbar.title": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.logo.alt": {
+    "message": "Reply with Attachments"
+  },
+  "navbar.docs": {
+    "message": "Jukki yi"
+  },
+  "navbar.support": {
+    "message": "Ndimbal"
+  },
+  "navbar.license": {
+    "message": "Lisans"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "Jukki yi"
+  },
+  "footer.link.home": {
+    "message": "Xët bu njëkk"
+  },
+  "footer.link.install": {
+    "message": "Samp"
+  },
+  "footer.section.project": {
+    "message": "Proje"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} Reply with Attachments"
+  }
+}

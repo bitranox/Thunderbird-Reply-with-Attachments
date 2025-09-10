@@ -1,56 +1,132 @@
 {
-  "extName": { "message": "Eklerle Yanıtla" },
-  "extDescription": { "message": "E‑posta yanıtlarına özgün ekleri otomatik olarak ekler." },
-  "composeTitle": { "message": "Eklerle Yanıtla" },
-  "optionsTitle": { "message": "Eklerle Yanıtla — Seçenekler" },
-  "confirmTitle": { "message": "Ekleri Onayla" },
-  "uiHeader": { "message": "Eklerle Yanıtla" },
-  "uiNoOptions": { "message": "Şu anda yapılandırılacak seçenek yok." },
-  "uiSupport": { "message": "Bu eklentiyi beğendiniz mi? Küçük bir katkıyla destek olun:" },
-  "uiDonate": { "message": "Şimdi bağış yap" },
-  "uiGithubText": { "message": "Hata bildirimleri veya diğer sorular için" },
-  "uiGithubLinkLabel": { "message": "GitHub sayfamı ziyaret edin" },
-  "iconAlt": { "message": "Eklerle Yanıtla simgesi" },
-  "githubAlt": { "message": "GitHub" },
-  "uiBlacklistHeader": { "message": "Dosya adı kara listesi (glob desenleri)" },
-  "uiBlacklistHelp": {
-    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar otomatik olarak eklenmez. Satır başına bir desen. Örnekler: *.png, smime.*, *.p7s"
+  "extName": {
+    "message": "Eklerle Yanıtla"
   },
-  "uiWarnBlacklistLabel": { "message": "Kara liste nedeniyle çıkarılan ekler için uyar" },
-  "uiSave": { "message": "Kaydet" },
-  "uiSaving": { "message": "Kaydediliyor…" },
-  "uiReset": { "message": "Varsayılanlara sıfırla" },
-  "uiSaved": { "message": "Kaydedildi." },
-  "uiResetDone": { "message": "Sıfırlandı." },
-  "uiConfirmHeader": { "message": "Onay" },
-  "uiConfirmLabel": { "message": "Ekleri eklemeden önce sor" },
+  "extDescription": {
+    "message": "E-posta yanıtlarında orijinal ekleri otomatik olarak dahil edin."
+  },
+  "composeTitle": {
+    "message": "Eklerle Yanıtla"
+  },
+  "optionsTitle": {
+    "message": "Eklerle Yanıtla — Seçenekler"
+  },
+  "confirmTitle": {
+    "message": "Ekleri Onayla"
+  },
+  "uiHeader": {
+    "message": "Eklerle Yanıtla"
+  },
+  "uiNoOptions": {
+    "message": "Şu anda yapılandırılacak seçenek yok."
+  },
+  "uiSupport": {
+    "message": "Bu eklentiyi beğendiniz mi? Küçük bir katkıyla beni destekleyin:"
+  },
+  "uiDonate": {
+    "message": "Şimdi bağış yapın"
+  },
+  "uiGithubText": {
+    "message": "Hata raporları veya diğer sorular için lütfen şurayı ziyaret edin:"
+  },
+  "uiGithubLinkLabel": {
+    "message": "GitHub sayfası"
+  },
+  "iconAlt": {
+    "message": "Eklerle Yanıtla Simgesi"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
+  "uiBlacklistHeader": {
+    "message": "Dosya adlarının kara listesi (glob desenleri)"
+  },
+  "uiBlacklistHelp": {
+    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar asla otomatik olarak eklenmez. Her satıra bir desen. Örnekler: *.png, smime.*, *.p7s"
+  },
+  "uiWarnBlacklistLabel": {
+    "message": "Ekler kara liste nedeniyle hariç tutulursa uyar"
+  },
+  "uiSave": {
+    "message": "Kaydet"
+  },
+  "uiSaving": {
+    "message": "Kaydediliyor…"
+  },
+  "uiReset": {
+    "message": "Varsayılanlara sıfırla"
+  },
+  "uiSaved": {
+    "message": "Kaydedildi."
+  },
+  "uiResetDone": {
+    "message": "Sıfırlandı."
+  },
+  "uiConfirmHeader": {
+    "message": "Onay"
+  },
+  "uiConfirmLabel": {
+    "message": "Ekleri eklemeden önce sor"
+  },
   "uiConfirmHelp": {
-    "message": "Yalnızca ekler gerçekten ekleneceğinde küçük bir onay iletişim kutusu görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
+    "message": "Küçük bir onay iletişim kutusu yalnızca gerçekten ekler ekleneceğinde görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
   },
   "confirmAddOne": {
-    "message": "Ek eklensin mi: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Ekler eklensin mi ($1): $2$3?",
+    "message": "Eki ekle: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 tane daha" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Evet" },
-  "confirmNo": { "message": "Hayır" },
-  "warnBlacklistTitle": { "message": "Kara liste nedeniyle çıkarıldı" },
-  "warnBlacklistIntro": { "message": "Aşağıdaki dosyalar otomatik olarak eklenmeyecek:" },
-  "warnColFile": { "message": "Dosya" },
-  "warnColPattern": { "message": "Desen" },
-  "warnOk": { "message": "Tamam" },
-  "uiConfirmDefaultHeader": { "message": "Varsayılan yanıt" },
-  "uiConfirmDefaultYes": { "message": "Evet" },
-  "uiConfirmDefaultNo": { "message": "Hayır" },
-  "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  "confirmAddMany": {
+    "message": "Ekleri ekle ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "confirmYes": {
+    "message": "Evet"
+  },
+  "confirmNo": {
+    "message": "Hayır"
+  },
+  "warnBlacklistTitle": {
+    "message": "Kara liste nedeniyle hariç tutuldu"
+  },
+  "warnBlacklistIntro": {
+    "message": "Aşağıdaki dosyalar otomatik olarak eklenmeyecek:"
+  },
+  "warnColFile": {
+    "message": "Dosya"
+  },
+  "warnColPattern": {
+    "message": "Desen"
+  },
+  "warnOk": {
+    "message": "Tamam"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Varsayılan yanıt"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Evet"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Hayır"
+  },
+  "donateUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/donation"
+  },
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

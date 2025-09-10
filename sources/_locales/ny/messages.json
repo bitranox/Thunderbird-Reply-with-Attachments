@@ -1,60 +1,132 @@
 {
-  "extName": { "message": "Yankhani ndi zolumikizira" },
-  "extDescription": { "message": "Imawonjezera zokhoma zoyambirira zokha mumayankho a imelo." },
-  "composeTitle": { "message": "Yankhani ndi zolumikizira" },
-  "optionsTitle": { "message": "Yankhani ndi zolumikizira — Zosankha" },
-  "confirmTitle": { "message": "Tsimikizirani zolumikizira" },
-  "uiHeader": { "message": "Yankhani ndi zolumikizira" },
-  "uiNoOptions": { "message": "Palibe zosankha zoti mukonze panopa." },
-  "uiSupport": { "message": "Mukukonda pulagi‑iniyi? Thandizani ndi zopereka zing'ono:" },
-  "uiDonate": { "message": "Perekani tsopano" },
-  "uiGithubText": { "message": "Pofuna kulengeza zolakwika kapena mafunso ena, chonde pitani ku" },
-  "uiGithubLinkLabel": { "message": "tsamba langa la GitHub" },
-  "iconAlt": { "message": "Chizindikiro cha Reply with Attachments" },
-  "githubAlt": { "message": "GitHub" },
+  "extName": {
+    "message": "Yankhani ndi Mafayilo Omangiriridwa"
+  },
+  "extDescription": {
+    "message": "Imaphatikiza mafayilo omangiriridwa oyambirira mu mayankho a imelo zokha."
+  },
+  "composeTitle": {
+    "message": "Yankhani ndi Mafayilo Omangiriridwa"
+  },
+  "optionsTitle": {
+    "message": "Yankhani ndi Mafayilo Omangiriridwa — Zosankha"
+  },
+  "confirmTitle": {
+    "message": "Tsimikizirani Mafayilo Omangiriridwa"
+  },
+  "uiHeader": {
+    "message": "Yankhani ndi Mafayilo Omangiriridwa"
+  },
+  "uiNoOptions": {
+    "message": "Pakali pano palibe zosankha zoti mukhazikitse."
+  },
+  "uiSupport": {
+    "message": "Kodi mumakonda chowonjezerachi? Thandizani ndi chopereka chaching'ono:"
+  },
+  "uiDonate": {
+    "message": "Pereka tsopano"
+  },
+  "uiGithubText": {
+    "message": "Kwa malipoti a zolakwika kapena mafunso ena, chonde pitani ku tsamba langa la"
+  },
+  "uiGithubLinkLabel": {
+    "message": "tsamba la GitHub"
+  },
+  "iconAlt": {
+    "message": "Chithunzi cha Yankhani ndi Mafayilo Omangiriridwa"
+  },
+  "githubAlt": {
+    "message": "GitHub"
+  },
   "uiBlacklistHeader": {
-    "message": "Mndandanda wakuda wa maina a mafayilo (zojambulajambula za glob)"
+    "message": "Mndandanda woletsedwa wa mayina a mafayilo (mapatani a glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Mafayilo omwe amatsatira chimodzi mwazojambula izi sadzawonjezedwa zokha. Chitsanzo chimodzi pa mzere. Mwachitsanzo: *.png, smime.*, *.p7s"
+    "message": "Mafayilo omwe mayina awo akugwirizana ndi patani lililonse mwa awa sadzamangiriridwa zokha. Patani limodzi pa mzere. Zitsanzo: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Chenjezani ngati zolumikizira zachotsedwa chifukwa cha mndandanda wakuda"
+    "message": "Chenjezani ngati mafayilo omangiriridwa achotsedwa ndi mndandanda woletsedwa"
   },
-  "uiSave": { "message": "Sungani" },
-  "uiSaving": { "message": "Kusunga…" },
-  "uiReset": { "message": "Bwezerani ku zofunikira" },
-  "uiSaved": { "message": "Zasungidwa." },
-  "uiResetDone": { "message": "Zabwezeretsedwa." },
-  "uiConfirmHeader": { "message": "Chitsimikiziro" },
-  "uiConfirmLabel": { "message": "Funsani musanawonjezere zolumikizira" },
+  "uiSave": {
+    "message": "Sungani"
+  },
+  "uiSaving": {
+    "message": "Kusunga…"
+  },
+  "uiReset": {
+    "message": "Bwezeretsani ku zokhazikika poyamba"
+  },
+  "uiSaved": {
+    "message": "Zasungidwa."
+  },
+  "uiResetDone": {
+    "message": "Zabwezeretsedwa."
+  },
+  "uiConfirmHeader": {
+    "message": "Tsimikizo"
+  },
+  "uiConfirmLabel": {
+    "message": "Funsani musanawonjezere mafayilo omangiriridwa"
+  },
   "uiConfirmHelp": {
-    "message": "Bokosi laling'ono lotsimikizira limangowoneka ngati zolumikizira zidzawonjezedwa. Kiyibodi: Y kapena J = Inde; N kapena Esc = Ayi."
+    "message": "Bokosi laling'ono lotsimikizira limangowonekera pokhapokha pamene mafayilo omangiriridwa adzawonjezedwa. Kiyibodi: Y kapena J = Inde; N kapena Esc = Ayi."
   },
   "confirmAddOne": {
-    "message": "Onjezani zolumikizira: $1?",
-    "placeholders": { "1": { "content": "$1" } }
-  },
-  "confirmAddMany": {
-    "message": "Onjezani zolumikizira ($1): $2$3?",
+    "message": "Onjezani fayilo yomangiriridwa: $1?",
     "placeholders": {
-      "1": { "content": "$1" },
-      "2": { "content": "$2" },
-      "3": { "content": ", +$3 zina" }
+      "1": {
+        "content": "$1"
+      }
     }
   },
-  "confirmYes": { "message": "Inde" },
-  "confirmNo": { "message": "Ayi" },
-  "warnBlacklistTitle": { "message": "Chotsedwa ndi mndandanda wakuda" },
-  "warnBlacklistIntro": { "message": "Mafayilo otsatirawa sadzawonjezedwa zokha:" },
-  "warnColFile": { "message": "Fayilo" },
-  "warnColPattern": { "message": "Chitsanzo" },
-  "warnOk": { "message": "Zabwino" },
-  "uiConfirmDefaultHeader": { "message": "Yankho losasintha" },
-  "uiConfirmDefaultYes": { "message": "Inde" },
-  "uiConfirmDefaultNo": { "message": "Ayi" },
+  "confirmAddMany": {
+    "message": "Onjezani mafayilo omangiriridwa ($1): $2$3?",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": ", +$3 more"
+      }
+    }
+  },
+  "confirmYes": {
+    "message": "Inde"
+  },
+  "confirmNo": {
+    "message": "Ayi"
+  },
+  "warnBlacklistTitle": {
+    "message": "Zachotsedwa ndi mndandanda woletsedwa"
+  },
+  "warnBlacklistIntro": {
+    "message": "Mafayilo otsatirawa sadzamangiriridwa zokha:"
+  },
+  "warnColFile": {
+    "message": "Fayilo"
+  },
+  "warnColPattern": {
+    "message": "Patani"
+  },
+  "warnOk": {
+    "message": "OK"
+  },
+  "uiConfirmDefaultHeader": {
+    "message": "Yankho lokhazikika poyamba"
+  },
+  "uiConfirmDefaultYes": {
+    "message": "Inde"
+  },
+  "uiConfirmDefaultNo": {
+    "message": "Ayi"
+  },
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/donation"
   },
-  "githubUrl": { "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments" }
+  "githubUrl": {
+    "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  }
 }

@@ -1,0 +1,131 @@
+{
+  "homepage.meta.title": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
+  },
+  "homepage.meta.description": {
+    "message": "Thunderbird එක්කය: මුල් ඇමුණුම් ඇතුළුව පිළිතුරු"
+  },
+  "homepage.icon.alt": {
+    "message": "RWA අයිකනය"
+  },
+  "homepage.hero.title": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Thunderbird හි පිළිතුරු දෙද්දී මුල් ඇමුණුම් ඇතුළත් කරන්න — ස්වයංක්‍රීයව හෝ ඉක්මන් තහවුරු කිරීමකින් පසුව."
+  },
+  "homepage.cta.openDocs": {
+    "message": "ලේඛන විවෘත කරන්න"
+  },
+  "homepage.cta.quickstart": {
+    "message": "ඉක්මන් ආරම්භය"
+  },
+  "homepage.cta.installFromAddons": {
+    "message": "එක්ක වෙතින් ස්ථාපනය කරන්න"
+  },
+  "homepage.cta.github": {
+    "message": "GitHub"
+  },
+  "homepage.cta.donate": {
+    "message": "පරිත්‍යාග කරන්න"
+  },
+  "homepage.whatsNew.title": {
+    "message": "අලුත් දෑ"
+  },
+  "homepage.whatsNew.desc": {
+    "message": "{changelog} හි නවතම වෙනස්කම් කියවන්න."
+  },
+  "homepage.whatsNew.changelogLink": {
+    "message": "වෙනස්කම් සටහන"
+  },
+  "homepage.features.autoConfirm.title": {
+    "message": "ස්වයංක්‍රීය හෝ පෙර තහවුරු"
+  },
+  "homepage.features.autoConfirm.body": {
+    "message": "ස්වයංක්‍රීයව එකතු කිරීමක් හෝ පහසු යතුරුපුවරු කෙටිමං සහිත කුඩා තහවුරු සංවාදයක් අතරින් තෝරාගන්න."
+  },
+  "homepage.features.dedupe.title": {
+    "message": "දක්ෂ අනුපිටපත් ඉවත් කිරීම"
+  },
+  "homepage.features.dedupe.body": {
+    "message": "දැනට ඇති ඇමුණුම් වලට ගරු කරමින් ගොනු නාමය අනුව අනුපිටපත් ඇතිවීම වැළැක්වයි, පැහැදිලි හා පූර්වකල්පිත."
+  },
+  "homepage.features.skipSmime.title": {
+    "message": "SMIME සහ ඉන්ලයින් මඟහැරීම"
+  },
+  "homepage.features.skipSmime.body": {
+    "message": "පිළිතුරු සරලව තබා ගැනීම සඳහා SMIME අත්සන් සහ ඉන්ලයින් රූප එකතු නොකරයි."
+  },
+  "homepage.features.blacklist.title": {
+    "message": "තහනම් රටා"
+  },
+  "homepage.features.blacklist.body": {
+    "message": "අක්‍ෂර විශේෂභාවය නොසලකා හරින glob රටා ({code1} හෝ {code2} වැනි) මගින් අවුල් ගොනු එකතු වීම වැළැක්වයි."
+  },
+  "homepage.quicklinks.title": {
+    "message": "ලේඛන ඉක්මන් සබැඳි"
+  },
+  "homepage.quicklinks.install": {
+    "message": "ස්ථාපනය"
+  },
+  "homepage.quicklinks.configuration": {
+    "message": "සැකසුම"
+  },
+  "homepage.quicklinks.usage": {
+    "message": "භාවිතය"
+  },
+  "homepage.quicklinks.compatibility": {
+    "message": "අනුකූලතාව"
+  },
+  "homepage.quicklinks.support": {
+    "message": "සහාය"
+  },
+  "homepage.quicklinks.license": {
+    "message": "බලපත්‍රය"
+  },
+  "homepage.search.tip": {
+    "message": "ඉඟිය: ලේඛන සෙවීමට {slash} හෝ {ctrl}+{k} ඔබන්න."
+  },
+  "site.title": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
+  },
+  "site.tagline": {
+    "message": "Thunderbird එක්කය: මුල් ඇමුණුම් ඇතුළුව පිළිතුරු"
+  },
+  "navbar.title": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
+  },
+  "navbar.logo.alt": {
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
+  },
+  "navbar.docs": {
+    "message": "ලේඛන"
+  },
+  "navbar.support": {
+    "message": "සහාය"
+  },
+  "navbar.license": {
+    "message": "බලපත්‍රය"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "footer.section.docs": {
+    "message": "ලේඛන"
+  },
+  "footer.link.home": {
+    "message": "මුල් පිටුව"
+  },
+  "footer.link.install": {
+    "message": "ස්ථාපනය"
+  },
+  "footer.section.project": {
+    "message": "ව්‍යාපෘතිය"
+  },
+  "footer.link.github": {
+    "message": "GitHub"
+  },
+  "footer.copyright": {
+    "message": "© {year} ඇමුණුම් සමඟ පිළිතුරු"
+  }
+}
