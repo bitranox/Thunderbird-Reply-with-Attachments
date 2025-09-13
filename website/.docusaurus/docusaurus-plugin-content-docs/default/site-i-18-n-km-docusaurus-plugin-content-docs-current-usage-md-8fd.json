@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ការប្រើប្រាស់",
   "description": "Usage",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ការប្រើប្រាស់",
+    "sidebar_label": "ការប្រើប្រាស់"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "ការកំណត់រចនាសម្ព័ន្ធ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "ការប្រាណូឡាសារ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/compatibility"
   }
 }

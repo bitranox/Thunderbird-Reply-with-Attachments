@@ -1,17 +1,34 @@
 ---
 id: features
-title: Fitur
-sidebar_label: Fitur
+title: 'Fitur'
+sidebar_label: 'Fitur'
 ---
 
-## Fitur
+## Features {#features}
 
-- Otomatis ngalampirkeun payil tina surélék aslina waktu ngabales.
-- Paripolah bisa disetél: lampiran bisa
-  - ditambahkeun otomatis, atawa
-  - ngan ditambahkeun sanggeus konfirmasi (dialog leutik jeung aksésibel). Dina Opsi anjeun bisa ngaktipkeun konfirmasi sarta milih jawaban baku (Enya/Henteu).
-- Daptar hideung ngaran payil (pola glob) nyegah sababaraha payil otomatis katarik. Conto: `*intern*`, `*secret*`, `*passwor*`.
-  Panyocokan henteu sénsitip kana gedé-leutik hurup jeung ngan mariksa ngaran payil; pasihkeun hiji pola per garis dina Opsi.
-- Peringatan daptar hideung (pilihan, aktif sacara standar): nalika payil dikecualikeun ku daptar hideung anjeun, modal leutik nembongkeun payil jeung pola nu nyocogkeun. Ramah mode poék jeung bisa diaksés ku kibor (Enter/Esc pikeun nutup).
-- Nambahkeun nu aslina sanajan anjeun geus nambihan hal séjén; ngahindarkeun duplikat dumasar kana ngaran payil.
-- Ngaliwatan sertipikat SMIME jeung gambar inline pikeun nyingkahan lampiran nu teu perlu.
+- Secara otomatis melampirkan file dari email asli saat membalas.
+- Perilaku yang dapat dikonfigurasi: lampiran dapat
+  - ditambahkan secara otomatis, atau
+  - ditambahkan hanya setelah konfirmasi (dialog kecil yang dapat diakses). Di Opsi Anda
+    dapat mengaktifkan konfirmasi dan memilih jawaban default (Ya/Tidak).
+- Daftar hitam nama file (pola glob) mencegah file tertentu untuk dilampirkan
+  secara otomatis. Contoh: `*intern*`, `*secret*`, `*passwor*`.
+  Pencocokan tidak peka huruf besar/kecil dan hanya memeriksa nama file; berikan satu pola
+  per baris di Opsi.
+- Peringatan daftar hitam (opsional, diaktifkan secara default): saat file dikecualikan oleh
+  daftar hitam Anda, modal kecil mencantumkan file dan pola yang cocok. Ramah mode gelap
+  dan dapat diakses dengan keyboard (Enter/Esc untuk menutup).
+- Bekerja dengan Balas dan Balas Semua. Meneruskan tidak dimodifikasi oleh add-on ini.
+- Menambahkan asli bahkan jika Anda sudah melampirkan sesuatu sendiri; menghindari duplikat berdasarkan nama file.
+- Penjaga duplikat per-tab mencegah penambahan ganda di tab komposisi yang sama.
+- Melewatkan sertifikat S/MIME dan gambar inline untuk menghindari lampiran yang tidak perlu.
+
+## How It Works {#how-it-works}
+
+- Saat membalas, add-on mencantumkan lampiran asli.
+- Menyaring tanda tangan S/MIME dan gambar inline.
+- Opsional meminta konfirmasi (ramah keyboard).
+- Menambahkan file yang memenuhi syarat ke komposisi Anda, menghindari duplikat berdasarkan nama file.
+- Lihat “Mengapa lampiran mungkin tidak ditambahkan” di Penggunaan untuk kasus khusus.
+
+Catatan privasi: Semua pemrosesan terjadi secara lokal di Thunderbird. Add-on ini tidak melakukan permintaan jaringan latar belakang.

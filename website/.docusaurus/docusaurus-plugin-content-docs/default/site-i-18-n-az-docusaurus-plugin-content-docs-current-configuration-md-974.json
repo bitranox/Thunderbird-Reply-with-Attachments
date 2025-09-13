@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Konfiqurasiya",
+  "description": "Konfiqurasiya",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Konfiqurasiya"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Quraşdırma",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "İstifadə",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/usage"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Ondersteuning",
+  "description": "FAQ",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Ondersteuning",
+    "sidebar_label": "Ondersteuning"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Glysemik",
     "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privaatheid",
     "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Compatibilità",
-  "description": "Compatibilità",
+  "description": "Compatibility",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/usage"
   },
   "next": {
-    "title": "Autorizzazioni",
+    "title": "Permessi",
     "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n పదకోశం",
-  "description": "అ్యాడ్‑ఆన్ UI మరియు డాక్యుమెంటేషన్‌లో ఉపయోగించే ప్రామాణిక పదాలు. లోకేల్‌లలో అనువాదాలను ఏకరీతిలో ఉంచేందుకు వీటినే వాడండి.",
+  "title": "సంగ్రహం",
+  "description": "Glossary",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n పదకోశం",
-    "sidebar_label": "పదకోశం"
+    "title": "సంగ్రహం",
+    "sidebar_label": "సంగ్రహం"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/languages"
   },
   "next": {
-    "title": "సహాయం",
+    "title": "సాయం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/support"
   }
 }

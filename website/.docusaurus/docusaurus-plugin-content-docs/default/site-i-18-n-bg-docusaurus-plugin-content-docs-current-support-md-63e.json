@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Поддръжка",
+  "description": "FAQ",
   "source": "@site/i18n/bg/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Поддръжка",
+    "sidebar_label": "Поддръжка"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Речник",
     "permalink": "/Thunderbird-Reply-with-Attachments/bg/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Поверителност",
     "permalink": "/Thunderbird-Reply-with-Attachments/bg/docs/privacy"
   }
 }

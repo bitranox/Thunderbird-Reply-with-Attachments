@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Catatan perubahan",
-  "description": "Lihat riwayat lengkap di berkas CHANGELOG.md pada repositori.",
+  "title": "Daftar Perubahan",
+  "description": "Changelog",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Catatan perubahan"
+    "title": "Daftar Perubahan"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Lisensi",
-    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/license"
   }
 }

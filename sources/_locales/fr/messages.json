@@ -3,7 +3,7 @@
     "message": "Répondre avec les pièces jointes"
   },
   "extDescription": {
-    "message": "Inclure automatiquement les pièces jointes d'origine dans les réponses aux messages."
+    "message": "Inclure automatiquement les pièces jointes originales dans les réponses aux e-mails."
   },
   "composeTitle": {
     "message": "Répondre avec les pièces jointes"
@@ -21,10 +21,36 @@
     "message": "Il n’y a actuellement aucune option à configurer."
   },
   "uiSupport": {
-    "message": "Vous aimez ce module complémentaire ? Soutenez-moi avec une petite contribution :"
+    "message": "Vous aimez ce module complémentaire ? Merci de me soutenir par une petite contribution :"
+  },
+  "uiRateATNText": {
+    "message": "Merci d’évaluer sur ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Faire un don maintenant"
+    "message": "Faire un don"
+  },
+  "uiIDonated": {
+    "message": "J’ai fait un don"
+  },
+  "uiDonateSnoozed": {
+    "message": "Merci ! La demande de don est masquée pendant 90 jours."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Masqué jusqu’au $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Afficher à nouveau « Faire un don »"
+  },
+  "uiDonateRestored": {
+    "message": "La demande de don est à nouveau visible."
   },
   "uiGithubText": {
     "message": "Pour les rapports de bogues ou autres demandes, veuillez visiter ma"
@@ -33,7 +59,7 @@
     "message": "page GitHub"
   },
   "iconAlt": {
-    "message": "Icône de Répondre avec les pièces jointes"
+    "message": "Icône « Répondre avec les pièces jointes »"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -54,7 +80,7 @@
     "message": "Enregistrement…"
   },
   "uiReset": {
-    "message": "Réinitialiser les valeurs par défaut"
+    "message": "Réinitialiser aux valeurs par défaut"
   },
   "uiSaved": {
     "message": "Enregistré."
@@ -69,7 +95,7 @@
     "message": "Demander avant d’ajouter des pièces jointes"
   },
   "uiConfirmHelp": {
-    "message": "Une petite boîte de dialogue de confirmation apparaît uniquement lorsque des pièces jointes seraient effectivement ajoutées. Clavier : Y ou J = Oui ; N ou Esc = Non."
+    "message": "Une petite boîte de confirmation apparaît uniquement lorsque des pièces jointes seraient effectivement ajoutées. Clavier : Y ou J = Oui ; N ou Échap = Non."
   },
   "confirmAddOne": {
     "message": "Ajouter la pièce jointe : $1 ?",
@@ -124,9 +150,21 @@
     "message": "Non"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentation :"
+  },
+  "uiDocsButton": {
+    "message": "Ouvrir la documentation"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

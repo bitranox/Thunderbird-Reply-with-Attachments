@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "権限",
-  "description": "このアドオンが要求する権限は少数に限定されています。各権限が必要な理由：",
+  "description": "Permissions",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

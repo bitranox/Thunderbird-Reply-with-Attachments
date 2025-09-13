@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "পারমিশন",
-  "description": "অ্যাড‑অনটি কেবল ছোট, উদ্দেশ্যভিত্তিক কয়েকটি পারমিশন চায়। কেন প্রয়োজন:",
+  "title": "অধিকারসমূহ",
+  "description": "Permissions",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "পারমিশন"
+    "title": "অধিকারসমূহ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "সামঞ্জস্যতা",
+    "title": "সঙ্গতি",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/compatibility"
   },
   "next": {
-    "title": "ডেভেলপমেন্ট",
+    "title": "বিকাশ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/development"
   }
 }

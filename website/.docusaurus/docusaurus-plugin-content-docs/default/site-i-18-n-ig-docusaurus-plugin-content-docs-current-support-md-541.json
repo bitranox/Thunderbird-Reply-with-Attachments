@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Nkwado",
+  "description": "FAQ",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Nkwado",
+    "sidebar_label": "Nkwado"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Ndị Okwu",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Nzuzo",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/privacy"
   }
 }

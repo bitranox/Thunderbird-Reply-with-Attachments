@@ -1,23 +1,35 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'ການປອດໄພ'
+sidebar_label: 'ການປອດໄພ'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## ນະແບບຄວາມປອດໄພຂໍໍໍໄລ (CSP) {#content-security-policy-csp}
 
-What the add‑on does:
+ຕັ້ງຄ່າແລະໜ້າປໍ່ສະທ່ານບໍ່ເຊີຍຫະລວຍຕອນສາຍຍຝູລຶມເກາະ. ຂອງພິດນີ້ມາຈາກໄຟລ໌ສອງດ້ວຍຄິດສໍາລັບຕຶມຄີເນລາຍເວລາໃນ Thunderbird. ຖ້າທ່ານເຟິດໃສ່ລາຍຄຣອບໃນໄດ້ເລືອກ, ບໍ່ຈູດຈັກບິລງອາຖານເນຈ ເຫຼົ່ານີ້.
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+---
 
-What the add‑on does not do:
+## ການບັນທຶກຂໍໍໍໄລ {#data-storage}
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- ຄໍເນົາສຽງບົດມິດປັງ (blacklist, ຈາມາດສີ, ຄໍາຕອບດັ່ງແລກ) ຖຶງຄວາມລຽນແລະ `storage.local` ສໍາລັບແອດ‑ອອນນີ້.
+- ບໍ່ມີສົງກັງສາແບບຄວາມລຽນຄັ້ນລົດຫັນໄປ.
 
-Permissions are documented on the [Permissions](permissions) page.
+---
 
-## Content Security Policy (CSP)
+## ເຄົາໃຊ້ດິນ {#network}
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+- ແອດ‑ອອນນີ້ບໍ່ດັດຊະນຕໍ່ສົງກັງທ່າເນ໱່າຈິ່ງສຽງບດ.
+- ສິ່ງຈິ່ງເຄົາໃຊ້ເຮັດີ້ມາຈາສົງຕົວ (Docs, GitHub, Donate) ຫຼືເວລາດັນອາດສັບອອບໄສ.
+
+---
+
+## ການລົບຂໍໍໍໄລ {#data-removal}
+
+- ການລົບແອດ‑ອອນນີ້ບັນທຶກລົນລອຍກັບ.
+- ຄໍາຕິກກືນແນວ້ກ່ຽວຈອຄໍເນົາພລເອອຄັໍ້ນັ່ອນ`storage.local` ແລະ ປ່ອນລົກກັບເຂອຍຂອງບໍ່ນັນເຮັດ.
+- ການລົບແຄ໅ລລາກເຂົ່າໄບ່ນອຍ:
+  - ໜ້າປໍ່: ໃຊ້ “Reset to defaults” ສໍາລັບບສຽງຄວາມພິ່ນອານຂະດຈໄວ.
+  - ຊຶ່ນອຸ່ນ: ໃນ Thunderbird → ຄູນໃດ → ຄວບຄຸມສົດຕິດ → ຂາກນອງຂອງແອດ‑ອອນນີ້, ເປິດບັດດີດແນວທິສາຄໃສ່ລຜນ if needed.
+
+---

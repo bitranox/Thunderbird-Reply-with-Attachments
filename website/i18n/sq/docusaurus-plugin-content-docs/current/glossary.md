@@ -1,32 +1,55 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Glossari'
+sidebar_label: 'Glossari'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Glossary
 
-Notes
+Të gjitha termat kanonike të përdorura në UI dhe dokumentacionin e shtesës. Përdorni këto për të mbajtur përkthimet në përputhje me standardet në të gjitha gjuhët.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Notes
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- Mbani tekstet e UI të shkurtra dhe me fokus në veprime.
+- Preferoni emra për cilësimet dhe folje për veprimet.
+- Përdorni rastin e fjalisë (vetëm fjala e parë e kapitalizuar) përveç titujve.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Terms
+
+- **Attachments**: skedarë të përfshirë me një email. Shmangni "enclosures".
+- **Blacklist** (Lista e përjashtimit): lista e modeleve që parandalojnë që skedarët të bashkohen automatikisht. Në UI këtë e shohim si “Blacklist (model globi)”.
+- Në kopjen e UI, preferoni “Blacklist (model globi)” për të përputhur faqen e cilësimeve.
+- Shpjegoni se vetëm emrat e skedarëve përputhen; jo rrugët.
+- **Confirm / Konfirmim:** kërkoni nga përdoruesi të vazhdojë para se të shtojë bashkëngjitje.
+- **Answers:** “Po” (shto), “Jo” (anulo). Mbani etiketat e butonëve të shkurtra.
+- **Inline image:** një imazh i referuar nga CID në HTML-në e mesazhit; kurrë nuk shtohet si një skedare.
+- **S/MIME signature:** `smime.p7s` ose pjesët e nënshkrimit PKCS7; kurrë nuk shtohet.
+- **Options / Settings:** faqja e konfigurimit të shtesës në Thunderbird.
+- **Default answer:** përgjigjja e parazgjedhur për dialogun e konfirmimit.
+
+---
+
+### Email actions
+
+- **Reply:** përgjigjuni dërguesit të një mesazhi.
+- **Reply all:** përgjigjuni dërguesit dhe të gjithë marrësve.
+- **Forward:** dërgoni mesazhin te një marrës tjetër; kjo shtesë nuk modifikon sjelljen e përparimit.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** asetet e inkorporuara në trupin e mesazhit (p.sh., referuar nëpërmjet Content‑ID). Nuk shtohen si skedare nga shtesa.
+- **Attached files:** skedarët e bashkëngjitur me mesazhin si bashkëngjitje të zakonshme (kandidatë për kopjim në përgjigje).
+
+---
+
+### Style
+
+- **Filenames:** trego si kod (monospace), p.sh., `smime.p7s`, `*.png`.
+- **Keys/buttons:** vetëm në rastin e titujve kur ata janë emra të duhur; përndryshe në rastin e fjalisë.
+- **Avoid jargon** (p.sh., “idempotency”); preferoni “parandaloni kopjet”.

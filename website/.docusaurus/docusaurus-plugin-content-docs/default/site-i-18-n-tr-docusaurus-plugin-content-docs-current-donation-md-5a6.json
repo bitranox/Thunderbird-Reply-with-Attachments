@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Bağış",
-  "description": "“Eklerle Yanıtla”yı beğendiyseniz ve geliştirilmesini desteklemek isterseniz, buradan bağış yapabilirsiniz:",
+  "title": "Bağış Yap",
+  "description": "Donate",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Bağış",
-    "sidebar_label": "Bağış"
+    "title": "Bağış Yap",
+    "sidebar_label": "Bağış Yap"
   },
   "sidebar": "docs",
   "previous": {
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Lisans",
-    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/license"
   }
 }

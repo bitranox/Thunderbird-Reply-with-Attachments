@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Diegimas'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Diegimas'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Diegimas per "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimum Thunderbird Version
+Šis priedas palaiko Thunderbird **128 ESR arba naujesnę** versiją. Senesnės versijos nėra palaikomos.
+:::
 
----
+Tai rekomenduojamas diegimo metodas. Priedai, įdiegiami iš ATN (addons.thunderbird.net), gauna automatiškai atnaujinimus. LOCAL/dev diegimai automatiškai neatnaujinami.
 
-## Local installation in Thunderbird
+- Minimum Thunderbird versija: 128 ESR arba naujesnė.
 
-### Download the XPI file
+1. Thunderbird programoje eikite į **Įrankiai > Priedai ir temos**.
+2. Paieškokite „atsakyti su priedais“.
+3. Pridėkite priedą.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Arba atidarykite priedo puslapį tiesiogiai: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Rankinis diegimas iš XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Atsisiųsti XPI failą {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Eikite į [Thunderbird priedo puslapį](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Atsisiųskite naujausią priedo versiją kaip XPI failą (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Įdiegti Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Atidarykite Thunderbird.
+2. Eikite į **Įrankiai > Priedai ir temos**.
+3. **Priedų valdytojo** viršuje dešinėje pusėje spustelėkite pavaros piktogramą.
+4. Iš meniu pasirinkite **Įdiegti priedą iš failo…**.
+5. Pasirinkite atsisiųstą `reply_with_attachments-x.y.z-tb.xpi` failą.
+6. Patvirtinkite diegimą, kai būsite paraginti.
 
 ---
+
+## Diegimas plėtrai {#installation-for-development}
+
+### Atsisiųsti saugyklą {#download-the-repository}
+
+1. Atsisiųskite naujausią GitHub saugyklos versiją.
+2. Vykdykite `make help` daugiau informacijos.
+
+### Įdiegti Thunderbird {#install-in-thunderbird-dev}
+
+1. Atidarykite Thunderbird.
+2. Eikite į **Įrankiai > Priedai ir temos**.
+3. **Priedų valdytojo** viršuje dešinėje pusėje spustelėkite pavaros piktogramą.
+4. Iš meniu pasirinkite **Įdiegti priedą iš failo…**.
+5. Pasirinkite sugeneruotą `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` failą.
+6. Patvirtinkite diegimą, kai būsite paraginti.
+
+Pastaba: Jei Thunderbird nesutinka su `.zip` jūsų sistemoje, pervardykite jį į `.xpi` ir vėl pabandykite „Įdiegti priedą iš failo…“.
+
+### Kur rasti LOCAL ZIP {#where-local-zip}
+
+- Pirmiausia, supakuokite priedą: vykdykite `make pack` saugyklos šaknyje.
+- Po pakavimo, rasite „LOCAL“ zip su saugyklos šaknyje (pvz., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Prieš pakavimą bandomajam naudojimui, padidinkite versijas tiek `sources/manifest_ATN.json`, tiek `sources/manifest_LOCAL.json`.
+
+---
+
+## Išjungti, pašalinti ir atnaujinimai {#disable-uninstall-updates}
+
+- Išjungti: Thunderbird → Įrankiai → Priedai ir temos → raskite priedą → išjunkite.
+- Pašalinti: tas pats vaizdas → tris taškus meniu → Pašalinti.
+- Atnaujinimai: ATN diegimai automatiškai atnaujinami, kai naujos versijos yra patvirtintos. LOCAL/dev diegimai automatiškai neatnaujinami; naują LOCAL versiją reikia įdiegti rankiniu būdu.
+- Visai pašalinti nustatymus: žr. [Privatumas → Duomenų pašalinimas](privacy#data-removal).
+
+Taip pat žr.
+
+- [Greitasis pradžios vadovas](quickstart)

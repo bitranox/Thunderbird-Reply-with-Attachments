@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: Mbiri ya zosintha
+title: 'Zikhala za kusintha'
 ---
 
-Onani mbiri yonse mu fayilo ya CHANGELOG.md ili mu repositoriyo.
+## Changelog
 
-- 2.0.0: kulembanso kuti ikhale mtundu wokwanira zinthu zonse (EN/DE)
-- 1.0.1: kusintha kupita ku messages.listAttachments()
-- 1.0.0: kutulutsa koyamba
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

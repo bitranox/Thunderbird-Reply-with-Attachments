@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Gebruik",
   "description": "Usage",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Gebruik",
+    "sidebar_label": "Gebruik"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Configuratie",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Compatibiliteit",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/compatibility"
   }
 }

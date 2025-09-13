@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "مەۋزۇغا ماسلىشىش",
   "description": "Compatibility",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "مەۋزۇغا ماسلىشىش",
+    "sidebar_label": "مەۋزۇغا ماسلىشىش"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "ئىشلىتىش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "ئوقۇشلۇق",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Sipò",
+  "description": "FAQ",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Sipò",
+    "sidebar_label": "Sipò"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Glosè",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Prive",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/privacy"
   }
 }

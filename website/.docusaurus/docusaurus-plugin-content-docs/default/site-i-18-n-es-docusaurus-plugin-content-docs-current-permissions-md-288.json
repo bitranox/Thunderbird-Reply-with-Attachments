@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Permisos",
-  "description": "El complemento solicita un conjunto pequeño y específico de permisos. Motivo de cada uno:",
+  "description": "Permisos",
   "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "క్విక్‌స్టార్ట్",
-  "description": "1. Thunderbird Add‑ons నుండి ఆడ్‑ఆన్‌ను ఇన్‌స్టాల్ చేయండి.",
+  "title": "ఆరంభం",
+  "description": "ఆరంభం",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "క్విక్‌స్టార్ట్",
-    "sidebar_label": "క్విక్‌స్టార్ట్"
+    "title": "ఆరంభం",
+    "sidebar_label": "ఆరంభం"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "లక్షణాలు",
+    "title": " లక్షణాలు",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/features"
   },
   "next": {
-    "title": "ఇన్‌స్టాలేషన్",
+    "title": "ఇన్స్టాలేషన్",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/install"
   }
 }

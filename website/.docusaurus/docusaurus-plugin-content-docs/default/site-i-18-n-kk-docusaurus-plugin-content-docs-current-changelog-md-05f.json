@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Өзгерістер журналы",
-  "description": "Толық тарихты репозиторийдегі CHANGELOG.md файлынан қараңыз.",
+  "title": "Өзгерістер тізімі",
+  "description": "Өзгерістер тізімі",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Өзгерістер журналы"
+    "title": "Өзгерістер тізімі"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/licence"
+    "title": "Лицензия",
+    "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/license"
   }
 }

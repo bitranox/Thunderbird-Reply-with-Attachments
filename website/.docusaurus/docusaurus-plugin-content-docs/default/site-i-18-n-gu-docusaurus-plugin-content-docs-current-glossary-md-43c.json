@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n શબ્દકોશ",
-  "description": "ઍડ‑ઓન UI અને દસ્તાવેજોમાં વપરાતા ધ્રુવક (કૅનોનિકલ) શબ્દો. વિવિધ લોકેલમાં અનુવાદ એકસરખા રહે તે માટે આનો ઉપયોગ કરો.",
+  "title": "શોધશब्दકોશ",
+  "description": "Glossary",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n શબ્દકોશ",
-    "sidebar_label": "શબ્દકોશ"
+    "title": "શોધશब्दકોશ",
+    "sidebar_label": "શોધશબ્દકોશ"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/languages"
   },
   "next": {
-    "title": "સહાય",
+    "title": "સમર્થન",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/support"
   }
 }

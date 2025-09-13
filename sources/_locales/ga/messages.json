@@ -3,7 +3,7 @@
     "message": "Freagair le hIatáin"
   },
   "extDescription": {
-    "message": "Cuir na hiatáin bunaidh leis go huathoibríoch i bhfreagraí ríomhphoist."
+    "message": "Cuir na hIatáin bhunaidh san áireamh go huathoibríoch i bhfreagraí ríomhphoist."
   },
   "composeTitle": {
     "message": "Freagair le hIatáin"
@@ -21,13 +21,39 @@
     "message": "Níl aon roghanna le cumrú faoi láthair."
   },
   "uiSupport": {
-    "message": "An maith leat an breiseán seo? Tacaigh liom le síntiús beag:"
+    "message": "An maith leat an breiseán seo? Tacaigh liom le síntiús beag, le do thoil:"
+  },
+  "uiRateATNText": {
+    "message": "Rátáil ar ATN, le do thoil"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Tabhair síntiús anois"
+    "message": "Deonaigh anois"
+  },
+  "uiIDonated": {
+    "message": "Rinne mé síntiús"
+  },
+  "uiDonateSnoozed": {
+    "message": "Go raibh maith agat! Tá an meabhrúchán síntiúis i bhfolach ar feadh 90 lá."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "I bhfolach go dtí $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Taispeáin Deonaigh arís"
+  },
+  "uiDonateRestored": {
+    "message": "Tá an meabhrúchán síntiúis le feiceáil arís."
   },
   "uiGithubText": {
-    "message": "Le haghaidh tuairiscí fabhtanna nó fiosruithe eile, tabhair cuairt ar mo"
+    "message": "Le haghaidh tuairiscí fabhtanna nó fiosrúcháin eile, tabhair cuairt ar mo"
   },
   "uiGithubLinkLabel": {
     "message": "leathanach GitHub"
@@ -39,10 +65,10 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Liosta dubh d’ainmneacha comhaid (patrúin glob)"
+    "message": "Liosta dubh d'ainmneacha comhaid (patrúin glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Ní chuirfear comhaid mar iatáin go huathoibríoch riamh má mheaitseálann a n-ainmneacha aon cheann de na patrúin seo. Patrún amháin sa líne. Samplaí: *.png, smime.*, *.p7s"
+    "message": "Ní chuirfear comhaid lena n-oireann aon cheann de na patrúin seo leis go huathoibríoch riamh. Patrún amháin in aghaidh na líne. Samplaí: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Tabhair rabhadh má eisiatar iatáin de bharr an liosta dubh"
@@ -51,10 +77,10 @@
     "message": "Sábháil"
   },
   "uiSaving": {
-    "message": "Á shábháil…"
+    "message": "Á Sábháil…"
   },
   "uiReset": {
-    "message": "Athshocraigh chuig na réamhshocruithe"
+    "message": "Athshocraigh go réamhshocruithe"
   },
   "uiSaved": {
     "message": "Sábháilte."
@@ -66,10 +92,10 @@
     "message": "Deimhniú"
   },
   "uiConfirmLabel": {
-    "message": "Fiafraigh sula gcuirfear iatáin leis"
+    "message": "Fiafraigh sula gcuirtear iatáin leis"
   },
   "uiConfirmHelp": {
-    "message": "Ní thaispeántar dialóg bheag deimhnithe ach amháin nuair a chuirfí iatáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
+    "message": "Ní thaispeántar dialóg bheag deimhniúcháin ach amháin nuair a chuirfí iatáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
   },
   "confirmAddOne": {
     "message": "Cuir iatán leis: $1?",
@@ -100,10 +126,10 @@
     "message": "Níl"
   },
   "warnBlacklistTitle": {
-    "message": "Eisiata ag an liosta dubh"
+    "message": "Eisiata de bharr an liosta dubh"
   },
   "warnBlacklistIntro": {
-    "message": "Ní chuirfear na comhaid seo a leanas mar iatáin go huathoibríoch:"
+    "message": "Ní chuirfear na comhaid seo a leanas leis go huathoibríoch:"
   },
   "warnColFile": {
     "message": "Comhad"
@@ -124,9 +150,21 @@
     "message": "Níl"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Doiciméadú:"
+  },
+  "uiDocsButton": {
+    "message": "Oscail an doiciméadú"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ପରିବର୍ତ୍ତନ ତାଲିକା",
-  "description": "ସମ୍ପୂର୍ଣ୍ଣ ଇତିହାସ ନିମନ୍ତେ ରିପୋଜିଟୋରୀର CHANGELOG.md ଫାଇଲ୍‌କୁ ଦେଖନ୍ତୁ।",
+  "title": "ଚେନ୍ଜଲଗ୍",
+  "description": "Changelog",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ପରିବର୍ତ୍ତନ ତାଲିକା"
+    "title": "ଚେନ୍ଜଲଗ୍"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/licence"
+    "title": "ଲାଇସେନ୍ସ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/license"
   }
 }

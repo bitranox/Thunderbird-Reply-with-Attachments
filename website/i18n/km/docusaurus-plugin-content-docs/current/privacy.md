@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'ការពារ'
+sidebar_label: 'ការពារ'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## ការពារ
 
-What the add‑on does:
+:::note មិនមានការទំនាក់ទំនង; មិនមានបណ្តាញនៅក្រោយ
+ម៉ាស៊ីនបន្ថែមនេះ **មិន** ប្រមូលវិភាគ/ការទំនាក់ទំនង និង **មិន** មានការស្នើសុំនៅក្រោយ។ ការ។ ការបញ្ជូលបណ្តាញណាមួយកើតឡើងតែប៉ុណ្ណោះពេលអ្នកចុចលើតំណភ្ជាប់ខាងក្រៅ (ឯកសារ, GitHub, ផ្ដល់ប្រាក់)។
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments មិនបានប្រមល់វិភាគ ឬការទំនាក់ទំនងនិងមិនបានបញ្ជូនទិន្នន័យរបស់អ្នកទៅកន្លែងណាមួយ។
 
-What the add‑on does not do:
+អ្វីដែលម៉ាស៊ីនបន្ថែមនេះធ្វើ៖
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- អាន​នៅរកមេដៅនិងឯកសារពីសារដើមក្នុងទូរស័ព្ទ (Thunderbird API) ដើម្បីភ្ជាប់វាទៅនឹងការឆ្លើយតបរបស់អ្នក។
+- រក្សាទុកជម្រើសរបស់អ្នក (ប blacklist, ការបញ្ជាក់, ចំពោះចម្លើយម៉ាស៊ីន) ក្នុងការផ្ទុកក្នុង Thunderbird ។
 
-Permissions are documented on the [Permissions](permissions) page.
+អ្វីដែលម៉ាស៊ីនបន្ថែមនេះមិនធ្វើ៖
 
-## Content Security Policy (CSP)
+- មិនមានការតាមដាន, វិស្វកម្ម, ការរាយការណ៍បរាជ័យ, ឬការរាប់លេខចញ្ច។
+- មិនមានការស្នើសុំនៅក្រោយឡើយ បើបើកតំណភ្ជាប់ខាងក្រៅ (ឯកសារ, GitHub, ផ្ដល់ប្រាក់) នៅលើគ្រប់ជំហាន។
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+ការអនុញ្ញាតត្រូវបានចុះផ្សាយនៅលើទំព័រ [Permissions](permissions) ។
+
+---
+
+## គោលនយោបាយសុវត្ថិភាពទិន្នន័យ (CSP) {#content-security-policy-csp}
+
+ជម្រើសនិងទំព័របង្ហាញបរាជ័យជៀសវាងសڪ្រីដែលនៅក្នុងប្រព័ន្ធ។ JavaScript ទាំងអស់ត្រូវបានបំរែបំរួលពីឯកសារដែលបានបញ្ចូលជាមួយម៉ាស៊ីនបន្ថែម ដើម្បីអាចទំនងទៅលើ CSP តឹងតែងនៅក្នុង Thunderbird។ ប្រសិនបើអ្នកបញ្ចូលកូដនៅក្នុងឯកសារ វាជាឧទាហរណ៍តែមួយនិងមិនត្រូវបានអនុវត្តដោយម៉ាស៊ីនបន្ថែម។
+
+---
+
+## ការផ្ទុកទិន្នន័យ {#data-storage}
+
+- ជម្រើសអ្នកប្រើ (ប blacklist, បន្លាយការបញ្ជាក់, ចំនួនចម្លើយម៉ាស៊ីន) ត្រូវបានរក្សាទុកក្នុង Thunderbird's `storage.local` សម្រាប់ម៉ាស៊ីនបន្ថែមនេះ។
+- មិនមានការបន្ថែមដោយធ Clouds ជាមួយម៉ាស៊ីនបន្ថែមនេះទេ។
+
+---
+
+## បណ្តាញ {#network}
+
+- ម៉ាស៊ីនបន្ថែមនេះមិនមានសកម្មភាពបណ្តាញនៅក្រោយឡើយ។
+- ការចូលប្រើបណ្តាញណាមួយកើតឡើងតែប៉ុណ្ណោះពេលអ្នកចុចលើតំណភ្ជាប់ (ឯកសារ, GitHub, ផ្ដល់ប្រាក់) ឬពេល Thunderbird យ៉ាងឲ្យគ្មានអាជីពធម្មតាតែអត្រាមិនទាក់ទងនឹងម៉ាស៊ីនបន្ថែមនេះ។
+
+---
+
+## ការដកទិន្នន័យ {#data-removal}
+
+- ការលុបម៉ាស៊ីនបន្ថែមធ្វើឱ្យកូដរបស់វាបាត់។
+- ការកំណត់ត្រូវបានរក្សា​តែ​សម្រាប់ `storage.local` នៅក្នុង Thunderbird ហើយត្រូវបានលុបនៅពេលលុប; មិនមានការផ្ទុកខាងក្រៅតម្រូវឡើយ។
+- ការកំណត់ត្រឡប់វិញដោយមិនបានលុប:
+  - ទំព័ជម្រើស: ប្រើ “Reset to defaults” សម្រាប់ប blacklist និងការព្រមានប blacklist ។
+  - កម្រិតខ្ពស់: ក្នុង Thunderbird → ឧបករណ៍ → ឧបករណ៍អភិវឌ្ឍន៍ → ការពិនិត្យពន្យល់, បើកការផ្ទុករបស់បន្ថែមនេះ និងសម្អាតកូនសោប្រសិនបើចាំបាច់។

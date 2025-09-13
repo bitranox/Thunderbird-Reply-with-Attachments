@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "गोपनीयता",
-  "description": "Reply with Attachments कोणतेही ऍनालिटिक्स/टेलिमेट्री गोळा करत नाही आणि तुमचा डेटा कुठेही पाठवत नाही.",
+  "description": "गोपनीयता",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/support"
   },
   "next": {
-    "title": "देणगी",
+    "title": "दान करा",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/donation"
   }
 }

@@ -1,20 +1,97 @@
 ---
 id: usage
-title: 사용법
-sidebar_label: 사용법
+title: '사용법'
+sidebar_label: '사용법'
 ---
 
-## 사용법
+## Usage {#usage}
 
-- 회신하면 부가 기능이 원본 첨부 파일을 자동으로 추가합니다. 옵션에서 설정했을 경우 먼저 확인을 요청합니다.
-- 파일 이름 기준으로 중복을 제거합니다. SMIME 및 인라인 이미지는 항상 제외됩니다.
-- 블랙리스트에 있는 첨부 파일도 제외됩니다(대소문자 구분 없음, glob 패턴).
+- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
+- De‑duplicated by filename; S/MIME and inline images are always skipped.
+- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-## 동작 세부사항
+### What happens on reply {#what-happens}
 
-- 중복 방지: 부가 기능은 탭별 세션 값과 메모리 가드를 이용해 작성 탭을 처리됨으로 표시하여 원본을 두 번 추가하지 않습니다.
-- 기존 첨부 파일 존중: 이미 첨부가 있는 경우에도 원본은 한 번만 추가되며, 이미 존재하는 파일 이름은 건너뜁니다.
-- 제외 항목: SMIME 관련 항목(예: `smime.p7s`, `application/pkcs7-signature`/`x-pkcs7-signature`/`pkcs7-mime`)과 인라인 이미지는 무시됩니다. 1차 확인에서 없으면, 완화된 모드로 비‑SMIME 부분을 다시 확인합니다.
-- 블랙리스트 경고(활성 시): 후보가 블랙리스트로 제외되면 작은 모달 창에 영향을 받은 파일과 일치 패턴이 표시됩니다. 모든 것이 제외되어 아무것도 첨부되지 않는 경우에도 표시됩니다.
+- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+
+Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+
+| Part type                                         |  Strict pass | Relaxed pass |
+| ------------------------------------------------- | -----------: | -----------: |
+| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
+| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
+| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
+| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
+| Regular file attachment with a filename           | May be added | May be added |
+
+Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+
+---
+
+### Cross‑reference {#cross-reference}
+
+- Forward is not modified by design (see Limitations below).
+- For reasons an attachment might not be added, see “Why attachments might not be added”.
+
+---
+
+## Behavior Details {#behavior-details}
+
+- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
+- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
+- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
+- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
+  - **Filenames:** `smime.p7s`
+  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
+  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
+- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
+  the add-on shows a small modal listing the affected files and the matching
+  pattern(s). This warning also appears in cases where no attachments will be
+  added because everything was excluded.
+
+---
+
+## Keyboard shortcuts {#keyboard-shortcuts}
+
+- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
+  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
+  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
+
+### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+
+| Keys            | Action                         |
+| --------------- | ------------------------------ |
+| Y / J           | Confirm Yes                    |
+| N / Esc         | Confirm No                     |
+| Enter           | Activate focused button        |
+| Tab / Shift+Tab | Move focus forward/back        |
+| Arrow keys      | Move focus between buttons     |
+| Default answer  | Sets initial focus (Yes or No) |
+
+---
+
+## Limitations {#limitations}
+
+- Forward is not modified by this add-on (Reply and Reply all are supported).
+- Very large attachments may be subject to Thunderbird or provider limits.
+  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
+- Encrypted messages: S/MIME parts are intentionally excluded.
+
+---
+
+## Why attachments might not be added {#why-attachments-might-not-be-added}
+
+- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
+- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
+- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
+- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
+- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+
+---
+
+See also
+
+- [Configuration](configuration)

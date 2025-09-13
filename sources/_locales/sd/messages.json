@@ -3,13 +3,13 @@
     "message": "منسلڪن سان جواب"
   },
   "extDescription": {
-    "message": "ايميل جي جوابن ۾ اصلي منسلڪون پاڻمرادو شامل ڪري ٿو."
+    "message": "خودڪار طور ايميل جي جوابن ۾ اصل منسلڪون شامل ڪندو."
   },
   "composeTitle": {
     "message": "منسلڪن سان جواب"
   },
   "optionsTitle": {
-    "message": "منسلڪن سان جواب — ترتيبون"
+    "message": "منسلڪن سان جواب — اختيارون"
   },
   "confirmTitle": {
     "message": "منسلڪن جي تصديق"
@@ -18,13 +18,39 @@
     "message": "منسلڪن سان جواب"
   },
   "uiNoOptions": {
-    "message": "هن وقت ترتيب ڏيڻ لاءِ ڪوبه اختيار موجود ناهي."
+    "message": "في الحال ترتيب ڏيڻ لاءِ ڪو به آپشن موجود ناهي."
   },
   "uiSupport": {
-    "message": "ڇا اوهان کي هي ايڊ-آن پسند آهي؟ ننڍڙي تعاون سان منهنجي مدد ڪريو:"
+    "message": "ڇا اوهان کي هي ايڊ-آن پسند آيو؟ مهرباني ڪري ننڍڙي عطئي سان منهنجي سهائتا ڪريو:"
+  },
+  "uiRateATNText": {
+    "message": "مهرباني ڪري ATN تي درجابندي ڪريو"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "هاڻي چندو ڏيو"
+    "message": "هاڻي عطيو ڏيو"
+  },
+  "uiIDonated": {
+    "message": "مون عطيو ڏنو"
+  },
+  "uiDonateSnoozed": {
+    "message": "مهرباني! عطئي بابت ياد ڏيارڻ 90 ڏينهن لاءِ لڪايو ويو آهي."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 تائين لڪايو ويو",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "عطيو ٻيهر ڏيکاريو"
+  },
+  "uiDonateRestored": {
+    "message": "عطئي بابت ياد ڏيارڻ ٻيهر نظر اچي رهيو آهي."
   },
   "uiGithubText": {
     "message": "بگ رپورٽن يا ٻين سوالن لاءِ، مهرباني ڪري منهنجي"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "فائل نالن جي بليڪ لسٽ (گلوب پيٽرنز)"
+    "message": "فائل نالن جي ڪاري فهرست (گلوب پيٽرنز)"
   },
   "uiBlacklistHelp": {
-    "message": "اهي فائلون جن جا نالا هنن مان ڪنهن به پيٽرن سان ملي وڃن، ڪڏهن به پاڻمرادو منسلڪ نه ڪيون وينديون. هر سٽ تي هڪ پيٽرن. مثال: *.png، smime.*، *.p7s"
+    "message": "جن فائلن جا نالا انهن مان ڪنهن به پيٽرن سان ملندا، سي ڪڏهن به پاڻمرادو منسلڪ نه ڪيا ويندا. هر ليڪ ۾ هڪ پيٽرن. مثال: *.png، smime.*، *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "جيڪڏهن منسلڪون بليڪ لسٽ سبب خارج ڪيون وڃن ته خبردار ڪريو"
+    "message": "جيڪڏهن ڪاري فهرست سبب منسلڪون خارج ٿين ته خبردار ڪريو"
   },
   "uiSave": {
     "message": "محفوظ ڪريو"
@@ -54,7 +80,7 @@
     "message": "محفوظ ڪيو پيو وڃي…"
   },
   "uiReset": {
-    "message": "ڊي فالٽ تي ري سيٽ ڪريو"
+    "message": "ڊيفالٽ تي ري سيٽ ڪريو"
   },
   "uiSaved": {
     "message": "محفوظ ٿي ويو."
@@ -69,10 +95,10 @@
     "message": "منسلڪون شامل ڪرڻ کان اڳ پڇو"
   },
   "uiConfirmHelp": {
-    "message": "هڪ ننڍڙو تصديقي ڊائلاگ تڏهن ئي ظاهر ٿيندو جڏهن واقعي منسلڪون شامل ڪبيون. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
+    "message": "ننڍڙو تصديقي ڊائلاگ تڏهن ئي ظاهر ٿيندو جڏهن واقعي منسلڪون شامل ٿيڻيون هجن. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
   },
   "confirmAddOne": {
-    "message": "منسلڪ شامل ڪريو: $1؟",
+    "message": "منسلڪ شامل ڪجي: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "منسلڪون شامل ڪريو ($1): $2$3؟",
+    "message": "منسلڪون شامل ڪجن ($1): $2$3؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "نه"
   },
   "warnBlacklistTitle": {
-    "message": "بليڪ لسٽ موجب خارج ڪيو ويو"
+    "message": "ڪاري فهرست سبب خارج"
   },
   "warnBlacklistIntro": {
-    "message": "هيٺيان فائلون پاڻمرادو منسلڪ نه ڪيون وينديون:"
+    "message": "هيٺين فائلون پاڻمرادو منسلڪ نه ڪبيون:"
   },
   "warnColFile": {
     "message": "فائل"
@@ -115,7 +141,7 @@
     "message": "ٺيڪ"
   },
   "uiConfirmDefaultHeader": {
-    "message": "ڊي فالٽ جواب"
+    "message": "ڊيفالٽ جواب"
   },
   "uiConfirmDefaultYes": {
     "message": "ها"
@@ -124,9 +150,21 @@
     "message": "نه"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "دستاويز:"
+  },
+  "uiDocsButton": {
+    "message": "دستاويز کوليو"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

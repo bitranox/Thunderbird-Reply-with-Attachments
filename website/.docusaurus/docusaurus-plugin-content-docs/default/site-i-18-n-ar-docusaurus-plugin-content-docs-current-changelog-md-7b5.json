@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "سجلّ التغييرات",
-  "description": "اطّلع على السجل الكامل في ملف CHANGELOG.md داخل المستودع.",
+  "title": "سجل التغييرات",
+  "description": "Changelog",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "سجلّ التغييرات"
+    "title": "سجل التغييرات"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "الترخيص",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/licence"
+    "title": "ترخيص",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/license"
   }
 }

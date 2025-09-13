@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "له ضمیمو سره ځواب"
+    "message": "د ضمیمو سره ځواب"
   },
   "extDescription": {
-    "message": "په برېښنالیک ځوابونو کې اصلي ضمیمې په اوتومات ډول ورګډوي."
+    "message": "په برېښنالیک ځوابونو کې اصلي ضمیمې په اوتومات ډول شاملوي."
   },
   "composeTitle": {
-    "message": "له ضمیمو سره ځواب"
+    "message": "د ضمیمو سره ځواب"
   },
   "optionsTitle": {
-    "message": "له ضمیمو سره ځواب — غوراوي"
+    "message": "د ضمیمو سره ځواب — غوراوي"
   },
   "confirmTitle": {
-    "message": "ضمیمې تایید کړئ"
+    "message": "د ضمیمو تایید"
   },
   "uiHeader": {
-    "message": "له ضمیمو سره ځواب"
+    "message": "د ضمیمو سره ځواب"
   },
   "uiNoOptions": {
-    "message": "اوس مهال د امستنې لپاره هېڅ غوراوي نشته."
+    "message": "اوس مهال د امستنې لپاره هېڅ غوراوی نشته."
   },
   "uiSupport": {
-    "message": "دا اډان خوښېږي؟ له یوې وړې بسپنې سره مې ملاتړ وکړئ:"
+    "message": "ایا دا اډ‑آن خوښوئ؟ مهرباني وکړئ د یوې کوچنۍ بسپنې په مرسته مې ملاتړ وکړئ:"
+  },
+  "uiRateATNText": {
+    "message": "مهرباني وکړئ په ATN کې ارزونه وکړئ"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "همدا اوس بسپنه ورکړئ"
+    "message": "اوس بسپنه ورکړئ"
+  },
+  "uiIDonated": {
+    "message": "ما بسپنه ورکړه"
+  },
+  "uiDonateSnoozed": {
+    "message": "مننه! د بسپنې پیغام ۹۰ ورځو لپاره پټ شو."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "تر $1 پورې پټ",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "د بسپنې پیغام بیا وښایه"
+  },
+  "uiDonateRestored": {
+    "message": "د بسپنې پیغام بیا ښکاره شو."
   },
   "uiGithubText": {
-    "message": "د ستونزو راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما"
+    "message": "د بګ راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما"
   },
   "uiGithubLinkLabel": {
     "message": "د GitHub پاڼه"
   },
   "iconAlt": {
-    "message": "د له ضمیمو سره ځواب نښه"
+    "message": "د 'د ضمیمو سره ځواب' نښه"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "د دوتنې نومونو تور لیست (د ګلوب بېلګې)"
+    "message": "د دوتنې نومونو تور لېست (د glob بڼې)"
   },
   "uiBlacklistHelp": {
-    "message": "هغه فایلونه چې نومونه یې له دې بېلګو سره سمون خوري، هېڅکله به په اوتومات ډول ونه نښلول شي. په هره کرښه کې یوه بېلګه. بېلګې: *.png, smime.*, *.p7s"
+    "message": "هغه دوتنې چې نومونه یې له دغو بڼو سره سمون خوري، هېڅکله به په اوتومات ډول ضمیمه نه شي. په هره کرښه کې یوه بڼه. بېلګې: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "که ضمیمې د تور لیست له امله مستثنا شي، خبرداری ورکړه"
+    "message": "که ضمیمې د تور لېست له امله مستثنا شي خبر ورکړئ"
   },
   "uiSave": {
-    "message": "ساتل"
+    "message": "خوندي کړئ"
   },
   "uiSaving": {
-    "message": "ساتل کېږي…"
+    "message": "خوندي کېږي…"
   },
   "uiReset": {
-    "message": "اډاني ته بیا تنظیمول"
+    "message": "اصلي امستنو ته بیا تنظیم کړئ"
   },
   "uiSaved": {
-    "message": "وساتل شول."
+    "message": "خوندي شو."
   },
   "uiResetDone": {
-    "message": "بیا تنظیم شول."
+    "message": "بیا تنظیم شو."
   },
   "uiConfirmHeader": {
     "message": "تایید"
   },
   "uiConfirmLabel": {
-    "message": "د ضمیمو له ورزیاتولو مخکې پوښتنه وکړه"
+    "message": "د ضمیمو له زیاتولو مخکې وپوښتئ"
   },
   "uiConfirmHelp": {
-    "message": "یوازې هغه مهال یو کوچنی د تایید کړکۍ ښکاري چې رښتیا هم ضمیمې ورزیاتې شي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
+    "message": "یوازې هغه وخت یو وړوکی د تایید کړکۍ ښکاره کېږي چې رښتیا هم ضمیمې زیاتېږي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
   },
   "confirmAddOne": {
-    "message": "ضمیمه ورزیات کړم: $1؟",
+    "message": "ضمیمه اضافه کړو: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ضمیمې ورزیات کړم ($1): $2$3؟",
+    "message": "ضمیمې اضافه کړو ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,22 +126,22 @@
     "message": "نه"
   },
   "warnBlacklistTitle": {
-    "message": "د تور لیست له امله ایستل شوي"
+    "message": "د تور لېست له امله مستثنا شوي"
   },
   "warnBlacklistIntro": {
-    "message": "لاندې فایلونه په اوتومات ډول نه نښلول کېږي:"
+    "message": "لاندې دوتنې به په اوتومات ډول ضمیمه نه شي:"
   },
   "warnColFile": {
-    "message": "فایل"
+    "message": "دوتنه"
   },
   "warnColPattern": {
-    "message": "بېلګه"
+    "message": "بڼه"
   },
   "warnOk": {
-    "message": "سمه ده"
+    "message": "سم"
   },
   "uiConfirmDefaultHeader": {
-    "message": "اډاني ځواب"
+    "message": "تلواله ځواب"
   },
   "uiConfirmDefaultYes": {
     "message": "هو"
@@ -124,9 +150,21 @@
     "message": "نه"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "لاسوندونه:"
+  },
+  "uiDocsButton": {
+    "message": "لاسوندونه پرانیزئ"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

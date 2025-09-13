@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Piştgirî",
+  "description": "FAQ",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Piştgirî",
+    "sidebar_label": "Piştgirî"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Peyvên Dîrokî",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "مناعت",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Podrška",
+  "description": "FAQ",
   "source": "@site/i18n/hr/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Podrška",
+    "sidebar_label": "Podrška"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Rječnik",
     "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privatnost",
     "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/privacy"
   }
 }

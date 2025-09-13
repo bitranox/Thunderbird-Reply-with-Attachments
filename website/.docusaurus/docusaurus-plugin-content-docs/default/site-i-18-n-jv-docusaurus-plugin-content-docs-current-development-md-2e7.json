@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Pangembangan",
-  "description": "Pandhuan Pangembangan",
+  "description": "Development Guide",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ijin",
+    "title": "Hak Akses",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/permissions"
   },
   "next": {

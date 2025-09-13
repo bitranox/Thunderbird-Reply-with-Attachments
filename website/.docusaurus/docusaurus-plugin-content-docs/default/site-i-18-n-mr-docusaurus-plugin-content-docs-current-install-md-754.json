@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "प्रतिष्ठापन",
-  "description": "प्रतिष्ठापन — Thunderbird मध्ये (शिफारसीय)",
+  "title": "इंस्टॉलेशन",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "प्रतिष्ठापन",
+    "title": "इंस्टॉलेशन",
     "slug": "/install",
-    "sidebar_label": "प्रतिष्ठापन"
+    "sidebar_label": "इंस्टॉलेशन"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "क्विकस्टार्ट",
+    "title": "जलद प्रारंभ",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/quickstart"
   },
   "next": {
-    "title": "संरचना",
+    "title": "कॉन्फिगरेशन",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/configuration"
   }
 }

@@ -1,117 +1,145 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Езици'
+sidebar_label: 'Езици'
 ---
 
-# Language Support
+## Езици
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Този списък отразява както преводите на документацията на уебсайта, така и интерфейсните низове на добавките.
+Огромна поддръжка на езици, благодарение на инструменти за AI превод — покриваща 100 езика.
 
-List below is sorted by the language code.
+Списъкът по-долу е сортиран по езикови кодове.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Вижте също: [Глосар](glossary) за каноничните термини на интерфейса, използвани в различните локализации.
 
-- `af`: Afrikaans (af-ZA)
-- `ak`: Akan (ak-GH)
-- `am`: Amharic (am-ET)
-- `ar`: Arabic (ar)
-- `as`: Assamese (as-IN)
-- `az`: Azerbaijani (az-AZ)
-- `be`: Belarusian (be-BY)
-- `bg`: Bulgarian (bg-BG)
-- `bm`: Bambara (bm-ML)
-- `bn`: Bengali (bn-BD)
-- `bs`: Bosnian (bs-BA)
-- `ca`: Catalan (ca-ES)
-- `cs`: Czech (cs-CZ)
-- `da`: Danish (da-DK)
-- `de`: German (de-DE)
-- `el`: Greek (el-GR)
-- `en`: English (en-US)
-- `es`: Spanish (es-ES)
-- `et`: Estonian (et-EE)
-- `fa`: Persian (Farsi) (fa-IR)
-- `ff`: Fulah (ff-SN)
-- `fi`: Finnish (fi-FI)
-- `fr`: French (fr-FR)
-- `ga`: Irish (ga-IE)
-- `gu`: Gujarati (gu-IN)
-- `ha`: Hausa (ha-NG)
-- `he`: Hebrew (he-IL)
-- `hi`: Hindi (hi-IN)
-- `hr`: Croatian (hr-HR)
-- `ht`: Haitian Creole (ht-HT)
-- `hu`: Hungarian (hu-HU)
-- `hy`: Armenian (hy-AM)
-- `id`: Indonesian (id-ID)
-- `ig`: Igbo (ig-NG)
-- `is`: Icelandic (is-IS)
-- `it`: Italian (it-IT)
-- `ja`: Japanese (ja-JP)
-- `jv`: Javanese (jv-ID)
-- `ka`: Georgian (ka-GE)
-- `kk`: Kazakh (kk-KZ)
-- `km`: Khmer (km-KH)
-- `kn`: Kannada (kn-IN)
-- `ko`: Korean (ko-KR)
-- `ks`: Kashmiri (ks-IN)
-- `ku`: Kurdish (ku-TR)
-- `ky`: Kyrgyz (ky-KG)
-- `ln`: Lingala (ln-CD)
-- `lo`: Lao (lo-LA)
-- `lt`: Lithuanian (lt-LT)
-- `lv`: Latvian (lv-LV)
-- `mg`: Malagasy (mg-MG)
-- `ml`: Malayalam (ml-IN)
-- `mn`: Mongolian (mn-MN)
-- `mr`: Marathi (mr-IN)
-- `ms`: Malay (ms-MY)
-- `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
-- `ne`: Nepali (ne-NP)
-- `nl`: Dutch (nl-NL)
-- `no`: Norwegian (no-NO)
-- `ny`: Chichewa (ny-MW)
-- `om`: Oromo (om-ET)
-- `or`: Odia (or-IN)
-- `pa`: Punjabi (pa-IN)
-- `pl`: Polish (pl-PL)
-- `ps`: Pashto (ps-AF)
-- `pt`: Portuguese (pt-PT)
-- `qu`: Quechua (qu-PE)
-- `rn`: Kirundi (rn-BI)
-- `ro`: Romanian (ro-RO)
-- `ru`: Russian (ru-RU)
-- `rw`: Kinyarwanda (rw-RW)
-- `sd`: Sindhi (sd-PK)
-- `si`: Sinhala (si-LK)
-- `sk`: Slovak (sk-SK)
-- `sl`: Slovenian (sl-SI)
-- `sn`: Shona (sn-ZW)
-- `so`: Somali (so-SO)
-- `sq`: Albanian (sq-AL)
-- `sr`: Serbian (sr-RS)
-- `su`: Sundanese (su-ID)
-- `sv`: Swedish (sv-SE)
-- `sw`: Swahili (sw-TZ)
-- `ta`: Tamil (ta-IN)
-- `te`: Telugu (te-IN)
-- `tg`: Tajik (tg-TJ)
-- `th`: Thai (th-TH)
-- `ti`: Tigrinya (ti-ER)
-- `tk`: Turkmen (tk-TM)
-- `tl`: Tagalog (tl-PH)
-- `tr`: Turkish (tr-TR)
-- `ug`: Uyghur (ug-CN)
-- `uk`: Ukrainian (uk-UA)
-- `ur`: Urdu (ur-PK)
-- `uz`: Uzbek (uz-UZ)
-- `vi`: Vietnamese (vi-VN)
-- `wo`: Wolof (wo-SN)
-- `xh`: Xhosa (xh-ZA)
-- `yo`: Yoruba (yo-NG)
-- `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
-- `zu`: Zulu (zu-ZA)
+---
+
+## Списък с езици {#language-list}
+
+- `af`: Африкаанс (af-ZA)
+- `ak`: Акан (ak-GH)
+- `am`: Амхарски (am-ET)
+- `ar`: Арабски (ar)
+- `as`: Асамски (as-IN)
+- `az`: Азербайджански (az-AZ)
+- `be`: Беларуски (be-BY)
+- `bg`: Български (bg-BG)
+- `bm`: Бамбарски (bm-ML)
+- `bn`: Бенгалски (bn-BD)
+- `bs`: Босненски (bs-BA)
+- `ca`: Каталонски (ca-ES)
+- `cs`: Чешки (cs-CZ)
+- `da`: Датски (da-DK)
+- `de`: Немски (de-DE)
+- `el`: Гръцки (el-GR)
+- `en`: Английски (en-US)
+- `es`: Испански (es-ES)
+- `et`: Естонски (et-EE)
+- `fa`: Персийски (фарси) (fa-IR)
+- `ff`: Фула (ff-SN)
+- `fi`: Фински (fi-FI)
+- `fr`: Френски (fr-FR)
+- `ga`: Ирийски (ga-IE)
+- `gu`: Гуджарати (gu-IN)
+- `ha`: Хауса (ha-NG)
+- `he`: Иврит (he-IL)
+- `hi`: Хинди (hi-IN)
+- `hr`: Хърватски (hr-HR)
+- `ht`: Хаитянски креолски (ht-HT)
+- `hu`: Унгарски (hu-HU)
+- `hy`: Арменски (hy-AM)
+- `id`: Индонезийски (id-ID)
+- `ig`: Игбо (ig-NG)
+- `is`: Исландски (is-IS)
+- `it`: Италиански (it-IT)
+- `ja`: Японски (ja-JP)
+- `jv`: Явански (jv-ID)
+- `ka`: Грузински (ka-GE)
+- `kk`: Казахски (kk-KZ)
+- `km`: Кхмерски (km-KH)
+- `kn`: Каннада (kn-IN)
+- `ko`: Корейски (ko-KR)
+- `ks`: Кашмирски (ks-IN)
+- `ku`: Кюрдски (ku-TR)
+- `ky`: Киргизки (ky-KG)
+- `ln`: Лингала (ln-CD)
+- `lo`: Лаоски (lo-LA)
+- `lt`: Литовски (lt-LT)
+- `lv`: Латвийски (lv-LV)
+- `mg`: Малагасийски (mg-MG)
+- `ml`: Малаялам (ml-IN)
+- `mn`: Монголски (mn-MN)
+- `mr`: Марати (mr-IN)
+- `ms`: Малайски (ms-MY)
+- `my`: Бирмански (my-MM)
+- `ne`: Непалски (ne-NP)
+- `nl`: Холандски (nl-NL)
+- `no`: Норвежки (no-NO)
+- `ny`: Чичева (ny-MW)
+- `om`: Оромо (om-ET)
+- `or`: Одиа (or-IN)
+- `pa`: Пенджабски (pa-IN)
+- `pl`: Полски (pl-PL)
+- `ps`: Пашто (ps-AF)
+- `pt`: Португалски (pt-PT)
+- `qu`: Кейчуански (qu-PE)
+- `rn`: Кирунди (rn-BI)
+- `ro`: Румънски (ro-RO)
+- `ru`: Руски (ru-RU)
+- `rw`: Киньярванда (rw-RW)
+- `sd`: Синди (sd-PK)
+- `si`: Синхалски (si-LK)
+- `sk`: Словашки (sk-SK)
+- `sl`: Словенски (sl-SI)
+- `sn`: Шона (sn-ZW)
+- `so`: Сомалийски (so-SO)
+- `sq`: Албански (sq-AL)
+- `sr`: Сръбски (sr-RS)
+- `su`: Сундански (su-ID)
+- `sv`: Шведски (sv-SE)
+- `sw`: Суахили (sw-TZ)
+- `ta`: Тамил (ta-IN)
+- `te`: Телугу (te-IN)
+- `tg`: Таджик (tg-TJ)
+- `th`: Тайландски (th-TH)
+- `ti`: Тигриния (ti-ER)
+- `tk`: Туркменски (tk-TM)
+- `tl`: Тагалог (tl-PH)
+- `tr`: Турски (tr-TR)
+- `ug`: Уйгурски (ug-CN)
+- `uk`: Украински (uk-UA)
+- `ur`: Урду (ur-PK)
+- `uz`: Узбекски (uz-UZ)
+- `vi`: Виетнамски (vi-VN)
+- `wo`: Уолов (wo-SN)
+- `xh`: Косан (xh-ZA)
+- `yo`: Йоруба (yo-NG)
+- `zh`: Китайски (zh)
+- `zu`: Зулу (zu-ZA)
+
+Съвет: Превключете локализацията на документацията чрез селектора на езици в заглавната част на сайта (префиксът на URL ще се промени съответно). UI езикът на Thunderbird е независим от езика на уебсайта и следва вашите настройки на Thunderbird.
+
+Редирект на начална страница
+
+- Ако сайтът е построен с предпочитания език на браузъра, посещаването на основния URL на документацията под базовия URL на проекта автоматично пренасочва към този език. Използвайте селектора на езици (или `/en/`), за да останете на английски.
+
+---
+
+## Превод на приноси {#contribute-translations}
+
+- Намерихте ли проблем в превода? Моля, открийте GitHub проблем или PR.
+- Предпочитайте редакции спрямо английския източник под `website/docs/`; инструментите на поддръжника разпространяват актуализации към другите локализации.
+  Английският е основата на истината за документацията; актуализациите на превода се издирват от EN по време на работния процес на поддръжника.
+
+### Начална страница, Навигационен панел, Интерфейс на долния колонтитул
+
+- Тези низове се намират в `website/i18n/en/code.json` и се превеждат на всички локализации чрез задачата на поддръжника:
+  - `make translate_web_index` (изисква `OPENAI_API_KEY`)
+  - Ограничете езиците с `OPTS="--locales de,fr"`; презапишете съществуващите стойности с `OPTS="--force"`.
+
+### Уебсайт срещу UI {#website-vs-ui}
+
+- Езикът на уебсайта и езикът на интерфейса на добавките са независими; селекторът на езиците променя само документацията. UI езикът на Thunderbird следва вашите настройки на Thunderbird.
+
+---

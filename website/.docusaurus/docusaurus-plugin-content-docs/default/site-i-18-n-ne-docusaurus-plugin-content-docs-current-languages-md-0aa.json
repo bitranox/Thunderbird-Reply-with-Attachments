@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "भाषाहरु",
+  "description": "Languages",
   "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "भाषाहरु",
+    "sidebar_label": "भाषाहरु"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "विकास",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "शब्दकोष",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/glossary"
   }
 }

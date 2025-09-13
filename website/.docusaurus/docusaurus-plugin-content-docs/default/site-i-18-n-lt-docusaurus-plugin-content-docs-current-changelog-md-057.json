@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Keitinių žurnalas",
-  "description": "Visą istoriją rasite repozitorijos CHANGELOG.md faile.",
+  "title": "Kaitalio sąrašas",
+  "description": "Kaitalio sąrašas",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Keitinių žurnalas"
+    "title": "Kaitalio sąrašas"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/licence"
+    "title": "Licencija",
+    "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/license"
   }
 }

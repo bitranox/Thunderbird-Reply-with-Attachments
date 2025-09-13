@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Lugha'
+sidebar_label: 'Lugha'
 ---
 
-# Language Support
+## Languages
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Orodha hii inadhihirisha tafsiri za hati za tovuti pamoja na nyongeza za UI.
+Msaada mkubwa wa lugha, shukrani kwa zana za tafsiri za AI — inashughulikia lugha 100.
 
-List below is sorted by the language code.
+Orodha hapa chini imepangwa kwa msimbo wa lugha.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Tazama pia: [Glosari](glossary) kwa maneno ya UI ya kawaida yanayotumika katika maeneo tofauti.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Badilisha eneo la hati kupitia mteule wa lugha katika kichwa cha tovuti (kiunga cha URL hubadilika ipasavyo). Lugha ya UI ya Thunderbird haina uhusiano wa moja kwa moja na lugha ya tovuti na inafuata mipangilio yako ya Thunderbird.
+
+Lango la kurasa za kutua
+
+- Ikiwa tovuti imejengwa kwa lugha inayopendelea ya kivinjari chako, kutembelea URL ya msingi ya hati chini ya baseUrl ya mradi huo hurejea moja kwa moja kwenye lugha hiyo. Tumia mteule wa lugha (au `/en/`) kubaki kwa Kiingereza.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Umeona tatizo katika tafsiri? Tafadhali fungua tatizo la GitHub au PR.
+- Tafuta marekebisho dhidi ya chanzo cha Kiingereza chini ya `website/docs/`; zana za msimamizi zinapeleka masasisho katika maeneo mengine.
+  Kiingereza ndicho chanzo cha ukweli kwa hati; masasisho ya tafsiri yanapatikana kutoka EN wakati wa mchakato wa kazi wa msimamizi.
+
+### Homepage, Navbar, Footer UI
+
+- Msimbo huu unapatikana katika `website/i18n/en/code.json` na unatafsiriwa kwa maeneo yote kupitia kazi ya msimamizi:
+  - `make translate_web_index` (inahitaji `OPENAI_API_KEY`)
+  - Punguza lugha kwa kutumia `OPTS="--locales de,fr"`; futa thamani zilizopo kwa kutumia `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Lugha ya tovuti na lugha ya UI ya nyongeza ni huru; mteule wa lugha hubadilisha hati pekee. Lugha ya UI ya Thunderbird inafuata mipangilio yako ya Thunderbird.

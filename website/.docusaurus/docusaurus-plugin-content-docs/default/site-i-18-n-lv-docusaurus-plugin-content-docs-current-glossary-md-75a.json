@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Vārdnīca",
+  "description": "Glossary",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Vārdnīca",
+    "sidebar_label": "Vārdnīca"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Valodas",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Atbalsts",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/support"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Itilizasyon",
   "description": "Usage",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Itilizasyon",
+    "sidebar_label": "Itilizasyon"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfigirasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Konpatibilite",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/compatibility"
   }
 }

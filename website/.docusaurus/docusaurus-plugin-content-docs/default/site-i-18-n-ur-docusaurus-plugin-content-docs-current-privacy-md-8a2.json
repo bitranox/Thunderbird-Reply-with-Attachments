@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "رازداری",
-  "description": "Reply with Attachments نہ تو تجزیات/ٹیلی میٹری اکٹھا کرتا ہے اور نہ ہی آپ کا ڈیٹا کہیں بھیجتا ہے۔",
+  "title": "نجیّت",
+  "description": "Privacy",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "رازداری",
-    "sidebar_label": "رازداری"
+    "title": "نجیّت",
+    "sidebar_label": "نجیّت"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "معاونت",
+    "title": "مدد",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/support"
   },
   "next": {
-    "title": "عطیہ",
+    "title": "عطیہ دیں",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/donation"
   }
 }

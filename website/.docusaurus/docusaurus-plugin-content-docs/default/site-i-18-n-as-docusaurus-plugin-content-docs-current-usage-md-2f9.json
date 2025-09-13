@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ব্যবহাৰ",
   "description": "Usage",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ব্যবহাৰ",
+    "sidebar_label": "ব্যৱহাৰ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "আবস্থানসূচি",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "সামঞ্জস্য",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/compatibility"
   }
 }

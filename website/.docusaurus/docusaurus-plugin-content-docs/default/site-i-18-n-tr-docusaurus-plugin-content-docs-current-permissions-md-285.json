@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "İzinler",
-  "description": "Eklenti yalnızca küçük ve hedefe yönelik bir izin kümesi ister. Her birinin nedeni:",
+  "description": "İzinler",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

@@ -3,9 +3,9 @@
 ```bash
 # change docs in /website/docs
 # translate homepage/navbar/footer UI strings (requires OPENAI_API_KEY)
-make translation-web-index                 # all locales (skip en)
+make translation_web_index_page            # all locales (skip en)
 # or limit locales
-make translation-web-index OPTS="--locales de,fr"
+make translation_web_index_page OPTS="--locales de,fr"
 
 # translate docs (interactive or via OPTS)
 make web-build
@@ -24,7 +24,7 @@ scripts/web-build-local-preview.sh --locales en --no-test --no-link-check --dry-
 
 ```bash
 make web-build-linkcheck OPTS="--locales en"
-make translation-web-index OPTS="--locales en,de"  # update index UI translations before build
+make translation_web_index_page OPTS="--locales en,de"  # update index UI translations before build
 make web-build OPTS="--locales en"
 make web-push-github   # pushes website/build to gh-pages
 ```

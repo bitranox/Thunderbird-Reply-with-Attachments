@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "تبديليون جو رڪارڊ",
-  "description": "مڪمل تاريخ لاءِ ريپوزيٽري جي CHANGELOG.md فائل ڏسو.",
+  "title": "تبديل نوٽ",
+  "description": "Changelog",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "تبديليون جو رڪارڊ"
+    "title": "تبديل نوٽ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/licence"
+    "title": "لائسنس",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/license"
   }
 }

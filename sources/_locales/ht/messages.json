@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Reponn ak atachman yo"
+    "message": "Reponn ak Atachman"
   },
   "extDescription": {
     "message": "Enkli atachman orijinal yo otomatikman nan repons imèl yo."
   },
   "composeTitle": {
-    "message": "Reponn ak atachman yo"
+    "message": "Reponn ak Atachman"
   },
   "optionsTitle": {
-    "message": "Reponn ak atachman yo — Opsyon"
+    "message": "Reponn ak Atachman — Opsyon"
   },
   "confirmTitle": {
-    "message": "Konfime atachman yo"
+    "message": "Konfime Atachman yo"
   },
   "uiHeader": {
-    "message": "Reponn ak atachman yo"
+    "message": "Reponn ak Atachman"
   },
   "uiNoOptions": {
-    "message": "Pa gen okenn opsyon pou konfigire kounye a."
+    "message": "Kounye a pa gen okenn opsyon pou konfigire."
   },
   "uiSupport": {
-    "message": "Èske ou renmen ekstansyon sa a? Sipòte mwen ak yon ti kontribisyon:"
+    "message": "Èske ou renmen ekstansyon sa a? Tanpri sipòte m ak yon ti kontribisyon:"
+  },
+  "uiRateATNText": {
+    "message": "Tanpri bay yon nòt sou ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Fè don kounye a"
   },
+  "uiIDonated": {
+    "message": "Mwen te fè don"
+  },
+  "uiDonateSnoozed": {
+    "message": "Mèsi! Envite don an kache pou 90 jou."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Kache jiska $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Montre Don ankò"
+  },
+  "uiDonateRestored": {
+    "message": "Envit don an vizib ankò."
+  },
   "uiGithubText": {
-    "message": "Pou rapòte erè oswa lòt demann, tanpri vizite"
+    "message": "Pou rapò erè oswa lòt demann, tanpri vizite"
   },
   "uiGithubLinkLabel": {
     "message": "Paj GitHub"
   },
   "iconAlt": {
-    "message": "Ikòn Reponn ak atachman yo"
+    "message": "Ikòn Reponn ak Atachman"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Lis nwa non fichye yo (modèl glob)"
+    "message": "Lis nwa non fichye (modèl glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fichye ki non yo koresponn ak nenpòt nan modèl sa yo p ap janm atache otomatikman. Yon modèl pa liy. Egzanp: *.png, smime.*, *.p7s"
+    "message": "Fichye ki gen non ki matche ak youn nan modèl sa yo pap janm ajoute kòm atachman otomatikman. Yon modèl pa liy. Egzanp: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avèti si atachman yo ekskli pa lis nwa a"
+    "message": "Avèti si atachman yo eskli pa lis nwa a"
   },
   "uiSave": {
     "message": "Sove"
@@ -54,22 +80,22 @@
     "message": "Ap sove…"
   },
   "uiReset": {
-    "message": "Retabli paramèt pa defo yo"
+    "message": "Reyajiste sou valè pa defo yo"
   },
   "uiSaved": {
     "message": "Sove."
   },
   "uiResetDone": {
-    "message": "Retabli."
+    "message": "Reyajiste."
   },
   "uiConfirmHeader": {
     "message": "Konfimasyon"
   },
   "uiConfirmLabel": {
-    "message": "Mande anvan ajoute atachman yo"
+    "message": "Mande avan ajoute atachman yo"
   },
   "uiConfirmHelp": {
-    "message": "Yon ti bwat konfimasyon ap parèt sèlman lè atachman yo ta dwe ajoute. Klavye: Y oswa J = Wi; N oswa Esc = Non."
+    "message": "Yon ti bwat konfimasyon ap parèt sèlman lè yo ta vrèman ajoute atachman. Klavye: Y oswa J = Wi; N oswa Esc = Non."
   },
   "confirmAddOne": {
     "message": "Ajoute atachman: $1?",
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ajoute atachman yo ($1): $2$3?",
+    "message": "Ajoute atachman ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "Non"
   },
   "warnBlacklistTitle": {
-    "message": "Ekskli pa lis nwa a"
+    "message": "Eskli pa lis nwa a"
   },
   "warnBlacklistIntro": {
-    "message": "Fichye sa yo p ap atache otomatikman:"
+    "message": "Fichye sa yo pap ajoute kòm atachman otomatikman:"
   },
   "warnColFile": {
     "message": "Fichye"
@@ -124,9 +150,21 @@
     "message": "Non"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokimantasyon:"
+  },
+  "uiDocsButton": {
+    "message": "Louvri Dokiman yo"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

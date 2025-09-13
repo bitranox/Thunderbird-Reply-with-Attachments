@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "വിശേഷതകൾ",
-  "description": "വിശേഷതകൾ",
+  "title": "സവിശേഷതകൾ",
+  "description": "Features",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "വിശേഷതകൾ",
-    "sidebar_label": "വിശേഷതകൾ"
+    "title": "സവിശേഷതകൾ",
+    "sidebar_label": "സവിശേഷതകൾ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "ക്വിക്ക്സ്റ്റാർട്ട്",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/quickstart"
   }
 }

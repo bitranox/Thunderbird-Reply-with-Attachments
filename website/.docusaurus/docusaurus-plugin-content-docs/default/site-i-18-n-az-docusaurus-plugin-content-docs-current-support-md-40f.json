@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Dəstək",
+  "description": "FAQ",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Dəstək",
+    "sidebar_label": "Dəstək"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Lüğət",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Məxfilik",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/privacy"
   }
 }

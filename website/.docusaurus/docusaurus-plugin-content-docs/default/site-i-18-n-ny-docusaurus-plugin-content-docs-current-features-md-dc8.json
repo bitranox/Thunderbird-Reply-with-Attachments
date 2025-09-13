@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Mawonekedwe",
-  "description": "Mawonekedwe",
+  "title": "Zinthu Zozungulira",
+  "description": "Features",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Mawonekedwe",
-    "sidebar_label": "Mawonekedwe"
+    "title": "Zinthu Zozungulira",
+    "sidebar_label": "Zinthu Zozungulira"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Kus започи",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/quickstart"
   }
 }

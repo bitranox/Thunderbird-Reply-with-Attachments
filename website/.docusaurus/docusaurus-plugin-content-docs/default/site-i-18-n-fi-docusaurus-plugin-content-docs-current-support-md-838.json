@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Tuki",
+  "description": "FAQ",
   "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Tuki",
+    "sidebar_label": "Tuki"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Sanasto",
     "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Tietosuoja",
     "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/privacy"
   }
 }

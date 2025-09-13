@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Sariyani",
+  "description": "Sariyani",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Sariyani"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Daɗo",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Amfani",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/usage"
   }
 }

@@ -1,32 +1,55 @@
 ---
 id: glossary
-title: i18n مسرد
-sidebar_label: مسرد
+title: 'فہرستِ اصطلاحات'
+sidebar_label: 'فہرستِ اصطلاحات'
 ---
 
-ایڈ‑آن UI اور دستاویزات میں استعمال ہونے والی معتبر اصطلاحات۔ ترجموں کو زبانوں میں یکساں رکھنے کے لیے ان کا استعمال کریں۔
+## Glossary
 
-نوٹس
+Canonical terms used in the add-on UI and documentation. Use these to keep translations consistent across locales.
 
-- UI اسٹرنگز مختصر اور عمل‑مرکوز رکھیں۔
-- سیٹنگز کے لیے اسم، اعمال کے لیے فعل کو ترجیح دیں۔
-- عناوین کے علاوہ sentence case استعمال کریں۔
+---
 
-اصطلاحات
+### Notes
 
-- Attachments: ای میل کے ساتھ شامل فائلیں۔ “enclosures” سے گریز کریں۔
-- Blacklist (Exclude list): پیٹرنز کی فہرست جو فائلوں کو خودکار طور پر شامل ہونے سے روکتی ہے۔
-- UI میں متن میں “Blacklist (glob patterns)” لکھیں تاکہ سیٹنگز صفحے سے مطابقت رہے۔
-- وضاحت کریں کہ صرف فائل نام ملایا جاتا ہے؛ راستے نہیں۔
-- Confirm / Confirmation: ضمائم شامل کرنے سے پہلے صارف سے تصدیق لینا۔
-- Answers: “Yes” (شامل کریں)، “No” (منسوخ)۔ بٹن کے لیبل مختصر رکھیں۔
-- Inline image: پیغام کے HTML میں CID کے ذریعے حوالہ دی گئی تصویر؛ بطور فائل کبھی شامل نہیں ہوتی۔
-- S/MIME signature: `smime.p7s` یا PKCS7 دستخطی حصے؛ کبھی شامل نہ کریں۔
-- Options / Settings: Thunderbird میں ایڈ‑آن کا کنفیگریشن صفحہ۔
-- Default answer: تصدیقی ڈائیلاگ کا پیشگی منتخب جواب۔
+- Keep UI strings short and action‑oriented.
+- Prefer nouns for settings and verbs for actions.
+- Use sentence case (only the first word capitalized) except titles.
 
-انداز
+---
 
-- فائل نام: کوڈ (monospace) میں دکھائیں، مثلاً `smime.p7s`, `*.png`۔
-- کلیدیں/بٹن: جب وہ خاص نام نہ ہوں تو sentence case؛ ورنہ title‑case۔
-- اصطلاحاتی گھماو (مثلاً “idempotency”) سے گریز کریں؛ “prevent duplicates” کہیں۔
+### Terms
+
+- **Attachments**: files included with an email. Avoid “enclosures”.
+- **Blacklist** (Exclude list): list of patterns that prevent files from being attached automatically. In the UI this appears as “Blacklist (glob patterns)”.
+- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
+- Explain that only filenames are matched; not paths.
+- **Confirm / Confirmation:** ask the user to proceed before adding attachments.
+- **Answers:** “Yes” (add), “No” (cancel). Keep button labels short.
+- **Inline image:** an image referenced by CID in message HTML; never added as a file.
+- **S/MIME signature:** `smime.p7s` or PKCS7 signature parts; never added.
+- **Options / Settings:** the add-on’s configuration page in Thunderbird.
+- **Default answer:** the preselected answer for the confirmation dialog.
+
+---
+
+### Email actions
+
+- **Reply:** respond to the sender of a message.
+- **Reply all:** respond to sender and all recipients.
+- **Forward:** send the message to a different recipient; this add-on does not modify forward behavior.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** assets embedded in the message body (e.g., referenced via Content‑ID). Not added as files by the add-on.
+- **Attached files:** files attached to the message as regular attachments (candidates for copying on reply).
+
+---
+
+### Style
+
+- **Filenames:** show as code (monospace), e.g., `smime.p7s`, `*.png`.
+- **Keys/buttons:** title‑case only when they are proper names; otherwise sentence case.
+- **Avoid jargon** (e.g., “idempotency”); prefer “prevent duplicates”.

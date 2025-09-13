@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Швидкий початок",
+  "description": "Quickstart",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Швидкий початок",
+    "sidebar_label": "Швидкий початок"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Можливості",
+    "title": "Особливості",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Встановлення",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/install"
   }
 }

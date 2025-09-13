@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Wijzigingslogboek",
-  "description": "Bekijk de volledige geschiedenis in het bestand CHANGELOG.md van de repository.",
+  "description": "Changelog",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/licence"
+    "title": "Licentie",
+    "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/license"
   }
 }

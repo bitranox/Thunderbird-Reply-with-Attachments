@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Bikarhênan",
   "description": "Usage",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Bikarhênan",
+    "sidebar_label": "Bikarhênan"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Têgihiştin",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Bermalî",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/compatibility"
   }
 }

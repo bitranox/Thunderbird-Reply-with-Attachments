@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Jaar-jaarukaay yi",
-  "description": "Seet benn-bennal bi ci fiichie CHANGELOG.md bi ci repo bi.",
+  "title": "Changelog",
+  "description": "Changelog",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Jaar-jaarukaay yi"
+    "title": "Changelog"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/licence"
+    "title": "Dahira",
+    "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/license"
   }
 }

@@ -1,24 +1,50 @@
 ---
 id: license
-title: 许可证
-sidebar_label: 许可证
+title: '许可证'
+sidebar_label: '许可证'
 ---
 
-项目许可证：MIT
+## License
 
-本项目基于 **MIT 许可证** 发布。
+Project license: MIT
 
-- 完整文本：请参见仓库根目录的 `LICENSE` 文件。
-- © Robert Nowotny（bitranox）及贡献者。
+This project is licensed under the **MIT License**.
 
-第三方许可证（摘要）
+- Full text: see `LICENSE` at the repository root.
+- © Robert Nowotny (bitranox)
 
-- 开发/测试与网站工具：除特殊说明外均为 MIT
-  - vitest（MIT）、jsdom（MIT）、@docusaurus/core（MIT）、@docusaurus/preset-classic（MIT）、react（MIT）、react‑dom（MIT）、clsx（MIT）
-  - web‑ext（通过 npx 使用时）为 MPL‑2.0；仅作为开发工具，不随附加组件分发
-- Thunderbird MailExtension API：作为平台 API 使用；不复制其代码，对附加组件无额外许可义务
-- 资源
-  - 附加组件图标（sources/icons/\*.png）：项目资源，除非另有说明，均受 MIT 约束
-  - GitHub 徽标为 GitHub 商标；按品牌指南使用，不受 MIT 约束
+---
 
-如引入其他第三方代码或资源，请保留其原始许可证，并将其添加到上述列表。
+## Third‑party licenses {#third-party-licenses}
+
+This section summarizes third‑party licenses used by this repository. For the
+authoritative list in the source tree, see `THIRD_PARTY_LICENSES.md` at the
+repository root.
+
+Tools and libraries (development/test/docs)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (used via npx only) — MPL‑2.0 (dev tool; not distributed with the add-on)
+
+---
+
+## Notes
+
+- Thunderbird MailExtension APIs are platform APIs; no third‑party code is bundled from them.
+- Project icons in `sources/icons` are project assets (MIT unless stated otherwise). The GitHub logo/icon is a GitHub trademark and not covered by MIT; it is used per GitHub brand guidelines.
+
+If you add new dependencies or bundle third‑party code, please update both this
+page and `THIRD_PARTY_LICENSES.md` accordingly.
+
+---
+
+## Trademarks
+
+- “Thunderbird” is a trademark of MZLA/Thunderbird. This project is a third‑party add-on and is not affiliated with or endorsed by MZLA.
+- GitHub® and the GitHub logo are trademarks of GitHub, Inc. Logos are used per brand guidelines.

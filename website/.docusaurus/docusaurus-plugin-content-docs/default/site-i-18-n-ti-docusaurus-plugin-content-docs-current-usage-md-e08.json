@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ተግባር",
   "description": "Usage",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ተግባር",
+    "sidebar_label": "ተግባር"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "መዋቅር",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "ውሳኔ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/compatibility"
   }
 }

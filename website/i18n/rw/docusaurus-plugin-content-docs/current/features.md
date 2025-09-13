@@ -1,17 +1,34 @@
 ---
 id: features
-title: Ibiranga
-sidebar_label: Ibiranga
+title: 'Ibiranga'
+sidebar_label: 'Ibiranga'
 ---
 
-## Ibiranga
+## Features {#features}
 
-- Iyo usubije, yongeraho mu buryo bwikora amadosiye ava muri imeyili y’umwimerere.
-- Imikorere ishobora gutegurwa: inyongera (attachments) zishobora
-  - kongerwa mu buryo bwikora, cyangwa
-  - kongerwa ari uko byemejwe (ikiganiro gito, cyoroheye abesezerera). Muri Options ushobora gukoresha ukwemeza kandi ugahitamo igisubizo gishingiyeho (Yego/Oya).
-- Urutonde rw’umukara rw’amazina y’amadosiye (ingero za glob) rubuza amadosiye amwe kongerwa mu buryo bwikora. Urugero: `*intern*`, `*secret*`, `*passwor*`.
-  Guhuza ntikugirwaho ingaruka n’inyuguti nini/nito kandi gusa igenzura izina ry’idosiye; muri Options tanga icyitegererezo kimwe ku murongo.
-- Iburira ry’urutonde rw’umukara (ku bushake, rikora by default): igihe amadosiye akurwaho n’urutonde rwawe rw’umukara, umwanya muto wa modal ugaragaza idosiye n’ingero zahuye. Bikunda “Dark mode” kandi byagerwaho n’akabaho (Enter/Esc gufunga).
-- Yongera amadosiye y’umwimerere n’ubwo yaba hari icyo washyizeho; irinda gusubiramo bishingiye ku izina ry’idosiye.
-- Isimbuka ibyemezo bya SMIME n’amashusho ari mu nyandiko (inline) kugira ngo irinde inyongera zidakenewe.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

@@ -1,24 +1,49 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Hayyamaa'
+sidebar_label: 'Hayyamaa'
 ---
 
-Project license: MIT
+## Hayyamaa
 
-This project is licensed under the **MIT License**.
+Project hayyamaa: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Project kuni **Hayyamaa MIT** jalatti hayyamameera.
 
-Third‑party licenses (summary)
+- Qabiyyee guutuu: `LICENSE` keessatti laaluu.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Hayyamaa baay'ee {#third-party-licenses}
+
+Sadarkaan kun hayyamaa baay'ee gara fuula repository kanaatti fayyadaman ni ibsa. Qorannoo dhugaa gara gabbisa asitti, `THIRD_PARTY_LICENSES.md` keessatti laaluu.
+
+Meeshaalee fi makiinaa (deeggarsa/gabaabaa/doc)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (npx qofa fayyadama) — MPL‑2.0 (meeshaa deggarsaa; add-on waliin hin gurguramne)
+
+---
+
+## Yaadota
+
+- Thunderbird MailExtension APIs meeshaalee paltform; code baay'ee hin dabalatamu.
+- Iconni project `sources/icons` keessatti qabeenya project (MIT yoo biraa hin ibsamne). Logo/icon GitHub logo/iFi shi imaanaa GitHub kan hin dabalatamne; iddoowwan brand Guideline GitHub irratti fayyadama.
+
+Yoo dependency haaraa dabaltu ykn code baay'ee bundlua, fuula kana fi `THIRD_PARTY_LICENSES.md` akkasuma fooyyesa.
+
+---
+
+## Mallattoo
+
+- “Thunderbird” mallattoo MZLA/Thunderbird ti. Project kuni add-on baay'ee fi MZLA waliin walitti hidhata dhabuun ykn hin deeggaramne.
+- GitHub® fi logo GitHub mallattoolee GitHub, Inc. ti. Logoowwan brand Guideline irratti fayyadama.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Àwọn ànfààní",
-  "description": "Àwọn ànfààní",
+  "title": "Awọn ẹya",
+  "description": "Features",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Àwọn ànfààní",
-    "sidebar_label": "Àwọn ànfààní"
+    "title": "Awọn ẹya",
+    "sidebar_label": "Awọn ẹya"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Ibẹrẹ Rọrun",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/quickstart"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ಬದಲಾವಣೆಗಳ ದಾಖಲೆ",
-  "description": "ಪೂರ್ಣ ಇತಿಹಾಸವನ್ನು ರೆಪೊದಲ್ಲಿರುವ CHANGELOG.md ಕಡತದಲ್ಲಿ ನೋಡಿ.",
+  "title": "ಚೇಂಜ್‌ಲಾಕ್",
+  "description": "Changelog",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ಬದಲಾವಣೆಗಳ ದಾಖಲೆ"
+    "title": "ಚೇಂಜ್‌ಲಾಕ್"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/licence"
+    "title": "ಅನುಮತಿ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/license"
   }
 }

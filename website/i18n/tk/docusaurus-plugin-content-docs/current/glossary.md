@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Terminler'
+sidebar_label: 'Terminler'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Glossary
 
-Notes
+Gysga maglumatlar goşma UI we dokumentasiýasynda ulanylýan şertnamalar. Regionalar boyunça terjime edilişlerini deň saklamak üçin şulara degişli ediň.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Notes
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- UI ýazgylaryny gysga we hereket taýdan ugrukdyrylan ediň.
+- Düzgünnamalar üçin nomlar, hereketler üçin bolsa hereket isimlerini ýönekeýleştiriň.
+- Baş söz bilen ýazmak (ilki söz diňe baş harf bilen) başlygyňyzdan başga.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Terms
+
+- **Attachments**: elektron habar bilen goşulan faýllar. "Düzgünnamalar" diýip galdyryň.
+- **Blacklist** (Exclude list): faýllaryň awtomatiki goşulmagyny ýok edýän nusgalaryň sanawy. UI-de bu “Blacklist (glob patterns)” görnüşinde görünýär.
+- UI ýazgysynda “Blacklist (glob patterns)” ulanyp, düzgünnama sahypasy bilen möhüm boluň.
+- Ýaşyrlyga diňe faýl adlarynyň birnäçe guty bilen dolanyp geçilýändiglini düşündiriň.
+- **Confirm / Confirmation:** goşmalar goşmazdan öň ulanyjydan dowam etmegi sorap ediň.
+- **Answers:** "Hawa" (goş), "Ýok" (iň soňky). Push düwmelerini gysga saklaň.
+- **Inline image:** habar HTML-de CID arkaly görkezilen surat; hiç hili faýl hökmünde goşulmaly däldir.
+- **S/MIME signature:** `smime.p7s` ýa-da PKCS7 şahsyýetnamasy; hiç hili goşulmaly däl.
+- **Options / Settings:** Thunderbird-de goşma konfigurasiýa sahypasy.
+- **Default answer:** birnäçe dowam etme dialogy üçin öňünden saýlanan jogap.
+
+---
+
+### Email actions
+
+- **Reply:** habaryň ýollanjy bilen jogap beriň.
+- **Reply all:** ýollanjy we ähli kabul edijilere jogap beriň.
+- **Forward:** habary başga bir kabul edijä iberiň; bu goşma öňki hereketi üýtgetmez.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** habar köküne ýerleşdirilen serişdeler (mysal üçin, Content‑ID arkaly görkezilen). Goşma tarapyndan faýllar hökmünde goşulmaly däldir.
+- **Attached files:** habara esaslanýan arkaýyn faýllar (jogap berişde göçürilmegine aday).
+
+---
+
+### Style
+
+- **Filenames:** kody (monospace) görnüşinde görkezmeli, mysal üçün, `smime.p7s`, `*.png`.
+- **Keys/buttons:** diňe degişli atlar bolanlarynda baş harf bilen ýazylmalydyr; beýleki ýagdaýlarda bolsa, baş söz bilen ýazylmalydyr.
+- **Jargonlary gaçanyňyzdan gaça duruň** (mysal üçin, "idempotency"); "düwünleri öňüni almak" ýaly sözleri ulanyň.
+
+---

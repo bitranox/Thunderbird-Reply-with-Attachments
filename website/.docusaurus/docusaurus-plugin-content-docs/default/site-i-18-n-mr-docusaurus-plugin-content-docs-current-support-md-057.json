@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "सहाय्य",
-  "description": "मदत हवी आहे का किंवा बग नोंदवायचा आहे?",
+  "description": "FAQ",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "शब्दसंग्रह",
+    "title": "शब्दकोश",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/glossary"
   },
   "next": {

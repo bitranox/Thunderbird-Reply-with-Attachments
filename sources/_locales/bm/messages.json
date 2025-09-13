@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "Jabi ni Piyɛsɛ Jɔnti"
+    "message": "Jaabi ni fichiɛri fara"
   },
   "extDescription": {
-    "message": "A bɛ piyɛsɛ jɔnti kɔrɔw fara imeyili jabi la ɔtɔmatikima."
+    "message": "A bɛ ka imayili jaabiyɛ la, fichiɛri fara fɔlɔw bɛ kɛ kɔfɛ sisan ye."
   },
   "composeTitle": {
-    "message": "Jabi ni Piyɛsɛ Jɔnti"
+    "message": "Jaabi ni fichiɛri fara"
   },
   "optionsTitle": {
-    "message": "Jabi ni Piyɛsɛ Jɔnti — Sɛtɛriw"
+    "message": "Jaabi ni fichiɛri fara — Sɛtiw"
   },
   "confirmTitle": {
-    "message": "Piyɛsɛ Jɔnti Kɔnfirimasi"
+    "message": "Fichiɛri fara jijigi"
   },
   "uiHeader": {
-    "message": "Jabi ni Piyɛsɛ Jɔnti"
+    "message": "Jaabi ni fichiɛri fara"
   },
   "uiNoOptions": {
-    "message": "Sisan, sɛtɛri tɛ yen k’a sɛbɛ."
+    "message": "Sisan tɛ sɛtiw min bɛ labɛn."
   },
   "uiSupport": {
-    "message": "I b’a di add-on nin? Dɛmɛ n na ni don dɔgɔya dɔ:"
+    "message": "I b’a fɛ add-on yi? Aw dɛmɛ ni wari dɔ ye, dɔɔnin dɔ na:"
+  },
+  "uiRateATNText": {
+    "message": "Aw ye a ɲɛfɔ ATN kan"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Don sisan"
+    "message": "Dɔnasi sisan"
+  },
+  "uiIDonated": {
+    "message": "N dɔnasi"
+  },
+  "uiDonateSnoozed": {
+    "message": "A ni ce! Dɔnasi ɲɛfɔ sigilen tile 90 kɔnɔ."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "A sigilen $1 kɔ",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Dɔnasi ɲɛfɔ taara kɔfɛ"
+  },
+  "uiDonateRestored": {
+    "message": "Dɔnasi ɲɛfɔ bɛ nyɛna kɔfɛ."
   },
   "uiGithubText": {
-    "message": "Bug rapɔrtew walima ɲiniw la, i ka taa n"
+    "message": "Bug ɲɛfɔw walima ɲinini wɛrɛw la, aw taa n"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub pajɛ"
+    "message": "GitHub kɔrɔ"
   },
   "iconAlt": {
-    "message": "Ikɔn: Jabi ni Piyɛsɛ Jɔnti"
+    "message": "Ikɔn Jaabi ni fichiɛri fara"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Fichier tɔgɔw lisiti dibi (glob patɛrɛnw)"
+    "message": "Fichiɛri tɔgɔw daɲɛ lajɛ (glob patɛrɛnw)"
   },
   "uiBlacklistHelp": {
-    "message": "Fichier minnu tɔgɔ bɛ mɛn nin patɛrɛnw kan, o tɛ bɛ fara ɔtɔmatikima. Patɛrɛn kelen kɔfɛ sarali kelen. Misali: *.png, smime.*, *.p7s"
+    "message": "Fichiɛriw min tɔgɔ bɛ ɲɔgɔsi ni patɛrɛnw k’an kelen dɔ, olu tɛ fara sisan-sisan. Patɛrɛn kelen kan kelen kan. Misaliw: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Sɛgɛsɛgɛ ni piyɛsɛ jɔnti tugu lisiti dibi la"
+    "message": "Ka ɲɛfɔ ni fichiɛri fara bɛ daɲɛ lajɛ la bɔ"
   },
   "uiSave": {
     "message": "Sɛbɛn"
   },
   "uiSaving": {
-    "message": "B’a sɛbɛn…"
+    "message": "Sɛbɛna…"
   },
   "uiReset": {
-    "message": "Segin kɔrɔ min na"
+    "message": "Segin lakile fɔlɔ ma"
   },
   "uiSaved": {
-    "message": "Sɛbɛnna."
+    "message": "A sɛbɛnna."
   },
   "uiResetDone": {
     "message": "Seginna."
   },
   "uiConfirmHeader": {
-    "message": "Kɔnfirimasi"
+    "message": "Jijigi"
   },
   "uiConfirmLabel": {
-    "message": "Ka ɲini kɔ yan kɔ, ka piyɛsɛ jɔnti fara"
+    "message": "Ka ɲini kɔrɔ kɔ k’a fara fichiɛri"
   },
   "uiConfirmHelp": {
-    "message": "Kɔnfirimasi dɔgɔya dɔ bɛ yera kelen sanni, sisan kɔnɔ sanni ni piyɛsɛ jɔnti bɛna fara diyara. Klaviyɛri: Y walima J = Awo; N walima Esc = Ayi."
+    "message": "Jijigi bolokan dɔ dɔ bɛ ɲɛna walima, ni waati ye ka fichiɛri fara kɛ tɛmɛ. Klaviyɛri: Y walima J = Awo; N walima Esc = Ayi."
   },
   "confirmAddOne": {
-    "message": "Fara piyɛsɛ jɔnti: $1?",
+    "message": "Fichiɛri fara: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Fara piyɛsɛ jɔntiw ($1): $2$3?",
+    "message": "Fichiɛri fara ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,13 +126,13 @@
     "message": "Ayi"
   },
   "warnBlacklistTitle": {
-    "message": "Tugu lisiti dibi la"
+    "message": "B’a bɔ daɲɛ lajɛ la"
   },
   "warnBlacklistIntro": {
-    "message": "Fichierw nin tɛ bɛ fara ɔtɔmatikima:"
+    "message": "Fichiɛriw ɲinɛw tɛ fara sisan-sisan:"
   },
   "warnColFile": {
-    "message": "Fichier"
+    "message": "Fichiɛri"
   },
   "warnColPattern": {
     "message": "Patɛrɛn"
@@ -115,7 +141,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Jabi kɔrɔ"
+    "message": "Jaabi fɔlɔ"
   },
   "uiConfirmDefaultYes": {
     "message": "Awo"
@@ -124,9 +150,21 @@
     "message": "Ayi"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokiman:"
+  },
+  "uiDocsButton": {
+    "message": "Dokimanw bɔ"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

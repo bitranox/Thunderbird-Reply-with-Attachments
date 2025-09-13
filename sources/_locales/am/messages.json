@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "ከአባሪዎች ጋር መልስ"
+    "message": "ከአባሪዎች ጋር መመለስ"
   },
   "extDescription": {
-    "message": "በኢሜል መልሶች ውስጥ የመጀመሪያውን አባሪዎች በራስ-ሰር ያካትታል።"
+    "message": "በኢሜይል መልሶች ውስጥ የመጀመሪያውን አባሪዎች በራስ-ሰር ያካትታል።"
   },
   "composeTitle": {
-    "message": "ከአባሪዎች ጋር መልስ"
+    "message": "ከአባሪዎች ጋር መመለስ"
   },
   "optionsTitle": {
-    "message": "ከአባሪዎች ጋር መልስ — አማራጮች"
+    "message": "ከአባሪዎች ጋር መመለስ — አማራጮች"
   },
   "confirmTitle": {
     "message": "አባሪዎችን አረጋግጥ"
   },
   "uiHeader": {
-    "message": "ከአባሪዎች ጋር መልስ"
+    "message": "ከአባሪዎች ጋር መመለስ"
   },
   "uiNoOptions": {
-    "message": "በአሁኑ ጊዜ ለማዋቀር አማራጮች የሉም።"
+    "message": "በአሁኑ ጊዜ ለማዋቀር ምንም አማራጮች የሉም።"
   },
   "uiSupport": {
-    "message": "ይህን አድ-ኦን ይወዳሉ? በትንሽ ድርሻ ድገፉኝ:"
+    "message": "ይህን አድ-ኦን ይወዳችዋል? እባክዎ በትንሽ መዋጮ ይደግፉኝ፡-"
+  },
+  "uiRateATNText": {
+    "message": "እባክዎን በ ATN ይገምግሙ"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "አሁን መዋጮ ስጡ"
+    "message": "አሁን መዋጮ አቅርብ"
+  },
+  "uiIDonated": {
+    "message": "መዋጮ አቅርቤያለሁ"
+  },
+  "uiDonateSnoozed": {
+    "message": "አመሰግናለሁ! የመዋጮ ማሳወቂያ ለ 90 ቀናት ተደብቋል።"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "እስከ $1 ድረስ ተደብቆ ነው",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "የመዋጮን ማሳወቂያ እንደገና አሳይ"
+  },
+  "uiDonateRestored": {
+    "message": "የመዋጮ ማሳወቂያ እንደገና ታይቷል።"
   },
   "uiGithubText": {
-    "message": "ስህተት ሪፖርቶች ወይም ሌሎች ጥያቄዎች ለማቅረብ እባክዎን የኔን"
+    "message": "ስህተት ሪፖርቶች ወይም ሌሎች ጥያቄዎች ሲኖሩዎት እባክዎ የእኔን"
   },
   "uiGithubLinkLabel": {
-    "message": "የGitHub ገፅ"
+    "message": "GitHub ገፅ"
   },
   "iconAlt": {
-    "message": "‘ከአባሪዎች ጋር መልስ’ አዶ"
+    "message": "ከአባሪዎች ጋር መመለስ አይኮን"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "የፋይል ስሞች ጥቁር ዝርዝር (glob ንድፎች)"
+    "message": "የፋይል ስሞች ጥቁር ዝርዝር (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "ስማቸው ከእነዚህ ንድፎች ከአንዱ ጋር የሚዛመዱ ፋይሎች በራስ-ሰር ከቶ አይታተሙም። በእያንዳንዱ መስመር አንድ ንድፍ። ምሳሌዎች: *.png, smime.*, *.p7s"
+    "message": "ስማቸው ከእነዚህ ንዴቶች ማንኛውንም ጋር የሚዛመዱ ፋይሎች በራስ-ሰር ተያይዞ ከቶ አይጨመሩም። በእያንዳንዱ መስመር አንድ ንዴት። ምሳሌዎች፦ *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "አባሪዎች በጥቁር ዝርዝር ከተሰረዙ አስጠንቀቅ"
+    "message": "በጥቁር ዝርዝር ምክንያት አባሪዎች ቢሰናከሉ አስጠንቀቅ"
   },
   "uiSave": {
     "message": "አስቀምጥ"
@@ -60,7 +86,7 @@
     "message": "ተቀምጧል።"
   },
   "uiResetDone": {
-    "message": "ወደ ነባር ተመለሰ።"
+    "message": "ተመልሷል።"
   },
   "uiConfirmHeader": {
     "message": "ማረጋገጫ"
@@ -69,10 +95,10 @@
     "message": "አባሪዎችን ከመጨመር በፊት ጠይቅ"
   },
   "uiConfirmHelp": {
-    "message": "አባሪዎች በእርግጥ ሲጨመሩ ብቻ ትንሽ የማረጋገጫ ዳያሎግ መስኮት ይታያል። የፊደል ሰሌዳ: Y ወይም J = አዎ; N ወይም Esc = አይ።"
+    "message": "አባሪዎች ሊጨመሩ ሲሆን ብቻ ትንሽ የማረጋገጫ ንግግር መስኮት ይታያል። ኪቦርድ፦ Y ወይም J = አዎ; N ወይም Esc = አይ።"
   },
   "confirmAddOne": {
-    "message": "አባሪ ጨምር: $1?",
+    "message": "አባሪ አክል: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "አባሪዎች ጨምር ($1): $2$3?",
+    "message": "አባሪዎች አክል ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,16 +126,16 @@
     "message": "አይ"
   },
   "warnBlacklistTitle": {
-    "message": "በጥቁር ዝርዝር ተወግዷል"
+    "message": "በጥቁር ዝርዝር ምክንያት ተሰናክለዋል"
   },
   "warnBlacklistIntro": {
-    "message": "የሚቀጥሉት ፋይሎች በራስ-ሰር አይታተሙም፦"
+    "message": "የሚከተሉት ፋይሎች በራስ-ሰር አይጨመሩም፦"
   },
   "warnColFile": {
     "message": "ፋይል"
   },
   "warnColPattern": {
-    "message": "ንድፍ"
+    "message": "ንዴት"
   },
   "warnOk": {
     "message": "እሺ"
@@ -124,9 +150,21 @@
     "message": "አይ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ሰነድ ማብራሪያ፦"
+  },
+  "uiDocsButton": {
+    "message": "ሰነዶችን ክፈት"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

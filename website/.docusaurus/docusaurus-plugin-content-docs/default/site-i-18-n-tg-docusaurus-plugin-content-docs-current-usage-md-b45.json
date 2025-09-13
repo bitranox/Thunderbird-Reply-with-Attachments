@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Использование",
   "description": "Usage",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Использование",
+    "sidebar_label": "Использование"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Танзимот",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Соснашоъӣ",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/compatibility"
   }
 }

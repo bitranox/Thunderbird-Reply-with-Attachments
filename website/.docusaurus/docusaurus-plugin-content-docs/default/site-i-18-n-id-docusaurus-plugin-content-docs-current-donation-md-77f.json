@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Donasi",
-  "description": "Jika Anda menyukai Balas dengan Lampiran dan ingin mendukung pengembangannya, Anda dapat berdonasi di sini:",
+  "description": "Donasi",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
     "title": "Donasi",
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Lisensi",
-    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/license"
   }
 }

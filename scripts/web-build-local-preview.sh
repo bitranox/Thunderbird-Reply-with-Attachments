@@ -129,7 +129,8 @@ if [[ "$LOCALes" != "all" ]]; then
 fi
 
 echo "==> Building Docusaurus (website) ${BUILD_ARGS[*]} …"
-( cd "$SITE_DIR" && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build "${BUILD_ARGS[@]}" )
+( cd "$SITE_DIR" && node ./scripts/build-favicon.mjs )
+( cd "$SITE_DIR" && set -o pipefail; node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build "${BUILD_ARGS[@]}" | node ../scripts/stream-collapse-locales.mjs )
 
 # Verify that built locales exist (root for defaultLocale, subfolders for others)
 if [[ "$LOCALes" == "en" ]]; then
@@ -137,24 +138,37 @@ if [[ "$LOCALes" == "en" ]]; then
 else
   # Default locale (en) at root
   [[ -f "$BUILD_DIR/index.html" ]] || { echo "Build missing root index.html (default locale)" >&2; exit 1; }
+  # Verify only selected locales when a subset was requested; otherwise verify all configured locales
+  if [[ "$LOCALes" != "all" ]]; then
+    VERIFY_LOCALES="${uniqLocales[*]}"
+  else
+    VERIFY_LOCALES="$(echo "$CFG_LOCALES")"
+  fi
   # Non-default locales should have subfolder index
-  while read -r loc; do
+  for loc in $VERIFY_LOCALES; do
     [[ "$loc" == "en" || -z "$loc" ]] && continue
     if [[ ! -f "$BUILD_DIR/$loc/index.html" ]]; then
       echo "Warning: missing build for locale '$loc' at $BUILD_DIR/$loc/index.html" >&2
     fi
-  done <<< "$(echo "$CFG_LOCALES")"
+  done
 fi
 
 # Sync build -> local preview directory that mirrors the GH Pages baseUrl
 echo "==> Syncing build to $TARGET_DIR …"
-mkdir -p "$TARGET_DIR"
-if command -v rsync >/dev/null 2>&1; then
-  rsync -a --delete "$BUILD_DIR"/ "$TARGET_DIR"/
-else
-  ( cd "$BUILD_DIR" && find . -mindepth 1 -maxdepth 1 -print0 | xargs -0 -I{} rm -rf "$TARGET_DIR/{}" 2>/dev/null || true )
-  cp -a "$BUILD_DIR"/. "$TARGET_DIR"/
+# Stage into a temporary directory, then atomically swap into place to avoid partial updates
+STAGE_DIR="$WORKTREE_DIR/.staging-$(date +%s)-$$"
+rm -rf "$STAGE_DIR" || true
+mkdir -p "$STAGE_DIR"
+( cd "$BUILD_DIR" && tar cf - . ) | ( cd "$STAGE_DIR" && tar xf - )
+# Atomic replace: move current target aside, install staged build, then clean previous if possible
+if [[ -d "$TARGET_DIR" ]]; then
+  PREV_DIR="$WORKTREE_DIR/.prev-$(date +%s)-$$"
+  mv "$TARGET_DIR" "$PREV_DIR" 2>/dev/null || true
 fi
+mkdir -p "$(dirname "$TARGET_DIR")"
+mv "$STAGE_DIR" "$TARGET_DIR"
+# Best-effort cleanup of previous
+[[ -n "${PREV_DIR:-}" && -d "$PREV_DIR" ]] && rm -rf "$PREV_DIR" || true
 : > "$WORKTREE_DIR/.nojekyll"
 
 cat > "$WORKTREE_DIR/index.html" <<REDIR
@@ -230,7 +244,7 @@ if $RUN_LINK_CHECK; then
     --skip 'mailto:|^https?:\\/\\/(?!(localhost|127\\.0\\.0\\.1)([:/]|$))|^\/\/|github\\.com|bitranox\\.github\\.io|addons\\.thunderbird\\.net'; then
     echo "==> Link check passed"
   else
-    echo "WARN: Link check reported broken links. Preview will still start."
+    echo "WARN: Link check reported broken links. External links and index.html are safe to ignore (we use index.js)."
   fi
 else
   echo "==> Link check skipped (--no-link-check)"

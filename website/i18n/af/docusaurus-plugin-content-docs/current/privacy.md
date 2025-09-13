@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privaatheid'
+sidebar_label: 'Privaatheid'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privacy
 
-What the add‑on does:
+:::note Geen telemetrie; geen agtergrondnetwerk
+Hierdie byvoeging versamel **nie** analise/telemetrie nie en maak **geen** agtergrondnetwerk versoeke nie. Enige netwerktoegang gebeur slegs wanneer jy op 'n eksterne skakel (Docs, GitHub, Doneer) klik.
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments versamel nie analise of telemetrie nie en stuur jou data nêrens heen nie.
 
-What the add‑on does not do:
+Wat die byvoeging doen:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Lees aanhangsel metadata en lêers van die oorspronklike boodskap plaaslik (Thunderbird API) om dit aan jou antwoord te heg.
+- Stoor jou opsies (swartlys, bevestiging, standaard antwoord) in Thunderbird se plaaslike stoor.
 
-Permissions are documented on the [Permissions](permissions) page.
+Wat die byvoeging nie doen nie:
 
-## Content Security Policy (CSP)
+- Geen opsporing, analise, bogwettige verslagdoening, of afgeleë logging nie.
+- Geen agtergrondnetwerk versoeke nie, behalwe wanneer jy eksplisiet eksterne skakels (Docs, GitHub, Doneer) open.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Toestemmings is gedokumenteer op die [Toestemmings](permissions) bladsy.
+
+---
+
+## Content Security Policy (CSP) {#content-security-policy-csp}
+
+Die opsies en pop-up bladsye vermy inline skripte. Alle JavaScript word gelaai vanaf lêers wat saam met die byvoeging verskaf word om aan strenge CSP in Thunderbird te voldoen. As jy kode-snippets in dokumentasie inkorporeer, is hulle slegs voorbeelde en word nie deur die byvoeging uitgevoer nie.
+
+---
+
+## Data opslag {#data-storage}
+
+- Gebruikersvoorkeure (swartlys, bevestigingskakel, standaard antwoord) word in Thunderbird se `storage.local` vir hierdie byvoeging gestoor.
+- Geen wolk sinkronisasie word deur die byvoeging uitgevoer nie.
+
+---
+
+## Netwerk {#network}
+
+- Die byvoeging doen geen agtergrondnetwerkaktiwiteit nie.
+- Enige netwerktoegang gebeur slegs wanneer jy op skakels (Docs, GitHub, Doneer) klik of wanneer Thunderbird self normale operasies uitvoer wat nie met hierdie byvoeging verband hou nie.
+
+---
+
+## Data verwydering {#data-removal}
+
+- Die onttrekking van die byvoeging verwyder sy kode.
+- Instellings word slegs in Thunderbird se `storage.local` gehou en word tydens ontkoppeling verwyder; geen eksterne stoor word gebruik nie.
+- Herstel instellings sonder om te ontkoppel:
+  - Opsies bladsy: gebruik “Herstel na standaarde” vir die swartlys en swartlys waarskuwing.
+  - Gevorderd: in Thunderbird → Gereedskap → Ontwikkelaars Gereedskap → Foutopsporing Byvoegings, open die uitbreiding se stoor en verwyder sleutels indien nodig.
+
+---

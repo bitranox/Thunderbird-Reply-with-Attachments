@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Ijin",
-  "description": "Add‑on mung njaluk sawetara ijin sing cilik lan fokus. Napa saben ijin dibutuhake:",
+  "title": "Hak Akses",
+  "description": "Hak Akses",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Ijin"
+    "title": "Hak Akses"
   },
   "sidebar": "docs",
   "previous": {

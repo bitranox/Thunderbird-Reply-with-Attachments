@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "বৈশিষ্ট্যসমূহ",
-  "description": "বৈশিষ্ট্যসমূহ",
+  "description": "Features",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "শুরু কৰা",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/quickstart"
   }
 }

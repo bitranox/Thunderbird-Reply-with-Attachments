@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Atbalsts",
+  "description": "FAQ",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Atbalsts",
+    "sidebar_label": "Atbalsts"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Vārdnīca",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privātums",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/privacy"
   }
 }

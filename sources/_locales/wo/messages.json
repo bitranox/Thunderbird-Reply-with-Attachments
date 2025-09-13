@@ -3,73 +3,99 @@
     "message": "Tontu ak pièces jointes"
   },
   "extDescription": {
-    "message": "Yokk boppam pièces jointes yi orijinal ci tontu yi ci imeel."
+    "message": "Yokk otomatik pièces jointes yu jëkk ci tontu imeel yi."
   },
   "composeTitle": {
     "message": "Tontu ak pièces jointes"
   },
   "optionsTitle": {
-    "message": "Tontu ak pièces jointes — Tànneef yi"
+    "message": "Tontu ak pièces jointes — Tànneefi"
   },
   "confirmTitle": {
-    "message": "Dëggal pièces jointes"
+    "message": "Wóorle pièces jointes yi"
   },
   "uiHeader": {
     "message": "Tontu ak pièces jointes"
   },
   "uiNoOptions": {
-    "message": "Leegi amul benn tànneef buy settantal."
+    "message": "Amul benn tànneef ngir tëral léegi."
   },
   "uiSupport": {
-    "message": "Ndax bëgg nga add-on bii? Ndimbalel ma ak kontribusioon bu tuuti:"
+    "message": "Ndax bëgg nga add-on bii? Jàppal ma ak benn jox ndimbal bu ndaw:"
+  },
+  "uiRateATNText": {
+    "message": "Jox ko ay étoo ci ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Joxe kontribusioon léegi"
+    "message": "Jox ndimbal leegi"
+  },
+  "uiIDonated": {
+    "message": "Damaa jox ndimbal"
+  },
+  "uiDonateSnoozed": {
+    "message": "Jërëjëf! Ñu nëbb toppandoo jox ndimbal bi ngir 90 fan."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Ñu nëbb ko ba $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Wone 'Jox ndimbal'aat"
+  },
+  "uiDonateRestored": {
+    "message": "Toppandoo jox ndimbal bi feeñaat na."
   },
   "uiGithubText": {
-    "message": "Ngir yégle njuumte walla laaj yeneen, demal ci sama"
+    "message": "Ngir raportu njumte walla laaj yu wuute, demal ci sama"
   },
   "uiGithubLinkLabel": {
-    "message": "xët GitHub"
+    "message": "Xët GitHub"
   },
   "iconAlt": {
-    "message": "Ikoon bu Tontu ak pièces jointes"
+    "message": "Ikon 'Tontu ak pièces jointes'"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Liste bu tere tur yu fichiye (glob patterns)"
+    "message": "Liste noire bu turu fichiers (motifs glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fichiye yi, bu turam dëppoo ak benn ci ay moolu yii, duñu yokk boppam mukk. Benn moolu ci rëdd. Misaal: *.png, smime.*, *.p7s"
+    "message": "Fichiers yi bu seen tur bokk ak benn ci motifyi yii, du ñu leen yokk otomatik. Benn motif ci rëdd bu ne. Misaal: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Yëgal su pièces jointes yi ñu tere ci liste bi"
+    "message": "Artu bu pièces jointes yi ñu tere leen ci liste noire bi"
   },
   "uiSave": {
     "message": "Denc"
   },
   "uiSaving": {
-    "message": "Mi ngi denc…"
+    "message": "Mi ngiy denc…"
   },
   "uiReset": {
-    "message": "Delloo ci teelte ndigal yi"
+    "message": "Delloo ci par défaut"
   },
   "uiSaved": {
-    "message": "Dence na."
+    "message": "Denc na."
   },
   "uiResetDone": {
-    "message": "Dello na."
+    "message": "Takkuwaat na."
   },
   "uiConfirmHeader": {
-    "message": "Dëggal"
+    "message": "Wóorle"
   },
   "uiConfirmLabel": {
     "message": "Laaj laata yokk pièces jointes yi"
   },
   "uiConfirmHelp": {
-    "message": "Penc dëggal bu ndaw dafay feeñ rekk su amee nañu di yokk pièces jointes yi. Klawiye: Y walla J = Waaw; N walla Esc = Déedet."
+    "message": "Benn palanteeru wóorle bu ndaw dafay feeñ rekk su amee ñu wara yokkal ay pièces jointes. Klawiye: Y walla J = Waaw; N walla Esc = Déet."
   },
   "confirmAddOne": {
     "message": "Yokk pièce jointe: $1?",
@@ -97,36 +123,48 @@
     "message": "Waaw"
   },
   "confirmNo": {
-    "message": "Déedet"
+    "message": "Déet"
   },
   "warnBlacklistTitle": {
-    "message": "Teree ci liste bu tere"
+    "message": "Ñu tere ko ci liste noire"
   },
   "warnBlacklistIntro": {
-    "message": "Fichiye yii ci topp duñu yokk boppam:"
+    "message": "Fichiers yii du ñu yokk otomatik:"
   },
   "warnColFile": {
     "message": "Fichier"
   },
   "warnColPattern": {
-    "message": "Moolu"
+    "message": "Motif"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Tontu ndigal"
+    "message": "Tontu par défaut"
   },
   "uiConfirmDefaultYes": {
     "message": "Waaw"
   },
   "uiConfirmDefaultNo": {
-    "message": "Déedet"
+    "message": "Déet"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentaasiyoŋ:"
+  },
+  "uiDocsButton": {
+    "message": "Ubbi Docs"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

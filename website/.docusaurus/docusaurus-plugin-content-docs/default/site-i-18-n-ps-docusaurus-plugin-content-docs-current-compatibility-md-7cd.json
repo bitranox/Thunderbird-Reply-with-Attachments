@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "پخوانیوالتیا",
   "description": "Compatibility",
   "source": "@site/i18n/ps/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "پخوانیوالتیا",
+    "sidebar_label": "پخوانیوالتیا"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "کارول",
     "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "اجازه نامه",
     "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "Confidențialitate",
+  "description": "Confidențialitate",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "Confidențialitate",
+    "sidebar_label": "Confidențialitate"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "Asistență",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "Donează",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/donation"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Дэмжлэг",
+  "description": "FAQ",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Дэмжлэг",
+    "sidebar_label": "Дэмжлэг"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Тайлбар толь",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Нууцлал",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "ਸਮਰਥਨ",
-  "description": "ਮਦਦ ਚਾਹੀਦੀ ਹੈ ਜਾਂ ਬੱਗ ਰਿਪੋਰਟ ਕਰਨੀ ਹੈ?",
+  "title": "ਸਹਾਇਤਾ",
+  "description": "FAQ",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "ਸਮਰਥਨ",
-    "sidebar_label": "ਸਮਰਥਨ"
+    "title": "ਸਹਾਇਤਾ",
+    "sidebar_label": "ਸਹਾਇਤਾ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਸ਼ਬਦਾਵਲੀ",
+    "title": "ਸ਼ਬਦਕੋਸ਼",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/glossary"
   },
   "next": {
-    "title": "ਪਰਾਈਵੇਸੀ",
+    "title": "پرائیویسی",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/privacy"
   }
 }

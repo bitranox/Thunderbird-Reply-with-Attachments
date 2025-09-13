@@ -3,7 +3,7 @@
     "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
   },
   "extDescription": {
-    "message": "រួមបញ្ចូលឯកសារភ្ជាប់ដើមដោយស្វ័យប្រវត្តិ ក្នុងការឆ្លើយតបអ៊ីមែល។"
+    "message": "រួមបញ្ចូលឯកសារភ្ជាប់ដើមដោយស្វ័យប្រវត្តិនៅពេលឆ្លើយអ៊ីមែល។"
   },
   "composeTitle": {
     "message": "ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
@@ -21,19 +21,45 @@
     "message": "បច្ចុប្បន្នមិនមានជម្រើសអ្វីត្រូវកំណត់ទេ។"
   },
   "uiSupport": {
-    "message": "អ្នកចូលចិត្តកម្មវិធីបន្ថែមនេះទេ? គាំទ្រខ្ញុំជាមួយការរួមចំណែកតិចតួចមួយ៖"
+    "message": "តើអ្នកចូលចិត្តកម្មវិធីបន្ថែមនេះទេ? សូមគាំទ្រខ្ញុំដោយបរិច្ចាគតិចតួច៖"
+  },
+  "uiRateATNText": {
+    "message": "សូមវាយតម្លៃនៅលើ ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "បរិច្ចាគ​ឥឡូវនេះ"
+    "message": "បរិច្ចាគឥឡូវនេះ"
+  },
+  "uiIDonated": {
+    "message": "ខ្ញុំបានបរិច្ចាគ"
+  },
+  "uiDonateSnoozed": {
+    "message": "សូមអរគុណ! សារបរិច្ចាគត្រូវបានលាក់រយៈពេល 90 ថ្ងៃ។"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "លាក់រហូតដល់ $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "បង្ហាញបរិច្ចាគម្ដងទៀត"
+  },
+  "uiDonateRestored": {
+    "message": "សារបរិច្ចាគបានបង្ហាញឡើងវិញ។"
   },
   "uiGithubText": {
-    "message": "សម្រាប់រាយការណ៍កំហុស ឬសំណួរផ្សេងៗ សូមចូលទៅកាន់"
+    "message": "សម្រាប់រាយការណ៍កំហុស ឬសំណួរផ្សេងៗ សូមចូលទស្សនា"
   },
   "uiGithubLinkLabel": {
     "message": "ទំព័រ GitHub"
   },
   "iconAlt": {
-    "message": "រូបតំណាង ឆ្លើយតបជាមួយឯកសារភ្ជាប់"
+    "message": "រូបតំណាង 'ឆ្លើយតបជាមួយឯកសារភ្ជាប់'"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "បញ្ជីខ្មៅនៃឈ្មោះឯកសារ (លំនាំ glob)"
   },
   "uiBlacklistHelp": {
-    "message": "ឯកសារដែលឈ្មោះផ្គូផ្គងនឹងលំនាំណាមួយទាំងនេះ នឹងមិនត្រូវបានភ្ជាប់ដោយស្វ័យប្រវត្តិទេ។ មួយលំនាំក្នុងមួយបន្ទាត់។ ឧទាហរណ៍: *.png, smime.*, *.p7s"
+    "message": "ឯកសារដែលឈ្មោះផ្គូផ្គងលំនាំណាមួយទាំងនេះ នឹងមិនត្រូវភ្ជាប់ដោយស្វ័យប្រវត្តិទេ។ មួយលំនាំក្នុងមួយបន្ទាត់។ ឧទាហរណ៍: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ព្រមានប្រសិនបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ"
+    "message": "ព្រមាន ប្រសិនបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ"
   },
   "uiSave": {
     "message": "រក្សាទុក"
@@ -66,10 +92,10 @@
     "message": "ការបញ្ជាក់"
   },
   "uiConfirmLabel": {
-    "message": "សួរមុនពេលបន្ថែមឯកសារភ្ជាប់"
+    "message": "សួរមុននឹងបន្ថែមឯកសារភ្ជាប់"
   },
   "uiConfirmHelp": {
-    "message": "ប្រអប់បញ្ជាក់តូចមួយនឹងបង្ហាញឡើងតែនៅពេលមានការបន្ថែមឯកសារភ្ជាប់ពិតប្រាកដប៉ុណ្ណោះ។ ក្ដារចុច: Y ឬ J = បាទ/ចាស; N ឬ Esc = ទេ។"
+    "message": "ប្រអប់បញ្ជាក់តូចមួយ នឹងលេចឡើងតែពេលមានការបន្ថែមឯកសារភ្ជាប់ពិតប្រាកដប៉ុណ្ណោះ។ ក្ដារចុច: Y ឬ J = បាទ/ចាស; N ឬ Esc = ទេ។"
   },
   "confirmAddOne": {
     "message": "បន្ថែមឯកសារភ្ជាប់: $1?",
@@ -100,10 +126,10 @@
     "message": "ទេ"
   },
   "warnBlacklistTitle": {
-    "message": "បានដកចេញដោយបញ្ជីខ្មៅ"
+    "message": "ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ"
   },
   "warnBlacklistIntro": {
-    "message": "ឯកសារខាងក្រោមនឹងមិនត្រូវបានភ្ជាប់ដោយស្វ័យប្រវត្តិទេ៖"
+    "message": "ឯកសារខាងក្រោម នឹងមិនត្រូវភ្ជាប់ដោយស្វ័យប្រវត្តិទេ៖"
   },
   "warnColFile": {
     "message": "ឯកសារ"
@@ -124,9 +150,21 @@
     "message": "ទេ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ឯកសារណែនាំ៖"
+  },
+  "uiDocsButton": {
+    "message": "បើកឯកសារណែនាំ"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

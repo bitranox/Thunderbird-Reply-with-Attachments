@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Afaanota'
+sidebar_label: 'Afaanota'
 ---
 
-# Language Support
+## Afaanota
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Kuni tarree gaaffiilee bakkaitti kan geggeeffamu hiikkaa waraqaa marsaa fi barruu UI dabalataa agarsiisa.
+Deeggarsi afaan hedduu, kootu AI hiikkaa — afaan 100 ol jedhu.
 
-List below is sorted by the language code.
+Tarree armaan gadi sirna akka koodii afaanitti qindaa'e.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Akka waliigala: [Glossary](glossary) keessatti jechoota UI sirna qabu kan bakka garagaraatti fayyadaman ilaali.
+
+---
+
+## Tarree afaanotaa {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Fe'i walaloo garagara ta'e waldo'uu dandeessa weebsaayitii keessatti filannoo afaan irratti (URL foowni ni jijjiirama). Afaan UI Thunderbird'n weebsaayitii afaan irratti ilaalcha ta'e hin qabaatu.
+
+Redirect fuula bu'uura
+
+- Yoo weebsaayitiin afaan fedhii brouzarii kee'rratti ijaarame, URL bu'uura waraqaa sagantaa keetii jalatti daawwate hawaasa afaan sanaatti of-eeguu akka ta'u ifatti ni kaka'u. Filannoo afaan (yookiin `/en/`) fayyadami.
+
+---
+
+## Hiikkaa Guddina {#contribute-translations}
+
+- Hiikkaan tokko dogoggora qaba? Maaliif GitHub keessa dhimmicha banadhu yookiin PR.
+- Hiikkan Ingiliffaf qu'annoon (waanti caalaa `website/docs/`) jalatti yaada qabi. Karaa deeggarsaa'atti hojjatootni gabaasni hiikkaa qorannoo sirna gababaa maayii maaliif guutuu.
+  Afaan Ingliffaa dhugaan waamamaan hiikkaa; fooyyesa hiikkaa deeggaree EN irraa harkifatu.
+
+### Fuula Jalqabaa, Navbar, UI Gadifageenya
+
+- Wal'aansa kun `website/i18n/en/code.json` keessa jiraachuudhaan karra garagaraa sirnaa'aa ifatti deeggara:
+  - `make translate_web_index` (\_\_`OPENAI_API_KEY` barbaachisa)
+  - Afaanota qindeessuuf `OPTS="--locales de,fr"`; gatii jalqaba itti fayyadamuu `OPTS="--force"` irraan darbuu.
+
+### Weebsaayitii fi UI {#website-vs-ui}
+
+- Afaan weebsaayitii fi afaan UI dabalataa madaalawwan; filannoon afaan barruulee qofa jijjiira. Afaan UI Thunderbird faaya yaa'aan keetii hordofa.

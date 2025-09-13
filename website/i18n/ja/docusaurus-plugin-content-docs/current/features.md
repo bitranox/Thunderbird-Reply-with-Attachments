@@ -1,17 +1,34 @@
 ---
 id: features
-title: 機能
-sidebar_label: 機能
+title: '機能'
+sidebar_label: '機能'
 ---
 
-## 機能
+## Features {#features}
 
-- 返信時に元のメールのファイルを自動で添付します。
-- 挙動は設定可能です。添付ファイルは
-  - 自動で追加する、または
-  - 確認後にのみ追加する（小さくアクセシブルなダイアログ）。［オプション］で確認を有効にし、既定の回答（はい／いいえ）を選択できます。
-- ファイル名のブラックリスト（glob パターン）は特定のファイルが自動で添付されるのを防ぎます。例：`*intern*`、`*secret*`、`*passwor*`。
-  照合は大文字小文字を区別せず、ファイル名のみを確認します。［オプション］で1行につき1つのパターンを指定してください。
-- ブラックリストの警告（任意、デフォルトで有効）：ブラックリストによりファイルが除外された場合、小さなモーダルでそのファイルと一致したパターンを表示します。ダークモードに対応し、キーボード操作（Enter/Esc で閉じる）に対応しています。
-- すでに自分で何かを添付していても元の添付を追加します。ファイル名で重複を回避します。
-- 不要な添付を避けるため、SMIME 証明書やインライン画像はスキップします。
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

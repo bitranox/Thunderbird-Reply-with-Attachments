@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "الدعم",
-  "description": "بحاجة للمساعدة أم تريد الإبلاغ عن عطل؟",
+  "description": "FAQ",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "المسرد",
+    "title": "قاموس المصطلحات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/glossary"
   },
   "next": {

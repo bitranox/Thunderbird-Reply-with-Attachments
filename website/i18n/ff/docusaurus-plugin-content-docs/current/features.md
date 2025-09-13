@@ -1,17 +1,34 @@
 ---
 id: features
-title: Fannuji
-sidebar_label: Fannuji
+title: 'Ndaari'
+sidebar_label: 'Ndaari'
 ---
 
-## Fannuji
+## Features {#features}
 
-- So a naatnu jaabawol, ko e‑imeel adiiɗo fof piille maa ñippitee e jaabawol heen.
-- Ko woni no mbaawi teeltude: ɗiɗiije ena waawi
-  - ɓeydaade e jaabawol ɗo e jaabawol, walla
-  - ɓeydaade tan caggal teeŋtingol (kaali kisɗo, hiska). E Options ko mbaawi hurminde teeŋtingol tee suɓaade jaabwaaɗo gooto (Eey/Al’a).
-- Doggol meŋ e innde piille (patteern glob) yiɗi ɗum siftinde piille goɗɗi ɓeydaade e jaabawol. Misaluuji: `*intern*`, `*secret*`, `*passwor*`.
-  Ñippitgol ɗum waɗi alaa jowtol mawnude/cikkude e tammbitaa ko innde piille tan; e Options hokku patteern gooto e darnde kala.
-- Tintinde doggol meŋ (suɓo, hurminaa), so piille ɗi siftinaama ko doggol maa, kaali kisɗo hollataa piille e patteern ɗe ñippitii. Ena waɗi moƴƴo e dark‑mode tee ena hiski e tappirde (Enter/Esc ngam uddude).
-- Ɓeyda ko adiiɗo haa so a ɓeydii zowre ɗeen; daana caasnirde ɗi iwde e innde piille.
-- Hoto ƴeewtude seedamfaaji SMIME e natalɗi e hakkere ngam haɗde ɗiɗiije nde waɗɗaaki.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

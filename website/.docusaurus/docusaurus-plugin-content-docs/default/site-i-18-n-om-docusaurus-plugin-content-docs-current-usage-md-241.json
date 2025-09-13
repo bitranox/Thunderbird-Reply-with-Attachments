@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Fayyadama",
   "description": "Usage",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Fayyadama",
+    "sidebar_label": "Fayyadama"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Commoja",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Waliigaltee",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/compatibility"
   }
 }

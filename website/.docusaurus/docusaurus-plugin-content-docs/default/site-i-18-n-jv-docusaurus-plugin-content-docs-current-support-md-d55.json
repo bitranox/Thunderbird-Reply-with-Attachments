@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Dhukungan",
-  "description": "Butuh pitulungan utawa arep nglaporake bug?",
+  "description": "FAQ",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glosarium",
+    "title": "Istilah",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/glossary"
   },
   "next": {

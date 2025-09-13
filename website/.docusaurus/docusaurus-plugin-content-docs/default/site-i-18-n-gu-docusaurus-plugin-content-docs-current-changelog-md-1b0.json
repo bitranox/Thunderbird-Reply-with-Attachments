@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ફેરફારોનો રેકોર્ડ",
-  "description": "સંપૂર્ણ ઇતિહાસ માટે રિપોઝિટરીની CHANGELOG.md ફાઇલ જુઓ.",
+  "title": "તમેની કથાઓ",
+  "description": "Changelog",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ફેરફારોનો રેકોર્ડ"
+    "title": "તમેની કથાઓ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "લાયસન્સ",
-    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/licence"
+    "title": "પરવાનગી",
+    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/license"
   }
 }

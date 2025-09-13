@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Taageero",
+  "description": "FAQ",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Taageero",
+    "sidebar_label": "Taageero"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Qeexid",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Asturnaanta",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/privacy"
   }
 }

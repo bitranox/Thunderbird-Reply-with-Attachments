@@ -1,30 +1,56 @@
 {
   "extName": {
-    "message": "Bales jeung Lampiran"
+    "message": "Ngabales jeung Lampiran"
   },
   "extDescription": {
-    "message": "Otomatis ngalebetkeun lampiran aslina dina balesan surélék."
+    "message": "Otomatis ngalebetkeun lampiran aslina dina balesan surél."
   },
   "composeTitle": {
-    "message": "Bales jeung Lampiran"
+    "message": "Ngabales jeung Lampiran"
   },
   "optionsTitle": {
-    "message": "Bales jeung Lampiran — Pilihan"
+    "message": "Ngabales jeung Lampiran — Pilihan"
   },
   "confirmTitle": {
     "message": "Mastikeun Lampiran"
   },
   "uiHeader": {
-    "message": "Bales jeung Lampiran"
+    "message": "Ngabales jeung Lampiran"
   },
   "uiNoOptions": {
-    "message": "Ayeuna teu aya pilihan pikeun diatur."
+    "message": "Ayeuna teu aya pilihan anu bisa disetél."
   },
   "uiSupport": {
-    "message": "Anjeun resep kana add-on ieu? Dukung abdi ku sumbangan saeutik:"
+    "message": "Anjeun resep kana add-on ieu? Punten dukung ku sumbangan leutik:"
+  },
+  "uiRateATNText": {
+    "message": "Mangga méré peunteun di ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Nyumbang ayeuna"
+  },
+  "uiIDonated": {
+    "message": "Abdi parantos nyumbang"
+  },
+  "uiDonateSnoozed": {
+    "message": "Hatur nuhun! Paménta sumbangan disumputkeun salila 90 poé."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Disumputkeun nepi ka $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Témbongkeun Nyumbang deui"
+  },
+  "uiDonateRestored": {
+    "message": "Paménta sumbangan katingali deui."
   },
   "uiGithubText": {
     "message": "Pikeun laporan bug atawa patalékan séjén, mangga nganjang ka"
@@ -33,7 +59,7 @@
     "message": "Kaca GitHub"
   },
   "iconAlt": {
-    "message": "Ikon Bales jeung Lampiran"
+    "message": "Ikon Ngabales jeung Lampiran"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "Daptar hideung ngaran payil (pola glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Payil anu ngaranna cocog jeung salah sahiji pola ieu moal otomatis dilampirkeun. Unggal baris hiji pola. Conto: *.png, smime.*, *.p7s"
+    "message": "Payil anu ngaran-na cocog jeung salah sahiji pola ieu moal pernah dilampirkeun sacara otomatis. Saleret hiji pola. Conto: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Bewara lamun lampiran dikecualikeun ku daptar hideung"
+    "message": "Béjaan lamun lampiran dikecualikeun ku daptar hideung"
   },
   "uiSave": {
     "message": "Simpen"
@@ -54,22 +80,22 @@
     "message": "Nyimpen…"
   },
   "uiReset": {
-    "message": "Setél deui ka standar"
+    "message": "Reset ka standar"
   },
   "uiSaved": {
-    "message": "Geus disimpen."
+    "message": "Disimpen."
   },
   "uiResetDone": {
-    "message": "Geus direset."
+    "message": "Di-reset."
   },
   "uiConfirmHeader": {
     "message": "Konfirmasi"
   },
   "uiConfirmLabel": {
-    "message": "Menta konfirmasi saméméh nambahkeun lampiran"
+    "message": "Tanyakeun heula saméméh nambihan lampiran"
   },
   "uiConfirmHelp": {
-    "message": "Kotak dialog konfirmasi leutik bakal nembongan ngan lamun aya lampiran anu saleresna bakal ditambahkeun. Kibor: Y atawa J = Enya; N atawa Esc = Henteu."
+    "message": "Kotak konfirmasi leutik bakal mucunghul ngan lamun aya lampiran anu bener-bener bakal ditambahkeun. Kibor: Y atawa J = Enya; N atawa Esc = Henteu."
   },
   "confirmAddOne": {
     "message": "Tambahkeun lampiran: $1?",
@@ -103,7 +129,7 @@
     "message": "Dikecualikeun ku daptar hideung"
   },
   "warnBlacklistIntro": {
-    "message": "Payil di handap ieu moal otomatis dilampirkeun:"
+    "message": "Payil di handap ieu moal dilampirkeun sacara otomatis:"
   },
   "warnColFile": {
     "message": "Payil"
@@ -124,9 +150,21 @@
     "message": "Henteu"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokuméntasi:"
+  },
+  "uiDocsButton": {
+    "message": "Buka Dokuméntasi"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

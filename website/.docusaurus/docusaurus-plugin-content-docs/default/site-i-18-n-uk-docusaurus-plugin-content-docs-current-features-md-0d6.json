@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Можливості",
-  "description": "Можливості",
+  "title": "Особливості",
+  "description": "Features",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Можливості",
-    "sidebar_label": "Можливості"
+    "title": "Особливості",
+    "sidebar_label": "Особливості"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Швидкий початок",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/quickstart"
   }
 }

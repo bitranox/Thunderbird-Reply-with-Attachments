@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Shajara ya mabadiliko",
-  "description": "Tazama historia kamili kwenye faili CHANGELOG.md ya hifadhi.",
+  "title": "Melsema",
+  "description": "Changelog",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Shajara ya mabadiliko"
+    "title": "Melsema"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/licence"
+    "title": "Leseni",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/license"
   }
 }

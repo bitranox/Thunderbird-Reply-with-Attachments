@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Subiza n'inyomeko"
+    "message": "Subiza hamwe n'inyomeko"
   },
   "extDescription": {
-    "message": "Kwinjizamwo inyomeko z'umwimerere mu bisubizo vy'imeyili mu buryo bwikora."
+    "message": "Yongeramwo ku bwikora inyomeko z'umwimerere mu bisubizo vya imeyili."
   },
   "composeTitle": {
-    "message": "Subiza n'inyomeko"
+    "message": "Subiza hamwe n'inyomeko"
   },
   "optionsTitle": {
-    "message": "Subiza n'inyomeko — Amahitamo"
+    "message": "Subiza hamwe n'inyomeko — Amahitamwo"
   },
   "confirmTitle": {
     "message": "Kwemeza inyomeko"
   },
   "uiHeader": {
-    "message": "Subiza n'inyomeko"
+    "message": "Subiza hamwe n'inyomeko"
   },
   "uiNoOptions": {
-    "message": "Ubu nta mahitamo yo gutunganya ahari."
+    "message": "Ubu nta mahitamwo yo gutunganya ahari."
   },
   "uiSupport": {
-    "message": "Ukunda iyi nyongera? Nshigikira n'ituro rito:"
+    "message": "Urakunda iyi nyongera? Ndagusavye unshigikire n'intererano ntoya:"
+  },
+  "uiRateATNText": {
+    "message": "Ha amanota kuri ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Tanga inkunga ubu"
+    "message": "Tanga intererano ubu"
+  },
+  "uiIDonated": {
+    "message": "Natanze intererano"
+  },
+  "uiDonateSnoozed": {
+    "message": "Urakoze! Ubutumwa bwo gusaba intererano bwahishwe iminsi 90."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Bwahishwe kugeza ku $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Erekana 'Tanga intererano' kandi"
+  },
+  "uiDonateRestored": {
+    "message": "Ubutumwa bwo gusaba intererano bugarutse kuboneka."
   },
   "uiGithubText": {
-    "message": "Ku gutanga raporo z'udukosa canke ibindi bibazo, ndakwinginze gusura"
+    "message": "Ku vyegeranyo vy'udukosa canke ibindi bibazo, ndagusavye gusura"
   },
   "uiGithubLinkLabel": {
-    "message": "Urupapuro rwa GitHub"
+    "message": "urupapuro rwa GitHub"
   },
   "iconAlt": {
-    "message": "Agashushanyo ka Subiza n'inyomeko"
+    "message": "Akamenyetso ka Subiza hamwe n'inyomeko"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Urutonde rwo gukumira amazina y'idosiye (imigereranyo ya glob)"
+    "message": "Urutonde rw'ivyankirwa rw'amazina y'amadosiye (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "Amadosiye amazina yayo ahuye n'umwe muri iyi migereranyo ntazokwomekwa mu buryo bwikora na rimwe. Umugereranyo umwe kuri buri murongo. Akarorero: *.png, smime.*, *.p7s"
+    "message": "Amadosiye amazina yayo ahura n'icitegererezo ico ari co cose muri ivyo ntazigera yomekwa ku buryo bwikora. Icitegererezo kimwe ku murongo. Ingero: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Tanga impuruza mu gihe inyomeko zikumiriwe n'urutonde rwo gukumira"
+    "message": "Menyesha igihe inyomeko zakuweko n'urwo rutonde rw'ivyankirwa"
   },
   "uiSave": {
     "message": "Bika"
@@ -57,22 +83,22 @@
     "message": "Subiza ku bisanzwe"
   },
   "uiSaved": {
-    "message": "Vyabitswe."
+    "message": "Birabitswe."
   },
   "uiResetDone": {
-    "message": "Vyasubijwe ku bisanzwe."
+    "message": "Hasubijwe."
   },
   "uiConfirmHeader": {
     "message": "Kwemeza"
   },
   "uiConfirmLabel": {
-    "message": "Baza imbere yo kwongeramwo inyomeko"
+    "message": "Baza imbere yo kwomeka inyomeko"
   },
   "uiConfirmHelp": {
-    "message": "Agakiganiro ko kwemeza kaboneka gusa igihe koko hagiye kwongerwamwo inyomeko. Mfunguruzo: Y canke J = Ego; N canke Esc = Oya."
+    "message": "Idirisha rito ryo kwemeza riza gusa igihe koko inyomeko zigiye kwomekwa. Kibaho c'ivyandikiro: Y canke J = Ego; N canke Esc = Oya."
   },
   "confirmAddOne": {
-    "message": "Ongeramwo inyomeko: $1?",
+    "message": "Kwomeka inyomeko: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ongeramwo inyomeko ($1): $2$3?",
+    "message": "Kwomeka inyomeko ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,16 +126,16 @@
     "message": "Oya"
   },
   "warnBlacklistTitle": {
-    "message": "Vyakumiriwe n'urutonde rwo gukumira"
+    "message": "Vyakuwemwo n'urutonde rw'ivyankirwa"
   },
   "warnBlacklistIntro": {
-    "message": "Amadosiye akurikira ntazokwomekwa mu buryo bwikora:"
+    "message": "Amadosiye akurikira ntazokwomekwa ku buryo bwikora:"
   },
   "warnColFile": {
     "message": "Idosiye"
   },
   "warnColPattern": {
-    "message": "Umugereranyo"
+    "message": "Icitegererezo"
   },
   "warnOk": {
     "message": "OK"
@@ -124,9 +150,21 @@
     "message": "Oya"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Ibisobanuro:"
+  },
+  "uiDocsButton": {
+    "message": "Fungura ibisobanuro"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

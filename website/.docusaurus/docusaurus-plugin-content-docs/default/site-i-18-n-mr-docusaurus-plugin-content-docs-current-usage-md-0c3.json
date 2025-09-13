@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "वापर",
-  "description": "वापर",
+  "title": "उपयोग",
+  "description": "Usage",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "वापर",
-    "sidebar_label": "वापर"
+    "title": "उपयोग",
+    "sidebar_label": "उपयोग"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "संरचना",
+    "title": "कॉन्फिगरेशन",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/configuration"
   },
   "next": {

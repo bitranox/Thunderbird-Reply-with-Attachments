@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Vipengele",
-  "description": "Vipengele",
+  "description": "Features",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Mwanzoni",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/quickstart"
   }
 }

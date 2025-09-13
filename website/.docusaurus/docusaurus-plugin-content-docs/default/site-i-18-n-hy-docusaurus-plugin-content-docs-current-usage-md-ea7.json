@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Օգտագործում",
   "description": "Usage",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Օգտագործում",
+    "sidebar_label": "Օգտագործում"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Կոնֆիգուրացիա",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Համատեղելիություն",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ياردەم",
+  "description": "FAQ",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ياردەم",
+    "sidebar_label": "ياردەم"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "تەپسىلنامە",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "خۇسۇسىيلىكنى ساقلاش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/privacy"
   }
 }

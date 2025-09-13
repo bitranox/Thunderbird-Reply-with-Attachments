@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "יומן שינויים",
-  "description": "ראו את ההיסטוריה המלאה בקובץ CHANGELOG.md במאגר.",
+  "description": "Changelog",
   "source": "@site/i18n/he/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/he/docs/licence"
+    "title": "רישיון",
+    "permalink": "/Thunderbird-Reply-with-Attachments/he/docs/license"
   }
 }

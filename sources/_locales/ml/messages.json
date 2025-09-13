@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+    "message": "അറ്റാച്മെന്റുകളോടെ മറുപടി"
   },
   "extDescription": {
-    "message": "ഇമെയിൽ മറുപടികളിൽ മൂല അറ്റാച്ച്മെന്റുകൾ സ്വയമേവ ഉൾപ്പെടുത്തുന്നു."
+    "message": "ഇമെയിൽ മറുപടികളിൽ യഥാർത്ഥ അറ്റാച്മെന്റുകൾ സ്വയമേവ ഉൾപ്പെടുത്തുന്നു."
   },
   "composeTitle": {
-    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+    "message": "അറ്റാച്മെന്റുകളോടെ മറുപടി"
   },
   "optionsTitle": {
-    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി — ഓപ്ഷനുകൾ"
+    "message": "അറ്റാച്മെന്റുകളോടെ മറുപടി — ഓപ്ഷനുകൾ"
   },
   "confirmTitle": {
-    "message": "അറ്റാച്ച്മെന്റുകൾ സ്ഥിരീകരിക്കുക"
+    "message": "അറ്റാച്മെന്റുകൾ സ്ഥിരീകരിക്കുക"
   },
   "uiHeader": {
-    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി"
+    "message": "അറ്റാച്മെന്റുകളോടെ മറുപടി"
   },
   "uiNoOptions": {
-    "message": "ഇപ്പോൾ ക്രമീകരിക്കാനായി ഓപ്ഷനുകളൊന്നുമില്ല."
+    "message": "ഇപ്പോൾ ക്രമീകരിക്കാൻ ഓപ്ഷനുകളൊന്നും ഇല്ല."
   },
   "uiSupport": {
-    "message": "ഈ ആഡ്‑ഓൺ നിങ്ങൾക്ക് ഇഷ്ടമാണോ? ചെറിയൊരു സംഭാവനയിലൂടെ എന്നെ പിന്തുണയ്ക്കൂ:"
+    "message": "ഈ അഡോൺ നിങ്ങൾക്ക് ഇഷ്ടമാണോ? ദയവായി ചെറുതായൊരു സംഭാവന നൽകി എന്നെ പിന്തുണയ്ക്കൂ:"
+  },
+  "uiRateATNText": {
+    "message": "ദയവായി ATN-ൽ റേറ്റ് ചെയ്യൂ"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ഇപ്പോൾ സംഭാവന ചെയ്യുക"
+    "message": "ഇപ്പോൾ തന്നെ സംഭാവന ചെയ്യൂ"
+  },
+  "uiIDonated": {
+    "message": "ഞാൻ സംഭാവന ചെയ്തു"
+  },
+  "uiDonateSnoozed": {
+    "message": "നന്ദി! സംഭാവന അഭ്യർത്ഥനം 90 ദിവസത്തേക്ക് മറച്ചിരിക്കുന്നു."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 വരെ മറച്ചിരിക്കുന്നു",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "സംഭാവന അഭ്യർത്ഥനം വീണ്ടും കാണിക്കുക"
+  },
+  "uiDonateRestored": {
+    "message": "സംഭാവന അഭ്യർത്ഥനം വീണ്ടും ദൃശ്യമാണിത്."
   },
   "uiGithubText": {
-    "message": "ബഗ് റിപ്പോർട്ടുകൾക്കോ മറ്റു ചോദ്യങ്ങൾക്കോ, ദയവായി എന്റെ"
+    "message": "ബഗ് റിപ്പോർട്ടുകൾക്കോ മറ്റ് ചോദ്യങ്ങൾക്കോ, ദയവായി എന്റെ"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub പേജ്"
   },
   "iconAlt": {
-    "message": "അറ്റാച്ച്മെന്റുകളോടെ മറുപടി ഐക്കൺ"
+    "message": "അറ്റാച്മെന്റുകളോടെ മറുപടി ഐക്കൺ"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ഫയൽനാമങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് (ഗ്ലോബ് പാറ്റേണുകൾ)"
+    "message": "ഫയൽ നാമങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് (ഗ്ലോബ് പാറ്റേണുകൾ)"
   },
   "uiBlacklistHelp": {
-    "message": "ഈ പാറ്റേണുകളിലേതെങ്കിലും പൊരുത്തപ്പെടുന്ന ഫയലുകൾ ഒരിക്കലും സ്വയമേവ അറ്റാച്ച് ചെയ്യില്ല. ഓരോ വരിയിലും ഒരു പാറ്റേൺ. ഉദാഹരണങ്ങൾ: *.png, smime.*, *.p7s"
+    "message": "ഈ പാറ്റേണുകളിൽ ഏതെങ്കിലും ഒന്നിനോട് പേരുകൾ പൊരുത്തപ്പെടുന്ന ഫയലുകൾ സ്വയമേവ ഒരിക്കലും അറ്റാച് ചെയ്യപ്പെടുകയില്ല. ഓരോ വരിയിലും ഒരു പാറ്റേൺ. ഉദാഹരണങ്ങൾ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് മൂലം അറ്റാച്ച്മെന്റുകൾ ഒഴിവാക്കിയാൽ മുന്നറിയിപ്പ് നൽകുക"
+    "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് കാരണം അറ്റാച്മെന്റുകൾ ഒഴിവാക്കുന്നുവെങ്കിൽ മുന്നറിയിപ്പ് നൽകുക"
   },
   "uiSave": {
     "message": "സംരക്ഷിക്കുക"
@@ -54,7 +80,7 @@
     "message": "സംരക്ഷിക്കുന്നു…"
   },
   "uiReset": {
-    "message": "ഡീഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യുക"
+    "message": "ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യുക"
   },
   "uiSaved": {
     "message": "സംരക്ഷിച്ചു."
@@ -66,13 +92,13 @@
     "message": "സ്ഥിരീകരണം"
   },
   "uiConfirmLabel": {
-    "message": "അറ്റാച്ച്മെന്റുകൾ ചേർക്കുന്നതിനു മുമ്പ് ചോദിക്കുക"
+    "message": "അറ്റാച്മെന്റുകൾ ചേർക്കുന്നതിന് മുൻപ് ചോദിക്കുക"
   },
   "uiConfirmHelp": {
-    "message": "അറ്റാച്ച്മെന്റുകൾ യഥാർത്ഥത്തിൽ ചേർക്കേണ്ട സമയങ്ങളിൽ മാത്രം ഒരു ചെറിയ സ്ഥിരീകരണ ഡയലോഗ് പ്രത്യക്ഷപ്പെടും. കീബോർഡ്: Y അല്ലെങ്കിൽ J = Yes; N അല്ലെങ്കിൽ Esc = No."
+    "message": "അറ്റാച്മെന്റുകൾ യഥാർത്ഥത്തിൽ ചേർക്കാൻ പോകുമ്പോൾ മാത്രമേ ഒരു ചെറിയ സ്ഥിരീകരണ ഡയലോഗ് പ്രത്യക്ഷപ്പെടൂ. കീബോർഡ്: Y അല്ലെങ്കിൽ J = Yes; N അല്ലെങ്കിൽ Esc = No."
   },
   "confirmAddOne": {
-    "message": "അറ്റാച്ച്മെന്റ് ചേർക്കണോ: $1?",
+    "message": "അറ്റാച്മെന്റ് ചേർക്കണോ: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "അറ്റാച്ച്മെന്റുകൾ ചേർക്കണോ ($1): $2$3?",
+    "message": "അറ്റാച്മെന്റുകൾ ചേർക്കണോ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -103,7 +129,7 @@
     "message": "ബ്ലാക്ക്‌ലിസ്റ്റ് മൂലം ഒഴിവാക്കി"
   },
   "warnBlacklistIntro": {
-    "message": "താഴെക്കാണുന്ന ഫയലുകൾ സ്വയമേവ അറ്റാച്ച് ചെയ്യുകയില്ല:"
+    "message": "താഴെയുള്ള ഫയലുകൾ സ്വയമേവ അറ്റാച് ചെയ്യപ്പെടുകയില്ല:"
   },
   "warnColFile": {
     "message": "ഫയൽ"
@@ -115,7 +141,7 @@
     "message": "ശരി"
   },
   "uiConfirmDefaultHeader": {
-    "message": "സ്വതേയുള്ള ഉത്തരം"
+    "message": "സ്ഥിരസ്ഥിതി മറുപടി"
   },
   "uiConfirmDefaultYes": {
     "message": "അതെ"
@@ -124,9 +150,21 @@
     "message": "ഇല്ല"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ഡോക്യുമെന്റേഷൻ:"
+  },
+  "uiDocsButton": {
+    "message": "ഡോക്സ് തുറക്കുക"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

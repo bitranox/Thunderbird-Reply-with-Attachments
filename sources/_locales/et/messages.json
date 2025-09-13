@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Vasta manustega"
+    "message": "Vasta koos manustega"
   },
   "extDescription": {
-    "message": "Kaasa e-kirja vastustes automaatselt algsed manused."
+    "message": "Lisab e-kirjavastustele automaatselt algsed manused."
   },
   "composeTitle": {
-    "message": "Vasta manustega"
+    "message": "Vasta koos manustega"
   },
   "optionsTitle": {
-    "message": "Vasta manustega — sätted"
+    "message": "Vasta koos manustega — Sätted"
   },
   "confirmTitle": {
-    "message": "Manuste kinnitamine"
+    "message": "Manuste kinnitus"
   },
   "uiHeader": {
-    "message": "Vasta manustega"
+    "message": "Vasta koos manustega"
   },
   "uiNoOptions": {
     "message": "Praegu pole seadistatavaid valikuid."
   },
   "uiSupport": {
-    "message": "Kas sulle meeldib see lisandmoodul? Toeta mind väikese annetusega:"
+    "message": "Meeldib see lisandmoodul? Toeta mind väikese annetusega:"
+  },
+  "uiRateATNText": {
+    "message": "Palun hinda ATN-is"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Anneta nüüd"
+    "message": "Anneta kohe"
+  },
+  "uiIDonated": {
+    "message": "Ma annetasin"
+  },
+  "uiDonateSnoozed": {
+    "message": "Aitäh! Annetuse teavitus on 90 päevaks peidetud."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Peidetud kuni $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Näita annetuskutset uuesti"
+  },
+  "uiDonateRestored": {
+    "message": "Annetuskutse on taas nähtav."
   },
   "uiGithubText": {
-    "message": "Vigadest teatamiseks või muude küsimuste korral külasta minu"
+    "message": "Veadest teatamiseks või muude küsimuste korral külasta palun minu"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHubi lehte"
+    "message": "GitHubi leht"
   },
   "iconAlt": {
-    "message": "Vasta manustega ikoon"
+    "message": "Vasta koos manustega ikoon"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Failinimede must nimekiri (glob‑mustrid)"
+    "message": "Failinimede must nimekiri (glob-mustrid)"
   },
   "uiBlacklistHelp": {
-    "message": "Faile, mille nimed klapivad mõne alloleva mustriga, ei lisata kunagi automaatselt manustena. Üks muster rea kohta. Näited: *.png, smime.*, *.p7s"
+    "message": "Faile, mille nimi vastab mõnele järgnevale mustrile, ei lisata kunagi automaatselt manustena. Üks muster rea kohta. Näited: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Hoiata, kui manused jäetakse musta nimekirja tõttu välja"
+    "message": "Hoiata, kui must nimekiri välistab manused"
   },
   "uiSave": {
     "message": "Salvesta"
@@ -69,10 +95,10 @@
     "message": "Küsi enne manuste lisamist"
   },
   "uiConfirmHelp": {
-    "message": "Väike kinnitusdialoog kuvatakse ainult siis, kui manused tõepoolest lisatakse. Klaviatuur: Y või J = jah; N või Esc = ei."
+    "message": "Väike kinnituse aken kuvatakse ainult siis, kui manused tegelikult lisatakse. Klaviatuur: Y või J = Jah; N või Esc = Ei."
   },
   "confirmAddOne": {
-    "message": "Lisa manus: $1?",
+    "message": "Kas lisada manus: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Lisa manused ($1): $2$3?",
+    "message": "Kas lisada manused ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "Ei"
   },
   "warnBlacklistTitle": {
-    "message": "Välja jäetud musta nimekirja tõttu"
+    "message": "Välistatud musta nimekirja tõttu"
   },
   "warnBlacklistIntro": {
     "message": "Järgmisi faile ei lisata automaatselt manustena:"
@@ -124,9 +150,21 @@
     "message": "Ei"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentatsioon:"
+  },
+  "uiDocsButton": {
+    "message": "Ava dokumentatsioon"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

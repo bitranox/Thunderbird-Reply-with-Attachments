@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Glosar",
+  "description": "Glosar",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Glosar",
+    "sidebar_label": "Glosar"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Limbi",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Asistență",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/support"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Rakiba",
+  "description": "Rakiba adoo isticmaalaya \"Thunderbird Add-ons iyo Mawdho\"",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Rakiba",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Rakiba"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Bilowga Degdegga ah",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Qaabaynta",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/configuration"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "ସାମଞ୍ଜସ୍ୟତା",
   "description": "Compatibility",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "ସାମଞ୍ଜସ୍ୟତା",
+    "sidebar_label": "ସାମଞ୍ଜସ୍ୟତା"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "ବ୍ୟବହାର",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "ଅନୁମତି",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/permissions"
   }
 }

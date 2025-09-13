@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Características",
-  "description": "Características",
+  "description": "Features",
   "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Inicio rápido",
+    "title": "Inicio Rápido",
     "permalink": "/Thunderbird-Reply-with-Attachments/es/docs/quickstart"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Жылдам бастама",
+  "description": "Жылдам бастама",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Жылдам бастама",
+    "sidebar_label": "Жылдам бастама"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Орнату",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/install"
   }
 }

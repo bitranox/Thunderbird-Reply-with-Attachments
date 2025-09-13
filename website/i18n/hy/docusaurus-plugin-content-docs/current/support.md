@@ -1,22 +1,78 @@
 ---
 id: support
-title: Support
-sidebar_label: Support
+title: 'Օգնություն'
+sidebar_label: 'Օգնություն'
 ---
 
-Need help or want to report a bug?
+## FAQ {#faq}
 
-- Open an issue on GitHub:
-  - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
-  - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
-  - Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
+### Կցված ֆայլերը չհավելվեցին — ինչու՞
 
-- Add‑ons site (ATN): You can also leave feedback via the add‑on page.
+- Inline images և S/MIME մասերը նպատակաուղղված exclude են։
+- Ամենակրկնվող ֆայլային անունները բաց թողնվում են, եթե կազմվածքն արդեն ունի նույն ֆայլը։
+- Դեզակտիվացված օրինակների համար կարող են ֆիլտրավորվել թեկնածուները. տես [Կոնֆիգուրացիա](configuration#blacklist-glob-patterns)։
 
-Tips
+### Կարո՞ղ եմ հաստատել մինչև կցել կցված ֆայլերը։
 
-- Ensure you’re on a supported Thunderbird version (128 ESR or newer).
-- Check the Configuration and Usage docs for common setup questions.
-- For development/testing, see the Development guide.
+Այո։ Հիշեք "Հարցնել՝ մինչև կցել կցված ֆայլեր" ընտրությունը [Կոնֆիգուրացիա → Հաստատում](configuration#confirmation) բաժնում։ Քիչ պատրաստակամ թկոց՝ Y/J = Այո, N/Esc = Ոչ։
 
-If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
+### Ավելացվող հավելվածը ուղարկո՞ւմ է տվյալներ կամ հետևում է օգտագործմանն ամենևին։
+
+Ոչ։ Տես [Գաղտնիություն](privacy) — ոչ մի հեռահար կապ եւ ոչ մի ֆոնային ցանցային պահանջ։
+
+### Առաջ Forward-ն ամենևին չի ավելացնում կցված ֆայլեր — դա ակնկալված է՞։
+
+Այո։ Միայն Reply և Reply all փոփոխված են այս հավելվածի կողմից։ Forward-ը մնացել է անփոփոխ։ Տես [Սահմանափակումներ](usage#limitations)։
+
+### Այն որտեղ է ընտրությունը Donate snooze։
+
+Options → Support բաժնում։ Տես [Donation Visibility](configuration#donation-visibility)։
+
+---
+
+## Օգնություն
+
+Է պետք է օգնություն կամ ցանկանում եք հաղորդել սխալ։
+
+---
+
+### Գործարկել խնդիրը GitHub-ում:
+
+- Արխիվ՝ `bitranox/Thunderbird-Reply-with-Attachments`
+- Խնդիրներ: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
+- Ընտրեք Thunderbird տարբերակը (օրինակ, 128 ESR), OS և վերարտադրելու քայլեր
+- Կցեք համապատասխան գրանցումներ Thunderbird-ի Error Console-ից (Tools → Developer Tools → Error Console)
+
+- Հավելվածների կայք (ATN): Դուք կարող եք նաև թողնել հայտնություններ [հավելվածի էջում](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)։
+
+---
+
+### Խորհուրդներ
+
+- Վստահ եղեք, որ դուք Thunderbird-ի աջակցված տարբերակի վրա եք (128 ESR կամ ավելի նոր)։
+- Ստուգեք Կոնֆիգուրացիա և Օգտագործման փաստաթղթերը ընդհանուր կարգավորումային հարցերի համար։
+- Խ ontwikkeling/թեստավորման համար, տես Զարգացման ուղեցույցը։
+- Եթե պահեստավորված կարգավորումները, թվում է, որ չեն գործում ճիշտ կերպ, վերագործարկեք Thunderbird-ը և փորձեք նորից։ (Thunderbird-ը կարող է պահել վիճակը սեսիաների միջև; վերագործարկումը ապահովում է, որ նոր կարգավորումները բեռնվեն)։
+- Ինտերակտիվ փորձարկման համար՝ փորձեք փոքր փորձնական նամակ, որը պարունակում է մեկ կամ երկու պարզ ֆայլ։
+- Համեմատեք վարքը հաստատման ON ընդդեմ OFF, որպեսզի պարզեք, թե արդյոք խոսակցության ընթացքը ներգրավված է։
+
+---
+
+### Ինչ պետք է ներառել հաշվետվությունում
+
+- Thunderbird-ի տարբերակը և OS
+- Ճիշտ քայլեր վերարտադրելու (ինչ եք արել, ինչ եք ակնկալել, ինչ տեղի ունեցավ)
+- Արդյո՞ք հաստատումը գնված էր և Ձեր ենթադրյալ պատասխանը
+- Ձեր դեզակտիվացված օրինակների նմուշ (եթե հաստատված է)
+- Ցուցաբերված Error Console գրառումներ՝ վերարտադրելու ժամանակ (Tools → Developer Tools → Error Console)
+- Միացնել լոգերը (ընտրական):
+  - Գործարկել Thunderbird-ի Error Console-ում: `messenger.storage.local.set({ debug: true })`
+  - Վերարտադրեք խնդիրը և պատճենեք համապատասխան `[RWA]` գրառում տողեր
+
+---
+
+### Աթեն
+
+Եթե ցանկանում եք աջակցել այս նախագիծին, խնդրում ենք դիտարկել փոքր ներդրում [Աթենման](donation) էջում։ Շնորհակալություն!
+
+---

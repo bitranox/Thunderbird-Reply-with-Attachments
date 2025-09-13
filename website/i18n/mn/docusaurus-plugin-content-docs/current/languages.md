@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Хэлүүд'
+sidebar_label: 'Хэлүүд'
 ---
 
-# Language Support
+## Хэлүүд
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Энэхүү жагсаалт нь вэбсайтын баримт бичгүүдийн орчуулга болон нэмэлт UI стрингүүдийг илэрхийлнэ.
+AI орчуулах багаж хэрэгслүүдийн тусламжтайгаар 100 хэлний их хэмжээний дэмжлэгийг санал болгож байна.
 
-List below is sorted by the language code.
+Доорх жагсаалтыг хэлний кодоор нь эрэмбэлсэн.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Мөн: Бүс нутгуудын дунд ашиглагддаг стандарт UI үгсийн [Тойм](glossary)-ыг үзнэ үү.
+
+---
+
+## Хэлний жагсаалт {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Зөвлөгөө: Вэбсайтын хуваарь нь хэлний сонгогчоор дамжуулан хэлний цэсэнд шилжинэ (URL-ийн урьдчилсан нэмэлт өөрчлөлтүүд тохирохоор өөрчлөгддөг). Thunderbird-ийн UI хэлний өөрчлөлт нь вэбсайтын хэлнээс тусдаа бөгөөд таны Thunderbird тохиргоонд дагаж мөрддөг.
+
+Нийтлэлийн хуудсыг дахин чиглүүлэлт
+
+- Хэрвээ вэбсайт танай браузерийн хэлний тэргүүлэх урьдчилсаар бүтээсэн бол, төслийн baseUrl дор суурь баримт бичгийн URL руу орох нь автомат аргаар тэр хэл рүү н Redirect болно. Англиар үлдэхийн тулд хэлний шилжүүлэгч (эсвэл `/en/`) ашигла.
+
+---
+
+## Орчуулгыг хувь нэмрээ оруулах {#contribute-translations}
+
+- Орчуулгад алдаа олсон уу? GitHub асуудал эсвэл PR нээнэ үү.
+- `website/docs/` дор Англи хэлний эхгүйгээр редакторуудаар тэргүүлэхийг илүүд үзнэ; үйлзүүлэгчийн хэрэгслийг ойлгуулсан мэдээллийг бусад хэл рүү түгээнэ.
+  Англи хэл нь баримт бичгийн үнэн зөв эх юм; орчуулгын шинэчлэлтүүдийг тоймлагчийн ажлын урсгалаас EN-ээс татан авчирдаг.
+
+### Нүүр хуудас, Navbar, Footer UI
+
+- Эдгээр стрингүүд `website/i18n/en/code.json` д байдаг бөгөөд үйлзүүлэгчийн үйл ажиллагаагаар бүх хэлэнд орчуулагддаг:
+  - `make translate_web_index` (\_`OPENAI_API_KEY` шаардлагатай)
+  - `OPTS="--locales de,fr"`-той хэлүүдийг хязгаарлах; `OPTS="--force"`-тай мөрдөгдөв.
+
+### Вэбсайт ба UI {#website-vs-ui}
+
+- Вэбсайтын хэл ба нэмэлт UI хэл нь хараат бус; хэлний сонгогч зөвхөн баримт бичгийг өөрчилж байна. Thunderbird-ийн UI хэл нь таны Thunderbird тохиргоонд дагаж мөрддөг.

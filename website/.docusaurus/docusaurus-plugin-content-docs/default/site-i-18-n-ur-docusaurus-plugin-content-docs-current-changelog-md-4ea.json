@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "تبدیلیوں کا ریکارڈ",
-  "description": "مکمل تاریخ کے لیے ریپوزٹری کی CHANGELOG.md فائل دیکھیں۔",
+  "title": "تاریخچه تبدیلی",
+  "description": "Changelog",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "تبدیلیوں کا ریکارڈ"
+    "title": "تاریخچه تبدیلی"
   },
   "sidebar": "docs",
   "previous": {
     "title": "لائسنس",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/license"
   }
 }

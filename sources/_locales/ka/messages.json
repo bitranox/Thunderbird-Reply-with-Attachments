@@ -3,7 +3,7 @@
     "message": "პასუხი დანართებით"
   },
   "extDescription": {
-    "message": "ელფოსტის პასუხებში ორიგინალი დანართების ავტომატურად ჩართვა."
+    "message": "ელფოსტის პასუხებში ორიგინალ დანართებს ავტომატურად დაამატებს."
   },
   "composeTitle": {
     "message": "პასუხი დანართებით"
@@ -18,19 +18,45 @@
     "message": "პასუხი დანართებით"
   },
   "uiNoOptions": {
-    "message": "ამჟამად საკონფიგურაციო პარამეტრები არ არის."
+    "message": "ამჟამად დასაკონფიგურაციო პარამეტრები არ არის."
   },
   "uiSupport": {
-    "message": "მოგწონთ ეს დამატება? მხარი დამიჭირეთ მცირე შემოწირულობით:"
+    "message": "მოგწონთ ეს დამატება? გთხოვთ, დამიჭირეთ მხარი მცირე შემოწირულობით:"
+  },
+  "uiRateATNText": {
+    "message": "გთხოვთ, შეაფასეთ ATN-ზე"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "შემოწირეთ ახლავე"
+    "message": "გააკეთეთ შემოწირულობა ახლავე"
+  },
+  "uiIDonated": {
+    "message": "მე გავაკეთე შემოწირულობა"
+  },
+  "uiDonateSnoozed": {
+    "message": "გმადლობთ! შემოწირულობის შეტყობინება 90 დღით დამალულია."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "დამალულია $1-მდე",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "შემოწირულობის ჩვენება ხელახლა"
+  },
+  "uiDonateRestored": {
+    "message": "შემოწირულობის შეტყობინება კვლავ ხილვადია."
   },
   "uiGithubText": {
-    "message": "შეცდომების ანგარიშებისთვის ან სხვა კითხვებისთვის, ეწვიეთ ჩემს"
+    "message": "შეცდომების ანგარიშებისა თუ სხვა შეკითხვებისთვის, გთხოვთ, ეწვიეთ ჩემს"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub-ის გვერდს"
+    "message": "GitHub-ის გვერდი"
   },
   "iconAlt": {
     "message": "პასუხი დანართებით — ხატულა"
@@ -39,40 +65,40 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ფაილის სახელების შავი სია (glob შაბლონები)"
+    "message": "ფაილების სახელების შავი სია (glob ნიმუშები)"
   },
   "uiBlacklistHelp": {
-    "message": "ფაილები, რომელთა სახელები ემთხვევა ამ შაბლონებიდან რომელიმეს, არასოდეს დაერთვება ავტომატურად. თითო ხაზზე ერთი შაბლონი. მაგალითად: *.png, smime.*, *.p7s"
+    "message": "ფაილები, რომელთა სახელები ემთხვევა ამ ნიმუშებიდან რომელიმეს, არასოდეს დაემატება ავტომატურად. თითო ხაზზე ერთი ნიმუში. მაგალითები: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "გაფრთხილება, თუ შავი სიის გამო დანართები გამოირიცხება"
+    "message": "გაფრთხილება, თუ დანართები შავი სიით გამოირიცხება"
   },
   "uiSave": {
     "message": "შენახვა"
   },
   "uiSaving": {
-    "message": "ინახება…"
+    "message": "მიმდინარეობს შენახვა…"
   },
   "uiReset": {
-    "message": "ნაგულისხმევ პარამეტრებზე დაბრუნება"
+    "message": "ნაგულისხმებზე დაბრუნება"
   },
   "uiSaved": {
     "message": "შენახულია."
   },
   "uiResetDone": {
-    "message": "დაბრუნდა ნაგულისხმევზე."
+    "message": "აღდგა."
   },
   "uiConfirmHeader": {
     "message": "დადასტურება"
   },
   "uiConfirmLabel": {
-    "message": "დანართების დამატებამდე კითხვის დასმა"
+    "message": "კითხვა დანართების დამატებამდე"
   },
   "uiConfirmHelp": {
-    "message": "დადასტურების პატარა ფანჯარა გამოჩნდება მხოლოდ მაშინ, როცა დანართები რეალურად დაემატება. კლავიატურა: Y ან J = დიახ; N ან Esc = არა."
+    "message": "პატარა დადასტურების ფანჯარა გამოჩნდება მხოლოდ მაშინ, როცა დანართები ნამდვილად დაემატება. კლავიატურა: Y ან J = დიახ; N ან Esc = არა."
   },
   "confirmAddOne": {
-    "message": "დავამატოთ დანართი: $1?",
+    "message": "დავამატო დანართი: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "დავამატოთ დანართები ($1): $2$3?",
+    "message": "დავამატო დანართები ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "არა"
   },
   "warnBlacklistTitle": {
-    "message": "შავი სიის გამო გამორიცხულია"
+    "message": "შავი სიით გამორიცხულია"
   },
   "warnBlacklistIntro": {
     "message": "შემდეგი ფაილები ავტომატურად არ დაერთვება:"
@@ -109,7 +135,7 @@
     "message": "ფაილი"
   },
   "warnColPattern": {
-    "message": "შაბლონი"
+    "message": "ნიმუში"
   },
   "warnOk": {
     "message": "კარგი"
@@ -124,9 +150,21 @@
     "message": "არა"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "დოკუმენტაცია:"
+  },
+  "uiDocsButton": {
+    "message": "დოკუმენტაციის გახსნა"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

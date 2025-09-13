@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "గోప్యత",
-  "description": "Reply with Attachments అనలిటిక్స్/టెలిమెట్రీ ఏదీ సేకరించదు మరియు మీ డేటాను ఎక్కడికీ పంపదు.",
+  "description": "Privacy",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "సహాయం",
+    "title": "సాయం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/support"
   },
   "next": {
-    "title": "విరాళం",
+    "title": "దానం చేయండి",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/donation"
   }
 }

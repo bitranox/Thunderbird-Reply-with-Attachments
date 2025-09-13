@@ -1,22 +1,87 @@
 ---
 id: support
-title: Support
-sidebar_label: Support
+title: 'תמיכה'
+sidebar_label: 'תמיכה'
 ---
 
-Need help or want to report a bug?
+## FAQ {#faq}
 
-- Open an issue on GitHub:
-  - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
-  - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
-  - Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
+### קבצים מצורפים לא נוספו — מדוע?
 
-- Add‑ons site (ATN): You can also leave feedback via the add‑on page.
+- תמונות בשורה וחלקי S/MIME מוחרגים במכוון.
+- שמות קבצים כפולים מדולגים אם ההודעה כבר מכילה את אותו קובץ.
+- תבניות שחור עשויות לסנן מועמדים; ראה [הגדרה](configuration#blacklist-glob-patterns).
 
-Tips
+### האם אני יכול לאשר לפני הוספת קבצים מצורפים?
 
-- Ensure you’re on a supported Thunderbird version (128 ESR or newer).
-- Check the Configuration and Usage docs for common setup questions.
-- For development/testing, see the Development guide.
+כן. הפעל את "שאל לפני הוספת קבצים מצורפים" תחת [הגדרה → אישור](configuration#confirmation). מקשים: Y/J = כן, N/Esc = לא.
 
-If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
+### האם ההרחבה שולחת נתונים כלשהם או עוקבת אחרי שימוש?
+
+לא. ראה [פרטיות](privacy) — ללא טלמטריה וללא בקשות רשת ברקע.
+
+### העברה לא מוסיפה קבצים מצורפים — זה צפוי?
+
+כן. רק תשובה ותשובה לכל משודרגות על ידי ההרחבה הזו; העברה נשארת כפי שהיא. ראה [מגבלות](usage#limitations).
+
+### היכן משהו נוגע בתרומה?
+
+אפשרויות → סעיף תמיכה. ראה [נראות התרומה](configuration#donation-visibility).
+
+---
+
+## תמיכה
+
+צריך עזרה או רוצה לדווח על באג?
+
+---
+
+### פתח בעיה ב-GitHub:
+
+- מאגר: `bitranox/Thunderbird-Reply-with-Attachments`
+- בעיות: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
+- כלול גרסת Thunderbird (למשל, 128 ESR), מערכת הפעלה, ושלבים לשחזור
+- צירף יומנים רלוונטיים ממסגרת השגיאה של Thunderbird (כלים → כלים למפתחים → מסגרת השגיאה)
+
+- אתר תוספים (ATN): אתה יכול גם להשאיר משוב דרך [עמודת התוסף](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+
+---
+
+### טיפים
+
+- ודא שאתה על גרסה נתמכת של Thunderbird (128 ESR או חדשה יותר).
+- בדוק את המסמכים של ההגדרה והשימוש לשאלות התקנה נפוצות.
+- לצורך פיתוח/בדיקה, ראה את מדריך הפיתוח.
+- אם הגדרות נשמרות אינן מתממשות כראוי, הפעל מחדש את Thunderbird ונסה שוב. (Thunderbird עשוי לשמור מצב בין מפגשים; הפעלה מחדש מבטיחה שההגדרות החדשות ייטענו.)
+- שחזור מינימלי: נסה עם דואר ניסי קטן המכיל קובץ אחד או שניים פשוטים.
+- השווה התנהגות עם אישור דולק לעומת כבוי כדי לצמצם אם זרימת הדיאלוג מעורבת.
+
+---
+
+### מה לכלול בדיווח
+
+- גרסת Thunderbird ומערכת הפעלה
+- שלבים מדויקים לשחזור (מה שעשית, מה ציפית, מה קרה)
+- האם האישור היה מופעל ומה הייתה הגדרת התשובה המחדלית שלך
+- דוגמה לתבניות השחור שלך (אם רלוונטי)
+- יומני מסגרת השגיאה בזמן השחזור (כלים → כלים למפתחים → מסגרת השגיאה)
+- אפשר רישום ניפוי שגיאות (אופציונלי):
+  - רוץ במסגרת השגיאה של Thunderbird: `messenger.storage.local.set({ debug: true })`
+  - שחזר את הבעיה והעתק שורות יומן רלוונטיות `[RWA]`
+
+---
+
+### תבנית בעיה (העתק/הדבק) {#issue-template}
+
+- גרסת Thunderbird ומערכת הפעלה:
+- שלבים לשחזור:
+- האם האישור מופעל? תשובה ברירת מחדל:
+- דוגמה לתבניות שחור:
+- יומני מסגרת השגיאה (כלים → כלים למפתחים → מסגרת השגיאה):
+- כל דבר נוסף רלוונטי:
+
+---
+
+### תרומה
+
+אם אתה מעוניין לתמוך בפרויקט הזה, אנא שקול תרומה קטנה בדף ה-[תרומה](donation). תודה!

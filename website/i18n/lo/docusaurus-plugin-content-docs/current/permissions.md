@@ -1,16 +1,52 @@
 ---
 id: permissions
-title: Permissions
+title: 'ສິດທິ'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## ສິດທິ
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note ສິດທິບົດບັດຕໍ່ສິດທິນໍາໃຊ້
+ບໍ່ມີສິດທິສໍາລັບບໍລິການ (web) ທີ່ຖືກຮ່ວມໃນແອບ. ແອບບໍ່ເກັບຂໍໍາແນະທຽມສິນຄ້າຫຼືຮ່ອງໃນເພັດໃດ ຊອກເບິ່ງ [ຄວາມລັບ](privacy).
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+ແອບໂທອະດິບຂໍສິດທິບໍ່ຈິດຈິດຢ່າງຄອບຄອງຄື່ນ. ທ່ານສິດທິແຕ່ລະສິດທິເສັງ:
+
+- `compose`: ເບິ່ງການຄວາມຄິດ, ລາຍຊື່/ເພີ່ມແຟ້ມຕໍ່ໃນຄວາມລະດັບຂອງທ່ານ.
+- `messagesRead`: ອ່ານຂໍໍາແນະ ແລະ ເອີ້ນແຟ້ມດັດສິນຈາກບັດນິສາກທີ່ສົ່ມມາ.
+- `scripting`: ປ່ອນແຟ້ມຄອບຮ້ອນສະຍອດລະດັບຄວາມຕອບເຮັດເມັ້ນ.
+- `windows`: ເປີເດີນແກວລັກບັດສົ່ມມາເພາະປອດສົ່ມວຽກໃນຄວາມລະດັບສົ່ມ.
+- `sessions`: ເກັບຄວາມບົດ ສຽງສໍາລັບນະຟາກດອກບານຈິບໄຟໄດ່ງ.
+- `storage`: ເອີ່ນຕິດສິດສົ່ມ (ສິດຖະນະ, ໃດງູ່ແລະນິໍໝີນ).
+- `tabs`: ສົ່ງເດືອນໃນບອດສປິຕອສັດໃສ່ລຼບຊິ່ງຈັກຜົນສົ່ມຂອງຂອງສົ່ມ.
+
+ວິທີລາຍງານເພີ່ນ:
+
+- ບໍ່ມີສິດທິສາດເອົາຄົວຮັ ບານແອບ.
+- ສິດ `tabs` ຈະໃຊ້ເພື່ອເລືອກບອດສົ່ມຈະຍາກຄອບກັບຄຳຕອບປ່ອນຈິບດັບຕົວຊໝນສິດ; ບໍ່ໃຊ້ເພື່ອເອົາເລືອກࡁກກມອນມາ↲.
+
+ນີແດ່ຈັດດລາຍແລ້ວເພື່ອແອບແນລະບອຈສົ່ມ. ແອບບໍ່ເກັບຂໍໍາແນະ.
+
+---
+
+### ສະລຸບ (permissions → purpose) {#permissions-summary}
+
+| ສິດທິ          | ເລື່ອງການ רຄິດໄດ້ໃຊ້ງານ                                     |
+| -------------- | ----------------------------------------------------------- |
+| `compose`      | ເບິ່ງການຄວາມຄິດ; ລາຍຊື່ ແລະ ເພີ່ມແຟ້ມຕໍ່ໃນຄວາມລະດັບຂອງທ່ານ. |
+| `messagesRead` | ລາຍຊື່ແຟ້ມດັດຈາກບັດສົ່ມມາ ແລະ ເອີ້ນນິສາຕໍ່ໍຊິໍ.             |
+| `scripting`    | ແບບສິດແລະບັດຄົບຄ່າງານອີຈັ຋ປ໋ອນຄວາມຕອບແຟຈດມາເອີ຋໅ຕິ.         |
+| `windows`      | ແກວລັກບັດສົ່ມຫຍັກຍລືອງ.                                     |
+| `sessions`     | ເກັບສິດປິເດໍ້ຄ່າແປ໇ທັດຈິດໃຊ່ສະມອງຄົຼັບຄາສະດັບກຣນ.           |
+| `storage`      | ເພີ່ມສິດແມໝົ່ງບົດລີຕອຕ໢ອນທົບຍ້ຌາທ່ານເດສມມສະມາຍງັ຦.          |
+| `tabs`         | ສົ່ມການທຳມາສິດສົ່ມເຂົ້າ ົນບອດຕົວດອັງລັງຊ.                   |
+| (host perms)   | ບໍ່ມີ — ແອບບໍ່ຮ່ວມສຽງສົ່ມຈານ.                               |
+
+---
+
+## ບໍ່ໃຊ່ງິນຮັດຊ {#not-requested}
+
+- `compose.save`, `compose.send` — ແອບແບບບໍ່ບັບສ຦ຒາຍຫັນສະຳອະຖາຊສັນເພາກອູຖິຈິລສຶຊສຳທະັວໆ.
+
+ເກີົ່ນໄອ ສາມາກປ່ອນ: [ຄວາມລັບ](privacy) — ບໍ່ມີແນລະຕາ, ບໍ່ສົ່ມອຍບຢອໄມໝ໊ຕະຕ໌ນແນລ.

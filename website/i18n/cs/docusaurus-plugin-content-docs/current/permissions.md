@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'Oprávnění'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## Oprávnění
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note Minimální oprávnění
+Tento doplněk nevyžaduje žádná oprávnění hostitele (web). Doplněk nesbírá telemetrii ani neprovádí síťové požadavky na pozadí. Viz [Ochrana osobních údajů](privacy).
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+Doplněk žádá pouze o malou, zaměřenou sadu oprávnění. Proč je každé potřebné:
+
+- `compose`: pozorovat události při sestavování, seznam/přidat přílohy do vaší odpovědi.
+- `messagesRead`: číst metadata a stahovat soubory příloh z původní zprávy.
+- `scripting`: vložit malý dialog potvrzení při sestavování, když je povolen.
+- `windows`: otevřít malou potvrzovací vyskakovací nabídku jako poslední možnost, když zpráva selže.
+- `sessions`: uložit příznak pro každou kartu, aby se zabránilo duplikovanému zpracování.
+- `storage`: uchovávat možnosti (blacklist, přepínač potvrzení, výchozí odpověď).
+- `tabs`: cílené zprávy na kartu pro potvrzení žádostí.
+
+Další poznámky:
+
+- Tento doplněk nevyžaduje žádná oprávnění hostitele (webové zdroje).
+- Oprávnění `tabs` se používá pouze k cílení na kartu sestavení při koordinaci volitelného dialogu potvrzení; nepoužívá se k čtení historie nebo navigaci mezi stránkami.
+
+Tyto informace jsou zdokumentovány ve zdroji a testovány v CI. Doplněk nesbírá telemetrii.
+
+---
+
+### Shrnutí (permissions → purpose) {#permissions-summary}
+
+| Oprávnění      | Proč je potřeba                                                                |
+| -------------- | ------------------------------------------------------------------------------ |
+| `compose`      | Pozorovat události při sestavování; seznam a přidat přílohy do vaší odpovědi.  |
+| `messagesRead` | Seznam příloh původní zprávy a stahovat data souboru.                          |
+| `scripting`    | Vložit/koordinovat lehké uživatelské rozhraní pro potvrzení, když je povoleno. |
+| `windows`      | Rezervní vyskakovací nabídka, pokud zpráva selže (vzácně).                     |
+| `sessions`     | Uložit příznak pro každou kartu, aby se zabránilo duplikovanému zpracování.    |
+| `storage`      | Uchovávat možnosti (blacklist, přepínač potvrzení, výchozí odpověď).           |
+| `tabs`         | Cílené zprávy na kartu pro žádosti o potvrzení.                                |
+| (host perms)   | Žádné — doplněk nevyžaduje webové zdroje.                                      |
+
+---
+
+## Nevyžadováno {#not-requested}
+
+- `compose.save`, `compose.send` — doplněk neukládá ani neposílá poštu vaším jménem.
+
+Viz také: [Ochrana osobních údajů](privacy) — žádná telemetrie, žádné síťové požadavky na pozadí, pouze odkazy iniciované uživateli.
+
+---

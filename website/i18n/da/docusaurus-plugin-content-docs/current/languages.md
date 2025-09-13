@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Sprog'
+sidebar_label: 'Sprog'
 ---
 
-# Language Support
+## Languages
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Denne liste afspejler både oversættelser af hjemmeside-dokumentation og tilføjelser til UI-strenge.  
+Masser af sprogunderstøttelse, takket være AI-oversættelsesværktøjer — dækker 100 sprog.
 
-List below is sorted by the language code.
+Listen nedenfor er sorteret efter sprogkode.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Se også: [Glossary](glossary) for kanoniske UI-termer brugt på tværs af lokaler.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Skift dokumenternes sprog via sprogvalgslisten i site-headeren (URL-præfikset ændres derefter). Thunderbird’s UI-sprog er uafhængigt af hjemmesidesproget og følger dine Thunderbird-indstillinger.
+
+Landing page redirect
+
+- Hvis siden er bygget med din browsers præfererede sprog, omdirigeres besøg til base-dokument-URL’en under projektets baseUrl automatisk til det sprog. Brug sprogskifteren (eller `/en/`) for at forblive på engelsk.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Har du fundet et problem i en oversættelse? Åbn venligst et GitHub-issue eller PR.
+- Foretrækker redigeringer mod den engelske kilde under `website/docs/`; vedligeholderens værktøjer videregiver opdateringer til andre lokaler.  
+  Engelsk er sandhedens kilde for dokumentation; oversættelsesopdateringer hentes fra EN under vedligeholderens arbejdsproces.
+
+### Homepage, Navbar, Footer UI
+
+- Disse strenge findes i `website/i18n/en/code.json` og oversættes til alle lokaler via vedligeholdelsesopgaven:
+  - `make translate_web_index` (kræver `OPENAI_API_KEY`)
+  - Begræns sprog med `OPTS="--locales de,fr"`; overskriv eksisterende værdier med `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Hjemmesidens sprog og add-on UI-sprog er uafhængige; sprogvalgslisten ændrer kun dokumenterne. Thunderbird’s UI-sprog følger dine Thunderbird-indstillinger.

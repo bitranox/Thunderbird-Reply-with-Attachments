@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "更新日志",
-  "description": "完整历史请参见仓库中的 CHANGELOG.md 文件。",
+  "title": "版本说明",
+  "description": "Changelog",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "更新日志"
+    "title": "版本说明"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ئىشلىتىش",
   "description": "Usage",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ئىشلىتىش",
+    "sidebar_label": "ئىشلىتىش"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "تۈزۈش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "مەۋزۇغا ماسلىشىش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/compatibility"
   }
 }

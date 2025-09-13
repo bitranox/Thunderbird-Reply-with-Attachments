@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "지원",
-  "description": "도움이 필요하시거나 버그를 신고하시겠어요?",
+  "description": "FAQ",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/glossary"
   },
   "next": {
-    "title": "개인정보",
+    "title": "개인정보 보호",
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "変更履歴",
-  "description": "完全な履歴はリポジトリの CHANGELOG.md をご覧ください。",
+  "description": "Changelog",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -18,6 +18,6 @@
   "sidebar": "docs",
   "previous": {
     "title": "ライセンス",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/license"
   }
 }

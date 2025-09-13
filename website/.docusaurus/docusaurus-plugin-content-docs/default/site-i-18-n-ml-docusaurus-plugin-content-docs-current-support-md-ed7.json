@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ബഹുമതി",
+  "description": "FAQ",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ബഹുമതി",
+    "sidebar_label": "ബഹുമതി"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "ശബ്ദഗ്രദ്ധി",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "ഗോപിൻതലക്കാട്",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/privacy"
   }
 }

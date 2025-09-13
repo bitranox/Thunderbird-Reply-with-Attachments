@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Soporta",
+  "description": "FAQ",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Soporta",
+    "sidebar_label": "Soporta"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Glosario",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Intimidad",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/privacy"
   }
 }

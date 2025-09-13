@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Guhuza",
   "description": "Compatibility",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Guhuza",
+    "sidebar_label": "Guhuza"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Gukoresha",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Ubugenzuzi",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/permissions"
   }
 }

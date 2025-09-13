@@ -1,13 +1,17 @@
 ---
 id: install
-title: Installation
+title: 'Installation'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Installation'
 ---
 
 ---
 
 ## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
 
 This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
 
@@ -17,11 +21,11 @@ This is the recommended installation method. Add‑ons installed from ATN (addon
 2. Search for "reply with attachments".
 3. Add the add-on.
 
-Or open the add‑on page directly: https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments
+Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Local installation {#local-installation-in-thunderbird}
+## Manual installation from XPI {#local-installation-in-thunderbird}
 
 ### Download the XPI file {#download-the-xpi-file}
 
@@ -71,3 +75,7 @@ Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.x
 - Uninstall: same view → three‑dot menu → Remove.
 - Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
 - Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+
+See also
+
+- [Quickstart](quickstart)

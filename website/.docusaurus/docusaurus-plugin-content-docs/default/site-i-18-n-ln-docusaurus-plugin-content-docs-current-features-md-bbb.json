@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Makambo ya ntina",
-  "description": "Makambo ya ntina",
+  "title": "Mibeko",
+  "description": "Features",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Makambo ya ntina",
-    "sidebar_label": "Makambo ya ntina"
+    "title": "Mibeko",
+    "sidebar_label": "Mibeko"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Kimisulu",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/quickstart"
   }
 }

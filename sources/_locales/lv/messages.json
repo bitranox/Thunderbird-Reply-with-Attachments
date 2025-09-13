@@ -3,7 +3,7 @@
     "message": "Atbildēt ar pielikumiem"
   },
   "extDescription": {
-    "message": "Automātiski iekļaut sākotnējos pielikumus e-pasta atbildēs."
+    "message": "Automātiski iekļauj sākotnējos pielikumus e-pasta atbildēs."
   },
   "composeTitle": {
     "message": "Atbildēt ar pielikumiem"
@@ -12,37 +12,63 @@
     "message": "Atbildēt ar pielikumiem — iestatījumi"
   },
   "confirmTitle": {
-    "message": "Pielikumu apstiprinājums"
+    "message": "Apstiprināt pielikumus"
   },
   "uiHeader": {
     "message": "Atbildēt ar pielikumiem"
   },
   "uiNoOptions": {
-    "message": "Pašlaik nav neviena konfigurējama iestatījuma."
+    "message": "Pašlaik nav iestatījumu, ko konfigurēt."
   },
   "uiSupport": {
-    "message": "Vai jums patīk šis paplašinājums? Atbalstiet mani ar nelielu ziedojumu:"
+    "message": "Vai jums patīk šis papildinājums? Atbalstiet mani ar nelielu ziedojumu:"
+  },
+  "uiRateATNText": {
+    "message": "Lūdzu, novērtējiet vietnē ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Ziedot tagad"
+  },
+  "uiIDonated": {
+    "message": "Es ziedoju"
+  },
+  "uiDonateSnoozed": {
+    "message": "Paldies! Ziedojuma uzvedne paslēpta uz 90 dienām."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Slēpts līdz $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Rādīt ziedojumu vēlreiz"
+  },
+  "uiDonateRestored": {
+    "message": "Ziedojuma uzvedne atkal redzama."
   },
   "uiGithubText": {
     "message": "Lai ziņotu par kļūdām vai citiem jautājumiem, lūdzu, apmeklējiet manu"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub lapa"
+    "message": "GitHub lapu"
   },
   "iconAlt": {
-    "message": "Atbildēt ar pielikumiem — ikona"
+    "message": "Ikona 'Atbildēt ar pielikumiem'"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Failu nosaukumu melnais saraksts (glob maskas)"
+    "message": "Failu nosaukumu melnais saraksts (glob paraugi)"
   },
   "uiBlacklistHelp": {
-    "message": "Faili, kuru nosaukumi atbilst jebkurai no šīm maskām, nekad netiks pievienoti automātiski. Viena maska katrā rindā. Piemēri: *.png, smime.*, *.p7s"
+    "message": "Faili, kuru nosaukumi atbilst jebkuram no šiem paraugiem, nekad netiks pievienoti automātiski. Viens paraugs katrā rindā. Piemēri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Brīdināt, ja pielikumi tiek izslēgti melnā saraksta dēļ"
@@ -69,7 +95,7 @@
     "message": "Jautāt pirms pielikumu pievienošanas"
   },
   "uiConfirmHelp": {
-    "message": "Neliels apstiprinājuma dialoglogs parādās tikai tad, kad pielikumi tiešām tiktu pievienoti. Tastatūra: Y vai J = Jā; N vai Esc = Nē."
+    "message": "Neliels apstiprinājuma dialogs tiek rādīts tikai tad, kad pielikumi patiešām tiks pievienoti. Tastatūra: Y vai J = Jā; N vai Esc = Nē."
   },
   "confirmAddOne": {
     "message": "Pievienot pielikumu: $1?",
@@ -109,13 +135,13 @@
     "message": "Fails"
   },
   "warnColPattern": {
-    "message": "Maska"
+    "message": "Paraugs"
   },
   "warnOk": {
     "message": "Labi"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Noklusētā atbilde"
+    "message": "Noklusējuma atbilde"
   },
   "uiConfirmDefaultYes": {
     "message": "Jā"
@@ -124,9 +150,21 @@
     "message": "Nē"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentācija:"
+  },
+  "uiDocsButton": {
+    "message": "Atvērt dokumentāciju"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

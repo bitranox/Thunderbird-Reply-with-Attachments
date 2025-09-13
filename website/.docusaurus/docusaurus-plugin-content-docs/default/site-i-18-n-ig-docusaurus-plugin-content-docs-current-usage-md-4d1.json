@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Iji",
   "description": "Usage",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Iji",
+    "sidebar_label": "Iji"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Nchekwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Ndakọrịta",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/compatibility"
   }
 }

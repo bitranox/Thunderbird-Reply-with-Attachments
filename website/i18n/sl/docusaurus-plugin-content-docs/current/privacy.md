@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Zasebnost'
+sidebar_label: 'Zasebnost'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Zasebnost
 
-What the add‑on does:
+:::note Brez telemetrije; brez omrežnih aktivnosti v ozadju
+Ta dodatek **ne** zbira analitike/telemetrije in **ne** izvaja omrežnih zahtevkov v ozadju. Kakršenkoli dostop do omrežja se zgodi le, ko kliknete na zunanjo povezavo (Dokumenti, GitHub, Doniraj).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments ne zbira analitike ali telemetrije in ne pošilja vaših podatkov nikamor.
 
-What the add‑on does not do:
+Kaj naredi dodatek:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Prebere metapodatke o priponkah in datotekah iz izvirnega sporočila lokalno (Thunderbird API), da jih priloži vaši odgovoru.
+- Shranjuje vaše možnosti (črna lista, potrditev, privzeti odgovor) v lokalni shrambi Thunderbirda.
 
-Permissions are documented on the [Permissions](permissions) page.
+Kaj dodatek ne naredi:
 
-## Content Security Policy (CSP)
+- Brez sledenja, analitike, poročanja o napakah ali oddaljenega beleženja.
+- Brez omrežnih zahtevkov v ozadju, razen ko izrecno odprete zunanje povezave (Dokumenti, GitHub, Doniraj).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Dovoljenja so dokumentirana na strani [Dovoljenja](permissions).
+
+---
+
+## Politika varnosti vsebin (CSP) {#content-security-policy-csp}
+
+Možnosti in pojavna okna se izogibajo vgrajenim skriptam. Vsa JavaScript koda se nalaga iz datotek, priloženih dodatku, da se zagotovi skladnost s strogo CSP v Thunderbirdu. Če v dokumente vstavite primerke kode, so to le primeri in jih dodatek ne izvede.
+
+---
+
+## Shramba podatkov {#data-storage}
+
+- Preferenc uporabnika (črna lista, preklop potrditev, privzeti odgovor) se shranjuje v `storage.local` Thunderbirda za ta dodatek.
+- Dodatek ne izvaja sinhronizacije v oblak.
+
+---
+
+## Omrežje {#network}
+
+- Dodatek ne izvaja omrežnih aktivnosti v ozadju.
+- Kakršenkoli dostop do omrežja se zgodi le, ko kliknete na povezave (Dokumenti, GitHub, Doniraj) ali ko Thunderbird sam izvaja normalne operacije, ki niso povezane s tem dodatkom.
+
+---
+
+## Odstranjevanje podatkov {#data-removal}
+
+- Odstranitev dodatka odstrani njegov kodo.
+- Nastavitve se hranijo le v `storage.local` Thunderbirda in se odstranijo ob odstranitvi; zunanja shramba se ne uporablja.
+- Ponastavite nastavitve brez odstranitve:
+  - Stran z možnostmi: uporabite "Ponastavi na privzete" za črno listo in opozorilo črne liste.
+  - Napredno: v Thunderbirdu → Orodja → Orodja za razvijalce → Odpravite napake v dodatkih, odprite shrambo razširitve in po potrebi počistite ključe.

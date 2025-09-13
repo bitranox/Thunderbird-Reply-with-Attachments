@@ -1,24 +1,49 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Licens'
+sidebar_label: 'Licens'
 ---
 
-Project license: MIT
+## Licens
 
-This project is licensed under the **MIT License**.
+Projektets licens: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Dette projekt er licenseret under **MIT Licensen**.
 
-Third‑party licenses (summary)
+- Fuld tekst: se `LICENSE` i repoets rod.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Tredjeparts licenser {#third-party-licenses}
+
+Denne sektion opsummerer tredjepartslicenser, der anvendes af dette repository. For den autoritative liste i kildekoden, se `THIRD_PARTY_LICENSES.md` i repoets rod.
+
+Værktøjer og biblioteker (udvikling/test/dokumentation)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (bruges kun via npx) — MPL‑2.0 (udviklingsværktøj; ikke distribueret med add-on)
+
+---
+
+## Noter
+
+- Thunderbird MailExtension API'er er platform API'er; ingen tredjeparts kode er bundtet fra dem.
+- Projektikoner i `sources/icons` er projektaktiver (MIT medmindre andet er angivet). GitHub-logoet/-ikonet er et GitHub-varemærke og ikke dækket af MIT; det bruges i henhold til GitHub's brandretningslinjer.
+
+Hvis du tilføjer nye afhængigheder eller bundter tredjeparts kode, skal du opdatere både denne side og `THIRD_PARTY_LICENSES.md` tilsvarende.
+
+---
+
+## Varemærker
+
+- “Thunderbird” er et varemærke tilhørende MZLA/Thunderbird. Dette projekt er et tredjeparts add-on og er ikke tilknyttet eller godkendt af MZLA.
+- GitHub® og GitHub-logoet er varemærker tilhørende GitHub, Inc. Logoer bruges i henhold til brandretningslinjerne.
+
+---

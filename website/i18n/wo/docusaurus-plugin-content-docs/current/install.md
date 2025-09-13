@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Sosna'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Sosna'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Sosna ci "Thunderbird Add-ons ak Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Dafa jeex Thunderbird Yuuyal
+Sosna bu ñuy wàcce add-on bi **128 ESR walla yeneen**. Version yu njëkk dañu sëriñ.
+:::
 
----
+Lii mooy sosna bu jeexal. Add-ons yu jot ci ATN (addons.thunderbird.net) amna àttan jëfandikoo. LOCAL/dev sosnañul àttan jëfandikoo.
 
-## Local installation in Thunderbird
+- Dafa jeex Thunderbird yuuyal: 128 ESR walla yeneen.
 
-### Download the XPI file
+1. Ci Thunderbird, joge ci **Tools > Add-ons ak Themes**.
+2. Soppali "reply with attachments".
+3. Jotee add-on bi.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Wall ak alal add-on bi ci: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Sosna bu nekk ci XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Jottali XPI file bi {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Jogee ci [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Jottali version bu jëkk ci add-on bi ni XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Sosna ci Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Soor Thunderbird.
+2. Jogee ci **Tools > Add-ons ak Themes**.
+3. Ci **Add-ons Manager**, suqali icon bi ci kaw-gis.
+4. Rëw ci **Install Add-on From File…** ci menu bi.
+5. Sëggee XPI file bi `reply_with_attachments-x.y.z-tb.xpi`.
+6. Wënee sosna bi sooy jàngale.
 
 ---
+
+## Sosna ci jëlel {#installation-for-development}
+
+### Jottali repository bi {#download-the-repository}
+
+1. Jottali version bu jëkk ci GitHub repository bi.
+2. Jàppale `make help` ngir seetlu lien.
+
+### Sosna ci Thunderbird {#install-in-thunderbird-dev}
+
+1. Soor Thunderbird.
+2. Jogee ci **Tools > Add-ons ak Themes**.
+3. Ci **Add-ons Manager**, suqali icon bi ci kaw-gis.
+4. Rëw ci **Install Add-on From File…** ci menu bi.
+5. Sëggee file bi aada bu `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Wënee sosna bi sooy jàngale.
+
+Nota: Su Thunderbird mënul ànd ak `.zip` ci sa système, yewwi ko ci `.xpi` te jàpp “Install Add‑on From File…” bu baax.
+
+### Fu jéem LOCAL ZIP {#where-local-zip}
+
+- Lu jeex, boxal add‑on bi: jàppale `make pack` ci root bi.
+- Ba mu boxal, jëfandikoo “LOCAL” zip ci root bi (ndax, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Mbind bi ci true jéek, sañ-sañ ak version yi ci `sources/manifest_ATN.json` ak `sources/manifest_LOCAL.json`.
+
+---
+
+## Yewwi, Lekk, ak Updates {#disable-uninstall-updates}
+
+- Yewwi: Thunderbird → Tools → Add‑ons ak Themes → cankoo add‑on bi → togglée off.
+- Lekk: sañ-sañ bi → three‑dot menu → Remove.
+- Updates: ATN installations àttan jëfandikoo sooy sédd, new versions ci jàngale. LOCAL/dev installations doo sükk, nangu jëfandikoo jéem LOCAL bi.
+- Wutee settings képp: bëgge [Privacy → Data removal](privacy#data-removal).
+
+Wujj nag
+
+- [Quickstart](quickstart)

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ຄວາມໃຊ້ໃຫ້ແກ່ຜູ້ໃຊ້",
+  "description": "FAQ",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ຄວາມໃຊ້ໃຫ້ແກ່ຜູ້ໃຊ້",
+    "sidebar_label": "ຄວາມໃຊ້ໃຫ້ແກ່ຜູ້ໃຊ້"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "ຄວາມຫຼາຍ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "ການປອດໄພ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/privacy"
   }
 }

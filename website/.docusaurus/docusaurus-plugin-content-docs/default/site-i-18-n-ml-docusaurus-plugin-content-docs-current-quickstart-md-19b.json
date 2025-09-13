@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "ക്വിക്ക്സ്റ്റാർട്ട്",
+  "description": "ക്വിക്ക്സ്റ്റാർട്ട്",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "ക്വിക്ക്സ്റ്റാർട്ട്",
+    "sidebar_label": "ക്വിക്ക്സ്റ്റാർട്ട്"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "വിശേഷതകൾ",
+    "title": "സവിശേഷതകൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "സ്ഥാപനം",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/install"
   }
 }

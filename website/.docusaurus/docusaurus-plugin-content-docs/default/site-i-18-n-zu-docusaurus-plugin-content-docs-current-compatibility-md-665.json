@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Ukuhambelana",
   "description": "Compatibility",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Ukuhambelana",
+    "sidebar_label": "Ukuhambelana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Ukusetshenziswa",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Izimvume",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/permissions"
   }
 }

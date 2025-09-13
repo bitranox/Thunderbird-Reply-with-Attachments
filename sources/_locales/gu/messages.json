@@ -1,30 +1,56 @@
 {
   "extName": {
-    "message": "સંલગ્નો સાથે જવાબ"
+    "message": "જોડાણો સાથે જવાબ"
   },
   "extDescription": {
-    "message": "ઇમેઇલના જવાબોમાં મૂળ સંલગ્નો આપમેળે સામેલ કરો."
+    "message": "ઈમેલના જવાબોમાં મૂળ જોડાણો આપમેળે સામેલ કરો."
   },
   "composeTitle": {
-    "message": "સંલગ્નો સાથે જવાબ"
+    "message": "જોડાણો સાથે જવાબ"
   },
   "optionsTitle": {
-    "message": "સંલગ્નો સાથે જવાબ — વિકલ્પો"
+    "message": "જોડાણો સાથે જવાબ — વિકલ્પો"
   },
   "confirmTitle": {
-    "message": "સંલગ્નોની પુષ્ટિ"
+    "message": "જોડાણોની પુષ્ટિ કરો"
   },
   "uiHeader": {
-    "message": "સંલગ્નો સાથે જવાબ"
+    "message": "જોડાણો સાથે જવાબ"
   },
   "uiNoOptions": {
     "message": "હાલમાં ગોઠવવા માટે કોઈ વિકલ્પો નથી."
   },
   "uiSupport": {
-    "message": "આ એડ-ઓન તમને ગમે છે? નાનકડા યોગદાનથી મને સહયોગ આપો:"
+    "message": "આ એડ-ઓન તમને ગમે છે? કૃપા કરીને નાનકડા યોગદાનથી મારું સમર્થન કરો:"
+  },
+  "uiRateATNText": {
+    "message": "કૃપા કરીને ATN પર મૂલ્યાંકન કરો"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "હમણાં દાન કરો"
+  },
+  "uiIDonated": {
+    "message": "મેં દાન કર્યું"
+  },
+  "uiDonateSnoozed": {
+    "message": "આભાર! દાનની વિનંતી 90 દિવસ માટે છુપાવવામાં આવી."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 સુધી છુપાયેલું",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "દાનનું સૂચન ફરી બતાવો"
+  },
+  "uiDonateRestored": {
+    "message": "દાનની વિનંતી ફરીથી દેખાય છે."
   },
   "uiGithubText": {
     "message": "બગ રિપોર્ટ્સ અથવા અન્ય પૂછપરછ માટે, કૃપા કરીને મારી"
@@ -33,25 +59,25 @@
     "message": "GitHub પેજ"
   },
   "iconAlt": {
-    "message": "સંલગ્નો સાથે જવાબનું આઇકન"
+    "message": "જોડાણો સાથે જવાબ આઇકન"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ફાઇલનામોની બ્લેકલિસ્ટ (ગ્લોબ પેટર્ન્સ)"
+    "message": "ફાઇલ નામોની બ્લેકલિસ્ટ (ગ્લોબ પેટર્ન્સ)"
   },
   "uiBlacklistHelp": {
-    "message": "જેનાં નામો આ પેટર્ન્સમાંના કોઈ સાથે મેળ ખાતા હોય તે ફાઇલો ક્યારેય આપમેળે સંલગ્ન નહીં થાય. પ્રતિ પંક્તિ એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.p7સ"
+    "message": "જેઓના નામો આ પેટર્ન્સમાંના કોઈપણ સાથે મેળ ખાતા હશે, તેવી ફાઇલો ક્યારેય આપમેળે જોડાશે નહીં. દર લીટી પર એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "બ્લેકલિસ્ટથી સંલગ્નો બહાર રાખવામાં આવે તો ચેતવણી આપો"
+    "message": "બ્લેકલિસ્ટ પરથી જોડાણો બહાર રાખવામાં આવે તો ચેતવણી આપો"
   },
   "uiSave": {
     "message": "સાચવો"
   },
   "uiSaving": {
-    "message": "સાચવી રહ્યા છીએ…"
+    "message": "સાચવી રહ્યું છે…"
   },
   "uiReset": {
     "message": "મૂળભૂત પર રીસેટ કરો"
@@ -66,13 +92,13 @@
     "message": "પુષ્ટિ"
   },
   "uiConfirmLabel": {
-    "message": "સંલગ્નો ઉમેરતા પહેલા પૂછો"
+    "message": "જોડાણો ઉમેરતા પહેલા પૂછો"
   },
   "uiConfirmHelp": {
-    "message": "સાચે જ સંલગ્નો ઉમેરવાના હોય ત્યારે જ નાનો પુષ્ટિ સંવાદ દેખાશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
+    "message": "જોડાણો ખરેખર ઉમેરવામાં આવશે ત્યારે જ નાનું પુષ્ટિ સંવાદ દેખાશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
   },
   "confirmAddOne": {
-    "message": "સંલગ્ન ઉમેરવું: $1?",
+    "message": "જોડાણ ઉમેરવું: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "સંલગ્નો ઉમેરવા ($1): $2$3?",
+    "message": "જોડાણો ઉમેરવા ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "ના"
   },
   "warnBlacklistTitle": {
-    "message": "બ્લેકલિસ્ટ દ્વારા બહાર રાખવામાં આવ્યું"
+    "message": "બ્લેકલિસ્ટના કારણે બહાર રાખવામાં આવ્યું"
   },
   "warnBlacklistIntro": {
-    "message": "નીચેની ફાઇલો આપમેળે સંલગ્ન નહીં થાય:"
+    "message": "આ નીચેની ફાઇલો આપમેળે જોડાશે નહીં:"
   },
   "warnColFile": {
     "message": "ફાઇલ"
@@ -124,9 +150,21 @@
     "message": "ના"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "દસ્તાવેજીકરણ:"
+  },
+  "uiDocsButton": {
+    "message": "દસ્તાવેજો ખોલો"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

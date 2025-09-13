@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Jikko yi",
-  "description": "Jikko yi",
+  "title": "Fonksyonalités",
+  "description": "Features",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Jikko yi",
-    "sidebar_label": "Jikko yi"
+    "title": "Fonksyonalités",
+    "sidebar_label": "Fonksyonalités"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Dafarekat",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/quickstart"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Horumarin",
   "description": "Development Guide",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Horumarin",
+    "sidebar_label": "Horumarin"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Ogolaanshaha",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Luuqadaha",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/languages"
   }
 }

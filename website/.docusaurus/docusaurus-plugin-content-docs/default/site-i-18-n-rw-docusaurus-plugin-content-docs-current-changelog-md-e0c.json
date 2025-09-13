@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Urutonde rw’impinduka",
-  "description": "Reba amateka yose muri dosiye CHANGELOG.md iri muri ububiko (repository).",
+  "title": "Ihinduka",
+  "description": "Changelog",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Urutonde rw’impinduka"
+    "title": "Ihinduka"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/licence"
+    "title": "Ibyangombwa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/license"
   }
 }

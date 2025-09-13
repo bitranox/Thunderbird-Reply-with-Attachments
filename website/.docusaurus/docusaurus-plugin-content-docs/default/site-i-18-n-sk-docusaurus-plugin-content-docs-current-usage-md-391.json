@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Použitie",
   "description": "Usage",
   "source": "@site/i18n/sk/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Použitie",
+    "sidebar_label": "Použitie"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfigurácia",
     "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Kompatibilita",
     "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/compatibility"
   }
 }

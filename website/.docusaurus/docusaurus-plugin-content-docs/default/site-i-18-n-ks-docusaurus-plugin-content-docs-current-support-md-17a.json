@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "تعاون",
+  "description": "FAQ",
   "source": "@site/i18n/ks/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "تعاون",
+    "sidebar_label": "تعاون"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "لغتنامہ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "رازداری",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/privacy"
   }
 }

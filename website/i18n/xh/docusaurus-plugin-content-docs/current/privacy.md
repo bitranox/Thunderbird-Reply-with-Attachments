@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Ubumfihlo'
+sidebar_label: 'Ubumfihlo'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privacy
 
-What the add‑on does:
+:::note Akukho telemetry; akukho nethiwekhi yangemuva
+Le add-on **ayiqhubi** ukuqokelela i-analytics/telemetry kwaye ayenze **n**ezenzo ze-nethiwekhi yangemuva. Nombolo ye-nethiwekhi ifumaneka kuphela xa ucofa kwi-link yangaphandle (Docs, GitHub, Donate).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments ayiqokeleli i-analytics okanye i-telemetry kwaye ayithumeli idata yakho naphina.
 
-What the add‑on does not do:
+Okukodwa owenza ngako le add-on:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Funda i-metadata yokuhlanganisa kunye neefayile kumyalezo wokuqala endaweni (Thunderbird API) ukuze uzixhume kwi-mpendulo yakho.
+- Gcina iikhetho zakho (blacklist, ukuq подтверждение, impendulo Okwangoku) kwi-local storage ye-Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Okungafanelwanga ngako le add-on:
 
-## Content Security Policy (CSP)
+- Akukho tracking, analytics, ukubika ukungaphumeleli, okanye ukurekhoda kude.
+- Akukho nethiwekhi yangemuva, ngaphandle kokuba uvule i-link yangaphandle (Docs, GitHub, Donate).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Imvume ibhalwe kwi [Permissions](permissions) iphepha.
+
+---
+
+## Umgaqo wokuQinisa uBumfihlo (CSP) {#content-security-policy-csp}
+
+Iinketho kunye nemigqaliselo ye-popup ziqinisekisa ukuba azikho ii-script ze-inline. Onke amaJavaScript alayishwa kwiifayile ezithunyelwa kunye le add-on ukuze kuhlangatshezwane nemigaqo eqinileyo ye-CSP kwi-Thunderbird. Ukuba ufaka umgca wekhodi kwi-docs, bahlala bejolise kuphela kwaye abaqhutywanga le add-on.
+
+---
+
+## Ukugcina idatha {#data-storage}
+
+- Ukhetho lomsebenzisi (blacklist, ukungena kwe-confirmation, impendulo Okwangoku) kugcinwa kwi-`storage.local` ye-Thunderbird ye-add-on.
+- Akukho kuhlanganyelwa kwefu okwenziwa le add-on.
+
+---
+
+## Nethiwekhi {#network}
+
+- Le add-on ayenze nethiwekhi yangemuva.
+- Nombolo ye-nethiwekhi ifumaneka kuphela xa ucofa kwiilinki (Docs, GitHub, Donate) okanye xa i-Thunderbird uqobo yenze imisebenzi ejoliswe kumsebenzi ongeyomsebenzi.
+
+---
+
+## Ukususwa kwedatha {#data-removal}
+
+- Ukususa le add-on kususa ikhodi yayo.
+- Iziqhosha zigcinwa kuphela kwi-`storage.local` ye-Thunderbird kwaye zisuswa xa ususa; akukho ukugcina ngaphandle kokusebenzisa.
+- Phinda usete iindawo ngaphandle kokususa:
+  - Iphepha leekhetho: sebenzisa "Phinda ubuyisele kwi-defaults" ye-blacklist kunye ne-warning ye-blacklist.
+  - Ngaphezulu: kwi-Thunderbird → Izixhobo → Izixhobo zabaThuthukisi → Phonononga iiAdd-on, vula umgca ocinga futhi uqwhere iikhi ukuze ufumane umphumo.

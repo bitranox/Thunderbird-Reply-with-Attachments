@@ -21,10 +21,36 @@
     "message": "There are currently no options to configure."
   },
   "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
+    "message": "Do you like this add-on? Please support me with a small contribution:"
+  },
+  "uiRateATNText": {
+    "message": "Please rate on ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Donate now"
+  },
+  "uiIDonated": {
+    "message": "I donated"
+  },
+  "uiDonateSnoozed": {
+    "message": "Thank you! Donation prompt hidden for 90 days."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Hidden until $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Show Donate again"
+  },
+  "uiDonateRestored": {
+    "message": "Donation prompt is visible again."
   },
   "uiGithubText": {
     "message": "For bug reports or other inquiries, please visit my"
@@ -126,7 +152,19 @@
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
   },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
+  },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentation:"
+  },
+  "uiDocsButton": {
+    "message": "Open Docs"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Kuyika",
+  "description": "Kuyika mwa \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Kuyika",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Kuyika"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Kus започи",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Kukonzekera",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/configuration"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ცვლილებების ჟურნალი",
-  "description": "სრულ ისტორიას იხილავთ რეპოზიტორიის CHANGELOG.md ფაილში.",
+  "title": "ცვლილებები",
+  "description": "Changelog",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ცვლილებების ჟურნალი"
+    "title": "ცვლილებები"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/licence"
+    "title": "ლიცენზია",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/license"
   }
 }

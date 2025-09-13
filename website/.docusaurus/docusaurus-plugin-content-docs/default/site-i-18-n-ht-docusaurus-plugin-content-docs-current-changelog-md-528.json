@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Jounal chanjman",
-  "description": "Gade tout istorik la nan fichye CHANGELOG.md ki nan depo a.",
+  "title": "Chanjman",
+  "description": "Chanjman",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Jounal chanjman"
+    "title": "Chanjman"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/licence"
+    "title": "Lisans",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/license"
   }
 }

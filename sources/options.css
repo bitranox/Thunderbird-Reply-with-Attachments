@@ -17,7 +17,7 @@ body {
 }
 body {
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 13px; /* slightly smaller to reduce vertical footprint */
   line-height: 1.45;
   margin: 0;
   background: var(--bg);
@@ -25,8 +25,8 @@ body {
 }
 .wrap {
   max-width: 760px;
-  margin: 28px auto;
-  padding: 0 16px;
+  margin: 20px auto;
+  padding: 0 12px;
 }
 .card {
   background: var(--panel);
@@ -38,48 +38,51 @@ body {
 .card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 8px;
+  padding: 10px 12px;
   background: linear-gradient(#f8fbff, #f6f8fa);
   border-bottom: 1px solid var(--border);
 }
 .card-header img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 .card-header h1 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   font-weight: 600;
 }
 .card-body {
-  padding: 14px;
+  padding: 10px 12px;
+  /* Reserve space so sticky bars do not overlap the last content */
+  padding-bottom: 96px;
 }
 
 .section {
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .section h2 {
-  font-size: 15px;
-  margin: 0 0 8px 0;
+  font-size: 14px;
+  margin: 0 0 6px 0;
   font-weight: 600;
 }
 .desc {
   color: var(--muted);
-  margin: 6px 0 10px 0;
+  margin: 4px 0 8px 0;
+  font-size: 0.95em;
 }
 
 .row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .stack {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 textarea {
@@ -87,7 +90,7 @@ textarea {
   resize: vertical;
   min-height: 120px;
   font:
-    12px/1.4 ui-monospace,
+    11.5px/1.4 ui-monospace,
     SFMono-Regular,
     Menlo,
     Monaco,
@@ -96,7 +99,7 @@ textarea {
     monospace;
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 8px;
+  padding: 6px 8px;
   background: #fff;
   color: var(--text);
 }
@@ -105,23 +108,31 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 8px;
+  margin-top: 10px;
+  /* Sticky save bar: stays visible near the bottom while scrolling */
+  position: sticky;
+  bottom: 0;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: 8px 0; /* keep horizontal padding from parent */
+  z-index: 5;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
 }
 .btns {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .btn {
   appearance: none;
   border: 1px solid var(--border);
   background: #fff;
   color: var(--text);
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 5px 10px;
+  border-radius: 7px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
 }
 .btn.primary {
   background: var(--brand);
@@ -137,8 +148,8 @@ textarea {
 }
 
 .status {
-  min-height: 20px;
-  min-width: 120px;
+  min-height: 18px;
+  min-width: 100px;
   text-align: right;
   color: var(--muted);
 }
@@ -150,17 +161,27 @@ textarea {
 }
 
 .footer {
-  margin-top: 14px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--border);
   display: grid;
   gap: 10px;
+  /* Sticky donate/support area sits above the Save bar */
+  position: sticky;
+  bottom: 48px; /* approx. height of .actions bar */
+  background: var(--panel);
+  z-index: 4;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
 }
 .support {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+}
+.snooze-hint {
+  color: var(--muted);
+  font-size: 12px;
 }
 .support .donate {
   display: inline-flex;
@@ -175,9 +196,14 @@ textarea {
   align-items: center;
   gap: 8px;
 }
+.rate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .gh img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 a {
   color: var(--brand);

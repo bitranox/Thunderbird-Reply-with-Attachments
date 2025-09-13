@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Développement",
   "description": "Development Guide",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Développement",
+    "sidebar_label": "Développement"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Mibeko",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Langues",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/languages"
   }
 }

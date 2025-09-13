@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "اللغات",
-  "description": "دعم لغوي واسع بفضل أدوات الترجمة بالذكاء الاصطناعي — يشمل 103 لغة.",
+  "description": "Languages",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "التطوير",
+    "title": "تطوير",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/development"
   },
   "next": {
-    "title": "المسرد",
+    "title": "قاموس المصطلحات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/glossary"
   }
 }

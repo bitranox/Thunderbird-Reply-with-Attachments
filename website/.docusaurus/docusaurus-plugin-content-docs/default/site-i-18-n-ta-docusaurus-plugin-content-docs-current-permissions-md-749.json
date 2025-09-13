@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "அனுமதிகள்",
-  "description": "இணைப்பு (add‑on) குறைந்த, குறிக்கோள்‑நிரந்தரமான சில அனுமதிகளையே கோருகிறது. ஒவ்வொன்றும் ஏன் தேவையெனில்:",
+  "description": "அனுமதிகள்",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -17,11 +17,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "இணக்கத்தன்மை",
+    "title": "சரியானது",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/compatibility"
   },
   "next": {
-    "title": "அபிவிருத்தி",
+    "title": "அறிமுகம்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/development"
   }
 }

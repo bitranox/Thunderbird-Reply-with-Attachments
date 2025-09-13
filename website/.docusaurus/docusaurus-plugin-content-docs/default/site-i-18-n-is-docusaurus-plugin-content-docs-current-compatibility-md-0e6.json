@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Samkvæmni",
   "description": "Compatibility",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Samkvæmni",
+    "sidebar_label": "Samkvæmni"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Notkun",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Heimildaskilmál",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/permissions"
   }
 }

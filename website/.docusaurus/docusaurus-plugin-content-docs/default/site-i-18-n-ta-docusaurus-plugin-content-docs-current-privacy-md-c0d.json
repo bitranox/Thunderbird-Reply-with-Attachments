@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "தனியுரிமை",
-  "description": "Reply with Attachments எந்த பகுப்பாய்வும்/telemetry யும் சேகரிக்காது மற்றும் உங்கள் தரவை எங்கும் அனுப்பாது.",
+  "title": "தேசிய இழப்புகளில் தனியுரிமை",
+  "description": "Privacy",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "தனியுரிமை",
-    "sidebar_label": "தனியுரிமை"
+    "title": "தேசிய இழப்புகளில் தனியுரிமை",
+    "sidebar_label": "தேசிய இழப்புகளில் தனியுரிமை"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ஆதரவு",
+    "title": "முதல ஆலோசனை",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/support"
   },
   "next": {
-    "title": "நன்கொடை",
+    "title": "தானம் அளிக்கவும்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/donation"
   }
 }

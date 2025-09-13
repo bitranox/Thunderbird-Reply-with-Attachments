@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "ഗോപിൻതലക്കാട്",
+  "description": "Privacy",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "ഗോപിൻതലക്കാട്",
+    "sidebar_label": "ഗോപിൻതലക്കാട്"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "ബഹുമതി",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "ദാനമുഹൂർത്തങ്ങൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/donation"
   }
 }

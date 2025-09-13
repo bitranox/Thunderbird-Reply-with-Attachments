@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Глоссарий i18n",
-  "description": "Канонические термины, используемые в интерфейсе дополнения и документации. Используйте их, чтобы сохранять единообразие переводов между локалями.",
+  "title": "\"Глоссарий\"",
+  "description": "Глоссарий",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Глоссарий i18n",
-    "sidebar_label": "Глоссарий"
+    "title": "\"Глоссарий\"",
+    "sidebar_label": "\"Глоссарий\""
   },
   "sidebar": "docs",
   "previous": {

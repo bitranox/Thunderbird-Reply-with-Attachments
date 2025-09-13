@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "అటాచ్మెంట్‌లతో ప్రత్యుత్తరం"
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
   },
   "extDescription": {
-    "message": "ఈమెయిల్ ప్రత్యుత్తరాల్లో మూల అటాచ్మెంట్‌లను స్వయంచాలకంగా చేర్చుతుంది."
+    "message": "ఇమెయిల్ ప్రత్యుత్తరాల్లో అసలు జోడింపులను ఆటోమేటిక్‌గా చేర్చుతుంది."
   },
   "composeTitle": {
-    "message": "అటాచ్మెంట్‌లతో ప్రత్యుత్తరం"
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
   },
   "optionsTitle": {
-    "message": "అటాచ్మెంట్‌లతో ప్రత్యుత్తరం — ఎంపికలు"
+    "message": "జోడింపులతో ప్రత్యుత్తరం — అమరికలు"
   },
   "confirmTitle": {
-    "message": "అటాచ్మెంట్‌లను నిర్ధారించండి"
+    "message": "జోడింపుల నిర్ధారణ"
   },
   "uiHeader": {
-    "message": "అటాచ్మెంట్‌లతో ప్రత్యుత్తరం"
+    "message": "జోడింపులతో ప్రత్యుత్తరం"
   },
   "uiNoOptions": {
-    "message": "ప్రస్తుతానికి ఆకృతీకరించడానికి ఎలాంటి ఎంపికలు లేవు."
+    "message": "ప్రస్తుతం అమర్చేందుకు ఎలాంటి ఎంపికలు లేవు."
   },
   "uiSupport": {
-    "message": "ఈ ఆడ్-ఆన్ మీకు నచ్చిందా? చిన్న విరాళంతో నన్ను ఆదరించండి:"
+    "message": "ఈ యాడ్-ఆన్ మీకు నచ్చిందా? దయచేసి చిన్న సహాయంతో నాకు మద్దతు ఇవ్వండి:"
+  },
+  "uiRateATNText": {
+    "message": "దయచేసి ATN లో రేటింగ్ ఇవ్వండి"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ఇప్పుడే విరాళం ఇవ్వండి"
+    "message": "ఇప్పుడే దానం చేయండి"
+  },
+  "uiIDonated": {
+    "message": "నేను దానం చేశాను"
+  },
+  "uiDonateSnoozed": {
+    "message": "ధన్యవాదాలు! దానం సూచన 90 రోజుల పాటు దాచబడింది."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 వరకు దాచబడింది",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "దానం మళ్లీ చూపించండి"
+  },
+  "uiDonateRestored": {
+    "message": "దానం సూచన మళ్లీ కనిపిస్తోంది."
   },
   "uiGithubText": {
-    "message": "బగ్ నివేదికలు లేదా ఇతర విచారణల కోసం, దయచేసి నా"
+    "message": "బగ్ నివేదికలు లేదా ఇతర ప్రశ్నల కోసం, దయచేసి నా"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub పేజీ"
   },
   "iconAlt": {
-    "message": "అటాచ్మెంట్‌లతో ప్రత్యుత్తరం ఐకాన్"
+    "message": "జోడింపులతో ప్రత్యుత్తరం చిహ్నం"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ఫైల్ పేర్ల బ్లాక్‌లిస్ట్ (గ్లోబ్ ప్యాటర్న్లు)"
+    "message": "ఫైల్ పేర్ల బ్లాక్‌లిస్ట్ (గ్లోబ్ నమూనాలు)"
   },
   "uiBlacklistHelp": {
-    "message": "ఈ ప్యాటర్న్లలో ఏదోకదానికి సరిపడే పేరు ఉన్న ఫైళ్లు ఎప్పుడూ స్వయంచాలకంగా జత చేయబడవు. ప్రతి పంక్తికి ఒక ప్యాటర్న్. ఉదాహరణలు: *.png, smime.*, *.p7s"
+    "message": "ఈ నమూనాలకు సరిపోయే పేర్లున్న ఫైళ్లు ఎప్పుడూ ఆటోమేటిక్‌గా జత చేయబడవు. ప్రతి పంక్తికి ఒక నమూనా. ఉదాహరణలు: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "బ్లాక్‌లిస్ట్ కారణంగా అటాచ్మెంట్‌లు మినహాయించబడితే హెచ్చరించండి"
+    "message": "బ్లాక్‌లిస్ట్ కారణంగా జోడింపులు తప్పించబడితే హెచ్చరించు"
   },
   "uiSave": {
-    "message": "సేవ్ చేయండి"
+    "message": "భద్రపరచండి"
   },
   "uiSaving": {
-    "message": "సేవ్ చేస్తున్నాం…"
+    "message": "భద్రపరుస్తోంది…"
   },
   "uiReset": {
     "message": "అప్రమేయాలకు రీసెట్ చేయండి"
   },
   "uiSaved": {
-    "message": "సేవ్ అయింది."
+    "message": "భద్రపరచబడింది."
   },
   "uiResetDone": {
-    "message": "రిసెట్ అయింది."
+    "message": "రీసెట్ అయింది."
   },
   "uiConfirmHeader": {
     "message": "నిర్ధారణ"
   },
   "uiConfirmLabel": {
-    "message": "అటాచ్మెంట్‌లు జత చేసే ముందు అడగండి"
+    "message": "జోడింపులు చేర్చే ముందు అడగండి"
   },
   "uiConfirmHelp": {
-    "message": "అటాచ్మెంట్‌లు నిజంగా జత చేయబడే సందర్భంలో మాత్రమే ఒక చిన్న నిర్ధారణ డైలాగ్ కనిపిస్తుంది. కీబోర్డ్: Y లేదా J = అవును; N లేదా Esc = కాదు."
+    "message": "జోడింపులు నిజంగా చేర్చబడే సందర్భంలోనే చిన్న నిర్ధారణ డైలాగ్ ప్రత్యక్షమవుతుంది. కీబోర్డు: Y లేదా J = అవును; N లేదా Esc = కాదు."
   },
   "confirmAddOne": {
-    "message": "అటాచ్మెంట్‌ను జత చేయాలా: $1?",
+    "message": "జోడింపును చేర్చాలా: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "అటాచ్మెంట్‌లు జత చేయాలా ($1): $2$3?",
+    "message": "జోడింపులు చేర్చాలా ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -103,13 +129,13 @@
     "message": "బ్లాక్‌లిస్ట్ ద్వారా మినహాయించబడింది"
   },
   "warnBlacklistIntro": {
-    "message": "క్రింది ఫైళ్లు స్వయంచాలకంగా జత చేయబడవు:"
+    "message": "క్రింది ఫైళ్లు ఆటోమేటిక్‌గా జత చేయబడవు:"
   },
   "warnColFile": {
-    "message": "ఫైలు"
+    "message": "ఫైల్"
   },
   "warnColPattern": {
-    "message": "ప్యాటర్న్"
+    "message": "నమూనా"
   },
   "warnOk": {
     "message": "సరే"
@@ -124,9 +150,21 @@
     "message": "కాదు"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "డాక్యుమెంటేషన్:"
+  },
+  "uiDocsButton": {
+    "message": "డాక్స్ తెరవండి"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

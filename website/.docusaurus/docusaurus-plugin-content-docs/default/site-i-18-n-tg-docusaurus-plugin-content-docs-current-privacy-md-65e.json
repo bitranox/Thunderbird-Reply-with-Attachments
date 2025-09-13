@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "Махфият",
+  "description": "Махфият",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "Махфият",
+    "sidebar_label": "Махфият"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "Дастгирӣ",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "Бозгаштан",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/donation"
   }
 }

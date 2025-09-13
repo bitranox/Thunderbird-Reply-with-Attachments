@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ഉപയോഗം",
   "description": "Usage",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ഉപയോഗം",
+    "sidebar_label": "ഉപയോഗം"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "ഘടകങ്ങൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "ആസാദ്ധ്യത",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/compatibility"
   }
 }

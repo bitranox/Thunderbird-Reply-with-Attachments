@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Дастгирӣ",
+  "description": "FAQ",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Дастгирӣ",
+    "sidebar_label": "Дастгирӣ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Терминология",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Махфият",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/privacy"
   }
 }

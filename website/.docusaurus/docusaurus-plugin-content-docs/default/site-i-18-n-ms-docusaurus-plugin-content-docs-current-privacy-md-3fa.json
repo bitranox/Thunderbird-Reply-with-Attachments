@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privasi",
-  "description": "Reply with Attachments tidak mengumpul analitik atau telemetri dan tidak menghantar data anda ke mana‑mana.",
+  "description": "Privasi",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

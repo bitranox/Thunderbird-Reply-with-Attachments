@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Schnellstart",
-  "description": "---",
+  "description": "Schnellstart",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "quickstart",
     "title": "Schnellstart",

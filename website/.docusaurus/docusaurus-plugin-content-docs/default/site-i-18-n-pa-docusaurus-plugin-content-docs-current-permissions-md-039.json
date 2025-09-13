@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "ਅਧਿਕਾਰ",
-  "description": "ਐਡ‑ਆਨ ਸਿਰਫ਼ ਕੁਝ ਛੋਟੇ, ਕੇਂਦ੍ਰਿਤ ਅਧਿਕਾਰ ਮੰਗਦਾ ਹੈ। ਹਰ ਇੱਕ ਦੀ ਲੋੜ:",
+  "title": "ਪ੍ਰੰਨਾਲੀਆਂ",
+  "description": "Permissions",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "ਅਧਿਕਾਰ"
+    "title": "ਪ੍ਰੰਨਾਲੀਆਂ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਅਨੁਕੂਲਤਾ",
+    "title": "ਸੁਚਾਰੂਤਾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/compatibility"
   },
   "next": {
-    "title": "ਡਿਵੈਲਪਮੈਂਟ",
+    "title": "ਵਿਕਾਸ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/development"
   }
 }

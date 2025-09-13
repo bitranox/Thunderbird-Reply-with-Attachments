@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "დაწყების ინსტრუქცია",
+  "description": "დაწყების ინსტრუქცია",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "დაწყების ინსტრუქცია",
+    "sidebar_label": "დაწყების ინსტრუქტია"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ფუნქციები",
+    "title": "خصوصیات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "ინსტალაცია",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/install"
   }
 }

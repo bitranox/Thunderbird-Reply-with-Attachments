@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Tilllar",
+  "description": "Tilllar",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Tilllar",
+    "sidebar_label": "Tilllar"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Rivojlanish",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "So'zlar kiritmasi",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/glossary"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Talaan ng mga Termino",
+  "description": "Talaan ng mga Termino",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Talaan ng mga Termino",
+    "sidebar_label": "Talaan ng mga Termino"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Mga Wika",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Suporta",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/support"
   }
 }

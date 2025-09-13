@@ -1,17 +1,34 @@
 ---
 id: features
-title: 기능
-sidebar_label: 기능
+title: '기능'
+sidebar_label: '기능'
 ---
 
-## 기능
+## Features {#features}
 
-- 회신할 때 원본 이메일의 파일을 자동으로 첨부합니다.
-- 동작은 구성 가능합니다. 첨부 파일은
-  - 자동으로 추가되거나,
-  - 확인 후에만 추가됩니다(작고 접근 가능한 대화 상자). 옵션에서 확인을 활성화하고 기본 응답(예/아니오)을 선택할 수 있습니다.
-- 파일 이름 블랙리스트(glob 패턴)는 특정 파일이 자동으로 첨부되는 것을 방지합니다. 예: `*intern*`, `*secret*`, `*passwor*`.
-  매칭은 대소문자를 구분하지 않으며 파일 이름만 확인합니다. 옵션에서 줄당 하나의 패턴을 지정하세요.
-- 블랙리스트 경고(선택 사항, 기본적으로 활성화): 블랙리스트로 인해 파일이 제외되면 작은 모달에 파일과 일치한 패턴이 표시됩니다. 다크 모드를 지원하며 키보드로 조작할 수 있습니다(Enter/Esc로 닫기).
-- 이미 직접 무언가를 첨부했더라도 원본 파일을 추가하며, 파일 이름 기준으로 중복을 방지합니다.
-- 불필요한 첨부를 피하기 위해 SMIME 인증서와 인라인 이미지는 건너뜁니다.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

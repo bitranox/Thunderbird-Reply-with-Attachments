@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Indimi'
+sidebar_label: 'Indimi'
 ---
 
-# Language Support
+## Indimi
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Iyi liste igaragaza ubusobanuro bw'amagambo mu mbuga ndetse n'inyandiko z'inyongera z'uburyo bwa UI.
+Gushyigikira indimi nyinshi cyane, binyuze mu bikoresho bya AI byo guhindura — harimo indimi 100.
 
-List below is sorted by the language code.
+Urutonde ruri hasi ruhinduwe hakurikijwe kode y'ururimi.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Reba kandi: [Glossary](glossary) y'amagambo y'ibanze ya UI akoreshwa mu ndimi z'ahantu hatandukanye.
+
+---
+
+## Urutonde rw'indimi {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Inama: Hindura ururimi rwa docs ukoresheje umuyoboro w'ururimi mu mutwe w'urubuga (URL igahinduka uko bikwiye). Ururimi rwa UI ya Thunderbird ntirukurikira ururimi rwa mbuga ahubwo rurakurikirana ibyakozwe na Thunderbird.
+
+Redirect yo ku ipaji yambere
+
+- Niba urubuga rwubatswe hifashishijwe ururimi rwatoranyijwe n'umukoresha, kujya ku URL ya base docs munsi ya baseUrl y'umushinga bihita bigarukana ururimi rwa. Koresha umuyoboro w'ururimi (cyangwa `/en/`) kugirango ugumane mu Cyongereza.
+
+---
+
+## Tanga Ihinduka {#contribute-translations}
+
+- Niba uri kubona ikibazo mu gihindura? Nyamuneka fungura ikibazo cyangwa PR kuri GitHub.
+- Waba ushimishijwe no guhindura ibipimo muri Ururimi rw'icyongereza munsi `website/docs/`; ibikoresho by'umugenzuzi bitanga amahitamo yo gukwirakwiza amakuru mu zindi ndimi.
+  Icyongereza ni isoko y'ukuri kuri dokumentasiyo; hindura ibihinduka biva mu Cyongereza mu gihe umugenzuzi akora.
+
+### Urupapuro rwa Mbere, Navbar, UI y'Ikirangantego
+
+- Izi ndaye ziri muri `website/i18n/en/code.json` kandi zihindurwa mu ndimi zose hifashishijwe akazi k'umugenzuzi:
+  - `make translate_web_index` (bisaba `OPENAI_API_KEY`)
+  - Shyira imipaka ku ndimi na `OPTS="--locales de,fr"`; andika agaciro gasanzwe `OPTS="--force"`.
+
+### Urubuga vs. UI {#website-vs-ui}
+
+- Ururimi rw'urubuga n'ururimi rwa UI y'inyongera birigenga; umuyoboro w'ururimi uhinduha gusa ibitabo. Ururimi rwa UI ya Thunderbird rugendera ku bikenewe bya Thunderbird.

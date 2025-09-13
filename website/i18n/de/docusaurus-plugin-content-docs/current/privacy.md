@@ -1,60 +1,57 @@
 ---
 id: privacy
-title: Datenschutz
-sidebar_label: Datenschutz
----
-
+title: 'Datenschutz'
+sidebar_label: 'Datenschutz'
 ---
 
 ## Datenschutz
 
-Reply with Attachments erfasst keine Analyse- oder Telemetriedaten und sendet Ihre Daten nirgendwohin.
+:::note Keine Telemetrie; keine Hintergrundnetzwerkverbindung
+Dieses Add-on sammelt **keine** Analysen/Telemetrie und sendet **keine** Hintergrundnetzwerkanfragen. Jeglicher Netzwerkzugriff erfolgt nur, wenn Sie einen externen Link (Docs, GitHub, Spenden) anklicken.
+:::
 
-Was das Add-on macht:
+Reply with Attachments sammelt keine Analysen oder Telemetrie und sendet Ihre Daten nirgendwohin.
 
-- Liest lokal (Thunderbird-API) die Metadaten und Dateien der Anhänge aus der Originalnachricht, um sie Ihrer Antwort anzufügen.
-- Speichert Ihre Optionen (Blockliste, Bestätigung, Standardantwort) im lokalen Speicher von Thunderbird.
+Was das Add-on tut:
 
-Was das Add-on nicht macht:
+- Liest Metadaten und Dateien von der ursprünglichen Nachricht lokal (Thunderbird API), um sie an Ihre Antwort anzuhängen.
+- Speichert Ihre Optionen (Blackliste, Bestätigung, Standardantwort) im lokalen Speicher von Thunderbird.
 
-- Kein Tracking, keine Analysen, keine Crash-Berichte und kein Remote-Logging.
-- Keine Netzwerkzugriffe im Hintergrund, außer wenn Sie ausdrücklich externe Links öffnen (Docs, GitHub, Donate).
+Was das Add-on nicht tut:
 
-Die Berechtigungen sind auf der Seite [Berechtigungen](permissions) dokumentiert.
+- Keine Nachverfolgung, Analysen, Absturzberichte oder Remote-Protokollierung.
+- Keine Hintergrundnetzwerkanfragen, es sei denn, Sie öffnen explizit externe Links (Docs, GitHub, Spenden).
+
+Berechtigungen sind auf der [Berechtigungen](permissions) Seite dokumentiert.
 
 ---
 
-## Content-Sicherheitsrichtlinie (CSP) {#content-security-policy-csp}
+## Inhalts-Sicherheitsrichtlinie (CSP) {#content-security-policy-csp}
 
-Die Optionen- und Popup-Seiten verzichten auf Inline-Skripte. Sämtliches JavaScript wird aus Dateien geladen, die mit dem Add-on ausgeliefert werden, um der strengen CSP in Thunderbird zu entsprechen. Wenn in der Dokumentation Codeausschnitte eingebettet sind, dienen sie nur als Beispiele und werden vom Add-on nicht ausgeführt.
+Die Optionen und Popup-Seiten vermeiden Inline-Skripte. Alle JavaScript-Dateien werden von Dateien geladen, die mit dem Add-on ausgeliefert werden, um den strengen CSP in Thunderbird zu entsprechen. Wenn Sie Code-Snippets in Dokumente einbetten, sind diese nur Beispiele und werden vom Add-on nicht ausgeführt.
 
 ---
 
 ## Datenspeicherung {#data-storage}
 
-- Benutzereinstellungen (Blockliste, Bestätigungsschalter, Standardantwort) werden für dieses Add-on in Thunderbirds `storage.local` gespeichert.
-- Das Add-on führt keine Cloud-Synchronisierung durch.
+- Benutzerpräferenzen (Blackliste, Bestätigungsschalter, Standardantwort) werden im `storage.local` von Thunderbird für dieses Add-on gespeichert.
+- Es erfolgt keine Cloud-Synchronisierung durch das Add-on.
 
 ---
 
 ## Netzwerk {#network}
 
-- Das Add-on führt keine Netzwerkaktivität im Hintergrund aus.
-- Jeglicher Netzwerkzugriff erfolgt nur, wenn Sie auf Links klicken (Docs, GitHub, Donate), oder wenn Thunderbird selbst normale, nicht mit diesem Add-on zusammenhängende Vorgänge ausführt.
+- Das Add-on führt keine Hintergrundnetzwerkaktivitäten durch.
+- Jeglicher Netzwerkzugriff erfolgt nur, wenn Sie auf Links (Docs, GitHub, Spenden) klicken oder wenn Thunderbird selbst normale Operationen durchführt, die nichts mit diesem Add-on zu tun haben.
 
 ---
 
 ## Datenlöschung {#data-removal}
 
 - Die Deinstallation des Add-ons entfernt dessen Code.
-- Einstellungen werden nur in Thunderbirds `storage.local` gespeichert und bei der Deinstallation entfernt; es wird kein externer Speicher verwendet.
-  Um nur die Einstellungen zurückzusetzen, ohne zu deinstallieren, verwenden Sie auf der Optionen-Seite „Reset to defaults“ für Blockliste und Warnung, oder aktualisieren Sie die Werte manuell auf der Thunderbird-Seite „Add-ons debuggen“.
-
----
-
-## Netzwerk (Zusammenfassung) {#network-recap}
-
-- Keine Netzwerkaktivität im Hintergrund.
-- Netzwerkanfragen erfolgen nur, wenn Sie auf Links klicken (Docs, GitHub, Donate).
+- Einstellungen werden nur im `storage.local` von Thunderbird gespeichert und bei der Deinstallation entfernt; es wird kein externes Speicher verwendet.
+- Einstellungen zurücksetzen, ohne das Add-on zu deinstallieren:
+  - Optionen-Seite: Verwenden Sie "Auf Standard zurücksetzen" für die Blackliste und die Blacklist-Warnung.
+  - Erweitert: in Thunderbird → Werkzeuge → Entwicklertools → Add-ons Debuggen, öffnen Sie den Speicher der Erweiterung und löschen Sie die Schlüssel, falls erforderlich.
 
 ---

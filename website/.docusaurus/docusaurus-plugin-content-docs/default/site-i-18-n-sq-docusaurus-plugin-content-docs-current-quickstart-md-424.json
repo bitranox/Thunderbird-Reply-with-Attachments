@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Shpejtësia e fillimit",
+  "description": "Quickstart",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Shpejtësia e fillimit",
+    "sidebar_label": "Shpejtësia e fillimit"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Veçoritë",
+    "title": "Karakteristikat",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalimi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/install"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "مطابقت",
-  "description": "مطابقت",
+  "title": "ہم آہنگی",
+  "description": "Compatibility",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "مطابقت",
-    "sidebar_label": "مطابقت"
+    "title": "ہم آہنگی",
+    "sidebar_label": "ہم آہنگی"
   },
   "sidebar": "docs",
   "previous": {

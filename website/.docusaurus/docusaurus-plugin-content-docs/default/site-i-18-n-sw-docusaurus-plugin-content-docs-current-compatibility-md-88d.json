@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Ulinganifu",
   "description": "Compatibility",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Ulinganifu",
+    "sidebar_label": "Ulinganifu"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Matumizi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Ruhusa",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/permissions"
   }
 }

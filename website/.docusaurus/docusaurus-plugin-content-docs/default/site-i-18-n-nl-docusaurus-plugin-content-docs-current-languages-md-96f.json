@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Talen",
+  "description": "Talen",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Talen",
+    "sidebar_label": "Talen"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Ontwikkeling",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Woordenlijst",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/glossary"
   }
 }

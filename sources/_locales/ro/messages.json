@@ -12,7 +12,7 @@
     "message": "Răspunde cu atașamente — Opțiuni"
   },
   "confirmTitle": {
-    "message": "Confirmare atașamente"
+    "message": "Confirmă atașamentele"
   },
   "uiHeader": {
     "message": "Răspunde cu atașamente"
@@ -21,28 +21,54 @@
     "message": "Momentan nu există opțiuni de configurat."
   },
   "uiSupport": {
-    "message": "Îți place acest supliment? Susține-mă cu o mică contribuție:"
+    "message": "Îți place acest supliment? Te rog susține-mă cu o contribuție mică:"
+  },
+  "uiRateATNText": {
+    "message": "Te rog evaluează pe ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Donează acum"
   },
+  "uiIDonated": {
+    "message": "Am donat"
+  },
+  "uiDonateSnoozed": {
+    "message": "Mulțumesc! Solicitarea de donație este ascunsă timp de 90 de zile."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Ascuns până la $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Afișează din nou Donează"
+  },
+  "uiDonateRestored": {
+    "message": "Solicitarea de donație este vizibilă din nou."
+  },
   "uiGithubText": {
-    "message": "Pentru rapoarte de erori sau alte solicitări, vizitează-mi"
+    "message": "Pentru rapoarte de erori sau alte solicitări, te rog vizitează"
   },
   "uiGithubLinkLabel": {
-    "message": "pagina de GitHub"
+    "message": "pagina mea GitHub"
   },
   "iconAlt": {
-    "message": "Pictograma „Răspunde cu atașamente”"
+    "message": "Pictograma Răspunde cu atașamente"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Listă neagră de nume de fișiere (modele glob)"
+    "message": "Lista neagră a numelor de fișiere (modele glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fișierele ale căror nume se potrivesc cu oricare dintre aceste modele nu vor fi atașate automat niciodată. Un model pe linie. Exemple: *.png, smime.*, *.p7s"
+    "message": "Fișierele ale căror nume se potrivesc oricăruia dintre aceste modele nu vor fi niciodată atașate automat. Un model pe linie. Exemple: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Avertizează dacă atașamentele sunt excluse de lista neagră"
@@ -69,10 +95,10 @@
     "message": "Întreabă înainte de a adăuga atașamente"
   },
   "uiConfirmHelp": {
-    "message": "O mică fereastră de confirmare apare doar când atașamentele chiar ar fi adăugate. Tastatură: Y sau J = Da; N sau Esc = Nu."
+    "message": "Apare o mică fereastră de confirmare numai când ar fi adăugate atașamente. Tastatură: Y sau J = Da; N sau Esc = Nu."
   },
   "confirmAddOne": {
-    "message": "Adăugați atașamentul: $1?",
+    "message": "Adaugă atașament: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Adăugați atașamentele ($1): $2$3?",
+    "message": "Adaugă atașamente ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -124,9 +150,21 @@
     "message": "Nu"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentație:"
+  },
+  "uiDocsButton": {
+    "message": "Deschide documentația"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

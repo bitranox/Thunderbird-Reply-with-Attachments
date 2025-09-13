@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Devlopman",
   "description": "Development Guide",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Devlopman",
+    "sidebar_label": "Devlopman"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Pèmisyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Lang",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/languages"
   }
 }

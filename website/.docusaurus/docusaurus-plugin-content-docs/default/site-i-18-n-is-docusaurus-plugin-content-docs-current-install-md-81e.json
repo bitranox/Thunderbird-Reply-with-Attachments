@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Uppsetning",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Uppsetning",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Uppsetning"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Hröðufyrirkomulag",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Settings",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/configuration"
   }
 }

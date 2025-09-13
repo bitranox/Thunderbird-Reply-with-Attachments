@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privacidade",
-  "description": "Responder com anexos não recolhe análises nem telemetria e não envia os seus dados para lado nenhum.",
+  "description": "Privacidade",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/support"
   },
   "next": {
-    "title": "Doar",
+    "title": "Doe",
     "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/donation"
   }
 }

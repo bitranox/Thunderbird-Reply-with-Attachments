@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Usanidi",
+  "description": "Usanidi kupitia \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Usanidi",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Usanidi"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Mwanzoni",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Usanidi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/configuration"
   }
 }

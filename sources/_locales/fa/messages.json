@@ -3,7 +3,7 @@
     "message": "پاسخ با پیوست‌ها"
   },
   "extDescription": {
-    "message": "پیوست‌های اصلی را به‌صورت خودکار در پاسخ‌های ایمیل درج می‌کند."
+    "message": "پیوست‌های اصلی را به‌طور خودکار در پاسخ‌های ایمیل اضافه می‌کند."
   },
   "composeTitle": {
     "message": "پاسخ با پیوست‌ها"
@@ -18,22 +18,48 @@
     "message": "پاسخ با پیوست‌ها"
   },
   "uiNoOptions": {
-    "message": "در حال حاضر گزینه‌ای برای پیکربندی وجود ندارد."
+    "message": "در حال حاضر گزینه‌ای برای تنظیم وجود ندارد."
   },
   "uiSupport": {
-    "message": "این افزونه را می‌پسندید؟ با یک کمک مالی کوچک از من حمایت کنید:"
+    "message": "از این افزونه خوشتان می‌آید؟ لطفاً با یک کمک کوچک از من حمایت کنید:"
+  },
+  "uiRateATNText": {
+    "message": "لطفاً در ATN امتیاز بدهید"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "هم‌اکنون کمک مالی کنید"
+    "message": "اکنون کمک مالی کنید"
+  },
+  "uiIDonated": {
+    "message": "کمک مالی کردم"
+  },
+  "uiDonateSnoozed": {
+    "message": "سپاس! پیام درخواست کمک مالی به‌مدت ۹۰ روز پنهان شد."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "پنهان تا $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "نمایش دوباره درخواست کمک مالی"
+  },
+  "uiDonateRestored": {
+    "message": "پیام درخواست کمک مالی دوباره قابل مشاهده است."
   },
   "uiGithubText": {
-    "message": "برای گزارش باگ یا سایر پرسش‌ها، لطفاً به"
+    "message": "برای گزارش اشکال یا سایر پرسش‌ها، لطفاً به"
   },
   "uiGithubLinkLabel": {
     "message": "صفحهٔ GitHub"
   },
   "iconAlt": {
-    "message": "آیکون پاسخ با پیوست‌ها"
+    "message": "آیکون «پاسخ با پیوست‌ها»"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "فهرست سیاه نام فایل‌ها (الگوهای glob)"
   },
   "uiBlacklistHelp": {
-    "message": "فایل‌هایی که نامشان با هر یک از این الگوها مطابقت داشته باشد، هرگز به‌صورت خودکار پیوست نمی‌شوند. هر خط یک الگو. مثال‌ها: *.png، smime.*، *.p7s"
+    "message": "فایل‌هایی که نامشان با هر یک از این الگوها مطابقت داشته باشد هرگز به‌طور خودکار پیوست نمی‌شوند. هر خط یک الگو. مثال‌ها: *.png، smime.*، *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "اگر پیوست‌ها به‌دلیل فهرست سیاه کنار گذاشته شدند، هشدار داده شود"
+    "message": "در صورت کنار گذاشته شدن پیوست‌ها توسط فهرست سیاه هشدار بده"
   },
   "uiSave": {
     "message": "ذخیره"
@@ -54,7 +80,7 @@
     "message": "در حال ذخیره…"
   },
   "uiReset": {
-    "message": "بازنشانی به پیش‌فرض‌ها"
+    "message": "بازنشانی به حالت پیش‌فرض"
   },
   "uiSaved": {
     "message": "ذخیره شد."
@@ -66,10 +92,10 @@
     "message": "تأیید"
   },
   "uiConfirmLabel": {
-    "message": "پیش از افزودن پیوست‌ها سؤال شود"
+    "message": "قبل از افزودن پیوست‌ها سؤال شود"
   },
   "uiConfirmHelp": {
-    "message": "تنها هنگامی که واقعاً قرار است پیوست‌ها افزوده شوند، یک پنجرهٔ تأیید کوچک نمایش داده می‌شود. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
+    "message": "پنجرهٔ تأیید کوچکی فقط وقتی ظاهر می‌شود که واقعاً قرار است پیوست‌ها اضافه شوند. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
   },
   "confirmAddOne": {
     "message": "افزودن پیوست: $1؟",
@@ -100,10 +126,10 @@
     "message": "خیر"
   },
   "warnBlacklistTitle": {
-    "message": "کنار گذاشته‌شده توسط فهرست سیاه"
+    "message": "مستثنی‌شده توسط فهرست سیاه"
   },
   "warnBlacklistIntro": {
-    "message": "فایل‌های زیر به‌صورت خودکار پیوست نخواهند شد:"
+    "message": "فایل‌های زیر به‌طور خودکار پیوست نخواهند شد:"
   },
   "warnColFile": {
     "message": "فایل"
@@ -124,9 +150,21 @@
     "message": "خیر"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "مستندات:"
+  },
+  "uiDocsButton": {
+    "message": "باز کردن مستندات"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

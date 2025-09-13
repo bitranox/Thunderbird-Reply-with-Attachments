@@ -3,7 +3,7 @@
     "message": "Պատասխանել կցորդներով"
   },
   "extDescription": {
-    "message": "Էլփոստի պատասխաններում ինքնաբար ներառել սկզբնական կցորդները։"
+    "message": "Էլ․ նամակների պատասխաններում ինքնաբար ներառել բնօրինակ կցորդները։"
   },
   "composeTitle": {
     "message": "Պատասխանել կցորդներով"
@@ -18,16 +18,42 @@
     "message": "Պատասխանել կցորդներով"
   },
   "uiNoOptions": {
-    "message": "Այս պահին կարգավորելու ընտրանքներ չկան։"
+    "message": "Տվյալ պահին կարգավորելու ընտրանքներ չկան։"
   },
   "uiSupport": {
-    "message": "Ձեզ դո՞ւր է գալիս այս հավելումը։ Աջակցեք ինձ փոքր նվիրատվությամբ:"
+    "message": "Դո՞ւր է գալիս այս հավելումը։ Խնդրում եմ աջակցել փոքրիկ նվիրատվությամբ:"
+  },
+  "uiRateATNText": {
+    "message": "Խնդրում ենք գնահատել ATN-ում"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Նվիրաբերել հիմա"
   },
+  "uiIDonated": {
+    "message": "Ես նվիրաբերել եմ"
+  },
+  "uiDonateSnoozed": {
+    "message": "Շնորհակալություն։ Նվիրատվության հուշումը թաքցված է 90 օր։"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Թաքցված է մինչև $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Կրկին ցույց տալ «Նվիրաբերել»-ը"
+  },
+  "uiDonateRestored": {
+    "message": "Նվիրատվության հուշումը կրկին տեսանելի է։"
+  },
   "uiGithubText": {
-    "message": "Սխալների մասին հաղորդումների կամ այլ հարցումների համար այցելեք իմ"
+    "message": "Սխալի զեկույցների կամ այլ հարցումների համար այցելեք իմ"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub էջը"
@@ -39,22 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Ֆայլանունների սև ցուցակ (glob նախշեր)"
+    "message": "Ֆայլերի անվան սև ցուցակ (glob ձևանմուշներ)"
   },
   "uiBlacklistHelp": {
-    "message": "Ֆայլերը, որոնց անունները համապատասխանում են այս նախշերից որևէ մեկին, երբեք ինքնաբար չեն կցվի։ Ամեն տողում մեկ նախշ։ Օրինակներ՝ *.png, smime.*, *.p7s"
+    "message": "Այն ֆայլերը, որոնց անունները համապատասխանում են այս ձևանմուշներից որևէ մեկին, երբեք ինքնաբար չեն կցվի։ Յուրաքանչյուր տողում՝ մեկ ձևանմուշ։ Օրինակներ՝ *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Զգուշացնել, եթե կցորդները բացառվել են սև ցուցակի պատճառով"
+    "message": "Զգուշացնել, եթե կցորդները բացառվել են սև ցուցակով"
   },
   "uiSave": {
     "message": "Պահել"
   },
   "uiSaving": {
-    "message": "Պահվում է…"
+    "message": "Պահպանում…"
   },
   "uiReset": {
-    "message": "Վերականգնել լռելյայն կարգավորումները"
+    "message": "Վերականգնել լռելյայնները"
   },
   "uiSaved": {
     "message": "Պահված է։"
@@ -66,13 +92,13 @@
     "message": "Հաստատում"
   },
   "uiConfirmLabel": {
-    "message": "Կցորդներ ավելացնելուց առաջ հարցնել"
+    "message": "Մինչ կցորդներ ավելացնելը՝ հարցնել"
   },
   "uiConfirmHelp": {
-    "message": "Փոքր հաստատման պատուհան կհայտնվի միայն այն դեպքում, երբ իրականում կավելացվեն կցորդներ։ Ստեղնաշար՝ Y կամ J = Այո, N կամ Esc = Ոչ։"
+    "message": "Փոքր հաստատման պատուհանը կհայտնվի միայն այն դեպքում, երբ կցորդներ իրականում ավելացվեն։ Ստեղնաշար: Y կամ J = Այո; N կամ Esc = Ոչ։"
   },
   "confirmAddOne": {
-    "message": "Ավելացնե՞լ կցորդ՝ $1?",
+    "message": "Ավելացնել կցորդ: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ավելացնե՞լ կցորդներ ($1): $2$3?",
+    "message": "Ավելացնել կցորդներ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,16 +126,16 @@
     "message": "Ոչ"
   },
   "warnBlacklistTitle": {
-    "message": "Սև ցուցակով բացառված"
+    "message": "Բացառվել է սև ցուցակով"
   },
   "warnBlacklistIntro": {
-    "message": "Հետևյալ ֆայլերը ինքնաբար չեն կցվի:"
+    "message": "Հետևյալ ֆայլերը ինքնաբար չեն կցվի."
   },
   "warnColFile": {
     "message": "Ֆայլ"
   },
   "warnColPattern": {
-    "message": "Նախշ"
+    "message": "Ձևանմուշ"
   },
   "warnOk": {
     "message": "Լավ"
@@ -124,9 +150,21 @@
     "message": "Ոչ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Փաստաթղթավորում:"
+  },
+  "uiDocsButton": {
+    "message": "Բացել փաստաթղթավորումը"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

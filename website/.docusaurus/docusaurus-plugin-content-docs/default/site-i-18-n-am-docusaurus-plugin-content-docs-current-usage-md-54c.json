@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ጥቅም",
   "description": "Usage",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ጥቅም",
+    "sidebar_label": "ጥቅም"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "መርዳት",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "የመነሻ እና ይህን ይህ ናቸው",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/compatibility"
   }
 }

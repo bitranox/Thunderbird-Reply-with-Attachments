@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Dillər'
+sidebar_label: 'Dillər'
 ---
 
-# Language Support
+## Dillər
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Bu siyahı həm vebsayt sənədlərinin tərcümələrini, həm də əlavə UI mətnlərini əks etdirir.
+AI tərcümə alətləri sayəsində geniş dil dəstəyi - 100 dili əhatə edir.
 
-List below is sorted by the language code.
+Aşağıdakı siyahı dil koduna görə sıralanmışdır.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Baxın: [Lüğət](glossary) - yerli dillərdə istifadə olunan standart UI terminləri üçün.
+
+---
+
+## Dil siyahısı {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+İpucu: Saytın başlığındakı dil seçicisi vasitəsilə sənədlərin dilini dəyişdirin (URL prefiks müvafiq olaraq dəyişir). Thunderbird-in UI dili vebsayt dilindən müstəqildir və Thunderbird parametrlərinizi izləyir.
+
+Ana səhifəyə yönləndirmə
+
+- Əgər sayt brauzerinizin üstünlük verdiyi dil ilə qurulursa, layihənin baseUrl altında baza sənəd URL-sini ziyarət edərək avtomatik olaraq həmin dilə yönləndirilir. İngilis dilində qalmaq üçün dil seçicisini (və ya `/en/`) istifadə edin.
+
+---
+
+## Tercümələrə töhfə verin {#contribute-translations}
+
+- Tərcümədə bir problem tapdınız? Zəhmət olmasa, bir GitHub məsələsi və ya PR açın.
+- `website/docs/` altında İngilis mənbəyi ilə düzəlişləri üstünlük verin; baxımda olanın alətləri yeniləmələri digər dillərə göndərir.
+  İngilis dili sənədlər üçün həqiqət mənbəyidir; tərcümə yeniləmələri baxıcı iş axınında EN-dən çəkilir.
+
+### Ana səhifə, Menyu, Altlıq UI
+
+- Bu mətnlər `website/i18n/en/code.json`-də mövcuddur və baxım işləri əsasında bütün dillərə tərcümə olunur:
+  - `make translate_web_index` ( `OPENAI_API_KEY` tələb olunur)
+  - `OPTS="--locales de,fr"` ilə dilləri məhdudlaşdırın; mövcud dəyərləri `OPTS="--force"` ilə üst-üstə düşürün.
+
+### Vebsayt və UI {#website-vs-ui}
+
+- Vebsayt dili və əlavə UI dili müstəqildir; dil seçicisi yalnız sənədləri dəyişir. Thunderbird-un UI dili Thunderbird parametrlərinizi izləyir.
+
+---

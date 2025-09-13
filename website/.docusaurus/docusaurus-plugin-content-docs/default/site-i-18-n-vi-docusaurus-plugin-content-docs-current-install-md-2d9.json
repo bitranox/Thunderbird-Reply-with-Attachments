@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Cài đặt",
-  "description": "Cài đặt — trong Thunderbird (Khuyến nghị)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Bắt đầu nhanh",
+    "title": "Khởi đầu nhanh",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/quickstart"
   },
   "next": {

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "সহায়তা",
+  "description": "FAQ",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "সহায়তা",
+    "sidebar_label": "সহায়তা"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "শব্দালংকাৰ",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "গোপনীয়তা",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/privacy"
   }
 }

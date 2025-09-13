@@ -1,17 +1,34 @@
 ---
 id: features
-title: Njirimara
-sidebar_label: Njirimara
+title: 'Àkpọrọ'
+sidebar_label: 'Àkpọrọ'
 ---
 
-## Njirimara
+## Features {#features}
 
-- Na‑eme ka faịlụ si na ozi email mbụ jikọọ na nzaghachi na‑akpaghị aka.
-- Omume a pụrụ ịhazigharị: ihe mgbakwunye nwere ike
-  - itinye na‑akpaghị aka, ma ọ bụ
-  - tinye naanị mgbe e mesịrị kwado (mkparịta ụka nta, nke enwere ike ịnweta). Na Nhọpụ (Options) i nwere ike ime ka nkwenye rụọ ọrụ ma họrọ azịza ndabara (Ee/Mba).
-- Ndepụta ojii nke aha faịlụ (usoro glob) na‑egbochi faịlụ ụfọdụ ịgbakwunye na‑akpaghị aka. Ihe atụ: `*intern*`, `*secret*`, `*passwor*`.
-  N’ịtụnyere, a naghị elele nnukwu/obere mkpụrụedemede; a na‑elele naanị aha faịlụ. Nye otu usoro n’ahịrị ọ bụla na Nhọpụ.
-- Ịdọ aka ná ntị ndepụta ojii (nhọpụ, na-arụ ọrụ dịka ndabara): mgbe a chọpụtachara faịlụ site n’ndekọ ojii gị, modal nta na‑egosi faịlụ ahụ na usoro kwekọrọ. Ọ na-akwado ọdụm ọchịchịrị ma enwere ike iji keyboard rụọ ọrụ (Enter/Esc imechi).
-- Tinye ndị mbụ ọbụna ma i tinyela ihe ọzọ; na‑ezere ndekọ ugboro ugboro dabere na aha faịlụ.
-- Na‑ahapụ akwụkwọ ikike SMIME na onyonyo etinyere ka zere ihe mgbakwunye na‑adịghị mkpa.
+- Na-akpọ ọdịnaya faịlụ site na ozi email mbụ mgbe ị na-aza.
+- Nkà na-emegharị: a na-ahụ faịlụ
+  - ka e tinyeghị n'ụzọ a na-ahụ anya, ma ọ bụ
+  - ka e tinye naanị mgbe e mere ka o doo anya (ọ bụ ezie na nkọwa dị mfe, nke dị mfe ịnweta). Na Nhọrọ ị
+    nwere ike ime ka o doo anya ma họrọ azịza ndabara (Ee/Mba).
+- Akwụkwọ n'ala nke faịlụ (nkwa ntụaka) na-egbochi faịlụ ụfọdụ ka e tinyeghị
+  n'ụzọ a na-ahụ anya. Dịka ọmụmaatụ: `*intern*`, `*secret*`, `*passwor*`.
+  Ịchọta adịghị mkpa ka ọ bụrụ obere ma na-enyocha faịlụ naanị; nye otu ntụaka
+  n’ahụ nke Nhọrọ.
+- Ikwu gbasara n'ala (nke na-adịghị mma, na-akwado dịka ndabara): mgbe faịlụ a jụrụ na
+  akwụkwọ n'ala gị, nkọwa dị mfe na-egosi faịlụ na ntụaka (nke) ha. N'ọtụtụ
+  ma ọ bụ ọkụ na-ada na keyboard nwere ike ịnweta (Tinye/Esc ka emechaa).
+- Na-arụ ọrụ na Nzọpụta na Nzọpụta niile. Ikwu ọzọ agaghị agbanwe site na mgbakwunye a.
+- Na-agbakwunye originals ọbụlagodi na ị tinyeela ihe nke gị; na-ezere mgbakwunye site na faịlụ aha.
+- Per-tab ọnụahịa n’iji zere mgbakwunye abụọ na otu taabụ.
+- Napụghị S/MIME asambodo na ihe oyiyi n’ime iji zere àgwà a na-achọghị.
+
+## How It Works {#how-it-works}
+
+- Na nzaghachi, mgbakwunye na-egosi faịlụ njikọ mbụ.
+- Na-ewepụ S/MIME akara na ihe oyiyi n’ime.
+- N'ụzọ nhọrọ na-arịọ ka o doo anya (na-adọrọ mmasị na keyboard).
+- Na-agbakwunye faịlụ nke a na-enwetaghị n'okwu gị, na-ezere mgbakwunye site na faịlụ aha.
+- Lee “Gịnị mere faịlụ pụrụ ịdị ka a ghaghị itinye” na ojiji maka ikpe nkịtị.
+
+Nkwupụta nzuzo: A na-eme processing niile n’ime Thunderbird. Mgbakwunye a na-emeghị arịrịọ netwọk n’ụlọ.

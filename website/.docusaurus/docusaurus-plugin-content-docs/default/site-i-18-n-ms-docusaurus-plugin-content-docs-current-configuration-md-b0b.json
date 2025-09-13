@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Konfigurasi",
-  "description": "Nota istilah: rujuk Glossary untuk istilah yang konsisten dalam UI dan dokumentasi.",
+  "description": "Konfigurasi",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

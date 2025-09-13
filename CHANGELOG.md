@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.1.0] - 2025-09-07
+## [2.1.0] - 2025-09-13
 
 - Full internationalization, making the platform available in the top 100 languages worldwide
 

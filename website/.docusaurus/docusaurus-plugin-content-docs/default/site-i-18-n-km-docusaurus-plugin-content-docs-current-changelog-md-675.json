@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "កំណត់ត្រាការផ្លាស់ប្ដូរ",
-  "description": "សូមមើលប្រវត្តិពេញលេញក្នុងឯកសារ CHANGELOG.md នៃឃ្លាំងកូដ។",
+  "title": "ប្រវត្តិការផ្លាស់ប្ដូរ",
+  "description": "Changelog",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "កំណត់ត្រាការផ្លាស់ប្ដូរ"
+    "title": "ប្រវត្តិការផ្លាស់ប្ដូរ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/licence"
+    "title": "អាជ្ញាប័ណ្ណ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/license"
   }
 }

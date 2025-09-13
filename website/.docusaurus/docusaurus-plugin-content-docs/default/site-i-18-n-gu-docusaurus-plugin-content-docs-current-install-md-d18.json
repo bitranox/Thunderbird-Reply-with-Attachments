@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "સ્થાપન",
-  "description": "સ્થાપન — Thunderbird માં (ભલામણ કરેલું)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,11 +19,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ઝડપી શરૂઆત",
+    "title": "ઝડપી અને સારું માર્ગદર્શન",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/quickstart"
   },
   "next": {
-    "title": "રૂપરેખાંકન",
+    "title": "કોન્ફિગ્રેશન",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/configuration"
   }
 }

@@ -1,18 +1,56 @@
 ---
 id: quickstart
-title: Quickstart
-sidebar_label: Quickstart
+title: 'Ihindura Rya Mbere'
+sidebar_label: 'Ihindura Rya Mbere'
 ---
 
-1. Install the add‑on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+## Ihindura Rya Mbere
+
+:::important Igihe gito ca Thunderbird
+Iyi add-on ishyigikira Thunderbird **128 ESR canke iyikurikira**. Ivy'inda za kera ntizishigikiwe.
+:::
+
+:::note Nta telemetry; nta murongo utemba
+Iyi add-on **nt** ikusanya analytics/telemetry kandi ntigira **murongo** utemba. Kwemera urubuga biraba gusa igihe udatse ku mikoreshereze yo hanze (Docs, GitHub, Donate).
+:::
+
+---
+
+### Kwiyandikisha
+
+1. Iyandikishe iyi add-on ivuye kuri Thunderbird Add‑ons.
+2. Ikeneye: Shyiraho kwemeza (Ihitamwo → "Saba mbere yo kongera ibitumenyera").
+3. Ikeneye: Reka ikimenyetso ca blacklist kiba gikoreshwa (ibiri mu mato): "Tanga ikimenyetso niba ibitumenyera byakuwemo na blacklist".
+4. Ikeneye: Ongeramo amakarita ya blacklist (imwe ku murongo), urugero:
 
 ```
 *intern*
 *secret*
-*passwor*
+*passwor*  # matches both “password” and “Passwort” families
 ```
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
+Igihe: Ibiranga " # ..." haruguru ni ikiganiro muri iyi dokumentasiyo; ntukinjire mu byanditswe ubona mu Ihitamwo. Andika ikiranga kimwe ku murongo gusa.
+
+Ubu subiza ubutumwa bufite ibitumenyera — ibihari bizongerwa mu buryo bwikora canke nyuma yo kwemeza vuba. Niba hari amasomo akuwemo na blacklist yawe, uzohabona ikimenyetso gito gishira kuri yo.
+
+---
+
+### Genzura {#verify}
+
+- Subiza ubutumwa bufite ibitumenyera 1–2 kandi wemeze ko ibihari binjijwe mu idirishya ryawe ryo kwandika.
+- Kugira uhindure imikorere, reba [Igenamigambi](configuration) (kwemera guhindurwa, igisubizo ca kera, amakarita ya blacklist).
+
+---
+
+### Genzura ikimenyetso ca blacklist {#verify-blacklist-warning}
+
+- Subiza ubutumwa bufite dosiye nka “secret.txt”.
+- Hamwe no kwemeza "Tanga ikimenyetso niba ibitumenyera byakuwemo na blacklist", ikiganiro gitoya gisohora ibitumenyera byakuweho n'ikiga cyabyo.
+
+Niba utabona ikimenyetso, menya neza ko ikiga kingana neza n'izina rya dosiye (izina ryonyene, rikora amatangazo). Reba Igenamigambi → Blacklist.
+
+---
+
+### Icyitonderwa cy'ibikoresho {#keyboard-note}
+
+- Ikiganiro cyo kwemeza gishyigikira Y/J ku Yego na N/Esc ku Oya. Ku maboko ya keyboards atari ay'ikinyarwanda, urutonde rw'inyuguti rushobora guhinduka; Enter yemeza buto iri mu mwanya.

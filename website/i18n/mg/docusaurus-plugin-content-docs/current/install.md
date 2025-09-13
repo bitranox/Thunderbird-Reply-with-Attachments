@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Fametrahana'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Fametrahana'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Fametrahana amin'ny alalan'ny "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Dikan-teny Thunderbird far最低
+Ity add-on ity dia manohana ny Thunderbird **128 ESR na vaovao kokoa**. Ny dikan-teny taloha dia tsy voazaha.
+:::
 
----
+Ity no fomba fametrahana atolotra. Ny add-on napetraka avy amin'ny ATN (addons.thunderbird.net) dia mahazo fanavaozana mandeha ho azy. Ny fametrahana LOCAL/dev dia tsy manavao ho azy.
 
-## Local installation in Thunderbird
+- Dikan-teny Thunderbird far最低: 128 ESR na vaovao kokoa.
 
-### Download the XPI file
+1. Ao amin'ny Thunderbird, mandehana amin'ny **Tools > Add-ons and Themes**.
+2. Mitadiava "mamaly miaraka amin'ny attachments".
+3. Ampidiro ny add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Na misokatra mivantana amin'ny pejy add-on: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Fametrahana tanana avy amin'ny XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Misintona ny rakitra XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Mandehana amin'ny [pejy add-on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Misintona ny dikan-teny farany amin'ny add-on ho rakitra XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Ampidiro ao amin'ny Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Sokafy ny Thunderbird.
+2. Mandehana amin'ny **Tools > Add-ons and Themes**.
+3. Ao amin'ny **Add-ons Manager**, tsindrio ny kisarisary gears ao amin'ny zoro ambony havanana.
+4. Fidio **Install Add-on From File…** ao amin'ny menio.
+5. Safidio ny rakitra `reply_with_attachments-x.y.z-tb.xpi` izay nosintonina.
+6. Confirmo ny fametrahana rehefa angatahina.
 
 ---
+
+## Fametrahana ho an'ny fampandrosoana {#installation-for-development}
+
+### Misintona ny tahiry {#download-the-repository}
+
+1. Misintona ny dikan-teny farany amin'ny tahiry GitHub.
+2. Mandehana amin'ny `make help` raha mila fanazavana fanampiny.
+
+### Ampidiro ao amin'ny Thunderbird {#install-in-thunderbird-dev}
+
+1. Sokafy ny Thunderbird.
+2. Mandehana amin'ny **Tools > Add-ons and Themes**.
+3. Ao amin'ny **Add-ons Manager**, tsindrio ny kisarisary gears ao amin'ny zoro ambony havanana.
+4. Fidio **Install Add-on From File…** ao amin'ny menio.
+5. Safidio ny rakitra novokarina `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirmo ny fametrahana rehefa angatahina.
+
+Fanamarihana: Raha tsy manaiky ny `.zip` ny Thunderbird amin'ny rafitrao, ovao ny anarany ho `.xpi` ary andramo indray ny “Install Add‑on From File…”.
+
+### Aiza no ahitana ny LOCAL ZIP {#where-local-zip}
+
+- Voalohany, ento ny add-on: ataovy `make pack` ao amin'ny fototry ny tahiry.
+- Aorian'ny fanangonana, tadiavo ny zip "LOCAL" ao amin'ny fototry ny tahiry (ohatra, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Alohan'ny hanangonana indray ho an'ny fitsapana, ovay ny dikan-teny ao amin'ny `sources/manifest_ATN.json` sy `sources/manifest_LOCAL.json`.
+
+---
+
+## Manafoana, Manala, sy Ny fanavaozana {#disable-uninstall-updates}
+
+- Manafoana: Thunderbird → Tools → Add‑ons and Themes → tadiavo ny add-on → ahena ny toggle.
+- Manala: mitovy fijery → menio telo teboka → Esory.
+- Fanavaozana: ny fametrahana ATN dia manavao ho azy rehefa ekena ny dikan-teny vaovao. Ny fametrahana LOCAL/dev dia tsy manavao ho azy; apetraho manually ny fananganana vaovao LOCAL.
+- Esory tanteraka ny fikirakirana: jereo [Privacy → Fanafoanana angona](privacy#data-removal).
+
+Jereo ihany koa
+
+- [Quickstart](quickstart)

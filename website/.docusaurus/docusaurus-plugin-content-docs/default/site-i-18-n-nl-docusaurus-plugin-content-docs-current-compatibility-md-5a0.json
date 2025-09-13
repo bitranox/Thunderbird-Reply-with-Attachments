@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
-  "description": "Compatibility",
+  "title": "Compatibiliteit",
+  "description": "Compatibiliteit",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Compatibiliteit",
+    "sidebar_label": "Compatibiliteit"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Gebruik",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Toegangen",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/permissions"
   }
 }

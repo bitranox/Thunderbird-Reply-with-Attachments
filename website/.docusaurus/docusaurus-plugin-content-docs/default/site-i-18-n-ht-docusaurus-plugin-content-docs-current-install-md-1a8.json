@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Enstalasyon",
+  "description": "Enstalasyon atravè \"Add-ons ak Tèm Thunderbird\"",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Enstalasyon",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Enstalasyon"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Kòmanse rapid",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfigirasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/configuration"
   }
 }

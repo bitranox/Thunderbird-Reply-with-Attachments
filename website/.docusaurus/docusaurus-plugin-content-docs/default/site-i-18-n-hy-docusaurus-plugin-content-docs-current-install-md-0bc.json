@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Թողարկում",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Թողարկում",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Թողարկում"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Ամենաբարձր մակարդակ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Կոնֆիգուրացիա",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/configuration"
   }
 }

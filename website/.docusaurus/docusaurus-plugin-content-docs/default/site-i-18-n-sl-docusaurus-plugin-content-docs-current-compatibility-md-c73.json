@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Združljivost",
   "description": "Compatibility",
   "source": "@site/i18n/sl/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Združljivost",
+    "sidebar_label": "Združljivost"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Uporaba",
     "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Dovoljenja",
     "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/permissions"
   }
 }

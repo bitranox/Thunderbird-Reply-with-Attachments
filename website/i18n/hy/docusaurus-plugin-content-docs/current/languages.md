@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Լեզուներ'
+sidebar_label: 'Լեզուներ'
 ---
 
-# Language Support
+## Languages
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Այս ցանկը պատկերացնում է ինչպես կայքի փաստաթղթերի թարգմանությունները, այնպես էլ հավելվածի UI տողերը:  
+Մեծ քանակությամբ լեզվաբառարան, շնորհիվ AI թարգմանական գործիքների՝ ընդգրկում է 100 լեզու:
 
-List below is sorted by the language code.
+Ձևավորված ցանկը դասավորված է լեզվի կոդի համաձայն:
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Նայեք նաև՝ [Glossary](glossary) կայքում տարբեր լեզուներում կիրառվող պաշտոնական UI տերմինների համար:
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Switch the docs locale via the language selector in the site header (URL prefix changes accordingly). Thunderbird’s UI language is independent of the website language and follows your Thunderbird settings.
+
+Landing page redirect
+
+- If the site is built with your browser’s preferred locale, visiting the base docs URL under the project’s baseUrl automatically redirects to that locale. Use the language switcher (or `/en/`) to stay in English.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Found an issue in a translation? Please open a GitHub issue or PR.
+- Prefer edits against the English source under `website/docs/`; the maintainer’s tooling propagates updates to other locales.  
+  English is the source of truth for documentation; translation updates are pulled from EN during the maintainer’s workflow.
+
+### Homepage, Navbar, Footer UI
+
+- These strings live in `website/i18n/en/code.json` and are translated to all locales via the maintainer task:
+  - `make translate_web_index` (requires `OPENAI_API_KEY`)
+  - Limit languages with `OPTS="--locales de,fr"`; overwrite existing values with `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Website language and add‑on UI language are independent; the language selector changes docs only. Thunderbird’s UI language follows your Thunderbird settings.

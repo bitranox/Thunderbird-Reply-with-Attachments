@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Evidencija promjena",
-  "description": "Potpuni povijesni pregled nalazi se u datoteci CHANGELOG.md repozitorija.",
+  "title": "Zapis promjena",
+  "description": "Zapis promjena",
   "source": "@site/i18n/hr/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Evidencija promjena"
+    "title": "Zapis promjena"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/licence"
+    "title": "Licenca",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/license"
   }
 }

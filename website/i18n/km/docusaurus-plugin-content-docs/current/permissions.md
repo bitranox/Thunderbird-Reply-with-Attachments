@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'សិទ្ធិ'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## សិទ្ធិ
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note សិទ្ធិអប្បធម៍
+កម្មវិធីបន្ថែមនេះមិនបានស្នើសុំសិទ្ធិ​មេឌា (វេបសាយ) ទាំងអស់។ កម្មវិធីបន្ថែមនេះមិនប្រមូលទិន្នន័យចំណូលទេ ឬធ្វើនូវការស្នើសុំបណ្តាញនៅថ្នាក់ ផ្នែកក្រោយទេ។ មើល [ភាពឯកជន](privacy)។
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+កម្មវិធីបន្ថែមនេះសូមស្នើសុំសិទ្ធិតិចតួចមួយ ដែលមានគោលបំណងច្បាស់។ ម្តងមើលមិនថាចាំបាច់គឺ:
+
+- `compose`: គ្រប់គ្រងព្រឹត្តិការណ៍ compose, បញ្ជី/បន្ថែមភ្ជាប់នៅក្នុងការឆ្លើយតបរបស់អ្នក។
+- `messagesRead`: អានទិន្នន័យមេទាដា និងយកឯកសារភ្ជាប់ពីសារដើម។
+- `scripting`: បញ្ចូលប្រអប់បញ្ជាក់នៅក្នុង compose នៅពេលដែលបានអនុញ្ញាត។
+- `windows`: បើកពិពណ៌នាក្នុងករណីពីរទោះតែពេលដែលការបញ្ជូនសារ លែងជោគជ័យ។
+- `sessions`: រក្សាទុកសំឡឹងដោយសំណុំនិន្នាការ ដើម្បីល្បើយការបញ្ជូនឡើងវិញ។
+- `storage`: រក្សាទុកជម្រើស (បញ្ជីខ្មៅ, ប៊ូតុងបញ្ជាក់, ការឆ្លើយតបលំនាំ)។
+- `tabs`: ការបញ្ជូនសារយ៉ាងតិចទៅកាន់ផ្ទាំង compose សម្រាប់អ្នកស្នើសុំបញ្ជាក់។
+
+កំណត់ចំណាំបន្ថែម៖
+
+- មិនកើតមានសិទ្ធិវេបសាយ (web origins) ដែលបានស្នើសុំដោយកម្មវិធីបន្ថែមនេះឡើយ។
+- សិទ្ធិ `tabs` ត្រូវបានប្រើប្រាស់តែសម្រាប់មូលដ្ឋាន compose នៅពេលដែលរៀបចំប្រអប់ការបញ្ជាក់ជាជម្រើស; វាមិនត្រូវបានប្រើដើម្បីអានប្រវត្តិ ឬរៀបចំទំព័រ។
+
+ទាំងនេះត្រូវបានកំណត់ក្នុងមូលដ្ឋាននិងបានសាកល្បងក្នុង CI។ កម្មវិធីបន្ថែមនេះមិនប្រមូលទិន្នន័យចំណូលទេ។
+
+---
+
+### ការសង្ខេប (សិទ្ធិ → គោលបំណង) {#permissions-summary}
+
+| សិទ្ធិ         | មូលហេតុដែលវាត្រូវការព័ត៌មាន                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| `compose`      | គ្រប់គ្រងព្រឹត្តិការណ៍ compose; បញ្ជីនិងបន្ថែមភ្ជាប់នៅក្នុងការឆ្លើយតបរបស់អ្នក។ |
+| `messagesRead` | បញ្ជីភ្ជាប់សារដើម និងយកទិន្នន័យឯកសារ។                                          |
+| `scripting`    | បញ្ចូល/រៀបចំ UI គេហទំព័រពីស្រាលសម្រាប់ការបញ្ជាក់នៅពេលដែលបានអនុញ្ញាត។           |
+| `windows`      | ពិពណ៌នាពាក្យបញ្ចាក់ប្រសិនបើការបញ្ជូនសារមិនជោគជ័យ (គ្មានទេ)។                    |
+| `sessions`     | រក្សាទុកសំឡឹងដោយសំណុំនិន្នាការ ដើម្បីរៀបចំការបញ្ជូនឡើងវិញ។                     |
+| `storage`      | រក្សាទុកជម្រើស (បញ្ជីខ្មៅ, ប៊ូតុងបញ្ជាក់, ការឆ្លើយតបលំនាំ)។                    |
+| `tabs`         | ការបញ្ជូនសារយ៉ាងតិចទៅកាន់ផ្ទាំង compose សម្រាប់អ្នកស្នើសុំបញ្ជាក់។             |
+| (host perms)   | គ្មាន — កម្មវិធីបន្ថែមនេះមិនបានស្នើសុំវេបសាយទេ។                                |
+
+---
+
+## មិនបានស្នើសុំ {#not-requested}
+
+- `compose.save`, `compose.send` — កម្មវិធីបន្ថែមនេះមិនបានរក្សាទុក ឬដឹកជញ្ជូនសារចូលរបស់អ្នក។
+
+មើលបន្ថែម: [ភាពឯកជន](privacy) — គ្មានទិន្នន័យចំណូល, គ្មានកម្រិតបណ្តាញ, តែតំណដែលចាប់ផ្តើមដោយអ្នក។
+
+---

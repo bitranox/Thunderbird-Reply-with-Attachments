@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Журнал изменений",
-  "description": "Полную историю смотрите в файле CHANGELOG.md репозитория.",
+  "title": "История изменений",
+  "description": "Changelog",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Журнал изменений"
+    "title": "История изменений"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Лицензия",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/license"
   }
 }

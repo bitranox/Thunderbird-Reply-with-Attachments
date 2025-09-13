@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "زبانیں",
-  "description": "AI ترجمہ ٹولز کی بدولت وسیع زبان معاونت — 103 زبانیں۔",
+  "description": "Languages",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ڈویلپمنٹ",
+    "title": "ترقی",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/development"
   },
   "next": {
-    "title": "مسرد",
+    "title": "فہرستِ اصطلاحات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/glossary"
   }
 }

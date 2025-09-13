@@ -151,11 +151,41 @@
       table.appendChild(tbody);
 
       const row = document.createElement('div');
-      row.style.textAlign = 'right';
+      row.style.display = 'flex';
+      row.style.alignItems = 'center';
+      row.style.justifyContent = 'space-between';
+      row.style.gap = '8px';
       row.style.marginTop = '12px';
+      // Left: Donate button (primary style)
+      const btnDonate = document.createElement('a');
+      btnDonate.textContent = i18n('uiDonate') || 'Donate now';
+      stylePrimaryButton(btnDonate);
+      const donateHref = i18n('donateUrl') || '';
+      if (donateHref) {
+        btnDonate.addEventListener('click', (e) => {
+          e.preventDefault();
+          openUrlInBackground(donateHref);
+        });
+      } else {
+        btnDonate.style.display = 'none';
+      }
+      // Hide donate when user has snoozed it
+      (async () => {
+        try {
+          const hidden = await isDonateSnoozed();
+          if (hidden) btnDonate.style.display = 'none';
+        } catch (_) {}
+      })();
+      // Right: OK
       const btnOk = document.createElement('button');
       btnOk.textContent = i18n('warnOk') || 'OK';
-      row.appendChild(btnOk);
+      const left = document.createElement('div');
+      left.appendChild(btnDonate);
+      const right = document.createElement('div');
+      right.style.textAlign = 'right';
+      right.appendChild(btnOk);
+      row.appendChild(left);
+      row.appendChild(right);
 
       const cleanup = () => {
         restoreDocumentState(prev);
@@ -256,20 +286,53 @@
   /** Create Yes/No buttons with a right-aligned row. */
   function createButtons(yesLabel, noLabel) {
     const row = document.createElement('div');
-    row.style.textAlign = 'right';
+    row.style.display = 'flex';
+    row.style.alignItems = 'center';
+    row.style.justifyContent = 'space-between';
     row.style.gap = '8px';
     row.contentEditable = 'false';
+    // Left: Donate button (hidden when snoozed for 90 days)
+    const btnDonate = document.createElement('a');
+    btnDonate.textContent = i18n('uiDonate') || 'Donate now';
+    stylePrimaryButton(btnDonate);
+    const donateHref = i18n('donateUrl') || '';
+    if (donateHref) {
+      btnDonate.addEventListener('click', (e) => {
+        e.preventDefault();
+        openUrlInBackground(donateHref);
+      });
+    } else {
+      btnDonate.style.display = 'none';
+    }
+    // Async check: hide donate if user snoozed it.
+    (async () => {
+      try {
+        const hidden = await isDonateSnoozed();
+        if (hidden) btnDonate.style.display = 'none';
+      } catch (_) {}
+    })();
+    const left = document.createElement('div');
+    left.appendChild(btnDonate);
+    // Right: No / Yes buttons
+    const right = document.createElement('div');
+    right.style.textAlign = 'right';
+    right.style.display = 'flex';
+    right.style.alignItems = 'center';
+    right.style.gap = '8px';
     const btnNo = document.createElement('button');
     btnNo.textContent = noLabel;
-    btnNo.style.marginRight = '8px';
     btnNo.contentEditable = 'false';
     btnNo.setAttribute('data-testid', 'rwa-confirm-no');
     const btnYes = document.createElement('button');
     btnYes.textContent = yesLabel;
     btnYes.contentEditable = 'false';
     btnYes.setAttribute('data-testid', 'rwa-confirm-yes');
-    row.appendChild(btnNo);
-    row.appendChild(btnYes);
+    right.appendChild(btnNo);
+    right.appendChild(btnYes);
+    row.appendChild(left);
+    row.appendChild(right);
+    // expose donate for focus trap ordering
+    row._btnDonate = btnDonate;
     return { row, btnYes, btnNo };
   }
   /** Append parts into the overlay. */
@@ -466,6 +529,42 @@
   function prefersDark() {
     try {
       return globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch (_) {
+      return false;
+    }
+  }
+  /** Style a primary (blue) button consistent with options UI. */
+  function stylePrimaryButton(btn) {
+    const brand = '#0a6cff';
+    const brand600 = '#0a5edb';
+    btn.style.background = brand;
+    btn.style.border = '1px solid ' + brand;
+    btn.style.color = '#fff';
+    btn.style.padding = '4px 10px';
+    btn.style.borderRadius = '6px';
+    btn.style.cursor = 'pointer';
+    btn.style.fontSize = '12px';
+    btn.addEventListener('mouseover', () => (btn.style.background = brand600));
+    btn.addEventListener('mouseout', () => (btn.style.background = brand));
+  }
+  /** Ask background to open a URL in a new tab (safe from content context). */
+  function openUrlInBackground(url) {
+    try {
+      if (browser?.runtime?.sendMessage) browser.runtime.sendMessage({ type: 'rwa:open-url', url });
+    } catch (_) {
+      try {
+        if (/^https?:\/\//i.test(url)) window.open(url, '_blank', 'noopener');
+      } catch (_) {}
+    }
+  }
+
+  // — Donation visibility helpers —
+  const KEY_HIDE_UNTIL = 'donateHideUntil';
+  async function isDonateSnoozed() {
+    try {
+      const res = await browser.storage?.local?.get?.({ [KEY_HIDE_UNTIL]: 0 });
+      const until = Number(res?.[KEY_HIDE_UNTIL] || 0);
+      return Number.isFinite(until) && until > Date.now();
     } catch (_) {
       return false;
     }

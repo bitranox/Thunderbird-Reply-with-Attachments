@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "快速开始",
-  "description": "1. 从 Thunderbird 附加组件安装此扩展。",
+  "description": "快速开始",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "功能",
+    "title": "特性",
     "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/features"
   },
   "next": {

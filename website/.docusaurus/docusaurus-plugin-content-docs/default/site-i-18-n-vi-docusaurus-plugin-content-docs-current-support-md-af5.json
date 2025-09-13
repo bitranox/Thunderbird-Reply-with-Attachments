@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Hỗ trợ",
-  "description": "Cần trợ giúp hoặc muốn báo lỗi?",
+  "description": "FAQ",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

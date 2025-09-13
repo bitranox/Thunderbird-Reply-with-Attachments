@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "配置",
-  "description": "术语说明：请参阅术语表，以了解界面和文档中使用的一致术语。",
+  "description": "Configuration",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/install"
   },
   "next": {
-    "title": "使用方法",
+    "title": "使用",
     "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/usage"
   }
 }

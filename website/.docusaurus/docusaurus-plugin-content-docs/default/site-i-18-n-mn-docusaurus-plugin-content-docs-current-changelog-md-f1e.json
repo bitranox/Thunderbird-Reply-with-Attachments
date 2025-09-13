@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Өөрчлөлтийн бүртгэл",
-  "description": "Бүрэн түүхийг репозитори дахь CHANGELOG.md файлд харна уу.",
+  "title": "Өөрчлөлтүүд",
+  "description": "Өөрчлөлтүүд",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Өөрчлөлтийн бүртгэл"
+    "title": "Өөрчлөлтүүд"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/licence"
+    "title": "Лиценз",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/license"
   }
 }

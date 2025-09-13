@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Gukora",
+  "description": "Gukora ukoresheje \"Thunderbird Add-ons na Themes\"",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Gukora",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Gukora"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Ihindura Rya Mbere",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Igenzura",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/configuration"
   }
 }

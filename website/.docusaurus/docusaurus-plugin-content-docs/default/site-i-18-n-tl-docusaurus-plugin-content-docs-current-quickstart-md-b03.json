@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Mabilis na Panimula",
+  "description": "Mabilis na Panimula",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Mabilis na Panimula",
+    "sidebar_label": "Mabilis na Panimula"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Pag-install",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/install"
   }
 }

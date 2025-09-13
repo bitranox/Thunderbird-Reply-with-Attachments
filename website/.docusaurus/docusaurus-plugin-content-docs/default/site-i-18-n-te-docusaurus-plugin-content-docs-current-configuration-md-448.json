@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "ఆకృతీకరణ",
-  "description": "పదజాల గమనిక: UI మరియు డాక్స్‌లో ఉపయోగించే స్థిరమైన పదాల కోసం Glossary చూడండి.",
+  "title": "కన్ఫిగరేషన్",
+  "description": "Configuration",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "ఆకృతీకరణ"
+    "title": "కన్ఫిగరేషన్"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ఇన్‌స్టాలేషన్",
+    "title": "ఇన్స్టాలేషన్",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/install"
   },
   "next": {
-    "title": "వాడకం",
+    "title": "ఉపయోగం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/usage"
   }
 }

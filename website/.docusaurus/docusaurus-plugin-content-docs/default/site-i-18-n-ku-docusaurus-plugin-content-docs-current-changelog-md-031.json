@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Rojnivîsa guhertinan",
-  "description": "Di pelê CHANGELOG.md ya di depoyê de dema sererastkirinan hemû bibînin.",
+  "title": "Guhertoyê Nivîsî",
+  "description": "Guhertoyê Nivîsî",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Rojnivîsa guhertinan"
+    "title": "Guhertoyê Nivîsî"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/licence"
+    "title": "Lîsans",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/license"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Mitauro",
+  "description": "Languages",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Mitauro",
+    "sidebar_label": "Mitauro"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Kuvandudza",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Mhinduro Yezvirevo",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/glossary"
   }
 }

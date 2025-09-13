@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Сумісність",
   "description": "Compatibility",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Сумісність",
+    "sidebar_label": "Сумісність"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Використання",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Дозволи",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "മാറ്റങ്ങളുടെ രേഖ",
-  "description": "പൂർണ്ണമായ ചരിത്രം റീപോസിറ്ററിയിലെ CHANGELOG.md ഫയലിൽ കാണുക.",
+  "title": "ചേഞ്ച്‌ലോഗ്",
+  "description": "Changelog",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "മാറ്റങ്ങളുടെ രേഖ"
+    "title": "ചേഞ്ച്‌ലോഗ്"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/licence"
+    "title": "ലൈസൻസു",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/license"
   }
 }

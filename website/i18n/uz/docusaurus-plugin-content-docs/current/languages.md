@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Tilllar'
+sidebar_label: 'Tilllar'
 ---
 
-# Language Support
+## Tilllar
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Ushbu ro'yxat veb-sayt hujjatlarida tarjimalar va qo'shimcha foydalanuvchi interfeysi satrlarini aks ettiradi.
+GI tarjima vositalari yordamida katta til qo'llab-quvvatlash – 100 tildan iborat.
 
-List below is sorted by the language code.
+Quyidagi ro'yxat til kodi bo'yicha tartiblangan.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Shuningdek, ingliz tilidan tarjima qilingan [Glossary](glossary) uchun biron bir aniq UI atamalari uchun qarang.
+
+---
+
+## Til ro'yxati {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Maslahat: Sayt sarlavhasidagi til tanlovchisi orqali hujjatlarning tilini o'zgartiring (URL prefiksi tegishlicha o'zgaradi). Thunderbirdning UI tili veb-sayt tilidan mustaqil bo'lib, Thunderbird sozlamalaringizga amal qiladi.
+
+Bosh sahifa yo'nalishi
+
+- Agar sayt sizning brauzeringizning afzal tilida tuzilgan bo'lsa, loyihaning baseUrl ostidagi asosiy hujjatlarning URL-manzilini ko'rish avtomatik ravishda o'sha tilga yo'naltiradi. Ingliz tilida qolish uchun til almashtirgichdan (yoki `/en/`) foydalaning.
+
+---
+
+## Tarjimalarga Hissa qo'shish {#contribute-translations}
+
+- Tarjimada muammo topdingizmi? Iltimos, GitHub muammosi yoki PR oching.
+- Ushbu `website/docs/` ostida ingliz manbaida tahrirlar qilishni afzal ko'ring; saqlovchining asboblari boshqa tillarga yangilanishlarni joylashtiradi.
+  Ingliz tili hujjatlar uchun haqiqat manbai; tarjima yangilanishlari saqlovchining ish jarayonida EN dan olinadi.
+
+### Bosh sahifa, Navigatsiya, Pastki foydalanuvchi interfeysi
+
+- Ushbu satrlar `website/i18n/en/code.json` da joylashgan va saqlovchi vazifasi orqali barcha tillarga tarjima qilingan:
+  - `make translate_web_index` ( `OPENAI_API_KEY` talab qiladi)
+  - `OPTS="--locales de,fr"` bilan tillarni cheklang; mavjud qiymatlarni `OPTS="--force"` bilan ustun olib qo'ying.
+
+### Veb-sayt va Foydalanuvchi interfeysi {#website-vs-ui}
+
+- Veb-sayt tili va qo'shimcha foydalanuvchi interfeysi tili mustaqil; til tanlovchisi hujjatlarni faqat o'zgartiradi. Thunderbirdning foydalanuvchi interfeysi tili Thunderbird sozlamalaringizga amal qiladi.
+
+---

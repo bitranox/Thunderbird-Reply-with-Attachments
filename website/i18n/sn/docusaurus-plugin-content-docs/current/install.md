@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Kuisirwa'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Kuisirwa'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Kuisirwa kuburikidza ne "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimum Thunderbird Version
+Iyi add‑on inotsigira Thunderbird **128 ESR kana kuti zvichangobva**. Shanduro dzekare hadzitsigirwi.
+:::
 
----
+Iyi ndiyo nzira inokurudzirwa yekuisa. Add‑ons akaiswa kubva kuATN (addons.thunderbird.net) anowana magadziridzo otomatiki. LOCAL/dev installs hadzidzokorore otomatiki.
 
-## Local installation in Thunderbird
+- Minimum Thunderbird version: 128 ESR kana kuti zvichangobva.
 
-### Download the XPI file
+1. MuThunderbird, enda ku **Tools > Add-ons and Themes**.
+2. Tsvaga "reply with attachments".
+3. Wedzera add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Kana uvhure peji readd-on rakananga: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Kuisirwa kwech manually kubva kuXPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Dhawunirodha faira reXPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Enda ku [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Dhawunirodha shanduro ichangobva yeadd-on sefaira reXPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Isa muThunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Vhura Thunderbird.
+2. Enda ku **Tools > Add-ons and Themes**.
+3. Mu **Add-ons Manager**, dzvanya pa icon yemachipisi kumusoro-kurudyi.
+4. Sarudza **Install Add-on From File…** kubva mumenu.
+5. Sarudza faira rakadhawunirwa `reply_with_attachments-x.y.z-tb.xpi`.
+6. Simbisa kuisirwa pakumbira.
 
 ---
+
+## Kuisirwa kwekuvandudza {#installation-for-development}
+
+### Dhawunirodha repository {#download-the-repository}
+
+1. Dhawunirodha shanduro ichangobva yeGitHub repository.
+2. Mhanya `make help` kuti uwane rumwe ruzivo.
+
+### Isa muThunderbird {#install-in-thunderbird-dev}
+
+1. Vhura Thunderbird.
+2. Enda ku **Tools > Add-ons and Themes**.
+3. Mu **Add-ons Manager**, dzvanya pa icon yemachipisi kumusoro-kurudyi.
+4. Sarudza **Install Add-on From File…** kubva mumenu.
+5. Sarudza faira rakabudiswa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Simbisa kuisirwa pakumbira.
+
+Cherechedzo: Kana Thunderbird isingagamuchire `.zip` pamasystem enyu, chinja zita rayo ku `.xpi` uye edza “Install Add‑on From File…” zvekare.
+
+### Kupi kuwana LOCAL ZIP {#where-local-zip}
+
+- Kutanga, pakete add‑on: mhanya `make pack` mu repository root.
+- Mushure mepaketi, tsvaga “LOCAL” zip mu repository root (semuenzaniso, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Usati wapaketi zvekare kuti uedze, bampira shanduro mu `sources/manifest_ATN.json` uye `sources/manifest_LOCAL.json`.
+
+---
+
+## Dzima, Bvisa, uye Magadziridzo {#disable-uninstall-updates}
+
+- Dzima: Thunderbird → Tools → Add‑ons and Themes → tsvaga add‑on → toggle off.
+- Bvisa: maonero akafanana → menyu yemadhiri matatu → Bvisa.
+- Magadziridzo: ATN installs anozvitsvaga dheta pa shanduro itsva dzinotenderwa. LOCAL/dev installs hadzidzokorore otomatiki; reinstall imwe LOCAL build manually.
+- Bvisa marongero zvachose: ona [Privacy → Data removal](privacy#data-removal).
+
+Ona zvakare
+
+- [Quickstart](quickstart)

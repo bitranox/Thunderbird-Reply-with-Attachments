@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Rýchly začiatok",
+  "description": "Rýchly začiatok",
   "source": "@site/i18n/sk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Rýchly začiatok",
+    "sidebar_label": "Rýchly začiatok"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Inštalácia",
     "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/install"
   }
 }

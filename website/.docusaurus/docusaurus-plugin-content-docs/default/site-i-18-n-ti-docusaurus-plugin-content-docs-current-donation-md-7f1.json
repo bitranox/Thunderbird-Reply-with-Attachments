@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donate",
-  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "title": "መስጢር",
+  "description": "መስጢር",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donate",
-    "sidebar_label": "Donate"
+    "title": "መስጢር",
+    "sidebar_label": "መስጢር"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Privacy",
+    "title": "መዝጊት",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/privacy"
   },
   "next": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/licence"
+    "title": "መዋቅር",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/license"
   }
 }

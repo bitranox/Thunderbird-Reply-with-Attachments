@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "देणगी",
-  "description": "आपल्याला Reply with Attachments आवडत असेल आणि विकासाला पाठिंबा द्यायचा असेल तर येथे देणगी देऊ शकता:",
+  "title": "दान करा",
+  "description": "Donate",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "देणगी",
-    "sidebar_label": "देणगी"
+    "title": "दान करा",
+    "sidebar_label": "दान करा"
   },
   "sidebar": "docs",
   "previous": {
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "परवाना",
-    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/license"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Xüsusiyyətlər",
-  "description": "Xüsusiyyətlər",
+  "description": "Features",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "İlk addım",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/quickstart"
   }
 }

@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privaciteti'
+sidebar_label: 'Privaciteti'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privaciteti
 
-What the add‑on does:
+:::note Asnjë telemetri; asnjë rrjet në sfond
+Ky add-on **nuk** mbledh analitika/telemetri dhe **nuk** bën kërkesa rrjeti në sfond. Çdo akses në rrjet ndodh vetëm kur klikoni në një lidhje të jashtme (Docs, GitHub, Donations).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments nuk mbledh analitika ose telemetri dhe nuk dërgon të dhënat tuaja askund.
 
-What the add‑on does not do:
+Çfarë bën add-oni:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Lexon të dhënat e etiketës dhe skedarët nga mesazhi origjinal lokal (Thunderbird API) për t'i bashkëngjitur me përgjigjen tuaj.
+- Ruaj opsionet tuaja (listën e zezë, konfirmimin, përgjigjen paraprake) në ruajtjen lokale të Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Çfarë nuk bën add-oni:
 
-## Content Security Policy (CSP)
+- Asnjë ndjekje, analitika, raportim crash-i, ose regjistrim të largët.
+- Asnjë kërkesë rrjeti në sfond, përveç kur ju hapni në mënyrë eksplicite lidhje të jashtme (Docs, GitHub, Donations).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Lejet dokumentohen në faqen [Lejet](permissions).
+
+---
+
+## Politika e Sigurisë së Përmbajtjes (CSP) {#content-security-policy-csp}
+
+Opsionet dhe faqet e popup-it shmangin skriptet e brendshme. Të gjitha JavaScript ngarkohet nga skedarë të dorëzuar me add-onin për të përmbushur CSP të rreptë në Thunderbird. Nëse përfshini fragmente kodi në dokumente, ato janë vetëm shembuj dhe nuk ekzekutohen nga add-oni.
+
+---
+
+## Ruajtja e të dhënave {#data-storage}
+
+- Preferencat e përdoruesit (lista e zezë, ndërrimi i konfirmimit, përgjigja paraprake) ruhen në `storage.local` të Thunderbird për këtë add-on.
+- Asnjë sinkronizim në cloud nuk bëhet nga add-oni.
+
+---
+
+## Rrjeti {#network}
+
+- Add-oni nuk kryen asnjë aktivitet rrjeti në sfond.
+- Çdo akses në rrjet ndodh vetëm kur klikoni në lidhje (Docs, GitHub, Donations) ose kur Thunderbird vetë kryen operacione normale që nuk lidhen me këtë add-on.
+
+---
+
+## Shkëputja e të dhënave {#data-removal}
+
+- Çinstalimi i add-onit heq kodin e tij.
+- Cilësimet ruhen vetëm në `storage.local` të Thunderbird dhe hiqen në çinstalim; nuk përdoret asnjë ruajtje e jashtme.
+- Rinisni cilësimet pa çinstalim:
+  - Faqja e opsioneve: përdorni “Rivendos në parazgjedhje” për listën e zezë dhe paralajmërimin e listës së zezë.
+  - Të avancuara: në Thunderbird → Veglat → Veglat për Zhvillues → Debug Add-ons, hapni magazinën e zgjerimit dhe pastroni çelësat nëse është e nevojshme.

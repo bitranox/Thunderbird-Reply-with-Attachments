@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Hiter začetek",
+  "description": "Hiter začetek",
   "source": "@site/i18n/sl/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Hiter začetek",
+    "sidebar_label": "Hiter začetek"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Namestitev",
     "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/install"
   }
 }

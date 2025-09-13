@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Thuật ngữ i18n",
-  "description": "Các thuật ngữ chuẩn dùng trong UI và tài liệu của tiện ích. Dùng chúng để giữ bản dịch thống nhất giữa các locale.",
+  "title": "Thuật ngữ",
+  "description": "Glossary",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Thuật ngữ i18n",
+    "title": "Thuật ngữ",
     "sidebar_label": "Thuật ngữ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ngôn ngữ",
+    "title": "Các ngôn ngữ",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/languages"
   },
   "next": {

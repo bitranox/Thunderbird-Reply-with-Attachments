@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "ہم آہنگی",
   "description": "Compatibility",
   "source": "@site/i18n/ks/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "ہم آہنگی",
+    "sidebar_label": "ہم آہنگی"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "استعمال",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "اجازتیں",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/permissions"
   }
 }

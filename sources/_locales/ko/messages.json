@@ -21,13 +21,39 @@
     "message": "현재 설정할 옵션이 없습니다."
   },
   "uiSupport": {
-    "message": "이 부가 기능이 마음에 드시나요? 작은 기부로 지원해 주세요:"
+    "message": "이 부가 기능이 마음에 드시나요? 소액 기부로 응원해 주세요:"
+  },
+  "uiRateATNText": {
+    "message": "ATN에서 평가해 주세요"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "지금 기부하기"
   },
+  "uiIDonated": {
+    "message": "기부했습니다"
+  },
+  "uiDonateSnoozed": {
+    "message": "감사합니다! 90일 동안 기부 안내가 숨겨집니다."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1까지 숨김",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "기부 안내 다시 표시"
+  },
+  "uiDonateRestored": {
+    "message": "기부 안내가 다시 표시됩니다."
+  },
   "uiGithubText": {
-    "message": "버그 신고 또는 기타 문의는 다음을 방문해 주세요:"
+    "message": "버그 신고나 기타 문의는 제"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub 페이지"
@@ -42,10 +68,10 @@
     "message": "파일 이름 블랙리스트(glob 패턴)"
   },
   "uiBlacklistHelp": {
-    "message": "이 패턴 중 하나와 이름이 일치하는 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴을 입력하세요. 예: *.png, smime.*, *.p7s"
+    "message": "이 패턴들 중 하나와 이름이 일치하는 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴을 입력하세요. 예: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "블랙리스트로 인해 첨부 파일이 제외되면 경고"
+    "message": "블랙리스트로 첨부 파일이 제외될 때 경고"
   },
   "uiSave": {
     "message": "저장"
@@ -66,10 +92,10 @@
     "message": "확인"
   },
   "uiConfirmLabel": {
-    "message": "첨부 파일을 추가하기 전에 묻기"
+    "message": "첨부 파일 추가 전에 묻기"
   },
   "uiConfirmHelp": {
-    "message": "첨부 파일이 실제로 추가되는 경우에만 작은 확인 대화상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니오."
+    "message": "실제로 첨부 파일이 추가되는 경우에만 작은 확인 대화상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니요."
   },
   "confirmAddOne": {
     "message": "첨부 파일 추가: $1?",
@@ -97,7 +123,7 @@
     "message": "예"
   },
   "confirmNo": {
-    "message": "아니오"
+    "message": "아니요"
   },
   "warnBlacklistTitle": {
     "message": "블랙리스트로 제외됨"
@@ -121,12 +147,24 @@
     "message": "예"
   },
   "uiConfirmDefaultNo": {
-    "message": "아니오"
+    "message": "아니요"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "문서:"
+  },
+  "uiDocsButton": {
+    "message": "문서 열기"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

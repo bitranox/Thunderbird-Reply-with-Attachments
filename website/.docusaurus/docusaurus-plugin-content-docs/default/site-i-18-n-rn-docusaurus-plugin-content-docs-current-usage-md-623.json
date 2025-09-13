@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Gukoresha",
   "description": "Usage",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Gukoresha",
+    "sidebar_label": "Gukoresha"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Igenzura",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Ihuigwanire",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Eiginleikar",
-  "description": "Eiginleikar",
+  "description": "Features",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Hröðufyrirkomulag",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/quickstart"
   }
 }

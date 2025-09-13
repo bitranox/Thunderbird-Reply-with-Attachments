@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "భాషలు",
-  "description": "AI అనువాద సాధనాల సహాయంతో విస్తృత భాషా మద్దతు — 103 భాషలు.",
+  "description": "Languages",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "డెవలప్మెంట్",
+    "title": "అభివృద్ధి",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/development"
   },
   "next": {
-    "title": "పదకోశం",
+    "title": "సంగ్రహం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/glossary"
   }
 }

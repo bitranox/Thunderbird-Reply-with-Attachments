@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "سازگاری",
-  "description": "سازگاری",
+  "description": "Compatibility",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "شیوه استفاده",
+    "title": "استفاده",
     "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/usage"
   },
   "next": {

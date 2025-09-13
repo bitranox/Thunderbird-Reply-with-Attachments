@@ -21,13 +21,39 @@
     "message": "Saat ini tidak ada opsi yang dapat dikonfigurasi."
   },
   "uiSupport": {
-    "message": "Suka pengaya ini? Dukung saya dengan kontribusi kecil:"
+    "message": "Apakah Anda menyukai pengaya ini? Mohon dukung saya dengan kontribusi kecil:"
+  },
+  "uiRateATNText": {
+    "message": "Silakan beri penilaian di ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Donasi sekarang"
   },
+  "uiIDonated": {
+    "message": "Saya berdonasi"
+  },
+  "uiDonateSnoozed": {
+    "message": "Terima kasih! Permintaan donasi disembunyikan selama 90 hari."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Disembunyikan hingga $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Tampilkan Donasi lagi"
+  },
+  "uiDonateRestored": {
+    "message": "Permintaan donasi terlihat lagi."
+  },
   "uiGithubText": {
-    "message": "Untuk laporan bug atau pertanyaan lain, silakan kunjungi"
+    "message": "Untuk laporan bug atau pertanyaan lainnya, silakan kunjungi"
   },
   "uiGithubLinkLabel": {
     "message": "Halaman GitHub"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Daftar hitam nama file (pola glob)"
+    "message": "Daftar blokir nama berkas (pola glob)"
   },
   "uiBlacklistHelp": {
-    "message": "File yang namanya cocok dengan salah satu pola ini tidak akan pernah dilampirkan secara otomatis. Satu pola per baris. Contoh: *.png, smime.*, *.p7s"
+    "message": "Berkas yang namanya cocok dengan salah satu pola ini tidak akan pernah dilampirkan secara otomatis. Satu pola per baris. Contoh: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Peringatkan jika lampiran dikecualikan oleh daftar hitam"
+    "message": "Peringatkan jika lampiran dikecualikan oleh daftar blokir"
   },
   "uiSave": {
     "message": "Simpan"
@@ -54,22 +80,22 @@
     "message": "Menyimpan…"
   },
   "uiReset": {
-    "message": "Atur ulang ke bawaan"
+    "message": "Setel ulang ke bawaan"
   },
   "uiSaved": {
     "message": "Tersimpan."
   },
   "uiResetDone": {
-    "message": "Direset."
+    "message": "Disetel ulang."
   },
   "uiConfirmHeader": {
     "message": "Konfirmasi"
   },
   "uiConfirmLabel": {
-    "message": "Minta konfirmasi sebelum menambahkan lampiran"
+    "message": "Tanyakan sebelum menambahkan lampiran"
   },
   "uiConfirmHelp": {
-    "message": "Dialog konfirmasi kecil akan muncul hanya ketika lampiran benar-benar akan ditambahkan. Papan ketik: Y atau J = Ya; N atau Esc = Tidak."
+    "message": "Kotak dialog konfirmasi kecil hanya muncul ketika lampiran benar-benar akan ditambahkan. Papan ketik: Y atau J = Ya; N atau Esc = Tidak."
   },
   "confirmAddOne": {
     "message": "Tambahkan lampiran: $1?",
@@ -100,13 +126,13 @@
     "message": "Tidak"
   },
   "warnBlacklistTitle": {
-    "message": "Dikecualikan oleh daftar hitam"
+    "message": "Dikecualikan oleh daftar blokir"
   },
   "warnBlacklistIntro": {
-    "message": "File berikut tidak akan dilampirkan secara otomatis:"
+    "message": "Berkas berikut tidak akan dilampirkan secara otomatis:"
   },
   "warnColFile": {
-    "message": "File"
+    "message": "Berkas"
   },
   "warnColPattern": {
     "message": "Pola"
@@ -124,9 +150,21 @@
     "message": "Tidak"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentasi:"
+  },
+  "uiDocsButton": {
+    "message": "Buka Dokumentasi"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

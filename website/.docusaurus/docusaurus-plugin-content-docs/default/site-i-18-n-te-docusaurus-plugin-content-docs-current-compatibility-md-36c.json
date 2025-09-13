@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "అనుకూలత",
-  "description": "అనుకూలత",
+  "title": "సామ్యం",
+  "description": "Compatibility",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "అనుకూలత",
-    "sidebar_label": "అనుకూలత"
+    "title": "సామ్యం",
+    "sidebar_label": "సామ్యం"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "వాడకం",
+    "title": "ఉపయోగం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/usage"
   },
   "next": {

@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "คำศัพท์ i18n",
-  "description": "คำศัพท์มาตรฐานที่ใช้ใน UI และเอกสารของส่วนเสริม ใช้คำเหล่านี้เพื่อให้การแปลสอดคล้องกันระหว่างแต่ละภาษา",
+  "title": "คำศัพท์",
+  "description": "คำศัพท์",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "คำศัพท์ i18n",
+    "title": "คำศัพท์",
     "sidebar_label": "คำศัพท์"
   },
   "sidebar": "docs",

@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Configuratie",
+  "description": "Configuratie",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Configuratie"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Installatie",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Gebruik",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/usage"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Kushandisa",
   "description": "Usage",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Kushandisa",
+    "sidebar_label": "Kushandisa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Kugadzirisa",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Kuwirirana",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ਡਿਵੈਲਪਮੈਂਟ",
-  "description": "ਡਿਵੈਲਪਮੈਂਟ ਗਾਈਡ",
+  "title": "ਵਿਕਾਸ",
+  "description": "Development Guide",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "ਡਿਵੈਲਪਮੈਂਟ",
-    "sidebar_label": "ਡਿਵੈਲਪਮੈਂਟ"
+    "title": "ਵਿਕਾਸ",
+    "sidebar_label": "ਵਿਕਾਸ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਅਧਿਕਾਰ",
+    "title": "ਪ੍ਰੰਨਾਲੀਆਂ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/permissions"
   },
   "next": {

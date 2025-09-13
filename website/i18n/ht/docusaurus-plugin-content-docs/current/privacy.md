@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Prive'
+sidebar_label: 'Prive'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Prive
 
-What the add‑on does:
+:::note Pa gen telemetry; pa gen rezo nan background
+Aneks sa a **pa** kolekte analiz/telemetry e li **pa** fè demann rezo nan background. Nenpòt aksè rezo fèt sèlman lè ou klike sou yon lyen ekstèn (Dokiman, GitHub, Don).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments pa kolekte analiz oswa telemetry e li pa voye done ou nenpòt kote.
 
-What the add‑on does not do:
+Sa ane ks sa a fè:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Li metadata ak fichiers atachman yo soti nan mesaj orijinal la lokalman (Thunderbird API) pou atache yo nan repons ou.
+- Li estoke opsyon ou yo (blacklist, konfimasyon, repons default) nan depo lokal Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Sa ane ks sa a pa fè:
 
-## Content Security Policy (CSP)
+- Pa gen swiv, analiz, rapò sou plant, oswa logging aleka.
+- Pa gen demann rezo nan background, eksepte lè ou eksprime ouvè lyen ekstèn (Dokiman, GitHub, Don).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Otorizasyon yo dokimante sou paj [Otorizasyon](permissions).
+
+---
+
+## Politique Sekirite Kontni (CSP) {#content-security-policy-csp}
+
+Opsyon yo ak paj popup yo evite scripts an ligne. Tout JavaScript chaje soti nan fichiers ki ak ane ks sa a pou konfòme ak CSP strik nan Thunderbird. Si ou enkli kòd nan dokiman, yo se sèlman egzanp e yo pa egzekite pa ane ks la.
+
+---
+
+## Estokaj done {#data-storage}
+
+- Preferans itilizatè yo (blacklist, ot Switch konfimasyon, repons default) estoke nan `storage.local` Thunderbird pou ane ks sa a.
+- Pa gen senkronizasyon nan nwaj ki fèt pa ane ks la.
+
+---
+
+## Rezo {#network}
+
+- Ane ks la pa fè okenn aktivite rezo nan background.
+- Nenpòt aksè rezo fèt sèlman lè ou klike sou lyen (Dokiman, GitHub, Don) oswa lè Thunderbird li menm fè operasyon nòmal ki pa gen rapò ak ane ks sa a.
+
+---
+
+## Retire done {#data-removal}
+
+- Désinstaller ane ks la retire kòd li.
+- Anviwònman yo kenbe sèlman nan `storage.local` Thunderbird e yo retire lè yo désinstaller; pa gen okenn depo ekstèn ki itilize.
+- Reyajiste anviwònman san ou pa désinstaller:
+  - Paj opsyon: itilize "Reyajiste nan default" pou blacklist ak avètisman blacklist.
+  - Avanse: nan Thunderbird → Zouti → Zouti Devlopè → Debug Add‑ons, ouvri depo ekstansyon an e klere kle si sa nesesè.
+
+---

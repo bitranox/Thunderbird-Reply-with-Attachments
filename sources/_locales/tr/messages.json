@@ -3,7 +3,7 @@
     "message": "Eklerle Yanıtla"
   },
   "extDescription": {
-    "message": "E-posta yanıtlarında orijinal ekleri otomatik olarak dahil edin."
+    "message": "E-posta yanıtlarına özgün ekleri otomatik olarak ekler."
   },
   "composeTitle": {
     "message": "Eklerle Yanıtla"
@@ -21,13 +21,39 @@
     "message": "Şu anda yapılandırılacak seçenek yok."
   },
   "uiSupport": {
-    "message": "Bu eklentiyi beğendiniz mi? Küçük bir katkıyla beni destekleyin:"
+    "message": "Bu eklentiyi beğendiniz mi? Lütfen küçük bir katkıyla beni destekleyin:"
+  },
+  "uiRateATNText": {
+    "message": "Lütfen ATN'de değerlendirin"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Şimdi bağış yapın"
   },
+  "uiIDonated": {
+    "message": "Bağış yaptım"
+  },
+  "uiDonateSnoozed": {
+    "message": "Teşekkürler! Bağış istemi 90 gün boyunca gizlendi."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 tarihine kadar gizli",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Bağış istemini yeniden göster"
+  },
+  "uiDonateRestored": {
+    "message": "Bağış istemi yeniden görünür."
+  },
   "uiGithubText": {
-    "message": "Hata raporları veya diğer sorular için lütfen şurayı ziyaret edin:"
+    "message": "Hata raporları veya diğer sorular için lütfen şunu ziyaret edin:"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub sayfası"
@@ -42,7 +68,7 @@
     "message": "Dosya adlarının kara listesi (glob desenleri)"
   },
   "uiBlacklistHelp": {
-    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar asla otomatik olarak eklenmez. Her satıra bir desen. Örnekler: *.png, smime.*, *.p7s"
+    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar asla otomatik olarak eklenmez. Satır başına bir desen. Örnekler: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Ekler kara liste nedeniyle hariç tutulursa uyar"
@@ -69,7 +95,7 @@
     "message": "Ekleri eklemeden önce sor"
   },
   "uiConfirmHelp": {
-    "message": "Küçük bir onay iletişim kutusu yalnızca gerçekten ekler ekleneceğinde görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
+    "message": "Küçük bir onay iletişim kutusu yalnızca gerçekten ekler eklenecekse görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
   },
   "confirmAddOne": {
     "message": "Eki ekle: $1?",
@@ -124,9 +150,21 @@
     "message": "Hayır"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Belgeler:"
+  },
+  "uiDocsButton": {
+    "message": "Belgeleri Aç"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Iilwimi",
+  "description": "Iilwimi",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Iilwimi",
+    "sidebar_label": "Iilwimi"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Ukuthuthukiswa",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Iglossari",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/glossary"
   }
 }

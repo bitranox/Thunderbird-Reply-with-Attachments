@@ -3,37 +3,63 @@
     "message": "Тиркемелер менен жооп берүү"
   },
   "extDescription": {
-    "message": "Электрондук катка жооп бергенде баштапкы тиркемелерди автоматтык түрдө кошот."
+    "message": "Жооп берип жатканда түпнуска тиркемелерди автоматтык түрдө кошот."
   },
   "composeTitle": {
     "message": "Тиркемелер менен жооп берүү"
   },
   "optionsTitle": {
-    "message": "Тиркемелер менен жооп берүү — Орнотуулар"
+    "message": "Тиркемелер менен жооп берүү — Параметрлер"
   },
   "confirmTitle": {
-    "message": "Тиркемелерди тастыктоо"
+    "message": "Тиркемелерди ырастоо"
   },
   "uiHeader": {
     "message": "Тиркемелер менен жооп берүү"
   },
   "uiNoOptions": {
-    "message": "Азырынча орнотуулар жок."
+    "message": "Азырынча ырастоого параметрлер жок."
   },
   "uiSupport": {
-    "message": "Бул кошумча сизге жактыбы? Мени кичине салым менен колдоңуз:"
+    "message": "Бул кошумча сизге жактыбы? Сураныч, кичинекей салым менен мени колдоп коюңуз:"
+  },
+  "uiRateATNText": {
+    "message": "ATN сайтында баа бериңиз"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Азыр кайрымдуулук кылыңыз"
+    "message": "Кайрымдуулук жасаңыз"
+  },
+  "uiIDonated": {
+    "message": "Мен кайрымдуулук жасадым"
+  },
+  "uiDonateSnoozed": {
+    "message": "Рахмат! Кайрымдуулук суранычы 90 күнгө жашырылды."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 чейин жашырылган",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Кайрымдуулук суранычын кайра көрсөтүү"
+  },
+  "uiDonateRestored": {
+    "message": "Кайрымдуулук суранычы кайрадан көрүнүп турат."
   },
   "uiGithubText": {
-    "message": "Ката тууралуу билдирүүлөр же башка суроолор үчүн, сураныч, менин"
+    "message": "Ката тууралуу билдирүү же башка суроолор үчүн менин"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub барагым"
+    "message": "GitHub баракчама"
   },
   "iconAlt": {
-    "message": "Тиркемелер менен жооп берүүнүн сүрөтчөсү"
+    "message": "Тиркемелер менен жооп берүүнүн иконкасы"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "Файл аттарынын кара тизмеси (glob үлгүлөрү)"
   },
   "uiBlacklistHelp": {
-    "message": "Аттары бул үлгүлөрдүн кайсы бирине дал келген файлдар эч качан автоматтык түрдө тиркелбейт. Ар бир сапка бир үлгү. Мисалдар: *.png, smime.*, *.p7s"
+    "message": "Аталышы бул үлгүлөрдүн кайсы бирине дал келген файлдар эч качан автоматтык түрдө кошулбайт. Ар бир сапка бирден үлгү. Мисалдар: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Эгер тиркемелер кара тизме боюнча четтетилсе, эскерт"
+    "message": "Тиркемелер кара тизмеге ылайык кошулбай калса, эскертүү"
   },
   "uiSave": {
     "message": "Сактоо"
@@ -54,7 +80,7 @@
     "message": "Сакталууда…"
   },
   "uiReset": {
-    "message": "Баштапкы абалга кайтаруу"
+    "message": "Демейки абалга кайтаруу"
   },
   "uiSaved": {
     "message": "Сакталды."
@@ -63,13 +89,13 @@
     "message": "Кайтарылды."
   },
   "uiConfirmHeader": {
-    "message": "Тастыктоо"
+    "message": "Ырастоо"
   },
   "uiConfirmLabel": {
-    "message": "Тиркемелерди кошордун алдында сура"
+    "message": "Тиркемелерди кошоордо сурасын"
   },
   "uiConfirmHelp": {
-    "message": "Тиркемелер чындап кошула турган учурда гана чакан тастыктоо диалогу чыгат. Баскычтоп: Y же J = Ооба; N же Esc = Жок."
+    "message": "Чынында тиркемелер кошула турган учурда гана чакан ырастоо терезеси чыгат. Клавиатура: Y же J = Ооба; N же Esc = Жок."
   },
   "confirmAddOne": {
     "message": "Тиркеме кошулсунбу: $1?",
@@ -100,10 +126,10 @@
     "message": "Жок"
   },
   "warnBlacklistTitle": {
-    "message": "Кара тизме боюнча четтетилди"
+    "message": "Кара тизмеге ылайык кошулбайт"
   },
   "warnBlacklistIntro": {
-    "message": "Төмөнкү файлдар автоматтык түрдө тиркелбейт:"
+    "message": "Төмөнкү файлдар автоматтык түрдө кошулбайт:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -112,7 +138,7 @@
     "message": "Үлгү"
   },
   "warnOk": {
-    "message": "OK"
+    "message": "ОК"
   },
   "uiConfirmDefaultHeader": {
     "message": "Демейки жооп"
@@ -124,9 +150,21 @@
     "message": "Жок"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Документация:"
+  },
+  "uiDocsButton": {
+    "message": "Документацияны ачуу"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

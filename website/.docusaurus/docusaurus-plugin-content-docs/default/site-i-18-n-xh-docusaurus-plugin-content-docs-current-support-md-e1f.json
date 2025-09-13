@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Nxhaso",
+  "description": "FAQ",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Nxhaso",
+    "sidebar_label": "Nxhaso"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Iglossari",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Ubumfihlo",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/privacy"
   }
 }

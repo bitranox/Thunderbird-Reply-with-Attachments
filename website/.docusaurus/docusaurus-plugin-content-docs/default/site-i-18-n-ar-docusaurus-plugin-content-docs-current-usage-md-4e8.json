@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "الاستخدام",
-  "description": "الاستخدام",
+  "description": "Usage",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "الإعداد",
+    "title": "إعدادات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/configuration"
   },
   "next": {
-    "title": "التوافقية",
+    "title": "التوافق",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/compatibility"
   }
 }

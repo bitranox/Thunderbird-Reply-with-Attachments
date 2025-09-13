@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "تبرع",
-  "description": "إذا أعجبتك إضافة «الرد مع المرفقات» وتود دعم تطويرها، يمكنك التبرع هنا:",
+  "description": "تبرع",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
     "title": "تبرع",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/privacy"
   },
   "next": {
-    "title": "الترخيص",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/licence"
+    "title": "ترخيص",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/license"
   }
 }

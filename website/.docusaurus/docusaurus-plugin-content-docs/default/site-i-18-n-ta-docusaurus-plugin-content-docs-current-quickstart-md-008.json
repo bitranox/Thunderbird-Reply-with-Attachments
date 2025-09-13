@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "வேகத் தொடக்கம்",
-  "description": "1. Thunderbird Add‑ons இலிருந்து இணைப்பை (add‑on) நிறுவவும்.",
+  "title": "உதயகாலம்",
+  "description": "உதயகாலம்",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "வேகத் தொடக்கம்",
-    "sidebar_label": "வேகத் தொடக்கம்"
+    "title": "உதயகாலம்",
+    "sidebar_label": "உதயகாலம்"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "அம்சங்கள்",
+    "title": "விசேஷங்கள்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/features"
   },
   "next": {

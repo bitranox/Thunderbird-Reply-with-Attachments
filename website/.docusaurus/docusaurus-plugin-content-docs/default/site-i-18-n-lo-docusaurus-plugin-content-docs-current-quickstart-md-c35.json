@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
+  "description": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
+    "sidebar_label": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ຄຸນລັກສະນະ",
+    "title": "ลักษณะเด่น",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "ການຕິດຕັ້ງ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/install"
   }
 }

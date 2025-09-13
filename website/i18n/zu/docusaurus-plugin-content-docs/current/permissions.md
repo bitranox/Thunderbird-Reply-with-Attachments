@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'Izimvume'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## Izimvume
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note Izimvume ezincane
+Akukho mvume ye-host (web) efunwayo ngalokhu kuhlanganisa. Lokhu kuhlanganisa akuqoqi i-telemetry noma kwenza izicelo zenethiwekhi zomhla. Bheka [Ubumfihlo](privacy).
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+Lokhu kuhlanganisa kufuna kuphela ibhande elincane, elihlaselayo lezi zimvume. Kungani ngakunye kudingeka:
+
+- `compose`: buka imicimbi yokuhlanganisa, bhala/faka izixhumi kwi-reply yakho.
+- `messagesRead`: funda imininingwane futhi ukhiphe amafayela ezixhumi ukusuka emyalezweni wokuqala.
+- `scripting`: faka idialogi yokconfirm inhloko encane uma ivuliwe.
+- `windows`: vula i-pop-up encane yokconfirm njengokugcina uma imiyalezo iyaphutheka.
+- `sessions`: gcina iflegi ye-per-tab ukuze ugweme ukukhiqiza kabusha.
+- `storage`: phila izinketho (uhlu olumnyama, ukuguqulwa kokugunyaza, impendulo ejwayelekile).
+- `tabs`: imiyalezo eqondile kwi-tab yokuhlanganisa yezicelo zokugunyaza.
+
+Izincwadi ezengeziwe:
+
+- Akukho mvume ye-host (web origins) efunwayo ngalokhu kuhlanganisa.
+- I- `tabs` mvume isetshenziselwa kuphela ukujolisa kwi-tab yokuhlanganisa lapho kuhlelwa isikhumbuzo sokukhethwa; ayisetshenziselwa ukufunda umlando noma ukuhamba ama-ikhasi.
+
+Lezi zibhalwe emthonjeni futhi zihlolwe ku-CI. Lokhu kuhlanganisa akuqoqi i-telemetry.
+
+---
+
+### Isifinyezo (izimvume → injongo) {#permissions-summary}
+
+| Imvume          | Kungani idingeka                                                                  |
+| --------------- | --------------------------------------------------------------------------------- |
+| `compose`       | Buka imicimbi yokuhlanganisa; bhala futhi faka izixhumi kwi-reply yakho.          |
+| `messagesRead`  | Bheka izixhumi ezisemlayezweni wokuqala futhi uthole idatha yefayela.             |
+| `scripting`     | Faka/uhlele i-UI elula yokugunyazisa uma ivuliwe.                                 |
+| `windows`       | I-pop-up yokuphuthuma uma imiyalezo iphuthika (ngokwejwayelekile).                |
+| `sessions`      | Gcina iflegi ye-per-tab ukuze uvimbele ukukhiqiza kabusha.                        |
+| `storage`       | Phila izinketho (uhlu olumnyama, ukuguqulwa kokugunyaza, impendulo ejwayelekile). |
+| `tabs`          | Imiyalezo eqondile kwi-tab yokuhlanganisa yezicelo zokugunyaza.                   |
+| (mvume ye-host) | Akukho — lokhu kuhlanganisa akuceli izizinda ze-web.                              |
+
+---
+
+## Akufunwanga {#not-requested}
+
+- `compose.save`, `compose.send` — lokhu kuhlanganisa akugcina noma kuthumele i-imeyili egameni lakho.
+
+Bheka futhi: [Ubumfihlo](privacy) — akukho i-telemetry, akukho nethiwekhi yangaphandle, kuphela izixhumanisi eziqalwe ngumsebenzisi.
+
+---

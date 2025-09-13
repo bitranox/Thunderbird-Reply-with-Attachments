@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "ਸਥਾਪਨਾ",
-  "description": "Thunderbird ਵਿੱਚ ਸਥਾਪਨਾ — (ਸਿਫ਼ਾਰਸ਼ੀ)",
+  "title": "ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "ਸਥਾਪਨਾ",
+    "title": "ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ",
     "slug": "/install",
-    "sidebar_label": "ਸਥਾਪਨਾ"
+    "sidebar_label": "ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+    "title": "ਕੁਇਕਸਟਾਰਟ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/quickstart"
   },
   "next": {
-    "title": "ਸੰਰਚਨਾ",
+    "title": "ਕਨਫਗਰੇਸ਼ਨ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/configuration"
   }
 }

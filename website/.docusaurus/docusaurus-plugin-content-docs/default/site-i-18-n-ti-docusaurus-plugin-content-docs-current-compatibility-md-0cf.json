@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "ውሳኔ",
   "description": "Compatibility",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "ውሳኔ",
+    "sidebar_label": "ውሳኔ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "ተግባር",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "ፍቓድታት",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/permissions"
   }
 }

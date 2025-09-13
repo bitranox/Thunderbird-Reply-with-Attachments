@@ -1,117 +1,147 @@
 ---
 id: languages
-title: Idiomas
-sidebar_label: Idiomas
+title: 'Idiomas'
+sidebar_label: 'Idiomas'
 ---
 
-# Compatibilidad de idiomas
+---
 
-Amplia compatibilidad gracias a herramientas de traducción con IA: 103 idiomas.
+## Idiomas
 
-La siguiente lista está ordenada por código de idioma.
+Esta lista refleja tanto las traducciones de la documentación del sitio web como las cadenas de la interfaz de usuario de los complementos.
+Compatibilidad masiva de idiomas gracias a las herramientas de traducción con IA — cubre 100 idiomas.
 
-Consulta también el [Glosario](glossary) para los términos de UI canónicos.
+La lista a continuación está ordenada por el código de idioma.
 
-- `af`: Afrikaans (af-ZA)
-- `ak`: Akan (ak-GH)
-- `am`: Amharic (am-ET)
-- `ar`: Arabic (ar)
-- `as`: Assamese (as-IN)
-- `az`: Azerbaijani (az-AZ)
-- `be`: Belarusian (be-BY)
-- `bg`: Bulgarian (bg-BG)
-- `bm`: Bambara (bm-ML)
-- `bn`: Bengali (bn-BD)
-- `bs`: Bosnian (bs-BA)
-- `ca`: Catalan (ca-ES)
-- `cs`: Czech (cs-CZ)
-- `da`: Danish (da-DK)
-- `de`: German (de-DE)
-- `el`: Greek (el-GR)
-- `en`: English (en-US)
-- `es`: Spanish (es-ES)
-- `et`: Estonian (et-EE)
-- `fa`: Persian (Farsi) (fa-IR)
-- `ff`: Fulah (ff-SN)
-- `fi`: Finnish (fi-FI)
-- `fr`: French (fr-FR)
-- `ga`: Irish (ga-IE)
-- `gu`: Gujarati (gu-IN)
-- `ha`: Hausa (ha-NG)
-- `he`: Hebrew (he-IL)
-- `hi`: Hindi (hi-IN)
-- `hr`: Croatian (hr-HR)
-- `ht`: Haitian Creole (ht-HT)
-- `hu`: Hungarian (hu-HU)
-- `hy`: Armenian (hy-AM)
-- `id`: Indonesian (id-ID)
-- `ig`: Igbo (ig-NG)
-- `is`: Icelandic (is-IS)
-- `it`: Italian (it-IT)
-- `ja`: Japanese (ja-JP)
-- `jv`: Javanese (jv-ID)
-- `ka`: Georgian (ka-GE)
-- `kk`: Kazakh (kk-KZ)
-- `km`: Khmer (km-KH)
-- `kn`: Kannada (kn-IN)
-- `ko`: Korean (ko-KR)
-- `ks`: Kashmiri (ks-IN)
-- `ku`: Kurdish (ku-TR)
-- `ky`: Kyrgyz (ky-GG)
-- `ln`: Lingala (ln-CD)
-- `lo`: Lao (lo-LA)
-- `lt`: Lithuanian (lt-LT)
-- `lv`: Latvian (lv-LV)
-- `mg`: Malagasy (mg-MG)
-- `ml`: Malayalam (ml-IN)
-- `mn`: Mongolian (mn-MN)
-- `mr`: Marathi (mr-IN)
-- `ms`: Malay (ms-MY)
-- `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
-- `ne`: Nepali (ne-NP)
-- `nl`: Dutch (nl-NL)
-- `no`: Norwegian (no-NO)
-- `ny`: Chichewa (ny-MW)
-- `om`: Oromo (om-ET)
-- `or`: Odia (or-IN)
-- `pa`: Punjabi (pa-IN)
-- `pl`: Polish (pl-PL)
-- `ps`: Pashto (ps-AF)
-- `pt`: Portuguese (pt-PT)
-- `qu`: Quechua (qu-PE)
-- `rn`: Kirundi (rn-BI)
-- `ro`: Romanian (ro-RO)
-- `ru`: Russian (ru-RU)
-- `rw`: Kinyarwanda (rw-RW)
-- `sd`: Sindhi (sd-PK)
-- `si`: Sinhala (si-LK)
-- `sk`: Slovak (sk-SK)
-- `sl`: Slovenian (sl-SI)
-- `sn`: Shona (sn-ZW)
-- `so`: Somali (so-SO)
-- `sq`: Albanian (sq-AL)
-- `sr`: Serbian (sr-RS)
-- `su`: Sundanese (su-ID)
-- `sv`: Swedish (sv-SE)
-- `sw`: Swahili (sw-TZ)
-- `ta`: Tamil (ta-IN)
-- `te`: Telugu (te-IN)
-- `tg`: Tajik (tg-TJ)
-- `th`: Thai (th-TH)
-- `ti`: Tigrinya (ti-ER)
-- `tk`: Turkmen (tk-TM)
-- `tl`: Tagalog (tl-PH)
-- `tr`: Turkish (tr-TR)
-- `ug`: Uyghur (ug-CN)
-- `uk`: Ukrainian (uk-UA)
-- `ur`: Urdu (ur-PK)
-- `uz`: Uzbek (uz-UZ)
-- `vi`: Vietnamese (vi-VN)
-- `wo`: Wolof (wo-SN)
-- `xh`: Xhosa (xh-ZA)
-- `yo`: Yoruba (yo-NG)
-- `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
-- `zu`: Zulu (zu-ZA)
+Consulta también: el [Glosario](glossary) para los términos canónicos de la IU usados en todos los idiomas.
+
+---
+
+## Lista de idiomas {#language-list}
+
+- `af`: afrikáans (af-ZA)
+- `ak`: akan (ak-GH)
+- `am`: amhárico (am-ET)
+- `ar`: árabe (ar)
+- `as`: asamés (as-IN)
+- `az`: azerbaiyano (az-AZ)
+- `be`: bielorruso (be-BY)
+- `bg`: búlgaro (bg-BG)
+- `bm`: bambara (bm-ML)
+- `bn`: bengalí (bn-BD)
+- `bs`: bosnio (bs-BA)
+- `ca`: catalán (ca-ES)
+- `cs`: checo (cs-CZ)
+- `da`: danés (da-DK)
+- `de`: alemán (de-DE)
+- `el`: griego (el-GR)
+- `en`: inglés (en-US)
+- `es`: español (es-ES)
+- `et`: estonio (et-EE)
+- `fa`: persa (farsi) (fa-IR)
+- `ff`: fula (ff-SN)
+- `fi`: finés (fi-FI)
+- `fr`: francés (fr-FR)
+- `ga`: irlandés (ga-IE)
+- `gu`: guyaratí (gu-IN)
+- `ha`: hausa (ha-NG)
+- `he`: hebreo (he-IL)
+- `hi`: hindi (hi-IN)
+- `hr`: croata (hr-HR)
+- `ht`: criollo haitiano (ht-HT)
+- `hu`: húngaro (hu-HU)
+- `hy`: armenio (hy-AM)
+- `id`: indonesio (id-ID)
+- `ig`: igbo (ig-NG)
+- `is`: islandés (is-IS)
+- `it`: italiano (it-IT)
+- `ja`: japonés (ja-JP)
+- `jv`: javanés (jv-ID)
+- `ka`: georgiano (ka-GE)
+- `kk`: kazajo (kk-KZ)
+- `km`: jemer (km-KH)
+- `kn`: canarés (kn-IN)
+- `ko`: coreano (ko-KR)
+- `ks`: cachemir (ks-IN)
+- `ku`: kurdo (ku-TR)
+- `ky`: kirguís (ky-KG)
+- `ln`: lingala (ln-CD)
+- `lo`: lao (lo-LA)
+- `lt`: lituano (lt-LT)
+- `lv`: letón (lv-LV)
+- `mg`: malgache (mg-MG)
+- `ml`: malayalam (ml-IN)
+- `mn`: mongol (mn-MN)
+- `mr`: maratí (mr-IN)
+- `ms`: malayo (ms-MY)
+- `my`: birmano (my-MM)
+- `ne`: nepalí (ne-NP)
+- `nl`: neerlandés (nl-NL)
+- `no`: noruego (no-NO)
+- `ny`: chichewa (ny-MW)
+- `om`: oromo (om-ET)
+- `or`: odia (or-IN)
+- `pa`: panyabí (pa-IN)
+- `pl`: polaco (pl-PL)
+- `ps`: pastún (ps-AF)
+- `pt`: portugués (pt-PT)
+- `qu`: quechua (qu-PE)
+- `rn`: kirundi (rn-BI)
+- `ro`: rumano (ro-RO)
+- `ru`: ruso (ru-RU)
+- `rw`: kinyaruanda (rw-RW)
+- `sd`: sindí (sd-PK)
+- `si`: cingalés (si-LK)
+- `sk`: eslovaco (sk-SK)
+- `sl`: esloveno (sl-SI)
+- `sn`: shona (sn-ZW)
+- `so`: somalí (so-SO)
+- `sq`: albanés (sq-AL)
+- `sr`: serbio (sr-RS)
+- `su`: sundanés (su-ID)
+- `sv`: sueco (sv-SE)
+- `sw`: suajili (sw-TZ)
+- `ta`: tamil (ta-IN)
+- `te`: telugu (te-IN)
+- `tg`: tayiko (tg-TJ)
+- `th`: tailandés (th-TH)
+- `ti`: tigriña (ti-ER)
+- `tk`: turcomano (tk-TM)
+- `tl`: tagalo (tl-PH)
+- `tr`: turco (tr-TR)
+- `ug`: uigur (ug-CN)
+- `uk`: ucraniano (uk-UA)
+- `ur`: urdu (ur-PK)
+- `uz`: uzbeko (uz-UZ)
+- `vi`: vietnamita (vi-VN)
+- `wo`: wolof (wo-SN)
+- `xh`: xhosa (xh-ZA)
+- `yo`: yoruba (yo-NG)
+- `zh`: chino (zh)
+- `zu`: zulú (zu-ZA)
+
+Consejo: Cambia el idioma de la documentación mediante el selector de idioma en el encabezado del sitio (el prefijo de la URL cambia en consecuencia). El idioma de la interfaz de Thunderbird es independiente del idioma del sitio web y sigue la configuración de Thunderbird.
+
+Redirección de la página de inicio
+
+- Si el sitio se compila con el idioma preferido de tu navegador, al visitar la URL base de la documentación bajo el baseUrl del proyecto se te redirigirá automáticamente a ese idioma. Usa el selector de idioma (o `/en/`) para permanecer en inglés.
+
+---
+
+## Contribuir con traducciones {#contribute-translations}
+
+- ¿Encontraste un problema en una traducción? Abre una incidencia en GitHub o un PR.
+- Prefiere realizar ediciones sobre la fuente en inglés en `website/docs/`; las herramientas del mantenedor propagan las actualizaciones a otros idiomas.
+  El inglés es la fuente de verdad para la documentación; las actualizaciones de traducción se extraen desde EN durante el flujo de trabajo del mantenedor.
+
+### Página de inicio, barra de navegación y pie de página de la IU
+
+- Estas cadenas se encuentran en `website/i18n/en/code.json` y se traducen a todos los idiomas mediante la tarea del mantenedor:
+  - `make translate_web_index` (requiere `OPENAI_API_KEY`)
+  - Limita los idiomas con `OPTS="--locales de,fr"`; sobrescribe los valores existentes con `OPTS="--force"`.
+
+### Sitio web vs. IU {#website-vs-ui}
+
+- El idioma del sitio web y el de la IU del complemento son independientes; el selector de idioma solo cambia la documentación. El idioma de la IU de Thunderbird sigue la configuración de Thunderbird.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "สิทธิ์ที่ต้องใช้",
-  "description": "ส่วนเสริมขอนุญาตเพียงไม่กี่รายการที่จำเป็นและเจาะจงเหตุผล ดังนี้:",
+  "title": "สิทธิ์",
+  "description": "Permissions",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "สิทธิ์ที่ต้องใช้"
+    "title": "สิทธิ์"
   },
   "sidebar": "docs",
   "previous": {

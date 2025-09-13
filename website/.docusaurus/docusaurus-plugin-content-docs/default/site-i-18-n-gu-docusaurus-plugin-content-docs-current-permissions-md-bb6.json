@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "પરવાનગીઓ",
-  "description": "ઍડ‑ઓન માત્ર થોડાં નાનું અને હેતુ‑કેન્દ્રિત પરવાનગીઓ માંગી લે છે. શા માટે જરૂરી છે:",
+  "description": "Permissions",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "સુસંગતતા",
+    "title": "સંગતતા",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/compatibility"
   },
   "next": {

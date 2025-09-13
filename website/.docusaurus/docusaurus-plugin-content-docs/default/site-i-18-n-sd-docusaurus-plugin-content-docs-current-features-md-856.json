@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "خاصيتون",
-  "description": "خاصيتون",
+  "title": "خصوصيتون",
+  "description": "Features",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "خاصيتون",
-    "sidebar_label": "خاصيتون"
+    "title": "خصوصيتون",
+    "sidebar_label": "خصوصيتون"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "تڪڙي شروعات",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/quickstart"
   }
 }

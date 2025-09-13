@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Mula Pantas",
-  "description": "1. Pasang add‑on daripada Thunderbird Add‑ons.",
+  "title": "Pengenalan Pantas",
+  "description": "Pengenalan Pantas",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Mula Pantas",
-    "sidebar_label": "Mula Pantas"
+    "title": "Pengenalan Pantas",
+    "sidebar_label": "Pengenalan Pantas"
   },
   "sidebar": "docs",
   "previous": {

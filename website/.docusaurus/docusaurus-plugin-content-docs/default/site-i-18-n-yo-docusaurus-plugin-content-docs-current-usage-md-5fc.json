@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Uso",
   "description": "Usage",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Uso",
+    "sidebar_label": "Uso"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Iṣeto",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Ibamu",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/compatibility"
   }
 }

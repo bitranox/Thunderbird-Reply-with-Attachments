@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
-  "description": "Compatibility",
+  "title": "Konpatibilite",
+  "description": "Konpatibilite",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Konpatibilite",
+    "sidebar_label": "Konpatibilite"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Itilizasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Pèmisyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/permissions"
   }
 }

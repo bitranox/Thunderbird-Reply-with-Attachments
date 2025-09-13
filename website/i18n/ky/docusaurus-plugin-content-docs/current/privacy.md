@@ -1,23 +1,47 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Жеке маалыматтарды коргоо'
+sidebar_label: 'Жеке маалыматтарды коргоо'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Жеке маалыматтарды коргоо
 
-What the add‑on does:
+:::note Телеметрия жок; фондук тармак жок
+Бул кошумча **анластиктерди** же телеметрияны жыйнабайт жана **жок** фондук тармак өтүнүчтөрүн жасайт. Бардык тармак убагы сиз сыртка жайгашкан шилтемени (Docs, GitHub, Donate) чыкырганда гана болот.
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments аналитика же телеметрияны жыйнабайт жана сиздин маалыматтарды эч жерге жибербейт.
 
-What the add‑on does not do:
+Кошумчанын эмне кылат:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Эски билдирүүдөн тиркемелердин метадатасын жана файлдарын локалдуу (Thunderbird API) окуп, жообуңузга тиркейт.
+- Thunderbird'дин локалдык сактоосунда сиздин опцияларыңызды (кара тизмелер, растоо, стандарттуу жооп) сактайт.
 
-Permissions are documented on the [Permissions](permissions) page.
+Кошумчанын эмне кылбайт:
 
-## Content Security Policy (CSP)
+- Эч кандай байкоо, аналитика, катастрофалык отчет, же алыстан жазып алуу.
+- Фондук тармак өтүнүчтөрү жок, анык сыртка шилтемелерди (Docs, GitHub, Donate) ача электе.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Рұқсатар [Permissions](permissions) бетинде документтелген.
+
+## Контентти камсыздоо саясаты (CSP) {#content-security-policy-csp}
+
+Опцияларды жана поп-ап беттери инлайн скрипттерден качат. Бардык JavaScript кошумча менен келген файлдардан жүктөлөт, Thunderbird'дин катуу CSP'сына ылайык. Эгер сиз документтерде код үзүндүлөрүн киргизсеңиз, алар мисалдар гана, кошумча тарабынан аткарылбайт.
+
+## Дата сактоосу {#data-storage}
+
+- Уурунун тандоолору (кара тизмелер, растоо котормолору, стандарттуу жооп) Thunderbird’дин `storage.local` бул кошумча үчүн сакталат.
+- Кошумча тарабынан булут синхронизациясы жасалбайт.
+
+## Тармак {#network}
+
+- Кошумча фондук тармак иш-аракеттерин аткарбайт.
+- Ар кандай тармакка кирүү гана шилтемелерди (Docs, GitHub, Donate) чыкырганда же Thunderbird өзү бул кошумчага тиешелүү болбогон стандарттуу операцияларды аткарганда болот.
+
+## Маалыматтарды алып салуу {#data-removal}
+
+- Кошумчаны жок кылганда анын коду мыйзамсыз болуп калат.
+- Параметрлер Thunderbird’дин `storage.local` гана сакталат жана жок кылынганда алынат; эч кандай тышкы сактоо колдонулбайт.
+- Кошумчаны жок кылбай параметрлерди жөндөп алуу:
+  - Опциялары бети: кара тизмени жана кара тизмени эскертип коюу үчүн "Стандартка кайтуу" опциясын колдонуңуз.
+  - Ыракаттуу: Thunderbird → Куралдар → Долбоорчулар Куралдары → Кошумчаларды дебагдоо, кошумчанын сактоосун ачып, зарыл болсо ачкычтарды тазалаңыз.

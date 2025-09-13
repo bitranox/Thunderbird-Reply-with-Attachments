@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Mwanzoni",
+  "description": "Mwanzoni",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Mwanzoni",
+    "sidebar_label": "Mwanzoni"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Usanidi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/install"
   }
 }

@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: رازداری
-sidebar_label: رازداری
+title: 'نجیّت'
+sidebar_label: 'نجیّت'
 ---
 
-Reply with Attachments نہ تو تجزیات/ٹیلی میٹری اکٹھا کرتا ہے اور نہ ہی آپ کا ڈیٹا کہیں بھیجتا ہے۔
+## Privacy
 
-ایڈ‑آن کیا کرتا ہے:
+:::note No telemetry; no background network
+This add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Any network access happens only when you click an external link (Docs, GitHub, Donate).
+:::
 
-- جواب میں شامل کرنے کے لیے Thunderbird API کے ذریعے مقامی طور پر اصل پیغام سے ضمائم کا میٹا ڈیٹا اور فائلیں پڑھتا ہے۔
-- آپ کے اختیارات (بلیک لسٹ، تصدیق، طے شدہ جواب) Thunderbird کے مقامی ذخیرے میں محفوظ کرتا ہے۔
+Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
 
-ایڈ‑آن کیا نہیں کرتا:
+What the add-on does:
 
-- کوئی ٹریکنگ، تجزیات، کریش رپورٹنگ، یا ریموٹ لاگنگ نہیں۔
-- پس منظر میں کوئی نیٹ ورک درخواست نہیں، سوائے جب آپ واضح طور پر بیرونی لنکس (Docs, GitHub, Donate) کھولتے ہیں۔
+- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
+- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
 
-اجازتوں کی وضاحت [Permissions](permissions) صفحے پر ہے۔
+What the add-on does not do:
 
-## Content Security Policy (CSP)
+- No tracking, analytics, crash reporting, or remote logging.
+- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
 
-Options اور popup صفحات میں inline اسکرپٹس سے اجتناب کیا گیا ہے۔ تمام JavaScript ایڈ‑آن کے ساتھ آنے والی فائلوں سے لوڈ کی جاتی ہے تاکہ Thunderbird کی سخت CSP کی پابندی ہو۔ دستاویزات میں شامل کوڈ نمونے صرف مثال ہیں؛ ایڈ‑آن انہیں چلاتا نہیں۔
+Permissions are documented on the [Permissions](permissions) page.
+
+---
+
+## Content Security Policy (CSP) {#content-security-policy-csp}
+
+The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add-on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add-on.
+
+---
+
+## Data storage {#data-storage}
+
+- User preferences (blacklist, confirmation toggle, default answer) are stored in Thunderbird’s `storage.local` for this add-on.
+- No cloud sync is performed by the add-on.
+
+---
+
+## Network {#network}
+
+- The add-on performs no background network activity.
+- Any network access happens only when you click links (Docs, GitHub, Donate) or when Thunderbird itself performs normal operations unrelated to this add-on.
+
+---
+
+## Data removal {#data-removal}
+
+- Uninstalling the add‑on removes its code.
+- Settings are kept only in Thunderbird’s `storage.local` and are removed at uninstall; no external storage is used.
+- Reset settings without uninstalling:
+  - Options page: use “Reset to defaults” for the blacklist and blacklist warning.
+  - Advanced: in Thunderbird → Tools → Developer Tools → Debug Add‑ons, open the extension’s storage and clear keys if needed.
+
+---

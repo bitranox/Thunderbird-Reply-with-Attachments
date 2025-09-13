@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Gizlinlik'
+sidebar_label: 'Gizlinlik'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Gizlinlik
 
-What the add‑on does:
+:::note Telemetri ýok; fon arka tor maglumatlary ýok
+Bu goşmaça **tehniki maglumatlary** ýygnamamýar we **fon arka** tor görkezmelerini etmeýär. Herhangi bir tor elýeterliligi diňe siz daşarky baglanyşyga (Dokumentler, GitHub, Bagyşla) basanyňyzdan soň ýüze çykýar.
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments tehniki maglumatlary ýa-da telemetriýa ýygnamamýar we maglumatlaryňyzy hiç ýere ibermeýär.
 
-What the add‑on does not do:
+Goşmaçanyň ýerine ýetirýän işleri:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Original habardan goşmaça berýänleriň maglumatlaryny we faýllaryny ýerli (Thunderbird API) okap, şolary jogaplaryňyza goşýar.
+- Optiýalaryňyzy (gara san, təsdiş, standart jogap) Thunderbird’in ýerli pamygynda saklaýar.
 
-Permissions are documented on the [Permissions](permissions) page.
+Goşmaçanyň ýerine ýetirýän işleri däl:
 
-## Content Security Policy (CSP)
+- Heňklemek, tehniki maglumatlary ýygnamak, çöküş barada maglumatlary bermek ýa-da uzakdan ýazga almak ýok.
+- Daşarky baglanyşyklara (Dokumentler, GitHub, Bagyşla) açmakdan başga, fon arka tor boýunça hiç hili gözegçilik, maglumat talap etmeýär.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Ähtimallara [Ähtimallar](permissions) sahypasynda goşulyşy bilen ýüz tutup bilersiňiz.
+
+---
+
+## Mazmuna Güwanç Beriş Politiýasy (CSP) {#content-security-policy-csp}
+
+Saýlawlary we pop-up sahypalary inline skriptlerden gaça durýarlar. Bar bolan ähli JavaScript faýllar boýunça goşmaça bilen berilýär, şonuň üçin Thunderbird’ dachsy CSP boýunça berjaý edilýär. Eger siz dokumentlere kod kesimler girizseňiz, olar diňe mysallar bolup, goşmaça tarapyndan ýerine ýetirilmeýär.
+
+---
+
+## Maglumat saklamak {#data-storage}
+
+- Ulanyjy talaplary (gara san, təsdiş açarlary, standart jogap) Thunderbird’in `storage.local` içinde bu goşmaça boýunça saklanýar.
+- Goşmaça tarapyndan hiç hili bulut sinxronlaşdyrma edilmeýär.
+
+---
+
+## Tor {#network}
+
+- Goşmaça hiç hili fon arka tor işini etmeýär.
+- Herhangi bir tor elýeterliligi diňe siz baglanyşylara (Dokumentler, GitHub, Bagyşla) basanyňyzdan ýa-da Thunderbird öz ýolundaky işlerini ýerine ýetirenden dowamynda ýüze çykýar.
+
+---
+
+## Maglumat aýyrmak {#data-removal}
+
+- Goşmaçany öçürmek onuň kodlaryny aýyrýar.
+- Parametrler diňe Thunderbird’in `storage.local` içinde saklanýar we öçürilende aýrylýar; daşarky ýatda saklanma aýratynlygy goşulyşmaýar.
+- Goşmaçany öçürmän parametrleri dikeltmek:
+  - Optiýalar sahypasy: gara san we gara san duýduryşy üçin "Başlangyç görnüşlere dikeltmek" ulanyň.
+  - Ösen: Thunderbird → Ýazgylar → Developer Tools → Debug Add‑ons, goşmaçanyň saklamasyna girip, gerek bolsa açarlary arassalaň.
+
+---

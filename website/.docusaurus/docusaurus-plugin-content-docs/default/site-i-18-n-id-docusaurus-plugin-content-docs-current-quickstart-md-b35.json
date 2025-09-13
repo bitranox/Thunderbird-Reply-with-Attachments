@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Mulai cepat",
-  "description": "1. Pasang add‑on dari Thunderbird Add‑ons.",
+  "title": "Panduan Awal",
+  "description": "Quickstart",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Mulai cepat",
-    "sidebar_label": "Mulai cepat"
+    "title": "Panduan Awal",
+    "sidebar_label": "Panduan Awal"
   },
   "sidebar": "docs",
   "previous": {

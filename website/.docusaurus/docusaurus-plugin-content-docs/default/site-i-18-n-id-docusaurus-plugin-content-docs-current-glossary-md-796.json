@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Glosarium i18n",
-  "description": "Istilah kanonis yang dipakai di UI dan dokumentasi add‑on. Gunakan ini agar terjemahan konsisten lintas lokal.",
+  "title": "Glosarium",
+  "description": "Glosarium",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Glosarium i18n",
+    "title": "Glosarium",
     "sidebar_label": "Glosarium"
   },
   "sidebar": "docs",

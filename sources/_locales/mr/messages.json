@@ -18,34 +18,60 @@
     "message": "संलग्नकांसह उत्तर"
   },
   "uiNoOptions": {
-    "message": "सध्या संरचीत करण्यासाठी कोणतेही पर्याय उपलब्ध नाहीत."
+    "message": "सध्या संरचीत करण्यासाठी कोणतेही पर्याय नाहीत."
   },
   "uiSupport": {
-    "message": "हा ॲड-ऑन तुम्हाला आवडतो का? कृपया छोट्या देणगीने मला पाठिंबा द्या:"
+    "message": "हा अॅड-ऑन तुम्हाला आवडतो का? कृपया छोट्या योगदानाने माझे समर्थन करा:"
+  },
+  "uiRateATNText": {
+    "message": "कृपया ATN वर रेटिंग द्या"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "आता देणगी द्या"
   },
+  "uiIDonated": {
+    "message": "मी देणगी दिली"
+  },
+  "uiDonateSnoozed": {
+    "message": "धन्यवाद! देणगीची विनंती 90 दिवसांसाठी लपवली आहे."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 पर्यंत लपवले आहे",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "देणगीचा पर्याय पुन्हा दाखवा"
+  },
+  "uiDonateRestored": {
+    "message": "देणगीची विनंती पुन्हा दिसत आहे."
+  },
   "uiGithubText": {
-    "message": "बग अहवाल किंवा इतर चौकशीसाठी, कृपया माझ्या"
+    "message": "बग अहवाल किंवा इतर चौकशींसाठी, कृपया माझे"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub पृष्ठ"
   },
   "iconAlt": {
-    "message": "संलग्नकांसह उत्तराचे चिन्ह"
+    "message": "संलग्नकांसह उत्तर आयकॉन"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "फाईलनावांची काळी यादी (glob नमुने)"
+    "message": "फाइलनावांची ब्लॅकलिस्ट (glob पॅटर्न्स)"
   },
   "uiBlacklistHelp": {
-    "message": "ज्या फाईलांची नावे या पैकी कोणत्याही नमुन्याशी जुळतात, ती कधीही आपोआप जोडली जाणार नाहीत. प्रत्येक ओळीवर एक नमुना. उदाहरणे: *.png, smime.*, *.p7s"
+    "message": "ज्या फाइलांची नावे या पॅटर्नपैकी कोणत्याहीशी जुळतात, ती कधीही आपोआप संलग्न केली जाणार नाहीत. प्रत्येक ओळीत एक पॅटर्न. उदाहरणे: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "काळ्या यादीमुळे संलग्नके वगळली गेल्यास इशारा द्या"
+    "message": "ब्लॅकलिस्टमुळे संलग्नके वगळली गेल्यास इशारा द्या"
   },
   "uiSave": {
     "message": "जतन करा"
@@ -54,7 +80,7 @@
     "message": "जतन करत आहे…"
   },
   "uiReset": {
-    "message": "मूलभूत स्थितीवर रीसेट करा"
+    "message": "डीफॉल्टवर रीसेट करा"
   },
   "uiSaved": {
     "message": "जतन केले."
@@ -69,7 +95,7 @@
     "message": "संलग्नके जोडण्यापूर्वी विचारा"
   },
   "uiConfirmHelp": {
-    "message": "लहान पुष्टीकरण संवाद फक्त तेव्हाच दिसतो जेव्हा संलग्नके प्रत्यक्षात जोडली जाणार असतात. कीबोर्ड: Y किंवा J = होय; N किंवा Esc = नाही."
+    "message": "केवळ संलग्नके प्रत्यक्षात जोडली जाणार असतील तेव्हाच एक लहान पुष्टीकरण संवाद दिसेल. कळफलक: Y किंवा J = होय; N किंवा Esc = नाही."
   },
   "confirmAddOne": {
     "message": "संलग्नक जोडा: $1?",
@@ -100,22 +126,22 @@
     "message": "नाही"
   },
   "warnBlacklistTitle": {
-    "message": "काळ्या यादीमुळे वगळले"
+    "message": "ब्लॅकलिस्टमुळे वगळले"
   },
   "warnBlacklistIntro": {
-    "message": "खालील फाईली आपोआप जोडल्या जाणार नाहीत:"
+    "message": "खालील फाइल्स आपोआप संलग्न केल्या जाणार नाहीत:"
   },
   "warnColFile": {
-    "message": "फाईल"
+    "message": "फाइल"
   },
   "warnColPattern": {
-    "message": "नमुना"
+    "message": "पॅटर्न"
   },
   "warnOk": {
     "message": "ठीक"
   },
   "uiConfirmDefaultHeader": {
-    "message": "पूर्वनिर्धारित उत्तर"
+    "message": "डीफॉल्ट उत्तर"
   },
   "uiConfirmDefaultYes": {
     "message": "होय"
@@ -124,9 +150,21 @@
     "message": "नाही"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "दस्तऐवजीकरण:"
+  },
+  "uiDocsButton": {
+    "message": "दस्तऐवज उघडा"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

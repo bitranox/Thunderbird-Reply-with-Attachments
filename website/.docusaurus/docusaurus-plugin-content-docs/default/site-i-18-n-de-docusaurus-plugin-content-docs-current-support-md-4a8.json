@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "---",
+  "title": "Unterstützung",
+  "description": "FAQ",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Unterstützung",
+    "sidebar_label": "Unterstützung"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Språk",
+  "description": "Languages",
   "source": "@site/i18n/sv/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Språk",
+    "sidebar_label": "Språk"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Utveckling",
     "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Ordbok",
     "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/glossary"
   }
 }

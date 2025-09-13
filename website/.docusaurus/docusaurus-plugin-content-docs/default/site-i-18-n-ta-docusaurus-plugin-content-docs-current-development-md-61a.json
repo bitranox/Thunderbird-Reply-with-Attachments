@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "அபிவிருத்தி",
-  "description": "அபிவிருத்தி வழிகாட்டி",
+  "title": "அறிமுகம்",
+  "description": "Development Guide",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "அபிவிருத்தி",
-    "sidebar_label": "அபிவிருத்தி"
+    "title": "அறிமுகம்",
+    "sidebar_label": "அறிமுகம்"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/permissions"
   },
   "next": {
-    "title": "மொழிகள்",
+    "title": "எழுத்துகள்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/languages"
   }
 }

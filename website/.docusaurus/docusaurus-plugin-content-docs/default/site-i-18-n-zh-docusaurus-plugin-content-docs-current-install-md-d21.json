@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "安装",
-  "description": "安装 — 在 Thunderbird 中（推荐）",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",

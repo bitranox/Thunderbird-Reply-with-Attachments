@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "ແບບສາມະດິດ",
   "description": "Compatibility",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "ແບບສາມະດິດ",
+    "sidebar_label": "ແບບສາມະດິດ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "ការប្រើប្រាស់",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "ສິດທິ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/permissions"
   }
 }

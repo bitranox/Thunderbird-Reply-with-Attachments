@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "లక్షణాలు",
-  "description": "లక్షణాలు",
+  "title": " లక్షణాలు",
+  "description": "Features",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "లక్షణాలు",
-    "sidebar_label": "లక్షణాలు"
+    "title": " లక్షణాలు",
+    "sidebar_label": " లక్షణాలు"
   },
   "sidebar": "docs",
   "next": {
-    "title": "క్విక్‌స్టార్ట్",
+    "title": "ఆరంభం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/quickstart"
   }
 }

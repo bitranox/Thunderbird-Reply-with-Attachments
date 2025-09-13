@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Dukungan",
+  "description": "FAQ",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Dukungan",
+    "sidebar_label": "Dukungan"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Kamus",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privasi",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/privacy"
   }
 }

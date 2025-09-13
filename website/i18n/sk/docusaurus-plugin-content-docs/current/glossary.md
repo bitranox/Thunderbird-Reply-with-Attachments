@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Prehľad pojmov'
+sidebar_label: 'Prehľad pojmov'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Glossár
 
-Notes
+Kanónické termíny použité v UI doplnku a dokumentácii. Používajte ich na zachovanie konzistentnosti prekladov naprieč lokalitami.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Poznámky
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- Udržujte reťazce UI krátke a akčne orientované.
+- Uprednostňujte podstatné mená pre nastavenia a slovesá pre akcie.
+- Používajte vetný formát (iba prvé slovo veľkým písmom) okrem titulov.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Termíny
+
+- **Prílohy**: súbory priložené k e-mailu. Vyvarujte sa „príloh“.
+- **Čierna listina** (vylučovací zoznam): zoznam vzorov, ktoré bránia automatickému pripojeniu súborov. V UI sa zobrazuje ako „Čierna listina (glob vzory)“.
+- V kópii UI uprednostňujte „Čierna listina (glob vzory)“, aby zodpovedala stránke nastavení.
+- Vysvetlite, že sa zhoda vykonáva iba na názvoch súborov; nie na cestách.
+- **Potvrdiť / Potvrdenie:** požiadajte používateľa, aby pokračoval pred pridaním príloh.
+- **Odpovede:** „Áno“ (pridať), „Nie“ (zhrušiť). Uchovávajte názvy tlačidiel krátke.
+- **Inline obrázok:** obrázok cited pomocou CID v HTML správy; nikdy nie je pridaný ako súbor.
+- **S/MIME podpis:** `smime.p7s` alebo PKCS7 podpisové časti; nikdy nie sú pridané.
+- **Možnosti / Nastavenia:** konfiguračná stránka doplnku v Thunderbirde.
+- **Predvoľba odpovede:** predvoľba odpovede pre dialóg potvrdzovania.
+
+---
+
+### E-mailové akcie
+
+- **Odpovedať:** odpovedať odosielateľovi správy.
+- **Odpovedať všetkým:** odpovedať odosielateľovi a všetkým prijímateľom.
+- **Prepojiť:** poslať správu inému prijímateľovi; tento doplnok nemodifikuje správanie preposielania.
+
+---
+
+### Typy príloh
+
+- **Inline prílohy:** prostriedky vložené do tela správy (napr. odkazy prostredníctvom Content‑ID). Nie sú pridané ako súbory doplnkom.
+- **Priložené súbory:** súbory priložené k správe ako bežné prílohy (kandidáti na kopírovanie pri odpovedaní).
+
+---
+
+### Štýl
+
+- **Názvy súborov:** zobrazené ako kód (monospace), napr. `smime.p7s`, `*.png`.
+- **Klávesy/tlačidlá:** iba veľkým písmom, keď sú to vlastné mená; inak vetným spôsobom.
+- **Vyhýbajte sa žargónu** (napr. „idempotencia“); uprednostňujte „zabrániť duplicite“.
+
+---

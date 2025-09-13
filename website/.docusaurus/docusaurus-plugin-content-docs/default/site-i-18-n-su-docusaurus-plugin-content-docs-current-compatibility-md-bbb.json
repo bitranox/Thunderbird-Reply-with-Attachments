@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Kompatibilitas",
   "description": "Compatibility",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Kompatibilitas",
+    "sidebar_label": "Kompatibilitas"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Pamakéan",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Ijin",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/permissions"
   }
 }

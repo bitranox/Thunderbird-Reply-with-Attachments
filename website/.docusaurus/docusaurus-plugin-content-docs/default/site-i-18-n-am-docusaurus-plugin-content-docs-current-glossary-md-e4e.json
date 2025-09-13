@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "መዋቅር",
+  "description": "Glossary",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "መዋቅር",
+    "sidebar_label": "መዋቅር"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "ቋንቋዎች",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "ድጋፍ",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/support"
   }
 }

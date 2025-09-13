@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "ശബ്ദഗ്രദ്ധി",
+  "description": "Glossary",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "ശബ്ദഗ്രദ്ധി",
+    "sidebar_label": "ശബ്ദഗ്രദ്ധി"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "ഭാഷകൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "ബഹുമതി",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/support"
   }
 }

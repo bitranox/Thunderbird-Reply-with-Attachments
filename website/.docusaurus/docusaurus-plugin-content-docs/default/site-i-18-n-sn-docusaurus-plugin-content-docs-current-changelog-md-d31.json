@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Chinyorwa chezvachinja",
-  "description": "Ona nhoroondo yakazara mufaira CHANGELOG.md iri mudura (repository).",
+  "title": "Shanduko Yekuchinja",
+  "description": "Changelog",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Chinyorwa chezvachinja"
+    "title": "Shanduko Yekuchinja"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/licence"
+    "title": "Chibvumirano",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/license"
   }
 }

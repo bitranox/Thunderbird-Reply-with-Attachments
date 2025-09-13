@@ -3,7 +3,7 @@
     "message": "Válasz mellékletekkel"
   },
   "extDescription": {
-    "message": "Automatikusan mellékli az eredeti mellékleteket az e‑mail‑válaszokhoz."
+    "message": "Automatikusan csatolja az eredeti mellékleteket az e‑mail válaszokhoz."
   },
   "composeTitle": {
     "message": "Válasz mellékletekkel"
@@ -18,19 +18,45 @@
     "message": "Válasz mellékletekkel"
   },
   "uiNoOptions": {
-    "message": "Jelenleg nincs beállítható lehetőség."
+    "message": "Jelenleg nincs beállítási lehetőség."
   },
   "uiSupport": {
-    "message": "Tetszik ez a kiegészítő? Támogass egy kis hozzájárulással:"
+    "message": "Tetszik ez a kiegészítő? Kérlek, támogass egy kisebb hozzájárulással:"
+  },
+  "uiRateATNText": {
+    "message": "Kérlek, értékeld az ATN-en"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Adományozz most"
   },
+  "uiIDonated": {
+    "message": "Adományoztam"
+  },
+  "uiDonateSnoozed": {
+    "message": "Köszönöm! Az adománykérés 90 napra elrejtve."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Elrejtve $1-ig",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Adománykérés ismételt megjelenítése"
+  },
+  "uiDonateRestored": {
+    "message": "Az adománykérés ismét látható."
+  },
   "uiGithubText": {
-    "message": "Hibajelentéshez vagy egyéb megkereséshez kérlek, látogasd meg a"
+    "message": "Hibajelentéshez vagy egyéb kérdésekhez kérlek, látogasd meg a következő oldalt"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub-oldalam"
+    "message": "GitHub-oldal"
   },
   "iconAlt": {
     "message": "Válasz mellékletekkel ikon"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Tiltólista fájlnevekre (glob minták)"
+    "message": "Fájlnév-feketelista (glob minták)"
   },
   "uiBlacklistHelp": {
-    "message": "Azok a fájlok, amelyek neve illeszkedik bármelyik mintára, soha nem kerülnek automatikusan csatolásra. Egy sorba egy minta. Példák: *.png, smime.*, *.p7s"
+    "message": "Azok a fájlok, amelyek neve illeszkedik bármelyik mintára, soha nem lesznek automatikusan csatolva. Soronként egy minta. Példák: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Figyelmeztessen, ha a tiltólista kizár mellékleteket"
+    "message": "Figyelmeztessen, ha a mellékleteket a feketelista kizárja"
   },
   "uiSave": {
     "message": "Mentés"
@@ -57,7 +83,7 @@
     "message": "Alapértelmezések visszaállítása"
   },
   "uiSaved": {
-    "message": "Elmentve."
+    "message": "Mentve."
   },
   "uiResetDone": {
     "message": "Visszaállítva."
@@ -66,10 +92,10 @@
     "message": "Megerősítés"
   },
   "uiConfirmLabel": {
-    "message": "Kérdezzen rá, mielőtt mellékleteket ad hozzá"
+    "message": "Rákérdezés a mellékletek hozzáadása előtt"
   },
   "uiConfirmHelp": {
-    "message": "Kis megerősítő párbeszédablak csak akkor jelenik meg, amikor ténylegesen mellékletek kerülnének hozzáadásra. Billentyűzet: Y vagy J = Igen; N vagy Esc = Nem."
+    "message": "Egy kis megerősítő párbeszédablak csak akkor jelenik meg, amikor ténylegesen mellékletek kerülnének hozzáadásra. Billentyűzet: Y vagy J = Igen; N vagy Esc = Nem."
   },
   "confirmAddOne": {
     "message": "Melléklet hozzáadása: $1?",
@@ -100,10 +126,10 @@
     "message": "Nem"
   },
   "warnBlacklistTitle": {
-    "message": "Tiltólista miatt kizárva"
+    "message": "Feketelista miatt kizárva"
   },
   "warnBlacklistIntro": {
-    "message": "A következő fájlok nem kerülnek automatikusan csatolásra:"
+    "message": "A következő fájlok nem lesznek automatikusan csatolva:"
   },
   "warnColFile": {
     "message": "Fájl"
@@ -124,9 +150,21 @@
     "message": "Nem"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentáció:"
+  },
+  "uiDocsButton": {
+    "message": "Dokumentáció megnyitása"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

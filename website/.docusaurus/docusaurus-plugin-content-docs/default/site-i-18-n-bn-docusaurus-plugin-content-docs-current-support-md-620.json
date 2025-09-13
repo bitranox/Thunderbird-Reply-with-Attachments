@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "সহায়তা",
-  "description": "সাহায্য দরকার, নাকি কোনো বাগ জানাতে চান?",
+  "title": "সমর্থন",
+  "description": "FAQ",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "সহায়তা",
-    "sidebar_label": "সহায়তা"
+    "title": "সমর্থন",
+    "sidebar_label": "সমর্থন"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "পরিভাষা",
+    "title": "শব্দকোষ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/glossary"
   },
   "next": {

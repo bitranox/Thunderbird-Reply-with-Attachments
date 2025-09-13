@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "변경 로그",
-  "description": "전체 변경 내역은 저장소의 CHANGELOG.md에서 확인하세요.",
+  "description": "Changelog",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "라이선스",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/licence"
+    "title": "라이센스",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/license"
   }
 }

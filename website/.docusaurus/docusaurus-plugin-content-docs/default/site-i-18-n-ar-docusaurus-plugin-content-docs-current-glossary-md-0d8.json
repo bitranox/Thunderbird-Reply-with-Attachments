@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "مسرد i18n",
-  "description": "مصطلحات قياسية تُستخدم في واجهة الإضافة ووثائقها. استخدمها للحفاظ على اتساق الترجمات بين اللغات.",
+  "title": "قاموس المصطلحات",
+  "description": "Glossary",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "مسرد i18n",
-    "sidebar_label": "المسرد"
+    "title": "قاموس المصطلحات",
+    "sidebar_label": "قاموس المصطلحات"
   },
   "sidebar": "docs",
   "previous": {

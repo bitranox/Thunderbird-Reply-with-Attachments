@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Функции",
-  "description": "Функции",
+  "title": "Особенности",
+  "description": "Features",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Функции",
-    "sidebar_label": "Функции"
+    "title": "Особенности",
+    "sidebar_label": "Особенности"
   },
   "sidebar": "docs",
   "next": {

@@ -1,8 +1,34 @@
 ---
 id: support
-title: Support
-sidebar_label: Support
+title: 'Support'
+sidebar_label: 'Support'
 ---
+
+---
+
+## FAQ {#faq}
+
+### Attachments didn’t get added — why?
+
+- Inline images and S/MIME parts are intentionally excluded.
+- Duplicate filenames are skipped if the compose already has the same file.
+- Blacklist patterns may filter candidates; see [Configuration](configuration#blacklist-glob-patterns).
+
+### Can I confirm before adding attachments?
+
+Yes. Enable “Ask before adding attachments” under [Configuration → Confirmation](configuration#confirmation). Keyboard: Y/J = Yes, N/Esc = No.
+
+### Does the add‑on send any data or track usage?
+
+No. See [Privacy](privacy) — no telemetry and no background network requests.
+
+### Forward doesn’t add attachments — is that expected?
+
+Yes. Only Reply and Reply all are modified by this add‑on; Forward is left unchanged. See [Limitations](usage#limitations).
+
+### Where is the Donate snooze?
+
+Options → Support section. See [Donation Visibility](configuration#donation-visibility).
 
 ---
 
@@ -15,6 +41,7 @@ Need help or want to report a bug?
 ### Open an issue on GitHub:
 
 - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
+- Issues: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
 - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
 - Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
 

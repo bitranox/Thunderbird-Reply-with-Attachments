@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Ka'idoji",
+  "description": "Glossary",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Ka'idoji",
+    "sidebar_label": "Ka'idoji"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Harsuna",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Taimako",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/support"
   }
 }

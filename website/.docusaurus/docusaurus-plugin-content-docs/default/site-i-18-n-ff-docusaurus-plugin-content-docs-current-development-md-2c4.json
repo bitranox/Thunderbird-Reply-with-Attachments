@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Ciimɗe",
   "description": "Development Guide",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Ciimɗe",
+    "sidebar_label": "Ciimɗe"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Hakki",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Lingué",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/languages"
   }
 }

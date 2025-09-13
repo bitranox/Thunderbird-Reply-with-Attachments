@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Instalācija",
+  "description": "Instalācija caur \"Thunderbird paplašinājumiem un tēmām\"",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Instalācija",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalācija"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Ātrā uzsākšana",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfigurācija",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/configuration"
   }
 }

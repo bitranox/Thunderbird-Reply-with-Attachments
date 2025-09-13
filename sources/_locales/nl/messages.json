@@ -3,7 +3,7 @@
     "message": "Beantwoorden met bijlagen"
   },
   "extDescription": {
-    "message": "Automatisch de oorspronkelijke bijlagen opnemen in e-mailantwoorden."
+    "message": "Voegt originele bijlagen automatisch toe aan e-mailantwoorden."
   },
   "composeTitle": {
     "message": "Beantwoorden met bijlagen"
@@ -21,31 +21,57 @@
     "message": "Er zijn momenteel geen opties om in te stellen."
   },
   "uiSupport": {
-    "message": "Bevalt deze add-on? Steun me met een kleine bijdrage:"
+    "message": "Vind je deze add-on leuk? Steun me met een kleine bijdrage:"
+  },
+  "uiRateATNText": {
+    "message": "Beoordeel op ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Doneer nu"
   },
+  "uiIDonated": {
+    "message": "Ik heb gedoneerd"
+  },
+  "uiDonateSnoozed": {
+    "message": "Bedankt! Donatieverzoek 90 dagen verborgen."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Verborgen tot $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Donatie opnieuw tonen"
+  },
+  "uiDonateRestored": {
+    "message": "Donatieverzoek is weer zichtbaar."
+  },
   "uiGithubText": {
-    "message": "Voor bugmeldingen of andere vragen, bezoek mijn"
+    "message": "Voor bugrapporten of andere vragen, ga naar mijn"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub-pagina"
   },
   "iconAlt": {
-    "message": "Icoon Beantwoorden met bijlagen"
+    "message": "Pictogram Beantwoorden met bijlagen"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Zwarte lijst van bestandsnamen (glob-patronen)"
+    "message": "Zwarte lijst van bestandsnamen (globpatronen)"
   },
   "uiBlacklistHelp": {
     "message": "Bestanden waarvan de naam overeenkomt met een van deze patronen worden nooit automatisch bijgevoegd. Eén patroon per regel. Voorbeelden: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Waarschuwen als bijlagen door de zwarte lijst worden uitgesloten"
+    "message": "Waarschuwen als bijlagen door zwarte lijst worden uitgesloten"
   },
   "uiSave": {
     "message": "Opslaan"
@@ -54,7 +80,7 @@
     "message": "Bezig met opslaan…"
   },
   "uiReset": {
-    "message": "Standaardinstellingen herstellen"
+    "message": "Terugzetten naar standaardwaarden"
   },
   "uiSaved": {
     "message": "Opgeslagen."
@@ -124,9 +150,21 @@
     "message": "Nee"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentatie:"
+  },
+  "uiDocsButton": {
+    "message": "Documentatie openen"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

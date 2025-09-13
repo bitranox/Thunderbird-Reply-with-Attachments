@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Sokongan",
-  "description": "Perlukan bantuan atau mahu melaporkan pepijat?",
+  "description": "FAQ",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

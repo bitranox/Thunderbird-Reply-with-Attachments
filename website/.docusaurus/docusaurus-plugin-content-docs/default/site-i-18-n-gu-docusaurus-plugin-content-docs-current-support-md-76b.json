@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "સહાય",
-  "description": "મદદ જોઈએ છે કે બગ રિપોર્ટ કરવો છે?",
+  "title": "સમર્થન",
+  "description": "FAQ",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "સહાય",
-    "sidebar_label": "સહાય"
+    "title": "સમર્થન",
+    "sidebar_label": "સમર્થન"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "શબ્દકોશ",
+    "title": "શોધશબ્દકોશ",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/glossary"
   },
   "next": {

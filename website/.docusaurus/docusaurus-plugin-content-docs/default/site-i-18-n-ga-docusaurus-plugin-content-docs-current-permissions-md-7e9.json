@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "Ceadaíochtaí",
+  "description": "Ceadaíochtaí",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "Ceadaíochtaí"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "Comhoiriúnacht",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "Forbairt",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/development"
   }
 }

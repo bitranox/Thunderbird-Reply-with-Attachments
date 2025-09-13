@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "መዝገብ ለውጦታት",
-  "description": "ኩሉ ታሪኽ ኣብ ሬፖዚቶሪ ፋይል CHANGELOG.md ተመልከት።",
+  "title": "ለመዋቅር መዝገብ",
+  "description": "Changelog",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "መዝገብ ለውጦታት"
+    "title": "ለመዋቅር መዝገብ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/licence"
+    "title": "መዋቅር",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/license"
   }
 }

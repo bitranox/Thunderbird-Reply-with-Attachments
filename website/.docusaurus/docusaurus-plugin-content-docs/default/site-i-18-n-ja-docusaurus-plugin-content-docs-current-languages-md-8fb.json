@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "言語",
-  "description": "AI 翻訳ツールにより 103 言語を幅広くサポート。",
+  "description": "Languages",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

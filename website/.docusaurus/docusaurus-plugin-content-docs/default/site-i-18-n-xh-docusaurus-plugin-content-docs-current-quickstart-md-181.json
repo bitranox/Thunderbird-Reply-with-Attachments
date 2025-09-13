@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Ukuqala",
+  "description": "Ukuqala",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Ukuqala",
+    "sidebar_label": "Ukuqala"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Iimpawu",
+    "title": "Iimfanelo",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Fakelo",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/install"
   }
 }

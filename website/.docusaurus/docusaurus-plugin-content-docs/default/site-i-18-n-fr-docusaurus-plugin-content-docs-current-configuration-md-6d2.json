@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Configuration",
-  "description": "Note terminologique : voir le Glossaire pour l’usage cohérent des termes dans l’interface et la documentation.",
+  "description": "Configuration",
   "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

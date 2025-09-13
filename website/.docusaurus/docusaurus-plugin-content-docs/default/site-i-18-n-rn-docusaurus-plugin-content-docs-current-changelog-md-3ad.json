@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Inyandikompinduka",
-  "description": "Raba amateka yose muri dosiye CHANGELOG.md iri muri repository.",
+  "title": "Igenzurwa",
+  "description": "Igenzurwa",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Inyandikompinduka"
+    "title": "Igenzurwa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/licence"
+    "title": "Uburenganzira",
+    "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/license"
   }
 }

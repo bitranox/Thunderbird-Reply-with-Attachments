@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "बदलांची नोंद",
-  "description": "संपूर्ण इतिहासासाठी रेपॉझिटरीतील CHANGELOG.md पहा.",
+  "title": "परिवर्तन सूची",
+  "description": "Changelog",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "बदलांची नोंद"
+    "title": "परिवर्तन सूची"
   },
   "sidebar": "docs",
   "previous": {
     "title": "परवाना",
-    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/license"
   }
 }

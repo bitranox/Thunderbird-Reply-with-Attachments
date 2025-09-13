@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Tương thích",
-  "description": "Tương thích",
+  "description": "Compatibility",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Cách dùng",
+    "title": "Sử dụng",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/usage"
   },
   "next": {
-    "title": "Quyền",
+    "title": "Quyền truy cập",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/permissions"
   }
 }

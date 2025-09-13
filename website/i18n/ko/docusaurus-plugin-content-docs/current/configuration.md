@@ -1,50 +1,144 @@
 ---
 id: configuration
-title: 구성
+title: '구성'
 ---
 
-# 구성
+## Configuration
 
-용어 안내: UI와 문서에서 일관되게 사용하는 용어는 [용어 사전](glossary)을 참고하세요.
-
-## Thunderbird에서 옵션 열기
-
-- Thunderbird → 도구 → 부가 기능 및 테마 → “Reply with Attachments” → 기본 설정/옵션
-
-### 설정:
-
-#### 확인
-
-- “첨부 파일 추가 전에 묻기”를 켜거나 끕니다.
-- 기본 응답: 예 또는 아니요(포커스 및 키보드 기본값).
-- 키보드: Y/J = 예; N/Esc = 아니요; Tab/Shift+Tab 및 화살표 키로 포커스 이동.
-
-#### 블랙리스트(glob 패턴)
-
-블랙리스트에 해당하는 파일은 회신 시 자동으로 첨부되지 않습니다.
-
-- 한 줄에 하나의 패턴; 대소문자 구분 없음; 파일 이름만 일치.
-- 예: `*.png`, `smime.*`, `*.p7s`
-- 지원되는 glob 토큰: `*`( `/` 제외 모든 문자), `?`(한 글자), `[abc]`와 같은 문자 클래스. 리터럴 `[`는 `\[`로 일치시킵니다. 파일 이름만 확인하므로 경로(`**/`)는 무시됩니다.
-- 미지원: 부정(`!`), 중괄호 확장(`{..}`), 복잡한 범위. 패턴은 단순하게 유지하세요.
-
-팁: 처음 열 때 기본값이 채워지며 언제든지 재설정할 수 있습니다.
-
-#### 제외된 첨부 파일 경고
-
-- “블랙리스트로 제외된 첨부 파일이 있으면 경고”를 켭니다(기본: 켜짐).
-- 켜면 작은 모달 창에 제외된 파일과 일치 패턴이 표시됩니다. 모든 후보가 제외되어 아무것도 첨부되지 않는 경우에도 경고가 표시됩니다.
-
-#### 설정 저장
+Terminology note: see the [Glossary](glossary) for consistent terms used in UI and docs.
 
 ---
 
-### 파일 이름 정규화(중복 방지)
+## Open options in Thunderbird {#open-options-in-thunderbird}
 
-플랫폼 간 일관성을 위해 중복 검사 전에 파일 이름을 정규화합니다:
+- Thunderbird → Tools → Add‑ons and Themes → find “Reply with Attachments” → Preferences/Options
 
-- 유니코드는 NFC로 정규화합니다.
-- 이름을 소문자로 변환합니다.
-- 끝의 점/공백을 제거합니다(Windows 친화적).
+---
 
-이로써 `café.pdf`와 `café.pdf`(NFD), `FILE.txt.`와 `file.txt`와 같은 경우에도 중복 탐지가 예측 가능해집니다.
+### Settings {#settings}
+
+#### Confirmation {#confirmation}
+
+- Toggle “Ask before adding attachments”
+- Default answer: Yes or No (focus & keyboard default)
+- Keyboard: Y/J = Yes; N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus
+  - See keyboard details in [Usage](usage#keyboard-shortcuts).
+
+---
+
+#### Blacklist (glob patterns) {#blacklist-glob-patterns}
+
+Blacklisted files will not be added on reply automatically. See also the [Glossary](glossary) for “Blacklist (Exclude list)”.
+
+- One pattern per line; case‑insensitive; filename‑only matching
+- Examples: `*intern*`, `*secret*`, `*passwor*`
+- Supported glob tokens: `*` (any chars except `/`), `?` (one char), character classes like `[abc]`. Use `\[` to match a literal `[`. Paths (`**/`) are ignored since only filenames are matched.
+- Not supported: negation (`!`), brace expansion (`{..}`), and complex ranges. Keep patterns simple.
+- Comments are not supported in patterns. Do not include `#` or inline comments; enter only the pattern text per line.
+
+---
+
+##### Pattern cookbook {#pattern-cookbook}
+
+- Match any PDF: `*.pdf`
+- Match files starting with “scan”: `scan*`
+- Character class: `report[0-9].txt`
+- Escape a literal `[`: `\[` (useful when matching a bracket as a character)
+
+---
+
+##### Notes {#blacklist-notes}
+
+- Order does not matter; the first/any match excludes the file.
+- Matching is filename‑only (paths/folders are ignored).
+- “Reset to defaults” restores the recommended patterns and the blacklist warning toggle.
+- Why the example `*passwor*`? It matches both “password” and “Passwort” families.
+- Precedence: if any pattern matches a filename, the file is excluded (first/any match — order does not change the result).
+- Tip — test your pattern: add a temporary pattern, reply to a message containing a file with a matching name, and confirm it is excluded in the warning list.
+
+##### Quick try‑it (safe test) {#blacklist-try-it}
+
+1. Open Options → Blacklist.
+2. Add a temporary pattern like `*.tmp` and click Save.
+3. Reply to a test mail that has a file ending with `.tmp` — the file should appear in the warning list and not be attached.
+4. Remove the temporary pattern when done, or click “Reset to defaults”.
+
+---
+
+#### Warning on excluded attachments {#warning-on-excluded-attachments}
+
+- Toggle “Warn if attachments are excluded by blacklist” (default: ON).
+- When enabled, a small modal lists excluded files and the matching pattern(s). The
+  warning also appears when nothing will be attached because all candidates were
+  blacklisted.
+
+---
+
+#### Save your settings {#save-your-settings}
+
+Settings are saved by pressing the Save button. You can revert individual fields manually or reset defaults as needed.
+
+If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+
+Tip: To confirm your settings took effect, reply to any message with an attachment and check the confirmation or blacklist warning.
+
+---
+
+#### Donation Visibility (90‑day snooze) {#donation-visibility}
+
+The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+
+Where to find it
+
+- Options → Support section: you’ll see an “I donated” button and a small hint area.
+- The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+
+How it works
+
+- Clicking “I donated” hides donation buttons and related prompts for 90 days.
+- A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
+- After 90 days, the Donate button becomes visible automatically again.
+
+Privacy & storage
+
+- The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
+- This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+
+Troubleshooting
+
+- If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
+- To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+
+This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+
+---
+
+### Filename normalization (duplicates prevention) {#filename-normalization-duplicates-prevention}
+
+To behave consistently across platforms, filenames are normalized before duplicate checks:
+
+- Unicode is normalized to NFC.
+- Names are case‑folded (lowercased).
+- Trailing dots/spaces are trimmed (Windows friendliness).
+
+This keeps duplicate detection predictable for names like `café.pdf` vs `café.pdf` (NFD) or `FILE.txt.` vs `file.txt`.
+
+---
+
+## Confirmation behavior {#confirmation-behavior}
+
+- “Default answer” sets the initially focused button in the confirmation dialog (helpful for keyboard users).
+- Works for both “Reply” and “Reply all”. “Forward” is not modified by this add-on.
+
+---
+
+## Advanced: duplicate detection {#advanced-duplicate-detection}
+
+Duplicate prevention is implemented per compose tab and by filename. See [Usage](usage#behavior-details) for a detailed explanation.
+
+---
+
+See also
+
+- [Permissions](permissions)
+- [Privacy](privacy)

@@ -1,17 +1,34 @@
 ---
 id: features
-title: Хусусиятҳо
-sidebar_label: Хусусиятҳо
+title: 'Виждонҳо'
+sidebar_label: 'Виждонҳо'
 ---
 
-## Хусусиятҳо
+## Features {#features}
 
-- Ҳангоми ҷавоб додан файлҳои аз почтаи электронии аслӣ‑ро худкор замима мекунад.
-- Рафтори танзимшаванда: замимаҳо метавонанд
-  - худкор илова шаванд, ё
-  - танҳо пас аз тасдиқ илова шаванд (гуфтугӯи хурд ва дастрас). Дар «Options» метавонед тасдиқро фаъол карда, ҷавоби пешфарзро (Ҳа/Не) интихоб намоед.
-- Рӯйхати сиёҳи номи файлҳо (намунаҳои glob) аз замимаи худкори баъзе файлҳо ҷилавгирӣ мекунад. Мисолҳо: `*intern*`, `*secret*`, `*passwor*`.
-  Муқоиса ба ҳарфи калон/хурд ҳассос нест ва танҳо номи файлро месанҷад; дар «Options» барои ҳар сатр як намуна диҳед.
-- Огоҳии рӯйхати сиёҳ (ихтиёрӣ, бо нобаёнӣ фаъол): вақте файлҳо тавассути рӯйхати сиёҳи шумо хориҷ мешаванд, равзанаи хурди модалӣ файл ва намунаҳои мувофиқро нишон медиҳад. Бо реҷаи торик мувофиқ аст ва бо клавиатура дастрас (барои бастан Enter/Esc).
-- Ҳатто агар шумо аллакай чизе замима карда бошед ҳам, аслҳоро меафзояд; такроршавиро бо номи файл пешгирӣ мекунад.
-- Барои пешгирӣ аз замимаҳои нолозим, шаҳодатномаҳои SMIME ва тасвирҳои дарунхатро нодида мегирад.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

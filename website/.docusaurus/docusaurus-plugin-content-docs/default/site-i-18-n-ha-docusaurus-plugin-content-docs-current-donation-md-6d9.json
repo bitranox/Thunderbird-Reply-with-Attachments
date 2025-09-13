@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donate",
-  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "title": "Dauki Gane",
+  "description": "Donate",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donate",
-    "sidebar_label": "Donate"
+    "title": "Dauki Gane",
+    "sidebar_label": "Dauki Gane"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Privacy",
+    "title": "Sirrin Bayani",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/privacy"
   },
   "next": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/licence"
+    "title": "Lasisi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/license"
   }
 }

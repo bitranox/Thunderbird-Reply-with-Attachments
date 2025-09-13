@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Роҳнамои зуд",
+  "description": "Quickstart",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Роҳнамои зуд",
+    "sidebar_label": "Роҳнамои зуд"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Хусусиятҳо",
+    "title": "Виждонҳо",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Устензия",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/install"
   }
 }

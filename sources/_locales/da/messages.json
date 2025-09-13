@@ -3,7 +3,7 @@
     "message": "Svar med vedhæftede filer"
   },
   "extDescription": {
-    "message": "Medtag automatisk de oprindelige vedhæftede filer i e-mailsvar."
+    "message": "Medtag automatisk de originale vedhæftede filer i e-mailsvar."
   },
   "composeTitle": {
     "message": "Svar med vedhæftede filer"
@@ -21,10 +21,36 @@
     "message": "Der er i øjeblikket ingen indstillinger at konfigurere."
   },
   "uiSupport": {
-    "message": "Kan du lide denne tilføjelse? Støt mig med et lille bidrag:"
+    "message": "Kan du lide denne tilføjelse? Støt mig venligst med et lille bidrag:"
+  },
+  "uiRateATNText": {
+    "message": "Bedøm venligst på ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Donér nu"
+    "message": "Doner nu"
+  },
+  "uiIDonated": {
+    "message": "Jeg har doneret"
+  },
+  "uiDonateSnoozed": {
+    "message": "Tak! Donationspåmindelsen er skjult i 90 dage."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Skjult indtil $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Vis Doner igen"
+  },
+  "uiDonateRestored": {
+    "message": "Donationspåmindelsen er synlig igen."
   },
   "uiGithubText": {
     "message": "For fejlrapporter eller andre henvendelser, besøg venligst min"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Sortliste over filnavne (glob-mønstre)"
+    "message": "Blokeringsliste over filnavne (glob-mønstre)"
   },
   "uiBlacklistHelp": {
-    "message": "Filer, hvis navne matcher et af disse mønstre, vil aldrig blive vedhæftet automatisk. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
+    "message": "Filer, hvis navne matcher et af disse mønstre, bliver aldrig vedhæftet automatisk. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Advar, hvis vedhæftede filer udelades på grund af sortlisten"
+    "message": "Advar hvis vedhæftninger udelukkes af blokeringslisten"
   },
   "uiSave": {
     "message": "Gem"
@@ -66,10 +92,10 @@
     "message": "Bekræftelse"
   },
   "uiConfirmLabel": {
-    "message": "Spørg, før der tilføjes vedhæftede filer"
+    "message": "Spørg før vedhæftninger tilføjes"
   },
   "uiConfirmHelp": {
-    "message": "En lille bekræftelsesdialog vises kun, når der faktisk ville blive tilføjet vedhæftede filer. Tastatur: Y eller J = Ja; N eller Esc = Nej."
+    "message": "En lille bekræftelsesdialog vises kun, når vedhæftninger rent faktisk ville blive tilføjet. Tastatur: Y eller J = Ja; N eller Esc = Nej."
   },
   "confirmAddOne": {
     "message": "Tilføj vedhæftet fil: $1?",
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Tilføj vedhæftede filer ($1): $2$3?",
+    "message": "Tilføj vedhæftninger ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "Nej"
   },
   "warnBlacklistTitle": {
-    "message": "Udeladt af sortlisten"
+    "message": "Udelukket af blokeringslisten"
   },
   "warnBlacklistIntro": {
-    "message": "Følgende filer vil ikke blive vedhæftet automatisk:"
+    "message": "Følgende filer bliver ikke vedhæftet automatisk:"
   },
   "warnColFile": {
     "message": "Fil"
@@ -124,9 +150,21 @@
     "message": "Nej"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentation:"
+  },
+  "uiDocsButton": {
+    "message": "Åbn dokumentation"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,10 +1,21 @@
 ---
 id: changelog
-title: Chinyorwa chezvachinja
+title: 'Shanduko Yekuchinja'
 ---
 
-Ona nhoroondo yakazara mufaira CHANGELOG.md iri mudura (repository).
+## Changelog
 
-- 2.0.0: yakanyorwazve kuita shanduro izere nezvinhu (EN/DE)
-- 1.0.1: kuchinjirwa ku messages.listAttachments()
-- 1.0.0: kuburitswa kwekutanga
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.
+
+---

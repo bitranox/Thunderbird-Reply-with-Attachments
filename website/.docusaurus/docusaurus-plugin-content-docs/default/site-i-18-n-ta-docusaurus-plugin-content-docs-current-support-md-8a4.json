@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "ஆதரவு",
-  "description": "உதவி தேவைதா அல்லது பிழையை அறிவிக்க விரும்புகிறீர்களா?",
+  "title": "முதல ஆலோசனை",
+  "description": "FAQ",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "ஆதரவு",
-    "sidebar_label": "ஆதரவு"
+    "title": "முதல ஆலோசனை",
+    "sidebar_label": "முதல ஆலோசனை"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "சொற்களஞ்சியம்",
+    "title": "விளக்கம்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/glossary"
   },
   "next": {
-    "title": "தனியுரிமை",
+    "title": "தேசிய இழப்புகளில் தனியுரிமை",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/privacy"
   }
 }

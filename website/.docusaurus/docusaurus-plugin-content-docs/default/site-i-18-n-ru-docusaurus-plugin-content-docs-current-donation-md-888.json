@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Пожертвование",
-  "description": "Если вам нравится «Ответ с вложениями» и вы хотите поддержать его разработку, пожертвуйте здесь:",
+  "title": "Пожертвовать",
+  "description": "Donate",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Пожертвование",
-    "sidebar_label": "Пожертвование"
+    "title": "Пожертвовать",
+    "sidebar_label": "Пожертвовать"
   },
   "sidebar": "docs",
   "previous": {
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Лицензия",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/license"
   }
 }

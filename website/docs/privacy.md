@@ -1,12 +1,16 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privacy'
+sidebar_label: 'Privacy'
 ---
 
 ---
 
 ## Privacy
+
+:::note No telemetry; no background network
+This add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Any network access happens only when you click an external link (Docs, GitHub, Donate).
+:::
 
 Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
 
@@ -51,12 +55,5 @@ The options and popup pages avoid inline scripts. All JavaScript is loaded from 
 - Reset settings without uninstalling:
   - Options page: use “Reset to defaults” for the blacklist and blacklist warning.
   - Advanced: in Thunderbird → Tools → Developer Tools → Debug Add‑ons, open the extension’s storage and clear keys if needed.
-
----
-
-## Network (recap) {#network-recap}
-
-- No background network activity.
-- The only network requests are when you click links (Docs, GitHub, Donate).
 
 ---

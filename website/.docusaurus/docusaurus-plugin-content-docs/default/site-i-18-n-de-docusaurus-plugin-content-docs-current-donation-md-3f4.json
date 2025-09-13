@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Spenden",
-  "description": "---",
+  "description": "Donate",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
     "title": "Spenden",

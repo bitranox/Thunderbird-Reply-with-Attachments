@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/sv/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,11 +19,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Snabbstart",
     "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfiguration",
     "permalink": "/Thunderbird-Reply-with-Attachments/sv/docs/configuration"
   }
 }

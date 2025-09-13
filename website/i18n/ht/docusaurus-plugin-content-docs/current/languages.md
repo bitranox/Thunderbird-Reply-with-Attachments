@@ -1,16 +1,20 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Lang'
+sidebar_label: 'Lang'
 ---
 
-# Language Support
+## Lang
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Lis sa a reflete tou de tradiksyon dokiman sit entènèt yo ak Strings UI adisyonèl yo. Sipò lang masiv, gras a zouti tradiksyon AI - kouvri 100 lang.
 
-List below is sorted by the language code.
+Lis ki anba a klase pa kòd lang lan.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Gade tou: [Glosè](glossary) pou tèm UI kanonikal yo itilize atravè lokal yo.
+
+---
+
+## Lis lang {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +72,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +115,30 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Konsèy: Chanje lokal dok yo via chwa lang lan nan tèt sit la (prefiks URL la chanje selon sa). Lang UI Thunderbird la endepandan de lang sit entènèt la epi li swiv anviwònman Thunderbird ou.
+
+Redireksyon paj aterisaj
+
+- Si sit la bati ak lokal preferans navigatè ou, vizite URL baz dok ki anba bazUrl pwojè a otomatikman redireksyonne nan lokal sa a. Sèvi ak chwa lang lan (oswa `/en/`) pou rete nan Anglè.
+
+---
+
+## Kontribye Tradiksyon {#contribute-translations}
+
+- Ou jwenn yon pwoblèm nan yon tradiksyon? Tanpri ouvri yon pwoblèm GitHub oswa PR.
+- PRefer edisyon kont sous an Anglè a anba `website/docs/`; zouti pou antretyen yo propaje mizajou yo nan lòt lokal yo.
+  Anglè se sous verite pou dokiman; mizajou tradiksyon yo jwenn nan EN pandan workflow antretyen an.
+
+### Paj Dakèy, Navbar, UI Pye
+
+- Strings sa yo vivan nan `website/i18n/en/code.json` epi yo tradui nan tout lokal atravè travay antretyen an:
+  - `make translate_web_index` (meri `OPENAI_API_KEY`)
+  - Limite lang yo ak `OPTS="--locales de,fr"`; ranplase valè ki egziste deja ak `OPTS="--force"`.
+
+### Sit entènèt kont UI {#website-vs-ui}
+
+- Lang sit entènèt ak lang UI adisyonèl yo endepandan; chwa lang lan chanje dok yo sèlman. Lang UI Thunderbird la swiv anviwònman Thunderbird ou.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Einstellungen",
-  "description": "---",
+  "title": "Konfiguration",
+  "description": "Konfiguration",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -10,10 +10,10 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757333707000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Einstellungen"
+    "title": "Konfiguration"
   },
   "sidebar": "docs",
   "previous": {

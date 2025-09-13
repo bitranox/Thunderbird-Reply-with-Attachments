@@ -1,18 +1,24 @@
 ---
 id: compatibility
-title: Compatibility
-sidebar_label: Compatibility
+title: 'Compatibility'
+sidebar_label: 'Compatibility'
 ---
 
 ---
 
 ## Compatibility {#compatibility}
 
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
+
 - Thunderbird 128 ESR or newer is supported (128.x+).
 - Older Thunderbird versions are not supported.
 - Tested on Windows, macOS, and Linux.
 
-Note: Manifest V2 is not supported. This add‑on targets Manifest V3 (MV3) on Thunderbird 128 ESR+.
+:::warning Manifest V2 not supported
+Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::
 
 ---
 
@@ -33,5 +39,6 @@ Note: Manifest V2 is not supported. This add‑on targets Manifest V3 (MV3) on T
 ## Beta/Nightly {#beta-nightly}
 
 - Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
+- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
 
 ---

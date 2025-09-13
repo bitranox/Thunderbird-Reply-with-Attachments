@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Настройка",
-  "description": "Примечание о терминологии: см. Глоссарий для единообразных терминов в интерфейсе и документации.",
+  "description": "Настройка",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

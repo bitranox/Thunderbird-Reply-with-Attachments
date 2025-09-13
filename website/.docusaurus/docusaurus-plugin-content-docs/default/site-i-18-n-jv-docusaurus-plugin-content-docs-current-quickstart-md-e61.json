@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Mulai Cepat",
-  "description": "1. Pasang add‑on saka Thunderbird Add‑ons.",
+  "title": "Pandhuan Cepet",
+  "description": "Pandhuan Cepet",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Mulai Cepat",
-    "sidebar_label": "Mulai Cepat"
+    "title": "Pandhuan Cepet",
+    "sidebar_label": "Pandhuan Cepet"
   },
   "sidebar": "docs",
   "previous": {

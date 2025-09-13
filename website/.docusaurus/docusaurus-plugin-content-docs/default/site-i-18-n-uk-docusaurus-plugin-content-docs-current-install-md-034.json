@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Встановлення",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Встановлення",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Встановлення"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Швидкий початок",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Налаштування",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/configuration"
   }
 }

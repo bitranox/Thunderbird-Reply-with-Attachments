@@ -1,50 +1,79 @@
 ---
 id: install
-title: การติดตั้ง
+title: 'การติดตั้ง'
 slug: /install
-sidebar_label: การติดตั้ง
+sidebar_label: 'การติดตั้ง'
 ---
 
-## การติดตั้ง — ใน Thunderbird (แนะนำ)
+## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. ใน Thunderbird ไปที่ **Tools > Add-ons and Themes**
-2. ค้นหา "reply with attachments"
-3. เพิ่มส่วนเสริม
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
 
----
+This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
 
-## การติดตั้งแบบโลคอลใน Thunderbird
+- Minimum Thunderbird version: 128 ESR or newer.
 
-### ดาวน์โหลดไฟล์ XPI
+1. In Thunderbird, go to **Tools > Add-ons and Themes**.
+2. Search for "reply with attachments".
+3. Add the add-on.
 
-1. ไปที่ [หน้า Add-on ของ Thunderbird](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments)
-2. ดาวน์โหลดเวอร์ชันล่าสุดของส่วนเสริมเป็นไฟล์ XPI (`reply_with_attachments-x.y.z-tb.xpi`)
-
-### ติดตั้งใน Thunderbird
-
-1. เปิด Thunderbird
-2. ไปที่ **Tools > Add-ons and Themes**
-3. ใน **Add-ons Manager** คลิกไอคอนรูปเฟืองมุมขวาบน
-4. เลือก **Install Add-on From File…** จากเมนู
-5. เลือกไฟล์ `reply_with_attachments-x.y.z-tb.xpi` ที่ดาวน์โหลดไว้
-6. ยืนยันการติดตั้งเมื่อมีการถาม
+Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## การติดตั้งสำหรับการพัฒนา
+## Manual installation from XPI {#local-installation-in-thunderbird}
 
-### ดาวน์โหลดที่เก็บโค้ด (repository)
+### Download the XPI file {#download-the-xpi-file}
 
-1. ดาวน์โหลดเวอร์ชันล่าสุดของที่เก็บโค้ดบน GitHub
-2. รัน `make help` เพื่อดูข้อมูลเพิ่มเติม
+1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### ติดตั้งใน Thunderbird
+### Install in Thunderbird {#install-in-thunderbird-local}
 
-1. เปิด Thunderbird
-2. ไปที่ **Tools > Add-ons and Themes**
-3. ใน **Add-ons Manager** คลิกไอคอนรูปเฟือง
-4. เลือก **Install Add-on From File…**
-5. เลือกไฟล์ที่สร้างขึ้น `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`
-6. ยืนยันการติดตั้งเมื่อมีการถาม
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
+6. Confirm the installation when prompted.
 
 ---
+
+## Installation for development {#installation-for-development}
+
+### Download the repository {#download-the-repository}
+
+1. Download the latest version of the GitHub repository.
+2. Run `make help` for more information.
+
+### Install in Thunderbird {#install-in-thunderbird-dev}
+
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirm the installation when prompted.
+
+Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
+
+### Where to find the LOCAL ZIP {#where-local-zip}
+
+- First, package the add‑on: run `make pack` in the repository root.
+- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+
+---
+
+## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+
+- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
+- Uninstall: same view → three‑dot menu → Remove.
+- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
+- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+
+See also
+
+- [Quickstart](quickstart)

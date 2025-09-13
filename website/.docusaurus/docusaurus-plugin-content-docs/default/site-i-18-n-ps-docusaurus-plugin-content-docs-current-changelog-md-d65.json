@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "د بدلونونو ثبت",
-  "description": "بشپړ تاریخ په رېپو کې د CHANGELOG.md په فایل کې وګورئ.",
+  "title": "چینلګ",
+  "description": "چینلګ",
   "source": "@site/i18n/ps/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "د بدلونونو ثبت"
+    "title": "چینلګ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/licence"
+    "title": "مجوز",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/license"
   }
 }

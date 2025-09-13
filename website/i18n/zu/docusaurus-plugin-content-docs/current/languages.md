@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Izilimi'
+sidebar_label: 'Izilimi'
 ---
 
-# Language Support
+## Izilimi
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Lezi zihloko ziveza ukuhumusha kwezakhiwo zewebhusayithi nezintambo ze-UI ezengeziwe.
+Ukusekelwa kwezilimi okukhulu, okuhunyushwe ngama-AI amathuluzi okuhumusha — kufaka izilimi ezingu-100.
 
-List below is sorted by the language code.
+Uhlu olungezansi luhlelwe ngenkodi yezilimi.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Bheka futhi: [Iglossari](glossary) yezisho ze-UI ezisetshenziswe kuma-locale.
+
+---
+
+## Uhlu lwezilimi {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Ithiphu: Shintsha i-locale ye-docs nge-selector yezilimi esigabeni sesayithi (i-URL prefix iguqulwa ngokufanele). Ulimi lwe-UI ye-Thunderbird aluhambisani nolimi lwe-website futhi luya ngokuhlelwa kwakho kwe-Thunderbird.
+
+Ukuhlela ikhasi lokuqala
+
+- Uma isayithi sakhiwe ngolimi oluthandwa yi-browser yakho, ukuvivinya i-URL ye-docs eyisisekelo ngaphansi kwe-baseUrl yephrojekthi kuzodluliselwa ngokuzenzakalelayo kulolo limi. Sebenzisa i-switcher yezilimi (noma `/en/`) ukuze uhlala ngesiNgisi.
+
+---
+
+## Faka Izinguquko {#contribute-translations}
+
+- Uthole inkinga ekuhumusheni? Sicela uvule udaba ku-GitHub noma i-PR.
+- Ukuthanda ukuhlela okuphikisana nomthombo wesiNgisi ngaphansi `website/docs/`; ithuluzi le-maintainer lidlulisa izibuyekezo kuma-locale amanye.
+  IsiNgisi siyinsiza eqinile yokuhumusha; izibuyekezo zokuhumusha ziqoqwa kwi-EN phakathi nokusebenza kwe-maintainer.
+
+### Ikhasi eliyinhloko, Navbar, UI ye-Footer
+
+- Lezi zintambo zihlala ku `website/i18n/en/code.json` futhi zihunyushwa kuzo zonke izilimi nge-task yokugcinwa:
+  - `make translate_web_index` (udinga `OPENAI_API_KEY`)
+  - Khawulela izilimi ng `OPTS="--locales de,fr"`; phinda uvale amanani existing ng `OPTS="--force"`.
+
+### Iwebhusayithi vs. UI {#website-vs-ui}
+
+- Ulimi lwewebhu nolimi lwe-UI yokwengeza azihambisani; i-selector yolimi ishintsha ama-docs kuphela. Ulimi lwe-UI ye-Thunderbird luhamba ngokuhlelwa kwakho kwe-Thunderbird.

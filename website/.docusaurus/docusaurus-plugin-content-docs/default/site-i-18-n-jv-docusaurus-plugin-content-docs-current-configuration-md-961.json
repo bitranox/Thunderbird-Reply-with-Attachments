@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Konfigurasi",
-  "description": "Cathetan istilah: delengen Glossary kanggo istilah sing konsisten ing UI lan dokumen.",
+  "description": "Konfigurasi",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/install"
   },
   "next": {
-    "title": "Panggunaan",
+    "title": "Penggunaan",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/usage"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Funksjoner",
-  "description": "Funksjoner",
+  "description": "Features",
   "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Kom i gang",
     "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/quickstart"
   }
 }

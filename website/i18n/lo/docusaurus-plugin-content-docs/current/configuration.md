@@ -1,52 +1,146 @@
 ---
 id: configuration
-title: Configuration
+title: 'ການຕັ້ງຄ່າ'
 ---
-
-# Configuration
-
-Terminology note: see the [Glossary](glossary) for consistent terms used in UI and docs.
-
-## open options in Thunderbird
-
-- Thunderbird → Tools → Add‑ons and Themes → find “Reply with Attachments” → Preferences/Options
-
-### Settings:
-
-#### Confirmation
-
-- Toggle “Ask before adding attachments”
-- Default answer: Yes or No (focus & keyboard default)
-- Keyboard: Y/J = Yes; N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus
-
-#### Blacklist (glob patterns)
-
-Blacklisted Files will not be added on reply automatically
-
-- One pattern per line; case‑insensitive; filename‑only matching
-- Examples: `*.png`, `smime.*`, `*.p7s`
-- Supported glob tokens: `*` (any chars except `/`), `?` (one char), character classes like `[abc]`. Use `\[` to match a literal `[`. Paths (`**/`) are ignored since only filenames are matched.
-- Not supported: negation (`!`), brace expansion (`{..}`), and complex ranges. Keep patterns simple.
-
-Tip: Defaults are prefilled on first open and can be reset anytime.
-
-#### Warning on excluded attachments
-
-- Toggle “Warn if attachments are excluded by blacklist” (default: ON).
-- When enabled, a small modal lists excluded files and the matching pattern(s). The
-  warning also appears when nothing will be attached because all candidates were
-  blacklisted.
-
-#### save Your settings
 
 ---
 
-### Filename normalization (duplicates prevention)
+## ການຕັ້ງຄ່າ
 
-To behave consistently across platforms, filenames are normalized before duplicate checks:
+ຫມາຍເຫດຄໍາສັບ: ເບິ່ງ [ຄໍາອະທິບາຍຄໍາສັບ](glossary) ເພື່ອໃຫ້ໃຊ້ຄໍາສັບໃນ UI ແລະເອກະສານໃຫ້ສອດຄ່ອງກັນ.
 
-- Unicode is normalized to NFC.
-- Names are case‑folded (lowercased).
-- Trailing dots/spaces are trimmed (Windows friendliness).
+---
 
-This keeps duplicate detection predictable for names like `café.pdf` vs `café.pdf` (NFD) or `FILE.txt.` vs `file.txt`.
+## ເປີດຕົວເລືອກໃນ Thunderbird {#open-options-in-thunderbird}
+
+- Thunderbird → Tools → Add‑ons and Themes → ຄົ້ນຫາ “Reply with Attachments” → Preferences/Options
+
+---
+
+### ການຕັ້ງຄ່າ {#settings}
+
+#### ການຢືນຢັນ {#confirmation}
+
+- ສະຫຼັບ “ຖາມກ່ອນເພີ່ມໄຟລ໌ແນບ”
+- ຄໍາຕອບເລີ່ມຕົ້ນ: ແມ່ນ ຫຼື ບໍ່ (ໂຟກັສ & ຄ່າເລີ່ມຕົ້ນຂອງແປ້ນພິມ)
+- ແປ້ນພິມ: Y/J = ແມ່ນ; N/Esc = ບໍ່; Tab/Shift+Tab ແລະ ປຸ່ມລູກສອນ ວຽນໂຟກັສ
+  - ເບິ່ງລາຍລະອຽດແປ້ນພິມໃນ [ການນໍາໃຊ້](usage#keyboard-shortcuts).
+
+---
+
+#### ລາຍການຫ້າມ (glob patterns) {#blacklist-glob-patterns}
+
+ໄຟລ໌ທີ່ຖືກຢູ່ໃນລາຍການຫ້າມຈະບໍ່ຖືກເພີ່ມໃນການຕອບກັບໂດຍອັດຕະໂນມັດ. ເບິ່ງ [ຄໍາອະທິບາຍຄໍາສັບ](glossary) ສຳລັບ “Blacklist (Exclude list)”.
+
+- ຫນຶ່ງ pattern ຕໍ່ແຖວ; ບໍ່ອິງຕົວໃຫຍ່/ນ້ອຍ; ຈັບຄູ່ຈາກຊື່ໄຟລ໌ເທົ່ານັ້ນ
+- ຕົວຢ່າງ: `*intern*`, `*secret*`, `*passwor*`
+- ທີ່ຮອງຮັບໃນ glob: `*` (ອັກຂະລະໃດໆ ນອກຈາກ `/`), `?` (ອັກຂະລະດຽວ), ກຸ່ມຕົວອັກສອນເຊັ່ນ `[abc]`. ໃຊ້ `\[` ເພື່ອຈັບຄູ່ `[` ແບບຕົວອັກສອນຈິງ. ເສັ້ນທາງ (`**/`) ຖືກມອງຂ້າມເນື່ອງຈາກຈັບຄູ່ຈາກຊື່ໄຟລ໌ເທົ່ານັ້ນ.
+- ບໍ່ຮອງຮັບ: ການປະຕິເສດ (`!`), ການຂະຫຍາຍ brace (`{..}`), ແລະຊ່ວງຊັບຊ້ອນ. ໃຫ້ pattern ງ່າຍໆເຂົ້າໄວ້.
+- ບໍ່ຮອງຮັບຄໍາອະທິບາຍໃນ pattern. ຢ່າໃສ່ `#` ຫຼືຄໍາອະທິບາຍແບບ inline; ໃສ່ແຕ່ຂໍ້ຄວາມ pattern ຕໍ່ແຖວ.
+
+---
+
+##### ຄູ່ມື pattern {#pattern-cookbook}
+
+- ຈັບຄູ່ PDF ໃດໆ: `*.pdf`
+- ຈັບຄູ່ໄຟລ໌ທີ່ເລີ່ມຕົ້ນດ້ວຍ “scan”: `scan*`
+- ກຸ່ມຕົວອັກສອນ: `report[0-9].txt`
+- ເອົາໜີ `[` ແບບຕົວອັກສອນຈິງ: `\[` (ເປັນປະໂຫຍດເມື່ອຈັບຄູ່ວົງເລັບເປັນຕົວອັກສອນ)
+
+---
+
+##### ຫມາຍເຫດ {#blacklist-notes}
+
+- ລໍາດັບບໍ່ມີຜົນ; ການຈັບຄູ່ອັນທໍາອິດ/ອັນໃດກໍ່ຕາມ ຈະເຮັດໃຫ້ໄຟລ໌ຖືກຍົກເວັ້ນ.
+- ການຈັບຄູ່ແມ່ນຈາກຊື່ໄຟລ໌ເທົ່ານັ້ນ (ມອງຂ້າມເສັ້ນທາງ/ໂຟນເດີ).
+- “Reset to defaults” ຈະກູ້ຄືນ pattern ທີ່ແນະນໍາ ແລະການສະຫຼັບຄໍາເຕືອນ blacklist.
+- ທໍາມະໄດ້ຫຍັງຕົວຢ່າງ `*passwor*`? ມັນຈັບຄູ່ທັງຕະກູນ “password” ແລະ “Passwort”.
+- ລໍາດັບຄວາມສໍາຄັນ: ຖ້າ pattern ໃດໆຈັບຄູ່ກັບຊື່ໄຟລ໌, ໄຟລ໌ນັ້ນຈະຖືກຍົກເວັ້ນ (ອັນທໍາອິດ/ອັນໃດກໍ່ຕາມ — ລໍາດັບບໍ່ປ່ຽນຜົນ).
+- ເຄັດລັບ — ທົດສອບ pattern ຂອງທ່ານ: ເພີ່ມ pattern ຊົ່ວຄາວ, ຕອບກັບຂໍ້ຄວາມທີ່ມີໄຟລ໌ຊື່ກົງກັນ, ແລະຢືນຢັນວ່າມັນຖືກຍົກເວັ້ນໃນລາຍຊື່ເຕືອນ.
+
+##### ລອງໄວໆ (ການທົດສອບປອດໄພ) {#blacklist-try-it}
+
+1. ເປີດ Options → Blacklist.
+2. ເພີ່ມ pattern ຊົ່ວຄາວເຊັ່ນ `*.tmp` ແລະກົດ Save.
+3. ຕອບກັບອີເມວທົດສອບທີ່ມີໄຟລ໌ທ້າຍດ້ວຍ `.tmp` — ໄຟລ໌ຄວນຈະປາກົດໃນລາຍຊື່ເຕືອນ ແລະບໍ່ຖືກແນບ.
+4. ລຶບ pattern ຊົ່ວຄາວເມື່ອເຮັດແລ້ວ, ຫຼືກົດ “Reset to defaults”.
+
+---
+
+#### ເຕືອນເມື່ອໄຟລ໌ແນບຖືກຍົກເວັ້ນ {#warning-on-excluded-attachments}
+
+- ສະຫຼັບ “ເຕືອນຖ້າໄຟລ໌ແນບຖືກຍົກເວັ້ນໂດຍ blacklist” (ເລີ່ມຕົ້ນ: ເປີດ).
+- ເມື່ອເປີດ, modal ນ້ອຍໆຈະລາຍຊື່ໄຟລ໌ທີ່ຖືກຍົກເວັ້ນ ແລະ pattern ທີ່ຈັບຄູ່. ຄໍາ
+  ເຕືອນຈະປາກົດເມື່ອບໍ່ມີຫຍັງຖືກແນບເພາະຕົວເລືອກທັງໝົດຖືກ
+  ຢູ່ໃນ blacklist.
+
+---
+
+#### ບັນທຶກການຕັ້ງຄ່າຂອງທ່ານ {#save-your-settings}
+
+ການຕັ້ງຄ່າຈະຖືກບັນທຶກໂດຍການກົດປຸ່ມ Save. ທ່ານສາມາດກັບຄືນຄ່າໃນແຕ່ລະຊ່ອງດ້ວຍມື ຫຼືຣີເຊັດໄປຄ່າເລີ່ມຕົ້ນຕາມຄວາມຈໍາເປັນ.
+
+ຖ້າການຕັ້ງຄ່າທີ່ບັນທຶກໄວ້ເບິ່ງເຫັນວ່າບໍ່ໄດ້ນໍາໃຊ້ຢ່າງຖືກຕ້ອງ, ໃຫ້ຣີສະຕາຣ໌ Thunderbird ແລະລອງອີກຄັ້ງ. (Thunderbird ອາດຈະເກັບສະຖານະຂ້າມເຊສຊັນ; ການຣີສະຕາຣ໌ຈະເຮັດໃຫ້ໂຫຼດການຕັ້ງຄ່າໃໝ່.)
+
+ເຄັດລັບ: ເພື່ອຢືນຢັນວ່າການຕັ້ງຄ່າຂອງທ່ານມີຜົນ, ຕອບກັບຂໍ້ຄວາມໃດໆທີ່ມີໄຟລ໌ແນບ ແລະກວດຄໍາຢືນຢັນ ຫຼື ຄໍາເຕືອນ blacklist.
+
+---
+
+#### ການມອງເຫັນການບໍລິຈາກ (ງຽບ 90 ວັນ) {#donation-visibility}
+
+Add‑on ມີຟີຈເຈີອໍານວຍຄວາມສະດວກເພື່ອຊ່ອນຂໍ້ຄວາມຊັກຊວນບໍລິຈາກຊົ່ວຄາວຫຼັງຈາກທ່ານໄດ້ບໍລິຈາກແລ້ວ.
+
+ບ່ອນທີ່ຈະພົບມັນ
+
+- Options → ພາກ Support: ທ່ານຈະເຫັນປຸ່ມ “I donated” ແລະເນື້ອທີ່ຄໍາແນະນໍານ້ອຍໆ.
+- ໜ້າຕ່າງຢືນຢັນການສົ່ງກໍສະແດງປຸ່ມ Donate; ມັນຊ່ອນອັດຕະໂນມັດເມື່ອການງຽບກໍາລັງເຮັດວຽກ.
+
+ວິທີການເຮັດວຽກ
+
+- ການກົດ “I donated” ຈະຊ່ອນປຸ່ມບໍລິຈາກແລະຂໍ້ຄວາມທີ່ກ່ຽວຂ້ອງໄວ້ 90 ວັນ.
+- ຄໍາແນະນໍາສະຖານະຈະສະແດງ “Hidden until YYYY‑MM‑DD” (ຕາມວັນທີ່ໃນທ້ອງຖິ່ນຂອງທ່ານ). ມີປຸ່ມ “Show Donate again” ເພື່ອກູ້ຄືນການມອງເຫັນທັນທີ.
+- ຫຼັງ 90 ວັນ, ປຸ່ມ Donate ຈະກັບມາເຫັນໄດ້ອັດຕະໂນມັດອີກຄັ້ງ.
+
+ຄວາມເປັນສ່ວນຕົວ & ການເກັບຮັກສາ
+
+- Add‑on ຈະເກັບ timestamp ໜຶ່ງຄ່າໃນທ້ອງຖິ່ນຂອງ Thunderbird ເພື່ອຈື່ຈໍາໄລຍະງຽບ. ຄີ: `donateHideUntil` (epoch milliseconds).
+- ການຕັ້ງຄ່ານີ້ແມ່ນສໍາພັນກັບໂປຣໄຟລ໌ Thunderbird ຂອງທ່ານ (ບໍ່ຊິງຄ໌ຜ່ານ cloud). ຟີຈເຈີນີ້ບໍ່ສ້າງຄໍາຮ້ອງຂໍເຄືອຂ່າຍໃດໆ.
+
+ການແກ້ໄຂບັນຫາ
+
+- ຖ້າປຸ່ມ Donate ຍັງປາກົດທັນທີຫຼັງຈາກກົດ “I donated”, ລໍຖ້າສັກຄູ່ ຫຼືເປີດໜ້າ Options ໃໝ່; UI ຈະປັບປຸງທັນທີ່ບັນທຶກການຕັ້ງຄ່າ.
+- ເພື່ອຣີເຊັດດ້ວຍມື, ກົດ “Show Donate again”. ທ່ານກໍສາມາດລໍຖ້າໃຫ້ຜ່ານວັນທີ່ລະບຸໃນຄໍາແນະນໍາ.
+
+ຟີຈເຈີນີ້ເປັນເພື່ອອໍານວຍຄວາມສະດວກລ້ວນໆ; ບໍ່ເຄີຍຂັດຂວາງການເຮັດວຽກຂອງ add‑on ແລະບໍ່ເກັບຂໍ້ມູນສ່ວນຕົວໃດໆ.
+
+---
+
+### ການປັບມາດຕະຖານຊື່ໄຟລ໌ (ປ້ອງກັນຊ້ໍາ) {#filename-normalization-duplicates-prevention}
+
+ເພື່ອໃຫ້ພຶດຕິກໍາສອດຄ່ອງກັນຂ້າມແພລະຕະຟອມ, ຊື່ໄຟລ໌ຈະຖືກປັບມາດຕະຖານກ່ອນການກວດຊ້ໍາ:
+
+- Unicode ຖືກປັບໃຫ້ເປັນ NFC.
+- ຊື່ຖືກປັບເປັນຕົວນ້ອຍ (case‑folded).
+- ຈຸດ/ຊ່ອງວ່າງທ້າຍຖືກຕັດອອກ (ເປັນມິດກັບ Windows).
+
+ນີ້ຊ່ວຍໃຫ້ການກວດຫາຄວາມຊ້ໍາຄາດເດົາໄດ້ສໍາລັບຊື່ເຊັ່ນ `café.pdf` ທຽບກັບ `café.pdf` (NFD) ຫຼື `FILE.txt.` ທຽບກັບ `file.txt`.
+
+---
+
+## ພ຤ດຕິກໍາການຢືນຢັນ {#confirmation-behavior}
+
+- “Default answer” ກໍານົດປຸ່ມທີ່ໂຟກັສແຕ່ແລກໃນກ່ອງໂຕ້ຕອບຢືນຢັນ (ເປັນປະໂຫຍດສໍາລັບຜູ້ໃຊ້ແປ້ນພິມ).
+- ເຮັດວຽກທັງ “Reply” ແລະ “Reply all”. “Forward” ບໍ່ຖືກດັດແກ້ໂດຍ add‑on ນີ້.
+
+---
+
+## ຂັ້ນສູງ: ການກວດຊ້ໍາ {#advanced-duplicate-detection}
+
+ການປ້ອງກັນຊ້ໍາຖືກດໍາເນີນຕໍ່ແຖບຂຽນຂໍ້ຄວາມ ແລະຕາມຊື່ໄຟລ໌. ເບິ່ງ [ການນໍາໃຊ້](usage#behavior-details) ສໍາລັບຄໍາອະທິບາຍລະອຽດ.
+
+---
+
+ເບິ່ງເພີ່ມ
+
+- [ສິດທິ](permissions)
+- [ຄວາມເປັນສ່ວນຕົວ](privacy)

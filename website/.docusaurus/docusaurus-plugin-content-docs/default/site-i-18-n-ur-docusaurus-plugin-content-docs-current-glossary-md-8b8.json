@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n مسرد",
-  "description": "ایڈ‑آن UI اور دستاویزات میں استعمال ہونے والی معتبر اصطلاحات۔ ترجموں کو زبانوں میں یکساں رکھنے کے لیے ان کا استعمال کریں۔",
+  "title": "فہرستِ اصطلاحات",
+  "description": "Glossary",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n مسرد",
-    "sidebar_label": "مسرد"
+    "title": "فہرستِ اصطلاحات",
+    "sidebar_label": "فہرستِ اصطلاحات"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/languages"
   },
   "next": {
-    "title": "معاونت",
+    "title": "مدد",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/support"
   }
 }

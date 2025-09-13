@@ -1,13 +1,14 @@
 ---
 id: changelog
-title: Changelog
+title: 'Changelog'
 ---
 
 ---
 
 ## Changelog
 
-See the full history in the repository’s CHANGELOG.md.
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
 - 2.1.0: Full internationalization support for the top 100 languages
 - 2.0.0: rewrite to a full-featured version (EN/DE)

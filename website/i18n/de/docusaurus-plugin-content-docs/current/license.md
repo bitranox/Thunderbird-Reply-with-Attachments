@@ -1,25 +1,25 @@
 ---
 id: license
-title: Lizenz
-sidebar_label: Lizenz
----
-
+title: 'Lizenz'
+sidebar_label: 'Lizenz'
 ---
 
 ## Lizenz
 
 Projektlizenz: MIT
 
-Dieses Projekt steht unter der **MIT-Lizenz**.
+Dieses Projekt ist unter der **MIT-Lizenz** lizenziert.
 
 - Volltext: siehe `LICENSE` im Repository-Stammverzeichnis.
 - © Robert Nowotny (bitranox)
 
 ---
 
-## Lizenzen Dritter {#third-party-licenses}
+## Drittanbieter-Lizenzen {#third-party-licenses}
 
-Dieser Abschnitt fasst die von diesem Repository verwendeten Lizenzen Dritter zusammen. Die maßgebliche Liste im Quellbaum finden Sie in `THIRD_PARTY_LICENSES.md` im Repository-Stammverzeichnis.
+Dieser Abschnitt fasst die von diesem Repository verwendeten Drittanbieter-Lizenzen zusammen. Für die
+verbindliche Liste im Quellbaum siehe `THIRD_PARTY_LICENSES.md` im
+Repository-Stammverzeichnis.
 
 Werkzeuge und Bibliotheken (Entwicklung/Test/Dokumentation)
 
@@ -30,22 +30,23 @@ Werkzeuge und Bibliotheken (Entwicklung/Test/Dokumentation)
 - react — MIT
 - react-dom — MIT
 - clsx — MIT
-- web‑ext (nur via npx verwendet) — MPL‑2.0 (Entwicklungstool; wird nicht mit dem Add-on verteilt)
+- web‑ext (nur über npx verwendet) — MPL‑2.0 (Entwicklungstool; nicht mit dem Add-on verteilt)
 
 ---
 
 ## Hinweise
 
-- Die MailExtension-APIs von Thunderbird sind Plattform-APIs; es wird kein Code Dritter daraus gebündelt.
-- Projektsymbole in `sources/icons` sind Projekt-Assets (MIT, sofern nicht anders angegeben). Das GitHub-Logo/-Icon ist eine GitHub-Marke und nicht von der MIT-Lizenz abgedeckt; es wird gemäß den GitHub-Markenrichtlinien verwendet.
+- Thunderbird MailExtension-APIs sind Plattform-APIs; kein Drittanbieter-Code ist darin enthalten.
+- Projekt-Icons in `sources/icons` sind Projektbestandteile (MIT, sofern nicht anders angegeben). Das GitHub-Logo/-Icon ist ein Markenzeichen von GitHub und nicht durch MIT abgedeckt; es wird gemäß den Markenrichtlinien von GitHub verwendet.
 
-Wenn Sie neue Abhängigkeiten hinzufügen oder Code Dritter bündeln, aktualisieren Sie bitte sowohl diese Seite als auch `THIRD_PARTY_LICENSES.md` entsprechend.
+Wenn Sie neue Abhängigkeiten hinzufügen oder Drittanbieter-Code bündeln, aktualisieren Sie bitte sowohl diese
+Seite als auch `THIRD_PARTY_LICENSES.md` entsprechend.
 
 ---
 
 ## Marken
 
-- „Thunderbird“ ist eine Marke von MZLA/Thunderbird. Dieses Projekt ist ein Add-on eines Drittanbieters und ist nicht mit MZLA verbunden und wird nicht von MZLA unterstützt.
-- GitHub® und das GitHub-Logo sind Marken der GitHub, Inc. Logos werden gemäß den Markenrichtlinien verwendet.
+- “Thunderbird” ist ein Markenzeichen von MZLA/Thunderbird. Dieses Projekt ist ein Drittanbieter-Add-on und steht nicht in Verbindung mit oder wird von MZLA unterstützt.
+- GitHub® und das GitHub-Logo sind Marken von GitHub, Inc. Logos werden gemäß den Markenrichtlinien verwendet.
 
 ---

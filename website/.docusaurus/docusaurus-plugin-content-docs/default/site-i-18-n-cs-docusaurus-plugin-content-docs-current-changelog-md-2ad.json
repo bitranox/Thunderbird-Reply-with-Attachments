@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Seznam změn",
-  "description": "Celou historii najdete v souboru CHANGELOG.md v repozitáři.",
+  "title": "Historie změn",
+  "description": "Changelog",
   "source": "@site/i18n/cs/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Seznam změn"
+    "title": "Historie změn"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/cs/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/cs/docs/license"
   }
 }

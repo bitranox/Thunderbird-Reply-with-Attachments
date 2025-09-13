@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Ātrā uzsākšana",
+  "description": "Ātrā uzsākšana",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Ātrā uzsākšana",
+    "sidebar_label": "Ātrā uzsākšana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Funkcijas",
+    "title": "Iespējas",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalācija",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/install"
   }
 }

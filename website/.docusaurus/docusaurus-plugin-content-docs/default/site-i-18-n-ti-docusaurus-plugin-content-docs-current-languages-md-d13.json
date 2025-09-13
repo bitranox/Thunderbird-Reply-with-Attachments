@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ቋንቋታት",
+  "description": "ቋንቋታት",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ቋንቋታት",
+    "sidebar_label": "ቋንቋታት"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "ንዕድመ ነገር",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "መዋዕሊ ቃላት",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/glossary"
   }
 }

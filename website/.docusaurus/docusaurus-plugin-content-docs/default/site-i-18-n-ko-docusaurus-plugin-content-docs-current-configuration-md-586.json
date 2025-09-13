@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "구성",
-  "description": "용어 안내: UI와 문서에서 일관되게 사용하는 용어는 용어 사전을 참고하세요.",
+  "description": "Configuration",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

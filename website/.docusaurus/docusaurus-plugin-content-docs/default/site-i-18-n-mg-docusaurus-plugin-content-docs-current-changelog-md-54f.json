@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Tantaran'ny fanovana",
-  "description": "Jereo ny tantara feno ao amin'ny rakitra CHANGELOG.md ao amin'ny tahiry (repository).",
+  "title": "Fanavaozana",
+  "description": "Changelog",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Tantaran'ny fanovana"
+    "title": "Fanavaozana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/licence"
+    "title": "Fahazoan-dàlana",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/license"
   }
 }

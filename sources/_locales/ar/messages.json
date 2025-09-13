@@ -3,7 +3,7 @@
     "message": "الرد مع المرفقات"
   },
   "extDescription": {
-    "message": "إدراج المرفقات الأصلية تلقائيًا في الردود على البريد الإلكتروني."
+    "message": "إدراج المرفقات الأصلية تلقائيًا في ردود البريد الإلكتروني."
   },
   "composeTitle": {
     "message": "الرد مع المرفقات"
@@ -18,16 +18,42 @@
     "message": "الرد مع المرفقات"
   },
   "uiNoOptions": {
-    "message": "لا توجد حاليًا خيارات لتهيئتها."
+    "message": "لا توجد حاليًا أي خيارات للإعداد."
   },
   "uiSupport": {
-    "message": "هل تعجبك هذه الإضافة؟ ادعمني بمساهمة صغيرة:"
+    "message": "هل أعجبك هذا الملحق؟ يرجى دعمي بمساهمة صغيرة:"
+  },
+  "uiRateATNText": {
+    "message": "يرجى التقييم على ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "تبرع الآن"
   },
+  "uiIDonated": {
+    "message": "لقد تبرعت"
+  },
+  "uiDonateSnoozed": {
+    "message": "شكرًا لك! تم إخفاء مطالبة التبرع لمدة 90 يومًا."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "مخفي حتى $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "إظهار التبرع مرة أخرى"
+  },
+  "uiDonateRestored": {
+    "message": "أصبحت مطالبة التبرع مرئية مرة أخرى."
+  },
   "uiGithubText": {
-    "message": "للتبليغ عن الأخطاء أو الاستفسارات الأخرى، يُرجى زيارة"
+    "message": "للإبلاغ عن الأخطاء أو للاستفسارات الأخرى، يرجى زيارة"
   },
   "uiGithubLinkLabel": {
     "message": "صفحة GitHub"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "قائمة حظر أسماء الملفات (أنماط glob)"
+    "message": "القائمة السوداء لأسماء الملفات (أنماط glob)"
   },
   "uiBlacklistHelp": {
-    "message": "الملفات التي تطابق أسماؤها أيًا من هذه الأنماط لن تُرفق تلقائيًا أبدًا. نمط واحد في كل سطر. أمثلة: *.png, smime.*, *.p7s"
+    "message": "لن تُرفق تلقائيًا أي ملفات تطابق أسماؤها أيًا من هذه الأنماط. نمط واحد في كل سطر. أمثلة: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "تحذير إذا تم استثناء المرفقات بواسطة قائمة الحظر"
+    "message": "التحذير عند استبعاد المرفقات بواسطة القائمة السوداء"
   },
   "uiSave": {
     "message": "حفظ"
@@ -54,25 +80,25 @@
     "message": "جارٍ الحفظ…"
   },
   "uiReset": {
-    "message": "إعادة التعيين إلى الإعدادات الافتراضية"
+    "message": "إعادة الضبط إلى القيم الافتراضية"
   },
   "uiSaved": {
     "message": "تم الحفظ."
   },
   "uiResetDone": {
-    "message": "تمت إعادة التعيين."
+    "message": "تمت إعادة الضبط."
   },
   "uiConfirmHeader": {
     "message": "التأكيد"
   },
   "uiConfirmLabel": {
-    "message": "السؤال قبل إضافة المرفقات"
+    "message": "اطلب التأكيد قبل إضافة المرفقات"
   },
   "uiConfirmHelp": {
-    "message": "سيظهر مربع تأكيد صغير فقط عندما تكون هناك مرفقات ستُضاف فعليًا. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
+    "message": "ستظهر نافذة تأكيد صغيرة فقط عندما تكون هناك مرفقات ستُضاف فعليًا. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
   },
   "confirmAddOne": {
-    "message": "إضافة مرفق: $1؟",
+    "message": "إضافة المرفق: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "لا"
   },
   "warnBlacklistTitle": {
-    "message": "تم الاستبعاد بواسطة قائمة الحظر"
+    "message": "تم الاستبعاد بواسطة القائمة السوداء"
   },
   "warnBlacklistIntro": {
     "message": "لن تُرفق الملفات التالية تلقائيًا:"
@@ -124,9 +150,21 @@
     "message": "لا"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "التوثيق:"
+  },
+  "uiDocsButton": {
+    "message": "افتح الوثائق"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

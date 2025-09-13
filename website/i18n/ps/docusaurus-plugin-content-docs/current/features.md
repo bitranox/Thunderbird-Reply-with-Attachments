@@ -1,17 +1,34 @@
 ---
 id: features
-title: ځانګړنې
-sidebar_label: ځانګړنې
+title: 'خصوصیات'
+sidebar_label: 'خصوصیات'
 ---
 
-## ځانګړنې
+## Features {#features}
 
-- د ځواب پر مهال د اصلي ایمیل فایلونه په اوتومات ډول نښلوي.
-- د تنظیم وړ چلند: ضمیمې کېدای شي
-  - په اوتومات ډول زیاتې شي، یا
-  - یوازې تر تایید وروسته زیاتې شي (یو واړه، د لاسرسي وړ ډایلاګ). په «Options» کې تایید فعالولای شئ او د تلوالي ځواب (هو/نه) وټاکئ.
-- د فایل نومونو تور لست (د glob بېلګې) ځینې فایلونه په اوتومات ډول له نښلول کېدو منع کوي. بېلګې: `*intern*`, `*secret*`, `*passwor*`.
-  سمون د غټو/واړو تورو حساس نه دی او یوازې د فایل نوم ګوري؛ په «Options» کې په هره کرښه یو بېلګه ورکړئ.
-- د تور لست خبرداری (اختیاري، په تلواله فعال): کله چې فایلونه ستاسو په تور لست کې وباسي، یو واړه مودال فایل او سمون موندلي بېلګې ښيي. د تیاره حالت سره مناسب او د کیبورډ له لارې د لاسرسي وړ (Enter/Esc د بندولو لپاره).
-- که څه هم تاسو له مخکې څه شی نښلولي وي، بیا هم اصلي فایلونه زیاتوي؛ د فایل نوم پر بنسټ نقلونه مخنیوی کوي.
-- د اړتیا نه لرونکو ضمیمو د مخنیوي لپاره د SMIME سندونه او دننه انځورونه پرېږدي.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

@@ -14,15 +14,15 @@
   "frontMatter": {
     "id": "compatibility",
     "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "sidebar_label": "Kompatibilidad"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Paggamit",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Mga Pahintulot",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/permissions"
   }
 }

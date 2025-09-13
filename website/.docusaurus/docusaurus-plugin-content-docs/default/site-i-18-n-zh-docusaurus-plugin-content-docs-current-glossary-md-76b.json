@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n 术语表",
-  "description": "在附加组件 UI 与文档中使用的规范术语。请根据这些术语在各语言中保持一致的翻译。",
+  "title": "术语表",
+  "description": "Glossary",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n 术语表",
+    "title": "术语表",
     "sidebar_label": "术语表"
   },
   "sidebar": "docs",

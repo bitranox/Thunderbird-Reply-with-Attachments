@@ -3,7 +3,7 @@
     "message": "Адказ з укладаннямі"
   },
   "extDescription": {
-    "message": "Аўтаматычна ўключае арыгінальныя ўкладанні ў адказы на электронныя лісты."
+    "message": "Аўтаматычна ўключаць арыгінальныя ўкладанні ў адказах на электронныя лісты."
   },
   "composeTitle": {
     "message": "Адказ з укладаннямі"
@@ -12,25 +12,51 @@
     "message": "Адказ з укладаннямі — Налады"
   },
   "confirmTitle": {
-    "message": "Пацвярджэнне ўкладанняў"
+    "message": "Пацвярджэнне укладанняў"
   },
   "uiHeader": {
     "message": "Адказ з укладаннямі"
   },
   "uiNoOptions": {
-    "message": "Зараз няма наладак."
+    "message": "Зараз няма налад."
   },
   "uiSupport": {
-    "message": "Ці падабаецца вам гэта пашырэнне? Падтрымайце мяне невялікім унёскам:"
+    "message": "Вам падабаецца гэтае пашырэнне? Падтрымаеце мяне невялікім унёскам:"
+  },
+  "uiRateATNText": {
+    "message": "Калі ласка, ацаніце на ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Ахвяраваць зараз"
   },
+  "uiIDonated": {
+    "message": "Я ахвяраваў"
+  },
+  "uiDonateSnoozed": {
+    "message": "Дзякуй! Паведамленне пра ахвяраванне схавана на 90 дзён."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Схавана да $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Паказаць «Ахвяраваць» зноў"
+  },
+  "uiDonateRestored": {
+    "message": "Паведамленне пра ахвяраванне зноў бачна."
+  },
   "uiGithubText": {
-    "message": "Для паведамленняў пра памылкі або іншых запытаў, калі ласка, наведайце маю"
+    "message": "Для паведамленняў пра памылкі або іншых пытанняў, калі ласка, наведайце маю"
   },
   "uiGithubLinkLabel": {
-    "message": "Старонка на GitHub"
+    "message": "Старонка GitHub"
   },
   "iconAlt": {
     "message": "Значок «Адказ з укладаннямі»"
@@ -42,10 +68,10 @@
     "message": "Чорны спіс імёнаў файлаў (шаблоны glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Файлы, імёны якіх адпавядаюць любому з гэтых шаблонаў, ніколі не будуць прымацоўвацца аўтаматычна. Адзін шаблон у радку. Прыклады: *.png, smime.*, *.p7s"
+    "message": "Файлы, назвы якіх адпавядаюць любому з гэтых шаблонаў, ніколі не будуць дадавацца аўтаматычна. Адзін шаблон на радок. Прыклады: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Папярэджваць, калі ўкладанні выключаюцца чорным спісам"
+    "message": "Папярэджваць, калі ўкладанні выключаны чорным спісам"
   },
   "uiSave": {
     "message": "Захаваць"
@@ -54,7 +80,7 @@
     "message": "Захаванне…"
   },
   "uiReset": {
-    "message": "Скінуць да прадвызначаных наладак"
+    "message": "Скінуць да прадвызначаных налад"
   },
   "uiSaved": {
     "message": "Захавана."
@@ -66,10 +92,10 @@
     "message": "Пацвярджэнне"
   },
   "uiConfirmLabel": {
-    "message": "Пытацца перад прымацаваннем укладанняў"
+    "message": "Пытацца перад дадаваннем укладанняў"
   },
   "uiConfirmHelp": {
-    "message": "Невялікае акно пацвярджэння з'яўляецца толькі калі ўкладанні сапраўды будуць дададзены. Клавіятура: Y або J = Так; N або Esc = Не."
+    "message": "Невялікае дыялогавае акно пацвярджэння з'явіцца толькі тады, калі ўкладанні сапраўды будуць дададзены. Клавіятура: Y або J = Так; N або Esc = Не."
   },
   "confirmAddOne": {
     "message": "Дадаць укладанне: $1?",
@@ -103,7 +129,7 @@
     "message": "Выключана чорным спісам"
   },
   "warnBlacklistIntro": {
-    "message": "Наступныя файлы не будуць прымацоўвацца аўтаматычна:"
+    "message": "Наступныя файлы не будуць дададзены аўтаматычна:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -115,7 +141,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Адказ па змаўчанні"
+    "message": "Адказ па змоўчанні"
   },
   "uiConfirmDefaultYes": {
     "message": "Так"
@@ -124,9 +150,21 @@
     "message": "Не"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Дакументацыя:"
+  },
+  "uiDocsButton": {
+    "message": "Адкрыць дакументацыю"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

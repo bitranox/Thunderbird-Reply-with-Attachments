@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "परिवर्तन सूची",
-  "description": "पूरै इतिहास रिभोजिटरीको CHANGELOG.md फाइलमा हेर्नुहोस्।",
+  "title": "फेरबदल सूची",
+  "description": "Changelog",
   "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "परिवर्तन सूची"
+    "title": "फेरबदल सूची"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/licence"
+    "title": "अनुमति",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/license"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Greitas pradžia",
+  "description": "Greitas pradžia",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Greitas pradžia",
+    "sidebar_label": "Greitas pradžia"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Funkcijos",
+    "title": "Ypatybės",
     "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Diegimas",
     "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/install"
   }
 }

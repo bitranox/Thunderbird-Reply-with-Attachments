@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ҷадвали тағйирот",
-  "description": "Таърихи пурраро дар файли CHANGELOG.md-и анбор бинед.",
+  "title": "Таҳлилҳо",
+  "description": "Таҳлилҳо",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ҷадвали тағйирот"
+    "title": "Таҳлилҳо"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/licence"
+    "title": "Лицензия",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/license"
   }
 }

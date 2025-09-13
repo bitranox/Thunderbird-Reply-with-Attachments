@@ -12,25 +12,51 @@
     "message": "Respondre amb adjunts — Opcions"
   },
   "confirmTitle": {
-    "message": "Confirmació dels adjunts"
+    "message": "Confirmació d'adjunts"
   },
   "uiHeader": {
     "message": "Respondre amb adjunts"
   },
   "uiNoOptions": {
-    "message": "Actualment no hi ha opcions per configurar."
+    "message": "Actualment no hi ha cap opció per configurar."
   },
   "uiSupport": {
-    "message": "Us agrada aquest complement? Doneu-me suport amb una petita contribució:"
+    "message": "T'agrada aquest complement? Dona suport al projecte amb una petita contribució:"
+  },
+  "uiRateATNText": {
+    "message": "Si us plau, valora'l a l'ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Feu una donació ara"
+    "message": "Dona ara"
+  },
+  "uiIDonated": {
+    "message": "He fet una donació"
+  },
+  "uiDonateSnoozed": {
+    "message": "Gràcies! L'avís de donació queda ocult durant 90 dies."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Ocult fins al $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Torna a mostrar l'avís de donació"
+  },
+  "uiDonateRestored": {
+    "message": "L'avís de donació torna a ser visible."
   },
   "uiGithubText": {
-    "message": "Per informar d'errors o altres consultes, visiteu la meva"
+    "message": "Per informar d'errors o altres consultes, visita la meva"
   },
   "uiGithubLinkLabel": {
-    "message": "pàgina de GitHub"
+    "message": "Pàgina de GitHub"
   },
   "iconAlt": {
     "message": "Icona de Respondre amb adjunts"
@@ -42,10 +68,10 @@
     "message": "Llista negra de noms de fitxer (patrons glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Els fitxers amb noms que coincideixin amb qualsevol d’aquests patrons no s’adjuntaran mai automàticament. Un patró per línia. Exemples: *.png, smime.*, *.p7s"
+    "message": "Els fitxers amb noms que coincideixin amb qualsevol d'aquests patrons no s'adjuntaran mai automàticament. Un patró per línia. Exemples: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avisa si la llista negra exclou adjunts"
+    "message": "Avisa si els adjunts queden exclosos per la llista negra"
   },
   "uiSave": {
     "message": "Desa"
@@ -54,7 +80,7 @@
     "message": "Desant…"
   },
   "uiReset": {
-    "message": "Restableix els valors per defecte"
+    "message": "Restableix als valors per defecte"
   },
   "uiSaved": {
     "message": "Desat."
@@ -66,10 +92,10 @@
     "message": "Confirmació"
   },
   "uiConfirmLabel": {
-    "message": "Pregunta abans d'afegir els adjunts"
+    "message": "Demana confirmació abans d'afegir adjunts"
   },
   "uiConfirmHelp": {
-    "message": "Només apareix un petit diàleg de confirmació quan realment s'hagin d'afegir adjunts. Teclat: Y o J = Sí; N o Esc = No."
+    "message": "Només apareix un petit diàleg de confirmació quan realment s'afegiran adjunts. Teclat: Y o J = Sí; N o Esc = No."
   },
   "confirmAddOne": {
     "message": "Afegir l'adjunt: $1?",
@@ -124,9 +150,21 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentació:"
+  },
+  "uiDocsButton": {
+    "message": "Obre la documentació"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

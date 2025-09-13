@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "Fahazoan-dàlana",
+  "description": "Permissions",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "Fahazoan-dàlana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "Fifanentanana",
     "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "Fampandrosoana",
     "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/development"
   }
 }

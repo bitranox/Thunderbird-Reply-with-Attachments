@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Өзгөртүүлөр журналы",
-  "description": "Толук тарыхты репозиторийдеги CHANGELOG.md файлынан караңыз.",
+  "title": "Чанжлог",
+  "description": "Чанжлог",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Өзгөртүүлөр журналы"
+    "title": "Чанжлог"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/licence"
+    "title": "Лицензия",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/license"
   }
 }

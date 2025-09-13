@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Gurnama'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Gurnama'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Gurnama "Thunderbird Öňdebeli goşantlary we Tema" arkaly {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimal Thunderbird wersiýasy
+Bu goşmaça Thunderbird **128 ESR ýa-da has täze** wersiýalaryny goldaýar. Sargyt edilmedik wersiýalar goldanmaýar.
+:::
 
----
+Bu maslahat berlen gurnama usulydyr. ATN-dan (addons.thunderbird.net) gurnalan goşmaçalar avtomatiki täzelenmeleri alarlar. LOCAL/dev gurnamalary avtomatiki täzelenmeýär.
 
-## Local installation in Thunderbird
+- Minimal Thunderbird wersiýasy: 128 ESR ýa-da has täze.
 
-### Download the XPI file
+1. Thunderbird-da **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
+2. "göçürme bilen jogap ber" üçin gözleg ediň.
+3. goşanty goşuň.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+ýa-da goşmaça sahypasyna eseň: [Thunderbird Goşantlary (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## XPI ulanyp ýükläp gurnamak {#local-installation-in-thunderbird}
 
-### Download the repository
+### XPI faýlını ýükläň {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird Goşant sahypasyna](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) geçiň.
+2. goşant kopasiýa faýlyny goşmak üçin iň soňky wersiýasyny XPI faýly hökmünde ýükläň (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Thunderbird-da gurnamak {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Thunderbird-a açyň.
+2. **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
+3. **Goşmaçalar Meneceri** bölüminde, ýokarky sag köşede zyň zynjyryny basyň.
+4. Menýudan **Faýldan Goşant Gurmak...** saýlaň.
+5. ýüklän `reply_with_attachments-x.y.z-tb.xpi` faýlyny saýlaň.
+6. soralanda gurnamany tassyklanyň.
 
 ---
+
+## Ösüş üçin gurnamak {#installation-for-development}
+
+### Repo şol şertle öwreniň {#download-the-repository}
+
+1. GitHub repo-iň iň soňky wersiýasyny ýükläň.
+2. Has giňişleýin maglumat üçin `make help`运行.
+
+### Thunderbird-da gurnamak {#install-in-thunderbird-dev}
+
+1. Thunderbird-a açyň.
+2. **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
+3. **Goşmaçalar Meneceri** bölüminde, ýokarky sag köşede zyň zynjyryny basyň.
+4. Menýudan **Faýldan Goşant Gurmak...** saýlaň.
+5. döredilen `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` faýlyny saýlaň.
+6. soralanda gurnamany tassyklanyň.
+
+Belgi: Eger Thunderbird `.zip` sistemyňizde kabul etmese, ony `.xpi` diýip atlandyryň we "Faýldan Goşant Gurmak..." saýlamagyňyzy gaýtalaň.
+
+### LOCAL ZIP-i neritmek {#where-local-zip}
+
+- Ilkinji, goşanty paket ediň: repo kökünde `make pack` işlediň.
+- Paketlenenden soň, repo kökünde "LOCAL" zip-i tapyň (meselem, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Synag üçin gaýtadan paketlemekden öň, `sources/manifest_ATN.json` we `sources/manifest_LOCAL.json` iki üpjün ediş weight 分享.
+
+---
+
+## Çekmek, Öçürmek, we Täzelikler {#disable-uninstall-updates}
+
+- Çekmek: Thunderbird → Işläp Düzenlemeler → Goşmaçalar we Temalar → goşanty tapyň → off-a geçiriň.
+- Öçürmek: şul bir görkezijinde → üç nokat menýusyna → Öçürmek.
+- Täzelikler: ATN gurnamalary täze wersiýalar kabul edilende awtomatiki täzelenýär. LOCAL/dev gurnamalary awtomatiki täzelenmeýär; täze LOCAL gurluşy öňki öz-özüne oňky edition gurnamaga täzeden eýe boluň.
+- Düzgünleri doly aýyrmak üçin: [Gizlinlik → Maglumat aýyrmak](privacy#data-removal) göz öňünde tutuň.
+
+Şeýle hem görýär
+
+- [Gysgaça](quickstart)

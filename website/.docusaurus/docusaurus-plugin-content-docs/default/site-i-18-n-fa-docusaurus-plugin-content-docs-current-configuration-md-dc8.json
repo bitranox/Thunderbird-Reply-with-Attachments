@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "پیکربندی",
-  "description": "یادداشت اصطلاحات: برای اصطلاحات یکسان در UI و مستندات، Glossary را ببینید.",
+  "description": "پیکربندی",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/install"
   },
   "next": {
-    "title": "شیوه استفاده",
+    "title": "استفاده",
     "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/usage"
   }
 }

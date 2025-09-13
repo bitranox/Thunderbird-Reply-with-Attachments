@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Bahasa",
-  "description": "Dukungan luas berkat alat terjemahan berbasis AI — mencakup 103 bahasa.",
+  "description": "Languages",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

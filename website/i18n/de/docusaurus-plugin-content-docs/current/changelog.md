@@ -1,24 +1,19 @@
 ---
 id: changelog
-title: Änderungsprotokoll
+title: 'Änderungsprotokoll'
 ---
 
----
+## Changelog
 
-## Änderungsprotokoll
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-Die vollständige Historie finden Sie im Repository in der Datei CHANGELOG.md.
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
 
-- 2.1.0: Vollständige Internationalisierungsunterstützung für die Top 100 Sprachen
-- 2.0.0: Komplette Neufassung zu einer voll funktionsfähigen Version (EN/DE)
-- 1.0.1: Umgestellt auf messages.listAttachments()
-- 1.0.0: Erstveröffentlichung
+## Dates and channels {#dates-and-channels}
 
----
-
-## Termine und Kanäle {#dates-and-channels}
-
-- Veröffentlichungen auf ATN können einige Stunden nach der Paketierung erfolgen.
-- LOCAL-Builds sind ausschließlich für Entwickler-Tests bestimmt und werden nicht über ATN verteilt.
-
----
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

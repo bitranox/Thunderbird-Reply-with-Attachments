@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Glosari i18n",
-  "description": "Istilah kanonik yang digunakan dalam UI dan dokumentasi add‑on. Gunakan istilah ini untuk memastikan terjemahan konsisten merentas locale.",
+  "title": "Glosari",
+  "description": "Glosari",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Glosari i18n",
+    "title": "Glosari",
     "sidebar_label": "Glosari"
   },
   "sidebar": "docs",

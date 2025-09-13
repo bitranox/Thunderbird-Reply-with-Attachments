@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "भाषाएँ",
-  "description": "AI अनुवाद उपकरणों की मदद से 103 भाषाओं तक व्यापक समर्थन।",
+  "description": "Languages",
   "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "विकास",
     "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/development"
   },
   "next": {

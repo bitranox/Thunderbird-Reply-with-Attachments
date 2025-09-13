@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "డెవలప్మెంట్",
-  "description": "డెవలప్మెంట్ గైడ్",
+  "title": "అభివృద్ధి",
+  "description": "Development Guide",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "డెవలప్మెంట్",
-    "sidebar_label": "డెవలప్మెంట్"
+    "title": "అభివృద్ధి",
+    "sidebar_label": "అభివృద్ధి"
   },
   "sidebar": "docs",
   "previous": {

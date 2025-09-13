@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donate",
-  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "title": "Fanomezana",
+  "description": "Donate",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donate",
-    "sidebar_label": "Donate"
+    "title": "Fanomezana",
+    "sidebar_label": "Fanomezana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Privacy",
+    "title": "Fiainana manokana",
     "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/privacy"
   },
   "next": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/licence"
+    "title": "Fahazoan-dàlana",
+    "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/license"
   }
 }

@@ -1,48 +1,74 @@
 {
   "extName": {
-    "message": "সংযুক্তিসহ উত্তর দিন"
+    "message": "সংযুক্তিসহ উত্তর"
   },
   "extDescription": {
-    "message": "ইমেল উত্তরে স্বয়ংক্রিয়ভাবে মূল সংযুক্তিগুলো অন্তর্ভুক্ত করুন।"
+    "message": "ইমেইল উত্তরে স্বয়ংক্রিয়ভাবে মূল সংযুক্তিগুলি অন্তর্ভুক্ত করে।"
   },
   "composeTitle": {
-    "message": "সংযুক্তিসহ উত্তর দিন"
+    "message": "সংযুক্তিসহ উত্তর"
   },
   "optionsTitle": {
-    "message": "সংযুক্তিসহ উত্তর দিন — বিকল্পসমূহ"
+    "message": "সংযুক্তিসহ উত্তর — বিকল্পসমূহ"
   },
   "confirmTitle": {
     "message": "সংযুক্তি নিশ্চিত করুন"
   },
   "uiHeader": {
-    "message": "সংযুক্তিসহ উত্তর দিন"
+    "message": "সংযুক্তিসহ উত্তর"
   },
   "uiNoOptions": {
     "message": "বর্তমানে কনফিগার করার মতো কোনো বিকল্প নেই।"
   },
   "uiSupport": {
-    "message": "এই অ্যাড-অনটি কি আপনার ভালো লেগেছে? একটি ছোট অনুদানে আমাকে সমর্থন করুন:"
+    "message": "এই অ্যাড-অনটি কি আপনার ভালো লেগেছে? অনুগ্রহ করে ছোট একটি অনুদানে আমাকে সমর্থন করুন:"
+  },
+  "uiRateATNText": {
+    "message": "অনুগ্রহ করে ATN-এ রেট দিন"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "এখনই অনুদান দিন"
   },
+  "uiIDonated": {
+    "message": "আমি অনুদান দিয়েছি"
+  },
+  "uiDonateSnoozed": {
+    "message": "ধন্যবাদ! অনুদানের অনুরোধ ৯০ দিনের জন্য লুকানো হয়েছে।"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "লুকানো থাকবে $1 পর্যন্ত",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "অনুদানের অনুরোধ আবার দেখান"
+  },
+  "uiDonateRestored": {
+    "message": "অনুদানের অনুরোধ আবার দৃশ্যমান।"
+  },
   "uiGithubText": {
-    "message": "বাগ রিপোর্ট বা অন্যান্য জিজ্ঞাসার জন্য, অনুগ্রহ করে পরিদর্শন করুন আমার"
+    "message": "বাগ রিপোর্ট বা অন্যান্য জিজ্ঞাসার জন্য, অনুগ্রহ করে আমার"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub পৃষ্ঠা"
+    "message": "GitHub পেজ"
   },
   "iconAlt": {
-    "message": "সংযুক্তিসহ উত্তর দিন আইকন"
+    "message": "সংযুক্তিসহ উত্তর আইকন"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ফাইলের নামের ব্ল্যাকলিস্ট (গ্লোব প্যাটার্ন)"
+    "message": "ফাইল নামের ব্ল্যাকলিস্ট (গ্লব প্যাটার্ন)"
   },
   "uiBlacklistHelp": {
-    "message": "যেসব ফাইলের নাম এই প্যাটার্নগুলোর যেকোনোটির সাথে মেলে, সেগুলো কখনো স্বয়ংক্রিয়ভাবে সংযুক্ত হবে না। প্রতি লাইনে একটি প্যাটার্ন লিখুন। উদাহরণ: *.png, smime.*, *.p7s"
+    "message": "যেসব ফাইলের নাম এই প্যাটার্নগুলোর যেকোনোটির সাথে মিলে যাবে, সেগুলো কখনোই স্বয়ংক্রিয়ভাবে সংযুক্ত হবে না। প্রতি লাইনে একটি প্যাটার্ন দিন। উদাহরণ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "ব্ল্যাকলিস্টের কারণে সংযুক্তি বাদ পড়লে সতর্ক করুন"
@@ -54,22 +80,22 @@
     "message": "সংরক্ষণ করা হচ্ছে…"
   },
   "uiReset": {
-    "message": "ডিফল্টে রিসেট করুন"
+    "message": "পূর্বনির্ধারিত মানে রিসেট করুন"
   },
   "uiSaved": {
     "message": "সংরক্ষিত।"
   },
   "uiResetDone": {
-    "message": "রিসেট হয়েছে।"
+    "message": "রিসেট করা হয়েছে।"
   },
   "uiConfirmHeader": {
     "message": "নিশ্চিতকরণ"
   },
   "uiConfirmLabel": {
-    "message": "সংযুক্তি যোগ করার আগে জিজ্ঞেস করুন"
+    "message": "সংযুক্তি যোগ করার আগে জিজ্ঞাসা করুন"
   },
   "uiConfirmHelp": {
-    "message": "একটি ছোট নিশ্চিতকরণ ডায়ালগ কেবল তখনই দেখাবে যখন সত্যিই সংযুক্তি যোগ করা হবে। কিবোর্ড: Y বা J = হ্যাঁ; N বা Esc = না।"
+    "message": "শুধুমাত্র যখন আসলেই সংযুক্তি যোগ করা হবে, তখন একটি ছোট নিশ্চিতকরণ ডায়ালগ দেখা যাবে। কীবোর্ড: Y বা J = হ্যাঁ; N বা Esc = না।"
   },
   "confirmAddOne": {
     "message": "সংযুক্তি যোগ করবেন: $1?",
@@ -100,10 +126,10 @@
     "message": "না"
   },
   "warnBlacklistTitle": {
-    "message": "ব্ল্যাকলিস্টের কারণে বাদ দেওয়া হয়েছে"
+    "message": "ব্ল্যাকলিস্ট দ্বারা বাদ দেওয়া হয়েছে"
   },
   "warnBlacklistIntro": {
-    "message": "নিম্নলিখিত ফাইলগুলো স্বয়ংক্রিয়ভাবে সংযুক্ত করা হবে না:"
+    "message": "নিম্নোক্ত ফাইলগুলো স্বয়ংক্রিয়ভাবে সংযুক্ত হবে না:"
   },
   "warnColFile": {
     "message": "ফাইল"
@@ -124,9 +150,21 @@
     "message": "না"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ডকুমেন্টেশন:"
+  },
+  "uiDocsButton": {
+    "message": "ডকস খুলুন"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,16 +1,21 @@
 ---
 id: languages
-title: 语言
-sidebar_label: 语言
+title: '语言'
+sidebar_label: '语言'
 ---
 
-# 语言支持
+## Languages
 
-借助 AI 翻译工具，覆盖 103 种语言的大规模本地化支持。
+此列表反映了网站文档翻译和附加用户界面字符串。
+得益于人工智能翻译工具的大量语言支持——涵盖100种语言。
 
-下面的列表按语言代码排序。
+以下列表按语言代码排序。
 
-另请参阅：[术语表](glossary)，其中包含在各语言中统一使用的 UI 术语。
+另请参阅：[术语表](glossary)，了解跨地区使用的标准用户界面术语。
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ sidebar_label: 语言
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ sidebar_label: 语言
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+提示：通过网站头部的语言选择器切换文档语言（URL 前缀相应更改）。Thunderbird 的用户界面语言独立于网站语言，并遵循您的 Thunderbird 设置。
+
+登陆页面重定向
+
+- 如果网站是用您浏览器的首选语言构建的，访问项目的 baseUrl 下的基础文档 URL 会自动重定向到该语言。使用语言切换器（或 `/en/`）保持在英文。
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- 在翻译中发现问题？请打开GitHub问题或PR。
+- 更喜欢针对 `website/docs/` 的英文源代码进行编辑；维护者的工具将更新传播到其他语言。
+  英文是文档的真实来源；翻译更新在维护者的工作流程中从英文中提取。
+
+### Homepage, Navbar, Footer UI
+
+- 这些字符串位于 `website/i18n/en/code.json` 中，并通过维护者任务翻译为所有语言：
+  - `make translate_web_index`（需要 `OPENAI_API_KEY`）
+  - 通过 `OPTS="--locales de,fr"` 限制语言；使用 `OPTS="--force"` 重写现有值。
+
+### Website vs. UI {#website-vs-ui}
+
+- 网站语言和附加用户界面语言是独立的；语言选择器仅更改文档。Thunderbird 的用户界面语言遵循您的 Thunderbird 设置。
+
+---

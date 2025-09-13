@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Üýtgeşmeler gündeligi",
-  "description": "Doly taryhy repo içindäki CHANGELOG.md faýlynda görüň.",
+  "title": "Arhiw",
+  "description": "Changelog",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Üýtgeşmeler gündeligi"
+    "title": "Arhiw"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/licence"
+    "title": "Lisenziýa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/license"
   }
 }

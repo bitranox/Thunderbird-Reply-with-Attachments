@@ -3,7 +3,7 @@
     "message": "Responder con adjuntos"
   },
   "extDescription": {
-    "message": "Incluye automáticamente los adjuntos originales en las respuestas de correo."
+    "message": "Incluir automáticamente los adjuntos originales en las respuestas de correo."
   },
   "composeTitle": {
     "message": "Responder con adjuntos"
@@ -18,16 +18,42 @@
     "message": "Responder con adjuntos"
   },
   "uiNoOptions": {
-    "message": "Actualmente no hay opciones para configurar."
+    "message": "Actualmente no hay opciones que configurar."
   },
   "uiSupport": {
     "message": "¿Te gusta este complemento? Apóyame con una pequeña contribución:"
   },
+  "uiRateATNText": {
+    "message": "Por favor, valora en ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
+  },
   "uiDonate": {
     "message": "Donar ahora"
   },
+  "uiIDonated": {
+    "message": "He donado"
+  },
+  "uiDonateSnoozed": {
+    "message": "¡Gracias! Aviso de donación oculto durante 90 días."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Oculto hasta $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Volver a mostrar Donar"
+  },
+  "uiDonateRestored": {
+    "message": "El aviso de donación vuelve a ser visible."
+  },
   "uiGithubText": {
-    "message": "Para informar de errores u otras consultas, visita mi"
+    "message": "Para reportar errores u otras consultas, visita mi"
   },
   "uiGithubLinkLabel": {
     "message": "página de GitHub"
@@ -45,7 +71,7 @@
     "message": "Los archivos cuyos nombres coincidan con cualquiera de estos patrones nunca se adjuntarán automáticamente. Un patrón por línea. Ejemplos: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Advertir si los adjuntos se excluyen por la lista negra"
+    "message": "Advertir si los adjuntos están excluidos por la lista negra"
   },
   "uiSave": {
     "message": "Guardar"
@@ -69,7 +95,7 @@
     "message": "Preguntar antes de añadir adjuntos"
   },
   "uiConfirmHelp": {
-    "message": "Solo aparece un pequeño cuadro de confirmación cuando realmente se vayan a añadir adjuntos. Teclado: Y o J = Sí; N o Esc = No."
+    "message": "Aparece un pequeño cuadro de confirmación solo cuando realmente se vayan a añadir adjuntos. Teclado: Y o J = Sí; N o Esc = No."
   },
   "confirmAddOne": {
     "message": "¿Añadir adjunto: $1?",
@@ -124,9 +150,21 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentación:"
+  },
+  "uiDocsButton": {
+    "message": "Abrir documentación"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

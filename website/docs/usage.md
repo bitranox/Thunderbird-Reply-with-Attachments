@@ -1,7 +1,7 @@
 ---
 id: usage
-title: Usage
-sidebar_label: Usage
+title: 'Usage'
+sidebar_label: 'Usage'
 ---
 
 ---
@@ -19,6 +19,14 @@ sidebar_label: Usage
 - Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
 
 Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+
+| Part type                                         |  Strict pass | Relaxed pass |
+| ------------------------------------------------- | -----------: | -----------: |
+| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
+| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
+| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
+| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
+| Regular file attachment with a filename           | May be added | May be added |
 
 Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
 
@@ -54,6 +62,17 @@ Example: Some attachments might lack certain headers but are still regular files
   - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
   - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
 
+### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+
+| Keys            | Action                         |
+| --------------- | ------------------------------ |
+| Y / J           | Confirm Yes                    |
+| N / Esc         | Confirm No                     |
+| Enter           | Activate focused button        |
+| Tab / Shift+Tab | Move focus forward/back        |
+| Arrow keys      | Move focus between buttons     |
+| Default answer  | Sets initial focus (Yes or No) |
+
 ---
 
 ## Limitations {#limitations}
@@ -74,3 +93,7 @@ Example: Some attachments might lack certain headers but are still regular files
 - Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
 
 ---
+
+See also
+
+- [Configuration](configuration)

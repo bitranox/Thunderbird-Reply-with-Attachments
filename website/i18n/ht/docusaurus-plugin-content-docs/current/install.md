@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Enstalasyon'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Enstalasyon'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Enstalasyon atravè "Add-ons ak Tèm Thunderbird" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimum Vèsyon Thunderbird
+Add-on sa a sipòte Thunderbird **128 ESR oswa pi nouvo**. Vèsyon ki pi ansyen yo pa sipòte.
+:::
 
----
+Sa a se metòd enstalasyon rekomande a. Add-ons ki enstale nan ATN (addons.thunderbird.net) resevwa mizajou otomatik. Enstalasyon LOCAL/dev yo pa fè mizajou otomatik.
 
-## Local installation in Thunderbird
+- Vèsyon minimòm Thunderbird: 128 ESR oswa pi nouvo.
 
-### Download the XPI file
+1. Nan Thunderbird, ale nan **Zouti > Add-ons ak Tèm**.
+2. Chèche "reponn ak atachman".
+3. Ajoute add-on an.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Oswa ouvri paj add-on an dirèkteman: [Thunderbird Add-ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Enstalasyon manyèl soti nan XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Telechaje dosye XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Ale nan [paj Add-on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Telechaje dènye vèsyon add-on an kòm yon dosye XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Enstale nan Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Ouvri Thunderbird.
+2. Ale nan **Zouti > Add-ons ak Tèm**.
+3. Nan **Manadjè Add-ons**, klike sou ikòn angrenaj la nan kwen anwo adwat.
+4. Chwazi **Enstale Add-on Soti nan Dosye…** nan meni an.
+5. Chwazi dosye `reply_with_attachments-x.y.z-tb.xpi` ki telechaje a.
+6. Konfime enstalasyon an lè yo mande sa.
 
 ---
+
+## Enstalasyon pou devlopman {#installation-for-development}
+
+### Telechaje repozitò a {#download-the-repository}
+
+1. Telechaje dènye vèsyon repozitò GitHub la.
+2. Kouri `make help` pou plis enfòmasyon.
+
+### Enstale nan Thunderbird {#install-in-thunderbird-dev}
+
+1. Ouvri Thunderbird.
+2. Ale nan **Zouti > Add-ons ak Tèm**.
+3. Nan **Manadjè Add-ons**, klike sou ikòn angrenaj la nan kwen anwo adwat.
+4. Chwazi **Enstale Add-on Soti nan Dosye…** nan meni an.
+5. Chwazi dosye ki pwodwi a `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Konfime enstalasyon an lè yo mande sa.
+
+Remak: Si Thunderbird pa aksepte `.zip` sou sistèm ou an, rename li kòm `.xpi` epi eseye "Enstale Add-on Soti nan Dosye…" ankò.
+
+### Kote pou jwenn ZIP LOCAL la {#where-local-zip}
+
+- Premye, pake add-on an: kouri `make pack` nan rasin repozitò a.
+- Apre pake, jwenn zip "LOCAL" la nan rasin repozitò a (pa egzanp, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Anvan re-pakè pou tès, ogmante vèsyon yo nan `sources/manifest_ATN.json` ak `sources/manifest_LOCAL.json`.
+
+---
+
+## Dezaktive, Dezinstale, ak Mizajou {#disable-uninstall-updates}
+
+- Dezaktive: Thunderbird → Zouti → Add-ons ak Tèm → jwenn add-on an → dekonekte.
+- Dezinstale: menm gade → meni twa pwen → Retire.
+- Mizajou: enstalasyon ATN fè mizajou otomatik lè nouvo vèsyon yo apwouve. Enstalasyon LOCAL/dev yo pa fè mizajou otomatik; reinstale yon nouvo LOCAL build manyèlman.
+- Retire anviwònman yo konplètman: wè [Privacy → Retire done](privacy#data-removal).
+
+Wè tou
+
+- [Klike kòmanse](quickstart)

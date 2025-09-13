@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Installasie",
+  "description": "Installasie via \"Thunderbird Byvoegings en Temas\"",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Installasie",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Installasie"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Snelstart",
     "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfigurasie",
     "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/configuration"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "תאימות",
   "description": "Compatibility",
   "source": "@site/i18n/he/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "תאימות",
+    "sidebar_label": "תאימות"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "שימוש",
     "permalink": "/Thunderbird-Reply-with-Attachments/he/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "הרשאות",
     "permalink": "/Thunderbird-Reply-with-Attachments/he/docs/permissions"
   }
 }

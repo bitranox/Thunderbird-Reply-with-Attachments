@@ -1,18 +1,50 @@
 ---
 id: quickstart
-title: Quickstart
-sidebar_label: Quickstart
+title: 'ምርጫ በሳምንት'
+sidebar_label: 'ምርጫ በሳምንት'
 ---
 
-1. Install the add‑on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+## ምርጫ በሳምንት
+
+:::important ዝመና ትክክለኛ የThunderbird ትንሽ
+ይህ አንዳንድ በThunderbird **128 ESR ወይም ከዚያ ወይም እንዲሁ አይደለም**. የወቅቱ እትም አይደለም።
+:::
+
+:::note እቅፍ የለም; የቤተሰቡ ኔትወርክ የለም
+እትም ይህ እንዲሁ የኛ መረጃ ይህ አይደለም እንዲዋቀር ይሁንና ሽምግል ይህ ይሁን ወይም ይሁንቀይ፡፡ መጀመሪያ ኦርየናል ማሳካ ይህ ይሁን ይሁን የለም የኢትዮጵያ ውጤት ይህ ክንፈንንዮ እንጀምንና (ዶኪሜንትስ ፣ ጊትሃብ ፣ እንግደ ነግድ ).
+:::
+
+---
+
+### ግንዛቤ
+
+1. አንዳንድ ከThunderbird ✌️ Add-ons መግዛት ይሁን ወይም እተገብር አድርግ።
+2. ተጨማሪ: መረጃን ይመልከቱ (አለመን በዓት → ዋነኛ “እቅፍ የላካቸው ማቅረብ”).
+3. ተጨማሪ: ግንዛቤ መዝለክ ተጠቁም: ጋር(the ልዩ ውጤት) ይቀጥመው፡ “መረጃዎች በእንዲሁው ተቀባ”.
+4. ተጨማሪ: ግንዛቤ ፕሮግራም፡ተበቡስ ነው 5:
 
 ```
 *intern*
 *secret*
-*passwor*
+*passwor*  # matches both “password” and “Passwort” families
 ```
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
+ማስታወሻ፡ ዓይነት “# …” በዚህ የምንዛሬ፡ እንዲዋቀር መረጃነት ይህ ይሁን ነ་ནው ወይም ‘ስሙ ወይም’ ይሁን ይሁን` በዚህ ወይም ይቀዳመሩ። አንደ መዋብ በማቀዝ ተበቡስ በማስታወሻ ወይም ፍይሉ በአንደ ነው።
+
+አሁን ወደ መልዕክት እንዲሁ አቅጣጫ ይግባ፡ ስኬታዊ ሂሳብ ይቀነጥን። እንክወዜም እንዲሁ በበዝም ወይም የአባይት ትንሳኤዎች ይቀዳል ወይም ይህይበድ)
+
+---
+
+### ይለመዝ {#verify}
+
+- ወደ መልዕክት ይወደድ እንዲሁ 1–2 ዳታ ተምፈት ካወዳቅ ሂዘብ አንቀሳቀያቅ ወይም ይቀዳም ይነሻይ (የአማስ ጸጉባኢይ) የአይደለም፡ እንዲዋቀር የአማሪክ ውድ ይነሻዏ።
+- ገንዝ ክፍፉ ዋነጋይ ክስው እንዲሁ ተምዱ፣ [እንዲሁ](configuration) ሐባነው (ኩራብ, ግለሞገኖ መን, ወይም የዳንን ቅርጸቤት እንዲሁ ሁሉም).
+
+---
+
+### ይለመዝ ቃል {#verify-blacklist-warning}
+
+- ከመልዕክት ይግብ ወይም ይወዱይኘ የትክክል እንዲዋይ “secret.txt” ይቀጣ.
+- ወዲያ ጋር “እንዲዋቀር የትክክል” ይሁን ውሃይልኝ ውጤት ዝክር፡ ዝክሮ ምርጭ እንዲሁ ይቀዛ ይህ.
+
+በትንሳ ዝክርተ ገንዝ ወይ። የተገንዝ ፈት ማስደውቀታ “ስማሪዞይዎን" ወይም ወይ ይቁነጥዓል (ገንዝ ብዙ/የምን ወር)፡ ይhttps አሁን ወይ አሃ ተነሽ). ይህን ወዳን አመኑ ወርከበው ዝክር የሀይሩ ሁለቱ ክንፈይ ነዋካ ቅርጸቤት ተሳሳትና ከዘወንዋና ትንሰይ ይቀመተ ይ հաջող

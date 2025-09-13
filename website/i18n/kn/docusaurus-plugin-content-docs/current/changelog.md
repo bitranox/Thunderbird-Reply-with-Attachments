@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: ಬದಲಾವಣೆಗಳ ದಾಖಲೆ
+title: 'ಚೇಂಜ್‌ಲಾಕ್'
 ---
 
-ಪೂರ್ಣ ಇತಿಹಾಸವನ್ನು ರೆಪೊದಲ್ಲಿರುವ CHANGELOG.md ಕಡತದಲ್ಲಿ ನೋಡಿ.
+## Changelog
 
-- 2.0.0: ಸಂಪೂರ್ಣ ವೈಶಿಷ್ಟ್ಯಗಳ ಆವೃತ್ತಿಗೆ ಮರುಬರಹ (EN/DE)
-- 1.0.1: messages.listAttachments() ಗೆ ಬದಲಾವಣೆ
-- 1.0.0: ಪ್ರಾರಂಭಿಕ ಬಿಡುಗಡೆ
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

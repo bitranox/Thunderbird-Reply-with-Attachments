@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Usanidi'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Usanidi'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Usanidi kupitia "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Toa Minimum ya Thunderbird
+Add‑on hii inasaidia Thunderbird **128 ESR au toleo jipya zaidi**. Matoleo ya zamani hayasaidiwi.
+:::
 
----
+Huu ndio mtindo uliopendekezwa wa usanidi. Add‑ons zilizosakinishwa kutoka ATN (addons.thunderbird.net) hupokea sasisho za moja kwa moja. Usanidi wa LOCAL/dev haujisasishi kiotomatiki.
 
-## Local installation in Thunderbird
+- Toleo la chini la Thunderbird: 128 ESR au toleo jipya zaidi.
 
-### Download the XPI file
+1. Katika Thunderbird, nenda kwenye **Zana > Add-ons na Mada**.
+2. Tafuta "jibu na viambatisho".
+3. Ongeza add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Au fungua ukurasa wa add‑on moja kwa moja: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Usanidi wa mikono kutoka XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Pakua faili la XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Nenda kwenye [Ukurasa wa Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Pakua toleo jipya zaidi la add-on kama faili la XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Sakinisha katika Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Fungua Thunderbird.
+2. Nenda kwenye **Zana > Add-ons na Mada**.
+3. Katika **Meneja wa Add-ons**, bonyeza ikoni ya gear katika kona ya juu kulia.
+4. Chagua **Sakinisha Add-on Kutoka Faili…** kutoka kwenye menyu.
+5. Chagua faili iliyo pakuliwa `reply_with_attachments-x.y.z-tb.xpi`.
+6. Thibitisha usanidi unapoulizwa.
 
 ---
+
+## Usanidi kwa ajili ya maendeleo {#installation-for-development}
+
+### Pakua hifadhi {#download-the-repository}
+
+1. Pakua toleo jipya zaidi la hifadhi ya GitHub.
+2. Endesha `make help` kwa maelezo zaidi.
+
+### Sakinisha katika Thunderbird {#install-in-thunderbird-dev}
+
+1. Fungua Thunderbird.
+2. Nenda kwenye **Zana > Add-ons na Mada**.
+3. Katika **Meneja wa Add-ons**, bonyeza ikoni ya gear katika kona ya juu kulia.
+4. Chagua **Sakinisha Add-on Kutoka Faili…** kutoka kwenye menyu.
+5. Chagua faili iliyotengenezwa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Thibitisha usanidi unapoulizwa.
+
+Kumbuka: Ikiwa Thunderbird haitakubali `.zip` kwenye mfumo wako, badilisha jina kuwa `.xpi` na jaribu "Sakinisha Add‑on Kutoka Faili…" tena.
+
+### Mahali pa kupatikana kwa LOCAL ZIP {#where-local-zip}
+
+- Kwanza, pakiti add‑on: endesha `make pack` katika mizizi ya hifadhi.
+- Baada ya kupakia, pata "LOCAL" zip katika mizizi ya hifadhi (k.m., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Kabla ya kupakia tena kwa ajili ya kupima, pandisha toleo katika `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
+
+---
+
+## Zima, Ondoa, na Sasisho {#disable-uninstall-updates}
+
+- Zima: Thunderbird → Zana → Add‑ons na Mada → pata add‑on → geuza off.
+- Ondoa: mtazamo sawa → menyu ya alama tatu → Ondoa.
+- Sasisho: Usanidi wa ATN unajisasaisha kiotomatiki unapopatikana matoleo mapya. Usanidi wa LOCAL/dev haujisasishi kiotomatiki; weka tena usanidi mpya wa LOCAL kwa mikono.
+- Ondoa mipangilio kabisa: angalia [Faragha → Kuondoa data](privacy#data-removal).
+
+Tazama pia
+
+- [Mwongozo wa Haraka](quickstart)

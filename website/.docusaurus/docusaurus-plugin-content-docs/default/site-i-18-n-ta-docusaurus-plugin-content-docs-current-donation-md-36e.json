@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "நன்கொடை",
-  "description": "Reply with Attachments உங்களுக்கு பிடித்திருந்தால் மற்றும் அதன் மேம்பாட்டை ஆதரிக்க விரும்பினால், இங்கே நன்கொடை அளிக்கலாம்:",
+  "title": "தானம் அளிக்கவும்",
+  "description": "Donate",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "நன்கொடை",
-    "sidebar_label": "நன்கொடை"
+    "title": "தானம் அளிக்கவும்",
+    "sidebar_label": "தானம் அளிக்கவும்"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "தனியுரிமை",
+    "title": "தேசிய இழப்புகளில் தனியுரிமை",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/privacy"
   },
   "next": {
-    "title": "உரிமம்",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/licence"
+    "title": "அங்கீகாரம்",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/license"
   }
 }

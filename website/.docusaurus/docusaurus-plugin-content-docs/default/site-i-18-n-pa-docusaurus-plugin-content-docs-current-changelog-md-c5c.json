@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ਬਦਲਾਵ ਸੂਚੀ",
-  "description": "ਪੂਰਾ ਇਤਿਹਾਸ ਰਿਪੋਜ਼ਟਰੀ ਦੀ CHANGELOG.md ਫ਼ਾਈਲ ਵਿੱਚ ਵੇਖੋ।",
+  "title": "ਬਦਲਾਵਾਂ",
+  "description": "Changelog",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ਬਦਲਾਵ ਸੂਚੀ"
+    "title": "ਬਦਲਾਵਾਂ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਲਾਇਸੈਂਸ",
-    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/licence"
+    "title": "ਲਾਈਸੈਂਸ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/license"
   }
 }

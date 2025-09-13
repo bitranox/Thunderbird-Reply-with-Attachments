@@ -1,16 +1,56 @@
 ---
 id: permissions
-title: Permissions
+title: 'ፍቓድታት'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+---
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+## ፍቓድታት
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+:::note ፍቓድታት ዝተመጠኑ
+ፍቓድታት ሆስት (ዌብ) እዚ ኣድ‑ኦን ኣይጠይቕን። ኣድ‑ኦኑ ቴለሜትሪ ኣይሰበስብን እንተሳእነ ኣብ ጀርባ መረብ ጥዕና ኣይሕትትን። ርኣ [ምስጢርነት](privacy).
+:::
+
+---
+
+እዚ ኣድ‑ኦን ንእሽተይ እና ተወሳኺ ስብስብ ፍቓድታት ብቻ ይጠይቕ። ንሓደ ሓደ ለምንታይ ይድሊ እዩ:
+
+- `compose`: ክስተታት ምጽፋ መልእኽቲ ምዕቃብ፣ ኣብ መልሲኻ ተሓታቲ ፋይላት ምዘርዝር እና ምውሳን።
+- `messagesRead`: መትዓር ዳታ (metadata) ምንባብ እና ካብ ዋና መልእኽቲ ተሓታቲ ፋይላት ምምጻእ።
+- `scripting`: እንተ ንቕብል ተደሊ ኣብ ምጽፋ መልእኽቲ ንእሽተይ ዳያሎግ ማረጋገጺ ምእታብ።
+- `windows`: መላእኽቲ መልእኽቲ እንተ ወድአ እንተ ሆነ እቲ ንእሽተይ ፖፓፕ ማረጋገጺ እንተ መዳነ መንገዲ ምክፈት።
+- `sessions`: ናይ እያ ታብ ዝለዓለ ምልክት ምእካይ ንምክልኣል ተደጋጋሚ ምስራሕ።
+- `storage`: ኣማራጺ ምቅማጥ (blacklist, ቀያሪ ማረጋገጺ, ነባሪ መልሲ)።
+- `tabs`: ናብ ታብ ምጽፋ መልእኽቲ ዝተመረጸ መልእኽቲ ምልኣኽ ንሕቶታት ማረጋገጺ።
+
+ተጨማሪ ማስታወሻታት:
+
+- ፍቓድታት ሆስት (ኦሪጂን ዌብ) ብዝኾነ እዚ ኣድ‑ኦን ኣይጠይቕን።
+- ፍቓድ `tabs` ብቻ ኣብ ምምሕዳር ኣማራጺ ዳያሎግ ማረጋገጺ ናብ ታብ ምጽፋ መልእኽቲ ምቁራጽ ይጥቀመሉ፤ ታሪኽ ምንባብ ወይ ገጻት ምንዳይ ኣይጥቀመሉን።
+
+እዚኦም ኣብ ምእንቲ ምንጪ ኮድ ተዘርዝሩ እዮም እና ኣብ CI ተፈትኑ እዮም። ኣድ‑ኦኑ ቴለሜትሪ ኣይሰበስብን።
+
+---
+
+### ማጠቃለይ (ፍቓድታት → ዓላማ) {#permissions-summary}
+
+| ፍቓድ            | ለምንታይ ይድሊ እዩ                                           |
+| -------------- | ------------------------------------------------------ |
+| `compose`      | ክስተታት ምጽፋ መልእኽቲ ምዕቃብ፤ ኣብ መልሲኻ ተሓታቲ ፋይላት ምዘርዝር እና ምውሳን። |
+| `messagesRead` | ናይ ዋና መልእኽቲ ተሓታቲ ፋይላት ምዘርዝር እና ዳታ ፋይል ምምጻእ።            |
+| `scripting`    | እንተ ንቕብል ተደሊ ንማረጋገጺ ንእሽተይ UI ምእታብ/ምምሕዳር።               |
+| `windows`      | መላእኽቲ መልእኽቲ እንተ ወድአ እኳ ነኣሰ ፖፓፕ ማረጋገጺ (ሕሰሳ)።            |
+| `sessions`     | ናይ እያ ታብ ምልክት ምእካይ ንምክልኣል ተደጋጋሚ ምስራሕ።                  |
+| `storage`      | ኣማራጺ ምቅማጥ (blacklist, ቀያሪ ማረጋገጺ, ነባሪ መልሲ)።             |
+| `tabs`         | ናብ ታብ ምጽፋ መልእኽቲ ዝተመረጸ መልእኽቲ ምልኣኽ ንሕቶታት ማረጋገጺ።          |
+| (ፍቓድታት ሆስት)    | የለን — ኣድ‑ኦኑ ኦሪጂን ዌብ ኣይጠይቕን።                            |
+
+---
+
+## ኣይተጠይቐን {#not-requested}
+
+- `compose.save`, `compose.send` — ኣድ‑ኦኑ በኩልኻ ኢሜይል ምኽታት ወይ ምልእኽላ ኣይግበርን።
+
+ርኣ እውን: [ምስጢርነት](privacy) — ቴለሜትሪ የለን፣ ኣብ ጀርባ መረብ ጥዕና የለን፣ ብተጠቃሚ ዝጀመሩ ሊንካት ብቻ።
+
+---

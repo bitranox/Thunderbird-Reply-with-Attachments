@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Desarollo",
   "description": "Development Guide",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Desarollo",
+    "sidebar_label": "Desarollo"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Rukuy",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Ñawpa simikuna",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/languages"
   }
 }

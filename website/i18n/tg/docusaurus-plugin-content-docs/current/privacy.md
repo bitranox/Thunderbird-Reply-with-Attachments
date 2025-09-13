@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Махфият'
+sidebar_label: 'Махфият'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Махфият
 
-What the add‑on does:
+:::note Ҳеҷ телеметрия; ҳеҷ шабакаи пасзамина
+Ин иловагӣ **нест** таҳлилҳо/телеметрияро ҷамъ мекунад ва **нест** запросҳои шабакаи пасзамина. Ҳар гуна дастрасӣ ба шабака танҳо вақте рӯй медиҳад, ки шумо як пайвандҳои хориҷиро клик мекунед (Docs, GitHub, Donate).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments таҳлилҳо ё телеметрия ҷамъ намекунад ва маълумоти шуморо ба ҳар куҷо намефиристад.
 
-What the add‑on does not do:
+Чӣ кор мекунад иловагӣ:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Metadata ва файлҳои замимаи оригиналиро дар мессенджер (Thunderbird API) локалиро мехонад, то онҳоро ба посухи шумо замима кунад.
+- Нишонҳои шумо (сиркала, тасдиқ, ҷавоби пешфарз) дар хати маҳаллӣ (local storage) Thunderbird нигоҳ дошта мешаванд.
 
-Permissions are documented on the [Permissions](permissions) page.
+Чӣ кор намекунад иловагӣ:
 
-## Content Security Policy (CSP)
+- Ҳеҷ пайгирӣ, таҳлил, ҳисобот дар бораи хатоҳо, ё логгирии дур.
+- Ҳеҷ запросҳои шабакаи пасзамина, магар вақте ки шумо махсусан пайвандҳои хориҷиро мекушоед (Docs, GitHub, Donate).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Ҳуқуқҳо дар [Permissions](permissions) саҳифа ҳуҷҷатгузорӣ шудаанд.
+
+---
+
+## Сиёсати амниятии маълумот (CSP) {#content-security-policy-csp}
+
+Вазифаҳо ва саҳифаҳои по-popup аз скриптҳои инлайнавӣ пешгирӣ мекунанд. Ҳамаи JavaScript аз файлҳое, ки бо иловагӣ дода шудаанд, бор карда мешавад, то бо CSP-и дақиқ дар Thunderbird мувофиқат кунад. Агар шумо кодҳои намунавӣ дар ҳуҷҷатҳо ҷойгир кунед, онҳо танҳо намунаҳо буда, аз ҷониби иловагӣ иҷро намешаванд.
+
+---
+
+## Захираи маълумот {#data-storage}
+
+- Талаботи корбар (сиркала, тагдир кардани тасдиқ, ҷавоби пешфарз) дар `storage.local` Thunderbird барои ин иловагӣ нигоҳ дошта мешаванд.
+- Иловагӣ синхронизацияи абриро анҷом намедиҳад.
+
+---
+
+## Шабака {#network}
+
+- Иловагӣ ҳеҷ фаъолиятҳои шабакаи пасзамина намекунад.
+- Ҳар гуна дастрасӣ ба шабака танҳо вақте рӯй медиҳад, ки шумо пайвандҳоро клик мекунед (Docs, GitHub, Donate) ё вақте ки Thunderbird худаш фаъолиятҳои нормалиро иҷро мекунад, ки ба ин иловагӣ алоқаманд нест.
+
+---
+
+## Устувории маълумот {#data-removal}
+
+- Пардохт кардани иловаи иловагӣ кодексашро нест мекунад.
+- Танзимот танҳо дар `storage.local` Thunderbird нигоҳ дошта мешаванд ва дар вақти нобудсозӣ ҳосил карда мешаванд; ягон хати хориҷӣ истифода намешавад.
+- Танзимотҳоро бидуни нобудсозӣ барқарор кунед:
+  - Саҳифаи опсияҳо: "Барқарор кардан ба пешфарз" барои сиркала ва огоҳии сиркала истифода кунед.
+  - Пешрафта: дар Thunderbird → Услубҳо → Услубҳои Махсус → Тадқиқот кардани иловаҳо, захираи васеъро кушоед ва агар лозим бошад, калиҳоро тоза кунед.
+
+---

@@ -1,24 +1,49 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Licencja'
+sidebar_label: 'Licencja'
 ---
 
-Project license: MIT
+## Licencja
 
-This project is licensed under the **MIT License**.
+Projekt licencji: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Ten projekt jest objęty **licencją MIT**.
 
-Third‑party licenses (summary)
+- Pełny tekst: zobacz `LICENSE` w katalogu głównym repozytorium.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Licencje firm trzecich {#third-party-licenses}
+
+Ta sekcja podsumowuje licencje firm trzecich używane przez to repozytorium. Aby uzyskać autorytatywną listę w drzewie źródłowym, zobacz `THIRD_PARTY_LICENSES.md` w katalogu głównym repozytorium.
+
+Narzędzia i biblioteki (rozwój/testy/dokumentacja)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (używane tylko przez npx) — MPL‑2.0 (narzędzie deweloperskie; nie dystrybuowane z dodatkiem)
+
+---
+
+## Uwagi
+
+- API rozszerzeń Thunderbird to API platformy; żaden kod firm trzecich nie jest z nimi dołączony.
+- Ikony projektu w `sources/icons` to zasoby projektu (MIT, chyba że zaznaczone inaczej). Logo/ikona GitHub to znak towarowy GitHub i nie jest objęta licencją MIT; używane zgodnie z wytycznymi marki GitHub.
+
+Jeśli dodasz nowe zależności lub dołączysz kod firmy trzeciej, zaktualizuj tę stronę oraz `THIRD_PARTY_LICENSES.md` odpowiednio.
+
+---
+
+## Znaki towarowe
+
+- „Thunderbird” to znak towarowy MZLA/Thunderbird. Ten projekt to dodatek firm trzecich i nie jest związany ani popierany przez MZLA.
+- GitHub® i logo GitHub to znaki towarowe GitHub, Inc. Logo są używane zgodnie z wytycznymi marki.
+
+---

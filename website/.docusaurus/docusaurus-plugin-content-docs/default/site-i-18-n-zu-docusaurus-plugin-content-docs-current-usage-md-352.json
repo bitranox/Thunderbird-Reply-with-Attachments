@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Ukusetshenziswa",
   "description": "Usage",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Ukusetshenziswa",
+    "sidebar_label": "Ukusetshenziswa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Ukumisa",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Ukuhambelana",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/compatibility"
   }
 }

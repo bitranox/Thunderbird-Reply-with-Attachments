@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Başlaňç",
+  "description": "Quickstart",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Başlaňç",
+    "sidebar_label": "Başlaňç"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mümkinçilikler",
+    "title": "Özellikler",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Gurnama",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/install"
   }
 }

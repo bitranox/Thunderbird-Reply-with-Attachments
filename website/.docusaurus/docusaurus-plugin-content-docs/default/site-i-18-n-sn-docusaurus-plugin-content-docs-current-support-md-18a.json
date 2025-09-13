@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Rubatsiro",
+  "description": "FAQ",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Rubatsiro",
+    "sidebar_label": "Rubatsiro"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Mhinduro Yezvirevo",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Kuvanzika",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Iglossari",
+  "description": "Glossary",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Iglossari",
+    "sidebar_label": "Iglossari"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Iilwimi",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Nxhaso",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/support"
   }
 }

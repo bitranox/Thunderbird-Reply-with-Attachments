@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Ntụziaka Mbụ",
+  "description": "Quickstart",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Ntụziaka Mbụ",
+    "sidebar_label": "Ntụziaka Mbụ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Njirimara",
+    "title": "Àkpọrọ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Ịtọlite",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/install"
   }
 }

@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Qoşmalarla cavab ver"
+    "message": "Qoşmalarla Cavab"
   },
   "extDescription": {
-    "message": "E-poçt cavablarında orijinal qoşmaları avtomatik daxil et."
+    "message": "E-poçt cavablarında orijinal qoşmaları avtomatik daxil edir."
   },
   "composeTitle": {
-    "message": "Qoşmalarla cavab ver"
+    "message": "Qoşmalarla Cavab"
   },
   "optionsTitle": {
-    "message": "Qoşmalarla cavab ver — Seçimlər"
+    "message": "Qoşmalarla Cavab — Parametrlər"
   },
   "confirmTitle": {
     "message": "Qoşmaların təsdiqi"
   },
   "uiHeader": {
-    "message": "Qoşmalarla cavab ver"
+    "message": "Qoşmalarla Cavab"
   },
   "uiNoOptions": {
-    "message": "Hazırda tənzimlənəcək seçim yoxdur."
+    "message": "Hazırda tənzimlənəcək parametrlər yoxdur."
   },
   "uiSupport": {
-    "message": "Bu əlavəni bəyənirsiniz? Kiçik bir töhfə ilə məni dəstəkləyin:"
+    "message": "Bu əlavəni bəyənirsiniz? Zəhmət olmasa, kiçik bir ianə ilə məni dəstəkləyin:"
+  },
+  "uiRateATNText": {
+    "message": "Zəhmət olmasa ATN-də qiymətləndirin"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "İndi ianə edin"
   },
+  "uiIDonated": {
+    "message": "Mən ianə etdim"
+  },
+  "uiDonateSnoozed": {
+    "message": "Təşəkkürlər! İanə xatırlatması 90 günlüyünə gizlədildi."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 tarixinədək gizlidir",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "İanəni yenidən göstər"
+  },
+  "uiDonateRestored": {
+    "message": "İanə xatırlatması yenidən görünür."
+  },
   "uiGithubText": {
-    "message": "Xəta hesabatları və digər müraciətlər üçün, zəhmət olmasa mənim"
+    "message": "Xəta hesabatları və digər müraciətlər üçün zəhmət olmasa mənim"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub səhifəm"
   },
   "iconAlt": {
-    "message": "Qoşmalarla cavab ver nişanı"
+    "message": "Qoşmalarla Cavab nişanı"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Fayl adlarının qara siyahısı (glob şablonları)"
+    "message": "Fayl adlarının qara siyahısı (glob nümunələri)"
   },
   "uiBlacklistHelp": {
-    "message": "Adı bu şablonlardan hər hansı birinə uyğun gələn fayllar heç vaxt avtomatik qoşulmayacaq. Hər sətirdə bir şablon. Nümunələr: *.png, smime.*, *.p7s"
+    "message": "Adları bu nümunələrdən hər hansı birinə uyğun gələn fayllar heç vaxt avtomatik qoşulmayacaq. Hər sətrə bir nümunə. Nümunələr: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Qoşmalar qara siyahıya görə istisna edilərsə xəbərdar et"
+    "message": "Qoşmalar qara siyahı ilə istisna edildikdə xəbərdar et"
   },
   "uiSave": {
     "message": "Yadda saxla"
@@ -54,7 +80,7 @@
     "message": "Yadda saxlanılır…"
   },
   "uiReset": {
-    "message": "Standartlara qaytar"
+    "message": "Standartlara sıfırla"
   },
   "uiSaved": {
     "message": "Yadda saxlandı."
@@ -66,10 +92,10 @@
     "message": "Təsdiq"
   },
   "uiConfirmLabel": {
-    "message": "Qoşmalar əlavə edilməzdən əvvəl soruş"
+    "message": "Qoşmaları əlavə etməzdən əvvəl soruş"
   },
   "uiConfirmHelp": {
-    "message": "Kiçik bir təsdiq dialoqu yalnız qoşmalar həqiqətən əlavə olunacağı zaman görünür. Klaviatura: Y və ya J = Bəli; N və ya Esc = Xeyr."
+    "message": "Yalnız həqiqətən qoşmalar əlavə olunacağı zaman kiçik təsdiq dialoqu görünür. Klaviatura: Y və ya J = Bəli; N və ya Esc = Xeyr."
   },
   "confirmAddOne": {
     "message": "Qoşma əlavə edilsin: $1?",
@@ -100,16 +126,16 @@
     "message": "Xeyr"
   },
   "warnBlacklistTitle": {
-    "message": "Qara siyahıya görə istisna edildi"
+    "message": "Qara siyahıya görə istisna edilib"
   },
   "warnBlacklistIntro": {
-    "message": "Aşağıdakı fayllar avtomatik olaraq qoşulmayacaq:"
+    "message": "Aşağıdakı fayllar avtomatik qoşulmayacaq:"
   },
   "warnColFile": {
     "message": "Fayl"
   },
   "warnColPattern": {
-    "message": "Şablon"
+    "message": "Nümunə"
   },
   "warnOk": {
     "message": "OK"
@@ -124,9 +150,21 @@
     "message": "Xeyr"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Sənədləşmə:"
+  },
+  "uiDocsButton": {
+    "message": "Sənədləri açın"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

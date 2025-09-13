@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Qipikunawan Kutichiy"
+    "message": "Q'ipikunawan Kutichiy"
   },
   "extDescription": {
-    "message": "Correo electrónicopi kutichispa, ñawpaq qipikunata automáticamente yapachin."
+    "message": "Correo kutichispa, original q'ipikunata automaticamente yapachin."
   },
   "composeTitle": {
-    "message": "Qipikunawan Kutichiy"
+    "message": "Q'ipikunawan Kutichiy"
   },
   "optionsTitle": {
-    "message": "Qipikunawan Kutichiy — Akllanakuna"
+    "message": "Q'ipikunawan Kutichiy — Ajustes"
   },
   "confirmTitle": {
-    "message": "Qipikunata K’umpirmay"
+    "message": "Q'ipikunata Chiqachiy"
   },
   "uiHeader": {
-    "message": "Qipikunawan Kutichiy"
+    "message": "Q'ipikunawan Kutichiy"
   },
   "uiNoOptions": {
-    "message": "Kunanqa mana kamachinapaq akllanakuna kanchu."
+    "message": "Kunanqa manan imapas konfiguraypaq kachkanchu."
   },
   "uiSupport": {
-    "message": "Kay add-onqa munankichu? Aslla qhapaq churaywan yanapayway:"
+    "message": "Kay add‑on gustawanqichu? Ama hina kaspa, aslla apurtewan yanapaykuway:"
+  },
+  "uiRateATNText": {
+    "message": "ATNpi calificarikuway"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Kunanmi qhapaq churay"
+    "message": "Aportay kunan"
+  },
+  "uiIDonated": {
+    "message": "Aportey"
+  },
+  "uiDonateSnoozed": {
+    "message": "Sulpayki! Aportay mañakuy 90 p'unchawkunapaq pakasqa."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Pakakusqa $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Aportay mañakuyta wakmanta qhawachiy"
+  },
+  "uiDonateRestored": {
+    "message": "Aportay mañakuyqa wakmanta qhawachkan."
   },
   "uiGithubText": {
-    "message": "Pantay willakuykuna utaq huk tapukunaqpaq, ama hina kaspa ñuqapa"
+    "message": "Pantay willakuykuna utaq huk tapukuykunapaq, ama hina kaspa, ñuqapa"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub p'anqa"
   },
   "iconAlt": {
-    "message": "Qipikunawan Kutichiy ikunu"
+    "message": "Q'ipikunawan Kutichiy icono"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Archivokunapa sutinakunaq lista negra (patrones glob)"
+    "message": "Archivo sutikunapa lista negra (glob patrónkuna)"
   },
   "uiBlacklistHelp": {
-    "message": "Kay patroneskunaman tupaq sutinyoq archivokunaqa manaraq jamás automáticamente qipisqachu. Sapa rimanapi huk patrón qillqay. Ejemplos: *.png, smime.*, *.p7s"
+    "message": "Kay patrónkunaman tinkuq suti khipukunaqa mana nunca automaticamente yapachasqachu. Huk patrón sapa siqipi. Ejemplokuna: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Qipikuna lista negrawan hark'asqa kaptin willay"
+    "message": "Lista negrawan qechusqa q'ipikunata willachiy"
   },
   "uiSave": {
     "message": "Waqaychay"
@@ -54,25 +80,25 @@
     "message": "Waqaychachkan…"
   },
   "uiReset": {
-    "message": "Ñawpaqman kutichiy"
+    "message": "Restablecer a predeterminados"
   },
   "uiSaved": {
     "message": "Waqaychasqa."
   },
   "uiResetDone": {
-    "message": "Kutichisqa."
+    "message": "Restablecido."
   },
   "uiConfirmHeader": {
-    "message": "K’umpirmasyón"
+    "message": "Chiqachiy"
   },
   "uiConfirmLabel": {
-    "message": "Qipikunata yapachay kachkaptin, ñawpaqta tapuy"
+    "message": "Q'ipikunata yapachay ñawpaqta tapuy"
   },
   "uiConfirmHelp": {
-    "message": "Aslla k’umpirmasyón qhawarinqa qipikunata yapachisqa kaptillan. T’ipikipi: Y utaq J = Arí; N utaq Esc = Mana."
+    "message": "Q'ipikunata, chayqa yapachakusqa kaptinlla, uchuy chiqachiy willañiqi rikurinqa. Tecladopi: Y utaq J = Ari; N utaq Esc = Mana."
   },
   "confirmAddOne": {
-    "message": "Qipita yapay: $1?",
+    "message": "Q'ipi yapay: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Qipikunata yapay ($1): $2$3?",
+    "message": "Q'ipikuna yapay ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -94,16 +120,16 @@
     }
   },
   "confirmYes": {
-    "message": "Arí"
+    "message": "Ari"
   },
   "confirmNo": {
     "message": "Mana"
   },
   "warnBlacklistTitle": {
-    "message": "Lista negrawan hark'asqa"
+    "message": "Lista negrawan qechusqa"
   },
   "warnBlacklistIntro": {
-    "message": "Kay qatiq archivokunaqa mana automáticamente qipisqachu:"
+    "message": "Kay khipukunaqa mana automaticamente yapachasqachu:"
   },
   "warnColFile": {
     "message": "Archivo"
@@ -115,18 +141,30 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Ñawpaq kutichiy"
+    "message": "Respuesta predeterminada"
   },
   "uiConfirmDefaultYes": {
-    "message": "Arí"
+    "message": "Ari"
   },
   "uiConfirmDefaultNo": {
     "message": "Mana"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentación:"
+  },
+  "uiDocsButton": {
+    "message": "Abrir Documentación"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

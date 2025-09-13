@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Bahasa
-sidebar_label: Bahasa
+title: 'Bahasa'
+sidebar_label: 'Bahasa'
 ---
 
-# Dukungan bahasa
+## Languages
 
-Dukungan luas berkat alat terjemahan berbasis AI — mencakup 103 bahasa.
+Daftar ini mencerminkan baik terjemahan dokumentasi situs web maupun string UI tambahan.
+Dukungan bahasa yang besar, berkat alat terjemahan AI — mencakup 100 bahasa.
 
-Daftar di bawah diurutkan menurut kode bahasa.
+Daftar di bawah ini diurutkan berdasarkan kode bahasa.
 
-Lihat juga: [Glosarium](glossary) untuk istilah UI kanonis lintas lokal.
+Lihat juga: [Glosarium](glossary) untuk istilah UI kanonik yang digunakan di seluruh lokal.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ Lihat juga: [Glosarium](glossary) untuk istilah UI kanonis lintas lokal.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ Lihat juga: [Glosarium](glossary) untuk istilah UI kanonis lintas lokal.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Ganti lokal dokumen melalui pemilih bahasa di header situs (prefix URL diubah sesuai). Bahasa UI Thunderbird independen dari bahasa situs web dan mengikuti pengaturan Thunderbird Anda.
+
+Pengalihan halaman utama
+
+- Jika situs dibangun dengan lokal yang diutamakan browser Anda, mengunjungi URL dokumen dasar di bawah baseUrl proyek secara otomatis mengalihkan ke lokal tersebut. Gunakan pemilih bahasa (atau `/en/`) untuk tetap di bahasa Inggris.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Menemukan masalah dalam terjemahan? Silakan buka masalah atau PR di GitHub.
+- Prefer edits against the English source under `website/docs/`; alat pemelihara menyebarkan pembaruan ke lokal lain.
+  Bahasa Inggris adalah sumber kebenaran untuk dokumentasi; pembaruan terjemahan diambil dari EN selama alur kerja pemelihara.
+
+### Homepage, Navbar, Footer UI
+
+- String ini ada di `website/i18n/en/code.json` dan diterjemahkan ke semua lokal melalui tugas pemelihara:
+  - `make translate_web_index` (memerlukan `OPENAI_API_KEY`)
+  - Batasi bahasa dengan `OPTS="--locales de,fr"`; timpa nilai yang ada dengan `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Bahasa situs web dan bahasa UI tambahan adalah independen; pemilih bahasa hanya mengubah dokumen. Bahasa UI Thunderbird mengikuti pengaturan Thunderbird Anda.
+
+---

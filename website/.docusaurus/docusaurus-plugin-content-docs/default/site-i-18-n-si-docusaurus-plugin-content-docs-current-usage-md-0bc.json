@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "භාවිතය",
   "description": "Usage",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "භාවිතය",
+    "sidebar_label": "භාවිතය"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "කොන්ෆිගියුරින්",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "අනුකූලතාව",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/compatibility"
   }
 }

@@ -1,24 +1,48 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Iwe-aṣẹ'
+sidebar_label: 'Iwe-aṣẹ'
 ---
 
-Project license: MIT
+## Iwe-aṣẹ
 
-This project is licensed under the **MIT License**.
+Iwe-aṣẹ projekiti: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Projekiti yii ni iwe-aṣẹ labẹ **Iwe-aṣẹ MIT**.
 
-Third‑party licenses (summary)
+- Ọrọ kikun: wo `LICENSE` ni orisun ibi igbẹ.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Awọn iwe-aṣẹ alatako {#third-party-licenses}
+
+Apá yii ṣe akopọ awọn iwe-aṣẹ alatako ti a lo nipasẹ ibi ipamọ yii. Fun atokọ to ṣe pataki ni igi orisun, wo `THIRD_PARTY_LICENSES.md` ni orisun ibi igbẹ.
+
+Awọn irinṣẹ ati awọn ile-ikawe ( idagbasoke / idanwo / iwe)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (lo nikan nipasẹ npx) — MPL‑2.0 (irinṣẹ idagbasoke; ko pin pẹlu afikun naa)
+
+---
+
+## Awọn akọsilẹ
+
+- Awọn API Thunderbird MailExtension jẹ awọn API pẹpẹ; ko si kóòdù alatako ti a da pọ lati ọdọ wọn.
+- Awọn aami projekiti ni `sources/icons` jẹ awọn ohun-elo projekiti (MIT ayafi ti a ba sọ ni miiran). Aami/aami GitHub jẹ aami-iṣowo GitHub ti kii ṣe covered by MIT; a lo o gẹgẹbi awọn ilana aami GitHub.
+
+Ti o ba fi awọn nkan ti o ni ẹtọ tuntun silẹ tabi da kóòdù alatako pọ, jọwọ ṣe imudojuiwọn mejeji
+iwe yii ati `THIRD_PARTY_LICENSES.md` ni ibamu.
+
+---
+
+## Awọn aami-iṣowo
+
+- “Thunderbird” jẹ aami-iṣowo ti MZLA/Thunderbird. Projet yii jẹ afikun alatako ati pe ko ni ibatan pẹlu tabi jẹri nipasẹ MZLA.
+- GitHub® ati aami GitHub jẹ awọn aami-iṣowo ti GitHub, Inc. Awọn aami ni a lo gẹgẹbi awọn ilana aami.

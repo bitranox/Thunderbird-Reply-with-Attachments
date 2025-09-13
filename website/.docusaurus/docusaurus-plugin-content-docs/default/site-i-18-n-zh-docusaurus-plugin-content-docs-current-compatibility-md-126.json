@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "兼容性",
-  "description": "兼容性",
+  "description": "Compatibility",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "使用方法",
+    "title": "使用",
     "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/usage"
   },
   "next": {

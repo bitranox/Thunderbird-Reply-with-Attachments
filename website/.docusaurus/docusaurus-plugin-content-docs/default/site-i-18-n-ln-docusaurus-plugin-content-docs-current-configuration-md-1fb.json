@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "description": "Configuration",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Utilisation",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/usage"
   }
 }

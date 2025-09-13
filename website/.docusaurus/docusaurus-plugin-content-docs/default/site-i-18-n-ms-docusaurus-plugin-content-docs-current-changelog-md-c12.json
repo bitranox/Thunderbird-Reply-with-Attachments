@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Log perubahan",
-  "description": "Lihat sejarah penuh dalam fail CHANGELOG.md di repositori.",
+  "title": "Rekod Perubahan",
+  "description": "Rekod Perubahan",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Log perubahan"
+    "title": "Rekod Perubahan"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Lesen",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/license"
   }
 }

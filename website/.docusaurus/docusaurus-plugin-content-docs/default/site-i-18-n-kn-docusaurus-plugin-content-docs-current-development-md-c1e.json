@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "ವಿಕಾಸ",
   "description": "Development Guide",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "ವಿಕಾಸ",
+    "sidebar_label": "ವಿಕಾಸ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "ಅನುಮತಿಗಳು",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "ಭಾಷೆಗಳು",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/languages"
   }
 }

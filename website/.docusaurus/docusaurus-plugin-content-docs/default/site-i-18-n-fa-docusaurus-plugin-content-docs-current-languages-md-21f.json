@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "زبان‌ها",
-  "description": "پشتیبانی بسیار گسترده از زبان‌ها با کمک ابزارهای ترجمهٔ هوش مصنوعی — پوشش 103 زبان.",
+  "description": "Languages",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

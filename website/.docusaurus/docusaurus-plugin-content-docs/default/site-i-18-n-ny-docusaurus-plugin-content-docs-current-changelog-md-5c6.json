@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Mbiri ya zosintha",
-  "description": "Onani mbiri yonse mu fayilo ya CHANGELOG.md ili mu repositoriyo.",
+  "title": "Zikhala za kusintha",
+  "description": "Changelog",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Mbiri ya zosintha"
+    "title": "Zikhala za kusintha"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/licence"
+    "title": "Chilolelo",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/license"
   }
 }

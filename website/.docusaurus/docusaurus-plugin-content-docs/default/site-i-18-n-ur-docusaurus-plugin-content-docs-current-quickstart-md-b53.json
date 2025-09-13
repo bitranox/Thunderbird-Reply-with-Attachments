@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "فوری آغاز",
-  "description": "1. Thunderbird Add‑ons سے ایڈ آن انسٹال کریں۔",
+  "title": "فوری شروعات",
+  "description": "Quickstart",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "فوری آغاز",
-    "sidebar_label": "فوری آغاز"
+    "title": "فوری شروعات",
+    "sidebar_label": "فوری شروعات"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "দ্রুত শুরু",
-  "description": "1. Thunderbird Add‑ons থেকে অ্যাড‑অনটি ইনস্টল করুন।",
+  "title": "শুরু করার নির্দেশনা",
+  "description": "Quickstart",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "দ্রুত শুরু",
-    "sidebar_label": "দ্রুত শুরু"
+    "title": "শুরু করার নির্দেশনা",
+    "sidebar_label": "শুরু করার নির্দেশনা"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "বৈশিষ্ট্যাবলি",
+    "title": "ফিচারগুলো",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/features"
   },
   "next": {

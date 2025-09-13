@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "අව වැඩසටහන්",
   "description": "Development Guide",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "අව වැඩසටහන්",
+    "sidebar_label": "අව වැඩසටහන්"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "අවසර",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "භාෂා",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/languages"
   }
 }

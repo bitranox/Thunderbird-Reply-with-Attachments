@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Rajistar canje-canje",
-  "description": "Dubi cikakken tarihi a fayil ɗin CHANGELOG.md na rumbun adana bayanai.",
+  "title": "Bayanan Canje-canje",
+  "description": "Changelog",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Rajistar canje-canje"
+    "title": "Bayanan Canje-canje"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/licence"
+    "title": "Lasisi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/license"
   }
 }

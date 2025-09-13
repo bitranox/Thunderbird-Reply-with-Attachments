@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "مجوزها",
-  "description": "افزونه تنها مجموعه کوچکی از مجوزهای متمرکز را درخواست می‌کند. دلیل هر کدام:",
+  "description": "Permissions",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

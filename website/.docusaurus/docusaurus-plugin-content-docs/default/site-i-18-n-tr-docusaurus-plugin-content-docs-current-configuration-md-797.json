@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Yapılandırma",
-  "description": "Terimler notu: Arayüz ve belgelerde tutarlı kullanım için Sözlüğe bakın.",
+  "description": "Configuration",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

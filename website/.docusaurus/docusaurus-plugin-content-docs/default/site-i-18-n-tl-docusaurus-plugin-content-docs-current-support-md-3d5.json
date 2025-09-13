@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Suporta",
+  "description": "FAQ",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Suporta",
+    "sidebar_label": "Suporta"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Talaan ng mga Termino",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Pribadong Impormasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/privacy"
   }
 }

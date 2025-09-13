@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Конфигурация",
+  "description": "Configuration",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Конфигурация"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "ଇନ୍ସ୍ଟଲ୍ଲେସନ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "ବ୍ୟବହାର",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/usage"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "ការពារ",
+  "description": "ការពារ",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "ការពារ",
+    "sidebar_label": "ការពារ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "គាំទ្រ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "ផ្តល់ការគួរ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/donation"
   }
 }

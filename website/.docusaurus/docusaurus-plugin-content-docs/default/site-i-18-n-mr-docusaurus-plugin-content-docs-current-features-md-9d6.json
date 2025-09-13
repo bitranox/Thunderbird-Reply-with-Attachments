@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "वैशिष्ट्ये",
-  "description": "वैशिष्ट्ये",
+  "title": "विशेषताएं",
+  "description": "Features",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "वैशिष्ट्ये",
-    "sidebar_label": "वैशिष्ट्ये"
+    "title": "विशेषताएं",
+    "sidebar_label": "विशेषताएं"
   },
   "sidebar": "docs",
   "next": {
-    "title": "क्विकस्टार्ट",
+    "title": "जलद प्रारंभ",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/quickstart"
   }
 }

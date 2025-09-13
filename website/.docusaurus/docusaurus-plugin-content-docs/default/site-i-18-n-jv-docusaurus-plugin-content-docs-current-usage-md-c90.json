@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Panggunaan",
-  "description": "Panggunaan",
+  "title": "Penggunaan",
+  "description": "Usage",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Panggunaan",
-    "sidebar_label": "Panggunaan"
+    "title": "Penggunaan",
+    "sidebar_label": "Penggunaan"
   },
   "sidebar": "docs",
   "previous": {

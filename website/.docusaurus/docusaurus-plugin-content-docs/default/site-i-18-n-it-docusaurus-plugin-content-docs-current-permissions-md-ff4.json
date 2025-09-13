@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Autorizzazioni",
-  "description": "Il componente richiede solo un piccolo set di autorizzazioni mirate. Motivo per ciascuna:",
+  "title": "Permessi",
+  "description": "Permessi",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Autorizzazioni"
+    "title": "Permessi"
   },
   "sidebar": "docs",
   "previous": {

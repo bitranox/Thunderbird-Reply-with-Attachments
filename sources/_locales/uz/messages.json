@@ -3,7 +3,7 @@
     "message": "Ilovalar bilan javob berish"
   },
   "extDescription": {
-    "message": "Javob xatlariga asl ilovalarni avtomatik qo‘shadi."
+    "message": "E‑pochta javoblariga asl ilovalarni avtomatik ravishda qo‘shadi."
   },
   "composeTitle": {
     "message": "Ilovalar bilan javob berish"
@@ -18,16 +18,42 @@
     "message": "Ilovalar bilan javob berish"
   },
   "uiNoOptions": {
-    "message": "Hozircha sozlash uchun hech qanday parametr yo‘q."
+    "message": "Hozircha sozlash uchun parametrlar yo‘q."
   },
   "uiSupport": {
-    "message": "Ushbu kengaytma yoqdimi? Kichik hissa bilan meni qo‘llab-quvvatlang:"
+    "message": "Ushbu qo‘shimcha yoqdimi? Iltimos, kichik hissa bilan meni qo‘llab‑quvvatlang:"
+  },
+  "uiRateATNText": {
+    "message": "Iltimos, ATN’da baholang"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Hozir xayriya qiling"
   },
+  "uiIDonated": {
+    "message": "Men xayriya qildim"
+  },
+  "uiDonateSnoozed": {
+    "message": "Rahmat! Xayriya so‘rovi 90 kunga yashirildi."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 gacha yashirilgan",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Xayriya so‘rovini yana ko‘rsat"
+  },
+  "uiDonateRestored": {
+    "message": "Xayriya so‘rovi yana ko‘rinadi."
+  },
   "uiGithubText": {
-    "message": "Xatoliklar haqida hisobot berish yoki boshqa savollar uchun, iltimos, mening"
+    "message": "Xatolar haqida hisobot yoki boshqa savollar uchun, iltimos, mening"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub sahifam"
@@ -42,10 +68,10 @@
     "message": "Fayl nomlarining qora ro‘yxati (glob andozalari)"
   },
   "uiBlacklistHelp": {
-    "message": "Nomlari ushbu andozalardan birortasiga mos keladigan fayllar hech qachon avtomatik ravishda ilova qilinmaydi. Har bir qatorda bitta andoza. Misollar: *.png, smime.*, *.p7s"
+    "message": "Nomi ushbu andozalardan birortasiga mos keladigan fayllar hech qachon avtomatik ravishda ilova qilinmaydi. Har qatorga bitta andoza. Misollar: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Ilovalar qora ro‘yxat tufayli chiqarib tashlansa, ogohlantirish"
+    "message": "Qora ro‘yxat tufayli ilovalar chiqarib tashlansa, ogohlantir"
   },
   "uiSave": {
     "message": "Saqlash"
@@ -54,7 +80,7 @@
     "message": "Saqlanmoqda…"
   },
   "uiReset": {
-    "message": "Standart sozlamalarga tiklash"
+    "message": "Odatiy holatga tiklash"
   },
   "uiSaved": {
     "message": "Saqlandi."
@@ -66,13 +92,13 @@
     "message": "Tasdiqlash"
   },
   "uiConfirmLabel": {
-    "message": "Ilovalarni qo‘shishdan oldin so‘ralsin"
+    "message": "Ilovalarni qo‘shishdan oldin so‘rash"
   },
   "uiConfirmHelp": {
-    "message": "Kichik tasdiqlash oynasi faqat ilovalar haqiqatan ham qo‘shiladigan holatlarda paydo bo‘ladi. Klaviatura: Y yoki J = Ha; N yoki Esc = Yo‘q."
+    "message": "Kichik tasdiqlash oynasi faqat haqiqatan ham ilovalar qo‘shiladigan holatda chiqadi. Klaviatura: Y yoki J = Ha; N yoki Esc = Yo‘q."
   },
   "confirmAddOne": {
-    "message": "Ilova qo‘shilsinmi: $1?",
+    "message": "Ilovani qo‘shish: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ilovalar qo‘shilsinmi ($1): $2$3?",
+    "message": "Ilovalarni qo‘shish ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -115,7 +141,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Standart javob"
+    "message": "Odatiy javob"
   },
   "uiConfirmDefaultYes": {
     "message": "Ha"
@@ -124,9 +150,21 @@
     "message": "Yo‘q"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Hujjatlar:"
+  },
+  "uiDocsButton": {
+    "message": "Hujjatlarni ochish"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

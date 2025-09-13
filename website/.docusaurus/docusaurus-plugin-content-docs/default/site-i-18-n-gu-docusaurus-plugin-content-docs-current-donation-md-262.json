@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "દાન",
-  "description": "જો તમને Reply with Attachments ગમતું હોય અને વિકાસને ટેકો આપવા માંગતા હોય, તો અહીં દાન કરી શકો છો:",
+  "title": "દાન કરો",
+  "description": "Donate",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "દાન",
-    "sidebar_label": "દાન"
+    "title": "દાન કરો",
+    "sidebar_label": "દાન કરો"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/privacy"
   },
   "next": {
-    "title": "લાયસન્સ",
-    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/licence"
+    "title": "પરવાનગી",
+    "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/license"
   }
 }

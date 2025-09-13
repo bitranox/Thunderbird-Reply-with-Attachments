@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Ihindura Rya Mbere",
+  "description": "Ihindura Rya Mbere",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Ihindura Rya Mbere",
+    "sidebar_label": "Ihindura Rya Mbere"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ibikora",
+    "title": "Ibikorwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Gukora",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/install"
   }
 }

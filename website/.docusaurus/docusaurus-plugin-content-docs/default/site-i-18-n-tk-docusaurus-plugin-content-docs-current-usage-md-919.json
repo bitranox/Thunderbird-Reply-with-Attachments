@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Ulanyş",
   "description": "Usage",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Ulanyş",
+    "sidebar_label": "Ulanyş"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfigurasi",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Uygunlyk",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/compatibility"
   }
 }

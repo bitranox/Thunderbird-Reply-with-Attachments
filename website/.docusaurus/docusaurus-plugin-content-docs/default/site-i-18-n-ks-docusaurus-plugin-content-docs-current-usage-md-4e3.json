@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "استعمال",
   "description": "Usage",
   "source": "@site/i18n/ks/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "استعمال",
+    "sidebar_label": "استعمال"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "تشکیل",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "ہم آہنگی",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/compatibility"
   }
 }

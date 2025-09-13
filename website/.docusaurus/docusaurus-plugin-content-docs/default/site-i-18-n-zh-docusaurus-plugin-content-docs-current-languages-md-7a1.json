@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "语言",
-  "description": "借助 AI 翻译工具，覆盖 103 种语言的大规模本地化支持。",
+  "description": "Languages",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

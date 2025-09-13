@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'مناعت'
+sidebar_label: 'مناعت'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## مناعت
 
-What the add‑on does:
+:::note هیچ تله‌متری؛ هیچ شبکهٔ پس‌زمینه
+ئه‌م دامەزراندنە **نە** ئاماریەکان/تله‌متری بەرەوپێشکە دەکات و **نە** داواکاریدانی شبکهٔ پس‌زمەینی دەکات. هەریمەنی تایی خۆکارە ناو دێمەنی کە تەنها کاتێک توندی لە لینکە دەرەکییەکان (بەرنامە، گیت‌هاب، دونی).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+وەڵام پەیوەندیدانی بە پیوەندیدانی سەرەکی نیشانی ئاماری یان تله‌متری و لە هیچ شوێنێکی بەرز ھەریمەنی ڕووداو دەکات.
 
-What the add‑on does not do:
+چی ئەم دامەزراندنە دەکات:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- زانیاری پەیوەندیدان و فایلی پەیوەندیدانی لە ڕووداوەکە بە شێوەیەکی ناو ڕووداوەکان (Thunderbird API) بۆ پەیوەست کردنی بەرنامەی توندی ئەنجامی دەنرێت.
+- هەڵبژاردنەکانت (پەیمانە سیاە، پەیمانە پەسندکردن، وەلامی بەرز) لە تۆمارە کە بە شێوەی ناوێکەی (Thunderbird) بەرز دەنرێن.
 
-Permissions are documented on the [Permissions](permissions) page.
+چی ئەم دامەزراندنە نەك دەکات:
 
-## Content Security Policy (CSP)
+- هیچ بەرەوپێشگیری، ئامار، رەخنەی شکت، یا تۆمارکردنی دەرەکی گەورەی نەھاتدا.
+- هیچ داواکاریدانی شبکهٔ پس‌زمەینی نییە، بە شێوەیەکی تێپەڕی کاتێک بەرز بەرەوپێشت کردنی لینکە دەرەکییەکان خۆکارە توندی (بەرنامە، گیت‌هاب، دونی).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+مۆشەڕەکەکان لە پەڕەی [مۆشەڕەکان](permissions) تێیدا نووسراون.
+
+---
+
+## بەرنامەی پاراستنی ناو دەوڵەتی (CSP) {#content-security-policy-csp}
+
+هەڵبژاردن و پەڕە پۆپۆپەکان لە تێکستاندنە ناو زنجیرەکانی دروست نەدکه‌ن. هەموو جاوانە بە شێوەیەکی فایلی بەرزەوە لە نێو دامەزراندنەوە فەرمی تێپەڕی دەکرێت بەرەو پاراستنەکان ھەموو فەرمی شتەکان لە (Thunderbird) تێپەڕی. ئەگەر تۆ کۆد یەکەمبکەیت لە بەڵگە نووسراوەکاندا، ئەم کۆدانه کەسی پاك و جیاوازە و تێپەڕێت لە دامەزراندنەوە .
+
+---
+
+## خەزنەی زانیاری {#data-storage}
+
+- هەڵبژاردنی بەکاربەر (پەیمانە سیاە، پەیمانە پەسندکردن، وەلامی بەرز) لە `storage.local` نیشانەی بەرزەوە لە (Thunderbird) بەرز دەنرێت.
+- هیچ سینخوشی بەرز نەماوە لە دامەزراندنەوە.
+
+---
+
+## شەبکە {#network}
+
+- ئەم دامەزراندنە هیچ هەریمەنی شبکهٔ پس‌زمەینی ناکات.
+- هەر هەریمەنی لە رەگای کە توندی بەرەوپێشت کردنی لینکەکان (بەرنامە، گیت‌هاب، دونی) بەرز دەکرێت یان کاتێک (Thunderbird) خۆکار بەرزەوە کارنامەی جیاوازە تێپەڕی.
+
+---
+
+## لابردنی زانیاری {#data-removal}
+
+- لابردنی ئەم دامەزراندنە کۆدێکی بەرزەوە لابرد.
+- ڕووتی نیشانی بە شێوەیەکی تێپەڕی بەرزەوە لە (Thunderbird) `storage.local` و لابردنی کاتێکی بەرزەوە؛ هیچ خەزنەی دەرەکی بەرز نییە.
+- ڕووتیدانی ڕووتی کرتن بەھۆی لابردن:
+  - پەڕەی هەلبژاردن: بەرەوپێشت کردنی "ڕووتی بەرز" بۆ پەیمانە سیاە و پەیمانە سیاەی خەتری.
+  - پەیوەندیدان: لە (Thunderbird) → Tools → Developer Tools → Debug Add‑ons، تێپەڕی ئەم دامەزراندنەوە بەرز تێپەڕی نیشانی بیاژتەوە.

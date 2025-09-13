@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "কনফিগারেশন",
-  "description": "শব্দাবলী সংক্রান্ত নোট: UI ও ডকে ব্যবহৃত একরূপ শব্দের জন্য Glossary দেখুন।",
+  "description": "Configuration",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

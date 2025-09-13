@@ -1,50 +1,79 @@
 ---
 id: install
-title: ইনস্টলেশন
+title: 'ইনস্টলেশন'
 slug: /install
-sidebar_label: ইনস্টলেশন
+sidebar_label: 'ইনস্টলেশন'
 ---
 
-## ইনস্টলেশন — Thunderbird‑এ (প্রস্তাবিত)
+## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. Thunderbird‑এ **Tools > Add-ons and Themes** এ যান।
-2. "reply with attachments" দিয়ে অনুসন্ধান করুন।
-3. অ্যাড‑অনটি যোগ করুন।
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
 
----
+This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
 
-## Thunderbird‑এ লোকাল ইনস্টলেশন
+- Minimum Thunderbird version: 128 ESR or newer.
 
-### XPI ফাইল ডাউনলোড করুন
+1. In Thunderbird, go to **Tools > Add-ons and Themes**.
+2. Search for "reply with attachments".
+3. Add the add-on.
 
-1. [Thunderbird Add-on পৃষ্ঠা](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments) দেখুন।
-2. অ্যাড‑অনটির সর্বশেষ সংস্করণ XPI ফাইল হিসেবে ডাউনলোড করুন (`reply_with_attachments-x.y.z-tb.xpi`)।
-
-### Thunderbird‑এ ইনস্টল করুন
-
-1. Thunderbird খুলুন।
-2. **Tools > Add-ons and Themes** এ যান।
-3. **Add-ons Manager**‑এ উপরের ডান কোণে গিয়ার আইকনে ক্লিক করুন।
-4. মেনু থেকে **Install Add-on From File…** বেছে নিন।
-5. ডাউনলোড করা `reply_with_attachments-x.y.z-tb.xpi` ফাইলটি নির্বাচন করুন।
-6. প্রম্পট এলে ইনস্টলেশন নিশ্চিত করুন।
+Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## ডেভেলপমেন্টের জন্য ইনস্টলেশন
+## Manual installation from XPI {#local-installation-in-thunderbird}
 
-### রিপোজিটরি ডাউনলোড করুন
+### Download the XPI file {#download-the-xpi-file}
 
-1. GitHub রিপোজিটরির সর্বশেষ সংস্করণ ডাউনলোড করুন।
-2. আরও তথ্যের জন্য `make help` চালান।
+1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Thunderbird‑এ ইনস্টল করুন
+### Install in Thunderbird {#install-in-thunderbird-local}
 
-1. Thunderbird খুলুন।
-2. **Tools > Add-ons and Themes** এ যান।
-3. **Add-ons Manager**‑এ গিয়ার আইকনে ক্লিক করুন।
-4. মেনু থেকে **Install Add-on From File…** বেছে নিন।
-5. জেনারেট হওয়া ফাইল `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` নির্বাচন করুন।
-6. প্রম্পট এলে ইনস্টলেশন নিশ্চিত করুন।
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
+6. Confirm the installation when prompted.
 
 ---
+
+## Installation for development {#installation-for-development}
+
+### Download the repository {#download-the-repository}
+
+1. Download the latest version of the GitHub repository.
+2. Run `make help` for more information.
+
+### Install in Thunderbird {#install-in-thunderbird-dev}
+
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirm the installation when prompted.
+
+Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
+
+### Where to find the LOCAL ZIP {#where-local-zip}
+
+- First, package the add‑on: run `make pack` in the repository root.
+- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+
+---
+
+## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+
+- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
+- Uninstall: same view → three‑dot menu → Remove.
+- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
+- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+
+See also
+
+- [Quickstart](quickstart)

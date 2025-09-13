@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "ભાષાઓ",
-  "description": "AI અનુવાદ સાધનોની મદદથી વિશાળ ભાષા સપોર્ટ — 103 ભાષાઓ.",
+  "description": "Languages",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/development"
   },
   "next": {
-    "title": "શબ્દકોશ",
+    "title": "શોધશબ્દકોશ",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/glossary"
   }
 }

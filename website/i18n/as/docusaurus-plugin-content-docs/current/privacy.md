@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'গোপনীয়তা'
+sidebar_label: 'গোপনীয়তা'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## গোপনীয়তা
 
-What the add‑on does:
+:::note কোনো টেলিমেট্রি নেই; কোনো পটভূমি নেটওয়ার্ক নেই
+এই প্লাগইনটি **কোনো** বিশ্লেষণ/টেলিমেট্রি সংগ্রহ করে না এবং **কোনো** পটভূমি নেটওয়ার্ক অনুরোধ করে না। কোনো নেটওয়ার্ক অ্যাক্সেস কেবল তখনই ঘটে যখন আপনি একটি বাইরের লিঙ্কে ক্লিক করেন (Docs, GitHub, Donate)।
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments কোনো বিশ্লেষণ বা টেলিমেট্রি সংগ্রহ করে না এবং আপনার ডেটা কোথাও পাঠায় না।
 
-What the add‑on does not do:
+প্লাগইনটি যা করে:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- মূল বার্তা থেকে সংযুক্তির বিপরীত তথ্য এবং ফাইলগুলি স্থানীয়ভাবে (Thunderbird API) পড়ে এবং সেগুলি আপনার জবাবে সংযুক্ত করে।
+- Thunderbird-এর স্থানীয় স্টোরেজে আপনার অপশনগুলি (ব্যাকলিস্ট, নিশ্চিতকরণ, ডিফল্ট উত্তর) সংরক্ষণ করে।
 
-Permissions are documented on the [Permissions](permissions) page.
+প্লাগইনটি যা করে না:
 
-## Content Security Policy (CSP)
+- কোনো ট্র্যাকিং, বিশ্লেষণ, ক্র্যাশ রিপোর্টিং, বা দূরবর্তী লগিং নেই।
+- কোনো পটভূমি নেটওয়ার্ক অনুরোধ নেই, কেবল তখনই যখন আপনি স্পষ্টভাবে বাইরের লিঙ্ক খুলেন (Docs, GitHub, Donate)।
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+অনুমতিগুলি [Permissions](permissions) পৃষ্ঠায় ডকুমেন্ট করা হয়েছে।
+
+---
+
+## বিষয়বস্তু নিরাপত্তা নীতি (CSP) {#content-security-policy-csp}
+
+অপশন এবং পপআপ পৃষ্ঠাগুলি ইনলাইন স্ক্রিপ্ট এড়ায়। সমস্ত জাভাস্ক্রিপ্ট সেই ফাইলগুলি থেকে লোড করা হয় যা প্লাগইনের সাথে পাঠানো হয় যাতে Thunderbird-এ কঠোর CSP মেনে চলে। যদি আপনি ডকসগুলিতে কোড স্নিপেট এম্বেড করেন, সেগুলি শুধুমাত্র উদাহরণ এবং প্লাগইনের দ্বারা কার্যকর হয় না।
+
+---
+
+## ডেটা সংরক্ষণ {#data-storage}
+
+- ব্যবহারকারীর পছন্দগুলি (ব্যাকলিস্ট, নিশ্চিতকরণ টোগল, ডিফল্ট উত্তর) Thunderbird-এর `storage.local` এ এই প্লাগইনের জন্য সংরক্ষিত হয়।
+- প্লাগইন দ্বারা কোনো ক্লাউড সিঙ্ক করা হয় না।
+
+---
+
+## নেটওয়ার্ক {#network}
+
+- প্লাগইনটি কোনো পটভূমি নেটওয়ার্ক কার্যকলাপ করে না।
+- কোনো নেটওয়ার্ক অ্যাক্সেস কেবল তখনই ঘটে যখন আপনি লিঙ্কগুলিতে ক্লিক করেন (Docs, GitHub, Donate) অথবা Thunderbird স্বাভাবিক কাজকর্ম শুধুমাত্র এই প্লাগইনের সাথে সম্পর্কিত করা হয়।
+
+---
+
+## ডেটা মুছে ফেলা {#data-removal}
+
+- প্লাগইনটি আনইনস্টল করলে এর কোড মুছে যায়।
+- সেটিংস কেবল Thunderbird-এর `storage.local` এ রাখা হয় এবং আনইনস্টল করার সময় মুছে ফেলা হয়; কোনো বাইরের স্টোরেজ ব্যবহার করা হয় না।
+- আনইনস্টল না করেই সেটিংস পুনরায় সেট করুন:
+  - অপশন পৃষ্ঠা: ব্যাকলিস্ট এবং ব্যাকলিস্ট সতর্কতার জন্য "ডিফল্ট এ পুনরায় সেট করুন" ব্যবহার করুন।
+  - উন্নত: Thunderbird → Tools → Developer Tools → Debug Add‑ons-এ গিয়ে এক্সটেনশনের স্টোরেজ খুলুন এবং প্রয়োজন হলে কীগুলি পরিষ্কার করুন।
+
+---

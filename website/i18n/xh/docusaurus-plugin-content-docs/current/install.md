@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Fakelo'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Fakelo'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Fakelo nge "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Inani elincinane le-Thunderbird
+Le add‑on ixhasa i-Thunderbird **128 ESR okanye ikhokhelo**. Iinguqulelo ezindala azixhaswanga.
+:::
 
----
+Le yindlela efunwa kakhulu yokufaka. I-add‑ons efakwe kwi-ATN (addons.thunderbird.net) ifumana uhlaziyo ngokuzenzekelayo. Ukufakwa kweLOCAL/dev akuzihlazi.
 
-## Local installation in Thunderbird
+- Inani elincinane le-Thunderbird: 128 ESR okanye ikhokhelo.
 
-### Download the XPI file
+1. Ku-Thunderbird, yiya **Izixhobo > I-add-ons neThemes**.
+2. Funa "phendula ngama-attachments".
+3. Faka i-add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Okanye uvule iphepha le-add-on ngokuthe ngqo: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Ukufaka ngokwakho ukusuka kwi-XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Landa ifayile ye-XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Yiha kwi [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Landa inguqulo yokugqibela ye-add-on njengofayile ye-XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Faka kwi-Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Vula i-Thunderbird.
+2. Yiha **Izixhobo > I-add-ons neThemes**.
+3. Kwi **Mphathi we-Add-ons**, cofa kumjikelo ophakathi phezulu.
+4. Khetha **Faka i-Add-on EsiFayilini...** kumenyu.
+5. Khetha ifayile ye `reply_with_attachments-x.y.z-tb.xpi` elandiwe.
+6. Qinisekisa ukufakwa xa uphona.
 
 ---
+
+## Fakelo ukuze kuphuhliswa {#installation-for-development}
+
+### Landa umphakathi {#download-the-repository}
+
+1. Landa inguqulo yokugqibela yeGitHub repository.
+2. Qhuba `make help` ukuze ufumane ulwazi olungakumbi.
+
+### Faka kwi-Thunderbird {#install-in-thunderbird-dev}
+
+1. Vula i-Thunderbird.
+2. Yiha **Izixhobo > I-add-ons neThemes**.
+3. Kwi **Mphathi we-Add-ons**, cofa kumjikelo ophakathi phezulu.
+4. Khetha **Faka i-Add-on EsiFayilini...** kumenyu.
+5. Khetha ifayile eyenziwe `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Qinisekisa ukufakwa xa uphona.
+
+Qaphela: Ukuba i-Thunderbird ayamkelanga i `.zip` kwi-sistema yakho, ukuyibiza ngoku `.xpi` kwaye uzame "Faka i-Add-on EsiFayilini..." kwakhona.
+
+### Uphi uziphu lwe-LOCAL {#where-local-zip}
+
+- Okokuqala, pckaygela i-add-on: qhuba `make pack` kumphakathi wombhini.
+- Emva kokupakishwa, fumana i-zip "LOCAL" kumphakathi wombhini (umzekelo, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Ngaphambi kokupakishwa kwe-tsehtshima, phakamisa iingxaki kwii `sources/manifest_ATN.json` kunye `sources/manifest_LOCAL.json`.
+
+---
+
+## Phosa, Uhlaziye, kunye neUhlaziyo {#disable-uninstall-updates}
+
+- Phosa: Thunderbird → Izixhobo → I-add-ons neThemes → fumana i-add-on → phosa.
+- Uhlaziye: umfanekiso ofanayo → imenyu ye-三-dot → Susa.
+- Uhlaziyo: I-ATN ifaka ngokuzenzekelayo xa iinguqulo ezintsha zivunyiwe. Ukufakwa kweLOCAL/dev akuzihlazi; shicilela yemodeli entsha yeLOCAL ngesandla.
+- Susa imiyalelo ngokupheleleyo: jonga [Ubumfihlo → Ukususwa kwedatha](privacy#data-removal).
+
+Jonga kwakhona
+
+- [Ukwenza kube lula](quickstart)

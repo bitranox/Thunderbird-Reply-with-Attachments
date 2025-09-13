@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Kòmanse rapid",
+  "description": "Kòmanse rapid",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Kòmanse rapid",
+    "sidebar_label": "Kòmanse rapid"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Enstalasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/install"
   }
 }

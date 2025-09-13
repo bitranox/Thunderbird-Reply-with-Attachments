@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Fitur",
-  "description": "Fitur",
+  "description": "Features",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Mulai cepat",
+    "title": "Panduan Awal",
     "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/quickstart"
   }
 }

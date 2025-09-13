@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Muutuste logi",
-  "description": "Vaata kogu ajalugu reposti faili CHANGELOG.md.",
+  "description": "Changelog",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/licence"
+    "title": "Litsents",
+    "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/license"
   }
 }

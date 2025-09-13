@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Mga Tampok",
-  "description": "Mga Tampok",
+  "description": "Features",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Mabilis na Panimula",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/quickstart"
   }
 }

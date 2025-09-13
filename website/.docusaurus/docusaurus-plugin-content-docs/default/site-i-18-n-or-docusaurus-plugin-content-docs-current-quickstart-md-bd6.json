@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "ସେବା ସାଧାରଣ",
+  "description": "Quickstart",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "ସେବା ସାଧାରଣ",
+    "sidebar_label": "ସେବା ସାଧାରଣ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
+    "title": "ବିଶେଷତାଗୁଡ଼ିକ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "ଇନ୍ସ୍ଟଲ୍ଲେସନ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/install"
   }
 }

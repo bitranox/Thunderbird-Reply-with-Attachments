@@ -3,7 +3,7 @@
     "message": "השב עם קבצים מצורפים"
   },
   "extDescription": {
-    "message": "הוסף אוטומטית את הקבצים המצורפים המקוריים לתשובות בדוא״ל."
+    "message": "הכלל קבצים מצורפים מקוריים בתגובות דוא\"ל באופן אוטומטי."
   },
   "composeTitle": {
     "message": "השב עם קבצים מצורפים"
@@ -21,46 +21,72 @@
     "message": "אין כרגע אפשרויות להגדרה."
   },
   "uiSupport": {
-    "message": "אהבתם את התוסף הזה? תמכו בי בתרומה קטנה:"
+    "message": "אוהבים את התוסף הזה? אנא תמכו בי בתרומה קטנה:"
+  },
+  "uiRateATNText": {
+    "message": "אנא דרגו ב־ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "תרמו עכשיו"
   },
+  "uiIDonated": {
+    "message": "תרמתי"
+  },
+  "uiDonateSnoozed": {
+    "message": "תודה! בקשת התרומה הוסתרה ל־90 יום."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "מוסתר עד $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "הצג שוב את בקשת התרומה"
+  },
+  "uiDonateRestored": {
+    "message": "בקשת התרומה גלויה שוב."
+  },
   "uiGithubText": {
-    "message": "לדיווח על באגים או לפניות אחרות, אנא בקרו ב"
+    "message": "לדיווח על באגים או לפניות אחרות, בקרו ב־"
   },
   "uiGithubLinkLabel": {
-    "message": "עמוד GitHub"
+    "message": "דף GitHub"
   },
   "iconAlt": {
-    "message": "סמל השב עם קבצים מצורפים"
+    "message": "סמל 'השב עם קבצים מצורפים'"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "רשימה שחורה של שמות קבצים (תבניות glob)"
+    "message": "רשימת חסימה של שמות קבצים (תבניות glob)"
   },
   "uiBlacklistHelp": {
-    "message": "קבצים ששמם תואם לאחת מהתבניות הללו לא יצורפו אוטומטית לעולם. תבנית אחת בכל שורה. דוגמאות: *.png, smime.*, *.p7s"
+    "message": "קבצים ששמם תואם אחת מהתבניות הללו לא יצורפו לעולם באופן אוטומטי. תבנית אחת בכל שורה. דוגמאות: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "הצג אזהרה אם קבצים מצורפים מוחרגים בשל הרשימה השחורה"
+    "message": "התרע כאשר קבצים מצורפים מוחרגים לפי רשימת החסימה"
   },
   "uiSave": {
-    "message": "שמור"
+    "message": "שמירה"
   },
   "uiSaving": {
     "message": "שומר…"
   },
   "uiReset": {
-    "message": "איפוס לברירות המחדל"
+    "message": "איפוס לברירת המחדל"
   },
   "uiSaved": {
     "message": "נשמר."
   },
   "uiResetDone": {
-    "message": "אופס."
+    "message": "בוצע איפוס."
   },
   "uiConfirmHeader": {
     "message": "אישור"
@@ -69,7 +95,7 @@
     "message": "בקש אישור לפני הוספת קבצים מצורפים"
   },
   "uiConfirmHelp": {
-    "message": "תיבת אישור קטנה תופיע רק כאשר אכן יתווספו קבצים מצורפים. מקלדת: Y או J = כן; N או Esc = לא."
+    "message": "תיבת אישור קטנה תופיע רק כאשר עומדים להוסיף קבצים מצורפים בפועל. מקלדת: Y או J = כן; N או Esc = לא."
   },
   "confirmAddOne": {
     "message": "להוסיף קובץ מצורף: $1?",
@@ -100,7 +126,7 @@
     "message": "לא"
   },
   "warnBlacklistTitle": {
-    "message": "הוחרגו בשל הרשימה השחורה"
+    "message": "הוחרג לפי רשימת החסימה"
   },
   "warnBlacklistIntro": {
     "message": "הקבצים הבאים לא יצורפו אוטומטית:"
@@ -115,7 +141,7 @@
     "message": "אישור"
   },
   "uiConfirmDefaultHeader": {
-    "message": "תשובת ברירת המחדל"
+    "message": "תשובה כברירת מחדל"
   },
   "uiConfirmDefaultYes": {
     "message": "כן"
@@ -124,9 +150,21 @@
     "message": "לא"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "תיעוד:"
+  },
+  "uiDocsButton": {
+    "message": "פתח את התיעוד"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

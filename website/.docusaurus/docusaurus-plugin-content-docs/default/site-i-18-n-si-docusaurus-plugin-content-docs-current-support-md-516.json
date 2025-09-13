@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ආධාරය",
+  "description": "FAQ",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ආධාරය",
+    "sidebar_label": "ආධාරය"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "ආශ්‍රිත පදය පරාසය",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "පෞද්ගලිකතා",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/privacy"
   }
 }

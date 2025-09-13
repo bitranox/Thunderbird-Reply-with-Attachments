@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "捐助",
-  "description": "如果您喜欢“带附件回复”并愿意支持其开发，欢迎在此捐助：",
+  "title": "捐赠",
+  "description": "捐赠",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "捐助",
-    "sidebar_label": "捐助"
+    "title": "捐赠",
+    "sidebar_label": "捐赠"
   },
   "sidebar": "docs",
   "previous": {

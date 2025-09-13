@@ -9,7 +9,7 @@
     "message": "Ответ с вложениями"
   },
   "optionsTitle": {
-    "message": "Ответ с вложениями — параметры"
+    "message": "Ответ с вложениями — Настройки"
   },
   "confirmTitle": {
     "message": "Подтверждение вложений"
@@ -21,10 +21,36 @@
     "message": "Сейчас нет параметров для настройки."
   },
   "uiSupport": {
-    "message": "Вам нравится это дополнение? Поддержите меня небольшим вкладом:"
+    "message": "Вам нравится это дополнение? Поддержите меня небольшим пожертвованием:"
+  },
+  "uiRateATNText": {
+    "message": "Пожалуйста, оцените на ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Сделать пожертвование"
+    "message": "Пожертвовать сейчас"
+  },
+  "uiIDonated": {
+    "message": "Я пожертвовал(а)"
+  },
+  "uiDonateSnoozed": {
+    "message": "Спасибо! Напоминание о пожертвовании скрыто на 90 дней."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Скрыто до $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Показать «Пожертвовать» снова"
+  },
+  "uiDonateRestored": {
+    "message": "Напоминание о пожертвовании снова отображается."
   },
   "uiGithubText": {
     "message": "Для сообщений об ошибках и других вопросов посетите мою"
@@ -39,10 +65,10 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Черный список имён файлов (шаблоны glob)"
+    "message": "Черный список имен файлов (шаблоны glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Файлы, имена которых соответствуют любому из этих шаблонов, никогда не будут прикрепляться автоматически. По одному шаблону на строку. Примеры: *.png, smime.*, *.p7s"
+    "message": "Файлы, имена которых соответствуют любому из этих шаблонов, никогда не будут прикрепляться автоматически. По одному шаблону в строке. Примеры: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Предупреждать, если вложения исключены черным списком"
@@ -54,7 +80,7 @@
     "message": "Сохранение…"
   },
   "uiReset": {
-    "message": "Сбросить к значениям по умолчанию"
+    "message": "Восстановить значения по умолчанию"
   },
   "uiSaved": {
     "message": "Сохранено."
@@ -103,7 +129,7 @@
     "message": "Исключено черным списком"
   },
   "warnBlacklistIntro": {
-    "message": "Следующие файлы не будут автоматически прикреплены:"
+    "message": "Следующие файлы не будут прикреплены автоматически:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -124,9 +150,21 @@
     "message": "Нет"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Документация:"
+  },
+  "uiDocsButton": {
+    "message": "Открыть документацию"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

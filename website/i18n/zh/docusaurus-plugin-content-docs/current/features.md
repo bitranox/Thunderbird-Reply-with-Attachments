@@ -1,17 +1,34 @@
 ---
 id: features
-title: 功能
-sidebar_label: 功能
+title: '特性'
+sidebar_label: '特性'
 ---
 
-## 功能
+## Features {#features}
 
-- 回复时自动附加原始邮件中的文件。
-- 行为可配置：附件可以
-  - 自动添加，或
-  - 仅在确认后添加（小而易用的对话框）。在“选项”中可以启用确认并选择默认答案（是/否）。
-- 文件名黑名单（glob 模式）可防止自动附加特定文件。示例：`*intern*`、`*secret*`、`*passwor*`。
-  匹配不区分大小写，仅检查文件名；在“选项”中每行提供一个模式。
-- 黑名单警告（可选，默认启用）：当文件被你的黑名单排除时，一个小的模态窗口会列出该文件和匹配的模式。支持深色模式，键盘可访问（Enter/Esc 关闭）。
-- 即使你已手动添加了附件，也会添加原始附件；通过文件名避免重复。
-- 跳过 SMIME 证书和内联图像，以避免不必要的附件。
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

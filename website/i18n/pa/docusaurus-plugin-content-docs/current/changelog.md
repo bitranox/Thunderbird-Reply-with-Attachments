@@ -1,10 +1,23 @@
 ---
 id: changelog
-title: ਬਦਲਾਵ ਸੂਚੀ
+title: 'ਬਦਲਾਵਾਂ'
 ---
 
-ਪੂਰਾ ਇਤਿਹਾਸ ਰਿਪੋਜ਼ਟਰੀ ਦੀ CHANGELOG.md ਫ਼ਾਈਲ ਵਿੱਚ ਵੇਖੋ।
+## Changelog
 
-- 2.0.0: ਪੂਰੀ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਵਾਲੇ ਸੰਸਕਰਣ ਲਈ ਦੁਬਾਰਾ ਲਿਖਿਆ (EN/DE)
-- 1.0.1: messages.listAttachments() ’ਤੇ ਸ਼ਿਫ਼ਟ ਕੀਤਾ
-- 1.0.0: ਪਹਿਲਾ ਰੀਲੀਜ਼
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+---
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.
+
+---

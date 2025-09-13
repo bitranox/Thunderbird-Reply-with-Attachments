@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Udvikling",
   "description": "Development Guide",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Udvikling",
+    "sidebar_label": "Udvikling"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Tilladelser",
     "permalink": "/Thunderbird-Reply-with-Attachments/da/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Sprog",
     "permalink": "/Thunderbird-Reply-with-Attachments/da/docs/languages"
   }
 }

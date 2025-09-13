@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Sera'
+sidebar_label: 'Sera'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privacy
 
-What the add‑on does:
+:::note Hakuna telemetry; hakuna mtandao wa nyuma
+Nyongeza hii **haita**kusanya uchanganuzi/telemetry na haitoi **maombi** ya mtandao wa nyuma. Ufikiaji wowote wa mtandao hutokea tu unapobofya kiungo cha nje (Docs, GitHub, Donate).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments haiwezi kukusanya uchanganuzi au telemetry na haitumii data yako kokote.
 
-What the add‑on does not do:
+Kile nyongeza inachofanya:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Inasoma metadata ya kiambatisho na faili kutoka ujumbe wa awali kwa ndani (Thunderbird API) ili kuviambatisha kwenye majibu yako.
+- Inahifadhi chaguo zako (blacklist, uthibitisho, jibu la default) katika uhifadhi wa ndani wa Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Kile nyongeza haitafanya:
 
-## Content Security Policy (CSP)
+- Hakuna kufuatilia, uchanganuzi, ripoti za ajali, au kuandika kumbukumbu za mbali.
+- Hakuna maombi ya mtandao wa nyuma, isipokuwa wakati unafungua kiungo cha nje (Docs, GitHub, Donate).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Ruhusa zimeandikwa kwenye ukurasa wa [Ruhusa](permissions).
+
+---
+
+## Sera ya Usalama wa Maudhui (CSP) {#content-security-policy-csp}
+
+Chaguzi na ukurasa wa pop-up zinakwepa scripts za ndani. JavaScript yote inapakuliwa kutoka kwa faili zinazokuja na nyongeza ili kuzingatia CSP kali katika Thunderbird. Ikiwa unatia vidokezo vya msimbo katika hati, ni mifano tu na havitekelezwi na nyongeza.
+
+---
+
+## Hifadhi ya data {#data-storage}
+
+- Mapendeleo ya mtumiaji (blacklist, kizSwitch cha uthibitisho, jibu la default) yanahifadhiwa katika `storage.local` ya Thunderbird kwa nyongeza hii.
+- Hakuna usawazishaji wa cloud unafanywa na nyongeza.
+
+---
+
+## Mtandao {#network}
+
+- Nyongeza haiendeshi shughuli zozote za mtandao wa nyuma.
+- Ufikiaji wowote wa mtandao hutokea tu unapobofya viungo (Docs, GitHub, Donate) au wakati Thunderbird yenyewe inafanya shughuli za kawaida zisizohusiana na nyongeza hii.
+
+---
+
+## Kuondoa data {#data-removal}
+
+- Kuondoa nyongeza kunatoa msimbo wake.
+- Mipangilio inashikiliwa tu katika `storage.local` ya Thunderbird na inatolewa wakati wa kuondoa; hakuna uhifadhi wa nje unatumika.
+- Futa mipangilio bila kuondoa:
+  - Ukurasa wa chaguzi: tumia "Rejesha kwenye vigezo vya kawaida" kwa blacklist na onyo la blacklist.
+  - Kisasa: katika Thunderbird → Zana → Zana za Developer → Fuatilia Nyongeza, fungua hifadhi ya nyongeza na safisha funguo ikiwa inahitajika.
+
+---

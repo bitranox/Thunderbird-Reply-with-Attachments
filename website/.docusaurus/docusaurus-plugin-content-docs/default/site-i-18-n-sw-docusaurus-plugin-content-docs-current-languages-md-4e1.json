@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Lugha",
+  "description": "Languages",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Lugha",
+    "sidebar_label": "Lugha"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Maendeleo",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Kamusi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/glossary"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "వాడకం",
-  "description": "వాడకం",
+  "title": "ఉపయోగం",
+  "description": "Usage",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "వాడకం",
-    "sidebar_label": "వాడకం"
+    "title": "ఉపయోగం",
+    "sidebar_label": "ఉపయోగం"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ఆకృతీకరణ",
+    "title": "కన్ఫిగరేషన్",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/configuration"
   },
   "next": {
-    "title": "అనుకూలత",
+    "title": "సామ్యం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/compatibility"
   }
 }

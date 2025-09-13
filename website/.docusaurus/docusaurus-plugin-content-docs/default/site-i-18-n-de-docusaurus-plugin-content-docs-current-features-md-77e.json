@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Funktionen",
-  "description": "---",
+  "description": "Features",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "features",
     "title": "Funktionen",

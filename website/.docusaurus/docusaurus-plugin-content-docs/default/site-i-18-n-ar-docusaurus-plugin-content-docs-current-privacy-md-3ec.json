@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "الخصوصية",
-  "description": "لا يجمع «الرد مع المرفقات» أي تحليلات أو تتبّع، ولا يرسل بياناتك إلى أي مكان.",
+  "description": "Privacy",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

@@ -1,17 +1,34 @@
 ---
 id: features
-title: Функције
-sidebar_label: Функције
+title: 'Karakteristike'
+sidebar_label: 'Karakteristike'
 ---
 
-## Функције
+## Features {#features}
 
-- При одговарању аутоматски прилаже датотеке из оригиналне е‑поште.
-- Подесиво понашање: прилози могу
-  - бити додати аутоматски, или
-  - бити додати тек након потврде (мали, приступачан дијалог). У Опцијама можете укључити потврду и изабрати подразумевани одговор (Да/Не).
-- Црна листа назива датотека (glob обрасци) спречава аутоматско прилагање одређених датотека. Примери: `*intern*`, `*secret*`, `*passwor*`.
-  Поклапање није осетљиво на велика/мала слова и проверава само назив датотеке; у Опцијама наведите по један образац по реду.
-- Упозорење о црној листи (опционо, подразумевано укључено): када датотеке буду искључене вашом листом, мали модални прозор приказује датотеку и одговарајуће обрасце. Прилагођено тамном режиму и приступачно тастатуром (Enter/Esc за затварање).
-- Додаје изворне прилоге чак и ако сте већ нешто приложили; избегава дупликате на основу назива датотеке.
-- Прескаче SMIME сертификате и уграђене слике да би се избегли непотребни прилози.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

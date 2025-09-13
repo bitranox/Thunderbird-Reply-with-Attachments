@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Nkabom",
   "description": "Compatibility",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Nkabom",
+    "sidebar_label": "Nkabom"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Mmomma",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Mmara",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/permissions"
   }
 }

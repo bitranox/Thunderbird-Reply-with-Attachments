@@ -1,16 +1,20 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Luuqadaha'
+sidebar_label: 'Luuqadaha'
 ---
 
-# Language Support
+## Luuqadaha
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Liiskani wuxuu muujinayaa labadaba turjumidda dukumeentiga bogga iyo silsiladaha UI ee dheeraadka ah. Taageerada luuqadaha ballaaran, mahadnaqa aaladaha turjumidda AI - oo daboolaya 100 luuqadood.
 
-List below is sorted by the language code.
+Liiska hoos ku qoran waxaa lagu kala soocay koodhka luuqadda.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Eeg sidoo kale: [Glosariga](glossary) ee erayada UI-ga ee caadiga ah ee loo adeegsado meelo kala duwan.
+
+---
+
+## Liiska Luuqadaha {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +72,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +115,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Talo: Bedel luuqadda dukumeentiyada adoo isticmaalaya xulashada luuqadda ee madaxda goobta (ku xiran URL-ga).
+
+Redirect barta degitaanka
+
+- Haddii barta lagu dhisay luuqadda doorbidaada biraawsarka, booqashada URL-ga dukumeentiga asaasiga ah ee hooseysa baseUrl-ka mashruuca waxa ay si toos ah u badaleysaa luuqaddaas. Isticmaal xulashada luuqadda (ama `/en/`) si aad ugu sii noqoto Ingiriisi.
+
+---
+
+## Ka Qaybqaado Turjumida {#contribute-translations}
+
+- Ma heshay dhibaato tarjumidda? Fadlan furo arrin GitHub ah ama PR.
+- Ku fiiriya dib-u-eegista guud ahaan ilaha Ingiriisiga hoos `website/docs/`; qalabka maamuleyaasha wuxuu faafiyaan updates luuqadaha kale.
+  Ingiriisigu waa xigashada runta ah ee dukumeentiga; updates turjumaadda waxaa laga soo qaadaa EN inta lagu jiro habka shaqada ee maamuleyaasha.
+
+### Bogga Hore, Navbar, Footer UI
+
+- Qodobbadan waxay ku nool yihiin `website/i18n/en/code.json` waxaana loo tarjumay dhammaan luuqadaha iyada oo loo maro hawsha maamulaha:
+  - `make translate_web_index` (waxaa looga baahan yahay `OPENAI_API_KEY`)
+  - Xaddid luuqadaha `OPTS="--locales de,fr"`; ka beddel qiimaha jira `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Luuqadda website-ka iyo luuqadda UI-ga ee dheeraadka ah waa madaxbannaan; xulashada luuqadda waxay beddeshaa dukumeentiga oo kaliya. Luuqadda UI-ga ee Thunderbird waxay raacdaa dejinta Thunderbird-kaaga.

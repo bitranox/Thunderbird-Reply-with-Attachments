@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "छिटो सुरु गर्ने तरिका",
+  "description": "छिटो सुरु गर्ने तरिका",
   "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "छिटो सुरु गर्ने तरिका",
+    "sidebar_label": "छिटो सुरु गर्ने तरिका"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "स्थापना",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/install"
   }
 }

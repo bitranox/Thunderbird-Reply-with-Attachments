@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Tuguya boloba kɛ",
-  "description": "Ka baarakɛ min bɛ se ka a lajɛ ka kɛ CHANGELOG.md fila la repo kɔnɔ.",
+  "title": "Chanjman",
+  "description": "Chanjman",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Tuguya boloba kɛ"
+    "title": "Chanjman"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/licence"
+    "title": "Kɔnɔ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/license"
   }
 }

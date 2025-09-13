@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Instalasi'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Instalasi'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Instalasi via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimum Thunderbird Version
+Add‑on ieu ngarojong Thunderbird **128 ESR atawa langkung anyar**. Versi lami teu didukung.
+:::
 
----
+Ieu mangrupikeun métode instalasi anu disarankeun. Add‑on anu dipasang ti ATN (addons.thunderbird.net) nampi pembaruan otomatis. Instalasi LOCAL/dev teu otomatis diperbarui.
 
-## Local installation in Thunderbird
+- Versi Thunderbird minimal: 128 ESR atawa langkung anyar.
 
-### Download the XPI file
+1. Dina Thunderbird, buka **Alat > Add-ons and Themes**.
+2. Pilarian "balas nganggo lampiran".
+3. Tambahkeun add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Atawa buka halaman add-on sacara langsung: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Instalasi manual ti XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Unduh berkas XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Buka halaman [Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Unduh versi terbaru tina add-on salaku berkas XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Instal di Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Buka Thunderbird.
+2. Buka **Alat > Add-ons and Themes**.
+3. Dina **Manajer Add-ons**, klik ikon gear di pojok kanan luhur.
+4. Pilih **Instal Add-on Ti Berkas…** tina ménu.
+5. Pilih berkas `reply_with_attachments-x.y.z-tb.xpi` anu diunduh.
+6. Konfirmasi instalasi nalika dipénta.
 
 ---
+
+## Instalasi pikeun pangembangan {#installation-for-development}
+
+### Unduh repository {#download-the-repository}
+
+1. Unduh versi terbaru tina repository GitHub.
+2. Jalankeun `make help` pikeun informasi langkung lanjut.
+
+### Instal di Thunderbird {#install-in-thunderbird-dev}
+
+1. Buka Thunderbird.
+2. Buka **Alat > Add-ons and Themes**.
+3. Dina **Manajer Add-ons**, klik ikon gear di pojok kanan luhur.
+4. Pilih **Instal Add-on Ti Berkas…** tina ménu.
+5. Pilih berkas anu dihasilkeun `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Konfirmasi instalasi nalika dipénta.
+
+Catetan: Upami Thunderbird henteu nampa `.zip` dina sistem anjeun, ganti nami janten `.xpi` sareng cobian deui “Instal Add‑on Ti Berkas…”
+
+### Di mana mendakan ZIP LOKAL {#where-local-zip}
+
+- Mimiti, bungkus add‑on: jalankeun `make pack` di akar repository.
+- Sanggeus dibungkus, mendakan zip “LOCAL” di akar repository (contong: `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Satiap nyiapkeun deui pikeun nguji, tingkatkeun versi di `sources/manifest_ATN.json` sareng `sources/manifest_LOCAL.json`.
+
+---
+
+## Nonaktipkeun, Copot Pasang, sareng Pembaruan {#disable-uninstall-updates}
+
+- Nonaktipkeun: Thunderbird → Alat → Add‑ons dan Themes → mendakan add‑on → geser ka off.
+- Copot pasang: pandangan anu sami → ménu tilu titik → Hapus.
+- Pembaruan: instalasi ATN otomatis di-update nalika versi anyar disatujuan. Instalasi LOCAL/dev teu otomatis di-update; pasang deui build LOCAL anyar sacara manual.
+- Hapus setelan sacara lengkep: tingali [Privasi → Hapus data](privacy#data-removal).
+
+Tingali ogé
+
+- [Panduan Singkat](quickstart)

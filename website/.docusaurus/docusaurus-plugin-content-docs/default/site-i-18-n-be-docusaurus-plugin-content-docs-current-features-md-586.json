@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Магчымасці",
-  "description": "Магчымасці",
+  "title": "Асаблівасці",
+  "description": "Features",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Магчымасці",
-    "sidebar_label": "Магчымасці"
+    "title": "Асаблівасці",
+    "sidebar_label": "Асаблівасці"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Хуткі старт",
     "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/quickstart"
   }
 }

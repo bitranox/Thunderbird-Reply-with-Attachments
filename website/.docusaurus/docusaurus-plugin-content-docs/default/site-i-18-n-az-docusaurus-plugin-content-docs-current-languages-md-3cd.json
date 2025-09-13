@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Dillər",
+  "description": "Dillər",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Dillər",
+    "sidebar_label": "Dillər"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "İnkişaf",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Lüğət",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/glossary"
   }
 }

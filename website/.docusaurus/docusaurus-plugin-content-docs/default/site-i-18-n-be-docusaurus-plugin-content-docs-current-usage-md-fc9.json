@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Выкарыстанне",
   "description": "Usage",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Выкарыстанне",
+    "sidebar_label": "Выкарыстанне"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Канфігурацыя",
     "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Сумяшчальнасць",
     "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/compatibility"
   }
 }

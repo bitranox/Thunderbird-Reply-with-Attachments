@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "રૂપરેખાંકન",
-  "description": "શબ્દસમૂહ નોંધ: UI અને દસ્તાવેજોમાં સમાન રીતે વપરાતા શબ્દો માટે Glossary જુઓ.",
+  "title": "કોન્ફિગ્રેશન",
+  "description": "Configuration",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "રૂપરેખાંકન"
+    "title": "કોન્ફિગ્રેશન"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Ibiranga",
-  "description": "Ibiranga",
+  "description": "Features",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Igishushanyo Mbonera",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/quickstart"
   }
 }

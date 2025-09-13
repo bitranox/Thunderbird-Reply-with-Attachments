@@ -3,7 +3,7 @@
     "message": "带附件回复"
   },
   "extDescription": {
-    "message": "在回复电子邮件时自动包含原始附件。"
+    "message": "在回复邮件时自动包含原始附件。"
   },
   "composeTitle": {
     "message": "带附件回复"
@@ -21,19 +21,45 @@
     "message": "当前没有可配置的选项。"
   },
   "uiSupport": {
-    "message": "喜欢这个附加组件吗？欢迎通过小额捐助支持我："
+    "message": "喜欢这个附加组件吗？请通过小额捐助支持我："
+  },
+  "uiRateATNText": {
+    "message": "请在 ATN 上评分"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "立即捐助"
   },
+  "uiIDonated": {
+    "message": "我已捐助"
+  },
+  "uiDonateSnoozed": {
+    "message": "谢谢！捐助提示已隐藏 90 天。"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "隐藏至 $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "再次显示捐助提示"
+  },
+  "uiDonateRestored": {
+    "message": "捐助提示已再次显示。"
+  },
   "uiGithubText": {
-    "message": "如需报告错误或提出其他问题，请访问我的"
+    "message": "报告问题或其他咨询，请访问我的"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub 页面"
   },
   "iconAlt": {
-    "message": "带附件回复图标"
+    "message": "“带附件回复”图标"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,7 +68,7 @@
     "message": "文件名黑名单（glob 模式）"
   },
   "uiBlacklistHelp": {
-    "message": "名称匹配任一模式的文件将不会被自动附加。每行一个模式。示例：*.png、smime.*、*.p7s"
+    "message": "名称匹配以下任一模式的文件将不会被自动附加。每行一个模式。示例：*.png、smime.*、*.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "当附件被黑名单排除时发出警告"
@@ -66,10 +92,10 @@
     "message": "确认"
   },
   "uiConfirmLabel": {
-    "message": "在添加附件前询问"
+    "message": "添加附件前询问"
   },
   "uiConfirmHelp": {
-    "message": "只有在确实会添加附件时，才会显示一个小的确认对话框。键盘：Y 或 J = 是；N 或 Esc = 否。"
+    "message": "仅在确实将添加附件时才会显示一个小的确认对话框。键盘：Y 或 J = 是；N 或 Esc = 否。"
   },
   "confirmAddOne": {
     "message": "添加附件：$1？",
@@ -100,10 +126,10 @@
     "message": "否"
   },
   "warnBlacklistTitle": {
-    "message": "已被黑名单排除"
+    "message": "被黑名单排除"
   },
   "warnBlacklistIntro": {
-    "message": "以下文件不会被自动附加："
+    "message": "以下文件将不会被自动附加："
   },
   "warnColFile": {
     "message": "文件"
@@ -124,9 +150,21 @@
     "message": "否"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "文档："
+  },
+  "uiDocsButton": {
+    "message": "打开文档"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

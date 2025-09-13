@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ຄຸນລັກສະນະ",
-  "description": "ຄຸນລັກສະນະ",
+  "title": "ลักษณะเด่น",
+  "description": "Features",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "ຄຸນລັກສະນະ",
-    "sidebar_label": "ຄຸນລັກສະນະ"
+    "title": "ลักษณะเด่น",
+    "sidebar_label": "ลักษณะเด่น"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/quickstart"
   }
 }

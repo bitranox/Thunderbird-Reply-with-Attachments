@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "빠른 시작",
-  "description": "1. Thunderbird Add‑ons에서 부가 기능을 설치합니다.",
+  "description": "Quickstart",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",

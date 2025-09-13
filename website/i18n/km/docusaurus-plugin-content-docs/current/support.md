@@ -1,22 +1,90 @@
 ---
 id: support
-title: Support
-sidebar_label: Support
+title: 'គាំទ្រ'
+sidebar_label: 'គាំទ្រ'
 ---
 
-Need help or want to report a bug?
+## FAQ {#faq}
 
-- Open an issue on GitHub:
-  - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
-  - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
-  - Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
+### ឯកសារភ្ជាប់មិនត្រូវបានបន្ថែម — ហេតុអ្វី?
 
-- Add‑ons site (ATN): You can also leave feedback via the add‑on page.
+- រូបភាពក្នុងបណ្ដាញ និងផ្នែក S/MIME ត្រូវបានកExclude intentionally។
+- ឈ្មោះឯកសារដែលទាំងពីរ មានភាពកក់ក្តៅត្រូវបានស្គាល់បើសិនបាន compose រំលេចឯកសារតែមួយ។
+- ផលិតផល blacklist អាចទាញយកអ្វីដែលត្រូវបានគេរិះរក; មើល [ការកំណត់](configuration#blacklist-glob-patterns)។
 
-Tips
+### តើខ្ញុំនឹងអាចបញ្ជាក់មុនពេលបន្ថែមឯកសារ?
 
-- Ensure you’re on a supported Thunderbird version (128 ESR or newer).
-- Check the Configuration and Usage docs for common setup questions.
-- For development/testing, see the Development guide.
+បាទ។ បើក "សួរសេរ មុនពេលបន្ថែមឯកសារ" នៅក្រោម [ការកំណត់ → ការបញ្ជាក់](configuration#confirmation)។ សម្បត្តិគន្លិះ៖ Y/J = បាទ, N/Esc = មិនទេ។
 
-If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
+### តើបង់ប្រាក់នេះបានផ្ញើអ្វីឬតាមដានការប្រើប្រាស់?
+
+មិនទេ។ មើល [ភាពឯកជន](privacy) — មិនមាន telemetry និងមិនមានការស្នើរសុំបណ្តាញនៅខាងក្រោយ។
+
+### តើការផForward មិនបានបន្ថែមឯកសារទេ — តើវាជារឿងដែលរំពឹងទុក?
+
+បាទ។ តើប្រៀបធៀប បន្ថែម និងឆ្លើយតបតែន្តឺ​វប្បទានដែលកែប្រែដោយបន្ថែមនេះ; Forward ត្រូវបានទុកមិនប្រែប្រែក្នុងចិត្ត។ មើល [កំណត់ហេតុ](usage#limitations)។
+
+### ប៉ុន្មានសម្រាប់អភ័យហេរ?
+
+ជម្រើស → ផ្នែកគាំទ្រ។ មើល [ការមើលឃើញការផ្តល់ជូន](configuration#donation-visibility)។
+
+---
+
+## គាំទ្រ
+
+តើអ្នកត្រូវការជំនួយ រឺចង់រាយការណ៍កំហុស?
+
+---
+
+### បើកបញ្ហានៅលើ GitHub:
+
+- រក្សាទុក: `bitranox/Thunderbird-Reply-with-Attachments`
+- បញ្ហា: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
+- រួមបញ្ចូលកំណែ Thunderbird (ឧ. 128 ESR), OS និងជំហានដើម្បីបង្កើតឡើងវិញ
+- តភ្ជាប់កំណត់ត្រារបស់ Thunderbird ពី គណនីកំហុស (ឧ. គ្រប់គ្រង → សម្បត្តិសម្តែង → គណនីកំហុស)
+
+- ទំព័រ add‑ons (ATN): អ្នកក៏អាចទុកមតិយោបល់តាមរយៈ [ទំព័របន្ថែម](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)។
+
+---
+
+### គន្លឹះ
+
+- បញ្ចូលថាអ្នកនៅលើកំណែ Thunderbird ដែលគាំទ្រ (128 ESR ឬថ្មីជាងនេះ)។
+- ពិនិត្យការកំណត់ និងឯកសារ​ប្រើប្រាស់សម្រាប់សំណួរ​ធម្មតា។
+- សម្រាប់ ការអភិវឌ្ឍ/សាកល្បង, មើលមេរៀនអភិវឌ្ឍ។
+- ប្រសិនបើការកំណត់ដែលបានរក្សាទុកប្រហែលមិនបានអនុវត្តបានត្រឹមត្រូវ, ធ្វើ​លើការ​ថាក្នុងការដំណើរការ Thunderbird ហើយសាកល្បងឡើងវិញ។ (Thunderbird ក៏អាចរក្សាទុកស្ថានភាពនៅលើសម័យ; ការចាប់ផ្តើមថ្មីធានាថាសេចក្ដីកំណត់ថ្មីត្រូវបានផ្តល់ឱ្យ)។
+- ការសាកល្បងក្រៅនាំ: សាកល្បងជាមួយអ៊ីមែលសាកល្បងតូចមួយដែលមានឯកសារ។
+
+- ប្រៀបធៀបទិសដៅជាមួយការបញ្ជាក់ ON ប៉ុន vs. OFF ដើម្បីកាត់បន្ថយថាផ្ទះនោះទាក់ទង។
+
+---
+
+### អ្វីដែលត្រូវណែនាំលើរបាយការណ៍
+
+- កំណែ Thunderbird និង OS
+- ជំហានជាក់លាក់ដើម្បីបង្កើតឡើងវិញ (អ្វីដែលអ្នកបានធ្វើ, អ្វីដែលអ្នករំពឹងទុក, អ្វីដែលកើតមាន)
+- តើការបញ្ជាក់ត្រូវបានបើក និងការកំណត់ចម្លើយលំនាំរបស់អ្នក
+- ត Samples នៃលំនាំ blacklist របស់អ្នក (ប្រសិនបើពាក់ព័ន្ធ)
+- កំណត់ត្រា Console កំហុសពេលបង្កើតឡើងវិញ (ឧ. គ្រប់គ្រង → សម្បត្តិសម្តែង → កំណត់ត្រាកំហុស)
+- បើកកំណត់ជួសជុល (ជម្រើស):
+  - បង្ហោះក្នុងគណនីកំហុសរបស់ Thunderbird: `messenger.storage.local.set({ debug: true })`
+  - បង្កើតបញ្ហានេះឡើងវិញ ហើយចម្លងបន្ទាត់សំខាន់ `[RWA]` log lines
+
+---
+
+### ម៉ូឌែលបញ្ហា (ចម្លង/ចាក់) {#issue-template}
+
+- កំណែ Thunderbird និង OS:
+- ជំហានដើម្បីបង្កើតឡើងវិញ:
+- ការបញ្ជាក់តើតើ? ចម្លើយលំនាំ:
+- ត Samples នៃលំនាំ blacklist:
+- កំណត់ត្រា Console កំហុស (ឧ. គ្រប់គ្រង → សម្បត្តិសម្តែង → កំណត់ត្រាកំហុស):
+- មានអ្វីផ្សេងទៀតដែលពាក់ព័ន្ធ:
+
+---
+
+### ប្រាក់ឧបត្ថម្ភ
+
+បើអ្នកចង់គាំទ្រផ្នែកនេះ សូមគិតពីការប្រមូលប្រាក់តិចតួចនៅលើទំព័រ [ប្រាក់ឧបត្ថម្ភ](donation)។ អរគុណ!
+
+---

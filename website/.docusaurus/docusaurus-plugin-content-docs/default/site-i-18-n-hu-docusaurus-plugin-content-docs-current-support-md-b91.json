@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Támogatás",
+  "description": "FAQ",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Támogatás",
+    "sidebar_label": "Támogatás"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Szótár",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Adatvédelem",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/privacy"
   }
 }

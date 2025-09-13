@@ -1,24 +1,48 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Ibyangombwa'
+sidebar_label: 'Ibyangombwa'
 ---
 
-Project license: MIT
+## Ibyangombwa
 
-This project is licensed under the **MIT License**.
+Ibyangombwa by'umushinga: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Uyu mushinga ufite ibyangombwa mu rwego rwa **MIT License**.
 
-Third‑party licenses (summary)
+- Umutwe wuzuye: reba `LICENSE` ku isoko y'ububiko.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Ibyangombwa by'abandi {#third-party-licenses}
+
+Iki gice gisobanura ibyangombwa by'abandi bakoresheje muri ubu bubiko. Kugira ngo ubone urutonde rw'inyongera mu isoko, reba `THIRD_PARTY_LICENSES.md` ku isoko y'ububiko.
+
+Ibikoresho n'amasoko (iterambere/test/docs)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (ikoreshejwe binyuze muri npx gusa) — MPL‑2.0 (igikoresho cyo mu iterambere; ntabwo gishirwa hamwe na add-on)
+
+---
+
+## Ibyitonderwa
+
+- Thunderbird MailExtension APIs ni APIs z'urubuga; nta kode y'abandi ikoreshejwe irimo.
+- Ibimenyetso by'umushinga muri `sources/icons` ni umutungo w'umushinga (MIT keretse nibindi bisobanuye). Ikirango/ikimenyetso cya GitHub ni ikirango cya GitHub kandi ntabwo gikoreshwa na MIT; gikoreshwa hakurikijwe amategeko ya brand ya GitHub.
+
+Niba wongeyeho ibikenewe bishya cyangwa uhuza kode y'abandi, nyamuneka menya neza ko uvuguruye iyi
+paji na `THIRD_PARTY_LICENSES.md` bijyanye.
+
+---
+
+## Amateka y'ibirango
+
+- “Thunderbird” ni ikirango cya MZLA/Thunderbird. Uyu mushinga ni add-on y'abandi kandi ntisanzwe ifitanye isano cyangwa ngo yemezwe na MZLA.
+- GitHub® n'ikimenyetso cya GitHub ni ibirango bya GitHub, Inc. Ibimenyetso bikoreshwa hakurikijwe amategeko ya brand.

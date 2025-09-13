@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Kuusaa",
+  "description": "Kuusaa \"Thunderbird Add-ons and Themes\" geggeessaa",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Kuusaa",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Kuusaa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Dhiyaannaa",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Commoja",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/configuration"
   }
 }

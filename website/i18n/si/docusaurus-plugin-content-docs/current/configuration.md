@@ -1,52 +1,142 @@
 ---
 id: configuration
-title: Configuration
+title: 'කොන්ෆිගියුරින්'
 ---
 
-# Configuration
+## කොන්ෆිගියුරින්
 
 Terminology note: see the [Glossary](glossary) for consistent terms used in UI and docs.
 
-## open options in Thunderbird
+---
+
+## Thunderbird හි විවෘත විකල්ප {#open-options-in-thunderbird}
 
 - Thunderbird → Tools → Add‑ons and Themes → find “Reply with Attachments” → Preferences/Options
 
-### Settings:
+---
 
-#### Confirmation
+### සැකසුම් {#settings}
 
-- Toggle “Ask before adding attachments”
-- Default answer: Yes or No (focus & keyboard default)
-- Keyboard: Y/J = Yes; N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus
+#### අනවසරය {#confirmation}
 
-#### Blacklist (glob patterns)
-
-Blacklisted Files will not be added on reply automatically
-
-- One pattern per line; case‑insensitive; filename‑only matching
-- Examples: `*.png`, `smime.*`, `*.p7s`
-- Supported glob tokens: `*` (any chars except `/`), `?` (one char), character classes like `[abc]`. Use `\[` to match a literal `[`. Paths (`**/`) are ignored since only filenames are matched.
-- Not supported: negation (`!`), brace expansion (`{..}`), and complex ranges. Keep patterns simple.
-
-Tip: Defaults are prefilled on first open and can be reset anytime.
-
-#### Warning on excluded attachments
-
-- Toggle “Warn if attachments are excluded by blacklist” (default: ON).
-- When enabled, a small modal lists excluded files and the matching pattern(s). The
-  warning also appears when nothing will be attached because all candidates were
-  blacklisted.
-
-#### save Your settings
+- “ආපසු ඇමුණුම් එක් කිරීමට පෙර අහන්න” විකල්පය බෝඩ් කරගන්න
+- දෛනික ප්‍රශ්නය: ඔව් හෝ නෑ (දැක්ම සහ යතුරු පුවරුවේ දෛනික)
+- යතුරු පුවරුව: Y/J = ඔව්; N/Esc = නෑ; Tab/Shift+Tab සහ Arrow යතුරු පැමිණෙන විශිලය
+  - See keyboard details in [Usage](usage#keyboard-shortcuts).
 
 ---
 
-### Filename normalization (duplicates prevention)
+#### කළු ලැයිස්තුව (glob patterns) {#blacklist-glob-patterns}
 
-To behave consistently across platforms, filenames are normalized before duplicate checks:
+කළු ලැයිස්තුගත කර ඇති ගොනු ආපසු නිදාම තොරව නොඑකත් වෙයි. See also the [Glossary](glossary) for “Blacklist (Exclude list)”.
 
-- Unicode is normalized to NFC.
-- Names are case‑folded (lowercased).
-- Trailing dots/spaces are trimmed (Windows friendliness).
+- එක් මාදිලියකට රේඛා දී ඇති; මහලු කාරකය නැති; ගොනු නම පමණක් ගැලපෙන
+- උදාහරණ: `*intern*`, `*secret*`, `*passwor*`
+- සහය දක්වන glob tokens: `*` (සියළු අක්ෂර `/` බැහැර), `?` (එකට අක්ෂර), අක්ෂර ශ්‍රේණි `[abc]` කියා. `\[` පාවිච්චි කරන්න ඉතා ලකුණු `[` ලෙස ගැලපීම සඳහා. මාර්ග (`**/`) අමතක ය, මන්ද ගොනු නම් පමණක් ගැලපේ.
+- සහය නොදක්වන: ප්‍රතිසන්දහන් (`!`), ප්‍රමාණය විශාල කිරීම් (`{..}`), සහ සංකීර්ණ පරාස. මාදිලි සරළව තබන්න.
+- මහජන දත්තට දැන් සම්මාන නොකරන්න. `#` හෝ ඉන්ලයින් විශේෂණ ආInclude කරන්න; එක පේළි එක මාදිලියක් පමණක් ඇතුළත් කරන්න.
 
-This keeps duplicate detection predictable for names like `café.pdf` vs `café.pdf` (NFD) or `FILE.txt.` vs `file.txt`.
+---
+
+##### මාදිලි කුකුළය {#pattern-cookbook}
+
+- ඕනෑම PDF එකක් ගැලපෙන්න: `*.pdf`
+- "scan" යනුවෙන් ආරම්භ වන ගොනු: `scan*`
+- අක්ෂර ශ්‍රේණිය: `report[0-9].txt`
+- සාමාන්‍ය `[` කින් ගැලපීමට: `\[` (අක්ෂරයක් ලකුණු කරන විට උපකාරී)
+
+---
+
+##### සටහන් {#blacklist-notes}
+
+- අනුක්රමය වැදගත් නොවේ; ප්‍රථම/ඕනෑම ගැලපීම ගොනුව අස්සනය කරයි.
+- ගැලපුම ගොනු නම පමණක් ය (මාර්ග/කණ්ඩායම් අවලංගු කරයි).
+- “මූලිකත්වයට නැවත ආපසු” යනුවෙන් නිර්දේශිත මාදිලි සහ කළු ලැයිස්තු විශේෂණය නැවත පූරණය කරයි.
+- උදාහරණ `*passwor*` ඇයි? එය "password" සහ "Passwort" පවුල් දෙකම ගැලපෙයි.
+- ප්‍රමුකතාව: යම් මාදිලියක් එක් ගොනුවක ගැලපුවොත්, ගොනුව අස්සන කරයි (ප්‍රථම/ඕනෑම ගැලපීම - අනුක්‍රමය ප්‍රතිඵලය මාරු නොකරයි).
+- ආදර්ශය - ඔබගේ මාදිලිය පරීක්ෂා කරන්න: තාවකාලික මාදිලියක් එක් කරන්න, ගැලපෙන නමක් සමඟ ගොනුවක් ඇතුළත් වන්න, සහ එය අනතුරු අරය ලැයිස්තුවේ අස්සන කර ඇති බව සහතික කරන්න.
+
+##### කුඩා පරික්ෂා කරන්න (ආරක්ෂා මෝඩ) {#blacklist-try-it}
+
+1. විකල්ප විවෘත කරන්න → කළු ලැයිස්තුව.
+2. `*.tmp` වැනි තාවකාලික මාදිලියක් එක් කරන්න සහ සුරක්ෂිත කරන්න ක්ලික් කරන්න.
+3. `.tmp` කින් වැඩි දුරින් ගැලපෙන ගොනුවක් ඇති පරීක්ෂණ අසුවක පිළිතුරු ලබා දෙන්න — මෙම ගොනුව අනතුරු ලැයිස්තුවේ පෙනී සිටිය යුතුය හා සම්බන්ධ නැතිවේ.
+4. බැලෙන ලද තාවකාලික මාදිලිය ඉවත් කරන්න, හෝ “මූලිකත්වයට නැවත ආපසු” ක්ලික් කරන්න.
+
+---
+
+#### ඇතුළු කළ ආපසු අමුණුම් පිළිබඳ අනතුරු {#warning-on-excluded-attachments}
+
+- “අඩුම කළු ලැයිස්තුවින් අමුණුම් අස්සන වන්නේද” (ඩෙෆල්ට්: ON) විකල්පය පරික්‍ෂා කරන්න.
+- සක්‍රීය කරන ලද්දේනම්, කුඩා modal එකක් අස්සනය කරන ලද ගොනු හා ගැලපෙන මාදිලි දැක්වීම සඳහායි. නැවත උපයෝගයෙන් සහිත කුඩු පොරොන්දුවක් පෙන්වනු ඇත ගොනු ලැබීමක් ඇතුළු කරයි හේතුවෙන් සියළුම පර්යේෂණ අස්සන කර ඇත.
+
+---
+
+#### ඔබේ සැකසුම් සේවය කරන්න {#save-your-settings}
+
+සැකසුම් සුරක්ෂිත කරන්නේ සුරක්ෂිත බොත්තම ක්ලික් කිරීමෙන්ය. ඔබට පුද්ගලික ක්ෂේත්‍ර මාරු කිරීමට හෝ අවශ්‍ය නම් මූලිකත්වයට නැවත ආපසු සකසන්න පුළුවන්.
+
+සුරකින්නා වූ සැකසුම් නිවැරදි ලෙස ක්‍රියාත්මක නොවන්නේ නම්, Thunderbird නැවත ප්‍රමුඛ කර බලන්න. (Thunderbirdට මෙම සත්‍යයෙන් වර්තමාන රාමුවක් රටාවෙන් සිටී; නැවත ආරම්භ කිරීම සත්‍යය නිවැරදිව පූරණය කරයි.)
+
+ආදර්ශය: ඔබේ සැකසුම් බලපාන බව සහතික කිරීමට, අමුණුමක් ශේෂ විකාශන තැබීමකට පිළිතුරු දෙන්න, සහ ආනන්ද පෝරසය හෝ කළු ලැයිස්තු අනතුරු පරීක්ෂා කරන්න.
+
+---
+
+#### දායකත්ව දැක්ම (90‑දිනයක් අනතර) {#donation-visibility}
+
+අමුණුවා ඇති අමුණුවා ඇති වීසිත කරයි, ඔබ දායකත්වය කළක් පසුව කාලයක් දායකත්ව දේශපාලන දැක්ම පාරිසරික හේතුවක් සකසන්න.
+
+එය කොහෙද හමු වන්නේ
+
+- විකල්ප → සහාය අංශය: ඔබ "මට දායකත්වය ලබා දුන්නා" බොත්තම සහ කුඩා සටහන් ප්‍රදේශයක් දැකීමට එහි සලකුණු කර ඇති.
+- Send‑confirmation සංවාදය දායකත්වය ලබා දෙන බොත්තමක් ලබා දෙයි; එය ස්වයංක්‍රීයකාරීව පවතින අන්තරය ක්‍රියාත්මක වන විට ආපසු ආවර්ත කිරීමට යයි.
+
+එහි ක්‍රියාකාරිත්වය
+
+- “මට දායකත්වය ලබා දුන්නා” බොත්තම ක්ලික් කිරීමෙන් 90 දිනක් දායකත්ව බොත්තම් සහ සම්බන්ධ ප්‍රජාපතින් ගුල eglills ගන්නවා.
+- තත්ත්වය සඳහන් කිරීම “YYYY‑MM‑DD දක්වා අසභ්‍ය” (ඔබේ ස්ථානයේදී). යාවත්කාලීන දැකීමේ දැකීමක් ඕනෑම විට නිපදවන බව “දැමී අමතන්න” බොත්තම ඇත.
+- 90 දිනක පසුව, Donate බොත්තම ස්වයංක්‍රීය ලෙස ප්‍රතිසංචිත වේ.
+
+පෞද්ගලිකත්වය සහ ගබඩාව
+
+- මෙම අමුණුව වීසේ නම් අමනු පවත්නා අකාරයක් එකම නිදර්ශනය කරයි; (`donateHideUntil` milliseconds).
+- මෙම සැකසුම ඔබේ Thunderbird පැතිකඩ සීමාවෙන් වර්තමාන වේ (කලාප සන්ධාන කාර්‍ය නොනැති). මෙම විශේෂතාව භාවිත කරන්නා සඳහා සිතියම් තීරණයක් නොකරයි.
+
+අදහස්
+
+- “මට දායකත්වය පොත පෙන්වන හේතුවෙන්” ක්ලික් කිරීමෙන් පසු කුඩා නවාතැන “මට දායකත්වය ලබා දුන්නා” දෘශ්‍යය; බොත්තම අලුත් කිරීමෙන් වහාම යාවත්කාලීන වේ.
+- ස්වයංක්‍රීය ලෙස ලබා දීමට “Show Donate again”ක්ලික කරන්න. ඔබට හිස්වූ දිනය සම්මානය වන විට වෙත ඉන්න ගත වේ.
+
+මෙම විශේෂතාවය සැපයීමට පමණක් වේ; ඔබේ අමුණුවීම් කාර්‍යය භාගත නොකරයි සහ ඕනෑම වෙනස් කරන තොරතුරු සාක්ෂි කර නැත.
+
+---
+
+### ගොනු නම විකල්පකරණය (පනස් ඉවත් කිරීම) {#filename-normalization-duplicates-prevention}
+
+ප්‍රදේශවල පිටු දෙකින් වඩා තත්ත්වය සාමාන්‍යය වූවක් පසුව, වර්ගීකරණයේදී ගොනු නම ක්‍රියාත්මක වේ:
+
+- Unicode ක්‍රියාකාරකම් NFC වේ.
+- නමන් කළු පැහැයෙන් යෙදී (හරිත බව).
+- ඉතිරි කොන්දේසීන් විවීත කරයි (Windows අැසැිරි).
+
+මෙම පැමිණීම සතුටින් දැක්මට පෙන්නයි `café.pdf` සහ `café.pdf` (NFD) තරම් වෙයි හෝ `FILE.txt.` සහ `file.txt` වනු ඇත.
+
+---
+
+## අනවසර ප්‍රතිචාරය {#confirmation-behavior}
+
+- “Default answer” වැදගත් විකල්පය ප්‍රතිචාරයේ පසු වූ බොත්තම සකසා (යතුරු පුවරුවේදී උපකාරී).
+- “Reply” සහ “Reply all” යන දෙදෙනාට මෙය ක්‍රියාත්මක වේ. “Forward” මෙම අමුණුවා නොමාරු වේ.
+
+---
+
+## ප්‍රමුක: නොමිලේ ජාතිකවීම {#advanced-duplicate-detection}
+
+නැවරීම් පිළිබඳව නිතිකා බොත්තමක් සක්‍රීය වේ. Find [Usage](usage#behavior-details) for more details.
+
+---
+
+See also
+
+- [Permissions](permissions)
+- [Privacy](privacy)

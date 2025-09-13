@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Loga athruithe",
-  "description": "Féach an stair iomlán sa chomhad CHANGELOG.md sa stór.",
+  "title": "Conradh na hAthbhreithnithe",
+  "description": "Changelog",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Loga athruithe"
+    "title": "Conradh na hAthbhreithnithe"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/licence"
+    "title": "Licencse",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/license"
   }
 }

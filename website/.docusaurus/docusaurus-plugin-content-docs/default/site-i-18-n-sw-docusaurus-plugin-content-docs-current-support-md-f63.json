@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Msaada",
+  "description": "FAQ",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Msaada",
+    "sidebar_label": "Msaada"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Kamusi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Sera",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/privacy"
   }
 }

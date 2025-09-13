@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "संरचना",
-  "description": "शब्दावली नोंद: UI आणि दस्तऐवजामधील सुसंगत संज्ञांसाठी Glossary पहा.",
+  "title": "कॉन्फिगरेशन",
+  "description": "Configuration",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "संरचना"
+    "title": "कॉन्फिगरेशन"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "प्रतिष्ठापन",
+    "title": "इंस्टॉलेशन",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/install"
   },
   "next": {
-    "title": "वापर",
+    "title": "उपयोग",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/usage"
   }
 }

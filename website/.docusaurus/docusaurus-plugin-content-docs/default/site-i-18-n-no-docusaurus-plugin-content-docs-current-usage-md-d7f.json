@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Usage",
-  "description": "Usage",
+  "title": "Bruk",
+  "description": "Bruk",
   "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Bruk",
+    "sidebar_label": "Bruk"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfigurasjon",
     "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Kompatibilitet",
     "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/compatibility"
   }
 }

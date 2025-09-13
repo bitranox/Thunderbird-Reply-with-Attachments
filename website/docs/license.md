@@ -1,7 +1,7 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'License'
+sidebar_label: 'License'
 ---
 
 ---

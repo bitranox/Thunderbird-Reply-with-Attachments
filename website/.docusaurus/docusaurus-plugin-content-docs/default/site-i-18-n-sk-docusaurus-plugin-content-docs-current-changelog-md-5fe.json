@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Zoznam zmien",
-  "description": "Celú históriu nájdete v súbore CHANGELOG.md v repozitári.",
+  "title": "Prehľad zmien",
+  "description": "Changelog",
   "source": "@site/i18n/sk/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Zoznam zmien"
+    "title": "Prehľad zmien"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/licence"
+    "title": "Licencia",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/license"
   }
 }

@@ -1,11 +1,15 @@
 ---
 id: permissions
-title: Permissions
+title: 'Permissions'
 ---
 
 ---
 
 ## Permissions
+
+:::note Minimal permissions
+No host (web) permissions are requested by this add‑on. The add‑on does not collect telemetry or make background network requests. See [Privacy](privacy).
+:::
 
 ---
 

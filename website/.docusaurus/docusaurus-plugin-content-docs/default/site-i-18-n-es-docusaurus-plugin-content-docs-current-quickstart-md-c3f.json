@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Inicio rápido",
-  "description": "1. Instala el complemento desde Thunderbird Add‑ons.",
+  "title": "Inicio Rápido",
+  "description": "Quickstart",
   "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Inicio rápido",
-    "sidebar_label": "Inicio rápido"
+    "title": "Inicio Rápido",
+    "sidebar_label": "Inicio Rápido"
   },
   "sidebar": "docs",
   "previous": {

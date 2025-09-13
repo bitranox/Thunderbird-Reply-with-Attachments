@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် ပြန်ကြားရန်"
+    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
   },
   "extDescription": {
-    "message": "အီးမေးလ် ပြန်စာများတွင် မူရင်း ပူးတွဲဖိုင်များကို အလိုအလျောက် ထည့်သွင်းပေးသည်။"
+    "message": "အီးမေးလ် တုံ့ပြန်ရာတွင် မူလ ပူးတွဲဖိုင်များကို အလိုအလျောက် ထည့်သွင်းပေးသည်။"
   },
   "composeTitle": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် ပြန်ကြားရန်"
+    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
   },
   "optionsTitle": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် ပြန်ကြားရန် — ရွေးချယ်မှုများ"
+    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန် — ရွေးချယ်ချက်များ"
   },
   "confirmTitle": {
-    "message": "ပူးတွဲဖိုင်များကို အတည်ပြုရန်"
+    "message": "ပူးတွဲဖိုင်များကို အတည်ပြုပါ"
   },
   "uiHeader": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် ပြန်ကြားရန်"
+    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
   },
   "uiNoOptions": {
-    "message": "ယခုအခါ ပြင်ဆင်နိုင်သော ရွေးချယ်မှုများ မရှိပါ။"
+    "message": "ယခုအချိန်တွင် ပြင်ဆင်ရန် ရွေးချယ်ချက်များ မရှိပါ။"
   },
   "uiSupport": {
-    "message": "ဤ add-on ကို နှစ်သက်ပါသလား။ အနည်းငယ် လှူဒါန်းကာ ကူညီပေးပါ:"
+    "message": "ဤ add-on ကို နှစ်သက်ပါသလား။ အနည်းငယ် အလှူငွေဖြင့် ပံ့ပိုးပေးပါ:"
+  },
+  "uiRateATNText": {
+    "message": "ATN တွင် အဆင့် သတ်မှတ်ပေးပါ"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ယခု လှူဒါန်းမည်"
+    "message": "ယခု လှူဒါန်းပါ"
+  },
+  "uiIDonated": {
+    "message": "လှူဒါန်းပြီးပြီ"
+  },
+  "uiDonateSnoozed": {
+    "message": "ကျေးဇူးတင်ပါသည်! လှူဒါန်းခြင်း သတိပေးချက်ကို ၉၀ ရက်အတွက် ဖျောက်ထားမည်။"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 အထိ ဖျောက်ထားသည်",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "လှူဒါန်းရန် ပြန်ဖော်ပြပါ"
+  },
+  "uiDonateRestored": {
+    "message": "လှူဒါန်းရန် သတိပေးချက်ကို ပြန်ဖော်ပြနေပါသည်။"
   },
   "uiGithubText": {
-    "message": "မှားယွင်းချက်များကို တင်ပြရန် သို့မဟုတ် အခြား မေးမြန်းလိုပါက ကျွန်ုပ်၏"
+    "message": "အမှားတင်ပြချက်များ သို့မဟုတ် အခြား မေးမြန်းမှုများအတွက် ကျွန်ုပ်၏"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub စာမျက်နှာ"
   },
   "iconAlt": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် ပြန်ကြားရန် အိုင်ကွန်"
+    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန် အိုင်ကွန်"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ဖိုင်အမည်များ၏ တားမြစ်စာရင်း (glob ပုံစံများ)"
+    "message": "ဖိုင်နာမည်များအတွက် Blacklist (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "ဤပုံစံများထဲမှ မည်သည့်တစ်ခုနှင့်မဆို ကိုက်ညီသော ဖိုင်အမည်များကို အလိုအလျောက် မပူးတွဲပါ။ တစ်ကြောင်းလျှင် ပုံစံတစ်ခုရေးပါ။ ဥပမာ: *.png, smime.*, *.p7s"
+    "message": "ဤပုံစံများထဲမှ မည်သည့်တစ်ခုနှင့်မဆို ကိုက်ညီသော ဖိုင်များကို ဘယ်တော့မျှ အလိုအလျောက် မပူးတွဲပါ။ လိုင်းတစ်ကြောင်းလျှင် ပုံစံတစ်ခုစီ။ ဥပမာ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Blacklist ကြောင့် ပူးတွဲဖိုင်များကို ဖယ်ထုတ်ထားပါက သတိပေးရန်"
+    "message": "Blacklist ကြောင့် ပူးတွဲဖိုင်များ မပါဝင်သွားပါက သတိပေးပါ"
   },
   "uiSave": {
-    "message": "သိမ်းမည်"
+    "message": "သိမ်းဆည်းပါ"
   },
   "uiSaving": {
     "message": "သိမ်းဆည်းနေသည်…"
   },
   "uiReset": {
-    "message": "မူလသတ်မှတ်ချက်များသို့ ပြန်လည်သတ်မှတ်မည်"
+    "message": "မူလ သတ်မှတ်ချက်များသို့ ပြန်ထားရန်"
   },
   "uiSaved": {
     "message": "သိမ်းဆည်းပြီး။"
   },
   "uiResetDone": {
-    "message": "ပြန်လည်သတ်မှတ်ပြီး။"
+    "message": "ပြန်သတ်မှတ်ပြီး။"
   },
   "uiConfirmHeader": {
-    "message": "အတည်ပြုချက်"
+    "message": "အတည်ပြုခြင်း"
   },
   "uiConfirmLabel": {
-    "message": "ပူးတွဲဖိုင်များ ထည့်မည်မီ မေးရန်"
+    "message": "ပူးတွဲဖိုင်များ ထည့်မီ မေးမြန်းရန်"
   },
   "uiConfirmHelp": {
-    "message": "ပူးတွဲဖိုင်များကို တကယ် ထည့်မည်ဆိုလျှင်သာ အတည်ပြု dialog သေးတစ်ခု ပေါ်လာပါမည်။ ကီးဘုတ်: Y သို့မဟုတ် J = ဟုတ်ကဲ့; N သို့မဟုတ် Esc = မဟုတ်ပါ။"
+    "message": "ပူးတွဲဖိုင်များကို တကယ်တမ်း ထည့်မည့်အခါတွင်သာ အတည်ပြု ဒိုင်ယာလော့ဂ်ငယ်တစ်ခု ပေါ်လာမည်။ ကီးဘုတ်: Y သို့မဟုတ် J = ဟုတ်; N သို့မဟုတ် Esc = မဟုတ်။"
   },
   "confirmAddOne": {
-    "message": "ပူးတွဲဖိုင် ထည့်မည်: $1?",
+    "message": "ပူးတွဲဖိုင် ထည့်မလား: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ပူးတွဲဖိုင်များ ($1) ကို ထည့်မည်: $2$3?",
+    "message": "ပူးတွဲဖိုင်များ ထည့်မလား ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -94,16 +120,16 @@
     }
   },
   "confirmYes": {
-    "message": "ဟုတ်ကဲ့"
+    "message": "ဟုတ်"
   },
   "confirmNo": {
-    "message": "မဟုတ်ပါ"
+    "message": "မဟုတ်"
   },
   "warnBlacklistTitle": {
     "message": "Blacklist ကြောင့် ဖယ်ထုတ်ထားသည်"
   },
   "warnBlacklistIntro": {
-    "message": "အောက်ပါ ဖိုင်များကို အလိုအလျောက် မပူးတွဲပါ:"
+    "message": "အောက်ဖော်ပြပါ ဖိုင်များကို အလိုအလျောက် မပူးတွဲပါ:"
   },
   "warnColFile": {
     "message": "ဖိုင်"
@@ -112,21 +138,33 @@
     "message": "ပုံစံ"
   },
   "warnOk": {
-    "message": "အိုကေ"
+    "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "ပုံသေ အဖြေ"
+    "message": "ပုံသေအဖြေ"
   },
   "uiConfirmDefaultYes": {
-    "message": "ဟုတ်ကဲ့"
+    "message": "ဟုတ်"
   },
   "uiConfirmDefaultNo": {
-    "message": "မဟုတ်ပါ"
+    "message": "မဟုတ်"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "လမ်းညွှန်စာတမ်း:"
+  },
+  "uiDocsButton": {
+    "message": "စာတမ်းဖွင့်ရန်"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Fífi ẹ̀ka",
+  "description": "Fífi ẹ̀ka nipasẹ \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Fífi ẹ̀ka",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Fífi ẹ̀ka"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Ibẹrẹ Rọrun",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Iṣeto",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/configuration"
   }
 }

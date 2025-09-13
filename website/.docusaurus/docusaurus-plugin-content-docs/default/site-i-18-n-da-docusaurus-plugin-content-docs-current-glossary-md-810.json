@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Ordbog",
+  "description": "Glossar",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Ordbog",
+    "sidebar_label": "Ordbog"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Sprog",
     "permalink": "/Thunderbird-Reply-with-Attachments/da/docs/languages"
   },
   "next": {

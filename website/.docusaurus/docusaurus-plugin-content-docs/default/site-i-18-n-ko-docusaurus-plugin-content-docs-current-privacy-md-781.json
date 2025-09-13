@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "개인정보",
-  "description": "첨부 파일 포함하여 회신은 분석/텔레메트리를 수집하지 않으며 데이터를 외부로 전송하지 않습니다.",
+  "title": "개인정보 보호",
+  "description": "Privacy",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "개인정보",
-    "sidebar_label": "개인정보"
+    "title": "개인정보 보호",
+    "sidebar_label": "개인정보 보호"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/support"
   },
   "next": {
-    "title": "기부",
+    "title": "기부하기",
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/donation"
   }
 }

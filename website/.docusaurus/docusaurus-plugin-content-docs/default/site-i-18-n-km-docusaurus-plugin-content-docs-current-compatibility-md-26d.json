@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "ការប្រាណូឡាសារ",
   "description": "Compatibility",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "ការប្រាណូឡាសារ",
+    "sidebar_label": "ការប្រាណូឡាសារ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "ការប្រើប្រាស់",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "សិទ្ធិ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/permissions"
   }
 }

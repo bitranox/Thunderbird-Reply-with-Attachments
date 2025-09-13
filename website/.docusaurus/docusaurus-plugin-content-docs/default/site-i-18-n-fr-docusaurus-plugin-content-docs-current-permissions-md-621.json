@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Autorisations",
-  "description": "Le module ne demande qu’un ensemble réduit d’autorisations. Pourquoi chacune est nécessaire :",
+  "description": "Permissions",
   "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

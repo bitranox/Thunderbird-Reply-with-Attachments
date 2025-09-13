@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "Donasi",
-  "description": "Yen sampeyan seneng Reply with Attachments lan pengin ndhukung pangembangane, sampeyan bisa nyumbang ing kene:",
+  "description": "Donasi",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
     "title": "Donasi",
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Lisensi",
-    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/license"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Diller",
-  "description": "YZ destekli çeviri araçları sayesinde kapsamlı destek — 103 dil.",
+  "description": "Languages",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/development"
   },
   "next": {
-    "title": "Terimler",
+    "title": "Sözlük",
     "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/glossary"
   }
 }

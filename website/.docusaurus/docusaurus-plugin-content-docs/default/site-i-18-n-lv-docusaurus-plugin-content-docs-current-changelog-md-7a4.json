@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Izmaiņu žurnāls",
-  "description": "Pilno vēsturi skatiet repozitorija failā CHANGELOG.md.",
+  "title": "Izmaiņu saraksts",
+  "description": "Izmaiņu saraksts",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Izmaiņu žurnāls"
+    "title": "Izmaiņu saraksts"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/license"
   }
 }

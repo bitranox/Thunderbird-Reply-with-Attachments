@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "अनुमतिहरु",
+  "description": "Permissions",
   "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "अनुमतिहरु"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "सङ्गतता",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "विकास",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/development"
   }
 }

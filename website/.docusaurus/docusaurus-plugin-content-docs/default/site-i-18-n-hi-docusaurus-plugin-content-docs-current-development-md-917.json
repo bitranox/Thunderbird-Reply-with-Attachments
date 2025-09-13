@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "विकास",
   "description": "Development Guide",
   "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "विकास",
+    "sidebar_label": "विकास"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "अनुमतियाँ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/permissions"
   },
   "next": {

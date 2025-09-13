@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "ভাষাসমূহ",
-  "description": "AI অনুবাদ টুলের সাহায্যে ব্যাপক ভাষা সমর্থন — 103টি ভাষা।",
+  "description": "Languages",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ডেভেলপমেন্ট",
+    "title": "বিকাশ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/development"
   },
   "next": {
-    "title": "পরিভাষা",
+    "title": "শব্দকোষ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/glossary"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Dafarekat",
+  "description": "Quickstart",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Dafarekat",
+    "sidebar_label": "Dafarekat"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Jikko yi",
+    "title": "Fonksyonalités",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Sosna",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/install"
   }
 }

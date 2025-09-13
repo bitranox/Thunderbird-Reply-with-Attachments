@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Prywatność'
+sidebar_label: 'Prywatność'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Prywatność
 
-What the add‑on does:
+:::note Brak telemetry; brak sieci w tle
+Ten dodatek **nie** zbiera danych analitycznych/telemetrii i **nie** wykonuje żadnych zapytań sieciowych w tle. Jakiekolwiek połączenie sieciowe występuje tylko wtedy, gdy klikniesz zewnętrzny link (Dokumenty, GitHub, Wspieraj).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments nie zbiera analityki ani telemetrii i nie wysyła twoich danych nigdzie.
 
-What the add‑on does not do:
+Co robi dodatek:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Odczytuje metadane załączników i pliki z oryginalnej wiadomości lokalnie (API Thunderbirda), aby dołączyć je do twojej odpowiedzi.
+- Przechowuje twoje opcje (czarna lista, potwierdzenie, domyślna odpowiedź) w lokalnej pamięci Thunderbirda.
 
-Permissions are documented on the [Permissions](permissions) page.
+Co dodatek nie robi:
 
-## Content Security Policy (CSP)
+- Brak śledzenia, analityki, raportowania błędów lub zdalnego logowania.
+- Brak zapytań sieciowych w tle, z wyjątkiem gdy wyraźnie otwierasz zewnętrzne linki (Dokumenty, GitHub, Wspieraj).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Uprawnienia są dokumentowane na stronie [Uprawnienia](permissions).
+
+---
+
+## Polityka bezpieczeństwa treści (CSP) {#content-security-policy-csp}
+
+Opcje i strony popup unikają skryptów inline. Wszystkie skrypty JavaScript są ładowane z plików dostarczanych z dodatkiem, aby spełniać rygorystyczne zasady CSP w Thunderbirdzie. Jeśli osadzasz fragmenty kodu w dokumentach, są one tylko przykładami i nie są wykonywane przez dodatek.
+
+---
+
+## Przechowywanie danych {#data-storage}
+
+- Preferencje użytkownika (czarna lista, przełącznik potwierdzenia, domyślna odpowiedź) są przechowywane w `storage.local` Thunderbirda dla tego dodatku.
+- Brak synchronizacji w chmurze wykonywanej przez dodatek.
+
+---
+
+## Sieć {#network}
+
+- Dodatek nie wykonuje żadnych działań sieciowych w tle.
+- Jakiekolwiek połączenie sieciowe występuje tylko wtedy, gdy klikniesz linki (Dokumenty, GitHub, Wspieraj) lub gdy sam Thunderbird wykonuje normalne operacje niezwiązane z tym dodatkiem.
+
+---
+
+## Usuwanie danych {#data-removal}
+
+- Odinstalowanie dodatku usuwa jego kod.
+- Ustawienia są przechowywane tylko w `storage.local` Thunderbirda i są usuwane przy odinstalowaniu; nie używa się żadnej zewnętrznej pamięci.
+- Resetuj ustawienia bez odinstalowywania:
+  - Strona opcji: użyj "Resetuj do domyślnych" dla czarnej listy i ostrzeżenia czarnej listy.
+  - Zaawansowane: w Thunderbirdzie → Narzędzia → Narzędzia dewelopera → Debugowanie dodatków, otwórz pamięć rozszerzenia i wyczyść klucze w razie potrzeby.
+
+---

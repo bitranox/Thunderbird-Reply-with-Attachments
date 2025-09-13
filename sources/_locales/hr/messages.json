@@ -1,39 +1,65 @@
 {
   "extName": {
-    "message": "Odgovori s privitcima"
+    "message": "Odgovori s prilozima"
   },
   "extDescription": {
-    "message": "Automatski uključi izvorne privitke u odgovore na e-poštu."
+    "message": "Automatski uključi izvorne priloge u odgovore na e-poštu."
   },
   "composeTitle": {
-    "message": "Odgovori s privitcima"
+    "message": "Odgovori s prilozima"
   },
   "optionsTitle": {
-    "message": "Odgovori s privitcima — Opcije"
+    "message": "Odgovori s prilozima — Opcije"
   },
   "confirmTitle": {
-    "message": "Potvrda privitaka"
+    "message": "Potvrda priloga"
   },
   "uiHeader": {
-    "message": "Odgovori s privitcima"
+    "message": "Odgovori s prilozima"
   },
   "uiNoOptions": {
-    "message": "Trenutačno nema opcija za konfiguriranje."
+    "message": "Trenutačno nema opcija za podešavanje."
   },
   "uiSupport": {
     "message": "Sviđa li vam se ovaj dodatak? Podržite me malom donacijom:"
   },
+  "uiRateATNText": {
+    "message": "Molimo ocijenite na ATN‑u"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
+  },
   "uiDonate": {
     "message": "Donirajte sada"
   },
+  "uiIDonated": {
+    "message": "Donirao/la sam"
+  },
+  "uiDonateSnoozed": {
+    "message": "Hvala! Upit za donaciju skriven je na 90 dana."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Skriveno do $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Ponovno prikaži gumb Doniraj"
+  },
+  "uiDonateRestored": {
+    "message": "Upit za donaciju ponovno je vidljiv."
+  },
   "uiGithubText": {
-    "message": "Za prijave grešaka ili druge upite posjetite moju"
+    "message": "Za prijave grešaka ili druga pitanja, posjetite moju"
   },
   "uiGithubLinkLabel": {
-    "message": "stranicu na GitHubu"
+    "message": "GitHub stranicu"
   },
   "iconAlt": {
-    "message": "Ikona Odgovori s privitcima"
+    "message": "Ikona 'Odgovori s prilozima'"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -45,7 +71,7 @@
     "message": "Datoteke čiji nazivi odgovaraju bilo kojem od ovih uzoraka nikada se neće automatski priložiti. Jedan uzorak po retku. Primjeri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Upozori ako su privitci izuzeti crnom listom"
+    "message": "Upozori ako su prilozi isključeni crnom listom"
   },
   "uiSave": {
     "message": "Spremi"
@@ -54,25 +80,25 @@
     "message": "Spremanje…"
   },
   "uiReset": {
-    "message": "Vrati na zadane postavke"
+    "message": "Vrati na zadano"
   },
   "uiSaved": {
     "message": "Spremljeno."
   },
   "uiResetDone": {
-    "message": "Vraćeno."
+    "message": "Vraćeno na zadano."
   },
   "uiConfirmHeader": {
     "message": "Potvrda"
   },
   "uiConfirmLabel": {
-    "message": "Pitaj prije dodavanja privitaka"
+    "message": "Pitaj prije dodavanja priloga"
   },
   "uiConfirmHelp": {
-    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi se privitci doista dodali. Tipkovnica: Y ili J = Da; N ili Esc = Ne."
+    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi se prilozi doista dodali. Tipkovnica: Y ili J = Da; N ili Esc = Ne."
   },
   "confirmAddOne": {
-    "message": "Dodati privitak: $1?",
+    "message": "Dodati prilog: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Dodati privitke ($1): $2$3?",
+    "message": "Dodati priloge ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "Ne"
   },
   "warnBlacklistTitle": {
-    "message": "Isključeno zbog crne liste"
+    "message": "Isključeno crnom listom"
   },
   "warnBlacklistIntro": {
     "message": "Sljedeće datoteke neće se automatski priložiti:"
@@ -124,9 +150,21 @@
     "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentacija:"
+  },
+  "uiDocsButton": {
+    "message": "Otvori dokumentaciju"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

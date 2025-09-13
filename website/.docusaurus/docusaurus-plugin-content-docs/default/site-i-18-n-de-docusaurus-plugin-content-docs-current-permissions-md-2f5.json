@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Berechtigungen",
-  "description": "---",
+  "description": "Permissions",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "permissions",
     "title": "Berechtigungen"
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/compatibility"
   },
   "next": {
-    "title": "Entwicklung",
+    "title": "Development",
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/development"
   }
 }

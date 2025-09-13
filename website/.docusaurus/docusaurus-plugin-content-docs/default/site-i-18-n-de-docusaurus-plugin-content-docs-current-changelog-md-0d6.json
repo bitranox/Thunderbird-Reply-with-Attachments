@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Änderungsprotokoll",
-  "description": "---",
+  "description": "Changelog",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "changelog",
     "title": "Änderungsprotokoll"

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Mbështetje",
+  "description": "FAQ",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Mbështetje",
+    "sidebar_label": "Mbështetje"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Glossari",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privaciteti",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/privacy"
   }
 }

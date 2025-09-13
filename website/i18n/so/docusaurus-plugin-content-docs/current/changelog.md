@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: Diiwaanka isbeddellada
+title: 'Isbedelka'
 ---
 
-Eeg taariikhda oo dhammeystiran faylka CHANGELOG.md ee kaydka (repository).
+## Isbedelka
 
-- 2.0.0: dib‑u‑qoris loogu beddelay nooc dhamaystiran (EN/DE)
-- 1.0.1: loo wareegay messages.listAttachments()
-- 1.0.0: sii‑dayntii ugu horraysay
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Taariikho iyo kanaalada {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

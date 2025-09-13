@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ድጋፍ",
+  "description": "FAQ",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ድጋፍ",
+    "sidebar_label": "ድጋፍ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "መዋቅር",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "የግለሰቦች ግለሰብነት",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/privacy"
   }
 }

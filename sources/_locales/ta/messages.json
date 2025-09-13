@@ -1,48 +1,74 @@
 {
   "extName": {
-    "message": "இணைப்புகளுடன் பதிலளிக்க"
+    "message": "இணைப்புகளுடன் பதிலளி"
   },
   "extDescription": {
-    "message": "மின்னஞ்சல் பதில்களில் அசல் இணைப்புகளை தானாகச் சேர்க்கும்."
+    "message": "மின்னஞ்சல் பதில்களில் மூல இணைப்புகளை தானாகச் சேர்க்கும்."
   },
   "composeTitle": {
-    "message": "இணைப்புகளுடன் பதிலளிக்க"
+    "message": "இணைப்புகளுடன் பதிலளி"
   },
   "optionsTitle": {
-    "message": "இணைப்புகளுடன் பதிலளிக்க — விருப்பங்கள்"
+    "message": "இணைப்புகளுடன் பதிலளி — அமைப்புகள்"
   },
   "confirmTitle": {
-    "message": "இணைப்புகளை உறுதிப்படுத்தவும்"
+    "message": "இணைப்புகளை உறுதிப்படுத்து"
   },
   "uiHeader": {
-    "message": "இணைப்புகளுடன் பதிலளிக்க"
+    "message": "இணைப்புகளுடன் பதிலளி"
   },
   "uiNoOptions": {
-    "message": "தற்போது அமைக்க விருப்பங்கள் எதுவும் இல்லை."
+    "message": "தற்போது அமைப்பதற்கு எந்த விருப்பங்களும் இல்லை."
   },
   "uiSupport": {
-    "message": "இந்தச் செருகுநிரல் உங்களுக்கு பிடித்ததா? சிறிய பங்களிப்பால் எனக்கு ஆதரவு அளிக்கவும்:"
+    "message": "இந்த செருகுநிரல் உங்களுக்கு பிடிக்கிறதா? சிறிய பங்களிப்பால் என்னை ஆதரிக்கவும்:"
+  },
+  "uiRateATNText": {
+    "message": "ATN-இல் மதிப்பீடு செய்யவும்"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "இப்போது நன்கொடை அளிக்கவும்"
+    "message": "இப்போதே நன்கொடை அளிக்கவும்"
+  },
+  "uiIDonated": {
+    "message": "நான் நன்கொடை அளித்தேன்"
+  },
+  "uiDonateSnoozed": {
+    "message": "நன்றி! நன்கொடை வேண்டுகோள் 90 நாட்களுக்கு மறைக்கப்பட்டது."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 வரை மறைக்கப்பட்டுள்ளது",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "நன்கொடை வேண்டுகோளை மீண்டும் காட்டவும்"
+  },
+  "uiDonateRestored": {
+    "message": "நன்கொடை வேண்டுகோள் மீண்டும் காட்சியளிக்கிறது."
   },
   "uiGithubText": {
-    "message": "பிழை அறிக்கைகள் அல்லது பிற விசாரணைகளுக்கு, தயவுசெய்து எனது"
+    "message": "பிழை அறிக்கைகள் அல்லது பிற விசாரணைகளுக்காக, எனது"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub பக்கம்"
   },
   "iconAlt": {
-    "message": "இணைப்புகளுடன் பதிலளிக்க சின்னம்"
+    "message": "இணைப்புகளுடன் பதிலளி சின்னம்"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "கோப்புப் பெயர்களின் கருப்புப் பட்டியல் (glob வடிவங்கள்)"
+    "message": "கோப்பு பெயர்களின் கருப்புப் பட்டியல் (glob மாதிரிகள்)"
   },
   "uiBlacklistHelp": {
-    "message": "இந்த வடிவங்களில் ஏதாவதொன்றுடன் பெயர் பொருந்தும் கோப்புகள் ஒருபோதும் தானாக இணைக்கப்படாது. ஒரு வரிக்கு ஒரு வடிவம். உதாரணங்கள்: *.png, smime.*, *.p7s"
+    "message": "இங்கு கொடுக்கப்பட்டுள்ள எந்த மாதிரியுடன் பெயர் பொருந்தினாலும், அந்தக் கோப்புகள் ஒருபோதும் தானாக இணைக்கப்படாது. ஒரு வரிக்கு ஒரு மாதிரி. உதாரணங்கள்: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "கருப்புப் பட்டியலால் இணைப்புகள் நீக்கப்பட்டால் எச்சரிக்கவும்"
@@ -51,7 +77,7 @@
     "message": "சேமிக்கவும்"
   },
   "uiSaving": {
-    "message": "சேமித்து வருகிறது…"
+    "message": "சேமிக்கிறது…"
   },
   "uiReset": {
     "message": "இயல்புநிலைக்கு மீட்டமை"
@@ -69,7 +95,7 @@
     "message": "இணைப்புகளைச் சேர்ப்பதற்கு முன் கேட்கவும்"
   },
   "uiConfirmHelp": {
-    "message": "சிறிய உறுதிப்படுத்தல் உரையாடல், இணைப்புகள் உண்மையில் சேர்க்கப்படும் போதுமே தோன்றும். விசைப்பலகை: Y அல்லது J = ஆம்; N அல்லது Esc = இல்லை."
+    "message": "இணைப்புகளை உண்மையாகச் சேர்க்கும் போது மட்டுமே ஒரு சிறிய உறுதிப்படுத்தல் உரையாடல் தோன்றும். விசைப்பலகை: Y அல்லது J = ஆம்; N அல்லது Esc = இல்லை."
   },
   "confirmAddOne": {
     "message": "இணைப்பைச் சேர்க்கவா: $1?",
@@ -100,7 +126,7 @@
     "message": "இல்லை"
   },
   "warnBlacklistTitle": {
-    "message": "கருப்புப் பட்டியலால் நீக்கப்பட்டுள்ளது"
+    "message": "கருப்புப் பட்டியலால் நீக்கப்பட்டது"
   },
   "warnBlacklistIntro": {
     "message": "பின்வரும் கோப்புகள் தானாக இணைக்கப்படாது:"
@@ -109,7 +135,7 @@
     "message": "கோப்பு"
   },
   "warnColPattern": {
-    "message": "வடிவம்"
+    "message": "மாதிரி"
   },
   "warnOk": {
     "message": "சரி"
@@ -124,9 +150,21 @@
     "message": "இல்லை"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ஆவணங்கள்:"
+  },
+  "uiDocsButton": {
+    "message": "ஆவணங்களைத் திறக்கவும்"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

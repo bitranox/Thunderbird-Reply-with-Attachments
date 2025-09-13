@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Kuusaa'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Kuusaa'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Kuusaa "Thunderbird Add-ons and Themes" geggeessaa {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Afaan Thunderbird Sanaa
+Add-on kun Thunderbird **128 ESR ykn haaraa** deeggaru. Sanyii duraanii hin deeggaramu.
+:::
 
----
+Kunniin mala kuusaa filatamaa ti. Add-onota ATN (addons.thunderbird.net) irraa kuufaman hamma annoo otomaatikii argatu. LOCAL/dev kuusaa otomaatikii hin argatu.
 
-## Local installation in Thunderbird
+- Affaan Thunderbird ittiin fayyadamuu: 128 ESR ykn haaraa.
 
-### Download the XPI file
+1. Thunderbird keessatti, gara **Tools > Add-ons and Themes** deemi.
+2. "replay with attachments" barbaadi.
+3. Add-onni dabaluu.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Yookaan fuula add-on thokkaatti ni fodda: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Kuusaa Harka Irraan {#local-installation-in-thunderbird}
 
-### Download the repository
+### XPI faayila buufadhu {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Gara [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) deemi.
+2. XPI faayila `reply_with_attachments-x.y.z-tb.xpi` ta'ee add-on caalmaatti buufadhu.
 
-### Install in Thunderbird
+### Thunderbird keessatti kuusaa {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Thunderbird banadhu.
+2. Gara **Tools > Add-ons and Themes** deemi.
+3. **Add-ons Manager** keessatti, icon gear mirga gubbaa tuqi.
+4. **Install Add-on From File…** filadhu.
+5. Faayila `reply_with_attachments-x.y.z-tb.xpi` buufatte filadhu.
+6. Kuusaa beekamtii gaafate mirkaneessi.
 
 ---
+
+## Kuusaa qindeessuuf {#installation-for-development}
+
+### Repositoorii buufadhu {#download-the-repository}
+
+1. Repositoorii GitHub dhumaatti buufadhu.
+2. Odeefannoo dabalataaf `make help` hojjadhu.
+
+### Thunderbird keessatti kuusaa {#install-in-thunderbird-dev}
+
+1. Thunderbird banadhu.
+2. Gara **Tools > Add-ons and Themes** deemi.
+3. **Add-ons Manager** keessatti, icon gear mirga gubbaa tuqi.
+4. **Install Add-on From File…** filadhu.
+5. Faayila uume `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` filadhu.
+6. Kuusaa beekamtii gaafate mirkaneessi.
+
+Xiinxalli: Yeroo Thunderbird `.zip` siif hin tule, maqaa isaa `.xpi` gochuu dandeessa, "Install Add-on From File…” deebisii.
+
+### LOCAL ZIP akka argachuuf {#where-local-zip}
+
+- Jalqaba, add-on kuusaa: `make pack` banuufi raawwadhu.
+- Kuusaa booda, "LOCAL" zip repositoorii keessatti (fakkeenyaaf, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Qorannoo keessatti harkaa re-packaging akkasumas, `sources/manifest_ATN.json` fi `sources/manifest_LOCAL.json` keessatti fooyyeessuu.
+
+---
+
+## Dhoowwachuu, Haquu, fi Odeeffannoo Haaraa {#disable-uninstall-updates}
+
+- Dhoowwachuu: Thunderbird → Tools → Add-ons and Themes → add-on argachuuf → toggle off.
+- Haquu: yaada wal fakkaatu → menu daqqii sadii → Haqi.
+- Odeeffannoo Haaraa: ATN kuusaa haaraa erga mirkaneeffamteetti otomaatikii hojjeta. LOCAL/dev kuusaa otomaatikii hin hojjatu; kuusaa LOCAL haarawaan harka qabeeyyii irra deebi'i.
+- Faayiloota guutummaatti haqi: ilaali [Privacy → Data removal](privacy#data-removal).
+
+Akkasuma
+
+- [Quickstart](quickstart)

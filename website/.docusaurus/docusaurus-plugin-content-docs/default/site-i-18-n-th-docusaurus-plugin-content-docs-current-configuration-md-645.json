@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "การตั้งค่า",
-  "description": "หมายเหตุคำศัพท์: ดู Glossary เพื่อให้ใช้คำศัพท์ใน UI และเอกสารอย่างสอดคล้องกัน",
+  "description": "Configuration",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/install"
   },
   "next": {
-    "title": "วิธีใช้",
+    "title": "การใช้งาน",
     "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/usage"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Поддержка",
-  "description": "Нужна помощь или хотите сообщить об ошибке?",
+  "description": "FAQ",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Глоссарий",
+    "title": "\"Глоссарий\"",
     "permalink": "/Thunderbird-Reply-with-Attachments/ru/docs/glossary"
   },
   "next": {

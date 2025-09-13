@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Тайлбар толь'
+sidebar_label: 'Тайлбар толь'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Тайлбар толь
 
-Notes
+Нэмэлт UI болон баримт бичгүүдэд ашиглагддаг үндсэн нэр томьёонууд. Эдгээрийг орчуулгуудыг нэгдмэл байлгахын тулд ашигла.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Мэдэгдэл
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- UI тэмдэгтүүдийг богино, үйлдэлд чиглэсэн байлга.
+- Тохиргоонд нэр үгийг, үйлдлүүдэд үйл үгийг илүүд үз.
+- Гараас газар (зөвхөн анхны үгийг том үсэглэнэ) гэдэг нийтлэлүүдээс бусад тохиолдолд.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Нэр томьёо
+
+- **Хавсралтууд**: имэйлд хавсралт хэлбэрээр оруулсан файлууд. “Хавсралтын байр” гэж зайлсхий.
+- **Хар жагсаалт** (Илгээлтийн жагсаалт): файлуудыг автоматаар хавсаргахаас сэргийлэх паттернуудын жагсаалт. UI-д энэ нь “Хар жагсаалт (glob паттернууд)” гэж гарна.
+- UI гэсэн бичиглэлд “Хар жагсаалт (glob паттернууд)” ашиглаад тохиргооны хуудас руу оруул.
+- Зөвхөн файлын нэрсийг тохирно; замыг биш.
+- **Баталгаажуулах / Баталгаажуулалт:** хавсралтууд нэмэхээс өмнө хэрэглэгчээс үйлдлээ үргэлжлүүлж асуух.
+- **Хариултууд:** “Тийм” (нэмэх), “Үгүй” (цуцлах). Товчлуурын нэрсийг богино байлга.
+- **Диалог зурвас:** CID-ээр зурвас HTML-д заагдсан зурвас; файл болгон нэмэгддэггүй.
+- **S/MIME гарын үсэг:** `smime.p7s` эсвэл PKCS7 гарын үсгийн хэсгүүд; хэзээ ч нэмэгддэггүй.
+- **Сонголтууд / Тохиргоо:** Thunderbird программд нэмэгдсэн тохиргооны хуудас.
+- **Нийтлэг хариулт:** баталгаажуулах ярианы өмнө сонгосон хариулт.
+
+---
+
+### Имэйл үйлдлүүд
+
+- **Хариулах:** зурвас илгээсэн хүнд хариулах.
+- **Бүх хүнд хариулах:** илгээгч болон бүх хүлээн авагчдад хариулах.
+- **Дагах:** зурвасыг өөр хүлээн авагчид илгээх; энэ нэмэгдэл нь өмнөх үйл явцыг өөрчилдөггүй.
+
+---
+
+### Хавсралтын төрлүүд
+
+- **Зурвасанд хавсаргасан:** зурвасны бие дотор (жишээ нь, Контент-ID-ээр заасан) оруулсан активууд. Нэмэгдээгүй файлууд.
+- **Хавсаргасан файлууд:** зурвас руу хэвийн хавсралт болгон хавсаргасан файлууд (хариулахад хуулбарлах боломжтой).
+
+---
+
+### Загвар
+
+- **Файлын нэрс:** код (моносоос) байдлаар үзүүлэлтэй, жишээ нь, `smime.p7s`, `*.png`.
+- **Түлхүүрүүд/товчлуурууд:** зөвхөн нэр томъёо байвал том үсгээр бичнэ; эс болмогц, газрын дээд талд.
+- **Жаргон ашиглахаас зайлсхий** (жишээ нь, “идемпотент”); “давхардлыг өвдөглөх” гэж тайлбарла.
+
+---

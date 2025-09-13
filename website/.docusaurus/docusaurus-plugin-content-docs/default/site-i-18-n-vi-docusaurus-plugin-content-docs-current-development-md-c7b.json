@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Phát triển",
-  "description": "Hướng dẫn phát triển",
+  "description": "Development Guide",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quyền",
+    "title": "Quyền truy cập",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/permissions"
   },
   "next": {
-    "title": "Ngôn ngữ",
+    "title": "Các ngôn ngữ",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/languages"
   }
 }

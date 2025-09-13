@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "description": "FAQ",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Ordbog",
     "permalink": "/Thunderbird-Reply-with-Attachments/da/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Privatliv",
     "permalink": "/Thunderbird-Reply-with-Attachments/da/docs/privacy"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "التوافقية",
-  "description": "التوافقية",
+  "title": "التوافق",
+  "description": "Compatibility",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "التوافقية",
-    "sidebar_label": "التوافقية"
+    "title": "التوافق",
+    "sidebar_label": "التوافق"
   },
   "sidebar": "docs",
   "previous": {

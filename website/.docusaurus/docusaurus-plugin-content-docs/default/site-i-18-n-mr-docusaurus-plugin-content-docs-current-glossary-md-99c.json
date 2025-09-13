@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n शब्दसंग्रह",
-  "description": "अॅड‑ऑन UI आणि दस्तऐवजात वापरले जाणारे अधिकृत शब्द. स्थानिकांमध्ये अनुवाद सुसंगत ठेवण्यासाठी यांचा वापर करा.",
+  "title": "शब्दकोश",
+  "description": "शब्दकोश",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n शब्दसंग्रह",
-    "sidebar_label": "शब्दसंग्रह"
+    "title": "शब्दकोश",
+    "sidebar_label": "शब्दकोश"
   },
   "sidebar": "docs",
   "previous": {

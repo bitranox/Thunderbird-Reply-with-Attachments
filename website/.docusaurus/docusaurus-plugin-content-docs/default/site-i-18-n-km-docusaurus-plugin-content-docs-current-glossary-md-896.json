@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "ពាក្យស្តីពាក្យលក្ខណៈ",
+  "description": "Glossary",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "ពាក្យស្តីពាក្យលក្ខណៈ",
+    "sidebar_label": "ពាក្យស្តីពាក្យលក្ខណៈ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "ភាសា",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "គាំទ្រ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/support"
   }
 }

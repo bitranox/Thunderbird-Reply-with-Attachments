@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Լեզուներ",
+  "description": "Languages",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Լեզուներ",
+    "sidebar_label": "Լեզուներ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Բարգավաճում",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Ճառնակալ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/glossary"
   }
 }

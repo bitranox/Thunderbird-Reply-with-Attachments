@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "Ruxsatlar",
+  "description": "Ruxsatlar",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "Ruxsatlar"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "Mosliklar",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "Rivojlanish",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/development"
   }
 }

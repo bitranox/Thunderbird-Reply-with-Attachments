@@ -1,18 +1,58 @@
 ---
 id: quickstart
-title: Quickstart
-sidebar_label: Quickstart
+title: 'መጀመሪያ መርምር'
+sidebar_label: 'መጀመሪያ መርምር'
 ---
 
-1. Install the add‑on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+## መጀመሪያ መርምር
+
+:::important ዝነብሩ የቴምበርዴር ትርኢት
+ይህ ተያይዞ የቴምበርዴር **128 ESR ወይም ከዚያ የሚከተል** ይደግፋል። አስቀድሞ ክፍል አይደግፍም።
+:::
+
+:::note ምልክት ይበሉ፣ አልብለፈም የኔትወርክ
+ይህ ተያይዞ **አይደለግም** መረጃ/ትምረት እና **አይደርሳም** የኔትወርክ ጥያቄዎች። የኔትወርክ ዕቅፍ በተወሰነ ይኖርብዎ በእንግድ እቃ ላይ ከዚያ ይኖርብልህ (ዶክስ፣ ግብር ግንኙነት፣ አገልግሎት).
+:::
+
+---
+
+### መግቢያ
+
+1. ተያይዞውን ከቴምበርዴር ምንጭ ያውርዱ።
+2. ወደ ዚያ መዋቅር: አስተያየት ይቀበሉ (አማራጭ → “ከመወዳደር በፊት ይጠይቃሉ”).
+3. ወደ ዚያ መዋቅር: የፕርስመ መርምር ይቀበሉ (እንደ መዋቅር): “እንደ ዝነብር ይጠይቃሉ አይከብውን የሚቀበል ፋይል”.
+4. ወደ ዚያ መዋቅር: የፕርስመ አገናኝ ይጨምሩ (ከአንዱ በላይ):
 
 ```
 *intern*
 *secret*
-*passwor*
+*passwor*  # matches both “password” and “Passwort” families
 ```
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
+ናብ: እንደገና “# …” በዚህ ምስክር እንቁላልን አይገእውም፤ እተንቱ “ፕርስመ አገናኝ ይኖርብዎ ገባ ይጠይቃሉ ነክር ኤፋን” ይረዱህ። አንዱ የበላይ አለፈው ይመልከት በቃላት አንዱ ብቻ ይኖርብል ይሆን።
+
+እንኳን ማስበን ከንቲሉ ላይ እንዳገለው ዙይቱን ይበሉት። የባለ ተመልክት የተነሳ ክታት ማስበንን ላይ ይኖርብህ ገለዉ በፊርዋሪ ይወክሉ። እንዲሁ አንዱ ወይም ሁለት ዕቃውን ወይም አለች እንደ አንዱ ይለወጥ። ንዒቀ ተመልክት ይቀበሉ ገፅ ይዱሉ።
+
+---
+
+### ማረጋገጽ {#verify}
+
+- ናብ መድሠና ወንድባ ተመልክቱ 1–2 ዕቃ በማረጋገጽ ወይም ዓለፊ ወአክስወትን ዕቃውን ይቀበሉ ተወርት።
+- ስለ አንዱ ደግሞ ናይ ንዒቀ ይማማረዋክ ምስ ይኖሩ “ማረጋገጽ ይቀበሉ መዋቅር” (ቀው ማመሬዝ፣ ምንጭ የምታለዉ፣ ዕቃው ማርይዋ አይቀበርም).
+
+---
+
+### ማረጋገጽ የፕርስመ እምነት {#verify-blacklist-warning}
+
+- ወደ መድስ እንደ “secret.txt” ይወርዱ ምግብ ይረዱ ይወዱ።
+- ከ“አይከብውን የምትገነው” ምንፈሌይ ይኖሩ ግድ እነዚህ ወይም ይሉ “ክታት ወደፎ እንዲያ ክንገሬ ይስቡ”.
+
+እንዴ ወይዘት ምንነይ ሊວነክየክ ይኖር ወይስነመ ማስበን ውና። ሥርቆክ በግፁ ወይም ስለ ወተ ክፍል/ጥነ ናይ. ይቅዱ 189 ወንቆ ነዎ ውና ይነሴው ፓተር።
+
+---
+
+### አንዲይ ማረጋገጽ ኑሪን {#keyboard-note}
+
+- የማረጋገጽ ጽንት ይምዝል እዴ ወይ “Y/J” ኦሩፍ እንቁላል የንቱ “N/Esc” ሙሉ ይቅርታል ይዕቀፍ ይስትዝቫላ። እንደዚህ ዝጉዋር ብምስክር ወመልባለ ዕቃው “በጥሪፍ ይይዘሉ” ገአት አይኖርብም።
+
+---

@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: Glossario i18n
-sidebar_label: Glossario
+title: 'Glossario'
+sidebar_label: 'Glossario'
 ---
 
-Termini canonici usati nell’interfaccia del componente e nella documentazione. Usali per mantenere traduzioni coerenti tra le lingue.
+## Glossary
 
-## Note
+Termini canonici utilizzati nell'interfaccia utente e nella documentazione dell'add-on. Utilizza questi termini per mantenere le traduzioni coerenti tra le lingue.
 
-- Testi dell’UI brevi e orientati all’azione.
-- Sostantivi per le impostazioni, verbi per le azioni.
-- Usa il “sentence case” (maiuscola solo alla prima parola) eccetto i titoli.
+---
 
-## Termini
+### Notes
 
-- Allegati (Attachments): file inclusi in un’email. Evitare “enclosures”.
-- Lista nera (Blacklist / elenco di esclusione): modelli che impediscono l’allegato automatico dei file.
-- Nella UI usa “Blacklist (glob patterns)” per allinearti alla pagina Opzioni.
-- Spiega che si confrontano solo i nomi dei file; non i percorsi.
-- Conferma (Confirm / Confirmation): chiedere all’utente prima di aggiungere gli allegati.
-- Risposte: “Yes” (aggiungi), “No” (annulla). Etichette dei pulsanti brevi.
-- Immagine inline (Inline image): immagine referenziata via CID in HTML; non si allega come file.
-- Firma S/MIME: `smime.p7s` o parti PKCS7; non si allegano.
-- Opzioni / Impostazioni (Options / Settings): pagina di configurazione del componente in Thunderbird.
-- Risposta predefinita (Default answer): risposta preselezionata nel dialogo di conferma.
+- Mantieni le stringhe dell'interfaccia utente brevi e orientate all'azione.
+- Preferisci i nomi per le impostazioni e i verbi per le azioni.
+- Usa il maiuscolo solo per la prima parola (sentence case), tranne che per i titoli.
 
-## Stile
+---
 
-- Nomi file: mostra in monospazio, es. `smime.p7s`, `*.png`.
-- Tasti/pulsanti: maiuscole da titolo solo per nomi propri; altrimenti sentence case.
-- Evita gergo (es. “idempotency”); preferisci “evitare duplicati”.
+### Terms
+
+- **Attachments**: file inclusi in un'email. Evita "inclusioni".
+- **Blacklist** (Lista di esclusione): elenco di modelli che impediscono l'aggiunta automatica di file. Nell'interfaccia utente appare come “Blacklist (modelli glob)”.
+- Nella copia dell'interfaccia utente, preferisci “Blacklist (modelli glob)” per allinearsi con la pagina delle impostazioni.
+- Spiega che vengono abbinati solo i nomi dei file; non i percorsi.
+- **Confirm / Confirmation:** chiedere all'utente di procedere prima di aggiungere allegati.
+- **Answers:** “Sì” (aggiungi), “No” (annulla). Mantieni le etichette dei pulsanti brevi.
+- **Inline image:** un'immagine riferita da CID nell'HTML del messaggio; mai aggiunta come file.
+- **S/MIME signature:** `smime.p7s` o parti della firma PKCS7; mai aggiunte.
+- **Options / Settings:** la pagina di configurazione dell'add-on in Thunderbird.
+- **Default answer:** la risposta predefinita per la finestra di dialogo di conferma.
+
+---
+
+### Email actions
+
+- **Reply:** rispondere al mittente di un messaggio.
+- **Reply all:** rispondere al mittente e a tutti i destinatari.
+- **Forward:** inviare il messaggio a un destinatario diverso; questo add-on non modifica il comportamento di inoltro.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** risorse incorporate nel corpo del messaggio (ad esempio, referenziate tramite Content‑ID). Non aggiunte come file dall'add-on.
+- **Attached files:** file allegati al messaggio come allegati regolari (candidati per la copia nella risposta).
+
+---
+
+### Style
+
+- **Filenames:** mostrati come codice (monospazio), ad esempio, `smime.p7s`, `*.png`.
+- **Keys/buttons:** maiuscole nel titolo solo quando sono nomi propri; altrimenti, uso del maiuscolo solo per la prima parola.
+- **Avoid jargon** (ad esempio, “idempotenza”); preferisci “prevenire duplicati”.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "ภาษา",
-  "description": "รองรับภาษาจำนวนมากด้วยความช่วยเหลือของเครื่องมือแปลภาษา AI — ครอบคลุม 103 ภาษา",
+  "description": "Languages",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

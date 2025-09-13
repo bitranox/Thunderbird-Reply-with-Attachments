@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Galmee jijjiirraa",
-  "description": "Seenaa guutuu faayilii CHANGELOG.md keessatti (repo keessatti) ilaali.",
+  "title": "Borradhaa",
+  "description": "Changelog",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Galmee jijjiirraa"
+    "title": "Borradhaa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/licence"
+    "title": "Hayyamaa",
+    "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/license"
   }
 }

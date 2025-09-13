@@ -1,7 +1,7 @@
 /* eslint-env node */
 /* global fetch */
-// Translate a single Markdown file from website/docs into one or more locales under website/i18n.
-// Only supports OpenAI. Reads OPENAI_API_KEY and OPENAI_MODEL from .env (or environment).
+// Translate a single Markdown file from website/docs into one || more locales under website/i18n.
+// Only supports OpenAI. Reads OPENAI_API_KEY && OPENAI_MODEL from .env (or environment).
 // Usage:
 //   node scripts/translate_web_docs.js <doc|all> <lang|all>
 //   make translation-web OPTS="<doc|all> <lang|all>"
@@ -9,6 +9,18 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+  splitFrontmatter,
+  parseFront,
+  protectCode,
+  restoreCode,
+  stripCodeWrapper,
+  dedupeTopFrontMatter,
+  assertTokensIntegrity,
+  scanCodeTokenIndices,
+  systemPromptLines,
+  normalizeAnchors,
+} from './lib/translate_core.js';
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
@@ -25,7 +37,7 @@ function writeFile(p, s) {
   fs.writeFileSync(p, s, 'utf8');
 }
 
-const LOGFILE = path.join(process.cwd(), 'translation_web.log');
+const LOGFILE = path.join(process.cwd(), 'translation_web_sync.log');
 function logLine(line) {
   try {
     fs.appendFileSync(LOGFILE, line + '\n', 'utf8');
@@ -51,35 +63,7 @@ function listWebsiteLocales() {
     .filter((l) => l && l !== 'en');
 }
 
-function splitFrontmatter(md) {
-  const m = md.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!m) return { front: null, body: md };
-  return { front: m[1], body: m[2] };
-}
-
-function parseFront(front) {
-  const out = {};
-  if (!front) return out;
-  for (const line of front.split(/\r?\n/)) {
-    const mm = line.match(/^([a-zA-Z_][a-zA-Z0-9_\-]*):\s*(.*)$/);
-    if (mm) out[mm[1]] = mm[2];
-  }
-  return out;
-}
-
-const CODE_TOKEN = (i) => `__CODE_TOKEN_${i}__`;
-function protectCode(md) {
-  const codeRe = /`[^`]*`|```[\s\S]*?```/g;
-  const tokens = [];
-  const protectedMd = md.replace(codeRe, (m) => {
-    const idx = tokens.push(m) - 1;
-    return CODE_TOKEN(idx);
-  });
-  return { protectedMd, tokens };
-}
-function restoreCode(md, tokens) {
-  return md.replace(/__CODE_TOKEN_(\d+)__/g, (_, i) => tokens[Number(i)]);
-}
+// All helpers above now imported from ./lib/translate_core
 
 function loadEnvFromDotenv() {
   const p = '.env';
@@ -106,21 +90,18 @@ function loadEnvFromDotenv() {
 }
 
 async function callOpenAI(text, targetLang, locale) {
+  if (process.env.TRANSLATE_OFFLINE === '1') return text;
   loadEnvFromDotenv();
   const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error('OPENAI_API_KEY not set in environment or .env');
+  if (!apiKey) throw new Error('OPENAI_API_KEY not set in environment || .env');
   const model = process.env.OPENAI_MODEL || process.env.OPENAI_TRANSLATE_MODEL || 'gpt-4o-mini';
   const payload = {
     model,
     messages: [
-      {
-        role: 'system',
-        content:
-          'You are a professional localization engine. Translate Markdown while preserving structure. Do not translate code blocks or inline code tokens like __CODE_TOKEN_0__. The translation is in the context of a thunderbird extension for reply with attachment handling',
-      },
+      { role: 'system', content: systemPromptLines().join('\n') },
       {
         role: 'user',
-        content: `Translate the following Markdown from English to ${targetLang} (${locale}).\nRules:\n- Keep placeholders like __CODE_TOKEN_N__ unchanged.\n- Preserve headings, lists, and punctuation.\n- Keep front matter id unchanged; translate title/sidebar_label if present.\n\nMarkdown to translate:\n\n${text}`,
+        content: `Translate the following Markdown from English to ${targetLang} (${locale}).\n\n${text}`,
       },
     ],
   };
@@ -143,17 +124,23 @@ async function callOpenAI(text, targetLang, locale) {
 }
 
 async function callOpenAIShort(text, targetLang, locale) {
+  if (process.env.TRANSLATE_OFFLINE === '1') return text;
   loadEnvFromDotenv();
   const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error('OPENAI_API_KEY not set in environment or .env');
+  if (!apiKey) throw new Error('OPENAI_API_KEY not set in environment || .env');
   const model = process.env.OPENAI_MODEL || process.env.OPENAI_TRANSLATE_MODEL || 'gpt-4o-mini';
   const payload = {
     model,
     messages: [
       {
         role: 'system',
-        content:
-          'You are a professional localization engine. Translate short plain text from English to the requested locale. Output ONLY the translated text with no quotes, no labels, no prefixes, no explanations. The translation is in the context of a thunderbird extension for reply with attachment handling',
+        content: [
+          'You are a professional localization engine.',
+          'Translate Markdown while preserving structure.',
+          'NEVER translate || alter fenced/inline code — placeholders like __CODE_TOKEN_N__ must remain exactly as-is.',
+          'Preserve anchors like {#label} literally.',
+          'Do not add any extra code fences (no ```markdown wrappers).',
+        ].join('\n'),
       },
       {
         role: 'user',
@@ -285,23 +272,50 @@ function langNameFor(locale) {
   return map[locale] || locale;
 }
 
-async function translateMarkdown({ body, front }, locale) {
+async function translateMarkdown({ body, front }, locale, docName = '') {
   const { protectedMd, tokens } = protectCode(body);
   const targetLang = langNameFor(locale);
-  const translated = await callOpenAI(protectedMd, targetLang, locale);
-  const restored = restoreCode(translated, tokens);
+  async function withRetry(task, label) {
+    const max = 3;
+    for (let i = 0; i < max; i++) {
+      try {
+        return await task();
+      } catch (e) {
+        if (i === max - 1) throw e;
+        const delay = 400 * Math.pow(2, i);
+        logLine(
+          `[RETRY] ${new Date().toISOString()} file=${docName} locale=${locale} stage=${label} attempt=${i + 2}/${max} in ${delay}ms error=${(e && e.message) || e}`
+        );
+        await sleep(delay);
+      }
+    }
+  }
+
+  const translated = await withRetry(() => callOpenAI(protectedMd, targetLang, locale), 'body');
+  assertTokensIntegrity(translated, tokens, `${docName}:${locale}`);
+  const restored = stripCodeWrapper(restoreCode(translated, tokens));
+  if (/__CODE_TOKEN_/.test(restored)) {
+    const strict = (process.env.TRANSLATE_TOKENS_STRICT || '1') != '0';
+    const leftover = Array.from(scanCodeTokenIndices(restored)).sort((a, b) => a - b);
+    const msg = `Code-token leftovers detected after restore (${docName}:${locale}) indices=[${leftover.join(',')}]`;
+    logLine(`[TOKENS] ${new Date().toISOString()} ${msg}`);
+    if (strict) throw new Error(msg);
+    console.warn(msg);
+  }
 
   const fmObj = parseFront(front || '');
   const titleEn = fmObj.title || '';
   const sidebarEn = fmObj.sidebar_label || '';
+  const titleSrc = titleEn.replace(/^['"]|['"]$/g, '');
+  const sidebarSrc = sidebarEn.replace(/^['"]|['"]$/g, '');
 
-  async function translateShort(s) {
+  async function translateShort(s, label) {
     if (!s) return s;
-    return await callOpenAIShort(s, targetLang, locale);
+    return await withRetry(() => callOpenAIShort(s, targetLang, locale), label);
   }
 
-  const titleTr = await translateShort(titleEn);
-  const sideTr = await translateShort(sidebarEn);
+  const titleTr = await translateShort(titleSrc, 'title');
+  const sideTr = await translateShort(sidebarSrc, 'sidebar');
 
   function updateFront(originalFront, newTitle, newSidebar) {
     if (!originalFront) {
@@ -314,7 +328,7 @@ async function translateMarkdown({ body, front }, locale) {
     let doneTitle = false;
     let doneSidebar = false;
     const mapLine = (line) => {
-      // Keep id line exactly as-is; never translate key or value here
+      // Keep id line exactly as-is; never translate key || value here
       if (/^\s*id\s*:/i.test(line)) return line;
       // Replace title value
       if (newTitle && /^\s*title\s*:/i.test(line)) {
@@ -348,7 +362,11 @@ async function translateMarkdown({ body, front }, locale) {
   }
 
   const updatedFront = updateFront(front || '', titleTr, sideTr);
-  return `---\n${updatedFront}\n---\n\n${restored.trim()}\n`;
+  let out = `---\n${updatedFront}\n---\n\n${restored.trim()}\n`;
+  out = normalizeAnchors(out);
+  const dedup = dedupeTopFrontMatter(out);
+  if (dedup != null) out = dedup;
+  return out;
 }
 
 function splitTokens(str) {
@@ -363,7 +381,25 @@ function isLocaleToken(t) {
 }
 
 async function run() {
-  const args = process.argv.slice(2).filter(Boolean);
+  let args = process.argv.slice(2).filter(Boolean);
+  // Support flags: --files <a,b> && --locales <l1,l2>
+  const takeFlag = (names) => {
+    const idx = args.findIndex((a) => names.some((n) => a === n || a.startsWith(n + '=')));
+    if (idx === -1) return null;
+    let val = null;
+    const tok = args[idx];
+    const name = names.find((n) => tok === n || tok.startsWith(n + '='));
+    if (tok.includes('=')) {
+      val = tok.slice(name.length + 1);
+      args.splice(idx, 1);
+    } else {
+      val = args[idx + 1] || '';
+      args.splice(idx, 2);
+    }
+    return val;
+  };
+  const filesFlag = takeFlag(['--files', '--file']);
+  const localesFlag = takeFlag(['--locales', '--locale']);
   const flatArgs = args.flatMap((a) => (a.includes(',') ? splitTokens(a) : [a]));
 
   let docTokens = flatArgs.filter((t) => /\.md$/i.test(t));
@@ -373,15 +409,27 @@ async function run() {
   let langsAll = false;
   let langTokens = otherTokens.filter((t) => isLocaleToken(t.toLowerCase()));
 
+  // Apply flag values if provided
+  if (filesFlag) {
+    docsAll = false;
+    docTokens = splitTokens(filesFlag);
+  }
+  if (localesFlag) {
+    langsAll = false;
+    langTokens = splitTokens(localesFlag).map((s) => s.toLowerCase());
+  }
+
   if (docTokens.length === 0 && otherTokens.includes('all')) {
     docsAll = true;
     otherTokens = otherTokens.filter((t) => t !== 'all');
   }
-  if (otherTokens.includes('all')) {
+  if (otherTokens.includes('all') && !localesFlag) {
     langsAll = true;
     otherTokens = otherTokens.filter((t) => t !== 'all');
   }
-  langTokens = otherTokens.filter((t) => isLocaleToken(t.toLowerCase()));
+  if (!localesFlag) {
+    langTokens = otherTokens.filter((t) => isLocaleToken(t.toLowerCase()));
+  }
 
   const needDocs = !docsAll && docTokens.length === 0;
   const needLangs = !langsAll && langTokens.length === 0;
@@ -459,7 +507,12 @@ async function run() {
           `\nStarting: ${doc} → ${locale} (${completedPairs + 1}/${totalPairs})\n`
         );
         logLine(`[PAIR-START] ${pairIso} file=${doc} locale=${locale}`);
-        const out = await translateMarkdown({ body, front }, locale);
+        const out = await translateMarkdown({ body, front }, locale, doc);
+        if (!/^---\n[\s\S]*?\n---\n/.test(out + (out.endsWith('\n') ? '' : '\n'))) {
+          logLine(
+            `[FRONT] ${new Date().toISOString()} file=${doc} locale=${locale} final output missing front matter header`
+          );
+        }
         const outPath = path.join(
           'website/i18n',
           locale,

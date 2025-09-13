@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Veçoritë",
-  "description": "Veçoritë",
+  "title": "Karakteristikat",
+  "description": "Features",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Veçoritë",
-    "sidebar_label": "Veçoritë"
+    "title": "Karakteristikat",
+    "sidebar_label": "Karakteristikat"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Shpejtësia e fillimit",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/quickstart"
   }
 }

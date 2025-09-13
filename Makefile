@@ -1,23 +1,27 @@
 SHELL := bash
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := menu
 
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: commit eslint help lint pack prettier prettier-check prettier-write test test-i18n translate-web translation-web translate-web-index translation-web-index translate-app translation-app web-build web-build-linkcheck web-build-local-preview web-push-github -- --%
+.PHONY: commit eslint help lint pack clean prettier prettier-check prettier-write test test-i18n \
+  translate-web translate_web_docs_sync translate_web_docs_batch \
+  translation-web translate-web-index translation-web-index \
+  translate-app translation-app web-build web-build-linkcheck \
+  web-build-local-preview web-push-github -- --%
 
 commit: ## Format, run tests (incl. i18n), append changelog, commit & push to current branch
 	@set -euo pipefail; \
 	echo "✔ Formatting (write)…"; \
-	$(MAKE) prettier-write; \
+	$(MAKE) prettier_write; \
 
 	echo "✔ Formatting (check)…"; \
-	$(MAKE) prettier-check; \
+	$(MAKE) prettier_check; \
 
 	echo "✔ Running tests…"; \
 	$(MAKE) test; \
 	echo "✔ Running i18n tests…"; \
-	$(MAKE) test-i18n; \
+	$(MAKE) test_i18n; \
 	echo "✔ Staging changes…"; \
 	git add -A; \
 	if git diff --cached --quiet; then \
@@ -35,7 +39,7 @@ commit: ## Format, run tests (incl. i18n), append changelog, commit & push to cu
 	echo "✔ Pushing to origin/$$branch…"; \
 	git push -u origin $$branch
 
-web-build: ## Build docs to website/build. Usage: make web-build OPTS="--locales <list|all>" (or BUILD_LOCALES="en de"). Defaults to all.
+web_build: ## Build docs to website/build. Usage: make web-build OPTS="--locales <list|all>" (or BUILD_LOCALES="en de"). Defaults to all.
 	@set -e; \
 	locale_args=""; \
 	# Prefer explicit BUILD_LOCALES if provided
@@ -64,10 +68,10 @@ web-build: ## Build docs to website/build. Usage: make web-build OPTS="--locales
 	if [ ! -d node_modules/@docusaurus ]; then npm ci; fi; \
 	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build $$locale_args
 
-web-build-linkcheck: ## Offline-safe link check (builds to tmp_linkcheck_web_pages). Usage: make web-build-linkcheck OPTS="--locales <list|all>" (or BUILD_LOCALES). Skips external HTTP(S) links.
+web_build_linkcheck: ## Offline-safe link check (builds to tmp_linkcheck_web_pages). Usage: make web-build-linkcheck OPTS="--locales <list|all>" (or BUILD_LOCALES). Skips external HTTP(S) links.
 	@bash scripts/make-web-build-linkcheck.sh $(OPTS)
 
-web-build-local-preview: ## Preview to web-local-preview/, auto-serve 8080–8090, print URL; PID at web-local-preview/.server.pid. Usage: make web-build-local-preview OPTS="--locales <list|all> [--no-test] [--no-link-check] [--dry-run] [--no-serve]". No push.
+web_build_local_preview: ## Preview to web-local-preview/, auto-serve 8080–8090, print URL; PID at web-local-preview/.server.pid. Usage: make web-build-local-preview OPTS="--locales <list|all> [--no-test] [--no-link-check] [--dry-run] [--no-serve]". No push.
 	@set -e; \
 	if [ -x scripts/web-build-local-preview.sh ]; then \
 	  bash scripts/web-build-local-preview.sh $(OPTS); \
@@ -76,7 +80,7 @@ web-build-local-preview: ## Preview to web-local-preview/, auto-serve 8080–809
 	  exit 1; \
 	fi
 
-web-push-github: ## Push website/build to GitHub Pages (stages in tmp_github_web_pages; uses scripts/web-push-github.sh). OPTS not used.
+web_push_github: ## Push website/build to GitHub Pages (stages in tmp_github_web_pages; uses scripts/web-push-github.sh). OPTS not used.
 	@set -e; \
 	if [ ! -f website/build/index.html ]; then \
 	  echo "Docs not built yet. Running 'make web-build'…"; \
@@ -104,29 +108,51 @@ lint: ## web-ext lint on sources/ (temp manifest.json from manifest_LOCAL.json; 
 pack: lint ## Build ATN & LOCAL ZIPs (runs linter; calls distribution_zip_packer.sh; outputs reply-with-attachments-plugin*.zip)
 	bash ./distribution_zip_packer.sh
 
+clean: ## Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).
+	@set -e; \
+	rm -rf tmp tmp_* web-local-preview website/build tmp_linkcheck_web_pages tmp_github_web_pages || true; \
+	echo "Cleaned: tmp/, web-local-preview/, website/build/ (if present)."
+
 prettier: ## Format repository in-place via Prettier (writes changes)
 	node node_modules/prettier/bin/prettier.cjs --write .
 
-prettier-check: ## Prettier in check mode (no writes); fails if reformat needed
+prettier_check: ## Prettier in check mode (no writes); fails if reformat needed
 	node node_modules/prettier/bin/prettier.cjs --check .
 
-prettier-write: ## Alias for 'make prettier' (write mode)
+prettier_write: ## Alias for 'make prettier' (write mode)
 	$(MAKE) prettier
 
-test: ## Prettier (write+check), ESLint, then Vitest (coverage if plugin installed; thresholds in vitest.config.mjs)
+test: ## Prettier (write), ESLint, then Vitest (coverage if plugin installed; thresholds in vitest.config.mjs)
 	@set -e; \
-	$(MAKE) prettier-write; \
-	$(MAKE) prettier-check; \
-	$(NPM) run -s lint:eslint; \
+	$(MAKE) prettier_write; \
+	$(NPM) run -s lint:eslint:quiet; \
 	$(NPM) test
 
-test-i18n: ## i18n-only tests: add-on placeholders/parity + website i18n parity (Vitest)
+test_i18n: ## i18n-only tests: add-on placeholders/parity + website i18n parity (Vitest)
 	$(NPM) run test:i18n && $(NPM) run -s test:website-i18n
 
-translate-web: ## Alias for 'make translation-web' (no OPTS forwarded)
-	@$(MAKE) translation-web
+translate_web: ## Alias for 'make translation-web' (no OPTS forwarded)
+	@$(MAKE) translation_web
 
-translation-web: ## Translate website docs. Usage: make translation-web OPTS="<doc|all> <lang|all>" (interactive when OPTS omitted). Logs to translation_web.log
+translate_web_docs_sync: ## Translate website docs synchronously. Usage: make translate_web_docs_sync OPTS="<doc|all> <lang|all>"
+	@set -e; \
+	args="$(OPTS)"; \
+	if [ -z "$$args" ]; then \
+	  node scripts/translate_web_docs_sync.js; \
+	else \
+	  node scripts/translate_web_docs_sync.js $$args; \
+	fi
+
+translate_web_docs_batch: ## Translate website docs via OpenAI Batch API. Usage: make translate_web_docs_batch OPTS="<doc|all> <lang|all>"
+	@set -e; \
+	args="$(OPTS)"; \
+	if [ -z "$$args" ]; then \
+	  node scripts/translate_web_docs_batch.js; \
+	else \
+	  node scripts/translate_web_docs_batch.js $$args; \
+	fi
+
+translation_web: ## Translate website docs. Usage: make translation-web OPTS="<doc|all> <lang|all>" (interactive when OPTS omitted). Logs to translation_web.log
 	@set -e; \
 	if [ -z "$(OPTS)" ]; then \
 	  node scripts/translate_web_docs.js; \
@@ -134,19 +160,29 @@ translation-web: ## Translate website docs. Usage: make translation-web OPTS="<d
 	  node scripts/translate_web_docs.js $(OPTS); \
 	fi
 
-translate-web-index: ## Alias for 'make translation-web-index' (no args; translates website index UI strings)
-	@$(MAKE) translation-web-index
+translate_web_index: ## Alias for 'make translation-web-index' (no args; translates website index UI strings)
+	@$(MAKE) translation_web-index
 
-translation-web-index: ## Translate website UI strings (homepage/navbar/footer) from website/i18n/en/code.json to all locales under website/i18n (except en). Usage: make translation-web-index [OPTS="--locales de,fr --force"]
+translation_web_index: ## Translate website UI strings (homepage/navbar/footer) from website/i18n/en/code.json to all locales under website/i18n (except en). Usage: make translation-web-index [OPTS="--locales de,fr --force"]
 	@set -e; \
 	args="$(OPTS)"; \
 	node scripts/translate_web_index.js $$args
 
-translate-app: ## Alias for 'make translation-app' (no args; translates EN app strings to all locales)
-	@$(MAKE) translation-app
+translate_app: ## Alias for 'make translation-app' (no args; translates EN app strings to all locales)
+	@$(MAKE) translation_app
 
-translation-app: ## Translate app UI strings from sources/_locales/en/messages.json. Usage: make translation-app OPTS="--locales all|de,fr". Logs to translation_app.log
+translation_app: ## Translate app UI strings from sources/_locales/en/messages.json. Usage: make translation-app OPTS="--locales all|de,fr". Logs to translation_app.log
 	@set -e; \
 	args="$(OPTS)"; \
 	if [ -z "$$args" ]; then args="--locales all"; fi; \
 	node scripts/translate_app.js $$args
+
+.SILENT: menu
+.PHONY: menu
+menu: ## Interactive menu for make targets (whiptail)
+	@if command -v whiptail >/dev/null 2>&1; then \
+	  bash scripts/make-menu.sh; \
+	else \
+	  echo "whiptail not found. Showing textual help."; \
+	  $(MAKE) help; \
+	fi

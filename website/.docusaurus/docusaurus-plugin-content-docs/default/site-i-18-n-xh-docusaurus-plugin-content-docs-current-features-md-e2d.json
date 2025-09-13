@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Iimpawu",
-  "description": "Iimpawu",
+  "title": "Iimfanelo",
+  "description": "Features",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Iimpawu",
-    "sidebar_label": "Iimpawu"
+    "title": "Iimfanelo",
+    "sidebar_label": "Iimfanelo"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Ukuqala",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/quickstart"
   }
 }

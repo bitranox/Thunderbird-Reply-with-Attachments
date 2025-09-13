@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Ciri-ciri",
-  "description": "Ciri-ciri",
+  "description": "Features",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Mula Pantas",
+    "title": "Pengenalan Pantas",
     "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/quickstart"
   }
 }

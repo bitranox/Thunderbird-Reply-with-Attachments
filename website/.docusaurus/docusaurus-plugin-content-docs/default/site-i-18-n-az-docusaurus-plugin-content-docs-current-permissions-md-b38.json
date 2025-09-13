@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "İcazələr",
+  "description": "İcazələr",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "İcazələr"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "Uyğunluq",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "İnkişaf",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/development"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "プライバシー",
-  "description": "「添付ファイル付きで返信」は分析やテレメトリーを収集せず、あなたのデータをどこへも送信しません。",
+  "description": "プライバシー",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

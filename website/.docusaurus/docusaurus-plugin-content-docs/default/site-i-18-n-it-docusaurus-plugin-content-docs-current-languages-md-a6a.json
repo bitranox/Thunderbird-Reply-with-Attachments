@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Lingue",
-  "description": "Ampio supporto grazie a strumenti di traduzione basati su IA — 103 lingue.",
+  "description": "Lingue",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

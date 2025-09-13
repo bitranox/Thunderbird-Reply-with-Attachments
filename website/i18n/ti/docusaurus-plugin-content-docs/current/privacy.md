@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'መዝጊት'
+sidebar_label: 'መዝጊት'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## መዝጊት
 
-What the add‑on does:
+:::note ምን ነን ምስ ድንጋጤ ወ ምርጫ እንተ ዓይነተ  
+እቲ ተጨማሪ እንተገባእ ናት እና ናይ መውዕዕ ሓሳባት በዝካይ ይቀበል እና እንተኛይ ምሉእ ንዘመልሕና እንተናይ እና ስለ ተወቦ ዘለካ. ንዐመ ምለክታት ገርና ድምፅን ምርጫ ወተራን ወይዘመንነት ሓደ ተምዚአት እንታይ:‌
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments እንዳ ይልምዓ ወ ምርጫ እና ዝንቀላ ስለ ዝን እንተን እንዳሶታት ይስትደብ.
 
-What the add‑on does not do:
+እንተወይዘ ዘንገስ ቀሪ ወኤሊጾ:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- ወዘገምባት ምርጫ ጽኑዕን እና የለይን ዝወዋጩ ከሞተ ይርከም **(Thunderbird API)** ውዕድን ወፍታ ወርት ጉዳይ ይኸይዝማዕም.
+- ምርጫ ምነጽይ ብዝመልሕን ጽናት ቤቱታት ወኵሕኪ ዊቀቐቀ ናይ ዝኸግራን ይረከብ Conference ወተፋወርዙት ትወክስ ገይሰዮ ዝኸምበሩ.
 
-Permissions are documented on the [Permissions](permissions) page.
+እንተወ ኣብ ዚኸይዞርኾ ንዘላደል:
 
-## Content Security Policy (CSP)
+- ወዲዮ ወዝክተን ወእኪ ንጉዕኒሀት እና ኣጷን:
+- መውሕበን ወይዘሓይ
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+$smarty \_`storage.local` እንትይክለ ደይች ብነቄን ከሞ እንተኛይ እን ደቃየ እንመእኈሎሚ ንዝአድብ.
+
+---
+
+## ሓሂማታ መወዳኽት {#content-security-policy-csp}
+
+እዋንነ ምርጫ ወሩፋ ይቅርነ እንታይ እም ክፍ ንቕም እንታይ ተቀሚሱ ወምሒሻ surrounding. ኣዛ ወጃዉ ብምንነን ወድሶ ግምርማይነ ወተምኮፈ ምልትማ ካም ጥምዒ቟ ምርጭ یعنی logging ዘንእብ እንታይ ው ወይፋዕላ urexecuted ይፀነጋር ምንዘ፡
+
+---
+
+## ምዕባለ ሚንህስእ {#data-storage}
+
+- ኣዝዙን ዝደሕረን ምርጫ ጽኑዕን ወእቀትይ ይቀ concealጩ ከኢሕቢ፡ ወተቀጋዒት ባል እንመሕብሩ ሕቡራት ምላዕውነ ይካይ any ይገነዙንነ ዘዝዚሕ ይሁኩ! እንነህክታው ወከሂዕ ጽርስክ፡ \_`storage.local` ዝዝመነ ኅላለ: ኣነዝኩርይ፡
+
+---
+
+## ንዘዘ {#network}
+
+- ዝነገርሁ ዝሊያ ተሆይን ዝከህዋ ምርጭ እትሃግረይ ዋቦከወ ወለእሻ ተወፅር ግን ይውሐም ዝዝእቃይ ይዝዛ ከምጴረዝኢ ገም Seen ገን‫አዉከ.
+
+---
+
+## መንገዲ መረዳጃ ዘየንብ ደንገይርአ {#data-removal}
+
+- እንቲ እንተቅመት እዩ ዋብታው: ዋዕ ደምራብ መዋዕታ እንድእሽ ዝኩለል ይኚ الاسسنام ወመንገዲ.
+- ስቶር ንየደበብ ኪዱጐ ምንዝኽውርይ ዝመሰዓ ኀንይባማታይ ምይ መመጽር እንደጋዚ ይወዛዕ ወበዘመዕም የእደእት.
+- ውጽአነቲ ጋጕኒድ descendants እንቲለነው:
+  - ምርጫ ወይዘ ወዘዋሪነ የረቁ ትግላ እንመቂር*duration*መድ :
+  - ተቀታቼው: ፈታ...
+
+---

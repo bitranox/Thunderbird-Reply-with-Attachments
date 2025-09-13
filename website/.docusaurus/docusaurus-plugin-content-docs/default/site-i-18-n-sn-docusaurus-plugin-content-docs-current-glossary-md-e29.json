@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Mhinduro Yezvirevo",
+  "description": "Glossary",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Mhinduro Yezvirevo",
+    "sidebar_label": "Mhinduro Yezvirevo"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Mitauro",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Rubatsiro",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/support"
   }
 }

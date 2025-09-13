@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Datenschutz",
-  "description": "---",
+  "description": "Datenschutz",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "privacy",
     "title": "Datenschutz",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "Unterstützung",
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/support"
   },
   "next": {

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Hızlı başlangıç",
-  "description": "1. Eklentiyi Thunderbird Add‑ons üzerinden kurun.",
+  "title": "Hızlı Başlangıç",
+  "description": "Quickstart",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Hızlı başlangıç",
-    "sidebar_label": "Hızlı başlangıç"
+    "title": "Hızlı Başlangıç",
+    "sidebar_label": "Hızlı Başlangıç"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "ความเป็นส่วนตัว",
-  "description": "Reply with Attachments ไม่เก็บข้อมูลวิเคราะห์หรือ telemetry และไม่ส่งข้อมูลของคุณไปที่ใดทั้งสิ้น",
+  "description": "ความเป็นส่วนตัว",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

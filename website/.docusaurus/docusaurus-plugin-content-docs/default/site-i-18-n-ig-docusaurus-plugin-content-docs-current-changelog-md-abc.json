@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ndekọ mgbanwe",
-  "description": "Lee akụkọ zuru ezu na faịlụ CHANGELOG.md dị na ndekọ nchekwa (repository).",
+  "title": "Ncheta mgbanwe",
+  "description": "Ncheta mgbanwe",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ndekọ mgbanwe"
+    "title": "Ncheta mgbanwe"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/licence"
+    "title": "Nkwenye",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/license"
   }
 }

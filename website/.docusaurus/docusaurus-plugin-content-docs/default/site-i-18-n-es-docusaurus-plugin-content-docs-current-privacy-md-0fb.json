@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privacidad",
-  "description": "Responder con adjuntos no recopila analíticas ni telemetría, ni envía tus datos a ningún sitio.",
+  "description": "Privacidad",
   "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

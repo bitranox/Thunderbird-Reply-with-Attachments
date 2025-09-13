@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "معاونت",
-  "description": "مدد درکار ہے یا بَگ کی اطلاع دینی ہے؟",
+  "title": "مدد",
+  "description": "FAQ",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "معاونت",
-    "sidebar_label": "معاونت"
+    "title": "مدد",
+    "sidebar_label": "مدد"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "مسرد",
+    "title": "فہرستِ اصطلاحات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/glossary"
   },
   "next": {
-    "title": "رازداری",
+    "title": "نجیّت",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/privacy"
   }
 }

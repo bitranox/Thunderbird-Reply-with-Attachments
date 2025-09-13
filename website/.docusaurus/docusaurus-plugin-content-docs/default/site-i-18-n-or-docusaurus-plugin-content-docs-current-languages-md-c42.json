@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ଭାଷାଗୁଡିକ",
+  "description": "Languages",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ଭାଷାଗୁଡିକ",
+    "sidebar_label": "ଭାଷାଗୁଡିକ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "ବିକାଶ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "ଶବ୍ଦକୋଷ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/glossary"
   }
 }

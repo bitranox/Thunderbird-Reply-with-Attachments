@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privasi",
-  "description": "Reply with Attachments ora nglumpukake analytics utawa telemetry lan ora ngirim data panjenengan menyang endi wae.",
+  "description": "Privasi",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

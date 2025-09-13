@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "Kamusi",
+  "description": "Glossary",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "Kamusi",
+    "sidebar_label": "Kamusi"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "Lugha",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "Msaada",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/support"
   }
 }

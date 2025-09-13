@@ -1,57 +1,83 @@
 {
   "extName": {
-    "message": "ಲಗತ್ತಣೆಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ"
+    "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರಿಸು"
   },
   "extDescription": {
-    "message": "ಇಮೇಲ್ ಪ್ರತಿಕ್ರಿಯೆಗಳಲ್ಲಿ ಮೂಲ ಲಗತ್ತಣೆಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸುತ್ತದೆ."
+    "message": "ಇಮೇಲ್ ಉತ್ತರಗಳಲ್ಲಿ ಮೂಲ ಲಗತ್ತುಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸುತ್ತದೆ."
   },
   "composeTitle": {
-    "message": "ಲಗತ್ತಣೆಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ"
+    "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರಿಸು"
   },
   "optionsTitle": {
-    "message": "ಲಗತ್ತಣೆಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ — ಆಯ್ಕೆಗಳು"
+    "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರಿಸು — ಆಯ್ಕೆಗಳು"
   },
   "confirmTitle": {
-    "message": "ಲಗತ್ತಣೆಗಳ ದೃಢೀಕರಣ"
+    "message": "ಲಗತ್ತುಗಳನ್ನು ದೃಢೀಕರಿಸಿ"
   },
   "uiHeader": {
-    "message": "ಲಗತ್ತಣೆಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ"
+    "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರಿಸು"
   },
   "uiNoOptions": {
     "message": "ಪ್ರಸ್ತುತ ಸಂರಚಿಸಲು ಯಾವುದೇ ಆಯ್ಕೆಗಳಿಲ್ಲ."
   },
   "uiSupport": {
-    "message": "ಈ ಆಡ್-ಆನ್ ನಿಮಗೆ ಇಷ್ಟವೇ? ಸಣ್ಣ ಕೊಡುಗೆಯಿಂದ ನನ್ನನ್ನು ಬೆಂಬಲಿಸಿ:"
+    "message": "ಈ ಆಡ್‑ಆನ್ ನಿಮಗೆ ಇಷ್ಟವೇ? ದಯವಿಟ್ಟು ಚಿಕ್ಕ ಕೊಡುಗೆಯ ಮೂಲಕ ನನ್ನನ್ನು ಬೆಂಬಲಿಸಿ:"
+  },
+  "uiRateATNText": {
+    "message": "ದಯವಿಟ್ಟು ATN ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "ಈಗ ದೇಣಿಗೆ ನೀಡಿ"
   },
+  "uiIDonated": {
+    "message": "ನಾನು ದೇಣಿಗೆ ನೀಡಿದ್ದೇನೆ"
+  },
+  "uiDonateSnoozed": {
+    "message": "ಧನ್ಯವಾದಗಳು! ದೇಣಿಗೆ ವಿನಂತಿಯನ್ನು 90 ದಿನಗಳ ಕಾಲ ಮರೆಮಾಡಲಾಗಿದೆ."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 ವರೆಗೆ ಮರೆಮಾಡಲಾಗಿದೆ",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "ದೇಣಿಗೆ ಸೂಚನೆಯನ್ನು ಮತ್ತೆ ತೋರಿಸಿ"
+  },
+  "uiDonateRestored": {
+    "message": "ದೇಣಿಗೆ ವಿನಂತಿ ಮತ್ತೆ ಗೋಚರಿಸುತ್ತದೆ."
+  },
   "uiGithubText": {
-    "message": "ದೋಷ ವರದಿಗಳು ಅಥವಾ ಇತರೆ ವಿಚಾರಗಳಿಗೆ, ದಯವಿಟ್ಟು ನನ್ನ"
+    "message": "ದೋಷ ವರದಿಗಳು ಅಥವಾ ಇತರ ವಿಚಾರಣೆಗಳಿಗಾಗಿ, ದಯವಿಟ್ಟು ನನ್ನ"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub ಪುಟ"
   },
   "iconAlt": {
-    "message": "ಲಗತ್ತಣೆಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ ಐಕಾನ್"
+    "message": "ಲಗತ್ತಿನೊಂದಿಗೆ ಉತ್ತರಿಸು ಐಕಾನ್"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ಕಡತ ಹೆಸರಿನ ಕಪ್ಪುಪಟ್ಟಿ (ಗ್ಲೋಬ್ ಮಾದರಿಗಳು)"
+    "message": "ಫೈಲ್ ಹೆಸರಿನ ಕಪ್ಪುಪಟ್ಟಿ (ಗ್ಲೋಬ್ ಮಾದರಿಗಳು)"
   },
   "uiBlacklistHelp": {
-    "message": "ಈ ಮಾದರಿಗಳಲ್ಲಿ ಯಾವುದನ್ನಾದರೂ ಹೊಂದುವ ಹೆಸರಿನ ಕಡತಗಳನ್ನು ಎಂದಿಗೂ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ. ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ಮಾದರಿ. ಉದಾಹರಣೆಗಳು: *.png, smime.*, *.p7s"
+    "message": "ಈ ಮಾದರಿಗಳಲ್ಲಿ ಯಾವುದಾದರೊಂದನ್ನು ಹೊಂದುವ ಫೈಲ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ. ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ಮಾದರಿ. ಉದಾಹರಣೆಗಳು: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ಕಪ್ಪುಪಟ್ಟಿಯ ಕಾರಣದಿಂದ ಲಗತ್ತಣೆಗಳು ಹೊರತುಪಡಿಸಲ್ಪಟ್ಟಿದ್ದರೆ ಎಚ್ಚರಿಸಿ"
+    "message": "ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಲಗತ್ತುಗಳನ್ನು ಹೊರತುಪಡಿಸಿದರೆ ಎಚ್ಚರಿಕೆ ನೀಡಿ"
   },
   "uiSave": {
     "message": "ಉಳಿಸಿ"
   },
   "uiSaving": {
-    "message": "ಉಳಿಸಲಾಗುತ್ತಿದೆ…"
+    "message": "ಉಳಿಸುತ್ತಿದೆ…"
   },
   "uiReset": {
     "message": "ಪೂರ್ವನಿಯೋಜಿತಗಳಿಗೆ ಮರುಹೊಂದಿಸಿ"
@@ -66,13 +92,13 @@
     "message": "ದೃಢೀಕರಣ"
   },
   "uiConfirmLabel": {
-    "message": "ಲಗತ್ತಣೆಗಳನ್ನು ಸೇರಿಸುವ ಮೊದಲು ಕೇಳಿ"
+    "message": "ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸುವ ಮೊದಲು ಕೇಳಿ"
   },
   "uiConfirmHelp": {
-    "message": "ಲಗತ್ತಣೆಗಳನ್ನು ನಿಜವಾಗಿಯೂ ಸೇರಿಸುವ ಸಂದರ್ಭದಲ್ಲಷ್ಟೇ ಚಿಕ್ಕ ದೃಢೀಕರಣ ಸಂವಾದ ಪ್ರತ್ಯಕ್ಷವಾಗುತ್ತದೆ. ಕೀಬೋರ್ಡ್: Y ಅಥವಾ J = ಹೌದು; N ಅಥವಾ Esc = ಬೇಡ."
+    "message": "ಲಗತ್ತುಗಳನ್ನು ನಿಜವಾಗಿಯೂ ಸೇರಿಸಲಾಗುವಾಗ ಮಾತ್ರ ಚಿಕ್ಕ ದೃಢೀಕರಣ ಸಂವಹನ ಕಾಣಿಸುತ್ತದೆ. ಕೀಬೋರ್ಡ್: Y ಅಥವಾ J = ಹೌದು; N ಅಥವಾ Esc = ಇಲ್ಲ."
   },
   "confirmAddOne": {
-    "message": "ಲಗತ್ತಣೆ ಸೇರಿಸಬೇಕೆ: $1?",
+    "message": "ಲಗತ್ತು ಸೇರಿಸಬೇಕೆ: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ಲಗತ್ತಣೆಗಳನ್ನು ಸೇರಿಸಬೇಕೆ ($1): $2$3?",
+    "message": "ಲಗತ್ತುಗಳನ್ನು ಸೇರಿಸಬೇಕೆ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -97,16 +123,16 @@
     "message": "ಹೌದು"
   },
   "confirmNo": {
-    "message": "ಬೇಡ"
+    "message": "ಇಲ್ಲ"
   },
   "warnBlacklistTitle": {
     "message": "ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಹೊರತುಪಡಿಸಲಾಗಿದೆ"
   },
   "warnBlacklistIntro": {
-    "message": "ಈ ಕೆಳಗಿನ ಕಡತಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ:"
+    "message": "ಈ ಕೆಳಗಿನ ಫೈಲ್‌ಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲಗತ್ತಿಸಲಾಗುವುದಿಲ್ಲ:"
   },
   "warnColFile": {
-    "message": "ಕಡತ"
+    "message": "ಫೈಲ್"
   },
   "warnColPattern": {
     "message": "ಮಾದರಿ"
@@ -121,12 +147,24 @@
     "message": "ಹೌದು"
   },
   "uiConfirmDefaultNo": {
-    "message": "ಬೇಡ"
+    "message": "ಇಲ್ಲ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "ದಾಖಲೆಗಳು:"
+  },
+  "uiDocsButton": {
+    "message": "ದಾಖಲೆಗಳನ್ನು ತೆರೆಯಿರಿ"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

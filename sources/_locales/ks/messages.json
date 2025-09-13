@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "منسلکات کے ساتھ جواب"
+    "message": "منسلکات سٕتھ جواب"
   },
   "extDescription": {
-    "message": "ای میل جوابات میں اصل منسلکات خودکار طور پر شامل کریں۔"
+    "message": "خود بخود اصل منسلکات ای میل جوابس منز شامل کٔریو."
   },
   "composeTitle": {
-    "message": "منسلکات کے ساتھ جواب"
+    "message": "منسلکات سٕتھ جواب"
   },
   "optionsTitle": {
-    "message": "منسلکات کے ساتھ جواب — اختیارات"
+    "message": "منسلکات سٕتھ جواب — اختیارات"
   },
   "confirmTitle": {
-    "message": "منسلکات کی تصدیق"
+    "message": "منسلکات ہندس تصدیق"
   },
   "uiHeader": {
-    "message": "منسلکات کے ساتھ جواب"
+    "message": "منسلکات سٕتھ جواب"
   },
   "uiNoOptions": {
-    "message": "اس وقت ترتیب دینے کے لیے کوئی اختیارات نہیں ہیں۔"
+    "message": "اس وقت ترتیب باپت کوئی اختیار موجود نِہ چھ."
   },
   "uiSupport": {
-    "message": "کیا آپ کو یہ ایڈ-آن پسند ہے؟ ایک چھوٹی سی معاونت کے ساتھ میری مدد کریں:"
+    "message": "کیا یہ ایڈ-آن تُہنم پسند چھ؟ کٔرِیو مہ سٕیتھ تھوڈہ تعاون:"
+  },
+  "uiRateATNText": {
+    "message": "براہِ کرم ATN پٔر درجہ بند کٔرِیو"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "اب عطیہ دیں"
+    "message": "ابھی عطیہ دِیو"
+  },
+  "uiIDonated": {
+    "message": "مَے عطیہ دِتمُت"
+  },
+  "uiDonateSnoozed": {
+    "message": "شکریہ! عطیہ ہندس پیغام 90 دِنن باپت لُکت گٔیو."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 تک لُکت",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "عطیہ پُنہ دِکھاؤ"
+  },
+  "uiDonateRestored": {
+    "message": "عطیہ ہندس پیغام پُنہ ظاہر گٔیو."
   },
   "uiGithubText": {
-    "message": "بگ رپورٹس یا دیگر استفسارات کے لیے، براہِ کرم میرا"
+    "message": "بگ رپورٹ یا باقی سوالن باپت، براہِ کرم میون"
   },
   "uiGithubLinkLabel": {
     "message": "گِٹ ہب صفحہ"
   },
   "iconAlt": {
-    "message": "منسلکات کے ساتھ جواب کا آئیکن"
+    "message": "منسلکات سٕتھ جواب ہندس آئیکن"
   },
   "githubAlt": {
     "message": "گِٹ ہب"
   },
   "uiBlacklistHeader": {
-    "message": "فائل ناموں کی بلیک لسٹ (گلوب پیٹرنز)"
+    "message": "فائل ناون ہند بلیک لسٹ (گلوب پیٹرنز)"
   },
   "uiBlacklistHelp": {
-    "message": "جن فائلوں کے نام ان پیٹرنز میں سے کسی سے ملتے ہوں، وہ کبھی بھی خودکار طور پر منسلک نہیں کی جائیں گی۔ ہر لائن میں ایک پیٹرن۔ مثالیں: *.png, smime.*, *.p7s"
+    "message": "جِن فائلن ہند ناو اِن پیٹرنز منز کِس۪ی سٕیتھ میل کھایِت، وُہ کبھی خودکار طور منسلک نَہ کٔرِیتھ۔ ہر لائن پٔر اکھ پیٹرن۔ مثال: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "اگر بلیک لسٹ کی وجہ سے منسلکات خارج ہوں تو خبردار کریں"
+    "message": "اگر منسلکات بلیک لسٹ سبب خارج گٔی، خبردار کٔرِیو"
   },
   "uiSave": {
-    "message": "محفوظ کریں"
+    "message": "محفوظ کٔریو"
   },
   "uiSaving": {
-    "message": "محفوظ کیا جا رہا ہے…"
+    "message": "محفوظ کران…"
   },
   "uiReset": {
-    "message": "طے شدہ پر ری سیٹ کریں"
+    "message": "ڈیفالٹس پٔر ریسیٹ کٔریو"
   },
   "uiSaved": {
-    "message": "محفوظ ہو گیا۔"
+    "message": "محفوظ گٔیو."
   },
   "uiResetDone": {
-    "message": "ری سیٹ ہو گیا۔"
+    "message": "ریسیٹ گٔیو."
   },
   "uiConfirmHeader": {
     "message": "تصدیق"
   },
   "uiConfirmLabel": {
-    "message": "منسلکات شامل کرنے سے پہلے پوچھیں"
+    "message": "منسلکات شامل کرنہ برونہ پُچھِیو"
   },
   "uiConfirmHelp": {
-    "message": "ایک چھوٹا سا تصدیقی ڈائیلاگ صرف تب ظاہر ہوگا جب واقعی منسلکات شامل کیے جائیں گے۔ کی بورڈ: Y یا J = ہاں; N یا Esc = نہیں۔"
+    "message": "اکھ چھوٹ تصدیقی ڈائلاگ صرف تِم۪ی وَخت ظاہر گٔژھ ییلہٕ واقعی طور منسلکات شامل کٔرتھ۔ کی بورڈ: Y یا J = ہاں؛ N یا Esc = نِہ."
   },
   "confirmAddOne": {
-    "message": "منسلک شامل کریں: $1؟",
+    "message": "منسلک شامل کٔریو: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "منسلکات شامل کریں ($1): $2$3؟",
+    "message": "منسلکات شامل کٔریو ($1): $2$3؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -97,13 +123,13 @@
     "message": "ہاں"
   },
   "confirmNo": {
-    "message": "نہیں"
+    "message": "نہ"
   },
   "warnBlacklistTitle": {
-    "message": "بلیک لسٹ کی وجہ سے خارج"
+    "message": "بلیک لسٹ سبب خارج"
   },
   "warnBlacklistIntro": {
-    "message": "ذیل کی فائلیں خودکار طور پر منسلک نہیں کی جائیں گی:"
+    "message": "یہ فائلن خودکار طور منسلک نَہ کئمِت:"
   },
   "warnColFile": {
     "message": "فائل"
@@ -112,21 +138,33 @@
     "message": "پیٹرن"
   },
   "warnOk": {
-    "message": "ٹھیک ہے"
+    "message": "ٹھیک"
   },
   "uiConfirmDefaultHeader": {
-    "message": "پہلے سے طے شدہ جواب"
+    "message": "طے شُدہ جواب"
   },
   "uiConfirmDefaultYes": {
     "message": "ہاں"
   },
   "uiConfirmDefaultNo": {
-    "message": "نہیں"
+    "message": "نہ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "دستاویزات:"
+  },
+  "uiDocsButton": {
+    "message": "دستاویزات کھولِیو"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

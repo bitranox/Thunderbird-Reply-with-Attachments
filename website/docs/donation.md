@@ -1,7 +1,7 @@
 ---
 id: donation
-title: Donate
-sidebar_label: Donate
+title: 'Donate'
+sidebar_label: 'Donate'
 ---
 
 ---
@@ -43,6 +43,11 @@ If you like "Reply with Attachments" and want to support its development, you ca
 
 Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
 
+Notes
+
+- Donate links open only when you click them; the add‑on does not perform any background network requests.
+- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+
 ---
 
 If the image buttons do not load, please use these links instead:
@@ -56,5 +61,30 @@ If the image buttons do not load, please use these links instead:
 ---
 
 Donations are voluntary; there is no feature gating.
+
+---
+
+## Donation Visibility (90‑day snooze)
+
+The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+
+- Where to find it
+  - Options → Support section: you’ll see an “I donated” button and a small hint area.
+  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+
+- How it works
+  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
+  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
+  - After 90 days, the Donate button becomes visible automatically again.
+
+- Privacy & storage
+  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
+  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+
+- Troubleshooting
+  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
+  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+
+This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
 
 ---

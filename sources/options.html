@@ -98,6 +98,24 @@
                 data-i18n-attr="href:donateUrl"
                 ><button class="btn primary" data-i18n="uiDonate"></button
               ></a>
+              <button id="donate-snooze" class="btn" data-i18n="uiIDonated"></button>
+              <span id="donate-snooze-hint" class="snooze-hint" aria-live="polite"></span>
+              <button
+                id="donate-show"
+                class="btn"
+                data-i18n="uiDonateShowAgain"
+                style="display: none"
+              ></button>
+            </div>
+            <div class="rate">
+              <span class="rate-atn-text" data-i18n="uiRateATNText"></span>
+              <a id="atn-link" class="rate-atn" data-i18n-attr="href:atnRateUrl"
+                ><button class="btn" data-i18n="uiRateATNStars"></button
+              ></a>
+              <span class="docs-text" data-i18n="uiDocsText"></span>
+              <a id="docs-link" class="docs" data-i18n-attr="href:docsUrl"
+                ><button class="btn" data-i18n="uiDocsButton"></button
+              ></a>
             </div>
             <div class="gh">
               <span data-i18n="uiGithubText"></span>
@@ -105,13 +123,13 @@
                 id="github-link"
                 data-testid="github-link"
                 data-i18n="uiGithubLinkLabel"
-                data-i18n-attr="href:githubUrl"
+                href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues"
                 >GitHub</a
               >
               <a
                 id="github-link-logo"
                 data-testid="github-link-logo"
-                data-i18n-attr="href:githubUrl"
+                href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues"
                 ><img src="icons/icon-github.png" data-i18n-attr="alt:githubAlt" alt="GitHub"
               /></a>
             </div>
@@ -121,7 +139,10 @@
     </div>
     <script src="ui_i18n.js"></script>
     <script src="options.js"></script>
+    <script src="donation_visibility.js"></script>
     <script src="handle_donate_link.js"></script>
     <script src="handle_github_link.js"></script>
+    <script src="handle_atn_link.js"></script>
+    <script src="handle_docs_link.js"></script>
   </body>
 </html>

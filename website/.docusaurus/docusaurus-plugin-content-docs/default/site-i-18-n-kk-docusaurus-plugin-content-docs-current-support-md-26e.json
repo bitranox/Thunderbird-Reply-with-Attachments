@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Көмек",
+  "description": "FAQ",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Көмек",
+    "sidebar_label": "Көмек"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Сөздік",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Жеке деректерді қорғау",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/privacy"
   }
 }

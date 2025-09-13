@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "功能",
-  "description": "功能",
+  "title": "特性",
+  "description": "Features",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "功能",
-    "sidebar_label": "功能"
+    "title": "特性",
+    "sidebar_label": "特性"
   },
   "sidebar": "docs",
   "next": {

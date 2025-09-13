@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "Reply with Attachments"
+    "message": "Balas dengan Lampiran"
   },
   "extDescription": {
-    "message": "Automatically include original attachments in email replies."
+    "message": "Sertakan lampiran asal secara automatik dalam balasan e-mel."
   },
   "composeTitle": {
-    "message": "Reply with Attachments"
+    "message": "Balas dengan Lampiran"
   },
   "optionsTitle": {
-    "message": "Reply with Attachments — Options"
+    "message": "Balas dengan Lampiran — Pilihan"
   },
   "confirmTitle": {
-    "message": "Confirm Attachments"
+    "message": "Sahkan Lampiran"
   },
   "uiHeader": {
-    "message": "Reply with Attachments"
+    "message": "Balas dengan Lampiran"
   },
   "uiNoOptions": {
-    "message": "There are currently no options to configure."
+    "message": "Buat masa ini tiada pilihan untuk dikonfigurasi."
   },
   "uiSupport": {
-    "message": "Do you like this add-on? Support me with a small contribution:"
+    "message": "Adakah anda suka add-on ini? Sila sokong saya dengan sumbangan kecil:"
+  },
+  "uiRateATNText": {
+    "message": "Sila nilai di ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Donate now"
+    "message": "Derma sekarang"
+  },
+  "uiIDonated": {
+    "message": "Saya telah menderma"
+  },
+  "uiDonateSnoozed": {
+    "message": "Terima kasih! Gesaan derma disembunyikan selama 90 hari."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Disembunyikan sehingga $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Tunjukkan Derma lagi"
+  },
+  "uiDonateRestored": {
+    "message": "Gesaan derma kini kelihatan semula."
   },
   "uiGithubText": {
-    "message": "For bug reports or other inquiries, please visit my"
+    "message": "Untuk laporan pepijat atau pertanyaan lain, sila lawati"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub page"
+    "message": "Halaman GitHub"
   },
   "iconAlt": {
-    "message": "Reply with Attachments Icon"
+    "message": "Ikon Balas dengan Lampiran"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist of filenames (glob patterns)"
+    "message": "Senarai hitam nama fail (pola glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
+    "message": "Fail yang namanya sepadan dengan mana-mana pola ini tidak akan dilampirkan secara automatik. Satu pola setiap baris. Contoh: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Warn if attachments are excluded by blacklist"
+    "message": "Beri amaran jika lampiran dikecualikan oleh senarai hitam"
   },
   "uiSave": {
-    "message": "Save"
+    "message": "Simpan"
   },
   "uiSaving": {
-    "message": "Saving…"
+    "message": "Menyimpan…"
   },
   "uiReset": {
-    "message": "Reset to defaults"
+    "message": "Tetapkan semula kepada lalai"
   },
   "uiSaved": {
-    "message": "Saved."
+    "message": "Disimpan."
   },
   "uiResetDone": {
-    "message": "Reset."
+    "message": "Ditetapkan semula."
   },
   "uiConfirmHeader": {
-    "message": "Confirmation"
+    "message": "Pengesahan"
   },
   "uiConfirmLabel": {
-    "message": "Ask before adding attachments"
+    "message": "Tanya sebelum menambah lampiran"
   },
   "uiConfirmHelp": {
-    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
+    "message": "Dialog pengesahan kecil hanya muncul apabila lampiran benar-benar akan ditambah. Papan kekunci: Y atau J = Ya; N atau Esc = Tidak."
   },
   "confirmAddOne": {
-    "message": "Add attachment: $1?",
+    "message": "Tambah lampiran: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Add attachments ($1): $2$3?",
+    "message": "Tambah lampiran ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -94,39 +120,51 @@
     }
   },
   "confirmYes": {
-    "message": "Yes"
+    "message": "Ya"
   },
   "confirmNo": {
-    "message": "No"
+    "message": "Tidak"
   },
   "warnBlacklistTitle": {
-    "message": "Excluded by blacklist"
+    "message": "Dikecualikan oleh senarai hitam"
   },
   "warnBlacklistIntro": {
-    "message": "The following files will not be attached automatically:"
+    "message": "Fail berikut tidak akan dilampirkan secara automatik:"
   },
   "warnColFile": {
-    "message": "File"
+    "message": "Fail"
   },
   "warnColPattern": {
-    "message": "Pattern"
+    "message": "Pola"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Default answer"
+    "message": "Jawapan lalai"
   },
   "uiConfirmDefaultYes": {
-    "message": "Yes"
+    "message": "Ya"
   },
   "uiConfirmDefaultNo": {
-    "message": "No"
+    "message": "Tidak"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentasi:"
+  },
+  "uiDocsButton": {
+    "message": "Buka Dokumentasi"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Indimi",
+  "description": "Indimi",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Indimi",
+    "sidebar_label": "Indimi"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Iterambere",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Ibyihutirwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/glossary"
   }
 }

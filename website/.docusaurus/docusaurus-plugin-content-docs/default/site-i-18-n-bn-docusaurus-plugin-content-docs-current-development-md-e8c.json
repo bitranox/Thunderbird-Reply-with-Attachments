@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ডেভেলপমেন্ট",
-  "description": "ডেভেলপমেন্ট গাইড",
+  "title": "বিকাশ",
+  "description": "Development Guide",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "ডেভেলপমেন্ট",
-    "sidebar_label": "ডেভেলপমেন্ট"
+    "title": "বিকাশ",
+    "sidebar_label": "বিকাশ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "পারমিশন",
+    "title": "অধিকারসমূহ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/permissions"
   },
   "next": {

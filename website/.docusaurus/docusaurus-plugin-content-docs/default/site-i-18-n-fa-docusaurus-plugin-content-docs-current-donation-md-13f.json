@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "کمک مالی",
-  "description": "اگر Reply with Attachments را می‌پسندید و می‌خواهید از توسعه آن حمایت کنید، می‌توانید از این‌جا کمک مالی کنید:",
+  "title": "اهدا",
+  "description": "Donate",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "کمک مالی",
-    "sidebar_label": "کمک مالی"
+    "title": "اهدا",
+    "sidebar_label": "اهدا"
   },
   "sidebar": "docs",
   "previous": {
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "مجوز",
-    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/license"
   }
 }

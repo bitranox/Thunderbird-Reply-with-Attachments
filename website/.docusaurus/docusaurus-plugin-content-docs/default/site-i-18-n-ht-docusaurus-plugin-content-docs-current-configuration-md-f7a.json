@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Konfigirasyon",
+  "description": "Konfigirasyon",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Konfigirasyon"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Enstalasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Itilizasyon",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/usage"
   }
 }

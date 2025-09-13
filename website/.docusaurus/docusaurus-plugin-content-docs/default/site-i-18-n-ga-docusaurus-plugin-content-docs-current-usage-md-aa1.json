@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Úsáid",
   "description": "Usage",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Úsáid",
+    "sidebar_label": "Úsáid"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Configuríocht",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Comhoiriúnacht",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/compatibility"
   }
 }

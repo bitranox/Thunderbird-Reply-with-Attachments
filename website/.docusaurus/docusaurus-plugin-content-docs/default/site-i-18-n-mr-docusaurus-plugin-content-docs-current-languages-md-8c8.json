@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "भाषा",
-  "description": "AI अनुवाद साधनांच्या मदतीने व्यापक भाषा समर्थन — 103 भाषा.",
+  "description": "Languages",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "विकास",
+    "title": "विकसनशीलता",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/development"
   },
   "next": {
-    "title": "शब्दसंग्रह",
+    "title": "शब्दकोश",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/glossary"
   }
 }

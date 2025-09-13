@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Ndakọrịta",
   "description": "Compatibility",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Ndakọrịta",
+    "sidebar_label": "Ndakọrịta"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Iji",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Ikikwe",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "การพัฒนา",
-  "description": "คู่มือการพัฒนา",
+  "description": "Development Guide",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "สิทธิ์ที่ต้องใช้",
+    "title": "สิทธิ์",
     "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/permissions"
   },
   "next": {

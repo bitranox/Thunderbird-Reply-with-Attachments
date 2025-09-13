@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "సహాయం",
-  "description": "సహాయం కావాలా లేదా బగ్ నివేదించాలనుకుంటున్నారా?",
+  "title": "సాయం",
+  "description": "FAQ",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "సహాయం",
-    "sidebar_label": "సహాయం"
+    "title": "సాయం",
+    "sidebar_label": "సాయం"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "పదకోశం",
+    "title": "సంగ్రహం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/glossary"
   },
   "next": {

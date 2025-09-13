@@ -8,13 +8,15 @@
   "scripts": {
     "test": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage || node node_modules/vitest/vitest.mjs run",
     "test:i18n": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage tests/i18n.*.test.js || node node_modules/vitest/vitest.mjs run tests/i18n.*.test.js",
-    "test:website-i18n": "node node_modules/vitest/vitest.mjs run tests/website.i18n.parity.test.js",
+    "test:website-i18n": "node node_modules/vitest/vitest.mjs run tests/website.*.test.js",
     "test:watch": "node node_modules/vitest/vitest.mjs",
     "lint:webext": "web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
     "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
     "format": "node ./node_modules/prettier/bin/prettier.cjs --write .",
     "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check .",
-    "translate:i18n": "node scripts/translate-i18n.mjs --locales all --docs --messages"
+    "translate:i18n": "node scripts/translate-i18n.mjs --locales all --docs --messages",
+    "ci:guard-doc-urls": "node scripts/ci-guard-doc-urls.mjs",
+    "lint:eslint:quiet": "node ./node_modules/eslint/bin/eslint.js . --quiet"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Basa-basa'
+sidebar_label: 'Basa-basa'
 ---
 
-# Language Support
+## Languages
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Daptar ieu ngagambarkeun duanana tarjamahan dokumentasi website jeung string UI tambahan.
+Dukungan basa anu gedé, hatur nuhun ka alat tarjamahan AI — nyertakeun 100 basa.
 
-List below is sorted by the language code.
+Daptar di handap ieu diurutkeun dumasar kode basa.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Tingali ogé: [Glossary](glossary) pikeun istilah UI kanonik anu dianggo di sakuliah lokal.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Ganti lokal docs ngaliwatan panyaring basa di header situs (URL prefix robih sakumaha mestina). Basa UI Thunderbird henteu gumantung kana basa website sareng nuturkeun setelan Thunderbird anjeun.
+
+Landing page redirect
+
+- Upami situs diwangun ku lokal anu dipikahoyong ku panyungsi anjeun, nganjang ka URL dokumen dasar di handapeun baseUrl proyék sacara otomatis ngarah ka lokal éta. Anggo panyaring basa (atawa `/en/`) pikeun tetep dina basa Inggris.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Ngahijikeun hiji masalah dina tarjamahan? Punten buka masalah atanapi PR GitHub.
+- Utamakan suntingan ngalawan sumber Inggris di `website/docs/`; alat maintainer nyebarkeun apdet ka lokal séjén.
+  Inggris mangrupikeun sumber kanyataan pikeun dokumentasi; apdet tarjamahan ditarik ti EN salami workflow maintainer.
+
+### Homepage, Navbar, Footer UI
+
+- String ieu aya di `website/i18n/en/code.json` sareng ditarjamahkeun ka sadaya lokal ngaliwatan tugas maintainer:
+  - `make translate_web_index` (peryogi `OPENAI_API_KEY`)
+  - Batasi basa kalayan `OPTS="--locales de,fr"`; overwrite nilai anu parantos aya sareng `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Basa website sareng basa UI tambahan bersifat mandiri; panyaring basa ngan robih dokumen. Basa UI Thunderbird nuturkeun setelan Thunderbird anjeun.
+
+---

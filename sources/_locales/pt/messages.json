@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Responder com anexos"
+    "message": "Responder com Anexos"
   },
   "extDescription": {
-    "message": "Incluir automaticamente os anexos originais nas respostas por e‑mail."
+    "message": "Inclui automaticamente os anexos originais nas respostas por e‑mail."
   },
   "composeTitle": {
-    "message": "Responder com anexos"
+    "message": "Responder com Anexos"
   },
   "optionsTitle": {
-    "message": "Responder com anexos — Opções"
+    "message": "Responder com Anexos — Opções"
   },
   "confirmTitle": {
-    "message": "Confirmar anexos"
+    "message": "Confirmar Anexos"
   },
   "uiHeader": {
-    "message": "Responder com anexos"
+    "message": "Responder com Anexos"
   },
   "uiNoOptions": {
-    "message": "De momento, não há opções para configurar."
+    "message": "Atualmente não há opções para configurar."
   },
   "uiSupport": {
     "message": "Gosta deste complemento? Apoie-me com uma pequena contribuição:"
   },
+  "uiRateATNText": {
+    "message": "Avalie no ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
+  },
   "uiDonate": {
     "message": "Doar agora"
   },
+  "uiIDonated": {
+    "message": "Já doei"
+  },
+  "uiDonateSnoozed": {
+    "message": "Obrigado! O pedido de doação ficará oculto por 90 dias."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Oculto até $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Mostrar Doar novamente"
+  },
+  "uiDonateRestored": {
+    "message": "O pedido de doação está visível novamente."
+  },
   "uiGithubText": {
-    "message": "Para relatos de erros ou outras questões, visite a minha"
+    "message": "Para relatar erros ou outras questões, visite a minha"
   },
   "uiGithubLinkLabel": {
     "message": "página no GitHub"
   },
   "iconAlt": {
-    "message": "Ícone de Responder com anexos"
+    "message": "Ícone do Responder com Anexos"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Lista negra de nomes de ficheiros (padrões glob)"
+    "message": "Lista de bloqueio de nomes de ficheiros (padrões glob)"
   },
   "uiBlacklistHelp": {
     "message": "Os ficheiros cujos nomes correspondam a qualquer destes padrões nunca serão anexados automaticamente. Um padrão por linha. Exemplos: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avisar se os anexos forem excluídos pela lista negra"
+    "message": "Avisar se os anexos forem excluídos pela lista de bloqueio"
   },
   "uiSave": {
     "message": "Guardar"
@@ -66,7 +92,7 @@
     "message": "Confirmação"
   },
   "uiConfirmLabel": {
-    "message": "Perguntar antes de adicionar anexos"
+    "message": "Pedir confirmação antes de adicionar anexos"
   },
   "uiConfirmHelp": {
     "message": "Uma pequena janela de confirmação aparece apenas quando os anexos forem realmente adicionados. Teclado: Y ou J = Sim; N ou Esc = Não."
@@ -100,7 +126,7 @@
     "message": "Não"
   },
   "warnBlacklistTitle": {
-    "message": "Excluídos pela lista negra"
+    "message": "Excluídos pela lista de bloqueio"
   },
   "warnBlacklistIntro": {
     "message": "Os seguintes ficheiros não serão anexados automaticamente:"
@@ -124,9 +150,21 @@
     "message": "Não"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentação:"
+  },
+  "uiDocsButton": {
+    "message": "Abrir documentação"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

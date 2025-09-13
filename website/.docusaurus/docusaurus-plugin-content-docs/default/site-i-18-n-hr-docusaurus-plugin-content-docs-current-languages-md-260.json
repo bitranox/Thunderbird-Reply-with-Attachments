@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Jezici",
+  "description": "Languages",
   "source": "@site/i18n/hr/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Jezici",
+    "sidebar_label": "Jezici"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Razvoj",
     "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Rječnik",
     "permalink": "/Thunderbird-Reply-with-Attachments/hr/docs/glossary"
   }
 }

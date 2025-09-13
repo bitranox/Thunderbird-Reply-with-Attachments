@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "پشتیبانی",
-  "description": "به کمک نیاز دارید یا می‌خواهید باگی را گزارش کنید؟",
+  "description": "FAQ",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

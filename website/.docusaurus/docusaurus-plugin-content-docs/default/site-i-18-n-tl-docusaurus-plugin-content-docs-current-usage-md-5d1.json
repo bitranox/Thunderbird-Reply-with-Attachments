@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Paggamit",
   "description": "Usage",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Paggamit",
+    "sidebar_label": "Paggamit"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Pag-configure",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Kompatibilidad",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/compatibility"
   }
 }

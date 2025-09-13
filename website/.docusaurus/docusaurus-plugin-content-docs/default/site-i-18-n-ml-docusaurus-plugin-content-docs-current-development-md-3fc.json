@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "വികസനം",
   "description": "Development Guide",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "വികസനം",
+    "sidebar_label": "വികസനം"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "അനുവാദങ്ങൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "ഭാഷകൾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/languages"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "विन्यास",
-  "description": "पारिभाषिक शब्दों के लिए शब्दावली देखें ताकि UI और दस्तावेज़ में एकरूपता बनी रहे।",
+  "title": "कॉन्फ़िगरेशन",
+  "description": "Configuration",
   "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "विन्यास"
+    "title": "कॉन्फ़िगरेशन"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "स्थापना",
+    "title": "इंस्टॉलेशन",
     "permalink": "/Thunderbird-Reply-with-Attachments/hi/docs/install"
   },
   "next": {

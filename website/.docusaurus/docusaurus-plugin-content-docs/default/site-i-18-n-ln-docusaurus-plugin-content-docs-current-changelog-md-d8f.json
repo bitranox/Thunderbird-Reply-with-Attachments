@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Rapɔrt ya mabongwani",
-  "description": "Talá lisolo mobimba na dosiye CHANGELOG.md na kati ya répositware.",
+  "title": "Historique des changements",
+  "description": "Changelog",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Rapɔrt ya mabongwani"
+    "title": "Historique des changements"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/license"
   }
 }

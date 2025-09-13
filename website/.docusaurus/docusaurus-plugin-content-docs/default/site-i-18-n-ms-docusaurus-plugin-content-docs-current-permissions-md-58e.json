@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Keizinan",
-  "description": "Add‑on hanya meminta set keizinan yang kecil dan fokus. Sebab bagi setiap satu:",
+  "title": "Kebenaran",
+  "description": "Kebenaran",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Keizinan"
+    "title": "Kebenaran"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Tez boshlanish",
+  "description": "Quickstart",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Tez boshlanish",
+    "sidebar_label": "Tez boshlanish"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "O‘rnatish",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/install"
   }
 }

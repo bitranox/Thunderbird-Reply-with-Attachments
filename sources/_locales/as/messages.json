@@ -1,78 +1,104 @@
 {
   "extName": {
-    "message": "সংযুক্তিসহ উত্তৰ"
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
   },
   "extDescription": {
-    "message": "স্বয়ংক্ৰিয়ভাৱে ইমেইল উত্তৰত মূল সংযুক্তিসমূহ অন্তৰ্ভুক্ত কৰে।"
+    "message": "ইমেইল উত্তৰত মূল সংলগ্ন ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে সামিল কৰে।"
   },
   "composeTitle": {
-    "message": "সংযুক্তিসহ উত্তৰ"
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
   },
   "optionsTitle": {
-    "message": "সংযুক্তিসহ উত্তৰ — বিকল্পসমূহ"
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ — বিকল্পসমূহ"
   },
   "confirmTitle": {
-    "message": "সংযুক্তি নিশ্চিতকৰণ"
+    "message": "সংলগ্ন ফাইল নিশ্চিতকৰণ"
   },
   "uiHeader": {
-    "message": "সংযুক্তিসহ উত্তৰ"
+    "message": "সংলগ্ন ফাইলসহ উত্তৰ"
   },
   "uiNoOptions": {
-    "message": "বৰ্তমানে সংৰূপণ কৰিবলৈ কোনো বিকল্প নাই।"
+    "message": "বৰ্তমানে সংৰূপণৰ বাবে কোনো বিকল্প নাই।"
   },
   "uiSupport": {
-    "message": "আপুনি এই এড-অনটো ভালপালে নে? সৰু অনুদানৰ জৰিয়তে মোক সমৰ্থন কৰক:"
+    "message": "আপুনি এই এড-অনটো ভাল পোৱা নে? অনুগ্ৰহ কৰি সৰু এটা অৱদানৰে মোক সমৰ্থন কৰক:"
+  },
+  "uiRateATNText": {
+    "message": "ATN-ত মূল্যায়ন কৰক"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "এতিয়াই অনুদান কৰক"
   },
+  "uiIDonated": {
+    "message": "মই অনুদান কৰিছোঁ"
+  },
+  "uiDonateSnoozed": {
+    "message": "ধন্যবাদ! অনুদান অনুৰোধটো 90 দিনৰ বাবে লুকোৱা হ'ল।"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 লৈকে লুকোৱা",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "অনুদান পুনৰ দেখুৱাওক"
+  },
+  "uiDonateRestored": {
+    "message": "অনুদান অনুৰোধটো পুনৰ দৃশ্যমান হৈছে।"
+  },
   "uiGithubText": {
-    "message": "বাগ প্ৰতিবেদন বা অন্য কোনো জিজ্ঞাসাৰ বাবে, অনুগ্ৰহ কৰি মোৰ"
+    "message": "বাগ প্ৰতিবেদন বা অন্য জিজ্ঞাসাৰ বাবে, অনুগ্ৰহ কৰি পৰিদৰ্শন কৰক মোৰ"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub পৃষ্ঠা"
   },
   "iconAlt": {
-    "message": "সংযুক্তিসহ উত্তৰৰ আইকন"
+    "message": "সংলগ্ন ফাইলসহ উত্তৰৰ আইকন"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ফাইল-নামসমূহৰ ক'লা তালিকা (glob পেটাৰ্নসমূহ)"
+    "message": "ফাইলনামসমূহৰ কালো তালিকা (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "এই পেটাৰ্নসমূহৰ যিকোনো এটাৰ সৈতে নাম মিল থকা ফাইলসমূহ কেতিয়াও স্বয়ংক্ৰিয়ভাৱে সংযুক্ত নহ'ব। প্ৰতিটো শাৰীত এটা পেটাৰ্ন লিখক। উদাহৰণ: *.png, smime.*, *.p7s"
+    "message": "এই পেটাৰ্নসমূহৰ যিকোনো এটা সৈতে নাম মেলা ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে কেতিয়াও সংলগ্ন নোহোৱা হ'ব। প্ৰতি শাৰী এটা পেটাৰ্ন। উদাহৰণ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ক'লা তালিকাৰ বাবে সংযুক্তিসমূহ বাদ পৰিলে সতৰ্ক কৰক"
+    "message": "কালো তালিকাৰ বাবে সংলগ্ন ফাইলসমূহ বাদ পেলে সতৰ্ক কৰক"
   },
   "uiSave": {
     "message": "সংৰক্ষণ কৰক"
   },
   "uiSaving": {
-    "message": "সংৰক্ষণ কৰা হৈছে…"
+    "message": "সংৰক্ষণ কৰি আছে…"
   },
   "uiReset": {
-    "message": "ডিফ'ল্টলৈ ৰিছেট কৰক"
+    "message": "পূৰ্বনির্ধাৰিতলৈ ৰিছেট কৰক"
   },
   "uiSaved": {
-    "message": "সংৰক্ষণ কৰা হৈছে।"
+    "message": "সংৰক্ষিত।"
   },
   "uiResetDone": {
-    "message": "ৰিছেট কৰা হৈছে।"
+    "message": "ৰিছেট কৰা হ'ল।"
   },
   "uiConfirmHeader": {
     "message": "নিশ্চিতকৰণ"
   },
   "uiConfirmLabel": {
-    "message": "সংযুক্তি যোগ কৰাৰ আগতে সোধক"
+    "message": "সংলগ্ন ফাইল যোগ কৰাৰ আগতে সুধিব"
   },
   "uiConfirmHelp": {
-    "message": "সংযুক্তিসমূহ সঁচাকৈয়ে যোগ হ'ব লগা হলেহে এটাই সৰু নিশ্চিতকৰণ ডায়লগ দেখা যায়। কীব'ৰ্ড: Y বা J = হয়; N বা Esc = নহয়।"
+    "message": "সংলগ্ন ফাইল বাস্তৱতে যোগ হ'ব লাগিলে হে এটা সৰু নিশ্চিতকৰণ ডাইলগ দেখা যাব। কীবোৰ্ড: Y বা J = হয়; N বা Esc = নহয়।"
   },
   "confirmAddOne": {
-    "message": "সংযুক্তি যোগ কৰিব নে: $1?",
+    "message": "সংলগ্ন ফাইল যোগ কৰিব নে: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "সংযুক্তিসমূহ যোগ কৰিব নে ($1): $2$3?",
+    "message": "সংলগ্ন ফাইলসমূহ যোগ কৰিব নে ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -94,16 +120,16 @@
     }
   },
   "confirmYes": {
-    "message": "হয়"
+    "message": "হয়"
   },
   "confirmNo": {
-    "message": "নহয়"
+    "message": "নহয়"
   },
   "warnBlacklistTitle": {
-    "message": "ক'লা তালিকাৰ বাবে বাদ দিয়া"
+    "message": "কালো তালিকাৰ দ্বাৰা বাদ দিয়া হৈছে"
   },
   "warnBlacklistIntro": {
-    "message": "তলত দিয়া ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে সংযুক্ত নহ'ব:"
+    "message": "তলৰ ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে সংলগ্ন নোহোৱা হ'ব:"
   },
   "warnColFile": {
     "message": "ফাইল"
@@ -118,15 +144,27 @@
     "message": "পূৰ্বনির্ধাৰিত উত্তৰ"
   },
   "uiConfirmDefaultYes": {
-    "message": "হয়"
+    "message": "হয়"
   },
   "uiConfirmDefaultNo": {
-    "message": "নহয়"
+    "message": "নহয়"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "দলিলাদি:"
+  },
+  "uiDocsButton": {
+    "message": "ডক্স খোলক"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

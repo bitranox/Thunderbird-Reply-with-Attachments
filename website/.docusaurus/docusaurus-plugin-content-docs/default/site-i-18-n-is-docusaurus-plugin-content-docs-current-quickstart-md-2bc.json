@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Hröðufyrirkomulag",
+  "description": "Hröðufyrirkomulag",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Hröðufyrirkomulag",
+    "sidebar_label": "Hröðufyrirkomulag"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Uppsetning",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/install"
   }
 }

@@ -1,51 +1,77 @@
 {
   "extName": {
-    "message": "Хавсралттай хариулах"
+    "message": "Хавсралттайгаар хариулах"
   },
   "extDescription": {
-    "message": "Имэйлд хариулахдаа анхны хавсралтуудыг автоматаар хамтад нь оруулна."
+    "message": "Имэйл хариу бичихдээ эхний хавсралтуудыг автоматаар оруулна."
   },
   "composeTitle": {
-    "message": "Хавсралттай хариулах"
+    "message": "Хавсралттайгаар хариулах"
   },
   "optionsTitle": {
-    "message": "Хавсралттай хариулах — Тохиргоо"
+    "message": "Хавсралттайгаар хариулах — Тохиргоо"
   },
   "confirmTitle": {
-    "message": "Хавсралтыг баталгаажуулах"
+    "message": "Хавсралтыг батлах"
   },
   "uiHeader": {
-    "message": "Хавсралттай хариулах"
+    "message": "Хавсралттайгаар хариулах"
   },
   "uiNoOptions": {
-    "message": "Одоогоор тохируулах зүйл байхгүй."
+    "message": "Одоогоор тохируулах сонголт байхгүй."
   },
   "uiSupport": {
-    "message": "Энэ нэмэлт танд таалагдаж байна уу? Жижигхэн хандив өгч намайг дэмжээрэй:"
+    "message": "Энэ нэмэлт танд таалагдаж байна уу? Жижигхэн хандив өгч дэмжээрэй:"
+  },
+  "uiRateATNText": {
+    "message": "ATN дээр үнэлгээ өгнө үү"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Одоо хандивлах"
   },
+  "uiIDonated": {
+    "message": "Би хандивласан"
+  },
+  "uiDonateSnoozed": {
+    "message": "Баярлалаа! Хандивын сануулга 90 хоногийн турш нуугдана."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 хүртэл нуусан",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Хандивын сануулгыг дахин харуулах"
+  },
+  "uiDonateRestored": {
+    "message": "Хандивын сануулга дахин харагдах боллоо."
+  },
   "uiGithubText": {
-    "message": "Алдаа мэдээлэх эсвэл бусад асуулт байвал миний"
+    "message": "Алдааны тайлан эсвэл бусад асуулт байвал миний"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub хуудас"
   },
   "iconAlt": {
-    "message": "Хавсралттай хариулах дүрс"
+    "message": "Хавсралттайгаар хариулах дүрс"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Файлын нэрийн хар жагсаалт (glob загварууд)"
+    "message": "Файлын нэрийн хар жагсаалт (glob хэв маягууд)"
   },
   "uiBlacklistHelp": {
-    "message": "Нэр нь эдгээр загваруудын аль нэгтэй таарах файлууд хэзээ ч автоматаар хавсаргагдахгүй. Мөр бүрт нэг загвар. Жишээ: *.png, smime.*, *.p7s"
+    "message": "Эдгээр хэв маягуудын аль нэгтэй таарах файлуудыг автоматаар хэзээ ч хавсаргахгүй. Мөр бүрт нэг хэв маяг. Жишээ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Хар жагсаалтад орсны улмаас хавсралтууд хасагдвал анхааруулах"
+    "message": "Хар жагсаалтад орсноор хавсралтууд хасагдсан бол анхааруулах"
   },
   "uiSave": {
     "message": "Хадгалах"
@@ -54,22 +80,22 @@
     "message": "Хадгалж байна…"
   },
   "uiReset": {
-    "message": "Анхны тохиргоонд буцаах"
+    "message": "Үндсэн тохиргоо руу буцаах"
   },
   "uiSaved": {
-    "message": "Хадгаллаа."
+    "message": "Хадгалагдлаа."
   },
   "uiResetDone": {
-    "message": "Сэргээв."
+    "message": "Сэргээгдлээ."
   },
   "uiConfirmHeader": {
     "message": "Баталгаажуулалт"
   },
   "uiConfirmLabel": {
-    "message": "Хавсралтуудыг нэмэхийн өмнө асуух"
+    "message": "Хавсралт нэмэхийн өмнө асуух"
   },
   "uiConfirmHelp": {
-    "message": "Жижиг баталгаажуулах цонх зөвхөн хавсралтууд үнэхээр нэмэгдэх үед л гарч ирнэ. Гарны товчлуурууд: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
+    "message": "Хавсралт үнэхээр нэмэгдэх үед л жижиг баталгаажуулах цонх гарна. Гар товч: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
   },
   "confirmAddOne": {
     "message": "Хавсралт нэмэх: $1?",
@@ -109,13 +135,13 @@
     "message": "Файл"
   },
   "warnColPattern": {
-    "message": "Загвар"
+    "message": "Хэв маяг"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Өгөгдмөл хариулт"
+    "message": "Анхдагч хариулт"
   },
   "uiConfirmDefaultYes": {
     "message": "Тийм"
@@ -124,9 +150,21 @@
     "message": "Үгүй"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Баримт бичиг:"
+  },
+  "uiDocsButton": {
+    "message": "Баримтыг нээх"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

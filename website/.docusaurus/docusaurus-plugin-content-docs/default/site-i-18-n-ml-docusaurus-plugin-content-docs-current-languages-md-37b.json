@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ഭാഷകൾ",
+  "description": "Languages",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ഭാഷകൾ",
+    "sidebar_label": "ഭാഷകൾ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "വികസനം",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "ശബ്ദഗ്രദ്ധി",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/glossary"
   }
 }

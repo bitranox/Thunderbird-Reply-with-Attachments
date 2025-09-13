@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'اجازه نامه'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## اجازه نامه
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note لږ تر لږه اجازه نامه
+هیڅ کور (ویب) اجازه نامه د دې اضافه کولو لخوا غوښتنه نه ده شوې. دا اضافه کول تیلو میتر نه راټولوي یا د شالید شبکې غوښتنې نه کوي. لاړ شئ [شخصي خوندیتوب](privacy).
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+دا اضافه یوازې یوه د کوچني، هدف لرونکي د اجازه نامه مجموعه غوښتنه کوي. ولې هر یو ته اړتیا ده:
+
+- `compose`: د ترکیب پیښو ته کتنه، په ځواب کې ضمیمې لست کول/اضافه کول.
+- `messagesRead`: متا ډاډه لوستل او د اصل پیغام څخه د ضمیمه فایلونه ترلاسه کول.
+- `scripting`: د ترکیب وخت کې کله چې فعال وي، د کوچني تایید لاګ انجنټر کول.
+- `windows`: د پیغام لېږلو ناکامۍ په صورت کې د وروستي چانس په توګه یوه کوچنۍ تایید ځواب.
+- `sessions`: د تکراري پروسس مخنیوي لپاره د هر ټب لپاره جھنډه ذخیره کړئ.
+- `storage`: اختیارونه خوندي کړئ (توره لېست، د تایید او بدلونې، د ډیفالټ ځواب).
+- `tabs`: د تیرو غوښتنو لپاره د ترکیب ټب ته هدف شوی پیغام.
+
+اضافي یادونې:
+
+- هیڅ کور اجازه نامه (ویب سرچینې) د دې اضافي لخوا غوښتنه نه ده شوې.
+- `tabs` اجازه یوازې مهالویش د ترکیب ټب هدف کولو لپاره کارول کیږي کله چې د اختیاري تایید لاګ همغږي کوي؛ دا د تاریخي لوستلو یا پاڼو ته د لاړو لپاره کارول نه کیږي.
+
+دا په سرچینه کې مستند شوي او په CI کې ازمول شوي. دې اضافه تیلو میتر نه راټولوي.
+
+---
+
+### لنډیز (اجازه نامه → هدف) {#permissions-summary}
+
+| اجازه نامه     | ولې اړتیا لري                                                      |
+| -------------- | ------------------------------------------------------------------ |
+| `compose`      | د ترکیب پیښو مشاهدې؛ ستاسو په ځواب کې ضمیمې لست او اضافه کول.      |
+| `messagesRead` | د اصل پیغام ضمیمې لست او د فایل معلومات ترلاسه کول.                |
+| `scripting`    | د فعالولو پر مهال د تایید لپاره د خفی UI درجو په نښه کول.          |
+| `windows`      | که پیغام لېږل ناکام شي (نادره) د فالبیک پاپ اپ.                    |
+| `sessions`     | د تکراري پروسس مخنیوي لپاره د هر ټب لپاره جھنډه ذخیره کړئ.         |
+| `storage`      | اختیارونه خوندي کړئ (توره لېست، د تایید او بدلونې، د ډیفالټ ځواب). |
+| `tabs`         | د تایید غوښتنو لپاره د ترکیب ټب ته هدف شوی پیغام.                  |
+| (کور اجازه)    | هیڅ نه — اضافي د ویب سرچینو غوښتنه نه کوي.                         |
+
+---
+
+## نه غوښتل شوی {#not-requested}
+
+- `compose.save`, `compose.send` — دا اضافه نه ستاسو په استازیتوب بریښنالیک خوندي کوي یا لېږي.
+
+نور هم وګورئ: [شخصي خوندیتوب](privacy) — هیڅ تیلو میتر، هیڅ شالید شبکه، یوازې د کاروونکي لخوا iniciar شوې لینکونه.
+
+---

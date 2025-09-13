@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ለውጦች መዝገብ",
-  "description": "ሙሉውን ታሪክ በማከማቻው ውስጥ ያለውን CHANGELOG.md ፋይል ይመልከቱ።",
+  "title": "የለውጥ ታሪክ",
+  "description": "የለውጥ ታሪክ",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ለውጦች መዝገብ"
+    "title": "የለውጥ ታሪክ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/licence"
+    "title": "የፈቃድ ቅጥር",
+    "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/license"
   }
 }

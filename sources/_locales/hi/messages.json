@@ -1,30 +1,56 @@
 {
   "extName": {
-    "message": "संलग्नकों के साथ उत्तर"
+    "message": "संलग्नकों के साथ उत्तर दें"
   },
   "extDescription": {
     "message": "ईमेल उत्तरों में मूल संलग्नकों को स्वतः शामिल करें।"
   },
   "composeTitle": {
-    "message": "संलग्नकों के साथ उत्तर"
+    "message": "संलग्नकों के साथ उत्तर दें"
   },
   "optionsTitle": {
-    "message": "संलग्नकों के साथ उत्तर — विकल्प"
+    "message": "संलग्नकों के साथ उत्तर दें — विकल्प"
   },
   "confirmTitle": {
     "message": "संलग्नकों की पुष्टि"
   },
   "uiHeader": {
-    "message": "संलग्नकों के साथ उत्तर"
+    "message": "संलग्नकों के साथ उत्तर दें"
   },
   "uiNoOptions": {
     "message": "वर्तमान में कॉन्फ़िगर करने के लिए कोई विकल्प नहीं हैं।"
   },
   "uiSupport": {
-    "message": "क्या आपको यह ऐड‑ऑन पसंद है? एक छोटे से योगदान से मेरा समर्थन करें:"
+    "message": "क्या आपको यह ऐड‑ऑन पसंद है? कृपया छोटे से योगदान से मेरा समर्थन करें:"
+  },
+  "uiRateATNText": {
+    "message": "कृपया ATN पर रेट करें"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "अभी दान करें"
+  },
+  "uiIDonated": {
+    "message": "मैंने दान किया"
+  },
+  "uiDonateSnoozed": {
+    "message": "धन्यवाद! दान प्रॉम्प्ट 90 दिनों के लिए छिपा दिया गया है।"
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 तक छिपाया गया है",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "दान फिर से दिखाएँ"
+  },
+  "uiDonateRestored": {
+    "message": "दान प्रॉम्प्ट फिर से दिखाई दे रहा है।"
   },
   "uiGithubText": {
     "message": "बग रिपोर्ट या अन्य पूछताछ के लिए, कृपया मेरा"
@@ -33,19 +59,19 @@
     "message": "GitHub पेज"
   },
   "iconAlt": {
-    "message": "संलग्नकों के साथ उत्तर आइकन"
+    "message": "संलग्नकों के साथ उत्तर दें का आइकन"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "फ़ाइल नामों की ब्लैकलिस्ट (ग्लोब पैटर्न)"
+    "message": "फ़ाइल नामों की काली सूची (ग्लोब पैटर्न)"
   },
   "uiBlacklistHelp": {
-    "message": "जिन फ़ाइलों के नाम इन पैटर्नों में से किसी से मेल खाते हैं, वे कभी भी स्वचालित रूप से संलग्न नहीं की जाएँगी। प्रति पंक्ति एक पैटर्न। उदाहरण: *.png, smime.*, *.p7s"
+    "message": "जिन फ़ाइलों के नाम इन पैटर्नों में से किसी से मेल खाते हैं, वे कभी भी स्वतः संलग्न नहीं की जाएँगी। प्रति पंक्ति एक पैटर्न। उदाहरण: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "यदि ब्लैकलिस्ट के कारण संलग्नक बाहर किए जाएँ तो चेतावनी दें"
+    "message": "यदि संलग्नक काली सूची के कारण बाहर कर दिए जाएँ तो चेतावनी दें"
   },
   "uiSave": {
     "message": "सहेजें"
@@ -57,19 +83,19 @@
     "message": "डिफ़ॉल्ट पर रीसेट करें"
   },
   "uiSaved": {
-    "message": "सहेजा गया।"
+    "message": "सहेजा गया."
   },
   "uiResetDone": {
-    "message": "रीसेट किया गया।"
+    "message": "रीसेट."
   },
   "uiConfirmHeader": {
-    "message": "पुष्टि"
+    "message": "पुष्टिकरण"
   },
   "uiConfirmLabel": {
     "message": "संलग्नक जोड़ने से पहले पूछें"
   },
   "uiConfirmHelp": {
-    "message": "एक छोटा पुष्टिकरण संवाद केवल तब दिखाई देगा जब वास्तव में संलग्नक जोड़े जाएँगे। कीबोर्ड: Y या J = हाँ; N या Esc = नहीं।"
+    "message": "एक छोटा पुष्टिकरण डायलॉग केवल तभी दिखाई देता है जब वास्तव में संलग्नक जोड़े जाने वाले हों। कीबोर्ड: Y या J = हाँ; N या Esc = नहीं।"
   },
   "confirmAddOne": {
     "message": "संलग्नक जोड़ें: $1?",
@@ -100,10 +126,10 @@
     "message": "नहीं"
   },
   "warnBlacklistTitle": {
-    "message": "ब्लैकलिस्ट द्वारा बाहर किया गया"
+    "message": "काली सूची के कारण बाहर किया गया"
   },
   "warnBlacklistIntro": {
-    "message": "निम्न फ़ाइलें स्वचालित रूप से संलग्न नहीं की जाएँगी:"
+    "message": "निम्न फ़ाइलें स्वतः संलग्न नहीं की जाएँगी:"
   },
   "warnColFile": {
     "message": "फ़ाइल"
@@ -112,7 +138,7 @@
     "message": "पैटर्न"
   },
   "warnOk": {
-    "message": "ठीक"
+    "message": "ठीक है"
   },
   "uiConfirmDefaultHeader": {
     "message": "डिफ़ॉल्ट उत्तर"
@@ -124,9 +150,21 @@
     "message": "नहीं"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hi/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "प्रलेखन:"
+  },
+  "uiDocsButton": {
+    "message": "डॉक्स खोलें"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

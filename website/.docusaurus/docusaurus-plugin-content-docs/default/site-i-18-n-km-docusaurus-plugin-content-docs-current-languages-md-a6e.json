@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ភាសា",
+  "description": "Languages",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ភាសា",
+    "sidebar_label": "ភាសា"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "ការអភិវឌ្ឍន៍",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "ពាក្យស្តីពាក្យលក្ខណៈ",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/glossary"
   }
 }

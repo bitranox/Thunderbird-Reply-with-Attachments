@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Jazyky'
+sidebar_label: 'Jazyky'
 ---
 
-# Language Support
+## Jazyky
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Tento zoznam zohľadňuje preklady dokumentácie webovej stránky a doplnkových používateľských rozhraní.
+Masívna podpora jazykov vďaka AI prekladovým nástrojom — pokrýva 100 jazykov.
 
-List below is sorted by the language code.
+Zoznam nižšie je usporiadaný podľa jazykového kódu.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Pozrite si tiež: [Glosár](glossary) pre kanonické termíny používateľského rozhrania používané vo všetkých lokalitách.
+
+---
+
+## Zoznam jazykov {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Prepnite locale dokumentácie pomocou meniča jazykov v hlavičke stránky (URL prefix sa zodpovedajúcim spôsobom zmení). Jazyk používateľského rozhrania Thunderbird je nezávislý od jazyka webovej stránky a nasleduje vaše nastavenia Thunderbird.
+
+Presmerovanie na vstupnú stránku
+
+- Ak je stránka vytvorená s preferovaným jazykom vášho prehliadača, návšteva základného URL dokumentácie pod základným URL projektu automaticky presmeruje na tento jazyk. Použite prepínač jazykov (alebo `/en/`), aby ste zostali v angličtine.
+
+---
+
+## Prispieť k prekladom {#contribute-translations}
+
+- Našli ste problém v preklade? Prosím, otvorí GitHub issue alebo PR.
+- Preferujte úpravy voči anglickému zdroju pod `website/docs/`; nástroje správcov šíria aktualizácie do ďalších jazykov.
+  Angličtina je zdrojom pravdy pre dokumentáciu; aktualizácie prekladu sa získavajú z EN počas pracovného postupu správcov.
+
+### Domovská stránka, navigačný panel, dolné menu UI
+
+- Tieto reťazce sú uložené v `website/i18n/en/code.json` a sú preložené do všetkých jazykov prostredníctvom úlohy správcov:
+  - `make translate_web_index` (vyžaduje `OPENAI_API_KEY`)
+  - Obmedzte jazyky pomocou `OPTS="--locales de,fr"`; prepíšte existujúce hodnoty pomocou `OPTS="--force"`.
+
+### Webová stránka vs. UI {#website-vs-ui}
+
+- Jazyk webovej stránky a jazyk doplnkového používateľského rozhrania sú nezávislé; výber jazyka mení iba dokumentáciu. Jazyk používateľského rozhrania Thunderbird nasleduje vaše nastavenia Thunderbird.

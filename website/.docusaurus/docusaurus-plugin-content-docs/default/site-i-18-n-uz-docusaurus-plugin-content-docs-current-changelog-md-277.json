@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "O‘zgarishlar jurnali",
-  "description": "To‘liq tarixni repodagi CHANGELOG.md faylida ko‘ring.",
+  "title": "O'zgartirishlar jurnali",
+  "description": "Changelog",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "O‘zgarishlar jurnali"
+    "title": "O'zgartirishlar jurnali"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/licence"
+    "title": "Litsenziya",
+    "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/license"
   }
 }

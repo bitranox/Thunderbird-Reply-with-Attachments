@@ -1,17 +1,34 @@
 ---
 id: features
-title: Tính năng
-sidebar_label: Tính năng
+title: 'Tính năng'
+sidebar_label: 'Tính năng'
 ---
 
-## Tính năng
+## Features {#features}
 
-- Tự động đính kèm các tệp từ email gốc khi trả lời.
-- Hành vi có thể cấu hình: tệp đính kèm có thể
-  - được thêm tự động, hoặc
-  - chỉ thêm sau khi xác nhận (hộp thoại nhỏ, dễ truy cập). Trong Tùy chọn bạn có thể bật xác nhận và chọn câu trả lời mặc định (Có/Không).
-- Danh sách đen tên tệp (mẫu glob) ngăn không cho một số tệp được đính kèm tự động. Ví dụ: `*intern*`, `*secret*`, `*passwor*`.
-  Việc khớp không phân biệt hoa thường và chỉ kiểm tra tên tệp; trong Tùy chọn, cung cấp một mẫu trên mỗi dòng.
-- Cảnh báo danh sách đen (tùy chọn, bật theo mặc định): khi các tệp bị danh sách đen loại trừ, một hộp thoại nhỏ sẽ liệt kê tệp và các mẫu khớp. Thân thiện với chế độ tối và hỗ trợ bàn phím (Enter/Esc để đóng).
-- Thêm các tệp gốc ngay cả khi bạn đã tự đính kèm thứ gì đó; tránh trùng lặp theo tên tệp.
-- Bỏ qua chứng chỉ SMIME và hình ảnh nội tuyến để tránh tệp đính kèm không cần thiết.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Kwinjiza",
+  "description": "Kwinjiza binyuze muri \"Thunderbird Add-ons na Themes\"",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Kwinjiza",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Kwinjiza"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Igishushanyo Mbonera",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Imiterere",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/configuration"
   }
 }

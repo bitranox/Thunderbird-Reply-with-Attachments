@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Dziennik zmian",
-  "description": "Pełną historię znajdziesz w pliku CHANGELOG.md w repozytorium.",
+  "description": "Changelog",
   "source": "@site/i18n/pl/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/pl/docs/licence"
+    "title": "Licencja",
+    "permalink": "/Thunderbird-Reply-with-Attachments/pl/docs/license"
   }
 }

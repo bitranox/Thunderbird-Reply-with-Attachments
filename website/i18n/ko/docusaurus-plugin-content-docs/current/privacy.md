@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: 개인정보
-sidebar_label: 개인정보
+title: '개인정보 보호'
+sidebar_label: '개인정보 보호'
 ---
 
-첨부 파일 포함하여 회신은 분석/텔레메트리를 수집하지 않으며 데이터를 외부로 전송하지 않습니다.
+## Privacy
 
-부가 기능이 하는 일:
+:::note No telemetry; no background network
+This add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Any network access happens only when you click an external link (Docs, GitHub, Donate).
+:::
 
-- 원본 메시지에서 첨부의 메타데이터와 파일을 로컬(Thunderbird API)로 읽어 답장에 첨부합니다.
-- 옵션(블랙리스트, 확인, 기본 답변)을 Thunderbird의 로컬 저장소에 저장합니다.
+Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
 
-하지 않는 일:
+What the add-on does:
 
-- 추적, 분석, 크래시 보고, 원격 로깅을 하지 않습니다.
-- 사용자가 외부 링크(Docs, GitHub, 기부)를 명시적으로 열지 않는 한 백그라운드 네트워크 요청이 없습니다.
+- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
+- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
 
-권한은 [권한](permissions) 페이지에 설명되어 있습니다.
+What the add-on does not do:
 
-## 콘텐츠 보안 정책(CSP)
+- No tracking, analytics, crash reporting, or remote logging.
+- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
 
-옵션 및 팝업 페이지는 인라인 스크립트를 사용하지 않습니다. 모든 JavaScript는 Thunderbird의 엄격한 CSP를 준수하기 위해 부가 기능에 포함된 파일에서 로드됩니다. 문서의 코드 조각은 예시일 뿐이며 부가 기능에서 실행되지 않습니다.
+Permissions are documented on the [Permissions](permissions) page.
+
+---
+
+## Content Security Policy (CSP) {#content-security-policy-csp}
+
+The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add-on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add-on.
+
+---
+
+## Data storage {#data-storage}
+
+- User preferences (blacklist, confirmation toggle, default answer) are stored in Thunderbird’s `storage.local` for this add-on.
+- No cloud sync is performed by the add-on.
+
+---
+
+## Network {#network}
+
+- The add-on performs no background network activity.
+- Any network access happens only when you click links (Docs, GitHub, Donate) or when Thunderbird itself performs normal operations unrelated to this add-on.
+
+---
+
+## Data removal {#data-removal}
+
+- Uninstalling the add‑on removes its code.
+- Settings are kept only in Thunderbird’s `storage.local` and are removed at uninstall; no external storage is used.
+- Reset settings without uninstalling:
+  - Options page: use “Reset to defaults” for the blacklist and blacklist warning.
+  - Advanced: in Thunderbird → Tools → Developer Tools → Debug Add‑ons, open the extension’s storage and clear keys if needed.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Tính năng",
-  "description": "Tính năng",
+  "description": "Features",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Bắt đầu nhanh",
+    "title": "Khởi đầu nhanh",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/quickstart"
   }
 }

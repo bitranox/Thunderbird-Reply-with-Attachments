@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Kulingana",
   "description": "Compatibility",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Kulingana",
+    "sidebar_label": "Kulingana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Kugwiritsa Ntchito",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Malo Okwamukiriza",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/permissions"
   }
 }

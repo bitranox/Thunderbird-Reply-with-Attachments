@@ -12,6 +12,25 @@
   - bash_clean_code.md
   - bash_small_functions.md
 
+always apply those Rules :
+
+- core_programming_solid.md
+
+when writing or refracturing Bash scripts, additionally apply those Rules :
+
+- bash_clean_architecture.md
+- bash_clean_code.md
+- bash_small_functions.md
+
+when writing or refracturing JS scripts, additionally apply those Rules :
+
+- js_clean_architecture.md
+- js_clean_code.md
+
+when writing or refracturing thunderbird specific code apply those Rules :
+
+- thunderbird_mail_extensions.md
+
 ## Project Structure & Module Organization
 
 - Root: packaging script `distribution_zip_packer.sh`, docs, screenshots.
@@ -25,6 +44,9 @@
 ## Build, Test, and Development Commands
 
 - `make help` — list all targets with one‑line docs (reads lines annotated with `##`).
+- Interactive menu (default): running plain `make` opens a menu (whiptail) to pick a target and optionally pass arguments (e.g., `OPTS="--locales en,de"`). If `whiptail` is not available, it falls back to `make help`.
+- `make menu` — open the interactive menu explicitly (same as running `make` with no args).
+- `make clean` — remove local artifacts (`tmp/`, `web-local-preview/`, `website/build/`, temporary linkcheck/publish folders).
 
 - Formatting & linting
   - `make prettier` — format the repository in place (writes changes).
@@ -33,29 +55,33 @@
   - `make lint` — web‑ext lint on `sources/` (creates a temporary `sources/manifest.json` from `manifest_LOCAL.json`, ignores ZIP artifacts; non‑fatal).
 
 - Tests
-  - `make test` — Prettier (write+check), ESLint, then Vitest. Coverage runs if `@vitest/coverage-v8` is installed (thresholds in `vitest.config.mjs`).
-  - `make test-i18n` — i18n‑focused tests only: addon UI strings (keys/placeholders/titles/URLs/parity) and website docs across all locales (one test per EN doc per locale verifying file existence, matching `id`, non‑empty `title`, and `sidebar_label` when EN has it).
+- `make test` — Prettier (write), ESLint, then Vitest. Coverage runs if `@vitest/coverage-v8` is installed (thresholds in `vitest.config.mjs`). Also runs a docs URL guard that fails when non‑EN localized docs contain absolute EN docs URLs.
+  - `make test-i18n` — i18n‑focused tests only: addon UI strings (keys/placeholders/titles/URLs/parity) and website docs across all locales (one test per EN doc per locale verifying file existence, matching `id`, non‑empty `title`, and `sidebar_label` when EN has it). Also runs the docs URL guard described above.
 
 - Packaging
   - `make pack` — run linter then build ATN and LOCAL ZIPs (wraps `distribution_zip_packer.sh`). Artifacts: `reply-with-attachments-plugin.zip` (ATN) and a timestamped `*-LOCAL.zip`.
 
 - Web (alphabetical)
-  - `make web-build` — build the Docusaurus site into `website/build`.
-  - `make web-build-linkcheck` — offline‑safe link check; accepts `OPTS="--locales en|all"` (builds then scans; rewrites GH Pages `baseUrl`, skips remote HTTP[S]).
-  - `make web-build-local-preview` — build and sync the docs into a local `gh-pages` worktree (use `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
-  - `make web-push-github` — build if needed and push `website/build` to the `gh-pages` branch on the Git remote.
+  - `make web_build` — build the Docusaurus site into `website/build`.
+- `make web_build_linkcheck` — offline‑safe link check; accepts `OPTS="--locales en|all"`. Builds then scans all generated pages; treats `/Thunderbird-Reply-with-Attachments/` as base prefix; skips external HTTP(S) and anchors; no network fetch.
+  - `make web_build_local_preview` — build and sync the docs into a local `gh-pages` worktree (use `OPTS`, e.g., `--locales en|all --no-test --no-link-check --dry-run`).
+  - `make web_push_github` — build if needed and push `website/build` to the `gh-pages` branch on the Git remote.
+  - Note: the Docusaurus locale list is collapsed to a single comma‑separated line for readability (cosmetic only).
 
 - Translations
-  - `make translation-web` — interactive by default; prompts for docs and target locales, then translates from `website/docs` into `website/i18n/<lang>/...`.
+  - Docs (preferred Batch mode): `make translate_web_docs_batch OPTS="<doc|all> <lang|all>"`
     - Reads API key/model from `.env` (`OPENAI_API_KEY`, `OPENAI_MODEL`, optional `OPENAI_TEMPERATURE`).
     - With `OPTS`, pass tokens directly to the script: first the doc(s) or `all`, then locales or `all`.
-      - Examples: `make translation-web OPTS="all de,fr"`, `make translation-web OPTS="changelog.md de,fr"`, `make translation-web OPTS="features.md all"`.
-    - Alias: `make translate-web` — runs `translation-web` with defaults (no OPTS forwarding; interactive prompts).
-  - `make translation-app` — translate app UI strings from `sources/_locales/en/messages.json` to all locales under `sources/_locales` (logs to `translation_app.log`).
-  - `make translation-web-index` — translate website UI strings (homepage/navbar/footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<lang>/code.json` (except `en`). Uses OpenAI only (hardcoded).
+    - Examples: `make translate_web_docs_batch OPTS="all de,fr"`, `make translate_web_docs_batch OPTS="changelog.md de,fr"`
+    - Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, batch options: `OPENAI_BATCH_WINDOW` (default `24h`), `BATCH_POLL_INTERVAL_MS` (default `60000`), `BATCH_PER_REQUEST_LIMIT`.
+    - Logs: `translation_web_batch.log`.
+  - Docs (legacy Sync mode): `make translate_web_docs_sync OPTS="<doc|all> <lang|all>"` (synchronous per‑pair requests).
+    - Logs: `translation_web_sync.log`.
+  - `make translation_app` — translate app UI strings from `sources/_locales/en/messages.json` to all locales under `sources/_locales` (logs to `translation_app.log`).
+  - `make translation_web_index` — translate website UI strings (homepage/navbar/footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<lang>/code.json` (except `en`). Uses OpenAI only (hardcoded).
     - Requirements: export `OPENAI_API_KEY` (and optionally `OPENAI_MODEL`, e.g., `gpt-4o-mini`).
     - Optional `OPTS`: `--locales de,fr` to limit languages; `--force` to overwrite existing values; also accepts `--locale` and common typo `--localed`.
-    - Alias: `make translate-web-index`.
+    - Alias: `make translate_web_index`.
 
 - Manual install (dev)
   - Thunderbird → Tools → Add‑ons and Themes → gear → Install Add-on From File… → select the built ZIP (use the LOCAL ZIP for development).
@@ -63,6 +89,33 @@
 - Tips
   - Update version in both `sources/manifest_*.json` before packaging.
   - You can override the package manager by setting `NPM=...` (defaults to `npm`).
+
+### Common Make Targets (Alphabetical)
+
+| Target                       | One‑line description                                                                   |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| `clean`                      | Remove local build/preview artifacts (`tmp/`, `web-local-preview/`, `website/build/`). |
+| `commit`                     | Format, run tests (incl. i18n), update changelog, commit & push.                       |
+| `eslint`                     | Run ESLint via flat config (`npm run -s lint:eslint`).                                 |
+| `help`                       | List all targets with one‑line docs (sorted).                                          |
+| `lint`                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                   |
+| `menu`                       | Interactive menu to select a target and optional arguments.                            |
+| `pack`                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                             |
+| `prettier`                   | Format repository in place (writes changes).                                           |
+| `prettier_check`             | Prettier in check mode (no writes); fails if reformat needed.                          |
+| `prettier_write`             | Alias for `prettier`.                                                                  |
+| `test`                       | Prettier (write), ESLint, then Vitest (coverage if configured) + docs URL guard.       |
+| `test_i18n`                  | i18n‑only tests for add‑on strings and website parity + docs URL guard.                |
+| `translate_app`              | Alias for `translation_app`.                                                           |
+| `translation_app`            | Translate app UI strings from `sources/_locales/en/messages.json`.                     |
+| `translate_web_docs_batch`   | Translate website docs via OpenAI Batch API (preferred).                               |
+| `translate_web_docs_sync`    | Translate website docs synchronously (legacy, non-batch).                              |
+| `translate_web_index`        | Alias for `translation_web_index`.                                                     |
+| `translation_web_index`      | Translate website UI (`website/i18n/en/code.json` → `website/i18n/<lang>/code.json`).  |
+| `web_build`                  | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                |
+| `web_build_linkcheck`        | Offline‑safe link check (skips remote HTTP[S]).                                        |
+| `web_build_local_preview`    | Local gh‑pages preview; optional tests/link‑check; auto‑serve on 8080–8090.            |
+| `web_push_github`            | Push `website/build` to the `gh-pages` branch.                                         |
 
 ## Coding Style & Naming Conventions
 
@@ -97,24 +150,29 @@
 
 ## Translations (Docs)
 
-- Script: `scripts/translate_web_docs.js` (OpenAI only).
+- Scripts:
+  - Preferred batch mode: `scripts/translate_web_docs_batch.js` (OpenAI Batch API)
+  - Legacy sync mode: `scripts/translate_web_docs_sync.js`
 - Reads API key and model from `.env` at repo root:
   - `OPENAI_API_KEY=...`
   - `OPENAI_MODEL=gpt-4o-mini` (example)
   - Optional: `OPENAI_TEMPERATURE=0.2` (only set if your model supports non‑default temperatures; otherwise omit)
 - Source is always `website/docs/<filename>`; output goes to `website/i18n/<lang>/docusaurus-plugin-content-docs/current/<filename>`.
 - Usage:
-  - Interactive: `node scripts/translate_web_docs.js` (prompts for one/multiple filenames and one/multiple target languages or `all`).
-  - CLI examples:
-    - `node scripts/translate_web_docs.js changelog.md de`
-    - `node scripts/translate_web_docs.js changelog.md,features.md de,fr`
-    - `node scripts/translate_web_docs.js all all`
-- Make: see `make translation-web` examples above (pass `OPTS` as `<doc|all> <lang|all>` when not using interactive mode).
+  - Batch (preferred) via Make:
+    - `make translate_web_docs_batch OPTS="all de,fr"`
+    - `make translate_web_docs_batch OPTS="changelog.md de,fr"`
+  - Sync (legacy) via Make:
+    - `make translate_web_docs_sync OPTS="all de,fr"`
+  - Notes:
+    - Batch env: `OPENAI_BATCH_WINDOW` (default `24h`), `BATCH_POLL_INTERVAL_MS` (default `60000`), `BATCH_PER_REQUEST_LIMIT`.
+    - Logs: batch → `translation_web_batch.log`, sync → `translation_web_sync.log`.
 
 - Logging:
   - The translator writes a summary log to `translation_web.log` in the repo root.
 - Notes:
   - Preserves code blocks/inline code and front‑matter `id`; translates `title`/`sidebar_label`.
+  - Normalizes accidental double‑braced anchors in output (e.g., `{{#id}}` → `{#id}`).
   - Target languages are inferred from subfolders of `website/i18n`.
 
 ## Translations (App UI Strings)
@@ -143,7 +201,7 @@
 - when i18 strings are changed, only to that in sources/\_locales/en because other languages will be translated automatically,
   unless stated otherwise by the user. In doubt - ask the user
 
-## commit/pusg/github policy
+## commit/push/GitHub policy
 
 - run "make test" before any push to avoid lint/test breakage.
 - after push, monitor errors in the github actions and try to correct the errors

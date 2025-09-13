@@ -3,7 +3,7 @@
     "message": "Απάντηση με συνημμένα"
   },
   "extDescription": {
-    "message": "Συμπεριλαμβάνει αυτόματα τα αρχικά συνημμένα στις απαντήσεις email."
+    "message": "Αυτόματη συμπερίληψη των αρχικών συνημμένων στις απαντήσεις μηνυμάτων."
   },
   "composeTitle": {
     "message": "Απάντηση με συνημμένα"
@@ -18,16 +18,42 @@
     "message": "Απάντηση με συνημμένα"
   },
   "uiNoOptions": {
-    "message": "Προς το παρόν δεν υπάρχουν επιλογές για ρύθμιση."
+    "message": "Προς το παρόν δεν υπάρχουν επιλογές προς ρύθμιση."
   },
   "uiSupport": {
-    "message": "Σας αρέσει αυτό το πρόσθετο; Στηρίξτε με με μια μικρή συνεισφορά:"
+    "message": "Σας αρέσει αυτό το πρόσθετο; Παρακαλώ υποστηρίξτε με με μια μικρή συνεισφορά:"
+  },
+  "uiRateATNText": {
+    "message": "Παρακαλώ βαθμολογήστε στο ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Κάντε δωρεά τώρα"
   },
+  "uiIDonated": {
+    "message": "Έκανα δωρεά"
+  },
+  "uiDonateSnoozed": {
+    "message": "Ευχαριστώ! Η προτροπή για δωρεά αποκρύφθηκε για 90 ημέρες."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Κρυφό έως $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Εμφάνιση ξανά της προτροπής δωρεάς"
+  },
+  "uiDonateRestored": {
+    "message": "Η προτροπή για δωρεά είναι ξανά ορατή."
+  },
   "uiGithubText": {
-    "message": "Για αναφορές σφαλμάτων ή άλλες απορίες, παρακαλώ επισκεφθείτε τη"
+    "message": "Για αναφορές σφαλμάτων ή άλλες απορίες, επισκεφθείτε τη"
   },
   "uiGithubLinkLabel": {
     "message": "σελίδα μου στο GitHub"
@@ -45,13 +71,13 @@
     "message": "Αρχεία των οποίων τα ονόματα ταιριάζουν με οποιοδήποτε από αυτά τα μοτίβα δεν θα επισυνάπτονται ποτέ αυτόματα. Ένα μοτίβο ανά γραμμή. Παραδείγματα: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Προειδοποίηση αν τα συνημμένα αποκλείονται από τη λίστα αποκλεισμού"
+    "message": "Προειδοποίηση αν τα συνημμένα εξαιρούνται από τη λίστα αποκλεισμού"
   },
   "uiSave": {
     "message": "Αποθήκευση"
   },
   "uiSaving": {
-    "message": "Γίνεται αποθήκευση…"
+    "message": "Αποθήκευση…"
   },
   "uiReset": {
     "message": "Επαναφορά στις προεπιλογές"
@@ -60,16 +86,16 @@
     "message": "Αποθηκεύτηκε."
   },
   "uiResetDone": {
-    "message": "Έγινε επαναφορά."
+    "message": "Επαναφορά."
   },
   "uiConfirmHeader": {
     "message": "Επιβεβαίωση"
   },
   "uiConfirmLabel": {
-    "message": "Να γίνεται ερώτηση πριν την προσθήκη συνημμένων"
+    "message": "Να ζητείται επιβεβαίωση πριν από την προσθήκη συνημμένων"
   },
   "uiConfirmHelp": {
-    "message": "Ένα μικρό παράθυρο επιβεβαίωσης εμφανίζεται μόνο όταν πρόκειται πράγματι να προστεθούν συνημμένα. Πλήκτρα: Y ή J = Ναι; N ή Esc = Όχι."
+    "message": "Εμφανίζεται ένα μικρό παράθυρο επιβεβαίωσης μόνο όταν πρόκειται να προστεθούν συνημμένα. Πληκτρολόγιο: Y ή J = Ναι, N ή Esc = Όχι."
   },
   "confirmAddOne": {
     "message": "Να προστεθεί το συνημμένο: $1?",
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Να προστεθούν συνημμένα ($1): $2$3?",
+    "message": "Να προστεθούν τα συνημμένα ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "Όχι"
   },
   "warnBlacklistTitle": {
-    "message": "Αποκλείστηκαν από τη λίστα αποκλεισμού"
+    "message": "Εξαιρέθηκαν από τη λίστα αποκλεισμού"
   },
   "warnBlacklistIntro": {
-    "message": "Τα παρακάτω αρχεία δεν θα επισυνάπτονται αυτόματα:"
+    "message": "Τα παρακάτω αρχεία δεν θα επισυναφθούν αυτόματα:"
   },
   "warnColFile": {
     "message": "Αρχείο"
@@ -124,9 +150,21 @@
     "message": "Όχι"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Τεκμηρίωση:"
+  },
+  "uiDocsButton": {
+    "message": "Άνοιγμα τεκμηρίωσης"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

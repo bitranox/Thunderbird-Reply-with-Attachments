@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "description": "FAQ",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -14,15 +14,15 @@
   "frontMatter": {
     "id": "support",
     "title": "Support",
-    "sidebar_label": "Support"
+    "sidebar_label": "Soutien"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Lexique",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Intimité",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/privacy"
   }
 }

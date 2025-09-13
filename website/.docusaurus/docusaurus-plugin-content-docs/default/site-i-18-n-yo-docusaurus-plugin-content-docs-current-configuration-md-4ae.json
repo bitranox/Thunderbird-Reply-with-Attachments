@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Iṣeto",
+  "description": "Iṣeto",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Iṣeto"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Fífi ẹ̀ka",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Uso",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/usage"
   }
 }

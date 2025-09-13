@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "শব্দালংকাৰ",
+  "description": "Glossary",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "শব্দালংকাৰ",
+    "sidebar_label": "শব্দালংকাৰ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "ভাষাসমূহ",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "সহায়তা",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/support"
   }
 }

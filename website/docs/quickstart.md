@@ -1,12 +1,20 @@
 ---
 id: quickstart
-title: Quickstart
-sidebar_label: Quickstart
+title: 'Quickstart'
+sidebar_label: 'Quickstart'
 ---
 
 ---
 
 ## Quickstart
+
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
+
+:::note No telemetry; no background network
+The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::
 
 ---
 

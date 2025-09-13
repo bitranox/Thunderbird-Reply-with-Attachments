@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Instalasi",
+  "description": "Instalasi via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Instalasi",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalasi"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Panduan Gancang",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfigurasi",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/configuration"
   }
 }

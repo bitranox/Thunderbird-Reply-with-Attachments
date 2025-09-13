@@ -1,7 +1,7 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Languages'
+sidebar_label: 'Languages'
 ---
 
 ---
@@ -137,7 +137,7 @@ Landing page redirect
 ### Homepage, Navbar, Footer UI
 
 - These strings live in `website/i18n/en/code.json` and are translated to all locales via the maintainer task:
-  - `make translation-web-index` (requires `OPENAI_API_KEY`)
+  - `make translate_web_index` (requires `OPENAI_API_KEY`)
   - Limit languages with `OPTS="--locales de,fr"`; overwrite existing values with `OPTS="--force"`.
 
 ### Website vs. UI {#website-vs-ui}

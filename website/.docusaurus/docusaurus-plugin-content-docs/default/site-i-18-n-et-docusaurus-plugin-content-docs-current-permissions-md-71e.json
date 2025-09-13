@@ -1,7 +1,7 @@
 {
   "id": "permissions",
-  "title": "Permissions",
-  "description": "The add‑on requests a small, focused set of permissions only. Why each is needed:",
+  "title": "Luba",
+  "description": "Luba",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "permissions",
-    "title": "Permissions"
+    "title": "Luba"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Compatibility",
+    "title": "Ühilduvus",
     "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/compatibility"
   },
   "next": {
-    "title": "Development",
+    "title": "Arendamine",
     "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/development"
   }
 }

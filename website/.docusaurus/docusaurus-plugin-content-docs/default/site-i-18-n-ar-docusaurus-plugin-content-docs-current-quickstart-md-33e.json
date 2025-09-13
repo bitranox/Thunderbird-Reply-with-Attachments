@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "البدء السريع",
-  "description": "1. ثبّت الإضافة من Thunderbird Add‑ons.",
+  "description": "Quickstart",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",

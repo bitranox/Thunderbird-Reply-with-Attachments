@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Változásnapló",
-  "description": "A teljes előzményt a tároló CHANGELOG.md fájljában találod.",
+  "title": "Változási napló",
+  "description": "Changelog",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Változásnapló"
+    "title": "Változási napló"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/licence"
+    "title": "Licenc",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/license"
   }
 }

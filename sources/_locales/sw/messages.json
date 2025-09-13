@@ -3,7 +3,7 @@
     "message": "Jibu na Viambatisho"
   },
   "extDescription": {
-    "message": "Ambatanisha kiotomatiki viambatisho asilia katika majibu ya barua pepe."
+    "message": "Ongeza kiotomatiki viambatanisho asili kwenye majibu ya barua pepe."
   },
   "composeTitle": {
     "message": "Jibu na Viambatisho"
@@ -12,22 +12,48 @@
     "message": "Jibu na Viambatisho — Machaguo"
   },
   "confirmTitle": {
-    "message": "Thibitisha Viambatisho"
+    "message": "Thibitisha Viambatanisho"
   },
   "uiHeader": {
     "message": "Jibu na Viambatisho"
   },
   "uiNoOptions": {
-    "message": "Hivi sasa hakuna machaguo ya kusanidi."
+    "message": "Kwa sasa hakuna machaguo ya kusanidi."
   },
   "uiSupport": {
-    "message": "Je, unapenda kiongezeo hiki? Nisaidie kwa mchango mdogo:"
+    "message": "Je, unapenda kiongezi hiki? Tafadhali nisaidie kwa mchango mdogo:"
+  },
+  "uiRateATNText": {
+    "message": "Tafadhali kadiria kwenye ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Changia sasa"
   },
+  "uiIDonated": {
+    "message": "Nimechangia"
+  },
+  "uiDonateSnoozed": {
+    "message": "Asante! Ujumbe wa mchango umefichwa kwa siku 90."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Imefichwa hadi $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Onyesha ombi la mchango tena"
+  },
+  "uiDonateRestored": {
+    "message": "Ombi la mchango linaonekana tena."
+  },
   "uiGithubText": {
-    "message": "Kwa taarifa za hitilafu au maswali mengine, tafadhali tembelea ukurasa wangu wa"
+    "message": "Kwa taarifa za hitilafu au maswali mengine, tafadhali tembelea"
   },
   "uiGithubLinkLabel": {
     "message": "Ukurasa wa GitHub"
@@ -42,10 +68,10 @@
     "message": "Orodha ya kuzuia ya majina ya faili (miundo ya glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Faili ambazo majina yake yanalingana na mojawapo ya miundo hii hazitaambatanishwa kiotomatiki kamwe. Muundo mmoja kwa kila mstari. Mifano: *.png, smime.*, *.p7s"
+    "message": "Faili zenye majina yanayolingana na muundo wowote kati ya miundo hii hazitaambatanishwa kiotomatiki kamwe. Muundo mmoja kwa kila mstari. Mifano: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Onya ikiwa viambatisho vimeondolewa na orodha ya kuzuia"
+    "message": "Onya ikiwa viambatanisho vimezuiwa na orodha ya kuzuia"
   },
   "uiSave": {
     "message": "Hifadhi"
@@ -66,13 +92,13 @@
     "message": "Uthibitisho"
   },
   "uiConfirmLabel": {
-    "message": "Uliza kabla ya kuambatisha viambatisho"
+    "message": "Uliza kabla ya kuongeza viambatisho"
   },
   "uiConfirmHelp": {
-    "message": "Kisanduku kidogo cha uthibitisho kitaonekana tu ikiwa kuna viambatisho vya kuongezwa. Kibodi: Y au J = Ndiyo; N au Esc = Hapana."
+    "message": "Kisanduku kidogo cha uthibitisho kitaonekana tu pale ambapo viambatanisho vitaongezwa kweli. Kibodi: Y au J = Ndiyo; N au Esc = Hapana."
   },
   "confirmAddOne": {
-    "message": "Ongeza kiambatisho: $1?",
+    "message": "Ongeza kiambatanisho: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ongeza viambatisho ($1): $2$3?",
+    "message": "Ongeza viambatanisho ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "Hapana"
   },
   "warnBlacklistTitle": {
-    "message": "Imeondolewa na orodha ya kuzuia"
+    "message": "Imezuiwa na orodha ya kuzuia"
   },
   "warnBlacklistIntro": {
     "message": "Faili zifuatazo hazitaambatanishwa kiotomatiki:"
@@ -115,7 +141,7 @@
     "message": "Sawa"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Jibu chaguo-msingi"
+    "message": "Jibu la chaguo-msingi"
   },
   "uiConfirmDefaultYes": {
     "message": "Ndiyo"
@@ -124,9 +150,21 @@
     "message": "Hapana"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Nyaraka:"
+  },
+  "uiDocsButton": {
+    "message": "Fungua Nyaraka"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

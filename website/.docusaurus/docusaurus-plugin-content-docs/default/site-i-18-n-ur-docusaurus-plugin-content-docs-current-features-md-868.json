@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "خصوصیات",
-  "description": "خصوصیات",
+  "description": "Features",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "فوری آغاز",
+    "title": "فوری شروعات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/quickstart"
   }
 }

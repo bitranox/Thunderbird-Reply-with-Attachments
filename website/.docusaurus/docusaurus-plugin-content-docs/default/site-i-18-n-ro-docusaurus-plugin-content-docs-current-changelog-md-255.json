@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Jurnal de modificări",
-  "description": "Vezi istoricul complet în fișierul CHANGELOG.md din depozit.",
+  "description": "Changelog",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -17,7 +17,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/licence"
+    "title": "Licență",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/license"
   }
 }

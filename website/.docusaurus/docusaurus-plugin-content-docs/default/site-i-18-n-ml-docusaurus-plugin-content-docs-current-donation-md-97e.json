@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donate",
-  "description": "If you like Reply with Attachments and want to support its development, you can donate here:",
+  "title": "ദാനമുഹൂർത്തങ്ങൾ",
+  "description": "Donate",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donate",
-    "sidebar_label": "Donate"
+    "title": "ദാനമുഹൂർത്തങ്ങൾ",
+    "sidebar_label": "ദാനമുഹൂർത്തങ്ങൾ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Privacy",
+    "title": "ഗോപിൻതലക്കാട്",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/privacy"
   },
   "next": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/licence"
+    "title": "ലൈസൻസു",
+    "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/license"
   }
 }

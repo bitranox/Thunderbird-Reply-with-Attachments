@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "စတင်ကြည့်ရှုခြင်း",
+  "description": "စတင်ကြည့်ရှုခြင်း",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "စတင်ကြည့်ရှုခြင်း",
+    "sidebar_label": "စတင်ကြည့်ရှုခြင်း"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "အင်္ဂါရပ်များ",
+    "title": "လက္каွေ့များ",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "ဦးတည်ရာ",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/install"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Suiteáil",
+  "description": "Suiteáil tríd \"Ionchur agus Téamaí Thunderbird\"",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Suiteáil",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Suiteáil"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Tús Tapa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Configuríocht",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/configuration"
   }
 }

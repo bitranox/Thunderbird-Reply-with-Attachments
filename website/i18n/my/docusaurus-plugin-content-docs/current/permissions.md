@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'အခွင့်အရေးများ'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## အခွင့်အရေးများ
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note အနည်းငယ်သောအခွင့်အရေးများ
+ဤအထောက်အကူပြုဆော့ဖ်ဝဲဖြင့်အိမ်ရှေ့တွင် (ဝယ်ဘ်) အခွင့်အရေးများကို မမပြုလုပ်ပါ။ အထောက်အကူပြုဆော့ဖ်ဝဲသည် telemetry ကို စုဆောင်းမလုပ်ပါနှင့်၊ background ကွန်ယက် requests မလုပ်ပါ။ [Privacy](privacy) ကိုကြည့်ပါ။
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+အထောက်အကူပြုဆော့ဖ်ဝဲသည် အခွင့်အရေးအဖွဲ့အစည်းသေးသေးလေးကိုသာ တောင်းဆိုသည်။ အခုဘာကြောင့်လိုအပ်သလဲ:
+
+- `compose`: compose အဖြစ်အပျက်များကိုသာ ကွည့်အားရသည်၊ သင့်တုံ့ပြန်မှုတွင် ဆက်ညွှန်းများစာရင်းပြုလုပ်/ထည့်သည်။
+- `messagesRead`: Metadata ကိုဖတ်သည်နှင့် မူရင်းဆက်စပ်စာကြောင်းမှ ဖျက်ပေးသော ဖိုင်များကို ရယူသည်။
+- `scripting`: သေးငယ်သော compose တွင် အတည်ပြုသော ရှုမြင်ပါက အစွန်ခံပေးနိုင်သော စကားစုဘားကို ထည့်သွင်းပါ။
+- `windows`: ဆက်သွယ်မှု မအောင်မြင်ပါက နောက်ဆုံးမျှော်လင့်ချက်အနေနှင့် ရှုမြင်သော အတည်ပြု pop-up ကို ဖွင့်ပါ။
+- `sessions`: အနှစ်သာရ ပြင်ဆင်မှုများကို တကယ်မှီငြမ်းမလုပ်ရန် အကြိမ်ချင်းတွက်သော အမှတ်တံဆိပ်ကို သိမ်းဆည်းပါ။
+- `storage`: options များ (အမည်းစာရင်း၊ အတည်ပြု ချိန်ဆိုင်မှု၊ အခြေခံအဖြေ) ကို သိမ်းဆည်းပါ။
+- `tabs`: အတည်ပြုရန်တောင်းဆိုမှုများအတွက် compose tab သို့ ရည်ညွှန်းချက်ရှင်းလင်းပြီး ဆက်သွယ်ပါ။
+
+ထပ်ပေါင်းမှတ်ချက်များ:
+
+- ဤအထောက်အကူပြုဆော့ဖ်ဝဲတွင် မည်သည့် host permissions (web origins) ကို မတောင်းဆိုပါနှင့်။
+- `tabs` အခွင့်အရေးကို အစွန်ခံပေးသော စကားစုဘားကို ဖွဲ့စည်းရာတွင် သေးငယ်သော compose tab ကို ရည်ညွှန်းရန်သာ အသုံးပြုသည်။ အသစ်ဖြစ်သော သမိုင်းကို ဖတ်ရန် သို့မဟုတ် စာမျက်နှာများသို့ ငွေကြေးမဖြစ်သည်။
+
+ဤအချက်များကို အစိတ်အပိုင်းရှိနေစဉ် မှတ်တမ်းတင်ထားပြီး CI တွင် စမ်းသပ်ထားသည်။ အထောက်အကူပြုဆော့ဖ်ဝဲသည် telemetry ကို စုဆောင်းမလုပ်ပါ။
+
+---
+
+### အကျဉ်းချုပ် (အခွင့်အရေးများ → ရည်ရွယ်ချက်) {#permissions-summary}
+
+| အခွင့်အရေး     | ဤသည်ဘာကြောင့်လိုအပ်သနည်း                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| `compose`      | Compose အဖြစ်အပျက်များကို ကွည့်အားရသည်; သင်၏ တုံ့ပြန်မှုတွင် ဆက်ညွှန်းများ စာရင်းပြုလုပ်နှင့် ထည့်သည်။ |
+| `messagesRead` | မူရင်းစာကြောင်းများမှ အဆက်သွယ်မှုများကို စာရင်းပြုလုပ်နှင့် ဖိုင်အချက်အလက်ကို ရယူသည်။                  |
+| `scripting`    | အတည်ပြုရန် ကြိုးစားအားထုတ်သော UI ကို ထည့်သွင်း/ညှိနှိုင်းပါ။                                           |
+| `windows`      | ဆက်သွယ်မှု မအောင်မြင်ပါက (အားနည်း) နောက်တစ်ခါက popup ဖြစ်သည်။                                          |
+| `sessions`     | အကြိမ်ချင်း တဦးကို ပြင်ဆင်မှုကို ရူးရင်မှတ်တမ်းတင်ရန် သာမန်အားနည်း။                                    |
+| `storage`      | options (အမည်းစာရင်း၊ အတည်ပြု ချိန်ဆိုင်မှု၊ အခြေခံအဖြေ) ကို သိမ်းဆည်းပါ။                              |
+| `tabs`         | အတည်ပြုရန်တောင်းဆိုမှုများအတွက် compose tab ကို ရည်ညွှန္းသည်။                                          |
+| (host perms)   | မရှိပါ - အထောက်အကူပြုဆော့ဖ်ဝဲသည် ဝယ်ဘ် origins မတောင်းဆိုပါ။                                           |
+
+---
+
+## မတောင်းဆိုခဲ့ပါ {#not-requested}
+
+- `compose.save`, `compose.send` — အထောက်အကူပြုဆော့ဖ်ဝဲသည် သင်အတွက် အီးမေးလ်ကို သိမ်းဆည်းခြင်း သို့မဟုတ် ပို့ခြင်း မလုပ်ပါ။
+
+ကြည့်ပါ: [Privacy](privacy) — telemetry မရှိ၊ background ကွန်ယက် မရှိ၊ အသုံးပြုသူ စတင်စျေးစာရင်းသာ။
+
+---

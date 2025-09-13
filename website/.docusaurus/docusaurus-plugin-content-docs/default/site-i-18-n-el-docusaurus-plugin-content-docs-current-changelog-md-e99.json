@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ιστορικό αλλαγών",
-  "description": "Δείτε το πλήρες ιστορικό στο αρχείο CHANGELOG.md του αποθετηρίου.",
+  "title": "Ιστορικό Αλλαγών",
+  "description": "Changelog",
   "source": "@site/i18n/el/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ιστορικό αλλαγών"
+    "title": "Ιστορικό Αλλαγών"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/el/docs/licence"
+    "title": "Άδεια",
+    "permalink": "/Thunderbird-Reply-with-Attachments/el/docs/license"
   }
 }

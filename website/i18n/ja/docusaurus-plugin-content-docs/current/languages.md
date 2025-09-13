@@ -1,16 +1,20 @@
 ---
 id: languages
-title: 言語
-sidebar_label: 言語
+title: '言語'
+sidebar_label: '言語'
 ---
 
-# 言語サポート
+## Languages
 
-AI 翻訳ツールにより 103 言語を幅広くサポート。
+このリストは、ウェブサイトのドキュメント翻訳とアドオンUIの文字列の両方を反映しています。AI翻訳ツールのおかげで、多くの言語をサポートしており、100言語をカバーしています。
 
-以下の一覧は言語コード順です。
+以下のリストは、言語コードでソートされています。
 
-また、各ロケールで統一する UI 用語は[用語集](glossary)を参照してください。
+また、ロケール全体で使用される標準UI用語については、[用語集](glossary)もご覧ください。
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +72,6 @@ AI 翻訳ツールにより 103 言語を幅広くサポート。
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +115,30 @@ AI 翻訳ツールにより 103 言語を幅広くサポート。
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Switch the docs locale via the language selector in the site header (URL prefix changes accordingly). ThunderbirdのUI言語は、ウェブサイト言語とは独立しており、あなたのThunderbird設定に従います。
+
+Landing page redirect
+
+- もしサイトがあなたのブラウザの優先ロケールで構築されている場合、プロジェクトのbaseUrlの下にある基本ドキュメントURLを訪れると、自動的にそのロケールにリダイレクトされます。言語スイッチャー（または `/en/`）を使用して英語に留まることができます。
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- 翻訳に問題を見つけましたか？ GitHubの問題またはPRをオープンしてください。
+- 英語のソースに対する編集を好ましいです `website/docs/`; メインテイナーのツールは他のロケールに更新を伝播させます。
+  英語がドキュメントの真実のソースです; 翻訳の更新はメインテイナーのワークフロー中にENから引き出されます。
+
+### Homepage, Navbar, Footer UI
+
+- これらの文字列は `website/i18n/en/code.json` に存在し、メインテイナーのタスクを介してすべてのロケールに翻訳されます：
+  - `make translate_web_index` （`OPENAI_API_KEY` が必要）
+  - `OPTS="--locales de,fr"` で言語を制限; `OPTS="--force"` で既存の値を上書きします。
+
+### Website vs. UI {#website-vs-ui}
+
+- ウェブサイトの言語とアドオンUIの言語は独立しており、言語スイッチャーはドキュメントのみを変更します。ThunderbirdのUI言語はあなたのThunderbirdの設定に従います。
+
+---

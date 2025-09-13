@@ -1,117 +1,145 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Talen'
+sidebar_label: 'Talen'
 ---
 
-# Language Support
+## Talen
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Deze lijst weerspiegelt zowel vertalingen van website-documentatie als extra UI-strings.
+Massale ondersteuning van talen, dankzij AI-vertalingstools - 100 talen worden gedekt.
 
-List below is sorted by the language code.
+De lijst hieronder is gesorteerd op taalcode.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Zie ook: de [Glossary](glossary) voor canonieke UI-termen die in verschillende locaties worden gebruikt.
+
+---
+
+## Talenlijst {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
-- `am`: Amharic (am-ET)
-- `ar`: Arabic (ar)
+- `am`: Amhaars (am-ET)
+- `ar`: Arabisch (ar)
 - `as`: Assamese (as-IN)
-- `az`: Azerbaijani (az-AZ)
-- `be`: Belarusian (be-BY)
-- `bg`: Bulgarian (bg-BG)
+- `az`: Azerbeidzjaans (az-AZ)
+- `be`: Wit-Russisch (be-BY)
+- `bg`: Bulgaars (bg-BG)
 - `bm`: Bambara (bm-ML)
 - `bn`: Bengali (bn-BD)
-- `bs`: Bosnian (bs-BA)
-- `ca`: Catalan (ca-ES)
-- `cs`: Czech (cs-CZ)
-- `da`: Danish (da-DK)
-- `de`: German (de-DE)
-- `el`: Greek (el-GR)
-- `en`: English (en-US)
-- `es`: Spanish (es-ES)
-- `et`: Estonian (et-EE)
-- `fa`: Persian (Farsi) (fa-IR)
+- `bs`: Bosnisch (bs-BA)
+- `ca`: Catalaans (ca-ES)
+- `cs`: Tsjechisch (cs-CZ)
+- `da`: Deens (da-DK)
+- `de`: Duits (de-DE)
+- `el`: Grieks (el-GR)
+- `en`: Engels (en-US)
+- `es`: Spaans (es-ES)
+- `et`: Ests (et-EE)
+- `fa`: Perzisch (Farsi) (fa-IR)
 - `ff`: Fulah (ff-SN)
-- `fi`: Finnish (fi-FI)
-- `fr`: French (fr-FR)
-- `ga`: Irish (ga-IE)
+- `fi`: Fins (fi-FI)
+- `fr`: Frans (fr-FR)
+- `ga`: Iers (ga-IE)
 - `gu`: Gujarati (gu-IN)
 - `ha`: Hausa (ha-NG)
-- `he`: Hebrew (he-IL)
+- `he`: Hebreeuws (he-IL)
 - `hi`: Hindi (hi-IN)
-- `hr`: Croatian (hr-HR)
-- `ht`: Haitian Creole (ht-HT)
-- `hu`: Hungarian (hu-HU)
-- `hy`: Armenian (hy-AM)
-- `id`: Indonesian (id-ID)
+- `hr`: Kroatisch (hr-HR)
+- `ht`: Haïtiaans Creools (ht-HT)
+- `hu`: Hongaars (hu-HU)
+- `hy`: Armeens (hy-AM)
+- `id`: Indonesisch (id-ID)
 - `ig`: Igbo (ig-NG)
-- `is`: Icelandic (is-IS)
-- `it`: Italian (it-IT)
-- `ja`: Japanese (ja-JP)
-- `jv`: Javanese (jv-ID)
-- `ka`: Georgian (ka-GE)
-- `kk`: Kazakh (kk-KZ)
+- `is`: IJslands (is-IS)
+- `it`: Italiaans (it-IT)
+- `ja`: Japans (ja-JP)
+- `jv`: Javaans (jv-ID)
+- `ka`: Georgisch (ka-GE)
+- `kk`: Kazachs (kk-KZ)
 - `km`: Khmer (km-KH)
 - `kn`: Kannada (kn-IN)
-- `ko`: Korean (ko-KR)
+- `ko`: Koreaans (ko-KR)
 - `ks`: Kashmiri (ks-IN)
-- `ku`: Kurdish (ku-TR)
-- `ky`: Kyrgyz (ky-KG)
+- `ku`: Koerds (ku-TR)
+- `ky`: Kirgizisch (ky-KG)
 - `ln`: Lingala (ln-CD)
 - `lo`: Lao (lo-LA)
-- `lt`: Lithuanian (lt-LT)
-- `lv`: Latvian (lv-LV)
+- `lt`: Litouws (lt-LT)
+- `lv`: Lets (lv-LV)
 - `mg`: Malagasy (mg-MG)
 - `ml`: Malayalam (ml-IN)
-- `mn`: Mongolian (mn-MN)
+- `mn`: Mongools (mn-MN)
 - `mr`: Marathi (mr-IN)
-- `ms`: Malay (ms-MY)
-- `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
-- `ne`: Nepali (ne-NP)
-- `nl`: Dutch (nl-NL)
-- `no`: Norwegian (no-NO)
+- `ms`: Maleis (ms-MY)
+- `my`: Birmaans (my-MM)
+- `ne`: Nepalees (ne-NP)
+- `nl`: Nederlands (nl-NL)
+- `no`: Noors (no-NO)
 - `ny`: Chichewa (ny-MW)
 - `om`: Oromo (om-ET)
 - `or`: Odia (or-IN)
 - `pa`: Punjabi (pa-IN)
-- `pl`: Polish (pl-PL)
+- `pl`: Pools (pl-PL)
 - `ps`: Pashto (ps-AF)
-- `pt`: Portuguese (pt-PT)
+- `pt`: Portugees (pt-PT)
 - `qu`: Quechua (qu-PE)
 - `rn`: Kirundi (rn-BI)
-- `ro`: Romanian (ro-RO)
-- `ru`: Russian (ru-RU)
+- `ro`: Roemeens (ro-RO)
+- `ru`: Russisch (ru-RU)
 - `rw`: Kinyarwanda (rw-RW)
 - `sd`: Sindhi (sd-PK)
 - `si`: Sinhala (si-LK)
-- `sk`: Slovak (sk-SK)
-- `sl`: Slovenian (sl-SI)
+- `sk`: Slowaaks (sk-SK)
+- `sl`: Sloveens (sl-SI)
 - `sn`: Shona (sn-ZW)
-- `so`: Somali (so-SO)
-- `sq`: Albanian (sq-AL)
-- `sr`: Serbian (sr-RS)
-- `su`: Sundanese (su-ID)
-- `sv`: Swedish (sv-SE)
+- `so`: Somalisch (so-SO)
+- `sq`: Albanees (sq-AL)
+- `sr`: Servisch (sr-RS)
+- `su`: Soendanees (su-ID)
+- `sv`: Zweeds (sv-SE)
 - `sw`: Swahili (sw-TZ)
 - `ta`: Tamil (ta-IN)
 - `te`: Telugu (te-IN)
-- `tg`: Tajik (tg-TJ)
-- `th`: Thai (th-TH)
+- `tg`: Tadzjieks (tg-TJ)
+- `th`: Thais (th-TH)
 - `ti`: Tigrinya (ti-ER)
 - `tk`: Turkmen (tk-TM)
 - `tl`: Tagalog (tl-PH)
-- `tr`: Turkish (tr-TR)
-- `ug`: Uyghur (ug-CN)
-- `uk`: Ukrainian (uk-UA)
+- `tr`: Turks (tr-TR)
+- `ug`: Oeigoers (ug-CN)
+- `uk`: Oekraïens (uk-UA)
 - `ur`: Urdu (ur-PK)
-- `uz`: Uzbek (uz-UZ)
-- `vi`: Vietnamese (vi-VN)
+- `uz`: Oezbeeks (uz-UZ)
+- `vi`: Vietnamees (vi-VN)
 - `wo`: Wolof (wo-SN)
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
-- `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
-- `zu`: Zulu (zu-ZA)
+- `zh`: Chinees (zh)
+- `zu`: Zoeloe (zu-ZA)
+
+Tip: Schakel de documentatie-locale via de taalselector in de site-header in (de URL-prefix verandert dienovereenkomstig). De UI-taal van Thunderbird is onafhankelijk van de taal van de website en volgt jouw Thunderbird-instellingen.
+
+Landingpagina omleiding
+
+- Als de site is gebouwd met de voorkeurslocale van jouw browser, wordt een bezoek aan de basis-URL van de documentatie onder de baseUrl van het project automatisch omgeleid naar die locale. Gebruik de taalschakelaar (of `/en/`) om in het Engels te blijven.
+
+---
+
+## Vertalingen bijdragen {#contribute-translations}
+
+- Een probleem gevonden in een vertaling? Open een GitHub-issue of PR.
+- Geef de voorkeur aan bewerkingen tegen de Engelse bron onder `website/docs/`; de tooling van de maintainer verspreidt updates naar andere locales.
+  Het Engels is de waarheid voor de documentatie; vertaalupdates worden vanuit het EN gehaald tijdens de workflow van de maintainer.
+
+### Homepage, Navbar, Footer UI
+
+- Deze strings bevinden zich in `website/i18n/en/code.json` en worden naar alle locales vertaald via de taak van de maintainer:
+  - `make translate_web_index` (vereist `OPENAI_API_KEY`)
+  - Beperk talen met `OPTS="--locales de,fr"`; overschrijf bestaande waarden met `OPTS="--force"`.
+
+### Website versus UI {#website-vs-ui}
+
+- De taal van de website en de taal van de add-on UI zijn onafhankelijk; de taalschakelaar verandert alleen de documentatie. De UI-taal van Thunderbird volgt jouw Thunderbird-instellingen.
+
+---

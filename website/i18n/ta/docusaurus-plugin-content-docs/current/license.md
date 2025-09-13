@@ -1,24 +1,52 @@
 ---
 id: license
-title: உரிமம்
-sidebar_label: உரிமம்
+title: 'அங்கீகாரம்'
+sidebar_label: 'அங்கீகாரம்'
 ---
 
-திட்ட உரிமம்: MIT
+## License
 
-இந்தத் திட்டம் **MIT License** கீழ் உரிமமளிக்கப்பட்டது.
+Project license: MIT
 
-- முழு உரை: repository ரூட் உள்ள `LICENSE` ஐப் பார்க்கவும்.
-- © Robert Nowotny (bitranox) மற்றும் பங்களிப்பாளர்கள்.
+This project is licensed under the **MIT License**.
 
-மூன்றாம்‑பக்கம் உரிமங்கள் (சுருக்கம்)
+- Full text: see `LICENSE` at the repository root.
+- © Robert Nowotny (bitranox)
 
-- dev/test & இணையதள கருவிகள்: வேறுவிதமாகக் குறிப்பிடப்படாவிட்டால் அனைத்தும் MIT
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (npx மூலம் பயன்படுத்தும்போது) MPL‑2.0; dev கருவி மட்டும், add‑on உடன் விநியோகிக்கப்படாது
-- Thunderbird MailExtension APIகள்: தள API ஆகப் பயன்பாடு; கோடு நகலெடுக்கப்படாது, add‑on மீது கூடுதல் உரிமப் பொறுப்புகள் இல்லை
-- சொத்துக்கள்
-  - add‑on ஐகான்கள் (sources/icons/\*.png): திட்ட சொத்துக்கள், வேறுவிதமாகக் கூறப்படாவிட்டால் MIT கீழ்
-  - GitHub லோகோ ஒரு GitHub வர்த்தக முத்திரை; பிராண்ட் வழிகாட்டுதல்களுக்கு இணங்கப் பயன்படுத்தப்படுகிறது, MIT கீழ் அல்ல
+---
 
-நீங்கள் கூடுதல் மூன்றாம்‑பக்கம் கோடு அல்லது சொத்துகளைச் சேர்த்தால், அவற்றின் அசல் உரிமங்களை வைத்திருங்கள் மற்றும் மேலுள்ள பட்டியலில் சேர்க்கவும்.
+## Third‑party licenses {#third-party-licenses}
+
+This section summarizes third‑party licenses used by this repository. For the
+authoritative list in the source tree, see `THIRD_PARTY_LICENSES.md` at the
+repository root.
+
+Tools and libraries (development/test/docs)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (used via npx only) — MPL‑2.0 (dev tool; not distributed with the add-on)
+
+---
+
+## Notes
+
+- Thunderbird MailExtension APIs are platform APIs; no third‑party code is bundled from them.
+- Project icons in `sources/icons` are project assets (MIT unless stated otherwise). The GitHub logo/icon is a GitHub trademark and not covered by MIT; it is used per GitHub brand guidelines.
+
+If you add new dependencies or bundle third‑party code, please update both this
+page and `THIRD_PARTY_LICENSES.md` accordingly.
+
+---
+
+## Trademarks
+
+- “Thunderbird” is a trademark of MZLA/Thunderbird. This project is a third‑party add-on and is not affiliated with or endorsed by MZLA.
+- GitHub® and the GitHub logo are trademarks of GitHub, Inc. Logos are used per brand guidelines.
+
+---

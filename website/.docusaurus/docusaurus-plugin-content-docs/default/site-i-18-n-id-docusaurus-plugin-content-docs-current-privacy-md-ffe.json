@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Privasi",
-  "description": "Balas dengan Lampiran tidak mengumpulkan analitik atau telemetri dan tidak mengirim data Anda ke mana pun.",
+  "description": "Privasi",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

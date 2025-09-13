@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Ubufasha",
+  "description": "FAQ",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Ubufasha",
+    "sidebar_label": "Ubufasha"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Ibiganiro vy",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Uburenganzira bwihariye",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/privacy"
   }
 }

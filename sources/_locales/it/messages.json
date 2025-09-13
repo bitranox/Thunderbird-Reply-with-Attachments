@@ -3,7 +3,7 @@
     "message": "Rispondi con allegati"
   },
   "extDescription": {
-    "message": "Includi automaticamente gli allegati originali nelle risposte alle email."
+    "message": "Include automaticamente gli allegati originali nelle risposte via email."
   },
   "composeTitle": {
     "message": "Rispondi con allegati"
@@ -23,8 +23,34 @@
   "uiSupport": {
     "message": "Ti piace questo componente aggiuntivo? Sostienimi con un piccolo contributo:"
   },
+  "uiRateATNText": {
+    "message": "Valuta su ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
+  },
   "uiDonate": {
     "message": "Dona ora"
+  },
+  "uiIDonated": {
+    "message": "Ho donato"
+  },
+  "uiDonateSnoozed": {
+    "message": "Grazie! La richiesta di donazione è nascosta per 90 giorni."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Nascosta fino al $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Mostra di nuovo la richiesta di donazione"
+  },
+  "uiDonateRestored": {
+    "message": "La richiesta di donazione è di nuovo visibile."
   },
   "uiGithubText": {
     "message": "Per segnalazioni di bug o altre richieste, visita la mia"
@@ -39,10 +65,10 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist dei nomi di file (pattern glob)"
+    "message": "Blacklist dei nomi file (pattern glob)"
   },
   "uiBlacklistHelp": {
-    "message": "I file i cui nomi corrispondono a uno di questi pattern non verranno mai allegati automaticamente. Un pattern per riga. Esempi: *.png, smime.*, *.p7s"
+    "message": "I file i cui nomi corrispondono a uno qualsiasi di questi pattern non verranno mai allegati automaticamente. Un pattern per riga. Esempi: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Avvisa se gli allegati sono esclusi dalla blacklist"
@@ -54,7 +80,7 @@
     "message": "Salvataggio in corso…"
   },
   "uiReset": {
-    "message": "Ripristina impostazioni predefinite"
+    "message": "Ripristina ai valori predefiniti"
   },
   "uiSaved": {
     "message": "Salvato."
@@ -66,10 +92,10 @@
     "message": "Conferma"
   },
   "uiConfirmLabel": {
-    "message": "Chiedi prima di aggiungere gli allegati"
+    "message": "Chiedi prima di aggiungere allegati"
   },
   "uiConfirmHelp": {
-    "message": "Una piccola finestra di conferma appare solo quando gli allegati verrebbero effettivamente aggiunti. Tastiera: Y o J = Sì; N o Esc = No."
+    "message": "Viene visualizzata una piccola finestra di conferma solo quando gli allegati verrebbero effettivamente aggiunti. Tastiera: Y o J = Sì; N o Esc = No."
   },
   "confirmAddOne": {
     "message": "Aggiungere l'allegato: $1?",
@@ -124,9 +150,21 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Documentazione:"
+  },
+  "uiDocsButton": {
+    "message": "Apri la documentazione"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

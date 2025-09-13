@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Daɗo",
+  "description": "Daɗo via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Daɗo",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Daɗo"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Dembal",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Sariyani",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/configuration"
   }
 }

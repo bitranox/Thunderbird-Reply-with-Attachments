@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "الإعداد",
-  "description": "ملاحظة حول المصطلحات: راجع المصطلحات للاطلاع على الألفاظ المستخدمة بشكل متّسق في الواجهة والوثائق.",
+  "title": "إعدادات",
+  "description": "Configuration",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "الإعداد"
+    "title": "إعدادات"
   },
   "sidebar": "docs",
   "previous": {

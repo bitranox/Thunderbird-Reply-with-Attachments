@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Sifooyinka",
-  "description": "Sifooyinka",
+  "title": "Astaamaha",
+  "description": "Features",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Sifooyinka",
-    "sidebar_label": "Sifooyinka"
+    "title": "Astaamaha",
+    "sidebar_label": "Astaamaha"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Bilowga Degdegga ah",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/quickstart"
   }
 }

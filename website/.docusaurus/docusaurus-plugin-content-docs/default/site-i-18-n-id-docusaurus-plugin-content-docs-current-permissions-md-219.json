@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Izin",
-  "description": "Add‑on ini hanya meminta sedikit izin yang spesifik. Alasan tiap izin:",
+  "description": "Izin",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

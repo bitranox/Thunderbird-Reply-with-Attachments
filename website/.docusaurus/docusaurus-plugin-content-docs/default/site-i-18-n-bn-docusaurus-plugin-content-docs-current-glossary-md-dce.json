@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n পরিভাষা",
-  "description": "অ্যাড‑অন UI ও ডকুমেন্টেশনে ব্যবহৃত ক্যানোনিকাল পরিভাষা। লোকেল জুড়ে অনুবাদকে একরূপ রাখতে এগুলো ব্যবহার করুন।",
+  "title": "শব্দকোষ",
+  "description": "Glossary",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n পরিভাষা",
-    "sidebar_label": "পরিভাষা"
+    "title": "শব্দকোষ",
+    "sidebar_label": "শব্দকোষ"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/languages"
   },
   "next": {
-    "title": "সহায়তা",
+    "title": "সমর্থন",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/support"
   }
 }

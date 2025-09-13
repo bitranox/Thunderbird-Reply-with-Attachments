@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "Жеке маалыматтарды коргоо",
+  "description": "Жеке маалыматтарды коргоо",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "Жеке маалыматтарды коргоо",
+    "sidebar_label": "Жеке маалыматтарды коргоо"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "Ж жардам",
     "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "Донордук",
     "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/donation"
   }
 }

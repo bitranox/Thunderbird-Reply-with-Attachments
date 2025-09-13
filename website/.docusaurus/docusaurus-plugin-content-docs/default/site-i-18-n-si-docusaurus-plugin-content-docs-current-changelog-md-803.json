@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "වෙනස්කම් සටහන",
-  "description": "සම්පුර්ණ ඉතිහාසය repository හි CHANGELOG.md ගොනුවේ බලාගන්න.",
+  "title": "සංශෝධනකොටුව",
+  "description": "Changelog",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "වෙනස්කම් සටහන"
+    "title": "සංශෝධනකොටුව"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/licence"
+    "title": "ආධාරපත්‍රය",
+    "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/license"
   }
 }

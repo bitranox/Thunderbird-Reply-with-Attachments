@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Instalare'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Instalare'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Instalare prin "Add-ons și teme Thunderbird" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Versiunea minimă Thunderbird
+Acest add-on suportă Thunderbird **128 ESR sau mai recent**. Versiunile mai vechi nu sunt acceptate.
+:::
 
----
+Aceasta este metoda recomandată de instalare. Add-on-urile instalate din ATN (addons.thunderbird.net) primesc actualizări automate. Instalațiile LOCAL/dev nu se actualizează automat.
 
-## Local installation in Thunderbird
+- Versiunea minimă Thunderbird: 128 ESR sau mai recent.
 
-### Download the XPI file
+1. În Thunderbird, mergi la **Instrumente > Add-ons și teme**.
+2. Caută "reply with attachments".
+3. Adaugă add-on-ul.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Sau deschide pagina add-on-ului direct: [Add‑ons Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Instalare manuală din XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Descarcă fișierul XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Mergi la pagina [Add‑on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Descarcă cea mai recentă versiune a add-on-ului ca fișier XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Instalează în Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Deschide Thunderbird.
+2. Mergi la **Instrumente > Add-ons și teme**.
+3. În **Managerul de add-on-uri**, dă clic pe pictograma roată din colțul din dreapta sus.
+4. Alege **Instalează add-on din fișier…** din meniu.
+5. Selectează fișierul descărcat `reply_with_attachments-x.y.z-tb.xpi`.
+6. Confirma instalarea când ți se solicită.
 
 ---
+
+## Instalare pentru dezvoltare {#installation-for-development}
+
+### Descarcă repository-ul {#download-the-repository}
+
+1. Descarcă cea mai recentă versiune a repository-ului de pe GitHub.
+2. Rulează `make help` pentru mai multe informații.
+
+### Instalează în Thunderbird {#install-in-thunderbird-dev}
+
+1. Deschide Thunderbird.
+2. Mergi la **Instrumente > Add-ons și teme**.
+3. În **Managerul de add-on-uri**, dă clic pe pictograma roată din colțul din dreapta sus.
+4. Alege **Instalează add-on din fișier…** din meniu.
+5. Selectează fișierul generat `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirma instalarea când ți se solicită.
+
+Notă: Dacă Thunderbird nu acceptă `.zip` pe sistemul tău, redenumește-l în `.xpi` și încearcă din nou "Instalează add-on din fișier…".
+
+### Unde să găsești ZIP-ul LOCAL {#where-local-zip}
+
+- Mai întâi, empaquetează add-on-ul: rulează `make pack` în rădăcina repository-ului.
+- După empaquetare, găsește zip-ul “LOCAL” în rădăcina repository-ului (de exemplu, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Înainte de a re-empaqueta pentru testare, crește versiunile în ambele `sources/manifest_ATN.json` și `sources/manifest_LOCAL.json`.
+
+---
+
+## Dezactivează, dezinstalează și actualizări {#disable-uninstall-updates}
+
+- Dezactivează: Thunderbird → Instrumente → Add-ons și teme → găsește add-on-ul → dezactivează.
+- Dezinstalează: aceeași vedere → meniu cu trei puncte → Elimină.
+- Actualizări: instalațiile ATN se actualizează automat când noile versiuni sunt aprobate. Instalările LOCAL/dev nu se actualizează automat; reinstalează o nouă construcție LOCAL manual.
+- Îndepărtează complet setările: vezi [Confidențialitate → Eliminarea datelor](privacy#data-removal).
+
+Vezi și
+
+- [Ghid rapid](quickstart)

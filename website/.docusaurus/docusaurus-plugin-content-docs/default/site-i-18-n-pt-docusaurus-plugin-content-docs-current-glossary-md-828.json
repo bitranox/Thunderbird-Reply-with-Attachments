@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Glossário i18n",
-  "description": "Termos canónicos usados na interface e documentação do extra. Use‑os para manter as traduções consistentes entre idiomas.",
+  "title": "Glossário",
+  "description": "Glossário",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Glossário i18n",
+    "title": "Glossário",
     "sidebar_label": "Glossário"
   },
   "sidebar": "docs",

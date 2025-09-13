@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privatliv'
+sidebar_label: 'Privatliv'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privatliv
 
-What the add‑on does:
+:::note Ingen telemetri; ingen baggrundsnetværk
+Dette add-on indsamler **ikke** analyse/telemetri og foretage **ingen** baggrundsnetværksanmodninger. Enhver netværksadgang sker kun, når du klikker på et eksternt link (Docs, GitHub, Donér).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments indsamler ikke analyse eller telemetri og sender ikke dine data noget sted hen.
 
-What the add‑on does not do:
+Hvad add-on gør:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Læser vedhæftede metadata og filer fra den oprindelige besked lokalt (Thunderbird API) for at vedhæfte dem til dit svar.
+- Gemmer dine indstillinger (blacklist, bekræftelse, standard svar) i Thunderbirds lokale opbevaring.
 
-Permissions are documented on the [Permissions](permissions) page.
+Hvad add-on ikke gør:
 
-## Content Security Policy (CSP)
+- Ingen tracking, analyse, fejloplysninger eller fjernlogging.
+- Ingen baggrundsnetværksanmodninger, undtagen når du eksplicit åbner eksterne links (Docs, GitHub, Donér).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Tilladelser er dokumenteret på [Tilladelser](permissions)-siden.
+
+---
+
+## Indholdssikkerhedspolitik (CSP) {#content-security-policy-csp}
+
+Indstillingerne og popupsiderne undgår inline scripts. Al JavaScript indlæses fra filer, der følger med add-on'en for at overholde strenge CSP i Thunderbird. Hvis du indsætter kodeeksempler i dokumenter, er de kun eksempler og udføres ikke af add-on'en.
+
+---
+
+## Dataplacering {#data-storage}
+
+- Brugerpræferencer (blacklist, bekræftelse, standard svar) opbevares i Thunderbirds `storage.local` for dette add-on.
+- Ingen cloud synkronisering udføres af add-on'en.
+
+---
+
+## Netværk {#network}
+
+- Add-on'en udfører ingen baggrundsnetværksaktivitet.
+- Enhver netværksadgang sker kun, når du klikker på links (Docs, GitHub, Donér) eller når Thunderbird selv udfører normale operationer, der ikke er relateret til dette add-on.
+
+---
+
+## Datafjernelse {#data-removal}
+
+- Afinstallerer du add-on'en, fjernes dens kode.
+- Indstillinger opbevares kun i Thunderbirds `storage.local` og fjernes ved afinstallation; ingen ekstern opbevaring bruges.
+- Gendan indstillinger uden at afinstallere:
+  - Indstillingssiden: brug “Nulstil til standard” for blacklist og blacklist advarsel.
+  - Avanceret: i Thunderbird → Værktøjer → Udviklerværktøjer → Debug Add-ons, åbn udvidelsens opbevaring og rydde nøgler, hvis nødvendigt.
+
+---

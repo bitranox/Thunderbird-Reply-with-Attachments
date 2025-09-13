@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Catetan parobahan",
-  "description": "Tempo sajarah lengkep dina payil CHANGELOG.md di répo.",
+  "title": "Catetan Perubahan",
+  "description": "Changelog",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Catetan parobahan"
+    "title": "Catetan Perubahan"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/licence"
+    "title": "Lisensi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/license"
   }
 }

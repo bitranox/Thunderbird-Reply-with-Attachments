@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Instalación",
+  "description": "Instalación a través de \"Complementos y Temas de Thunderbird\"",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Instalación",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalación"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Rikhuy",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Configuración",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/configuration"
   }
 }

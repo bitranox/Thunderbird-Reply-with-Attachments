@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Bermalî",
   "description": "Compatibility",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Bermalî",
+    "sidebar_label": "Bermalî"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Bikarhênan",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Mafên",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/permissions"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Fannuji",
-  "description": "Fannuji",
+  "title": "Ndaari",
+  "description": "Features",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Fannuji",
-    "sidebar_label": "Fannuji"
+    "title": "Ndaari",
+    "sidebar_label": "Ndaari"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Dembal",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/quickstart"
   }
 }

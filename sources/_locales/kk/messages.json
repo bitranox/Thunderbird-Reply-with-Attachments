@@ -1,39 +1,65 @@
 {
   "extName": {
-    "message": "Тіркемелермен жауап беру"
+    "message": "Тіркемелерді қоса жауап беру"
   },
   "extDescription": {
-    "message": "Электрондық хатқа жауап бергенде бастапқы тіркемелерді автоматты түрде қосады."
+    "message": "Электрондық поштаға жауап бергенде бастапқы тіркемелерді автоматты түрде қосады."
   },
   "composeTitle": {
-    "message": "Тіркемелермен жауап беру"
+    "message": "Тіркемелерді қоса жауап беру"
   },
   "optionsTitle": {
-    "message": "Тіркемелермен жауап беру — Параметрлер"
+    "message": "Тіркемелерді қоса жауап беру — Параметрлер"
   },
   "confirmTitle": {
     "message": "Тіркемелерді растау"
   },
   "uiHeader": {
-    "message": "Тіркемелермен жауап беру"
+    "message": "Тіркемелерді қоса жауап беру"
   },
   "uiNoOptions": {
     "message": "Қазіргі уақытта баптайтын параметрлер жоқ."
   },
   "uiSupport": {
-    "message": "Бұл қосымша ұнай ма? Шағын үлеспен қолдаңыз:"
+    "message": "Бұл қосымшаны ұнатасыз ба? Шағын қайырымдылықпен қолдауыңызды өтінемін:"
+  },
+  "uiRateATNText": {
+    "message": "ATN сайтында бағалаңыз"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Қазір қайырымдылық жасаңыз"
+    "message": "Қазір қайырымдылық жасау"
+  },
+  "uiIDonated": {
+    "message": "Мен қайырымдылық жасадым"
+  },
+  "uiDonateSnoozed": {
+    "message": "Рахмет! Қайырымдылыққа шақыру 90 күнге жасырылды."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "$1 дейін жасырылды",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Қайырымдылықты қайта көрсету"
+  },
+  "uiDonateRestored": {
+    "message": "Қайырымдылыққа шақыру қайтадан көрінеді."
   },
   "uiGithubText": {
-    "message": "Қателер туралы есептер немесе басқа сұраулар үшін кіріңіз:"
+    "message": "Қателер туралы есептер немесе басқа сұрақтар үшін менің"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub парағыма"
+    "message": "GitHub бетім"
   },
   "iconAlt": {
-    "message": "Тіркемелермен жауап беру белгішесі"
+    "message": "Тіркемелерді қоса жауап беру белгішесі"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "Файл атауларының қара тізімі (glob үлгілері)"
   },
   "uiBlacklistHelp": {
-    "message": "Атауы осы үлгілердің кез келгеніне сәйкес келетін файлдар ешқашан автоматты түрде қосылмайды. Әр жолға бір үлгі. Мысалдар: *.png, smime.*, *.p7s"
+    "message": "Атауы осы үлгілердің кез келгеніне сәйкес келетін файлдар ешқашан автоматты түрде тіркелмейді. Әр жолға бір үлгі. Мысалдар: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Тіркемелер қара тізім бойынша алынып тасталса, ескерту"
+    "message": "Қара тізімге байланысты тіркемелер алынып тасталса, ескерту"
   },
   "uiSave": {
     "message": "Сақтау"
@@ -69,7 +95,7 @@
     "message": "Тіркемелерді қоспас бұрын сұрау"
   },
   "uiConfirmHelp": {
-    "message": "Шағын растау терезесі тек шынымен тіркемелер қосылатын кезде ғана пайда болады. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
+    "message": "Шағын растау сұхбаты тіркемелер шынымен қосылатын кезде ғана көрсетіледі. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
   },
   "confirmAddOne": {
     "message": "Тіркеме қосу: $1?",
@@ -100,10 +126,10 @@
     "message": "Жоқ"
   },
   "warnBlacklistTitle": {
-    "message": "Қара тізім бойынша алынып тасталды"
+    "message": "Қара тізім себепті алынып тасталды"
   },
   "warnBlacklistIntro": {
-    "message": "Келесі файлдар автоматты түрде қосылмайды:"
+    "message": "Келесі файлдар автоматты түрде тіркелмейді:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -124,9 +150,21 @@
     "message": "Жоқ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Құжаттама:"
+  },
+  "uiDocsButton": {
+    "message": "Құжаттаманы ашу"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

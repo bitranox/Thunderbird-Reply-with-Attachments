@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ဘာသာစကားများ",
+  "description": "Languages",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ဘာသာစကားများ",
+    "sidebar_label": "ဘာသာစကားများ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "ဖွံ့ဖြိုးတိုးတက်ရေး",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "သարգုန်းစာအုပ်",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/glossary"
   }
 }

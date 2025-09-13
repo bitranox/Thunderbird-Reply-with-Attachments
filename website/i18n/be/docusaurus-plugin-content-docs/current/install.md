@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Ўстаноўка'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Ўстаноўка'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Ўстаноўка праз "Дадаткі і Тэмы Thunderbird" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Мінімальная версія Thunderbird
+Гэты дабаўка падтрымлівае Thunderbird **128 ESR або новейшы**. Старшыя версіі не падтрымліваюцца.
+:::
 
----
+Гэта рэкамендаваны спосаб усталёўкі. Дадаткі, усталяваныя з ATN (addons.thunderbird.net), атрымліваюць аўтаматычныя абнаўленні. Усталёўкі LOCAL/dev не абнавіць аўтаматична.
 
-## Local installation in Thunderbird
+- Мінімальная версія Thunderbird: 128 ESR або новейшы.
 
-### Download the XPI file
+1. У Thunderbird перайдзіце ў **Інструменты > Дадаткі і Тэмы**.
+2. Шукайце "адказваць з укладаннямі".
+3. Дадайце дабаўку.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Або адкрыць старонку дабаўкі наўпрост: [Дадаткі Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Ручная ўстаноўка з XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Спампуйце файл XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Перайдзіце на [старонку дабаўкі Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Спампуйце апошнюю версію дабаўкі ў якасці файла XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Усталёўка ў Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Адкрыйце Thunderbird.
+2. Перайдзіце ў **Інструменты > Дадаткі і Тэмы**.
+3. У **Менеджары дабаўкаў** націсніце на значок шасцярні ў верхнім правым кутку.
+4. Выберыце **Усталяваць дабаўку з файла...** з меню.
+5. Выберыце спампаваны файл `reply_with_attachments-x.y.z-tb.xpi`.
+6. Пацвердзіце ўсталёўку, калі з'явіцца запыт.
 
 ---
+
+## Ўстаноўка для распрацоўкі {#installation-for-development}
+
+### Спампуйце репазітарый {#download-the-repository}
+
+1. Спампуйце апошнюю версію рэпазітара на GitHub.
+2. Запусціце `make help` для атрымання дадатковай інфармацыі.
+
+### Усталёўка ў Thunderbird {#install-in-thunderbird-dev}
+
+1. Адкрыйце Thunderbird.
+2. Перайдзіце ў **Інструменты > Дадаткі і Тэмы**.
+3. У **Менеджары дабаўкаў** націсніце на значок шасцярні ў верхнім правым кутку.
+4. Выберыце **Усталяваць дабаўку з файла...** з меню.
+5. Выберыце згенераваны файл `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Пацвердзіце ўсталёўку, калі з'явіцца запыт.
+
+Заўвага: Калі Thunderbird не прымае `.zip` на вашай сістэме, перайменуйце яго ў `.xpi` і паспрабуйце зноў "Усталяваць дабаўку з файла...".
+
+### Дзе знайсці LOCAL ZIP {#where-local-zip}
+
+- Спачатку упакуйце дабаўку: запусціце `make pack` у каранёвай тэчцы рэпазітара.
+- Пасля ўпакоўкі знайдзіце "LOCAL" zip у каранёвай тэчцы рэпазітара (напрыклад, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Перад паўторнай ўпакоўкай для тэставання, павялічыце версіі ў абодвух `sources/manifest_ATN.json` і `sources/manifest_LOCAL.json`.
+
+---
+
+## Адключыць, выдаліць і абнаўлення {#disable-uninstall-updates}
+
+- Адключыць: Thunderbird → Інструменты → Дадаткі і Тэмы → знайдзіце дабаўку → адключыце.
+- Выдаліць: той жа від → меню з трох кропак → Выдаліць.
+- Абнаўлення: ўсталёўкі ATN абнаўляюцца аўтаматычна, калі новыя версіі зацверджаны. Усталёўкі LOCAL/dev не абнаўляюцца аўтаматычна; усталюйце новую LOCAL версію ўручную.
+- Цалкам выдаліць налады: глядзіце [Прыватнасць → Выдаленне дадзеных](privacy#data-removal).
+
+Глядзіце таксама
+
+- [Хуткі старт](quickstart)

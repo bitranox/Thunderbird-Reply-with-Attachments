@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Începere rapidă",
+  "description": "Quickstart",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Începere rapidă",
+    "sidebar_label": "Începere rapidă"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Funcționalități",
+    "title": "Funcții",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalare",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/install"
   }
 }

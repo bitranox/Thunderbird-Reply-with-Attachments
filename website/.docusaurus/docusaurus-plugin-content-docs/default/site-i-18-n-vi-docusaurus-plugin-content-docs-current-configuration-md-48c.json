@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Cấu hình",
-  "description": "Ghi chú thuật ngữ: xem Glossary để dùng thuật ngữ thống nhất trong UI và tài liệu.",
+  "description": "Configuration",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/install"
   },
   "next": {
-    "title": "Cách dùng",
+    "title": "Sử dụng",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/usage"
   }
 }

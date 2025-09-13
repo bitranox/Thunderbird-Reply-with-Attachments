@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Muutosloki",
-  "description": "Katso koko historia repositoryn CHANGELOG.md‑tiedostosta.",
+  "title": "Muutospäiväkirja",
+  "description": "Changelog",
   "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Muutosloki"
+    "title": "Muutospäiväkirja"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/licence"
+    "title": "Lisenssi",
+    "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/license"
   }
 }

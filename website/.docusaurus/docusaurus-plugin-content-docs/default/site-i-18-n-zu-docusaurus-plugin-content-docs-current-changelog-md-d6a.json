@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ilogi yezinguquko",
-  "description": "Bheka umlando ogcwele kufayela le‑CHANGELOG.md eliku‑repo.",
+  "title": "Ushintsho lwezinguquko",
+  "description": "Ushintsho lwezinguquko",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ilogi yezinguquko"
+    "title": "Ushintsho lwezinguquko"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/licence"
+    "title": "Ishumeka",
+    "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/license"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Dukungan",
-  "description": "Perlu bantuan atau ingin melaporkan bug?",
+  "description": "FAQ",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

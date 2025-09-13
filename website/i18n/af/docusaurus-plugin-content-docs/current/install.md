@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Installasie'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Installasie'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Installasie via "Thunderbird Byvoegings en Temas" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimum Thunderbird Versie
+Hierdie byvoeging ondersteun Thunderbird **128 ESR of nuwer**. Ouer weergawes word nie ondersteun nie.
+:::
 
----
+Dit is die aanbevole installasie metode. Byvoegings wat vanaf ATN (addons.thunderbird.net) geïnstalleer is, ontvang outomatiese opdaterings. LOCAL/dev installasies word nie outomaties ge-update nie.
 
-## Local installation in Thunderbird
+- Minimum Thunderbird weergawe: 128 ESR of nuwer.
 
-### Download the XPI file
+1. In Thunderbird, gaan na **Gereedskap > Byvoegings en Temas**.
+2. Soek na "antwoord met lêers".
+3. Voeg die byvoeging by.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Of open die byvoeging bladsy direk: [Thunderbird Byvoegings (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Handmatige installasie vanaf XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Laai die XPI-lêer af {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Gaan na die [Thunderbird Byvoeging bladsy](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Laai die nuutste weergawe van die byvoeging af as 'n XPI-lêer (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Installeer in Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Maak Thunderbird oop.
+2. Gaan na **Gereedskap > Byvoegings en Temas**.
+3. In die **Byvoegingsbestuurder**, klik op die ratikoon in die boonste regterhoek.
+4. Kies **Installeer Byvoeging vanaf Lêer…** vanaf die spyskaart.
+5. Kies die afgelaaide `reply_with_attachments-x.y.z-tb.xpi` lêer.
+6. Bevestig die installasie wanneer gevra.
 
 ---
+
+## Installasie vir ontwikkeling {#installation-for-development}
+
+### Laai die repo af {#download-the-repository}
+
+1. Laai die nuutste weergawe van die GitHub-repository af.
+2. Voer `make help` uit vir meer inligting.
+
+### Installeer in Thunderbird {#install-in-thunderbird-dev}
+
+1. Maak Thunderbird oop.
+2. Gaan na **Gereedskap > Byvoegings en Temas**.
+3. In die **Byvoegingsbestuurder**, klik op die ratikoon in die boonste regterhoek.
+4. Kies **Installeer Byvoeging vanaf Lêer…** vanaf die spyskaart.
+5. Kies die gegenereerde lêer `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Bevestig die installasie wanneer gevra.
+
+Nota: As Thunderbird nie die `.zip` op jou stelsel aanvaar nie, hernoem dit na `.xpi` en probeer weer "Installeer Byvoeging vanaf Lêer…".
+
+### Waar om die LOCAL ZIP te vind {#where-local-zip}
+
+- Eerstens, verpak die byvoeging: voer `make pack` in die repo-wortel uit.
+- Na verpakking, vind die “LOCAL” zip in die repo-wortel (bv. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Voor herverpakking vir toetsing, verhoog weergawes in beide `sources/manifest_ATN.json` en `sources/manifest_LOCAL.json`.
+
+---
+
+## Deaktiveer, Verwyder, en Opdaterings {#disable-uninstall-updates}
+
+- Deaktiveer: Thunderbird → Gereedskap → Byvoegings en Temas → vind die byvoeging → skakel af.
+- Verwyder: dieselfde weergawe → drie-punt-spyskaart → Verwyder.
+- Opdaterings: ATN installasies outomaties opdatering wanneer nuwe weergawes goedgekeur word. LOCAL/dev installasies word nie outomaties ge-update nie; installeer 'n nuwe LOCAL bou handmatig.
+- Verwyder instellings volledig: sien [Privaatheid → Data verwydering](privacy#data-removal).
+
+Sien ook
+
+- [Vinnige begin](quickstart)

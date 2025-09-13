@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "تڪڙي شروعات",
+  "description": "تڪڙي شروعات",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "تڪڙي شروعات",
+    "sidebar_label": "تڪڙي شروعات"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "خاصيتون",
+    "title": "خصوصيتون",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "انسٽاليشن",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/install"
   }
 }

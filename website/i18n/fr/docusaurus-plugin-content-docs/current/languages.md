@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Langues
-sidebar_label: Langues
+title: 'Langues'
+sidebar_label: 'Langues'
 ---
 
-# Prise en charge des langues
+## Languages
 
-Large couverture grâce aux outils de traduction IA — 103 langues.
+Cette liste reflète à la fois les traductions de la documentation du site web et les chaînes d'interface utilisateur supplémentaires.
+Un support massif des langues, grâce aux outils de traduction AI — couvrant 100 langues.
 
-La liste ci‑dessous est triée par code de langue.
+La liste ci-dessous est triée par le code de langue.
 
-Voir aussi : le [Glossaire](glossary) pour les termes canoniques de l’UI.
+Voir aussi : le [Glossaire](glossary) pour les termes UI canoniques utilisés à travers les localisations.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ Voir aussi : le [Glossaire](glossary) pour les termes canoniques de l’UI.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,30 @@ Voir aussi : le [Glossaire](glossary) pour les termes canoniques de l’UI.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Astuce : Changez la langue des docs via le sélecteur de langue dans l'en-tête du site (le préfixe de l'URL change en conséquence). La langue de l'interface utilisateur de Thunderbird est indépendante de la langue du site web et suit vos paramètres Thunderbird.
+
+Redirection de la page d'accueil
+
+- Si le site est construit avec la langue préférée de votre navigateur, visiter l'URL de base des docs sous le baseUrl du projet redirige automatiquement vers cette langue. Utilisez le sélecteur de langue (ou `/en/`) pour rester en anglais.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Vous avez trouvé un problème dans une traduction ? Veuillez ouvrir un problème ou une PR sur GitHub.
+- Préférez les modifications contre la source anglaise sous `website/docs/`; l'outil du mainteneur propage les mises à jour vers d'autres langues.
+  L'anglais est la source de vérité pour la documentation ; les mises à jour de traduction sont récupérées de l'EN pendant le flux de travail du mainteneur.
+
+### Homepage, Navbar, Footer UI
+
+- Ces chaînes vivent dans `website/i18n/en/code.json` et sont traduites dans toutes les langues via la tâche du mainteneur:
+  - `make translate_web_index` (requiert `OPENAI_API_KEY`)
+  - Limitez les langues avec `OPTS="--locales de,fr"`; écrasez les valeurs existantes avec `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- La langue du site web et la langue de l'interface utilisateur additionnelle sont indépendantes; le sélecteur de langue change uniquement les docs. La langue de l'interface utilisateur de Thunderbird suit vos paramètres Thunderbird.
+
+---

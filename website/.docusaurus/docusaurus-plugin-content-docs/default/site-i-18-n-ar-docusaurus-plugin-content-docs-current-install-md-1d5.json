@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "التثبيت",
-  "description": "التثبيت — داخل Thunderbird (مُوصى به)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -23,7 +23,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/quickstart"
   },
   "next": {
-    "title": "الإعداد",
+    "title": "إعدادات",
     "permalink": "/Thunderbird-Reply-with-Attachments/ar/docs/configuration"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "تشکیل",
-  "description": "اصطلاحات نوٹ: UI اور دستاویزات میں استعمال ہونے والی ہم آہنگ اصطلاحات کے لیے Glossary دیکھیں۔",
+  "description": "Configuration",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

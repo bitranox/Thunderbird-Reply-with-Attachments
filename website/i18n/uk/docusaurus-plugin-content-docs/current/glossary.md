@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Глосарій'
+sidebar_label: 'Глосарій'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Глосарій
 
-Notes
+Канонічні терміни, що використовуються в UI і документації плагіна. Використовуйте їх для підтримки узгодженості перекладів між локалями.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Примітки
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- Зберігайте рядки UI короткими та орієнтованими на дії.
+- Віддавайте перевагу іменникам для налаштувань і дієсловам для дій.
+- Використовуйте дохідний регістр (тільки перше слово з великої літери), за винятком заголовків.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Терміни
+
+- **Вкладення**: файли, вкладені в електронний лист. Уникайте терміна “додатки”.
+- **Чорний список** (Список виключень): список шаблонів, які заважають автоматичному приєднанню файлів. В UI це з'являється як “Чорний список (шаблони glob)”.
+- У копії UI віддавайте перевагу “Чорний список (шаблони glob)”, щоб відповідати сторінці налаштувань.
+- Поясніть, що збігаються лише імена файлів; не шляхи.
+- **Підтвердити / Підтвердження:** запитати у користувача, чи продовжувати перед додаванням вкладень.
+- **Відповіді:** “Так” (додати), “Ні” (скасувати). Зберігайте етикетки кнопок короткими.
+- **Вбудоване зображення:** зображення, на яке посилаються за CID в HTML повідомлення; ніколи не додається як файл.
+- **S/MIME підпис:** `smime.p7s` або частини підпису PKCS7; ніколи не додається.
+- **Опції / Налаштування:** сторінка конфігурації плагіна в Thunderbird.
+- **Відповідь за замовчуванням:** попередньо обрана відповідь для діалогового вікна підтвердження.
+
+---
+
+### Дії з електронною поштою
+
+- **Відповісти:** відповісти відправнику повідомлення.
+- **Відповісти всім:** відповісти відправнику та всім отримувачам.
+- **Переслати:** надіслати повідомлення іншому отримувачу; цей плагін не змінює поведінку пересилання.
+
+---
+
+### Типи вкладень
+
+- **Вбудовані вкладення:** активи, вбудовані в тіло повідомлення (наприклад, посилаються через Content‑ID). Не додаються як файли плагіном.
+- **Приєднані файли:** файли, прикріплені до повідомлення як звичайні вкладення (кандидати для копіювання при відповіді).
+
+---
+
+### Стиль
+
+- **Імена файлів:** показувати як код (моноширинний), наприклад, `smime.p7s`, `*.png`.
+- **Ключі/кнопки:** заглавні тільки коли це власні назви; у інших випадках речовий регістр.
+- **Уникайте жаргону** (наприклад, “ідемпотентність”); краще “запобігти дублікатам”.
+
+---

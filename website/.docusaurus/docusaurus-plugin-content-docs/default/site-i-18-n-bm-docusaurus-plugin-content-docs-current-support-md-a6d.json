@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Sankɔfa",
+  "description": "FAQ",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Sankɔfa",
+    "sidebar_label": "Sankɔfa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Glossaire",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Nkyɛmu",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/privacy"
   }
 }

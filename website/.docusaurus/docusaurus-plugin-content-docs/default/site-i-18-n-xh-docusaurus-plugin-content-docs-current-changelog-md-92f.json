@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ilogi yeenguqu",
-  "description": "Jonga imbali epheleleyo kwifayile ethi CHANGELOG.md ngaphakathi kwirepositri.",
+  "title": "Uhlaziyo",
+  "description": "Changelog",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ilogi yeenguqu"
+    "title": "Uhlaziyo"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/licence"
+    "title": "Ityala",
+    "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/license"
   }
 }

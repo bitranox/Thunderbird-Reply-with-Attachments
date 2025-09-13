@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Diiwaanka isbeddellada",
-  "description": "Eeg taariikhda oo dhammeystiran faylka CHANGELOG.md ee kaydka (repository).",
+  "title": "Isbedelka",
+  "description": "Isbedelka",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Diiwaanka isbeddellada"
+    "title": "Isbedelka"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/licence"
+    "title": "Laysanka",
+    "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/license"
   }
 }

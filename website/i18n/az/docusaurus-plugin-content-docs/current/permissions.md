@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: Permissions
+title: 'İcazələr'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## İcazələr
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note Minimal icazələr
+Bu əlavə tərəfindən heç bir host (veb) icazəsi tələb edilmir. Əlavə telemetriya toplamır və arxa planda şəbəkə sorğuları etmir. [Məxfilik](privacy) səhifəsinə baxın.
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+Əlavə yalnız kiçik, fokuslanmış bir icazə dəstini tələb edir. Hər birinin niyə lazım olduğu:
+
+- `compose`: tərtibat hadisələrini izləmək, cavabınıza əlavələr siyahısı əlavə etmək.
+- `messagesRead`: metadata oxumaq və orijinal mesajdan əlavə fayllarını əldə etmək.
+- `scripting`: aktiv edildikdə, tərtibatda kiçik təsdiq dialoqunu inyekt etmək.
+- `windows`: mesaj göndərmə uğursuz olduqda son çarə olaraq kiçik təsdiq pəncərəsini açmaq.
+- `sessions`: təkrarlanan işləmənin qarşısını almaq üçün hər tab üçün bir bayraq saxlamaq.
+- `storage`: seçimləri (qara siyahı, təsdiq açarı, standart cavab) davam etdirmək.
+- `tabs`: təsdiq sorğuları üçün tərtibat tabına hədəflənmiş mesajlar göndərmək.
+
+Əlavə qeydlər:
+
+- Bu əlavə tərəfindən heç bir host icazəsi (veb kökləri) tələb edilmir.
+- `tabs` icazəsi yalnız isteğe bağlı təsdiq dialoqunu koordinasiya edərkən tərtibat tabını hədəfləmək üçün istifadə olunur; tarixçəni oxumaq və ya səhifələri gəzmək üçün istifadə edilmir.
+
+Bunlar mənbədə sənədləşdirilib və CI-də sınaqdan keçirilib. Əlavə telemetriya toplamır.
+
+---
+
+### Xülasə (icazələr → məqsəd) {#permissions-summary}
+
+| İcazə            | Niyə lazım olduğu                                                                   |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| `compose`        | Tərtibat hadisələrini izləmək; cavabınıza əlavələri siyahıya salmaq və əlavə etmək. |
+| `messagesRead`   | Orijinal mesaj əlavələrini siyahıya almaq və fayl məlumatlarını əldə etmək.         |
+| `scripting`      | Aktiv edildikdə, təsdiq üçün yüngül UI inyekt etmək/koordinatlaşdırmaq.             |
+| `windows`        | Mesaj göndərmə uğursuz olduqda (nadir) geri dönmə pəncərəsi.                        |
+| `sessions`       | Təkrarlanan işləmənin qarşısını almaq üçün hər tab üçün bir bayraq saxlamaq.        |
+| `storage`        | Seçimləri (qara siyahı, təsdiq açarı, standart cavab) davam etdirmək.               |
+| `tabs`           | Təsdiq sorğuları üçün tərtibat tabına hədəflənmiş mesajlar göndərmək.               |
+| (host icazələri) | Heç biri — əlavə veb kökləri tələb etmir.                                           |
+
+---
+
+## Tələb edilməyib {#not-requested}
+
+- `compose.save`, `compose.send` — əlavə sizin adınıza e-poçt yükləmir və ya göndermir.
+
+Baxın: [Məxfilik](privacy) — telemetriya yoxdur, arxa planda şəbəkə yoxdur, yalnız istifadəçi tərəfindən başlanan keçidlər.
+
+---

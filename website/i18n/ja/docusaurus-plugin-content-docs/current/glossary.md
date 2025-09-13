@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n 用語集
-sidebar_label: 用語集
+title: '用語集'
+sidebar_label: '用語集'
 ---
 
-アドオンの UI とドキュメントで使用する標準用語です。各ロケール間で訳語の一貫性を保つための基準にしてください。
+## Glossary
 
-## 注意
+Canonical terms used in the add-on UI and documentation. Use these to keep translations consistent across locales.
 
-- UI テキストは短く、行動を促す表現に。
-- 設定には名詞、操作には動詞を。
-- 見出し以外は文頭のみ大文字（Sentence case）。
+---
 
-## 用語
+### Notes
 
-- 添付ファイル（Attachments）：メールに含まれるファイル。“enclosures” は避ける。
-- ブラックリスト（Blacklist / 除外リスト）：自動添付を防ぐパターン一覧。
-- UI では設定ページに合わせて “Blacklist (glob patterns)” を用いる。
-- 照合対象はファイル名のみで、パスは対象外であることを明記。
-- 確認（Confirm / Confirmation）：添付前にユーザーへ確認すること。
-- 回答（Answers）：“Yes”（追加）、“No”（キャンセル）。ボタンは短い文言で。
-- インライン画像（Inline image）：HTML で CID 参照される画像。ファイルとしては追加しない。
-- S/MIME 署名：`smime.p7s` や PKCS7 署名。追加しない。
-- オプション / 設定（Options / Settings）：Thunderbird のアドオン設定ページ。
-- 既定の回答（Default answer）：確認ダイアログの事前選択値。
+- Keep UI strings short and action‑oriented.
+- Prefer nouns for settings and verbs for actions.
+- Use sentence case (only the first word capitalized) except titles.
 
-## スタイル
+---
 
-- ファイル名は等幅（コード）で表示：`smime.p7s`、`*.png` など。
-- キー/ボタン：固有名詞のみタイトルケース。その他は文頭のみ大文字。
-- 専門用語（例：“idempotency”）は避け、「重複を防ぐ」を用いる。
+### Terms
+
+- **Attachments**: files included with an email. Avoid “enclosures”.
+- **Blacklist** (Exclude list): list of patterns that prevent files from being attached automatically. In the UI this appears as “Blacklist (glob patterns)”.
+- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
+- Explain that only filenames are matched; not paths.
+- **Confirm / Confirmation:** ask the user to proceed before adding attachments.
+- **Answers:** “Yes” (add), “No” (cancel). Keep button labels short.
+- **Inline image:** an image referenced by CID in message HTML; never added as a file.
+- **S/MIME signature:** `smime.p7s` or PKCS7 signature parts; never added.
+- **Options / Settings:** the add-on’s configuration page in Thunderbird.
+- **Default answer:** the preselected answer for the confirmation dialog.
+
+---
+
+### Email actions
+
+- **Reply:** respond to the sender of a message.
+- **Reply all:** respond to sender and all recipients.
+- **Forward:** send the message to a different recipient; this add-on does not modify forward behavior.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** assets embedded in the message body (e.g., referenced via Content‑ID). Not added as files by the add-on.
+- **Attached files:** files attached to the message as regular attachments (candidates for copying on reply).
+
+---
+
+### Style
+
+- **Filenames:** show as code (monospace), e.g., `smime.p7s`, `*.png`.
+- **Keys/buttons:** title‑case only when they are proper names; otherwise sentence case.
+- **Avoid jargon** (e.g., “idempotency”); prefer “prevent duplicates”.
+
+---

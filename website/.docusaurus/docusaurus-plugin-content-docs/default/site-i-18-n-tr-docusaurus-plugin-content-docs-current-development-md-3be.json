@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Geliştirme",
-  "description": "Geliştirme kılavuzu",
+  "description": "Development Guide",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

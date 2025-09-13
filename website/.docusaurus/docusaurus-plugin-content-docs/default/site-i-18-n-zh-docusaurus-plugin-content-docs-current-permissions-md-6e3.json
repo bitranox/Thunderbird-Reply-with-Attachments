@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "权限",
-  "description": "此附加组件仅请求少量、聚焦的权限。各权限的用途：",
+  "description": "权限",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

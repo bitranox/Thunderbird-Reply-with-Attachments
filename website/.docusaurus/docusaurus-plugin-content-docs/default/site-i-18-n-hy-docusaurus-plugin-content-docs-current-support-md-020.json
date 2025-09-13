@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Օգնություն",
+  "description": "FAQ",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Օգնություն",
+    "sidebar_label": "Օգնություն"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Ճառնակալ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Հայտնություն",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/privacy"
   }
 }

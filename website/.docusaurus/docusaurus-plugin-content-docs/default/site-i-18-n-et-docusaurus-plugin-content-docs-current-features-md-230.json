@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Funktsioonid",
-  "description": "Funktsioonid",
+  "title": "Omadused",
+  "description": "Features",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Funktsioonid",
-    "sidebar_label": "Funktsioonid"
+    "title": "Omadused",
+    "sidebar_label": "Omadused"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Kiire algus",
     "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/quickstart"
   }
 }

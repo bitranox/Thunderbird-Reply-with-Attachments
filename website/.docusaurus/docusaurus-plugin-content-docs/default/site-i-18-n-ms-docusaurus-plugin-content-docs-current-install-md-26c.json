@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Pemasangan",
-  "description": "Pemasangan — dalam Thunderbird (Disyorkan)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mula Pantas",
+    "title": "Pengenalan Pantas",
     "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/quickstart"
   },
   "next": {

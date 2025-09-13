@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Փոփոխությունների մատյան",
-  "description": "Ամբողջական պատմությունը տեսեք պահոցում գտնվող CHANGELOG.md ֆայլում։",
+  "title": "Փոփոխությունների պատմություն",
+  "description": "Changelog",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Փոփոխությունների մատյան"
+    "title": "Փոփոխությունների պատմություն"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/licence"
+    "title": "Լիցենզիա",
+    "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/license"
   }
 }

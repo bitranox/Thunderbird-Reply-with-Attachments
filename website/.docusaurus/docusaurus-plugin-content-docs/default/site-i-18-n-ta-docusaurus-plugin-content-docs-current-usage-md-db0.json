@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "பயன்பாடு",
-  "description": "பயன்பாடு",
+  "description": "Usage",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "உள்ளமைவு",
+    "title": "கட்டமைப்பு",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/configuration"
   },
   "next": {
-    "title": "இணக்கத்தன்மை",
+    "title": "சரியானது",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/compatibility"
   }
 }

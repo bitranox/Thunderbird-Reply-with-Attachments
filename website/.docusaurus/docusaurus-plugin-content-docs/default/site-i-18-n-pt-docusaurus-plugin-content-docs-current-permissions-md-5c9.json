@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Permissões",
-  "description": "O extra pede um conjunto pequeno e específico de permissões. Porque cada uma é necessária:",
+  "description": "Permissões",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

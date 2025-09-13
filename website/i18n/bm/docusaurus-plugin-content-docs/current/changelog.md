@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: Tuguya boloba kɛ
+title: 'Chanjman'
 ---
 
-Ka baarakɛ min bɛ se ka a lajɛ ka kɛ CHANGELOG.md fila la repo kɔnɔ.
+## Chanjman
 
-- 2.0.0: dɔɔnin dɔ b’a bɛɛ kɛ (EN/DE) ka fɛ ka sɛbɛnni kɛ ko min bɛ bɛɛ kɛ
-- 1.0.1: ka bε taa messages.listAttachments() la
-- 1.0.0: k’a fɔlɔ kɔsɛbɛn
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

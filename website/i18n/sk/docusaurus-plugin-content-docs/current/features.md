@@ -1,17 +1,34 @@
 ---
 id: features
-title: Funkcie
-sidebar_label: Funkcie
+title: 'Funkcie'
+sidebar_label: 'Funkcie'
 ---
 
-## Funkcie
+## Features {#features}
 
-- Pri odpovedi automaticky pripojí súbory z pôvodného e‑mailu.
-- Konfigurovateľné správanie: prílohy sa môžu
-  - pridávať automaticky, alebo
-  - pridávať až po potvrdení (malé, prístupné dialógové okno). V Možnostiach môžete zapnúť potvrdenie a zvoliť predvolenú odpoveď (Áno/Nie).
-- Zoznam zakázaných názvov súborov (glob vzory) zabraňuje automatickému pripojeniu určitých súborov. Príklady: `*intern*`, `*secret*`, `*passwor*`.
-  Porovnávanie nerozlišuje veľké/malé písmená a kontroluje len názov súboru; v Možnostiach uveďte jeden vzor na riadok.
-- Upozornenie na blacklist (voliteľné, predvolene zapnuté): keď súbory vylúči váš zoznam, malé modálne okno zobrazí súbor a zodpovedajúce vzory. Prispôsobené tmavému režimu a prístupné z klávesnice (Enter/Esc na zatvorenie).
-- Pridá originály aj vtedy, ak ste už niečo pripojili; predchádza duplikátom podľa názvu súboru.
-- Preskočí certifikáty SMIME a vložené obrázky, aby sa predišlo zbytočným prílohám.
+- Automaticky pridáva súbory z originálneho e-mailu pri odpovedaní.
+- Konfigurovateľné správanie: prílohy môžu byť
+  - pridané automaticky, alebo
+  - pridané iba po potvrdení (malý, prístupný dialóg). V Možnostiach môžete
+    povoliť potvrdenie a vybrať predvolenú odpoveď (Áno/Nie).
+- Zoznam zakázaných názvov súborov (globálne vzory) zabraňuje pripojeniu konkrétnych súborov
+  automaticky. Príklady: `*intern*`, `*secret*`, `*passwor*`.
+  Porovnávanie je bez ohľadu na veľkosť písmen a kontroluje iba názov súboru; zadajte jeden vzor
+  na riadok v Možnostiach.
+- Upozornenie na zakázané súbory (voliteľné, predvolene zapnuté): keď sú súbory vylúčené vaším
+  zoznamom zakázaných, malý modálny okno zobrazuje súbor a zodpovedajúce vzory. Priateľské k tmavému režimu
+  a prístupné klávesnicou (Enter/Esc na zatvorenie).
+- Funguje s Odpovedať a Odpovedať všetkým. Preposlanie nie je touto doplnkom upravené.
+- Pridáva originály aj keď ste už niečo pridali sami; vyhýba sa duplikátom podľa názvu súboru.
+- Strážca duplikátov na kartu zabraňuje opakovanému pridávaniu v tej istej karte na písanie.
+- Preskočí certifikáty S/MIME a inline obrázky, aby sa predišlo zbytočným prílohám.
+
+## How It Works {#how-it-works}
+
+- Pri odpovedi, doplnok zobrazuje originálne prílohy.
+- Filtruje S/MIME podpisy a inline obrázky.
+- Voliteľne pýta na potvrdenie (priatelské k klávesnici).
+- Pridáva spôsobilé súbory do vášho kompozície, čím sa vyhýba duplikátom podľa názvu súboru.
+- Pozrite sa na „Prečo prílohy nemusia byť pridané“ v Použití pre okrajové prípady.
+
+Poznámka o ochrane súkromia: Všetko spracovanie prebieha lokálne v Thunderbirde. Doplnok nevykonáva žiadne sieťové požiadavky na pozadí.

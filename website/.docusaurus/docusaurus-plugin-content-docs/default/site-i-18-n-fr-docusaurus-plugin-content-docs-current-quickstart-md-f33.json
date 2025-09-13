@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Démarrage rapide",
-  "description": "1. Installez le module complémentaire depuis Thunderbird Add-ons.",
+  "description": "Démarrage rapide",
   "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",

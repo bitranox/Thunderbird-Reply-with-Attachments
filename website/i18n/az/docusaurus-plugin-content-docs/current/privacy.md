@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Məxfilik'
+sidebar_label: 'Məxfilik'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Məxfilik
 
-What the add‑on does:
+:::note Telemetriya yoxdur; arxa plan şəbəkəsi yoxdur
+Bu əlavənin **heç bir** analitik/telemetriya toplamadığı və **heç bir** arxa plan şəbəkə tələb etmədiyi. Hər hansı bir şəbəkə girişi yalnız xarici əlaqəni kliklədiyiniz zaman baş verir (Dokumentlər, GitHub, Bağışlamaq).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments analitik və ya telemetriya toplamır və məlumatlarınızı heç bir yerə göndermir.
 
-What the add‑on does not do:
+Əlavənin nə etdiyinə dair:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Cavabınıza əlavə etmək üçün orijinal mesajdan əlavə məlumatları və faylları yerli olaraq (Thunderbird API) oxuyur.
+- Seçimlərinizi (qara siyahı, təsdiq, standart cavab) Thunderbird-in yerli saxlama sistemində saxlayır.
 
-Permissions are documented on the [Permissions](permissions) page.
+Əlavənin nə etmir:
 
-## Content Security Policy (CSP)
+- Heç bir izləmə, analitik, çöküş bildirişi və ya uzaq qeydiyyat.
+- Yalnız xarici bağlantıları (Dokumentlər, GitHub, Bağışlamaq) açdığınız zaman istisna olmaqla, heç bir arxa plan şəbəkə tələbi yoxdur.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+İcazələr [İcazələr](permissions) səhifəsində sənədləşdirilmişdir.
+
+---
+
+## Məzmunun Təhlükəsizlik Siyasəti (CSP) {#content-security-policy-csp}
+
+Seçim və pop-up səhifələri inline skriptlərdən qaçır. Bütün JavaScript əlavənin tərkibində olan fayllardan yüklənir ki, bu da Thunderbird-də sərt CSP-yə riayət etsin. Əgər sənədlərdə kod parçaları əlavə edirsinizsə, bunlar yalnız nümunələrdir və əlavə tərəfindən icra edilmir.
+
+---
+
+## Məlumatların saxlanması {#data-storage}
+
+- İstifadəçi seçimləri (qara siyahı, təsdiq açarı, standart cavab) Thunderbird-in `storage.local`-da bu əlavə üçün saxlanılır.
+- Əlavə tərəfindən heç bir bulud sinxronizasiyası həyata keçirilmir.
+
+---
+
+## Şəbəkə {#network}
+
+- Əlavə arxa plan şəbəkə fəaliyyəti həyata keçirmir.
+- Hər hansı bir şəbəkə girişi yalnız bağlantılara (Dokumentlər, GitHub, Bağışlamaq) kliklədiyiniz zaman və ya Thunderbird özü bu əlavəyə aid olmayan normal əməliyyatları yerinə yetirdiyi zaman baş verir.
+
+---
+
+## Məlumatların silinməsi {#data-removal}
+
+- Əlavəni silmək onun kodunu aradan qaldırır.
+- Parametrlər yalnız Thunderbird-in `storage.local`-də saxlanılır və silindiyi zaman silinir; heç bir xarici saxlama istifadə edilmir.
+- Silmədən parametrləri sıfırlamaq:
+  - Seçim səhifəsi: qara siyahı və qara siyahı xəbərdarlığı üçün "Standartlara geri sıfırla" istifadə edin.
+  - İrəliləmiş: Thunderbird → Alətlər → İnkişafçı alətləri → Debug Add-ons, genişləndirilmiş saxlayıcıya daxil olun və lazım olarsa açarları təmizləyin.

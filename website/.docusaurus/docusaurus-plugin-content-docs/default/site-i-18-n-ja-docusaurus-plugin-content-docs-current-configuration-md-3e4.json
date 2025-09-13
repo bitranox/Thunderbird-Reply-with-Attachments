@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "設定",
-  "description": "用語について：UI とドキュメントで一貫して用いるため、用語集 を参照してください。",
+  "description": "設定",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -21,7 +21,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/install"
   },
   "next": {
-    "title": "使い方",
+    "title": "使用法",
     "permalink": "/Thunderbird-Reply-with-Attachments/ja/docs/usage"
   }
 }

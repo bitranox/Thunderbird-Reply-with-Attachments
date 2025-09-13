@@ -3,7 +3,7 @@
     "message": "Svara með viðhengjum"
   },
   "extDescription": {
-    "message": "Bæta sjálfkrafa upprunalegum viðhengjum við tölvupóstsvör."
+    "message": "Bætir upprunalegum viðhengjum sjálfkrafa við þegar svarað er tölvupósti."
   },
   "composeTitle": {
     "message": "Svara með viðhengjum"
@@ -18,19 +18,45 @@
     "message": "Svara með viðhengjum"
   },
   "uiNoOptions": {
-    "message": "Sem stendur eru engir valkostir til að stilla."
+    "message": "Eins og er eru engir valkostir til að stilla."
   },
   "uiSupport": {
-    "message": "Líkar þér þessi viðbót? Styðdu mig með litlu framlagi:"
+    "message": "Líkar þér þessi viðbót? Vinsamlegast styrktu mig með smá framlagi:"
+  },
+  "uiRateATNText": {
+    "message": "Vinsamlegast gefðu einkunn á ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Styrkja núna"
   },
+  "uiIDonated": {
+    "message": "Ég styrkti"
+  },
+  "uiDonateSnoozed": {
+    "message": "Takk! Styrkbeiðni falin í 90 daga."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Falið fram til $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Sýna styrkbeiðni aftur"
+  },
+  "uiDonateRestored": {
+    "message": "Styrkbeiðni er aftur sýnileg."
+  },
   "uiGithubText": {
-    "message": "Fyrir villutilkynningar eða aðrar fyrirspurnir, vinsamlegast heimsæktu"
+    "message": "Fyrir villutilkynningar eða aðrar fyrirspurnir, vinsamlegast heimsæktu mína"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub-síðuna mína"
+    "message": "GitHub-síðu"
   },
   "iconAlt": {
     "message": "Táknmynd Svara með viðhengjum"
@@ -39,13 +65,13 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Svartlisti skráarheita (glob-mynstur)"
+    "message": "Svartlisti skráarheita (glob-munstur)"
   },
   "uiBlacklistHelp": {
-    "message": "Skrár sem heiti þeirra samsvara einhverju af þessum mynstrum verða aldrei sjálfkrafa festar við. Eitt mynstur í hverja línu. Dæmi: *.png, smime.*, *.p7s"
+    "message": "Skrár sem bera heiti sem passa við eitthvert af þessum mynstrum verða aldrei hengdar sjálfkrafa við. Eitt mynstur í línu. Dæmi: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Vara við ef viðhengi eru undanskilin af svartlista"
+    "message": "Vara við ef viðhengi eru útilokuð af svartlista"
   },
   "uiSave": {
     "message": "Vista"
@@ -66,10 +92,10 @@
     "message": "Staðfesting"
   },
   "uiConfirmLabel": {
-    "message": "Spyrja áður en bætt er við viðhengjum"
+    "message": "Spyrja áður en viðhengi eru bætt við"
   },
   "uiConfirmHelp": {
-    "message": "Lítill staðfestingargluggi birtist aðeins þegar viðhengi yrðu raunverulega bætt við. Lyklaborð: Y eða J = Já; N eða Esc = Nei."
+    "message": "Lítill staðfestingargluggi birtist aðeins þegar raunverulega yrði bætt við viðhengjum. Lyklaborð: Y eða J = Já; N eða Esc = Nei."
   },
   "confirmAddOne": {
     "message": "Bæta við viðhengi: $1?",
@@ -100,7 +126,7 @@
     "message": "Nei"
   },
   "warnBlacklistTitle": {
-    "message": "Undanskilin af svartlista"
+    "message": "Útilokað af svartlista"
   },
   "warnBlacklistIntro": {
     "message": "Eftirfarandi skrám verður ekki sjálfkrafa bætt við:"
@@ -109,7 +135,7 @@
     "message": "Skrá"
   },
   "warnColPattern": {
-    "message": "Mynstur"
+    "message": "Munstur"
   },
   "warnOk": {
     "message": "Í lagi"
@@ -124,9 +150,21 @@
     "message": "Nei"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Leiðbeiningar:"
+  },
+  "uiDocsButton": {
+    "message": "Opna leiðbeiningar"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Þróun",
   "description": "Development Guide",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Þróun",
+    "sidebar_label": "Þróun"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Heimildaskilmál",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Tungumál",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/languages"
   }
 }

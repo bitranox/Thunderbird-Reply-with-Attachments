@@ -1,7 +1,7 @@
 ---
 id: features
-title: Features
-sidebar_label: Features
+title: 'Features'
+sidebar_label: 'Features'
 ---
 
 ---

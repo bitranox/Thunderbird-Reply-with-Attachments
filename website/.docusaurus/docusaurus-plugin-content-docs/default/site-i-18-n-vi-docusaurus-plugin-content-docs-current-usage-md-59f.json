@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Cách dùng",
-  "description": "Cách dùng",
+  "title": "Sử dụng",
+  "description": "Usage",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Cách dùng",
-    "sidebar_label": "Cách dùng"
+    "title": "Sử dụng",
+    "sidebar_label": "Sử dụng"
   },
   "sidebar": "docs",
   "previous": {

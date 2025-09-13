@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Beállítások",
+  "description": "Configuration",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Beállítások"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Telepítés",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Használat",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/usage"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "Supporto",
-  "description": "Serve aiuto o vuoi segnalare un bug?",
+  "description": "FAQ",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

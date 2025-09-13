@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Amaloota",
-  "description": "Amaloota",
+  "description": "Features",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Dhiyaannaa",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/quickstart"
   }
 }

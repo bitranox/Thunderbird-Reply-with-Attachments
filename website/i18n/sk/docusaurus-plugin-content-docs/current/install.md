@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Inštalácia'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Inštalácia'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Inštalácia cez "Doplnky a témy Thunderbirdu" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Minimálna verzia Thunderbirdu
+Tento doplnok podporuje Thunderbird **128 ESR alebo novší**. Staršie verzie nie sú podporované.
+:::
 
----
+Toto je odporúčaná metóda inštalácie. Doplnky nainštalované z ATN (addons.thunderbird.net) dostávajú automatické aktualizácie. Lokálne/dev inštalácie sa neaktualizujú automaticky.
 
-## Local installation in Thunderbird
+- Minimálna verzia Thunderbirdu: 128 ESR alebo novší.
 
-### Download the XPI file
+1. V Thunderbirde prejdite na **Nástroje > Doplnky a témy**.
+2. Vyhľadajte "odpovedať s prílohami".
+3. Pridajte doplnok.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Alebo otvorte stránku doplnku priamo: [Doplnky Thunderbirdu (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Manuálna inštalácia z XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Stiahnite súbor XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Prejdite na [stránku doplnku Thunderbirdu](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Stiahnite najnovšiu verziu doplnku ako súbor XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Inštalácia do Thunderbirdu {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Otvorenie Thunderbirdu.
+2. Prejdite na **Nástroje > Doplnky a témy**.
+3. V **Správcovi doplnkov** kliknite na ikonu ozubeného kola v pravom hornom rohu.
+4. Z ponuky vyberte **Inštalovať doplnok zo súboru...**.
+5. Vyberte stiahnutý súbor `reply_with_attachments-x.y.z-tb.xpi`.
+6. Potvrďte inštaláciu, keď sa zobrazí výzva.
 
 ---
+
+## Inštalácia pre vývoj {#installation-for-development}
+
+### Stiahnite repozitár {#download-the-repository}
+
+1. Stiahnite najnovšiu verziu repozitára z GitHubu.
+2. Spustite `make help` pre viac informácií.
+
+### Inštalácia do Thunderbirdu {#install-in-thunderbird-dev}
+
+1. Otvorenie Thunderbirdu.
+2. Prejdite na **Nástroje > Doplnky a témy**.
+3. V **Správcovi doplnkov** kliknite na ikonu ozubeného kola v pravom hornom rohu.
+4. Z ponuky vyberte **Inštalovať doplnok zo súboru...**.
+5. Vyberte vygenerovaný súbor `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Potvrďte inštaláciu, keď sa zobrazí výzva.
+
+Poznámka: Ak Thunderbird neprijme `.zip` vo vašom systéme, premenovajte ho na `.xpi` a skúste znova “Inštalovať doplnok zo súboru...”.
+
+### Kde nájsť LOCAL ZIP {#where-local-zip}
+
+- Najprv zabalte doplnok: spustite `make pack` v koreňovom adresári repozitára.
+- Po zabalení nájdete “LOCAL” zip v koreňovom adresári repozitára (napr. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Pred opätovným balením na testovanie zvýšte verzie v oboch `sources/manifest_ATN.json` a `sources/manifest_LOCAL.json`.
+
+---
+
+## Zakázať, odinštalovať a aktualizácie {#disable-uninstall-updates}
+
+- Zakázať: Thunderbird → Nástroje → Doplnky a témy → nájdite doplnok → vypnite.
+- Odinštalovať: rovnaký pohľad → ponuka troch bodiek → Odstrániť.
+- Aktualizácie: ATN inštalácie sa automaticky aktualizujú, keď sú nové verzie schválené. Lokálne/dev inštalácie sa neaktualizujú automaticky; reinstalujte novú lokálnu verziu manuálne.
+- Úplne odstrániť nastavenia: pozrite [Ochrana súkromia → Odstránenie dát](privacy#data-removal).
+
+Pozrite tiež
+
+- [Rýchly začiatok](quickstart)

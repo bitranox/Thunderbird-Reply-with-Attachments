@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Устензия'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Устензия'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Устензия тавассути "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Версияи минималии Thunderbird
+Ин замима версияи Thunderbird **128 ESR ё навтар**-ро дастгирӣ мекунад. Версияҳои куҳӣ дастгирӣ намешаванд.
+:::
 
----
+Ин усули тавсияшавандаи устунзӣ мебошад. Замимаҳое, ки аз ATN (addons.thunderbird.net) насб мешаванд, ба таври автоматикӣ навсозӣ мегардад. Устунзии LOCAL/dev автоматикӣ навсозӣ намешавад.
 
-## Local installation in Thunderbird
+- Версияи минималии Thunderbird: 128 ESR ё навтар.
 
-### Download the XPI file
+1. Дар Thunderbird, ба **Tools > Add-ons and Themes** равед.
+2. Тадқиқ кунед "ҷавоб бо замимаҳо".
+3. Замимаи навро илова кунед.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Ё бевосита ба саҳифаи замима равед: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Устензияи дастии XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Файл XPI-ро зеркашӣ кунед {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Ба [саҳифаи замимаи Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) равед.
+2. Версияи охирини замимаи XPI-ро зеркашӣ кунед (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Устензӣ дар Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Thunderbird-ро боз кунед.
+2. Ба **Tools > Add-ons and Themes** равед.
+3. Дар **Менеҷери замимаҳо**, нишони гиредро дар кунҷи болоии рост клик кунед.
+4. **Install Add-on From File…**-ро аз меню интихоб кунед.
+5. Файли зеркашишударо `reply_with_attachments-x.y.z-tb.xpi` интихоб кунед.
+6. Вақте ки хоҳиш карда шуд, устунзиро тасдиқ кунед.
 
 ---
+
+## Устензия барои рушди {#installation-for-development}
+
+### Резиши репозитори {#download-the-repository}
+
+1. Версияи охирини репозитории GitHub-ро зеркашӣ кунед.
+2. `make help`-ро давр занед барои маълумоти иловагӣ.
+
+### Устензӣ дар Thunderbird {#install-in-thunderbird-dev}
+
+1. Thunderbird-ро боз кунед.
+2. Ба **Tools > Add-ons and Themes** равед.
+3. Дар **Менэҷери замимаҳо**, нишони гиредро дар кунҷи болоии рост клик кунед.
+4. **Install Add-on From File…**-ро аз меню интихоб кунед.
+5. Файли сохташударо `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` интихоб кунед.
+6. Вақте ки хоҳиш карда шуд, устунзиро тасдиқ кунед.
+
+Эзоҳ: Агар Thunderbird `.zip`-ро дар системаи шумо қабул накунад, онро ба `.xpi` номгузорӣ кунед ва боз "Install Add‑on From File…”-ро интихоб кунед.
+
+### Кӯ dimana LOCAL ZIP {#where-local-zip}
+
+- Аввал замимаҳоро печонед: `make pack`-ро дар решаҳои репозиторӣ иҷрошударо иҷро кунед.
+- Пас аз печондан, ZIP-и “LOCAL”-и дар решаҳои репозиторӣ (масалан, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Пеш аз пешпардохт барои тест, версияҳо дар `sources/manifest_ATN.json` ва `sources/manifest_LOCAL.json`-ро баланд кунед.
+
+---
+
+## Хомӯш кардан, беҳишт кардан ва навсозӣ {#disable-uninstall-updates}
+
+- Хомӯш кардан: Thunderbird → Tools → Add‑ons and Themes → замимаро пайдо кунед → хомӯш кунед.
+- Беҳишт кардан: манзараи ҳамон → менюи се нуқта → Устонад.
+- Навсозӣ: насбҳои ATN вақте, ки версияҳои нав иҷозатдодашударо бо автоматӣ навсозӣ мекунад. Насбҳои LOCAL/dev автоматикӣ навсозӣ намешаванд; сохтани LOCAL-и навро дастӣ кунайт.
+- Ҳамаи параметрҳоро комилан нест кунед: бубинед [Privacy → Data removal](privacy#data-removal).
+
+Нигаред ҳамчунин
+
+- [Суръатнома](quickstart)

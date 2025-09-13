@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Pembangunan",
-  "description": "Panduan Pembangunan",
+  "description": "Development Guide",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Keizinan",
+    "title": "Kebenaran",
     "permalink": "/Thunderbird-Reply-with-Attachments/ms/docs/permissions"
   },
   "next": {

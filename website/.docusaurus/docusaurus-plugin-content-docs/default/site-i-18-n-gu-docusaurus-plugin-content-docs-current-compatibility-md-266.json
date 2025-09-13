@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "સુસંગતતા",
-  "description": "સુસંગતતા",
+  "title": "સંગતતા",
+  "description": "Compatibility",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "સુસંગતતા",
-    "sidebar_label": "સુસંગતતા"
+    "title": "સંગતતા",
+    "sidebar_label": "સંગતતા"
   },
   "sidebar": "docs",
   "previous": {

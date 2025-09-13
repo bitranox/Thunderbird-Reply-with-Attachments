@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Fanamboarana",
+  "description": "Configuration",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Fanamboarana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Fametrahana",
     "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Fampiasana",
     "permalink": "/Thunderbird-Reply-with-Attachments/mg/docs/usage"
   }
 }

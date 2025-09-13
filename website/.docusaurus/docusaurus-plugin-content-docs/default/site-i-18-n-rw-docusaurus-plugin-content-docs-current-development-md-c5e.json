@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Iterambere",
   "description": "Development Guide",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Iterambere",
+    "sidebar_label": "Iterambere"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Ubugenzuzi",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Indimi",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/languages"
   }
 }

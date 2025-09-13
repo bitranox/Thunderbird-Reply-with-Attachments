@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Käyttö",
   "description": "Usage",
   "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Käyttö",
+    "sidebar_label": "Käyttö"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfiguraatio",
     "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Yhteensopivuus",
     "permalink": "/Thunderbird-Reply-with-Attachments/fi/docs/compatibility"
   }
 }

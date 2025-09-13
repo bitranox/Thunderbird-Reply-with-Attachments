@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Gizlilik",
-  "description": "Ekli Yanıtlar analitik/telemetri toplamaz ve verilerinizi hiçbir yere göndermez.",
+  "description": "Privacy",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/support"
   },
   "next": {
-    "title": "Bağış",
+    "title": "Bağış Yap",
     "permalink": "/Thunderbird-Reply-with-Attachments/tr/docs/donation"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Entwicklung",
+  "title": "Development",
   "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757333707000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "development",
-    "title": "Entwicklung",
-    "sidebar_label": "Entwicklung"
+    "title": "Development",
+    "sidebar_label": "Development"
   },
   "sidebar": "docs",
   "previous": {

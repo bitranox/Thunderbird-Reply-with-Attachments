@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'تەپسىلنامە'
+sidebar_label: 'تەپسىلنامە'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## تەپسىلنامە
 
-Notes
+قوشۇلمىسى UI ۋە كونسۇلتاتسىيەسىدە ئىشلىتىلىدىغان ئاساسلىق تەرلەر. بۇلارنى مىللەتلەر ئارىسىدىكى تەرجىمىنى بىرى بىرىگە ماسلاشتۇرۇش ئۈچۈن ئىشلىتىڭ.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### ئېيتىشلار
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- UI قىسىملىرىنى قىسقا ۋە ئىش-ھەرىكەت بويىچە يازىڭ.
+- تەڭشەك ئۈچۈن ئىسم، ھەرىكەتلەر ئۈچۈن ئىسىم ئىشلىتىشنى خالايمىز.
+- ماقالە حالىتىنى ئىشلىتىڭ (فقط بىرىنچى سۆز باش ھەرپ بىلەن) ھەمدە باش دەسلەپكىلەرگە خاس.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### تەرلەر
+
+- **Attachments**: ئېلخەتكە قوشۇلغان ھۆججەتلەر. “تارماقلار” دەپ ئاسماڭ.
+- **Blacklist** (Exclude list): ھۆججەتلەرنىڭ ئاپتوماتىك قوشۇلۇشنى توختىتىدىغان شەكىللەر تىزىمى. UI دىمۇ بۇ “Blacklist (glob patterns)” دەپ كۆرسىتىلىدۇ.
+- UI نى قاپلاپ بولغاندىن كىيىن، “Blacklist (glob patterns)” نى تەڭشەك بەتتە ياساش ئۈچۈن قوللىنيڭ.
+- پەقەت ھۆججەت ئىسىملىرى قارايدۇ؛ يوللار قارايدۇ.
+- **Confirm / Confirmation:** قوشۇشتىن بۇرۇن، ئىشلىتىشچىدىن مەخسەت بەلگىلىشتە سۇئال سوراش.
+- **Answers:** “ھەئە” (قوشۇش)، “ياق” (باجۇرماق). كۇنۇپكا بەلگىلەشلىرىنى قىسقا قىلىڭ.
+- **Inline image:** خەتكە CID نىڭ ئىكتبولىدىكى ئۇچىغان رەسىم؛ ھۆججەت قاتارلىقمۇ قوشمايدۇ.
+- **S/MIME signature:** `smime.p7s` ياكى PKCS7 ئىمزالساق رېتسىپلىرى; پەقەت قوشمايدۇ.
+- **Options / Settings:** Thunderbird دەپ قوشۇشنىڭ تەڭشەش بەت.
+- **Default answer:** پەقەت ئۆز-ئۆزلۈكقۇيغۇ بەلگىلەنگەن جاۋاب.
+
+---
+
+### ئېلخەت ھەرىكەتلىرى
+
+- **Reply:** بىرىنچى خەتكە جاۋاب بېرىش.
+- **Reply all:** بىرىنچى خەتكە ۋە بارلىق خەتكە جاۋاب بېرىش.
+- **Forward:** خەتنى بۇرۇنلىقتا قانائەت مەبلەغىگە يوللاش؛ بۇ قوشۇش ئالاقىلىق ھەرىكەتلەرنى ئۆزگىرىتپەيدۇ.
+
+---
+
+### قوشۇلغان تۈرلەر
+
+- **Inline attachments:** خەت جۈملەسىگە قوشۇلغان مەنىز (مەسىلەن، Content-ID ئارقىلىق سۆزلەشتۇق). قوشما ھۆججەتلەردە قوشۇلمايدۇ.
+- **Attached files:** خەتكە نازارەت قىلىنغان ئاساسىي قوشۇلغان ھۆججەتلەردىن قوشۇش بويىچە (جاۋاب ئۇچۇرىنگە تىرىشماق).
+
+---
+
+### شەكىل
+
+- **Filenames:** كود (بىر تەرەپ) شەكلىدە كۆرگۈزۈش، مەسىلەن، `smime.p7s`, `*.png`.
+- **Keys/buttons:** زادى ئىسم بولۇپ قالغاندىكىدا چوڭ رايىڭا، شۇنداق بولمىسا جۈملىسىگە.
+- **جاردان قوللانما** (مەسىلەن، “idempotency”); “تالۇنغان تۇتۇش” نى ئىشلىتىڭ.
+
+---

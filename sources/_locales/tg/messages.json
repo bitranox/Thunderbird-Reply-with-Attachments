@@ -3,7 +3,7 @@
     "message": "Ҷавоб бо замимаҳо"
   },
   "extDescription": {
-    "message": "Ҳангоми ҷавоб ба паёми электронӣ замимаҳои аслиро худкор ҳамроҳ мекунад."
+    "message": "Ба таври худкор замимаҳои аслиро ба ҷавобҳои почтаи электронӣ ҳамроҳ мекунад."
   },
   "composeTitle": {
     "message": "Ҷавоб бо замимаҳо"
@@ -18,16 +18,42 @@
     "message": "Ҷавоб бо замимаҳо"
   },
   "uiNoOptions": {
-    "message": "Дар ҳоли ҳозир ягон танзимот барои тағйир додан нест."
+    "message": "Дар айни замон ҳеҷ гуна имконоти танзим вуҷуд надорад."
   },
   "uiSupport": {
-    "message": "Оё ин илова ба шумо писанд аст? Маро бо саҳми хурд дастгирӣ кунед:"
+    "message": "Ин илова ба шумо писанд аст? Лутфан маро бо як саҳми хурд дастгирӣ кунед:"
+  },
+  "uiRateATNText": {
+    "message": "Лутфан дар ATN баҳо диҳед"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Ҳоло хайрия кунед"
   },
+  "uiIDonated": {
+    "message": "Ман хайрия кардам"
+  },
+  "uiDonateSnoozed": {
+    "message": "Ташаккур! Пайёми дархости хайрия барои 90 рӯз пинҳон шуд."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Пинҳон то $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Боз нишон додани хайрия"
+  },
+  "uiDonateRestored": {
+    "message": "Пайёми дархости хайрия боз намоён аст."
+  },
   "uiGithubText": {
-    "message": "Барои гузориши хатоҳо ё дархостҳои дигар, лутфан ба"
+    "message": "Барои гузориши хатогиҳо ё дигар пурсишҳо, лутфан ба"
   },
   "uiGithubLinkLabel": {
     "message": "Саҳифаи GitHub"
@@ -42,19 +68,19 @@
     "message": "Рӯйхати сиёҳи номҳои файл (намунаҳои glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Файлҳое, ки номи онҳо ба яке аз ин намунаҳо мутобиқат мекунад, ҳеҷ гоҳ худкор замима намешаванд. Ҳар сатр — як намуна. Мисолҳо: *.png, smime.*, *.p7s"
+    "message": "Файлҳое, ки номҳояшон ба яке аз ин намунаҳо мувофиқат мекунад, ҳеҷ гоҳ худкорона замима карда намешаванд. Як намуна дар ҳар сатр. Мисолҳо: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Огоҳ кардан, агар замимаҳо аз ҷониби рӯйхати сиёҳ истисно шаванд"
+    "message": "Огоҳ кардан, агар замимаҳо аз рӯйхати сиёҳ хориҷ шаванд"
   },
   "uiSave": {
-    "message": "Захира"
+    "message": "Захира кардан"
   },
   "uiSaving": {
     "message": "Захира мешавад…"
   },
   "uiReset": {
-    "message": "Барқарор ба пешфарз"
+    "message": "Ба пешфарзҳо барқарор кардан"
   },
   "uiSaved": {
     "message": "Захира шуд."
@@ -69,7 +95,7 @@
     "message": "Пеш аз илова кардани замимаҳо пурсидан"
   },
   "uiConfirmHelp": {
-    "message": "Равзанаи хурди тасдиқ танҳо вақте пайдо мешавад, ки воқеан замимаҳо илова шаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
+    "message": "Равзанаи хурди тасдиқ танҳо он вақт пайдо мешавад, ки воқеан замимаҳо илова карда мешаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
   },
   "confirmAddOne": {
     "message": "Илова кардани замима: $1?",
@@ -100,10 +126,10 @@
     "message": "Не"
   },
   "warnBlacklistTitle": {
-    "message": "Аз ҷониби рӯйхати сиёҳ истисно шуд"
+    "message": "Аз рӯйхати сиёҳ истисно шуд"
   },
   "warnBlacklistIntro": {
-    "message": "Файлҳои зерин худкор замима намешаванд:"
+    "message": "Файлҳои зерин худкорона замима намешаванд:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -124,9 +150,21 @@
     "message": "Не"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Ҳуҷҷатгузорӣ:"
+  },
+  "uiDocsButton": {
+    "message": "Кушодани ҳуҷҷатҳо"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

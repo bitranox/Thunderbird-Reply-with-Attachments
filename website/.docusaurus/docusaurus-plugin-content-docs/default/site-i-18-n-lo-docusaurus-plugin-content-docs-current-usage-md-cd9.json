@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "ការប្រើប្រាស់",
   "description": "Usage",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "ការប្រើប្រាស់",
+    "sidebar_label": "ការប្រើប្រាស់"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "ການຕັ້ງຄ່າ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "ແບບສາມະດິດ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/compatibility"
   }
 }

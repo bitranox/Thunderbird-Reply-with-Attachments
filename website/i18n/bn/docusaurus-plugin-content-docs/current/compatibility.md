@@ -1,17 +1,42 @@
 ---
 id: compatibility
-title: সামঞ্জস্যতা
-sidebar_label: সামঞ্জস্যতা
+title: 'সঙ্গতি'
+sidebar_label: 'সঙ্গতি'
 ---
 
-## সামঞ্জস্যতা
+## Compatibility {#compatibility}
 
-- **Thunderbird Nebula 128.6.0esr (64‑Bit) দিয়ে পরীক্ষা করা হয়েছে।**
-- **পুরোনো Thunderbird সংস্করণ সমর্থিত নয়।**
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
+
+- Thunderbird 128 ESR or newer is supported (128.x+).
+- Older Thunderbird versions are not supported.
+- Tested on Windows, macOS, and Linux.
+
+:::warning Manifest V2 not supported
+Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::
 
 ---
 
-## সমস্যার সমাধান
+## Troubleshooting {#troubleshooting}
 
-- অ্যাড‑অন প্রত্যাশিতভাবে কাজ না করলে নিশ্চিত করুন যে আপনি সামঞ্জস্যপূর্ণ Thunderbird সংস্করণ (128.6.0esr বা পরবর্তী) ব্যবহার করছেন।
-- অ্যাড‑অন সম্পর্কিত কোনো ত্রুটি আছে কি না দেখতে Thunderbird‑এর **Tools > Developer Tools > Error Console** পরীক্ষা করুন।
+- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
+- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
+- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+
+---
+
+## Known conflicts {#known-conflicts}
+
+- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+
+---
+
+## Beta/Nightly {#beta-nightly}
+
+- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
+- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+
+---

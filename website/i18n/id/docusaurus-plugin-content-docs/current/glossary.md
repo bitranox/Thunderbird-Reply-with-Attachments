@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: Glosarium i18n
-sidebar_label: Glosarium
+title: 'Glosarium'
+sidebar_label: 'Glosarium'
 ---
 
-Istilah kanonis yang dipakai di UI dan dokumentasi add‑on. Gunakan ini agar terjemahan konsisten lintas lokal.
+## Glosarium
 
-## Catatan
+Istilah kanonik yang digunakan dalam antarmuka pengguna dan dokumentasi add-on. Gunakan ini untuk menjaga konsistensi terjemahan di berbagai lokal.
 
-- Teks UI singkat dan berorientasi tindakan.
-- Gunakan nomina untuk pengaturan dan verba untuk aksi.
-- Gunakan “sentence case” (hanya kata pertama kapital) kecuali judul.
+---
 
-## Istilah
+### Catatan
 
-- Lampiran (Attachments): berkas yang disertakan pada email. Hindari “enclosures”.
-- Daftar hitam (Blacklist / daftar pengecualian): daftar pola yang mencegah berkas dilampirkan otomatis.
-- Di UI, pakai “Blacklist (glob patterns)” agar sesuai dengan halaman Opsi.
-- Jelaskan bahwa hanya nama berkas yang dicocokkan; bukan path.
-- Konfirmasi (Confirm / Confirmation): menanyakannya sebelum menambahkan lampiran.
-- Jawaban: “Yes” (tambah), “No” (batal). Label tombol singkat.
-- Gambar inline (Inline image): gambar yang dirujuk CID di HTML; tidak pernah ditambah sebagai berkas.
-- Tanda tangan S/MIME: `smime.p7s` atau bagian PKCS7; tidak pernah ditambah.
-- Opsi / Pengaturan (Options / Settings): halaman konfigurasi add‑on di Thunderbird.
-- Jawaban bawaan (Default answer): jawaban yang dipilih sebelumnya untuk dialog konfirmasi.
+- Jaga agar string UI tetap singkat dan berorientasi tindakan.
+- Utamakan kata benda untuk pengaturan dan kata kerja untuk tindakan.
+- Gunakan huruf kapital pada awal kalimat (hanya kata pertama yang dikapitalisasi) kecuali untuk judul.
 
-## Gaya
+---
 
-- Nama berkas: tampilkan sebagai kode (monospace), mis. `smime.p7s`, `*.png`.
-- Tombol/kunci: kapital judul hanya untuk nama diri; selain itu sentence case.
-- Hindari jargon (mis. “idempotency”); gunakan “mencegah duplikasi”.
+### Istilah
+
+- **Lampiran**: file yang disertakan dengan email. Hindari "lampiran".
+- **Daftar hitam** (Exclude list): daftar pola yang mencegah file dilampirkan secara otomatis. Di UI, ini muncul sebagai "Daftar hitam (pola glob)".
+- Dalam salinan UI, lebih suka "Daftar hitam (pola glob)" untuk mencocokkan halaman pengaturan.
+- Jelaskan bahwa hanya nama file yang dicocokkan; bukan jalur.
+- **Konfirmasi / Persetujuan:** meminta pengguna untuk melanjutkan sebelum menambahkan lampiran.
+- **Jawaban:** “Ya” (tambah), “Tidak” (batalkan). Jaga agar label tombol tetap singkat.
+- **Gambar dalam**: gambar yang dirujuk dengan CID dalam HTML pesan; tidak pernah ditambahkan sebagai file.
+- **Tanda tangan S/MIME:** `smime.p7s` atau bagian tanda tangan PKCS7; tidak pernah ditambahkan.
+- **Opsi / Pengaturan:** halaman konfigurasi add-on di Thunderbird.
+- **Jawaban default:** jawaban yang dipilih sebelumnya untuk dialog konfirmasi.
+
+---
+
+### Tindakan email
+
+- **Balas:** menjawab pengirim pesan.
+- **Balas semua:** menjawab pengirim dan semua penerima.
+- **Teruskan:** mengirim pesan ke penerima yang berbeda; add-on ini tidak mengubah perilaku teruskan.
+
+---
+
+### Jenis lampiran
+
+- **Lampiran dalam:** aset yang嵌入 dalam badan pesan (misalnya, dirujuk melalui Content-ID). Tidak ditambahkan sebagai file oleh add-on.
+- **File terlampir:** file yang dilampirkan pada pesan sebagai lampiran biasa (calon untuk disalin saat membalas).
+
+---
+
+### Gaya
+
+- **Nama file:** ditampilkan sebagai kode (monospace), misalnya, `smime.p7s`, `*.png`.
+- **Kunci/tombol:** huruf kapital judul hanya ketika mereka adalah nama proper; jika tidak, huruf kecil kalimat.
+- **Hindari jargon** (misalnya, “idempotensi”); lebih suka “mencegah duplikat”.
+
+---

@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Daɗo'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Daɗo'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Daɗo via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Wonaa Thunderbird Woni
+Nde add‑on ngal yahi Thunderbird **128 ESR walla so wonaa**. Ko feewi burti hotoo.
+:::
 
----
+Ngal ngoni daɗo woɗnde neɗɗa. Add‑ons leɗɗi e ATN (addons.thunderbird.net) receive e jaŧtude ɓe. LOCAL/dev daɗo wi'a hone jaŧtude.
 
-## Local installation in Thunderbird
+- Wonaa Thunderbird: 128 ESR walla so wonaa.
 
-### Download the XPI file
+1. E Thunderbird, jaɓo **Tools > Add-ons and Themes**.
+2. Laawol "reply with attachments".
+3. Nde add-on ngal.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Walla heɓo laawol add‑on garu: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Daɗo ka XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Dawi XPI faayila {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Jaɓo laawol [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Daw miijim faayila add-on ngal e XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Daɗo e Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Nde Thunderbird.
+2. Jaɓo **Tools > Add-ons and Themes**.
+3. E **Add-ons Manager**, dilli gear icon e lowre cuɓi.
+4. Ndaɗi **Install Add-on From File…** e menu.
+5. Suɓo faayila `reply_with_attachments-x.y.z-tb.xpi` ngol.
+6. Toppito daɗo ngal so jooɗna.
 
 ---
+
+## Daɗo e laawol {#installation-for-development}
+
+### Dawi wakwe {#download-the-repository}
+
+1. Daw miijim faayila GitHub ɓe.
+2. Suɓo `make help` e laawol muusirdugol.
+
+### Daɗo e Thunderbird {#install-in-thunderbird-dev}
+
+1. Nde Thunderbird.
+2. Jaɓo **Tools > Add-ons and Themes**.
+3. E **Add-ons Manager**, dilli gear icon e lowre cuɓi.
+4. Ndaɗi **Install Add-on From File…** e menu.
+5. Suɓo faayila ɓe maa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Toppito daɗo ngal so jooɗna.
+
+Ndagga: So Thunderbird a ndaarata `.zip` e ngol system, renama ngol e `.xpi` e jooɗi “Install Add‑on From File…” woni no feewi.
+
+### Hol ko ɓe heɓa LOCAL ZIP {#where-local-zip}
+
+- Awa, punni add‑on ngal: jogi `make pack` e laawol ɓe.
+- So a punni, heɓi “LOCAL” zip e laawol ɓe (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Bawa e punni ngol e teeŋirde, beydi versions e `sources/manifest_ATN.json` e `sources/manifest_LOCAL.json`.
+
+---
+
+## Walda, kooboo, e jaŧtude {#disable-uninstall-updates}
+
+- Walda: Thunderbird → Tools → Add‑ons and Themes → heɓi add‑on ngal → toggle off.
+- Kooboo: neɗɗa ñaawo → three‑dot menu → Remove.
+- Jaŧtude: ATN daɗo hinno jaŧtude so new versions ɓe siki. LOCAL/dev daɗo wi'a hone jaŧtude; naatnude daɗo LOCAL fof no.
+- Waalda settings laawol: jaysee [Privacy → Data removal](privacy#data-removal).
+
+Heɓi jooɗi
+
+- [Quickstart](quickstart)

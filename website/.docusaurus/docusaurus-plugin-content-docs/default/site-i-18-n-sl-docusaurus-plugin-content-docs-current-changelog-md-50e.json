@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Dnevnik sprememb",
-  "description": "Celoten seznam sprememb najdete v datoteki CHANGELOG.md v repozitoriju.",
+  "title": "Zgodovina sprememb",
+  "description": "Zgodovina sprememb",
   "source": "@site/i18n/sl/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Dnevnik sprememb"
+    "title": "Zgodovina sprememb"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/licence"
+    "title": "Licenca",
+    "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/license"
   }
 }

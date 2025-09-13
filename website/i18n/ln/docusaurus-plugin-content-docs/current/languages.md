@@ -1,16 +1,21 @@
 ---
 id: languages
-title: Languages
-sidebar_label: Languages
+title: 'Langues'
+sidebar_label: 'Langues'
 ---
 
-# Language Support
+## Languages
 
-Massive language support, thanks to AI translation tools — covering 103 languages.
+Liste-ci ezali kolendela both sango ya site ya documentation mpe biloko ya UI ya kolongola.
+Tosali mabe na boswana ya langa, na esengo ya botosi ya AI — esalaka 100 ya lingala.
 
-List below is sorted by the language code.
+Lisapo ya sous les langages ezali sorted na code ya lingala.
 
-See also: the [Glossary](glossary) for canonical UI terms used across locales.
+Tala mpe: [Glossaire](glossary) pour les termes UI canoniques utilisés dans les différentes locales.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +73,6 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +116,28 @@ See also: the [Glossary](glossary) for canonical UI terms used across locales.
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Tip: Switch the docs locale via the language selector in the site header (URL prefix changes accordingly). Thunderbird’s UI language is independent of the website language and follows your Thunderbird settings.
+
+Landing page redirect
+
+- Si site ekendeki na yokola ya lingala kombo ya ebale, kopona base docs URL na projet baseUrl ewutaka ntango eyango na yango. Sali na switch ya lingala (to `/en/`) soki olingi kokoma na Lingala.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Osengi bopesa likambo na translation? S'il vous plaît ouvrir un GitHub issue ou PR.
+- Oui vé plus meilleurs modifications contre source ya Lingala na `website/docs/`; tooling ya maintainer ebonga updates na locales mosusu.
+  Lingala ezali source ya motema mpo na documentation; translation updates ezali pulling na EN na temps ya maintainer.
+
+### Homepage, Navbar, Footer UI
+
+- Biloko oyo ezali na `website/i18n/en/code.json` mpe ezali traduits na toutes les locales via task ya maintainer:
+  - `make translate_web_index` (soki `OPENAI_API_KEY`)
+  - Limita ya lingala na `OPTS="--locales de,fr"`; overwrite biloko oyo ezalaki na `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Lingala ya site mpe lingala ya UI ya kolongola ezali indépendants; switch ya lingala esalelaka docs kaka. Lingala ya UI ya Thunderbird ezozala na kombo ya minganga ya Thunderbird.

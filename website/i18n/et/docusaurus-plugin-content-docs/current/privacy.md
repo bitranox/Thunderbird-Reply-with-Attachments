@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privaatsus'
+sidebar_label: 'Privaatsus'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privaatsus
 
-What the add‑on does:
+:::note Ei telemetry; ei taustavõrgustikku
+See lisand ei **kogu** analüütikat/telemeetriaid ja ei teosta **ühtki** taustavõrgustiku päringut. Iga võrgu juurde pääsemine toimub ainult siis, kui klikkite välisele lingile (Dokumendid, GitHub, Anna).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments ei kogu analüütikat ega telemeetriaid ega saada teie andmeid kuhugi.
 
-What the add‑on does not do:
+Mida see lisand teeb:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Loeb manusete metaandmeid ja faile originaalsõnumist kohapeal (Thunderbirdi API), et need teie vastusele lisada.
+- Salvestab teie valikud (must nimekiri, kinnitamine, vaikimisi vastus) Thunderbirdi lokaalsetesse salvestustesse.
 
-Permissions are documented on the [Permissions](permissions) page.
+Mida see lisand ei tee:
 
-## Content Security Policy (CSP)
+- Ei jälgi, ei kogu analüütikat, ei raporteeri kokkuvarisemist ega tee kauglogimist.
+- Ei teosta taustavõrgustiku päringuid, välja arvatud juhul, kui avate selgelt väliseid lingid (Dokumendid, GitHub, Anna).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Luba on dokumenteeritud [Lubade](permissions) lehelt.
+
+---
+
+## Sisu Turvapoliitika (CSP) {#content-security-policy-csp}
+
+Valikud ja hüpikaknad väldivad inline skripte. Kõik JavaScript laaditakse failidest, mis on lisandiga kaasas, et vastata Thunderbirdi rangetele CSP nõuetele. Kui te embedite koodilõike dokumentidesse, on need ainult näited ja neid ei käivita lisand.
+
+---
+
+## Andmete salvestamine {#data-storage}
+
+- Kasutaja eelistused (must nimekiri, kinnitamise lüliti, vaikimisi vastus) salvestatakse Thunderbirdi `storage.local` jaoks selle lisandi jaoks.
+- Lisand ei teosta pilvesünkroonimist.
+
+---
+
+## Võrk {#network}
+
+- Lisand ei teosta taustavõrgustiku tegevust.
+- Iga võrgu juurde pääsemine toimub ainult siis, kui klikkite linkidele (Dokumendid, GitHub, Anna) või siis, kui Thunderbird ise teostab tavalisi operatsioone, mis ei ole seotud selle lisandiga.
+
+---
+
+## Andmete eemaldamine {#data-removal}
+
+- Lisandi desinstallimine eemaldab selle koodi.
+- Seaded hoitakse ainult Thunderbirdi `storage.local` ja need eemaldatakse desinstallimisel; ei kasutata väliseid salvestusi.
+- Resetti seadeid, ilma desinstallimata:
+  - Valikud leht: kasutage “Taasta vaikimisi” musta nimekirja ja musta nimekirja hoiatuse jaoks.
+  - Täiendav: Thunderbirdis → Tööriistad → Arendustööriistad → Debug Add‑ons, avage laienduse salvestus ja kustutage võtmed, kui see on vajalik.
+
+---

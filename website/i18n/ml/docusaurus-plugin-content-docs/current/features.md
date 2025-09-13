@@ -1,17 +1,36 @@
 ---
 id: features
-title: വിശേഷതകൾ
-sidebar_label: വിശേഷതകൾ
+title: 'സവിശേഷതകൾ'
+sidebar_label: 'സവിശേഷതകൾ'
 ---
 
-## വിശേഷതകൾ
+## Features {#features}
 
-- മറുപടി നൽകുമ്പോൾ ഒറിജിനൽ ഇമെയിലിലെ ഫയലുകൾ സ്വയം അറ്റാച്ച് ചെയ്യും.
-- ഇഷ്ടാനുസരിച്ചു ക്രമീകരിക്കാവുന്ന പെരുമാറ്റം: അറ്റാച്ച്‌മെന്റുകൾ
-  - സ്വയമേവ ചേർക്കാം, അല്ലെങ്കിൽ
-  - സ്ഥിരീകരണത്തിന് ശേഷം മാത്രമേ ചേർക്കുകയുള്ളൂ (ചെറിയ, ആക്‌സസിബിൾ ഡയലോഗ്). ‘ഓപ്ഷൻസ്’ വഴി നിങ്ങൾ സ്ഥിരീകരണം പ്രവർത്തനക്ഷമമാക്കി ഡീഫോൾട്ട് ഉത്തരം (അതെ/ഇല്ല) തിരഞ്ഞെടുക്കാം.
-- ഫയൽനാമങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് (glob പാറ്റേണുകൾ) ചില ഫയലുകൾ സ്വയം ചേർക്കുന്നത് തടയും. ഉദാഹരണങ്ങൾ: `*intern*`, `*secret*`, `*passwor*`.
-  പൊരുത്തപ്പെടുത്തൽ വലിയ/ചെറിയ അക്ഷരഭേദം നോക്കില്ല, ഫയൽനാമം മാത്രം പരിശോധിക്കും; ‘ഓപ്ഷൻസ്’ൽ ഓരോ വരിയിലും ഒരു പാറ്റേൺ നൽകുക.
-- ബ്ലാക്ക്‌ലിസ്റ്റ് മുന്നറിയിപ്പ് (ഐച്ചികം, ഡീഫോൾട്ടായി സജീവം): നിങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് മൂലം ഫയലുകൾ ഒഴിവാക്കുമ്പോൾ, ചെറിയ മോഡൽ ഫയലിനെയും പൊരുത്തപ്പെട്ട പാറ്റേണുകളെയും കാണിക്കും. ഡാർക്ക്‑മോഡിനൊപ്പം സുഹൃത്തുക്കൾക്കും കീബോർഡിലൂടെ ആക്സസിനുമുള്ളത് (അടയ്ക്കാൻ Enter/Esc).
-- നിങ്ങൾ ഇതിനോടകം എന്തെങ്കിലും അറ്റാച്ച് ചെയ്തിരുന്നാലും, ഒറിജിനലുകൾ കൂടി ചേർക്കും; ഫയൽനാമത്തെ ആധാരമാക്കി പകർപ്പുകൾ ഒഴിവാക്കും.
-- അനാവശ്യമായ അറ്റാച്ച്‌മെന്റുകൾ ഒഴിവാക്കാൻ SMIME സർട്ടിഫിക്കറ്റുകളും ഇൻലൈൻ ചിത്രങ്ങളും കടന്നുപോകും.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+
+---

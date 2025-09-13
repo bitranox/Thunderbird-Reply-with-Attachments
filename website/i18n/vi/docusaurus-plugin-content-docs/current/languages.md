@@ -1,16 +1,20 @@
 ---
 id: languages
-title: Ngôn ngữ
-sidebar_label: Ngôn ngữ
+title: 'Các ngôn ngữ'
+sidebar_label: 'Các ngôn ngữ'
 ---
 
-# Hỗ trợ ngôn ngữ
+## Languages
 
-Hỗ trợ ngôn ngữ rất rộng nhờ các công cụ dịch AI — bao phủ 103 ngôn ngữ.
+Danh sách này phản ánh cả việc dịch tài liệu của trang web và các chuỗi UI bổ sung. Hỗ trợ ngôn ngữ lớn, nhờ vào các công cụ dịch AI — bao gồm 100 ngôn ngữ.
 
-Danh sách dưới đây sắp theo mã ngôn ngữ.
+Danh sách dưới đây được sắp xếp theo mã ngôn ngữ.
 
-Xem thêm: [Glossary](glossary) cho các thuật ngữ UI chuẩn dùng chung giữa các locale.
+Xem thêm: [Thuật ngữ](glossary) cho các thuật ngữ UI chính xác được sử dụng trên các vùng miền.
+
+---
+
+## Language list {#language-list}
 
 - `af`: Afrikaans (af-ZA)
 - `ak`: Akan (ak-GH)
@@ -68,7 +72,6 @@ Xem thêm: [Glossary](glossary) cho các thuật ngữ UI chuẩn dùng chung gi
 - `mr`: Marathi (mr-IN)
 - `ms`: Malay (ms-MY)
 - `my`: Burmese (my-MM)
-- `nb`: Norwegian Bokmål (nb-NO)
 - `ne`: Nepali (ne-NP)
 - `nl`: Dutch (nl-NL)
 - `no`: Norwegian (no-NO)
@@ -112,6 +115,28 @@ Xem thêm: [Glossary](glossary) cho các thuật ngữ UI chuẩn dùng chung gi
 - `xh`: Xhosa (xh-ZA)
 - `yo`: Yoruba (yo-NG)
 - `zh`: Chinese (zh)
-- `zh-Hans`: Chinese (Simplified) (zh-CN)
-- `zh-Hant`: Chinese (Traditional) (zh-TW)
 - `zu`: Zulu (zu-ZA)
+
+Mẹo: Chuyển đổi ngôn ngữ tài liệu qua trình chọn ngôn ngữ ở đầu trang (tiền tố URL thay đổi theo đó). Ngôn ngữ UI của Thunderbird độc lập với ngôn ngữ trang web và theo cài đặt Thunderbird của bạn.
+
+Chuyển hướng trang chính
+
+- Nếu trang web được xây dựng bằng ngôn ngữ ưa thích của trình duyệt của bạn, việc truy cập vào URL tài liệu cơ sở dưới baseUrl của dự án sẽ tự động chuyển hướng đến ngôn ngữ đó. Sử dụng trình chuyển đổi ngôn ngữ (hoặc `/en/`) để giữ lại tiếng Anh.
+
+---
+
+## Contribute Translations {#contribute-translations}
+
+- Bạn đã tìm thấy lỗi trong một bản dịch? Vui lòng mở một vấn đề hoặc PR trên GitHub.
+- Ưu tiên chỉnh sửa dựa trên nguồn tiếng Anh dưới `website/docs/`; các công cụ của người duy trì sẽ cập nhật các ngôn ngữ khác.
+  Tiếng Anh là nguồn chân lý cho tài liệu; các cập nhật bản dịch được lấy từ EN trong quy trình làm việc của người duy trì.
+
+### Giao diện Trang chủ, Thanh điều hướng, Chân trang
+
+- Những chuỗi này sống trong `website/i18n/en/code.json` và được dịch sang tất cả các ngôn ngữ thông qua nhiệm vụ của người duy trì:
+  - `make translate_web_index` (cần `OPENAI_API_KEY`)
+  - Giới hạn ngôn ngữ với `OPTS="--locales de,fr"`; ghi đè các giá trị hiện có bằng `OPTS="--force"`.
+
+### Website vs. UI {#website-vs-ui}
+
+- Ngôn ngữ trang web và ngôn ngữ UI bổ sung là độc lập; trình chọn ngôn ngữ chỉ thay đổi tài liệu. Ngôn ngữ UI của Thunderbird theo cài đặt Thunderbird của bạn.

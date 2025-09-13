@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Соснашоъӣ",
   "description": "Compatibility",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Соснашоъӣ",
+    "sidebar_label": "Соснашоъӣ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Использование",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Маҳдудиятҳо",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/permissions"
   }
 }

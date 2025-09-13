@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ບັນທຶກການປ່ຽນແປງ",
-  "description": "ເບິ່ງປະຫວັດທັງໝົດໄດ້ໃນໄຟລ໌ CHANGELOG.md ຂອງຄັງລະຫັດ.",
+  "title": "ບັນທຶກການແກ້ໄຂ",
+  "description": "Changelog",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ບັນທຶກການປ່ຽນແປງ"
+    "title": "ບັນທຶກການແກ້ໄຂ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/licence"
+    "title": "ລິດສິດ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/license"
   }
 }

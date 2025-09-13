@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Kugwiritsa Ntchito",
   "description": "Usage",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Kugwiritsa Ntchito",
+    "sidebar_label": "Kugwiritsa Ntchito"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Kukonzekera",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Kulingana",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/compatibility"
   }
 }

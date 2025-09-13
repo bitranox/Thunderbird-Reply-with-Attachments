@@ -1,24 +1,47 @@
 ---
 id: license
-title: License
-sidebar_label: License
+title: 'Licență'
+sidebar_label: 'Licență'
 ---
 
-Project license: MIT
+## Licență
 
-This project is licensed under the **MIT License**.
+Licența proiectului: MIT
 
-- Full text: see `LICENSE` at the repository root.
-- © Robert Nowotny (bitranox) and contributors.
+Acest proiect este licențiat sub **Licența MIT**.
 
-Third‑party licenses (summary)
+- Text complet: vezi `LICENSE` la rădăcina depozitului.
+- © Robert Nowotny (bitranox)
 
-- dev/test & website tooling: all MIT unless noted
-  - vitest (MIT), jsdom (MIT), @docusaurus/core (MIT), @docusaurus/preset-classic (MIT), react (MIT), react‑dom (MIT), clsx (MIT)
-  - web‑ext (when used via npx) is MPL‑2.0; dev tool only, not distributed with the add‑on
-- Thunderbird MailExtension APIs: used as a platform API; no code copied, no additional license obligations for the add‑on
-- Assets
-  - Add‑on icons (sources/icons/\*.png): project assets, covered by MIT unless noted
-  - GitHub logo icon is a GitHub trademark; used per brand guidelines and not covered by MIT
+---
 
-If you include additional third‑party code or assets, keep their original licenses and add them to the list above.
+## Licențe terțe {#third-party-licenses}
+
+Această secțiune rezumă licențele terțe folosite de acest depozit. Pentru lista autoritativă din arborele sursă, vezi `THIRD_PARTY_LICENSES.md` la rădăcina depozitului.
+
+Instrumente și biblioteci (dezvoltare/test/docs)
+
+- vitest — MIT
+- jsdom — MIT
+- @docusaurus/core — MIT
+- @docusaurus/preset-classic — MIT
+- react — MIT
+- react-dom — MIT
+- clsx — MIT
+- web‑ext (folosit doar prin npx) — MPL‑2.0 (instrument de dezvoltare; nu este distribuit cu extensia)
+
+---
+
+## Observații
+
+- API-urile Thunderbird MailExtension sunt API-uri de platformă; nu este inclus cod de terță parte din acestea.
+- Iconițele proiectului din `sources/icons` sunt active ale proiectului (MIT, cu excepția cazului în care se specifică altceva). Logo-ul/iconița GitHub este un trademark GitHub și nu este acoperit de MIT; este folosit conform liniilor directoare de brand GitHub.
+
+Dacă adăugați noi dependențe sau pachetați cod de terță parte, vă rugăm să actualizați atât această pagină, cât și `THIRD_PARTY_LICENSES.md` în consecință.
+
+---
+
+## Mărci comerciale
+
+- “Thunderbird” este un trademark al MZLA/Thunderbird. Acest proiect este o extensie de terță parte și nu este afiliat cu sau susținut de MZLA.
+- GitHub® și logo-ul GitHub sunt mărci comerciale ale GitHub, Inc. Logo-urile sunt folosite conform liniilor directoare de brand.

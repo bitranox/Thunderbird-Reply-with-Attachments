@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "호환성",
-  "description": "호환성",
+  "description": "Compatibility",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",

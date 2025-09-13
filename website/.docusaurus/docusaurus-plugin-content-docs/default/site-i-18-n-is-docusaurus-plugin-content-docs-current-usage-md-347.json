@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Notkun",
   "description": "Usage",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Notkun",
+    "sidebar_label": "Notkun"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Settings",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Samkvæmni",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/compatibility"
   }
 }

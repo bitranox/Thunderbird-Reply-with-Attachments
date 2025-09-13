@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "مۇناسىۋەتلىك باشلامچى",
+  "description": "Quickstart",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "مۇناسىۋەتلىك باشلامچى",
+    "sidebar_label": "مۇناسىۋەتلىك باشلامچى"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ئىقتىدارلار",
+    "title": "ئالاھىدە ئامىللەر",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "ئورنىتىش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/install"
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Хэрэглээ",
   "description": "Usage",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Хэрэглээ",
+    "sidebar_label": "Хэрэглээ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Тохиргоо",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Зохиогдол",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/compatibility"
   }
 }

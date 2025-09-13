@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Quickstart",
-  "description": "1. Install the add‑on from Thunderbird Add‑ons.",
+  "title": "Brzi start",
+  "description": "Quickstart",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Quickstart",
-    "sidebar_label": "Quickstart"
+    "title": "Brzi start",
+    "sidebar_label": "Brzi start"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Функције",
+    "title": "Karakteristike",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalacija",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/install"
   }
 }

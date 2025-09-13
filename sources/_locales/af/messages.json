@@ -1,30 +1,56 @@
 {
   "extName": {
-    "message": "Beantwoord met Aanhangsels"
+    "message": "Beantwoord met aanhegsels"
   },
   "extDescription": {
-    "message": "Sluit oorspronklike aanhangsels outomaties by e-posantwoorde in."
+    "message": "Sluit oorspronklike aanhegsels outomaties in by e-pos-antwoorde."
   },
   "composeTitle": {
-    "message": "Beantwoord met Aanhangsels"
+    "message": "Beantwoord met aanhegsels"
   },
   "optionsTitle": {
-    "message": "Beantwoord met Aanhangsels — Opsies"
+    "message": "Beantwoord met aanhegsels — Opsies"
   },
   "confirmTitle": {
-    "message": "Bevestig Aanhangsels"
+    "message": "Bevestig aanhegsels"
   },
   "uiHeader": {
-    "message": "Beantwoord met Aanhangsels"
+    "message": "Beantwoord met aanhegsels"
   },
   "uiNoOptions": {
     "message": "Daar is tans geen opsies om te konfigureer nie."
   },
   "uiSupport": {
-    "message": "Hou jy van hierdie byvoeging? Steun my met ’n klein bydrae:"
+    "message": "Hou jy van hierdie byvoeging? Steun my asseblief met ’n klein bydrae:"
+  },
+  "uiRateATNText": {
+    "message": "Gee asseblief ’n gradering op ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Skenk nou"
+  },
+  "uiIDonated": {
+    "message": "Ek het geskenk"
+  },
+  "uiDonateSnoozed": {
+    "message": "Dankie! Skenkingsboodskap is vir 90 dae versteek."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Versteek tot $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Wys Skenk weer"
+  },
+  "uiDonateRestored": {
+    "message": "Skenkingsboodskap is weer sigbaar."
   },
   "uiGithubText": {
     "message": "Vir foutverslae of ander navrae, besoek asseblief my"
@@ -33,7 +59,7 @@
     "message": "GitHub-bladsy"
   },
   "iconAlt": {
-    "message": "Ikoon van Beantwoord met Aanhangsels"
+    "message": "Beantwoord met aanhegsels-ikoon"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "Swartlys van lêername (glob-patrone)"
   },
   "uiBlacklistHelp": {
-    "message": "Lêers waarvan die name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
+    "message": "Lêers wie se name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Waarsku as aanhangsels deur die swartlys uitgesluit word"
+    "message": "Waarsku as aanhegsels deur die swartlys uitgesluit word"
   },
   "uiSave": {
     "message": "Stoor"
@@ -54,25 +80,25 @@
     "message": "Stoor…"
   },
   "uiReset": {
-    "message": "Terugstel na verstekinstellings"
+    "message": "Herstel na verstek"
   },
   "uiSaved": {
     "message": "Gestoor."
   },
   "uiResetDone": {
-    "message": "Teruggestel."
+    "message": "Herstel."
   },
   "uiConfirmHeader": {
     "message": "Bevestiging"
   },
   "uiConfirmLabel": {
-    "message": "Vra voordat aanhangsels bygevoeg word"
+    "message": "Vra voordat aanhegsels bygevoeg word"
   },
   "uiConfirmHelp": {
-    "message": "’n Klein bevestigingsdialoogvenster verskyn net wanneer aanhangsels inderdaad bygevoeg sou word. Sleutelbord: Y of J = Ja; N of Esc = Nee."
+    "message": "’n Klein bevestigingsdialoog verskyn slegs wanneer aanhegsels werklik bygevoeg sou word. Sleutelbord: Y of J = Ja; N of Esc = Nee."
   },
   "confirmAddOne": {
-    "message": "Voeg aanhangsel by: $1?",
+    "message": "Voeg aanhegsel by: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Voeg aanhangsels by ($1): $2$3?",
+    "message": "Voeg aanhegsels by ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,7 +126,7 @@
     "message": "Nee"
   },
   "warnBlacklistTitle": {
-    "message": "Uitgesluit deur swartlys"
+    "message": "Deur swartlys uitgesluit"
   },
   "warnBlacklistIntro": {
     "message": "Die volgende lêers sal nie outomaties aangeheg word nie:"
@@ -124,9 +150,21 @@
     "message": "Nee"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentasie:"
+  },
+  "uiDocsButton": {
+    "message": "Maak dokumentasie oop"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

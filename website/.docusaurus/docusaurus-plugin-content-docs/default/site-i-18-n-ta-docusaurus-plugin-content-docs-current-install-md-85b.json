@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "நிறுவல்",
-  "description": "நிறுவல் — Thunderbird இல் (பரிந்துரைக்கப்படுகிறது)",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,11 +19,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "வேகத் தொடக்கம்",
+    "title": "உதயகாலம்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/quickstart"
   },
   "next": {
-    "title": "உள்ளமைவு",
+    "title": "கட்டமைப்பு",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/configuration"
   }
 }

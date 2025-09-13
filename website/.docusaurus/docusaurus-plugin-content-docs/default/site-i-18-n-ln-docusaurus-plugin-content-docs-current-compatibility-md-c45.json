@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Compatibilité",
   "description": "Compatibility",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Compatibilité",
+    "sidebar_label": "Compatibilité"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Utilisation",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Mibeko",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/permissions"
   }
 }

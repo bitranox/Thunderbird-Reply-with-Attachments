@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Doar",
-  "description": "Se gosta do Responder com anexos e quer apoiar o seu desenvolvimento, pode doar aqui:",
+  "title": "Doe",
+  "description": "Donate",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "Doar",
-    "sidebar_label": "Doar"
+    "title": "Doe",
+    "sidebar_label": "Doe"
   },
   "sidebar": "docs",
   "previous": {
@@ -23,6 +23,6 @@
   },
   "next": {
     "title": "Licença",
-    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/license"
   }
 }

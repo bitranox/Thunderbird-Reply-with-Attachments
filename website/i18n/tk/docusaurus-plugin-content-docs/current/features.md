@@ -1,17 +1,34 @@
 ---
 id: features
-title: Mümkinçilikler
-sidebar_label: Mümkinçilikler
+title: 'Özellikler'
+sidebar_label: 'Özellikler'
 ---
 
-## Mümkinçilikler
+## Features {#features}
 
-- Jogap bereniňizde asyl e‑poçtadaky faýllary awtomatiki goşýar.
-- Saýlap bolýan herekete getiriş: goşundylar
-  - awtomatiki goşulyp biler ýa‑da
-  - diňe tassyklamadan soň goşular (kiçi, elýeterli dialog). "Options" bölüminde tassyklaýyşy açyp, deslapky jogaby (Hawa/Ýok) saýlap bilersiňiz.
-- Faýl atlarynyň gara sanawy (glob nagyşlary) käbir faýllaryň awtomatiki goşulmagyna päsgel berýär. Mysallar: `*intern*`, `*secret*`, `*passwor*`.
-  Gabat gelme harp ölçegine duýgur däl we diňe faýl adyny barlaýar; "Options" bölüminde her setire bir nagyş beriň.
-- Gara sanaw duýduryşy (islege görä, deslapky ýagdaýda açyk): sanawyňyz arkaly faýllar çykarylanda, kiçi modal faýly we gabat nagyşlary görkezýär. Garaňky režime laýyk we klawiatura arkaly elýeterli (ýapmak üçin Enter/Esc).
-- Siz eýýäm bir zat goşan bolsuňyzam, asyl goşundylary goşýar; faýl ady boýunça dublikatlaryň öňüni alýar.
-- Zerur bolmadyk goşundylaryň öňüni almak üçin SMIME şahadatnamalaryny we içki suratlary geçip goýýar.
+- Automatically attaches files from the original email when replying.
+- Configurable behavior: attachments can be
+  - added automatically, or
+  - added only after confirmation (a small, accessible dialog). In Options you
+    can enable the confirmation and choose the default answer (Yes/No).
+- Blacklist of filenames (glob patterns) prevents specific files from being
+  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
+  Matching is case‑insensitive and checks the filename only; provide one pattern
+  per line in Options.
+- Blacklist warning (optional, enabled by default): when files are excluded by your
+  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
+  friendly and keyboard accessible (Enter/Esc to close).
+- Works with Reply and Reply all. Forward is not modified by this add-on.
+- Adds originals even if you already attached something yourself; avoids duplicates by filename.
+- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
+- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+
+## How It Works {#how-it-works}
+
+- On reply, the add-on lists original attachments.
+- Filters out S/MIME signatures and inline images.
+- Optionally asks for confirmation (keyboard-friendly).
+- Adds eligible files to your compose, avoiding duplicates by filename.
+- See “Why attachments might not be added” in Usage for edge cases.
+
+Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.

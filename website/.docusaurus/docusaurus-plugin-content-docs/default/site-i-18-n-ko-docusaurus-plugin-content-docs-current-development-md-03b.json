@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "개발",
-  "description": "개발 가이드",
+  "description": "Development Guide",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "언어",
     "permalink": "/Thunderbird-Reply-with-Attachments/ko/docs/languages"
   }
 }

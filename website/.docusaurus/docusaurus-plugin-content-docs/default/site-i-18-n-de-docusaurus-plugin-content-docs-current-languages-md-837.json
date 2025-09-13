@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Sprachen",
-  "description": "---",
+  "description": "Languages",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -10,7 +10,7 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757291135000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "languages",
     "title": "Sprachen",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Entwicklung",
+    "title": "Development",
     "permalink": "/Thunderbird-Reply-with-Attachments/de/docs/development"
   },
   "next": {

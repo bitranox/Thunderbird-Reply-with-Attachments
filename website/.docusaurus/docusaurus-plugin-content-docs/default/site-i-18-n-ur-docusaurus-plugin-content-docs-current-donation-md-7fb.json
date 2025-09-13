@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "عطیہ",
-  "description": "اگر آپ کو Reply with Attachments پسند ہے اور اس کی ترقی کی حمایت کرنا چاہتے ہیں تو یہاں عطیہ دے سکتے ہیں:",
+  "title": "عطیہ دیں",
+  "description": "Donate",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "lastUpdatedAt": 1757205965000,
+  "lastUpdatedAt": 1757538124000,
   "frontMatter": {
     "id": "donation",
-    "title": "عطیہ",
-    "sidebar_label": "عطیہ"
+    "title": "عطیہ دیں",
+    "sidebar_label": "عطیہ دیں"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "رازداری",
+    "title": "نجیّت",
     "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/privacy"
   },
   "next": {
     "title": "لائسنس",
-    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/ur/docs/license"
   }
 }

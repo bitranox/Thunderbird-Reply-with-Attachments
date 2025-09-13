@@ -1,16 +1,54 @@
 ---
 id: permissions
-title: 권한
+title: '권한'
 ---
 
-이 부가 기능은 소수의 필수 권한만 요청합니다. 각 권한의 이유:
+## Permissions
 
-- compose: 작성 이벤트를 관찰하고, 답장에 첨부를 나열/추가.
-- messagesRead: 원본 메시지에서 메타데이터를 읽고 첨부 파일을 가져옴.
-- scripting: 활성화 시 작성 화면에 작은 확인 대화 상자를 삽입.
-- windows: 메시징 실패 시 최후 수단으로 작은 확인 팝업을 엶.
-- sessions: 탭별 플래그를 저장하여 중복 처리를 방지.
-- storage: 옵션(블랙리스트, 확인 전 묻기, 기본 답변)을 저장.
-- tabs: 확인 요청을 위해 작성 탭으로 대상 메시지 전송.
+:::note Minimal permissions
+No host (web) permissions are requested by this add‑on. The add‑on does not collect telemetry or make background network requests. See [Privacy](privacy).
+:::
 
-이 내용은 소스에 문서화되어 있으며 CI에서 테스트됩니다. 부가 기능은 텔레메트리를 수집하지 않습니다.
+---
+
+The add-on requests a small, focused set of permissions only. Why each is needed:
+
+- `compose`: observe compose events, list/add attachments in your reply.
+- `messagesRead`: read metadata and fetch attachment files from the original message.
+- `scripting`: inject the small in‑compose confirmation dialog when enabled.
+- `windows`: open a tiny confirmation popup as a last resort when messaging fails.
+- `sessions`: store a per‑tab flag to avoid duplicate processing.
+- `storage`: persist options (blacklist, confirmation toggle, default answer).
+- `tabs`: targeted messaging to the compose tab for confirmation requests.
+
+Additional notes:
+
+- No host permissions (web origins) are requested by this add‑on.
+- The `tabs` permission is used only to target the compose tab when coordinating the optional confirmation dialog; it is not used to read history or navigate pages.
+
+These are documented in the source and tested in CI. The add-on does not collect telemetry.
+
+---
+
+### Summary (permissions → purpose) {#permissions-summary}
+
+| Permission     | Why it’s needed                                                   |
+| -------------- | ----------------------------------------------------------------- |
+| `compose`      | Observe compose events; list and add attachments in your reply.   |
+| `messagesRead` | List original message attachments and fetch the file data.        |
+| `scripting`    | Inject/coordinate lightweight UI for confirmation when enabled.   |
+| `windows`      | Fallback popup if messaging fails (rare).                         |
+| `sessions`     | Store a per‑tab flag to prevent duplicate processing.             |
+| `storage`      | Persist options (blacklist, confirmation toggle, default answer). |
+| `tabs`         | Targeted messaging to the compose tab for confirmation requests.  |
+| (host perms)   | None — the add‑on does not request web origins.                   |
+
+---
+
+## Not requested {#not-requested}
+
+- `compose.save`, `compose.send` — the add-on does not save or send mail on your behalf.
+
+See also: [Privacy](privacy) — no telemetry, no background network, user‑initiated links only.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "Tacaíocht",
+  "description": "FAQ",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "Tacaíocht",
+    "sidebar_label": "Tacaíocht"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "Foclóir",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "Príobháideacht",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/privacy"
   }
 }

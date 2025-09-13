@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "i18n Glossary",
-  "description": "Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.",
+  "title": "لغت نامه",
+  "description": "Glossary",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "i18n Glossary",
-    "sidebar_label": "Glossary"
+    "title": "لغت نامه",
+    "sidebar_label": "لغت نامه"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Languages",
+    "title": "زبانون",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/languages"
   },
   "next": {
-    "title": "Support",
+    "title": "مدد",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/support"
   }
 }

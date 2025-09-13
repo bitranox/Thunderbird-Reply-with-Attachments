@@ -1,7 +1,7 @@
 {
   "id": "privacy",
-  "title": "Privacy",
-  "description": "Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.",
+  "title": "Nhyiam",
+  "description": "Privacy",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "privacy",
-    "title": "Privacy",
-    "sidebar_label": "Privacy"
+    "title": "Nhyiam",
+    "sidebar_label": "Nhyiam"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Support",
+    "title": "Mmoa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/support"
   },
   "next": {
-    "title": "Donate",
+    "title": "Ma donation",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/donation"
   }
 }

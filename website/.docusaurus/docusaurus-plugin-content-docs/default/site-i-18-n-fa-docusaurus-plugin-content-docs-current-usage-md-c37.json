@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "شیوه استفاده",
-  "description": "شیوه استفاده",
+  "title": "استفاده",
+  "description": "Usage",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "شیوه استفاده",
-    "sidebar_label": "شیوه استفاده"
+    "title": "استفاده",
+    "sidebar_label": "استفاده"
   },
   "sidebar": "docs",
   "previous": {

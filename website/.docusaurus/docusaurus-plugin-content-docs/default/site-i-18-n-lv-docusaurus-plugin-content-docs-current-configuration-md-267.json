@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "Configuration",
-  "description": "Terminology note: see the Glossary for consistent terms used in UI and docs.",
+  "title": "Konfigurācija",
+  "description": "Configuration",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "Configuration"
+    "title": "Konfigurācija"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Installation",
+    "title": "Instalācija",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/install"
   },
   "next": {
-    "title": "Usage",
+    "title": "Izmantošana",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/usage"
   }
 }

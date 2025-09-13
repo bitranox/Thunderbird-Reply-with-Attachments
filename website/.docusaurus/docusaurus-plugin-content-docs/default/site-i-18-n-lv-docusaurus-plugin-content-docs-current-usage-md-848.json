@@ -1,6 +1,6 @@
 {
   "id": "usage",
-  "title": "Usage",
+  "title": "Izmantošana",
   "description": "Usage",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Usage",
-    "sidebar_label": "Usage"
+    "title": "Izmantošana",
+    "sidebar_label": "Izmantošana"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Configuration",
+    "title": "Konfigurācija",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/configuration"
   },
   "next": {
-    "title": "Compatibility",
+    "title": "Saderība",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/compatibility"
   }
 }

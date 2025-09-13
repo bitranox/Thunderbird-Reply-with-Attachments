@@ -1,50 +1,79 @@
 ---
 id: install
-title: Instalação
+title: 'Instalação'
 slug: /install
-sidebar_label: Instalação
+sidebar_label: 'Instalação'
 ---
 
-## Instalação — no Thunderbird (recomendado)
+## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
 
-1. No Thunderbird, vá a **Ferramentas > Extras e temas**.
-2. Procure por “reply with attachments”.
-3. Adicione o extra.
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
 
----
+This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
 
-## Instalação local no Thunderbird
+- Minimum Thunderbird version: 128 ESR or newer.
 
-### Transferir o ficheiro XPI
+1. In Thunderbird, go to **Tools > Add-ons and Themes**.
+2. Search for "reply with attachments".
+3. Add the add-on.
 
-1. Aceda à [página de extras do Thunderbird](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Transfira a versão mais recente do extra como ficheiro XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Instalar no Thunderbird
-
-1. Abra o Thunderbird.
-2. Vá a **Ferramentas > Extras e temas**.
-3. No **Gestor de extras**, clique no ícone de engrenagem no canto superior direito.
-4. Escolha **Instalar extra a partir de ficheiro…**.
-5. Selecione o ficheiro `reply_with_attachments-x.y.z-tb.xpi` transferido.
-6. Confirme a instalação quando solicitado.
+Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Instalação para desenvolvimento
+## Manual installation from XPI {#local-installation-in-thunderbird}
 
-### Transferir o repositório
+### Download the XPI file {#download-the-xpi-file}
 
-1. Transfira a versão mais recente do repositório GitHub.
-2. Execute `make help` para mais informações.
+1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Instalar no Thunderbird
+### Install in Thunderbird {#install-in-thunderbird-local}
 
-1. Abra o Thunderbird.
-2. Vá a **Ferramentas > Extras e temas**.
-3. No **Gestor de extras**, clique no ícone de engrenagem.
-4. Escolha **Instalar extra a partir de ficheiro…**.
-5. Selecione o ficheiro gerado `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirme a instalação quando solicitado.
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
+6. Confirm the installation when prompted.
 
 ---
+
+## Installation for development {#installation-for-development}
+
+### Download the repository {#download-the-repository}
+
+1. Download the latest version of the GitHub repository.
+2. Run `make help` for more information.
+
+### Install in Thunderbird {#install-in-thunderbird-dev}
+
+1. Open Thunderbird.
+2. Go to **Tools > Add-ons and Themes**.
+3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
+4. Choose **Install Add-on From File…** from the menu.
+5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirm the installation when prompted.
+
+Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
+
+### Where to find the LOCAL ZIP {#where-local-zip}
+
+- First, package the add‑on: run `make pack` in the repository root.
+- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+
+---
+
+## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+
+- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
+- Uninstall: same view → three‑dot menu → Remove.
+- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
+- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+
+See also
+
+- [Quickstart](quickstart)

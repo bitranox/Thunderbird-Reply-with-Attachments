@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Kamus'
+sidebar_label: 'Kamus'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Glossary
 
-Notes
+Kata-kata kanonik anu dianggo dina UI tambahan sareng dokumentasi. Anggo ieu pikeun ngajaga konsistensi terjemahan di sakuliah lokal.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### Notes
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- Jaga string UI singkat sareng fokus tindakan.
+- Utamakan kata benda pikeun pangaturan sareng kata kerja pikeun tindakan.
+- Anggo huruf awal (nami awal hurup gedé) kecuali judul.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Terms
+
+- **Attachments**: file anu dilampirkeun sareng email. Hindari "enclosures".
+- **Blacklist** (Daptar kecualian): daptar pola anu nyegah file pikeun dilampirkeun sacara otomatis. Dina UI ieu muncul salaku "Blacklist (pola glob)".
+- Dina salinan UI, utamakan "Blacklist (pola glob)" pikeun nyocogkeun halaman pangaturan.
+- Jelaskeun yén ngan ukur nami file anu saluyu; sanés jalur.
+- **Confirm / Confirmation:** naroskeun ka pangguna pikeun neruskeun sateuacan nambahkeun lampiran.
+- **Answers:** "Leres" (tambih), "Teu" (batal). Jaga label tombol singkat.
+- **Inline image:** gambar anu dirujuk ku CID dina HTML pesen; teu pernah ditambahkeun salaku file.
+- **S/MIME signature:** `smime.p7s` atanapi bagian tandatangan PKCS7; teu pernah ditambahkeun.
+- **Options / Settings:** halaman konfigurasi tambahan dina Thunderbird.
+- **Default answer:** jawaban anu dipilih sateuacanna pikeun dialog konfirmasi.
+
+---
+
+### Email actions
+
+- **Reply:** ngabales ka pengirim pesen.
+- **Reply all:** ngabales ka pengirim sareng sadaya panampa.
+- **Forward:** ngirim pesen ka panampa anu béda; tambahan ieu henteu ngarobah perilaku teruskan.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** aset anu diembed dina awak pesen (contona, dirujuk ngalangkungan Content‑ID). Teu ditambahkeun salaku file ku tambahan.
+- **Attached files:** file anu dilampirkeun ka pesen salaku lampiran biasa (kandidats pikeun disalin nalika ngabales).
+
+---
+
+### Style
+
+- **Filenames:** tampilkeun salaku kode (monospace), contona, `smime.p7s`, `*.png`.
+- **Keys/buttons:** huruf awal-gedé ngan nalika éta nami anu leres; sanésna huruf awal.
+- **Hindari jargon** (contona, "idempotency"); utamakan "nyegah duplikat".
+
+---

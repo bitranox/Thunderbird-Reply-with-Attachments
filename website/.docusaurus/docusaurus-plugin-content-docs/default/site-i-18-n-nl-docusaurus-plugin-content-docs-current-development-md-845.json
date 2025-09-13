@@ -1,6 +1,6 @@
 {
   "id": "development",
-  "title": "Development",
+  "title": "Ontwikkeling",
   "description": "Development Guide",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "development",
-    "title": "Development",
-    "sidebar_label": "Development"
+    "title": "Ontwikkeling",
+    "sidebar_label": "Ontwikkeling"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Permissions",
+    "title": "Toegangen",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/permissions"
   },
   "next": {
-    "title": "Languages",
+    "title": "Talen",
     "permalink": "/Thunderbird-Reply-with-Attachments/nl/docs/languages"
   }
 }

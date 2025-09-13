@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Боломжууд",
-  "description": "Боломжууд",
+  "title": "Онцлог шинжүүд",
+  "description": "Features",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Боломжууд",
-    "sidebar_label": "Боломжууд"
+    "title": "Онцлог шинжүүд",
+    "sidebar_label": "Онцлог шинжүүд"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Хурдан эхлэх",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/quickstart"
   }
 }

@@ -49,11 +49,11 @@ Release process
 
 If you like this add‑on, please consider supporting it:
 
-[![Donate via PayPal](website/static/img/paypal-donate-button.png)](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
+## <a href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/donate"><img src="website/static/img/donate.png" alt="Donate" width="120"></a>
 
 ## Developer Notes (docs translations)
 
 - Translate homepage/navbar/footer UI strings (requires `OPENAI_API_KEY`):
-  - `make translation-web-index` (all locales, skip `en`)
-  - `make translation-web-index OPTS="--locales de,fr --force"` to limit/overwrite
+  - `make translation_web_index_page` (all locales, skip `en`)
+  - `make translation_web_index_page OPTS="--locales de,fr --force"` to limit/overwrite
 - Translate docs pages: see `website/docs/development.md` (Translate the Website).

@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Basa",
-  "description": "Dhukungan basa sing amba amarga piranti terjemahan AI — nutupi 103 basa.",
+  "description": "Languages",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/development"
   },
   "next": {
-    "title": "Glosarium",
+    "title": "Istilah",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/glossary"
   }
 }

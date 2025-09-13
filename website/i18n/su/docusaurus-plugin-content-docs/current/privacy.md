@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Privasi'
+sidebar_label: 'Privasi'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privasi
 
-What the add‑on does:
+:::note Teu aya telemetry; teu aya jaringan latar
+Add-on ieu **teu** ngumpulkeun analitik/telemetry sareng **teu** ngalakukeun permintaan jaringan latar. Akses jaringan ngan lumangsung nalika anjeun ngeklik tautan eksternal (Docs, GitHub, Donasi).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments henteu ngumpulkeun analitik atanapi telemetry sareng henteu ngirim data anjeun ka mana waé.
 
-What the add‑on does not do:
+Naon anu dilakukeun ku add-on:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Maca metadata lampiran sareng file ti pesen asli sacara lokal (Thunderbird API) pikeun ngasupkeunana kana balasan anjeun.
+- Nyimpen pilihan anjeun (daftar hideung, konfirmasi, jawaban standar) dina panyimpenan lokal Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Naon anu henteu dilakukeun ku add-on:
 
-## Content Security Policy (CSP)
+- Teu aya pelacakan, analitik, laporan kerusuhan, atanapi logging jauh.
+- Teu aya permintaan jaringan latar, kecuali nalika anjeun jelas ngabuka tautan eksternal (Docs, GitHub, Donasi).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Ijin didokumentasikeun dina halaman [Ijin](permissions).
+
+---
+
+## Kebijakan Keamanan Konten (CSP) {#content-security-policy-csp}
+
+Pilihan sareng halaman pop-up ngahindarkeun skrip inline. Sadaya JavaScript dimuat tina file anu dikirimkeun sareng add-on pikeun patuh kana CSP ketat di Thunderbird. Upami anjeun nyelapkeun potongan kode kana dokumén, éta ngan ukur conto sareng henteu dilaksanakeun ku add-on.
+
+---
+
+## Panyimpenan Data {#data-storage}
+
+- Préferénsi pamaké (daftar hideung, toggle konfirmasi, jawaban standar) disimpen di `storage.local` Thunderbird pikeun add-on ieu.
+- Teu aya sinkronisasi awan anu dilakukeun ku add-on.
+
+---
+
+## Jaringan {#network}
+
+- Add-on henteu ngalakukeun kagiatan jaringan latar.
+- Akses jaringan ngan lumangsung nalika anjeun ngeklik tautan (Docs, GitHub, Donasi) atanapi nalika Thunderbird sorangan ngalaksanakeun operasi normal anu henteu aya hubunganana sareng add-on ieu.
+
+---
+
+## Hapus Data {#data-removal}
+
+- Ngaleupaskeun add-on bakal ngahapus kodena.
+- Setelan ngan disimpen di `storage.local` Thunderbird sareng bakal dihapus nalika ngaleupaskeun; henteu aya panyimpenan eksternal anu dianggo.
+- Setel ulang setelan tanpa ngaleupaskeun:
+  - Halaman pilihan: anggo "Reset ka standar" pikeun daptar hideung sareng peringatan daptar hideung.
+  - Élmuna: di Thunderbird → Alat → Alat Pamekar → Debug Add-ons, buka panyimpenan ekstensi sareng bersihkeun konci upami diperlukeun.

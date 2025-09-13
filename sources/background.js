@@ -221,7 +221,14 @@
           try {
             // Reload settings to ensure new replies honor the latest options
             if (typeof globalThis.App?.Composition?.reloadSettings === 'function') {
-              globalThis.App.Composition.reloadSettings(browser).catch(() => {});
+              globalThis.App.Composition.reloadSettings(browser).catch(() => {
+                if (msg && msg.type === 'rwa:open-url' && typeof msg.url === 'string') {
+                  try {
+                    browser.tabs?.create?.({ url: msg.url, active: true });
+                  } catch (_) {}
+                  return Promise.resolve({ ok: true });
+                }
+              });
             }
           } catch (_) {}
           fn();

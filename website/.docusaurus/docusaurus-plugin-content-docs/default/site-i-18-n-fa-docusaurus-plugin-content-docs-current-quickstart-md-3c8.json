@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "شروع سریع",
-  "description": "1. افزونه را از Thunderbird Add‑ons نصب کنید.",
+  "description": "Quickstart",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",

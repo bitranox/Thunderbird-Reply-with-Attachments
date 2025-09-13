@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Kompatibilitás",
   "description": "Compatibility",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Kompatibilitás",
+    "sidebar_label": "Kompatibilitás"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Használat",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Engedélyek",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/permissions"
   }
 }

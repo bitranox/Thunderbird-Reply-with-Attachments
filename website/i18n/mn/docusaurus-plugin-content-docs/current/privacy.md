@@ -1,23 +1,55 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Нууцлалыг'
+sidebar_label: 'Нууцлал'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Нууцлал
 
-What the add‑on does:
+:::note Телеметрийн мэдээлэлгүй; фондуудад сүлжээ байхгүй
+Энэхүү нэмэлт нь **материал** цуглуулдаггүй / телеметри / фондуудад **сүлжээний** хүсэлтгүй. Сүлжээний хандалт нь зөвхөн гадаад холбоос дээр дарсаны дараа (Бичиг, GitHub, Хандив) тохиолддог.
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments нэмэлт нь статистик буюу телеметри цуглуулдаггүй бөгөөд таны өгөгдлийг хаашаа ч явуулахгүй.
 
-What the add‑on does not do:
+Нэмэлтийн үйл ажиллагаа:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Исэлд төлбөртэй бараа хэдэн агуулгын метадатаа уншиж, хуучин мессежээс файлуудыг локал байдлаар (Thunderbird API) хариултанд шилжүүлдэг.
+- Таны сонголтууд (хар жагсаалт, баталгаажуулах, анхны хариулт) Thunderbird-ийн локал хадгалалтанд хадгалагддаг.
 
-Permissions are documented on the [Permissions](permissions) page.
+Нэмэлтийн хийхгүй зүйлс:
 
-## Content Security Policy (CSP)
+- Хулгайлах, статистик, алдаа тайлагнах, эсвэл алсаас мэдээлэл хадгалахгүй.
+- Гаднах холбоосууд (Бичиг, GitHub, Хандив) тохиолдлоос бусад фондуудад сүлжээний хүсэлтгүй.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Эрх өгөх хуудас дээр [Permissions](permissions) хуудасандаа бичигдсэн байна.
+
+---
+
+## Агуулгын аюулгүй байдлын бодлого (CSP) {#content-security-policy-csp}
+
+Сонголтууд болон попап хуудаснууд өөрийн дотроос скриптүүдийг зайлсхийдэг. Бүх JavaScript нь Thunderbird-д хатуу CSP-д нийцүүлэхийн тулд нэмэлттэй хамт ирсэн файлуудаас ачаалагддаг. Хэрэв та бичиг баримтанд кодын хэсгүүдийг оруулбал, тэдгээр нь зөвхөн жишээ бөгөөд нэмэлтээр боловсруулдаггүй.
+
+---
+
+## Өгөгдлийн хадгалалт {#data-storage}
+
+- Хэрэглэгчийн тохиргоо (хар жагсаалт, баталгаажуулах Toggle, анхны хариулт) Thunderbird-ийн `storage.local` дээр уг нэмэлтэд хадгалагддаг.
+- Нэмэлтээр үүлний синк хийгддэггүй.
+
+---
+
+## Сүлжээ {#network}
+
+- Нэмэлт нь фондуудад сүлжээний үйл ажиллагаа явуулдаггүй.
+- Сүлжээний хандалт зөвхөн холбоосууд (Бичиг, GitHub, Хандив) дээр дарсанаар эсвэл Thunderbird нь уг нэмэлтэд холбоогүй норм үйл ажиллагааг гүйцэтгэхэд тохиолддог.
+
+---
+
+## Өгөгдлийг устгах {#data-removal}
+
+- Нэмэлтийг устгах үед түүний код устгагдана.
+- Тохиргоонууд зөвхөн Thunderbird-ийн `storage.local` дээр хадгалагдаж, устгах үед алдагддаг; ямар ч гадаад хадгалах төхөөрөмж ашиглагддаггүй.
+- Нэмэлтийг устгахаас зайлсхийж тохиргоог сэргээх:
+  - Сонголт хуудас: хар жагсаалтыг болон хар жагсаалтын анхааруулгыг “Анхнаас сэргээх” дээр сонгоно уу.
+  - Дээд: Thunderbird → Хэрэгсэл → Хөгжүүлэгчийн Хэрэгслүүд → Нэмэгдэл, нэмэлтийн хадгалалтад нэвтрэн ороод шаардлагатай бол түлхүүрийг цэвэрлэнэ.

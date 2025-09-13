@@ -1,39 +1,65 @@
 {
   "extName": {
-    "message": "Odpowiedz z załącznikami"
+    "message": "Odpowiedź z załącznikami"
   },
   "extDescription": {
-    "message": "Automatycznie dołącza oryginalne załączniki do odpowiedzi na wiadomości e‑mail."
+    "message": "Automatycznie dołączaj oryginalne załączniki w odpowiedziach na e‑maile."
   },
   "composeTitle": {
-    "message": "Odpowiedz z załącznikami"
+    "message": "Odpowiedź z załącznikami"
   },
   "optionsTitle": {
-    "message": "Odpowiedz z załącznikami — Opcje"
+    "message": "Odpowiedź z załącznikami — Opcje"
   },
   "confirmTitle": {
-    "message": "Potwierdź załączniki"
+    "message": "Potwierdzenie załączników"
   },
   "uiHeader": {
-    "message": "Odpowiedz z załącznikami"
+    "message": "Odpowiedź z załącznikami"
   },
   "uiNoOptions": {
-    "message": "Obecnie nie ma opcji do skonfigurowania."
+    "message": "Obecnie nie ma żadnych opcji do skonfigurowania."
   },
   "uiSupport": {
-    "message": "Podoba Ci się ten dodatek? Wesprzyj mnie drobną wpłatą:"
+    "message": "Podoba ci się ten dodatek? Wesprzyj mnie drobną wpłatą:"
+  },
+  "uiRateATNText": {
+    "message": "Oceń w ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Przekaż darowiznę"
   },
+  "uiIDonated": {
+    "message": "Przekazałam/em darowiznę"
+  },
+  "uiDonateSnoozed": {
+    "message": "Dziękuję! Przypomnienie o darowiźnie ukryte na 90 dni."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Ukryte do $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Pokaż ponownie przycisk Darowizna"
+  },
+  "uiDonateRestored": {
+    "message": "Prośba o darowiznę jest ponownie widoczna."
+  },
   "uiGithubText": {
-    "message": "Aby zgłaszać błędy lub w innych sprawach, odwiedź moją"
+    "message": "W sprawie zgłoszeń błędów lub innych pytań odwiedź moją"
   },
   "uiGithubLinkLabel": {
-    "message": "stronę na GitHubie"
+    "message": "stronę w serwisie GitHub"
   },
   "iconAlt": {
-    "message": "Ikona Odpowiedz z załącznikami"
+    "message": "Ikona „Odpowiedź z załącznikami”"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -42,10 +68,10 @@
     "message": "Czarna lista nazw plików (wzorce glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Pliki, których nazwy pasują do któregokolwiek z tych wzorców, nigdy nie będą dołączane automatycznie. Jeden wzorzec na wiersz. Przykłady: *.png, smime.*, *.p7s"
+    "message": "Pliki, których nazwy pasują do któregokolwiek z tych wzorców, nigdy nie będą dołączane automatycznie. Jeden wzorzec na linię. Przykłady: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Ostrzegaj, jeśli załączniki są wykluczane przez czarną listę"
+    "message": "Ostrzegaj, jeśli załączniki są wykluczone przez czarną listę"
   },
   "uiSave": {
     "message": "Zapisz"
@@ -54,7 +80,7 @@
     "message": "Zapisywanie…"
   },
   "uiReset": {
-    "message": "Przywróć domyślne"
+    "message": "Przywróć ustawienia domyślne"
   },
   "uiSaved": {
     "message": "Zapisano."
@@ -100,7 +126,7 @@
     "message": "Nie"
   },
   "warnBlacklistTitle": {
-    "message": "Wykluczono przez czarną listę"
+    "message": "Wykluczone przez czarną listę"
   },
   "warnBlacklistIntro": {
     "message": "Następujące pliki nie zostaną dołączone automatycznie:"
@@ -124,9 +150,21 @@
     "message": "Nie"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentacja:"
+  },
+  "uiDocsButton": {
+    "message": "Otwórz dokumentację"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

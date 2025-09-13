@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ಮರ್ಯಾದೆ",
+  "description": "FAQ",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ಮರ್ಯಾದೆ",
+    "sidebar_label": "ಮರ್ಯಾದೆ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "ಗುಣ್‌ಗಚ್ಛೆ",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "ಗאַג್ವಹಣೆ",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/privacy"
   }
 }

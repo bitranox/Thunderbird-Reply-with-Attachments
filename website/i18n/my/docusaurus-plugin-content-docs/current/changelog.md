@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: ပြောင်းလဲချက် မှတ်တမ်း
+title: 'တိကျမှုများ'
 ---
 
-ပြည့်စုံသောမှတ်တမ်းကို repository ထဲရှိ CHANGELOG.md ဖိုင်တွင်ကြည့်ပါ။
+## Changelog
 
-- 2.0.0: လုပ်ဆောင်ချက်အပြည့်အဝ ဖြည့်စွက်ထားသောဗားရှင်းသို့ ပြန်ရေးခြင်း (EN/DE)
-- 1.0.1: messages.listAttachments() သို့ ပြောင်းလိုက်သည်
-- 1.0.0: ပထမ စတင်ထုတ်ဝေမှု
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

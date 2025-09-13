@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Cathetan owah-owahan",
-  "description": "Delengen riwayat lengkap ana ing berkas CHANGELOG.md ing repositori.",
+  "title": "Cathetan Ganti",
+  "description": "Cathetan Ganti",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Cathetan owah-owahan"
+    "title": "Cathetan Ganti"
   },
   "sidebar": "docs",
   "previous": {
     "title": "Lisensi",
-    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/license"
   }
 }

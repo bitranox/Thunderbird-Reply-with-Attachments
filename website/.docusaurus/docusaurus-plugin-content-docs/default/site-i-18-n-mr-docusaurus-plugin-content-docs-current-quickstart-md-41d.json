@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "क्विकस्टार्ट",
-  "description": "1. Thunderbird Add‑ons मधून अॅड‑ऑन इन्स्टॉल करा.",
+  "title": "जलद प्रारंभ",
+  "description": "जलद प्रारंभ",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "क्विकस्टार्ट",
-    "sidebar_label": "क्विकस्टार्ट"
+    "title": "जलद प्रारंभ",
+    "sidebar_label": "जलद प्रारंभ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "वैशिष्ट्ये",
+    "title": "विशेषताएं",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/features"
   },
   "next": {
-    "title": "प्रतिष्ठापन",
+    "title": "इंस्टॉलेशन",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/install"
   }
 }

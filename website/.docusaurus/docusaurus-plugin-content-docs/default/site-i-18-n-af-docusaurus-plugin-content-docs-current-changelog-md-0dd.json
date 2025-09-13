@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Veranderinge-joernaal",
-  "description": "Sien die volledige geskiedenis in die CHANGELOG.md‑lêer in die bewaarplek.",
+  "title": "Veranderingslog",
+  "description": "Changelog",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Veranderinge-joernaal"
+    "title": "Veranderingslog"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/licence"
+    "title": "Lisensie",
+    "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/license"
   }
 }

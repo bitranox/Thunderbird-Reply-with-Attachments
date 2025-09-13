@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Конфіденційність'
+sidebar_label: 'Конфіденційність'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Конфіденційність
 
-What the add‑on does:
+:::note Без телеметрії; без фонової мережі
+Цей аддон **не** збирає аналітику/телеметрію та **не** робить фонові мережеві запити. Будь-який доступ до мережі відбувається лише коли ви натискаєте на зовнішнє посилання (Документи, GitHub, Пожертвувати).
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments не збирає аналітику або телеметрію і не відправляє ваші дані куди-небудь.
 
-What the add‑on does not do:
+Що робить аддон:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- Читає метадані вкладень та файли з оригінального повідомлення локально (API Thunderbird) для їх прикріплення до вашої відповіді.
+- Зберігає ваші параметри (чорний список, підтвердження, відповідь за замовчуванням) у локальному сховищі Thunderbird.
 
-Permissions are documented on the [Permissions](permissions) page.
+Що аддон **не** робить:
 
-## Content Security Policy (CSP)
+- Немає відстеження, аналітики, звітності про помилки або віддаленого ведення журналу.
+- Немає фонових мережевих запитів, за винятком випадків, коли ви явно відкриваєте зовнішні посилання (Документи, GitHub, Пожертвувати).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+Дозволи документовані на сторінці [Дозволи](permissions).
+
+---
+
+## Політика безпеки контенту (CSP) {#content-security-policy-csp}
+
+Опції та спливаючі сторінки уникають вбудованих скриптів. Весь JavaScript завантажується з файлів, наданих з аддоном, для відповідності строгій CSP у Thunderbird. Якщо ви вбудовуєте фрагменти коду в документах, це лише приклади і не виконуються аддоном.
+
+---
+
+## Зберігання даних {#data-storage}
+
+- Налаштування користувача (чорний список, перемикач підтвердження, відповідь за замовчуванням) зберігаються у `storage.local` Thunderbird для цього аддона.
+- Ніяка синхронізація в хмарі не виконується аддоном.
+
+---
+
+## Мережа {#network}
+
+- Аддон **не** виконує фонова мережеву діяльність.
+- Будь-який доступ до мережі відбувається лише коли ви натискаєте на посилання (Документи, GitHub, Пожертвувати) або коли сам Thunderbird виконує звичайні операції, які не пов'язані з цим аддоном.
+
+---
+
+## Видалення даних {#data-removal}
+
+- Видалення аддона видаляє його код.
+- Налаштування зберігаються лише у `storage.local` Thunderbird і видаляються під час видалення; зовнішнє сховище не використовується.
+- Скинути налаштування без видалення:
+  - Сторінка опцій: використовуйте "Скинути до значень за замовчуванням" для чорного списку та попередження про чорний список.
+  - Розширені: у Thunderbird → Інструменти → Інструменти розробника → Налагодження аддонов відкрити сховище розширення та очистити ключі, якщо потрібно.
+
+---

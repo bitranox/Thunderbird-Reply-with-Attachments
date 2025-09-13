@@ -3,7 +3,7 @@
     "message": "Відповідь із вкладеннями"
   },
   "extDescription": {
-    "message": "Автоматично додавати оригінальні вкладення у відповідях на електронні листи."
+    "message": "Автоматично додає оригінальні вкладення до відповідей на електронні листи."
   },
   "composeTitle": {
     "message": "Відповідь із вкладеннями"
@@ -23,14 +23,40 @@
   "uiSupport": {
     "message": "Подобається цей додаток? Підтримайте мене невеликим внеском:"
   },
+  "uiRateATNText": {
+    "message": "Будь ласка, оцініть на ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
+  },
   "uiDonate": {
     "message": "Пожертвувати зараз"
   },
+  "uiIDonated": {
+    "message": "Я зробив(-ла) пожертву"
+  },
+  "uiDonateSnoozed": {
+    "message": "Дякуємо! Нагадування про пожертву приховано на 90 днів."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Приховано до $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Показати прохання про пожертву знову"
+  },
+  "uiDonateRestored": {
+    "message": "Прохання про пожертву знову відображається."
+  },
   "uiGithubText": {
-    "message": "Щоб повідомити про помилки або з інших питань, відвідайте мою"
+    "message": "Щоб повідомити про помилки або з інших питань, будь ласка, відвідайте мою"
   },
   "uiGithubLinkLabel": {
-    "message": "сторінку GitHub"
+    "message": "сторінку на GitHub"
   },
   "iconAlt": {
     "message": "Значок «Відповідь із вкладеннями»"
@@ -42,10 +68,10 @@
     "message": "Чорний список імен файлів (шаблони glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Файли, імена яких відповідають будь-якому з цих шаблонів, ніколи не будуть приєднані автоматично. Один шаблон на рядок. Приклади: *.png, smime.*, *.p7s"
+    "message": "Файли, імена яких відповідають будь-якому з цих шаблонів, ніколи не додаватимуться автоматично. Один шаблон на рядок. Приклади: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Попереджати, якщо вкладення виключено через чорний список"
+    "message": "Попереджати, якщо вкладення виключені чорним списком"
   },
   "uiSave": {
     "message": "Зберегти"
@@ -54,7 +80,7 @@
     "message": "Збереження…"
   },
   "uiReset": {
-    "message": "Скинути до типових налаштувань"
+    "message": "Скинути до типових значень"
   },
   "uiSaved": {
     "message": "Збережено."
@@ -69,7 +95,7 @@
     "message": "Питати перед додаванням вкладень"
   },
   "uiConfirmHelp": {
-    "message": "Невелике вікно підтвердження з’являється лише тоді, коли вкладення справді буде додано. Клавіатура: Y або J = Так; N або Esc = Ні."
+    "message": "Невелике діалогове вікно підтвердження з’являється лише коли справді додаються вкладення. Клавіатура: Y або J = Так; N або Esc = Ні."
   },
   "confirmAddOne": {
     "message": "Додати вкладення: $1?",
@@ -103,7 +129,7 @@
     "message": "Виключено чорним списком"
   },
   "warnBlacklistIntro": {
-    "message": "Наведені нижче файли не будуть приєднані автоматично:"
+    "message": "Наведені нижче файли не додаватимуться автоматично:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -124,9 +150,21 @@
     "message": "Ні"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Документація:"
+  },
+  "uiDocsButton": {
+    "message": "Відкрити документацію"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "support",
-  "title": "Support",
-  "description": "Need help or want to report a bug?",
+  "title": "ထောက်ခံမှု",
+  "description": "FAQ",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "support",
-    "title": "Support",
-    "sidebar_label": "Support"
+    "title": "ထောက်ခံမှု",
+    "sidebar_label": "ထောက်ခံမှု"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Glossary",
+    "title": "သարգုန်းစာအုပ်",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/glossary"
   },
   "next": {
-    "title": "Privacy",
+    "title": "တဲ့ရေးညွှန်းစကားဝှက်များ",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/privacy"
   }
 }

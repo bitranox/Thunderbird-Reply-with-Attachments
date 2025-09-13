@@ -1,23 +1,57 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'ಗייַಲ್ವೃದ್ದಿ'
+sidebar_label: 'ಗאַג್ವಹಣೆ'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## ಗייַಲ್ವೃದ್ದಿ
 
-What the add‑on does:
+:::note ಯಾವುದೇ ದೂರಹೋಗು ಮತ್ತು ಹಿನ್ನೆಲೆ ಜಾಲ
+ಈ πρόσθετο **ಹೇಳಿಸುವುದಿಲ್ಲ** ವಿಶ್ಲೇಷಣೆ/ದೂರಹೋಗು ಮತ್ತು **ಅಗತ್ಯವಿಲ್ಲ** ಹಿನ್ನೆಲೆ ಜಾಲ ವಿನಂತಿಗಳನ್ನು. ಯಾವುದೇ ಜಾಲ ಪ್ರವೇಶವು ನೀವು ಹೊರಗಿನ ಲಿಂಕ್‌ (Docs, GitHub, Donate) ಕ್ಲಿಕ್ ಮಾಡಿದಾಗ ಮಾತ್ರ ಸಂಭವಿಸುತ್ತದೆ.
+:::
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Reply with Attachments ವಿಶ್ಲೇಷಣೆ ಅಥವಾ ದೂರಹೋಗುವಿಕೆಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತಿಲ್ಲ ಮತ್ತು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಎಲ್ಲಿಯೂ ಕಳುಹಿಸುತ್ತಿಲ್ಲ.
 
-What the add‑on does not do:
+ಈ πρόσθεಟ್ಮಾಡುವಿಕೆ ಏನು ಮಾಡುತ್ತದೆ:
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+- ನಿಮ್ಮ ಪ್ರತಿಮೆಗೆ ಜೋಡಿಸಲು ಮೂಲ ಸಂದೇಶದಿಂದ ಅಟಾಚ್ಮೆಂಟ್ ಮಿಡಿಯಾತಾ ಮತ್ತು ಫೈಲ್‌ಗಳನ್ನು ಸ್ಥಳೀಯವಾಗಿ (Thunderbird API) ಓದಿ.
+- Thunderbird ನಲ್ಲಿ ನಿಮ್ಮ ಆಯ್ಕೆಯನ್ನು (ಬ್ಲಾಕ್‌ಲಿಸ್ತ್, ದೃಢೀಕರಣ, ಡೀಫಾಲ್ಟ್ ಉತ್ತರ) ಸಂಗ್ರಹಿಸುತ್ತದೆ.
 
-Permissions are documented on the [Permissions](permissions) page.
+ಈ πρόσθεಟ್ಮಾಡುವಿಕೆ ಏನು ಮಾಡುತ್ತಿಲ್ಲ:
 
-## Content Security Policy (CSP)
+- ಯಾವುದೇ ಪತ್ತೆ, ವಿಶ್ಲೇಷಣೆ, ಕ್ರಾಶ್ ವರದಿ ಅಥವಾ ದೂರದ ಲಾಗಿಂಗ್ ಇಲ್ಲ.
+- ಬ್ಯಾಕ್‌ಗ್ರೌಂಡ್ ಜಾಲ ವಿನಂತಿಗಳು ಇಲ್ಲ, ನೀವು ಖಚಿತವಾಗಿ ಹೊರಗಿನ ಲಿಂಕ್‌ಗಳನ್ನು (Docs, GitHub, Donate) ತೆರೆಯುವಾಗ ಮಾತ್ರ.
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+ಅನುಮತಿಗಳು [Permissions](permissions) ಪುಟದಲ್ಲಿ ದಾಖಲಾಗಿವೆ.
+
+---
+
+## ವಿಷಯ ಭದ್ರತಾ ನೀತಿ (CSP) {#content-security-policy-csp}
+
+ಆಯ್ಕೆಗಳು ಮತ್ತು ಬೆಳಕು ಪುಟಗಳು ಇನ್‌ಲೈನ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ತಪ್ಪಿಸುತ್ತವೆ. ಎಲ್ಲಾ ಜಾವಾಸ್ರಿಪ್ಟ್ ಅನ್ನು Thunderbird ನಲ್ಲಿ ಕಠಿಣ CSP ಗೆ ಅನುಸರಿಸಲು ಈ πρόσθεಟೊಂದಿಗೆ ಕಳುಹಿಸುವ ಕಾಗದಗಳಿಂದ ಲೋಡ್ ಮಾಡುತ್ತದೆ. ನೀವು ಡಾಕ್‌ಗಳಲ್ಲಿ ಕೋಡ್ ನಿದರ್ಶನಗಳನ್ನು ಬಡಿಸುತ್ತಿದ್ದರೆ, ಅವು ಕೇವಲ ಉದಾಹರಣೆಗಳಾಗಿವೆ ಮತ್ತು ಈ πρόσದೆಯ ಮೂಲಕ ನಿರ್ವಾಹಿಸಲ್ಪಡುತ್ತಿಲ್ಲ.
+
+---
+
+## ಡೇಟಾ ಸಂಗ್ರಹಣೆ {#data-storage}
+
+- ಬಳಕೆದಾರರ ಪ್ರಾಯೋಗಿಕತೆಗಳು (ಬ್ಲಾಕ್‌ಲಿಸ್ತ್, ದೃಢೀಕರಣ ಸ್ವಿಚ್, ಡೀಫಾಲ್ಟ್ ಉತ್ತರ) Thunderbird ನ `storage.local` ನಲ್ಲಿ ಈ πρόσತೆಯಿಗಾಗಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ.
+- ಈ πρόσತೆಯ ಮೂಲಕ ಯಾವುದೇ ಮಯ್ಯನುಬು ನಕಲು ಮಾಡಿದಾಗ ನಡೆಯುವುದಿಲ್ಲ.
+
+---
+
+## ಜಾಲ {#network}
+
+- ಈ πρόσತೆಯ ಯಾವುದೇ ಹಿಂದೆ ಜಾಲ ಚಟುವಟಿಕೆ ನಡೆಯುತ್ತಿಲ್ಲ.
+- ಯಾವುದೇ ಜಾಲ ಪ್ರವೇಶವು ನೀವು ಲಿಂಕ್‌ಗಳನ್ನು (Docs, GitHub, Donate) ಕ್ಲಿಕ್ ಮಾಡಿದಾಗ ಅಥವಾ Thunderbird ಸ್ವತಃ ಈ πρόσತೆಯ ಶ್ರೇಣಿಯಿಂದ ಸ್ವಾಭಾವಿಕ ಕಾರ್ಯಗಳನ್ನು ನಿರ್ವಹಿಸುತ್ತಿರುವಾಗ ಮಾತ್ರ ಸಂಭವಿಸುತ್ತದೆ.
+
+---
+
+## ಡೇಟಾ ಅಳಿಸುವಿಕೆ {#data-removal}
+
+- ಈ πρόσತೆಯ ಅಂತಹ кодವನ್ನು ಅಳಿಸುವಾಗ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ.
+- ಸೆಟಿಂಗ್ಸ್ ಕೇವಲ Thunderbird ನ `storage.local` ನಲ್ಲಿಯೇ ಉಳಿಯುತ್ತವೆ ಮತ್ತು ಅಳಿಸುವಾಗ ಅಳಿಸುತ್ತವೆ; ಯಾವುದೇ ಬಾಹ್ಯ ಸಂಗ್ರಹಣೆ ಬಳಸಲಾಗುವುದಿಲ್ಲ.
+- ಅಳಿಸದಂತೆ ಸೆಟಿಂಗ್ಸ್ ಮರುಸೆಟ್ಮಾಡುವುದು:
+  - ಆಯ್ಕೆಗಳು ಪುಟ: ಬ್ಲಾಕ್‌ಲಿಸ್ತ್ ಮತ್ತು ಬ್ಲಾಕ್‌ಲಿಷ್ಠ ಎಚ್ಚರಿಕೆಯಿಗಾಗಿ “ಡೀಫಾಲ್ಟ್‌ಗಳಿಗೆ ಮರುಸೆಟ್ಗೆ” ಬಳಸಿರಿ.
+  - ಹೈನುಪಾರಿ: Thunderbird → ಉಪಕರಣಗಳು → ಡೆವೆಲಪರ್ ಉಪಕರಣಗಳು → ಡೀಬಾಗ್ πρόσತಿಗಳು, ವ್ಯಾಪ್ತಿ ಉಲ್ಲೇಖವನ್ನು ತೆರೆಯಿರಿ ಮತ್ತು ಅಗತ್ಯವಿದ್ದಾಗ ಕೀಗಳನ್ನು ಶುದ್ಧಗೊಳಿಸಿ.
+
+---

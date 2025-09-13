@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Utilização",
-  "description": "Utilização",
+  "title": "Uso",
+  "description": "Uso",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "usage",
-    "title": "Utilização",
-    "sidebar_label": "Utilização"
+    "title": "Uso",
+    "sidebar_label": "Uso"
   },
   "sidebar": "docs",
   "previous": {

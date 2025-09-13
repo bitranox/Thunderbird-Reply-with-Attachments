@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "Glosarium i18n",
-  "description": "Istilah baku sing digunakake ing UI lan dokumentasi add‑on. Gunakna iki kanggo njaga konsistensi terjemahan ing macem‑macem lokal.",
+  "title": "Istilah",
+  "description": "Glossary",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "Glosarium i18n",
-    "sidebar_label": "Glosarium"
+    "title": "Istilah",
+    "sidebar_label": "Istilah"
   },
   "sidebar": "docs",
   "previous": {

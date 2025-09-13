@@ -3,13 +3,13 @@
     "message": "Mbales nganggo Lampiran"
   },
   "extDescription": {
-    "message": "Kalebu lampiran asli kanthi otomatis ing wangsulan email."
+    "message": "Kalebu lampiran asli kanthi otomatis ing balesan email."
   },
   "composeTitle": {
     "message": "Mbales nganggo Lampiran"
   },
   "optionsTitle": {
-    "message": "Mbales nganggo Lampiran — Pilihan"
+    "message": "Mbales nganggo Lampiran — Setelan"
   },
   "confirmTitle": {
     "message": "Konfirmasi Lampiran"
@@ -18,16 +18,42 @@
     "message": "Mbales nganggo Lampiran"
   },
   "uiNoOptions": {
-    "message": "Saiki ora ana pilihan sing bisa diatur."
+    "message": "Saiki ora ana setelan kanggo diatur."
   },
   "uiSupport": {
-    "message": "Apa sampeyan seneng karo add-on iki? Dhukungi aku nganggo sumbangan cilik:"
+    "message": "Apa sampeyan seneng add-on iki? Tulung dhukungi aku nganggo sumbangan cilik:"
+  },
+  "uiRateATNText": {
+    "message": "Tulung paringi rating ing ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Nyumbang saiki"
   },
+  "uiIDonated": {
+    "message": "Aku wis nyumbang"
+  },
+  "uiDonateSnoozed": {
+    "message": "Matur nuwun! Pangeling sumbangan didhelikaké sajrone 90 dina."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Didhelikaké nganti $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Tampilaké pangeling sumbangan maneh"
+  },
+  "uiDonateRestored": {
+    "message": "Pangeling sumbangan katon maneh."
+  },
   "uiGithubText": {
-    "message": "Kanggo laporan bug utawa pitakon liya, bukak"
+    "message": "Kanggo laporan bug utawa pitakon liya, tulung bukak"
   },
   "uiGithubLinkLabel": {
     "message": "Kaca GitHub"
@@ -42,10 +68,10 @@
     "message": "Dhaptar ireng jeneng file (pola glob)"
   },
   "uiBlacklistHelp": {
-    "message": "File sing jenenge cocog karo salah siji saka pola iki ora bakal tau dilampirake kanthi otomatis. Siji pola saben baris. Tuladha: *.png, smime.*, *.p7s"
+    "message": "File sing jenenge cocog karo salah siji saka pola iki ora bakal tau dilampiraké kanthi otomatis. Saben baris siji pola. Tuladha: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Pengeti yen lampiran dikecualekake amarga dhaptar ireng"
+    "message": "Pèngeti yen lampiran dikecualèkaké amarga dhaptar ireng"
   },
   "uiSave": {
     "message": "Simpen"
@@ -54,10 +80,10 @@
     "message": "Nyimpen…"
   },
   "uiReset": {
-    "message": "Setel maneh menyang standar"
+    "message": "Setel manèh menyang bawaan"
   },
   "uiSaved": {
-    "message": "Wis disimpen."
+    "message": "Wis kesimpen."
   },
   "uiResetDone": {
     "message": "Wis direset."
@@ -69,10 +95,10 @@
     "message": "Takon dhisik sadurunge nambah lampiran"
   },
   "uiConfirmHelp": {
-    "message": "Dialog konfirmasi cilik mung bakal katon yen ana lampiran sing bener-bener bakal ditambahake. Keyboard: Y utawa J = Ya; N utawa Esc = Ora."
+    "message": "Dialog konfirmasi cilik mung katon nalika ana lampiran sing bener-bener bakal ditambahaké. Keyboard: Y utawa J = Ya; N utawa Esc = Ora."
   },
   "confirmAddOne": {
-    "message": "Tambah lampiran: $1?",
+    "message": "Tambahaké lampiran: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Tambah lampiran ($1): $2$3?",
+    "message": "Tambahaké lampiran ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -100,10 +126,10 @@
     "message": "Ora"
   },
   "warnBlacklistTitle": {
-    "message": "Dikecualekake dening dhaptar ireng"
+    "message": "Dikecualèkaké amarga dhaptar ireng"
   },
   "warnBlacklistIntro": {
-    "message": "File ing ngisor iki ora bakal dilampirake kanthi otomatis:"
+    "message": "File ing ngisor iki ora bakal dilampiraké kanthi otomatis:"
   },
   "warnColFile": {
     "message": "File"
@@ -115,7 +141,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Wangsulan standar"
+    "message": "Wangsulan bawaan"
   },
   "uiConfirmDefaultYes": {
     "message": "Ya"
@@ -124,9 +150,21 @@
     "message": "Ora"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentasi:"
+  },
+  "uiDocsButton": {
+    "message": "Bukak Dokumentasi"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

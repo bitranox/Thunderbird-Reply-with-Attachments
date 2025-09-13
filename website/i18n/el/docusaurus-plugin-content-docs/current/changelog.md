@@ -1,10 +1,19 @@
 ---
 id: changelog
-title: Ιστορικό αλλαγών
+title: 'Ιστορικό Αλλαγών'
 ---
 
-Δείτε το πλήρες ιστορικό στο αρχείο CHANGELOG.md του αποθετηρίου.
+## Changelog
 
-- 2.0.0: επανεγγραφή σε πλήρως λειτουργική έκδοση (EN/DE)
-- 1.0.1: μετάβαση σε messages.listAttachments()
-- 1.0.0: αρχική κυκλοφορία
+For the complete, detailed history, see the repository’s
+[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.1.0: Full internationalization support for the top 100 languages
+- 2.0.0: rewrite to a full-featured version (EN/DE)
+- 1.0.1: switched to messages.listAttachments()
+- 1.0.0: initial release
+
+## Dates and channels {#dates-and-channels}
+
+- Releases to ATN may lag a few hours after packaging.
+- LOCAL builds are for developer testing only and are not distributed via ATN.

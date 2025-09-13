@@ -16,8 +16,8 @@ website/.docusaurus/
 website/node_modules/
 node_modules/
 web-local-preview/
-translation_app.log
-translation_web.log
+translation_app*.log
+translation_web*.log
 tmp_github_web_pages/
 tmp_linkcheck_web_pages/
 .eslintcache

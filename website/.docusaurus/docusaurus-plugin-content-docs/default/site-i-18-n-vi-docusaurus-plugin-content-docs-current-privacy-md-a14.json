@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Quyền riêng tư",
-  "description": "Reply with Attachments không thu thập phân tích/telemetry và không gửi dữ liệu của bạn đi đâu cả.",
+  "description": "Quyền riêng tư",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/support"
   },
   "next": {
-    "title": "Quyên góp",
+    "title": "Hỗ trợ",
     "permalink": "/Thunderbird-Reply-with-Attachments/vi/docs/donation"
   }
 }

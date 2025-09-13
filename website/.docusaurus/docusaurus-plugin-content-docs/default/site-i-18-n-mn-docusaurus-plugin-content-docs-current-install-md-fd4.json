@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Суулгалт",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Суулгалт",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Суулгалт"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Хурдан эхлэх",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Тохиргоо",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/configuration"
   }
 }

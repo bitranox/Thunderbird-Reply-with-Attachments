@@ -9,7 +9,7 @@
     "message": "Përgjigju me Bashkëngjitje"
   },
   "optionsTitle": {
-    "message": "Përgjigju me Bashkëngjitje — Opsionet"
+    "message": "Përgjigju me Bashkëngjitje — Opsione"
   },
   "confirmTitle": {
     "message": "Konfirmo bashkëngjitjet"
@@ -21,16 +21,42 @@
     "message": "Aktualisht nuk ka opsione për t'u konfiguruar."
   },
   "uiSupport": {
-    "message": "A ju pëlqen kjo shtesë? Më mbështetni me një kontribut të vogël:"
+    "message": "Ju pëlqen kjo shtesë? Ju lutem më mbështetni me një kontribut të vogël:"
+  },
+  "uiRateATNText": {
+    "message": "Ju lutem vlerësoni në ATN"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Dhuro tani"
+  },
+  "uiIDonated": {
+    "message": "Kam dhuruar"
+  },
+  "uiDonateSnoozed": {
+    "message": "Faleminderit! Kërkesa për dhurim është fshehur për 90 ditë."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Fshehur deri më $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Shfaq sërish Dhuro"
+  },
+  "uiDonateRestored": {
+    "message": "Kërkesa për dhurim është sërish e dukshme."
   },
   "uiGithubText": {
     "message": "Për raportime gabimesh ose pyetje të tjera, ju lutem vizitoni"
   },
   "uiGithubLinkLabel": {
-    "message": "Faqja në GitHub"
+    "message": "faqen në GitHub"
   },
   "iconAlt": {
     "message": "Ikona e Përgjigju me Bashkëngjitje"
@@ -42,7 +68,7 @@
     "message": "Lista e zezë e emrave të skedarëve (modele glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Skedarët që përputhen me cilindo nga këto modele nuk do të bashkëngjiten kurrë automatikisht. Një model për rresht. Shembuj: *.png, smime.*, *.p7s"
+    "message": "Skedarët që emrat e tyre përputhen me cilindo prej këtyre modeleve nuk do të bashkëngjiten kurrë automatikisht. Një model për rresht. Shembuj: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë"
@@ -54,7 +80,7 @@
     "message": "Duke ruajtur…"
   },
   "uiReset": {
-    "message": "Rivendos te parazgjedhjet"
+    "message": "Rikthe te parazgjedhjet"
   },
   "uiSaved": {
     "message": "U ruajt."
@@ -66,13 +92,13 @@
     "message": "Konfirmim"
   },
   "uiConfirmLabel": {
-    "message": "Pyet para se të shtohen bashkëngjitjet"
+    "message": "Pyet para se të shtohen bashkëngjitje"
   },
   "uiConfirmHelp": {
-    "message": "Një dialog i vogël konfirmimi shfaqet vetëm kur bashkëngjitjet do të shtoheshin në të vërtetë. Tastiera: Y ose J = Po; N ose Esc = Jo."
+    "message": "Një dialog i vogël konfirmimi shfaqet vetëm kur do të shtoheshin vërtet bashkëngjitje. Tastiera: Y ose J = Po; N ose Esc = Jo."
   },
   "confirmAddOne": {
-    "message": "Shto bashkëngjitjen: $1?",
+    "message": "Shto bashkëngjitje: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -80,7 +106,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Shto bashkëngjitjet ($1): $2$3?",
+    "message": "Shto bashkëngjitje ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -115,7 +141,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Përgjigje e parazgjedhur"
+    "message": "Përgjigjja e parazgjedhur"
   },
   "uiConfirmDefaultYes": {
     "message": "Po"
@@ -124,9 +150,21 @@
     "message": "Jo"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+  },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
   },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentacioni:"
+  },
+  "uiDocsButton": {
+    "message": "Hap dokumentacionin"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

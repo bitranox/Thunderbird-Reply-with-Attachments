@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Taybetmendî",
-  "description": "Taybetmendî",
+  "title": "Taybetmendiyên",
+  "description": "Features",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "features",
-    "title": "Taybetmendî",
-    "sidebar_label": "Taybetmendî"
+    "title": "Taybetmendiyên",
+    "sidebar_label": "Taybetmendiyên"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Quickstart",
+    "title": "Destpêk",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/quickstart"
   }
 }

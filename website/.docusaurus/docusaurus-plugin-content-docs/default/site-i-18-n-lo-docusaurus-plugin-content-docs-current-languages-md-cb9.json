@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "ພາສາ",
+  "description": "ພາສາ",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "ພາສາ",
+    "sidebar_label": "ພາສາ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "ກໍ່ຕັ້ງ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "ຄວາມຫຼາຍ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/glossary"
   }
 }

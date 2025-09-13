@@ -1,23 +1,52 @@
 ---
 id: privacy
-title: Privacy
-sidebar_label: Privacy
+title: 'Uburenganzira bwihariye'
+sidebar_label: 'Uburenganzira bwihariye'
 ---
 
-Reply with Attachments does not collect analytics or telemetry and does not send your data anywhere.
+## Privacy
 
-What the add‑on does:
+:::note Nta kugenzura; nta murongo w'ikoranabuhanga
+Iyi nyongera ntiyohereza cyangwa ngo ikusanyirize amakuru, kandi ntiyohereza amakuru yawe ahandi na hato.
 
-- Reads attachment metadata and files from the original message locally (Thunderbird API) to attach them to your reply.
-- Stores your options (blacklist, confirmation, default answer) in Thunderbird’s local storage.
+Ibyo iyi nyongera ikora:
 
-What the add‑on does not do:
+- Isoma amakuru y'inyongera n'inyandiko ziva ku butumwa bw'ibanze imbere (Thunderbird API) kugirango ibone ku gusubiza.
+- Igitabo cy'amahitamo yawe (urlisti y'abakandida, kwemera, igisubizo cya default) bisigara mu bubiko bwa Thunderbird.
 
-- No tracking, analytics, crash reporting, or remote logging.
-- No background network requests, except when you explicitly open external links (Docs, GitHub, Donate).
+Ibyo iyi nyongera idakora:
 
-Permissions are documented on the [Permissions](permissions) page.
+- Nta gukurikirana, kugenzura, gutanga raporo y'imyitwarire, cyangwa kuzakira amakuru.
+- Nta murongo w'ikoranabuhanga, keretse igihe ufunguye imiyoboro y'ibindi (Docs, GitHub, Donate).
 
-## Content Security Policy (CSP)
+Uburenganzira bwasobanuwe ku ipaji ya [Permissions](permissions).
 
-The options and popup pages avoid inline scripts. All JavaScript is loaded from files shipped with the add‑on to comply with strict CSP in Thunderbird. If you embed code snippets in docs, they are examples only and not executed by the add‑on.
+---
+
+## Content Security Policy (CSP) {#content-security-policy-csp}
+
+Amahitamo n'impapuro zo mu mwanya zirinda scripts ziri mu nyandiko. JavaScript yose ikurwa mu nyandiko ziza n'iyi nyongera kugirango ikomeze ku ngamba z'umutekano zigoye mu Thunderbird. Niba ushyiramo ingero z'ibikurikira mu nyandiko, ni ingero zonyine ntizikoreshwa na iyi nyongera.
+
+---
+
+## Data storage {#data-storage}
+
+- Imyitwarire y'abakoresha (urlisti y'abakandida, guhindura kwemera, igisubizo cya default) bigumishwa mu `storage.local` ya Thunderbird kuri iyi nyongera.
+- Nta guhuza n'ibicu bikorwa na iyi nyongera.
+
+---
+
+## Network {#network}
+
+- Iyi nyongera ntikora ibikorwa by'ikoranabuhanga mu rwego rw'inyuma.
+- Icyakora, igihe ufungura imiyoboro (Docs, GitHub, Donate) cyangwa igihe Thunderbird ubwayo ikora ibikorwa bisanzwe bitajyanye n'iyi nyongera.
+
+---
+
+## Data removal {#data-removal}
+
+- Gukuramo iyi nyongera bikuraho kode yayo.
+- Ibyo ushyiraho bigumishwa gusa mu `storage.local` ya Thunderbird kandi bikurwaho igihe uvanaho; nta bubiko bw'inyuma bukoreshwa.
+- Subiza imyitwarire utavanyemo:
+  - I-paji y'amahitamo: ukoreshwa “Siba ku byemezo” ku liste y'abakandida na kuri urlisti y'ibibazo by'umukandida.
+  - Ikoranabuhanga: mu Thunderbird → Ibikoresho → Ibikoresho bya Developer → Gucunga Ibyiyongera, fungura ububiko bw'ikinyongera ushiremo ibyo ukeneye.

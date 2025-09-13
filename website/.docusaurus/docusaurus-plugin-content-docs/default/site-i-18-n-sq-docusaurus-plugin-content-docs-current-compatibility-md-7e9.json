@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Pajtim",
   "description": "Compatibility",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Pajtim",
+    "sidebar_label": "Pajtim"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Përdorimi",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Lejet",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/permissions"
   }
 }

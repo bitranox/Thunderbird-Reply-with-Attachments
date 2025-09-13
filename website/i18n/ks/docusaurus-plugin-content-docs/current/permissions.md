@@ -1,16 +1,52 @@
 ---
 id: permissions
-title: Permissions
+title: 'اجازتیں'
 ---
 
-The add‑on requests a small, focused set of permissions only. Why each is needed:
+## اجازتیں
 
-- compose: observe compose events, list/add attachments in your reply.
-- messagesRead: read metadata and fetch attachment files from the original message.
-- scripting: inject the small in‑compose confirmation dialog when enabled.
-- windows: open a tiny confirmation popup as a last resort when messaging fails.
-- sessions: store a per‑tab flag to avoid duplicate processing.
-- storage: persist options (blacklist, confirmation toggle, default answer).
-- tabs: targeted messaging to the compose tab for confirmation requests.
+:::note کم از کم اجازتیں
+اس ایڈ-آن کی طرف سے کوئی میزبان (ویب) اجازتیں نہیں مانگی گئی ہیں۔ یہ ایڈ-آن ٹیلی میٹری جمع نہیں کرتا یا پس منظر کے نیٹ ورک کی درخواستیں نہیں کرتا۔ مزید معلومات کے لیے [رازداری](privacy) دیکھیں۔
+:::
 
-These are documented in the source and tested in CI. The add‑on does not collect telemetry.
+---
+
+یہ ایڈ-آن صرف ایک چھوٹی، مرکوز سیٹ کی اجازتیں مانگتا ہے۔ ہر ایک کی ضرورت کیوں ہے:
+
+- `compose`: ترتیب کے واقعات کا مشاہدہ کریں، آپ کے جواب میں منسلکات کی فہرست بنائیں/شامل کریں۔
+- `messagesRead`: میٹا ڈیٹا پڑھیں اور اصل پیغام سے منسلکات کی فائلیں حاصل کریں۔
+- `scripting`: جب اہل ہو تو ترتیب میں چھوٹا تصدیقی ڈائیلاگ شامل کریں۔
+- `windows`: جب پیغام بھیجنے میں ناکامی ہو تو آخری راستے کے طور پر ایک چھوٹا تصدیقی پاپ اپ کھولیں۔
+- `sessions`: نقل عمل سے بچنے کے لیے فی-ٹیب فلیگ ذخیرہ کریں۔
+- `storage`: آپشنز کو برقرار رکھیں (بلیک لسٹ، تصدیق کے ٹوگل، ڈیفالٹ جواب)۔
+- `tabs`: تصدیق کی درخواستوں کے لیے ترتیب کے ٹیب پر نشانہ بنانا۔
+
+اضافی نوٹ:
+
+- اس ایڈ-آن کی طرف سے کوئی میزبان اجازتیں (ویب کی بنیادیں) نہیں مانگی گئی ہیں۔
+- `tabs` اجازت صرف جب آپشنل تصدیقی ڈائیلاگ کو ہم آہنگ کرنے کے لیے ترتیب کے ٹیب کو ہدف بنانے کے لیے استعمال ہوتی ہے؛ یہ تاریخ پڑھنے یا صفحات پر نیویگیٹ کرنے کے لیے استعمال نہیں ہوتی۔
+
+یہ ماخذ میں دستاویز کردہ ہیں اور CI میں آزمایا گیا ہے۔ یہ ایڈ-آن ٹیلی میٹری جمع نہیں کرتا۔
+
+---
+
+### خلاصہ (اجازتیں → مقصد) {#permissions-summary}
+
+| اجازت            | اس کی ضرورت کیوں ہے                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| `compose`        | ترتیب کے واقعات کا مشاہدہ کریں؛ آپ کے جواب میں منسلکات کی فہرست بنائیں اور شامل کریں۔ |
+| `messagesRead`   | اصل پیغام کی منسلکات کی فہرست بنائیں اور فائل کے ڈیٹا کو حاصل کریں۔                   |
+| `scripting`      | جب اہل ہو تو تصدیق کے لیے ہلکے UI کو شامل/ہم آہنگ کریں۔                               |
+| `windows`        | پیغام بھیجنے میں ناکامی کی صورت میں پاپ اپ (نایاب)۔                                   |
+| `sessions`       | نقل عمل سے بچنے کے لیے فی-ٹیب فلیگ ذخیرہ کریں۔                                        |
+| `storage`        | آپشنز کو برقرار رکھیں (بلیک لسٹ، تصدیق کے ٹوگل، ڈیفالٹ جواب)۔                         |
+| `tabs`           | تصدیق کی درخواستوں کے لیے ترتیب کے ٹیب پر نشانہ بنائیں۔                               |
+| (میزبان اجازتیں) | کوئی نہیں — یہ ایڈ-آن ویب کی بنیادوں کی درخواست نہیں کرتا۔                            |
+
+---
+
+## نہیں مانگی گئی {#not-requested}
+
+- `compose.save`, `compose.send` — ایڈ-آن آپ کی جانب سے میل محفوظ نہیں کرتا یا بھیجتا۔
+
+مزید معلومات کے لیے: [رازداری](privacy) — کوئی ٹیلی میٹری نہیں، کوئی پس منظر نیٹ ورک، صرف صارف کے شروع کردہ لنکس۔

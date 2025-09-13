@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "گزارش تغییرات",
-  "description": "تاریخچه‌ی کامل را در فایل CHANGELOG.md مخزن ببینید.",
+  "title": "تغییرات",
+  "description": "Changelog",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "گزارش تغییرات"
+    "title": "تغییرات"
   },
   "sidebar": "docs",
   "previous": {
     "title": "مجوز",
-    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/fa/docs/license"
   }
 }

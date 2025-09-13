@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "গোপনীয়তা",
-  "description": "Reply with Attachments কোনো অ্যানালিটিক্স/টেলিমেট্রি সংগ্রহ করে না এবং আপনার ডেটা কোথাও পাঠায় না।",
+  "description": "Privacy",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "সহায়তা",
+    "title": "সমর্থন",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/support"
   },
   "next": {
-    "title": "অনুদান",
+    "title": "দান করুন",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/donation"
   }
 }

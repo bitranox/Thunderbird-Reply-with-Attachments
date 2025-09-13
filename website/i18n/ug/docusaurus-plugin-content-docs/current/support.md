@@ -1,22 +1,87 @@
 ---
 id: support
-title: Support
-sidebar_label: Support
+title: 'ياردەم'
+sidebar_label: 'ياردەم'
 ---
 
-Need help or want to report a bug?
+## FAQ {#faq}
 
-- Open an issue on GitHub:
-  - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
-  - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
-  - Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
+### قوشۇمچىلار قوشۇلمايدۇ — نىمە ئۈچۈن؟
 
-- Add‑ons site (ATN): You can also leave feedback via the add‑on page.
+- سۇرياۋاتقان رەسىملەر ۋە S/MIME قىسمى intentionally excluded.
+- يانداش فايىل ناملىرى قوشۇمچە رەت ئېلىپ كىلىشقا الاقىدار بولسا، مەزكۇر فايىل لاھىيە ئەگىشىپ قالمىغاندەك بېسىلدۇ.
+- قارا لىستە شەكىللەرمەزلەر داۋاملىق قىلىنغان نامدە تۇللاندۇرۇشى مەمكۇن; [Configuration](configuration#blacklist-glob-patterns) نى كۆرۈڭ.
 
-Tips
+### قوشۇمچىلارنى قوشماستىن بۇرادار ئەمەسلىگىمنى تەستىقلايالايمىنى؟
 
-- Ensure you’re on a supported Thunderbird version (128 ESR or newer).
-- Check the Configuration and Usage docs for common setup questions.
-- For development/testing, see the Development guide.
+ھەئە. [Configuration → Confirmation](configuration#confirmation) تىكى “قوشۇمچىلارنى قوشۇشتىن بۇرۇن سوراش” نى ئېچىپ قويۇڭ. كېلەڭ: Y/J = ھەئە, N/Esc = ياخشى ئەمەس.
 
-If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
+### قوشۇمچە ئىشلىتىش جەريانىدا ھېچ نەرسىنى ساقلايمۇ؟
+
+يوق. [Privacy](privacy) نى كۆرۈڭ — تېلېمېترىيا يوق ۋە تىخى پەيشەنبە تاتىلى يوق.
+
+### ئالغا سۈرۈش قوشۇمچىلارنى قوشمايدۇ — بۇ قانچىلىك ھەقىقىي؟
+
+ھەئە. يالگۇز جاۋاب بېرىڭ ۋە جاۋاب بېرىڭ ھەممە كوشۇلما قوشۇمچالارغا تەسىر قىلىنغان; ئالغا سۈرۈش بوزۇلمايدۇ. [Limitations](usage#limitations) نى كۆرۈڭ.
+
+### خەير-سخا كۇلنىم ھەققىدە قانچىلىك مۇددىتا مەلۇمات بار؟
+
+Options → Support بۆلمىسى. [Donation Visibility](configuration#donation-visibility) نى كۆرۈڭ.
+
+---
+
+## ياردەم
+
+ياردەمگە موھتاجمۇ ياكى خاتالىق دوكلات قىلىشقا قىينىلىمۇ؟
+
+---
+
+### GitHub دا مەسىلە ئېچىپ:
+
+- Repository: `bitranox/Thunderbird-Reply-with-Attachments`
+- Issues: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
+- Thunderbird نىڭ نازارىتى (مېسلەن، 128 ESR)، ئوپېراتسىيون سىستېما، ۋە ئەمەلگە ئاشۇرۇش قەدەملىرىنى قوشۇڭ
+- Thunderbird نىڭ خاتالىق مۇناسىۋەتلىك لوقايدۇ `messenger.storage.local.set({ debug: true })` قوشۇڭ (Tools → Developer Tools → Error Console)
+
+- قوشۇمچە تور بايلىق (ATN): [qoshumcha sahypasida](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) رەئىيەت بىرىڭ.
+
+---
+
+### مەسلىھەتلەر
+
+- سىز ياردەم بېرغۇچى Thunderbird نىڭ قوبۇل قىلىنغان نەشرى (128 ESR ياكى يېڭى) دا ئۇلىتىشىڭىز باغلا.
+- خەۋەر Configuration ۋە Usage كېتتەرگە تەجرىبىي سوئاللاردىن بەھىرلەنمەكچى بولغان.
+- تەرەققىيات / سىناش ئۈچۈن تەرەققىي ئىشتەرجىسىگە نەزەر سىلىڭ.
+- ساقلانغان بەلگىلەشلار توغرا تاپار يوق بولسا، Thunderbird نى قايىتىدىن قوزغىتىپ مەنزىل كىيگۈنمە قويىدىغان.
+- مىنىمال خۇلاسە: بىرى ياكى ئىككى آددىي فايىل قوشۇمچىلىغۇسى ۋاز كىلغان خۇشخېبەر سىناپ باقسىڭىز.
+- توغرا جاۋاب بىرىشنى قونۇش ON vs. OFF بىلەن بەلگىلەپ، دىيالوگ تىزىمىنىڭ ئەمەسلىكىنى چۈشەندۈرۈڭ.
+
+---
+
+### دوكلاتقا قوشۇشتۇرۇش
+
+- Thunderbird نىڭ نەشرى ۋە ئوپېراتسىيون سىستېما
+- پەقەت ئەمەلگە نازارەتنى قانداق قوشۇش (نېمە قىلدىڭىز، نېمە قەدەم بەلگىلەشتىڭىز، نېمە بولدى)
+- قوشۇمچىلىقلار قوشۇلغانمۇ؟ دەپ چىقىدىغان جاۋاب:
+- سىزنىڭ قارا لىستە شەكىللەرمەزلەرنى (ئەگەر مۇناسىۋەتلىك)
+- خەتالار مۇلازىمىتى كونسولى لوقا (Tools → Developer Tools → Error Console)
+- Debug logging ئىپك كۆرسىتىش (قوللىنىشقا):
+  - Thunderbird نىڭ خاتالىق مۇلازىمېدەك: `messenger.storage.local.set({ debug: true })`
+  - مەسىلنى قايىلىپ، مۇناسىۋەتلىك `[RWA]` لوقا سىزىقىنى كاپىللىقىڭىز.
+
+---
+
+### مەسىلە شابلونى ( كۆچۈرۈش/يەلپۈك) {#issue-template}
+
+- Thunderbird نىڭ نەشرى ۋە ئوپېراتسىيون سىستېما:
+- مەسىلىنى قانداق قوشۇش:
+- قوشۇمچىلىق قوشۇلمىغان؟ دەپ چىقىدىغان جاۋاب:
+- سىزنىڭ قارا لىستە شەكىللەرمەزلەر:
+- خەتالار مۇلازىمىتى كونسولى لوقا (Tools → Developer Tools → Error Console):
+- مۇناسىۋەتلىك بولغان باشقا ھەرقانداق:
+
+---
+
+### خەير-سخا
+
+بۇ لايىھىنى قۇۋۋەتلەشنى خالايسىڭىز، [Donate](donation) بەتتە كىچىك مالىيەلەر بەرگەن بولسىڭىز. رەھمەت!

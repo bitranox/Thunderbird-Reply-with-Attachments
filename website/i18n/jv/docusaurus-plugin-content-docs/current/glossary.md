@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: Glosarium i18n
-sidebar_label: Glosarium
+title: 'Istilah'
+sidebar_label: 'Istilah'
 ---
 
-Istilah baku sing digunakake ing UI lan dokumentasi add‑on. Gunakna iki kanggo njaga konsistensi terjemahan ing macem‑macem lokal.
+## Glossary
 
-Cathetan
+Canonical terms used in the add-on UI and documentation. Use these to keep translations consistent across locales.
 
-- Tetepna string UI cekak lan fokus tumindak.
-- Kanggo setelan gunakna aran (nomina), kanggo tumindak gunakna tembung kerja (verba).
-- Gunakna sentence case (mung tembung pisanan kapital), kajaba judhul.
+---
 
-Istilah
+### Notes
 
-- Attachments: berkas sing disertakake karo email. Aja nganggo “enclosures”.
-- Blacklist (Exclude list): dhaptar pola sing nyegah berkas supaya ora dilampirake otomatis.
-- Ing salinan UI, gunakna “Blacklist (glob patterns)” supaya cocog karo kaca setelan.
-- Terangna yen mung jeneng berkas sing dicocogaké; dudu path.
-- Confirm / Confirmation: njaluk persetujuan sadurunge nambah lampiran.
-- Answers: “Yes” (tambah), “No” (batal). Cekakna label tombol.
-- Inline image: gambar sing dirujuk nganggo CID ing HTML pesen; ora tau ditambah minangka berkas.
-- S/MIME signature: `smime.p7s` utawa bagean tandha PKCS7; aja ditambah.
-- Options / Settings: kaca konfigurasi add‑on ing Thunderbird.
-- Default answer: jawaban sing wis dipilih kanggo dialog konfirmasi.
+- Keep UI strings short and action‑oriented.
+- Prefer nouns for settings and verbs for actions.
+- Use sentence case (only the first word capitalized) except titles.
 
-Gaya
+---
 
-- Jeneng berkas: tampilna minangka kode (monospace), contone `smime.p7s`, `*.png`.
-- Tombol/kunci: title‑case mung kanggo asma baku; liyané sentence case.
-- Aja nganggo jargon (kayata “idempotency”); gunakna “prevent duplicates”.
+### Terms
+
+- **Attachments**: files included with an email. Avoid “enclosures”.
+- **Blacklist** (Exclude list): list of patterns that prevent files from being attached automatically. In the UI this appears as “Blacklist (glob patterns)”.
+- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
+- Explain that only filenames are matched; not paths.
+- **Confirm / Confirmation:** ask the user to proceed before adding attachments.
+- **Answers:** “Yes” (add), “No” (cancel). Keep button labels short.
+- **Inline image:** an image referenced by CID in message HTML; never added as a file.
+- **S/MIME signature:** `smime.p7s` or PKCS7 signature parts; never added.
+- **Options / Settings:** the add-on’s configuration page in Thunderbird.
+- **Default answer:** the preselected answer for the confirmation dialog.
+
+---
+
+### Email actions
+
+- **Reply:** respond to the sender of a message.
+- **Reply all:** respond to sender and all recipients.
+- **Forward:** send the message to a different recipient; this add-on does not modify forward behavior.
+
+---
+
+### Attachment types
+
+- **Inline attachments:** assets embedded in the message body (e.g., referenced via Content‑ID). Not added as files by the add-on.
+- **Attached files:** files attached to the message as regular attachments (candidates for copying on reply).
+
+---
+
+### Style
+
+- **Filenames:** show as code (monospace), e.g., `smime.p7s`, `*.png`.
+- **Keys/buttons:** title‑case only when they are proper names; otherwise sentence case.
+- **Avoid jargon** (e.g., “idempotency”); prefer “prevent duplicates”.
+
+---

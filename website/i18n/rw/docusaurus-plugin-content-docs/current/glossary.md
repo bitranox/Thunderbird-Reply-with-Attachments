@@ -1,32 +1,57 @@
 ---
 id: glossary
-title: i18n Glossary
-sidebar_label: Glossary
+title: 'Ibyihutirwa'
+sidebar_label: 'Ibyihutirwa'
 ---
 
-Canonical terms used in the add‑on UI and documentation. Use these to keep translations consistent across locales.
+## Ibyihutirwa
 
-Notes
+Amagambo y’ingenziako akoresha muri UI y’inyongera na dokumentasiyo. Koresha aya kugira ngo ukomeze guhuza ibisobanuro mu mirongo itandukanye.
 
-- Keep UI strings short and action‑oriented.
-- Prefer nouns for settings and verbs for actions.
-- Use sentence case (only the first word capitalized) except titles.
+---
 
-Terms
+### In nota
 
-- Attachments: files included with an email. Avoid “enclosures”.
-- Blacklist (Exclude list): list of patterns that prevent files from being attached automatically.
-- In UI copy, prefer “Blacklist (glob patterns)” to match the settings page.
-- Explain that only filenames are matched; not paths.
-- Confirm / Confirmation: ask the user to proceed before adding attachments.
-- Answers: “Yes” (add), “No” (cancel). Keep button labels short.
-- Inline image: an image referenced by CID in message HTML; never added as a file.
-- S/MIME signature: `smime.p7s` or PKCS7 signature parts; never added.
-- Options / Settings: the add‑on’s configuration page in Thunderbird.
-- Default answer: the preselected answer for the confirmation dialog.
+- Bika ibikoresho bya UI bigufi kandi byibanda ku cyo gukora.
+- Hitamo amazina ku byerekeye ishyirahamwe n’imitwe ku bikorwa.
+- Koresha interuro y’inyuguti (ijambo rya mbere ryonyine ryanditswe mu nyuguti nkuru) keretse ku matitle.
 
-Style
+---
 
-- Filenames: show as code (monospace), e.g., `smime.p7s`, `*.png`.
-- Keys/buttons: title‑case only when they are proper names; otherwise sentence case.
-- Avoid jargon (e.g., “idempotency”); prefer “prevent duplicates”.
+### Amagambo
+
+- **Attachments**: dosiye zashyizweho hamwe n’iyandikwa. Irinde “enclosures”.
+- **Blacklist** (Urutonde rwo Gukura): urutonde rw'ibimenyetso bituma dosiye zitabasha gushyirwaho byikora. Muri UI ibi bivugwa nka “Blacklist (glob patterns)”.
+- Muri copy ya UI, hitamo “Blacklist (glob patterns)” kugira ngo ihure n’page y’imitwe.
+- Sobanura ko ari amazina y’ibitabo gusa abasha kwihanganirwa; atari inzira.
+- **Confirm / Confirmation:** sobanura ko umukoresha akwiye gukomeza mbere yo gushyiraho attachments.
+- **Answers:** “Yego” (ongera), “Oya” (siba). Bika ibirango by’amaboko bigufi.
+- **Inline image:** igishushanyo kirebwa na CID mu nyandiko ya HTML; ntigishirwaho nka dosiye.
+- **S/MIME signature:** `smime.p7s` cyangwa ibice bya PKCS7 signature; ntibyongerwa.
+- **Options / Settings:** paji yo gushiraho y’inyongera muri Thunderbird.
+- **Default answer:** igisubizo cyahiswemo mu ikiganiro cyo kwemeza.
+
+---
+
+### Ibikorwa by’imanama
+
+- **Reply:** gusubiza uyohereje ubutumwa.
+- **Reply all:** gusubiza uyohereje n’abakiriye bose.
+- **Forward:** kohereza ubutumwa ku wundi uyoherezi; iyi nyongera ntihindura imigendere yo kohereza.
+
+---
+
+### Amoko y’ibyoherezwa
+
+- **Inline attachments:** ibikorwa byinjijwe mu mubiri w’ubutumwa (nka, byerekanwe binyuze mu Content‑ID). Ntibishyirwa nka dosiye n’iyo nyongera.
+- **Attached files:** dosiye zashyizweho ku butumwa nka attachments zisanzwe (abakandida bo kopiya mu gusubiza).
+
+---
+
+### Imiterere
+
+- **Filenames:** bigaragaramo nk’akadomo (monospace), urugero, `smime.p7s`, `*.png`.
+- **Keys/buttons:** andika mu mitwe gusa igihe ari amazina yihariye; ubundi hifashishe interuro.
+- **Irema jargon** (nka, “idempotency”); hitamo “kurinda duplicate”.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "บันทึกการเปลี่ยนแปลง",
-  "description": "ดูประวัติทั้งหมดได้ที่ไฟล์ CHANGELOG.md ในที่เก็บโค้ด",
+  "title": "ประวัติการเปลี่ยนแปลง",
+  "description": "Changelog",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "บันทึกการเปลี่ยนแปลง"
+    "title": "ประวัติการเปลี่ยนแปลง"
   },
   "sidebar": "docs",
   "previous": {
     "title": "ใบอนุญาต",
-    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/licence"
+    "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/license"
   }
 }

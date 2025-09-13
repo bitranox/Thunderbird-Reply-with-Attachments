@@ -1,7 +1,7 @@
 {
   "id": "languages",
   "title": "Langues",
-  "description": "Large couverture grâce aux outils de traduction IA — 103 langues.",
+  "description": "Languages",
   "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",

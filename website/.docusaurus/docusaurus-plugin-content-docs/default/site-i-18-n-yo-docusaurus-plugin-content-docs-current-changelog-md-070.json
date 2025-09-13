@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ìtàn ìyípadà",
-  "description": "Wo gbogbo ìtàn ní fáìlì CHANGELOG.md inú repósítírì.",
+  "title": "Iṣiro Iyipada",
+  "description": "Changelog",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,11 +13,11 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ìtàn ìyípadà"
+    "title": "Iṣiro Iyipada"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Licence",
-    "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/licence"
+    "title": "Iwe-aṣẹ",
+    "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/license"
   }
 }

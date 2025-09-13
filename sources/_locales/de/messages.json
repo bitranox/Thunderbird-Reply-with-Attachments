@@ -1,57 +1,83 @@
 {
   "extName": {
-    "message": "Antworten mit Anhängen"
+    "message": "Mit Anhängen antworten"
   },
   "extDescription": {
-    "message": "Originalanhänge automatisch in E-Mail-Antworten einfügen."
+    "message": "Fügt die ursprünglichen Anhänge in E‑Mail-Antworten automatisch hinzu."
   },
   "composeTitle": {
-    "message": "Antworten mit Anhängen"
+    "message": "Mit Anhängen antworten"
   },
   "optionsTitle": {
-    "message": "Antworten mit Anhängen — Optionen"
+    "message": "Mit Anhängen antworten — Optionen"
   },
   "confirmTitle": {
     "message": "Anhänge bestätigen"
   },
   "uiHeader": {
-    "message": "Antworten mit Anhängen"
+    "message": "Mit Anhängen antworten"
   },
   "uiNoOptions": {
     "message": "Derzeit gibt es keine Optionen zum Konfigurieren."
   },
   "uiSupport": {
-    "message": "Gefällt Ihnen dieses Add-on? Unterstützen Sie mich mit einem kleinen Beitrag:"
+    "message": "Gefällt Ihnen dieses Add-on? Bitte unterstützen Sie mich mit einem kleinen Beitrag:"
+  },
+  "uiRateATNText": {
+    "message": "Bitte auf ATN bewerten"
+  },
+  "uiRateATNStars": {
+    "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
     "message": "Jetzt spenden"
   },
+  "uiIDonated": {
+    "message": "Ich habe gespendet"
+  },
+  "uiDonateSnoozed": {
+    "message": "Danke! Spendenhinweis für 90 Tage ausgeblendet."
+  },
+  "uiDonateHiddenUntil": {
+    "message": "Ausgeblendet bis $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "uiDonateShowAgain": {
+    "message": "Spendenhinweis wieder anzeigen"
+  },
+  "uiDonateRestored": {
+    "message": "Spendenhinweis ist wieder sichtbar."
+  },
   "uiGithubText": {
-    "message": "Für Fehlermeldungen oder andere Anfragen besuchen Sie bitte meine"
+    "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub-Seite"
   },
   "iconAlt": {
-    "message": "Symbol „Antworten mit Anhängen“"
+    "message": "Symbol für Mit Anhängen antworten"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist für Dateinamen (Glob-Muster)"
+    "message": "Blockliste von Dateinamen (Glob-Muster)"
   },
   "uiBlacklistHelp": {
     "message": "Dateien, deren Namen einem dieser Muster entsprechen, werden niemals automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Warnen, wenn Anhänge aufgrund der Blacklist ausgeschlossen werden"
+    "message": "Warnen, wenn Anhänge durch die Blockliste ausgeschlossen werden"
   },
   "uiSave": {
     "message": "Speichern"
   },
   "uiSaving": {
-    "message": "Speichern…"
+    "message": "Speichern …"
   },
   "uiReset": {
     "message": "Auf Standardwerte zurücksetzen"
@@ -100,7 +126,7 @@
     "message": "Nein"
   },
   "warnBlacklistTitle": {
-    "message": "Durch Blacklist ausgeschlossen"
+    "message": "Durch Blockliste ausgeschlossen"
   },
   "warnBlacklistIntro": {
     "message": "Die folgenden Dateien werden nicht automatisch angehängt:"
@@ -126,7 +152,19 @@
   "donateUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/donation"
   },
+  "atnRateUrl": {
+    "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
+  },
   "githubUrl": {
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDocsText": {
+    "message": "Dokumentation:"
+  },
+  "uiDocsButton": {
+    "message": "Dokumentation öffnen"
+  },
+  "docsUrl": {
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
   }
 }

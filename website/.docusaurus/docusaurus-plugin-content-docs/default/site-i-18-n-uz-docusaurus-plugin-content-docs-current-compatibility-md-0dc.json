@@ -1,6 +1,6 @@
 {
   "id": "compatibility",
-  "title": "Compatibility",
+  "title": "Mosliklar",
   "description": "Compatibility",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibility",
-    "sidebar_label": "Compatibility"
+    "title": "Mosliklar",
+    "sidebar_label": "Mosliklar"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Usage",
+    "title": "Foydalanish",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/usage"
   },
   "next": {
-    "title": "Permissions",
+    "title": "Ruxsatlar",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/permissions"
   }
 }

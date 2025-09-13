@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "అనుమతులు",
-  "description": "ఆడ్‑ఆన్ చిన్న, లక్ష్యబద్ధమైన కొద్ది అనుమతులనే కోరుతుంది. ప్రతిదాని అవసరం:",
+  "description": "అనుమతులు",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",
@@ -17,11 +17,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "అనుకూలత",
+    "title": "సామ్యం",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/compatibility"
   },
   "next": {
-    "title": "డెవలప్మెంట్",
+    "title": "అభివృద్ధి",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/development"
   }
 }

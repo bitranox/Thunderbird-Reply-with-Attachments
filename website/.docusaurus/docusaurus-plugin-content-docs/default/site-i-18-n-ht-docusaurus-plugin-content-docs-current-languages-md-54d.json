@@ -1,7 +1,7 @@
 {
   "id": "languages",
-  "title": "Languages",
-  "description": "Massive language support, thanks to AI translation tools — covering 103 languages.",
+  "title": "Lang",
+  "description": "Lang",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/languages.md",
   "sourceDirName": ".",
   "slug": "/languages",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "languages",
-    "title": "Languages",
-    "sidebar_label": "Languages"
+    "title": "Lang",
+    "sidebar_label": "Lang"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Development",
+    "title": "Devlopman",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/development"
   },
   "next": {
-    "title": "Glossary",
+    "title": "Glosè",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/glossary"
   }
 }

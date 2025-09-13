@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "انسٽاليشن",
+  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "انسٽاليشن",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "انسٽاليشن"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "تڪڙي شروعات",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "ترتيب",
     "permalink": "/Thunderbird-Reply-with-Attachments/sd/docs/configuration"
   }
 }

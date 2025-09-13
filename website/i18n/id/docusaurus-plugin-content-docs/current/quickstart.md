@@ -1,18 +1,58 @@
 ---
 id: quickstart
-title: Mulai cepat
-sidebar_label: Mulai cepat
+title: 'Panduan Awal'
+sidebar_label: 'Panduan Awal'
 ---
 
-1. Pasang add‑on dari Thunderbird Add‑ons.
-2. Opsional: aktifkan konfirmasi (Opsi → “Tanyakan sebelum menambahkan lampiran”).
-3. Opsional: biarkan peringatan daftar hitam tetap aktif (bawaan): “Peringatkan jika lampiran dikecualikan oleh daftar hitam”.
-4. Opsional: tambahkan pola daftar hitam (satu per baris), misalnya:
+## Quickstart
+
+:::important Minimum Thunderbird Version
+This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+:::
+
+:::note No telemetry; no background network
+The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::
+
+---
+
+### Install
+
+1. Install the add-on from Thunderbird Add‑ons.
+2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
+3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
+4. Optional: Add blacklist patterns (one per line), e.g.:
 
 ```
 *intern*
 *secret*
-*passwor*
+*passwor*  # matches both “password” and “Passwort” families
 ```
 
-Sekarang balas pesan yang memiliki lampiran — lampiran asli akan ditambahkan secara otomatis atau setelah konfirmasi singkat. Jika ada berkas yang dikecualikan oleh daftar hitam Anda, Anda akan melihat peringatan singkat yang mencantumkannya.
+Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+
+Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
+
+---
+
+### Verify {#verify}
+
+- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
+- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+
+---
+
+### Verify blacklist warning {#verify-blacklist-warning}
+
+- Reply to a message containing a file like “secret.txt”.
+- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
+
+If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+
+---
+
+### Keyboard note {#keyboard-note}
+
+- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation — in Thunderbird (Recommended)",
+  "title": "Instalace",
+  "description": "Instalace pomocí \"Thunderbird doplňků a motivů\"",
   "source": "@site/i18n/cs/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,17 +13,17 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Instalace",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalace"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Quickstart",
+    "title": "Rychlý start",
     "permalink": "/Thunderbird-Reply-with-Attachments/cs/docs/quickstart"
   },
   "next": {
-    "title": "Configuration",
+    "title": "Konfigurace",
     "permalink": "/Thunderbird-Reply-with-Attachments/cs/docs/configuration"
   }
 }

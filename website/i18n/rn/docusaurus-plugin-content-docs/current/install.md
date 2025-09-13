@@ -1,50 +1,79 @@
 ---
 id: install
-title: Installation
+title: 'Gukora'
 slug: /install
-sidebar_label: Installation
+sidebar_label: 'Gukora'
 ---
 
-## Installation — in Thunderbird (Recommended)
+## Gukora ukoresheje "Thunderbird Add-ons na Themes" {#installation-in-thunderbird-recommended}
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+:::important Ingingo y'ingenzi ku rwego rwa Thunderbird
+Iyi add-on yishyigikira Thunderbird **128 ESR cyangwa hejuru**. Inyandiko za kera ntizishigikirwa.
+:::
 
----
+Ubu ni uburyo bwiza bwo gukorera. Add-on zishyizweho kuva kuri ATN (addons.thunderbird.net) zigira amakuru yihuse. Imitwe ya LOCAL/dev ntizishobora kwiyongera mu buryo bwikora.
 
-## Local installation in Thunderbird
+- Urwego rwa Thunderbird rukeneye: 128 ESR cyangwa hejuru.
 
-### Download the XPI file
+1. Mu Thunderbird, jya ku **Ibikoresho > Add-ons na Themes**.
+2. Shakisha "gusubiza hamwe n'inyandiko".
+3. Ongera add-on.
 
-1. Go to the [Thunderbird Add-on page](https://addons.thunderbird.net/en-US/thunderbird/search/?q=reply%20with%20attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Cyangwa fungura urupapuro rwa add-on mu buryo butaziguye: [Thunderbird Add-ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development
+## Gukora mu ntoki kuva kuri XPI {#local-installation-in-thunderbird}
 
-### Download the repository
+### Kuramo dosye ya XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Jya ku [paji ya Thunderbird Add-on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Kuramo version ya nyuma ya add-on nk'igikoresho cya XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird
+### Gukora muri Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+1. Fungura Thunderbird.
+2. Jya ku **Ibikoresho > Add-ons na Themes**.
+3. Mu **Manager wa Add-ons**, kanda ikiranga cy'icyuma mu gice cyo hejuru iburyo.
+4. Hitamo **Shyiramo Add-on Ukoresheje Dosye…** mu menu.
+5. Hitamo dosye ya `reply_with_attachments-x.y.z-tb.xpi` wakuyeyo.
+6. Emeza gukorana igihe bibasabiwe.
 
 ---
+
+## Gukora ku rwego rwa Developer {#installation-for-development}
+
+### Kuramo isoko {#download-the-repository}
+
+1. Kuramo version ya nyuma y'isoko rya GitHub.
+2. Koresha `make help` kubisobanuro birambuye.
+
+### Gukora muri Thunderbird {#install-in-thunderbird-dev}
+
+1. Fungura Thunderbird.
+2. Jya ku **Ibikoresho > Add-ons na Themes**.
+3. Mu **Manager wa Add-ons**, kanda ikiranga cy'icyuma mu gice cyo hejuru iburyo.
+4. Hitamo **Shyiramo Add-on Ukoresheje Dosye…** mu menu.
+5. Hitamo dosye y'ibikurikira `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Emeza gukorana igihe bibasabiwe.
+
+Icyitonderwa: Niba Thunderbird idakiriye `.zip` kuri sisitemu yawe, hindura izina kuyita `.xpi` maze ugerageze “Shyiramo Add-on Ukoresheje Dosye…” ukundi.
+
+### Aho uri kubona LOCAL ZIP {#where-local-zip}
+
+- Mbere, pakiga add-on: kora `make pack` ku mizi y'ishakisha.
+- Nyuma yo gupakira, shaka "LOCAL" zip mu mizi y'ishakisha (nka `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Mbere yo kongera gupakira ku g 测试, ongera guhindura ibice mu `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
+
+---
+
+## Guhagarika, Gukuraho, no Guhindura {#disable-uninstall-updates}
+
+- Guhagarika: Thunderbird → Ibikoresho → Add-ons na Themes → shaka add-on → kanda guhindura.
+- Gukuraho: ishusho imwe → menu y'imitwe itatu → Kuramo.
+- Guhindura: Imitwe ya ATN ihinduka mu buryo bwikora igihe version nshya yemejwe. Imitwe ya LOCAL/dev ntabwo ihinduka mu buryo bwikora; subiza inyuma build ya LOCAL mu buryo bwimanukiriye.
+- Gukuramo ibikenewe byuzuye: reba [Ubwirinzi → Gukuramo amakuru](privacy#data-removal).
+
+Reba kandi
+
+- [Iby'ibanze](quickstart)

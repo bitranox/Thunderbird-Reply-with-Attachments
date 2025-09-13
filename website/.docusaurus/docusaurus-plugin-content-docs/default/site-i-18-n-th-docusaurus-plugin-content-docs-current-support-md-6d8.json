@@ -1,7 +1,7 @@
 {
   "id": "support",
   "title": "การสนับสนุน",
-  "description": "ต้องการความช่วยเหลือหรืออยากรายงานบั๊ก?",
+  "description": "FAQ",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/support.md",
   "sourceDirName": ".",
   "slug": "/support",

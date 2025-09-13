@@ -1,7 +1,7 @@
 {
   "id": "glossary",
-  "title": "واژه‌نامه i18n",
-  "description": "واژگان معیار مورد استفاده در UI و مستندات افزونه. از این‌ها استفاده کنید تا ترجمه‌ها در همه زبان‌ها یکدست بماند.",
+  "title": "واژه‌نامه",
+  "description": "Glossary",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/glossary.md",
   "sourceDirName": ".",
   "slug": "/glossary",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "glossary",
-    "title": "واژه‌نامه i18n",
+    "title": "واژه‌نامه",
     "sidebar_label": "واژه‌نامه"
   },
   "sidebar": "docs",

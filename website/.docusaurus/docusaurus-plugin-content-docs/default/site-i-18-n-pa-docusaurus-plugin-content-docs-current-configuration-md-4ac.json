@@ -1,7 +1,7 @@
 {
   "id": "configuration",
-  "title": "ਸੰਰਚਨਾ",
-  "description": "ਸ਼ਬਦਾਵਲੀ ਨੋਟ: UI ਅਤੇ ਡੌਕ ਵਿੱਚ ਵਰਤੇ ਗਏ ਇਕਸਾਰ ਸ਼ਬਦਾਂ ਲਈ Glossary ਵੇਖੋ।",
+  "title": "ਕਨਫਗਰੇਸ਼ਨ",
+  "description": "Configuration",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",
@@ -13,15 +13,15 @@
   "lastUpdatedAt": 1757205965000,
   "frontMatter": {
     "id": "configuration",
-    "title": "ਸੰਰਚਨਾ"
+    "title": "ਕਨਫਗਰੇਸ਼ਨ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ਸਥਾਪਨਾ",
+    "title": "ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/install"
   },
   "next": {
-    "title": "ਵਰਤੋਂ",
+    "title": "ਇਸਤਮਾਲ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/usage"
   }
 }
