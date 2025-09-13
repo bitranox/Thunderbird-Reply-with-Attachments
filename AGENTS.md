@@ -92,30 +92,30 @@ when writing or refracturing thunderbird specific code apply those Rules :
 
 ### Common Make Targets (Alphabetical)
 
-| Target                       | One‑line description                                                                   |
-| ---------------------------- | -------------------------------------------------------------------------------------- |
-| `clean`                      | Remove local build/preview artifacts (`tmp/`, `web-local-preview/`, `website/build/`). |
-| `commit`                     | Format, run tests (incl. i18n), update changelog, commit & push.                       |
-| `eslint`                     | Run ESLint via flat config (`npm run -s lint:eslint`).                                 |
-| `help`                       | List all targets with one‑line docs (sorted).                                          |
-| `lint`                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                   |
-| `menu`                       | Interactive menu to select a target and optional arguments.                            |
-| `pack`                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                             |
-| `prettier`                   | Format repository in place (writes changes).                                           |
-| `prettier_check`             | Prettier in check mode (no writes); fails if reformat needed.                          |
-| `prettier_write`             | Alias for `prettier`.                                                                  |
-| `test`                       | Prettier (write), ESLint, then Vitest (coverage if configured) + docs URL guard.       |
-| `test_i18n`                  | i18n‑only tests for add‑on strings and website parity + docs URL guard.                |
-| `translate_app`              | Alias for `translation_app`.                                                           |
-| `translation_app`            | Translate app UI strings from `sources/_locales/en/messages.json`.                     |
-| `translate_web_docs_batch`   | Translate website docs via OpenAI Batch API (preferred).                               |
-| `translate_web_docs_sync`    | Translate website docs synchronously (legacy, non-batch).                              |
-| `translate_web_index`        | Alias for `translation_web_index`.                                                     |
-| `translation_web_index`      | Translate website UI (`website/i18n/en/code.json` → `website/i18n/<lang>/code.json`).  |
-| `web_build`                  | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                |
-| `web_build_linkcheck`        | Offline‑safe link check (skips remote HTTP[S]).                                        |
-| `web_build_local_preview`    | Local gh‑pages preview; optional tests/link‑check; auto‑serve on 8080–8090.            |
-| `web_push_github`            | Push `website/build` to the `gh-pages` branch.                                         |
+| Target                     | One‑line description                                                                   |
+| -------------------------- | -------------------------------------------------------------------------------------- |
+| `clean`                    | Remove local build/preview artifacts (`tmp/`, `web-local-preview/`, `website/build/`). |
+| `commit`                   | Format, run tests (incl. i18n), update changelog, commit & push.                       |
+| `eslint`                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                 |
+| `help`                     | List all targets with one‑line docs (sorted).                                          |
+| `lint`                     | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                   |
+| `menu`                     | Interactive menu to select a target and optional arguments.                            |
+| `pack`                     | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                             |
+| `prettier`                 | Format repository in place (writes changes).                                           |
+| `prettier_check`           | Prettier in check mode (no writes); fails if reformat needed.                          |
+| `prettier_write`           | Alias for `prettier`.                                                                  |
+| `test`                     | Prettier (write), ESLint, then Vitest (coverage if configured) + docs URL guard.       |
+| `test_i18n`                | i18n‑only tests for add‑on strings and website parity + docs URL guard.                |
+| `translate_app`            | Alias for `translation_app`.                                                           |
+| `translation_app`          | Translate app UI strings from `sources/_locales/en/messages.json`.                     |
+| `translate_web_docs_batch` | Translate website docs via OpenAI Batch API (preferred).                               |
+| `translate_web_docs_sync`  | Translate website docs synchronously (legacy, non-batch).                              |
+| `translate_web_index`      | Alias for `translation_web_index`.                                                     |
+| `translation_web_index`    | Translate website UI (`website/i18n/en/code.json` → `website/i18n/<lang>/code.json`).  |
+| `web_build`                | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                |
+| `web_build_linkcheck`      | Offline‑safe link check (skips remote HTTP[S]).                                        |
+| `web_build_local_preview`  | Local gh‑pages preview; optional tests/link‑check; auto‑serve on 8080–8090.            |
+| `web_push_github`          | Push `website/build` to the `gh-pages` branch.                                         |
 
 ## Coding Style & Naming Conventions
 
