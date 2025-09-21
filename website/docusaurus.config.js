@@ -337,7 +337,7 @@ const config = {
         translate({
           id: 'footer.copyright',
           message: '© {year} Reply with Attachments',
-        }),
+        })
       ),
     },
     // Algolia DocSearch (enable via env vars DOCSEARCH_APP_ID, DOCSEARCH_API_KEY, DOCSEARCH_INDEX_NAME)
