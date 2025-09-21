@@ -608,7 +608,7 @@ export default {
           ]
         }
       ],
-      "copyright": "© {year} Reply with Attachments"
+      "copyright": "© 2025 Reply with Attachments"
     },
     "docs": {
       "versionPersistence": "localStorage",

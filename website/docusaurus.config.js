@@ -10,6 +10,12 @@ try {
   // no-op fallback used in tests
 }
 
+const CURRENT_YEAR = new Date().getFullYear().toString();
+const YEAR_PLACEHOLDER = /\{\s*year\s*\}/gi;
+
+const resolveYearToken = (value) =>
+  typeof value === 'string' ? value.replace(YEAR_PLACEHOLDER, CURRENT_YEAR) : value;
+
 const I18N_LOCALES = [
   'en',
   'zh',
@@ -327,11 +333,12 @@ const config = {
           ],
         },
       ],
-      copyright: translate({
-        id: 'footer.copyright',
-        message: '© {year} Reply with Attachments',
-        values: { year: new Date().getFullYear() },
-      }),
+      copyright: resolveYearToken(
+        translate({
+          id: 'footer.copyright',
+          message: '© {year} Reply with Attachments',
+        }),
+      ),
     },
     // Algolia DocSearch (enable via env vars DOCSEARCH_APP_ID, DOCSEARCH_API_KEY, DOCSEARCH_INDEX_NAME)
     ...(process.env.DOCSEARCH_APP_ID && process.env.DOCSEARCH_API_KEY

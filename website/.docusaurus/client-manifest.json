@@ -239,7 +239,7 @@
       "js": [
         {
           "file": "assets/js/runtime~main.250bfaf0.js",
-          "hash": "803f330c1ff1f4b1",
+          "hash": "8c2dc54e2788b3a2",
           "publicPath": "/Thunderbird-Reply-with-Attachments/is/assets/js/runtime~main.250bfaf0.js"
         }
       ]
@@ -373,9 +373,9 @@
     "792": {
       "js": [
         {
-          "file": "assets/js/main.cd3d55b5.js",
-          "hash": "e7781bfac77ae3cf",
-          "publicPath": "/Thunderbird-Reply-with-Attachments/is/assets/js/main.cd3d55b5.js"
+          "file": "assets/js/main.12abcc45.js",
+          "hash": "19a6528fc319c0b1",
+          "publicPath": "/Thunderbird-Reply-with-Attachments/is/assets/js/main.12abcc45.js"
         }
       ]
     },
