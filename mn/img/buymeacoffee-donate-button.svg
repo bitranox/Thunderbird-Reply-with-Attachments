@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" role="img" aria-label="Buy me a coffee">
+  <title>Buy me a coffee</title>
+  <defs>
+    <filter id="shadow" x="-20%" y="-50%" width="140%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="4" y="4" rx="12" ry="12" width="272" height="56" fill="#000000"/>
+  </g>
+  <!-- Cup icon (BMC style: yellow cup) -->
+  <g transform="translate(24,14)">
+    <rect x="0" y="8" width="36" height="20" rx="10" ry="10" fill="#FFDD00"/>
+    <rect x="4" y="4" width="20" height="6" rx="3" ry="3" fill="#FFDD00"/>
+    <path d="M28 10c4 0 8 3 8 7s-4 7-8 7h-2v-14z" fill="#FFDD00"/>
+  </g>
+  <text x="76" y="39" fill="#FFFFFF" font-family="system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.2">
+    Buy me a coffee
+  </text>
+</svg>
