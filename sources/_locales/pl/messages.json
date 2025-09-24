@@ -3,7 +3,7 @@
     "message": "Odpowiedź z załącznikami"
   },
   "extDescription": {
-    "message": "Automatycznie dołączaj oryginalne załączniki w odpowiedziach na e‑maile."
+    "message": "Automatycznie dołączaj oryginalne załączniki w odpowiedziach na wiadomości e-mail."
   },
   "composeTitle": {
     "message": "Odpowiedź z załącznikami"
@@ -18,25 +18,25 @@
     "message": "Odpowiedź z załącznikami"
   },
   "uiNoOptions": {
-    "message": "Obecnie nie ma żadnych opcji do skonfigurowania."
+    "message": "Obecnie nie ma opcji do skonfigurowania."
   },
   "uiSupport": {
-    "message": "Podoba ci się ten dodatek? Wesprzyj mnie drobną wpłatą:"
+    "message": "Czy podoba Ci się ten dodatek? Wesprzyj mnie drobną wpłatą:"
   },
   "uiRateATNText": {
-    "message": "Oceń w ATN"
+    "message": "Oceń na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Przekaż darowiznę"
+    "message": "Przekaż datek"
   },
   "uiIDonated": {
-    "message": "Przekazałam/em darowiznę"
+    "message": "Przekazałem darowiznę"
   },
   "uiDonateSnoozed": {
-    "message": "Dziękuję! Przypomnienie o darowiźnie ukryte na 90 dni."
+    "message": "Dziękuję! Komunikat o darowiźnie ukryty na 90 dni."
   },
   "uiDonateHiddenUntil": {
     "message": "Ukryte do $1",
@@ -47,16 +47,16 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Pokaż ponownie przycisk Darowizna"
+    "message": "Pokaż ponownie prośbę o darowiznę"
   },
   "uiDonateRestored": {
-    "message": "Prośba o darowiznę jest ponownie widoczna."
+    "message": "Komunikat o darowiźnie znów jest widoczny."
   },
   "uiGithubText": {
-    "message": "W sprawie zgłoszeń błędów lub innych pytań odwiedź moją"
+    "message": "W sprawie błędów lub innych pytań odwiedź moją"
   },
   "uiGithubLinkLabel": {
-    "message": "stronę w serwisie GitHub"
+    "message": "Strona GitHub"
   },
   "iconAlt": {
     "message": "Ikona „Odpowiedź z załącznikami”"
@@ -68,10 +68,19 @@
     "message": "Czarna lista nazw plików (wzorce glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Pliki, których nazwy pasują do któregokolwiek z tych wzorców, nigdy nie będą dołączane automatycznie. Jeden wzorzec na linię. Przykłady: *.png, smime.*, *.p7s"
+    "message": "Pliki, których nazwy pasują do któregokolwiek z tych wzorców, nigdy nie będą dołączane automatycznie. Jeden wzorzec w wierszu. Przykłady: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Ostrzegaj, jeśli załączniki są wykluczone przez czarną listę"
+    "message": "Ostrzegaj, gdy załączniki są wykluczone przez czarną listę"
+  },
+  "uiDebugHeader": {
+    "message": "Zaawansowane"
+  },
+  "uiDebugLabel": {
+    "message": "Włącz rejestrowanie debugowe"
+  },
+  "uiDebugHelp": {
+    "message": "Zapisuje szczegółowe dzienniki w tle do konsoli deweloperskiej Thunderbirda. Wyłącz po zakończeniu rozwiązywania problemów."
   },
   "uiSave": {
     "message": "Zapisz"
@@ -86,7 +95,7 @@
     "message": "Zapisano."
   },
   "uiResetDone": {
-    "message": "Zresetowano."
+    "message": "Przywrócono."
   },
   "uiConfirmHeader": {
     "message": "Potwierdzenie"
@@ -95,7 +104,7 @@
     "message": "Pytaj przed dodaniem załączników"
   },
   "uiConfirmHelp": {
-    "message": "Niewielkie okno potwierdzenia pojawi się tylko wtedy, gdy załączniki faktycznie mają zostać dodane. Klawiatura: Y lub J = Tak; N lub Esc = Nie."
+    "message": "Niewielkie okno potwierdzenia pojawia się tylko wtedy, gdy załączniki rzeczywiście mają zostać dodane. Klawiatura: Y lub J = Tak; N lub Esc = Nie."
   },
   "confirmAddOne": {
     "message": "Dodać załącznik: $1?",
@@ -129,7 +138,7 @@
     "message": "Wykluczone przez czarną listę"
   },
   "warnBlacklistIntro": {
-    "message": "Następujące pliki nie zostaną dołączone automatycznie:"
+    "message": "Poniższe pliki nie zostaną dołączone automatycznie:"
   },
   "warnColFile": {
     "message": "Plik"
@@ -150,7 +159,7 @@
     "message": "Nie"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

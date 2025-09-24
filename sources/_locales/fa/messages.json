@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "پاسخ با پیوست‌ها"
+    "message": "پاسخ همراه با پیوست‌ها"
   },
   "extDescription": {
-    "message": "پیوست‌های اصلی را به‌طور خودکار در پاسخ‌های ایمیل اضافه می‌کند."
+    "message": "به‌طور خودکار پیوست‌های اصلی را در پاسخ‌های ایمیل درج می‌کند."
   },
   "composeTitle": {
-    "message": "پاسخ با پیوست‌ها"
+    "message": "پاسخ همراه با پیوست‌ها"
   },
   "optionsTitle": {
-    "message": "پاسخ با پیوست‌ها — گزینه‌ها"
+    "message": "پاسخ همراه با پیوست‌ها — گزینه‌ها"
   },
   "confirmTitle": {
     "message": "تأیید پیوست‌ها"
   },
   "uiHeader": {
-    "message": "پاسخ با پیوست‌ها"
+    "message": "پاسخ همراه با پیوست‌ها"
   },
   "uiNoOptions": {
-    "message": "در حال حاضر گزینه‌ای برای تنظیم وجود ندارد."
+    "message": "در حال حاضر گزینه‌ای برای پیکربندی وجود ندارد."
   },
   "uiSupport": {
-    "message": "از این افزونه خوشتان می‌آید؟ لطفاً با یک کمک کوچک از من حمایت کنید:"
+    "message": "از این افزونه خوشتان آمده؟ لطفاً با کمک کوچکی از من حمایت کنید:"
   },
   "uiRateATNText": {
-    "message": "لطفاً در ATN امتیاز بدهید"
+    "message": "لطفاً در ATN امتیاز دهید"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "اکنون کمک مالی کنید"
+    "message": "هم‌اکنون کمک مالی کنید"
   },
   "uiIDonated": {
     "message": "کمک مالی کردم"
   },
   "uiDonateSnoozed": {
-    "message": "سپاس! پیام درخواست کمک مالی به‌مدت ۹۰ روز پنهان شد."
+    "message": "سپاس! درخواست کمک مالی به مدت ۹۰ روز پنهان شد."
   },
   "uiDonateHiddenUntil": {
-    "message": "پنهان تا $1",
+    "message": "تا $1 پنهان است",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -50,7 +50,7 @@
     "message": "نمایش دوباره درخواست کمک مالی"
   },
   "uiDonateRestored": {
-    "message": "پیام درخواست کمک مالی دوباره قابل مشاهده است."
+    "message": "درخواست کمک مالی دوباره قابل مشاهده است."
   },
   "uiGithubText": {
     "message": "برای گزارش اشکال یا سایر پرسش‌ها، لطفاً به"
@@ -59,7 +59,7 @@
     "message": "صفحهٔ GitHub"
   },
   "iconAlt": {
-    "message": "آیکون «پاسخ با پیوست‌ها»"
+    "message": "نماد پاسخ همراه با پیوست‌ها"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "فهرست سیاه نام فایل‌ها (الگوهای glob)"
   },
   "uiBlacklistHelp": {
-    "message": "فایل‌هایی که نامشان با هر یک از این الگوها مطابقت داشته باشد هرگز به‌طور خودکار پیوست نمی‌شوند. هر خط یک الگو. مثال‌ها: *.png، smime.*، *.p7s"
+    "message": "فایل‌هایی که نامشان با هر یک از این الگوها مطابقت داشته باشد هرگز به‌صورت خودکار پیوست نمی‌شوند. هر خط یک الگو. نمونه‌ها: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "در صورت کنار گذاشته شدن پیوست‌ها توسط فهرست سیاه هشدار بده"
+    "message": "در صورت مستثنا شدن پیوست‌ها توسط فهرست سیاه، هشدار بده"
+  },
+  "uiDebugHeader": {
+    "message": "پیشرفته"
+  },
+  "uiDebugLabel": {
+    "message": "فعال‌سازی گزارش‌گیری اشکال‌زدایی"
+  },
+  "uiDebugHelp": {
+    "message": "گزارش‌های پس‌زمینهٔ مفصل را در کنسول توسعه‌دهندگان تاندربرد ثبت می‌کند. پس از پایان عیب‌یابی دوباره آن را غیرفعال کنید."
   },
   "uiSave": {
     "message": "ذخیره"
@@ -80,7 +89,7 @@
     "message": "در حال ذخیره…"
   },
   "uiReset": {
-    "message": "بازنشانی به حالت پیش‌فرض"
+    "message": "بازنشانی به پیش‌فرض‌ها"
   },
   "uiSaved": {
     "message": "ذخیره شد."
@@ -92,10 +101,10 @@
     "message": "تأیید"
   },
   "uiConfirmLabel": {
-    "message": "قبل از افزودن پیوست‌ها سؤال شود"
+    "message": "پیش از افزودن پیوست‌ها بپرس"
   },
   "uiConfirmHelp": {
-    "message": "پنجرهٔ تأیید کوچکی فقط وقتی ظاهر می‌شود که واقعاً قرار است پیوست‌ها اضافه شوند. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
+    "message": "یک گفت‌وگوی تأیید کوچک تنها زمانی نمایش داده می‌شود که واقعاً قرار باشد پیوست‌ها افزوده شوند. صفحه‌کلید: Y یا J = بله؛ N یا Esc = خیر."
   },
   "confirmAddOne": {
     "message": "افزودن پیوست: $1؟",
@@ -126,10 +135,10 @@
     "message": "خیر"
   },
   "warnBlacklistTitle": {
-    "message": "مستثنی‌شده توسط فهرست سیاه"
+    "message": "مستثنا شده توسط فهرست سیاه"
   },
   "warnBlacklistIntro": {
-    "message": "فایل‌های زیر به‌طور خودکار پیوست نخواهند شد:"
+    "message": "فایل‌های زیر به‌صورت خودکار پیوست نخواهند شد:"
   },
   "warnColFile": {
     "message": "فایل"
@@ -150,7 +159,7 @@
     "message": "خیر"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

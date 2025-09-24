@@ -9,7 +9,7 @@
     "message": "د ضمیمو سره ځواب"
   },
   "optionsTitle": {
-    "message": "د ضمیمو سره ځواب — غوراوي"
+    "message": "د ضمیمو سره ځواب — امستنې"
   },
   "confirmTitle": {
     "message": "د ضمیمو تایید"
@@ -18,28 +18,28 @@
     "message": "د ضمیمو سره ځواب"
   },
   "uiNoOptions": {
-    "message": "اوس مهال د امستنې لپاره هېڅ غوراوی نشته."
+    "message": "اوس مهال د امستنې لپاره کوم غوراوي نشته."
   },
   "uiSupport": {
-    "message": "ایا دا اډ‑آن خوښوئ؟ مهرباني وکړئ د یوې کوچنۍ بسپنې په مرسته مې ملاتړ وکړئ:"
+    "message": "ایا دا افزونه خوښوئ؟ مهرباني وکړئ زما ملاتړ د یوې وړې بسپنې په وسیله وکړئ:"
   },
   "uiRateATNText": {
-    "message": "مهرباني وکړئ په ATN کې ارزونه وکړئ"
+    "message": "مهرباني وکړئ په ATN کې نمره ورکړئ"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "اوس بسپنه ورکړئ"
+    "message": "همدا اوس بسپنه ورکړئ"
   },
   "uiIDonated": {
     "message": "ما بسپنه ورکړه"
   },
   "uiDonateSnoozed": {
-    "message": "مننه! د بسپنې پیغام ۹۰ ورځو لپاره پټ شو."
+    "message": "مننه! د بسپنې غوښتنه به 90 ورځو لپاره پټه وي."
   },
   "uiDonateHiddenUntil": {
-    "message": "تر $1 پورې پټ",
+    "message": "تر $1 پورې پټه ده",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "د بسپنې پیغام بیا وښایه"
+    "message": "د بسپنې غوښتنه بیا وښیه"
   },
   "uiDonateRestored": {
-    "message": "د بسپنې پیغام بیا ښکاره شو."
+    "message": "د بسپنې غوښتنه بیا ښکاره ده."
   },
   "uiGithubText": {
-    "message": "د بګ راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما"
+    "message": "د خطا راپورونو یا نورو پوښتنو لپاره، مهرباني وکړئ زما"
   },
   "uiGithubLinkLabel": {
     "message": "د GitHub پاڼه"
   },
   "iconAlt": {
-    "message": "د 'د ضمیمو سره ځواب' نښه"
+    "message": "د ضمیمو سره د ځواب نښه"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "د دوتنې نومونو تور لېست (د glob بڼې)"
+    "message": "د دوتنې نومونو تور لېست (glob الګوګان)"
   },
   "uiBlacklistHelp": {
-    "message": "هغه دوتنې چې نومونه یې له دغو بڼو سره سمون خوري، هېڅکله به په اوتومات ډول ضمیمه نه شي. په هره کرښه کې یوه بڼه. بېلګې: *.png, smime.*, *.p7s"
+    "message": "هغه دوتنې چې نومونه یې له دغو الګوګانو څخه له کومې سره سمون وخوري، هیڅکله په اوتومات ډول نه نښلول کېږي. هره کرښه کې یو الګو. بېلګې: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "که ضمیمې د تور لېست له امله مستثنا شي خبر ورکړئ"
+    "message": "که ضمیمې د تور لېست له مخې ونه نښلول شي، خبرداری وښیه"
+  },
+  "uiDebugHeader": {
+    "message": "پرمختللي"
+  },
+  "uiDebugLabel": {
+    "message": "د ډیبګ لوګ کول فعال کړئ"
+  },
+  "uiDebugHelp": {
+    "message": "د Thunderbird د پراختیا کونسول ته تفصيلي شالید لوګونه لیکي. کله چې ستونزه حل کړئ، بیا یې غیرفعال کړئ."
   },
   "uiSave": {
     "message": "خوندي کړئ"
@@ -92,13 +101,13 @@
     "message": "تایید"
   },
   "uiConfirmLabel": {
-    "message": "د ضمیمو له زیاتولو مخکې وپوښتئ"
+    "message": "د ضمیمو له زیاتولو مخکې پوښتنه وکړئ"
   },
   "uiConfirmHelp": {
-    "message": "یوازې هغه وخت یو وړوکی د تایید کړکۍ ښکاره کېږي چې رښتیا هم ضمیمې زیاتېږي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
+    "message": "یوه کوچنۍ د تایید کړکۍ یوازې هغه وخت ښکاري چې په رښتیا ضمیمې زیاتې شي. کیبورډ: Y یا J = هو؛ N یا Esc = نه."
   },
   "confirmAddOne": {
-    "message": "ضمیمه اضافه کړو: $1?",
+    "message": "ضمیمه ورزیات کړم: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ضمیمې اضافه کړو ($1): $2$3?",
+    "message": "ضمیمې ورزیات کړم ($1): $2$3؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,22 +135,22 @@
     "message": "نه"
   },
   "warnBlacklistTitle": {
-    "message": "د تور لېست له امله مستثنا شوي"
+    "message": "د تور لېست له امله لرې کړل شوي"
   },
   "warnBlacklistIntro": {
-    "message": "لاندې دوتنې به په اوتومات ډول ضمیمه نه شي:"
+    "message": "لاندې دوتنې به په اوتومات ډول ونه نښلول شي:"
   },
   "warnColFile": {
     "message": "دوتنه"
   },
   "warnColPattern": {
-    "message": "بڼه"
+    "message": "الګو"
   },
   "warnOk": {
-    "message": "سم"
+    "message": "سمه ده"
   },
   "uiConfirmDefaultHeader": {
-    "message": "تلواله ځواب"
+    "message": "اصلي ځواب"
   },
   "uiConfirmDefaultYes": {
     "message": "هو"
@@ -150,7 +159,7 @@
     "message": "نه"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "لاسوندونه:"
+    "message": "اسناد:"
   },
   "uiDocsButton": {
-    "message": "لاسوندونه پرانیزئ"
+    "message": "اسناد پرانیزه"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

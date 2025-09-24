@@ -64,8 +64,11 @@ describe('background — apply settings to open composers', () => {
     const res = await listener({ type: 'rwa:apply-settings-open-compose' });
     expect(res?.ok).toBe(true);
 
-    // Listener does not await the async apply function; give it a tick.
-    await new Promise((r) => setTimeout(r, 10));
+    // Poll until both sessions.removeTabValue calls were made
+    for (let i = 0; i < 5; i += 1) {
+      await new Promise((r) => setTimeout(r, 10));
+      if (browser.sessions.removeTabValue.mock.calls.length >= 2) break;
+    }
 
     // Cleared ephemeral per-tab markers for both tabs
     expect(browser.sessions.removeTabValue).toHaveBeenCalledTimes(2);

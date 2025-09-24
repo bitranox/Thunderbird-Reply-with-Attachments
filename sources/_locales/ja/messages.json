@@ -3,7 +3,7 @@
     "message": "添付ファイル付きで返信"
   },
   "extDescription": {
-    "message": "返信メールに元の添付ファイルを自動的に含めます。"
+    "message": "メールの返信に元の添付ファイルを自動的に含めます。"
   },
   "composeTitle": {
     "message": "添付ファイル付きで返信"
@@ -21,7 +21,7 @@
     "message": "現在、設定可能なオプションはありません。"
   },
   "uiSupport": {
-    "message": "このアドオンを気に入っていただけましたか？少額のご支援をお願いします:"
+    "message": "このアドオンは気に入りましたか？少額のご支援をお願いします："
   },
   "uiRateATNText": {
     "message": "ATN で評価してください"
@@ -36,7 +36,7 @@
     "message": "寄付しました"
   },
   "uiDonateSnoozed": {
-    "message": "ありがとうございます！寄付の案内は 90 日間非表示になります。"
+    "message": "ありがとうございます！寄付の案内は90日間非表示になります。"
   },
   "uiDonateHiddenUntil": {
     "message": "$1 まで非表示",
@@ -50,10 +50,10 @@
     "message": "寄付の案内を再表示"
   },
   "uiDonateRestored": {
-    "message": "寄付の案内が再び表示されます。"
+    "message": "寄付の案内が再び表示されました。"
   },
   "uiGithubText": {
-    "message": "不具合報告やその他のお問い合わせは、私の"
+    "message": "バグ報告やその他のお問い合わせは、こちらの"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub ページ"
@@ -68,10 +68,19 @@
     "message": "ファイル名のブラックリスト（glob パターン）"
   },
   "uiBlacklistHelp": {
-    "message": "これらのパターンのいずれかに一致する名前のファイルは自動的に添付されません。1 行に 1 パターン。例: *.png, smime.*, *.p7s"
+    "message": "これらのパターンのいずれかに一致する名前のファイルは自動的に添付されません。1 行につき 1 パターン。例：*.png、smime.*、*.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "ブラックリストにより添付ファイルが除外された場合に警告する"
+  },
+  "uiDebugHeader": {
+    "message": "詳細設定"
+  },
+  "uiDebugLabel": {
+    "message": "デバッグログを有効にする"
+  },
+  "uiDebugHelp": {
+    "message": "詳細なバックグラウンドログを Thunderbird の開発者コンソールに出力します。トラブルシューティングが終わったら無効にしてください。"
   },
   "uiSave": {
     "message": "保存"
@@ -80,7 +89,7 @@
     "message": "保存中…"
   },
   "uiReset": {
-    "message": "既定にリセット"
+    "message": "既定値にリセット"
   },
   "uiSaved": {
     "message": "保存しました。"
@@ -95,10 +104,10 @@
     "message": "添付ファイルを追加する前に確認する"
   },
   "uiConfirmHelp": {
-    "message": "小さな確認ダイアログは、実際に添付ファイルが追加される場合にのみ表示されます。キーボード: Y または J = はい、N または Esc = いいえ。"
+    "message": "実際に添付ファイルが追加される場合にのみ、小さな確認ダイアログを表示します。キーボード：Y または J = はい、N または Esc = いいえ。"
   },
   "confirmAddOne": {
-    "message": "添付ファイルを追加しますか: $1?",
+    "message": "添付ファイルを追加しますか：$1？",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "添付ファイルを追加しますか（$1）: $2$3?",
+    "message": "添付ファイルを追加しますか（$1）：$2$3？",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -129,7 +138,7 @@
     "message": "ブラックリストにより除外"
   },
   "warnBlacklistIntro": {
-    "message": "次のファイルは自動的に添付されません:"
+    "message": "次のファイルは自動的には添付されません。"
   },
   "warnColFile": {
     "message": "ファイル"
@@ -150,7 +159,7 @@
     "message": "いいえ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,7 +168,7 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "ドキュメント:"
+    "message": "ドキュメント："
   },
   "uiDocsButton": {
     "message": "ドキュメントを開く"

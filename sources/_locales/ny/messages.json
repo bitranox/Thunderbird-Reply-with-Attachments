@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Yankhani ndi Zomangirizidwa"
+    "message": "Yankhani ndi Zolumikizidwa"
   },
   "extDescription": {
-    "message": "Onjezani zokha zomangirizidwa zoyambirira mu mayankho a imelo."
+    "message": "Phatikizani zokha zolumikizidwa zoyambirira mu mayankho a imelo."
   },
   "composeTitle": {
-    "message": "Yankhani ndi Zomangirizidwa"
+    "message": "Yankhani ndi Zolumikizidwa"
   },
   "optionsTitle": {
-    "message": "Yankhani ndi Zomangirizidwa — Zosankha"
+    "message": "Yankhani ndi Zolumikizidwa — Zosankha"
   },
   "confirmTitle": {
-    "message": "Tsimikizirani Zomangirizidwa"
+    "message": "Tsimikizani Zolumikizidwa"
   },
   "uiHeader": {
-    "message": "Yankhani ndi Zomangirizidwa"
+    "message": "Yankhani ndi Zolumikizidwa"
   },
   "uiNoOptions": {
-    "message": "Pakadali pano palibe zosankha zoti musinthe."
+    "message": "Panopa palibe zosankha zosinthira."
   },
   "uiSupport": {
-    "message": "Mukukonda chowonjezerachi? Chonde ndithandizeni ndi chopereka chaching'ono:"
+    "message": "Mukukonda chowonjezera ichi? Chonde ndithandizeni ndi chopereka chaching'ono:"
   },
   "uiRateATNText": {
-    "message": "Chonde perekani mlingo pa ATN"
+    "message": "Chonde patsani nyenyezi pa ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -39,7 +39,7 @@
     "message": "Zikomo! Chikumbutso chopereka chabisidwa kwa masiku 90."
   },
   "uiDonateHiddenUntil": {
-    "message": "Chabisidwa mpaka $1",
+    "message": "Chobisidwa mpaka $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,40 +47,49 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Onetsanso Perekani"
+    "message": "Onetsaninso Zopereka"
   },
   "uiDonateRestored": {
     "message": "Chikumbutso chopereka chawonekanso."
   },
   "uiGithubText": {
-    "message": "Pazonena zolakwika kapena mafunso ena, chonde pitani patsamba langa la"
+    "message": "Pa malipoti a zolakwika kapena mafunso ena, chonde pitani patsamba langa la"
   },
   "uiGithubLinkLabel": {
-    "message": "tsamba la GitHub"
+    "message": "Tsamba la GitHub"
   },
   "iconAlt": {
-    "message": "Chizindikiro cha Yankhani ndi Zomangirizidwa"
+    "message": "Chizindikiro cha Yankhani ndi Zolumikizidwa"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Mndandanda woletsa maina a mafayilo (mapatani a glob)"
+    "message": "Mndandanda wakuda wa mayina a mafayilo (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "Mafayilo omwe mayina awo akugwirizana ndi chimodzi mwa mapatani awa sadzamangirizidwa zokha. Patani limodzi pa mzere. Zitsanzo: *.png, smime.*, *.p7s"
+    "message": "Mafayilo omwe mayina awo akugwirizana ndi patani lililonse la awa sadzalumikizidwa zokha. Patani limodzi pa mzere uliwonse. Zitsanzo: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Chenjeza ngati zomangirizidwa zachotsedwa ndi mndandanda woletsa"
+    "message": "Chenjeza ngati zolumikizidwa zachotsedwa ndi mndandanda wakuda"
+  },
+  "uiDebugHeader": {
+    "message": "Zapamwamba"
+  },
+  "uiDebugLabel": {
+    "message": "Yatsani kulemba ma log a kusaka zolakwa"
+  },
+  "uiDebugHelp": {
+    "message": "Imalemba ma log atsatanetsatane akumbuyo ku konzoli ya opanga ya Thunderbird. Zizimitse kachiwiri mukamaliza kukonza vuto."
   },
   "uiSave": {
     "message": "Sungani"
   },
   "uiSaving": {
-    "message": "Kusunga…"
+    "message": "Kusungha…"
   },
   "uiReset": {
-    "message": "Bwezeretsani ku zosasintha"
+    "message": "Bwezeretsani ku makhazikitsidwe oyambilira"
   },
   "uiSaved": {
     "message": "Zasungidwa."
@@ -89,16 +98,16 @@
     "message": "Zabwezeretsedwa."
   },
   "uiConfirmHeader": {
-    "message": "Tsimikiziriro"
+    "message": "Kutsimikizira"
   },
   "uiConfirmLabel": {
-    "message": "Funsani musanayonjezere zomangirizidwa"
+    "message": "Funsani musanawonjezere zolumikizidwa"
   },
   "uiConfirmHelp": {
-    "message": "Bokosi laling'ono lotsimikizira limangowonekera pamene zomangirizidwa zikanawonjezedwa kwenikweni. Kiyibodi: Y kapena J = Inde; N kapena Esc = Ayi."
+    "message": "Bokosi laling'ono lotsimikizira limawoneka pokhapokha pamene zolumikizidwa zikanawonjezedwa. Kiyibodi: Y kapena J = Inde; N kapena Esc = Ayi."
   },
   "confirmAddOne": {
-    "message": "Onjezani chomangirizidwa: $1?",
+    "message": "Onjezani cholumikizidwa: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Onjezani zomangirizidwa ($1): $2$3?",
+    "message": "Onjezani zolumikizidwa ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Ayi"
   },
   "warnBlacklistTitle": {
-    "message": "Zachotsedwa ndi mndandanda woletsa"
+    "message": "Chachotsedwa ndi mndandanda wakuda"
   },
   "warnBlacklistIntro": {
-    "message": "Mafayilo otsatirawa sadzamangirizidwa zokha:"
+    "message": "Mafayilo otsatirawa sadzalumikizidwa zokha:"
   },
   "warnColFile": {
     "message": "Fayilo"
@@ -141,7 +150,7 @@
     "message": "Chabwino"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Yankho losasintha"
+    "message": "Yankho lokhazikika"
   },
   "uiConfirmDefaultYes": {
     "message": "Inde"
@@ -150,7 +159,7 @@
     "message": "Ayi"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

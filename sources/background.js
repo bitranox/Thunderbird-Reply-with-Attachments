@@ -9,9 +9,9 @@
  */
 
 (async () => {
-  const DEBUG = await readDebugFlag();
+  let debugEnabled = await readDebugFlag();
   const makeLoggerFn = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLogger;
-  const log = makeLoggerFn(DEBUG);
+  let log = makeLoggerFn(debugEnabled);
   globalThis.log = log;
   log.debug('Reply with Attachments: wiring app…');
 
@@ -112,7 +112,14 @@
     },
   });
 
-  registerApplySettingsListener(applySettingsToOpenComposers);
+  registerApplySettingsListener(applySettingsToOpenComposers, refreshDebugLogging);
+  try {
+    browser.storage?.onChanged?.addListener?.((changes, area) => {
+      if (area === 'local' && Object.prototype.hasOwnProperty.call(changes || {}, 'debug')) {
+        refreshDebugLogging().catch(() => {});
+      }
+    });
+  } catch (_) {}
 
   /**
    * Read the debug flag from storage.local.
@@ -124,6 +131,21 @@
       return !!cfg?.debug;
     } catch (_) {
       return false;
+    }
+  }
+
+  async function refreshDebugLogging() {
+    try {
+      const next = await readDebugFlag();
+      if (next === debugEnabled) return;
+      debugEnabled = next;
+      log = makeLoggerFn(debugEnabled);
+      globalThis.log = log;
+      log.info(`Reply with Attachments: debug logging ${debugEnabled ? 'enabled' : 'disabled'}`);
+    } catch (err) {
+      try {
+        console.warn('[RWA]', { err }, 'refreshDebugLogging failed');
+      } catch (_) {}
     }
   }
   /**
@@ -192,6 +214,8 @@
   async function applySettingsToOpenComposers() {
     try {
       const tabs = (await browser.tabs?.query?.({})) || [];
+      /** @type {Promise<void>[]} */
+      const ensureTasks = [];
       for (const t of tabs) {
         const id = toNumericIdFn(t);
         if (id == null) continue;
@@ -206,7 +230,22 @@
           globalThis.processedTabsState?.delete?.(id);
         } catch (_) {}
         try {
-          await globalThis.ensureReplyAttachments?.(id, details);
+          if (typeof globalThis.ensureReplyAttachments === 'function') {
+            const task = globalThis.ensureReplyAttachments(id, details).catch((err) => {
+              try {
+                globalThis.log?.warn?.(
+                  { err, tabId: id },
+                  'ensureReplyAttachments failed during apply settings'
+                );
+              } catch (_) {}
+            });
+            ensureTasks.push(task);
+          }
+        } catch (_) {}
+      }
+      if (ensureTasks.length) {
+        try {
+          await Promise.allSettled(ensureTasks);
         } catch (_) {}
       }
     } catch (err) {
@@ -214,7 +253,7 @@
     }
   }
   /** Register the message listener that triggers applySettingsToOpenComposers. */
-  function registerApplySettingsListener(fn) {
+  function registerApplySettingsListener(fn, onDebugChange) {
     try {
       browser.runtime.onMessage.addListener((msg) => {
         if (msg && msg.type === 'rwa:apply-settings-open-compose') {
@@ -231,6 +270,10 @@
               });
             }
           } catch (_) {}
+          const debugRefresh = typeof onDebugChange === 'function' ? onDebugChange() : null;
+          if (debugRefresh && typeof debugRefresh?.catch === 'function') {
+            debugRefresh.catch(() => {});
+          }
           fn();
           return Promise.resolve({ ok: true });
         }

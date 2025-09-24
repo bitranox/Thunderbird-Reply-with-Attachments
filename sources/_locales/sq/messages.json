@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Përgjigju me Bashkëngjitje"
+    "message": "Përgjigju me bashkëngjitje"
   },
   "extDescription": {
     "message": "Përfshi automatikisht bashkëngjitjet origjinale në përgjigjet e emailit."
   },
   "composeTitle": {
-    "message": "Përgjigju me Bashkëngjitje"
+    "message": "Përgjigju me bashkëngjitje"
   },
   "optionsTitle": {
-    "message": "Përgjigju me Bashkëngjitje — Opsione"
+    "message": "Përgjigju me bashkëngjitje — Opsione"
   },
   "confirmTitle": {
     "message": "Konfirmo bashkëngjitjet"
   },
   "uiHeader": {
-    "message": "Përgjigju me Bashkëngjitje"
+    "message": "Përgjigju me bashkëngjitje"
   },
   "uiNoOptions": {
-    "message": "Aktualisht nuk ka opsione për t'u konfiguruar."
+    "message": "Aktualisht nuk ka opsione për t’u konfiguruar."
   },
   "uiSupport": {
-    "message": "Ju pëlqen kjo shtesë? Ju lutem më mbështetni me një kontribut të vogël:"
+    "message": "A ju pëlqen kjo shtojcë? Ju lutem më mbështesni me një kontribut të vogël:"
   },
   "uiRateATNText": {
     "message": "Ju lutem vlerësoni në ATN"
@@ -36,7 +36,7 @@
     "message": "Kam dhuruar"
   },
   "uiDonateSnoozed": {
-    "message": "Faleminderit! Kërkesa për dhurim është fshehur për 90 ditë."
+    "message": "Faleminderit! Njoftimi për dhurim u fsheh për 90 ditë."
   },
   "uiDonateHiddenUntil": {
     "message": "Fshehur deri më $1",
@@ -50,16 +50,16 @@
     "message": "Shfaq sërish Dhuro"
   },
   "uiDonateRestored": {
-    "message": "Kërkesa për dhurim është sërish e dukshme."
+    "message": "Njoftimi për dhurim është sërish i dukshëm."
   },
   "uiGithubText": {
     "message": "Për raportime gabimesh ose pyetje të tjera, ju lutem vizitoni"
   },
   "uiGithubLinkLabel": {
-    "message": "faqen në GitHub"
+    "message": "faqen time në GitHub"
   },
   "iconAlt": {
-    "message": "Ikona e Përgjigju me Bashkëngjitje"
+    "message": "Ikona e Përgjigju me bashkëngjitje"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Lista e zezë e emrave të skedarëve (modele glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Skedarët që emrat e tyre përputhen me cilindo prej këtyre modeleve nuk do të bashkëngjiten kurrë automatikisht. Një model për rresht. Shembuj: *.png, smime.*, *.p7s"
+    "message": "Skedarët emrat e të cilëve përputhen me cilindo nga këto modele nuk do të bashkëngjiten kurrë automatikisht. Një model për rresht. Shembuj: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë"
+  },
+  "uiDebugHeader": {
+    "message": "Të avancuara"
+  },
+  "uiDebugLabel": {
+    "message": "Aktivo regjistrimin e diagnostikimit"
+  },
+  "uiDebugHelp": {
+    "message": "Shkruan regjistra të detajuar në sfond në konsolën e zhvilluesit të Thunderbird-it. Çaktivizoje përsëri kur të kesh përfunduar diagnostikimin."
   },
   "uiSave": {
     "message": "Ruaj"
@@ -80,7 +89,7 @@
     "message": "Duke ruajtur…"
   },
   "uiReset": {
-    "message": "Rikthe te parazgjedhjet"
+    "message": "Rikthe parazgjedhjet"
   },
   "uiSaved": {
     "message": "U ruajt."
@@ -92,10 +101,10 @@
     "message": "Konfirmim"
   },
   "uiConfirmLabel": {
-    "message": "Pyet para se të shtohen bashkëngjitje"
+    "message": "Pyet para se të shtohen bashkëngjitjet"
   },
   "uiConfirmHelp": {
-    "message": "Një dialog i vogël konfirmimi shfaqet vetëm kur do të shtoheshin vërtet bashkëngjitje. Tastiera: Y ose J = Po; N ose Esc = Jo."
+    "message": "Një dialog i vogël konfirmimi shfaqet vetëm kur bashkëngjitjet do të shtoheshin vërtet. Tastiera: Y ose J = Po; N ose Esc = Jo."
   },
   "confirmAddOne": {
     "message": "Shto bashkëngjitje: $1?",
@@ -150,7 +159,7 @@
     "message": "Jo"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

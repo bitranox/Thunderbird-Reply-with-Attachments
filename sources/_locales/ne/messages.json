@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "संलग्नकसहित उत्तर"
+    "message": "संलग्नकसहित जवाफ"
   },
   "extDescription": {
-    "message": "इमेल उत्तरहरूमा मूल संलग्नकहरू स्वचालित रूपमा समावेश गर्छ।"
+    "message": "इमेलका जवाफहरूमा मूल संलग्नकहरू स्वचालित रूपमा समावेश गर्छ।"
   },
   "composeTitle": {
-    "message": "संलग्नकसहित उत्तर"
+    "message": "संलग्नकसहित जवाफ"
   },
   "optionsTitle": {
-    "message": "संलग्नकसहित उत्तर — विकल्पहरू"
+    "message": "संलग्नकसहित जवाफ — विकल्पहरू"
   },
   "confirmTitle": {
-    "message": "संलग्नक पुष्टि"
+    "message": "संलग्नकहरूको पुष्टि"
   },
   "uiHeader": {
-    "message": "संलग्नकसहित उत्तर"
+    "message": "संलग्नकसहित जवाफ"
   },
   "uiNoOptions": {
-    "message": "हाल कन्फिगर गर्न विकल्पहरू छैनन्।"
+    "message": "हाल कन्फिगर गर्न कुनै विकल्पहरू छैनन्।"
   },
   "uiSupport": {
-    "message": "यो एड-अन तपाईंलाई मन पर्छ? कृपया सानो योगदानद्वारा मेरो समर्थन गर्नुहोस्:"
+    "message": "के तपाईंलाई यो एड-अन मन पर्छ? कृपया सानो योगदानद्वारा मलाई समर्थन गर्नुहोस्:"
   },
   "uiRateATNText": {
-    "message": "कृपया ATN मा मूल्याङ्कन गर्नुहोस्"
+    "message": "कृपया ATN मा रेट गर्नुहोस्"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,10 +36,10 @@
     "message": "मैले दान गरेँ"
   },
   "uiDonateSnoozed": {
-    "message": "धन्यवाद! दानको अनुरोध ९० दिनका लागि लुकाइयो।"
+    "message": "धन्यवाद! दानको अनुरोध ९० दिनका लागि लुकाइएको छ।"
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 सम्म लुकेको छ",
+    "message": "$1 सम्म लुकाइएको",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -53,52 +53,61 @@
     "message": "दानको अनुरोध फेरि देखिन्छ।"
   },
   "uiGithubText": {
-    "message": "बग रिपोर्ट वा अन्य जिज्ञासाका लागि, कृपया मेरो"
+    "message": "बग प्रतिवेदन वा अन्य सोधपुछका लागि, कृपया मेरो"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub पृष्ठ"
   },
   "iconAlt": {
-    "message": "संलग्नकसहित उत्तर आइकन"
+    "message": "संलग्नकसहित जवाफ आइकन"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "फाइल नामहरूको ब्ल्याकलिस्ट (glob ढाँचा)"
+    "message": "फाइल नामहरूको कालोसूची (glob ढाँचाहरू)"
   },
   "uiBlacklistHelp": {
-    "message": "यी ढाँचामध्ये कुनैसँग मेल खाने फाइल नाम भएका फाइलहरू कहिल्यै स्वचालित रूपमा संलग्न गरिने छैनन्। प्रत्येक लाइनमा एउटा ढाँचा। उदाहरणहरू: *.png, smime.*, *.p7s"
+    "message": "यी ढाँचाहरूमध्ये कुनैसँग मिल्ने नाम भएका फाइलहरू कहिल्यै स्वचालित रूपमा संलग्न गरिँदैनन्। प्रत्येक लाइनमा एउटा ढाँचा। उदाहरणहरू: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ब्ल्याकलिस्टले संलग्नकहरू बहिष्कृत गरेमा चेतावनी दिनुहोस्"
+    "message": "कालोसूचीका कारण संलग्नकहरू बहिष्कृत भए चेतावनी दिनुहोस्"
+  },
+  "uiDebugHeader": {
+    "message": "उन्नत"
+  },
+  "uiDebugLabel": {
+    "message": "डिबग लगिङ सक्षम गर्नुहोस्"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird को डेभलपर कन्सोलमा विस्तृत ब्याकग्राउन्ड लगहरू लेख्छ। समस्या समाधान सकेपछि फेरि अक्षम गर्नुहोस्।"
   },
   "uiSave": {
-    "message": "सेभ"
+    "message": "सेभ गर्नुहोस्"
   },
   "uiSaving": {
-    "message": "सेभ गर्दै…"
+    "message": "सेभ गरिँदै…"
   },
   "uiReset": {
     "message": "पूर्वनिर्धारितमा रिसेट गर्नुहोस्"
   },
   "uiSaved": {
-    "message": "सेभ भयो।"
+    "message": "सेभ भयो."
   },
   "uiResetDone": {
-    "message": "रिसेट भयो।"
+    "message": "रिसेट भयो."
   },
   "uiConfirmHeader": {
-    "message": "पुष्टिकरण"
+    "message": "पुष्टि"
   },
   "uiConfirmLabel": {
-    "message": "संलग्नक थप्नु अघि सोध्नुहोस्"
+    "message": "संलग्नकहरू थप्नु अघि सोध्नुहोस्"
   },
   "uiConfirmHelp": {
-    "message": "संलग्नकहरू साँच्चै थपिने अवस्थामा मात्र सानो पुष्टिकरण संवाद देखिन्छ। किबोर्ड: Y वा J = हो; N वा Esc = होइन।"
+    "message": "सानो पुष्टि संवाद केवल संलग्नकहरू वास्तवमै थपिन लाग्दा मात्र देखिन्छ। किबोर्ड: Y वा J = हो; N वा Esc = होइन।"
   },
   "confirmAddOne": {
-    "message": "संलग्नक थप्ने हो: $1?",
+    "message": "संलग्नक थप्ने: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,7 +135,7 @@
     "message": "होइन"
   },
   "warnBlacklistTitle": {
-    "message": "ब्ल्याकलिस्टद्वारा बहिष्कृत"
+    "message": "कालोसूचीद्वारा बहिष्कृत"
   },
   "warnBlacklistIntro": {
     "message": "निम्न फाइलहरू स्वचालित रूपमा संलग्न गरिने छैनन्:"
@@ -150,7 +159,7 @@
     "message": "होइन"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "दस्तावेज:"
+    "message": "प्रलेखन:"
   },
   "uiDocsButton": {
-    "message": "दस्तावेज खोल्नुहोस्"
+    "message": "प्रलेखन खोल्नुहोस्"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

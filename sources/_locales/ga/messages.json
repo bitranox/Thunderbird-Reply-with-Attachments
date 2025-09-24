@@ -1,21 +1,21 @@
 {
   "extName": {
-    "message": "Freagair le hIatáin"
+    "message": "Freagair le Ceangaltáin"
   },
   "extDescription": {
-    "message": "Cuir na hIatáin bhunaidh san áireamh go huathoibríoch i bhfreagraí ríomhphoist."
+    "message": "Cuir na ceangaltáin bhunaidh san áireamh go huathoibríoch i bhfreagraí ríomhphoist."
   },
   "composeTitle": {
-    "message": "Freagair le hIatáin"
+    "message": "Freagair le Ceangaltáin"
   },
   "optionsTitle": {
-    "message": "Freagair le hIatáin — Roghanna"
+    "message": "Freagair le Ceangaltáin — Roghanna"
   },
   "confirmTitle": {
-    "message": "Deimhnigh Iatáin"
+    "message": "Deimhnigh Ceangaltáin"
   },
   "uiHeader": {
-    "message": "Freagair le hIatáin"
+    "message": "Freagair le Ceangaltáin"
   },
   "uiNoOptions": {
     "message": "Níl aon roghanna le cumrú faoi láthair."
@@ -24,19 +24,19 @@
     "message": "An maith leat an breiseán seo? Tacaigh liom le síntiús beag, le do thoil:"
   },
   "uiRateATNText": {
-    "message": "Rátáil ar ATN, le do thoil"
+    "message": "Déan rátáil ar ATN le do thoil"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Deonaigh anois"
+    "message": "Tabhair síntiús anois"
   },
   "uiIDonated": {
-    "message": "Rinne mé síntiús"
+    "message": "Thug mé síntiús"
   },
   "uiDonateSnoozed": {
-    "message": "Go raibh maith agat! Tá an meabhrúchán síntiúis i bhfolach ar feadh 90 lá."
+    "message": "Go raibh maith agat! Tá an fógra síntiúis i bhfolach ar feadh 90 lá."
   },
   "uiDonateHiddenUntil": {
     "message": "I bhfolach go dtí $1",
@@ -47,37 +47,46 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Taispeáin Deonaigh arís"
+    "message": "Taispeáin 'Tabhair síntiús' arís"
   },
   "uiDonateRestored": {
-    "message": "Tá an meabhrúchán síntiúis le feiceáil arís."
+    "message": "Tá an fógra síntiúis le feiceáil arís."
   },
   "uiGithubText": {
-    "message": "Le haghaidh tuairiscí fabhtanna nó fiosrúcháin eile, tabhair cuairt ar mo"
+    "message": "Le haghaidh tuairiscí fabhtanna nó fiosruithe eile, tabhair cuairt ar mo"
   },
   "uiGithubLinkLabel": {
-    "message": "leathanach GitHub"
+    "message": "Leathanach GitHub"
   },
   "iconAlt": {
-    "message": "Deilbhín Freagair le hIatáin"
+    "message": "Deilbhín Freagair le Ceangaltáin"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Liosta dubh d'ainmneacha comhaid (patrúin glob)"
+    "message": "Dubhliosta d'ainmneacha comhaid (patrúin glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Ní chuirfear comhaid lena n-oireann aon cheann de na patrúin seo leis go huathoibríoch riamh. Patrún amháin in aghaidh na líne. Samplaí: *.png, smime.*, *.p7s"
+    "message": "Ní cheanglófar comhaid a mheaitseálann aon cheann de na patrúin seo go huathoibríoch riamh. Patrún amháin in aghaidh na líne. Samplaí: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Tabhair rabhadh má eisiatar iatáin de bharr an liosta dubh"
+    "message": "Tabhair rabhadh má eisiatar ceangaltáin de bharr an dubhliosta"
+  },
+  "uiDebugHeader": {
+    "message": "Ardroghanna"
+  },
+  "uiDebugLabel": {
+    "message": "Cumasaigh logáil dífhabhtaithe"
+  },
+  "uiDebugHelp": {
+    "message": "Scríobhann sé logaí cúlra mionsonraithe i gconsól forbróra Thunderbird. Díchumasaigh arís nuair a bheidh an fabhtcheartú déanta agat."
   },
   "uiSave": {
     "message": "Sábháil"
   },
   "uiSaving": {
-    "message": "Á Sábháil…"
+    "message": "Á shábháil…"
   },
   "uiReset": {
     "message": "Athshocraigh go réamhshocruithe"
@@ -92,13 +101,13 @@
     "message": "Deimhniú"
   },
   "uiConfirmLabel": {
-    "message": "Fiafraigh sula gcuirtear iatáin leis"
+    "message": "Fiafraigh sula gcuirfear ceangaltáin leis"
   },
   "uiConfirmHelp": {
-    "message": "Ní thaispeántar dialóg bheag deimhniúcháin ach amháin nuair a chuirfí iatáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
+    "message": "Feicfear dialóg bheag deimhniúcháin ach amháin nuair a chuirfí ceangaltáin leis i ndáiríre. Méarchlár: Y nó J = Tá; N nó Esc = Níl."
   },
   "confirmAddOne": {
-    "message": "Cuir iatán leis: $1?",
+    "message": "Cuir ceangaltán leis: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Cuir iatáin leis ($1): $2$3?",
+    "message": "Cuir ceangaltáin leis ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Níl"
   },
   "warnBlacklistTitle": {
-    "message": "Eisiata de bharr an liosta dubh"
+    "message": "Eisiata ag an dubhliosta"
   },
   "warnBlacklistIntro": {
-    "message": "Ní chuirfear na comhaid seo a leanas leis go huathoibríoch:"
+    "message": "Ní chuirfear na comhaid seo mar cheangaltáin go huathoibríoch:"
   },
   "warnColFile": {
     "message": "Comhad"
@@ -150,7 +159,7 @@
     "message": "Níl"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Doiciméadú:"
   },
   "uiDocsButton": {
-    "message": "Oscail an doiciméadú"
+    "message": "Oscail na Doiciméid"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

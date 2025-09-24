@@ -3,13 +3,13 @@
     "message": "منسلڪن سان جواب"
   },
   "extDescription": {
-    "message": "خودڪار طور ايميل جي جوابن ۾ اصل منسلڪون شامل ڪندو."
+    "message": "اي ميل جي جوابن ۾ اصل منسلڪون پاڻمرادو شامل ٿينديون."
   },
   "composeTitle": {
     "message": "منسلڪن سان جواب"
   },
   "optionsTitle": {
-    "message": "منسلڪن سان جواب — اختيارون"
+    "message": "منسلڪن سان جواب — سيٽنگون"
   },
   "confirmTitle": {
     "message": "منسلڪن جي تصديق"
@@ -18,28 +18,28 @@
     "message": "منسلڪن سان جواب"
   },
   "uiNoOptions": {
-    "message": "في الحال ترتيب ڏيڻ لاءِ ڪو به آپشن موجود ناهي."
+    "message": "هن وقت ترتيب ڏيڻ لاءِ ڪابه سيٽنگ موجود ناهي."
   },
   "uiSupport": {
-    "message": "ڇا اوهان کي هي ايڊ-آن پسند آيو؟ مهرباني ڪري ننڍڙي عطئي سان منهنجي سهائتا ڪريو:"
+    "message": "ڇا اوهان کي هي ايڊ-آن پسند آيو؟ مهرباني ڪري ننڍڙي چندي سان مونکي سپورٽ ڪريو:"
   },
   "uiRateATNText": {
-    "message": "مهرباني ڪري ATN تي درجابندي ڪريو"
+    "message": "ATN تي مهرباني ڪري ريٽ ڪريو"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "هاڻي عطيو ڏيو"
+    "message": "هاڻي چندو ڏيو"
   },
   "uiIDonated": {
-    "message": "مون عطيو ڏنو"
+    "message": "مون چندو ڏنو"
   },
   "uiDonateSnoozed": {
-    "message": "مهرباني! عطئي بابت ياد ڏيارڻ 90 ڏينهن لاءِ لڪايو ويو آهي."
+    "message": "مهرباني! چندي وارو نوٽيس 90 ڏينهن لاءِ لڪل ڪيو ويو آهي."
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 تائين لڪايو ويو",
+    "message": " $1 تائين لڪل",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,46 +47,55 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "عطيو ٻيهر ڏيکاريو"
+    "message": "چندي ٻيهر ڏيکاريو"
   },
   "uiDonateRestored": {
-    "message": "عطئي بابت ياد ڏيارڻ ٻيهر نظر اچي رهيو آهي."
+    "message": "چندي وارو نوٽيس ٻيهر نظر اچي رهيو آهي."
   },
   "uiGithubText": {
-    "message": "بگ رپورٽن يا ٻين سوالن لاءِ، مهرباني ڪري منهنجي"
+    "message": "بگ رپورٽن يا ٻين پڇا ڳاڇا لاءِ، مهرباني ڪري منهنجو"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub صفحو"
+    "message": "گٽ هب صفحو"
   },
   "iconAlt": {
-    "message": "منسلڪن سان جواب جو آئڪن"
+    "message": "منسلڪن سان جواب جو آئيڪن"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "فائل نالن جي ڪاري فهرست (گلوب پيٽرنز)"
+    "message": "فائيل نالن جي بليڪ لسٽ (گلوب پيٽرنز)"
   },
   "uiBlacklistHelp": {
-    "message": "جن فائلن جا نالا انهن مان ڪنهن به پيٽرن سان ملندا، سي ڪڏهن به پاڻمرادو منسلڪ نه ڪيا ويندا. هر ليڪ ۾ هڪ پيٽرن. مثال: *.png، smime.*، *.p7s"
+    "message": "اهي فائلون جن جا نالا انهن مان ڪنهن به نموني سان ملي وڃن، ڪڏهن به پاڻمرادو منسلڪ نه ڪبيون. هر لائين تي هڪ نمونو. مثال: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "جيڪڏهن ڪاري فهرست سبب منسلڪون خارج ٿين ته خبردار ڪريو"
+    "message": "جيڪڏهن منسلڪون بليڪ لسٽ سبب خارج ٿين، ته خبردار ڪيو"
+  },
+  "uiDebugHeader": {
+    "message": "ترقي يافته"
+  },
+  "uiDebugLabel": {
+    "message": "ڊي بگ لاگنگ کي چالو ڪريو"
+  },
+  "uiDebugHelp": {
+    "message": "ٿنڊربرڊ جي ڊولپر ڪنسول ۾ پسمنظر جا تفصيلي لاگ لکي ٿو. مسئلا حل ڪرڻ پورو ٿيڻ تي ٻيهر بند ڪريو."
   },
   "uiSave": {
     "message": "محفوظ ڪريو"
   },
   "uiSaving": {
-    "message": "محفوظ ڪيو پيو وڃي…"
+    "message": "محفوظ ٿي رهيو آهي…"
   },
   "uiReset": {
-    "message": "ڊيفالٽ تي ري سيٽ ڪريو"
+    "message": "ڊي فالٽ تي ري سيٽ ڪريو"
   },
   "uiSaved": {
-    "message": "محفوظ ٿي ويو."
+    "message": "محفوظ ڪيو ويو."
   },
   "uiResetDone": {
-    "message": "ري سيٽ ٿي ويو."
+    "message": "ري سيٽ ڪيو ويو."
   },
   "uiConfirmHeader": {
     "message": "تصديق"
@@ -95,7 +104,7 @@
     "message": "منسلڪون شامل ڪرڻ کان اڳ پڇو"
   },
   "uiConfirmHelp": {
-    "message": "ننڍڙو تصديقي ڊائلاگ تڏهن ئي ظاهر ٿيندو جڏهن واقعي منسلڪون شامل ٿيڻيون هجن. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
+    "message": "ننڍڙو تصديقي ڊائلاگ صرف تڏهن ظاهر ٿيندو جڏهن حقيقت ۾ منسلڪون شامل ٿيڻيون هجن. ڪي بورڊ: Y يا J = ها؛ N يا Esc = نه."
   },
   "confirmAddOne": {
     "message": "منسلڪ شامل ڪجي: $1؟",
@@ -126,22 +135,22 @@
     "message": "نه"
   },
   "warnBlacklistTitle": {
-    "message": "ڪاري فهرست سبب خارج"
+    "message": "بليڪ لسٽ سبب خارج"
   },
   "warnBlacklistIntro": {
     "message": "هيٺين فائلون پاڻمرادو منسلڪ نه ڪبيون:"
   },
   "warnColFile": {
-    "message": "فائل"
+    "message": "فائيل"
   },
   "warnColPattern": {
-    "message": "پيٽرن"
+    "message": "نمونو"
   },
   "warnOk": {
     "message": "ٺيڪ"
   },
   "uiConfirmDefaultHeader": {
-    "message": "ڊيفالٽ جواب"
+    "message": "ڊي فالٽ جواب"
   },
   "uiConfirmDefaultYes": {
     "message": "ها"
@@ -150,7 +159,7 @@
     "message": "نه"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -3,7 +3,7 @@
     "message": "જોડાણો સાથે જવાબ"
   },
   "extDescription": {
-    "message": "ઈમેલના જવાબોમાં મૂળ જોડાણો આપમેળે સામેલ કરો."
+    "message": "ઈમેઇલના જવાબોમાં મૂળ જોડાણો આપમેળે સામેલ કરે છે."
   },
   "composeTitle": {
     "message": "જોડાણો સાથે જવાબ"
@@ -12,7 +12,7 @@
     "message": "જોડાણો સાથે જવાબ — વિકલ્પો"
   },
   "confirmTitle": {
-    "message": "જોડાણોની પુષ્ટિ કરો"
+    "message": "જોડાણોની પુષ્ટિ"
   },
   "uiHeader": {
     "message": "જોડાણો સાથે જવાબ"
@@ -21,7 +21,7 @@
     "message": "હાલમાં ગોઠવવા માટે કોઈ વિકલ્પો નથી."
   },
   "uiSupport": {
-    "message": "આ એડ-ઓન તમને ગમે છે? કૃપા કરીને નાનકડા યોગદાનથી મારું સમર્થન કરો:"
+    "message": "શું તમને આ ઍડ-ઓન ગમે છે? કૃપા કરીને નાનકડા યોગદાનથી મને સમર્થન આપો:"
   },
   "uiRateATNText": {
     "message": "કૃપા કરીને ATN પર મૂલ્યાંકન કરો"
@@ -36,7 +36,7 @@
     "message": "મેં દાન કર્યું"
   },
   "uiDonateSnoozed": {
-    "message": "આભાર! દાનની વિનંતી 90 દિવસ માટે છુપાવવામાં આવી."
+    "message": "આભાર! દાન માટેનો સંદેશ 90 દિવસ માટે છુપાવવામાં આવ્યો છે."
   },
   "uiDonateHiddenUntil": {
     "message": "$1 સુધી છુપાયેલું",
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "દાનનું સૂચન ફરી બતાવો"
+    "message": "દાન ફરીથી બતાવો"
   },
   "uiDonateRestored": {
-    "message": "દાનની વિનંતી ફરીથી દેખાય છે."
+    "message": "દાન માટેનો સંદેશ ફરીથી દેખાય છે."
   },
   "uiGithubText": {
-    "message": "બગ રિપોર્ટ્સ અથવા અન્ય પૂછપરછ માટે, કૃપા કરીને મારી"
+    "message": "બગ રિપોર્ટ અથવા અન્ય પૂછપરછ માટે, કૃપા કરીને મારી"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub પેજ"
@@ -68,19 +68,28 @@
     "message": "ફાઇલ નામોની બ્લેકલિસ્ટ (ગ્લોબ પેટર્ન્સ)"
   },
   "uiBlacklistHelp": {
-    "message": "જેઓના નામો આ પેટર્ન્સમાંના કોઈપણ સાથે મેળ ખાતા હશે, તેવી ફાઇલો ક્યારેય આપમેળે જોડાશે નહીં. દર લીટી પર એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.p7s"
+    "message": "જેનાં નામો આ પેટર્ન પૈકી કોઈ સાથે મેળ ખાતાં હોય એવી ફાઇલો ક્યારેય આપમેળે જોડવામાં આવશે નહીં. દરેક લીટીમાં એક પેટર્ન. ઉદાહરણ: *.png, smime.*, *.પ7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "બ્લેકલિસ્ટ પરથી જોડાણો બહાર રાખવામાં આવે તો ચેતવણી આપો"
+    "message": "જોડાણો બ્લેકલિસ્ટથી બહાર રાખવામાં આવ્યા હોય તો ચેતવો"
+  },
+  "uiDebugHeader": {
+    "message": "અદ્યતન"
+  },
+  "uiDebugLabel": {
+    "message": "ડિબગ લૉગિંગ સક્રિય કરો"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird ના ડેવલપર કન્સોલમાં વિગતવાર બેકગ્રાઉન્ડ લોગ્સ લખે છે. તમે ટ્રબલશૂટિંગ પૂર્ણ કરો પછી ફરી નિષ્ક્રિય કરો."
   },
   "uiSave": {
     "message": "સાચવો"
   },
   "uiSaving": {
-    "message": "સાચવી રહ્યું છે…"
+    "message": "સાચવી રહ્યા છીએ…"
   },
   "uiReset": {
-    "message": "મૂળભૂત પર રીસેટ કરો"
+    "message": "ડિફોલ્ટ પર રીસેટ કરો"
   },
   "uiSaved": {
     "message": "સાચવાયું."
@@ -92,13 +101,13 @@
     "message": "પુષ્ટિ"
   },
   "uiConfirmLabel": {
-    "message": "જોડાણો ઉમેરતા પહેલા પૂછો"
+    "message": "જોડાણો ઉમેરતા પહેલાં પૂછો"
   },
   "uiConfirmHelp": {
-    "message": "જોડાણો ખરેખર ઉમેરવામાં આવશે ત્યારે જ નાનું પુષ્ટિ સંવાદ દેખાશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
+    "message": "જોડાણો ખરેખર ઉમેરવા હોય ત્યારે જ એક નાનું પુષ્ટિ સંવાદ દેખાશે. કીબોર્ડ: Y અથવા J = હા; N અથવા Esc = ના."
   },
   "confirmAddOne": {
-    "message": "જોડાણ ઉમેરવું: $1?",
+    "message": "જોડાણ ઉમેરો: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "જોડાણો ઉમેરવા ($1): $2$3?",
+    "message": "જોડાણો ઉમેરો ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "ના"
   },
   "warnBlacklistTitle": {
-    "message": "બ્લેકલિસ્ટના કારણે બહાર રાખવામાં આવ્યું"
+    "message": "બ્લેકલિસ્ટને કારણે બહાર રાખવામાં આવ્યા"
   },
   "warnBlacklistIntro": {
-    "message": "આ નીચેની ફાઇલો આપમેળે જોડાશે નહીં:"
+    "message": "નીચેની ફાઇલો આપમેળે જોડવામાં નહીં આવે:"
   },
   "warnColFile": {
     "message": "ફાઇલ"
@@ -138,7 +147,7 @@
     "message": "પેટર્ન"
   },
   "warnOk": {
-    "message": "બરાબર"
+    "message": "ઠીક છે"
   },
   "uiConfirmDefaultHeader": {
     "message": "મૂળભૂત જવાબ"
@@ -150,7 +159,7 @@
     "message": "ના"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

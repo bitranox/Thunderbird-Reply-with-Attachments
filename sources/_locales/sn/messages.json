@@ -1,42 +1,42 @@
 {
   "extName": {
-    "message": "Pindura nezvinobatanidzwa"
+    "message": "Pindura nezvakabatanidzwa"
   },
   "extDescription": {
-    "message": "Sanganisira otomatiki zvinobatanidzwa zvekutanga mumhinduro dzeemail."
+    "message": "Sanganisira otomatiki zvakabatanidzwa zvekutanga mumhinduro dzeemail."
   },
   "composeTitle": {
-    "message": "Pindura nezvinobatanidzwa"
+    "message": "Pindura nezvakabatanidzwa"
   },
   "optionsTitle": {
-    "message": "Pindura nezvinobatanidzwa — Sarudzo"
+    "message": "Pindura nezvakabatanidzwa — Zvirongwa"
   },
   "confirmTitle": {
-    "message": "Simbisa zvinobatanidzwa"
+    "message": "Simbisa Zvakabatanidzwa"
   },
   "uiHeader": {
-    "message": "Pindura nezvinobatanadzirwa"
+    "message": "Pindura nezvakabatanidzwa"
   },
   "uiNoOptions": {
-    "message": "Parizvino hapana sarudzo dzekumisikidza."
+    "message": "Parizvino hapana zvirongwa zvekugadzirisa."
   },
   "uiSupport": {
-    "message": "Munoda ichi chinowedzerwa here? Ndapota nditsigirei nemupiro mudiki:"
+    "message": "Munofarira ichi chinowedzerwa here? Nditsigireiwo nechipo chiduku:"
   },
   "uiRateATNText": {
-    "message": "Ndapota nyorai ongororo paATN"
+    "message": "Ndapota ipai chiyero pa ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Pira zvino"
+    "message": "Ipa rubatsiro izvozvi"
   },
   "uiIDonated": {
-    "message": "Ndakapira"
+    "message": "Ndapa rubatsiro"
   },
   "uiDonateSnoozed": {
-    "message": "Tinotenda! Chiziviso chemupiro chavanzwa kwemazuva 90."
+    "message": "Ndatenda! Chikumbiro cherubatsiro chavanzwa kwemazuva 90."
   },
   "uiDonateHiddenUntil": {
     "message": "Chakavanzwa kusvikira $1",
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Ratidza Mupiro zvakare"
+    "message": "Ratidza chikumbiro cherubatsiro zvakare"
   },
   "uiDonateRestored": {
-    "message": "Chiziviso chemupiro chava kuoneka zvakare."
+    "message": "Chikumbiro cherubatsiro chava kuoneka zvakare."
   },
   "uiGithubText": {
-    "message": "Kune mishumo yezvikanganiso kana mimwe mibvunzo, ndapota shanyirai"
+    "message": "Kune mishumo yezvikanganiso kana mimwe mibvunzo, ndapota shanyirai yangu"
   },
   "uiGithubLinkLabel": {
-    "message": "Peji reGitHub"
+    "message": "peji reGitHub"
   },
   "iconAlt": {
-    "message": "Chiratidzo chePindura nezvinobatanidzwa"
+    "message": "Aikoni ye Pindura nezvakabatanidzwa"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Rondedzero yerambidzwa yemazita emafaira (mapatani eglob)"
+    "message": "Runyoro rwekudzivirira mazita emafaira (mapatani e-glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Mafaira ane mazita anowirirana neupatani hupi zvahwo huri pano haazombobatanidzwa otomatiki. Patani imwe pamutsara. Mienzaniso: *.png, smime.*, *.p7s"
+    "message": "Mafaira ane mazita anoenderana neimwe yemapatani aya haazombobatanidzwa otomatiki. Pateni imwe pamutsetse. Mienzaniso: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Yambira kana zvinobatanidzwa zvadzivirirwa nerondedzero yerambidzwa"
+    "message": "Yambira kana zvakabatanidzwa zvabviswa nerunyoro rwekudzivirira"
+  },
+  "uiDebugHeader": {
+    "message": "Zvemberi"
+  },
+  "uiDebugLabel": {
+    "message": "Batidza kurekodha kwekuongorora zvikanganiso"
+  },
+  "uiDebugHelp": {
+    "message": "Inonyora marekodhi ekumashure akadzama ku console yevagadziri yeThunderbird. Dzima zvakare kana wapedza kugadzirisa matambudziko."
   },
   "uiSave": {
     "message": "Chengeta"
   },
   "uiSaving": {
-    "message": "Kuchengetwa…"
+    "message": "Kuri kuchengetwa…"
   },
   "uiReset": {
     "message": "Dzosera kuzvirongwa zvekutanga"
   },
   "uiSaved": {
-    "message": "Zvachengetwa."
+    "message": "Zvakachengetwa."
   },
   "uiResetDone": {
-    "message": "Zvadzorerwa."
+    "message": "Zvadzoserwa."
   },
   "uiConfirmHeader": {
     "message": "Kusimbisa"
   },
   "uiConfirmLabel": {
-    "message": "Bvunza usati wawedzera zvinobatanidzwa"
+    "message": "Bvunza usati wawedzera zvakabatanidzwa"
   },
   "uiConfirmHelp": {
-    "message": "Hwindo diki rekusimbisa rinongoonekwa chete kana pachawedzerwa zvinobatanidzwa chaizvo. Khibhodi: Y kana J = Ehe; N kana Esc = Aiwa."
+    "message": "Hwindo diki rekusimbisa rinongoonekwa chete kana paizowedzerwa zvakabatanidzwa. Kibhodhi: Y kana J = Ehe; N kana Esc = Kwete."
   },
   "confirmAddOne": {
-    "message": "Wedzera chibatanidzwa: $1?",
+    "message": "Wedzera chakabatanidzwa: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Wedzera zvinobatanidzwa ($1): $2$3?",
+    "message": "Wedzera zvakabatanidzwa ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -123,10 +132,10 @@
     "message": "Ehe"
   },
   "confirmNo": {
-    "message": "Aiwa"
+    "message": "Kwete"
   },
   "warnBlacklistTitle": {
-    "message": "Zvakabviswa nerondedzero yerambidzwa"
+    "message": "Zvabviswa nerunyoro rwekudzivirira"
   },
   "warnBlacklistIntro": {
     "message": "Mafaira anotevera haazobatanidzwi otomatiki:"
@@ -135,7 +144,7 @@
     "message": "Faira"
   },
   "warnColPattern": {
-    "message": "Patani"
+    "message": "Pateni"
   },
   "warnOk": {
     "message": "OK"
@@ -147,10 +156,10 @@
     "message": "Ehe"
   },
   "uiConfirmDefaultNo": {
-    "message": "Aiwa"
+    "message": "Kwete"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

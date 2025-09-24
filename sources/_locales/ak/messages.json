@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Bu mmuae fa adeɛ a wɔde ka ho"
+    "message": "Yɛ mmuae ka fael a aka ho"
   },
   "extDescription": {
-    "message": "Ka adeɛ a wɔde ka ho a edikan no ho otomatik wɔ email mmuae mu."
+    "message": "Ɛde fael a na ɛka email no ho no bɛka mmuae no ho otomatik."
   },
   "composeTitle": {
-    "message": "Bu mmuae fa adeɛ a wɔde ka ho"
+    "message": "Yɛ mmuae ka fael a aka ho"
   },
   "optionsTitle": {
-    "message": "Bu mmuae fa adeɛ a wɔde ka ho — Nhyehyɛe"
+    "message": "Yɛ mmuae ka fael a aka ho — Nhyehyɛe"
   },
   "confirmTitle": {
-    "message": "Sɔ adeɛ a wɔde ka ho mu"
+    "message": "Si pi fael a aka ho"
   },
   "uiHeader": {
-    "message": "Bu mmuae fa adeɛ a wɔde ka ho"
+    "message": "Yɛ mmuae ka fael a aka ho"
   },
   "uiNoOptions": {
-    "message": "Seesei de, nnhyehyɛe bi nni hɔ a wobɛtumi asesa."
+    "message": "Seisei de, nhyehyɛe biara nni hɔ a wobɛtumi asesa."
   },
   "uiSupport": {
-    "message": "Wopɛ add-on yi? Mesrɛ wo, boa me de akyɛdeɛ ketewa bi:"
+    "message": "Wopɛ saa add-on yi? Mesrɛ wo, boa me akatua ketewa bi:"
   },
   "uiRateATNText": {
-    "message": "Mesrɛ wo, kyerɛ w’adwene wɔ ATN"
+    "message": "Mesrɛ, yɛ no rate wɔ ATN so"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,13 +33,13 @@
     "message": "Ma akyɛdeɛ seesei"
   },
   "uiIDonated": {
-    "message": "Mede akyɛdeɛ ama"
+    "message": "Matua akyɛdeɛ"
   },
   "uiDonateSnoozed": {
-    "message": "Meda wo ase! Yɛde akyɛdeɛ kɔkɔbɔ no asie ma nna 90."
+    "message": "Meda wo ase! Akyɛdeɛ asrɛ no ahintaw ma da 90."
   },
   "uiDonateHiddenUntil": {
-    "message": "Wɔasie kosi $1",
+    "message": "Ahintaw kɔsi $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -50,28 +50,37 @@
     "message": "Kyerɛ Akyɛdeɛ bio"
   },
   "uiDonateRestored": {
-    "message": "Akyɛdeɛ kɔkɔbɔ no ada adi bio."
+    "message": "Akyɛdeɛ asrɛ no ada adi bio."
   },
   "uiGithubText": {
-    "message": "Sɛ wopɛ sɛ wobɔ amanneɛ fa mfomso anaa nsɛmmisa foforo ho a, mesrɛ wo, kɔ me"
+    "message": "Sɛ wowɔ mfomso anaa nsɛmmisa foforo a, mesrɛ, kɔ me"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub krataafa"
   },
   "iconAlt": {
-    "message": "Aikɔn Bu mmuae fa adeɛ a wɔde ka ho"
+    "message": "Yɛ mmuae ka fael a aka ho Ikon"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Fael-din blacklist (glob patterns)"
+    "message": "Liste fɛɛl-din a wɔmmfa ho (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "Fael biara a ne din hyia pattern biara wɔ ha no, wɔrenka ho otomatik da. Lain baako mu, pattern baako. Mfatoho: *.png, smime.*, *.p7s"
+    "message": "Fɛɛl a wɔn din bɛtɔ ahorow yi biara mu no, wɔrenka ho otomatik da. Nhyehyɛe baako wɔ lain biara. Mfatoho: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Bɔ me kɔkɔ sɛ blacklist ayi adeɛ a wɔde ka ho afi ho"
+    "message": "Bɔ kɔkɔ sɛ nkaho no agyigye efisɛ ɛwɔ blacklist mu"
+  },
+  "uiDebugHeader": {
+    "message": "Akɔntoso"
+  },
+  "uiDebugLabel": {
+    "message": "Sɔ debug logging"
+  },
+  "uiDebugHelp": {
+    "message": "Ɛkyerɛw detal log ahorow kɔ Thunderbird developer console mu. Yi fi so bio sɛ w'awie asɛe-ho hwehwɛ no."
   },
   "uiSave": {
     "message": "Sie"
@@ -80,25 +89,25 @@
     "message": "Resie…"
   },
   "uiReset": {
-    "message": "San kɔ deɛ ɛtɔ da"
+    "message": "San kɔ difɔlt nhyehyɛe"
   },
   "uiSaved": {
     "message": "Asie."
   },
   "uiResetDone": {
-    "message": "Asan ayɛ."
+    "message": "Asiesiee."
   },
   "uiConfirmHeader": {
-    "message": "Sɔ mu"
+    "message": "Asipii"
   },
   "uiConfirmLabel": {
-    "message": "Bisa ansa na wobɛka adeɛ a wɔde ka ho ho"
+    "message": "Bisa ansa na wɔde nkaho bɛka ho"
   },
   "uiConfirmHelp": {
-    "message": "Kakraa bi a ɛyɛ sɔ mu bɛda adi kɛkɛ bere a wɔbɛka adeɛ a wɔde ka ho ampa. Keyboard: Y anaa J = Aane; N anaa Esc = Daabi."
+    "message": "Nkɔmmɔketewa asipii bɛda adi bere pɛ a na nkaho no bɛka ho ampa. Keyboard: Y or J = Aane; N or Esc = Dabi."
   },
   "confirmAddOne": {
-    "message": "Fa adeɛ a wɔde ka ho ka ho: $1?",
+    "message": "Fa akaho ka ho: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Fa adeɛ a wɔde ka ho ka ho ($1): $2$3?",
+    "message": "Fa nkaho ($1) ka ho: $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -123,34 +132,34 @@
     "message": "Aane"
   },
   "confirmNo": {
-    "message": "Daabi"
+    "message": "Dabi"
   },
   "warnBlacklistTitle": {
-    "message": "Wɔapo efisɛ ɛwɔ blacklist"
+    "message": "Wɔayi efiri mu efisɛ ɛwɔ blacklist mu"
   },
   "warnBlacklistIntro": {
-    "message": "Fael a ɛdi so yi renka ho otomatik:"
+    "message": "Fɛɛl a edidi so yi renka ho otomatik:"
   },
   "warnColFile": {
-    "message": "Fael"
+    "message": "Fɛɛl"
   },
   "warnColPattern": {
-    "message": "Pattern"
+    "message": "Nhyehyɛe"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Mmuae a ɛtɔ da"
+    "message": "Mmuae difɔlt"
   },
   "uiConfirmDefaultYes": {
     "message": "Aane"
   },
   "uiConfirmDefaultNo": {
-    "message": "Daabi"
+    "message": "Dabi"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

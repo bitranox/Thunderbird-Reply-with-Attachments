@@ -1,24 +1,24 @@
 {
   "extName": {
-    "message": "Rispondi con allegati"
+    "message": "Rispondi con gli allegati"
   },
   "extDescription": {
-    "message": "Include automaticamente gli allegati originali nelle risposte via email."
+    "message": "Includi automaticamente gli allegati originali nelle risposte alle email."
   },
   "composeTitle": {
-    "message": "Rispondi con allegati"
+    "message": "Rispondi con gli allegati"
   },
   "optionsTitle": {
-    "message": "Rispondi con allegati — Opzioni"
+    "message": "Rispondi con gli allegati — Opzioni"
   },
   "confirmTitle": {
     "message": "Conferma allegati"
   },
   "uiHeader": {
-    "message": "Rispondi con allegati"
+    "message": "Rispondi con gli allegati"
   },
   "uiNoOptions": {
-    "message": "Al momento non ci sono opzioni da configurare."
+    "message": "Attualmente non ci sono opzioni da configurare."
   },
   "uiSupport": {
     "message": "Ti piace questo componente aggiuntivo? Sostienimi con un piccolo contributo:"
@@ -36,10 +36,10 @@
     "message": "Ho donato"
   },
   "uiDonateSnoozed": {
-    "message": "Grazie! La richiesta di donazione è nascosta per 90 giorni."
+    "message": "Grazie! Richiesta di donazione nascosta per 90 giorni."
   },
   "uiDonateHiddenUntil": {
-    "message": "Nascosta fino al $1",
+    "message": "Nascosto fino al $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Mostra di nuovo la richiesta di donazione"
+    "message": "Mostra di nuovo Dona"
   },
   "uiDonateRestored": {
     "message": "La richiesta di donazione è di nuovo visibile."
   },
   "uiGithubText": {
-    "message": "Per segnalazioni di bug o altre richieste, visita la mia"
+    "message": "Per segnalare bug o altre richieste, visita la mia"
   },
   "uiGithubLinkLabel": {
     "message": "pagina GitHub"
   },
   "iconAlt": {
-    "message": "Icona di Rispondi con allegati"
+    "message": "Icona di Rispondi con gli allegati"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist dei nomi file (pattern glob)"
+    "message": "Lista nera dei nomi file (pattern glob)"
   },
   "uiBlacklistHelp": {
     "message": "I file i cui nomi corrispondono a uno qualsiasi di questi pattern non verranno mai allegati automaticamente. Un pattern per riga. Esempi: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avvisa se gli allegati sono esclusi dalla blacklist"
+    "message": "Avvisa se gli allegati sono esclusi dalla lista nera"
+  },
+  "uiDebugHeader": {
+    "message": "Avanzate"
+  },
+  "uiDebugLabel": {
+    "message": "Abilita registrazione di debug"
+  },
+  "uiDebugHelp": {
+    "message": "Scrive log dettagliati in background nella console per sviluppatori di Thunderbird. Disattivala quando hai terminato la risoluzione dei problemi."
   },
   "uiSave": {
     "message": "Salva"
@@ -80,7 +89,7 @@
     "message": "Salvataggio in corso…"
   },
   "uiReset": {
-    "message": "Ripristina ai valori predefiniti"
+    "message": "Ripristina impostazioni predefinite"
   },
   "uiSaved": {
     "message": "Salvato."
@@ -95,7 +104,7 @@
     "message": "Chiedi prima di aggiungere allegati"
   },
   "uiConfirmHelp": {
-    "message": "Viene visualizzata una piccola finestra di conferma solo quando gli allegati verrebbero effettivamente aggiunti. Tastiera: Y o J = Sì; N o Esc = No."
+    "message": "Una piccola finestra di conferma appare solo quando degli allegati verrebbero effettivamente aggiunti. Tastiera: Y o J = Sì; N o Esc = No."
   },
   "confirmAddOne": {
     "message": "Aggiungere l'allegato: $1?",
@@ -126,7 +135,7 @@
     "message": "No"
   },
   "warnBlacklistTitle": {
-    "message": "Esclusi dalla blacklist"
+    "message": "Esclusi dalla lista nera"
   },
   "warnBlacklistIntro": {
     "message": "I seguenti file non verranno allegati automaticamente:"
@@ -150,7 +159,7 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

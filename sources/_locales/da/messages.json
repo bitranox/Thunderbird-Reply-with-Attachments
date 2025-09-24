@@ -1,36 +1,36 @@
 {
   "extName": {
-    "message": "Svar med vedhæftede filer"
+    "message": "Svar med vedhæftninger"
   },
   "extDescription": {
-    "message": "Medtag automatisk de originale vedhæftede filer i e-mailsvar."
+    "message": "Medtag automatisk de oprindelige vedhæftninger i mailsvar."
   },
   "composeTitle": {
-    "message": "Svar med vedhæftede filer"
+    "message": "Svar med vedhæftninger"
   },
   "optionsTitle": {
-    "message": "Svar med vedhæftede filer — Indstillinger"
+    "message": "Svar med vedhæftninger — Indstillinger"
   },
   "confirmTitle": {
-    "message": "Bekræft vedhæftede filer"
+    "message": "Bekræft vedhæftninger"
   },
   "uiHeader": {
-    "message": "Svar med vedhæftede filer"
+    "message": "Svar med vedhæftninger"
   },
   "uiNoOptions": {
     "message": "Der er i øjeblikket ingen indstillinger at konfigurere."
   },
   "uiSupport": {
-    "message": "Kan du lide denne tilføjelse? Støt mig venligst med et lille bidrag:"
+    "message": "Kan du lide denne tilføjelse? Støt mig gerne med et lille bidrag:"
   },
   "uiRateATNText": {
-    "message": "Bedøm venligst på ATN"
+    "message": "Bedøm gerne på ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Doner nu"
+    "message": "Donér nu"
   },
   "uiIDonated": {
     "message": "Jeg har doneret"
@@ -47,7 +47,7 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Vis Doner igen"
+    "message": "Vis donationspåmindelse igen"
   },
   "uiDonateRestored": {
     "message": "Donationspåmindelsen er synlig igen."
@@ -59,19 +59,28 @@
     "message": "GitHub-side"
   },
   "iconAlt": {
-    "message": "Ikon for Svar med vedhæftede filer"
+    "message": "Ikon for Svar med vedhæftninger"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blokeringsliste over filnavne (glob-mønstre)"
+    "message": "Sortliste over filnavne (glob-mønstre)"
   },
   "uiBlacklistHelp": {
-    "message": "Filer, hvis navne matcher et af disse mønstre, bliver aldrig vedhæftet automatisk. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
+    "message": "Filer, hvis navne matcher et af disse mønstre, vedhæftes aldrig automatisk. Ét mønster pr. linje. Eksempler: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Advar hvis vedhæftninger udelukkes af blokeringslisten"
+    "message": "Advar, hvis vedhæftninger udelukkes af sortlisten"
+  },
+  "uiDebugHeader": {
+    "message": "Avanceret"
+  },
+  "uiDebugLabel": {
+    "message": "Aktivér fejlsøgningslogning"
+  },
+  "uiDebugHelp": {
+    "message": "Skriver detaljerede baggrundslogge til Thunderbirds udviklerkonsol. Deaktiver igen, når du er færdig med fejlsøgningen."
   },
   "uiSave": {
     "message": "Gem"
@@ -80,7 +89,7 @@
     "message": "Gemmer…"
   },
   "uiReset": {
-    "message": "Nulstil til standardindstillinger"
+    "message": "Gendan standardindstillinger"
   },
   "uiSaved": {
     "message": "Gemt."
@@ -95,10 +104,10 @@
     "message": "Spørg før vedhæftninger tilføjes"
   },
   "uiConfirmHelp": {
-    "message": "En lille bekræftelsesdialog vises kun, når vedhæftninger rent faktisk ville blive tilføjet. Tastatur: Y eller J = Ja; N eller Esc = Nej."
+    "message": "En lille bekræftelsesdialog vises kun, når der faktisk vil blive tilføjet vedhæftninger. Tastatur: Y eller J = Ja; N eller Esc = Nej."
   },
   "confirmAddOne": {
-    "message": "Tilføj vedhæftet fil: $1?",
+    "message": "Tilføj vedhæftning: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Nej"
   },
   "warnBlacklistTitle": {
-    "message": "Udelukket af blokeringslisten"
+    "message": "Udelukket af sortlisten"
   },
   "warnBlacklistIntro": {
-    "message": "Følgende filer bliver ikke vedhæftet automatisk:"
+    "message": "Følgende filer vil ikke blive vedhæftet automatisk:"
   },
   "warnColFile": {
     "message": "Fil"
@@ -150,7 +159,7 @@
     "message": "Nej"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -18,10 +18,10 @@
     "message": "Balas dengan Lampiran"
   },
   "uiNoOptions": {
-    "message": "Buat masa ini tiada pilihan untuk dikonfigurasi."
+    "message": "Pada masa ini tiada pilihan untuk dikonfigurasi."
   },
   "uiSupport": {
-    "message": "Adakah anda suka add-on ini? Sila sokong saya dengan sumbangan kecil:"
+    "message": "Adakah anda suka pengaya ini? Sila sokong saya dengan sumbangan kecil:"
   },
   "uiRateATNText": {
     "message": "Sila nilai di ATN"
@@ -47,10 +47,10 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Tunjukkan Derma lagi"
+    "message": "Tunjukkan Derma semula"
   },
   "uiDonateRestored": {
-    "message": "Gesaan derma kini kelihatan semula."
+    "message": "Gesaan derma kelihatan semula."
   },
   "uiGithubText": {
     "message": "Untuk laporan pepijat atau pertanyaan lain, sila lawati"
@@ -73,6 +73,15 @@
   "uiWarnBlacklistLabel": {
     "message": "Beri amaran jika lampiran dikecualikan oleh senarai hitam"
   },
+  "uiDebugHeader": {
+    "message": "Lanjutan"
+  },
+  "uiDebugLabel": {
+    "message": "Dayakan log nyahpepijat"
+  },
+  "uiDebugHelp": {
+    "message": "Menulis log latar terperinci ke konsol pembangun Thunderbird. Lumpuhkan semula apabila anda selesai menyelesaikan masalah."
+  },
   "uiSave": {
     "message": "Simpan"
   },
@@ -80,7 +89,7 @@
     "message": "Menyimpan…"
   },
   "uiReset": {
-    "message": "Tetapkan semula kepada lalai"
+    "message": "Tetapkan semula ke lalai"
   },
   "uiSaved": {
     "message": "Disimpan."
@@ -95,7 +104,7 @@
     "message": "Tanya sebelum menambah lampiran"
   },
   "uiConfirmHelp": {
-    "message": "Dialog pengesahan kecil hanya muncul apabila lampiran benar-benar akan ditambah. Papan kekunci: Y atau J = Ya; N atau Esc = Tidak."
+    "message": "Dialog pengesahan kecil muncul hanya apabila lampiran akan benar-benar ditambah. Papan kekunci: Y atau J = Ya; N atau Esc = Tidak."
   },
   "confirmAddOne": {
     "message": "Tambah lampiran: $1?",
@@ -126,7 +135,7 @@
     "message": "Tidak"
   },
   "warnBlacklistTitle": {
-    "message": "Dikecualikan oleh senarai hitam"
+    "message": "Dikecualikan oleh Senarai Hitam"
   },
   "warnBlacklistIntro": {
     "message": "Fail berikut tidak akan dilampirkan secara automatik:"
@@ -150,7 +159,7 @@
     "message": "Tidak"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

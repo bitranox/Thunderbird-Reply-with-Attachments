@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "संलग्नकांसह उत्तर"
+    "message": "Reply with Attachments"
   },
   "extDescription": {
-    "message": "ईमेल उत्तरांमध्ये मूळ संलग्नके आपोआप समाविष्ट करते."
+    "message": "Automatically include original attachments in email replies."
   },
   "composeTitle": {
-    "message": "संलग्नकांसह उत्तर"
+    "message": "Reply with Attachments"
   },
   "optionsTitle": {
-    "message": "संलग्नकांसह उत्तर — पर्याय"
+    "message": "Reply with Attachments — Options"
   },
   "confirmTitle": {
-    "message": "संलग्नकांची पुष्टी"
+    "message": "Confirm Attachments"
   },
   "uiHeader": {
-    "message": "संलग्नकांसह उत्तर"
+    "message": "Reply with Attachments"
   },
   "uiNoOptions": {
-    "message": "सध्या संरचीत करण्यासाठी कोणतेही पर्याय नाहीत."
+    "message": "There are currently no options to configure."
   },
   "uiSupport": {
-    "message": "हा अॅड-ऑन तुम्हाला आवडतो का? कृपया छोट्या योगदानाने माझे समर्थन करा:"
+    "message": "Do you like this add-on? Please support me with a small contribution:"
   },
   "uiRateATNText": {
-    "message": "कृपया ATN वर रेटिंग द्या"
+    "message": "Please rate on ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "आता देणगी द्या"
+    "message": "Donate now"
   },
   "uiIDonated": {
-    "message": "मी देणगी दिली"
+    "message": "I donated"
   },
   "uiDonateSnoozed": {
-    "message": "धन्यवाद! देणगीची विनंती 90 दिवसांसाठी लपवली आहे."
+    "message": "Thank you! Donation prompt hidden for 90 days."
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 पर्यंत लपवले आहे",
+    "message": "Hidden until $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "देणगीचा पर्याय पुन्हा दाखवा"
+    "message": "Show Donate again"
   },
   "uiDonateRestored": {
-    "message": "देणगीची विनंती पुन्हा दिसत आहे."
+    "message": "Donation prompt is visible again."
   },
   "uiGithubText": {
-    "message": "बग अहवाल किंवा इतर चौकशींसाठी, कृपया माझे"
+    "message": "For bug reports or other inquiries, please visit my"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub पृष्ठ"
+    "message": "GitHub page"
   },
   "iconAlt": {
-    "message": "संलग्नकांसह उत्तर आयकॉन"
+    "message": "Reply with Attachments Icon"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "फाइलनावांची ब्लॅकलिस्ट (glob पॅटर्न्स)"
+    "message": "Blacklist of filenames (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "ज्या फाइलांची नावे या पॅटर्नपैकी कोणत्याहीशी जुळतात, ती कधीही आपोआप संलग्न केली जाणार नाहीत. प्रत्येक ओळीत एक पॅटर्न. उदाहरणे: *.png, smime.*, *.p7s"
+    "message": "Files whose names match any of these patterns will never be attached automatically. One pattern per line. Examples: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ब्लॅकलिस्टमुळे संलग्नके वगळली गेल्यास इशारा द्या"
+    "message": "Warn if attachments are excluded by blacklist"
+  },
+  "uiDebugHeader": {
+    "message": "Advanced"
+  },
+  "uiDebugLabel": {
+    "message": "Enable debug logging"
+  },
+  "uiDebugHelp": {
+    "message": "Writes detailed background logs to Thunderbird's developer console. Disable again when you are done troubleshooting."
   },
   "uiSave": {
-    "message": "जतन करा"
+    "message": "Save"
   },
   "uiSaving": {
-    "message": "जतन करत आहे…"
+    "message": "Saving…"
   },
   "uiReset": {
-    "message": "डीफॉल्टवर रीसेट करा"
+    "message": "Reset to defaults"
   },
   "uiSaved": {
-    "message": "जतन केले."
+    "message": "Saved."
   },
   "uiResetDone": {
-    "message": "रीसेट केले."
+    "message": "Reset."
   },
   "uiConfirmHeader": {
-    "message": "पुष्टीकरण"
+    "message": "Confirmation"
   },
   "uiConfirmLabel": {
-    "message": "संलग्नके जोडण्यापूर्वी विचारा"
+    "message": "Ask before adding attachments"
   },
   "uiConfirmHelp": {
-    "message": "केवळ संलग्नके प्रत्यक्षात जोडली जाणार असतील तेव्हाच एक लहान पुष्टीकरण संवाद दिसेल. कळफलक: Y किंवा J = होय; N किंवा Esc = नाही."
+    "message": "A small confirmation dialog appears only when attachments would actually be added. Keyboard: Y or J = Yes; N or Esc = No."
   },
   "confirmAddOne": {
-    "message": "संलग्नक जोडा: $1?",
+    "message": "Add attachment: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "संलग्नके जोडा ($1): $2$3?",
+    "message": "Add attachments ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -120,37 +129,37 @@
     }
   },
   "confirmYes": {
-    "message": "होय"
+    "message": "Yes"
   },
   "confirmNo": {
-    "message": "नाही"
+    "message": "No"
   },
   "warnBlacklistTitle": {
-    "message": "ब्लॅकलिस्टमुळे वगळले"
+    "message": "Excluded by blacklist"
   },
   "warnBlacklistIntro": {
-    "message": "खालील फाइल्स आपोआप संलग्न केल्या जाणार नाहीत:"
+    "message": "The following files will not be attached automatically:"
   },
   "warnColFile": {
-    "message": "फाइल"
+    "message": "File"
   },
   "warnColPattern": {
-    "message": "पॅटर्न"
+    "message": "Pattern"
   },
   "warnOk": {
-    "message": "ठीक"
+    "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "डीफॉल्ट उत्तर"
+    "message": "Default answer"
   },
   "uiConfirmDefaultYes": {
-    "message": "होय"
+    "message": "Yes"
   },
   "uiConfirmDefaultNo": {
-    "message": "नाही"
+    "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "दस्तऐवजीकरण:"
+    "message": "Documentation:"
   },
   "uiDocsButton": {
-    "message": "दस्तऐवज उघडा"
+    "message": "Open Docs"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

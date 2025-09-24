@@ -3,7 +3,7 @@
     "message": "პასუხი დანართებით"
   },
   "extDescription": {
-    "message": "ელფოსტის პასუხებში ორიგინალ დანართებს ავტომატურად დაამატებს."
+    "message": "ელფოსტის პასუხებში საწყისი დანართების ავტომატური დამატება."
   },
   "composeTitle": {
     "message": "პასუხი დანართებით"
@@ -18,7 +18,7 @@
     "message": "პასუხი დანართებით"
   },
   "uiNoOptions": {
-    "message": "ამჟამად დასაკონფიგურაციო პარამეტრები არ არის."
+    "message": "ამჟამად დასაყენებელი პარამეტრები არ არის."
   },
   "uiSupport": {
     "message": "მოგწონთ ეს დამატება? გთხოვთ, დამიჭირეთ მხარი მცირე შემოწირულობით:"
@@ -30,13 +30,13 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "გააკეთეთ შემოწირულობა ახლავე"
+    "message": "შემოწირეთ ახლა"
   },
   "uiIDonated": {
-    "message": "მე გავაკეთე შემოწირულობა"
+    "message": "მე შევწირე"
   },
   "uiDonateSnoozed": {
-    "message": "გმადლობთ! შემოწირულობის შეტყობინება 90 დღით დამალულია."
+    "message": "გმადლობთ! შემოწირულობის თხოვნა 90 დღით დამალულია."
   },
   "uiDonateHiddenUntil": {
     "message": "დამალულია $1-მდე",
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "შემოწირულობის ჩვენება ხელახლა"
+    "message": "შემოწირულობის თხოვნის კვლავ ჩვენება"
   },
   "uiDonateRestored": {
-    "message": "შემოწირულობის შეტყობინება კვლავ ხილვადია."
+    "message": "შემოწირულობის თხოვნა კვლავ ჩანს."
   },
   "uiGithubText": {
-    "message": "შეცდომების ანგარიშებისა თუ სხვა შეკითხვებისთვის, გთხოვთ, ეწვიეთ ჩემს"
+    "message": "შეცდომების ანგარიშებისთვის ან სხვა შეკითხვებისთვის, გთხოვთ ეწვიეთ ჩემს"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub-ის გვერდი"
+    "message": "GitHub გვერდს"
   },
   "iconAlt": {
-    "message": "პასუხი დანართებით — ხატულა"
+    "message": "„პასუხი დანართებით“-ის ხატულა"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -71,31 +71,40 @@
     "message": "ფაილები, რომელთა სახელები ემთხვევა ამ ნიმუშებიდან რომელიმეს, არასოდეს დაემატება ავტომატურად. თითო ხაზზე ერთი ნიმუში. მაგალითები: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "გაფრთხილება, თუ დანართები შავი სიით გამოირიცხება"
+    "message": "გაფრთხილება, თუ შავი სიის გამო დანართები გამოირიცხება"
+  },
+  "uiDebugHeader": {
+    "message": "გაფართოებული"
+  },
+  "uiDebugLabel": {
+    "message": "გამართვის ლოგირების ჩართვა"
+  },
+  "uiDebugHelp": {
+    "message": "იწერს დეტალურ ფონის ლოგებს Thunderbird-ის შემმუშავებლის კონსოლში. გამართვის დასრულებისას ისევ გამორთეთ."
   },
   "uiSave": {
     "message": "შენახვა"
   },
   "uiSaving": {
-    "message": "მიმდინარეობს შენახვა…"
+    "message": "ინახება…"
   },
   "uiReset": {
-    "message": "ნაგულისხმებზე დაბრუნება"
+    "message": "ნაგულისხმებ მნიშვნელობებზე დაბრუნება"
   },
   "uiSaved": {
     "message": "შენახულია."
   },
   "uiResetDone": {
-    "message": "აღდგა."
+    "message": "გადაყენებულია."
   },
   "uiConfirmHeader": {
     "message": "დადასტურება"
   },
   "uiConfirmLabel": {
-    "message": "კითხვა დანართების დამატებამდე"
+    "message": "დანართების დამატებამდე კითხვის დასმა"
   },
   "uiConfirmHelp": {
-    "message": "პატარა დადასტურების ფანჯარა გამოჩნდება მხოლოდ მაშინ, როცა დანართები ნამდვილად დაემატება. კლავიატურა: Y ან J = დიახ; N ან Esc = არა."
+    "message": "დადასტურების პატარა ფანჯარა გამოჩნდება მხოლოდ მაშინ, როცა დანართები რეალურად დაემატება. კლავიატურა: Y ან J = დიახ; N ან Esc = არა."
   },
   "confirmAddOne": {
     "message": "დავამატო დანართი: $1?",
@@ -126,10 +135,10 @@
     "message": "არა"
   },
   "warnBlacklistTitle": {
-    "message": "შავი სიით გამორიცხულია"
+    "message": "შავი სიის გამო გამორიცხულია"
   },
   "warnBlacklistIntro": {
-    "message": "შემდეგი ფაილები ავტომატურად არ დაერთვება:"
+    "message": "შემდეგი ფაილები ავტომატურად არ დაემატება:"
   },
   "warnColFile": {
     "message": "ფაილი"
@@ -150,7 +159,7 @@
     "message": "არა"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

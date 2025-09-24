@@ -3,7 +3,7 @@
     "message": "Amsa tare da Haɗe-haɗe"
   },
   "extDescription": {
-    "message": "Ta atomatik tana haɗa haɗe-haɗen asali a cikin amsoshin imel."
+    "message": "Haɗe-haɗen asali za a haɗa su ta atomatik a cikin amsoshin imel."
   },
   "composeTitle": {
     "message": "Amsa tare da Haɗe-haɗe"
@@ -21,7 +21,7 @@
     "message": "A halin yanzu babu zaɓuɓɓukan da za a saita."
   },
   "uiSupport": {
-    "message": "Kana son wannan ƙarin-manhaja? Don Allah ku tallafa mini da ƙaramin gudummawa:"
+    "message": "Kuna son wannan ƙarin? Don Allah ku tallafa min da ƙaramin gudummawa:"
   },
   "uiRateATNText": {
     "message": "Don Allah ku ba da ƙima a ATN"
@@ -36,7 +36,7 @@
     "message": "Na ba da gudummawa"
   },
   "uiDonateSnoozed": {
-    "message": "Na gode! An ɓoye tunatarwar gudummawa na tsawon kwanaki 90."
+    "message": "Na gode! An ɓoye sanarwar gudummawa na tsawon kwanaki 90."
   },
   "uiDonateHiddenUntil": {
     "message": "An ɓoye har zuwa $1",
@@ -47,16 +47,16 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Sake nuna Ba da gudummawa"
+    "message": "Sake nuna zaɓin gudummawa"
   },
   "uiDonateRestored": {
-    "message": "Tunatarwar gudummawa ta sake bayyana."
+    "message": "Sanarwar gudummawa ta sake bayyana."
   },
   "uiGithubText": {
-    "message": "Don rahoton kura-kurai ko sauran tambayoyi, don Allah ku ziyarci"
+    "message": "Don bayar da rahoton kurakurai ko wasu tambayoyi, don Allah ku ziyarci"
   },
   "uiGithubLinkLabel": {
-    "message": "Shafin GitHub"
+    "message": "shafin GitHub nawa"
   },
   "iconAlt": {
     "message": "Alamar Amsa tare da Haɗe-haɗe"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Jerin sunayen fayil da aka hana (samfuran glob)"
+    "message": "Jerin sunayen fayil da aka haramta (tsare-tsaren glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fayilolin da sunayensu suka dace da kowane ɗaya daga cikin waɗannan samfuran ba za a taɓa haɗa su ta atomatik ba. Samfuri ɗaya a kowane layi. Misalai: *.png, smime.*, *.p7s"
+    "message": "Fayilolin da sunayensu suka yi daidai da kowanne daga cikin waɗannan tsare-tsaren ba za a taɓa haɗa su ta atomatik ba. Tsari ɗaya a kowane layi. Misalai: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Gargaɗi idan jerin da aka hana ya ware haɗe-haɗe"
+    "message": "Gargadi idan aka ware haɗe-haɗe saboda jerin haramta"
+  },
+  "uiDebugHeader": {
+    "message": "Saitunan ci gaba"
+  },
+  "uiDebugLabel": {
+    "message": "Kunna rajistar binciken kuskure"
+  },
+  "uiDebugHelp": {
+    "message": "Yana rubuta cikakkun rajistoci a baya zuwa console na masu haɓaka na Thunderbird. Kashe shi bayan kun gama warware matsala."
   },
   "uiSave": {
     "message": "Ajiye"
@@ -80,13 +89,13 @@
     "message": "Ana ajiye…"
   },
   "uiReset": {
-    "message": "Mayar da saituna na asali"
+    "message": "Sake saita zuwa tsoffin saituna"
   },
   "uiSaved": {
     "message": "An ajiye."
   },
   "uiResetDone": {
-    "message": "An sake saiti."
+    "message": "An sake saita."
   },
   "uiConfirmHeader": {
     "message": "Tabbaci"
@@ -95,10 +104,10 @@
     "message": "Tambaya kafin ƙara haɗe-haɗe"
   },
   "uiConfirmHelp": {
-    "message": "Ƙaramin taga tabbaci zai bayyana ne kawai idan za a ƙara haɗe-haɗe a zahiri. Maɓallan madanni: Y ko J = Eh; N ko Esc = A'a."
+    "message": "Ƙaramar taga tabbaci za ta bayyana ne kawai idan za a ƙara haɗe-haɗe. Madannai: Y ko J = Eh; N ko Esc = A'a."
   },
   "confirmAddOne": {
-    "message": "Ƙara abin haɗe: $1?",
+    "message": "Ƙara haɗi: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,16 +135,16 @@
     "message": "A'a"
   },
   "warnBlacklistTitle": {
-    "message": "An ware ta jerin da aka hana"
+    "message": "An ware saboda jerin haramta"
   },
   "warnBlacklistIntro": {
-    "message": "Ba za a haɗa fayilolin da ke ƙasa ta atomatik ba:"
+    "message": "Waɗannan fayilolin ba za a haɗa su ta atomatik ba:"
   },
   "warnColFile": {
     "message": "Fayil"
   },
   "warnColPattern": {
-    "message": "Samfuri"
+    "message": "Tsari"
   },
   "warnOk": {
     "message": "OK"
@@ -150,7 +159,7 @@
     "message": "A'a"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,7 +168,7 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Takardun bayani:"
+    "message": "Takardun bayanai:"
   },
   "uiDocsButton": {
     "message": "Buɗe Takardu"

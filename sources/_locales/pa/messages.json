@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਨਾਲ ਜਵਾਬ"
+    "message": "ਸੰਲਗਨਾਂ ਨਾਲ ਜਵਾਬ"
   },
   "extDescription": {
-    "message": "ਈਮੇਲ ਜਵਾਬਾਂ ਵਿੱਚ ਮੂਲ ਅਟੈਚਮੈਂਟ ਆਪਣੇ-ਆਪ ਸ਼ਾਮਲ ਕਰੋ।"
+    "message": "ਈਮੇਲ ਜਵਾਬਾਂ ਵਿੱਚ ਮੂਲ ਸੰਲਗਨਾਂ ਨੂੰ ਆਪਣੇ-ਆਪ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ।"
   },
   "composeTitle": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਨਾਲ ਜਵਾਬ"
+    "message": "ਸੰਲਗਨਾਂ ਨਾਲ ਜਵਾਬ"
   },
   "optionsTitle": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਨਾਲ ਜਵਾਬ — ਵਿਕਲਪ"
+    "message": "ਸੰਲਗਨਾਂ ਨਾਲ ਜਵਾਬ — ਵਿਕਲਪ"
   },
   "confirmTitle": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
+    "message": "ਸੰਲਗਨਾਂ ਦੀ ਪੁਸ਼ਟੀ"
   },
   "uiHeader": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਨਾਲ ਜਵਾਬ"
+    "message": "ਸੰਲਗਨਾਂ ਨਾਲ ਜਵਾਬ"
   },
   "uiNoOptions": {
-    "message": "ਫਿਲਹਾਲ ਸੰਰਚਿਤ ਕਰਨ ਲਈ ਕੋਈ ਵਿਕਲਪ ਨਹੀਂ ਹਨ."
+    "message": "ਮੌਜੂਦਾ ਸਮੇਂ ਕਨਫਿਗਰ ਕਰਨ ਲਈ ਕੋਈ ਵਿਕਲਪ ਨਹੀਂ।"
   },
   "uiSupport": {
-    "message": "ਕੀ ਤੁਹਾਨੂੰ ਇਹ ਐਡ-ਆਨ ਪਸੰਦ ਹੈ? ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਛੋਟੇ ਯੋਗਦਾਨ ਨਾਲ ਮੇਰਾ ਸਮਰਥਨ ਕਰੋ:"
+    "message": "ਕੀ ਤੁਹਾਨੂੰ ਇਹ ਐਡ-ਆਨ ਪਸੰਦ ਹੈ? ਕਿਰਪਾ ਕਰਕੇ ਛੋਟੇ ਯੋਗਦਾਨ ਨਾਲ ਮੇਰੀ ਸਹਾਇਤਾ ਕਰੋ:"
   },
   "uiRateATNText": {
     "message": "ਕਿਰਪਾ ਕਰਕੇ ATN ‘ਤੇ ਰੇਟ ਕਰੋ"
@@ -36,7 +36,7 @@
     "message": "ਮੈਂ ਦਾਨ ਕੀਤਾ"
   },
   "uiDonateSnoozed": {
-    "message": "ਧੰਨਵਾਦ! ਦਾਨ ਲਈ ਸੁਨੇਹਾ 90 ਦਿਨਾਂ ਲਈ ਲੁਕਾਇਆ ਗਿਆ ਹੈ."
+    "message": "ਧੰਨਵਾਦ! ਦਾਨ ਦੀ ਅਪੀਲ 90 ਦਿਨਾਂ ਲਈ ਲੁਕਾਈ ਗਈ ਹੈ।"
   },
   "uiDonateHiddenUntil": {
     "message": "$1 ਤੱਕ ਲੁਕਾਇਆ ਗਿਆ",
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "ਦਾਨ ਵਾਲਾ ਸੁਨੇਹਾ ਮੁੜ ਦਿਖਾਓ"
+    "message": "ਦਾਨ ਮੁੜ ਦਿਖਾਓ"
   },
   "uiDonateRestored": {
-    "message": "ਦਾਨ ਵਾਲਾ ਸੁਨੇਹਾ ਮੁੜ ਦਿਖਾਈ ਦੇ ਰਿਹਾ ਹੈ."
+    "message": "ਦਾਨ ਦੀ ਅਪੀਲ ਫਿਰ ਵਿਖਾਈ ਦੇ ਰਹੀ ਹੈ।"
   },
   "uiGithubText": {
     "message": "ਬੱਗ ਰਿਪੋਰਟਾਂ ਜਾਂ ਹੋਰ ਪੁੱਛਗਿੱਛ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਮੇਰਾ"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub ਸਫ਼ਾ"
+    "message": "GitHub ਪੇਜ"
   },
   "iconAlt": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਨਾਲ ਜਵਾਬ ਆਈਕਨ"
+    "message": "ਸੰਲਗਨਾਂ ਨਾਲ ਜਵਾਬ ਆਇਕਨ"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ਫਾਇਲਨਾਂ (ਗਲੌਬ ਪੈਟਰਨ) ਦੀ ਬਲੈਕਲਿਸਟ"
+    "message": "ਫ਼ਾਈਲ ਨਾਮਾਂ ਦੀ ਬਲੈਕਲਿਸਟ (ਗਲੋਬ ਪੈਟਰਨ)"
   },
   "uiBlacklistHelp": {
-    "message": "ਜਿਹੜੀਆਂ ਫਾਇਲਾਂ ਦੇ ਨਾਮ ਇਨ੍ਹਾਂ ਵਿਚੋਂ ਕਿਸੇ ਪੈਟਰਨ ਨਾਲ ਮਿਲਦੇ ਹਨ, ਉਹ ਕਦੇ ਵੀ ਆਪਣੇ-ਆਪ ਨਹੀਂ ਜੁੜਣਗੀਆਂ। ਇੱਕ ਲਾਈਨ ‘ਤੇ ਇੱਕ ਪੈਟਰਨ। ਉਦਾਹਰਨਾਂ: *.png, smime.*, *.p7s"
+    "message": "ਜਿਨ੍ਹਾਂ ਫ਼ਾਈਲਾਂ ਦੇ ਨਾਮ ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕਿਸੇ ਵੀ ਪੈਟਰਨ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹਨ, ਉਹ ਕਦੇ ਵੀ ਆਪਣੇ-ਆਪ ਨਹੀਂ ਜੋੜੇ ਜਾਣਗੇ। ਹਰ ਲਾਈਨ ‘ਚ ਇੱਕ ਪੈਟਰਨ। ਉਦਾਹਰਨ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ਜੇ ਅਟੈਚਮੈਂਟਾਂ ਨੂੰ ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਬਾਹਰ ਕੀਤਾ ਗਿਆ ਹੋਵੇ ਤਾਂ ਚੇਤਾਵਨੀ ਦਿਓ"
+    "message": "ਜੇ ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਸੰਲਗਨ ਬਾਹਰ ਰੱਖੇ ਜਾਣ ਤਾਂ ਚੇਤਾਵਨੀ ਦਿਓ"
+  },
+  "uiDebugHeader": {
+    "message": "ਉੱਨਤ"
+  },
+  "uiDebugLabel": {
+    "message": "ਡੀਬੱਗ ਲਾਗਿੰਗ ਯੋਗ ਕਰੋ"
+  },
+  "uiDebugHelp": {
+    "message": "ਥੰਡਰਬਰਡ ਦੀ ਡਿਵੈਲਪਰ ਕੌਂਸੋਲ ‘ਚ ਵਿਸਤ੍ਰਿਤ ਬੈਕਗ੍ਰਾਊਂਡ ਲਾਗ ਲਿਖਦਾ ਹੈ। ਟਰਬਲਸ਼ੂਟਿੰਗ ਮੁੱਕਣ ‘ਤੇ ਇਸਨੂੰ ਮੁੜ ਅਯੋਗ ਕਰੋ।"
   },
   "uiSave": {
-    "message": "ਸੰਭਾਲੋ"
+    "message": "ਸੇਵ ਕਰੋ"
   },
   "uiSaving": {
-    "message": "ਸੰਭਾਲਿਆ ਜਾ ਰਿਹਾ ਹੈ…"
+    "message": "ਸੇਵ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…"
   },
   "uiReset": {
     "message": "ਮੂਲ ਸੈਟਿੰਗਾਂ ‘ਤੇ ਰੀਸੈਟ ਕਰੋ"
   },
   "uiSaved": {
-    "message": "ਸੰਭਾਲਿਆ ਗਿਆ."
+    "message": "ਸੇਵ ਹੋ ਗਿਆ।"
   },
   "uiResetDone": {
-    "message": "ਰੀਸੈਟ ਕੀਤਾ."
+    "message": "ਰੀਸੈਟ ਹੋ ਗਿਆ।"
   },
   "uiConfirmHeader": {
     "message": "ਪੁਸ਼ਟੀ"
   },
   "uiConfirmLabel": {
-    "message": "ਅਟੈਚਮੈਂਟ ਜੋੜਨ ਤੋਂ ਪਹਿਲਾਂ ਪੁੱਛੋ"
+    "message": "ਸੰਲਗਨ ਜੋੜਨ ਤੋਂ ਪਹਿਲਾਂ ਪੁੱਛੋ"
   },
   "uiConfirmHelp": {
-    "message": "ਇੱਕ ਛੋਟੀ ਪੁਸ਼ਟੀ ਡਾਇਲਾਗ ਫ਼ਕਤ ਉਸ ਸਮੇਂ ਦਿਖੇਗੀ ਜਦੋਂ ਅਸਲ ਵਿੱਚ ਅਟੈਚਮੈਂਟ ਜੋੜੇ ਜਾਣੇ ਹੋਣ। ਕੀਬੋਰਡ: Y ਜਾਂ J = ਹਾਂ; N ਜਾਂ Esc = ਨਹੀਂ।"
+    "message": "ਛੋਟੀ ਪੁਸ਼ਟੀ ਡਾਇਲਾਗ ਸਿਰਫ਼ ਉਸ ਵੇਲੇ ਦਿਖਦੀ ਹੈ ਜਦੋਂ ਵਾਸਤਵ ਵਿੱਚ ਸੰਲਗਨ ਜੋੜੇ ਜਾਣ। ਕੀਬੋਰਡ: Y ਜਾਂ J = ਹਾਂ; N ਜਾਂ Esc = ਨਹੀਂ."
   },
   "confirmAddOne": {
-    "message": "ਅਟੈਚਮੈਂਟ ਜੋੜੋ: $1?",
+    "message": "ਸੰਲਗਨ ਜੋੜਣਾ ਹੈ: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ਅਟੈਚਮੈਂਟਾਂ ਜੋੜੋ ($1): $2$3?",
+    "message": "ਸੰਲਗਨ ਜੋੜਣੇ ਹਨ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,13 +135,13 @@
     "message": "ਨਹੀਂ"
   },
   "warnBlacklistTitle": {
-    "message": "ਬਲੈਕਲਿਸਟ ਦੁਆਰਾ ਬਾਹਰ ਕੀਤਾ ਗਿਆ"
+    "message": "ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਬਾਹਰ ਰੱਖਿਆ"
   },
   "warnBlacklistIntro": {
-    "message": "ਹੇਠ ਲਿਖੀਆਂ ਫਾਇਲਾਂ ਆਪਣੇ-ਆਪ ਨਹੀਂ ਜੁੜਣਗੀਆਂ:"
+    "message": "ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਫ਼ਾਈਲਾਂ ਆਪਣੇ-ਆਪ ਨਹੀਂ ਜੋੜੀਆਂ ਜਾਣਗੀਆਂ:"
   },
   "warnColFile": {
-    "message": "ਫਾਇਲ"
+    "message": "ਫ਼ਾਈਲ"
   },
   "warnColPattern": {
     "message": "ਪੈਟਰਨ"
@@ -150,7 +159,7 @@
     "message": "ਨਹੀਂ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "ਦਸਤਾਵੇਜ਼:"
   },
   "uiDocsButton": {
-    "message": "ਦਸਤਾਵੇਜ਼ ਖੋਲ੍ਹੋ"
+    "message": "ਡੌਕਸ ਖੋਲ੍ਹੋ"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

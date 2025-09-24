@@ -3,7 +3,7 @@
     "message": "Responder com Anexos"
   },
   "extDescription": {
-    "message": "Inclui automaticamente os anexos originais nas respostas por e‑mail."
+    "message": "Inclua automaticamente os anexos originais nas respostas por email."
   },
   "composeTitle": {
     "message": "Responder com Anexos"
@@ -18,13 +18,13 @@
     "message": "Responder com Anexos"
   },
   "uiNoOptions": {
-    "message": "Atualmente não há opções para configurar."
+    "message": "De momento, não há opções para configurar."
   },
   "uiSupport": {
     "message": "Gosta deste complemento? Apoie-me com uma pequena contribuição:"
   },
   "uiRateATNText": {
-    "message": "Avalie no ATN"
+    "message": "Por favor, avalie no ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,10 +33,10 @@
     "message": "Doar agora"
   },
   "uiIDonated": {
-    "message": "Já doei"
+    "message": "Fiz uma doação"
   },
   "uiDonateSnoozed": {
-    "message": "Obrigado! O pedido de doação ficará oculto por 90 dias."
+    "message": "Obrigado! Pedido de doação oculto por 90 dias."
   },
   "uiDonateHiddenUntil": {
     "message": "Oculto até $1",
@@ -53,25 +53,34 @@
     "message": "O pedido de doação está visível novamente."
   },
   "uiGithubText": {
-    "message": "Para relatar erros ou outras questões, visite a minha"
+    "message": "Para relatórios de erros ou outras questões, visite a minha"
   },
   "uiGithubLinkLabel": {
     "message": "página no GitHub"
   },
   "iconAlt": {
-    "message": "Ícone do Responder com Anexos"
+    "message": "Ícone de Responder com Anexos"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Lista de bloqueio de nomes de ficheiros (padrões glob)"
+    "message": "Lista de exclusão de nomes de ficheiro (padrões glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Os ficheiros cujos nomes correspondam a qualquer destes padrões nunca serão anexados automaticamente. Um padrão por linha. Exemplos: *.png, smime.*, *.p7s"
+    "message": "Ficheiros cujos nomes correspondam a qualquer um destes padrões nunca serão anexados automaticamente. Um padrão por linha. Exemplos: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avisar se os anexos forem excluídos pela lista de bloqueio"
+    "message": "Avisar se anexos forem excluídos pela lista de exclusão"
+  },
+  "uiDebugHeader": {
+    "message": "Avançado"
+  },
+  "uiDebugLabel": {
+    "message": "Ativar registo de depuração"
+  },
+  "uiDebugHelp": {
+    "message": "Escreve registos detalhados em segundo plano na consola de programador do Thunderbird. Desative novamente quando terminar a resolução de problemas."
   },
   "uiSave": {
     "message": "Guardar"
@@ -92,10 +101,10 @@
     "message": "Confirmação"
   },
   "uiConfirmLabel": {
-    "message": "Pedir confirmação antes de adicionar anexos"
+    "message": "Perguntar antes de adicionar anexos"
   },
   "uiConfirmHelp": {
-    "message": "Uma pequena janela de confirmação aparece apenas quando os anexos forem realmente adicionados. Teclado: Y ou J = Sim; N ou Esc = Não."
+    "message": "Uma pequena caixa de confirmação aparece apenas quando os anexos forem realmente adicionados. Teclado: Y ou J = Sim; N ou Esc = Não."
   },
   "confirmAddOne": {
     "message": "Adicionar anexo: $1?",
@@ -126,7 +135,7 @@
     "message": "Não"
   },
   "warnBlacklistTitle": {
-    "message": "Excluídos pela lista de bloqueio"
+    "message": "Excluído pela lista de exclusão"
   },
   "warnBlacklistIntro": {
     "message": "Os seguintes ficheiros não serão anexados automaticamente:"
@@ -150,7 +159,7 @@
     "message": "Não"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Documentação:"
   },
   "uiDocsButton": {
-    "message": "Abrir documentação"
+    "message": "Abrir Documentação"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

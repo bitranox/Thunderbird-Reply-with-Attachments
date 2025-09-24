@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Phendula nokunamathiselwe"
+    "message": "Phendula nezinamathiselo"
   },
   "extDescription": {
-    "message": "Faka ngokuzenzakalela okunamathiselwe kwasekuqaleni ezimpendulweni ze-imeyili."
+    "message": "Faka ngokuzenzakalela izinamathiselo zokuqala emaphendulweni e-imeyili."
   },
   "composeTitle": {
-    "message": "Phendula nokunamathiselwe"
+    "message": "Phendula nezinamathiselo"
   },
   "optionsTitle": {
-    "message": "Phendula nokunamathiselwe — Izinketho"
+    "message": "Phendula nezinamathiselo — Izinketho"
   },
   "confirmTitle": {
-    "message": "Qinisekisa okunamathiselwe"
+    "message": "Qinisekisa izinamathiselo"
   },
   "uiHeader": {
-    "message": "Phendula nokunamathiselwe"
+    "message": "Phendula nezinamathiselo"
   },
   "uiNoOptions": {
-    "message": "Azikho izinketho zokusetha okwamanje."
+    "message": "Okwamanje awekho izinketho ongazilungisa."
   },
   "uiSupport": {
-    "message": "Uyawuthanda lesi sandiso? Sicela ungesekele ngomnikelo omncane:"
+    "message": "Ingabe uyasithanda lesi sandiso? Sicela ungisekele ngomnikelo omncane:"
   },
   "uiRateATNText": {
-    "message": "Sicela uyilinganise ku-ATN"
+    "message": "Sicela ulinganise ku-ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,13 +33,13 @@
     "message": "Nikela manje"
   },
   "uiIDonated": {
-    "message": "Senginikele"
+    "message": "Nginikele"
   },
   "uiDonateSnoozed": {
-    "message": "Ngiyabonga! Isikhumbuzi somnikelo sifihlwe izinsuku ezingu-90."
+    "message": "Ngiyabonga! Isikhumbuzi sokunikela sifihlwe izinsuku ezingu-90."
   },
   "uiDonateHiddenUntil": {
-    "message": "Kufihlwe kuze kube $1",
+    "message": "Kufihliwe kuze kube $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,40 +47,49 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Bonisa isikhumbuzi sokunikela futhi"
+    "message": "Bonisa uNikela futhi"
   },
   "uiDonateRestored": {
     "message": "Isikhumbuzi sokunikela sibonakala futhi."
   },
   "uiGithubText": {
-    "message": "Ngokubika amaphutha noma eminye imibuzo, sicela uvakashele ikhasi lami le"
+    "message": "Ngemibiko yamaphutha noma eminye imibuzo, sicela uvakashele ikhasi lami ku"
   },
   "uiGithubLinkLabel": {
     "message": "Ikhasi le-GitHub"
   },
   "iconAlt": {
-    "message": "Isithonjana se-Phendula nokunamathiselwe"
+    "message": "Isithonjana se-Phendula nezinamathiselo"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Uhlu lokuvimba lwamagama wamafayela (amaphethini e-glob)"
+    "message": "Uhlu lokuvimba amagama amafayela (amaphethini e-glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Amafayela anamagama ahambisana nanoma yimaphi lawa maphethini awasoze angezwe ngokuzenzakalela njengokunamathiselwe. Iphathini eyodwa ngomugqa ngamunye. Izibonelo: *.png, smime.*, *.p7s"
+    "message": "Amafayela anamagama ahambisana nanoma iyiphi yale miphethini awasoze anamathiselwa ngokuzenzakalela. Iphethini eyodwa kulayini. Izibonelo: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Xwayisa uma okunamathiselwe kukhishwe ohlwini lokuvimba"
+    "message": "Xwayisa uma izinamathiselo zikhishwe ohlwini lokuvimba"
+  },
+  "uiDebugHeader": {
+    "message": "Okuthuthukile"
+  },
+  "uiDebugLabel": {
+    "message": "Vumela ukurekhoda kokuhlola amaphutha"
+  },
+  "uiDebugHelp": {
+    "message": "Kubhala amarekhodi anemininingwane yangemuva ekhonsoli yomthuthukisi ye-Thunderbird. Khubaza futhi uma usuqedile ukuxazulula izinkinga."
   },
   "uiSave": {
     "message": "Gcina"
   },
   "uiSaving": {
-    "message": "Iyagcina…"
+    "message": "Kugcinwa…"
   },
   "uiReset": {
-    "message": "Setha kabusha ezilungiselelweni ezizenzakalelayo"
+    "message": "Setha kabusha kuzilungiselelo ezizenzakalelayo"
   },
   "uiSaved": {
     "message": "Kugcinwe."
@@ -89,13 +98,13 @@
     "message": "Kusethwe kabusha."
   },
   "uiConfirmHeader": {
-    "message": "Isiqinisekiso"
+    "message": "Ukuqinisekisa"
   },
   "uiConfirmLabel": {
-    "message": "Buza ngaphambi kokwengeza okunamathiselwe"
+    "message": "Buza ngaphambi kokungeza izinamathiselo"
   },
   "uiConfirmHelp": {
-    "message": "Ibhokisi elincane lesiqinisekiso livela kuphela uma kukhona okunamathiselwe okuzofakwa ngempela. Ikhibhodi: Y noma J = Yebo; N noma Esc = Cha."
+    "message": "Ibhokisi elincane sokuqinisekisa livela kuphela uma izinamathiselo zizofakwa ngempela. Ikhibhodi: Y noma J = Yebo; N noma Esc = Cha."
   },
   "confirmAddOne": {
     "message": "Engeza okunamathiselwe: $1?",
@@ -129,19 +138,19 @@
     "message": "Kukhishiwe ohlwini lokuvimba"
   },
   "warnBlacklistIntro": {
-    "message": "La mafayela alandelayo ngeke angezwe ngokuzenzakalela njengokunamathiselwe:"
+    "message": "La mafayela alandelayo awasoze anamathiselwa ngokuzenzakalela:"
   },
   "warnColFile": {
     "message": "Ifayela"
   },
   "warnColPattern": {
-    "message": "Iphethini"
+    "message": "Iphatheni"
   },
   "warnOk": {
     "message": "Kulungile"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Impendulo eyizenzakalelayo"
+    "message": "Impendulo ezenzakalelayo"
   },
   "uiConfirmDefaultYes": {
     "message": "Yebo"
@@ -150,7 +159,7 @@
     "message": "Cha"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

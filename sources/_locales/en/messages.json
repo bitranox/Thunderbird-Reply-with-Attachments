@@ -73,6 +73,15 @@
   "uiWarnBlacklistLabel": {
     "message": "Warn if attachments are excluded by blacklist"
   },
+  "uiDebugHeader": {
+    "message": "Advanced"
+  },
+  "uiDebugLabel": {
+    "message": "Enable debug logging"
+  },
+  "uiDebugHelp": {
+    "message": "Writes detailed background logs to Thunderbird's developer console. Disable again when you are done troubleshooting."
+  },
   "uiSave": {
     "message": "Save"
   },

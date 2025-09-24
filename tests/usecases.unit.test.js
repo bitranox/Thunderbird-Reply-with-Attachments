@@ -50,7 +50,8 @@ describe('UseCases — unit', () => {
         .fn()
         .mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
     };
-    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages });
+    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, logger });
     const added = await proc(1, 100);
     expect(added).toBe(0);
     expect(compose.addAttachment).not.toHaveBeenCalled();
@@ -90,5 +91,28 @@ describe('UseCases — unit', () => {
     await ensure(5, { type: 'reply', referenceMessageId: 200 });
     expect(compose.addAttachment).toHaveBeenCalledTimes(1);
     expect(await sessions.getTabValue(5, 'S')).toBe(true);
+  });
+
+  it('retries fetching attachments when the first attempt is empty', async () => {
+    const compose = {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const attachments = [{ name: 'report.pdf', partName: '1', contentType: 'application/pdf' }];
+    const messages = {
+      listAttachments: vi.fn().mockResolvedValueOnce([]).mockResolvedValueOnce(attachments),
+      getAttachmentFile: vi.fn().mockResolvedValue({ name: 'report.pdf' }),
+    };
+    const logger = { debug: vi.fn(), warn: vi.fn() };
+    const proc = App.UseCases.createProcessReplyAttachments({
+      compose,
+      messages,
+      logger,
+      attachmentsRetry: { attempts: 2, delayMs: 0 },
+    });
+    const added = await proc(7, 4242);
+    expect(messages.listAttachments).toHaveBeenCalledTimes(2);
+    expect(compose.addAttachment).toHaveBeenCalledTimes(1);
+    expect(added).toBe(1);
   });
 });

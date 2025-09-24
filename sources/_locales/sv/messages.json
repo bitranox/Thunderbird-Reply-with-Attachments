@@ -3,7 +3,7 @@
     "message": "Svara med bilagor"
   },
   "extDescription": {
-    "message": "Inkludera automatiskt de ursprungliga bilagorna i e‑postsvar."
+    "message": "Inkludera automatiskt de ursprungliga bilagorna i e-postsvar."
   },
   "composeTitle": {
     "message": "Svara med bilagor"
@@ -39,7 +39,7 @@
     "message": "Tack! Donationsuppmaningen är dold i 90 dagar."
   },
   "uiDonateHiddenUntil": {
-    "message": "Dold tills $1",
+    "message": "Dold till $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Visa Donera igen"
+    "message": "Visa donationsuppmaningen igen"
   },
   "uiDonateRestored": {
     "message": "Donationsuppmaningen är synlig igen."
   },
   "uiGithubText": {
-    "message": "För felrapporter eller andra frågor, besök gärna min"
+    "message": "För felrapporter eller andra frågor, besök min"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub-sida"
@@ -68,10 +68,19 @@
     "message": "Svartlista över filnamn (globmönster)"
   },
   "uiBlacklistHelp": {
-    "message": "Filer vars namn matchar något av dessa mönster kommer aldrig att bifogas automatiskt. Ett mönster per rad. Exempel: *.png, smime.*, *.p7s"
+    "message": "Filer vars namn matchar något av dessa mönster bifogas aldrig automatiskt. Ett mönster per rad. Exempel: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Varna om bilagor utesluts på grund av svartlistan"
+    "message": "Varna om bilagor utesluts av svartlistan"
+  },
+  "uiDebugHeader": {
+    "message": "Avancerat"
+  },
+  "uiDebugLabel": {
+    "message": "Aktivera felsökningsloggning"
+  },
+  "uiDebugHelp": {
+    "message": "Skriver detaljerade bakgrundsloggar till Thunderbirds utvecklarkonsol. Inaktivera igen när du är klar med felsökningen."
   },
   "uiSave": {
     "message": "Spara"
@@ -80,7 +89,7 @@
     "message": "Sparar…"
   },
   "uiReset": {
-    "message": "Återställ till standardinställningar"
+    "message": "Återställ till standardvärden"
   },
   "uiSaved": {
     "message": "Sparat."
@@ -95,7 +104,7 @@
     "message": "Fråga innan bilagor läggs till"
   },
   "uiConfirmHelp": {
-    "message": "En liten bekräftelsedialog visas endast när bilagor faktiskt skulle läggas till. Tangentbord: Y eller J = Ja; N eller Esc = Nej."
+    "message": "En liten bekräftelsedialog visas bara när bilagor faktiskt skulle läggas till. Tangentbord: Y eller J = Ja; N eller Esc = Nej."
   },
   "confirmAddOne": {
     "message": "Lägg till bilaga: $1?",
@@ -150,7 +159,7 @@
     "message": "Nej"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokumentation:"
   },
   "uiDocsButton": {
-    "message": "Öppna dokumentationen"
+    "message": "Öppna dokumentation"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

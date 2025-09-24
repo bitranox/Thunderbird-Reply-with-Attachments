@@ -1,42 +1,42 @@
 {
   "extName": {
-    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
   },
   "extDescription": {
-    "message": "පිළිතුරු ඊමේල්වලට මුල් ඇමුණුම් ස්වයංක්‍රීයව ඇතුළත් කරයි."
+    "message": "වි-තැපැල් පිළිතුරු වලදී මුල් ඇමුණුම් ස්වයංක්‍රීයව ඇතුළත් කරයි."
   },
   "composeTitle": {
-    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
   },
   "optionsTitle": {
-    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම — විකල්ප"
+    "message": "ඇමුණුම් සමඟ පිළිතුරු — විකල්ප"
   },
   "confirmTitle": {
     "message": "ඇමුණුම් තහවුරු කිරීම"
   },
   "uiHeader": {
-    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම"
+    "message": "ඇමුණුම් සමඟ පිළිතුරු"
   },
   "uiNoOptions": {
-    "message": "දැනට සකස් කළ හැකි විකල්ප නොමැත."
+    "message": "දැනට වින්‍යාස කිරීමට විකල්ප නොමැත."
   },
   "uiSupport": {
-    "message": "මෙම ඇඩෝනය ඔබට කැමතිද? කරුණාකර සුළු දායකත්වයකින් මා අනුග්‍රහය කරන්න:"
+    "message": "මෙම ඇඩෝනය ඔබට කැමතිද? කරුණාකර කුඩා දානයකින් මට සහාය වන්න:"
   },
   "uiRateATNText": {
-    "message": "කරුණාකර ATN හි අගයන්න"
+    "message": "කරුණාකර ATN හි ශ්‍රේණිගත කරන්න"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "දැන් දායක වන්න"
+    "message": "දැන් දානය කරන්න"
   },
   "uiIDonated": {
-    "message": "මම දානයක් කළා"
+    "message": "මම දානය කළෙමි"
   },
   "uiDonateSnoozed": {
-    "message": "ස්තූතියි! දානය ඉල්ලීම දින 90 කට සඟවා ඇත."
+    "message": "ස්තුතියි! දානය ඉල්ලීමේ පණිවිඩය දින 90ක් සඳහා සඟවා ඇත."
   },
   "uiDonateHiddenUntil": {
     "message": "$1 දක්වා සඟවා ඇත",
@@ -50,55 +50,64 @@
     "message": "දානය නැවත පෙන්වන්න"
   },
   "uiDonateRestored": {
-    "message": "දානය ඉල්ලීම නැවත දෘශ්‍යමාන වී ඇත."
+    "message": "දානය ඉල්ලීමේ පණිවිඩය නැවත පෙනේ."
   },
   "uiGithubText": {
-    "message": "දෝෂ වාර්තා හෝ අනෙකුත් විමසුම් සඳහා, කරුණාකර මාගේ"
+    "message": "දෝෂ වාර්තා හෝ අනෙකුත් විමසීම් සඳහා, කරුණාකර මාගේ"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub පිටුව"
   },
   "iconAlt": {
-    "message": "ඇමුණුම් සමඟ පිළිතුරු දීම අයිකනය"
+    "message": "ඇමුණුම් සමඟ පිළිතුරු අයිකනය"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ගොනු නාම කළු ලැයිස්තුව (glob රටා)"
+    "message": "ගොනු නාමවල කළු ලැයිස්තුව (glob රටා)"
   },
   "uiBlacklistHelp": {
-    "message": "මෙම රටා අතර ඕනෑම එකකට ගැළපෙන නාම ඇති ගොනු කිසිදා ස්වයංක්‍රීයව ඇමුණුම් ලෙස එකතු නොවේ. එක් පේළියකට රටාවක් එකක්. උදාහරණ: *.png, smime.*, *.p7s"
+    "message": "මෙම රටාවලින් ඕනෑම එකකට ගැළපෙන ගොනු කිසිදා ස්වයංක්‍රීයව ඇමුණුම් ලෙස එක් නොවේ. එක් පේළියකට රටාවක්. උදාහරණ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "කළු ලැයිස්තුව නිසා ඇමුණුම් බැහැර නම් අනතුරු ඇඟවීමක් දැනුම් දෙන්න"
+    "message": "කළු ලැයිස්තුව නිසා ඇමුණුම් ඉවත් කළ විට ඇඟවන්න"
+  },
+  "uiDebugHeader": {
+    "message": "උසස්"
+  },
+  "uiDebugLabel": {
+    "message": "ඩිබග් ලොග් කිරීම සක්‍රීය කරන්න"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird සංවර්ධක කොන්සෝලයට විස්තරාත්මක පසුබිම් ලොග් ලියයි. ගැටළු විසඳා අවසන් වූ විට නැවත අක්‍රීය කරන්න."
   },
   "uiSave": {
     "message": "සුරකින්න"
   },
   "uiSaving": {
-    "message": "සුරැකෙමින්…"
+    "message": "සුරැකිමින්…"
   },
   "uiReset": {
-    "message": "පෙරනිමි සඳහා යළි පිහිටුවන්න"
+    "message": "පෙරනිමිවලට යළි සකසන්න"
   },
   "uiSaved": {
     "message": "සුරකින ලදී."
   },
   "uiResetDone": {
-    "message": "යළි පිහිටුවා ඇත."
+    "message": "යළි සකසා ඇත."
   },
   "uiConfirmHeader": {
     "message": "තහවුරු කිරීම"
   },
   "uiConfirmLabel": {
-    "message": "ඇමුණුම් එකතු කිරීමට පෙර අසන්න"
+    "message": "ඇමුණුම් එක් කිරීමට පෙර විමසන්න"
   },
   "uiConfirmHelp": {
-    "message": "ඇමුණුම් ඇතුළත් විය යුතු අවස්ථාවලදී පමණක් කුඩා තහවුරු කවුළුවක් පෙන්වයි. යතුරුපුවරුව: Y හෝ J = ඔව්; N හෝ Esc = නැහැ."
+    "message": "ඇමුණුම් සැබෑවින්ම එක් කරන අවස්ථාවේ පමණක් කුඩා තහවුරු සංවාදයක් පෙනේ. යතුරුපුවරුව: Y හෝ J = ඔව්; N හෝ Esc = නැත."
   },
   "confirmAddOne": {
-    "message": "ඇමුණුම එකතු කරන්න: $1?",
+    "message": "ඇමුණුම එක් කරන්න: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ඇමුණුම් එකතු කරන්න ($1): $2$3?",
+    "message": "ඇමුණුම් ($1) එක් කරන්න: $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -123,13 +132,13 @@
     "message": "ඔව්"
   },
   "confirmNo": {
-    "message": "නැහැ"
+    "message": "නැත"
   },
   "warnBlacklistTitle": {
-    "message": "කළු ලැයිස්තුව මඟින් බැහැර විය"
+    "message": "කළු ලැයිස්තුව නිසා ඉවත් කරන ලදී"
   },
   "warnBlacklistIntro": {
-    "message": "පහත ගොනු ස්වයංක්‍රීයව ඇමුණුම් ලෙස එකතු නොවනු ඇත:"
+    "message": "පහත ගොනු ස්වයංක්‍රීයව ඇමුණුම් ලෙස එකතු නොවේ:"
   },
   "warnColFile": {
     "message": "ගොනුව"
@@ -147,10 +156,10 @@
     "message": "ඔව්"
   },
   "uiConfirmDefaultNo": {
-    "message": "නැහැ"
+    "message": "නැත"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

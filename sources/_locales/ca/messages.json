@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Respondre amb adjunts"
+    "message": "Respondre amb fitxers adjunts"
   },
   "extDescription": {
-    "message": "Inclou automàticament els adjunts originals en les respostes de correu."
+    "message": "Inclou automàticament els adjunts originals a les respostes per correu."
   },
   "composeTitle": {
-    "message": "Respondre amb adjunts"
+    "message": "Respondre amb fitxers adjunts"
   },
   "optionsTitle": {
-    "message": "Respondre amb adjunts — Opcions"
+    "message": "Respondre amb fitxers adjunts — Opcions"
   },
   "confirmTitle": {
-    "message": "Confirmació d'adjunts"
+    "message": "Confirmació dels fitxers adjunts"
   },
   "uiHeader": {
-    "message": "Respondre amb adjunts"
+    "message": "Respondre amb fitxers adjunts"
   },
   "uiNoOptions": {
-    "message": "Actualment no hi ha cap opció per configurar."
+    "message": "Actualment no hi ha opcions per configurar."
   },
   "uiSupport": {
-    "message": "T'agrada aquest complement? Dona suport al projecte amb una petita contribució:"
+    "message": "T'agrada aquest complement? Si us plau, dona'm suport amb una petita contribució:"
   },
   "uiRateATNText": {
     "message": "Si us plau, valora'l a l'ATN"
@@ -30,13 +30,13 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Dona ara"
+    "message": "Fes una donació ara"
   },
   "uiIDonated": {
     "message": "He fet una donació"
   },
   "uiDonateSnoozed": {
-    "message": "Gràcies! L'avís de donació queda ocult durant 90 dies."
+    "message": "Gràcies! L'avís de donació s'ha ocultat durant 90 dies."
   },
   "uiDonateHiddenUntil": {
     "message": "Ocult fins al $1",
@@ -59,7 +59,7 @@
     "message": "Pàgina de GitHub"
   },
   "iconAlt": {
-    "message": "Icona de Respondre amb adjunts"
+    "message": "Icona de Respondre amb fitxers adjunts"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -71,7 +71,16 @@
     "message": "Els fitxers amb noms que coincideixin amb qualsevol d'aquests patrons no s'adjuntaran mai automàticament. Un patró per línia. Exemples: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Avisa si els adjunts queden exclosos per la llista negra"
+    "message": "Avisa si els fitxers adjunts són exclosos per la llista negra"
+  },
+  "uiDebugHeader": {
+    "message": "Avançat"
+  },
+  "uiDebugLabel": {
+    "message": "Activa el registre de depuració"
+  },
+  "uiDebugHelp": {
+    "message": "Escriu registres detallats en segon pla a la consola de desenvolupador del Thunderbird. Torna'l a desactivar quan acabis de solucionar problemes."
   },
   "uiSave": {
     "message": "Desa"
@@ -92,13 +101,13 @@
     "message": "Confirmació"
   },
   "uiConfirmLabel": {
-    "message": "Demana confirmació abans d'afegir adjunts"
+    "message": "Pregunta abans d'afegir fitxers adjunts"
   },
   "uiConfirmHelp": {
     "message": "Només apareix un petit diàleg de confirmació quan realment s'afegiran adjunts. Teclat: Y o J = Sí; N o Esc = No."
   },
   "confirmAddOne": {
-    "message": "Afegir l'adjunt: $1?",
+    "message": "Afegir fitxer adjunt: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -150,7 +159,7 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

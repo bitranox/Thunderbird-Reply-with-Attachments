@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Ka jawaab adigoo wata lifaaqyada"
+    "message": "Ka jawaab lifaaqyo leh"
   },
   "extDescription": {
     "message": "Si toos ah ugu dar lifaaqyadii asalka ahaa jawaabaha iimaylka."
   },
   "composeTitle": {
-    "message": "Ka jawaab adigoo wata lifaaqyada"
+    "message": "Ka jawaab lifaaqyo leh"
   },
   "optionsTitle": {
-    "message": "Ka jawaab adigoo wata lifaaqyada — Ikhtiyaarro"
+    "message": "Ka jawaab lifaaqyo leh — Ikhtiyaarrada"
   },
   "confirmTitle": {
     "message": "Xaqiiji lifaaqyada"
   },
   "uiHeader": {
-    "message": "Ka jawaab adigoo wata lifaaqyada"
+    "message": "Ka jawaab lifaaqyo leh"
   },
   "uiNoOptions": {
-    "message": "Hadda ma jiraan ikhtiyaarro la dejin karo."
+    "message": "Hadda wax ikhtiyaarro la dejiyo ma jiraan."
   },
   "uiSupport": {
-    "message": "Ma jeceshahay kordhin-kan? Fadlan i taageer deeq yar:"
+    "message": "Ma jeceshahay ku-darkan? Fadlan i taageer adigoo bixiya deeq yar:"
   },
   "uiRateATNText": {
     "message": "Fadlan ku qiimee ATN"
@@ -33,13 +33,13 @@
     "message": "Ku deeq hadda"
   },
   "uiIDonated": {
-    "message": "Waan deeqay"
+    "message": "Waan ku deeqay"
   },
   "uiDonateSnoozed": {
-    "message": "Mahadsanid! Digniinta deeqda waxaa la qariyey 90 maalmood."
+    "message": "Mahadsanid! Farriinta deeqda waa la qariyey 90 maalmood."
   },
   "uiDonateHiddenUntil": {
-    "message": "Qarsoon ilaa $1",
+    "message": "La qariyey ilaa $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Muuji deeqda mar kale"
+    "message": "Muuji Ku deeq mar kale"
   },
   "uiDonateRestored": {
-    "message": "Digniinta deeqda mar kale waa muuqata."
+    "message": "Farriinta deeqda mar kale waa muuqata."
   },
   "uiGithubText": {
-    "message": "Haddii aad leedahay warbixin cillad ama su'aalo kale, fadlan booqo boggayga"
+    "message": "Haddii aad qabto warbixin cillado ama su'aalo kale, fadlan booqo"
   },
   "uiGithubLinkLabel": {
     "message": "Bogga GitHub"
   },
   "iconAlt": {
-    "message": "Astaanta Ka jawaab adigoo wata lifaaqyada"
+    "message": "Astaanta Ka jawaab lifaaqyo leh"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Liiska madow ee magacyada faylasha (qaababka glob)"
+    "message": "Liiska mamnuuca magacyada faylasha (qaababka glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Faylasha magacyadoodu la jaanqaadaan mid ka mid ah qaababkan marnaba si toos ah looma lifaaqi doono. Hal qaab xariiq kasta. Tusaalooyin: *.png, smime.*, *.p7s"
+    "message": "Faylal ay magacyadoodu ku ekaadaan mid ka mid ah qaababkan weligood si toos ah looma lifaaqi doono. Hal qaab khadkiiba. Tusaalooyin: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Ka dig haddii lifaaqyada laga reebo liiska madow"
+    "message": "Digniin haddii lifaaqyada laga reebo liiska mamnuuca"
+  },
+  "uiDebugHeader": {
+    "message": "Horumarsan"
+  },
+  "uiDebugLabel": {
+    "message": "Daar diiwaangelinta cillad-raadin"
+  },
+  "uiDebugHelp": {
+    "message": "Waxay qortaa diiwaanno asalka ah oo faahfaahsan kuna jira konsolka horumariyaha ee Thunderbird. Demi mar kale marka aad dhamayso cilad-raadin."
   },
   "uiSave": {
     "message": "Kaydi"
@@ -80,22 +89,22 @@
     "message": "Kaydinaya…"
   },
   "uiReset": {
-    "message": "Ku celi caadadii"
+    "message": "Soo celi dejimaha caadiga ah"
   },
   "uiSaved": {
-    "message": "La kaydiyey."
+    "message": "Waa la kaydiyay."
   },
   "uiResetDone": {
-    "message": "Dib loo dejiyey."
+    "message": "Dib loo dejiyay."
   },
   "uiConfirmHeader": {
     "message": "Xaqiijin"
   },
   "uiConfirmLabel": {
-    "message": "Weydii ka hor inta aan la darin lifaaqyada"
+    "message": "Waydii ka hor inta aadan ku darin lifaaqyada"
   },
   "uiConfirmHelp": {
-    "message": "Sanduuq xaqiijin yar ayaa soo muuqda oo keliya marka lifaaqyo dhab ahaan la dari lahaa. Kiiboodhka: Y ama J = Haa; N ama Esc = Maya."
+    "message": "Daaqad yar oo xaqiijin ah ayaa soo baxaysa oo keliya marka lifaaqyo dhab ahaantii la dari lahaa. Kiiboodh: Y ama J = Haa; N ama Esc = Maya."
   },
   "confirmAddOne": {
     "message": "Ku dar lifaaq: $1?",
@@ -126,7 +135,7 @@
     "message": "Maya"
   },
   "warnBlacklistTitle": {
-    "message": "Laga reebay liiska madow"
+    "message": "Laga reebay liiska mamnuuca"
   },
   "warnBlacklistIntro": {
     "message": "Faylasha soo socda si toos ah looma lifaaqi doono:"
@@ -138,7 +147,7 @@
     "message": "Qaab"
   },
   "warnOk": {
-    "message": "Haye"
+    "message": "OK"
   },
   "uiConfirmDefaultHeader": {
     "message": "Jawaabta caadiga ah"
@@ -150,7 +159,7 @@
     "message": "Maya"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Dukumentiyada:"
+    "message": "Dukumeentiyada:"
   },
   "uiDocsButton": {
-    "message": "Fur Dukumentiyada"
+    "message": "Fur Dukumeentiyada"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

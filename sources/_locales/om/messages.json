@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "Deebii Faayiloota Maxxanfaman Waliin"
+    "message": "Deebii dabalattoota waliin"
   },
   "extDescription": {
-    "message": "Deebii imeelii keessatti faayiloota maxxanfaman duraanii ofumaan dabaluu."
+    "message": "Dabalattoota duraan jiran deebii imeelii keessatti ofumaan dabalti."
   },
   "composeTitle": {
-    "message": "Deebii Faayiloota Maxxanfaman Waliin"
+    "message": "Deebii dabalattoota waliin"
   },
   "optionsTitle": {
-    "message": "Deebii Faayiloota Maxxanfaman Waliin — Filannoowwan"
+    "message": "Deebii dabalattoota waliin — Filannoowwan"
   },
   "confirmTitle": {
-    "message": "Mirkaneessi Faayiloota"
+    "message": "Dabalattoota Mirkaneessi"
   },
   "uiHeader": {
-    "message": "Deebii Faayiloota Maxxanfaman Waliin"
+    "message": "Deebii dabalattoota waliin"
   },
   "uiNoOptions": {
-    "message": "Ammaaf qindaa'ama filannoo hin jiru."
+    "message": "Ammaaf filannoowwan qindaa'amu hin jiran."
   },
   "uiSupport": {
-    "message": "Dabalataa kana ni jaallatta? Mee gumaacha xiqqoon na deeggara:"
+    "message": "Add-on kana ni jaallatta? Mee gumaacha xiqqoon na deeggarraa:"
   },
   "uiRateATNText": {
-    "message": "Mee ATN irratti madaala kenni"
+    "message": "Mee ATN irratti madaalaa"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Amma gumaachi"
+    "message": "Arjoomi amma"
   },
   "uiIDonated": {
-    "message": "Ani gumaadhe"
+    "message": "Arjoomeera"
   },
   "uiDonateSnoozed": {
-    "message": "Galatoomi! Yaadachiisni gumaachaa guyyaa 90f dhokate."
+    "message": "Galatoomi! Yaadachiisni arjoomaa guyyaa 90f dhokate."
   },
   "uiDonateHiddenUntil": {
-    "message": "Hammas $1tti dhokate",
+    "message": "Hanga $1tti dhokatee",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Gumaachi irra deebi'ee mul'isi"
+    "message": "Arjooma irra deebi'i agarsiisi"
   },
   "uiDonateRestored": {
-    "message": "Yaadachiisni gumaachaa irra deebi'ee ni mul'ata."
+    "message": "Yaadachiisni arjoomaa irra deebi'ee mul'ata."
   },
   "uiGithubText": {
-    "message": "Gabaasa dogoggoraa yookaan gaaffiiwwan birooaf, mee fuula koo daawwadhaa"
+    "message": "Gabaasa dogoggoraa yookaan gaafilee birootiif, mee fuula koo daawwadhaa"
   },
   "uiGithubLinkLabel": {
     "message": "Fuula GitHub"
   },
   "iconAlt": {
-    "message": "Ikoonaa Deebii Faayiloota Maxxanfaman Waliin"
+    "message": "Ikoona Deebii dabalattoota waliin"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Tarree ugguraa maqaa faayilaa (pataanota glob)"
+    "message": "Tarree dhorkaa maqaa faayiloota (pataanoota glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Faayiloonni maqaan isaanii pataanota kanniin keessaa kamiyyuu wajjin yoo walsimu, ofumaan hin maxxanfaman. Paatarna tokko sarara tokkotti. Fakkeenya: *.png, smime.*, *.p7s"
+    "message": "Faayiloonni maqaan isaanii pataanoota kanneen keessaa kamiyyuu waliin walsimu ofumaan hin dabalaman. Paatarnoon tokko sarara tokko irratti. Fakkeenya: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Faayiloonni maxxanfaman tarree ugguraatiin yoo alaa kaa'aman akeekkachiisi"
+    "message": "Dabalattoonni tarree dhorkaan haquaman yoo ta’e akeekkachiisi"
+  },
+  "uiDebugHeader": {
+    "message": "Olaanaa"
+  },
+  "uiDebugLabel": {
+    "message": "Galmeessa debug dandeessisi"
+  },
+  "uiDebugHelp": {
+    "message": "Galmeewwan duubaa bal'aa gara koonsolii misoomaa Thunderbirditti barreessa. Rakkoo hiikuu xumurtanii booda irra deebi'aa dhaamsaa."
   },
   "uiSave": {
     "message": "Olkaa'i"
@@ -80,7 +89,7 @@
     "message": "Olkaa'aa…"
   },
   "uiReset": {
-    "message": "Akka duraanitti deebisi"
+    "message": "Gatii duraanii deebisi"
   },
   "uiSaved": {
     "message": "Olkaa'ame."
@@ -92,13 +101,13 @@
     "message": "Mirkaneessa"
   },
   "uiConfirmLabel": {
-    "message": "Faayiloota maxxanfaman dabaluu dura gaafadhu"
+    "message": "Dabalattoota dabaluu dura gaafadhu"
   },
   "uiConfirmHelp": {
-    "message": "Diyyaalogi xiqqaan mirkaneessaa faayiloonni maxxanfaman dhugumaan yoo dabalaman qofa ni mul'ata. Kiiboordii: Y yookaan J = Eeyyee; N yookaan Esc = Lakki."
+    "message": "Dhiyaanni mirkaneessaa xiqqoon dabalattoonni dhugumaan dabalaman qofa irratti mul'ata. Kiibordii: Y yookaan J = Eeyyee; N yookaan Esc = Lakki."
   },
   "confirmAddOne": {
-    "message": "Faayila maxxanfamaa dabaluu: $1?",
+    "message": "Dabalataa dabaluu: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Faayiloota maxxanfaman ($1) dabaluu: $2$3?",
+    "message": "Dabalattoota dabaluu ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,22 +135,22 @@
     "message": "Lakki"
   },
   "warnBlacklistTitle": {
-    "message": "Tarree ugguraatiin alaa kaa'ame"
+    "message": "Tarree dhorkaatiin haquaman"
   },
   "warnBlacklistIntro": {
-    "message": "Faayiloonni armaan gadii ofumaan hin maxxanfaman:"
+    "message": "Faayiloonni armaan gadii ofumaan hin dabalaman:"
   },
   "warnColFile": {
     "message": "Faayila"
   },
   "warnColPattern": {
-    "message": "Paatarna"
+    "message": "Paatarnii"
   },
   "warnOk": {
     "message": "Tole"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Deebii durtii"
+    "message": "Deebii duraanii"
   },
   "uiConfirmDefaultYes": {
     "message": "Eeyyee"
@@ -150,7 +159,7 @@
     "message": "Lakki"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Dokumantii:"
+    "message": "Dookumeenteeshinii:"
   },
   "uiDocsButton": {
-    "message": "Dokumantii bani"
+    "message": "Dookumeenteeshinii bani"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

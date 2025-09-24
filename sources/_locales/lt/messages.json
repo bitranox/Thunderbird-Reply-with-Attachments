@@ -3,7 +3,7 @@
     "message": "Atsakyti su priedais"
   },
   "extDescription": {
-    "message": "Automatiškai prisega originalius priedus atsakant į el. laiškus."
+    "message": "Automatiškai įtraukti originalius priedus į el. laiškų atsakymus."
   },
   "composeTitle": {
     "message": "Atsakyti su priedais"
@@ -12,13 +12,13 @@
     "message": "Atsakyti su priedais — Parinktys"
   },
   "confirmTitle": {
-    "message": "Priedų patvirtinimas"
+    "message": "Patvirtinti priedus"
   },
   "uiHeader": {
     "message": "Atsakyti su priedais"
   },
   "uiNoOptions": {
-    "message": "Šiuo metu nėra konfigūruojamų parinkčių."
+    "message": "Šiuo metu nėra parinkčių, kurias būtų galima konfigūruoti."
   },
   "uiSupport": {
     "message": "Patinka šis priedas? Paremkite mane nedidele auka:"
@@ -36,7 +36,7 @@
     "message": "Paaukojau"
   },
   "uiDonateSnoozed": {
-    "message": "Ačiū! Aukojimo priminimas paslėptas 90 dienų."
+    "message": "Ačiū! Aukojimo raginimas paslėptas 90 dienų."
   },
   "uiDonateHiddenUntil": {
     "message": "Paslėpta iki $1",
@@ -47,7 +47,7 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Vėl rodyti „Paaukoti“"
+    "message": "Rodyti „Paaukoti“ dar kartą"
   },
   "uiDonateRestored": {
     "message": "Aukojimo raginimas vėl matomas."
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Failų vardų juodasis sąrašas (glob šablonai)"
+    "message": "Failų pavadinimų juodasis sąrašas (glob šablonai)"
   },
   "uiBlacklistHelp": {
-    "message": "Failai, kurių vardai atitinka bet kurį iš šių šablonų, niekada nebus automatiškai prisegami. Po vieną šabloną eilutėje. Pavyzdžiai: *.png, smime.*, *.p7s"
+    "message": "Failai, kurių pavadinimai atitinka bet kurį iš šių šablonų, niekada nebus pridedami automatiškai. Po vieną šabloną eilutėje. Pavyzdžiai: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Įspėti, jei priedai atmetami pagal juodąjį sąrašą"
+    "message": "Įspėti, jei priedai neįtraukiami dėl juodojo sąrašo"
+  },
+  "uiDebugHeader": {
+    "message": "Išplėstiniai"
+  },
+  "uiDebugLabel": {
+    "message": "Įjungti derinimo registravimą"
+  },
+  "uiDebugHelp": {
+    "message": "Rašo išsamius fono žurnalus į Thunderbird kūrėjo konsolę. Baigę trikčių šalinimą, vėl išjunkite."
   },
   "uiSave": {
     "message": "Išsaugoti"
@@ -80,7 +89,7 @@
     "message": "Išsaugoma…"
   },
   "uiReset": {
-    "message": "Atkurti numatytuosius"
+    "message": "Atkurti numatytąsias reikšmes"
   },
   "uiSaved": {
     "message": "Išsaugota."
@@ -92,13 +101,13 @@
     "message": "Patvirtinimas"
   },
   "uiConfirmLabel": {
-    "message": "Klausti prieš prisegant priedus"
+    "message": "Klausti prieš pridedant priedus"
   },
   "uiConfirmHelp": {
-    "message": "Nedidelis patvirtinimo langas pasirodo tik tada, kai priedai iš tiesų būtų prisegti. Klaviatūra: Y arba J = Taip; N arba Esc = Ne."
+    "message": "Nedidelis patvirtinimo dialogas pasirodys tik tada, kai priedai iš tiesų būtų pridėti. Klaviatūra: Y arba J = Taip; N arba Esc = Ne."
   },
   "confirmAddOne": {
-    "message": "Prisegti priedą: $1?",
+    "message": "Pridėti priedą: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Prisegti priedus ($1): $2$3?",
+    "message": "Pridėti priedus ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -129,7 +138,7 @@
     "message": "Neįtraukta dėl juodojo sąrašo"
   },
   "warnBlacklistIntro": {
-    "message": "Šie failai nebus automatiškai prisegami:"
+    "message": "Šie failai nebus pridedami automatiškai:"
   },
   "warnColFile": {
     "message": "Failas"
@@ -150,7 +159,7 @@
     "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokumentacija:"
   },
   "uiDocsButton": {
-    "message": "Atverti dokumentaciją"
+    "message": "Atidaryti dokumentaciją"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

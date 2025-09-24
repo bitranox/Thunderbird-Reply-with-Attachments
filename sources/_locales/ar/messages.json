@@ -3,7 +3,7 @@
     "message": "الرد مع المرفقات"
   },
   "extDescription": {
-    "message": "إدراج المرفقات الأصلية تلقائيًا في ردود البريد الإلكتروني."
+    "message": "إدراج المرفقات الأصلية تلقائياً في ردود البريد الإلكتروني."
   },
   "composeTitle": {
     "message": "الرد مع المرفقات"
@@ -18,7 +18,7 @@
     "message": "الرد مع المرفقات"
   },
   "uiNoOptions": {
-    "message": "لا توجد حاليًا أي خيارات للإعداد."
+    "message": "لا توجد حالياً أي خيارات لإعدادها."
   },
   "uiSupport": {
     "message": "هل أعجبك هذا الملحق؟ يرجى دعمي بمساهمة صغيرة:"
@@ -36,7 +36,7 @@
     "message": "لقد تبرعت"
   },
   "uiDonateSnoozed": {
-    "message": "شكرًا لك! تم إخفاء مطالبة التبرع لمدة 90 يومًا."
+    "message": "شكراً لك! تم إخفاء رسالة التبرع لمدة 90 يوماً."
   },
   "uiDonateHiddenUntil": {
     "message": "مخفي حتى $1",
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "إظهار التبرع مرة أخرى"
+    "message": "إظهار رسالة التبرع مرة أخرى"
   },
   "uiDonateRestored": {
-    "message": "أصبحت مطالبة التبرع مرئية مرة أخرى."
+    "message": "أصبحت رسالة التبرع مرئية مرة أخرى."
   },
   "uiGithubText": {
-    "message": "للإبلاغ عن الأخطاء أو للاستفسارات الأخرى، يرجى زيارة"
+    "message": "للإبلاغ عن الأخطاء أو الاستفسارات الأخرى، يرجى زيارة"
   },
   "uiGithubLinkLabel": {
     "message": "صفحة GitHub"
@@ -68,37 +68,46 @@
     "message": "القائمة السوداء لأسماء الملفات (أنماط glob)"
   },
   "uiBlacklistHelp": {
-    "message": "لن تُرفق تلقائيًا أي ملفات تطابق أسماؤها أيًا من هذه الأنماط. نمط واحد في كل سطر. أمثلة: *.png, smime.*, *.p7s"
+    "message": "الملفات التي تطابق أسماؤها أي من هذه الأنماط لن يتم إرفاقها تلقائياً. نمط واحد لكل سطر. أمثلة: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "التحذير عند استبعاد المرفقات بواسطة القائمة السوداء"
+    "message": "تحذير إذا تم استبعاد المرفقات بواسطة القائمة السوداء"
+  },
+  "uiDebugHeader": {
+    "message": "خيارات متقدمة"
+  },
+  "uiDebugLabel": {
+    "message": "تمكين تسجيل التصحيح"
+  },
+  "uiDebugHelp": {
+    "message": "يكتب سجلات خلفية مفصلة في وحدة تحكم المطور في Thunderbird. عطّلها مرة أخرى عند الانتهاء من استكشاف الأخطاء وإصلاحها."
   },
   "uiSave": {
     "message": "حفظ"
   },
   "uiSaving": {
-    "message": "جارٍ الحفظ…"
+    "message": "جاري الحفظ…"
   },
   "uiReset": {
-    "message": "إعادة الضبط إلى القيم الافتراضية"
+    "message": "إعادة التعيين إلى الإعدادات الافتراضية"
   },
   "uiSaved": {
     "message": "تم الحفظ."
   },
   "uiResetDone": {
-    "message": "تمت إعادة الضبط."
+    "message": "تمت إعادة التعيين."
   },
   "uiConfirmHeader": {
-    "message": "التأكيد"
+    "message": "تأكيد"
   },
   "uiConfirmLabel": {
-    "message": "اطلب التأكيد قبل إضافة المرفقات"
+    "message": "طلب التأكيد قبل إضافة المرفقات"
   },
   "uiConfirmHelp": {
-    "message": "ستظهر نافذة تأكيد صغيرة فقط عندما تكون هناك مرفقات ستُضاف فعليًا. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
+    "message": "سيظهر مربع تأكيد صغير فقط عندما تكون هناك مرفقات ستضاف فعلاً. لوحة المفاتيح: Y أو J = نعم؛ N أو Esc = لا."
   },
   "confirmAddOne": {
-    "message": "إضافة المرفق: $1؟",
+    "message": "إضافة مرفق: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "لا"
   },
   "warnBlacklistTitle": {
-    "message": "تم الاستبعاد بواسطة القائمة السوداء"
+    "message": "مستبعد بواسطة القائمة السوداء"
   },
   "warnBlacklistIntro": {
-    "message": "لن تُرفق الملفات التالية تلقائيًا:"
+    "message": "لن يتم إرفاق الملفات التالية تلقائياً:"
   },
   "warnColFile": {
     "message": "الملف"
@@ -150,7 +159,7 @@
     "message": "لا"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "التوثيق:"
   },
   "uiDocsButton": {
-    "message": "افتح الوثائق"
+    "message": "فتح التوثيق"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

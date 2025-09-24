@@ -1,21 +1,21 @@
 {
   "extName": {
-    "message": "Beantwoord met aanhegsels"
+    "message": "Antwoord met Aanhegsels"
   },
   "extDescription": {
-    "message": "Sluit oorspronklike aanhegsels outomaties in by e-pos-antwoorde."
+    "message": "Sluit oorspronklike aanhegsels outomaties in by e-posantwoorde."
   },
   "composeTitle": {
-    "message": "Beantwoord met aanhegsels"
+    "message": "Antwoord met Aanhegsels"
   },
   "optionsTitle": {
-    "message": "Beantwoord met aanhegsels — Opsies"
+    "message": "Antwoord met Aanhegsels — Opsies"
   },
   "confirmTitle": {
-    "message": "Bevestig aanhegsels"
+    "message": "Bevestig Aanhegsels"
   },
   "uiHeader": {
-    "message": "Beantwoord met aanhegsels"
+    "message": "Antwoord met Aanhegsels"
   },
   "uiNoOptions": {
     "message": "Daar is tans geen opsies om te konfigureer nie."
@@ -24,7 +24,7 @@
     "message": "Hou jy van hierdie byvoeging? Steun my asseblief met ’n klein bydrae:"
   },
   "uiRateATNText": {
-    "message": "Gee asseblief ’n gradering op ATN"
+    "message": "Beoordeel asseblief op ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,7 +36,7 @@
     "message": "Ek het geskenk"
   },
   "uiDonateSnoozed": {
-    "message": "Dankie! Skenkingsboodskap is vir 90 dae versteek."
+    "message": "Dankie! Skenkingskennisgewing vir 90 dae versteek."
   },
   "uiDonateHiddenUntil": {
     "message": "Versteek tot $1",
@@ -47,10 +47,10 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Wys Skenk weer"
+    "message": "Wys skenkingskennisgewing weer"
   },
   "uiDonateRestored": {
-    "message": "Skenkingsboodskap is weer sigbaar."
+    "message": "Skenkingskennisgewing is weer sigbaar."
   },
   "uiGithubText": {
     "message": "Vir foutverslae of ander navrae, besoek asseblief my"
@@ -59,7 +59,7 @@
     "message": "GitHub-bladsy"
   },
   "iconAlt": {
-    "message": "Beantwoord met aanhegsels-ikoon"
+    "message": "Antwoord met Aanhegsels-ikoon"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Swartlys van lêername (glob-patrone)"
   },
   "uiBlacklistHelp": {
-    "message": "Lêers wie se name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
+    "message": "Lêers waarvan die name met enige van hierdie patrone ooreenstem, sal nooit outomaties aangeheg word nie. Een patroon per reël. Voorbeelde: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Waarsku as aanhegsels deur die swartlys uitgesluit word"
+  },
+  "uiDebugHeader": {
+    "message": "Gevorderd"
+  },
+  "uiDebugLabel": {
+    "message": "Aktiveer ontfoutingslogboeke"
+  },
+  "uiDebugHelp": {
+    "message": "Skryf gedetailleerde agtergrondlogboeke na Thunderbird se ontwikkelaarskonsole. Deaktiveer dit weer wanneer jy klaar is met foutoplossing."
   },
   "uiSave": {
     "message": "Stoor"
@@ -80,13 +89,13 @@
     "message": "Stoor…"
   },
   "uiReset": {
-    "message": "Herstel na verstek"
+    "message": "Stel terug na verstekwaardes"
   },
   "uiSaved": {
     "message": "Gestoor."
   },
   "uiResetDone": {
-    "message": "Herstel."
+    "message": "Teruggestel."
   },
   "uiConfirmHeader": {
     "message": "Bevestiging"
@@ -126,7 +135,7 @@
     "message": "Nee"
   },
   "warnBlacklistTitle": {
-    "message": "Deur swartlys uitgesluit"
+    "message": "Uitgesluit deur swartlys"
   },
   "warnBlacklistIntro": {
     "message": "Die volgende lêers sal nie outomaties aangeheg word nie:"
@@ -150,7 +159,7 @@
     "message": "Nee"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokumentasie:"
   },
   "uiDocsButton": {
-    "message": "Maak dokumentasie oop"
+    "message": "Open Dokumentasie"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Goşundylary bilen jogap bermek"
+    "message": "Goşundylary bilen jogap ber"
   },
   "extDescription": {
-    "message": "E-poçta jogaplaryna asyl goşundylary awtomatiki goşýar."
+    "message": "E-poçta jogaplarynda asyl goşundylary awtomatiki goşýar."
   },
   "composeTitle": {
-    "message": "Goşundylary bilen jogap bermek"
+    "message": "Goşundylary bilen jogap ber"
   },
   "optionsTitle": {
-    "message": "Goşundylary bilen jogap bermek — Sazlamalar"
+    "message": "Goşundylary bilen jogap ber — Sazlamalar"
   },
   "confirmTitle": {
-    "message": "Goşundylary tassyklamak"
+    "message": "Goşundylary tassykla"
   },
   "uiHeader": {
-    "message": "Goşundylary bilen jogap bermek"
+    "message": "Goşundylary bilen jogap ber"
   },
   "uiNoOptions": {
-    "message": "Häzirki wagtda sazlap boljak sazlamalar ýok."
+    "message": "Häzirki wagtda sazlamak üçin saýlamalar ýok."
   },
   "uiSupport": {
-    "message": "Bu goşundy hoşunuza gelýärmi? Meni kiçi bir goşant bilen goldamagyňyzy haýyş edýärin:"
+    "message": "Bu goşundyny haladyňyzmy? Kiçi goşant bilen meni goldaň:"
   },
   "uiRateATNText": {
     "message": "ATN-de baha beriň"
@@ -30,16 +30,16 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Häzir bagyş ediň"
+    "message": "Indi bagyşlaň"
   },
   "uiIDonated": {
     "message": "Men bagyş etdim"
   },
   "uiDonateSnoozed": {
-    "message": "Sag boluň! Bagyş etme duýduryşy 90 gün üçin gizlendi."
+    "message": "Sag boluň! Bagyş bildirişi 90 günläp gizlendi."
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 çenli gizlendi",
+    "message": "$1 çenli gizlenýär",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Bagyş etme duýduryşyny ýene görkez"
+    "message": "Bagyş bildirişini ýene görkez"
   },
   "uiDonateRestored": {
-    "message": "Bagyş etme duýduryşy ýene görünýär."
+    "message": "Bagyş bildirişi ýene görünýär."
   },
   "uiGithubText": {
-    "message": "Kemçilikler barada hasabatlar ýa-da beýleki soraglar üçin, meniň"
+    "message": "Näsazlyk hasabatlary ýa-da beýleki soraglar üçin meniň"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub sahypam"
   },
   "iconAlt": {
-    "message": "Goşundylary bilen jogap bermek nyşany"
+    "message": "Goşundylary bilen jogap ber nyşany"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Faýl atlarynyň gara sanawy (glob nagyşlary)"
   },
   "uiBlacklistHelp": {
-    "message": "Atlary bu nagyşlaryň islendigine laýyk gelýän faýllar hiç haçan awtomatiki goşulmaz. Her setire bir nagyş. Mysallar: *.png, smime.*, *.p7s"
+    "message": "Atlary şu nagyşlaryň islendigine laýyk gelýän faýllar hiç haçan awtomatiki goşulmaz. Her setire bir nagyş. Mysallar: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Goşundylar gara sanaw bilen çykarylsa, duýduryş ber"
+    "message": "Goşundylar gara sanaw boýunça çykarylsa, duýduryş ber"
+  },
+  "uiDebugHeader": {
+    "message": "Ösen"
+  },
+  "uiDebugLabel": {
+    "message": "Düzediş ýazgysyny aç"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird ösüşçi konsolyna jikme-jik fon ýazgylaryny ýazýar. Näsazlygy aradan aýyrmagy gutaranyňyzdan soň gaýtadan öçüriň."
   },
   "uiSave": {
     "message": "Sakla"
@@ -80,22 +89,22 @@
     "message": "Saklanýar…"
   },
   "uiReset": {
-    "message": "Deslapky ýagdaýyna gaýtar"
+    "message": "Deslapky sazlamalara täzeden goý"
   },
   "uiSaved": {
     "message": "Saklandy."
   },
   "uiResetDone": {
-    "message": "Gaýtaryldy."
+    "message": "Täzeden goýuldy."
   },
   "uiConfirmHeader": {
-    "message": "Tassyklama"
+    "message": "Tassyklaýyş"
   },
   "uiConfirmLabel": {
-    "message": "Goşundylar goşulmazdan öň sora"
+    "message": "Goşundylar goşulmazdan ozal sora"
   },
   "uiConfirmHelp": {
-    "message": "Kiçi bir tassyklama dialogy diňe goşundylar hakykatdanam goşuljak bolanda peýda bolýar. Klawiatura: Y ýa-da J = Hawa; N ýa-da Esc = Ýok."
+    "message": "Goşundylar hakykatdanam goşuljak bolnanda diňe kiçi tassyklaýyş penjiräsi peýda bolýar. Klawiatura: Y ýa-da J = Hawa; N ýa-da Esc = Ýok."
   },
   "confirmAddOne": {
     "message": "Goşundy goşulsynmy: $1?",
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Goşundylary goşulsynmy ($1): $2$3?",
+    "message": "Goşundylar goşulsynmy ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,7 +135,7 @@
     "message": "Ýok"
   },
   "warnBlacklistTitle": {
-    "message": "Gara sanaw sebäpli çykaryldy"
+    "message": "Gara sanaw boýunça çykaryldy"
   },
   "warnBlacklistIntro": {
     "message": "Aşakdaky faýllar awtomatiki goşulmaz:"
@@ -138,7 +147,7 @@
     "message": "Nagyş"
   },
   "warnOk": {
-    "message": "OK"
+    "message": "Bolýar"
   },
   "uiConfirmDefaultHeader": {
     "message": "Deslapky jogap"
@@ -150,7 +159,7 @@
     "message": "Ýok"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Gollanma:"
+    "message": "Resminamalar:"
   },
   "uiDocsButton": {
-    "message": "Gollanmany aç"
+    "message": "Resminamalary aç"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

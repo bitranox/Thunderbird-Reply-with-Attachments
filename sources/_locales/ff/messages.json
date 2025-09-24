@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Jaabo e Tokkitaaji"
+    "message": "Jaabu e Piije Jonteeji"
   },
   "extDescription": {
-    "message": "Ɓeydu tokkitaaji ɗii e jaabawuuji imeel e jaajol."
+    "message": "Naatnu piije jonteeji aslii e jaabuuji imeel e jaajol."
   },
   "composeTitle": {
-    "message": "Jaabo e Tokkitaaji"
+    "message": "Jaabu e Piije Jonteeji"
   },
   "optionsTitle": {
-    "message": "Jaabo e Tokkitaaji — Cuɓe"
+    "message": "Jaabu e Piije Jonteeji — Cuɓe"
   },
   "confirmTitle": {
-    "message": "Teeŋtin tokkitaaji"
+    "message": "Teeŋtin Piije Jonteeji"
   },
   "uiHeader": {
-    "message": "Jaabo e Tokkitaaji"
+    "message": "Jaabu e Piije Jonteeji"
   },
   "uiNoOptions": {
-    "message": "Alaa cuɓe jooni ngam teeltude."
+    "message": "Alaa cuɓe ngoodi jooni ngam teeltaade."
   },
   "uiSupport": {
-    "message": "Haatu-maa ngol ɓeydital? Tiiɗno wallu am e jokkondiral boowol:"
+    "message": "Aɗa yiɗi ɓeydital ngol? Tiiɗno ballal am e jokkondiral ɓeɗɗu:"
   },
   "uiRateATNText": {
-    "message": "Tiiɗno miijtoo ɗum e ATN"
+    "message": "Tiiɗno jeytu e ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,13 +33,13 @@
     "message": "Jokkondir jooni"
   },
   "uiIDonated": {
-    "message": "Mi jokkondiri"
+    "message": "Mi jokkondii"
   },
   "uiDonateSnoozed": {
-    "message": "A jaaraama! Tinndol jokkondiral suuɗii haa balɗe 90."
+    "message": "A jaaraama! Tintinol jokkondiral ngal suuɗi 90 balɗe."
   },
   "uiDonateHiddenUntil": {
-    "message": "Suuɗii haa $1",
+    "message": "Suuɗi haa $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Hollu jokkondiral kadi"
+    "message": "Hollu Jokkondir kadi"
   },
   "uiDonateRestored": {
-    "message": "Tinndol jokkondiral ngol yiyii kadi."
+    "message": "Tintinol jokkondiral ngal ngoodi e yeeso kadi."
   },
   "uiGithubText": {
-    "message": "Ngam jaŋde paltooje walla naamne goɗɗe, tiiɗno yillo hello am"
+    "message": "Ngam jaŋtude juumre walla naamnugo goɗɗe, tiiɗno yillo am"
   },
   "uiGithubLinkLabel": {
-    "message": "Hello GitHub"
+    "message": "Helloore GitHub"
   },
   "iconAlt": {
-    "message": "Maankonol Jaabo e Tokkitaaji"
+    "message": "Maandel Jaabu e Piije Jonteeji"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Doggal inndeeji fiilde daaƴaaɗi (martoore glob)"
+    "message": "Doggol inɗe fiilde (patern glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fiilde ɗe inndeeji mumen cooɗii e kala ɗee martoore ɗee, ɓe tokkitaaka e jaajol hay sahaa. Martoo gooto e darol. Namunaaji: *.png, smime.*, *.p7s"
+    "message": "Fiilde ɗe inɗe mum ɗe jaaɓii e hay patern ɗii maa hoto ɓeydaa e jaajol. Patern gooto kala e calol. Misal: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Reentu so tokkitaaji daaƴe e doggol daaƴngal"
+    "message": "Hirnito so piije jonteeji ko ittoree e doggol ndee"
+  },
+  "uiDebugHeader": {
+    "message": "Ceeɓtungal"
+  },
+  "uiDebugLabel": {
+    "message": "Hurmin log ɗeebugol"
+  },
+  "uiDebugHelp": {
+    "message": "Ina winndu log cikkitiɗe to konsole ɗeveloper Thunderbird. Ñifto ɗum kadi so a gasii ñawndude caɗe."
   },
   "uiSave": {
     "message": "Danndu"
   },
   "uiSaving": {
-    "message": "Nana danndu…"
+    "message": "Nana danndoo…"
   },
   "uiReset": {
-    "message": "Artir to cuɓe goowaaɗi"
+    "message": "Firlit to goowaaɗe"
   },
   "uiSaved": {
     "message": "Danndaama."
   },
   "uiResetDone": {
-    "message": "Artirtaama."
+    "message": "Firlitaama."
   },
   "uiConfirmHeader": {
     "message": "Teeŋtingol"
   },
   "uiConfirmLabel": {
-    "message": "Naamno hade ɓeydu tokkitaaji"
+    "message": "Naamno hade ɓeydude piije jonteeji"
   },
   "uiConfirmHelp": {
-    "message": "Henorde teeŋtingol toŋngol arii tan so tokkitaaji maa ɓeyduu. Taɓɓirde: Y walla J = Eey; N walla Esc = Alaa."
+    "message": "Henorde teeŋtingol ɓiiɗɗo maa yiya tan so piije jonteeji maa ɓeydaa. Taabal: Y walla J = Eey; N walla Esc = Alaa."
   },
   "confirmAddOne": {
-    "message": "Ɓeydu tokkital: $1?",
+    "message": "Ɓeydu pije jonte: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ɓeydu tokkitaaji ($1): $2$3?",
+    "message": "Ɓeydu piije jonteeji ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,22 +135,22 @@
     "message": "Alaa"
   },
   "warnBlacklistTitle": {
-    "message": "Daaƴe e doggol daaƴngal"
+    "message": "Ittaama e doggol boobirde"
   },
   "warnBlacklistIntro": {
-    "message": "Fiilde ɗee ɗi ndii wonaa ɓe tokkitaaka e jaajol:"
+    "message": "Fiilde ɗee maa hoto ɓeydaa e jaajol:"
   },
   "warnColFile": {
     "message": "Fiilde"
   },
   "warnColPattern": {
-    "message": "Martoore"
+    "message": "Patern"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Jaabawol goowaaɗo"
+    "message": "Jaabu goowal"
   },
   "uiConfirmDefaultYes": {
     "message": "Eey"
@@ -150,7 +159,7 @@
     "message": "Alaa"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokumente:"
   },
   "uiDocsButton": {
-    "message": "Uddit dokumente"
+    "message": "Uddit Dokumente"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

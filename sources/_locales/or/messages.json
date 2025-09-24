@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "ସଂଲଗ୍ନ ସହିତ ଉତ୍ତର"
+    "message": "ସଂଲଗ୍ନ ସହିତ ପ୍ରତିଉତ୍ତର"
   },
   "extDescription": {
-    "message": "ଇମେଲ ଉତ୍ତରରେ ମୂଳ ସଂଲଗ୍ନଗୁଡିକୁ ସ୍ୱୟଂଚାଳିତଭାବେ ସମ୍ମିଳିତ କରନ୍ତୁ।"
+    "message": "ଇମେଲ୍ ପ୍ରତିଉତ୍ତରରେ ମୂଳ ସଂଲଗ୍ନଗୁଡ଼ିକୁ ସ୍ୱୟଂଚାଳିତଭାବେ ସମ୍ମିଳିତ କରେ।"
   },
   "composeTitle": {
-    "message": "ସଂଲଗ୍ନ ସହିତ ଉତ୍ତର"
+    "message": "ସଂଲଗ୍ନ ସହିତ ପ୍ରତିଉତ୍ତର"
   },
   "optionsTitle": {
-    "message": "ସଂଲଗ୍ନ ସହିତ ଉତ୍ତର — ବିକଳ୍ପ"
+    "message": "ସଂଲଗ୍ନ ସହିତ ପ୍ରତିଉତ୍ତର — ବିକଳ୍ପ"
   },
   "confirmTitle": {
     "message": "ସଂଲଗ୍ନ ନିଶ୍ଚିତକରଣ"
   },
   "uiHeader": {
-    "message": "ସଂଲଗ୍ନ ସହିତ ଉତ୍ତର"
+    "message": "ସଂଲଗ୍ନ ସହିତ ପ୍ରତିଉତ୍ତର"
   },
   "uiNoOptions": {
     "message": "ବର୍ତ୍ତମାନ ସଜାଇବା ପାଇଁ କୌଣସି ବିକଳ୍ପ ନାହିଁ।"
   },
   "uiSupport": {
-    "message": "ଆପଣଙ୍କୁ ଏହି ଆଡ଼-ଅନ୍ ଭଲ ଲାଗିଲା କି? ଦୟାକରି ଛୋଟ ଏକ ଅନୁଦାନରେ ମୋତେ ସହଯୋଗ କରନ୍ତୁ:"
+    "message": "ଏହି ଆଡ଼-ଅନ୍ ଆପଣଙ୍କୁ ଭଲ ଲାଗିଲା କି? ଦୟାକରି ଛୋଟ ଅନୁଦାନ ସହିତ ମୋତେ ସମର୍ଥନ କରନ୍ତୁ:"
   },
   "uiRateATNText": {
-    "message": "ଦୟାକରି ATNରେ ମୂଲ୍ୟାୟନ କରନ୍ତୁ"
+    "message": "ଦୟାକରି ATN ରେ ମୂଲ୍ୟାୟନ କରନ୍ତୁ"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,10 +36,10 @@
     "message": "ମୁଁ ଦାନ କରିଛି"
   },
   "uiDonateSnoozed": {
-    "message": "ଧନ୍ୟବାଦ! ଦାନ ସ୍ମରଣ ୯୦ ଦିନ ପାଇଁ ଲୁଚାଇ ଦିଆଗଲା।"
+    "message": "ଧନ୍ୟବାଦ! ଦାନ ପ୍ରମ୍ପ୍ଟ 90 ଦିନ ପାଇଁ ଲୁଚାଇ ରଖାଯାଇଛି।"
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 ପର୍ଯ୍ୟନ୍ତ ଲୁଚାଇ ରହିବ",
+    "message": "$1 ପର୍ଯ୍ୟନ୍ତ ଲୁଚାଇ ରଖାଯାଇଛି",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,46 +47,55 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "ଦାନ ଆହ୍ୱାନକୁ ପୁନି ଦେଖାନ୍ତୁ"
+    "message": "ଦାନ ପୁନଃ ଦେଖାନ୍ତୁ"
   },
   "uiDonateRestored": {
-    "message": "ଦାନ ଆହ୍ୱାନ ପୁନର୍ବାର ଦେଖାଯାଉଛି।"
+    "message": "ଦାନ ପ୍ରମ୍ପ୍ଟ ପୁନଃ ଦୃଶ୍ୟମାନ ହେଲା।"
   },
   "uiGithubText": {
-    "message": "ବଗ୍ ରିପୋର୍ଟ କିମ୍ବା ଅନ୍ୟ ପ୍ରଶ୍ନ ପାଇଁ, ଦୟାକରି ମୋର"
+    "message": "ତ୍ରୁଟି ରିପୋର୍ଟ କିମ୍ବା ଅନ୍ୟ ପ୍ରଶ୍ନ ପାଇଁ, ଦୟାକରି ମୋର"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub ପୃଷ୍ଠା"
   },
   "iconAlt": {
-    "message": "ସଂଲଗ୍ନ ସହିତ ଉତ୍ତର ଆଇକନ୍"
+    "message": "ସଂଲଗ୍ନ ସହିତ ପ୍ରତିଉତ୍ତର ଆଇକନ୍"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ଫାଇଲନାମର କଳା-ତାଲିକା (glob ପ୍ୟାଟର୍ନ)"
+    "message": "ଫାଇଲ୍ ନାମର କଳା ସୂଚୀ (glob ପ୍ୟାଟର୍ନଗୁଡ଼ିକ)"
   },
   "uiBlacklistHelp": {
-    "message": "ଏହି ପ୍ୟାଟର୍ନଗୁଡିକ ମଧ୍ୟରୁ କୌଣସି ସହ ନାମ ମେଳିଥିବା ଫାଇଲଗୁଡିକ କେବେମଧ୍ୟ ସ୍ୱୟଂଚାଳିତଭାବେ ସଂଲଗ୍ନ ହେବ ନାହିଁ। ପ୍ରତ୍ୟେକ ଲାଇନରେ ଗୋଟିଏ ପ୍ୟାଟର୍ନ। ଉଦାହରଣ: *.png, smime.*, *.p7s"
+    "message": "ଏହି ପ୍ୟାଟର୍ନଗୁଡ଼ିକ ସହିତ ମେଳ ହେଉଥିବା ନାମର ଫାଇଲ୍‌ଗୁଡ଼ିକ କେବେବି ସ୍ୱୟଂଚାଳିତଭାବେ ସଂଲଗ୍ନ ହେବ ନାହିଁ। ପ୍ରତି ଲାଇନ୍‌ରେ ଗୋଟିଏ ପ୍ୟାଟର୍ନ। ଉଦାହରଣ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "କଳା-ତାଲିକା ଦ୍ୱାରା ସଂଲଗ୍ନଗୁଡିକ ବାଦ ଦିଆଗଲେ ସତର୍କ କରନ୍ତୁ"
+    "message": "କଳା ସୂଚୀ ଦ୍ୱାରା ସଂଲଗ୍ନ ବାହାର ରଖାଯାଇଥିଲେ ସତର୍କ କରନ୍ତୁ"
+  },
+  "uiDebugHeader": {
+    "message": "ଉନ୍ନତ"
+  },
+  "uiDebugLabel": {
+    "message": "ଡିବଗ୍ ଲଗିଂ ସକ୍ରିୟ କରନ୍ତୁ"
+  },
+  "uiDebugHelp": {
+    "message": "ଥଣ୍ଡରବର୍ଡର ଡିଭେଲପର କନସୋଲକୁ ଖୁଟିନଟ ବ୍ୟାକଗ୍ରାଉଣ୍ଡ ଲଗ୍ ଲେଖେ। ସମସ୍ୟା ସମାଧାନ ସମାପ୍ତ ହେଲେ ପୁନି ଅସକ୍ରିୟ କରନ୍ତୁ।"
   },
   "uiSave": {
-    "message": "ସଞ୍ଚୟ କରନ୍ତୁ"
+    "message": "ସେଭ୍"
   },
   "uiSaving": {
-    "message": "ସଞ୍ଚୟ ହେଉଛି…"
+    "message": "ସେଭ୍ ହେଉଛି…"
   },
   "uiReset": {
-    "message": "ଡିଫଲ୍ଟକୁ ପୁନସ୍ଥାପନ କରନ୍ତୁ"
+    "message": "ଡିଫଲ୍ଟକୁ ରିସେଟ୍ କରନ୍ତୁ"
   },
   "uiSaved": {
-    "message": "ସଞ୍ଚୟ ହେଲା।"
+    "message": "ସେଭ୍ ହେଲା।"
   },
   "uiResetDone": {
-    "message": "ପୁନସ୍ଥାପିତ।"
+    "message": "ରିସେଟ୍ ହେଲା।"
   },
   "uiConfirmHeader": {
     "message": "ନିଶ୍ଚିତକରଣ"
@@ -95,7 +104,7 @@
     "message": "ସଂଲଗ୍ନ ଯୋଡ଼ିବା ପୂର୍ବରୁ ପଚାରନ୍ତୁ"
   },
   "uiConfirmHelp": {
-    "message": "ଏକ ଛୋଟ ନିଶ୍ଚିତକରଣ ଡାଇଆଲଗ୍ କେବଳ ସେତେବେଳେ ଦେଖାଯାଇବ ଯେତେବେଳେ ସତ୍ୟରେ ସଂଲଗ୍ନଗୁଡିକ ଯୋଡ଼ାଯିବ। କୀବୋର୍ଡ: Y କିମ୍ବା J = ହଁ; N କିମ୍ବା Esc = ନା।"
+    "message": "ସତ୍ୟରେ ସଂଲଗ୍ନ ଯୋଡ଼ାଯିବାବେଳେମାତ୍ର ଏକ ଛୋଟ ନିଶ୍ଚିତକରଣ ଡାଇଲଗ୍ ଦେଖାଯିବ। କୀବୋର୍ଡ: Y କିମ୍ବା J = ହଁ; N କିମ୍ବା Esc = ନା।"
   },
   "confirmAddOne": {
     "message": "ସଂଲଗ୍ନ ଯୋଡ଼ିବେ: $1?",
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ସଂଲଗ୍ନଗୁଡିକ ଯୋଡ଼ିବେ ($1): $2$3?",
+    "message": "ସଂଲଗ୍ନଗୁଡ଼ିକ ଯୋଡ଼ିବେ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,19 +135,19 @@
     "message": "ନା"
   },
   "warnBlacklistTitle": {
-    "message": "କଳା-ତାଲିକା ଦ୍ୱାରା ବାଦ ଦିଆଯାଇଛି"
+    "message": "କଳା ସୂଚୀ ଦ୍ୱାରା ବାହାର ରଖାଗଲା"
   },
   "warnBlacklistIntro": {
-    "message": "ନିମ୍ନଲିଖିତ ଫାଇଲଗୁଡିକ ସ୍ୱୟଂଚାଳିତଭାବେ ସଂଲଗ୍ନ ହେବ ନାହିଁ:"
+    "message": "ନିମ୍ନଲିଖିତ ଫାଇଲ୍‌ଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତଭାବେ ସଂଲଗ୍ନ ହେବ ନାହିଁ:"
   },
   "warnColFile": {
-    "message": "ଫାଇଲ"
+    "message": "ଫାଇଲ୍"
   },
   "warnColPattern": {
     "message": "ପ୍ୟାଟର୍ନ"
   },
   "warnOk": {
-    "message": "ଠିକ ଅଛି"
+    "message": "ଠିକ୍ ଅଛି"
   },
   "uiConfirmDefaultHeader": {
     "message": "ଡିଫଲ୍ଟ ଉତ୍ତର"
@@ -150,7 +159,7 @@
     "message": "ନା"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/or/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

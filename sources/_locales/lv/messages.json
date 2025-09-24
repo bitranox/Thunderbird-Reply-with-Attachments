@@ -3,13 +3,13 @@
     "message": "Atbildēt ar pielikumiem"
   },
   "extDescription": {
-    "message": "Automātiski iekļauj sākotnējos pielikumus e-pasta atbildēs."
+    "message": "Automātiski iekļaut oriģinālos pielikumus e-pasta atbildēs."
   },
   "composeTitle": {
     "message": "Atbildēt ar pielikumiem"
   },
   "optionsTitle": {
-    "message": "Atbildēt ar pielikumiem — iestatījumi"
+    "message": "Atbildēt ar pielikumiem — Opcijas"
   },
   "confirmTitle": {
     "message": "Apstiprināt pielikumus"
@@ -18,10 +18,10 @@
     "message": "Atbildēt ar pielikumiem"
   },
   "uiNoOptions": {
-    "message": "Pašlaik nav iestatījumu, ko konfigurēt."
+    "message": "Pašlaik nav opciju, ko konfigurēt."
   },
   "uiSupport": {
-    "message": "Vai jums patīk šis papildinājums? Atbalstiet mani ar nelielu ziedojumu:"
+    "message": "Vai jums patīk šis papildinājums? Lūdzu, atbalstiet mani ar nelielu ziedojumu:"
   },
   "uiRateATNText": {
     "message": "Lūdzu, novērtējiet vietnē ATN"
@@ -33,13 +33,13 @@
     "message": "Ziedot tagad"
   },
   "uiIDonated": {
-    "message": "Es ziedoju"
+    "message": "Esmu ziedojis"
   },
   "uiDonateSnoozed": {
-    "message": "Paldies! Ziedojuma uzvedne paslēpta uz 90 dienām."
+    "message": "Paldies! Ziedošanas aicinājums paslēpts uz 90 dienām."
   },
   "uiDonateHiddenUntil": {
-    "message": "Slēpts līdz $1",
+    "message": "Paslēpts līdz $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,10 +47,10 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Rādīt ziedojumu vēlreiz"
+    "message": "Rādīt Ziedot vēlreiz"
   },
   "uiDonateRestored": {
-    "message": "Ziedojuma uzvedne atkal redzama."
+    "message": "Ziedojuma aicinājums atkal redzams."
   },
   "uiGithubText": {
     "message": "Lai ziņotu par kļūdām vai citiem jautājumiem, lūdzu, apmeklējiet manu"
@@ -59,7 +59,7 @@
     "message": "GitHub lapu"
   },
   "iconAlt": {
-    "message": "Ikona 'Atbildēt ar pielikumiem'"
+    "message": "Ikona Atbildēt ar pielikumiem"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Failu nosaukumu melnais saraksts (glob paraugi)"
   },
   "uiBlacklistHelp": {
-    "message": "Faili, kuru nosaukumi atbilst jebkuram no šiem paraugiem, nekad netiks pievienoti automātiski. Viens paraugs katrā rindā. Piemēri: *.png, smime.*, *.p7s"
+    "message": "Faili, kuru nosaukumi atbilst kādam no šiem paraugiem, nekad netiks pievienoti automātiski. Pa vienam paraugam katrā rindā. Piemēri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Brīdināt, ja pielikumi tiek izslēgti melnā saraksta dēļ"
+  },
+  "uiDebugHeader": {
+    "message": "Papildu"
+  },
+  "uiDebugLabel": {
+    "message": "Ieslēgt atkļūdošanas reģistrēšanu"
+  },
+  "uiDebugHelp": {
+    "message": "Raksta detalizētus fona žurnālus Thunderbird izstrādātāja konsolē. Pēc problēmu novēršanas atkal izslēdziet."
   },
   "uiSave": {
     "message": "Saglabāt"
@@ -95,7 +104,7 @@
     "message": "Jautāt pirms pielikumu pievienošanas"
   },
   "uiConfirmHelp": {
-    "message": "Neliels apstiprinājuma dialogs tiek rādīts tikai tad, kad pielikumi patiešām tiks pievienoti. Tastatūra: Y vai J = Jā; N vai Esc = Nē."
+    "message": "Neliels apstiprinājuma dialoglodziņš parādās tikai tad, kad pielikumi tiešām tiktu pievienoti. Tastatūra: Y vai J = Jā; N vai Esc = Nē."
   },
   "confirmAddOne": {
     "message": "Pievienot pielikumu: $1?",
@@ -141,7 +150,7 @@
     "message": "Labi"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Noklusējuma atbilde"
+    "message": "Noklusētā atbilde"
   },
   "uiConfirmDefaultYes": {
     "message": "Jā"
@@ -150,7 +159,7 @@
     "message": "Nē"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "منسلکات سٕتھ جواب"
+    "message": "منسلکات کے ساتھ جواب"
   },
   "extDescription": {
-    "message": "خود بخود اصل منسلکات ای میل جوابس منز شامل کٔریو."
+    "message": "ای میل جوابات میں اصل منسلکات خودکار طور پر شامل کرتا ہے۔"
   },
   "composeTitle": {
-    "message": "منسلکات سٕتھ جواب"
+    "message": "منسلکات کے ساتھ جواب"
   },
   "optionsTitle": {
-    "message": "منسلکات سٕتھ جواب — اختیارات"
+    "message": "منسلکات کے ساتھ جواب — اختیارات"
   },
   "confirmTitle": {
-    "message": "منسلکات ہندس تصدیق"
+    "message": "منسلکات کی تصدیق"
   },
   "uiHeader": {
-    "message": "منسلکات سٕتھ جواب"
+    "message": "منسلکات کے ساتھ جواب"
   },
   "uiNoOptions": {
-    "message": "اس وقت ترتیب باپت کوئی اختیار موجود نِہ چھ."
+    "message": "اس وقت ترتیب دینے کے لیے کوئی اختیارات نہیں ہیں۔"
   },
   "uiSupport": {
-    "message": "کیا یہ ایڈ-آن تُہنم پسند چھ؟ کٔرِیو مہ سٕیتھ تھوڈہ تعاون:"
+    "message": "کیا آپ کو یہ ایڈ‑آن پسند ہے؟ براہِ کرم ایک چھوٹے سے تعاون کے ذریعے میری مدد کریں:"
   },
   "uiRateATNText": {
-    "message": "براہِ کرم ATN پٔر درجہ بند کٔرِیو"
+    "message": "براہِ کرم ATN پر درجہ دیں"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ابھی عطیہ دِیو"
+    "message": "ابھی عطیہ دیں"
   },
   "uiIDonated": {
-    "message": "مَے عطیہ دِتمُت"
+    "message": "میں نے عطیہ دیا ہے"
   },
   "uiDonateSnoozed": {
-    "message": "شکریہ! عطیہ ہندس پیغام 90 دِنن باپت لُکت گٔیو."
+    "message": "شکریہ! عطیہ کی یاددہانی 90 دنوں کے لیے چھپا دی گئی ہے۔"
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 تک لُکت",
+    "message": "$1 تک پوشیدہ ہے",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "عطیہ پُنہ دِکھاؤ"
+    "message": "عطیہ کا پیغام دوبارہ دکھائیں"
   },
   "uiDonateRestored": {
-    "message": "عطیہ ہندس پیغام پُنہ ظاہر گٔیو."
+    "message": "عطیہ کی یاددہانی دوبارہ نظر آ رہی ہے۔"
   },
   "uiGithubText": {
-    "message": "بگ رپورٹ یا باقی سوالن باپت، براہِ کرم میون"
+    "message": "بگ رپورٹس یا دیگر سوالات کے لیے، براہِ کرم میرا"
   },
   "uiGithubLinkLabel": {
-    "message": "گِٹ ہب صفحہ"
+    "message": "GitHub صفحہ"
   },
   "iconAlt": {
-    "message": "منسلکات سٕتھ جواب ہندس آئیکن"
+    "message": "منسلکات کے ساتھ جواب کا آئیکن"
   },
   "githubAlt": {
-    "message": "گِٹ ہب"
+    "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "فائل ناون ہند بلیک لسٹ (گلوب پیٹرنز)"
+    "message": "فائل ناموں کی بلیک لسٹ (glob پیٹرنز)"
   },
   "uiBlacklistHelp": {
-    "message": "جِن فائلن ہند ناو اِن پیٹرنز منز کِس۪ی سٕیتھ میل کھایِت، وُہ کبھی خودکار طور منسلک نَہ کٔرِیتھ۔ ہر لائن پٔر اکھ پیٹرن۔ مثال: *.png, smime.*, *.p7s"
+    "message": "جن فائلوں کے نام ان پیٹرنز میں سے کسی سے میل کھاتے ہوں وہ کبھی بھی خودکار طور پر منسلک نہیں کی جائیں گی۔ ہر سطر پر ایک پیٹرن۔ مثالیں: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "اگر منسلکات بلیک لسٹ سبب خارج گٔی، خبردار کٔرِیو"
+    "message": "اگر منسلکات بلیک لسٹ کی وجہ سے خارج ہوں تو خبردار کریں"
+  },
+  "uiDebugHeader": {
+    "message": "اعلیٰ ترتیبات"
+  },
+  "uiDebugLabel": {
+    "message": "ڈیبگ لاگنگ فعال کریں"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird کے ڈویلپر کنسول پر پسِ منظر کی تفصیلی لاگز لکھتا ہے۔ خرابی دور کرنے کے بعد اسے دوبارہ غیر فعال کر دیں۔"
   },
   "uiSave": {
-    "message": "محفوظ کٔریو"
+    "message": "محفوظ کریں"
   },
   "uiSaving": {
-    "message": "محفوظ کران…"
+    "message": "محفوظ کیا جا رہا ہے…"
   },
   "uiReset": {
-    "message": "ڈیفالٹس پٔر ریسیٹ کٔریو"
+    "message": "پہلے سے طے شدہ حالت پر واپس کریں"
   },
   "uiSaved": {
-    "message": "محفوظ گٔیو."
+    "message": "محفوظ ہو گیا۔"
   },
   "uiResetDone": {
-    "message": "ریسیٹ گٔیو."
+    "message": "ری سیٹ ہو گیا۔"
   },
   "uiConfirmHeader": {
     "message": "تصدیق"
   },
   "uiConfirmLabel": {
-    "message": "منسلکات شامل کرنہ برونہ پُچھِیو"
+    "message": "منسلکات شامل کرنے سے پہلے پوچھیں"
   },
   "uiConfirmHelp": {
-    "message": "اکھ چھوٹ تصدیقی ڈائلاگ صرف تِم۪ی وَخت ظاہر گٔژھ ییلہٕ واقعی طور منسلکات شامل کٔرتھ۔ کی بورڈ: Y یا J = ہاں؛ N یا Esc = نِہ."
+    "message": "ایک مختصر تصدیقی ڈائیلاگ صرف تب ظاہر ہوگا جب واقعی منسلکات شامل کیے جائیں گے۔ کی بورڈ: Y یا J = ہاں؛ N یا Esc = نہیں۔"
   },
   "confirmAddOne": {
-    "message": "منسلک شامل کٔریو: $1؟",
+    "message": "منسلک شامل کریں: $1؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "منسلکات شامل کٔریو ($1): $2$3؟",
+    "message": "منسلکات شامل کریں ($1): $2$3؟",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -123,13 +132,13 @@
     "message": "ہاں"
   },
   "confirmNo": {
-    "message": "نہ"
+    "message": "نہیں"
   },
   "warnBlacklistTitle": {
-    "message": "بلیک لسٹ سبب خارج"
+    "message": "بلیک لسٹ کی وجہ سے خارج"
   },
   "warnBlacklistIntro": {
-    "message": "یہ فائلن خودکار طور منسلک نَہ کئمِت:"
+    "message": "مندرجہ ذیل فائلیں خودکار طور پر منسلک نہیں کی جائیں گی:"
   },
   "warnColFile": {
     "message": "فائل"
@@ -138,19 +147,19 @@
     "message": "پیٹرن"
   },
   "warnOk": {
-    "message": "ٹھیک"
+    "message": "ٹھیک ہے"
   },
   "uiConfirmDefaultHeader": {
-    "message": "طے شُدہ جواب"
+    "message": "طے شدہ جواب"
   },
   "uiConfirmDefaultYes": {
     "message": "ہاں"
   },
   "uiConfirmDefaultNo": {
-    "message": "نہ"
+    "message": "نہیں"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "دستاویزات:"
   },
   "uiDocsButton": {
-    "message": "دستاویزات کھولِیو"
+    "message": "دستاویزات کھولیں"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

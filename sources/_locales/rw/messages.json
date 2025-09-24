@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Subiza hamwe n’inyomeko"
+    "message": "Subiza n'inyomeko"
   },
   "extDescription": {
-    "message": "Shyiramo mu buryo bwikora inyomeko z’umwimerere mu bisubizo by’imeyili."
+    "message": "Kongeramo ku buryo bwikora inyomeko z'umwimerere mu bisubizo by'imeyili."
   },
   "composeTitle": {
-    "message": "Subiza hamwe n’inyomeko"
+    "message": "Subiza n'inyomeko"
   },
   "optionsTitle": {
-    "message": "Subiza hamwe n’inyomeko — Amahitamo"
+    "message": "Subiza n'inyomeko — Amahitamo"
   },
   "confirmTitle": {
     "message": "Kwemeza inyomeko"
   },
   "uiHeader": {
-    "message": "Subiza hamwe n’inyomeko"
+    "message": "Subiza n'inyomeko"
   },
   "uiNoOptions": {
     "message": "Ubu nta mahitamo yo gutunganya ahari."
   },
   "uiSupport": {
-    "message": "Ukunda iyi nyongera? Nyamuneka unshyigikire n’inkunga ntoya:"
+    "message": "Ukunda iki kiyongerwaho? Mfasha n'inkunga nto:"
   },
   "uiRateATNText": {
     "message": "Nyamuneka tanga amanota kuri ATN"
@@ -33,10 +33,10 @@
     "message": "Tanga inkunga ubu"
   },
   "uiIDonated": {
-    "message": "Natanze inkunga"
+    "message": "Natanzemo inkunga"
   },
   "uiDonateSnoozed": {
-    "message": "Urakoze! Ubutumwa bwo gusaba inkunga buzakomeza guhishwa iminsi 90."
+    "message": "Urakoze! Ubutumwa bwo gusaba inkunga buhishwe iminsi 90."
   },
   "uiDonateHiddenUntil": {
     "message": "Bihishwe kugeza ku $1",
@@ -47,43 +47,52 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Garagaza ubutumwa bwo gusaba inkunga nanone"
+    "message": "Garagaza ubutumwa bwo gutanga inkunga nanone"
   },
   "uiDonateRestored": {
-    "message": "Ubutumwa bwo gusaba inkunga burongera kugaragara."
+    "message": "Ubutumwa bwo gusaba inkunga buragaragara nanone."
   },
   "uiGithubText": {
-    "message": "Ku bijyanye no gutanga raporo z’ibibazo cyangwa ibindi bibazo, nyamuneka musure"
+    "message": "Ku makosa cyangwa ibindi bibazo, nyamuneka musure"
   },
   "uiGithubLinkLabel": {
-    "message": "urupapuro rwa GitHub"
+    "message": "Paji ya GitHub"
   },
   "iconAlt": {
-    "message": "Akarango ka Subiza hamwe n’inyomeko"
+    "message": "Agashusho ka Subiza n'inyomeko"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Urutonde rwo kubuza amazina ya dosiye (ibyitegererezo bya glob)"
+    "message": "Urutonde rw'amazina ya dosiye zikumirwa (glob patterns)"
   },
   "uiBlacklistHelp": {
-    "message": "Amadosiye afite amazina ahuye n’ibi byitegererezo ntazigera yomekwa ku buryo bwikora. Icyitegererezo kimwe ku murongo. Urugero: *.png, smime.*, *.p7s"
+    "message": "Dosiye zifite amazina ahuye n'imwe muri izi miterere ntiziziyomekwa na rimwe ku buryo bwikora. Icyitegererezo kimwe kuri buri murongo. Ingero: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Bwira niba inyomeko zakuwemo n’urwo rutonde rwo kubuza"
+    "message": "Iburira niba urutonde rwo gukumira rukuyemo inyomeko"
+  },
+  "uiDebugHeader": {
+    "message": "Byimbitse"
+  },
+  "uiDebugLabel": {
+    "message": "Gushoboza kwandika ibisobanuro bya debug"
+  },
+  "uiDebugHelp": {
+    "message": "Yandika inyandiko z'ibikorwa birambuye muri console y'abakora porogaramu ya Thunderbird. Bihagarike wongera umaze gukemura ibibazo."
   },
   "uiSave": {
     "message": "Bika"
   },
   "uiSaving": {
-    "message": "Birimo kubikwa…"
+    "message": "Birimo kubika…"
   },
   "uiReset": {
-    "message": "Subiza ku bisanzwe"
+    "message": "Subizaho ibisanzwe"
   },
   "uiSaved": {
-    "message": "Bibitswe."
+    "message": "Byabitswe."
   },
   "uiResetDone": {
     "message": "Byasubijwe."
@@ -92,10 +101,10 @@
     "message": "Kwemeza"
   },
   "uiConfirmLabel": {
-    "message": "Baza mbere yo kongeraho inyomeko"
+    "message": "Baza mbere yo kongeramo inyomeko"
   },
   "uiConfirmHelp": {
-    "message": "Idirishya rito ryo kwemeza rihagaragara gusa igihe koko hari inyomeko zigiye kongerwaho. Mwandikisho: Y cyangwa J = Yego; N cyangwa Esc = Oya."
+    "message": "Ikiganiro gitoya cyo kwemeza kigaragara gusa iyo koko hagiye kongerwamo inyomeko. Mwandikisho: Y cyangwa J = Yego; N cyangwa Esc = Oya."
   },
   "confirmAddOne": {
     "message": "Ongeraho inyomeko: $1?",
@@ -126,10 +135,10 @@
     "message": "Oya"
   },
   "warnBlacklistTitle": {
-    "message": "Byakuweho n’urutonde rwo kubuza"
+    "message": "Byakuweho n'urutonde rwo gukumira"
   },
   "warnBlacklistIntro": {
-    "message": "Amadosiye akurikira ntazomekwa ku buryo bwikora:"
+    "message": "Dosiye zikurikira ntiziziyomekwa ku buryo bwikora:"
   },
   "warnColFile": {
     "message": "Dosiye"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Igisubizo gisanzwe"
+    "message": "Igisubizo mburabuzi"
   },
   "uiConfirmDefaultYes": {
     "message": "Yego"
@@ -150,7 +159,7 @@
     "message": "Oya"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rw/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Inyandiko z’isobanuro:"
+    "message": "Inyandiko z'ubusobanuro:"
   },
   "uiDocsButton": {
-    "message": "Fungura Inyandiko"
+    "message": "Fungura inyandiko"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

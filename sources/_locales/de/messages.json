@@ -3,7 +3,7 @@
     "message": "Mit Anhängen antworten"
   },
   "extDescription": {
-    "message": "Fügt die ursprünglichen Anhänge in E‑Mail-Antworten automatisch hinzu."
+    "message": "Ursprüngliche Anhänge beim Beantworten von E-Mails automatisch einfügen."
   },
   "composeTitle": {
     "message": "Mit Anhängen antworten"
@@ -18,7 +18,7 @@
     "message": "Mit Anhängen antworten"
   },
   "uiNoOptions": {
-    "message": "Derzeit gibt es keine Optionen zum Konfigurieren."
+    "message": "Derzeit gibt es keine konfigurierbaren Optionen."
   },
   "uiSupport": {
     "message": "Gefällt Ihnen dieses Add-on? Bitte unterstützen Sie mich mit einem kleinen Beitrag:"
@@ -36,7 +36,7 @@
     "message": "Ich habe gespendet"
   },
   "uiDonateSnoozed": {
-    "message": "Danke! Spendenhinweis für 90 Tage ausgeblendet."
+    "message": "Vielen Dank! Spendenhinweis für 90 Tage ausgeblendet."
   },
   "uiDonateHiddenUntil": {
     "message": "Ausgeblendet bis $1",
@@ -50,7 +50,7 @@
     "message": "Spendenhinweis wieder anzeigen"
   },
   "uiDonateRestored": {
-    "message": "Spendenhinweis ist wieder sichtbar."
+    "message": "Der Spendenhinweis ist wieder sichtbar."
   },
   "uiGithubText": {
     "message": "Für Fehlerberichte oder andere Anfragen besuchen Sie bitte meine"
@@ -59,25 +59,34 @@
     "message": "GitHub-Seite"
   },
   "iconAlt": {
-    "message": "Symbol für Mit Anhängen antworten"
+    "message": "Symbol „Mit Anhängen antworten“"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blockliste von Dateinamen (Glob-Muster)"
+    "message": "Blacklist für Dateinamen (Glob-Muster)"
   },
   "uiBlacklistHelp": {
     "message": "Dateien, deren Namen einem dieser Muster entsprechen, werden niemals automatisch angehängt. Ein Muster pro Zeile. Beispiele: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Warnen, wenn Anhänge durch die Blockliste ausgeschlossen werden"
+    "message": "Warnen, wenn Anhänge durch die Blacklist ausgeschlossen werden"
+  },
+  "uiDebugHeader": {
+    "message": "Erweitert"
+  },
+  "uiDebugLabel": {
+    "message": "Debug-Protokollierung aktivieren"
+  },
+  "uiDebugHelp": {
+    "message": "Schreibt detaillierte Hintergrundprotokolle in die Entwicklerkonsole von Thunderbird. Deaktivieren Sie es wieder, wenn Sie mit der Fehlersuche fertig sind."
   },
   "uiSave": {
     "message": "Speichern"
   },
   "uiSaving": {
-    "message": "Speichern …"
+    "message": "Speichern…"
   },
   "uiReset": {
     "message": "Auf Standardwerte zurücksetzen"
@@ -95,7 +104,7 @@
     "message": "Vor dem Hinzufügen von Anhängen nachfragen"
   },
   "uiConfirmHelp": {
-    "message": "Ein kleines Bestätigungsfenster erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: Y oder J = Ja; N oder Esc = Nein."
+    "message": "Ein kleines Bestätigungsdialogfeld erscheint nur, wenn tatsächlich Anhänge hinzugefügt würden. Tastatur: Y oder J = Ja; N oder Esc = Nein."
   },
   "confirmAddOne": {
     "message": "Anhang hinzufügen: $1?",
@@ -126,7 +135,7 @@
     "message": "Nein"
   },
   "warnBlacklistTitle": {
-    "message": "Durch Blockliste ausgeschlossen"
+    "message": "Durch die Blacklist ausgeschlossen"
   },
   "warnBlacklistIntro": {
     "message": "Die folgenden Dateien werden nicht automatisch angehängt:"

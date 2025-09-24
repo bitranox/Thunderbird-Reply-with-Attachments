@@ -3,7 +3,7 @@
     "message": "Vastaa liitteillä"
   },
   "extDescription": {
-    "message": "Sisällyttää alkuperäiset liitteet automaattisesti sähköpostivastauksiin."
+    "message": "Lisää alkuperäiset liitteet automaattisesti sähköpostivastauksiin."
   },
   "composeTitle": {
     "message": "Vastaa liitteillä"
@@ -18,13 +18,13 @@
     "message": "Vastaa liitteillä"
   },
   "uiNoOptions": {
-    "message": "Tällä hetkellä ei ole määritettäviä asetuksia."
+    "message": "Tällä hetkellä ei ole asetuksia."
   },
   "uiSupport": {
     "message": "Pidätkö tästä lisäosasta? Tue minua pienellä lahjoituksella:"
   },
   "uiRateATNText": {
-    "message": "Arvostele ATN:ssä"
+    "message": "Arvostele ATN:ssa"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,7 +36,7 @@
     "message": "Lahjoitin"
   },
   "uiDonateSnoozed": {
-    "message": "Kiitos! Lahjoituskehotus piilotettu 90 päiväksi."
+    "message": "Kiitos! Lahjoituskehote on piilotettu 90 päiväksi."
   },
   "uiDonateHiddenUntil": {
     "message": "Piilotettu $1 asti",
@@ -47,16 +47,16 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Näytä Lahjoita uudelleen"
+    "message": "Näytä lahjoituskehote uudelleen"
   },
   "uiDonateRestored": {
-    "message": "Lahjoituskehotus on taas näkyvissä."
+    "message": "Lahjoituskehote on jälleen näkyvissä."
   },
   "uiGithubText": {
-    "message": "Vikailmoituksia tai muita kysymyksiä varten vieraile"
+    "message": "Vikailmoituksia tai muita tiedusteluja varten käy sivullani"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub-sivullani"
+    "message": "GitHub-sivu"
   },
   "iconAlt": {
     "message": "Vastaa liitteillä -kuvake"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Tiedostonimien estoluettelo (glob-kuviot)"
+    "message": "Tiedostonimien estolista (glob-kuviot)"
   },
   "uiBlacklistHelp": {
-    "message": "Tiedostoja, joiden nimet vastaavat jotakin näistä kuvioista, ei koskaan liitetä automaattisesti. Yksi kuvio per rivi. Esimerkkejä: *.png, smime.*, *.p7s"
+    "message": "Tiedostoja, joiden nimet vastaavat jotakin näistä kuvioista, ei liitetä koskaan automaattisesti. Yksi kuvio per rivi. Esimerkkejä: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Varoita, jos estoluettelo sulkee liitteitä pois"
+    "message": "Varoita, jos liitteet jätetään pois estolistan takia"
+  },
+  "uiDebugHeader": {
+    "message": "Lisäasetukset"
+  },
+  "uiDebugLabel": {
+    "message": "Ota vianjäljitysloki käyttöön"
+  },
+  "uiDebugHelp": {
+    "message": "Kirjoittaa yksityiskohtaiset taustalokit Thunderbirdin kehittäjäkonsoliin. Poista asetus käytöstä, kun olet saanut vian selvitettyä."
   },
   "uiSave": {
     "message": "Tallenna"
@@ -95,7 +104,7 @@
     "message": "Kysy ennen liitteiden lisäämistä"
   },
   "uiConfirmHelp": {
-    "message": "Pieni vahvistusikkuna näytetään vain, kun liitteitä ollaan oikeasti lisäämässä. Näppäimistö: Y tai J = Kyllä; N tai Esc = Ei."
+    "message": "Pieni vahvistusikkuna näytetään vain, kun liitteitä olisi oikeasti lisättävä. Näppäimistö: Y tai J = Kyllä; N tai Esc = Ei."
   },
   "confirmAddOne": {
     "message": "Lisätäänkö liite: $1?",
@@ -126,7 +135,7 @@
     "message": "Ei"
   },
   "warnBlacklistTitle": {
-    "message": "Poissuljettu estoluettelon vuoksi"
+    "message": "Poissuljettu estolistan vuoksi"
   },
   "warnBlacklistIntro": {
     "message": "Seuraavia tiedostoja ei liitetä automaattisesti:"
@@ -150,7 +159,7 @@
     "message": "Ei"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

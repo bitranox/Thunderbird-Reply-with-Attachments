@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Хавсралттайгаар хариулах"
+    "message": "Хавсралттай хариулах"
   },
   "extDescription": {
-    "message": "Имэйл хариу бичихдээ эхний хавсралтуудыг автоматаар оруулна."
+    "message": "Имэйлд хариу бичихдээ эх захидлын хавсралтуудыг автоматаар оруулна."
   },
   "composeTitle": {
-    "message": "Хавсралттайгаар хариулах"
+    "message": "Хавсралттай хариулах"
   },
   "optionsTitle": {
-    "message": "Хавсралттайгаар хариулах — Тохиргоо"
+    "message": "Хавсралттай хариулах — Тохиргоо"
   },
   "confirmTitle": {
-    "message": "Хавсралтыг батлах"
+    "message": "Хавсралтыг баталгаажуулах"
   },
   "uiHeader": {
-    "message": "Хавсралттайгаар хариулах"
+    "message": "Хавсралттай хариулах"
   },
   "uiNoOptions": {
-    "message": "Одоогоор тохируулах сонголт байхгүй."
+    "message": "Одоогоор тохируулах зүйл байхгүй."
   },
   "uiSupport": {
-    "message": "Энэ нэмэлт танд таалагдаж байна уу? Жижигхэн хандив өгч дэмжээрэй:"
+    "message": "Энэ нэмэлт танд таалагдаж байна уу? Жижигхэн хандив өргөж дэмжээрэй:"
   },
   "uiRateATNText": {
     "message": "ATN дээр үнэлгээ өгнө үү"
@@ -36,7 +36,7 @@
     "message": "Би хандивласан"
   },
   "uiDonateSnoozed": {
-    "message": "Баярлалаа! Хандивын сануулга 90 хоногийн турш нуугдана."
+    "message": "Баярлалаа! Хандивын сануулгыг 90 хоног нуулаа."
   },
   "uiDonateHiddenUntil": {
     "message": "$1 хүртэл нуусан",
@@ -53,25 +53,34 @@
     "message": "Хандивын сануулга дахин харагдах боллоо."
   },
   "uiGithubText": {
-    "message": "Алдааны тайлан эсвэл бусад асуулт байвал миний"
+    "message": "Алдаа мэдээлэх эсвэл бусад асуулт байвал миний"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub хуудас"
   },
   "iconAlt": {
-    "message": "Хавсралттайгаар хариулах дүрс"
+    "message": "Хавсралттай хариулах дүрс"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Файлын нэрийн хар жагсаалт (glob хэв маягууд)"
+    "message": "Файлын нэрийн хар жагсаалт (glob загварууд)"
   },
   "uiBlacklistHelp": {
-    "message": "Эдгээр хэв маягуудын аль нэгтэй таарах файлуудыг автоматаар хэзээ ч хавсаргахгүй. Мөр бүрт нэг хэв маяг. Жишээ: *.png, smime.*, *.p7s"
+    "message": "Эдгээр загварт таарах нэртэй файлуудыг автоматаар хэзээ ч хавсаргахгүй. Нэг мөрөнд нэг загвар. Жишээ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Хар жагсаалтад орсноор хавсралтууд хасагдсан бол анхааруулах"
+    "message": "Хар жагсаалтад орсноос болж хавсралт хасагдсан бол анхааруулах"
+  },
+  "uiDebugHeader": {
+    "message": "Дэвшилтэт"
+  },
+  "uiDebugLabel": {
+    "message": "Оношлогооны бүртгэлийг идэвхжүүлэх"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird-ийн хөгжүүлэгчийн консол руу дэлгэрэнгүй арын бүртгэлүүдийг бичнэ. Асуудлыг оношилж дууссаны дараа дахин унтраагаарай."
   },
   "uiSave": {
     "message": "Хадгалах"
@@ -80,13 +89,13 @@
     "message": "Хадгалж байна…"
   },
   "uiReset": {
-    "message": "Үндсэн тохиргоо руу буцаах"
+    "message": "Анхны тохиргоонд буцаах"
   },
   "uiSaved": {
-    "message": "Хадгалагдлаа."
+    "message": "Хадгаллаа."
   },
   "uiResetDone": {
-    "message": "Сэргээгдлээ."
+    "message": "Сэргээв."
   },
   "uiConfirmHeader": {
     "message": "Баталгаажуулалт"
@@ -95,10 +104,10 @@
     "message": "Хавсралт нэмэхийн өмнө асуух"
   },
   "uiConfirmHelp": {
-    "message": "Хавсралт үнэхээр нэмэгдэх үед л жижиг баталгаажуулах цонх гарна. Гар товч: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
+    "message": "Хавсралт үнэхээр нэмэгдэх үед л жижиг баталгаажуулах цонх гарч ирнэ. Гар: Y эсвэл J = Тийм; N эсвэл Esc = Үгүй."
   },
   "confirmAddOne": {
-    "message": "Хавсралт нэмэх: $1?",
+    "message": "Хавсралт нэмэх үү: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Хавсралтуудыг нэмэх ($1): $2$3?",
+    "message": "Хавсралтуудыг нэмэх үү ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -135,7 +144,7 @@
     "message": "Файл"
   },
   "warnColPattern": {
-    "message": "Хэв маяг"
+    "message": "Загвар"
   },
   "warnOk": {
     "message": "OK"
@@ -150,7 +159,7 @@
     "message": "Үгүй"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

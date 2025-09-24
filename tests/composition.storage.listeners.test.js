@@ -12,10 +12,16 @@ describe('composition — storage change listeners update behavior', () => {
 
   beforeEach(async () => {
     vi.resetModules();
+    const listeners = [];
     onChanged = {
       addListener: vi.fn((fn) => {
-        onChanged._ = fn;
+        listeners.push(fn);
       }),
+      emit(changes, area) {
+        for (const fn of listeners) {
+          fn(changes, area);
+        }
+      },
     };
     browser = makeBrowser({ onChanged });
     globalThis.browser = browser;
@@ -45,7 +51,7 @@ describe('composition — storage change listeners update behavior', () => {
 
     // Now post a storage change to exclude *.png
     const changes = { blacklistPatterns: { newValue: ['*.png'] } };
-    onChanged._ && onChanged._(changes, 'local');
+    onChanged.emit(changes, 'local');
 
     // Trigger again; now only PDF should be added
     browser.compose.addAttachment.mockClear();
@@ -76,7 +82,7 @@ describe('composition — storage change listeners update behavior', () => {
     expect(browser.tabs.sendMessage).not.toHaveBeenCalled();
 
     // Flip confirmBeforeAdd to true
-    onChanged._ && onChanged._({ confirmBeforeAdd: { newValue: true } }, 'local');
+    onChanged.emit({ confirmBeforeAdd: { newValue: true } }, 'local');
     browser.compose.getComposeDetails.mockResolvedValueOnce({
       type: 'reply',
       referenceMessageId: 11,

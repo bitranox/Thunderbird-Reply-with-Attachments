@@ -3,13 +3,13 @@
     "message": "Svar med vedlegg"
   },
   "extDescription": {
-    "message": "Ta med de opprinnelige vedleggene automatisk i e‑postsvar."
+    "message": "Inkluder automatisk opprinnelige vedlegg i e-postsvar."
   },
   "composeTitle": {
     "message": "Svar med vedlegg"
   },
   "optionsTitle": {
-    "message": "Svar med vedlegg — Alternativer"
+    "message": "Svar med vedlegg — Innstillinger"
   },
   "confirmTitle": {
     "message": "Bekreft vedlegg"
@@ -18,13 +18,13 @@
     "message": "Svar med vedlegg"
   },
   "uiNoOptions": {
-    "message": "Det er for øyeblikket ingen alternativer å konfigurere."
+    "message": "Det finnes for øyeblikket ingen innstillinger å konfigurere."
   },
   "uiSupport": {
-    "message": "Liker du dette tillegget? Støtt meg gjerne med et lite bidrag:"
+    "message": "Liker du denne utvidelsen? Støtt meg gjerne med et lite bidrag:"
   },
   "uiRateATNText": {
-    "message": "Vurder på ATN"
+    "message": "Vennligst vurder på ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,7 +36,7 @@
     "message": "Jeg har donert"
   },
   "uiDonateSnoozed": {
-    "message": "Takk! Donasjonsforespørselen er skjult i 90 dager."
+    "message": "Takk! Donasjonsoppfordringen er skjult i 90 dager."
   },
   "uiDonateHiddenUntil": {
     "message": "Skjult til $1",
@@ -50,7 +50,7 @@
     "message": "Vis Doner på nytt"
   },
   "uiDonateRestored": {
-    "message": "Donasjonsforespørselen er synlig igjen."
+    "message": "Donasjonsoppfordringen er synlig igjen."
   },
   "uiGithubText": {
     "message": "For feilrapporter eller andre henvendelser, besøk min"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Svarteliste over filnavn (glob-mønstre)"
+    "message": "Svarteliste for filnavn (glob-mønstre)"
   },
   "uiBlacklistHelp": {
-    "message": "Filer hvis navn samsvarer med noen av disse mønstrene blir aldri vedlagt automatisk. Ett mønster per linje. Eksempler: *.png, smime.*, *.p7s"
+    "message": "Filer med navn som samsvarer med noen av disse mønstrene, blir aldri lagt ved automatisk. Ett mønster per linje. Eksempler: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Varsle hvis vedlegg utelates av svartelisten"
+  },
+  "uiDebugHeader": {
+    "message": "Avansert"
+  },
+  "uiDebugLabel": {
+    "message": "Aktiver feilsøkingslogging"
+  },
+  "uiDebugHelp": {
+    "message": "Skriver detaljerte bakgrunnslogger til Thunderbirds utviklerkonsoll. Deaktiver igjen når du er ferdig med feilsøkingen."
   },
   "uiSave": {
     "message": "Lagre"
@@ -80,7 +89,7 @@
     "message": "Lagrer…"
   },
   "uiReset": {
-    "message": "Tilbakestill til standardinnstillinger"
+    "message": "Tilbakestill til standard"
   },
   "uiSaved": {
     "message": "Lagret."
@@ -95,7 +104,7 @@
     "message": "Spør før vedlegg legges til"
   },
   "uiConfirmHelp": {
-    "message": "En liten bekreftelsesdialog vises bare når vedlegg faktisk ville blitt lagt til. Tastatur: Y eller J = Ja; N eller Esc = Nei."
+    "message": "En liten bekreftelsesdialog vises bare når vedlegg faktisk vil bli lagt til. Tastatur: Y eller J = Ja; N eller Esc = Nei."
   },
   "confirmAddOne": {
     "message": "Legg til vedlegg: $1?",
@@ -129,7 +138,7 @@
     "message": "Utelatt av svartelisten"
   },
   "warnBlacklistIntro": {
-    "message": "Følgende filer blir ikke vedlagt automatisk:"
+    "message": "Følgende filer vil ikke bli lagt ved automatisk:"
   },
   "warnColFile": {
     "message": "Fil"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Standardsvar"
+    "message": "Standard svar"
   },
   "uiConfirmDefaultYes": {
     "message": "Ja"
@@ -150,7 +159,7 @@
     "message": "Nei"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokumentasjon:"
   },
   "uiDocsButton": {
-    "message": "Åpne dokumentasjonen"
+    "message": "Åpne dokumentasjon"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

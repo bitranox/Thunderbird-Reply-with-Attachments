@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+- Options: Added an "Enable debug logging" toggle under Advanced, including German translation and locale sync across all languages.
+- Logging: Background page now refreshes its logger when the debug flag changes and mirrors debug output through the global `[RWA]` logger for easier troubleshooting.
+- Reliability: Attachment retry flow emits consistent debug logs, and storage-change tests cover multi-listener behavior.
+
 ## [2.1.0] - 2025-09-13
 
 - Full internationalization, making the platform available in the top 100 languages worldwide

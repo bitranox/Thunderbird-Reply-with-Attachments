@@ -1,42 +1,42 @@
 {
   "extName": {
-    "message": "Kopesa eyano elongo na ba pièces jointes"
+    "message": "Eyano na ba pièces jointes"
   },
   "extDescription": {
-    "message": "Kobakisa na ndenge automatique ba pièces jointes ya ebandeli na biyano ya email."
+    "message": "Ebakisaka na automatique ba pièces jointes ya sango ya liboso na biyano ya e-mail."
   },
   "composeTitle": {
-    "message": "Kopesa eyano elongo na ba pièces jointes"
+    "message": "Eyano na ba pièces jointes"
   },
   "optionsTitle": {
-    "message": "Kopesa eyano elongo na ba pièces jointes — Paramètres"
+    "message": "Eyano na ba pièces jointes — Paramètres"
   },
   "confirmTitle": {
-    "message": "Kondimisa ba pièces jointes"
+    "message": "Kokakasa ba pièces jointes"
   },
   "uiHeader": {
-    "message": "Kopesa eyano elongo na ba pièces jointes"
+    "message": "Eyano na ba pièces jointes"
   },
   "uiNoOptions": {
-    "message": "Sik’oyo, ezali na paramètres te ya kobongisa."
+    "message": "Sik’oyo, ezali na paramètres ya ko-configurer te."
   },
   "uiSupport": {
-    "message": "Olingi extension oyo? Sunga ngai na libonza moke:"
+    "message": "Olingi add-on oyo? Sunga ngai na mwa lisungi moke:"
   },
   "uiRateATNText": {
-    "message": "Pesa note na ATN, s'il vous plaît"
+    "message": "Bolimbisa, pesa nɔti na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Pesa libonza sikoyo"
+    "message": "Pesa likabo sik’oyo"
   },
   "uiIDonated": {
-    "message": "Napesi libonza"
+    "message": "Napesi likabo"
   },
   "uiDonateSnoozed": {
-    "message": "Matondo! Matoli ya libonza ebombami mikolo 90."
+    "message": "Matondo! Etindeli ya likabo ebombami mikolo 90."
   },
   "uiDonateHiddenUntil": {
     "message": "Ebombami kino $1",
@@ -47,40 +47,49 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Monisa lisusu bosenga ya libonza"
+    "message": "Lakisa lisusu kopesa likabo"
   },
   "uiDonateRestored": {
-    "message": "Matoli ya libonza emonisami lisusu."
+    "message": "Etindeli ya likabo emonisami lisusu."
   },
   "uiGithubText": {
-    "message": "Mpo na rapor ya bibug to mituna mosusu, kende na"
+    "message": "Mpo na rapɔr ya bɔgɛ to mituna mosusu, kende na ngai na"
   },
   "uiGithubLinkLabel": {
-    "message": "Lokásá ya GitHub"
+    "message": "Lokasa ya GitHub"
   },
   "iconAlt": {
-    "message": "Ikoni ya ‘Kopesa eyano elongo na ba pièces jointes’"
+    "message": "Icône ya 'Eyano na ba pièces jointes'"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Liste noire ya bankombo ya ba fichiers (motifs glob)"
+    "message": "Lisi ya nkombo ya bafichier ya kopekisa (ba modèle glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Ba fichiers oyo bankombo na yango ekokani na moko ya ba motifs oyo ekokangamaka te na ndenge automatique. Motif moko na molongo moko. Bandakisa: *.png, smime.*, *.p7s"
+    "message": "Bafichier oyo nkombo na yango ekokanisa na moko ya ba modèle oyo ekokangamama na automatique te. Modèle moko na molongo moko. Ndakisa: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Lakisa likɛbisi soki ba pièces jointes elongolami na liste noire"
+    "message": "Yebisa soki ba pièces jointes eboyami na lisi ya kopekisa"
+  },
+  "uiDebugHeader": {
+    "message": "Avancé"
+  },
+  "uiDebugLabel": {
+    "message": "Kokɔtisa bokomi ya débogage"
+  },
+  "uiDebugHelp": {
+    "message": "Ekomisaka ba log ya polele na background na console ya badeveloppeurs ya Thunderbird. Longola yango lisusu soki osilisi kosilisa mitungisi."
   },
   "uiSave": {
     "message": "Bomba"
   },
   "uiSaving": {
-    "message": "Kobomba…"
+    "message": "Ebombaka…"
   },
   "uiReset": {
-    "message": "Zongisa na paramètres ya ebandeli"
+    "message": "Zongisa na paramètres ya liboso"
   },
   "uiSaved": {
     "message": "Ebombami."
@@ -89,13 +98,13 @@
     "message": "Ezongisami."
   },
   "uiConfirmHeader": {
-    "message": "Kondimisa"
+    "message": "Kokakasa"
   },
   "uiConfirmLabel": {
     "message": "Tuna liboso ya kobakisa ba pièces jointes"
   },
   "uiConfirmHelp": {
-    "message": "Liyangani ya moke ya kondimisa emonana kaka soki ba pièces jointes esengeli kobakisama mpenza. Na clavier: Y to J = Ee; N to Esc = Te."
+    "message": "Dilógi moke ya kokakasa emonana kaka soki ba pièces jointes ekobakisama mpenza. Klavye: Y to J = Ee; N to Esc = Te."
   },
   "confirmAddOne": {
     "message": "Bakisa pièce jointe: $1?",
@@ -126,22 +135,22 @@
     "message": "Te"
   },
   "warnBlacklistTitle": {
-    "message": "Elongolami na liste noire"
+    "message": "Ebɔyami na lisi ya kopekisa"
   },
   "warnBlacklistIntro": {
-    "message": "Ba fichiers oyo elandi ekokangamaka te na ndenge automatique:"
+    "message": "Bafichier oyo elandi ekokangamama na automatique te:"
   },
   "warnColFile": {
     "message": "Fichier"
   },
   "warnColPattern": {
-    "message": "Motif"
+    "message": "Modèle"
   },
   "warnOk": {
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Eyano ya ebandeli"
+    "message": "Eyano ya liboso"
   },
   "uiConfirmDefaultYes": {
     "message": "Ee"
@@ -150,7 +159,7 @@
     "message": "Te"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Dokimantasion:"
   },
   "uiDocsButton": {
-    "message": "Fungola Dokimantasion"
+    "message": "Fungola dokimantasion"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

@@ -13,6 +13,7 @@ function mountOptionsDom() {
     <textarea id="blacklist-patterns"></textarea>
     <input id="confirm-before" type="checkbox" />
     <input id="warn-blacklist" type="checkbox" />
+    <input id="debug-logging" type="checkbox" />
     <input type="radio" name="confirm-default" value="yes" checked />
     <input type="radio" name="confirm-default" value="no" />
     <button id="save-btn"></button>
@@ -40,6 +41,23 @@ describe('options page — reads, writes, resets', () => {
     expect(ta.value).toBe('');
   });
 
+  it('loads debug flag into checkbox state', async () => {
+    vi.resetModules();
+    const get = vi.fn().mockResolvedValue({
+      blacklistPatterns: ['x'],
+      confirmBeforeAdd: true,
+      confirmDefaultChoice: 'no',
+      warnOnBlacklistExcluded: false,
+      debug: true,
+    });
+    mockBrowser({ get, set: vi.fn() });
+    await import('../sources/options.js');
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+    await tick();
+    const debugCb = /** @type {HTMLInputElement} */ (document.getElementById('debug-logging'));
+    expect(debugCb.checked).toBe(true);
+  });
+
   // Test: save lowercases patterns and notifies background
   it('save lowercases patterns and notifies background', async () => {
     vi.resetModules();
@@ -47,6 +65,7 @@ describe('options page — reads, writes, resets', () => {
       blacklistPatterns: ['Foo.PDF'],
       confirmBeforeAdd: true,
       confirmDefaultChoice: 'no',
+      debug: false,
     });
     const set = vi.fn();
     const sendMessage = vi.fn();
@@ -57,11 +76,14 @@ describe('options page — reads, writes, resets', () => {
     // change patterns and save
     const ta = /** @type {HTMLTextAreaElement} */ (document.getElementById('blacklist-patterns'));
     ta.value = 'IMG.PNG\nRePort.PDF\n';
+    const debugCb = /** @type {HTMLInputElement} */ (document.getElementById('debug-logging'));
+    debugCb.checked = true;
     document.getElementById('save-btn').click();
     await tick();
     expect(set).toHaveBeenCalled();
     const [arg] = set.mock.calls.at(-1);
     expect(arg.blacklistPatterns).toEqual(['img.png', 'report.pdf']);
+    expect(arg.debug).toBe(true);
     expect(sendMessage).toHaveBeenCalledWith({ type: 'rwa:apply-settings-open-compose' });
   });
 
@@ -72,6 +94,7 @@ describe('options page — reads, writes, resets', () => {
       blacklistPatterns: ['x'],
       confirmBeforeAdd: false,
       confirmDefaultChoice: 'yes',
+      debug: true,
     });
     const set = vi.fn();
     mockBrowser({ get, set });
@@ -84,6 +107,7 @@ describe('options page — reads, writes, resets', () => {
     const calls = set.mock.calls.map((c) => c[0]);
     const last = calls.at(-1);
     expect(last.blacklistPatterns).toContain('*intern*');
+    expect(last.debug).toBe(false);
   });
 });
 

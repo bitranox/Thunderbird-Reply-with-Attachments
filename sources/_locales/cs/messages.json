@@ -3,7 +3,7 @@
     "message": "Odpovědět s přílohami"
   },
   "extDescription": {
-    "message": "Automaticky přidává původní přílohy do odpovědí na e‑maily."
+    "message": "Automaticky přiloží původní přílohy do odpovědí na e‑maily."
   },
   "composeTitle": {
     "message": "Odpovědět s přílohami"
@@ -18,7 +18,7 @@
     "message": "Odpovědět s přílohami"
   },
   "uiNoOptions": {
-    "message": "Momentálně nejsou k dispozici žádné možnosti k nastavení."
+    "message": "V současnosti zde nejsou žádné možnosti k nastavení."
   },
   "uiSupport": {
     "message": "Líbí se vám tento doplněk? Podpořte mě prosím malým příspěvkem:"
@@ -36,7 +36,7 @@
     "message": "Přispěl(a) jsem"
   },
   "uiDonateSnoozed": {
-    "message": "Děkuji! Výzva k příspěvku je skrytá na 90 dní."
+    "message": "Děkuji! Výzva k příspěvku je na 90 dní skryta."
   },
   "uiDonateHiddenUntil": {
     "message": "Skryto do $1",
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Zobrazit výzvu k příspěvku znovu"
+    "message": "Znovu zobrazit výzvu k příspěvku"
   },
   "uiDonateRestored": {
     "message": "Výzva k příspěvku je opět viditelná."
   },
   "uiGithubText": {
-    "message": "Pro hlášení chyb či jiné dotazy navštivte prosím můj"
+    "message": "Pro hlášení chyb či jiné dotazy navštivte prosím mou"
   },
   "uiGithubLinkLabel": {
     "message": "stránku na GitHubu"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Černá listina názvů souborů (vzory glob)"
+    "message": "Seznam blokovaných názvů souborů (vzory glob)"
   },
   "uiBlacklistHelp": {
     "message": "Soubory, jejichž názvy odpovídají některému z těchto vzorů, nebudou nikdy automaticky přiloženy. Jeden vzor na řádek. Příklady: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Upozornit, pokud jsou přílohy vyloučeny černou listinou"
+    "message": "Upozornit, pokud jsou přílohy vyloučeny blokovacím seznamem"
+  },
+  "uiDebugHeader": {
+    "message": "Pokročilé"
+  },
+  "uiDebugLabel": {
+    "message": "Povolit ladicí protokolování"
+  },
+  "uiDebugHelp": {
+    "message": "Zapisuje podrobné záznamy na pozadí do vývojářské konzole Thunderbirdu. Až dokončíte odstraňování problémů, znovu vypněte."
   },
   "uiSave": {
     "message": "Uložit"
@@ -92,10 +101,10 @@
     "message": "Potvrzení"
   },
   "uiConfirmLabel": {
-    "message": "Zeptat se před přidáním příloh"
+    "message": "Před přidáním příloh se zeptat"
   },
   "uiConfirmHelp": {
-    "message": "Malé potvrzovací okno se zobrazí pouze tehdy, když by se skutečně měly přidat přílohy. Klávesnice: Y nebo J = Ano; N nebo Esc = Ne."
+    "message": "Malé potvrzovací okno se zobrazí pouze tehdy, když by se měly přílohy opravdu přiložit. Klávesnice: Y nebo J = Ano; N nebo Esc = Ne."
   },
   "confirmAddOne": {
     "message": "Přidat přílohu: $1?",
@@ -126,7 +135,7 @@
     "message": "Ne"
   },
   "warnBlacklistTitle": {
-    "message": "Vyloučeno černou listinou"
+    "message": "Vyloučeno blokovacím seznamem"
   },
   "warnBlacklistIntro": {
     "message": "Následující soubory nebudou automaticky přiloženy:"
@@ -150,7 +159,7 @@
     "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Zaa na faịlụ ejikọtara"
+    "message": "Zaa na faịlụ ejikọrọ"
   },
   "extDescription": {
-    "message": "Tinye faịlụ izizi ejikọtara n’usoro ozi azịza akpaka."
+    "message": "Tinye faịlụ ejikọrọ mbụ n’ime nzaghachi email akpaghị aka."
   },
   "composeTitle": {
-    "message": "Zaa na faịlụ ejikọtara"
+    "message": "Zaa na faịlụ ejikọrọ"
   },
   "optionsTitle": {
-    "message": "Zaa na faịlụ ejikọtara — Nhọrọ"
+    "message": "Zaa na faịlụ ejikọrọ — Nhọrọ"
   },
   "confirmTitle": {
-    "message": "Nkwenye faịlụ ejikọtara"
+    "message": "Kwenye faịlụ ejikọrọ"
   },
   "uiHeader": {
-    "message": "Zaa na faịlụ ejikọtara"
+    "message": "Zaa na faịlụ ejikọrọ"
   },
   "uiNoOptions": {
-    "message": "Enweghị nhọrọ ọ bụla a ga-ahazi ugbu a."
+    "message": "Ugbu a, enweghị nhọrọ ọ bụla a ga-ahazi."
   },
   "uiSupport": {
-    "message": "Ị na-amasị gị mgbakwunye a? Biko kwado m site n’onyinye nta:"
+    "message": "Ị masịrị mgbakwunye a? Biko kwado m site na onyinye nta:"
   },
   "uiRateATNText": {
-    "message": "Biko nye akara na ATN"
+    "message": "Biko nye ya akara na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,10 +33,10 @@
     "message": "Mee onyinye ugbu a"
   },
   "uiIDonated": {
-    "message": "Enyela m onyinye"
+    "message": "E mere m onyinye"
   },
   "uiDonateSnoozed": {
-    "message": "Daalụ! Akpọ oku onyinye e zoro maka ụbọchị 90."
+    "message": "Daalụ! E zoro oku onyinye maka ụbọchị 90."
   },
   "uiDonateHiddenUntil": {
     "message": "E zoro ruo $1",
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Gosi akpọ oku onyinye ọzọ"
+    "message": "Gosi onyinye ọzọ"
   },
   "uiDonateRestored": {
-    "message": "Akpọ oku onyinye a na-ahụ ya ọzọ."
+    "message": "Oku onyinye pụtara ọzọ."
   },
   "uiGithubText": {
     "message": "Maka akụkọ njehie ma ọ bụ ajụjụ ndị ọzọ, biko gaa na"
   },
   "uiGithubLinkLabel": {
-    "message": "Ibe GitHub m"
+    "message": "ibe GitHub"
   },
   "iconAlt": {
-    "message": "Ikon ‘Zaa na faịlụ ejikọtara’"
+    "message": "Ikọn ‘Zaa na faịlụ ejikọrọ’"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Ndepụta e machibidoro maka aha faịlụ (usoro glob)"
+    "message": "Ndepụta ojii nke aha faịlụ (usoro glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Faịlụ ndị aha ha kwekọrọ na otu n’ime usoro ndị a agaghị agbakwunye akpaka. Otu usoro kwa ahịrị. Ihe atụ: *.png, smime.*, *.p7s"
+    "message": "Faịlụ nke aha ha kwekọrọ na otu n’ime usoro ndị a agaghị agbakwunye akpaghị aka. Otu usoro kwa ahịrị. Ihe atụ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Kwuo ọkwa ma a wepụrụ faịlụ n'ihi ndepụta e machibidoro"
+    "message": "Gosi ìkìlọ ma a wepụ faịlụ ejikọrọ site na ndepụta ojii"
+  },
+  "uiDebugHeader": {
+    "message": "Ntọala dị elu"
+  },
+  "uiDebugLabel": {
+    "message": "Kpalite ndekọ debug"
+  },
+  "uiDebugHelp": {
+    "message": "Na-ede ndekọ zuru ezu na ndabere na konsọl onye mmepe nke Thunderbird. Gbanyụọ ya ọzọ mgbe i mechara idozi nsogbu."
   },
   "uiSave": {
     "message": "Chekwaa"
@@ -80,25 +89,25 @@
     "message": "Na-echekwa…"
   },
   "uiReset": {
-    "message": "Tọọgharịa ka ndabara"
+    "message": "Tọgharịa na ndabara"
   },
   "uiSaved": {
-    "message": "E chekwara."
+    "message": "Echekwara."
   },
   "uiResetDone": {
-    "message": "E tọọgharịrị."
+    "message": "Etọgharịrị."
   },
   "uiConfirmHeader": {
     "message": "Nkwenye"
   },
   "uiConfirmLabel": {
-    "message": "Jụọ tupu ịgbakwunye faịlụ"
+    "message": "Jụọ tupu itinye faịlụ ejikọrọ"
   },
   "uiConfirmHelp": {
-    "message": "Obere igbe nkwenye ga-apụta naanị mgbe a ga-agbakwunye faịlụ n’ezie. Kịbọọdụ: Y ma ọ bụ J = Ee; N ma ọ bụ Esc = Mba."
+    "message": "Obere igbe nkwenye na-apụta naanị mgbe a ga-etinye faịlụ ejikọrọ n’eziokwu. Keyboard: Y ma ọ bụ J = Ee; N ma ọ bụ Esc = Mba."
   },
   "confirmAddOne": {
-    "message": "Tinye faịlụ: $1?",
+    "message": "Tinye faịlụ ejikọrọ: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Tinye faịlụ ($1): $2$3?",
+    "message": "Tinye faịlụ ejikọrọ ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Mba"
   },
   "warnBlacklistTitle": {
-    "message": "E wepụrụ site na ndekọ e machibidoro"
+    "message": "E wepụrụ n’ihi ndepụta ojii"
   },
   "warnBlacklistIntro": {
-    "message": "Faịlụ ndị a agaghị agbakwunye akpaka:"
+    "message": "Faịlụ ndị a agaghị agbakwunye akpaghị aka:"
   },
   "warnColFile": {
     "message": "Faịlụ"
@@ -150,7 +159,7 @@
     "message": "Mba"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Akwụkwọ ndu:"
+    "message": "Akwụkwọ ntuziaka:"
   },
   "uiDocsButton": {
-    "message": "Mepee Akwụkwọ ndu"
+    "message": "Mepee akwụkwọ ntuziaka"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

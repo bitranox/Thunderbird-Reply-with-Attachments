@@ -3,7 +3,7 @@
     "message": "Beantwoorden met bijlagen"
   },
   "extDescription": {
-    "message": "Voegt originele bijlagen automatisch toe aan e-mailantwoorden."
+    "message": "Voegt de originele bijlagen automatisch toe aan e-mailantwoorden."
   },
   "composeTitle": {
     "message": "Beantwoorden met bijlagen"
@@ -18,7 +18,7 @@
     "message": "Beantwoorden met bijlagen"
   },
   "uiNoOptions": {
-    "message": "Er zijn momenteel geen opties om in te stellen."
+    "message": "Er zijn momenteel geen opties om te configureren."
   },
   "uiSupport": {
     "message": "Vind je deze add-on leuk? Steun me met een kleine bijdrage:"
@@ -53,7 +53,7 @@
     "message": "Donatieverzoek is weer zichtbaar."
   },
   "uiGithubText": {
-    "message": "Voor bugrapporten of andere vragen, ga naar mijn"
+    "message": "Voor bugmeldingen of andere vragen, bezoek mijn"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub-pagina"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Zwarte lijst van bestandsnamen (globpatronen)"
+    "message": "Zwarte lijst met bestandsnamen (glob-patronen)"
   },
   "uiBlacklistHelp": {
-    "message": "Bestanden waarvan de naam overeenkomt met een van deze patronen worden nooit automatisch bijgevoegd. Eén patroon per regel. Voorbeelden: *.png, smime.*, *.p7s"
+    "message": "Bestanden waarvan de naam overeenkomt met een van deze patronen, worden nooit automatisch als bijlage toegevoegd. Eén patroon per regel. Voorbeelden: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Waarschuwen als bijlagen door zwarte lijst worden uitgesloten"
+    "message": "Waarschuwen als bijlagen door de zwarte lijst worden uitgesloten"
+  },
+  "uiDebugHeader": {
+    "message": "Geavanceerd"
+  },
+  "uiDebugLabel": {
+    "message": "Debuglogging inschakelen"
+  },
+  "uiDebugHelp": {
+    "message": "Schrijft gedetailleerde achtergrondlogs naar de ontwikkelaarsconsole van Thunderbird. Schakel dit weer uit wanneer je klaar bent met het oplossen van problemen."
   },
   "uiSave": {
     "message": "Opslaan"
@@ -80,7 +89,7 @@
     "message": "Bezig met opslaan…"
   },
   "uiReset": {
-    "message": "Terugzetten naar standaardwaarden"
+    "message": "Herstellen naar standaardinstellingen"
   },
   "uiSaved": {
     "message": "Opgeslagen."
@@ -95,7 +104,7 @@
     "message": "Vragen voordat bijlagen worden toegevoegd"
   },
   "uiConfirmHelp": {
-    "message": "Er verschijnt alleen een kleine bevestigingsdialoog wanneer er daadwerkelijk bijlagen zouden worden toegevoegd. Toetsenbord: Y of J = Ja; N of Esc = Nee."
+    "message": "Een kleine bevestigingsdialoog verschijnt alleen wanneer er daadwerkelijk bijlagen zouden worden toegevoegd. Toetsenbord: Y of J = Ja; N of Esc = Nee."
   },
   "confirmAddOne": {
     "message": "Bijlage toevoegen: $1?",
@@ -129,7 +138,7 @@
     "message": "Uitgesloten door zwarte lijst"
   },
   "warnBlacklistIntro": {
-    "message": "De volgende bestanden worden niet automatisch bijgevoegd:"
+    "message": "De volgende bestanden worden niet automatisch toegevoegd:"
   },
   "warnColFile": {
     "message": "Bestand"
@@ -150,7 +159,7 @@
     "message": "Nee"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

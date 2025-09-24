@@ -1,21 +1,21 @@
 {
   "extName": {
-    "message": "Responder con adjuntos"
+    "message": "Responder con archivos adjuntos"
   },
   "extDescription": {
-    "message": "Incluir automáticamente los adjuntos originales en las respuestas de correo."
+    "message": "Incluir automáticamente los archivos adjuntos originales en las respuestas de correo electrónico."
   },
   "composeTitle": {
-    "message": "Responder con adjuntos"
+    "message": "Responder con archivos adjuntos"
   },
   "optionsTitle": {
-    "message": "Responder con adjuntos — Opciones"
+    "message": "Responder con archivos adjuntos — Opciones"
   },
   "confirmTitle": {
-    "message": "Confirmar adjuntos"
+    "message": "Confirmar archivos adjuntos"
   },
   "uiHeader": {
-    "message": "Responder con adjuntos"
+    "message": "Responder con archivos adjuntos"
   },
   "uiNoOptions": {
     "message": "Actualmente no hay opciones que configurar."
@@ -24,7 +24,7 @@
     "message": "¿Te gusta este complemento? Apóyame con una pequeña contribución:"
   },
   "uiRateATNText": {
-    "message": "Por favor, valora en ATN"
+    "message": "Valóralo en ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,7 +33,7 @@
     "message": "Donar ahora"
   },
   "uiIDonated": {
-    "message": "He donado"
+    "message": "Ya he donado"
   },
   "uiDonateSnoozed": {
     "message": "¡Gracias! Aviso de donación oculto durante 90 días."
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Volver a mostrar Donar"
+    "message": "Mostrar Donar otra vez"
   },
   "uiDonateRestored": {
-    "message": "El aviso de donación vuelve a ser visible."
+    "message": "El aviso de donación vuelve a estar visible."
   },
   "uiGithubText": {
-    "message": "Para reportar errores u otras consultas, visita mi"
+    "message": "Para informes de errores u otras consultas, visita mi"
   },
   "uiGithubLinkLabel": {
     "message": "página de GitHub"
   },
   "iconAlt": {
-    "message": "Icono de Responder con adjuntos"
+    "message": "Icono de Responder con archivos adjuntos"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -71,7 +71,16 @@
     "message": "Los archivos cuyos nombres coincidan con cualquiera de estos patrones nunca se adjuntarán automáticamente. Un patrón por línea. Ejemplos: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Advertir si los adjuntos están excluidos por la lista negra"
+    "message": "Advertir si los archivos adjuntos se excluyen por la lista negra"
+  },
+  "uiDebugHeader": {
+    "message": "Avanzado"
+  },
+  "uiDebugLabel": {
+    "message": "Activar el registro de depuración"
+  },
+  "uiDebugHelp": {
+    "message": "Escribe registros detallados en segundo plano en la consola del desarrollador de Thunderbird. Desactívalo de nuevo cuando termines de solucionar problemas."
   },
   "uiSave": {
     "message": "Guardar"
@@ -92,13 +101,13 @@
     "message": "Confirmación"
   },
   "uiConfirmLabel": {
-    "message": "Preguntar antes de añadir adjuntos"
+    "message": "Preguntar antes de añadir archivos adjuntos"
   },
   "uiConfirmHelp": {
-    "message": "Aparece un pequeño cuadro de confirmación solo cuando realmente se vayan a añadir adjuntos. Teclado: Y o J = Sí; N o Esc = No."
+    "message": "Solo aparecerá un pequeño cuadro de confirmación cuando realmente se vayan a añadir archivos adjuntos. Teclado: Y o J = Sí; N o Esc = No."
   },
   "confirmAddOne": {
-    "message": "¿Añadir adjunto: $1?",
+    "message": "Añadir archivo adjunto: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "¿Añadir adjuntos ($1): $2$3?",
+    "message": "Añadir archivos adjuntos ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,7 +135,7 @@
     "message": "No"
   },
   "warnBlacklistTitle": {
-    "message": "Excluidos por la lista negra"
+    "message": "Excluido por la lista negra"
   },
   "warnBlacklistIntro": {
     "message": "Los siguientes archivos no se adjuntarán automáticamente:"
@@ -150,7 +159,7 @@
     "message": "No"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

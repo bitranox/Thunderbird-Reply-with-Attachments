@@ -12,6 +12,7 @@
   const KEY_CONFIRM = 'confirmBeforeAdd';
   const KEY_CONFIRM_DEFAULT = 'confirmDefaultChoice';
   const KEY_WARN_BLACKLIST = 'warnOnBlacklistExcluded';
+  const KEY_DEBUG = 'debug';
   const DEFAULT_PATTERNS = ['*intern*', '*secret*', '*passwor*'];
 
   /**
@@ -62,6 +63,7 @@
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
         [KEY_WARN_BLACKLIST]: true,
+        [KEY_DEBUG]: false,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
       setTextareaLines('blacklist-patterns', Array.isArray(stored) ? stored : []);
@@ -69,6 +71,10 @@
       cb.checked = !!res?.[KEY_CONFIRM];
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = res?.[KEY_WARN_BLACKLIST] !== false;
+      const debugCb = /** @type {HTMLInputElement | null} */ (
+        document.getElementById('debug-logging')
+      );
+      if (debugCb) debugCb.checked = !!res?.[KEY_DEBUG];
       const def = String(res?.[KEY_CONFIRM_DEFAULT] || 'yes');
       const yes = /** @type {HTMLInputElement} */ (
         document.querySelector('input[name="confirm-default"][value="yes"]')
@@ -87,6 +93,10 @@
       cb.checked = false;
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = true;
+      const debugCb = /** @type {HTMLInputElement | null} */ (
+        document.getElementById('debug-logging')
+      );
+      if (debugCb) debugCb.checked = false;
       const yes = /** @type {HTMLInputElement} */ (
         document.querySelector('input[name="confirm-default"][value="yes"]')
       );
@@ -116,6 +126,9 @@
       [KEY_CONFIRM_DEFAULT]: def?.value === 'no' ? 'no' : 'yes',
       [KEY_WARN_BLACKLIST]:
         /** @type {HTMLInputElement} */ (getEl('warn-blacklist')).checked !== false,
+      [KEY_DEBUG]:
+        /** @type {HTMLInputElement | null} */ (document.getElementById('debug-logging'))
+          ?.checked === true,
     });
     setStatus(getMessage('uiSaved') || 'Saved.');
     // Ask background to re-apply settings to open reply composers once.
@@ -136,6 +149,7 @@
       [KEY_CONFIRM]: false,
       [KEY_CONFIRM_DEFAULT]: 'yes',
       [KEY_WARN_BLACKLIST]: true,
+      [KEY_DEBUG]: false,
     });
     await load();
     setStatus(getMessage('uiResetDone') || 'Reset.');

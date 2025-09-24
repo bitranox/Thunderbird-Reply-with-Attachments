@@ -3,13 +3,13 @@
     "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
   },
   "extDescription": {
-    "message": "ເພີ່ມໄຟລ໌ແນບຕົ້ນສະບັບເຂົ້າໃນການຕອບອີເມວອັດຕະໂນມັດ."
+    "message": "ຮວບຮວມໄຟລ໌ແນບເດີມເຂົ້າໃນອີເມວຕອບກັບໂດຍອັດຕະໂນມັດ."
   },
   "composeTitle": {
     "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
   },
   "optionsTitle": {
-    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ — ຕົວເລືອກ"
+    "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ — ຕັ້ງຄ່າ"
   },
   "confirmTitle": {
     "message": "ຢືນຢັນໄຟລ໌ແນບ"
@@ -18,7 +18,7 @@
     "message": "ຕອບກັບພ້ອມໄຟລ໌ແນບ"
   },
   "uiNoOptions": {
-    "message": "ບໍ່ມີຕົວເລືອກໃຫ້ຕັ້ງຄ່າໃນປັດຈຸບັນ."
+    "message": "ໃນຂະນະນີ້ບໍ່ມີຕົວເລືອກໃຫ້ຕັ້ງຄ່າ."
   },
   "uiSupport": {
     "message": "ທ່ານມັກສ່ວນເສີມນີ້ບໍ? ກະລຸນາສະໜັບສະໜູນຂ້ອຍດ້ວຍການບໍລິຈາກນ້ອຍໆ:"
@@ -30,16 +30,16 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ບໍລິຈາກດຽວນີ້"
+    "message": "ບໍລິຈາກຕອນນີ້"
   },
   "uiIDonated": {
     "message": "ຂ້ອຍໄດ້ບໍລິຈາກແລ້ວ"
   },
   "uiDonateSnoozed": {
-    "message": "ຂອບໃຈ! ການເຕືອນບໍລິຈາກຖືກເຊື່ອງໄວ້ 90 ມື້."
+    "message": "ຂອບໃຈ! ຂໍ້ຄວາມເຊີນຊວນບໍລິຈາກຖືກຊ່ອນໄວ້ 90 ມື້."
   },
   "uiDonateHiddenUntil": {
-    "message": "ເຊື່ອງໄວ້ຈົນເຖິງ $1",
+    "message": "ຊ່ອນໄວ້ຈົນເຖິງ $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "ສະແດງການບໍລິຈາກອີກຄັ້ງ"
+    "message": "ສະແດງຄໍາເຊີນບໍລິຈາກອີກຄັ້ງ"
   },
   "uiDonateRestored": {
-    "message": "ການເຕືອນບໍລິຈາກຖືກສະແດງອີກຄັ້ງ."
+    "message": "ຄໍາເຊີນບໍລິຈາກຖືກສະແດງອີກຄັ້ງ."
   },
   "uiGithubText": {
-    "message": "ສໍາລັບການລາຍງານຂໍ້ບົກພ່ອງ ຫຼື ຄໍາຖາມອື່ນໆ, ກະລຸນາໄປທີ່"
+    "message": "ສໍາລັບການລາຍງານບັກ ຫຼື ຄໍາຖາມອື່ນໆ ກະລຸນາໄປທີ່"
   },
   "uiGithubLinkLabel": {
     "message": "ໜ້າ GitHub"
@@ -68,25 +68,34 @@
     "message": "ບັນຊີດໍາຂອງຊື່ໄຟລ໌ (ຮູບແບບ glob)"
   },
   "uiBlacklistHelp": {
-    "message": "ໄຟລ໌ທີ່ຊື່ກົງກັບຮູບແບບໃດໆໃນນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດເລີຍ. ຫນຶ່ງຮູບແບບຕໍ່ແຖວ. ຕົວຢ່າງ: *.png, smime.*, *.p7s"
+    "message": "ໄຟລ໌ທີ່ຊື່ກົງກັບຮູບແບບໃດໜຶ່ງໃນນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ. ໜຶ່ງຮູບແບບຕໍ່ແຖວ. ຕົວຢ່າງ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ເຕືອນຖ້າໄຟລ໌ແນບຖືກຍົກເວ້ນໂດຍບັນຊີດໍາ"
+    "message": "ແຈ້ງເຕືອນຖ້າໄຟລ໌ແນບຖືກຍົກເວັ້ນໂດຍບັນຊີດໍາ"
+  },
+  "uiDebugHeader": {
+    "message": "ຂັ້ນສູງ"
+  },
+  "uiDebugLabel": {
+    "message": "ເປີດບັນທຶກການດີບັກ"
+  },
+  "uiDebugHelp": {
+    "message": "ຂຽນບັນທຶກພື້ນຫຼັງລາຍລະອຽດໄປທີ່ console ນັກພັດທະນາຂອງ Thunderbird. ປິດອີກຄັ້ງເມື່ອທ່ານແກ້ໄຂບັນຫາແລ້ວ."
   },
   "uiSave": {
     "message": "ບັນທຶກ"
   },
   "uiSaving": {
-    "message": "ກໍາລັງບັນທຶກ…"
+    "message": "ກຳລັງບັນທຶກ…"
   },
   "uiReset": {
-    "message": "ຄືນຄ່າເປັນຄ່າເລີ່ມຕົ້ນ"
+    "message": "ກັບໄປຄ່າເລີ່ມຕົ້ນ"
   },
   "uiSaved": {
     "message": "ບັນທຶກແລ້ວ."
   },
   "uiResetDone": {
-    "message": "ຄືນຄ່າແລ້ວ."
+    "message": "ຕັ້ງຄ່າຄືນແລ້ວ."
   },
   "uiConfirmHeader": {
     "message": "ການຢືນຢັນ"
@@ -95,10 +104,10 @@
     "message": "ຖາມກ່ອນທີ່ຈະເພີ່ມໄຟລ໌ແນບ"
   },
   "uiConfirmHelp": {
-    "message": "ກ່ອງຢືນຢັນນ້ອຍໆຈະປາກົດເທົ່າເມື່ອຈະມີການເພີ່ມໄຟລ໌ແນບຈິງໆ. ແປ້ນພິມ: Y ຫຼື J = ແມ່ນ; N ຫຼື Esc = ບໍ່."
+    "message": "ກ່ອງຢືນຢັນນ້ອຍໆຈະປາກົດກໍ່ຕອນທີ່ຈະມີການເພີ່ມໄຟລ໌ແນບຈິງໆເທົ່ານັ້ນ. ແປ້ນພິມ: Y ຫຼື J = ແມ່ນ; N ຫຼື Esc = ບໍ່."
   },
   "confirmAddOne": {
-    "message": "ເພີ່ມໄຟລ໌ແນບ: $1?",
+    "message": "ເພີ່ມໄຟລ໌ແນບ: $1 ບໍ?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ເພີ່ມໄຟລ໌ແນບ ($1): $2$3?",
+    "message": "ເພີ່ມໄຟລ໌ແນບ ($1): $2$3 ບໍ?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "ບໍ່"
   },
   "warnBlacklistTitle": {
-    "message": "ຖືກຍົກເວ້ນໂດຍບັນຊີດໍາ"
+    "message": "ຖືກຍົກເວັ້ນໂດຍບັນຊີດໍາ"
   },
   "warnBlacklistIntro": {
-    "message": "ໄຟລ໌ຕໍ່ໄປນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ:"
+    "message": "ໄຟລ໌ຂ້າງລຸ່ມນີ້ຈະບໍ່ຖືກແນບອັດຕະໂນມັດ:"
   },
   "warnColFile": {
     "message": "ໄຟລ໌"
@@ -141,7 +150,7 @@
     "message": "ຕົກລົງ"
   },
   "uiConfirmDefaultHeader": {
-    "message": "ຄໍາຕອບເລີ່ມຕົ້ນ"
+    "message": "ຄໍາຕອບຄ່າເລີ່ມຕົ້ນ"
   },
   "uiConfirmDefaultYes": {
     "message": "ແມ່ນ"
@@ -150,7 +159,7 @@
     "message": "ບໍ່"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,7 +168,7 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "ເອກະສານ:"
+    "message": "ເອກະສານຄູ່ມື:"
   },
   "uiDocsButton": {
     "message": "ເປີດເອກະສານ"

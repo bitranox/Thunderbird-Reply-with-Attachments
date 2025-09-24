@@ -13,9 +13,20 @@
 // Application layer: small, intention-revealing functions
 // Domain helpers are exposed on global App.Domain (loaded from domain/filters.js)
 
+const ATTACHMENT_RETRY_DEFAULT = Object.freeze({ attempts: 5, delayMs: 150 });
+
+function debugLog(logger, payload, message) {
+  try {
+    logger?.debug?.(payload, message);
+  } catch (_) {}
+  try {
+    globalThis.log?.debug?.(payload, message);
+  } catch (_) {}
+}
+
 /**
  * Decide which attachments to add, in two passes (strict → relaxed).
- * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, warn?: (tabId: number, rows: any[]) => Promise<void>, warnOnBlacklist?: boolean, matchBlacklist?: Function|null, logger?: { debug?: Function, info?: Function, warn?: Function, error?: Function }, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
  * @returns {(tabId: number, messageId: number) => Promise<number>} processReplyAttachments
  */
 function createProcessReplyAttachments({
@@ -27,11 +38,19 @@ function createProcessReplyAttachments({
   warnOnBlacklist = false,
   matchBlacklist = null,
   logger = console,
+  attachmentsRetry = ATTACHMENT_RETRY_DEFAULT,
 }) {
   return async function processReplyAttachments(tabId, messageId) {
     try {
-      const all = await getAllAttachments(messages, messageId);
-      if (isEmpty(all)) return 0;
+      const all = await loadAllAttachments(messages, messageId, attachmentsRetry, logger);
+      if (isEmpty(all)) {
+        debugLog(
+          logger,
+          { tabId, messageId },
+          'processReplyAttachments: no attachments discovered'
+        );
+        return 0;
+      }
 
       const existingNames = await getExistingAttachmentNames(compose, tabId);
 
@@ -48,7 +67,14 @@ function createProcessReplyAttachments({
         selectStrict(all, existingNames, shouldExclude),
         selectRelaxed(all, existingNames, shouldExclude),
       ]);
-      if (isEmpty(selected)) return 0;
+      if (isEmpty(selected)) {
+        debugLog(
+          logger,
+          { tabId, messageId },
+          'processReplyAttachments: nothing eligible after filtering'
+        );
+        return 0;
+      }
 
       const approved = await askUserToConfirm(confirm, tabId, selected);
       if (!approved) return 0;
@@ -64,9 +90,37 @@ function createProcessReplyAttachments({
 }
 
 // — process helpers —
-/** Load all attachments for the source message. */
-async function getAllAttachments(messages, messageId) {
-  return await messages.listAttachments(messageId);
+/**
+ * Load all attachments for the source message, retrying when Thunderbird has not
+ * yet hydrated the parts for IMAP-backed messages.
+ */
+async function loadAllAttachments(messages, messageId, retryConfig, logger = console) {
+  const { attempts, delayMs } = normalizeRetryConfig(retryConfig);
+  let last = [];
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    last = await safe(() => messages.listAttachments(messageId), []);
+    if (Array.isArray(last) && last.length > 0) {
+      if (attempt > 0)
+        debugLog(
+          logger,
+          { attempt: attempt + 1, count: last.length, messageId },
+          'loadAllAttachments: succeeded after retry'
+        );
+      return last;
+    }
+    if (attempt < attempts - 1) {
+      debugLog(
+        logger,
+        { attempt: attempt + 1, messageId },
+        'loadAllAttachments: empty result, retrying'
+      );
+      await delay(delayMs);
+    }
+  }
+  if (!Array.isArray(last)) return [];
+  if (last.length === 0)
+    debugLog(logger, { messageId, attempts }, 'loadAllAttachments: empty after retries');
+  return last;
 }
 /** Load existing compose attachments and build a case-insensitive name set. */
 async function getExistingAttachmentNames(compose, tabId) {
@@ -124,7 +178,7 @@ function isEmpty(arr) {
 
 /**
  * Ensure original attachments for reply compose; idempotent per tab via memory + sessions.
- * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn }} deps
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
  * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
 function createEnsureReplyAttachments({
@@ -139,6 +193,7 @@ function createEnsureReplyAttachments({
   warnOnBlacklist = false,
   matchBlacklist = null,
   logger = console,
+  attachmentsRetry = ATTACHMENT_RETRY_DEFAULT,
 }) {
   const processReplyAttachments = createProcessReplyAttachments({
     compose,
@@ -149,6 +204,7 @@ function createEnsureReplyAttachments({
     warnOnBlacklist,
     matchBlacklist,
     logger,
+    attachmentsRetry,
   });
   return async function ensureReplyAttachments(tabId, details) {
     if (!isReply(details)) return; // only for replies
@@ -333,6 +389,22 @@ function delay(ms) {
   return new Promise((r) =>
     globalThis.setTimeout ? globalThis.setTimeout(r, ms) : setTimeout(r, ms)
   );
+}
+
+function normalizeRetryConfig(config) {
+  const base = typeof config === 'object' && config ? config : ATTACHMENT_RETRY_DEFAULT;
+  const attempts = Number.isFinite(base.attempts)
+    ? Math.max(1, Math.floor(base.attempts))
+    : ATTACHMENT_RETRY_DEFAULT.attempts;
+  const delayMs = Number.isFinite(base.delayMs)
+    ? Math.max(0, Math.floor(base.delayMs))
+    : ATTACHMENT_RETRY_DEFAULT.delayMs;
+  if (
+    attempts === ATTACHMENT_RETRY_DEFAULT.attempts &&
+    delayMs === ATTACHMENT_RETRY_DEFAULT.delayMs
+  )
+    return ATTACHMENT_RETRY_DEFAULT;
+  return { attempts, delayMs };
 }
 
 /**

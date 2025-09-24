@@ -3,7 +3,7 @@
     "message": "Eklerle Yanıtla"
   },
   "extDescription": {
-    "message": "E-posta yanıtlarına özgün ekleri otomatik olarak ekler."
+    "message": "E-posta yanıtlarına orijinal ekleri otomatik olarak ekler."
   },
   "composeTitle": {
     "message": "Eklerle Yanıtla"
@@ -24,7 +24,7 @@
     "message": "Bu eklentiyi beğendiniz mi? Lütfen küçük bir katkıyla beni destekleyin:"
   },
   "uiRateATNText": {
-    "message": "Lütfen ATN'de değerlendirin"
+    "message": "Lütfen ATN’de puanlayın"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -53,7 +53,7 @@
     "message": "Bağış istemi yeniden görünür."
   },
   "uiGithubText": {
-    "message": "Hata raporları veya diğer sorular için lütfen şunu ziyaret edin:"
+    "message": "Hata raporları veya diğer sorular için lütfen şu adresi ziyaret edin:"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub sayfası"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Dosya adlarının kara listesi (glob desenleri)"
+    "message": "Dosya adları kara listesi (glob desenleri)"
   },
   "uiBlacklistHelp": {
-    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar asla otomatik olarak eklenmez. Satır başına bir desen. Örnekler: *.png, smime.*, *.p7s"
+    "message": "Adı bu desenlerden herhangi biriyle eşleşen dosyalar asla otomatik olarak eklenmez. Her satıra bir desen. Örnekler: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Ekler kara liste nedeniyle hariç tutulursa uyar"
+  },
+  "uiDebugHeader": {
+    "message": "Gelişmiş"
+  },
+  "uiDebugLabel": {
+    "message": "Hata ayıklama günlüğünü etkinleştir"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird’ün geliştirici konsoluna ayrıntılı arka plan günlükleri yazar. Sorun gidermeyi bitirdiğinizde tekrar devre dışı bırakın."
   },
   "uiSave": {
     "message": "Kaydet"
@@ -95,10 +104,10 @@
     "message": "Ekleri eklemeden önce sor"
   },
   "uiConfirmHelp": {
-    "message": "Küçük bir onay iletişim kutusu yalnızca gerçekten ekler eklenecekse görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
+    "message": "Küçük bir onay iletişim kutusu yalnızca ekler gerçekten ekleneceğinde görünür. Klavye: Y veya J = Evet; N veya Esc = Hayır."
   },
   "confirmAddOne": {
-    "message": "Eki ekle: $1?",
+    "message": "Ek eklensin mi: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Ekleri ekle ($1): $2$3?",
+    "message": "Ekler eklensin mi ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -150,7 +159,7 @@
     "message": "Hayır"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
+    "message": "ကူးတွဲဖိုင်များဖြင့် ပြန်စာ"
   },
   "extDescription": {
-    "message": "အီးမေးလ် တုံ့ပြန်ရာတွင် မူလ ပူးတွဲဖိုင်များကို အလိုအလျောက် ထည့်သွင်းပေးသည်။"
+    "message": "အီးမေးလ် ပြန်စာများတွင် မူလ ကူးတွဲဖိုင်များကို အလိုအလျောက် ထည့်သွင်းပေးသည်။"
   },
   "composeTitle": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
+    "message": "ကူးတွဲဖိုင်များဖြင့် ပြန်စာ"
   },
   "optionsTitle": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန် — ရွေးချယ်ချက်များ"
+    "message": "ကူးတွဲဖိုင်များဖြင့် ပြန်စာ — အပြင်အဆင်များ"
   },
   "confirmTitle": {
-    "message": "ပူးတွဲဖိုင်များကို အတည်ပြုပါ"
+    "message": "ကူးတွဲဖိုင်များ အတည်ပြုရန်"
   },
   "uiHeader": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန်"
+    "message": "ကူးတွဲဖိုင်များဖြင့် ပြန်စာ"
   },
   "uiNoOptions": {
-    "message": "ယခုအချိန်တွင် ပြင်ဆင်ရန် ရွေးချယ်ချက်များ မရှိပါ။"
+    "message": "လတ်တလော ပြင်ဆင်ရန် ရွေးချယ်စရာ မရှိသေးပါ။"
   },
   "uiSupport": {
-    "message": "ဤ add-on ကို နှစ်သက်ပါသလား။ အနည်းငယ် အလှူငွေဖြင့် ပံ့ပိုးပေးပါ:"
+    "message": "ဤ add-on ကို သဘောကျသလား? ကျေးဇူးပြု၍ လှူဒါန်းငွေ သေးသေးလေးဖြင့် ကူညီပံ့ပိုးပေးပါ:"
   },
   "uiRateATNText": {
-    "message": "ATN တွင် အဆင့် သတ်မှတ်ပေးပါ"
+    "message": "ATN တွင် အဆင့်သတ်မှတ်ပေးပါ"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ယခု လှူဒါန်းပါ"
+    "message": "ယခု လှူဒါန်းရန်"
   },
   "uiIDonated": {
-    "message": "လှူဒါန်းပြီးပြီ"
+    "message": "လှူဒါန်းပြီးပါပြီ"
   },
   "uiDonateSnoozed": {
-    "message": "ကျေးဇူးတင်ပါသည်! လှူဒါန်းခြင်း သတိပေးချက်ကို ၉၀ ရက်အတွက် ဖျောက်ထားမည်။"
+    "message": "ကျေးဇူးတင်ပါသည်! လှူဒါန်းရန် အသိပေးချက်ကို 90 ရက်အထိ ဖျောက်ထားပါမည်။"
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 အထိ ဖျောက်ထားသည်",
+    "message": "$1 အထိ ဖျောက်ထားထားသည်",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "လှူဒါန်းရန် ပြန်ဖော်ပြပါ"
+    "message": "လှူဒါန်းရန်ကို ပြန်ပြပါ"
   },
   "uiDonateRestored": {
-    "message": "လှူဒါန်းရန် သတိပေးချက်ကို ပြန်ဖော်ပြနေပါသည်။"
+    "message": "လှူဒါန်းရန် အသိပေးချက်ကို နောက်တဖန် မြင်တွေ့နိုင်ပါပြီ။"
   },
   "uiGithubText": {
-    "message": "အမှားတင်ပြချက်များ သို့မဟုတ် အခြား မေးမြန်းမှုများအတွက် ကျွန်ုပ်၏"
+    "message": "Bug တင်ပြခြင်း သို့မဟုတ် အခြား မေးမြန်းလိုသည့်အရာများအတွက် ကျွန်ုပ်၏"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub စာမျက်နှာ"
   },
   "iconAlt": {
-    "message": "ပူးတွဲဖိုင်များဖြင့် တုံ့ပြန်ရန် အိုင်ကွန်"
+    "message": "ကူးတွဲဖိုင်များဖြင့် ပြန်စာ အိုင်ကွန်"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ဖိုင်နာမည်များအတွက် Blacklist (glob patterns)"
+    "message": "ဖိုင်အမည်များ တားဆီးစာရင်း (glob ပုံစံများ)"
   },
   "uiBlacklistHelp": {
-    "message": "ဤပုံစံများထဲမှ မည်သည့်တစ်ခုနှင့်မဆို ကိုက်ညီသော ဖိုင်များကို ဘယ်တော့မျှ အလိုအလျောက် မပူးတွဲပါ။ လိုင်းတစ်ကြောင်းလျှင် ပုံစံတစ်ခုစီ။ ဥပမာ: *.png, smime.*, *.p7s"
+    "message": "ဤပုံစံများထဲမှ မည်သည့်တစ်ခုနဲ့မဆို ကိုက်ညီသည့် ဖိုင်များကို အလိုအလျောက် မတွဲပေးပါ။ စာကြောင်းတစ်ကြောင်းလျှင် ပုံစံတစ်ခု။ ဥပမာများ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Blacklist ကြောင့် ပူးတွဲဖိုင်များ မပါဝင်သွားပါက သတိပေးပါ"
+    "message": "တားဆီးစာရင်းကြောင့် ကူးတွဲဖိုင်များကို ဖယ်ထုတ်ထားပါက သတိပေးရန်"
+  },
+  "uiDebugHeader": {
+    "message": "အဆင့်မြင့်"
+  },
+  "uiDebugLabel": {
+    "message": "debug လော့ဂ်ကို ဖွင့်ရန်"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird ၏ developer console သို့ အသေးစိတ် နောက်ခံ မှတ်တမ်းများကို ရေးသွင်းပါမည်။ ပြဿနာ ဖြေရှင်းပြီးပါက ပြန်ပိတ်ပါ။"
   },
   "uiSave": {
-    "message": "သိမ်းဆည်းပါ"
+    "message": "သိမ်းဆည်းရန်"
   },
   "uiSaving": {
     "message": "သိမ်းဆည်းနေသည်…"
   },
   "uiReset": {
-    "message": "မူလ သတ်မှတ်ချက်များသို့ ပြန်ထားရန်"
+    "message": "စံထားချက်များသို့ ပြန်သတ်မှတ်မည်"
   },
   "uiSaved": {
-    "message": "သိမ်းဆည်းပြီး။"
+    "message": "သိမ်းဆည်းပြီးပါပြီ။"
   },
   "uiResetDone": {
-    "message": "ပြန်သတ်မှတ်ပြီး။"
+    "message": "ပြန်သတ်မှတ်ပြီးပါပြီ။"
   },
   "uiConfirmHeader": {
-    "message": "အတည်ပြုခြင်း"
+    "message": "အတည်ပြုချက်"
   },
   "uiConfirmLabel": {
-    "message": "ပူးတွဲဖိုင်များ ထည့်မီ မေးမြန်းရန်"
+    "message": "ကူးတွဲဖိုင်များ ထည့်မီ မေးမြန်းပါ"
   },
   "uiConfirmHelp": {
-    "message": "ပူးတွဲဖိုင်များကို တကယ်တမ်း ထည့်မည့်အခါတွင်သာ အတည်ပြု ဒိုင်ယာလော့ဂ်ငယ်တစ်ခု ပေါ်လာမည်။ ကီးဘုတ်: Y သို့မဟုတ် J = ဟုတ်; N သို့မဟုတ် Esc = မဟုတ်။"
+    "message": "ကူးတွဲဖိုင်များကို တကယ် ထည့်မည့်အခါတွင်သာ အတည်ပြု dialog ချက်လက် ပေါ်လာပါမည်။ ကီးဘုတ်: Y သို့မဟုတ် J = ဟုတ်; N သို့မဟုတ် Esc = မဟုတ်။"
   },
   "confirmAddOne": {
-    "message": "ပူးတွဲဖိုင် ထည့်မလား: $1?",
+    "message": "ကူးတွဲဖိုင် ထည့်မလား: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ပူးတွဲဖိုင်များ ထည့်မလား ($1): $2$3?",
+    "message": "ကူးတွဲဖိုင်များ ($1) ကို ထည့်မလား: $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "မဟုတ်"
   },
   "warnBlacklistTitle": {
-    "message": "Blacklist ကြောင့် ဖယ်ထုတ်ထားသည်"
+    "message": "တားဆီးစာရင်းကြောင့် ဖယ်ထုတ်ထားသည်"
   },
   "warnBlacklistIntro": {
-    "message": "အောက်ဖော်ပြပါ ဖိုင်များကို အလိုအလျောက် မပူးတွဲပါ:"
+    "message": "အောက်ပါ ဖိုင်များကို အလိုအလျောက် မတွဲပေးပါ:"
   },
   "warnColFile": {
     "message": "ဖိုင်"
@@ -138,10 +147,10 @@
     "message": "ပုံစံ"
   },
   "warnOk": {
-    "message": "OK"
+    "message": "အိုကေ"
   },
   "uiConfirmDefaultHeader": {
-    "message": "ပုံသေအဖြေ"
+    "message": "ပုံမှန် အဖြေ"
   },
   "uiConfirmDefaultYes": {
     "message": "ဟုတ်"
@@ -150,7 +159,7 @@
     "message": "မဟုတ်"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "လမ်းညွှန်စာတမ်း:"
+    "message": "စာတမ်းများ:"
   },
   "uiDocsButton": {
-    "message": "စာတမ်းဖွင့်ရန်"
+    "message": "စာတမ်း ဖွင့်မည်"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

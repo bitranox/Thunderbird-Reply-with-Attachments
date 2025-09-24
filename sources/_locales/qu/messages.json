@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "Q'ipikunawan Kutichiy"
+    "message": "Adjuntokunawan Kutichiy"
   },
   "extDescription": {
-    "message": "Correo kutichispa, original q'ipikunata automaticamente yapachin."
+    "message": "Qillqakuykutita kutichispa, original adjuntokunata automáticamentem churan."
   },
   "composeTitle": {
-    "message": "Q'ipikunawan Kutichiy"
+    "message": "Adjuntokunawan Kutichiy"
   },
   "optionsTitle": {
-    "message": "Q'ipikunawan Kutichiy — Ajustes"
+    "message": "Adjuntokunawan Kutichiy — Opciones"
   },
   "confirmTitle": {
-    "message": "Q'ipikunata Chiqachiy"
+    "message": "Adjuntokunata Chiqaqchay"
   },
   "uiHeader": {
-    "message": "Q'ipikunawan Kutichiy"
+    "message": "Adjuntokunawan Kutichiy"
   },
   "uiNoOptions": {
-    "message": "Kunanqa manan imapas konfiguraypaq kachkanchu."
+    "message": "Kunanqa mana opciones kamachinaykuna kachkanchu."
   },
   "uiSupport": {
-    "message": "Kay add‑on gustawanqichu? Ama hina kaspa, aslla apurtewan yanapaykuway:"
+    "message": "Kay add-onqa munankichu? Ama hina kaspa, aslla aporteywan yanapaway:"
   },
   "uiRateATNText": {
-    "message": "ATNpi calificarikuway"
+    "message": "Ama hina kaspa, ATNpi califica"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Aportay kunan"
+    "message": "Kunan qullqiwan yanapay"
   },
   "uiIDonated": {
-    "message": "Aportey"
+    "message": "Qullqiwan yanaparqani"
   },
   "uiDonateSnoozed": {
-    "message": "Sulpayki! Aportay mañakuy 90 p'unchawkunapaq pakasqa."
+    "message": "Sulpayki! Donación willay 90 p'unchawkama pakasqa."
   },
   "uiDonateHiddenUntil": {
-    "message": "Pakakusqa $1",
+    "message": "Pakasqa $1-kama",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Aportay mañakuyta wakmanta qhawachiy"
+    "message": "Donación willayta wakmanta qhawachiy"
   },
   "uiDonateRestored": {
-    "message": "Aportay mañakuyqa wakmanta qhawachkan."
+    "message": "Donación willayqa wakmanta rikurin."
   },
   "uiGithubText": {
-    "message": "Pantay willakuykuna utaq huk tapukuykunapaq, ama hina kaspa, ñuqapa"
+    "message": "Errores willakuykuna utaq huk tapukuykunapaq, ama hina kaspa, ñuqaq"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub p'anqa"
   },
   "iconAlt": {
-    "message": "Q'ipikunawan Kutichiy icono"
+    "message": "Adjuntokunawan Kutichiy icono"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Archivo sutikunapa lista negra (glob patrónkuna)"
+    "message": "Archivokuna sutinakunapa lista negra (patrones glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Kay patrónkunaman tinkuq suti khipukunaqa mana nunca automaticamente yapachasqachu. Huk patrón sapa siqipi. Ejemplokuna: *.png, smime.*, *.p7s"
+    "message": "Sutin kay patronkunaman tupan archivokunaqa mana chaymanta adjuntakusqachu automáticamentem. Sapa rimanapi huk patrón. Ejemplos: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Lista negrawan qechusqa q'ipikunata willachiy"
+    "message": "Adjuntokuna lista negrawan excluido kashpa willachiy"
+  },
+  "uiDebugHeader": {
+    "message": "Avanzado"
+  },
+  "uiDebugLabel": {
+    "message": "Depuración qillqakunata activar"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbirdpa consola de desarrolladorpi detalladota registros qillqan. Troubleshoot tukukuptiykiptin, wakmanta inhabilitay."
   },
   "uiSave": {
     "message": "Waqaychay"
   },
   "uiSaving": {
-    "message": "Waqaychachkan…"
+    "message": "Waqaychaspa…"
   },
   "uiReset": {
-    "message": "Restablecer a predeterminados"
+    "message": "Ñawpaqchasqaman kutichiy"
   },
   "uiSaved": {
     "message": "Waqaychasqa."
   },
   "uiResetDone": {
-    "message": "Restablecido."
+    "message": "Kutinchasqa."
   },
   "uiConfirmHeader": {
-    "message": "Chiqachiy"
+    "message": "Chiqaqchay"
   },
   "uiConfirmLabel": {
-    "message": "Q'ipikunata yapachay ñawpaqta tapuy"
+    "message": "Adjuntokunata yapaymanta ñawpaqta tapuy"
   },
   "uiConfirmHelp": {
-    "message": "Q'ipikunata, chayqa yapachakusqa kaptinlla, uchuy chiqachiy willañiqi rikurinqa. Tecladopi: Y utaq J = Ari; N utaq Esc = Mana."
+    "message": "Adjuntokuna yapaq chaykaptinlla aslla chiqaqchay willay qhawarin. Teclado: Y utaq J = Arí; N utaq Esc = Mana."
   },
   "confirmAddOne": {
-    "message": "Q'ipi yapay: $1?",
+    "message": "Adjunto yapay: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Q'ipikuna yapay ($1): $2$3?",
+    "message": "Adjuntokunata yapay ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -120,16 +129,16 @@
     }
   },
   "confirmYes": {
-    "message": "Ari"
+    "message": "Arí"
   },
   "confirmNo": {
     "message": "Mana"
   },
   "warnBlacklistTitle": {
-    "message": "Lista negrawan qechusqa"
+    "message": "Excluido por lista negra"
   },
   "warnBlacklistIntro": {
-    "message": "Kay khipukunaqa mana automaticamente yapachasqachu:"
+    "message": "Kay archivokunaka mana adjuntakusqachu automáticamentem:"
   },
   "warnColFile": {
     "message": "Archivo"
@@ -144,13 +153,13 @@
     "message": "Respuesta predeterminada"
   },
   "uiConfirmDefaultYes": {
-    "message": "Ari"
+    "message": "Arí"
   },
   "uiConfirmDefaultNo": {
     "message": "Mana"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -162,7 +171,7 @@
     "message": "Documentación:"
   },
   "uiDocsButton": {
-    "message": "Abrir Documentación"
+    "message": "Documentaciónta kichay"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Mamaly miaraka amin'ny Rakitra Miraikitra"
+    "message": "Mamaly miaraka amin'ny rakitra mifatotra"
   },
   "extDescription": {
-    "message": "Ampidiro ho azy ireo rakitra miraikitra tany am-boalohany ao amin'ny valin-mailaka."
+    "message": "Ampidiro ho azy ny rakitra nifatotra tany am-boalohany ao amin'ny valin-kafatra mailaka."
   },
   "composeTitle": {
-    "message": "Mamaly miaraka amin'ny Rakitra Miraikitra"
+    "message": "Mamaly miaraka amin'ny rakitra mifatotra"
   },
   "optionsTitle": {
-    "message": "Mamaly miaraka amin'ny Rakitra Miraikitra — Safidy"
+    "message": "Mamaly miaraka amin'ny rakitra mifatotra — Safidy"
   },
   "confirmTitle": {
-    "message": "Fanamafisana ny rakitra miraikitra"
+    "message": "Fanamafisana ny rakitra mifatotra"
   },
   "uiHeader": {
-    "message": "Mamaly miaraka amin'ny Rakitra Miraikitra"
+    "message": "Mamaly miaraka amin'ny rakitra mifatotra"
   },
   "uiNoOptions": {
-    "message": "Tsy misy safidy amboarina amin'izao fotoana izao."
+    "message": "Tsy misy safidy azo amboarina amin'izao fotoana izao."
   },
   "uiSupport": {
-    "message": "Tianao ve ity fanitarana ity? Azafady, tohanana amin'ny fandraisana anjara kely aho:"
+    "message": "Tianao ve ity fanampiny ity? Azafady, tohanana amin'ny fandraisana anjara kely:"
   },
   "uiRateATNText": {
     "message": "Azafady, omeo naoty ao amin'ny ATN"
@@ -30,16 +30,16 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Manome izao"
+    "message": "Manome fanomezana izao"
   },
   "uiIDonated": {
-    "message": "Efa nanome aho"
+    "message": "Nanome aho"
   },
   "uiDonateSnoozed": {
-    "message": "Misaotra! Nafenina mandritra ny 90 andro ny fampandrenesana fanomezana."
+    "message": "Misaotra! Miafina mandritra ny 90 andro ny fangatahana fanomezana."
   },
   "uiDonateHiddenUntil": {
-    "message": "Hafenina hatramin'ny $1",
+    "message": "Miafina hatramin'ny $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Asehoy indray ny fampandrenesana fanomezana"
+    "message": "Asehoy indray ny fangatahana fanomezana"
   },
   "uiDonateRestored": {
-    "message": "Miseho indray ny fampandrenesana fanomezana."
+    "message": "Miseho indray ny fangatahana fanomezana."
   },
   "uiGithubText": {
-    "message": "Ho an'ny tatitra bibikely na fanontaniana hafa, azafady tsidiho ny"
+    "message": "Ho an'ny tatitra olana na fangatahana hafa, azafady tsidiho ny"
   },
   "uiGithubLinkLabel": {
     "message": "Pejy GitHub"
   },
   "iconAlt": {
-    "message": "Sary famantarana Mamaly miaraka amin'ny Rakitra Miraikitra"
+    "message": "Sary famantarana Mamaly miaraka amin'ny rakitra mifatotra"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,16 +68,25 @@
     "message": "Lisitra mainty amin'ny anaran-drakitra (lamina glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Ireo rakitra manana anarana mifanaraka amin'ny iray amin'ireny lamina ireny dia tsy ho ampiana ho azy mihitsy. Lamina iray isaky ny andalana. Ohatra: *.png, smime.*, *.p7s"
+    "message": "Ireo rakitra izay mifanaraka amin'ny iray amin'ireo lamina ireo ny anarany dia tsy hampiarahana ho azy mihitsy. Lamina iray isaky ny andalana. Ohatra: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Mampitandrina raha voahilika amin'ny lisitra mainty ny rakitra miraikitra"
+    "message": "Ampitandremo raha voahilika amin'ny lisitra mainty ny rakitra mifatotra"
+  },
+  "uiDebugHeader": {
+    "message": "Mandroso"
+  },
+  "uiDebugLabel": {
+    "message": "Alefaso ny firaketana debug"
+  },
+  "uiDebugHelp": {
+    "message": "Manoratra firaketana amin'ny antsipiriany ao ambadika ao amin'ny console an'ny mpamorona Thunderbird. Esory indray rehefa vita ny famahana olana."
   },
   "uiSave": {
     "message": "Tehirizo"
   },
   "uiSaving": {
-    "message": "Tehirizina…"
+    "message": "Mitahiry…"
   },
   "uiReset": {
     "message": "Avereno amin'ny toe-javatra fototra"
@@ -92,13 +101,13 @@
     "message": "Fanamafisana"
   },
   "uiConfirmLabel": {
-    "message": "Anontanio alohan'ny hanampiana rakitra miraikitra"
+    "message": "Manontania alohan'ny hanampiana rakitra mifatotra"
   },
   "uiConfirmHelp": {
-    "message": "Hiseho ihany ny varavarankely fanamafisana kely rehefa tena hisy rakitra ampiana. Fitendry: Y na J = Eny; N na Esc = Tsia."
+    "message": "Miseho ihany ny boaty fanamafisana kely rehefa tena hisy rakitra ampiana. Fitendry: Y na J = Eny; N na Esc = Tsia."
   },
   "confirmAddOne": {
-    "message": "Hanampy rakitra miraikitra: $1?",
+    "message": "Hanampy rakitra mifatotra: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Hanampy rakitra miraikitra ($1): $2$3?",
+    "message": "Hanampy rakitra mifatotra ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Tsia"
   },
   "warnBlacklistTitle": {
-    "message": "Voahilika noho ny lisitra mainty"
+    "message": "Voahilika amin'ny lisitra mainty"
   },
   "warnBlacklistIntro": {
-    "message": "Ireto rakitra manaraka ireto dia tsy ho ampiana ho azy:"
+    "message": "Ireto rakitra manaraka ireto dia tsy hampiarahana ho azy:"
   },
   "warnColFile": {
     "message": "Rakitra"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Valiny tsy miova"
+    "message": "Valiny ankapobeny"
   },
   "uiConfirmDefaultYes": {
     "message": "Eny"
@@ -150,7 +159,7 @@
     "message": "Tsia"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Taratasy fanazavana:"
+    "message": "Antontan-taratasy:"
   },
   "uiDocsButton": {
-    "message": "Sokafy ny Antontan-taratasy"
+    "message": "Sokafy ny antontan-taratasy"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

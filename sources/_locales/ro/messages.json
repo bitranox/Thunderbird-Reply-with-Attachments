@@ -12,7 +12,7 @@
     "message": "Răspunde cu atașamente — Opțiuni"
   },
   "confirmTitle": {
-    "message": "Confirmă atașamentele"
+    "message": "Confirmare atașamente"
   },
   "uiHeader": {
     "message": "Răspunde cu atașamente"
@@ -21,7 +21,7 @@
     "message": "Momentan nu există opțiuni de configurat."
   },
   "uiSupport": {
-    "message": "Îți place acest supliment? Te rog susține-mă cu o contribuție mică:"
+    "message": "Îți place acest supliment? Susține-mă cu o mică contribuție:"
   },
   "uiRateATNText": {
     "message": "Te rog evaluează pe ATN"
@@ -50,13 +50,13 @@
     "message": "Afișează din nou Donează"
   },
   "uiDonateRestored": {
-    "message": "Solicitarea de donație este vizibilă din nou."
+    "message": "Solicitarea de donație este din nou vizibilă."
   },
   "uiGithubText": {
-    "message": "Pentru rapoarte de erori sau alte solicitări, te rog vizitează"
+    "message": "Pentru rapoarte de erori sau alte întrebări, te rog vizitează-mi"
   },
   "uiGithubLinkLabel": {
-    "message": "pagina mea GitHub"
+    "message": "Pagina de GitHub"
   },
   "iconAlt": {
     "message": "Pictograma Răspunde cu atașamente"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Lista neagră a numelor de fișiere (modele glob)"
+    "message": "Listă neagră a numelor de fișiere (modele glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Fișierele ale căror nume se potrivesc oricăruia dintre aceste modele nu vor fi niciodată atașate automat. Un model pe linie. Exemple: *.png, smime.*, *.p7s"
+    "message": "Fișierele ale căror nume se potrivesc oricăruia dintre aceste modele nu vor fi atașate niciodată automat. Un model pe linie. Exemple: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Avertizează dacă atașamentele sunt excluse de lista neagră"
+  },
+  "uiDebugHeader": {
+    "message": "Avansat"
+  },
+  "uiDebugLabel": {
+    "message": "Activează jurnalizarea de depanare"
+  },
+  "uiDebugHelp": {
+    "message": "Scrie jurnale detaliate în fundal în consola pentru dezvoltatori a Thunderbird. Dezactivează din nou când ai terminat depanarea."
   },
   "uiSave": {
     "message": "Salvează"
@@ -95,10 +104,10 @@
     "message": "Întreabă înainte de a adăuga atașamente"
   },
   "uiConfirmHelp": {
-    "message": "Apare o mică fereastră de confirmare numai când ar fi adăugate atașamente. Tastatură: Y sau J = Da; N sau Esc = Nu."
+    "message": "O mică fereastră de confirmare apare doar când chiar ar fi adăugate atașamente. Tastatură: Y sau J = Da; N sau Esc = Nu."
   },
   "confirmAddOne": {
-    "message": "Adaugă atașament: $1?",
+    "message": "Adaugi atașamentul: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Adaugă atașamente ($1): $2$3?",
+    "message": "Adaugi atașamente ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -150,7 +159,7 @@
     "message": "Nu"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

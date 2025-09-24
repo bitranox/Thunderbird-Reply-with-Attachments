@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Ngabales jeung Lampiran"
+    "message": "Bales jeung Lampiran"
   },
   "extDescription": {
-    "message": "Otomatis ngalebetkeun lampiran aslina dina balesan surél."
+    "message": "Ngasupkeun otomatis lampiran aslina dina balesan surél."
   },
   "composeTitle": {
-    "message": "Ngabales jeung Lampiran"
+    "message": "Bales jeung Lampiran"
   },
   "optionsTitle": {
-    "message": "Ngabales jeung Lampiran — Pilihan"
+    "message": "Bales jeung Lampiran — Pilihan"
   },
   "confirmTitle": {
     "message": "Mastikeun Lampiran"
   },
   "uiHeader": {
-    "message": "Ngabales jeung Lampiran"
+    "message": "Bales jeung Lampiran"
   },
   "uiNoOptions": {
-    "message": "Ayeuna teu aya pilihan anu bisa disetél."
+    "message": "Ayeuna teu aya pilihan pikeun disetél."
   },
   "uiSupport": {
-    "message": "Anjeun resep kana add-on ieu? Punten dukung ku sumbangan leutik:"
+    "message": "Naha resep kana ieu add-on? Punten dukung ku sumbangan saeutik:"
   },
   "uiRateATNText": {
-    "message": "Mangga méré peunteun di ATN"
+    "message": "Mangga peunteun di ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -36,7 +36,7 @@
     "message": "Abdi parantos nyumbang"
   },
   "uiDonateSnoozed": {
-    "message": "Hatur nuhun! Paménta sumbangan disumputkeun salila 90 poé."
+    "message": "Hatur nuhun! Ajakan donasi disumputkeun salila 90 poé."
   },
   "uiDonateHiddenUntil": {
     "message": "Disumputkeun nepi ka $1",
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Témbongkeun Nyumbang deui"
+    "message": "Témbongkeun ajakan donasi deui"
   },
   "uiDonateRestored": {
-    "message": "Paménta sumbangan katingali deui."
+    "message": "Ajakan donasi katingali deui."
   },
   "uiGithubText": {
-    "message": "Pikeun laporan bug atawa patalékan séjén, mangga nganjang ka"
+    "message": "Pikeun ngalaporkeun bug atawa patalékan séjén, mangga nganjang ka"
   },
   "uiGithubLinkLabel": {
     "message": "Kaca GitHub"
   },
   "iconAlt": {
-    "message": "Ikon Ngabales jeung Lampiran"
+    "message": "Ikon Bales jeung Lampiran"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Daptar hideung ngaran payil (pola glob)"
+    "message": "Daptar hideung ngaran file (pola glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Payil anu ngaran-na cocog jeung salah sahiji pola ieu moal pernah dilampirkeun sacara otomatis. Saleret hiji pola. Conto: *.png, smime.*, *.p7s"
+    "message": "File anu ngaranna cocog jeung salah sahiji pola ieu moal kungsi dilampirkeun sacara otomatis. Hiji pola unggal baris. Conto: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Béjaan lamun lampiran dikecualikeun ku daptar hideung"
+    "message": "Élingkeun lamun lampiran teu diasupkeun ku daptar hideung"
+  },
+  "uiDebugHeader": {
+    "message": "Lanjutan"
+  },
+  "uiDebugLabel": {
+    "message": "Aktipkeun log debug"
+  },
+  "uiDebugHelp": {
+    "message": "Nulis log latar tukang anu rinci ka konsol pamekar Thunderbird. Pareuman deui sanggeus réngsé ngungkulan masalah."
   },
   "uiSave": {
     "message": "Simpen"
@@ -80,22 +89,22 @@
     "message": "Nyimpen…"
   },
   "uiReset": {
-    "message": "Reset ka standar"
+    "message": "Reset kana setélan baku"
   },
   "uiSaved": {
     "message": "Disimpen."
   },
   "uiResetDone": {
-    "message": "Di-reset."
+    "message": "Direset."
   },
   "uiConfirmHeader": {
     "message": "Konfirmasi"
   },
   "uiConfirmLabel": {
-    "message": "Tanyakeun heula saméméh nambihan lampiran"
+    "message": "Tanyakeun heula saméméh nambahkeun lampiran"
   },
   "uiConfirmHelp": {
-    "message": "Kotak konfirmasi leutik bakal mucunghul ngan lamun aya lampiran anu bener-bener bakal ditambahkeun. Kibor: Y atawa J = Enya; N atawa Esc = Henteu."
+    "message": "Kotak dialog konfirmasi leutik bakal mucunghul ngan lamun aya lampiran anu bakal ditambahkeun. Papan ketik: Y atawa J = Enya; N atawa Esc = Henteu."
   },
   "confirmAddOne": {
     "message": "Tambahkeun lampiran: $1?",
@@ -126,13 +135,13 @@
     "message": "Henteu"
   },
   "warnBlacklistTitle": {
-    "message": "Dikecualikeun ku daptar hideung"
+    "message": "Teu diasupkeun ku daptar hideung"
   },
   "warnBlacklistIntro": {
-    "message": "Payil di handap ieu moal dilampirkeun sacara otomatis:"
+    "message": "File di handap ieu moal otomatis dilampirkeun:"
   },
   "warnColFile": {
-    "message": "Payil"
+    "message": "File"
   },
   "warnColPattern": {
     "message": "Pola"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Jawaban standar"
+    "message": "Waleran baku"
   },
   "uiConfirmDefaultYes": {
     "message": "Enya"
@@ -150,7 +159,7 @@
     "message": "Henteu"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

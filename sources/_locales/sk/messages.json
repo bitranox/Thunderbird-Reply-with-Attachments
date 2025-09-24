@@ -3,13 +3,13 @@
     "message": "Odpovedať s prílohami"
   },
   "extDescription": {
-    "message": "Automaticky pridá pôvodné prílohy do e‑mailových odpovedí."
+    "message": "Automaticky zahrnie pôvodné prílohy do odpovedí na e-maily."
   },
   "composeTitle": {
     "message": "Odpovedať s prílohami"
   },
   "optionsTitle": {
-    "message": "Odpovedať s prílohami — Nastavenia"
+    "message": "Odpovedať s prílohami — Možnosti"
   },
   "confirmTitle": {
     "message": "Potvrdenie príloh"
@@ -21,22 +21,22 @@
     "message": "Momentálne nie sú k dispozícii žiadne možnosti na konfiguráciu."
   },
   "uiSupport": {
-    "message": "Páči sa vám tento doplnok? Podporte ma, prosím, malým príspevkom:"
+    "message": "Páči sa vám toto rozšírenie? Podporte ma, prosím, malým príspevkom:"
   },
   "uiRateATNText": {
-    "message": "Ohodnoťte, prosím, na ATN"
+    "message": "Prosím, ohodnoťte na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Prispejte teraz"
+    "message": "Prispieť teraz"
   },
   "uiIDonated": {
-    "message": "Prispel(a) som"
+    "message": "Už som prispel(a)"
   },
   "uiDonateSnoozed": {
-    "message": "Ďakujem! Výzva na darovanie je skrytá na 90 dní."
+    "message": "Ďakujem! Výzva na príspevok je skrytá na 90 dní."
   },
   "uiDonateHiddenUntil": {
     "message": "Skryté do $1",
@@ -47,13 +47,13 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Zobraziť výzvu na darovanie znova"
+    "message": "Zobraziť výzvu na príspevok znova"
   },
   "uiDonateRestored": {
-    "message": "Výzva na darovanie je opäť viditeľná."
+    "message": "Výzva na príspevok je opäť viditeľná."
   },
   "uiGithubText": {
-    "message": "Na hlásenie chýb alebo iné otázky navštívte, prosím, moju"
+    "message": "Pre nahlásenie chýb alebo iné otázky navštívte moju"
   },
   "uiGithubLinkLabel": {
     "message": "stránku na GitHube"
@@ -65,19 +65,28 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Čierna listina názvov súborov (glob vzory)"
+    "message": "Zoznam zakázaných názvov súborov (glob vzory)"
   },
   "uiBlacklistHelp": {
-    "message": "Súbory, ktorých názvy zodpovedajú niektorému z týchto vzorov, sa nikdy nepridajú automaticky. Jeden vzor na riadok. Príklady: *.png, smime.*, *.p7s"
+    "message": "Súbory, ktorých názvy zodpovedajú ktorémukoľvek z týchto vzorov, sa nikdy nebudú pripájať automaticky. Jeden vzor na riadok. Príklady: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Upozorniť, ak sú prílohy vylúčené čiernou listinou"
+    "message": "Upozorniť, ak sú prílohy vylúčené podľa zoznamu zakázaných"
+  },
+  "uiDebugHeader": {
+    "message": "Rozšírené"
+  },
+  "uiDebugLabel": {
+    "message": "Povoliť ladiace záznamy"
+  },
+  "uiDebugHelp": {
+    "message": "Zapisuje podrobné záznamy na pozadí do vývojárskej konzoly Thunderbirdu. Po dokončení riešenia problémov to opäť vypnite."
   },
   "uiSave": {
     "message": "Uložiť"
   },
   "uiSaving": {
-    "message": "Ukladanie…"
+    "message": "Ukladá sa…"
   },
   "uiReset": {
     "message": "Obnoviť predvolené"
@@ -92,10 +101,10 @@
     "message": "Potvrdenie"
   },
   "uiConfirmLabel": {
-    "message": "Opýtať sa pred pridaním príloh"
+    "message": "Pred pridaním príloh sa opýtať"
   },
   "uiConfirmHelp": {
-    "message": "Malé potvrdzovacie dialógové okno sa zobrazí iba vtedy, keď by sa skutočne pridali prílohy. Klávesnica: Y alebo J = Áno; N alebo Esc = Nie."
+    "message": "Malé potvrdzovacie okno sa zobrazí iba vtedy, keď by sa skutočne mali pridať prílohy. Klávesnica: Y alebo J = Áno; N alebo Esc = Nie."
   },
   "confirmAddOne": {
     "message": "Pridať prílohu: $1?",
@@ -126,7 +135,7 @@
     "message": "Nie"
   },
   "warnBlacklistTitle": {
-    "message": "Vylúčené čiernou listinou"
+    "message": "Vylúčené podľa zoznamu zakázaných"
   },
   "warnBlacklistIntro": {
     "message": "Nasledujúce súbory nebudú automaticky pripojené:"
@@ -150,7 +159,7 @@
     "message": "Nie"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

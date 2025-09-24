@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Trả lời kèm tệp đính kèm"
+    "message": "Trả lời với tệp đính kèm"
   },
   "extDescription": {
-    "message": "Tự động đính kèm các tệp gốc khi trả lời email."
+    "message": "Tự động bao gồm các tệp đính kèm gốc trong thư trả lời."
   },
   "composeTitle": {
-    "message": "Trả lời kèm tệp đính kèm"
+    "message": "Trả lời với tệp đính kèm"
   },
   "optionsTitle": {
-    "message": "Trả lời kèm tệp đính kèm — Tùy chọn"
+    "message": "Trả lời với tệp đính kèm — Tùy chọn"
   },
   "confirmTitle": {
     "message": "Xác nhận tệp đính kèm"
   },
   "uiHeader": {
-    "message": "Trả lời kèm tệp đính kèm"
+    "message": "Trả lời với tệp đính kèm"
   },
   "uiNoOptions": {
     "message": "Hiện không có tùy chọn nào để cấu hình."
   },
   "uiSupport": {
-    "message": "Bạn thích tiện ích này? Hãy ủng hộ tôi bằng một khoản đóng góp nhỏ:"
+    "message": "Bạn thích tiện ích này? Vui lòng ủng hộ tôi bằng một khoản đóng góp nhỏ:"
   },
   "uiRateATNText": {
     "message": "Vui lòng đánh giá trên ATN"
@@ -36,7 +36,7 @@
     "message": "Tôi đã quyên góp"
   },
   "uiDonateSnoozed": {
-    "message": "Cảm ơn bạn! Lời nhắc quyên góp sẽ được ẩn trong 90 ngày."
+    "message": "Cảm ơn! Lời nhắc quyên góp sẽ ẩn trong 90 ngày."
   },
   "uiDonateHiddenUntil": {
     "message": "Ẩn đến $1",
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Hiển thị lại lời nhắc quyên góp"
+    "message": "Hiện lại Quyên góp"
   },
   "uiDonateRestored": {
-    "message": "Lời nhắc quyên góp đã hiển thị lại."
+    "message": "Lời nhắc quyên góp đã hiển thị trở lại."
   },
   "uiGithubText": {
-    "message": "Để báo lỗi hoặc các thắc mắc khác, vui lòng truy cập"
+    "message": "Để báo lỗi hoặc các yêu cầu khác, vui lòng truy cập"
   },
   "uiGithubLinkLabel": {
     "message": "Trang GitHub"
   },
   "iconAlt": {
-    "message": "Biểu tượng Trả lời kèm tệp đính kèm"
+    "message": "Biểu tượng Trả lời với tệp đính kèm"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Danh sách đen tên tệp (mẫu glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Các tệp có tên khớp với bất kỳ mẫu nào sau đây sẽ không bao giờ được tự động đính kèm. Mỗi dòng một mẫu. Ví dụ: *.png, smime.*, *.p7s"
+    "message": "Các tệp có tên khớp bất kỳ mẫu nào sau đây sẽ không bao giờ được tự động đính kèm. Mỗi dòng một mẫu. Ví dụ: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Cảnh báo nếu tệp đính kèm bị loại trừ bởi danh sách đen"
+  },
+  "uiDebugHeader": {
+    "message": "Nâng cao"
+  },
+  "uiDebugLabel": {
+    "message": "Bật ghi nhật ký gỡ lỗi"
+  },
+  "uiDebugHelp": {
+    "message": "Ghi nhật ký nền chi tiết vào bảng điều khiển dành cho nhà phát triển của Thunderbird. Hãy tắt lại khi bạn đã khắc phục xong."
   },
   "uiSave": {
     "message": "Lưu"
@@ -95,7 +104,7 @@
     "message": "Hỏi trước khi thêm tệp đính kèm"
   },
   "uiConfirmHelp": {
-    "message": "Một hộp thoại xác nhận nhỏ chỉ xuất hiện khi thực sự sắp thêm tệp đính kèm. Bàn phím: Y hoặc J = Có; N hoặc Esc = Không."
+    "message": "Chỉ khi sắp thực sự thêm tệp đính kèm mới xuất hiện một hộp thoại xác nhận nhỏ. Bàn phím: Y hoặc J = Có; N hoặc Esc = Không."
   },
   "confirmAddOne": {
     "message": "Thêm tệp đính kèm: $1?",
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Thêm các tệp đính kèm ($1): $2$3?",
+    "message": "Thêm tệp đính kèm ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -150,7 +159,7 @@
     "message": "Không"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -150,7 +150,7 @@
     "message": "Tidak"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -166,5 +166,14 @@
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"
+  },
+  "uiDebugHeader": {
+    "message": "Advanced"
+  },
+  "uiDebugLabel": {
+    "message": "Enable debug logging"
+  },
+  "uiDebugHelp": {
+    "message": "Writes detailed background logs to Thunderbird's developer console. Disable again when you are done troubleshooting."
   }
 }

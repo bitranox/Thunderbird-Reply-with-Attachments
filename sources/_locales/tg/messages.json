@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Ҷавоб бо замимаҳо"
+    "message": "Посух бо замимаҳо"
   },
   "extDescription": {
-    "message": "Ба таври худкор замимаҳои аслиро ба ҷавобҳои почтаи электронӣ ҳамроҳ мекунад."
+    "message": "Замимаҳои аслиро дар посухҳои почтаи электронӣ худкор ҳамроҳ мекунад."
   },
   "composeTitle": {
-    "message": "Ҷавоб бо замимаҳо"
+    "message": "Посух бо замимаҳо"
   },
   "optionsTitle": {
-    "message": "Ҷавоб бо замимаҳо — Танзимот"
+    "message": "Посух бо замимаҳо — Танзимот"
   },
   "confirmTitle": {
     "message": "Тасдиқи замимаҳо"
   },
   "uiHeader": {
-    "message": "Ҷавоб бо замимаҳо"
+    "message": "Посух бо замимаҳо"
   },
   "uiNoOptions": {
-    "message": "Дар айни замон ҳеҷ гуна имконоти танзим вуҷуд надорад."
+    "message": "Айни ҳол чизе барои танзим кардан нест."
   },
   "uiSupport": {
-    "message": "Ин илова ба шумо писанд аст? Лутфан маро бо як саҳми хурд дастгирӣ кунед:"
+    "message": "Оё ин иловаро дӯст медоред? Лутфан бо саҳми хурд дастгирӣ кунед:"
   },
   "uiRateATNText": {
     "message": "Лутфан дар ATN баҳо диҳед"
@@ -39,7 +39,7 @@
     "message": "Ташаккур! Пайёми дархости хайрия барои 90 рӯз пинҳон шуд."
   },
   "uiDonateHiddenUntil": {
-    "message": "Пинҳон то $1",
+    "message": "То $1 пинҳон аст",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Боз нишон додани хайрия"
+    "message": "Дархости хайрияро боз нишон диҳед"
   },
   "uiDonateRestored": {
-    "message": "Пайёми дархости хайрия боз намоён аст."
+    "message": "Дархости хайрия боз намоён аст."
   },
   "uiGithubText": {
-    "message": "Барои гузориши хатогиҳо ё дигар пурсишҳо, лутфан ба"
+    "message": "Барои гузориш дар бораи хатоҳо ё дархостҳои дигар, лутфан ба"
   },
   "uiGithubLinkLabel": {
     "message": "Саҳифаи GitHub"
   },
   "iconAlt": {
-    "message": "Нишонаи «Ҷавоб бо замимаҳо»"
+    "message": "Нишонаи «Посух бо замимаҳо»"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,19 +68,28 @@
     "message": "Рӯйхати сиёҳи номҳои файл (намунаҳои glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Файлҳое, ки номҳояшон ба яке аз ин намунаҳо мувофиқат мекунад, ҳеҷ гоҳ худкорона замима карда намешаванд. Як намуна дар ҳар сатр. Мисолҳо: *.png, smime.*, *.p7s"
+    "message": "Файлҳое, ки номашон ба ягонтои ин намунаҳо мувофиқат мекунад, ҳеҷ гоҳ худкор замима намешаванд. Дар ҳар сатр як намуна. Мисолҳо: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Огоҳ кардан, агар замимаҳо аз рӯйхати сиёҳ хориҷ шаванд"
+    "message": "Огоҳ кунед, агар замимаҳо бо сабаби рӯйхати сиёҳ хориҷ карда шаванд"
+  },
+  "uiDebugHeader": {
+    "message": "Пешрафта"
+  },
+  "uiDebugLabel": {
+    "message": "Сабти ислоҳ (debug)-ро фаъол кунед"
+  },
+  "uiDebugHelp": {
+    "message": "Ба консолаи рушдикунандагони Thunderbird сабтҳои муфассали заминаро менависад. Пас аз анҷоми ислоҳи носозиҳо боз ғайрифаъол кунед."
   },
   "uiSave": {
-    "message": "Захира кардан"
+    "message": "Захира"
   },
   "uiSaving": {
-    "message": "Захира мешавад…"
+    "message": "Дар ҳоли захира…"
   },
   "uiReset": {
-    "message": "Ба пешфарзҳо барқарор кардан"
+    "message": "Барқарор ба танзимоти пешфарз"
   },
   "uiSaved": {
     "message": "Захира шуд."
@@ -92,13 +101,13 @@
     "message": "Тасдиқ"
   },
   "uiConfirmLabel": {
-    "message": "Пеш аз илова кардани замимаҳо пурсидан"
+    "message": "Пеш аз илова кардани замимаҳо пурсед"
   },
   "uiConfirmHelp": {
-    "message": "Равзанаи хурди тасдиқ танҳо он вақт пайдо мешавад, ки воқеан замимаҳо илова карда мешаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
+    "message": "Равзанаи хурди тасдиқ танҳо вақте пайдо мешавад, ки воқеан замимаҳо илова шаванд. Клавиатура: Y ё J = Ҳа; N ё Esc = Не."
   },
   "confirmAddOne": {
-    "message": "Илова кардани замима: $1?",
+    "message": "Замимаро илова кунем: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Не"
   },
   "warnBlacklistTitle": {
-    "message": "Аз рӯйхати сиёҳ истисно шуд"
+    "message": "Бо рӯйхати сиёҳ хориҷ шудааст"
   },
   "warnBlacklistIntro": {
-    "message": "Файлҳои зерин худкорона замима намешаванд:"
+    "message": "Файлҳои зерин худкор замима намешаванд:"
   },
   "warnColFile": {
     "message": "Файл"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Ҷавоби пешфарз"
+    "message": "Посухи пешфарз"
   },
   "uiConfirmDefaultYes": {
     "message": "Ҳа"
@@ -150,7 +159,7 @@
     "message": "Не"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

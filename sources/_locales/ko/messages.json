@@ -3,7 +3,7 @@
     "message": "첨부 파일과 함께 회신"
   },
   "extDescription": {
-    "message": "이메일 회신에 원본 첨부 파일을 자동으로 포함합니다."
+    "message": "이메일 회신 시 원래의 첨부 파일을 자동으로 포함합니다."
   },
   "composeTitle": {
     "message": "첨부 파일과 함께 회신"
@@ -18,10 +18,10 @@
     "message": "첨부 파일과 함께 회신"
   },
   "uiNoOptions": {
-    "message": "현재 설정할 옵션이 없습니다."
+    "message": "현재 설정할 수 있는 옵션이 없습니다."
   },
   "uiSupport": {
-    "message": "이 부가 기능이 마음에 드시나요? 소액 기부로 응원해 주세요:"
+    "message": "이 부가 기능이 마음에 드시나요? 소액 기부로 지원해 주세요:"
   },
   "uiRateATNText": {
     "message": "ATN에서 평가해 주세요"
@@ -36,7 +36,7 @@
     "message": "기부했습니다"
   },
   "uiDonateSnoozed": {
-    "message": "감사합니다! 90일 동안 기부 안내가 숨겨집니다."
+    "message": "감사합니다! 기부 알림은 90일 동안 표시되지 않습니다."
   },
   "uiDonateHiddenUntil": {
     "message": "$1까지 숨김",
@@ -47,10 +47,10 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "기부 안내 다시 표시"
+    "message": "기부 알림 다시 표시"
   },
   "uiDonateRestored": {
-    "message": "기부 안내가 다시 표시됩니다."
+    "message": "기부 알림이 다시 표시됩니다."
   },
   "uiGithubText": {
     "message": "버그 신고나 기타 문의는 제"
@@ -65,13 +65,22 @@
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "파일 이름 블랙리스트(glob 패턴)"
+    "message": "파일 이름 차단 목록(glob 패턴)"
   },
   "uiBlacklistHelp": {
-    "message": "이 패턴들 중 하나와 이름이 일치하는 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴을 입력하세요. 예: *.png, smime.*, *.p7s"
+    "message": "이 패턴과 일치하는 이름의 파일은 자동으로 첨부되지 않습니다. 한 줄에 하나의 패턴을 입력하세요. 예: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "블랙리스트로 첨부 파일이 제외될 때 경고"
+    "message": "첨부 파일이 차단 목록으로 인해 제외되면 경고 표시"
+  },
+  "uiDebugHeader": {
+    "message": "고급"
+  },
+  "uiDebugLabel": {
+    "message": "디버그 로깅 활성화"
+  },
+  "uiDebugHelp": {
+    "message": "자세한 백그라운드 로그를 Thunderbird의 개발자 콘솔에 기록합니다. 문제 해결을 마치면 다시 비활성화하세요."
   },
   "uiSave": {
     "message": "저장"
@@ -83,19 +92,19 @@
     "message": "기본값으로 재설정"
   },
   "uiSaved": {
-    "message": "저장되었습니다."
+    "message": "저장됨."
   },
   "uiResetDone": {
-    "message": "재설정되었습니다."
+    "message": "재설정됨."
   },
   "uiConfirmHeader": {
     "message": "확인"
   },
   "uiConfirmLabel": {
-    "message": "첨부 파일 추가 전에 묻기"
+    "message": "첨부 파일을 추가하기 전에 묻기"
   },
   "uiConfirmHelp": {
-    "message": "실제로 첨부 파일이 추가되는 경우에만 작은 확인 대화상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니요."
+    "message": "첨부 파일이 실제로 추가될 때에만 작은 확인 대화상자가 표시됩니다. 키보드: Y 또는 J = 예; N 또는 Esc = 아니요."
   },
   "confirmAddOne": {
     "message": "첨부 파일 추가: $1?",
@@ -126,7 +135,7 @@
     "message": "아니요"
   },
   "warnBlacklistTitle": {
-    "message": "블랙리스트로 제외됨"
+    "message": "차단 목록에 의해 제외됨"
   },
   "warnBlacklistIntro": {
     "message": "다음 파일은 자동으로 첨부되지 않습니다:"
@@ -150,7 +159,7 @@
     "message": "아니요"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

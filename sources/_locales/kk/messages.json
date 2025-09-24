@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Тіркемелерді қоса жауап беру"
+    "message": "Тіркемелермен жауап беру"
   },
   "extDescription": {
-    "message": "Электрондық поштаға жауап бергенде бастапқы тіркемелерді автоматты түрде қосады."
+    "message": "Электрондық поштаға жауап бергенде түпнұсқа тіркемелерді автоматты түрде қосады."
   },
   "composeTitle": {
-    "message": "Тіркемелерді қоса жауап беру"
+    "message": "Тіркемелермен жауап беру"
   },
   "optionsTitle": {
-    "message": "Тіркемелерді қоса жауап беру — Параметрлер"
+    "message": "Тіркемелермен жауап беру — Параметрлер"
   },
   "confirmTitle": {
     "message": "Тіркемелерді растау"
   },
   "uiHeader": {
-    "message": "Тіркемелерді қоса жауап беру"
+    "message": "Тіркемелермен жауап беру"
   },
   "uiNoOptions": {
     "message": "Қазіргі уақытта баптайтын параметрлер жоқ."
   },
   "uiSupport": {
-    "message": "Бұл қосымшаны ұнатасыз ба? Шағын қайырымдылықпен қолдауыңызды өтінемін:"
+    "message": "Бұл қосымша ұнай ма? Шағын үлеспен қолдаңыз:"
   },
   "uiRateATNText": {
     "message": "ATN сайтында бағалаңыз"
@@ -30,16 +30,16 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Қазір қайырымдылық жасау"
+    "message": "Қазір қайырымдылық жасаңыз"
   },
   "uiIDonated": {
     "message": "Мен қайырымдылық жасадым"
   },
   "uiDonateSnoozed": {
-    "message": "Рахмет! Қайырымдылыққа шақыру 90 күнге жасырылды."
+    "message": "Рахмет! Қайырымдылық сұрауы 90 күнге жасырылды."
   },
   "uiDonateHiddenUntil": {
-    "message": "$1 дейін жасырылды",
+    "message": "Жасырылған мерзімі: $1 дейін",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -50,16 +50,16 @@
     "message": "Қайырымдылықты қайта көрсету"
   },
   "uiDonateRestored": {
-    "message": "Қайырымдылыққа шақыру қайтадан көрінеді."
+    "message": "Қайырымдылық сұрауы қайтадан көрінеді."
   },
   "uiGithubText": {
-    "message": "Қателер туралы есептер немесе басқа сұрақтар үшін менің"
+    "message": "Қателер туралы есеп беру немесе басқа сұрақтар үшін мына жерге кіріңіз:"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub бетім"
+    "message": "GitHub беті"
   },
   "iconAlt": {
-    "message": "Тіркемелерді қоса жауап беру белгішесі"
+    "message": "Тіркемелермен жауап беру белгішесі"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -73,6 +73,15 @@
   "uiWarnBlacklistLabel": {
     "message": "Қара тізімге байланысты тіркемелер алынып тасталса, ескерту"
   },
+  "uiDebugHeader": {
+    "message": "Кеңейтілген"
+  },
+  "uiDebugLabel": {
+    "message": "Жөндеу журналын қосу"
+  },
+  "uiDebugHelp": {
+    "message": "Thunderbird әзірлеуші консоліне егжей-тегжейлі фондық журналдарды жазады. Ақауларды жою аяқталғаннан кейін қайта өшіріңіз."
+  },
   "uiSave": {
     "message": "Сақтау"
   },
@@ -80,7 +89,7 @@
     "message": "Сақталуда…"
   },
   "uiReset": {
-    "message": "Әдепкіге қайтару"
+    "message": "Әдепкі мәндерге қалпына келтіру"
   },
   "uiSaved": {
     "message": "Сақталды."
@@ -95,7 +104,7 @@
     "message": "Тіркемелерді қоспас бұрын сұрау"
   },
   "uiConfirmHelp": {
-    "message": "Шағын растау сұхбаты тіркемелер шынымен қосылатын кезде ғана көрсетіледі. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
+    "message": "Кішкентай растау терезесі тіркемелер шынымен қосылатын кезде ғана көрсетіледі. Пернетақта: Y немесе J = Иә; N немесе Esc = Жоқ."
   },
   "confirmAddOne": {
     "message": "Тіркеме қосу: $1?",
@@ -126,7 +135,7 @@
     "message": "Жоқ"
   },
   "warnBlacklistTitle": {
-    "message": "Қара тізім себепті алынып тасталды"
+    "message": "Қара тізімге байланысты алынып тасталды"
   },
   "warnBlacklistIntro": {
     "message": "Келесі файлдар автоматты түрде тіркелмейді:"
@@ -150,7 +159,7 @@
     "message": "Жоқ"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

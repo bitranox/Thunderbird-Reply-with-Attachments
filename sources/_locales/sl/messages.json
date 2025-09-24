@@ -24,13 +24,13 @@
     "message": "Vam je ta dodatek všeč? Podprite me z majhnim prispevkom:"
   },
   "uiRateATNText": {
-    "message": "Ocenite na ATN"
+    "message": "Prosimo, ocenite na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Doniraj zdaj"
+    "message": "Donirajte zdaj"
   },
   "uiIDonated": {
     "message": "Doniral/-a sem"
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Znova prikaži poziv za donacijo"
+    "message": "Ponovno prikaži poziv za donacijo"
   },
   "uiDonateRestored": {
     "message": "Poziv za donacijo je znova viden."
   },
   "uiGithubText": {
-    "message": "Za prijave napak ali druga vprašanja obiščite mojo"
+    "message": "Za poročila o napakah ali druga vprašanja obiščite mojo"
   },
   "uiGithubLinkLabel": {
-    "message": "Stran na GitHubu"
+    "message": "GitHub stran"
   },
   "iconAlt": {
-    "message": "Ikona Odgovori s prilogami"
+    "message": "Ikona »Odgovori s prilogami«"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Črni seznam imen datotek (vzorcev glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Datoteke, katerih imena se ujemajo s katerim koli od teh vzorcev, nikoli ne bodo samodejno priložene. En vzorec na vrstico. Primeri: *.png, smime.*, *.p7s"
+    "message": "Datoteke, katerih imena se ujemajo s katerim koli od teh vzorcev, ne bodo nikoli samodejno priložene. En vzorec na vrstico. Primeri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Opozori, če so priloge izključene zaradi črnega seznama"
+  },
+  "uiDebugHeader": {
+    "message": "Napredno"
+  },
+  "uiDebugLabel": {
+    "message": "Omogoči beleženje razhroščevanja"
+  },
+  "uiDebugHelp": {
+    "message": "Zapisuje podrobne zapise v ozadju v razvijalsko konzolo Thunderbirda. Ko zaključite z odpravljanjem napak, to možnost znova onemogočite."
   },
   "uiSave": {
     "message": "Shrani"
@@ -95,7 +104,7 @@
     "message": "Vprašaj pred dodajanjem prilog"
   },
   "uiConfirmHelp": {
-    "message": "Majhno potrditveno okno se prikaže le, ko bi se priloge dejansko dodale. Tipkovnica: Y ali J = Da; N ali Esc = Ne."
+    "message": "Majhno potrditveno pogovorno okno se prikaže le, ko bi se priloge dejansko dodale. Tipkovnica: Y ali J = Da; N ali Esc = Ne."
   },
   "confirmAddOne": {
     "message": "Dodati prilogo: $1?",
@@ -150,7 +159,7 @@
     "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

@@ -1,42 +1,42 @@
 {
   "extName": {
-    "message": "መልሲ ምስ ዝተሓሓዙ ፋይላት"
+    "message": "መልሲ ምስ ኣታችመንትታት"
   },
   "extDescription": {
-    "message": "ኣብ መልሲ ኢ-መይል እቲ ናይ መጀመርታ ዝተሓሓዙ ፋይላት ብራስኡ ኣካትት።"
+    "message": "ኣብ መልሲ ኢ-መይል እቲ መጀመርያዊ ኣታችመንትታት ብራስ ይኣክል."
   },
   "composeTitle": {
-    "message": "መልሲ ምስ ዝተሓሓዙ ፋይላት"
+    "message": "መልሲ ምስ ኣታችመንትታት"
   },
   "optionsTitle": {
-    "message": "መልሲ ምስ ዝተሓሓዙ ፋይላት — ምርጫታት"
+    "message": "መልሲ ምስ ኣታችመንትታት — ምርጫታት"
   },
   "confirmTitle": {
-    "message": "ምርግጋጽ ፋይላት"
+    "message": "ኣታችመንትታት ምርግጋጽ"
   },
   "uiHeader": {
-    "message": "መልሲ ምስ ዝተሓሓዙ ፋይላት"
+    "message": "መልሲ ምስ ኣታችመንትታት"
   },
   "uiNoOptions": {
-    "message": "ሕጂ ክትትዕ ምርጫታት የለን።"
+    "message": "ሕጂ ንምትካከል ምርጫታት የለን."
   },
   "uiSupport": {
-    "message": "እዚ ኣድ-ኦን ትፈቱዎ? ብንኣሽቱ ድገፍ ክትሃቡ ተኽእሉ ኢኹም:"
+    "message": "እዚ ኣድ-ኦን ተፈቲሕካዮ? በጃኻ ብንእሽቶ ልገሳ ድጊፍኒ:"
   },
   "uiRateATNText": {
-    "message": "ኣብ ATN ደረጃ ስጡ"
+    "message": "ብ ATN ደረጃ ሃቡ"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "ሕጂ ልገሳ ስጡ"
+    "message": "ሕጂ ልገሳ ሃብ"
   },
   "uiIDonated": {
-    "message": "ልገሳ ሃበኩ"
+    "message": "ልገሳ ሃበኹ"
   },
   "uiDonateSnoozed": {
-    "message": "የቐንየልና! ምዝንባር ልገሳ ናይ 90 መዓልቲ ተሰውርዎ።"
+    "message": "የቐንየልካ! ሓበሬታ ልገሳ 90 መዓልቲ ተሰውርዎ."
   },
   "uiDonateHiddenUntil": {
     "message": "ክሳብ $1 ተሰውርዎ",
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "ልገሳ እንደገና ኣርእይ"
+    "message": "ልገሳ እንደገና ኣርኢ"
   },
   "uiDonateRestored": {
-    "message": "ምዝንባር ልገሳ እንደገና ተርእዩ ኣሎ።"
+    "message": "ሓበሬታ ልገሳ እንደገና ይታይ እዩ."
   },
   "uiGithubText": {
-    "message": "ንሪፖርታት ንጉድኣት ወይ ካልእ ሕቶታት፣ እባክለይ ናተይ"
+    "message": "ስለ ብጉዳይ ሪፖርት ወይ ካልእ ሕቶታት፡ በጃኻ ጎብኚ ናተይ"
   },
   "uiGithubLinkLabel": {
-    "message": "ገጽ GitHub"
+    "message": "GitHub ገጽ"
   },
   "iconAlt": {
-    "message": "ኣይኮን መልሲ ምስ ዝተሓሓዙ ፋይላት"
+    "message": "መልሲ ምስ ኣታችመንትታት ኣይኮን"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "ዝርዝር ጥቕሊ ሽም ፋይላት (glob ናሙናታት)"
+    "message": "ዝርዝር ብላክሊስት ስሞም ፋይላት (glob ፓተርንታት)"
   },
   "uiBlacklistHelp": {
-    "message": "ምስ እዚኣቶም ናሙናታት ዝርከቡ ስማት ዘለዉ ፋይላት ብራስኡ ተሓሓዙ ኣይኮነን። መስመር ንመስመር ሓደ ናሙና ጻፉ። ምሳሌታት: *.png, smime.*, *.p7s"
+    "message": "እታ ስማትካ ምስ እዚኦም ፓተርንታት ዝስማማ ዘሎ ፋይሎች ብራስ ኣይተታከቱን ይሆኑ። እያ መስመር ፓተርን ሓደ ጸሓፍ። ምሳሌታት: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "ተሓሓዙ ፋይላት ብጥቕሊ ዝርዝር እንተ ተኣርፉ ኣጠንቀቕ"
+    "message": "ኣታችመንትታት ብ ብላክሊስት እንተ ተስዕቡ ምጠንቀቕ"
+  },
+  "uiDebugHeader": {
+    "message": "ኣድቫንስድ"
+  },
+  "uiDebugLabel": {
+    "message": "ዲበግ ሎግ ኣኽል"
+  },
+  "uiDebugHelp": {
+    "message": "ዝርዝር ሎጎች ጀርባ ናብ ናይ Thunderbird ዲቨሎፐር ኮንሶል ይጽሓፍ። ምፍታሕ ስንክልካ እንደገና ምጥፋእ ግበር."
   },
   "uiSave": {
     "message": "ኣቐምጥ"
   },
   "uiSaving": {
-    "message": "እዩ ይቐመጥ…"
+    "message": "ኣቐምጢ…"
   },
   "uiReset": {
-    "message": "ናብ ነባር መለስ"
+    "message": "ናብ ነባር ቅንብሮታት መልስ"
   },
   "uiSaved": {
-    "message": "ተቐምጠ።"
+    "message": "ተከምጦ."
   },
   "uiResetDone": {
-    "message": "ተመለሰ።"
+    "message": "ተመለሰ."
   },
   "uiConfirmHeader": {
     "message": "ምርግጋጽ"
   },
   "uiConfirmLabel": {
-    "message": "ቅድሚ ኣተሓሓዝ ፋይላት ሕበ ሕታር"
+    "message": "ኣታችመንትታት ቅድሚ ምጨመር ሕተት"
   },
   "uiConfirmHelp": {
-    "message": "ኣብ ፋይላት ብትግባር ክተኣክቱ እንተ ኮይኑ ብቕንየት መርሓ ምርግጋጽ ጥቂቕ ብቻ ይበጽሕ። መፅሓፍ ቁልፊ: Y ወይ J = እወ; N ወይ Esc = ኣይ."
+    "message": "ንእሽቶ ዲያሎግ ምርግጋጽ እንተ እዋን ኣታችመንትታት ክተጨመሩ እዮም ብቻ ይበጽሕ። መፃሕፍ ፊደላት: Y ወይ J = እወ; N ወይ Esc = ኣይኮነን."
   },
   "confirmAddOne": {
-    "message": "ፋይል ኣተሓሓዝ: $1?",
+    "message": "ኣታችመንት ክትጨምር: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "ፋይላት ኣተሓሓዝ ($1): $2$3?",
+    "message": "ኣታችመንትታት ክትጨምር ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -123,22 +132,22 @@
     "message": "እወ"
   },
   "confirmNo": {
-    "message": "ኣይ"
+    "message": "ኣይኮነን"
   },
   "warnBlacklistTitle": {
-    "message": "ብጥቕሊ ዝርዝር ተኣርፉ"
+    "message": "ብ ብላክሊስት ተስዕቢ"
   },
   "warnBlacklistIntro": {
-    "message": "እዚኣቶም ፋይላት ብራስኡ ክተሓሓዙ ኣይኮነን:"
+    "message": "እዚኣ ፋይሎች ብራስ ኣይተታከቱን ይሆኑ:"
   },
   "warnColFile": {
     "message": "ፋይል"
   },
   "warnColPattern": {
-    "message": "ናሙና"
+    "message": "ፓተርን"
   },
   "warnOk": {
-    "message": "እሺ"
+    "message": "ኦኬ"
   },
   "uiConfirmDefaultHeader": {
     "message": "ነባር መልሲ"
@@ -147,10 +156,10 @@
     "message": "እወ"
   },
   "uiConfirmDefaultNo": {
-    "message": "ኣይ"
+    "message": "ኣይኮነን"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "ሰነድ መረዳእታ:"
+    "message": "ሰነድ ማብራሪያ:"
   },
   "uiDocsButton": {
-    "message": "ሰነዳት ክፈት"
+    "message": "ሰነዶታት ክፈት"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

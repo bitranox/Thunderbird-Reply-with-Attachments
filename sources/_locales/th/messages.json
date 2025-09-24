@@ -3,7 +3,7 @@
     "message": "ตอบกลับพร้อมไฟล์แนบ"
   },
   "extDescription": {
-    "message": "แนบไฟล์แนบจากต้นฉบับโดยอัตโนมัติเมื่อทำการตอบกลับอีเมล"
+    "message": "เพิ่มไฟล์แนบต้นฉบับในอีเมลตอบกลับโดยอัตโนมัติ"
   },
   "composeTitle": {
     "message": "ตอบกลับพร้อมไฟล์แนบ"
@@ -30,13 +30,13 @@
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "บริจาคเลย"
+    "message": "บริจาคตอนนี้"
   },
   "uiIDonated": {
     "message": "ฉันได้บริจาคแล้ว"
   },
   "uiDonateSnoozed": {
-    "message": "ขอบคุณ! คำขอการบริจาคถูกซ่อนไว้เป็นเวลา 90 วัน."
+    "message": "ขอบคุณ! ข้อความแจ้งเตือนการบริจาคถูกซ่อนไว้เป็นเวลา 90 วัน"
   },
   "uiDonateHiddenUntil": {
     "message": "ซ่อนจนถึง $1",
@@ -47,31 +47,40 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "แสดงคำขอการบริจาคอีกครั้ง"
+    "message": "แสดงข้อความการบริจาคอีกครั้ง"
   },
   "uiDonateRestored": {
-    "message": "คำขอการบริจาคปรากฏให้เห็นอีกครั้งแล้ว."
+    "message": "แสดงข้อความการบริจาคอีกครั้งแล้ว"
   },
   "uiGithubText": {
-    "message": "หากต้องการรายงานบั๊กหรือสอบถามอื่น ๆ โปรดไปที่"
+    "message": "สำหรับรายงานบั๊กหรือคำถามอื่น ๆ โปรดไปที่"
   },
   "uiGithubLinkLabel": {
     "message": "หน้า GitHub"
   },
   "iconAlt": {
-    "message": "ไอคอนตอบกลับพร้อมไฟล์แนบ"
+    "message": "ไอคอน ตอบกลับพร้อมไฟล์แนบ"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "บัญชีดำของชื่อไฟล์ (รูปแบบ glob)"
+    "message": "แบล็กลิสต์ของชื่อไฟล์ (รูปแบบ glob)"
   },
   "uiBlacklistHelp": {
-    "message": "ไฟล์ที่ชื่อใดตรงกับรูปแบบเหล่านี้จะไม่ถูกแนบโดยอัตโนมัติ หนึ่งรูปแบบต่อหนึ่งบรรทัด ตัวอย่าง: *.png, smime.*, *.p7s"
+    "message": "ไฟล์ที่มีชื่อตรงกับรูปแบบเหล่านี้จะไม่ถูกแนบโดยอัตโนมัติ หนึ่งรูปแบบต่อหนึ่งบรรทัด ตัวอย่าง: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "เตือนหากไฟล์แนบถูกยกเว้นโดยบัญชีดำ"
+    "message": "แจ้งเตือนหากไฟล์แนบถูกยกเว้นโดยแบล็กลิสต์"
+  },
+  "uiDebugHeader": {
+    "message": "ขั้นสูง"
+  },
+  "uiDebugLabel": {
+    "message": "เปิดใช้งานการบันทึกดีบัก"
+  },
+  "uiDebugHelp": {
+    "message": "เขียนบันทึกพื้นหลังแบบละเอียดไปยังคอนโซลสำหรับนักพัฒนาของ Thunderbird ปิดอีกครั้งเมื่อแก้ไขปัญหาเสร็จ"
   },
   "uiSave": {
     "message": "บันทึก"
@@ -83,10 +92,10 @@
     "message": "รีเซ็ตเป็นค่าเริ่มต้น"
   },
   "uiSaved": {
-    "message": "บันทึกแล้ว."
+    "message": "บันทึกแล้ว"
   },
   "uiResetDone": {
-    "message": "รีเซ็ตแล้ว."
+    "message": "รีเซ็ตแล้ว"
   },
   "uiConfirmHeader": {
     "message": "การยืนยัน"
@@ -95,7 +104,7 @@
     "message": "ถามก่อนเพิ่มไฟล์แนบ"
   },
   "uiConfirmHelp": {
-    "message": "กล่องยืนยันขนาดเล็กจะแสดงเฉพาะเมื่อจะมีการเพิ่มไฟล์แนบจริง ๆ แป้นพิมพ์: Y หรือ J = ใช่; N หรือ Esc = ไม่"
+    "message": "กล่องยืนยันขนาดเล็กจะแสดงเฉพาะเมื่อกำลังจะมีการเพิ่มไฟล์แนบจริงๆ แป้นพิมพ์: Y หรือ J = ใช่; N หรือ Esc = ไม่"
   },
   "confirmAddOne": {
     "message": "เพิ่มไฟล์แนบ: $1?",
@@ -126,7 +135,7 @@
     "message": "ไม่"
   },
   "warnBlacklistTitle": {
-    "message": "ถูกยกเว้นโดยบัญชีดำ"
+    "message": "ถูกยกเว้นโดยแบล็กลิสต์"
   },
   "warnBlacklistIntro": {
     "message": "ไฟล์ต่อไปนี้จะไม่ถูกแนบโดยอัตโนมัติ:"
@@ -150,7 +159,7 @@
     "message": "ไม่"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

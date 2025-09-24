@@ -1,45 +1,45 @@
 {
   "extName": {
-    "message": "Одговор са прилозима"
+    "message": "Odgovori sa prilozima"
   },
   "extDescription": {
-    "message": "Аутоматски укључује оригиналне прилоге у одговоре на е-поруке."
+    "message": "Automatski uključi originalne priloge u odgovore na e‑poštu."
   },
   "composeTitle": {
-    "message": "Одговор са прилозима"
+    "message": "Odgovori sa prilozima"
   },
   "optionsTitle": {
-    "message": "Одговор са прилозима — Опције"
+    "message": "Odgovori sa prilozima — Opcije"
   },
   "confirmTitle": {
-    "message": "Потврда прилога"
+    "message": "Potvrda priloga"
   },
   "uiHeader": {
-    "message": "Одговор са прилозима"
+    "message": "Odgovori sa prilozima"
   },
   "uiNoOptions": {
-    "message": "Тренутно нема опција за подешавање."
+    "message": "Trenutno nema opcija za podešavanje."
   },
   "uiSupport": {
-    "message": "Да ли вам се допада овај додатак? Подржите ме малим доприносом:"
+    "message": "Sviđa li vam se ovaj dodatak? Podržite me malom donacijom:"
   },
   "uiRateATNText": {
-    "message": "Молимо оцените на ATN"
+    "message": "Ocenite na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Донирајте одмах"
+    "message": "Doniraj sada"
   },
   "uiIDonated": {
-    "message": "Донирао/ла сам"
+    "message": "Donirao/la sam"
   },
   "uiDonateSnoozed": {
-    "message": "Хвала! Подсетник за донацију је скривен на 90 дана."
+    "message": "Hvala! Podsetnik za donaciju je sakriven na 90 dana."
   },
   "uiDonateHiddenUntil": {
-    "message": "Скривено до $1",
+    "message": "Sakriveno do $1",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,58 +47,67 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Поново прикажи упит за донацију"
+    "message": "Ponovo prikaži Doniraj"
   },
   "uiDonateRestored": {
-    "message": "Упит за донацију је поново видљив."
+    "message": "Podsetnik za donaciju je ponovo vidljiv."
   },
   "uiGithubText": {
-    "message": "За пријаве грешака или друга питања, посетите моју"
+    "message": "Za prijave grešaka ili druga pitanja, posetite moju"
   },
   "uiGithubLinkLabel": {
-    "message": "GitHub страницу"
+    "message": "GitHub stranica"
   },
   "iconAlt": {
-    "message": "Икона „Одговор са прилозима“"
+    "message": "Ikona 'Odgovori sa prilozima'"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Црна листа имена датотека (glob обрасци)"
+    "message": "Crna lista naziva datoteka (glob obrasci)"
   },
   "uiBlacklistHelp": {
-    "message": "Датотеке чија имена се поклапају са било којим од ових образаца никада неће бити аутоматски приложене. Један образац по реду. Примери: *.png, smime.*, *.p7s"
+    "message": "Datoteke čiji nazivi odgovaraju nekom od ovih obrazaca nikada neće biti automatski priložene. Jedan obrazac po redu. Primeri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Упозори ако су прилози искључени црном листом"
+    "message": "Upozori ako su prilozi isključeni crnom listom"
+  },
+  "uiDebugHeader": {
+    "message": "Napredno"
+  },
+  "uiDebugLabel": {
+    "message": "Omogući zapisivanje za otklanjanje grešaka"
+  },
+  "uiDebugHelp": {
+    "message": "Upisuje detaljne pozadinske zapise u razvojnu konzolu Thunderbirda. Isključite kada završite sa otklanjanjem problema."
   },
   "uiSave": {
-    "message": "Сачувај"
+    "message": "Sačuvaj"
   },
   "uiSaving": {
-    "message": "Чување…"
+    "message": "Čuvanje…"
   },
   "uiReset": {
-    "message": "Врати на подразумеване вредности"
+    "message": "Vrati na podrazumevane vrednosti"
   },
   "uiSaved": {
-    "message": "Сачувано."
+    "message": "Sačuvano."
   },
   "uiResetDone": {
-    "message": "Ресетовано."
+    "message": "Resetovano."
   },
   "uiConfirmHeader": {
-    "message": "Потврда"
+    "message": "Potvrda"
   },
   "uiConfirmLabel": {
-    "message": "Питати пре додавања прилога"
+    "message": "Pitaj pre dodavanja priloga"
   },
   "uiConfirmHelp": {
-    "message": "Мали дијалог за потврду се појављује само када би прилози заиста били додати. Тастатура: Y или J = Да; N или Esc = Не."
+    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi prilozi zaista bili dodati. Tastatura: Y ili J = Da; N ili Esc = Ne."
   },
   "confirmAddOne": {
-    "message": "Додати прилог: $1?",
+    "message": "Dodati prilog: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Додати прилоге ($1): $2$3?",
+    "message": "Dodati priloge ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -120,37 +129,37 @@
     }
   },
   "confirmYes": {
-    "message": "Да"
+    "message": "Da"
   },
   "confirmNo": {
-    "message": "Не"
+    "message": "Ne"
   },
   "warnBlacklistTitle": {
-    "message": "Искључено црном листом"
+    "message": "Isključeno crnom listom"
   },
   "warnBlacklistIntro": {
-    "message": "Следеће датотеке неће бити аутоматски приложене:"
+    "message": "Sledeće datoteke neće biti automatski priložene:"
   },
   "warnColFile": {
-    "message": "Датотека"
+    "message": "Datoteka"
   },
   "warnColPattern": {
-    "message": "Образац"
+    "message": "Obrazac"
   },
   "warnOk": {
-    "message": "У реду"
+    "message": "U redu"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Подразумевани одговор"
+    "message": "Podrazumevani odgovor"
   },
   "uiConfirmDefaultYes": {
-    "message": "Да"
+    "message": "Da"
   },
   "uiConfirmDefaultNo": {
-    "message": "Не"
+    "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Документација:"
+    "message": "Dokumentacija:"
   },
   "uiDocsButton": {
-    "message": "Отвори документацију"
+    "message": "Otvori dokumentaciju"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

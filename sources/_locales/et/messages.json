@@ -1,27 +1,27 @@
 {
   "extName": {
-    "message": "Vasta koos manustega"
+    "message": "Vasta manustega"
   },
   "extDescription": {
-    "message": "Lisab e-kirjavastustele automaatselt algsed manused."
+    "message": "Lisab e-kirja vastustele automaatselt algsed manused."
   },
   "composeTitle": {
-    "message": "Vasta koos manustega"
+    "message": "Vasta manustega"
   },
   "optionsTitle": {
-    "message": "Vasta koos manustega — Sätted"
+    "message": "Vasta manustega — sätted"
   },
   "confirmTitle": {
     "message": "Manuste kinnitus"
   },
   "uiHeader": {
-    "message": "Vasta koos manustega"
+    "message": "Vasta manustega"
   },
   "uiNoOptions": {
-    "message": "Praegu pole seadistatavaid valikuid."
+    "message": "Praegu pole seadistatavaid sätteid."
   },
   "uiSupport": {
-    "message": "Meeldib see lisandmoodul? Toeta mind väikese annetusega:"
+    "message": "Kas see lisandmoodul meeldib? Palun toeta mind väikese annetusega:"
   },
   "uiRateATNText": {
     "message": "Palun hinda ATN-is"
@@ -33,10 +33,10 @@
     "message": "Anneta kohe"
   },
   "uiIDonated": {
-    "message": "Ma annetasin"
+    "message": "Olen annetanud"
   },
   "uiDonateSnoozed": {
-    "message": "Aitäh! Annetuse teavitus on 90 päevaks peidetud."
+    "message": "Aitäh! Annetuspalve on 90 päevaks peidetud."
   },
   "uiDonateHiddenUntil": {
     "message": "Peidetud kuni $1",
@@ -47,19 +47,19 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Näita annetuskutset uuesti"
+    "message": "Kuva annetuse palve uuesti"
   },
   "uiDonateRestored": {
-    "message": "Annetuskutse on taas nähtav."
+    "message": "Annetuse palve on taas nähtav."
   },
   "uiGithubText": {
-    "message": "Veadest teatamiseks või muude küsimuste korral külasta palun minu"
+    "message": "Vigade teavitamiseks või muude küsimuste korral külasta minu"
   },
   "uiGithubLinkLabel": {
     "message": "GitHubi leht"
   },
   "iconAlt": {
-    "message": "Vasta koos manustega ikoon"
+    "message": "Vasta manustega ikoon"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -68,10 +68,19 @@
     "message": "Failinimede must nimekiri (glob-mustrid)"
   },
   "uiBlacklistHelp": {
-    "message": "Faile, mille nimi vastab mõnele järgnevale mustrile, ei lisata kunagi automaatselt manustena. Üks muster rea kohta. Näited: *.png, smime.*, *.p7s"
+    "message": "Faile, mille nimi vastab mõnele neist mustritest, ei lisata kunagi automaatselt manustena. Üks muster rea kohta. Näited: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
     "message": "Hoiata, kui must nimekiri välistab manused"
+  },
+  "uiDebugHeader": {
+    "message": "Täpsemad"
+  },
+  "uiDebugLabel": {
+    "message": "Luba silumislogimine"
+  },
+  "uiDebugHelp": {
+    "message": "Kirjutab üksikasjalikud taustalogid Thunderbirdi arendajakonsolisse. Lülita see pärast veaotsingu lõpetamist uuesti välja."
   },
   "uiSave": {
     "message": "Salvesta"
@@ -80,7 +89,7 @@
     "message": "Salvestamine…"
   },
   "uiReset": {
-    "message": "Taasta vaikeväärtused"
+    "message": "Lähtesta vaikeseadetele"
   },
   "uiSaved": {
     "message": "Salvestatud."
@@ -95,10 +104,10 @@
     "message": "Küsi enne manuste lisamist"
   },
   "uiConfirmHelp": {
-    "message": "Väike kinnituse aken kuvatakse ainult siis, kui manused tegelikult lisatakse. Klaviatuur: Y või J = Jah; N või Esc = Ei."
+    "message": "Väike kinnituskast kuvatakse ainult siis, kui manused tõesti lisatakse. Klaviatuur: Y või J = Jah; N või Esc = Ei."
   },
   "confirmAddOne": {
-    "message": "Kas lisada manus: $1?",
+    "message": "Lisa manus: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Kas lisada manused ($1): $2$3?",
+    "message": "Lisa manused ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,7 +135,7 @@
     "message": "Ei"
   },
   "warnBlacklistTitle": {
-    "message": "Välistatud musta nimekirja tõttu"
+    "message": "Välja jäetud musta nimekirja tõttu"
   },
   "warnBlacklistIntro": {
     "message": "Järgmisi faile ei lisata automaatselt manustena:"
@@ -150,7 +159,7 @@
     "message": "Ei"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

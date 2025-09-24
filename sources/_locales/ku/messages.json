@@ -3,7 +3,7 @@
     "message": "Bersiv bi Pêvekên"
   },
   "extDescription": {
-    "message": "Pêvekên orîjînal bi otomatîk di bersivên e-nameyan de têxe."
+    "message": "Di bersivên e-nameyan de pêvekên orîjînal bi xweber tevlî dike."
   },
   "composeTitle": {
     "message": "Bersiv bi Pêvekên"
@@ -12,7 +12,7 @@
     "message": "Bersiv bi Pêvekên — Vebijêrk"
   },
   "confirmTitle": {
-    "message": "Pejirandina Pêvek"
+    "message": "Piştrastkirina Pêvekên"
   },
   "uiHeader": {
     "message": "Bersiv bi Pêvekên"
@@ -21,25 +21,25 @@
     "message": "Niha tu vebijêrk tune ku were mîhengkirin."
   },
   "uiSupport": {
-    "message": "Ji vê pêvekê hez dike? Ji kerema xwe bi beşdariya biçûkî min piştgirî bide:"
+    "message": "Ma vê lêzêdekê hez dikî? Ji kerema xwe bi beşdariya biçûkek min piştgirî bide:"
   },
   "uiRateATNText": {
-    "message": "Ji kerema xwe li ser ATN nirxandinê bikin"
+    "message": "Ji kerema xwe li ser ATN notê bide"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
   },
   "uiDonate": {
-    "message": "Niha Bexşî Bike"
+    "message": "Niha bexş bike"
   },
   "uiIDonated": {
-    "message": "Min bexşî kir"
+    "message": "Min bexş kir"
   },
   "uiDonateSnoozed": {
-    "message": "Spas! Ragihandina bexşî ji bo 90 roj ve veşartî ye."
+    "message": "Spas! Peyama bexşkirinê ji bo 90 roj veşart e."
   },
   "uiDonateHiddenUntil": {
-    "message": "Heta $1 ve veşartî ye",
+    "message": "Heta $1 ve veşart e",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -47,16 +47,16 @@
     }
   },
   "uiDonateShowAgain": {
-    "message": "Bexşî dîsa nîşan bide"
+    "message": "Bexşê dîsa nîşan bide"
   },
   "uiDonateRestored": {
-    "message": "Ragihandina bexşî dîsa xuya ye."
+    "message": "Peyama bexşkirinê dîsa dixuye."
   },
   "uiGithubText": {
-    "message": "Ji bo raporên çewtiyan an jî pirsên din, ji kerema xwe serdan bike"
+    "message": "Ji bo raporek çewtiyan an lêpirsiyên din, ji kerema xwe serdana"
   },
   "uiGithubLinkLabel": {
-    "message": "Rûpela min a GitHub"
+    "message": "Rûpela min ya GitHubê"
   },
   "iconAlt": {
     "message": "Îkona Bersiv bi Pêvekên"
@@ -68,37 +68,46 @@
     "message": "Lîsteya reş ya navên pelan (şêwazên glob)"
   },
   "uiBlacklistHelp": {
-    "message": "Pelên ku navên wan bi yek ji van şêwazan re hevdibe, qet bi otomatîk nayên pêvekirin. Her rêzê yek şêwaz. Mînak: *.png, smime.*, *.p7s"
+    "message": "Pelên ku navên wan bi yek ji van şêwazan re li hev digerin qet bixweber nayên pêvekirin. Her rêzik yek şêwaz. Mînak: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Heke pêvek ji hêla lîsteya reş ve tên derxistin, hişyarî bide"
+    "message": "Heke pêvek bi lîsteya reş ve hatine derxistin, hişyar bike"
+  },
+  "uiDebugHeader": {
+    "message": "Pêşketî"
+  },
+  "uiDebugLabel": {
+    "message": "Tomarkirina çewtiyan çalak bike"
+  },
+  "uiDebugHelp": {
+    "message": "Tomarên hûrgilî yên paşperdeyî li konsola pêşdebir a Thunderbirdê dinivîse. Dema ku çareserkirina çewtiyan qedî bibe, dîsa bêçalak bike."
   },
   "uiSave": {
     "message": "Tomar bike"
   },
   "uiSaving": {
-    "message": "Tê tomar kirin…"
+    "message": "Tê tomarkirin…"
   },
   "uiReset": {
     "message": "Vegere standardan"
   },
   "uiSaved": {
-    "message": "Hate tomar kirin."
+    "message": "Tomarkirî."
   },
   "uiResetDone": {
-    "message": "Vegerandî."
+    "message": "Vegerand."
   },
   "uiConfirmHeader": {
-    "message": "Pejirandin"
+    "message": "Piştrastkirin"
   },
   "uiConfirmLabel": {
-    "message": "Berî pêvekan were zêdekirin bipirse"
+    "message": "Berî ku pêvekên were zêdekirin bipirse"
   },
   "uiConfirmHelp": {
-    "message": "Diyaloga pejirandinê biçûk tenê dema ku rastî pêvek werin zêdekirin xuya dibe. Klavyeyê: Y an J = Erê; N an Esc = Na."
+    "message": "Diyaloga piştrastkirinê ya biçûk tenê dema ku bi rastî pêvekên tên zêdekirin xuya dibe. Klavyê: Y an J = Erê; N an Esc = Na."
   },
   "confirmAddOne": {
-    "message": "Pêvekê lê zêde bike: $1?",
+    "message": "Pêvek zêde bike: $1?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -106,7 +115,7 @@
     }
   },
   "confirmAddMany": {
-    "message": "Pêvekên lê zêde bike ($1): $2$3?",
+    "message": "Pêvekên zêde bike ($1): $2$3?",
     "placeholders": {
       "1": {
         "content": "$1"
@@ -126,10 +135,10 @@
     "message": "Na"
   },
   "warnBlacklistTitle": {
-    "message": "Ji hêla lîsteya reş ve hatine derxistin"
+    "message": "Ji lîsteya reş ve hate derxistin"
   },
   "warnBlacklistIntro": {
-    "message": "Pelên jêr bi otomatîk nayên pêvekirin:"
+    "message": "Pelên jêrîn bixweber nayên pêvekirin:"
   },
   "warnColFile": {
     "message": "Pel"
@@ -141,7 +150,7 @@
     "message": "OK"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Bersiva xwerû"
+    "message": "Bersiva standard"
   },
   "uiConfirmDefaultYes": {
     "message": "Erê"
@@ -150,7 +159,7 @@
     "message": "Na"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
@@ -159,10 +168,10 @@
     "message": "https://github.com/bitranox/Thunderbird-Reply-with-Attachments"
   },
   "uiDocsText": {
-    "message": "Belgeyên rêberî:"
+    "message": "Belgekirin:"
   },
   "uiDocsButton": {
-    "message": "Belgeyên rêberî veke"
+    "message": "Belgeyan veke"
   },
   "docsUrl": {
     "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments"

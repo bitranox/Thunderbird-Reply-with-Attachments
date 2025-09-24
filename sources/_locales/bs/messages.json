@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Odgovori s prilozima"
+    "message": "Odgovor s prilozima"
   },
   "extDescription": {
-    "message": "Automatski uključuje izvorne priloge u odgovorima na e‑poštu."
+    "message": "Automatski uključuje originalne priloge u odgovore na e-poštu."
   },
   "composeTitle": {
-    "message": "Odgovori s prilozima"
+    "message": "Odgovor s prilozima"
   },
   "optionsTitle": {
-    "message": "Odgovori s prilozima — Opcije"
+    "message": "Odgovor s prilozima — Opcije"
   },
   "confirmTitle": {
     "message": "Potvrda priloga"
   },
   "uiHeader": {
-    "message": "Odgovori s prilozima"
+    "message": "Odgovor s prilozima"
   },
   "uiNoOptions": {
-    "message": "Trenutno nema opcija za podešavanje."
+    "message": "Trenutno nema opcija za konfiguraciju."
   },
   "uiSupport": {
-    "message": "Sviđa li vam se ovaj dodatak? Podržite me malom donacijom:"
+    "message": "Sviđa li vam se ovaj dodatak? Molimo podržite me malom donacijom:"
   },
   "uiRateATNText": {
-    "message": "Ocijenite na ATN‑u"
+    "message": "Molimo ocijenite na ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -53,13 +53,13 @@
     "message": "Podsjetnik za donaciju je ponovo vidljiv."
   },
   "uiGithubText": {
-    "message": "Za prijave grešaka ili druga pitanja, posjetite moju"
+    "message": "Za prijave grešaka ili druge upite, posjetite moju"
   },
   "uiGithubLinkLabel": {
     "message": "GitHub stranicu"
   },
   "iconAlt": {
-    "message": "Ikona 'Odgovori s prilozima'"
+    "message": "Ikona 'Odgovor s prilozima'"
   },
   "githubAlt": {
     "message": "GitHub"
@@ -71,31 +71,40 @@
     "message": "Datoteke čiji nazivi odgovaraju bilo kojem od ovih obrazaca nikada neće biti automatski priložene. Jedan obrazac po liniji. Primjeri: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Upozori ako su prilozi isključeni crnom listom"
+    "message": "Upozori ako su prilozi isključeni zbog crne liste"
+  },
+  "uiDebugHeader": {
+    "message": "Napredno"
+  },
+  "uiDebugLabel": {
+    "message": "Omogući zapisivanje za otklanjanje grešaka"
+  },
+  "uiDebugHelp": {
+    "message": "Piše detaljne pozadinske zapise u Thunderbirdovu konzolu za razvojne programere. Isključite kada završite s otklanjanjem problema."
   },
   "uiSave": {
-    "message": "Spremi"
+    "message": "Sačuvaj"
   },
   "uiSaving": {
-    "message": "Spremanje…"
+    "message": "Čuvanje…"
   },
   "uiReset": {
     "message": "Vrati na zadane vrijednosti"
   },
   "uiSaved": {
-    "message": "Spremljeno."
+    "message": "Sačuvano."
   },
   "uiResetDone": {
-    "message": "Vraćeno."
+    "message": "Resetovano."
   },
   "uiConfirmHeader": {
     "message": "Potvrda"
   },
   "uiConfirmLabel": {
-    "message": "Traži potvrdu prije dodavanja priloga"
+    "message": "Pitaj prije dodavanja priloga"
   },
   "uiConfirmHelp": {
-    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi se prilozi zaista dodali. Tastatura: Y ili J = Da; N ili Esc = Ne."
+    "message": "Mali dijalog za potvrdu pojavljuje se samo kada bi prilozi zaista bili dodani. Tastatura: Y ili J = Da; N ili Esc = Ne."
   },
   "confirmAddOne": {
     "message": "Dodati prilog: $1?",
@@ -126,7 +135,7 @@
     "message": "Ne"
   },
   "warnBlacklistTitle": {
-    "message": "Isključeno crnom listom"
+    "message": "Isključeno zbog crne liste"
   },
   "warnBlacklistIntro": {
     "message": "Sljedeće datoteke neće biti automatski priložene:"
@@ -141,7 +150,7 @@
     "message": "U redu"
   },
   "uiConfirmDefaultHeader": {
-    "message": "Podrazumijevani odgovor"
+    "message": "Zadani odgovor"
   },
   "uiConfirmDefaultYes": {
     "message": "Da"
@@ -150,7 +159,7 @@
     "message": "Ne"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"

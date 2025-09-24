@@ -1,30 +1,30 @@
 {
   "extName": {
-    "message": "Sumagot na may mga Kalakip"
+    "message": "Tumugon na may mga Kalakip"
   },
   "extDescription": {
-    "message": "Awtomatikong isama ang orihinal na mga kalakip sa mga tugon sa email."
+    "message": "Awtomatikong isama ang mga orihinal na kalakip sa mga tugon sa email."
   },
   "composeTitle": {
-    "message": "Sumagot na may mga Kalakip"
+    "message": "Tumugon na may mga Kalakip"
   },
   "optionsTitle": {
-    "message": "Sumagot na may mga Kalakip — Mga Opsyon"
+    "message": "Tumugon na may mga Kalakip — Mga Opsyon"
   },
   "confirmTitle": {
     "message": "Kumpirmahin ang mga Kalakip"
   },
   "uiHeader": {
-    "message": "Sumagot na may mga Kalakip"
+    "message": "Tumugon na may mga Kalakip"
   },
   "uiNoOptions": {
-    "message": "Wala pang mga opsyon na maiaayos sa ngayon."
+    "message": "Sa kasalukuyan, walang mga opsyon na maaaring i-configure."
   },
   "uiSupport": {
-    "message": "Nagustuhan mo ba ang add-on na ito? Pakisuportahan ako sa pamamagitan ng maliit na ambag:"
+    "message": "Gusto mo ba ang add-on na ito? Suportahan mo ako sa pamamagitan ng isang maliit na ambag:"
   },
   "uiRateATNText": {
-    "message": "Paki-rate sa ATN"
+    "message": "Pakibigyan ng rating sa ATN"
   },
   "uiRateATNStars": {
     "message": "⭐️⭐️⭐️⭐️⭐️"
@@ -33,10 +33,10 @@
     "message": "Mag-donate ngayon"
   },
   "uiIDonated": {
-    "message": "Nag-donate na ako"
+    "message": "Nag-donate ako"
   },
   "uiDonateSnoozed": {
-    "message": "Salamat! Nakatago ang paalala ng donasyon sa loob ng 90 araw."
+    "message": "Salamat! Nakatago ang paalala sa donasyon sa loob ng 90 araw."
   },
   "uiDonateHiddenUntil": {
     "message": "Nakatago hanggang $1",
@@ -50,37 +50,46 @@
     "message": "Ipakita muli ang Donate"
   },
   "uiDonateRestored": {
-    "message": "Makikita na muli ang paalala ng donasyon."
+    "message": "Muli nang nakikita ang paalala sa donasyon."
   },
   "uiGithubText": {
-    "message": "Para sa mga ulat ng bug o iba pang katanungan, pakibisita sa aking"
+    "message": "Para sa mga ulat ng bug o iba pang katanungan, pakibisita ang aking"
   },
   "uiGithubLinkLabel": {
-    "message": "Pahinang GitHub"
+    "message": "pahina sa GitHub"
   },
   "iconAlt": {
-    "message": "Icon ng Sumagot na may mga Kalakip"
+    "message": "Icon ng Tumugon na may mga Kalakip"
   },
   "githubAlt": {
     "message": "GitHub"
   },
   "uiBlacklistHeader": {
-    "message": "Blacklist ng mga filename (glob patterns)"
+    "message": "Blacklist ng mga pangalan ng file (mga glob pattern)"
   },
   "uiBlacklistHelp": {
-    "message": "Ang mga file na ang pangalan ay tumutugma sa alinman sa mga pattern na ito ay hindi kailanman awtomatikong ilalakip. Isang pattern bawat linya. Mga halimbawa: *.png, smime.*, *.p7s"
+    "message": "Ang mga file na ang pangalan ay tumutugma sa alinman sa mga pattern na ito ay hindi kailanman awtomatikong ikakabit. Isang pattern bawat linya. Mga halimbawa: *.png, smime.*, *.p7s"
   },
   "uiWarnBlacklistLabel": {
-    "message": "Magbabala kung hindi isasama ang mga kalakip dahil sa blacklist"
+    "message": "Magbabala kung may mga kalakip na hindi isinama ng blacklist"
+  },
+  "uiDebugHeader": {
+    "message": "Advanced"
+  },
+  "uiDebugLabel": {
+    "message": "Paganahin ang pag-log ng debug"
+  },
+  "uiDebugHelp": {
+    "message": "Nagsusulat ng detalyadong background logs sa developer console ng Thunderbird. I-disable muli kapag tapos ka na sa pag-troubleshoot."
   },
   "uiSave": {
     "message": "I-save"
   },
   "uiSaving": {
-    "message": "Nagse-save…"
+    "message": "Sini-save…"
   },
   "uiReset": {
-    "message": "I-reset sa mga default"
+    "message": "I-reset sa default"
   },
   "uiSaved": {
     "message": "Na-save."
@@ -95,7 +104,7 @@
     "message": "Magtanong bago magdagdag ng mga kalakip"
   },
   "uiConfirmHelp": {
-    "message": "Lilitaw lamang ang isang maliit na dialog ng kumpirmasyon kapag talagang may idadagdag na mga kalakip. Keyboard: Y o J = Oo; N o Esc = Hindi."
+    "message": "Lalabas lamang ang isang maliit na dialog ng kumpirmasyon kapag may mga kalakip na talagang idadagdag. Keyboard: Y o J = Oo; N o Esc = Hindi."
   },
   "confirmAddOne": {
     "message": "Idagdag ang kalakip: $1?",
@@ -126,10 +135,10 @@
     "message": "Hindi"
   },
   "warnBlacklistTitle": {
-    "message": "Hindi isinama dahil sa blacklist"
+    "message": "Hindi isinama ng blacklist"
   },
   "warnBlacklistIntro": {
-    "message": "Ang sumusunod na mga file ay hindi awtomatikong ilalakip:"
+    "message": "Ang sumusunod na mga file ay hindi awtomatikong ikakabit:"
   },
   "warnColFile": {
     "message": "File"
@@ -150,7 +159,7 @@
     "message": "Hindi"
   },
   "donateUrl": {
-    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/donation"
+    "message": "https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/donation"
   },
   "atnRateUrl": {
     "message": "https://addons.thunderbird.net/de/thunderbird/addon/reply-with-attachments"
