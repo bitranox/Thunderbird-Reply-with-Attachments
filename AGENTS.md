@@ -2,8 +2,7 @@
 
 ## On session start
 
-- Connect to the `systemprompts` MCP filesystem.
-- Read following files and keep their guidance in working memory:
+- Read following files from directory /media/srv-main/softdev/*/projects/softwarestack/systemprompts and keep their guidance in working memory:
   - core_programming_solid.md
   - js_clean_architecture.md
   - js_clean_code.md
