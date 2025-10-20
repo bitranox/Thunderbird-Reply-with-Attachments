@@ -78,6 +78,19 @@
       App.Adapters.makeThunderbirdPorts(browser);
     const makeLogger = (globalThis.App && App.Shared && App.Shared.makeLogger) || makeLocalLogger;
     const logger = makeLogger(false);
+    const logDebug = (payload, message) => {
+      try {
+        logger.debug?.(payload, message);
+      } catch (_) {}
+      try {
+        globalThis.log?.debug?.(payload, message);
+      } catch (_) {}
+    };
+
+    const normalizedTabRef = (value) =>
+      typeof value === 'object' && value && typeof value.id === 'number' ? value.id : value;
+
+    logDebug({}, 'createAppWiring: wiring initialized');
 
     // Settings state (updated reactively; used by closures below)
     let excludePatterns = [];
@@ -111,6 +124,15 @@
       askBeforeAdd = ask;
       defaultAnswer = def;
       warnOnBlacklist = warnFlag;
+      logDebug(
+        {
+          blacklistPatterns: Array.isArray(patterns) ? patterns.length : 0,
+          askBeforeAdd: ask,
+          defaultAnswer: def,
+          warnOnBlacklist: warnFlag,
+        },
+        'createAppWiring: settings applied'
+      );
     }
     const ready = (async () => {
       const vals = await loadSettings(browser);
@@ -119,6 +141,7 @@
     })();
 
     async function reloadSettings() {
+      logDebug({}, 'createAppWiring: reloadSettings invoked');
       applySettings(await loadSettings(browser));
       rebuildEnsure();
     }
@@ -126,6 +149,14 @@
     // confirm function, updated when settings change
     let ensure = null;
     function rebuildEnsure() {
+      logDebug(
+        {
+          askBeforeAdd,
+          warnOnBlacklist,
+          compiledBlacklist: compiledBlacklist.length,
+        },
+        'createAppWiring: rebuildEnsure'
+      );
       ensure = App.UseCases.createEnsureReplyAttachments({
         compose,
         messages,
@@ -191,6 +222,10 @@
 
     // react to settings updates
     browser.storage?.onChanged?.addListener?.((changes, area) => {
+      if (area === 'local') {
+        const keys = Object.keys(changes || {});
+        logDebug({ area, keys }, 'storage.onChanged: settings update observed');
+      }
       if (area === 'local' && changes?.blacklistPatterns) {
         excludePatterns = changes.blacklistPatterns.newValue || [];
         exclude = App.Domain.makeNameExcluder(excludePatterns);
@@ -211,64 +246,148 @@
 
     // pre-register confirm content script for new compose windows
     // Register the confirm content script so it is available for new windows.
-    const ensureRegistered = (async () => {
+    async function ensureConfirmScriptRegistered() {
+      logDebug({}, 'confirmScript: ensure registration start');
       try {
         const regs = (await scriptingCompose.getRegisteredScripts?.()) || [];
-        if (!regs.find((r) => r.id === 'rwa-confirm'))
+        if (!regs.find((r) => r.id === 'rwa-confirm')) {
+          logDebug({ existing: regs.length }, 'confirmScript: registering content script');
           await scriptingCompose.registerScripts?.([
             { id: 'rwa-confirm', js: ['content/confirm.js'] },
           ]);
+          logDebug({}, 'confirmScript: registration succeeded');
+        } else {
+          logDebug({ existing: regs.length }, 'confirmScript: already registered');
+        }
       } catch (err) {
         try {
           logger.debug({ err }, 'registerScripts failed');
         } catch (_) {}
+        logDebug({ err }, 'confirmScript: registration error');
       }
-    })();
+    }
+    const ensureRegistered = ensureConfirmScriptRegistered();
 
     // event wiring
     // On compose state changes, ensure tabs are processed once per reply.
-    compose.onStateChanged.addListener(async (tabId) => {
-      const id = toNumericId(tabId);
-      if (id == null) return;
+    async function handleComposeStateChanged(tabRef) {
+      const id = toNumericId(tabRef);
+      logDebug(
+        { rawTabId: normalizedTabRef(tabRef), tabId: id },
+        'compose.onStateChanged: event received'
+      );
+      if (id == null) {
+        logDebug(
+          { rawTabId: normalizedTabRef(tabRef) },
+          'compose.onStateChanged: skip missing numeric id'
+        );
+        return;
+      }
       await ensureRegistered;
-      const details = await compose.getDetails(id).catch(() => null);
-      if (!details) return;
+      let details = null;
+      try {
+        details = await compose.getDetails(id);
+      } catch (err) {
+        logDebug({ tabId: id, err }, 'compose.onStateChanged: getDetails failed');
+        return;
+      }
+      if (!details) {
+        logDebug({ tabId: id }, 'compose.onStateChanged: missing compose details');
+        return;
+      }
+      logDebug({ tabId: id, type: details?.type }, 'compose.onStateChanged: invoking ensure');
       await ensureWrapper(id, details);
-    });
+      logDebug({ tabId: id }, 'compose.onStateChanged: ensure completed');
+    }
+    compose.onStateChanged.addListener(handleComposeStateChanged);
 
     // On send attempt, run a last ensure pass in case state change was missed.
-    compose.onBeforeSend?.addListener?.(async (tab) => {
-      const id = toNumericId(tab);
-      if (id == null) return {};
+    async function handleComposeBeforeSend(tabRef) {
+      const id = toNumericId(tabRef);
+      logDebug(
+        { rawTabId: normalizedTabRef(tabRef), tabId: id },
+        'compose.onBeforeSend: event received'
+      );
+      if (id == null) {
+        logDebug(
+          { rawTabId: normalizedTabRef(tabRef) },
+          'compose.onBeforeSend: skip missing numeric id'
+        );
+        return {};
+      }
       await ensureRegistered;
-      const details = await compose.getDetails(id).catch(() => null);
-      if (!details) return {};
+      let details = null;
+      try {
+        details = await compose.getDetails(id);
+      } catch (err) {
+        logDebug({ tabId: id, err }, 'compose.onBeforeSend: getDetails failed');
+        return {};
+      }
+      if (!details) {
+        logDebug({ tabId: id }, 'compose.onBeforeSend: missing compose details');
+        return {};
+      }
+      logDebug({ tabId: id, type: details?.type }, 'compose.onBeforeSend: invoking ensure');
       await ensureWrapper(id, details);
+      logDebug({ tabId: id }, 'compose.onBeforeSend: ensure completed');
       return {};
-    });
+    }
+    compose.onBeforeSend?.addListener?.(handleComposeBeforeSend);
 
     // Cleanup per‑tab memory and session marker when a tab closes.
-    tabs?.onRemoved?.addListener?.((closedTabId) => {
+    function handleTabRemoved(closedTabId) {
       const id = toNumericId(closedTabId);
-      if (id == null) return;
+      logDebug(
+        { rawTabId: normalizedTabRef(closedTabId), tabId: id },
+        'tabs.onRemoved: event received'
+      );
+      if (id == null) {
+        logDebug(
+          { rawTabId: normalizedTabRef(closedTabId) },
+          'tabs.onRemoved: skip missing numeric id'
+        );
+        return;
+      }
       try {
         sessions.removeTabValue(id, SESSION_KEY)?.catch?.(() => {});
-      } catch (_) {}
+      } catch (_) {
+        logDebug({ tabId: id }, 'tabs.onRemoved: removeTabValue threw synchronously');
+      }
       processedTabsState.delete(id);
       injectedConfirmScriptTabs.delete(id);
-    });
+      logDebug({ tabId: id }, 'tabs.onRemoved: state cleared');
+    }
+    tabs?.onRemoved?.addListener?.(handleTabRemoved);
 
     async function ensureWrapper(tabId, details) {
       try {
+        logDebug({ tabId, type: details?.type }, 'ensureWrapper: invoked');
         if (!ensure) {
+          logDebug({ tabId }, 'ensureWrapper: ensure missing, awaiting readiness');
           try {
             await ready;
-          } catch (_) {}
-          if (!ensure) rebuildEnsure();
+          } catch (err) {
+            logDebug({ tabId, err }, 'ensureWrapper: ready wait failed');
+          }
+          if (!ensure) {
+            logDebug({ tabId }, 'ensureWrapper: rebuilding ensure after wait');
+            rebuildEnsure();
+          }
         }
-        if (typeof ensure !== 'function') return;
-        return await ensure(tabId, details);
-      } catch (_) {}
+        if (typeof ensure !== 'function') {
+          logDebug({ tabId }, 'ensureWrapper: ensure not callable');
+          return;
+        }
+        const result = await ensure(tabId, details);
+        logDebug({ tabId }, 'ensureWrapper: completed');
+        return result;
+      } catch (err) {
+        try {
+          logger.warn?.({ err, tabId }, 'ensureWrapper failed');
+        } catch (_) {}
+        logDebug({ tabId, err }, 'ensureWrapper: error captured');
+        return undefined;
+      }
     }
     // Also expose a bound reloadSettings for background.js
     try {
@@ -337,14 +456,27 @@
   // confirm helpers
   /** Ensure the confirm content script is injected into the target compose tab. */
   async function ensureConfirmInjected(tabId, scriptingCompose, logger = console) {
+    const emitDebug = (payload, message) => {
+      try {
+        logger.debug?.(payload, message);
+      } catch (_) {}
+      try {
+        globalThis.log?.debug?.(payload, message);
+      } catch (_) {}
+    };
     try {
-      if (injectedConfirmScriptTabs.has(tabId)) return;
+      if (injectedConfirmScriptTabs.has(tabId)) {
+        emitDebug({ tabId }, 'ensureConfirmInjected: already injected');
+        return;
+      }
       await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']);
       injectedConfirmScriptTabs.add(tabId);
+      emitDebug({ tabId }, 'ensureConfirmInjected: script executed');
     } catch (err) {
       try {
         logger.debug({ err, tabId }, 'ensureConfirmInjected failed');
       } catch (_) {}
+      emitDebug({ tabId, err }, 'ensureConfirmInjected: executeScript error');
     }
   }
   /** Ask the user via content script; fall back progressively if needed. */

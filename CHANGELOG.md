@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.3.1] - 2025-10-20
+
+- Attachments: Trigger an ensure pass as soon as compose content wakes the background page and reprocess tabs on bootstrap so attachments remain in place even after Thunderbird idles the event page.
+- Debugging: Emit targeted compose lifecycle logs and a content-script ready ping to capture lost events without keeping DevTools open.
+
 ## [2.3.0] - 2025-10-20
 
 - Tests: Rewrote UI i18n, donation visibility, and link handler suites into single-purpose, descriptive cases that run the real logic across every branch.

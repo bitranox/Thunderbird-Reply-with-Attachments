@@ -10,6 +10,8 @@ title: 'Changelog'
 For the complete, detailed history, see the repository’s
 [CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
+- 2.3.1: Keeps attachments after Thunderbird idles the background event page; adds targeted debug hooks for troubleshooting.
+- 2.3.0: Refined attachment deduplication, broadened test coverage, and removed obsolete permissions to satisfy AMO policies.
 - 2.1.0: Full internationalization support for the top 100 languages
 - 2.0.0: rewrite to a full-featured version (EN/DE)
 - 1.0.1: switched to messages.listAttachments()

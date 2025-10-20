@@ -16,6 +16,10 @@
     browser.runtime.onMessage.addListener(handleConfirmMessage);
   } catch (_) {}
 
+  try {
+    notifyBackgroundReady();
+  } catch (_) {}
+
   // — Message handling —
   /** Handle a runtime message asking to confirm adding attachments. */
   function handleConfirmMessage(payload) {
@@ -32,6 +36,38 @@
     }
   }
   // Also support blacklist warning with a simple ack dialog via the same handler.
+
+  function notifyBackgroundReady() {
+    const api = globalThis.browser || globalThis.messenger;
+    const rt = api?.runtime;
+    if (!rt?.sendMessage) return;
+    let dispatched = false;
+    const send = () => {
+      if (dispatched) return;
+      dispatched = true;
+      try {
+        rt.sendMessage({ type: 'rwa:compose-content-ready' }).catch(() => {});
+      } catch (_) {}
+    };
+    try {
+      if (typeof document !== 'undefined' && document.readyState !== 'loading') {
+        globalThis.setTimeout ? setTimeout(send, 0) : send();
+        return;
+      }
+    } catch (_) {
+      send();
+      return;
+    }
+    try {
+      if (typeof globalThis.addEventListener === 'function') {
+        globalThis.addEventListener('DOMContentLoaded', send, { once: true });
+      } else {
+        send();
+      }
+    } catch (_) {
+      send();
+    }
+  }
 
   function isConfirmPayload(p) {
     return p && p.type === 'rwa:confirm-add';

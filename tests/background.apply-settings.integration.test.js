@@ -60,17 +60,11 @@ describe('background — apply settings to open composers', () => {
     await import('../sources/app/composition.js');
     await import('../sources/background.js');
 
-    const listener = browser.runtime.onMessage.addListener.mock.calls[0][0];
-    const res = await listener({ type: 'rwa:apply-settings-open-compose' });
-    expect(res?.ok).toBe(true);
-
-    // Poll until both sessions.removeTabValue calls were made
+    // Bootstrap now runs an ensure pass on import
     for (let i = 0; i < 5; i += 1) {
       await new Promise((r) => setTimeout(r, 10));
       if (browser.sessions.removeTabValue.mock.calls.length >= 2) break;
     }
-
-    // Cleared ephemeral per-tab markers for both tabs
     expect(browser.sessions.removeTabValue).toHaveBeenCalledTimes(2);
     const key = globalThis.SESSION_KEY;
     expect(browser.sessions.removeTabValue).toHaveBeenCalledWith(3, key);
@@ -79,5 +73,28 @@ describe('background — apply settings to open composers', () => {
     // Ensure path triggers compose detail checks for each tab
     expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(3);
     expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(4);
+
+    browser.sessions.removeTabValue.mockClear();
+    browser.compose.getComposeDetails.mockClear();
+
+    const listener = browser.runtime.onMessage.addListener.mock.calls[0][0];
+    const res = await listener({ type: 'rwa:apply-settings-open-compose' });
+    expect(res?.ok).toBe(true);
+
+    for (let i = 0; i < 5; i += 1) {
+      await new Promise((r) => setTimeout(r, 10));
+      if (browser.sessions.removeTabValue.mock.calls.length >= 2) break;
+    }
+
+    expect(browser.sessions.removeTabValue).toHaveBeenCalledTimes(2);
+    expect(browser.sessions.removeTabValue).toHaveBeenCalledWith(3, key);
+    expect(browser.sessions.removeTabValue).toHaveBeenCalledWith(4, key);
+    expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(3);
+    expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(4);
+
+    browser.compose.getComposeDetails.mockClear();
+    const ensureRes = await listener({ type: 'rwa:compose-content-ready' }, { tab: { id: 42 } });
+    expect(ensureRes?.ok).toBe(true);
+    expect(browser.compose.getComposeDetails).toHaveBeenCalledWith(42);
   });
 });

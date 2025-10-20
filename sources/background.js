@@ -28,13 +28,27 @@ let ensureDelegate = null;
     logging,
   });
 
+  async function ensureComposeForTab(tabId) {
+    if (!Number.isFinite(tabId)) return;
+    try {
+      const details = await getComposeDetails(tabId);
+      if (!details) return;
+      await runEnsure(applyContext, tabId, details);
+    } catch (err) {
+      logWarn(logging, { err, tabId }, 'ensureComposeForTab failed');
+    }
+  }
+
   registerApplySettingsListener(browser, {
     onApply: () => applySettingsToOpenComposers(applyContext),
     reloadSettings: wiring.reloadSettings ? () => wiring.reloadSettings(browser) : null,
     refreshDebug: logging.refresh,
+    ensureForTab: ensureComposeForTab,
   });
 
   registerDebugWatcher(browser, logging.refresh);
+
+  safe(() => applySettingsToOpenComposers(applyContext));
 })();
 
 // — Bootstrap helpers -------------------------------------------------------
@@ -186,16 +200,39 @@ function logWarn(logging, payload, message) {
 
 // — Runtime wiring ----------------------------------------------------------
 
-function registerApplySettingsListener(browser, { onApply, reloadSettings, refreshDebug }) {
+function registerApplySettingsListener(
+  browser,
+  { onApply, reloadSettings, refreshDebug, ensureForTab }
+) {
   try {
-    browser.runtime.onMessage.addListener((msg) => {
-      if (!msg || msg.type !== 'rwa:apply-settings-open-compose') return undefined;
-      maybeReloadSettings(reloadSettings, msg);
-      maybeRefreshDebug(refreshDebug);
-      if (typeof onApply === 'function') onApply();
-      return Promise.resolve({ ok: true });
+    browser.runtime.onMessage.addListener((msg, sender) => {
+      if (!msg || typeof msg.type !== 'string') return undefined;
+      if (msg.type === 'rwa:apply-settings-open-compose') {
+        maybeReloadSettings(reloadSettings, msg);
+        maybeRefreshDebug(refreshDebug);
+        if (typeof onApply === 'function') onApply();
+        return Promise.resolve({ ok: true });
+      }
+      if (msg.type === 'rwa:compose-content-ready') {
+        const tabId = extractTabId(sender, msg);
+        if (typeof ensureForTab === 'function' && Number.isFinite(tabId)) {
+          return Promise.resolve(ensureForTab(tabId)).then(() => ({ ok: true }));
+        }
+        if (typeof onApply === 'function') onApply();
+        return Promise.resolve({ ok: true });
+      }
+      return undefined;
     });
   } catch (_) {}
+}
+
+function extractTabId(sender, msg) {
+  if (sender && sender.tab && typeof sender.tab.id === 'number') return sender.tab.id;
+  if (msg && typeof msg.tabId !== 'undefined') {
+    const candidate = Number(msg.tabId);
+    if (Number.isFinite(candidate)) return candidate;
+  }
+  return null;
 }
 
 function maybeReloadSettings(reloadSettings, msg) {
