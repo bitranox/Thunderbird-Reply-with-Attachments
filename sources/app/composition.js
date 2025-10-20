@@ -140,6 +140,8 @@
         logger,
       });
     }
+    // bootstrap ensure with defaults so early compose events still process
+    rebuildEnsure();
     /** Compute matching blacklist patterns for a given name. */
     function matchBlacklist(name) {
       try {
@@ -231,7 +233,7 @@
       await ensureRegistered;
       const details = await compose.getDetails(id).catch(() => null);
       if (!details) return;
-      await ensure(id, details);
+      await ensureWrapper(id, details);
     });
 
     // On send attempt, run a last ensure pass in case state change was missed.
@@ -241,7 +243,7 @@
       await ensureRegistered;
       const details = await compose.getDetails(id).catch(() => null);
       if (!details) return {};
-      await ensure(id, details);
+      await ensureWrapper(id, details);
       return {};
     });
 
@@ -257,13 +259,16 @@
     });
 
     async function ensureWrapper(tabId, details) {
-      if (!ensure) {
-        try {
-          await ready;
-        } catch (_) {}
-        if (!ensure) rebuildEnsure();
-      }
-      return ensure(tabId, details);
+      try {
+        if (!ensure) {
+          try {
+            await ready;
+          } catch (_) {}
+          if (!ensure) rebuildEnsure();
+        }
+        if (typeof ensure !== 'function') return;
+        return await ensure(tabId, details);
+      } catch (_) {}
     }
     // Also expose a bound reloadSettings for background.js
     try {

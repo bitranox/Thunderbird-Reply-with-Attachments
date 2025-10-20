@@ -34,3 +34,81 @@ describe('Composition wiring — events', () => {
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
 });
+
+function deferred() {
+  let resolve;
+  const promise = new Promise((res) => {
+    resolve = res;
+  });
+  return { promise, resolve };
+}
+
+describe('Composition wiring — readiness', () => {
+  it('waits for settings before ensuring attachments on first event', async () => {
+    const gate = deferred();
+    const compose = {
+      onComposeStateChanged: { addListener: vi.fn() },
+      onBeforeSend: { addListener: vi.fn() },
+      getComposeDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 501 }),
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const messages = {
+      listAttachments: vi
+        .fn()
+        .mockResolvedValue([
+          { name: 'report.pdf', partName: '42', contentType: 'application/pdf' },
+        ]),
+      getAttachmentFile: vi.fn().mockResolvedValue(new Blob(['pdf'])),
+    };
+    const sessions = {
+      getTabValue: vi.fn().mockResolvedValue(null),
+      setTabValue: vi.fn().mockResolvedValue(undefined),
+      removeTabValue: vi.fn().mockResolvedValue(undefined),
+    };
+    const tabs = {
+      onRemoved: { addListener: vi.fn() },
+      sendMessage: vi.fn().mockResolvedValue({ ok: true }),
+    };
+    const runtime = {
+      onMessage: { addListener: vi.fn(), removeListener: vi.fn() },
+      sendMessage: vi.fn().mockResolvedValue({ ok: true }),
+    };
+    const storage = {
+      local: {
+        get: vi.fn(async (defaults) => {
+          await gate.promise;
+          return defaults;
+        }),
+      },
+      onChanged: { addListener: vi.fn() },
+    };
+    const scripting = {
+      compose: {
+        getRegisteredScripts: vi.fn().mockResolvedValue([]),
+        registerScripts: vi.fn().mockResolvedValue(undefined),
+        executeScript: vi.fn().mockResolvedValue(undefined),
+      },
+    };
+    const windows = {
+      create: vi.fn().mockResolvedValue({ id: 1 }),
+      update: vi.fn().mockResolvedValue(undefined),
+    };
+    const browser = { compose, messages, sessions, tabs, runtime, storage, scripting, windows };
+
+    await import('../sources/app/adapters/thunderbird.js');
+    await import('../sources/app/application/usecases.js');
+    await import('../sources/app/domain/filters.js');
+    const { App } = globalThis;
+    await import('../sources/app/composition.js');
+    App.Composition.createAppWiring(browser);
+
+    const onStateCb = compose.onComposeStateChanged.addListener.mock.calls[0][0];
+    const ensurePromise = onStateCb(77);
+
+    expect(compose.addAttachment).not.toHaveBeenCalled();
+    gate.resolve();
+    await ensurePromise;
+    expect(compose.addAttachment).toHaveBeenCalledTimes(1);
+  });
+});
