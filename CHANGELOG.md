@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.0] - 2025-10-20
+
+- Tests: Rewrote UI i18n, donation visibility, and link handler suites into single-purpose, descriptive cases that run the real logic across every branch.
+- Coverage: Added background logger resilience tests and expanded DOM fallback checks, lifting overall statement coverage above 94%.
+- Reliability: Hardened event propagation so background listeners no longer drop compose events under rapid tab churn.
+
 ## [2.2.0] - 2025-09-24
 
 - Options: Added an "Enable debug logging" toggle under Advanced, including translations across all languages.
