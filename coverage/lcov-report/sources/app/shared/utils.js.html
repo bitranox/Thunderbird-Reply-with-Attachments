@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/18</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>0/48</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,102 +111,102 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
- * Module: app/shared/utils.js
- * Purpose: Shared helpers used across background/composition/tests.
- * Exposes: App.Shared = { toNumericId, makeLogger }
- */
-(function () {
-  /**
-   * Convert a value that may be a number or `{ id:number }` into a numeric tab id.
-   * @param {number|{id:number}|any} v
-   * @returns {number|null} The numeric id or `null` if not resolvable.
-   */
-  function toNumericId(v) {
-    return typeof v === 'number' ? v : v &amp;&amp; typeof v.id === 'number' ? v.id : null;
-  }
-  /**
-   * Coerce a value to 'yes' | 'no'. Any value other than a case‑insensitive 'no'
-   * maps to 'yes'. Undefined/empty defaults to 'yes'.
-   * @param {any} v
-   * @returns {'yes'|'no'}
-   */
-  function yesNo(v) {
-    return String(v ?? 'yes').toLowerCase() === 'no' ? 'no' : 'yes';
-  }
-  /**
-   * Create a simple logger wrapper that prefixes messages and optionally mutes debug.
-   * Intent: provide consistent logging without pulling a logging library.
-   * @param {boolean} enabled When false, `debug` becomes a no-op; others always log.
-   * @returns {{debug:Function,info:Function,warn:Function,error:Function}}
-   */
-  function makeLogger(enabled) {
-    const wrap =
-      (fn) =&gt;
-      (...args) =&gt; {
-        try {
-          if (fn === console.debug <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; !enabled)</span> <span class="branch-0 cbranch-no" title="branch not covered" >return;</span>
-          fn('[RWA]', ...args);
-        } <span class="branch-0 cbranch-no" title="branch not covered" >catch (_) {}</span>
-      };
-    return {
-      debug: wrap(console.debug.bind(console)),
-      info: wrap(console.info.bind(console)),
-      warn: wrap(console.warn.bind(console)),
-      error: wrap(console.error.bind(console)),
-    };
-  }
-  globalThis.App = globalThis.App || {};
-  App.Shared = { toNumericId, makeLogger, yesNo };
-})();
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >/*<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" > * Module: app/shared/utils.js</span>
+<span class="cstat-no" title="statement not covered" > * Purpose: Shared helpers used across background/composition/tests.</span>
+<span class="cstat-no" title="statement not covered" > * Exposes: App.Shared = { toNumericId, makeLogger }</span>
+<span class="cstat-no" title="statement not covered" > */</span>
+<span class="cstat-no" title="statement not covered" >(function () {</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >   * Convert a value that may be a number or `{ id:number }` into a numeric tab id.</span>
+<span class="cstat-no" title="statement not covered" >   * @param {number|{id:number}|any} v</span>
+<span class="cstat-no" title="statement not covered" >   * @returns {number|null} The numeric id or `null` if not resolvable.</span>
+<span class="cstat-no" title="statement not covered" >   */</span>
+<span class="cstat-no" title="statement not covered" >  function toNumericId(v) {</span>
+<span class="cstat-no" title="statement not covered" >    return typeof v === 'number' ? v : v &amp;&amp; typeof v.id === 'number' ? v.id : null;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >   * Coerce a value to 'yes' | 'no'. Any value other than a case‑insensitive 'no'</span>
+<span class="cstat-no" title="statement not covered" >   * maps to 'yes'. Undefined/empty defaults to 'yes'.</span>
+<span class="cstat-no" title="statement not covered" >   * @param {any} v</span>
+<span class="cstat-no" title="statement not covered" >   * @returns {'yes'|'no'}</span>
+<span class="cstat-no" title="statement not covered" >   */</span>
+<span class="cstat-no" title="statement not covered" >  function yesNo(v) {</span>
+<span class="cstat-no" title="statement not covered" >    return String(v ?? 'yes').toLowerCase() === 'no' ? 'no' : 'yes';</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >   * Create a simple logger wrapper that prefixes messages and optionally mutes debug.</span>
+<span class="cstat-no" title="statement not covered" >   * Intent: provide consistent logging without pulling a logging library.</span>
+<span class="cstat-no" title="statement not covered" >   * @param {boolean} enabled When false, `debug` becomes a no-op; others always log.</span>
+<span class="cstat-no" title="statement not covered" >   * @returns {{debug:Function,info:Function,warn:Function,error:Function}}</span>
+<span class="cstat-no" title="statement not covered" >   */</span>
+<span class="cstat-no" title="statement not covered" >  function makeLogger(enabled) {</span>
+<span class="cstat-no" title="statement not covered" >    const wrap =</span>
+<span class="cstat-no" title="statement not covered" >      (fn) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      (...args) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >          if (fn === console.debug &amp;&amp; !enabled) return;</span>
+<span class="cstat-no" title="statement not covered" >          fn('[RWA]', ...args);</span>
+<span class="cstat-no" title="statement not covered" >        } catch (_) {}</span>
+<span class="cstat-no" title="statement not covered" >      };</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+<span class="cstat-no" title="statement not covered" >      debug: wrap(console.debug.bind(console)),</span>
+<span class="cstat-no" title="statement not covered" >      info: wrap(console.info.bind(console)),</span>
+<span class="cstat-no" title="statement not covered" >      warn: wrap(console.warn.bind(console)),</span>
+<span class="cstat-no" title="statement not covered" >      error: wrap(console.error.bind(console)),</span>
+<span class="cstat-no" title="statement not covered" >    };</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  globalThis.App = globalThis.App || {};</span>
+<span class="cstat-no" title="statement not covered" >  App.Shared = { toNumericId, makeLogger, yesNo };</span>
+<span class="cstat-no" title="statement not covered" >})();</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -214,7 +214,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-25T10:12:23.486Z
+                at 2025-10-20T11:15:32.781Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

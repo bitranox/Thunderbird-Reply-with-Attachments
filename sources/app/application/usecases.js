@@ -15,6 +15,10 @@
 
 const ATTACHMENT_RETRY_DEFAULT = Object.freeze({ attempts: 5, delayMs: 150 });
 
+/**
+ * @typedef {{ stage: 'processing'|'done', messageId: string|null }} TabProcessingState
+ */
+
 function debugLog(logger, payload, message) {
   try {
     logger?.debug?.(payload, message);
@@ -178,7 +182,7 @@ function isEmpty(arr) {
 
 /**
  * Ensure original attachments for reply compose; idempotent per tab via memory + sessions.
- * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,'processing'|'done'>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,TabProcessingState>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
  * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
 function createEnsureReplyAttachments({
@@ -208,21 +212,41 @@ function createEnsureReplyAttachments({
   });
   return async function ensureReplyAttachments(tabId, details) {
     if (!isReply(details)) return; // only for replies
-    if (isProcessingOrDone(state, tabId)) return; // skip duplicates in memory
-    markProcessing(state, tabId);
+    const hint = extractMessageId(details);
+    resetStateForNewMessage(state, tabId, hint);
+    if (isProcessing(state, tabId)) return;
+    if (isDoneForMessage(state, tabId, hint)) return;
 
-    const already = await wasAlreadyProcessed(sessions, tabId, sessionKey);
-    if (already) return markDone(state, tabId);
+    const { processed: alreadyProcessed } = await wasAlreadyProcessed(
+      sessions,
+      tabId,
+      sessionKey,
+      hint
+    );
+    if (alreadyProcessed) {
+      markDone(state, tabId, hint);
+      return;
+    }
+
+    markProcessing(state, tabId, hint);
 
     const messageId = await waitForMessageId(compose, tabId, details);
-    if (!messageId) return clearState(state, tabId);
+    if (!messageId) {
+      clearState(state, tabId);
+      await safe(() => sessions.removeTabValue(tabId, sessionKey));
+      return;
+    }
+
+    updateStateMessage(state, tabId, messageId);
 
     const added = await processReplyAttachments(tabId, messageId);
     if (added > 0) {
-      await markProcessed(sessions, tabId, sessionKey, state);
-    } else {
-      clearState(state, tabId);
+      await markProcessed(sessions, tabId, sessionKey, state, messageId);
+      return;
     }
+
+    clearState(state, tabId);
+    await safe(() => sessions.removeTabValue(tabId, sessionKey));
   };
 }
 
@@ -232,21 +256,42 @@ function createEnsureReplyAttachments({
  * @param {import('./ports.js').SessionsPort} sessions
  * @param {number} tabId
  * @param {string} key
- * @returns {Promise<boolean>}
+ * @param {string|null} hint
+ * @returns {Promise<{ processed: boolean, messageId: string|null }>}
  */
-async function wasAlreadyProcessed(sessions, tabId, key) {
-  return await safe(() => sessions.getTabValue(tabId, key), false);
+async function wasAlreadyProcessed(sessions, tabId, key, hint) {
+  const stored = await safe(() => sessions.getTabValue(tabId, key), null);
+  if (!stored) return { processed: false, messageId: null };
+
+  if (stored === true) {
+    await safe(() => sessions.removeTabValue(tabId, key));
+    return { processed: false, messageId: null };
+  }
+
+  const messageId =
+    typeof stored === 'object' && stored
+      ? normalizeMessageId(stored.messageId)
+      : normalizeMessageId(stored);
+
+  if (!messageId) return { processed: false, messageId: null };
+  if (hint && messageId !== hint) {
+    await safe(() => sessions.removeTabValue(tabId, key));
+    return { processed: false, messageId };
+  }
+
+  return { processed: !hint ? false : true, messageId };
 }
 /**
  * Mark a tab as processed in memory and in session storage.
  * @param {import('./ports.js').SessionsPort} sessions
  * @param {number} tabId
  * @param {string} key
- * @param {Map<number,'processing'|'done'>} state
+ * @param {Map<number, TabProcessingState>} state
+ * @param {string|null} messageId
  */
-async function markProcessed(sessions, tabId, key, state) {
-  markDone(state, tabId);
-  await safe(() => sessions.setTabValue(tabId, key, true));
+async function markProcessed(sessions, tabId, key, state, messageId) {
+  markDone(state, tabId, messageId);
+  await safe(() => sessions.setTabValue(tabId, key, { messageId: normalizeMessageId(messageId) }));
 }
 
 // — helpers —
@@ -260,21 +305,48 @@ function isReply(details) {
 }
 
 /** In-memory guard to avoid duplicate runs for a tab in one background session. */
-function isProcessingOrDone(state, tabId) {
-  // Memory guard to avoid duplicate runs within a single background session.
-  const s = state.get(tabId);
-  return s === 'processing' || s === 'done';
+function getStateEntry(state, tabId) {
+  return /** @type {TabProcessingState|null} */ (state.get(tabId) || null);
 }
 
-/** Mark a tab as being processed right now. */
-function markProcessing(state, tabId) {
-  state.set(tabId, 'processing');
+function isProcessing(state, tabId) {
+  return getStateEntry(state, tabId)?.stage === 'processing';
 }
-/** Mark a tab as processed. */
-function markDone(state, tabId) {
-  state.set(tabId, 'done');
+
+function isDoneForMessage(state, tabId, messageId) {
+  if (!messageId) return false;
+  const entry = getStateEntry(state, tabId);
+  return entry?.stage === 'done' && entry.messageId === messageId;
 }
-/** Clear any per-tab marker kept in memory. */
+
+function markProcessing(state, tabId, messageId) {
+  state.set(tabId, {
+    stage: 'processing',
+    messageId: normalizeMessageId(messageId),
+  });
+}
+
+function markDone(state, tabId, messageId) {
+  state.set(tabId, {
+    stage: 'done',
+    messageId: normalizeMessageId(messageId),
+  });
+}
+
+function updateStateMessage(state, tabId, messageId) {
+  const entry = getStateEntry(state, tabId);
+  const stage = entry?.stage || 'processing';
+  state.set(tabId, { stage, messageId: normalizeMessageId(messageId) });
+}
+
+function resetStateForNewMessage(state, tabId, messageId) {
+  if (!messageId) return;
+  const entry = getStateEntry(state, tabId);
+  if (entry && entry.messageId && entry.messageId !== messageId) {
+    state.delete(tabId);
+  }
+}
+
 function clearState(state, tabId) {
   state.delete(tabId);
 }
@@ -283,7 +355,7 @@ async function waitForMessageId(compose, tabId, initial, { attempts = 10, delayM
   // Poll the compose details until Thunderbird provides a reference/related id.
   let details = initial;
   for (let i = 0; i < attempts; i++) {
-    const id = details?.referenceMessageId || details?.relatedMessageId;
+    const id = extractMessageId(details);
     if (id) return id;
     await delay(delayMs);
     details = await safe(() => compose.getDetails(tabId), null);
@@ -420,6 +492,26 @@ async function safe(fn, fallback) {
   } catch (_) {
     return fallback;
   }
+}
+
+function extractMessageId(details) {
+  const candidates = [
+    details?.referenceMessageId,
+    details?.relatedMessageId,
+    details?.originalMessageId,
+    details?.messageId,
+  ];
+  for (const value of candidates) {
+    const normalized = normalizeMessageId(value);
+    if (normalized) return normalized;
+  }
+  return null;
+}
+
+function normalizeMessageId(value) {
+  if (value == null) return null;
+  const trimmed = String(value).trim();
+  return trimmed.length ? trimmed : null;
 }
 
 globalThis.App = globalThis.App || {};

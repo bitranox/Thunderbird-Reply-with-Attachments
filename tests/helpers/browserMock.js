@@ -36,6 +36,9 @@ export function createBrowserMock({
     listAttachments: vi.fn().mockResolvedValue(messageAttachments),
     getAttachmentFile: vi.fn(getFileByPart),
   };
+  const sessionStore = new Map();
+  const keyFor = (tabId, key) => `${tabId}:${key}`;
+
   const browser = {
     runtime: { onMessage: { addListener: vi.fn(), removeListener: vi.fn() }, sendMessage: vi.fn() },
     windows: {
@@ -60,9 +63,13 @@ export function createBrowserMock({
     compose,
     messages,
     sessions: {
-      getTabValue: vi.fn().mockResolvedValue(false),
-      setTabValue: vi.fn(),
-      removeTabValue: vi.fn(),
+      getTabValue: vi.fn(async (tabId, key) => sessionStore.get(keyFor(tabId, key)) ?? null),
+      setTabValue: vi.fn(async (tabId, key, value) => {
+        sessionStore.set(keyFor(tabId, key), value);
+      }),
+      removeTabValue: vi.fn(async (tabId, key) => {
+        sessionStore.delete(keyFor(tabId, key));
+      }),
     },
     scripting: {
       compose: {

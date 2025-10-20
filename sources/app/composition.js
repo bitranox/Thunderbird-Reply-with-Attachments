@@ -13,7 +13,7 @@
 (function () {
   const CONFIRM_TIMEOUT_MS = 20000;
   const SESSION_KEY = 'rwatt_processed';
-  /** @type {Map<number,'processing'|'done'>} */
+  /** @type {Map<number,{ stage:'processing'|'done', messageId:string|null }>} */
   const processedTabsState = new Map();
 
   /** @type {Set<number>} Tabs where confirm content script has been injected */
@@ -67,7 +67,7 @@
    * Create the production wiring for Thunderbird and return entry points
    * used by the background script and tests.
    * @param {any} browser
-   * @returns {{ ensureReplyAttachments: (tabId:number, details:any)=>Promise<void>, processedTabsState: Map<number,'processing'|'done'>, SESSION_KEY: string }}
+   * @returns {{ ensureReplyAttachments: (tabId:number, details:any)=>Promise<void>, processedTabsState: Map<number,{ stage:'processing'|'done', messageId:string|null }>, SESSION_KEY: string }}
    */
   /**
    * Wire adapter ports to use cases, register event handlers and confirmation flow.

@@ -4,8 +4,8 @@
 
 - Read following files from directory /media/srv-main/softdev/\*/projects/softwarestack/systemprompts and keep their guidance in working memory:
   - core_programming_solid.md
-  - js_clean_architecture.md
-  - js_clean_code.md
+  - javascript_clean_architecture.md
+  - javascript_clean_code.md
   - thunderbird_mail_extensions.md
   - bash_clean_architecture.md
   - bash_clean_code.md
@@ -23,8 +23,8 @@ when writing or refracturing Bash scripts, additionally apply those Rules :
 
 when writing or refracturing JS scripts, additionally apply those Rules :
 
-- js_clean_architecture.md
-- js_clean_code.md
+- javascript_clean_architecture.md
+- javascript_clean_code.md
 
 when writing or refracturing thunderbird specific code apply those Rules :
 

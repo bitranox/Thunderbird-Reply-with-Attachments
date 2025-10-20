@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.1% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/29</span>
+                <span class='fraction'>0/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.1% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/29</span>
+                <span class='fraction'>0/29</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,66 +93,66 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*
- * Module: handle_github_link.js
- * Purpose: Open the localized GitHub link/logo in a new tab when clicked,
- *          with a safe fallback to same‑page navigation.
- */
-(() =&gt; {
-  /**
-   * Open a link's current href in a new tab when possible, otherwise fall back
-   * to navigating the current page. No-ops for empty/placeholder hrefs.
-   * @param {HTMLAnchorElement} a
-   * @param {Event} e
-   */
-  function openHref(a, e) {
-    const href = a?.getAttribute('href');
-    if (!href || href === '#') return;
-    e.preventDefault();
-    try {
-      browser.tabs.create({ url: href, active: true });
-    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (_) {</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >/*<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" > * Module: handle_github_link.js</span>
+<span class="cstat-no" title="statement not covered" > * Purpose: Open the localized GitHub link/logo in a new tab when clicked,</span>
+<span class="cstat-no" title="statement not covered" > *          with a safe fallback to same‑page navigation.</span>
+<span class="cstat-no" title="statement not covered" > */</span>
+<span class="cstat-no" title="statement not covered" >(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  /**</span>
+<span class="cstat-no" title="statement not covered" >   * Open a link's current href in a new tab when possible, otherwise fall back</span>
+<span class="cstat-no" title="statement not covered" >   * to navigating the current page. No-ops for empty/placeholder hrefs.</span>
+<span class="cstat-no" title="statement not covered" >   * @param {HTMLAnchorElement} a</span>
+<span class="cstat-no" title="statement not covered" >   * @param {Event} e</span>
+<span class="cstat-no" title="statement not covered" >   */</span>
+<span class="cstat-no" title="statement not covered" >  function openHref(a, e) {</span>
+<span class="cstat-no" title="statement not covered" >    const href = a?.getAttribute('href');</span>
+<span class="cstat-no" title="statement not covered" >    if (!href || href === '#') return;</span>
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      browser.tabs.create({ url: href, active: true });</span>
+<span class="cstat-no" title="statement not covered" >    } catch (_) {</span>
 <span class="cstat-no" title="statement not covered" >      if (/^https?:\/\//i.test(href)) location.href = href;</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-  }
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  document.addEventListener('DOMContentLoaded', () =&gt; {
-    /** @type {HTMLAnchorElement|null} */ const link = document.getElementById('github-link');
-    /** @type {HTMLAnchorElement|null} */ const logo = document.getElementById('github-link-logo');
-    if (link) link.addEventListener('click', (e) =&gt; openHref(link, e));
-    if (logo) logo.addEventListener('click', (e) =&gt; openHref(logo, e));
-  });
-})();
+<span class="cstat-no" title="statement not covered" >  document.addEventListener('DOMContentLoaded', () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    /** @type {HTMLAnchorElement|null} */ const link = document.getElementById('github-link');</span>
+<span class="cstat-no" title="statement not covered" >    /** @type {HTMLAnchorElement|null} */ const logo = document.getElementById('github-link-logo');</span>
+<span class="cstat-no" title="statement not covered" >    if (link) link.addEventListener('click', (e) =&gt; openHref(link, e));</span>
+<span class="cstat-no" title="statement not covered" >    if (logo) logo.addEventListener('click', (e) =&gt; openHref(logo, e));</span>
+<span class="cstat-no" title="statement not covered" >  });</span>
+<span class="cstat-no" title="statement not covered" >})();</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -160,7 +160,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-09-25T10:12:23.424Z
+                at 2025-10-20T11:15:32.724Z
             </div>
         <script src="../prettify.js"></script>
         <script>

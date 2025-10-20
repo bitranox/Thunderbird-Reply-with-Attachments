@@ -84,7 +84,7 @@ describe('composition — settings listeners and cleanup', () => {
   it('tabs.onRemoved clears session key and processed map', async () => {
     const { browser } = await boot();
     // Put a value in processedTabsState via session marker path
-    globalThis.processedTabsState.set(10, 'done');
+    globalThis.processedTabsState.set(10, { stage: 'done', messageId: 'msg-10' });
     const removeCb = browser.tabs.onRemoved.addListener.mock.calls[0][0];
     await removeCb(10);
     expect(browser.sessions.removeTabValue).toHaveBeenCalled();
