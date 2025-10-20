@@ -510,8 +510,14 @@ function extractMessageId(details) {
 
 function normalizeMessageId(value) {
   if (value == null) return null;
+  if (typeof value === 'number' && Number.isFinite(value)) return value;
   const trimmed = String(value).trim();
-  return trimmed.length ? trimmed : null;
+  if (!trimmed.length) return null;
+  if (/^-?\d+$/.test(trimmed)) {
+    const n = Number.parseInt(trimmed, 10);
+    if (Number.isFinite(n)) return n;
+  }
+  return trimmed;
 }
 
 globalThis.App = globalThis.App || {};

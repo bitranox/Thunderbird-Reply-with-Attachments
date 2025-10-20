@@ -90,7 +90,7 @@ describe('UseCases — unit', () => {
     await ensure(5, { type: 'reply', referenceMessageId: 200 });
     await ensure(5, { type: 'reply', referenceMessageId: 200 });
     expect(compose.addAttachment).toHaveBeenCalledTimes(1);
-    expect(await sessions.getTabValue(5, 'S')).toEqual({ messageId: '200' });
+    expect(await sessions.getTabValue(5, 'S')).toEqual({ messageId: 200 });
   });
 
   it('retries fetching attachments when the first attempt is empty', async () => {
