@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/372</span>
+                <span class='fraction'>0/376</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/372</span>
+                <span class='fraction'>0/376</span>
             </div>
         
             
@@ -528,7 +528,12 @@
 <a name='L463'></a><a href='#L463'>463</a>
 <a name='L464'></a><a href='#L464'>464</a>
 <a name='L465'></a><a href='#L465'>465</a>
-<a name='L466'></a><a href='#L466'>466</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -672,6 +677,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -786,6 +793,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1135,6 +1145,8 @@
 <span class="cstat-no" title="statement not covered" >        logger,</span>
 <span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+    // bootstrap ensure with defaults so early compose events still process
+<span class="cstat-no" title="statement not covered" >    rebuildEnsure();</span>
     /** Compute matching blacklist patterns for a given name. */
 <span class="cstat-no" title="statement not covered" >    function matchBlacklist(name) {</span>
 <span class="cstat-no" title="statement not covered" >      try {</span>
@@ -1226,7 +1238,7 @@
 <span class="cstat-no" title="statement not covered" >      await ensureRegistered;</span>
 <span class="cstat-no" title="statement not covered" >      const details = await compose.getDetails(id).catch(() =&gt; null);</span>
 <span class="cstat-no" title="statement not covered" >      if (!details) return;</span>
-<span class="cstat-no" title="statement not covered" >      await ensure(id, details);</span>
+<span class="cstat-no" title="statement not covered" >      await ensureWrapper(id, details);</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 &nbsp;
     // On send attempt, run a last ensure pass in case state change was missed.
@@ -1236,7 +1248,7 @@
 <span class="cstat-no" title="statement not covered" >      await ensureRegistered;</span>
 <span class="cstat-no" title="statement not covered" >      const details = await compose.getDetails(id).catch(() =&gt; null);</span>
 <span class="cstat-no" title="statement not covered" >      if (!details) return {};</span>
-<span class="cstat-no" title="statement not covered" >      await ensure(id, details);</span>
+<span class="cstat-no" title="statement not covered" >      await ensureWrapper(id, details);</span>
 <span class="cstat-no" title="statement not covered" >      return {};</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 &nbsp;
@@ -1252,13 +1264,16 @@
 <span class="cstat-no" title="statement not covered" >    });</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    async function ensureWrapper(tabId, details) {</span>
-<span class="cstat-no" title="statement not covered" >      if (!ensure) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          await ready;</span>
-<span class="cstat-no" title="statement not covered" >        } catch (_) {}</span>
-<span class="cstat-no" title="statement not covered" >        if (!ensure) rebuildEnsure();</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return ensure(tabId, details);</span>
+<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered" >        if (!ensure) {</span>
+<span class="cstat-no" title="statement not covered" >          try {</span>
+<span class="cstat-no" title="statement not covered" >            await ready;</span>
+<span class="cstat-no" title="statement not covered" >          } catch (_) {}</span>
+<span class="cstat-no" title="statement not covered" >          if (!ensure) rebuildEnsure();</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof ensure !== 'function') return;</span>
+<span class="cstat-no" title="statement not covered" >        return await ensure(tabId, details);</span>
+<span class="cstat-no" title="statement not covered" >      } catch (_) {}</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     // Also expose a bound reloadSettings for background.js
 <span class="cstat-no" title="statement not covered" >    try {</span>
@@ -1465,7 +1480,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-20T11:23:52.589Z
+                at 2025-10-20T12:37:57.365Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

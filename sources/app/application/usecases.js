@@ -294,7 +294,11 @@ function createEnsureReplyAttachments({
         return;
       }
 
-      debugLog(logger, { tabId, messageId }, 'ensureReplyAttachments: nothing added, clearing state');
+      debugLog(
+        logger,
+        { tabId, messageId },
+        'ensureReplyAttachments: nothing added, clearing state'
+      );
       clearState(state, tabId);
       await safe(() => sessions.removeTabValue(tabId, sessionKey));
     })();
