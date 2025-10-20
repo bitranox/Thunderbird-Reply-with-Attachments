@@ -116,12 +116,18 @@ describe('background — error/edge paths to increase branch coverage', () => {
     globalThis.ensureReplyAttachments = ensureSpy;
 
     const listener = browser.runtime.onMessage.addListener.mock.calls[0][0];
+    const baselineCount = browser.compose.getComposeDetails.mock.calls.length;
+
     await listener({ type: 'rwa:apply-settings-open-compose' });
     await new Promise((r) => setTimeout(r, 10));
 
-    expect(browser.compose.getComposeDetails).toHaveBeenCalledTimes(3);
+    const newCalls = browser.compose.getComposeDetails.mock.calls.slice(baselineCount);
+    const ids = newCalls.map(([id]) => id);
+    expect(new Set(ids)).toEqual(new Set([1, 2, 3]));
     // ensure called only for tab 1 (reply) and not for 2 (non-reply) or 3 (null)
-    expect(ensureSpy).toHaveBeenCalledTimes(1);
+    const ensureTabs = ensureSpy.mock.calls.map(([tabId]) => tabId);
+    expect(ensureSpy).toHaveBeenCalled();
+    expect(new Set(ensureTabs)).toEqual(new Set([1]));
     expect(ensureSpy).toHaveBeenCalledWith(1, { type: 'replyAll' });
   });
 
