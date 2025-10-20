@@ -210,45 +210,103 @@ function createEnsureReplyAttachments({
     logger,
     attachmentsRetry,
   });
-  return async function ensureReplyAttachments(tabId, details) {
-    if (!isReply(details)) return; // only for replies
-    const hint = extractMessageId(details);
-    resetStateForNewMessage(state, tabId, hint);
-    const currentEntry = getStateEntry(state, tabId);
-    if (!hint && currentEntry?.stage === 'done') return;
-    if (isProcessing(state, tabId)) return;
-    if (isDoneForMessage(state, tabId, hint)) return;
+  const inflightEnsures = new Map();
 
-    const { processed: alreadyProcessed } = await wasAlreadyProcessed(
-      sessions,
-      tabId,
-      sessionKey,
-      hint
-    );
-    if (alreadyProcessed) {
-      markDone(state, tabId, hint);
+  return async function ensureReplyAttachments(tabId, details) {
+    if (!isReply(details)) {
+      debugLog(logger, { tabId, type: details?.type }, 'ensureReplyAttachments: skip non-reply');
       return;
     }
 
-    markProcessing(state, tabId, hint);
+    if (inflightEnsures.has(tabId)) {
+      debugLog(logger, { tabId }, 'ensureReplyAttachments: join in-flight run');
+      return inflightEnsures.get(tabId);
+    }
 
-    const messageId = await waitForMessageId(compose, tabId, details);
-    if (!messageId) {
+    const run = (async () => {
+      const hint = extractMessageId(details);
+      const entryBefore = getStateEntry(state, tabId) || null;
+      debugLog(
+        logger,
+        {
+          tabId,
+          hint,
+          stateStage: entryBefore?.stage,
+          stateMessageId: entryBefore?.messageId,
+        },
+        'ensureReplyAttachments: begin'
+      );
+
+      resetStateForNewMessage(state, tabId, hint);
+      const currentEntry = getStateEntry(state, tabId);
+      if (!hint && currentEntry?.stage === 'done') {
+        debugLog(logger, { tabId }, 'ensureReplyAttachments: done-without-hint');
+        return;
+      }
+      if (isProcessing(state, tabId)) {
+        debugLog(logger, { tabId }, 'ensureReplyAttachments: already processing');
+        return;
+      }
+      if (isDoneForMessage(state, tabId, hint)) {
+        debugLog(logger, { tabId, hint }, 'ensureReplyAttachments: already done for message');
+        return;
+      }
+
+      const { processed: alreadyProcessed, messageId: storedMessageId } = await wasAlreadyProcessed(
+        sessions,
+        tabId,
+        sessionKey,
+        hint
+      );
+      debugLog(
+        logger,
+        { tabId, hint, alreadyProcessed, storedMessageId },
+        'ensureReplyAttachments: session marker check'
+      );
+      if (alreadyProcessed) {
+        markDone(state, tabId, hint);
+        debugLog(logger, { tabId, hint }, 'ensureReplyAttachments: already processed');
+        return;
+      }
+
+      markProcessing(state, tabId, hint);
+      debugLog(logger, { tabId, hint }, 'ensureReplyAttachments: marked processing');
+
+      const messageId = await waitForMessageId(compose, tabId, details);
+      if (!messageId) {
+        debugLog(logger, { tabId, hint }, 'ensureReplyAttachments: messageId missing after wait');
+        clearState(state, tabId);
+        await safe(() => sessions.removeTabValue(tabId, sessionKey));
+        return;
+      }
+
+      updateStateMessage(state, tabId, messageId);
+      debugLog(
+        logger,
+        { tabId, messageId, hint },
+        'ensureReplyAttachments: invoking processReplyAttachments'
+      );
+
+      const added = await processReplyAttachments(tabId, messageId);
+      if (added > 0) {
+        debugLog(logger, { tabId, messageId, added }, 'ensureReplyAttachments: attachments added');
+        await markProcessed(sessions, tabId, sessionKey, state, messageId);
+        return;
+      }
+
+      debugLog(logger, { tabId, messageId }, 'ensureReplyAttachments: nothing added, clearing state');
       clearState(state, tabId);
       await safe(() => sessions.removeTabValue(tabId, sessionKey));
-      return;
-    }
+    })();
 
-    updateStateMessage(state, tabId, messageId);
+    inflightEnsures.set(
+      tabId,
+      run.finally(() => {
+        inflightEnsures.delete(tabId);
+      })
+    );
 
-    const added = await processReplyAttachments(tabId, messageId);
-    if (added > 0) {
-      await markProcessed(sessions, tabId, sessionKey, state, messageId);
-      return;
-    }
-
-    clearState(state, tabId);
-    await safe(() => sessions.removeTabValue(tabId, sessionKey));
+    return inflightEnsures.get(tabId);
   };
 }
 
