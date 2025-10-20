@@ -214,6 +214,8 @@ function createEnsureReplyAttachments({
     if (!isReply(details)) return; // only for replies
     const hint = extractMessageId(details);
     resetStateForNewMessage(state, tabId, hint);
+    const currentEntry = getStateEntry(state, tabId);
+    if (!hint && currentEntry?.stage === 'done') return;
     if (isProcessing(state, tabId)) return;
     if (isDoneForMessage(state, tabId, hint)) return;
 

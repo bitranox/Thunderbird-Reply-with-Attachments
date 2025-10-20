@@ -5,7 +5,7 @@
 - Tests: Rewrote UI i18n, donation visibility, and link handler suites into single-purpose, descriptive cases that run the real logic across every branch.
 - Coverage: Added background logger resilience tests and expanded DOM fallback checks, lifting overall statement coverage above 94%.
 - Reliability: Hardened event propagation so background listeners no longer drop compose events under rapid tab churn.
-- Attachments: Normalize Thunderbird message identifiers to numeric IDs so `browser.messages.listAttachments` reliably sees the source files before copying.
+- Attachments: Normalize Thunderbird message identifiers to numeric IDs so `browser.messages.listAttachments` reliably sees the source files before copying, and guard against duplicate runs when `onBeforeSend` fires before the reference id is populated.
 
 ## [2.2.0] - 2025-09-24
 

@@ -33,6 +33,36 @@ describe('Composition wiring — events', () => {
     await onStateCb(11);
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
   });
+
+  it('does not duplicate attachments when onBeforeSend lacks reference id', async () => {
+    const browser = createBrowserMock({});
+    await import('../sources/app/adapters/thunderbird.js');
+    await import('../sources/app/application/usecases.js');
+    await import('../sources/app/domain/filters.js');
+    const { App } = globalThis;
+    await import('../sources/app/composition.js');
+    App.Composition.createAppWiring(browser);
+
+    const onStateCb = browser.compose.onComposeStateChanged.addListener.mock.calls[0][0];
+    const onBeforeSend = browser.compose.onBeforeSend.addListener.mock.calls[0][0];
+
+    browser.compose.getComposeDetails.mockResolvedValueOnce({
+      type: 'reply',
+      referenceMessageId: 77,
+    });
+    browser.messages.listAttachments.mockResolvedValueOnce([
+      { name: 'doc.pdf', partName: 'a', contentType: 'application/pdf' },
+    ]);
+    browser.messages.getAttachmentFile = vi.fn().mockResolvedValue(new Blob(['pdf']));
+
+    await onStateCb(20);
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+
+    browser.compose.getComposeDetails.mockResolvedValueOnce({ type: 'reply' });
+    await onBeforeSend(20);
+
+    expect(browser.compose.addAttachment).toHaveBeenCalledTimes(1);
+  });
 });
 
 function deferred() {
