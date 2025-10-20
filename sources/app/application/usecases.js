@@ -342,9 +342,10 @@ function updateStateMessage(state, tabId, messageId) {
 }
 
 function resetStateForNewMessage(state, tabId, messageId) {
-  if (!messageId) return;
+  const normalized = normalizeMessageId(messageId);
+  if (normalized == null) return;
   const entry = getStateEntry(state, tabId);
-  if (entry && entry.messageId && entry.messageId !== messageId) {
+  if (entry && entry.messageId != null && entry.messageId !== normalized) {
     state.delete(tabId);
   }
 }
