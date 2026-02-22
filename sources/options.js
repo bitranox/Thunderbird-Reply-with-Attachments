@@ -64,7 +64,7 @@
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
         [KEY_WARN_BLACKLIST]: true,
-        [KEY_INCLUDE_INLINE]: false,
+        [KEY_INCLUDE_INLINE]: true,
         [KEY_DEBUG]: false,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
@@ -157,7 +157,7 @@
       [KEY_CONFIRM]: false,
       [KEY_CONFIRM_DEFAULT]: 'yes',
       [KEY_WARN_BLACKLIST]: true,
-      [KEY_INCLUDE_INLINE]: false,
+      [KEY_INCLUDE_INLINE]: true,
       [KEY_DEBUG]: false,
     });
     await load();
