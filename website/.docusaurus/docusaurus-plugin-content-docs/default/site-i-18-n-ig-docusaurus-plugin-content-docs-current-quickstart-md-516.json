@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ntụziaka Mbụ",
-  "description": "Quickstart",
+  "title": "Mbido ngwa ngwa",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ntụziaka Mbụ",
-    "sidebar_label": "Ntụziaka Mbụ"
+    "title": "Mbido ngwa ngwa",
+    "sidebar_label": "Mbido Ngwa Ngwa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Àkpọrọ",
+    "title": "Njirimara",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/features"
   },
   "next": {
-    "title": "Ịtọlite",
+    "title": "Ịwụnye",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/install"
   }
 }

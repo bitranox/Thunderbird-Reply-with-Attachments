@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Amfani",
-  "description": "Usage",
+  "title": "Huutoraade",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Amfani",
-    "sidebar_label": "Amfani"
+    "title": "Huutoraade",
+    "sidebar_label": "Huutugol"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/configuration"
   },
   "next": {
-    "title": "Jama",
+    "title": "Toonde",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/compatibility"
   }
 }

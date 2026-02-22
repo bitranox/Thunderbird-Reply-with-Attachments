@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Razvoj",
-  "description": "Razvojni Vodič",
+  "description": "---",
   "source": "@site/i18n/bs/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

@@ -4,94 +4,98 @@ title: 'Χρήση'
 sidebar_label: 'Χρήση'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Χρήση {#usage}
+
+- Απαντήστε και το πρόσθετο προσθέτει αυτόματα τα πρωτότυπα — ή ρωτά πρώτα, αν είναι ενεργοποιημένο στις Επιλογές.
+- Αποφυγή διπλοτύπων βάσει ονόματος αρχείου· τα τμήματα S/MIME παραλείπονται πάντα. Οι ενσωματωμένες εικόνες αποκαθίστανται στο σώμα της απάντησης από προεπιλογή (απενεργοποιήστε μέσω "Include inline pictures" στις Επιλογές).
+- Τα συνημμένα στη μαύρη λίστα επίσης παραλείπονται (μοτίβα glob χωρίς διάκριση πεζών/κεφαλαίων που ταιριάζουν με ονόματα αρχείων, όχι διαδρομές). Δείτε τις [Ρυθμίσεις](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Τι συμβαίνει κατά την απάντηση {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Εντοπισμός απάντησης → καταγραφή αρχικών συνημμένων → φιλτράρισμα S/MIME + ενσωματωμένων → προαιρετική επιβεβαίωση → προσθήκη επιλέξιμων αρχείων (παράκαμψη διπλοτύπων) → επαναφορά ενσωματωμένων εικόνων στο σώμα.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Αυστηρή έναντι χαλαρής διέλευσης: Το πρόσθετο αρχικά εξαιρεί τα τμήματα S/MIME και τα ενσωματωμένα από τα συνημμένα αρχείων. Αν δεν πληροί τίποτα τα κριτήρια, εκτελεί μια χαλαρή διέλευση που εξακολουθεί να αποκλείει S/MIME/ενσωματωμένα αλλά ανέχεται περισσότερες περιπτώσεις (βλ. Λεπτομέρειες κώδικα). Οι ενσωματωμένες εικόνες δεν προστίθενται ποτέ ως συνημμένα αρχείων· αντίθετα, όταν είναι ενεργοποιημένο το "Include inline pictures" (προεπιλογή), ενσωματώνονται απευθείας στο σώμα της απάντησης ως base64 data URIs.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Τύπος τμήματος                                                |                      Αυστηρή διέλευση |                       Χαλαρή διέλευση |
+| ------------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
+| Αρχείο υπογραφής S/MIME `smime.p7s`                           |                            Εξαιρείται |                            Εξαιρείται |
+| Τύποι MIME S/MIME (`application/pkcs7-*`)                     |                           Εξαιρούνται |                           Εξαιρούνται |
+| Ενσωματωμένη εικόνα που αναφέρεται από Content‑ID (`image/*`) | Εξαιρείται (αποκαθίσταται στο σώμα\*) | Εξαιρείται (αποκαθίσταται στο σώμα\*) |
+| Συνημμένο email (`message/rfc822`) με όνομα αρχείου           |                       Δεν προστίθεται |                Ενδέχεται να προστεθεί |
+| Κανονικό συνημμένο αρχείο με όνομα αρχείου                    |                Ενδέχεται να προστεθεί |                Ενδέχεται να προστεθεί |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Όταν είναι ενεργοποιημένη η επιλογή "Include inline pictures" (προεπιλογή: ON), οι ενσωματωμένες εικόνες ενσωματώνονται στο σώμα της απάντησης ως base64 data URIs αντί να προστεθούν ως συνημμένα αρχείων. Δείτε τις [Ρυθμίσεις](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Παράδειγμα: Κάποια συνημμένα μπορεί να στερούνται ορισμένων κεφαλίδων αλλά να είναι ακόμη κανονικά αρχεία (όχι ενσωματωμένα/S/MIME). Αν η αυστηρή διέλευση δεν βρει κανένα, η χαλαρή διέλευση μπορεί να τα αποδεχτεί και να τα επισυνάψει.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Σταυροαναφορά {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Η προώθηση δεν τροποποιείται εκ σχεδιασμού (δείτε τους Περιορισμούς παρακάτω).
+- Για λόγους που ένα συνημμένο μπορεί να μην προστεθεί, δείτε το «Γιατί μπορεί να μην προστεθούν συνημμένα».
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Λεπτομέρειες συμπεριφοράς {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Αποτροπή διπλοτύπων:** Το πρόσθετο σημειώνει την καρτέλα σύνταξης ως επεξεργασμένη χρησιμοποιώντας μια τιμή συνεδρίας ανά καρτέλα και μια προστασία στη μνήμη. Δεν θα προσθέσει τα πρωτότυπα δύο φορές.
+- Το κλείσιμο και εκ νέου άνοιγμα ενός παραθύρου σύνταξης αντιμετωπίζεται ως νέα καρτέλα (δηλ. επιτρέπεται νέα προσπάθεια).
+- **Σεβασμός υπαρχόντων συνημμένων:** Αν η σύνταξη περιέχει ήδη κάποια συνημμένα, τα πρωτότυπα εξακολουθούν να προστίθενται ακριβώς μία φορά, παραλείποντας ονόματα αρχείων που υπάρχουν ήδη.
+- **Εξαιρέσεις:** Τα τεχνουργήματα S/MIME και οι ενσωματωμένες εικόνες εξαιρούνται από τα συνημμένα αρχείων. Αν τίποτα δεν πληροί τα κριτήρια στην πρώτη διέλευση, ένα χαλαρό εφεδρικό πέρασμα ξαναελέγχει μη‑S/MIME τμήματα. Οι ενσωματωμένες εικόνες χειρίζονται ξεχωριστά: αποκαθίστανται στο σώμα της απάντησης ως data URIs (όταν είναι ενεργοποιημένο).
+  - **Ονόματα αρχείων:** `smime.p7s`
+  - **Τύποι MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Ενσωματωμένες εικόνες:** οποιοδήποτε τμήμα `image/*` που αναφέρεται από Content‑ID — εξαιρείται από τα συνημμένα αρχείων αλλά ενσωματώνεται στο σώμα της απάντησης όταν το "Include inline pictures" είναι ON
+  - **Συνημμένα email (`message/rfc822`):** αντιμετωπίζονται ως κανονικά συνημμένα αν έχουν όνομα αρχείου· μπορεί να προστεθούν (υπόκεινται σε ελέγχους διπλοτύπων και μαύρη λίστα).
+- **Προειδοποίηση μαύρης λίστας (αν είναι ενεργοποιημένη):** Όταν υποψήφια αποκλείονται από τη μαύρη λίστα σας,
+  το πρόσθετο εμφανίζει ένα μικρό παράθυρο διαλόγου που απαριθμεί τα επηρεαζόμενα αρχεία και τα αντίστοιχα
+  μοτίβα. Αυτή η προειδοποίηση εμφανίζεται επίσης σε περιπτώσεις όπου δεν θα προστεθούν
+  συνημμένα επειδή όλα αποκλείστηκαν.
 
 ---
 
-## Limitations {#limitations}
+## Συντομεύσεις πληκτρολογίου {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Διάλογος επιβεβαίωσης: Y/J = Ναι, N/Esc = Όχι· Tab/Shift+Tab και τα βελάκια εναλλάσσουν την εστίαση.
+  - Η «Προεπιλεγμένη απάντηση» στις [Ρυθμίσεις](configuration#confirmation) ορίζει το αρχικά εστιασμένο κουμπί.
+  - Το Enter ενεργοποιεί το κουμπί με εστίαση. Τα Tab/Shift+Tab και τα βελάκια μετακινούν την εστίαση για προσβασιμότητα.
+
+### Συνοπτικός οδηγός πληκτρολογίου {#keyboard-cheat-sheet}
+
+| Πλήκτρα                | Ενέργεια                            |
+| ---------------------- | ----------------------------------- |
+| Y / J                  | Επιβεβαίωση Ναι                     |
+| N / Esc                | Επιβεβαίωση Όχι                     |
+| Enter                  | Ενεργοποίηση εστιασμένου κουμπιού   |
+| Tab / Shift+Tab        | Μετακίνηση εστίασης εμπρός/πίσω     |
+| Πλήκτρα βελών          | Μετακίνηση εστίασης μεταξύ κουμπιών |
+| Προεπιλεγμένη απάντηση | Ορίζει αρχική εστίαση (Ναι ή Όχι)   |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Περιορισμοί {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Η Προώθηση δεν τροποποιείται από αυτό το πρόσθετο (υποστηρίζονται Απάντηση και Απάντηση σε όλους).
+- Πολύ μεγάλα συνημμένα ενδέχεται να υπόκεινται σε περιορισμούς του Thunderbird ή του παρόχου.
+  - Το πρόσθετο δεν τμηματοποιεί ούτε συμπιέζει αρχεία· βασίζεται στον κανονικό χειρισμό συνημμένων του Thunderbird.
+- Κρυπτογραφημένα μηνύματα: τα τμήματα S/MIME αποκλείονται σκόπιμα.
 
 ---
 
-See also
+## Γιατί μπορεί να μην προστεθούν συνημμένα {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Οι ενσωματωμένες εικόνες δεν προστίθενται ως συνημμένα αρχείων. Όταν το "Include inline pictures" είναι ON (προεπιλογή), ενσωματώνονται στο σώμα της απάντησης ως data URIs. Αν η ρύθμιση είναι OFF, οι ενσωματωμένες εικόνες αφαιρούνται πλήρως. Δείτε τις [Ρυθμίσεις](configuration#include-inline-pictures).
+- Τα τμήματα υπογραφής S/MIME αποκλείονται εκ σχεδιασμού: ονόματα αρχείων όπως `smime.p7s` και τύποι MIME όπως `application/pkcs7-signature` ή `application/pkcs7-mime` παραλείπονται.
+- Τα μοτίβα μαύρης λίστας μπορούν να φιλτράρουν υποψήφια: δείτε τις [Ρυθμίσεις](configuration#blacklist-glob-patterns)· η αντιστοίχιση δεν κάνει διάκριση πεζών/κεφαλαίων και αφορά μόνο το όνομα αρχείου.
+- Διπλά ονόματα αρχείων δεν προστίθενται ξανά: αν η σύνταξη περιέχει ήδη ένα αρχείο με το ίδιο κανονικοποιημένο όνομα, παραλείπεται.
+- Μη‑αρχειακά τμήματα ή ελλείποντα ονόματα αρχείων: μόνο τμήματα που μοιάζουν με αρχεία και έχουν αξιοποιήσιμα ονόματα λαμβάνονται υπόψη για προσθήκη.
+
+---
+
+Δείτε επίσης
+
+- [Ρυθμίσεις](configuration)

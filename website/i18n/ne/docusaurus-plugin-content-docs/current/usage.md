@@ -4,94 +4,97 @@ title: 'प्रयोग'
 sidebar_label: 'प्रयोग'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## प्रयोग {#usage}
+
+- उत्तर दिनासाथ एड‑अनले मौलिक संलग्नकहरू स्वतः थप्छ — वा विकल्पहरूमा सक्षम भएमा पहिले सोध्छ।
+- फाइलनामका आधारमा दोहोरोपन हटाइन्छ; S/MIME भागहरू सधैं स्किप गरिन्छन्। इनलाइन तस्बिरहरू पूर्वनिर्धारित रूपमा उत्तरको बडीमा पुनर्स्थापित गरिन्छन् (विकल्पहरूमा "Include inline pictures" मार्फत अक्षम गर्न सकिन्छ)।
+- ब्ल्याकलिस्टमा परेका संलग्नकहरू पनि स्किप गरिन्छन् (case‑insensitive glob ढाँचाले फाइलनामसँग मिलाउँछ, पाथसँग होइन)। [कन्फिगरेसन](configuration#blacklist-glob-patterns) हेर्नुहोस्।
 
 ---
 
-### What happens on reply {#what-happens}
+### उत्तर दिँदा के हुन्छ {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- उत्तर पत्ता लगाउने → मौलिक संलग्नकहरूको सूची → S/MIME + इनलाइन फिल्टर → वैकल्पिक पुष्टि → योग्य फाइलहरू थप्ने (दोहोरिएका स्किप) → बडीमा इनलाइन तस्बिरहरू पुनर्स्थापित।
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+कडा बनाम सहज पास: एड‑अनले सुरुमा फाइल संलग्नकबाट S/MIME र इनलाइन भागहरू हटाउँछ। यदि केही पनि योग्य भएन भने, यसले सहज पास चलाउँछ जसले S/MIME/इनलाइनलाई यथावत् बहिष्कृत गर्छ तर थप केसहरू सहन्छ (Code Details हेर्नुहोस्)। इनलाइन तस्बिरहरू कहिल्यै फाइल संलग्नकका रूपमा थपिँदैनन्; बरु, "Include inline pictures" सक्षम हुँदा (पूर्वनिर्धारित), तिनीहरू सीधै उत्तरको बडीमा base64 data URI का रूपमा समावेश हुन्छन्।
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| भागको प्रकार                                          |                         कडा पास |                         सहज पास |
+| ----------------------------------------------------- | ------------------------------: | ------------------------------: |
+| S/MIME हस्ताक्षर फाइल `smime.p7s`                     |                        बहिष्कृत |                        बहिष्कृत |
+| S/MIME MIME प्रकारहरू (`application/pkcs7-*`)         |                        बहिष्कृत |                        बहिष्कृत |
+| Content‑ID द्वारा सन्दर्भित इनलाइन तस्बिर (`image/*`) | बहिष्कृत (बडीमा पुनर्स्थापित\*) | बहिष्कृत (बडीमा पुनर्स्थापित\*) |
+| फाइलनाम भएको संलग्न इमेल (`message/rfc822`)           |                         थपिँदैन |                       थपिन सक्छ |
+| फाइलनाम भएको साधारण फाइल संलग्नक                      |                       थपिन सक्छ |                       थपिन सक्छ |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" सक्षम हुँदा (पूर्वनिर्धारित: ON), इनलाइन तस्बिरहरू फाइल संलग्नकको रूपमा थपिने सट्टा उत्तरको बडीमा base64 data URI का रूपमा समावेश हुन्छन्। [कन्फिगरेसन](configuration#include-inline-pictures) हेर्नुहोस्।
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+उदाहरण: केही संलग्नकहरूमा केही हेडर नहुन सक्छ तर तिनीहरू अझै पनि साधारण फाइलहरू (इनलाइन/S/MIME होइन) हुन सक्छन्। कडा पासले केही नपाएमा, सहज पासले त्यस्ता केसहरू स्वीकार गरेर संलग्न गर्न सक्छ।
 
 ---
 
-## Behavior Details {#behavior-details}
+### क्रस‑सन्दर्भ {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward डिजाइनअनुसार संशोधित हुँदैन (तलका सीमितताहरू हेर्नुहोस्)।
+- कुनै संलग्नक किन नथपिन सक्छ भन्ने कारणका लागि “किन संलग्नकहरू थपिन नसकिन सक्छन्” हेर्नुहोस्।
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## व्यवहार विवरण {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **दोहोरिन नदिनु:** एड‑अनले प्रति‑ट्याब सेसन मान र इन‑मेमोरी गार्ड प्रयोग गरेर compose ट्याबलाई प्रोसेस्ड भनेर मार्क गर्छ। यसले मौलिकहरू दुई पटक थप्दैन।
+- compose विन्डो बन्द गरी पुन: खोल्दा नयाँ ट्याब मानिन्छ (अर्थात्, नयाँ प्रयास अनुमति हुन्छ)।
+- **विद्यमान संलग्नकको सम्मान:** compose मा पहिलेबाटै केही संलग्नकहरू भए पनि, मौलिकहरू ठीक एकपटक मात्र थपिन्छन्, पहिले नै भएका फाइलनामहरू स्किप गरेर।
+- **बहिष्करणहरू:** S/MIME आर्टिफ्याक्ट र इनलाइन तस्बिरहरू फाइल संलग्नकबाट बाहिर राखिन्छन्। पहिलो पासमा केही पनि योग्य नभएमा, सहज फलब्याकले non‑S/MIME भागहरू पुनः जाँच गर्छ। इनलाइन तस्बिरहरू अलगसँग सम्हालिन्छन्: सक्षम हुँदा तिनीहरू उत्तरको बडीमा data URI का रूपमा पुनर्स्थापित हुन्छन्।
+  - **फाइलनामहरू:** `smime.p7s`
+  - **MIME प्रकारहरू:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **इनलाइन तस्बिरहरू:** Content‑ID द्वारा सन्दर्भित कुनै पनि `image/*` भाग — फाइल संलग्नकबाट बहिष्कृत तर "Include inline pictures" ON हुँदा उत्तरको बडीमा समावेश
+  - **संलग्न इमेलहरू (`message/rfc822`):** फाइलनाम भएको भए साधारण संलग्नकझैं व्यवहार हुन्छ; दोहोरिएको जाँच र ब्ल्याकलिस्टको अधीनमा तिनीहरू थपिन सक्छन्।
+- **ब्ल्याकलिस्ट चेतावनी (सक्रिय भएमा):** उम्मेदवारहरू तपाईंको ब्ल्याकलिस्टका कारण बहिष्कृत भएपछि,
+  एड‑अनले प्रभावित फाइलहरू र मिल्ने ढाँचाहरू देखाउने सानो मोडल देखाउँछ।
+  सबै वस्तुहरू बहिष्कृत भएकाले केही पनि नथपिने अवस्थामा पनि यो चेतावनी देखिन्छ।
 
 ---
 
-## Limitations {#limitations}
+## किबोर्ड सर्टकटहरू {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- पुष्टि संवाद: Y/J = Yes, N/Esc = No; Tab/Shift+Tab र Arrow कुञ्जीहरूले फोकस घुमाउँछन्।
+  - [कन्फिगरेसन](configuration#confirmation) भित्रको “Default answer” ले सुरुमा फोकस हुने बटन सेट गर्छ।
+  - Enter ले फोकस भएको बटन ट्रिगर गर्छ। पहुँचयोग्यताका लागि Tab/Shift+Tab र एरोहरूले फोकस सार्छन्।
+
+### किबोर्ड चीट शीट {#keyboard-cheat-sheet}
+
+| कुञ्जीहरू            | कार्य                                 |
+| -------------------- | ------------------------------------- |
+| Y / J                | हो पुष्टि गर्नुहोस्                   |
+| N / Esc              | होइन पुष्टि गर्नुहोस्                 |
+| Enter                | फोकस भएको बटन सक्रिय गर्नुहोस्        |
+| Tab / Shift+Tab      | फोकस अगाडि/पछाडि सार्नुहोस्           |
+| Arrow keys           | बटनहरू बीच फोकस सार्नुहोस्            |
+| पूर्वनिर्धारित उत्तर | प्रारम्भिक फोकस सेट गर्छ (हो वा होइन) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## सीमितताहरू {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward यो एड‑अनले परिवर्तन गर्दैन (Reply र Reply all समर्थित छन्)।
+- धेरै ठूला संलग्नकहरू Thunderbird वा प्रदायकका सीमा भित्र पर्न सक्छन्।
+  - एड‑अनले फाइल टुक्र्याउँदैन वा कम्प्रेस गर्दैन; यसले Thunderbird को सामान्य संलग्नक ह्यान्डलिङमा निर्भर गर्छ।
+- इन्क्रिप्टेड सन्देशहरू: S/MIME भागहरू जानाजानी बहिष्कृत गरिन्छन्।
 
 ---
 
-See also
+## किन संलग्नकहरू थपिन नसकिन सक्छन् {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- इनलाइन तस्बिरहरू फाइल संलग्नकका रूपमा थपिँदैनन्। "Include inline pictures" ON हुँदा (पूर्वनिर्धारित), तिनीहरू फाइल संलग्नकका सट्टा उत्तरको बडीमा data URI का रूपमा समावेश हुन्छन्। सेटिङ OFF भएमा, इनलाइन तस्बिरहरू पूर्ण रूपमा हटाइन्छन्। [कन्फिगरेसन](configuration#include-inline-pictures) हेर्नुहोस्।
+- S/MIME हस्ताक्षर भागहरू डिजाइनअनुसार बहिष्कृत हुन्छन्: `smime.p7s` जस्ता फाइलनाम र `application/pkcs7-signature` वा `application/pkcs7-mime` जस्ता MIME प्रकारहरू स्किप गरिन्छन्।
+- ब्ल्याकलिस्ट ढाँचाहरूले उम्मेदवारहरू फिल्टर गर्न सक्छन्: [कन्फिगरेसन](configuration#blacklist-glob-patterns) हेर्नुहोस्; मिलान case‑insensitive हुन्छ र केवल फाइलनाममा आधारित हुन्छ।
+- दोहोरिएका फाइलनामहरू पुनः नथपिन्छन्: compose मा उस्तै सामान्यीकृत नाम भएको फाइल पहिलेबाटै भएमा, त्यसलाई स्किप गरिन्छ।
+- फाइल‑नहोला जस्ता भागहरू वा हराएका फाइलनामहरू: प्रयोगयोग्य फाइलनाम भएका फाइल‑जस्ता भागहरू मात्र थप्न विचार गरिन्छ।
+
+---
+
+साथै हेर्नुहोस्
+
+- [कन्फिगरेसन](configuration)

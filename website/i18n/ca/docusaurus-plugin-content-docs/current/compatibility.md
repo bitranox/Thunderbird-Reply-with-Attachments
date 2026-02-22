@@ -4,39 +4,41 @@ title: 'Compatibilitat'
 sidebar_label: 'Compatibilitat'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Compatibilitat {#compatibility}
+
+:::important Versió mínima de Thunderbird
+Aquest complement és compatible amb Thunderbird **128 ESR o posterior**. Les versions anteriors no són compatibles.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Es dóna suport a Thunderbird 128 ESR o posterior (128.x+).
+- Les versions anteriors de Thunderbird no són compatibles.
+- Provat en Windows, macOS i Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 no és compatible
+Manifest V2 no és compatible. El complement té com a objectiu **Manifest V3 (MV3)** a Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Resolució de problemes {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Si el complement no funciona com s'espera, assegura't que utilitzes una versió compatible de Thunderbird (128 ESR o posterior).
+- Comprova la consola d'errors de Thunderbird (**Eines > Eines per a desenvolupadors > Consola d'errors**) per detectar qualsevol problema relacionat amb el complement.
+- Si sembla que la configuració desada no s'aplica correctament, reinicia Thunderbird i torna-ho a provar. (Thunderbird pot emmagatzemar en memòria cau l'estat entre sessions; un reinici garanteix que es carregui la configuració nova.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Conflictes coneguts {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- No se'n coneix cap en aquest moment. Si observes adjunts duplicats de manera repetida o fallades amb altres complements, comunica-ho incloent els passos per reproduir-ho.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Les compilacions de Thunderbird Beta i Daily (Nightly) generalment són compatibles, però els canvis a l’upstream de tant en tant poden trencar el comportament del complement. Si trobes problemes, si us plau, informa'n i inclou la versió exacta de Thunderbird (p. ex., “Daily 131.0a1 2025‑09‑10”).
+- Has trobat una regressió a Beta/Nightly? Si us plau, informa-la amb els passos per reproduir-la — consulta [Suport](support) — i inclou la cadena exacta de compilació de Thunderbird.
 
 ---

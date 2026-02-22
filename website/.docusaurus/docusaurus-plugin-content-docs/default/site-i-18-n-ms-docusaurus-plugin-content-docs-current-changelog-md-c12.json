@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Rekod Perubahan",
-  "description": "Rekod Perubahan",
+  "title": "Catatan Perubahan",
+  "description": "---",
   "source": "@site/i18n/ms/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Rekod Perubahan"
+    "title": "Catatan Perubahan"
   },
   "sidebar": "docs",
   "previous": {

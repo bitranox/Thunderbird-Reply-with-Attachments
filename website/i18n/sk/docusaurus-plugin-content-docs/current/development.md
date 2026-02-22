@@ -4,294 +4,296 @@ title: 'Vývoj'
 sidebar_label: 'Vývoj'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Príručka pre vývojárov {#development-guide}
+
+:::note Upravujte iba anglickú verziu; preklady sa propagujú
+Aktualizujte dokumentáciu **len** pod `website/docs` (angličtina). Preklady pod `website/i18n/<locale>/…` sú generované a nemali by sa upravovať manuálne. Na obnovenie lokalizovaného obsahu použite prekladové úlohy (napr. `make translate_web_docs_batch`).
 :::
 
-### Prerequisites {#prerequisites}
+### Predpoklady {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ a npm (testované s Node 22)
+- Thunderbird 128 ESR alebo novší (na manuálne testovanie)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Rozloženie projektu (vysoká úroveň) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Koreňový adresár: baliaci skript `distribution_zip_packer.sh`, dokumentácia, snímky obrazovky
+- `sources/`: hlavný kód doplnku (pozadie, UI nastavení/vyskakovacieho okna, manifesty, ikony)
+- `tests/`: sada Vitest
+- `website/`: dokumentácia Docusaurus (s i18n pod `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Inštalácia a nástroje {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Nainštalovať koreňové závislosti: `npm ci`
+- Dokumentácia (voliteľné): `cd website && npm ci`
+- Zistiť dostupné ciele: `make help`
+
+---
+
+### Živý vývoj (web‑ext run) {#live-dev-web-ext}
+
+- Rýchly cyklus vo Firefox Desktop (iba smoke testy UI):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Spustiť v Thunderbirde (uprednostnené pre MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Tipy:
+- Majte otvorenú Chybovú konzolu Thunderbirdu (Nástroje → Vývojárske nástroje → Chybová konzola).
+- Stránky udalostí MV3 sa pri nečinnosti pozastavujú; po zmenách kódu doplnok znovu načítajte alebo nechajte web‑ext automaticky reštartovať.
+- Niektoré správania špecifické pre Firefox sa líšia; vždy overte v Thunderbirde kvôli parite API.
+- Cesty k binárkam Thunderbirdu (príklady):
+- Linux: `thunderbird` (napr. `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Izolácia profilu: Použite samostatný profil Thunderbirdu na vývoj, aby ste neovplyvnili svoje bežné nastavenie.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Ciele Make (abecedne) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile štandardizuje bežné vývojové postupy. Spustite `make help` kedykoľvek pre jedno‑riadkový prehľad každého cieľa.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tip: spustením `make` bez cieľa sa otvorí jednoduché menu Whiptail na výber cieľa.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Cieľ                                                     | Jednoriadkový popis                                                                               |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Odstráni lokálne artefakty build/preview (tmp/, web-local-preview/, website/build/).              |
+| [`commit`](#mt-commit)                                   | Formátuje, spustí testy (vrátane i18n), aktualizuje changelog, urobí commit a push.               |
+| [`eslint`](#mt-eslint)                                   | Spustí ESLint cez flat config (`npm run -s lint:eslint`).                                         |
+| [`help`](#mt-help)                                       | Vypíše všetky cieľe s jednoriadkovými popismi (zoradené).                                         |
+| [`lint`](#mt-lint)                                       | web‑ext lint na `sources/` (dočasný manifest; ignoruje ZIPy; nefatálne).                          |
+| [`menu`](#mt-menu)                                       | Interaktívne menu na výber cieľa a voliteľných argumentov.                                        |
+| [`pack`](#mt-pack)                                       | Zostaví ATN a LOCAL ZIPy (spustí linter; zavolá baliaci skript).                                  |
+| [`prettier`](#mt-prettier)                               | Formátuje repozitár na mieste (zapíše zmeny).                                                     |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier v režime kontroly (bez zápisu); zlyhá, ak je potrebné preformátovanie.                   |
+| [`prettier_write`](#mt-prettier_write)                   | Alias pre `prettier`.                                                                             |
+| [`test`](#mt-test)                                       | Prettier (zápis), ESLint, potom Vitest (pokrývanie, ak je nakonfigurované).                       |
+| [`test_i18n`](#mt-test_i18n)                             | Testy len i18n: zástupné znaky/parita doplnku + parita webu.                                      |
+| [`translate_app`](#mt-translation-app)                   | Alias pre `translation_app`.                                                                      |
+| [`translation_app`](#mt-translation-app)                 | Preloží reťazce UI aplikácie z `sources/_locales/en/messages.json`.                               |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Preloží dokumenty webu cez OpenAI Batch API (preferované).                                        |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Preloží dokumenty webu synchronne (legacy, bez batch).                                            |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias pre `translation_web_index`.                                                                |
+| [`translation_web_index`](#mt-translation_web_index)     | Preloží UI domovskej stránky/navigácie/päty (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Zostaví dokumenty do `website/build` (podporuje `--locales` / `BUILD_LOCALES`).                   |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Kontrola odkazov bezpečná offline (preskakuje vzdialené HTTP[S]).                                 |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokálny náhľad gh‑pages; automatické servovanie na 8080–8090; voliteľné testy/kontrola odkazov.   |
+| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` do vetvy `gh-pages`.                                                         |
 
-Syntax for options
+Syntax pre voľby
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Použite `make <command> OPTS="…"` na odovzdanie volieb (odporúčané úvodzovky). Každý cieľ nižšie ukazuje príklad použitia.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Tipy pre zostavenie lokalizácií {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Zostavte len podmnožinu lokalít: nastavte `BUILD_LOCALES="en de"` alebo prepnite `OPTS="--locales en,de"` pre webové ciele.
+- Náhľad konkrétnej lokality: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Zostavenie a balenie {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Zostaviť ZIPy: `make pack`
+- Vytvorí ATN a LOCAL ZIPy v koreňovom adresári repozitára (neupravujte artefakty ručne)
+- Tip: pred balením aktualizujte verziu v `sources/manifest_ATN.json` aj `sources/manifest_LOCAL.json`
+- Manuálna inštalácia (vývoj): Thunderbird → Nástroje → Doplnky a témy → ozubené koliesko → Inštalovať doplnok zo súboru… → vyberte vytvorený ZIP
+
+---
+
+### Testovanie {#test}
+
+- Celá sada: `make test` (Vitest)
+- Pokrývanie (voliteľné):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Spustite `make test`; otvorte `coverage/index.html` pre HTML report
+- Len i18n: `make test_i18n` (UI kľúče/zástupné znaky/názvy + parita webu na úrovni lokality a dokumentu s kontrolami id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Ladenie a logy {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Chybová konzola: Nástroje → Vývojárske nástroje → Chybová konzola
+- Prepínať podrobné logy za behu:
+- Povoliť: `messenger.storage.local.set({ debug: true })`
+- Zakázať: `messenger.storage.local.set({ debug: false })`
+- Logy sa zobrazujú počas písania/odosielania odpovedí
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentácia (web) {#docs-website}
+
+- Vývojový server: `cd website && npm run start`
+- Build statickej stránky: `cd website && npm run build`
+- Ekvivalenty Make (abecedne): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Príklady použitia:
+- Len EN, preskočiť testy/kontrolu odkazov, bez push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Všetky lokality, s testami/kontrolou odkazov, potom push: `make web_build_local_preview && make web_push_github`
+- Pred publikovaním spustite kontrolu odkazov bezpečnú offline: `make web_build_linkcheck`.
+- i18n: angličtina je v `website/docs/*.md`; nemecké preklady v `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Vyhľadávanie: Ak sú v CI nastavené premenné prostredia Algolia DocSearch (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), stránka používa vyhľadávanie Algolia; inak sa použije lokálne vyhľadávanie. Na domovskej stránke stlačte `/` alebo `Ctrl+K` na otvorenie vyhľadávacieho poľa.
+
+---
+
+#### Trasa presmerovania darovania {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Trasa: `/donate` (a `/<locale>/donate`)
+- Správanie:
+- Ak aktuálna trasa obsahuje lokalitu (napr. `/de/donate`), použije sa
+- Inak sa vyberie najlepšia zhoda z `navigator.languages` oproti nakonfigurovaným lokalitám; v prípade zlyhania sa použije predvolená lokalita
+- Presmeruje na:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- ostatné → `/<locale>/docs/donation`
+- Používa `useBaseUrl` na správne spracovanie baseUrl
+- Obsahuje meta refresh + odkaz `noscript` ako zálohu
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Tipy pre náhľad {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Ukončite náhľad Node čistým spôsobom: otvorte `http://localhost:<port>/__stop` (vypíše sa po `Local server started`).
+- Ak sa obrázky v MDX/JSX nenačítajú, použite `useBaseUrl('/img/...')`, aby sa rešpektovalo `baseUrl` webu.
+- Náhľad sa spustí najprv; kontrola odkazov beží následne a neblokuje (nefunkčné externé odkazy náhľad nezastavia).
+- Príklad URL náhľadu: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (vypíše sa po „Local server started“).
+- Externé odkazy v kontrole: Niektoré externé stránky (napr. addons.thunderbird.net) blokujú automatických crawlerov a v kontrolách odkazov môžu vracať 403. Náhľad sa aj tak spustí; tieto je bezpečné ignorovať.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Preklad webu {#translate-website}
 
-What you can translate
+Čo môžete prekladať
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Len UI webu: domovskú stránku, navigáciu, pätu a ďalšie UI reťazce. Obsah dokumentácie zatiaľ ostáva iba v angličtine.
 
-Where to edit
+Kde upravovať
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Upravte `website/i18n/<locale>/code.json` (ako referenciu použite `en`). Zachovajte nezmenené zástupné znaky ako `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Generovať alebo obnoviť súbory
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Vytvoriť chýbajúce stuby pre všetky lokality: `npm --prefix website run i18n:stubs`
+- Prepísať stuby z angličtiny (po pridaní nových reťazcov): `npm --prefix website run i18n:stubs:force`
+- Alternatíva pre jednu lokalitu: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Preložiť reťazce UI domovskej stránky/navigácie/päty (OpenAI)
 
-- Set credentials once (shell or .env):
+- Nastavte prihlasovacie údaje raz (shell alebo .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Voliteľné: `export OPENAI_MODEL=gpt-4o-mini`
+- Jednorazovo (všetky lokality, bez en): `make translate_web_index`
+- Obmedziť na konkrétne lokality: `make translate_web_index OPTS="--locales de,fr"`
+- Prepísať existujúce hodnoty: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Validácia a opakovania
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Prekladový skript validuje tvar JSONu, zachováva zástupné znaky v zložených zátvorkách a zabezpečuje, že URL ostanú nezmenené.
+- Pri zlyhaní validácie skúsi s odozvou až 2 opakovania, potom ponechá existujúce hodnoty.
 
-Preview your locale
+Náhľad vašej lokality
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Vývojový server: `npm --prefix website run start`
+- Navštívte `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Odoslanie
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Otvorte PR s upraveným(i) súborom(i) `code.json`. Udržte zmeny zamerané a ak je to možné, priložte rýchly snímok obrazovky.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Tipy k zabezpečeniu a konfigurácii {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Nekomitujte `sources/manifest.json` (dočasne vytvorené buildom)
+- Udržujte `browser_specific_settings.gecko.id` stabilné, aby sa zachoval kanál aktualizácií
+
+---
+
+### Perzistencia nastavení {#settings-persistence}
+
+- Úložisko: Všetky používateľské nastavenia sú v `storage.local` a pretrvávajú naprieč aktualizáciami doplnku.
+- Inštalácia: Predvolené hodnoty sa použijú len vtedy, keď kľúč striktne chýba (undefined).
+- Aktualizácia: Migrácia doplní iba chýbajúce kľúče; existujúce hodnoty sa nikdy neprepisujú.
+- Značka schémy: `settingsVersion` (aktuálne `1`).
+- Kľúče a predvoľby:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kód: pozrite `sources/background.js` → `initializeOrMigrateSettings()` a `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Vývojový postup (pridanie nového nastavenia)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Zvýšte `SCHEMA_VERSION` v `sources/background.js`.
+- Pridajte nový kľúč + predvolenú hodnotu do objektu `DEFAULTS` v `initializeOrMigrateSettings()`.
+- Pri seedovaní predvolieb použite pravidlo „iba ak je undefined“; neprepisujte existujúce hodnoty.
+- Ak je nastavenie viditeľné pre používateľa, napojte ho v `sources/options.js` a pridajte lokalizované reťazce.
+- Pridajte/upravte testy (pozri `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Tipy na manuálne testovanie
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simulujte čistú inštaláciu: vymažte adresár dát rozšírenia alebo spustite s novým profilom.
+- Simulujte aktualizáciu: nastavte `settingsVersion` na `0` v `storage.local` a znovu načítajte; overte, že existujúce hodnoty zostali nezmenené a boli pridané iba chýbajúce kľúče.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Riešenie problémov {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Uistite sa, že Thunderbird je 128 ESR alebo novší
+- Na problémy za behu použite Chybovú konzolu
+- Ak sa zdá, že uložené nastavenia sa neaplikujú správne, reštartujte Thunderbird a skúste znova. (Thunderbird môže medzi reláciami kešovať stav; reštart zaistí načítanie čerstvých nastavení.)
 
 ---
 
-### Translations
+### CI a pokrytie {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) spúšťa vitest s prahmi pokrytia (85 % riadkov/funkcií/vetiev/výrokov). Ak prahy nie sú splnené, úloha zlyhá.
+- Workflow nahrá artefakt `coverage-html` s HTML reportom; stiahnite si ho zo stránky behu (Actions → posledný beh → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Prispievanie {#contributing}
 
-Screenshots for docs
+- Pozrite CONTRIBUTING.md pre pokyny k vetvám/commitom/PR
+- Tip: Na testovanie si vytvorte samostatný vývojový profil Thunderbirdu, aby ste neovplyvnili svoj každodenný profil.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Preklady
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Spúšťanie veľkých prekladov „všetko → všetko“ môže byť pomalé a nákladné. Začnite s podmnožinou (napr. pár dokumentov a 1–2 lokality), skontrolujte výsledok a potom rozšírte.
+
+---
+
+- Politika opakovaní: prekladové úlohy vykonajú až 3 pokusy s exponenciálnym oneskorením pri chybách API; pozri `scripts/translate_web_docs_batch.js` a `scripts/translate_web_docs_sync.js`.
+
+Snímky obrazovky pre dokumentáciu
+
+- Ukladajte obrázky pod `website/static/img/`.
+- Odkazujte na ne v MD/MDX cez `useBaseUrl('/img/<filename>')`, aby cesty fungovali so `baseUrl` webu.
+- Po pridaní alebo premenovaní obrázkov pod `website/static/img/` potvrďte, že všetky odkazy stále používajú `useBaseUrl('/img/…')` a zobrazujú sa v lokálnom náhľade.
+  Favikony
+
+- Viacveľkostný `favicon.ico` sa generuje automaticky vo všetkých build cestách (Make + skripty) cez `website/scripts/build-favicon.mjs`.
+- Nie je potrebný žiadny manuálny krok; stačí aktualizovať `icon-*.png`.
+  Tip na kontrolu
+
+- V preložených dokumentoch ponechajte front‑matter `id` nezmenený; prekladajte len `title` a `sidebar_label`, ak sú prítomné.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Účel: odstrániť lokálne artefakty build/preview.
+- Použitie: `make clean`
+- Odstraňuje (ak sú prítomné):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Účel: formátovať, testovať, aktualizovať changelog, commitnúť a pushnúť.
+- Použitie: `make commit`
+- Podrobnosti: spustí Prettier (zápis), `make test`, `make test_i18n`; pridá záznam do changelogu, keď sú pripravené rozdiely; pushne do `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Účel: spustiť ESLint cez flat config.
+- Použitie: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Účel: vypísať všetky ciele s jednoriadkovými popismi.
+- Použitie: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Účel: lintovať MailExtension pomocou `web-ext`.
+- Použitie: `make lint`
+- Poznámky: dočasne kopíruje `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignoruje vytvorené ZIPy; varovania nezlyhajú pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Účel: interaktívne menu na výber Make cieľa a voliteľných argumentov.
+- Použitie: spustite `make` bez argumentov.
+- Poznámky: ak `whiptail` nie je dostupný, menu sa vráti k `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Účel: zostaviť ATN a LOCAL ZIPy (závisí od `lint`).
+- Použitie: `make pack`
+- Tip: zvýšte verzie v oboch `sources/manifest_*.json` pred balením.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Účel: formátovať repozitár na mieste.
+- Použitie: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Účel: overiť formátovanie (bez zápisu).
+- Použitie: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Účel: alias pre `prettier`.
+- Použitie: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Účel: spustiť Prettier (zápis), ESLint a potom Vitest (pokrývanie, ak je nainštalované).
+- Použitie: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Účel: testy zamerané na i18n pre reťazce doplnku a dokumenty webu.
+- Použitie: `make test_i18n`
+- Spúšťa: `npm run test:i18n` a `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Účel: preložiť UI reťazce doplnku z EN do iných lokalít.
+- Použitie: `make translation_app OPTS="--locales all|de,fr"`
+- Poznámky: zachováva štruktúru kľúčov a zástupné znaky; loguje do `translation_app.log`. Skriptová forma: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Účel: preložiť dokumenty webu z `website/docs/*.md` do `website/i18n/<locale>/...`.
+- Preferované: `translate_web_docs_batch` (OpenAI Batch API)
+  - Použitie (flagy): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Stále je akceptované staršie pozičné: `OPTS="<doc|all> <lang|all>"`
+- Správanie: zostaví JSONL, nahrá, polluje každých 30 s, stiahne výsledky, zapíše súbory.
+- Poznámka: dávková úloha môže trvať až 24 hodín (podľa batch okna OpenAI). Konzola pri každom polli zobrazuje uplynutý čas.
+- Prostredie: `OPENAI_API_KEY` (povinné), voliteľné `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (predvolene 24 h), `BATCH_POLL_INTERVAL_MS`.
+- Staršie: `translate_web_docs_sync`
+  - Použitie (flagy): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Stále je akceptované staršie pozičné: `OPTS="<doc|all> <lang|all>"`
+- Správanie: synchronné požiadavky po pároch (bez dávkovej agregácie).
+- Poznámky: Interaktívne výzvy, keď je `OPTS` vynechané. Obe režimy zachovávajú bloky kódu/inline kód a ponechávajú front‑matter `id` nezmenené; loguje do `translation_web_batch.log` (batch) alebo `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Účel: preložiť UI reťazce webu (domovská stránka, navigácia, päta) z `website/i18n/en/code.json` do všetkých lokalít pod `website/i18n/<locale>/code.json` (s výnimkou `en`).
+- Použitie: `make translate_web_index` alebo `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Požiadavky: exportovať `OPENAI_API_KEY` (voliteľné: `OPENAI_MODEL=gpt-4o-mini`).
+- Správanie: validuje štruktúru JSON, zachováva zástupné znaky v zložených zátvorkách, ponecháva URL nezmenené a pri chybách validácie opakuje s odozvou.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Účel: zostaviť stránku dokumentácie do `website/build`.
+- Použitie: `make web_build OPTS="--locales en|de,en|all"` (alebo nastavte `BUILD_LOCALES="en de"`)
+- Vnútornosti: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Závislosti: spúšťa `npm ci` v `website/` len ak chýba `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Účel: kontrola odkazov bezpečná offline.
+- Použitie: `make web_build_linkcheck OPTS="--locales en|all"`
+- Poznámky: zostavuje do `tmp_linkcheck_web_pages`; prepisuje GH Pages `baseUrl` na `/`; preskakuje vzdialené HTTP(S) odkazy.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Účel: lokálny náhľad gh‑pages s voliteľnými testami/kontrolou odkazov.
+- Použitie: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Správanie: najprv skúša Node preview server (`scripts/preview-server.mjs`, podporuje `/__stop`), v prípade zlyhania prejde na `python3 -m http.server`; servuje na 8080–8090; PID v `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Účel: pushnúť `website/build` do vetvy `gh-pages`.
+- Použitie: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Tip: nastavte `NPM=…` na zmenu správcu balíkov používaného Makefile (predvolene `npm`).
 
 ---

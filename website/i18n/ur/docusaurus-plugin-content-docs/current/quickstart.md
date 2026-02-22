@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'فوری شروعات'
-sidebar_label: 'فوری شروعات'
+title: 'فوری آغاز'
+sidebar_label: 'فوری آغاز'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## فوری آغاز
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important کم از کم Thunderbird ورژن
+یہ ایڈ‑آن Thunderbird **128 ESR یا اس سے جدید** کو سپورٹ کرتا ہے۔ پرانے ورژنز سپورٹ نہیں ہوتے۔
+:::
+
+:::note کوئی ٹیلی میٹری نہیں؛ کوئی بیک گراؤنڈ نیٹ ورک نہیں
+یہ ایڈ‑آن تجزیاتی/ٹیلی میٹری ڈیٹا **جمع نہیں** کرتا اور بیک گراؤنڈ میں **کوئی** نیٹ ورک درخواستیں نہیں بھیجتا۔ نیٹ ورک تک رسائی صرف اُس وقت ہوتی ہے جب آپ بیرونی لنکس پر کلک کریں (Docs، GitHub، Donate).
+:::
+
+---
+
+### تنصیب
+
+1. Thunderbird Add‑ons سے ایڈ‑آن انسٹال کریں۔
+2. اختیاری: تصدیق کو فعال کریں (Options → “Ask before adding attachments”).
+3. اختیاری: بلیک لسٹ وارننگ کو فعال رہنے دیں (بطورِ طے شدہ): “Warn if attachments are excluded by blacklist”.
+4. اختیاری: بلیک لسٹ کے پیٹرن شامل کریں (ہر سطر میں ایک)، مثلاً:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+نوٹ: اوپر موجود “# …” اس دستاویز میں ایک تبصرہ ہے؛ Options میں جو پیٹرن آپ چسپاں کریں اُن میں تبصرے شامل نہ کریں۔ ہر سطر میں صرف ایک پیٹرن درج کریں۔
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+اب منسلکات والے پیغام کا جواب دیں — اصل فائلیں خودکار طور پر یا مختصر تصدیق کے بعد شامل ہو جائیں گی۔ اگر آپ کی بلیک لسٹ کے باعث کوئی فائلیں خارج ہوں، تو آپ کو ان کی فہرست کے ساتھ ایک مختصر تنبیہ نظر آئے گی۔
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### تصدیق {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 منسلکات والے پیغام کا جواب دیں اور تصدیق کریں کہ اصل فائلیں آپ کی کمپوز ونڈو میں شامل ہو گئی ہیں۔
+- طرزِ عمل میں تبدیلی کے لیے [کنفیگریشن](configuration) دیکھیں (تصدیق کا ٹوگل، طے شدہ جواب، بلیک لسٹ پیٹرن)۔
 
 ---
 
-### Keyboard note {#keyboard-note}
+### بلیک لسٹ وارننگ کی تصدیق {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- ایسے پیغام کا جواب دیں جس میں “secret.txt” جیسی فائل ہو۔
+- جب “Warn if attachments are excluded by blacklist” فعال ہو، تو ایک چھوٹا ڈائیلاگ خارج شدہ فائلوں اور ملتے جلتے پیٹرن کی فہرست دکھاتا ہے۔
+
+اگر آپ کو وارننگ نظر نہیں آتی، تو یقینی بنائیں کہ پیٹرن فائل نام سے بالکل مطابقت رکھتا ہے (صرف فائل نام، کیس سے غیر حساس)۔ کنفیگریشن → Blacklist دیکھیں۔
+
+---
+
+### کی بورڈ نوٹ {#keyboard-note}
+
+- تصدیقی ڈائیلاگ میں Yes کے لیے Y/J اور No کے لیے N/Esc دستیاب ہیں۔ کچھ غیر لاطینی کی بورڈز پر حرفی کِیز مختلف ہو سکتی ہیں؛ Enter دبانے سے منتخب بٹن کی تصدیق ہو جاتی ہے۔
 
 ---

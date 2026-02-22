@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Compatibility'
-sidebar_label: 'Kompatibilidad'
+title: 'Pagkakatugma'
+sidebar_label: 'Pagkakatugma'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Pagiging Tugma {#compatibility}
+
+:::important Pinakamababang Bersyon ng Thunderbird
+Sinusuportahan ng add‑on na ito ang Thunderbird **128 ESR o mas bago**. Hindi sinusuportahan ang mas lumang mga bersyon.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Sinusuportahan ang Thunderbird 128 ESR o mas bago (128.x+).
+- Hindi sinusuportahan ang mas lumang mga bersyon ng Thunderbird.
+- Nasubukan sa Windows, macOS, at Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Hindi sinusuportahan ang Manifest V2
+Hindi sinusuportahan ang Manifest V2. Ang add‑on ay nakatuon sa **Manifest V3 (MV3)** sa Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Pag-troubleshoot {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Kung hindi gumagana ang add‑on gaya ng inaasahan, tiyaking compatible ang bersyon ng Thunderbird na gamit mo (128 ESR o mas bago).
+- Suriin ang Thunderbird error console (**Tools > Developer Tools > Error Console**) para sa anumang isyung may kinalaman sa add‑on.
+- Kung mukhang hindi maayos na naia-apply ang mga nakaimbak na setting, i-restart ang Thunderbird at subukang muli. (Maaaring mag-cache ang Thunderbird ng estado sa pagitan ng mga session; tinitiyak ng pag-restart na sariwang mga setting ang mai-load.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Mga Kilalang Salungatan {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Wala pang kilala sa ngayon. Kung makakita ka ng paulit-ulit na dobleng attachment o mga pagkabigo kasama ng ibang mga add‑on, mangyaring i-ulat ito na may mga hakbang para ma-reproduce.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Karaniwang sinusuportahan ang mga build ng Thunderbird Beta at Daily (Nightly), ngunit paminsan-minsan ay maaaring masira ng mga pagbabago upstream ang kilos ng add‑on. Kung makatagpo ka ng mga isyu, mangyaring i-ulat ang mga ito at isama ang eksaktong bersyon ng Thunderbird (hal., “Daily 131.0a1 2025‑09‑10”).
+- Naka-engkwentro ng regression sa Beta/Nightly? Mangyaring i-ulat ito na may mga hakbang para ma-reproduce — tingnan ang [Suporta](support) — at isama ang eksaktong Thunderbird build string.
 
 ---

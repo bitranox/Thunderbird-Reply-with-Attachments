@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Compatibilidad",
-  "description": "Compatibilidad",
+  "title": "Allin tinkuy",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibilidad",
-    "sidebar_label": "Compatibilidad"
+    "title": "Allin tinkuy",
+    "sidebar_label": "Uyanakuy"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Uso",
+    "title": "Apnaqay",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/usage"
   },
   "next": {

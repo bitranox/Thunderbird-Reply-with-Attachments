@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "გამოყენება",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/configuration"
   },
   "next": {
-    "title": " თავსებადობა",
+    "title": "თავსებადობა",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/compatibility"
   }
 }

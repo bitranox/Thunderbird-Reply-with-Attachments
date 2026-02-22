@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Plėtra'
-sidebar_label: 'Plėtra'
+title: 'Kūrimas'
+sidebar_label: 'Kūrimas'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Kūrimo vadovas {#development-guide}
+
+:::note Redaguokite tik anglų kalbos versiją; vertimai atsinaujina
+Atnaujinkite dokumentaciją tik po `website/docs` (anglų). Vertimai po `website/i18n/<locale>/…` yra generuojami ir neturėtų būti redaguojami rankiniu būdu. Naudokite vertimo užduotis (pvz., `make translate_web_docs_batch`), kad atnaujintumėte lokalizuotą turinį.
 :::
 
-### Prerequisites {#prerequisites}
+### Reikalavimai {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ ir npm (išbandyta su Node 22)
+- Thunderbird 128 ESR arba naujesnis (rankiniam testavimui)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Projekto struktūra (aukšto lygio) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Šaknis: paketavimo scenarijus `distribution_zip_packer.sh`, dokumentai, ekrano nuotraukos
+- `sources/`: pagrindinis priedo kodas (fonas, parinkčių/iškylančios UI, manifestai, piktogramos)
+- `tests/`: Vitest testų rinkinys
+- `website/`: Docusaurus dokumentacija (su i18n po `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Diegimas ir įrankiai {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Įdiegti šakninius priklausomumus: `npm ci`
+- Dokumentacija (neprivaloma): `cd website && npm ci`
+- Peržiūrėti tikslus: `make help`
+
+---
+
+### Tiesioginė kūrimo eiga (web‑ext run) {#live-dev-web-ext}
+
+- Greitas ciklas Firefox Desktop (tik UI „smoke“ testai):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Paleisti „Thunderbird“ (rekomenduojama MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Patarimai:
+- Laikykite „Thunderbird“ klaidų konsolę atidarytą (Tools → Developer Tools → Error Console).
+- MV3 įvykių puslapiai sustabdomi esant neveiklai; po kodo pakeitimų perkraukite priedą arba leiskite web‑ext automatiškai perkrauti.
+- Kai kurie tik Firefox būdingi elgesiai skiriasi; visada patikrinkite „Thunderbird“, kad įsitikintumėte API atitikimu.
+- „Thunderbird“ vykdomojo failo keliai (pavyzdžiai):
+- Linux: `thunderbird` (pvz., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profilio izoliacija: naudokite atskirą „Thunderbird“ profilį kūrimui, kad nepaveiktumėte kasdienės aplinkos.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make tikslai (abėcėliškai) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile standartizuoja dažnas kūrimo eigas. Bet kada paleiskite `make help`, kad gautumėte vienos eilutės santrauką apie kiekvieną tikslą.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Patarimas: paleidus `make` be tikslo, atsidarys paprastas Whiptail meniu tikslui pasirinkti.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Tikslas                                                  | Vienos eilutės aprašymas                                                                           |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Pašalinti lokalius kūrimo/peržiūros artefaktus (tmp/, web-local-preview/, website/build/).         |
+| [`commit`](#mt-commit)                                   | Suformatuoti, paleisti testus (įsk. i18n), atnaujinti changelogą, commit’inti ir push’inti.        |
+| [`eslint`](#mt-eslint)                                   | Paleisti ESLint per „flat config“ (`npm run -s lint:eslint`).                                      |
+| [`help`](#mt-help)                                       | Išvardyti visus tikslus su vienos eilutės aprašais (rikiuojama).                                   |
+| [`lint`](#mt-lint)                                       | web‑ext lint ant `sources/` (laikinas manifestas; ignoruoja ZIP; neblokuoja).                      |
+| [`menu`](#mt-menu)                                       | Interaktyvus meniu tikslui ir pasirenkamiems argumentams pasirinkti.                               |
+| [`pack`](#mt-pack)                                       | Sukurti ATN ir LOCAL ZIP’us (paleidžia linterį; kviečia pakavimo scenarijų).                       |
+| [`prettier`](#mt-prettier)                               | Suformatuoti repozitoriją vietoje (rašant pakeitimus).                                             |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier tikrinimo režimu (be rašymo); nesėkmė, jei reikia performatuoti.                          |
+| [`prettier_write`](#mt-prettier_write)                   | Sinonimas `prettier`.                                                                              |
+| [`test`](#mt-test)                                       | Prettier (rašymas), ESLint, tada Vitest (aprėptis jei sukonfigūruota).                             |
+| [`test_i18n`](#mt-test_i18n)                             | Tik i18n testai: priedo vietos žymės/atitiktys + svetainės atitiktis.                              |
+| [`translate_app`](#mt-translation-app)                   | Sinonimas `translation_app`.                                                                       |
+| [`translation_app`](#mt-translation-app)                 | Išversti programos UI eilutes iš `sources/_locales/en/messages.json`.                              |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Išversti svetainės dokumentus per OpenAI Batch API (pageidautina).                                 |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Išversti svetainės dokumentus sinchroniškai (senasis, ne batch).                                   |
+| [`translate_web_index`](#mt-translation_web_index)       | Sinonimas `translation_web_index`.                                                                 |
+| [`translation_web_index`](#mt-translation_web_index)     | Išversti pagrindinio/meniu/poraštės UI (`website/i18n/en/code.json → .../<lang>/code.json`).       |
+| [`web_build`](#mt-web_build)                             | Sukurti dokumentus į `website/build` (palaiko `--locales` / `BUILD_LOCALES`).                      |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Saugi neprisijungus nuorodų patikra (praleidžia nuotolinius HTTP[S]).                              |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Vietinė gh‑pages peržiūra; automatinis serveris per 8080–8090; pasirenkami testai/nuorodų patikra. |
+| [`web_push_github`](#mt-web_push_github)                 | Išsiųsti `website/build` į šaką `gh-pages`.                                                        |
 
-Syntax for options
+Parinkčių sintaksė
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Naudokite `make <command> OPTS="…"` parinktims perduoti (rekomenduojamos kabutės). Kiekvieno tikslo skyriuje žemiau yra pavyzdžiai.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Lokalės kūrimo patarimai {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Kurti tik dalį lokalių: nustatykite `BUILD_LOCALES="en de"` arba perduokite `OPTS="--locales en,de"` žiniatinklio tikslams.
+- Peržiūrėti konkrečią lokalę: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Kūrimas ir paketavimas {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Kurti ZIP’us: `make pack`
+- Sukuria ATN ir LOCAL ZIP’us repozitorijos šaknyje (needituokite artefaktų rankiniu būdu)
+- Patarimas: prieš pakuojant atnaujinkite versiją tiek `sources/manifest_ATN.json`, tiek `sources/manifest_LOCAL.json`
+- Rankinis diegimas (dev): Thunderbird → Tools → Add‑ons and Themes → krumpliaratis → Install Add‑on From File… → pasirinkite sukurtą ZIP
+
+---
+
+### Testavimas {#test}
+
+- Pilnas rinkinys: `make test` (Vitest)
+- Aprėptis (neprivaloma):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Paleiskite `make test`; atidarykite `coverage/index.html` HTML ataskaitai
+- Tik i18n: `make test_i18n` (UI raktai/vietos žymės/pavadinimai + svetainės per‑lokalę per‑dokumentą atitiktis su id/title/sidebar_label tikrinimais)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Derinimas ir žurnalai {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Klaidų konsolė: Tools → Developer Tools → Error Console
+- Perjungti išsamius žurnalus vykdymo metu:
+- Įjungti: `messenger.storage.local.set({ debug: true })`
+- Išjungti: `messenger.storage.local.set({ debug: false })`
+- Žurnalai rodomi rašant/siunčiant atsakymus
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentacija (svetainė) {#docs-website}
+
+- Kūrimo serveris: `cd website && npm run start`
+- Statinės svetainės kūrimas: `cd website && npm run build`
+- Make atitikmenys (abėcėliškai): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Naudojimo pavyzdžiai:
+- Tik EN, praleisti testus/nuorodų patikrą, be „push“: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Visos lokalės, su testais/nuorodų patikra, tada „push“: `make web_build_local_preview && make web_push_github`
+- Prieš publikuojant, paleiskite saugią neprisijungus nuorodų patikrą: `make web_build_linkcheck`.
+- i18n: anglų kalba yra `website/docs/*.md`; vokiečių vertimai `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Paieška: jei Algolia DocSearch aplinkos kintamieji yra nustatyti CI aplinkoje (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), svetainė naudoja Algolia paiešką; kitu atveju grįžtama prie vietinės paieškos. Pagrindiniame puslapyje spauskite `/` arba `Ctrl+K`, kad atidarytumėte paieškos laukelį.
+
+---
+
+#### Paaukojimo peradresavimo maršrutas {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Maršrutas: `/donate` (ir `/<locale>/donate`)
+- Elgsena:
+- Jei dabartiniame maršrute yra lokalė (pvz., `/de/donate`), ją naudokite
+- Kitu atveju parinkite geriausią atitikmenį iš `navigator.languages` prieš sukonfigūruotas lokales; jei netinka, naudokite numatytąją lokalę
+- Peradresuojama į:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- kiti → `/<locale>/docs/donation`
+- Naudoja `useBaseUrl` teisingam baseUrl apdorojimui
+- Įtraukia „meta refresh“ + `noscript` nuorodą kaip atsarginį variantą
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Peržiūros patarimai {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Švariai sustabdyti Node peržiūrą: atidarykite `http://localhost:<port>/__stop` (išspausdinama po `Local server started`).
+- Jei MDX/JSX nerodo vaizdų, naudokite `useBaseUrl('/img/...')`, kad būtų gerbiamas svetainės `baseUrl`.
+- Pirma paleidžiama peržiūra; nuorodų patikra vykdoma po to ir jos nesustabdo (sugedusios išorinės nuorodos neblokuos peržiūros).
+- Pavyzdinis peržiūros URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (išspausdinama po „Local server started“).
+- Išorinės nuorodos nuorodų patikroje: kai kurios išorinės svetainės (pvz., addons.thunderbird.net) blokuoja automatizuotus robotus ir patikroje gali rodyti 403. Peržiūra vis tiek paleidžiama; tai galima saugiai ignoruoti.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Išversti svetainę {#translate-website}
 
-What you can translate
+Ką galite versti
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Tik svetainės UI: pagrindinis puslapis, naršymo juosta, poraštė ir kitos UI eilutės. Dokumentų turinys kol kas lieka tik anglų kalba.
 
-Where to edit
+Kur redaguoti
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Redaguokite `website/i18n/<locale>/code.json` (naudokite `en` kaip atskaitą). Palikite vietos žymes, tokias kaip `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`, nepakeistas.
 
-Generate or refresh files
+Sugeneruoti arba atnaujinti failus
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Sukurti trūkstamus ruošinius visoms lokalėms: `npm --prefix website run i18n:stubs`
+- Perrašyti ruošinius iš anglų (po naujų eilučių pridėjimo): `npm --prefix website run i18n:stubs:force`
+- Alternatyva vienai lokaliai: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Išversti pagrindinio/meniu/poraštės UI eilutes (OpenAI)
 
-- Set credentials once (shell or .env):
+- Nustatykite kredencialus kartą (shell arba .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Pasirenkama: `export OPENAI_MODEL=gpt-4o-mini`
+- Vienkartinis (visos lokalės, išskyrus en): `make translate_web_index`
+- Apriboti konkrečiomis lokalėmis: `make translate_web_index OPTS="--locales de,fr"`
+- Perrašyti esamas reikšmes: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Tikrinimas ir pakartojimai
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Vertimo scenarijus tikrina JSON struktūrą, išsaugo garbanotų skliaustų vietos žymes ir užtikrina, kad URL nebūtų pakeisti.
+- Nesėkmės atveju bando dar kartą su grįžtamuoju ryšiu iki 2 kartų prieš palikdamas esamas reikšmes.
 
-Preview your locale
+Peržiūrėkite savo lokalę
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Kūrimo serveris: `npm --prefix website run start`
+- Apsilankykite `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Pateikimas
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Atidarykite PR su redaguotu `code.json` failu(-ais). Išlaikykite fokusuotus pakeitimus ir, jei įmanoma, pridėkite greitą ekrano nuotrauką.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Saugumo ir konfigūracijos patarimai {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Necommitt’inkite `sources/manifest.json` (sukuriama laikinai kūrimo metu)
+- Išlaikykite `browser_specific_settings.gecko.id` stabilų, kad būtų išsaugotas atnaujinimų kanalas
+
+---
+
+### Nustatymų išsaugojimas {#settings-persistence}
+
+- Saugykla: Visi naudotojo nustatymai saugomi `storage.local` ir išlieka per priedo atnaujinimus.
+- Diegimas: Numatytosios reikšmės taikomos tik tada, kai raktas griežtai trūksta (undefined).
+- Atnaujinimas: Migracija užpildo tik trūkstamus raktus; esamos reikšmės niekada neperrašomos.
+- Schemos žyma: `settingsVersion` (šiuo metu `1`).
+- Raktai ir numatytosios reikšmės:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kodas: žr. `sources/background.js` → `initializeOrMigrateSettings()` ir `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Kūrėjo eiga (pridedant naują nustatymą)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Padidinkite `SCHEMA_VERSION` faile `sources/background.js`.
+- Pridėkite naują raktą + numatytąją reikšmę į `DEFAULTS` objektą faile `initializeOrMigrateSettings()`.
+- Naudokite „tik jei undefined“ taisyklę numatytosioms reikšmėms; neperrašykite esamų reikšmių.
+- Jei nustatymas matomas naudotojui, sujunkite jį su `sources/options.js` ir pridėkite lokalizuotas eilutes.
+- Pridėkite/pakoreguokite testus (žr. `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Rankinio testavimo patarimai
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Imituokite švarų diegimą: išvalykite plėtinio duomenų katalogą arba pradėkite su nauju profiliu.
+- Imituokite atnaujinimą: nustatykite `settingsVersion` į `0` faile `storage.local` ir perkraukite; patvirtinkite, kad esamos reikšmės liko nepakeistos ir pridėti tik trūkstami raktai.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Trikčių šalinimas {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Įsitikinkite, kad Thunderbird yra 128 ESR arba naujesnis
+- Naudokite Klaidų konsolę vykdymo problemoms
+- Jei atrodo, kad išsaugoti nustatymai netaikomi tinkamai, perkraukite „Thunderbird“ ir pabandykite dar kartą. („Thunderbird“ gali kešuoti būseną tarp sesijų; perkrovimas užtikrina, kad būtų įkelti švieži nustatymai.)
 
 ---
 
-### Translations
+### CI ir aprėptis {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) paleidžia vitest su aprėpties slenksčiais (85% eilutės/funkcijos/šakos/teiginiai). Jei slenksčiai nepasiekiami, darbas žlunga.
+- Darbo eiga įkelia artefaktą `coverage-html` su HTML ataskaita; atsisiųskite jį iš paleidimo puslapio (Actions → paskutinis paleidimas → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Prisidėjimas {#contributing}
 
-Screenshots for docs
+- Žr. CONTRIBUTING.md dėl šakų/commit/PR gairių
+- Patarimas: Testavimui susikurkite atskirą „Thunderbird“ kūrimo profilį, kad nepaveiktumėte kasdienio profilio.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Vertimai
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Dideli „viskas → viskas“ vertimo darbai gali būti lėti ir brangūs. Pradėkite nuo poaibio (pvz., keli dokumentai ir 1–2 lokalės), peržiūrėkite rezultatą, tada plėskite.
+
+---
+
+- Iš naujo bandymo politika: vertimo darbai atlieka iki 3 bandymų su eksponentiniu laukimu, jei kyla API klaidų; žr. `scripts/translate_web_docs_batch.js` ir `scripts/translate_web_docs_sync.js`.
+
+Ekrano nuotraukos dokumentacijai
+
+- Laikykite vaizdus po `website/static/img/`.
+- Nurodykite juos MD/MDX per `useBaseUrl('/img/<filename>')`, kad keliai veiktų su svetainės `baseUrl`.
+- Įdėję ar pervadinę vaizdus po `website/static/img/`, patvirtinkite, kad visos nuorodos vis dar naudoja `useBaseUrl('/img/…')` ir teisingai atvaizduojamos vietinėje peržiūroje.
+  Faviconai
+
+- Daugiaformatė `favicon.ico` sukuriama automatiškai visuose kūrimo keliuose (Make + scenarijai) per `website/scripts/build-favicon.mjs`.
+- Jokio rankinio žingsnio nereikia; pakanka atnaujinti `icon-*.png`.
+  Peržiūros patarimas
+
+- Išlaikykite front‑matter `id` nepakeistą išverstose bylose; versti tik `title` ir `sidebar_label`, jei yra.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Paskirtis: pašalinti lokalius kūrimo/peržiūros artefaktus.
+- Naudojimas: `make clean`
+- Pašalinama (jei yra):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Paskirtis: suformatuoti, testuoti, atnaujinti changelogą, commit’inti ir push’inti.
+- Naudojimas: `make commit`
+- Išsamiau: paleidžia Prettier (rašymas), `make test`, `make test_i18n`; prideda į changelogą, kai yra „staged“ skirtumų; „push’ina“ į `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Paskirtis: paleisti ESLint per „flat config“.
+- Naudojimas: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Paskirtis: išvardyti visus tikslus su vienos eilutės aprašais.
+- Naudojimas: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Paskirtis: lint’inti MailExtension naudojant `web-ext`.
+- Naudojimas: `make lint`
+- Pastabos: laikinai kopijuoja `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignoruoja sukurtus ZIP; įspėjimai nepaverčia proceso nesėkme.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Paskirtis: interaktyvus meniu Make tikslui ir pasirenkamiems argumentams.
+- Naudojimas: paleiskite `make` be argumentų.
+- Pastabos: jei `whiptail` nepasiekiamas, meniu grįžta prie `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Paskirtis: sukurti ATN ir LOCAL ZIP’us (priklauso nuo `lint`).
+- Naudojimas: `make pack`
+- Patarimas: prieš pakuodami pakelkite versijas abiejuose `sources/manifest_*.json`.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Paskirtis: suformatuoti repozitoriją vietoje.
+- Naudojimas: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Paskirtis: patikrinti formatavimą (be rašymo).
+- Naudojimas: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Paskirtis: sinonimas `prettier`.
+- Naudojimas: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Paskirtis: paleisti Prettier (rašymas), ESLint, tada Vitest (aprėptis, jei įdiegta).
+- Naudojimas: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Paskirtis: i18n‑fokusuoti testai priedo eilutėms ir svetainės dokumentams.
+- Naudojimas: `make test_i18n`
+- Paleidžia: `npm run test:i18n` ir `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Paskirtis: išversti priedo UI eilutes iš EN į kitas lokales.
+- Naudojimas: `make translation_app OPTS="--locales all|de,fr"`
+- Pastabos: išsaugo raktų struktūrą ir vietos žymes; žurnalas į `translation_app.log`. Scenarijaus forma: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Paskirtis: išversti svetainės dokumentus iš `website/docs/*.md` į `website/i18n/<locale>/...`.
+- Pageidautina: `translate_web_docs_batch` (OpenAI Batch API)
+  - Naudojimas (vėliavėlės): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Senas pozicinis vis dar priimamas: `OPTS="<doc|all> <lang|all>"`
+- Elgsena: sukuria JSONL, įkelia, tikrina kas 30 s, atsisiunčia rezultatus, įrašo failus.
+- Pastaba: „batch“ darbas gali trukti iki 24 valandų (pagal OpenAI „batch“ langą). Konsolėje kas kartą rodoma praėjusi trukmė.
+- Aplinka: `OPENAI_API_KEY` (privaloma), neprivalomi `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (numatyta 24 h), `BATCH_POLL_INTERVAL_MS`.
+- Paveldėtas: `translate_web_docs_sync`
+  - Naudojimas (vėliavėlės): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Senas pozicinis vis dar priimamas: `OPTS="<doc|all> <lang|all>"`
+- Elgsena: sinchroniniai užklausų ciklai poromis (be „batch“ agregavimo).
+- Pastabos: Interaktyvūs klausimai, kai `OPTS` praleistas. Abu režimai išsaugo kodo blokus/inline kodą ir palieka front‑matter `id` nepakeistą; žurnalai į `translation_web_batch.log` (batch) arba `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Paskirtis: išversti svetainės UI eilutes (pagrindinis, meniu, poraštė) iš `website/i18n/en/code.json` į visas lokales po `website/i18n/<locale>/code.json` (išskyrus `en`).
+- Naudojimas: `make translate_web_index` arba `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Reikalavimai: eksportuokite `OPENAI_API_KEY` (pasirenkama: `OPENAI_MODEL=gpt-4o-mini`).
+- Elgsena: tikrina JSON struktūrą, išsaugo garbanotų skliaustų vietos žymes, nekeičia URL ir, esant tikrinimo klaidoms, bando dar kartą su grįžtamuoju ryšiu.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Paskirtis: sukurti dokumentų svetainę į `website/build`.
+- Naudojimas: `make web_build OPTS="--locales en|de,en|all"` (arba nustatykite `BUILD_LOCALES="en de"`)
+- Vidiniai: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Priklausomybės: paleidžia `npm ci` aplanke `website/` tik jei trūksta `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Paskirtis: saugi neprisijungus nuorodų patikra.
+- Naudojimas: `make web_build_linkcheck OPTS="--locales en|all"`
+- Pastabos: kuria į `tmp_linkcheck_web_pages`; perrašo GH Pages `baseUrl` į `/`; praleidžia nuotolines HTTP(S) nuorodas.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Paskirtis: vietinė gh‑pages peržiūra su pasirenkamais testais/nuorodų patikra.
+- Naudojimas: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Elgsena: pirma bando Node peržiūros serverį (`scripts/preview-server.mjs`, palaiko `/__stop`), grįžta prie `python3 -m http.server`; aptarnauja per 8080–8090; PID ties `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Paskirtis: išsiųsti `website/build` į šaką `gh-pages`.
+- Naudojimas: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Patarimas: nustatykite `NPM=…`, kad pakeistumėte Makefile naudojamą paketų tvarkytuvę (numatyta `npm`).
 
 ---

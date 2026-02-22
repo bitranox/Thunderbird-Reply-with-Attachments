@@ -4,31 +4,40 @@ title: 'خصوصیات'
 sidebar_label: 'خصوصیات'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## خصوصیات {#features}
 
-## How It Works {#how-it-works}
+- جواب دیتے وقت اصل ای میل سے فائلیں خودکار طور پر منسلک کر دیتا ہے۔
+- قابلِ تخصیص رویہ: منسلکات کو
+  - خودکار طور پر شامل کیا جا سکتا ہے، یا
+  - صرف توثیق کے بعد شامل کیا جا سکتا ہے (ایک چھوٹا، قابلِ رسائی ڈائیلاگ)۔ اختیارات میں آپ
+    توثیق کو فعال کر کے طے شدہ جواب منتخب کر سکتے ہیں (ہاں/نہیں)۔
+- فائل ناموں کی بلیک لسٹ (گلوب پیٹرنز) مخصوص فائلوں کو
+  خودکار طور پر منسلک ہونے سے روکتی ہے۔ مثالیں: `*intern*`, `*secret*`, `*passwor*`.
+  میچنگ کیس سے بےنیاز ہے اور صرف فائل نام کو جانچتی ہے؛ اختیارات میں
+  فی لائن ایک پیٹرن دیں۔
+- بلیک لسٹ انتباہ (اختیاری، بطورِ ڈیفالٹ فعال): جب آپ کی
+  بلیک لسٹ کے باعث فائلیں خارج کی جائیں، تو ایک چھوٹا موڈل فائل اور مماثل پیٹرن(ز) دکھاتا ہے۔ ڈارک موڈ
+  کے لیے موزوں اور کی بورڈ سے قابلِ رسائی (Enter/Esc سے بند کریں)۔
+- Reply اور Reply all کے ساتھ کام کرتا ہے۔ Forward اس ایڈ آن سے تبدیل نہیں ہوتا۔
+- اگر آپ نے خود کچھ منسلک کیا ہو تب بھی اصل فائلیں شامل کر دیتا ہے؛ فائل نام کی بنیاد پر نقلوں سے بچتا ہے۔
+- فی ٹیب نقل سے بچاؤ والا گارڈ اسی کمپوز ٹیب میں دوہرا شامل کرنے سے روکتا ہے۔
+- غیر ضروری منسلکات سے بچنے کے لیے بطورِ ڈیفالٹ S/MIME سرٹیفکیٹس کو چھوڑ دیتا ہے۔
+- ان لائن تصاویر شامل کریں (ڈیفالٹ: ON). سرایت شدہ تصاویر کو
+  جواب کے متن میں براہِ راست base64 data URIs کے طور پر بحال کیا جاتا ہے، جس سے اصل ان لائن لےآؤٹ محفوظ رہتا ہے۔ غیر فعال کریں
+  اختیارات میں تاکہ ان لائن تصاویر کو مکمل طور پر چھوڑ دیا جائے۔
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## یہ کیسے کام کرتا ہے {#how-it-works}
+
+- جواب دیتے وقت، ایڈ آن اصل منسلکات کی فہرست بناتا ہے۔
+- فائل منسلکات سے S/MIME دستخطوں کو فلٹر کر دیتا ہے؛ ان لائن تصاویر باڈی میں بحال کر دی جاتی ہیں (جب تک غیر فعال نہ ہوں)۔
+- اختیاری طور پر توثیق پوچھتا ہے (کی بورڈ کے لیے موزوں)۔
+- موزوں فائلیں آپ کے کمپوز میں شامل کرتا ہے، فائل نام کی بنیاد پر نقلوں سے بچتے ہوئے۔
+- غیر معمولی حالات کے لیے Usage میں “Why attachments might not be added” دیکھیں۔
+
+رازداری نوٹ: تمام پروسیسنگ Thunderbird میں مقامی طور پر ہوتی ہے۔ یہ ایڈ آن پس منظر میں کوئی نیٹ ورک درخواستیں نہیں بھیجتا۔
+
+---

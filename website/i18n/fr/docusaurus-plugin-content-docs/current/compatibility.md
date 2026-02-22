@@ -4,39 +4,41 @@ title: 'Compatibilité'
 sidebar_label: 'Compatibilité'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Compatibilité {#compatibility}
+
+:::important Version minimale de Thunderbird
+Ce module complémentaire prend en charge Thunderbird **128 ESR ou une version plus récente**. Les versions antérieures ne sont pas prises en charge.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Les versions 128 ESR ou ultérieures de Thunderbird sont prises en charge (128.x+).
+- Les versions plus anciennes de Thunderbird ne sont pas prises en charge.
+- Testé sous Windows, macOS et Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 non pris en charge
+Manifest V2 n’est pas pris en charge. Le module complémentaire cible **Manifest V3 (MV3)** sur Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Dépannage {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Si le module complémentaire ne fonctionne pas comme prévu, assurez-vous d’utiliser une version compatible de Thunderbird (128 ESR ou ultérieure).
+- Vérifiez la console d’erreurs de Thunderbird (**Outils > Outils de développement > Console d’erreurs**) pour tout problème lié au module complémentaire.
+- Si les paramètres enregistrés ne semblent pas s’appliquer correctement, redémarrez Thunderbird et réessayez. (Thunderbird peut mettre en cache l’état entre les sessions ; un redémarrage garantit que des paramètres à jour sont chargés.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Conflits connus {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Aucun connu pour le moment. Si vous observez des pièces jointes dupliquées à répétition ou des dysfonctionnements avec d’autres modules complémentaires, merci de les signaler avec les étapes pour reproduire.
+
+---
+
+## Bêta/Nightly {#beta-nightly}
+
+- Les versions Bêta et Daily (Nightly) de Thunderbird sont généralement prises en charge, mais des changements en amont peuvent occasionnellement altérer le comportement du module complémentaire. Si vous rencontrez des problèmes, veuillez les signaler et inclure la version exacte de Thunderbird (p. ex. « Daily 131.0a1 2025‑09‑10 »).
+- Vous avez rencontré une régression sur Bêta/Nightly ? Merci de la signaler avec les étapes pour la reproduire — voir [Assistance](support) — et incluez la chaîne de version exacte de Thunderbird.
 
 ---

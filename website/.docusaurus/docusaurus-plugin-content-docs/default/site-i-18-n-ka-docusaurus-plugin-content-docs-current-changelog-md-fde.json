@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ცვლილებები",
-  "description": "Changelog",
+  "title": "ცვლილებების ჟურნალი",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ცვლილებები"
+    "title": "ცვლილებების ჟურნალი"
   },
   "sidebar": "docs",
   "previous": {

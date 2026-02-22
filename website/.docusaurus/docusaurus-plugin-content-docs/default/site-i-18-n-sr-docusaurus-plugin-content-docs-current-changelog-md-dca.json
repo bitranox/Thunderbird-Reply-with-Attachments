@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Izmena verzija",
-  "description": "Changelog",
+  "title": "Дневник промена",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Izmena verzija"
+    "title": "Дневник промена"
   },
   "sidebar": "docs",
   "previous": {

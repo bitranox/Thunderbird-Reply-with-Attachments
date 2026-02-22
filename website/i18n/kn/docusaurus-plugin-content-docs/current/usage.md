@@ -4,94 +4,95 @@ title: 'ಬಳಕೆ'
 sidebar_label: 'ಬಳಕೆ'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## ಬಳಕೆ {#usage}
+
+- ಪ್ರತಿಕ್ರಿಯಿಸಿದಾಗ ಅಡ್ಒನ್ ಮೂಲಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸುತ್ತದೆ — ಅಥವಾ ಆಯ್ಕೆಗಳಲ್ಲಿದ್ದುಕೊಂಡು ಸಕ್ರಿಯಗೊಳಿಸಿರುವರೆಂದರೆ ಮೊದಲು ಕೇಳುತ್ತದೆ.
+- ಫೈಲ್ ಹೆಸರಿನ ಆಧಾರದ ಮೇಲೆ ನಕಲುಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ; S/MIME ಭಾಗಗಳನ್ನು ಯಾವಾಗಲೂ ಬಿಟ್ಟಿಡಲಾಗುತ್ತದೆ. ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ ("Include inline pictures" ಅನ್ನು ಆಯ್ಕೆಗಳಲ್ಲಿ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಬಹುದು).
+- ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್ ಮಾಡಿದ ಲಗತ್ತಗಳನ್ನು ಕೂಡ ಬಿಟ್ಟಿಡಲಾಗುತ್ತದೆ (ಕೇಸ್-ಅನಾಸಕ್ತ glob ಮಾದರಿಗಳು ಫೈಲ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಹೊಂದಿಕೆಯಾಗುತ್ತವೆ, ಪಾತ್‌ಗಳನ್ನು ಅಲ್ಲ). [ಸಂರಚನೆ](configuration#blacklist-glob-patterns) ನೋಡಿ.
 
 ---
 
-### What happens on reply {#what-happens}
+### ಪ್ರತಿಕ್ರಿಯಿಸಿದಾಗ ಏನು ಆಗುತ್ತದೆ {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ತೆ → ಮೂಲ ಲಗತ್ತಗಳ ಪಟ್ಟಿ → S/MIME + ಇನ್‌ಲೈನ್ ಫಿಲ್ಟರ್ → ಐಚ್ಛಿಕ ದೃಢೀಕರಣ → ಅರ್ಹ ಫೈಲ್‌ಗಳನ್ನು ಸೇರಿಸಿ (ನಕಲುಗಳನ್ನು ಬಿಡಿ) → ದೇಹದಲ್ಲಿ ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+ಕಠಿಣ vs. ಸಡಿಲ ಪಾಸ್: ಅಡ್ಒನ್ ಮೊದಲು ಫೈಲ್ ಲಗತ್ತುಗಳಿಂದ S/MIME ಮತ್ತು ಇನ್‌ಲೈನ್ ಭಾಗಗಳನ್ನು ಹೊರತುಪಡಿಸುತ್ತದೆ. ಯಾವುದೂ ಅರ್ಹವಾಗದಿದ್ದರೆ, ಇನ್ನೂ S/MIME/ಇನ್‌ಲೈನ್ ಅನ್ನು ಹೊರತುಪಡಿಸುವ ಆದರೆ ಹೆಚ್ಚಿನ ಸಂದರ್ಭಗಳನ್ನು ಸಹಿಸುವ ಸಡಿಲ ಪಾಸ್ ಅನ್ನು ನಡೆಸುತ್ತದೆ (Code Details ನೋಡಿ). ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಎಂದಿಗೂ ಫೈಲ್ ಲಗತ್ತುಗಳಾಗಿ ಸೇರಿಸಲಾಗುವುದಿಲ್ಲ; ಬದಲು, "Include inline pictures" ಸಕ್ರಿಯಗೊಂಡಿದ್ದಾಗ (ಪೂರ್ವನಿಯೋಜಿತ), ಅವನ್ನು ನೇರವಾಗಿ ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ base64 ಡೇಟಾ URIಗಳಾಗಿ ಸಂಯೋಜಿಸಲಾಗುತ್ತದೆ.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| ಭಾಗದ ಪ್ರಕಾರ                                         |                      ಕಠಿಣ ಪಾಸ್ |                      ಸಡಿಲ ಪಾಸ್ |
+| --------------------------------------------------- | -----------------------------: | -----------------------------: |
+| S/MIME ಸಹಿ ಫೈಲ್ `smime.p7s`                         |                  ಬಿಟ್ಟಿಡಲಾಗಿದೆ |                  ಬಿಟ್ಟಿಡಲಾಗಿದೆ |
+| S/MIME MIME ಪ್ರಕಾರಗಳು (`application/pkcs7-*`)       |                  ಬಿಟ್ಟಿಡಲಾಗಿದೆ |                  ಬಿಟ್ಟಿಡಲಾಗಿದೆ |
+| Content‑ID (`image/*`) ಮೂಲಕ ಉಲ್ಲೇಖಿತ ಇನ್‌ಲೈನ್ ಚಿತ್ರ | ದೇಹದಲ್ಲಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ\* | ದೇಹದಲ್ಲಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ\* |
+| ಫೈಲ್ ಹೆಸರಿರುವ ಲಗತ್ತಿದ ಇಮೇಲ್ (`message/rfc822`)      |               ಸೇರಿಸಲಾಗುವುದಿಲ್ಲ |                 ಸೇರಿಸಬಹುದಾಗಿದೆ |
+| ಫೈಲ್ ಹೆಸರಿರುವ ಸಾಮಾನ್ಯ ಫೈಲ್ ಲಗತ್ತು                   |                 ಸೇರಿಸಬಹುದಾಗಿದೆ |                 ಸೇರಿಸಬಹುದಾಗಿದೆ |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" ಸಕ್ರಿಯಗೊಂಡಿರುವಾಗ (ಪೂರ್ವನಿಯೋಜಿತ: ON), ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಫೈಲ್ ಲಗತ್ತುಗಳಾಗಿ ಸೇರಿಸುವ ಬದಲು ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ base64 ಡೇಟಾ URIಗಳಾಗಿ ಸಂಯೋಜಿಸಲಾಗುತ್ತದೆ. [ಸಂರಚನೆ](configuration#include-inline-pictures) ನೋಡಿ.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+ಉದಾಹರಣೆ: ಕೆಲವು ಲಗತ್ತುಗಳಲ್ಲಿ ಕೆಲದೇ ಶಿರೋಲೇಖಗಳು ಇಲ್ಲದಿರಬಹುದು, ಆದರೆ ಅವು ಇನ್ನೂ ಸಾಮಾನ್ಯ ಫೈಲ್‌ಗಳೇ (ಇನ್‌ಲೈನ್/S/MIME ಅಲ್ಲ). ಕಠಿಣ ಪಾಸ್ ಯಾವುದನ್ನೂ ಕಂಡುಹಿಡಿಯದಿದ್ದರೆ, ಸಡಿಲ ಪಾಸ್ ಅವನ್ನು ಒಪ್ಪಿಕೊಂಡು ಲಗತ್ತಿಸಬಹುದು.
 
 ---
 
-## Behavior Details {#behavior-details}
+### ಅಡ್ಡ‑ಉಲ್ಲೇಖ {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- ವಿನ್ಯಾಸದ ಪ್ರಕಾರ Forward ಅನ್ನು ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ (ಕೆಳಗಿನ ಮಿತಿಗಳನ್ನು ನೋಡಿ).
+- ಲಗತ್ತನ್ನು ಏಕೆ ಸೇರಿಸಲಾಗದೇ ಇರಬಹುದು ಎಂಬ ಕಾರಣಗಳಿಗೆ, “ಏಕೆ ಲಗತ್ತಗಳನ್ನು ಸೇರಿಸಲಾಗದೇ ಇರಬಹುದು” ನೋಡಿ.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## ವರ್ತನೆ ವಿವರಗಳು {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **ನಕಲು ತಡೆಯುವುದು:** ಅಡ್ಒನ್ ಪ್ರತಿ‑ಟ್ಯಾಬ್ ಸೆಷನ್ ಮೌಲ್ಯ ಮತ್ತು ಇನ್‑ಮೆಮೊರಿ ಗಾರ್ಡ್ ಬಳಸಿ compose ಟ್ಯಾಬ್ ಅನ್ನು ಪ್ರಕ್ರಿಯೆಯಾಗಿದೆ ಎಂದು ಗುರುತಿಸುತ್ತದೆ. ಮೂಲಗಳನ್ನು ಎರಡು ಬಾರಿ ಸೇರಿಸುವುದಿಲ್ಲ.
+- compose ವಿಂಡೋವನ್ನು ಮುಚ್ಚಿ ಮರುತೆರೆಯುವುದು ಹೊಸ ಟ್ಯಾಬ್ ಎನ್ನಲಾಗುತ್ತದೆ (ಅಂದರೆ, ಹೊಸ ಪ್ರಯತ್ನಕ್ಕೆ ಅವಕಾಶ).
+- **ಇದಲ್ಲಿನ ಲಗತ್ತಗಳಿಗೆ ಗೌರವ:** compose ನಲ್ಲಿ ಈಗಾಗಲೇ ಕೆಲವು ಲಗತ್ತಗಳು ಇದ್ದರೆ, ಮೂಲಗಳನ್ನು ಇನ್ನೂ ಒಂದೇ ಬಾರಿ ಸೇರಿಸಲಾಗುತ್ತದೆ, ಈಗಾಗಲೇ ಇರುವ ಫೈಲ್ ಹೆಸರಗಳನ್ನು ಬಿಟ್ಟು.
+- **ವಿಲ್ಕೆಗಳು:** S/MIME ಕಲಾಕೃತಿಗಳು ಮತ್ತು ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಫೈಲ್ ಲಗತ್ತುಗಳಿಂದ ಹೊರತುಪಡಿಸಲಾಗುತ್ತದೆ. ಮೊದಲ ಪಾಸ್‌ನಲ್ಲಿ ಯಾವುದೂ ಅರ್ಹವಾಗದಿದ್ದರೆ, ಸಡಿಲ ಫಾಲ್ಬ್ಯಾಕ್ non‑S/MIME ಭಾಗಗಳನ್ನು ಮರುಪರಿಶೀಲಿಸುತ್ತದೆ. ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ನಿರ್ವಹಿಸಲಾಗುತ್ತದೆ: ಅವನ್ನು ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ ಡೇಟಾ URIಗಳಾಗಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ (ಸಕ್ರಿಯಗೊಂಡಿದ್ದರೆ).
+  - **ಫೈಲ್ ಹೆಸರಗಳು:** `smime.p7s`
+  - **MIME ಪ್ರಕಾರಗಳು:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳು:** Content‑ID ಮೂಲಕ ಉಲ್ಲೇಖಿತ ಯಾವುದೇ `image/*` ಭಾಗ — ಫೈಲ್ ಲಗತ್ತುಗಳಿಂದ ಹೊರತುಪಡಿಸಲಾಗುತ್ತದೆ ಆದರೆ "Include inline pictures" ON ಆಗಿರುವಾಗ ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ ಸಂಯೋಜಿಸಲಾಗುತ್ತದೆ
+  - **ಲಗತ್ತಿದ ಇಮೇಲ್‌ಗಳು (`message/rfc822`):** ಫೈಲ್ ಹೆಸರು ಇದ್ದರೆ ಸಾಮಾನ್ಯ ಲಗತ್ತುಗಳಂತೆ ಪರಿಗಣಿಸಲಾಗುತ್ತದೆ; ಅವನ್ನು ಸೇರಿಸಬಹುದಾಗಿದೆ (ನಕಲು ಪರಿಶೀಲನೆ ಮತ್ತು ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್‌ಗೆ ಒಳಪಡುವಂತೆ).
+- **ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್ ಎಚ್ಚರಿಕೆ (ಸಕ್ರಿಯಗೊಂಡಿದ್ದರೆ):** ಅಭ್ಯರ್ಥಿಗಳನ್ನು ನಿಮ್ಮ ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್ ಹೊರತುಪಡಿಸಿದಾಗ, ಅಡ್ಒನ್ ಬಾಧಿತ ಫೈಲ್‌ಗಳ ಮತ್ತು ಹೊಂದಿಕೆಯಾಗಿರುವ ಮಾದರಿ(ಗಳ) ಪಟ್ಟಿಯನ್ನು ತೋರಿಸುವ ಸಣ್ಣ ಮೋಡಲ್‌ ಅನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. ಎಲ್ಲವನ್ನೂ ಹೊರತುಪಡಿಸಿದ ಕಾರಣ ಯಾವುದೇ ಲಗತ್ತಗಳನ್ನು ಸೇರಿಸಲಾಗದ ಸಂದರ್ಭಗಳಲ್ಲೂ ಈ ಎಚ್ಚರಿಕೆ ಕಾಣಿಸುತ್ತದೆ.
 
 ---
 
-## Limitations {#limitations}
+## ಕೀಬೋರ್ಡ್ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- ದೃಢೀಕರಣ ಸಂವಾದ: Y/J = Yes, N/Esc = No; Tab/Shift+Tab ಹಾಗೂ ಬಾಣ ಕೀಗಳು ಫೋಕಸ್ ಅನ್ನು ಸೈಕಲ್ ಮಾಡುತ್ತವೆ.
+  - [ಸಂರಚನೆ](configuration#confirmation)ಯಲ್ಲಿನ “Default answer” ಆರಂಭದಲ್ಲೇ ಫೋಕಸ್ ಆಗಿರುವ ಬಟನ್ ಅನ್ನು ಹೊಂದಿಸುತ್ತದೆ.
+  - Enter ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಅನ್ನು ಟ್ರಿಗರ್ ಮಾಡುತ್ತದೆ. ಪ್ರವೇಶಾರಿಗೆ Tab/Shift+Tab ಮತ್ತು ಬಾಣಗಳು ಫೋಕಸ್ ಅನ್ನು ಸ್ಥಳಾಂತರಿಸುತ್ತವೆ.
+
+### ಕೀಬೋರ್ಡ್ ಚೀಟ್ ಶೀಟ್ {#keyboard-cheat-sheet}
+
+| ಕೀಗಳು              | ಕ್ರಿಯೆ                                       |
+| ------------------ | -------------------------------------------- |
+| Y / J              | ಹೌದು ಎಂದು ದೃಢೀಕರಿಸಿ                          |
+| N / Esc            | ಇಲ್ಲ ಎಂದು ದೃಢೀಕರಿಸಿ                          |
+| Enter              | ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ       |
+| Tab / Shift+Tab    | ಫೋಕಸ್ ಅನ್ನು ಮುಂದಕ್ಕೆ/ಹಿಂದಕ್ಕೆ ಕಳುಹಿಸಿ        |
+| ಬಾಣ ಕೀಗಳು          | ಬಟನ್‌ಗಳ ನಡುವೆ ಫೋಕಸ್ ಅನ್ನು ಸ್ಥಳಾಂತರಿಸಿ        |
+| ಪೂರ್ವನಿಯೋಜಿತ ಉತ್ತರ | ಆರಂಭಿಕ ಫೋಕಸ್ ಅನ್ನು ಇಡುತ್ತದೆ (ಹೌದು ಅಥವಾ ಇಲ್ಲ) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ಮಿತಿಗಳು {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ಈ ಅಡ್ಒನ್ Forward ಅನ್ನು ಬದಲಾಯಿಸುವುದಿಲ್ಲ (Reply ಮತ್ತು Reply all ಬೆಂಬಲಿತ).
+- ಬಹಳ ದೊಡ್ಡ ಲಗತ್ತುಗಳು Thunderbird ಅಥವಾ ಪೂರೈಕೆದಾರರ ಮಿತಿಗಳಿಗೆ ಒಳಪಟ್ಟಿರಬಹುದು.
+  - ಅಡ್ಒನ್ ಫೈಲ್‌ಗಳನ್ನು ತುಂಡರಿಸುವುದಿಲ್ಲ ಅಥವಾ ಸಂಕುಚಿತಗೊಳಿಸುವುದಿಲ್ಲ; ಇದು Thunderbird‌ನ ಸಾಮಾನ್ಯ ಲಗತ್ತು ಹ್ಯಾಂಡ್ಲಿಂಗ್‌ನ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿರುತ್ತದೆ.
+- ಗೂಢಲಿಖಿತ ಸಂದೇಶಗಳು: S/MIME ಭಾಗಗಳನ್ನು ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಹೊರತುಪಡಿಸಲಾಗಿದೆ.
 
 ---
 
-See also
+## ಏಕೆ ಲಗತ್ತಗಳನ್ನು ಸೇರಿಸಲಾಗದೇ ಇರಬಹುದು {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಫೈಲ್ ಲಗತ್ತುಗಳಾಗಿ ಸೇರಿಸಲಾಗುವುದಿಲ್ಲ. "Include inline pictures" ON ಆಗಿರುವಾಗ (ಪೂರ್ವನಿಯೋಜಿತ), ಅವನ್ನು ಬದಲಾಗಿ ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ ಡೇಟಾ URIಗಳಾಗಿ ಸಂಯೋಜಿಸಲಾಗುತ್ತದೆ. ಸೆಟ್ಟಿಂಗ್ OFF ಆಗಿದ್ದರೆ, ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ. [ಸಂರಚನೆ](configuration#include-inline-pictures) ನೋಡಿ.
+- S/MIME ಸಹಿ ಭಾಗಗಳನ್ನು ವಿನ್ಯಾಸದ ಪ್ರಕಾರ ಹೊರತುಪಡಿಸಲಾಗಿದೆ: `smime.p7s` ಎಂಬಂತಹ ಫೈಲ್ ಹೆಸರಗಳು ಮತ್ತು `application/pkcs7-signature` ಅಥವಾ `application/pkcs7-mime` ಎಂಬಂತಹ MIME ಪ್ರಕಾರಗಳನ್ನು ಬಿಟ್ಟಿಡಲಾಗುತ್ತದೆ.
+- ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್ ಮಾದರಿಗಳು ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಬಹುದು: [ಸಂರಚನೆ](configuration#blacklist-glob-patterns) ನೋಡಿ; ಹೊಂದಿಕೆ ಕೇಸ್‑ಅನಾಸಕ್ತ ಮತ್ತು ಫೈಲ್ ಹೆಸರಿನ ಆಧಾರದ್ದಾಗಿದೆ.
+- ನಕಲಿ ಫೈಲ್ ಹೆಸರಗಳನ್ನು ಮರುಸೇರಿಸಲಾಗುವುದಿಲ್ಲ: compose ನಲ್ಲಿ ಅದೇ ಸಾಮಾನ್ಯೀಕೃತ ಹೆಸರಿನ ಫೈಲ್ ಈಗಾಗಲೇ ಇದ್ದರೆ, ಅದನ್ನು ಬಿಟ್ಟುಹೋಗಲಾಗುತ್ತದೆ.
+- ಫೈಲ್ ಅಲ್ಲದ ಭಾಗಗಳು ಅಥವಾ ಕಾಣೆಯಾದ ಫೈಲ್ ಹೆಸರಗಳು: ಬಳಸಬಹುದಾದ ಫೈಲ್ ಹೆಸರಿರುವ ಫೈಲ್‑ಹೋಲಿಕೆಯ ಭಾಗಗಳನ್ನು ಮಾತ್ರ ಸೇರಿಸಲು ಪರಿಗಣಿಸಲಾಗುತ್ತದೆ.
+
+---
+
+ಇವನ್ನೂ ನೋಡಿ
+
+- [ಸಂರಚನೆ](configuration)

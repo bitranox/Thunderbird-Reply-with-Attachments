@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Plėtra",
-  "description": "Development Guide",
+  "title": "Kūrimas",
+  "description": "---",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Plėtra",
-    "sidebar_label": "Plėtra"
+    "title": "Kūrimas",
+    "sidebar_label": "Kūrimas"
   },
   "sidebar": "docs",
   "previous": {

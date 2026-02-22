@@ -27,6 +27,9 @@ function makeThunderbirdPorts(browser) {
     async addAttachment(tabId, attachment) {
       return browser.compose.addAttachment(tabId, attachment);
     },
+    async setDetails(tabId, details) {
+      return browser.compose.setComposeDetails(tabId, details);
+    },
     onBeforeSend: browser.compose?.onBeforeSend,
     onStateChanged: browser.compose?.onComposeStateChanged,
   };

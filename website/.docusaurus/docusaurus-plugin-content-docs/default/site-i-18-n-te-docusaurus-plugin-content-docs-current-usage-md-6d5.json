@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "ఉపయోగం",
-  "description": "Usage",
+  "title": "వినియోగం",
+  "description": "---",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "ఉపయోగం",
-    "sidebar_label": "ఉపయోగం"
+    "title": "వినియోగం",
+    "sidebar_label": "వినియోగం"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/configuration"
   },
   "next": {
-    "title": "సామ్యం",
+    "title": "అనుకూలత",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/compatibility"
   }
 }

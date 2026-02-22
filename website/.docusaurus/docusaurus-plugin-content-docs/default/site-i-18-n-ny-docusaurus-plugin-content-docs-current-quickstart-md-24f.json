@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kus започи",
-  "description": "Quickstart",
+  "title": "Kuyamba Mwamsanga",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kus започи",
-    "sidebar_label": "Kus започи"
+    "title": "Kuyamba Mwamsanga",
+    "sidebar_label": "Kuyamba mwamsanga"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Zinthu Zozungulira",
+    "title": "Mawonekedwe",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/features"
   },
   "next": {

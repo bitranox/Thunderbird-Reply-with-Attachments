@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'کارول'
-sidebar_label: 'کارول'
+title: 'استعمال'
+sidebar_label: 'کارېدنه'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## کارونه {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- کله چې ځواب ورکوئ، اېډ‑آن اصلي پیوستونه په اوتومات ډول زیاتوي — یا که په Options کې فعال وي، لومړی پوښتنه کوي.
+- د دوتنې د نوم له مخې د تکرار مخنیوی کېږي؛ د S/MIME برخې تل پرېښودل کېږي. په تلواله توګه په ځواب کې د متن دننه انځورونه بېرته راګرځول کېږي (د "Include inline pictures" له لارې په Options کې غیرفعالېږي).
+- هغه پیوستونه چې په تور لېست کې وي هم پرېښودل کېږي (case‑insensitive د glob بڼې چې د دوتنې نومونو سره سمون خوري، نه د لارو). [امستنې](configuration#blacklist-glob-patterns) وګورئ.
 
 ---
 
-### Cross‑reference {#cross-reference}
+### پر ځواب څه پېښېږي {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- ځواب وپېژني → اصلي پیوستونه وليستوي → S/MIME + په متن کې برخې فلټر کړي → اختیاري تایید → وړ دوتنې زیاتوي (تکراري نومونه پرېږدي) → په متن کې انځورونه بېرته راګرځوي.
 
----
+سخت پړاو او نرم پړاو: اېډ‑آن لومړی دوتنې له پیوستونو څخه د S/MIME او په متن کې برخې وباسي. که هیڅ یو وړ نه وي، یو نرم پړاو پرمخ وړي چې لا هم S/MIME/په متن کې برخې باسي خو نورې پېښې زغمي (د کوډ جزییات وګورئ). په متن کې انځورونه هېڅکله دوتنيز پیوستونه نه کېږي؛ پر ځای یې، کله چې "Include inline pictures" فعال وي (تلواله حالت)، هغوی په مستقیم ډول د ځواب په متن کې د base64 data URIs په توګه ځای پر ځای کېږي.
 
-## Behavior Details {#behavior-details}
+| د برخې ډول                                                      |                                   سخت پړاو |                                   نرم پړاو |
+| --------------------------------------------------------------- | -----------------------------------------: | -----------------------------------------: |
+| د S/MIME لاسلیک دوتنه `smime.p7s`                               |                                  ایستل شوی |                                  ایستل شوی |
+| د S/MIME MIME ډولونه (`application/pkcs7-*`)                    |                                  ایستل شوی |                                  ایستل شوی |
+| هغه په متن کې انځور چې د Content‑ID (`image/*`) له مخې راجع شوی | ایستل شوی (په متن کې بېرته راګرځول کېږي\*) | ایستل شوی (په متن کې بېرته راګرځول کېږي\*) |
+| پیوست شوی بریښنالیک (`message/rfc822`) چې دوتنې نوم لري         |                                 نه زیاتېږي |                           کېدای شي زیات شي |
+| معمولي دوتنيز پیوست چې نوم لري                                  |                           کېدای شي زیات شي |                           کېدای شي زیات شي |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* کله چې "Include inline pictures" فعال وي (تلواله: ON)، په متن کې انځورونه دوتنيز پیوستونو پر ځای د base64 data URI ګانو په بڼه د ځواب په متن کې ننه ايستل کېږي. [امستنې](configuration#include-inline-pictures) وګورئ.
+
+بیلګه: ځینې پیوستونه ښايي ځینې سرليکونه ونه لري خو بیا هم معمولي دوتنې وي (نه په متن کې/نه S/MIME). که سخت پړاو هېڅ ونه مومي، نرم پړاو کېدای شي هغوی ومني او پیوست یې کړي.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### متقابل حواله {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Forward د ډیزاین له مخې نه بدلېږي (لاندې محدودیتونه وګورئ).
+- د دې لاملونو لپاره چې ولې پیوستونه کېدای شي وانه‌زیات شي، “ولې پیوستونه ښايي وانه‌زیات شي” وګورئ.
 
 ---
 
-## Limitations {#limitations}
+## د چلند جزییات {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- د تکرار مخنیوی: اېډ‑آن د هر ټب لپاره د ناستې ارزښت او د حافظې دننه ساتندوی په کارولو سره د لیکلو ټب پروسس شوی نښه کوي. اصلي پیوستونه به دوه ځله نه زیاتوي.
+- د لیکلو کړکۍ تړل او بیا پرانیستل د نوي ټب په توګه ګڼل کېږي (یعنې نوی هڅه اجازه لري).
+- د موجوده پیوستونو درناوی: که په لیکلو کې مخکې له مخکې ځینې پیوستونه وي، اصلي پیوستونه لاهم یوازې یو ځل زیاتېږي، هغه دوتنې نومونه پرېږدي چې مخکې شته.
+- استثناوې: د S/MIME آثارو او په متن کې انځورونو دوتنيز پیوست نه کېږي. که په لومړي پړاو کې هېڅ یو وړ نه وي، یو نرم بدیل بیا د غیر S/MIME برخو کتنه کوي. په متن کې انځورونه جلا سمبالېږي: کله چې فعال وي، په ځواب کې د متن دننه د data URI ګانو په توګه بېرته راګرځول کېږي.
+  - دوتنې نومونه: `smime.p7s`
+  - MIME ډولونه: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - په متن کې انځورونه: هره `image/*` برخه چې د Content‑ID له لارې راجع شوې وي — دوتنيز پیوست نه کېږي خو کله چې "Include inline pictures" ON وي، په ځواب کې د متن دننه ځای پر ځای کېږي
+  - پیوست شوي بریښنالیکونه (`message/rfc822`): که دوتنې نوم ولري د معمول پیوستونو په توګه چلند ورسره کېږي؛ کېدای شي زیات شي (د تکرار او تور لېست د کتنو تابع).
+- د تور لېست خبرداری (که فعال وي): کله چې نوماندان مو د تور لېست له امله پرېښودل شي، اېډ‑آن یو وړوکی موډل ښیي چې اغېزمنې دوتنې او سمون خوړونکي بڼې لیست کوي. دا خبرداری هغه مهال هم ښکاري چې هېڅ پیوستونه به وانه‌زیات شي ځکه هر څه استثنا شوي وو.
 
 ---
 
-See also
+## د کیبورډ لنډلارې {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- د تایید کړکۍ: Y/J = هو، N/Esc = نه؛ Tab/Shift+Tab او د غشي تڼۍ تمرکز پر نوبت ګرځوي.
+  - په [امستنو](configuration#confirmation) کې “تلواله ځواب” د لومړني تمرکزي تڼۍ ټاکي.
+  - Enter د تمرکزي تڼۍ فعالول ترسره کوي. Tab/Shift+Tab او غشي د لاسرسي لپاره تمرکز بدلوي.
+
+### کيبورډ چټک لارښود {#keyboard-cheat-sheet}
+
+| تڼۍ             | عمل                          |
+| --------------- | ---------------------------- |
+| Y / J           | د "هو" تاییدول               |
+| N / Esc         | د "نه" تاییدول               |
+| Enter           | د تمرکزي تڼۍ فعالول          |
+| Tab / Shift+Tab | تمرکز مخکې/شاته وړل          |
+| Arrow keys      | د تڼیو ترمنځ تمرکز اړول      |
+| تلواله ځواب     | لومړنی تمرکز ټاکي (هو یا نه) |
+
+---
+
+## محدودیتونه {#limitations}
+
+- Forward د دې اېډ‑آن له خوا نه بدلېږي (Reply او Reply all ملاتړ کېږي).
+- ډېر لوي پیوستونه کېدای شي د Thunderbird یا چمتو کوونکي د محدودیتونو تابع وي.
+  - اېډ‑آن دوتنې نه ټوټه کوي او نه یې فشاري؛ د Thunderbird د عادي پیوست سمبالښت ته تکیه کوي.
+- کوډ شوې پیغامونه: د S/MIME برخې په قصد سره استثنا کېږي.
+
+---
+
+## ولې پیوستونه ښايي وانه‌زیات شي {#why-attachments-might-not-be-added}
+
+- په متن کې انځورونه دوتنيز پیوستونه نه کېږي. کله چې "Include inline pictures" ON وي (تلواله حالت)، هغوی دوتنيز پیوستونو پر ځای د data URI ګانو په توګه د ځواب په متن کې ځای پر ځای کېږي. که امستنه OFF وي، په متن کې انځورونه په بشپړه توګه لیرې کېږي. [امستنې](configuration#include-inline-pictures) وګورئ.
+- د S/MIME د لاسلیک برخې په ډیزاین کې استثنا شوي: لکه د `smime.p7s` په شان دوتنې نومونه او د `application/pkcs7-signature` یا `application/pkcs7-mime` په شان MIME ډولونه پرېښودل کېږي.
+- د تور لېست بڼې نوماندان فلټرولای شي: [امستنې](configuration#blacklist-glob-patterns) وګورئ؛ سمون case‑insensitive دی او یوازې د دوتنې په نوم ولاړ دی.
+- تکراري دوتنې نومونه بیا نه زیاتېږي: که په لیکلو کې مخکې له مخکې د هماغه عادي شوی نوم سره دوتنه وي، پرېښودل کېږي.
+- غیر دوتنيزې برخې یا ورکو دوتنې نومونه: یوازې هغه دوتنې ته ورته برخې چې کارېدونکي دوتنې نومونه ولري د زیاتولو لپاره په پام کې نیول کېږي.
+
+---
+
+همداراز وګورئ
+
+- [امستنې](configuration)

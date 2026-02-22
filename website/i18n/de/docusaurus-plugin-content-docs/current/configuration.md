@@ -3,15 +3,17 @@ id: configuration
 title: 'Konfiguration'
 ---
 
+---
+
 ## Konfiguration
 
-Terminologiehinweis: siehe das [Glossar](glossary) für konsistente Begriffe, die in der UI und der Dokumentation verwendet werden.
+Terminologiehinweis: Siehe das [Glossar](glossary) für konsistente Begriffe in der Benutzeroberfläche und in der Dokumentation.
 
 ---
 
 ## Optionen in Thunderbird öffnen {#open-options-in-thunderbird}
 
-- Thunderbird → Werkzeuge → Add‑ons und Designs → finden Sie „Antworten mit Anhängen“ → Einstellungen/Optionen
+- Thunderbird → Extras → Add‑ons und Themes → „Reply with Attachments“ suchen → Einstellungen/Optionen
 
 ---
 
@@ -19,122 +21,132 @@ Terminologiehinweis: siehe das [Glossar](glossary) für konsistente Begriffe, di
 
 #### Bestätigung {#confirmation}
 
-- Aktivieren Sie „Vor dem Hinzufügen von Anhängen fragen“
-- Standardantwort: Ja oder Nein (Fokus & Tastaturstandard)
-- Tastatur: Y/J = Ja; N/Esc = Nein; Tab/Shift+Tab und Pfeiltasten wechseln den Fokus
-  - Siehe Tastaturdetails in [Benutzung](usage#keyboard-shortcuts).
+- Umschalten „Vor dem Hinzufügen von Anhängen nachfragen“
+- Standardantwort: Ja oder Nein (Fokus- & Tastaturstandard)
+- Tastatur: Y/J = Ja; N/Esc = Nein; Tab/Shift+Tab und Pfeiltasten wechseln den Fokus zyklisch
+  - Siehe Tastaturdetails in [Verwendung](usage#keyboard-shortcuts).
 
 ---
 
-#### Blacklist (glob Muster) {#blacklist-glob-patterns}
+#### Blockliste (Glob-Muster) {#blacklist-glob-patterns}
 
-Schwarze Listen Dateien werden automatisch nicht bei Antworten hinzugefügt. Siehe auch das [Glossar](glossary) für „Blacklist (Ausschlussliste)“.
+Dateien auf der Blockliste werden beim Antworten nicht automatisch hinzugefügt. Siehe auch das [Glossar](glossary) zu „Blockliste (Ausschlussliste)“.
 
-- Ein Muster pro Zeile; Groß- und Kleinschreibung ignorierend; nur Dateinamen-Matching
+- Ein Muster pro Zeile; Groß-/Kleinschreibung wird ignoriert; Abgleich nur nach Dateinamen
 - Beispiele: `*intern*`, `*secret*`, `*passwor*`
-- Unterstützte Glob-Tokens: `*` (beliebige Zeichen außer `/`), `?` (ein Zeichen), Zeichensatzklassen wie `[abc]`. Verwenden Sie `\[`, um ein literal `[` zu erfassen. Pfade (`**/`) werden ignoriert, da nur Dateinamen abgeglichen werden.
-- Nicht unterstützt: Negation (`!`), geschweifte Erweiterung (`{..}`) und komplexe Bereiche. Halten Sie Muster einfach.
-- Kommentare werden in Mustern nicht unterstützt. Fügen Sie `#` oder Inline-Kommentare nicht hinzu; geben Sie nur den Mustertxt pro Zeile ein.
+- Unterstützte Glob-Token: `*` (beliebige Zeichen außer `/`), `?` (ein Zeichen), Zeichenklassen wie `[abc]`. Verwenden Sie `\[`, um ein wörtliches `[` zu treffen. Pfade (`**/`) werden ignoriert, da nur Dateinamen abgeglichen werden.
+- Nicht unterstützt: Negation (`!`), Klammererweiterung (`{..}`) und komplexe Bereiche. Halten Sie die Muster einfach.
+- Kommentare werden in Mustern nicht unterstützt. Fügen Sie `#` oder Inline-Kommentare nicht ein; geben Sie pro Zeile nur den Mustertext ein.
 
 ---
 
-##### Musterkochbuch {#pattern-cookbook}
+##### Muster‑Kochbuch {#pattern-cookbook}
 
-- Alle PDFs erfassen: `*.pdf`
-- Dateien, die mit „scan“ beginnen: `scan*`
+- Beliebige PDF-Datei abgleichen: `*.pdf`
+- Dateien abgleichen, die mit „scan“ beginnen: `scan*`
 - Zeichenklasse: `report[0-9].txt`
-- Escape einen literal `[`: `\[` (nützlich beim Abgleichen einer Klammer als Zeichen)
+- Ein wörtliches `[` maskieren: `\[` (nützlich, wenn eine Klammer als Zeichen abgeglichen werden soll)
 
 ---
 
 ##### Hinweise {#blacklist-notes}
 
-- Reihenfolge spielt keine Rolle; das erste/jede übereinstimmende Muster schließt die Datei aus.
-- Abgleich erfolgt nur anhand des Dateinamens (Pfade/Ordner werden ignoriert).
-- „Auf die Standardwerte zurücksetzen“ stellt die empfohlenen Muster und den Warnungs-Umschalter für die Blacklist wieder her.
-- Warum das Beispiel `*passwor*`? Es erfasst sowohl „password“ als auch „Passwort“ Familien.
-- Vorrang: wenn ein Muster mit einem Dateinamen übereinstimmt, wird die Datei ausgeschlossen (erstes/jedes Matching — die Reihenfolge ändert das Ergebnis nicht).
-- Tipp — testen Sie Ihr Muster: Fügen Sie ein temporäres Muster hinzu, antworten Sie auf eine Nachricht, die eine Datei mit einem übereinstimmenden Namen enthält, und bestätigen Sie, dass sie in der Warnliste ausgeschlossen ist.
+- Die Reihenfolge spielt keine Rolle; der erste/irgendein Treffer schließt die Datei aus.
+- Der Abgleich erfolgt nur anhand des Dateinamens (Pfade/Ordner werden ignoriert).
+- „Auf Standard zurücksetzen“ stellt die empfohlenen Muster und die Einstellung für die Blocklistenwarnung wieder her.
+- Warum das Beispiel `*passwor*`? Es passt sowohl auf die „password“- als auch die „Passwort“-Familie.
+- Priorität: Wenn ein beliebiges Muster auf einen Dateinamen passt, wird die Datei ausgeschlossen (erster/irgendein Treffer — die Reihenfolge ändert das Ergebnis nicht).
+- Tipp — testen Sie Ihr Muster: Fügen Sie ein temporäres Muster hinzu, antworten Sie auf eine Nachricht mit einer Datei mit passendem Namen und prüfen Sie, ob sie in der Warnliste ausgeschlossen ist.
 
 ##### Schnell ausprobieren (sicherer Test) {#blacklist-try-it}
 
-1. Optionen → Blacklist öffnen.
+1. Optionen → Blockliste öffnen.
 2. Fügen Sie ein temporäres Muster wie `*.tmp` hinzu und klicken Sie auf Speichern.
-3. Antworten Sie auf eine Testmail, die eine Datei mit der Endung `.tmp` enthält — die Datei sollte in der Warnliste erscheinen und nicht angehängt werden.
-4. Entfernen Sie das temporäre Muster, wenn Sie fertig sind, oder klicken Sie auf „Auf die Standardwerte zurücksetzen“.
+3. Antworten Sie auf eine Test‑Mail, die eine Datei hat, die auf `.tmp` endet — die Datei sollte in der Warnliste erscheinen und nicht angehängt werden.
+4. Entfernen Sie das temporäre Muster anschließend oder klicken Sie auf „Auf Standard zurücksetzen“.
 
 ---
 
-#### Warnung zu ausgeschlossen Anhängen {#warning-on-excluded-attachments}
+#### Inline‑Bilder einbeziehen {#include-inline-pictures}
 
-- Aktivieren Sie „Warnen, wenn Anhänge von der Blacklist ausgeschlossen sind“ (Standard: EIN).
-- Wenn aktiviert, zeigt ein kleines Modal ausgeschlossen Dateien und die übereinstimmenden Muster an. Die
-  Warnung erscheint auch, wenn nichts angehängt wird, da alle Kandidaten
-  auf der Blacklist stehen.
-
----
-
-#### Speichern Sie Ihre Einstellungen {#save-your-settings}
-
-Einstellungen werden durch Drücken der Schaltfläche Speichern gespeichert. Sie können einzelne Felder manuell zurücksetzen oder bei Bedarf die Standardwerte wiederherstellen.
-
-Wenn gespeicherte Einstellungen nicht richtig angewendet erscheinen, starten Sie Thunderbird neu und versuchen Sie es erneut. (Thunderbird kann den Zustand über Sitzungen hinweg cachen; ein Neustart stellt sicher, dass frische Einstellungen geladen werden.)
-
-Tipp: Um zu bestätigen, dass Ihre Einstellungen wirksam wurden, antworten Sie auf eine beliebige Nachricht mit einem Anhang und überprüfen Sie die Bestätigung oder die Warnung zur Blacklist.
+- Umschalten „Inline‑Bilder (eingebettete Bilder) einbeziehen“ (Standard: EIN).
+- Wenn aktiviert, werden Bilder, die im ursprünglichen Nachrichtentext eingebettet sind,
+  direkt in der Antwort als base64‑Daten‑URIs wiederhergestellt. So bleibt das ursprüngliche Inline‑
+  Layout erhalten und Empfänger sehen die Bilder genau an der Stelle, an der sie erschienen sind.
+- Wenn deaktiviert, werden Inline‑Bilder aus dem Antworttext entfernt (Thunderbirds
+  Standardverhalten entfernt sie).
 
 ---
 
-#### Sichtbarkeit der Spenden (90‑tägige Ruhephase) {#donation-visibility}
+#### Warnung bei ausgeschlossenen Anhängen {#warning-on-excluded-attachments}
 
-Das Add-on enthält eine bequeme Funktion, um Spendenaufforderungen eine Weile auszublenden, nachdem Sie gespendet haben.
+- Umschalten „Warnen, wenn Anhänge durch die Blockliste ausgeschlossen werden“ (Standard: EIN).
+- Wenn aktiviert, listet ein kleines Modal ausgeschlossene Dateien und die passenden Muster auf. Die
+  Warnung erscheint auch, wenn nichts angehängt wird, weil alle Kandidaten auf der Blockliste standen.
 
-Wo man es findet
+---
 
-- Optionen → Unterstützungsbereich: Sie sehen eine „Ich habe gespendet“ Schaltfläche und einen kleinen Hinweisbereich.
-- Der Sendebestätigungsdialog zeigt auch eine Schaltfläche „Spenden“; sie wird automatisch ausgeblendet, wenn die Ruhephase aktiv ist.
+#### Einstellungen speichern {#save-your-settings}
 
-Wie es funktioniert
+Einstellungen werden durch Klicken auf die Schaltfläche „Speichern“ gesichert. Sie können einzelne Felder manuell zurücknehmen oder bei Bedarf die Standardwerte wiederherstellen.
 
-- Ein Klick auf „Ich habe gespendet“ blendet die Spenden-Schaltflächen und verwandte Aufforderungen für 90 Tage aus.
-- Ein Statushinweis zeigt „Überblendet bis YYYY‑MM‑DD“ (in Ihrem lokalen Datum). Es gibt auch eine Schaltfläche „Spende erneut anzeigen“, um die Sichtbarkeit sofort wiederherzustellen.
-- Nach 90 Tagen wird die Spenden-Schaltfläche automatisch erneut sichtbar.
+Wenn gespeicherte Einstellungen scheinbar nicht korrekt angewendet werden, starten Sie Thunderbird neu und versuchen Sie es erneut. (Thunderbird kann Status über Sitzungen hinweg zwischenspeichern; ein Neustart stellt sicher, dass frische Einstellungen geladen werden.)
 
-Privatsphäre & Speicherung
+Tipp: Um zu bestätigen, dass Ihre Einstellungen wirksam sind, antworten Sie auf eine beliebige Nachricht mit Anhang und prüfen Sie die Bestätigung oder die Blocklistenwarnung.
 
-- Das Add-on speichert einen einzelnen Zeitstempel im lokalen Speicher von Thunderbird, um die Ruhephase zu erinnern. Schlüssel: `donateHideUntil` (epoch milliseconds).
-- Diese Einstellung ist lokal für Ihr Thunderbird-Profil (nicht cloud-synchronisiert). Es werden keine Netzwerk-Anfragen von dieser Funktion gemacht.
+---
+
+#### Sichtbarkeit von Spendenhinweisen (90‑Tage‑Ausblendung) {#donation-visibility}
+
+Das Add‑on enthält eine Komfortfunktion, um Spendenaufforderungen nach einer Spende für eine Weile auszublenden.
+
+Wo zu finden
+
+- Optionen → Bereich Unterstützung: Sie sehen eine Schaltfläche „Ich habe gespendet“ und einen kleinen Hinweisteil.
+- Der Sende‑Bestätigungsdialog zeigt ebenfalls eine Schaltfläche „Spenden“; sie wird automatisch ausgeblendet, wenn die Ausblendung aktiv ist.
+
+Funktionsweise
+
+- Ein Klick auf „Ich habe gespendet“ blendet Spenden‑Schaltflächen und zugehörige Hinweise für 90 Tage aus.
+- Ein Statushinweis zeigt „Ausgeblendet bis YYYY‑MM‑DD“ (in Ihrem lokalen Datum). Es gibt auch eine Schaltfläche „Spenden erneut anzeigen“, um die Sichtbarkeit sofort wiederherzustellen.
+- Nach 90 Tagen wird die Schaltfläche „Spenden“ automatisch wieder sichtbar.
+
+Datenschutz & Speicherung
+
+- Das Add‑on speichert einen einzigen Zeitstempel im lokalen Speicher von Thunderbird, um sich die Ausblendungsdauer zu merken. Schlüssel: `donateHideUntil` (Epoch‑Millisekunden).
+- Diese Einstellung ist lokal für Ihr Thunderbird‑Profil (nicht Cloud‑synchronisiert). Diese Funktion führt keine Netzwerk­anfragen durch.
 
 Fehlerbehebung
 
-- Wenn „Spende“ direkt nach dem Klicken auf „Ich habe gespendet“ immer noch angezeigt wird, warten Sie einen Moment oder öffnen Sie die Optionsseite erneut; die UI aktualisiert sich sofort, sobald die Einstellung gespeichert ist.
-- Um manuell zurückzusetzen, klicken Sie auf „Spende erneut anzeigen“. Sie können auch warten, bis das im Hinweis angegebene Datum vergangen ist.
+- Wenn „Spenden“ unmittelbar nach dem Klick auf „Ich habe gespendet“ weiterhin angezeigt wird, warten Sie einen Moment oder öffnen Sie die Seite Optionen erneut; die Oberfläche aktualisiert sich, sobald die Einstellung gespeichert ist.
+- Um manuell zurückzusetzen, klicken Sie auf „Spenden erneut anzeigen“. Sie können auch warten, bis das im Hinweis angegebene Datum verstrichen ist.
 
-Diese Funktion dient ausschließlich der Bequemlichkeit; sie blockiert niemals die Funktionalität des Add-ons und sammelt keine persönlichen Daten.
+Diese Funktion dient ausschließlich der Bequemlichkeit; sie blockiert niemals die Add‑on‑Funktionalität und erhebt keinerlei personenbezogene Daten.
 
 ---
 
-### Dateinamen-Normalisierung (Vermeidung von Duplikaten) {#filename-normalization-duplicates-prevention}
+### Dateinamen‑Normalisierung (Vermeidung von Duplikaten) {#filename-normalization-duplicates-prevention}
 
-Um konsistent über Plattformen hinweg zu agieren, werden Dateinamen vor Duplikatsprüfungen normalisiert:
+Um sich plattformübergreifend konsistent zu verhalten, werden Dateinamen vor Duplikatprüfungen normalisiert:
 
-- Unicode wird auf NFC normalisiert.
-- Namen werden in Groß-/Kleinbuchstaben umgewandelt (in Kleinbuchstaben).
-- Nachgestellte Punkte/Räume werden abgeschnitten (Windows-Freundlichkeit).
+- Unicode wird nach NFC normalisiert.
+- Groß-/Kleinschreibung wird vereinheitlicht (in Kleinbuchstaben umgewandelt).
+- Nachgestellte Punkte/Leerzeichen werden entfernt (Windows‑Freundlichkeit).
 
-Dies hält die Duplikaterkennung bei Namen wie `café.pdf` im Vergleich zu `café.pdf` (NFD) oder `FILE.txt.` im Vergleich zu `file.txt` vorhersehbar.
+Dies macht die Duplikaterkennung vorhersagbar für Namen wie `café.pdf` vs `café.pdf` (NFD) oder `FILE.txt.` vs `file.txt`.
 
 ---
 
 ## Bestätigungsverhalten {#confirmation-behavior}
 
-- „Standardantwort“ legt die anfänglich fokussierte Schaltfläche im Bestätigungsdialog fest (hilfreich für Tastaturbenutzer).
-- Funktioniert sowohl für „Antworten“ als auch für „Allen antworten“. „Weiterleiten“ wird von diesem Add-on nicht geändert.
+- „Standardantwort“ setzt die anfänglich fokussierte Schaltfläche im Bestätigungsdialog (hilfreich für Tastaturnutzer).
+- Gilt sowohl für „Antworten“ als auch für „Allen antworten“. „Weiterleiten“ wird von diesem Add‑on nicht verändert.
 
 ---
 
 ## Erweitert: Duplikaterkennung {#advanced-duplicate-detection}
 
-Die Duplikatvermeidung wird pro Komponierungstablette und nach Dateiname implementiert. Siehe [Benutzung](usage#behavior-details) für eine detaillierte Erklärung.
+Die Duplikatverhinderung ist pro Verfassen‑Tab und nach Dateiname implementiert. Siehe [Verwendung](usage#behavior-details) für eine ausführliche Erklärung.
 
 ---
 

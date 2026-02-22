@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Cảnh báo nếu tệp đính kèm bị loại trừ bởi danh sách đen"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Bao gồm hình ảnh nội tuyến (hình ảnh nhúng)"
+  },
   "uiDebugHeader": {
     "message": "Nâng cao"
   },

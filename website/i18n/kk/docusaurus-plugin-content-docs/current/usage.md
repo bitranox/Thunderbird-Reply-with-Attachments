@@ -1,97 +1,100 @@
 ---
 id: usage
 title: 'Пайдалану'
-sidebar_label: 'Пайдалану'
+sidebar_label: 'Қолдану'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Пайдалану {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Жауап бергенде қосымша түпнұсқаларды автоматты түрде қосады — немесе Параметрлерде қосулы болса, алдымен сұрайды.
+- Қайталанулар файл атауы бойынша жойылады; S/MIME бөліктері әрқашан өткізіп жіберіледі. Әдепкі бойынша inline суреттер жауап мәтінінде қалпына келтіріледі (Параметрлердегі "Include inline pictures" арқылы өшіруге болады).
+- Қара тізімдегі тіркемелер де өткізіп жіберіледі (регистрге тәуелсіз glob үлгілері файл атауларымен салыстырылады, жолдармен емес). Қараңыз: [Баптау](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Жауап бергенде не болады {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Жауапты анықтау → түпнұсқа тіркемелерді тізімдеу → S/MIME + inline сүзгілеу → қалауы бойынша растау → жарамды файлдарды қосу (қайталарын өткізіп жіберу) → мәтін ішінде inline суреттерді қалпына келтіру.
 
----
+Қатаң және босаң өту: Қосымша алдымен файл тіркемелерінен S/MIME және inline бөліктерін алып тастайды. Егер лайық ештеңе қалмаса, ол S/MIME/inline бөліктерін әлі де алып тастайтын, бірақ көбірек жағдайларды қабылдайтын босаң өтуді іске қосады (Кодтың егжей‑тегжейін қараңыз). Inline суреттер ешқашан файл тіркемелері ретінде қосылмайды; оның орнына "Include inline pictures" қосулы болғанда (әдепкі), олар тікелей жауап мәтінінде base64 деректер URI ретінде ендіріледі.
 
-## Behavior Details {#behavior-details}
+| Бөлік түрі                                           |                                           Қатаң өту |                                           Босаң өту |
+| ---------------------------------------------------- | --------------------------------------------------: | --------------------------------------------------: |
+| S/MIME қолтаңба файлы `smime.p7s`                    |                                 Шығарылып тасталады |                                 Шығарылып тасталады |
+| S/MIME MIME түрлері (`application/pkcs7-*`)          |                                 Шығарылып тасталады |                                 Шығарылып тасталады |
+| Content‑ID арқылы сілтенген inline сурет (`image/*`) | Шығарылып тасталады (мәтінде қалпына келтіріледі\*) | Шығарылып тасталады (мәтінде қалпына келтіріледі\*) |
+| Файл атауы бар тіркелген хат (`message/rfc822`)      |                                          Қосылмайды |                                      Қосылуы мүмкін |
+| Файл атауы бар қалыпты тіркеме                       |                                      Қосылуы мүмкін |                                      Қосылуы мүмкін |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* "Include inline pictures" қосулы болғанда (әдепкі: ҚОСУЛЫ), inline суреттер файл тіркемелері ретінде қосылмайды, оның орнына жауап мәтінінің ішінде base64 деректер URI ретінде енгізіледі. Қараңыз: [Баптау](configuration#include-inline-pictures).
+
+Мысал: Кейбір тіркемелерде белгілі бір тақырыптар болмауы мүмкін, бірақ олар әлі де қалыпты файлдар (inline/S/MIME емес). Қатаң өту ештеңе таппаса, босаң өту оларды қабылдап, тіркей алады.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Айқаспалы сілтемелер {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Алға жіберу әдейі өзгертілмейді (төмендегі Шектеулерге қараңыз).
+- Тіркеменің неге қосылмауы мүмкін себептері үшін “Тіркемелер неге қосылмауы мүмкін” бөлімін қараңыз.
 
 ---
 
-## Limitations {#limitations}
+## Мінез‑құлықтың егжей‑тегжейлері {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Қайталанудың алдын алу:** Қосымша әр қойындыға тән сессия мәнін және жадыдағы қорғағышты пайдаланып, жазу қойындысын өңделді деп белгілейді. Түпнұсқаларды екі рет қоспайды.
+- Хат жазу терезесін жауып қайта ашу жаңа қойынды ретінде қарастырылады (яғни, жаңа әрекетке рұқсат етіледі).
+- **Бар тіркемелерді ескеру:** Егер хат жазуда бұрыннан тіркемелер болса, түпнұсқалар бәрібір дәл бір рет қосылады, бар файл атаулары өткізіп жіберіледі.
+- **Шығару ережелері:** S/MIME артефактілері және inline суреттер файл тіркемелерінен алынып тасталады. Бірінші өтуде лайық ештеңе табылмаса, босаң резервтік өту S/MIME емес бөліктерді қайта тексереді. Inline суреттер бөлек өңделеді: олар жауап мәтінінде деректер URI ретінде қалпына келтіріледі (қосулы болғанда).
+  - **Файл атаулары:** `smime.p7s`
+  - **MIME түрлері:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inline суреттер:** Content‑ID арқылы сілтенген кез келген `image/*` бөлігі — файл тіркемелерінен алынып тасталады, бірақ "Include inline pictures" ҚОСУЛЫ болғанда жауап мәтінінің ішінде ендіріліп көрсетіледі
+  - **Тіркелген хаттар (`message/rfc822`):** егер файл атауы болса, кәдімгі тіркемелер ретінде қарастырылады; қосылуы мүмкін (қайталау және қара тізім тексерістеріне бағынады).
+- **Қара тізім туралы ескерту (қосулы болса):** Кандидаттар қара тізіміңізбен алынып тасталғанда,
+  қосымша сәйкес келген үлгі(лер)ді және әсер еткен файлдарды көрсететін шағын модальді терезені көрсетеді.
+  Бұл ескерту барлығы алынып тасталып, ешбір тіркеме қосылмайтын жағдайларда да пайда болады.
 
 ---
 
-See also
+## Пернетақта тіркесімдері {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Растау диалогы: Y/J = Иә, N/Esc = Жоқ; Tab/Shift+Tab және жебе пернелері фокусты айналдырып отырады.
+  - [Баптаудағы](configuration#confirmation) “Әдепкі жауап” бастапқыда фокусталатын батырманы орнатады.
+  - Enter фокустағы батырманы іске қосады. Қолжетімділік үшін Tab/Shift+Tab және жебелер фокусты жылжытады.
+
+### Пернетақта шпаргалкасы {#keyboard-cheat-sheet}
+
+| Пернелер        | Әрекет                                    |
+| --------------- | ----------------------------------------- |
+| Y / J           | Иә деп растау                             |
+| N / Esc         | Жоқ деп растау                            |
+| Enter           | Фокустағы батырманы іске қосу             |
+| Tab / Shift+Tab | Фокусты алға/артқа жылжыту                |
+| Жебе пернелері  | Батырмалар арасында фокусты жылжыту       |
+| Әдепкі жауап    | Бастапқы фокусты орнатады (Иә немесе Жоқ) |
+
+---
+
+## Шектеулер {#limitations}
+
+- Бұл қосымша Алға жіберуді өзгертпейді (Жауап беру және Барлығына жауап беру қолдау табады).
+- Өте үлкен тіркемелер Thunderbird немесе провайдер шектеулеріне бағынады.
+  - Қосымша файлдарды бөліктерге бөлмейді және қыспайды; ол Thunderbird‑тің қалыпты тіркеме өңдеуіне сүйенеді.
+- Шифрланған хаттар: S/MIME бөліктері әдейі алынып тасталады.
+
+---
+
+## Тіркемелер неге қосылмауы мүмкін {#why-attachments-might-not-be-added}
+
+- Inline суреттер файл тіркемелері ретінде қосылмайды. "Include inline pictures" ҚОСУЛЫ (әдепкі) болғанда, олар жауап мәтінінде деректер URI ретінде ендіріледі. Баптау ӨШІРУЛІ болса, inline суреттер толықтай жойылады. Қараңыз: [Баптау](configuration#include-inline-pictures).
+- S/MIME қолтаңба бөліктері әдейі алынып тасталады: `smime.p7s` сияқты файл атаулары және `application/pkcs7-signature` немесе `application/pkcs7-mime` сияқты MIME түрлері өткізіп жіберіледі.
+- Қара тізім үлгілері кандидаттарды сүзуі мүмкін: қараңыз [Баптау](configuration#blacklist-glob-patterns); сәйкестік регистрге тәуелсіз және тек файл атауы бойынша.
+- Қайталанатын файл атаулары қайта қосылмайды: егер хат жазуда бірдей нормаланған атауы бар файл болса, ол өткізіп жіберіледі.
+- Файл емес бөліктер немесе файл атауы жоқтары: тек жарамды файл атаулары бар файлға ұқсас бөліктер қосу үшін қарастырылады.
+
+---
+
+Сондай‑ақ қараңыз
+
+- [Баптау](configuration)

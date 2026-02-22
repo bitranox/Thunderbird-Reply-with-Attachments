@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Installation'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Installation via "Thunderbird Tilføjelser og temaer" {#installation-in-thunderbird-recommended}
+
+:::important Mindste Thunderbird-version
+Denne tilføjelse understøtter Thunderbird **128 ESR eller nyere**. Ældre versioner understøttes ikke.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Dette er den anbefalede installationsmetode. Tilføjelser installeret fra ATN (addons.thunderbird.net) modtager automatiske opdateringer. Lokale/dev-installationer opdateres ikke automatisk.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Mindste Thunderbird-version: 128 ESR eller nyere.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. I Thunderbird skal du gå til **Værktøjer > Tilføjelser og temaer**.
+2. Søg efter "reply with attachments".
+3. Tilføj tilføjelsen.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Eller åbn tilføjelsessiden direkte: [Thunderbird-tilføjelser (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Manuel installation fra XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Download XPI-filen {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Gå til [Thunderbird-tilføjelsessiden](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Download den seneste version af tilføjelsen som en XPI-fil (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Installer i Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Åbn Thunderbird.
+2. Gå til **Værktøjer > Tilføjelser og temaer**.
+3. I **Tilføjelsesadministratoren** skal du klikke på tandhjulsikonet øverst til højre.
+4. Vælg **Installer tilføjelse fra fil…** i menuen.
+5. Vælg den downloadede fil `reply_with_attachments-x.y.z-tb.xpi`.
+6. Bekræft installationen, når du bliver bedt om det.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Installation til udvikling {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Download repositoryet {#download-the-repository}
 
-See also
+1. Download den seneste version af GitHub-repositoryet.
+2. Kør `make help` for flere oplysninger.
 
-- [Quickstart](quickstart)
+### Installer i Thunderbird {#install-in-thunderbird-dev}
+
+1. Åbn Thunderbird.
+2. Gå til **Værktøjer > Tilføjelser og temaer**.
+3. I **Tilføjelsesadministratoren** skal du klikke på tandhjulsikonet øverst til højre.
+4. Vælg **Installer tilføjelse fra fil…** i menuen.
+5. Vælg den genererede fil `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Bekræft installationen, når du bliver bedt om det.
+
+Bemærk: Hvis Thunderbird ikke accepterer `.zip` på dit system, så omdøb den til `.xpi` og prøv “Installer tilføjelse fra fil…” igen.
+
+### Hvor finder du LOCAL-ZIP'en {#where-local-zip}
+
+- Pak først tilføjelsen: kør `make pack` i roden af repositoryet.
+- Efter pakning finder du “LOCAL”-zippen i roden af repositoryet (f.eks. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Før du pakker igen til test, skal du hæve versionerne i både `sources/manifest_ATN.json` og `sources/manifest_LOCAL.json`.
+
+---
+
+## Deaktiver, afinstaller og opdateringer {#disable-uninstall-updates}
+
+- Deaktiver: Thunderbird → Værktøjer → Tilføjelser og temaer → find tilføjelsen → slå fra.
+- Afinstaller: samme visning → trepunktsmenuen → Fjern.
+- Opdateringer: ATN-installationer opdateres automatisk, når nye versioner er godkendt. LOCAL/dev-installationer opdateres ikke automatisk; geninstaller en ny LOCAL-build manuelt.
+- Fjern indstillinger helt: se [Privatliv → Datafjernelse](privacy#data-removal).
+
+Se også
+
+- [Hurtig start](quickstart)

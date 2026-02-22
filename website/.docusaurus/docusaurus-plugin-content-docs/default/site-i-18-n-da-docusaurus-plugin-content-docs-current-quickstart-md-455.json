@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Hurtigstart",
-  "description": "Hurtigstart",
+  "title": "Hurtig start",
+  "description": "---",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Hurtigstart",
-    "sidebar_label": "Hurtigstart"
+    "title": "Hurtig start",
+    "sidebar_label": "Hurtig start"
   },
   "sidebar": "docs",
   "previous": {

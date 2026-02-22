@@ -4,94 +4,98 @@ title: 'การใช้งาน'
 sidebar_label: 'การใช้งาน'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## วิธีใช้งาน {#usage}
+
+- กดตอบกลับ แล้วส่วนเสริมจะเพิ่มไฟล์ต้นฉบับให้อัตโนมัติ — หรือจะถามยืนยันก่อน หากเปิดใช้งานไว้ในตัวเลือก
+- ป้องกันไฟล์ซ้ำตามชื่อไฟล์; ข้ามส่วน S/MIME เสมอ ภาพแทรก (inline) จะถูกกู้คืนในเนื้อความของอีเมลตอบกลับตามค่าเริ่มต้น (ปิดได้ผ่าน "Include inline pictures" ในตัวเลือก)
+- ไฟล์แนบที่อยู่ในบัญชีดำจะถูกข้ามเช่นกัน (รูปแบบ glob ที่ไม่สนตัวพิมพ์เล็ก/ใหญ่ จับคู่เฉพาะชื่อไฟล์ ไม่ใช่พาธ) ดู [การตั้งค่า](configuration#blacklist-glob-patterns)
 
 ---
 
-### What happens on reply {#what-happens}
+### สิ่งที่เกิดขึ้นเมื่อกดตอบกลับ {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- ตรวจจับการตอบกลับ → แสดงรายการไฟล์แนบต้นฉบับ → กรอง S/MIME + inline → ยืนยัน (ถ้ามี) → เพิ่มไฟล์ที่เข้าเกณฑ์ (ข้ามไฟล์ซ้ำ) → กู้คืนภาพแบบ inline ในเนื้อความ
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+รอบแบบเข้มงวดเทียบกับแบบผ่อนคลาย: ส่วนเสริมจะตัดส่วน S/MIME และ inline ออกจากไฟล์แนบก่อน หากไม่มีอะไรเข้าเกณฑ์ จะรันรอบแบบผ่อนคลายที่ยังคงตัด S/MIME/inline แต่ยอมรับกรณีได้มากขึ้น (ดูรายละเอียดโค้ด) ภาพแบบ inline จะไม่มีวันถูกเพิ่มเป็นไฟล์แนบ; แทนที่จะเป็นเช่นนั้น เมื่อเปิด "Include inline pictures" (ค่าเริ่มต้น) ภาพจะถูกฝังลงในเนื้อความของการตอบกลับโดยตรงเป็น base64 data URI
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Part type                                           |                  Strict pass |                 Relaxed pass |
+| --------------------------------------------------- | ---------------------------: | ---------------------------: |
+| ไฟล์ลายเซ็น S/MIME `smime.p7s`                      |                       ไม่รวม |                       ไม่รวม |
+| ชนิด MIME ของ S/MIME (`application/pkcs7-*`)        |                       ไม่รวม |                       ไม่รวม |
+| ภาพแบบ inline ที่อ้างอิงด้วย Content‑ID (`image/*`) | ไม่รวม (กู้คืนในเนื้อความ\*) | ไม่รวม (กู้คืนในเนื้อความ\*) |
+| อีเมลแนบ (`message/rfc822`) ที่มีชื่อไฟล์           |                  ไม่ถูกเพิ่ม |                  อาจถูกเพิ่ม |
+| ไฟล์แนบทั่วไปที่มีชื่อไฟล์                          |                  อาจถูกเพิ่ม |                  อาจถูกเพิ่ม |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* เมื่อ "Include inline pictures" เปิดอยู่ (ค่าเริ่มต้น: เปิด) ภาพแบบ inline จะถูกฝังในเนื้อความของการตอบกลับเป็น base64 data URI แทนการเพิ่มเป็นไฟล์แนบ ดู [การตั้งค่า](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+ตัวอย่าง: ไฟล์แนบบางรายการอาจไม่มีส่วนหัวบางชนิด แต่ยังคงเป็นไฟล์ปกติ (ไม่ใช่ inline/S/MIME) หากรอบแบบเข้มงวดไม่พบอะไร รอบแบบผ่อนคลายอาจยอมรับและแนบไฟล์เหล่านั้น
 
 ---
 
-## Behavior Details {#behavior-details}
+### การอ้างอิงข้าม {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- การส่งต่อ (Forward) จะไม่ถูกแก้ไขโดยตั้งใจไว้ (ดูข้อจำกัดด้านล่าง)
+- สำหรับเหตุผลที่อาจไม่ได้เพิ่มไฟล์แนบ ดู “เหตุใดไฟล์แนบอาจไม่ได้ถูกเพิ่ม”
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## รายละเอียดพฤติกรรมการทำงาน {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **การป้องกันความซ้ำ:** ส่วนเสริมจะทำเครื่องหมายแท็บเขียนอีเมลว่าได้ประมวลผลแล้ว โดยใช้ค่าซเซสชันต่อแท็บและตัวป้องกันในหน่วยความจำ จึงจะไม่เพิ่มไฟล์ต้นฉบับซ้ำสองครั้ง
+- การปิดและเปิดหน้าต่างเขียนอีเมลใหม่จะถือเป็นแท็บใหม่ (กล่าวคือ อนุญาตให้พยายามใหม่ได้)
+- **เคารพไฟล์แนบที่มีอยู่:** หากในหน้าต่างเขียนอีเมลมีไฟล์แนบอยู่แล้ว ระบบยังคงเพิ่มไฟล์ต้นฉบับเพียงหนึ่งครั้ง โดยข้ามชื่อไฟล์ที่มีอยู่แล้ว
+- **การยกเว้น:** ส่วนของ S/MIME และภาพแบบ inline จะถูกยกเว้นไม่ให้อยู่ในไฟล์แนบ หากรอบแรกไม่พบสิ่งที่เข้าเกณฑ์ จะมีการตรวจทานซ้ำแบบผ่อนคลายสำหรับส่วนที่ไม่ใช่ S/MIME ภาพแบบ inline จัดการแยกต่างหาก: จะถูกกู้คืนในเนื้อความของการตอบกลับเป็น data URI (เมื่อเปิดใช้งาน)
+  - **ชื่อไฟล์:** `smime.p7s`
+  - **ชนิด MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ภาพแบบ inline:** ส่วน `image/*` ใด ๆ ที่อ้างอิงด้วย Content‑ID — จะถูกยกเว้นจากไฟล์แนบ แต่ฝังในเนื้อความของการตอบกลับเมื่อ "Include inline pictures" เปิดอยู่
+  - **อีเมลที่แนบมา (`message/rfc822`):** จะถือเป็นไฟล์แนบปกติหากมีชื่อไฟล์; อาจถูกเพิ่ม (ขึ้นกับการตรวจสอบความซ้ำและบัญชีดำ)
+- **คำเตือนบัญชีดำ (หากเปิดใช้งาน):** เมื่อผู้เข้าข่ายถูกยกเว้นโดยบัญชีดำของคุณ,
+  ส่วนเสริมจะแสดงโมดัลขนาดเล็กพร้อมรายการไฟล์ที่ได้รับผลกระทบและรูปแบบ
+  ที่ตรงกัน คำเตือนนี้จะปรากฏขึ้นในกรณีที่ไม่มีไฟล์แนบใด ๆ ถูกเพิ่ม
+  เพราะทุกอย่างถูกยกเว้นไปแล้ว
 
 ---
 
-## Limitations {#limitations}
+## ปุ่มลัดแป้นพิมพ์ {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- กล่องยืนยัน: Y/J = ตกลง, N/Esc = ไม่; Tab/Shift+Tab และปุ่มลูกศรใช้เลื่อนโฟกัสวน
+  - ค่า “Default answer” ใน [การตั้งค่า](configuration#confirmation) กำหนดปุ่มที่โฟกัสเริ่มต้น
+  - ปุ่ม Enter สั่งกดปุ่มที่โฟกัสอยู่ Tab/Shift+Tab และปุ่มลูกศรใช้ย้ายโฟกัสเพื่อการเข้าถึง
+
+### สรุปปุ่มลัด {#keyboard-cheat-sheet}
+
+| คีย์            | การทำงาน                           |
+| --------------- | ---------------------------------- |
+| Y / J           | ยืนยัน ตกลง                        |
+| N / Esc         | ยืนยัน ไม่                         |
+| Enter           | สั่งปุ่มที่โฟกัส                   |
+| Tab / Shift+Tab | เลื่อนโฟกัสไปข้างหน้า/ย้อนกลับ     |
+| ปุ่มลูกศร       | เลื่อนโฟกัสระหว่างปุ่ม             |
+| คำตอบเริ่มต้น   | ตั้งค่าโฟกัสเริ่มต้น (ตกลงหรือไม่) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ข้อจำกัด {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- การส่งต่อ (Forward) ไม่ถูกแก้ไขโดยส่วนเสริมนี้ (รองรับ Reply และ Reply all)
+- ไฟล์แนบที่มีขนาดใหญ่มากอาจถูกจำกัดโดย Thunderbird หรือผู้ให้บริการ
+  - ส่วนเสริมไม่แบ่งชิ้นหรือบีบอัดไฟล์; อาศัยการจัดการไฟล์แนบปกติของ Thunderbird
+- ข้อความที่เข้ารหัส: ส่วนของ S/MIME ถูกยกเว้นโดยตั้งใจ
 
 ---
 
-See also
+## เหตุใดอาจไม่ได้เพิ่มไฟล์แนบ {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- ภาพแบบ inline จะไม่ถูกเพิ่มเป็นไฟล์แนบ เมื่อ "Include inline pictures" เปิดอยู่ (ค่าเริ่มต้น) ภาพจะถูกฝังในเนื้อความของการตอบกลับเป็น data URI แทน หากตั้งค่านี้ปิด ภาพแบบ inline จะถูกลบออกทั้งหมด ดู [การตั้งค่า](configuration#include-inline-pictures)
+- ส่วนลายเซ็น S/MIME ถูกยกเว้นตามการออกแบบ: ชื่อไฟล์เช่น `smime.p7s` และชนิด MIME เช่น `application/pkcs7-signature` หรือ `application/pkcs7-mime` จะถูกข้าม
+- รูปแบบบัญชีดำสามารถคัดกรองผู้เข้าข่ายได้: ดู [การตั้งค่า](configuration#blacklist-glob-patterns); การจับคู่ไม่สนตัวพิมพ์เล็ก/ใหญ่ และดูเฉพาะชื่อไฟล์
+- จะไม่เพิ่มชื่อไฟล์ที่ซ้ำอีกครั้ง: หากหน้าต่างเขียนอีเมลมีไฟล์ที่มีชื่อที่ถูกทำให้เป็นมาตรฐานเหมือนกันอยู่ จะถูกข้าม
+- ส่วนที่ไม่ใช่ไฟล์หรือไม่มีชื่อไฟล์: จะพิจารณาเฉพาะส่วนที่มีลักษณะเป็นไฟล์และมีชื่อไฟล์ที่ใช้ได้เท่านั้นในการเพิ่ม
+
+---
+
+ดูเพิ่มเติม
+
+- [การตั้งค่า](configuration)

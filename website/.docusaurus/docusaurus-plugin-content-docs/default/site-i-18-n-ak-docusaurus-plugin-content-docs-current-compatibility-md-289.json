@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Nkabom",
-  "description": "Compatibility",
+  "title": "Fata",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Nkabom",
-    "sidebar_label": "Nkabom"
+    "title": "Fata",
+    "sidebar_label": "Fata"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mmomma",
+    "title": "Sɛnea wɔde di dwuma",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/usage"
   },
   "next": {

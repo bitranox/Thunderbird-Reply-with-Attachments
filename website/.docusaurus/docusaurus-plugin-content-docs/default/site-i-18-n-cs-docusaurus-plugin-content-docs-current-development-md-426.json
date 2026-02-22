@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Vývoj",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/cs/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

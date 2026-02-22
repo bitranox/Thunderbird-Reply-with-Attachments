@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'เริ่มต้นอย่างรวดเร็ว'
+title: 'เริ่มต้นใช้งานอย่างรวดเร็ว'
 sidebar_label: 'เริ่มต้นอย่างรวดเร็ว'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## เริ่มต้นอย่างรวดเร็ว
+
+:::important เวอร์ชัน Thunderbird ขั้นต่ำ
+ส่วนเสริมนี้รองรับ Thunderbird **128 ESR หรือใหม่กว่า** ไม่รองรับเวอร์ชันที่เก่ากว่า
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note ไม่มีเทเลเมทรี; ไม่มีเครือข่ายเบื้องหลัง
+ส่วนเสริมนี้จะไม่เก็บข้อมูลการวิเคราะห์/เทเลเมทรี และจะไม่มีการร้องขอเครือข่ายเบื้องหลัง การเข้าถึงเครือข่ายจะเกิดขึ้นก็ต่อเมื่อคุณคลิกลิงก์ภายนอกเท่านั้น (เอกสาร, GitHub, บริจาค)
 :::
 
 ---
 
-### Install
+### ติดตั้ง
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. ติดตั้งส่วนเสริมจาก Thunderbird Add‑ons.
+2. ตัวเลือกเพิ่มเติม: เปิดการยืนยัน (ตัวเลือก → “ถามก่อนเพิ่มไฟล์แนบ”).
+3. ตัวเลือกเพิ่มเติม: เปิดการเตือนบัญชีดำไว้ (ค่าเริ่มต้น): “เตือนหากไฟล์แนบถูกยกเว้นโดยบัญชีดำ”.
+4. ตัวเลือกเพิ่มเติม: เพิ่มรูปแบบบัญชีดำ (หนึ่งต่อบรรทัด) เช่น:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+หมายเหตุ: “# …” ข้างต้นเป็นคอมเมนต์ในเอกสารนี้; อย่าใส่คอมเมนต์ในรูปแบบที่คุณวางในตัวเลือก ให้ใส่หนึ่งรูปแบบต่อบรรทัดเท่านั้น
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ตอนนี้ให้ตอบกลับอีเมลที่มีไฟล์แนบ — ไฟล์แนบต้นฉบับจะถูกเพิ่มโดยอัตโนมัติ หรือหลังจากยืนยันอย่างรวดเร็ว หากมีไฟล์ใดถูกยกเว้นโดยบัญชีดำของคุณ คุณจะเห็นคำเตือนสั้น ๆ ที่แสดงรายการไฟล์เหล่านั้น
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### ตรวจสอบ {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- ตอบกลับข้อความที่มีไฟล์แนบ 1–2 ไฟล์ และยืนยันว่าไฟล์ต้นฉบับถูกเพิ่มในหน้าต่างเขียนของคุณ
+- หากต้องการปรับพฤติกรรม ให้ดู [การกำหนดค่า](configuration) (ตัวสลับการยืนยัน, คำตอบเริ่มต้น, รูปแบบบัญชีดำ)
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ตรวจสอบคำเตือนบัญชีดำ {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- ตอบกลับข้อความที่มีไฟล์อย่าง “secret.txt”.
+- เมื่อเปิด “เตือนหากไฟล์แนบถูกยกเว้นโดยบัญชีดำ” ไดอะล็อกเล็ก ๆ จะแสดงรายการไฟล์ที่ถูกยกเว้นและรูปแบบที่ตรงกัน
+
+หากคุณไม่เห็นคำเตือน ให้ตรวจสอบว่ารูปแบบตรงกับชื่อไฟล์อย่างถูกต้อง (เฉพาะชื่อไฟล์, ไม่แยกตัวพิมพ์ใหญ่‑เล็ก) ดู การกำหนดค่า → บัญชีดำ
+
+---
+
+### หมายเหตุเกี่ยวกับแป้นพิมพ์ {#keyboard-note}
+
+- กล่องยืนยันรองรับ Y/J สำหรับ Yes และ N/Esc สำหรับ No บนแป้นพิมพ์ที่ไม่ใช่ละตินบางแบบ ปุ่มตัวอักษรอาจแตกต่างกัน; ปุ่ม Enter จะยืนยันปุ่มที่โฟกัสอยู่
 
 ---

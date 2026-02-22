@@ -4,31 +4,40 @@ title: 'Iespējas'
 sidebar_label: 'Iespējas'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Iespējas {#features}
 
-## How It Works {#how-it-works}
+- Automātiski pievieno failus no sākotnējā e-pasta, atbildot.
+- Konfigurējama darbība: pielikumus var
+  - pievienot automātiski, vai
+  - pievienot tikai pēc apstiprinājuma (mazs, pieejams dialoglodziņš). Opcijās
+    varat ieslēgt apstiprinājumu un izvēlēties noklusējuma atbildi (Jā/Nē).
+- Failu nosaukumu melnais saraksts (glob paraugi) neļauj konkrētus failus
+  pievienot automātiski. Piemēri: `*intern*`, `*secret*`, `*passwor*`.
+  Atbilstība nav reģistrjutīga un pārbauda tikai faila nosaukumu; Opcijās norādiet vienu
+  paraugu katrā rindā.
+- Brīdinājums par melno sarakstu (neobligāts, pēc noklusējuma ieslēgts): kad faili tiek
+  izslēgti jūsu melnā saraksta dēļ, neliels modālais logs uzskaita failu un atbilstošo(-s) paraugu(-s). Draudzīgs
+  tumšajam režīmam un pieejams ar tastatūru (Enter/Esc, lai aizvērtu).
+- Darbojas ar Atbildēt un Atbildēt visiem. Pārsūtīšanu šis papildinājums nemaina.
+- Pievieno oriģinālos failus pat tad, ja jau kaut ko pievienojāt paši; izvairās no dublikātiem pēc faila nosaukuma.
+- Aizsardzība pret dublikātiem katrā cilnē novērš dubultu pievienošanu tajā pašā sastādīšanas cilnē.
+- Pēc noklusējuma izlaiž S/MIME sertifikātus, lai izvairītos no liekiem pielikumiem.
+- Iekļaut iebūvētos attēlus (pēc noklusējuma: IESLĒGTS). Iegultie attēli tiek atjaunoti tieši
+  atbildes pamattekstā kā base64 datu URI, saglabājot sākotnējo iebūvēto izkārtojumu. Atspējojiet
+  Opcijās, lai pilnībā izlaistu iebūvētos attēlus.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Kā tas darbojas {#how-it-works}
+
+- Veidojot atbildi, papildinājums uzskaita oriģinālos pielikumus.
+- No failu pielikumiem atfiltrē S/MIME parakstus; iebūvētie attēli tiek atjaunoti pamattekstā (ja vien nav atspējots).
+- Pēc izvēles pieprasa apstiprinājumu (draudzīgs tastatūrai).
+- Pievieno atbilstošos failus jūsu rakstīšanas logam, izvairoties no dublikātiem pēc faila nosaukuma.
+- Skatiet sadaļā “Kāpēc pielikumi var netikt pievienoti” Lietošanā par netipiskiem gadījumiem.
+
+Privātuma piezīme: viss apstrādes process notiek lokāli programmā Thunderbird. Papildinājums neveic nekādus fona tīkla pieprasījumus.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Kompatibilitas",
-  "description": "Compatibility",
+  "title": "Kasaluyuan",
+  "description": "---",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Kompatibilitas",
-    "sidebar_label": "Kompatibilitas"
+    "title": "Kasaluyuan",
+    "sidebar_label": "Kacocokan"
   },
   "sidebar": "docs",
   "previous": {

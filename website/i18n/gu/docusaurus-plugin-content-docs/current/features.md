@@ -4,31 +4,40 @@ title: 'વિશેષતાઓ'
 sidebar_label: 'વિશેષતાઓ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## વિશેષતાઓ {#features}
 
-## How It Works {#how-it-works}
+- જવાબ આપતી વખતે મૂળ ઇમેઇલમાંથી ફાઇલો આપમેળે જોડે છે.
+- કન્ફિગર કરી શકાય એવું વર્તન: સંલગ્નો થઈ શકે છે
+  - આપમેળે ઉમેરાય, અથવા
+  - ફક્ત પુષ્ટિ પછી ઉમેરાય (નાનું, સુલભ સંવાદબોક્સ). Options માં તમે
+    પુષ્ટિને સક્રિય કરી શકો છો અને મૂળભૂત જવાબ (Yes/No) પસંદ કરી શકો છો.
+- ફાઇલનામોની બ્લૅકલિસ્ટ (glob પેટર્ન) ચોક્કસ ફાઇલોને
+  આપમેળે જોડાતા અટકાવે છે. ઉદાહરણ: `*intern*`, `*secret*`, `*passwor*`.
+  મેચિંગ મોટા/નાના અક્ષરોનો ભેદ રાખ્યા વગર છે અને ફક્ત ફાઇલનામ ચેક કરે છે; Options માં
+  દર પંક્તિએ એક પેટર્ન આપો.
+- બ્લૅકલિસ્ટ ચેતવણી (વૈકલ્પિક, મૂળભૂત રીતે સક્રિય): જ્યારે તમારી
+  બ્લૅકલિસ્ટને કારણે ફાઇલો બહાર રાખાય છે, ત્યારે નાનું મોડલ ફાઇલ અને મેળ ખાતા પેટર્ન(ઓ) સૂચિબદ્ધ કરે છે. ડાર્ક‑મોડ
+  માટે અનુકૂળ અને કીબોર્ડથી સુલભ (બંધ કરવા Enter/Esc).
+- Reply અને Reply all સાથે કાર્ય કરે છે. આ ઍડ‑ઑન Forward ને બદલતું નથી.
+- તમે પહેલેથી જ કંઈક જોડ્યું હોય તો પણ મૂળ સંલગ્નો ઉમેરે છે; ફાઇલનામ આધારે નકલોથી બચે છે.
+- પ્રતિ‑ટૅબ ડુપ્લિકેટ ગાર્ડ એ જ compose ટૅબમાં બે વખત ઉમેરાવવાનું અટકાવે છે.
+- અનાવશ્યક સંલગ્નો ટાળવા માટે મૂળભૂત રીતે S/MIME પ્રમાણપત્રોને સ્કિપ કરે છે.
+- ઇનલાઇન છબીઓ શામેલ કરો (મૂળભૂત: ON). એમ્બેડેડ છબીઓ સીધા
+  જવાબના બોડીમાં base64 ડેટા URI તરીકે પુનઃસ્થાપિત થાય છે, મૂળ ઇનલાઇન લેઆઉટ જાળવી. Options માં
+  ઇનલાઇન છબીઓને સંપૂર્ણપણે સ્કિપ કરવા નિષ્ક્રિય કરો.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## તે કેવી રીતે કામ કરે છે {#how-it-works}
+
+- જવાબ આપતા, ઍડ‑ઑન મૂળ સંલગ્નોની યાદી બતાવે છે.
+- ફાઇલ સંલગ્નોમાંથી S/MIME સહીને ફિલ્ટર કરીને કાઢી આપે છે; ઇનલાઇન છબીઓ બોડીમાં પુનઃસ્થાપિત થાય છે (જો નિષ્ક્રિય ન હોય તો).
+- વૈકલ્પિક રીતે પુષ્ટિ માંગે છે (કીબોર્ડ‑મૈત્રીપૂર્ણ).
+- ફાઇલનામ આધારે નકલોને ટાળતાં, પાત્ર ફાઇલોને તમારા compose માં ઉમેરે છે.
+- કિનારી કિસ્સાઓ માટે Usage માં “શા માટે સંલગ્નો ઉમેરાયા ન હોઈ શકે” જુઓ.
+
+ગોપનીયતા નોંધ: બધી પ્રક્રિયા Thunderbird માં સ્થાનિક રીતે થાય છે. ઍડ‑ઑન કોઈ બૅકગ્રાઉન્ડ નેટવર્ક વિનંતીઓ કરતું નથી.
+
+---

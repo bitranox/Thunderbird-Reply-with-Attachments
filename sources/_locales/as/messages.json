@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ব্লেকলিষ্টৰ বাবে এটাচমেণ্টসমূহ বাদ পৰিলে সতৰ্ক কৰক"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ইনলাইন ছবি অন্তৰ্ভুক্ত কৰক (সন্নিবিষ্ট ছবি)"
+  },
   "uiDebugHeader": {
     "message": "উন্নত"
   },

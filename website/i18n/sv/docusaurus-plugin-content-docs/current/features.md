@@ -4,31 +4,40 @@ title: 'Funktioner'
 sidebar_label: 'Funktioner'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funktioner {#features}
 
-## How It Works {#how-it-works}
+- Bifogar automatiskt filer från det ursprungliga e-postmeddelandet när du svarar.
+- Konfigurerbart beteende: bilagor kan
+  - läggas till automatiskt, eller
+  - läggas till först efter bekräftelse (en liten, tillgänglig dialogruta). I Alternativ kan du
+    aktivera bekräftelsen och välja standardsvaret (Ja/Nej).
+- Svartlista över filnamn (glob‑mönster) förhindrar att specifika filer
+  bifogas automatiskt. Exempel: `*intern*`, `*secret*`, `*passwor*`.
+  Matchningen är skiftlägesokänslig och kontrollerar bara filnamnet; ange ett mönster
+  per rad i Alternativ.
+- Varning för svartlista (valfritt, aktiverat som standard): när filer utesluts av din
+  svartlista visar en liten modal filen och det/de matchande mönstret/mönstren. Kompatibel med mörkt läge
+  och tangentbordsvänlig (Enter/Esc för att stänga).
+- Fungerar med Svara och Svara alla. Vidarebefordra ändras inte av detta tillägg.
+- Lägger till original även om du redan bifogat något själv; undviker dubbletter baserat på filnamn.
+- Skydd mot dubbletter per flik förhindrar att samma sak läggs till två gånger i samma komponeringsflik.
+- Hoppar över S/MIME‑certifikat som standard för att undvika onödiga bilagor.
+- Inkludera inline‑bilder (standard: PÅ). Inbäddade bilder återställs direkt i
+  svarstexten som base64‑data‑URI:er, vilket bevarar den ursprungliga inline‑layouten. Inaktivera i
+  Alternativ för att helt hoppa över inline‑bilder.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Så fungerar det {#how-it-works}
+
+- Vid svar listar tillägget ursprungliga bilagor.
+- Filtrerar bort S/MIME‑signaturer från filbilagor; inline‑bilder återställs i brödtexten (om det inte är inaktiverat).
+- Frågar vid behov om bekräftelse (tangentbordsvänligt).
+- Lägger till berättigade filer i ditt meddelande och undviker dubbletter baserat på filnamn.
+- Se ”Varför bilagor kanske inte läggs till” i Användning för specialfall.
+
+Integritetsnotis: All bearbetning sker lokalt i Thunderbird. Tillägget gör inga nätverksförfrågningar i bakgrunden.
+
+---

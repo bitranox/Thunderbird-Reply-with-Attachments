@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Heke pêvek bi lîsteya reş ve hatine derxistin, hişyar bike"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Wêneyên hundurîn têxe (wêneyên veşartî)"
+  },
   "uiDebugHeader": {
     "message": "Pêşketî"
   },

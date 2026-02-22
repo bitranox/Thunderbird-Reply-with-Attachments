@@ -4,24 +4,26 @@ title: 'شروع سریع'
 sidebar_label: 'شروع سریع'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## شروع سریع
+
+:::important حداقل نسخهٔ Thunderbird
+این افزونه از Thunderbird **128 ESR یا جدیدتر** پشتیبانی می‌کند. نسخه‌های قدیمی پشتیبانی نمی‌شوند.
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note بدون تله‌متری؛ بدون شبکهٔ پس‌زمینه
+این افزونه هیچ تحلیلی/تله‌متری جمع‌آوری نمی‌کند و هیچ درخواست شبکه‌ای در پس‌زمینه انجام نمی‌دهد. دسترسی شبکه فقط زمانی رخ می‌دهد که روی پیوندهای خارجی کلیک کنید (Docs، GitHub، Donate).
 :::
 
 ---
 
-### Install
+### نصب
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. افزونه را از Thunderbird Add‑ons نصب کنید.
+2. اختیاری: تأیید را فعال کنید (Options → “Ask before adding attachments”).
+3. اختیاری: هشدار فهرست سیاه را فعال نگه دارید (پیش‌فرض): “Warn if attachments are excluded by blacklist”.
+4. اختیاری: الگوهای فهرست سیاه را اضافه کنید (هر خط یک مورد)، مثلاً:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+توجه: “# …” در بالا یک توضیح در این مستندات است؛ در الگوهایی که در Options جای‌گذاری می‌کنید، توضیح قرار ندهید. فقط هر خط یک الگو وارد کنید.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+اکنون به پیامی با پیوست‌ها پاسخ دهید — نسخه‌های اصلی به‌صورت خودکار یا پس از یک تأیید سریع افزوده می‌شوند. اگر هر فایلی توسط فهرست سیاه شما مستثنا شود، یک هشدار کوتاه شامل فهرست آن‌ها خواهید دید.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### بررسی {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- به پیامی با ۱–۲ پیوست پاسخ دهید و مطمئن شوید نسخه‌های اصلی به پنجرهٔ نوشتن شما افزوده شده‌اند.
+- برای تنظیم رفتار، به [پیکربندی](configuration) مراجعه کنید (سوییچ تأیید، پاسخ پیش‌فرض، الگوهای فهرست سیاه).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### بررسی هشدار فهرست سیاه {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- به پیامی که فایلی مانند “secret.txt” دارد پاسخ دهید.
+- با فعال بودن “Warn if attachments are excluded by blacklist”، یک پنجرهٔ محاوره‌ای کوچک فایل‌های مستثنا و الگوی مطابق را فهرست می‌کند.
+
+اگر هشداری نمی‌بینید، مطمئن شوید الگو دقیقاً با نام فایل مطابقت دارد (فقط نام فایل، بدون حساسیت به حروف بزرگ/کوچک). ببینید Configuration → Blacklist.
+
+---
+
+### یادداشت صفحه‌کلید {#keyboard-note}
+
+- پنجرهٔ تأیید از Y/J برای Yes و N/Esc برای No پشتیبانی می‌کند. در برخی صفحه‌کلیدهای غیرلاتین، کلیدهای حرفی ممکن است متفاوت باشند؛ Enter دکمهٔ در فوکوس را تأیید می‌کند.
 
 ---

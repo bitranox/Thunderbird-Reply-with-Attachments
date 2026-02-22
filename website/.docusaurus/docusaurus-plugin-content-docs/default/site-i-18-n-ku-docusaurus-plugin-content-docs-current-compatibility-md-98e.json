@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Bermalî",
-  "description": "Compatibility",
+  "title": "Lihevhatî",
+  "description": "---",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Bermalî",
-    "sidebar_label": "Bermalî"
+    "title": "Lihevhatî",
+    "sidebar_label": "Lihevbûn"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Bikarhênan",
+    "title": "Bikaranîn",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/usage"
   },
   "next": {

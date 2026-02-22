@@ -4,31 +4,33 @@ title: 'خصوصیات'
 sidebar_label: 'خصوصیات'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## خصوصیات {#features}
 
-## How It Works {#how-it-works}
+- جواب دِنہ ؤخت، اصل ایمیل ہِند فایلاہ خود بخود منسلک گژھان۔
+- ترتیب بنایوٚن لایق برتاو: منسلکات ہیکو
+  - خود بخود شامل کَرن، یا
+  - صرف تصدیق پتْہ شامل کَرن (اکھ چھوٹ، قابلِ رسائی ڈایلاگ)۔ Options منز توہیہ تصدیق فعال کَریو تِہ ڈیفالٹ جواب (Yes/No) پسند کَریو۔
+- فائل ناوان ہُند بلیک لِسٹ (glob پیٹرنز) مخصوص فایلاہ خود بخود منسلک بنٲونُک روکتھ۔ مثال: `*intern*`, `*secret*`, `*passwor*`۔
+  میچ کرنا چھ کیس‑اِن سینسِٹو تِہ صرف فائل ناو ہی چک گژھان؛ Options منز ہر لائن پیٹھ اکھ پیٹرن دیو۔
+- بلیک لِسٹ وارنِگ (اختیاری، ڈیفالٹ مُطابق فعال): یِمۍ ؤخت فایلاہ توہند بلیک لِسٹ سِتھ کڈیتھ، اکھ چھوٹ موڈل فائل تِہ میل کھاون وٕلان پیٹرن(س) لسٹ کران۔ ڈارک‑موڈ موافق تِہ کی بورڈ قابلِ رسائی (Enter/Esc سِتھ بند کَرن)۔
+- Reply تِہ Reply all سِتھ کٲم کران۔ Forward چھ نِہ یہ ایڈ‑آن تبدیل کران۔
+- اصل فایلاہ اضافہ گژھان یِمۍ پیٹھ اگر توہیہ کُنہہ چیز خود منسلک کَریتھ؛ فائل ناو مُطابق ڈوپلیکٹ سِتھ بچاون۔
+- ہر‑ٹیب ڈوپلیکٹ گارڈ یکساں کمپوز ٹیب منز دوہرا‑شامل کَرنہ سِتھ روکتھ۔
+- غیر ضروری منسلکات سِتھ بچاونہ خٲطرہ، ڈیفالٹ مُطابق S/MIME سرٹیفیکیٹ چھوڑان۔
+- اِن لائن تصویراں شامل کَرن (ڈیفالٹ: ON)۔ ایمبیڈڈ تصویراں جواب ہِند باڈی منز سِدھا base64 data URIs ہند رٔوپہ بحال گژھان، اصل اِن لائن لےآؤٹ محفوظ رکھان۔ Options منز Disable کَریو یوان اِن لائن تصویراں مکمل طور چھوڑن خٲطرہ۔
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## یہ چھِ کئنِہ کٲم کران {#how-it-works}
+
+- جواب دِنہ ؤخت، ایڈ‑آن اصل منسلکات لسٹ کران۔
+- فائل منسلکات منز یِتہ S/MIME دستخط چھ، تِم فلٹر کَران؛ اِن لائن تصویراں باڈی منز بحال گژھان (یَتھ ؤنہٕ غیر فعال نِہ کرنموٚت)۔
+- اختیاری طور تصدیق پُچھان (کی بورڈ دوستانہ)۔
+- اہلیت والِہ فایلاہ توہند کمپوز منز شامل گژھان، فائل ناو مُطابق ڈوپلیکٹ سِتھ بچاون۔
+- نایاب کیسن خٲطرہ Usage منز “کیازِ منسلکات ممکن چھ نِہہ شامل گژھان” دِژھِو۔
+
+رازداری نوٹ: تمام پروسیسنگ مقامی طور Thunderbird منز گژھان۔ ایڈ‑آن چھ پس منظرہ منز کینہہ نیٹ ورک درخواست نِہہ بنٲوان۔
+
+---

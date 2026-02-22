@@ -1,297 +1,299 @@
 ---
 id: development
 title: 'Maendeleo'
-sidebar_label: 'Maendeleo'
+sidebar_label: 'Uendelezaji'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Mwongozo wa Maendeleo {#development-guide}
+
+:::note Hariri Kiingereza pekee; tafsiri huenea
+Sasisha nyaraka **tu** chini ya `website/docs` (Kiingereza). Tafsiri chini ya `website/i18n/<locale>/…` zinatengenezwa kiotomatiki na hazipaswi kuhaririwa kwa mkono. Tumia kazi za tafsiri (km., `make translate_web_docs_batch`) kusasisha maudhui yaliyolokeshwa.
 :::
 
-### Prerequisites {#prerequisites}
+### Mahitaji ya Awali {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ na npm (imejaribiwa na Node 22)
+- Thunderbird 128 ESR au mpya zaidi (kwa majaribio ya mikono)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Muundo wa Mradi (kiwango cha juu) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Mzizi: hati ya kufungasha `distribution_zip_packer.sh`, nyaraka, picha za skrini
+- `sources/`: msimbo mkuu wa kiendelezi (background, UI ya chaguo/dirisha dogo, manifesti, ikoni)
+- `tests/`: suite ya Vitest
+- `website/`: nyaraka za Docusaurus (zikiwa na i18n chini ya `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Usakinishaji na Zana {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Sakinisha utegemezi za mzizi: `npm ci`
+- Nyaraka (hiari): `cd website && npm ci`
+- Gundua malengo: `make help`
+
+---
+
+### Uendelezaji Hai (web‑ext run) {#live-dev-web-ext}
+
+- Mzunguko wa haraka kwenye Firefox Desktop (majaribio mepesi ya UI tu):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Endesha ndani ya Thunderbird (inapendekezwa kwa MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Vidokezo:
+- Weka Konsoli ya Hitilafu ya Thunderbird wazi (Zana → Zana za Wasanidi → Konsoli ya Hitilafu).
+- Kurasa za matukio za MV3 husitishwa zinapokuwa hazitumiki; pakia upya kiendelezi baada ya mabadiliko ya msimbo, au uruhusu web‑ext kupakia upya kiotomatiki.
+- Tabia fulani za pekee za Firefox hutofautiana; hakikisha kila mara kwenye Thunderbird kwa ulinganifu wa API.
+- Njia za programi ya Thunderbird (mifano):
+- Linux: `thunderbird` (km., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Kutenganisha profaili: Tumia profaili tofauti ya Thunderbird kwa maendeleo ili kuepuka kuathiri usanidi wako wa kila siku.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Malengo ya Make (kwa mpangilio wa alfabeti) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile husanifisha mikondo ya kawaida ya maendeleo. Endesha `make help` wakati wowote kupata muhtasari wa mstari mmoja wa kila lengo.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Dokezo: kuendesha `make` bila lengo hufungua menyu rahisi ya Whiptail kuchagua lengo.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Lengo                                                    | Maelezo ya mstari mmoja                                                                                                      |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Ondoa mabaki ya ujenzi/prevyuu ya ndani (tmp/, web-local-preview/, website/build/).                                          |
+| [`commit`](#mt-commit)                                   | Fomati, endesha majaribio (ikiwemo i18n), sasisha changelog, fanya commit na push.                                           |
+| [`eslint`](#mt-eslint)                                   | Endesha ESLint kupitia usanidi tambarare (`npm run -s lint:eslint`).                                                         |
+| [`help`](#mt-help)                                       | Orodhesha malengo yote pamoja na maelezo ya mstari mmoja (yamepangwa).                                                       |
+| [`lint`](#mt-lint)                                       | web‑ext lint kwenye `sources/` (manifest ya muda; hupuuza ZIP; si ya kufeli).                                                |
+| [`menu`](#mt-menu)                                       | Menyu shirikishi kuchagua lengo na hoja za hiari.                                                                            |
+| [`pack`](#mt-pack)                                       | Jenga ZIP za ATN na LOCAL (huendesha linter; huita hati ya kufunga).                                                         |
+| [`prettier`](#mt-prettier)                               | Fomati hazina mahali pake ndani ya repo (huandika mabadiliko).                                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier katika hali ya ukaguzi (bila uandishi); hufeli ikiwa inahitaji kurekebisha umbizo.                                  |
+| [`prettier_write`](#mt-prettier_write)                   | Kisawe cha `prettier`.                                                                                                       |
+| [`test`](#mt-test)                                       | Prettier (andika), ESLint, kisha Vitest (ufunikaji ukisanidiwa).                                                             |
+| [`test_i18n`](#mt-test_i18n)                             | Majaribio ya i18n pekee: vishikizi/ulinganifu wa kiendelezi + ulinganifu wa tovuti.                                          |
+| [`translate_app`](#mt-translation-app)                   | Kisawe cha `translation_app`.                                                                                                |
+| [`translation_app`](#mt-translation-app)                 | Tafsiri misururu ya UI ya programu kutoka `sources/_locales/en/messages.json`.                                               |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Tafsiri nyaraka za tovuti kupitia OpenAI Batch API (inapendekezwa).                                                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Tafsiri nyaraka za tovuti kwa njia ya sawasawa (urithi, bila batch).                                                         |
+| [`translate_web_index`](#mt-translation_web_index)       | Kisawe cha `translation_web_index`.                                                                                          |
+| [`translation_web_index`](#mt-translation_web_index)     | Tafsiri UI ya ukurasa wa nyumbani/nafasi ya urambazaji/sehemu ya chini (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Jenga nyaraka hadi `website/build` (inasaidia `--locales` / `BUILD_LOCALES`).                                                |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Ukaguzi wa viungo salama-bila-mtandao (huruka HTTP[S] za mbali).                                                             |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Onyesho la ndani la gh‑pages; hutumikia kiotomatiki kwenye 8080–8090; majaribio/ukaguzi-wa-viungo wa hiari.                  |
+| [`web_push_github`](#mt-web_push_github)                 | Sukuma `website/build` hadi tawi la `gh-pages`.                                                                              |
 
-Syntax for options
+Sintaksia ya chaguo
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Tumia `make <command> OPTS="…"` kupitisha chaguo (inashauriwa kutumia nukuu). Kila lengo hapa chini linaonyesha mfano wa matumizi.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Vidokezo vya ujenzi wa lugha (locale) {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Jenga sehemu ya lugha: weka `BUILD_LOCALES="en de"` au pitisha `OPTS="--locales en,de"` kwa malengo ya wavuti.
+- Onyesho la awali la lugha mahususi: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Jenga na Kufungasha {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Jenga ZIP: `make pack`
+- Huzalisha ZIP za ATN na LOCAL katika mzizi wa hifadhi (repo) (usiweke mabadiliko ya mikono kwenye mabaki)
+- Dokezo: sasisha toleo kwenye `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json` zote mbili kabla ya kufungasha
+- Usakinishaji wa mikono (dev): Thunderbird → Zana → Viongezi na Mandhari → gia → Sakinisha Kiendelezi Kutoka Faili… → chagua ZIP iliyojengwa
+
+---
+
+### Jaribio {#test}
+
+- Pakiti kamili: `make test` (Vitest)
+- Ufunikaji (hiari):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Endesha `make test`; fungua `coverage/index.html` kwa ripoti ya HTML
+- i18n pekee: `make test_i18n` (funguo/vishikizi/vichwa vya UI + ulinganifu wa tovuti kwa kila lugha kwa kila hati ukiwa na ukaguzi wa id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Urekebishaji Hitilafu na Kumbukumbu {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Konsoli ya Hitilafu: Zana → Zana za Wasanidi → Konsoli ya Hitilafu
+- Badili kumbukumbu zenye maelezo mengi wakati wa uendeshaji:
+- Washa: `messenger.storage.local.set({ debug: true })`
+- Zima: `messenger.storage.local.set({ debug: false })`
+- Kumbukumbu huonekana wakati wa kuandika/kutuma majibu
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Nyaraka (tovuti) {#docs-website}
+
+- Seva ya maendeleo: `cd website && npm run start`
+- Jenga tovuti tuli: `cd website && npm run build`
+- Visawe vya Make (kwa alfabeti): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Mifano ya matumizi:
+- Kiingereza pekee, ruka majaribio/kaguzi za viungo, bila kusukuma: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Lugha zote, pamoja na majaribio/kaguzi za viungo, kisha sukuma: `make web_build_local_preview && make web_push_github`
+- Kabla ya kuchapisha, endesha ukaguzi wa viungo salama-bila-mtandao: `make web_build_linkcheck`.
+- i18n: Kiingereza kiko kwenye `website/docs/*.md`; tafsiri za Kijerumani ziko kwenye `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Utafutaji: Ikiwa vigezo vya mazingira vya Algolia DocSearch vimewekwa kwenye CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), tovuti hutumia utafutaji wa Algolia; la sivyo hurejea kwenye utafutaji wa ndani. Kwenye ukurasa wa nyumbani, bonyeza `/` au `Ctrl+K` kufungua kisanduku cha utafutaji.
+
+---
+
+#### Njia ya kuelekeza mchango upya {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Njia: `/donate` (na `/<locale>/donate`)
+- Tabia:
+- Ikiwa njia ya sasa ina lugha (km., `/de/donate`), itumie
+- La sivyo, chagua inayofanana zaidi kutoka `navigator.languages` dhidi ya lugha zilizosanidiwa; rejeshea lugha msingi
+- Huelekeza hadi:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- nyingine → `/<locale>/docs/donation`
+- Hutumia `useBaseUrl` kwa ushughulikiaji sahihi wa baseUrl
+- Hujumuisha meta refresh + kiungo `noscript` kama mbadala
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Vidokezo vya Onyesho la Awali {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Acha onyesho la awali la Node kwa usafi: fungua `http://localhost:<port>/__stop` (huchapishwa baada ya `Local server started`).
+- Ikiwa picha hazipaki katika MDX/JSX, tumia `useBaseUrl('/img/...')` kuheshimu `baseUrl` ya tovuti.
+- Onyesho la awali huanza kwanza; ukaguzi wa viungo hukimbia baadaye na hauzuii (viungo vya nje vilivyovunjika havitasimamisha onyesho la awali).
+- Mfano wa URL ya onyesho la awali: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (huchapishwa baada ya “Local server started”).
+- Viungo vya nje kwenye ukaguzi-wa-viungo: Baadhi ya tovuti za nje (km., addons.thunderbird.net) huzuia vivukizi vya kiotomatiki na zinaweza kuonyesha 403 kwenye ukaguzi wa viungo. Onyesho la awali bado litaanza; hizi ni salama kupuuzwa.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Tafsiri Tovuti {#translate-website}
 
-What you can translate
+Unachoweza kutafsiri
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- UI ya tovuti pekee: ukurasa wa nyumbani, nafasi ya urambazaji, sehemu ya chini, na misururu mingine ya UI. Maudhui ya nyaraka yatasalia Kiingereza tu kwa sasa.
 
-Where to edit
+Pa kuhariri
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Hariri `website/i18n/<locale>/code.json` (tumia `en` kama marejeo). Weka vishikizi kama `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` bila kubadilishwa.
 
-Generate or refresh files
+Zalisha au onyesha upya mafaili
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Unda stubs zinazokosekana kwa lugha zote: `npm --prefix website run i18n:stubs`
+- Andika juu ya stubs kutoka Kiingereza (baada ya kuongeza misururu mipya): `npm --prefix website run i18n:stubs:force`
+- Njia mbadala kwa lugha moja: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Tafsiri maneno ya UI ya ukurasa wa nyumbani/nafasi ya urambazaji/sehemu ya chini (OpenAI)
 
-- Set credentials once (shell or .env):
+- Weka stakabadhi mara moja (shell au .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Hiari: `export OPENAI_MODEL=gpt-4o-mini`
+- Mara moja (lugha zote, ruka en): `make translate_web_index`
+- Punguza kwa lugha maalum: `make translate_web_index OPTS="--locales de,fr"`
+- Andika juu ya thamani zilizopo: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Uthibitishaji na majaribio tena
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Skript ya tafsiri inathibitisha umbo la JSON, huhifadhi vishikizi vya mabano ya curly, na kuhakikisha URL hazijabadilika.
+- Ikishindwa kuthibitisha, hujaribu tena kwa maoni hadi mara 2 kabla ya kuacha thamani zilizopo.
 
-Preview your locale
+Onyesha lugha yako
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Seva ya maendeleo: `npm --prefix website run start`
+- Tembelea `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Kutuma
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Fungua PR yenye faili `code.json` uliyohariri. Weka mabadiliko yakiwa mahususi na ongeza picha ya skrini ya haraka inapowezekana.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Vidokezo vya Usalama na Usanidi {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Usiweke commit ya `sources/manifest.json` (hutengenezwa kwa muda na ujenzi)
+- Hifadhi `browser_specific_settings.gecko.id` iwe thabiti ili kudumisha njia ya masasisho
+
+---
+
+### Uendelevu wa Mipangilio {#settings-persistence}
+
+- Hifadhi: Mipangilio yote ya mtumiaji iko ndani ya `storage.local` na hudumu kati ya masasisho ya kiendelezi.
+- Usakinishaji: Chaguo-msingi hutumika tu wakati ufunguo umekosekana kabisa (undefined).
+- Sasisho: Uhamisho hujaza funguo zinazokosekana tu; thamani zilizopo haziondokiwi kamwe.
+- Alama ya skima: `settingsVersion` (kwa sasa `1`).
+- Funguo na chaguo-msingi:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Msimbo: tazama `sources/background.js` → `initializeOrMigrateSettings()` na `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Mtindo wa kazi wa msanidi (kuongeza mpangilio mpya)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Ongeza `SCHEMA_VERSION` ndani ya `sources/background.js`.
+- Ongeza ufunguo mpya + chaguo-msingi kwenye kitu (object) `DEFAULTS` katika `initializeOrMigrateSettings()`.
+- Tumia kanuni ya “only-if-undefined” unapoanzisha chaguo-msingi; usiandike juu ya thamani zilizopo.
+- Kama mpangilio unaonekana kwa mtumiaji, uunganishe katika `sources/options.js` na ongeza misururu iliyolokeshwa.
+- Ongeza/rekebisha majaribio (tazama `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Vidokezo vya majaribio ya mikono
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Iga usakinishaji mpya: safisha dir ya data ya kiendelezi au anza na profaili mpya.
+- Iga sasisho: weka `settingsVersion` kuwa `0` ndani ya `storage.local` kisha pakia upya; hakikisha thamani zilizopo hazijabadilika na kwamba funguo zinazokosekana tu ndizo zinaongezwa.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Utatuzi wa matatizo {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Hakikisha Thunderbird ni 128 ESR au mpya zaidi
+- Tumia Konsoli ya Hitilafu kwa masuala ya wakati wa uendeshaji
+- Ikiwa mipangilio iliyohifadhiwa inaonekana kutotumika ipasavyo, anzisha upya Thunderbird na ujaribu tena. (Thunderbird inaweza kuweka hali kwenye kumbukumbu kati ya vikao; uanzishaji upya huhakikisha mipangilio mipya inapakiwa.)
 
 ---
 
-### Translations
+### CI na Ufunikaji {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) huendesha vitest kwa viwango vya ufunikaji (85% mistari/kazi/matawi/taarifa). Ikiwa viwango havijatimizwa, kazi hushindwa.
+- Mtiririko wa kazi hupakia sehemu (artifact) `coverage-html` yenye ripoti ya HTML; ipakue kutoka ukurasa wa mzunguko (Actions → mzunguko wa mwisho → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Kuchangia {#contributing}
 
-Screenshots for docs
+- Tazama CONTRIBUTING.md kwa miongozo ya matawi/commits/PR
+- Dokezo: Unda profaili tofauti ya maendeleo ya Thunderbird kwa majaribio ili kuepuka kuathiri profaili yako ya kila siku.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Tafsiri
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Kuendesha kazi kubwa za tafsiri “all → all” kunaweza kuwa polepole na kugharimu. Anza na sehemu ndogo (km., nyaraka chache na lugha 1–2), kisha pitia matokeo, halafu panua.
+
+---
+
+- Sera ya kujaribu tena: kazi za tafsiri hufanya majaribio hadi mara 3 kwa backoff ya mfululizo wa nguvu kwenye hitilafu za API; tazama `scripts/translate_web_docs_batch.js` na `scripts/translate_web_docs_sync.js`.
+
+Picha za skrini kwa nyaraka
+
+- Hifadhi picha chini ya `website/static/img/`.
+- Zirejelee kwenye MD/MDX kupitia `useBaseUrl('/img/<filename>')` ili njia zifanye kazi na `baseUrl` ya tovuti.
+- Baada ya kuongeza au kubadilisha majina ya picha chini ya `website/static/img/`, hakikisha marejeo yote bado yanatumia `useBaseUrl('/img/…')` na yanaonekana kwenye onyesho la ndani.
+  Ikoni za kivinjari (Favicons)
+
+- `favicon.ico` ya ukubwa- mwingi hutengenezwa kiotomatiki katika njia zote za ujenzi (Make + skripti) kupitia `website/scripts/build-favicon.mjs`.
+- Hakuna hatua ya mkono inayohitajika; kusasisha `icon-*.png` kunatosha.
+  Dokezo la ukaguzi
+
+- Weka `id` ya front‑matter bila kubadilishwa katika nyaraka zilizotafsiriwa; tafsiri tu `title` na `sidebar_label` zikisistizwa.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Kusudi: ondoa mabaki ya ujenzi/prevyuu ya ndani.
+- Matumizi: `make clean`
+- Huondoa (ikiwa yapo):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Kusudi: fomati, jaribu, sasisha changelog, fanya commit, na u-push.
+- Matumizi: `make commit`
+- Maelezo: huendesha Prettier (andika), `make test`, `make test_i18n`; huongeza changelog kunapokuwa na tofauti zilizopangwa; husukuma hadi `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Kusudi: endesha ESLint kupitia usanidi tambarare.
+- Matumizi: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Kusudi: orodhesha malengo yote pamoja na maelezo ya mstari mmoja.
+- Matumizi: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Kusudi: lint kwa MailExtension ukitumia `web-ext`.
+- Matumizi: `make lint`
+- Maelezo: hunakili kwa muda `sources/manifest_LOCAL.json` → `sources/manifest.json`; hupuuza ZIP zilizojengwa; maonyo hayafeli mkondo.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Kusudi: menyu shirikishi kuchagua lengo la Make na hoja za hiari.
+- Matumizi: endesha `make` bila hoja.
+- Maelezo: ikiwa `whiptail` haipatikani, menyu hurejea kwa `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Kusudi: jenga ZIP za ATN na LOCAL (hutegemea `lint`).
+- Matumizi: `make pack`
+- Dokezo: ongeza matoleo katika `sources/manifest_*.json` zote mbili kabla ya kufungasha.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Kusudi: fomati repo mahali pake.
+- Matumizi: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Kusudi: thibitisha uumbizaji (bila kuandika).
+- Matumizi: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Kusudi: kisawe cha `prettier`.
+- Matumizi: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Kusudi: endesha Prettier (andika), ESLint, kisha Vitest (ufunikaji ukisakinishwa).
+- Matumizi: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Kusudi: majaribio yanayolenga i18n kwa misururu ya kiendelezi na nyaraka za tovuti.
+- Matumizi: `make test_i18n`
+- Huendesha: `npm run test:i18n` na `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Kusudi: tafsiri misururu ya UI ya kiendelezi kutoka EN kwenda lugha nyingine.
+- Matumizi: `make translation_app OPTS="--locales all|de,fr"`
+- Maelezo: huhifadhi muundo wa funguo na vishikizi; huandika kumbukumbu kwenye `translation_app.log`. Aina ya skripti: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Kusudi: tafsiri nyaraka za tovuti kutoka `website/docs/*.md` hadi `website/i18n/<locale>/...`.
+- Inapendekezwa: `translate_web_docs_batch` (OpenAI Batch API)
+  - Matumizi (bendera): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Nafasi za urithi bado zinakubalika: `OPTS="<doc|all> <lang|all>"`
+- Tabia: hujenga JSONL, hupakia, huchunguza kila sekunde 30, hupakua matokeo, huandika mafaili.
+- Kumbuka: kazi ya batch inaweza kuchukua hadi saa 24 kukamilika (kwa dirisha la batch la OpenAI). Konsoli huonyesha muda uliopita kwa kila uchunguzi.
+- Mazingira: `OPENAI_API_KEY` (inayohitajika), hiari `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (chaguo-msingi 24h), `BATCH_POLL_INTERVAL_MS`.
+- Urithi: `translate_web_docs_sync`
+  - Matumizi (bendera): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Nafasi za urithi bado zinakubalika: `OPTS="<doc|all> <lang|all>"`
+- Tabia: maombi ya sawasawa kwa kila jozi (bila kujumlisha batch).
+- Maelezo: Maswali shirikishi yanapoulizwa wakati `OPTS` imeachwa. Njia zote mbili huhifadhi vizuizi vya msimbo/msimbo wa ndani na kuweka `id` ya front‑matter bila kubadilishwa; huandika kumbukumbu kwenye `translation_web_batch.log` (batch) au `translation_web_sync.log` (sawasawa).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Kusudi: tafsiri misururu ya UI ya tovuti (ukurasa wa nyumbani, nafasi ya urambazaji, sehemu ya chini) kutoka `website/i18n/en/code.json` kwenda lugha zote chini ya `website/i18n/<locale>/code.json` (ikitoa `en`).
+- Matumizi: `make translate_web_index` au `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Mahitaji: hamisha `OPENAI_API_KEY` (hiari: `OPENAI_MODEL=gpt-4o-mini`).
+- Tabia: inathibitisha muundo wa JSON, huhifadhi vishikizi vya mabano ya curly, huzuia kubadilika kwa URL, na hujaribu tena kwa maoni kwenye makosa ya uthibitishaji.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Kusudi: jenga tovuti ya nyaraka hadi `website/build`.
+- Matumizi: `make web_build OPTS="--locales en|de,en|all"` (au weka `BUILD_LOCALES="en de"`)
+- Ndani: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Vitegemezi: huendesha `npm ci` ndani ya `website/` tu ikiwa `website/node_modules/@docusaurus` haipo.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Kusudi: ukaguzi wa viungo salama-bila-mtandao.
+- Matumizi: `make web_build_linkcheck OPTS="--locales en|all"`
+- Maelezo: hujenga hadi `tmp_linkcheck_web_pages`; huandika upya `baseUrl` ya GH Pages hadi `/`; huruka viungo vya HTTP(S) vya mbali.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Kusudi: onyesho la ndani la gh‑pages lenye majaribio/ukaguzi wa viungo wa hiari.
+- Matumizi: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Tabia: hujaribu seva ya onyesho la Node kwanza (`scripts/preview-server.mjs`, inasaidia `/__stop`), hurejea kwa `python3 -m http.server`; hutumikia kwenye 8080–8090; PID iko kwenye `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Kusudi: sukuma `website/build` hadi tawi la `gh-pages`.
+- Matumizi: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Dokezo: weka `NPM=…` kubadilisha meneja wa kifurushi unaotumiwa na Makefile (chaguo-msingi ni `npm`).

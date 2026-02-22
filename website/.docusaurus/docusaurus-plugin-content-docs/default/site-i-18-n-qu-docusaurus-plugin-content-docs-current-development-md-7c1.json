@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Desarollo",
-  "description": "Development Guide",
+  "title": "Wiñakuy",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Desarollo",
-    "sidebar_label": "Desarollo"
+    "title": "Wiñakuy",
+    "sidebar_label": "Wiñakuy"
   },
   "sidebar": "docs",
   "previous": {

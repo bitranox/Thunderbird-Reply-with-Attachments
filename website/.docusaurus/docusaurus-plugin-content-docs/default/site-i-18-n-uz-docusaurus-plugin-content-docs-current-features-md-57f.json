@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Xususiyatlar",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Tez boshlanish",
+    "title": "Tez boshlash",
     "permalink": "/Thunderbird-Reply-with-Attachments/uz/docs/quickstart"
   }
 }

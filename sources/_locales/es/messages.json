@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Advertir si los archivos adjuntos se excluyen por la lista negra"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Incluir imágenes en línea (imágenes incrustadas)"
+  },
   "uiDebugHeader": {
     "message": "Avanzado"
   },

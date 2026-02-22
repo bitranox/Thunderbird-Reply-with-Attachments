@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Destpêk",
-  "description": "Destpêk",
+  "title": "Destpêkî zû",
+  "description": "---",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Destpêk",
-    "sidebar_label": "Destpêk"
+    "title": "Destpêkî zû",
+    "sidebar_label": "Destpêkî zû"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Taybetmendiyên",
+    "title": "Taybetmendîyên",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/features"
   },
   "next": {
-    "title": "Sazan",
+    "title": "Sazkirin",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/install"
   }
 }

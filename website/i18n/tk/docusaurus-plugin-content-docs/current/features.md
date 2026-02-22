@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Özellikler'
-sidebar_label: 'Özellikler'
+title: 'Aýratynlyklar'
+sidebar_label: 'Aýratynlyklar'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Aýratynlyklar {#features}
 
-## How It Works {#how-it-works}
+- Jogap bereniňizde asyl e-poçtadaky faýllary awtomatiki goşýar.
+- Sazlap bolýan hereket: goşundylary
+  - awtomatiki goşup biler ýa-da
+  - diňe tassyklamadan soň goşup biler (kiçi, elýeterli dialog). Options bölüminde
+    tassyklamany açyp, deslapky jogaby (Hawa/Ýok) saýlap bilersiňiz.
+- Faýl atlarynyň gara sanawy (glob nagyşlary) belli faýllaryň
+  awtomatiki goşulmagynyň öňüni alýar. Mysallar: `*intern*`, `*secret*`, `*passwor*`.
+  Gabat gelme uly-kiçi harp tapawudyna duýgur däl we diňe faýl adyny barlaýar; Options bölüminde
+  her setire bir nagyş beriň.
+- Gara sanaw duýduryşy (islege görä, deslapky ýagdaýda açyk): faýllar siziň
+  gara sanawyňyz sebäpli çykarylanyňda, kiçi modal penjiräde faýly we gabat gelen nagyşlary görkezýär. Gara tema
+  bilen amatly we klawiatura arkaly elýeterli (ýapmak üçin Enter/Esc).
+- Reply we Reply all bilen işleýär. Forward bu goşmanyň tarapyndan üýtgedilmeýär.
+- Özüňiz bir zat goşan bolsaňyz hem, asyllary goşýar; faýl ady boýunça gaýtalanmalardan gaça durýar.
+- Tab boýunça gaýtalanma goragy, şol bir düzmek tabynda iki gezek goşulmagynyň öňüni alýar.
+- Gereksiz goşundylardan gaça durmak üçin, deslapky ýagdaýda S/MIME şahadatnamalaryny taşlaýar.
+- Içki (inline) suratlary goşýar (adaty ýagdaýda: ON). Gömülen suratlar jogap
+  göwresinde asyl içki düzülşi saklap, gönüden-göni base64 data URIs hökmünde dikeldilýär. Inline suratlary
+  doly geçmek üçin Options bölüminde öçüriň.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Nädip işleýär {#how-it-works}
+
+- Jogap berilende, goşmaça asyl goşundylary sanap görkezýär.
+- Faýl goşundylaryndan S/MIME gol goýmalaryny süzýär; içki suratlar (inline) bedeninde täzeden dikeldilýär (öçürilmedik bolsa).
+- Islege görä tassyklama soraýar (klawiatura üçin amatly).
+- Faýl ady boýunça gaýtalanmalardan gaça durup, laýyk faýllary ýazýan hatyňyza goşýar.
+- Çet halatlar üçin Ulanylyş bölüminiň “Goşundylaryň näme üçin goşulman biler” bölümine serediň.
+
+Gizlinlik belligi: Ähli gaýtadan işlemek Thunderbird içinde ýerli ýagdaýda bolýar. Goşmaça arkaplanda hiç hili ulgam haýyşlaryny etmýär.
+
+---

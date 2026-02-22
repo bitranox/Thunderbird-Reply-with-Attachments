@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Kulingana",
-  "description": "Compatibility",
+  "title": "Kugwirizana",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Kulingana",
-    "sidebar_label": "Kulingana"
+    "title": "Kugwirizana",
+    "sidebar_label": "Kugwirizana"
   },
   "sidebar": "docs",
   "previous": {

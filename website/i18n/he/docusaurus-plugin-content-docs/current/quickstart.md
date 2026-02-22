@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'התחלה מהירה'
-sidebar_label: 'התחלה מהירה'
+title: 'תחילת עבודה מהירה'
+sidebar_label: 'תחילת עבודה מהירה'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## התחלה מהירה
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important גרסת Thunderbird מינימלית
+תוסף זה תומך ב‑Thunderbird **128 ESR או חדש יותר**. גרסאות ישנות אינן נתמכות.
+:::
+
+:::note אין טלמטריה; אין רשת ברקע
+התוסף **אינו** אוסף ניתוחים/טלמטריה ואינו מבצע **כל** בקשות רשת ברקע. מתבצע גישה לרשת רק כאשר לוחצים על קישורים חיצוניים (תיעוד, GitHub, תרומה).
+:::
+
+---
+
+### התקנה
+
+1. התקן את התוסף מ־Thunderbird Add‑ons.
+2. אופציונלי: אפשר אישור (אפשרויות → “לבקש לפני הוספת קבצים מצורפים”).
+3. אופציונלי: השאר את אזהרת רשימת החסימה מופעלת (ברירת מחדל): “התרע אם קבצים מצורפים מוחרגים לפי רשימת חסימה”.
+4. אופציונלי: הוסף תבניות לרשימת החסימה (אחת בכל שורה), למשל:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+הערה: ה“# …” למעלה הוא הערה בתיעוד זה; אל תכללו הערות בתבניות שאתם מדביקים ב“אפשרויות”. הזינו תבנית אחת בלבד בכל שורה.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+כעת השב להודעה עם קבצים מצורפים — המקוריים יתווספו אוטומטית או לאחר אישור מהיר. אם קבצים כלשהם מוחרגים על־ידי רשימת החסימה שלך, תוצג אזהרה קצרה המפרטת אותם.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### אימות {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- השב להודעה עם 1–2 קבצים מצורפים ואשר שהמקוריים נוספו לחלון הכתיבה.
+- כדי להתאים את ההתנהגות, ראו [תצורה](configuration) (מתג אישור, תשובת ברירת מחדל, תבניות רשימת חסימה).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### אימות אזהרת רשימת החסימה {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- השב להודעה המכילה קובץ כגון “secret.txt”.
+- כאשר “התרע אם קבצים מצורפים מוחרגים לפי רשימת חסימה” מופעל, דו־שיח קטן יפרט את הקבצים המוחרגים ואת התבנית התואמת.
+
+אם אינך רואה אזהרה, ודא שהתבנית תואמת לשם הקובץ במדויק (שם קובץ בלבד, ללא תלות באותיות קטנות/גדולות). ראו תצורה → רשימת חסימה.
+
+---
+
+### הערה על מקלדת {#keyboard-note}
+
+- חלון האישור תומך ב‑Y/J עבור Yes וב‑N/Esc עבור No. במקלדות מסוימות שאינן לטיניות, מקשי האותיות עשויים להשתנות; לחיצה על Enter מאשרת את הכפתור שבמוקד.
 
 ---

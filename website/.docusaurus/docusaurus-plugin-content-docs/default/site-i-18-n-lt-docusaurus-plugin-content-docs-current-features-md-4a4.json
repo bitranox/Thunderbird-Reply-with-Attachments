@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Ypatybės",
-  "description": "Features",
+  "title": "Funkcijos",
+  "description": "---",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Ypatybės",
-    "sidebar_label": "Ypatybės"
+    "title": "Funkcijos",
+    "sidebar_label": "Funkcijos"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Greitas pradžia",
+    "title": "Greitoji pradžia",
     "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/quickstart"
   }
 }

@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ការប្រាណូឡាសារ'
-sidebar_label: 'ការប្រាណូឡាសារ'
+title: 'ភាពឆបគ្នា'
+sidebar_label: 'ភាពឆបគ្នា'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ភាពឆបគ្នា {#compatibility}
+
+:::important កំណែ Thunderbird អប្បបរមា
+ផ្នែកបន្ថែមនេះគាំទ្រ Thunderbird **128 ESR ឬថ្មីជាងនេះ**។ កំណែចាស់ៗមិនត្រូវបានគាំទ្រទេ។
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- គាំទ្រ Thunderbird 128 ESR ឬថ្មីជាងនេះ (128.x+)។
+- មិនគាំទ្រកំណែ Thunderbird ចាស់ៗទេ។
+- បានសាកល្បងលើ Windows, macOS, និង Linux។
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning មិនគាំទ្រ Manifest V2
+Manifest V2 មិនត្រូវបានគាំទ្រ។ ផ្នែកបន្ថែមនេះសំដៅទៅលើ **Manifest V3 (MV3)** លើ Thunderbird 128 ESR+។
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ដោះស្រាយបញ្ហា {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- បើផ្នែកបន្ថែមមិនដំណើរការដូចដែលរំពឹងទុក សូមប្រាកដថាអ្នកកំពុងប្រើកំណែ Thunderbird ដែលឆបគ្នា (128 ESR ឬថ្មីជាង)។
+- ពិនិត្យមើលកុងសូលកំហុសរបស់ Thunderbird (**Tools > Developer Tools > Error Console**) សម្រាប់បញ្ហាណាដែលទាក់ទងនឹងផ្នែកបន្ថែម។
+- បើការកំណត់ដែលបានរក្សាទុកហាក់ដូចជាមិនបានអនុវត្តត្រឹមត្រូវ សូមចាប់ផ្តើម Thunderbird ឡើងវិញ ហើយសាកល្បងម្តងទៀត។ (Thunderbird អាចរក្សាស្ថានភាពឆ្លងកាត់សម័យផ្សេងៗ; ការចាប់ផ្តើមឡើងវិញធានាថាការកំណត់ថ្មីត្រូវបានផ្ទុក។)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## ជម្លោះដែលស្គាល់ {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- នៅពេលនេះមិនមានទេ។ ប្រសិនបើអ្នកឃើញឯកសារភ្ជាប់ស្ទួនៗ ឬការបរាជ័យជាមួយផ្នែកបន្ថែមផ្សេងៗ សូមរាយការណ៍ជាមួយជំហានដើម្បីធ្វើឱ្យបញ្ហាកើតឡើងវិញ។
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- ការបង្កើត Thunderbird Beta និង Daily (Nightly) ត្រូវបានគាំទ្រទូទៅ ប៉ុន្តែការផ្លាស់ប្តូរពីគម្រោងដើមអាចធ្វើឱ្យផ្នែកបន្ថែមដំណើរការខុសប្រក្រតីជាប៉ុន្មានដង។ ប្រសិនបើអ្នកប្រទះបញ្ហា សូមរាយការណ៍ និងបញ្ចូលកំណែ Thunderbird ដោយច្បាស់ (ឧ., “Daily 131.0a1 2025‑09‑10”)។
+- ប្រទះឃើញការធ្លាក់ក្រោយលើ Beta/Nightly មែនទេ? សូមរាយការណ៍វាជាមួយជំហានដើម្បីធ្វើឱ្យកើតឡើងវិញ — សូមមើល [ការគាំទ្រ](support) — ហើយបញ្ចូលខ្សែអក្សរ build របស់ Thunderbird ដោយច្បាស់។
 
 ---

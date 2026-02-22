@@ -1,19 +1,21 @@
 ---
 id: donation
-title: 'Donacije'
-sidebar_label: 'Donacije'
+title: 'Doniraj'
+sidebar_label: 'Donirajte'
 ---
 
-## Donacije
+---
+
+## Donirajte
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Ako vam se sviđa "Odgovori s prilozima" i želite podržati njegov razvoj, možete donirati ovdje:
+Ako vam se sviđa "Reply with Attachments" i želite podržati njegov razvoj, možete donirati ovdje:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donirajte putem Stripe-a" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donirajte putem Stripea" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ili</div>
@@ -25,7 +27,7 @@ Ako vam se sviđa "Odgovori s prilozima" i želite podržati njegov razvoj, mož
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ili</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Kupite mi kavu" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Kupi mi kavu" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ Ako vam se sviđa "Odgovori s prilozima" i želite podržati njegov razvoj, mož
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skenirajte za kupiti mi kavu"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skenirajte da mi kupite kavu"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Hvala! Vaša podrška pomaže u održavanju kompatibilnosti s novim izdanjima Thunderbirda, poboljšanju pristupačnosti i testova, te održavanju dokumentacije ažurnom.
+Hvala! Vaša podrška pomaže održavati kompatibilnost s novim izdanjima Thunderbirda, poboljšati pristupačnost i testove te održavati dokumentaciju ažurnom.
 
-Bilješke
+Napomene
 
-- Linkovi za donacije otvaraju se samo kada ih kliknete; dodatak ne izvodi nikakve pozadinske mrežne zahtjeve.
-- Ponovljena podrška pomaže dugoročnom održavanju i pravovremenim ažuriranjima, ali je potpuno opcionalna.
+- Poveznice za donaciju otvaraju se samo kada ih kliknete; dodatak ne izvršava nikakve pozadinske mrežne zahtjeve.
+- Ponavljajuća podrška pomaže dugoročno održavanje i pravovremena ažuriranja, ali je potpuno opcionalna.
 
 ---
 
-Ako se gumbe sa slikama ne učitaju, molimo koristite ove linkove umjesto toga:
+Ako se slikovni gumbi ne učitaju, upotrijebite ove poveznice:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Kupite mi kavu](https://buymeacoffee.com/bitranox)
+#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donacije su dobrovoljne; nema ograničenja funkcionalnosti.
+Donacije su dobrovoljne; nema ograničavanja značajki.
 
 ---
 
-## Vidljivost donacije (90‑dnevno odgađanje)
+## Vidljivost donacija (90‑dnevna odgoda)
 
-Dodatak uključuje funkciju za udobnost koja skriva pozive za donacije na neko vrijeme nakon što ste donirali.
+Dodatak uključuje praktičnu mogućnost skrivanja poziva na donaciju na neko vrijeme nakon što ste donirali.
 
-- Gdje je pronaći
-  - Opcije → Odjeljak podrške: vidjet ćete dugme "Donirao sam" i malu hint zonu.
-  - Dijalog za slanje potvrde također prikazuje dugme za donaciju; automatski se skriva kada je odgađanje aktivno.
+- Gdje ga pronaći
+  - Mogućnosti → odjeljak Podrška: vidjet ćete “Donirao/la sam” gumb i malo područje sa savjetom.
+  - Dijalog potvrde slanja također prikazuje gumb Doniraj; automatski se skriva kada je odgoda aktivna.
 
-- Kako to funkcionira
-  - Klikom na "Donirao sam" skrivaju se dugmad za donacije i povezani pozivi na 90 dana.
-  - Status hint prikazuje "Skriveno do YYYY‑MM‑DD" (u vašem lokalnom datumu). Također postoji dugme "Ponovno prikaži donaciju" za trenutnu obnovu vidljivosti.
-  - Nakon 90 dana, dugme za donaciju ponovno postaje vidljivo automatski.
+- Kako funkcionira
+  - Klik na “Donirao/la sam” skriva gumbe za donaciju i povezane upite na 90 dana.
+  - Savjet o statusu prikazuje “Skriveno do YYYY‑MM‑DD” (u vašem lokalnom datumu). Postoji i gumb “Ponovno prikaži Doniraj” za trenutačno vraćanje vidljivosti.
+  - Nakon 90 dana, gumb Doniraj automatski ponovno postaje vidljiv.
 
 - Privatnost i pohrana
-  - Dodatak pohranjuje jedan vremenski oznaku u lokalnoj pohrani Thunderbirda kako bi zapamtila period odgađanja. Ključ: `donateHideUntil` (epoch milliseconds).
-  - Ova postavka je lokalna za vaš Thunderbird profil (nije u oblaku sinkronizirana). Ova funkcija ne vrši nikakve mrežne zahtjeve.
+  - Dodatak pohranjuje jednu vremensku oznaku u lokalnu pohranu Thunderbirda kako bi zapamtio razdoblje odgode. Ključ: `donateHideUntil` (milisekunde epohe).
+  - Ova je postavka lokalna za vaš Thunderbird profil (ne sinkronizira se u oblaku). Ova značajka ne obavlja nikakve mrežne zahtjeve.
 
-- Rješavanje problema
-  - Ako se donacija i dalje prikazuje odmah nakon klika na "Donirao sam", pričekajte trenutak ili ponovo otvorite stranicu opcija; korisničko sučelje se ažurira čim se postavka spremi.
-  - Da resetirate ručno, kliknite "Ponovno prikaži donaciju". Također možete čekati dok ne prođe datum naveden u savjetu.
+- Otklanjanje poteškoća
+  - Ako se Doniraj i dalje prikazuje odmah nakon klika na “Donirao/la sam”, pričekajte trenutak ili ponovno otvorite stranicu Mogućnosti; sučelje se ažurira čim se postavka spremi.
+  - Za ručno poništavanje kliknite “Ponovno prikaži Doniraj”. Također možete pričekati dok ne prođe datum naveden u savjetu.
 
-Ova funkcija je isključivo radi udobnosti; nikada ne blokira funkcionalnost dodatka i ne prikuplja nikakve osobne podatke.
+Ova je značajka isključivo radi praktičnosti; nikada ne blokira funkcionalnost dodatka i ne prikuplja nikakve osobne podatke.
 
 ---

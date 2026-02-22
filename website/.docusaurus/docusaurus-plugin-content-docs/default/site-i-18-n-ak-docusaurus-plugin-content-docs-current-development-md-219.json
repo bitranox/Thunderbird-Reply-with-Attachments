@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Nsɛm a ɛyɛ adwenyɛ",
-  "description": "Development Guide",
+  "title": "Nkɔsoɔ",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Nsɛm a ɛyɛ adwenyɛ",
-    "sidebar_label": "Nsɛm a ɛyɛ adwenyɛ"
+    "title": "Nkɔsoɔ",
+    "sidebar_label": "Nkɔsoɔ"
   },
   "sidebar": "docs",
   "previous": {

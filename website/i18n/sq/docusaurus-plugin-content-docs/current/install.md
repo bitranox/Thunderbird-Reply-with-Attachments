@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Instalimi'
+title: 'Instalim'
 slug: /install
-sidebar_label: 'Instalimi'
+sidebar_label: 'Instalim'
 ---
 
-## Instalimi përmes "Shtesave dhe Temave të Thunderbird" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimumi i Versionit të Thunderbird
-Kjo shtesë përkrah Thunderbird **128 ESR ose më të ri**. Versionet më të vjetra nuk përkrahen.
+## Instalim përmes "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Versioni minimal i Thunderbird
+Kjo shtesë mbështet Thunderbird **128 ESR ose më të rinj**. Versionet më të vjetra nuk mbështeten.
 :::
 
-Kjo është metoda e rekomanduar për instalim. Shtesat e instaluara nga ATN (addons.thunderbird.net) marrin përditësime automatike. Instalimet LOKALE/dev nuk përditësohen automatikisht.
+Kjo është metoda e rekomanduar e instalimit. Shtesat e instaluara nga ATN (addons.thunderbird.net) marrin përditësime automatike. Instalimet LOCAL/dev nuk përditësohen automatikisht.
 
-- Versioni minimal i Thunderbird: 128 ESR ose më të ri.
+- Versioni minimal i Thunderbird: 128 ESR ose më i ri.
 
-1. Në Thunderbird, shkoni te **Mjetet > Shtesat dhe Temat**.
-2. Kërkoni për "përgjigje me të bashkëngjitura".
+1. Në Thunderbird, shkoni te **Tools > Add-ons and Themes**.
+2. Kërkoni për "reply with attachments".
 3. Shtoni shtesën.
 
-Ose hapni faqen e shtesës direkt: [Shtesat e Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Ose hapni drejtpërdrejt faqen e shtesës: [Shtesat e Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Instalimi manual nga XPI {#local-installation-in-thunderbird}
+## Instalim manual nga XPI {#local-installation-in-thunderbird}
 
 ### Shkarkoni skedarin XPI {#download-the-xpi-file}
 
-1. Shkoni te [Faqja e Shtesave të Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+1. Shkoni te [faqja e shtesës Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
 2. Shkarkoni versionin më të fundit të shtesës si skedar XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
 ### Instaloni në Thunderbird {#install-in-thunderbird-local}
 
 1. Hapni Thunderbird.
-2. Shkoni te **Mjetet > Shtesat dhe Temat**.
-3. Në **Menaxherin e Shtesave**, klikoni ikonën e ingranazhit në këndin e sipërm të djathtë.
-4. Zgjidhni **Instalo Shtesë Nga Skedari…** nga menuja.
+2. Shkoni te **Tools > Add-ons and Themes**.
+3. Në **Add-ons Manager**, klikoni ikonën e ingranazhit në këndin e sipërm djathtas.
+4. Zgjidhni **Install Add-on From File…** nga menuja.
 5. Zgjidhni skedarin e shkarkuar `reply_with_attachments-x.y.z-tb.xpi`.
-6. Konfirmoni instalimin kur jeni të pyetur.
+6. Konfirmoni instalimin kur t’ju kërkohet.
 
 ---
 
-## Instalimi për zhvillim {#installation-for-development}
+## Instalim për zhvillim {#installation-for-development}
 
-### Shkarkoni depozitat {#download-the-repository}
+### Shkarkoni depozitën {#download-the-repository}
 
-1. Shkarkoni versionin më të fundit të depozitës GitHub.
+1. Shkarkoni versionin më të fundit të depos në GitHub.
 2. Ekzekutoni `make help` për më shumë informacion.
 
 ### Instaloni në Thunderbird {#install-in-thunderbird-dev}
 
 1. Hapni Thunderbird.
-2. Shkoni te **Mjetet > Shtesat dhe Temat**.
-3. Në **Menaxherin e Shtesave**, klikoni ikonën e ingranazhit në këndin e sipërm të djathtë.
-4. Zgjidhni **Instalo Shtesë Nga Skedari…** nga menuja.
+2. Shkoni te **Tools > Add-ons and Themes**.
+3. Në **Add-ons Manager**, klikoni ikonën e ingranazhit në këndin e sipërm djathtas.
+4. Zgjidhni **Install Add-on From File…** nga menuja.
 5. Zgjidhni skedarin e gjeneruar `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Konfirmoni instalimin kur jeni të pyetur.
+6. Konfirmoni instalimin kur t’ju kërkohet.
 
-Shënim: Nëse Thunderbird nuk pranon `.zip` në sistemin tuaj, riemëroni atë në `.xpi` dhe provoni “Instalo Shtesë Nga Skedari…” përsëri.
+Shënim: Nëse Thunderbird nuk e pranon `.zip` në sistemin tuaj, riemërtojeni në `.xpi` dhe provoni sërish “Install Add‑on From File…”.
 
-### Ku të gjeni ZIP-in LOKAL {#where-local-zip}
+### Ku ta gjeni ZIP-in LOCAL {#where-local-zip}
 
-- Së pari, paketoni shtesën: ekzekutoni `make pack` në rrënjën e depozitës.
-- Pas paketimit, gjeni zip-in “LOKAL” në rrënjën e depozitës (p.sh., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Para ripaketimit për testim, rrisni versionet në të dyja `sources/manifest_ATN.json` dhe `sources/manifest_LOCAL.json`.
+- Së pari, paketoni shtesën: ekzekutoni `make pack` në rrënjën e depos.
+- Pas paketimit, gjeni zip-in “LOCAL” në rrënjën e depos (p.sh., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Para ripaketimit për testim, përditësoni versionet si në `sources/manifest_ATN.json` ashtu edhe në `sources/manifest_LOCAL.json`.
 
 ---
 
-## Çaktivizimi, Zhbllokimi dhe Përditësimet {#disable-uninstall-updates}
+## Çaktivizim, Çinstalim dhe Përditësime {#disable-uninstall-updates}
 
-- Çaktivizoni: Thunderbird → Mjetet → Shtesat dhe Temat → gjeni shtesën → çaktivizoni.
-- Zhbllokoni: po ky shikim → menuja me tre pika → Hiq.
-- Përditësimet: Instalimet ATN përditësohen automatikisht kur versionet e reja miratohen. Instalimet LOKALE/dev nuk përditësohen automatikisht; rinstaloni një ndërtim të ri LOKAL manualisht.
-- Hiqni plotësisht cilësimet: shihni [Privatësia → Heqja e të dhënave](privacy#data-removal).
+- Çaktivizim: Thunderbird → Tools → Add‑ons and Themes → gjeni shtesën → çaktivizoje.
+- Çinstalim: e njëjta pamje → menuja me tre pika → Hiq.
+- Përditësime: instalimet nga ATN përditësohen automatikisht kur miratohen versione të reja. Instalimet LOCAL/dev nuk përditësohen automatikisht; riinstaloni manualisht një ndërtim të ri LOCAL.
+- Hiqni plotësisht rregullimet: shihni [Privatësia → Heqja e të dhënave](privacy#data-removal).
 
-Shih gjithashtu
+Shihni gjithashtu
 
-- [Fillimisht](quickstart)
+- [Udhëzues i shpejtë](quickstart)

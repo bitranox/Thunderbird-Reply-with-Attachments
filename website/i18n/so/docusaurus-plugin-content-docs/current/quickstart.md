@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Bilowga Degdegga ah'
-sidebar_label: 'Bilowga Degdegga ah'
+title: 'Bilow Degdeg ah'
+sidebar_label: 'Bilow Degdeg ah'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Bilow degdeg ah
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Nooca ugu yar ee Thunderbird
+Kordhinkan wuxuu taageeraa Thunderbird **128 ESR ama ka cusub**. Noocyadii hore lama taageero.
+:::
+
+:::note Telemetri ma jiro; shabakad asalka dambe ma jiro
+Kordhinku ma ururiyo falanqayn/telemetry mana sameeyo codsiyo shabakad oo asalka dambe. Gelitaanka shabakadda wuxuu dhacaa kaliya markaad gujiso xiriiriyeyaasha dibedda (Docs, GitHub, Donate).
+:::
+
+---
+
+### Rakibid
+
+1. Ku rakib kordhinta (add‑on) ee Thunderbird Add‑ons.
+2. Ikhtiyaari: Daar xaqiijinta (Options → “Ask before adding attachments”).
+3. Ikhtiyaari: Ka tag digniinta liiska xannibaadda oo daaran (caadiga ah): “Warn if attachments are excluded by blacklist”.
+4. Ikhtiyaari: Ku dar qaabab liis‑xannibaad (mid xariiq kasta), tusaale:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Fiiro: “# …” ee kor ku xusan waa faallo ku jirta dukumentigan; ha ku darin faallooyin qaababka aad ku dhajiso Options. Geli hal qaab xariiq kasta oo keliya.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Hadda ku jawaab fariin leh lifaaqyo — kuwii asalka ahaa si toos ah ayaa loo dari doonaa ama ka dib xaqiijin degdeg ah. Haddii faylal laga reebo liiskaaga xannibaadda, waxaad arki doontaa digniin gaaban oo iyaga taxaysa.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Xaqiiji {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Ku jawaab fariin leh 1–2 lifaaq, oo xaqiiji in kuwii asalka ahaa lagu daray daaqadda qorista.
+- Si aad u hagaajiso hab-dhaqanka, eeg [Habayn](configuration) (beddelka xaqiijinta, jawaabta caadiga ah, qaababka liis‑xannibaadda).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Xaqiiji digniinta liiska xannibaadda {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Ku jawaab fariin ay ku jirto fayl sida “secret.txt”.
+- Iyadoo “Warn if attachments are excluded by blacklist” la daaray, wada hadal yar ayaa taxaya faylasha laga reebay iyo qaabka u dhigma.
+
+Haddii aadan arkin digniin, xaqiiji in qaabku si sax ah ugu dhigmo magaca faylka (magaca‑faylka oo keliya, aan kala saarin xarfaha waaweyn/yaryar). Eeg Habayn → Blacklist.
+
+---
+
+### Fiiro ku saabsan kiiboodhka {#keyboard-note}
+
+- Sanduuqa xaqiijintu wuxuu taageeraa Y/J oo ah Haa iyo N/Esc oo ah Maya. Kiiboodhyo aan Laatiin ahayn qaarkood, furayaasha xarfaha way kala duwanaan karaan; Enter wuxuu xaqiijiyaa badhanka diiradda saaranyahay.
 
 ---

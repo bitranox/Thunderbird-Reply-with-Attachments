@@ -5,21 +5,23 @@ slug: /install
 sidebar_label: 'Instalare'
 ---
 
-## Instalare prin "Add-ons și teme Thunderbird" {#installation-in-thunderbird-recommended}
+---
 
-:::important Versiunea minimă Thunderbird
-Acest add-on suportă Thunderbird **128 ESR sau mai recent**. Versiunile mai vechi nu sunt acceptate.
+## Instalare prin „Suplimente și teme Thunderbird” {#installation-in-thunderbird-recommended}
+
+:::important Versiunea minimă de Thunderbird
+Acest supliment este compatibil cu Thunderbird **128 ESR sau mai nou**. Versiunile mai vechi nu sunt acceptate.
 :::
 
-Aceasta este metoda recomandată de instalare. Add-on-urile instalate din ATN (addons.thunderbird.net) primesc actualizări automate. Instalațiile LOCAL/dev nu se actualizează automat.
+Aceasta este metoda recomandată de instalare. Suplimentele instalate din ATN (addons.thunderbird.net) primesc actualizări automate. Instalările LOCAL/dev nu se actualizează automat.
 
-- Versiunea minimă Thunderbird: 128 ESR sau mai recent.
+- Versiune minimă de Thunderbird: 128 ESR sau mai nouă.
 
-1. În Thunderbird, mergi la **Instrumente > Add-ons și teme**.
-2. Caută "reply with attachments".
-3. Adaugă add-on-ul.
+1. În Thunderbird, mergi la **Instrumente > Suplimente și teme**.
+2. Caută „reply with attachments”.
+3. Adaugă suplimentul.
 
-Sau deschide pagina add-on-ului direct: [Add‑ons Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Sau deschide direct pagina suplimentului: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
@@ -27,53 +29,53 @@ Sau deschide pagina add-on-ului direct: [Add‑ons Thunderbird (ATN)](https://ad
 
 ### Descarcă fișierul XPI {#download-the-xpi-file}
 
-1. Mergi la pagina [Add‑on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Descarcă cea mai recentă versiune a add-on-ului ca fișier XPI (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Mergi la [pagina suplimentului Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Descarcă cea mai recentă versiune a suplimentului ca fișier XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Instalează în Thunderbird {#install-in-thunderbird-local}
+### Instalare în Thunderbird {#install-in-thunderbird-local}
 
 1. Deschide Thunderbird.
-2. Mergi la **Instrumente > Add-ons și teme**.
-3. În **Managerul de add-on-uri**, dă clic pe pictograma roată din colțul din dreapta sus.
-4. Alege **Instalează add-on din fișier…** din meniu.
-5. Selectează fișierul descărcat `reply_with_attachments-x.y.z-tb.xpi`.
-6. Confirma instalarea când ți se solicită.
+2. Mergi la **Instrumente > Suplimente și teme**.
+3. În **Managerul de suplimente**, fă clic pe pictograma rotiță din colțul din dreapta sus.
+4. Alege din meniu **Instalează supliment din fișier…**.
+5. Selectează fișierul `reply_with_attachments-x.y.z-tb.xpi` descărcat.
+6. Confirmă instalarea când ți se solicită.
 
 ---
 
 ## Instalare pentru dezvoltare {#installation-for-development}
 
-### Descarcă repository-ul {#download-the-repository}
+### Descarcă depozitul {#download-the-repository}
 
-1. Descarcă cea mai recentă versiune a repository-ului de pe GitHub.
+1. Descarcă cea mai recentă versiune a depozitului GitHub.
 2. Rulează `make help` pentru mai multe informații.
 
-### Instalează în Thunderbird {#install-in-thunderbird-dev}
+### Instalare în Thunderbird {#install-in-thunderbird-dev}
 
 1. Deschide Thunderbird.
-2. Mergi la **Instrumente > Add-ons și teme**.
-3. În **Managerul de add-on-uri**, dă clic pe pictograma roată din colțul din dreapta sus.
-4. Alege **Instalează add-on din fișier…** din meniu.
+2. Mergi la **Instrumente > Suplimente și teme**.
+3. În **Managerul de suplimente**, fă clic pe pictograma rotiță din colțul din dreapta sus.
+4. Alege din meniu **Instalează supliment din fișier…**.
 5. Selectează fișierul generat `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirma instalarea când ți se solicită.
+6. Confirmă instalarea când ți se solicită.
 
-Notă: Dacă Thunderbird nu acceptă `.zip` pe sistemul tău, redenumește-l în `.xpi` și încearcă din nou "Instalează add-on din fișier…".
+Notă: Dacă Thunderbird nu acceptă `.zip` pe sistemul tău, redenumește-l în `.xpi` și încearcă din nou „Instalează supliment din fișier…”.
 
-### Unde să găsești ZIP-ul LOCAL {#where-local-zip}
+### Unde găsești arhiva ZIP LOCAL {#where-local-zip}
 
-- Mai întâi, empaquetează add-on-ul: rulează `make pack` în rădăcina repository-ului.
-- După empaquetare, găsește zip-ul “LOCAL” în rădăcina repository-ului (de exemplu, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Înainte de a re-empaqueta pentru testare, crește versiunile în ambele `sources/manifest_ATN.json` și `sources/manifest_LOCAL.json`.
+- Mai întâi, împachetează suplimentul: rulează `make pack` în rădăcina depozitului.
+- După împachetare, găsește arhiva „LOCAL” în rădăcina depozitului (de ex., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Înainte de reîmpachetare pentru testare, mărește versiunile atât în `sources/manifest_ATN.json`, cât și în `sources/manifest_LOCAL.json`.
 
 ---
 
-## Dezactivează, dezinstalează și actualizări {#disable-uninstall-updates}
+## Dezactivare, dezinstalare și actualizări {#disable-uninstall-updates}
 
-- Dezactivează: Thunderbird → Instrumente → Add-ons și teme → găsește add-on-ul → dezactivează.
-- Dezinstalează: aceeași vedere → meniu cu trei puncte → Elimină.
-- Actualizări: instalațiile ATN se actualizează automat când noile versiuni sunt aprobate. Instalările LOCAL/dev nu se actualizează automat; reinstalează o nouă construcție LOCAL manual.
-- Îndepărtează complet setările: vezi [Confidențialitate → Eliminarea datelor](privacy#data-removal).
+- Dezactivare: Thunderbird → Instrumente → Suplimente și teme → găsește suplimentul → comută pe dezactivat.
+- Dezinstalare: aceeași vizualizare → meniul cu trei puncte → Elimină.
+- Actualizări: instalările din ATN se actualizează automat când sunt aprobate versiuni noi. Instalările LOCAL/dev nu se actualizează automat; reinstalează manual o nouă versiune LOCAL.
+- Elimină complet setările: vezi [Confidențialitate → Eliminarea datelor](privacy#data-removal).
 
 Vezi și
 
-- [Ghid rapid](quickstart)
+- [Ghid de pornire rapidă](quickstart)

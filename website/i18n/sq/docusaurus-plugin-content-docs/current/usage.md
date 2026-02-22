@@ -4,94 +4,95 @@ title: 'Përdorimi'
 sidebar_label: 'Përdorimi'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Përdorimi {#usage}
+
+- Përgjigju dhe shtesa i shton automatikisht origjinalet — ose pyet fillimisht, nëse është aktivizuar te Opsionet.
+- Pa dublikatë sipas emrit të skedarit; pjesët S/MIME anashkalohen gjithmonë. Imazhet inline rikthehen në trupin e përgjigjes si parazgjedhje (çaktivizoje te “Përfshi figurat inline” te Opsionet).
+- Bashkëngjitjet në listën e zezë anashkalohen gjithashtu (modele glob jo të ndjeshme ndaj shkronjave të mëdha/vogla që përputhen me emrat e skedarëve, jo me shtegun). Shih [Konfigurimi](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Çfarë ndodh kur përgjigjesh {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Zbulon përgjigjen → liston bashkëngjitjet origjinale → filtron S/MIME + inline → konfirmim opsional → shton skedarët e përshtatshëm (anashkalon dublikatat) → rikthen imazhet inline në trup.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Kalimi strikt kundrejt atij të relaksuar: Shtesa fillimisht përjashton pjesët S/MIME dhe inline nga bashkëngjitjet e skedarëve. Nëse asgjë nuk kualifikohet, ajo kryen një kalim më të relaksuar që sërish përjashton S/MIME/inline por toleron më shumë raste (shih Detajet e Kodit). Imazhet inline nuk shtohen kurrë si bashkëngjitje skedarësh; në vend të kësaj, kur “Përfshi figurat inline” është aktiv (parazgjedhje), ato futen drejtpërdrejt në trupin e përgjigjes si data URI base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Lloji i pjesës                                               |                      Kalim strikt |                 Kalim i relaksuar |
+| ------------------------------------------------------------ | --------------------------------: | --------------------------------: |
+| Skedari i nënshkrimit S/MIME `smime.p7s`                     |                       Përjashtuar |                       Përjashtuar |
+| Llojet MIME të S/MIME (`application/pkcs7-*`)                |                       Përjashtuar |                       Përjashtuar |
+| Imazh inline i referuar nga Content‑ID (`image/*`)           | Përjashtuar (rikthehet në trup\*) | Përjashtuar (rikthehet në trup\*) |
+| Email i bashkëngjitur (`message/rfc822`) me një emër skedari |                       Nuk shtohet |                   Mund të shtohet |
+| Bashkëngjitje e zakonshme skedari me emër skedari            |                   Mund të shtohet |                   Mund të shtohet |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Kur “Përfshi figurat inline” është aktiv (parazgjedhje: ON), imazhet inline futen në trupin e përgjigjes si data URI base64 në vend që të shtohen si bashkëngjitje skedarësh. Shih [Konfigurimi](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Shembull: Disa bashkëngjitje mund t’u mungojnë disa header-a, por sërish janë skedarë të zakonshëm (jo inline/S/MIME). Nëse kalimi strikt nuk gjen asnjë, kalimi i relaksuar mund t’i pranojë dhe t’i bashkëngjisë.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kryq-referencë {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Përcjellja (Forward) nuk modifikohet sipas dizajnit (shih Kufizimet më poshtë).
+- Për arsyet pse një bashkëngjitje mund të mos shtohet, shihni “Pse bashkëngjitjet mund të mos shtohen”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detaje të sjelljes {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Parandalimi i dublikatave: Shtesa e shënon skedën e hartimit si të përpunuar duke përdorur një vlerë sesioni për çdo skedë dhe një mbrojtës në kujtesë. Nuk do t’i shtojë origjinalet dy herë.
+- Mbyllja dhe rihapja e një dritareje hartimi trajtohet si një skedë e re (dmth lejohet një përpjekje e re).
+- Respekton bashkëngjitjet ekzistuese: Nëse mesazhi në hartim ka tashmë disa bashkëngjitje, origjinalet shtohen sërish vetëm një herë, duke anashkaluar emrat e skedarëve që ekzistojnë.
+- Përjashtime: Artefaktet S/MIME dhe imazhet inline përjashtohen nga bashkëngjitjet e skedarëve. Nëse asgjë nuk kualifikohet në kalimin e parë, një rikthim i relaksuar i kontrollon sërish pjesët jo‑S/MIME. Imazhet inline trajtohen veçmas: ato rikthehen në trupin e përgjigjes si data URI (kur aktivizohet).
+  - Emrat e skedarëve: `smime.p7s`
+  - Llojet MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Imazhe inline: çdo pjesë `image/*` e referuar nga Content‑ID — përjashtohet nga bashkëngjitjet e skedarëve por futet në trupin e përgjigjes kur “Përfshi figurat inline” është ON
+  - Email-e të bashkëngjitura (`message/rfc822`): trajtohen si bashkëngjitje të rregullta nëse kanë emër skedari; mund të shtohen (me kushtin e kontrolleve për dublikatë dhe të listës së zezë).
+- Paralajmërim për listën e zezë (nëse aktivizohet): Kur kandidatët përjashtohen nga lista juaj e zezë, shtesa shfaq një dritare të vogël me listën e skedarëve të prekur dhe modele(t) përkatëse. Ky paralajmërim shfaqet edhe kur nuk do të shtohet asnjë bashkëngjitje sepse gjithçka u përjashtua.
 
 ---
 
-## Limitations {#limitations}
+## Shkurtore tastiere {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialogu i konfirmimit: Y/J = Po, N/Esc = Jo; Tab/Shift+Tab dhe shigjetat qarkullojnë fokusin.
+  - “Përgjigjja e parazgjedhur” te [Konfigurimi](configuration#confirmation) përcakton butonin fillimisht në fokus.
+  - Enter aktivizon butonin në fokus. Tab/Shift+Tab dhe shigjetat lëvizin fokusin për aksesueshmëri.
+
+### Përmbledhje e shkurtesave të tastierës {#keyboard-cheat-sheet}
+
+| Tastet                    | Veprimi                              |
+| ------------------------- | ------------------------------------ |
+| Y / J                     | Konfirmo Po                          |
+| N / Esc                   | Konfirmo Jo                          |
+| Enter                     | Aktivo butonin në fokus              |
+| Tab / Shift+Tab           | Zhvendos fokusin përpara/mbrapa      |
+| Shigjetat                 | Zhvendos fokusin mes butonave        |
+| Përgjigjja e parazgjedhur | Cakton fokusin fillestar (Po ose Jo) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Kufizime {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Përcjellja (Forward) nuk modifikohet nga kjo shtesë (Përgjigju dhe Përgjigju të gjithëve mbështeten).
+- Bashkëngjitjet shumë të mëdha mund t’u nënshtrohen kufijve të Thunderbird ose të ofruesit.
+  - Shtesa nuk i ndan në pjesë apo kompreson skedarët; ajo mbështetet te trajtimi normal i bashkëngjitjeve nga Thunderbird.
+- Mesazhe të enkriptuara: pjesët S/MIME përjashtohen qëllimisht.
 
 ---
 
-See also
+## Pse bashkëngjitjet mund të mos shtohen {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Imazhet inline nuk shtohen si bashkëngjitje skedarësh. Kur “Përfshi figurat inline” është ON (parazgjedhje), ato futen në trupin e përgjigjes si data URI. Nëse cilësimi është OFF, imazhet inline hiqen plotësisht. Shih [Konfigurimi](configuration#include-inline-pictures).
+- Pjesët e nënshkrimit S/MIME përjashtohen sipas dizajnit: emra skedarësh si `smime.p7s` dhe lloje MIME si `application/pkcs7-signature` ose `application/pkcs7-mime` anashkalohen.
+- Modelet e listës së zezë mund të filtrojnë kandidatët: shih [Konfigurimi](configuration#blacklist-glob-patterns); përputhja nuk është e ndjeshme ndaj shkronjave të mëdha/vogla dhe bëhet vetëm sipas emrit të skedarit.
+- Emrat e dublikuar të skedarëve nuk ri‑shtohen: nëse mesazhi në hartim përmban tashmë një skedar me të njëjtin emër të normalizuar, ai anashkalohet.
+- Pjesë jo‑skedari ose pa emra skedarësh: vetëm pjesët që sillen si skedarë me emra të përdorshëm merren në konsideratë për t’u shtuar.
+
+---
+
+Shih edhe
+
+- [Konfigurimi](configuration)

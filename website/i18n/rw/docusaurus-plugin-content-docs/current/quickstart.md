@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Igishushanyo Mbonera'
-sidebar_label: 'Igishushanyo Mbonera'
+title: 'Gutangira byihuse'
+sidebar_label: 'Gutangira byihuse'
 ---
-
-## Igishushanyo Mbonera
-
-:::important Version ya Thunderbird iri hasi
-Uyu mukozi ashyigikiye Thunderbird **128 ESR cyangwa ikirenzeho**. Versions zishaje ntizishyigikiwe.
-:::
-
-:::note Nta guhererekanya amakuru; nta murongo w'inyuma
-Uyu mukozi **ntugira** imiyoboro/ibipimo by’ubushakashatsi kandi ntukora **n'ikintu** na kimwe cy'umurongo w'inyuma. Kugera ku murongo bikorwa gusa igihe ukande ku mishinga mpuzamahanga (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Shyiramo
+## Intangiriro yihuse
 
-1. Shyiramo uyu mukozi uva mu Mikoreshereze ya Thunderbird.
-2. Byakabaye: Emerera kwemeza (Ihitamo → “Baza mbere y'uko wongeramo ibikoresho”).
-3. Byakabaye: Siga itangazo ry'ibikoresho bizwi (default): “Menyesha niba ibikoresho byakuweho n'itondo”.
-4. Byakabaye: Ongeramo imiterere y'itondo (imwe ku murongo), urugero:
+:::important Verisiyo ya Thunderbird Ntoya isabwa
+Iyi nyongera ishyigikira Thunderbird **128 ESR cyangwa iyo hejuru yayo**. Amaverisiyo ashaje ntashyigikirwa.
+:::
+
+:::note Nta telemetri; nta murandasi y’inyuma
+Iyi nyongera **nt**ikusanya isesengura/telemetri kandi **nta** busabe bwa murandasi ikora mu buryo bw’inyuma. Kwinjira kuri murandasi kubaho gusa iyo ukanda ku masano yo hanze (Docs, GitHub, Donate).
+:::
+
+---
+
+### Gushyiraho
+
+1. Shyiraho iyi nyongera ubikuye kuri Thunderbird Add‑ons.
+2. Bitari ngombwa: Gushoboza kwemeza (Amahitamo → “Baza mbere yo kongeraho inyomeko”).
+3. Bitari ngombwa: Reka kuburira ku rutonde rw’ibuza kuguma gukora (mburabuzi): “Biriza niba inyomeko zakuweho n’urutonde rw’ibuza”.
+4. Bitari ngombwa: Ongeramo imiterere (patterns) y’urutonde rw’ibuza (kimwe ku murongo), urugero:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Uyu mukozi **ntugira** imiyoboro/ibipimo by’ubushakashatsi kandi ntukora **n'i
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Icyitonderwa: “# …” hejuru ni igitekerezo muri iyi nyandiko; ntukongeremo ibitekerezo mu mitere y'itondo ushyira mu Ihitamo. Andika imiterere imwe ku murongo gusa.
+Icyitonderwa: “# …” iri hejuru ni igisobanuro (comment) muri iyi nyandiko; ntukajyane ibisobanuro mu miterere ushyira muri Amahitamo. Andika imiterere imwe buri murongo gusa.
 
-Noneho subiza ubutumwa bufite ibikoresho — by'ukuri bizongerwamo byikora cyangwa nyuma y'ukwemeza vuba. Niba hari dosiye zakuweho n'itondo ryawe, uzabona itangazo rito ribigaragaza.
-
----
-
-### Emeza {#verify}
-
-- Subiza ubutumwa bufite ibikoresho 1–2 kandi wemeze ko ibikubiyemo byongerewe mu idirishya ryawe ry'ubwanditsi.
-- Kugira ngo uhindure imyitwarire, reba [Imiterere](configuration) (guhindura kwemeza, igisubizo gisanzwe, imiterere y'itondo).
+Noneho subiza ubutumwa burimo inyomeko — iz’umwimerere zizongerwamo ku buryo bwikora cyangwa nyuma yo kwemeza byihuse. Niba hari dosiye zikuweho n’urutonde rw’ibuza rwawe, uzabona uburira bugufi buzibarondora.
 
 ---
 
-### Emeza itangazo ry'itondo {#verify-blacklist-warning}
+### Kugenzura {#verify}
+
+- Subiza ubutumwa burimo inyomeko 1–2 kandi wemeze ko iz’umwimerere zongewe mu idirishya ryawe ryo kwandika.
+- Kugena imikorere, reba [Igenamiterere](configuration) (ihitamo ryo kwemeza, igisubizo mburabuzi, imiterere y’urutonde rw’ibuza).
+
+---
+
+### Emeza kuburira ku rutonde rw’ibuza {#verify-blacklist-warning}
 
 - Subiza ubutumwa burimo dosiye nka “secret.txt”.
-- Hamwe no gufungura “Menyesha niba ibikoresho byakuweho n'itondo” byatangiye, agasanduku gato kagaragaza dosiye zakuweho n'imiterere ihuye.
+- Iyo “Biriza niba inyomeko zakuweho n’urutonde rw’ibuza” ikinguye, ikiganiro gito kerekana dosiye zakuweho n’imiterere ihuye.
 
-Niba utabona itangazo, jya ugenzura neza ko imiterere ihura neza n'engeli y'inyandiko (inyandiko yonyine, itandukanye n'uko byanditswe). Reba Imitere → Itondo.
+Nubona nta kuburira, menya neza ko imiterere ihuye neza n’izina rya dosiye (izina rya dosiye gusa, ititaho inyuguti nkuru cyangwa nto). Reba Igenamiterere → Urutonde rw’ibuza.
 
 ---
 
-### Icyitonderwa ku mfuruka y'ibikora {#keyboard-note}
+### Icyitonderwa ku mwandikisho {#keyboard-note}
 
-- Agasanduku k'ukwemeza kashyigikira Y/J ya Ewe na N/Esc ya Oya. Ku ibikoresho bimwe bidakoresha ururimi rw'ibimenyetso, urutonde rw'imyandikire rushobora gutandukana; Enter yemera buto y'ibikurikira.
+- Ikiganiro cyo kwemeza cyemera Y/J kuri Yego na N/Esc kuri Oya. Ku wandikisho zimwe zitari iza Latini, imfunguzo z’inyuguti zishobora gutandukana; Enter yemeza buto iri kwitabwaho.
+
+---

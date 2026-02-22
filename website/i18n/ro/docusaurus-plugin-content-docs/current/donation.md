@@ -4,11 +4,13 @@ title: 'Donează'
 sidebar_label: 'Donează'
 ---
 
+---
+
 ## Donează
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Dacă îți place "Reply with Attachments" și vrei să sprijini dezvoltarea sa, poți dona aici:
+Dacă îți place „Reply with Attachments” și vrei să susții dezvoltarea sa, poți face o donație aici:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -34,21 +36,21 @@ Dacă îți place "Reply with Attachments" și vrei să sprijini dezvoltarea sa,
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scanează pentru a-mi cumpăra o cafea"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Mulțumim! Sprijinul tău ajută la menținerea compatibilității cu noile versiuni Thunderbird, îmbunătățirea accesibilității și testelor, și menținerea documentației la zi.
+Mulțumim! Sprijinul tău ajută la menținerea compatibilității cu noile versiuni Thunderbird, la îmbunătățirea accesibilității și a testelor și la menținerea documentației la zi.
 
 Note
 
-- Linkurile de donație se deschid doar atunci când le dai clic; extensia nu efectuează cereri de rețea în fundal.
-- Sprijinul recurent ajută la întreținerea pe termen lung și la actualizările în timp util, dar este complet opțional.
+- Linkurile de donație se deschid doar când dai clic pe ele; extensia nu efectuează nicio cerere de rețea în fundal.
+- Susținerea recurentă ajută la întreținerea pe termen lung și la actualizări la timp, dar este complet opțională.
 
 ---
 
-Dacă butoanele de imagine nu se încarcă, te rugăm să folosești aceste linkuri în schimb:
+Dacă butoanele imagine nu se încarcă, folosește în schimb aceste linkuri:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,29 +60,31 @@ Dacă butoanele de imagine nu se încarcă, te rugăm să folosești aceste link
 
 ---
 
-Donațiile sunt voluntare; nu există restricții pe funcționalități.
+Donațiile sunt voluntare; nu există funcționalități condiționate de donație.
 
 ---
 
 ## Vizibilitatea donației (pauză de 90 de zile)
 
-Extensia include o caracteristică de conveniență pentru a ascunde solicitările de donații pentru o perioadă după ce ai donat.
+Extensia include o funcție utilă pentru a ascunde solicitările de donație pentru o vreme după ce ai donat.
 
-- Unde să o găsești
-  - Opțiuni → Secțiunea de suport: vei vedea un buton „Am donat” și o mică zonă de sugestie.
-  - Dialogul de confirmare trimis arată de asemenea un buton Donație; acesta se ascunde automat când pauza este activă.
+- Unde o găsești
+  - Opțiuni → secțiunea Suport: vei vedea un buton „Am donat” și o mică zonă cu indicii.
+  - Dialogul de confirmare a trimiterii afișează și el un buton Donează; acesta se ascunde automat când pauza este activă.
 
 - Cum funcționează
-  - Dând clic pe „Am donat” se ascund butoanele de donație și solicitările aferente timp de 90 de zile.
-  - O sugestie de stare arată „Ascuns până la YYYY‑MM‑DD” (în data ta locală). Există de asemenea un buton „Arată din nou Donația” pentru a restabili imediat vizibilitatea.
-  - După 90 de zile, butonul Donație devine din nou vizibil automat.
+  - Clic pe „Am donat” ascunde butoanele de donație și mesajele asociate timp de 90 de zile.
+  - O indicație de stare afișează „Ascuns până la YYYY‑MM‑DD” (în data locală). Există și un buton „Arată din nou Donează” pentru a restabili imediat vizibilitatea.
+  - După 90 de zile, butonul Donează redevine vizibil automat.
 
 - Confidențialitate și stocare
-  - Extensia stochează un singur timestamp în stocarea locală a Thunderbird pentru a-și aminti perioada de pauză. Cheie: `donateHideUntil` (milisecunde epoch).
-  - Acest setare este locală pentru profilul tău Thunderbird (nu este sincronizată în cloud). Nu se efectuează cereri de rețea prin această caracteristică.
+  - Extensia stochează un singur marcaj temporal în stocarea locală a Thunderbird pentru a reține perioada de pauză. Cheie: `donateHideUntil` (milisecunde epoch).
+  - Această setare este locală profilului tău Thunderbird (nu este sincronizată în cloud). Această funcție nu efectuează nicio cerere de rețea.
 
-- Rezolvarea problemelor
-  - Dacă Donația încă se arată imediat după ce ai dat clic pe „Am donat”, așteaptă un moment sau redeschide pagina de Opțiuni; UI se actualizează imediat ce setarea este salvată.
-  - Pentru a reseta manual, dă clic pe „Arată din nou Donația”. Poți de asemenea să aștepți până când data indicată în sugestie trece.
+- Depanare
+  - Dacă Donează încă apare imediat după ce ai dat clic pe „Am donat”, așteaptă puțin sau redeschide pagina Opțiuni; interfața se actualizează de îndată ce setarea este salvată.
+  - Pentru resetare manuală, dă clic pe „Arată din nou Donează”. Poți, de asemenea, să aștepți până trece data afișată în indicație.
 
-Această caracteristică este pur pentru conveniență; nu blochează funcționalitatea extensiei și nu colectează date personale.
+Această funcție este doar pentru comoditate; nu blochează niciodată funcționalitatea extensiei și nu colectează date personale.
+
+---

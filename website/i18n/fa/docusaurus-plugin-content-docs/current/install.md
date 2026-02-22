@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'نصب'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## نصب از طریق «افزونه‌ها و تم‌های Thunderbird» {#installation-in-thunderbird-recommended}
+
+:::important حداقل نسخهٔ Thunderbird
+این افزونه از Thunderbird **128 ESR یا جدیدتر** پشتیبانی می‌کند. نسخه‌های قدیمی پشتیبانی نمی‌شوند.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+این روش نصب پیشنهادی است. افزونه‌هایی که از ATN (addons.thunderbird.net) نصب می‌شوند، به‌روزرسانی خودکار دریافت می‌کنند. نصب‌های LOCAL/dev به‌طور خودکار به‌روزرسانی نمی‌شوند.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- حداقل نسخهٔ Thunderbird: 128 ESR یا جدیدتر.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. در Thunderbird به **Tools > Add-ons and Themes** بروید.
+2. برای "reply with attachments" جستجو کنید.
+3. افزونه را اضافه کنید.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+یا صفحهٔ افزونه را مستقیماً باز کنید: [افزونه‌های Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## نصب دستی از XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### دانلود فایل XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. به [صفحهٔ افزونهٔ Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) بروید.
+2. آخرین نسخهٔ افزونه را به‌صورت فایل XPI (`reply_with_attachments-x.y.z-tb.xpi`) دانلود کنید.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### نصب در Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird را باز کنید.
+2. به **Tools > Add-ons and Themes** بروید.
+3. در **Add-ons Manager**، روی آیکن چرخ‌دنده در گوشهٔ بالا-راست کلیک کنید.
+4. از منو **Install Add-on From File…** را انتخاب کنید.
+5. فایل `reply_with_attachments-x.y.z-tb.xpi` دانلودشده را انتخاب کنید.
+6. وقتی درخواست شد، نصب را تأیید کنید.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## نصب برای توسعه {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### دانلود مخزن {#download-the-repository}
 
-See also
+1. آخرین نسخهٔ مخزن GitHub را دانلود کنید.
+2. برای اطلاعات بیشتر `make help` را اجرا کنید.
 
-- [Quickstart](quickstart)
+### نصب در Thunderbird {#install-in-thunderbird-dev}
+
+1. Thunderbird را باز کنید.
+2. به **Tools > Add-ons and Themes** بروید.
+3. در **Add-ons Manager**، روی آیکن چرخ‌دنده در گوشهٔ بالا-راست کلیک کنید.
+4. از منو **Install Add-on From File…** را انتخاب کنید.
+5. فایل تولیدشدهٔ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` را انتخاب کنید.
+6. وقتی درخواست شد، نصب را تأیید کنید.
+
+توجه: اگر Thunderbird در سیستم شما `.zip` را نپذیرفت، نام آن را به `.xpi` تغییر دهید و دوباره “Install Add‑on From File…” را امتحان کنید.
+
+### کجا ZIP محلی را پیدا کنیم {#where-local-zip}
+
+- ابتدا افزونه را بسته‌بندی کنید: در ریشهٔ مخزن `make pack` را اجرا کنید.
+- پس از بسته‌بندی، فایل zip «LOCAL» را در ریشهٔ مخزن بیابید (مثلاً `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- پیش از بسته‌بندیِ مجدد برای آزمایش، نسخه‌ها را هم در `sources/manifest_ATN.json` و هم در `sources/manifest_LOCAL.json` افزایش دهید.
+
+---
+
+## غیرفعال‌سازی، حذف نصب، و به‌روزرسانی‌ها {#disable-uninstall-updates}
+
+- غیرفعال‌سازی: Thunderbird → Tools → Add‑ons and Themes → افزونه را بیابید → خاموش کنید.
+- حذف نصب: همان نما → منوی سه‌نقطه → Remove.
+- به‌روزرسانی‌ها: نصب‌های ATN پس از تأیید نسخه‌های جدید به‌طور خودکار به‌روزرسانی می‌شوند. نصب‌های LOCAL/dev خودکار به‌روزرسانی نمی‌شوند؛ یک نسخهٔ LOCAL جدید را به‌صورت دستی دوباره نصب کنید.
+- حذف کامل تنظیمات: [حریم خصوصی → حذف داده‌ها](privacy#data-removal) را ببینید.
+
+همچنین ببینید
+
+- [شروع سریع](quickstart)

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Ibikorwa",
-  "description": "Features",
+  "title": "Ibiranga",
+  "description": "---",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Ibikorwa",
-    "sidebar_label": "Ibikorwa"
+    "title": "Ibiranga",
+    "sidebar_label": "Ibiranga"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Ihindura Rya Mbere",
+    "title": "Gutangira vuba",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/quickstart"
   }
 }

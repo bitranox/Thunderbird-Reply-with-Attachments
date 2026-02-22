@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Patampakan",
-  "description": "Compatibility",
+  "title": "Ɲɔgɔnya",
+  "description": "---",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Patampakan",
-    "sidebar_label": "Patampakan"
+    "title": "Ɲɔgɔnya",
+    "sidebar_label": "Kɔmpatibilite"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Togbɛn",
+    "title": "Kɛcogo",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/usage"
   },
   "next": {

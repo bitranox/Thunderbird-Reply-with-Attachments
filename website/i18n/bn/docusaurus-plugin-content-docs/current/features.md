@@ -1,36 +1,43 @@
 ---
 id: features
-title: 'ফিচারগুলো'
-sidebar_label: 'ফিচারগুলো'
+title: 'বৈশিষ্ট্যাবলী'
+sidebar_label: 'বৈশিষ্ট্যসমূহ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## বৈশিষ্ট্য {#features}
 
-## How It Works {#how-it-works}
+- উত্তর দেওয়ার সময় মূল ইমেইল থেকে ফাইলগুলো স্বয়ংক্রিয়ভাবে সংযুক্ত করে।
+- কনফিগারযোগ্য আচরণ: সংযুক্তিগুলি হতে পারে
+  - স্বয়ংক্রিয়ভাবে যোগ করা, অথবা
+  - শুধু নিশ্চিতকরণের পরে যোগ করা (একটি ছোট, অ্যাক্সেসযোগ্য ডায়লগ)। Options-এ আপনি
+    নিশ্চিতকরণ সক্রিয় করতে পারেন এবং ডিফল্ট উত্তর (Yes/No) নির্ধারণ করতে পারেন।
+- ফাইলনেমের ব্ল্যাকলিস্ট (গ্লোব প্যাটার্ন) নির্দিষ্ট ফাইলগুলোকে স্বয়ংক্রিয়ভাবে
+  সংযুক্ত হওয়া থেকে বাধা দেয়। উদাহরণ: `*intern*`, `*secret*`, `*passwor*`.
+  ম্যাচিং বড়/ছোট অক্ষর ভেদাভেদ করে না এবং শুধু ফাইলনেম পরীক্ষা করে; Options-এ প্রতি লাইনে
+  একটি করে প্যাটার্ন দিন।
+- ব্ল্যাকলিস্ট সতর্কতা (ঐচ্ছিক, ডিফল্টভাবে সক্ষম): আপনার ব্ল্যাকলিস্টের কারণে ফাইল বাদ পড়লে,
+  একটি ছোট মডাল ওই ফাইল এবং মিল থাকা প্যাটার্ন(গুলি) দেখায়। ডার্ক‑মোড বান্ধব এবং কিবোর্ডে
+  অ্যাক্সেসযোগ্য (বন্ধ করতে Enter/Esc)।
+- Reply এবং Reply all-এর সঙ্গে কাজ করে। এই অ্যাড‑অন Forward-কে পরিবর্তন করে না।
+- আপনি আগে থেকেই কিছু সংযুক্ত করলেও মূল সংযুক্তিগুলো যোগ করে; ফাইলনেম অনুযায়ী ডুপ্লিকেট এড়ায়।
+- প্রতি‑ট্যাব ডুপ্লিকেট গার্ড একই কম্পোজ ট্যাবে দ্বিগুণভাবে যোগ হওয়া রোধ করে।
+- অপ্রয়োজনীয় সংযুক্তি এড়াতে ডিফল্টভাবে S/MIME সার্টিফিকেট এড়িয়ে যায়।
+- ইনলাইন ছবি অন্তর্ভুক্ত করে (ডিফল্ট: ON)। এম্বেড করা ছবি মূল ইনলাইন লেআউট অক্ষুণ্ণ রেখে
+  উত্তর বডিতে সরাসরি base64 data URIs হিসেবে পুনঃস্থাপিত হয়। ইনলাইন ছবি সম্পূর্ণভাবে বাদ দিতে
+  Options-এ নিষ্ক্রিয় করুন।
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## এটি কীভাবে কাজ করে {#how-it-works}
+
+- উত্তর দেওয়ার সময় অ্যাড‑অনটি মূল সংযুক্তিগুলোর তালিকা করে।
+- ফাইল সংযুক্তি থেকে S/MIME স্বাক্ষর ফিল্টার করে বাদ দেয়; ইনলাইন ছবি বডিতে পুনঃস্থাপিত হয় (নিষ্ক্রিয় না থাকলে)।
+- প্রয়োজনে নিশ্চিতকরণ জিজ্ঞেস করে (কিবোর্ড‑বান্ধব)।
+- ফাইলনেম দেখে ডুপ্লিকেট এড়িয়ে আপনার কম্পোজে উপযুক্ত ফাইলগুলি যোগ করে।
+- ব্যতিক্রমধর্মী পরিস্থিতির জন্য Usage-এ “Why attachments might not be added” দেখুন।
+
+গোপনীয়তা নোট: সব প্রসেসিং Thunderbird‑এ লোকালি সম্পন্ন হয়। অ্যাড‑অনটি কোনো ব্যাকগ্রাউন্ড নেটওয়ার্ক অনুরোধ করে না।
 
 ---

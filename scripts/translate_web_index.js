@@ -95,7 +95,7 @@ function deepEqualExceptMessage(a, b) {
   return JSON.stringify(aa) === JSON.stringify(bb);
 }
 
-function validateTranslatedJson(enObj, trObj, locale) {
+function validateTranslatedJson(enObj, trObj, _locale) {
   const issues = [];
   if (!trObj || typeof trObj !== 'object') {
     return { ok: false, issues: ['Top-level JSON is not an object'] };
@@ -140,7 +140,7 @@ function parseCliLocalesArg() {
     if (idx !== -1) break;
   }
   if (idx === -1) return null;
-  let val = process.argv[idx].includes('=')
+  const val = process.argv[idx].includes('=')
     ? process.argv[idx].split('=')[1]
     : process.argv[idx + 1];
   if (!val) return null;
@@ -150,7 +150,7 @@ function parseCliLocalesArg() {
     .filter(Boolean);
 }
 
-async function callOpenAIShort(text, targetLocale) {
+async function _callOpenAIShort(text, targetLocale) {
   loadEnvFromDotenv();
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY not set in environment or .env');

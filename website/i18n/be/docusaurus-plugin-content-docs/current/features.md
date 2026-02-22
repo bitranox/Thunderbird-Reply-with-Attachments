@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Асаблівасці'
-sidebar_label: 'Асаблівасці'
+title: 'Магчымасці'
+sidebar_label: 'Магчымасці'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Магчымасці {#features}
 
-## How It Works {#how-it-works}
+- Аўтаматычна дадае файлы з арыгінальнага ліста пры адказе.
+- Паводзіны можна наладзіць: укладанні могуць быць
+  - дададзеныя аўтаматычна, або
+  - дададзеныя толькі пасля пацвярджэння (невялікае, даступнае дыялогавае акно). У Наладах вы
+    можаце ўключыць пацвярджэнне і выбраць адказ па змаўчанні (Так/Не).
+- Чорны спіс імёнаў файлаў (шаблоны glob) перашкаджае
+  аўтаматычна прымацоўваць пэўныя файлы. Прыклады: `*intern*`, `*secret*`, `*passwor*`.
+  Супастаўленне адбываецца без уліку рэгістра і правярае толькі імя файла; укажыце па адным шаблоне
+  на радок у Наладах.
+- Папярэджанне пра чорны спіс (неабавязкова, уключана па змаўчанні): калі файлы выключаюцца вашым
+  чорным спісам, невялікае мадальнае акно паказвае файл і адпаведныя шаблоны. Падтрымлівае цёмны рэжым
+  і даступнае з клавіятуры (Enter/Esc для закрыцця).
+- Працуе з «Адказаць» і «Адказаць усім». «Пераслаць» гэты дадатак не змяняе.
+- Дадае арыгіналы, нават калі вы ўжо нешта прымацавалі; пазбягае дублікатаў паводле імя файла.
+- Ахова ад дублікатаў па ўкладцы прадухіляе паўторнае дадаванне ў той жа ўкладцы стварэння ліста.
+- Прапускае сертыфікаты S/MIME па змаўчанні, каб пазбегнуць непатрэбных укладанняў.
+- Уключае ўбудаваныя выявы (па змаўчанні: уключана). Убудаваныя выявы аднаўляюцца непасрэдна ў
+  целе адказу як data URI ў фармаце base64, захоўваючы арыгінальную ўбудаваную раскладку. Адключыце ў
+  Наладах, каб цалкам прапускаць убудаваныя выявы.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Як гэта працуе {#how-it-works}
+
+- Пры адказе дадатак выводзіць спіс арыгінальных укладанняў.
+- Фільтруе подпісы S/MIME з файлавых укладанняў; убудаваныя выявы аднаўляюцца ў целе (калі не адключана).
+- Па жаданні запытвае пацвярджэнне (зручна для клавіятуры).
+- Дадае адпаведныя файлы ў акно складання ліста, пазбягаючы дублікатаў паводле імя файла.
+- Глядзіце «Чаму ўкладанні могуць не быць дададзены» ў раздзеле «Выкарыстанне» для крайніх выпадкаў.
+
+Нататка пра прыватнасць: Уся апрацоўка адбываецца лакальна ў Thunderbird. Дадатак не робіць фонавых сеткавых запытаў.
+
+---

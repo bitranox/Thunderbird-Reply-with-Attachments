@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'நிறுவல்'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## “Thunderbird Add-ons and Themes” மூலம் நிறுவல் {#installation-in-thunderbird-recommended}
+
+:::important குறைந்தபட்ச Thunderbird பதிப்பு
+இந்த add‑on, Thunderbird **128 ESR அல்லது அதற்கு மேல்** பதிப்புகளை ஆதரிக்கிறது. பழைய பதிப்புகள் ஆதரிக்கப்படாது.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+இது பரிந்துரைக்கப்படும் நிறுவல் முறை. ATN (addons.thunderbird.net) மூலம் நிறுவும் add‑ons தானியங்கி புதுப்பிப்புகளை பெறும். LOCAL/dev நிறுவல்கள் தானாகப் புதுப்பிக்கப்படாது.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- குறைந்தபட்ச Thunderbird பதிப்பு: 128 ESR அல்லது அதற்கு மேல்.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird-இல், **Tools > Add-ons and Themes** க்கு செல்லவும்.
+2. "reply with attachments" என்பதைத் தேடவும்.
+3. add‑on ஐச் சேர்க்கவும்.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+அல்லது add‑on பக்கத்தை நேரடியாகத் திறக்கவும்: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI-யிலிருந்து கையேடு நிறுவல் {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI கோப்பை பதிவிறக்கவும் {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)-க்கு செல்லவும்.
+2. add‑on இன் சமீபத்திய பதிப்பை XPI கோப்பாக (`reply_with_attachments-x.y.z-tb.xpi`) பதிவிறக்கவும்.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird-இல் நிறுவவும் {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird-ஐத் திறக்கவும்.
+2. **Tools > Add-ons and Themes** க்கு செல்லவும்.
+3. **Add-ons Manager**-இல், மேல் வலது மூலையில் உள்ள கியர் ஐகானை கிளிக் செய்யவும்.
+4. மெனுவில் இருந்து **Install Add-on From File…** ஐத் தேர்ந்தெடுக்கவும்.
+5. பதிவிறக்கிய `reply_with_attachments-x.y.z-tb.xpi` கோப்பைத் தேர்ந்தெடுக்கவும்.
+6. கேட்கப்பட்டபோது நிறுவலை உறுதிப்படுத்தவும்.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## உருவாக்கத்திற்கான நிறுவல் {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### களஞ்சியத்தை பதிவிறக்கவும் {#download-the-repository}
 
-See also
+1. GitHub களஞ்சியத்தின் சமீபத்திய பதிப்பை பதிவிறக்கவும்.
+2. மேலும் தகவல்களுக்கு `make help` ஐ இயக்கவும்.
 
-- [Quickstart](quickstart)
+### Thunderbird-இல் நிறுவவும் {#install-in-thunderbird-dev}
+
+1. Thunderbird-ஐத் திறக்கவும்.
+2. **Tools > Add-ons and Themes** க்கு செல்லவும்.
+3. **Add-ons Manager**-இல், மேல் வலது மூலையில் உள்ள கியர் ஐகானை கிளிக் செய்யவும்.
+4. மெனுவில் இருந்து **Install Add-on From File…** ஐத் தேர்ந்தெடுக்கவும்.
+5. உருவாக்கப்பட்ட `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` கோப்பைத் தேர்ந்தெடுக்கவும்.
+6. கேட்கப்பட்டபோது நிறுவலை உறுதிப்படுத்தவும்.
+
+குறிப்பு: உங்கள் கணினியில் Thunderbird, `.zip` ஐ ஏற்காவிட்டால், அதை `.xpi` ஆக மறுபெயரிட்டு “Install Add‑on From File…” ஐ மீண்டும் முயற்சிக்கவும்.
+
+### LOCAL ZIP எங்கே கிடைக்கும் {#where-local-zip}
+
+- முதலில், add‑on-ஐ தொகுப்பாக்கவும்: களஞ்சியத்தின் ரூட்டில் `make pack` ஐ இயக்கவும்.
+- தொகுப்பாக்கிய பிறகு, களஞ்சியத்தின் ரூட்டில் “LOCAL” zip-ஐக் கண்டுபிடிக்கவும் (உதா., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- சோதனைக்காக மீண்டும் தொகுப்பாக்குவதற்கு முன், `sources/manifest_ATN.json` மற்றும் `sources/manifest_LOCAL.json` இரண்டிலும் பதிப்புகளை உயர்த்தவும்.
+
+---
+
+## முடக்கு, அகற்று, மற்றும் புதுப்பிப்புகள் {#disable-uninstall-updates}
+
+- முடக்கு: Thunderbird → Tools → Add‑ons and Themes → add‑on-ஐ கண்டுபிடித்து → toggle-ஐ off செய்யவும்.
+- அகற்று: அதே காட்சி → மூன்று‑புள்ளி மெனு → Remove.
+- புதுப்பிப்புகள்: புதிய பதிப்புகள் அங்கீகரிக்கப்பட்டவுடன், ATN நிறுவல்கள் தானாகப் புதுப்பிக்கப்படும். LOCAL/dev நிறுவல்கள் தானாகப் புதுப்பிக்கப்படாது; புதிய LOCAL build-ஐ கைமுறையாக மீண்டும் நிறுவவும்.
+- அமைப்புகளை முழுமையாக அகற்ற: [தனியுரிமை → Data removal](privacy#data-removal) ஐப் பார்க்கவும்.
+
+மேலும் பார்க்க
+
+- [விரைவு தொடக்கம்](quickstart)

@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "ךਰੁਣੋ",
-  "description": "ךਰੁਣੋ",
+  "title": "ਦਾਨ ਕਰੋ",
+  "description": "---",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "ךਰੁਣੋ",
-    "sidebar_label": "ךਰੁਣੋ"
+    "title": "ਦਾਨ ਕਰੋ",
+    "sidebar_label": "ਦਾਨ ਕਰੋ"
   },
   "sidebar": "docs",
   "previous": {

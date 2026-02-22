@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Ukuthuthukiswa",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "Ukuthuthukiswa",
-    "sidebar_label": "Ukuthuthukiswa"
+    "sidebar_label": "Intuthuko"
   },
   "sidebar": "docs",
   "previous": {

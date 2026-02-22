@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Tez boshlanish'
-sidebar_label: 'Tez boshlanish'
+title: 'Tez boshlash'
+sidebar_label: 'Tez boshlash'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Tez boshlash
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Thunderbird’ning minimal versiyasi
+Ushbu qo‘shimcha Thunderbird **128 ESR yoki undan yangi** versiyalarini qo‘llab-quvvatlaydi. Eski versiyalar qo‘llab-quvvatlanmaydi.
+:::
+
+:::note Telemetriya yo‘q; fon tarmog‘i yo‘q
+Qo‘shimcha analitika/telemetriya to‘plamaydi va fon tarmog‘iga hech qanday so‘rov yubormaydi. Tarmoqqa murojaat faqat tashqi havolalarni (Docs, GitHub, Donate) bosganingizda sodir bo‘ladi.
+:::
+
+---
+
+### O‘rnatish
+
+1. Qo‘shimchani Thunderbird Add‑ons’dan o‘rnating.
+2. Ixtiyoriy: Tasdiqlashni yoqing (Options → “Ask before adding attachments”).
+3. Ixtiyoriy: Qora ro‘yxat ogohlantirishini yoqilgan holatda qoldiring (sukut bo‘yicha): “Warn if attachments are excluded by blacklist”.
+4. Ixtiyoriy: Qora ro‘yxat andozalarini qo‘shing (har satrga bittadan), masalan:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Eslatma: Yuqoridagi “# …” bu hujjatdagi izoh; Options’ga qo‘yadigan andozalarga izohlarni kiritmang. Har bir satrga faqat bitta andoza kiriting.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Endi biriktirmalar bilan xabarga javob bering — asl fayllar avtomatik ravishda yoki tezkor tasdiqlashdan so‘ng qo‘shiladi. Agar qora ro‘yxatingizga ko‘ra biron fayl chiqarib tashlansa, ularni ro‘yxatlab beruvchi qisqa ogohlantirishni ko‘rasiz.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Tekshirish {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 biriktirmali xabarga javob bering va asl fayllar xat yozish oynangizga qo‘shilganini tasdiqlang.
+- Xulqni sozlash uchun [Sozlash](configuration) bo‘limiga qarang (tasdiqlashni yoqish/o‘chirish, sukut bo‘yicha javob, qora ro‘yxat andozalari).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Qora ro‘yxat ogohlantirishini tekshirish {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” kabi faylni o‘z ichiga olgan xabarga javob bering.
+- “Warn if attachments are excluded by blacklist” yoqilgan bo‘lsa, kichik dialogda chiqarib tashlangan fayllar va mos keluvchi andoza ro‘yxati ko‘rsatiladi.
+
+Agar ogohlantirishni ko‘rmasangiz, andoza fayl nomiga aynan mos kelishiga ishonch hosil qiling (faqat fayl nomi, registrga sezgir emas). Sozlash → Qora ro‘yxat bo‘limiga qarang.
+
+---
+
+### Klaviatura eslatmasi {#keyboard-note}
+
+- Tasdiqlash oynasida Ha uchun Y/J, Yo‘q uchun esa N/Esc tugmalari ishlaydi. Ba’zi no‑lotin klaviaturalarda harf tugmalari boshqacha bo‘lishi mumkin; Enter fokuslangan tugmani tasdiqlaydi.
 
 ---

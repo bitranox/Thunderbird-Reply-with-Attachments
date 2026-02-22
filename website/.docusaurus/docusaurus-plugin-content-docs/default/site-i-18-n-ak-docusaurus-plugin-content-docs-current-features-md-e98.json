@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Nkyerɛkyerɛmu",
-  "description": "Features",
+  "title": "Akanneɛ",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Nkyerɛkyerɛmu",
-    "sidebar_label": "Nkyerɛkyerɛmu"
+    "title": "Akanneɛ",
+    "sidebar_label": "Adwumadi ahodoɔ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Ntɛmntɛm",
+    "title": "Fi ase ntɛm",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/quickstart"
   }
 }

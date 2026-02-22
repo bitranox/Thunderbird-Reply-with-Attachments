@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Kurulum'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Eklentiler ve Temalar" üzerinden kurulum {#installation-in-thunderbird-recommended}
+
+:::important Minimum Thunderbird Sürümü
+Bu eklenti Thunderbird **128 ESR veya daha yeni** sürümleri destekler. Daha eski sürümler desteklenmez.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Bu, önerilen kurulum yöntemidir. ATN’den (addons.thunderbird.net) yüklenen eklentiler otomatik güncellemeler alır. LOCAL/dev kurulumları otomatik güncellenmez.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Minimum Thunderbird sürümü: 128 ESR veya daha yeni.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird’de **Araçlar > Eklentiler ve Temalar** menüsüne gidin.
+2. "reply with attachments" ifadesini arayın.
+3. Eklentiyi ekleyin.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Veya eklenti sayfasını doğrudan açın: [Thunderbird Eklentileri (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI’den manuel kurulum {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI dosyasını indirin {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird eklenti sayfasına](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) gidin.
+2. Eklentinin en son sürümünü XPI dosyası (`reply_with_attachments-x.y.z-tb.xpi`) olarak indirin.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird’da yükleme {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird’i açın.
+2. **Araçlar > Eklentiler ve Temalar** menüsüne gidin.
+3. **Eklenti Yöneticisi**’nde, sağ üst köşedeki dişli simgesine tıklayın.
+4. Menüden **Dosyadan Eklenti Yükle…** öğesini seçin.
+5. İndirilen `reply_with_attachments-x.y.z-tb.xpi` dosyasını seçin.
+6. İstendiğinde kurulumu onaylayın.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Geliştirme için kurulum {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Depoyu indirin {#download-the-repository}
 
-See also
+1. GitHub deposunun en son sürümünü indirin.
+2. Daha fazla bilgi için `make help` komutunu çalıştırın.
 
-- [Quickstart](quickstart)
+### Thunderbird’da yükleme {#install-in-thunderbird-dev}
+
+1. Thunderbird’i açın.
+2. **Araçlar > Eklentiler ve Temalar** menüsüne gidin.
+3. **Eklenti Yöneticisi**’nde sağ üst köşedeki dişli simgesine tıklayın.
+4. Menüden **Dosyadan Eklenti Yükle…** öğesini seçin.
+5. Oluşturulan dosya `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` öğesini seçin.
+6. İstendiğinde kurulumu onaylayın.
+
+Not: Thunderbird sisteminizde `.zip` dosyasını kabul etmiyorsa, adını `.xpi` olarak değiştirin ve “Dosyadan Eklenti Yükle…” seçeneğini yeniden deneyin.
+
+### LOCAL ZIP nerede bulunur {#where-local-zip}
+
+- Önce eklentiyi paketleyin: depo kök dizininde `make pack` komutunu çalıştırın.
+- Paketlemeden sonra “LOCAL” zip dosyasını depo kökünde bulun (örn. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Test için yeniden paketlemeden önce hem `sources/manifest_ATN.json` hem de `sources/manifest_LOCAL.json` içinde sürüm numaralarını artırın.
+
+---
+
+## Devre dışı bırakma, kaldırma ve güncellemeler {#disable-uninstall-updates}
+
+- Devre dışı bırak: Thunderbird → Araçlar → Eklentiler ve Temalar → eklentiyi bulun → kapatın.
+- Kaldır: aynı görünüm → üç nokta menüsü → Kaldır.
+- Güncellemeler: ATN’den yüklenenler, yeni sürümler onaylandığında otomatik güncellenir. LOCAL/dev kurulumları otomatik güncellenmez; yeni bir LOCAL derlemeyi elle yeniden yükleyin.
+- Ayarları tamamen kaldırma: bkz. [Gizlilik → Veri kaldırma](privacy#data-removal).
+
+Ayrıca bkz.
+
+- [Hızlı başlangıç](quickstart)

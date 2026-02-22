@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Horumarin",
-  "description": "Development Guide",
+  "title": "Horumarinta",
+  "description": "---",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Horumarin",
-    "sidebar_label": "Horumarin"
+    "title": "Horumarinta",
+    "sidebar_label": "Horumarinta"
   },
   "sidebar": "docs",
   "previous": {

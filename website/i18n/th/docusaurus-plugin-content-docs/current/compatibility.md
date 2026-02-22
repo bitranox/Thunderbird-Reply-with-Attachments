@@ -4,39 +4,41 @@ title: 'ความเข้ากันได้'
 sidebar_label: 'ความเข้ากันได้'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ความเข้ากันได้ {#compatibility}
+
+:::important เวอร์ชัน Thunderbird ขั้นต่ำ
+ส่วนเสริมนี้รองรับ Thunderbird **128 ESR หรือใหม่กว่า** เวอร์ชันที่เก่ากว่าไม่รองรับ
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- รองรับ Thunderbird 128 ESR หรือใหม่กว่า (128.x+).
+- ไม่รองรับ Thunderbird เวอร์ชันที่เก่ากว่า.
+- ได้ทดสอบบน Windows, macOS และ Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning ไม่รองรับ Manifest V2
+ไม่รองรับ Manifest V2 ส่วนเสริมนี้กำหนดเป้าหมาย **Manifest V3 (MV3)** บน Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## การแก้ไขปัญหา {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- หากส่วนเสริมทำงานไม่เป็นไปตามที่คาดไว้ โปรดตรวจสอบว่าคุณกำลังใช้ Thunderbird เวอร์ชันที่เข้ากันได้ (128 ESR หรือใหม่กว่า).
+- ตรวจสอบคอนโซลข้อผิดพลาดของ Thunderbird (**Tools > Developer Tools > Error Console**) สำหรับปัญหาที่เกี่ยวข้องกับส่วนเสริม.
+- หากการตั้งค่าที่บันทึกไว้ดูเหมือนจะไม่ถูกนำไปใช้อย่างถูกต้อง ให้รีสตาร์ท Thunderbird แล้วลองอีกครั้ง (Thunderbird อาจแคชสถานะข้ามเซสชัน; การรีสตาร์ทช่วยให้มีการโหลดการตั้งค่าใหม่ล่าสุด).
 
 ---
 
-## Known conflicts {#known-conflicts}
+## ความขัดแย้งที่ทราบ {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ขณะนี้ยังไม่พบปัญหาใด ๆ หากคุณพบสิ่งที่แนบซ้ำซ้อนซ้ำ ๆ หรือความล้มเหลวร่วมกับส่วนเสริมอื่น ๆ โปรดรายงานพร้อมขั้นตอนที่ทำให้เกิดปัญหาได้ซ้ำ.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- โดยทั่วไปแล้วรองรับ Thunderbird Beta และ Daily (Nightly) แต่การเปลี่ยนแปลงจากต้นน้ำอาจทำให้พฤติกรรมของส่วนเสริมเสียได้เป็นครั้งคราว หากคุณพบปัญหา โปรดรายงานและระบุเวอร์ชัน Thunderbird ที่แน่นอน (เช่น “Daily 131.0a1 2025‑09‑10”).
+- พบการถดถอย (regression) บน Beta/Nightly ใช่ไหม? โปรดรายงานพร้อมขั้นตอนการทำซ้ำ — ดูได้ที่ [Support](support) — และระบุสตริงบิลด์ของ Thunderbird ที่แน่นอน.
 
 ---

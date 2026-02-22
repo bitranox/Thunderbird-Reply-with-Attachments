@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ibẹrẹ Rọrun",
-  "description": "Ibẹrẹ Rọrun",
+  "title": "Ìbẹ̀rẹ̀ Kíákíá",
+  "description": "---",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ibẹrẹ Rọrun",
-    "sidebar_label": "Ibẹrẹ Rọrun"
+    "title": "Ìbẹ̀rẹ̀ Kíákíá",
+    "sidebar_label": "Ìbẹ̀rẹ̀ kíákíá"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Awọn ẹya",
+    "title": "Àwọn àbùdá",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/features"
   },
   "next": {
-    "title": "Fífi ẹ̀ka",
+    "title": "Fifi sori ẹrọ",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/install"
   }
 }

@@ -10,7 +10,7 @@ async function setup({
   confirmBeforeAdd = true,
   targetedOk = true,
   broadcastOk = false,
-  popupOk = false,
+  _popupOk = false,
 } = {}) {
   const browser = createBrowserMock({
     confirmBeforeAdd,

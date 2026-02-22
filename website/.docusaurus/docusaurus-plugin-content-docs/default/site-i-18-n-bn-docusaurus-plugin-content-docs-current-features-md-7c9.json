@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ফিচারগুলো",
-  "description": "Features",
+  "title": "বৈশিষ্ট্যাবলী",
+  "description": "---",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ফিচারগুলো",
-    "sidebar_label": "ফিচারগুলো"
+    "title": "বৈশিষ্ট্যাবলী",
+    "sidebar_label": "বৈশিষ্ট্যসমূহ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "শুরু করার নির্দেশনা",
+    "title": "দ্রুত শুরু",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/quickstart"
   }
 }

@@ -1,34 +1,42 @@
 ---
 id: features
-title: 'මුල්‍යයන්'
-sidebar_label: 'මුල්‍යයන්'
+title: 'විශේෂාංග'
+sidebar_label: 'විශේෂාංග'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## විශේෂාංග {#features}
 
-## How It Works {#how-it-works}
+- පිළිතුරුදීමේදී මුල් ඊ-තැපෑලෙන් ගොනු ස්වයංක්‍රීයව යොදයි.
+- සැකසිය හැකි හැසිරීම: ඇමුණුම්
+  - ස්වයංක්‍රීයව එකතු කළ හැක, හෝ
+  - තහවුරු කිරීමෙන් පසු පමණක් එකතු වේ (ප්‍රවේශගත කුඩා සංවාදයක්). Options තුළ
+    ඔබට තහවුරු කිරීම සක්‍රීය කර පෙරනිමි පිළිතුර (Yes/No) තෝරාගත හැක.
+- ගොනු නාමවල කළු-ලැයිස්තුව (glob patterns) නිසා විශේෂිත ගොනු ස්වයංක්‍රීයව
+  ඇමුණුම් වීම අවලංගු කෙරේ. උදාහරණ: `*intern*`, `*secret*`, `*passwor*`.
+  ගැලපීම අක්ෂර ප්‍රභේද නොසලකා (case‑insensitive) වන අතර ගොනු නාමය පමණක් පරීක්ෂා කරයි; Options තුළ එක් පේළියකට රටාවක් ලබාදෙන්න.
+- කළු-ලැයිස්තුවේ අවවාදය (විකල්ප, පෙරනිමියෙන් සක්‍රීය): ඔබගේ
+  කළු-ලැයිස්තුව හේතුවෙන් ගොනු ඉවත් වූ විට, කුඩා මෝඩල් එකක් ගොනුව සහ ගැළපූ රටාව(ව) ලැයිස්තුගත කරයි. ඩාර්ක්‑මෝඩ්
+  හිතකාමී සහ යතුරුපුවරු ප්‍රවේශගතයි (වසීමට Enter/Esc).
+- Reply සහ Reply all සමඟ ක්‍රියා කරයි. Forward මෙම add-on මගින් වෙනස් නොවේ.
+- ඔබ දැනටමත් කිසිවක් ඇමුණුම් කර තිබුණත් මුල් ඒවා ද එකතු කරයි; ගොනු නාමය අනුව අනුපිටපත් වීම වළක්වයි.
+- ටැබය අනුව ද්විත්ව-ආරක්‍ෂකය හේතුවෙන් එකම compose ටැබයේ දෙවරක් එකතු වීම වැළැක්වෙයි.
+- අවශ්‍ය නොවන ඇමුණුම් වලට ඉඩ නොදීමට පෙරනිමියෙන් S/MIME සහතික මඟ හැරයි.
+- අභ්‍යන්තර (inline) පිංතූර ඇතුළත් කිරීම (පෙරනිමිය: ON). ඇඹැරූ රූප reply දේහයේ
+  base64 data URIs ලෙස සෘජුවම නැවත පිහිටුවා, මුල් අභ්‍යන්තර පිරිසැලසුම සුරකියි. inline රූප
+  සම්පූර්ණයෙන්ම මඟ හැරීමට Options හි අක්‍රීය කරන්න.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## එය ක්‍රියාකරන්නේ කෙසේද {#how-it-works}
+
+- පිළිතුරු ලියන විට add-on එක මුල් ඇමුණුම් ලැයිස්තුගත කරයි.
+- ගොනු ඇමුණුම් වලින් S/MIME අත්සන් ඉවත් කර හ හි තැබේ; inline රූප (අක්‍රීය නොකළ තෙක්) දේහයේ නැවත පිහිටුවයි.
+- අවශ්‍ය නම් තහවුරු කිරීමක් ඉල්ලයි (යතුරුපුවරු-හිතකාමී).
+- ගොනු නාමය අනුව අනුපිටපත් වැලැක්වමින්, සුදුසු ගොනු ඔබගේ compose ට එකතු කරයි.
+- විශේෂ සීමා සහිත අවස්ථා සඳහා Usage හි “ඇමුණුම් එකතු නොවිය හැක්කේ ඇයි” බලන්න.
+
+පෞද්ගලිකත්ව සටහන: සැකසුම් සියල්ල Thunderbird තුළ දේශීයව සිදු වේ. මෙම add-on එක කිසිදු පසුබිම් ජාල ඉල්ලීමක් නොකරයි.
+
+---

@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'ইনস্টলেশন'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" এর মাধ্যমে ইনস্টলেশন {#installation-in-thunderbird-recommended}
+
+:::important সর্বনিম্ন Thunderbird সংস্করণ
+এই অ্যাড‑অন Thunderbird **128 ESR বা তার নতুনতর** সংস্করণ সমর্থন করে। পুরোনো সংস্করণ সমর্থিত নয়।
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+এটাই প্রস্তাবিত ইনস্টলেশন পদ্ধতি। ATN (addons.thunderbird.net) থেকে ইনস্টল করা অ্যাড‑অনগুলো স্বয়ংক্রিয়ভাবে আপডেট পায়। LOCAL/dev ইনস্টলগুলো স্বয়ংক্রিয়ভাবে আপডেট হয় না।
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- সর্বনিম্ন Thunderbird সংস্করণ: 128 ESR বা তার নতুনতর।
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird‑এ **Tools > Add-ons and Themes** এ যান।
+2. "reply with attachments" খুঁজুন।
+3. অ্যাড‑অনটি যোগ করুন।
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+অথবা সরাসরি অ্যাড‑অন পেজটি খুলুন: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI থেকে ম্যানুয়াল ইনস্টলেশন {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ফাইল ডাউনলোড করুন {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird অ্যাড‑অন পৃষ্ঠা](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)-এ যান।
+2. অ্যাড‑অনটির সর্বশেষ সংস্করণটি XPI ফাইল (`reply_with_attachments-x.y.z-tb.xpi`) হিসেবে ডাউনলোড করুন।
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird‑এ ইনস্টল করুন {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird খুলুন।
+2. **Tools > Add-ons and Themes** এ যান।
+3. **Add-ons Manager**‑এ, ডান‑উপরে থাকা গিয়ার আইকনে ক্লিক করুন।
+4. মেনু থেকে **Install Add-on From File…** বেছে নিন।
+5. ডাউনলোড করা `reply_with_attachments-x.y.z-tb.xpi` ফাইলটি নির্বাচন করুন।
+6. প্রম্পট এলে ইনস্টলেশন নিশ্চিত করুন।
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## ডেভেলপমেন্টের জন্য ইনস্টলেশন {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### রিপোজিটরি ডাউনলোড করুন {#download-the-repository}
 
-See also
+1. GitHub রিপোজিটরির সর্বশেষ সংস্করণটি ডাউনলোড করুন।
+2. আরও তথ্যের জন্য `make help` চালান।
 
-- [Quickstart](quickstart)
+### Thunderbird‑এ ইনস্টল করুন {#install-in-thunderbird-dev}
+
+1. Thunderbird খুলুন।
+2. **Tools > Add-ons and Themes** এ যান।
+3. **Add-ons Manager**‑এ, ডান‑উপরে থাকা গিয়ার আইকনে ক্লিক করুন।
+4. মেনু থেকে **Install Add-on From File…** বেছে নিন।
+5. তৈরি হওয়া `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ফাইলটি নির্বাচন করুন।
+6. প্রম্পট এলে ইনস্টলেশন নিশ্চিত করুন।
+
+নোট: আপনার সিস্টেমে Thunderbird যদি `.zip` গ্রহণ না করে, সেটিকে `.xpi` নামে রিনেম করে “Install Add‑on From File…” আবার চেষ্টা করুন।
+
+### LOCAL ZIP কোথায় পাবেন {#where-local-zip}
+
+- প্রথমে অ্যাড‑অনটি প্যাকেজ করুন: রিপোজিটরির রুটে `make pack` চালান।
+- প্যাকেজিংয়ের পরে রিপোজিটরির রুটে “LOCAL” zip খুঁজে নিন (যেমন, `2025-..-reply-with-attachments-plugin-LOCAL.zip`)।
+- টেস্টিংয়ের জন্য পুনরায় প্যাকেজ করার আগে, `sources/manifest_ATN.json` এবং `sources/manifest_LOCAL.json`—উভয়ের সংস্করণ নম্বর বাড়ান।
+
+---
+
+## নিষ্ক্রিয়, আনইনস্টল, এবং আপডেট {#disable-uninstall-updates}
+
+- নিষ্ক্রিয়: Thunderbird → Tools → Add‑ons and Themes → অ্যাড‑অনটি খুঁজুন → টগল অফ করুন।
+- আনইনস্টল: একই ভিউ → থ্রি‑ডট মেনু → Remove।
+- আপডেট: নতুন সংস্করণ অনুমোদিত হলে ATN ইনস্টলগুলো স্বয়ংক্রিয়ভাবে আপডেট হয়। LOCAL/dev ইনস্টলগুলো স্বয়ংক্রিয়ভাবে আপডেট হয় না; নতুন LOCAL বিল্ড হাতে করে পুনরায় ইনস্টল করুন।
+- সেটিংস পুরোপুরি অপসারণ: দেখুন [গোপনীয়তা → ডেটা অপসারণ](privacy#data-removal)।
+
+আরও দেখুন
+
+- [কুইকস্টার্ট](quickstart)

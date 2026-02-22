@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Önümçilik'
-sidebar_label: 'Önümçilik'
+title: 'Ösüş'
+sidebar_label: 'Ösüş'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Ösüş gollanmasy {#development-guide}
+
+:::note Diňe iňlis dilindäki faýllary redaktirläň; terjimeler awtomatiki ýaýradylýar
+Resminamalary diňe `website/docs` (iňlisçe) aşagynda täzeläň. `website/i18n/<locale>/…` aşagyndaky terjimeler awtomatik döredilýär we el bilen redaktirlenmeli däldir. Lokalizirlenen mazmuny täzelemek üçin terjime wezipelerini (mysal üçin, `make translate_web_docs_batch`) ulanyň.
 :::
 
-### Prerequisites {#prerequisites}
+### Deslapky talaplar {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ we npm (Node 22 bilen synagdan geçirildi)
+- Thunderbird 128 ESR ýa-da täze (eli bilen synag üçin)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Proýekt gurluşy (ýokary dereje) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Kök: gaplama skripti `distribution_zip_packer.sh`, dokumentler, ekran suratlary
+- `sources/`: esasy goşundy kody (arka fon, sazlamalar/popup UI, manifestler, nyşanlar)
+- `tests/`: Vitest toplum
+- `website/`: Docusaurus dokumentleri (`website/i18n/de/...` aşagynda i18n bilen)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Gurnama we gurallar {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Köke degişli baglylyklary gurnamak: `npm ci`
+- Dokumentler (islege görä): `cd website && npm ci`
+- Maksatlary görkezmek: `make help`
+
+---
+
+### Göni işe ösdürmek (web‑ext run) {#live-dev-web-ext}
+
+- Firefox Desktop-da çalt tekrarlama (diňe UI smoke‑synaglary):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird-de işletmek (MailExtensions üçin has gowusy):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Maslahatlar:
+- Thunderbird-iň Ýalňyşlyk Konsolyny açyk saklaň (Tools → Developer Tools → Error Console).
+- MV3 çäre sahypalary işjeň bolmadyk wagt togtadylýar; kod üýtgemelerinden soň goşundyny täzeden ýükläň ýa-da web‑ext avtomatiki täzeden ýüklesin.
+- Diňe Firefox‑a degişli käbir häsiýetler başgaça bolup biler; API deňligini tassyklamak üçin hökman Thunderbird‑de barlaň.
+- Thunderbird ikilik ýollary (mysallar):
+- Linux: `thunderbird` (mysal üçin, `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profil izolýasiýasy: gündelik sazlamalaryňyza täsir etmezlik üçin ösüş üçin aýratyn Thunderbird profili ulanyň.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make nyşanalary (Alfabet tertibinde) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile umumy ösüş akymlaryny standarlaýar. Her bir nyşana barada bir setirlik gysgaçaça almak üçin islendik wagt `make help` işlediň.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Maslahat: nyşana görkezilmezden `make` işledilse, nyşana saýlamak üçin ýönekeý Whiptail menýusy açylýar.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Nyşana                                                   | Bir setirlik beýany                                                                                              |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Ýerli build/preview artefaktlaryny aýyrmak (tmp/, web-local-preview/, website/build/).                           |
+| [`commit`](#mt-commit)                                   | Formatlaý, synaglary işledýär (i18n goşmak bilen), üýtgeşmeler gündeligini täzelýär, commit edýär we push edýär. |
+| [`eslint`](#mt-eslint)                                   | ESLint-i tekiz konfigurasiýa arkaly işledýär (`npm run -s lint:eslint`).                                         |
+| [`help`](#mt-help)                                       | Hemmesi boýunça bir setirlik düşündirişli sanaw (tertiplendirilen).                                              |
+| [`lint`](#mt-lint)                                       | web‑ext lint `sources/` üstünde (wagtylaýyn manifest; ZIP-leri äsgermeýär; ölümçül däl).                         |
+| [`menu`](#mt-menu)                                       | Nyşana we islege bagly argumentleri saýlamak üçin interaktiw menýu.                                              |
+| [`pack`](#mt-pack)                                       | ATN we LOCAL ZIP-leri gurýar (linteri işledýär; gaplaýjy skripti çagyrýar).                                      |
+| [`prettier`](#mt-prettier)                               | Repozitoriýany ýerinde formatlaýar (üýtgeşmeleri ýazýar).                                                        |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier barlaýyş režiminde (ýazma ýok); gaýtadan format gerek bolsa şowsuz bolýar.                              |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` üçin lakam.                                                                                           |
+| [`test`](#mt-test)                                       | Ilki Prettier (ýazma), ESLint, soňra Vitest (eger gurnalansa örtük).                                             |
+| [`test_i18n`](#mt-test_i18n)                             | Diňe i18n synaglary: goşundy üçin ýer tutujy/paritet + websaýt pariteti.                                         |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` üçin lakam.                                                                                    |
+| [`translation_app`](#mt-translation-app)                 | Programma UI setirlerini `sources/_locales/en/messages.json`-den terjime et.                                     |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Websaýt dokumentlerini OpenAI Batch API arkaly terjime et (ödretilýär).                                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Websaýt dokumentlerini sinhron ýagdaýda terjime et (miras, non-batch).                                           |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` üçin lakam.                                                                              |
+| [`translation_web_index`](#mt-translation_web_index)     | Baş sahypa/üst menýu/astes UI-ny terjime et (`website/i18n/en/code.json → .../<lang>/code.json`).                |
+| [`web_build`](#mt-web_build)                             | Dokumentleri `website/build`-e gurýar (`--locales` / `BUILD_LOCALES` goldaýar).                                  |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Oflayn howpsuzlykly baglanyşyk barlagy (daşdaky HTTP[S]-leri geçýär).                                            |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Ýerli gh‑pages öň synanyşygy; 8080–8090 aralygynda awto-serwis; islege görä synaglar/baglanyşyk barlagy.         |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build`-i `gh-pages` şahasyna push et.                                                                   |
 
-Syntax for options
+Opsionlar üçin sintaksis
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Opsionlary geçirmek üçin `make <command> OPTS="…"` ulanyň (dyrnaklar maslahat berilýär). Aşakdaky her nyşana mysal ulanylyşyny görkezýär.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Locale gurmak boýunça maslahatlar {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Locale-laryň bir bölegini gurmak: `BUILD_LOCALES="en de"` goýuň ýa-da `OPTS="--locales en,de"`-i web nyşanalaryna geçiriň.
+- Belli bir locale üçin öň synanyşyk: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Gurmak we gaplamak {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIP-leri gurmak: `make pack`
+- Repo kökünde ATN we LOCAL ZIP-leri döredýär (artefaktlary el bilen redaktirlemäň)
+- Maslahat: gaplamazdan öň `sources/manifest_ATN.json` hem-de `sources/manifest_LOCAL.json`-daky wersiýany täzeläň
+- El bilen gurnama (ösüş): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → gurlan ZIP-faýly saýlaň
+
+---
+
+### Synag {#test}
+
+- Doly toplum: `make test` (Vitest)
+- Örtük (islege görä):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` işlediň; HTML hasabaty üçin `coverage/index.html` açyň
+- Diňe i18n: `make test_i18n` (UI açarlary/yer tutujy/titllar + websaýt boýunça her locale/ her dokument pariteti id/title/sidebar_label barlaglary bilen)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Düzediş (debug) we žurnallar {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Ýalňyşlyk konsoly: Tools → Developer Tools → Error Console
+- Runtime wagtynda giňişleýin žurnallary aç/ýap:
+- Işjeňleşdir: `messenger.storage.local.set({ debug: true })`
+- Öçür: `messenger.storage.local.set({ debug: false })`
+- Jogaplary düzýän/iberýän wagtynda žurnallar peýda bolýar
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentler (websaýt) {#docs-website}
+
+- Ösüş serweri: `cd website && npm run start`
+- Statik saýt gurmak: `cd website && npm run build`
+- Make deňleştirmeleri (alfabetik): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Ulanyş mysallary:
+- Diňe EN, synaglary/baglanyşyk barlagyny geç, push ýok: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Hemme locale, synaglar/baglanyşyk barlagy bilen, soňra push: `make web_build_local_preview && make web_push_github`
+- Çap etmezden öň, oflajn howpsuz baglanyşyk barlagyny işlediň: `make web_build_linkcheck`.
+- i18n: Iňlisçe `website/docs/*.md`-de; Nemesçe terjimeler `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`-de
+- Gözleg: Eger Algolia DocSearch gurşaw üýtgeýjileri CI-de sazlanan bolsa (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), saýt Algolia gözlegi ulanar; bolmasa ýerli gözlege gaýdyp barar. Baş sahypada gözleg gutusyny açmak üçin `/` ýa-da `Ctrl+K` basyň.
+
+---
+
+#### Bagyş ugrukdyrmasy {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Ugrukdyrma: `/donate` (we `/<locale>/donate`)
+- Hereketi:
+- Häzirki ugrukdyrmada locale bar bolsa (mysal üçin, `/de/donate`), şony ulanyň
+- Ýogsam, `navigator.languages` bilen sazlanan locale-laryň arasynda iň gowy gabat gelýänini saýlaň; bolmasa deslapky locale-a gaýdyp barýar
+- Aşakdakylara gönükdirýär:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- beýlekiler → `/<locale>/docs/donation`
+- Dogry baseUrl dolandyryşy üçin `useBaseUrl` ulanylýar
+- Meta täzelenişi + ätiýaçlyk hökmünde `noscript` baglanyşygy öz içine alýar
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Öň synanyşyk boýunça maslahatlar {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node öň synanyşygyny arassa duruzmak: `http://localhost:<port>/__stop` açyň (`Local server started`-den soň çap edilýär).
+- Suratlar MDX/JSX-de ýüklenmese, saýt `baseUrl`-e hormat goýmak üçin `useBaseUrl('/img/...')` ulanyň.
+- Ilki öň synanyşyk başlaýar; baglanyşyk barlagy soňundan işledilýär we päsgelçilik döretmeýär (bozulandyk daşky baglanyşyklar öň synanyşygy duruzmaýar).
+- Mysal öň synanyşyk URL-si: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” diýeninden soň çap edilýär).
+- Baglanyşyk barlagyndaky daşky baglanyşyklar: Käbir daşky saýtlar (mysal üçin, addons.thunderbird.net) awtomatiki süýrenijileri petikleýär we baglanyşyk barlaglarynda 403 görkezmegi mümkin. Öň synanyşyk şonda-da başlaýar; bulary äsgermezlik etmek howpsuz.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Websaýty terjime etmek {#translate-website}
 
-What you can translate
+Näme terjime edip bilersiňiz
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Diňe websaýt UI: baş sahypa, üst menýu, ast menýu we beýleki UI setirleri. Häzirlikçe dokumentleriň mazmuny diňe iňlisçe bolýar.
 
-Where to edit
+Nirede redaktirlemeli
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json`-i redaktirläň (`en`-i nusga ýaly ulanyň). `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` ýaly ýer tutujylary üýtgetmäň.
 
-Generate or refresh files
+Faýllary döretmek ýa-da täzelemek
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Hemme locale üçin ýetmeýän şablonlary döret: `npm --prefix website run i18n:stubs`
+- Täze setirleri goşandan soň iňlisçeden şablonlary üstünden ýaz: `npm --prefix website run i18n:stubs:force`
+- Birek-birek locale üçin alternatiwa: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Baş sahypa/üst/ast menýu UI setirlerini terjime etmek (OpenAI)
 
-- Set credentials once (shell or .env):
+- Bir gezek ygtyýarnamalary goýuň (shell ýa-da .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Islege görä: `export OPENAI_MODEL=gpt-4o-mini`
+- Bir gezeklik (hemmesi, en-i geç): `make translate_web_index`
+- Belli locale-lar bilen çäklendir: `make translate_web_index OPTS="--locales de,fr"`
+- Bar bolan bahalary üstünden ýaz: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Barlag we gaýtadan synanyşyklar
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Terjime skripti JSON gurluşyny barlaýar, gyrk yzygiderli ýaý bilen ýer tutujylary saklaýar we URL-leriň üýtgemeýändigini üpjün edýär.
+- Barlag şowsuz bolsa, bar bolan bahalary saklamazdan öň 2 gezekçe çenli gaýtadan synanyşýar we düşündiriş berýär.
 
-Preview your locale
+Localeňizi öň synanyşyň
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Ösüş serweri: `npm --prefix website run start`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`-e gidiň
 
-Submitting
+Ibermek
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Redaktirlenen `code.json` faýl(lar)y bilen PR açyň. Üýtgeşmeleri fokusda saklaň we mümkin bolsa çalt skrinşot goşuň.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Howpsuzlyk we Konfigurasiýa maslahatlary {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json`-i commit etmäň (gurluş tarapyndan wagtlaýyn döredilýär)
+- Täzeleniş kanaly saklansyn üçin `browser_specific_settings.gecko.id` durnukly saklaň
+
+---
+
+### Sazlamalaryň durnuklylygy {#settings-persistence}
+
+- Saklamak: Ulanyjynyň ähli sazlamalary `storage.local`-de saklanýar we goşundy täzelenmeleri boýunça durnukly bolýar.
+- Gurnama: Deslapkylar diňe açar doly ýok (undefined) bolanda ulanylýar.
+- Täzelenme: Migrasiýa diňe ýok açarlary doldurýar; bar bolan bahalar asla üstünden ýazylmaýar.
+- Shema belligi: `settingsVersion` (häzirki wagtda `1`).
+- Açarlar we deslapkylar:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kod: `sources/background.js` → `initializeOrMigrateSettings()` we `SCHEMA_VERSION`-e serediň.
 
-Dev workflow (adding a new setting)
+Ösüş akymy (täze sazlama goşmak)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `sources/background.js`-de `SCHEMA_VERSION`-i artdyryň.
+- Täze açar + deslapky bahany `initializeOrMigrateSettings()`-däki `DEFAULTS` obýektine goşuň.
+- Deslapkyları sepmekde “diňe-undefined bolsa” düzgünini ulanyň; bar bolan bahalary üstünden ýazmaň.
+- Eger sazlama ulanyja görünýän bolsa, `sources/options.js`-de baglanyşyklary ediň we lokalizirlenen setirleri goşuň.
+- Synaglary goşuň/saýlaň (`tests/background.settings.migration.test.js`-e serediň).
 
-Manual testing tips
+El bilen synag maslahatlary
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Täze gurnamany simulirlemek: giňeltmäniň maglumat katalogyny arassalaň ýa-da täze profil bilen başlaň.
+- Täzelenmäni simulirlemek: `storage.local`-de `settingsVersion`-i `0` edip goýuň we täzeden ýükläň; bar bolan bahalaryň üýtgemeýändigini we diňe ýok açarlaryň goşulandygyny tassyklaň.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Näsazlyklary düzetmek {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird-iň 128 ESR ýa-da täze boldugyna göz ýetiriň
+- Runtime meseleleri üçin Ýalňyşlyk konsolyny ulanyň
+- Eger saklanan sazlamalar dogry ulanylmaýan ýaly bolsa, Thunderbird-i täzeden işe girizip gaýtadan synanyşyň. (Thunderbird sessiýalar arasynda ýagdaýy keşiňde saklap biler; täzeden işe girizmek täze sazlamalaryň ýüklenmegini üpjün eder.)
 
 ---
 
-### Translations
+### CI we Örtük {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) vitest-i örtük eşiklandyryşlari bilen işledýär (setirleriň/funksiýalaryň/şahalaryň/beýannamalaryň 85%-i). Eşiklandyryşlara ýetilmese, iş şowsuz bolýar.
+- Aýlaw (workflow) HTML hasabaty bilen `coverage-html` atly artefakty ýükläp goýýar; ony işlediş sahypasyndan ýükläp alyň (Actions → iň soňky işlediş → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Goşant goşmak {#contributing}
 
-Screenshots for docs
+- Şaham/commit/PR düzgünleri üçin CONTRIBUTING.md göriň
+- Maslahat: gündelik profiliňize täsir etmezlik üçin synaglar üçin aýratyn Thunderbird ösüş profilini dörediň.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Terjimeler
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Uly “hemmesi → hemmesi” terjime işlerini işletmek haýal we gymmat bolup biler. Ilki bölekden başlaň (mysal üçin, birnäçe dokument we 1–2 locale), netije barlaň, soň giňeldiň.
+
+---
+
+- Gaýtadan synanyşyk syýasaty: terjime işleri API ýalňyşlarynda üsti-üçin ýokarlanýan yza çekiş bilen 3 gezekçe çenli gaýtadan synanyşyk edýär; `scripts/translate_web_docs_batch.js` we `scripts/translate_web_docs_sync.js`-e serediň.
+
+Dokumentler üçin skrinşotlar
+
+- Suratlary `website/static/img/` aşagynda saklaň.
+- Olara MD/MDX-de `useBaseUrl('/img/<filename>')` arkaly salgylanyň, şonda ýollar saýt `baseUrl` bilen işleýär.
+- `website/static/img/` aşagynda suratlary goşandan ýa-da adyny üýtgedenden soň, ähli salgylaryň henizem `useBaseUrl('/img/…')` ulanýandygyny we ýerli öň synanyşykda çykýandygyny tassyklaň.
+  Favikonlar
+
+- Köp‑ölçegli `favicon.ico` ähli guruluş ýollarynda (Make + skriptler) `website/scripts/build-favicon.mjs` arkaly awtomatiki döredilýär.
+- El bilen ädim talap edilmeýär; `icon-*.png`-i täzeläniňiz ýeterlik.
+  Gözden geçiriş maslahaty
+
+- Terjime edilen dokumentlerde front‑matter `id` üýtgemezsin; diňe bar bolsa `title` we `sidebar_label`-i terjime ediň.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Maksat: ýerli build/preview artefaktlaryny aýyrmak.
+- Ulanylyşy: `make clean`
+- Aýyrýar (bar bolsa):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Maksat: format, synag, üýtgeşmeler gündeligini täzeläň, commit we push.
+- Ulanylyşy: `make commit`
+- Jikme-jik: Prettier (ýazma), `make test`, `make test_i18n` işledýär; sahnalaşdyrylan tapawutlar bar bolsa üýtgeşmeler gündeligine goşýar; `origin/<branch>`-a push edýär.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Maksat: ESLint-i tekiz konfigurasiýa arkaly işlediň.
+- Ulanylyşy: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Maksat: ähli nyşanalary bir setirlik düşündiriş bilen sanap görkezmek.
+- Ulanylyşy: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Maksat: `web-ext` ulanyp MailExtension-y lint etmek.
+- Ulanylyşy: `make lint`
+- Bellikler: wagtlaýyn `sources/manifest_LOCAL.json` → `sources/manifest.json` göçürýär; gurlan ZIP-leri äsgermeýär; duýduryşlar piliňi şowsuzlandyrmaýar.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Maksat: Make nyşanasyny we islege görä argumentleri saýlamak üçin interaktiw menýu.
+- Ulanylyşy: argumentler bermän `make` işlediň.
+- Bellikler: eger `whiptail` elýeterli däl bolsa, menýu `make help`-a gaýdyp barar.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Maksat: ATN we LOCAL ZIP-leri gurmak (`lint`-e bagly).
+- Ulanylyşy: `make pack`
+- Maslahat: gaplamazdan öň `sources/manifest_*.json` ikisinde-de wersiýalary artdyryň.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Maksat: repo-ni ýerinde formatlamak.
+- Ulanylyşy: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Maksat: formatlamany barlamak (ýazma ýok).
+- Ulanylyşy: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Maksat: `prettier` üçin lakam.
+- Ulanylyşy: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Maksat: Prettier (ýazma), ESLint, soňra Vitest (gurnalanso örtük) işlediň.
+- Ulanylyşy: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Maksat: goşundy setirleri we websaýt dokumentleri üçin i18n‑ugurly synaglar.
+- Ulanylyşy: `make test_i18n`
+- Işledýär: `npm run test:i18n` we `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Maksat: goşundynyň UI setirlerini EN-den beýleki locale-lara terjime etmek.
+- Ulanylyşy: `make translation_app OPTS="--locales all|de,fr"`
+- Bellikler: açar gurluşyny we ýer tutujylary saklaýar; `translation_app.log`-e log ýazýar. Skript görnüşi: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Maksat: websaýt dokumentlerini `website/docs/*.md`-den `website/i18n/<locale>/...`-e terjime etmek.
+- Öwülýän: `translate_web_docs_batch` (OpenAI Batch API)
+  - Ulanylyşy (flaglar): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Miras pozisionally ýagdaý entek kabul edilýär: `OPTS="<doc|all> <lang|all>"`
+- Hereketi: JSONL gurýar, ýükläp goýýar, her 30 sekuntda barlaýar, netijeleri düşürýär, faýllary ýazýar.
+- Bellik: batch işi dolmak üçin 24 sagada çenli wagt alyp biler (OpenAI-nyň batch penjiresine görä). Konsol her barlagda geçen wagty görkezýär.
+- Gurşaw: `OPENAI_API_KEY` (hökmany), islege görä `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (deslapky 24s), `BATCH_POLL_INTERVAL_MS`.
+- Miras: `translate_web_docs_sync`
+  - Ulanylyşy (flaglar): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Miras pozisional görnüşi entek kabul edilýär: `OPTS="<doc|all> <lang|all>"`
+- Hereketi: jübüt-jübüt sinhron islegler (batch birleşdirme ýok).
+- Bellikler: `OPTS` goýberilende interaktiw soraglar görkezilýär. Iki režimde-de kod bloklary/ goşmaça kod üýtgewsiz saklanýar we front‑matter `id` üýtgedilmeýär; loglar `translation_web_batch.log` (batch) ýa-da `translation_web_sync.log` (sync) içine ýazylýar.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Maksat: websaýt UI setirlerini (baş sahypa, üst menýu, ast menýu) `website/i18n/en/code.json`-den `website/i18n/<locale>/code.json` aşagyndaky ähli locale-lara terjime etmek (`en`-i hasaba almaýar).
+- Ulanylyşy: `make translate_web_index` ýa-da `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Talaplar: `OPENAI_API_KEY` eksport ediň (islege görä: `OPENAI_MODEL=gpt-4o-mini`).
+- Hereketi: JSON gurluşyny tassyklap barlaýar, gyrk ýaýly ýer tutujylary saklaýar, URL-leri üýtgetmeýär we barlag ýalňyşlarynda köpçülikleýin düşünjili gaýtadan synanyşyk edýär.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Maksat: dokumentler saýtuny `website/build`-e gurmak.
+- Ulanylyşy: `make web_build OPTS="--locales en|de,en|all"` (ýa-da `BUILD_LOCALES="en de"`-i goýuň)
+- Içki detaylar: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Garaşyklar: diňe `website/node_modules/@docusaurus` ýok bolsa, `website/`-de `npm ci` işledýär.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Maksat: oflajn howpsuz baglanyşyk barlagy.
+- Ulanylyşy: `make web_build_linkcheck OPTS="--locales en|all"`
+- Bellikler: `tmp_linkcheck_web_pages`-e gurýar; GH Pages `baseUrl`-i `/`-e täzeden ýazýar; daşky HTTP(S) baglanyşyklaryny geçýär.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Maksat: islege görä synaglar/baglanyşyk barlagy bilen ýerli gh‑pages öň synanyşygy.
+- Ulanylyşy: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Hereketi: ilki Node öň synanyşyk serwerini synap görýär (`scripts/preview-server.mjs`, `/__stop` goldaýar), soň `python3 -m http.server`-a gaýdyp barýar; 8080–8090-da hyzmat edýär; PID `web-local-preview/.server.pid`-de.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Maksat: `website/build`-i `gh-pages` şahasyndaky ýerine push etmek.
+- Ulanylyşy: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Maslahat: Makefile tarapyndan ulanylýan paket dolandyryjyny üýtgetmek üçin `NPM=…`-i goýuň (deslapky `npm`).
+
+---

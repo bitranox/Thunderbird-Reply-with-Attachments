@@ -4,39 +4,41 @@ title: 'Compatibilitate'
 sidebar_label: 'Compatibilitate'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Compatibilitate {#compatibility}
+
+:::important Versiunea minimă de Thunderbird
+Acest supliment acceptă Thunderbird **128 ESR sau mai nou**. Versiunile mai vechi nu sunt acceptate.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR sau mai nou este acceptat (128.x+).
+- Versiunile mai vechi de Thunderbird nu sunt acceptate.
+- Testat pe Windows, macOS și Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 nu este acceptat
+Manifest V2 nu este acceptat. Suplimentul vizează **Manifest V3 (MV3)** pe Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Depanare {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Dacă suplimentul nu funcționează conform așteptărilor, asigurați-vă că folosiți o versiune compatibilă de Thunderbird (128 ESR sau mai recentă).
+- Verificați consola de erori din Thunderbird (**Tools > Developer Tools > Error Console**) pentru orice probleme legate de supliment.
+- Dacă setările salvate par să nu se aplice corect, reporniți Thunderbird și încercați din nou. (Thunderbird poate memora starea între sesiuni; o repornire garantează că sunt încărcate setările actualizate.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Conflicte cunoscute {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Niciunul cunoscut în acest moment. Dacă observați atașamente duplicate repetate sau erori cu alte suplimente, vă rugăm să raportați, incluzând pașii de reproducere.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Build-urile Thunderbird Beta și Daily (Nightly) sunt în general acceptate, dar modificările upstream pot, ocazional, să afecteze comportamentul suplimentului. Dacă întâmpinați probleme, vă rugăm să le raportați și să includeți versiunea exactă de Thunderbird (de ex., „Daily 131.0a1 2025‑09‑10”).
+- Ați dat peste o regresie pe Beta/Nightly? Vă rugăm să o raportați cu pașii de reproducere — vedeți [Asistență](support) — și includeți șirul exact al build‑ului Thunderbird.
 
 ---

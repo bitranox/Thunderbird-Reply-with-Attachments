@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'Amfani'
-sidebar_label: 'Amfani'
+title: 'Huutoraade'
+sidebar_label: 'Huutugol'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Huutorgol {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Jaab, tee add‑on oo maa ɓeyda dokkoreeji jowe e jaajol — walla ɗaɓɓitii ko adii yo, so hurminaama e Cuɓe.
+- ɓennugol ɗiɗi momtaa ko e innde fiilde; geɗe S/MIME ɓe momtaa sahaa kala. Nataaji inline ɓe artiraa e jinnaaɗe jaabugol ko kallum (daaƴtu e "Include inline pictures" e Cuɓe).
+- Dokkoreeji e blacklist ɓe kadi momtaa (jiɓirɗe glob nde ɓe huuɓi innde fiilde tan, wonaa laawol; ɗe hoolaaka mawnde/majjuɗe case). Yiy [Teelte](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Hol ko waɗɗii so a jaabi {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Ƴeewta jaabugol → doggol dokkoreeji jowe → seɗda S/MIME + inline → teeŋtude so aɗa yiɗi → ɓeydu fiilde cuɓaaɗe (momtu ɓennuge) → artir nataaji inline e jinnaaɗe.
 
----
+Pass ɓurindi vs. pass ñalawol: add‑on oo nanndii tawo momtaa geɗe S/MIME e inline e dokkorde fiilde. So hay huunde laatoto, maa ɗowti pass ñalawol nde kadi momtaa S/MIME/inline kono waɗa faamde ɗiɗi e ko ɓurɗi balɗe (yiy Cariiɗe Code). Nataaji inline wonaa goɗɗaa ɓeydaa e ko dokkorde fiilde; wonaa ɗuum, so "Include inline pictures" hurminaama (ko kallum), ɓe mbaɗa woodude e jinnaaɗe jaabugol toowde no data URI base64.
 
-## Behavior Details {#behavior-details}
+| Fannu geɗe                                             |                  Pass ɓurindi |                  Pass ñalawol |
+| ------------------------------------------------------ | ----------------------------: | ----------------------------: |
+| Fiilde siŋillo S/MIME `smime.p7s`                      |                        Momtaa |                        Momtaa |
+| Fannu MIME S/MIME (`application/pkcs7-*`)              |                        Momtaa |                        Momtaa |
+| Nataande inline toowiraaɗo e Content‑ID (`image/*`)    | Momtaa (artiraa e jinnaaɗe\*) | Momtaa (artiraa e jinnaaɗe\*) |
+| Imeel dokkiraaɗo (`message/rfc822`) jogii innde fiilde |                  Wonaa ɓeydaa |            Ena waawi ɓeydaade |
+| Dokkorde fiilde loowdi jogii innde                     |            Ena waawi ɓeydaade |            Ena waawi ɓeydaade |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* So "Include inline pictures" hurminaama (kallum: ON), nataaji inline ɓe mbaɗa woodude e jinnaaɗe jaabugol no data URI base64, wonaa ɓeydaade e dokkorde fiilde. Yiy [Teelte](configuration#include-inline-pictures).
+
+Yimre: Dokkoreeji seeɗa ena waawi ŋakku e geɗe heɗiɗi kono aanon kadi fiilde goɗɗi (wonaa inline/S/MIME). So pass ɓurindi ngel nattii e ko woni, pass ñalawol maa jaɓi ɓe e ɓe ɓeydii.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Jokkol baɗte {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Forward wonaa wayleede ko feewi (yiy Limite les ɗee).
+- Ko fii ko waɗi dokkorde waawaani ɓeydanaade, yiy “Hol ko waɗi dokkoreeji waawaani ɓeydanaade”.
 
 ---
 
-## Limitations {#limitations}
+## Cariiɗe e gollal {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Falo ɓennugol ɗiɗi:** add‑on oo maa markita tab ngel compose no gollitaama huutoraade kiisol sessioŋ per‑tab e reende e memory. Wonaa ɓeyda jowe keeriiɗe.
+- Uddugol e udditgol henorde compose ko nattii kamɓe tab keso (wanoo: etaare hesere ena yamiraa).
+- **Teddino dokkoreeji goodi:** So compose ngol ena jogii dokkoreeji goɗɗi, jowe maa ɓeydanaa tan e gooto, naftude innden ɗe waɗi goɗɗi ɗe jeye.
+- **Momtugol:** geɗe S/MIME e nataaji inline ɓe momtaa e dokkorde fiilde. So hay huunde laatoto e passi adadu ngal, passi ñalawol maa ƴeewto kadi geɗe wonaa S/MIME. Nataaji inline ɓe toppitaa seeɓa: ɓe artiraa e jinnaaɗe jaabugol no data URI (so hurminaama).
+  - **Innden fiilde:** `smime.p7s`
+  - **Fannu MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Nataaji inline:** geɓre kala `image/*` toowiraa e Content‑ID — momtaa e dokkorde fiilde kono mbaɗa woodude e jinnaaɗe jaabugol so "Include inline pictures" ON
+  - **Imeel dokkiraaɗe (`message/rfc822`):** ɗe ƴellita ko dokkoreeji goɗɗi so ɓe jogii innde fiilde; ɓe ena waawi ɓeydaade (so ɓe roɓi e ƴeewto ɓennuge e blacklist).
+- **Reentino blacklist (so hurminii):** So cuɓe ɗee momtaa e blacklist maa, add‑on oo hollita ndii modaalre ɓuutɗe, ɗe doggita fiilde ɓe ñawndii e jiɓirɗe ɓe nanndi. Ƴeewnditoore ngal kadi hollii e ɗee darnde so alaa dokkorde maa ɓeydanaa sabu kala ko momtaa.
 
 ---
 
-See also
+## Cattiiɗe ordiiro {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Henorde teeŋtude: Y/J = Eey, N/Esc = Alaa; Tab/Shift+Tab e toɓɓe lomtaare (arrow) ɓe riiwondira yanande.
+  - “Default answer” e [Teelte](configuration#confirmation) nde ñippita butoŋ nde jeɗii adandu.
+  - Enter non hurminata butoŋ nde ñippii. Tab/Shift+Tab e toɓɓe arrow ɓe dooɓata ñippugol ngam heɓooji.
+
+### Laaɓol ndokkal ordiiro {#keyboard-cheat-sheet}
+
+| Toɓɓe           | Golle                                    |
+| --------------- | ---------------------------------------- |
+| Y / J           | Teeŋtin Eey                              |
+| N / Esc         | Teeŋtin Alaa                             |
+| Enter           | Hurmin butoŋ nde ñippii                  |
+| Tab / Shift+Tab | Dooɓu ñippugol yeeso/ɗinge               |
+| Arrow keys      | Dooɓu ñippugol haa butoŋ ɓe              |
+| Jaabirde kallum | Ñippita ñippugol adandu (Eey walla Alaa) |
+
+---
+
+## Keertine {#limitations}
+
+- Forward wonaa wayleede e add‑on oo (Reply e Reply all ɓe tammbitaama).
+- Dokkoreeji maaɗiirɗi ena waawi haɗde ko banngogol Thunderbird walla jeyaaɗo nde.
+  - Add‑on oo wonaa waawde ceŋcinde walla juutinde fiilde; ko e daɗndude toppugol Thunderbird baawtol.
+- Ɓatakuuji cuppitiiɗi: geɗe S/MIME ɓe momtaa no feewi.
+
+---
+
+## Hol ko waɗi dokkoreeji waawaani ɓeydanaade {#why-attachments-might-not-be-added}
+
+- Nataaji inline wonaa ɓeydaa e ko dokkorde fiilde. So "Include inline pictures" ON (ko kallum), ɓe mbaɗa woodude e jinnaaɗe jaabugol no data URI. So teelte nde OFF, nataaji inline ɓe momtaa haa timmi. Yiy [Teelte](configuration#include-inline-pictures).
+- Geɗe siŋillo S/MIME ɓe momtaa ko feewi: innden fiilde wano `smime.p7s` e fannu MIME wano `application/pkcs7-signature` walla `application/pkcs7-mime` ɓe momtaa.
+- Jiɓirɗe blacklist ena waawi seɗde cuɓe: yiy [Teelte](configuration#blacklist-glob-patterns); ƴeewndugol ɗee hoolaaka mawnde-mbadiɗo e innde fiilde tan.
+- Innden fiilde ɓennugol wonaa ɓeydaa kadi: so compose ngol ena jogii fiilde gooto jogii innde toɗɗii, ɗuum momtaa.
+- Geɗe wonaa fiilde walla innden ñakkuɗe: tan geɗe mbaylo fiilde jogii innde waawnde huutoraade ɓe ɗee ɗeɗe ɗeƴƴita nder ɓeydogol.
+
+---
+
+Yiy kadi
+
+- [Teelte](configuration)

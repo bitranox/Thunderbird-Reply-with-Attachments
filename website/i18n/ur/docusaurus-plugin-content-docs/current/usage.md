@@ -4,94 +4,97 @@ title: 'استعمال'
 sidebar_label: 'استعمال'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## استعمال {#usage}
+
+- جواب دیں اور ایڈ آن اصل فائلیں خودکار طور پر شامل کر دیتا ہے — یا پہلے پوچھتا ہے، اگر اختیارات میں فعال ہو۔
+- فائل نام کی بنیاد پر تکرار ختم کی جاتی ہے؛ S/MIME حصے ہمیشہ چھوڑ دیے جاتے ہیں۔ ان لائن تصاویر بطور ڈیفالٹ جوابی پیغام کے باڈی میں بحال کی جاتی ہیں (اختیارات میں "Include inline pictures" کے ذریعے غیر فعال کریں)۔
+- بلیک لسٹ شدہ اٹیچمنٹس بھی چھوڑ دیے جاتے ہیں (کیس سے غیر حساس گلوب پیٹرنز جو فائل ناموں سے میل کھاتے ہیں، راستوں سے نہیں)۔ دیکھیے [کنفیگریشن](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### جواب دینے پر کیا ہوتا ہے {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- جواب کا سراغ لگائیں → اصل اٹیچمنٹس کی فہرست بنائیں → S/MIME + ان لائن کو فلٹر کریں → اختیاری تصدیق → اہل فائلیں شامل کریں (نقلیں چھوڑیں) → باڈی میں ان لائن تصاویر بحال کریں۔
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+سخت بمقابلہ ریلیکسڈ پاس: ایڈ آن پہلے فائل اٹیچمنٹس سے S/MIME اور ان لائن حصوں کو خارج کرتا ہے۔ اگر کچھ اہل نہ ہو، تو یہ ایک ریلیکسڈ پاس چلاتا ہے جو پھر بھی S/MIME/ان لائن کو خارج رکھتا ہے مگر مزید کیسز برداشت کرتا ہے (کوڈ کی تفصیلات دیکھیں)۔ ان لائن تصاویر کو کبھی فائل اٹیچمنٹس کے طور پر نہیں جوڑا جاتا؛ اس کے بجائے، جب "Include inline pictures" فعال ہو (ڈیفالٹ)، تو انہیں براہِ راست جواب کے باڈی میں base64 data URIs کے طور پر ایمبیڈ کیا جاتا ہے۔
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| حصے کی قسم                                                 |                سخت پاس |            ریلیکسڈ پاس |
+| ---------------------------------------------------------- | ---------------------: | ---------------------: |
+| S/MIME دستخط فائل `smime.p7s`                              |                   خارج |                   خارج |
+| S/MIME MIME اقسام (`application/pkcs7-*`)                  |                   خارج |                   خارج |
+| Content‑ID کے ذریعے حوالہ دی گئی ان لائن تصویر (`image/*`) | خارج (باڈی میں بحال\*) | خارج (باڈی میں بحال\*) |
+| فائل نام کے ساتھ منسلک ای میل (`message/rfc822`)           |      شامل نہیں کی جاتی |     شامل کی جا سکتی ہے |
+| فائل نام کے ساتھ عام فائل اٹیچمنٹ                          |     شامل کی جا سکتی ہے |     شامل کی جا سکتی ہے |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* جب "Include inline pictures" فعال ہو (ڈیفالٹ: آن)، ان لائن تصاویر کو فائل اٹیچمنٹس کے طور پر شامل کرنے کے بجائے جواب کے باڈی میں base64 data URIs کی صورت میں ایمبیڈ کیا جاتا ہے۔ دیکھیے [کنفیگریشن](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+مثال: کچھ اٹیچمنٹس میں بعض ہیڈرز موجود نہیں ہوتے مگر وہ پھر بھی عام فائلیں ہوتی ہیں (ان لائن/S/MIME نہیں)۔ اگر سخت پاس کوئی اہل فائل نہ پائے تو ریلیکسڈ پاس انہیں قبول کر کے منسلک کر سکتا ہے۔
 
 ---
 
-## Behavior Details {#behavior-details}
+### کراس ریفرنس {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- فارورڈ کو ڈیزائن کے مطابق تبدیل نہیں کیا جاتا (نیچے حدود دیکھیں)۔
+- اٹیچمنٹ کے شامل نہ ہونے کی وجوہات کے لیے دیکھیے “کیوں اٹیچمنٹس شامل نہیں کی جا سکتیں”。
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## رویے کی تفصیلات {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- نقل سے بچاؤ: ایڈ آن فی ٹیب سیشن ویلیو اور اِن میموری گارڈ استعمال کرتے ہوئے کمپوز ٹیب کو پروسیسڈ کے طور پر نشان زد کرتا ہے۔ یہ اصل فائلیں دو بار نہیں جوڑے گا۔
+- کمپوز ونڈو بند کر کے دوبارہ کھولنا نئے ٹیب کے طور پر سمجھا جاتا ہے (یعنی نیا اقدام اجازت یافتہ ہے)۔
+- موجودہ اٹیچمنٹس کا احترام: اگر کمپوز میں پہلے سے کچھ اٹیچمنٹس موجود ہوں، تب بھی اصل اٹیچمنٹس صرف ایک بار شامل کیے جاتے ہیں، اور پہلے سے موجود فائل ناموں کو چھوڑ دیا جاتا ہے۔
+- اخراجات: S/MIME آرٹی فیکٹس اور ان لائن تصاویر کو فائل اٹیچمنٹس سے خارج کیا جاتا ہے۔ اگر پہلی پاس میں کچھ اہل نہ ہو، تو ریلیکسڈ فال بیک غیر S/MIME حصوں کو دوبارہ چیک کرتا ہے۔ ان لائن تصاویر الگ سے ہینڈل ہوتی ہیں: انہیں جواب کے باڈی میں data URIs کے طور پر بحال کیا جاتا ہے (جب فعال ہو)۔
+  - فائل نام: `smime.p7s`
+  - MIME اقسام: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - ان لائن تصاویر: Content‑ID کے ذریعے حوالہ دیا گیا کوئی بھی `image/*` حصہ — فائل اٹیچمنٹس سے خارج، لیکن جب "Include inline pictures" آن ہو تو جواب کے باڈی میں ایمبیڈ کیا جاتا ہے
+  - منسلک ای میلز (`message/rfc822`): اگر ان کے پاس فائل نام ہو تو انہیں عام اٹیچمنٹس سمجھا جاتا ہے؛ انہیں شامل کیا جا سکتا ہے (ڈپلیکیٹ چیکس اور بلیک لسٹ کے تابع)۔
+- بلیک لسٹ وارننگ (اگر فعال ہو): جب امیدوار آپ کی بلیک لسٹ کے باعث خارج ہوں،
+  ایڈ آن ایک چھوٹا ماڈل دکھاتا ہے جو متاثرہ فائلوں اور ملتے جلتے
+  پیٹرن(ز) کی فہرست دیتا ہے۔ یہ وارننگ اس وقت بھی ظاہر ہوتی ہے جب کوئی اٹیچمنٹ شامل نہیں کیا جائے گا کیونکہ سب کچھ خارج کر دیا گیا تھا۔
 
 ---
 
-## Limitations {#limitations}
+## کی بورڈ شارٹ کٹس {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- کنفرمیشن ڈائیلاگ: Y/J = Yes، N/Esc = No؛ Tab/Shift+Tab اور Arrow keys فوکس کو گردش کرواتے ہیں۔
+  - [کنفیگریشن](configuration#confirmation) میں “Default answer” ابتدائی طور پر منتخب بٹن طے کرتا ہے۔
+  - Enter فوکسڈ بٹن کو متحرک کرتا ہے۔ Tab/Shift+Tab اور تیروں سے رسائی پذیری کے لیے فوکس منتقل کریں۔
+
+### کی بورڈ چیٹ شیٹ {#keyboard-cheat-sheet}
+
+| Keys            | عمل                                  |
+| --------------- | ------------------------------------ |
+| Y / J           | Yes کی تصدیق کریں                    |
+| N / Esc         | No کی تصدیق کریں                     |
+| Enter           | فوکسڈ بٹن فعال کریں                  |
+| Tab / Shift+Tab | فوکس آگے/پیچھے منتقل کریں            |
+| Arrow keys      | بٹنوں کے درمیان فوکس منتقل کریں      |
+| Default answer  | ابتدائی فوکس سیٹ کرتا ہے (Yes یا No) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## حدود {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- یہ ایڈ آن فارورڈ کو تبدیل نہیں کرتا (Reply اور Reply all سپورٹڈ ہیں)۔
+- بہت بڑی اٹیچمنٹس تھنڈربرڈ یا فراہم کنندہ کی حدوں کے تابع ہو سکتی ہیں۔
+  - ایڈ آن فائلوں کو نہ تو چنکس میں بانٹتا ہے اور نہ ہی کمپریس کرتا ہے؛ یہ تھنڈربرڈ کے معمول کے اٹیچمنٹ ہینڈلنگ پر انحصار کرتا ہے۔
+- مرموز پیغامات: S/MIME حصوں کو جان بوجھ کر خارج کیا جاتا ہے۔
 
 ---
 
-See also
+## کیوں اٹیچمنٹس شامل نہیں کی جا سکتیں {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- ان لائن تصاویر فائل اٹیچمنٹس کے طور پر شامل نہیں کی جاتیں۔ جب "Include inline pictures" آن ہو (ڈیفالٹ)، تو انہیں اس کے بجائے جواب کے باڈی میں data URIs کے طور پر ایمبیڈ کیا جاتا ہے۔ اگر سیٹنگ آف ہو تو ان لائن تصاویر مکمل طور پر ہٹا دی جاتی ہیں۔ دیکھیے [کنفیگریشن](configuration#include-inline-pictures)۔
+- S/MIME دستخطی حصے ڈیزائن کے مطابق خارج کیے جاتے ہیں: `smime.p7s` جیسے فائل نام اور `application/pkcs7-signature` یا `application/pkcs7-mime` جیسی MIME اقسام چھوڑ دی جاتی ہیں۔
+- بلیک لسٹ پیٹرنز امیدواروں کو فلٹر کر سکتے ہیں: دیکھیے [کنفیگریشن](configuration#blacklist-glob-patterns)؛ میچنگ کیس سے غیر حساس اور صرف فائل نام کی بنیاد پر ہوتی ہے۔
+- ڈپلیکیٹ فائل نام دوبارہ شامل نہیں کیے جاتے: اگر کمپوز میں پہلے سے اسی نارملائزڈ نام والی فائل موجود ہو تو اسے چھوڑ دیا جاتا ہے۔
+- غیر فائل حصے یا غائب فائل نام: صرف وہ حصے جو فائل جیسے ہوں اور قابلِ استعمال فائل نام رکھتے ہوں شامل کرنے کے لیے موزوں سمجھے جاتے ہیں۔
+
+---
+
+یہ بھی دیکھیں
+
+- [کنفیگریشن](configuration)

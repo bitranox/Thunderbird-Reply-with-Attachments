@@ -4,94 +4,98 @@ title: 'Notkun'
 sidebar_label: 'Notkun'
 ---
 
-## Usage {#usage}
+---
 
-- Svara og viðbótin bætir upprunalegum skrám sjálfkrafa við — eða spyr fyrst, ef það er virkjuð í valkostum.
-- Duplicated eftir skráarheiti; S/MIME og inline myndir eru alltaf slepptar.
-- Blacklist-aðar viðhengi eru einnig sleppt (case-insensitive glob mynstur sem passa skráarheiti, ekki slóðir). Sjá [Configuration](configuration#blacklist-glob-patterns).
+## Notkun {#usage}
+
+- Svaraðu og viðbótin bætir upprunalegum viðhengjum við sjálfkrafa — eða spyr fyrst, ef það er virkjað í Valkostum.
+- Tvítök eru forðuð eftir skráarheiti; S/MIME-hlutum er alltaf sleppt. Innfelldar myndir eru endursettar í texta svarsins sjálfgefið (slökktu í „Include inline pictures“ í Valkostum).
+- Viðhengjum á svörtum lista er einnig sleppt (há-/lágstafsóháð glob-mynstur sem samsvara skráarheitum, ekki slóðum). Sjá [Stillingar](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Hvað gerist við svar {#what-happens}
 
-- Skilgreina svar → lista upprunaleg viðhengi → sía S/MIME + inline → valkvæð staðfesting → bæta við hæfu skjölum (sleppa dublikat).
+- Greinir svar → listar upprunaleg viðhengi → síar S/MIME + innfelld → valkvæð staðfesting → bætir við gjaldgengum skrám (sleppir tvítökum) → endursetur innfelldar myndir í meginmáli.
 
-Strict vs. relaxed pass: Viðbótin útilokar fyrst S/MIME og inline hlutar. Ef ekkert uppfyllir skilyrðin, framkvæmir hún afslappaðara skimun sem útilokar enn S/MIME/inline en þolir fleiri tilvik (sjá Code Details).
+Ströng vs. slök yfirferð: Viðbótin útilokar fyrst S/MIME og innfellda hluta úr skráarviðhengjum. Ef ekkert hæfir, keyrir hún slakari yfirferð sem útilokar áfram S/MIME/innfellda hluta en umber fleiri tilfelli (sjá Kóða‑nánar). Innfelldum myndum er aldrei bætt við sem skráarviðhengjum; þegar „Include inline pictures“ er virkjað (sjálfgefið), eru þær í staðinn felldar beint inn í svartextann sem base64 data‑URI.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Tegund hlutar                                           |                    Ströng yfirferð |                      Slök yfirferð |
+| ------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
+| S/MIME undirskriftarskrá `smime.p7s`                    |                           Útilokað |                           Útilokað |
+| S/MIME MIME‑tegundir (`application/pkcs7-*`)            |                           Útilokað |                           Útilokað |
+| Innfelld mynd sem vísað er í með Content‑ID (`image/*`) | Útilokað (endursett í meginmáli\*) | Útilokað (endursett í meginmáli\*) |
+| Viðhengt tölvupóstur (`message/rfc822`) með skráarheiti |                      Ekki bætt við |                Gæti verið bætt við |
+| Venjulegt skráarviðhengi með skráarheiti                |                Gæti verið bætt við |                Gæti verið bætt við |
 
-Dæmi: Sum viðhengi gætu skort ákveðin fyrirsagnir en eru samt reglulegar skrár (ekki inline/S/MIME). Ef strangt skimun finnur engin, getur afslappað skimun samþykkt þau og bætt þeim við.
+\* Þegar „Include inline pictures“ er virkjað (sjálfgefið: ON), eru innfelldar myndir felldar inn í svartextann sem base64 data‑URI í stað þess að vera bætt við sem skráarviðhengi. Sjá [Stillingar](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Framleiðsla er ekki breytt með áformi (sjá Takmarkanir hér að neðan).
-- Fyrir ástæður sem viðhengi gæti ekki verið bætt, sjá "Af hverju viðhengi gæti ekki verið bætt".
+Dæmi: Sum viðhengi kunna að vanta tiltekna hausar en eru samt venjulegar skrár (ekki innfelld/S/MIME). Ef stranga yfirferðin finnur engin, gæti slaka yfirferðin tekið þau gild og hengt við.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Krossvísanir {#cross-reference}
 
-- **Forvarnir gegn dublikat:** Viðbótin merkir samansetningartöflu sem unnið hefur verið með gildi í sértækum tólf á hverju blaði og í minni vörn. Hún mun ekki bæta upprunalegum skráum við tvisvar.
-- Að loka og opna aftur samsetningar glugga er meðhöndlað sem nýtt blað (þ.e., nýr tilraun er leyfð).
-- **Virða núverandi viðhengi:** Ef samsetningin inniheldur nú þegar einhver viðhengi, þá eru upprunalegu skrárnar enn bætt við einu sinni, sleppa skráarheiti sem þegar eru til.
-- **Aukaskilyrði:** S/MIME hlutir og inline myndir eru ekki teknir með. Ef ekkert uppfyllir skilyrðin í fyrstu skimun, skoðar afslappað fallback aftur þá hluta sem ekki eru S/MIME.
-  - **Skráarheiti:** `smime.p7s`
-  - **MIME tegundir:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline myndir:** hvaða `image/*` hlut sem vísað er í með Content‑ID í skilaboðunum
-  - **Viðhengið emails (`message/rfc822`):** meðhöndlað sem venjuleg viðhengi ef þau hafa skráarheiti; þau gætu verið bætt (háð dublikat eftirliti og blacklist).
-- **Blacklist viðvörun (ef virkjuð):** Þegar frambjóðendur eru útilokaðir af blacklist-inni,
-  sýnir viðbótin lítið glugga sem listar viðkomandi skrár og samsvarandi
-  mynstur. Þessi viðvörun kemur einnig fram þegar engin viðhengi verða
-  bætt vegna þess að allt var útilokað.
+- Áframsenda er ekki breytt samkvæmt hönnun (sjá Takmarkanir hér að neðan).
+- Fyrir ástæður þess að ekki sé bætt við viðhengjum, sjá „Af hverju gæti ekki verið bætt við viðhengjum“.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Nánar um hegðun {#behavior-details}
 
-- Staðfestingargluggi: Y/J = Já, N/Esc = Nei; Tab/Shift+Tab og örvustýringar hringja í fókus.
-  - "Sjálfgefna svarið" í [Configuration](configuration#confirmation) stillir upphaflega fokusaða hnappinn.
-  - Enter kveikir á fókusarhnappar. Tab/Shift+Tab og örvar færa fókus fyrir aðgengi.
+- Dupplikuvarnir: Viðbótin merkir samsetningarflipann sem unnin með flipasértæku setugildi og vörn í minni. Hún bætir ekki upprunalegum viðhengjum við tvisvar.
+- Að loka og opna aftur samsetningarglugga telst nýr flipi (þ.e. ný tilraun er leyfð).
+- Virðir fyrirliggjandi viðhengi: Ef samsetningin inniheldur þegar einhver viðhengi, er samt aðeins bætt við upprunalegum einu sinni og skráarheitum sem þegar eru til er sleppt.
+- Undanþágur: S/MIME‑afurðum og innfelldum myndum er sleppt úr skráarviðhengjum. Ef ekkert hæfir í fyrstu yfirferð, framkvæmir varayfirferð slakari endurathugun á ekki‑S/MIME hlutum. Innfelldar myndir eru meðhöndlaðar sérstaklega: þær eru endursettar í svartextann sem data‑URI (þegar virkjað).
+  - Skráarheiti: `smime.p7s`
+  - MIME‑tegundir: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Innfelldar myndir: allir `image/*` hlutar sem Content‑ID vísar í — útilokaðir úr skráarviðhengjum en felldir inn í svartextann þegar „Include inline pictures“ er ON
+  - Viðhengdir póstboðskapir (`message/rfc822`): meðhöndlaðir sem venjuleg viðhengi ef þeir hafa skráarheiti; gæti verið bætt við (háð tvítökuathugunum og svörtum lista).
+- Aðvörun um svartan lista (ef virkjað): Þegar frambjóðendum er sleppt vegna svarta listans,
+  sýnir viðbótin lítið glugga sem listir upp viðkomandi skrár og samsvarandi
+  mynstur. Þessi aðvörun birtist einnig þegar engum viðhengjum verður bætt við
+  þar sem öllu var sleppt.
 
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+---
 
-| Keys            | Action                                 |
+## Flýtilyklar {#keyboard-shortcuts}
+
+- Staðfestingargluggi: Y/J = Já, N/Esc = Nei; Tab/Shift+Tab og Örvalyklar færa fókus í hring.
+  - „Default answer“ í [Stillingar](configuration#confirmation) setur hnappinn sem fær upphaflegan fókus.
+  - Enter virkjar hnappinn með fókus. Tab/Shift+Tab og örvar færa fókus fyrir aðgengi.
+
+### Yfirlit flýtilykla {#keyboard-cheat-sheet}
+
+| Lyklar          | Aðgerð                                 |
 | --------------- | -------------------------------------- |
 | Y / J           | Staðfesta Já                           |
 | N / Esc         | Staðfesta Nei                          |
-| Enter           | Virkja fókusarhnappinn                 |
-| Tab / Shift+Tab | Færa fókus áfram/bak                   |
-| Arrow keys      | Færa fókus á milli hnappara            |
+| Enter           | Virkja valinn hnapp                    |
+| Tab / Shift+Tab | Færa fókus áfram/til baka              |
+| Örvalyklar      | Færa fókus á milli hnappa              |
 | Default answer  | Stillir upphaflegan fókus (Já eða Nei) |
 
 ---
 
-## Limitations {#limitations}
+## Takmarkanir {#limitations}
 
-- Framleiðsla er ekki breytt af þessari viðbót (Svara og Svara öllum eru stutt).
-- Mjög stór viðhengi gætu verið háð takmörkunum frá Thunderbird eða þjónustuaðila.
-  - Viðbótin skiptir ekki upp eða þjöppar skrám; hún treystir á venjulega meðhöndlun viðhengja frá Thunderbird.
-- Dulkóðuð skilaboð: S/MIME hlutar eru með ásettu útilokaðir.
+- Áframsenda er ekki breytt af þessari viðbót (Svara og Svara öllum eru stutt).
+- Mjög stór viðhengi kunna að lúta takmörkunum Thunderbird eða þjónustuveitanda.
+  - Viðbótin brýtur ekki skrár í bita né þjappar þeim; hún treystir á venjulega meðhöndlun Thunderbird á viðhengjum.
+- Dulrituð skilaboð: S/MIME‑hlutum er vísvitandi sleppt.
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Ástæður þess að viðhengjum gæti ekki verið bætt við {#why-attachments-might-not-be-added}
 
-- Inline myndir eru ekki teknar með: hlutar sem vísað er í með Content‑ID í skilaboðunum eru ekki bætt sem skrár.
-- S/MIME undirskriftir eru útilokaðar með ásettu: skráarheiti eins og `smime.p7s` og MIME tegundir eins og `application/pkcs7-signature` eða `application/pkcs7-mime` eru slepptar.
-- Blacklist mynstur geta síað frambjóðendur: sjá [Configuration](configuration#blacklist-glob-patterns); samsvörun er case-insensitive og aðeins skráarheiti.
-- Dublikat skráarheiti eru ekki bætt aftur: ef samsetningin inniheldur nú þegar skrá með sama normalízeruðu nafni, þá er hún sleppt.
-- Óskráarskrá hlutar eða skráarheiti vanti: aðeins skráarhlutir með nothæfum skráarheitum eru taldir við bætur.
+- Innfelldum myndum er ekki bætt við sem skráarviðhengjum. Þegar „Include inline pictures“ er ON (sjálfgefið), eru þær felldar inn í svartextann sem data‑URI í staðinn. Ef stillingin er OFF, eru innfelldar myndir fjarlægðar alveg. Sjá [Stillingar](configuration#include-inline-pictures).
+- S/MIME undirskriftarhlutum er sleppt samkvæmt hönnun: skráarheitum eins og `smime.p7s` og MIME‑tegundum á borð við `application/pkcs7-signature` eða `application/pkcs7-mime` er sleppt.
+- Mynstur á svörtum lista geta síað frambjóðendur: sjá [Stillingar](configuration#blacklist-glob-patterns); samsvörun er há-/lágstafsóháð og eingöngu eftir skráarheiti.
+- Tvíteknu skráarheitum er ekki bætt við aftur: ef samsetningin inniheldur þegar skrá með sama samræmda heiti, er henni sleppt.
+- Ekki‑skráarhlutar eða vantar skráarheiti: einungis skrár‑líkar einingar með nothæfu skráarheiti koma til greina.
 
 ---
 
 Sjá einnig
 
-- [Configuration](configuration)
+- [Stillingar](configuration)

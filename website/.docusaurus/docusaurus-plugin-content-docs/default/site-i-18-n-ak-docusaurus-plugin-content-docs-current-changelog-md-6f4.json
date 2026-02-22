@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Nkyerɛaseɛ Nɔma",
-  "description": "Nkyerɛaseɛ Nɔma",
+  "title": "Nsakrae Abakɔsɛm",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Nkyerɛaseɛ Nɔma"
+    "title": "Nsakrae Abakɔsɛm"
   },
   "sidebar": "docs",
   "previous": {

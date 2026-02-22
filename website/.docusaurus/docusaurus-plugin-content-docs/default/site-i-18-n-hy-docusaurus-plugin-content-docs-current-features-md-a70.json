@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Особенности",
-  "description": "Features",
+  "title": "Հնարավորություններ",
+  "description": "---",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Особенности",
-    "sidebar_label": "Особенности"
+    "title": "Հնարավորություններ",
+    "sidebar_label": "Հատկություններ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Ամենաբարձր մակարդակ",
+    "title": "Արագ մեկնարկ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/quickstart"
   }
 }

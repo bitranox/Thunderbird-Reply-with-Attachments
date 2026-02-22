@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Özellikler",
-  "description": "Features",
+  "title": "Aýratynlyklar",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Özellikler",
-    "sidebar_label": "Özellikler"
+    "title": "Aýratynlyklar",
+    "sidebar_label": "Aýratynlyklar"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Başlaňç",
+    "title": "Tiz başlangyç",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/quickstart"
   }
 }

@@ -4,31 +4,40 @@ title: 'Tính năng'
 sidebar_label: 'Tính năng'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Tính năng {#features}
 
-## How It Works {#how-it-works}
+- Tự động đính kèm các tệp từ email gốc khi trả lời.
+- Có thể cấu hình hành vi: tệp đính kèm có thể được
+  - thêm tự động, hoặc
+  - chỉ thêm sau khi có xác nhận (một hộp thoại nhỏ, dễ tiếp cận). Trong Tùy chọn bạn
+    có thể bật xác nhận và chọn câu trả lời mặc định (Có/Không).
+- Danh sách đen tên tệp (mẫu glob) ngăn các tệp cụ thể được
+  đính kèm tự động. Ví dụ: `*intern*`, `*secret*`, `*passwor*`.
+  Việc khớp không phân biệt hoa/thường và chỉ kiểm tra tên tệp; cung cấp một mẫu
+  mỗi dòng trong Tùy chọn.
+- Cảnh báo danh sách đen (tùy chọn, bật theo mặc định): khi các tệp bị loại trừ bởi
+  danh sách đen của bạn, một hộp thoại nhỏ sẽ liệt kê tệp và (các) mẫu khớp. Thân thiện với
+  chế độ tối và có thể thao tác bằng bàn phím (Enter/Esc để đóng).
+- Hoạt động với Trả lời và Trả lời tất cả. Chuyển tiếp không bị chỉnh sửa bởi tiện ích bổ sung này.
+- Thêm các tệp gốc ngay cả khi bạn đã tự đính kèm thứ gì đó; tránh trùng lặp theo tên tệp.
+- Cơ chế chống trùng lặp theo từng tab ngăn thêm hai lần trong cùng một tab soạn thảo.
+- Mặc định bỏ qua chứng chỉ S/MIME để tránh các tệp đính kèm không cần thiết.
+- Bao gồm hình ảnh nội tuyến (mặc định: BẬT). Ảnh nhúng được khôi phục trực tiếp trong
+  phần nội dung trả lời dưới dạng URI dữ liệu base64, giữ nguyên bố cục nội tuyến ban đầu. Tắt trong
+  Tùy chọn để bỏ qua hoàn toàn ảnh nội tuyến.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Cách thức hoạt động {#how-it-works}
+
+- Khi trả lời, tiện ích bổ sung liệt kê các tệp đính kèm gốc.
+- Lọc bỏ chữ ký S/MIME khỏi tệp đính kèm; ảnh nội tuyến được khôi phục trong nội dung thư (trừ khi bị tắt).
+- Tùy chọn yêu cầu xác nhận (thân thiện với bàn phím).
+- Thêm các tệp phù hợp vào khung soạn thư của bạn, tránh trùng lặp theo tên tệp.
+- Xem “Vì sao tệp đính kèm có thể không được thêm” trong phần Sử dụng cho các trường hợp biên.
+
+Lưu ý về quyền riêng tư: Mọi xử lý diễn ra cục bộ trong Thunderbird. Tiện ích bổ sung không thực hiện bất kỳ yêu cầu mạng nền nào.
+
+---

@@ -47,7 +47,7 @@ function isInlineDisposition(att) {
   return disp.startsWith('inline');
 }
 
-/** Strict pass: exclude S/MIME, any inline image, and inline disposition. */
+/** Strict pass: exclude S/MIME, inline images, and inline disposition. */
 function includeStrict(att) {
   if (isSmime(att)) return false;
   if (isInlineImage(att)) return false;
@@ -55,10 +55,12 @@ function includeStrict(att) {
   return true;
 }
 
-/** Relaxed pass: still exclude S/MIME and inline content, but be lenient otherwise. */
+/** Relaxed pass: exclude S/MIME, inline images, and inline disposition. */
 function includeRelaxed(att) {
-  // Even on relaxed pass, never include inline content or S/MIME artifacts.
-  return !isSmime(att) && !isInlineImage(att) && !isInlineDisposition(att);
+  if (isSmime(att)) return false;
+  if (isInlineImage(att)) return false;
+  if (isInlineDisposition(att)) return false;
+  return true;
 }
 
 // Optional namespacing for clarity (does not affect globals used by tests)

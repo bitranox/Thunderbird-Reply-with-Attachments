@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Mwanzoni'
-sidebar_label: 'Mwanzoni'
+title: 'Kuanza Haraka'
+sidebar_label: 'Mwanzo wa Haraka'
 ---
 
-## Mwanzoni
+---
 
-:::important Toa ya chini ya Thunderbird
-Ongezeko hili linaunga mkono Thunderbird **128 ESR au mpya zaidi**. Matoleo ya zamani hayafuati.
+## Kuanza haraka
+
+:::important Toleo la chini la Thunderbird
+Programu-jalizi hii inaunga mkono Thunderbird **128 ESR au mpya zaidi**. Matoleo ya zamani hayaungwi mkono.
 :::
 
-:::note Hakuna telemetry; hakuna mtandao wa nyuma
-Ongezeko hili **halifanyi** ukusanyaji wa analytics/telemetry na haliwezi kuomba mtandao wa nyuma **katika** wakati wowote. Upatikanaji wa mtandao hutokea tu unapobofya viungo vya nje (Docs, GitHub, Donate).
+:::note Hakuna telimetria; hakuna mtandao wa usuli
+Programu-jalizi haikusanyi takwimu/telimetria wala haitumi maombi ya mtandao kwa usuli. Ufikiaji wa mtandao hutokea tu unapobofya viungo vya nje (Nyaraka, GitHub, Changia).
 :::
 
 ---
 
 ### Sakinisha
 
-1. Sakinisha ongezeko hilo kutoka kwa Ongezeko za Thunderbird.
-2. Hiari: Wezesha uthibitisho (Chaguzi → "Uliza kabla ya kuongeza viambatisho").
-3. Hiari: Acha onyo la orodha ya kuzuia liwe lipo (chaguo-msingi): "Onyesha ikiwa viambatisho vinatengwa na orodha ya kuzuia".
-4. Hiari: Ongeza mifumo ya orodha ya kuzuia (moja kwa kila mstari), mfano:
+1. Sakinisha programu-jalizi kutoka Thunderbird Add‑ons.
+2. Hiari: Washa uthibitisho (Options → “Uliza kabla ya kuongeza viambatisho”).
+3. Hiari: Acha onyo la orodha nyeusi liendelee kuwashwa (chaguo-msingi): “Onya ikiwa viambatisho vimetengwa na orodha nyeusi”.
+4. Hiari: Ongeza miundo ya orodha nyeusi (kila mstari mmoja), mfano:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Ongezeko hili **halifanyi** ukusanyaji wa analytics/telemetry na haliwezi kuomba
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Kumbuka: "# ..." iliyoko juu ni maoni katika hati hii; usijumuishe maoni katika mifumo unayoweka kwenye Chaguzi. Weka mfumo mmoja kwa mstari tu.
+Kumbuka: “# …” hapo juu ni maelezo (comment) katika hati hii; usijumuishe maelezo katika miundo unayobandika kwenye Options. Weka muundo mmoja tu kwa kila mstari.
 
-Sasa jibu ujumbe wenye viambatisho — asili zitajumuishwa kiotomatiki au baada ya uthibitisho wa haraka. Ikiwa kuna faili zozote zilizotengwa na orodha yako ya kuzuia, utaona onyo fupi likizitaja.
-
----
-
-### Kamilisha {#verify}
-
-- Jibu ujumbe wenye viambatisho 1–2 na uthibitisha kwamba asili zimeongezwa kwenye dirisha lako la kuandika.
-- Ili kurekebisha tabia, angalia [Configurazione](configuration) (kupata uthibitisho, jibu la chaguo-msingi, mifumo ya orodha ya kuzuia).
+Sasa jibu ujumbe wenye viambatisho — vya asili vitaongezwa kiotomatiki au baada ya uthibitisho mfupi. Ikiwa kuna faili zozote zimetengwa na orodha yako nyeusi, utaona onyo fupi linaloziorodhesha.
 
 ---
 
-### Kamilisha onyo la orodha ya kuzuia {#verify-blacklist-warning}
+### Thibitisha {#verify}
 
-- Jibu ujumbe wenye faili kama "secret.txt".
-- Kwa kuwa "Onyesha ikiwa viambatisho vinatengwa na orodha ya kuzuia" imewezeshwa, kidogo cha mazungumzo kinataja faili zilizo tajwa na mfumo unaolingana.
-
-Ikiwa huoni onyo, hakikisha mfumo unalingana na jina la faili kwa usahihi (jina la faili pekee, bila kujali herufi). Angalia Configuration → Orodha ya kuzuia.
+- Jibu ujumbe wenye viambatisho 1–2 na thibitisha kuwa vya asili vimeongezwa kwenye dirisha lako la kuandika.
+- Ili kurekebisha tabia, tazama [Usanidi](configuration) (swichi ya uthibitisho, jibu chaguo-msingi, miundo ya orodha nyeusi).
 
 ---
 
-### Kumbukumbu ya kibodi {#keyboard-note}
+### Thibitisha onyo la orodha nyeusi {#verify-blacklist-warning}
 
-- Kidogo cha uthibitisho kinaunga mkono Y/J kwa Ndio na N/Esc kwa Hapana. Katika baadhi ya keyboards zisizo za Kilatini, funguo za herufi zinaweza kutofautiana; Ingia inathibitisha kifungo kilichozungumziwa.
+- Jibu ujumbe wenye faili kama “secret.txt”.
+- Ukiwa na “Onya ikiwa viambatisho vimetengwa na orodha nyeusi” kimewashwa, kidirisha kidogo kitaorodhesha faili zilizotengwa na muundo uliolingana.
+
+Usipoona onyo, hakikisha muundo unalingana kikamilifu na jina la faili (jina la faili pekee, halijali herufi kubwa/ndogo). Tazama Usanidi → Orodha nyeusi.
+
+---
+
+### Kumbuka kuhusu kibodi {#keyboard-note}
+
+- Kidirisha cha uthibitisho kinaunga mkono Y/J kwa Ndiyo na N/Esc kwa Hapana. Kwenye baadhi ya kibodi zisizo za Kilatini, vitufe vya herufi vinaweza kutofautiana; Enter huthibitisha kitufe kilichoangaziwa.
+
+---

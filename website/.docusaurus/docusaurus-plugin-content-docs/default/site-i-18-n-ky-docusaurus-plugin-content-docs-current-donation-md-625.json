@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Донордук",
-  "description": "Donate",
+  "title": "Кайрымдуулук кылуу",
+  "description": "---",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Донордук",
-    "sidebar_label": "Донордук"
+    "title": "Кайрымдуулук кылуу",
+    "sidebar_label": "Кайрымдуулук кылуу"
   },
   "sidebar": "docs",
   "previous": {

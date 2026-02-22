@@ -1,23 +1,28 @@
 ---
 id: changelog
-title: 'تبديل نوٽ'
+title: 'تبديلين جي فهرست'
 ---
-
-## Changelog
-
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
-
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
 
 ---
 
-## Dates and channels {#dates-and-channels}
+## تبديلين جو لاگ
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+مڪمل ۽ تفصيلي تاريخچه لاءِ، ريپوزيٽري جو
+[GitHub تي CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) ڏسو.
+
+- 2.3.2: "Include inline pictures" هاڻي تصويرون سڌو جواب جي باڊي ۾ base64 ڊيٽا URI طور ايمبيڊ ڪري ٿو (ڊي فالٽ: ON); ڪوڊ جي معيار ۾ سڌارا ۽ ٽيسٽ ڪوريج ۾ واڌ.
+- 2.3.1: ٿنڊربرڊ جڏهن بيڪ گرائونڊ ايونٽ پيج کي آئڊل ڪري ڇڏي ٿو، تڏهن به اٽيچمينٽس برقرار رکي ٿو؛ ٽربل شوٽنگ لاءِ هدف وارين ڊيبگ هوڪس شامل ڪري ٿو.
+- 2.3.0: اٽيچمينٽ ڊيوپليڪيٽ هٽائڻ ۾ سڌارو، ٽيسٽ ڪوريج ۾ واڌ، ۽ AMO پاليسين پوري ڪرڻ لاءِ متروڪ اجازتون هٽايون.
+- 2.1.0: مٿين 100 ٻولين لاءِ مڪمل انٽرنيشنلائيزيشن سپورٽ
+- 2.0.0: مڪمل خصوصيتن واري ورزن ڏانهن ٻيهر لکت (EN/DE)
+- 1.0.1: messages.listAttachments() ڏانهن سوئچ ڪيو
+- 1.0.0: ابتدائي رليز
+
+---
+
+## تاريخون ۽ چينلن {#dates-and-channels}
+
+- پيڪيجنگ کان چند ڪلاڪن پوءِ ATN تي رليزن ۾ دير ٿي سگهي ٿي।
+- LOCAL بِلڊون رڳو ڊولپر ٽيسٽنگ لاءِ آهن ۽ ATN ذريعي ورهايون نٿيون وڃن۔
 
 ---

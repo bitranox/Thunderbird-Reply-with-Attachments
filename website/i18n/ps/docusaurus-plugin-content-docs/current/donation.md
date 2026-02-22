@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'ټرخه کړه'
-sidebar_label: 'ټرخه کړه'
+title: 'بسپنه وکړئ'
+sidebar_label: 'بسپنه وکړئ'
 ---
 
-## Donate
+---
+
+## بسپنه
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+که «Reply with Attachments» تاسو ته خوښ وي او غواړئ د هغې په پرمختګ کې ملاتړ وکړئ، نو کولای شئ دلته بسپنه ورکړئ:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="د Stripe له لارې بسپنه ورکړئ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>یا</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="د PayPal له لارې بسپنه ورکړئ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>یا</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="ما ته کافي واخلئ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="د کافي اخیستو لپاره سکین کړئ"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+مننه! ستاسو ملاتړ د نوي Thunderbird خپرونو سره د سازګارۍ په ساتلو، د لاسرسي او ازموینو په ښه کولو، او اسنادو د تازه ساتلو کې مرسته کوي.
 
-Notes
+یادښتونه
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- د بسپنې تړوني یوازې هغه وخت پرانیستل کېږي چې پرې کلیک وکړئ؛ لګون هېڅ شالیدي شبکيز غوښتنې نه ترسره کوي.
+- پرله‌پسې ملاتړ د اوږدمهاله ساتنې او پر وخت تازه‌کوونو سره مرسته کوي، خو په بشپړ ډول اختیاري دی.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+که د انځور تڼۍ نه بارېږي، مهرباني وکړئ پر ځای یې دا تړوني وکاروئ:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+بسپنې داوطلبانه دي؛ هېڅ ځانګړنه په شرط پورې نه تړل کېږي.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## د بسپنې ښکاره‌توب (۹۰ ورځنی ځنډ)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+لګون یوه اسانتیايي ځانګړنه لري چې تر بسپنه ورکولو وروسته د څه مودې لپاره د بسپنې غوښتنې پټې کړي.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- چیرته یې ومومئ
+  - Options → د ملاتړ برخه: تاسو به د “I donated” تڼۍ او یو وړوکی د اشارې ځای ووینئ.
+  - د لېږلو د تایید کړکۍ هم د Donate تڼۍ ښيي؛ کله چې د ځنډ حالت فعال وي، نو په اوتومات ډول پټېږي.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- څنګه کار کوي
+  - د “I donated” په کلیک کولو سره د بسپنې تڼۍ او اړوند غوښتنې ۹۰ ورځو لپاره پټېږي.
+  - د حالت اشاره “Hidden until YYYY‑MM‑DD” (ستاسو په ځایي نېټه) ښيي. همدارنګه د “Show Donate again” په نوم یوه تڼۍ هم شته چې سمدستي بېرته ښکاره‌توب راولي.
+  - له ۹۰ ورځو وروسته، د Donate تڼۍ بېرته په اوتومات ډول ښکاره کېږي.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- محرمیت او زېرمه
+  - لګون د ځنډ مودې د یاد ساتلو لپاره د Thunderbird په ځایي زېرمتون کې یوازې یو مهال‌تمبر خوندي کوي. Key: `donateHideUntil` (د یونیکس ایپوک میلی‌ثانیې).
+  - دا امستنه یوازې ستاسو د Thunderbird پروفایل پورې تړلې ده (له کلاوډ سره نه همغږي کېږي). دا ځانګړنه هېڅ شبکيز غوښتنې نه کوي.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- ستونزې حل
+  - که Donate لا هم سملاسي د “I donated” په کلیک کولو وروسته ښکاره وي، لږ تم شئ یا د Options پاڼه بېرته پرانیزئ؛ UI به ژر تر ژره نوې شي کله چې امستنه خوندي شي.
+  - د لاسي بیا تنظیم لپاره، پر “Show Donate again” کلیک وکړئ. همدارنګه کولای شئ تر هغې نېټې پورې انتظار وباسئ چې په اشارې کې ښودل شوې ده.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+دا ځانګړنه یوازې د اسانتیا لپاره ده؛ هېڅکله د لګون دندې نه بندوي او هېڅ شخصي معلومات نه راټولوي.
 
 ---

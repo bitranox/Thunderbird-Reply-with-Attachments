@@ -4,39 +4,41 @@ title: 'Сумісність'
 sidebar_label: 'Сумісність'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Сумісність {#compatibility}
+
+:::important Мінімальна версія Thunderbird
+Цей додаток підтримує Thunderbird **128 ESR або новіший**. Старіші версії не підтримуються.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Підтримуються Thunderbird 128 ESR або новіші (128.x+).
+- Старіші версії Thunderbird не підтримуються.
+- Протестовано на Windows, macOS і Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Маніфест V2 не підтримується
+Маніфест V2 не підтримується. Додаток націлено на **Маніфест V3 (MV3)** у Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Усунення неполадок {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Якщо додаток працює не так, як очікується, переконайтеся, що ви використовуєте сумісну версію Thunderbird (128 ESR або новішу).
+- Перевірте консоль помилок Thunderbird (**Інструменти > Засоби розробника > Консоль помилок**) на наявність проблем, пов’язаних із додатком.
+- Якщо збережені налаштування, здається, застосовуються некоректно, перезапустіть Thunderbird і спробуйте ще раз. (Thunderbird може кешувати стан між сеансами; перезапуск гарантує завантаження свіжих налаштувань.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Відомі конфлікти {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Наразі відомих немає. Якщо ви помічаєте повторювані дублікати вкладень або збої з іншими додатками, повідомте про це з кроками для відтворення.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Збірки Thunderbird Beta та Daily (Nightly) загалом підтримуються, але зміни у вихідному проєкті іноді можуть порушити роботу додатка. Якщо ви зіткнулися з проблемами, повідомте про них і додайте точну версію Thunderbird (наприклад, “Daily 131.0a1 2025‑09‑10”).
+- Зіткнулися з регресією у Beta/Nightly? Повідомте про це з кроками для відтворення — див. [Підтримка](support) — і додайте точний рядок складання Thunderbird.
 
 ---

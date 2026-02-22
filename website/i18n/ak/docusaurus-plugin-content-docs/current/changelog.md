@@ -1,21 +1,27 @@
 ---
 id: changelog
-title: 'Nkyerɛaseɛ Nɔma'
+title: 'Nsakrae Abakɔsɛm'
 ---
 
-## Nkyerɛaseɛ Nɔma
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Nsakrae
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Sɛ wopɛ abakɔsɛm a ɛkɔ mu nyinaa ne nsɛm-ho nhunumu a, hwɛ repository no mu [CHANGELOG.md wɔ GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" seesei de mfonini no hyɛ mmuae kɔntɛnt no mu pɛpɛɛpɛ sɛ base64 data URI (default: ON); code no ho nteɛsoɔ ne nsɔhwɛ kɔntɔnkye a atrɛw mu kɛse.
+- 2.3.1: Ɛkɔ so kora attachments sɛ Thunderbird ma background event krataafa no gyina (idle) a; ɛde debug hooks a wɔahyehyɛ pɛpɛɛpɛ ma asɛmmɔne-siesie no ka ho.
+- 2.3.0: Woyɛɛ attachment deduplication no mu yiye, wɔtrɛw nsɔhwɛ kɔntɔnkye no mu kɛse, na woyii permissions a atwam de ma ɛsɔ AMO mmara ani.
+- 2.1.0: Mmoa a ɛkɔ mu kɛse (internationalization) ma kasa 100 titiriw.
+- 2.0.0: Akyerɛw foforo maa no yɛɛ version a ɛwɔ nneɛma nyinaa (EN/DE).
+- 1.0.1: Asesa kɔ messages.listAttachments() so.
+- 1.0.0: Tu gua a edi kan.
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Da ne akwan {#dates-and-channels}
+
+- Ntuaba a wɔde kɔ ATN betumi akyenkyee ɛberɛ kakraa packaging no akyi.
+- LOCAL builds yɛ adwumayɛfoɔ nsɔhwɛ pɛ na wɔmfa wɔn nkyɛ ATN so.
 
 ---

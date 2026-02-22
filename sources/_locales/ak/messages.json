@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Bɔ kɔkɔ sɛ nkaho no agyigye efisɛ ɛwɔ blacklist mu"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include inline pictures (embedded images)"
+  },
   "uiDebugHeader": {
     "message": "Akɔntoso"
   },

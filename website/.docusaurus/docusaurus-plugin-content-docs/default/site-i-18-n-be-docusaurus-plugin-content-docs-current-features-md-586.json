@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Асаблівасці",
-  "description": "Features",
+  "title": "Магчымасці",
+  "description": "---",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Асаблівасці",
-    "sidebar_label": "Асаблівасці"
+    "title": "Магчымасці",
+    "sidebar_label": "Магчымасці"
   },
   "sidebar": "docs",
   "next": {

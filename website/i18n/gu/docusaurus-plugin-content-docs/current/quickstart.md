@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'ઝડપી અને સારું માર્ગદર્શન'
-sidebar_label: 'ઝડપી અને સારું માર્ગદર્શન'
+title: 'ઝડપી શરૂઆત'
+sidebar_label: 'ઝડપી શરૂઆત'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## ઝડપી શરૂઆત
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ન્યૂનતમ Thunderbird સંસ્કરણ
+આ ઍડ‑ઓન Thunderbird **128 ESR અથવા તેનાથી નવું** સપોર્ટ કરે છે. જૂના સંસ્કરણો સમર્થિત નથી.
+:::
+
+:::note કોઈ ટેલિમેટ્રી નહીં; પૃષ્ઠભૂમિ નેટવર્ક નહીં
+ઍડ‑ઓન વિશ્લેષણ/ટેલિમેટ્રી **એકત્રિત કરતું નથી** અને **કોઈ** પૃષ્ઠભૂમિ નેટવર્ક વિનંતીઓ કરતી નથી. નેટવર્ક ઍક્સેસ ફક્ત ત્યારે થાય છે જ્યારે તમે બાહ્ય લિંક્સ ક્લિક કરો (Docs, GitHub, Donate).
+:::
+
+---
+
+### સ્થાપન
+
+1. Thunderbird Add‑ons માંથી ઍડ‑ઓન ઇન્સ્ટોલ કરો.
+2. વૈકલ્પિક: પુષ્ટિ સક્રિય કરો (Options → “જોડાણો ઉમેરતા પહેલાં પૂછો”).
+3. વૈકલ્પિક: બ્લેકલિસ્ટ ચેતવણી સક્રિય જ રાખો (મૂળભૂત): “બ્લેકલિસ્ટ દ્વારા જોડાણો બહાર રાખવામાં આવ્યા હોય તો ચેતવો”.
+4. વૈકલ્પિક: બ્લેકલિસ્ટ પેટર્ન ઉમેરો (એક લાઇન દીઠ એક), ઉદા.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+નોંધ: ઉપરનો “# …” આ દસ્તાવેજનમાં ટિપ્પણી છે; Options માં તમે પેસ્ટ કરતા પેટર્નમાં ટિપ્પણીઓ શામેલ ન કરો. દર લાઇનમાં ફક્ત એક જ પેટર્ન દાખલ કરો.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+હવે જોડાણો ધરાવતા સંદેશાને જવાબ આપો — મૂળ ફાઇલો આપમેળે અથવા ઝડપી પુષ્ટિ પછી ઉમેરાશે. જો તમારી બ્લેકલિસ્ટને કારણે કોઈ ફાઇલો બહાર રાખવામાં આવે, તો તમને તેમની યાદી સાથે નાની ચેતવણી દેખાશે.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### ચકાસો {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 જોડાણો ધરાવતા સંદેશાને જવાબ આપો અને ખાતરી કરો કે મૂળ ફાઇલો તમારા કમ્પોઝ વિન્ડોમાં ઉમેરાઈ છે.
+- વર્તન સમાયોજિત કરવા માટે, [રૂપરેખાંકન](configuration) જુઓ (પુષ્ટિ ટૉગલ, મૂળભૂત જવાબ, બ્લેકલિસ્ટ પેટર્ન).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### બ્લેકલિસ્ટ ચેતવણી ચકાસો {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” જેવી ફાઇલ ધરાવતા સંદેશાને જવાબ આપો.
+- “બ્લેકલિસ્ટ દ્વારા જોડાણો બહાર રાખવામાં આવ્યા હોય તો ચેતવો” સક્રિય હોય ત્યારે, એક નાનું સંવાદ બોક્સ બહાર રાખેલી ફાઇલો અને મેળ ખાતું પેટર્ન સૂચિબદ્ધ કરે છે.
+
+જો તમને ચેતવણી ન દેખાય, તો ખાતરી કરો કે પેટર્ન ફાઇલનામ સાથે ચોક્કસ મેળ ખાય છે (ફાઇલનામ‑માત્ર, કેસ‑અસંવેદનશીલ). રૂપરેખાંકન → બ્લેકલિસ્ટ જુઓ.
+
+---
+
+### કીબોર્ડ નોંધ {#keyboard-note}
+
+- પુષ્ટિ સંવાદ બોક્સ Yes માટે Y/J અને No માટે N/Esc ને સમર્થન આપે છે. કેટલાક ગેર‑લેટિન કીબોર્ડમાં અક્ષર કીઓ બદલાઈ શકે છે; Enter ફોકસ કરાયેલ બટનને પુષ્ટિ કરે છે.
 
 ---

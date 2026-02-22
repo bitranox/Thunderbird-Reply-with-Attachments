@@ -4,94 +4,98 @@ title: 'Utilizare'
 sidebar_label: 'Utilizare'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Utilizare {#usage}
+
+- Răspunde, iar suplimentul adaugă originalele automat — sau cere confirmare mai întâi, dacă este activat în Opțiuni.
+- De‑duplicare după numele fișierului; părțile S/MIME sunt întotdeauna omise. Imaginile inline sunt restabilite în corpul răspunsului în mod implicit (dezactivezi prin „Include inline pictures” în Opțiuni).
+- Atașamentele de pe lista neagră sunt, de asemenea, omise (modele glob insensibile la majuscule/minuscule care se potrivesc numelor de fișiere, nu căilor). Vezi [Configurare](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Ce se întâmplă la răspuns {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Detectează răspunsul → listează atașamentele originale → filtrează S/MIME + inline → confirmare opțională → adaugă fișierele eligibile (omite duplicatele) → restabilește imaginile inline în corp.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Trecere strictă vs. relaxată: Suplimentul exclude mai întâi părțile S/MIME și inline din atașamentele de fișiere. Dacă nimic nu se califică, rulează o trecere relaxată care în continuare exclude S/MIME/inline, dar tolerează mai multe cazuri (vezi Detalii cod). Imaginile inline nu sunt niciodată adăugate ca atașamente de fișiere; în schimb, când „Include inline pictures” este activată (implicit: ON), acestea sunt încorporate direct în corpul răspunsului ca URI‑uri de date base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Tip de parte                                                        |                 Trecere strictă |                Trecere relaxată |
+| ------------------------------------------------------------------- | ------------------------------: | ------------------------------: |
+| Fișier semnătură S/MIME `smime.p7s`                                 |                         Exclusă |                         Exclusă |
+| Tipuri MIME S/MIME (`application/pkcs7-*`)                          |                         Excluse |                         Excluse |
+| Imagine inline la care se face referire prin Content‑ID (`image/*`) | Exclusă (restabilită în corp\*) | Exclusă (restabilită în corp\*) |
+| E‑mail atașat (`message/rfc822`) cu un nume de fișier               |                 Nu este adăugat |                Poate fi adăugat |
+| Atașament de fișier obișnuit cu un nume de fișier                   |                Poate fi adăugat |                Poate fi adăugat |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Când „Include inline pictures” este activată (implicit: ON), imaginile inline sunt încorporate în corpul răspunsului ca URI‑uri de date base64 în loc să fie adăugate ca atașamente de fișiere. Vezi [Configurare](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Exemplu: Unele atașamente pot să nu aibă anumite antete, dar sunt totuși fișiere obișnuite (nu inline/S/MIME). Dacă trecerea strictă nu găsește niciunul, trecerea relaxată le poate accepta și le poate atașa.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Trimiteri încrucișate {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Redirecționarea nu este modificată prin concepție (vezi Limitări mai jos).
+- Pentru motivele pentru care un atașament ar putea să nu fie adăugat, vezi „De ce este posibil ca atașamentele să nu fie adăugate”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detalii despre comportament {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Prevenirea duplicatelor:** Suplimentul marchează fila de compunere ca procesată folosind o valoare de sesiune per filă și un mecanism de protecție în memorie. Nu va adăuga originalele de două ori.
+- Închiderea și redeschiderea unei ferestre de compunere este tratată ca o filă nouă (adică este permisă o nouă încercare).
+- **Respectarea atașamentelor existente:** Dacă în compunere există deja unele atașamente, originalele sunt totuși adăugate exact o dată, sărind peste numele de fișiere care există deja.
+- **Excluderi:** Artefactele S/MIME și imaginile inline sunt excluse din atașamentele de fișiere. Dacă la prima trecere nu se califică nimic, o trecere de rezervă, mai relaxată, reverifică părțile non‑S/MIME. Imaginile inline sunt tratate separat: sunt restabilite în corpul răspunsului ca URI‑uri de date (când este activată).
+  - **Nume de fișiere:** `smime.p7s`
+  - **Tipuri MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Imagini inline:** orice parte `image/*` la care se face referire prin Content‑ID — exclusă din atașamentele de fișiere, dar încorporată în corpul răspunsului când „Include inline pictures” este ON
+  - **E‑mailuri atașate (`message/rfc822`):** tratate ca atașamente obișnuite dacă au un nume de fișier; pot fi adăugate (sub rezerva verificărilor de duplicate și a listei negre).
+- **Avertisment pentru lista neagră (dacă este activat):** Când candidații sunt excluși de lista ta neagră,
+  suplimentul afișează un mic dialog modal care enumeră fișierele afectate și
+  modelul(ele) care se potrivesc. Acest avertisment apare și în cazurile în care nu vor fi
+  adăugate atașamente deoarece totul a fost exclus.
 
 ---
 
-## Limitations {#limitations}
+## Comenzi rapide de la tastatură {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialog de confirmare: Y/J = Da, N/Esc = Nu; Tab/Shift+Tab și tastele săgeată comută focalizarea.
+  - „Răspunsul implicit” din [Configurare](configuration#confirmation) setează butonul focalizat inițial.
+  - Enter declanșează butonul focalizat. Tab/Shift+Tab și săgețile mută focalizarea pentru accesibilitate.
+
+### Fișă de comenzi pentru tastatură {#keyboard-cheat-sheet}
+
+| Taste            | Acțiune                                  |
+| ---------------- | ---------------------------------------- |
+| Y / J            | Confirmă Da                              |
+| N / Esc          | Confirmă Nu                              |
+| Enter            | Activează butonul focalizat              |
+| Tab / Shift+Tab  | Mută focalizarea înainte/înapoi          |
+| Tastele săgeată  | Mută focalizarea între butoane           |
+| Răspuns implicit | Setează focalizarea inițială (Da sau Nu) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Limitări {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Redirecționarea nu este modificată de acest supliment (Răspunde și Răspunde tuturor sunt acceptate).
+- Atașamentele foarte mari pot fi supuse limitărilor Thunderbird sau ale furnizorului.
+  - Suplimentul nu fragmentează și nu comprimă fișierele; se bazează pe gestionarea normală a atașamentelor din Thunderbird.
+- Mesaje criptate: părțile S/MIME sunt excluse intenționat.
 
 ---
 
-See also
+## De ce este posibil ca atașamentele să nu fie adăugate {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Imaginile inline nu sunt adăugate ca atașamente de fișiere. Când „Include inline pictures” este ON (implicit), ele sunt încorporate în corpul răspunsului ca URI‑uri de date. Dacă setarea este OFF, imaginile inline sunt eliminate complet. Vezi [Configurare](configuration#include-inline-pictures).
+- Părțile de semnătură S/MIME sunt excluse prin concepție: nume de fișiere precum `smime.p7s` și tipuri MIME precum `application/pkcs7-signature` sau `application/pkcs7-mime` sunt omise.
+- Modelele de listă neagră pot filtra candidații: vezi [Configurare](configuration#blacklist-glob-patterns); potrivirea nu ține cont de majuscule/minuscule și se face doar după numele fișierului.
+- Numele de fișier duplicate nu sunt readăugate: dacă în compunere există deja un fișier cu același nume normalizat, acesta este omis.
+- Părți non‑fișier sau lipsa numelor de fișier: sunt luate în considerare pentru adăugare doar părțile de tip fișier, cu nume utilizabile.
+
+---
+
+Vezi și
+
+- [Configurare](configuration)

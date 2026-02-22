@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Upozori ako su prilozi isključeni crnom listom"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Укључи уметнуте слике (уграђене слике)"
+  },
   "uiDebugHeader": {
     "message": "Napredno"
   },

@@ -4,94 +4,95 @@ title: 'Օգտագործում'
 sidebar_label: 'Օգտագործում'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Օգտագործում {#usage}
+
+- Պատասխանելիս հավելումը ինքնաբար ավելացնում է բնօրինակները — կամ նախ հարցնում է, եթե «Ընտրանքներ»-ում միացված է։
+- Կրկնատեսակները վերացվում են ըստ ֆայլանվան; S/MIME մասերը միշտ բաց են թողնվում։ Ինլայն պատկերները լռելյայն վերականգնվում են պատասխանի մարմնում (կարելի է անջատել «Include inline pictures»-ով Ընտրանքներում)։
+- Սև ցուցակում գտնվող կցորդներն էլ են բաց թողնվում (տառաչափից անկախ glob-կաղապարներ, որոնք համադրվում են ֆայլանունների, ոչ թե ուղիների հետ)։ Տես [Կարգավորումներ](configuration#blacklist-glob-patterns)։
 
 ---
 
-### What happens on reply {#what-happens}
+### Ի՞նչ է տեղի ունենում պատասխանելիս {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Հայտնաբերել պատասխան → ցանկագրել բնօրինակ կցորդները → ֆիլտրել S/MIME + ինլայն → ընտրովի հաստատում → ավելացնել համապատասխան ֆայլերը (կրկնությունները բաց թողնել) → վերականգնել ինլայն պատկերները մարմնում։
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Խիստ և թուլացված անցում. Հավելումը նախ բացառում է S/MIME և ինլայն մասերը ֆայլային կցորդներից։ Եթե ոչինչ չի համապատասխանում, այն կատարում է թուլացված անցում, որը կրկին բացառում է S/MIME/ինլայն մասերը, բայց հանդուրժում է ավելի շատ դեպքեր (տես Կոդի մանրամասներ)։ Ինլայն պատկերները երբեք չեն ավելացվում որպես ֆայլային կցորդներ. փոխարենը, երբ «Include inline pictures»-ը միացված է (լռելյայն), դրանք ներդրվում են անմիջապես պատասխանի մարմնում որպես base64 data URI-ներ։
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Մասի տեսակ                                    |                           Խիստ անցում |                      Թուլացված անցում |
+| --------------------------------------------- | ------------------------------------: | ------------------------------------: |
+| S/MIME ստորագրության ֆայլ `smime.p7s`         |                              Բացառված |                              Բացառված |
+| S/MIME MIME տեսակներ (`application/pkcs7-*`)  |                              Բացառված |                              Բացառված |
+| Content‑ID-ով հղված ինլայն պատկեր (`image/*`) | Բացառված (վերականգնվում է մարմնում\*) | Բացառված (վերականգնվում է մարմնում\*) |
+| Կցված էլ‑նամակ (`message/rfc822`)՝ ֆայլանվամբ |                         Չի ավելացվում |                     Կարող է ավելացվել |
+| Սովորական ֆայլային կցորդ՝ ֆայլանվամբ          |                     Կարող է ավելացվել |                     Կարող է ավելացվել |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Երբ «Include inline pictures»-ը միացված է (լռելյայն՝ ON), ինլայն պատկերները ներդրվում են պատասխանի մարմնում որպես base64 data URI-ներ՝ ֆայլային կցորդների փոխարեն։ Տես [Կարգավորումներ](configuration#include-inline-pictures)։
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Օրինակ. Որոշ կցորդներ կարող են որոշ վերնագրեր չունենալ, սակայն tetap լինել սովորական ֆայլեր (ոչ ինլայն/S/MIME)։ Եթե խիստ անցումը ոչինչ չի գտնում, թուլացված անցումը կարող է ընդունել դրանք և կցել։
 
 ---
 
-## Behavior Details {#behavior-details}
+### Խաչաձև հղում {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Փոխանցումը (Forward) կանխամտածված չի փոփոխվում (տես սահմանափակումները ներքևում)։
+- Պատճառների համար, թե ինչու կցորդը կարող է չավելացվել, տես «Ինչու կցումները կարող են չավելացվել»։
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Վարքագծի մանրամասներ {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Կրկնությունների կանխում.** Հավելումը նշում է կազմման ներդիրը որպես մշակված՝ օգտագործելով յուրաքանչյուր ներդրի սեսիայի արժեք և հիշողության մեջ պահվող հսկիչ։ Այն չի ավելացնում բնօրինակները երկու անգամ։
+- Կազմման պատուհանը փակելն ու նորից բացելը դիտարկվում է որպես նոր ներդիր (այսինքն՝ թույլատրվում է նոր փորձ)։
+- **Գոյություն ունեցող կցորդների հարգում.** Եթե կազմման մեջ արդեն կան կցորդներ, բնօրինակները միևնույն է կավելացվեն միայն մեկ անգամ՝ բաց թողնելով արդեն գոյություն ունեցող ֆայլանունները։
+- **Բացառումներ.** S/MIME արտեֆակտներն ու ինլայն պատկերները բացառվում են ֆայլային կցորդներից։ Եթե առաջին անցման ժամանակ ոչինչ չի համապատասխանում, թուլացված պահուստային անցքը վերանայում է ոչ-S/MIME մասերը։ Ինլայն պատկերները մշակվում են առանձին՝ դրանք վերականգնվում են պատասխանի մարմնում որպես data URI-ներ (երբ միացված է)։
+  - **Ֆայլանուններ.** `smime.p7s`
+  - **MIME տեսակներ.** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Ինլայն պատկերներ.** ցանկացած `image/*` մաս, որը հղված է Content‑ID-ով — բացառվում է ֆայլային կցորդներից, բայց ներդրվում է պատասխանի մարմնում, երբ «Include inline pictures»-ը ON է
+  - **Կցված էլ-նամակներ (`message/rfc822`).** դիտարկվում են որպես սովորական կցորդներ, եթե ունեն ֆայլանուն; կարող են ավելացվել (կրկնության և սև ցուցակի ստուգումներին ըստ ենթակա)։
+- **Զգուշացում սև ցուցակի մասին (եթե միացված է).** Երբ թեկնածուները բացառվում են ձեր սև ցուցակով, հավելումը ցուցադրում է փոքր մոդալ, որը թվարկում է ազդեցված ֆայլերը և համապատասխանող կաղապարը(ները)։ Այս զգուշացումը երևում է նաև այն դեպքերում, երբ կցորդներ չեն ավելացվի, քանի որ ամեն ինչ բացառվել է։
 
 ---
 
-## Limitations {#limitations}
+## Ստեղնաշարի դյուրանցումներ {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Հաստատման երկխոսություն. Y/J = Այո, N/Esc = Ոչ; Tab/Shift+Tab և սլաքային ստեղներն անցկացնում են ֆոկուսը։
+  - «Լռելյայն պատասխանը» [Կարգավորումներ](configuration#confirmation)-ում սահմանում է նախնական ձևով ֆոկուսավորված կոճակը։
+  - Enter-ը ակտիվացնում է ֆոկուսավորված կոճակը։ Tab/Shift+Tab-ը և սլաքները տեղափոխում են ֆոկուսը՝ հասանելիության համար։
+
+### Ստեղնաշարի հուշաթերթ {#keyboard-cheat-sheet}
+
+| Ստեղներ           | Գործողություն                             |
+| ----------------- | ----------------------------------------- |
+| Y / J             | Հաստատել Այո                              |
+| N / Esc           | Հաստատել Ոչ                               |
+| Enter             | Ակտիվացնել ֆոկուսավորված կոճակը           |
+| Tab / Shift+Tab   | Տեղաշարժել ֆոկուսը առաջ/հետ               |
+| Սլաքային ստեղներ  | Տեղաշարժել ֆոկուսը կոճակների միջև         |
+| Լռելյայն պատասխան | Սահմանում է նախնական ֆոկուսը (Այո կամ Ոչ) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Սահմանափակումներ {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Այս հավելումը չի փոփոխում Փոխանցումը (Forward) (աջակցվում են Պատասխանել և Պատասխանել բոլորին)։
+- Շատ մեծ կցորդները կարող են ենթարկվել Thunderbird-ի կամ մատակարարի սահմանափակումներին։
+  - Հավելումը չի բաժանում կամ սեղմում ֆայլերը. այն հենվում է Thunderbird-ի սովորական կցորդների մշակման վրա։
+- Գաղտնագրված հաղորդագրություններ. S/MIME մասերը դիտավորությամբ բացառվում են։
 
 ---
 
-See also
+## Ինչու կցումները կարող են չավելացվել {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Ինլայն պատկերները չեն ավելացվում որպես ֆայլային կցորդներ։ Երբ «Include inline pictures»-ը ON է (լռելյայն), դրանք ներդրվում են պատասխանի մարմնում որպես data URI-ներ։ Եթե կարգավորումը OFF է, ինլայն պատկերները ամբողջությամբ հեռացվում են։ Տես [Կարգավորումներ](configuration#include-inline-pictures)։
+- S/MIME ստորագրության մասերը նախագծով բացառվում են. `smime.p7s` նման ֆայլանունները և `application/pkcs7-signature` կամ `application/pkcs7-mime` նման MIME տիպերը բաց են թողնվում։
+- Սև ցուցակի կաղապարները կարող են զտել թեկնածուներին. տես [Կարգավորումներ](configuration#blacklist-glob-patterns). համընկնումը տառաչափից անկախ է և միայն ֆայլանունով։
+- Կրկնվող ֆայլանունները կրկին չեն ավելացվում. եթե կազմման մեջ արդեն կա նույն նորմալացված անունով ֆայլ, այն բաց է թողնվում։
+- Ոչ ֆայլային մասեր կամ բացակա ֆայլանուններ. ավելացման համար հաշվի են առնվում միայն ֆայլանման մասերը՝ օգտագործելի ֆայլանուններով։
+
+---
+
+Տես նաև
+
+- [Կարգավորումներ](configuration)

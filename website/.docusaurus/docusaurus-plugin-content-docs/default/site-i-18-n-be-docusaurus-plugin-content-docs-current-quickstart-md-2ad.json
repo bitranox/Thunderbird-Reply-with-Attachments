@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Хуткі старт",
-  "description": "Хуткі старт",
+  "description": "---",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -18,11 +18,11 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Асаблівасці",
+    "title": "Магчымасці",
     "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/features"
   },
   "next": {
-    "title": "Ўстаноўка",
+    "title": "Усталяванне",
     "permalink": "/Thunderbird-Reply-with-Attachments/be/docs/install"
   }
 }

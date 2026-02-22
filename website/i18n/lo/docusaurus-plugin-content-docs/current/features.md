@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'ลักษณะเด่น'
-sidebar_label: 'ลักษณะเด่น'
+title: 'ຄຸນລັກສະນະ'
+sidebar_label: 'ຄຸນນະສົມບັດ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ຄຸນລັກສະນະ {#features}
 
-## How It Works {#how-it-works}
+- ແນບໄຟລ໌ຈາກອີເມວຕົ້ນສະບັບໃຫ້ໂດຍອັດຕະໂນມັດເມື່ອຕອບກັບ.
+- ປັບແຕ່ງພຶດຕິກຳໄດ້: ໄຟລ໌ແນບສາມາດ
+  - ເພີ່ມອັດຕະໂນມັດ, ຫຼື
+  - ເພີ່ມເມື່ອຢືນຢັນເທົ່ານັ້ນ (ກ່ອງໂຕ້ຕອບນ້ອຍ ທີ່ເຂົ້າເຖິງດ້ວຍແປ້ນພິມ). ໃນ Options ທ່ານ
+    ສາມາດເປີດໃຊ້ການຢືນຢັນ ແລະເລືອກຄໍາຕອບເລີ່ມຕົ້ນ (Yes/No).
+- ລາຍຊື່ຫ້າມຂອງຊື່ໄຟລ໌ (glob patterns) ປ້ອງກັນບໍ່ໃຫ້ໄຟລ໌ບາງຢ່າງ
+  ຖືກແນບອັດຕະໂນມັດ. ຕົວຢ່າງ: `*intern*`, `*secret*`, `*passwor*`.
+  ການຈັບຄູ່ບໍ່ສົນໃຈຕົວອັກສອນໃຫຍ່/ນ້ອຍ ແລະກວດພຽງແຕ່ຊື່ໄຟລ໌; ໃຫ້ລະບຸແບບແພດ
+  ແຖວລະໜຶ່ງໃນ Options.
+- ຄໍາເຕືອນຈາກລາຍຊື່ຫ້າມ (ເລືອກໄດ້, ເປີດໄວ້ໂດຍຄ່າເລີ່ມຕົ້ນ): ເມື່ອໄຟລ໌ຖືກຍົກເວັ້ນໂດຍລາຍຊື່ຫ້າມຂອງທ່ານ,
+  modal ນ້ອຍໆຈະລາຍຊື່ໄຟລ໌ ແລະແບບແພດທີ່ກົງກັນ. ເຂົ້າກັບ Dark‑mode
+  ແລະເຂົ້າເຖິງໄດ້ດ້ວຍແປ້ນພິມ (Enter/Esc ເພື່ອປິດ).
+- ເຮັດວຽກກັບ Reply ແລະ Reply all. Forward ບໍ່ຖືກປັບປ່ຽນໂດຍ add-on ນີ້.
+- ເພີ່ມໄຟລ໌ຕົ້ນສະບັບແມ້ວ່າທ່ານຈະໄດ້ແນບຫຍັງໄວ້ແລ້ວ; ຫຼີກລ້ຽງການຊໍ້າຊ້ອນຕາມຊື່ໄຟລ໌.
+- ການປ້ອງກັນຊໍ້າຕໍ່ແທັບ (per‑tab) ຊ່ວຍປ້ອງກັນການເພີ່ມຊ້ຳສອງເທື່ອໃນແທັບຂຽນຂໍ້ຄວາມດຽວກັນ.
+- ຂ້າມໃບຮັບຮອງ S/MIME ຕາມຄ່າເລີ່ມຕົ້ນ ເພື່ອຫຼີກລ້ຽງການແນບທີ່ບໍ່ຈໍາເປັນ.
+- ລວມຮູບພາບແບບ inline (ຄ່າເລີ່ມຕົ້ນ: ON). ຮູບພາບຝັງຈະຖືກກູ້ຄືນໂດຍກົງໃນ
+  ເນື້ອຫາການຕອບກັບເປັນ base64 data URIs ໂດຍຮັກສາແບບຮຽງ inline ຕົ້ນສະບັບ. ປິດໃນ
+  Options ເພື່ອຂ້າມຮູບ inline ໝົດສິ້ນ.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ວິທີການເຮັດວຽກ {#how-it-works}
+
+- ເມື່ອຕອບກັບ, add-on ຈະລາຍຊື່ໄຟລ໌ແນບຕົ້ນສະບັບ.
+- ກອງອອກລາຍເຊັນ S/MIME ຈາກໄຟລ໌ແນບ; ຮູບ inline ຈະຖືກກູ້ຄືນໃນເນື້ອຫາ (ນອກເສຍແຕ່ຖືກປິດ).
+- ສາມາດຖາມຢືນຢັນໄດ້ (ເອື້ອອໍານວຍການໃຊ້ແປ້ນພິມ).
+- ເພີ່ມໄຟລ໌ທີ່ເໝາະສົມເຂົ້າໃນຫນ້າຂຽນຂໍ້ຄວາມ, ຫຼີກລ້ຽງການຊໍ້າຊ້ອນຕາມຊື່ໄຟລ໌.
+- ເບິ່ງ “ເປັນຫຍັງໄຟລ໌ແນບອາດຈະບໍ່ຖືກເພີ່ມ” ໃນ Usage ສໍາລັບກໍລະນີພິເສດ.
+
+ໝາຍເຫດຄວາມເປັນສ່ວນຕົວ: ການປະມວນຜົນທັງໝົດເກີດຂຶ້ນໃນທ້ອງຖິ່ນໃນ Thunderbird. Add-on ບໍ່ມີການຮ້ອງຂໍເນັດເວີກພື້ນຫຼັງ.
+
+---

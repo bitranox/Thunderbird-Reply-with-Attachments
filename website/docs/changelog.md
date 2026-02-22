@@ -10,6 +10,7 @@ title: 'Changelog'
 For the complete, detailed history, see the repository’s
 [CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
+- 2.3.2: "Include inline pictures" now embeds images directly in the reply body as base64 data URIs (default: ON); code quality improvements and expanded test coverage.
 - 2.3.1: Keeps attachments after Thunderbird idles the background event page; adds targeted debug hooks for troubleshooting.
 - 2.3.0: Refined attachment deduplication, broadened test coverage, and removed obsolete permissions to satisfy AMO policies.
 - 2.1.0: Full internationalization support for the top 100 languages

@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Notkun",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/configuration"
   },
   "next": {
-    "title": "Samkvæmni",
+    "title": "Samhæfni",
     "permalink": "/Thunderbird-Reply-with-Attachments/is/docs/compatibility"
   }
 }

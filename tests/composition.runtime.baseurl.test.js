@@ -30,7 +30,6 @@ describe('composition — buildConfirmUrl uses runtime.getURL base', () => {
     const p = triggerComposeState(browser, 10);
     // wait until popup created
     for (let i = 0; i < 10 && browser.windows.create.mock.calls.length === 0; i++) {
-      // eslint-disable-next-line no-await-in-loop
       await new Promise((r) => setTimeout(r, 0));
     }
     const url = browser.windows.create.mock.calls[0][0]?.url || '';

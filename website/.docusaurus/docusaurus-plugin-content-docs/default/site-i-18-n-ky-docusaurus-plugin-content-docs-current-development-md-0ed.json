@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Өнүктүрүү",
-  "description": "Development Guide",
+  "title": "Иштеп чыгуу",
+  "description": "---",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Өнүктүрүү",
-    "sidebar_label": "Өнүктүрүү"
+    "title": "Иштеп чыгуу",
+    "sidebar_label": "Иштеп чыгуу"
   },
   "sidebar": "docs",
   "previous": {

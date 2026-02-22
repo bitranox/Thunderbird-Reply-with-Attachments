@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Огоҳ кунед, агар замимаҳо бо сабаби рӯйхати сиёҳ хориҷ карда шаванд"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Тасвирҳои дохилиро дохил кунед (тасвирҳои ҷойгиршуда)"
+  },
   "uiDebugHeader": {
     "message": "Пешрафта"
   },

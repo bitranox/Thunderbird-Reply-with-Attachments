@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "اگر منسلکات بلیک لسٹ کی وجہ سے خارج ہوں تو خبردار کریں"
   },
+  "uiIncludeInlineLabel": {
+    "message": "اِن لائن تصویریں شامل کرو (ایمبیڈڈ تصویریں)"
+  },
   "uiDebugHeader": {
     "message": "اعلیٰ ترتیبات"
   },

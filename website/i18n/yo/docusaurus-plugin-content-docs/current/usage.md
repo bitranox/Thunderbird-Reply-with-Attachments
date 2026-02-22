@@ -1,97 +1,101 @@
 ---
 id: usage
-title: 'Uso'
-sidebar_label: 'Uso'
+title: 'Ìlò'
+sidebar_label: 'Ìlò'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Ìlò {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Fèsì, kí àfikún náà sì fi àwọn atilẹba kún laifọwọyi — tàbí kó béèrè kọ́kọ́, bí a bá ti muu ṣiṣẹ́ nínú Àṣàyàn.
+- A yọ ẹ̀dá tó jọra kúrò gẹ́gẹ́ bí orúkọ fáìlì; àwọn apá S/MIME a máa kọjá sílẹ̀ nígbà gbogbo. Àwọn àwòrán inline a tún fi hàn nínú ara ìfèsì ní ìpinnu àkọ́kọ́ (pa a nípasẹ̀ "Include inline pictures" nínú Àṣàyàn).
+- Àwọn amúgbámu tó wà lórí àtòkọ́ dídẹ́kun náà a kọjá sílẹ̀ (àpẹrẹ glob tí kò fara mọ́ kíṣìín lẹ́tà, tó bá orúkọ fáìlì mu, kì í ṣe ọ̀nà). Wo [Ìṣètò](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Kí ló ṣẹlẹ̀ nígbà ìfèsì {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Ṣàwárí ìfèsì → ṣe àkójọ àwọn amúgbámu atilẹba → fìlítà S/MIME + inline → ìmúlẹ̀rìí àṣàyàn → fi àwọn fáìlì tó bófin mu kún (fo ẹ̀dá tó jọra) → tún àwọn àwòrán inline ṣe nínú ara ìfèsì.
 
----
+Ìgbésẹ̀ líle sí ìgbésẹ̀ rọrùn: Àfikún náà kọ́kọ́ yọ S/MIME àti àwọn apá inline kúrò nínú amúgbámu fáìlì. Bí kò bá sí ohun tó yẹ, ó máa ṣiṣẹ́ ìgbésẹ̀ rọrùn kan tí ó tún yọ S/MIME/inline kúrò ṣùgbọ́n tó fara da ọ̀ràn míì síi (wo Alaye Kóòdù). Àwọn àwòrán inline kì í ṣeé ṣàfikún gẹ́gẹ́ bí amúgbámu fáìlì rárá; dípò bẹ́ẹ̀, nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́), a fi wọ́n sínú ara ìfèsì taara gẹ́gẹ́ bí base64 data URI.
 
-## Behavior Details {#behavior-details}
+| Iru apá                                               |                  Ìgbésẹ̀ líle |                 Ìgbésẹ̀ rọrùn |
+| ----------------------------------------------------- | ---------------------------: | ---------------------------: |
+| Fáìlì ìbuwọlu S/MIME `smime.p7s`                      |                       Yọkúrò |                       Yọkúrò |
+| Ìrú MIME S/MIME (`application/pkcs7-*`)               |                       Yọkúrò |                       Yọkúrò |
+| Àwòrán inline tí Content‑ID tọ́ka sí (`image/*`)       | Yọkúrò (a tún ṣe nínú ara\*) | Yọkúrò (a tún ṣe nínú ara\*) |
+| Ìmeèlì tí a so mọ́ (`message/rfc822`) pẹ̀lú orúkọ fáìlì |                    Kò fi kún |              Ó lè fi kún síi |
+| Amúgbámu fáìlì deede pẹ̀lú orúkọ fáìlì                 |              Ó lè fi kún síi |              Ó lè fi kún síi |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́: ON), a fi àwọn àwòrán inline sínú ara ìfèsì gẹ́gẹ́ bí base64 data URI dípò kíkó wọn sílẹ̀ gẹ́gẹ́ bí amúgbámu fáìlì. Wo [Ìṣètò](configuration#include-inline-pictures).
+
+Àpẹẹrẹ: Diẹ̀ nínú àwọn amúgbámu lè ṣòro pé wọ́n ò ní àwọn header kan ṣùgbọ́n wọ́n ṣì jẹ́ fáìlì deede (kì í ṣe inline/S/MIME). Bí ìgbésẹ̀ líle kò bá rí ohunkóhun, ìgbésẹ̀ rọrùn lè gba wọ́n wọlé kí ó sì so wọn mọ́.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Ìtọ́kasí kọjá {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Fọ́wọ́ọ̀du kì í jẹ́ kí a yí i padà ní ìmọ̀-àpẹrẹ (wo Àwọn Ìdíwọ̀n ní isalẹ).
+- Fún ìdí tí amúgbámu lè má ṣe kún, wo “Kí nìdí tí amúgbámu lè má ṣe kún”.
 
 ---
 
-## Limitations {#limitations}
+## Àlàyé ìhùwàsí {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Ìdènà ẹ̀dá-kejì:** Àfikún náà ń samì taabu ìkọ̀wé gẹ́gẹ́ bí ohun tí a ti ṣiṣẹ́ tan nípasẹ̀ ìyọ̀nda ìpẹ̀yà taabu-kọọkan àti olùbójú tó wà nínú ìrántí. Kò ní fi awọn atilẹba kún lẹ́ẹ̀mejì.
+- Pípà taabu ìkọ̀wé kan tí a sì tún ṣí i ni a kà sí taabu tuntun (ìyẹn ni pé ìsapẹẹrẹ tuntun ni a gba).
+- **Ìbọ̀wọ̀ fún amúgbámu tó wà tẹ́lẹ̀:** Bí ìkọ̀wé bá ti ní diẹ̀ ninu amúgbámu, a ṣi fi awọn atilẹba kún lẹ́ẹ̀kan ṣoṣo, a sì fo orúkọ fáìlì tó ti wà tẹ́lẹ̀.
+- **Ìyọkúrò:** Àwọn ohun-èlò S/MIME àti àwọn àwòrán inline ni a yọ kúrò nínú amúgbámu fáìlì. Bí kò bá sí ohun tó yẹ ní ìgbésẹ̀ àkọ́kọ́, ìbáyọ rọrùn tún ṣàyẹ̀wò àwọn apá tí kì í ṣe S/MIME. Àwọn àwòrán inline ni a ń tọjú lọ́tọ̀: a tún fi wọ́n hàn nínú ara ìfèsì gẹ́gẹ́ bí data URI (nígbà tí a bá ti muu iṣẹ́).
+  - **Orúkọ fáìlì:** `smime.p7s`
+  - **Ìrú MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Àwòrán inline:** ẹ̀yà `image/*` kankan tí Content‑ID tọ́ka sí — a yọ kúrò lórí amúgbámu fáìlì ṣùgbọ́n a fi sínú ara ìfèsì nígbà tí "Include inline pictures" bá wà ní ON
+  - **Ìmeèlì tí a so mọ́ (`message/rfc822`):** a gba wọn gẹ́gẹ́ bí amúgbámu deede bí wọ́n bá ní orúkọ fáìlì; ó ṣeé ṣe kí a fi kún (lẹ́gbẹ̀ẹ́ ìṣàyẹ̀wò ẹ̀dá-kejì àti àtòkọ́ dídẹ́kun).
+- **Ìkìlọ̀ àtòkọ́ dídẹ́kun (bí a bá ti muu ṣiṣẹ́):** Nígbà tí àtòkọ́ dídẹ́kun rẹ bá yọ àwọn olùdíje kúrò,
+  àfikún náà máa fi àpótí aláparọ̀ kékeré hàn tó ń ṣe àkójọ àwọn fáìlì tí ó kan àti
+  àpẹẹrẹ tó bá wọn mu. Ìkìlọ̀ yìí tún hàn nígbà tí kò sí amúgbámu kankan tí yóò
+  jẹ́ kó kún nítorí pé a yọ gbogbo rẹ̀ kúrò.
 
 ---
 
-See also
+## Àwọn títẹ bọ́tìnnì kíákíá {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Ọ̀rọ̀ ìmúlẹ̀rìí: Y/J = Bẹ́ẹ̀ni, N/Esc = Rárá; Tab/Shift+Tab àti àwọn bọ́tìnnì Ọfà ń yí ìfọkànsin padà ká.
+  - “Idahun Aiyipada” nínú [Ìṣètò](configuration#confirmation) ni ó ṣètò bọ́tìnnì tí ìfọkànsin kọ́kọ́ wà lórí rẹ̀.
+  - Enter ń ṣiṣẹ̀ bọ́tìnnì tó wà ní ìfọkànsin. Tab/Shift+Tab àti àwọn ọfà ń yí ìfọkànsin pa dà fún iraye-si.
+
+### Àkọsílẹ̀ Kíkà-Kíákíá Keyboard {#keyboard-cheat-sheet}
+
+| Bọ́tìnnì         | Ìṣe                                    |
+| --------------- | -------------------------------------- |
+| Y / J           | Múlẹ̀ Bẹ́ẹ̀ni                             |
+| N / Esc         | Múlẹ̀ Rárá                              |
+| Enter           | Mú bọ́tìnnì tó wà ní ìfọkànsin ṣiṣẹ́     |
+| Tab / Shift+Tab | Gbé ìfọkànsin síwájú/sẹ́yìn             |
+| Arrow keys      | Gbé ìfọkànsin láàrín àwọn bọ́tìnnì      |
+| Ìdáhùn aiyídá   | Ṣètò ìfọkànsin ìbẹ̀rẹ̀ (Bẹ́ẹ̀ni tàbí Rárá) |
+
+---
+
+## Àwọn Ìdíwọ̀n {#limitations}
+
+- Àfikún yìí kì í yí Fọ́wọ́ọ̀du padà (Fèsì àti Fèsì fún Gbogbo wọn ló jẹ́ mímú ṣiṣẹ́).
+- Àwọn amúgbámu tó tóbi gan-an lè fara mọ́ ìdíwọ̀n Thunderbird tàbí ti olùpèsè.
+  - Àfikún náà kì í pín fáìlì sí apá tàbí di wọn kù; ó gbẹ́kẹ̀lé bí Thunderbird ṣe ń bójú tó amúgbámu ní ìṣe déédé.
+- Ìfiránṣẹ́ tí a ti parọkọ: Àwọn apá S/MIME ni a yọ ní ìmọ̀lára.
+
+---
+
+## Kí nìdí tí amúgbámu lè má ṣe kún {#why-attachments-might-not-be-added}
+
+- Àwọn àwòrán inline kì í ṣe àfikún gẹ́gẹ́ bí amúgbámu fáìlì. Nígbà tí "Include inline pictures" bá wà ní ON (aṣayan àkọ́kọ́), a fi wọ́n sínú ara ìfèsì gẹ́gẹ́ bí data URI dípò bẹ́ẹ̀. Bí ìṣètò bá jẹ́ OFF, a yọ àwọn àwòrán inline kúrò patapata. Wo [Ìṣètò](configuration#include-inline-pictures).
+- Àwọn apá ìbuwọlu S/MIME ni a yọ ní ìmọ̀lára: àwọn orúkọ fáìlì bíi `smime.p7s` àti awọn ìrú MIME gẹ́gẹ́ bí `application/pkcs7-signature` tàbí `application/pkcs7-mime` ni a kọjá sílẹ̀.
+- Àwọn àpẹrẹ àtòkọ́ dídẹ́kun lè fìlítà àwọn olùdíje: wo [Ìṣètò](configuration#blacklist-glob-patterns); fífi bà a mu kò fara mọ́ lẹ́tà ńlá/kékèké, orúkọ fáìlì nìkan ni a ka.
+- A kì í tún fi orúkọ fáìlì tó jọra kún: bí ìkọ̀wé bá ti ní fáìlì kan pẹ̀lú orúkọ tí a ti dọ́gba síi, a fo o.
+- Àwọn apá tí kì í ṣe fáìlì tàbí tí orúkọ fáìlì kò sí: àwọ̀n apá bí-fáìlì tó ní orúkọ fáìlì tó lè lo nìkan ni a ka sí mímú kún.
+
+---
+
+Wo pẹ̀lú
+
+- [Ìṣètò](configuration)

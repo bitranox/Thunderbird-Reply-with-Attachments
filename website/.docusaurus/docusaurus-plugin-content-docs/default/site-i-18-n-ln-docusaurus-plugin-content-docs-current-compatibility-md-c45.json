@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Compatibilité",
-  "description": "Compatibility",
+  "title": "Bokokani",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibilité",
-    "sidebar_label": "Compatibilité"
+    "title": "Bokokani",
+    "sidebar_label": "Bokokani"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Utilisation",
+    "title": "Bosaleli",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/usage"
   },
   "next": {

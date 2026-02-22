@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'شروع آسن'
-sidebar_label: 'شروع آسن'
+title: 'فوری آغاز'
+sidebar_label: 'فوری آغاز'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## فوری شروعات
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important کم از کم Thunderbird ورژن
+یہ ایڈ‑آن Thunderbird **128 ESR یا نَوْ تر** ورژن حِمایت کرے۔ پران ورژن حِمایت نَہہ آسن۔
+:::
+
+:::note کونہ ٹیلیمیٹری؛ کونہ پس منظر نیٹ ورک
+ایڈ‑آن اینالیٹکس/ٹیلیمیٹری جمع نَہہ کرے تِہ کٔہِ پس منظر نیٹ ورک درخواست نَہہ بنٲوے۔ نیٹ ورک رسائی صرف ییلہ تُہِ باہری لنکس پیٹھ کلک کران (Docs, GitHub, Donate)۔
+:::
+
+---
+
+### تنصیب
+
+1. Thunderbird Add‑ons پیٹھ ایڈ‑آن تنصیب کٔریو۔
+2. اختیاری: تصدیق فعال کٔریو (Options → “Ask before adding attachments”).
+3. اختیاری: بلیک لسٹ وارننگ فعال ہی چھوڑِو (ڈیفالٹ): “Warn if attachments are excluded by blacklist”.
+4. اختیاری: بلیک لسٹ پیٹرنز جمع کٔریو (اکھ فی لائن)، مثلاً:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+نوٹ: اوپر “# …” چھُ یَتھ دستاویزس منز تبصرہ؛ Options منز یِم پیٹرنز تُہِ پیسٹ کران تِمن منز کومنٹس نَہہ شامل کٔریو۔ صرف اکھ پیٹرن ہَرس لائن پیٹھ دٔیو۔
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ہَژ اکھ پیغامس جواب دِیو یِتہہ اٹیچمنٹس آسن — اصلیاں فائلن گژھن خودبخود شامل، یا اکھ ژلد تصدیق پَتہ۔ اگر تُہند بلیک لسٹ کنٛہہ فائل کڈِتھ، تُہین دِساوان اکھ چھوٹی وارننگ یِمِن منز تِمن ہِند نام آیِت۔
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### تصدیق کٔریو {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- اکھ 1–2 اٹیچمنٹس واتہ پیغام جواب دِیو تِہ تصدیق کٔریو زِ اصلیاں فائلن گژھن تُہند compose وِنڈو منز شامل۔
+- رویہ بدلٲون باپت [Configuration](configuration) نظر کٔریو (تصدیق ٹوگل، ڈیفالٹ جواب، بلیک لسٹ پیٹرنز)۔
 
 ---
 
-### Keyboard note {#keyboard-note}
+### بلیک لسٹ وارننگ تصدیق کٔریو {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- اکھ پیغامس جواب دِیو یِم منز “secret.txt” ژٕہے فائل آیہ۔
+- ییلہ “Warn if attachments are excluded by blacklist” فعال آسِہ، اکھ چھوٹی ڈائیلاگ کڈِتھ فائلن تِہ مِلِت پیٹرن ہِند فہرست دِکھاون۔
+
+یِلی وارننگ نَہہ دِساوان، یَقینی بناویو زِ پیٹرن بلکل فائل نام سانہ مِلے (صرف فائل نام، کیس حساس نَہہ)۔ Configuration → Blacklist نظر کٔریو۔
+
+---
+
+### کیبورڈ نوٹ {#keyboard-note}
+
+- تصدیق ڈائیلاگ Yes باپت Y/J تِہ No باپت N/Esc حمایت کرے۔ کنۄن غیر لاطینی کیبورڈن پیٹھ حرف کنز کیز بدلِتھ آسِہ؛ Enter چھُ فوکس کرن وول بٹن تصدیق کران۔
 
 ---

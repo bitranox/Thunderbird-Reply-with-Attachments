@@ -3,17 +3,26 @@ id: changelog
 title: 'Değişiklik Günlüğü'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Değişiklik Günlüğü
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Tam ve ayrıntılı geçmiş için deponun
+[GitHub'daki CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) dosyasına bakın.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Satır içi resimleri dahil et" artık görüntüleri yanıt gövdesine doğrudan base64 veri URI'leri olarak gömer (varsayılan: AÇIK); kod kalitesi iyileştirmeleri ve genişletilmiş test kapsamı.
+- 2.3.1: Thunderbird arka plan olay sayfasını boşta durumuna getirdiğinde ekleri korur; sorun gidermeye yönelik hedefli hata ayıklama kancaları ekler.
+- 2.3.0: Eklerin tekilleştirilmesi iyileştirildi, test kapsamı genişletildi ve AMO politikalarını karşılamak için eski izinler kaldırıldı.
+- 2.1.0: İlk 100 dil için tam uluslararasılaştırma desteği
+- 2.0.0: Tam özellikli bir sürüme yeniden yazım (EN/DE)
+- 1.0.1: messages.listAttachments() kullanımına geçildi
+- 1.0.0: İlk sürüm
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Tarihler ve kanallar {#dates-and-channels}
+
+- ATN'ye yapılan yayınlar paketlemeden sonra birkaç saat gecikebilir.
+- LOCAL derlemeler yalnızca geliştirici testleri içindir ve ATN üzerinden dağıtılmaz.
+
+---

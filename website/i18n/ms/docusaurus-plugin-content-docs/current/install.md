@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Pemasangan'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Pemasangan melalui "Tambahan dan Tema Thunderbird" {#installation-in-thunderbird-recommended}
+
+:::important Versi Minimum Thunderbird
+Add‑on ini menyokong Thunderbird **128 ESR atau lebih baharu**. Versi lama tidak disokong.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Ini ialah kaedah pemasangan yang disyorkan. Add‑on yang dipasang dari ATN (addons.thunderbird.net) menerima kemas kini automatik. Pemasangan LOCAL/dev tidak mengemas kini secara automatik.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Versi minimum Thunderbird: 128 ESR atau lebih baharu.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Dalam Thunderbird, pergi ke **Tools > Add-ons and Themes**.
+2. Cari "reply with attachments".
+3. Tambah add‑on tersebut.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Atau buka halaman add‑on terus: [Tambahan Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Pemasangan secara manual daripada XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Muat turun fail XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Pergi ke [halaman Add‑on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Muat turun versi terkini add‑on sebagai fail XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Pasang dalam Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Buka Thunderbird.
+2. Pergi ke **Tools > Add-ons and Themes**.
+3. Dalam **Add-ons Manager**, klik ikon gear di penjuru kanan atas.
+4. Pilih **Install Add-on From File…** daripada menu.
+5. Pilih fail `reply_with_attachments-x.y.z-tb.xpi` yang dimuat turun.
+6. Sahkan pemasangan apabila diminta.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Pemasangan untuk pembangunan {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Muat turun repositori {#download-the-repository}
 
-See also
+1. Muat turun versi terkini repositori GitHub.
+2. Jalankan `make help` untuk maklumat lanjut.
 
-- [Quickstart](quickstart)
+### Pasang dalam Thunderbird {#install-in-thunderbird-dev}
+
+1. Buka Thunderbird.
+2. Pergi ke **Tools > Add-ons and Themes**.
+3. Dalam **Add-ons Manager**, klik ikon gear di penjuru kanan atas.
+4. Pilih **Install Add-on From File…** daripada menu.
+5. Pilih fail terjana `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Sahkan pemasangan apabila diminta.
+
+Nota: Jika Thunderbird tidak menerima `.zip` pada sistem anda, namakan semula kepada `.xpi` dan cuba “Install Add‑on From File…” sekali lagi.
+
+### Di mana mencari ZIP LOCAL {#where-local-zip}
+
+- Mula‑mula, pakejkan add‑on: jalankan `make pack` di akar repositori.
+- Selepas pembungkusan, cari zip “LOCAL” di akar repositori (cth., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Sebelum membungkus semula untuk ujian, tingkatkan versi dalam kedua‑dua `sources/manifest_ATN.json` dan `sources/manifest_LOCAL.json`.
+
+---
+
+## Nyahdaya, Nyahpasang, dan Kemas Kini {#disable-uninstall-updates}
+
+- Lumpuhkan: Thunderbird → Tools → Add‑ons and Themes → cari add‑on tersebut → togol mati.
+- Nyahpasang: paparan yang sama → menu tiga titik → Remove.
+- Kemas kini: Pemasangan dari ATN akan mengemas kini secara automatik apabila versi baharu diluluskan. Pemasangan LOCAL/dev tidak mengemas kini secara automatik; pasang semula binaan LOCAL yang baharu secara manual.
+- Alih keluar tetapan sepenuhnya: lihat [Privasi → Pembuangan data](privacy#data-removal).
+
+Lihat juga
+
+- [Mula pantas](quickstart)

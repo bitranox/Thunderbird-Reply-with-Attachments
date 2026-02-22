@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Kompatibilnost",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/bs/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",

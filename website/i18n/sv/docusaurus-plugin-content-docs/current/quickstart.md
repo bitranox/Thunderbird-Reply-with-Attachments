@@ -4,24 +4,26 @@ title: 'Snabbstart'
 sidebar_label: 'Snabbstart'
 ---
 
+---
+
 ## Snabbstart
 
-:::important Minimi Thunderbird-version
-Detta tillägg stödjer Thunderbird **128 ESR eller nyare**. Äldre versioner stöds inte.
+:::important Lägsta Thunderbird‑version
+Detta tillägg stöder Thunderbird **128 ESR eller nyare**. Äldre versioner stöds inte.
 :::
 
-:::note Ingen telemetri; inget bakgrundsnätverk
-Tillägget gör **inte** några analyser/telemetri och gör **inga** bakgrundsnätsbegärningar. Nätverksåtkomst sker endast när du klickar på externa länkar (Docs, GitHub, Donera).
+:::note Ingen telemetri; inget nätverk i bakgrunden
+Tillägget samlar **inte** in analys/telemetri och gör **inga** nätverksanrop i bakgrunden. Nätverksåtkomst sker bara när du klickar på externa länkar (Docs, GitHub, Donate).
 :::
 
 ---
 
 ### Installera
 
-1. Installera tillägget från Thunderbird Tillägg.
-2. Valfritt: Aktivera bekräftelse (Alternativ → “Fråga innan bilagor läggs till”).
-3. Valfritt: Lämna varningen för svartlista aktiverad (standard): “Varning om bilagor utesluts av svartlista”.
-4. Valfritt: Lägg till mönster i svartlistan (ett per rad), t.ex.:
+1. Installera tillägget från Thunderbird Add‑ons.
+2. Valfritt: Aktivera bekräftelse (Options → “Ask before adding attachments”).
+3. Valfritt: Låt varningen för svartlista vara aktiverad (standard): “Warn if attachments are excluded by blacklist”.
+4. Valfritt: Lägg till svartlistmönster (ett per rad), t.ex.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ Tillägget gör **inte** några analyser/telemetri och gör **inga** bakgrundsn�
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Notera: “# …” ovan är en kommentar i denna dokumentation; inkludera inga kommentarer i mönster som du klistrar in i Alternativ. Ange endast ett mönster per rad.
+Obs: “# …” ovan är en kommentar i denna dokumentation; inkludera inte kommentarer i de mönster du klistrar in i Options. Ange endast ett mönster per rad.
 
-Svara nu på ett meddelande med bilagor — originalen läggs till automatiskt eller efter en snabb bekräftelse. Om några filer utesluts av din svartlista kommer du att se en kort varning som listar dem.
+Svara nu på ett meddelande med bilagor — originalen läggs till automatiskt eller efter en snabb bekräftelse. Om några filer utesluts av din svartlista visas en kort varning som listar dem.
 
 ---
 
 ### Verifiera {#verify}
 
-- Svara på ett meddelande med 1–2 bilagor och bekräfta att originalen läggs till i ditt komponeringsfönster.
-- För att justera beteende, se [Konfiguration](configuration) (bekräftelseväxla, standard svar, mönster för svartlista).
+- Svara på ett meddelande med 1–2 bilagor och bekräfta att originalen läggs till i ditt skrivfönster.
+- För att justera beteendet, se [Konfiguration](configuration) (växla bekräftelse, standardsvar, svartlistmönster).
 
 ---
 
 ### Verifiera varning för svartlista {#verify-blacklist-warning}
 
 - Svara på ett meddelande som innehåller en fil som “secret.txt”.
-- Med “Varning om bilagor utesluts av svartlista” aktiverad, listas uteslutna filer och det matchande mönstret i en liten dialog.
+- Med “Warn if attachments are excluded by blacklist” aktiverat listar en liten dialogruta de exkluderade filerna och det matchande mönstret.
 
-Om du inte ser en varning, försäkra dig om att mönstret matchar filnamnet helt (endast filnamn, skiftlägesokänsligt). Se Konfiguration → Svartlista.
+Om du inte ser en varning, kontrollera att mönstret matchar filnamnet exakt (endast filnamn, skiftlägesokänsligt). Se Configuration → Blacklist.
 
 ---
 
 ### Tangentbordsnotis {#keyboard-note}
 
-- Bekräftelsedialogen stöder Y/J för Ja och N/Esc för Nej. På vissa icke-latinska tangentbord kan bokstavstangenterna variera; Enter bekräftar den markerade knappen.
+- Bekräftelsedialogen stöder Y/J för Ja och N/Esc för Nej. På vissa icke‑latinska tangentbord kan bokstavstangenterna variera; Enter bekräftar den fokuserade knappen.
 
 ---

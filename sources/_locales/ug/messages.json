@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "قوشۇمچىلار قارا تىزىملىك سەۋەبىدىن چىقىرىۋېتىلسە ئاگاھلاندۇر"
   },
+  "uiIncludeInlineLabel": {
+    "message": "قۇر ئىچىدىكى رەسىملەرنى قوشۇش (كۆمۈلگەن رەسىملەر)"
+  },
   "uiDebugHeader": {
     "message": "ئالىي"
   },

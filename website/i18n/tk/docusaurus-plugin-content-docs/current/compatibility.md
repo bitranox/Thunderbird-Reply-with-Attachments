@@ -1,40 +1,44 @@
 ---
 id: compatibility
-title: 'Uygunlyk'
-sidebar_label: 'Uygunlyk'
+title: 'Uýgunlyk'
+sidebar_label: 'Uýgunlyk'
 ---
 
-## Uygunlyk {#compatibility}
+---
 
-:::important Minimum Thunderbird Versiýa
-Bu goşmaça Thunderbird **128 ESR ýa-da täze** goldaýar. Sundan ozal berjaý edilen wersiýalar goldanmaýar.
+## Utgaşyklylyk {#compatibility}
+
+:::important Iň pes Thunderbird wersiýasy
+Bu goşundy Thunderbird‑iň **128 ESR ýa-da has täze** wersiýalaryny goldaýar. Köne wersiýalara goldaw berilmeýär.
 :::
 
-- Thunderbird 128 ESR ýa-da täze goldanýar (128.x+).
-- Eski Thunderbird wersiýalary goldanmaýar.
-- Windows, macOS we Linux-da synagdan geçirilendir.
+- Thunderbird‑iň 128 ESR ýa-da has täze wersiýalary goldanylýar (128.x+).
+- Thunderbird‑iň köne wersiýalaryna goldaw berilmeýär.
+- Windows, macOS we Linux-da synagdan geçirildi.
 
-:::warning Manifest V2 goldanmaýar
-Manifest V2 goldanmaýar. Goşmaça **Manifest V3 (MV3)** uýgunlaşýar Thunderbird 128 ESR+ üçin.
+:::warning Manifest V2 goldanylmaýar
+Manifest V2 goldanylmaýar. Goşundy Thunderbird 128 ESR+ üçin **Manifest V3 (MV3)** niýetlenendir.
 :::
 
 ---
 
-## Käbir meseleler {#troubleshooting}
+## Näsazlyklary düzetmek {#troubleshooting}
 
-- Eger goşmaça meýilleşdirilen ýaly işlemeýän bolsa, Thunderbird-nyň uýgun wersiýasyny (128 ESR ýa-da soňraky) ulanyp ýadyňyzdan çykmaň.
-- Goşmaç bilen baglanyşykly islegleri anyklamak üçin Thunderbird erişim konsolyny (**Guralar > Öwüşgüji Guralar > Erişim Konsoly**) barlaň.
-- Saklanan düzgünler dogry berjaý edilmeýän bolsa, Thunderbird-y täzeden başlan we gaýtadan synanyşyň. (Thunderbird halatlaryny sesiň dowamynda ýatda saklap biler; täzeden başlamak täze düzgünleriň ýüklenilmesini üpjün edýar.)
+- Goşundy garaşylşy ýaly işlemeýän bolsa, Thunderbird‑iň utgaşykly wersiýasyny ulanýandygyňyzy kepillendiriň (128 ESR ýa-da has soňraky).
+- Goşundy bilen baglanyşykly meseleler üçin Thunderbird‑iň säwlik konsolyny (**Tools > Developer Tools > Error Console**) barlaň.
+- Saklanan sazlamalar dogry ulanylmaýan ýaly görünse, Thunderbird‑i täzeden işe giriziň we gaýtadan synanyşyň. (Thunderbird sessiýalaryň arasynda ýagdaýy keşläp biler; täzeden işe girizmek täze sazlamalaryň ýüklenmegini üpjün edýär.)
 
 ---
 
-## Bilinýän çaknyşyklar {#known-conflicts}
+## Belli gapma-garşylyklar {#known-conflicts}
 
-- Häzirki wagtda hiç hili bilinýän çaknyşyk ýokdur. Eger gaýtalanýan goşmaçalar ýa-da beýleki goşmaçalar bilen baglanyşykly başarnyksyzlyk görseňiz, gaýtadan görkezmegiňiz bilen habar beriň.
+- Häzirki wagtda belli däl. Eger yzygiderli dublikat faýl goşundylaryny ýa-da beýleki goşundylarda şowsuzlyklar görseňiz, gaýtalamak ädimleri bilen bilelikde habar bermegiňizi haýyş edýäris.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta we Daily (Nightly) gurluşlary umumy taýdan goldaýar, ýöne ýokary derejeli üýtgeşmeler arada goşmaçanyň hereketini döwüp biler. Eger meseleler ýüze çyksa, habar beriň we uly Thunderbird wersiýasyny goşuň (mysal üçin, “Daily 131.0a1 2025‑09‑10”).
-- Beta/Nightly-de bir regreziýa tapgy? Onuň bilen baglanyşykly anyk maglumatlary ulanyp habar beriň — [Yardam](support) görkeziň — we takyk Thunderbird gurluş ştrihini goşuň.
+- Umuman, Thunderbird Beta we Daily (Nightly) gurluşlaryna goldaw berilýär, emma ýokardan girizilen üýtgeşmeler käte goşundynyň özüni alyp barşyny bozup biler. Meseleler bilen ýüzbe-ýüz bolsaňyz, olary habar bermegiňizi we takyk Thunderbird wersiýasyny goşmagyňyzy haýyş edýäris (meselem, “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly-de regressiýa duşdumy? Ony gaýtadan döretmegiň ädimleri bilen bilelikde habar beriň — [Goldaw](support) bölümine serediň — we takyk Thunderbird gurluş setirini goşuň.
+
+---

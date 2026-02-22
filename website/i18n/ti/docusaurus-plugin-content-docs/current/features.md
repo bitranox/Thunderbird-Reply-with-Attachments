@@ -1,34 +1,37 @@
 ---
 id: features
-title: 'ማሕበራት'
-sidebar_label: 'ማሕበራት'
+title: 'ባህሪታት'
+sidebar_label: 'ባህሪታት'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ባህሪታት {#features}
 
-## How It Works {#how-it-works}
+- እትመልሲ እዋን ፋይላት ካብ መጀመርታዊ ኢመይል ብራሕቲ ይጣብዩ።
+- እተለካኸ ባህሪ: ተዛሪባታት ክኾኑ ይኽእሉ
+  - ብራሕቲ ይተውሃብ, ወይ
+  - ብርእይቶ ምርግጋእ ድሕሪ (ትንንሽ, ተግባራዊ ድያሎግ)። ኣብ Options ክትኽእሉ
+    ርእይቶ ንምክናይ ኣክትሉን ነባሪ መልሲ (Yes/No) ትመርጹን።
+- ናይ ስም ፋይል ብላክሊስት (glob patterns) ንዝተለዓለ ፋይላት ብራሕቲ ክታብዩ ይከልእ። ምሳሌታት: `*intern*`, `*secret*`, `*passwor*`.
+  ምምታር ኣብ ቆጸራ ኣይተለየን እዩ እና ስም ፋይል ጥራይ ይርምርም; ኣብ Options መስመር‑ብ‑መስመር ሓደ መልክዒ ኣቕርብ።
+- ማስጠንቀቂ ናይ ብላክሊስት (ኣማራጺ, ብነባሪ ዝንቀሳቀስ): ፋይላት ብብላክሊስትኩም እንተ ተገልበጠ እዮም እንተሃሉፍ, ትንንሽ ሞዳል ስም ፋይሉን መልክዒ(ታት) ዝምልከቱን ይዘርዝር። ዳርክ‑ሞድ ውጹእ እዩን ብቁልፍ መሳርሒ ርእይ እዩ (Enter/Esc ንምዝጋር)።
+- Reply ን Reply all ጋር ይሰርሕ። Forward ብዚ add‑on ኣይተስኣረን።
+- መጀመርታዊ ፋይላት እንኳ ነገር እናጣብይካ ይጨምር፤ ድምሳስ ብስም ፋይል ይቆጽር።
+- ጓርድ ድምሳስ ብ‑ታብ ብ‑ታብ ይሰርሕ፤ ኣብ እቲ ናይ ምስራሕ ታብ ተመሳሳሊ መጨመር ብክልተ ግዜ ይከልእ።
+- ብነባሪ S/MIME ሰርቲፊኬት ይዘርክብ እዩ ንምክልኻል ዘይድልዩ ተዛሪባታት ንምቕላቕል።
+- ናይ መስመር‑ውሽጢ ስእሎታት ኣካትት (ነባሪ: ON)። ዝተተኸሉ ስእሎታት ብቀጥታ ኣብ እቲ ናይ መልሲ ኣካል ከም base64 data URIs ይመሓይሹ፣ እቲ መጀመርታዊ ናይ መስመር‑ውሽጢ እትትሕብር እትድርድር ይጠቕም። ኣብ Options ኣጥፍእ እንተ ናይ መስመር‑ውሽጢ ስእሎታት ሙሉእ ክትስክፍ ትደሊ።
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ከመይ ይሰርሕ {#how-it-works}
+
+- ኣብ መልሲ እዋን እዚ add‑on መጀመርታዊ ተዛሪባታት ይዘርዝር።
+- S/MIME ፊርማታት ካብ ፋይል ተዛሪባታት ይተለይ፤ ናይ መስመር‑ውሽጢ ስእሎታት ኣብ ኣካል ይመሓይሹ (እንተ ኣይተሰናኸኑን)።
+- ኣማራጺ ርእይቶ ይሕተት እዩ (ንቁልፍ መሳርሒ ውጹእ)።
+- እቲ ተላበሱ ፋይላት ናብ ምብጻሕካ ይጨምር፣ ድምሳስ ብስም ፋይል ይቆጽር።
+- ንእዋና ጉዳያት “ስለምንታይ ተዛሪባታት ክተውሃቡ ይኽእሉ ኣይኮነን” ኣብ Usage ርኣይ።
+
+መርገም ፕራይቨሲ: ኩሉ ምሕታት ብብሕቲ ኣብ Thunderbird ይከኣል። እዚ add‑on ናይ ጀርባ ኔትዎርክ መጠየቕታት ኣይግበርን።
+
+---

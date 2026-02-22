@@ -1,297 +1,299 @@
 ---
 id: development
 title: 'تەرەققىيات'
-sidebar_label: 'تەرەققىيات'
+sidebar_label: 'ئىشلەپ چىقىش'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## ئىشلەپ چىقىرىش قوللانمىسى {#development-guide}
+
+:::note پەقەت ئىنگلىزچىنى تەھرىرلەڭ؛ تەرجىمىلەر ئاپتوماتىك تارقىلىدۇ
+ھۆججەتلەردىكى ئۆزگەرتىشلەرنى پەقەت `website/docs` (ئىنگلىزچە) ئاستىدا قىلىڭ. `website/i18n/<locale>/…` ئاستىدىكى تەرجىمىلەر ئاپتوماتىك ھاسىل بولىدۇ، قولدا تەھرىرلەش كېرەك ئەمەس. يەرلىكلەشتۈرۈلگەن مەزمۇننى يېڭىلاش ئۈچۈن تەرجىمە ۋەزىپىلىرىنى ئىشلىتىڭ (مەسىلەن، `make translate_web_docs_batch`).
 :::
 
-### Prerequisites {#prerequisites}
+### ئالدىنقى تەلەپ-شەرتلەر {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ ۋە npm (Node 22 دا سىناق قىلىنغان)
+- Thunderbird 128 ESR ياكى ئۇنىڭدىن يېڭىراق (قولدا سىناش ئۈچۈن)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### پروژە تۈزۈلمىسى (يۇقىرى دەرىجە) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- غول مۇندەرىجە: ئوراش سكرىپتى `distribution_zip_packer.sh`, ھۆججەتلەر، سكرىنشوتلار
+- `sources/`: ئاساسىي قوشۇلمىچىلىق كودى (ئارقا سەھىپە، تاللانمىلار/سەكرىگۈچى UI، مەنىفىستلار، سىنبەلگىلەر)
+- `tests/`: Vitest توپلامى
+- `website/`: Docusaurus ھۆججەتلىرى (`website/i18n/de/...` ئاستىدا i18n بىلەن)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### ئورنىتىش ۋە قوراللار {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- غول مۇندەرىجەگە تۇتىدىغان بېقىنچىلىقلارنى ئورناتىڭ: `npm ci`
+- ھۆججەت (تاللاشچان): `cd website && npm ci`
+- نىشانلارنى بايقىڭ: `make help`
+
+---
+
+### تۇغرىدىن-تۇغرا ئىجادىيەت (web‑ext run) {#live-dev-web-ext}
+
+- تېز دۇنيايى-دومىلىسىش Firefox Desktop تا (پەقەت UI دود سىنىقى):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird دا ئىجرا قىلىش (MailExtensions ئۈچۈن تەۋسىيە قىلىنىدۇ):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- ياردەمچىلەر:
+- Thunderbird نىڭ ئەخلەت خاتىرە تەكشۈرگۈچىسىنى ئېچىق تۇتۇڭ (Tools → Developer Tools → Error Console).
+- MV3 ۋەقە بەتلىرى بوش ۋاقىتتا توختىتىلىدۇ؛ كود ئۆزگەرتكەندىن كېيىن قوشۇلمىنى قايتا يۈكلەڭ ياكى web‑ext نىڭ ئاپتوماتىك قايتا يۈكلەش ئىقتىدارىغا تايەنڭ.
+- پەقەت Firefox قا خاس ھەرىكەتلەر پەرقلىنىشى مۇمكىن؛ Thunderbird دا دائىم تەستىقلاپ API ماسلىشىشىنى جەزملەشتۈرىڭ.
+- Thunderbird ئىجراچان يوللىرى (مىساللار):
+- Linux: `thunderbird` (مەسىلەن، `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- سىرداش پروفىل: روزگۈلۈك تەڭشەك مەھلىسىڭىزگە تەسىر كۆرسەتمەسلىكى ئۈچۈن لايىھىلەش ئۈچۈن ئايرىم Thunderbird پروفىلىنى ئىشلىتىڭ.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make نىشانلىرى (ئەلگورىتم ھەرپى بويىچە) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile ئادەتتىكى ئىجادىيەت ئىجرا يوللىرىنى بىرى خىللاشتۇرىدۇ. ھەر قەچان بولمىسۇن `make help` نى ئىجرا قىلىپ ھەر بىر نىشاننىڭ بىر قۇردىن ئىبارەت قىسقىچە چۈشەندۈرۈشىگە ئېرىشىڭ.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+كۆرسەتمە: `make` نى نىشانسىز ئىجرا قىلسىڭىز، ئاددىي Whiptail تىزىملىكىنى ئېچىپ، بىر نىشاننى تاللاشقا ئىجازەت بېرىدۇ.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| نىشان                                                    | بىر قۇردا چۈشەندۈرۈش                                                                                        |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | يەرلىك قۇرۇلما/پرىۋىۋ ئۆلچەملىرىنى ئۆچۈرۈش (tmp/, web-local-preview/, website/build/).                      |
+| [`commit`](#mt-commit)                                   | فورماتلاش، سىناق ئىجرا قىلىش (i18n نىمۇ ئۆز ئىچىگە ئالىدۇ)، ئۆزگىرىشلەر خاتىرىسىنى يېڭىلاش، commit ۋە push. |
+| [`eslint`](#mt-eslint)                                   | ESLint نى flat config ئارقىلىق ئىجرا قىلىش (`npm run -s lint:eslint`).                                      |
+| [`help`](#mt-help)                                       | ھەممە نىشانلارنى بىر قۇردىن ئىبارەت ھۆججەت بىلەن (تەرتىپلەنگەن) تىزىش.                                      |
+| [`lint`](#mt-lint)                                       | `sources/` ئۈستىدە web‑ext lint (ۋاقىتلىق manifest; ZIP لارنى پەس لىققا ئېلىش؛ كەسكۈن ئەمەس).               |
+| [`menu`](#mt-menu)                                       | نىشان ۋە تاللاشچان پارامېتىر تاللاش ئۈچۈن ئۆز-ئارا تىزىملىك.                                                |
+| [`pack`](#mt-pack)                                       | ATN ۋە LOCAL ZIP قۇرۇش (linter ئىجرا قىلىدۇ؛ packer سكرىپتىنى چاقىرىدۇ).                                    |
+| [`prettier`](#mt-prettier)                               | مەنبە ساندۇقنى ئورنىدا فورماتلاش (ئۆزگىرىشلەرنى يېزىدۇ).                                                    |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier نىڭ تەكشۈرۈش ھالىتى (يازمايدۇ)؛ قايتا فورماتلىشى كېرەك بولسا مەغلۇپ بولىدۇ.                        |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` نىڭ تەخەللۇسى.                                                                                   |
+| [`test`](#mt-test)                                       | Prettier (write)، ESLint، ئاندىن Vitest (قاپلىنىش تەڭشەنسە).                                                |
+| [`test_i18n`](#mt-test_i18n)                             | پەقەت i18n سىناقلىرى: قوشۇلمىچىلىق ئورۇن بەلگىلىرى/ماسلىشىش + تور بېكەت ماسلىشىشى.                          |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` نىڭ تەخەللۇسى.                                                                            |
+| [`translation_app`](#mt-translation-app)                 | قوللىنىش پروگراممىسى UI تېكستلىرىنى `sources/_locales/en/messages.json` دىن تەرجىمە قىلىش.                  |
+| [`translate_web_docs_batch`](#mt-translation-web)        | تور بېكەت ھۆججەتلىرىنى OpenAI Batch API ئارقىلىق تەرجىمە قىلىش (تەۋسىيە قىلىنىدۇ).                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | تور بېكەت ھۆججەتلىرىنى قەدەمداش ھالەتتە تەرجىمە قىلىش (كونا، batch ئەمەس).                                  |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` نىڭ تەخەللۇسى.                                                                      |
+| [`translation_web_index`](#mt-translation_web_index)     | باش بەت/نەۋىگاتسىيە/ئاستى بەت UI نى تەرجىمە قىلىش (`website/i18n/en/code.json → .../<lang>/code.json`).     |
+| [`web_build`](#mt-web_build)                             | ھۆججەتلەرنى `website/build` كە قۇرۇش (`--locales` / `BUILD_LOCALES` قوللايدۇ).                              |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline-بىخەتەر ئۇلانما تەكشۈرۈش (يىراق HTTP[S] نى ئۆتكۈزۈپ كېتىدۇ).                                        |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | يەرلىك gh‑pages پرىۋىۋسى؛ 8080–8090 دا ئاپتوماتىك مۇلازىمەت قىلىدۇ؛ تاللاشچان سىناق/ئۇلانما-تەكشۈرۈش.       |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` نى `gh-pages` تارمىقىغا يۆتكەش.                                                             |
 
-Syntax for options
+تاللانمىلارنىڭ سىنتاكسى
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- تاللانمىلارنى ھۆتكەشكە `make <command> OPTS="…"` نى ئىشلىتىڭ (قوش تىرناق ئىشلىتىش تەۋسىيە قىلىنىدۇ). تۆۋەندە ھەر بىر نىشاندا مىسال ئىشلەتكۈچىلىك كۆرسىتىلگەن.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Locale قۇرۇش ئەسكەرىتمىلىرى {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- بەزىلا تىللارنى قۇرۇش: `BUILD_LOCALES="en de"` نى بەلگىلەڭ ياكى `OPTS="--locales en,de"` نى تور نىشانلىرىغا ئۆتكۈزۈڭ.
+- مەخسۇس بىر تىلنى پرىۋىۋ قىلىش: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### قۇرۇش ۋە قاپلاش {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIP قۇرۇش: `make pack`
+- Repo نىڭ غول مۇندەرىجىسىدە ATN ۋە LOCAL ZIP لار يېشىپ چىقىدۇ (ئۆلچەملەرنى قولدا تەھرىرلەمنىڭ)
+- كۆرسەتمە: قاپلاشتىن بۇرۇن `sources/manifest_ATN.json` ۋە `sources/manifest_LOCAL.json` نىڭ ئىككىلىسىدىكى نەشرى نومۇرىنى يېڭىلاڭ
+- قولدا ئورنىتىش (ئىجادىيەت): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → قۇرۇلغان ZIP نى تاللاڭ
+
+---
+
+### سىناق {#test}
+
+- تولۇق توپلام: `make test` (Vitest)
+- قاپلىنىش (تاللاشچان):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` نى ئىجرا قىلىڭ؛ HTML دوكلاتى ئۈچۈن `coverage/index.html` نى ئاچىڭ
+- پەقەت i18n: `make test_i18n` (UI ئاچقۇچلىرى/ئورۇن بەلگىلىرى/ماۋزۇلىرى + تور بېكەتتىكى ھەر-تىل-ھەر-ھۆججەتكە ماسلىشىش، id/title/sidebar_label تەكشۈرۈشى بىلەن)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### سازلاش ۋە خاتىرىلەر {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- خاتالىق كونسولى: Tools → Developer Tools → Error Console
+- ئىجرا ۋاقتىدا تەپسىلىي خاتىرىلەرنى ئالماشتۇرۇش:
+- قوزغىتىش: `messenger.storage.local.set({ debug: true })`
+- چەكلەش: `messenger.storage.local.set({ debug: false })`
+- خاتىرىلەر جاۋاب يېزىش/ئۆتكۈزۈش جەريانىدا كۆرۈنىدۇ
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### ھۆججەتلەر (تور بېكەت) {#docs-website}
+
+- ئىجادىيەت مۇلازىمېتىرى: `cd website && npm run start`
+- ستاتىك تور بېكەت قۇرۇش: `cd website && npm run build`
+- Make تەڭداشلىرى (ئەلگورىتم ھەرپى بويىچە): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- ئىشلەتلىك مىساللار:
+- پەقەت EN، سىناق/ئۇلانما-تەكشۈرۈشسز، push يوق: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- ھەممە تىل، سىناق/ئۇلانما-تەكشۈرۈش بىلەن، ئاندىن push: `make web_build_local_preview && make web_push_github`
+- ئېلان قىلىشتىن بۇرۇن، offline-بىخەتەر ئۇلانما تەكشۈرۈشنى ئىجرا قىلىڭ: `make web_build_linkcheck`.
+- i18n: ئىنگلىزچە `website/docs/*.md` دا؛ گېرمانچە تەرجىمىلەر `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` دا
+- ئىزدەش: ئەگەر CI دا Algolia DocSearch مۇھىت ئۆزگەرگۈچىلەر بەلگىلەنگەن بولسا (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`) تور بېكەت Algolia ئىزدەشنى ئىشلىتىدۇ؛ بولمىسا يەرلىك ئىزدەشكە قايتىدۇ. باش بەتتە `/` ياكى `Ctrl+K` بېسىپ ئىزدەش كۆزنەكىنى ئېچىڭ.
+
+---
+
+#### ئىئانە قايتا نىشانلاش يولى {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- مارگروت: `/donate` (ۋە `/<locale>/donate`)
+- ھەرىكەت:
+- نۆۋەتتىكى مارگروتتا تىل بولسا (مەسىلەن، `/de/donate`)، شۇنى ئىشلەتسۇن
+- بولمىسا، `navigator.languages` بىلەن سەپلىگەن تىللارنى سېلىشتۇرۇپ ئەڭ ياخشى ماسلىشىشنى تاللايدۇ؛ ئەڭ ئاخىرىدا كۆڭۈلدىكى تىلغا قايتىدۇ
+- قايتا يۆتكەش نۇقتىسى:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- باشقىلار → `/<locale>/docs/donation`
+- توغرا baseUrl بىر تەرەپ قىلىش ئۈچۈن `useBaseUrl` نى ئىشلىتىدۇ
+- زاپاس ھالدا meta refresh + `noscript` ئۇلانمىسىنى ئۆز ئىچىگە ئالىدۇ
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### پرىۋىۋ ئەسكەرىتمىلىرى {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node پرىۋىۋنى تېرىكچە توختىتىش: `http://localhost:<port>/__stop` نى ئاچىڭ (`Local server started` دىن كېيىن بېسىلغان).
+- رەسىملەر MDX/JSX تا يۈكلىنمىسە، تور بېكەتنىڭ `baseUrl` نى ھۆرمەت قىلىشى ئۈچۈن `useBaseUrl('/img/...')` نى ئىشلىتىڭ.
+- ئالدى بىلەن پرىۋىۋ باشلىنىدۇ؛ ئۇلانما تەكشۈرۈش ئاندىن ئىجرا بولىدۇ ھەمدە توسالغۇ بولمايدۇ (سىرتقى ئۇلانمىلار بۇزۇلغان بولسىمۇ پرىۋىۋ توختىمايدۇ).
+- مىسال پرىۋىۋ URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” دىن كېيىن بېسىلىدۇ).
+- ئۇلانما-تەكشۈرۈشتە سىرتقى ئۇلانمىلار: بەزى سىرتقى تور بېكەتلەر (مەسىلەن، addons.thunderbird.net) ئاپتوماتىك كۈرگۈچىلەرنى چەكلەيدۇ، 403 قايتۇرۇشى مۇمكىن. پرىۋىۋ يەنىلا باشلىنىدۇ؛ بۇلارنى پەرۋا قىلمىسىڭىز بولىدۇ.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### تور بېكەتنى تەرجىمە قىلىش {#translate-website}
 
-What you can translate
+نېمىلەرنى تەرجىمە قىلالايسىز
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- پەقەت تور بېكەت UI: باش بەت، نەۋىگاتسىيە، ئاستى بەت ۋە باشقا UI تېكستلىرى. ھازىرچە ھۆججەت مەزمۇنى پەقەت ئىنگلىزچە بولىدۇ.
 
-Where to edit
+قەيەردە تەھرىرلەيدۇ
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` نى تەھرىرلەڭ (`en` نى نەقىل قىلىڭ). `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` قاتارلىق ئورۇن بەلگىلىرىنى ئۆزگەرتمەڭ.
 
-Generate or refresh files
+ھۆججەتلەرنى ھاسىل قىلىش ياكى يېڭىلاش
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- بار بولمىغان نۇسخا ھۆججەتلىرىنى ھەممە تىل ئۈچۈن قۇرۇش: `npm --prefix website run i18n:stubs`
+- ئىنگلىزچىدىن نۇسخا ھۆججەتلىرىنى قايتا قۇرۇش (يېڭى تېكست قوشقاننىڭ ئارقىسىدىن): `npm --prefix website run i18n:stubs:force`
+- يەككە بىر تىل ئۈچۈن ئالماشتۇرۇش: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+باش بەت/نەۋىگاتسىيە/ئاستى بەت UI تېكستلىرىنى تەرجىمە قىلىش (OpenAI)
 
-- Set credentials once (shell or .env):
+- بىرلا قېتىم كىملىك ئۇچۇرىنى بەلگىلەڭ (shell ياكى .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- تاللاشچان: `export OPENAI_MODEL=gpt-4o-mini`
+- بىر قېتىملىق (بارلىق تىللار، en نى ئاتلايدۇ): `make translate_web_index`
+- مەخسۇس تىللار بىلەن چەكلەش: `make translate_web_index OPTS="--locales de,fr"`
+- مەۋجۇت قىممەتلەرنى قاپلىۋىتىش: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+دەلىللەش ۋە قايتا سىناش
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- تەرجىمە سكرىپتى JSON شەكلىنى تەكشۈرىدۇ، كىرپىك قوش تېرىناقتىكى ئورۇن بەلگىلىرىنى ساقلايدۇ، ۋە URL لارنى ئۆزگەرتمەيدۇ.
+- دەلىللەش مەغلۇپ بولسا، ئىككى قېتىمغىچە ئىنكاس بىلەن قايتا سىنايدۇ؛ ئاندىن مەۋجۇت قىممەتنى ساقلاپ قالىدۇ.
 
-Preview your locale
+تىلىڭىزنى ئالدىن كۆرۈش
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- ئىجادىيەت مۇلازىمېتىرى: `npm --prefix website run start`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/` گە بېرىڭ
 
-Submitting
+تاپشۇرۇش
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- تەھرىرلەنگەن `code.json` ھۆججەت(لىرى) بىلەن PR ئېچىڭ. ئۆزگىرىشلەرنى تەكچىل داۋام ئېتىڭ، بولسا قىسقا سكرىنشوت قوشۇڭ.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### بىخەتەرلىك ۋە سەپلەش ئەسكەرىتمىلىرى {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` نى commit قىلمىڭ (قۇرۇش جەريانىدا ۋاقىتلىق ھاسىل بولىدۇ)
+- يېڭىلانما كانىلىنى ساقلاپ قېلىش ئۈچۈن `browser_specific_settings.gecko.id` نى مۇقىم تۇتۇڭ
+
+---
+
+### تەڭشەك تۇراقلىقى {#settings-persistence}
+
+- ساقلاش: بارلىق ئىشلەتكۈچى تەڭشەكلىرى `storage.local` دا تۇرىدۇ ھەمدە قوشۇلمىچىلىق يېڭىلانمىسىدىن كېيىنمۇ ساقلىنىپ قالىدۇ.
+- ئورنىتىش: كۆڭۈلدىكى قىممەتلەر پەقەت ئاچقۇچ چوقۇم مەۋجۇت بولمىسا (undefined) قوللىنىلىدۇ.
+- يېڭىلاش: كەچۈرۈش پەقەت مەۋجۇت بولمىغان ئاچقۇچلارنى تولدۇرىدۇ؛ مەۋجۇت قىممەتلەر ھېچقانداق ئۈستىدىن يېزىلمايدۇ.
+- Schema بەلگىسى: `settingsVersion` (نۆۋەتتە `1`).
+- ئاچقۇچلار ۋە كۆڭۈلدىكى قىممەتلەر:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- كود: `sources/background.js` → `initializeOrMigrateSettings()` ۋە `SCHEMA_VERSION` نى كۆرۈڭ.
 
-Dev workflow (adding a new setting)
+ئىجادىيەت يۈرۈشلۈكى (يېڭى تەڭشەك قوشۇش)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `sources/background.js` دىكى `SCHEMA_VERSION` نىڭ نومۇرىنى ئۆستۈرۈڭ.
+- يېڭى ئاچقۇچ + كۆڭۈلدىكى قىممەتنى `initializeOrMigrateSettings()` دىكى `DEFAULTS` ئوبيېكتىغا قوشۇڭ.
+- كۆڭۈلدىكى قىممەتلىرىنى ئۇرۇشچان ئۇرغۇزغاندا “only-if-undefined” قائىدىسىگە ئەمەل قىلىڭ؛ مەۋجۇت قىممەتلەرنى ئۈستىدىن يېزىۋەتمەڭ.
+- ئەگەر بۇ تەڭشەك ئىشلەتكۈچىگە كۆرۈنىدىغان بولسا، ئۇنى `sources/options.js` غا باغلاڭ ۋە يەرلىكلەشتۈرۈلگەن تېكست قوشۇڭ.
+- سىناق قوشۇڭ/ماسلاشتۇرۇڭ (`tests/background.settings.migration.test.js` غا قاراڭ).
 
-Manual testing tips
+قولدا سىناش ئەسكەرىتمىلىرى
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- يېڭىدىن ئورنىتىشنى سىمىلاتسىيە قىلىش: كېڭەيتىلمىنىڭ سانلىق-مەلۇمات مۇندەرىجىسىنى تازىلاڭ ياكى يېڭى پروفىلدا باشلاڭ.
+- يېڭىلاشنى سىمىلاتسىيە قىلىش: `storage.local` دىكى `settingsVersion` نى `0` غا تەڭشەپ قايتا يۈكلەڭ؛ مەۋجۇت قىممەتلەر ئۆزگەرمەسلىكىنى ۋە پەقەت كەم ئاچقۇچلارنىڭلا قوشۇلغانلىقىنى جەزملەشتۈرۈڭ.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### كاشىلا ھەل قىلىش {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird نىڭ 128 ESR ياكى ئۇدىن يېڭىراق بولغانلىقىنى جەزملەشتۈرۈڭ
+- ئىجرا ۋاقتىدىكى مەسىلىلەر ئۈچۈن خاتالىق كونسولىنى ئىشلىتىڭ
+- ئەگەر ساقلانغان تەڭشەكلەر توغرا قوللىنىلمىغاندەك تۇيۇلۇشۇ بولسا، Thunderbird نى قايتا قوزغىتىڭ ۋە قايتا سىناڭ. (Thunderbird بىر قىسىم ھالىتىنى ئولتۇرۇشلار ئارىسىدا كاشىلىۋىلىشى مۇمكىن؛ قايتا قوزغىتىش يېڭى تەڭشەكلەرنى يۈكلەشنى جەزملەشتۈرىدۇ.)
 
 ---
 
-### Translations
+### CI ۋە قاپلىنىش {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) vitest نى قاپلىنىش بوسۇغىلىرى بىلەن ئىجرا قىلىدۇ (85% line/function/branch/statement). بوسۇغىلارغا يەتمىسە، خىزمەت مەغلۇپ بولىدۇ.
+- بۇ يۈرۈشلۈك HTML دوكلاتى بار `coverage-html` دىگەن ئارتەفاكتنى يۈكلەيدۇ؛ ئۇنى ئىجرا بەتتىن چۈشۈرۈڭ (Actions → ئەڭ يېڭى ئىجرا → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### تۆھپە قوشۇش {#contributing}
 
-Screenshots for docs
+- تارماق/commit/PR قائىدىسى ئۈچۈن CONTRIBUTING.md نى كۆرۈڭ
+- كۆرسەتمە: روزگۈلۈك پروفىلىڭىزگە تەسىر كۆرسەتمەسلىكى ئۈچۈن سىناشقا ئايرىم Thunderbird ئىجادىيەت پروفىلى قۇرۇڭ.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### تەرجىمىلەر
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- بىرلا قېتىمدا “ھەممە ھۆججەت → ھەممە تىل” ئىشلىرى ئاۋارىچىلىقلۇق ۋە ھەجىمنى كۆپ ئىگىلەيدۇ. ئالدى بىلەن تۆۋەندىكىدەك تار مايىللىق بىلەن باشلاڭ (مەسىلەن، بەزىلا ھۆججەت ۋە 1–2 تىل)، نەتىجىنى كۆرۈپ چىقىپ ئاندىن كېڭەيتىڭ.
+
+---
+
+- قايتا سىناش سىياسىتى: تەرجىمە خىزمەتلىرى API خاتالىقى كۆرۈلگەندە ئېكسپونېنتسىيەل تەرەققىياتچان كەينىگە سۈرۈش بىلەن 3 قېتىمغىچە قايتا سىنايدۇ؛ `scripts/translate_web_docs_batch.js` ۋە `scripts/translate_web_docs_sync.js` غا قاراڭ.
+
+ھۆججەتلەر ئۈچۈن سكرىنشوتلار
+
+- سۈرەتلەرنى `website/static/img/` ئاستىغا ساقلاڭ.
+- ئۇلارنى MD/MDX تا `useBaseUrl('/img/<filename>')` ئارقىلىق نەقىل قىلىڭ، شۇنىڭ بىلەن يوللار تور بېكەتنىڭ `baseUrl` بىلەن ماس كېلىدۇ.
+- `website/static/img/` ئاستىدا سۈرەتلەرنى قوشقان ياكى نامىنى ئۆزگەرتكەندىكىدىن كېيىن، بارلىق نەقىللەشتۈرۈشلەرنىڭ تەھلا `useBaseUrl('/img/…')` ئارقىلىق ئىشلەتكىنىگە ۋە يەرلىك پرىۋىۋدا توغرا كۆرۈنگىنىگە جەزم قىلىڭ.
+  Favicon لارى
+
+- كۆپ-چوڭلۇقتىكى `favicon.ico` ھەممە قۇرۇش يوللىرىدا (Make + سكرىپتلار) `website/scripts/build-favicon.mjs` ئارقىلىق ئاپتوماتىك ھاسىل قىلىنىدۇ.
+- قولدا قەدەم زۆرۈر ئەمەس؛ `icon-*.png` نى يېڭىلاش يېتەرلىك.
+  تەكشۈرۈش كۆرسەتمىسى
+
+- تەرجىمە قىلىنغان ھۆججەتلەردە front‑matter دىكى `id` نى ئۆزگەرتمەڭ؛ بار بولغاندا پەقەت `title` ۋە `sidebar_label` نىلا تەرجىمە قىلىڭ.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- مەقسىتى: يەرلىك قۇرۇلما/پرىۋىۋ ئۆلچەملىرىنى ئۆچۈرۈش.
+- ئىشلىتىلىشى: `make clean`
+- تۆۋەندىكىلەرنى ئۆچۈرىدۇ (بولسا):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- مەقسىتى: فورماتلاش، سىناق، ئۆزگىرىشلەر خاتىرىسىنى يېڭىلاش، commit ۋە push.
+- ئىشلىتىلىشى: `make commit`
+- تەپسىلات: Prettier (write)، `make test`, `make test_i18n` نى ئىجرا قىلىدۇ؛ سەھنەدە پەرقلەر بولغاندا ئۆزگىرىشلەر خاتىرىسىگە قوشۇمىز؛ `origin/<branch>` غا push قىلىدۇ.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- مەقسىتى: ESLint نى flat config ئارقىلىق ئىجرا قىلىش.
+- ئىشلىتىلىشى: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- مەقسىتى: ھەممە نىشانلارنى بىر قۇردىن ئىبارەت چۈشەندۈرۈشلەر بىلەن تىزىش.
+- ئىشلىتىلىشى: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- مەقسىتى: `web-ext` نى ئىشلىتىپ MailExtension نى lint قىلىش.
+- ئىشلىتىلىشى: `make lint`
+- ئىزاھات: ۋاقىتلىق `sources/manifest_LOCAL.json` → `sources/manifest.json` كۆچۈرۈلىدۇ؛ قۇرۇلغان ZIP لارنى پەرۋا قىلمايدۇ؛ ئاگاھلاندۇرۇشلار پايىلاندىن مەغلۇپ قىلمايدۇ.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- مەقسىتى: Make نىشانى ۋە تاللاشچان ئارگۇمېنت تاللاش ئۈچۈن ئۆز-ئارا تىزىملىك.
+- ئىشلىتىلىشى: `make` نى ئارگۇمېنتسىز ئىجرا قىلىڭ.
+- ئىزاھات: ئەگەر `whiptail` بولمىسا، تېزىملىك `make help` غا قايتىدۇ.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- مەقسىتى: ATN ۋە LOCAL ZIP لارنى قۇرۇش (`lint` قا تايىنىدۇ).
+- ئىشلىتىلىشى: `make pack`
+- كۆرسەتمە: قاپلاشتىن بۇرۇن `sources/manifest_*.json` دىكى نەشرى نومۇرلىرىنى ئۆستۈرۈڭ.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- مەقسىتى: Repo نى ئورنىدا فورماتلاش.
+- ئىشلىتىلىشى: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- مەقسىتى: فورماتنى تەكشۈرۈش (يازمايدۇ).
+- ئىشلىتىلىشى: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- مەقسىتى: `prettier` نىڭ تەخەللۇسى.
+- ئىشلىتىلىشى: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- مەقسىتى: Prettier (write)، ESLint، ئاندىن Vitest (قورال قاچىلانغان بولسا قاپلىنىش بىلەن).
+- ئىشلىتىلىشى: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- مەقسىتى: قوشۇلمىچىلىق تېكستلىرى ۋە تور بېكەت ھۆججەتلىرى ئۈچۈن i18n مەركەزلەشتۈرۈلگەن سىناق.
+- ئىشلىتىلىشى: `make test_i18n`
+- ئىجرا قىلىنىدىغىنى: `npm run test:i18n` ۋە `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- مەقسىتى: قوشۇلمىچىلىق UI تېكستلىرىنى EN دىن باشقا تىللارغا تەرجىمە قىلىش.
+- ئىشلىتىلىشى: `make translation_app OPTS="--locales all|de,fr"`
+- ئىزاھات: ئاچقۇچ قۇرۇلۇشى ۋە ئورۇن بەلگىلىرىنى ساقلاپ قالىدۇ؛ `translation_app.log` قا خاتىرە يازىدۇ. سكرىپت شەكلى: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- مەقسىتى: تور بېكەت ھۆججەتلىرىنى `website/docs/*.md` دىن `website/i18n/<locale>/...` غا تەرجىمە قىلىش.
+- تەۋسىيە قىلىنىدىغىنى: `translate_web_docs_batch` (OpenAI Batch API)
+  - ئىشلىتىلىشى (بايراقلار): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - كونا ئورۇن تاللىغۇچ شەكلى تېخىمۇ قوبۇل قىلىنىدۇ: `OPTS="<doc|all> <lang|all>"`
+- ھەرىكەت: JSONL قۇرۇش، يۈكلەش، ھەر 30 سېكۇنتتا تەكشۈرۈش، نەتىجىنى چۈشۈرۈش، ھۆججەتلەرنى يېزىش.
+- ئىزاھات: بىر batch ۋەزىپىسى (OpenAI batch كۆزنەكىگە بىنائەن) 24 سائەتكە قەدەر ۋاقىت ئالغۇچى بولۇشى مۇمكىن. كونسول ھەر قايتا تەكشۈرگەن ساينىغان ۋاقىتنى كۆرسىتىدۇ.
+- مۇھىت: `OPENAI_API_KEY` (زۆرۈر)، تاللاشچان `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (كۆڭۈلدىكى 24h), `BATCH_POLL_INTERVAL_MS`.
+- كونا رېژىم: `translate_web_docs_sync`
+  - ئىشلىتىلىشى (بايراقلار): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - كونا ئورۇن تاللىغۇچ شەكلى تېخىمۇ قوبۇل قىلىنىدۇ: `OPTS="<doc|all> <lang|all>"`
+- ھەرىكەت: ھەر-جۇپ سۇرالغانغا قەدەمداش ئىقتىدار (batch توپلاش يوق).
+- ئىزاھات: `OPTS` قويۇلمىغاندا ئۆز-ئارا سۇئال-جاۋاب. ئىككى خىل رېژىممۇ كود بۆلەكلەر/ئىچكى كودنى ساقلاپ قالىدۇ ۋە front‑matter دىكى `id` نى ئۆزگەرتمەيدۇ؛ `translation_web_batch.log` (batch) ياكى `translation_web_sync.log` (sync) قا خاتىرە يازىدۇ.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- مەقسىتى: تور بېكەت UI تېكستلىرىنى (باش بەت، نەۋىگاتسىيە، ئاستى بەت) `website/i18n/en/code.json` دىن `website/i18n/<locale>/code.json` ئاستىدىكى ھەممە تىلغا تەرجىمە قىلىش (`en` دىن باشقا).
+- ئىشلىتىلىشى: `make translate_web_index` ياكى `make translate_web_index OPTS="--locales de,fr [--force]"`
+- تەلەپ: `OPENAI_API_KEY` نى ئېكسپورت قىلىڭ (تاللاشچان: `OPENAI_MODEL=gpt-4o-mini`).
+- ھەرىكەت: JSON قۇرۇلۇشىنى دەلىللەيدۇ، كىرپىك قوش تېرىناق ئورۇن بەلگىلىرىنى ساقلايدۇ، URL لارنى ئۆزگەرتمەيدۇ، دەلىللەش خاتالىقى بولسا ئىنكاس بىلەن قايتا سىنايدۇ.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- مەقسىتى: ھۆججەت تور بېكىتىنى `website/build` كە قۇرۇش.
+- ئىشلىتىلىشى: `make web_build OPTS="--locales en|de,en|all"` (ياكى `BUILD_LOCALES="en de"` نى بەلگىلەڭ)
+- ئىچكى ئىشلىتىش: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- بېقىنچىلىق: `website/` دا پەقەت `website/node_modules/@docusaurus` يوق بولغاندا `npm ci` نى ئىجرا قىلىدۇ.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- مەقسىتى: offline-بىخەتەر ئۇلانما تەكشۈرۈش.
+- ئىشلىتىلىشى: `make web_build_linkcheck OPTS="--locales en|all"`
+- ئىزاھات: `tmp_linkcheck_web_pages` كە قۇرۇلىدۇ؛ GH Pages دىكى `baseUrl` نى `/` غا قايتا يېزىدۇ؛ يىراق HTTP(S) ئۇلانمىلارنى ئاتلاپ ئۆتىدۇ.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- مەقسىتى: تاللاشچان سىناق/ئۇلانما-تەكشۈرۈش بىلەن يەرلىك gh‑pages پرىۋىۋسى.
+- ئىشلىتىلىشى: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- ھەرىكەت: ئالدى بىلەن Node پرىۋىۋ مۇلازىمېتىرىنى سىنايدۇ (`scripts/preview-server.mjs`, `/__stop` قوللايدۇ)، بولمىسا `python3 -m http.server` كە قايتىدۇ؛ 8080–8090 دا مۇلازىمەت قىلىدۇ؛ PID `web-local-preview/.server.pid` دا.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- مەقسىتى: `website/build` نى `gh-pages` تارمىقىغا يۆتكەش.
+- ئىشلىتىلىشى: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+كۆرسەتمە: Makefile ئىشلىتىدىغان بوغچا باشقۇرغۇچنى ئۇستۈن ئۆزگەرتىش ئۈچۈن `NPM=…` نى بەلگىلەڭ (كۆڭۈلدىكى `npm`).

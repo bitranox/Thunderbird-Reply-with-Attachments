@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'අනුකූලතාව'
+title: 'අනුකූලතාවය'
 sidebar_label: 'අනුකූලතාව'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## අනුකූලතාව {#compatibility}
+
+:::important අවම Thunderbird අනුවාදය
+මෙම ඇඩෝනය Thunderbird **128 ESR හෝ නවතම** සඳහා සහය දක්වයි. පැරණි අනුවාද සඳහා සහය නොදක්වයි.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR හෝ නවතම සඳහා සහය ඇත (128.x+).
+- පැරණි Thunderbird අනුවාද සඳහා සහය නොමැත.
+- Windows, macOS, සහ Linux මත පරීක්ෂා කර ඇත.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 සඳහා සහය නොමැත
+Manifest V2 සඳහා සහය නොමැත. මෙම ඇඩෝනය Thunderbird 128 ESR+ හි **Manifest V3 (MV3)** අරමුණු කරගනී.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ගැටලු විසඳීම {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ඇඩෝනය බලාපොරොත්තු වූ පරිදි ක්‍රියා නොකරන්නේ නම්, ඔබ Thunderbird හි අනුකූල අනුවාදයක් (128 ESR හෝ ඊට පසුව) භාවිතා කරන බව තහවුරු කරන්න.
+- ඇඩෝනයට අදාල ගැටළු සඳහා Thunderbird හි **Tools > Developer Tools > Error Console** පරීක්ෂා කරන්න.
+- ගබඩා කළ සැකසුම් නිසිසේ ක්‍රියා නොකරනවා මෙන් පෙනුනහොත්, Thunderbird නැවත ආරම්භ කර නැවත උත්සාහ කරන්න. (Thunderbird සැසි අතර තත්වය කැෂ් කර තිබිය හැක; නැවත ආරම්භ කිරීමෙන් අළුත් සැකසුම් නවතම ලෙස පූරණය වීම සහතික වේ.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## දන්නා ගැටුම් {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- දැනට කිසිවක් දැනී නො සිටී. ඔබට නැවත නැවත ද්විත්ව (duplicate) ඇමිණුම් හෝ අනෙක් ඇඩෝන සමඟ අසමත් වීම් පෙනී ඇත්නම්, නැවත උත්පාදනය කිරීමට අවශ්‍ය පියවර සමඟ වාර්තා කරන්න.
+
+---
+
+## බීටා/නායිට්ලි {#beta-nightly}
+
+- Thunderbird Beta හා Daily (Nightly) build සාමාන්‍යයෙන් සහය දක්වයි, එහෙත් ඉහළ මූලාශ්‍ර වෙනස්කම් සමහරවිට ඇඩෝනයේ හැසිරීම බිඳ දැමිය හැක. ඔබ ගැටලු මුහුණ දී නම්, කරුණාකර ඒවා වාර්තා කර නිවැරදි Thunderbird අනුවාදයද ඇතුළත් කරන්න (උදා., “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly හි regression එකක් දැකීද? කරුණාකර නැවත උත්පාදනය කිරීමට අවශ්‍ය පියවර සමඟ වාර්තා කරන්න — [සහාය](support) බලන්න — සහ නිවැරදි Thunderbird build string එකත් එක් කරන්න.
 
 ---

@@ -1,34 +1,37 @@
 ---
 id: features
-title: 'Виждонҳо'
-sidebar_label: 'Виждонҳо'
+title: 'Хусусиятҳо'
+sidebar_label: 'Хусусиятҳо'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Имкониятҳо {#features}
 
-## How It Works {#how-it-works}
+- Ҳангоми ҷавоб додан файлҳо аз почтаи электронии аслӣ худкор замима карда мешаванд.
+- Рафтори танзимшаванда: замимаҳо метавонанд
+  - худкор илова шаванд, ё
+  - танҳо баъд аз тасдиқ илова шаванд (гуфтугӯи хурд ва дастрас). Дар Имконот метавонед тасдиқро фаъол кунед ва ҷавоби пешфарз (Ҳа/Не)-ро интихоб намоед.
+- Рӯйхати сиёҳи номҳои файл (намунаҳои glob) монеъ мешавад, ки файлҳои мушаххас
+  худкор замима шаванд. Мисолҳо: `*intern*`, `*secret*`, `*passwor*`.
+  Мутобиқат ба регистри ҳарфҳо ҳассос нест ва танҳо номи файл санҷида мешавад; дар Имконот барои ҳар сатр як намуна диҳед.
+- Огоҳиҳои рӯйхати сиёҳ (ихтиёрӣ, пешфарз фаъол): вақте ки файлҳо бо рӯйхати сиёҳи шумо хориҷ карда мешаванд, равзанаи хурди модалӣ файл ва намуна(ҳо)-и мутобиқро нишон медиҳад. Бо реҷаи торик мутобиқ ва бо клавиатура дастрас (Enter/Esc барои бастан).
+- Бо “Ҷавоб” ва “Ҷавоб ба ҳама” кор мекунад. “Forward” аз ҷониби ин илова тағйир дода намешавад.
+- Ҳатто агар худатон чизе замима карда бошед ҳам, аслиҳоро илова мекунад; нусхаҳои такрориро аз рӯи номи файл пешгирӣ мекунад.
+- Муҳофизати такрорӣ барои ҳар лавҳа аз дукарата илова кардан дар ҳамон лавҳаи навиштан ҷилавгирӣ мекунад.
+- Бар пешфарз шаҳодатномаҳои S/MIME нодида гирифта мешаванд, то замимаҳои нолозим пешгирӣ шаванд.
+- Тасвирҳои дохилиро дар бар мегирад (пешфарз: ФАЪОЛ). Тасвирҳои ҷойгузошта бевосита дар матни ҷавоб ҳамчун URI‑ҳои додаҳои base64 барқарор карда мешаванд, бо ҳифзи тарҳбандии дохилии аслӣ. Дар Имконот ғайрифаъол кунед, то тасвирҳои дохилиро комилан нодида гиред.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Чӣ гуна кор мекунад {#how-it-works}
+
+- Ҳангоми ҷавоб, илова рӯйхати замимаҳои аслиро нишон медиҳад.
+- Имзоҳои S/MIME-ро аз замимаҳои файлӣ хориҷ мекунад; тасвирҳои дохилӣ дар матн барқарор карда мешаванд (агар ғайрифаъол набошанд).
+- Ба ихтиёр дархости тасдиқ мекунад (бароҳат барои клавиатура).
+- Файлҳои мувофиқро ба пайёми навиштани шумо илова мекунад ва аз такрорӣ аз рӯи номи файл ҷилавгирӣ мекунад.
+- Барои ҳолатҳои истисноӣ ба бахши «Чаро шояд замимаҳо илова нашаванд» дар Истифода нигаред.
+
+Эзоҳи махфият: Ҳамаи коркардҳо маҳаллиан дар Thunderbird сурат мегиранд. Илова ягон дархости шабакавии пасзамина намефиристад.
+
+---

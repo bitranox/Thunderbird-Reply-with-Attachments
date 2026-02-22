@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ព្រមាន ប្រសិនបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "រួមបញ្ចូលរូបភាពក្នុងបន្ទាត់ (រូបភាពបង្កប់)"
+  },
   "uiDebugHeader": {
     "message": "កម្រិតខ្ពស់"
   },

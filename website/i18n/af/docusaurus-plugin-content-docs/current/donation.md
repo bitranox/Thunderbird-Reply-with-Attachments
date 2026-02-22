@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Biedrag'
-sidebar_label: 'Biedrag'
+title: 'Skenk'
+sidebar_label: 'Skenk'
 ---
 
-## Donate
+---
+
+## Skenk
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+As jy van "Reply with Attachments" hou en die ontwikkeling daarvan wil ondersteun, kan jy hier skenk:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Skenk via Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>of</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Skenk via PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>of</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Koop vir my ’n koffie" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skandeer om vir my ’n koffie te koop"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Dankie! Jou ondersteuning help om verenigbaarheid met nuwe Thunderbird-vrystellings te behou, toeganklikheid en toetse te verbeter, en dokumentasie op datum te hou.
 
-Notes
+Notas
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Skenk-skakels open net wanneer jy daarop klik; die byvoeging doen geen agtergrond-netwerkversoeke nie.
+- Herhalende steun help met langtermyn-onderhoud en tydige opdaterings, maar is heeltemal opsioneel.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+As die beeldknoppies nie laai nie, gebruik asseblief eerder hierdie skakels:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Koop vir my ’n koffie](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Skenkings is vrywillig; geen funksies word beperk nie.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Skenkingsigbaarheid (90‑dae‑sluimer)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Die byvoeging sluit ’n geriefsfunksie in om skenking‑aanwysings vir ’n ruk te versteek nadat jy geskenk het.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Waar om dit te vind
+  - Opsies → Ondersteuning‑afdeling: jy sal ’n “Ek het geskenk”‑knoppie en ’n klein wenkgebied sien.
+  - Die Stuurbevestiging‑dialoog wys ook ’n Skenk‑knoppie; dit versteek outomaties wanneer die sluimer aktief is.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Hoe dit werk
+  - Deur op “Ek het geskenk” te klik, word skenkingknoppies en verwante aanwysings vir 90 dae versteek.
+  - ’n Statuswenk wys “Versteek tot YYYY‑MM‑DD” (in jou plaaslike datum). Daar is ook ’n “Wys Skenk weer”‑knoppie om sigbaarheid onmiddellik te herstel.
+  - Na 90 dae word die Skenk‑knoppie weer outomaties sigbaar.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privaatheid en berging
+  - Die byvoeging stoor ’n enkele tydstempel in Thunderbird se plaaslike berging om die sluimerperiode te onthou. Sleutel: `donateHideUntil` (epog‑millisekondes).
+  - Hierdie instelling is plaaslik tot jou Thunderbird‑profiel (nie wolk‑gesinkroniseer nie). Geen netwerkversoeke word deur hierdie funksie gemaak nie.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Probleemoplossing
+  - As Skenk steeds vertoon net nadat jy op “Ek het geskenk” geklik het, wag ’n oomblik of heropen die Opsies‑bladsy; die UI werk by sodra die instelling gestoor is.
+  - Om handmatig te herstel, klik “Wys Skenk weer”. Jy kan ook wag totdat die datum wat in die wenk gelys is, verby is.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Hierdie funksie is uitsluitlik vir gerief; dit blokkeer nooit die byvoeging se funksionaliteit nie en versamel geen persoonlike data nie.
 
 ---

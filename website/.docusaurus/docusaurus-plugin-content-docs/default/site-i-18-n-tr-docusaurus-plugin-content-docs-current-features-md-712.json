@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Özellikler",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/tr/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",

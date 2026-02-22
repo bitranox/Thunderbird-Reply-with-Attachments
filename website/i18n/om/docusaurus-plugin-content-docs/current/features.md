@@ -4,31 +4,40 @@ title: 'Amaloota'
 sidebar_label: 'Amaloota'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Amaloota {#features}
 
-## How It Works {#how-it-works}
+- Yeroo deebii barreessan, faayiloonni ergaa asalii keessaa ofumaan dabalamu.
+- Gocha isaa ni qindaa'ama: faayiloonni dabalaman
+  - akka ofumaan dabalaman, yookaan
+  - mirkaneessa booddee qofaan dabalaman (marii xiqqaa nama hundaaf mijataa). 'Options' keessatti
+    mirkaneessicha banuu fi deebii durtii (Eeyyee/Lakkii) filachuu dandeessu.
+- Tarree dhorkaa maqaa faayilootaa (glob patterns) faayiloota muraasa akka ofumaan
+  hin dabalamin ni ittisa. Fakkeenya: `*intern*`, `*secret*`, `*passwor*`.
+  Walsimsiinsi qubee guddaa/xiqqaa adda hin baasu; maqaa faayilaa qofa ilaala; sarara tokkotti
+  fakkii tokkicha 'Options' keessatti kenni.
+- Akeekkachiisa tarree dhorkaa (filannoo, duraanuu eeyyamame): tarreen dhorkaa kee faayiloota
+  yeroo haqu, modaal xiqqaan faayila fi fakkii walsimuu agarsiisa. Haala dukkanaa‑moodii
+  waliin michuu fi meeshaa‑barreeffamaa irraan gahu (cufuu: Enter/Esc).
+- Reply fi Reply all waliin ni hojjeta. Forward ida'amni kanaan hin jijjiiramu.
+- Yoo duraan faayila ofiin dabaltes, kan asalii ni dabalatti; irra‑deddeebiina maqaa faayilaan ni ittisa.
+- Ittisa irra‑deddeebiinsaa tab tokkoon, tab barreessuu tokko keessatti lama dabaluu ni ittisa.
+- Durtiidhaan, ragaa S/MIME ni irra darbata; dabaltoota hin barbaachisne ofirraa ittisuuf.
+- Suuraawwan inline dabaluu (durtii: ON). Suuraaleen kuusaman kallattiidhaan qaama
+  deebii keessatti akka base64 data URIstti deebifamu; qindaa'ina inline asalii ni eega. 'Options' keessatti
+  dabaluu kana dhaamsuun suuraawwan inline guutummaatti ni dhiistu.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Akkamitti Hojjeta {#how-it-works}
+
+- Yeroo deebii, ida'amni kun faayiloota asalii tarreessa.
+- Mallattoolee S/MIME faayila dabalatamanii keessaa filteera; suuraawwan inline qaama keessatti deebifamu (yoo dhaamame hin taane).
+- Filannoon mirkaneessa ni gaafata (keyboard‑friendly).
+- Faayiloota mijatoo barreessituu keetti ni dabalata; irra‑deddeebiina maqaa faayilaan ni ittisa.
+- Haala addaa irratti, “Sababni maaliif faayiloonni dabalamuu dhabu danda'an” jedhu Usage keessatti ilaali.
+
+Yaadannoo iccitii: Hojiiwwan hunda bakka‑lokalitti Thunderbird keessatti qofa raawwatamu. Ida'amni kun kadhataa network duubaa hin raabsu.
+
+---

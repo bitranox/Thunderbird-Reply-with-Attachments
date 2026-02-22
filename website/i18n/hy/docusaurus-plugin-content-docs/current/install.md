@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Թողարկում'
+title: 'Տեղադրում'
 slug: /install
-sidebar_label: 'Թողարկում'
+sidebar_label: 'Տեղադրում'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Տեղադրում՝ "Thunderbird Add-ons and Themes"-ի միջոցով {#installation-in-thunderbird-recommended}
+
+:::important Thunderbird-ի նվազագույն տարբերակը
+Այս հավելումն աջակցում է Thunderbird-ի **128 ESR կամ ավելի նոր** տարբերակներին։ Ավելի հին տարբերակները eivät աջակցվում:
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Սա առաջարկվող տեղադրման եղանակն է։ ATN-ից (addons.thunderbird.net) տեղադրված հավելումները ստանում են ավտոմատ թարմացումներ։ LOCAL/dev տեղադրումները ավտոմատ չեն թարմացվում։
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Thunderbird-ի նվազագույն տարբերակ՝ 128 ESR կամ ավելի նոր։
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird-ում անցեք **Tools > Add-ons and Themes**։
+2. Փնտրեք «reply with attachments»։
+3. Ավելացրեք հավելումը։
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Կամ անմիջապես բացեք հավելման էջը՝ [Thunderbird հավելումներ (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Ձեռքով տեղադրում XPI-ից {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Ներբեռնեք XPI ֆայլը {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Անցեք [Thunderbird հավելման էջ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)։
+2. Ներբեռնեք հավելման վերջին տարբերակը որպես XPI ֆայլ (`reply_with_attachments-x.y.z-tb.xpi`)։
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Տեղադրում Thunderbird-ում {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Բացեք Thunderbird-ը։
+2. Անցեք **Tools > Add-ons and Themes**։
+3. **Add-ons Manager**-ում սեղմեք վերին աջ անկյունում գտնվող ատամնանիվի պատկերակը։
+4. Մենյուից ընտրեք **Install Add-on From File…**։
+5. Ընտրեք ներբեռնված `reply_with_attachments-x.y.z-tb.xpi` ֆայլը։
+6. Հուշման դեպքում հաստատեք տեղադրումը։
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Տեղադրում մշակման համար {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Ներբեռնեք պահոցը {#download-the-repository}
 
-See also
+1. Ներբեռնեք GitHub պահոցի վերջին տարբերակը։
+2. Լրացուցիչ տեղեկության համար գործարկեք `make help`։
 
-- [Quickstart](quickstart)
+### Տեղադրում Thunderbird-ում {#install-in-thunderbird-dev}
+
+1. Բացեք Thunderbird-ը։
+2. Անցեք **Tools > Add-ons and Themes**։
+3. **Add-ons Manager**-ում սեղմեք վերին աջ անկյունում գտնվող ատամնանիվի պատկերակը։
+4. Մենյուից ընտրեք **Install Add-on From File…**։
+5. Ընտրեք ստեղծված `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ֆայլը։
+6. Հուշման դեպքում հաստատեք տեղադրումը։
+
+Նշում. Եթե ձեր համակարգում Thunderbird-ը չի ընդունում `.zip`-ը, փոխանվանեք այն `.xpi`-ի և կրկին փորձեք “Install Add‑on From File…”։
+
+### Որտեղ գտնել LOCAL ZIP-ը {#where-local-zip}
+
+- Նախ, փաթեթավորեք հավելումը. պահոցի արմատում գործարկեք `make pack`։
+- Փաթեթավորումից հետո պահոցի արմատում գտեք “LOCAL” zip-ը (օր., `2025-..-reply-with-attachments-plugin-LOCAL.zip`)։
+- Փորձարկման համար վերափաթեթավորելուց առաջ թարմացրեք տարբերակները և՛ `sources/manifest_ATN.json`-ում, և՛ `sources/manifest_LOCAL.json`-ում։
+
+---
+
+## Անջատում, ապատեղադրում և թարմացումներ {#disable-uninstall-updates}
+
+- Անջատում՝ Thunderbird → Tools → Add‑ons and Themes → գտեք հավելումը → անջատեք անջատիչը։
+- Ապատեղադրում՝ նույն տեսք → երեք կետանի ընտրացանկ → Remove։
+- Թարմացումներ՝ ATN-ից տեղադրումներն ավտոմատ թարմացվում են, երբ նոր տարբերակները հաստատվում են։ LOCAL/dev տեղադրումները ավտոմատ չեն թարմացվում. նոր LOCAL կառուցվածքը վերատեղադրեք ձեռքով։
+- Կարգավորումները ամբողջությամբ հեռացնելը՝ տես [Գաղտնիություն → Տվյալների հեռացում](privacy#data-removal)։
+
+Տես նաև
+
+- [Արագ մեկնարկ](quickstart)

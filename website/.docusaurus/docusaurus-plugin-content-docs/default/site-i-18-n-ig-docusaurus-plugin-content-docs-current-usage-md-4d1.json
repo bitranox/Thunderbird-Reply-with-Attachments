@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Iji",
-  "description": "Usage",
+  "title": "Ojiji",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Iji",
-    "sidebar_label": "Iji"
+    "title": "Ojiji",
+    "sidebar_label": "Ojiji"
   },
   "sidebar": "docs",
   "previous": {

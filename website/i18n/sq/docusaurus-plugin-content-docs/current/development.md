@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Zhvillimi'
-sidebar_label: 'Zhvillimi'
+title: 'Zhvillim'
+sidebar_label: 'Zhvillim'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Udhëzues Zhvillimi {#development-guide}
+
+:::note Redaktoni vetëm anglishten; përkthimet përhapen
+Përditësoni dokumentacionin **vetëm** nën `website/docs` (anglisht). Përkthimet nën `website/i18n/<locale>/…` gjenerohen dhe nuk duhet të redaktohen manualisht. Përdorni detyrat e përkthimit (p.sh., `make translate_web_docs_batch`) për të rifreskuar përmbajtjen e lokalizuar.
 :::
 
-### Prerequisites {#prerequisites}
+### Parakushtet {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ dhe npm (testuar me Node 22)
+- Thunderbird 128 ESR ose më i ri (për testim manual)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Struktura e projektit (niveli i lartë) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Rrënja: skript paketimi `distribution_zip_packer.sh`, dokumente, screenshots
+- `sources/`: kodi kryesor i shtesës (background, UI i opsioneve/popup, manifestet, ikonat)
+- `tests/`: paketa e Vitest
+- `website/`: dokumentacioni Docusaurus (me i18n nën `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Instalimi dhe Mjetet {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Instalo varësitë në rrënjë: `npm ci`
+- Dokumentacioni (opsionale): `cd website && npm ci`
+- Zbuloni objektivat: `make help`
+
+---
+
+### Zhvillim i gjallë (web‑ext run) {#live-dev-web-ext}
+
+- Cikël i shpejtë në Firefox Desktop (vetëm smoke‑tests të UI):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Ekzekuto në Thunderbird (e preferuar për MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Këshilla:
+- Mbajeni të hapur Error Console të Thunderbird (Tools → Developer Tools → Error Console).
+- Faqet e eventeve MV3 pezullohen kur janë në pushim; ringarkoni shtesën pas ndryshimeve në kod, ose lëreni web‑ext të bëjë auto‑reload.
+- Disa sjellje vetëm në Firefox ndryshojnë; verifikoni gjithmonë në Thunderbird për barazi të API‑ve.
+- Shtegu i binarëve të Thunderbird (shembuj):
+- Linux: `thunderbird` (p.sh., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Izolim profili: Përdorni një profil të veçantë Thunderbird për zhvillim për të shmangur ndikimin në konfigurimin tuaj të përditshëm.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Objektivat Make (alfabetik) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile standardizon rrjedhat e zakonshme të zhvillimit. Ekzekutoni `make help` në çdo kohë për një përmbledhje me një rresht të çdo objektivi.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Këshillë: ekzekutimi i `make` pa një objektiv hap një menu të thjeshtë Whiptail për të zgjedhur një objektiv.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Objektivi                                                | Përshkrim me një rresht                                                                         |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Hiq artefaktet lokale të build/preview (tmp/, web-local-preview/, website/build/).              |
+| [`commit`](#mt-commit)                                   | Formato, ekzekuto testet (duke përfshirë i18n), përditëso changelog, bëj commit & push.         |
+| [`eslint`](#mt-eslint)                                   | Ekzekuto ESLint përmes flat config (`npm run -s lint:eslint`).                                  |
+| [`help`](#mt-help)                                       | Listo të gjithë objektivat me dokumentim me një rresht (të renditur).                           |
+| [`lint`](#mt-lint)                                       | web‑ext lint në `sources/` (manifest i përkohshëm; injoron ZIP‑et; jo fatal).                   |
+| [`menu`](#mt-menu)                                       | Menu interaktive për të zgjedhur një objektiv dhe argumente opsionale.                          |
+| [`pack`](#mt-pack)                                       | Ndërto ZIP‑et ATN & LOCAL (ekzekuton linter‑in; thërret skriptin e paketimit).                  |
+| [`prettier`](#mt-prettier)                               | Formato repository‑n në vend (shkruan ndryshime).                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier në modalitet verifikimi (pa shkrime); dështon nëse nevojitet riformatim.               |
+| [`prettier_write`](#mt-prettier_write)                   | Alias për `prettier`.                                                                           |
+| [`test`](#mt-test)                                       | Prettier (shkruaj), ESLint, pastaj Vitest (coverage nëse është konfiguruar).                    |
+| [`test_i18n`](#mt-test_i18n)                             | Teste vetëm i18n: vendmbajtës/paritet i shtesës + paritet i faqes së uebit.                     |
+| [`translate_app`](#mt-translation-app)                   | Alias për `translation_app`.                                                                    |
+| [`translation_app`](#mt-translation-app)                 | Përkthe vargjet e UI të aplikacionit nga `sources/_locales/en/messages.json`.                   |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Përkthe dokumentet e faqes përmes OpenAI Batch API (e preferuar).                               |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Përkthe dokumentet e faqes në mënyrë sinkrone (trashëgimore, jo-batch).                         |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias për `translation_web_index`.                                                              |
+| [`translation_web_index`](#mt-translation_web_index)     | Përkthe UI e faqes kryesore/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Ndërto dokumentet te `website/build` (mbështet `--locales` / `BUILD_LOCALES`).                  |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Kontroll lidhjesh i sigurt offline (anashkalon HTTP[S] të largëta).                             |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Parapamje lokale gh‑pages; shërben automatikisht në 8080–8090; teste/kontroll opsional.         |
+| [`web_push_github`](#mt-web_push_github)                 | Shto `website/build` në degen `gh-pages`.                                                       |
 
-Syntax for options
+Sintaksa për opsionet
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Përdorni `make <command> OPTS="…"` për të kaluar opsione (këshillohen thonjëzat). Çdo objektiv më poshtë tregon përdorim shembull.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Këshilla për ndërtimin e lokalizimeve {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Ndërto një nën‑bashkësi të lokaleve: vendos `BUILD_LOCALES="en de"` ose kaloni `OPTS="--locales en,de"` te objektivat e uebit.
+- Parapamje e një lokaliteti specifik: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Ndërtimi dhe Paketimi {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Ndërto ZIP‑et: `make pack`
+- Prodhon ZIP‑et ATN dhe LOCAL në rrënjën e repo‑s (mos redaktoni artefaktet me dorë)
+- Këshillë: përditësoni versionin si në `sources/manifest_ATN.json` ashtu edhe në `sources/manifest_LOCAL.json` para paketimit
+- Instalimi manual (zhvillim): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → zgjidhni ZIP‑in e ndërtuar
+
+---
+
+### Testim {#test}
+
+- Paketa e plotë: `make test` (Vitest)
+- Mbulesa (opsionale):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Ekzekutoni `make test`; hapni `coverage/index.html` për raportin HTML
+- Vetëm i18n: `make test_i18n` (çelësa/vendmbajtës/tituj të UI + paritet për çdo lokalitet/çdo dokument të faqes me kontrolle për id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Diagnostikim dhe Logje {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Ndërroni logjet e hollësishme në kohë ekzekutimi:
+- Aktivizo: `messenger.storage.local.set({ debug: true })`
+- Çaktivizo: `messenger.storage.local.set({ debug: false })`
+- Logjet shfaqen gjatë hartimit/dërgimit të përgjigjeve
 
 ---
 
-### Docs (website) {#docs-website}
+### Dokumentacioni (website) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Server zhvillimi: `cd website && npm run start`
+- Ndërto faqe statike: `cd website && npm run build`
+- Ekuivalentët në Make (alfabetik): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Shembuj përdorimi:
+- Vetëm EN, anashkalo testet/kontrollin e lidhjeve, pa push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Të gjitha lokalitetet, me teste/kontroll lidhjesh, pastaj push: `make web_build_local_preview && make web_push_github`
+- Para publikimit, ekzekutoni kontrollin e lidhjeve të sigurt offline: `make web_build_linkcheck`.
+- i18n: Anglishtja është në `website/docs/*.md`; përkthimet gjermane në `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Kërkimi: Nëse variablat e mjedisit Algolia DocSearch janë vendosur në CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), faqja përdor kërkimin Algolia; përndryshe kthehet te kërkimi lokal. Në faqen kryesore, shtypni `/` ose `Ctrl+K` për të hapur kutinë e kërkimit.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Rruga e ridrejtimit për Donacione {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Rruga: `/donate` (dhe `/<locale>/donate`)
+- Sjellja:
+- Nëse rruga aktuale ka një lokalitet (p.sh., `/de/donate`), përdoreni atë
+- Përndryshe, zgjidh përputhjen më të mirë nga `navigator.languages` kundrejt lokaleve të konfiguruara; në mungesë, përdor lokalitetin parazgjedhje
+- Ridrejton te:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- të tjerat → `/<locale>/docs/donation`
+- Përdor `useBaseUrl` për trajtim të duhur të baseUrl
+- Përfshin meta refresh + lidhje `noscript` si rezervë
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Këshilla për parapamjen {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Ndalo pastër parapamjen e Node: hap `http://localhost:<port>/__stop` (shtypet pas `Local server started`).
+- Nëse imazhet nuk ngarkohen në MDX/JSX, përdorni `useBaseUrl('/img/...')` për të respektuar `baseUrl` të faqes.
+- Parapamja nis e para; kontrolli i lidhjeve ekzekutohet më pas dhe është jo‑bllokues (lidhjet e jashtme të prishura nuk do ta ndalin parapamjen).
+- URL shembull për parapamje: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (shtypet pas “Local server started”).
+- Lidhje të jashtme në kontrollin e lidhjeve: Disa faqe të jashtme (p.sh., addons.thunderbird.net) bllokojnë crawler‑a të automatizuar dhe mund të tregojnë 403 në kontrollet e lidhjeve. Parapamja gjithsesi nis; këto mund të injorohen në mënyrë të sigurt.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Përktheni Faqen në Web {#translate-website}
 
-What you can translate
+Çfarë mund të përktheni
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Vetëm UI e faqes: faqja kryesore, navbar, footer, dhe vargje të tjera të UI. Përmbajtja e dokumenteve mbetet vetëm në anglisht për tani.
 
-Where to edit
+Ku të redaktoni
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Redaktoni `website/i18n/<locale>/code.json` (përdorni `en` si referencë). Mbani të pandryshuara vendmbajtësa si `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Gjeneroni ose rifreskoni skedarët
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Krijoni stub‑e që mungojnë për të gjitha lokalitetet: `npm --prefix website run i18n:stubs`
+- Mbishkruani stub‑et nga anglishtja (pas shtimit të vargjeve të reja): `npm --prefix website run i18n:stubs:force`
+- Alternativë për një lokalitet të vetëm: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Përktheni vargjet e UI të faqes kryesore/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Vendosni kredencialet një herë (shell ose .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Opsionale: `export OPENAI_MODEL=gpt-4o-mini`
+- Një‑herësh (të gjitha lokalitetet, përjashto en): `make translate_web_index`
+- Kufizo në lokalitete specifike: `make translate_web_index OPTS="--locales de,fr"`
+- Mbishkruaj vlerat ekzistuese: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Vlefshmëria dhe riprovat
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Skripti i përkthimit verifikon formën e JSON, ruan vendmbajtësit me kllapa përdredhëse dhe siguron që URL‑të të mbeten të pandryshuara.
+- Në dështim validimi, ai riprovon me feedback deri në 2 herë përpara se të mbajë vlerat ekzistuese.
 
-Preview your locale
+Parapamja e lokalitetit tuaj
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Server zhvillimi: `npm --prefix website run start`
+- Vizitoni `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Dërgimi
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Hapni një PR me skedarët `code.json` të redaktuar. Mbajini ndryshimet të fokusuara dhe përfshini një screenshot të shpejtë kur është e mundur.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Këshilla të Sigurisë dhe Konfigurimit {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Mos bëni commit të `sources/manifest.json` (krijohet përkohësisht nga build‑i)
+- Mbajeni `browser_specific_settings.gecko.id` të qëndrueshme për të ruajtur kanalin e përditësimeve
+
+---
+
+### Qëndrueshmëria e cilësimeve {#settings-persistence}
+
+- Magazinimi: Të gjitha cilësimet e përdoruesit jetojnë në `storage.local` dhe mbeten përtej përditësimeve të shtesës.
+- Instalimi: Vlerat e parazgjedhura zbatohen vetëm kur një çelës mungon rreptësisht (undefined).
+- Përditësimi: Një migrim plotëson vetëm çelësat që mungojnë; vlerat ekzistuese kurrë nuk mbishkruhen.
+- Shenjuesi i skemës: `settingsVersion` (aktualisht `1`).
+- Çelësat dhe parazgjedhjet:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kodi: shih `sources/background.js` → `initializeOrMigrateSettings()` dhe `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Fluksi i zhvillimit (shtimi i një cilësimi të ri)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Rrit `SCHEMA_VERSION` në `sources/background.js`.
+- Shtoni çelësin e ri + parazgjedhjen te objekti `DEFAULTS` në `initializeOrMigrateSettings()`.
+- Përdorni rregullin “only-if-undefined” kur mbillni parazgjedhjet; mos mbishkruani vlerat ekzistuese.
+- Nëse cilësimi është i dukshëm për përdoruesin, lidheni në `sources/options.js` dhe shtoni vargje të lokalizuara.
+- Shtoni/rregulloni testet (shih `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Këshilla për testim manual
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simuloni një instalim të pastër: pastroni direktorinë e të dhënave të zgjerimit ose nisni me një profil të ri.
+- Simuloni një përditësim: vendosni `settingsVersion` në `0` në `storage.local` dhe ringarkoni; konfirmoni që vlerat ekzistuese mbeten të pandryshuara dhe shtohen vetëm çelësat që mungojnë.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Zgjidhja e problemeve {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Sigurohuni që Thunderbird të jetë 128 ESR ose më i ri
+- Përdorni Error Console për çështjet në kohë ekzekutimi
+- Nëse cilësimet e ruajtura duken sikur nuk zbatohen siç duhet, rinisni Thunderbird dhe provoni përsëri. (Thunderbird mund të ruajë gjendje mes sesioneve; një rinisje siguron që cilësimet e reja të ngarkohen.)
 
 ---
 
-### Translations
+### CI dhe Mbulesa {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) ekzekuton vitest me pragje mbulimi (85% rreshta/funksione/dega/deklarata). Nëse pragjet nuk arrihen, puna dështon.
+- Workflow‑i ngarkon një artefakt `coverage-html` me raportin HTML; shkarkojeni nga faqja e ekzekutimit (Actions → ekzekutimi i fundit → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Kontributi {#contributing}
 
-Screenshots for docs
+- Shih CONTRIBUTING.md për udhëzimet e degëve/commit/PR
+- Këshillë: Krijoni një profil të veçantë zhvillimi Thunderbird për testim për të shmangur ndikimin në profilin tuaj të përditshëm.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Përkthimet
+
+- Ekzekutimi i detyrave të mëdha “të gjitha → të gjitha” përkthimi mund të jetë i ngadaltë dhe i kushtueshëm. Filloni me një nën‑bashkësi (p.sh., disa dokumente dhe 1–2 lokalitete), rishikoni rezultatin, pastaj zgjerojeni.
+
+---
+
+- Politika e riprovës: detyrat e përkthimit bëjnë deri në 3 riprove me backoff eksponencial në gabimet e API‑t; shih `scripts/translate_web_docs_batch.js` dhe `scripts/translate_web_docs_sync.js`.
+
+Pamje ekrani për dokumentacionin
+
+- Ruani imazhet nën `website/static/img/`.
+- Referojini ato në MD/MDX përmes `useBaseUrl('/img/<filename>')` që rrugët të funksionojnë me `baseUrl` të faqes.
+- Pas shtimit ose riemërtimit të imazheve nën `website/static/img/`, konfirmoni që të gjitha referencat ende përdorin `useBaseUrl('/img/…')` dhe shfaqen në një parapamje lokale.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` me shumë madhësi gjenerohet automatikisht në të gjitha rrugët e build‑it (Make + skripta) përmes `website/scripts/build-favicon.mjs`.
+- Nuk kërkohet hap manual; mjafton përditësimi i `icon-*.png`.
+  Këshillë rishikimi
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Mbajeni `id` të pandryshuar në dokumentet e përkthyera; përktheni vetëm `title` dhe `sidebar_label` kur janë të pranishme.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Qëllimi: hiq artefaktet lokale të build/preview.
+- Përdorimi: `make clean`
+- Heq (nëse janë të pranishme):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Qëllimi: formato, testo, përditëso changelog, bëj commit dhe push.
+- Përdorimi: `make commit`
+- Detaje: ekzekuton Prettier (shkruaj), `make test`, `make test_i18n`; shton changelog kur ka diffa të stagjuara; bën push te `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Qëllimi: ekzekuto ESLint përmes flat config.
+- Përdorimi: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Qëllimi: listo të gjithë objektivat me dokumentim me një rresht.
+- Përdorimi: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Qëllimi: lint për MailExtension duke përdorur `web-ext`.
+- Përdorimi: `make lint`
+- Shënime: kopjon përkohësisht `sources/manifest_LOCAL.json` → `sources/manifest.json`; injoron ZIP‑et e ndërtuara; paralajmërimet nuk e dështojnë pipeline‑n.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Qëllimi: menu interaktive për të zgjedhur një objektiv Make dhe argumente opsionale.
+- Përdorimi: ekzekutoni `make` pa argumente.
+- Shënime: nëse `whiptail` nuk është i disponueshëm, menuja kthehet te `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Qëllimi: ndërto ZIP‑et ATN dhe LOCAL (varet nga `lint`).
+- Përdorimi: `make pack`
+- Këshillë: rrisni versionet në të dy `sources/manifest_*.json` para paketimit.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Qëllimi: formato repo‑n në vend.
+- Përdorimi: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Qëllimi: verifiko formatimin (pa shkrime).
+- Përdorimi: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Qëllimi: alias për `prettier`.
+- Përdorimi: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Qëllimi: ekzekuto Prettier (shkruaj), ESLint, pastaj Vitest (mbulesë nëse është instaluar).
+- Përdorimi: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Qëllimi: teste të fokusuara te i18n për vargjet e shtesës dhe dokumentet e faqes.
+- Përdorimi: `make test_i18n`
+- Ekzekuton: `npm run test:i18n` dhe `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Qëllimi: përkthen vargjet e UI të shtesës nga EN në lokale të tjera.
+- Përdorimi: `make translation_app OPTS="--locales all|de,fr"`
+- Shënime: ruan strukturën e çelësave dhe vendmbajtësit; regjistron te `translation_app.log`. Forma e skriptit: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Qëllimi: përkthen dokumentet e faqes nga `website/docs/*.md` në `website/i18n/<locale>/...`.
+- E preferuar: `translate_web_docs_batch` (OpenAI Batch API)
+  - Përdorimi (flamujt): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pozicionali i trashëguar ende pranohet: `OPTS="<doc|all> <lang|all>"`
+- Sjellja: ndërton JSONL, ngarkon, sondazh çdo 30s, shkarkon rezultatet, shkruan skedarët.
+- Shënim: një punë batch mund të zgjasë deri në 24 orë për t’u përfunduar (sipas dritares së batch të OpenAI). Konsola tregon kohën e kaluar në çdo sondazh.
+- Mjedisi: `OPENAI_API_KEY` (e detyrueshme), opsionale `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (parazgjedhur 24h), `BATCH_POLL_INTERVAL_MS`.
+- Trashëgimore: `translate_web_docs_sync`
+  - Përdorimi (flamujt): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pozicionali i trashëguar ende pranohet: `OPTS="<doc|all> <lang|all>"`
+- Sjellja: kërkesa sinkrone për çdo çift (pa grumbullim batch).
+- Shënime: Prompt‑e interaktive kur `OPTS` lihet bosh. Të dy mënyrat ruajnë blloqet e kodit/kodin inline dhe mbajnë `id` të pandryshuar; regjistrojnë te `translation_web_batch.log` (batch) ose `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Qëllimi: përkthen vargjet e UI të faqes (faqja kryesore, navbar, footer) nga `website/i18n/en/code.json` në të gjitha lokalitetet nën `website/i18n/<locale>/code.json` (duke përjashtuar `en`).
+- Përdorimi: `make translate_web_index` ose `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Kërkesat: eksportoni `OPENAI_API_KEY` (opsionale: `OPENAI_MODEL=gpt-4o-mini`).
+- Sjellja: verifikon strukturën e JSON, ruan vendmbajtësit me kllapa përdredhëse, mban URL‑të të pandryshuara dhe riprovon me feedback në gabime validimi.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Qëllimi: ndërton faqen e dokumenteve te `website/build`.
+- Përdorimi: `make web_build OPTS="--locales en|de,en|all"` (ose vendosni `BUILD_LOCALES="en de"`)
+- Të brendshmet: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Varësi: ekzekuton `npm ci` në `website/` vetëm nëse mungon `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Qëllimi: kontroll lidhjesh i sigurt offline.
+- Përdorimi: `make web_build_linkcheck OPTS="--locales en|all"`
+- Shënime: ndërton te `tmp_linkcheck_web_pages`; rishkruan `baseUrl` të GH Pages në `/`; anashkalon lidhjet HTTP(S) të largëta.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Qëllimi: parapamje lokale gh‑pages me teste/kontroll lidhjesh opsionale.
+- Përdorimi: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Sjellja: provon fillimisht serverin e parapamjes së Node (`scripts/preview-server.mjs`, mbështet `/__stop`), kalon te `python3 -m http.server` nëse dështon; shërben në 8080–8090; PID te `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Qëllimi: shtyn `website/build` në degen `gh-pages`.
+- Përdorimi: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Këshillë: vendosni `NPM=…` për të anashkaluar menaxherin e paketave që përdor Makefile (parazgjedhja është `npm`).
+
+---

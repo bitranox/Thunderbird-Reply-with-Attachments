@@ -4,94 +4,97 @@ title: 'استعمال'
 sidebar_label: 'استعمال'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## استعمال {#usage}
+
+- جواب ڏيو ۽ ايڊ-آن اصل منسلڪيون پاڻمرادو شامل ڪري ٿو — يا پهريان پڇي ٿو، جيڪڏهن اختيارن ۾ فعال هجي.
+- فائل نالي موجب نقلون ڪڍيون وڃن ٿيون؛ S/MIME وارا حصا هميشه ڇڏي ڏنا وڃن ٿا. ان لائين تصويرون طئي طور تي جواب جي باڊي ۾ بحال ڪيون وڃن ٿيون (اختيارن ۾ "Include inline pictures" وسيلي بند ڪري سگهجن ٿيون).
+- بليڪ لسٽ ٿيل منسلڪيون به ڇڏي ڏنيون وڃن ٿيون (ڪيِس-غيرحساس گلوب پيٽرن جيڪي فائل نالن سان ملن ٿا، رستن سان نه). ڏسو [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### جواب ڏيڻ تي ڇا ٿئي ٿو {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- جواب جي سڃاڻپ → اصلي منسلڪين جي فهرست → S/MIME + ان لائين کي فلٽر ڪيو → اختياري تصديق → اهل فائلون شامل ڪريو (نقلون ڇڏي ڏيو) → باڊي ۾ ان لائين تصويرون بحال ڪريو.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+سخت بمقابله نرم پاس: ايڊ-آن پهرين فائل منسلڪين مان S/MIME ۽ ان لائين حصا خارج ڪري ٿو. جيڪڏهن ڪابه شيءِ اهل نه ٿئي، ته اهو هڪ نرم پاس هلائي ٿو جيڪو اڃا به S/MIME/ان لائين کي خارج رکي ٿو پر وڌيڪ ڪيسن کي برداشت ڪري ٿو (ڪوڊ جون تفصيلون ڏسو). ان لائين تصويرون ڪڏهن به فائل منسلڪين طور شامل ناهن ڪيون وينديون؛ ان جي بدران، جڏهن "Include inline pictures" فعال هجي (طئي طور)، ته انهن کي سڌو جواب جي باڊي ۾ base64 ڊيٽا URI طور داخل ڪيو وڃي ٿو.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| حصي جو قسم                                          |              سخت پاس |              نرم پاس |
+| --------------------------------------------------- | -------------------: | -------------------: |
+| S/MIME دستخطي فائل `smime.p7s`                      |                 خارج |                 خارج |
+| S/MIME MIME قسمن (`application/pkcs7-*`)            |                 خارج |                 خارج |
+| Content‑ID سان حوالو ڏنل ان لائين تصوير (`image/*`) | خارج (باڊي ۾ بحال\*) | خارج (باڊي ۾ بحال\*) |
+| فائل نالي سان منسلڪ اي ميل (`message/rfc822`)       |      شامل نه ڪئي وئي |    شايد شامل ڪئي وڃي |
+| فائل نالي سان عام فائل منسلڪ                        |    شايد شامل ڪئي وڃي |    شايد شامل ڪئي وڃي |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* جڏهن "Include inline pictures" فعال هجي (طئي: ON)، ته ان لائين تصويرون فائل منسلڪين طور شامل ڪرڻ بدران جواب جي باڊي ۾ base64 ڊيٽا URI طور داخل ڪيون وڃن ٿيون. ڏسو [Configuration](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+مثال: ڪجهہ منسلڪين ۾ ڪي خاص هيڊر نه هوندا، پر اهي اڃا عام فائلون هونديون (ان لائين/S/MIME نه). جيڪڏهن سخت پاس ڪا به نه لهي، ته نرم پاس اهي قبول ڪري انهن کي منسلڪ ڪري سگهي ٿو.
 
 ---
 
-## Behavior Details {#behavior-details}
+### ڪرَس-حوالو {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- فارورڊ ڊيزائن موجب تبديل نٿو ڪيو وڃي (هيٺ حدون ڏسو).
+- اهي سبب جن ڪري منسلڪي شايد شامل نه ڪئي وڃي، ڏسو “منسلڪيون ڇو شايد شامل نه ڪيون وڃن”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## روئيي بابت تفصيل {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **نقل روڪٿام:** ايڊ-آن هر ٽيب جي سيشن ويليو ۽ اِن-ميموري گارڊ استعمال ڪندي ڪمپوز ٽيب کي پروسيسڊ طور نشان لڳائي ٿو. اهو اصل منسلڪيون ٻه ڀيرا شامل نه ڪندو.
+- ڪمپوز ونڊو بند ڪري ٻيهر کولڻ کي نئين ٽيب طور ورتو ويندو آهي (يعني نئين ڪوشش جي اجازت هوندي).
+- **موجود منسلڪين جو احترام:** جيڪڏهن ڪمپوز ۾ اڳ ۾ ئي ڪجهہ منسلڪيون هجن، تڏهن به اصلون فقط هڪ ڀيرو شامل ڪيون وينديون، ۽ جيڪي فائل نالا اڳ موجود هجن، تن کي ڇڏي ڏنو ويندو.
+- **اخراجات:** S/MIME آرٽيفاڪٽس ۽ ان لائين تصويرون فائل منسلڪين مان خارج ڪيون وينديون. جيڪڏهن پهرين پاس ۾ ڪجهہ به اهل نه هجي، ته هڪ نرم فالبئڪ غير S/MIME حصن کي ٻيهر چيڪ ڪري ٿو. ان لائين تصويرون الڳ سنڀالبيون: انهن کي جواب جي باڊي ۾ ڊيٽا URI طور بحال ڪيو ويندو (جڏهن فعال هجي).
+  - **فائل نالا:** `smime.p7s`
+  - **MIME قسمون:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ان لائين تصويرون:** ڪو به `image/*` حصو جيڪو Content‑ID سان حوالو ڏنل هجي — فائل منسلڪين مان خارج، پر جڏهن "Include inline pictures" ON هجي ته جواب جي باڊي ۾ داخل ڪيو ويندو
+  - **منسلڪ اي ميليون (`message/rfc822`):** جيڪڏهن سندن فائل نالو هجي ته عام منسلڪين طور ورتيون وڃن ٿيون؛ اهي شامل ٿي سگهن ٿيون (نقل چيڪ ۽ بليڪ لسٽ جي تابع).
+- **بليڪ لسٽ خبرداري (جيڪڏهن فعال هجي):** جڏهن اميدوار توهان جي بليڪ لسٽ سبب خارج ٿين،
+  ته ايڊ-آن هڪ ننڍو موڊل ڏيکاري ٿو جيڪو متاثر فائلن ۽ لاڳو ٿيندڙ
+  پيٽرن(ن) جي فهرست ڏيکاري ٿو. اها خبرداري انهن حالتن ۾ به ظاهر ٿئي ٿي جتي ڪابه منسلڪي شامل نه ٿيندي ڇاڪاڻ⁠تہ سڀ ڪجهه خارج ٿي ويو.
 
 ---
 
-## Limitations {#limitations}
+## ڪي بورڊ شارٽ ڪٽس {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- تصديق وارو ڊائلاگ: Y/J = ها، N/Esc = نه؛ Tab/Shift+Tab ۽ Arrow keys فوڪس کي چڪر ۾ گھمائن ٿا.
+  - [Configuration](configuration#confirmation) ۾ “Default answer” ابتدائي طور تي فوڪس ڪيل بٽڻ سيٽ ڪري ٿي.
+  - Enter فوڪس ڪيل بٽڻ کي ٽرگر ڪري ٿو. Tab/Shift+Tab ۽ Arrow keys دستيابي لاءِ فوڪس کي منتقل ڪن ٿا.
+
+### ڪي بورڊ چيٽ شيٽ {#keyboard-cheat-sheet}
+
+| ڪي              | عمل                                 |
+| --------------- | ----------------------------------- |
+| Y / J           | ها جي تصديق                         |
+| N / Esc         | نه جي تصديق                         |
+| Enter           | فوڪس ڪيل بٽڻ چالو ڪريو              |
+| Tab / Shift+Tab | فوڪس اڳتي/پوئتي کڻو                 |
+| Arrow keys      | فوڪس بٽڻن وچ ۾ منتقل ڪريو           |
+| Default answer  | ابتدائي فوڪس مقرر ڪري ٿو (ها يا نه) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## حدون {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- هن ايڊ-آن سان فارورڊ ۾ ڪا ترميم نٿي ٿئي (Reply ۽ Reply all سپورٽ ٿيل آهن).
+- تمام وڏيون منسلڪيون Thunderbird يا فراهم ڪندڙ جي حدن جي تابع ٿي سگهن ٿيون.
+  - ايڊ-آن فائلن کي ٽڪرن ۾ نه ورهائي ٿو ۽ نه ئي ڪمپريس ڪري ٿو؛ اهو Thunderbird جي معمولي منسلڪي هينڊلنگ تي ڀاڙي ٿو.
+- مرموز پيغامن: S/MIME جا حصا ڄاڻي واڻي خارج ڪيا ويا آهن.
 
 ---
 
-See also
+## منسلڪيون ڇو شايد شامل نه ڪيون وڃن {#why-attachments-might-not-be-added}
+
+- ان لائين تصويرون فائل منسلڪين طور شامل ناهن ڪيون وينديون. جڏهن "Include inline pictures" ON هجي (طئي)، ته انهن کي جواب جي باڊي ۾ ڊيٽا URI طور داخل ڪيو وڃي ٿو. جيڪڏهن سيٽنگ OFF هجي، ته ان لائين تصويرون مڪمل طور هٽائي ڇڏبيون. ڏسو [Configuration](configuration#include-inline-pictures).
+- S/MIME دستخطي حصا ڊيزائن موجب خارج ڪيا وڃن ٿا: `smime.p7s` جهڙا فائل نالا ۽ `application/pkcs7-signature` يا `application/pkcs7-mime` جهڙا MIME قسمون ڇڏي ڏنيون وڃن ٿيون.
+- بليڪ لسٽ پيٽرن اميدوارن کي فلٽر ڪري سگهن ٿا: ڏسو [Configuration](configuration#blacklist-glob-patterns)؛ ميچ ڪرڻ ڪيِس-غيرحساس آهي ۽ رڳو فائل نالن تي مبني آهي.
+- نقلي فائل نالا ٻيهر شامل ناهن ڪيا ويندا: جيڪڏهن ڪمپوز ۾ ساڳئي نورملائيز ڪيل نالي واري فائل اڳ ئي موجود هجي، ته اها ڇڏي ڏني ويندي.
+- غير-فائل حصا يا گم ٿيل فائل نالا: رڳو اهي حصا جيڪي فائل جهڙا هجن ۽ قابلِ استعمال فائل نالا رکن، شامل ڪرڻ لاءِ غور هيٺ اچن ٿا.
+
+---
+
+هي به ڏسو
 
 - [Configuration](configuration)

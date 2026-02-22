@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ውሳኔ'
-sidebar_label: 'ውሳኔ'
+title: 'ተስማሚነት'
+sidebar_label: 'ተስማሚነት'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ተስማሚነት {#compatibility}
+
+:::important ናይ Thunderbird ዝደለ ዝንእስ ስሪት
+እዚ ኣድ‑ኦን Thunderbird **128 ESR ወይ ዝሓደሽ** ይደግፍ። ናይ ቀደም ስሪታት ኣይተደገፉን።
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ወይ ዝሓደሽ ይደግፍ (128.x+).
+- ናይ ቀደም ስሪታት ናይ Thunderbird ኣይተደገፉን.
+- ኣብ Windows, macOS, እና Linux ተፈትነ።
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ኣይተደገፈን
+Manifest V2 ኣይተደገፈን። እዚ ኣድ‑ኦን ኣብ Thunderbird 128 ESR+ ን **Manifest V3 (MV3)** ይመልከት እዩ።
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ምፍታሕ ችግርታት {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- ኣድ‑ኦን እተስብሑ ሓሳብ ኣይሰርሕን እንተሎ, ተስማሚ ስሪት ናይ Thunderbird (128 ESR ወይ ንድሕሪ) እየ እትጥቀመሉ ንረጋግጹ።
+- ናይ Thunderbird **Tools > Developer Tools > Error Console** (Error Console) ምርመራ ግበሩ ምስ ኣድ‑ኦን ዝተዛመዱ ጉዳያት እንተሉ።
+- ዝተከማቹ ቅንብሮታት ብግቡእ ክሰርሕሉ ኣይተረኣዩን እንተሎ, Thunderbird እንደገና ጀምሩ እና ደጊምኩም ፈትኑ። (Thunderbird ኣብ ሰርሽኖታት ሁኔታ ክዕርክብ ይኽእል; ድገም ምጀመር ሓድሽ ቅንብሮታት እንዲስተኻኽሉ ይረጋግጽ።)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## ዝተረዱ ግጭታት {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- እዚ ግዜ ዝተረዱ የለን። ተደጋጋሚ ድዩፕሊኬት ኣባሪ ፋይሎታት (attachments) ወይ ጉድኣት ምስ ካልእ ኣድ‑ኦኖች እንተ ኣረኣኣኩም, ብዝርዝር ደረጃታት ምድጋም ምንባር ሪፖርት ግበሩ።
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta እና Daily (Nightly) ብልያት ብዙሕ ጊዜ ይደግፉ፣ ግን ለውጦታት ካብ upstream እዋናዊ ጊዜ ባህሪ ኣድ‑ኦን ክሰትሑ ይኽእሉ። ጉዳያት እንተ ረኣዩ, እባክኩም ሪፖርት ግበሩ እና ትክክለኛ ስሪት ናይ Thunderbird ኣካብኡ (ምሳሌ፡ “Daily 131.0a1 2025‑09‑10”).
+- ኣብ Beta/Nightly ምድጋም እንተ ገፀሙኩም? ብደረጃታት ምድጋም ምንባር ሪፖርት ግበሩ — [ድጋፍ](support) ርእዩ — እና ትክክለኛ ናይ Thunderbird build string ኣካብኡ።
 
 ---

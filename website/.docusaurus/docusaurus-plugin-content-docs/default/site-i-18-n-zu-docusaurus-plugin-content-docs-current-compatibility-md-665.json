@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Ukuhambelana",
-  "description": "Compatibility",
+  "title": "Ukuhambisana",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Ukuhambelana",
-    "sidebar_label": "Ukuhambelana"
+    "title": "Ukuhambisana",
+    "sidebar_label": "Ukuhambisana"
   },
   "sidebar": "docs",
   "previous": {

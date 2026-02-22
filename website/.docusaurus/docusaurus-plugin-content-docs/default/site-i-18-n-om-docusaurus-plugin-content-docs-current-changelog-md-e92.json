@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Borradhaa",
-  "description": "Changelog",
+  "title": "Galmee Jijjiirraa",
+  "description": "---",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Borradhaa"
+    "title": "Galmee Jijjiirraa"
   },
   "sidebar": "docs",
   "previous": {

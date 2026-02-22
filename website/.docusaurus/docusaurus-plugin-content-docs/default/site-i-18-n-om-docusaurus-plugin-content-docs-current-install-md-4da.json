@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Kuusaa",
-  "description": "Kuusaa \"Thunderbird Add-ons and Themes\" geggeessaa",
+  "title": "Instaleeshinii",
+  "description": "---",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Kuusaa",
+    "title": "Instaleeshinii",
     "slug": "/install",
-    "sidebar_label": "Kuusaa"
+    "sidebar_label": "Instooleshinii"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Dhiyaannaa",
+    "title": "Jalqaba Ariifataa",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/quickstart"
   },
   "next": {

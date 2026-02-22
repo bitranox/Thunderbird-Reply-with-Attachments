@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Awọn ẹya'
-sidebar_label: 'Awọn ẹya'
+title: 'Àwọn àbùdá'
+sidebar_label: 'Àwọn àbùdá'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Àwọn iṣẹ́ {#features}
 
-## How It Works {#how-it-works}
+- Nígbà tá o bá ń dáhùn, ó ń ṣàfikún laifọwọyi àwọn fáìlì láti inú ìmeèlì àkọ́kọ́.
+- Ìhùwàsí tó lè ṣe àtúnṣe: àwọn àfikún lè jẹ́
+  - a ṣàfikún laifọwọyi, tàbí
+  - a fi kún lẹ́yìn ìfọwọ́sí nìkan (àpótí ìjíròrò kékeré tó rọrùn láti wọlé sí). Ní inú Àṣàyàn o
+    lè mú ìfọwọ́sí ṣiṣẹ́ kí o sì yan ìdáhùn àtọwọ́dá (Yes/No).
+- Àtòkọ́ ìdènà orúkọ fáìlì (àwòrán àpẹrẹ glob) ń dènà fífi àwọn fáìlì kan
+  ṣàfikún laifọwọyi. Àpẹẹrẹ: `*intern*`, `*secret*`, `*passwor*`.
+  Ìbámu kì í fiyè sí ìyàtọ̀ lẹ́tà ńlá/kékèké (case‑insensitive) ó sì ń ṣàyẹ̀wò orúkọ fáìlì nìkan; pèsè àpẹrẹ
+  kan ní ìlà kọọkan nínú Àṣàyàn.
+- Ìkìlọ̀ blacklist (àṣàyàn, a ti mú ṣiṣẹ́ ní àtọwọ́dá): nígbà tí blacklist rẹ bá yọ àwọn fáìlì kúrò,
+  àpótí modal kékeré yóò ṣe àtòkọ́ fáìlì náà àti àpẹrẹ tí ó bá a mu. Dark‑mode
+  ore‑ọrẹ́ àti rọrùn fún bọ́tìnì kọ́npútà (Enter/Esc láti tii).
+- Ó ń ṣiṣẹ́ pẹ̀lú Reply àti Reply all. Forward kò jẹ́ kí àfikún yìí yí i padà.
+- Ó tún fi àwọn oríjìnàlì kún bí o tilẹ̀ ti ti ṣàfikún nkankan; ó yàgò fún ẹ̀dà‑méjì nípa orúkọ fáìlì.
+- Abojútó ẹ̀dà‑méjì ní taabu kọọkan ń dènà fífi kún lẹ́ẹ̀mejì nínú taabu ìkọ̀wé kan naa.
+- Ní àtọwọ́dá, ó ń fo àwọn ìjẹrisi S/MIME kọjá láti yàgò fún àwọn àfikún tí kò ṣe pàtàkì.
+- Ṣàfikún àwọn àwòrán inline (àtọwọ́dá: ON). A tún gbe àwọn àwòrán tí a fi sínú padà taara sínú
+  ara ìdáhùn gẹ́gẹ́ bí base64 data URIs, kí a lè pa àtẹ̀jáde inline oríjìnàlì mọ́. Pa a ní
+  Àṣàyàn bí o bá fẹ́ kọjá gbogbo àwọn àwòrán inline.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Bí Ó Ṣe ń Ṣiṣẹ́ {#how-it-works}
+
+- Nígbà ìdáhùn, àfikún náà ń ṣe àtòkọ́ àwọn àfikún oríjìnàlì.
+- Ó yọ àwọn ìbùwòlu S/MIME kúrò lára àwọn fáìlì àfikún; a tún gbe àwọn àwòrán inline padà sí ara (àfi bí a bá ti di wọn ṣiṣẹ́).
+- Ní àṣàyàn, ó lè béèrè fún ìfọwọ́sí (ọ̀rẹ́ bọ́tìnì).
+- Ó ń fi àwọn fáìlì tó yẹ kún ìkọ̀wé rẹ, ó sì yàgò fún ẹ̀dà‑méjì nípa orúkọ fáìlì.
+- Wo “Kí ló dé tí a lè má fi àwọn àfikún kún” nínú Usage fún àwọn ọ̀ràn àtọ̀kànwá.
+
+Akọsilẹ̀ ìpamọ́: Gbogbo ìṣàkóso ń ṣẹlẹ̀ ní agbègbè (lókálì) nínú Thunderbird. Àfikún náà kò ṣe ìbéèrè nẹ́tíwọ̀ọ̀kì ní abẹ́lẹ̀ rárá.
+
+---

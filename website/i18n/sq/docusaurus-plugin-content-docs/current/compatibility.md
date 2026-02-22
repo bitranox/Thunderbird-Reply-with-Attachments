@@ -1,34 +1,44 @@
 ---
 id: compatibility
-title: 'Pajtim'
-sidebar_label: 'Pajtim'
+title: 'Përputhshmëri'
+sidebar_label: 'Përputhshmëria'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Përputhshmëria {#compatibility}
+
+:::important Versioni minimal i Thunderbird-it
+Kjo shtesë mbështet Thunderbird **128 ESR ose më të ri**. Versionet më të vjetra nuk mbështeten.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ose më të ri mbështetet (128.x+).
+- Versionet më të vjetra të Thunderbird-it nuk mbështeten.
+- Testuar në Windows, macOS dhe Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 nuk mbështetet
+Manifest V2 nuk mbështetet. Shtesa synon **Manifest V3 (MV3)** në Thunderbird 128 ESR+.
 :::
 
-## Troubleshooting {#troubleshooting}
+---
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+## Zgjidhja e problemeve {#troubleshooting}
 
-## Known conflicts {#known-conflicts}
+- Nëse shtesa nuk funksionon siç pritet, sigurohuni që po përdorni një version të përputhshëm të Thunderbird-it (128 ESR ose më i ri).
+- Kontrolloni konsolën e gabimeve të Thunderbird-it (**Tools > Developer Tools > Error Console**) për çdo problem të lidhur me shtesën.
+- Nëse duket se cilësimet e ruajtura nuk zbatohen siç duhet, rinisni Thunderbird-in dhe provoni përsëri. (Thunderbird mund të ruajë gjendjen midis sesioneve; një rinisje siguron që të ngarkohen cilësime të reja.)
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+---
+
+## Konflikte të njohura {#known-conflicts}
+
+- Asnjë i njohur për momentin. Nëse shihni bashkëngjitje të dyfishta të përsëritura ose dështime me shtesa të tjera, ju lutemi raportoni me hapat për ta riprodhuar.
+
+---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Ndërtimet Thunderbird Beta dhe Daily (Nightly) përgjithësisht mbështeten, por ndryshimet në burim mund të prishin herë pas here sjelljen e shtesës. Nëse hasni probleme, ju lutemi t’i raportoni dhe të përfshini versionin e saktë të Thunderbird-it (p.sh., “Daily 131.0a1 2025‑09‑10”).
+- Hasët një regresion në Beta/Nightly? Ju lutemi raportojeni me hapat për ta riprodhuar — shihni [Mbështetje](support) — dhe përfshini vargun e saktë të ndërtimit të Thunderbird-it.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "기부하기",
-  "description": "기부하기",
+  "description": "---",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",

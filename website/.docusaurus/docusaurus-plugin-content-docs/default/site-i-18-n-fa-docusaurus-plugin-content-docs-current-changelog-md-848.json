@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "تغییرات",
-  "description": "Changelog",
+  "title": "گزارش تغییرات",
+  "description": "---",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "تغییرات"
+    "title": "گزارش تغییرات"
   },
   "sidebar": "docs",
   "previous": {

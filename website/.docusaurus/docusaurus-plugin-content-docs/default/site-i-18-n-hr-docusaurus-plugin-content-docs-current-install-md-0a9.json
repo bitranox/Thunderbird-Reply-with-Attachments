@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalacija",
-  "description": "Instalacija putem \"Thunderbird dodataka i tema\"",
+  "description": "---",
   "source": "@site/i18n/hr/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",

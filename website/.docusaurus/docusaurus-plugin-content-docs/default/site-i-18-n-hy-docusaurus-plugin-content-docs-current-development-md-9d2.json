@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Բարգավաճում",
-  "description": "Development Guide",
+  "title": "Զարգացում",
+  "description": "---",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Բարգավաճում",
-    "sidebar_label": "Բարգավաճում"
+    "title": "Զարգացում",
+    "sidebar_label": "Զարգացում"
   },
   "sidebar": "docs",
   "previous": {

@@ -4,25 +4,27 @@ title: 'Mag-donate'
 sidebar_label: 'Mag-donate'
 ---
 
+---
+
 ## Mag-donate
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Kung gusto mo ang "Reply with Attachments" at nais mong suportahan ang pagpapaunlad nito, maaari kang mag-donate dito:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Mag-donate sa pamamagitan ng Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>o</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Mag-donate sa pamamagitan ng PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>o</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
     <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
@@ -39,16 +41,16 @@ If you like "Reply with Attachments" and want to support its development, you ca
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Salamat! Ang iyong suporta ay tumutulong na mapanatili ang pagiging tugma sa mga bagong release ng Thunderbird, mapabuti ang accessibility at mga test, at mapanatiling napapanahon ang dokumentasyon.
 
-Notes
+Mga Tala
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Bubukas lamang ang mga link sa donasyon kapag i-click mo ang mga ito; hindi gumagawa ang add‑on ng anumang background na network request.
+- Ang tuloy-tuloy na suporta ay nakakatulong sa pangmatagalang maintenance at napapanahong updates, ngunit lubos na opsyonal ito.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Kung hindi mag-load ang mga button na larawan, pakigamit na lang ang mga link na ito:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Boluntaryo ang mga donasyon; walang pagharang sa mga feature.
 
 ---
 
-## Visibility ng Donasyon (90‑araw na pagkaantala)
+## Visibility ng Donasyon (90‑araw na snooze)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+May kasamang feature ang add‑on para sa kaginhawaan upang maitago ang mga paalala ng donasyon nang ilang sandali matapos kang mag-donate.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Saan ito makikita
+  - Options → seksyong Support: makakakita ka ng button na “I donated” at isang maliit na lugar ng pahiwatig.
+  - Ipinapakita rin ng dialog na Send‑confirmation ang button na Donate; awtomatiko itong nagtatago kapag aktibo ang snooze.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Paano ito gumagana
+  - Ang pag-click sa “I donated” ay nagtatago ng mga button ng donasyon at mga kaugnay na prompt sa loob ng 90 araw.
+  - May pahiwatig ng status na nagpapakita ng “Hidden until YYYY‑MM‑DD” (sa iyong lokal na petsa). Mayroon ding button na “Show Donate again” upang agad na maibalik ang visibility.
+  - Pagkalipas ng 90 araw, muling awtomatikong magiging nakikita ang button na Donate.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privacy at imbakan
+  - Nagtatabi ang add‑on ng isang timestamp sa lokal na storage ng Thunderbird upang matandaan ang panahon ng snooze. Key: `donateHideUntil` (epoch milliseconds).
+  - Ang setting na ito ay lokal sa iyong Thunderbird profile (hindi naka-sync sa cloud). Walang anumang network request na ginagawa ng feature na ito.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Pag-aayos ng problema
+  - Kung nakikita pa rin ang Donate kaagad pagkatapos mong i-click ang “I donated”, maghintay sandali o muling buksan ang pahina ng Options; nag-a-update ang UI sa sandaling masave ang setting.
+  - Para i-reset nang mano-manó, i-click ang “Show Donate again”. Maaari ka ring maghintay hanggang lumampas ang petsang nakalista sa pahiwatig.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Ang feature na ito ay para lang sa kaginhawaan; hindi nito kailanman hinaharangan ang paggana ng add‑on at hindi ito nangongolekta ng anumang personal na data.
 
 ---

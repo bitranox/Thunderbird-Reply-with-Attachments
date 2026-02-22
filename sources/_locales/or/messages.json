@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "କଳା ସୂଚୀ ଦ୍ୱାରା ସଂଲଗ୍ନ ବାହାର ରଖାଯାଇଥିଲେ ସତର୍କ କରନ୍ତୁ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ଇନଲାଇନ ଚିତ୍ର ଅନ୍ତର୍ଭୁକ୍ତ କରନ୍ତୁ (ଏମ୍ବେଡେଡ୍ ଚିତ୍ର)"
+  },
   "uiDebugHeader": {
     "message": "ଉନ୍ନତ"
   },

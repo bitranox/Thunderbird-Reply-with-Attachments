@@ -1,34 +1,36 @@
 ---
 id: features
-title: 'អត្ថប្រយោជន៍'
-sidebar_label: 'អត្ថប្រយោជន៍'
+title: 'លក្ខណៈពិសេស'
+sidebar_label: 'លក្ខណៈពិសេស'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## លក្ខណៈពិសេស {#features}
 
-## How It Works {#how-it-works}
+- ភ្ជាប់ឯកសារពីអ៊ីមែលដើមដោយស្វ័យប្រវត្តិពេលឆ្លើយតប។
+- អាកប្បកិរិយាដែលអាចកំណត់បាន៖ ឯកសារភ្ជាប់អាចត្រូវបាន
+  - បន្ថែមដោយស្វ័យប្រវត្តិ ឬ
+  - បន្ថែមតែបន្ទាប់ពីការបញ្ជាក់ (ប្រអប់តូច សមរម្យសម្រាប់ការចូលប្រើ)។ ក្នុងជម្រើស (Options) អ្នក
+    អាចបើកដំណើរការការបញ្ជាក់ និងជ្រើសរើសចម្លើយលំនាំដើម (Yes/No)។
+- បញ្ជីខ្មៅនៃឈ្មោះឯកសារ (លំនាំ glob) បង្ការការភ្ជាប់ឯកសារមួយចំនួនដោយស្វ័យប្រវត្តិ។ ឧទាហរណ៍: `*intern*`, `*secret*`, `*passwor*`។ ការផ្គូផ្គងមិនគិតអក្សរតូចធំ ហើយពិនិត្យតែឈ្មោះឯកសារប៉ុណ្ណោះ; ផ្តល់លំនាំមួយក្នុងមួយបន្ទាត់នៅក្នុងជម្រើស (Options)។
+- ព្រមានបញ្ជីខ្មៅ (ជាជម្រើស បើកដោយលំនាំដើម): នៅពេលឯកសារត្រូវបានដកចេញដោយបញ្ជីខ្មៅរបស់អ្នក ប្រអប់ម៉ូដាល់តូចមួយនឹងបង្ហាញឯកសារ និងលំនាំដែលផ្គូផ្គង។ ថ្នាក់ងងឹតគឺកម្មវិធីមិត្តភាព និងអាចប្រើក្ដារចុចបាន (Enter/Esc ដើម្បីបិទ)។
+- ដំណើរការជាមួយ Reply និង Reply all។ Forward មិនត្រូវបានកែប្រែដោយផ្នែកបន្ថែមនេះទេ។
+- បន្ថែមឯកសារដើម ទោះបីជាអ្នកបានភ្ជាប់អ្វីមួយរួចហើយក៏ដោយ; ជៀសវាងឯកសារស្ទួនតាមឈ្មោះឯកសារ។
+- ការការពារការស្ទួនតាមមួយផ្ទាំង បង្ការការបន្ថែមទ្វេដងនៅក្នុងផ្ទាំងនិពន្ធដូចគ្នា។
+- រំលងវិញ្ញាបនបត្រ S/MIME តាមលំនាំដើម ដើម្បីជៀសវាងឯកសារភ្ជាប់ដែលមិនចាំបាច់។
+- រួមបញ្ចូលរូបភាពនៅក្នុងអត្ថបទ (លំនាំដើម: ON)។ រូបភាពដែលបានបង្កប់ត្រូវបានស្ដារឡើងវិញដោយផ្ទាល់ក្នុងខ្លឹមសារឆ្លើយតប ជា base64 data URIs ហើយរក្សាប្លង់បញ្ចូលដើម។ បិទនៅក្នុងជម្រើស (Options) ប្រសិនបើចង់រំលងរូបភាពបញ្ចូលទាំងស្រុង។
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## វាដំណើរការយ៉ាងដូចម្តេច {#how-it-works}
+
+- នៅពេលឆ្លើយតប ផ្នែកបន្ថែមនឹងបង្ហាញបញ្ជីឯកសារភ្ជាប់ដើម។
+- ត្រងចេញហត្ថលេខា S/MIME ពីឯកសារភ្ជាប់; រូបភាពបញ្ចូលត្រូវបានស្ដារឡើងវិញក្នុងខ្លឹមសារ (លុះត្រាតែបានបិទ)។
+- អាចសួរការបញ្ជាក់តាមជម្រើស (ងាយប្រើជាមួយក្ដារចុច)។
+- បន្ថែមឯកសារសមស្របចូលក្នុងការសរសេរសារ ដោយជៀសវាងឯកសារស្ទួនតាមឈ្មោះ។
+- មើល “ហេតុអ្វីបានជាឯកសារភ្ជាប់អាចមិនត្រូវបានបន្ថែម” នៅក្នុង Usage សម្រាប់ករណីពិសេស។
+
+កំណត់ចំណាំភាពឯកជន: ដំណើរការទាំងអស់កើតឡើងក្នុងមូលដ្ឋានក្នុង Thunderbird។ ផ្នែកបន្ថែមមិនធ្វើសំណើបណ្តាញនៅផ្ទៃក្រោយទេ។
+
+---

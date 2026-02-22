@@ -4,94 +4,95 @@ title: 'Použitie'
 sidebar_label: 'Použitie'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Použitie {#usage}
+
+- Pri odpovedi doplnok automaticky pridá pôvodné prílohy — alebo sa najprv opýta, ak je to povolené v Možnostiach.
+- Odstránenie duplikátov podľa názvu súboru; časti S/MIME sa vždy preskakujú. Vložené obrázky sa štandardne obnovia v tele odpovede (možno vypnúť cez „Include inline pictures“ v Možnostiach).
+- Prílohy na čiernej listine sa tiež preskakujú (na veľkosť písmen necitlivé glob vzory zodpovedajú názvom súborov, nie cestám). Pozri [Konfigurácia](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Čo sa stane pri odpovedi {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Zistiť odpoveď → vypísať pôvodné prílohy → filtrovať S/MIME + inline → voliteľné potvrdenie → pridať vhodné súbory (preskočiť duplikáty) → obnoviť vložené obrázky v tele.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Prísny vs. uvoľnený priechod: Doplnok najprv vylúči časti S/MIME a inline z príloh súborov. Ak nič nespĺňa podmienky, spustí uvoľnený priechod, ktorý stále vylučuje S/MIME/inline, ale toleruje viac prípadov (pozri Podrobnosti kódu). Vložené obrázky sa nikdy nepridávajú ako súborové prílohy; namiesto toho, keď je zapnuté „Include inline pictures“ (predvolené), sú vložené priamo do tela odpovede ako base64 data URI.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Typ časti                                             |              Prísny priechod |            Uvoľnený priechod |
+| ----------------------------------------------------- | ---------------------------: | ---------------------------: |
+| Súbor podpisu S/MIME `smime.p7s`                      |                     Vylúčené |                     Vylúčené |
+| Typy MIME S/MIME (`application/pkcs7-*`)              |                     Vylúčené |                     Vylúčené |
+| Vložený obrázok odkazovaný cez Content‑ID (`image/*`) | Vylúčené (obnovené v tele\*) | Vylúčené (obnovené v tele\*) |
+| Priložený e‑mail (`message/rfc822`) s názvom súboru   |                    Nepridané |             Môže byť pridané |
+| Bežná súborová príloha s názvom súboru                |             Môže byť pridané |             Môže byť pridané |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Keď je zapnuté „Include inline pictures“ (predvolené: ON), vložené obrázky sa vložia do tela odpovede ako base64 data URI namiesto pridania ako súborové prílohy. Pozri [Konfigurácia](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Príklad: Niektorým prílohám môžu chýbať určité hlavičky, no stále ide o bežné súbory (nie inline/S/MIME). Ak prísny priechod nenájde žiadne, uvoľnený priechod ich môže akceptovať a pripojiť.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Krížové odkazy {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Preposlanie sa zámerne nemení (pozri Obmedzenia nižšie).
+- Pre dôvody, prečo príloha nemusí byť pridaná, pozri „Prečo prílohy nemusia byť pridané“.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Podrobnosti správania {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Prevencia duplikátov:** Doplnok označí kartu písania správy ako spracovanú pomocou hodnoty relácie na úrovni karty a ochranou v pamäti. Pôvodné prílohy nepridá dvakrát.
+- Zatvorenie a opätovné otvorenie okna písania sa považuje za novú kartu (t. j. je povolený nový pokus).
+- **Rešpektovanie existujúcich príloh:** Ak už okno písania obsahuje nejaké prílohy, pôvodné sa aj tak pridajú presne raz, pričom sa preskočia názvy súborov, ktoré už existujú.
+- **Vylúčenia:** Artefakty S/MIME a vložené obrázky sú vylúčené zo súborových príloh. Ak pri prvom priechode nič nevyhovuje, uvoľnený režim opätovne skontroluje ne‑S/MIME časti. Vložené obrázky sa riešia samostatne: obnovia sa v tele odpovede ako data URI (ak je to povolené).
+  - **Názvy súborov:** `smime.p7s`
+  - **Typy MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Vložené obrázky:** akákoľvek časť `image/*` odkazovaná pomocou Content‑ID — vylúčené zo súborových príloh, ale vložené do tela odpovede, keď je „Include inline pictures“ ZAP
+  - **Priložené e‑maily (`message/rfc822`):** považujú sa za bežné prílohy, ak majú názov súboru; môžu byť pridané (podlieha kontrole duplikátov a čiernej listine).
+- **Upozornenie na čiernu listinu (ak je povolené):** Keď kandidátov vylúči vaša čierna listina, doplnok zobrazí malé modálne okno so zoznamom dotknutých súborov a zodpovedajúcich vzorov. Toto upozornenie sa zobrazí aj v prípadoch, keď sa nepridá žiadna príloha, pretože všetko bolo vylúčené.
 
 ---
 
-## Limitations {#limitations}
+## Klávesové skratky {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Potvrdzovacie dialógové okno: Y/J = Áno, N/Esc = Nie; Tab/Shift+Tab a šípky cyklujú zameranie.
+  - „Predvolená odpoveď“ v [Konfigurácii](configuration#confirmation) nastavuje pôvodne zamerané tlačidlo.
+  - Enter aktivuje zamerané tlačidlo. Tab/Shift+Tab a šípky presúvajú zameranie pre prístupnosť.
+
+### Tahák klávesnice {#keyboard-cheat-sheet}
+
+| Klávesy            | Akcia                                        |
+| ------------------ | -------------------------------------------- |
+| Y / J              | Potvrdiť Áno                                 |
+| N / Esc            | Potvrdiť Nie                                 |
+| Enter              | Aktivovať zamerané tlačidlo                  |
+| Tab / Shift+Tab    | Posunúť zameranie dopredu/späť               |
+| Šípky              | Presúvať zameranie medzi tlačidlami          |
+| Predvolená odpoveď | Nastaví počiatočné zameranie (Áno alebo Nie) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Obmedzenia {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Preposlanie sa týmto doplnkom nemení (podporované sú Odpovedať a Odpovedať všetkým).
+- Veľmi veľké prílohy môžu podliehať obmedzeniam Thunderbirdu alebo poskytovateľa.
+  - Doplnok nesegmentuje ani nekomprimuje súbory; spolieha sa na bežné spracovanie príloh v Thunderbirde.
+- Šifrované správy: časti S/MIME sú zámerne vylúčené.
 
 ---
 
-See also
+## Prečo prílohy nemusia byť pridané {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Vložené obrázky sa nepridávajú ako súborové prílohy. Keď je „Include inline pictures“ ZAP (predvolené), vložia sa do tela odpovede ako data URI. Ak je nastavenie VYP, vložené obrázky sa úplne odstránia. Pozri [Konfigurácia](configuration#include-inline-pictures).
+- Časti podpisu S/MIME sú zámerne vylúčené: preskakujú sa názvy súborov ako `smime.p7s` a typy MIME ako `application/pkcs7-signature` alebo `application/pkcs7-mime`.
+- Vzory čiernej listiny môžu filtrovať kandidátov: pozri [Konfigurácia](configuration#blacklist-glob-patterns); porovnávanie nerozlišuje veľkosť písmen a týka sa iba názvov súborov.
+- Duplicitné názvy súborov sa znovu nepridávajú: ak už okno písania obsahuje súbor s rovnakým normalizovaným názvom, je preskočený.
+- Ne‑súborové časti alebo chýbajúce názvy: na pridanie sa zvažujú len časti pripomínajúce súbory s použiteľnými názvami.
+
+---
+
+Pozri tiež
+
+- [Konfigurácia](configuration)

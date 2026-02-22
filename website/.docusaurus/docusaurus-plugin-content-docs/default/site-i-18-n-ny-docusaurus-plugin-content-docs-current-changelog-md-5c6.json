@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Zikhala za kusintha",
-  "description": "Changelog",
+  "title": "Mbiri ya Zosintha",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Zikhala za kusintha"
+    "title": "Mbiri ya Zosintha"
   },
   "sidebar": "docs",
   "previous": {

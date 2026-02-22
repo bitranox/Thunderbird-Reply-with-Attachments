@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "عطیہ دیں",
-  "description": "Donate",
+  "title": "عطیہ کریں",
+  "description": "---",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "عطیہ دیں",
-    "sidebar_label": "عطیہ دیں"
+    "title": "عطیہ کریں",
+    "sidebar_label": "عطیہ کریں"
   },
   "sidebar": "docs",
   "previous": {

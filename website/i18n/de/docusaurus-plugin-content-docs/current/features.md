@@ -4,31 +4,40 @@ title: 'Funktionen'
 sidebar_label: 'Funktionen'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funktionen {#features}
 
-## How It Works {#how-it-works}
+- Hängt beim Antworten automatisch Dateien aus der Original‑E‑Mail an.
+- Konfigurierbares Verhalten: Anhänge können
+  - automatisch hinzugefügt werden, oder
+  - erst nach Bestätigung hinzugefügt werden (ein kleiner, barrierefreier Dialog). In den Optionen
+    können Sie die Bestätigung aktivieren und die Standardantwort (Ja/Nein) wählen.
+- Blacklist von Dateinamen (Glob‑Muster) verhindert, dass bestimmte Dateien
+  automatisch angehängt werden. Beispiele: `*intern*`, `*secret*`, `*passwor*`.
+  Die Übereinstimmung ist unabhängig von der Groß-/Kleinschreibung und prüft nur den Dateinamen; geben Sie in den Optionen
+  pro Zeile ein Muster an.
+- Blacklist‑Warnung (optional, standardmäßig aktiviert): Wenn Dateien durch Ihre
+  Blacklist ausgeschlossen werden, listet ein kleines Modal die Datei und das/die passende(n) Muster auf. Dunkelmodus‑
+  freundlich und tastaturzugänglich (Enter/Esc zum Schließen).
+- Funktioniert mit Antworten und Allen antworten. Weiterleiten wird von diesem Add‑on nicht verändert.
+- Fügt Originale hinzu, selbst wenn Sie bereits etwas angehängt haben; vermeidet Duplikate anhand des Dateinamens.
+- Pro‑Tab‑Duplikatschutz verhindert doppeltes Hinzufügen im selben Verfassen‑Tab.
+- Überspringt S/MIME‑Zertifikate standardmäßig, um unnötige Anhänge zu vermeiden.
+- Inline‑Bilder einschließen (Standard: EIN). Eingebettete Bilder werden direkt im
+  Antworttext als base64‑Daten‑URIs wiederhergestellt und bewahren das ursprüngliche Inline‑Layout. In den
+  Optionen deaktivieren, um Inline‑Bilder vollständig zu überspringen.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## So funktioniert es {#how-it-works}
+
+- Beim Antworten listet das Add‑on die ursprünglichen Anhänge auf.
+- Filtert S/MIME‑Signaturen aus Datei‑Anhängen heraus; Inline‑Bilder werden im Textkörper wiederhergestellt (sofern deaktiviert).
+- Fragt optional nach Bestätigung (tastaturfreundlich).
+- Fügt geeignete Dateien Ihrem Verfassenfenster hinzu und vermeidet Duplikate anhand des Dateinamens.
+- Siehe „Warum Anhänge möglicherweise nicht hinzugefügt werden“ unter Nutzung für Sonderfälle.
+
+Hinweis zum Datenschutz: Die gesamte Verarbeitung erfolgt lokal in Thunderbird. Das Add‑on stellt keine Netzwerkanfragen im Hintergrund.
+
+---

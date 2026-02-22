@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Pag-unlad",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "Pag-unlad",
-    "sidebar_label": "Pag-unlad"
+    "sidebar_label": "Pagpapaunlad"
   },
   "sidebar": "docs",
   "previous": {

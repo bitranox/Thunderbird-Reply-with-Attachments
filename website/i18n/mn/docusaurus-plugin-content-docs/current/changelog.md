@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Өөрчлөлтүүд'
+title: 'Өөрчлөлтийн бүртгэл'
 ---
 
-## Өөрчлөлтүүд
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Өөрчлөлтийн түүх
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Бүрэн, дэлгэрэнгүй түүхийг агуулахын
+[GitHub дахь CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) хэсгээс үзнэ үү.
+
+- 2.3.2: "Include inline pictures" нь одоо хариу бичгийн биед зургуудыг base64 data URI хэлбэрээр шууд шингээдэг (анхдагч: ON); кодын чанарыг сайжруулж, тестийн хамрах хүрээг өргөтгөв.
+- 2.3.1: Thunderbird дэвсгэр event page-ийг идэвхгүй болгосны дараа ч хавсралтуудыг хадгална; асуудал оношлоход зориулагдсан зорилтот debug hook-ууд нэмэгдсэн.
+- 2.3.0: Хавсралтын давхардал арилгалтыг сайжруулж, тестийн хамрах хүрээг өргөтгөж, AMO-ийн бодлогыг хангахын тулд хуучирсан эрхүүдийг устгав.
+- 2.1.0: Шилдэг 100 хэлд зориулсан бүрэн олон улсынжуулалтын дэмжлэг
+- 2.0.0: бүрэн боломжтой хувилбар руу дахин бичсэн (EN/DE)
+- 1.0.1: messages.listAttachments() руу шилжсэн
+- 1.0.0: анхны хувилбар
+
+---
 
 ## Огноо ба суваг {#dates-and-channels}
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+- ATN рүү гаргах нь багцлах ажиллагаанаас хойш хэдэн цагаар саатах боломжтой.
+- LOCAL бүтээцүүд нь зөвхөн хөгжүүлэгчийн туршилтад зориулагдсан бөгөөд ATN-ээр түгээгддэггүй.
+
+---

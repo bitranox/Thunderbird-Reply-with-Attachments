@@ -1,19 +1,27 @@
 ---
 id: changelog
-title: 'Өзгерістер тізімі'
+title: 'Өзгерістер журналы'
 ---
 
-## Өзгерістер тізімі
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Өзгерістер журналы
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Толық әрі егжей-тегжейлі тарихы үшін репозиторийдің [GitHub-тағы CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) файлын қараңыз.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" енді суреттерді жауап мәтініне base64 деректер URI-лері ретінде тікелей ендіреді (әдепкісі: ON); код сапасы жақсартылды және тестілердің қамтуы кеңейтілді.
+- 2.3.1: Thunderbird фондық оқиға беті бос күйіне өткеннен кейін де тіркемелерді сақтайды; ақауларды жоюға арналған нысаналы жөндеу ілгектері қосылды.
+- 2.3.0: Тіркемелердің қайталануларын жою механизмі жетілдірілді, тестілердің қамтуы кеңейтілді және AMO саясаттарына сай болу үшін ескірген рұқсаттар жойылды.
+- 2.1.0: Ең көп қолданылатын 100 тіл үшін толық халықаралықтандыруды қолдау
+- 2.0.0: толық мүмкіндіктері бар нұсқасына қайта жазу (EN/DE)
+- 1.0.1: messages.listAttachments() пайдалануға ауыстырылды
+- 1.0.0: алғашқы шығарылым
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Күндер мен арналар {#dates-and-channels}
+
+- ATN-ға шығарылымдар жинақтаудан кейін бірнеше сағатқа кешігуі мүмкін.
+- LOCAL жинақтары тек әзірлеушілердің сынақтан өткізуі үшін және ATN арқылы таратылмайды.
+
+---

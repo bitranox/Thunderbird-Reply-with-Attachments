@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ਸੁਚਾਰੂਤਾ'
-sidebar_label: 'ਸੁਚਾਰੂਤਾ'
+title: 'ਅਨੁਕੂਲਤਾ'
+sidebar_label: 'ਅਨੁਕੂਲਤਾ'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ਅਨੁਕੂਲਤਾ {#compatibility}
+
+:::important ਘੱਟੋ-ਘੱਟ Thunderbird ਵਰਜਨ
+ਇਹ ਐਡ‑ਆਨ Thunderbird **128 ESR ਜਾਂ ਇਸ ਤੋਂ ਨਵਾਂ** ਸਮਰਥਨ ਕਰਦਾ ਹੈ। ਪੁਰਾਣੇ ਵਰਜਨ ਸਮਰਥਿਤ ਨਹੀਂ ਹਨ।
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ਜਾਂ ਇਸ ਤੋਂ ਨਵਾਂ ਸਮਰਥਿਤ ਹੈ (128.x+).
+- ਪੁਰਾਣੇ Thunderbird ਵਰਜਨ ਸਮਰਥਿਤ ਨਹੀਂ ਹਨ।
+- Windows, macOS, ਅਤੇ Linux 'ਤੇ ਟੈਸਟ ਕੀਤਾ ਗਿਆ ਹੈ।
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ
+Manifest V2 ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ। ਇਹ ਐਡ‑ਆਨ Thunderbird 128 ESR+ 'ਤੇ **Manifest V3 (MV3)** ਨੂੰ ਟਾਰਗਟ ਕਰਦਾ ਹੈ।
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ਟ੍ਰਬਲਸ਼ੂਟਿੰਗ {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ਜੇ ਐਡ‑ਆਨ ਉਮੀਦ ਅਨੁਸਾਰ ਕੰਮ ਨਹੀਂ ਕਰਦਾ, ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ Thunderbird ਦਾ ਅਨੁਕੂਲ ਵਰਜਨ (128 ESR ਜਾਂ ਉਸ ਤੋਂ ਬਾਅਦ) ਵਰਤ ਰਹੇ ਹੋ।
+- ਐਡ‑ਆਨ ਨਾਲ ਸਬੰਧਤ ਕਿਸੇ ਵੀ ਸਮੱਸਿਆ ਲਈ Thunderbird ਦੀ ਗਲਤੀ ਕਨਸੋਲ (**Tools > Developer Tools > Error Console**) ਚੈਕ ਕਰੋ।
+- ਜੇ ਸੰਭਾਲੀਆਂ ਸੈਟਿੰਗਾਂ ਠੀਕ ਤਰ੍ਹਾਂ ਲਾਗੂ ਨਹੀਂ ਲੱਗਦੀਆਂ, ਤਾਂ Thunderbird ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ ਅਤੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ। (Thunderbird ਸੈਸ਼ਨਾਂ ਦਰਮਿਆਨ ਸਥਿਤੀ ਕੈਸ਼ ਕਰ ਸਕਦਾ ਹੈ; ਮੁੜ ਚਾਲੂ ਕਰਨ ਨਾਲ ਤਾਜ਼ਾ ਸੈਟਿੰਗਾਂ ਲੋਡ ਹੋਣ ਦੀ ਪੱਕੀ ਹੁੰਦੀ ਹੈ।)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## ਮਾਲੂਮ ਟਕਰਾਅ {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- ਇਸ ਵੇਲੇ ਕੋਈ ਮਾਲੂਮ ਨਹੀਂ। ਜੇ ਤੁਸੀਂ ਵਾਰ-ਵਾਰ ਦੁਹਰੇ ਅਟੈਚਮੈਂਟ ਜਾਂ ਹੋਰ ਐਡ‑ਆਨ ਨਾਲ ਨਾਕਾਮੀਆਂ ਵੇਖੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਦੁਹਰਾਉਣ ਦੇ ਕਦਮਾਂ ਸਮੇਤ ਰਿਪੋਰਟ ਕਰੋ।
+
+---
+
+## ਬੀਟਾ/ਨਾਈਟਲੀ {#beta-nightly}
+
+- Thunderbird Beta ਅਤੇ Daily (Nightly) ਬਿਲਡ ਆਮ ਤੌਰ 'ਤੇ ਸਮਰਥਿਤ ਹਨ, ਪਰ ਕਈ ਵਾਰ ਅਪਸਟ੍ਰੀਮ ਬਦਲਾਅ ਐਡ‑ਆਨ ਦੇ ਵਰਤਾਅ ਨੂੰ ਤੋੜ ਸਕਦੇ ਹਨ। ਜੇ ਤੁਸੀਂ ਸਮੱਸਿਆਵਾਂ ਦਾ ਸਾਹਮਣਾ ਕਰੋ, ਕਿਰਪਾ ਕਰਕੇ ਉਨ੍ਹਾਂ ਦੀ ਰਿਪੋਰਟ ਕਰੋ ਅਤੇ ਠੀਕ Thunderbird ਵਰਜਨ ਸ਼ਾਮਲ ਕਰੋ (ਜਿਵੇਂ, “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly 'ਤੇ ਕੋਈ ਰੀਗ੍ਰੈਸ਼ਨ ਆਇਆ? ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਦੁਹਰਾਉਣ ਦੇ ਕਦਮਾਂ ਸਮੇਤ ਰਿਪੋਰਟ ਕਰੋ — [ਸਹਾਇਤਾ](support) ਵੇਖੋ — ਅਤੇ ਠੀਕ Thunderbird ਬਿਲਡ ਸਟਰਿੰਗ ਸ਼ਾਮਲ ਕਰੋ।
 
 ---

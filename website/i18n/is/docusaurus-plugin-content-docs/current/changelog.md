@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Skrá yfir breytingar'
+title: 'Breytingaskrá'
 ---
 
-## Skrá yfir breytingar
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Breytingaskrá
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Fyrir fulla, ítarlega breytingasögu, sjá í geymslunni
+[CHANGELOG.md á GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Taka með innfelldar myndir" bætir nú myndum beint inn í svartextann sem base64 data URI-slóðir (sjálfgefið: Á); endurbætur á gæðum kóða og aukið prófunarumfang.
+- 2.3.1: Viðheldur viðhengjum eftir að Thunderbird setur bakgrunnsviðburðasíðuna í bið; bætir við markvissum kembikrókum til bilanagreiningar.
+- 2.3.0: Fínstillt afritahreinsun viðhengja, víkkað prófunarumfang og fjarlægðar úreltar heimildir til að uppfylla reglur AMO.
+- 2.1.0: Fullur stuðningur við alþjóðavæðingu fyrir 100 algengustu tungumálin
+- 2.0.0: Endurskrifað í fullbúna útgáfu (EN/DE)
+- 1.0.1: Skipt yfir í messages.listAttachments()
+- 1.0.0: Upphafsútgáfa
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Dagsetningar og rásir {#dates-and-channels}
+
+- Útgáfur á ATN geta seinkað um nokkrar klukkustundir eftir pökkun.
+- LOCAL-smíðar eru eingöngu fyrir þróunarprófanir og er ekki dreift í gegnum ATN.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "تەرەققىيات",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "تەرەققىيات",
-    "sidebar_label": "تەرەققىيات"
+    "sidebar_label": "ئىشلەپ چىقىش"
   },
   "sidebar": "docs",
   "previous": {

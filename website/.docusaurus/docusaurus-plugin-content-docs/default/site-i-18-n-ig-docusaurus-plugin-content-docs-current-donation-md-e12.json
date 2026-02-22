@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": " nyere ego",
-  "description": "nyere ego",
+  "title": "Nye onyinye",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": " nyere ego",
-    "sidebar_label": " nyere ego"
+    "title": "Nye onyinye",
+    "sidebar_label": "Nye onyinye"
   },
   "sidebar": "docs",
   "previous": {

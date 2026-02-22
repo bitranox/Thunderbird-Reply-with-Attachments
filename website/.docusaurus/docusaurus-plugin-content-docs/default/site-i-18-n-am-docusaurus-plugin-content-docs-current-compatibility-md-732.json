@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "የመነሻ እና ይህን ይህ ናቸው",
-  "description": "Compatibility",
+  "title": "ተስማሚነት",
+  "description": "---",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "የመነሻ እና ይህን ይህ ናቸው",
-    "sidebar_label": "የመነሻ እና ይህን ይህ ናቸው"
+    "title": "ተስማሚነት",
+    "sidebar_label": "ተስማሚነት"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ጥቅም",
+    "title": "አጠቃቀም",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/usage"
   },
   "next": {

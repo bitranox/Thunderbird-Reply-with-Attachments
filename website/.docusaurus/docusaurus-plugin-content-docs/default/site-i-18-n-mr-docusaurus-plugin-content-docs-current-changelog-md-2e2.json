@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "परिवर्तन सूची",
-  "description": "Changelog",
+  "title": "बदलांची नोंद",
+  "description": "---",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "परिवर्तन सूची"
+    "title": "बदलांची नोंद"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "ਕੁਇਕਸਟਾਰਟ",
+    "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/quickstart"
   }
 }

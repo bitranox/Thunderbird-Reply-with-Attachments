@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ئالاھىدە ئامىللەر",
-  "description": "Features",
+  "title": "ئالاھىدىلىكلەر",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ئالاھىدە ئامىللەر",
-    "sidebar_label": "ئالاھىدە ئامىللەر"
+    "title": "ئالاھىدىلىكلەر",
+    "sidebar_label": "ئىقتىدارلار"
   },
   "sidebar": "docs",
   "next": {
-    "title": "مۇناسىۋەتلىك باشلامچى",
+    "title": "تېز باشلاش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/quickstart"
   }
 }

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "გაფრთხილება, თუ შავი სიის გამო დანართები გამოირიცხება"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ჩაშენებული სურათების ჩართვა (ჩაშენებული სურათები)"
+  },
   "uiDebugHeader": {
     "message": "გაფართოებული"
   },

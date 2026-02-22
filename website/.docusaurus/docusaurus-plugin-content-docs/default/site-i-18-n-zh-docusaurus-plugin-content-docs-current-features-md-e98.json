@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "特性",
-  "description": "Features",
+  "title": "功能",
+  "description": "---",
   "source": "@site/i18n/zh/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "特性",
-    "sidebar_label": "特性"
+    "title": "功能",
+    "sidebar_label": "功能"
   },
   "sidebar": "docs",
   "next": {
-    "title": "快速开始",
+    "title": "快速入门",
     "permalink": "/Thunderbird-Reply-with-Attachments/zh/docs/quickstart"
   }
 }

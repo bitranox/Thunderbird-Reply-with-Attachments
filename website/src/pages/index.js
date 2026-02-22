@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -33,7 +34,7 @@ export default function Home() {
   const toFor = (slug) => useBaseUrl(`/docs/${slug}`);
 
   // Redirect EN homepage subtree to preferred locale under baseUrl (e.g., /Thunderbird-Reply-with-Attachments/de/)
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return;
     try {
       const base = ((siteConfig && siteConfig.baseUrl) || '/').replace(/\/+/g, '/');
@@ -166,11 +167,14 @@ export default function Home() {
           </article>
           <article className="card">
             <h3>
-              <Translate id="homepage.features.skipSmime.title">Skip SMIME & Inline</Translate>
+              <Translate id="homepage.features.skipSmime.title">
+                Skip SMIME & Restore Inline
+              </Translate>
             </h3>
             <p>
               <Translate id="homepage.features.skipSmime.body">
-                SMIME signatures and inline images are excluded to keep replies lean.
+                SMIME signatures are excluded. Inline images are embedded directly in the reply body
+                as data URIs so recipients see them exactly where they appeared.
               </Translate>
             </p>
           </article>

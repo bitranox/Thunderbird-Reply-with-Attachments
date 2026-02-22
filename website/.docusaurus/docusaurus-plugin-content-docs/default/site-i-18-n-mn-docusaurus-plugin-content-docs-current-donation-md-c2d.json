@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Хандив өгөх",
-  "description": "Хандив өгөх",
+  "title": "Хандивлах",
+  "description": "---",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Хандив өгөх",
-    "sidebar_label": "Хандив өгөх"
+    "title": "Хандивлах",
+    "sidebar_label": "Хандивлах"
   },
   "sidebar": "docs",
   "previous": {

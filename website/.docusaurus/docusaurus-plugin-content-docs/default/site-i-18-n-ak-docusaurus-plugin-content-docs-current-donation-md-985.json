@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Ma donation",
-  "description": "Ma donation",
+  "title": "Ma akyɛdeɛ",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Ma donation",
-    "sidebar_label": "Ma donation"
+    "title": "Ma akyɛdeɛ",
+    "sidebar_label": "Bɔ adɔe"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Quraşdırma",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "İlk addım",
+    "title": "Sürətli Başlanğıc",
     "permalink": "/Thunderbird-Reply-with-Attachments/az/docs/quickstart"
   },
   "next": {

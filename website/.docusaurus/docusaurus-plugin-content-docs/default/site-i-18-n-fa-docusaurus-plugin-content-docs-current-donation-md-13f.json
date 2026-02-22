@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "اهدا",
-  "description": "Donate",
+  "title": "کمک مالی",
+  "description": "---",
   "source": "@site/i18n/fa/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "اهدا",
-    "sidebar_label": "اهدا"
+    "title": "کمک مالی",
+    "sidebar_label": "اهدا کنید"
   },
   "sidebar": "docs",
   "previous": {

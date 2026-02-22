@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Enstalasyon",
-  "description": "Enstalasyon atravè \"Add-ons ak Tèm Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kòmanse rapid",
+    "title": "Demaraj rapid",
     "permalink": "/Thunderbird-Reply-with-Attachments/ht/docs/quickstart"
   },
   "next": {

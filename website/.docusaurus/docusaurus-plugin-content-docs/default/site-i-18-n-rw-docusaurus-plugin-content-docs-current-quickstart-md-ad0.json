@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Igishushanyo Mbonera",
-  "description": "Igishushanyo Mbonera",
+  "title": "Gutangira byihuse",
+  "description": "---",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Igishushanyo Mbonera",
-    "sidebar_label": "Igishushanyo Mbonera"
+    "title": "Gutangira byihuse",
+    "sidebar_label": "Gutangira byihuse"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/features"
   },
   "next": {
-    "title": "Kwinjiza",
+    "title": "Gushyiraho",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/install"
   }
 }

@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ātrā uzsākšana'
-sidebar_label: 'Ātrā uzsākšana'
+title: 'Ātrā sākšana'
+sidebar_label: 'Ātrā sākšana'
 ---
 
-## Ātrā uzsākšana
+---
+
+## Ātrā sākšana
 
 :::important Minimālā Thunderbird versija
-Šis paplašinājums atbalsta Thunderbird **128 ESR vai jaunāku**. Vecākas versijas netiek atbalstītas.
+Šis papildinājums atbalsta Thunderbird **128 ESR vai jaunāku**. Vecākas versijas netiek atbalstītas.
 :::
 
-:::note Nav telemetrijas; nav fona tīkla
-Pielikums **nenovāc** analītiku/telemetriju un neveic **nav** fona tīkla pieprasījumus. Tīkla piekļuve notiek tikai tad, kad noklikšķināt uz ārējiem saitēm (Dokumenti, GitHub, Ziedot).
+:::note Nav telemetrijas; nav fona tīkla darbību
+Papildinājums **ne**apkopo analītiku/telemetriju un neveic **nekādus** fona tīkla pieprasījumus. Tīkla piekļuve notiek tikai tad, kad noklikšķināt uz ārējām saitēm (Dokumentācija, GitHub, Ziedot).
 :::
 
 ---
 
-### Instalēt
+### Instalēšana
 
-1. Instalējiet paplašinājumu no Thunderbird paplašinājumiem.
-2. Pēc izvēles: Iespējot apstiprinājumu (Opcijas → “Jautāt pirms pievienot pielikumus”).
-3. Pēc izvēles: Atstājiet melnajā sarakstā brīdinājumu ieslēgtu (pēc noklusējuma): “Brīdināt, ja pielikumi tiek izslēgti ar melno sarakstu”.
-4. Pēc izvēles: Pievienojiet melnā saraksta paraugus (viens katrā rindā), piemēram:
+1. Instalējiet papildinājumu no Thunderbird Add‑ons.
+2. Pēc izvēles: Ieslēdziet apstiprinājumu (Opcijas → “Jautāt pirms pielikumu pievienošanas”).
+3. Pēc izvēles: Atstājiet ieslēgtu melnā saraksta brīdinājumu (noklusējums): “Brīdināt, ja pielikumi ir izslēgti ar melno sarakstu”.
+4. Pēc izvēles: Pievienojiet melnā saraksta paraugus (pa vienam katrā rindā), piem.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ Pielikums **nenovāc** analītiku/telemetriju un neveic **nav** fona tīkla piep
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Piezīme: “# …” iepriekš ir komentārs šajā dokumentācijā; neiekļaujiet komentārus paraugos, kurus ielīmējat Opcijās. Ierakstiet tikai vienu paraugu katrā rindā.
+Piezīme: “# …” iepriekš ir komentārs šajā dokumentācijā; neiekļaujiet komentārus paraugos, kurus ielīmējat Opcijās. Ievadiet tikai vienu paraugu katrā rindā.
 
-Tagad atbildiet uz ziņu ar pielikumiem — oriģināli tiks pievienoti automātiski vai pēc ātra apstiprinājuma. Ja kādi faili tiek izslēgti no jūsu melnā saraksta, jūs redzēsiet īsu brīdinājumu, kurā tie būs uzskaitīti.
-
----
-
-### Pārbaudīt {#verify}
-
-- Atbildiet uz ziņu ar 1–2 pielikumiem un apstipriniet, ka oriģināli ir pievienoti jūsu rakstīšanas logam.
-- Lai pielāgotu uzvedību, skatiet [Konfigurācija](configuration) (apstiprinājuma pārslēgs, noklusējuma atbilde, melnā saraksta paraugi).
+Tagad atbildiet uz ziņojumu ar pielikumiem — sākotnējie tiks pievienoti automātiski vai pēc ātra apstiprinājuma. Ja kādus failus izslēdz jūsu melnais saraksts, redzēsiet īsu brīdinājumu ar to sarakstu.
 
 ---
 
-### Pārbaudīt melnā saraksta brīdinājumu {#verify-blacklist-warning}
+### Pārbaude {#verify}
 
-- Atbildiet uz ziņu, kas satur failu, piemēram, “secret.txt”.
-- Ja ir iespējots “Brīdināt, ja pielikumi tiek izslēgti ar melno sarakstu”, mazā dialoglodziņā tiks uzskaitīti izslēgtie faili un atbilstošais paraugs.
-
-Ja jūs neredzat brīdinājumu, pārliecinieties, vai paraugs precīzi atbilst faila nosaukumam (tikai faila nosaukums, neievērojot lielos un mazos burtus). Skatiet Konfigurācija → Melnais saraksts.
+- Atbildiet uz ziņojumu ar 1–2 pielikumiem un pārliecinieties, ka sākotnējie ir pievienoti jūsu sastādīšanas logā.
+- Lai pielāgotu uzvedību, skatiet [Konfigurācija](configuration) (apstiprinājuma pārslēgšana, noklusētā atbilde, melnā saraksta paraugi).
 
 ---
 
-### Tastatūras piezīme {#keyboard-note}
+### Pārbaudiet melnā saraksta brīdinājumu {#verify-blacklist-warning}
 
-- Apstiprināšanas dialogā tiek atbalstīta Y/J par Jā un N/Esc par Nē. Dažās ne-latīņu klaviatūrās burtu taustiņi var atšķirties; Enter apstiprina fokusēto pogu.
+- Atbildiet uz ziņojumu, kurā ir tāds fails kā “secret.txt”.
+- Kad ieslēgts “Brīdināt, ja pielikumi ir izslēgti ar melno sarakstu”, mazs dialogs uzskaita izslēgtos failus un atbilstošo paraugu.
+
+Ja neredzat brīdinājumu, pārliecinieties, ka paraugs precīzi atbilst faila nosaukumam (tikai faila nosaukums, reģistrnejutīgs). Skatiet Konfigurācija → Melnais saraksts.
+
+---
+
+### Piezīme par tastatūru {#keyboard-note}
+
+- Apstiprinājuma dialoglogs atbalsta Y/J kā “Jā” un N/Esc kā “Nē”. Dažās nelatīņu tastatūrās burtu taustiņi var atšķirties; Enter apstiprina fokusēto pogu.
 
 ---

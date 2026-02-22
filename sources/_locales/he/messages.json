@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "להתריע אם קבצים מצורפים מוחרגים בשל רשימת החסימה"
   },
+  "uiIncludeInlineLabel": {
+    "message": "כלול תמונות מוטבעות (תמונות משובצות)"
+  },
   "uiDebugHeader": {
     "message": "מתקדם"
   },

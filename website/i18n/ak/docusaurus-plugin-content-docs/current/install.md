@@ -1,80 +1,81 @@
 ---
 id: install
-title: 'Nsɛm a ɛda ho adi'
+title: 'Instɔlehyɛn'
 slug: /install
-sidebar_label: 'Nsɛm a ɛda ho adi'
+sidebar_label: 'Instɔlehyɛ'
 ---
 
-## Nsɛm a ɛda ho adi via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Nsɛm a ɛda ho adi a ɛyɛ abatoɔ
-Ɛyɛ a ɛbɔ ho ban no, add‑on yi yɛ adwuma ne Thunderbird **128 ESR anaa foforɔ**. Nkyɛn adwuma a ɛda ho adi no nyɛ.
+## Instɔlehyɛn fa "Thunderbird Add-ons and Themes" so {#installation-in-thunderbird-recommended}
+
+:::important Thunderbird vɛɛhyɛn ketewa koraa a ɛsɛ
+Nkaho yi sɔ Thunderbird **128 ESR anaa nea ɛto so foforo**. Vɛɛhyɛn dada no nni mmoa.
 :::
 
-Ɛyɛ nsɛm a ɛda ho adi a ɛyɛ a ɛbɔ ho ban. Add‑ons a wɔde fi ATN (addons.thunderbird.net) mu bɛyɛ nkyerɛkyerɛ. LOCAL/dev installations nsɛe a wɔyɛ nsɛm a ɛda ho adi.
+Kwan yi ne instɔlehyɛn a wɔhyɛ so pa. Nkaho a wɔinstɔl firi ATN (addons.thunderbird.net) no nya ntosoɔ otomatik. LOCAL/dev instɔlehyɛn no nnya ntosoɔ otomatik.
 
-- Nsɛm a ɛda ho adi a ɛyɛ abatoɔ: 128 ESR anaa foforɔ.
+- Thunderbird vɛɛhyɛn ketewa koraa a ɛsɛ: 128 ESR anaa nea ɛto so foforo.
 
-1. Kɔ Thunderbird mu, kɔ **Nkyɛn > Add-ons ne Themes**.
-2. Hwehwɛ "ka nsɛm a ɛda ho adi" no.
-3. Fa add-on no ka ho.
+1. Wɔ Thunderbird mu, kɔ **Tools > Add-ons and Themes**.
+2. Hwehwɛ "reply with attachments".
+3. Instɔl nkaho no.
 
-Anaa kɔ add-on no krataa no mu: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Anaa bue nkaho krataafa no pɛ: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Nsɛm a ɛda ho adi fi XPI {#local-installation-in-thunderbird}
+## Instɔlehyɛn nsam firi XPI {#local-installation-in-thunderbird}
 
-### Kan XPI file no {#download-the-xpi-file}
+### Twe XPI fael no {#download-the-xpi-file}
 
-1. Kɔ [Thunderbird Add‑on krataa](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Kan add-on no a ɛyɛ foforɔ sɛ XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Kɔ [Thunderbird Add‑on krataafa](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Twe vɛɛhyɛn foforɔ koraa a ɛwɔ hɔ no sɛ XPI fael (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Si mu wɔ Thunderbird {#install-in-thunderbird-local}
+### Instɔl wɔ Thunderbird mu {#install-in-thunderbird-local}
 
 1. Bue Thunderbird.
-2. Kɔ **Nkyɛn > Add-ons ne Themes**.
-3. Wɔ **Add-ons Manager** mu, to gear icon no a ɛda atifi nifa so.
-4. Pɛ **Install Add-on Fi File…** fi menu no mu.
-5. Pɛ `reply_with_attachments-x.y.z-tb.xpi` file a wofrɛ no.
-6. Pɛ srɛ a ɛba no mu.
+2. Kɔ **Tools > Add-ons and Themes**.
+3. Wɔ **Add-ons Manager** no mu, klik ɛkɔn gear no wɔ atifi nifa.
+4. Paw **Install Add-on From File…** firi menyu no mu.
+5. Paw fael `reply_with_attachments-x.y.z-tb.xpi` a woatwe no.
+6. Gye instɔlehyɛn no tom sɛ wɔbisa wo.
 
 ---
 
-## Nsɛm a ɛda ho adi ma nkɔso {#installation-for-development}
+## Instɔlehyɛn ama develepmɛnt {#installation-for-development}
 
-### Kan nkitahodie no {#download-the-repository}
+### Twe repɔzitiri no {#download-the-repository}
 
-1. Kan GitHub nkitahodie no a ɛyɛ foforɔ.
-2. Dɔ `make help` na hu nsɛm a ɛda ho adi.
+1. Twe GitHub repɔzitiri no vɛɛhyɛn foforɔ koraa.
+2. Hyɛ `make help` na nya nsɛm bio.
 
-### Si mu wɔ Thunderbird {#install-in-thunderbird-dev}
+### Instɔl wɔ Thunderbird mu {#install-in-thunderbird-dev}
 
 1. Bue Thunderbird.
-2. Kɔ **Nkyɛn > Add-ons ne Themes**.
-3. Wɔ **Add-ons Manager** mu, to gear icon no a ɛda atifi nifa so.
-4. Pɛ **Install Add-on Fi File…** fi menu no mu.
-5. Pɛ nsɛm a wɔyɛ de hyɛ mu `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Pɛ srɛ a ɛba no mu.
+2. Kɔ **Tools > Add-ons and Themes**.
+3. Wɔ **Add-ons Manager** no mu, klik ɛkɔn gear no wɔ atifi nifa.
+4. Paw **Install Add-on From File…** firi menyu no mu.
+5. Paw fael a wɔayɛ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` no.
+6. Gye instɔlehyɛn no tom sɛ wɔbisa wo.
 
-Nsɛm: Sɛ Thunderbird mfa `.zip` a ɛda wo sistem no so a, yɛ nkyɛn kɔ `.xpi` na srɛ “Install Add‑on Fi File…” bio.
+Kae: Sɛ Thunderbird nnye `.zip` no tom wɔ wo sistem no so a, sesa ne din kɔ `.xpi` na san sɔ “Install Add‑on From File…” bio.
 
-### Ɛhe na wubetumi anya LOCAL ZIP {#where-local-zip}
+### Ɛhe na wobɛhunu LOCAL ZIP no {#where-local-zip}
 
-- Ɛyɛ a, fa add‑on no to mu: dɔ `make pack` wɔ nkitahodie no mũ.
-- Afei, hu “LOCAL” zip no wɔ nkitahodie no mũ (sɛ `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Ansa na woakɔ so ayɛ packaging foforɔ de bɛhyɛ nwoma a ɛda ho adi mu, ratwe version no mppɛn `sources/manifest_ATN.json` ne `sources/manifest_LOCAL.json`.
+- Kan no, pakete nkaho no: hyɛ `make pack` wɔ repɔzitiri root no mu.
+- Ekyiri a wopaketee no, hu “LOCAL” zip no wɔ repɔzitiri root no mu (sɛso, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Ansana wobɛsan apakete ama asɔdwuma, ma vɛɛhyɛn no kɔ soro wɔ `sources/manifest_ATN.json` ne `sources/manifest_LOCAL.json` mu nyinaa.
 
 ---
 
-## Pɛn, Yi, ne Nkyerɛkyerɛ {#disable-uninstall-updates}
+## Dum, Yi, ne Ntosoɔ {#disable-uninstall-updates}
 
-- Pɛn: Thunderbird → Nkyɛn → Add‑ons ne Themes → hu add‑on no → pɛn no.
-- Yi: saa nhyehyɛ no mu → nsateaa mmerɛ ne abɔdin → Paw.
-- Nkyerɛkyerɛ: ATN installations bɛyɛ nkyerɛkyerɛ a ɛda ho adi no mu sɛ wɔn mu yɛ foforɔ na wɔapaw. LOCAL/dev installations nsɛe a wɔyɛ nkyerɛkyerɛ; san di LOCAL foforɔ no yɛ.
+- Dum: Thunderbird → Tools → Add‑ons and Themes → hwehwɛ nkaho no → tɔgl no kɔ off.
+- Yi instɔlehyɛn: nhwɛbea koro no ara → menyu dɔt‑mmiɛnsa → Remove.
+- Ntosoɔ: Bere a vɛɛhyɛn foforo agye atom no, ATN instɔlehyɛn no yɛ ntosoɔ otomatik. LOCAL/dev instɔlehyɛn no nnya ntosoɔ otomatik; instɔl LOCAL build foforo nsam.
+- Yi nhyehyɛe koraa nyinaa: hwɛ [Privacy → Data removal](privacy#data-removal).
 
-- Yi nsɛm a ɛda ho adi nyinaa: hwɛ [Privacy → Data removal](privacy#data-removal).
+Hwɛ nso
 
-Hu mpo
-
-- [Ntɛm papa](quickstart)
+- [Mfiase ntɛm-ntɛm](quickstart)

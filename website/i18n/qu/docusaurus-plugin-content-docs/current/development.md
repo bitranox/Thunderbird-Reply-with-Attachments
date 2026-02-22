@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Desarollo'
-sidebar_label: 'Desarollo'
+title: 'Wiñakuy'
+sidebar_label: 'Wiñakuy'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Ruray Kamachi {#development-guide}
+
+:::note Inglésllatam ch'iqllay; tikrakuna aywanku
+Qillqakuna kunanyachiy **sapallan** `website/docs` (Inglés) nisqapi. `website/i18n/<locale>/…` nisqapi tikrakuna automáticuta paqarichisqa, hinallataq makiwan mana ch'iqllanaychu. Tikrakuna llamk'aykunata (`make translate_web_docs_batch` hina) llamk'achiy, llocalizadotaq willañiqikuna kunanyachinaykipaq.
 :::
 
-### Prerequisites {#prerequisites}
+### Ñawpaq munasqakuna {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
+- Node.js 22+ wan npm (Node 22wan qhawarisqa)
+- Thunderbird 128 ESR utaq musuq (makiwan probarpaq)
 
 ---
 
-### Project Layout (high‑level) {#project-layout-high-level}
+### Proyektupa siq'i (hatun ñawpaq) {#project-layout-high-level}
 
 - Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
+- `sources/`: ñawpaq add-on kodin (background, options/popup UI, manifests, icons)
 - `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- `website/`: Docusaurus docs (i18n `website/i18n/de/...` ukhunpi)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Churay & Llamk'anakuna {#install-and-tooling}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root dependenciaskuna churay: `npm ci`
+- Docs (uyariypaq): `cd website && npm ci`
+- Targetkunata maskhay: `make help`
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Kawsaypi ruwakuy (web‑ext run) {#live-dev-web-ext}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Utqaypa kutichiy Firefox Desktoppi (UI smoke‑tests sapallanpaq):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbirdpi purichiy (MailExtensionspaq aqllasqa):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
+- Tipkuna:
+- Thunderbirdpa Error Console nisqata kichasqa kachay (Tools → Developer Tools → Error Console).
+- MV3 event p'anqakuna qhipaman waqyasqa kachkan; kodeta hukinchawpaq add‑onta musuqmanta chaqna, utaq web‑extqa sapaqta automáticuta chaqnachun.
+- Firefox‑sapaqmi aswanta hukninakunam kachkan; hinaspaqa Thunderbirdpi qatiyña, API equivalenciata qhawariy.
+- Thunderbird binario ñan (qhawarikuqkunapaq):
 - Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Perfilpa sapallan chanin: Llamk'aypaq huk Thunderbirdda perfilta llamk'achiy, manan sapa p'unchaw llamk'aykita maqchurinaykipaq.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make tarjetakuna (alfabétikuta qatiq) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefileqa común ruwakuy qatillaykuna standar churan. `make help` nisqata waqtaykama ruwariy, target sapaqpaq huk lineapi amaqonawan.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tip: `make` targetmana rurayqa, aslla Whiptail menuta kichan target akllanankupaq.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Huk‑lineapi amaqonawan                                                                         |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Lokal build/preview ruwayninakunata qichuy (tmp/, web-local-preview/, website/build/).         |
+| [`commit`](#mt-commit)                                   | Formateay, testkuna purichiy (i18n chaywan), changelog kunanyachiy, commit & push.             |
+| [`eslint`](#mt-eslint)                                   | ESLintta purichiy flat configwan (`npm run -s lint:eslint`).                                   |
+| [`help`](#mt-help)                                       | Llapan targetkunata sut'inchawan amaqonawanwan (ordenasqa) qillqay.                            |
+| [`lint`](#mt-lint)                                       | web‑ext lint `sources/`pi (sami manifest; ZIPkuna qawachkuchkan; mana fatal).                  |
+| [`menu`](#mt-menu)                                       | Interactivo menuta kichan target akllanaykipaq hinallataq akllanakuy argumento.                |
+| [`pack`](#mt-pack)                                       | ATN & LOCAL ZIPkunata ruray (linterta purichin; packer scriptsa waqyay).                       |
+| [`prettier`](#mt-prettier)                               | Repositorioqta kaypi formateay (qillqaykunata tikray).                                         |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier check modopi (mana qillqan); mana allin formatoqa pantachin.                          |
+| [`prettier_write`](#mt-prettier_write)                   | Alias `prettier`paq.                                                                           |
+| [`test`](#mt-test)                                       | Prettier (qillqa), ESLint, chaymanta Vitest (coverage kasqa kaptinqa).                         |
+| [`test_i18n`](#mt-test_i18n)                             | i18n‑sapallan testkuna: add‑on placeholders/paridad + website paridad.                         |
+| [`translate_app`](#mt-translation-app)                   | Alias `translation_app`paq.                                                                    |
+| [`translation_app`](#mt-translation-app)                 | App UI simikunata tikray `sources/_locales/en/messages.json`manta.                             |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Website docskunata tikray OpenAI Batch API‑wan (aqllasqa).                                     |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Website docskunata tikray sincrónicamente (legado, mana batch).                                |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias `translation_web_index`paq.                                                              |
+| [`translation_web_index`](#mt-translation_web_index)     | Qallariq p'anqa/navbar/footer UI tikray (`website/i18n/en/code.json → .../<lang>/code.json`).  |
+| [`web_build`](#mt-web_build)                             | Docskunata ruwachiy `website/build`man (sustenta `--locales` / `BUILD_LOCALES`).               |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (hawa HTTP[S] astawan saqichin).                                       |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokal gh‑pages preview; automáticuta 8080–8090pi servin; uyariykuna tests/link‑check nisqawan. |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build`ta pusha `gh-pages` ramasman.                                                   |
 
-Syntax for options
+Opcionespa sintaxis
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- `make <command> OPTS="…"` nisqata llamk'ay opciones apachinaykipaq (comillakunawan qhaway). Kayman uraypi target sapaqpaq ruwanapaq ruwakuna qhawarichkan.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Localkunapaq build tipkuna {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Localkuna sapaqta ruwariy: `BUILD_LOCALES="en de"` nisqata churay utaq `OPTS="--locales en,de"` nisqata web targetkunaman apachiy.
+- Huk lokalmanta ñawpaq qhawanaykipaq: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Ruray & Paqichiy {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIPkunata ruray: `make pack`
+- Repo muyo patapi ATN hinallataq LOCAL ZIPkunata paqarichin (artifactsqa makiwan ama tikraychu)
+- Tip: versiónta iskaypi kunanyachiy `sources/manifest_ATN.json` hinallataq `sources/manifest_LOCAL.json`pi, paqichinaykipaq.
+- Makiwan churay (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → rurasqa ZIPta akllay
+
+---
+
+### Pruebas {#test}
+
+- Llapan suite: `make test` (Vitest)
+- Cobertura (uyariypaq):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` purichiy; `coverage/index.html` kichay HTML reportpaq
+- i18n sapallan: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc paridad id/title/sidebar_label qhawaywan)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Depuración & Logs {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Verbose logskunata kawsayninpi wakchay/qarquy:
+- Activar: `messenger.storage.local.set({ debug: true })`
+- Apagar: `messenger.storage.local.set({ debug: false })`
+- Qillqakunaqa qillqakusqanku chay ñawinchay/sayachiy kutinpas.
 
 ---
 
 ### Docs (website) {#docs-website}
 
 - Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Sitio estático ruwariy: `cd website && npm run build`
+- Make equivalentes (alfabétikuta): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Ejemplokuna:
+- EN sapallan, test/link‑check saqispa, mana push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Llapan localkuna, tests/link‑checkwan, chaymanta push: `make web_build_local_preview && make web_push_github`
+- Qhapaq llamk'ayman, offline‑safe link checkta purichiy: `make web_build_linkcheck`.
+- i18n: Inglésqa `website/docs/*.md` ukhun kawsan; Alemán tikrakunaqa `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` ukhun.
+- Maskhay: Algolia DocSearch ambiente variablekuna CI‑pi churakusqa kaptinqa (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), sitioq Algolia maskhayta llamk'an; manam kaptiqa maskhay lokalman kutin. Qallariq p'anqapi, `/` utaq `Ctrl+K` mañakuy maskhay k'itirata kichanapaq.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Qolla‑qonay (Donate) kutichiy ñan {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Ruta: `/donate` (hinallataq `/<locale>/donate`)
+- Kawsaynin:
+- Kunan rutaqa huk lokaltawan (e.g., `/de/donate`) kachkaptinqa, chayta llamk'an
+- Mana chayqa, `navigator.languages` nisqamanta aswan allin tupaqta akllan konfiguradasqawan; chaymanaqa default localeman kutin
+- Kayman kutichin:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- hukninakuna → `/<locale>/docs/donation`
+- `useBaseUrl` nisqata llamk'an baseUrl allinta chaskinaykipaq
+- Meta refresh + `noscript` t'inkita churaspa, fall‑back hina
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Ñawpaq qhawariq tipkuna {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node previewta allin qichunaykipaq: `http://localhost:<port>/__stop` kichay (`Local server started` ñawpaqta qillqasqa).
+- Ima imagenaskuna MDX/JSXpi mana apachkaptin, `useBaseUrl('/img/...')` llamk'achiy sitioqpa `baseUrl`ta yuyachinaykipaq.
+- Ñawpaq previewmi qallarin; chaymanta link check hamuqmi, mana hark'ay (hawa t'inkikuna p'akisqa kaptinpas previewqa mana saykuykachkan).
+- Ejemplo preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” ñawpaq qillqasqapi qhawarin).
+- Hawa t'inkikuna link‑checkpi: Ima hawa sitioskuna (e.g., addons.thunderbird.net) robotkuna maskhayta hark'an, 403 rikuchinqa. Previewqa qallarin; kaykunataqa ama phiñakuychu.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Website tikray {#translate-website}
 
-What you can translate
+Imakunata tikrakuyta atinki
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Website UI sapallan: qallariq p'anqa, navbar, footer, hinallataq huk UI simikuna. Docskunaqa kunanmi Inglés‑sapallan kachkan.
 
-Where to edit
+Maypita ch'iqllay
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` ch'iqllay (`en` hina qhawariy). `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` hina placeholdersqa imaraykuchus mana hukllachisqachu kachun.
 
-Generate or refresh files
+Willañiqikunata paqarichiy utaq kunanyachiy
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Llapan localkunapaq q'ipi wiñachiq stubs paqarichiy: `npm --prefix website run i18n:stubs`
+- Inglesmanta stubsqa hunt'achiy (musuq simikuna yapaspa qhipa): `npm --prefix website run i18n:stubs:force`
+- Huk sapallan localepaq alternativa: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Qallariq p'anqa/navbar/footer UI simikunata tikray (OpenAI)
 
-- Set credentials once (shell or .env):
+- Hukk'ipa credencialkuna churay (shell utaq .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Uyariypaq: `export OPENAI_MODEL=gpt-4o-mini`
+- Huk kutilla (llapan localkuna, en saqispa): `make translate_web_index`
+- Kay localkunaman huch'uyachiy: `make translate_web_index OPTS="--locales de,fr"`
+- Chaymi existente valoriskunata qhipaman qillqay: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Chiqaqchay & kutichiy
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Tikray scriptsqa JSON ukhu ruranata chiqaqchachin, k'urkunawan (curly‑brace) placeholdersqa waqaychan, URLkuna mana hukllachisqa kachun.
+- Chiqaqchayqa pantaspa, willakuywan 2 cutitaqmi kutichin, chaymanta existente valoriskunata qhispichin.
 
-Preview your locale
+Lokaleykita ñawpaq qhawariy
 
 - Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Kayman ayway: `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Apachiy
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- PR kichay ch'iqllasqa `code.json` willañiqikunawan. Hukllaña tikraykunata waqaychay, aslla pantallapa qillqasqata (screenshot) churay atipaspa.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Seguridad & Configuración tipkuna {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` ama commit‑chaychu (buildqa huk ratupi paqarichin)
+- `browser_specific_settings.gecko.id` estable qichuy, update chakanata waqaychanaykipaq
+
+---
+
+### Settings persistenciata {#settings-persistence}
+
+- Allqay: Llapan usuariopa ajusteskunan `storage.local` ukhun kawsanku, hinallataq add‑on kunan‑kunanchaqtinkama qhispichasqalla kawsanku.
+- Instalación: Predeterminado chaninakunam churasqa, llavesqa huch'uy (undefined) kaptinlla.
+- Kunanyachiy: Migraciónqa llaves huch'uykuna sapallan hunt'achin; kachkasqa valoriskunataqa manaraqmi tikrachkanchu.
+- Schema chinpu: `settingsVersion` (kunan `1`).
+- Llavekuna hinallataq predeterminadokuna:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Código: qhaway `sources/background.js` → `initializeOrMigrateSettings()` hinallataq `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Ruwakuy llamk'ay (musuq ajustes yapay)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `SCHEMA_VERSION` nisqata wiñachiy `sources/background.js` ukhun.
+- Musuq llave + predeterminadoqa yapay `DEFAULTS` objetoman `initializeOrMigrateSettings()` ukhun.
+- “only‑if‑undefined” nisqa ruwanawan defaults seed‑chay; kachkasqa valoriskunata ama tikraychu.
+- Ajustesqa kay usuariopa qhawanaypaqmi kaptin, `sources/options.js` ukhun ch'aninchay, simikunata llocalizachispa.
+- Testkuna yapay/hunt'achiy (qhaway `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Makiwan probar tipkuna
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Musuq instala simulasiyuta ruwachiy: extensiónpa datapa q'ipinta pichay utaq musuq perfilwan qallariy.
+- Kunanyachiy simulasiyuta ruwachiy: `settingsVersion`ta `0`man ch'iqllay `storage.local` ukhun, chaymanta musuqmanta chaqna; kachkasqa valoriskuna mana tikrasqachu kachkanku, llaves huch'uykuna sapallan yapasqama.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Solución de problemas {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird 128 ESR utaq musuq kananpaq qhawariy
+- Runtime ch'iqllakunaqa Error Consolepi qhaway
+- Almacenadasqa ajustesqa mana allin ruwanaykipaq rikch'akuptin, Thunderbirdta qhichuy chaymanta yapamanta qallariy. (Thunderbirdqa sesionkunapaq estado waqaychawan; musuq qallariyqa musuq ajusteskunata apachin).
 
 ---
 
-### Translations
+### CI & Cobertura {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`)qa vitestta purichin cobertura umbralniykuwan (85% lines/functions/branches/statements). Umbralqa mana chaskisqa kaptinqa, llamk'ayqa pantan.
+- Workflowqa artifact `coverage-html`ta uppaqarin HTML reportwan; run p'anqamanta uraykuy (Actions → huk ñawpaq run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Yanapay {#contributing}
 
-Screenshots for docs
+- Qhaway CONTRIBUTING.md ramas/commit/PR pautakunapaq
+- Tip: Huk Thunderbirdda desarrollo perfilta ruway, qhawariypaq, sapa p'unchaw perfilniyta ama maqchurinaykipaq.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Tikraykuna
+
+- Hatun “all → all” tikray llamk'aykuna suni, k'achallachu kay. Huch'uymanta qallariy (e.g., wakin docskuna hinallataq 1–2 localkuna), qhaway, chaymanta yapay.
+
+---
+
+- Kutichiy politika: tikray llamk'aykuna 3 cuti kutichin API pantasqakunapi, backoff exponencialniyuq; qhaway `scripts/translate_web_docs_batch.js` hinallataq `scripts/translate_web_docs_sync.js`.
+
+Docspaq pantallapa capturakuna
+
+- Imaymana imagenakunata waqaychay `website/static/img/` ukhun.
+- MD/MDXpi kayninta qhawariy `useBaseUrl('/img/<filename>')` nisqawan, ñanankuna sitioqpa `baseUrl`wan allinta llamk'anankupaq.
+- `website/static/img/` ukhun imagenata yapaspa utaq sutichaykuspa, llapan t'inkikuna `useBaseUrl('/img/…')`taqa todavía llamk'achkanku chaymanta lokal previewpi ruranankuchu qhaway.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- Multi‑size `favicon.ico`qa automáticuta rurasqa llapan build ñanninkunapi (Make + scripts) `website/scripts/build-favicon.mjs`wan.
+- Mana makiwan ruwanakuchu; `icon-*.png` kunanyachiyllan aswan allin.
+  Qhaway tip
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Front‑matter `id`ta ama tikraychu docs tikrasqapi; `title` hinallataq `sidebar_label`lla tikray kaykunam kaptin.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Tarpuy: lokal build/preview ruwayninakunata qichuy.
+- Llamk'ay: `make clean`
+- Qichun (kaptin):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Tarpuy: formateay, test, changelog kunanyachiy, commit, hinallataq push.
+- Llamk'ay: `make commit`
+- Nisqapi: Prettierta (qillqa), `make test`, `make test_i18n` purichin; changelogta yapay musuq diffkuna staged kaptin; `origin/<branch>`man push.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Tarpuy: ESLintta flat configwan purichiy.
+- Llamk'ay: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Tarpuy: llapan targetkunata huk‑linea amaqonawanwan sut'ichiy.
+- Llamk'ay: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Tarpuy: MailExtensionta lint‑chay `web-ext`wan.
+- Llamk'ay: `make lint`
+- Notaskuna: `sources/manifest_LOCAL.json` → `sources/manifest.json` sapallan k'achkan; rurasqa ZIPkunata saqichin; warninqkunaqa manam pipeline‑ta pantachinku.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Tarpuy: menuta interactivo kichan Make target akllanaykipaq hinallataq ukhu argumento.
+- Llamk'ay: `make`ta mana argumentowan purichiy.
+- Notaskuna: `whiptail` mana kachkaptinqa, menuta `make help`man churan.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Tarpuy: ATN hinallataq LOCAL ZIPkunata ruwachiy (`lint`qa reqsi).
+- Llamk'ay: `make pack`
+- Tip: versiónkunata iskaypi wiñachiy `sources/manifest_*.json` ñawpaq, paqichinaykipaq.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Tarpuy: repositorio ukhunpi formateay.
+- Llamk'ay: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Tarpuy: formato qhaway (mana qillqan).
+- Llamk'ay: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Tarpuy: `prettier`paq alias.
+- Llamk'ay: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Tarpuy: Prettier (qillqa), ESLint, chaymanta Vitest (coverage kasqa kaptinqa).
+- Llamk'ay: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Tarpuy: i18n‑qhawasqa testkuna add‑on simikuna hinallataq website docskunapaq.
+- Llamk'ay: `make test_i18n`
+- Purichin: `npm run test:i18n` hinallataq `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Tarpuy: add‑on UI simikunata tikray ENmanta huk localkunaman.
+- Llamk'ay: `make translation_app OPTS="--locales all|de,fr"`
+- Notas: llave k'askikunata hinallataq placeholdersqa waqaychan; `translation_app.log`man qillqan; script form: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Tarpuy: website docskunata tikray `website/docs/*.md`manta `website/i18n/<locale>/...`man.
+- Aqllasqa: `translate_web_docs_batch` (OpenAI Batch API)
+  - Llamk'ay (wank'a): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legado posicionalqa hukllaña kasqan: `OPTS="<doc|all> <lang|all>"`
+- Kawsaynin: JSONL ruwachin, uppaqarin, 30s sapa kuti qhawachin, uhurmanta uraykachin, willañiqikunata qillqachin.
+- Nota: batch llamk'ayqa 24 horas‑kamaqa hamuq kachkan (OpenAI batch ventana nisqamanta). Consolaqa sapa qhawachisqapi pacha lluqsiyta rikuchin.
+- Ambiente: `OPENAI_API_KEY` (reqsi), opcional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Legado: `translate_web_docs_sync`
+  - Llamk'ay (wank'a): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legado posicionalqa hukllaña kasqan: `OPTS="<doc|all> <lang|all>"`
+- Kawsaynin: par sapallan sincrónicuta mañakuykuna (mana batch qhawariy).
+- Notas: `OPTS` saqispaqa, interactivo tapukuykuna; iskay modokunapiqa code blocks/inline code waqaychasqa kachkan, front‑matter `id` mana tikrasqa; `translation_web_batch.log` (batch) utaq `translation_web_sync.log` (sync)man qillqan.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Tarpuy: website UI simikunata tikray (qallariq p'anqa, navbar, footer) `website/i18n/en/code.json`manta llapan localkunaman `website/i18n/<locale>/code.json` ukhunpi (`en` saqispa).
+- Llamk'ay: `make translate_web_index` utaq `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Reqsisqa: `OPENAI_API_KEY` apachiy (opcional: `OPENAI_MODEL=gpt-4o-mini`).
+- Kawsaynin: JSON ukhu ruranata chiqaqchachin, k'urkunawan placeholders waqaychan, URLkuna mana tikrachkan, hinallataq chiqaqchay pantasqapi willakuywan kutichin.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Tarpuy: docs sitioqta ruwachiy `website/build`man.
+- Llamk'ay: `make web_build OPTS="--locales en|de,en|all"` (utaq `BUILD_LOCALES="en de"`ta churay)
+- Ukhupi: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Depkuna: `npm ci`ta purichin `website/` ukhun, `website/node_modules/@docusaurus` mana kachkaptin.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Tarpuy: offline‑safe link check.
+- Llamk'ay: `make web_build_linkcheck OPTS="--locales en|all"`
+- Notas: `tmp_linkcheck_web_pages`man ruwachin; GH Pages `baseUrl`ta `/`man ñit'in; hawa HTTP(S) t'inkikunata saqichin.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Tarpuy: lokal gh‑pages preview opcional tests/link‑checkwan.
+- Llamk'ay: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Kawsaynin: ñawpaqmi Node preview serverta yachachin (`scripts/preview-server.mjs`, `/__stop`ta sustentan), ama kaptin `python3 -m http.server`man kutin; 8080–8090pi servin; PID `web-local-preview/.server.pid` ukhun.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Tarpuy: `website/build`ta pusha `gh-pages` ramasman.
+- Llamk'ay: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Tip: `NPM=…`ta churay Makefile llamk'achiq paquete manejadorta t'aqllanaykipaq (defaultqa `npm`).

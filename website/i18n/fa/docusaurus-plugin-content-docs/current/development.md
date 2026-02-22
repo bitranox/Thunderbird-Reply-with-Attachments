@@ -4,294 +4,296 @@ title: 'توسعه'
 sidebar_label: 'توسعه'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## راهنمای توسعه {#development-guide}
+
+:::note فقط انگلیسی را ویرایش کنید؛ ترجمه‌ها انتشار می‌یابند
+مستندات را **فقط** زیر `website/docs` (انگلیسی) به‌روزرسانی کنید. ترجمه‌های زیر `website/i18n/<locale>/…` تولید می‌شوند و نباید به‌صورت دستی ویرایش شوند. برای تازه‌سازی محتوای محلی‌شده از وظایف ترجمه (مثلاً `make translate_web_docs_batch`) استفاده کنید.
 :::
 
-### Prerequisites {#prerequisites}
+### پیش‌نیازها {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ و npm (با Node 22 آزمایش شده)
+- Thunderbird 128 ESR یا جدیدتر (برای تست دستی)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### چیدمان پروژه (در سطح بالا) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- ریشه: اسکریپت بسته‌بندی `distribution_zip_packer.sh`، مستندات، اسکرین‌شات‌ها
+- `sources/`: کد اصلی افزونه (پس‌زمینه، رابط گزینه‌ها/پنجره پاپ‌آپ، مانیفست‌ها، آیکن‌ها)
+- `tests/`: مجموعه Vitest
+- `website/`: مستندات Docusaurus (با i18n زیر `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### نصب و ابزارها {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- نصب وابستگی‌های ریشه: `npm ci`
+- مستندات (اختیاری): `cd website && npm ci`
+- کشف اهداف: `make help`
+
+---
+
+### توسعه زنده (web‑ext run) {#live-dev-web-ext}
+
+- حلقه سریع در Firefox Desktop (فقط تست‌های سطحی رابط):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- اجرا در Thunderbird (ترجیحی برای MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- نکته‌ها:
+- کنسول خطای Thunderbird را باز نگه دارید (Tools → Developer Tools → Error Console).
+- صفحات رویداد MV3 در حالت بیکار معلق می‌شوند؛ پس از تغییر کد افزونه را ریلود کنید یا اجازه دهید web‑ext خودکار ریلود کند.
+- برخی رفتارهای مخصوص Firefox متفاوت‌اند؛ همیشه در Thunderbird برای برابری API بررسی کنید.
+- مسیرهای باینری Thunderbird (نمونه‌ها):
+- لینوکس: `thunderbird` (مثلاً `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
-- Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- ویندوز: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
+- جداسازی پروفایل: برای توسعه از یک پروفایل Thunderbird جداگانه استفاده کنید تا روی تنظیمات روزمره‌تان تأثیر نگذارد.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### اهداف Make (به‌ترتیب حروف الفبا) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile جریان‌های متداول توسعه را استاندارد می‌کند. هر زمان `make help` را اجرا کنید تا خلاصه یک‌خطی هر هدف را ببینید.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+نکته: اجرای `make` بدون هدف، یک منوی ساده Whiptail برای انتخاب هدف باز می‌کند.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| هدف                                                      | توضیح یک‌خطی                                                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | حذف آرتیفکت‌های ساخت/پیش‌نمایش محلی (tmp/، web-local-preview/، website/build/).               |
+| [`commit`](#mt-commit)                                   | قالب‌بندی، اجرای تست‌ها (ازجمله i18n)، به‌روزرسانی changelog، commit و push.                  |
+| [`eslint`](#mt-eslint)                                   | اجرای ESLint از طریق پیکربندی flat (`npm run -s lint:eslint`).                                |
+| [`help`](#mt-help)                                       | فهرست همه اهداف با مستندات یک‌خطی (مرتب‌شده).                                                 |
+| [`lint`](#mt-lint)                                       | web‑ext lint روی `sources/` (مانیفست موقت؛ ZIPها را نادیده می‌گیرد؛ غیر بحرانی).              |
+| [`menu`](#mt-menu)                                       | منوی تعاملی برای انتخاب یک هدف و آرگومان‌های اختیاری.                                         |
+| [`pack`](#mt-pack)                                       | ساخت ZIPهای ATN و LOCAL (لینتر را اجرا می‌کند؛ اسکریپت بسته‌بندی را فراخوانی می‌کند).         |
+| [`prettier`](#mt-prettier)                               | فرمت کردن مخزن درجا (تغییرات را می‌نویسد).                                                    |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier در حالت بررسی (بدون نوشتن)؛ اگر نیاز به بازفرمت باشد، شکست می‌خورد.                  |
+| [`prettier_write`](#mt-prettier_write)                   | نام مستعار برای `prettier`.                                                                   |
+| [`test`](#mt-test)                                       | Prettier (نوشتن)، ESLint، سپس Vitest (اگر پوشش پیکربندی شده).                                 |
+| [`test_i18n`](#mt-test_i18n)                             | تست‌های فقط i18n: جای‌نگهدارها/برابری افزونه + برابری وب‌سایت.                                |
+| [`translate_app`](#mt-translation-app)                   | نام مستعار برای `translation_app`.                                                            |
+| [`translation_app`](#mt-translation-app)                 | ترجمه رشته‌های رابط کاربری اپ از `sources/_locales/en/messages.json`.                         |
+| [`translate_web_docs_batch`](#mt-translation-web)        | ترجمه اسناد وب‌سایت از طریق OpenAI Batch API (ترجیحی).                                        |
+| [`translate_web_docs_sync`](#mt-translation-web)         | ترجمه اسناد وب‌سایت به‌صورت همگام (قدیمی، غیر batch).                                         |
+| [`translate_web_index`](#mt-translation_web_index)       | نام مستعار برای `translation_web_index`.                                                      |
+| [`translation_web_index`](#mt-translation_web_index)     | ترجمه رابط صفحه اصلی/نوار ناوبری/پانوشت (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | ساخت اسناد به `website/build` (پشتیبانی از `--locales` / `BUILD_LOCALES`).                    |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | بررسی لینک آفلاین-ایمن (پیوندهای HTTP[S] دوردست را رد می‌کند).                                |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | پیش‌نمایش محلی gh‑pages؛ سرو خودکار روی 8080–8090؛ تست/بررسی لینک اختیاری.                    |
+| [`web_push_github`](#mt-web_push_github)                 | ارسال `website/build` به شاخه `gh-pages`.                                                     |
 
-Syntax for options
+نحو گزینه‌ها
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- از `make <command> OPTS="…"` برای ارسال گزینه‌ها استفاده کنید (استفاده از کوتیشن توصیه می‌شود). هر هدف در زیر مثال استفاده را نشان می‌دهد.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### نکته‌های ساخت برای محلی‌سازی {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- ساخت زیرمجموعه‌ای از زبان‌ها: `BUILD_LOCALES="en de"` را تنظیم کنید یا `OPTS="--locales en,de"` را به اهداف وب بدهید.
+- پیش‌نمایش یک زبان خاص: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### ساخت و بسته‌بندی {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ساخت ZIPها: `make pack`
+- فایل‌های ATN و LOCAL ZIP را در ریشه مخزن تولید می‌کند (آرتیفکت‌ها را دستی ویرایش نکنید)
+- نکته: نسخه را پیش از بسته‌بندی در هر دو `sources/manifest_ATN.json` و `sources/manifest_LOCAL.json` به‌روزرسانی کنید
+- نصب دستی (توسعه): Thunderbird → Tools → Add‑ons and Themes → چرخ‌دنده → Install Add‑on From File… → ZIP ساخته‌شده را انتخاب کنید
+
+---
+
+### تست {#test}
+
+- مجموعه کامل: `make test` (Vitest)
+- پوشش‌دهی (اختیاری):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` را اجرا کنید؛ برای گزارش HTML، `coverage/index.html` را باز کنید
+- فقط i18n: `make test_i18n` (کلیدها/جای‌نگهدارها/عنوان‌های رابط + برابری وب‌سایت به‌تفکیک زبان و سند با بررسی id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### اشکال‌زدایی و لاگ‌ها {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- جابه‌جایی لاگ‌های پرحجم در زمان اجرا:
+- فعال: `messenger.storage.local.set({ debug: true })`
+- غیرفعال: `messenger.storage.local.set({ debug: false })`
+- لاگ‌ها هنگام نگارش/ارسال پاسخ‌ها نمایش داده می‌شوند
 
 ---
 
-### Docs (website) {#docs-website}
+### مستندات (وب‌سایت) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- سرور توسعه: `cd website && npm run start`
+- ساخت سایت استاتیک: `cd website && npm run build`
+- معادل‌های Make (به‌ترتیب حروف الفبا): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- مثال‌های استفاده:
+- فقط EN، پرش از تست/بررسی لینک، بدون push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- همه زبان‌ها، با تست/بررسی لینک، سپس push: `make web_build_local_preview && make web_push_github`
+- قبل از انتشار، بررسی لینک آفلاین-ایمن را اجرا کنید: `make web_build_linkcheck`.
+- i18n: انگلیسی در `website/docs/*.md`؛ ترجمه‌های آلمانی در `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- جستجو: اگر متغیرهای محیطی Algolia DocSearch در CI تنظیم شده باشند (`DOCSEARCH_APP_ID`، `DOCSEARCH_API_KEY`، `DOCSEARCH_INDEX_NAME`)، سایت از جستجوی Algolia استفاده می‌کند؛ در غیر این صورت به جستجوی محلی برمی‌گردد. در صفحه اصلی، `/` یا `Ctrl+K` را بزنید تا جعبه جستجو باز شود.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### مسیر تغییرمسیر کمک مالی {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- مسیر: `/donate` (و `/<locale>/donate`)
+- رفتار:
+- اگر مسیر فعلی دارای زبان باشد (مثلاً `/de/donate`)، از همان استفاده می‌شود
+- در غیر این صورت، بهترین تطابق از `navigator.languages` در برابر زبان‌های پیکربندی‌شده انتخاب می‌شود؛ در نهایت به زبان پیش‌فرض برمی‌گردد
+- تغییرمسیر به:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- سایرین → `/<locale>/docs/donation`
+- از `useBaseUrl` برای مدیریت صحیح baseUrl استفاده می‌کند
+- شامل meta refresh + لینک `noscript` به‌عنوان پشتیبان است
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### نکته‌های پیش‌نمایش {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- پیش‌نمایش Node را تمیز متوقف کنید: `http://localhost:<port>/__stop` را باز کنید (پس از `Local server started` چاپ می‌شود).
+- اگر تصاویر در MDX/JSX بارگذاری نمی‌شوند، از `useBaseUrl('/img/...')` استفاده کنید تا `baseUrl` سایت رعایت شود.
+- پیش‌نمایش ابتدا شروع می‌شود؛ بررسی لینک سپس اجرا می‌شود و مسدودکننده نیست (لینک‌های خارجی شکسته پیش‌نمایش را متوقف نمی‌کنند).
+- نمونه URL پیش‌نمایش: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (پس از «Local server started» چاپ می‌شود).
+- لینک‌های خارجی در بررسی لینک: برخی سایت‌های خارجی (مثلاً addons.thunderbird.net) خزنده‌های خودکار را مسدود می‌کنند و ممکن است در بررسی لینک‌ها 403 نشان دهند. پیش‌نمایش همچنان شروع می‌شود؛ نادیده‌گرفتن آن‌ها بی‌خطر است.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### ترجمه وب‌سایت {#translate-website}
 
-What you can translate
+چه چیزهایی را می‌توانید ترجمه کنید
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- فقط رابط وب‌سایت: صفحه اصلی، نوار ناوبری، پانوشت و رشته‌های دیگر رابط. محتوای اسناد فعلاً فقط انگلیسی می‌ماند.
 
-Where to edit
+کجا ویرایش کنیم
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` را ویرایش کنید (از `en` به‌عنوان مرجع استفاده کنید). جای‌نگهدارهایی مانند `{year}`، `{slash}`، `{ctrl}`، `{k}`، `{code1}` را بدون تغییر نگه دارید.
 
-Generate or refresh files
+تولید یا نوسازی فایل‌ها
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- ایجاد stubهای مفقود برای همه زبان‌ها: `npm --prefix website run i18n:stubs`
+- بازنویسی stubها از انگلیسی (پس از افزودن رشته‌های جدید): `npm --prefix website run i18n:stubs:force`
+- جایگزین برای یک زبان واحد: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+ترجمه رشته‌های رابط صفحه اصلی/نوار ناوبری/پانوشت (OpenAI)
 
-- Set credentials once (shell or .env):
+- اعتبارنامه‌ها را یک‌بار تنظیم کنید (شِل یا .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- اختیاری: `export OPENAI_MODEL=gpt-4o-mini`
+- تک‌مرحله‌ای (همه زبان‌ها، به‌جز en): `make translate_web_index`
+- محدودکردن به زبان‌های مشخص: `make translate_web_index OPTS="--locales de,fr"`
+- بازنویسی مقادیر موجود: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+اعتبارسنجی و تلاش‌های مجدد
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- اسکریپت ترجمه شکل JSON را اعتبارسنجی می‌کند، جای‌نگهدارهای آکولادی را حفظ می‌کند و اطمینان می‌دهد URLها تغییر نکنند.
+- در صورت شکست اعتبارسنجی، حداکثر ۲ بار با بازخورد تلاش مجدد می‌کند و سپس مقادیر موجود را حفظ می‌کند.
 
-Preview your locale
+پیش‌نمایش زبان شما
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- سرور توسعه: `npm --prefix website run start`
+- بازدید از `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+ارسال
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- یک PR با فایل(های) `code.json` ویرایش‌شده باز کنید. تغییرات را متمرکز نگه دارید و در صورت امکان یک اسکرین‌شات سریع اضافه کنید.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### نکته‌های امنیت و پیکربندی {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` را کامیت نکنید (به‌صورت موقت توسط بیلد ایجاد می‌شود)
+- `browser_specific_settings.gecko.id` را پایدار نگه دارید تا کانال به‌روزرسانی حفظ شود
+
+---
+
+### پایداری تنظیمات {#settings-persistence}
+
+- ذخیره‌سازی: همه تنظیمات کاربر در `storage.local` نگهداری می‌شوند و در به‌روزرسانی‌های افزونه پایدار می‌مانند.
+- نصب: مقادیر پیش‌فرض فقط وقتی اعمال می‌شوند که یک کلید کاملاً مفقود باشد (undefined).
+- به‌روزرسانی: یک مهاجرت فقط کلیدهای مفقود را پر می‌کند؛ مقادیر موجود هرگز بازنویسی نمی‌شوند.
+- نشانگر طرح: `settingsVersion` (در حال حاضر `1`).
+- کلیدها و مقادیر پیش‌فرض:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- کد: ببینید `sources/background.js` → `initializeOrMigrateSettings()` و `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+جریان کار توسعه (افزودن یک تنظیم جدید)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `SCHEMA_VERSION` را در `sources/background.js` افزایش دهید.
+- کلید جدید + پیش‌فرض را به شیء `DEFAULTS` در `initializeOrMigrateSettings()` اضافه کنید.
+- هنگام مقداردهی اولیه پیش‌فرض‌ها از قاعده «فقط اگر undefined باشد» استفاده کنید؛ مقادیر موجود را بازنویسی نکنید.
+- اگر تنظیم برای کاربر قابل‌مشاهده است، آن را در `sources/options.js` متصل کنید و رشته‌های محلی‌سازی‌شده بیفزایید.
+- تست‌ها را اضافه/تنظیم کنید (نگاه کنید به `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+نکته‌های تست دستی
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- شبیه‌سازی نصب تازه: دایرکتوری داده افزونه را پاک کنید یا با پروفایل جدید شروع کنید.
+- شبیه‌سازی به‌روزرسانی: `settingsVersion` را در `storage.local` به `0` تنظیم کنید و مجدداً بارگذاری نمایید؛ تأیید کنید مقادیر موجود بدون تغییر می‌مانند و فقط کلیدهای مفقود اضافه می‌شوند.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### عیب‌یابی {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- اطمینان حاصل کنید Thunderbird نسخه 128 ESR یا جدیدتر است
+- برای مسائل زمان اجرا از Error Console استفاده کنید
+- اگر تنظیمات ذخیره‌شده ظاهراً به‌درستی اعمال نمی‌شوند، Thunderbird را ری‌استارت کنید و دوباره امتحان کنید. (Thunderbird ممکن است وضعیت را بین نشست‌ها کش کند؛ یک ری‌استارت تضمین می‌کند تنظیمات تازه بارگذاری شوند.)
 
 ---
 
-### Translations
+### CI و پوشش {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) vitest را با آستانه‌های پوشش (۸۵٪ خطوط/توابع/شاخه‌ها/عبارات) اجرا می‌کند. اگر آستانه‌ها برآورده نشوند، کار شکست می‌خورد.
+- گردش‌کار یک آرتیفکت `coverage-html` با گزارش HTML بارگذاری می‌کند؛ آن را از صفحه اجرا دانلود کنید (Actions → آخرین اجرا → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### مشارکت {#contributing}
 
-Screenshots for docs
+- برای راهنمای شاخه/کامیت/PR به CONTRIBUTING.md مراجعه کنید
+- نکته: برای تست، یک پروفایل توسعه Thunderbird جداگانه بسازید تا روی پروفایل روزانه‌تان تأثیر نگذارد.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### ترجمه‌ها
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- اجرای کارهای ترجمه بزرگ «همه → همه» می‌تواند کند و پرهزینه باشد. با یک زیرمجموعه شروع کنید (مثلاً چند سند و ۱–۲ زبان)، نتیجه را بازبینی کنید، سپس گسترش دهید.
+
+---
+
+- سیاست تلاش مجدد: کارهای ترجمه تا ۳ بار با backoff نمایی در خطاهای API تلاش می‌کنند؛ ببینید `scripts/translate_web_docs_batch.js` و `scripts/translate_web_docs_sync.js`.
+
+اسکرین‌شات‌ها برای اسناد
+
+- تصاویر را زیر `website/static/img/` ذخیره کنید.
+- آن‌ها را در MD/MDX از طریق `useBaseUrl('/img/<filename>')` ارجاع دهید تا مسیرها با `baseUrl` سایت کار کنند.
+- پس از افزودن یا تغییر نام تصاویر زیر `website/static/img/`، تأیید کنید همه ارجاعات همچنان از `useBaseUrl('/img/…')` استفاده می‌کنند و در پیش‌نمایش محلی رندر می‌شوند.
+  فاوآیکن‌ها
+
+- `favicon.ico` چنداندازه به‌صورت خودکار در همه مسیرهای ساخت (Make + اسکریپت‌ها) از طریق `website/scripts/build-favicon.mjs` تولید می‌شود.
+- نیازی به گام دستی نیست؛ به‌روزرسانی `icon-*.png` کافی است.
+  نکته بازبینی
+
+- `id` بخش سرآغاز را در اسناد ترجمه‌شده بدون تغییر نگه دارید؛ فقط `title` و `sidebar_label` را در صورت وجود ترجمه کنید.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- هدف: حذف آرتیفکت‌های ساخت/پیش‌نمایش محلی.
+- استفاده: `make clean`
+- حذف می‌کند (در صورت وجود):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- هدف: قالب‌بندی، تست، به‌روزرسانی changelog، کامیت و پوش.
+- استفاده: `make commit`
+- جزئیات: Prettier (نوشتن)، `make test`, `make test_i18n` را اجرا می‌کند؛ وقتی تفاوت‌های staged وجود دارد تغییرات را به changelog می‌افزاید؛ به `origin/<branch>` پوش می‌کند.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- هدف: اجرای ESLint از طریق پیکربندی flat.
+- استفاده: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- هدف: فهرست همه اهداف با مستندات یک‌خطی.
+- استفاده: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- هدف: lint افزونه MailExtension با `web-ext`.
+- استفاده: `make lint`
+- نکات: `sources/manifest_LOCAL.json` → `sources/manifest.json` را موقتاً کپی می‌کند؛ ZIPهای ساخته‌شده را نادیده می‌گیرد؛ هشدارها باعث شکست پایپ‌لاین نمی‌شوند.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- هدف: منوی تعاملی برای انتخاب یک هدف Make و آرگومان‌های اختیاری.
+- استفاده: `make` را بدون آرگومان اجرا کنید.
+- نکات: اگر `whiptail` در دسترس نباشد، منو به `make help` برمی‌گردد.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- هدف: ساخت ZIPهای ATN و LOCAL (وابسته به `lint`).
+- استفاده: `make pack`
+- نکته: نسخه‌ها را در هر دو `sources/manifest_*.json` پیش از بسته‌بندی افزایش دهید.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- هدف: فرمت کردن مخزن درجا.
+- استفاده: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- هدف: تأیید فرمت (بدون نوشتن).
+- استفاده: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- هدف: نام مستعار برای `prettier`.
+- استفاده: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- هدف: اجرای Prettier (نوشتن)، ESLint، سپس Vitest (اگر نصب شده باشد، با پوشش).
+- استفاده: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- هدف: تست‌های متمرکز بر i18n برای رشته‌های افزونه و اسناد وب‌سایت.
+- استفاده: `make test_i18n`
+- اجرا می‌کند: `npm run test:i18n` و `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- هدف: ترجمه رشته‌های رابط کاربری افزونه از EN به سایر زبان‌ها.
+- استفاده: `make translation_app OPTS="--locales all|de,fr"`
+- نکات: ساختار کلید و جای‌نگهدارها را حفظ می‌کند؛ در `translation_app.log` لاگ می‌نویسد. شکل اسکریپت: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- هدف: ترجمه اسناد وب‌سایت از `website/docs/*.md` به `website/i18n/<locale>/...`.
+- ترجیحی: `translate_web_docs_batch` (OpenAI Batch API)
+  - استفاده (فلگ‌ها): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - شکل قدیمی positional همچنان پذیرفته می‌شود: `OPTS="<doc|all> <lang|all>"`
+- رفتار: JSONL می‌سازد، آپلود می‌کند، هر 30 ثانیه پول می‌زند، نتایج را دانلود و فایل‌ها را می‌نویسد.
+- نکته: یک کار batch ممکن است تا 24 ساعت طول بکشد (بر اساس پنجره batch OpenAI). کنسول در هر پول زمان سپری‌شده را نشان می‌دهد.
+- محیط: `OPENAI_API_KEY` (الزامی)، اختیاری `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (پیش‌فرض 24h)، `BATCH_POLL_INTERVAL_MS`.
+- قدیمی: `translate_web_docs_sync`
+  - استفاده (فلگ‌ها): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - شکل قدیمی positional همچنان پذیرفته می‌شود: `OPTS="<doc|all> <lang|all>"`
+- رفتار: درخواست‌های همگام برای هر جفت (بدون تجمیع batch).
+- نکات: درخواست‌های تعاملی وقتی `OPTS` حذف شده باشد. هر دو حالت بلوک‌های کد/کد درون‌خطی را حفظ می‌کنند و `id` سرآغاز را بدون تغییر نگه می‌دارند؛ لاگ‌ها در `translation_web_batch.log` (batch) یا `translation_web_sync.log` (sync) نوشته می‌شوند.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- هدف: ترجمه رشته‌های رابط وب‌سایت (صفحه اصلی، نوار ناوبری، پانوشت) از `website/i18n/en/code.json` به همه زبان‌ها زیر `website/i18n/<locale>/code.json` (به‌جز `en`).
+- استفاده: `make translate_web_index` یا `make translate_web_index OPTS="--locales de,fr [--force]"`
+- ملزومات: export کردن `OPENAI_API_KEY` (اختیاری: `OPENAI_MODEL=gpt-4o-mini`).
+- رفتار: ساختار JSON را اعتبارسنجی می‌کند، جای‌نگهدارهای آکولادی را حفظ می‌کند، URLها را بدون تغییر نگه می‌دارد و در خطاهای اعتبارسنجی با بازخورد دوباره تلاش می‌کند.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- هدف: ساخت سایت اسناد به `website/build`.
+- استفاده: `make web_build OPTS="--locales en|de,en|all"` (یا تنظیم `BUILD_LOCALES="en de"`)
+- داخلی‌ها: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- وابستگی‌ها: `npm ci` را در `website/` فقط اگر `website/node_modules/@docusaurus` وجود نداشته باشد اجرا می‌کند.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- هدف: بررسی لینک آفلاین-ایمن.
+- استفاده: `make web_build_linkcheck OPTS="--locales en|all"`
+- نکات: به `tmp_linkcheck_web_pages` می‌سازد؛ `baseUrl` صفحات GH را به `/` بازنویسی می‌کند؛ لینک‌های HTTP(S) دوردست را رد می‌کند.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- هدف: پیش‌نمایش محلی gh‑pages با تست/بررسی لینک اختیاری.
+- استفاده: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- رفتار: ابتدا سرور پیش‌نمایش Node را امتحان می‌کند (`scripts/preview-server.mjs`، پشتیبانی از `/__stop`)، در صورت لزوم به `python3 -m http.server` برمی‌گردد؛ روی 8080–8090 سرو می‌کند؛ PID در `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- هدف: ارسال `website/build` به شاخه `gh-pages`.
+- استفاده: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+نکته: `NPM=…` را تنظیم کنید تا مدیر بسته استفاده‌شده توسط Makefile را بازنویسی کنید (پیش‌فرض `npm` است).
 
 ---

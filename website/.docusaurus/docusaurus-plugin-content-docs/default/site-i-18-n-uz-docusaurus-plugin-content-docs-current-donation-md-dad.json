@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donatsiya",
-  "description": "Donate",
+  "title": "Ehson qiling",
+  "description": "---",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donatsiya",
-    "sidebar_label": "Donatsiya"
+    "title": "Ehson qiling",
+    "sidebar_label": "Xayriya qiling"
   },
   "sidebar": "docs",
   "previous": {

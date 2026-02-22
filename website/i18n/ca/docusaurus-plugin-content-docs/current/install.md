@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Instal·lació'
 ---
 
-## Instal·lació a través de "Extensions i Temes de Thunderbird" {#installation-in-thunderbird-recommended}
+---
+
+## Instal·lació mitjançant "Complements i Temes de Thunderbird" {#installation-in-thunderbird-recommended}
 
 :::important Versió mínima de Thunderbird
-Aquesta extensió és compatible amb Thunderbird **128 ESR o superior**. Les versions més antigues no són compatibles.
+Aquest complement és compatible amb Thunderbird **128 ESR o posterior**. Les versions anteriors no són compatibles.
 :::
 
-Aquesta és la mètode d'instal·lació recomanada. Les extensions instal·lades des d'ATN (addons.thunderbird.net) reben actualitzacions automàtiques. Les instal·lacions LOCAL/dev no s'actualitzen automàticament.
+Aquest és el mètode d'instal·lació recomanat. Els complements instal·lats des d'ATN (addons.thunderbird.net) reben actualitzacions automàtiques. Les instal·lacions LOCAL/dev no s'actualitzen automàticament.
 
-- Versió mínima de Thunderbird: 128 ESR o superior.
+- Versió mínima de Thunderbird: 128 ESR o posterior.
 
-1. A Thunderbird, vés a **Eines > Extensions i Temes**.
-2. Cerca "respondre amb fitxers adjunts".
-3. Afegeix l'extensió.
+1. A Thunderbird, aneu a **Eines > Complements i Temes**.
+2. Cerqueu "reply with attachments".
+3. Afegiu el complement.
 
-O obre la pàgina de l'extensió directament: [Extensions de Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Instal·lació manual des de XPI {#local-installation-in-thunderbird}
-
-### Descarrega el fitxer XPI {#download-the-xpi-file}
-
-1. Vés a la [pàgina d'extensions de Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Descarrega l'última versió de l'extensió com un fitxer XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Instal·lar a Thunderbird {#install-in-thunderbird-local}
-
-1. Obre Thunderbird.
-2. Vés a **Eines > Extensions i Temes**.
-3. A l'**Administrador d'Extensions**, fes clic a la icona d'engranatge a la cantonada superior dreta.
-4. Tria **Instal·lar extension des del fitxer…** del menú.
-5. Selecciona el fitxer `reply_with_attachments-x.y.z-tb.xpi` descarregat.
-6. Confirma la instal·lació quan se't demani.
+O obriu directament la pàgina del complement: [Complements de Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Instal·lació per a desenvolupament {#installation-for-development}
+## Instal·lació manual des d’un XPI {#local-installation-in-thunderbird}
 
-### Descarrega el repositori {#download-the-repository}
+### Baixar el fitxer XPI {#download-the-xpi-file}
 
-1. Descarrega l'última versió del repositori de GitHub.
-2. Executa `make help` per a més informació.
+1. Aneu a la [pàgina del complement de Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Baixeu la versió més recent del complement com a fitxer XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Instal·lar a Thunderbird {#install-in-thunderbird-dev}
+### Instal·lar al Thunderbird {#install-in-thunderbird-local}
 
-1. Obre Thunderbird.
-2. Vés a **Eines > Extensions i Temes**.
-3. A l'**Administrador d'Extensions**, fes clic a la icona d'engranatge a la cantonada superior dreta.
-4. Tria **Instal·lar extensió des del fitxer…** del menú.
-5. Selecciona el fitxer generat `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirma la instal·lació quan se't demani.
+1. Obriu el Thunderbird.
+2. Aneu a **Eines > Complements i Temes**.
+3. Al **Gestor de complements**, feu clic a la icona d’engranatge a la cantonada superior dreta.
+4. Trieu **Instal·lar complement des d’un fitxer…** al menú.
+5. Seleccioneu el fitxer `reply_with_attachments-x.y.z-tb.xpi` descarregat.
+6. Confirmeu la instal·lació quan se us demani.
 
-Nota: Si Thunderbird no accepta el `.zip` al teu sistema, posa-li el nom `.xpi` i intenta “Instal·lar extensió des del fitxer…” de nou.
+---
+
+## Instal·lació per al desenvolupament {#installation-for-development}
+
+### Baixar el repositori {#download-the-repository}
+
+1. Baixeu la versió més recent del repositori de GitHub.
+2. Executeu `make help` per a més informació.
+
+### Instal·lar al Thunderbird {#install-in-thunderbird-dev}
+
+1. Obriu el Thunderbird.
+2. Aneu a **Eines > Complements i Temes**.
+3. Al **Gestor de complements**, feu clic a la icona d’engranatge a la cantonada superior dreta.
+4. Trieu **Instal·lar complement des d’un fitxer…** al menú.
+5. Seleccioneu el fitxer generat `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Confirmeu la instal·lació quan se us demani.
+
+Nota: Si el Thunderbird no accepta el `.zip` al vostre sistema, reanomeu-lo a `.xpi` i torneu a provar “Instal·lar complement des d’un fitxer…”.
 
 ### On trobar el ZIP LOCAL {#where-local-zip}
 
-- Primer, empaqueta l'extensió: executa `make pack` a la arrel del repositori.
-- Després d'empaquetar, troba el zip “LOCAL” a la arrel del repositori (per exemple, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Abans de tornar a empaquetar per a proves, actualitza les versions tant a `sources/manifest_ATN.json` com a `sources/manifest_LOCAL.json`.
+- Primer, empaqueteu el complement: executeu `make pack` a l’arrel del repositori.
+- Després d’empaquetar, trobareu el zip “LOCAL” a l’arrel del repositori (p. ex., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Abans de tornar a empaquetar per a proves, augmenteu les versions tant a `sources/manifest_ATN.json` com a `sources/manifest_LOCAL.json`.
 
 ---
 
-## Desactivar, Desinstal·lar i Actualitzacions {#disable-uninstall-updates}
+## Desactivar, desinstal·lar i actualitzacions {#disable-uninstall-updates}
 
-- Desactivar: Thunderbird → Eines → Extensions i Temes → troba l'extensió → desactiva.
+- Desactivar: Thunderbird → Eines → Complements i Temes → trobeu el complement → desactiveu-lo.
 - Desinstal·lar: mateixa vista → menú de tres punts → Elimina.
-- Actualitzacions: les instal·lacions d'ATN s'actualitzen automàticament quan es aproven noves versions. Les instal·lacions LOCAL/dev no s'actualitzen automàticament; reinstal·la una nova compilació LOCAL manualment.
-- Elimina la configuració completament: consulta [Privacitat → Eliminació de dades](privacy#data-removal).
+- Actualitzacions: les instal·lacions d’ATN s’actualitzen automàticament quan s’aproven noves versions. Les instal·lacions LOCAL/dev no s’actualitzen automàticament; torneu a instal·lar manualment una nova compilació LOCAL.
+- Eliminar del tot la configuració: vegeu [Privadesa → Eliminació de dades](privacy#data-removal).
 
 Vegeu també
 
-- [Inici ràpid](quickstart)
+- [Guia ràpida](quickstart)

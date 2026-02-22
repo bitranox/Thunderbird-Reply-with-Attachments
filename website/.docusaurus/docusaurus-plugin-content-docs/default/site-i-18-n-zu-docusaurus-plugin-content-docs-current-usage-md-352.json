@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Ukusetshenziswa",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/configuration"
   },
   "next": {
-    "title": "Ukuhambelana",
+    "title": "Ukuhambisana",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/compatibility"
   }
 }

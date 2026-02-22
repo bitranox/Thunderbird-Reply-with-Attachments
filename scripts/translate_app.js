@@ -69,7 +69,7 @@ function listLocalesExceptEn() {
 }
 
 // URL helpers
-const URL_RE = /^(https?:\/\/\S+)$/i; // whole value is a URL
+const _URL_RE = /^(https?:\/\/\S+)$/i; // whole value is a URL
 const URL_INNER_RE = /https?:\/\/[^\s]+/gi; // find URLs inside text
 
 function collectPlaceholders(str) {
@@ -94,7 +94,7 @@ function deepEqualExceptMessage(enEntry, trEntry) {
   return JSON.stringify(a) === JSON.stringify(b);
 }
 
-function validateTranslatedJson(enObj, trObj, locale) {
+function validateTranslatedJson(enObj, trObj, _locale) {
   const issues = [];
   if (!trObj || typeof trObj !== 'object')
     return { ok: false, issues: ['Top-level JSON is not an object'] };

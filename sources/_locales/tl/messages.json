@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Magbabala kung may mga kalakip na hindi isinama ng blacklist"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Isama ang mga inline na larawan (mga naka-embed na larawan)"
+  },
   "uiDebugHeader": {
     "message": "Advanced"
   },

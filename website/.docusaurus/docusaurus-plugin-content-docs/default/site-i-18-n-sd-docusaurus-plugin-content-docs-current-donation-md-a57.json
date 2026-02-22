@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "وادو",
-  "description": "Donate",
+  "title": "عطيو ڏيو",
+  "description": "---",
   "source": "@site/i18n/sd/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "وادو",
-    "sidebar_label": "وادو"
+    "title": "عطيو ڏيو",
+    "sidebar_label": "چندا ڏيو"
   },
   "sidebar": "docs",
   "previous": {

@@ -76,13 +76,13 @@ while :; do
       $HEIGHT $WIDTH $CHOICE_HEIGHT \
       --default-item "$DEFAULT_ITEM" \
       "${ITEMS[@]}" \
-      3>&1 1>&2 2>&3) || exit 1
+      3>&1 1>&2 2>&3) || exit 0
   else
     TARGET=$(whiptail --title "Make Targets" \
       --menu "Select a target — Tab switches buttons" \
       $HEIGHT $WIDTH $CHOICE_HEIGHT \
       "${ITEMS[@]}" \
-      3>&1 1>&2 2>&3) || exit 1
+      3>&1 1>&2 2>&3) || exit 0
   fi
 
   DEFAULT_ITEM="$TARGET"

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Өзгерістер тізімі",
-  "description": "Өзгерістер тізімі",
+  "title": "Өзгерістер журналы",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Өзгерістер тізімі"
+    "title": "Өзгерістер журналы"
   },
   "sidebar": "docs",
   "previous": {

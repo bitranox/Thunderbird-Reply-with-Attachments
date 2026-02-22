@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Snelstart",
-  "description": "Snelstart",
+  "title": "Vinnige begin",
+  "description": "---",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Snelstart",
-    "sidebar_label": "Snelstart"
+    "title": "Vinnige begin",
+    "sidebar_label": "Kitsbegin"
   },
   "sidebar": "docs",
   "previous": {

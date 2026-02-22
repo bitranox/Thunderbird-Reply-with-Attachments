@@ -1,21 +1,27 @@
 ---
 id: changelog
-title: 'چینلګ'
+title: 'د بدلونونو ثبت'
 ---
 
-## چینلګ
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## د بدلونونو تاریخچه
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+د بشپړ او مفصل تاریخ لپاره، د زېرمتون [CHANGELOG.md په GitHub کې](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) وګورئ.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" اوس انځورونه په د ځواب په بدنه کې نېغ په نېغه د base64 داتا URI په توګه ننوي (اصلي حالت: ON)؛ د کود کیفیت ښه والی او د ازموینو پوښښ پراخ شوی.
+- 2.3.1: ضمیمې ساتي حتی وروسته له هغه چې Thunderbird د شالید پېښو پاڼه بې‌کاره/غيرفعال کړي؛ د ستونزو د حل لپاره موخمن ډيبګ هوکونه زیاتوي.
+- 2.3.0: د ضمیمو د نقل لرې کول لا ښه شوي، د ازموینو پوښښ پراخ شوی، او د AMO پالیسيو د پوره کولو لپاره زړې اجازې لرې شوې.
+- 2.1.0: د ۱۰۰ مخکښو ژبو لپاره د نړیوالوالي بشپړ ملاتړ
+- 2.0.0: بشپړ امکانات لرونکې نسخې ته له سره لیکنه (EN/DE)
+- 1.0.1: messages.listAttachments() ته واوښتل
+- 1.0.0: لومړنۍ خپرونه
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## نېټې او کانالونه {#dates-and-channels}
+
+- د ATN ته خپرونې ښايي له بسته‌بندۍ وروسته څو ساعته وځنډېږي.
+- LOCAL بیلډونه یواځې د پراختیاکوونکو د ازموینې لپاره دي او د ATN له لارې نه توزیع کېږي.
 
 ---

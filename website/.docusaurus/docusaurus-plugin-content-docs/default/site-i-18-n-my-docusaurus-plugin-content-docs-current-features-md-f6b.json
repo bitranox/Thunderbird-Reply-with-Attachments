@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "လက္каွေ့များ",
-  "description": "Features",
+  "title": "အင်္ဂါရပ်များ",
+  "description": "---",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "လက္каွေ့များ",
-    "sidebar_label": "လက္каွေ့များ"
+    "title": "အင်္ဂါရပ်များ",
+    "sidebar_label": "အင်္ဂါရပ်များ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "စတင်ကြည့်ရှုခြင်း",
+    "title": "အမြန်စတင်",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/quickstart"
   }
 }

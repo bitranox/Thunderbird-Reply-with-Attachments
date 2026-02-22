@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Nike'
-sidebar_label: 'Nike'
+title: 'Nikela'
+sidebar_label: 'Nikela'
 ---
 
-## Nike
+---
+
+## Nikela
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Uma uthanda i-"Reply with Attachments" futhi ufuna ukweseka ukuthuthukiswa kwayo, ungakwazi ukunikela lapha:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Nikela nge-Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>noma</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Nikela nge-PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>noma</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Ngithengele ikhofi" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skena ukuze ungithengele ikhofi"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Siyabonga! Ukusekela kwakho kusiza ukugcina ukuhambisana nokukhishwa okusha kwe-Thunderbird, kuthuthukisa ukufinyeleleka nezivivinyo, futhi kugcine imibhalo ivuselelwa.
 
-Notes
+Amanothi
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Izixhumanisi zokunikela zivuleka kuphela uma uchofoza kuzo; i-add‑on ayenzi zicelo zenethiwekhi ngemuva.
+- Ukusekela okuqhubekayo kusiza ukugcinwa kwesikhathi eside nezibuyekezo ngesikhathi, kodwa kuyindlela ongazikhethela yona ngokuphelele.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Uma izinkinobho zesithombe zingalayishi, sicela usebenzise lezi zixhumanisi esikhundleni salokho:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Iminikelo ngokuzithandela; akukho ukuvimba izici.
 
 ---
 
-## Ukubona Kweziphumo (90‑day snooze)
+## Ukubonakala Kokunikela (ukuzimisa izinsuku ezi-90)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+I-add‑on ifaka isici esilula sokufihla izikhumbuzi zokunikela isikhashana ngemva kokuba usunikele.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Lapho okutholakala khona
+  - Ezikhethweni → isigaba se-Support: uzobona inkinobho ethi “Nginikele” kanye nendawo encane yesikhombisi.
+  - Idayalogu yokuqinisekisa ukuthumela ibuye ikhombise inkinobho ethi Nikela; ifihleka ngokuzenzakalela lapho i-snooze isebenza.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Indlela esebenza ngayo
+  - Ukuchofoza “Nginikele” kufihla izinkinobho zokunikela nezikhumbuzi ezihambisanayo izinsuku ezi-90.
+  - Isikhombisi sesimo sibonisa “Kufihlwe kuze kube YYYY‑MM‑DD” (ngosuku lwakho lwendawo). Kukhona futhi inkinobho ethi “Khombisa uNikela futhi” ukuze kubuyiselwe ukubonakala ngokushesha.
+  - Ngemva kwezinsuku ezi-90, inkinobho ethi Nikela iba sobala ngokuzenzakalela futhi.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Ubumfihlo nokugcinwa
+  - I-add‑on igcina i-timestamp eyodwa ekugcinweni kwendawo ye-Thunderbird ukuze ikhumbule isikhathi se-snooze. Ukhiye: `donateHideUntil` (amamilisekhondi e-epoch).
+  - Lesi silungiselelo siyendawo kuphrofayela yakho ye-Thunderbird (asingahlanganiswa nefu). Azikho izicelo zenethiwekhi ezenziwa yilesi sici.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Ukuxazulula izinkinga
+  - Uma i-Nikela isabonakala ngokushesha ngemva kokucofa “Nginikele”, linda isikhashana noma uvule kabusha ikhasi lezinketho; i-UI ivuselelwa ngokushesha nje lapho isethingi isilondoloziwe.
+  - Ukuqalisa kabusha mathupha, chofoza “Khombisa uNikela futhi”. Ungalinda futhi kuze kudlule usuku olubaluliwe esikhombisini.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Lesi sici sikhona ngenxa yokunethezeka kuphela; asivimbi ukusebenza kwe-add‑on futhi asiqoqi noma yiluphi ulwazi lomuntu siqu.
 
 ---

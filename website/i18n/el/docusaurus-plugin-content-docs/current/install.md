@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Εγκατάσταση'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Εγκατάσταση μέσω "Πρόσθετα και Θέματα του Thunderbird" {#installation-in-thunderbird-recommended}
+
+:::important Ελάχιστη έκδοση Thunderbird
+Αυτό το πρόσθετο υποστηρίζει Thunderbird **128 ESR ή νεότερο**. Οι παλαιότερες εκδόσεις δεν υποστηρίζονται.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Αυτή είναι η προτεινόμενη μέθοδος εγκατάστασης. Τα πρόσθετα που εγκαθίστανται από το ATN (addons.thunderbird.net) λαμβάνουν αυτόματες ενημερώσεις. Οι εγκαταστάσεις LOCAL/dev δεν ενημερώνονται αυτόματα.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Ελάχιστη έκδοση Thunderbird: 128 ESR ή νεότερη.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Στο Thunderbird, μεταβείτε στο **Εργαλεία > Πρόσθετα και Θέματα**.
+2. Αναζητήστε "reply with attachments".
+3. Προσθέστε το πρόσθετο.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Ή ανοίξτε απευθείας τη σελίδα του πρόσθετου: [Πρόσθετα Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Χειροκίνητη εγκατάσταση από XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Λήψη του αρχείου XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Μεταβείτε στη [σελίδα πρόσθετου Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Κατεβάστε την πιο πρόσφατη έκδοση του πρόσθετου ως αρχείο XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Εγκατάσταση στο Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Ανοίξτε το Thunderbird.
+2. Μεταβείτε στο **Εργαλεία > Πρόσθετα και Θέματα**.
+3. Στον **Διαχειριστή πρόσθετων**, κάντε κλικ στο εικονίδιο με το γρανάζι στην πάνω δεξιά γωνία.
+4. Επιλέξτε **Εγκατάσταση πρόσθετου από αρχείο…** από το μενού.
+5. Επιλέξτε το αρχείο `reply_with_attachments-x.y.z-tb.xpi` που κατεβάσατε.
+6. Επιβεβαιώστε την εγκατάσταση όταν σας ζητηθεί.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Εγκατάσταση για ανάπτυξη {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Λήψη του αποθετηρίου {#download-the-repository}
 
-See also
+1. Κατεβάστε την πιο πρόσφατη έκδοση του αποθετηρίου GitHub.
+2. Εκτελέστε `make help` για περισσότερες πληροφορίες.
 
-- [Quickstart](quickstart)
+### Εγκατάσταση στο Thunderbird {#install-in-thunderbird-dev}
+
+1. Ανοίξτε το Thunderbird.
+2. Μεταβείτε στο **Εργαλεία > Πρόσθετα και Θέματα**.
+3. Στον **Διαχειριστή πρόσθετων**, κάντε κλικ στο εικονίδιο με το γρανάζι στην πάνω δεξιά γωνία.
+4. Επιλέξτε **Εγκατάσταση πρόσθετου από αρχείο…** από το μενού.
+5. Επιλέξτε το παραγόμενο αρχείο `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Επιβεβαιώστε την εγκατάσταση όταν σας ζητηθεί.
+
+Σημείωση: Αν το Thunderbird δεν αποδεχτεί το `.zip` στο σύστημά σας, μετονομάστε το σε `.xpi` και δοκιμάστε ξανά το “Install Add‑on From File…”.
+
+### Πού θα βρείτε το LOCAL ZIP {#where-local-zip}
+
+- Πρώτα, δημιουργήστε το πακέτο του πρόσθετου: εκτελέστε `make pack` στη ρίζα του αποθετηρίου.
+- Μετά τη συσκευασία, βρείτε το zip “LOCAL” στη ρίζα του αποθετηρίου (π.χ., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Πριν την επανασυσκευασία για δοκιμή, αυξήστε τις εκδόσεις και στα `sources/manifest_ATN.json` και `sources/manifest_LOCAL.json`.
+
+---
+
+## Απενεργοποίηση, Απεγκατάσταση και Ενημερώσεις {#disable-uninstall-updates}
+
+- Απενεργοποίηση: Thunderbird → Εργαλεία → Πρόσθετα και Θέματα → εντοπίστε το πρόσθετο → απενεργοποιήστε τον διακόπτη.
+- Απεγκατάσταση: ίδια προβολή → μενού με τρεις τελείες → Κατάργηση.
+- Ενημερώσεις: οι εγκαταστάσεις από το ATN ενημερώνονται αυτόματα όταν εγκρίνονται νέες εκδόσεις. Οι εγκαταστάσεις LOCAL/dev δεν ενημερώνονται αυτόματα· εγκαταστήστε χειροκίνητα μια νέα LOCAL έκδοση.
+- Πλήρης κατάργηση ρυθμίσεων: δείτε [Απόρρητο → Κατάργηση δεδομένων](privacy#data-removal).
+
+Δείτε επίσης
+
+- [Γρήγορη εκκίνηση](quickstart)

@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Izici",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Iqalelo Elisheshayo",
+    "title": "Ukuqalisa okusheshayo",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/quickstart"
   }
 }

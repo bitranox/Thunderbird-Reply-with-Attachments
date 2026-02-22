@@ -1,14 +1,16 @@
 ---
 id: donation
-title: 'Donacije'
-sidebar_label: 'Donacije'
+title: 'Донирајте'
+sidebar_label: 'Донирај'
 ---
 
-## Donacije
+---
+
+## Donirajte
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Ako vam se sviđa "Odgovori s prilozima" i želite podržati njegov razvoj, možete donirati ovde:
+Ako vam se dopada "Reply with Attachments" i želite da podržite njegov razvoj, možete donirati ovde:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -34,21 +36,21 @@ Ako vam se sviđa "Odgovori s prilozima" i želite podržati njegov razvoj, mož
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skener za kupovinu kafe"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skenirajte da mi kupite kafu"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Hvala! Vaša podrška pomaže u održavanju kompatibilnosti s novim izdanjima Thunderbirda, poboljšanju pristupačnosti i testiranju, kao i u održavanju ažurirane dokumentacije.
+Hvala vam! Vaša podrška pomaže u održavanju kompatibilnosti sa novim izdanjima Thunderbirda, poboljšanju pristupačnosti i testova i održavanju dokumentacije ažurnom.
 
 Napomene
 
-- Linkovi za donacije se otvaraju samo kada ih kliknete; dodaci ne vrše nikakve pozadinske mrežne zahteve.
-- Ponavljajuća podrška pomaže dugoročno održavanje i pravovremena ažuriranja, ali je potpuno opciona.
+- Linkovi za donacije se otvaraju samo kada kliknete na njih; dodatak ne obavlja nikakve mrežne zahteve u pozadini.
+- Ponavljajuća podrška pomaže dugoročnom održavanju i pravovremenim ažuriranjima, ali je u potpunosti opcionalna.
 
 ---
 
-Ako se slike dugmadi ne učitavaju, molimo koristite ove linkove umesto toga:
+Ako se dugmad sa slikama ne učitaju, umesto toga upotrebite ove linkove:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ Ako se slike dugmadi ne učitavaju, molimo koristite ove linkove umesto toga:
 
 ---
 
-Donacije su dobrovoljne; nema blokiranja funkcionalnosti.
+Donacije su dobrovoljne; nema zaključavanja funkcionalnosti.
 
 ---
 
-## Vidljivost donacija (90-dnevno odlaganje)
+## Vidljivost donacija (90‑dnevno odlaganje)
 
-Dodatak uključuje funkciju pogodnosti da sakrije poruke o donacijama na kratko vreme nakon što ste donirali.
+Dodatak uključuje pogodnost da privremeno sakrije podsetnike za donaciju nakon što ste donirali.
 
-- Gde je pronaći
-  - Opcije → Sekcija podrške: videćete dugme "Donirao sam" i malu hint oblast.
-  - Dijalog za slanje potvrde takođe pokazuje dugme za donaciju; automatski se skriva kada je odlaganje aktivno.
+- Gde se nalazi
+  - Opcije → odeljak Podrška: videćete dugme "Donirao/la sam" i malo područje sa napomenom.
+  - Dijalog potvrde slanja takođe prikazuje dugme "Doniraj"; ono se automatski skriva kada je odlaganje aktivno.
 
-- Kako to funkcioniše
-  - Klikom na "Donirao sam" skrivaju se dugmad za donaciju i srodne poruke na 90 dana.
-  - Statusni hint pokazuje "Skriveno do YYYY-MM-DD" (u vašem lokalnom datumu). Takođe postoji dugme "Ponovo prikaži donaciju" za trenutnu obnovu vidljivosti.
-  - Nakon 90 dana, dugme za donaciju ponovo postaje automatski vidljivo.
+- Kako funkcioniše
+  - Klik na "Donirao/la sam" skriva dugmad za donaciju i povezane podsetnike na 90 dana.
+  - Statusna napomena prikazuje "Skriveno do YYYY‑MM‑DD" (u vašem lokalnom datumu). Tu je i dugme "Prikaži Doniraj ponovo" za trenutno vraćanje vidljivosti.
+  - Nakon 90 dana, dugme "Doniraj" ponovo postaje vidljivo automatski.
 
-- Privatnost i skladištenje
-  - Dodatak čuva jedan vremenski pečat u lokalnom skladištu Thunderbirda kako bi zapamtilo period odlaganja. Ključ: `donateHideUntil` (epoch milisekundi).
-  - Ova postavka je lokalna za vaš Thunderbird profil (nije sinhronizovana u oblak). Ova funkcija ne vrši nikakve mrežne zahteve.
+- Privatnost i čuvanje podataka
+  - Dodatak čuva jedan vremenski pečat u Thunderbirdovom lokalnom skladištu da bi zapamtio period odlaganja. Ključ: `donateHideUntil` (milisekunde epohe).
+  - Ovo podešavanje je lokalno za vaš Thunderbird profil (nije sinhronizovano u oblaku). Ova funkcija ne upućuje nikakve mrežne zahteve.
 
-- Rešavanje problema
-  - Ako se dugme za donaciju još uvek prikazuje odmah nakon klika na "Donirao sam", sačekajte trenutak ili ponovo otvorite stranicu Opcije; UI se ažurira čim se postavka sačuva.
-  - Da biste ručno resetovali, kliknite "Ponovo prikaži donaciju". Takođe možete čekati dok datum naveden u hintu ne prođe.
+- Otklanjanje problema
+  - Ako se "Doniraj" i dalje prikazuje odmah nakon što kliknete "Donirao/la sam", sačekajte trenutak ili ponovo otvorite stranicu Opcije; interfejs se ažurira čim se podešavanje sačuva.
+  - Da biste ručno resetovali, kliknite "Prikaži Doniraj ponovo". Takođe možete sačekati da istekne datum naveden u napomeni.
 
-Ova funkcija je isključivo za pogodnost; nikada ne blokira funkcionalnost dodatka i ne prikuplja nikakve lične podatke.
+Ova funkcija je isključivo radi praktičnosti; nikada ne blokira funkcionalnost dodatka i ne prikuplja nikakve lične podatke.
 
 ---

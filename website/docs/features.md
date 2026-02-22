@@ -23,14 +23,17 @@ sidebar_label: 'Features'
 - Works with Reply and Reply all. Forward is not modified by this add-on.
 - Adds originals even if you already attached something yourself; avoids duplicates by filename.
 - Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+- Skips S/MIME certificates by default to avoid unnecessary attachments.
+- Include inline pictures (default: ON). Embedded images are restored directly in the
+  reply body as base64 data URIs, preserving the original inline layout. Disable in
+  Options to skip inline images entirely.
 
 ---
 
 ## How It Works {#how-it-works}
 
 - On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
+- Filters out S/MIME signatures from file attachments; inline images are restored in the body (unless disabled).
 - Optionally asks for confirmation (keyboard-friendly).
 - Adds eligible files to your compose, avoiding duplicates by filename.
 - See “Why attachments might not be added” in Usage for edge cases.

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Goşundylar gara sanaw boýunça çykarylsa, duýduryş ber"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Içki suratlary goşuň (ýerleşdirilen suratlar)"
+  },
   "uiDebugHeader": {
     "message": "Ösen"
   },

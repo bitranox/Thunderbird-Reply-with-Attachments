@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Haidhi",
-  "description": "Haidhi",
+  "title": "Hokku jawdi",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Haidhi",
-    "sidebar_label": "Haidhi"
+    "title": "Hokku jawdi",
+    "sidebar_label": "Sadaka"
   },
   "sidebar": "docs",
   "previous": {

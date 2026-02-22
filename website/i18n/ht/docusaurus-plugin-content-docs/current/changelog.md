@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Chanjman'
+title: 'Jounal chanjman'
+---
+
 ---
 
 ## Chanjman
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+Pou istwa konplè ak detaye a, gade
+[CHANGELOG.md sou GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+- 2.3.2: "Enkli imaj anliy" kounye a entegre imaj yo dirèkteman nan kò repons lan kòm URI done base64 (pa defo: ON); amelyorasyon kalite kòd la ak kouvèti tès elaji.
+- 2.3.1: Kenbe atachman yo apre Thunderbird mete paj evènman background lan an inaktif; ajoute hook debogaj vize pou rezoud pwoblèm.
+- 2.3.0: Amelyore deduplikasyon atachman yo, elaji kouvèti tès yo, epi retire pèmisyon demode pou satisfè politik AMO yo.
+- 2.1.0: Sipò entènasyonalizasyon konplè pou 100 lang ki pi itilize yo
+- 2.0.0: re-ekri pou vin yon vèsyon konplè ak tout fonksyon (EN/DE)
+- 1.0.1: chanje pou messages.listAttachments()
+- 1.0.0: premye lage
 
-## Dates and channels {#dates-and-channels}
+---
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+## Dat ak chanèl {#dates-and-channels}
+
+- Lage sou ATN yo ka gen kèk èdtan reta apre anbalaj la.
+- Build LOCAL yo se pou tès devlopè sèlman epi yo pa distribye atravè ATN.
+
+---

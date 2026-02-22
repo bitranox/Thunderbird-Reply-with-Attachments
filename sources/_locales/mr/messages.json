@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Warn if attachments are excluded by blacklist"
   },
+  "uiIncludeInlineLabel": {
+    "message": "इनलाइन चित्रे समाविष्ट करा (एम्बेडेड चित्रे)"
+  },
   "uiDebugHeader": {
     "message": "Advanced"
   },

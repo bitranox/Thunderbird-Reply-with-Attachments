@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instal·lació",
-  "description": "Instal·lació a través de \"Extensions i Temes de Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/ca/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",

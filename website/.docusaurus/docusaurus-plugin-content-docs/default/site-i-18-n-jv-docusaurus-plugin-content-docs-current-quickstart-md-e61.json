@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Pandhuan Cepet",
-  "description": "Pandhuan Cepet",
+  "title": "Wiwitan Cepet",
+  "description": "---",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Pandhuan Cepet",
-    "sidebar_label": "Pandhuan Cepet"
+    "title": "Wiwitan Cepet",
+    "sidebar_label": "Miwiti Cepet"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/features"
   },
   "next": {
-    "title": "Instalasi",
+    "title": "Pamasangan",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/install"
   }
 }

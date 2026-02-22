@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Pindura'
-sidebar_label: 'Pindura'
+title: 'Ipa Mupiro'
+sidebar_label: 'Ipa mupiro'
 ---
 
-## Pindura
+---
+
+## Pira
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Kana uchida "Reply with Attachments" uye uchida kutsigira kugadzirwa kwacho, unogona kupira pano:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Pira mari kuburikidza neStripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>kana</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Pira mari kuburikidza nePayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>kana</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Nditengere kofi" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skana kuti unditengere kofi"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Ndatenda! Rutsigiro rwenyu runobatsira kuchengetedza kuenderana nezvaburitswa zvitsva zveThunderbird, kuvandudza kuwanikwa (accessibility) nemiedzo, uye kuchengeta magwaro achivandudzwa nguva nenguva.
 
-Notes
+Zvakakosha
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Zvinongedzo zvekupira zvinongovhura chete kana ukazvidhinda; wedzero haina kuita zvikumbiro zvenetiweki zviri kumashure.
+- Rutsigiro runodzokororwa runobatsira kuchengetedza kwenguva refu nekuvandudzwa nenguva, asi ndeyekuzvidira zvachose.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Kana mabhatani emifananidzo asina kurodha, ndapota shandisa zvinongedzo izvi pachinzvimbo:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Nditengere Kofi](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Mipiro ndeyokuzvidira; hapana mashandiro anovharirwa.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Kuonekwa kweMipiro (kumbomisa kwemazuva 90)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Wedzero iyi ine chinhu chekurerutsa chinovanza kurudziro dzekupa kwechinguva mushure mekunge wapa.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Kwarinowanikwa
+  - Zvirongwa → chikamu cheRubatsiro: uchaona bhatani rinoti “Ndakapira” nenzvimbo diki yechiziviso.
+  - Dialog rekuvimbisa kutumira rinoratidzawo bhatani rePira; rinovanzika roga kana kumbomisa kuri kushanda.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Maitiro azvinoita
+  - Kudzvanya “Ndakapira” kunovanza mabhatani emipiro nezvimwe zvikumbiro zvine chekuita nazvo kwemazuva 90.
+  - Chiratidzo chemamiriro chinoratidza “Chakavanzwa kusvikira YYYY‑MM‑DD” (mune zuva remuno). Panewo bhatani rinoti “Ratidza Pira zvakare” kuti udzorere kuoneka ipapo ipapo.
+  - Pashure pemazuva 90, bhatani rePira rinodzoka rooneka roga.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Zvakavanzika & kuchengetwa
+  - Wedzero iyi inochengeta timestamp imwe chete mudura remuno reThunderbird kuti irangarire nguva yekumbomisa. Kiyi: `donateHideUntil` (mamillisekondi e-epoch).
+  - Iri gadziriro yemuno kuprofile yako yeThunderbird (haisi kuwiriraniswa negore). Hapana zvikumbiro zvenetiweki zvinoitwa nebasa iri.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Kugadzirisa matambudziko
+  - Kana Pira richiri kuratidza pakarepo mushure mekudzvanya “Ndakapira”, mirira chidiki kana uvhure zvekare peji reZvirongwa; UI inogadzirisa pakarepo kana marongero achengetwa.
+  - Kuti ureseti nemaoko, dzvanya “Ratidza Pira zvakare”. Unogonawo kumirira kusvikira zuva rinotaurwa muchiziviso rapfuura.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Chinhu ichi ndechekurerutsa chete; hachimbovharira mashandiro ewedzero uye hachiunganidzi chero ruzivo rwega.
 
 ---

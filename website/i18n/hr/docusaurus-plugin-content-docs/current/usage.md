@@ -1,97 +1,101 @@
 ---
 id: usage
-title: 'Korištenje'
-sidebar_label: 'Korištenje'
+title: 'Uporaba'
+sidebar_label: 'Uporaba'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Upotreba {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Odgovorite i dodatak automatski dodaje originale — ili prvo pita, ako je omogućeno u Opcijama.
+- Uklanjanje duplikata prema nazivu datoteke; S/MIME dijelovi se uvijek preskaču. Ugrađene slike se prema zadanim postavkama vraćaju u tijelo odgovora (onemogućite putem "Uključi ugrađene slike" u Opcijama).
+- Privici na crnoj listi se također preskaču (glob uzorci neosjetljivi na velika/mala slova koji odgovaraju nazivima datoteka, ne putanjama). Vidi [Konfiguraciju](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Što se događa pri odgovoru {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Otkrij odgovor → popiši izvorne privitke → filtriraj S/MIME + ugrađene → neobvezna potvrda → dodaj prihvatljive datoteke (preskoči duplikate) → vrati ugrađene slike u tijelo.
 
----
+Strogi naspram opuštenog prolaza: Dodatak najprije isključuje S/MIME i ugrađene dijelove iz privitaka datoteka. Ako ništa ne ispunjava uvjete, pokreće opušteni prolaz koji i dalje isključuje S/MIME/ugrađene, ali tolerira više slučajeva (vidi Pojedinosti o kodu). Ugrađene slike se nikada ne dodaju kao privici datoteka; umjesto toga, kada je uključeno "Uključi ugrađene slike" (zadano), one se ugrađuju izravno u tijelo odgovora kao base64 data URI-ji.
 
-## Behavior Details {#behavior-details}
+| Vrsta dijela                                             |                   Strogi prolaz |                 Opušteni prolaz |
+| -------------------------------------------------------- | ------------------------------: | ------------------------------: |
+| S/MIME datoteka potpisa `smime.p7s`                      |                      Isključeno |                      Isključeno |
+| S/MIME MIME tipovi (`application/pkcs7-*`)               |                      Isključeno |                      Isključeno |
+| Ugrađena slika na koju upućuje Content‑ID (`image/*`)    | Isključeno (vraćeno u tijelo\*) | Isključeno (vraćeno u tijelo\*) |
+| Priložena e‑poruka (`message/rfc822`) s nazivom datoteke |                     Nije dodano |                Može biti dodano |
+| Uobičajeni privitak datoteke s nazivom                   |                Može biti dodano |                Može biti dodano |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Kada je "Uključi ugrađene slike" omogućeno (zadano: UKLJ.), ugrađene se slike umeću u tijelo odgovora kao base64 data URI-ji umjesto da se dodaju kao privici datoteka. Vidi [Konfiguraciju](configuration#include-inline-pictures).
+
+Primjer: Neki privici mogu nedostajati određenim zaglavljima, ali su i dalje obične datoteke (ne ugrađene/S/MIME). Ako strogi prolaz ne pronađe nijedan, opušteni može prihvatiti takve i priložiti ih.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Unakrsno upućivanje {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Prosljeđivanje se namjerno ne mijenja (vidi Ograničenja niže).
+- Razloge zašto privitak možda neće biti dodan vidi u "Zašto privici možda neće biti dodani".
 
 ---
 
-## Limitations {#limitations}
+## Pojedinosti o ponašanju {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Sprječavanje duplikata: Dodatak označava karticu sastavljanja kao obrađenu koristeći vrijednost sesije po kartici i zaštitu u memoriji. Neće dvaput dodati originale.
+- Zatvaranje i ponovno otvaranje prozora za sastavljanje tretira se kao nova kartica (tj. dopušten je novi pokušaj).
+- Poštivanje postojećih privitaka: Ako sastavljanje već sadrži neke privitke, originali se i dalje dodaju točno jednom, preskačući nazive datoteka koji već postoje.
+- Isključenja: S/MIME artefakti i ugrađene slike su isključeni iz privitaka datoteka. Ako ništa ne ispunjava uvjete u prvom prolazu, opuštena zamjena ponovno provjerava ne‑S/MIME dijelove. Ugrađene slike se obrađuju zasebno: vraćaju se u tijelo odgovora kao data URI‑ji (kada je omogućeno).
+  - Nazivi datoteka: `smime.p7s`
+  - MIME tipovi: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Ugrađene slike: bilo koji `image/*` dio na koji upućuje Content‑ID — isključen iz privitaka datoteka, ali ugrađen u tijelo odgovora kada je "Uključi ugrađene slike" UKLJ.
+  - Priložene e‑poruke (`message/rfc822`): tretiraju se kao obični privici ako imaju naziv datoteke; mogu biti dodane (podložno provjeri duplikata i crnoj listi).
+- Upozorenje o crnoj listi (ako je omogućeno): Kada vaša crna lista isključi kandidate,
+  dodatak prikazuje mali modal s popisom pogođenih datoteka i odgovarajućeg
+  uzorka/uzoraka. Ovo upozorenje se pojavljuje i u slučajevima kada nijedan privitak neće biti
+  dodan jer je sve isključeno.
 
 ---
 
-See also
+## Prečaci na tipkovnici {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Dijalog potvrde: Y/J = Da, N/Esc = Ne; Tab/Shift+Tab i tipke sa strelicama kruže fokusom.
+  - "Zadani odgovor" u [Konfiguraciji](configuration#confirmation) postavlja početno fokusirani gumb.
+  - Enter aktivira fokusirani gumb. Tab/Shift+Tab i strelice pomiču fokus radi pristupačnosti.
+
+### Kratki podsjetnik za tipkovničke prečace {#keyboard-cheat-sheet}
+
+| Tipke               | Radnja                              |
+| ------------------- | ----------------------------------- |
+| Y / J               | Potvrdi Da                          |
+| N / Esc             | Potvrdi Ne                          |
+| Enter               | Aktiviraj fokusirani gumb           |
+| Tab / Shift+Tab     | Pomakni fokus naprijed/natrag       |
+| Tipke sa strelicama | Pomakni fokus između gumba          |
+| Zadani odgovor      | Postavlja početni fokus (Da ili Ne) |
+
+---
+
+## Ograničenja {#limitations}
+
+- Prosljeđivanje se ne mijenja ovim dodatkom (Odgovori i Odgovori svima su podržani).
+- Vrlo veliki privici mogu podlijegati ograničenjima Thunderbirda ili pružatelja usluge.
+  - Dodatak ne dijeli na dijelove niti komprimira datoteke; oslanja se na uobičajeno rukovanje privicima Thunderbirda.
+- Šifrirane poruke: S/MIME dijelovi su namjerno isključeni.
+
+---
+
+## Zašto privici možda neće biti dodani {#why-attachments-might-not-be-added}
+
+- Ugrađene slike se ne dodaju kao privici datoteka. Kada je "Uključi ugrađene slike" UKLJ. (zadano), one se umjesto toga umeću u tijelo odgovora kao data URI‑ji. Ako je postavka ISKLJ., ugrađene slike se u potpunosti uklanjaju. Vidi [Konfiguraciju](configuration#include-inline-pictures).
+- S/MIME dijelovi potpisa su isključeni po dizajnu: nazivi datoteka poput `smime.p7s` i MIME tipovi kao `application/pkcs7-signature` ili `application/pkcs7-mime` se preskaču.
+- Uzorci crne liste mogu filtrirati kandidate: vidi [Konfiguraciju](configuration#blacklist-glob-patterns); podudaranje nije osjetljivo na velika/mala slova i odnosi se samo na nazive datoteka.
+- Duplicirani nazivi datoteka se ne dodaju ponovno: ako sastavljanje već sadrži datoteku s istim normaliziranim nazivom, preskače se.
+- Dijelovi koji nisu datoteke ili nedostajući nazivi datoteka: za dodavanje se uzimaju u obzir samo dijelovi nalik datotekama s upotrebljivim nazivima.
+
+---
+
+Vidi također
+
+- [Konfiguracija](configuration)

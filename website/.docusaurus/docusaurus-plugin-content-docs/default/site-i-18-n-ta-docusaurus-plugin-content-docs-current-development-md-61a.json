@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "அறிமுகம்",
-  "description": "Development Guide",
+  "title": "உருவாக்கம்",
+  "description": "---",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "அறிமுகம்",
-    "sidebar_label": "அறிமுகம்"
+    "title": "உருவாக்கம்",
+    "sidebar_label": "அபிவிருத்தி"
   },
   "sidebar": "docs",
   "previous": {

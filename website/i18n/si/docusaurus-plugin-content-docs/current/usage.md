@@ -4,94 +4,98 @@ title: 'භාවිතය'
 sidebar_label: 'භාවිතය'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## භාවිතය {#usage}
+
+- Reply කර ඇත්නම් add‑on එක මුල් අමුණීම් ස්වයංක්‍රීයව එකතු කරයි — නැතහොත් Options තුළ සක්‍රීය කර ඇත්නම් පළමුව අසයි.
+- ගොනු නාමය අනුව අනුපිටපත් ඉවත් කරයි; S/MIME කොටස් සෑම විටම මඟ හැරෙයි. පෙරනිමියෙන්ම inline රූප reply පණිවිඩ දේහයට නැවත පිහිටුවයි (Options හි "Include inline pictures" මගින් අක්‍රීය කළ හැක).
+- Blacklist කළ අමුණීම් ද මඟ හැරෙයි (අකුරු ලොකු/කුඩා නොසලකා, මාර්ග නොව ගොනු නාම වලට ගැළපෙන glob රටා). [වින්‍යාසය](configuration#blacklist-glob-patterns) බලන්න.
 
 ---
 
-### What happens on reply {#what-happens}
+### පිළිතුරු දීමේදී සිදුවන්නේ මොනවාද {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- පිළිතුර හඳුනාගන්න → මුල් අමුණීම් ලැයිස්තුගත කරන්න → S/MIME + inline පෙරහන් කරන්න → (විකල්ප) තහවුරු කරන්න → සුදුසු ගොනු එකතු කරන්න (අනුපිටපත් මඟ හැර) → inline රූප දේහයේ නැවත පිහිටුවන්න.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+කඩිනම් (Strict) සහ ශිථිල (Relaxed) පියවර: add‑on එක පළමුව ගොනු අමුණීම්වලින් S/MIME හා inline කොටස් බැහැර කරයි. කිසිවක් සුදුසු නොවේ නම්, එය S/MIME/inline තවමත් බැහැර කරමින්ත් වැඩි දේවල් භරා ගන්නා ශිථිල පියවරක් ධාවනය කරයි (කේත විස්තර බලන්න). Inline රූප කිසිවිටෙකත් ගොනු අමුණීම් ලෙස එකතු නොකරයි; ඒ වෙනුවට, "Include inline pictures" සක්‍රීය (පෙරනිමි) වූ විට, ඒවා reply පණිවිඩ දේහයටම base64 data URI ලෙස සවිකරයි.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| කොටස් වර්ගය                                                   |                   කඩිනම් පියවර |                    ශිථිල පියවර |
+| ------------------------------------------------------------- | -----------------------------: | -----------------------------: |
+| S/MIME අත්සන ගොනුව `smime.p7s`                                |                          බැහැර |                          බැහැර |
+| S/MIME MIME වර්ග (`application/pkcs7-*`)                      |                          බැහැර |                          බැහැර |
+| Content‑ID මඟින් යොමු කරන inline රූපය (`image/*`)             | බැහැර (දේහයේ නැවත පිහිටුවයි\*) | බැහැර (දේහයේ නැවත පිහිටුවයි\*) |
+| ගොනු නාමයක් සහිත අමුණා ඇති විද්‍යුත් ලිපිය (`message/rfc822`) |                    එකතු නොකරයි |                    එකතු කළ හැක |
+| ගොනු නාමයක් සහිත සාමාන්‍ය ගොනු අමුණීම                         |                    එකතු කළ හැක |                    එකතු කළ හැක |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" සක්‍රීය වූ විට (පෙරනිමි: ON), inline රූප ගොනු අමුණීම් ලෙස එකතු කිරීම වෙනුවට reply පණිවිඩ දේහයේ base64 data URI ලෙස සවිකරයි. [වින්‍යාසය](configuration#include-inline-pictures) බලන්න.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+උදාහරණය: සමහර අමුණීම්ට නියමිත හිසකුරු නොතිබුණද ඒවා තවමත් සාමාන්‍ය ගොනු (inline/S/MIME නොවේ) විය හැක. කඩිනම් පියවරෙන් කිසිවක් හමු නොවුවහොත්, ශිථිල පියවර ඒවා පිළිගෙන අමුණා දැමිය හැක.
 
 ---
 
-## Behavior Details {#behavior-details}
+### අනු‑යොමු {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward නිර්මාණය අනුව වෙනස් නොකරයි (පහත සීමා බලන්න).
+- අමුණීමක් එකතු නොවනු ඇති හේතු සඳහා, “අමුණීම් එකතු නොවීමට තිබිය හැකි හේතු” බලන්න.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## හැසිරීමේ විස්තර {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **අනුපිටපත් වැළැක්වීම:** add‑on එක එක්‑ටැබ session අගයක් සහ in‑memory ආරක්ෂකයක් භාවිතා කර compose ටැබය සම්පූර්ණ කර ඇත ලෙස සලකුණු කරයි. එය මුල් අමුණීම් දෙවරක් එකතු නොකරයි.
+- Compose කවුලුව වසා නැවත විවෘත කිරීම නව ටැබයක් ලෙස සැලකේ (අනුව, නව උත්සාහයක් ඉඩ දේ).
+- **පවතින අමුණීම්වලට ගරු කිරීම:** compose තුළ දැනටමත් අමුණීම් තිබේ නම් පවා, මුල් අමුණීම් එක්වරක් පමණක් එකතු කරයි, දැනටමත් පවතින ගොනු නාම මඟ හැර.
+- **බැහැර කිරීම්:** S/MIME අමුද්‍රව්‍ය සහ inline රූප ගොනු අමුණීම්වලින් බැහැර කරයි. පළමු පියවරේ කිසිවක් සුදුසු නොවුවහොත්, ශිථිල fallback එක non‑S/MIME කොටස් නැවත පරීක්ෂා කරයි. Inline රූප වෙනම සලකා බලයි: (සක්‍රීය විට) ඒවා reply පණිවිඩ දේහයේ data URI ලෙස නැවත පිහිටුවයි.
+  - **ගොනු නාම:** `smime.p7s`
+  - **MIME වර්ග:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inline රූප:** Content‑ID මඟින් යොමු කරන ඕනෑම `image/*` කොටස — "Include inline pictures" ON වන විට ගොනු අමුණීම් වලට නොඑබද, reply පණිවිඩ දේහයට සවිකරයි
+  - **අමුණා ඇති විද්‍යුත් ලිපි (`message/rfc822`):** ගොනු නාමයක් තිබේ නම් සාමාන්‍ය අමුණීම් ලෙස සැලකේ; (අනුපිටපත් පරීක්ෂාවන් සහ blacklist යටතේ) ඒවා එකතු විය හැක.
+- **Blacklist අවවාදය (සක්‍රීය කර ඇත්නම්):** අපේක්ෂිත අයිතම ඔබගේ blacklist මඟින් බැහැර කළ විට,
+  add‑on එක බලපෑමට ලක්වූ ගොනු සහ ගැළපෙන රටාව(ව) ලැයිස්තුගත කරන කුඩා මෝඩලයක්
+  පෙන්වයි. සෑම දෙයක්ම බැහැර වූ නිසා කිසිදු අමුණීමක් එකතු නොවන අවස්ථාවලද
+  මේ අවවාදය දිස් වේ.
 
 ---
 
-## Limitations {#limitations}
+## යතුරු කෙටිමාර්ග {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- තහවුරු කිරීමේ සංවාදය: Y/J = Yes, N/Esc = No; Tab/Shift+Tab සහ ඊතල යතුරු මඟින් අවධානය චක්‍රාකාරව මාරු කරයි.
+  - [වින්‍යාසය](configuration#confirmation) හි “Default answer” මඟින් ආරම්භයේ අවධානය ලැබූ බොත්තම සකසයි.
+  - Enter මඟින් අවධානය ඇති බොත්තම ක්‍රියාත්මක වේ. ප්‍රවේශය ඉස්සර කිරීමට Tab/Shift+Tab සහ ඊතල මඟින් අවධානය මාරු කළ හැක.
+
+### යතුරු කෙටිමාර්ග කෙටි සටහන {#keyboard-cheat-sheet}
+
+| යතුරු           | ක්‍රියාව                            |
+| --------------- | ----------------------------------- |
+| Y / J           | Yes තහවුරු කරන්න                    |
+| N / Esc         | No තහවුරු කරන්න                     |
+| Enter           | අවධානය ඇති බොත්තම සක්‍රීය කරන්න     |
+| Tab / Shift+Tab | අවධානය ඉදිරියට/පසුපසට ගෙනයන්න       |
+| ඊතල යතුරු       | බොත්තම් අතර අවධානය මාරු කරන්න       |
+| පෙරනිමි පිළිතුර | ආරම්භක අවධානය පිහිටුවයි (Yes හෝ No) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## සීමාකිරීම් {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- මේ add‑on එක Forward වෙනස් නොකරයි (Reply සහ Reply all සඳහා සහය ඇත).
+- ඉතා විශාල අමුණීම් Thunderbird හෝ සැපයුම්කරුගේ සීමා වලට ලක් විය හැක.
+  - add‑on එක ගොනු කැබලි වෙඩි කිරීම (chunk) හෝ සම්පීඩනය කිරීම නොකෙරේ; එය Thunderbird හි සාමාන්‍ය අමුණීම් කළමනාකරණයට යම්පරිදි ඇරඹී ඇත.
+- සංකේතාංකිත පණිවිඩ: S/MIME කොටස් හිඳියාම බැහැර කර ඇත.
 
 ---
 
-See also
+## අමුණීම් එකතු නොවීමට තිබිය හැකි හේතු {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inline රූප ගොනු අමුණීම් ලෙස එකතු නොකරයි. "Include inline pictures" ON (පෙරනිමි) වූ විට ඒවා reply පණිවිඩ දේහයේ data URI ලෙස සවිකරයි. සැකසුම OFF නම්, inline රූප සම්පූර්ණයෙන්ම ඉවත් කරයි. [වින්‍යාසය](configuration#include-inline-pictures) බලන්න.
+- S/MIME අත්සන කොටස් නිර්මාණය අනුව බැහැර කර ඇත: `smime.p7s` වැනි ගොනු නාම සහ `application/pkcs7-signature` හෝ `application/pkcs7-mime` වැනි MIME වර්ග මඟ හැරේ.
+- Blacklist රටාවන් අපේක්ෂිත අයිතම පෙරහන් කළ හැක: [වින්‍යාසය](configuration#blacklist-glob-patterns) බලන්න; ගැළපීම අකුරු ලොකු/කුඩා ASP නොසලකා හා ගොනු නාමයට පමණක් යෙදේ.
+- අනුපිටපත් ගොනු නාම නැවත එකතු නොකරයි: compose තුළ දැනටමත් එකම සාමාන්‍යකරණ නාමය ඇති ගොනුවක් තිබේ නම්, එය මඟ හැරයි.
+- ගොනු නොවන කොටස් හෝ නොමැති ගොනු නාම: භාවිත කළ හැකි ගොනු නාම සහිත ගොනු‑සමාන කොටස් පමණක් එකතු කිරීමට සලකාබලයි.
+
+---
+
+තවද බලන්න
+
+- [වින්‍යාසය](configuration)

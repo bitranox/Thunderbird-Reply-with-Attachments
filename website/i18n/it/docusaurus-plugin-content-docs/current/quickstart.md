@@ -1,27 +1,29 @@
 ---
 id: quickstart
 title: 'Guida rapida'
-sidebar_label: 'Guida rapida'
+sidebar_label: 'Avvio rapido'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Guida rapida
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Versione minima di Thunderbird
+Questo componente aggiuntivo supporta Thunderbird **128 ESR o versioni successive**. Le versioni precedenti non sono supportate.
+:::
+
+:::note Nessuna telemetria; nessuna rete in background
+Il componente aggiuntivo **non** raccoglie analisi/telemetria e **non** effettua richieste di rete in background. L’accesso alla rete avviene solo quando fai clic su link esterni (Documentazione, GitHub, Donazioni).
+:::
+
+---
+
+### Installazione
+
+1. Installa il componente aggiuntivo da Componenti aggiuntivi di Thunderbird.
+2. Opzionale: Abilita la conferma (Opzioni → “Chiedi prima di aggiungere gli allegati”).
+3. Opzionale: Lascia abilitato l’avviso della blacklist (predefinito): “Avvisa se gli allegati sono esclusi dalla blacklist”.
+4. Opzionale: Aggiungi i modelli della blacklist (uno per riga), ad es.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Nota: Il “# …” sopra è un commento in questa documentazione; non includere commenti nei modelli che incolli in Opzioni. Inserisci un solo modello per riga.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Ora rispondi a un messaggio con allegati — gli originali verranno aggiunti automaticamente o dopo una rapida conferma. Se alcuni file sono esclusi dalla tua blacklist, vedrai un breve avviso che li elenca.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Verifica {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Rispondi a un messaggio con 1–2 allegati e verifica che gli originali vengano aggiunti alla finestra di composizione.
+- Per modificare il comportamento, vedi [Configurazione](configuration) (interruttore di conferma, risposta predefinita, modelli di blacklist).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Verifica dell’avviso della blacklist {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Rispondi a un messaggio contenente un file come “secret.txt”.
+- Con “Avvisa se gli allegati sono esclusi dalla blacklist” abilitato, una piccola finestra di dialogo elenca i file esclusi e il modello corrispondente.
+
+Se non vedi un avviso, assicurati che il modello corrisponda esattamente al nome del file (solo nome file, senza distinzione tra maiuscole e minuscole). Vedi Configurazione → Blacklist.
+
+---
+
+### Nota sulla tastiera {#keyboard-note}
+
+- La finestra di conferma supporta Y/J per Yes e N/Esc per No. Su alcune tastiere non latine, i tasti lettera possono variare; Invio conferma il pulsante attivo.
 
 ---

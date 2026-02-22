@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Donner'
-sidebar_label: 'Donner'
+title: 'Wari di'
+sidebar_label: 'Dɛmɛ'
 ---
 
-## Donner
+---
+
+## Ka wari di
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Si vous aimez "Répondre avec des pièces jointes" et souhaitez soutenir son développement, vous pouvez faire un don ici :
+Ni i bɛ "Reply with Attachments" fɛ ni i b’a dɛmɛ ka a ɲɛsin kɛ, i bɛ se ka wari di n’i yɔrɔ la:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Faire un don via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Wari di kɔfɛ Stripe la" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ou</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>walima</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Faire un don via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Wari di kɔfɛ PayPal la" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ou</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>walima</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Achetez-moi un café" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Kafe di n ma" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,53 +36,55 @@ Si vous aimez "Répondre avec des pièces jointes" et souhaitez soutenir son dé
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scannez pour m'acheter un café"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan ka kafe di n ma"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Merci ! Votre soutien aide à maintenir la compatibilité avec les nouvelles versions de Thunderbird, à améliorer l'accessibilité et les tests, et à garder la documentation à jour.
+I ni ce! I ka dɛmɛ b’a dɛmɛ kɛ ka a labɛn ni Thunderbird kɔrɔw kura la, ka jɛya (accessibility) ni siginw ɲɛ, ni ka sɛbɛnniw ɲɛ sisan-sisan.
 
-Notes
+Nɔtanw
 
-- Les liens de don s'ouvrent uniquement lorsque vous cliquez dessus ; le module complémentaire ne fait pas de requêtes réseau en arrière-plan.
-- Le soutien récurrent aide à l'entretien à long terme et aux mises à jour rapides, mais est entièrement optionnel.
+- Dono linkw bɛ bɛna waati dɔrɔn ni i klik k’a kan; add‑on tɛ kɛ netowɔrɔ ɲini kɛ cɛfɔɔra (background) la.
+- Dɛmɛ min bɛ sɔrɔ sɔrɔ b’a dɛmɛ baarakɛ dugukolo ɲɛsin ni cogo‑kɛlɛ ɲɛfɔliw la, nka o ye sugu‑sugu ye.
 
 ---
 
-Si les boutons d'image ne se chargent pas, veuillez utiliser ces liens à la place :
+Ni butɔn suguw tɛ bɛna, i ka linkwɔrɔw ɲɛ nin de bɔ:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Achetez-moi un café](https://buymeacoffee.com/bitranox)
+#### [Kafe di n ma](https://buymeacoffee.com/bitranox)
 
 ---
 
-Les dons sont volontaires ; il n'y a pas de restriction sur les fonctionnalités.
+Donow ye sugu‑sugu ye; dɔɔninw tɛ tugu kɔ.
 
 ---
 
-## Visibilité des dons (snooze de 90 jours)
+## Dono-yɛrɛma (tile 90 jɔ)
 
-Le module complémentaire inclut une fonction pratique pour cacher les invitations aux dons pendant un certain temps après que vous ayez fait un don.
+Add‑on k’a kɔ fɛɛnɛ dɔ min bɛ se ka dono ka fɔlɔw sutura waati dɔ la ni i ka doni kɔ.
 
-- Où le trouver
-  - Options → Section de support : vous verrez un bouton "J'ai fait un don" et une petite zone d'indice.
-  - La boîte de dialogue de confirmation d'envoi affiche également un bouton Faire un don ; il se cache automatiquement lorsque le snooze est actif.
+- Fɔ fɛ i bɛ a sɔrɔ
+  - Options → Support dugukolo la: i bɛ ɲɛ “I donated” butɔn ni kɔnɔntɔn kɔrɔ dɔ.
+  - Send‑confirmation dialog bɛna “Donate” butɔn fɛ; o b’a sutura fila‑fila ni jɔ (snooze) bɛ kɛ.
 
-- Comment ça fonctionne
-  - Cliquer sur "J'ai fait un don" cache les boutons de don et les incitations connexes pendant 90 jours.
-  - Un indice de statut indique "Caché jusqu'au YYYY‑MM‑DD" (dans votre date locale). Il y a également un bouton "Afficher à nouveau le don" pour restaurer la visibilité immédiatement.
-  - Après 90 jours, le bouton Faire un don redevient visible automatiquement.
+- N’i bɛ a kɛ
+  - Ni i klik “I donated” kan, o b’a sutura dono butɔnw ni fɔlɔw minnu bɛ na a kan tile 90 kɔfɛ.
+  - Sɛbɛnna ɲɛ fɔlɔ bɛna “Hidden until YYYY‑MM‑DD” ɲɛ (ni i ka sɔgɔsɔn tile kɔnɔ). “Show Donate again” butɔn dɔ bɛna fɛ ka ɲɛrɛma ka sisan‑sisan na.
+  - Tile 90 kɔfɛ, “Donate” butɔn bɛna ɲɛrɛma ye don fila‑fila.
 
-- Confidentialité & stockage
-  - Le module complémentaire stocke un seul horodatage dans le stockage local de Thunderbird pour se souvenir de la période de snooze. Clé : `donateHideUntil` (millisecondes d'époque).
-  - Ce paramètre est local à votre profil Thunderbird (non synchronisé dans le cloud). Aucune requête réseau n'est effectuée par cette fonction.
+- Barɔgɔliya ni jiitou
+  - Add‑on bɛ jiitɔgɔ dɔrɔn (timestamp) da Thunderbird ka local storage kɔnɔ ka jɔgɔnya jɔ (snooze) waati ɲini. Key: `donateHideUntil` (epoch milliseconds).
+  - Nin tan ni da ye Thunderbird i ka profil kɔnɔ dɔrɔn ye (tɛ cloud‑sync). Fɛɛnɛ nin tɛ na netowɔrɔ ɲini dɔ kɛ.
 
-- Résolution des problèmes
-  - Si le bouton Faire un don s'affiche toujours juste après avoir cliqué sur "J'ai fait un don", attendez un moment ou rouvrir la page des options ; l'interface se met à jour dès que le paramètre est enregistré.
-  - Pour réinitialiser manuellement, cliquez sur "Afficher à nouveau le don". Vous pouvez également attendre que la date indiquée dans l'indice soit dépassée.
+- Ka sɔrɔ kɔlɔsi
+  - Ni “I donated” kan i klik kɔfɛ “Donate” tɛɛna b’a ɲɛ ye, hakɛ i ka sugu dɔ, walima Options pajɛ na a labɛn fɔlɔ; UI bɛna ɲɛsi waati min tɛ a ye ni setingi kɔnɔ tugu kɔ.
+  - Ka a danwɔrɔ kɔrɔbɔli ni i bolo, klik “Show Donate again” kan. I bɛ se ka sugu waati dɔ b’a taa ko tile min bɛ ɲɛ fɔlɔ la bɛna taa.
 
-Cette fonction est uniquement pour le confort ; elle ne bloque jamais la fonctionnalité du module complémentaire et ne collecte aucune donnée personnelle.
+Nin fɛɛnɛ ye ɲɛtabɔli dɔrɔn ye; a tɛ jɔsi add‑on ka baara‑kɛcogo la waati dɔ, a tɛ kɛ ka baarakɔnɔw ɲɛta fɔlɔ dɔ bɔli kɛ.
+
+---

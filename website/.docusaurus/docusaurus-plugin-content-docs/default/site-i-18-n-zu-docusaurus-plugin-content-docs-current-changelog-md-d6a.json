@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ushintsho lwezinguquko",
-  "description": "Ushintsho lwezinguquko",
+  "title": "Umlando wezinguquko",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ushintsho lwezinguquko"
+    "title": "Umlando wezinguquko"
   },
   "sidebar": "docs",
   "previous": {

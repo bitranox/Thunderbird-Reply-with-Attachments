@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Uppsetning'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Uppsetning í gegnum "Viðbætur og þemu í Thunderbird" {#installation-in-thunderbird-recommended}
+
+:::important Lágmarksútgáfa Thunderbird
+Þessi viðbót styður Thunderbird **128 ESR eða nýrri**. Eldri útgáfur eru ekki studdar.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Þetta er ráðlögð uppsetningaraðferð. Viðbætur sem settar eru upp frá ATN (addons.thunderbird.net) fá sjálfvirkar uppfærslur. LOCAL/dev uppsetningar uppfærast ekki sjálfkrafa.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Lágmarksútgáfa Thunderbird: 128 ESR eða nýrri.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Í Thunderbird, farðu í **Verkfæri > Viðbætur og þemu**.
+2. Leitaðu að "reply with attachments".
+3. Bættu við viðbótinni.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Eða opnaðu síðu viðbótarinnar beint: [Thunderbird viðbætur (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Handvirk uppsetning úr XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Sæktu XPI-skrána {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Farðu á [viðbótarsíðu Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Sæktu nýjustu útgáfu viðbótarinnar sem XPI-skrá (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Setja upp í Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Opnaðu Thunderbird.
+2. Farðu í **Verkfæri > Viðbætur og þemu**.
+3. Í **Viðbótastjórinn**, smelltu á tannhjólstáknið efst til hægri.
+4. Veldu **Setja upp viðbót úr skrá…** úr valmyndinni.
+5. Veldu niðurhöluðu skrána `reply_with_attachments-x.y.z-tb.xpi`.
+6. Staðfestu uppsetninguna þegar beðið er um það.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Uppsetning fyrir þróun {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Sækja geymsluna {#download-the-repository}
 
-See also
+1. Sæktu nýjustu útgáfu GitHub-geymslunnar.
+2. Keyrðu `make help` fyrir frekari upplýsingar.
 
-- [Quickstart](quickstart)
+### Setja upp í Thunderbird {#install-in-thunderbird-dev}
+
+1. Opnaðu Thunderbird.
+2. Farðu í **Verkfæri > Viðbætur og þemu**.
+3. Í **Viðbótastjórinn**, smelltu á tannhjólstáknið efst til hægri.
+4. Veldu **Setja upp viðbót úr skrá…** úr valmyndinni.
+5. Veldu útbúna skrána `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Staðfestu uppsetninguna þegar beðið er um það.
+
+Athugið: Ef Thunderbird samþykkir ekki `.zip` á kerfinu þínu, endurnefndu hana í `.xpi` og prófaðu „Setja upp viðbót úr skrá…“ aftur.
+
+### Hvar er LOCAL ZIP að finna {#where-local-zip}
+
+- Fyrst, pakkaðu viðbótinni: keyrðu `make pack` í rót geymslunnar.
+- Eftir pökkun finnurðu „LOCAL“ ZIP í rót geymslunnar (t.d. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Áður en þú pakkar aftur fyrir prófanir, hækkaðu útgáfunúmer í bæði `sources/manifest_ATN.json` og `sources/manifest_LOCAL.json`.
+
+---
+
+## Afvirkja, fjarlægja og uppfærslur {#disable-uninstall-updates}
+
+- Afvirkja: Thunderbird → Verkfæri → Viðbætur og þemu → finndu viðbótina → slökktu.
+- Fjarlægja: sama sýn → þriggja punkta valmynd → Fjarlægja.
+- Uppfærslur: Uppsetningar frá ATN uppfærast sjálfkrafa þegar nýjar útgáfur eru samþykktar. LOCAL/dev uppsetningar uppfærast ekki sjálfkrafa; settu nýja LOCAL útgáfu upp handvirkt.
+- Fjarlægja stillingar alveg: sjá [Persónuvernd → Eyðing gagna](privacy#data-removal).
+
+Sjá einnig
+
+- [Hraðbyrjun](quickstart)

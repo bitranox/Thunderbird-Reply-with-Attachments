@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "แจ้งเตือนหากไฟล์แนบถูกยกเว้นโดยแบล็กลิสต์"
   },
+  "uiIncludeInlineLabel": {
+    "message": "รวมรูปภาพแบบอินไลน์ (รูปภาพฝังตัว)"
+  },
   "uiDebugHeader": {
     "message": "ขั้นสูง"
   },

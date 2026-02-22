@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "התחלה מהירה",
-  "description": "Quickstart",
+  "title": "תחילת עבודה מהירה",
+  "description": "---",
   "source": "@site/i18n/he/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "התחלה מהירה",
-    "sidebar_label": "התחלה מהירה"
+    "title": "תחילת עבודה מהירה",
+    "sidebar_label": "תחילת עבודה מהירה"
   },
   "sidebar": "docs",
   "previous": {

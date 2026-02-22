@@ -1,7 +1,7 @@
 {
   "id": "configuration",
   "title": "Konfiguration",
-  "description": "Konfiguration",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/configuration.md",
   "sourceDirName": ".",
   "slug": "/configuration",

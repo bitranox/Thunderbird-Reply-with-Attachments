@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "ದಾನ ಕೊಡು",
-  "description": "Donate",
+  "title": "ದೇಣಿಗೆ ನೀಡಿ",
+  "description": "---",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "ದಾನ ಕೊಡು",
-    "sidebar_label": "ದಾನ ಕೊಡು"
+    "title": "ದೇಣಿಗೆ ನೀಡಿ",
+    "sidebar_label": "ದೇಣಿಗೆ ನೀಡಿ"
   },
   "sidebar": "docs",
   "previous": {

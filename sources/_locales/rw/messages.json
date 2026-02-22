@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Iburira niba urutonde rwo gukumira rukuyemo inyomeko"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include inline pictures (embedded images)"
+  },
   "uiDebugHeader": {
     "message": "Byimbitse"
   },

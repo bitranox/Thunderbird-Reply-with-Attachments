@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Kàlàwà'
-sidebar_label: 'Kàlàwà'
+title: 'Karakteristikɛw'
+sidebar_label: 'Fonksyonalitew'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Baara kɛw {#features}
 
-## How It Works {#how-it-works}
+- Ni i bɛ jabi, orijini imeyili la fayiliw bɛna ka tɛgɛ i ka jabi la otomatikɔli.
+- Baara kɛcogo bɛ se ka toɔrɔ: fayili tɛgɛfɛnw bɛ se ka
+  - ɲɛna otomatikɔli, wala
+  - ɲɛna kelen ye hakilina kɔfɛ (dialog kɔrɔbɔ kelen min bɛ se ka don). Options kɔnɔ i
+    bɛ se ka hakilina daminɛ ni ka filen jawabi default (Awɔ/Ayi) la.
+- Fayili tɔgɔw la blacklist (glob patɛrɛnnu) bɛ na ka ban fayili dɔɔnin dɔ ka
+  ɲɛna otomatikɔli. Misaliw: `*intern*`, `*secret*`, `*passwor*`.
+  Jɔgɔman diɲɛ ye case‑insensitive ye, a bɛ kɔlɔ fɔ fayili tɔgɔ dɔ kelen dɔ; patɛrɛn kelen kelen
+  bɔ lain kelen kɔnɔ Options la.
+- Blacklist sɔngi (fila ye, a bɛ daminɛ default la): waati min fayiliw bɛna ka bɔ i ka
+  blacklist la, modal kɔrɔbɔ kelen bɛ sɛbɛn fayili la ni patɛrɛn(ɔw) min bɛ ɲɛwɔrɔ a la. Dark‑mode
+  ye di, ni klaaviye kɔnɔ bɛ se ka don (Enter/Esc k’a da).
+- A bɛ baara kɛ ni Reply ani Reply all la. Forward tɛ masinyɛ k’a la add‑on yi.
+- Orijiniw bɛna ɲɛna k’o bɛ se, ko ni i ka tɛgɛra bɛ yen; a bɛ na ka dɔbaliya ban tɔgɔ la.
+- Tab kelen‑kelen la dɔbaliya‑dalaba bɛna ka ban ɲɛ fila ɲɛna compose tab kelen kɔnɔ.
+- Default la, a bɛ bɔ S/MIME saratigiya, walasa ka ɲɛ min t’a bonya la tɔ.
+- Inline jɛsiw ka ladan (default: ON). Jɛsiw minnu bɛ tɛgɛ, bɛna ka segin sisan sisan
+  jabi kan kɔnɔ kà base64 data URIw la, k’a lajɛ orijini inline layawuti ye. Options la
+  i bɛ se ka a da ni i b’a fɛ ka inline jɛsiw tɛ yen.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## A ka kɛcogo {#how-it-works}
+
+- Jabi tuma la, add‑on bɛ sɛbɛn orijini attachmentw la ɲɛ.
+- A bɛ sɛgɛsɛgɛ S/MIME saɲɛriw kɛ fɔ fayili tɛgɛfɛnw la; inline jɛsiw bɛna ka segin kan kɔnɔ (ni a tɛna).
+- Ka fɔ hakilina kɔfɛ ni i b’a fɛ (klaaviye‑dɔgɔya).
+- A bɛ ɲɛna fayiliw minnu b’a se i ka compose la, ka dɔbaliya ban tɔgɔ la.
+- Ka ɲini “Mun na attachmentw b’a bɛ se ka tɛ ɲɛna” Usage kɔnɔ, ka sariya kɛw la.
+
+Siraba la fɔlɔ: Baara bɛɛ bɛ kɛ lokalikan Thunderbird kɔnɔ. Add‑on tɛ kɛ latikanɛti sanni‑sanni dɔ.
+
+---

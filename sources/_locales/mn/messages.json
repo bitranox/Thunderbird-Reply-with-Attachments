@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Хар жагсаалтад орсноос болж хавсралт хасагдсан бол анхааруулах"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Мөр доторх зургуудыг оруулах (суулгасан зургууд)"
+  },
   "uiDebugHeader": {
     "message": "Дэвшилтэт"
   },

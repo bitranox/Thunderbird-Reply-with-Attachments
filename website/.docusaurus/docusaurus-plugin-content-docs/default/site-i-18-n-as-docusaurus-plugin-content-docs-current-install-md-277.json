@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "স্থাপন",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "ইনস্টলেচন",
+  "description": "---",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "স্থাপন",
+    "title": "ইনস্টলেচন",
     "slug": "/install",
     "sidebar_label": "স্থাপন"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "শুরু কৰা",
+    "title": "দ্ৰুত আৰম্ভণি",
     "permalink": "/Thunderbird-Reply-with-Attachments/as/docs/quickstart"
   },
   "next": {

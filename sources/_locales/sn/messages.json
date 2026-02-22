@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Yambira kana zvakabatanidzwa zvabviswa nerunyoro rwekudzivirira"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Sanganisira mifananidzo yemumutsetse (mifananidzo yakaiswa)"
+  },
   "uiDebugHeader": {
     "message": "Zvemberi"
   },

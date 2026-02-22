@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Waarschuwen als bijlagen door de zwarte lijst worden uitgesloten"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inline-afbeeldingen opnemen (ingesloten afbeeldingen)"
+  },
   "uiDebugHeader": {
     "message": "Geavanceerd"
   },

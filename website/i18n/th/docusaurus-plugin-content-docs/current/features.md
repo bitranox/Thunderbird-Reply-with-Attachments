@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'ฟีเจอร์'
-sidebar_label: 'ฟีเจอร์'
+title: 'คุณสมบัติ'
+sidebar_label: 'คุณสมบัติ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## คุณสมบัติ {#features}
 
-## How It Works {#how-it-works}
+- แนบไฟล์จากอีเมลต้นฉบับโดยอัตโนมัติเมื่อทำการตอบกลับ
+- ปรับแต่งพฤติกรรมได้: ไฟล์แนบสามารถ
+  - เพิ่มโดยอัตโนมัติ หรือ
+  - เพิ่มเฉพาะหลังจากยืนยัน (กล่องโต้ตอบขนาดเล็ก เข้าถึงได้) ในตัวเลือก (Options) คุณ
+    สามารถเปิดการยืนยันและเลือกคำตอบเริ่มต้น (ใช่/ไม่ใช่)
+- รายการบล็อกชื่อไฟล์ (รูปแบบ glob) ป้องกันไม่ให้ไฟล์บางรายการถูก
+  แนบโดยอัตโนมัติ ตัวอย่าง: `*intern*`, `*secret*`, `*passwor*`.
+  การจับคู่ไม่คำนึงถึงตัวพิมพ์เล็ก/ใหญ่ และตรวจสอบเฉพาะชื่อไฟล์; ระบุหนึ่งรูปแบบ
+  ต่อบรรทัดในตัวเลือก
+- คำเตือนรายการบล็อก (เป็นตัวเลือก เปิดใช้งานตามค่าเริ่มต้น): เมื่อไฟล์ถูกยกเว้นโดย
+  รายการบล็อกของคุณ โมดัลขนาดเล็กจะแสดงรายการไฟล์และรูปแบบที่ตรงกัน โหมดมืด
+  เป็นมิตรและเข้าถึงได้ด้วยคีย์บอร์ด (Enter/Esc เพื่อปิด)
+- ใช้งานได้กับ Reply และ Reply all ส่วน Forward จะไม่ถูกปรับเปลี่ยนโดยแอดออนนี้
+- เพิ่มไฟล์ต้นฉบับแม้ว่าคุณจะแนบไฟล์เองไปแล้ว; หลีกเลี่ยงความซ้ำโดยพิจารณาจากชื่อไฟล์
+- กลไกป้องกันการซ้ำต่อแท็บ ป้องกันการเพิ่มซ้ำในแท็บเขียนข้อความเดียวกัน
+- ข้ามใบรับรอง S/MIME ตามค่าเริ่มต้นเพื่อหลีกเลี่ยงไฟล์แนบที่ไม่จำเป็น
+- รวมรูปภาพแบบอินไลน์ (ค่าเริ่มต้น: เปิด) ภาพที่ฝังจะถูกกู้คืนโดยตรงใน
+  เนื้อหาการตอบกลับเป็น base64 data URIs เพื่อคงเลย์เอาต์อินไลน์ดั้งเดิมไว้ ปิดการทำงานได้ใน
+  ตัวเลือกเพื่อข้ามรูปภาพอินไลน์ทั้งหมด
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## วิธีการทำงาน {#how-it-works}
+
+- เมื่อมีการตอบกลับ แอดออนจะแสดงรายการไฟล์แนบต้นฉบับ
+- กรองลายเซ็น S/MIME ออกจากไฟล์แนบ; รูปภาพอินไลน์จะถูกกู้คืนในเนื้อหา (เว้นแต่จะปิดไว้)
+- อาจมีการถามเพื่อยืนยัน (ใช้งานคีย์บอร์ดได้สะดวก)
+- เพิ่มไฟล์ที่เข้าเกณฑ์ไปยังหน้าต่างเขียน โดยหลีกเลี่ยงความซ้ำจากชื่อไฟล์
+- ดู “เหตุใดไฟล์แนบจึงอาจไม่ถูกเพิ่ม” ในส่วนการใช้งาน สำหรับกรณีพิเศษ
+
+หมายเหตุด้านความเป็นส่วนตัว: การประมวลผลทั้งหมดเกิดขึ้นภายในเครื่องใน Thunderbird แอดออนไม่มีการร้องขอเครือข่ายเบื้องหลัง
+
+---

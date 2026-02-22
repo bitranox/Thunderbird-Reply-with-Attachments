@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Дарение'
-sidebar_label: 'Дарение'
+title: 'Дарете'
+sidebar_label: 'Дарете'
 ---
 
-## Donate
+---
+
+## Дарение
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Ако харесвате "Reply with Attachments" и искате да подкрепите разработката му, можете да дарите тук:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Дарете чрез Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>или</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Дарете чрез PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>или</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Почерпете ме с кафе" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Сканирайте, за да ми купите кафе"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Благодаря! Вашата подкрепа помага за поддържане на съвместимостта с новите версии на Thunderbird, подобряване на достъпността и тестовете и поддържане на документацията актуална.
 
-Notes
+Бележки
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Връзките за дарение се отварят само когато щракнете върху тях; добавката не извършва фонови мрежови заявки.
+- Периодичната подкрепа помага за дългосрочната поддръжка и навременните актуализации, но е изцяло по избор.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Ако бутоните-изображения не се зареждат, моля използвайте вместо тях тези връзки:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Даренията са доброволни; няма ограничаване на функционалности.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Видимост на даренията (90‑дневно отлагане)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Добавката включва удобна функция за скриване на подканите за дарение за известно време, след като сте дарили.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Къде да го намерите
+  - Опции → раздел Поддръжка: ще видите бутон „Дарих“ и малка зона с подсказка.
+  - Диалогът за потвърждение на изпращането също показва бутон „Дарение“; той се скрива автоматично, когато отлагането е активно.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Как работи
+  - Натискането на „Дарих“ скрива бутоните за дарение и свързаните подсказки за 90 дни.
+  - Подсказка за състоянието показва „Скрито до YYYY‑MM‑DD“ (според локалната ви дата). Има и бутон „Покажи „Дарение“ отново“, за да възстановите видимостта веднага.
+  - След 90 дни бутонът „Дарение“ отново става видим автоматично.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Поверителност и съхранение
+  - Добавката съхранява един времеви маркер в локалното хранилище на Thunderbird, за да запомни периода на отлагане. Ключ: `donateHideUntil` (милисекунди от епохата).
+  - Тази настройка е локална за вашия профил в Thunderbird (не се синхронизира в облака). Тази функция не извършва никакви мрежови заявки.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Отстраняване на проблеми
+  - Ако „Дарение“ все още се показва веднага след натискане на „Дарих“, изчакайте малко или отворете отново страницата Опции; интерфейсът се обновява веднага щом настройката бъде записана.
+  - За ръчно нулиране щракнете „Покажи „Дарение“ отново“. Можете също да изчакате да настъпи датата, посочена в подсказката.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Тази функция е само за удобство; никога не блокира функционалността на добавката и не събира лични данни.
 
 ---

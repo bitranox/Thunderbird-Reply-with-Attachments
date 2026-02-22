@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Xwayisa uma izinamathiselo zikhishwe ohlwini lokuvimba"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Faka izithombe eziku-inline (izithombe ezifakiwe)"
+  },
   "uiDebugHeader": {
     "message": "Okuthuthukile"
   },

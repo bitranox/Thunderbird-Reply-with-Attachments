@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "فوری شروعات",
-  "description": "Quickstart",
+  "title": "فوری آغاز",
+  "description": "---",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "فوری شروعات",
-    "sidebar_label": "فوری شروعات"
+    "title": "فوری آغاز",
+    "sidebar_label": "فوری آغاز"
   },
   "sidebar": "docs",
   "previous": {

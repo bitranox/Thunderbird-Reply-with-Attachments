@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Kukonza",
-  "description": "Development Guide",
+  "title": "Chitukuko",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Kukonza",
-    "sidebar_label": "Kukonza"
+    "title": "Chitukuko",
+    "sidebar_label": "Chitukuko"
   },
   "sidebar": "docs",
   "previous": {

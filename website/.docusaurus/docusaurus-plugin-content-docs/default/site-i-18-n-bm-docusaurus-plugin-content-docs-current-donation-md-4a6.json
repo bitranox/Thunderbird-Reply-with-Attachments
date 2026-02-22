@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donner",
-  "description": "Donner",
+  "title": "Wari di",
+  "description": "---",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donner",
-    "sidebar_label": "Donner"
+    "title": "Wari di",
+    "sidebar_label": "Dɛmɛ"
   },
   "sidebar": "docs",
   "previous": {

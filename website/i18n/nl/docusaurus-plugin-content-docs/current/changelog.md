@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Wijzigingslogboek'
+title: 'Wijzigingenlogboek'
+---
+
 ---
 
 ## Changelog
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+Zie voor de volledige, gedetailleerde geschiedenis de
+[CHANGELOG.md op GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+- 2.3.2: "Inline afbeeldingen opnemen" voegt nu afbeeldingen rechtstreeks in de antwoordtekst in als base64 data-URI's (standaard: AAN); verbeteringen aan de codekwaliteit en uitgebreide testdekking.
+- 2.3.1: Behoudt bijlagen nadat Thunderbird de achtergrond-eventpagina inactief zet; voegt gerichte debug-hooks toe voor probleemoplossing.
+- 2.3.0: Verfijnde deduplicatie van bijlagen, verbrede testdekking en verwijderde verouderde machtigingen om aan AMO-beleidsregels te voldoen.
+- 2.1.0: Volledige internationaliseringsondersteuning voor de 100 populairste talen
+- 2.0.0: herschreven naar een volwaardige versie (EN/DE)
+- 1.0.1: overgestapt op messages.listAttachments()
+- 1.0.0: eerste release
 
-## Dates and channels {#dates-and-channels}
+---
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+## Data en kanalen {#dates-and-channels}
+
+- Releases naar ATN kunnen enkele uren vertraagd zijn na het verpakken.
+- LOKALE builds zijn alleen voor testen door ontwikkelaars en worden niet via ATN verspreid.
+
+---

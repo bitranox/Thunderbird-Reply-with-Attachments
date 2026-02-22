@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'শুরু করার নির্দেশনা'
-sidebar_label: 'শুরু করার নির্দেশনা'
+title: 'দ্রুত সূচনা'
+sidebar_label: 'দ্রুত শুরু'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## দ্রুত শুরু
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ন্যূনতম Thunderbird সংস্করণ
+এই অ্যাড‑অনটি Thunderbird **128 ESR বা তার নতুনতর** সংস্করণ সমর্থন করে। পুরোনো সংস্করণগুলো সমর্থিত নয়।
+:::
+
+:::note টেলিমেট্রি নয়; ব্যাকগ্রাউন্ড নেটওয়ার্ক নয়
+অ্যাড‑অনটি কোনো অ্যানালিটিক্স/টেলিমেট্রি সংগ্রহ করে **না** এবং **কোনো** ব্যাকগ্রাউন্ড নেটওয়ার্ক অনুরোধও পাঠায় না। নেটওয়ার্কে কেবল তখনই প্রবেশ করে যখন আপনি বাহ্যিক লিংকগুলোতে ক্লিক করেন (Docs, GitHub, Donate)।
+:::
+
+---
+
+### ইনস্টল
+
+1. Thunderbird Add‑ons থেকে অ্যাড‑অনটি ইনস্টল করুন।
+2. ঐচ্ছিক: কনফার্মেশন সক্রিয় করুন (Options → “Ask before adding attachments”)।
+3. ঐচ্ছিক: ব্ল্যাকলিস্ট সতর্কতাটি সক্রিয় অবস্থায় রাখুন (ডিফল্ট): “Warn if attachments are excluded by blacklist”।
+4. ঐচ্ছিক: ব্ল্যাকলিস্ট প্যাটার্ন যোগ করুন (লাইনে একটি করে), যেমন:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+নোট: উপরের “# …” এই ডকুমেন্টেশনে একটি মন্তব্য; Options-এ যেসব প্যাটার্ন পেস্ট করবেন তাতে কোনো মন্তব্য রাখবেন না। প্রতি লাইনে একটি করে প্যাটার্ন লিখুন।
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+এখন সংযুক্তিসহ কোনো বার্তায় রিপ্লাই দিন — আসল সংযুক্তিগুলো স্বয়ংক্রিয়ভাবে বা দ্রুত কনফার্মেশনের পর যোগ হয়ে যাবে। আপনার ব্ল্যাকলিস্টের কারণে কোনো ফাইল বাদ পড়লে, সেগুলোর একটি সংক্ষিপ্ত সতর্কতা তালিকা দেখবেন।
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### যাচাই করুন {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- ১–২টি সংযুক্তিসহ কোনো বার্তায় রিপ্লাই দিন এবং নিশ্চিত করুন যে আসল সংযুক্তিগুলো আপনার কম্পোজ উইন্ডোতে যোগ হয়েছে।
+- আচরণ সামঞ্জস্য করতে [কনফিগারেশন](configuration) দেখুন (নিশ্চিতকরণ টগল, ডিফল্ট উত্তর, ব্ল্যাকলিস্ট প্যাটার্নসমূহ)।
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ব্ল্যাকলিস্ট সতর্কতা যাচাই করুন {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” ধরনের কোনো ফাইলসমেত বার্তায় রিপ্লাই দিন।
+- “Warn if attachments are excluded by blacklist” সক্রিয় থাকলে, একটি ছোট ডায়ালগে বাদ পড়া ফাইলগুলো ও মিল পাওয়া প্যাটার্ন দেখানো হবে।
+
+যদি কোনো সতর্কতা না দেখেন, নিশ্চিত করুন প্যাটার্নটি ফাইলনেমের সঙ্গে হুবহু মিলে (শুধু ফাইলনেম, কেস‑ইনসেনসিটিভ)। দেখুন Configuration → Blacklist।
+
+---
+
+### কীবোর্ড নোট {#keyboard-note}
+
+- কনফার্মেশন ডায়ালগে Yes এর জন্য Y/J এবং No এর জন্য N/Esc কাজ করে। কিছু নন‑ল্যাটিন কীবোর্ডে অক্ষর কীগুলো ভিন্ন হতে পারে; Enter চাপলে ফোকাস করা বোতামটি কনফার্ম হয়।
+
+---

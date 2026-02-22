@@ -1,34 +1,40 @@
 ---
 id: features
-title: 'Mibeko'
-sidebar_label: 'Mibeko'
+title: 'Makoki'
+sidebar_label: 'Bizaleli'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Makoki {#features}
 
-## How It Works {#how-it-works}
+- Ekangaka ba-fisiye ya imeyili ya ebandeli na ndenge ya otomatik ntango ozongi eyano.
+- Bizaleli ekoki kobongisama: bakangiseli ekoki
+  - kobakisama na otomatik, to
+  - kobakisama kaka sima ya kondimisama (dialogo moko ya moke, pete kosalela). Na Options
+    okoki kolendisa kondimisama mpe kopona eyano ya liboso (Ɛɛ/Te).
+- Liste ya koboya ba-kombo ya bafisiye (ba glob patterns) epekisaka bafisiye ya sengo mosusu kobakisama na otomatik. Ndakisa: `*intern*`, `*secret*`, `*passwor*`.
+  Kokokanisa ezali case‑insensitive mpe etala kaka kombo ya fisiye; pesa pattern moko
+  na linale moko na Options.
+- Bokebisi ya blacklist (ya kopona, ezali na libaku na liboso): soki bafisiye eboyi na blacklist na yo,
+  modal moko ya moke elakisa kombo ya fisiye mpe ba pattern oyo ekokanaki. Ezali
+  dark‑mode friendly mpe ekoki kosalelama na clavier (Enter/Esc mpo na kokanga).
+- Esalaka na “Reply” mpe “Reply all”. “Forward” ebongolamaka te na add‑on oyo.
+- Ebakisaka ba-origine ata soki osilá kokangisa eloko moko yo moko; eboya ba duplicata na kombo ya fisiye.
+- Kobatela ba duplicata “per‑tab” epekisaka kobakisa mbala mibale na tab ya kokoma moko.
+- Elongolaka ba sertifika S/MIME na liboso mpo na koboya ba attachments oyo esengeli te.
+- Ekotisa bilili ya kati (inline) (liboso: ON). Bilili ebakisami (embedded) ezongisamaka ngámbo na nzoto ya eyano lokola base64 data URIs, kobatela bobongisami ya inline ya ebandeli. Longola yango na Options soki olingi kobwaka bilili ya inline nyonso.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Ndenge esalaka {#how-it-works}
+
+- Na eyano, add‑on etielaka na liste bakangiseli ya ebandeli.
+- Elongolaka ba sinyatire S/MIME wuta na bakangiseli ya bafisiye; bilili ya inline ezongisamaka na nzoto (soki elongolami te).
+- Na kopona, etunaka kondimisama (pete mpo na clavier).
+- Ebakisaka bafisiye oyo ebongi na kokoma na yo, koboya duplicata na kombo ya fisiye.
+- Talá “Mpo na nini bakangiseli ekoki te kobakisama” na Usage mpo na ba cas spéciaux.
+
+Liyebisi ya privé: Misala nyonso esalemaka lokal na Thunderbird. Add‑on esalaka soki moko te bosɛngi ya réseau na background.
+
+---

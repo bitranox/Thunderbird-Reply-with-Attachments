@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Razvoj",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "Razvoj",
-    "sidebar_label": "Razvoj"
+    "sidebar_label": "Развој"
   },
   "sidebar": "docs",
   "previous": {

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Warn if attachments are excluded by blacklist"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include inline pictures (embedded images)"
+  },
   "uiDebugHeader": {
     "message": "Advanced"
   },

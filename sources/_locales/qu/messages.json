@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Adjuntokuna lista negrawan excluido kashpa willachiy"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inline siq'ikunata yapay (embed siq'ikuna)"
+  },
   "uiDebugHeader": {
     "message": "Avanzado"
   },

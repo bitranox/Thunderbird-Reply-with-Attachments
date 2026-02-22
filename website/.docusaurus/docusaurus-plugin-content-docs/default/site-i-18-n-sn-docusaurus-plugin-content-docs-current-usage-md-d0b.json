@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Kushandisa",
-  "description": "Usage",
+  "title": "Mashandisirwo",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Kushandisa",
-    "sidebar_label": "Kushandisa"
+    "title": "Mashandisirwo",
+    "sidebar_label": "Mashandisiro"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/configuration"
   },
   "next": {
-    "title": "Kuwirirana",
+    "title": "Kuenderana",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/compatibility"
   }
 }

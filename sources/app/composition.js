@@ -98,11 +98,15 @@
     let askBeforeAdd = false;
     let defaultAnswer = 'yes';
     let warnOnBlacklist = true;
+    let includeInline = true;
     /** @type {Array<{ pat: string, rx: RegExp }>} */
     let compiledBlacklist = [];
 
-    // load settings once; confirm awaits readiness lazily
-    function applySettings({ patterns, ask, def, warnFlag }) {
+    /**
+     * Apply loaded settings to local state and rebuild the blacklist matcher.
+     * @param {{ patterns: string[], ask: boolean, def: string, warnFlag: boolean, includeInlineFlag: boolean }} opts
+     */
+    function applySettings({ patterns, ask, def, warnFlag, includeInlineFlag }) {
       excludePatterns = patterns;
       exclude = App.Domain.makeNameExcluder(patterns);
       // Precompile blacklist regexes once for efficient matching during warnings
@@ -124,6 +128,7 @@
       askBeforeAdd = ask;
       defaultAnswer = def;
       warnOnBlacklist = warnFlag;
+      includeInline = !!includeInlineFlag;
       logDebug(
         {
           blacklistPatterns: Array.isArray(patterns) ? patterns.length : 0,
@@ -148,6 +153,7 @@
 
     // confirm function, updated when settings change
     let ensure = null;
+    /** Reconstruct the ensure-reply-attachments use-case from current settings. */
     function rebuildEnsure() {
       logDebug(
         {
@@ -169,6 +175,7 @@
         warnOnBlacklist,
         matchBlacklist: matchBlacklist,
         logger,
+        includeInlinePictures: includeInline,
       });
     }
     // bootstrap ensure with defaults so early compose events still process
@@ -189,13 +196,22 @@
         return [];
       }
     }
+    /**
+     * Show a blacklist-exclusion warning in the compose tab.
+     * @param {number} tabId
+     * @param {{name:string, pattern:string}[]} rows Excluded file/pattern pairs
+     */
     async function warnBlacklisted(tabId, rows) {
       try {
         await ensureConfirmInjected(tabId, scriptingCompose);
-      } catch (_) {}
+      } catch (e) {
+        console.error('[RWA] warnBlacklisted: inject failed:', e);
+      }
       try {
         await browser.tabs?.sendMessage?.(tabId, { type: 'rwa:warn-blacklist', rows });
-      } catch (_) {}
+      } catch (e) {
+        console.error('[RWA] warnBlacklisted: sendMessage failed:', e);
+      }
     }
     /**
      * Ask the user to confirm adding the given files.
@@ -221,28 +237,34 @@
     }
 
     // react to settings updates
-    browser.storage?.onChanged?.addListener?.((changes, area) => {
-      if (area === 'local') {
-        const keys = Object.keys(changes || {});
-        logDebug({ area, keys }, 'storage.onChanged: settings update observed');
-      }
-      if (area === 'local' && changes?.blacklistPatterns) {
-        excludePatterns = changes.blacklistPatterns.newValue || [];
-        exclude = App.Domain.makeNameExcluder(excludePatterns);
-        rebuildEnsure();
-      }
-      if (area === 'local' && changes?.confirmBeforeAdd) {
-        askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
-        rebuildEnsure();
-      }
-      if (area === 'local' && changes?.confirmDefaultChoice) {
-        defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
-      }
-      if (area === 'local' && changes?.warnOnBlacklistExcluded) {
-        warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
-        rebuildEnsure();
-      }
-    });
+    try {
+      browser.storage?.onChanged?.addListener?.((changes, area) => {
+        if (area === 'local') {
+          const keys = Object.keys(changes || {});
+          logDebug({ area, keys }, 'storage.onChanged: settings update observed');
+        }
+        if (area === 'local' && changes?.blacklistPatterns) {
+          excludePatterns = changes.blacklistPatterns.newValue || [];
+          exclude = App.Domain.makeNameExcluder(excludePatterns);
+          rebuildEnsure();
+        }
+        if (area === 'local' && changes?.confirmBeforeAdd) {
+          askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
+          rebuildEnsure();
+        }
+        if (area === 'local' && changes?.confirmDefaultChoice) {
+          defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
+        }
+        if (area === 'local' && changes?.warnOnBlacklistExcluded) {
+          warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
+          rebuildEnsure();
+        }
+        if (area === 'local' && changes?.includeInlinePictures) {
+          includeInline = !!changes.includeInlinePictures.newValue;
+          rebuildEnsure();
+        }
+      });
+    } catch (_) {}
 
     // pre-register confirm content script for new compose windows
     // Register the confirm content script so it is available for new windows.
@@ -268,8 +290,15 @@
     }
     const ensureRegistered = ensureConfirmScriptRegistered();
 
-    // event wiring
-    // On compose state changes, ensure tabs are processed once per reply.
+    // — Event wiring —
+    // Flow: compose.onStateChanged → handleComposeStateChanged → ensureWrapper → ensure
+    // Each compose tab is processed at most once per reply (idempotent via session + memory).
+
+    /**
+     * Handle a compose state change event. Resolves the tab id, fetches compose
+     * details, then delegates to ensureWrapper for idempotent attachment processing.
+     * @param {number|{id:number}} tabRef Tab reference from the Thunderbird event
+     */
     async function handleComposeStateChanged(tabRef) {
       const id = toNumericId(tabRef);
       logDebug(
@@ -301,7 +330,12 @@
     }
     compose.onStateChanged.addListener(handleComposeStateChanged);
 
-    // On send attempt, run a last ensure pass in case state change was missed.
+    /**
+     * Last-chance ensure pass on send. Catches cases where onStateChanged fired
+     * before the extension was ready or was missed due to a race condition.
+     * @param {number|{id:number}} tabRef Tab reference from the Thunderbird event
+     * @returns {Promise<{}>} Empty object to allow the send to proceed
+     */
     async function handleComposeBeforeSend(tabRef) {
       const id = toNumericId(tabRef);
       logDebug(
@@ -334,7 +368,11 @@
     }
     compose.onBeforeSend?.addListener?.(handleComposeBeforeSend);
 
-    // Cleanup per‑tab memory and session marker when a tab closes.
+    /**
+     * Clean up per-tab memory state and session marker when a compose tab closes.
+     * Prevents memory leaks from accumulating entries for closed tabs.
+     * @param {number|{id:number}} closedTabId Tab reference from tabs.onRemoved
+     */
     function handleTabRemoved(closedTabId) {
       const id = toNumericId(closedTabId);
       logDebug(
@@ -359,6 +397,13 @@
     }
     tabs?.onRemoved?.addListener?.(handleTabRemoved);
 
+    /**
+     * Resilient wrapper around the ensure use-case. Waits for settings readiness,
+     * rebuilds the use-case closure if needed, and catches all errors so a single
+     * tab failure never breaks the listener pipeline.
+     * @param {number} tabId Compose tab id
+     * @param {object} details Compose details from compose.getDetails
+     */
     async function ensureWrapper(tabId, details) {
       try {
         logDebug({ tabId, type: details?.type }, 'ensureWrapper: invoked');
@@ -405,13 +450,14 @@
 
   // — settings helpers —
   async function loadSettings(browser) {
-    const [patterns, ask, def, warnFlag] = await Promise.all([
+    const [patterns, ask, def, warnFlag, includeInlineFlag] = await Promise.all([
       readBlacklist(browser),
       readConfirmEnabled(browser),
       readConfirmDefault(browser),
       readWarnOnBlacklist(browser),
+      readIncludeInline(browser),
     ]);
-    return { patterns, ask, def, warnFlag };
+    return { patterns, ask, def, warnFlag, includeInlineFlag };
   }
   // applySettings is defined inside createAppWiring to access its local state
 
@@ -450,6 +496,15 @@
       return !!r?.warnOnBlacklistExcluded;
     } catch (_) {
       return true;
+    }
+  }
+  /** Load include-inline-pictures toggle from storage (false on error). */
+  async function readIncludeInline(browser) {
+    try {
+      const r = await browser.storage?.local?.get?.({ includeInlinePictures: true });
+      return !!r?.includeInlinePictures;
+    } catch (_) {
+      return false;
     }
   }
 

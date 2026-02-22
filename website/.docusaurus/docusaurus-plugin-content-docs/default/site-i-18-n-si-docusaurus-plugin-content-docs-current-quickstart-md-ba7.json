@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ආරම්භක මාර්ගෝපදේශය",
-  "description": "Quickstart",
+  "title": "ඉක්මන් ආරම්භය",
+  "description": "---",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ආරම්භක මාර්ගෝපදේශය",
-    "sidebar_label": "ආරම්භක මාර්ගෝපදේශය"
+    "title": "ඉක්මන් ආරම්භය",
+    "sidebar_label": "ඉක්මන් ආරම්භය"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "මුල්‍යයන්",
+    "title": "විශේෂාංග",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/features"
   },
   "next": {

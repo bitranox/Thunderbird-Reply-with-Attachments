@@ -88,6 +88,11 @@ function exposeTestingFacades({ toNumericId, getComposeDetails }) {
 
 // — Apply-settings orchestration --------------------------------------------
 
+/**
+ * Re-apply settings to every currently open reply-compose tab by
+ * clearing markers and re-running the ensure pipeline.
+ * @param {object} context - Apply-settings context from buildApplySettingsContext
+ */
 async function applySettingsToOpenComposers(context) {
   try {
     const tabs = await listAllTabs(context.browser);
@@ -108,6 +113,12 @@ async function listAllTabs(browser) {
   return (await browser.tabs?.query?.({})) || [];
 }
 
+/**
+ * Determine whether a tab is a reply-compose window and return its id/details.
+ * @param {object} tab - Tab object from browser.tabs.query
+ * @param {object} context - Apply-settings context
+ * @returns {Promise<{id: number, details: object}|null>} Resolved target or null
+ */
 async function resolveReplyCompose(tab, context) {
   const id = context.toNumericId(tab);
   if (id == null) return null;
@@ -125,6 +136,13 @@ async function clearTabMarkers({ browser, processedTabsState, sessionKey }, tabI
   } catch (_) {}
 }
 
+/**
+ * Execute the ensureReplyAttachments delegate for one tab, catching errors.
+ * @param {object} context - Apply-settings context
+ * @param {number} tabId - Compose tab identifier
+ * @param {object} details - Compose details for the tab
+ * @returns {Promise<void>}
+ */
 function runEnsure(context, tabId, details) {
   const ensure = typeof context.ensure === 'function' ? context.ensure() : null;
   try {
@@ -151,6 +169,12 @@ async function settleAll(tasks) {
 
 // — Logging -----------------------------------------------------------------
 
+/**
+ * Create a logging controller that reads the debug flag from storage
+ * and rebuilds the logger when the flag changes.
+ * @param {object} browser - WebExtension browser API
+ * @returns {Promise<{log: object, refresh: Function}>} Controller with log getter and refresh method
+ */
 async function createLoggingController(browser) {
   const makeLoggerFn = resolveLoggerFactory();
   let debugEnabled = await readDebugFlag(browser);
@@ -200,6 +224,16 @@ function logWarn(logging, payload, message) {
 
 // — Runtime wiring ----------------------------------------------------------
 
+/**
+ * Register a runtime message listener that triggers settings re-application
+ * or per-tab ensure when compose windows signal readiness.
+ * @param {object} browser - WebExtension browser API
+ * @param {object} callbacks
+ * @param {Function} callbacks.onApply - Called to re-apply settings to all open composers
+ * @param {Function|null} callbacks.reloadSettings - Reloads settings from storage
+ * @param {Function} callbacks.refreshDebug - Refreshes the debug logging flag
+ * @param {Function} callbacks.ensureForTab - Ensures attachments for a single tab
+ */
 function registerApplySettingsListener(
   browser,
   { onApply, reloadSettings, refreshDebug, ensureForTab }
@@ -226,6 +260,12 @@ function registerApplySettingsListener(
   } catch (_) {}
 }
 
+/**
+ * Extract a numeric tab ID from a runtime message sender or message payload.
+ * @param {object} sender - Message sender (may contain sender.tab.id)
+ * @param {object} msg - Message payload (may contain msg.tabId)
+ * @returns {number|null} Finite tab ID or null
+ */
 function extractTabId(sender, msg) {
   if (sender && sender.tab && typeof sender.tab.id === 'number') return sender.tab.id;
   if (msg && typeof msg.tabId !== 'undefined') {
@@ -235,10 +275,17 @@ function extractTabId(sender, msg) {
   return null;
 }
 
+/**
+ * Reload settings from storage if a reload function is available.
+ * On failure, attempts to open a URL from the message as a recovery action.
+ * @param {Function|null} reloadSettings - Async function that reloads settings
+ * @param {object} msg - Runtime message (may carry a fallback url)
+ */
 function maybeReloadSettings(reloadSettings, msg) {
   if (typeof reloadSettings !== 'function') return;
   try {
-    reloadSettings().catch(() => {
+    reloadSettings().catch((e) => {
+      console.error('[RWA] reloadSettings failed:', e);
       if (msg && msg.type === 'rwa:open-url' && typeof msg.url === 'string') {
         try {
           browser.tabs?.create?.({ url: msg.url, active: true });
@@ -253,7 +300,7 @@ function maybeRefreshDebug(refreshDebug) {
   if (typeof refreshDebug !== 'function') return;
   const result = refreshDebug();
   if (result && typeof result.catch === 'function') {
-    result.catch(() => {});
+    result.catch((e) => console.error('[RWA] refreshDebug failed:', e));
   }
 }
 
@@ -274,17 +321,26 @@ const SETTINGS_DEFAULTS = Object.freeze({
   confirmBeforeAdd: false,
   confirmDefaultChoice: 'yes',
   warnOnBlacklistExcluded: true,
+  includeInlinePictures: true,
 });
 
 function registerSettingsLifecycle(browser) {
   const SCHEMA_VERSION = 1;
   try {
     browser.runtime?.onInstalled?.addListener?.((details) => {
-      return initializeOrMigrateSettings(browser, details, SCHEMA_VERSION).catch(() => {});
+      return initializeOrMigrateSettings(browser, details, SCHEMA_VERSION).catch((e) =>
+        console.error('[RWA] settings init/migrate failed:', e)
+      );
     });
   } catch (_) {}
 }
 
+/**
+ * Seed default settings on fresh install or migrate missing keys on update.
+ * @param {object} browser - WebExtension browser API
+ * @param {object} details - Install/update details from runtime.onInstalled
+ * @param {number} targetVersion - Schema version to write after migration
+ */
 async function initializeOrMigrateSettings(browser, details, targetVersion) {
   const currentVersion = await readSchemaVersion(browser);
   if (details?.reason === 'install') {
@@ -301,24 +357,38 @@ async function readSchemaVersion(browser) {
   return Number(now?.settingsVersion || 0);
 }
 
+/**
+ * Write default settings values for any keys not already present in storage.
+ * @param {object} browser - WebExtension browser API
+ * @param {object} defaults - Key/value map of default settings
+ * @param {number} version - Schema version to stamp after seeding
+ */
 async function seedDefaultsOnInstall(browser, defaults, version) {
   const existing = await browser.storage?.local?.get?.({
     blacklistPatterns: undefined,
     confirmBeforeAdd: undefined,
     confirmDefaultChoice: undefined,
     warnOnBlacklistExcluded: undefined,
+    includeInlinePictures: undefined,
   });
   const toSet = onlyMissing(existing, defaults);
   if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);
   await browser.storage?.local?.set?.({ settingsVersion: version });
 }
 
+/**
+ * Backfill any settings keys added in newer versions that are missing in storage.
+ * @param {object} browser - WebExtension browser API
+ * @param {object} defaults - Key/value map of default settings
+ * @param {number} version - Schema version to stamp after migration
+ */
 async function migrateMissingDefaults(browser, defaults, version) {
   const snapshot = await browser.storage?.local?.get?.({
     blacklistPatterns: undefined,
     confirmBeforeAdd: undefined,
     confirmDefaultChoice: undefined,
     warnOnBlacklistExcluded: undefined,
+    includeInlinePictures: undefined,
   });
   const toSet = onlyMissing(snapshot, defaults);
   if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Fasa fasa",
-  "description": "Quickstart",
+  "title": "Daminɛ sɛgɛsɛgɛ",
+  "description": "---",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Fasa fasa",
-    "sidebar_label": "Fasa fasa"
+    "title": "Daminɛ sɛgɛsɛgɛ",
+    "sidebar_label": "Fɔlɔ cɛlɛ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kàlàwà",
+    "title": "Fonksyonalitew",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalasiyɔn",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/install"
   }
 }

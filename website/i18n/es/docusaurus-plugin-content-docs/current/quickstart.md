@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Inicio Rápido'
-sidebar_label: 'Inicio Rápido'
+title: 'Inicio rápido'
+sidebar_label: 'Inicio rápido'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Inicio rápido
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Versión mínima de Thunderbird
+Este complemento es compatible con Thunderbird **128 ESR o superior**. Las versiones anteriores no son compatibles.
+:::
+
+:::note Sin telemetría; sin red en segundo plano
+El complemento **no** recopila analíticas/telemetría y **no** realiza solicitudes de red en segundo plano. El acceso a la red solo ocurre cuando hace clic en enlaces externos (Documentación, GitHub, Donar).
+:::
+
+---
+
+### Instalar
+
+1. Instale el complemento desde Complementos de Thunderbird.
+2. Opcional: Habilite la confirmación (Opciones → “Preguntar antes de añadir archivos adjuntos”).
+3. Opcional: Deje habilitada la advertencia de la lista negra (predeterminado): “Avisar si los archivos adjuntos están excluidos por la lista negra”.
+4. Opcional: Añada patrones de la lista negra (uno por línea), p. ej.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Nota: El “# …” de arriba es un comentario en esta documentación; no incluya comentarios en los patrones que pegue en Opciones. Introduzca solo un patrón por línea.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Ahora responda a un mensaje con archivos adjuntos — los originales se añadirán automáticamente o tras una confirmación rápida. Si algún archivo queda excluido por su lista negra, verá un breve aviso que los enumera.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Verificar {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Responda a un mensaje con 1–2 archivos adjuntos y confirme que los originales se añaden a su ventana de redacción.
+- Para ajustar el comportamiento, vea [Configuración](configuration) (opción de confirmación, respuesta predeterminada, patrones de lista negra).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Verificar la advertencia de lista negra {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Responda a un mensaje que contenga un archivo como “secret.txt”.
+- Con “Avisar si los archivos adjuntos están excluidos por la lista negra” activado, un pequeño cuadro de diálogo enumerará los archivos excluidos y el patrón coincidente.
+
+Si no ve un aviso, asegúrese de que el patrón coincida exactamente con el nombre de archivo (solo el nombre del archivo, sin distinguir mayúsculas y minúsculas). Vea Configuración → Lista negra.
+
+---
+
+### Nota sobre el teclado {#keyboard-note}
+
+- El cuadro de confirmación admite Y/J para Sí y N/Esc para No. En algunos teclados no latinos, las teclas de letras pueden variar; Enter confirma el botón enfocado.
 
 ---

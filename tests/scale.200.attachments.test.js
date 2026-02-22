@@ -9,7 +9,7 @@ import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js
 function makeAttachments(n = 200) {
   const list = [];
   for (let i = 0; i < n; i++) {
-    const inline = i % 10 === 0; // every 10th is inline image (excluded)
+    const inline = i % 10 === 0; // every 10th is inline image (excluded by default)
     const name = inline ? `img${i}.png` : `doc${i}.txt`;
     const att = { name, partName: String(i), contentType: inline ? 'image/png' : 'text/plain' };
     if (inline) att.contentId = `cid:${i}`; // inline marker
@@ -38,9 +38,8 @@ describe('Scale sanity — ~200 attachments', () => {
     const dt = Date.now() - t0;
 
     const total = 200;
-    const excludedInline = Math.floor(total / 10); // 20 inline excluded
-    const excludedSmime = 0; // none here
-    const expected = total - excludedInline - excludedSmime;
+    const excludedInline = 20; // every 10th is inline → excluded
+    const expected = total - excludedInline; // inline images excluded by default
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(expected);
     // ensure part names are unique across calls
     const files = browser.compose.addAttachment.mock.calls.map((c) => c[1].file);

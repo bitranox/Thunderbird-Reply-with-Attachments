@@ -4,31 +4,40 @@ title: 'Мүмкіндіктер'
 sidebar_label: 'Мүмкіндіктер'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Мүмкіндіктер {#features}
 
-## How It Works {#how-it-works}
+- Жауап бергенде бастапқы хаттың файлдарын автоматты түрде тіркейді.
+- Бапталатын мінез-құлық: тіркемелер
+  - автоматты түрде қосылуы, немесе
+  - тек растаудан кейін қосылуы мүмкін (шағын, қолжетімді диалог). Параметрлерде сіз
+    растауды қоса аласыз және әдепкі жауапты (Иә/Жоқ) таңдай аласыз.
+- Файл атауларының қара тізімі (glob үлгілері) нақты файлдардың автоматты түрде
+  тіркелуіне жол бермейді. Мысалдар: `*intern*`, `*secret*`, `*passwor*`.
+  Сәйкестік регистрге тәуелсіз және тек файл атауын тексереді; Параметрлерде әр жолға бір үлгі
+  көрсетіңіз.
+- Қара тізім туралы ескерту (қосымша, әдепкіде қосулы): файлдарыңыз қара тізімге ілігіп
+  алынып тасталғанда, шағын модальды терезе файлды және сәйкес келетін үлгі(лер)ді көрсетеді. Қараңғы
+  режиммен үйлесімді және пернетақтамен қолжетімді (жабу үшін Enter/Esc).
+- «Жауап беру» және «Барлығына жауап беру» пәрмендерімен жұмыс істейді. Бұл қосымша «Қайта жіберу» әрекетін өзгертпейді.
+- Сіз өзіңіз бірдеңе тіркеп қойған болсаңыз да, түпнұсқаларды қосады; файл атауы бойынша қайталануларды болдырмайды.
+- Әр қойынды бойынша қайталауға қарсы қорғаныс бір хат жазу қойындысында екі рет қосуды болдырмайды.
+- Артық тіркемелерді болдырмау үшін әдепкіде S/MIME сертификаттарын елемейді.
+- Ендірілген суреттерді қосу (әдепкіде: ҚОСУЛЫ). Ендірілген кескіндер жауап мәтінінің ішінде
+  base64 дерек URI ретінде тікелей қалпына келтіріледі, бастапқы кірістірілген орналасуды сақтай отырып. Параметрлерде
+  өшіру арқылы ендірілген кескіндерді мүлде өткізіп жіберуге болады.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Қалай жұмыс істейді {#how-it-works}
+
+- Жауап бергенде қосымша бастапқы тіркемелерді тізімдейді.
+- Файл тіркемелерінен S/MIME қолтаңбаларын сүзгіден өткізеді; ендірілген кескіндер (өшірулі болмаса) мәтін ішінде қалпына келтіріледі.
+- Қалауыңыз бойынша растауды сұрайды (пернетақтамен ыңғайлы).
+- Жарамды файлдарды хат жазу терезеңізге қосады, файл атауы бойынша қайталануды болдырмай.
+- Шеткі жағдайлар үшін Пайдалану бөліміндегі “Неліктен тіркемелер қосылмауы мүмкін” тармағына қараңыз.
+
+Құпиялық туралы ескерту: Барлық өңдеу Thunderbird ішінде жергілікті түрде жүреді. Қосымша фондық желілік сұраулар жібермейді.
+
+---

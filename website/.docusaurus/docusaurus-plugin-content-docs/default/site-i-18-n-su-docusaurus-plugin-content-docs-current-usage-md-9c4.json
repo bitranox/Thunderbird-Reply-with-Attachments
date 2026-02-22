@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Pamakéan",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/configuration"
   },
   "next": {
-    "title": "Kompatibilitas",
+    "title": "Kacocokan",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/compatibility"
   }
 }

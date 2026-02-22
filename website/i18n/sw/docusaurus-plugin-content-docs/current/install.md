@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Usanidi'
+title: 'Usakinishaji'
 slug: /install
-sidebar_label: 'Usanidi'
+sidebar_label: 'Usakinishaji'
 ---
 
-## Usanidi kupitia "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Toa Minimum ya Thunderbird
-Add‑on hii inasaidia Thunderbird **128 ESR au toleo jipya zaidi**. Matoleo ya zamani hayasaidiwi.
+## Usakinishaji kupitia "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Toleo la Chini la Thunderbird
+Kiongezi hiki kinaauni Thunderbird **128 ESR au mpya zaidi**. Matoleo ya zamani hayaungiwi mkono.
 :::
 
-Huu ndio mtindo uliopendekezwa wa usanidi. Add‑ons zilizosakinishwa kutoka ATN (addons.thunderbird.net) hupokea sasisho za moja kwa moja. Usanidi wa LOCAL/dev haujisasishi kiotomatiki.
+Hii ndiyo njia iliyopendekezwa ya usakinishaji. Viongezi vilivyosakinishwa kutoka ATN (addons.thunderbird.net) hupokea masasisho ya kiotomatiki. Usakinishaji wa LOCAL/dev hausasishi kiotomatiki.
 
-- Toleo la chini la Thunderbird: 128 ESR au toleo jipya zaidi.
+- Toleo la chini la Thunderbird: 128 ESR au mpya zaidi.
 
-1. Katika Thunderbird, nenda kwenye **Zana > Add-ons na Mada**.
-2. Tafuta "jibu na viambatisho".
-3. Ongeza add-on.
+1. Ndani ya Thunderbird, nenda kwenye **Tools > Add-ons and Themes**.
+2. Tafuta "reply with attachments".
+3. Ongeza kiongezi.
 
-Au fungua ukurasa wa add‑on moja kwa moja: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Au fungua ukurasa wa kiongezi moja kwa moja: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Usanidi wa mikono kutoka XPI {#local-installation-in-thunderbird}
+## Usakinishaji kwa mkono kutoka XPI {#local-installation-in-thunderbird}
 
-### Pakua faili la XPI {#download-the-xpi-file}
+### Pakua faili ya XPI {#download-the-xpi-file}
 
-1. Nenda kwenye [Ukurasa wa Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Pakua toleo jipya zaidi la add-on kama faili la XPI (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Nenda kwenye [ukurasa wa Kiongezi cha Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Pakua toleo jipya zaidi la kiongezi kama faili ya XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Sakinisha katika Thunderbird {#install-in-thunderbird-local}
+### Sakinisha ndani ya Thunderbird {#install-in-thunderbird-local}
 
 1. Fungua Thunderbird.
-2. Nenda kwenye **Zana > Add-ons na Mada**.
-3. Katika **Meneja wa Add-ons**, bonyeza ikoni ya gear katika kona ya juu kulia.
-4. Chagua **Sakinisha Add-on Kutoka Faili…** kutoka kwenye menyu.
-5. Chagua faili iliyo pakuliwa `reply_with_attachments-x.y.z-tb.xpi`.
-6. Thibitisha usanidi unapoulizwa.
+2. Nenda kwenye **Tools > Add-ons and Themes**.
+3. Ndani ya **Add-ons Manager**, bofya ikoni ya gia kwenye kona ya juu kulia.
+4. Chagua **Install Add-on From File…** kutoka kwenye menyu.
+5. Chagua faili ya `reply_with_attachments-x.y.z-tb.xpi` uliyopakua.
+6. Thibitisha usakinishaji unapoulizwa.
 
 ---
 
-## Usanidi kwa ajili ya maendeleo {#installation-for-development}
+## Usakinishaji kwa ukuzaji {#installation-for-development}
 
-### Pakua hifadhi {#download-the-repository}
+### Pakua hazina {#download-the-repository}
 
-1. Pakua toleo jipya zaidi la hifadhi ya GitHub.
+1. Pakua toleo jipya zaidi la hazina ya GitHub.
 2. Endesha `make help` kwa maelezo zaidi.
 
-### Sakinisha katika Thunderbird {#install-in-thunderbird-dev}
+### Sakinisha ndani ya Thunderbird {#install-in-thunderbird-dev}
 
 1. Fungua Thunderbird.
-2. Nenda kwenye **Zana > Add-ons na Mada**.
-3. Katika **Meneja wa Add-ons**, bonyeza ikoni ya gear katika kona ya juu kulia.
-4. Chagua **Sakinisha Add-on Kutoka Faili…** kutoka kwenye menyu.
-5. Chagua faili iliyotengenezwa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Thibitisha usanidi unapoulizwa.
+2. Nenda kwenye **Tools > Add-ons and Themes**.
+3. Ndani ya **Add-ons Manager**, bofya ikoni ya gia kwenye kona ya juu kulia.
+4. Chagua **Install Add-on From File…** kutoka kwenye menyu.
+5. Chagua faili `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` iliyozalishwa.
+6. Thibitisha usakinishaji unapoulizwa.
 
-Kumbuka: Ikiwa Thunderbird haitakubali `.zip` kwenye mfumo wako, badilisha jina kuwa `.xpi` na jaribu "Sakinisha Add‑on Kutoka Faili…" tena.
+Kumbuka: Ikiwa Thunderbird haitakubali `.zip` kwenye mfumo wako, libadilishe jina kuwa `.xpi` na ujaribu “Install Add‑on From File…” tena.
 
-### Mahali pa kupatikana kwa LOCAL ZIP {#where-local-zip}
+### Mahali pa kupata ZIP ya LOCAL {#where-local-zip}
 
-- Kwanza, pakiti add‑on: endesha `make pack` katika mizizi ya hifadhi.
-- Baada ya kupakia, pata "LOCAL" zip katika mizizi ya hifadhi (k.m., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Kabla ya kupakia tena kwa ajili ya kupima, pandisha toleo katika `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
+- Kwanza, funga (package) kiongezi: endesha `make pack` katika mzizi wa hazina.
+- Baada ya kufunga, pata zip ya “LOCAL” katika mzizi wa hazina (km., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Kabla ya kufunga upya kwa ajili ya majaribio, ongeza nambari za matoleo katika `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
 
 ---
 
-## Zima, Ondoa, na Sasisho {#disable-uninstall-updates}
+## Lemaza, Ondoa, na Masasisho {#disable-uninstall-updates}
 
-- Zima: Thunderbird → Zana → Add‑ons na Mada → pata add‑on → geuza off.
-- Ondoa: mtazamo sawa → menyu ya alama tatu → Ondoa.
-- Sasisho: Usanidi wa ATN unajisasaisha kiotomatiki unapopatikana matoleo mapya. Usanidi wa LOCAL/dev haujisasishi kiotomatiki; weka tena usanidi mpya wa LOCAL kwa mikono.
-- Ondoa mipangilio kabisa: angalia [Faragha → Kuondoa data](privacy#data-removal).
+- Lemaza: Thunderbird → Tools → Add‑ons and Themes → pata kiongezi → zima.
+- Ondoa: mwonekano huo huo → menyu ya nukta tatu → Remove.
+- Masasisho: Usakinishaji kutoka ATN husasisha kiotomatiki wakati matoleo mapya yanaidhinishwa. Usakinishaji wa LOCAL/dev hausasishi kiotomatiki; sakinisha tena kwa mkono toleo jipya la LOCAL.
+- Ondoa mipangilio kabisa: tazama [Faragha → Uondoaji wa data](privacy#data-removal).
 
 Tazama pia
 
-- [Mwongozo wa Haraka](quickstart)
+- [Kuanza haraka](quickstart)

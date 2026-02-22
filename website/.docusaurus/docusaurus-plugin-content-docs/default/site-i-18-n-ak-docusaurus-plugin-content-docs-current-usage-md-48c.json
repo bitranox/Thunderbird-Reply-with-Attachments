@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Mmomma",
-  "description": "Usage",
+  "title": "Sɛnea Wɔde Di Dwuma",
+  "description": "---",
   "source": "@site/i18n/ak/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Mmomma",
-    "sidebar_label": "Mmomma"
+    "title": "Sɛnea Wɔde Di Dwuma",
+    "sidebar_label": "Sɛnea wɔde di dwuma"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/configuration"
   },
   "next": {
-    "title": "Nkabom",
+    "title": "Fata",
     "permalink": "/Thunderbird-Reply-with-Attachments/ak/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Kompatibilitas",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -14,11 +14,11 @@
   "frontMatter": {
     "id": "compatibility",
     "title": "Kompatibilitas",
-    "sidebar_label": "Kompatibilitas"
+    "sidebar_label": "Kacocokan"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Penggunaan",
+    "title": "Panganggone",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/usage"
   },
   "next": {

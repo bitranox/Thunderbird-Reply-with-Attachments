@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Arhiw'
+title: 'Üýtgeşmeler gündeligi'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Üýtgeşmeler jurnaly
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Doly, jikme-jik taryh üçin, repozitoriýanyň
+[GitHubdaky CHANGELOG.md-ine](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) serediň.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Satr içindäki suratlary goşmak" indi jogap hatynyň göwresinde suratlary base64 maglumat URI-leri hökmünde gönüden-göni ýerleşdirýär (deslapky: ON); kod hiliniň gowulaşdyrylmagy we synag örtüginiň giňeldilmegi.
+- 2.3.1: Thunderbird fon wakalar sahypasyny işjeňsiz ýagdaýda goýandan soň hem goşundylary saklaýar; näsazlyklary çözgitlemek üçin nyşana gönükdirilen debug hook-lary goşýar.
+- 2.3.0: Goşundylaryň dublikatlaryny aýyrmak kämilleşdirildi, synag örtügi giňeldildi we AMO syýasatlaryna laýyk gelmek üçin könelen ygtyýarnamalar aýryldy.
+- 2.1.0: Ilkinji 100 dil üçin doly halkaralaşdyrma goldawy
+- 2.0.0: doly mümkinçilikli wersiýa hökmünde täzeden ýazuw (EN/DE)
+- 1.0.1: messages.listAttachments() ulanylmaga geçildi
+- 1.0.0: başlangyç goýberiliş
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Seneler we kanallar {#dates-and-channels}
+
+- ATN-a goýberilişler gaplanandan soň birnäçe sagat gijikdirilip biler.
+- LOCAL build-ler diňe ösdürijileriň synaglary üçin niýetlenendir we ATN arkaly paýlanmaýar.
+
+---

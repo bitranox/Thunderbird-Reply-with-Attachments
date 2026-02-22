@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kimisulu",
-  "description": "Kimisulu",
+  "title": "Libandeli ya noki",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kimisulu",
-    "sidebar_label": "Kimisulu"
+    "title": "Libandeli ya noki",
+    "sidebar_label": "Kobanda noki"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mibeko",
+    "title": "Bizaleli",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/features"
   },
   "next": {
-    "title": "Installation",
+    "title": "Instalasion",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/install"
   }
 }

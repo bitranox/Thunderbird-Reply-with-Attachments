@@ -3,19 +3,26 @@ id: changelog
 title: 'יומן שינויים'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## יומן שינויים
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+להיסטוריה מלאה ומפורטת, ראו את קובץ
+[CHANGELOG.md ב-GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) של המאגר.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" כעת מטמיעה תמונות ישירות בגוף התשובה ככתובות URI של נתונים ב-base64 (ברירת מחדל: מופעל); שיפורי איכות קוד והרחבת כיסוי הבדיקות.
+- 2.3.1: שומר על קבצים מצורפים לאחר ש-Thunderbird מעמיד את דף האירועים ברקע במצב סרק; מוסיף ווים ממוקדים לניפוי באגים לצורך פתרון תקלות.
+- 2.3.0: שיפור הסרת כפילויות של קבצים מצורפים, הרחבת כיסוי הבדיקות, והסרת הרשאות מיושנות כדי לעמוד במדיניות AMO.
+- 2.1.0: תמיכה מלאה בבינאום עבור 100 השפות המובילות
+- 2.0.0: שכתוב לגרסה עתירת תכונות (EN/DE)
+- 1.0.1: מעבר לשימוש ב-messages.listAttachments()
+- 1.0.0: שחרור ראשוני
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## תאריכים וערוצים {#dates-and-channels}
+
+- שחרורים ל-ATN עשויים להתעכב בכמה שעות לאחר האריזה.
+- בניות LOCAL מיועדות לבדיקות מפתחים בלבד ואינן מופצות דרך ATN.
 
 ---

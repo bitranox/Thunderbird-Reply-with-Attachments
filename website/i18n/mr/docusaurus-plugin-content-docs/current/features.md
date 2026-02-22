@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'विशेषताएं'
-sidebar_label: 'विशेषताएं'
+title: 'वैशिष्ट्ये'
+sidebar_label: 'वैशिष्ट्ये'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## वैशिष्ट्ये {#features}
 
-## How It Works {#how-it-works}
+- प्रत्युत्तर देताना मूळ ईमेलमधील फायली आपोआप जोडतो.
+- संरचीत करण्यायोग्य वर्तन: संलग्नके खालीलप्रमाणे असू शकतात
+  - आपोआप जोडली जाऊ शकतात, किंवा
+  - फक्त पुष्टीकरणानंतर (लहान, प्रवेशयोग्य संवाद). Options मध्ये तुम्ही
+    पुष्टीकरण सक्षम करू शकता आणि डीफॉल्ट उत्तर (होय/नाही) निवडू शकता.
+- फायलनावांची ब्लॅकलिस्ट (glob पॅटर्न्स) विशिष्ट फायली
+  आपोआप जोडल्या जाण्यापासून रोखते. उदाहरणे: `*intern*`, `*secret*`, `*passwor*`.
+  जुळणी case‑insensitive आहे आणि फक्त फायलनाव तपासते; Options मध्ये
+  प्रत्येक ओळीवर एक पॅटर्न द्या.
+- ब्लॅकलिस्ट चेतावणी (पर्यायी, डीफॉल्टने सक्षम): तुमच्या
+  ब्लॅकलिस्टमुळे फायली वगळल्या गेल्या असतील तर, एक लहान मोडल फाइल आणि जुळणारे पॅटर्न(स्) दाखवतो. डार्क‑मोड
+  अनुकूल आणि कीबोर्ड‑सुलभ (बंद करण्यासाठी Enter/Esc).
+- Reply आणि Reply all सोबत कार्य करते. Forward या अॅड‑ऑनमुळे बदलला जात नाही.
+- तुम्ही स्वतः काहीतरी आधीच जोडले असले तरीही मूळ फायली जोडतो; फायलनावावरून डुप्लिकेट्स टाळतो.
+- प्रति‑टॅब डुप्लिकेट गार्ड त्याच compose टॅबमध्ये दुप्पट‑जोडणे टाळतो.
+- अनावश्यक संलग्नक टाळण्यासाठी डीफॉल्टने S/MIME प्रमाणपत्रे वगळतो.
+- इनलाइन चित्रे समाविष्ट करा (डीफॉल्ट: ON). एम्बेड केलेली चित्रे थेट
+  उत्तराच्या मजकुरात base64 data URIs म्हणून पुनर्संचयित केली जातात, मूळ इनलाइन मांडणी जतन करून. Options मध्ये
+  निष्क्रिय केल्यास इनलाइन प्रतिमा पूर्णपणे वगळल्या जातील.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## हे कसे कार्य करते {#how-it-works}
+
+- उत्तर देताना, अॅड‑ऑन मूळ संलग्नकांची यादी करतो.
+- फाइल संलग्नकांमधील S/MIME स्वाक्षऱ्या फिल्टर करतो; इनलाइन प्रतिमा (निष्क्रिय केल्या नसतील तर) मजकुरात पुनर्संचयित केल्या जातात.
+- पर्यायीरीत्या पुष्टीकरण विचारतो (कीबोर्ड‑अनुकूल).
+- पात्र फायली तुमच्या compose मध्ये जोडतो, फायलनावावरून डुप्लिकेट्स टाळतो.
+- सीमाभागी प्रकरणांसाठी Usage मधील “Why attachments might not be added” पहा.
+
+गोपनीयता सूचना: सर्व प्रक्रिया Thunderbird मध्ये स्थानिक स्तरावरच होते. अॅड‑ऑन कोणत्याही पार्श्वभूमीतील नेटवर्क विनंत्या करत नाही.
+
+---

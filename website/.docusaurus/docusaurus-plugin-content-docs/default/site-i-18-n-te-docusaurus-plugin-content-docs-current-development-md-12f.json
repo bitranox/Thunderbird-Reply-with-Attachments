@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "అభివృద్ధి",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

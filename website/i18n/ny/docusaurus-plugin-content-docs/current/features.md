@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Zinthu Zozungulira'
-sidebar_label: 'Zinthu Zozungulira'
+title: 'Mawonekedwe'
+sidebar_label: 'Mawonekedwe'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Mawonekedwe {#features}
 
-## How It Works {#how-it-works}
+- Zimamangiriza mafayilo ochokera ku imelo yoyambirira zokha mukamayankha.
+- Makhalidwe osinthika: zomangirizidwa zingathe kukhala
+  - kuwonjezedwa zokha, kapena
+  - kuwonjezedwa pokhapokha mutatsimikizira (bokosi laling'ono losavuta kulifikira). Mu Zosankha mutha
+    kuyatsa kutsimikizira ndikusankha yankho losasintha (Inde/Ayi).
+- Mndandanda wakuda wa mayina a mafayilo (mapatani a glob) umalepheretsa mafayilo ena kuti
+  azimangirizidwe zokha. Zitsanzo: `*intern*`, `*secret*`, `*passwor*`.
+  Kufananitsa sikusiyanitsa zilembo zazikulu ndi zing'ono ndipo kumayang'ana dzina la fayilo lokha; perekani chitsanzo chimodzi
+  pa mzere uliwonse mu Zosankha.
+- Chenjezo la mndandanda wakuda (mwa kusankha, layatsidwa mwachisawawa): akachotsedwa mafayilo ndi
+  mndandanda wanu wakuda, zenera laling'ono la modal limalemba fayiloyo ndi mapatani ogwirizana. Limagwirizana ndi mawonekedwe amdima
+  ndipo ndi losavuta kugwiritsa ntchito ndi kiyibodi (Enter/Esc kuti mutseke).
+- Zimagwira ntchito ndi Reply ndi Reply all. Forward silisinthidwa ndi chowonjezerachi.
+- Zimawonjezera zoyambirira ngakhale mutakhala kuti mwayika china kale; zimapewa zobwereza potengera dzina la fayilo.
+- Chitetezo cha zobwereza pa tabu chilizonse chimalepheretsa kuwonjezera kawiri mu tabu yomweyo ya kulemba uthenga.
+- Zimasiyira ma satifiketi a S/MIME mwachisawawa kuti apewe zomangirizidwa zosafunikira.
+- Phatikizani zithunzi zamkati mwa uthenga (mwachisawawa: ZAYATSIDWA). Zithunzi zobisidwazo zimabwezeretsedwa mwachindunji mu
+  thupi la yankho ngati base64 data URIs, kusunga kapangidwe koyambirira ka mkati. Zimitsani mu
+  Zosankha kuti musiye zithunzi zamkati kwathunthu.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Momwe Zimagwirira Ntchito {#how-it-works}
+
+- Mukamayankha, chowonjezeracho chimatchula zomangirizidwa zoyambirira.
+- Chimachotsa ma siginecha a S/MIME kuchokera ku zomangirizidwa za fayilo; zithunzi zamkati zimabwezeretsedwa m'thupi (pokhapokha zitazimitsidwa).
+- Chingafunse kutsimikizira ngati mukufuna (chosavuta pa kiyibodi).
+- Chimawonjezera mafayilo oyenerera pa uthenga womwe mukulemba, chimapewa zobwereza potengera dzina la fayilo.
+- Onani “Chifukwa chomwe zomangirizidwa sizingawonjezedwe” mu Kugwiritsa Ntchito pa milandu yapadera.
+
+Zindikirani zachinsinsi: Zonse zimachitika pakhomo mu Thunderbird. Chowonjezerachi sichimapempha ma netiweki kumbuyo.
+
+---

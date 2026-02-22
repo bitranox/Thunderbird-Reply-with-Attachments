@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
-  "description": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
+  "title": "ເລີ່ມຕົ້ນດ່ວນ",
+  "description": "---",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
-    "sidebar_label": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ"
+    "title": "ເລີ່ມຕົ້ນດ່ວນ",
+    "sidebar_label": "ເລີ່ມຕົ້ນດ່ວນ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ลักษณะเด่น",
+    "title": "ຄຸນນະສົມບັດ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/features"
   },
   "next": {

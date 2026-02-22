@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "စတင်ကြည့်ရှုခြင်း",
-  "description": "စတင်ကြည့်ရှုခြင်း",
+  "title": "အမြန်စတင်",
+  "description": "---",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "စတင်ကြည့်ရှုခြင်း",
-    "sidebar_label": "စတင်ကြည့်ရှုခြင်း"
+    "title": "အမြန်စတင်",
+    "sidebar_label": "အမြန်စတင်"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "လက္каွေ့များ",
+    "title": "အင်္ဂါရပ်များ",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/features"
   },
   "next": {
-    "title": "ဦးတည်ရာ",
+    "title": "တပ်ဆင်ခြင်း",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/install"
   }
 }

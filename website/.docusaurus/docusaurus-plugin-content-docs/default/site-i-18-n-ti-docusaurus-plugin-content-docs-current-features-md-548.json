@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ማሕበራት",
-  "description": "Features",
+  "title": "ባህሪታት",
+  "description": "---",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ማሕበራት",
-    "sidebar_label": "ማሕበራት"
+    "title": "ባህሪታት",
+    "sidebar_label": "ባህሪታት"
   },
   "sidebar": "docs",
   "next": {
-    "title": "መጀመሪያ መርምር",
+    "title": "ምጀመር ብቅልጡፍ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/quickstart"
   }
 }

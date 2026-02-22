@@ -4,39 +4,41 @@ title: 'Kompatibilita'
 sidebar_label: 'Kompatibilita'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilita {#compatibility}
+
+:::important Minimální verze Thunderbirdu
+Tento doplněk podporuje Thunderbird **128 ESR nebo novější**. Starší verze nejsou podporovány.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR nebo novější je podporován (128.x+).
+- Starší verze Thunderbirdu nejsou podporovány.
+- Testováno na Windows, macOS a Linuxu.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 není podporován
+Manifest V2 není podporován. Doplněk cílí na **Manifest V3 (MV3)** pro Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Řešení problémů {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Pokud doplněk nefunguje podle očekávání, ujistěte se, že používáte kompatibilní verzi Thunderbirdu (128 ESR nebo novější).
+- Zkontrolujte konzoli chyb Thunderbirdu (**Nástroje > Nástroje pro vývojáře > Konzole chyb**) kvůli případným problémům souvisejícím s doplňkem.
+- Pokud se zdá, že se uložená nastavení neaplikují správně, restartujte Thunderbird a zkuste to znovu. (Thunderbird může mezi relacemi kešovat stav; restart zajistí načtení čerstvých nastavení.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Známé konflikty {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Zatím nejsou známy žádné. Pokud vidíte opakující se duplicitní přílohy nebo selhání s jinými doplňky, nahlaste to, prosím, s kroky k reprodukci.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Verze Thunderbird Beta a Daily (Nightly) jsou obecně podporovány, ale změny v upstreamu mohou občas narušit chování doplňku. Pokud narazíte na problémy, nahlaste je prosím a uveďte přesnou verzi Thunderbirdu (např. “Daily 131.0a1 2025‑09‑10”).
+- Narazili jste na regresi v Beta/Nightly? Nahlaste ji s kroky k reprodukci — viz [Podpora](support) — a uveďte přesný build Thunderbirdu.
 
 ---

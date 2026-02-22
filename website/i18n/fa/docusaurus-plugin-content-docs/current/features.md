@@ -4,31 +4,38 @@ title: 'ویژگی‌ها'
 sidebar_label: 'ویژگی‌ها'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ویژگی‌ها {#features}
 
-## How It Works {#how-it-works}
+- هنگام پاسخ دادن، فایل‌های ایمیل اصلی را به‌طور خودکار پیوست می‌کند.
+- رفتار قابل‌تنظیم: پیوست‌ها می‌توانند
+  - به‌طور خودکار اضافه شوند، یا
+  - فقط پس از تأیید (یک پنجرهٔ محاوره‌ای کوچک و قابل‌دسترس) اضافه شوند. در «گزینه‌ها»
+    می‌توانید تأیید را فعال کنید و پاسخ پیش‌فرض (بله/خیر) را انتخاب کنید.
+- فهرست سیاه نام فایل‌ها (الگوهای glob) از پیوست‌شدن خودکار فایل‌های مشخص جلوگیری می‌کند. مثال‌ها: `*intern*`, `*secret*`, `*passwor*`.
+  تطبیق نسبت به بزرگی/کوچکی حروف حساس نیست و فقط نام فایل بررسی می‌شود؛ در «گزینه‌ها» برای هر خط یک الگو وارد کنید.
+- هشدار فهرست سیاه (اختیاری، به‌طور پیش‌فرض فعال): وقتی فایل‌هایی توسط فهرست سیاه شما کنار گذاشته می‌شوند،
+  یک مُدال کوچک نام فایل و الگو(های) منطبق را فهرست می‌کند. سازگار با حالت تاریک
+  و قابل‌دسترس با صفحه‌کلید (Enter/Esc برای بستن).
+- با «پاسخ» و «پاسخ به همه» کار می‌کند. «فوروارد» توسط این افزونه تغییری نمی‌کند.
+- حتی اگر خودتان چیزی پیوست کرده باشید، نسخه‌های اصلی را هم اضافه می‌کند؛ با توجه به نام فایل از ایجاد موارد تکراری جلوگیری می‌شود.
+- محافظ جلوگیری از تکرار در هر زبانه از دوباره‌افزودن در همان زبانهٔ نگارش جلوگیری می‌کند.
+- برای جلوگیری از پیوست‌های غیرضروری، گواهی‌های S/MIME به‌طور پیش‌فرض نادیده گرفته می‌شوند.
+- شامل تصاویر درون‌خطی می‌شود (پیش‌فرض: روشن). تصاویر توکار مستقیماً در
+  بدنهٔ پاسخ به‌صورت URIهای دادهٔ base64 بازگردانی می‌شوند و چیدمان درون‌خطی اصلی حفظ می‌شود. در
+  «گزینه‌ها» غیرفعالش کنید تا تصاویر درون‌خطی کاملاً نادیده گرفته شوند.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## چگونه کار می‌کند {#how-it-works}
+
+- هنگام پاسخ، افزونه پیوست‌های اصلی را فهرست می‌کند.
+- امضاهای S/MIME را از پیوست‌های فایل فیلتر می‌کند؛ تصاویر درون‌خطی در بدنه بازگردانی می‌شوند (مگر این‌که غیرفعال شده باشد).
+- در صورت تمایل درخواست تأیید می‌کند (مناسب صفحه‌کلید).
+- فایل‌های واجد شرایط را به نگارش شما اضافه می‌کند و با توجه به نام فایل از تکرار جلوگیری می‌کند.
+- برای موارد خاص، “چرا ممکن است پیوست‌ها اضافه نشوند” را در بخش «نحوهٔ استفاده» ببینید.
+
+یادداشت حریم خصوصی: تمام پردازش‌ها به‌صورت محلی در Thunderbird انجام می‌شود. افزونه هیچ درخواست شبکه‌ای در پس‌زمینه ارسال نمی‌کند.
+
+---

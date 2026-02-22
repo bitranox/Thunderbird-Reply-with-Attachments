@@ -4,24 +4,26 @@ title: 'Brzi početak'
 sidebar_label: 'Brzi početak'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Brzi početak
+
+:::important Minimalna verzija Thunderbirda
+Ovaj dodatak podržava Thunderbird **128 ESR ili noviji**. Starije verzije nisu podržane.
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note Bez telemetrije; bez pozadinskih mrežnih aktivnosti
+Dodatak **ne** prikuplja analitiku/telemetriju i **ne** šalje pozadinske mrežne zahtjeve. Pristup mreži se dešava samo kada kliknete vanjske linkove (Dokumentacija, GitHub, Donacije).
 :::
 
 ---
 
-### Install
+### Instalacija
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. Instalirajte dodatak sa Thunderbird Add‑ons.
+2. Opcionalno: Omogućite potvrdu (Opcije → „Pitati prije dodavanja priloga”).
+3. Opcionalno: Ostavite upozorenje o crnoj listi uključeno (podrazumijevano): „Upozori ako su prilozi isključeni crnom listom”.
+4. Opcionalno: Dodajte obrasce crne liste (jedan po liniji), npr.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Napomena: „# …” iznad je komentar u ovoj dokumentaciji; nemojte uključivati komentare u obrasce koje lijepite u Opcije. Unosite samo jedan obrazac po liniji.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Sada odgovorite na poruku s prilozima — originali će biti dodani automatski ili nakon brze potvrde. Ako bilo koje datoteke budu isključene vašom crnom listom, vidjet ćete kratko upozorenje koje ih nabraja.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Provjera {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Odgovorite na poruku s 1–2 priloga i potvrdite da su originali dodani u prozor za sastavljanje.
+- Za podešavanje ponašanja, pogledajte [Konfiguracija](configuration) (prekidač potvrde, podrazumijevani odgovor, obrasci crne liste).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Provjerite upozorenje crne liste {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Odgovorite na poruku koja sadrži datoteku poput „secret.txt”.
+- Ako je omogućeno „Upozori ako su prilozi isključeni crnom listom”, mali dijalog će navesti isključene datoteke i odgovarajući obrazac.
+
+Ako ne vidite upozorenje, provjerite da obrazac tačno odgovara nazivu datoteke (samo naziv datoteke, neosjetljivo na velika/mala slova). Pogledajte Konfiguracija → Crna lista.
+
+---
+
+### Napomena o tastaturi {#keyboard-note}
+
+- Dijalog za potvrdu podržava Y/J za Da i N/Esc za Ne. Na nekim nelatiničnim tastaturama, slovne tipke se mogu razlikovati; Enter potvrđuje fokusirano dugme.
 
 ---

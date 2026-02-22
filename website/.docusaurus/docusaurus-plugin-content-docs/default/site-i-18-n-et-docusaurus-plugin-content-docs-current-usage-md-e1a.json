@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Kasutus",
-  "description": "Usage",
+  "title": "Kasutamine",
+  "description": "---",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Kasutus",
-    "sidebar_label": "Kasutus"
+    "title": "Kasutamine",
+    "sidebar_label": "Kasutamine"
   },
   "sidebar": "docs",
   "previous": {

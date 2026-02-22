@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "स्थापना",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/ne/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "छिटो सुरु गर्ने तरिका",
+    "title": "छिटो सुरुवात",
     "permalink": "/Thunderbird-Reply-with-Attachments/ne/docs/quickstart"
   },
   "next": {

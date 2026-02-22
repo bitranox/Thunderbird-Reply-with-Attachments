@@ -4,294 +4,296 @@ title: 'Forbairt'
 sidebar_label: 'Forbairt'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Treoir Forbartha {#development-guide}
+
+:::note Cuir an Béarla amháin in eagar; scaiptear na haistriúcháin
+Nuashonraigh an doiciméadú amháin faoi `website/docs` (Béarla). Gintear na haistriúcháin faoi `website/i18n/<locale>/…` agus níor chóir iad a chur in eagar de láimh. Úsáid na tascanna aistriúcháin (m.sh., `make translate_web_docs_batch`) chun ábhar logánaithe a athnuachan.
 :::
 
-### Prerequisites {#prerequisites}
+### Réamhriachtanais {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ agus npm (tástáilte le Node 22)
+- Thunderbird 128 ESR nó níos nuaí (le haghaidh tástála láimhe)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Leagan amach an tionscadail (ardleibhéal) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Fréamh: script phacáistithe `distribution_zip_packer.sh`, doiciméadú, gabhálacha scáileáin
+- `sources/`: príomhchód an bhreiseáin (cúlra, UI roghanna/poip‑suas, comhaid manifest, deilbhíní)
+- `tests/`: sraith Vitest
+- `website/`: doiciméid Docusaurus (le i18n faoi `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Suiteáil & Uirlisí {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Suiteáil spleáchais fréimhe: `npm ci`
+- Doiciméid (roghnach): `cd website && npm ci`
+- Aimsigh spriocanna: `make help`
+
+---
+
+### Forbairt Bheo (web‑ext run) {#live-dev-web-ext}
+
+- Lúb thapa i Firefox Desktop (smóictheist UI amháin):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Rith i Thunderbird (is fearr le haghaidh MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Leideanna:
+- Coinnigh Consól Earráide Thunderbird oscailte (Uirlisí → Uirlisí Forbróra → Consól Earráide).
+- Cuirtear leathanaigh imeachta MV3 ar fionraí nuair atá siad díomhaoin; athluchtaigh an breiseán tar éis athruithe cód, nó lig do web‑ext athluchtaigh go huathoibríoch.
+- D’fhéadfadh iompraíochtaí atá sainiúil do Firefox a bheith éagsúil; fíoraigh i gcónaí i Thunderbird le comhparáid API a chinntiú.
+- Conairí inrite Thunderbird (samplaí):
+- Linux: `thunderbird` (m.sh., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Leithlisiú próifíle: Úsáid próifíl Thunderbird ar leith don fhorbairt chun do shocrú laethúil a sheachaint a bheith buailte.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Spriocanna Make (Aibítreach) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Comhchaighdeánaíonn an Makefile sreafaí forbartha coitianta. Rith `make help` am ar bith le hachoimre aonlíne ar gach sprioc.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Leid: má rithtear `make` gan sprioc, osclaítear roghchlár simplí Whiptail chun sprioc a roghnú.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Sprioc                                                   | Cur síos aonlíne                                                                                                    |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Bain déantáin tógála/réamhamhairc logánta (tmp/, web-local-preview/, website/build/).                               |
+| [`commit`](#mt-commit)                                   | Formáidigh, rith tástálacha (lena n‑áirítear i18n), nuashonraigh an changelog, déan tiomantas & brúigh.             |
+| [`eslint`](#mt-eslint)                                   | Rith ESLint trí chumraíocht chomhréidh (`npm run -s lint:eslint`).                                                  |
+| [`help`](#mt-help)                                       | Liostaigh gach sprioc le doiciméadú aonlíne (sórtáilte).                                                            |
+| [`lint`](#mt-lint)                                       | web‑ext lint ar `sources/` (manifest sealadach; neamhaird ar ZIPanna; neamh‑mharfach).                              |
+| [`menu`](#mt-menu)                                       | Roghchlár idirghníomhach chun sprioc agus argóintí roghnacha a roghnú.                                              |
+| [`pack`](#mt-pack)                                       | Tóg ZIPanna ATN & LOCAL (rithíonn linter; glaonn ar script pacála).                                                 |
+| [`prettier`](#mt-prettier)                               | Formáidigh an stór sa láthair (scríobhann athruithe).                                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier i mód seiceála (gan scríobh); teipeann má tá athfhoirmiú riachtanach.                                      |
+| [`prettier_write`](#mt-prettier_write)                   | Ailias ar `prettier`.                                                                                               |
+| [`test`](#mt-test)                                       | Prettier (scríobh), ESLint, ansin Vitest (clúdach má tá cumraithe).                                                 |
+| [`test_i18n`](#mt-test_i18n)                             | Tástálacha i18n amháin: ionadchoinní an bhreiseáin + comhréireacht an tsuímh ghréasáin.                             |
+| [`translate_app`](#mt-translation-app)                   | Ailias ar `translation_app`.                                                                                        |
+| [`translation_app`](#mt-translation-app)                 | Aistrigh teaghráin UI an aipe ó `sources/_locales/en/messages.json`.                                                |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Aistrigh doiciméid an tsuímh ghréasáin trí OpenAI Batch API (molta).                                                |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Aistrigh doiciméid an tsuímh ghréasáin go sioncrónach (oidhreachta, neamh‑bhaisc).                                  |
+| [`translate_web_index`](#mt-translation_web_index)       | Ailias ar `translation_web_index`.                                                                                  |
+| [`translation_web_index`](#mt-translation_web_index)     | Aistrigh UI an leathanaigh baile/bharra nascleanúna/bhuntáisc (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Tóg doiciméid go `website/build` (tacaíonn le `--locales` / `BUILD_LOCALES`).                                       |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Seiceáil nasc as líne‑shábháilte (scipeálann HTTP[S] cianda).                                                       |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Réamhamharc áitiúil gh‑pages; freastalaíonn go huathoibríoch ar 8080–8090; tástálacha/seiceáil nasc roghnach.       |
+| [`web_push_github`](#mt-web_push_github)                 | Brúigh `website/build` chuig an mbrainse `gh-pages`.                                                                |
 
-Syntax for options
+Syntax le haghaidh roghanna
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Úsáid `make <command> OPTS="…"` chun roghanna a thabhairt (mholtar comharthaí athfhriotail). Taispeánann gach sprioc thíos sampla úsáide.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Leideanna tógála logchaighdeáin {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Tóg fo‑thacar logchaighdeán: socraigh `BUILD_LOCALES="en de"` nó tabhair `OPTS="--locales en,de"` do spriocanna gréasáin.
+- Réamhamharc ar logchaighdeán sonrach: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Tógáil & Pacáistiú {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Tóg ZIPanna: `make pack`
+- Cruthaíonn ZIPanna ATN agus LOCAL i bhfréamh an stórtha (ná cuir in eagar déantáin de láimh)
+- Leid: nuashonraigh an leagan i `sources/manifest_ATN.json` agus `sources/manifest_LOCAL.json` araon roimh phacáistiú
+- Suiteáil láimhe (forb.): Thunderbird → Uirlisí → Breiseáin agus Téamaí → giar → Suiteáil Breiseán Ó Chomhad… → roghnaigh an ZIP tógtha
+
+---
+
+### Tástáil {#test}
+
+- Sraith iomlán: `make test` (Vitest)
+- Clúdach (roghnach):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Rith `make test`; oscail `coverage/index.html` don tuarascáil HTML
+- i18n amháin: `make test_i18n` (eochracha/ionadchoinní/teidil UI + comhionannas in aghaidh an logchaighdeáin in aghaidh an doiciméid ar an suíomh le seiceálacha id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Dífhabhtú & Logaí {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Consól Earráide: Uirlisí → Uirlisí Forbróra → Consól Earráide
+- Scoránaigh logaí fairsinge ag am rite:
+- Cumasaigh: `messenger.storage.local.set({ debug: true })`
+- Díchumasaigh: `messenger.storage.local.set({ debug: false })`
+- Taispeántar logaí agus tú ag cumadh/ag seoladh freagraí
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Doiciméid (suíomh gréasáin) {#docs-website}
+
+- Freastalaí forbartha: `cd website && npm run start`
+- Tóg suíomh statach: `cd website && npm run build`
+- Comhionanna Make (de réir aibítre): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Samplaí úsáide:
+- EN amháin, scipeáil tástálacha/seiceáil nasc, gan brú: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Gach logchaighdeán, le tástálacha/seiceáil nasc, ansin brú: `make web_build_local_preview && make web_push_github`
+- Sula bhfoilseofar, rith an seiceáil nasc as líne‑shábháilte: `make web_build_linkcheck`.
+- i18n: Tá an Béarla i `website/docs/*.md`; aistriúcháin Ghearmáinise i `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Cuardach: Má tá athróga timpeallachta Algolia DocSearch socraithe sa CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), úsáideann an suíomh cuardach Algolia; murach sin titeann sé ar ais go cuardach logánta. Ar an leathanach baile, brúigh `/` nó `Ctrl+K` chun an bosca cuardaigh a oscailt.
+
+---
+
+#### Bealach atreoraithe deonaigh {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Bealach: `/donate` (agus `/<locale>/donate`)
+- Iompar:
+- Má tá logchaighdeán ag an mbealach reatha (m.sh., `/de/donate`), bain úsáid as
+- Seachas sin, roghnaigh an meaitseáil is fearr ó `navigator.languages` i gcoinne na logchaighdeán cumraithe; titeann ar ais go logchaighdeán réamhshocraithe
+- Atreoraíonn chuig:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- eile → `/<locale>/docs/donation`
+- Úsáideann `useBaseUrl` chun baseUrl a láimhseáil i gceart
+- Cuimsíonn sé athnuachan meta + nasc `noscript` mar thitim siar
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Leideanna Réamhamhairc {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Stop réamhamharc Node go glan: oscail `http://localhost:<port>/__stop` (printáilte i ndiaidh `Local server started`).
+- Mura lódáiltear íomhánna i MDX/JSX, úsáid `useBaseUrl('/img/...')` chun `baseUrl` an tsuímh a urramú.
+- Tosaíonn an réamhamharc ar dtús; rithtear an seiceáil nasc ina dhiaidh sin agus níl sé blocáilte (ní stopfaidh naisc sheachtracha briste an réamhamharc).
+- URL réamhamhairc samplach: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printáilte tar éis “Local server started”).
+- Naisc sheachtracha sa seiceáil nasc: Cuireann roinnt suíomhanna seachtracha (m.sh., addons.thunderbird.net) bac ar chraoltóirí uathoibríocha agus féadfaidh siad 403 a thaispeáint i seiceálacha nasc. Tosaíonn an réamhamharc fós; is sábháilte neamhaird a dhéanamh díobh seo.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Aistrigh an Suíomh Gréasáin {#translate-website}
 
-What you can translate
+Cad is féidir leat a aistriú
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- UI an tsuímh amháin: leathanach baile, barra nascleanúna, buntásc, agus teaghráin UI eile. Fanann inneachar na ndoiciméad i mBéarla faoi láthair.
 
-Where to edit
+Cá háit le cur in eagar
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Cuir `website/i18n/<locale>/code.json` in eagar (úsáid `en` mar thagairt). Coinnigh ionadchoinní mar `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` gan athrú.
 
-Generate or refresh files
+Gineann nó nuashonraigh comhaid
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Cruthaigh stubaí ar iarraidh do gach logchaighdeán: `npm --prefix website run i18n:stubs`
+- Forscríobh stubaí ón mBéarla (tar éis teaghráin nua a chur leis): `npm --prefix website run i18n:stubs:force`
+- Rogha eile do logchaighdeán aonair: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Aistrigh teaghráin UI an leathanaigh baile/bharra nascleanúna/bhuntáisc (OpenAI)
 
-- Set credentials once (shell or .env):
+- Socraigh dintiúir uair amháin (blaosc nó .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Roghnach: `export OPENAI_MODEL=gpt-4o-mini`
+- Aon‑seoladh (gach logchaighdeán, scipeáil en): `make translate_web_index`
+- Teorannaigh do logchaighdeáin shonracha: `make translate_web_index OPTS="--locales de,fr"`
+- Forscríobh luachanna atá ann cheana: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Bailíochtú agus athiarrachtaí
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Déanann an script aistriúcháin bailíochtú ar chruth JSON, caomhnaíonn sé ionadchoinní lúibíní cuarlacha, agus cinntíonn sé nach ndéantar URLanna a athrú.
+- Ar theip bailíochtaithe, déanann sé iarracht arís le haiseolas suas le 2 uair sula gcoimeádann sé luachanna atá ann.
 
-Preview your locale
+Réamhamharc ar do logchaighdeán
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Freastalaí forbartha: `npm --prefix website run start`
+- Tabhair cuairt ar `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+A chur isteach
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Oscail PR leis na comhaid `code.json` curtha in eagar. Coinnigh athruithe dírithe agus cuir seat scáileáin gasta san áireamh nuair is féidir.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Leideanna Slándála & Cumraíochta {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Ná déan `sources/manifest.json` a thiomantas (cruthaithe go sealadach ag an dtógáil)
+- Coinnigh `browser_specific_settings.gecko.id` cobhsaí chun an cainéal nuashonraithe a chaomhnú
+
+---
+
+### Seasmhacht Socruithe {#settings-persistence}
+
+- Stóráil: Tá gach socrú úsáideora i `storage.local` agus maireann siad trasna nuashonruithe an bhreiseáin.
+- Suiteáil: Ní chuirtear réamhshocruithe i bhfeidhm ach nuair a bhíonn eochair in easnamh go docht (neamhshainithe).
+- Nuashonrú: Líonann imirce eochracha atá ar iarraidh amháin; ní fhorscríobhtar luachanna atá ann riamh.
+- Marcóir scéime: `settingsVersion` (faoi láthair `1`).
+- Eochracha agus réamhshocruithe:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Cód: féach `sources/background.js` → `initializeOrMigrateSettings()` agus `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Sreabhadh oibre forbartha (socruithe nua a chur leis)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Méadaigh `SCHEMA_VERSION` in `sources/background.js`.
+- Cuir an eochair nua + réamhshocrú leis an réad `DEFAULTS` in `initializeOrMigrateSettings()`.
+- Úsáid an riail “only-if-undefined” agus réamhshocruithe á síolú; ná forscríobh luachanna atá ann.
+- Má tá an socrú le feiceáil ag an úsáideoir, nasc é i `sources/options.js` agus cuir teaghráin logánaithe leis.
+- Cuir tástálacha leis/coigeartaigh (féach `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Leideanna tástála de láimh
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Insamhail suiteáil úr: glan eolaire sonraí an leathnaithe nó tosaigh le próifíl nua.
+- Insamhail nuashonrú: socraigh `settingsVersion` go `0` in `storage.local` agus athluchtaigh; deimhnigh go bhfanann luachanna atá ann gan athrú agus nach gcuirtear ach eochracha atá ar iarraidh leis.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Fabhtcheartú {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Déan cinnte gur 128 ESR nó níos nuaí é Thunderbird
+- Úsáid an Consól Earráide le haghaidh saincheisteanna ama rite
+- Má tá cuma nach bhfuil socruithe stóráilte á gcur i bhfeidhm i gceart, atosaigh Thunderbird agus bain triail eile as. (D’fhéadfadh Thunderbird staid a taisceadh thar sheisiúin; cinntíonn atosaigh go lódáiltear socruithe úra.)
 
 ---
 
-### Translations
+### CI & Clúdach {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- Ritheann GitHub Actions (`CI — Tests`) vitest le tairseacha clúdaigh (85% línte/feidhmeanna/brainseanna/ráitis). Mura gcomhlíontar na tairseacha, teipeann an jab.
+- Uaslódálann an sreabhadh oibre déantán `coverage-html` leis an tuarascáil HTML; íoslódáil é ón leathanach reatha (Actions → rith is déanaí → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Ranníocaíocht {#contributing}
 
-Screenshots for docs
+- Féach CONTRIBUTING.md le haghaidh treoirlínte brainse/tiomantais/PR
+- Leid: Cruthaigh próifíl fhorbartha Thunderbird ar leith le haghaidh tástála chun tionchar ar do phróifíl laethúil a sheachaint.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Aistriúcháin
+
+- Is féidir go mbeidh poist aistriúcháin mhóra “all → all” mall agus costasach. Tosaigh le fo‑thacar (m.sh., cúpla doiciméad agus 1–2 logchaighdeán), athbhreithnigh an toradh, ansin leathnaigh.
+
+---
+
+- Beartas athiarrachta: déanann poist aistriúcháin suas le 3 iarracht le cúlchéimniú easpónantúil ar earráidí API; féach `scripts/translate_web_docs_batch.js` agus `scripts/translate_web_docs_sync.js`.
+
+Gabhálacha scáileáin do dhoiciméid
+
+- Stóráil íomhánacha faoi `website/static/img/`.
+- Déan tagairt dóibh i MD/MDX trí `useBaseUrl('/img/<filename>')` ionas go n‑oibreoidh cosáin leis an `baseUrl` an tsuímh.
+- Tar éis íomhánna a chur leis nó a athainmniú faoi `website/static/img/`, deimhnigh go n‑úsáideann gach tagairt fós `useBaseUrl('/img/…')` agus go rindreáiltear i réamhamharc logánta.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- Gintear an `favicon.ico` ilmhéide go huathoibríoch i ngach cosán tógála (Make + scripteanna) trí `website/scripts/build-favicon.mjs`.
+- Ní theastaíonn céim láimhe; is leor `icon-*.png` a nuashonrú.
+  Leid athbhreithnithe
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Coinnigh an `id` tosaigh gan athrú i ndoiciméid aistrithe; aistrigh `title` agus `sidebar_label` amháin nuair atá siad ann.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Cuspóir: bain déantáin tógála/ réamhamhairc logánta.
+- Úsáid: `make clean`
+- Bainann (má tá siad ann):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Cuspóir: formáidigh, tástáil, nuashonraigh changelog, déan tiomantas, agus brúigh.
+- Úsáid: `make commit`
+- Sonraí: ritheann Prettier (scríobh), `make test`, `make test_i18n`; cuireann leis an changelog nuair atá difríochtaí stáitse ann; brúíonn chuig `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Cuspóir: rith ESLint trí chumraíocht chomhréidh.
+- Úsáid: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Cuspóir: liostaigh gach sprioc le doic. aonlíne.
+- Úsáid: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Cuspóir: lint an MailExtension ag úsáid `web-ext`.
+- Úsáid: `make lint`
+- Nótaí: déanann sé cóipeanna sealadacha `sources/manifest_LOCAL.json` → `sources/manifest.json`; déanann neamhaird ar ZIPanna tógtha; ní theipeann ar an bpíblíne ar rabhaidh.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Cuspóir: roghchlár idirghníomhach chun sprioc Make agus argóintí roghnacha a roghnú.
+- Úsáid: rith `make` gan argóintí.
+- Nótaí: mura bhfuil `whiptail` ar fáil, titeann an roghchlár ar ais go `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Cuspóir: tóg ZIPanna ATN agus LOCAL (braitheann ar `lint`).
+- Úsáid: `make pack`
+- Leid: ardú leaganacha i `sources/manifest_*.json` araon roimh phacáistiú.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Cuspóir: formáidigh an stór ar an láthair.
+- Úsáid: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Cuspóir: fíoraigh formáidiú (gan scríbhneoireacht).
+- Úsáid: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Cuspóir: ailias ar `prettier`.
+- Úsáid: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Cuspóir: rith Prettier (scríobh), ESLint, ansin Vitest (clúdach má tá suiteáilte).
+- Úsáid: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Cuspóir: tástálacha dírithe ar i18n do theaghráin an bhreiseáin agus do dhoiciméid an tsuímh.
+- Úsáid: `make test_i18n`
+- Ritheann: `npm run test:i18n` agus `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Cuspóir: aistrigh teaghráin UI an bhreiseáin ó EN go logchaighdeáin eile.
+- Úsáid: `make translation_app OPTS="--locales all|de,fr"`
+- Nótaí: caomhnaíonn sé struchtúr eochracha agus ionadchoinní; logálann sé go `translation_app.log`. Foirm script: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Cuspóir: aistrigh doiciméid an tsuímh ó `website/docs/*.md` go `website/i18n/<locale>/...`.
+- Molta: `translate_web_docs_batch` (OpenAI Batch API)
+  - Úsáid (bratacha): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Glactar fós leis an sean‑shuíomh posisiúnta: `OPTS="<doc|all> <lang|all>"`
+- Iompar: tógann JSONL, uaslódálann, seiceálann gach 30s, íoslódálann torthaí, scríobhann comhaid.
+- Nóta: féadfaidh post baisc suas le 24 uair an chloig a thógáil chun críochnú (de réir fuinneog baisc OpenAI). Taispeánann an consól an t‑am caite ar gach seiceáil.
+- Timpeallacht: `OPENAI_API_KEY` (riachtanach), roghnach `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (réamhshocrú 24h), `BATCH_POLL_INTERVAL_MS`.
+- Oidhreachta: `translate_web_docs_sync`
+  - Úsáid (bratacha): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Glactar fós leis an sean‑shuíomh posisiúnta: `OPTS="<doc|all> <lang|all>"`
+- Iompar: iarrataí in aghaidh an phéire go sioncrónach (gan comhiomlánú baisce).
+- Nótaí: leideanna idirghníomhacha nuair a fhágtar `OPTS` ar lár. Caomhnaíonn an dá mhodh bloic chód/ionchód líne agus coinníonn siad `id` an tosaigh gan athrú; logálann sé go `translation_web_batch.log` (baisc) nó `translation_web_sync.log` (sioncr.).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Cuspóir: aistrigh teaghráin UI an tsuímh (leathanach baile, barra nascleanúna, buntásc) ó `website/i18n/en/code.json` go gach logchaighdeán faoi `website/i18n/<locale>/code.json` (ag eisiamh `en`).
+- Úsáid: `make translate_web_index` nó `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Riachtanais: easpórtáil `OPENAI_API_KEY` (roghnach: `OPENAI_MODEL=gpt-4o-mini`).
+- Iompar: bailíochtaíonn sé struchtúr JSON, caomhnaíonn sé ionadchoinní lúibíní cuarlacha, coimeádann sé URLanna gan athrú, agus déanann sé iarracht arís le haiseolas ar earráidí bailíochtaithe.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Cuspóir: tóg suíomh na ndoiciméad go `website/build`.
+- Úsáid: `make web_build OPTS="--locales en|de,en|all"` (nó socraigh `BUILD_LOCALES="en de"`)
+- Inmheánacha: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Spleáchais: ritheann `npm ci` in `website/` ach amháin má tá `website/node_modules/@docusaurus` ar iarraidh.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Cuspóir: seiceáil nasc as líne‑shábháilte.
+- Úsáid: `make web_build_linkcheck OPTS="--locales en|all"`
+- Nótaí: tógann go `tmp_linkcheck_web_pages`; athscríobhann `baseUrl` GH Pages go `/`; scipeálann naisc iargúlta HTTP(S).
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Cuspóir: réamhamharc áitiúil gh‑pages le tástálacha/seiceáil nasc roghnach.
+- Úsáid: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Iompar: déanann sé iarracht ar fhreastalaí réamhamhairc Node ar dtús (`scripts/preview-server.mjs`, tacaíonn le `/__stop`), titeann ar ais go `python3 -m http.server`; freastalaíonn sé ar 8080–8090; PID ag `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Cuspóir: brúigh `website/build` chuig an mbrainse `gh-pages`.
+- Úsáid: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Leid: socraigh `NPM=…` chun an bainisteoir pacáiste a úsáideann an Makefile a shárú (réamhshocrú `npm`).
+
+---

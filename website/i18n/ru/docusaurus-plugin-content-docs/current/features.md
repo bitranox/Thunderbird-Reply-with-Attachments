@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Особенности'
-sidebar_label: 'Особенности'
+title: 'Возможности'
+sidebar_label: 'Возможности'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Возможности {#features}
 
-## How It Works {#how-it-works}
+- Автоматически прикрепляет файлы из исходного письма при ответе.
+- Настраиваемое поведение: вложения можно
+  - добавлять автоматически или
+  - добавлять только после подтверждения (небольшое, доступное диалоговое окно). В Настройках
+    можно включить подтверждение и выбрать ответ по умолчанию («Да»/«Нет»).
+- Черный список имен файлов (шаблоны glob) предотвращает автоматическое прикрепление
+  конкретных файлов. Примеры: `*intern*`, `*secret*`, `*passwor*`.
+  Сопоставление выполняется без учета регистра и проверяет только имя файла; указывайте по одному
+  шаблону на строку в Настройках.
+- Предупреждение о черном списке (необязательно, включено по умолчанию): когда файлы исключаются вашим
+  черным списком, небольшое модальное окно перечисляет файл и совпавшие шаблоны. Поддерживает темный режим
+  и доступно с клавиатуры (Enter/Esc для закрытия).
+- Работает с «Ответить» и «Ответить всем». Команда «Переслать» этим дополнением не изменяется.
+- Добавляет оригиналы даже если вы уже что-то прикрепили сами; избегает дубликатов по имени файла.
+- Защита от дубликатов на уровне вкладки предотвращает повторное добавление в той же вкладке составления письма.
+- По умолчанию пропускает сертификаты S/MIME, чтобы избежать лишних вложений.
+- Включать встроенные изображения (по умолчанию: ВКЛ.). Встроенные картинки восстанавливаются прямо в тексте
+  ответа как data URI в формате base64, сохраняя исходное встроенное расположение. Отключите в Настройках,
+  чтобы полностью пропускать встроенные изображения.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Как это работает {#how-it-works}
+
+- При ответе дополнение перечисляет исходные вложения.
+- Отфильтровывает подписи S/MIME из файловых вложений; встроенные изображения восстанавливаются в теле письма (если не отключено).
+- При необходимости запрашивает подтверждение (удобно с клавиатуры).
+- Добавляет подходящие файлы в составляемое письмо, избегая дубликатов по имени файла.
+- См. «Почему вложения могут не добавляться» в разделе «Использование» для пограничных случаев.
+
+Примечание о конфиденциальности: вся обработка выполняется локально в Thunderbird. Дополнение не делает фоновых сетевых запросов.
+
+---

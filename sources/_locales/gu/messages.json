@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "જોડાણો બ્લેકલિસ્ટથી બહાર રાખવામાં આવ્યા હોય તો ચેતવો"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ઇનલાઇન ચિત્રો શામેલ કરો (એમ્બેડેડ ચિત્રો)"
+  },
   "uiDebugHeader": {
     "message": "અદ્યતન"
   },

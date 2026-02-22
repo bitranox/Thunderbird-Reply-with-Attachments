@@ -4,39 +4,41 @@ title: 'Comhoiriúnacht'
 sidebar_label: 'Comhoiriúnacht'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Comhoiriúnacht {#compatibility}
+
+:::important Leagan Íosta Thunderbird
+Tacaíonn an breiseán seo le Thunderbird **128 ESR nó níos nuaí**. Ní thacaítear le leaganacha níos sine.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Tacaítear le Thunderbird 128 ESR nó níos nuaí (128.x+).
+- Ní thacaítear le leaganacha Thunderbird níos sine.
+- Tástáladh ar Windows, ar macOS agus ar Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Ní thacaítear le Manifest V2
+Ní thacaítear le Manifest V2. Tá an breiseán dírithe ar **Manifest V3 (MV3)** ar Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Fabhtcheartú {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Mura n-oibríonn an breiseán mar a bheifí ag súil leis, cinntigh go bhfuil tú ag úsáid leagan comhoiriúnach de Thunderbird (128 ESR nó níos déanaí).
+- Seiceáil consól earráide Thunderbird (**Uirlisí > Uirlisí Forbróra > Consól Earráide**) le haghaidh aon cheisteanna a bhaineann leis an mbreiseán.
+- Más cosúil nach bhfuil na socruithe stóráilte á gcur i bhfeidhm mar is ceart, atosaigh Thunderbird agus bain triail eile as. (Is féidir le Thunderbird an staid a chur sa taisce idir sheisiúin; cinntíonn atosú go luchtófar socruithe nua.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Coimhlintí ar eolas {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Níl aon cheann ar eolas faoi láthair. Má fheiceann tú ceangaltáin dhúblacha arís agus arís eile nó teipeanna le breiseáin eile, tuairiscigh iad agus cuir na céimeanna chun iad a atáirgeadh san áireamh.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Tacaítear go ginearálta le tógálacha Thunderbird Beta agus Daily (Nightly), ach d’fhéadfadh athruithe suas-srutha iompar an bhreiseáin a bhriseadh ó am go chéile. Má thagann tú ar fhadhbanna, tuairiscigh iad agus cuir an leagan cruinn de Thunderbird san áireamh (m.sh., “Daily 131.0a1 2025‑09‑10”).
+- Ar bhuail tú le cúlchéimniú ar Beta/Nightly? Tuairiscigh é le céimeanna chun é a atáirgeadh — féach [Tacaíocht](support) — agus cuir an teaghrán tógála cruinn de Thunderbird san áireamh.
 
 ---

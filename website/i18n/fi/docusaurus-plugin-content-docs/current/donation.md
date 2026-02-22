@@ -4,28 +4,30 @@ title: 'Lahjoita'
 sidebar_label: 'Lahjoita'
 ---
 
+---
+
 ## Lahjoita
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Jos pidät lisäosasta "Reply with Attachments" ja haluat tukea sen kehitystä, voit lahjoittaa täällä:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Lahjoita Stripen kautta" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>tai</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Lahjoita PayPalin kautta" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>tai</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Osta minulle kahvi" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skannaa ostaaksesi minulle kahvin"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Kiitos! Tukesi auttaa ylläpitämään yhteensopivuuden uusien Thunderbird-julkaisujen kanssa, parantamaan saavutettavuutta ja testejä sekä pitämään dokumentaation ajan tasalla.
 
-Notes
+Huomautuksia
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Lahjoituslinkit avautuvat vain, kun napsautat niitä; lisäosa ei tee taustalla verkkopyyntöjä.
+- Toistuva tuki auttaa pitkäaikaisessa ylläpidossa ja ajantasaisissa päivityksissä, mutta on täysin vapaaehtoista.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Jos kuvapainikkeet eivät lataudu, käytä sen sijaan näitä linkkejä:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Lahjoitukset ovat vapaaehtoisia; ominaisuuksien käyttöä ei rajoiteta.
 
 ---
 
-## Lahjoituksen näkyvyys (90 päivän tauko)
+## Lahjoituskehotusten näkyvyys (90 päivän torkutus)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Lisäosassa on kätevä toiminto, jolla voit piilottaa lahjoituskehotukset joksikin aikaa lahjoituksen jälkeen.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Mistä löydät sen
+  - Asetukset → Tuki-osio: näet “Lahjoitin”-painikkeen ja pienen vihjealueen.
+  - Lähetysvahvistusikkuna näyttää myös Lahjoita-painikkeen; se piiloutuu automaattisesti, kun torkutus on aktiivinen.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Miten se toimii
+  - Kun napsautat “Lahjoitin”, lahjoituspainikkeet ja niihin liittyvät kehotukset piilotetaan 90 päivän ajaksi.
+  - Tilavihje näyttää merkinnän “Piilotettu asti YYYY‑MM‑DD” (paikallisessa päivämäärämuodossasi). Näkyvyyden voi palauttaa heti “Näytä Lahjoita uudelleen” -painikkeella.
+  - 90 päivän jälkeen Lahjoita-painike tulee jälleen automaattisesti näkyviin.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Yksityisyys ja tallennus
+  - Lisäosa tallentaa yhden aikaleiman Thunderbirdin paikalliseen tallennustilaan muistaakseen torkutusjakson. Avain: `donateHideUntil` (epoch millisekunteina).
+  - Tämä asetus on paikallinen Thunderbird-profiilillesi (ei pilvisynkronointia). Tämä toiminto ei tee mitään verkkopyyntöjä.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Vianmääritys
+  - Jos Lahjoita on yhä näkyvissä heti “Lahjoitin”-painikkeen napsauttamisen jälkeen, odota hetki tai avaa Asetukset-sivu uudelleen; käyttöliittymä päivittyy heti, kun asetus on tallennettu.
+  - Palauttaaksesi manuaalisesti napsauta “Näytä Lahjoita uudelleen”. Voit myös odottaa, kunnes vihjeessä mainittu päivämäärä on ohitettu.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Tämä toiminto on pelkästään mukavuuden vuoksi; se ei koskaan estä lisäosan toimintoja eikä kerää mitään henkilötietoja.
 
 ---

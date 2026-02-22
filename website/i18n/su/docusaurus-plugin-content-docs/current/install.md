@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Instalasi'
+title: 'Pamasangan'
 slug: /install
-sidebar_label: 'Instalasi'
+sidebar_label: 'Pamasangan'
 ---
 
-## Instalasi via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-Add‑on ieu ngarojong Thunderbird **128 ESR atawa langkung anyar**. Versi lami teu didukung.
+## Pamasangan ngaliwatan "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Vérsi Thunderbird Minimum
+Add‑on ieu ngarojong Thunderbird **128 ESR atawa nu leuwih anyar**. Vérsi anu leuwih kolot teu didukung.
 :::
 
-Ieu mangrupikeun métode instalasi anu disarankeun. Add‑on anu dipasang ti ATN (addons.thunderbird.net) nampi pembaruan otomatis. Instalasi LOCAL/dev teu otomatis diperbarui.
+Ieu téh metoda pamasangan anu dianjurkeun. Add‑on nu dipasang tina ATN (addons.thunderbird.net) bakal narima apdét otomatis. Pamasangan LOCAL/dev teu ngapdét otomatis.
 
-- Versi Thunderbird minimal: 128 ESR atawa langkung anyar.
+- Vérsi minimum Thunderbird: 128 ESR atawa nu leuwih anyar.
 
-1. Dina Thunderbird, buka **Alat > Add-ons and Themes**.
-2. Pilarian "balas nganggo lampiran".
-3. Tambahkeun add-on.
+1. Dina Thunderbird, buka **Tools > Add-ons and Themes**.
+2. Pilarian "reply with attachments".
+3. Pasang add‑on‑na.
 
-Atawa buka halaman add-on sacara langsung: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Instalasi manual ti XPI {#local-installation-in-thunderbird}
-
-### Unduh berkas XPI {#download-the-xpi-file}
-
-1. Buka halaman [Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Unduh versi terbaru tina add-on salaku berkas XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Instal di Thunderbird {#install-in-thunderbird-local}
-
-1. Buka Thunderbird.
-2. Buka **Alat > Add-ons and Themes**.
-3. Dina **Manajer Add-ons**, klik ikon gear di pojok kanan luhur.
-4. Pilih **Instal Add-on Ti Berkas…** tina ménu.
-5. Pilih berkas `reply_with_attachments-x.y.z-tb.xpi` anu diunduh.
-6. Konfirmasi instalasi nalika dipénta.
+Atawa buka kaca add‑on langsung: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Instalasi pikeun pangembangan {#installation-for-development}
+## Pamasangan manual tina XPI {#local-installation-in-thunderbird}
 
-### Unduh repository {#download-the-repository}
+### Undeur berkas XPI {#download-the-xpi-file}
 
-1. Unduh versi terbaru tina repository GitHub.
-2. Jalankeun `make help` pikeun informasi langkung lanjut.
+1. Buka ka [kaca Add‑on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Undeur vérsi panganyarna tina add‑on salaku berkas XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Instal di Thunderbird {#install-in-thunderbird-dev}
+### Pasang dina Thunderbird {#install-in-thunderbird-local}
 
 1. Buka Thunderbird.
-2. Buka **Alat > Add-ons and Themes**.
-3. Dina **Manajer Add-ons**, klik ikon gear di pojok kanan luhur.
-4. Pilih **Instal Add-on Ti Berkas…** tina ménu.
+2. Buka **Tools > Add-ons and Themes**.
+3. Dina **Add-ons Manager**, klik ikon gir di pojok katuhu luhur.
+4. Pilih **Install Add-on From File…** tina ménu.
+5. Pilih berkas `reply_with_attachments-x.y.z-tb.xpi` nu tadi diundeuh.
+6. Konfirmasi pamasangan nalika dipenta.
+
+---
+
+## Pamasangan pikeun pamekaran {#installation-for-development}
+
+### Undeur répositori {#download-the-repository}
+
+1. Undeur vérsi panganyarna tina répositori GitHub.
+2. Jalankeun `make help` pikeun inpo leuwih lengkep.
+
+### Pasang dina Thunderbird {#install-in-thunderbird-dev}
+
+1. Buka Thunderbird.
+2. Buka **Tools > Add-ons and Themes**.
+3. Dina **Add-ons Manager**, klik ikon gir di pojok katuhu luhur.
+4. Pilih **Install Add-on From File…** tina ménu.
 5. Pilih berkas anu dihasilkeun `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Konfirmasi instalasi nalika dipénta.
+6. Konfirmasi pamasangan nalika dipenta.
 
-Catetan: Upami Thunderbird henteu nampa `.zip` dina sistem anjeun, ganti nami janten `.xpi` sareng cobian deui “Instal Add‑on Ti Berkas…”
+Catetan: Lamun Thunderbird teu nampa `.zip` dina sistem anjeun, ganti ngaran jadi `.xpi` sarta cobian deui “Install Add‑on From File…”.
 
-### Di mana mendakan ZIP LOKAL {#where-local-zip}
+### Dimana manggihan LOCAL ZIP {#where-local-zip}
 
-- Mimiti, bungkus add‑on: jalankeun `make pack` di akar repository.
-- Sanggeus dibungkus, mendakan zip “LOCAL” di akar repository (contong: `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Satiap nyiapkeun deui pikeun nguji, tingkatkeun versi di `sources/manifest_ATN.json` sareng `sources/manifest_LOCAL.json`.
+- Heula, pakétkeun add‑on‑na: jalankeun `make pack` dina akar répositori.
+- Sanggeus dipakétkeun, tingali zip “LOCAL” di akar répositori (contona, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Saméméh ngapakétkeun deui pikeun nguji, naékkeun vérsi boh dina `sources/manifest_ATN.json` boh `sources/manifest_LOCAL.json`.
 
 ---
 
-## Nonaktipkeun, Copot Pasang, sareng Pembaruan {#disable-uninstall-updates}
+## Pareuman, Copot, jeung Apdét {#disable-uninstall-updates}
 
-- Nonaktipkeun: Thunderbird → Alat → Add‑ons dan Themes → mendakan add‑on → geser ka off.
-- Copot pasang: pandangan anu sami → ménu tilu titik → Hapus.
-- Pembaruan: instalasi ATN otomatis di-update nalika versi anyar disatujuan. Instalasi LOCAL/dev teu otomatis di-update; pasang deui build LOCAL anyar sacara manual.
-- Hapus setelan sacara lengkep: tingali [Privasi → Hapus data](privacy#data-removal).
+- Pareuman: Thunderbird → Tools → Add‑ons and Themes → téangan add‑on‑na → pindahkeun saklar ka pareuman.
+- Copot: tampilan nu sarua → ménu tilu-titik → Remove.
+- Apdét: pamasangan tina ATN bakal otomatis ngapdét nalika vérsi anyar disatujuan. Pamasangan LOCAL/dev teu otomatis ngapdét; pasang deui build LOCAL anyar sacara manual.
+- Miceun setélan sagemblengna: tingali [Privasi → Miceun data](privacy#data-removal).
 
 Tingali ogé
 
-- [Panduan Singkat](quickstart)
+- [Mimitian Gancang](quickstart)

@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Суулгалт'
+title: 'Суурилуулалт'
 slug: /install
-sidebar_label: 'Суулгалт'
+sidebar_label: 'Суурилуулалт'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## “Thunderbird Add-ons and Themes”‑ээр суулгах {#installation-in-thunderbird-recommended}
+
+:::important Thunderbird‑ийн хамгийн бага хувилбар
+Энэ нэмэлт нь Thunderbird‑ийн **128 ESR эсвэл түүнээс шинэ** хувилбарыг дэмжинэ. Хуучин хувилбарууд дэмжигдэхгүй.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Энэ нь санал болгож буй суулгах арга юм. ATN (addons.thunderbird.net)‑ээс суулгасан нэмэлтүүд автоматаар шинэчлэгдэнэ. LOCAL/dev суулгалтууд автоматаар шинэчлэгддэггүй.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Thunderbird‑ийн хамгийн бага хувилбар: 128 ESR эсвэл түүнээс шинэ.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird дотор **Tools > Add-ons and Themes** рүү очно уу.
+2. "reply with attachments" гэж хайна.
+3. Нэмэлтийг нэмнэ.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Эсвэл нэмэлтийн хуудсыг шууд нээнэ үү: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI‑оос гараар суулгах {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI файлыг татаж авах {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird нэмэлтийн хуудас](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) руу очно уу.
+2. Нэмэлтийн хамгийн сүүлийн хувилбарыг XPI файл (`reply_with_attachments-x.y.z-tb.xpi`) хэлбэрээр татаж авна уу.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird дээр суулгах {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird‑ийг нээнэ.
+2. **Tools > Add-ons and Themes** рүү очно уу.
+3. **Add-ons Manager** дотор баруун дээд буланд байх арааны дүрс дээр дар.
+4. Цэснээс **Install Add-on From File…**‑г сонго.
+5. Татсан `reply_with_attachments-x.y.z-tb.xpi` файлыг сонгоно.
+6. Сануулга гарвал суулгалтыг баталгаажуулна.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Хөгжүүлэлтийн зориулалттай суулгалт {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Агуулахыг татаж авах {#download-the-repository}
 
-See also
+1. GitHub агуулахын хамгийн сүүлийн хувилбарыг татаж ав.
+2. Дэлгэрэнгүй мэдээлэл авахын тулд `make help` ажиллуул.
 
-- [Quickstart](quickstart)
+### Thunderbird дээр суулгах {#install-in-thunderbird-dev}
+
+1. Thunderbird‑ийг нээнэ.
+2. **Tools > Add-ons and Themes** рүү очно уу.
+3. **Add-ons Manager** дотор баруун дээд буланд байх арааны дүрс дээр дар.
+4. Цэснээс **Install Add-on From File…**‑г сонго.
+5. Үүсгэсэн файл `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`‑г сонго.
+6. Сануулга гарвал суулгалтыг баталгаажуулна.
+
+Тэмдэглэл: Хэрэв таны систем дээр Thunderbird `.zip`‑ийг хүлээж авахгүй бол түүнийг `.xpi` болгон нэрийг нь өөрчлөөд “Install Add‑on From File…”‑г дахин оролдоорой.
+
+### LOCAL ZIP‑ийг хаанаас олох вэ {#where-local-zip}
+
+- Эхлээд нэмэлтийг багцална: агуулахын үндсэн лавлахад `make pack`‑г ажиллуул.
+- Багцалсны дараа “LOCAL” zip‑ийг агуулахын үндсэн лавлахад олно (жишээ нь, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Тестлэхээр дахин багцлахаас өмнө `sources/manifest_ATN.json` болон `sources/manifest_LOCAL.json` хоёуланд нь хувилбарын дугаарыг нэмэгдүүл.
+
+---
+
+## Идэвхгүй болгох, Устгах, Шинэчлэлтүүд {#disable-uninstall-updates}
+
+- Идэвхгүй болгох: Thunderbird → Tools → Add‑ons and Themes → нэмэлтийг ол → унтраалгыг унтраа.
+- Устгах: адилхан харагдац → гурван цэгтэй цэс → Remove.
+- Шинэчлэлтүүд: шинэ хувилбарууд батлагдмагц ATN‑ээс суулгасан нэмэлтүүд автоматаар шинэчлэгдэнэ. LOCAL/dev суулгалтууд автоматаар шинэчлэгддэггүй; шинэ LOCAL хувилбарыг гараар дахин суулга.
+- Тохиргоог бүрэн устгах: [Нууцлал → Өгөгдөл устгах](privacy#data-removal) хэсгийг үзнэ үү.
+
+Мөн үзнэ үү
+
+- [Түргэн эхлэх](quickstart)

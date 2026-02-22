@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Особенности'
-sidebar_label: 'Особенности'
+title: 'Հնարավորություններ'
+sidebar_label: 'Հատկություններ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Հատկություններ {#features}
 
-## How It Works {#how-it-works}
+- Պատասխանելիս ինքնաբերաբար կցում է բնօրինակ նամակի ֆայլերը։
+- Կարգավորվող գործելակերպ: կցորդները կարող են
+  - ավելացվել ինքնաբերաբար, կամ
+  - ավելացվել միայն հաստատումից հետո (փոքր, մատչելի երկխոսություն): Ընտրանքներում դուք
+    կարող եք միացնել հաստատումը և ընտրել լռելյայն պատասխանը (Այո/Ոչ)։
+- Ֆայլանունների սև ցուցակը (glob ձևանմուշներ) կանխում է որոշակի ֆայլերի
+  ինքնաշխատ կցվելը։ Օրինակներ՝ `*intern*`, `*secret*`, `*passwor*`.
+  Համընկնումը մեծատառ/փոքրատառերից անկախ է և ստուգում է միայն ֆայլանունը; Ընտրանքներում
+  յուրաքանչյուր տողի համար տրամադրեք մեկ ձևանմուշ։
+- Սև ցուցակի նախազգուշացում (ընտրովի, լռելյայն միացված). երբ ֆայլերը բացառվում են ձեր
+  սև ցուցակով, փոքր մոդալ պատուհանը ցուցակում է ֆայլը և համապատասխանող ձևանմուշ(ներ)ը։ Մութ ռեժիմի
+  համար հարմար և ստեղնաշարով մատչելի (փակելու համար՝ Enter/Esc)։
+- Աշխատում է «Պատասխանել» և «Պատասխանել բոլորին»-ի հետ։ «Փոխանցել»-ը այս հավելումով չի փոփոխվում։
+- Ավելացնում է բնօրինակները, անգամ եթե դուք արդեն ինչ‑որ բան կցել եք. խուսափում է կրկնություններից՝ ըստ ֆայլի անվան։
+- Ներդիրով կրկնությունների պաշտպանը կանխում է նույն կազմման ներդիրում կրկնակի ավելացումը։
+- Լռելյայն շրջանցում է S/MIME վկայագրերը՝ անհարկի կցորդներից խուսափելու համար։
+- Ներառում է ներտող պատկերներ (լռելյայն՝ ՄԻԱՑՎԱԾ)։ Ներկառուցված պատկերները վերականգնվում են անմիջապես
+  պատասխան նամակի մարմնում՝ base64 data URI-ներով, պահպանելով սկզբնական ներտող դասավորությունը։ Անջատեք
+  Ընտրանքներում՝ ներտող պատկերները ամբողջությամբ բաց թողնելու համար։
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Ինչպես է աշխատում {#how-it-works}
+
+- Պատասխանի ժամանակ հավելումը ցուցակում է բնօրինակ կցորդները։
+- Զտում է S/MIME ստորագրությունները ֆայլային կցորդներից; ներտող պատկերները վերականգնվում են մարմնում (եթե անջատված չէ)։
+- Ըստ ցանկության, հարցնում է հաստատում (ստեղնաշարահարմար)։
+- Թույլատրելի ֆայլերը ավելացնում է ձեր կազմմանը՝ խուսափելով կրկնություններից ըստ ֆայլի անվան։
+- Սահմանային դեպքերի համար տե՛ս “Ինչու կցորդները կարող են չավելացվել”-ը «Օգտագործում» բաժնում։
+
+Գաղտնիության նշում. Բոլոր մշակումները տեղի են ունենում տեղային՝ Thunderbird-ში։ Հավելումը ֆոնային ցանցային հարցումներ չի կատարում։
+
+---

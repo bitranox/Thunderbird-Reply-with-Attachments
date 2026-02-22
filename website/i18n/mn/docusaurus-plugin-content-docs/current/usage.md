@@ -4,94 +4,97 @@ title: 'Хэрэглээ'
 sidebar_label: 'Хэрэглээ'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Ашиглалт {#usage}
+
+- Хариу бичихэд нэмэлт нь эх хавсралтуудыг автоматаар нэмнэ — эсвэл Тохиргоонд идэвхжсэн бол эхлээд асууна.
+- Давхардлыг файлын нэрээр арилгадаг; S/MIME хэсгүүдийг үргэлж алгасна. Анхдагчаар шигтгэмэл зургууд хариу мессежийн биед сэргээгдэнэ (Тохиргоо дахь "Шигтгэмэл зургуудыг оруулах" тохиргоогоор унтрааж болно).
+- Хар жагсаалтад орсон хавсралтууд мөн алгасагдана (үсгийн регистрт мэдрэмтгий биш glob хэв загварууд нь зам бус, зөвхөн файлын нэртэй таарна). [Тохиргоо](configuration#blacklist-glob-patterns)-г үзнэ үү.
 
 ---
 
-### What happens on reply {#what-happens}
+### Хариу бичих үед юу болдог {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Хариуг илрүүлэх → эх хавсралтуудыг жагсаах → S/MIME + шигтгэмэл хэсгийг шүүх → баталгаажуулахыг хүсэж болно → боломжтой файлуудыг нэмэх (давхардлыг алгасах) → шигтгэмэл зургуудыг биед сэргээх.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Чанга ба уян шалгалт: Нэмэлт нь эхлээд файлын хавсралтуудаас S/MIME болон шигтгэмэл хэсгүүдийг хасна. Хэрэв юу ч тохирохгүй бол, S/MIME/шигтгэмэл хэсгийг үргэлж хассаар байх ч илүү олон тохиолдлыг тэвчдэг уян шалгалтыг ажиллуулна (Кодын дэлгэрэнгүй-г үзнэ үү). Шигтгэмэл зургуудыг хэзээ ч файлын хавсралтаар нэмэхгүй; харин "Шигтгэмэл зургуудыг оруулах" идэвхтэй үед (анхдагчаар), тэдгээрийг хариу мессежийн биед шууд base64 data URI хэлбэрээр шингээнэ.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Хэсгийн төрөл                                       |                       Чанга шалгалт |                         Уян шалгалт |
+| --------------------------------------------------- | ----------------------------------: | ----------------------------------: |
+| S/MIME гарын үсгийн файл `smime.p7s`                |                             Алгасна |                             Алгасна |
+| S/MIME MIME төрлүүд (`application/pkcs7-*`)         |                             Алгасна |                             Алгасна |
+| Content‑ID-ээр заагдсан шигтгэмэл зураг (`image/*`) | Алгасна (мессежийн биед сэргээнэ\*) | Алгасна (мессежийн биед сэргээнэ\*) |
+| Файлын нэртэй хавсаргасан имэйл (`message/rfc822`)  |                            Нэмэхгүй |                         Нэмэж болох |
+| Файлын нэртэй энгийн хавсралт                       |                         Нэмэж болох |                         Нэмэж болох |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Шигтгэмэл зургуудыг оруулах" идэвхтэй үед (анхдагч: АСААЛТТАЙ), шигтгэмэл зургуудыг файлын хавсралтаар нэмэхийн оронд хариу мессежийн биед base64 data URI хэлбэрээр шингээнэ. [Тохиргоо](configuration#include-inline-pictures)-г үзнэ үү.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Жишээ: Зарим хавсралтууд тодорхой толгой мэдээллүүд байхгүй ч энгийн файлууд (шигтгэмэл/S/MIME биш) байж болно. Хэрэв чанга шалгалтаар юу ч олдохгүй бол, уян шалгалт тэдгээрийг зөвшөөрөн хавсаргаж магадгүй.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Холбогдох лавлагаа {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Дамжуулах үйлдэл зориуд өөрчлөгдөхгүй (доорх Хязгаарлалт хэсгийг үзнэ үү).
+- Хавсралт яагаад нэмэгдэхгүй байж болох шалтгаануудыг “Хавсралтууд яагаад нэмэгдэхгүй байж болох вэ” хэсгээс үзнэ үү.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Үйлдлийн дэлгэрэнгүй {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Давхардлаас сэргийлэлт:** Нэмэлт нь таб тус бүрийн session утга болон санах ойн хамгаалалтыг ашиглан зохиох табыг боловсруулсан гэж тэмдэглэдэг. Ингэснээр эх хавсралтуудыг хоёр дахин нэмэхгүй.
+- Зохиох цонхыг хаагаад дахин нээх нь шинэ таб гэж тооцогдоно (өөрөөр хэлбэл, шинэ оролдлого зөвшөөрөгдөнө).
+- **Одоо байгаа хавсралтыг хүндэтгэх:** Хэрэв зохиоход аль хэдийн хэдэн хавсралт байвал ч эх хавсралтуудыг яг нэг удаа нэмж, аль хэдийн байгаа файлын нэрүүдийг алгасна.
+- **Хасалтууд:** S/MIME холбогдолт хэсгүүд болон шигтгэмэл зургууд файлын хавсралтаас хасагдана. Эхний шалгалтаар юу ч тохироогүй бол, уян нөөц шалгалт нь S/MIME бус хэсгүүдийг дахин шалгана. Шигтгэмэл зургуудыг тусад нь боловсруулна: идэвхтэй үед тэдгээрийг хариу мессежийн биед data URI хэлбэрээр сэргээнэ.
+  - **Файлын нэрүүд:** `smime.p7s`
+  - **MIME төрлүүд:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Шигтгэмэл зургууд:** Content‑ID-ээр заагдсан аливаа `image/*` хэсэг — файлын хавсралтаас хасагдана, харин "Шигтгэмэл зургуудыг оруулах" АСААЛТТАЙ үед хариу мессежийн биед шингээнэ
+  - **Хавсаргасан имэйлүүд (`message/rfc822`):** файлын нэртэй бол энгийн хавсралт гэж үзнэ; нэмэгдэж болно (давхардлын шалгалт болон хар жагсаалтад хамаарна).
+- **Хар жагсаалтын анхааруулга (идэвхтэй бол):** Таны хар жагсаалтаар нэр дэвшигчид хасагдсан үед,
+  нэмэлт нь хамаарах файлууд болон таарсан хэв загвар(ууд)-ыг жагсаасан жижиг модал харуулна.
+  Энэ анхааруулга нь бүх зүйл хасагдсан тул ямар ч хавсралт нэмэгдэхгүй тохиолдолд мөн гарч ирнэ.
 
 ---
 
-## Limitations {#limitations}
+## Гарын товчлолууд {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Баталгаажуулах цонх: Y/J = Тийм, N/Esc = Үгүй; Tab/Shift+Tab болон сум товчлуурууд анхаарлын байрлалыг ээлжлүүлнэ.
+  - [Тохиргоо](configuration#confirmation) дахь “Анхдагч хариулт” нь анх анхаарсан товчийг тогтооно.
+  - Enter нь анхаарсан товчийг идэвхжүүлнэ. Tab/Shift+Tab болон сумнууд нь хүртээмжийн үүднээс анхаарлын байрлалыг шилжүүлнэ.
+
+### Товчлолын товч хуудас {#keyboard-cheat-sheet}
+
+| Товчлуурууд     | Үйлдэл                                     |
+| --------------- | ------------------------------------------ |
+| Y / J           | Тийм гэж батлах                            |
+| N / Esc         | Үгүй гэж батлах                            |
+| Enter           | Анхаарсан товчийг идэвхжүүлэх              |
+| Tab / Shift+Tab | Анхаарлыг урагш/хойш шилжүүлэх             |
+| Сум товчлуурууд | Анхаарлыг товчнуудын хооронд шилжүүлэх     |
+| Анхдагч хариулт | Эхний анхаарлыг тогтооно (Тийм эсвэл Үгүй) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Хязгаарлалт {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Энэ нэмэлт нь Дамжуулах үйлдлийг өөрчлөхгүй (Хариу бичих болон Бүгдэд хариу бичих дэмжигдсэн).
+- Хэт том хавсралтууд нь Thunderbird эсвэл үйлчилгээ үзүүлэгчийн хязгаарлалтад хамаарч болно.
+  - Нэмэлт нь файлуудыг хэсэглэж эсвэл шахдаггүй; Thunderbird-ийн хэвийн хавсралт боловсруулахад найдна.
+- Шифрлэгдсэн зурвасууд: S/MIME хэсгүүдийг зориуд хассан.
 
 ---
 
-See also
+## Хавсралтууд яагаад нэмэгдэхгүй байж болох вэ {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Шигтгэмэл зургуудыг файлын хавсралтаар нэмдэггүй. "Шигтгэмэл зургуудыг оруулах" АСААЛТТАЙ үед (анхдагч), тэдгээрийг оронд нь хариу мессежийн биед data URI хэлбэрээр шингээнэ. Тохиргоо УНТРААЛТТАЙ бол, шигтгэмэл зургуудыг бүрэн арилгана. [Тохиргоо](configuration#include-inline-pictures)-г үзнэ үү.
+- S/MIME гарын үсгийн хэсгүүдийг зориуд хассан: `smime.p7s` зэрэг файлын нэрүүд болон `application/pkcs7-signature` эсвэл `application/pkcs7-mime` зэрэг MIME төрлүүдийг алгасна.
+- Хар жагсаалтын хэв загварууд нэр дэвшигчдийг шүүж болно: [Тохиргоо](configuration#blacklist-glob-patterns)-г үзнэ үү; тааруулалт нь үсгийн регистрт мэдрэмтгий биш бөгөөд зөвхөн файлын нэрт хамаарна.
+- Давхардсан файлын нэрүүдийг дахин нэмэхгүй: хэрэв зохиох цонхонд ижил нормчилсон нэртэй файл аль хэдийн байвал, тухайн файлыг алгасна.
+- Файл биш хэсгүүд эсвэл файлын нэр дутуу тохиолдолд: зөвхөн ашиглах боломжтой файлын нэртэй файл маягийн хэсгүүдийг нэмэхээр авч үзнэ.
+
+---
+
+Мөн үзнэ үү
+
+- [Тохиргоо](configuration)

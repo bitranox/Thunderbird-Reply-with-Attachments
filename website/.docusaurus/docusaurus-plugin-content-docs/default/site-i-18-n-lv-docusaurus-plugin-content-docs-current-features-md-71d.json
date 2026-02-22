@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Iespējas",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Ātrā uzsākšana",
+    "title": "Ātrā sākšana",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/quickstart"
   }
 }

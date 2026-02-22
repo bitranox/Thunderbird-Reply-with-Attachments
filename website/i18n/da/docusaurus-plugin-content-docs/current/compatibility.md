@@ -4,39 +4,41 @@ title: 'Kompatibilitet'
 sidebar_label: 'Kompatibilitet'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilitet {#compatibility}
+
+:::important Minimum Thunderbird-version
+Denne udvidelse understøtter Thunderbird **128 ESR eller nyere**. Ældre versioner understøttes ikke.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR eller nyere understøttes (128.x+).
+- Ældre Thunderbird-versioner understøttes ikke.
+- Testet på Windows, macOS og Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 understøttes ikke
+Manifest V2 understøttes ikke. Udvidelsen er målrettet **Manifest V3 (MV3)** på Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Fejlfinding {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Hvis udvidelsen ikke fungerer som forventet, skal du sikre, at du bruger en kompatibel version af Thunderbird (128 ESR eller nyere).
+- Tjek Thunderbirds fejlkonsol (**Tools > Developer Tools > Error Console**) for eventuelle problemer relateret til udvidelsen.
+- Hvis gemte indstillinger tilsyneladende ikke anvendes korrekt, skal du genstarte Thunderbird og prøve igen. (Thunderbird kan cache tilstand på tværs af sessioner; en genstart sikrer, at nye indstillinger indlæses.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Kendte konflikter {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Ingen kendte på nuværende tidspunkt. Hvis du ser gentagne dublerede vedhæftede filer eller fejl med andre udvidelser, så rapportér venligst med trin til at reproducere.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta og Daily (Nightly)-builds er generelt understøttet, men ændringer upstream kan lejlighedsvis bryde udvidelsens adfærd. Hvis du støder på problemer, så rapportér dem og inkluder den præcise Thunderbird-version (f.eks. “Daily 131.0a1 2025‑09‑10”).
+- Stødt på en regression i Beta/Nightly? Rapportér den venligst med trin til at reproducere — se [Support](support) — og inkluder den nøjagtige Thunderbird-buildstreng.
 
 ---

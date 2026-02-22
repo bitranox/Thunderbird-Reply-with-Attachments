@@ -4,94 +4,98 @@ title: 'Utilisation'
 sidebar_label: 'Utilisation'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Utilisation {#usage}
+
+- Répondre et le module complémentaire ajoute automatiquement les originaux — ou demande d’abord confirmation, si activé dans Options.
+- Dédupliqué par nom de fichier ; les parties S/MIME sont toujours ignorées. Les images en ligne sont restaurées dans le corps de la réponse par défaut (désactiver via "Include inline pictures" dans Options).
+- Les pièces jointes sur liste noire sont également ignorées (motifs glob insensibles à la casse correspondant aux noms de fichier, pas aux chemins). Voir [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Ce qui se passe lors d’une réponse {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Détecter la réponse → lister les pièces jointes d’origine → filtrer S/MIME + en ligne → confirmation optionnelle → ajouter les fichiers éligibles (ignorer les doublons) → restaurer les images en ligne dans le corps.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Passage strict vs. passage assoupli : le module complémentaire exclut d’abord les parties S/MIME et en ligne des pièces jointes fichiers. Si rien ne convient, il exécute un passage assoupli qui exclut toujours S/MIME/en ligne mais tolère plus de cas (voir Détails du code). Les images en ligne ne sont jamais ajoutées comme pièces jointes fichiers ; à la place, lorsque "Include inline pictures" est activé (valeur par défaut), elles sont intégrées directement dans le corps de la réponse sous forme d’URI de données base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Type de partie                                           |                   Passage strict |                 Passage assoupli |
+| -------------------------------------------------------- | -------------------------------: | -------------------------------: |
+| Fichier de signature S/MIME `smime.p7s`                  |                            Exclu |                            Exclu |
+| Types MIME S/MIME (`application/pkcs7-*`)                |                            Exclu |                            Exclu |
+| Image en ligne référencée par Content‑ID (`image/*`)     | Exclu (restauré dans le corps\*) | Exclu (restauré dans le corps\*) |
+| E‑mail attaché (`message/rfc822`) avec un nom de fichier |                       Non ajouté |                 Peut être ajouté |
+| Pièce jointe de fichier classique avec un nom de fichier |                 Peut être ajouté |                 Peut être ajouté |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Lorsque "Include inline pictures" est activé (par défaut : ON), les images en ligne sont intégrées dans le corps de la réponse sous forme d’URI de données base64 plutôt qu’ajoutées comme pièces jointes fichiers. Voir [Configuration](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Exemple : Certaines pièces jointes peuvent manquer de certains en-têtes tout en restant des fichiers classiques (ni en ligne ni S/MIME). Si le passage strict n’en trouve aucune, le passage assoupli peut les accepter et les joindre.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Références croisées {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Le transfert n’est pas modifié par conception (voir Limitations ci‑dessous).
+- Pour les raisons pour lesquelles une pièce jointe peut ne pas être ajoutée, voir “Pourquoi des pièces jointes peuvent ne pas être ajoutées”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Détails du comportement {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
+- **Prévention des doublons :** le module complémentaire marque l’onglet de rédaction comme traité à l’aide d’une valeur de session par onglet et d’un verrou en mémoire. Il n’ajoutera pas les originaux deux fois.
+- Fermer et rouvrir une fenêtre de rédaction est traité comme un nouvel onglet (c.-à-d. une nouvelle tentative est autorisée).
+- **Respecter les pièces jointes existantes :** si la rédaction contient déjà des pièces jointes, les originaux sont quand même ajoutés une seule fois, en ignorant les noms de fichier déjà présents.
+- **Exclusions :** les artefacts S/MIME et les images en ligne sont exclus des pièces jointes fichiers. Si rien ne convient au premier passage, un repli assoupli revérifie les parties non S/MIME. Les images en ligne sont gérées séparément : elles sont restaurées dans le corps de la réponse en tant qu’URI de données (lorsque activé).
+  - **Noms de fichier :** `smime.p7s`
+  - **Types MIME :** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Images en ligne :** toute partie `image/*` référencée par Content‑ID — exclue des pièces jointes fichiers mais intégrée dans le corps de la réponse lorsque "Include inline pictures" est sur ON
+  - **E‑mails attachés (`message/rfc822`) :** traités comme des pièces jointes classiques s’ils ont un nom de fichier ; ils peuvent être ajoutés (sous réserve des vérifications de doublons et de la liste noire).
+- **Avertissement de liste noire (si activé) :** lorsque des candidats sont exclus par votre liste noire,
+  le module complémentaire affiche une petite fenêtre modale listant les fichiers concernés et le(s)
+  motif(s) correspondant(s). Cet avertissement apparaît également lorsque aucune pièce jointe ne sera
+  ajoutée parce que tout a été exclu.
 
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+---
 
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+## Raccourcis clavier {#keyboard-shortcuts}
+
+- Boîte de dialogue de confirmation : Y/J = Oui, N/Échap = Non ; Tab/Shift+Tab et les touches fléchées font circuler le focus.
+  - La “Réponse par défaut” dans [Configuration](configuration#confirmation) définit le bouton focalisé au départ.
+  - Entrée active le bouton focalisé. Tab/Shift+Tab et les flèches déplacent le focus pour l’accessibilité.
+
+### Aide‑mémoire clavier {#keyboard-cheat-sheet}
+
+| Touches            | Action                                |
+| ------------------ | ------------------------------------- |
+| Y / J              | Confirmer Oui                         |
+| N / Échap          | Confirmer Non                         |
+| Entrée             | Activer le bouton focalisé            |
+| Tab / Shift+Tab    | Déplacer le focus avant/arrière       |
+| Touches fléchées   | Déplacer le focus entre les boutons   |
+| Réponse par défaut | Définit le focus initial (Oui ou Non) |
 
 ---
 
 ## Limitations {#limitations}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Le transfert n’est pas modifié par ce module complémentaire (Répondre et Répondre à tous sont pris en charge).
+- Les très grosses pièces jointes peuvent être soumises aux limites de Thunderbird ou du fournisseur.
+  - Le module complémentaire ne segmente ni ne compresse les fichiers ; il s’appuie sur la gestion normale des pièces jointes de Thunderbird.
+- Messages chiffrés : les parties S/MIME sont intentionnellement exclues.
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Pourquoi des pièces jointes peuvent ne pas être ajoutées {#why-attachments-might-not-be-added}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Les images en ligne ne sont pas ajoutées comme pièces jointes fichiers. Lorsque "Include inline pictures" est sur ON (valeur par défaut), elles sont intégrées dans le corps de la réponse en tant qu’URI de données. Si le paramètre est sur OFF, les images en ligne sont entièrement supprimées. Voir [Configuration](configuration#include-inline-pictures).
+- Les parties de signature S/MIME sont exclues par conception : des noms de fichier comme `smime.p7s` et des types MIME tels que `application/pkcs7-signature` ou `application/pkcs7-mime` sont ignorés.
+- Les motifs de liste noire peuvent filtrer des candidats : voir [Configuration](configuration#blacklist-glob-patterns) ; la correspondance est insensible à la casse et ne porte que sur le nom de fichier.
+- Les noms de fichier en double ne sont pas réajoutés : si la rédaction contient déjà un fichier avec le même nom normalisé, il est ignoré.
+- Parties non fichier ou noms de fichier manquants : seules les parties de type fichier avec des noms de fichier utilisables sont prises en compte pour l’ajout.
 
 ---
 
-See also
+Voir aussi
 
 - [Configuration](configuration)

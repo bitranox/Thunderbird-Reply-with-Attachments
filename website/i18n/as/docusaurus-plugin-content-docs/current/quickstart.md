@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'শুরু কৰা'
-sidebar_label: 'শুরু কৰা'
+title: 'দ্ৰুত আৰম্ভ'
+sidebar_label: 'দ্ৰুত আৰম্ভণি'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## দ্ৰুত সূচনা
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ন্যূনতম Thunderbird সংস্কৰণ
+এই এড‑অনটোৱে Thunderbird **128 ESR বা তদূৰ্ধ্ব** সমৰ্থন কৰে। পুৰণি সংস্কৰণসমূহ সমৰ্থিত নহয়।
+:::
+
+:::note টেলিমেট্ৰি নাই; পটভূমি নেটৱৰ্ক নাই
+এড‑অনটোৱে কোনো এনালিটিক্‌স/টেলিমেট্ৰি সংগ্ৰহ নকৰে আৰু কোনো পটভূমিৰ নেটৱৰ্ক অনুৰোধ নকৰে। নেটৱৰ্ক এক্সেছ কেৱল আপুনি বাহ্যিক লিংক (Docs, GitHub, Donate) ক্লিক কৰিলে হয়।
+:::
+
+---
+
+### ইনস্টল
+
+1. Thunderbird Add‑ons ৰ পৰা এড‑অনটো ইনস্টল কৰক।
+2. ঐচ্ছিক: নিশ্চিতকৰণ সক্ৰিয় কৰক (Options → “সংলগ্ন ফাইল যোগ কৰাৰ আগতে সোধিব”).
+3. ঐচ্ছিক: ব্লেকলিষ্ট সতৰ্কবাৰ্তা সক্ৰিয় অৱস্থাতেই ৰাখক (ডিফ'ল্ট): “ব্লেকলিষ্টে বাদ দিলে সংলগ্ন ফাইলৰ বিষয়ে সতৰ্ক কৰক”।
+4. ঐচ্ছিক: ব্লেকলিষ্ট পেটাৰ্ণসমূহ যোগ কৰক (প্ৰতি শাৰত এটা কৰি), উদাহৰণস্বৰূপ:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+টোকা: ওপৰৰ “# …” টো এই দস্তাবেজত মন্তব্য; Options ত আপুনি যি পেটাৰ্ণসমূহ পেষ্ট কৰে, তাত মন্তব্য নিদিব। কেৱল প্ৰতিটো শাৰত এটা পেটাৰ্ণহে লিখক।
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+এতিয়া সংলগ্ন ফাইল থকা এটা বাৰ্তাৰ জবাব দিয়ক — মূল ফাইলসমূহ স্বয়ংক্ৰিয়ভাৱে বা দ্ৰুত নিশ্চিতকৰণৰ পিছত যোগ হ'ব। আপোনাৰ ব্লেকলিষ্টৰ বাবে কোনো ফাইল বাদ পৰিলে, সিহঁতৰ তালিকাসহ এটা সৰু সতৰ্কবাৰ্তা দেখা যাব।
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### যাচাই {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 টা সংলগ্ন ফাইল থকা এটা বাৰ্তাৰ জবাব দিয়ক আৰু মূলসমূহ আপোনাৰ ৰচনা উইণ্ডোত যোগ হৈছে নে নাই নিশ্চিত কৰক।
+- আচৰণ সলনি কৰিবলৈ, [সংৰূপণ](configuration) চাওক (নিশ্চিতকৰণ ট'গল, ডিফ'ল্ট উত্তৰ, ব্লেকলিষ্ট পেটাৰ্ণসমূহ)।
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ব্লেকলিষ্ট সতৰ্কবাৰ্তা যাচাই কৰক {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” দৰে ফাইল থকা এটা বাৰ্তাৰ জবাব দিয়ক।
+- “ব্লেকলিষ্টে বাদ দিলে সংলগ্ন ফাইলৰ বিষয়ে সতৰ্ক কৰক” সক্ৰিয় থাকিলে, এখন সৰু ডায়লগত বাদ পৰা ফাইলসমূহ আৰু মিল খোৱা পেটাৰ্ণৰ তালিকা দেখা যাব।
+
+যদি আপুনি সতৰ্কবাৰ্তা নেদেখে, পেটাৰ্ণে ফাইলনামৰ সৈতে একেবাৰে মিল খায় নে নাই নিশ্চিত কৰক (কেৱল ফাইলনাম, কেছ‑নিরপেক্ষ)। সংৰূপণ → ব্লেকলিষ্ট চাওক।
+
+---
+
+### কীবোৰ্ড টোকা {#keyboard-note}
+
+- নিশ্চিতকৰণ ডায়লগত Yes ৰ বাবে Y/J আৰু No ৰ বাবে N/Esc সমৰ্থিত। কিছুমান অ‑লেটিন কীবোৰ্ডত অক্ষৰ কী সলনি হ’ব পাৰে; Enter টিপিলে মনোযোগত থকা বুটাম নিশ্চিত হয়।
 
 ---

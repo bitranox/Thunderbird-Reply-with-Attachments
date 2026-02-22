@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Kuyika'
 ---
 
-## Kuyika mwa "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Version ya Thunderbird Yotsatira
-Chida ichi chikugwira ntchito ndi Thunderbird **128 ESR kapena kupitilira**. Z versions zakale sizikugwirizana.
+## Kuyika pogwiritsa ntchito "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Mtundu wa Thunderbird wochepera
+Chowonjezera ichi chimathandiza Thunderbird **128 ESR kapena yaposachedwapo**. Mitundu yakale sikuthandizidwa.
 :::
 
-Iyi ndi njira yotsatsira kuyika. Zida zomwe zidakalipo kuchokera ku ATN (addons.thunderbird.net) zimakhala ndi kukonza kwachangu. LOCAL/dev installs sizikukonzedwanso.
+Iyi ndi njira yolimbikitsidwa yoyikira. Zowonjezera zomwe zayikidwa kuchokera ku ATN (addons.thunderbird.net) zimapeza zosintha zokha. Zoyika za LOCAL/dev sizimasinthika zokha.
 
-- Version yotsatira ya Thunderbird: 128 ESR kapena kupitilira.
+- Mtundu wochepera wa Thunderbird: 128 ESR kapena wapamwamba kuposa apo.
 
 1. Mu Thunderbird, pitani ku **Tools > Add-ons and Themes**.
-2. Funsani "funso ndi mafa".
-3. Onjezani chida.
+2. Fufuzani za "reply with attachments".
+3. Onjezani chowonjezera.
 
-Kapena tsatira tsamba la chida mwachindunji: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Kapena tsegulani tsamba la chowonjezera mwachindunji: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Kuyika mwachindunji kuchokera ku XPI {#local-installation-in-thunderbird}
+## Kuyika pamanja kuchokera ku XPI {#local-installation-in-thunderbird}
 
-### Download the XPI file {#download-the-xpi-file}
+### Tsitsani fayilo ya XPI {#download-the-xpi-file}
 
-1. Pitani ku [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download mtundu wapamwamba wa chida monga XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Pitani ku [tsamba la Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Tsitsani mtundu waposachedwa wa chowonjezera ngati fayilo ya XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Kuyika mu Thunderbird {#install-in-thunderbird-local}
+### Yikani mu Thunderbird {#install-in-thunderbird-local}
 
-1. Fikani mu Thunderbird.
+1. Tsegulani Thunderbird.
 2. Pitani ku **Tools > Add-ons and Themes**.
-3. Mu **Add-ons Manager**, dinani chithunzi cha gear mu gulu la kumanzere.
-4. Chitani **Install Add-on From File…** kuchokera mu menyu.
-5. Sankhani `reply_with_attachments-x.y.z-tb.xpi` file yomwe mwadownload.
-6. Onetsani kuyika pamene mukufunsidwa.
+3. Mu **Add-ons Manager**, dinani chizindikiro cha giya pakona yakumanja pamwamba.
+4. Sankhani **Install Add-on From File…** kuchokera mu menyu.
+5. Sankhani fayilo ya `reply_with_attachments-x.y.z-tb.xpi` yomwe mudatsitsa.
+6. Tsimikizani kuyika mukafunsidwa.
 
 ---
 
-## Kuyika kwa chitukuko {#installation-for-development}
+## Kuyika pa chitukuko {#installation-for-development}
 
-### Download the repository {#download-the-repository}
+### Tsitsani repositori {#download-the-repository}
 
-1. Download mtundu wapamwamba wa GitHub repository.
-2. Run `make help` kuti mupeze zambiri.
+1. Tsitsani mtundu waposachedwa wa repositori ya GitHub.
+2. Yendetsani `make help` kuti mupeze zambiri.
 
-### Kuyika mu Thunderbird {#install-in-thunderbird-dev}
+### Yikani mu Thunderbird {#install-in-thunderbird-dev}
 
-1. Fikani mu Thunderbird.
+1. Tsegulani Thunderbird.
 2. Pitani ku **Tools > Add-ons and Themes**.
-3. Mu **Add-ons Manager**, dinani chithunzi cha gear mu gulu la kumanzere.
-4. Chitani **Install Add-on From File…** kuchokera mu menyu.
-5. Sankhani `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` file yomwe mwapangitsa.
-6. Onetsani kuyika pamene mukufunsidwa.
+3. Mu **Add-ons Manager**, dinani chizindikiro cha giya pakona yakumanja pamwamba.
+4. Sankhani **Install Add-on From File…** kuchokera mu menyu.
+5. Sankhani fayilo yopangidwa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Tsimikizani kuyika mukafunsidwa.
 
-Chidziwitso: Ngati Thunderbird sikulandira `.zip` pa dongosolo lanu, sinthani dzina lake kukhala `.xpi` ndipo edzani "Install Add‑on From File…" zimenezo kapena.
+Zindikirani: Ngati Thunderbird sivilandira `.zip` pa dongosolo lanu, musinthe dzina lake kukhala `.xpi` ndiyeno yesaninso “Install Add‑on From File…”.
 
-### Kumene kufunafuna LOCAL ZIP {#where-local-zip}
+### Komwe mungapeze LOCAL ZIP {#where-local-zip}
 
-- Choyamba, pakani chida: run `make pack` mu mizu ya repository.
-- Pambuyo pokonza, pezani "LOCAL" zip mu mizu ya repository (mwa mfano, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Chitani kuvala mwachindunji kwa kafukufuku, phatikizani zosintha mu `sources/manifest_ATN.json` ndi `sources/manifest_LOCAL.json`.
+- Choyamba, phakirani chowonjezera: yendetsani `make pack` pa mizu ya repositori.
+- Mukamaliza kupakira, pezani zip ya “LOCAL” pa mizu ya repositori (mwachitsanzo, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Musanapakirenso poyesera, wonjezerani manambala a mitundu mu `sources/manifest_ATN.json` komanso `sources/manifest_LOCAL.json`.
 
 ---
 
-## Chisokonezo, Chotsani, ndi Zosinthika {#disable-uninstall-updates}
+## Kuzimitsa, Kuchotsa, ndi Zosintha {#disable-uninstall-updates}
 
-- Chisokonezo: Thunderbird → Tools → Add‑ons and Themes → pezani chida → chotsani.
-- Chotsani: mawonekedwe ofanana → menyu ya mipangidwe itatu → Chotsani.
-- Zosinthika: ATN installs zimakhala ndi kukonza kwachangu pamene mitundu yatsopano ikuvomerezedwa. LOCAL/dev installs sizikukonzedwanso; onjezani mtundu watsopano wa LOCAL mwachindunji.
-- Chotsani zikhazikitso kuchokera bwino: onani [Privacy → Kuchotsa data](privacy#data-removal).
+- Zimitsani: Thunderbird → **Tools** → **Add‑ons and Themes** → pezani chowonjezera → zimitsani.
+- Chotsani (uninstall): kuonera komweko → menyu ya madontho atatu → Remove.
+- Zosintha: Zoyika kuchokera ku ATN zimakhala ndi kusintha zokha zikavomerezedwa mitundu yatsopano. Zoyika za LOCAL/dev sizimasinthika zokha; ikani kachiwiri kumanga kwa LOCAL pamanja.
+- Chotsani zoikamo kwathunthu: onani [Zinsinsi → Kuchotsa deta](privacy#data-removal).
 
-Onani komanso
+Onaninso
 
-- [Quickstart](quickstart)
+- [Kuyamba mwachangu](quickstart)

@@ -1,40 +1,44 @@
 ---
 id: compatibility
-title: 'Compatibilité'
-sidebar_label: 'Compatibilité'
+title: 'Kompatibilite'
+sidebar_label: 'Kompatibilite'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Jàppandi {#compatibility}
+
+:::important Sumbu Thunderbird si gën a tuuti
+Add‑on bii dafay jàppandi Thunderbird **128 ESR walla gëna bees**. Sumb yu gëna mag du ñu leen jàppandi.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR walla gëna bees moo am jàppandi (128.x+).
+- Sumb Thunderbird yu gëna mag du ñu leen jàppandi.
+- Paarlu na ci Windows, macOS, ak Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 du ñu ko jàppandi
+Manifest V2 du ñu ko jàppandi. Add‑on bi dafay jëfandikoo **Manifest V3 (MV3)** ci Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Jàppandi jafe‑jafe {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Bu add‑on bi doxul ni ngeen xaar, wóorleen ne ngeen di jëfandikoo sumb Thunderbird bu dëppoo ak moom (128 ESR walla ci kanam).
+- Seetleen konsol bu njumte bu Thunderbird (**Tools > Developer Tools > Error Console**) ngir xool jafe‑jafe yu jappu add‑on bi.
+- Su ndigal yi aar wone ni du ñu sax taxawal ni lañu wara, tàmbaliwaatleen Thunderbird te jéemaatleen. (Thunderbird mën na aar xaal (state) ci diggante sesioŋ yi; tàmbaliwaat day wóorlal ne tànneefi bees ñu yeb.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Njaaxu yi ñu xam {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Benn it amul leegi. Soo gisee ay melax yi ñibbiwatt (attachments yu bare mbooloom) walla njumte ak yeneen add‑on, yégle ko te boole ay ndombo yu defaat ko.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta ak Daily (Nightly) build yi ñu leen di jàppandi léegi, waaye soppi yi ci kaw mën nañu yàq doxinu add‑on bi ci benn-benn. Soo amee jafe‑jafe, yégle ko te boole sumbu Thunderbird bi bu dëgg‑dëgg (misaal, “Daily 131.0a1 2025‑09‑10”).
+- Daa gisoo regression ci Beta/Nightly? Baalal yégle ko ak ndombo yu defaat ko — seetal [Ndimbal](support) — te boole binde bu build bu Thunderbird bi bu dëgg‑dëgg.
+
+---

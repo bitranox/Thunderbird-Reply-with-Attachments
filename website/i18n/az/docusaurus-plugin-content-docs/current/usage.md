@@ -4,94 +4,97 @@ title: 'İstifadə'
 sidebar_label: 'İstifadə'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## İstifadə {#usage}
+
+- Cavab verin və əlavə orijinal qoşmaları avtomatik əlavə etsin — yaxud Seçimlərdə aktivdirsə əvvəlcə soruşsun.
+- Fayl adına görə təkrarlanmalar aradan qaldırılır; S/MIME hissələri həmişə ötürülür. Sətirdaxili şəkillər standart olaraq cavab mətnində bərpa olunur ("Seçimlər"də "Sətirdaxili şəkilləri daxil et" vasitəsilə söndürmək olar).
+- Qara siyahıya salınmış qoşmalar da ötürülür (yollar deyil, fayl adlarına uyğun gələn, böyük‑kiçik hərfə həssas olmayan glob nümunələri). Bax: [Konfiqurasiya](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Cavab zamanı nə baş verir {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Cavabı aşkar et → orijinal qoşmaları siyahıla → S/MIME + sətirdaxili olanları filtrlə → istəyə bağlı təsdiq → uyğun faylları əlavə et (dublikatları ötür) → sətirdaxili şəkilləri mətndə bərpa et.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Sərt və yumşaq keçid: Əlavə əvvəlcə fayl qoşmalarından S/MIME və sətirdaxili hissələri kənarlaşdırır. Heç nə uyğun gəlməzsə, S/MIME/sətirdaxilini yenə istisna edən, amma daha çox halı qəbul edən yumşaq keçid işə düşür (Kod Təfərrüatlarına baxın). Sətirdaxili şəkillər heç vaxt fayl qoşması kimi əlavə edilmir; əvəzində, "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), onlar birbaşa cavab mətninə base64 data URI kimi yerləşdirilir.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Hissə növü                                                  |                              Sərt keçid |                            Yumşaq keçid |
+| ----------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
+| S/MIME imza faylı `smime.p7s`                               |                         Kənarlaşdırılır |                         Kənarlaşdırılır |
+| S/MIME MIME tipləri (`application/pkcs7-*`)                 |                         Kənarlaşdırılır |                         Kənarlaşdırılır |
+| Content‑ID ilə istinad edilən sətirdaxili şəkil (`image/*`) | Kənarlaşdırılır (mətndə bərpa olunur\*) | Kənarlaşdırılır (mətndə bərpa olunur\*) |
+| Fayl adı olan qoşulmuş e‑poçt (`message/rfc822`)            |                           Əlavə edilmir |                       Əlavə oluna bilər |
+| Fayl adı olan adi fayl qoşması                              |                       Əlavə oluna bilər |                       Əlavə oluna bilər |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), sətirdaxili şəkillər fayl qoşması kimi əlavə olunmaq əvəzinə cavab mətninə base64 data URI kimi yerləşdirilir. Bax: [Konfiqurasiya](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Nümunə: Bəzi qoşmalarda müəyyən başlıqlar çatışmaya bilər, lakin onlar yenə də adi fayllardır (sətirdaxili/S/MIME deyil). Sərt keçid heç nə tapmasa, yumşaq keçid onları qəbul edib qoşa bilər.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Çarpaz istinad {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- İrəli yönləndirmə dizayn etibarilə dəyişdirilmir (aşağıdakı Məhdudiyyətlərə baxın).
+- Qoşmanın niyə əlavə olunmaya biləcəyinin səbəbləri üçün “Niyə qoşmalar əlavə olunmaya bilər” bölməsinə baxın.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Davranış təfərrüatları {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Dublikatların qarşısının alınması:** Əlavə hər vərəq üçün sessiya dəyəri və yaddaşdaxili qoruyucu istifadə edərək yazma (compose) vərəqini emal olunmuş kimi işarələyir. Orijinalları iki dəfə əlavə etməyəcək.
+- Yazma pəncərəsini bağlayıb yenidən açmaq yeni vərəq kimi qəbul edilir (yəni, yeni cəhdə icazə verilir).
+- **Mövcud qoşmalara hörmət:** Yazmada artıq bəzi qoşmalar varsa, orijinallar yenə də məhz bir dəfə əlavə olunur, artıq mövcud olan fayl adları ötürülür.
+- **İstisnalar:** S/MIME artefaktları və sətirdaxili şəkillər fayl qoşmalarından çıxarılır. Birinci keçiddə heç nə uyğun gəlməzsə, yumşaq ehtiyat keçid S/MIME olmayan hissələri yenidən yoxlayır. Sətirdaxili şəkillər ayrıca idarə olunur: (aktiv olduqda) cavab mətnində data URI kimi bərpa edilirlər.
+  - **Fayl adları:** `smime.p7s`
+  - **MIME tipləri:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Sətirdaxili şəkillər:** Content‑ID ilə istinad edilən istənilən `image/*` hissəsi — fayl qoşmalarından çıxarılır, lakin "Sətirdaxili şəkilləri daxil et" AÇIQ ikən cavab mətninə yerləşdirilir
+  - **Qoşulmuş e‑poçtlar (`message/rfc822`):** fayl adı olduqda adi qoşma kimi qəbul edilir; əlavə oluna bilər (dublikat yoxlamaları və qara siyahıya tabedir).
+- **Qara siyahı xəbərdarlığı (aktivdirsə):** Namizədlər qara siyahınız tərəfindən istisna edildikdə,
+  əlavə təsirə məruz qalan faylları və uyğunlaşan
+  nümunə(lər)i göstərən kiçik bir modal pəncərə açır. Bu xəbərdarlıq, hər şey istisna edildiyi üçün heç bir qoşma əlavə olunmayacağı hallarda da görünür.
 
 ---
 
-## Limitations {#limitations}
+## Klaviatura qısayolları {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Təsdiq dialoqu: Y/J = Bəli, N/Esc = Xeyr; Tab/Shift+Tab və Ox düymələri fokusun dövri keçidini təmin edir.
+  - [Konfiqurasiya](configuration#confirmation) bölməsindəki “Default answer” başlanğıcda fokuslanan düyməni təyin edir.
+  - Enter fokuslanmış düyməni işə salır. Tab/Shift+Tab və oxlar əlçatanlıq üçün fokusu hərəkət etdirir.
+
+### Klaviatura üçün qısa bələdçi {#keyboard-cheat-sheet}
+
+| Düymələr        | Fəaliyyət                                 |
+| --------------- | ----------------------------------------- |
+| Y / J           | Bəli‑ni təsdiqlə                          |
+| N / Esc         | Xeyr‑i təsdiqlə                           |
+| Enter           | Fokuslanmış düyməni aktivləşdir           |
+| Tab / Shift+Tab | Fokusu irəli/geri hərəkət etdir           |
+| Ox düymələri    | Fokusu düymələr arasında hərəkət etdir    |
+| Default answer  | İlkin fokusu təyin edir (Bəli və ya Xeyr) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Məhdudiyyətlər {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- İrəli yönləndirmə bu əlavə tərəfindən dəyişdirilmir (Cavabla və Hamısına cavab dəstəklənir).
+- Çox böyük qoşmalar Thunderbird və ya provayder məhdudiyyətlərinə tabe ola bilər.
+  - Əlavə faylları parçalara ayırmır və ya sıxmır; Thunderbird‑ün adi qoşma emalına güvənir.
+- Şifrələnmiş mesajlar: S/MIME hissələri qəsdən istisna edilir.
 
 ---
 
-See also
+## Niyə qoşmalar əlavə olunmaya bilər {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Sətirdaxili şəkillər fayl qoşması kimi əlavə edilmir. "Sətirdaxili şəkilləri daxil et" AÇIQ olduqda (defolt), onlar əvəzində cavab mətninə data URI kimi yerləşdirilir. Ayar SÖNÜK olarsa, sətirdaxili şəkillər tamamilə çıxarılır. Bax: [Konfiqurasiya](configuration#include-inline-pictures).
+- S/MIME imza hissələri dizayn etibarilə istisna edilir: `smime.p7s` kimi fayl adları və `application/pkcs7-signature` və ya `application/pkcs7-mime` kimi MIME tipləri ötürülür.
+- Qara siyahı nümunələri namizədləri filtrləyə bilər: bax [Konfiqurasiya](configuration#blacklist-glob-patterns); uyğunlaşdırma böyük‑kiçik hərfə həssas deyil və yalnız fayl adına görədir.
+- Dublikat fayl adları yenidən əlavə edilmir: yazmada eyni normallaşdırılmış ada malik fayl artıq varsa, o, ötürülür.
+- Fayl olmayan hissələr və ya çatışmayan fayl adları: yalnız istifadə oluna bilən fayl adına malik fayl‑tipli hissələr əlavə olunmaq üçün nəzərə alınır.
+
+---
+
+Həmçinin baxın
+
+- [Konfiqurasiya](configuration)

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Попереджати, якщо вкладення виключені чорним списком"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Включати вбудовані зображення (вбудовані зображення)"
+  },
   "uiDebugHeader": {
     "message": "Додатково"
   },

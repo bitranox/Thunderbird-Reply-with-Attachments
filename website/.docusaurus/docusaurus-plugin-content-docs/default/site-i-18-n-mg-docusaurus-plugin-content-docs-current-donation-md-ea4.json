@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Fanomezana",
-  "description": "Donate",
+  "title": "Hanome",
+  "description": "---",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Fanomezana",
-    "sidebar_label": "Fanomezana"
+    "title": "Hanome",
+    "sidebar_label": "Manome"
   },
   "sidebar": "docs",
   "previous": {

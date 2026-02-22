@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ጥቁር ዝርዝር ሲያስወግድ ማስጠንቀቂያ አሳይ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "የመስመር ላይ ስዕሎችን ያካትቱ (የተካተቱ ምስሎች)"
+  },
   "uiDebugHeader": {
     "message": "የላቀ"
   },

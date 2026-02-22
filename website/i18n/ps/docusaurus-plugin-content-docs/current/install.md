@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'نصب'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## د "Thunderbird Add-ons and Themes" له لارې لګول {#installation-in-thunderbird-recommended}
+
+:::important د Thunderbird لږ تر لږه نسخه
+دا اډ‑ان د Thunderbird **128 ESR يا تر هغې نويو** نسخو ملاتړ کوي. زاړې نسخې نه ملاتړ کېږي.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+دا سپارښتل شوې د لګولو طریقه ده. هغه اډ‑انونه چې له ATN (addons.thunderbird.net) څخه لګېږي، اتوماتيکي اوسمخونې ترلاسه کوي. د LOCAL/dev لګونې اتومات نه اوسمېږي.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- لږ تر لږه د Thunderbird نسخه: 128 ESR يا نوې.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. په Thunderbird کې **Tools > Add-ons and Themes** ته ولاړ شئ.
+2. د "reply with attachments" لپاره لټون وکړئ.
+3. اډ‑ان اضافه کړئ.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+يا د اډ‑ان پاڼه نېغ پرانیزئ: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## د XPI له لارې لاسي لګونه {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### د XPI دوتنه ښکته کړئ {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. د [Thunderbird اډ‑ان پاڼه](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) ته ولاړ شئ.
+2. د اډ‑ان وروستۍ نسخه د XPI دوتنې په توګه (`reply_with_attachments-x.y.z-tb.xpi`) ښکته کړئ.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### په Thunderbird کې لګول {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird پرانیزئ.
+2. **Tools > Add-ons and Themes** ته ولاړ شئ.
+3. په **Add-ons Manager** کې، په ښي‑پورته کونج کې د ګير آيکن ووهئ.
+4. له مېنيو څخه **Install Add-on From File…** وټاکئ.
+5. هغه `reply_with_attachments-x.y.z-tb.xpi` دوتنه وټاکئ چې مو کښته کړې.
+6. کله چې وپوښتل شي، لګونه تایید کړئ.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## د پراختیا لپاره لګونه {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### زېرمتون ښکته کړئ {#download-the-repository}
 
-See also
+1. د GitHub زېرمتون وروستۍ نسخه ښکته کړئ.
+2. د لا ډېرو معلوماتو لپاره `make help` وچلوئ.
 
-- [Quickstart](quickstart)
+### په Thunderbird کې لګول {#install-in-thunderbird-dev}
+
+1. Thunderbird پرانیزئ.
+2. **Tools > Add-ons and Themes** ته ولاړ شئ.
+3. په **Add-ons Manager** کې، په ښي‑پورته کونج کې د ګير آيکن ووهئ.
+4. له مېنيو څخه **Install Add-on From File…** وټاکئ.
+5. رامنځته شوې دوتنه `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` وټاکئ.
+6. کله چې وپوښتل شي، لګونه تایید کړئ.
+
+يادونه: که Thunderbird په ستاسو سيستم کې `.zip` و نه مني، نوم يې `.xpi` ته واړوئ او “Install Add‑on From File…” بيا هڅه وکړئ.
+
+### د LOCAL ZIP چيرې ومومئ {#where-local-zip}
+
+- لومړی، اډ‑ان پکيج/بسته کړئ: په د زېرمتون په ريښه کې `make pack` وچلوئ.
+- له پکېج کولو وروسته، د زېرمتون په ريښه کې د “LOCAL” zip ومومئ (لکه `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- د ازموينې لپاره د بيا پکېج کولو څخه مخکې، نسخې په دواړو `sources/manifest_ATN.json` او `sources/manifest_LOCAL.json` کې لوړ کړئ.
+
+---
+
+## غيرفعالول، اېستل، او اوسمخونې {#disable-uninstall-updates}
+
+- غيرفعالول: Thunderbird → Tools → Add‑ons and Themes → اډ‑ان ومومئ → بند يې کړئ.
+- اېستل: هماغه ليد → د درې ټکو مېنيو → Remove.
+- اوسمخونې: د ATN له لارې لګونې د نويو نسخو له تاييد وروسته په اوتومات ډول اوسمېږي. د LOCAL/dev لګونې په اوتومات ډول نه اوسمېږي؛ نوې LOCAL جوړونه په لاسي ډول بيا ولګوئ.
+- امستنې په بشپړ ډول لرې کول: وګورئ [محرمیت → د معلوماتو لرې کول](privacy#data-removal).
+
+همدارنګه وګورئ
+
+- [چټک پیل](quickstart)

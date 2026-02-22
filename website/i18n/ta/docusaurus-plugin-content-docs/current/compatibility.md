@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'சரியானது'
-sidebar_label: 'சரியானது'
+title: 'இணக்கத்தன்மை'
+sidebar_label: 'இணக்கத்தன்மை'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## இணக்கத்தன்மை {#compatibility}
+
+:::important குறைந்தபட்ச Thunderbird பதிப்பு
+இந்த சேருகை Thunderbird **128 ESR அல்லது அதற்கு மேற்பட்டவை** ஆகியவற்றை ஆதரிக்கிறது. பழைய பதிப்புகள் ஆதரிக்கப்படவில்லை.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR அல்லது அதற்கு மேலானவை ஆதரிக்கப்படுகின்றன (128.x+).
+- பழைய Thunderbird பதிப்புகள் ஆதரிக்கப்படவில்லை.
+- Windows, macOS, மற்றும் Linux-இல் சோதிக்கப்பட்டது.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ஆதரிக்கப்படவில்லை
+Manifest V2 ஆதரிக்கப்படவில்லை. இந்த சேருகை Thunderbird 128 ESR+ இல் **Manifest V3 (MV3)**-ஐ இலக்காகக் கொண்டுள்ளது.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## சிக்கல் தீர்வு {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- சேருகை எதிர்பார்த்தபடி செயல்படவில்லை என்றால், நீங்கள் இணக்கமான Thunderbird பதிப்பை (128 ESR அல்லது அதற்குப் பிந்தையது) பயன்படுத்துகிறீர்கள் என்பதை உறுதிப்படுத்தவும்.
+- சேருகையுடன் தொடர்புடைய பிரச்சினைகளுக்காக Thunderbird பிழை கன்சோலை (**Tools > Developer Tools > Error Console**) சரிபார்க்கவும்.
+- சேமிக்கப்பட்ட அமைப்புகள் சரியாகப் பயன்படுத்தப்படவில்லை போலத் தோன்றின், Thunderbird-ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். (Thunderbird அமர்வுகளுக்கிடையில் நிலையை கச்சே செய்யக்கூடும்; மறுதொடக்கம் புதிய அமைப்புகள் ஏற்றப்படுவதை உறுதி செய்கிறது.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## தெரிந்த முரண்பாடுகள் {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- இப்போதைக்கு எதுவும் அறியப்படவில்லை. நீங்கள் மீண்டும் மீண்டும் நகல் இணைப்புகள் அல்லது பிற சேருகைகளுடன் தோல்விகளைப் பார்க்கிறீர்களானால், மறுஉருவாக்கப் படிகளைச் சேர்த்து தெரிவிக்கவும்.
+
+---
+
+## பீட்டா/நைட்லி {#beta-nightly}
+
+- Thunderbird Beta மற்றும் Daily (Nightly) உருவாக்கங்கள் பொதுவாக ஆதரிக்கப்படுகின்றன, ஆனால் மேல்நிலை மாற்றங்கள் சில நேரங்களில் சேருகையின் செயல்பாட்டை பாதிக்கக்கூடும். நீங்கள் பிரச்சினைகளை எதிர்கொண்டால், தயவுசெய்து அவற்றைத் தெரிவித்து, துல்லியமான Thunderbird பதிப்பைச் சேர்க்கவும் (உதா., “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly-இல் ஒரு மீள்ச்சி ஏற்பட்டதா? அதை மறுஉருவாக்கப் படிகளுடன் — [Support](support) — பார்க்கவும் — தெரிவித்து, துல்லியமான Thunderbird build string-ஐச் சேர்க்கவும்.
 
 ---

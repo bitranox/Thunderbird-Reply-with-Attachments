@@ -4,94 +4,98 @@ title: 'Paggamit'
 sidebar_label: 'Paggamit'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Paggamit {#usage}
+
+- Mag-reply at awtomatikong idinadagdag ng add‑on ang mga orihinal — o magtatanong muna, kung naka-enable sa Options.
+- Walang duplikado batay sa filename; laging nilalaktawan ang mga bahagi ng S/MIME. Ang mga inline na larawan ay ibinabalik sa katawan ng reply bilang default (i-disable sa pamamagitan ng "Include inline pictures" sa Options).
+- Ang mga attachment na nasa blacklist ay nilalaktawan din (case‑insensitive na mga glob pattern na tumutugma sa mga filename, hindi sa mga path). Tingnan ang [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Ano ang nangyayari kapag nag-reply {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Tukuyin ang reply → ilista ang mga orihinal na attachment → i-filter ang S/MIME + inline → opsyonal na kumpirmasyon → idagdag ang mga kuwalipikadong file (laktawan ang mga duplikado) → ibalik ang mga inline na larawan sa katawan.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Mahigpit vs. maluwag na pass: Unang inaalis ng add‑on ang mga bahagi ng S/MIME at inline mula sa mga file attachment. Kung walang pumasa, nagpapatakbo ito ng isang maluwag na pass na patuloy na nag-eexclude ng S/MIME/inline ngunit mas maraming kaso ang tinatanggap (tingnan ang Code Details). Ang mga inline na larawan ay hindi kailanman idinadagdag bilang mga file attachment; sa halip, kapag naka-enable ang "Include inline pictures" (ang default), direktang ini-embed ang mga ito sa katawan ng reply bilang mga base64 data URI.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Uri ng bahagi                                            |                        Mahigpit na pass |                         Maluwag na pass |
+| -------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
+| File ng lagdang S/MIME `smime.p7s`                       |                           Hindi isinama |                           Hindi isinama |
+| Mga uri ng MIME ng S/MIME (`application/pkcs7-*`)        |                           Hindi isinama |                           Hindi isinama |
+| Inline na larawan na tinutukoy ng Content‑ID (`image/*`) | Hindi isinama (ibinabalik sa katawan\*) | Hindi isinama (ibinabalik sa katawan\*) |
+| Nakakabit na email (`message/rfc822`) na may filename    |                         Hindi idinagdag |                        Maaaring idagdag |
+| Karaniwang file attachment na may filename               |                        Maaaring idagdag |                        Maaaring idagdag |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Kapag naka-enable ang "Include inline pictures" (default: ON), ang mga inline na larawan ay ini-embed sa katawan ng reply bilang mga base64 data URI sa halip na idagdag bilang mga file attachment. Tingnan ang [Configuration](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Halimbawa: Maaaring kulang ang ilang attachment sa ilang header ngunit regular na mga file pa rin (hindi inline/S/MIME). Kung walang makita ang mahigpit na pass, maaaring tanggapin ng maluwag na pass ang mga iyon at i-attach ang mga ito.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Cross-reference {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Ang Forward ay hindi binabago ayon sa disenyo (tingnan ang mga limitasyon sa ibaba).
+- Para sa mga dahilan kung bakit maaaring hindi maidagdag ang isang attachment, tingnan ang “Bakit maaaring hindi maidagdag ang mga attachment”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Mga Detalye ng Pag-uugali {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Pag-iwas sa duplikado:** Minamarkahan ng add‑on ang compose tab bilang naproseso gamit ang per‑tab session value at in‑memory guard. Hindi nito idadagdag ang mga orihinal nang dalawang beses.
+- Ang pagsasara at muling pagbubukas ng compose window ay itinuturing na bagong tab (ibig sabihin, pinapayagan ang panibagong pagtatangka).
+- **Paggalang sa umiiral na mga attachment:** Kung mayroon nang ilang attachment ang compose, idinadagdag pa rin ang mga orihinal nang isang beses lamang, nilalaktawan ang mga filename na mayroon na.
+- **Mga pagbubukod:** Ang mga artipakto ng S/MIME at mga inline na larawan ay hindi isinasama sa mga file attachment. Kung walang pumasa sa unang pass, isang maluwag na fallback ang muling sumusuri sa mga non‑S/MIME na bahagi. Hiwalay na hinahawakan ang mga inline na larawan: ibinabalik ang mga ito sa katawan ng reply bilang mga data URI (kapag naka-enable).
+  - **Mga filename:** `smime.p7s`
+  - **Mga uri ng MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Mga inline na larawan:** anumang bahagi na `image/*` na tinutukoy ng Content‑ID — hindi isinasama sa mga file attachment ngunit ini-embed sa katawan ng reply kapag naka-ON ang "Include inline pictures"
+  - **Mga nakakabit na email (`message/rfc822`):** tinuturing na karaniwang attachment kung mayroon silang filename; maaari silang idagdag (nakabatay sa pag-check ng duplikado at blacklist).
+- **Babala ng blacklist (kung naka-enable):** Kapag na‑exclude ng iyong blacklist ang mga kandidato,
+  nagpapakita ang add‑on ng isang maliit na modal na naglilista ng mga apektadong file at ng tumutugmang
+  mga pattern. Lumilitaw din ang babalang ito sa mga kasong walang madaragdag na attachment
+  dahil na‑exclude ang lahat.
 
 ---
 
-## Limitations {#limitations}
+## Mga shortcut sa keyboard {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialog ng kumpirmasyon: Y/J = Yes, N/Esc = No; Tab/Shift+Tab at mga arrow key ay nagpapalipat-lipat ng focus.
+  - Ang “Default answer” sa [Configuration](configuration#confirmation) ang nagtatakda ng button na unang naka-focus.
+  - Ang Enter ay nagpapagana sa naka-focus na button. Ang Tab/Shift+Tab at mga arrow ay nagpapagalaw ng focus para sa accessibility.
+
+### Talaan ng mga Shortcut sa Keyboard {#keyboard-cheat-sheet}
+
+| Mga key         | Aksyon                                    |
+| --------------- | ----------------------------------------- |
+| Y / J           | Kumpirmahin ang Yes                       |
+| N / Esc         | Kumpirmahin ang No                        |
+| Enter           | I-activate ang naka-focus na button       |
+| Tab / Shift+Tab | Ilipat ang focus pasulong/paurong         |
+| Mga arrow key   | Ilipat ang focus sa pagitan ng mga button |
+| Default answer  | Itinatakda ang paunang focus (Yes o No)   |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Mga limitasyon {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Ang Forward ay hindi binabago ng add‑on na ito (sinusuportahan ang Reply at Reply all).
+- Maaaring may mga limitasyon ng Thunderbird o ng provider para sa napakalalaking attachment.
+  - Hindi hinahati o kinokompress ng add‑on ang mga file; umaasa ito sa normal na paghawak ng Thunderbird sa mga attachment.
+- Mga naka-encrypt na mensahe: sadyang hindi isinasama ang mga bahagi ng S/MIME.
 
 ---
 
-See also
+## Bakit maaaring hindi maidagdag ang mga attachment {#why-attachments-might-not-be-added}
+
+- Ang mga inline na larawan ay hindi idinadagdag bilang mga file attachment. Kapag naka-ON ang "Include inline pictures" (ang default), ini-embed ang mga ito sa katawan ng reply bilang mga data URI sa halip. Kung naka-OFF ang setting, ganap na inaalis ang mga inline na larawan. Tingnan ang [Configuration](configuration#include-inline-pictures).
+- Ang mga bahagi ng lagdang S/MIME ay hindi isinasama ayon sa disenyo: ang mga filename gaya ng `smime.p7s` at mga uri ng MIME tulad ng `application/pkcs7-signature` o `application/pkcs7-mime` ay nilalaktawan.
+- Maaaring i-filter ng mga pattern ng blacklist ang mga kandidato: tingnan ang [Configuration](configuration#blacklist-glob-patterns); ang pagtutugma ay case‑insensitive at batay lamang sa filename.
+- Ang mga dobleng filename ay hindi muling idinaragdag: kung ang compose ay mayroon nang file na may parehong normalisadong pangalan, ito ay nilalaktawan.
+- Mga bahaging hindi file o kulang ang filename: tanging mga bahaging parang file na may magagamit na filename lamang ang isinasaalang-alang na idagdag.
+
+---
+
+Tingnan din
 
 - [Configuration](configuration)

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Виждонҳо",
-  "description": "Features",
+  "title": "Хусусиятҳо",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Виждонҳо",
-    "sidebar_label": "Виждонҳо"
+    "title": "Хусусиятҳо",
+    "sidebar_label": "Хусусиятҳо"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Роҳнамои зуд",
+    "title": "Оғози зуд",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/quickstart"
   }
 }

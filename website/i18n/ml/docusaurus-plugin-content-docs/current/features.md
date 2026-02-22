@@ -4,33 +4,40 @@ title: 'സവിശേഷതകൾ'
 sidebar_label: 'സവിശേഷതകൾ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## സവിശേഷതകൾ {#features}
 
-## How It Works {#how-it-works}
+- മറുപടി അയയ്ക്കുമ്പോൾ, യഥാർത്ഥ ഇമെയിലിലെ ഫയലുകൾ സ്വയമേവ അറ്റാച്ച് ചെയ്യും.
+- ക്രമീകരിക്കാവുന്ന പെരുമാറ്റം: അറ്റാച്ച്മെന്റുകൾ
+  - സ്വയം ചേർക്കുക, അല്ലെങ്കിൽ
+  - സ്ഥിരീകരണം കഴിഞ്ഞ് മാത്രമേ ചേർക്കൂ (ചെറിയ, പ്രാപ്യതയുള്ള ഡയലോഗ്). Options-ൽ നിങ്ങൾ
+    സ്ഥിരീകരണം എനേബിൾ ചെയ്യുകയും ഡീഫോൾട്ട് ഉത്തരമായി (Yes/No) തിരഞ്ഞെടുക്കുകയും ചെയ്യാം.
+- ഫൈൽനെയിമുകളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് (glob പാറ്റേണുകൾ) നിർദ്ദിഷ്ട ഫയലുകൾ സ്വയം
+  അറ്റാച്ച് ചെയ്യുന്നതിൽ നിന്ന് തടയുന്നു. ഉദാഹരണങ്ങൾ: `*intern*`, `*secret*`, `*passwor*`.
+  പൊരുത്തപ്പെടുത്തൽ case‑insensitive ആണെന്നും ഫൈൽനെയിം മാത്രം പരിശോധിക്കുമെന്നും; ഓരോ വരിയിലും
+  Options-ൽ ഒരു പാറ്റേൺ വീതം നൽകുക.
+- ബ്ലാക്ക്‌ലിസ്റ്റ് മുന്നറിയിപ്പ് (ഐച്ഛികം, ഡീഫോൾട്ടായി സജീവം): നിങ്ങളുടെ
+  ബ്ലാക്ക്‌ലിസ്റ്റ് കാരണം ഫയലുകൾ ഒഴിവാക്കുമ്പോൾ, ചെറിയ ഒരു മോഡൽ ആ ഫയലും പൊരുത്തപ്പെട്ട പാറ്റേൺ(കൾ)വും പട്ടികപ്പെടുത്തും. ഡാർക്ക്‑മോഡ്
+  സൗഹൃദവും കീബോർഡ്-പ്രാപ്യവുമാണ് (അടയ്ക്കാൻ Enter/Esc).
+- Reply, Reply all എന്നിവയുമായി പ്രവർത്തിക്കുന്നു. ഈ ആഡ്-ആൺ Forward-നെ മാറ്റുന്നില്ല.
+- നിങ്ങൾ ഇതിനകം എന്തെങ്കിലും അറ്റാച്ച് ചെയ്തിട്ടുണ്ടെങ്കിലും, യഥാർത്ഥവയും ചേർക്കും; ഫൈൽനെയിമിന്റെ അടിസ്ഥാനത്തിൽ ഡ്യൂപ്ലിക്കേറ്റുകൾ ഒഴിവാക്കും.
+- ഓരോ compose ടാബിലും ഇരട്ടിയായി ചേർക്കുന്നത് ഒഴിവാക്കാൻ ഡ്യൂപ്ലിക്കേറ്റ് ഗാർഡ് ഉണ്ട്.
+- അനാവശ്യമായ അറ്റാച്ച്മെന്റുകൾ ഒഴിവാക്കാൻ ഡീഫോൾട്ടായി S/MIME സർട്ടിഫിക്കറ്റുകൾ സ്കിപ്പ് ചെയ്യുന്നു.
+- ഇൻലൈൻ ചിത്രങ്ങൾ ഉൾപ്പെടുത്തുക (ഡീഫോൾട്ട്: ON). എൻബെഡഡ് ചിത്രങ്ങൾ നേരിട്ട്
+  മറുപടി ബോഡിയിലേക്ക് base64 data URIs ആയി പുനഃസ്ഥാപിക്കുന്നു, യഥാർത്ഥ ഇൻലൈൻ ലേഔട്ട് സംരക്ഷിച്ച്. ഇൻലൈൻ ചിത്രങ്ങൾ
+  പൂർണമായും സ്കിപ്പ് ചെയ്യാൻ Options-ൽ ഡിസേബിൾ ചെയ്യുക.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു {#how-it-works}
+
+- മറുപടി നൽകുമ്പോൾ, ആഡ്-ఆൺ യഥാർത്ഥ അറ്റാച്ച്മെന്റുകൾ പട്ടികപ്പെടുത്തും.
+- ഫയൽ അറ്റാച്ച്മെന്റുകളിൽ നിന്ന് S/MIME സിഗ്നേച്ചറുകൾ ഫിൽറ്റർ ചെയ്യും; ഇൻലൈൻ ചിത്രങ്ങൾ (ഡിസേബിൾ ചെയ്തിട്ടില്ലെങ്കിൽ) ബോഡിയിൽ പുനഃസ്ഥാപിക്കും.
+- ഐച്ഛികമായി സ്ഥിരീകരണം ചോദിക്കും (കീബോർഡ്-സൗഹൃദം).
+- യോഗ്യമായ ഫയലുകൾ നിങ്ങളുടെ compose-ിലേക്ക് ചേർക്കും; ഫൈൽനെയിം അടിസ്ഥാനത്തിൽ ഡ്യൂപ്ലിക്കേറ്റുകൾ ഒഴിവാക്കി.
+- അറ്റത്തുള്ള കേസുകൾക്കായി Usage-യിലെ “എന്തുകൊണ്ട് അറ്റാച്ച്മെന്റുകൾ ചേർക്കപ്പെടാതിരിക്കാം” കാണുക.
+
+സ്വകാര്യത കുറിപ്പ്: എല്ലാ പ്രോസസ്സിംഗും Thunderbird-ൽ തദ്ദേശീയമായി നടക്കുന്നു. ഈ ആഡ്-ఆൺ പശ്ചാത്തല നെറ്റ്‌വർക്ക് അഭ്യർത്ഥനകൾ ഒന്നും ചെയ്യുന്നില്ല.
 
 ---

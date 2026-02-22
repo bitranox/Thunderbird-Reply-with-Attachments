@@ -1,36 +1,43 @@
 ---
 id: features
-title: 'Funcions'
-sidebar_label: 'Funcions'
+title: 'Característiques'
+sidebar_label: 'Característiques'
 ---
-
-## Features {#features}
-
-- Automàticament adjunta fitxers de l'email original en respondre.
-- Comportament configurable: els adjunts poden ser
-  - afegits automàticament, o
-  - afegits només després de confirmació (un petit diàleg accessible). A Opcions podeu
-    habilitar la confirmació i triar la resposta per defecte (Sí/No).
-- La llista negra de noms de fitxers (patrons glob) impedeix que fitxers específics siguin
-  adjunts automàticament. Exemples: `*intern*`, `*secret*`, `*passwor*`.
-  La coincidència no distingeix entre majúscules i minúscules i verifica només el nom del fitxer; proporciona un patró
-  per línia a Opcions.
-- Advertència de la llista negra (opcional, habilitada per defecte): quan fitxers són exclusos per la vostra
-  llista negra, un petit modal llista el fitxer i el(s) patró(s) que coincideixen. Amigable amb el mode negre
-  i accessible amb el teclat (Enter/Esc per tancar).
-- Funciona amb Respondre i Respondre a tot. Reenviar no es modifica amb aquest complement.
-- Afegeix originals fins i tot si ja has adjuntat alguna cosa tu mateix; evita duplicats pel nom del fitxer.
-- La protecció de duplicats per pestanya impedeix l'afegida doble en la mateixa pestanya de redacció.
-- Omiteix certificats S/MIME i imatges en línia per evitar adjunts innecessaris.
 
 ---
 
-## How It Works {#how-it-works}
+## Característiques {#features}
 
-- En respondre, el complement llista els adjunts originals.
-- Filtra signatures S/MIME i imatges en línia.
-- Opcionalment demana confirmació (amigable amb el teclat).
-- Afegeix fitxers elegibles a la vostra redacció, evitant duplicats pel nom del fitxer.
-- Vegeu "Per què els adjunts podrien no ser afegits" a Ús per casos límit.
+- Adjunta automàticament els fitxers del correu original en respondre.
+- Comportament configurable: els adjunts es poden
+  - afegir automàticament, o
+  - afegir només després de confirmació (un diàleg petit i accessible). A Opcions
+    podeu activar la confirmació i triar la resposta per defecte (Sí/No).
+- Una llista de bloqueig de noms de fitxer (patrons glob) evita que s'adjuntin
+  automàticament fitxers concrets. Exemples: `*intern*`, `*secret*`, `*passwor*`.
+  La coincidència no distingeix entre majúscules i minúscules i només comprova el nom
+  del fitxer; proporcioneu un patró per línia a Opcions.
+- Avís de llista de bloqueig (opcional, activat per defecte): quan s'exclouen
+  fitxers per la vostra llista de bloqueig, un petit modal llista el fitxer i els
+  patrons coincidents. Compatible amb mode fosc i accessible amb teclat (Enter/Esc per tancar).
+- Funciona amb Respondre i Respondre a tots. Reenviar no es modifica per aquest complement.
+- Afegeix els originals fins i tot si ja heu adjuntat alguna cosa; evita duplicats segons el nom del fitxer.
+- La protecció contra duplicats per pestanya evita afegits dobles a la mateixa pestanya de redacció.
+- Omet els certificats S/MIME per defecte per evitar adjunts innecessaris.
+- Inclou imatges en línia (per defecte: ACTIVAT). Les imatges incrustades es restauren directament al
+  cos de la resposta com a URI de dades base64, preservant la disposició en línia original. Desactiveu-ho a
+  Opcions per ometre completament les imatges en línia.
 
-Nota de privadesa: Tots els processos es realitzen localment a Thunderbird. El complement no fa sol·licituds de xarxa en segon pla.
+---
+
+## Com funciona {#how-it-works}
+
+- En respondre, el complement enumera els adjunts originals.
+- Filtra les signatures S/MIME dels fitxers adjunts; les imatges en línia es restauren al cos (si no es desactiva).
+- Opcionalment demana confirmació (apta per a teclat).
+- Afegeix els fitxers admissibles a la vostra redacció, evitant duplicats pel nom del fitxer.
+- Vegeu “Per què pot ser que no s'afegeixin adjunts” a Ús per als casos límit.
+
+Nota de privadesa: Tot el processament es fa localment al Thunderbird. El complement no fa cap sol·licitud de xarxa en segon pla.
+
+---

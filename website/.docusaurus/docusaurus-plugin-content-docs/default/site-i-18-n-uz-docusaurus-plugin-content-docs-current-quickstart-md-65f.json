@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Tez boshlanish",
-  "description": "Quickstart",
+  "title": "Tez boshlash",
+  "description": "---",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Tez boshlanish",
-    "sidebar_label": "Tez boshlanish"
+    "title": "Tez boshlash",
+    "sidebar_label": "Tez boshlash"
   },
   "sidebar": "docs",
   "previous": {

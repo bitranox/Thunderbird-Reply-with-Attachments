@@ -3,7 +3,6 @@ import {
   splitFrontmatter,
   parseFront,
   protectCode,
-  restoreCode,
   stripCodeWrapper,
   dedupeTopFrontMatter,
   rebuildFrontFromOriginal,

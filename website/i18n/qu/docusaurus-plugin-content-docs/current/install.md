@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Instalación'
+title: 'Churana'
 slug: /install
 sidebar_label: 'Instalación'
 ---
 
-## Instalación a través de "Complementos y Temas de Thunderbird" {#installation-in-thunderbird-recommended}
+---
 
-:::important Versión mínima de Thunderbird
-Este complemento es compatible con Thunderbird **128 ESR o superior**. Las versiones anteriores no son compatibles.
+## "Thunderbird Add-ons and Themes" nisqamanta churay {#installation-in-thunderbird-recommended}
+
+:::important Pisi kaq Thunderbird versión
+Kay add‑onqa Thunderbird **128 ESR utaq aswan musuq** versionesqata qamachin. Ñawpaq versionesqa mana qamachisqa.
 :::
 
-Este es el método de instalación recomendado. Los complementos instalados desde ATN (addons.thunderbird.net) reciben actualizaciones automáticas. Las instalaciones LOCAL/dev no se actualizan automáticamente.
+Kaymi churaypaq allin ñan. ATN (addons.thunderbird.net) -manta churakusqa add‑onkunaqa automáticulla qhipachakuyta chaskikun. LOCAL/dev churakusqakunaqa manam automáticulla qhipachakuchu.
 
-- Versión mínima de Thunderbird: 128 ESR o superior.
+- Pisi kaq Thunderbird versión: 128 ESR utaq aswan musuq.
 
-1. En Thunderbird, ve a **Herramientas > Complementos y Temas**.
-2. Busca "responder con archivos adjuntos".
-3. Agrega el complemento.
+1. Thunderbirdpi, **Tools > Add-ons and Themes** -man ripuy.
+2. "reply with attachments" maskhay.
+3. Add‑onta yapay.
 
-O abre la página del complemento directamente: [Complementos de Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Instalación manual desde XPI {#local-installation-in-thunderbird}
-
-### Descargar el archivo XPI {#download-the-xpi-file}
-
-1. Ve a la [página del complemento de Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Descarga la versión más reciente del complemento como un archivo XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Instalar en Thunderbird {#install-in-thunderbird-local}
-
-1. Abre Thunderbird.
-2. Ve a **Herramientas > Complementos y Temas**.
-3. En el **Administrador de complementos**, haz clic en el ícono de engranaje en la esquina superior derecha.
-4. Elige **Instalar complemento desde archivo…** en el menú.
-5. Selecciona el archivo `reply_with_attachments-x.y.z-tb.xpi` descargado.
-6. Confirma la instalación cuando se te pida.
+Hinaspa add‑on p’anqata chaylla kichay: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Instalación para desarrollo {#installation-for-development}
+## XPI-manta manual churay {#local-installation-in-thunderbird}
 
-### Descargar el repositorio {#download-the-repository}
+### XPI archivota urayachiy {#download-the-xpi-file}
 
-1. Descarga la versión más reciente del repositorio de GitHub.
-2. Ejecuta `make help` para más información.
+1. [Thunderbird Add‑on p’anqaman](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) ripuy.
+2. Add‑onpa musuqmanta versiónninata XPI archivo hina urayachiy (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Instalar en Thunderbird {#install-in-thunderbird-dev}
+### Thunderbirdpi churay {#install-in-thunderbird-local}
 
-1. Abre Thunderbird.
-2. Ve a **Herramientas > Complementos y Temas**.
-3. En el **Administrador de complementos**, haz clic en el ícono de engranaje en la esquina superior derecha.
-4. Elige **Instalar complemento desde archivo…** en el menú.
-5. Selecciona el archivo generado `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirma la instalación cuando se te pida.
-
-Nota: Si Thunderbird no acepta el `.zip` en tu sistema, renómbralo a `.xpi` y prueba "Instalar complemento desde archivo…" nuevamente.
-
-### Dónde encontrar el ZIP LOCAL {#where-local-zip}
-
-- Primero, empaqueta el complemento: ejecuta `make pack` en la raíz del repositorio.
-- Después de empaquetar, encuentra el zip “LOCAL” en la raíz del repositorio (por ejemplo, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Antes de volver a empaquetar para pruebas, incrementa las versiones en ambos `sources/manifest_ATN.json` y `sources/manifest_LOCAL.json`.
+1. Thunderbirdta kichay.
+2. **Tools > Add-ons and Themes** -man ripuy.
+3. **Add-ons Manager**-pi, hanaq paña k'uchupi kachkan ‘gear’ ikonapi kliky.
+4. Menúmanta **Install Add-on From File…** nisqata akllay.
+5. Urayachisqa `reply_with_attachments-x.y.z-tb.xpi` archivota akllay.
+6. Qhawachisqa waqtapi, churayta ch’iqay.
 
 ---
 
-## Deshabilitar, Desinstalar y Actualizaciones {#disable-uninstall-updates}
+## Ruwanakuy (development)paq churay {#installation-for-development}
 
-- Deshabilitar: Thunderbird → Herramientas → Complementos y Temas → encuentra el complemento → desactivar.
-- Desinstalar: misma vista → menú de tres puntos → Eliminar.
-- Actualizaciones: las instalaciones de ATN se actualizan automáticamente cuando se aprueban nuevas versiones. Las instalaciones LOCAL/dev no se actualizan automáticamente; reinstala manualmente una nueva compilación LOCAL.
-- Elimina completamente la configuración: consulta [Privacidad → Eliminación de datos](privacy#data-removal).
+### Repositoriota urayachiy {#download-the-repository}
 
-Ver también
+1. GitHub repositoriopa musuqmanta versiónninata urayachiy.
+2. Aswan willaypaq `make help`ta qallarichiy.
 
-- [Inicio rápido](quickstart)
+### Thunderbirdpi churay {#install-in-thunderbird-dev}
+
+1. Thunderbirdta kichay.
+2. **Tools > Add-ons and Themes** -man ripuy.
+3. **Add-ons Manager**-pi, hanaq paña k'uchupi kachkan ‘gear’ ikonapi kliky.
+4. Menúmanta **Install Add-on From File…** nisqata akllay.
+5. Kamariqsqa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` archivota akllay.
+6. Qhawachisqa waqtapi, churayta ch’iqay.
+
+Nota: Thunderbirdqa qampaq sistemanpi `.zip`ta mana chaskiykuchu chayqa, sutinta `.xpi` hinaman hukmanta sutinchay, chaymanta “Install Add‑on From File…” nisqata wakmanta yachay.
+
+### LOCAL ZIP maypita tariy {#where-local-zip}
+
+- Ñawpaqta, add‑onta sunk’uchiy: repositorio raizinpi `make pack`ta qallarichiy.
+- Sunk’uchispa qhipapi, repositorio raizinpi “LOCAL” zipta tarikuy (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Qhawaypaq wakmanta sunk’uchaykama, `sources/manifest_ATN.json` hinallataq `sources/manifest_LOCAL.json`-piqa versiónkunata wiñachiy.
+
+---
+
+## Uarkuy, Ch’uyachiy, hina Qhipachakuy {#disable-uninstall-updates}
+
+- Uarkuy: Thunderbird → Tools → Add‑ons and Themes → add‑onta tariy → apachiy.
+- Ch’uyachiy: hinalla rikupiypi → kimsa‑p’uku (three‑dot) menú → Remove.
+- Qhipachakuy: ATN‑manta churakusqakunaqa musuq versionesqa chimpusqa kaptinmi auto‑update ruwanku. LOCAL/dev churakusqakunaqa mana auto‑update ruwanichu; LOCAL machaq rurasqata manualmanta wakmanta churay.
+- Ch’aniykunata tukuylla ch’uyachiy: [Privacy → Data removal](privacy#data-removal) qhaway.
+
+Hinallataq qhaway
+
+- [Quickstart](quickstart)

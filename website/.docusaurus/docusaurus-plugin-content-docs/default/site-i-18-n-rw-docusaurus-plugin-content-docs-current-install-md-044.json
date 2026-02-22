@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Kwinjiza",
-  "description": "Kwinjiza binyuze muri \"Thunderbird Add-ons na Themes\"",
+  "title": "Gushyiraho",
+  "description": "---",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Kwinjiza",
+    "title": "Gushyiraho",
     "slug": "/install",
-    "sidebar_label": "Kwinjiza"
+    "sidebar_label": "Gushyiraho"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Igishushanyo Mbonera",
+    "title": "Gutangira byihuse",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/quickstart"
   },
   "next": {

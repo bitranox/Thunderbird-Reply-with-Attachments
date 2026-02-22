@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "መጀመሪያ መርምር",
-  "description": "መጀመሪያ መርምር",
+  "title": "ጀማር ፈጣን",
+  "description": "---",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "መጀመሪያ መርምር",
-    "sidebar_label": "መጀመሪያ መርምር"
+    "title": "ጀማር ፈጣን",
+    "sidebar_label": "ምጀመር ብቅልጡፍ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ማሕበራት",
+    "title": "ባህሪታት",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/features"
   },
   "next": {
-    "title": "መግዛት",
+    "title": "ምትካን",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/install"
   }
 }

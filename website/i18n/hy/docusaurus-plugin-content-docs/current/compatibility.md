@@ -4,39 +4,41 @@ title: 'Համատեղելիություն'
 sidebar_label: 'Համատեղելիություն'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Համատեղելիություն {#compatibility}
+
+:::important Thunderbird-ի նվազագույն տարբերակ
+Այս հավելումը աջակցում է Thunderbird-ի **128 ESR կամ ավելի նոր** տարբերակներին։ Ավելի հին տարբերակները չեն աջակցվում։
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR կամ ավելի նոր տարբերակները աջակցվում են (128.x+).
+- Thunderbird-ի ավելի հին տարբերակները չեն աջակցվում։
+- Թեստավորվել է Windows, macOS և Linux-ում։
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2-ը չի աջակցվում
+Manifest V2-ը չի աջակցվում։ Հավելումն ուղղված է **Manifest V3 (MV3)**-ին Thunderbird 128 ESR+-ում։
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Խնդիրների լուծում {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Եթե հավելումը չի գործում ինչպես սպասվում է, համոզվեք, որ օգտագործում եք Thunderbird-ի համատեղելի տարբերակ (128 ESR կամ ավելի նոր)։
+- Ստուգեք Thunderbird-ի սխալների կոնսոլը (**Գործիքներ > Մշակողի գործիքներ > Սխալների կոնսոլ**)՝ հավելման հետ կապված խնդիրների համար։
+- Եթե պահված կարգավորումները կարծես ճիշտ չեն կիրառվում, վերագործարկեք Thunderbird-ը և կրկին փորձեք։ (Thunderbird-ը կարող է քեշավորել վիճակը սեանսների միջև, ուստի վերագործարկումը ապահովում է, որ բեռնվեն թարմ կարգավորումները):
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Հայտնի անհամատեղելիություններ {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Այս պահին հայտնի չեն։ Եթե տեսնում եք կրկնօրինակ կցորդների կրկնվող առաջացում կամ խափանումներ այլ հավելումների հետ, խնդրում ենք հաղորդել՝ նշելով վերարտադրելու քայլերը։
+
+---
+
+## Բետա/Nightly {#beta-nightly}
+
+- Thunderbird Beta և Daily (Nightly) հավաքակազմերը, ընդհանուր առմամբ, աջակցվում են, բայց վերին աղբյուրում կատարվող փոփոխությունները (upstream) երբեմն կարող են խափանել հավելման վարքը։ Եթե հանդիպում եք խնդիրների, խնդրում ենք հաղորդել դրանք և նշել Thunderbird-ի ճշգրիտ տարբերակը (օրինակ՝ «Daily 131.0a1 2025‑09‑10»)։
+- Հետընթացի (regression) եք բախվել Beta/Nightly-ում? Խնդրում ենք դա հաղորդել՝ նշելով վերարտադրելու քայլերը — տես [Աջակցություն](support) — և ներառեք Thunderbird-ի ճշգրիտ build string-ը։
 
 ---

@@ -1,97 +1,101 @@
 ---
 id: usage
-title: '使用法'
-sidebar_label: '使用法'
+title: '使用方法'
+sidebar_label: '使用方法'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## 使い方 {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- 返信すると、アドオンが元の添付ファイルを自動的に追加します — または、オプションで有効にしている場合は先に確認を求めます。
+- ファイル名で重複排除します。S/MIME パートは常にスキップされます。インライン画像はデフォルトで返信本文に復元されます（オプションの「インライン画像を含める」で無効化可能）。
+- ブラックリストに指定された添付ファイルもスキップされます（大文字小文字を区別しないグロブパターンで、パスではなくファイル名に一致）。[設定](configuration#blacklist-glob-patterns)を参照。
 
 ---
 
-### Cross‑reference {#cross-reference}
+### 返信時の挙動 {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- 返信を検出 → 元の添付ファイルを列挙 → S/MIME とインラインを除外 → 任意の確認 → 対象ファイルを追加（重複はスキップ） → 本文にインライン画像を復元。
 
----
+厳格パスと緩和パス: アドオンは最初に S/MIME およびインラインのパートを添付ファイルから除外します。条件に合致するものがない場合、S/MIME/インラインは引き続き除外しつつ、より多くのケースを許容する緩和パスを実行します（コードの詳細を参照）。インライン画像はファイル添付としては決して追加されません。代わりに「インライン画像を含める」が有効（デフォルト）なら、返信本文に base64 の data URI として直接埋め込まれます。
 
-## Behavior Details {#behavior-details}
+| パート種別                                         |             厳格パス |             緩和パス |
+| -------------------------------------------------- | -------------------: | -------------------: |
+| S/MIME 署名ファイル `smime.p7s`                    |                 除外 |                 除外 |
+| S/MIME の MIME タイプ（`application/pkcs7-*`）     |                 除外 |                 除外 |
+| Content‑ID で参照されるインライン画像（`image/*`） | 除外（本文で復元\*） | 除外（本文で復元\*） |
+| ファイル名のある添付メール（`message/rfc822`）     |           追加しない |   追加される場合あり |
+| ファイル名のある通常の添付ファイル                 |   追加される場合あり |   追加される場合あり |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* 「インライン画像を含める」が有効（デフォルト: ON）の場合、インライン画像はファイル添付として追加されるのではなく、返信本文に base64 の data URI として埋め込まれます。[設定](configuration#include-inline-pictures)を参照。
+
+例: 一部の添付ファイルは特定のヘッダーを欠いていても通常のファイル（インライン/S/MIME ではない）である場合があります。厳格パスで該当が見つからないとき、緩和パスはそれらを許容して添付することがあります。
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### 相互参照 {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- 転送は仕様上、変更しません（下記の制限事項を参照）。
+- 添付ファイルが追加されない理由については「添付ファイルが追加されない場合がある理由」を参照。
 
 ---
 
-## Limitations {#limitations}
+## 動作の詳細 {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- 重複防止: アドオンはタブごとのセッション値とメモリ内ガードを用いて作成タブを処理済みとしてマークします。元の添付を二重に追加しません。
+- 作成ウィンドウを閉じて再度開くと新しいタブとして扱われます（つまり新たな試行が許可されます）。
+- 既存の添付を尊重: すでに作成中のメッセージに添付がある場合でも、元の添付は一度だけ追加され、既存と同じファイル名はスキップします。
+- 除外: S/MIME の生成物とインライン画像はファイル添付から除外されます。最初のパスで該当がない場合は、緩和フォールバックが非 S/MIME パートを再確認します。インライン画像は別途扱われ、有効時は返信本文で data URI として復元されます。
+  - ファイル名: `smime.p7s`
+  - MIME タイプ: `application/pkcs7-signature`、`application/x-pkcs7-signature`、`application/pkcs7-mime`
+  - インライン画像: Content‑ID で参照される `image/*` パート — ファイル添付からは除外されますが、「インライン画像を含める」が ON のときは返信本文に埋め込まれます
+  - 添付メール（`message/rfc822`）: ファイル名がある場合は通常の添付として扱われ、追加されることがあります（重複チェックとブラックリストの対象）。
+- ブラックリスト警告（有効時）: 候補がブラックリストによって除外された場合、
+  影響を受けたファイルと一致したパターンを列挙する小さなモーダルを
+  アドオンが表示します。すべてが除外されて添付が一切
+  追加されない場合にもこの警告が表示されます。
 
 ---
 
-See also
+## キーボードショートカット {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- 確認ダイアログ: Y/J = はい、N/Esc = いいえ。Tab/Shift+Tab と矢印キーでフォーカスを巡回します。
+  - [設定](configuration#confirmation)の「既定の回答」が、最初にフォーカスされるボタンを決めます。
+  - Enter はフォーカス中のボタンを実行します。Tab/Shift+Tab と矢印キーでアクセシビリティのためにフォーカスを移動できます。
+
+### キーボード早見表 {#keyboard-cheat-sheet}
+
+| キー            | 操作                                |
+| --------------- | ----------------------------------- |
+| Y / J           | はいを確定                          |
+| N / Esc         | いいえを確定                        |
+| Enter           | フォーカス中のボタンを実行          |
+| Tab / Shift+Tab | フォーカスを前/後へ移動             |
+| 矢印キー        | ボタン間でフォーカスを移動          |
+| 既定の回答      | 初期フォーカスを設定（はい/いいえ） |
+
+---
+
+## 制限事項 {#limitations}
+
+- このアドオンは転送を変更しません（返信／全員に返信はサポート）。
+- 非常に大きな添付ファイルは、Thunderbird またはプロバイダーの制限の対象となる場合があります。
+  - アドオンはファイルの分割や圧縮を行わず、Thunderbird の通常の添付処理に依存します。
+- 暗号化メッセージ: S/MIME パートは意図的に除外されます。
+
+---
+
+## 添付ファイルが追加されない場合がある理由 {#why-attachments-might-not-be-added}
+
+- インライン画像はファイル添付としては追加されません。「インライン画像を含める」が ON（デフォルト）の場合は、代わりに返信本文へ data URI として埋め込まれます。設定が OFF の場合、インライン画像は完全に削除されます。[設定](configuration#include-inline-pictures)を参照。
+- S/MIME 署名パートは設計上除外されます: `smime.p7s` のようなファイル名や、`application/pkcs7-signature` や `application/pkcs7-mime` といった MIME タイプはスキップされます。
+- ブラックリストのパターンが候補を除外することがあります: [設定](configuration#blacklist-glob-patterns)を参照。照合は大文字小文字を区別せず、ファイル名のみが対象です。
+- 重複するファイル名は再追加されません: 作成中のメッセージに同じ正規化名のファイルが既にある場合はスキップされます。
+- ファイルではないパートやファイル名が欠落している場合: 追加対象となるのは、使用可能なファイル名を持つファイル相当のパートのみです。
+
+---
+
+関連項目
+
+- [設定](configuration)

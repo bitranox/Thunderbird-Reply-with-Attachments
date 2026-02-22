@@ -1,27 +1,29 @@
 ---
 id: quickstart
 title: 'تڪڙي شروعات'
-sidebar_label: 'تڪڙي شروعات'
+sidebar_label: 'جلدي شروعات'
 ---
-
-## تڪڙي شروعات
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## جلدي شروعات
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ٿنڊربرڊ جو گهٽ ۾ گهٽ ورزن
+هي ايڊ-آن ٿنڊربرڊ **128 ESR يا ان کان نوان** ورزن جي حمايت ڪري ٿو. پراڻا ورزن حمايت يافته ناهن.
+:::
+
+:::note ٽيليميٽري ناهي؛ پسمنظر نيٽ ورڪ ناهي
+هي ايڊ-آن اينالٽڪس/ٽيليميٽري **گڏ نٿو ڪري** ۽ پسمنظر ۾ **ڪو به** نيٽ ورڪ رڪويست نٿو ڪري. نيٽ ورڪ تائين رسائي فقط تڏهن ٿئي ٿي جڏهن توهان ٻاهرين لنڪس (Docs، GitHub، Donate) تي ڪلڪ ڪريو.
+:::
+
+---
+
+### انسٽال
+
+1. ٿنڊربرڊ Add‑ons مان ايڊ-آن انسٽال ڪريو.
+2. اختياري: تصديق کي فعال ڪريو (Options → “اٽاچمينٽس شامل ڪرڻ کان اڳ پڇو”).
+3. اختياري: بليڪ لسٽ وارننگ کي فعال ئي ڇڏيو (ڊي فالٽ): “جيڪڏهن اٽاچمينٽس بليڪ لسٽ سبب خارج ٿين ته خبردار ڪريو”.
+4. اختياري: بليڪ لسٽ پيٽرنز شامل ڪريو (هر قطار ۾ هڪ)، مثال طور:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+نوٽ: مٿي ڏنل “# …” هن دستاويز ۾ هڪ تبصرو آهي؛ Options ۾ پيٽرنز پيست ڪندي تبصرا شامل نه ڪريو. هر قطار ۾ رڳو هڪ پيٽرن داخل ڪريو.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+هاڻي ڪنهن اٽاچمينٽس واري پيغام جو جواب ڏيو — اصل فائلون پاڻمرادو يا جلدي تصديق کان پوءِ شامل ٿي وينديون. جيڪڏهن توهان جي بليڪ لسٽ موجب ڪي فائلون خارج ٿين، ته توهان کي انهن جي فهرست سان هڪ ننڍي وارننگ نظر ايندي.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### تصديق ڪريو {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 اٽاچمينٽس واري پيغام جو جواب ڏيو ۽ تصديق ڪريو ته اصل فائلون توهان جي لکڻ واري ونڊو ۾ شامل ٿي ويون آهن.
+- رويو ترتيب ڏيڻ لاءِ، [ترتيبات](configuration) ڏسو (تصديق ٽوگل، ڊي فالٽ جواب، بليڪ لسٽ پيٽرنز).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### بليڪ لسٽ وارننگ جي تصديق ڪريو {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- اهڙو پيغام جنهن ۾ “secret.txt” جهڙي فائل هجي، ان جو جواب ڏيو.
+- “جيڪڏهن اٽاچمينٽس بليڪ لسٽ سبب خارج ٿين ته خبردار ڪريو” چالو هجي ته هڪ ننڍو ڊائلاگ خارج ٿيل فائلن ۽ لاڳاپيل پيٽرن جي فهرست ڏيکاريندو.
+
+جيڪڏهن توهان کي وارننگ نه ڏسجي، پڪ ڪريو ته پيٽرن فائيل نالي سان مڪمل طور ٺهڪي اچي (صرف فائيل جو نالو، case-insensitive). Configuration → Blacklist ڏسو.
+
+---
+
+### ڪي بورڊ نوٽ {#keyboard-note}
+
+- تصديق واري ڊائلاگ ۾ ها لاءِ Y/J ۽ نه لاءِ N/Esc ڪم ڪن ٿا. ڪي غير‑لاطيني ڪي بورڊز تي اکرن وارا ڪيز مختلف ٿي سگهن ٿا؛ Enter فوڪس ڪيل بٽڻ جي تصديق ڪري ٿو.
 
 ---

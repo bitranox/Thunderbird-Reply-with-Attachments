@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Penggunaan",
-  "description": "Usage",
+  "title": "Panganggoné",
+  "description": "---",
   "source": "@site/i18n/jv/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Penggunaan",
-    "sidebar_label": "Penggunaan"
+    "title": "Panganggoné",
+    "sidebar_label": "Panganggone"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/configuration"
   },
   "next": {
-    "title": "Kompatibilitas",
+    "title": "Kacocokan",
     "permalink": "/Thunderbird-Reply-with-Attachments/jv/docs/compatibility"
   }
 }

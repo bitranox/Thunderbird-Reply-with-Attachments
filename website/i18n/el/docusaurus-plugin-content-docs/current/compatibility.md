@@ -4,39 +4,41 @@ title: 'Συμβατότητα'
 sidebar_label: 'Συμβατότητα'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Συμβατότητα {#compatibility}
+
+:::important Ελάχιστη έκδοση Thunderbird
+Αυτό το πρόσθετο υποστηρίζει το Thunderbird **128 ESR ή νεότερο**. Παλαιότερες εκδόσεις δεν υποστηρίζονται.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Υποστηρίζεται το Thunderbird 128 ESR ή νεότερο (128.x+).
+- Παλαιότερες εκδόσεις του Thunderbird δεν υποστηρίζονται.
+- Δοκιμασμένο σε Windows, macOS και Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Το Manifest V2 δεν υποστηρίζεται
+Το Manifest V2 δεν υποστηρίζεται. Το πρόσθετο βασίζεται στο **Manifest V3 (MV3)** στο Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Αντιμετώπιση προβλημάτων {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Αν το πρόσθετο δεν λειτουργεί όπως αναμένεται, βεβαιωθείτε ότι χρησιμοποιείτε συμβατή έκδοση του Thunderbird (128 ESR ή νεότερη).
+- Ελέγξτε την κονσόλα σφαλμάτων του Thunderbird (**Tools > Developer Tools > Error Console**) για τυχόν προβλήματα που σχετίζονται με το πρόσθετο.
+- Αν οι αποθηκευμένες ρυθμίσεις φαίνεται να μην εφαρμόζονται σωστά, επανεκκινήστε το Thunderbird και δοκιμάστε ξανά. (Το Thunderbird μπορεί να αποθηκεύει κατάσταση μεταξύ συνεδριών· μια επανεκκίνηση διασφαλίζει ότι φορτώνονται νέες ρυθμίσεις.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Γνωστές ασυμβατότητες {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Καμία γνωστή προς το παρόν. Αν δείτε επαναλαμβανόμενα διπλότυπα συνημμένα ή αστοχίες με άλλα πρόσθετα, αναφέρετέ το με βήματα αναπαραγωγής.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Οι εκδόσεις Thunderbird Beta και Daily (Nightly) υποστηρίζονται γενικά, αλλά οι αλλαγές ανάντη μπορούν περιστασιακά να διακόψουν τη συμπεριφορά του πρόσθετου. Αν αντιμετωπίσετε προβλήματα, αναφέρετέ τα και συμπεριλάβετε την ακριβή έκδοση του Thunderbird (π.χ., “Daily 131.0a1 2025‑09‑10”).
+- Συναντήσατε παλινδρόμηση σε Beta/Nightly; Παρακαλούμε αναφέρετέ την με βήματα αναπαραγωγής — δείτε την [Υποστήριξη](support) — και συμπεριλάβετε το ακριβές build string του Thunderbird.
 
 ---

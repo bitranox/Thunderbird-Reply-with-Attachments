@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'ସେବା ସାଧାରଣ'
-sidebar_label: 'ସେବା ସାଧାରଣ'
+title: 'ଦ୍ରୁତ ଆରମ୍ଭ'
+sidebar_label: 'ତ୍ୱରିତ ଆରମ୍ଭ'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## ଦ୍ରୁତ ଆରମ୍ଭ
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ନ୍ୟୁନତମ Thunderbird ସଂସ୍କରଣ
+ଏହି add‑on Thunderbird **128 ESR କିମ୍ବା ନୂତନ** କୁ ସମର୍ଥନ କରେ। ପୁରୁଣା ସଂସ୍କରଣଗୁଡିକ ସମର୍ଥିତ ନୁହେଁ।
+:::
+
+:::note କୌଣସି ଟେଲିମେଟ୍ରି ନାହିଁ; ପୃଷ୍ଠଭୂମି ନେଟୱର୍କ ନାହିଁ
+ଏହି add‑on ଅନାଲିଟିକ୍ସ/ଟେଲିମେଟ୍ରି ସଂଗ୍ରହ କରେ ନାହିଁ ଏବଂ ପୃଷ୍ଠଭୂମି ନେଟୱର୍କ ଅନୁରୋଧ କରେ ନାହିଁ। ନେଟୱର୍କ ଆକ୍ସେସ୍ କେବଳ ଆପଣ ବାହ୍ୟ ଲିଙ୍କ (Docs, GitHub, Donate) କ୍ଲିକ୍ କଲେ ହିଁ ଘଟେ।
+:::
+
+---
+
+### ସ୍ଥାପନ
+
+1. Thunderbird Add‑ons ରୁ add‑on ସ୍ଥାପନ କରନ୍ତୁ।
+2. ଇଚ୍ଛାଧୀନ: ନିଶ୍ଚୟତା ସକ୍ରିୟ କରନ୍ତୁ (Options → “Ask before adding attachments”).
+3. ଇଚ୍ଛାଧୀନ: blacklist ସତର୍କବାଣୀକୁ ସକ୍ରିୟ ରଖନ୍ତୁ (ଡିଫଲ୍ଟ): “Warn if attachments are excluded by blacklist”.
+4. ଇଚ୍ଛାଧୀନ: blacklist ପ୍ୟାଟର୍ନ ଯୋଡନ୍ତୁ (ପ୍ରତି ଲାଇନ୍‌ରେ ଗୋଟିଏ), ଉଦାହରଣସ୍ୱରୂପ:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+ଟିକା: ଉପରୋକ୍ତ “# …” ଏହି ଡକ୍ୟୁମେଣ୍ଟେସନ୍‌ରେ ଗୋଟିଏ ଟିପ୍ପଣୀ; Options ରେ ଆପଣ ଯେପରି ପ୍ୟାଟର୍ନ ପେଷ୍ଟ କରିବେ, ସେଥିରେ ଟିପ୍ପଣୀଗୁଡିକ ସମ୍ମିଳିତ କରିବେ ନାହିଁ। ପ୍ରତି ଲାଇନ୍‌ରେ କେବଳ ଗୋଟିଏ ପ୍ୟାଟର୍ନ ଦିଅନ୍ତୁ।
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ଏବେ ଅଟାଚ୍‌ମେଣ୍ଟ୍ ସହିତ ଗୋଟିଏ ସନ୍ଦେଶକୁ ଉତ୍ତର ଦିଅନ୍ତୁ — ମୂଳ ଫାଇଲଗୁଡିକ ସ୍ୱୟଂଚାଳିତଭାବେ କିମ୍ବା ଶୀଘ୍ର ନିଶ୍ଚିତି ପରେ ଯୋଡାଯିବ। ଯଦି କୌଣସି ଫାଇଲ ଆପଣଙ୍କ blacklist ଦ୍ୱାରା ବାହାର କରାଯାଇଛି, ଆପଣ ସେଗୁଡିକର ତାଲିକା ସହିତ ଗୋଟିଏ ଛୋଟ ସତର୍କବାଣୀ ଦେଖିବେ।
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### ଯାଞ୍ଚ {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 ଅଟାଚ୍‌ମେଣ୍ଟ୍ ସହିତ ଗୋଟିଏ ସନ୍ଦେଶକୁ ଉତ୍ତର ଦିଅନ୍ତୁ ଏବଂ ମୂଳଗୁଡିକ ଆପଣଙ୍କ ରଚନା ଜାନଲାରେ ଯୋଡାଯାଇଛି କି ନିଶ୍ଚିତ କରନ୍ତୁ।
+- ଆଚରଣ ସଂଶୋଧନ ପାଇଁ, [ସଂରଚନା](configuration) ଦେଖନ୍ତୁ (ନିଶ୍ଚିତି ଟଗଲ୍, ପୂର୍ବନିର୍ଦ୍ଦିଷ୍ଟ ଉତ୍ତର, blacklist ପ୍ୟାଟର୍ନଗୁଡିକ)।
 
 ---
 
-### Keyboard note {#keyboard-note}
+### blacklist ସତର୍କବାଣୀ ଯାଞ୍ଚ କରନ୍ତୁ {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” ଭଳି ଗୋଟିଏ ଫାଇଲ ଥିବା ସନ୍ଦେଶକୁ ଉତ୍ତର ଦିଅନ୍ତୁ।
+- “Warn if attachments are excluded by blacklist” ସକ୍ରିୟ ଥିଲେ, ଗୋଟିଏ ଛୋଟ ଡାଏଲଗ୍ ବାହାର କରାଯାଇଥିବା ଫାଇଲଗୁଡିକ ଏବଂ ମେଳା ହୋଇଥିବା ପ୍ୟାଟର୍ନକୁ ଦର୍ଶାଏ।
+
+ଯଦି ଆପଣ ସତର୍କବାଣୀ ଦେଖୁନ୍ତି ନାହିଁ, ପ୍ୟାଟର୍ନ‌ଟି ଫାଇଲନାମ ସହିତ ସଠିକ୍ ଭାବରେ ମେଳାଏ କି ନିଶ୍ଚିତ କରନ୍ତୁ (କେବଳ ଫାଇଲନାମ, କେସ୍‑ଇନସେନ୍ସିଟିଭ୍)। ସଂରଚନା → Blacklist ଦେଖନ୍ତୁ।
+
+---
+
+### କୀବୋର୍ଡ ଟିପ୍ପଣୀ {#keyboard-note}
+
+- ନିଶ୍ଚିତି ଡାଏଲଗ୍ Yes ପାଇଁ Y/J ଏବଂ No ପାଇଁ N/Esc କୁ ସମର୍ଥନ କରେ। କିଛି ଅ‑ଲାଟିନ୍ କୀବୋର୍ଡରେ ଅକ୍ଷର କୀଗୁଡିକ ଭିନ୍ନ ହୋଇପାରେ; Enter ଫୋକସ୍ ଥିବା ବଟନ୍‌କୁ ନିଶ୍ଚିତ କରେ।
 
 ---

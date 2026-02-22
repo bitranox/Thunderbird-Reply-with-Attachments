@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ବିଶେଷତାଗୁଡ଼ିକ",
-  "description": "Features",
+  "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକ",
+  "description": "---",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ବିଶେଷତାଗୁଡ଼ିକ",
-    "sidebar_label": "ବିଶେଷତାଗୁଡ଼ିକ"
+    "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକ",
+    "sidebar_label": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ"
   },
   "sidebar": "docs",
   "next": {
-    "title": "ସେବା ସାଧାରଣ",
+    "title": "ତ୍ୱରିତ ଆରମ୍ଭ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/quickstart"
   }
 }

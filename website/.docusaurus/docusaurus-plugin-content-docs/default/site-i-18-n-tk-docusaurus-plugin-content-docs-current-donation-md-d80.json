@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Bağışla",
-  "description": "Donate",
+  "title": "Bagyş et",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Bağışla",
-    "sidebar_label": "Bağışla"
+    "title": "Bagyş et",
+    "sidebar_label": "Bagyş et"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Matumizi",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/configuration"
   },
   "next": {
-    "title": "Ulinganifu",
+    "title": "Uoanifu",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/compatibility"
   }
 }

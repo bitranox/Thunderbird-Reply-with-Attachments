@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Panduan Awal'
-sidebar_label: 'Panduan Awal'
+title: 'Mulai Cepat'
+sidebar_label: 'Mulai Cepat'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Mulai Cepat
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Versi Minimum Thunderbird
+Add-on ini mendukung Thunderbird **128 ESR atau yang lebih baru**. Versi yang lebih lama tidak didukung.
+:::
+
+:::note Tanpa telemetri; tanpa jaringan latar belakang
+Add-on ini **tidak** mengumpulkan analitik/telemetri dan **tidak** membuat permintaan jaringan latar belakang. Akses jaringan hanya terjadi ketika Anda mengeklik tautan eksternal (Dokumentasi, GitHub, Donasi).
+:::
+
+---
+
+### Instal
+
+1. Instal add-on dari Thunderbird Add-ons.
+2. Opsional: Aktifkan konfirmasi (Opsi → “Tanyakan sebelum menambahkan lampiran”).
+3. Opsional: Biarkan peringatan daftar blokir tetap diaktifkan (bawaan): “Peringatkan jika lampiran dikecualikan oleh daftar blokir”.
+4. Opsional: Tambahkan pola daftar blokir (satu per baris), misalnya:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Catatan: “# …” di atas adalah komentar dalam dokumentasi ini; jangan sertakan komentar dalam pola yang Anda tempelkan ke Opsi. Masukkan satu pola per baris saja.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Sekarang balas sebuah pesan dengan lampiran — yang asli akan ditambahkan secara otomatis atau setelah konfirmasi cepat. Jika ada berkas yang dikecualikan oleh daftar blokir Anda, Anda akan melihat peringatan singkat yang mencantumkannya.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Verifikasi {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Balas sebuah pesan dengan 1–2 lampiran dan pastikan lampiran aslinya ditambahkan ke jendela penulisan Anda.
+- Untuk menyesuaikan perilaku, lihat [Konfigurasi](configuration) (pengalih konfirmasi, jawaban bawaan, pola daftar blokir).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Verifikasi peringatan daftar blokir {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Balas sebuah pesan yang berisi berkas seperti “secret.txt”.
+- Dengan “Peringatkan jika lampiran dikecualikan oleh daftar blokir” diaktifkan, sebuah dialog kecil akan menampilkan daftar berkas yang dikecualikan dan pola yang cocok.
+
+Jika Anda tidak melihat peringatan, pastikan polanya cocok dengan nama berkas secara tepat (hanya nama berkas, tidak peka huruf besar/kecil). Lihat Konfigurasi → Daftar blokir.
+
+---
+
+### Catatan papan ketik {#keyboard-note}
+
+- Dialog konfirmasi mendukung Y/J untuk Ya dan N/Esc untuk Tidak. Pada beberapa keyboard non‑Latin, tombol huruf dapat bervariasi; Enter mengonfirmasi tombol yang difokuskan.
 
 ---

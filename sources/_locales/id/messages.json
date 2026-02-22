@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Peringatkan jika lampiran dikecualikan oleh daftar blokir"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Sertakan gambar sebaris (gambar tersemat)"
+  },
   "uiSave": {
     "message": "Simpan"
   },

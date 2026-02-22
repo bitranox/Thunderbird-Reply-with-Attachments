@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Guhuza",
-  "description": "Compatibility",
+  "title": "Ubwuzuzanye",
+  "description": "---",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Guhuza",
-    "sidebar_label": "Guhuza"
+    "title": "Ubwuzuzanye",
+    "sidebar_label": "Ukwihuza"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Gukoresha",
+    "title": "Uko ikoreshwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/usage"
   },
   "next": {

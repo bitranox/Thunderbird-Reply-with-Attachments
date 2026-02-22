@@ -1,38 +1,42 @@
 ---
 id: features
-title: 'ವಿಧಾನಗಳು'
-sidebar_label: 'ವಿಧಾನಗಳು'
+title: 'ವೈಶಿಷ್ಟ್ಯಗಳು'
+sidebar_label: 'ವೈಶಿಷ್ಟ್ಯಗಳು'
 ---
-
-## Features {#features}
-
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
 
 ---
 
-## How It Works {#how-it-works}
+## ವೈಶಿಷ್ಟ್ಯಗಳು {#features}
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+- ಪ್ರತ್ಯುತ್ತರಿಸುವಾಗ ಮೂಲ ಇಮೇಲ್‌ನಲ್ಲಿರುವ ಕಡತಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸಂಲಗ್ನಿಸುತ್ತದೆ.
+- ಕಾನ್ಫಿಗರ್ ಮಾಡಬಹುದಾದ ವರ್ತನೆ: ಸಂಲಗ್ನಗಳನ್ನು
+  - ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೇರಿಸಬಹುದು, ಅಥವಾ
+  - ದೃಢೀಕರಣದ ನಂತರ ಮಾತ್ರ ಸೇರಿಸಬಹುದು (ಸಣ್ಣ, ಪ್ರವೇಶಯೋಗ್ಯ ಡೈಲಾಗ್). ಆಯ್ಕೆಗಳಲ್ಲಿ ನೀವು
+    ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ ಮತ್ತು ಪೂರ್ವನಿಯೋಜಿತ ಉತ್ತರವನ್ನು (ಹೌದು/ಇಲ್ಲ) ಆಯ್ಕೆಮಾಡಬಹುದು.
+- ಕಡತಹೆಸರಿನ ಕಪ್ಪುಪಟ್ಟಿ (ಗ್ಲಾಬ್ ಮಾದರಿಗಳು) ನಿರ್ದಿಷ್ಟ ಕಡತಗಳನ್ನು
+  ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸಂಲಗ್ನವಾಗುವುದನ್ನು ತಡೆಯುತ್ತದೆ. ಉದಾಹರಣೆಗಳು: `*intern*`, `*secret*`, `*passwor*`.
+  ಹೊಂದಾಣಿಕೆ ಅಕ್ಷರದ ದೊಡ್ಡ/ಸಣ್ಣ ವ್ಯತ್ಯಾಸ-ಸಂವೇದನಾಶೀಲವಲ್ಲ ಮತ್ತು ಕಡತಹೆಸರನ್ನು ಮಾತ್ರ ಪರಿಶೀಲಿಸುತ್ತದೆ; ಆಯ್ಕೆಗಳಲ್ಲಿ ಪ್ರತಿಯೊಂದು ಸಾಲಿಗೆ ಒಂದು ಮಾದರಿಯನ್ನು ನೀಡಿ.
+- ಕಪ್ಪುಪಟ್ಟಿ ಎಚ್ಚರಿಕೆ (ಐಚ್ಛಿಕ, ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ ಸಕ್ರಿಯ): ನಿಮ್ಮ
+  ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಕಡತಗಳು ಹೊರತಾಗಿದಾಗ, ಸಣ್ಣ ಮೋಡಲ್ ಆ ಕಡತ ಮತ್ತು ಹೊಂದಾಣುವ ಮಾದರಿ(ಗಳನ್ನು) ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ. ಡಾರ್ಕ್‑ಮೋಡ್
+  ಸ್ನೇಹಿ ಮತ್ತು ಕೀಬೋರ್ಡ್ ಪ್ರವೇಶಯೋಗ್ಯ (ಮುಚ್ಚಲು Enter/Esc).
+- Reply ಮತ್ತು Reply all ಜೊತೆಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ. Forward ಅನ್ನು ಈ ಅಡ್‑ಆನ್ ಬದಲಾಯಿಸುವುದಿಲ್ಲ.
+- ನೀವು ಈಗಾಗಲೇ ಏನನ್ನಾದರೂ ಸೇರಿಸಿದ್ದರೂ ಮೂಲ ಸಂಲಗ್ನಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ; ಕಡತಹೆಸರಿನ ಆಧಾರದ ಮೇಲೆ ನಕಲುಗಳನ್ನು ತಪ್ಪಿಸುತ್ತದೆ.
+- ಪ್ರತಿ‑ಟ್ಯಾಬ್ ನಕಲಿ ತಡೆ, ಅದೇ ಕಂಪೋಸ್ ಟ್ಯಾಬ್‌ನಲ್ಲಿ ಎರಡು ಬಾರಿ ಸೇರಿಸುವುದನ್ನು ತಡೆಯುತ್ತದೆ.
+- ಅನಗತ್ಯ ಸಂಲಗ್ನಗಳನ್ನು ತಪ್ಪಿಸಲು ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ S/MIME ಪ್ರಮಾಣಪತ್ರಗಳನ್ನು ಬಿಟ್ಟುಹೋಗುತ್ತದೆ.
+- ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ (ಪೂರ್ವನಿಯೋಜಿತ: ON). ಎಂಬೆಡ್ ಮಾಡಿದ ಚಿತ್ರಗಳನ್ನು ನೇರವಾಗಿ
+  ಪ್ರತಿಕ್ರಿಯೆಯ ದೇಹದಲ್ಲಿ base64 data URI ಗಳಾಗಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ, ಮೂಲದ ಇನ್‌ಲೈನ್ ವಿನ್ಯಾಸವನ್ನು ಉಳಿಸುತ್ತದೆ. ಸಂಪೂರ್ಣವಾಗಿ ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಬಿಟ್ಟುಹಾಕಲು
+  ಆಯ್ಕೆಗಳಲ್ಲಿ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ.
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+---
+
+## ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ {#how-it-works}
+
+- ಪ್ರತಿಕ್ರಿಯಿಸುವಾಗ, ಅಡ್‑ಆನ್ ಮೂಲ ಸಂಲಗ್ನಗಳ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸುತ್ತದೆ.
+- ಕಡತ ಸಂಲಗ್ನಗಳಿಂದ S/MIME ಸಹಿಗಳನ್ನು ಶೋಧಿಸಿ ತೆಗೆದುಹಾಕುತ್ತದೆ; ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ದೇಹದಲ್ಲಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ (ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲ್ಪಡದೇ ಇರುವವರೆಗೆ).
+- ಆಯ್ಕೆಗೆ ಅನುಗುಣವಾಗಿ ದೃಢೀಕರಣವನ್ನು ಕೇಳುತ್ತದೆ (ಕೀಬೋರ್ಡ್ ಸ್ನೇಹಿ).
+- ಅರ್ಹ ಕಡತಗಳನ್ನು ನಿಮ್ಮ ಕಂಪೋಸ್‌ಗೆ ಸೇರಿಸುತ್ತದೆ, ಕಡತಹೆಸರಿನ ಆಧಾರದ ಮೇಲೆ ನಕಲುಗಳನ್ನು ತಪ್ಪಿಸುತ್ತದೆ.
+- ಅಂಚಿನ ಸಂದರ್ಭಗಳಿಗಾಗಿ ಬಳಕೆ ವಿಭಾಗದಲ್ಲಿ “ಏಕೆ ಸಂಲಗ್ನಗಳು ಸೇರಿಸದೇ ಇರಬಹುದು” ಅನ್ನು ನೋಡಿ.
+
+ಗೌಪ್ಯತಾ ಸೂಚನೆ: ಎಲ್ಲಾ ಸಂಸ್ಕರಣೆ Thunderbird ನಲ್ಲಿ ಸ್ಥಳೀಯವಾಗಿ ನಡೆಯುತ್ತದೆ. ಈ ಅಡ್‑ಆನ್ ಯಾವುದೇ ಹಿನ್ನಲೆ ನೆಟ್ವರ್ಕ್ ವಿನಂತಿಗಳನ್ನು ಮಾಡುವುದಿಲ್ಲ.
 
 ---

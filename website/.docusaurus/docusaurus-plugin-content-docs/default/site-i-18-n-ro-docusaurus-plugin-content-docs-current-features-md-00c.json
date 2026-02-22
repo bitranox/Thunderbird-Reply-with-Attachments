@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Funcții",
-  "description": "Features",
+  "title": "Funcționalități",
+  "description": "---",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Funcții",
-    "sidebar_label": "Funcții"
+    "title": "Funcționalități",
+    "sidebar_label": "Funcționalități"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Începere rapidă",
+    "title": "Pornire rapidă",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/quickstart"
   }
 }

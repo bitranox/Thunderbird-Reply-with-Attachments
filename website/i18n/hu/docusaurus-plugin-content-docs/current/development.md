@@ -4,294 +4,296 @@ title: 'Fejlesztés'
 sidebar_label: 'Fejlesztés'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Fejlesztési útmutató {#development-guide}
+
+:::note Csak az angol verziót szerkeszd; a fordítások automatikusan frissülnek
+A dokumentációt kizárólag a `website/docs` (angol) alatt frissítsd. A `website/i18n/<locale>/…` alatti fordítások generáltak, kézzel ne szerkeszd őket. Használd a fordítási feladatokat (pl. `make translate_web_docs_batch`) a lokalizált tartalom frissítéséhez.
 :::
 
-### Prerequisites {#prerequisites}
+### Előfeltételek {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ és npm (tesztelve Node 22-vel)
+- Thunderbird 128 ESR vagy újabb (kézi teszteléshez)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Projektstruktúra (magas szintű) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Gyökér: csomagolási szkript `distribution_zip_packer.sh`, dokumentáció, képernyőképek
+- `sources/`: fő bővítménykód (háttér, beállítások/felugró UI, manifestek, ikonok)
+- `tests/`: Vitest tesztcsomag
+- `website/`: Docusaurus dokumentáció (i18n a `website/i18n/de/...` alatt)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Telepítés és eszközök {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Gyökérfüggőségek telepítése: `npm ci`
+- Dokumentáció (opcionális): `cd website && npm ci`
+- Célok felfedezése: `make help`
+
+---
+
+### Élő fejlesztés (web‑ext run) {#live-dev-web-ext}
+
+- Gyors ciklus Firefox Desktopon (csak UI smoke-tesztek):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Futtatás Thunderbirdben (MailExtensions esetén ajánlott):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Tippek:
+- Tartsd nyitva a Thunderbird hibakonzolját (Eszközök → Fejlesztői eszközök → Hibakonzol).
+- Az MV3 eseményoldalak inaktivitáskor felfüggesztésre kerülnek; kódmódosítás után töltsd újra a bővítményt, vagy hagyd, hogy a web‑ext automatikusan újratöltse.
+- Néhány kizárólag Firefoxban elérhető viselkedés eltérhet; az API‑egyezőség érdekében mindig ellenőrizd Thunderbirdben is.
+- Thunderbird bináris elérési utak (példák):
+- Linux: `thunderbird` (pl. `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profilizoláció: Használj külön Thunderbird-profilt a fejlesztéshez, hogy ne befolyásold a napi beállításaidat.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make célok (ábécésorrendben) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+A Makefile egységesíti a gyakori fejlesztési folyamatokat. Futtasd a `make help` parancsot bármikor az összes cél egysoros összefoglalójáért.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tipp: ha a `make` parancsot cél nélkül futtatod, egy egyszerű Whiptail menü nyílik, ahol kiválaszthatod a célt.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Cél                                                      | Egysoros leírás                                                                                      |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Helyi build/előnézeti artefaktumok eltávolítása (tmp/, web-local-preview/, website/build/).          |
+| [`commit`](#mt-commit)                                   | Formázás, tesztek futtatása (i18n‑nel együtt), changelog frissítése, commit és push.                 |
+| [`eslint`](#mt-eslint)                                   | ESLint futtatása flat konfigurációval (`npm run -s lint:eslint`).                                    |
+| [`help`](#mt-help)                                       | Minden cél listázása egysoros leírással (rendezve).                                                  |
+| [`lint`](#mt-lint)                                       | web‑ext lint a `sources/`-on (ideiglenes manifest; figyelmen kívül hagyja a ZIP-eket; nem végzetes). |
+| [`menu`](#mt-menu)                                       | Interaktív menü cél és opcionális argumentumok kiválasztásához.                                      |
+| [`pack`](#mt-pack)                                       | ATN és LOCAL ZIP-ek építése (linter futtatása; csomagolószkript hívása).                             |
+| [`prettier`](#mt-prettier)                               | A repó helyben történő formázása (módosításokat ír).                                                 |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier ellenőrző módban (nincs írás); akkor hibázik, ha újraformázás szükséges.                    |
+| [`prettier_write`](#mt-prettier_write)                   | Alias a következőhöz: `prettier`.                                                                    |
+| [`test`](#mt-test)                                       | Prettier (írás), ESLint, majd Vitest (ha be van állítva, lefedettséggel).                            |
+| [`test_i18n`](#mt-test_i18n)                             | Csak i18n tesztek: bővítmény helyőrzők/egyezőség + webhely-egyezőség.                                |
+| [`translate_app`](#mt-translation-app)                   | Alias a következőhöz: `translation_app`.                                                             |
+| [`translation_app`](#mt-translation-app)                 | Alkalmazás UI‑sztringek fordítása innen: `sources/_locales/en/messages.json`.                        |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Webhely-dokumentumok fordítása OpenAI Batch API-n keresztül (ajánlott).                              |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Webhely-dokumentumok szinkron fordítása (örökölt, nem batch).                                        |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias a következőhöz: `translation_web_index`.                                                       |
+| [`translation_web_index`](#mt-translation_web_index)     | Kezdőlap/navigáció/lábléc UI fordítása (`website/i18n/en/code.json → .../<lang>/code.json`).         |
+| [`web_build`](#mt-web_build)                             | Dokumentáció építése ide: `website/build` (támogatja: `--locales` / `BUILD_LOCALES`).                |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑biztonságos hivatkozás‑ellenőrzés (kihagyja a távoli HTTP[S]).                               |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Helyi gh‑pages előnézet; automatikus kiszolgálás 8080–8090; opcionális tesztek/link‑ellenőrzés.      |
+| [`web_push_github`](#mt-web_push_github)                 | A `website/build` feltöltése a `gh-pages` ágra.                                                      |
 
 Syntax for options
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Használd a `make <command> OPTS="…"`-t az opciók átadásához (ajánlott idézőjelek). Az alábbi célok mindegyike példát mutat a használatra.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Nyelvi build tippek {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Nyelvek egy részhalmazának építése: állítsd be `BUILD_LOCALES="en de"`-t vagy add át a `OPTS="--locales en,de"`-t a webes céloknak.
+- Egy adott nyelv előnézete: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Build és csomagolás {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIP-ek építése: `make pack`
+- ATN és LOCAL ZIP-eket hoz létre a repó gyökerében (artefaktumokat ne szerkeszd kézzel)
+- Tipp: csomagolás előtt frissítsd a verziót mind a `sources/manifest_ATN.json`-ben, mind a `sources/manifest_LOCAL.json`-ben
+- Kézi telepítés (fejlesztés): Thunderbird → Eszközök → Kiegészítők és témák → fogaskerék → Kiegészítő telepítése fájlból… → válaszd ki a felépített ZIP‑et
+
+---
+
+### Teszt {#test}
+
+- Teljes csomag: `make test` (Vitest)
+- Lefedettség (opcionális):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Futtasd: `make test`; nyisd meg: `coverage/index.html` a HTML jelentéshez
+- Csak i18n: `make test_i18n` (UI kulcsok/helyőrzők/címek + webhely nyelvenként és dokumentumonkénti egyezőség id/title/sidebar_label ellenőrzésekkel)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Hibakeresés és naplók {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Hibakonzol: Eszközök → Fejlesztői eszközök → Hibakonzol
+- Részletes naplók kapcsolása futás közben:
+- Engedélyezés: `messenger.storage.local.set({ debug: true })`
+- Kikapcsolás: `messenger.storage.local.set({ debug: false })`
+- A naplók az üzenetek szerkesztése/küldése közben jelennek meg
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentáció (webhely) {#docs-website}
+
+- Fejlesztői szerver: `cd website && npm run start`
+- Statikus webhely építése: `cd website && npm run build`
+- Make megfelelői (ábécé szerint): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Használati példák:
+- Csak EN, tesztek/link‑ellenőrzés kihagyása, nincs push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Minden nyelv, tesztekkel/link‑ellenőrzéssel, majd push: `make web_build_local_preview && make web_push_github`
+- Közzététel előtt futtasd az offline‑biztonságos link‑ellenőrzést: `make web_build_linkcheck`.
+- i18n: az angol a `website/docs/*.md` alatt található; a német fordítások a `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` alatt
+- Keresés: ha az Algolia DocSearch környezeti változók be vannak állítva a CI‑ban (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), az oldal az Algolia keresőt használja; ellenkező esetben helyi keresőre esik vissza. A kezdőlapon nyomd meg a `/` vagy `Ctrl+K` billentyűt a keresőmező megnyitásához.
+
+---
+
+#### Adományozás átirányító útvonal {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Útvonal: `/donate` (és `/<locale>/donate`)
+- Viselkedés:
+- Ha az aktuális útvonal tartalmaz nyelvi kódot (pl. `/de/donate`), azt használja
+- Ellenkező esetben a `navigator.languages` és a beállított nyelvek közül a legjobb egyezést választja; alapértelmezett nyelvre esik vissza
+- Átirányítás ide:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- egyéb → `/<locale>/docs/donation`
+- `useBaseUrl` használata a helyes baseUrl‑kezeléshez
+- Meta frissítés + `noscript` hivatkozás tartalékmegoldásként
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Előnézeti tippek {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node előnézet tiszta leállítása: nyisd meg a `http://localhost:<port>/__stop` fájlt (`Local server started` után kerül kiírásra).
+- Ha a képek nem töltődnek be MDX/JSX-ben, használd a `useBaseUrl('/img/...')`-t a webhely `baseUrl` tiszteletben tartásához.
+- Az előnézet először indul; a link‑ellenőrzés ezután fut, és nem blokkoló (a törött külső hivatkozások nem állítják le az előnézetet).
+- Példa előnézeti URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` („Local server started” után kerül kiírásra).
+- Külső linkek a link‑ellenőrzésben: Egyes külső oldalak (pl. addons.thunderbird.net) blokkolják az automata feltérképezőket, és 403‑at adhatnak a link‑ellenőrzésben. Az előnézet ettől még elindul; ezeket biztonságosan figyelmen kívül hagyhatod.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### A webhely fordítása {#translate-website}
 
-What you can translate
+Mit fordíthatsz
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Csak a webhely UI‑t: kezdőlap, navigációs sáv, lábléc és egyéb UI‑sztringek. A dokumentációs tartalom egyelőre angol marad.
 
-Where to edit
+Hol szerkessz
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Szerkeszd: `website/i18n/<locale>/code.json` (hivatkozásként használd: `en`). Hagyd érintetlenül az olyan helyőrzőket, mint `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Fájlok létrehozása vagy frissítése
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Hiányzó csonkok létrehozása minden nyelvhez: `npm --prefix website run i18n:stubs`
+- Csonkok felülírása az angolból (új sztringek hozzáadása után): `npm --prefix website run i18n:stubs:force`
+- Alternatíva egyetlen nyelvhez: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Kezdőlap/navigáció/lábléc UI‑sztringek fordítása (OpenAI)
 
-- Set credentials once (shell or .env):
+- Hitelesítési adatok egyszeri beállítása (shell vagy .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Opcionális: `export OPENAI_MODEL=gpt-4o-mini`
+- Egylépéses (minden nyelv, en kihagyása): `make translate_web_index`
+- Korlátozás megadott nyelvekre: `make translate_web_index OPTS="--locales de,fr"`
+- Meglévő értékek felülírása: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Érvényesítés és újrapróbálkozás
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- A fordítószkript ellenőrzi a JSON szerkezetét, megőrzi a kapcsos zárójelű helyőrzőket, és biztosítja, hogy az URL‑ek változatlanok maradjanak.
+- Érvényesítési hiba esetén visszajelzéssel együtt legfeljebb kétszer próbálkozik újra, mielőtt meghagyná a meglévő értékeket.
 
-Preview your locale
+Saját nyelved előnézete
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Fejlesztői szerver: `npm --prefix website run start`
+- Látogasd meg: `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Beküldés
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Nyiss PR‑t a szerkesztett `code.json` fájl(ok)kal. Tartsd fókuszáltan a változtatásokat, és ha lehet, mellékelj egy gyors képernyőfotót.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Biztonsági és konfigurációs tippek {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Ne commitold a `sources/manifest.json` fájlt (a build ideiglenesen hozza létre)
+- Tartsd stabilan a `browser_specific_settings.gecko.id`‑t a frissítési csatorna megőrzéséhez
+
+---
+
+### Beállítások megőrzése {#settings-persistence}
+
+- Tárolás: Minden felhasználói beállítás a `storage.local` alatt él, és a bővítményfrissítéseken át megmarad.
+- Telepítés: Az alapértékek csak akkor alkalmazódnak, ha egy kulcs szigorúan hiányzik (undefined).
+- Frissítés: A migráció csak a hiányzó kulcsokat tölti ki; meglévő értékeket soha nem ír felül.
+- Sémajelző: `settingsVersion` (jelenleg: `1`).
+- Kulcsok és alapértékek:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kód: lásd: `sources/background.js` → `initializeOrMigrateSettings()` és `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Fejlesztői folyamat (új beállítás hozzáadása)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Emeld a `SCHEMA_VERSION` értékét a `sources/background.js` fájlban.
+- Add hozzá az új kulcsot + alapértéket a `DEFAULTS` objektumhoz a `initializeOrMigrateSettings()` fájlban.
+- Az alapértékek bevetésénél használd az „csak-ha-undefined” szabályt; ne írd felül a meglévő értékeket.
+- Ha a beállítás felhasználó számára látható, kösd be a `sources/options.js`-ben, és add hozzá a lokalizált sztringeket.
+- Adj hozzá/igazíts teszteket (lásd: `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Kézi tesztelési tippek
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Friss telepítés szimulálása: töröld a kiegészítő adatkönyvtárát, vagy indíts új profillal.
+- Frissítés szimulálása: állítsd `settingsVersion` értékét `0`-re a `storage.local` fájlban, majd töltsd újra; ellenőrizd, hogy a meglévő értékek változatlanok maradnak, és csak a hiányzó kulcsok kerülnek hozzáadásra.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Hibaelhárítás {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Győződj meg róla, hogy a Thunderbird 128 ESR vagy újabb
+- Használd a Hibakonzolt futásidejű problémákhoz
+- Ha úgy tűnik, hogy a tárolt beállítások nem alkalmazódnak megfelelően, indítsd újra a Thunderbirdöt, és próbáld újra. (A Thunderbird munkamenetek között állapotot gyorsíthatótárazhat; az újraindítás biztosítja a friss beállítások betöltését.)
 
 ---
 
-### Translations
+### CI és lefedettség {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- A GitHub Actions (`CI — Tests`) a vitestet lefedettségi küszöbökkel futtatja (85% sorok/függvények/ágak/utasítások). Ha a küszöbök nem teljesülnek, a feladat meghiúsul.
+- A workflow feltölt egy `coverage-html` artefaktumot a HTML jelentéssel; töltsd le a futás oldaláról (Actions → legutóbbi futás → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Hozzájárulás {#contributing}
 
-Screenshots for docs
+- Lásd a CONTRIBUTING.md fájlt az ág/commit/PR irányelvekért
+- Tipp: Hozz létre külön Thunderbird fejlesztői profilt a teszteléshez, hogy ne befolyásold a mindennapi profilt.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Fordítások
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- A nagy „all → all” fordítási feladatok lassúak és költségesek lehetnek. Kezdd egy részhalmazzal (pl. néhány dokumentum és 1–2 nyelv), vizsgáld felül az eredményt, majd bővítsd.
+
+---
+
+- Újrapróbálási irányelv: a fordítási feladatok legfeljebb 3 újrapróbálkozást végeznek exponenciális visszavárakozással API‑hibák esetén; lásd: `scripts/translate_web_docs_batch.js` és `scripts/translate_web_docs_sync.js`.
+
+Képernyőképek a dokumentációhoz
+
+- Képeket a `website/static/img/` alatt tárold.
+- Hivatkozz rájuk MD/MDX-ben a `useBaseUrl('/img/<filename>')` segítségével, hogy az útvonalak működjenek a webhely `baseUrl`-val.
+- Miután képeket adtál hozzá vagy nevezél át a `website/static/img/` alatt, ellenőrizd, hogy minden hivatkozás továbbra is a `useBaseUrl('/img/…')`-t használja, és megjelenik helyi előnézetben.
+  Favikonok
+
+- A többméretű `favicon.ico` automatikusan generálódik minden buildútvonalon (Make + szkriptek) a `website/scripts/build-favicon.mjs` segítségével.
+- Nincs szükség kézi lépésre; a `icon-*.png` frissítése elegendő.
+  Ellenőrzési tipp
+
+- Hagyd változatlanul a `id` front‑matter mezőt a fordított dokumentumokban; csak a `title` és `sidebar_label` értékét fordítsd le, ha jelen vannak.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Cél: helyi build/előnézeti artefaktumok eltávolítása.
+- Használat: `make clean`
+- Eltávolítja (ha léteznek):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Cél: formázás, tesztelés, changelog frissítése, commit és push.
+- Használat: `make commit`
+- Részletek: futtatja a Prettier‑t (írás), `make test`, `make test_i18n`; hozzáfűzi a changelogot, ha van stage-elt diff; push a `origin/<branch>` ágra.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Cél: ESLint futtatása flat konfigurációval.
+- Használat: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Cél: az összes cél listázása egysoros leírással.
+- Használat: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Cél: a MailExtension lintelése `web-ext` használatával.
+- Használat: `make lint`
+- Megjegyzések: ideiglenesen átmásolja: `sources/manifest_LOCAL.json` → `sources/manifest.json`; a felépített ZIP‑eket figyelmen kívül hagyja; a figyelmeztetések nem bukatják el a folyamatot.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Cél: interaktív menü Make cél és opcionális argumentumok kiválasztásához.
+- Használat: futtasd a `make` parancsot argumentumok nélkül.
+- Megjegyzések: ha a `whiptail` nem érhető el, a menü a `make help`-re esik vissza.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Cél: ATN és LOCAL ZIP‑ek építése (`lint` függőség).
+- Használat: `make pack`
+- Tipp: csomagolás előtt emeld a verziókat mindkét `sources/manifest_*.json`-ben.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Cél: a repó helyben történő formázása.
+- Használat: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Cél: formázás ellenőrzése (írás nélkül).
+- Használat: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Cél: alias a következőhöz: `prettier`.
+- Használat: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Cél: Prettier (írás), ESLint, majd Vitest futtatása (ha telepítve, lefedettséggel).
+- Használat: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Cél: i18n‑fókuszú tesztek a bővítmény sztringjeire és a webhely dokumentumaira.
+- Használat: `make test_i18n`
+- Futtatja: `npm run test:i18n` és `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Cél: a bővítmény UI‑sztringjeinek fordítása angolról más nyelvekre.
+- Használat: `make translation_app OPTS="--locales all|de,fr"`
+- Megjegyzések: megőrzi a kulcsstruktúrát és a helyőrzőket; naplózás ide: `translation_app.log`. Szkriptes forma: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Cél: a webhely dokumentumainak fordítása `website/docs/*.md` nyelvről `website/i18n/<locale>/...` nyelvekre.
+- Előnyben részesített: `translate_web_docs_batch` (OpenAI Batch API)
+  - Használat (flag-ek): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - A régi pozicionális forma továbbra is elfogadott: `OPTS="<doc|all> <lang|all>"`
+- Működés: JSONL építése, feltöltés, 30 mp‑enkénti lekérdezés, eredmények letöltése, fájlok írása.
+- Megjegyzés: egy batch feladat akár 24 óráig is eltarthat (az OpenAI batch ablakának megfelelően). A konzol minden lekérdezésnél kiírja az eltelt időt.
+- Környezet: `OPENAI_API_KEY` (kötelező), opcionális: `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (alapértelmezés 24 óra), `BATCH_POLL_INTERVAL_MS`.
+- Örökölt: `translate_web_docs_sync`
+  - Használat (flag-ek): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - A régi pozicionális forma továbbra is elfogadott: `OPTS="<doc|all> <lang|all>"`
+- Működés: szinkron, páronkénti kérések (nincs batch aggregáció).
+- Megjegyzések: interaktív kérdések, ha a `OPTS` hiányzik. Mindkét mód megőrzi a kódtömböket/inline kódot, és változatlanul hagyja a front‑matter `id` értékét; naplózás ide: `translation_web_batch.log` (batch) vagy `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Cél: webhely UI‑sztringek (kezdőlap, navigáció, lábléc) fordítása `website/i18n/en/code.json` nyelvről a `website/i18n/<locale>/code.json` alatti összes nyelvre (`en` kivételével).
+- Használat: `make translate_web_index` vagy `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Követelmények: exportáld a `OPENAI_API_KEY` változót (opcionális: `OPENAI_MODEL=gpt-4o-mini`).
+- Működés: ellenőrzi a JSON szerkezetét, megőrzi a kapcsos zárójelű helyőrzőket, változatlanul hagyja az URL‑eket, és érvényesítési hibák esetén visszajelzéssel újrapróbálkozik.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Cél: a dokumentációs oldal felépítése ide: `website/build`.
+- Használat: `make web_build OPTS="--locales en|de,en|all"` (vagy állítsd be: `BUILD_LOCALES="en de"`)
+- Belső működés: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Függőségek: `npm ci` fut a `website/` alatt, csak ha a `website/node_modules/@docusaurus` hiányzik.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Cél: offline‑biztonságos hivatkozás‑ellenőrzés.
+- Használat: `make web_build_linkcheck OPTS="--locales en|all"`
+- Megjegyzések: ide épít: `tmp_linkcheck_web_pages`; átírja a GH Pages `baseUrl`-t erre: `/`; kihagyja a távoli HTTP(S) linkeket.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Cél: helyi gh‑pages előnézet opcionális tesztekkel/link‑ellenőrzéssel.
+- Használat: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Működés: először a Node előnézeti szervert próbálja (`scripts/preview-server.mjs`, támogatja: `/__stop`), visszaesik erre: `python3 -m http.server`; a 8080–8090 portokon szolgál ki; PID: `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Cél: a `website/build` feltöltése a `gh-pages` ágra.
+- Használat: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Tipp: állítsd be a `NPM=…` változót a Makefile által használt csomagkezelő felülírásához (alapértelmezés: `npm`).
 
 ---

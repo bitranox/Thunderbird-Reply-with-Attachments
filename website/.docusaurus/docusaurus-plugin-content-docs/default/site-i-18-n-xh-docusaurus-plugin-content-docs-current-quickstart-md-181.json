@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ukuqala",
-  "description": "Ukuqala",
+  "title": "Ukuqalisa ngokukhawuleza",
+  "description": "---",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ukuqala",
-    "sidebar_label": "Ukuqala"
+    "title": "Ukuqalisa ngokukhawuleza",
+    "sidebar_label": "Ukuqala ngokukhawuleza"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Iimfanelo",
+    "title": "Iimpawu",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/features"
   },
   "next": {
-    "title": "Fakelo",
+    "title": "Ufakelo",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/install"
   }
 }

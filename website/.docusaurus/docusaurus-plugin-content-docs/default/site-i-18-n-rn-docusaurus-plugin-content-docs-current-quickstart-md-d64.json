@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ihindura Rya Mbere",
-  "description": "Ihindura Rya Mbere",
+  "title": "Gutangura vuba",
+  "description": "---",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ihindura Rya Mbere",
-    "sidebar_label": "Ihindura Rya Mbere"
+    "title": "Gutangura vuba",
+    "sidebar_label": "Gutangira vuba"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ibikorwa",
+    "title": "Ibiranga",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/features"
   },
   "next": {
-    "title": "Gukora",
+    "title": "Gushiraho",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/install"
   }
 }

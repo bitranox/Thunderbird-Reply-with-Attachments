@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Ekler kara liste nedeniyle hariç tutulursa uyar"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Satır içi resimleri dahil et (gömülü resimler)"
+  },
   "uiDebugHeader": {
     "message": "Gelişmiş"
   },

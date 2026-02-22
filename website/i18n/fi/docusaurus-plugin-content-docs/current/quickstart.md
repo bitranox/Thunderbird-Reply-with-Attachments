@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Aloitusopas'
-sidebar_label: 'Aloitusopas'
+title: 'Pikaopas'
+sidebar_label: 'Pikaopas'
 ---
-
-## Aloitusopas
-
-:::important Vähimmäisversio Thunderbirditä
-Tämä lisäosa tukee Thunderbirditä **128 ESR tai uudempi**. Vanhempia versioita ei tueta.
-:::
-
-:::note Ei telemetriaa; ei taustaverkkoyhteyttä
-Lisäosa **ei** kerää analytiikkaa/telemetriaa eikä tee **ei** taustaverkkopyyntöjä. Verkkoyhteys tapahtuu vain, kun napsautat ulkoisia linkkejä (Docs, GitHub, Lahjoita).
-:::
 
 ---
 
-### Asenna
+## Pika-aloitus
 
-1. Asenna lisäosa Thunderbird-lisäosista.
-2. Valinnainen: Ota käyttöön vahvistus (Asetukset → “Kysy ennen liitteiden lisäämistä”).
-3. Valinnainen: Jätä mustaluetteloilmoitus päälle (oletusarvo): “Varoita, jos liitteet jätetään huomiotta mustaluettelon vuoksi”.
-4. Valinnainen: Lisää mustaluettelomalleja (yksi per rivi), esim.:
+:::important Vähimmäisversio Thunderbirdille
+Tämä lisäosa tukee Thunderbirdin versiota **128 ESR tai uudempaa**. Vanhempia versioita ei tueta.
+:::
+
+:::note Ei telemetriaa; ei taustaverkkoyhteyksiä
+Lisäosa ei kerää analytiikkaa/telemetriaa eikä tee taustalla verkkopyyntöjä. Verkkoyhteyttä käytetään vain, kun napsautat ulkoisia linkkejä (Dokumentaatio, GitHub, Lahjoita).
+:::
+
+---
+
+### Asennus
+
+1. Asenna lisäosa Thunderbird Add‑ons -sivustolta.
+2. Valinnainen: Ota vahvistus käyttöön (Asetukset → “Kysy ennen liitteiden lisäämistä”).
+3. Valinnainen: Jätä estolistan varoitus käyttöön (oletus): “Varoita, jos liitteet on suljettu pois estolistalla”.
+4. Valinnainen: Lisää estolistaan kuviot (yksi per rivi), esim.:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Lisäosa **ei** kerää analytiikkaa/telemetriaa eikä tee **ei** taustaverkkopy
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Huom: Yllä oleva “# …” on kommentti tässä asiakirjassa; älä lisää kommentteja malleihin, jotka liität Asetuksiin. Syötä vain yksi malli per rivi.
+Huom.: Yllä oleva “# …” on tämän dokumentaation kommentti; älä lisää kommentteja kuvioihin, jotka liität Asetuksiin. Syötä vain yksi kuvio per rivi.
 
-Nyt vastaa viestiin, jossa on liitteitä — alkuperäiset lisätään automaattisesti tai nopean vahvistuksen jälkeen. Jos mustaluetteloosi on jätetty pois tiedostoja, näet lyhyen varoituksen, joka luettelee ne.
-
----
-
-### Vahvista {#verify}
-
-- Vastaa viestiin, jossa on 1–2 liitettä, ja varmista, että alkuperäiset on lisätty kirjoitusikkunaasi.
-- Jos haluat säätää toimintaa, katso [Konfiguraatio](configuration) (vahvistusvaihtoehto, oletusvastaus, mustaluettelomallit).
+Vastaa nyt viestiin, jossa on liitteitä — alkuperäiset lisätään automaattisesti tai nopean vahvistuksen jälkeen. Jos estolistasi sulkee pois tiedostoja, näet lyhyen varoituksen, joka luettelee ne.
 
 ---
 
-### Vahvista mustaluetteloilmoitus {#verify-blacklist-warning}
+### Tarkista {#verify}
 
-- Vastaa viestiin, jossa on tiedosto, kuten “secret.txt”.
-- Kun “Varoita, jos liitteet jätetään huomiotta mustaluettelon vuoksi” on otettu käyttöön, pieni keskusteluikkuna luettelee jätetyt tiedostot ja vastaavan mallin.
-
-Jos et näe varoitusta, varmista, että malli vastaa tiedoston nimeä tarkasti (vain tiedoston nimi, kirjainkooltaan huomiota vaille). Katso Konfiguraatio → Mustaluettelo.
+- Vastaa viestiin, jossa on 1–2 liitettä, ja varmista, että alkuperäiset lisätään kirjoitusikkunaasi.
+- Käyttäytymisen säätämiseksi katso [Asetukset](configuration) (vahvistuksen kytkin, oletusvastaus, estolistan kuviot).
 
 ---
 
-### Näppäimistöhuomio {#keyboard-note}
+### Tarkista estolistan varoitus {#verify-blacklist-warning}
 
-- Vahvistusdialogi tukee Y/J Yes-näppäimiä ja N/Esc No-näppäimiä. Joillakin ei-latinalaisilla näppäimistöillä kirjainten näppäimet voivat vaihdella; Enter vahvistaa kohdistetun painikkeen.
+- Vastaa viestiin, joka sisältää esimerkiksi tiedoston “secret.txt”.
+- Kun “Varoita, jos liitteet on suljettu pois estolistalla” on käytössä, pieni valintaikkuna luettelee poissuljetut tiedostot ja vastaavan kuvion.
+
+Jos et näe varoitusta, varmista, että kuvio vastaa tiedostonimeä täsmälleen (vain tiedostonimi, kirjainkoosta riippumaton). Katso Asetukset → Estolista.
+
+---
+
+### Näppäimistöhuomautus {#keyboard-note}
+
+- Vahvistusikkuna tukee Y/J vastaukselle Kyllä ja N/Esc vastaukselle Ei. Joissakin ei‑latinalaisissa näppäimistöissä kirjainnäppäimet voivat vaihdella; Enter vahvistaa kohdistetun painikkeen.
+
+---

@@ -1,23 +1,28 @@
 ---
 id: changelog
-title: 'Таҳлилҳо'
+title: 'Рӯйхати тағйирот'
 ---
-
-## Таҳлилҳо
-
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
-
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
 
 ---
 
-## Датаву каналҳо {#dates-and-channels}
+## Рӯйхати тағйирот
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+Барои таърихи пурра ва муфассал, ба файли
+[CHANGELOG.md дар GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.3.2: "Шомил кардани тасвирҳои дарунсатрӣ" акнун тасвирҳоро мустақиман дар танни ҷавоб ҳамчун URI-и маълумоти base64 ҷой медиҳад (пешфарз: ON); беҳбудиҳои сифати код ва тавсеаи фарогирии санҷишҳо.
+- 2.3.1: Замимаҳоро нигоҳ медорад баъд аз он ки Thunderbird саҳифаи рӯйдоди пасзаминаро ба ҳолати бекорӣ мегузорад; қалмоқҳои дебаги мақсаднокро барои ҳалли мушкилот илова мекунад.
+- 2.3.0: Такмил додани дудупликатсияи замимаҳо, васеъ намудани фарогирии санҷишҳо ва хориҷ кардани иҷозатҳои кӯҳнашуда барои риояи сиёсатҳои AMO.
+- 2.1.0: Дастгирии пурраи байналмилализатсия (i18n) барои 100 забони маъмултарин
+- 2.0.0: Аз нав нависӣ ба версияи пуримконият (EN/DE)
+- 1.0.1: ба messages.listAttachments() гузашт
+- 1.0.0: барориши ибтидоӣ
+
+---
+
+## Санаҳо ва каналҳо {#dates-and-channels}
+
+- Бароришҳо ба ATN метавонанд баъд аз бастабандӣ чанд соат таъхир кунанд.
+- Сохтҳои LOCAL танҳо барои озмоиши таҳиягарон мебошанд ва тавассути ATN паҳн намешаванд.
 
 ---

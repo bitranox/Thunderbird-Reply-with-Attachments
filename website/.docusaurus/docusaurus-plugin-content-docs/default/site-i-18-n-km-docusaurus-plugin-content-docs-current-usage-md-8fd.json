@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "ការប្រើប្រាស់",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/configuration"
   },
   "next": {
-    "title": "ការប្រាណូឡាសារ",
+    "title": "ភាពឆបគ្នា",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/compatibility"
   }
 }

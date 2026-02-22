@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Beri amaran jika lampiran dikecualikan oleh senarai hitam"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Sertakan gambar sebaris (gambar terbenam)"
+  },
   "uiDebugHeader": {
     "message": "Lanjutan"
   },

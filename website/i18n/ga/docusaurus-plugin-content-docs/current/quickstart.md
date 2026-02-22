@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Tús Tapa'
-sidebar_label: 'Tús Tapa'
+title: 'Tús tapa'
+sidebar_label: 'Tús tapa'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Tús tapa
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Leagan Íosta Thunderbird
+Tacaíonn an breiseán seo le Thunderbird **128 ESR nó níos nuaí**. Ní thacaítear le leaganacha níos sine.
+:::
+
+:::note Gan teiliméadracht; gan líonra sa chúlra
+Ní bhailíonn an breiseán anailiticí/teiliméadracht agus ní dhéanann sé aon iarratais líonra sa chúlra. Tarlaíonn rochtain ar an líonra ach nuair a chliceálann tú naisc sheachtracha (Docs, GitHub, Donate).
+:::
+
+---
+
+### Suiteáil
+
+1. Suiteáil an breiseán ó Thunderbird Add‑ons.
+2. Roghnach: Cumasaigh an deimhniú (Roghanna → “Fiafraigh sula gcuirtear ceangaltáin leis”).
+3. Roghnach: Fág an rabhadh liosta dubh cumasaithe (réamhshocrú): “Tabhair rabhadh má eisiatar ceangaltáin de bharr an liosta dhubh”.
+4. Roghnach: Cuir patrúin liosta dubh leis (ceann amháin in aghaidh na líne), m.sh.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Nóta: Is trácht é an “# …” thuas sa doiciméadú seo; ná cuir tráchtanna san áireamh i bpatrúin a ghreamaíonn tú isteach i Roghanna. Cuir isteach patrún amháin in aghaidh na líne.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Anois freagair teachtaireacht a bhfuil ceangaltáin aici — cuirfear na buncheangaltáin leis go huathoibríoch nó i ndiaidh deimhniú gasta. Má eisiatar aon chomhaid de bharr do liosta dubh, feicfidh tú rabhadh gairid ina liostaítear iad.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Fíoraigh {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Freagair teachtaireacht le 1–2 cheangaltán agus deimhnigh go gcuirtear na cinn bhunaidh le do fhuinneog chumadóireachta.
+- Chun an t-iompar a choigeartú, féach [Cumraíocht](configuration) (scorán deimhnithe, freagra réamhshocraithe, patrúin liosta dubh).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Fíoraigh an rabhadh liosta dubh {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Freagair teachtaireacht ina bhfuil comhad cosúil le “secret.txt”.
+- Le “Tabhair rabhadh má eisiatar ceangaltáin de bharr an liosta dhubh” cumasaithe, liostálfaidh dialóg bheag na comhaid eisiata agus an patrún comhoiriúnach.
+
+Mura bhfeiceann tú rabhadh, cinntigh go n-oireann an patrún don ainm comhaid go beacht (ainm comhaid amháin, neamhíogair do chás litreacha). Féach Cumraíocht → Liosta dubh.
+
+---
+
+### Nóta méarchláir {#keyboard-note}
+
+- Tacaíonn an dialóg deimhnithe le Y/J do Sea agus N/Esc do Níl. Ar roinnt méarchlár neamh‑Laidine, d’fhéadfadh na heochracha litreacha a bheith éagsúil; deimhníonn Enter an cnaipe atá i bhfócas.
 
 ---

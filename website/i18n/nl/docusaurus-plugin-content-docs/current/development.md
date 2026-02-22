@@ -4,224 +4,226 @@ title: 'Ontwikkeling'
 sidebar_label: 'Ontwikkeling'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Ontwikkelingshandleiding {#development-guide}
+
+:::note Alleen Engels bewerken; vertalingen worden doorgegeven
+Werk documentatie **alleen** bij onder `website/docs` (Engels). Vertalingen onder `website/i18n/<locale>/…` worden gegenereerd en mogen niet handmatig worden bewerkt. Gebruik de vertaaltaken (bijv. `make translate_web_docs_batch`) om gelokaliseerde inhoud te verversen.
 :::
 
-### Prerequisites {#prerequisites}
+### Vereisten {#prerequisites}
 
 - Node.js 22+ en npm (getest met Node 22)
-- Thunderbird 128 ESR of nieuwer (voor handmatige tests)
+- Thunderbird 128 ESR of nieuwer (voor handmatig testen)
 
 ---
 
-### Project Layout (high‑level) {#project-layout-high-level}
+### Projectindeling (op hoog niveau) {#project-layout-high-level}
 
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: hoofd add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (met i18n onder `website/i18n/de/...`)
+- Root: verpakkingsscript `distribution_zip_packer.sh`, documentatie, schermafbeeldingen
+- `sources/`: hoofdcode van de add‑on (achtergrond, opties/popup‑UI, manifests, iconen)
+- `tests/`: Vitest‑suite
+- `website/`: Docusaurus‑documentatie (met i18n onder `website/i18n/de/...`)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Installatie & tooling {#install-and-tooling}
 
-- Installeer root deps: `npm ci`
-- Docs (optioneel): `cd website && npm ci`
+- Installeer root‑afhankelijkheden: `npm ci`
+- Documentatie (optioneel): `cd website && npm ci`
 - Ontdek targets: `make help`
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Live ontwikkeling (web‑ext run) {#live-dev-web-ext}
 
-- Snelle loop in Firefox Desktop (alleen UI smoke‑tests):
+- Snelle loop in Firefox Desktop (alleen UI‑smoketests):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
 - Uitvoeren in Thunderbird (voorkeur voor MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
 - Tips:
-- Houd de Error Console van Thunderbird open (Tools → Developer Tools → Error Console).
-- MV3 event pages worden gepauzeerd wanneer ze inactief zijn; herlaad de add-on na codewijzigingen, of laat web‑ext automatisch herladen.
-- Sommige Firefox‑specifieke gedragingen verschillen; verifieer altijd in Thunderbird voor API-pariteit.
-- Thunderbird binaire paden (voorbeelden):
-- Linux: `thunderbird` (bijv., `/usr/bin/thunderbird`)
+- Houd de foutconsole van Thunderbird geopend (Hulpmiddelen → Ontwikkelaarshulpmiddelen → Foutconsole).
+- MV3‑eventpagina’s worden onderbroken bij inactiviteit; laad de add‑on opnieuw na codewijzigingen of laat web‑ext automatisch herladen.
+- Sommige enkel‑Firefox‑gedragingen verschillen; verifieer altijd in Thunderbird voor API‑pariteit.
+- Thunderbird‑uitvoerbare paden (voorbeelden):
+- Linux: `thunderbird` (bijv. `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profielisolatie: gebruik een apart Thunderbird-profiel voor ontwikkeling om te voorkomen dat je dagelijkse setup wordt beïnvloed.
+- Profielsisolatie: gebruik een apart Thunderbird‑profiel voor ontwikkeling om je dagelijkse omgeving niet te beïnvloeden.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make‑targets (alfabetisch) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Het Makefilebestand standaardiseert veelvoorkomende dev‑flows. Voer `make help` op elk moment uit voor een beknopte samenvatting (één regel) van elk target.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tip: `make` zonder target opent een eenvoudig Whiptail‑menu om een target te kiezen.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Verwijder lokale build/preview artefacten (tmp/, web-local-preview/, website/build/).     |
-| [`commit`](#mt-commit)                                   | Formatteer, voer tests uit (incl. i18n), werk changelog bij, commit & push.               |
-| [`eslint`](#mt-eslint)                                   | Voer ESLint uit via flat config (`npm run -s lint:eslint`).                               |
-| [`help`](#mt-help)                                       | Lijst alle targets met one‑line docs (gesorteerd).                                        |
-| [`lint`](#mt-lint)                                       | web‑ext lint op `sources/` (tijdelijk manifest; negeert ZIP's; niet-fatale).              |
-| [`menu`](#mt-menu)                                       | Interactief menu om een target en optionele argumenten te selecteren.                     |
-| [`pack`](#mt-pack)                                       | Bouw ATN & LOKALE ZIP's (loopt linter; roept packer script aan).                          |
-| [`prettier`](#mt-prettier)                               | Formatteer de repository ter plekke (schrijft wijzigingen).                               |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in controlemodus (geen schrijfbewerkingen); faalt als herformattering nodig is.  |
-| [`prettier_write`](#mt-prettier_write)                   | Alias voor `prettier`.                                                                    |
-| [`test`](#mt-test)                                       | Prettier (schrijven), ESLint, dan Vitest (dekking indien geconfigureerd).                 |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑alleen tests: add‑on placeholders/pariteit + website pariteit per taal per document. |
-| [`translate_app`](#mt-translation-app)                   | Alias voor `translation_app`.                                                             |
-| [`translation_app`](#mt-translation-app)                 | Vertaal app UI-strings van `sources/_locales/en/messages.json`.                           |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Vertaal website docs via OpenAI Batch API (voorkeur).                                     |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Vertaal website docs synchronously (legacy, non-batch).                                   |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias voor `translation_web_index`.                                                       |
-| [`translation_web_index`](#mt-translation_web_index)     | Vertaal homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`).   |
-| [`web_build`](#mt-web_build)                             | Bouw docs naar `website/build` (ondersteunt `--locales` / `BUILD_LOCALES`).               |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑veilige link check (negeert externe HTTP[S]).                                     |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokale gh‑pages preview; auto‑serve op 8080–8090; optionele tests/link‑check.             |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` naar de `gh-pages` branch.                                           |
+| Doel                                                     | Beschrijving in één regel                                                                   |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Verwijder lokale build-/preview‑artefacten (tmp/, web-local-preview/, website/build/).      |
+| [`commit`](#mt-commit)                                   | Formatteren, tests uitvoeren (incl. i18n), changelog bijwerken, committen & pushen.         |
+| [`eslint`](#mt-eslint)                                   | ESLint uitvoeren via flat config (`npm run -s lint:eslint`).                                |
+| [`help`](#mt-help)                                       | Alle targets met beknopte docs (gesorteerd) weergeven.                                      |
+| [`lint`](#mt-lint)                                       | web‑ext lint op `sources/` (tijdelijk manifest; negeert ZIP’s; niet‑fataal).                |
+| [`menu`](#mt-menu)                                       | Interactief menu om een target en optionele argumenten te kiezen.                           |
+| [`pack`](#mt-pack)                                       | ATN‑ en LOCAL‑ZIP’s bouwen (draait linter; roept packerscript aan).                         |
+| [`prettier`](#mt-prettier)                               | Repository ter plekke formatteren (schrijft wijzigingen).                                   |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier in controlemodus (geen writes); faalt als herformattering nodig is.                |
+| [`prettier_write`](#mt-prettier_write)                   | Alias voor `prettier`.                                                                      |
+| [`test`](#mt-test)                                       | Prettier (write), daarna ESLint en Vitest (coverage indien geconfigureerd).                 |
+| [`test_i18n`](#mt-test_i18n)                             | Alleen i18n‑tests: add‑on‑plaatsaanduidingen/pariteit + websitepariteit.                    |
+| [`translate_app`](#mt-translation-app)                   | Alias voor `translation_app`.                                                               |
+| [`translation_app`](#mt-translation-app)                 | Vertaal app‑UI‑strings vanuit `sources/_locales/en/messages.json`.                          |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Website‑documentatie vertalen via de OpenAI Batch API (voorkeur).                           |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Website‑documentatie synchroon vertalen (legacy, zonder batch).                             |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias voor `translation_web_index`.                                                         |
+| [`translation_web_index`](#mt-translation_web_index)     | Vertaal UI van homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Bouw docs naar `website/build` (ondersteunt `--locales` / `BUILD_LOCALES`).                 |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑veilige linkcontrole (slaat externe HTTP[S] over).                                  |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokale gh‑pages‑preview; automatisch serveren op 8080–8090; optionele tests/linkcontrole.   |
+| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` naar de `gh-pages`‑branch.                                             |
 
-Syntax for options
+Syntax voor opties
 
-- Gebruik `make <command> OPTS="…"` om opties door te geven (aanhalingstekens aanbevolen). Elk target hieronder toont voorbeeldgebruik.
+- Gebruik `make <command> OPTS="…"` om opties door te geven (aanbevolen: aanhalingstekens). Elk target hieronder toont voorbeeldgebruik.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Tips voor locale build {#locale-build-tips}
 
-- Bouw een subset van locale: stel `BUILD_LOCALES="en de"` in of geef `OPTS="--locales en,de"` door aan web targets.
-- Preview een specifieke locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Bouw ZIP's: `make pack`
-- Produceert ATN en LOKALE ZIP's in de repo root (bewerk artefacten niet met de hand)
-- Tip: werk versie bij in zowel `sources/manifest_ATN.json` als `sources/manifest_LOCAL.json` voor het verpakken
-- Handmatige installatie (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → selecteer de gebouwde ZIP
+- Bouw een subset van locales: stel `BUILD_LOCALES="en de"` in of geef `OPTS="--locales en,de"` door aan webtargets.
+- Voorvertoning van een specifieke locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Bouwen & verpakken {#build-and-package}
+
+- ZIP’s bouwen: `make pack`
+- Maakt ATN‑ en LOCAL‑ZIP’s in de repo‑root (bewerk artefacten niet met de hand)
+- Tip: werk de versie bij in zowel `sources/manifest_ATN.json` als `sources/manifest_LOCAL.json` vóór het verpakken
+- Handmatige installatie (dev): Thunderbird → Hulpmiddelen → Add‑ons en thema’s → tandwiel → Add‑on uit bestand installeren… → selecteer het gebouwde ZIP
+
+---
+
+### Testen {#test}
 
 - Volledige suite: `make test` (Vitest)
-- Dekking (optioneel):
+- Coverage (optioneel):
 - `npm i -D @vitest/coverage-v8`
-- Voer `make test` uit; open `coverage/index.html` voor HTML-rapport
-- i18n alleen: `make test_i18n` (UI-sleutels/placeholders/titels + website per-locale per-doc pariteit met id/title/sidebar_label checks)
+- Voer `make test` uit; open `coverage/index.html` voor het HTML‑rapport
+- Alleen i18n: `make test_i18n` (UI‑sleutels/plaatsaanduidingen/titels + website‑per‑locale per‑documentpariteit met id/title/sidebar_label‑controles)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Foutopsporing & logs {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Wissel tussen gedetailleerde logs tijdens runtime:
+- Foutconsole: Hulpmiddelen → Ontwikkelaarshulpmiddelen → Foutconsole
+- Schakel uitgebreide logs runtime in/uit:
 - Inschakelen: `messenger.storage.local.set({ debug: true })`
 - Uitschakelen: `messenger.storage.local.set({ debug: false })`
 - Logs verschijnen tijdens het opstellen/verzenden van antwoorden
 
 ---
 
-### Docs (website) {#docs-website}
+### Documentatie (website) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Bouw statische site: `cd website && npm run build`
-- Maak equivalente (alfabetisch): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Voorbeeldgebruik:
-- Alleen EN, overslaan van tests/link‑check, geen push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- Alle locales, met tests/link‑check, daarna push: `make web_build_local_preview && make web_push_github`
-- Voordat je publiceert, voer de offline‑veilige link check uit: `make web_build_linkcheck`.
-- i18n: Engels leeft in `website/docs/*.md`; Duitse vertalingen in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Zoekopdracht: Als Algolia DocSearch omgevingsvariabelen zijn ingesteld in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), gebruikt de site Algolia-zoekopdracht; anders valt het terug op lokale zoekopdracht. Op de homepage druk `/` of `Ctrl+K` om het zoekvak te openen.
+- Dev‑server: `cd website && npm run start`
+- Statische site bouwen: `cd website && npm run build`
+- Make‑equivalenten (alfabetisch): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Voorbeelden van gebruik:
+- Alleen EN, sla tests/linkcontrole over, geen push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Alle locales, met tests/linkcontrole, daarna push: `make web_build_local_preview && make web_push_github`
+- Voordat je publiceert, voer de offline‑veilige linkcontrole uit: `make web_build_linkcheck`.
+- i18n: Engels staat in `website/docs/*.md`; Duitse vertalingen in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Zoeken: Als Algolia DocSearch‑omgevingsvariabelen zijn ingesteld in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), gebruikt de site Algolia‑zoekfunctie; anders valt deze terug op lokale zoekfunctie. Op de homepage, druk op `/` of `Ctrl+K` om het zoekvak te openen.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Donatie-redirectroute {#donate-redirect}
 
 - `website/src/pages/donate.js`
 - Route: `/donate` (en `/<locale>/donate`)
 - Gedrag:
-- Als de huidige route een locale heeft (bijv., `/de/donate`), gebruik deze dan
-- Anders, kies de beste match van `navigator.languages` versus geconfigureerde locales; val terug naar standaard locale
-- Redirects naar:
+- Als de huidige route een locale heeft (bijv. `/de/donate`), gebruik die
+- Anders: kies de beste match uit `navigator.languages` t.o.v. geconfigureerde locales; val terug op de standaardlocale
+- Leidt om naar:
 - `en` → `/docs/donation`
-- anderen → `/<locale>/docs/donation`
-- Gebruikt `useBaseUrl` voor correcte baseUrl-afhandeling
-- Bevat meta-refresh + `noscript` link als fallback
+- overige → `/<locale>/docs/donation`
+- Gebruikt `useBaseUrl` voor correcte baseUrl‑afhandeling
+- Bevat meta refresh + `noscript`‑link als fallback
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Previewtips {#preview-tips}
 
-- Stop Node preview schoon: open `http://localhost:<port>/__stop` (afgedrukt na `Local server started`).
-- Als afbeeldingen niet laden in MDX/JSX, gebruik dan `useBaseUrl('/img/...')` om de site `baseUrl` te respecteren.
-- De preview start eerst; de linkcheck draait daarna en is niet-blokkerend (gebroken externe links zullen de preview niet stoppen).
-- Voorbeeld preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (afgedrukt na “Lokale server gestart”).
-- Externe links in link-check: Sommige externe sites (bijv. addons.thunderbird.net) blokkeren geautomatiseerde crawlers en kunnen 403 tonen in link checks. De preview start nog steeds; deze kunnen veilig worden genegeerd.
+- Stop de Node‑preview netjes: open `http://localhost:<port>/__stop` (afgedrukt na `Local server started`).
+- Als afbeeldingen niet laden in MDX/JSX, gebruik `useBaseUrl('/img/...')` om de site `baseUrl` te respecteren.
+- De preview start eerst; de linkcontrole draait daarna en is niet‑blokkerend (gebroken externe links stoppen de preview niet).
+- Voorbeeld‑preview‑URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (afgedrukt na “Local server started”).
+- Externe links in linkcontrole: sommige externe sites (bijv. addons.thunderbird.net) blokkeren geautomatiseerde crawlers en kunnen 403 tonen in linkcontroles. De preview start alsnog; dit is veilig om te negeren.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Vertaal de website {#translate-website}
 
 Wat je kunt vertalen
 
-- Website-ui alleen: homepage, navbar, footer en andere UI-strings. Docs-inhoud blijft voorlopig alleen in het Engels.
+- Alleen website‑UI: homepage, navigatiebalk, footer en andere UI‑strings. De inhoud van de documentatie blijft voorlopig alleen Engelstalig.
 
 Waar te bewerken
 
-- Bewerk `website/i18n/<locale>/code.json` (gebruik `en` als referentie). Houd placeholders zoals `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` ongewijzigd.
+- Bewerk `website/i18n/<locale>/code.json` (gebruik `en` als referentie). Laat plaatsaanduidingen zoals `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` ongewijzigd.
 
-Genereer of ververs bestanden
+Bestanden genereren of verversen
 
 - Maak ontbrekende stubs voor alle locales: `npm --prefix website run i18n:stubs`
-- Overschrijf stubs vanuit het Engels (na het toevoegen van nieuwe strings): `npm --prefix website run i18n:stubs:force`
-- Alternatief voor een enkele locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Overschrijf stubs vanuit Engels (na toevoegen van nieuwe strings): `npm --prefix website run i18n:stubs:force`
+- Alternatief voor één locale: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Vertaal homepage/navbar/footer UI-strings (OpenAI)
+Vertaal UI‑strings van homepage/navbar/footer (OpenAI)
 
-- Stel inloggegevens één keer in (shell of .env):
+- Stel eenmaal de inloggegevens in (shell of .env):
 - `export OPENAI_API_KEY=sk-...`
 - Optioneel: `export OPENAI_MODEL=gpt-4o-mini`
-- Eenmalig (alle locales, sla en over): `make translate_web_index`
+- One‑shot (alle locales, sla en over): `make translate_web_index`
 - Beperk tot specifieke locales: `make translate_web_index OPTS="--locales de,fr"`
 - Overschrijf bestaande waarden: `make translate_web_index OPTS="--force"`
 
-Validatie & herhalingen
+Validatie & herpogingen
 
-- Het vertaalscript valideert JSON-vorm, behoudt accolades-plaatsقدen, en zorgt ervoor dat URL's ongewijzigd blijven.
-- Bij validatiefouten probeert het tot 2 keer opnieuw met feedback voordat bestaande waarden behouden blijven.
+- Het vertaalscript valideert de JSON‑vorm, behoudt accolades‑plaatsaanduidingen en zorgt dat URL’s ongewijzigd blijven.
+- Bij validatiefouten probeert het script het met feedback tot 2 keer opnieuw, voordat bestaande waarden behouden blijven.
 
-Preview je locale
+Bekijk je locale in preview
 
-- Dev server: `npm --prefix website run start`
+- Dev‑server: `npm --prefix website run start`
 - Bezoek `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Indien indienen
+Indienen
 
-- Open een PR met de bewerkte `code.json` bestand(en). Houd wijzigingen gefocust en voeg indien mogelijk een snelle screenshot toe.
+- Open een PR met de bewerkte `code.json`‑bestanden. Houd wijzigingen gefocust en voeg indien mogelijk een snelle screenshot toe.
 
 ---
 
-### Security & Configuration Tips {#security-and-configuration-tips}
+### Beveiligings- & configuratietips {#security-and-configuration-tips}
 
-- Commit `sources/manifest.json` niet (tijdelijk gemaakt door de build)
+- Commit `sources/manifest.json` niet (tijdelijk aangemaakt door de build)
 - Houd `browser_specific_settings.gecko.id` stabiel om het updatekanaal te behouden
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Persistentie van instellingen {#settings-persistence}
 
-- Opslag: Alle gebruikersinstellingen leven in `storage.local` en blijven bestaan ​​tijdens add-on-updates.
-- Installeren: Standaarden worden alleen toegepast wanneer een sleutel strikt ontbreekt (onbepaald).
-- Update: Een migratie vult alleen ontbrekende sleutels; bestaande waarden worden nooit overschreven.
-- Schema-markering: `settingsVersion` (momenteel `1`).
+- Opslag: alle gebruikersinstellingen staan in `storage.local` en blijven behouden bij add‑on‑updates.
+- Installatie: standaardwaarden worden alleen toegepast wanneer een sleutel strikt ontbreekt (undefined).
+- Update: een migratie vult alleen ontbrekende sleutels; bestaande waarden worden nooit overschreven.
+- Schemakenmerk: `settingsVersion` (momenteel `1`).
 - Sleutels en standaardwaarden:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
@@ -229,67 +231,67 @@ Indien indienen
 - `warnOnBlacklistExcluded: boolean` → `true`
 - Code: zie `sources/background.js` → `initializeOrMigrateSettings()` en `SCHEMA_VERSION`.
 
-Dev workflow (een nieuwe instelling toevoegen)
+Dev‑workflow (nieuwe instelling toevoegen)
 
 - Verhoog `SCHEMA_VERSION` in `sources/background.js`.
-- Voeg de nieuwe sleutel + standaardwaarde toe aan de `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Gebruik de "only-if-undefined" regel bij het zaaien van standaardwaarden; overschrijf bestaande waarden niet.
-- Als de instelling zichtbaar is voor de gebruiker, verbind deze dan in `sources/options.js` en voeg gelokaliseerde strings toe.
-- Voeg/benut tests toe (zie `tests/background.settings.migration.test.js`).
+- Voeg de nieuwe sleutel + standaardwaarde toe aan het `DEFAULTS`‑object in `initializeOrMigrateSettings()`.
+- Gebruik de "only-if-undefined"‑regel bij het zaaien van standaardwaarden; overschrijf geen bestaande waarden.
+- Als de instelling zichtbaar is voor de gebruiker, koppel deze in `sources/options.js` en voeg gelokaliseerde strings toe.
+- Voeg tests toe/pas ze aan (zie `tests/background.settings.migration.test.js`).
 
-Handmatige testtips
+Tips voor handmatig testen
 
-- Simuleer een schone installatie: wis de gegevensmap van de extensie of begin met een nieuw profiel.
-- Simuleer een update: stel `settingsVersion` in op `0` in `storage.local` en herlaad opnieuw; bevestig dat bestaande waarden ongewijzigd blijven en alleen ontbrekende sleutels worden toegevoegd.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Zorg ervoor dat Thunderbird 128 ESR of nieuwer is
-- Gebruik de Error Console voor runtime-problemen
-- Als opgeslagen instellingen niet correct lijken toe te passen, herstart dan Thunderbird en probeer het opnieuw. (Thunderbird kan de staat tussen sessies cachen; een herstart zorgt ervoor dat nieuwe instellingen worden geladen.)
+- Simuleer een schone installatie: wis de datamap van de extensie of start met een nieuw profiel.
+- Simuleer een update: stel `settingsVersion` in op `0` in `storage.local` en laad opnieuw; bevestig dat bestaande waarden ongewijzigd blijven en alleen ontbrekende sleutels worden toegevoegd.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Probleemoplossing {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) voert vitest uit met de dekking drempels (85% regels/functies takken/statements). Als drempels niet worden gehaald, faalt de taak.
-- De workflow uploadt een artefact `coverage-html` met het HTML-rapport; download het vanaf de runpagina (Acties → laatste run → Artefacten).
-
----
-
-### Contributing {#contributing}
-
-- Zie CONTRIBUTING.md voor branch/commit/PR-richtlijnen
-- Tip: Maak een apart Thunderbird-ontwikkelingsprofiel voor tests om te voorkomen dat je dagelijkse profiel wordt beïnvloed.
+- Zorg dat Thunderbird 128 ESR of nieuwer is
+- Gebruik de Foutconsole voor runtime‑problemen
+- Als opgeslagen instellingen niet goed lijken te worden toegepast, herstart Thunderbird en probeer opnieuw. (Thunderbird kan status tussen sessies cachen; een herstart zorgt dat instellingen vers worden geladen.)
 
 ---
 
-### Translations
+### CI & coverage {#ci-and-coverage}
 
-- Het uitvoeren van grote “all → all” vertaaljobs kan traag en duur zijn. Begin met een subset (bijv. een paar docs en 1–2 locale), beoordeel het resultaat, en breid vervolgens uit.
+- GitHub Actions (`CI — Tests`) draait vitest met dekkingsdrempels (85% regels/functies/takken/statements). Als drempels niet worden gehaald, faalt de taak.
+- De workflow uploadt een artefact `coverage-html` met het HTML‑rapport; download dit vanaf de run‑pagina (Actions → laatste run → Artifacts).
 
 ---
 
-- Retrybeleid: vertaaljobs voeren tot 3 herhalingen uit met exponentiële terugval bij API-fouten; zie `scripts/translate_web_docs_batch.js` en `scripts/translate_web_docs_sync.js`.
+### Bijdragen {#contributing}
 
-Screenshots voor docs
+- Zie CONTRIBUTING.md voor richtlijnen rond branches/commits/PR’s
+- Tip: maak een apart Thunderbird‑ontwikkelprofiel voor testen om je dagelijkse profiel niet te beïnvloeden.
 
-- Bewaar afbeeldingen onder `website/static/img/`.
+---
+
+### Vertalingen
+
+- Grote “all → all”‑vertaaljobs kunnen traag en duur zijn. Begin met een subset (bijv. enkele docs en 1–2 locales), beoordeel het resultaat en breid dan uit.
+
+---
+
+- Retrybeleid: vertaaljobs doen tot 3 herpogingen met exponentiële backoff bij API‑fouten; zie `scripts/translate_web_docs_batch.js` en `scripts/translate_web_docs_sync.js`.
+
+Schermafbeeldingen voor documentatie
+
+- Sla afbeeldingen op onder `website/static/img/`.
 - Verwijs ernaar in MD/MDX via `useBaseUrl('/img/<filename>')` zodat paden werken met de site `baseUrl`.
-- Na het toevoegen of hernoemen van afbeeldingen onder `website/static/img/`, bevestig dat alle verwijzingen nog steeds `useBaseUrl('/img/…')` gebruiken en worden weergegeven in een lokale preview.
+- Nadat je afbeeldingen hebt toegevoegd of hernoemd onder `website/static/img/`, bevestig dat alle verwijzingen nog steeds `useBaseUrl('/img/…')` gebruiken en renderen in een lokale preview.
   Favicons
 
 - De multi‑size `favicon.ico` wordt automatisch gegenereerd in alle buildpaden (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- Er is geen handmatige stap nodig; het bijwerken van `icon-*.png` is voldoende.
-  Review tip
+- Geen handmatige stap vereist; `icon-*.png` bijwerken is voldoende.
+  Reviewtip
 
-- Houd de front‑matter `id` ongewijzigd in vertaalde docs; vertaal alleen `title` en `sidebar_label` wanneer aanwezig.
+- Laat de front‑matter `id` ongewijzigd in vertaalde docs; vertaal alleen `title` en `sidebar_label` indien aanwezig.
 
 #### clean {#mt-clean}
 
-- Doel: lokale build/preview artefacten verwijderen.
+- Doel: lokale build-/preview‑artefacten verwijderen.
 - Gebruik: `make clean`
 - Verwijdert (indien aanwezig):
 - `tmp/`
@@ -300,37 +302,37 @@ Screenshots voor docs
 
 #### commit {#mt-commit}
 
-- Doel: formatteren, testen, changelog bijwerken, commit, en push.
+- Doel: formatteren, testen, changelog bijwerken, committen en pushen.
 - Gebruik: `make commit`
-- Details: voert Prettier uit (schrijven), `make test`, `make test_i18n`; voegt changelog toe wanneer er staged diffs zijn; pusht naar `origin/<branch>`.
+- Details: draait Prettier (write), `make test`, `make test_i18n`; voegt changelog toe wanneer er staged diffs zijn; pusht naar `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Doel: voer ESLint uit via flat config.
+- Doel: ESLint draaien via flat config.
 - Gebruik: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Doel: lijst alle targets met one‑line docs.
+- Doel: alle targets met beknopte docs weergeven.
 - Gebruik: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Doel: lint de MailExtension met `web-ext`.
+- Doel: de MailExtension linten met `web-ext`.
 - Gebruik: `make lint`
-- Opmerkingen: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; negeert gebouwde ZIP's; waarschuwingen leiden niet tot het mislukken van de pipeline.
+- Opmerkingen: kopieert tijdelijk `sources/manifest_LOCAL.json` → `sources/manifest.json`; negeert gebouwde ZIP’s; waarschuwingen laten de pipeline niet falen.
 
 ---
 
 #### menu {#mt-menu}
 
-- Doel: interactief menu om een Make doeltarget en optionele argumenten te selecteren.
+- Doel: interactief menu om een Make‑target en optionele argumenten te kiezen.
 - Gebruik: voer `make` uit zonder argumenten.
 - Opmerkingen: als `whiptail` niet beschikbaar is, valt het menu terug op `make help`.
 
@@ -338,20 +340,20 @@ Screenshots voor docs
 
 #### pack {#mt-pack}
 
-- Doel: bouw ATN en lokale ZIP's (afhankelijk van `lint`).
+- Doel: ATN‑ en LOCAL‑ZIP’s bouwen (hangt af van `lint`).
 - Gebruik: `make pack`
-- Tip: verhoog versies in zowel `sources/manifest_*.json` voor het verpakken.
+- Tip: verhoog versies in beide `sources/manifest_*.json` vóór het verpakken.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Doel: formatteer de repo ter plaatse.
+- Doel: de repo ter plekke formatteren.
 - Gebruik: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Doel: verifieer opmaak (geen schrijfbewerkingen).
+- Doel: formattering verifiëren (geen writes).
 - Gebruik: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
@@ -363,71 +365,73 @@ Screenshots voor docs
 
 #### test {#mt-test}
 
-- Doel: voer Prettier (schrijven), ESLint, dan Vitest (dekking als geïnstalleerd) uit.
+- Doel: Prettier (write), daarna ESLint en vervolgens Vitest (coverage indien geïnstalleerd).
 - Gebruik: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Doel: i18n-georiënteerde tests voor add-on strings en website docs.
+- Doel: i18n‑gerichte tests voor add‑on‑strings en websitedocumentatie.
 - Gebruik: `make test_i18n`
-- Voert uit: `npm run test:i18n` en `npm run -s test:website-i18n`.
+- Draait: `npm run test:i18n` en `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Doel: vertaal add-on UI strings van EN naar andere locales.
+- Doel: add‑on‑UI‑strings vertalen van EN naar andere locales.
 - Gebruik: `make translation_app OPTS="--locales all|de,fr"`
-- Opmerkingen: behoudt sleutelstructuur en placeholders; logt naar `translation_app.log`. Script vorm: `node scripts/translate_app.js --locales …`.
+- Opmerkingen: behoudt sleutelstructuur en plaatsaanduidingen; logt naar `translation_app.log`. Scriptvorm: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Doel: vertaal website docs van `website/docs/*.md` naar `website/i18n/<locale>/...`.
+- Doel: websitedocumentatie vertalen van `website/docs/*.md` naar `website/i18n/<locale>/...`.
 - Voorkeur: `translate_web_docs_batch` (OpenAI Batch API)
-  - Gebruik (vlaggen): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy posities worden nog steeds geaccepteerd: `OPTS="<doc|all> <lang|all>"`
-- Gedrag: bouwt JSONL, uploadt, polst elke 30s, downloadt resultaten, schrijft bestanden.
-- Opmerking: een batchjob kan tot 24 uur duren om te voltooien (per OpenAI's batchvenster). De console toont de verstreken tijd bij elke poll.
-- Env: `OPENAI_API_KEY` (vereist), optionele `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (standaard 24u), `BATCH_POLL_INTERVAL_MS`.
+  - Gebruik (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positioneel wordt nog steeds geaccepteerd: `OPTS="<doc|all> <lang|all>"`
+- Gedrag: bouwt JSONL, uploadt, polt elke 30s, downloadt resultaten, schrijft bestanden.
+- Opmerking: een batchtaak kan tot 24 uur duren (volgens OpenAI’s batchvenster). De console toont de verstreken tijd bij elke poll.
+- Omgeving: `OPENAI_API_KEY` (vereist), optioneel `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (standaard 24u), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Gebruik (vlaggen): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy posities worden nog steeds geaccepteerd: `OPTS="<doc|all> <lang|all>"`
-- Gedrag: synchrone aanvragen per paar (geen batchaggregatie).
-- Opmerkingen: Interactieve prompts wanneer `OPTS` weggelaten. Beide modi behouden codeblokken/inline-code en houden front-matter `id` ongewijzigd; logt naar `translation_web_batch.log` (batch) of `translation_web_sync.log` (sync).
+  - Gebruik (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positioneel wordt nog steeds geaccepteerd: `OPTS="<doc|all> <lang|all>"`
+- Gedrag: synchrone verzoeken per paar (geen batchaggregatie).
+- Opmerkingen: interactieve prompts wanneer `OPTS` is weggelaten. Beide modi behouden codeblokken/inline code en laten front‑matter `id` ongewijzigd; logt naar `translation_web_batch.log` (batch) of `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Doel: vertaal website UI strings (homepage, navbar, footer) van `website/i18n/en/code.json` naar alle locales onder `website/i18n/<locale>/code.json` (exclusief `en`).
+- Doel: website‑UI‑strings (homepage, navbar, footer) vertalen van `website/i18n/en/code.json` naar alle locales onder `website/i18n/<locale>/code.json` (exclusief `en`).
 - Gebruik: `make translate_web_index` of `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Vereisten: export `OPENAI_API_KEY` (optioneel: `OPENAI_MODEL=gpt-4o-mini`).
-- Gedrag: valideert de JSON-structuur, behoudt accolades placeholders, houdt URLs ongewijzigd en probeert opnieuw met feedback bij validatiefouten.
+- Vereisten: exporteer `OPENAI_API_KEY` (optioneel: `OPENAI_MODEL=gpt-4o-mini`).
+- Gedrag: valideert JSON‑structuur, behoudt accolades‑plaatsaanduidingen, laat URL’s ongewijzigd en probeert met feedback opnieuw bij validatiefouten.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Doel: bouw de docs site naar `website/build`.
+- Doel: de docs‑site bouwen naar `website/build`.
 - Gebruik: `make web_build OPTS="--locales en|de,en|all"` (of stel `BUILD_LOCALES="en de"` in)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: draait `npm ci` in `website/` alleen als `website/node_modules/@docusaurus` ontbreekt.
+- Interne werking: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Afhankelijkheden: draait `npm ci` in `website/` alleen als `website/node_modules/@docusaurus` ontbreekt.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Doel: offline-veilige link check.
+- Doel: offline‑veilige linkcontrole.
 - Gebruik: `make web_build_linkcheck OPTS="--locales en|all"`
-- Opmerkingen: bouwt naar `tmp_linkcheck_web_pages`; herschrijft GH-pagina's `baseUrl` naar `/`; negeert externe HTTP(S)-links.
+- Opmerkingen: bouwt naar `tmp_linkcheck_web_pages`; herschrijft GH Pages `baseUrl` naar `/`; slaat externe HTTP(S)‑links over.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Doel: lokale gh‑pages preview met optionele tests/link-check.
+- Doel: lokale gh‑pages‑preview met optionele tests/linkcontrole.
 - Gebruik: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Gedrag: probeert eerst Node preview server (`scripts/preview-server.mjs`, ondersteunt `/__stop`), valt terug naar `python3 -m http.server`; serveert op 8080–8090; PID op `web-local-preview/.server.pid`.
+- Gedrag: probeert eerst de Node‑previewserver (`scripts/preview-server.mjs`, ondersteunt `/__stop`), valt terug op `python3 -m http.server`; serveert op 8080–8090; PID bij `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Doel: push `website/build` naar de `gh-pages` branch.
+- Doel: `website/build` pushen naar de `gh-pages`‑branch.
 - Gebruik: `make web_push_github`
 
-Tip: stel `NPM=…` in om de package manager die door het Makefile wordt gebruikt te overschrijven (standaard `npm`).
+Tip: stel `NPM=…` in om de pakketmanager die door het Makefile wordt gebruikt te overschrijven (standaard `npm`).
+
+---

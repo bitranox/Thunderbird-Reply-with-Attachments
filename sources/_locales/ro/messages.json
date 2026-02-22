@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Avertizează dacă atașamentele sunt excluse de lista neagră"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include imagini inline (imagini încorporate)"
+  },
   "uiDebugHeader": {
     "message": "Avansat"
   },

@@ -4,31 +4,41 @@ title: 'Fitur'
 sidebar_label: 'Fitur'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Fitur {#features}
 
-## How It Works {#how-it-works}
+- Otomatis nambahaké berkas saka email asli minangka lampiran nalika mbales.
+- Prilaku bisa diatur: lampiran bisa
+  - ditambahaké kanthi otomatis, utawa
+  - mung ditambahaké sawisé konfirmasi (dialog cilik sing bisa diakses). Ing Options sampeyan
+    bisa ngaktifaké konfirmasi lan milih jawaban gawan (Ya/Ora).
+- Daftar ireng jeneng berkas (pola glob) nyegah berkas tartamtu supaya ora
+  otomatis dilampiraké. Tuladhané: `*intern*`, `*secret*`, `*passwor*`.
+  Cocogé ora mbedakaké gedhé‑cilik aksara lan mung mriksa jeneng berkas waé; wenehana siji pola
+  saben baris ing Options.
+- Pèngetan daftar ireng (opsional, aktif kanthi gawan): nalika berkas dibuwang amarga
+  daftar ireng sampeyan, ana modal cilik sing ndhaptar berkasé lan pola sing cocog.
+  Ramah mode peteng lan bisa diakses nganggo keyboard (Enter/Esc kanggo nutup).
+- Bisa digunakaké karo Reply lan Reply all. Forward ora diowahi déning add‑on iki.
+- Isih nambahaké sing asli sanajan sampeyan wis nglampiraké dhéwé; ngindhari duplikat adhedhasar jeneng berkas.
+- Panglindhungan duplikat per‑tab nyegah nambah kaping pindho ing tab nyusun sing padha.
+- Kanthi gawan ngliwati sertifikat S/MIME supaya nyingkiri lampiran sing ora perlu.
+- Kalebu gambar inline (gawan: ON). Gambar sing disisepaké dipulihaké langsung ing
+  isi wangsulan minangka URI data base64, njaga tata letak inline sing asli. Patènana ing
+  Options kanggo nglirwakaké gambar inline sakabèhé.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Kepiye Cara Kerjane {#how-it-works}
+
+- Nalika mbales, add‑on ndhaptar lampiran asli.
+- Nyaring metu tandha tangan S/MIME saka lampiran berkas; gambar inline dipulihaké ing isi
+  wangsulan (kajaba dipatèni).
+- Saka pilihan bisa njaluk konfirmasi (ramah keyboard).
+- Nambahaké berkas sing cocog menyang kaca nyusun sampeyan, nyingkiri duplikat adhedhasar jeneng berkas.
+- Waca “Napa lampiran bisa wae ora ditambahaké” ing Panggunaan kanggo kasus pinggiran.
+
+Cathetan privasi: Kabeh pangolahan kelakon sacara lokal ing Thunderbird. Add‑on iki ora nggawe panyuwunan jaringan latar mburi.
+
+---

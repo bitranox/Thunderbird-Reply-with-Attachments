@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Funcions",
-  "description": "Features",
+  "title": "Característiques",
+  "description": "---",
   "source": "@site/i18n/ca/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Funcions",
-    "sidebar_label": "Funcions"
+    "title": "Característiques",
+    "sidebar_label": "Característiques"
   },
   "sidebar": "docs",
   "next": {

@@ -48,7 +48,7 @@
     }
   }
   /** Return true if the donation prompt should be hidden now. */
-  async function isSnoozed() {
+  async function _isSnoozed() {
     const until = await getSnoozeUntil();
     return Number.isFinite(until) && until > Date.now();
   }

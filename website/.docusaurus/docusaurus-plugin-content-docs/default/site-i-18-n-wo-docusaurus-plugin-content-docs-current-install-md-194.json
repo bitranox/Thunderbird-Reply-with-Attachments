@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Sosna",
-  "description": "Sosna ci \"Thunderbird Add-ons ak Themes\"",
+  "title": "Samp",
+  "description": "---",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Sosna",
+    "title": "Samp",
     "slug": "/install",
-    "sidebar_label": "Sosna"
+    "sidebar_label": "Istalasiyoŋ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Dafarekat",
+    "title": "Tàmbali bu gaaw",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/quickstart"
   },
   "next": {

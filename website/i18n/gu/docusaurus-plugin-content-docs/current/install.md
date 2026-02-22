@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'સ્થાપન'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## “Thunderbird Add-ons and Themes” મારફતે ઇન્સ્ટોલેશન {#installation-in-thunderbird-recommended}
+
+:::important ન્યૂનતમ Thunderbird આવૃત્તિ
+આ એડ‑ઓન Thunderbird 128 ESR અથવા નવી આવૃત્તિઓને સપોર્ટ કરે છે. જૂની આવૃત્તિઓ સપોર્ટેડ નથી.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+આ ભલામણ કરાયેલ ઇન્સ્ટોલેશન પદ્ધતિ છે. ATN (addons.thunderbird.net) પરથી ઇન્સ્ટોલ કરેલા એડ‑ઓન્સને આપમેળે અપડેટ મળે છે. LOCAL/dev ઇન્સ્ટોલેશન્સ આપમેળે અપડેટ થતી નથી.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- ન્યૂનતમ Thunderbird આવૃત્તિ: 128 ESR અથવા નવી.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird માં, **Tools > Add-ons and Themes** પર જાઓ.
+2. "reply with attachments" શોધો.
+3. એડ‑ઓન ઉમેરો.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+અથવા એડ‑ઓન પેજ સીધું ખોલો: [Thunderbird એડ‑ઓન્સ (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI માંથી હસ્તચાલિત ઇન્સ્ટોલેશન {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ફાઈલ ડાઉનલોડ કરો {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird એડ‑ઓન પેજ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) પર જાઓ.
+2. એડ‑ઓનની નવીનતમ આવૃત્તિને XPI ફાઈલ તરીકે (`reply_with_attachments-x.y.z-tb.xpi`) ડાઉનલોડ કરો.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird માં ઇન્સ્ટોલ કરો {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird ખોલો.
+2. **Tools > Add-ons and Themes** પર જાઓ.
+3. **Add-ons Manager** માં, ઉપર‑જમણા ખૂણે ગિયર આઇકન પર ક્લિક કરો.
+4. મેનુમાંથી **Install Add-on From File…** પસંદ કરો.
+5. ડાઉનલોડ કરેલી `reply_with_attachments-x.y.z-tb.xpi` ફાઈલ પસંદ કરો.
+6. સૂચના આવે ત્યારે ઇન્સ્ટોલેશનની પુષ્ટિ કરો.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## વિકાસ માટે ઇન્સ્ટોલેશન {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### રિપોઝિટરી ડાઉનલોડ કરો {#download-the-repository}
 
-See also
+1. GitHub રિપોઝિટરીનું નવીનતમ સંસ્કરણ ડાઉનલોડ કરો.
+2. વધુ માહિતી માટે `make help` ચલાવો.
 
-- [Quickstart](quickstart)
+### Thunderbird માં ઇન્સ્ટોલ કરો {#install-in-thunderbird-dev}
+
+1. Thunderbird ખોલો.
+2. **Tools > Add-ons and Themes** પર જાઓ.
+3. **Add-ons Manager** માં, ઉપર‑જમણા ખૂણે ગિયર આઇકન પર ક્લિક કરો.
+4. મેનુમાંથી **Install Add-on From File…** પસંદ કરો.
+5. બનાવેલી ફાઈલ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` પસંદ કરો.
+6. સૂચના આવે ત્યારે ઇન્સ્ટોલેશનની પુષ્ટિ કરો.
+
+નોંધ: જો Thunderbird તમારા સિસ્ટમ પર `.zip` સ્વીકારતું ન હોય, તો તેને `.xpi` તરીકે નામાંતર કરો અને “Install Add‑on From File…” ફરી અજમાવો.
+
+### LOCAL ZIP ક્યાં મળશે {#where-local-zip}
+
+- પ્રથમ, એડ‑ઓનને પેક કરો: રિપોઝિટરી રૂટમાં `make pack` ચલાવો.
+- પેકિંગ પછી, રિપોઝિટરી રૂટમાં “LOCAL” zip શોધો (ઉદાહરણ તરીકે, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- ટેસ્ટિંગ માટે ફરીથી પેક કરવા પહેલાં, `sources/manifest_ATN.json` અને `sources/manifest_LOCAL.json` બંનેમાં વર્ઝન્સ વધારો.
+
+---
+
+## નિષ્ક્રિય, અનઇન્સ્ટોલ, અને અપડેટ્સ {#disable-uninstall-updates}
+
+- નિષ્ક્રિય: Thunderbird → Tools → Add‑ons and Themes → એડ‑ઓન શોધો → ટૉગલ બંધ કરો.
+- અનઇન્સ્ટોલ: એક જ દૃશ્ય → ત્રણ‑ડોટ મેનુ → Remove.
+- અપડેટ્સ: નવી આવૃત્તિઓ મંજૂર થતા ATN ઇન્સ્ટોલેશન્સ auto‑update થાય છે. LOCAL/dev ઇન્સ્ટોલેશન્સ auto‑update થતી નથી; નવી LOCAL બિલ્ડ હાથથી ફરી ઇન્સ્ટોલ કરો.
+- સેટિંગ્સ સંપૂર્ણપણે દૂર કરો: [ગોપનીયતા → ડેટા દૂર કરવું](privacy#data-removal) જુઓ.
+
+આ પણ જુઓ
+
+- [ઝડપી શરૂઆત](quickstart)

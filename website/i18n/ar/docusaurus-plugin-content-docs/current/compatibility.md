@@ -4,39 +4,41 @@ title: 'التوافق'
 sidebar_label: 'التوافق'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## التوافق {#compatibility}
+
+:::important أدنى إصدار لـ Thunderbird
+هذا الملحق يدعم Thunderbird **128 ESR أو الأحدث**. الإصدارات الأقدم غير مدعومة.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- يتم دعم Thunderbird 128 ESR أو الأحدث (128.x+).
+- إصدارات Thunderbird الأقدم غير مدعومة.
+- تم اختباره على Windows وmacOS وLinux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 غير مدعوم
+Manifest V2 غير مدعوم. يستهدف الملحق **Manifest V3 (MV3)** على Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## استكشاف الأخطاء وإصلاحها {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- إذا لم يعمل الملحق كما هو متوقع، فتأكد من أنك تستخدم إصداراً متوافقاً من Thunderbird (128 ESR أو أحدث).
+- تحقق من وحدة تحكم أخطاء Thunderbird (**Tools > Developer Tools > Error Console**) لأي مشكلات متعلقة بالملحق.
+- إذا بدا أن الإعدادات المخزنة لا تُطبّق بشكل صحيح، فأعد تشغيل Thunderbird وحاول مرة أخرى. (قد يخزّن Thunderbird الحالة عبر الجلسات؛ تضمن إعادة التشغيل تحميل الإعدادات الجديدة.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## التعارضات المعروفة {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- لا توجد معروفة في الوقت الحالي. إذا رأيت مرفقات مكررة بشكل متكرر أو إخفاقات مع ملحقات أخرى، يُرجى الإبلاغ مع خطوات إعادة الإنتاج.
+
+---
+
+## الإصدارات التجريبية/الليلية {#beta-nightly}
+
+- إصدارات Thunderbird Beta وDaily (Nightly) مدعومة عموماً، لكن قد تتسبب تغييرات المصدر أحياناً في كسر سلوك الملحق. إذا واجهت مشكلات، يُرجى الإبلاغ عنها وإرفاق إصدار Thunderbird الدقيق (مثال: “Daily 131.0a1 2025‑09‑10”).
+- هل واجهت انحداراً على Beta/Nightly؟ يُرجى الإبلاغ عنه مع خطوات إعادة الإنتاج — راجع [الدعم](support) — وأدرج سلسلة بناء Thunderbird الدقيقة.
 
 ---

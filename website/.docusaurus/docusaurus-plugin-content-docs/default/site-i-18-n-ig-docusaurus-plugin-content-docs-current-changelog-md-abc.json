@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ncheta mgbanwe",
-  "description": "Ncheta mgbanwe",
+  "title": "Ndekọ mgbanwe",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ncheta mgbanwe"
+    "title": "Ndekọ mgbanwe"
   },
   "sidebar": "docs",
   "previous": {

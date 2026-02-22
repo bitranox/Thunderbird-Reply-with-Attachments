@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'مۇناسىۋەتلىك باشلامچى'
-sidebar_label: 'مۇناسىۋەتلىك باشلامچى'
+title: 'تېز باشلاش'
+sidebar_label: 'تېز باشلاش'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## تېز باشلاش
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ئەڭ تۆۋەن Thunderbird نەشرى
+بۇ قوشۇمچە Thunderbird **128 ESR ياكى يېڭىراق** نەشرىنى قوللايدۇ. كونا نەشرلەر قوللانمايدۇ.
+:::
+
+:::note تەلېمېتىرىيە يوق؛ ئارقا سەھنىدە تور يوق
+بۇ قوشۇمچە ئالگورىتمىك تەھلىل/تەلېمېتىرىيەنى **توپلىمايدۇ** ۋە ئارقا سەھنىدە تور **تەلەپلىرىنى قىلمايدۇ**. تورغا كىرىش پەقەت سىز سىرتقى ئۇلانمىلارنى چەككەندەلا يۈز بېرىدۇ (ھۆججەتلەر، GitHub، ئىئانە).
+:::
+
+---
+
+### ئورناتىش
+
+1. قوشۇمچىنى Thunderbird Add‑ons دىن ئورناتىڭ.
+2. تاللاشچان: جەزملەشنى قوزغىتىڭ (تاللاشلار → “قوشۇمچە ھۆججەت قوشۇشتىن بۇرۇن سورا”).
+3. تاللاشچان: قارا تىزىملىك ئاگاھلاندۇرۇشىنى قوزغىتىلغان ھالەتتە قالدۇرۇڭ (سۈكۈتتىكى): “قارا تىزىملىك سەۋەبىدىن قوشۇمچە ھۆججەتلەر چىقىرىۋېتىلسە ئاگاھلاندۇر”.
+4. تاللاشچان: قارا تىزىملىك ئەندىزىلىرىنى قوشۇڭ (ھەر قۇرغا بىرىدىن)، مەسىلەن:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+ئەسكەرتىش: ئۈستىدىكى “# …” بۇ قوللانمادىكى ئىزاھات؛ تاللاشلارغا چاپلايدىغان ئەندىزىلەرنىڭ ئىچىگە ئىزاھات قوشماڭ. پەقەت ھەر قۇرغا بىرەردىنلا ئەندىزه كىرگۈزۈڭ.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ھازىر قوشۇمچە ھۆججەتلەر بار بىر ئۇچۇرغا جاۋاب يازسىڭىز — ئەسلىلىرى ئاپتوماتىك ياكى تېز جەزملەشتىن كېيىن قوشۇلىدۇ. ئەگەر قارا تىزىملىكىڭىز سەۋەبىدىن ھەر قانداق ھۆججەتلەر چىقىرىۋېتىلسا، ئۇلارنى ساناپ ئۆتكەن قىسقا ئاگاھلاندۇرۇشنى كۆرىسىز.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### تەكشۈرۈش {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 قوشۇمچە ھۆججەت بار بىر ئۇچۇرغا جاۋاب يازىڭ ۋە يېزىش كۆزنىكىدە ئەسلى قوشۇمچىلارنىڭ قوشۇلغانلىقىنى جەزملەڭ.
+- ھەرىكەتنى تەڭشەش ئۈچۈن [سەپلىمە](configuration) غا قاراڭ (جەزملەش كىلدىرگۈسى، سۈكۈتتىكى جاۋاپ، قارا تىزىملىك ئەندىزىلىرى).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### قارا تىزىملىك ئاگاھلاندۇرۇشىنى تەكشۈرۈش {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” قاتارلىق ھۆججەت ئۆز ئىچىگە ئالغان بىر ئۇچۇرغا جاۋاب يازىڭ.
+- “قارا تىزىملىك سەۋەبىدىن قوشۇمچە ھۆججەتلەر چىقىرىۋېتىلسە ئاگاھلاندۇر” قوزغىتىلغاندا، كىچىك بىر دىئالوگتا چىقىرىۋېتىلگەن ھۆججەتلەر ۋە ماس كېلىدىغان ئەندىزه كۆرسىتىلىدۇ.
+
+ئەگەر ئاگاھلاندۇرۇشنى كۆرەلمىسىڭىز، ئەندىزدە ھۆججەت ئاتى بىلەن توغرىسىغا تېپىشما بار ئىكەنلىكىنى جەزملەڭ (پەقەت ھۆججەت ئاتىلا، چوڭ-كىچىك ھەرپتىن مۇستەسنا). سەپلىمە → قارا تىزىملىككە قاراڭ.
+
+---
+
+### ھەرپتاختا ئەسكەرتىشى {#keyboard-note}
+
+- جەزملەش دىئالوگىدا ھەئە ئۈچۈن Y/J، ياق ئۈچۈن N/Esc قوللىنىلىدۇ. بەزى لاتىن بولمىغان ھەرپتاختىلاردا ھەرپ كۇنۇپكىلىرى ئۆزگىرىشى مۇمكىن؛ Enter نى بېسىش نىشانلانغان كۇنۇپكىنى جەزملەيدۇ.
 
 ---

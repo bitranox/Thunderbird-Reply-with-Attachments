@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Muutuste logi",
-  "description": "Changelog",
+  "title": "Muudatuste logi",
+  "description": "---",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Muutuste logi"
+    "title": "Muudatuste logi"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,94 +1,101 @@
 ---
 id: usage
-title: 'Използване'
-sidebar_label: 'Използване'
+title: 'Употреба'
+sidebar_label: 'Употреба'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Използване {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- При Отговор добавката добавя оригиналите автоматично — или първо пита, ако е включено в Опции.
+- Премахване на дубликати по име на файл; S/MIME частите винаги се пропускат. Вградените изображения се възстановяват в тялото на отговора по подразбиране (деактивирайте чрез "Include inline pictures" в Опции).
+- Прикачени файлове в черния списък също се пропускат (шаблони тип glob без чувствителност към регистъра, съвпадащи по имена на файлове, не по пътища). Вижте [Конфигурация](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Какво се случва при отговор {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Откриване на отговор → изброяване на оригиналните прикачени → филтър S/MIME + вградени → по желание потвърждение → добавяне на допустимите файлове (пропускане на дубликати) → възстановяване на вградените изображения в тялото.
 
----
+Строг срещу облекчен проход: Добавката първо изключва S/MIME и вградените части от файловите прикачвания. Ако нищо не отговаря, тя изпълнява облекчен проход, който пак изключва S/MIME/вградени, но допуска повече случаи (вижте Детайли за кода). Вградените изображения никога не се добавят като файлови прикачвания; вместо това, когато "Include inline pictures" е включено (по подразбиране), те се вграждат директно в тялото на отговора като base64 data URI.
 
-## Behavior Details {#behavior-details}
+| Тип част                                                   |                        Строг проход |                     Облекчен проход |
+| ---------------------------------------------------------- | ----------------------------------: | ----------------------------------: |
+| Файл с S/MIME подпис `smime.p7s`                           |                           Изключено |                           Изключено |
+| S/MIME MIME типове (`application/pkcs7-*`)                 |                           Изключено |                           Изключено |
+| Вградено изображение, реферирано от Content‑ID (`image/*`) | Изключено (възстановено в тялото\*) | Изключено (възстановено в тялото\*) |
+| Прикачен имейл (`message/rfc822`) с име на файл            |                        Не се добавя |                   Може да се добави |
+| Обикновено файлово прикачване с име на файл                |                   Може да се добави |                   Може да се добави |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist, the add-on shows a small modal listing the affected files and the matching pattern(s). This warning also appears in cases where no attachments will be added because everything was excluded.
+\* Когато "Include inline pictures" е активирано (по подразбиране: ON), вградените изображения се вграждат в тялото на отговора като base64 data URI вместо да се добавят като файлови прикачвания. Вижте [Конфигурация](configuration#include-inline-pictures).
 
----
-
-## Keyboard shortcuts {#keyboard-shortcuts}
-
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+Пример: Някои прикачени файлове може да нямат определени заглавки, но все пак да са обикновени файлове (не вградени/S/MIME). Ако строгият проход не намери такива, облекченият може да ги приеме и добави.
 
 ---
 
-## Limitations {#limitations}
+### Кръстосана препратка {#cross-reference}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Препращането не се променя по замисъл (вижте Ограничения по‑долу).
+- За причините, поради които прикачвания може да не бъдат добавени, вижте „Защо прикачвания може да не бъдат добавени“.
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Подробности за поведението {#behavior-details}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Предотвратяване на дубликати:** Добавката маркира раздела за съставяне като обработен, използвайки стойност на сесията за раздел и охранител в паметта. Няма да добави оригиналите два пъти.
+- Затварянето и отварянето наново на прозорец за съставяне се третира като нов раздел (т.е. позволява се нов опит).
+- **Зачитане на съществуващи прикачвания:** Ако съставяният имейл вече съдържа някои прикачвания, оригиналите пак се добавят точно веднъж, като се пропускат вече съществуващите имена на файлове.
+- **Изключения:** S/MIME артефакти и вградени изображения се изключват от файловите прикачвания. Ако нищо не отговаря при първия проход, облекчено резервно изпълнение преглежда отново невключените S/MIME части. Вградените изображения се обработват отделно: те се възстановяват в тялото на отговора като data URI (когато е активирано).
+  - **Имена на файлове:** `smime.p7s`
+  - **MIME типове:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Вградени изображения:** всяка `image/*` част, реферирана от Content‑ID — изключва се от файловите прикачвания, но се вгражда в тялото на отговора, когато "Include inline pictures" е ON
+  - **Прикачени имейли (`message/rfc822`):** третират се като обикновени прикачвания, ако имат име на файл; може да бъдат добавени (подлежат на проверка за дубликати и черен списък).
+- **Предупреждение за черен списък (ако е активирано):** Когато кандидатите се изключват от вашия черен списък,
+  добавката показва малък модален прозорец, в който са изброени засегнатите файлове и съвпадащите
+  шаблони. Това предупреждение се показва и в случаите, когато няма да бъдат
+  добавени прикачвания, защото всичко е изключено.
 
 ---
 
-See also
+## Клавишни комбинации {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Диалог за потвърждение: Y/J = Yes, N/Esc = No; Tab/Shift+Tab и стрелките циклират фокуса.
+  - “Default answer” в [Конфигурация](configuration#confirmation) задава първоначално фокусирания бутон.
+  - Enter задейства фокусирания бутон. Tab/Shift+Tab и стрелките местят фокуса за по‑добра достъпност.
+
+### Накратко за клавишите {#keyboard-cheat-sheet}
+
+| Клавиши             | Действие                          |
+| ------------------- | --------------------------------- |
+| Y / J               | Потвърди „Да“                     |
+| N / Esc             | Потвърди „Не“                     |
+| Enter               | Активира фокусирания бутон        |
+| Tab / Shift+Tab     | Премести фокуса напред/назад      |
+| Стрелки             | Премести фокуса между бутоните    |
+| Подразбиран отговор | Задава началния фокус (Да или Не) |
+
+---
+
+## Ограничения {#limitations}
+
+- Препращане не се променя от тази добавка (поддържат се Отговор и Отговор до всички).
+- Много големите прикачвания може да подлежат на ограничения на Thunderbird или доставчика.
+  - Добавката не разделя на части и не компресира файлове; тя разчита на обичайното обработване на прикачвания в Thunderbird.
+- Криптирани съобщения: S/MIME частите са умишлено изключени.
+
+---
+
+## Защо прикачвания може да не бъдат добавени {#why-attachments-might-not-be-added}
+
+- Вградените изображения не се добавят като файлови прикачвания. Когато "Include inline pictures" е ON (по подразбиране), те се вграждат в тялото на отговора като data URI. Ако настройката е OFF, вградените изображения се премахват изцяло. Вижте [Конфигурация](configuration#include-inline-pictures).
+- Частите със S/MIME подпис са изключени по замисъл: имена на файлове като `smime.p7s` и MIME типове като `application/pkcs7-signature` или `application/pkcs7-mime` се пропускат.
+- Шаблоните за черен списък могат да филтрират кандидатите: вижте [Конфигурация](configuration#blacklist-glob-patterns); съвпадението не е чувствително към регистъра и е само по име на файл.
+- Дублиращи се имена на файлове не се добавят повторно: ако съставяният имейл вече съдържа файл със същото нормализирано име, той се пропуска.
+- Нефайлови части или липсващи имена на файлове: за добавяне се вземат предвид само части, наподобяващи файлове, с използваеми имена на файлове.
+
+---
+
+Вижте също
+
+- [Конфигурация](configuration)

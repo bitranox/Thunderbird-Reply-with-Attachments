@@ -4,294 +4,296 @@ title: '开发'
 sidebar_label: '开发'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## 开发指南 {#development-guide}
+
+:::note 仅编辑英文；翻译将自动传播
+仅在 `website/docs`（英文）下更新文档。`website/i18n/<locale>/…` 下的翻译是生成的，不应手动编辑。使用翻译任务（例如 `make translate_web_docs_batch`）来刷新本地化内容。
 :::
 
-### Prerequisites {#prerequisites}
+### 先决条件 {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ 和 npm（已用 Node 22 测试）
+- Thunderbird 128 ESR 或更新版本（用于手动测试）
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### 项目结构（高层概览） {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- 根目录：打包脚本 `distribution_zip_packer.sh`、文档、截图
+- `sources/`：主要附加组件代码（后台、选项/弹窗 UI、清单、图标）
+- `tests/`：Vitest 测试套件
+- `website/`：Docusaurus 文档（i18n 位于 `website/i18n/de/...` 下）
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### 安装与工具链 {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- 安装根依赖：`npm ci`
+- 文档（可选）：`cd website && npm ci`
+- 查看可用目标：`make help`
+
+---
+
+### 实时开发（web‑ext run） {#live-dev-web-ext}
+
+- 在 Firefox 桌面版中快速循环（仅 UI 冒烟测试）：
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- 在 Thunderbird 中运行（MailExtensions 首选）：
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
-- macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
-- Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- 提示：
+- 保持 Thunderbird 的错误控制台打开（工具 → 开发者工具 → 错误控制台）。
+- MV3 事件页空闲时会挂起；代码变更后请重新加载附加组件，或让 web‑ext 自动重载。
+- 某些仅在 Firefox 中的行为有所差异；务必在 Thunderbird 中验证 API 一致性。
+- Thunderbird 可执行文件路径（示例）：
+- Linux：`thunderbird`（例如 `/usr/bin/thunderbird`）
+- macOS：`/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
+- Windows：`"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
+- 配置隔离：为开发使用单独的 Thunderbird 配置文件，避免影响日常环境。
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make 目标（按字母序） {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile 规范了常见开发流程。随时运行 `make help` 获取所有目标的一行摘要。
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+提示：不带目标运行 `make` 会打开一个简单的 Whiptail 菜单以选择目标。
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| 目标                                                     | 单行描述                                                                        |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | 删除本地构建/预览产物（tmp/、web-local-preview/、website/build/）。             |
+| [`commit`](#mt-commit)                                   | 格式化、运行测试（含 i18n）、更新变更日志、提交并推送。                         |
+| [`eslint`](#mt-eslint)                                   | 通过扁平配置运行 ESLint（`npm run -s lint:eslint`）。                           |
+| [`help`](#mt-help)                                       | 列出所有目标及其单行说明（已排序）。                                            |
+| [`lint`](#mt-lint)                                       | 在 `sources/` 上进行 web‑ext lint（临时清单；忽略 ZIP；非致命）。               |
+| [`menu`](#mt-menu)                                       | 交互式菜单，可选择目标和可选参数。                                              |
+| [`pack`](#mt-pack)                                       | 构建 ATN 和 LOCAL ZIP（会运行 linter；调用打包脚本）。                          |
+| [`prettier`](#mt-prettier)                               | 就地格式化仓库（会写入变更）。                                                  |
+| [`prettier_check`](#mt-prettier_check)                   | 以检查模式运行 Prettier（不写入）；若需重新格式化则失败。                       |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` 的别名。                                                             |
+| [`test`](#mt-test)                                       | Prettier（写入）、ESLint，然后 Vitest（若已配置覆盖率）。                       |
+| [`test_i18n`](#mt-test_i18n)                             | 仅 i18n 的测试：附加组件占位符/一致性 + 网站一致性。                            |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` 的别名。                                                      |
+| [`translation_app`](#mt-translation-app)                 | 从 `sources/_locales/en/messages.json` 翻译应用 UI 字符串。                     |
+| [`translate_web_docs_batch`](#mt-translation-web)        | 通过 OpenAI 批处理 API 翻译网站文档（推荐）。                                   |
+| [`translate_web_docs_sync`](#mt-translation-web)         | 同步翻译网站文档（传统，非批处理）。                                            |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` 的别名。                                                |
+| [`translation_web_index`](#mt-translation_web_index)     | 翻译首页/导航栏/页脚 UI（`website/i18n/en/code.json → .../<lang>/code.json`）。 |
+| [`web_build`](#mt-web_build)                             | 将文档构建到 `website/build`（支持 `--locales` / `BUILD_LOCALES`）。            |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | 离线安全的链接检查（跳过远程 HTTP[S]）。                                        |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | 本地 gh‑pages 预览；自动在 8080–8090 提供服务；可选测试/链接检查。              |
+| [`web_push_github`](#mt-web_push_github)                 | 将 `website/build` 推送到 `gh-pages` 分支。                                     |
 
-Syntax for options
+选项语法
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- 使用 `make <command> OPTS="…"` 传递选项（建议加引号）。下方每个目标都给出示例用法。
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### 语言环境构建提示 {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- 构建部分语言：设置 `BUILD_LOCALES="en de"`，或向 Web 目标传入 `OPTS="--locales en,de"`。
+- 预览特定语言：`http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`。
 
 ---
 
-### Test {#test}
+### 构建与打包 {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- 构建 ZIP：`make pack`
+- 在仓库根目录生成 ATN 和 LOCAL ZIP（请勿手动修改产物）
+- 提示：打包前请同时在 `sources/manifest_ATN.json` 和 `sources/manifest_LOCAL.json` 中更新版本
+- 手动安装（开发）：Thunderbird → 工具 → 附加组件和主题 → 齿轮 → 从文件安装附加组件… → 选择构建出的 ZIP
+
+---
+
+### 测试 {#test}
+
+- 全量测试：`make test`（Vitest）
+- 覆盖率（可选）：
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- 运行 `make test`；打开 `coverage/index.html` 查看 HTML 报告
+- 仅 i18n：`make test_i18n`（UI 键/占位符/标题 + 网站逐语言逐文档一致性，含 id/title/sidebar_label 检查）
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### 调试与日志 {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- 错误控制台：工具 → 开发者工具 → 错误控制台
+- 运行时切换详细日志：
+- 启用：`messenger.storage.local.set({ debug: true })`
+- 禁用：`messenger.storage.local.set({ debug: false })`
+- 日志会在撰写/发送回复时出现
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### 文档（网站） {#docs-website}
+
+- 开发服务器：`cd website && npm run start`
+- 构建静态站点：`cd website && npm run build`
+- 对应的 Make 目标（按字母序）：`make web_build`、`make web_build_linkcheck`、`make web_build_local_preview`、`make web_push_github`
+- 使用示例：
+- 仅 EN，跳过测试/链接检查，不推送：`make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- 所有语言，包含测试/链接检查，然后推送：`make web_build_local_preview && make web_push_github`
+- 发布前，请运行离线安全的链接检查：`make web_build_linkcheck`。
+- i18n：英文位于 `website/docs/*.md`；德语翻译位于 `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- 搜索：如果在 CI 中设置了 Algolia DocSearch 环境变量（`DOCSEARCH_APP_ID`、`DOCSEARCH_API_KEY`、`DOCSEARCH_INDEX_NAME`），站点将使用 Algolia 搜索；否则回退到本地搜索。在首页按下 `/` 或 `Ctrl+K` 打开搜索框。
+
+---
+
+#### 捐赠重定向 {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- 路由：`/donate`（以及 `/<locale>/donate`）
+- 行为：
+- 如果当前路由包含语言（例如 `/de/donate`），则使用该语言
+- 否则在 `navigator.languages` 与已配置语言中选择最佳匹配；否则回退到默认语言
+- 重定向至：
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- 其他 → `/<locale>/docs/donation`
+- 使用 `useBaseUrl` 正确处理 baseUrl
+- 包含 meta refresh + `noscript` 链接作为后备
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### 预览提示 {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- 干净地停止 Node 预览：打开 `http://localhost:<port>/__stop`（在 `Local server started` 之后打印）。
+- 若 MDX/JSX 中的图片未加载，请使用 `useBaseUrl('/img/...')` 以遵循站点的 `baseUrl`。
+- 预览会先启动；随后执行链接检查，且为非阻塞（损坏的外部链接不会阻止预览）。
+- 预览示例 URL：`http://localhost:<port>/Thunderbird-Reply-with-Attachments/`（在“Local server started”之后打印）。
+- 链接检查中的外部链接：某些外部站点（如 addons.thunderbird.net）会阻止自动爬虫，链接检查可能显示 403。预览仍会启动；这些可以安全忽略。
 
 ---
 
-#### Translate the Website {#translate-website}
+#### 翻译网站 {#translate-website}
 
-What you can translate
+你可以翻译的内容
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- 仅网站 UI：主页、导航栏、页脚及其他 UI 字符串。文档内容目前仅保留英文。
 
-Where to edit
+在哪里编辑
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- 编辑 `website/i18n/<locale>/code.json`（参考 `en`）。保持 `{year}`、`{slash}`、`{ctrl}`、`{k}`、`{code1}` 等占位符不变。
 
-Generate or refresh files
+生成或刷新文件
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- 为所有语言创建缺失的存根：`npm --prefix website run i18n:stubs`
+- 从英文覆盖存根（在添加新字符串之后）：`npm --prefix website run i18n:stubs:force`
+- 针对单一语言的替代方案：`npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+翻译主页/导航栏/页脚的 UI 字符串（OpenAI）
 
-- Set credentials once (shell or .env):
+- 一次性设置凭据（shell 或 .env）：
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- 可选：`export OPENAI_MODEL=gpt-4o-mini`
+- 一次性（所有语言，跳过 en）：`make translate_web_index`
+- 限定到特定语言：`make translate_web_index OPTS="--locales de,fr"`
+- 执行覆盖已有值：`make translate_web_index OPTS="--force"`
 
-Validation & retries
+校验与重试
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- 翻译脚本会校验 JSON 结构，保留花括号占位符，并确保 URL 不被改变。
+- 若校验失败，会带反馈重试最多 2 次，然后保留现有值。
 
-Preview your locale
+预览你的语言
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- 开发服务器：`npm --prefix website run start`
+- 访问 `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+提交
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- 将编辑过的 `code.json` 文件提交为 PR。请聚焦改动，并尽可能附上一张快速截图。
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### 安全与配置提示 {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- 不要提交 `sources/manifest.json`（由构建临时创建）
+- 保持 `browser_specific_settings.gecko.id` 稳定以保留更新通道
+
+---
+
+### 设置持久化 {#settings-persistence}
+
+- 存储：所有用户设置位于 `storage.local`，在附加组件更新之间保持持久。
+- 安装：仅当键严格缺失（undefined）时才应用默认值。
+- 更新：迁移仅填充缺失的键；绝不会覆盖现有值。
+- 架构标记：`settingsVersion`（当前为 `1`）。
+- 键与默认值：
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- 代码：参见 `sources/background.js` → `initializeOrMigrateSettings()` 与 `SCHEMA_VERSION`。
 
-Dev workflow (adding a new setting)
+开发流程（添加新设置）
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- 在 `sources/background.js` 中提升 `SCHEMA_VERSION`。
+- 在 `initializeOrMigrateSettings()` 的 `DEFAULTS` 对象中添加新键及默认值。
+- 设定默认值时遵循“仅当 undefined 才设定”的规则；不要覆盖现有值。
+- 若设置对用户可见，请在 `sources/options.js` 中接入并添加本地化字符串。
+- 添加/调整测试（见 `tests/background.settings.migration.test.js`）。
 
-Manual testing tips
+手动测试提示
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- 模拟全新安装：清理扩展的数据目录，或使用新配置文件启动。
+- 模拟更新：在 `storage.local` 中将 `settingsVersion` 设为 `0` 并重新加载；确认现有值保持不变，且仅添加缺失键。
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### 故障排除 {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- 确保 Thunderbird 为 128 ESR 或更高版本
+- 运行时问题请使用错误控制台
+- 如果存储的设置似乎未正确生效，请重启 Thunderbird 后重试。（Thunderbird 可能在会话之间缓存状态；重启可确保加载最新设置。）
 
 ---
 
-### Translations
+### CI 与覆盖率 {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions（`CI — Tests`）以覆盖率阈值（行/函数/分支/语句 85%）运行 vitest。未达阈值则任务失败。
+- 工作流会上传包含 HTML 报告的制品 `coverage-html`；可在运行页面下载（Actions → 最新运行 → Artifacts）。
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### 参与贡献 {#contributing}
 
-Screenshots for docs
+- 参见 CONTRIBUTING.md 了解分支/提交/PR 指南
+- 提示：为测试创建单独的 Thunderbird 开发配置文件，避免影响日常配置。
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### 翻译
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- 运行大规模“全部 → 全部”的翻译作业可能既慢又昂贵。先从子集开始（如少量文档和 1–2 种语言），审阅结果后再扩大范围。
+
+---
+
+- 重试策略：翻译作业在 API 错误时最多重试 3 次，并采用指数退避；参见 `scripts/translate_web_docs_batch.js` 和 `scripts/translate_web_docs_sync.js`。
+
+文档截图
+
+- 将图片存放在 `website/static/img/` 下。
+- 在 MD/MDX 中通过 `useBaseUrl('/img/<filename>')` 引用它们，使路径与站点的 `baseUrl` 协同工作。
+- 在 `website/static/img/` 下添加或重命名图片后，确认所有引用仍使用 `useBaseUrl('/img/…')`，并能在本地预览中渲染。
+  站点图标
+
+- 多尺寸的 `favicon.ico` 会通过 `website/scripts/build-favicon.mjs` 在所有构建路径（Make + 脚本）中自动生成。
+- 无需手动步骤；更新 `icon-*.png` 即可。
+  评审提示
+
+- 在翻译后的文档中保持 front‑matter 的 `id` 不变；如有，仅翻译 `title` 和 `sidebar_label`。
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- 目的：删除本地构建/预览产物。
+- 用法：`make clean`
+- 删除（若存在）：
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- 目的：格式化、测试、更新变更日志、提交并推送。
+- 用法：`make commit`
+- 详情：运行 Prettier（写入）、`make test`、`make test_i18n`；当存在已暂存差异时追加变更日志；推送到 `origin/<branch>`。
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- 目的：通过扁平配置运行 ESLint。
+- 用法：`make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- 目的：列出所有目标及其单行说明。
+- 用法：`make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- 目的：使用 `web-ext` 对 MailExtension 进行 lint。
+- 用法：`make lint`
+- 备注：临时拷贝 `sources/manifest_LOCAL.json` → `sources/manifest.json`；忽略已构建的 ZIP；警告不会导致流水线失败。
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- 目的：交互式菜单以选择 Make 目标和可选参数。
+- 用法：不带参数运行 `make`。
+- 备注：若 `whiptail` 不可用，菜单将回退到 `make help`。
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- 目的：构建 ATN 和 LOCAL ZIP（依赖 `lint`）。
+- 用法：`make pack`
+- 提示：打包前同时在 `sources/manifest_*.json` 中提升版本。
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- 目的：就地格式化仓库。
+- 用法：`make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- 目的：验证格式（不写入）。
+- 用法：`make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- 目的：`prettier` 的别名。
+- 用法：`make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- 目的：运行 Prettier（写入）、ESLint，然后 Vitest（若已安装覆盖率）。
+- 用法：`make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- 目的：面向 i18n 的附加组件字符串与网站文档测试。
+- 用法：`make test_i18n`
+- 运行：`npm run test:i18n` 和 `npm run -s test:website-i18n`。
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- 目的：将附加组件 UI 字符串从 EN 翻译到其他语言。
+- 用法：`make translation_app OPTS="--locales all|de,fr"`
+- 备注：保留键结构和占位符；日志写入 `translation_app.log`。脚本形式：`node scripts/translate_app.js --locales …`。
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- 目的：将网站文档从 `website/docs/*.md` 翻译为 `website/i18n/<locale>/...`。
+- 首选：`translate_web_docs_batch`（OpenAI 批处理 API）
+  - 用法（标志）：`make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - 仍接受传统位置参数：`OPTS="<doc|all> <lang|all>"`
+- 行为：构建 JSONL，上传，每 30 秒轮询，下载结果并写入文件。
+- 注意：批处理作业可能需要最长 24 小时完成（受 OpenAI 批处理时间窗限制）。控制台会在每次轮询时显示已用时。
+- 环境变量：`OPENAI_API_KEY`（必需），可选 `OPENAI_MODEL`、`OPENAI_TEMPERATURE`、`OPENAI_BATCH_WINDOW`（默认 24h）、`BATCH_POLL_INTERVAL_MS`。
+- 传统：`translate_web_docs_sync`
+  - 用法（标志）：`make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - 仍接受传统位置参数：`OPTS="<doc|all> <lang|all>"`
+- 行为：逐对同步请求（无批量聚合）。
+- 备注：省略 `OPTS` 时会交互式提示。两种模式都会保留代码块/行内代码，并保持 front‑matter 的 `id` 不变；日志写入 `translation_web_batch.log`（批处理）或 `translation_web_sync.log`（同步）。
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- 目的：将网站 UI 字符串（主页、导航栏、页脚）从 `website/i18n/en/code.json` 翻译到 `website/i18n/<locale>/code.json` 下的所有语言（不含 `en`）。
+- 用法：`make translate_web_index` 或 `make translate_web_index OPTS="--locales de,fr [--force]"`
+- 要求：导出 `OPENAI_API_KEY`（可选：`OPENAI_MODEL=gpt-4o-mini`）。
+- 行为：校验 JSON 结构，保留花括号占位符，保持 URL 不变；在校验错误时带反馈重试。
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- 目的：将文档站点构建到 `website/build`。
+- 用法：`make web_build OPTS="--locales en|de,en|all"`（或设置 `BUILD_LOCALES="en de"`）
+- 内部：`node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`。
+- 依赖：仅当缺少 `website/node_modules/@docusaurus` 时，才在 `website/` 中运行 `npm ci`。
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- 目的：离线安全的链接检查。
+- 用法：`make web_build_linkcheck OPTS="--locales en|all"`
+- 备注：构建到 `tmp_linkcheck_web_pages`；将 GH Pages 的 `baseUrl` 重写为 `/`；跳过远程 HTTP(S) 链接。
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- 目的：本地 gh‑pages 预览，支持可选的测试/链接检查。
+- 用法：`make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- 行为：优先尝试 Node 预览服务器（`scripts/preview-server.mjs`，支持 `/__stop`），回退到 `python3 -m http.server`；服务于 8080–8090 端口；PID 位于 `web-local-preview/.server.pid`。
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- 目的：将 `website/build` 推送到 `gh-pages` 分支。
+- 用法：`make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+提示：设置 `NPM=…` 以覆盖 Makefile 使用的包管理器（默认为 `npm`）。
 
 ---

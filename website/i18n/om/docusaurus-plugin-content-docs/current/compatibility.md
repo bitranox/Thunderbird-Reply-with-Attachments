@@ -1,40 +1,44 @@
 ---
 id: compatibility
-title: 'Waliigaltee'
-sidebar_label: 'Waliigaltee'
+title: 'Walsimummaa'
+sidebar_label: 'Walsimummaa'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Walsiminaa {#compatibility}
+
+:::important Versionii Minimaa Thunderbird
+Add‑on kun Thunderbird **128 ESR yookaan ol ta’e** deeggara. Versionoota duraanii hin deeggaramu.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR yookaan ol ta’e ni deeggarama (128.x+).
+- Versionoota Thunderbird duraanii hin deeggaraman.
+- Windows, macOS, fi Linux irratti qoratame.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 hin deeggaramu
+Manifest V2 hin deeggaramu. Add‑on kun **Manifest V3 (MV3)** irratti Thunderbird 128 ESR+ tiif kaayyeffatee hojjetti.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Furmaata Rakkoo {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Add‑on akka eegametti hin hojjetne taanaan, versionii Thunderbird walsimuu (128 ESR yookaan isa boodaa) akka fayyadamtu mirkaneessi.
+- Rakkoolee add‑on waliin wal qabatan ilaaluf konsoolii dogoggoraa Thunderbird (**Tools > Developer Tools > Error Console**) ilaali.
+- Qindaa’insa kuufaman sirnaan akka hin hojiirra oolle yoo mul’atu, Thunderbird irra deebiin banuun yaali. (Thunderbird haala hojii marsaa gidduutti ni kuusa; irra deebiin banamuun qindaa’insa haaraa akka fe’amu mirkaneessa.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Wal-diddaa beekaman {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Yeroo kana beekamaan hin jiru. Yoo maxxansoota (attachments) wal-fakkaatan yeroo hedduu irra deebi’anii mul’atan yookaan add‑on biroo waliin kufaatii mul’atu argite, tarkaanfii irra deebi’anii akkamiin uumamu tarreessitee gabaasi.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Buildota Thunderbird Beta fi Daily (Nightly) waliigalaan ni deeggaramu, garuu jijjiiramoonni upstream yeroo muraasaatti amala add‑on cabsuu danda’u. Rakkoo yoo qunnannte, maaloo gabaasi; akkasumas versionii sirrii Thunderbird dabaluu (fakkeenyaaf, “Daily 131.0a1 2025‑09‑10”).
+- Regression Beta/Nightly irratti sitti muudate? Tarkaanfii irra deebi’anii akkamiin uumamu tarreessitee gabaasi — [Support](support) ilaali — akkasumas build string sirrii Thunderbird dabaluu.
+
+---

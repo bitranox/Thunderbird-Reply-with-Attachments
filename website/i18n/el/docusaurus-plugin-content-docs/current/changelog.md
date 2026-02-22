@@ -1,19 +1,27 @@
 ---
 id: changelog
-title: 'Ιστορικό Αλλαγών'
+title: 'Αρχείο αλλαγών'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Αρχείο αλλαγών
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Για το πλήρες, αναλυτικό ιστορικό, δείτε το [CHANGELOG.md στο GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) του αποθετηρίου.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: Το "Include inline pictures" πλέον ενσωματώνει εικόνες απευθείας στο σώμα της απάντησης ως URI δεδομένων base64 (προεπιλογή: ON). Βελτιώσεις στην ποιότητα του κώδικα και διευρυμένη κάλυψη δοκιμών.
+- 2.3.1: Διατηρεί τα συνημμένα αφού το Thunderbird θέσει σε αδράνεια τη σελίδα συμβάντων παρασκηνίου. Προσθέτει στοχευμένα άγκιστρα αποσφαλμάτωσης για αντιμετώπιση προβλημάτων.
+- 2.3.0: Βελτιωμένη αποδιπλοποίηση συνημμένων, διευρυμένη κάλυψη δοκιμών και αφαίρεση παρωχημένων δικαιωμάτων για συμμόρφωση με τις πολιτικές του AMO.
+- 2.1.0: Πλήρης υποστήριξη διεθνοποίησης για τις 100 πιο διαδεδομένες γλώσσες
+- 2.0.0: επανεγγραφή σε πλήρως λειτουργική έκδοση (EN/DE)
+- 1.0.1: μετάβαση σε messages.listAttachments()
+- 1.0.0: αρχική κυκλοφορία
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Ημερομηνίες και κανάλια {#dates-and-channels}
+
+- Οι κυκλοφορίες στο ATN ενδέχεται να καθυστερήσουν μερικές ώρες μετά τη δημιουργία πακέτου.
+- Οι LOCAL builds προορίζονται μόνο για δοκιμές προγραμματιστών και δεν διανέμονται μέσω ATN.
+
+---

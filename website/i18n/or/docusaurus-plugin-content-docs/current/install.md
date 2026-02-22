@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'ଇନ୍ସ୍ଟଲ୍ଲେସନ'
+title: 'ସ୍ଥାପନ'
 slug: /install
-sidebar_label: 'ଇନ୍ସ୍ଟଲ୍ଲେସନ'
+sidebar_label: 'ସଂସ୍ଥାପନ'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" ମାଧ୍ୟମରେ ସ୍ଥାପନ {#installation-in-thunderbird-recommended}
+
+:::important ସର୍ବନ୍ୟୁନ Thunderbird ସଂସ୍କରଣ
+ଏହି ଆଡ଼‑ଅନ୍ Thunderbird **128 ESR କିମ୍ବା ତାହାଠାରୁ ନୂତନ** କୁ ସମର୍ଥନ କରେ। ପୁରୁଣା ସଂସ୍କରଣଗୁଡ଼ିକୁ ସମର୍ଥନ ନାହିଁ।
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+ଏହା ଅନୁଶଂସୀୟ ସ୍ଥାପନ ପ୍ରକ୍ରିୟା। ATN (addons.thunderbird.net) ରୁ ସ୍ଥାପିତ ଆଡ଼‑ଅନ୍‌ମାନେ ସ୍ୱୟଂଚାଳିତ ଅଦ୍ୟତନ ପାଆନ୍ତି। LOCAL/dev ସ୍ଥାପନଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଭାବେ ଅଦ୍ୟତନ ହୁଏ ନାହିଁ।
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- ସର୍ବନ୍ୟୁନ Thunderbird ସଂସ୍କରଣ: 128 ESR କିମ୍ବା ତାହାଠାରୁ ନୂତନ।
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird ରେ, **Tools > Add-ons and Themes** କୁ ଯାଆନ୍ତୁ।
+2. "reply with attachments" ଖୋଜନ୍ତୁ।
+3. ଆଡ଼‑ଅନ୍‌ଟି ଯୋଡନ୍ତୁ।
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+ନହେଲେ ସିଧାସଳଖ ଭାବେ ଆଡ଼‑ଅନ୍ ପୃଷ୍ଠା ଖୋଲନ୍ତୁ: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI ରୁ ହସ୍ତଚାଳିତ ସ୍ଥାପନ {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ଫାଇଲଟି ଡାଉନଲୋଡ୍ କରନ୍ତୁ {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird Add‑on ପୃଷ୍ଠା](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) କୁ ଯାଆନ୍ତୁ।
+2. ଆଡ଼‑ଅନ୍‌ର ସବୁଠୁ ନବୀନ ସଂସ୍କରଣକୁ XPI ଫାଇଲ (`reply_with_attachments-x.y.z-tb.xpi`) ଭାବେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ।
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird ରେ ସ୍ଥାପନ କରନ୍ତୁ {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird ଖୋଲନ୍ତୁ।
+2. **Tools > Add-ons and Themes** କୁ ଯାଆନ୍ତୁ।
+3. **Add-ons Manager** ଭିତରେ, ଉପର-ଡାହାଣ କୋଣରେ ଥିବା ଗିୟାର ଆଇକନ୍‌ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ।
+4. ମେନୁରୁ **Install Add-on From File…** ଚୟନ କରନ୍ତୁ।
+5. ଡାଉନଲୋଡ୍ କରାଯାଇଥିବା `reply_with_attachments-x.y.z-tb.xpi` ଫାଇଲଟି ଚୟନ କରନ୍ତୁ।
+6. ପ୍ରମ୍ପ୍ଟ ହେଲେ ସ୍ଥାପନକୁ ସ୍ୱୀକୃତି ଦିଅନ୍ତୁ।
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## ବିକାଶ ପାଇଁ ସ୍ଥାପନ {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### ରିପୋଜିଟୋରି ଡାଉନଲୋଡ୍ କରନ୍ତୁ {#download-the-repository}
 
-See also
+1. GitHub ରିପୋଜିଟୋରିର ସବୁଠୁ ନବୀନ ସଂସ୍କରଣ ଡାଉନଲୋଡ୍ କରନ୍ତୁ।
+2. ଅଧିକ ସୂଚନା ପାଇଁ `make help` ଚଳାନ୍ତୁ।
 
-- [Quickstart](quickstart)
+### Thunderbird ରେ ସ୍ଥାପନ କରନ୍ତୁ {#install-in-thunderbird-dev}
+
+1. Thunderbird ଖୋଲନ୍ତୁ।
+2. **Tools > Add-ons and Themes** କୁ ଯାଆନ୍ତୁ।
+3. **Add-ons Manager** ଭିତରେ, ଉପର-ଡାହାଣ କୋଣରେ ଥିବା ଗିୟାର ଆଇକନ୍‌ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ।
+4. ମେନୁରୁ **Install Add-on From File…** ଚୟନ କରନ୍ତୁ।
+5. ତିଆରି ହୋଇଥିବା ଫାଇଲ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ଚୟନ କରନ୍ତୁ।
+6. ପ୍ରମ୍ପ୍ଟ ହେଲେ ସ୍ଥାପନକୁ ସ୍ୱୀକୃତି ଦିଅନ୍ତୁ।
+
+ଟିପ୍ପଣୀ: ଯଦି ଆପଣଙ୍କ ସିଷ୍ଟମ୍‌ରେ Thunderbird `.zip` କୁ ଗ୍ରହଣ କରୁ ନାହିଁ, ଏହାକୁ `.xpi` କୁ ପୁନର୍ନାମକରଣ କରନ୍ତୁ ଏବଂ “Install Add‑on From File…” ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।
+
+### LOCAL ZIP କେଉଁଠାରେ ମିଳିବ {#where-local-zip}
+
+- ପ୍ରଥମେ, ଆଡ଼‑ଅନ୍‌ଟି ପ୍ୟାକେଜ୍ କରନ୍ତୁ: ରିପୋଜିଟୋରି ରୁଟ୍‌ରେ `make pack` ଚଳାନ୍ତୁ।
+- ପ୍ୟାକେଜିଂ ପରେ, ରିପୋଜିଟୋରି ରୁଟ୍‌ରେ “LOCAL” zip ଖୋଜନ୍ତୁ (ଉଦାହରଣସ୍ୱରୂପ, `2025-..-reply-with-attachments-plugin-LOCAL.zip`)।
+- ଟେସ୍ଟିଂ ପାଇଁ ପୁନଃପ୍ୟାକେଜିଂ କରିବା ପୂର୍ବରୁ, `sources/manifest_ATN.json` ଏବଂ `sources/manifest_LOCAL.json` — ଉଭୟରେ ଭର୍ସନ୍ ବଢ଼ାନ୍ତୁ।
+
+---
+
+## ନିଷ୍କ୍ରିୟ, ଅନିସ୍ଥାପନ, ଏବଂ ଅଦ୍ୟତନ {#disable-uninstall-updates}
+
+- ନିଷ୍କ୍ରିୟ: Thunderbird → Tools → Add‑ons and Themes → ଆଡ଼‑ଅନ୍‌ଟି ଖୋଜନ୍ତୁ → ଟଗଲ୍ କରି ଅଫ୍ କରନ୍ତୁ।
+- ଅନିସ୍ଥାପନ: ସେଇ ଭ୍ୟୁ → ତିନି‑ଡଟ୍ ମେନୁ → Remove।
+- ଅଦ୍ୟତନ: ନୂତନ ସଂସ୍କରଣ ଅନୁମୋଦିତ ହେଲେ ATN ସ୍ଥାପନଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଅଦ୍ୟତନ ପାଇଥାଏ। LOCAL/dev ସ୍ଥାପନଗୁଡ଼ିକ ସ୍ୱୟଂଚାଳିତ ଅଦ୍ୟତନ ହୁଅନ୍ତି ନାହିଁ; ନୂତନ LOCAL build କୁ ହାତେଇ ଭାବେ ପୁନଃସ୍ଥାପନ କରନ୍ତୁ।
+- ସେଟିଂସ୍‌ଗୁଡ଼ିକୁ ସମ୍ପୂର୍ଣ୍ଣ ହଟାନ୍ତୁ: [ଗୋପନୀୟତା → ତଥ୍ୟ ଅପସାରଣ](privacy#data-removal) ଦେଖନ୍ତୁ।
+
+ଏହା ମଧ୍ୟ ଦେଖନ୍ତୁ
+
+- [ଦ୍ରୁତ ଆରମ୍ଭ](quickstart)

@@ -4,31 +4,40 @@ title: '기능'
 sidebar_label: '기능'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## 기능 {#features}
 
-## How It Works {#how-it-works}
+- 회신할 때 원본 이메일의 파일을 자동으로 첨부합니다.
+- 구성 가능한 동작: 첨부 파일은
+  - 자동으로 추가되거나,
+  - 확인 후에만 추가되도록 설정할 수 있습니다(작고 접근 가능한 대화상자). 옵션에서
+    확인 단계를 활성화하고 기본 응답(예/아니요)을 선택할 수 있습니다.
+- 파일 이름 블랙리스트(glob 패턴)를 통해 특정 파일이 자동으로
+  첨부되지 않도록 합니다. 예: `*intern*`, `*secret*`, `*passwor*`.
+  일치는 대소문자를 구분하지 않으며 파일 이름만 확인합니다. 옵션에서 한 줄에
+  하나의 패턴을 입력하세요.
+- 블랙리스트 경고(선택 사항, 기본값: 사용): 블랙리스트로 인해 파일이 제외되면
+  작은 모달에 파일과 일치한 패턴이 표시됩니다. 다크 모드 친화적이며 키보드로
+  접근 가능합니다(Enter/Esc로 닫기).
+- Reply 및 Reply all에서 작동합니다. Forward는 이 애드온으로 변경되지 않습니다.
+- 이미 직접 무언가를 첨부했더라도 원본을 추가하며, 파일 이름으로 중복을 방지합니다.
+- 탭별 중복 방지 기능으로 동일한 작성 탭에서의 이중 추가를 막습니다.
+- 기본적으로 불필요한 첨부를 피하기 위해 S/MIME 인증서는 건너뜁니다.
+- 인라인 그림 포함(기본값: ON). 삽입된 이미지는 원래의 인라인 레이아웃을
+  유지하면서 회신 본문에 base64 데이터 URI로 직접 복원됩니다. 인라인 이미지를
+  완전히 건너뛰려면 옵션에서 비활성화하세요.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## 작동 방식 {#how-it-works}
+
+- 회신 시 애드온이 원본 첨부 파일을 나열합니다.
+- 파일 첨부물에서 S/MIME 서명을 걸러내며, 인라인 이미지는 (비활성화되지 않았다면) 본문에 복원됩니다.
+- 선택적으로 확인을 요청합니다(키보드 친화적).
+- 해당되는 파일을 작성 중인 메시지에 추가하며, 파일 이름으로 중복을 방지합니다.
+- 경계 사례에 대해서는 사용법의 “첨부 파일이 추가되지 않을 수 있는 이유”를 참고하세요.
+
+개인정보 참고: 모든 처리는 Thunderbird 내에서 로컬로 이루어집니다. 이 애드온은 백그라운드 네트워크 요청을 하지 않습니다.
+
+---

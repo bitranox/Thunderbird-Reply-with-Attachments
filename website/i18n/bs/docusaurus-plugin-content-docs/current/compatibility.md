@@ -4,39 +4,41 @@ title: 'Kompatibilnost'
 sidebar_label: 'Kompatibilnost'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilnost {#compatibility}
+
+:::important Minimalna verzija Thunderbirda
+Ovaj dodatak podržava Thunderbird **128 ESR ili noviji**. Starije verzije nisu podržane.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ili noviji je podržan (128.x+).
+- Starije verzije Thunderbirda nisu podržane.
+- Testirano na Windowsu, macOS‑u i Linuxu.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 nije podržan
+Manifest V2 nije podržan. Dodatak cilja na **Manifest V3 (MV3)** na Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Rješavanje problema {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ako dodatak ne radi kako se očekuje, provjerite da koristite kompatibilnu verziju Thunderbirda (128 ESR ili noviju).
+- Provjerite Thunderbird konzolu grešaka (**Alati > Alati za razvojne programere > Konzola grešaka**) za sve probleme povezane s dodatkom.
+- Ako se čini da se sačuvane postavke ne primjenjuju ispravno, ponovo pokrenite Thunderbird i pokušajte ponovo. (Thunderbird može keširati stanje između sesija; ponovno pokretanje osigurava da se učitaju svježe postavke.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Poznati sukobi {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Trenutno ništa nije poznato. Ako vidite ponavljane duplikate priloga ili kvarove s drugim dodacima, molimo prijavite uz korake za reprodukciju.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta i Daily (Nightly) izdanja su uglavnom podržana, ali uzvodne promjene mogu povremeno narušiti ponašanje dodatka. Ako naiđete na probleme, prijavite ih i uključite tačnu verziju Thunderbirda (npr. “Daily 131.0a1 2025‑09‑10”).
+- Naletjeli ste na regresiju na Beta/Nightly? Molimo prijavite je s koracima za reprodukciju — pogledajte [Podrška](support) — i uključite tačan Thunderbird build string.
 
 ---

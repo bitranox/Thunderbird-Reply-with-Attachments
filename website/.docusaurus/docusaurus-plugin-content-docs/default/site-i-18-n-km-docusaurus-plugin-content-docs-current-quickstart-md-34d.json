@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ការចាប់ផ្តើម",
-  "description": "Quickstart",
+  "title": "ការចាប់ផ្តើមរហ័ស",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ការចាប់ផ្តើម",
-    "sidebar_label": "ការចាប់ផ្តើម"
+    "title": "ការចាប់ផ្តើមរហ័ស",
+    "sidebar_label": "ការចាប់ផ្តើមរហ័ស"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "អត្ថប្រយោជន៍",
+    "title": "លក្ខណៈពិសេស",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/features"
   },
   "next": {
-    "title": "ការតំឡើង",
+    "title": "ការដំឡើង",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/install"
   }
 }

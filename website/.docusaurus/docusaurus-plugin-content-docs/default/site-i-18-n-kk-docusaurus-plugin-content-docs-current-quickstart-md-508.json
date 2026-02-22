@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Жылдам бастама",
-  "description": "Жылдам бастама",
+  "title": "Жылдам бастау",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Жылдам бастама",
-    "sidebar_label": "Жылдам бастама"
+    "title": "Жылдам бастау",
+    "sidebar_label": "Жылдам бастау"
   },
   "sidebar": "docs",
   "previous": {

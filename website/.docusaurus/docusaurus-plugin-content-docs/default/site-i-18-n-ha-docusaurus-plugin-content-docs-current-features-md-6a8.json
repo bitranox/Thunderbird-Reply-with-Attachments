@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Fasali",
-  "description": "Features",
+  "title": "Fasaloli",
+  "description": "---",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Fasali",
-    "sidebar_label": "Fasali"
+    "title": "Fasaloli",
+    "sidebar_label": "Fasaloli"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Fara Hanya",
+    "title": "Farawa da Sauri",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/quickstart"
   }
 }

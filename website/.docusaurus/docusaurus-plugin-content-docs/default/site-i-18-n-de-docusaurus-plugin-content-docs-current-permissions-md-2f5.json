@@ -1,7 +1,7 @@
 {
   "id": "permissions",
   "title": "Berechtigungen",
-  "description": "Permissions",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/permissions.md",
   "sourceDirName": ".",
   "slug": "/permissions",

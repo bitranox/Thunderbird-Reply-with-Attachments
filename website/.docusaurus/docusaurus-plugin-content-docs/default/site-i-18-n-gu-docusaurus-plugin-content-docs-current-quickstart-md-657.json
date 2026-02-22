@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ઝડપી અને સારું માર્ગદર્શન",
-  "description": "Quickstart",
+  "title": "ઝડપી શરૂઆત",
+  "description": "---",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ઝડપી અને સારું માર્ગદર્શન",
-    "sidebar_label": "ઝડપી અને સારું માર્ગદર્શન"
+    "title": "ઝડપી શરૂઆત",
+    "sidebar_label": "ઝડપી શરૂઆત"
   },
   "sidebar": "docs",
   "previous": {

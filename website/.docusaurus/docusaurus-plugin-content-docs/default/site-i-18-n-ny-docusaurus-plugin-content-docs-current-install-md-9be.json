@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Kuyika",
-  "description": "Kuyika mwa \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kus започи",
+    "title": "Kuyamba mwamsanga",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/quickstart"
   },
   "next": {

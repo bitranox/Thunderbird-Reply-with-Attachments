@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "دوڑوا",
-  "description": "Donate",
+  "title": "عطیہ دیو",
+  "description": "---",
   "source": "@site/i18n/ks/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "دوڑوا",
-    "sidebar_label": "دوڑوا"
+    "title": "عطیہ دیو",
+    "sidebar_label": "عطیہ کرِو"
   },
   "sidebar": "docs",
   "previous": {

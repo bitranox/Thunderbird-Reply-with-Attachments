@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Instalación",
-  "description": "Instalación a través de \"Complementos y Temas de Thunderbird\"",
+  "title": "Churana",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Instalación",
+    "title": "Churana",
     "slug": "/install",
     "sidebar_label": "Instalación"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Rikhuy",
+    "title": "Qallariy Utqaylla",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/quickstart"
   },
   "next": {

@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Características'
-sidebar_label: 'Características'
+title: 'Funcionalidades'
+sidebar_label: 'Funcionalidades'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funcionalidades {#features}
 
-## How It Works {#how-it-works}
+- Anexa automaticamente os ficheiros do e‑mail original ao responder.
+- Comportamento configurável: os anexos podem ser
+  - adicionados automaticamente, ou
+  - adicionados apenas após confirmação (um pequeno diálogo acessível). Em Opções
+    pode ativar a confirmação e escolher a resposta predefinida (Sim/Não).
+- Uma lista de bloqueio de nomes de ficheiro (padrões glob) evita que ficheiros específicos sejam
+  anexados automaticamente. Exemplos: `*intern*`, `*secret*`, `*passwor*`.
+  A correspondência não diferencia maiúsculas de minúsculas e verifica apenas o nome do ficheiro; forneça um padrão
+  por linha em Opções.
+- Aviso da lista de bloqueio (opcional, ativado por predefinição): quando ficheiros são excluídos pela sua
+  lista de bloqueio, um pequeno modal lista o ficheiro e o(s) padrão(ões) correspondente(s). Compatível com o modo escuro
+  e acessível pelo teclado (Enter/Esc para fechar).
+- Funciona com Responder e Responder a todos. Encaminhar não é modificado por este complemento.
+- Adiciona os originais mesmo que já tenha anexado algo; evita duplicados pelo nome do ficheiro.
+- A proteção contra duplicados por separador evita adicionar duas vezes no mesmo separador de composição.
+- Ignora certificados S/MIME por predefinição para evitar anexos desnecessários.
+- Incluir imagens incorporadas (predefinição: LIGADO). Imagens incorporadas são restauradas diretamente no
+  corpo da resposta como URIs de dados base64, preservando a disposição inline original. Desative em
+  Opções para ignorar completamente as imagens incorporadas.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Como Funciona {#how-it-works}
+
+- Ao responder, o complemento lista os anexos originais.
+- Filtra assinaturas S/MIME dos anexos de ficheiros; as imagens inline são restauradas no corpo (a menos que desativadas).
+- Opcionalmente pede confirmação (compatível com teclado).
+- Adiciona os ficheiros elegíveis à sua composição, evitando duplicados pelo nome do ficheiro.
+- Veja “Porque é que os anexos podem não ser adicionados” em Utilização para casos‑limite.
+
+Nota de privacidade: Todo o processamento ocorre localmente no Thunderbird. O complemento não faz quaisquer pedidos de rede em segundo plano.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Hỗ trợ",
-  "description": "Donate",
+  "title": "Quyên góp",
+  "description": "---",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Hỗ trợ",
-    "sidebar_label": "Hỗ trợ"
+    "title": "Quyên góp",
+    "sidebar_label": "Quyên góp"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "விசேஷங்கள்",
-  "description": "Features",
+  "title": "அம்சங்கள்",
+  "description": "---",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "விசேஷங்கள்",
-    "sidebar_label": "விசேஷங்கள்"
+    "title": "அம்சங்கள்",
+    "sidebar_label": "அம்சங்கள்"
   },
   "sidebar": "docs",
   "next": {
-    "title": "உதயகாலம்",
+    "title": "விரைவுத் தொடக்கம்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/quickstart"
   }
 }

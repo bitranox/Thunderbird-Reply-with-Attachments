@@ -4,31 +4,40 @@ title: 'Gnéithe'
 sidebar_label: 'Gnéithe'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Gnéithe {#features}
 
-## How It Works {#how-it-works}
+- Ceanglaíonn comhaid ón ríomhphost bunaidh go huathoibríoch agus tú ag freagairt.
+- Iompar inchumraithe: is féidir ceangaltáin a bheith
+  - curtha leis go huathoibríoch, nó
+  - curtha leis ach amháin tar éis deimhniúcháin (dialóg bheag, inrochtana). I Roghanna is
+    féidir leat an deimhniúchán a chumasú agus an freagra réamhshocraithe (Tá/Níl) a roghnú.
+- Cuireann liosta dubh d’ainmneacha comhaid (patrúin glob) cosc ar chomhaid áirithe a bheith
+  ceangailte go huathoibríoch. Samplaí: `*intern*`, `*secret*`, `*passwor*`.
+  Tá an mheaitseáil neamhíogair do chás agus ní sheiceálann sí ach an t-ainm comhaid; tabhair patrún
+  amháin in aghaidh na líne i Roghanna.
+- Rabhadh liosta dhubh (roghnach, cumasaithe de réir réamhshocraithe): nuair a eisiatar comhaid ag do
+  liosta dubh, liostaíonn bosca modúil beag an comhad agus na patrúin mheaitseála. Oiriúnach do
+  mhód dorcha agus inrochtana don mhéarchlár (Enter/Esc chun dúnadh).
+- Oibríonn le Freagair agus Freagair uile. Ní athraíonn an breiseán seo Cuir ar aghaidh.
+- Cuireann sé na buncheangaltáin leis fiú má cheangail tú rud éigin cheana; seachnaíonn sé dúbailtí de réir ainm comhaid.
+- Cuireann cosaint i gcoinne dúbailtí in aghaidh cluaisín cosc ar dhúbailte‑chur leis sa chluaisín cumadóireachta céanna.
+- Fágann sé teastais S/MIME ar lár de réir réamhshocraithe chun ceangaltáin gan ghá a sheachaint.
+- Áirítear pictiúir inlíne (réamhshocrú: AR). Cuirtear íomhánna leabaithe ar ais go díreach sa
+  chorp freagartha mar URIanna sonraí base64, agus leagan amach inlíne bunaidh á chaomhnú. Díchumasaigh i
+  Roghanna chun íomhánna inlíne a scipeáil go hiomlán.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Conas a Oibríonn Sé {#how-it-works}
+
+- Nuair a dhéanann tú freagairt, liostaíonn an breiseán na ceangaltáin bhunaidh.
+- Scagann sé sínithe S/MIME amach ó cheangaltáin chomhaid; cuirtear íomhánna inlíne ar ais sa chorp (mura bhfuil sé díchumasaithe).
+- Go roghnach, iarrann sé deimhniú (cairdiúil don mhéarchlár).
+- Cuireann sé na comhaid incháilithe le do chumadóireacht, ag seachaint dúbailtí de réir ainm comhaid.
+- Féach “Cén fáth nach bhféadfaí ceangaltáin a chur leis” in Úsáid le haghaidh cásanna imeallacha.
+
+Nóta príobháideachais: Tarlaíonn an phróiseáil ar fad go háitiúil i Thunderbird. Ní dhéanann an breiseán aon iarratais líonra sa chúlra.
+
+---

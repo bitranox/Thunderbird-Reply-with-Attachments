@@ -4,94 +4,98 @@ title: 'Használat'
 sidebar_label: 'Használat'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Használat {#usage}
+
+- Válasz esetén a kiegészítő automatikusan hozzáadja az eredeti mellékleteket — vagy előbb rákérdez, ha a Beállításokban engedélyezve van.
+- Duplikációmentesítés fájlnév alapján; az S/MIME részek mindig ki vannak hagyva. Az inline képek alapértelmezetten a válasz törzsében kerülnek visszaállításra (a Beállításokban az „Inline képek beillesztése” opcióval kikapcsolható).
+- A feketelistázott mellékletek is kihagyásra kerülnek (kis- és nagybetűkre nem érzékeny glob minták, amelyek a fájlnevekre, nem pedig az elérési utakra illeszkednek). Lásd: [Beállítások](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Mi történik válasz esetén {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Válasz észlelése → eredeti mellékletek listázása → S/MIME + inline szűrése → opcionális megerősítés → jogosult fájlok hozzáadása (duplikátumok kihagyása) → inline képek visszaállítása a törzsben.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Szigorú vs. lazább futás: A kiegészítő először kizárja az S/MIME és az inline részeket a fájlmellékletek közül. Ha semmi sem felel meg, lefuttat egy lazább kört, amely továbbra is kizárja az S/MIME/inline elemeket, de több esetet elfogad (lásd: Kód részletei). Az inline képek soha nem kerülnek hozzáadásra fájlmellékletként; ehelyett, ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett), közvetlenül a válasz törzsébe ágyazódnak be base64 adat‑URI‑ként.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Rész típusa                                         |                        Szigorú futás |                         Lazább futás |
+| --------------------------------------------------- | -----------------------------------: | -----------------------------------: |
+| S/MIME aláírásfájl `smime.p7s`                      |                              Kizárva |                              Kizárva |
+| S/MIME MIME‑típusok (`application/pkcs7-*`)         |                              Kizárva |                              Kizárva |
+| Content‑ID által hivatkozott inline kép (`image/*`) | Kizárva (a törzsben helyreállítva\*) | Kizárva (a törzsben helyreállítva\*) |
+| Csatolt e‑mail (`message/rfc822`) fájlnévvel        |                Nem kerül hozzáadásra |                          Hozzáadható |
+| Szokásos fájlmelléklet fájlnévvel                   |                          Hozzáadható |                          Hozzáadható |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett: BE), az inline képek fájlként való csatolás helyett base64 adat‑URI‑ként ágyazódnak be a válasz törzsébe. Lásd: [Beállítások](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Példa: Egyes mellékletekből hiányozhatnak bizonyos fejlécek, mégis szabályos fájlok (nem inline/S/MIME). Ha a szigorú futás nem talál ilyet, a lazább futás ezeket elfogadhatja és csatolhatja.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kereszthivatkozás {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- A Továbbítás funkciót a tervezés szerint nem módosítja (lásd alább a Korlátokat).
+- A mellékletek esetleges ki nem kerülésének okaiért lásd: „Miért nem kerülhetnek hozzáadásra a mellékletek”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Működés részletei {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Duplikáció megelőzése: A kiegészítő a levélírás lapját feldolgozottként jelöli egy laponkénti munkamenet‑értékkel és egy memóriabeli őrrel. Nem adja hozzá kétszer az eredetieket.
+- A levélíró ablak bezárása és újbóli megnyitása új lapként számít (vagyis új kísérlet engedélyezett).
+- Meglévő mellékletek tiszteletben tartása: Ha a levélírás alatt már vannak mellékletek, az eredetieket akkor is pontosan egyszer adja hozzá, a már létező fájlneveket kihagyva.
+- Kizárások: Az S/MIME‑artifaktumok és az inline képek ki vannak zárva a fájlmellékletek közül. Ha az első körben semmi sem minősül, egy lazább visszaesés újraellenőrzi a nem S/MIME részeket. Az inline képek külön kezelendők: a válasz törzsében adat‑URI‑ként kerülnek visszaállításra (ha engedélyezve).
+  - Fájlnevek: `smime.p7s`
+  - MIME‑típusok: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Inline képek: bármely `image/*` rész, amelyre Content‑ID hivatkozik — ki van zárva a fájlmellékletek közül, de a „Inline képek beillesztése” BE állapotában a válasz törzsébe ágyazódik.
+  - Csatolt e‑mailek (`message/rfc822`): ha van fájlnevük, szokásos mellékletként kezeljük; hozzáadhatók (duplikáció‑ellenőrzés és feketelista mellett).
+- Feketelista‑figyelmeztetés (ha engedélyezve van): Ha a jelölteket a feketelistád kizárja,
+  a kiegészítő egy kis modális ablakot jelenít meg az érintett fájlokkal és a megfelelő
+  mintákkal. Ez a figyelmeztetés akkor is megjelenik, amikor nem kerül
+  sor mellékletek hozzáadására, mert mindent kizártak.
 
 ---
 
-## Limitations {#limitations}
+## Gyorsbillentyűk {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Megerősítő párbeszédablak: Y/J = Igen, N/Esc = Nem; a Tab/Shift+Tab és a nyílbillentyűk a fókuszt léptetik.
+  - A [Beállítások](configuration#confirmation) alatti „Alapértelmezett válasz” határozza meg a kezdetben fókuszált gombot.
+  - Az Enter aktiválja a fókuszban lévő gombot. A Tab/Shift+Tab és a nyilak a fókusz mozgatására szolgálnak az akadálymentesség érdekében.
+
+### Gyorsbillentyűk – összefoglaló {#keyboard-cheat-sheet}
+
+| Billentyűk             | Művelet                                     |
+| ---------------------- | ------------------------------------------- |
+| Y / J                  | Igen megerősítése                           |
+| N / Esc                | Nem megerősítése                            |
+| Enter                  | Fókuszált gomb aktiválása                   |
+| Tab / Shift+Tab        | Fókusz mozgatása előre/hátra                |
+| Nyílbillentyűk         | Fókusz mozgatása a gombok között            |
+| Alapértelmezett válasz | Beállítja a kezdeti fókuszt (Igen vagy Nem) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Korlátok {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- A Továbbítás funkciót ez a kiegészítő nem módosítja (a Válasz és a Válasz mindenkinek támogatott).
+- A nagyon nagy mellékletekre vonatkozhatnak a Thunderbird vagy a szolgáltató korlátai.
+  - A kiegészítő nem darabolja vagy tömöríti a fájlokat; a Thunderbird normál mellékletkezelésére támaszkodik.
+- Titkosított üzenetek: az S/MIME részek szándékosan ki vannak zárva.
 
 ---
 
-See also
+## Miért nem kerülhetnek hozzáadásra a mellékletek {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Az inline képek nem kerülnek fájlként csatolásra. Ha az „Inline képek beillesztése” BE (alapértelmezett), akkor a válasz törzsébe adat‑URI‑ként ágyazódnak. Ha a beállítás KI, az inline képek teljesen eltávolításra kerülnek. Lásd: [Beállítások](configuration#include-inline-pictures).
+- Az S/MIME aláírásrészek tervezetten ki vannak zárva: az olyan fájlnevek, mint `smime.p7s`, valamint az olyan MIME‑típusok, mint `application/pkcs7-signature` vagy `application/pkcs7-mime` kimaradnak.
+- A feketelista‑minták szűrhetik a jelölteket: lásd [Beállítások](configuration#blacklist-glob-patterns); az egyezés kis‑ és nagybetűkre nem érzékeny, és csak a fájlnévre vonatkozik.
+- Az ismétlődő fájlnevek nem kerülnek újra hozzáadásra: ha a levélírásban már szerepel azonos, normalizált nevű fájl, azt kihagyjuk.
+- Nem fájl jellegű részek vagy hiányzó fájlnevek: csak a használható fájlnévvel rendelkező, fájlszerű részek kerülnek hozzáadásra.
+
+---
+
+Lásd még
+
+- [Beállítások](configuration)

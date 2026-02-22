@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ဖွံ့ဖြိုးတိုးတက်ရေး",
-  "description": "Development Guide",
+  "title": "ဖွံ့ဖြိုးတိုးတက်မှု",
+  "description": "---",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "ဖွံ့ဖြိုးတိုးတက်ရေး",
-    "sidebar_label": "ဖွံ့ဖြိုးတိုးတက်ရေး"
+    "title": "ဖွံ့ဖြိုးတိုးတက်မှု",
+    "sidebar_label": "ဖွံ့ဖြိုးတိုးတက်မှု"
   },
   "sidebar": "docs",
   "previous": {

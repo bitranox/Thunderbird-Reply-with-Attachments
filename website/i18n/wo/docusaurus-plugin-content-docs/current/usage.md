@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'Utilisation'
-sidebar_label: 'Utilisation'
+title: 'Jëfandikoo'
+sidebar_label: 'Jëfandikoo'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Jëfandikoo {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Tontu te modil bi dina yokk piis jowànt yi yu asal ci boppam — walla laaj ci kanam, bu ñu suqali ko ci Options.
+- Duppikat yi dañu sàq ci turu fichié; pacc S/MIME yi dañu leen bayyi saa su ne. Nataal yi ci biir (inline) dañu leen delloo ci jëmmalin bi saa su ne (mann ngaa suuxal ko ci "Include inline pictures" ci Options).
+- Piis jowànt yi ci liñu dogal (blacklist) itam dañu koy bàyyi (glob patterns yi xam-xamu suuf-sukaale, di melal turu fichié rekk, du yoon). Gëna xam: [Tànneef](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Lan la am bu ñu tontu {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Xam tontu → limi piis jowànt yi yu asal → séddi S/MIME + inline → dëggalu mandu → yokk fiichié yi mën a yokk (duppi yi sàq) → delloo nataal yi ci biir jëmmalin bi.
 
----
+Pass bu dëgër vs. pass bu yomb: Modil bi jëkk mooy bàyyi pacc S/MIME ak pacc yu inline ci piiñu tacc fiichié. Bu amul dara bu mën, dina def jàll bu yomb buy bàyyi itam S/MIME/inline waaye di mayy yu bari gëna am (xoolal Code Details). Nataal yi ci biir duñu kenn yokk leen ni fiichié yu tacc; lu ci gën a ëpp, bu “Include inline pictures” suqali (defóo la), dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64.
 
-## Behavior Details {#behavior-details}
+| Giiru pacc                                         |                      Pass bu dëgër |                       Pass bu yomb |
+| -------------------------------------------------- | ---------------------------------: | ---------------------------------: |
+| Fichié siiñ S/MIME `smime.p7s`                     |                           Bàyyi na |                           Bàyyi na |
+| Xeetu MIME S/MIME (`application/pkcs7-*`)          |                           Bàyyi na |                           Bàyyi na |
+| Nataal bu inline bu joxe ko Content‑ID (`image/*`) | Bàyyi na (delloo ci jëmmalin bi\*) | Bàyyi na (delloo ci jëmmalin bi\*) |
+| Imeel bu tacc (`message/rfc822`) bu am turu fichié |                             Duggul |                  Mën nañu koy yokk |
+| Fichié bu tacc bu njort ci tur                     |                  Mën nañu koy yokk |                  Mën nañu koy yokk |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Bu “Include inline pictures” suqali (defóo: ON), nataal yi ci biir dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64, du leen yokk ni fiichié yu tacc. Xoolal [Tànneef](configuration#include-inline-pictures).
+
+Misaal: Ay piis jowànt mën nañu amul ay header yu ñu bari waaye dañu fiichié yu dëgg rekk (du inline/S/MIME). Bu pass bu dëgër amul dara, pass bu yomb mën na ko nangu te koy tattali.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Jokkoo {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Forward duñu ko soppi ci taxawaay (xoolal Tëyee yi ci suuf).
+- Ngir xam daldi lu tax benn piis jowànt mënul ñu ko yokk, xoolal “Lu tax piis jowànt yi mënul ñu yokk”.
 
 ---
 
-## Limitations {#limitations}
+## Benn-benn yu doxalin {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Duplicate prevention: Modil bi miŋŋat na koñu bind bi ni mu lëkkal na liggéey, jëfandikoo valëëru sesiyoŋ bu koñ-bu-ne ak benn palanteer ci xel. Du yokk originals yi ñaar yoon.
+- Bu nga tëj te ubbiwaat palanteeru bind, ñu xool ko ni koñ bu bees la (limumu tekki ne, mën nañu defarwaat ko).
+- Respect existing attachments: Su koñu bind bi amoon na ay piis jowànt, originals yi dañu leen koy yokk benn rekk, te di sàq turu fichié yi am naoon ba pare.
+- Exclusions: Pacc S/MIME yi ak nataal yi ci biir dañu leen bàyyi ci fiiñu tacc fiichié. Bu jàll bi jëkk amul dara, benn jàll bu yomb di caabi, di xoolaat pacc yu du S/MIME. Nataal yi ci biir kenn yu ko ci toppal ba noppi: dañu leen delloo sedd ci jëmmalin bi ni data URI (bu suqali).
+  - Filenames: `smime.p7s`
+  - MIME types: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Inline images: pacc bu `image/*` bu ñu joxe ko Content‑ID — dañu ko bàyyi ci fiiñu tacc fiichié waaye dañu ko sëf sedd ci jëmmalin bi bu “Include inline pictures” ON
+  - Imeel yi tacc (`message/rfc822`): ñu xool leen ni piis jowànt yu normal su ñu am turu fichié; mën nañu leen yokk (ci kaw seetlu duppi ak blacklist).
+- Blacklist warning (bu suqali): Bu sa blacklist dëddalee ay kandidaten, modil bi dina wone benn ndombo-ndombo bu ndaw buy limi fiichié yi laal ak pattern(s) yi dëpp. Warning wii it di feeñ ci xaalis yi mujj, bu kenn kenn du ñu yokk ndax sa dëddal bi dëddal na lépp.
 
 ---
 
-See also
+## Njaxlaf yu klawi {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Dialogu dëggal: Y/J = Waaw, N/Esc = Déedéet; Tab/Shift+Tab ak fit yu falaas (Arrow keys) dañuy waññi fokusu bi.
+  - “Default answer” ci [Tànneef](configuration#confirmation) mooy tëye butoŋ bi gii fokusu bi jëkk.
+  - Enter dina sàj butoŋ bi am fokusu. Tab/Shift+Tab ak fit yi dañuy doxal fokusu ngir yokk wutu.
+
+### Kàrtu-jàmmu klawi {#keyboard-cheat-sheet}
+
+| Keys            | Jëf                                      |
+| --------------- | ---------------------------------------- |
+| Y / J           | Dëggal Waaw                              |
+| N / Esc         | Dëggal Déedéet                           |
+| Enter           | Sàjj butoŋ bi am fokusu                  |
+| Tab / Shift+Tab | Doxal fokusu ci kanam/ginnaaw            |
+| Arrow keys      | Doxal fokusu ci biir butoŋ yi            |
+| Default answer  | Tëye fokusu bi jëkk (Waaw walla Déedéet) |
+
+---
+
+## Tëyee yi {#limitations}
+
+- Forward modil bii du ko soppi (Tontu ak Tontu lépp la ñu aar).
+- Piis jowànt yu raañu rëy mën nañu toppu teqale yi Thunderbird walla sa sarwiiskaar.
+  - Modil bi du peese walla xàmme fiichié yi; dafa sukkandiku ci doxal bii Thunderbird def ci piiñu tacc.
+- Bataaxal yi ñu ngiñ ko simb: pacc S/MIME yi dañu leen bàyyi ci mbir moom.
+
+---
+
+## Lu tax piis jowànt yi mënul ñu yokk {#why-attachments-might-not-be-added}
+
+- Nataal yi ci biir duñu leen yokk ni fiichié yu tacc. Bu “Include inline pictures” ON (defóo) la, dañu leen sëf sedd ci jëmmalin bi ni data URI. Bu réglaj bi OFF, nataal yi ci biir dañu leen dindi totally. Xoolal [Tànneef](configuration#include-inline-pictures).
+- Pacc siiñ S/MIME yi dañu leen bàyyi ci taxawaay: turu fichié yu mel ni `smime.p7s` ak xeetu MIME yu mel ni `application/pkcs7-signature` walla `application/pkcs7-mime` dañu leen sàq.
+- Pattern yi ci blacklist mën nañu sànni kandidaten yi: xoolal [Tànneef](configuration#blacklist-glob-patterns); dëpp bi du xam xajj majuskul/minuskul te di turu fichié rekk.
+- Turu fichié yu duppi du ñu re-yokk: bu koñu bind bi amoon na fiichié bu am tur bu dëpp, ñu koy sàq.
+- Pacc yu du fiichié walla yu amul turu fichié: pacc yu mel ni fiichié yi yu am turu fichié bu mën a jëfandikoo rekk lañu xool ngir yokk.
+
+---
+
+Seetal itam
+
+- [Tànneef](configuration)

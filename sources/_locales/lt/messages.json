@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Įspėti, jei priedai neįtraukiami dėl juodojo sąrašo"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Įtraukti eilutines nuotraukas (įterptos nuotraukos)"
+  },
   "uiDebugHeader": {
     "message": "Išplėstiniai"
   },

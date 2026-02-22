@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "ውሳኔ",
-  "description": "Compatibility",
+  "title": "ተስማሚነት",
+  "description": "---",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "ውሳኔ",
-    "sidebar_label": "ውሳኔ"
+    "title": "ተስማሚነት",
+    "sidebar_label": "ተስማሚነት"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ተግባር",
+    "title": "ኣጠቓቕማ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/usage"
   },
   "next": {

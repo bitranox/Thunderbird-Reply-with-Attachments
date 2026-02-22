@@ -4,94 +4,97 @@ title: 'பயன்பாடு'
 sidebar_label: 'பயன்பாடு'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## பயன்பாடு {#usage}
+
+- பதில் அளிக்கவும்; பின்னர் செருகுநிரல் மூல இணைப்புகளை தானாகவே சேர்க்கும் — அல்லது (விருப்பங்களில் இயலுமைப்படுத்தப்பட்டிருந்தால்) முதலில் கேக்கும்.
+- கோப்புப் பெயரை அடிப்படையாகக் கொண்டு நகல்கள் நீக்கப்படுகின்றன; S/MIME பகுதிகள் எப்போதும் தவிர்க்கப்படும். இயல்பாக, "Include inline pictures" (விருப்பங்கள்) மூலம் முடக்காவிட்டால், inline படங்கள் பதில் உடலில் மீட்டெடுக்கப்படுகின்றன.
+- கருப்புப்பட்டியலில் உள்ள இணைப்புகளும் தவிர்க்கப்படுகின்றன (எழுத்து பெரிய/சிறியது வேறுபாடின்றி பொருந்தும் glob வடிவங்கள் — பாதைகள் அல்ல, கோப்புப் பெயர்களை மட்டுமே பொருத்தும்). [அமைப்பு](configuration#blacklist-glob-patterns) பார்க்கவும்.
 
 ---
 
-### What happens on reply {#what-happens}
+### பதில் அளிக்கும்போது என்ன நடக்கும் {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- பதிலை கண்டறி → மூலம் இணைப்புகளைப் பட்டியலிடு → S/MIME + inline-ஐ வடிகட்டு → விருப்பமான உறுதிப்படுத்தல் → தகுதியான கோப்புகளைச் சேர்க்கும் (நகல்களைத் தவிர்க்கும்) → உடலில் inline படங்களை மீட்டெடு.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+கடுமையான பாஸ் vs. தளர்வான பாஸ்: செருகுநிரல் முதலில் கோப்பு இணைப்புகளிலிருந்து S/MIME மற்றும் inline பகுதிகளை நீக்கும். எதுவும் தகுதிபெறாவிட்டால், அது இன்னும் S/MIME/inline-ஐ விலக்கியபடியே மேலும் சில நிலைகளை அனுமதிக்கும் தளர்வான பாஸ் ஒன்றை இயக்கும் (குறியீட்டு விவரங்கள் பார்க்கவும்). Inline படங்கள் கோப்பு இணைப்புகளாக ஒருபோதும் சேர்க்கப்படாது; அதற்கு பதிலாக, "Include inline pictures" இயலுமைப்படுத்தப்பட்டிருக்கும்போது (இயல்புநிலை), அவை பதில் உடலில் நேரடியாக base64 data URI-களாக உட்பொதிக்கப்படும்.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| பகுதி வகை                                                       |                                 கடுமையான பாஸ் |                                  தளர்வான பாஸ் |
+| --------------------------------------------------------------- | --------------------------------------------: | --------------------------------------------: |
+| S/MIME கையொப்பக் கோப்பு `smime.p7s`                             |                                 நீக்கப்பட்டது |                                 நீக்கப்பட்டது |
+| S/MIME MIME வகைகள் (`application/pkcs7-*`)                      |                                 நீக்கப்பட்டது |                                 நீக்கப்பட்டது |
+| Content‑ID மூலம் குறிக்கப்பட்ட inline படம் (`image/*`)          | உடலில் மீட்டெடுக்கும் வகையில் நீக்கப்பட்டது\* | உடலில் மீட்டெடுக்கும் வகையில் நீக்கப்பட்டது\* |
+| கோப்புப் பெயர் கொண்ட இணைக்கப்பட்ட மின்னஞ்சல் (`message/rfc822`) |                                சேர்க்கப்படாது |                சேர்க்கப்படும் வாய்ப்பு உள்ளது |
+| கோப்புப் பெயர் கொண்ட சாதாரண கோப்பு இணைப்பு                      |                சேர்க்கப்படும் வாய்ப்பு உள்ளது |                சேர்க்கப்படும் வாய்ப்பு உள்ளது |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" இயலுமைப்படுத்தப்பட்டிருக்கும்போது (இயல்புநிலை: ON), inline படங்கள் கோப்பு இணைப்புகளாக அல்லாமல், பதில் உடலில் base64 data URI-களாக உட்பொதிக்கப்படும். [அமைப்பு](configuration#include-inline-pictures) பார்க்கவும்.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+உதாரணம்: சில இணைப்புகளில் குறிப்பிட்ட தலைப்புகள் இருக்காமல் இருந்தாலும் அவை இன்னும் சாதாரண கோப்புகளாக (inline/S/MIME அல்ல) இருக்கலாம். கடுமையான பாஸ் எதையும் கண்டறியாவிட்டால், தளர்வான பாஸ் அவற்றை ஏற்றுக்கொண்டு இணைக்கலாம்.
 
 ---
 
-## Behavior Details {#behavior-details}
+### குறுக்கு மேற்கோள் {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward வடிவம் வடிவமைப்பின் படி மாற்றப்படாது (கீழேயுள்ள வரம்புகள் பார்க்கவும்).
+- ஏன் ஒரு இணைப்பு சேர்க்கப்படாமல் இருக்கலாம் என்ற காரணங்களுக்கு, “ஏன் இணைப்புகள் சேர்க்கப்படாமல் இருக்கலாம்” பகுதியைப் பார்க்கவும்.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## நடத்தை பற்றிய விவரங்கள் {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Duplicate தடுப்பு: செருகுநிரல் ஒவ்வொரு தாவலுக்கும் தனித்தனி அமர்வு மதிப்பு மற்றும் நினைவக காவலரைப் பயன்படுத்தி compose தாவலை செயல்படுத்தப்பட்டதாகக் குறிக்கிறது. இது மூல இணைப்புகளை இருமுறை சேர்க்காது.
+- compose சாளரத்தை மூடி மீண்டும் திறப்பது ஒரு புதிய தாவலாகக் கருதப்படும் (அதாவது, ஒரு புதிய முயற்சி அனுமதிக்கப்படும்).
+- ஏற்கனவே உள்ள இணைப்புகளை மதித்தல்: compose ஏற்கனவே சில இணைப்புகளை கொண்டிருந்தாலும், மூலங்கள் ஒருமுறை மட்டும் சேர்க்கப்படும்; ஏற்கனவே உள்ள கோப்புப் பெயர்கள் தாவிடப்படும்.
+- விலக்கல்கள்: S/MIME பொருட்கள் மற்றும் inline படங்கள் கோப்பு இணைப்புகளில் இருந்து விலக்கப்படுகின்றன. முதல் பாஸ்-இல் எதுவும் தகுதிபெறாவிட்டால், தளர்வான fallback non‑S/MIME பகுதிகளை மீண்டும் சரிபார்க்கும். Inline படங்கள் தனியாக கையாளப்படுகின்றன: (இயலுமைப்படுத்தப்பட்டிருக்கும்போது) அவை பதில் உடலில் data URI-களாக மீட்டெடுக்கப்படும்.
+  - கோப்புப் பெயர்கள்: `smime.p7s`
+  - MIME வகைகள்: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Inline படங்கள்: Content‑ID மூலம் குறிக்கப்பட்ட எந்த `image/*` பகுதியும் — கோப்பு இணைப்புகளிலிருந்து விலக்கப்படும், ஆனால் "Include inline pictures" ON ஆக இருக்கும்போது பதில் உடலில் உட்பொதிக்கப்படும்
+  - இணைக்கப்பட்ட மின்னஞ்சல்கள் (`message/rfc822`): கோப்புப் பெயர் இருந்தால் அவை சாதாரண இணைப்புகளாகக் கருதப்படும்; (நகல் சரிபார்ப்பு மற்றும் கருப்புப்பட்டியல் பொருந்தும்) அவை சேர்க்கப்படலாம்.
+- கருப்புப்பட்டியல் எச்சரிக்கை (இயலுமைப்படுத்தப்பட்டிருந்தால்): விண்ணப்பதாரர்கள் உங்கள் கருப்புப்பட்டியலால் விலக்கப்பட்டால்,
+  செருகுநிரல் பாதிக்கப்பட்ட கோப்புகளையும் பொருந்திய வடிவ(ங்)களையும் பட்டியலிடும் சிறிய மோடலைக் காட்டும்.
+  அனைத்தும் விலக்கப்பட்டதால் எந்த இணைப்பும் சேர்க்கப்படமாட்டாத நிலைகளிலும் இந்த எச்சரிக்கை தோன்றும்.
 
 ---
 
-## Limitations {#limitations}
+## விசைப்பலகை குறுக்குவழிகள் {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- உறுதிப்படுத்தல் உரையாடல்: Y/J = Yes, N/Esc = No; Tab/Shift+Tab மற்றும் அம்புக்குறி விசைகள் கவனச்சுடரைச் சுழற்றும்.
+  - [அமைப்பு](configuration#confirmation)யில் உள்ள “Default answer” ஆரம்பத்தில் கவனம் செலுத்தப்பட்ட பொத்தானை அமைக்கிறது.
+  - Enter கவனத்தில் உள்ள பொத்தானை செயற்படுத்தும். Tab/Shift+Tab மற்றும் அம்புகள் அணுகல் வசதிக்காக கவனத்தை நகர்த்தும்.
+
+### விசைப்பலகை சுருக்க அட்டவணை {#keyboard-cheat-sheet}
+
+| விசைகள்          | செயல்                                         |
+| ---------------- | --------------------------------------------- |
+| Y / J            | ஆம் என்பதை உறுதிப்படுத்து                     |
+| N / Esc          | இல்லை என்பதை உறுதிப்படுத்து                   |
+| Enter            | கவனத்தில் உள்ள பொத்தானைச் செயற்படுத்து        |
+| Tab / Shift+Tab  | கவனச்சுடரை முன்/பின் நகர்த்து                 |
+| அம்பு விசைகள்    | பொத்தான்களுக்கிடையில் கவனச்சுடரை நகர்த்து     |
+| இயல்புநிலை பதில் | ஆரம்ப கவனச்சுடரை அமைக்கும் (ஆம் அல்லது இல்லை) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## வரம்புகள் {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- இந்தச் செருகுநிரல் Forward-ஐ மாற்றாது (Reply மற்றும் Reply all ஆதரிக்கப்படுகின்றன).
+- மிகப் பெரிய இணைப்புகள் Thunderbird அல்லது வழங்குநரின் வரம்புகளுக்குட்பட்டிருக்கலாம்.
+  - செருகுநிரல் கோப்புகளை தொகுதியாகப் பிரிக்கவோ சுருக்கவோ செய்யாது; இது Thunderbird இன் வழக்கமான இணைப்பு கையாளுதலையே நம்புகிறது.
+- குறியாக்கச் செய்திகள்: S/MIME பகுதிகள் நோக்கமாய் விலக்கப்படுகின்றன.
 
 ---
 
-See also
+## ஏன் இணைப்புகள் சேர்க்கப்படாமல் இருக்கலாம் {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inline படங்கள் கோப்பு இணைப்புகளாக சேர்க்கப்படமாட்டாவை. "Include inline pictures" ON (இயல்புநிலை) ஆக இருக்கும்போது, அவை பதில் உடலில் data URI-களாக உட்பொதிக்கப்படும். அமைப்பு OFF ஆக இருந்தால், inline படங்கள் முற்றிலும் நீக்கப்படும். [அமைப்பு](configuration#include-inline-pictures) பார்க்கவும்.
+- S/MIME கையொப்பப் பகுதிகள் வடிவமைப்பின் படி விலக்கப்படுகின்றன: `smime.p7s` போன்ற கோப்புப் பெயர்களும் `application/pkcs7-signature` அல்லது `application/pkcs7-mime` போன்ற MIME வகைகளும் தாவிடப்படும்.
+- கருப்புப்பட்டியல் வடிவங்கள் விண்ணப்பதாரர்களை வடிகட்டலாம்: [அமைப்பு](configuration#blacklist-glob-patterns) பார்க்கவும்; பொருத்துதல் எழுத்து பெரிய/சிறியது வேறுபாடின்றி (case‑insensitive) மற்றும் கோப்புப் பெயர்-மட்டும் ஆகும்.
+- நகல் கோப்புப் பெயர்கள் மீண்டும் சேர்க்கப்படமாட்டா: compose ஏற்கனவே அதே நியமப்படுத்தப்பட்ட பெயருடன் ஒரு கோப்பைக் கொண்டிருந்தால், அது தாவிடப்படும்.
+- கோப்பு அல்லாத பகுதிகள் அல்லது கோப்புப் பெயர்கள் இல்லாதவை: பயன்படும் கோப்புப் பெயர் கொண்ட கோப்பு போன்ற பகுதிகள் மட்டுமே சேர்க்கப் பரிசீலிக்கப்படும்.
+
+---
+
+மேலும் பார்க்க
+
+- [அமைப்பு](configuration)

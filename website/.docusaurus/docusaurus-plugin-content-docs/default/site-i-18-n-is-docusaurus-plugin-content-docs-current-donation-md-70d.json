@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Stytta",
-  "description": "Stytta",
+  "title": "Styrkja",
+  "description": "---",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Stytta",
-    "sidebar_label": "Stytta"
+    "title": "Styrkja",
+    "sidebar_label": "Styrkja"
   },
   "sidebar": "docs",
   "previous": {

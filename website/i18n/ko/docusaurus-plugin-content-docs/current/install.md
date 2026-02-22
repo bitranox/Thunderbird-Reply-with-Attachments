@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: '설치'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird 부가 기능 및 테마"를 통한 설치 {#installation-in-thunderbird-recommended}
+
+:::important 최소 Thunderbird 버전
+이 부가 기능은 Thunderbird **128 ESR 이상**을 지원합니다. 이전 버전은 지원되지 않습니다.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+이는 권장되는 설치 방법입니다. ATN(addons.thunderbird.net)에서 설치한 부가 기능은 자동으로 업데이트됩니다. 로컬/개발 설치는 자동 업데이트되지 않습니다.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- 최소 Thunderbird 버전: 128 ESR 이상.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird에서 **도구 > 부가 기능 및 테마**로 이동합니다.
+2. "reply with attachments"를 검색합니다.
+3. 부가 기능을 추가합니다.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+또는 부가 기능 페이지를 직접 엽니다: [Thunderbird 부가 기능(ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI 파일에서 수동 설치 {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI 파일 다운로드 {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird 부가 기능 페이지](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)로 이동합니다.
+2. 최신 버전의 부가 기능을 XPI 파일(`reply_with_attachments-x.y.z-tb.xpi`)로 다운로드합니다.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird에 설치 {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird를 엽니다.
+2. **도구 > 부가 기능 및 테마**로 이동합니다.
+3. **부가 기능 관리자**에서 오른쪽 상단의 톱니바퀴 아이콘을 클릭합니다.
+4. 메뉴에서 **파일에서 부가 기능 설치…**를 선택합니다.
+5. 다운로드한 `reply_with_attachments-x.y.z-tb.xpi` 파일을 선택합니다.
+6. 메시지가 표시되면 설치를 확인합니다.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## 개발용 설치 {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### 저장소 다운로드 {#download-the-repository}
 
-See also
+1. GitHub 저장소의 최신 버전을 다운로드합니다.
+2. 자세한 정보를 보려면 `make help` 를 실행합니다.
 
-- [Quickstart](quickstart)
+### Thunderbird에 설치 {#install-in-thunderbird-dev}
+
+1. Thunderbird를 엽니다.
+2. **도구 > 부가 기능 및 테마**로 이동합니다.
+3. **부가 기능 관리자**에서 오른쪽 상단의 톱니바퀴 아이콘을 클릭합니다.
+4. 메뉴에서 **파일에서 부가 기능 설치…**를 선택합니다.
+5. 생성된 파일 `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` 를 선택합니다.
+6. 메시지가 표시되면 설치를 확인합니다.
+
+참고: Thunderbird가 시스템에서 `.zip` 를 허용하지 않으면 `.xpi` 로 이름을 변경한 뒤 “파일에서 부가 기능 설치…”를 다시 시도하세요.
+
+### LOCAL ZIP 찾는 위치 {#where-local-zip}
+
+- 먼저 부가 기능을 패키징합니다: 저장소 루트에서 `make pack` 를 실행합니다.
+- 패키징 후, 저장소 루트에서 “LOCAL” zip을 찾습니다(예: `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- 테스트를 위해 다시 패키징하기 전에 `sources/manifest_ATN.json` 및 `sources/manifest_LOCAL.json` 두 곳의 버전을 올리세요.
+
+---
+
+## 비활성화, 제거 및 업데이트 {#disable-uninstall-updates}
+
+- 비활성화: Thunderbird → 도구 → 부가 기능 및 테마 → 부가 기능을 찾은 후 → 스위치를 끕니다.
+- 제거: 동일한 화면 → 점 세 개 메뉴 → 제거.
+- 업데이트: ATN에서 설치한 경우 새 버전이 승인되면 자동으로 업데이트됩니다. 로컬/개발 설치는 자동 업데이트되지 않으므로 새 LOCAL 빌드를 수동으로 다시 설치하세요.
+- 설정을 완전히 제거: [개인정보 → 데이터 제거](privacy#data-removal)를 참고하세요.
+
+함께 보기
+
+- [빠른 시작](quickstart)

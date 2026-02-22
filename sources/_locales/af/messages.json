@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Waarsku as aanhegsels deur die swartlys uitgesluit word"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Sluit inlyn-prente in (ingebedde beelde)"
+  },
   "uiDebugHeader": {
     "message": "Gevorderd"
   },

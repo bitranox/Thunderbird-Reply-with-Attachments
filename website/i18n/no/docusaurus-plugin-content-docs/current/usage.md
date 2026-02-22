@@ -4,88 +4,92 @@ title: 'Bruk'
 sidebar_label: 'Bruk'
 ---
 
+---
+
 ## Bruk {#usage}
 
-- Svar, og tilleggskomponenten legger til originaler automatisk – eller spør først, hvis aktivert i Alternativer.
-- Dedupliseres etter filnavn; S/MIME og innbakte bilder blir alltid utelatt.
-- Svarteliste-filer blir også utelatt (store bokstaver/ små bokstaver og glob-mønstre som samsvarer med filnavn, ikke stier). Se [Konfigurasjon](configuration#blacklist-glob-patterns).
+- Svar, og tillegget legger til originalene automatisk — eller spør først, hvis aktivert i Alternativer.
+- Duplikater fjernes etter filnavn; S/MIME‑deler hoppes alltid over. Inline‑bilder gjenopprettes i svarteksten som standard (deaktiver via "Include inline pictures" i Alternativer).
+- Svartelistede vedlegg hoppes også over (skiller ikke mellom store og små bokstaver; glob‑mønstre som matcher filnavn, ikke stier). Se [Konfigurasjon](configuration#blacklist-glob-patterns).
 
 ---
 
-### Hva skjer ved svar {#what-happens}
+### Hva som skjer ved svar {#what-happens}
 
-- Oppdag svar → list originale vedlegg → filtrer S/MIME + innbakte → valgfrie bekreftelser → legg til kvalifiserte filer (hopp over duplikater).
+- Oppdag svar → list originale vedlegg → filtrer S/MIME + inline → valgfri bekreftelse → legg til kvalifiserte filer (hopp over duplikater) → gjenopprett inline‑bilder i brødteksten.
 
-Streng vs. avslappet pass: Tillegget utelukker først S/MIME og innbakte deler. Hvis ingenting kvalifiserer, kjører det et avslappet pass som fortsatt utelukker S/MIME/innbakte men tolererer flere tilfeller (se Kodedetaljer).
+Streng vs. avslappet gjennomgang: Tillegget ekskluderer først S/MIME‑ og inline‑deler fra filvedlegg. Hvis ingenting kvalifiserer, kjøres en mer avslappet gjennomgang som fortsatt ekskluderer S/MIME/inline, men tolererer flere tilfeller (se Kodedetaljer). Inline‑bilder legges aldri til som filvedlegg; i stedet, når "Include inline pictures" er aktivert (standard), bygges de direkte inn i svarteksten som base64‑data‑URIer.
 
-| Deltype                                          |    Streng pass | Avslappet pass |
-| ------------------------------------------------ | -------------: | -------------: |
-| S/MIME signaturfil `smime.p7s`                   |   Utekskludert |   Utekskludert |
-| S/MIME MIME-typer (`application/pkcs7-*`)        |   Utekskludert |   Utekskludert |
-| Innbakt bilde referert av Content‑ID (`image/*`) |   Utekskludert |   Utekskludert |
-| Vedlagt e-post (`message/rfc822`) med et filnavn |  Ikke lagt til | Kan legges til |
-| Vanlig filvedlegg med et filnavn                 | Kan legges til | Kan legges til |
+| Deltype                                          |                       Streng gjennomgang |                    Avslappet gjennomgang |
+| ------------------------------------------------ | ---------------------------------------: | ---------------------------------------: |
+| S/MIME‑signaturfil `smime.p7s`                   |                               Ekskludert |                               Ekskludert |
+| S/MIME‑MIME‑typer (`application/pkcs7-*`)        |                               Ekskludert |                               Ekskludert |
+| Inline‑bilde referert av Content‑ID (`image/*`)  | Ekskludert (gjenopprettes i brødtekst\*) | Ekskludert (gjenopprettes i brødtekst\*) |
+| Vedlagt e‑post (`message/rfc822`) med et filnavn |                            Ikke lagt til |                         Kan bli lagt til |
+| Vanlig filvedlegg med filnavn                    |                         Kan bli lagt til |                         Kan bli lagt til |
 
-Eksempel: Noen vedlegg kan mangle visse overskrifter, men er fortsatt vanlige filer (ikke innbakte/S/MIME). Hvis det strenge passet ikke finner noen, kan det avslappede passet akseptere disse og legge dem ved.
+\* Når "Include inline pictures" er aktivert (standard: PÅ), bygges inline‑bilder inn i svarteksten som base64‑data‑URIer i stedet for å legges til som filvedlegg. Se [Konfigurasjon](configuration#include-inline-pictures).
+
+Eksempel: Noen vedlegg kan mangle visse headere, men er likevel vanlige filer (ikke inline/S/MIME). Hvis den strenge gjennomgangen ikke finner noen, kan den avslappede gjennomgangen akseptere dem og legge dem ved.
 
 ---
 
 ### Kryssreferanse {#cross-reference}
 
-- Videresendelse endres ikke med vilje (se Begrensninger nedenfor).
-- For årsaker til at vedlegg ikke kan legges til, se “Hvorfor vedlegg kanskje ikke legges til”.
+- Videresending endres ikke av design (se Begrensninger nedenfor).
+- For årsaker til at et vedlegg kanskje ikke blir lagt til, se «Hvorfor vedlegg kanskje ikke blir lagt til».
 
 ---
 
 ## Atferdsdetaljer {#behavior-details}
 
-- **Unngåelse av duplikater:** Tillegget merker komposeringsfaner som behandlet ved hjelp av en fanespesifikk sesjonsverdi og en minnebeskyttelse. Det vil ikke legge til originaler to ganger.
-- Å lukke og åpne et komponeringsvindu igjen behandles som en ny fane (dvs. et nytt forsøk er tillatt).
-- **Respektere eksisterende vedlegg:** Hvis komposisjonen allerede inneholder noen vedlegg, legges originaler fortsatt til nøyaktig én gang, og hopper over filnavn som allerede eksisterer.
-- **Utelukkelser:** S/MIME-artikler og innbakte bilder ignoreres. Hvis ingenting kvalifiserer ved første pass, sjekker et avslappet alternativ ikke-S/MIME-deler på nytt.
+- **Hindre duplikater:** Tillegget markerer skrivefanen som behandlet ved å bruke en øktverdi per fane og en minnebasert sperre. Det vil ikke legge til originaler to ganger.
+- Å lukke og åpne et skrivevindu på nytt behandles som en ny fane (dvs. et nytt forsøk er tillatt).
+- **Respekter eksisterende vedlegg:** Hvis skrivevinduet allerede inneholder noen vedlegg, blir originalene likevel lagt til nøyaktig én gang, og filnavn som allerede finnes hoppes over.
+- **Ekskluderinger:** S/MIME‑artefakter og inline‑bilder er ekskludert fra filvedlegg. Hvis ingenting kvalifiserer ved første gjennomgang, kontrollerer en avslappet reserve på nytt ikke‑S/MIME‑deler. Inline‑bilder håndteres separat: de gjenopprettes i svarteksten som data‑URIer (når aktivert).
   - **Filnavn:** `smime.p7s`
-  - **MIME-typer:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Innbakte bilder:** ethvert `image/*`-del referert av Content‑ID i meldingsinnholdet
-  - **Vedlagte e-poster (`message/rfc822`):** behandles som vanlige vedlegg hvis de har et filnavn; de kan legges til (underlagt duplikatkontroller og svarteliste).
-- **Svartelistevarsel (hvis aktivert):** Når kandidater ekskluderes av svartelisten din, viser tillegget en liten modal som lister opp berørte filer og de samsvarende mønstrene. Dette varslet vises også i tilfeller der ingen vedlegg vil bli lagt til, fordi alt ble ekskludert.
+  - **MIME‑typer:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inline‑bilder:** enhver `image/*`‑del referert av Content‑ID — ekskluderes fra filvedlegg, men bygges inn i svarteksten når "Include inline pictures" er PÅ
+  - **Vedlagte e‑poster (`message/rfc822`):** behandles som vanlige vedlegg hvis de har et filnavn; de kan bli lagt til (med forbehold om duplikatkontroller og svarteliste).
+- **Advarsel om svarteliste (hvis aktivert):** Når kandidater ekskluderes av svartelisten din, viser tillegget et lite modalvindu som lister opp de berørte filene og de samsvarende mønstrene. Denne advarselen vises også i tilfeller der ingen vedlegg vil bli lagt til fordi alt ble ekskludert.
 
 ---
 
 ## Tastatursnarveier {#keyboard-shortcuts}
 
-- Bekreftelsesdialog: Y/J = Ja, N/Esc = Nei; Tab/Shift+Tab og piltaster bytter fokus.
-  - Den “Standard svaret” i [Konfigurasjon](configuration#confirmation) setter den initialt fokuserte knappen.
-  - Enter utløser den fokuserte knappen. Tab/Shift+Tab og piltaster flytter fokus for tilgjengelighet.
+- Bekreftelsesdialog: Y/J = Ja, N/Esc = Nei; Tab/Shift+Tab og piltaster flytter fokus.
+  - «Standardsvar» i [Konfigurasjon](configuration#confirmation) angir hvilken knapp som har fokus først.
+  - Enter aktiverer knappen med fokus. Tab/Shift+Tab og piltaster flytter fokus for tilgjengelighet.
 
-### Tastatur Fuskark {#keyboard-cheat-sheet}
+### Hurtigreferanse for tastatur {#keyboard-cheat-sheet}
 
-| Taster          | Handling                             |
-| --------------- | ------------------------------------ |
-| Y / J           | Bekreft Ja                           |
-| N / Esc         | Bekreft Nei                          |
-| Enter           | Aktiver fokusert knapp               |
-| Tab / Shift+Tab | Flytt fokus fremover/bakover         |
-| Piltaster       | Flytt fokus mellom knapper           |
-| Standard svar   | Setter initialt fokus (Ja eller Nei) |
+| Taster          | Handling                         |
+| --------------- | -------------------------------- |
+| Y / J           | Bekreft Ja                       |
+| N / Esc         | Bekreft Nei                      |
+| Enter           | Aktiver fokusert knapp           |
+| Tab / Shift+Tab | Flytt fokus frem/tilbake         |
+| Piltaster       | Flytt fokus mellom knapper       |
+| Standardsvar    | Setter startfokus (Ja eller Nei) |
 
 ---
 
 ## Begrensninger {#limitations}
 
-- Videresendelse endres ikke av dette tillegget (Svar og Svar til alle støttes).
-- Svært store vedlegg kan være gjenstand for Thunderbird- eller leverandørgrenser.
-  - Tillegget deler ikke eller komprimerer filer; det er avhengig av Thunderbirds normale håndtering av vedlegg.
-- Krypterte meldinger: S/MIME-deler utelukkes med vilje.
+- Videresending endres ikke av dette tillegget (Svar og Svar alle støttes).
+- Svært store vedlegg kan være underlagt begrensninger i Thunderbird eller hos leverandøren.
+  - Tillegget deler ikke opp eller komprimerer filer; det baserer seg på Thunderbirds vanlige vedleggshåndtering.
+- Krypterte meldinger: S/MIME‑deler er bevisst ekskludert.
 
 ---
 
-## Hvorfor vedlegg kanskje ikke legges til {#why-attachments-might-not-be-added}
+## Hvorfor vedlegg kanskje ikke blir lagt til {#why-attachments-might-not-be-added}
 
-- Innbakte bilder ignoreres: deler referert via Content‑ID i meldingsinnholdet legges ikke til som filer.
-- S/MIME signaturdeler utelukkes med vilje: filnavn som `smime.p7s` og MIME-typer som `application/pkcs7-signature` eller `application/pkcs7-mime` hoppes over.
-- Svartelistemønstre kan filtrere kandidater: se [Konfigurasjon](configuration#blacklist-glob-patterns); samsvar er store/små bokstaver insensitive og bare filnavn.
-- Dupliserte filnavn legges ikke til på nytt: hvis komposisjonen allerede inneholder en fil med det samme normaliserte navnet, hoppes den over.
-- Ikke-fil deler eller manglende filnavn: kun fil-lignende deler med brukbare filnavn vurderes for legging til.
+- Inline‑bilder legges ikke til som filvedlegg. Når "Include inline pictures" er PÅ (standard), bygges de inn i svarteksten som data‑URIer i stedet. Hvis innstillingen er AV, fjernes inline‑bilder helt. Se [Konfigurasjon](configuration#include-inline-pictures).
+- S/MIME‑signaturdeler er ekskludert etter hensikt: filnavn som `smime.p7s` og MIME‑typer som `application/pkcs7-signature` eller `application/pkcs7-mime` hoppes over.
+- Svartelistemønstre kan filtrere kandidater: se [Konfigurasjon](configuration#blacklist-glob-patterns); samsvar skiller ikke mellom store og små bokstaver og gjelder kun filnavn.
+- Dupliserte filnavn legges ikke til på nytt: hvis skrivevinduet allerede inneholder en fil med samme normaliserte navn, hoppes den over.
+- Ikke‑fil‑deler eller manglende filnavn: bare fil‑lignende deler med brukbare filnavn vurderes for tillegg.
 
 ---
 

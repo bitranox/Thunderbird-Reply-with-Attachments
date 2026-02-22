@@ -1,97 +1,101 @@
 ---
 id: usage
-title: 'ការប្រើប្រាស់'
-sidebar_label: 'ការប្រើប្រាស់'
+title: 'ການນຳໃຊ້'
+sidebar_label: 'ການນໍາໃຊ້'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## ວິທີໃຊ້ {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- ຕອບກັບ ແລ້ວສ່ວນເສີມຈະເພີ່ມໄຟລ໌ຕົ້ນສະບັບອັດຕະໂນມັດ — ຫຼືຈະຖາມກ່ອນ ຖ້າໄດ້ເປີດໃຊ້ໃນ Options.
+- ກຳຈັດຄວາມຊ້ຳຕາມຊື່ໄຟລ໌; S/MIME parts ຈະຖືກຂ້າມເສມີ. ຮູບພາບ inline ຈະຖືກກູ້ຄືນໃນຂໍ້ຄວາມຕອບກັບໂດຍຄ່າເລີ່ມຕົ້ນ (ປິດໄດ້ຜ່ານ "Include inline pictures" ໃນ Options).
+- ແນບຟາຍທີ່ຢູ່ໃນ blacklist ຈະຖືກຂ້າມເຊັ່ນກັນ (ແພດເທີນ glob ທີ່ບໍ່ແຍກຕົວໃຫຍ່/ນ້ອຍ ກວດກັບຊື່ໄຟລ໌, ບໍ່ແມ່ນເສັ້ນທາງ). ເບິ່ງ [ການຕັ້ງຄ່າ](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### ເກີດຫຍັງເມື່ອຕອບກັບ {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- ກວດຈັບການຕອບກັບ → ລາຍຊື່ໄຟລ໌ແນບຕົ້ນສະບັບ → ກັ່ນຕອງ S/MIME + inline → ຢືນຢັນແບບທາງເລືອກ → ເພີ່ມໄຟລ໌ທີ່ເຂົ້າເງື່ອນໄຂ (ຂ້າມອັນຊ້ຳ) → ກູ້ຄືນຮູບ inline ໃນຕົວເນື້ອຫາ.
 
----
+ຮອບເຂັ້ມງວດ ກັບ ຮອບຜ່ອນຄາຍ: ສ່ວນເສີມຈະຕັດອອກ S/MIME ແລະສ່ວນ inline ຈາກໄຟລ໌ແນບໃນຮອບທຳອິດ. ຖ້າບໍ່ມີອັນໃດເຂົ້າເງື່ອນໄຂ ມັນຈະລອງຮອບຜ່ອນຄາຍທີ່ຍັງຄົງຕັດ S/MIME/inline ແຕ່ຍອມຮັບກໍລະນີເພີ່ມເຕີມ (ເບິ່ງ ລາຍລະອຽດໂຄດ). ຮູບ inline ຈະບໍ່ຖືກເພີ່ມເປັນໄຟລ໌ແນບເລີຍ; ແທນນັ້ນ ເມື່ອເປີດໃຊ້ "Include inline pictures" (ຄ່າເລີ່ມຕົ້ນ) ພວກມັນຈະຖືກຝັງໃນຕົວເນື້ອຫາຕອບກັບໂດຍກົງເປັນ base64 data URI.
 
-## Behavior Details {#behavior-details}
+| ປະເພດສ່ວນ                                       |                   ຮອບເຂັ້ມງວດ |                    ຮອບຜ່ອນຄາຍ |
+| ----------------------------------------------- | ----------------------------: | ----------------------------: |
+| ໄຟລ໌ລາຍເຊັນ S/MIME `smime.p7s`                  |                        ຕັດອອກ |                        ຕັດອອກ |
+| ປະເພດ MIME ຂອງ S/MIME (`application/pkcs7-*`)   |                        ຕັດອອກ |                        ຕັດອອກ |
+| ຮູບ inline ທີ່ອ້າງອີງໂດຍ Content‑ID (`image/*`) | ຕັດອອກ (ກູ້ຄືນໃນຕົວເນື້ອຫາ\*) | ຕັດອອກ (ກູ້ຄືນໃນຕົວເນື້ອຫາ\*) |
+| ອີເມວທີ່ແນບ (`message/rfc822`) ທີ່ມີຊື່ໄຟລ໌     |                   ບໍ່ໄດ້ເພີ່ມ |                    ອາດຈະເພີ່ມ |
+| ໄຟລ໌ແນບທຳມະດາທີ່ມີຊື່ໄຟລ໌                       |                    ອາດຈະເພີ່ມ |                    ອາດຈະເພີ່ມ |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* ເມື່ອ "Include inline pictures" ເປີດໃຊ້ (ຄ່າເລີ່ມຕົ້ນ: ON), ຮູບ inline ຈະຖືກຝັງໃນຂໍ້ຄວາມຕອບກັບເປັນ base64 data URI ແທນການເພີ່ມເປັນໄຟລ໌ແນບ. ເບິ່ງ [ການຕັ້ງຄ່າ](configuration#include-inline-pictures).
+
+ຕົວຢ່າງ: ໄຟລ໌ແນບບາງອັນອາດຂາດຫົວຂໍ້ບາງຢ່າງ ແຕ່ກໍຍັງເປັນໄຟລ໌ທຳມະດາ (ບໍ່ແມ່ນ inline/S/MIME). ຖ້າຮອບເຂັ້ມງວດບໍ່ພົບ ຮອບຜ່ອນຄາຍອາດຈະຮັບເອົາເຫຼົ່ານັ້ນແລະແນບເຂົ້າໄປ.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### ອ້າງອີງຂ້າມ {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- ການສົ່ງຕໍ່ (Forward) ບໍ່ຖືກປ່ຽນແປງຕາມການອອກແບບ (ເບິ່ງ ຂໍ້ຈຳກັດ ຂ້າງລຸ່ມ).
+- ສຳລັບເຫດຜົນທີ່ໄຟລ໌ແນບອາດຈະບໍ່ຖືກເພີ່ມ ເບິ່ງ “ເປັນຫຍັງໄຟລ໌ແນບອາດຈະບໍ່ຖືກເພີ່ມ”.
 
 ---
 
-## Limitations {#limitations}
+## ລາຍລະອຽດພຶດຕິກຳ {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **ການປ້ອງກັນຄວາມຊ້ຳ:** ສ່ວນເສີມຈະໝາຍແທັບຂຽນຂໍ້ຄວາມວ່າໄດ້ປະມວນຜົນແລ້ວ ໂດຍໃຊ້ຄ່າ session ຕໍ່ແທັບ ແລະຕົວປົກປ້ອງໃນຄວາມຈຳ. ມັນຈະບໍ່ເພີ່ມຕົ້ນສະບັບຊ້ຳສອງຄັ້ງ.
+- ການປິດ ແລະເປີດໜ້າຕ່າງຂຽນຂໍ້ຄວາມອີກຄັ້ງ ຈະຖືກນັບເປັນແທັບໃໝ່ (ໝາຍເຖິງ ການລອງໃໝ່ໄດ້).
+- **ເຄົາລົບໄຟລ໌ແນບທີ່ມີຢູ່:** ຖ້າໜ້າຂຽນຂໍ້ຄວາມມີໄຟລ໌ແນບຢູ່ແລ້ວ ຈະຍັງເພີ່ມຕົ້ນສະບັບພຽງຄັ້ງດຽວ ໂດຍຂ້າມຊື່ໄຟລ໌ທີ່ມີຢູ່ແລ້ວ.
+- **ການຍົກເວັ້ນ:** ສິ່ງປະກອບ S/MIME ແລະຮູບ inline ຖືກຍົກເວັ້ນອອກຈາກໄຟລ໌ແນບ. ຖ້າຮອບທຳອິດບໍ່ມີຫຍັງເຂົ້າເງື່ອນໄຂ ຈະມີການກັບຕົວເລືອກແບບຜ່ອນຄາຍເພື່ອກວດຊ້ຳສ່ວນທີ່ບໍ່ແມ່ນ S/MIME. ຮູບ inline ໄດ້ຖືກຈັດການແຍກຕ່າງຫາກ: ພວກມັນຖືກກູ້ຄືນໃນຕົວເນື້ອຫາຕອບກັບເປັນ data URI (ເມື່ອເປີດໃຊ້).
+  - **ຊື່ໄຟລ໌:** `smime.p7s`
+  - **ປະເພດ MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ຮູບ inline:** ສ່ວນ `image/*` ໃດໆທີ່ອ້າງອີງໂດຍ Content‑ID — ຖືກຍົກເວັ້ນຈາກໄຟລ໌ແນບ ແຕ່ຈະຝັງໃນຂໍ້ຄວາມຕອບກັບເມື່ອ "Include inline pictures" ເປີດໃຊ້
+  - **ອີເມວທີ່ແນບ (`message/rfc822`):** ຖືກປະເມີນເປັນໄຟລ໌ແນບທຳມະດາຖ້າມີຊື່ໄຟລ໌; ອາດຈະຖືກເພີ່ມ (ໂດຍຂຶ້ນກັບການກວດອັນຊ້ຳ ແລະ blacklist).
+- **ຄຳເຕືອນ blacklist (ຖ້າເປີດໃຊ້):** ເມື່ອຕົວເລືອກຖືກຍົກເວັ້ນໂດຍ blacklist ຂອງທ່ານ,
+  ສ່ວນເສີມຈະສະແດງ modal ຂະໜາດນ້ອຍລາຍຊື່ໄຟລ໌ທີ່ໄດ້ຮັບຜົນກະທົບ ແລະ
+  ຮູບແບບທີ່ກົງກັນ. ຄຳເຕືອນນີ້ຈະປາກົດໃນກໍລະນີທີ່ຈະບໍ່ມີການ
+  ເພີ່ມໄຟລ໌ແນບເນື່ອງຈາກທຸກຢ່າງຖືກຍົກເວັ້ນ.
 
 ---
 
-See also
+## ປຸ່ມລັດຄີບອດ {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- ໜ້າຕ່າງຢືນຢັນ: Y/J = Yes, N/Esc = No; Tab/Shift+Tab ແລະ ປຸ່ມລູກສອນ ເລື່ອນຈຸດໂຟກັສ.
+  - “Default answer” ໃນ [ການຕັ້ງຄ່າ](configuration#confirmation) ກຳນົດປຸ່ມທີ່ໂຟກັສເລີ່ມຕົ້ນ.
+  - Enter ເຮັດວຽກກັບປຸ່ມທີ່ກຳລັງໂຟກັສ. Tab/Shift+Tab ແລະລູກສອນ ເຄື່ອນໂຟກັສເພື່ອຄວາມເຂົ້າເຖິງ.
+
+### ໃບໂກງປຸ່ມລັດ {#keyboard-cheat-sheet}
+
+| ປຸ່ມ            | ການກະທຳ                          |
+| --------------- | -------------------------------- |
+| Y / J           | ຢືນຢັນ Yes                       |
+| N / Esc         | ຢືນຢັນ No                        |
+| Enter           | ເຮັດວຽກປຸ່ມທີ່ໂຟກັສ              |
+| Tab / Shift+Tab | ເລື່ອນໂຟກັສໄປຂ້າງໜ້າ/ກັບຫຼັງ     |
+| ປຸ່ມລູກສອນ      | ເລື່ອນໂຟກັສລະຫວ່າງປຸ່ມ           |
+| ຄຳຕອບເລີ່ມຕົ້ນ  | ກຳນົດໂຟກັສເລີ່ມຕົ້ນ (Yes ຫຼື No) |
+
+---
+
+## ຂໍ້ຈຳກັດ {#limitations}
+
+- ການສົ່ງຕໍ່ (Forward) ບໍ່ໄດ້ຖືກປ່ຽນໂດຍສ່ວນເສີມນີ້ (ຮອງຮັບ Reply ແລະ Reply all).
+- ໄຟລ໌ແນບຂະໜາດໃຫຍ່ຫຼາຍອາດຈະຖືກຈຳກັດໂດຍ Thunderbird ຫຼືຜູ້ໃຫ້ບໍລິການ.
+  - ສ່ວນເສີມບໍ່ແບ່ງຊິ້ນຫຼືບີບອັດໄຟລ໌; ມັນພຶງພາການຈັດການໄຟລ໌ແນບຕາມປົກກະຕິຂອງ Thunderbird.
+- ຂໍ້ຄວາມເຂົ້າລະຫັດ: S/MIME parts ຖືກຍົກເວັ້ນໂດຍຈົ່ງໃຈ.
+
+---
+
+## ເປັນຫຍັງໄຟລ໌ແນບອາດຈະບໍ່ຖືກເພີ່ມ {#why-attachments-might-not-be-added}
+
+- ຮູບ inline ບໍ່ຖືກເພີ່ມເປັນໄຟລ໌ແນບ. ເມື່ອ "Include inline pictures" ເປີດ (ຄ່າເລີ່ມຕົ້ນ), ພວກມັນຈະຖືກຝັງເປັນ base64 data URI ໃນຂໍ້ຄວາມຕອບກັບແທນ. ຖ້າຕັ້ງຄ່າເປັນ OFF, ຮູບ inline ຈະຖືກລຶບອອກໝົດ. ເບິ່ງ [ການຕັ້ງຄ່າ](configuration#include-inline-pictures).
+- ສ່ວນລາຍເຊັນ S/MIME ຖືກຍົກເວັ້ນຕາມການອອກແບບ: ຊື່ໄຟລ໌ຢ່າງ `smime.p7s` ແລະ ປະເພດ MIME ເຊັ່ນ `application/pkcs7-signature` ຫຼື `application/pkcs7-mime` ຈະຖືກຂ້າມ.
+- ແບບແພດ blacklist ສາມາດກອງຕົວເລືອກໄດ້: ເບິ່ງ [ການຕັ້ງຄ່າ](configuration#blacklist-glob-patterns); ການຕອບກັນບໍ່ແຍກຕົວໃຫຍ່/ນ້ອຍ ແລະດູແຕ່ຊື່ໄຟລ໌ເທົ່ານັ້ນ.
+- ຊື່ໄຟລ໌ຊ້ຳຈະບໍ່ຖືກເພີ່ມຊ້ຳ: ຖ້າໜ້າຂຽນຂໍ້ຄວາມມີໄຟລ໌ທີ່ມີຊື່ທີ່ຖືກທຳໃຫ້ເປັນມາດຕະຖານຄືກັນຢູ່ແລ້ວ ຈະຖືກຂ້າມ.
+- ສ່ວນທີ່ບໍ່ແມ່ນໄຟລ໌ ຫຼື ບໍ່ມີຊື່ໄຟລ໌: ຈະພິຈາລະນາເພີ່ມເຉົາແຕ່ສ່ວນທີ່ຄ້າຍໄຟລ໌ທີ່ມີຊື່ໄຟລ໌ໃຊ້ງານໄດ້ເທົ່ານັ້ນ.
+
+---
+
+ເບິ່ງເພີ່ມ
+
+- [ການຕັ້ງຄ່າ](configuration)

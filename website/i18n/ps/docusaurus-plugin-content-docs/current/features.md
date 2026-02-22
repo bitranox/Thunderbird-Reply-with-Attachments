@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'خصوصیات'
-sidebar_label: 'خصوصیات'
+title: 'ځانګړتیاوې'
+sidebar_label: 'ځانګړنې'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ځانګړنې {#features}
 
-## How It Works {#how-it-works}
+- کله چې ځواب ورکوئ، د اصلي ایمېل ضمیمه شوي فایلونه په اوتومات ډول نښلوي.
+- د تنظیم کېدو وړ چلند: ضمیمې کولی شي
+  - په اوتومات ډول اضافه شي، یا
+  - یوازې تر تایید وروسته اضافه شي (یو کوچنی، د لاسرسي وړ ډیالوګ). په Options کې
+    تاسو کولی شئ تایید فعال کړئ او د تلوالې ځواب (Yes/No) وټاکئ.
+- د فایل نومونو تور لړ (glob الګوګان) د ځانګړو فایلونو له اوتومات نښلولو څخه
+  مخنیوی کوي. بېلګې: `*intern*`, `*secret*`, `*passwor*`.
+  سمون د غټو/وړو تورو پروا نه کوي او یواځې د فایل نوم چک کوي؛ په Options کې
+  په هره کرښه کې یو الګو ورکړئ.
+- د تور لړ خبرتیا (اختیاري، په تلواله ډول فعاله): کله چې فایلونه ستاسو د
+  تور لړ له امله ایستل کېږي، یو کوچنی موډل کړکۍ فایل او سمون خوړونکي الګو(ګانې) لیستوي. د تیاره-حالت
+  دوستانه او د کیبورډ له لارې د لاسرسي وړ (Enter/Esc د تړلو لپاره).
+- د Reply او Reply all سره کار کوي. Forward د دې add-on له خوا نه بدلېږي.
+- اصلي ضمیمې هم زیاتوي که څه هم تاسو مخکې څه نښلولي وي؛ د فایل نوم له مخې تکرارونه مخنیوی کوي.
+- د هر ټب د تکرار ساتنه په هماغه لیکلو ټب کې دوه ځله زیاتول مخنیوی کوي.
+- په تلواله ډول د S/MIME تصدیق‌لیکونه نه نښلوي څو غیرضروري ضمیمې ونه شي.
+- د کرښې دننه انځورونه شاملوي (تلواله: ON). ننه ايښودل شوي انځورونه په
+  ځواب بدن کې په مستقیم ډول د base64 data URI ګانو په توګه راګرځول کېږي، او اصلي کرښه-دننه ترتیب ساتي. په
+  Options کې یې غیر فعال کړئ څو کرښه-دننه انځورونه په بشپړه توګه پرېښودل شي.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## دا څنګه کار کوي {#how-it-works}
+
+- په ځواب کې، add-on اصلي ضمیمې لیستوي.
+- له فایل ضمیمو څخه د S/MIME لاسلیکونه فلټر کوي؛ کرښه-دننه انځورونه په بدن کې راګرځول کېږي (تر هغه چې غیر فعال شوي نه وي).
+- اختیاري ډول د تایید پوښتنه کوي (له کیبورډ سره دوستانه).
+- د شرایطو پوره کوونکي فایلونه ستاسو لیکلو ته زیاتوي، د فایل نوم له مخې تکرارونه مخنیوی کوي.
+- د ځانګړو حالاتو لپاره په Usage کې “ولې ضمیمې ښایي اضافه نه شي” وګورئ.
+
+د محرمیت یادونه: ټول پروسس په سیمه ییز ډول په Thunderbird کې ترسره کېږي. add-on هېڅ شالیدي شبکې غوښتنې نه کوي.
+
+---

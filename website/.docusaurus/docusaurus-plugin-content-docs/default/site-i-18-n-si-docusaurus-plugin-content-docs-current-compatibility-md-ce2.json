@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "අනුකූලතාව",
-  "description": "Compatibility",
+  "title": "අනුකූලතාවය",
+  "description": "---",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "අනුකූලතාව",
+    "title": "අනුකූලතාවය",
     "sidebar_label": "අනුකූලතාව"
   },
   "sidebar": "docs",

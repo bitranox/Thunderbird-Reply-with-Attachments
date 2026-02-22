@@ -4,28 +4,30 @@ title: 'Ziedot'
 sidebar_label: 'Ziedot'
 ---
 
+---
+
 ## Ziedot
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Ja jums patīk "Reply with Attachments" un vēlaties atbalstīt tā izstrādi, varat ziedot šeit:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Ziedot, izmantojot Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>vai</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Ziedot, izmantojot PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>vai</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Nopērc man kafiju" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skenējiet, lai nopirktu man kafiju"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Paldies! Jūsu atbalsts palīdz uzturēt saderību ar jaunajiem Thunderbird laidieniem, uzlabot pieejamību un testus, kā arī uzturēt dokumentāciju aktuālu.
 
-Notes
+Piezīmes
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Ziedošanas saites atveras tikai tad, kad uz tām noklikšķināt; papildinājums neveic nekādus fona tīkla pieprasījumus.
+- Regulārs atbalsts palīdz ilgtermiņa uzturēšanā un savlaicīgu atjauninājumu nodrošināšanā, taču tas ir pilnīgi brīvprātīgs.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Ja attēla pogas neielādējas, lūdzu, izmantojiet šīs saites:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Nopērc man kafiju](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Ziedojumi ir brīvprātīgi; piekļuve funkcijām netiek ierobežota.
 
 ---
 
-## Ziedojumu redzamība (90 dienu atlaišana)
+## Ziedojumu redzamība (90 dienu atlikšana)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Papildinājumā ir ērta iespēja uz laiku paslēpt ziedošanas aicinājumus pēc tam, kad esat ziedojis.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Kur to atrast
+  - Opcijas → sadaļa Atbalsts: redzēsiet pogu “Es ziedoju” un nelielu norādes lauku.
+  - Dialoglodziņā “Nosūtīšanas apstiprinājums” arī ir poga “Ziedot”; tā automātiski tiek paslēpta, kad atlikšana ir aktīva.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Kā tas darbojas
+  - Noklikšķinot uz “Es ziedoju”, ziedošanas pogas un saistītie paziņojumi tiek paslēpti uz 90 dienām.
+  - Statusa norāde rāda “Slēpts līdz YYYY‑MM‑DD” (jūsu vietējā datumā). Ir arī poga “Rādīt “Ziedot” vēlreiz”, lai nekavējoties atjaunotu redzamību.
+  - Pēc 90 dienām poga “Ziedot” atkal kļūst redzama automātiski.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privātums un glabāšana
+  - Papildinājums Thunderbird lokālajā krātuvē saglabā vienu laika zīmogu, lai atcerētos atlikšanas periodu. Atslēga: `donateHideUntil` (epočas milisekundes).
+  - Šis iestatījums ir lokāls jūsu Thunderbird profilam (nesinhronizējas ar mākoni). Šī funkcija neveic nekādus tīkla pieprasījumus.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Problēmu novēršana
+  - Ja poga “Ziedot” joprojām tiek rādīta tūlīt pēc noklikšķināšanas uz “Es ziedoju”, uzgaidiet mirkli vai atveriet no jauna lapu Opcijas; lietotāja saskarne atjauninās, tiklīdz iestatījums tiks saglabāts.
+  - Lai atiestatītu manuāli, noklikšķiniet uz “Rādīt “Ziedot” vēlreiz”. Varat arī pagaidīt līdz norādītajam datumam.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Šī funkcija ir paredzēta tikai ērtībai; tā nekad neierobežo papildinājuma funkcionalitāti un neievāc nekādus personas datus.
 
 ---

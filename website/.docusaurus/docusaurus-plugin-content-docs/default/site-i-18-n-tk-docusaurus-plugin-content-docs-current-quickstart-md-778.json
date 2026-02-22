@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Başlaňç",
-  "description": "Quickstart",
+  "title": "Çalt başlangyç",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Başlaňç",
-    "sidebar_label": "Başlaňç"
+    "title": "Çalt başlangyç",
+    "sidebar_label": "Tiz başlangyç"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Özellikler",
+    "title": "Aýratynlyklar",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/features"
   },
   "next": {

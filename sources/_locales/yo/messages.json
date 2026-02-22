@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Kìlọ̀ bí àfikún bá jẹ́ kó yọ kúrò nípasẹ̀ àtòkọ̀ dídènà"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Fi awọn aworan inu ila sii (awọn aworan ti a fi sii)"
+  },
   "uiDebugHeader": {
     "message": "Tó ti ni ìlòsíwájú"
   },

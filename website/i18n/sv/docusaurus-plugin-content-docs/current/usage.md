@@ -4,94 +4,98 @@ title: 'Användning'
 sidebar_label: 'Användning'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Användning {#usage}
+
+- Vid Svara lägger tillägget till originalbilagor automatiskt — eller frågar först, om aktiverat i Alternativ.
+- Dubbletter tas bort utifrån filnamn; S/MIME-delar hoppas alltid över. Inline‑bilder återställs i svarstexten som standard (inaktivera via "Include inline pictures" i Alternativ).
+- Bilagor på svartlistan hoppas också över (skiftlägesokänsliga glob‑mönster som matchar filnamn, inte sökvägar). Se [Konfiguration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Vad händer vid svar {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Upptäck svar → lista ursprungliga bilagor → filtrera S/MIME + inline → valfri bekräftelse → lägg till kvalificerade filer (hoppa över dubbletter) → återställ inline‑bilder i svarstexten.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Strikt vs. avslappnad genomgång: Tillägget utesluter först S/MIME‑ och inline‑delar från filbilagor. Om inget kvalificerar körs en mer tillåtande genomgång som fortfarande utesluter S/MIME/inline men tolererar fler fall (se Koddetaljer). Inline‑bilder läggs aldrig till som filbilagor; i stället, när "Include inline pictures" är aktiverat (standard), bäddas de in direkt i svarstexten som base64‑data‑URI:er.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Deltyp                                                      |                       Strikt genomgång |                   Avslappnad genomgång |
+| ----------------------------------------------------------- | -------------------------------------: | -------------------------------------: |
+| S/MIME‑signaturfil `smime.p7s`                              |                              Utesluten |                              Utesluten |
+| S/MIME‑MIME‑typer (`application/pkcs7-*`)                   |                              Utesluten |                              Utesluten |
+| Inline‑bild refererad via Content‑ID (`image/*`)            | Utesluten (återställs i svarstexten\*) | Utesluten (återställs i svarstexten\*) |
+| Bifogat e‑postmeddelande (`message/rfc822`) med ett filnamn |                        Läggs inte till |                        Kan läggas till |
+| Vanlig filbilaga med ett filnamn                            |                        Kan läggas till |                        Kan läggas till |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* När "Include inline pictures" är aktiverat (standard: PÅ) bäddas inline‑bilder in i svarstexten som base64‑data‑URI:er i stället för att läggas till som filbilagor. Se [Konfiguration](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Exempel: Vissa bilagor kan sakna vissa headers men är ändå vanliga filer (inte inline/S/MIME). Om den strikta genomgången inte hittar några kan den avslappnade acceptera dem och bifoga dem.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Korshänvisning {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Vidarebefordra ändras inte enligt design (se Begränsningar nedan).
+- För orsaker till att en bilaga kanske inte läggs till, se ”Varför bilagor kanske inte läggs till”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detaljer om beteende {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Dubblettskydd: Tillägget markerar skrivfliken som behandlad med ett sessionsvärde per flik och ett skydd i minnet. Det lägger inte till originalen två gånger.
+- Att stänga och återöppna ett skrivfönster behandlas som en ny flik (dvs. ett nytt försök tillåts).
+- Respekt för befintliga bilagor: Om skrivfönstret redan innehåller bilagor läggs original fortfarande till exakt en gång, och filnamn som redan finns hoppas över.
+- Undantag: S/MIME‑artefakter och inline‑bilder undantas från filbilagor. Om inget kvalificerar i första genomgången görs ett mer tillåtande omtag som kontrollerar icke‑S/MIME‑delar igen. Inline‑bilder hanteras separat: de återställs i svarstexten som data‑URI:er (när aktiverat).
+  - Filnamn: `smime.p7s`
+  - MIME‑typer: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Inline‑bilder: alla `image/*`‑delar som refereras via Content‑ID — undantas från filbilagor men bäddas in i svarstexten när "Include inline pictures" är PÅ
+  - Bifogade e‑postmeddelanden (`message/rfc822`): behandlas som vanliga bilagor om de har ett filnamn; de kan läggas till (med förbehåll för dubblettkontroll och svartlista).
+- Svartlistningsvarning (om aktiverad): När kandidater utesluts av din svartlista,
+  visar tillägget en liten modal som listar de berörda filerna och de matchande
+  mönstren. Denna varning visas också i fall där inga bilagor kommer att
+  läggas till eftersom allt uteslöts.
 
 ---
 
-## Limitations {#limitations}
+## Tangentbordsgenvägar {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Bekräftelsedialog: Y/J = Ja, N/Esc = Nej; Tab/Skift+Tab och piltangenterna cirkulerar fokus.
+  - ”Default answer” i [Konfiguration](configuration#confirmation) anger vilken knapp som har initialt fokus.
+  - Enter aktiverar den fokuserade knappen. Tab/Skift+Tab och pilar flyttar fokus för tillgänglighet.
+
+### Fusklapp för tangentbordet {#keyboard-cheat-sheet}
+
+| Tangenter       | Åtgärd                               |
+| --------------- | ------------------------------------ |
+| Y / J           | Bekräfta Ja                          |
+| N / Esc         | Bekräfta Nej                         |
+| Enter           | Aktivera fokuserad knapp             |
+| Tab / Shift+Tab | Flytta fokus framåt/bakåt            |
+| Piltangenter    | Flytta fokus mellan knappar          |
+| Default answer  | Sätter initialt fokus (Ja eller Nej) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Begränsningar {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Vidarebefordra ändras inte av detta tillägg (Svara och Svara alla stöds).
+- Mycket stora bilagor kan omfattas av begränsningar i Thunderbird eller hos leverantören.
+  - Tillägget delar inte upp eller komprimerar filer; det förlitar sig på Thunderbirds vanliga bilagehantering.
+- Krypterade meddelanden: S/MIME‑delar utesluts avsiktligt.
 
 ---
 
-See also
+## Varför bilagor kanske inte läggs till {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inline‑bilder läggs inte till som filbilagor. När "Include inline pictures" är PÅ (standard) bäddas de i stället in i svarstexten som data‑URI:er. Om inställningen är AV tas inline‑bilder bort helt. Se [Konfiguration](configuration#include-inline-pictures).
+- S/MIME‑signaturdelar utesluts enligt design: filnamn som `smime.p7s` och MIME‑typer som `application/pkcs7-signature` eller `application/pkcs7-mime` hoppas över.
+- Svartlistningsmönster kan filtrera kandidater: se [Konfiguration](configuration#blacklist-glob-patterns); matchning är skiftlägesokänslig och endast på filnamn.
+- Dubblettfilnamn läggs inte till igen: om skrivfönstret redan innehåller en fil med samma normaliserade namn hoppas den över.
+- Icke‑fil‑delar eller saknade filnamn: endast filliknande delar med användbara filnamn övervägs för tillägg.
+
+---
+
+Se även
+
+- [Konfiguration](configuration)

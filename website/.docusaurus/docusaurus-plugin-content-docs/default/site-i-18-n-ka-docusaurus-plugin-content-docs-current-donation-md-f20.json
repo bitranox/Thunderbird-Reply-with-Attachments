@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "შირაქვია",
-  "description": "Donate",
+  "title": "შემოწირეთ",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "შირაქვია",
-    "sidebar_label": "შირაქვია"
+    "title": "შემოწირეთ",
+    "sidebar_label": "შემოწირეთ"
   },
   "sidebar": "docs",
   "previous": {

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "当附件被黑名单排除时发出警告"
   },
+  "uiIncludeInlineLabel": {
+    "message": "包含内联图片（嵌入式图片）"
+  },
   "uiDebugHeader": {
     "message": "高级"
   },

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Conradh na hAthbhreithnithe",
-  "description": "Changelog",
+  "title": "Loga athruithe",
+  "description": "---",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Conradh na hAthbhreithnithe"
+    "title": "Loga athruithe"
   },
   "sidebar": "docs",
   "previous": {

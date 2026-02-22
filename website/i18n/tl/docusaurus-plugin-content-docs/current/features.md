@@ -4,31 +4,40 @@ title: 'Mga Tampok'
 sidebar_label: 'Mga Tampok'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Mga Tampok {#features}
 
-## How It Works {#how-it-works}
+- Awtomatikong idinadagdag ang mga file mula sa orihinal na email kapag nagre-reply.
+- Nako-configure ang pag-uugali: ang mga attachment ay maaaring
+  - idagdag nang awtomatiko, o
+  - idagdag lamang matapos ang kumpirmasyon (isang maliit at accessible na dialog). Sa Options, maaari mong
+    i-enable ang kumpirmasyon at piliin ang default na sagot (Yes/No).
+- Ang blacklist ng mga filename (glob patterns) ay pumipigil sa ilang partikular na file na
+  maidagdag nang awtomatiko. Mga halimbawa: `*intern*`, `*secret*`, `*passwor*`.
+  Ang pagtutugma ay hindi sensitibo sa laki ng titik at sinusuri lamang ang filename; magbigay ng isang pattern
+  bawat linya sa Options.
+- Babala ng blacklist (opsyonal, naka-enable bilang default): kapag may mga file na na-exclude ng iyong
+  blacklist, magpapakita ang isang maliit na modal ng file at ng tumutugmang pattern(s). Angkop sa dark‑mode
+  at accessible sa keyboard (Enter/Esc para isara).
+- Gumagana sa Reply at Reply all. Ang Forward ay hindi binabago ng add-on na ito.
+- Idinadagdag ang mga orihinal kahit na may naidagdag ka nang attachment; iniiwasan ang mga duplicate batay sa filename.
+- Pinipigilan ng per‑tab duplicate guard ang dobleng pagdagdag sa parehong compose tab.
+- Nilalaktawan ang mga sertipiko ng S/MIME bilang default upang maiwasan ang hindi kinakailangang mga attachment.
+- Isama ang mga inline na larawan (default: ON). Ang mga naka-embed na larawan ay ibinabalik nang direkta sa
+  katawan ng reply bilang mga base64 data URIs, pinapanatili ang orihinal na inline na layout. I-disable sa
+  Options upang laktawan nang buo ang mga inline na larawan.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Paano Ito Gumagana {#how-it-works}
+
+- Kapag nagre-reply, inililista ng add-on ang mga orihinal na attachment.
+- Inaalis mula sa mga file attachment ang mga S/MIME signature; ang mga inline na larawan ay ibinabalik sa katawan (maliban kung naka-disable).
+- Opsyonal na humihingi ng kumpirmasyon (maginhawa sa keyboard).
+- Idinadagdag ang mga angkop na file sa iyong compose, iniiwasan ang mga duplicate batay sa filename.
+- Tingnan ang “Why attachments might not be added” sa Usage para sa mga edge case.
+
+Tala sa privacy: Lahat ng pagproseso ay nagaganap nang lokal sa Thunderbird. Walang ginagawang background na network request ang add-on.
+
+---

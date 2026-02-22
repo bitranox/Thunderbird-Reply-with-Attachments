@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Соснашоъӣ'
-sidebar_label: 'Соснашоъӣ'
+title: 'Мутобиқат'
+sidebar_label: 'Мутобиқат'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Мутобиқат {#compatibility}
+
+:::important Версияи ҳадди ақали Thunderbird
+Ин илова Thunderbird **128 ESR ё навтар**-ро дастгирӣ мекунад. Версияҳои кӯҳнатар дастгирӣ намешаванд.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ё навтар дастгирӣ мешавад (128.x+).
+- Версияҳои кӯҳнатари Thunderbird дастгирӣ намешаванд.
+- Дар Windows, macOS ва Linux санҷида шудааст.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 дастгирӣ намешавад
+Manifest V2 дастгирӣ намешавад. Илова ба **Manifest V3 (MV3)** дар Thunderbird 128 ESR+ нигаронда шудааст.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Бартарафсозии мушкилот {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Агар илова мувофиқи интизорӣ кор накунад, мутмаин шавед, ки шумо аз версияи мутобиқи Thunderbird (128 ESR ё навтар) истифода мебаред.
+- Консоли хатогиҳои Thunderbird-ро (**Tools > Developer Tools > Error Console**) барои ҳама гуна масъалаҳои марбут ба илова тафтиш кунед.
+- Агар танзимоти захирашуда ба таври дуруст татбиқ нашаванд, Thunderbird-ро аз нав оғоз кунед ва дубора кӯшиш намоед. (Thunderbird метавонад ҳолатро байни сеансҳо кеш кунад; аз нав оғоз кардан кафолат медиҳад, ки танзимоти тоза бор карда мешаванд.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Бархӯрдҳои маълум {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Дар ҳоли ҳозир чизе маълум нест. Агар шумо замимаҳои такрории файлҳо ё нокомӣ бо дигар иловаҳоеро бинед, лутфан бо қадамҳои такрор кардан гузориш диҳед.
+
+---
+
+## Бета/Найтли {#beta-nightly}
+
+- Сохтҳои Thunderbird Beta ва Daily (Nightly) одатан дастгирӣ мешаванд, аммо тағйиротҳои манбаи асосӣ баъзан метавонанд рафтори иловаҳоро вайрон кунанд. Агар мушкилот дучор шавед, лутфан гузориш диҳед ва версияи дақиқи Thunderbird-ро зам намоед (масалан, “Daily 131.0a1 2025‑09‑10”).
+- Дар Beta/Nightly регрессия дучор шудед? Лутфан онро бо қадамҳои такрор кардан гузориш диҳед — ба [Дастгирӣ](support) нигаред — ва сатри дақиқи сохти Thunderbird-ро илова намоед.
 
 ---

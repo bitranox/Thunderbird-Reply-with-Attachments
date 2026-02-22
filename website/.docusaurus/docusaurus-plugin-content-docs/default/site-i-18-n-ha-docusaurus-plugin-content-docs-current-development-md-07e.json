@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Ci gaba",
-  "description": "Development Guide",
+  "title": "Haɓakawa",
+  "description": "---",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Ci gaba",
+    "title": "Haɓakawa",
     "sidebar_label": "Ci gaba"
   },
   "sidebar": "docs",

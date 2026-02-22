@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ኣታችመንትታት ብ ብላክሊስት እንተ ተስዕቡ ምጠንቀቕ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ናይ ኢንላይን ስእልታት ኣእትዉ (ዝተሰኸዑ ስእልታት)"
+  },
   "uiDebugHeader": {
     "message": "ኣድቫንስድ"
   },

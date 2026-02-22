@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Izstrādne'
-sidebar_label: 'Izstrādne'
+title: 'Izstrāde'
+sidebar_label: 'Izstrāde'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Izstrādes ceļvedis {#development-guide}
+
+:::note Rediģējiet tikai angļu valodu; tulkojumi izplatās automātiski
+Atjauniniet dokumentāciju tikai zem `website/docs` (angļu valoda). Tulkojumi zem `website/i18n/<locale>/…` tiek ģenerēti un nav jārediģē manuāli. Izmantojiet tulkošanas uzdevumus (piem., `make translate_web_docs_batch`), lai atsvaidzinātu lokalizēto saturu.
 :::
 
-### Prerequisites {#prerequisites}
+### Priekšnosacījumi {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ un npm (pārbaudīts ar Node 22)
+- Thunderbird 128 ESR vai jaunāks (manuālai testēšanai)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Projekta struktūra (augstā līmenī) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Sakne: iepakošanas skripts `distribution_zip_packer.sh`, dokumentācija, ekrānattēli
+- `sources/`: galvenais papildinājuma kods (fons, opciju/uznirstošais interfeiss, manifesti, ikonas)
+- `tests/`: Vitest komplekts
+- `website/`: Docusaurus dokumenti (ar i18n zem `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Instalēšana un rīki {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Instalēt saknes atkarības: `npm ci`
+- Dokumentācija (pēc izvēles): `cd website && npm ci`
+- Atrast mērķus: `make help`
+
+---
+
+### Dzīvā izstrāde (web‑ext run) {#live-dev-web-ext}
+
+- Ātra cilpa Firefox Desktop (tikai UI dūmu testi):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Palaist Thunderbird (ieteicams MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Padomi:
+- Turiet atvērtu Thunderbird kļūdu konsoli (Rīki → Izstrādātāja rīki → Kļūdu konsole).
+- MV3 notikumu lapas dīkstāvē tiek apturētas; pēc koda izmaiņām pārlādējiet papildinājumu vai ļaujiet web‑ext automātiski pārlādēt.
+- Dažas tikai Firefox uzvedības atšķiras; vienmēr pārbaudiet Thunderbird, lai nodrošinātu API atbilstību.
+- Thunderbird izpildfailu ceļi (piemēri):
+- Linux: `thunderbird` (piem., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profila izolācija: Izmantojiet atsevišķu Thunderbird profilu izstrādei, lai neietekmētu ikdienas iestatījumus.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make mērķi (alfabētiskā secībā) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile standartizē kopīgus izstrādes plūsmas. Palaidiet `make help` jebkurā laikā, lai iegūtu vienrindas kopsavilkumu par katru mērķi.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Padoms: palaižot `make` bez mērķa, atveras vienkārša Whiptail izvēlne mērķa izvēlei.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Mērķis                                                   | Vienrindas apraksts                                                                                   |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Noņemt lokālos būvēšanas/priekšskatījuma artefaktus (tmp/, web-local-preview/, website/build/).       |
+| [`commit`](#mt-commit)                                   | Formatēt, palaist testus (t.sk. i18n), atjaunināt izmaiņu žurnālu, veikt commit un push.              |
+| [`eslint`](#mt-eslint)                                   | Palaist ESLint, izmantojot plakanās konfigurācijas (`npm run -s lint:eslint`).                        |
+| [`help`](#mt-help)                                       | Uzskaitīt visus mērķus ar vienrindas aprakstiem (sakārtoti).                                          |
+| [`lint`](#mt-lint)                                       | web‑ext lint uz `sources/` (pagaidu manifests; ignorē ZIP; nefatāls).                                 |
+| [`menu`](#mt-menu)                                       | Interaktīva izvēlne mērķa un izvēles argumentu izvēlei.                                               |
+| [`pack`](#mt-pack)                                       | Būvēt ATN un LOCAL ZIP (palaiž linteri; izsauc pakošanas skriptu).                                    |
+| [`prettier`](#mt-prettier)                               | Formatēt repozitoriju uz vietas (pieraksta izmaiņas).                                                 |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier pārbaudes režīmā (bez pieraksta); neizdodas, ja nepieciešama pārformatēšana.                 |
+| [`prettier_write`](#mt-prettier_write)                   | Aizstājvārds `prettier`.                                                                              |
+| [`test`](#mt-test)                                       | Prettier (pieraksts), ESLint, tad Vitest (segums, ja konfigurēts).                                    |
+| [`test_i18n`](#mt-test_i18n)                             | Tikai i18n testi: papildinājuma vietturi/atbilstība + vietnes atbilstība.                             |
+| [`translate_app`](#mt-translation-app)                   | Aizstājvārds `translation_app`.                                                                       |
+| [`translation_app`](#mt-translation-app)                 | Tulkot lietotnes UI virknes no `sources/_locales/en/messages.json`.                                   |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Tulkot vietnes dokumentus caur OpenAI Batch API (ieteicams).                                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Tulkot vietnes dokumentus sinhroni (mantojums, ne-batch).                                             |
+| [`translate_web_index`](#mt-translation_web_index)       | Aizstājvārds `translation_web_index`.                                                                 |
+| [`translation_web_index`](#mt-translation_web_index)     | Tulkot sākumlapas/navigācijas joslas/kājenes UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Būvēt dokumentus uz `website/build` (atbalsta `--locales` / `BUILD_LOCALES`).                         |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Bezsaistes droša saišu pārbaude (izlaiž attālinātos HTTP[S]).                                         |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokāls gh‑pages priekšskatījums; automātiska apkalpošana uz 8080–8090; izvēles testi/saišu pārbaude.  |
+| [`web_push_github`](#mt-web_push_github)                 | Nosūtīt `website/build` uz atzaru `gh-pages`.                                                         |
 
-Syntax for options
+Opciju sintakse
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Lietojiet `make <command> OPTS="…"` opciju nodošanai (ieteicamas pēdiņas). Katram mērķim zemāk ir paraugs.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Lokāļu būvēšanas padomi {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Būvēt lokāļu apakškopu: iestatiet `BUILD_LOCALES="en de"` vai nododiet `OPTS="--locales en,de"` web mērķiem.
+- Priekšskatīt konkrētu lokāli: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Būvēšana un pakošana {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Būvēt ZIP: `make pack`
+- Izveido ATN un LOCAL ZIP repozitorija saknē (artefaktus ar roku nelabojiet)
+- Padoms: pirms pakošanas atjauniniet versiju gan `sources/manifest_ATN.json`, gan `sources/manifest_LOCAL.json`
+- Manuāla instalēšana (izstrāde): Thunderbird → Rīki → Papildinājumi un motīvi → zobrats → Instalēt papildinājumu no faila… → izvēlieties izveidoto ZIP
+
+---
+
+### Testi {#test}
+
+- Pilns komplekts: `make test` (Vitest)
+- Pārklājums (pēc izvēles):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Palaidiet `make test`; atveriet `coverage/index.html` HTML atskaitei
+- Tikai i18n: `make test_i18n` (UI atslēgas/vietturi/virsraksti + vietne ar katrai lokālei katram dokumentam atbilstību ar id/title/sidebar_label pārbaudēm)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Atkļūdošana un žurnāli {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Kļūdu konsole: Rīki → Izstrādātāja rīki → Kļūdu konsole
+- Pārslēgt detalizētus žurnālus darbības laikā:
+- Ieslēgt: `messenger.storage.local.set({ debug: true })`
+- Izslēgt: `messenger.storage.local.set({ debug: false })`
+- Žurnāli parādās, rakstot/sūtot atbildes
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentācija (vietne) {#docs-website}
+
+- Izstrādes serveris: `cd website && npm run start`
+- Būvēt statisku vietni: `cd website && npm run build`
+- Make ekvivalenti (alfabētiski): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Lietošanas piemēri:
+- Tikai EN, izlaist testus/saišu pārbaudi, bez push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Visas lokāles, ar testiem/saišu pārbaudi, tad push: `make web_build_local_preview && make web_push_github`
+- Pirms publicēšanas palaidiet bezsaistes drošo saišu pārbaudi: `make web_build_linkcheck`.
+- i18n: angļu saturs ir `website/docs/*.md`; vācu tulkojumi ir `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Meklēšana: Ja CI ir iestatīti Algolia DocSearch vides mainīgie (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), vietne izmanto Algolia meklēšanu; pretējā gadījumā tā izmanto lokālo meklēšanu. Sākumlapā nospiediet `/` vai `Ctrl+K`, lai atvērtu meklēšanas lodziņu.
+
+---
+
+#### Ziedošanas novirzīšanas maršruts {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Maršruts: `/donate` (un `/<locale>/donate`)
+- Uzvedība:
+- Ja pašreizējam maršrutam ir lokāle (piem., `/de/donate`), izmantojiet to
+- Pretējā gadījumā izvēlieties labāko atbilstību no `navigator.languages` pret konfigurētajām lokālēm; ja nekas neder, izmantojiet noklusējuma lokāli
+- Novirza uz:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- pārējie → `/<locale>/docs/donation`
+- Izmanto `useBaseUrl` pareizai baseUrl apstrādei
+- Ietver meta atsvaidzināšanu + `noscript` saiti kā rezerves iespēju
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Priekšskatījuma padomi {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Tīri apturiet Node priekšskatījumu: atveriet `http://localhost:<port>/__stop` (izdrukāts pēc `Local server started`).
+- Ja attēli neielādējas MDX/JSX, izmantojiet `useBaseUrl('/img/...')`, lai ievērotu vietnes `baseUrl`.
+- Vispirms startē priekšskatījums; saišu pārbaude tiek palaista pēc tam un nav bloķējoša (bojātas ārējās saites neapturēs priekšskatījumu).
+- Priekšskatījuma URL piemērs: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (izdrukāts pēc “Local server started”).
+- Ārējās saites saišu pārbaudē: Dažas ārējās vietnes (piem., addons.thunderbird.net) bloķē automatizētus pārmeklētājus un saišu pārbaudē var rādīt 403. Priekšskatījums tāpat startē; to var droši ignorēt.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Tulkot vietni {#translate-website}
 
-What you can translate
+Ko var tulkot
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Tikai vietnes lietotāja saskarni: sākumlapa, navigācijas josla, kājene un citas UI virknes. Dokumentu saturs pagaidām paliek tikai angļu valodā.
 
-Where to edit
+Kur rediģēt
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Rediģējiet `website/i18n/<locale>/code.json` (izmantojiet `en` kā atsauci). Saglabājiet vietturus, piemēram, `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`, nemainītus.
 
-Generate or refresh files
+Ģenerēt vai atsvaidzināt failus
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Izveidot trūkstošos aizmetņus visām lokālēm: `npm --prefix website run i18n:stubs`
+- Pārrakstīt aizmetņus no angļu valodas (pēc jaunu virkņu pievienošanas): `npm --prefix website run i18n:stubs:force`
+- Alternatīva vienai lokālei: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Tulkot sākumlapas/navigācijas/kājenes UI virknes (OpenAI)
 
-- Set credentials once (shell or .env):
+- Iestatiet akreditācijas datus vienreiz (čaula vai .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Pēc izvēles: `export OPENAI_MODEL=gpt-4o-mini`
+- Vienā piegājienā (visas lokāles, izlaist en): `make translate_web_index`
+- Ierobežot konkrētām lokālēm: `make translate_web_index OPTS="--locales de,fr"`
+- Pārrakstīt esošās vērtības: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Validācija un atkārtojumi
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Tulkošanas skripts validē JSON formu, saglabā figūriekavu vietturus un nodrošina, ka URL paliek nemainīti.
+- Ja validācija neizdodas, tas mēģina vēlreiz ar atgriezenisko saiti līdz 2 reizēm, pirms atstāj esošās vērtības.
 
-Preview your locale
+Priekšskatiet savu lokāli
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Izstrādes serveris: `npm --prefix website run start`
+- Apmeklējiet `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Iesniegšana
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Atveriet PR ar rediģēto(-ajiem) `code.json` failu(-iem). Saglabājiet izmaiņas fokusētas un iespējas gadījumā iekļaujiet ātru ekrānattēlu.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Drošības un konfigurācijas padomi {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Neiesniedziet (commit) `sources/manifest.json` (tas tiek izveidots uz laiku būves gaitā)
+- Uzturiet `browser_specific_settings.gecko.id` stabilu, lai saglabātu atjauninājumu kanālu
+
+---
+
+### Iestatījumu noturība {#settings-persistence}
+
+- Glabāšana: Visi lietotāja iestatījumi atrodas `storage.local` un saglabājas starp papildinājuma atjauninājumiem.
+- Instalēšana: Noklusējumi tiek piemēroti tikai tad, ja atslēga stingri trūkst (undefined).
+- Atjaunināšana: Migrācija aizpilda tikai trūkstošās atslēgas; esošās vērtības nekad netiek pārrakstītas.
+- Shēmas marķieris: `settingsVersion` (pašlaik `1`).
+- Atslēgas un noklusējumi:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kods: skatiet `sources/background.js` → `initializeOrMigrateSettings()` un `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Izstrādes darba plūsma (jauna iestatījuma pievienošana)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Palieliniet `SCHEMA_VERSION` failā `sources/background.js`.
+- Pievienojiet jauno atslēgu + noklusējumu objektam `DEFAULTS` failā `initializeOrMigrateSettings()`.
+- Lietojiet “tikai ja nav definēts” noteikumu, iestādot noklusējumus; nepārrakstiet esošās vērtības.
+- Ja iestatījums ir redzams lietotājam, pieslēdziet to `sources/options.js` un pievienojiet lokalizētās virknes.
+- Pievienojiet/pielāgojiet testus (skat. `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Padomi manuālai testēšanai
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simulējiet jaunu instalēšanu: notīriet paplašinājuma datu direktoriju vai sāciet ar jaunu profilu.
+- Simulējiet atjauninājumu: iestatiet `settingsVersion` uz `0` failā `storage.local` un pārlādējiet; apstipriniet, ka esošās vērtības paliek nemainīgas un tiek pievienotas tikai trūkstošās atslēgas.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Problēmu novēršana {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Pārliecinieties, ka Thunderbird ir 128 ESR vai jaunāks
+- Lietojiet Kļūdu konsoli darbības laika problēmām
+- Ja saglabātie iestatījumi šķiet netiek pareizi piemēroti, restartējiet Thunderbird un mēģiniet vēlreiz. (Thunderbird var kešot stāvokli starp sesijām; restarts nodrošina, ka ielādējas svaigi iestatījumi.)
 
 ---
 
-### Translations
+### CI un pārklājums {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) palaiž vitest ar pārklājuma sliekšņiem (85% rindas/funkcijas/zari/paziņojumi). Ja sliekšņi netiek sasniegti, darbs neizdodas.
+- Darbeplūsma augšupielādē artefaktu `coverage-html` ar HTML atskaiti; lejupielādējiet to no izpildes lapas (Actions → jaunākais izpildījums → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Ieguldīšana {#contributing}
 
-Screenshots for docs
+- Skatiet CONTRIBUTING.md, lai uzzinātu vadlīnijas par zariem/commit/PR
+- Padoms: Izveidojiet atsevišķu Thunderbird izstrādes profilu testēšanai, lai neietekmētu ikdienas profilu.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Tulkojumi
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Lieli “all → all” tulkošanas darbi var būt lēni un dārgi. Sāciet ar apakškopu (piem., daži dokumenti un 1–2 lokāles), pārskatiet rezultātu un pēc tam paplašiniet.
+
+---
+
+- Atkārtojumu politika: tulkošanas darbi veic līdz 3 mēģinājumiem ar eksponenciālu atpakaļatturēšanos pie API kļūdām; skatiet `scripts/translate_web_docs_batch.js` un `scripts/translate_web_docs_sync.js`.
+
+Ekrānattēli dokumentiem
+
+- Glabājiet attēlus zem `website/static/img/`.
+- Atsaucieties uz tiem MD/MDX, izmantojot `useBaseUrl('/img/<filename>')`, lai ceļi darbotos ar vietnes `baseUrl`.
+- Pēc attēlu pievienošanas vai pārdēvēšanas zem `website/static/img/` pārliecinieties, ka visas atsauces joprojām izmanto `useBaseUrl('/img/…')` un tiek attēlotas lokālā priekšskatījumā.
+  Favikoni
+
+- Daudzizmēru `favicon.ico` tiek automātiski ģenerēts visos būvēšanas ceļos (Make + skripti) ar `website/scripts/build-favicon.mjs` palīdzību.
+- Nav nepieciešama manuāla darbība; pietiek atjaunināt `icon-*.png`.
+  Pārskatīšanas padoms
+
+- Saglabājiet front‑matter `id` nemainītu tulkotajos dokumentos; tulkojiet tikai `title` un `sidebar_label`, ja tie ir.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Mērķis: noņemt lokālos būvēšanas/priekšskatījuma artefaktus.
+- Lietošana: `make clean`
+- Noņem (ja ir):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Mērķis: formatēt, testēt, atjaunināt izmaiņu žurnālu, veikt commit un push.
+- Lietošana: `make commit`
+- Sīkāk: palaiž Prettier (pieraksts), `make test`, `make test_i18n`; papildina izmaiņu žurnālu, ja ir noinscenētas atšķirības; nosūta uz `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Mērķis: palaist ESLint, izmantojot plakanās konfigurācijas.
+- Lietošana: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Mērķis: uzskaitīt visus mērķus ar vienrindas aprakstiem.
+- Lietošana: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Mērķis: lintot MailExtension, izmantojot `web-ext`.
+- Lietošana: `make lint`
+- Piezīmes: pagaidu kopijas `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignorē uzbūvētos ZIP; brīdinājumi nepārtrauc cauruļvadu.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Mērķis: interaktīva izvēlne Make mērķa un izvēles argumentu izvēlei.
+- Lietošana: palaidiet `make` bez argumentiem.
+- Piezīmes: ja `whiptail` nav pieejams, izvēlne pāriet uz `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Mērķis: būvēt ATN un LOCAL ZIP (atkarīgs no `lint`).
+- Lietošana: `make pack`
+- Padoms: palieliniet versijas abos `sources/manifest_*.json` pirms pakošanas.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Mērķis: formatēt repozitoriju uz vietas.
+- Lietošana: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Mērķis: pārbaudīt formatējumu (bez pieraksta).
+- Lietošana: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Mērķis: aizstājvārds `prettier`.
+- Lietošana: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Mērķis: palaist Prettier (pieraksts), ESLint un pēc tam Vitest (pārklājums, ja instalēts).
+- Lietošana: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Mērķis: uz i18n fokusēti testi papildinājuma virknēm un vietnes dokumentiem.
+- Lietošana: `make test_i18n`
+- Palaiž: `npm run test:i18n` un `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Mērķis: tulkot papildinājuma UI virknes no EN uz citām lokālēm.
+- Lietošana: `make translation_app OPTS="--locales all|de,fr"`
+- Piezīmes: saglabā atslēgu struktūru un vietturus; žurnāli tiek rakstīti `translation_app.log`. Skripta forma: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Mērķis: tulkot vietnes dokumentus no `website/docs/*.md` uz `website/i18n/<locale>/...`.
+- Ieteicams: `translate_web_docs_batch` (OpenAI Batch API)
+  - Lietošana (karogi): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Joprojām tiek pieņemta mantojuma pozicionālā forma: `OPTS="<doc|all> <lang|all>"`
+- Uzvedība: būvē JSONL, augšupielādē, aptaujā ik 30 s, lejupielādē rezultātus, raksta failus.
+- Piezīme: pakešdarbs var aizņemt līdz 24 stundām (saskaņā ar OpenAI pakešu logu). Konsole katrā aptaujā rāda pagājušo laiku.
+- Vide: `OPENAI_API_KEY` (obligāts), izvēles `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (noklusēti 24h), `BATCH_POLL_INTERVAL_MS`.
+- Mantojums: `translate_web_docs_sync`
+  - Lietošana (karogi): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Joprojām tiek pieņemta mantojuma pozicionālā forma: `OPTS="<doc|all> <lang|all>"`
+- Uzvedība: sinhroni pieprasījumi pa pāriem (bez pakešsagrupēšanas).
+- Piezīmes: interaktīvi uzvedņi, ja `OPTS` izlaists. Abos režīmos tiek saglabāti koda bloki/inline kods un front‑matter `id` paliek nemainīgs; žurnāli rakstās `translation_web_batch.log` (batch) vai `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Mērķis: tulkot vietnes UI virknes (sākumlapa, navigācijas josla, kājene) no `website/i18n/en/code.json` uz visām lokālēm zem `website/i18n/<locale>/code.json` (izņemot `en`).
+- Lietošana: `make translate_web_index` vai `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Prasības: eksportēt `OPENAI_API_KEY` (pēc izvēles: `OPENAI_MODEL=gpt-4o-mini`).
+- Uzvedība: validē JSON struktūru, saglabā figūriekavu vietturus, uztur URL nemainītus un validācijas kļūdu gadījumā mēģina vēlreiz ar atgriezenisko saiti.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Mērķis: būvēt dokumentācijas vietni uz `website/build`.
+- Lietošana: `make web_build OPTS="--locales en|de,en|all"` (vai iestatiet `BUILD_LOCALES="en de"`)
+- Iekšējā darbība: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Atkarības: palaiž `npm ci` direktorijā `website/` tikai tad, ja trūkst `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Mērķis: bezsaistes droša saišu pārbaude.
+- Lietošana: `make web_build_linkcheck OPTS="--locales en|all"`
+- Piezīmes: būvē uz `tmp_linkcheck_web_pages`; pārraksta GH Pages `baseUrl` uz `/`; izlaiž attālinātās HTTP(S) saites.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Mērķis: lokāls gh‑pages priekšskatījums ar izvēles testiem/saišu pārbaudi.
+- Lietošana: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Uzvedība: vispirms mēģina Node priekšskatījuma serveri (`scripts/preview-server.mjs`, atbalsta `/__stop`), pāriet uz `python3 -m http.server`; apkalpo uz 8080–8090; PID atrodas `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Mērķis: nosūtīt `website/build` uz atzaru `gh-pages`.
+- Lietošana: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Padoms: iestatiet `NPM=…`, lai pārrakstītu Makefile izmantoto pakotņu pārvaldnieku (noklusējums ir `npm`).
 
 ---

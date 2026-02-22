@@ -4,94 +4,98 @@ title: 'Ukusetyenziswa'
 sidebar_label: 'Ukusetyenziswa'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Ukusetyenziswa {#usage}
+
+- Phendula uze isongezelelo songeze izincamatheliso zokuqala ngokuzenzekelayo — okanye sibuze kuqala, ukuba sivuliwe kuZikhetho.
+- Kuthintelwa ukuphindaphindwa ngokwegama lefayile; amacandelo e-S/MIME ahlala etshiywa. Imifanekiso yangaphakathi ibuyiselwa emzimbeni wempendulo ngokungagqibekanga (cima nge "Include inline pictures" kuZikhetho).
+- Izincamatheliso ezikuluhlu olumnyama nazo ziyatshiywa (iipateni ze-glob ezingawahluli unobumba omkhulu nomncinci ezithelekisa amagama eefayile, hayi iindlela). Bona [Uqwalaselo](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Kwenzeka ntoni xa uphendula {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Fumanisa impendulo → dwelisa izincamatheliso zokuqala → hlunga i-S/MIME + yangaphakathi → uqinisekiso oluzikhethelayo → yongeza iifayile ezifanelekileyo (tsiba eziphindaphindiweyo) → buyisela imifanekiso yangaphakathi emzimbeni.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Udululo olungqongqo vs. olukhululekileyo: Isongezelelo siqala sikhuphe amacandelo e-S/MIME nawangaphakathi kwizincamatheliso zefayile. Ukuba akukho nto ifanelekile, siqhuba udlululo olukhululekileyo olusa kukhupha i-S/MIME/yangaphakathi kodwa luvumela iimeko ezingakumbi (bona Iinkcukacha zeKhodi). Imifanekiso yangaphakathi ayongezwa njengooncamathiselo zefayile; endaweni yoko, xa "Include inline pictures" ivuliwe (ingeniso), zifakwa ngqo emzimbeni wempendulo njengee-URI zedata ze-base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Uhlobo lwesahlulo                                               |                Udlululo olungqongqo |           Udlululo olukhululekileyo |
+| --------------------------------------------------------------- | ----------------------------------: | ----------------------------------: |
+| Ifayile yosayino ye-S/MIME `smime.p7s`                          |                          Ikhutshiwe |                          Ikhutshiwe |
+| Iindidi ze-MIME ze-S/MIME (`application/pkcs7-*`)               |                          Ikhutshiwe |                          Ikhutshiwe |
+| Umfanekiso wangaphakathi obhekiselwa yi-Content‑ID (`image/*`)  | Ikhutshiwe (ibuyiselwa emzimbeni\*) | Ikhutshiwe (ibuyiselwa emzimbeni\*) |
+| I-imeyile encanyathiselweyo (`message/rfc822`) enegama lefayile |                        Ayongezwanga |                          Ingongezwa |
+| Uncamathiselo lwefayile eqhelekileyo enegama lefayile           |                          Ingongezwa |                          Ingongezwa |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Xa "Include inline pictures" ivuliwe (default: ON), imifanekiso yangaphakathi ifakwa emzimbeni wempendulo njengee-URI zedata ze-base64 endaweni yokubane yooncamathiselo zefayile. Bona [Uqwalaselo](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Umzekelo: Ezinye izincamatheliso zinokungabi neentloko ezithile kodwa ziseyifayile eziqhelekileyo (ezingeyongaphakathi/S/MIME). Ukuba udlululo olungqongqo alufumani nanye, olukhululekileyo lunokuzamkela ezo zize zongezwe.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Isalathiso esinqamlezayo {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Ukuthumela phambili akuguqulwa ngokuyilwa (bona Izithintelo ngezantsi).
+- Ngezizathu ezibangela ukuba uncamathiselo lungongezwa, bona “Kutheni izincamatheliso zingasongezwa”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Iinkcukacha zokuziphatha {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Ukuthintela ukuphindaphindwa:** Isongezelelo siphawula ithebhu yokuqulunqa njengesele iqhutywe sisebenzisa ixabiso leseshoni ngethebhu nganye kunye nomgcini okwinkumbulo. Asiyi kongeza ezokuqala kabini.
+- Ukuvala nokuvula kwakhona ifestile yokuqulunqa kuthathwa njenge thebhu entsha (oko kukuthi, umzamo omtsha uyavunyelwa).
+- **Hlonepha izincamatheliso ezikhoyo:** Ukuba yokuqulunqa sele iqulethe ezinye izincamatheliso, ezokuqala zisongezwa kanye kuphela, kuskitywa amagama eefayile sele ekhona.
+- **Izikhutsho:** Iimpahla ze-S/MIME nemifanekiso yangaphakathi ziyakhutshwa kukuncamathelisa iifayile. Ukuba akukho nto ifanelekile kudlululo lokuqala, ukubuya okukhululekileyo kuhlola kwakhona amacandelo angeyona i-S/MIME. Imifanekiso yangaphakathi iphethwe ngokwahlukeneyo: ibuyiselwa emzimbeni wempendulo njengee-URI zedata (xa ivuliwe).
+  - **Amagama eefayile:** `smime.p7s`
+  - **Iindidi ze-MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Imifanekiso yangaphakathi:** naliphi na icandelo le `image/*` elibhekiselwa yi-Content‑ID — likhutshwe kukuncamathelisa iifayile kodwa lifakwa emzimbeni wempendulo xa "Include inline pictures" ivuliwe
+  - **Ii-imeyile ezincanyathiselweyo (`message/rfc822`):** ziphathwa njengooncamathiselo abaqhelekileyo ukuba zinegama lefayile; zingongezwa (kuxhomekeke kukhangelo lokuphindaphindwa kunye noluhlu olumnyama).
+- **Isilumkiso soluhlu olumnyama (ukuba sivuliwe):** Xa abakhethwayo bekhutshwa luluhlu lwakho olumnyama,
+  isongezelelo sibonisa i-modal encinane edwelisa iifayile ezichaphazelekayo kunye ne
+  pattern(s) ehambelanayo. Esi silumkiso sikwavela nakwiimeko apho akukho zincamatheliso ziya
+  kongezwa kuba yonke into ikhutshiwe.
 
 ---
 
-## Limitations {#limitations}
+## Iindlela ezimfutshane zekhibhodi {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Ingxoxo yokuqinisekisa: Y/J = Ewe, N/Esc = Hayi; Tab/Shift+Tab kunye namaqhosha eentolo ajikeleza ugxininiso.
+  - I “Default answer” ku [Uqwalaselo](configuration#confirmation) iseta iqhosha eligxininiswe kuqala.
+  - Enter ivuselela iqhosha eligxininisiweyo. Tab/Shift+Tab kunye neentolo zihambisa ugxininiso ngenxa yokufikeleleka.
+
+### Ishiti sekhibhodi {#keyboard-cheat-sheet}
+
+| Amaqhosha         | Isenzo                                      |
+| ----------------- | ------------------------------------------- |
+| Y / J             | Qinisekisa Ewe                              |
+| N / Esc           | Qinisekisa Hayi                             |
+| Enter             | Sebenzisa iqhosha eligxininisiweyo          |
+| Tab / Shift+Tab   | Shukumisa ugxininiso phambili/umva          |
+| Amaqhosha eentolo | Shukumisa ugxininiso phakathi kwamaqhosha   |
+| Default answer    | Iseta ugxininiso lokuqala (Ewe okanye Hayi) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Izithintelo {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Ukuthumela phambili akuguqulwa sesi songezelelo (i-Reply ne-Reply all zixhaswa).
+- Iincamatheliso ezinkulu kakhulu zinokuthotyelwa kwimida yeThunderbird okanye yomnikezeli.
+  - Isongezelelo asahluli okanye sicinezele iifayile; sithembele kulawulo lukanamathiselo oluqhelekileyo lweThunderbird.
+- Imiyalezo efihlakeleyo: amacandelo e-S/MIME akhutshwa ngenjongo.
 
 ---
 
-See also
+## Kutheni izincamatheliso zingasongezwa {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Imifanekiso yangaphakathi ayongezwa njengooncamathiselo zefayile. Xa "Include inline pictures" ivuliwe (ingeniso: ON), zifakwa emzimbeni wempendulo njengee-URI zedata endaweni yokongezwa njengooncamathiselo zefayile. Ukuba useto luvaliwe, imifanekiso yangaphakathi isuswa ngokupheleleyo. Bona [Uqwalaselo](configuration#include-inline-pictures).
+- Amacandelo osayino e-S/MIME akhutshiwe ngokuyilwa: amagama eefayile afana no `smime.p7s` kunye neentlobo ze-MIME ezifana no `application/pkcs7-signature` okanye `application/pkcs7-mime` ayatshiywa.
+- Iipateni zoluhlu olumnyama zinokuhluza abakhethwayo: bona [Uqwalaselo](configuration#blacklist-glob-patterns); ukuthelekisa akunamsebenzi kubukhulu boonobumba kwaye kusekwe kuphela kwigama lefayile.
+- Amagama eefayile aphindaphindiweyo awasongezwa kwakhona: ukuba yokuqulunqa sele iqulethe ifayile enegama elifanayo elilungelelanisiweyo, iyatshiywa.
+- Amacandelo angeyofayile okanye alahlekwe ngamamagama eefayile: kuphela amacandelo afana neefayile anamagama eefayile anokusetyenziswa athathelwa ingqalelo ukongezwa.
+
+---
+
+Bona kwakunye
+
+- [Uqwalaselo](configuration)

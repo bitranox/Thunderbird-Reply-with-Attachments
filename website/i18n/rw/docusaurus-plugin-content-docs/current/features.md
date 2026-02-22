@@ -4,31 +4,39 @@ title: 'Ibiranga'
 sidebar_label: 'Ibiranga'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Ibiranga {#features}
 
-## How It Works {#how-it-works}
+- Yiyomekera byikora dosiye z'ubutumwa bw'umwimerere iyo usubiza.
+- Imikorere ishobora guhindurwa: inyomeko zishobora
+  - kongerwa byikora, cyangwa
+  - kongerwa ari uko byemejwe gusa (ikiganiro gitoya cyorohereza kugerwaho). Muri Options
+    ushobora gutuma kubanza kwemeza bikora no guhitamo igisubizo mburabuzi (Yego/Oya).
+- Urutonde rwo gukumira (blacklist) rw'amazina ya dosiye (glob patterns) rubuza dosiye zimwe na zimwe kwiyomekwa byikora. Ingero: `*intern*`, `*secret*`, `*passwor*`.
+  Kuhuza ntibashingira ku nyuguti nkuru/nto (case‑insensitive) kandi bareba izina rya dosiye gusa; tanga icyitegererezo kimwe
+  ku murongo muri Options.
+- Iburira rya blacklist (ryihitamo, rikora mburabuzi): iyo dosiye zivanweho n'urwo rutonde,
+  idirishya rito (modal) ryerekana dosiye n'icyitegererezo(ibyitegererezo) bihuye. Rishyigikira Dark‑mode kandi
+  rigerwaho n'umwandikisho (Enter/Esc gufunga).
+- Rikorana na Reply na Reply all. Forward ntihindurwa n'iyi nyongera (add‑on).
+- Yongeraho inyomeko z'umwimerere n'iyo waba wiyomekeyeho ikindi; irinda gusubiramo (duplicates) hashingiwe ku izina rya dosiye.
+- Ikirinda gusubiramo kuri buri tabu kibuza kongeramo kabiri muri tabo imwe yo kwandika (compose).
+- Isimbuka impamyabushobozi za S/MIME mburabuzi kugira ngo hirindwe inyomeko zidakenewe.
+- Ishyiramo amafoto y’imbere mu mwandiko (mburabuzi: ON). Amashusho ashyizwe imbere (embedded) asubizwa mu mubiri w’igisubizo
+  nk’amasano ya base64 data URIs, bigakomeza imiterere y’imbere y’umwimerere. Bihagarike muri Options kugira ngo
+  usimbuke burundu amashusho y’imbere.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Uko Bikora {#how-it-works}
+
+- Iyo usubije, iyi nyongera (add‑on) ishyira ku rutonde inyomeko z’umwimerere.
+- Ikuramo S/MIME signatures mu nyomeko za dosiye; amashusho y’imbere (inline) asubizwa mu mubiri w’ubutumwa (keretse bihagaritswe).
+- Ku bushake isaba kwemeza (yorohereza gukoresha umwandikisho).
+- Yongeraho dosiye ziboneye mu nyandiko yawe, ikirinda gusubiramo hashingiwe ku izina rya dosiye.
+- Reba “Impamvu inyomeko zishobora kutongerwa” muri Usage ku bihe by’imbibi (edge cases).
+
+Ubusobanuro ku ibanga: Ibitunganywa byose bikorerwa mu buryo bwa lokale muri Thunderbird. Iyi nyongera (add‑on) nta busabe bwo ku muyoboro w'Internet bwa background ikora.
+
+---

@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'လက္каွေ့များ'
-sidebar_label: 'လက္каွေ့များ'
+title: 'အင်္ဂါရပ်များ'
+sidebar_label: 'အင်္ဂါရပ်များ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## အင်္ဂါရပ်များ {#features}
 
-## How It Works {#how-it-works}
+- ပြန်စာရေးသည့်အခါ မူရင်း အီးမေးလ်မှ ပူးတွဲဖိုင်များကို အလိုအလျှောက် ထည့်ပေးသည်။
+- ပြင်ဆင်နိုင်သော အပြုအမူ: ပူးတွဲဖိုင်များကို
+  - အလိုအလျှောက် ထည့်နိုင်သည်၊ သို့မဟုတ်
+  - အတည်ပြုချက်ရပြီးနောက်မှသာ ထည့်နိုင်သည် (အသေးစား၊ လက်လှမ်းမီ အသုံးပြုနိုင်သော dialog)။ Options တွင် သင်
+    အတည်ပြုချက်ကို ဖွင့်နိုင်ပြီး မူလကြိုတင် ပြင်ဆင်ထားသော အဖြေ (Yes/No) ကို ရွေးနိုင်သည်။
+- ဖိုင်နာမည်များအတွက် blacklist (glob patterns) သည် ချို့သတ်ထားသည့် ဖိုင်များကို
+  အလိုအလျှောက် ပူးတွဲမထည့်မိရန် ကာကွယ်ပေးသည်။ ဥပမာများ — `*intern*`, `*secret*`, `*passwor*`.
+  ကိုက်ညီမှုစစ်ဆေးခြင်းသည် စာလုံးအကြီး/အသေး ခွဲခြားမထားဘဲ ဖိုင်နာမည်သာ စစ်ဆေးပါသည်; Options တွင် တစ်ကြောင်းလျှင်
+  pattern တစ်ခုပဲ ထည့်ပေးပါ။
+- Blacklist သတိပေးချက် (ရွေးချယ်စရာ၊ ပုံမှန်အားဖြင့် ဖွင့်ထား): သင့် blacklist ကြောင့် ဖိုင်များကို
+  ထည့်မပါဘဲ ချန်ထားသည့်အခါ၊ အသေးစား modal တစ်ခုတွင် ဖိုင်နှင့် ကိုက်ညီသော pattern(များ) ကို စာရင်းပြုစုပြသသည်။ Dark‑mode
+  အ دوို့ပြီး ကီးဘုတ်ဖြင့် အသုံးပြုနိုင်သည် (ပိတ်ရန် Enter/Esc)။
+- Reply နှင့် Reply all တွင် အလုပ်လုပ်သည်။ Forward ကို ဤ add-on မှ မပြောင်းလဲပါ။
+- သင်က မိမိဖိုင်တစ်ခုခုကို ပူးတွဲ ထည့်ပြီးသား ဖြစ်သော်လည်း မူရင်းများကို ထည့်ပေးပြီး၊ ဖိုင်နာမည်အလိုက် ပုံတူထပ်ဖြစ်မှုကို ရှောင်ရှားသည်။
+- တပ်ဘ်တိုင်းအလိုက် duplicate guard ကြောင့် တူညီသော compose တပ်ဘ်တစ်ခုပေါ်တွင် နှစ်ကြိမ် ထည့်မိခြင်းကို တားဆီးနိုင်သည်။
+- မလိုအပ်သော ပူးတွဲများကို ရှောင်ရှားရန် ပုံမှန်အားဖြင့် S/MIME လက်မှတ်များကို ကျော်သွားသည်။
+- Inline ပုံများကို ထည့်ပါ (ပုံမှန်: ON)။ Embedded ပုံများကို တိုက်ရိုက်
+  reply body အတွင်း base64 data URIs အဖြစ် ပြန်ထားပေး၍ မူရင်း inline အပြင်အဆင်ကို ထိန်းသိမ်းပေးသည်။ Inline ပုံများကို မထည့်ချင်ပါက
+  Options တွင် ပိတ်နိုင်သည်။
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## အလုပ်လုပ်ပုံ {#how-it-works}
+
+- ပြန်စာရေးသည့်အခါ၊ add-on သည် မူရင်း ပူးတွဲဖိုင်များကို စာရင်းပြုစုပေးသည်။
+- ဖိုင်ပူးတွဲများမှ S/MIME လက်မှတ်များကို စစ်ထုတ်ဖယ်ရှားသည်; inline ပုံများကို (မပိတ်ထားလျင်) body အတွင်း ပြန်ထားပေးသည်။
+- လိုအပ်သလို အတည်ပြုရန် မေးမြန်းသည် (ကီးဘုတ်အသင်းတင်း မရှိဘဲ လွယ်ကူစွာ အသုံးပြုနိုင်သည်)။
+- လွှတ်ပို့ရန် ရွေးချယ်ရမည့် ဖိုင်များကို သင့် compose ထဲသို့ ထည့်ပေးပြီး၊ ဖိုင်နာမည်အလိုက် ပုံတူထပ်ဖြစ်မှုကို ရှောင်ရှားသည်။
+- အထူးအခြေအနေများအတွက် Usage ထဲရှိ “Why attachments might not be added” ကို ကြည့်ပါ။
+
+Privacy note: အားလုံးသော လုပ်ဆောင်မှုများသည် Thunderbird အတွင်း ဒေသတွင်းအဖြစ်သာ ဖြစ်ပေါ်သည်။ ဤ add-on သည် နောက်ခံကွန်ယက် တောင်းဆိုချက်များကို မပြုလုပ်ပါ။
+
+---

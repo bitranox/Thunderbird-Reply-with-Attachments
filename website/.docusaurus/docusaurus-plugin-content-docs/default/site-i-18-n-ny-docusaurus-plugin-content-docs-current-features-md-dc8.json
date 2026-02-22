@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Zinthu Zozungulira",
-  "description": "Features",
+  "title": "Mawonekedwe",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Zinthu Zozungulira",
-    "sidebar_label": "Zinthu Zozungulira"
+    "title": "Mawonekedwe",
+    "sidebar_label": "Mawonekedwe"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Kus започи",
+    "title": "Kuyamba mwamsanga",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/quickstart"
   }
 }

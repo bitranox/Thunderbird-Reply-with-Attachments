@@ -1,97 +1,100 @@
 ---
 id: usage
-title: 'Использование'
-sidebar_label: 'Использование'
+title: 'Истифода'
+sidebar_label: 'Истифода'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Истифода {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Ҳангоми ҷавоб, илова аслҳоро худкор илова мекунад — ё аввал мепурсад, агар дар Танзимот фаъол бошад.
+- Такрориҳо аз рӯи номи файл бартараф мешаванд; қисмҳои S/MIME ҳамеша гузаронда мешаванд. Тасвирҳои дарунхаттӣ ба таври пешфарз дар матни ҷавоб барқарор карда мешаванд (хомӯш кардан тавассути "Ҳамроҳ кардани тасвирҳои дарунхаттӣ" дар Танзимот).
+- Замимаҳои дар рӯйхати сиёҳ низ гузаронда мешаванд (намунаҳои glob, ки ба ҳарфҳо ҳассос нестанд, бо номҳои файл мувофиқат мекунанд, на бо роҳҳо). Нигаред [Танзимот](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Ҳангоми ҷавоб чӣ рӯй медиҳад {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Ҷавобро муайян мекунад → замимаҳои аслӣ рӯйхат мешавад → S/MIME + дарунхаттиро филтр мекунад → тасдиқи ихтиёрӣ → файлҳои мувофиқ илова мешаванд (такрориҳо гузаронда мешаванд) → тасвирҳои дарунхаттӣ дар матн барқарор мешаванд.
 
----
+Гузариши қатъӣ бар зидди мулоим: Илова аввал қисмҳои S/MIME ва дарунхаттиро аз замимаҳои файлӣ хориҷ мекунад. Агар ҳеҷ чиз мувофиқ нашавад, гузариши мулоим иҷро мешавад, ки ҳамоно S/MIME/дарунхаттиро хориҷ мекунад, вале ҳолатҳоро бештар таҳаммул мекунад (нигаред ба Тафсилоти Код). Тасвирҳои дарунхаттӣ ҳеҷ гоҳ ҳамчун замимаи файлӣ илова намешаванд; баръакс, вақте "Ҳамроҳ кардани тасвирҳои дарунхаттӣ" фаъол аст (пешфарз), онҳо бевосита дар матни ҷавоб ҳамчун URI-и додаҳои base64 ҷой дода мешаванд.
 
-## Behavior Details {#behavior-details}
+| Навъи қисм                                               |                        Гузариши қатъӣ |                       Гузариши мулоим |
+| -------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
+| Файли имзои S/MIME `smime.p7s`                           |                               Истисно |                               Истисно |
+| Навъҳои MIME-и S/MIME (`application/pkcs7-*`)            |                               Истисно |                               Истисно |
+| Тасвири дарунхаттӣ бо Content‑ID истинодшуда (`image/*`) | Истисно (дар матн барқарор мешавад\*) | Истисно (дар матн барқарор мешавад\*) |
+| Почтаи замимашуда (`message/rfc822`) бо номи файл        |                       Илова намешавад |                Мумкин аст илова шавад |
+| Замимаи муқаррарии файл бо номи файл                     |                Мумкин аст илова шавад |                Мумкин аст илова шавад |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Вақте "Ҳамроҳ кардани тасвирҳои дарунхаттӣ" фаъол аст (пешфарз: ON), тасвирҳои дарунхаттӣ ба ҷои илова шудан ҳамчун замимаи файлӣ, дар матни ҷавоб ҳамчун URI‑ҳои додаҳои base64 ҷой дода мешаванд. Нигаред [Танзимот](configuration#include-inline-pictures).
+
+Мисол: Баъзе замимаҳо метавонанд баъзе сарлавҳаҳоро надошта бошанд, аммо ҳамоно файлҳои муқаррарӣ бошанд (на дарунхаттӣ/S/MIME). Агар гузариши қатъӣ ҳеҷ чиз наёбад, гузариши мулоим метавонад онҳоро қабул карда, замима намояд.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Пайванди салиб {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Форвард тибқи тарҳ иваз карда намешавад (нигаред ба Маҳдудиятҳо дар поён).
+- Барои сабабҳое, ки шояд замима илова нашавад, нигаред “Чаро замимаҳо шояд илова нашаванд”.
 
 ---
 
-## Limitations {#limitations}
+## Тафсилоти рафтор {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Пешгирии такрор:** Илова ҷадвали тартиб додани паёмро бо истифода аз арзиши ҷаласаи ҳар‑ҷадвалӣ ва муҳофизи дарҳофизагӣ ҳамчун коркардшуда қайд мекунад. Аслҳоро ду бор илова намекунад.
+- Бастану бозкушоии равзанаи тартибдиҳӣ ҳамчун ҷадвали нав ҳисобида мешавад (яъне кӯшиши нав иҷозат дода мешавад).
+- **Риояи замимаҳои мавҷуда:** Агар дар тартибдиҳӣ аллакай замимаҳо мавҷуд бошанд, аслҳо ҳамоно як бор илова мешаванд, номҳои файли аллакай мавҷудбударо гузаронда.
+- **Исключҳо:** Артефактҳои S/MIME ва тасвирҳои дарунхаттӣ аз замимаҳои файлӣ хориҷ карда мешаванд. Агар дар гузариши аввал ҳеҷ чиз мувофиқ нашавад, бозгашти мулоим қисмҳои ғайри S/MIME-ро дубора месанҷад. Тасвирҳои дарунхаттӣ ҷудогона коркард мешаванд: онҳо дар матни ҷавоб ҳамчун URI‑ҳои дода ҷой дода мешаванд (ҳангоми фаъол будан).
+  - **Номҳои файлҳо:** `smime.p7s`
+  - **Навъҳои MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Тасвирҳои дарунхаттӣ:** ҳар гуна қисми `image/*`, ки бо Content‑ID истинод шудааст — аз замимаҳои файлӣ истисно, вале ҳангоми фаъол будани "Ҳамроҳ кардани тасвирҳои дарунхаттӣ" дар матни ҷавоб ҷой дода мешаванд
+  - **Почтаҳои замимашуда (`message/rfc822`):** агар номи файл дошта бошанд, ҳамчун замимаҳои муқаррарӣ баррасӣ мешаванд; метавонанд илова шаванд (бо назардошти санҷиши такрорӣ ва рӯйхати сиёҳ).
+- **Огоҳиҳои рӯйхати сиёҳ (агар фаъол бошад):** Вақте номзадҳо аз ҷониби рӯйхати сиёҳи шумо хориҷ карда мешаванд,
+  илова равзанаи хурди модалиро нишон медиҳад, ки файлҳои зарардида ва намуна(ҳо)и мувофиқро
+  рӯйхат мекунад. Ин огоҳӣ ҳамон вақт низ намоиш дода мешавад, ки ҳеҷ замима илова намешавад, зеро ҳама чиз хориҷ шуд.
 
 ---
 
-See also
+## Миёнбурҳои клавиатура {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Диалоги тасдиқ: Y/J = Ҳа, N/Esc = Не; Tab/Shift+Tab ва тугмаҳои тирча фокусро давр мезананд.
+  - “Ҷавоби пешфарз” дар [Танзимот](configuration#confirmation) тугмаи аввало дар фокусбударо танзим мекунад.
+  - Enter тугмаи дар фокусбударо фаъол мекунад. Tab/Shift+Tab ва тирчаҳо барои дастрасӣ фокусро мекӯчонанд.
+
+### Рӯйхати кӯтоҳи клавиатура {#keyboard-cheat-sheet}
+
+| Калидҳо         | Амал                               |
+| --------------- | ---------------------------------- |
+| Y / J           | Тасдиқ — Ҳа                        |
+| N / Esc         | Тасдиқ — Не                        |
+| Enter           | Фаъол кардани тугмаи дар фокус     |
+| Tab / Shift+Tab | Кӯчонидани фокус ба пеш/ақиб       |
+| Тирчаҳо         | Кӯчонидани фокус байни тугмаҳо     |
+| Ҷавоби пешфарз  | Гузоштани фокуси ибтидоӣ (Ҳа ё Не) |
+
+---
+
+## Маҳдудиятҳо {#limitations}
+
+- Форвард аз ҷониби ин илова тағйир дода намешавад (Ҷавоб ва Ҷавоб ба ҳама дастгирӣ мешаванд).
+- Замимаҳои хеле калон метавонанд ба маҳдудиятҳои Thunderbird ё провайдер вобаста бошанд.
+  - Илова файлҳоро на ба қисмҳо ҷудо мекунад ва на фишурда месозад; он ба коркарди муқаррарии замимаҳои Thunderbird такя мекунад.
+- Паёмҳои рамзгузоришуда: қисмҳои S/MIME қасдан истисно карда мешаванд.
+
+---
+
+## Чаро замимаҳо шояд илова нашаванд {#why-attachments-might-not-be-added}
+
+- Тасвирҳои дарунхаттӣ ҳамчун замимаи файлӣ илова намешаванд. Вақте "Ҳамроҳ кардани тасвирҳои дарунхаттӣ" фаъол аст (пешфарз), онҳо ба ҷои ин дар матни ҷавоб ҳамчун URI‑ҳои додаҳои base64 ҷой дода мешаванд. Агар танзим ғайрифаъол бошад, тасвирҳои дарунхаттӣ пурра дур карда мешаванд. Нигаред [Танзимот](configuration#include-inline-pictures).
+- Қисмҳои имзои S/MIME бар асоси тарҳ истисно мешаванд: номҳои файл монанди `smime.p7s` ва навъҳои MIME ба мисли `application/pkcs7-signature` ё `application/pkcs7-mime` гузаронда мешаванд.
+- Намунаҳои рӯйхати сиёҳ метавонанд номзадҳоро филтр кунанд: нигаред [Танзимот](configuration#blacklist-glob-patterns); мувофиқат ба регистр ҳассос нест ва танҳо аз рӯи номи файл аст.
+- Номҳои файлии такрорӣ бозилова карда намешаванд: агар дар тартибдиҳӣ аллакай файл бо ҳамон номи нормализатсияшуда мавҷуд бошад, он гузаронда мешавад.
+- Қисмҳои ғайрифайлӣ ё номҳои файлҳои нопурра: танҳо қисмҳои монанд ба файл бо номҳои файлии муносиб барои илова баррасӣ мешаванд.
+
+---
+
+Ҳамчунин нигаред
+
+- [Танзимот](configuration)

@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Ukuthuthukiswa",
-  "description": "Development Guide",
+  "title": "Uphuhliso",
+  "description": "---",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Ukuthuthukiswa",
-    "sidebar_label": "Ukuthuthukiswa"
+    "title": "Uphuhliso",
+    "sidebar_label": "Uphuhliso"
   },
   "sidebar": "docs",
   "previous": {

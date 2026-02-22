@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Բարգավաճում'
-sidebar_label: 'Բարգավաճում'
+title: 'Զարգացում'
+sidebar_label: 'Զարգացում'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Զարգացման ուղեցույց {#development-guide}
+
+:::note Խմբագրեք միայն անգլերենը; թարգմանությունները տարածվում են
+Թարմացրեք փաստաթղթավորումը միայն `website/docs` (անգլերեն) ծառի տակ։ `website/i18n/<locale>/…` տակ գտնվող թարգմանությունները գեներացվում են և չպետք է ձեռքով խմբագրվեն։ Օգտագործեք թարգմանության առաջադրանքները (օր.՝ `make translate_web_docs_batch`)՝ տեղայնացված բովանդակությունը թարմացնելու համար։
 :::
 
-### Prerequisites {#prerequisites}
+### Նախապայմաններ {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ և npm (թեստավորված է Node 22-ով)
+- Thunderbird 128 ESR կամ նոր (ձեռնարկային թեստավորման համար)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Նախագծի կառուցվածք (բարձր մակարդակ) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Արմատ (Root). փաթեթավորման սկրիպտ `distribution_zip_packer.sh`, փաստաթղթեր, սքրինշոթներ
+- `sources/`: հավելման հիմնական կոդը (background, options/popup UI, manifests, icons)
+- `tests/`: Vitest փաթեթ
+- `website/`: Docusaurus փաստաթղթեր (i18n `website/i18n/de/...` տակ)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Տեղադրում և գործիքներ {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Տեղադրել արմատային կախյալությունները. `npm ci`
+- Փաստաթղթեր (ըստ ցանկության). `cd website && npm ci`
+- Հայտնաբերել թիրախները. `make help`
+
+---
+
+### Կենդանի զարգացում (web‑ext run) {#live-dev-web-ext}
+
+- Արագ ցիկլ Firefox Desktop-ում (միայն UI smoke-թեստեր).
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Գործարկել Thunderbird-ում (նախընտրելի է MailExtensions-ի համար).
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
-- macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
-- Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Խորհուրդներ.
+- Պահեք Thunderbird-ի Error Console-ը բաց (Tools → Developer Tools → Error Console)։
+- MV3 event էջերը անգործության դեպքում կանգնեցվում են. կոդի փոփոխություններից հետո վերաբեռնեք հավելումը կամ թողեք web‑ext-ը՝ ինքնաբար վերաբեռնելու։
+- Որոշ միայն-Firefox վարքեր տարբերվում են. միշտ հաստատեք Thunderbird-ում՝ API համարժեքության համար։
+- Thunderbird-ի բինար ուղիներ (օրինակներ).
+- Linux. `thunderbird` (օր.՝ `/usr/bin/thunderbird`)
+- macOS. `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
+- Windows. `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
+- Պրոֆիլի մեկուսացում. Օգտագործեք առանձին Thunderbird պրոֆիլ զարգացումների համար՝ ձեր օրական միջավայրին չազդելու համար։
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make թիրախներ (այբբենական) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile-ը ստանդարտացնում է ընդհանուր զարգացման հոսքերը։ Գործարկեք `make help` ցանկացած պահի՝ յուրաքանչյուր թիրախի մեկ տողի ամփոփագրի համար։
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Խորհուրդ. `make` առանց թիրախի գործարկելը բացում է պարզ Whiptail մենյու՝ թիրախ ընտրելու համար։
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Թիրախ                                                    | Մի տողի նկարագրություն                                                                               |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Հեռացնել տեղային build/preview արտեֆակտները (tmp/, web-local-preview/, website/build/)։              |
+| [`commit`](#mt-commit)                                   | Ֆորմատավորել, գործարկել թեստեր (ներառյալ i18n), թարմացնել changelog-ը, commit և push անել։           |
+| [`eslint`](#mt-eslint)                                   | Գործարկել ESLint-ը flat config-ով (`npm run -s lint:eslint`)։                                        |
+| [`help`](#mt-help)                                       | Ցուցադրել բոլոր թիրախները մեկ տողի փաստաթղթերով (տեսակավորված)։                                      |
+| [`lint`](#mt-lint)                                       | web‑ext lint `sources/` վրա (ժամանակավոր manifest; անտեսում է ZIP-երը; ոչ մահացու)։                  |
+| [`menu`](#mt-menu)                                       | Ինտերակտիվ մենյու՝ թիրախ և ըստ ցանկության արգումենտներ ընտրելու համար։                               |
+| [`pack`](#mt-pack)                                       | Կառուցել ATN և LOCAL ZIP-եր (գործարկում է linter; կանչում է packer սկրիպտը)։                         |
+| [`prettier`](#mt-prettier)                               | Ֆորմատավորել պահոցը տեղում (գրում է փոփոխությունները)։                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier ստուգման ռեժիմում (առանց գրելու). ձախողում է, եթե պահանջվում է վերաֆորմատավորում։           |
+| [`prettier_write`](#mt-prettier_write)                   | Այլանուն `prettier`-ի համար։                                                                         |
+| [`test`](#mt-test)                                       | Prettier (գրել), ESLint, ապա Vitest (ծածկույթ՝ եթե կարգավորված է)։                                   |
+| [`test_i18n`](#mt-test_i18n)                             | Միայն i18n թեստեր. հավելման placeholders/համապատասխանություն + կայքի համապատասխանություն։            |
+| [`translate_app`](#mt-translation-app)                   | Այլանուն `translation_app`-ի համար։                                                                  |
+| [`translation_app`](#mt-translation-app)                 | Թարգմանել հավելման UI տողերը `sources/_locales/en/messages.json`-ից։                                 |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Թարգմանել կայքի փաստաթղթերը OpenAI Batch API-ով (նախընտրելի)։                                        |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Թարգմանել կայքի փաստաթղթերը համաժամանակյա (ժառանգական, ոչ-batch)։                                    |
+| [`translate_web_index`](#mt-translation_web_index)       | Այլանուն `translation_web_index`-ի համար։                                                            |
+| [`translation_web_index`](#mt-translation_web_index)     | Թարգմանել գլխավոր էջի/վերնախագծի/տողատակի UI (`website/i18n/en/code.json → .../<lang>/code.json`)։   |
+| [`web_build`](#mt-web_build)                             | Կառուցել փաստաթղթերը `website/build` (աջակցում է `--locales` / `BUILD_LOCALES`)։                     |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Անցանց-անվտանգ հղումների ստուգում (անտեսում է հեռավոր HTTP[S])։                                      |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Տեղային gh‑pages նախադիտում; ավտոմատ սպասարկում 8080–8090; ըստ ցանկության թեստեր/հղումների ստուգում։ |
+| [`web_push_github`](#mt-web_push_github)                 | Push անել `website/build`-ը `gh-pages` ճյուղ։                                                        |
 
-Syntax for options
+Սինտաքս ընտրանքների համար
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Օգտագործեք `make <command> OPTS="…"`՝ ընտրանքներ փոխանցելու համար (խորհուրդ է տրվում չակերտները)։ Ստորև բերված յուրաքանչյուր թիրախը ցույց է տալիս օգտագործման օրինակ։
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Լոկալների հավաքման խորհուրդներ {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Կառուցել լոկալների ենթաբազմությունը. կարգավորեք `BUILD_LOCALES="en de"` կամ փոխանցեք `OPTS="--locales en,de"` web թիրախներին։
+- Նախադիտել կոնկրետ locale. `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`։
 
 ---
 
-### Test {#test}
+### Կառուցել և փաթեթավորել {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Կառուցել ZIP-եր. `make pack`
+- Ստեղծում է ATN և LOCAL ZIP-եր պահոցի արմատում (չխմբագրել արտեֆակտները ձեռքով)
+- Խորհուրդ. փաթեթավորելուց առաջ թարմացրեք տարբերակը թե՛ `sources/manifest_ATN.json`-ում, թե՛ `sources/manifest_LOCAL.json`-ում
+- Ձեռնարկային տեղադրում (dev). Thunderbird → Tools → Add‑ons and Themes → ատամնանիվ → Install Add‑on From File… → ընտրեք կառուցված ZIP-ը
+
+---
+
+### Թեստ {#test}
+
+- Լիարժեք փաթեթ. `make test` (Vitest)
+- Ծածկույթ (ըստ ցանկության).
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Գործարկեք `make test`; բացեք `coverage/index.html`՝ HTML հաշվետվության համար
+- Միայն i18n. `make test_i18n` (UI բանալիներ/placeholders/վերնագրեր + կայք՝ յուրաքանչյուր locale/յուրաքանչյուր փաստաթուղթ համապատասխանություն id/title/sidebar_label ստուգումներով)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Վրիպազերծում և լոգեր {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Error Console. Tools → Developer Tools → Error Console
+- Փոխարկել մանրամասն լոգերը գործարկման ընթացքում.
+- Միացնել. `messenger.storage.local.set({ debug: true })`
+- Անջատել. `messenger.storage.local.set({ debug: false })`
+- Լոգերը երևում են պատասխանի կազմման/ուղարկման ընթացքում
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Փաստաթղթեր (կայք) {#docs-website}
+
+- Զարգացման սերվեր. `cd website && npm run start`
+- Կառուցել ստատիկ կայք. `cd website && npm run build`
+- Make-ի համարժեքներ (այբբենական). `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Օգտագործման օրինակներ.
+- Միայն EN, բաց թողնել թեստերը/հղումների ստուգումը, առանց push. `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Բոլոր locale-ները, թեստերով/հղումների ստուգմամբ, ապա push. `make web_build_local_preview && make web_push_github`
+- Հրատարակելուց առաջ գործարկեք անցանց-անվտանգ հղումների ստուգումը. `make web_build_linkcheck`։
+- i18n. Անգլերենը գտնվում է `website/docs/*.md`-ում; գերմաներեն թարգմանությունները՝ `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`-ում
+- Որոնում. Եթե Algolia DocSearch շրջ. փոփոխականները կարգավորված են CI-ում (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), կայքը օգտագործում է Algolia որոնում, հակառակ դեպքում՝ տեղային որոնում։ Գլխավոր էջում սեղմեք `/` կամ `Ctrl+K`՝ որոնման դաշտը բացելու համար։
+
+---
+
+#### Նվիրատվության վերաուղղման երթուղի {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Երթուղի. `/donate` (և `/<locale>/donate`)
+- Վարքագիծ.
+- Եթե ընթացիկ երթուղին ունի locale (օր.՝ `/de/donate`), օգտագործել այն
+- Հակառակ դեպքում ընտրել լավագույն համընկնումը `navigator.languages`-ից համեմատած կարգավորված լոկալների հետ; վերադարձ՝ լռելյան locale
+- Վերաուղղում.
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- մնացածը → `/<locale>/docs/donation`
+- Օգտագործում է `useBaseUrl`՝ baseUrl-ի ճիշտ մշակման համար
+- Ներառում է meta refresh + `noscript` հղում՝ որպես վերապահ միջոց
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Նախադիտման խորհուրդներ {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Կանգնեցրեք Node նախադիտումը մաքուր. բացեք `http://localhost:<port>/__stop` (տպվում է `Local server started`-ից հետո)։
+- Եթե պատկերները չեն բեռնվում MDX/JSX-ում, օգտագործեք `useBaseUrl('/img/...')`՝ կայքի `baseUrl`-ը պահպանելու համար։
+- Նախադիտումը սկսվում է առաջինը, հետո գործարկվում է հղումների ստուգումը և դա արգելափակող չէ (կոտրված արտաքին հղումները չեն կանգնեցնի նախադիտումը)։
+- Նախադիտման URL-ի օրինակ. `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (տպվում է “Local server started”-ից հետո)։
+- Արտաքին հղումներ հղումների ստուգման ժամանակ. Որոշ արտաքին կայքեր (օր.՝ addons.thunderbird.net) արգելափակում են ավտոմատ սկաներներին և կարող են ցույց տալ 403 հղումների ստուգման ժամանակ։ Նախադիտումը միևնույն է կմեկնարկի. սա անվտանգ է անտեսելու համար։
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Թարգմանել կայքը {#translate-website}
 
-What you can translate
+Ինչ կարող եք թարգմանել
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Միայն կայքի UI. գլխավոր էջ, վերին նավարկում (navbar), տողատակ (footer) և այլ UI տողեր։ Փաստաթղթերի բովանդակությունը առայժմ մնում է միայն անգլերեն։
 
-Where to edit
+Որտեղ խմբագրել
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Խմբագրեք `website/i18n/<locale>/code.json` (որպես հղում օգտագործեք `en`)։ Պահեք `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` նման placeholders-ը անփոփոխ։
 
-Generate or refresh files
+Ստեղծել կամ թարմացնել ֆայլերը
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Ստեղծել բացակայող stub-երը բոլոր լոկալների համար. `npm --prefix website run i18n:stubs`
+- Վերագրել stub-երը անգլերենից (նոր տողեր ավելացնելուց հետո). `npm --prefix website run i18n:stubs:force`
+- Այլընտրանք մեկ լոկալի համար. `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Թարգմանել գլխավոր էջի/navbar/footer UI տողերը (OpenAI)
 
-- Set credentials once (shell or .env):
+- Սահմանել հավատարմագրերը մեկ անգամ (shell կամ .env).
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Ըստ ցանկության. `export OPENAI_MODEL=gpt-4o-mini`
+- Մեկանգամյա (բոլոր լոկալները, բաց թողնել en). `make translate_web_index`
+- Սահմանափակել որոշակի լոկալներով. `make translate_web_index OPTS="--locales de,fr"`
+- Վերագրել առկա արժեքները. `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Վավերացում և կրկնափորձեր
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Թարգմանության սկրիպտը վավերացնում է JSON-ի կառուցվածքը, պահպանում է ոլորակների մեջ գտնվող placeholders-ը և ապահովում, որ URL-երը չեն փոխվում։
+- Վավերացման ձախողման դեպքում այն կրկին փորձում է՝ հետադարձ կապով մինչև 2 անգամ, նախքան առկա արժեքները պահելը։
 
-Preview your locale
+Նախադիտել ձեր locale-ը
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Զարգացման սերվեր. `npm --prefix website run start`
+- Այցելեք `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Ներկայացում
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Բացեք PR խմբագրված `code.json` ֆայլ(եր)ով։ Պահեք փոփոխությունները նպատակային և հնարավորության դեպքում ընդգրկեք արագ սքրինշոթ։
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Անվտանգության և կարգաբերման խորհուրդներ {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Մի կատարեք commit `sources/manifest.json` (կառուցման ժամանակ ստեղծվում է ժամանակավորապես)
+- Պահեք `browser_specific_settings.gecko.id` կայուն՝ թարմացման ալիքը պահպանելու համար
+
+---
+
+### Կարգավորումների պահպանություն {#settings-persistence}
+
+- Պահեստավորում. Բոլոր օգտատիրոջ կարգավորումները պահվում են `storage.local`-ում և պահպանվում են հավելման թարմացումների ընթացքում։
+- Տեղադրում. Լռելյայնները կիրառվում են միայն այն դեպքում, երբ բանալին խիստ բացակայում է (undefined)։
+- Թարմացում. Միգրացիան լրացնում է միայն բացակայող բանալիները. առկա արժեքները երբեք չեն վերագրվում։
+- Սքիմայի նշիչ. `settingsVersion` (ներկայում՝ `1`)։
+- Բանալիներ և լռելյայններ.
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Կոդ. տե՛ս `sources/background.js` → `initializeOrMigrateSettings()` և `SCHEMA_VERSION`։
 
-Dev workflow (adding a new setting)
+Զարգացման հոսք (նոր կարգավորում ավելացնելիս)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Բարձրացրեք `SCHEMA_VERSION`-ը `sources/background.js`-ում։
+- Ավելացրեք նոր բանալին + լռելյայնը `DEFAULTS` օբյեկտում՝ `initializeOrMigrateSettings()`-ում։
+- Օգտագործեք "only-if-undefined" կանոնը լռելյայնների սերմանման ժամանակ. մի վերագրեք առկա արժեքները։
+- Եթե կարգավորումը տեսանելի է օգտատիրոջ համար, ներառեք այն `sources/options.js`-ում և ավելացրեք տեղայնացված տողեր։
+- Ավելացրեք/կարգավորեք թեստերը (տե՛ս `tests/background.settings.migration.test.js`)։
 
-Manual testing tips
+Ձեռնարկային թեստավորման խորհուրդներ
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Կերպարանավորեք (simulate) նոր տեղադրում. մաքրեք ընդլայնման տվյալների պանակը կամ մեկնարկեք նոր պրոֆիլով։
+- Կերպարանավորեք թարմացում. `settingsVersion`-ը սահմանեք `0` `storage.local`-ում և վերաբեռնեք; հաստատեք, որ առկա արժեքները մնում են անփոփոխ, և միայն բացակայող բանալիներն են ավելացվում։
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Խնդիրների լուծում {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Համոզվեք, որ Thunderbird-ը 128 ESR կամ ավելի նոր է
+- Գործարկման խնդիրների համար օգտագործեք Error Console-ը
+- Եթե պահպանված կարգավորումները կարծես թե չեն կիրառվում ճիշտ, վերագործարկեք Thunderbird-ը և կրկին փորձեք։ (Thunderbird-ը կարող է քեշավորել վիճակը սեանսների միջև; վերագործարկումը ապահովում է, որ նոր կարգավորումները բեռնվեն)։
 
 ---
 
-### Translations
+### CI և ծածկույթ {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) գործարկում է vitest՝ ծածկույթի շեմերով (85% տողեր/ֆունկցիաներ/ճյուղեր/հայտարարություններ)։ Եթե շեմերը չեն բավարարվում, աշխատանքի գործընթացը ձախողվում է։
+- Աշխատանքային հոսքը վերբեռնում է `coverage-html` արտեֆակտ՝ HTML հաշվետվությամբ; ներբեռնեք այն run էջից (Actions → վերջին run → Artifacts)։
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Ներդրում {#contributing}
 
-Screenshots for docs
+- Տե՛ս CONTRIBUTING.md ճյուղավորման/commit/PR ուղեցույցների համար
+- Խորհուրդ. Ստեղծեք առանձին Thunderbird զարգացման պրոֆիլ թեստավորման համար, որպեսզի չազդի ձեր առօրյա պրոֆիլի վրա։
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Թարգմանություններ
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Մեծ «բոլորը → բոլորը» թարգմանական աշխատանքները կարող են լինել դանդաղ և թանկ։ Սկսեք ենթաբազմությունից (օր.՝ մի քանի փաստաթուղթ և 1–2 locale), վերանայեք արդյունքը, ապա ընդլայնեք։
+
+---
+
+- Կրկնափորձերի քաղաքականություն. թարգմանական առաջադրանքները API սխալների դեպքում կատարում են մինչև 3 կրկնափորձ՝ էքսպոնենցիալ հետհսկմամբ; տե՛ս `scripts/translate_web_docs_batch.js` և `scripts/translate_web_docs_sync.js`։
+
+Փաստաթղթերի սքրինշոթներ
+
+- Պահեք պատկերները `website/static/img/` տակ։
+- Դրանց հղվեք MD/MDX-ում `useBaseUrl('/img/<filename>')`-ի միջոցով, որպեսզի ուղիները համապատասխանեն կայքի `baseUrl`-ին։
+- `website/static/img/` տակ պատկերներ ավելացնելու կամ վերանվանելուց հետո, հաստատեք, որ բոլոր հղումները դեռ օգտագործում են `useBaseUrl('/img/…')` և արտապատկերվում են տեղային նախադիտման մեջ։
+  Ֆավիկոններ
+
+- Բազմաչափ `favicon.ico`-ը ավտոմատ գեներացվում է բոլոր build ուղիներում (Make + սկրիպտներ) `website/scripts/build-favicon.mjs`-ի միջոցով։
+- Ձեռնարկային քայլ անհրաժեշտ չէ; բավական է թարմացնել `icon-*.png`-ը։
+  Վերանայման խորհուրդ
+
+- Թարգմանված փաստաթղթերում պահեք front‑matter `id`-ը անփոփոխ; թարգմանեք միայն `title` և `sidebar_label`-ը, երբ առկա են։
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Նպատակ. հեռացնել տեղային build/preview արտեֆակտները։
+- Օգտագործում. `make clean`
+- Հեռացնում է (եթե առկա է).
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Նպատակ. ֆորմատավորել, թեստավորել, թարմացնել changelog-ը, կատարել commit և push։
+- Օգտագործում. `make commit`
+- Մանրամասն. գործարկում է Prettier (գրել), `make test`, `make test_i18n`; հավելում է changelog, երբ stage արված տարբերություններ կան; push է անում `origin/<branch>`։
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Նպատակ. գործարկել ESLint-ը flat config-ով։
+- Օգտագործում. `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Նպատակ. ցուցադրել բոլոր թիրախները մեկ տողի փաստաթղթերով։
+- Օգտագործում. `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Նպատակ. lint անել MailExtension-ը `web-ext`-ով։
+- Օգտագործում. `make lint`
+- Նշումներ. ժամանակավոր պատճենում է `sources/manifest_LOCAL.json` → `sources/manifest.json`; անտեսում է կառուցված ZIP-երը; զգուշացումները չեն խափանում pipeline-ը։
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Նպատակ. ինտերակտիվ մենյու՝ Make թիրախ և ըստ ցանկության արգումենտներ ընտրելու համար։
+- Օգտագործում. գործարկել `make` առանց արգումենտների։
+- Նշումներ. եթե `whiptail` հասանելի չէ, մենյուն անցնում է `make help`-ի։
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Նպատակ. կառուցել ATN և LOCAL ZIP-եր (`lint`-ից կախված)։
+- Օգտագործում. `make pack`
+- Խորհուրդ. փաթեթավորելուց առաջ բարձրացրեք տարբերակները երկուսում էլ՝ `sources/manifest_*.json`։
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Նպատակ. ֆորմատավորել պահոցը տեղում։
+- Օգտագործում. `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Նպատակ. ստուգել ֆորմատավորումը (առանց գրելու)։
+- Օգտագործում. `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Նպատակ. այլանուն `prettier`-ի համար։
+- Օգտագործում. `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Նպատակ. գործարկել Prettier (գրել), ESLint, ապա Vitest (ծածկույթ՝ եթե տեղադրված է)։
+- Օգտագործում. `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Նպատակ. i18n-կենտրոնացված թեստեր հավելման տողերի և կայքի փաստաթղթերի համար։
+- Օգտագործում. `make test_i18n`
+- Գործարկում է. `npm run test:i18n` և `npm run -s test:website-i18n`։
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Նպատակ. թարգմանել հավելման UI տողերը EN-ից այլ լոկալների։
+- Օգտագործում. `make translation_app OPTS="--locales all|de,fr"`
+- Նշումներ. պահպանում է բանալիների կառուցվածքն ու placeholders-ը; լոգերը՝ `translation_app.log`։ Սկրիպտի ձևը. `node scripts/translate_app.js --locales …`։
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Նպատակ. թարգմանել կայքի փաստաթղթերը `website/docs/*.md`-ից `website/i18n/<locale>/...`։
+- Նախընտրելի. `translate_web_docs_batch` (OpenAI Batch API)
+  - Օգտագործում (դրոշակներ). `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Ժառանգական դիքային պարամետրերը դեռ ընդունվում են. `OPTS="<doc|all> <lang|all>"`
+- Վարքագիծ. կառուցում է JSONL, վերբեռնում, հարցում է ամեն 30վ, ներբեռնում արդյունքները, գրում ֆայլերը։
+- Նշում. batch job-ը կարող է տևել մինչև 24 ժամ (ըստ OpenAI-ի batch պատուհանի)։ Կոնսոլը յուրաքանչյուր հարցման վրա ցուցադրում է անցած ժամանակը։
+- Շրջ. փոփոխականներ. `OPENAI_API_KEY` (պարտադիր), ըստ ցանկության `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (լռելյայն՝ 24ժ), `BATCH_POLL_INTERVAL_MS`։
+- Ժառանգական. `translate_web_docs_sync`
+  - Օգտագործում (դրոշակներ). `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Ժառանգական դիքային պարամետրերը դեռ ընդունվում են. `OPTS="<doc|all> <lang|all>"`
+- Վարքագիծ. համաժամանակյա հարցումներ յուրաքանչյուր զույգի համար (առանց batch-ի համախմբման)։
+- Նշումներ. Ինտերակտիվ հուշումներ, երբ `OPTS` բաց է թողնված։ Երկու ռեժիմներն էլ պահպանում են code բլոկները/ինլայն կոդը և պահում են front‑matter `id`-ը անփոփոխ; լոգերը՝ `translation_web_batch.log` (batch) կամ `translation_web_sync.log` (sync)։
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Նպատակ. թարգմանել կայքի UI տողերը (գլխավոր էջ, navbar, footer) `website/i18n/en/code.json`-ից բոլոր լոկալների `website/i18n/<locale>/code.json` տակ (բացառությամբ `en`)։
+- Օգտագործում. `make translate_web_index` կամ `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Պահանջներ. export `OPENAI_API_KEY` (ըստ ցանկության՝ `OPENAI_MODEL=gpt-4o-mini`)։
+- Վարքագիծ. վավերացնում է JSON կառուցվածքը, պահպանում է ոլորակներում placeholders-ը, URLs-ը պահում է անփոփոխ և վավերացման սխալների դեպքում կրկին փորձում է հետադարձ կապով։
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Նպատակ. կառուցել փաստաթղթային կայքը `website/build`։
+- Օգտագործում. `make web_build OPTS="--locales en|de,en|all"` (կամ սահմանել `BUILD_LOCALES="en de"`)
+- Ներքին մասեր. `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`։
+- Կախելիներ. `npm ci`-ը գործարկվում է `website/`-ում, միայն եթե `website/node_modules/@docusaurus`-ը բացակայում է։
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Նպատակ. անցանց-անվտանգ հղումների ստուգում։
+- Օգտագործում. `make web_build_linkcheck OPTS="--locales en|all"`
+- Նշումներ. կառուցում է `tmp_linkcheck_web_pages`; վերագրում է GH Pages `baseUrl` → `/`; բաց է թողնում հեռավոր HTTP(S) հղումները։
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Նպատակ. տեղային gh‑pages նախադիտում՝ ըստ ցանկության թեստերով/հղումների ստուգմամբ։
+- Օգտագործում. `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Վարքագիծ. նախ փորձում է Node նախադիտման սերվերը (`scripts/preview-server.mjs`, աջակցում է `/__stop`), fallback `python3 -m http.server`; սպասարկում է 8080–8090; PID՝ `web-local-preview/.server.pid`։
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Նպատակ. push անել `website/build`-ը `gh-pages` ճյուղ։
+- Օգտագործում. `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Խորհուրդ. սահմանեք `NPM=…`՝ փոխարինելու Makefile-ի կողմից օգտագործվող փաթեթների կառավարչին (լռելյայն՝ `npm`)։
 
 ---

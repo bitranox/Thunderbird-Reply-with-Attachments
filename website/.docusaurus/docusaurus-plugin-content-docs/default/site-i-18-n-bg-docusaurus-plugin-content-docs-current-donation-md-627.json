@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Дарение",
-  "description": "Donate",
+  "title": "Дарете",
+  "description": "---",
   "source": "@site/i18n/bg/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Дарение",
-    "sidebar_label": "Дарение"
+    "title": "Дарете",
+    "sidebar_label": "Дарете"
   },
   "sidebar": "docs",
   "previous": {

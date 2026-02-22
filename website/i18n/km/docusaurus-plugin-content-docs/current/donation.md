@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'ផ្តល់ការគួរ'
-sidebar_label: 'ផ្តល់ការគួរ'
+title: 'បរិច្ចាគ'
+sidebar_label: 'បរិច្ចាគ'
 ---
 
-## Donate
+---
+
+## បរិច្ចាគ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+ប្រសិនបើអ្នកចូលចិត្ត "Reply with Attachments" និងចង់គាំទ្រការអភិវឌ្ឍន៍របស់វា អ្នកអាចបរិច្ចាគត្រង់នេះ៖
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="បរិច្ចាគតាមរយៈ Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ឬ</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="បរិច្ចាគតាមរយៈ PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ឬ</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="ទិញកាហ្វេឲ្យខ្ញុំ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="ស្កែនដើម្បីទិញកាហ្វេឲ្យខ្ញុំ"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+សូមអរគុណ! ការគាំទ្ររបស់អ្នកជួយរក្សាភាពឆបគ្នាជាមួយការចេញផ្សាយ Thunderbird ថ្មីៗ បង្កើនភាពងាយស្រួលប្រើ និងការធ្វើតេស្ត ហើយរក្សាឯកសារណែនាំឲ្យទាន់សម័យ។
 
-Notes
+ចំណាំ
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- តំណបរិច្ចាគនឹងបើកតែពេលដែលអ្នកចុចប៉ុណ្ណោះ; ឧបករណ៍បន្ថែមមិនធ្វើសំណើបណ្ដាញនៅខាងក្រោយឡើយ។
+- ការគាំទ្រជាប្រចាំជួយការថែទាំរយៈពេលវែង និងបច្ចុប្បន្នភាពទាន់ពេលវេលា ប៉ុន្តែជាជម្រើសទាំងស្រុង។
 
 ---
 
-If the image buttons do not load, please use these links instead:
+បើប៊ូតុងរូបភាពមិនឡើង សូមប្រើតំណទាំងនេះជំនួស៖
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+ការបរិច្ចាគគឺស្រេចចិត្ត មិនមានការចាក់សោមុខងារឡើយ។
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## ភាពមើលឃើញនៃការបរិច្ចាគ (ផ្អាក ៩០ ថ្ងៃ)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+ឧបករណ៍បន្ថែមមានមុខងារផាសុខភាពមួយសម្រាប់លាក់សារបរិច្ចាគរយៈពេលខ្លី បន្ទាប់ពីអ្នកបានបរិច្ចាគ។
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- តើរកឃើញវាដូចម្តេច
+  - Options → Support section: អ្នកនឹងឃើញប៊ូតុង “I donated” និងតំបន់សេចក្ដីរំលឹកតូចមួយ។
+  - ប្រអប់ Send‑confirmation ក៏បង្ហាញប៊ូតុង Donate ដែរ; វានឹងលាក់ដោយស្វ័យប្រវត្តិ នៅពេលផ្អាកសកម្ម។
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- របៀបដំណើរការ
+  - ការចុច “I donated” នឹងលាក់ប៊ូតុងបរិច្ចាគ និងសារពាក់ព័ន្ធរយៈពេល ៩០ ថ្ងៃ។
+  - សារស្ថានភាពមួយនឹងបង្ហាញ “Hidden until YYYY‑MM‑DD” (តាមកាលបរិច្ឆេទមូលដ្ឋានរបស់អ្នក)។ ក៏មានប៊ូតុង “Show Donate again” ដើម្បីស្តារត្រឡប់ភាពមើលឃើញភ្លាមៗផងដែរ។
+  - បន្ទាប់ពី ៩០ ថ្ងៃ ប៊ូតុង Donate នឹងមើលឃើញឡើងវិញដោយស្វ័យប្រវត្តិ។
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- ឯកជនភាព និងការផ្ទុក
+  - ឧបករណ៍បន្ថែមនឹងរក្សាទុកតែត្រាពេលវេលាមួយនៅក្នុងការផ្ទុកមូលដ្ឋានរបស់ Thunderbird ដើម្បីចងចាំរយៈពេលផ្អាក។ សោ: `donateHideUntil` (milliseconds នៃ epoch)។
+  - ការកំណត់នេះមានសុពលភាពតែនៅក្នុងប្រវត្តិរូប Thunderbird របស់អ្នក (មិនសមកាលកម្មតាមមេឃទេ)។ មុខងារនេះមិនធ្វើសំណើបណ្ដាញឡើយ។
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- ការដោះស្រាយបញ្ហា
+  - បើ Donate នៅតែបង្ហាញបន្ទាប់ពីចុច “I donated” សូមរង់ចាំបន្តិច ឬបើកទំព័រ Options ម្តងទៀត; UI នឹងធ្វើបច្ចុប្បន្នភាពភ្លាមៗពេលការកំណត់ត្រូវបានរក្សាទុក។
+  - ដើម្បីកំណត់ឡើងវិញដោយដៃ សូមចុច “Show Donate again”។ អ្នកក៏អាចរង់ចាំរហូតដល់កាលបរិច្ឆេទដែលបានរាយបញ្ជីនៅក្នុងសេចក្ដីរំលឹកនោះកន្លងផុត។
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+មុខងារនេះគ្រាន់តែសម្រាប់ភាពងាយស្រួលប៉ុណ្ណោះ; វាមិនធ្លាប់ទប់ស្កាត់មុខងាររបស់ឧបករណ៍បន្ថែមទេ ហើយក៏មិនប្រមូលទិន្នន័យផ្ទាល់ខ្លួនណាមួយដែរ។
 
 ---

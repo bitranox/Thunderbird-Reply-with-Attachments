@@ -4,28 +4,30 @@ title: 'Spenden'
 sidebar_label: 'Spenden'
 ---
 
-## Donate
+---
+
+## Spenden
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Wenn Ihnen „Reply with Attachments“ gefällt und Sie die Entwicklung unterstützen möchten, können Sie hier spenden:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Über Stripe spenden" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>oder</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Über PayPal spenden" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>oder</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Spendiere mir einen Kaffee" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scannen, um mir einen Kaffee zu spendieren"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Vielen Dank! Ihre Unterstützung hilft, die Kompatibilität mit neuen Thunderbird‑Versionen zu erhalten, die Barrierefreiheit und Tests zu verbessern und die Dokumentation aktuell zu halten.
 
-Notes
+Hinweise
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Spendenlinks öffnen sich nur, wenn Sie sie anklicken; das Add‑on führt keine Hintergrund‑Netzwerkanfragen aus.
+- Regelmäßige Unterstützung hilft bei der langfristigen Wartung und zeitnahen Updates, ist jedoch völlig optional.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Wenn die Bildschaltflächen nicht geladen werden, verwenden Sie bitte stattdessen diese Links:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Spenden sind freiwillig; es gibt keine Funktionssperren.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Sichtbarkeit der Spendenhinweise (90‑Tage‑Schlummern)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Das Add‑on enthält eine Komfortfunktion, um Spendenhinweise nach einer Spende für eine Weile auszublenden.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Wo Sie es finden
+  - Optionen → Abschnitt „Unterstützung“: Sie sehen eine Schaltfläche „Ich habe gespendet“ und einen kleinen Hinweisbereich.
+  - Der Sende‑Bestätigungsdialog zeigt ebenfalls eine Spenden‑Schaltfläche; sie wird automatisch ausgeblendet, wenn die Schlummerfunktion aktiv ist.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- So funktioniert es
+  - Ein Klick auf „Ich habe gespendet“ blendet Spenden‑Schaltflächen und zugehörige Hinweise für 90 Tage aus.
+  - Ein Statushinweis zeigt „Ausgeblendet bis YYYY‑MM‑DD“ (in Ihrem lokalen Datum). Es gibt auch eine Schaltfläche „Spenden erneut anzeigen“, um die Sichtbarkeit sofort wiederherzustellen.
+  - Nach 90 Tagen wird die Spenden‑Schaltfläche automatisch wieder sichtbar.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Datenschutz & Speicherung
+  - Das Add‑on speichert einen einzelnen Zeitstempel im lokalen Speicher von Thunderbird, um die Schlummerdauer zu merken. Schlüssel: `donateHideUntil` (Epoch‑Millisekunden).
+  - Diese Einstellung ist lokal für Ihr Thunderbird‑Profil (nicht cloud‑synchronisiert). Von dieser Funktion werden keine Netzwerkanfragen durchgeführt.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Fehlerbehebung
+  - Wenn die Spenden‑Schaltfläche direkt nach dem Klick auf „Ich habe gespendet“ weiterhin angezeigt wird, warten Sie einen Moment oder öffnen Sie die Seite „Optionen“ erneut; die Oberfläche aktualisiert sich, sobald die Einstellung gespeichert ist.
+  - Um manuell zurückzusetzen, klicken Sie auf „Spenden erneut anzeigen“. Sie können auch warten, bis das im Hinweis angegebene Datum erreicht ist.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Diese Funktion dient ausschließlich dem Komfort; sie blockiert niemals die Funktionalität des Add‑ons und erfasst keine personenbezogenen Daten.
 
 ---

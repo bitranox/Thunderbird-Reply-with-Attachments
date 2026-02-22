@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ihindura Rya Mbere'
-sidebar_label: 'Ihindura Rya Mbere'
+title: 'Gutangura vuba'
+sidebar_label: 'Gutangira vuba'
 ---
-
-## Ihindura Rya Mbere
-
-:::important Igihe gito ca Thunderbird
-Iyi add-on ishyigikira Thunderbird **128 ESR canke iyikurikira**. Ivy'inda za kera ntizishigikiwe.
-:::
-
-:::note Nta telemetry; nta murongo utemba
-Iyi add-on **nt** ikusanya analytics/telemetry kandi ntigira **murongo** utemba. Kwemera urubuga biraba gusa igihe udatse ku mikoreshereze yo hanze (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Kwiyandikisha
+## Tangira vuba
 
-1. Iyandikishe iyi add-on ivuye kuri Thunderbird Add‑ons.
-2. Ikeneye: Shyiraho kwemeza (Ihitamwo → "Saba mbere yo kongera ibitumenyera").
-3. Ikeneye: Reka ikimenyetso ca blacklist kiba gikoreshwa (ibiri mu mato): "Tanga ikimenyetso niba ibitumenyera byakuwemo na blacklist".
-4. Ikeneye: Ongeramo amakarita ya blacklist (imwe ku murongo), urugero:
+:::important Verisiyo ntoya ya Thunderbird isabwa
+Iyi nyongera ishigikira Thunderbird **128 ESR canke nshasha**. Verisiyo zishaje ntizishigikirwa.
+:::
+
+:::note Nta telemetry; nta gusaba interineti mu buryo bw’inyuma
+Iyi nyongera ntiyegeranya analytics/telemetry kandi nta masaba y’urusobe rwa interineti ikora mu buryo bw’inyuma. Kwinjira ku murongo bibaho gusa iyo ukanda ku masano yo hanze (Docs, GitHub, Donate).
+:::
+
+---
+
+### Kwinjiza
+
+1. Shiramwo iyi nyongera uciye kuri Thunderbird Add‑ons.
+2. Bitari ngombwa: Fungura iyemezwa (Options → “Ask before adding attachments”).
+3. Bitari ngombwa: Reka kuburira k’urutonde rw’umukara kuguma gukora (isanzwe): “Warn if attachments are excluded by blacklist”.
+4. Bitari ngombwa: Ongeramwo “blacklist patterns” (imwe kuri buri murongo), urugero:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Iyi add-on **nt** ikusanya analytics/telemetry kandi ntigira **murongo** utemba.
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Igihe: Ibiranga " # ..." haruguru ni ikiganiro muri iyi dokumentasiyo; ntukinjire mu byanditswe ubona mu Ihitamwo. Andika ikiranga kimwe ku murongo gusa.
+Nota: “# …” iri hejuru ni comment muri iyi nyandiko; ntuzosanzwe ushiramwo comments muri patterns ushyira muri Options. Andika pattern imwe kuri buri murongo gusa.
 
-Ubu subiza ubutumwa bufite ibitumenyera — ibihari bizongerwa mu buryo bwikora canke nyuma yo kwemeza vuba. Niba hari amasomo akuwemo na blacklist yawe, uzohabona ikimenyetso gito gishira kuri yo.
+Ubu ishura ubutumwa burimwo inyomeko — iz’umwimerere zizongerwamwo buno nyene canke inyuma yo kwemeza vuba. Nimba hari amafayilo akuwemwo n’urutonde rwawe rw’umukara, uzobona akaburiro kagufi kabarura ayo mafayilo.
 
 ---
 
 ### Genzura {#verify}
 
-- Subiza ubutumwa bufite ibitumenyera 1–2 kandi wemeze ko ibihari binjijwe mu idirishya ryawe ryo kwandika.
-- Kugira uhindure imikorere, reba [Igenamigambi](configuration) (kwemera guhindurwa, igisubizo ca kera, amakarita ya blacklist).
+- Ishura ubutumwa burimwo inyomeko 1–2 kandi wemeze ko iz’umwimerere zashizwe mu dirisha ryo kwandika.
+- Kugira uhindure ingene ikora, raba [Igenamiterere](configuration) (kwemeza/kuzimya, inyishu isanzwe, “blacklist patterns”).
 
 ---
 
-### Genzura ikimenyetso ca blacklist {#verify-blacklist-warning}
+### Genzura kuburira k’urutonde rw’umukara {#verify-blacklist-warning}
 
-- Subiza ubutumwa bufite dosiye nka “secret.txt”.
-- Hamwe no kwemeza "Tanga ikimenyetso niba ibitumenyera byakuwemo na blacklist", ikiganiro gitoya gisohora ibitumenyera byakuweho n'ikiga cyabyo.
+- Ishura ubutumwa burimwo idosiye nka “secret.txt”.
+- Iyo “Warn if attachments are excluded by blacklist” yakoreshejwe, akaganiro gato karerekana amafayilo yakuweko n’urutonde hamwe n’iyahuye na yo (pattern).
 
-Niba utabona ikimenyetso, menya neza ko ikiga kingana neza n'izina rya dosiye (izina ryonyene, rikora amatangazo). Reba Igenamigambi → Blacklist.
+Nutusabona akaburiro, menya ko pattern ihuye neza n’izina ry’idosiye (izina ry’idosiye gusa, ntivyitaho inyuguti nini/nito). Raba Igenamiterere → Urutonde rw’umukara.
 
 ---
 
-### Icyitonderwa cy'ibikoresho {#keyboard-note}
+### Inyibutsa ku kibaho {#keyboard-note}
 
-- Ikiganiro cyo kwemeza gishyigikira Y/J ku Yego na N/Esc ku Oya. Ku maboko ya keyboards atari ay'ikinyarwanda, urutonde rw'inyuguti rushobora guhinduka; Enter yemeza buto iri mu mwanya.
+- Idirisha ryo kwemeza ryemera Y/J ku Ego na N/Esc ku Oya. Ku bibaho bimwebimwe bitari vya Latin, imfungurwa z’inyuguti zirashobora gutandukana; Enter yemeza buto iri kwitaho.
+
+---

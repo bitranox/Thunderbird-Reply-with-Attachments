@@ -1,31 +1,33 @@
 ---
 id: donation
-title: ' nyere ego'
-sidebar_label: ' nyere ego'
+title: 'Nye onyinye'
+sidebar_label: 'Nye onyinye'
 ---
 
-## nyere ego
+---
+
+## Mee onyinye
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Ọ bụrụ na ọ masịrị gị "Reply with Attachments" ma ịchọrọ ịkwado mmepe ya, ị nwere ike ime onyinye ebe a:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Mee onyinye site na Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ma ọ bụ</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Mee onyinye site na PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ma ọ bụ</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Zụta m kọfị" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Nyochaa iji zụta m kọfị"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Daalụ! Nkwado gị na-enyere aka idobe ịdakọrịta na mwepụta Thunderbird ọhụrụ, ime ka nnweta na ule ka mma, ma na-edobe akwụkwọ nduzi ka ọ dị ọhụrụ.
 
-Notes
+Ndetu
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Njikọ onyinye na-emeghe naanị mgbe ị pịrị ha; mgbakwunye ahụ anaghị eme arịrịọ netwọkụ ọ bụla n’azụ.
+- Nkwado na-eme ugboro ugboro na-enyere nlekọta ogologo oge na mmelite n’oge, ma nke a bụ nhọrọ kpamkpam.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Ọ bụrụ na bọtịnụ onyonyo adịghị apụta, biko jiri njikọ ndị a kama:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Onyinye bụ nke onye chọrọ; enweghị egbochi atụmatụ ọ bụla.
 
 ---
 
-## Visibility ndebanye (90‑day snooze)
+## Ngosipụta Onyinye (izu ike ụbọchị 90)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Mgbakwunye ahụ nwere atụmatụ dị mfe iji zoo oku onyinye ruo obere oge mgbe ị nyere onyinye.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Ebee ka ịchọta ya
+  - Nhọrọ → ngalaba Nkwado: ị ga-ahụ bọtịnụ “Enyela m onyinye” na obere ebe ntụaka.
+  - Mkparịta ụka nkwenye Izipu na-egosikwara bọtịnụ Onyinye; ọ na-ezo onwe ya akpaghị aka mgbe izu ike dị n’ọrụ.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Otu o si arụ ọrụ
+  - Ịpị “Enyela m onyinye” na-ezo bọtịnụ onyinye na oku metụtara ya ruo ụbọchị 90.
+  - Ntughintughari ọnọdụ na-egosi “E zoro ruo YYYY‑MM‑DD” (n'ụbọchị mpaghara gị). E nwekwara bọtịnụ “Gosi Onyinye ọzọ” iji weghachite ngosipụta ozugbo.
+  - Mgbe ụbọchị 90 gachara, bọtịnụ Onyinye ga-apụta onwe ya ọzọ.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Nzuzo na nchekwa
+  - Mgbakwunye ahụ na-echekwa otu timestamp n’ichekwa mpaghara Thunderbird iji cheta oge izu ike. Igodo: `donateHideUntil` (epoch milliseconds).
+  - Ntọala a bụ nke mpaghara n’ime profaịlụ Thunderbird gị (a naghị dakọrịta igwe ojii). Atụmatụ a anaghị eme arịrịọ netwọkụ ọ bụla.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Idozi nsogbu
+  - Ọ bụrụ na Onyinye ka na-egosi ozugbo ị pịrị “Enyela m onyinye”, chere obere oge ma ọ bụ mepee ibe Nhọrọ ọzọ; UI na-emelite ozugbo echekwabara ntọala ahụ.
+  - Iji tọọgharịa ya n’aka, pịa “Gosi Onyinye ọzọ”. Ị nwekwara ike ichere ruo ụbọchị egosiri na ntụaka gafee.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Atụmatụ a bụ naanị maka ịdị mfe; ọ naghị egbochi ọrụ mgbakwunye ma ọ naghị anakọta data nkeonwe ọ bụla.
 
 ---

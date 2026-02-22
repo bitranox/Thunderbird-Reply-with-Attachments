@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Deeq'
-sidebar_label: 'Deeq'
+title: 'Ku deeq'
+sidebar_label: 'Ku deeq'
 ---
 
-## Donate
+---
+
+## Ku deeq
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Haddii aad jeceshahay "Reply with Attachments" oo aad rabto inaad taageerto horumarinteeda, waxaad halkan ku deeqi kartaa:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Ku deeq adoo adeegsanaya Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ama</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Ku deeq adoo adeegsanaya PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ama</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy Me a Coffee" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Sawir (scan) si aad u furto Buy Me a Coffee"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Mahadsanid! Taageeradaadu waxay ka caawisaa in lala jaanqaado sii‑daynta cusub ee Thunderbird, la hagaajiyo helitaanka (accessibility) iyo tijaabooyinka, ayna dukumentiyadu ahaadaan kuwo casriyaysan.
 
-Notes
+Fiiro gaar ah
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Isku xirayaasha deeqdu waxay furmaan oo keliya marka aad iyaga gujiso; ku‑darka ma sameeyo wax codsiyo shabakadeed ah oo hoos‑asalka ah.
+- Taageerada soo noqnoqota waxay ka caawisaa dayactirka muddada‑dheer iyo cusboonaysiinta waqtigeeda, balse gebi ahaanteed waa ikhtiyaari.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Haddii badhamada sawirradu aysan soo bixin, fadlan halkoodan u isticmaal isku xirradyadan:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Deeqdu waa ikhtiyaari; ma jiraan sifooyin la xannibo.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Muuqaalka Deeqda (hakad 90‑maalmood ah)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Ku‑darka waxa uu leeyahay sifo fududayn ah oo muddo yar ku qarinaysa toogisyada deeqda marka aad deeqdo ka dib.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Halka laga helo
+  - Ikhtiyaarrada → Qaybta Taageerada: waxaad arki doontaa badhanka “Waan ku deeqay” iyo meel tilmaam yar.
+  - Sanduuqa xaqiijinta dirista waxa kale oo uu muujinayaa badhanka Ku deeq; si toos ah ayuu u qarsoomaa marka hakadku firfircoon yahay.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Sida ay u shaqeyso
+  - Gujinta “Waan ku deeqay” waxay 90 maalmood ku qarisaa badhamada deeqda iyo tilmaamaha la xiriira.
+  - Tilmaanta xaaladda waxay muujisaa “Hidden until YYYY‑MM‑DD” (taariikhda maxalliga ah). Waxa kale oo jira badhanka “Muuji Ku deeq mar kale” si degdeg ah dib loogu soo celiyo muuqaalka.
+  - Kadib 90 maalmood, badhanka Ku deeq waxa uu si toos ah mar kale u muuqdaa.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Asturnaanta iyo kaydinta
+  - Ku‑darka waxa uu ku kaydiyaa hal saacad‑xilli (timestamp) kaydka maxalliga ah ee Thunderbird si uu u xasuusto muddada hakadka. Fure: `donateHideUntil` (mili‑ilbiriqsi epoch).
+  - Dejintani waa mid ku kooban astaantaada Thunderbird (looma waafajiyo daruurta). Sifadani wax codsiyo shabakadeed ah ma samayso.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Xalinta dhibaatooyinka
+  - Haddii Ku deeq weli muuqdo isla markiiba kadib gujinta “Waan ku deeqay”, sug ilbidhiqsiyo yar ama dib u fur bogga Ikhtiyaarrada; UI‑ga wuu cusboonaysiiyaa marka dejintu kaydsan tahay.
+  - Si gacanta ah dib loogu dajiyo, guji “Muuji Ku deeq mar kale”. Waxa kale oo aad sugi kartaa ilaa taariikhda ku qoran tilmaanta ay dhaafto.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Sifadan waa mid fududayn oo keliya; marnaba kama xannibto shaqada ku‑darka mana ururiso wax xog shakhsi ah.
 
 ---

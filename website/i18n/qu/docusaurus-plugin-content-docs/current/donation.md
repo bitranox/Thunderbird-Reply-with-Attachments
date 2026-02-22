@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Sumaqniy'
-sidebar_label: 'Sumaqniy'
+title: 'Qullqita churay'
+sidebar_label: 'Yanapay'
 ---
 
-## Sumaqniy
+---
+
+## Qullqi yanapay
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+“Reply with Attachments” munanki, hinallataq wiñachiynin yanapayta munanki, kaypim qullqi yanapayta qowayta atinki:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe-wan yanapay" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>utaq</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal-wan yanapay" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>utaq</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Kaféta rantiykuway" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,17 +36,17 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Kaféta rantiykuwaypaq scaneay"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Sulpayki! Yanapaykiqa Thunderbirdpa musuq lansasqakunawan kompatibilidadda waqaychayman yanapawanki, accesibilidadta hinallataq pruebakunata allinchanman, willakuy qillqasqakunataq kunanpachaman musuqchaspa waqaychanki.
 
-Notes
+Willakuykuna
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Yanapay t’inkikunaqa ñit’inki pachallan kichkanku; add‑onqa mana imapas qhipa llikanpi willay mañakusqakunata ruwanchu.
+- Kutipa yanapayqa qhipa pacha waqaychayta chaymanta waqtaylla musuqchayta yanapawaq, ichaqa munasqallam.
 
 ---
 
@@ -58,31 +60,29 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Yanapaykuna munasqallam; mana imapis ruwaykuna hark’achisqan kashanchu.
 
 ---
 
-## Sumaqniy Visibility (90‑day snooze)
+## Yanapay rikunay (90‑p’unchaw sayachiy)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Add‑onqa aswan allinpaq huk ruwayniyuqmi: yanapay qowasqaykimanta, yanapayta willaq kaykunaqa achhitam pisi ratupi pakasqaman.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Maypitaq tariwaq
+  - Options → Support section: qhawarinki “I donated” nisqa boton, hinallataq uchuy willakuy k’iti.
+  - Send‑confirmation diálogopi Donate botonpas qhawarin; snooze kachkanqa active kaspa, paylla automaticom pakakun.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Imayna llamk’akun
+  - “I donated” ñit’ispaqa yanapay botonakuta hinallataq tinkisqa willaykunaqa 90 p’unchawkunapaq pakakun.
+  - Huk estado willakuyqa qhawachin “Hidden until YYYY‑MM‑DD” (kaypi llaqtayki punchawman hinalla). “Show Donate again” nisqa botonpas kachkan, chaywan huklla ratulla rikuchiyta kutichinanpaq.
+  - 90 p’unchaw pasaspa, Donate botonnaqa sapaqllamanta automaticom rikhurinqa.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privacidad hinallataq q’ipikuy
+  - Add‑onqa huk sapa timestamp-ta Thunderbirdpa local q’ipikuyinpi waqaychan, snooze pacha ratunta yuyariypaq. Key: `donateHideUntil` (epoch milliseconds).
+  - Kay churasqaqa Thunderbird perfilniykipaq localmi (mana nube‑wan sinkronizakusqachu). Kay ruwayqa mana imapas llikanpi mañakusqakuna ruwanchu.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Pantaypi yanapay
+  - “I donated” ñit’ikptinki, chaymantaq “Donate” rikuchkanraq chaypachallam kachkaptin, aswan pisi ratuta suyay chaymanta Options p’anqata musuqmanta kichariy; configuración waqaychasqa chaypachallam UI nisqaqa allichakun.
+  - Manamanta kamaykachiyta munaspayki, “Show Donate again” ñit’iy. Chay hinallataq, willakuykapi qillqasqa punchaw chayamuntilaqa suyay.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
-
----
+Kay ruwayqa aswan allinpaqlla; manaraqmi add‑onpa ruwayninata hark’achiychu, hinallataq mana sapaq runapa willayninta apachikuychu.

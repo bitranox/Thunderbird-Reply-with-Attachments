@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'Kasutus'
-sidebar_label: 'Kasutus'
+title: 'Kasutamine'
+sidebar_label: 'Kasutamine'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Kasutamine {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Vastamisel lisab lisandmoodul algsed manused automaatselt — või küsib enne kinnitust, kui Options-is on see lubatud.
+- Duplikaadid eemaldatakse failinime alusel; S/MIME osad jäetakse alati vahele. Sisepildid taastatakse vaikimisi vastuse kehas (saab keelata valikuga "Include inline pictures" menüüs Options).
+- Mustas nimekirjas olevad manused jäetakse samuti vahele (tõstutundetud glob‑mustrid, mis vastenduvad failinimedele, mitte radadele). Vaata [Seadistus](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Mis vastamisel juhtub {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Tuvasta vastus → loetle algsed manused → filtreeri S/MIME + sisemised → valikuline kinnitus → lisa sobivad failid (jäta duplikaadid vahele) → taasta sisepildid kehas.
 
----
+Range vs. leebem läbikäik: Lisandmoodul välistab esmalt S/MIME ja sisemised osad failimanuste hulgast. Kui miski ei kvalifitseeru, tehakse leebem läbikäik, mis jätab endiselt S/MIME/sisemised osad välja, kuid talub rohkem juhte (vt Koodi üksikasjad). Sisepilte ei lisata kunagi failimanustena; selle asemel, kui "Include inline pictures" on lubatud (vaikimisi), põimitakse need otse vastuse kehasse base64 andme‑URI-dena.
 
-## Behavior Details {#behavior-details}
+| Osa tüüp                                                    |                   Range läbikäik |                  Leebem läbikäik |
+| ----------------------------------------------------------- | -------------------------------: | -------------------------------: |
+| S/MIME allkirjafail `smime.p7s`                             |                       Välistatud |                       Välistatud |
+| S/MIME MIME‑tüübid (`application/pkcs7-*`)                  |                       Välistatud |                       Välistatud |
+| Sisemine pilt, millele viitab Content‑ID (`image/*`)        | Välistatud (taastatakse kehas\*) | Välistatud (taastatakse kehas\*) |
+| Manusena lisatud e‑kiri (`message/rfc822`) koos failinimega |                        Ei lisata |                  Võidakse lisada |
+| Tavaline failimanus koos failinimega                        |                  Võidakse lisada |                  Võidakse lisada |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Kui "Include inline pictures" on lubatud (vaikimisi: ON), põimitakse sisepildid vastuse kehasse base64 andme‑URI-dena, mitte ei lisata failimanustena. Vaata [Seadistus](configuration#include-inline-pictures).
+
+Näide: Mõnel manusel võivad teatud päised puududa, kuid need on siiski tavalised failid (mitte sisemised/S/MIME). Kui range läbikäik ei leia ühtegi, võib leebem läbikäik need aktsepteerida ja manustada.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Ristviited {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Edastamist ei muudeta disaini järgi (vt allpool piiranguid).
+- Põhjuste kohta, miks manuseid ei pruugita lisada, vt „Miks manuseid ei pruugita lisada”.
 
 ---
 
-## Limitations {#limitations}
+## Käitumise üksikasjad {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Duplikaatide vältimine:** Lisandmoodul märgib koostamisvahekaardi töödelduna vahekaardipõhise seansiväärtuse ja mälus hoitava valve abil. Originaale ei lisata kaks korda.
+- Koostamisakna sulgemist ja taasavamist käsitletakse kui uut vahekaarti (st uus katse on lubatud).
+- **Olemasolevate manuste arvestamine:** Kui koostamisel on juba manuseid, lisatakse originaalid siiski täpselt üks kord, jättes vahele juba olemasolevate failinimedega üksused.
+- **Välistused:** S/MIME artefaktid ja sisepildid jäetakse failimanuste hulgast välja. Kui esimesel läbimisel ei kvalifitseeru midagi, kontrollib leebem varuvariant uuesti mitte‑S/MIME osi. Sisepilte käsitletakse eraldi: need taastatakse vastuse kehas andme‑URI-dena (kui on lubatud).
+  - **Failinimed:** `smime.p7s`
+  - **MIME‑tüübid:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Sisemised pildid:** iga `image/*` osa, millele viitab Content‑ID — jäetakse failimanustest välja, kuid põimitakse vastuse kehasse, kui "Include inline pictures" on ON
+  - **Manusena lisatud e‑kirjad (`message/rfc822`):** käsitletakse tavaliste manustena, kui neil on failinimi; neid võidakse lisada (duplikaadikontrolli ja musta nimekirja tingimustel).
+- **Must nimekiri — hoiatus (kui lubatud):** Kui kandidaadid välistatakse sinu musta nimekirja tõttu, kuvab lisandmoodul väikese modaalakna mõjutatud failide ja sobivate mustritega. See hoiatus kuvatakse ka juhtudel, kui manuseid ei lisata, kuna kõik välistati.
 
 ---
 
-See also
+## Klaviatuuri otseteed {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Kinnitusdialoog: Y/J = Jah, N/Esc = Ei; Tab/Shift+Tab ja nooleklahvid vahetavad fookust tsükliliselt.
+  - „Default answer” [Seadistuses](configuration#confirmation) seab esialgu fookuses oleva nupu.
+  - Enter käivitab fookuses oleva nupu. Tab/Shift+Tab ja nooled liigutavad fookust ligipääsetavuse tagamiseks.
+
+### Klaviatuuri spikker {#keyboard-cheat-sheet}
+
+| Klahvid         | Tegevus                           |
+| --------------- | --------------------------------- |
+| Y / J           | Kinnita Jah                       |
+| N / Esc         | Kinnita Ei                        |
+| Enter           | Aktiveeri fookuses olev nupp      |
+| Tab / Shift+Tab | Liiguta fookust edasi/taha        |
+| Nooleklahvid    | Liiguta fookust nuppude vahel     |
+| Default answer  | Määrab algse fookuse (Jah või Ei) |
+
+---
+
+## Piirangud {#limitations}
+
+- Edastamist see lisandmoodul ei muuda (toetatud on Vastamine ja Vasta kõigile).
+- Väga suuri manuseid võivad piirata Thunderbirdi või teenusepakkuja limiidid.
+  - Lisandmoodul ei tükelda ega paki faile; see tugineb Thunderbirdi tavapärasele manuste käsitlemisele.
+- Krüpteeritud sõnumid: S/MIME osad jäetakse tahtlikult välja.
+
+---
+
+## Miks manuseid ei pruugita lisada {#why-attachments-might-not-be-added}
+
+- Sisemisi pilte ei lisata failimanustena. Kui "Include inline pictures" on ON (vaikimisi), põimitakse need vastuse kehasse andme‑URI-dena. Kui säte on OFF, eemaldatakse sisepildid täielikult. Vaata [Seadistus](configuration#include-inline-pictures).
+- S/MIME allkirjaosad jäetakse disaini järgi välja: failinimed nagu `smime.p7s` ja MIME‑tüübid nagu `application/pkcs7-signature` või `application/pkcs7-mime` jäetakse vahele.
+- Musta nimekirja mustrid võivad kandidaate filtreerida: vt [Seadistus](configuration#blacklist-glob-patterns); sobitus on tõstutundetu ja ainult failinime põhine.
+- Duplitseerunud failinimesid ei lisata uuesti: kui koostamisel on juba sama normaliseeritud nimega fail, jäetakse see vahele.
+- Mittefailiosad või puuduvad failinimed: lisamiseks arvestatakse ainult faililaadseid osi kasutatavate failinimedega.
+
+---
+
+Vaata ka
+
+- [Seadistus](configuration)

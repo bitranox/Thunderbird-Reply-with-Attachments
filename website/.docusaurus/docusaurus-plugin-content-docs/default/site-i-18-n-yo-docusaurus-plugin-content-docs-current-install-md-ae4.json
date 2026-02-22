@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Fífi ẹ̀ka",
-  "description": "Fífi ẹ̀ka nipasẹ \"Thunderbird Add-ons and Themes\"",
+  "title": "Fifi sori ẹrọ",
+  "description": "---",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Fífi ẹ̀ka",
+    "title": "Fifi sori ẹrọ",
     "slug": "/install",
-    "sidebar_label": "Fífi ẹ̀ka"
+    "sidebar_label": "Fifi sori ẹrọ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ibẹrẹ Rọrun",
+    "title": "Ìbẹ̀rẹ̀ kíákíá",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/quickstart"
   },
   "next": {

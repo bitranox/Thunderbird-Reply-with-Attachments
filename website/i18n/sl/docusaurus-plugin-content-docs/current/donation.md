@@ -1,25 +1,27 @@
 ---
 id: donation
-title: 'Donacija'
-sidebar_label: 'Donacija'
+title: 'Doniraj'
+sidebar_label: 'Doniraj'
 ---
 
-## Donacija
+---
+
+## Donirajte
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Če vam je "Reply with Attachments" všeč in želite podpreti njegov razvoj, lahko tukaj donirate:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donirajte prek storitve Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ali</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donirajte prek storitve PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ali</div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skenirajte, da mi kupite kavo"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Hvala! Vaša podpora pomaga ohranjati združljivost z novimi izdajami Thunderbirda, izboljšati dostopnost in teste ter ohranjati dokumentacijo posodobljeno.
 
-Notes
+Opombe
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Povezave za donacije se odprejo le, ko kliknete nanje; dodatek ne izvaja nobenih omrežnih zahtev v ozadju.
+- Redna podpora pomaga pri dolgoročnem vzdrževanju in pravočasnih posodobitvah, vendar je popolnoma neobvezna.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Če se slikovni gumbi ne naložijo, prosimo, uporabite te povezave:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Donacije so prostovoljne; ni omejevanja funkcionalnosti.
 
 ---
 
-## Vidnost donacij (90-dnevni premor)
+## Vidnost donacij (90‑dnevni odlog)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Dodatek vključuje priročno možnost, da po donaciji za nekaj časa skrije pozive k doniranju.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Kje ga najti
+  - Možnosti → razdelek Podpora: videli boste gumb “Doniral/-a sem” in majhno območje z namigom.
+  - Pogovorno okno za potrditev pošiljanja prav tako prikazuje gumb Doniraj; samodejno se skrije, ko je odlog aktiven.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Kako deluje
+  - Klik “Doniral/-a sem” skrije gumbe za donacije in povezane pozive za 90 dni.
+  - Namig stanja prikazuje “Skrito do YYYY‑MM‑DD” (v vašem lokalnem datumu). Na voljo je tudi gumb “Znova pokaži Doniraj” za takojšnjo obnovitev vidnosti.
+  - Po 90 dneh se gumb Doniraj znova samodejno prikaže.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Zasebnost in shranjevanje
+  - Dodatek shrani en sam časovni žig v Thunderbirdovo lokalno shrambo, da si zapomni obdobje odloga. Ključ: `donateHideUntil` (milisekunde epohe).
+  - Ta nastavitev je lokalna za vaš profil Thunderbird (ni sinhronizirana v oblaku). Ta funkcija ne izvaja nobenih omrežnih zahtev.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Odpravljanje težav
+  - Če se Doniraj še vedno prikazuje takoj po kliku “Doniral/-a sem”, počakajte trenutek ali znova odprite stran Možnosti; uporabniški vmesnik se posodobi takoj, ko je nastavitev shranjena.
+  - Za ročno ponastavitev kliknite “Znova pokaži Doniraj”. Lahko pa počakate do datuma, navedenega v namigu.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Ta funkcija je namenjena zgolj udobju; nikoli ne blokira delovanja dodatka in ne zbira nobenih osebnih podatkov.
 
 ---

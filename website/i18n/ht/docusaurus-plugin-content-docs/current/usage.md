@@ -4,94 +4,98 @@ title: 'Itilizasyon'
 sidebar_label: 'Itilizasyon'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Itilizasyon {#usage}
+
+- Reponn epi add-on nan ajoute orijinal yo otomatikman — oswa li mande w anvan, si sa aktive nan Opsyon yo.
+- Retire doublon dapre non fichye; pati S/MIME yo toujou sote. Imaj anliy yo retabli nan kò repons lan pa default (dezaktive atravè "Include inline pictures" nan Opsyon yo).
+- Atachman ki sou lis nwa yo tou sote (modèl glob ki pa sansib a majiskil/miniskil ki matche non fichye yo, pa chemen yo). Gade [Konfigirasyon](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Kisa k pase lè w reponn {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Detekte yon repons → lis atachman orijinal yo → filtre S/MIME + anliy → konfimasyon opsyonèl → ajoute fichye ki elijib (sote doublon) → retabli imaj anliy yo nan kò mesaj la.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Pase strik kont pase relaks: Add-on nan ekskli dabor pati S/MIME ak anliy nan atachman fichye yo. Si pa gen anyen ki kalifye, li kouri yon pase relaks ki toujou ekskli S/MIME/anliy men tolere plis ka (gade Detay Kòd la). Imaj anliy yo pa janm ajoute kòm atachman fichye; olye de sa, lè "Include inline pictures" aktive (default), yo entegre dirèkteman nan kò repons lan kòm URI done base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Kalite pati                                         |                  Pase strik |                 Pase relaks |
+| --------------------------------------------------- | --------------------------: | --------------------------: |
+| Fichye siyati S/MIME `smime.p7s`                    |                      Ekskli |                      Ekskli |
+| Tip MIME S/MIME (`application/pkcs7-*`)             |                      Ekskli |                      Ekskli |
+| Imaj anliy ki referans pa Content‑ID (`image/*`)    | Ekskli (retabli nan kò a\*) | Ekskli (retabli nan kò a\*) |
+| Imèl tache (`message/rfc822`) ki gen yon non fichye |                   Pa ajoute |                   Ka ajoute |
+| Atachman fichye nòmal ki gen yon non fichye         |                   Ka ajoute |                   Ka ajoute |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Lè "Include inline pictures" aktive (default: ON), imaj anliy yo antere dirèkteman nan kò repons lan kòm URI done base64 olye yo ta ajoute yo kòm atachman fichye. Gade [Konfigirasyon](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Egzanp: Gen kèk atachman ki ka pa gen kèk header, men yo toujou fichye nòmal (pa anliy/S/MIME). Si pase strik la pa jwenn okenn, pase relaks la ka aksepte yo epi tache yo.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kwa‑referans {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward pa modifye pa konsepsyon (gade Limitations pi ba a).
+- Pou rezon ki fè yon atachman ka pa ajoute, gade “Poukisa atachman yo ka pa ajoute”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detay Konpòtman {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Duplication prevansyon: Add-on nan make onglet konpozisyon an kòm trete lè l sèvi ak yon valè sesyon pou chak onglet ak yon gad nan memwa. Li pap ajoute orijinal yo de fwa.
+- Fèmen epi reouvri yon fenèt konpozisyon trete kòm yon nouvo onglet (sa vle di, yon nouvo tantativ pèmèt).
+- Respekte atachman ki deja la: Si fenèt konpozisyon an deja gen kèk atachman, orijinal yo toujou ajoute yon sèl fwa egzakteman, yo sote non fichye ki deja egziste.
+- Ekzklizyon: Atikfak S/MIME ak imaj anliy yo eskli nan atachman fichye yo. Si pa gen anyen ki kalifye nan premye pase a, yon rekadrezman relaks relit pati ki pa S/MIME yo. Imaj anliy yo trete separeman: yo retabli nan kò repons lan kòm URI done (lè aktive).
+  - Non fichye: `smime.p7s`
+  - Tip MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Imaj anliy: nenpòt pati `image/*` ki referans pa Content‑ID — eskli nan atachman fichye yo men entegre nan kò repons lan lè "Include inline pictures" limen
+  - Imèl tache (`message/rfc822`): trete kòm atachman nòmal si yo gen yon non fichye; yo ka ajoute (soumèt a tès doublon ak lis nwa).
+- Avètisman lis nwa (si aktive): Lè kandida yo eskli pa lis nwa w la,
+  add-on nan montre yon ti modal ki lis fichye ki afekte yo ak modèl
+  ki koresponn yo. Avètisman sa a parèt tou lè pa gen okenn atachman ki pral
+  ajoute paske tout bagay te eskli.
 
 ---
 
-## Limitations {#limitations}
+## Rakoursi klavye {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dyalo konfimasyon: Y/J = Wi, N/Esc = Non; Tab/Shift+Tab ak flèch yo sikile fokis la.
+  - “Repons pa default” nan [Konfigirasyon](configuration#confirmation) mete bouton ki sou fokis okòmansman.
+  - Enter aktive bouton ki sou fokis la. Tab/Shift+Tab ak flèch yo deplase fokis pou aksè.
+
+### Fèy rapèl klavye {#keyboard-cheat-sheet}
+
+| Touche            | Aksyon                           |
+| ----------------- | -------------------------------- |
+| Y / J             | Konfime Wi                       |
+| N / Esc           | Konfime Non                      |
+| Enter             | Aktive bouton ki sou fokis la    |
+| Tab / Shift+Tab   | Deplase fokis pi devan/dèyè      |
+| Touche flèch      | Deplase fokis ant bouton yo      |
+| Repons pa default | Mete fokis inisyal (Wi oswa Non) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Limitasyon {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward pa modifye pa add-on sa a (Reply ak Reply all yo sipòte).
+- Gwo atachman anpil ka sijè a limit Thunderbird oswa founisè a.
+  - Add‑on nan pa separe an mòso ni konprese fichye; li konte sou fason nòmal Thunderbird jere atachman yo.
+- Mesaj ankripte: pati S/MIME yo eskli entansyonèlman.
 
 ---
 
-See also
+## Poukisa atachman yo ka pa ajoute {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Imaj anliy yo pa ajoute kòm atachman fichye. Lè "Include inline pictures" limen (default), yo antere nan kò repons lan kòm URI done olye. Si paramèt la OFF, imaj anliy yo retire nèt. Gade [Konfigirasyon](configuration#include-inline-pictures).
+- Pati siyati S/MIME yo eskli pa konsepsyon: non fichye tankou `smime.p7s` ak tip MIME tankou `application/pkcs7-signature` oswa `application/pkcs7-mime` sote.
+- Modèl lis nwa ka filtre kandida yo: gade [Konfigirasyon](configuration#blacklist-glob-patterns); matche a pa sansib a majiskil/miniskil epi li gade sèlman non fichye a.
+- Non fichye ki an doub yo pa re‑ajoute: si fenèt konpozisyon an deja gen yon fichye ak menm non normalize a, yo sote li.
+- Pati ki pa fichye oswa non fichye ki manke: se sèlman pati ki sanble ak fichye ki gen non fichye itilizab yo konsidere pou ajoute.
+
+---
+
+Gade tou
+
+- [Konfigirasyon](configuration)

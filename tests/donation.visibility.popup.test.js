@@ -18,7 +18,7 @@ function mockBrowser({ get, set }) {
   globalThis.browser = {
     storage: { local: { get, set } },
     i18n: {
-      getMessage: vi.fn((key, subs) => {
+      getMessage: vi.fn((key, _subs) => {
         if (key === 'uiDonateSnoozed') return 'Donation prompt hidden for 90 days.';
         return '';
       }),

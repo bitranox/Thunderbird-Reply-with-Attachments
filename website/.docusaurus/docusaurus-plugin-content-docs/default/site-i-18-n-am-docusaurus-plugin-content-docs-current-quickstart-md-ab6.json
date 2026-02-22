@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ምርጫ በሳምንት",
-  "description": "ምርጫ በሳምንት",
+  "title": "ፈጣን መነሻ",
+  "description": "---",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ምርጫ በሳምንት",
-    "sidebar_label": "ምርጫ በሳምንት"
+    "title": "ፈጣን መነሻ",
+    "sidebar_label": "ፈጣን መጀመር"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ዝግጅቶች",
+    "title": "ባህሪያት",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/features"
   },
   "next": {
-    "title": "እንዴት ትግበር እንደሚቻል",
+    "title": "መጫን",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/install"
   }
 }

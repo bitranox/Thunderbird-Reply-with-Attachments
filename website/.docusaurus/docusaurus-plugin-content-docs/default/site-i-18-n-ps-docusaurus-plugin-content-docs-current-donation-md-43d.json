@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "ټرخه کړه",
-  "description": "Donate",
+  "title": "بسپنه وکړئ",
+  "description": "---",
   "source": "@site/i18n/ps/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "ټرخه کړه",
-    "sidebar_label": "ټرخه کړه"
+    "title": "بسپنه وکړئ",
+    "sidebar_label": "بسپنه وکړئ"
   },
   "sidebar": "docs",
   "previous": {

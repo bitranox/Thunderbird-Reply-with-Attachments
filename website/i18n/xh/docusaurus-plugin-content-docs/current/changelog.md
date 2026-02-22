@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Uhlaziyo'
+title: 'Uluhlu lweentshintsho'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Utshintsho kwenguqulelo
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Ngembali epheleleyo, eneenkcukacha, jonga kwirepositori
+[CHANGELOG.md kwiGitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Bandakanya imifanekiso ye-inline" ngoku ifaka imifanekiso ngokuthe ngqo kumzimba wompendulo njengee-URI zedatha ze-base64 (okumiselweyo: IVULIWE); ukuphuculwa komgangatho wekhowudi kunye nokwandiswa kogubungelo lovavanyo.
+- 2.3.1: Igcina iifayile ezincanyathiselweyo emva kokuba iThunderbird ibeke iphepha lesiganeko sangasemva kwimo yokungasebenzi; yongeza iihuku ze-debug ezijoliswe ekusombululeni iingxaki.
+- 2.3.0: Ukucokiswa kokususwa kokuphindaphinda kweziqhotyoshelwa, ukwandiswa kogubungelo lovavanyo, kunye nokususa iimvume eziphelelwe lixesha ukuze kuhlangatyezwane nemigaqo-nkqubo ye-AMO.
+- 2.1.0: Inkxaso epheleleyo yokwenziwa kwamazwe ngamazwe kwiilwimi eziphambili ezili-100
+- 2.0.0: ukubhalwa ngokutsha kube yinguqulelo eneeempawu ezipheleleyo (EN/DE)
+- 1.0.1: itshintshele ku messages.listAttachments()
+- 1.0.0: ukukhutshwa kokuqala
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Imihla kunye nemijelo {#dates-and-channels}
+
+- Ukukhutshwa kwi-ATN kunokulibaziseka iiyure ezimbalwa emva kokupakishwa.
+- Ukwakhiwa kwe-LOCAL kwenzelwe uvavanyo lwabaphuhlisi kuphela kwaye akusasazwa nge-ATN.
+
+---

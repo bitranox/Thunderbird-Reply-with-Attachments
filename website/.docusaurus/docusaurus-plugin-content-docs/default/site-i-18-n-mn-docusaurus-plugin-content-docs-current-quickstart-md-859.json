@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Хурдан эхлэх",
-  "description": "Хурдан эхлэх",
+  "title": "Түргэн эхлэл",
+  "description": "---",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Хурдан эхлэх",
-    "sidebar_label": "Хурдан эхлэх"
+    "title": "Түргэн эхлэл",
+    "sidebar_label": "Түргэн эхлэл"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Онцлог шинжүүд",
+    "title": "Онцлог",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/features"
   },
   "next": {
-    "title": "Суулгалт",
+    "title": "Суурилуулалт",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/install"
   }
 }

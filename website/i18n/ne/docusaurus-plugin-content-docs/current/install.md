@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'स्थापना'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" मार्फत स्थापना {#installation-in-thunderbird-recommended}
+
+:::important न्यूनतम Thunderbird संस्करण
+यो एड‑अनले Thunderbird **128 ESR वा नयाँ** समर्थन गर्छ। पुराना संस्करणहरू समर्थित छैनन्।
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+यो सिफारिस गरिएको स्थापना विधि हो। ATN (addons.thunderbird.net) बाट स्थापना गरिएका एड‑अनहरूले स्वचालित अपडेट प्राप्त गर्छन्। LOCAL/dev स्थापना स्वचालित रूपमा अपडेट हुँदैन।
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- न्यूनतम Thunderbird संस्करण: 128 ESR वा नयाँ।
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird मा, **Tools > Add-ons and Themes** मा जानुहोस्।
+2. "reply with attachments" खोज्नुहोस्।
+3. एड‑अन थप्नुहोस्।
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+वा एड‑अन पृष्ठ सिधै खोल्नुहोस्: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI बाट म्यानुअल स्थापना {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI फाइल डाउनलोड गर्नुहोस् {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird एड‑अन पृष्ठ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) मा जानुहोस्।
+2. एड‑अनको नवीनतम संस्करण XPI फाइलका रूपमा डाउनलोड गर्नुहोस् (`reply_with_attachments-x.y.z-tb.xpi`)।
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird मा स्थापना गर्नुहोस् {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird खोल्नुहोस्।
+2. **Tools > Add-ons and Themes** मा जानुहोस्।
+3. **Add-ons Manager** मा, माथिल्लो‑दायाँ कुनामा रहेको गियर आइकनमा क्लिक गर्नुहोस्।
+4. मेनुबाट **Install Add-on From File…** छान्नुहोस्।
+5. डाउनलोड गरिएको `reply_with_attachments-x.y.z-tb.xpi` फाइल छान्नुहोस्।
+6. प्रम्प्ट भएपछि स्थापना पुष्टि गर्नुहोस्।
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## विकासका लागि स्थापना {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### रिपोजिटरी डाउनलोड गर्नुहोस् {#download-the-repository}
 
-See also
+1. GitHub रिपोजिटरीको नवीनतम संस्करण डाउनलोड गर्नुहोस्।
+2. थप जानकारीका लागि `make help` चलाउनुहोस्।
 
-- [Quickstart](quickstart)
+### Thunderbird मा स्थापना गर्नुहोस् {#install-in-thunderbird-dev}
+
+1. Thunderbird खोल्नुहोस्।
+2. **Tools > Add-ons and Themes** मा जानुहोस्।
+3. **Add-ons Manager** मा, माथिल्लो‑दायाँ कुनामा रहेको गियर आइकनमा क्लिक गर्नुहोस्।
+4. मेनुबाट **Install Add-on From File…** छान्नुहोस्।
+5. सिर्जित फाइल `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` छान्नुहोस्।
+6. प्रम्प्ट भएपछि स्थापना पुष्टि गर्नुहोस्।
+
+नोट: यदि Thunderbird ले तपाईंको प्रणालीमा `.zip` स्वीकार्दैन भने, यसलाई `.xpi` मा पुनःनामकरण गरी “Install Add‑on From File…” पुन: प्रयास गर्नुहोस्।
+
+### LOCAL ZIP कहाँ भेटिन्छ {#where-local-zip}
+
+- पहिले, एड‑अन प्याकेज गर्नुहोस्: रिपोजिटरीको मूल (root) मा `make pack` चलाउनुहोस्।
+- प्याकेजिङ पछि, रिपोजिटरीको मूलमा “LOCAL” zip फेला पार्नुहोस् (जस्तै, `2025-..-reply-with-attachments-plugin-LOCAL.zip`)।
+- टेस्टिङका लागि पुनः‑प्याकेज गर्नु अघि, `sources/manifest_ATN.json` र `sources/manifest_LOCAL.json` दुवैमा संस्करण बढाउनुहोस्।
+
+---
+
+## अक्षम गर्नु, अनइन्स्टल गर्नु, र अपडेटहरू {#disable-uninstall-updates}
+
+- अक्षम गर्नु: Thunderbird → Tools → Add‑ons and Themes → एड‑अन फेला पार्नुहोस् → toggle off।
+- अनइन्स्टल गर्नु: उही दृश्य → तीन‑बिन्दु मेनु → Remove।
+- अपडेटहरू: नयाँ संस्करणहरू स्वीकृत भएपछि ATN इन्स्टलहरूले स्वतः‑अपडेट गर्छन्। LOCAL/dev इन्स्टलहरू स्वतः‑अपडेट हुँदैनन्; नयाँ LOCAL बिल्ड म्यानुअली पुन: इन्स्टल गर्नुहोस्।
+- सेटिङहरू पूर्ण रूपमा हटाउन: [गोपनीयता → डेटा हटाउने](privacy#data-removal) हेर्नुहोस्।
+
+यस पनि हेर्नुहोस्
+
+- [छिटो सुरु](quickstart)

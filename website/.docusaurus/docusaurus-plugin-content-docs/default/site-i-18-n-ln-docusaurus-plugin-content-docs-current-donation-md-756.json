@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Fungisa",
-  "description": "Fungisa",
+  "title": "Pesa likabo",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Fungisa",
-    "sidebar_label": "Fungisa"
+    "title": "Pesa likabo",
+    "sidebar_label": "Pesa likabo"
   },
   "sidebar": "docs",
   "previous": {

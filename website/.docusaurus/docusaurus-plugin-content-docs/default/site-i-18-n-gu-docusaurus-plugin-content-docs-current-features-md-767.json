@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "વિશેષતાઓ",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "ઝડપી અને સારું માર્ગદર્શન",
+    "title": "ઝડપી શરૂઆત",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/quickstart"
   }
 }

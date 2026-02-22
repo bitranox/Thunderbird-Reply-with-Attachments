@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Bağış etmək",
-  "description": "Donate",
+  "title": "İanə et",
+  "description": "İanə",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Bağış etmək",
-    "sidebar_label": "Bağış etmək"
+    "title": "İanə et",
+    "sidebar_label": "İanə et"
   },
   "sidebar": "docs",
   "previous": {

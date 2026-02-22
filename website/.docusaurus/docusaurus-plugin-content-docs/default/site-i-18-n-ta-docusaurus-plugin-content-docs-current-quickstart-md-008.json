@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "உதயகாலம்",
-  "description": "உதயகாலம்",
+  "title": "விரைவு தொடக்கம்",
+  "description": "---",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "உதயகாலம்",
-    "sidebar_label": "உதயகாலம்"
+    "title": "விரைவு தொடக்கம்",
+    "sidebar_label": "விரைவுத் தொடக்கம்"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "விசேஷங்கள்",
+    "title": "அம்சங்கள்",
     "permalink": "/Thunderbird-Reply-with-Attachments/ta/docs/features"
   },
   "next": {

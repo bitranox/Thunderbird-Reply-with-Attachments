@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ແຈ້ງເຕືອນຖ້າໄຟລ໌ແນບຖືກຍົກເວັ້ນໂດຍບັນຊີດໍາ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ລວມຮູບພາບໃນແຖວ (ຮູບພາບຝັງ)"
+  },
   "uiDebugHeader": {
     "message": "ຂັ້ນສູງ"
   },

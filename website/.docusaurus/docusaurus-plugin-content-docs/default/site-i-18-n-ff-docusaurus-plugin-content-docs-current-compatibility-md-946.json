@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Jama",
-  "description": "Compatibility",
+  "title": "Jokkondiral",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Jama",
-    "sidebar_label": "Jama"
+    "title": "Jokkondiral",
+    "sidebar_label": "Toonde"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Amfani",
+    "title": "Huutugol",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/usage"
   },
   "next": {

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "ئورنىتىش",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "قاچىلاش",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "ئورنىتىش",
+    "title": "قاچىلاش",
     "slug": "/install",
-    "sidebar_label": "ئورنىتىش"
+    "sidebar_label": "قاچىلاش"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "مۇناسىۋەتلىك باشلامچى",
+    "title": "تېز باشلاش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/quickstart"
   },
   "next": {

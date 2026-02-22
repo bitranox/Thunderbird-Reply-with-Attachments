@@ -4,31 +4,39 @@ title: 'תכונות'
 sidebar_label: 'תכונות'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## תכונות {#features}
 
-## How It Works {#how-it-works}
+- מצרף אוטומטית קבצים מהדוא״ל המקורי בעת מענה.
+- התנהגות ניתנת להגדרה: קבצים מצורפים יכולים להיות
+  - נוספים אוטומטית, או
+  - נוספים רק לאחר אישור (דיאלוג קטן ונגיש). ב״אפשרויות״ באפשרותך
+    להפעיל את האישור ולבחור את התשובה המוגדרת כברירת מחדל (כן/לא).
+- רשימה שחורה של שמות קבצים (תבניות glob) מונעת מצירוף אוטומטי של קבצים מסוימים. דוגמאות: `*intern*`, `*secret*`, `*passwor*`.
+  ההתאמה אינה תלויה ברישיות ובודקת את שם הקובץ בלבד; ספק תבנית אחת
+  בכל שורה ב״אפשרויות״.
+- אזהרת רשימה שחורה (אופציונלי, מופעל כברירת מחדל): כאשר קבצים מוחרגים על‑ידי
+  הרשימה השחורה שלך, חלון מודאלי קטן מציג את הקובץ ואת התבניות התואמות. מותאם למצב כהה
+  ונגיש למקלדת (Enter/Esc לסגירה).
+- פועל עם „השב” ו„השב לכולם”. „העבר” לא משתנה על‑ידי תוסף זה.
+- מוסיף את המקוריים גם אם כבר צירפת משהו בעצמך; נמנע מכפילויות לפי שם קובץ.
+- מנגנון מניעת כפילויות לכל לשונית מונע הוספה כפולה באותה לשונית כתיבת הודעה.
+- מדלג כברירת מחדל על אישורי S/MIME כדי להימנע מצרופות מיותרות.
+- כולל תמונות מוטמעות (ברירת מחדל: פועל). תמונות משובצות משוחזרות ישירות בגוף
+  המענה כ-URI של נתוני base64, תוך שמירה על הפריסה המוטמעת המקורית. ניתן להשבית ב״אפשרויות״
+  כדי לדלג על תמונות מוטמעות לחלוטין.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## איך זה עובד {#how-it-works}
+
+- בעת מענה, התוסף מפרט את הקבצים המצורפים המקוריים.
+- מסנן חתימות S/MIME מתוך קובצי צרופה; תמונות מוטמעות משוחזרות בגוף (אלא אם הושבת).
+- מבקש אישור לפי בחירה (ידידותי למקלדת).
+- מוסיף את הקבצים המתאימים לחלון הכתיבה, תוך הימנעות מכפילויות לפי שם קובץ.
+- ראו “מדוע ייתכן שצרופות לא יתווספו” בסעיף שימוש למקרי קצה.
+
+הערת פרטיות: כל העיבוד מתבצע באופן מקומי ב-Thunderbird. התוסף אינו מבצע בקשות רשת ברקע.
+
+---

@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: '安装'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## 通过“Thunderbird 附加组件和主题”进行安装 {#installation-in-thunderbird-recommended}
+
+:::important 最低 Thunderbird 版本
+此附加组件支持 Thunderbird **128 ESR 或更新版本**。不支持较旧版本。
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+这是推荐的安装方式。通过 ATN（addons.thunderbird.net）安装的附加组件会自动更新。LOCAL/dev 安装不支持自动更新。
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- 最低 Thunderbird 版本：128 ESR 或更新版本。
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. 在 Thunderbird 中，转到 **工具 > 附加组件和主题**。
+2. 搜索 "reply with attachments"。
+3. 添加该附加组件。
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+或直接打开该附加组件页面：[Thunderbird 附加组件（ATN）](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## 通过 XPI 手动安装 {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### 下载 XPI 文件 {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. 前往 [Thunderbird 附加组件页面](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)。
+2. 将该附加组件的最新版本下载为 XPI 文件（`reply_with_attachments-x.y.z-tb.xpi`）。
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### 在 Thunderbird 中安装 {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. 打开 Thunderbird。
+2. 转到 **工具 > 附加组件和主题**。
+3. 在 **附加组件管理器** 中，点击右上角的齿轮图标。
+4. 在菜单中选择 **从文件安装附加组件…**。
+5. 选择已下载的 `reply_with_attachments-x.y.z-tb.xpi` 文件。
+6. 出现提示时确认安装。
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## 用于开发的安装 {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### 下载代码仓库 {#download-the-repository}
 
-See also
+1. 下载 GitHub 代码仓库的最新版本。
+2. 运行 `make help` 以获取更多信息。
 
-- [Quickstart](quickstart)
+### 在 Thunderbird 中安装 {#install-in-thunderbird-dev}
+
+1. 打开 Thunderbird。
+2. 转到 **工具 > 附加组件和主题**。
+3. 在 **附加组件管理器** 中，点击右上角的齿轮图标。
+4. 在菜单中选择 **从文件安装附加组件…**。
+5. 选择生成的文件 `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`。
+6. 出现提示时确认安装。
+
+注意：如果 Thunderbird 在你的系统上无法接受 `.zip`，请将其重命名为 `.xpi`，然后再次尝试“从文件安装附加组件…”。
+
+### 在何处找到 LOCAL ZIP {#where-local-zip}
+
+- 首先，打包该附加组件：在仓库根目录运行 `make pack`。
+- 打包完成后，在仓库根目录找到“LOCAL” zip（例如 `2025-..-reply-with-attachments-plugin-LOCAL.zip`）。
+- 在重新打包进行测试之前，请同时在 `sources/manifest_ATN.json` 和 `sources/manifest_LOCAL.json` 中提升版本号。
+
+---
+
+## 禁用、卸载与更新 {#disable-uninstall-updates}
+
+- 禁用：Thunderbird → 工具 → 附加组件和主题 → 找到该附加组件 → 关闭开关。
+- 卸载：同一界面 → 三点菜单 → 移除。
+- 更新：通过 ATN 安装的会在新版本获批后自动更新。LOCAL/dev 安装不自动更新；需要手动重新安装新的 LOCAL 构建。
+- 完全移除设置：参见 [隐私 → 数据移除](privacy#data-removal)。
+
+另请参阅
+
+- [快速开始](quickstart)

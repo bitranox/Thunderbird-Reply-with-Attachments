@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'سازگاري'
-sidebar_label: 'سازگاري'
+title: 'مطابقت'
+sidebar_label: 'مطابقت'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## مطابقت {#compatibility}
+
+:::important گهٽ ترين Thunderbird ورزن
+هي ايڊ-آن Thunderbird **128 ESR يا نئون** جي حمايت ڪري ٿو. پراڻا ورزن سپورٽ ٿيل ناهن.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR يا نئون سپورٽ ٿيل آهي (128.x+).
+- Thunderbird جا پراڻا ورزن سپورٽ ٿيل ناهن.
+- Windows، macOS، ۽ Linux تي جاچيو ويو آهي.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 سپورٽ ٿيل ناهي
+Manifest V2 سپورٽ ٿيل ناهي. هي ايڊ-آن Thunderbird 128 ESR+ تي **Manifest V3 (MV3)** کي ٽارگيٽ ڪري ٿو.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ٽربل شوٽنگ {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- جيڪڏهن ايڊ-آن اميد مطابق ڪم نٿو ڪري، پڪ ڪريو ته توهان Thunderbird جو مطابقت رکندڙ ورزن استعمال ڪري رهيا آهيو (128 ESR يا بعد وارو).
+- ايڊ-آن سان لاڳاپيل مسئلن لاءِ Thunderbird جي غلطي ڪنسول کي چيڪ ڪريو (**Tools > Developer Tools > Error Console**).
+- جيڪڏهن محفوظ ٿيل سيٽنگون صحيح طرح لاڳو نه ٿيون لڳن، Thunderbird کي ٻيهر شروع ڪريو ۽ ٻيهر ڪوشش ڪريو. (Thunderbird سيشنن وچ ۾ حالت کي ڪيچ ڪري سگهي ٿو؛ ٻيهر شروع ڪرڻ سان پڪ ٿئي ٿي ته نيون سيٽنگون لوڊ ٿين ٿيون.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## ڄاتل تڪرار {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- هن وقت ڪو به معلوم ناهي. جيڪڏهن توهان کي بار بار ڊپليڪيٽ اٽيچمينٽس يا ٻين ايڊ-آنز سان ناڪاميون نظر اچن، مهرباني ڪري ٻيهر پيدا ڪرڻ جا قدم سان گڏ رپورٽ ڪريو.
+
+---
+
+## بيٽا/نائيٽلي {#beta-nightly}
+
+- Thunderbird Beta ۽ Daily (Nightly) بِلڊز عام طور تي سپورٽ ٿيل آهن، پر اپ اسٽريم تبديليون ڪڏهن ڪڏهن ايڊ-آن جي رويي کي ٽوڙي سگهن ٿيون. جيڪڏهن اوهان مسئلا ڏسو، مهرباني ڪري انهن جي رپورٽ ڪريو ۽ صحيح Thunderbird ورزن شامل ڪريو (مثال طور، “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly تي ڪا ريگريشن ملي؟ مهرباني ڪري ٻيهر پيدا ڪرڻ جا قدم سان گڏ ان جي رپورٽ ڪريو — [سپورٽ](support) ڏسو — ۽ صحيح Thunderbird بِلڊ اسٽرنگ شامل ڪريو.
 
 ---

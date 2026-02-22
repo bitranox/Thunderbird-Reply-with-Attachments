@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "نصبی",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "تنصیب",
+  "description": "---",
   "source": "@site/i18n/ks/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "نصبی",
+    "title": "تنصیب",
     "slug": "/install",
-    "sidebar_label": "نصبی"
+    "sidebar_label": "تنصیب"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "شروع آسن",
+    "title": "فوری آغاز",
     "permalink": "/Thunderbird-Reply-with-Attachments/ks/docs/quickstart"
   },
   "next": {

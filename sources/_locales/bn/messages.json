@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ব্ল্যাকলিস্টের কারণে সংযুক্তি বাদ পড়লে সতর্ক করুন"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ইনলাইন ছবি অন্তর্ভুক্ত করুন (এমবেডেড ছবি)"
+  },
   "uiDebugHeader": {
     "message": "উন্নত"
   },

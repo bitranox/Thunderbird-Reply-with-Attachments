@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'ئالاھىدە ئامىللەر'
-sidebar_label: 'ئالاھىدە ئامىللەر'
+title: 'ئالاھىدىلىكلەر'
+sidebar_label: 'ئىقتىدارلار'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ئىقتىدارلار {#features}
 
-## How It Works {#how-it-works}
+- جاۋاب بەرگەندە ئەسلى ئېلخەتتىكى ھۆججەتلەرنى ئاپتوماتىك قوشىدۇ.
+- سەپلەشكە بولىدىغان خۇلۇق: قوشۇمچىلارنى
+  - ئاپتوماتىك قوشۇش، ياكى
+  - پەقەت جەزملەشكەندىن كېيىنلا قوشۇش (كىچىك، قولاي يەتكۈلۈك دىئالوگ). تاللانمىلاردا سىز
+    جەزملەشنى قوزغىتىپ، كۆڭۈلدىكى جاۋابنى تاللىيالايسىز (ھەئە/ياق).
+- ھۆججەت ئاتلىرىنىڭ قارا تىزىملىكى (glob ئەندىزىلىرى) بەزى ھۆججەتلەرنىڭ
+  ئاپتوماتىك قوشۇلىشىنى توسىيدۇ. مىساللار: `*intern*`, `*secret*`, `*passwor*`.
+  ماسلاشتۇرۇش چوڭ-كىچىك ھەرپكە سىزگىرمەس بولۇپ، پەقەت ھۆججەت ئاتىنىلا تەكشۈرىدۇ؛ تاللانمىلاردا ھەر قۇردا
+  بىر ئەندىزە بېرىڭ.
+- قارا تىزىملىك ئاگاھلاندۇرۇشى (تاللاشچان، كۆڭۈلدىكى ھالەتتە قوزغىتىلغان): ھۆججەتلەر سىزنىڭ
+  قارا تىزىملىكىڭىز تەرىپىدىن چىقىرىۋېتىلگەن ۋاقىتتا، كىچىك بىر مودال ھۆججەت ۋە ماس كېلىدىغان ئەندىزە(لەر)نى تىزىپ بېرىدۇ. قارا-ھالەت
+  دوستانە ۋە كۇنۇپكا تاختىسى ئارقىلىق زىيارەت قىلىشقا بولىدۇ (Enter/Esc ياپىدۇ).
+- «جاۋاب قايتۇرۇش» ۋە «ھەممىگە جاۋاب قايتۇرۇش» بىلەن ئىشләйدۇ. «ئالغا يوللاش» بۇ قوشۇمچە تەرىپىدىن ئۆزگەرتىلمايدۇ.
+- ئۆزىڭىز بىر نەرسە قوشقان بولسىڭىزمۇ ئەسلىلىرىنى قوشىدۇ؛ ھۆججەت ئاتى بويىچە تەكرارلانغانلىرىنى ئالدىنى ئالىدۇ.
+- بەتكۈچ بويىچە تەكرارغا قارشى قوغدىغۇچ بىرلا تەھرىرلەش بەتكۈچىدە ئىككى قېتىم قوشۇپ قويۇشنى توسىйدۇ.
+- زۆرۈر بولمىغان قوشۇمچىلارنىڭ ئالدىنى ئېلىش ئۈچۈن كۆڭۈلدىكى ھالەتتە S/MIME گۇۋاھنامىلىرىنى ئۆتكۈزۈپ كېتىدۇ.
+- ئىچكى رەسىملەرنى قوشۇش (كۆڭۈلدىكى: قوزغىتىلغان). قىستۇرۇلغان سۈرەتلەر ئەسلى ئىچكى ئورۇنلاشتۇرۇشنى ساقلاپ،
+  جاۋاب مەزمۇنىدا بىۋاسىتە base64 data URI سۈپىتىدە ئەسلىگە كەلتۈرۈلىدۇ. تاللانمىلاردا چەكلىپ
+  ئىچكى سۈرەتلەرنى پۈتۈنلەي ئۆتكۈزۈۋېتەلەيسىز.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## قانداق ئىشلەيدۇ {#how-it-works}
+
+- جاۋاب بەرگەندە، قوشۇمچە ئەسلى قوشۇمچىلارنى تىزىپ بېرىدۇ.
+- ھۆججەت قوشۇمچىلىرىدىن S/MIME ئىمزالىرىنى سۈزۈپ چىقىرىدۇ؛ ئىچكى سۈرەتلەر (چەكلەنمىگەندە) مەزمۇن ئىچىدە ئەسلىگە كەلتۈرۈلىدۇ.
+- تاللاشچان ھالدا جەزملەشنى سورايدۇ (كۇنۇپكا تاختىسىغا قولاي).
+- مۇناسىپ ھۆججەتلەرنى خەت تېزىشتا قوشۇپ، ھۆججەت ئاتى بويىچە تەكرارنى ئالدىنى ئالىدۇ.
+- ئالاھىدە ئەھۋاللار ئۈچۈن قوللىنىش بۆلىكىدىكى “نېمىشقا قوشۇمچىلار قوشۇلماسلىقى مۇمكىن” نى كۆرۈڭ.
+
+مەخپىيەتلىك ئىزاھاتى: بارلىق بىر تەرەپ قىلىش مۇلازىمەتلىرى Thunderbird يەرلىكىدە يۈز بېرىدۇ. بۇ قوشۇمچە ئارقا سەھنىدە تورغا ھېچقانداق ئىلتىماس يوللىمايدۇ.
+
+---

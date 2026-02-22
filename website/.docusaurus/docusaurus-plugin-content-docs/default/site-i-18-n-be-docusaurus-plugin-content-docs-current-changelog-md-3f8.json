@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Змяненні",
-  "description": "Changelog",
+  "title": "Спіс змяненняў",
+  "description": "---",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Змяненні"
+    "title": "Спіс змяненняў"
   },
   "sidebar": "docs",
   "previous": {

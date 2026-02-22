@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Shigarwa'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Shigarwa ta hanyar "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Mafi ƙarancin Sigar Thunderbird
+Wannan abin ƙari yana tallafawa Thunderbird **128 ESR ko sabo fiye da haka**. Ba a tallafa tsofaffin sigogi ba.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Wannan ita ce hanyar shigarwa da ake ba da shawara. Abubuwan ƙari da aka shigar daga ATN (addons.thunderbird.net) suna samun sabuntawa ta atomatik. Shigarwar LOCAL/dev ba sa sabunta kansu.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Mafi ƙarancin sigar Thunderbird: 128 ESR ko sabo fiye da haka.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. A cikin Thunderbird, je zuwa **Tools > Add-ons and Themes**.
+2. Nema "reply with attachments".
+3. Ƙara abin ƙari.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Ko buɗe shafin abin ƙari kai tsaye: [Abubuwan ƙarin Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Shigarwa da hannu daga XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Zazzage fayil ɗin XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Je zuwa [Shafin Abin Ƙarin Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Zazzage sabon sigar abin ƙari a matsayin fayil ɗin XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Shigar a cikin Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Buɗe Thunderbird.
+2. Je zuwa **Tools > Add-ons and Themes**.
+3. A cikin **Add-ons Manager**, danna alamar gear a kusurwar dama ta sama.
+4. Zaɓi **Install Add-on From File…** daga menu.
+5. Zaɓi fayil ɗin `reply_with_attachments-x.y.z-tb.xpi` da aka zazzage.
+6. Tabbatar da shigarwar idan aka tambaye ka.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Shigarwa don ci gaba {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Zazzage ma'ajiyar lamba {#download-the-repository}
 
-See also
+1. Zazzage sabon sigar ma'ajiyar GitHub.
+2. Gudanar da `make help` don ƙarin bayani.
 
-- [Quickstart](quickstart)
+### Shigar a cikin Thunderbird {#install-in-thunderbird-dev}
+
+1. Buɗe Thunderbird.
+2. Je zuwa **Tools > Add-ons and Themes**.
+3. A cikin **Add-ons Manager**, danna alamar gear a kusurwar dama ta sama.
+4. Zaɓi **Install Add-on From File…** daga menu.
+5. Zaɓi fayil ɗin `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` da aka samar.
+6. Tabbatar da shigarwar idan aka tambaye ka.
+
+Lura: Idan Thunderbird bai karɓi `.zip` a tsarin ku ba, sake suna shi zuwa `.xpi` sannan ku sake gwada “Install Add‑on From File…”.
+
+### Inda za a samu LOCAL ZIP {#where-local-zip}
+
+- Da fari, yi kunshin abin ƙari: gudanar da `make pack` a tushen ma'ajiyar.
+- Bayan yin kunshin, nemo zip na “LOCAL” a tushen ma'ajiyar (misali, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Kafin sake yin kunshin don gwaji, ƙara lambar sigar a cikin `sources/manifest_ATN.json` da `sources/manifest_LOCAL.json` duka.
+
+---
+
+## Kashewa, Cire shigarwa, da Sabuntawa {#disable-uninstall-updates}
+
+- Kashe: Thunderbird → Tools → Add‑ons and Themes → nemo abin ƙari → kashe (toggle off).
+- Cire shigarwa: wannan hangen → menu na dige uku → Cire.
+- Sabuntawa: Shigarwa ta ATN tana samun sabuntawa ta atomatik idan an amince da sababbin sigogi. Shigarwar LOCAL/dev ba sa sabunta kansu; sake shigar da sabon ginin LOCAL da hannu.
+- Cire saituna gaba ɗaya: duba [Sirri → Cire bayanai](privacy#data-removal).
+
+Duba kuma
+
+- [Farawa da sauri](quickstart)

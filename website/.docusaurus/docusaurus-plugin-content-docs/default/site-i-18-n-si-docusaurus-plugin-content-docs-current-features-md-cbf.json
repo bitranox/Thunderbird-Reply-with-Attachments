@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "මුල්‍යයන්",
-  "description": "Features",
+  "title": "විශේෂාංග",
+  "description": "---",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "මුල්‍යයන්",
-    "sidebar_label": "මුල්‍යයන්"
+    "title": "විශේෂාංග",
+    "sidebar_label": "විශේෂාංග"
   },
   "sidebar": "docs",
   "next": {
-    "title": "ආරම්භක මාර්ගෝපදේශය",
+    "title": "ඉක්මන් ආරම්භය",
     "permalink": "/Thunderbird-Reply-with-Attachments/si/docs/quickstart"
   }
 }

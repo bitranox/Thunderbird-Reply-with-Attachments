@@ -1,31 +1,33 @@
 ---
 id: donation
 title: 'Δωρεά'
-sidebar_label: 'Δωρεά'
+sidebar_label: 'Δωρίστε'
 ---
 
-## Donate
+---
+
+## Δωρεά
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Αν σας αρέσει το "Reply with Attachments" και θέλετε να στηρίξετε την ανάπτυξή του, μπορείτε να κάνετε δωρεά εδώ:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Κάντε δωρεά μέσω Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ή</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Κάντε δωρεά μέσω PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ή</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Κεράστε μου έναν καφέ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Σαρώστε για να με κεράσετε έναν καφέ"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Ευχαριστούμε! Η υποστήριξή σας βοηθά στη διατήρηση της συμβατότητας με νέες εκδόσεις του Thunderbird, στη βελτίωση της προσβασιμότητας και των δοκιμών και στο να παραμένει η τεκμηρίωση ενημερωμένη.
 
-Notes
+Σημειώσεις
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Οι σύνδεσμοι δωρεάς ανοίγουν μόνο όταν τους κάνετε κλικ· το πρόσθετο δεν πραγματοποιεί αιτήματα δικτύου στο παρασκήνιο.
+- Η επαναλαμβανόμενη υποστήριξη βοηθά στη μακροπρόθεσμη συντήρηση και τις έγκαιρες ενημερώσεις, αλλά είναι απολύτως προαιρετική.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Αν τα κουμπιά εικόνας δεν φορτωθούν, χρησιμοποιήστε αντί γι’ αυτό τους παρακάτω συνδέσμους:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Κεράστε μου έναν καφέ](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Οι δωρεές είναι προαιρετικές· δεν υπάρχει περιορισμός λειτουργιών.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Ορατότητα δωρεών (αναβολή 90 ημερών)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Το πρόσθετο περιλαμβάνει μια λειτουργία ευκολίας για να κρύβει τις υπενθυμίσεις δωρεάς για λίγο αφού κάνετε δωρεά.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Πού θα το βρείτε
+  - Επιλογές → ενότητα Υποστήριξη: θα δείτε ένα κουμπί «Έκανα δωρεά» και μια μικρή περιοχή με ένδειξη.
+  - Το παράθυρο διαλόγου επιβεβαίωσης αποστολής εμφανίζει επίσης ένα κουμπί Δωρεά· αυτό κρύβεται αυτόματα όταν η αναβολή είναι ενεργή.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Πώς λειτουργεί
+  - Κάνοντας κλικ στο «Έκανα δωρεά» κρύβονται τα κουμπιά δωρεάς και οι σχετικές προτροπές για 90 ημέρες.
+  - Μια ένδειξη κατάστασης εμφανίζει «Κρυφό έως YYYY‑MM‑DD» (στην τοπική σας ημερομηνία). Υπάρχει επίσης ένα κουμπί «Εμφάνιση Δωρεάς ξανά» για άμεση επαναφορά της ορατότητας.
+  - Μετά από 90 ημέρες, το κουμπί Δωρεά γίνεται ξανά ορατό αυτόματα.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Απόρρητο και αποθήκευση
+  - Το πρόσθετο αποθηκεύει μία μόνο χρονική σήμανση στο τοπικό storage του Thunderbird για να θυμάται την περίοδο αναβολής. Κλειδί: `donateHideUntil` (χιλιοστά του δευτερολέπτου (epoch)).
+  - Αυτή η ρύθμιση είναι τοπική στο προφίλ Thunderbird σας (δεν γίνεται συγχρονισμός στο cloud). Αυτή η λειτουργία δεν κάνει αιτήματα δικτύου.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Αντιμετώπιση προβλημάτων
+  - Αν η Δωρεά εξακολουθεί να εμφανίζεται αμέσως μετά το κλικ στο «Έκανα δωρεά», περιμένετε λίγο ή ανοίξτε ξανά τη σελίδα Επιλογές· το περιβάλλον χρήστη ενημερώνεται μόλις αποθηκευτεί η ρύθμιση.
+  - Για χειροκίνητη επαναφορά, κάντε κλικ στο «Εμφάνιση Δωρεάς ξανά». Μπορείτε επίσης να περιμένετε έως ότου περάσει η ημερομηνία που αναφέρεται στην ένδειξη.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Αυτή η λειτουργία υπάρχει αποκλειστικά για λόγους ευκολίας· δεν μπλοκάρει ποτέ τη λειτουργικότητα του προσθέτου και δεν συλλέγει κανένα προσωπικό δεδομένο.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "దానం చేయండి",
-  "description": "Donate",
+  "title": "విరాళం ఇవ్వండి",
+  "description": "---",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "దానం చేయండి",
+    "title": "విరాళం ఇవ్వండి",
     "sidebar_label": "దానం చేయండి"
   },
   "sidebar": "docs",

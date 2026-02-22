@@ -4,94 +4,95 @@ title: 'Käyttö'
 sidebar_label: 'Käyttö'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Käyttö {#usage}
+
+- Vastaa ja lisäosa lisää alkuperäiset automaattisesti — tai kysyy ensin, jos asetus on otettu käyttöön Asetuksissa.
+- Duplikaatit poistetaan tiedostonimen perusteella; S/MIME‑osat ohitetaan aina. Upotetut kuvat palautetaan oletuksena vastauksen runkoon (poista käytöstä kohdasta "Include inline pictures" Asetuksissa).
+- Mustalistatut liitteet ohitetaan myös (kirjainkoosta riippumattomat glob‑kuviot, jotka täsmäävät tiedostonimiin, eivät polkuihin). Katso [Määritykset](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Mitä tapahtuu vastattaessa {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Tunnista vastaus → luetteloi alkuperäiset liitteet → suodata S/MIME + upotetut → valinnainen vahvistus → lisää kelpaavat tiedostot (ohita duplikaatit) → palauta upotetut kuvat runkoon.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Tiukka vs. sallivampi läpikäynti: Lisäosa sulkee ensin S/MIME‑ ja upotetut osat pois tiedostoliitteistä. Jos mikään ei täytä ehtoja, se suorittaa sallivamman läpikäynnin, joka yhä sulkee pois S/MIME/inline‑osat mutta sietää useampia tapauksia (katso Koodin yksityiskohdat). Upotettuja kuvia ei koskaan lisätä tiedostoliitteiksi; sen sijaan, kun "Include inline pictures" on käytössä (oletus), ne upotetaan suoraan vastauksen runkoon base64‑data‑URI:na.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Osatyyppi                                                     |                    Tiukka läpikäynti |                Sallivampi läpikäynti |
+| ------------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
+| S/MIME‑allekirjoitustiedosto `smime.p7s`                      |                         Poissuljettu |                         Poissuljettu |
+| S/MIME MIME‑tyypit (`application/pkcs7-*`)                    |                         Poissuljettu |                         Poissuljettu |
+| Sisäinen kuva, johon viitataan Content‑ID:llä (`image/*`)     | Poissuljettu (palautetaan runkoon\*) | Poissuljettu (palautetaan runkoon\*) |
+| Liitteenä oleva sähköposti (`message/rfc822`) tiedostonimellä |                            Ei lisätä |                     Saatetaan lisätä |
+| Tavallinen tiedostoliite, jolla on tiedostonimi               |                     Saatetaan lisätä |                     Saatetaan lisätä |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Kun "Include inline pictures" on käytössä (oletus: PÄÄLLÄ), upotetut kuvat upotetaan vastauksen runkoon base64‑data‑URI:na sen sijaan, että ne lisättäisiin tiedostoliitteiksi. Katso [Määritykset](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Esimerkki: Joiltakin liitteiltä voi puuttua tiettyjä otsakkeita, mutta ne ovat silti tavallisia tiedostoja (eivät upotettuja/S/MIME). Jos tiukka läpikäynti ei löydä yhtään, sallivampi läpikäynti voi hyväksyä ne ja liittää ne.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Ristiviittaukset {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Välitä‑toimintoa ei muuteta suunnitellusti (katso Rajoitukset alla).
+- Syyhin, miksi liitettä ei ehkä lisätä, katso “Miksi liitteitä ei ehkä lisätä”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Toiminnan yksityiskohdat {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Päällekkäisyyksien estäminen: Lisäosa merkitsee viestin kirjoitusvälilehden käsitellyksi välilehtikohtaisella istuntoarvolla ja muistiin tallennetulla suojauksella. Se ei lisää alkuperäisiä kahdesti.
+- Kirjoitusikkunan sulkeminen ja avaaminen uudelleen käsitellään uutena välilehtenä (eli uusi yritys sallitaan).
+- Nykyisten liitteiden huomioiminen: Jos kirjoitettava viesti sisältää jo liitteitä, alkuperäiset lisätään silti tasan kerran, ohittaen jo olemassa olevat tiedostonimet.
+- Poissulut: S/MIME‑artifaktit ja upotetut kuvat suljetaan pois tiedostoliitteistä. Jos ensimmäisellä kierroksella mikään ei kelpaa, sallivampi varakierros tarkistaa uudelleen ei‑S/MIME‑osat. Upotettuja kuvia käsitellään erikseen: ne palautetaan vastauksen runkoon data‑URI:na (kun käytössä).
+  - Tiedostonimet: `smime.p7s`
+  - MIME‑tyypit: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Upotetut kuvat: mikä tahansa `image/*`‑osa, johon viitataan Content‑ID:llä — suljetaan pois tiedostoliitteistä mutta upotetaan vastauksen runkoon, kun "Include inline pictures" on PÄÄLLÄ
+  - Liitetyt sähköpostit (`message/rfc822`): käsitellään tavallisina liitteinä, jos niillä on tiedostonimi; ne voidaan lisätä (edellyttäen duplikaattitarkistuksia ja mustalistaa).
+- Mustalista‑varoitus (jos käytössä): Kun ehdokkaat suljetaan pois mustalistasi vuoksi, lisäosa näyttää pienen modaalin, jossa luetellaan vaikutuksen saaneet tiedostot ja vastaavat kuviot. Tämä varoitus näkyy myös tilanteissa, joissa liitteitä ei lisätä lainkaan, koska kaikki suljettiin pois.
 
 ---
 
-## Limitations {#limitations}
+## Pikanäppäimet {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Vahvistusikkuna: Y/J = Yes, N/Esc = No; Sarkain/Shift+Sarkain ja Nuolinäppäimet kierrättävät kohdistusta.
+  - “Default answer” kohdassa [Määritykset](configuration#confirmation) asettaa aluksi kohdistetun painikkeen.
+  - Enter aktivoi kohdistetun painikkeen. Sarkain/Shift+Sarkain ja nuolet siirtävät kohdistusta saavutettavuuden vuoksi.
+
+### Pikanäppäinmuistilista {#keyboard-cheat-sheet}
+
+| Näppäimet       | Toiminto                                         |
+| --------------- | ------------------------------------------------ |
+| Y / J           | Vahvista Kyllä                                   |
+| N / Esc         | Vahvista Ei                                      |
+| Enter           | Aktivoi kohdistettu painike                      |
+| Tab / Shift+Tab | Siirrä kohdistusta eteen/taakse                  |
+| Arrow keys      | Siirrä kohdistusta painikkeiden välillä          |
+| Default answer  | Asettaa alkuperäisen kohdistuksen (Kyllä tai Ei) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Rajoitukset {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Välitä‑toimintoa tämä lisäosa ei muuta (Vastaa ja Vastaa kaikille ovat tuettuja).
+- Hyvin suuria liitteitä voivat koskea Thunderbirden tai palveluntarjoajan rajoitukset.
+  - Lisäosa ei paloita eikä pakkaa tiedostoja; se tukeutuu Thunderbirden normaaliin liitekäsittelyyn.
+- Salatut viestit: S/MIME‑osat jätetään tarkoituksella pois.
 
 ---
 
-See also
+## Miksi liitteitä ei ehkä lisätä {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Upotettuja kuvia ei lisätä tiedostoliitteinä. Kun "Include inline pictures" on PÄÄLLÄ (oletus), ne upotetaan vastauksen runkoon data‑URI:na. Jos asetus on POIS, upotetut kuvat poistetaan kokonaan. Katso [Määritykset](configuration#include-inline-pictures).
+- S/MIME‑allekirjoitusosat jätetään tarkoituksella pois: tiedostonimet kuten `smime.p7s` ja MIME‑tyypit kuten `application/pkcs7-signature` tai `application/pkcs7-mime` ohitetaan.
+- Mustalistan kuviot voivat suodattaa ehdokkaita: katso [Määritykset](configuration#blacklist-glob-patterns); täsmäys on kirjainkoosta riippumaton ja koskee vain tiedostonimeä.
+- Päällekkäisiä tiedostonimiä ei lisätä uudelleen: jos kirjoitettava viesti sisältää jo tiedoston, jolla on sama normalisoitu nimi, se ohitetaan.
+- Ei‑tiedostomaiset osat tai puuttuvat tiedostonimet: vain tiedoston kaltaiset osat, joilla on käyttökelpoinen tiedostonimi, otetaan lisättäviksi.
+
+---
+
+Katso myös
+
+- [Määritykset](configuration)

@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Kuisirwa'
+title: 'Kuiswa'
 slug: /install
-sidebar_label: 'Kuisirwa'
+sidebar_label: 'Kuiswa'
 ---
 
-## Kuisirwa kuburikidza ne "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-Iyi add‑on inotsigira Thunderbird **128 ESR kana kuti zvichangobva**. Shanduro dzekare hadzitsigirwi.
+## Kuiswa kuburikidza ne "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Shanduro shoma ye Thunderbird
+Chiwewedzera ichi chinotsigira Thunderbird 128 ESR kana nyowani. Shanduro dzekare hadzitsigirwe.
 :::
 
-Iyi ndiyo nzira inokurudzirwa yekuisa. Add‑ons akaiswa kubva kuATN (addons.thunderbird.net) anowana magadziridzo otomatiki. LOCAL/dev installs hadzidzokorore otomatiki.
+Iyi ndiyo nzira yakakurudzirwa yekuisa. Zviwedzero zvinomisikidzwa kubva kuATN (addons.thunderbird.net) zvinogamuchira zvigadziridzo otomatiki. Kuisa kweLOCAL/dev hakuvandudze otomatiki.
 
-- Minimum Thunderbird version: 128 ESR kana kuti zvichangobva.
+- Shanduro shoma ye Thunderbird: 128 ESR kana nyowani.
 
 1. MuThunderbird, enda ku **Tools > Add-ons and Themes**.
 2. Tsvaga "reply with attachments".
-3. Wedzera add-on.
+3. Wedzera chiwedzero.
 
-Kana uvhure peji readd-on rakananga: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Kana kuvhura peji rechiwedzero zvakananga: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Kuisirwa kwech manually kubva kuXPI {#local-installation-in-thunderbird}
+## Kuiswa nemaoko kubva kuXPI {#local-installation-in-thunderbird}
 
 ### Dhawunirodha faira reXPI {#download-the-xpi-file}
 
-1. Enda ku [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Dhawunirodha shanduro ichangobva yeadd-on sefaira reXPI (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Enda ku [Peji reThunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Dhawunirodha shanduro yazvino yechiwedzero sefaira reXPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
 ### Isa muThunderbird {#install-in-thunderbird-local}
 
 1. Vhura Thunderbird.
 2. Enda ku **Tools > Add-ons and Themes**.
-3. Mu **Add-ons Manager**, dzvanya pa icon yemachipisi kumusoro-kurudyi.
-4. Sarudza **Install Add-on From File…** kubva mumenu.
-5. Sarudza faira rakadhawunirwa `reply_with_attachments-x.y.z-tb.xpi`.
-6. Simbisa kuisirwa pakumbira.
+3. Mu **Add-ons Manager**, dzvanya chiratidzo chegiya pakona yepamusoro-kurudyi.
+4. Sarudza **Install Add-on From File…** kubva pamenu.
+5. Sarudza faira yakadhawunirodhiwa `reply_with_attachments-x.y.z-tb.xpi`.
+6. Simbisa kuiswa paunokumbirwa.
 
 ---
 
-## Kuisirwa kwekuvandudza {#installation-for-development}
+## Kuiswa kwekusimudzira {#installation-for-development}
 
-### Dhawunirodha repository {#download-the-repository}
+### Dhawunirodha repozitori {#download-the-repository}
 
-1. Dhawunirodha shanduro ichangobva yeGitHub repository.
+1. Dhawunirodha shanduro yazvino yeGitHub repozitori.
 2. Mhanya `make help` kuti uwane rumwe ruzivo.
 
 ### Isa muThunderbird {#install-in-thunderbird-dev}
 
 1. Vhura Thunderbird.
 2. Enda ku **Tools > Add-ons and Themes**.
-3. Mu **Add-ons Manager**, dzvanya pa icon yemachipisi kumusoro-kurudyi.
-4. Sarudza **Install Add-on From File…** kubva mumenu.
-5. Sarudza faira rakabudiswa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Simbisa kuisirwa pakumbira.
+3. Mu **Add-ons Manager**, dzvanya chiratidzo chegiya pakona yepamusoro-kurudyi.
+4. Sarudza **Install Add-on From File…** kubva pamenu.
+5. Sarudza faira yakagadzirwa `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Simbisa kuiswa paunokumbirwa.
 
-Cherechedzo: Kana Thunderbird isingagamuchire `.zip` pamasystem enyu, chinja zita rayo ku `.xpi` uye edza “Install Add‑on From File…” zvekare.
+Cherechedza: Kana Thunderbird ikasagamuchira `.zip` pane sisitimu yako, chinja zita rayo ku `.xpi` wobva waedza “Install Add‑on From File…” zvakare.
 
-### Kupi kuwana LOCAL ZIP {#where-local-zip}
+### Kwaunowana LOCAL ZIP {#where-local-zip}
 
-- Kutanga, pakete add‑on: mhanya `make pack` mu repository root.
-- Mushure mepaketi, tsvaga “LOCAL” zip mu repository root (semuenzaniso, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Usati wapaketi zvekare kuti uedze, bampira shanduro mu `sources/manifest_ATN.json` uye `sources/manifest_LOCAL.json`.
+- Kutanga, rongedza chiwedzero: mhanya `make pack` mumudzi werepozitori.
+- Mushure mekurongedza, tsvaga zip re “LOCAL” mumudzi werepozitori (semuenzaniso, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Usati warongazve kuti uedze, simudzira nhamba dzezvishanduro mu `sources/manifest_ATN.json` ne `sources/manifest_LOCAL.json` zvese.
 
 ---
 
-## Dzima, Bvisa, uye Magadziridzo {#disable-uninstall-updates}
+## Kudzima, Kubvisa, uye Zvigadziridzo {#disable-uninstall-updates}
 
-- Dzima: Thunderbird → Tools → Add‑ons and Themes → tsvaga add‑on → toggle off.
-- Bvisa: maonero akafanana → menyu yemadhiri matatu → Bvisa.
-- Magadziridzo: ATN installs anozvitsvaga dheta pa shanduro itsva dzinotenderwa. LOCAL/dev installs hadzidzokorore otomatiki; reinstall imwe LOCAL build manually.
-- Bvisa marongero zvachose: ona [Privacy → Data removal](privacy#data-removal).
+- Dzima: Thunderbird → Tools → Add‑ons and Themes → tsvaga chiwedzero → chinjisa kuti chidzime.
+- Bvisa: maonero mamwe acho → menyu yemadotsi matatu → Remove.
+- Zvigadziridzo: Zviiswe kubva kuATN zvinovandudza otomatiki kana shanduro nyowani dzabvumidzwa. Kuisa kweLOCAL/dev hakuvandudze otomatiki; isa zvakare build itsva yeLOCAL nemaoko.
+- Bvisa marongero zvachose: ona [Zvakavanzika → Kubviswa kwedata](privacy#data-removal).
 
 Ona zvakare
 
-- [Quickstart](quickstart)
+- [Kutanga nekukurumidza](quickstart)

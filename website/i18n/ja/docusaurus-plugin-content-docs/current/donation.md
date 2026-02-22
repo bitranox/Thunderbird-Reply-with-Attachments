@@ -4,28 +4,30 @@ title: '寄付'
 sidebar_label: '寄付'
 ---
 
-## Donate
+---
+
+## 寄付
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+「Reply with Attachments」が気に入って開発を支援したい場合は、こちらから寄付できます。
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe で寄付" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>または</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal で寄付" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>または</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy Me a Coffee で支援" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="スキャンして Buy Me a Coffee から支援" 
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+ありがとうございます！ご支援は、新しい Thunderbird リリースへの互換性の維持、アクセシビリティとテストの改善、ドキュメントの最新化に役立ちます。
 
-Notes
+注記
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- 寄付リンクはクリックしたときにのみ開き、アドオンはバックグラウンドでネットワークリクエストを実行しません。
+- 継続的なご支援は長期的なメンテナンスやタイムリーな更新に役立ちますが、完全に任意です。
 
 ---
 
-If the image buttons do not load, please use these links instead:
+画像ボタンが読み込まれない場合は、代わりに次のリンクをご利用ください。
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+寄付は任意であり、機能が制限されることはありません。
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## 寄付表示（90日間スヌーズ）
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+このアドオンには、寄付した後しばらくの間、寄付のプロンプトを非表示にできる便利な機能が含まれています。
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- どこにあるか
+  - オプション → サポート セクション：「寄付しました」ボタンと小さなヒント領域が表示されます。
+  - 送信確認ダイアログにも［寄付］ボタンが表示されます。スヌーズが有効なときは自動的に非表示になります。
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- 動作
+  - 「寄付しました」をクリックすると、寄付ボタンおよび関連するプロンプトが90日間非表示になります。
+  - ステータスのヒントには「YYYY‑MM‑DD まで非表示」（ローカル日付）が表示されます。すぐに再表示するための「寄付を再表示」ボタンもあります。
+  - 90日後、［寄付］ボタンは自動的に再び表示されます。
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- プライバシーと保存
+  - このアドオンは、スヌーズ期間を記憶するために、Thunderbird のローカルストレージに 1 つのタイムスタンプを保存します。キー: `donateHideUntil`（エポック・ミリ秒）。
+  - この設定は Thunderbird プロファイルにのみ保存され（クラウド同期はされません）、この機能によるネットワークリクエストは一切行われません。
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- トラブルシューティング
+  - 「寄付しました」をクリックした直後でも［寄付］が表示されたままの場合は、少し待つか、オプションページを開き直してください。設定が保存されるとすぐに UI が更新されます。
+  - 手動でリセットするには「寄付を再表示」をクリックします。ヒントに表示されている日付になるまで待つこともできます。
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+この機能は利便性のためのものにすぎず、アドオンの機能を妨げたり、個人データを収集したりすることはありません。
 
 ---

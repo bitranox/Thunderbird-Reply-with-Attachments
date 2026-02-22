@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "첨부 파일이 차단 목록으로 인해 제외되면 경고 표시"
   },
+  "uiIncludeInlineLabel": {
+    "message": "인라인 그림 포함 (포함된 이미지)"
+  },
   "uiDebugHeader": {
     "message": "고급"
   },

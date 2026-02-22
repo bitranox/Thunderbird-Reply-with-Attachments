@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "අව වැඩසටහන්",
-  "description": "Development Guide",
+  "title": "සංවර්ධනය",
+  "description": "---",
   "source": "@site/i18n/si/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "අව වැඩසටහන්",
-    "sidebar_label": "අව වැඩසටහන්"
+    "title": "සංවර්ධනය",
+    "sidebar_label": "සංවර්ධනය"
   },
   "sidebar": "docs",
   "previous": {

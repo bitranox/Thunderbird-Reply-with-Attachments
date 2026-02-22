@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Compatibiliteit",
-  "description": "Compatibility",
+  "title": "Versoenbaarheid",
+  "description": "---",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Compatibiliteit",
-    "sidebar_label": "Compatibiliteit"
+    "title": "Versoenbaarheid",
+    "sidebar_label": "Versoenbaarheid"
   },
   "sidebar": "docs",
   "previous": {

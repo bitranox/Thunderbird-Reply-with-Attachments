@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "დაწყების ინსტრუქცია",
-  "description": "დაწყების ინსტრუქცია",
+  "title": "სწრაფი დაწყება",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "დაწყების ინსტრუქცია",
-    "sidebar_label": "დაწყების ინსტრუქტია"
+    "title": "სწრაფი დაწყება",
+    "sidebar_label": "სწრაფი დაწყება"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "خصوصیات",
+    "title": "მახასიათებლები",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/features"
   },
   "next": {
-    "title": "ინსტალაცია",
+    "title": "დაყენება",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/install"
   }
 }

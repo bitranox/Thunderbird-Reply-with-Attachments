@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Brug",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",

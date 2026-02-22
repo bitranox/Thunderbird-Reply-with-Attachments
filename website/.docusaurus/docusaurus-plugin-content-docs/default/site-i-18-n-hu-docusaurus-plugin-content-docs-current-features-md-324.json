@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Jellemzők",
-  "description": "Features",
+  "title": "Funkciók",
+  "description": "---",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Jellemzők",
-    "sidebar_label": "Jellemzők"
+    "title": "Funkciók",
+    "sidebar_label": "Funkciók"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Gyors útmutató",
+    "title": "Gyorstalpaló",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/quickstart"
   }
 }

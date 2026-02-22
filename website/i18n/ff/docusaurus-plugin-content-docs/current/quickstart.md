@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Dembal'
-sidebar_label: 'Dembal'
+title: 'Fuɗɗugol yaawre'
+sidebar_label: 'Fuɗɗorde Yaawnde'
 ---
-
-## Dembal
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Fuɗɗo Yaawngo
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Yamre Thunderbird seeɗa
+Ɓeydital ngol wallitii Thunderbird **128 ESR walla kesol**. Yamre ɓe ɓooyɗe wonaa wallitii.
+:::
+
+:::note Alaa telimetrii; alaa laylaytol caggal
+Ɓeydital ngol **hoto** daɓɓita analiitik/telimetrii tee **hoto** waɗa ɗaɓɓitanɗe laylaytol caggal. Naatgol laylaytol waɗii tan so a dobaa jokke boowal (Docs, GitHub, Donate).
+:::
+
+---
+
+### Aafgol
+
+1. Aaf ɓeydital ngol e Thunderbird Add‑ons.
+2. Eɓɓere: Hurmin teeŋtinal (Cuɓe → “Naamno ko adii ɓeyda ceŋe”).
+3. Eɓɓere: Woppu jeertinoore jerorde doggol hurminaa (goowaaɗo): “Tinno so ceŋe ko momtaaɓe e jerorde doggol”.
+4. Eɓɓere: Ɓeydu ciife jerorde doggol (gooto to darnde kala), no ndaarii:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Fiilannde: “# …” dow ɓen ndee ko cimminirde e dokkumente ndee; hoto ɓeydude cimminirde e ciifuuji ɗe a ñippit-ɗaa e Cuɓe. Naatnu ciifol gooto tan to darnde kala.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Jooni jaabo e mesaaji heddorde ceŋe — aslol ɗe maa ɓeydaa e jaajol walla caggal teeŋtinal yaawngo. So piille gooto momtaama e jerorde doggol maa, maa yiytu jeertinoore ɓurtungol ɗeenaade ɗe.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Ƴeewto {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Jaabo e mesaaji heddorde ceŋe 1–2 tee teeŋtin no aslol ɗe ɓeydaa e henorde binndugol maa.
+- Ngam feewta heeriinde, yillo [Teeltugol](configuration) (toggle teeŋtinal, jaabawol goowaaɗo, ciife jerorde doggol).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Ƴeewto jeertinoore jerorde doggol {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Jaabo e mesaaji ndu arii piilol no “secret.txt”.
+- So “Tinno so ceŋe ko momtaaɓe e jerorde doggol” hurminaa, palal kesol maa wostondii piille momtaaɓe e ciifol toɗɗii.
+
+So a hoto yiytu jeertinoore, teeŋtin ciifol ngol toɗɗii innde piille nde mbaydi ɗoo (innde piille tan, alaa tuubgol mawɗe/palɗe). Yillo Teeltugol → Jerorde doggol.
+
+---
+
+### Ciɗol tappirde {#keyboard-note}
+
+- Palal teeŋtinal ndee jaɓa Y/J ngam Eeyaa e N/Esc ngam Alaa. E tappirde ɗe wonaa Latin, alkule ɗe ena waawi fefrude; Enter teeŋtin butoŋ mo sellinaama.
 
 ---

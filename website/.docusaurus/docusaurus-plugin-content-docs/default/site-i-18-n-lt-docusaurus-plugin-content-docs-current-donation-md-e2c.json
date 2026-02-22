@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Aukoti",
-  "description": "Aukoti",
+  "title": "Paaukoti",
+  "description": "---",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Aukoti",
-    "sidebar_label": "Aukoti"
+    "title": "Paaukoti",
+    "sidebar_label": "Paaukoti"
   },
   "sidebar": "docs",
   "previous": {

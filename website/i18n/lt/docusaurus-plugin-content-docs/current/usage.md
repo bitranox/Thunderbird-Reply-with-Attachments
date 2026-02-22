@@ -4,94 +4,98 @@ title: 'Naudojimas'
 sidebar_label: 'Naudojimas'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Naudojimas {#usage}
+
+- Atsakykite ir priedas automatiškai pridės originalus — arba pirmiausia paklaus, jei taip nustatyta Parinktyse.
+- Dublikatai šalinami pagal failo pavadinimą; S/MIME dalys visada praleidžiamos. Numatyta, kad įterptieji vaizdai atkuriami atsakymo tekste (galite išjungti per „Include inline pictures“ Parinktyse).
+- Juodojo sąrašo priedai taip pat praleidžiami (didžiosiomis/mažosiomis neskiriami glob šablonai, atitinkantys failų pavadinimus, o ne kelius). Žr. [Konfigūracija](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Kas nutinka atsakant {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Aptikti atsakymą → išvardyti originalius priedus → filtruoti S/MIME + įterptuosius → neprivalomas patvirtinimas → pridėti tinkamus failus (praleisti dublikatus) → atkurti įterptuosius vaizdus tekste.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Griežtas vs. laisvesnis praėjimas: Priedas pirmiausia iš failų priedų pašalina S/MIME ir įterptąsias dalis. Jei niekas netinka, vykdomas laisvesnis praėjimas, kuris vis dar atmeta S/MIME/įterptuosius, bet toleruoja daugiau atvejų (žr. Kodo detales). Įterptieji vaizdai niekada nepridedami kaip failų priedai; vietoje to, kai įjungta „Include inline pictures“ (numatyta), jie įterpiami tiesiai į atsakymo tekstą kaip base64 duomenų URI.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Dalies tipas                                                |           Griežtas praėjimas |         Laisvesnis praėjimas |
+| ----------------------------------------------------------- | ---------------------------: | ---------------------------: |
+| S/MIME parašo failas `smime.p7s`                            |                      Atmesta |                      Atmesta |
+| S/MIME MIME tipai (`application/pkcs7-*`)                   |                      Atmesta |                      Atmesta |
+| Įterptasis vaizdas, į kurį nurodo Content‑ID (`image/*`)    | Atmesta (atkuriama tekste\*) | Atmesta (atkuriama tekste\*) |
+| Pridėtas el. laiškas (`message/rfc822`) su failo pavadinimu |                  Nepridedama |            Gali būti pridėta |
+| Įprastas failo priedas su failo pavadinimu                  |            Gali būti pridėta |            Gali būti pridėta |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Kai „Include inline pictures“ įjungta (numatyta: ĮJUNGTA), įterptieji vaizdai įterpiami į atsakymo tekstą kaip base64 duomenų URI, o ne pridedami kaip failų priedai. Žr. [Konfigūracija](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Pavyzdys: Kai kuriems priedams gali trūkti tam tikrų antraščių, bet jie vis tiek yra įprasti failai (ne įterptieji/S/MIME). Jei griežtas praėjimas nieko neranda, laisvesnis praėjimas gali juos priimti ir pridėti.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kryžminės nuorodos {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Persiuntimas pagal sumanymą nėra keičiamas (žr. apribojimus toliau).
+- Dėl priežasčių, kodėl priedas gali būti nepridėtas, žr. „Kodėl priedai gali būti nepridėti“.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Veikimo detalės {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Dublikatų prevencija: Priedas pažymi rašymo kortelę kaip apdorotą, naudodamas kiekvienai kortelei skirtą sesijos reikšmę ir atmintyje laikomą apsaugą. Originalai nebus pridėti du kartus.
+- Rašymo lango uždarymas ir atidarymas laikomas nauja kortele (t. y. leidžiamas naujas bandymas).
+- Esamų priedų paisymas: Jei rašomame laiške jau yra priedų, originalai vis tiek pridedami tik vieną kartą, praleidžiant jau egzistuojančius failų pavadinimus.
+- Išimtys: S/MIME artefaktai ir įterptieji vaizdai neįtraukiami į failų priedus. Jei per pirmąjį praėjimą niekas netinka, laisvesnis atsarginis tikrinimas dar kartą peržiūri ne S/MIME dalis. Įterptieji vaizdai tvarkomi atskirai: jie atkuriami atsakymo tekste kaip duomenų URI (kai įjungta).
+  - Failų pavadinimai: `smime.p7s`
+  - MIME tipai: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Įterptieji vaizdai: bet kuri `image/*` dalis, į kurią nurodo Content‑ID — neįtraukiama į failų priedus, bet įterpiama į atsakymo tekstą, kai „Include inline pictures“ yra ĮJUNGTA
+  - Pridėti el. laiškai (`message/rfc822`): laikomi įprastais priedais, jei turi failo pavadinimą; jie gali būti pridėti (atsižvelgiant į dublikatų patikrą ir juodąjį sąrašą).
+- Įspėjimas apie juodąjį sąrašą (jei įjungta): Kai kandidatai atmetami pagal jūsų juodąjį sąrašą,
+  priedas parodo mažą modalinį langą su paveiktų failų sąrašu ir atitinkančiais
+  šablonais. Šis įspėjimas taip pat rodomas tais atvejais, kai priedai nebus
+  pridėti, nes viskas buvo atmesta.
 
 ---
 
-## Limitations {#limitations}
+## Klaviatūros spartieji klavišai {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Patvirtinimo dialogas: Y/J = Taip, N/Esc = Ne; Tab/Shift+Tab ir rodyklių klavišai keičia fokusą ratu.
+  - „Default answer“ [Konfigūracijoje](configuration#confirmation) nustato pradinį sufokusuotą mygtuką.
+  - Enter suaktyvina sufokusuotą mygtuką. Tab/Shift+Tab ir rodyklės perkelia fokusą dėl prieinamumo.
+
+### Klaviatūros atmintinė {#keyboard-cheat-sheet}
+
+| Klavišai           | Veiksmas                              |
+| ------------------ | ------------------------------------- |
+| Y / J              | Patvirtinti Taip                      |
+| N / Esc            | Patvirtinti Ne                        |
+| Enter              | Suaktyvinti sufokusuotą mygtuką       |
+| Tab / Shift+Tab    | Perkelti fokusą pirmyn/atgal          |
+| Rodyklių klavišai  | Perkelti fokusą tarp mygtukų          |
+| Numatytoji reikšmė | Nustato pradinį fokusą (Taip arba Ne) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Apribojimai {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Persiuntimo šis priedas nekeičia (palaikomi Atsakyti ir Atsakyti visiems).
+- Labai dideliems priedams gali būti taikomi Thunderbird ar tiekėjo apribojimai.
+  - Priedas neskaido ir nesuspaudžia failų; jis remiasi įprastu Thunderbird priedų tvarkymu.
+- Šifruoti laiškai: S/MIME dalys sąmoningai neįtraukiamos.
 
 ---
 
-See also
+## Kodėl priedai gali būti nepridėti {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Įterptieji vaizdai nepridedami kaip failų priedai. Kai „Include inline pictures“ yra ĮJUNGTA (numatyta), jie įterpiami į atsakymo tekstą kaip duomenų URI. Jei nustatymas IŠJUNGTA, įterptieji vaizdai visiškai pašalinami. Žr. [Konfigūracija](configuration#include-inline-pictures).
+- S/MIME parašo dalys pagal sumanymą neįtraukiamos: tokie failų pavadinimai kaip `smime.p7s` ir tokie MIME tipai kaip `application/pkcs7-signature` ar `application/pkcs7-mime` praleidžiami.
+- Juodojo sąrašo šablonai gali filtruoti kandidatus: žr. [Konfigūracija](configuration#blacklist-glob-patterns); atitikimas neskiria didžiųjų/mažųjų ir taikomas tik failo pavadinimui.
+- Pasikartojantys failų pavadinimai neperpridedami: jei rašomame laiške jau yra failas tuo pačiu normalizuotu pavadinimu, jis praleidžiamas.
+- Ne failo dalys arba trūkstami failų pavadinimai: pridėjimui svarstomos tik į failus panašios dalys su tinkamais failų pavadinimais.
+
+---
+
+Taip pat žiūrėkite
+
+- [Konfigūracija](configuration)

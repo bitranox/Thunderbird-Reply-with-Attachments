@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Utilisation",
-  "description": "Usage",
+  "title": "Jëfandikoo",
+  "description": "---",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Utilisation",
-    "sidebar_label": "Utilisation"
+    "title": "Jëfandikoo",
+    "sidebar_label": "Jëfandikoo"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/configuration"
   },
   "next": {
-    "title": "Compatibilité",
+    "title": "Kompatibilite",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/compatibility"
   }
 }

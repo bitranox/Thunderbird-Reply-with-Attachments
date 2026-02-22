@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Figyelmeztessen, ha a mellékleteket a feketelista kizárja"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Beágyazott képek csatolása (beágyazott képek)"
+  },
   "uiSave": {
     "message": "Mentés"
   },

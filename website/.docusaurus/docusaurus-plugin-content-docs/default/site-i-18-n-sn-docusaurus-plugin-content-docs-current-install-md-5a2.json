@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Kuisirwa",
-  "description": "Kuisirwa kuburikidza ne \"Thunderbird Add-ons and Themes\"",
+  "title": "Kuiswa",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Kuisirwa",
+    "title": "Kuiswa",
     "slug": "/install",
-    "sidebar_label": "Kuisirwa"
+    "sidebar_label": "Kuiswa"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kutanga Pamusoro",
+    "title": "Kutanga nekukurumidza",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/quickstart"
   },
   "next": {

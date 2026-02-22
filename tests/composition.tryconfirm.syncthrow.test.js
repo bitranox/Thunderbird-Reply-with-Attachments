@@ -32,7 +32,6 @@ describe('composition — tryTargetedConfirm/tryBroadcastConfirm synchronous thr
     const p = triggerComposeState(browser, 12);
     // wait until popup created
     for (let i = 0; i < 10 && browser.windows.create.mock.calls.length === 0; i++) {
-      // eslint-disable-next-line no-await-in-loop
       await new Promise((r) => setTimeout(r, 0));
     }
     // Send a confirm result to complete

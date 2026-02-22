@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Maendeleo",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "Maendeleo",
-    "sidebar_label": "Maendeleo"
+    "sidebar_label": "Uendelezaji"
   },
   "sidebar": "docs",
   "previous": {

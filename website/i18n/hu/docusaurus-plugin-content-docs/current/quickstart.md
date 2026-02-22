@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Gyors útmutató'
-sidebar_label: 'Gyors útmutató'
+title: 'Gyors kezdés'
+sidebar_label: 'Gyorstalpaló'
 ---
-
-## Gyors útmutató
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Gyors kezdés
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Minimális Thunderbird-verzió
+Ez a kiegészítő a Thunderbird **128 ESR vagy újabb** verzióját támogatja. Régebbi verziók nem támogatottak.
+:::
+
+:::note Nincs telemetria; nincs háttérhálózati forgalom
+A kiegészítő **nem** gyűjt analitikát/telemetriát, és **nem** kezdeményez háttérhálózati kéréseket. Hálózati hozzáférés csak akkor történik, amikor külső hivatkozásokra kattint (Dokumentáció, GitHub, Adomány).
+:::
+
+---
+
+### Telepítés
+
+1. Telepítse a kiegészítőt a Thunderbird Add‑ons webhelyről.
+2. Opcionális: Engedélyezze a megerősítést (Beállítások → „Mellékletek hozzáadása előtt kérdezzen rá”).
+3. Opcionális: Hagyja bekapcsolva a feketelista-figyelmeztetést (alapértelmezett): „Figyelmeztessen, ha a mellékleteket a feketelista kizárja”.
+4. Opcionális: Adjon hozzá feketelista-mintákat (soronként egyet), pl.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Megjegyzés: A fenti „# …” ebben a dokumentációban megjegyzés; ne tegyen megjegyzéseket a Beállításokba beillesztett minták közé. Soronként csak egy mintát adjon meg.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Most válaszoljon egy mellékleteket tartalmazó üzenetre — az eredetik automatikusan, vagy egy gyors megerősítés után lesznek hozzáadva. Ha a feketelistája bármely fájlt kizár, egy rövid figyelmeztetés jelenik meg, amely felsorolja őket.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Ellenőrzés {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Válaszoljon egy 1–2 mellékletet tartalmazó üzenetre, és erősítse meg, hogy az eredetiek hozzáadódnak a szerkesztőablakhoz.
+- A működés beállításához lásd: [Konfiguráció](configuration) (megerősítés kapcsoló, alapértelmezett válasz, feketelista-minták).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Feketelista-figyelmeztetés ellenőrzése {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Válaszoljon egy olyan üzenetre, amely egy „secret.txt” nevű fájlt tartalmaz.
+- A „Figyelmeztessen, ha a mellékleteket a feketelista kizárja” opció engedélyezése esetén egy kis párbeszédablak felsorolja a kizárt fájlokat és az egyező mintát.
+
+Ha nem lát figyelmeztetést, győződjön meg róla, hogy a minta pontosan egyezik a fájlnévvel (csak fájlnév, kis- és nagybetűk nem számítanak). Lásd: Konfiguráció → Feketelista.
+
+---
+
+### Billentyűzeti megjegyzés {#keyboard-note}
+
+- A megerősítő párbeszédablak az Igenre az Y/J, a Nemre az N/Esc billentyűket támogatja. Egyes nem latin billentyűzeteken a betűbillentyűk eltérhetnek; az Enter a fókuszban lévő gombot erősíti meg.
 
 ---

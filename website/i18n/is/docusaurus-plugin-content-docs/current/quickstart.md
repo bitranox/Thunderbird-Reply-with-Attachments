@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Hröðufyrirkomulag'
-sidebar_label: 'Hröðufyrirkomulag'
+title: 'Fljótleg byrjun'
+sidebar_label: 'Hraðbyrjun'
 ---
-
-## Hröðufyrirkomulag
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Fljótbyrjun
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Lágmarksútgáfa Thunderbird
+Þessi viðbót styður Thunderbird **128 ESR eða nýrri**. Eldri útgáfur eru ekki studdar.
+:::
+
+:::note Engin mæling; ekkert net í bakgrunni
+Viðbótin safnar **ekki** greiningu/mælingum og gerir **engar** netbeiðnir í bakgrunni. Aðgangur að neti á sér aðeins stað þegar þú smellir á ytri tengla (Skjöl, GitHub, Styrkja).
+:::
+
+---
+
+### Uppsetning
+
+1. Settu viðbótina upp úr Thunderbird Add‑ons.
+2. Valfrjálst: Virkja staðfestingu (Valkostir → „Spyrja áður en viðhengjum er bætt við“).
+3. Valfrjálst: Halda aðvörun um svartlista virka (sjálfgilt): „Vara við ef viðhengi eru undanskilin af svartlista“.
+4. Valfrjálst: Bæta við mynsturum fyrir svartlista (eitt á línu), t.d.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Athugið: „# …“ hér að ofan er athugasemd í þessari handbók; ekki setja athugasemdir í mynstur sem þú límir í Valkosti. Settu aðeins eitt mynstur í hverja línu.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Svara nú skilaboðum með viðhengjum — upprunalegu skrárnar verða bættar við sjálfkrafa eða eftir skjóta staðfestingu. Ef einhverjar skrár eru útilokaðar af svartlistanum þínum, birtist stutt aðvörun sem listar þær.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Stillingar staðfestar {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Svaraðu skilaboðum með 1–2 viðhengjum og staðfestu að upprunalegu skrárnar séu komnar í ritgluggann.
+- Til að stilla hegðun, sjá [Stillingar](configuration) (kveikja/slökkva á staðfestingu, sjálfgefið svar, mynstur svartlista).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Staðfesta aðvörun svartlista {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Svaraðu skilaboðum sem innihalda skrá eins og „secret.txt“.
+- Með „Vara við ef viðhengi eru undanskilin af svartlista“ virkt birtir lítill gluggi útilokaðar skrár og samsvarandi mynstur.
+
+Ef þú sérð ekki aðvörun, gakktu úr skugga um að mynstrið passi nákvæmlega við skráarnafnið (aðeins skráarnafn, óháð há-/lágstöfum). Sjá Stillingar → Svartlisti.
+
+---
+
+### Athugasemd um lyklaborð {#keyboard-note}
+
+- Staðfestingarglugginn styður Y/J fyrir Já og N/Esc fyrir Nei. Á sumum ó‑latneskum lyklaborðum geta stafirnir verið aðrir; Enter staðfestir hnappinn sem er í fókus.
 
 ---

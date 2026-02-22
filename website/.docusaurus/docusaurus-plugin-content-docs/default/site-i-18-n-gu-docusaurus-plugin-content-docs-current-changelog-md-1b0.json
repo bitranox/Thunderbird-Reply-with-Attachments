@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "તમેની કથાઓ",
-  "description": "Changelog",
+  "title": "બદલાવ ઇતિહાસ",
+  "description": "---",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "તમેની કથાઓ"
+    "title": "બદલાવ ઇતિહાસ"
   },
   "sidebar": "docs",
   "previous": {

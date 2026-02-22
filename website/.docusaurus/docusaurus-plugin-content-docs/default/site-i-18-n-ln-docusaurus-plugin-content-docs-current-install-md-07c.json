@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "Koinstala",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Koinstala",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalasion"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kimisulu",
+    "title": "Kobanda noki",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/quickstart"
   },
   "next": {

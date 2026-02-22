@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Toa",
-  "description": "Toa",
+  "title": "Changia",
+  "description": "---",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Toa",
-    "sidebar_label": "Toa"
+    "title": "Changia",
+    "sidebar_label": "Changia"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Instalasi",
-  "description": "Instalasi via \"Thunderbird Add-ons and Themes\"",
+  "title": "Pamasangan",
+  "description": "---",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Instalasi",
+    "title": "Pamasangan",
     "slug": "/install",
-    "sidebar_label": "Instalasi"
+    "sidebar_label": "Pamasangan"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Panduan Gancang",
+    "title": "Mimitian Gancang",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/quickstart"
   },
   "next": {

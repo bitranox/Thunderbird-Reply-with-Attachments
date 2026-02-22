@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "ആസാദ്ധ്യത",
-  "description": "Compatibility",
+  "title": "പൊരുത്തം",
+  "description": "---",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "ആസാദ്ധ്യത",
-    "sidebar_label": "ആസാദ്ധ്യത"
+    "title": "പൊരുത്തം",
+    "sidebar_label": "അനുയോജ്യത"
   },
   "sidebar": "docs",
   "previous": {

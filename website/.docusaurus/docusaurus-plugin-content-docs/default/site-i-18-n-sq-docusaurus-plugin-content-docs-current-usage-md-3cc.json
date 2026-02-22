@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Përdorimi",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/configuration"
   },
   "next": {
-    "title": "Pajtim",
+    "title": "Përputhshmëria",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/compatibility"
   }
 }

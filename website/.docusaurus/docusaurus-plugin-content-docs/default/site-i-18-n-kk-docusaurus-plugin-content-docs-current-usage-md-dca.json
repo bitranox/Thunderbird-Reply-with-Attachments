@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Пайдалану",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "usage",
     "title": "Пайдалану",
-    "sidebar_label": "Пайдалану"
+    "sidebar_label": "Қолдану"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/configuration"
   },
   "next": {
-    "title": "Сәйкестік",
+    "title": "Үйлесімділік",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Gukoresha",
-  "description": "Usage",
+  "title": "Ikoreshwa",
+  "description": "---",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Gukoresha",
-    "sidebar_label": "Gukoresha"
+    "title": "Ikoreshwa",
+    "sidebar_label": "Uko ikoreshwa"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/configuration"
   },
   "next": {
-    "title": "Guhuza",
+    "title": "Ukwihuza",
     "permalink": "/Thunderbird-Reply-with-Attachments/rw/docs/compatibility"
   }
 }

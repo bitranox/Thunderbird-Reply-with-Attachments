@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Хэрэглээ",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/mn/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/configuration"
   },
   "next": {
-    "title": "Зохиогдол",
+    "title": "Нийцтэй байдал",
     "permalink": "/Thunderbird-Reply-with-Attachments/mn/docs/compatibility"
   }
 }

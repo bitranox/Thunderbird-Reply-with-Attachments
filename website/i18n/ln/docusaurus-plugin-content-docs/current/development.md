@@ -1,297 +1,300 @@
 ---
 id: development
-title: 'Développement'
-sidebar_label: 'Développement'
+title: 'Bokoli'
+sidebar_label: 'Bokoli'
 ---
 
-## Development Guide {#development-guide}
+---
+
+## Etambwisi ya Bokeli {#development-guide}
 
 :::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+Bongisa na Lingelesi kaka na se ya `website/docs`. Bobongoli na se ya `website/i18n/<locale>/…` esalemaka na ndenge ya otomatik mpe esengeli te kobongisama na maboko. Salela misala ya bobongoli (ndakisa, `make translate_web_docs_batch`) mpo na kosukisa lisusu makomi ya lokálɛ.
 :::
 
-### Prerequisites {#prerequisites}
+### Biloko esengeli liboso {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ mpe npm (eyekolami na Node 22)
+- Thunderbird 128 ESR to ya sika koleka (mpo na komeka na maboko)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Etando ya Projɛ (na boye ya likoló) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Rasin: script ya kopakola `distribution_zip_packer.sh`, mikanda, bafoto ya écran
+- `sources/`: kɔdɛ ya mokapo ya add‑on (background, options/popup UI, manifests, icons)
+- `tests/`: suite ya Vitest
+- `website/`: mikanda ya Docusaurus (na i18n na se ya `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Kotiá mpe Bisaleli {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Kotiá ba deps ya rasin: `npm ci`
+- Mikanda (ya kopona): `cd website && npm ci`
+- Koyeba ba target: `make help`
+
+---
+
+### Bokeli na bomoi (web‑ext run) {#live-dev-web-ext}
+
+- Loop ya mbangumangu na Firefox Desktop (ba smoke‑tests ya UI kaka):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Kokima na Thunderbird (eleki malamu mpo na MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Banɔti:
+- Tikala kofungola Error Console ya Thunderbird (Tools → Developer Tools → Error Console).
+- Ba lokasa ya likambo ya MV3 ebotamaka ntango ezali na posa te; zongisa add‑on sima ya kobongola kɔdɛ, to tika web‑ext e‑reload otomatik.
+- Bameseno mosusu oyo ezali kaka na Firefox ekeseni; tala ntango nyonso na Thunderbird mpo na kolanda API malamu.
+- Banzela ya binaire ya Thunderbird (bandakisa):
+- Linux: `thunderbird` (ndakisa, `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Kobotola profili: Salela profili mosusu ya Thunderbird mpo na bokeli mpo ete esimba te bokatoli ya mokolo na mokolo.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Ba Target ya Make (na alfabeti) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile ebongisi ndenge ya misala ya bokeli ya ndakisa. Kanga `make help` na ntango nyonso mpo na maloba ya mokuse ya target moko na moko.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Lelɔmba: kokimisa `make` na boye te ya target efungola menu ya pete ya Whiptail mpo na kopona target.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Maloba ya mokuse ya maloba moko                                                              |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Longola biloko ya batongi/preview ya lokalɛ (tmp/, web-local-preview/, website/build/).      |
+| [`commit`](#mt-commit)                                   | Formatɛ, sambisa ba test (ekɔtisi i18n), bɔtɔla changelog, commit & push.                    |
+| [`eslint`](#mt-eslint)                                   | Sambisa ESLint na nzela ya flat config (`npm run -s lint:eslint`).                           |
+| [`help`](#mt-help)                                       | Lakisa ba target nyonso na maloba moko ya mokuse (epɔnisami).                                |
+| [`lint`](#mt-lint)                                       | web‑ext lint na `sources/` (manifest ya ntango moke; ebwaka ZIP; non‑fatal).                 |
+| [`menu`](#mt-menu)                                       | Menu ya kosolola mpo na kopona target mpe ba argument ya kopona.                             |
+| [`pack`](#mt-pack)                                       | Bɔtɔla ATN & LOCAL ZIPs (ebetaka linter; ebenga script ya packer).                           |
+| [`prettier`](#mt-prettier)                               | Formatɛ depɔ na esika (ekomisaka bambongwana).                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier na mode ya kotalela (ekomi te); eyebuka soki esengeli kofomate lisusu.              |
+| [`prettier_write`](#mt-prettier_write)                   | Alias mpo na `prettier`.                                                                     |
+| [`test`](#mt-test)                                       | Prettier (ekomi), ESLint, sima Vitest (couverture soki econfigurami).                        |
+| [`test_i18n`](#mt-test_i18n)                             | Ba test ya i18n kaka: ba placeholders/parite ya add‑on + parite ya website.                  |
+| [`translate_app`](#mt-translation-app)                   | Alias mpo na `translation_app`.                                                              |
+| [`translation_app`](#mt-translation-app)                 | Bobongola baloba ya UI ya app uta `sources/_locales/en/messages.json`.                       |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Bobongola mikanda ya website na OpenAI Batch API (eleki malamu).                             |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Bobongola mikanda ya website na ndenge ya synchronisé (ancien, non-batch).                   |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias mpo na `translation_web_index`.                                                        |
+| [`translation_web_index`](#mt-translation_web_index)     | Bobongola UI ya homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Bɔtɔla mikanda na `website/build` (esungi `--locales` / `BUILD_LOCALES`).                    |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Kotalela ba lien na offline‑safe (ebwaka HTTP[S] ya libanda).                                |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Preview ya gh‑pages lokalɛ; auto‑serve na 8080–8090; ba test/link‑check ya kopona.           |
+| [`web_push_github`](#mt-web_push_github)                 | Pusa `website/build` na branche `gh-pages`.                                                  |
 
-Syntax for options
+Syntaxe ya ba options
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Salela `make <command> OPTS="…"` mpo na kopesa ba options (banani “quotes” esengeli). Target moko na moko awa na nse ezali na ndakisa ya bosaleli.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Banɔti ya kotonga na lokále {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Tɔnga ndambo ya ba locale: tía `BUILD_LOCALES="en de"` to pesa `OPTS="--locales en,de"` na ba target ya web.
+- Preview ya lokále moko: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Kobaka mpe Kopakola {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Kobotola ZIPs: `make pack`
+- Epɛtɔli ATN mpe LOCAL ZIPs na motó ya depɔ (kobongola mabongisi ya biloko te na maboko)
+- Lelɔmba: bɔtɔla version na nse ya `sources/manifest_ATN.json` mpe `sources/manifest_LOCAL.json` liboso ya kopakola
+- Kotiá na maboko (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → pona ZIP oyo obɔtɔli
+
+---
+
+### Esɛ́yi {#test}
+
+- Suite mobimba: `make test` (Vitest)
+- Couverture (ya kopona):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Kima `make test`; fungola `coverage/index.html` mpo na rapɔ ya HTML
+- i18n kaka: `make test_i18n` (ba clés ya UI/placeholders/titles + parite ya website po na lokále moko na mikanda moko elongo na kotalela id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Kosakola Mabunga & Ba Logs {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Bobongola logs ya mingi na tango ya kosala:
+- Kobongola: `messenger.storage.local.set({ debug: true })`
+- Kofina: `messenger.storage.local.set({ debug: false })`
+- Ba logs emonanaka na tango ya kokomisa/kotinda biyano
 
 ---
 
-### Docs (website) {#docs-website}
+### Mikanda (website) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Server ya dev: `cd website && npm run start`
+- Botongi site statik: `cd website && npm run build`
+- Ba Make oyo ekokanaka (na alfabeti): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Bandakisa ya bosaleli:
+- EN kaka, bɔtola ba tests/link‑check, kozongisa te: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Ba locale nyonso, elongo na ba tests/link‑check, sima pusa: `make web_build_local_preview && make web_push_github`
+- Liboso ya kobimisa, sambisa link check ya offline‑safe: `make web_build_linkcheck`.
+- i18n: Lingelesi ezali na `website/docs/*.md`; bobongoli ya Alémani ezali na `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Boluki: Soki bakoki ya environnement ya Algolia DocSearch batiami na CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), site esalelaka boluki ya Algolia; soki te, ezongaka na boluki ya lokalɛ. Na homepage, finá `/` to `Ctrl+K` mpo na kofungola kaxa ya boluki.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Nzela ya kobimisa na “Donate” {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Nzela: `/donate` (mpe `/<locale>/donate`)
+- Bizaleli:
+- Soki nzela ya sikoyo ezali na lokále (ndakisa, `/de/donate`), salela yango
+- Soki te, pona oyo eleki malamu kati ya `navigator.languages` mpe ba lokále oyo batiami; zongela na lokále ya ndakisa soki ezali te
+- Ezongisaka na:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- misusu → `/<locale>/docs/donation`
+- Esalelaka `useBaseUrl` mpo na bobateli ya malamu ya baseUrl
+- Ezali na meta refresh + lien `noscript` lokola ndingisa ya nsima
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Banɔti ya Preview {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Kofina Node preview malamu: fungola `http://localhost:<port>/__stop` (epesamaka sima ya `Local server started`).
+- Soki bafoto eyebani te na MDX/JSX, salela `useBaseUrl('/img/...')` mpo na kokumisa `baseUrl` ya site.
+- Preview ebandaka liboso; link check esalemi sima mpe ezali te ya koboma mosala (ba lien ya libanda oyo ebuka ekotɛlɛma te preview).
+- URL ya preview ndakisa: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (epesamaka sima ya “Local server started”).
+- Ba lien ya libanda na link‑check: Ba site mosusu (ndakisa, addons.thunderbird.net) eboyaka ba crawlers ya otomatik mpe ekoki kopesa 403 na link checks. Preview ebandaka kaka; okoki kobwaka yango.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Bobongola Website {#translate-website}
 
-What you can translate
+Oyo okoki kobongola
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- UI ya website kaka: homepage, navbar, footer, mpe bakundi ya UI mosusu. Makomi ya mikanda ekotikala Lingelesi kaka sik’oyo.
 
-Where to edit
+Esika ya kobongola
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Bongisa `website/i18n/<locale>/code.json` (salela `en` lokola ndakisa). Tikala kokitisa te ba placeholders lokola `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Bimisa to sanzola bafile
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Sala ba stubs oyo ezali te mpo na ba locale nyonso: `npm --prefix website run i18n:stubs`
+- Koma likolo ba stubs uta na Lingelesi (sima ya kobakisa biloba ya sika): `npm --prefix website run i18n:stubs:force`
+- Ndakisa mosusu mpo na lokále moko: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Bobongola baloba ya UI ya homepage/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Tía bala‑balangɛ moko (na shell to .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Ya kopona: `export OPENAI_MODEL=gpt-4o-mini`
+- Mbala moko (ba locale nyonso, kobwaka en): `make translate_web_index`
+- Kaba na ba locale moko: `make translate_web_index OPTS="--locales de,fr"`
+- Koma likolo bamemya oyo ezalaka: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Kokanga & ba retry
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Script ya bobongoli elɛngisaka forme ya JSON, ebátelaka ba placeholders na makɔngɔ, mpe etya ntembe ete ba URL babongwani te.
+- Soki validation ebuki, esilaka kosala lisusu na nzela ya mayele mbala mibale liboso ya kotika ba valɛr oyo ezalaka.
 
-Preview your locale
+Talela lokále na yo
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Server ya dev: `npm --prefix website run start`
+- Talá `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Kokɔtisa
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Fungola PR na bafile `code.json` oyo obongoli. Tika mabongoli ezala moke mpe bakisa écran moko soki ekoki.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Bokengi & Banɔti ya Konfigurasyon {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Kobakisa te `sources/manifest.json` (esalemaka na ntango moke na botongi)
+- Tika `browser_specific_settings.gecko.id` ezala ntango nyonso mpo na kobatela kanalɛ ya mise à jour
+
+---
+
+### Botikalaki ya ba Paramɛtrɛ {#settings-persistence}
+
+- Stockage: Ba paramɛtrɛ nyonso ya mosaleli ezali na `storage.local` mpe etikalaka na mikolo nyonso ya ba mise à jour ya add‑on.
+- Kotiá: Ba défaut esalemi kaka soki clé moko ezali mpenza na se (undefined).
+- Mise à jour: Migration etondi kaka ba clés oyo ezangi; ba valɛr oyo ezalaka ekomisamaka naino te.
+- Eloko ya kolakisa schéma: `settingsVersion` (sik’oyo `1`).
+- Ba clés mpe ba défaut:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kɔdɛ: tala `sources/background.js` → `initializeOrMigrateSettings()` mpe `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Mosala ya dev (kobakisa paramɛtrɛ ya sika)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Tombolisa `SCHEMA_VERSION` na `sources/background.js`.
+- Bakisa clé ya sika + défaut na eloko `DEFAULTS` na `initializeOrMigrateSettings()`.
+- Salela mobeko ya “kaka soki ezali undefined” tango ozali kotya ba défaut; koma likolo te ba valɛr oyo ezalaka.
+- Soki paramɛtrɛ ezali monene mpo na mosaleli, bɛndá yango na `sources/options.js` mpe bakisa baloba ya lokálɛ.
+- Bakisa/tongola ba test (tala `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Banɔti ya komeka na maboko
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Yoka lokolia install ya sika: pambola dosiye ya ba donɛ ya extension to yambo na profili ya sika.
+- Yoka mise à jour: tía `settingsVersion` na `0` na `storage.local` mpe zongisa; ndimisá ete ba valɛr oyo ezalaka ebongwani te mpe kaka ba clés oyo ezángaki nde bakɔtisami.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Kosilisa Makambo {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Zala na ntembe te ete Thunderbird ezali 128 ESR to koleka
+- Salela Error Console mpo na makambo na tango ya kosala
+- Soki ba paramɛtrɛ ya kobomba emonanaka lokola ezali kosalela malamu te, zongisa Thunderbird mpe meka lisusu. (Thunderbird ekoki kobomba etat na ba session; kozongisa ezalaka kopesa paramɛtrɛ ya sika.)
 
 ---
 
-### Translations
+### CI & Couverture {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) esambisaka vitest na ba seuil ya couverture (85% lignes/fonctions/branches/déclarations). Soki ba seuil ekokisami te, mosala ebukaka.
+- Workflow etindaka eloko `coverage-html` elongo na rapɔ HTML; telemisa yango uta na lokasa ya run (Actions → run ya suka → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Bokɔtisi mosala {#contributing}
 
-Screenshots for docs
+- Tala CONTRIBUTING.md mpo na mibeko ya branche/commit/PR
+- Lelɔmba: Salela profili mosusu ya développement ya Thunderbird mpo na komeka mpo na kobɛtɛla te profili ya mokolo na mokolo.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Bobongoli
+
+- Kosala misala minene ya bobongoli “nyonso → nyonso” ekoki kozala ntembe mpe ntalo. Banda na ndambo moke (ndakisa, mikanda mikomoko mpe ba locale 1–2), talá soki ezali malamu, sima limbolá.
+
+---
+
+- Politiki ya retry: Misala ya bobongoli esalaka tii ba retry 3 na backoff exponentiel soki API ezongi na masolo; tala `scripts/translate_web_docs_batch.js` mpe `scripts/translate_web_docs_sync.js`.
+
+Bafoto ya écran mpo na mikanda
+
+- Tya bafoto na `website/static/img/`.
+- Bandima yango na MD/MDX na nzela ya `useBaseUrl('/img/<filename>')` mpo na banzela esala malamu na `baseUrl` ya site.
+- Sima ya kobakisa to kobenga kombo ya bafoto na se ya `website/static/img/`, zala na ntembe te ete ba référence nyonso esalelaka naino `useBaseUrl('/img/…')` mpe emonanaka na preview ya lokalɛ.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` ya ba tailles mingi esalemi otomatik na banzela nyonso ya botongi (Make + ba scripts) na nzela ya `website/scripts/build-favicon.mjs`.
+- Etapo ya maboko esengeli te; kobongola `icon-*.png` ezali kaka.
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+  Lelɔmba ya botali
+
+- Tika `id` ya front‑matter ebongwana te na mikanda ebongolami; bobongola kaka `title` mpe `sidebar_label` soki ezali.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Sika: longola biloko ya botongi/preview ya lokalɛ.
+- Bosaleli: `make clean`
+- Elongolaka (soki ezali):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +303,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Sika: formatɛ, test, bɔtɔla changelog, commit, mpe push.
+- Bosaleli: `make commit`
+- Makambo: ebɛtaka Prettier (ekomi), `make test`, `make test_i18n`; ebakisi changelog soki ezali na ba difu oyo batiami; epusaka na `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Sika: sambisa ESLint na nzela ya flat config.
+- Bosaleli: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Sika: lakisa ba target nyonso na maloba moko ya mokuse.
+- Bosaleli: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Sika: lint ya MailExtension na `web-ext`.
+- Bosaleli: `make lint`
+- Nɔti: ekopi‑mɛsɔ `sources/manifest_LOCAL.json` → `sources/manifest.json`; ebwaka ZIPs oyo ebimi; ba warning ebukisaka te pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Sika: menu ya kosolola mpo na kopona Make target mpe ba argument ya kopona.
+- Bosaleli: kima `make` na ba argument te.
+- Nɔti: soki `whiptail` ezali te, menu ezongeli `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Sika: bɔtɔla ATN mpe LOCAL ZIPs (ezali na etamboli ya `lint`).
+- Bosaleli: `make pack`
+- Lelɔmba: tombolisa ba version na mabulu mibale `sources/manifest_*.json` liboso ya kopakola.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Sika: formatɛ depɔ na esika.
+- Bosaleli: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Sika: kotalela format (ekomi te).
+- Bosaleli: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Sika: alias mpo na `prettier`.
+- Bosaleli: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Sika: kima Prettier (ekomi), ESLint, sima Vitest (couverture soki kati).
+- Bosaleli: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Sika: ba test ya i18n na makambo ya baloba ya add‑on mpe mikanda ya website.
+- Bosaleli: `make test_i18n`
+- Esalaka: `npm run test:i18n` mpe `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Sika: bobongola baloba ya UI ya add‑on uta EN na ba locale mosusu.
+- Bosaleli: `make translation_app OPTS="--locales all|de,fr"`
+- Nɔti: ebátelaka forme ya ba clés mpe ba placeholders; etá na `translation_app.log`. Forme ya script: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Sika: bobongola mikanda ya website uta `website/docs/*.md` na `website/i18n/<locale>/...`.
+- Eleki malamu: `translate_web_docs_batch` (OpenAI Batch API)
+  - Bosaleli (ba flague): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Posisionel ancien ezwamaka naino: `OPTS="<doc|all> <lang|all>"`
+- Bizaleli: ebongisi JSONL, etindaka, etala na etuka 30s, ezwasaka ba nsima, ekomisaka bafile.
+- Nɔti: mosala ya batch ekoki kozwa tii mikolo 24 mpo esilisa (na ndakisa ya fenêtre ya batch ya OpenAI). Console ezali kolakisa ntango eleki na poll moko na moko.
+- Environnement: `OPENAI_API_KEY` (esengeli), ya kopona `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (defaut 24h), `BATCH_POLL_INTERVAL_MS`.
+- Ancien: `translate_web_docs_sync`
+  - Bosaleli (ba flague): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Posisionel ancien ezwamaka naino: `OPTS="<doc|all> <lang|all>"`
+- Bizaleli: basɛ́ngi ya synchronisé mpo na lipayi moko na moko (batch te).
+- Nɔti: Mituna ya kosolola soki `OPTS` ebwakami. Makambo mibale ebátelaka ba code blocks/inline code mpe batíki `id` ya front‑matter ebongwani te; etá na `translation_web_batch.log` (batch) to `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Sika: bobongola baloba ya UI ya website (homepage, navbar, footer) uta `website/i18n/en/code.json` na ba locale nyonso na se ya `website/i18n/<locale>/code.json` (kobwaka `en`).
+- Bosaleli: `make translate_web_index` to `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Esɛngɔ: export `OPENAI_API_KEY` (ya kopona: `OPENAI_MODEL=gpt-4o-mini`).
+- Bizaleli: elɛngisaka forme ya JSON, ebátelaka ba placeholders na makɔngɔ, ebátelaka ba URL ebongwani te, mpe esala retry na ndingisa soki validation ebuki.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Sika: bɔtɔla site ya mikanda na `website/build`.
+- Bosaleli: `make web_build OPTS="--locales en|de,en|all"` (to tía `BUILD_LOCALES="en de"`)
+- Na kati: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Bapeso: ebɛtaka `npm ci` na `website/` kaka soki `website/node_modules/@docusaurus` ezali te.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Sika: link check ya offline‑safe.
+- Bosaleli: `make web_build_linkcheck OPTS="--locales en|all"`
+- Nɔti: ebɔtɔli na `tmp_linkcheck_web_pages`; ebongoli `baseUrl` ya GH Pages na `/`; ebwaka ba lien HTTP(S) ya libanda.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Sika: preview ya gh‑pages lokalɛ elongo na ba test/link‑check ya kopona.
+- Bosaleli: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Bizaleli: emeka liboso server ya Node ya preview (`scripts/preview-server.mjs`, esungi `/__stop`), ezongeli `python3 -m http.server` soki esimbi te; esalelaka 8080–8090; PID na `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Sika: pusa `website/build` na branche `gh-pages`.
+- Bosaleli: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Lelɔmba: tía `NPM=…` mpo na kobongola package manager oyo Makefile esalelaka (defaut `npm`).
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Korištenje",
-  "description": "Usage",
+  "title": "Uporaba",
+  "description": "---",
   "source": "@site/i18n/hr/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Korištenje",
-    "sidebar_label": "Korištenje"
+    "title": "Uporaba",
+    "sidebar_label": "Uporaba"
   },
   "sidebar": "docs",
   "previous": {

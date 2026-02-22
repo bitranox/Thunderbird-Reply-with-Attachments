@@ -4,39 +4,41 @@ title: 'Kompatibilität'
 sidebar_label: 'Kompatibilität'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilität {#compatibility}
+
+:::important Minimale Thunderbird-Version
+Dieses Add-on unterstützt Thunderbird **128 ESR oder neuer**. Ältere Versionen werden nicht unterstützt.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR oder neuer wird unterstützt (128.x+).
+- Ältere Thunderbird-Versionen werden nicht unterstützt.
+- Getestet unter Windows, macOS und Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 wird nicht unterstützt
+Manifest V2 wird nicht unterstützt. Das Add-on ist auf **Manifest V3 (MV3)** für Thunderbird 128 ESR+ ausgerichtet.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Fehlerbehebung {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Wenn das Add-on nicht wie erwartet funktioniert, stellen Sie sicher, dass Sie eine kompatible Version von Thunderbird verwenden (128 ESR oder neuer).
+- Prüfen Sie die Thunderbird-Fehlerkonsole (**Extras > Entwicklerwerkzeuge > Fehlerkonsole**) auf Probleme im Zusammenhang mit dem Add-on.
+- Wenn gespeicherte Einstellungen scheinbar nicht korrekt angewendet werden, starten Sie Thunderbird neu und versuchen Sie es erneut. (Thunderbird kann Zustände zwischen Sitzungen zwischenspeichern; ein Neustart stellt sicher, dass die aktuellen Einstellungen geladen werden.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Bekannte Konflikte {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Derzeit keine bekannt. Wenn Sie wiederholt doppelte Anhänge oder Fehler mit anderen Add-ons sehen, melden Sie dies bitte mit Schritten zum Reproduzieren.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta und Daily (Nightly) Builds werden im Allgemeinen unterstützt, aber Upstream-Änderungen können gelegentlich das Verhalten des Add-ons beeinträchtigen. Wenn Sie auf Probleme stoßen, melden Sie diese bitte und fügen Sie die genaue Thunderbird-Version bei (z. B. „Daily 131.0a1 2025‑09‑10“).
+- Auf eine Regression in Beta/Nightly gestoßen? Bitte melden Sie sie mit Schritten zum Reproduzieren — siehe [Support](support) — und geben Sie den genauen Thunderbird-Build-String an.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Greitas pradžia",
-  "description": "Greitas pradžia",
+  "title": "Greita pradžia",
+  "description": "---",
   "source": "@site/i18n/lt/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Greitas pradžia",
-    "sidebar_label": "Greitas pradžia"
+    "title": "Greita pradžia",
+    "sidebar_label": "Greitoji pradžia"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ypatybės",
+    "title": "Funkcijos",
     "permalink": "/Thunderbird-Reply-with-Attachments/lt/docs/features"
   },
   "next": {

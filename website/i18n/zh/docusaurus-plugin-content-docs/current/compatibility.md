@@ -4,39 +4,41 @@ title: '兼容性'
 sidebar_label: '兼容性'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## 兼容性 {#compatibility}
+
+:::important 最低 Thunderbird 版本
+此附加组件支持 Thunderbird **128 ESR 或更新版本**。不支持更早的版本。
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- 支持 Thunderbird 128 ESR 或更新版本（128.x+）。
+- 不支持较旧的 Thunderbird 版本。
+- 已在 Windows、macOS 和 Linux 上测试。
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning 不支持 Manifest V2
+不支持 Manifest V2。该附加组件面向 Thunderbird 128 ESR+ 上的 **Manifest V3 (MV3)**。
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## 故障排除 {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- 如果附加组件未按预期工作，请确认你使用的是兼容的 Thunderbird 版本（128 ESR 或更高）。
+- 在 Thunderbird 错误控制台（**Tools > Developer Tools > Error Console**）中检查与该附加组件相关的问题。
+- 如果已保存的设置似乎未正确生效，请重启 Thunderbird 后重试。（Thunderbird 可能会在会话之间缓存状态；重启可确保加载全新的设置。）
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## 已知冲突 {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- 目前暂无已知冲突。若你在与其他附加组件一起使用时看到重复的附件或失败，请提交包含复现步骤的报告。
+
+---
+
+## 测试版/夜间版 {#beta-nightly}
+
+- 通常支持 Thunderbird Beta 和 Daily（Nightly）构建，但上游变更偶尔可能破坏附加组件行为。若遇到问题，请提交报告并包含准确的 Thunderbird 版本（例如，“Daily 131.0a1 2025‑09‑10”）。
+- 在 Beta/Nightly 上遇到回归了吗？请按重现步骤提交报告 — 参见 [支持](support) — 并包含确切的 Thunderbird 构建字符串。
 
 ---

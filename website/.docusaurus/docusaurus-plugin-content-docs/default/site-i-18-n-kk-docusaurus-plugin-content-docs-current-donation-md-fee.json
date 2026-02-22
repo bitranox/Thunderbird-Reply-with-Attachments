@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Донат",
-  "description": "Donate",
+  "title": "Қайырымдылық жасау",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Донат",
-    "sidebar_label": "Донат"
+    "title": "Қайырымдылық жасау",
+    "sidebar_label": "Қайырымдылық жасау"
   },
   "sidebar": "docs",
   "previous": {

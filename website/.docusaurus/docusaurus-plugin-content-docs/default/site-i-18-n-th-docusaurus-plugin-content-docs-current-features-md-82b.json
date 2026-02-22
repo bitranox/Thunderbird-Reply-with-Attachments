@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ฟีเจอร์",
-  "description": "Features",
+  "title": "คุณสมบัติ",
+  "description": "---",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ฟีเจอร์",
-    "sidebar_label": "ฟีเจอร์"
+    "title": "คุณสมบัติ",
+    "sidebar_label": "คุณสมบัติ"
   },
   "sidebar": "docs",
   "next": {

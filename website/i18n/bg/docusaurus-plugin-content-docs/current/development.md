@@ -4,294 +4,296 @@ title: 'Разработка'
 sidebar_label: 'Разработка'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Ръководство за разработка {#development-guide}
+
+:::note Редактирайте само английската версия; преводите се разпространяват
+Актуализирайте документацията само под `website/docs` (английски). Преводите под `website/i18n/<locale>/…` се генерират и не бива да се редактират ръчно. Използвайте задачите за превод (напр. `make translate_web_docs_batch`) за обновяване на локализираното съдържание.
 :::
 
-### Prerequisites {#prerequisites}
+### Предварителни изисквания {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ и npm (тествано с Node 22)
+- Thunderbird 128 ESR или по-нова (за ръчно тестване)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Структура на проекта (на високо ниво) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Главна директория: скрипт за пакетиране `distribution_zip_packer.sh`, документация, екранни снимки
+- `sources/`: основен код на добавката (background, UI за опции/изскачащ прозорец, манифести, икони)
+- `tests/`: тестов пакет Vitest
+- `website/`: документация на Docusaurus (с i18n под `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Инсталиране и инструменти {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Инсталиране на зависимостите в корена: `npm ci`
+- Документация (по избор): `cd website && npm ci`
+- Преглед на целите: `make help`
+
+---
+
+### Жива разработка (web‑ext run) {#live-dev-web-ext}
+
+- Бърз цикъл във Firefox Desktop (само бързи UI проверки):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Стартиране в Thunderbird (предпочитано за MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Съвети:
+- Дръжте отворена конзолата за грешки на Thunderbird (Tools → Developer Tools → Error Console).
+- Страниците с MV3 събития се спират при бездействие; презаредете добавката след промени в кода или оставете web‑ext да презарежда автоматично.
+- Някои поведения, специфични за Firefox, се различават; винаги проверявайте в Thunderbird за съвместимост на API.
+- Пътища до изпълнимия файл на Thunderbird (примери):
+- Linux: `thunderbird` (напр. `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Изолация на профила: използвайте отделен профил на Thunderbird за разработка, за да не влияете на ежедневната си среда.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Цели в Make (по азбучен ред) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile стандартизира обичайните процеси на разработка. Стартирайте `make help` по всяко време за едноредово обобщение на всяка цел.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Съвет: пускането на `make` без цел отваря опростено меню Whiptail за избор на цел.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Цел                                                      | Едноредово описание                                                                                                   |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Премахване на локални артефакти от build/preview (tmp/, web-local-preview/, website/build/).                          |
+| [`commit`](#mt-commit)                                   | Форматиране, пускане на тестове (вкл. i18n), обновяване на дневника на промените, commit и push.                      |
+| [`eslint`](#mt-eslint)                                   | Стартиране на ESLint чрез flat конфигурация (`npm run -s lint:eslint`).                                               |
+| [`help`](#mt-help)                                       | Списък на всички цели с едноредови описания (сортирани).                                                              |
+| [`lint`](#mt-lint)                                       | web‑ext lint върху `sources/` (временен manifest; игнорира ZIP файлове; нефатално).                                   |
+| [`menu`](#mt-menu)                                       | Интерактивно меню за избор на цел и незадължителни аргументи.                                                         |
+| [`pack`](#mt-pack)                                       | Изграждане на ATN и LOCAL ZIP файлове (пуска linter; извиква скрипта за пакетиране).                                  |
+| [`prettier`](#mt-prettier)                               | Форматиране на хранилището на място (записва промени).                                                                |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier в режим на проверка (без запис); проваля се, ако е нужно преформатиране.                                     |
+| [`prettier_write`](#mt-prettier_write)                   | Псевдоним на `prettier`.                                                                                              |
+| [`test`](#mt-test)                                       | Prettier (запис), ESLint, после Vitest (покритие, ако е конфигурирано).                                               |
+| [`test_i18n`](#mt-test_i18n)                             | Само i18n тестове: плейсхолдъри/паритет на добавката + паритет на уебсайта.                                           |
+| [`translate_app`](#mt-translation-app)                   | Псевдоним на `translation_app`.                                                                                       |
+| [`translation_app`](#mt-translation-app)                 | Превеждане на UI низове на приложението от `sources/_locales/en/messages.json`.                                       |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Превеждане на уебсайт документацията чрез OpenAI Batch API (препоръчително).                                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Превеждане на уебсайт документацията синхронно (наследено, небатчово).                                                |
+| [`translate_web_index`](#mt-translation_web_index)       | Псевдоним на `translation_web_index`.                                                                                 |
+| [`translation_web_index`](#mt-translation_web_index)     | Превеждане на UI на начална страница/навигация/долен колонтитул (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Изграждане на документацията към `website/build` (поддържа `--locales` / `BUILD_LOCALES`).                            |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Проверка на връзки, безопасна офлайн (пропуска отдалечени HTTP[S]).                                                   |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Локален преглед за gh‑pages; автоматично обслужване на 8080–8090; по избор тестове/проверка на връзки.                |
+| [`web_push_github`](#mt-web_push_github)                 | Изпращане на `website/build` към клона `gh-pages`.                                                                    |
 
-Syntax for options
+Синтаксис за опциите
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Използвайте `make <command> OPTS="…"` за подаване на опции (препоръчват се кавички). Всяка цел по-долу показва пример за употреба.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Съвети за изграждане по локали {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Изграждане на подмножество от локали: задайте `BUILD_LOCALES="en de"` или подайте `OPTS="--locales en,de"` към уеб целите.
+- Преглед на конкретна локал: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Сглобяване и пакетиране {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Създаване на ZIP файлове: `make pack`
+- Създава ATN и LOCAL ZIP файлове в корена на хранилището (не редактирайте артефактите ръчно)
+- Съвет: обновете версията и в `sources/manifest_ATN.json`, и в `sources/manifest_LOCAL.json` преди пакетиране
+- Ръчна инсталация (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → изберете създадения ZIP
+
+---
+
+### Тестване {#test}
+
+- Пълен набор: `make test` (Vitest)
+- Покритие (по избор):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Стартирайте `make test`; отворете `coverage/index.html` за HTML отчет
+- Само i18n: `make test_i18n` (UI ключове/плейсхолдъри/заглавия + паритет на уебсайта по локал и по документ с проверки за id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Отстраняване на грешки и логове {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Конзола за грешки: Tools → Developer Tools → Error Console
+- Превключване на подробни логове по време на изпълнение:
+- Включване: `messenger.storage.local.set({ debug: true })`
+- Изключване: `messenger.storage.local.set({ debug: false })`
+- Логовете се появяват при създаване/изпращане на отговори
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Документация (уебсайт) {#docs-website}
+
+- Dev сървър: `cd website && npm run start`
+- Изграждане на статичен сайт: `cd website && npm run build`
+- Еквиваленти в Make (по азбучен ред): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Примери за употреба:
+- Само EN, без тестове/проверка на връзки, без push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Всички локали, с тестове/проверка на връзки, после push: `make web_build_local_preview && make web_push_github`
+- Преди публикуване стартирайте офлайн-безопасната проверка на връзки: `make web_build_linkcheck`.
+- i18n: английският е в `website/docs/*.md`; немските преводи – в `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Търсене: Ако променливите на средата за Algolia DocSearch са зададени в CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), сайтът използва търсене на Algolia; иначе преминава към локално търсене. На началната страница натиснете `/` или `Ctrl+K` за отваряне на полето за търсене.
+
+---
+
+#### Пренасочване за дарения {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Маршрут: `/donate` (и `/<locale>/donate`)
+- Поведение:
+- Ако текущият маршрут има локал (напр. `/de/donate`), използвайте него
+- Иначе изберете най-доброто съвпадение от `navigator.languages` спрямо конфигурираните локали; при неуспех – към локала по подразбиране
+- Пренасочва към:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- други → `/<locale>/docs/donation`
+- Използва `useBaseUrl` за коректна обработка на baseUrl
+- Включва meta refresh + връзка `noscript` като резервен вариант
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Съвети за преглед {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Спрете прегледа на Node коректно: отворете `http://localhost:<port>/__stop` (отпечатва се след `Local server started`).
+- Ако изображенията не се зареждат в MDX/JSX, използвайте `useBaseUrl('/img/...')`, за да се съобрази със `baseUrl` на сайта.
+- Прегледът стартира първо; проверката на връзки се пуска след това и не блокира (счупени външни връзки няма да спрат прегледа).
+- Примерен URL за преглед: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (отпечатва се след “Local server started”).
+- Външни връзки при проверка: Някои външни сайтове (напр. addons.thunderbird.net) блокират автоматизирани ботове и може да показват 403 при проверките. Прегледът все пак стартира; тези съобщения може да се игнорират безопасно.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Превод на уебсайта {#translate-website}
 
-What you can translate
+Какво можете да превеждате
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Само UI на сайта: начална страница, навигация, долен колонтитул и други UI низове. Съдържанието на документацията засега остава само на английски.
 
-Where to edit
+Къде да редактирате
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Редактирайте `website/i18n/<locale>/code.json` (използвайте `en` като ориентир). Оставете плейсхолдърите като `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` непроменени.
 
-Generate or refresh files
+Генериране или опресняване на файлове
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Създаване на липсващи шаблони за всички локали: `npm --prefix website run i18n:stubs`
+- Презапис на шаблони от английски (след добавяне на нови низове): `npm --prefix website run i18n:stubs:force`
+- Алтернатива за една локал: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Превеждане на UI низове за начална/навигация/колонтитул (OpenAI)
 
-- Set credentials once (shell or .env):
+- Задайте идентификационните данни веднъж (shell или .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- По избор: `export OPENAI_MODEL=gpt-4o-mini`
+- Еднократно (всички локали, без en): `make translate_web_index`
+- Ограничаване до конкретни локали: `make translate_web_index OPTS="--locales de,fr"`
+- Презапис на съществуващи стойности: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Валидиране и повторни опити
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Скриптът за превод валидира формата на JSON, запазва плейсхолдърите в извити скоби и гарантира, че URL адресите са непроменени.
+- При неуспех на валидирането опитва отново с обратна връзка до 2 пъти, преди да запази съществуващите стойности.
 
-Preview your locale
+Преглед на вашата локал
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Dev сървър: `npm --prefix website run start`
+- Посетете `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Изпращане
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Отворете PR с редактираните файл(ове) `code.json`. Дръжте промените фокусирани и при възможност включете бърз екранен кадър.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Съвети за сигурност и конфигурация {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Не комитвайте `sources/manifest.json` (създава се временно при build)
+- Поддържайте `browser_specific_settings.gecko.id` стабилен, за да запазите канала за обновления
+
+---
+
+### Запазване на настройките {#settings-persistence}
+
+- Съхранение: Всички потребителски настройки са в `storage.local` и се запазват през обновяванията на добавката.
+- Инсталиране: Стойностите по подразбиране се прилагат само когато ключ липсва изцяло (undefined).
+- Обновяване: Миграцията попълва само липсващите ключове; съществуващи стойности никога не се презаписват.
+- Маркер на схемата: `settingsVersion` (понастоящем `1`).
+- Ключове и стойности по подразбиране:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Код: вижте `sources/background.js` → `initializeOrMigrateSettings()` и `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Процес на разработка (добавяне на нова настройка)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Увеличете `SCHEMA_VERSION` в `sources/background.js`.
+- Добавете новия ключ + стойност по подразбиране към обекта `DEFAULTS` в `initializeOrMigrateSettings()`.
+- Използвайте правилото „only-if-undefined“ при инициализиране на стойности по подразбиране; не презаписвайте съществуващите стойности.
+- Ако настройката е видима за потребителя, свържете я в `sources/options.js` и добавете локализирани низове.
+- Добавете/коригирайте тестове (виж `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Съвети за ръчно тестване
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Симулирайте чиста инсталация: изчистете директорията с данни на разширението или стартирайте с нов профил.
+- Симулирайте обновяване: задайте `settingsVersion` на `0` в `storage.local` и презаредете; потвърдете, че съществуващите стойности остават непроменени и се добавят само липсващите ключове.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Отстраняване на неизправности {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Уверете се, че Thunderbird е 128 ESR или по-нова
+- Използвайте конзолата за грешки за проблеми по време на изпълнение
+- Ако изглежда, че запазените настройки не се прилагат правилно, рестартирайте Thunderbird и опитайте отново. (Thunderbird може да кешира състояние между сесиите; рестарт гарантира зареждане на актуалните настройки.)
 
 ---
 
-### Translations
+### CI и покритие {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) пуска vitest с прагове за покритие (85% редове/функции/клонове/оператори). Ако праговете не са покрити, задачата се проваля.
+- Работният процес качва артефакт `coverage-html` с HTML отчета; изтеглете го от страницата на изпълнението (Actions → latest run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Принос {#contributing}
 
-Screenshots for docs
+- Вижте CONTRIBUTING.md за указания за клонове/commits/PR
+- Съвет: Създайте отделен профил за разработка в Thunderbird за тестване, за да не влияете на ежедневния си профил.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Преводи
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Стартирането на големи задачи „всички → всички“ за превод може да е бавно и скъпо. Започнете с подмножество (напр. няколко документа и 1–2 локали), прегледайте резултата, после разширете.
+
+---
+
+- Политика за повторни опити: задачите за превод правят до 3 опита с експоненциално изчакване при грешки от API; виж `scripts/translate_web_docs_batch.js` и `scripts/translate_web_docs_sync.js`.
+
+Екранни снимки за документацията
+
+- Съхранявайте изображенията под `website/static/img/`.
+- Реферирайте ги в MD/MDX чрез `useBaseUrl('/img/<filename>')`, за да работят пътищата със `baseUrl` на сайта.
+- След добавяне или преименуване на изображения под `website/static/img/`, потвърдете, че всички референции все още използват `useBaseUrl('/img/…')` и се визуализират в локален преглед.
+  Фавикони
+
+- Многоразмерният `favicon.ico` се генерира автоматично във всички пътища на build (Make + скриптове) чрез `website/scripts/build-favicon.mjs`.
+- Не е необходима ръчна стъпка; достатъчно е да обновите `icon-*.png`.
+  Съвет за преглед
+
+- Запазете front‑matter `id` непроменен в преведените документи; превеждайте само `title` и `sidebar_label`, когато са налични.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Цел: премахване на локални артефакти от build/preview.
+- Употреба: `make clean`
+- Премахва (ако са налични):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Цел: форматиране, тестване, обновяване на дневника на промените, commit и push.
+- Употреба: `make commit`
+- Подробности: пуска Prettier (запис), `make test`, `make test_i18n`; дописва дневника на промените при подготвени промени; изпраща към `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Цел: стартиране на ESLint чрез flat конфигурация.
+- Употреба: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Цел: списък на всички цели с едноредови описания.
+- Употреба: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Цел: lint на MailExtension с `web-ext`.
+- Употреба: `make lint`
+- Бележки: временно копира `sources/manifest_LOCAL.json` → `sources/manifest.json`; игнорира готови ZIP файлове; предупрежденията не провалят конвейера.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Цел: интерактивно меню за избор на цел в Make и незадължителни аргументи.
+- Употреба: стартирайте `make` без аргументи.
+- Бележки: ако `whiptail` не е наличен, менюто преминава към `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Цел: изграждане на ATN и LOCAL ZIP файлове (зависи от `lint`).
+- Употреба: `make pack`
+- Съвет: повишете версиите и в двата `sources/manifest_*.json` преди пакетиране.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Цел: форматиране на хранилището на място.
+- Употреба: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Цел: проверка на форматирането (без запис).
+- Употреба: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Цел: псевдоним на `prettier`.
+- Употреба: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Цел: пуска Prettier (запис), ESLint, после Vitest (покритие, ако е инсталирано).
+- Употреба: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Цел: i18n‑фокусирани тестове за низове на добавката и документация на сайта.
+- Употреба: `make test_i18n`
+- Стартира: `npm run test:i18n` и `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Цел: превеждане на UI низовете на добавката от EN към други локали.
+- Употреба: `make translation_app OPTS="--locales all|de,fr"`
+- Бележки: запазва структурата на ключовете и плейсхолдърите; логва в `translation_app.log`. Скриптова форма: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Цел: превеждане на документацията на сайта от `website/docs/*.md` към `website/i18n/<locale>/...`.
+- Предпочитано: `translate_web_docs_batch` (OpenAI Batch API)
+  - Употреба (флагове): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Наследен позиционен синтаксис също се приема: `OPTS="<doc|all> <lang|all>"`
+- Поведение: изгражда JSONL, качва, проверява на всеки 30s, изтегля резултатите, записва файловете.
+- Забележка: партидна задача може да отнеме до 24 часа за завършване (според прозореца на OpenAI за batch). Конзолата показва изминалото време при всяка проверка.
+- Среда: `OPENAI_API_KEY` (задължителна), по избор `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (по подразбиране 24h), `BATCH_POLL_INTERVAL_MS`.
+- Наследено: `translate_web_docs_sync`
+  - Употреба (флагове): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Наследен позиционен синтаксис също се приема: `OPTS="<doc|all> <lang|all>"`
+- Поведение: синхронни заявки по двойки (без batch агрегиране).
+- Бележки: интерактивни подкани при липсващ `OPTS`. И в двата режима се запазват блоковете/вградените откъси с код и front‑matter `id` остава непроменен; логва в `translation_web_batch.log` (batch) или `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Цел: превеждане на UI низове на сайта (начална, навигация, долен колонтитул) от `website/i18n/en/code.json` към всички локали под `website/i18n/<locale>/code.json` (без `en`).
+- Употреба: `make translate_web_index` или `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Изисквания: експортирайте `OPENAI_API_KEY` (по избор: `OPENAI_MODEL=gpt-4o-mini`).
+- Поведение: валидира структурата на JSON, запазва плейсхолдърите в извити скоби, запазва URL адресите непроменени и прави повторни опити с обратна връзка при грешки на валидирането.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Цел: изграждане на сайта с документацията към `website/build`.
+- Употреба: `make web_build OPTS="--locales en|de,en|all"` (или задайте `BUILD_LOCALES="en de"`)
+- Вътрешности: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Зависимости: стартира `npm ci` в `website/` само ако липсва `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Цел: офлайн-безопасна проверка на връзки.
+- Употреба: `make web_build_linkcheck OPTS="--locales en|all"`
+- Бележки: изгражда към `tmp_linkcheck_web_pages`; пренаписва GH Pages `baseUrl` към `/`; пропуска отдалечени HTTP(S) връзки.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Цел: локален преглед за gh‑pages с по избор тестове/проверка на връзки.
+- Употреба: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Поведение: първо пробва Node сървър за преглед (`scripts/preview-server.mjs`, поддържа `/__stop`), при неуспех преминава към `python3 -m http.server`; обслужва на 8080–8090; PID в `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Цел: изпращане на `website/build` към клона `gh-pages`.
+- Употреба: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Съвет: задайте `NPM=…`, за да замените пакетния мениджър, използван от Makefile (по подразбиране `npm`).
 
 ---

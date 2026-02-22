@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Dabalattoonni tarree dhorkaan haquaman yoo ta’e akeekkachiisi"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Fakkiiwwan sararaa of dabalata (fakkiiwwan keessa galchan)"
+  },
   "uiDebugHeader": {
     "message": "Olaanaa"
   },

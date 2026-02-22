@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Uso",
-  "description": "Usage",
+  "title": "Ruwanapaq",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Uso",
-    "sidebar_label": "Uso"
+    "title": "Ruwanapaq",
+    "sidebar_label": "Apnaqay"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/configuration"
   },
   "next": {
-    "title": "Compatibilidad",
+    "title": "Uyanakuy",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/compatibility"
   }
 }

@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'پخوانیوالتیا'
-sidebar_label: 'پخوانیوالتیا'
+title: 'سازګاري'
+sidebar_label: 'سازګاري'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## سازګاري {#compatibility}
+
+:::important د Thunderbird لږ تر لږه نسخه
+دا اېډ-آن د Thunderbird **128 ESR یا نوې** ملاتړ کوي. زاړه نسخې نه دي ملاتړ شوې.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR یا نوې ملاتړ کېږي (128.x+).
+- د Thunderbird زاړې نسخې نه ملاتړ کېږي.
+- په Windows، macOS، او Linux کې ازمویل شوی.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 نه ملاتړ کېږي
+Manifest V2 نه ملاتړ کېږي. اېډ-آن د Thunderbird 128 ESR+ کې د **Manifest V3 (MV3)** هدف ګرځوي.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ستونزو هوارول {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- که اېډ-آن لکه څنګه چې تمه کېږي کار نه کوي، ډاډ ترلاسه کړئ چې تاسو د Thunderbird له سازګارې نسخې څخه کار اخلئ (128 ESR یا وروسته).
+- د Thunderbird د تېروتنې کنسول (**Tools > Developer Tools > Error Console**) کې د اېډ-آن اړوند هره ستونزه وګورئ.
+- که زېرمه شوې امستنې سم پلي نه ښکاري، Thunderbird بیاپیل کړئ او بیا هڅه وکړئ. (Thunderbird کېدای شي حالت د ناستو ترمنځ کَش کړي؛ بیاپیل دا باوري کوي چې نوې امستنې لوډ شي.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## پیژندل شوې ټکرې {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- دا مهال هېڅ نه دي معلوم. که تاسو تکراري نقل ضمیمې یا له نورو اېډ-آنونو سره ناکامۍ وینئ، مهرباني وکړئ د بیا تولید ګامونو سره راپور ورکړئ.
+
+---
+
+## بیټا/نایټلي {#beta-nightly}
+
+- د Thunderbird Beta او Daily (Nightly) جوړونې عموماً ملاتړ کېږي، خو د اوبو په سر بدلونونه کله ناکله د اېډ-آن چلند ماتولی شي. که له ستونزو سره مخ شئ، مهرباني وکړئ راپور یې کړئ او د Thunderbird دقیقه نسخه هم ورزیاته کړئ (لکه، “Daily 131.0a1 2025‑09‑10”).
+- په Beta/Nightly کې شاتګ (Regression) مو ولید؟ مهرباني وکړئ د بیا تولید ګامونو سره یې راپور کړئ — [Support](support) وګورئ — او د Thunderbird دقیق build string هم شامل کړئ.
 
 ---

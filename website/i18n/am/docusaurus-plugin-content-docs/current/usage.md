@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'ጥቅም'
-sidebar_label: 'ጥቅም'
+title: 'አጠቃቀም'
+sidebar_label: 'አጠቃቀም'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## አጠቃቀም {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- መልስ እና አባሪው ኦሪጅናሎቹን ራሱ ይጨምራል — ወይም በአማራጮች ውስጥ ከተነቃ በፊት ይጠይቃል።
+- በፋይል ስም ማባዣ መከልከል ይደረጋል፤ S/MIME ክፍሎች ሁልጊዜ ይዘሉ ይተዋሉ። ውስጣዊ ምስሎች በነባሪ ሁኔታ በመልስ አካል ውስጥ ይመለሳሉ (በአማራጮች ውስጥ ያለውን "Include inline pictures" በመቆም ማስቀነስ ይቻላል)።
+- በጥቁር ዝርዝር የገቡ አባሪዎችም ይዘሉ ይተዋሉ (በፋይል ስሞችን የሚዛመዱ ከመንገዶች የተለዩ የነገር-አቀራረብ glob ንድፎች ፣ የቁምፊ እኩልነት አልተጠናቀቀባቸውም)። [አቀማመጥ](configuration#blacklist-glob-patterns) ይመልከቱ።
 
 ---
 
-### Cross‑reference {#cross-reference}
+### በመልስ ጊዜ ምን ይከሰታል {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- መልስ መለየት → የመጀመሪያ አባሪዎችን መዝገብ → S/MIME + ውስጣዊ ማጣራት → እባክዎ ማረጋገጫ (ከመከለከለ) → ተቀባይነት ያላቸውን ፋይሎች መጨመር (ዳግም አባሪ መድብ መዝለል) → ውስጣዊ ምስሎችን በአካል ውስጥ መመለስ።
 
----
+ጥብቅ ከ ማራማሪ ማለፊያ፡ አባሪው መጀመሪያ ከፋይል አባሪዎች ውስጥ S/MIME እና ውስጣዊ ክፍሎችን ያስወግዳል። ምንም ካልተሟላ ፣ እነዚህን S/MIME/ውስጣዊ ክፍሎች እያስወገደ ነገር ግን ተጨማሪ ጉዳዮችን የሚታገስ ማራማሪ ማለፊያ ይሮጣል (የኮድ ዝርዝሮችን ይመልከቱ)። ውስጣዊ ምስሎች እንደ ፋይል አባሪ በፍጹም አይጨመሩም፤ ከዚያ ግን "Include inline pictures" በተነቃ (ነባሪ፡ ON) ጊዜ በመልስ አካል ውስጥ እንደ base64 data URI በቀጥታ ይደበቃሉ።
 
-## Behavior Details {#behavior-details}
+| የክፍል አይነት                                 |                  ጥብቅ ማለፊያ |                 ማራማሪ ማለፊያ |
+| ----------------------------------------- | ------------------------: | ------------------------: |
+| የ S/MIME ፊርማ ፋይል `smime.p7s`              |                    ተገልብጧል |                    ተገልብጧል |
+| S/MIME MIME አይነቶች (`application/pkcs7-*`) |                    ተገልብጧል |                    ተገልብጧል |
+| በ Content‑ID የተጠቀሰ ውስጣዊ ምስል (`image/*`)   | ተገልብጧል (በአካል ውስጥ ይመለሳሉ\*) | ተገልብጧል (በአካል ውስጥ ይመለሳሉ\*) |
+| ፋይል ስም ያለው የተያያዘ ኢሜይል (`message/rfc822`)  |                    አልታከለም |                 ሊታከል ይችላል |
+| ፋይል ስም ያለው መደበኛ የፋይል አባሪ                  |                 ሊታከል ይችላል |                 ሊታከል ይችላል |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* "Include inline pictures" ሲነቃ (ነባሪ፡ ON) ውስጣዊ ምስሎች እንደ ፋይል አባሪ አለመጨመራቸው በመልስ አካል ውስጥ እንደ base64 data URI ይደበቃሉ። [አቀማመጥ](configuration#include-inline-pictures) ይመልከቱ።
+
+ምሳሌ፡ አንዳንድ አባሪዎች የተወሰኑ ራስጌዎች ሊጎዱ ይችላሉ ነገር ግን መደበኛ ፋይሎች ሆነው ይቆያሉ (ውስጣዊ/S/MIME ያልሆኑ)። ጥብቅ ማለፊያው ምንም ካላገኘ ፣ ማራማሪው ማለፊያ እነዚህን ሊቀበል እና ሊያገናኝ ይችላል።
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### የተጣመሩ ማጣቀሻዎች {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
+- ፎርዋርድ በንድፍ መሠረት አይታረም (ከታች ያለውን ገደቦች ይመልከቱ)።
+- አባሪ ለማያጨመር ምክንያቶችን ለማየት ፣ “Why attachments might not be added” ይመልከቱ።
 
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+---
 
-| Keys            | Action                         |
+## የባህሪ ዝርዝሮች {#behavior-details}
+
+- ፡፡ ዳግም መጨመር መከላከል፡ አባሪው የመልዕክት መጻፊያ ትርን በእያንዳንዱ ትር ክፍለ‑ጊዜ እሴት እና በማስታወሻ ውስጥ መከላከያ በመጠቀም እንደተሰራ ይምልከታል። ኦሪጅናሎቹን ሁለመት አያክልም።
+- መጻፊያ መስኮትን መዝጋት እና እንደገና መክፈት እንደ አዲስ ትር ይቆጠራል (ማለትም አዲስ ሙከራ ይፈቀዳል)።
+- ፡፡ ያለቀረ አባሪ እንዲከበሩ፡ ከመጻፉ በፊት አባሪዎች ካሉት ፣ ኦሪጅናሎቹ አንድ ጊዜ ብቻ ተጨምረው ያሉትን የፋይል ስሞች በመዝለል ይጨመራሉ።
+- ፡፡ ማስወገጃዎች፡ S/MIME ክስተቶች እና ውስጣዊ ምስሎች ከፋይል አባሪዎች ውስጥ ይገልብጣሉ። በጀመሩበት ማለፊያ ምንም ካልተሟላ ፣ ማራማሪ መመለሻ እንደገና ያረጋግጣል ነገር ግን ያል S/MIME ክፍሎችን ብቻ። ውስጣዊ ምስሎች በተለየ መንገድ ይከናወናሉ፡ እነሱ በመልስ አካል ውስጥ እንደ data URI ይመለሳሉ (ሲነቃ)።
+  - ፡፡ የፋይል ስሞች፡ `smime.p7s`
+  - ፡፡ MIME አይነቶች፡ `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - ፡፡ ውስጣዊ ምስሎች፡ በ Content‑ID የተጠቀሱ ማናቸውም `image/*` ክፍሎች — ከፋይል አባሪዎች ውጭ ናቸው ነገር ግን "Include inline pictures" ሲሆን ON በሚለው ጊዜ በመልስ አካል ውስጥ ይተከላሉ
+  - ፡፡ የተያያዙ ኢሜይሎች (`message/rfc822`)፡ ፋይል ስም ካላቸው እንደ መደበኛ አባሪ ይቆጠራሉ፤ ሊጨመሩ ይችላሉ (የዳግም መድብ ምርመራ እና ጥቁር ዝርዝር ግዴታ ስር)።
+- ፡፡ የጥቁር ዝርዝር ማስጠንቀቂያ (ከተነቃ)፡ እጩዎች በጥቁር ዝርዝርዎ ሲገልብጡ ፣ አባሪው የተጎዱትን ፋይሎች እና የተዛመዱትን ንድፎች የሚያሳይ ትንሽ ሞዳል መስኮት ያሳያል። ይህ ማስጠንቀቂያ ነገር ሁሉ ስለተገለበጡ ምንም አባሪ ሳይጨመር በሚያበቃ ክስተትም ይታያል።
+
+---
+
+## የኪቦርድ አቋራጮች {#keyboard-shortcuts}
+
+- የማረጋገጫ ንግግር መስኮት፡ Y/J = Yes, N/Esc = No; Tab/Shift+Tab እና የቀስት ቁልፎች ትኩረትን ያዞራሉ።
+  - [አቀማመጥ](configuration#confirmation) ውስጥ ያለው “Default answer” መጀመሪያ የሚተኩረውን አዝራር ያስመርጣል።
+  - Enter የተተኩረውን አዝራር ያነቃል። Tab/Shift+Tab እና ቀስቶች ለመዳረሻ ትኩረትን ያንቀሳቅሳሉ።
+
+### የኪቦርድ ፈጣን መመሪያ {#keyboard-cheat-sheet}
+
+| ቁልፎች            | እርምጃ                           |
 | --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+| Y / J           | አዎን አረጋግጥ                      |
+| N / Esc         | አይን አረጋግጥ                      |
+| Enter           | የተተኩረ አዝራርን አንቃ                |
+| Tab / Shift+Tab | ትኩረትን ወደ ፊት/ወደ ኋላ አንቀሳቅስ       |
+| የቀስት ቁልፎች       | ትኩረትን በአዝራሮች መካከል አንቀሳቅስ       |
+| ነባሪ መልስ         | መጀመሪያ ትኩረትን ያዘጋጃል (Yes ወይም No) |
 
 ---
 
-## Limitations {#limitations}
+## ገደቦች {#limitations}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- ፎርዋርድ በዚህ አባሪ አይለወጥም (መልስ እና ሁሉም መልስ ይደገፋሉ)።
+- በጣም ትልቅ አባሪዎች የThunderbird ወይም የአቅራቢ ገደቦችን ሊገናኙ ይችላሉ።
+  - አባሪው ፋይሎችን አይከፍል ወይም አይጨመቅም፤ በThunderbird መደበኛ የአባሪ አያያዝ ይታመናል።
+- የተመሰጠ መልዕክት፡ S/MIME ክፍሎች በተለምዶ እንዲገልብጡ ተደርጓል።
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ለምን አባሪዎች ሊታከሉ ይችላሉ ወይም አይታከሉም {#why-attachments-might-not-be-added}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ውስጣዊ ምስሎች እንደ ፋይል አባሪ አይጨመሩም። "Include inline pictures" ሲሆን ON (ነባሪ) በሚለው ጊዜ በመልስ አካል ውስጥ እንደ data URI ይደበቃሉ። ቅንብሩ OFF ከሆነ ውስጣዊ ምስሎች ሙሉውን ተወግደው ይጠፋሉ። [አቀማመጥ](configuration#include-inline-pictures) ይመልከቱ።
+- የ S/MIME ፊርማ ክፍሎች በንድፍ መሠረት ይገልብጣሉ፡ እንደ `smime.p7s` ያሉ የፋይል ስሞች እና `application/pkcs7-signature` ወይም `application/pkcs7-mime` ያሉ MIME አይነቶች ይዘሉ ይተዋሉ።
+- የጥቁር ዝርዝር ንድፎች እጩዎችን ሊፈልጉ ይችላሉ፡ [አቀማመጥ](configuration#blacklist-glob-patterns) ይመልከቱ፤ ማመሳሰሉ በቁምፊ እኩልነት አይገደብም እና በፋይል ስም ብቻ ነው።
+- ዳግም የሚያደርጉ የፋይል ስሞች አይጨመሩም፡ በመጻፉ ውስጥ ተመሳሳይ የተመዘነ ስም ያለው ፋይል ከነበረ ይዘል ይተዋል።
+- ያልፋይል ክፍሎች ወይም የጎዱ የፋይል ስሞች፡ የፋይል መሳሰሉ ከተጠቀሙ የፋይል ስሞች ጋር ብቻ ይመረመራሉ።
 
 ---
 
 See also
 
-- [Configuration](configuration)
+- [አቀማመጥ](configuration)

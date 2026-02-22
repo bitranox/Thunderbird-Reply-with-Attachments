@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Роҳнамои зуд",
-  "description": "Quickstart",
+  "title": "Оғози зуд",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Роҳнамои зуд",
-    "sidebar_label": "Роҳнамои зуд"
+    "title": "Оғози зуд",
+    "sidebar_label": "Оғози зуд"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Виждонҳо",
+    "title": "Хусусиятҳо",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/features"
   },
   "next": {
-    "title": "Устензия",
+    "title": "Насб",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/install"
   }
 }

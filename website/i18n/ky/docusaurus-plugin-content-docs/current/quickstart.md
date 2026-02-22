@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Тез баштоо'
-sidebar_label: 'Тез баштоо'
+title: 'Ыкчам баштоо'
+sidebar_label: 'Ыкчам баштоо'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Ыкчам баштоо
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Минималдуу Thunderbird версиясы
+Бул кошумча Thunderbird **128 ESR же андан жаңы** версияларды колдойт. Эски версиялар колдоого алынбайт.
+:::
+
+:::note Телеметрия жок; фондо тармакка чыгуу жок
+Кошумча аналитика/телеметрия чогултпайт жана фондо тармактык сурамдарды жасабайт. Тармакка чыгуу сиз тышкы шилтемелерди (Документация, GitHub, Кайрымдуулук) басканда гана болот.
+:::
+
+---
+
+### Орнотуу
+
+1. Кошумчаны Thunderbird Add‑ons каталогунан орнотуңуз.
+2. Каалоого жараша: Ырастоону күйгүзүңүз (Параметрлер → “Тиркемелерди кошуудан мурун сура”).
+3. Каалоого жараша: Кара тизме боюнча эскертүүнү күйгүзүлгөн абалда калтырыңыз (демейки): “Кара тизмеге ылайык тиркемелер четтетилсе, эскерт”.
+4. Каалоого жараша: Кара тизме үлгүлөрүн кошуңуз (ар бир сапка бири), мисалы:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Эскертүү: Жогорудагы “# …” бул документациядагы комментарий; Параметрлерге үлгүлөрдү киргизгенде комментарийлерди кошпоңуз. Ар бир сапка бир гана үлгү киргизиңиз.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Эми тиркемелери бар билдирүүгө жооп бериңиз — түпнускалар автоматтык түрдө же ыкчам тастыктоодон кийин кошулат. Эгер файлдар кара тизмеңиз тарабынан четтетилсе, алар тизмеленген кыскача эскертүүнү көрөсүз.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Текшерүү {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 тиркемеси бар билдирүүгө жооп берип, түпнускалар жазуу терезеңизге кошулганын тастыктаңыз.
+- Мүнөзүн жөнгө салуу үчүн [Конфигурация](configuration) бөлүмүн караңыз (ырастоону күйгүзүү/өчүрүү, демейки жооп, кара тизме үлгүлөрү).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Кара тизме боюнча эскертүүнү текшерүү {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” сыяктуу файлды камтыган билдирүүгө жооп бериңиз.
+- “Кара тизмеге ылайык тиркемелер четтетилсе, эскерт” параметри күйгүзүлгөндө, кичинекей диалог терезеси четтетилген файлдарды жана дал келген үлгүнү тизмектейт.
+
+Эгер эскертүү көрүнбөсө, үлгү файл аталышына так дал келгенин текшериңиз (файл аталышы гана, регистрге сезимтал эмес). Конфигурация → Кара тизме бөлүмүн караңыз.
+
+---
+
+### Баскычтоп боюнча эскертүү {#keyboard-note}
+
+- Ырастоо диалогу Ооба үчүн Y/J жана Жок үчүн N/Esc баскычтарын колдойт. Айрым латын эмес баскычтоптордо тамга баскычтары башкача болушу мүмкүн; Enter баскычы фокустагы баскычты тастыктайт.
 
 ---

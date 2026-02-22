@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ແບບສາມະດິດ'
-sidebar_label: 'ແບບສາມະດິດ'
+title: 'ຄວາມເຂົ້າກັນໄດ້'
+sidebar_label: 'ຄວາມສອດຄ່ອງ'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ຄວາມສອດຄ່ອງ {#compatibility}
+
+:::important ເວີຊັນ Thunderbird ຕ່ຳສຸດ
+ສ່ວນເສີມນີ້ຮອງຮັບ Thunderbird **128 ESR ຫຼືໃໝ່ກວ່າ**. ເວີຊັນເກົ່າບໍ່ໄດ້ຮອງຮັບ.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- ຮອງຮັບ Thunderbird 128 ESR ຫຼືໃໝ່ກວ່າ (128.x+).
+- ເວີຊັນ Thunderbird ເກົ່າບໍ່ໄດ້ຮອງຮັບ.
+- ທົດສອບແລ້ວໃນ Windows, macOS, ແລະ Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning ບໍ່ຮອງຮັບ Manifest V2
+ບໍ່ຮອງຮັບ Manifest V2. ສ່ວນເສີມມຸ່ງເປົ້າໄປທີ່ **Manifest V3 (MV3)** ໃນ Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ການແກ້ໄຂບັນຫາ {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- ຖ້າສ່ວນເສີມບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້, ໃຫ້ແນ່ໃຈວ່າທ່ານກຳລັງໃຊ້ເວີຊັນ Thunderbird ທີ່ສອດຄ່ອງ (128 ESR ຫຼືໃໝ່ກວ່າ).
+- ກວດເບິ່ງຄອນໂຊນຂໍ້ຜິດພາດຂອງ Thunderbird (**Tools > Developer Tools > Error Console**) ສຳລັບບັນຫາທີ່ກ່ຽວຂ້ອງກັບສ່ວນເສີມ.
+- ຖ້າການຕັ້ງຄ່າທີ່ເກັບໄວ້ດູເໝືອນບໍ່ຖືກນຳໃຊ້ຢ່າງຖືກຕ້ອງ, ໃຫ້ປິດແລ້ວເປີດ Thunderbird ໃໝ່ ແລ້ວລອງອີກຄັ້ງ. (Thunderbird ອາດຈະເກັບສະຖານະໄວ້ຂ້າມເຊຊັນ; ການເລີ່ມໃໝ່ຮັບປະກັນວ່າໄດ້ໂຫຼດການຕັ້ງຄ່າໃໝ່.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## ຄວາມຂັດແຍ້ງທີ່ຮູ້ຈັກ {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ບໍ່ມີທີ່ຮູ້ຈັກໃນຂະນະນີ້. ຖ້າທ່ານເຫັນການແນບໄຟລ໌ຊ້ຳຊ້ອນຊໍ້າໆ ຫຼືການຜິດພາດກັບສ່ວນເສີມອື່ນໆ, ກະລຸນາແຈ້ງລາຍງານພ້ອມຂັ້ນຕອນການສ້າງໃຫ້ເກີດ.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- ຮຸ່ນ Thunderbird Beta ແລະ Daily (Nightly) ໂດຍທົ່ວໄປແລ້ວຖືກຮອງຮັບ, ແຕ່ການປ່ຽນແປງຈາກຕົ້ນທາງບາງຄັ້ງອາດຈະເຮັດໃຫ້ພຶດຕິກຳຂອງສ່ວນເສີມເສຍ. ຖ້າທ່ານພົບບັນຫາ, ກະລຸນາແຈ້ງລາຍງານ ແລະລວມເວີຊັນ Thunderbird ທີ່ແນ່ນອນ (ຕົວຢ່າງ: “Daily 131.0a1 2025‑09‑10”).
+- ເຈີການຖອຍກັບ (regression) ໃນ Beta/Nightly ບໍ? ກະລຸນາແຈ້ງລາຍງານພ້ອມຂັ້ນຕອນການສ້າງໃຫ້ເກີດ — ເບິ່ງ [ການຊ່ວຍເຫຼືອ](support) — ແລະລວມສາຍອັກສອນ build ຂອງ Thunderbird ທີ່ແນ່ນອນ.
 
 ---

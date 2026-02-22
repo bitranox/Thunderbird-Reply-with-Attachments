@@ -4,24 +4,26 @@ title: 'چټک پیل'
 sidebar_label: 'چټک پیل'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## چټک پیل
+
+:::important لږ تر لږه د Thunderbird نسخه
+دا پراخونه د Thunderbird **128 ESR يا نوې** نسخو ملاتړ کوي. زړې نسخې نه ملاتړ کېږي.
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note نه ټیلېمېټري؛ نه شالیدي شبکه
+دا پراخونه د شننې/ټیلېمېټري معلومات نه راټولوي او هېڅ شالیدي شبکې غوښتنې نه کوي. د شبکې لاسرسی يوازې هغه مهال پېښېږي کله چې تاسو په بهرنيو لینکونو کلیک وکړئ (Docs، GitHub، Donate).
 :::
 
 ---
 
-### Install
+### لګول
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. پراخونه له Thunderbird Add‑ons څخه ولګوئ.
+2. اختیاري: تایید فعال کړئ (Options → “Ask before adding attachments”).
+3. اختیاري: د تورلېست خبرتیا فعاله پرېږدئ (تلواله): “Warn if attachments are excluded by blacklist”.
+4. اختیاري: د تورلېست بڼې/نمونې اضافه کړئ (هره يوه په جلا کرښه)، د بېلګې په توګه:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+یادونه: پورته “# …” په دې اسنادو کې يوه تبصره ده؛ تبصرې مه شاملوئ په هغو بڼو کې چې تاسو یې په Options کې پیسټ کوئ. يوازې په هره کرښه کې يوه بڼه وليکئ.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+اوس د ضمیمو لرونکې پېغام ته ځواب ورکړئ — اصلي ضمیمې به يا خو په اوتومات ډول زياتې شي او يا د چټک تایید وروسته. که کوم فایلونه ستاسو د تورلېست له امله خارج شي، نو یوه لنډه خبرتیا به یې لېست درته وښيي.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### تایید {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- د 1–2 ضمیمو لرونکي پېغام ته ځواب ورکړئ او ډاډ ترلاسه کړئ چې اصلي ضمیمې ستاسو د ليکنې کړکۍ ته زياتې شوې دي.
+- د چلند د سمون لپاره، [تنظيمات](configuration) وګورئ (د تایید ټوګل، تلواله ځواب، د تورلېست بڼې).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### د تورلېست د خبرتیا تایید {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- هغه پېغام ته ځواب ورکړئ چې د “secret.txt” په څېر دوتنه ولري.
+- کله چې “Warn if attachments are excluded by blacklist” فعاله وي، یوه کوچنۍ کړکۍ خارج شوي فایلونه او مل‌کېدونکې بڼه ښيي.
+
+که خبرتیا نه وینئ، ډاډ ترلاسه کړئ چې بڼه له فایل‌نوم سره په بشپړ ډول سمون خوري (يوازې فایل‌نوم، د لويو/وړو تورو پروا نه لري). تنظيمات → تورلېست وګورئ.
+
+---
+
+### د کيبورډ يادونه {#keyboard-note}
+
+- د تایید کړکۍ Y/J د Yes لپاره او N/Esc د No لپاره مني. په ځينو غيرلاتيني کليدپټو کې د تورو کليان بدلېدلی شي؛ Enter د فوکس شوې تڼۍ تاییدوي.
 
 ---

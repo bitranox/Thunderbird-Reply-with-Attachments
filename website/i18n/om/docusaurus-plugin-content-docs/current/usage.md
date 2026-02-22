@@ -4,94 +4,98 @@ title: 'Fayyadama'
 sidebar_label: 'Fayyadama'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Fayyadama {#usage}
+
+- Deebisi, dabalataan immoo asxaa duraanii ofumaan ida'a — yookaan jalqaba gaafata, yoo Filannoowwan keessatti dandeessifame.
+- Irra‑deddeebi'insa maqaa faayiliin to'ata; kutaan S/MIME yeroo hunda ni dhiifama. Suuraaleen inline bifa durtiiin qaama deebii keessatti deebi'u (Filannoowwan keessatti "Include inline pictures" dhaamsuun ni danda'ama).
+- Maxxansoonni tarree ugguraatti galan akkuma kanaan ni dhiifamu (foormaati glob sensitiivii‑qubee miti kan maqaa faayilii waliin walsimu, karaa miti). [Qindaa'ina](configuration#blacklist-glob-patterns) ilaali.
 
 ---
 
-### What happens on reply {#what-happens}
+### Yeroo deebitan maal ta'a {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Deebii argi → maxxansoota duraanii tarreessi → S/MIME + inline haqi → mirkaneessa filannoo qabu → faayiloota malan ida'i (waan irra‑deddeebi'u dhiisi) → suuraaleen inline qaama barruu keessatti deebisi.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Darbuu cimaa fi laafaa: Dabalataan jalqabatti kutaa S/MIME fi inline faayiloota maxxanfaman keessaa ni baasaa. Homtuu yoo hin mijanne, darbuu laafaa raawwata kan amma iyyuu S/MIME/inline alatti baasuu itti fufu garuu haala dabalataa fudhatu (Ibsa Koodii ilaali). Suuraaleen inline yommuu ta'u faayila maxxanfamaa ta'anii hin ida'aman; bakka sana, yommuu "Include inline pictures" dandeessifame (bifa durtii), isaan qaama deebii keessatti akka base64 data URItti qindaa'anii ni kaa'amu.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Part type                                                     |                                  Strict pass |                                 Relaxed pass |
+| ------------------------------------------------------------- | -------------------------------------------: | -------------------------------------------: |
+| Faayila mallattoo S/MIME `smime.p7s`                          |                               Alatti baafame |                               Alatti baafame |
+| Gosoota MIME S/MIME (`application/pkcs7-*`)                   |                               Alatti baafame |                               Alatti baafame |
+| Suuraa inline kan Content‑ID tiin waamame (`image/*`)         | Alatti baafame (qaama keessatti deebifame\*) | Alatti baafame (qaama keessatti deebifame\*) |
+| Imeelii maxxanfame (`message/rfc822`) kan maqaa faayilii qabu |                                 Hin ida'amne |                              Ida'amu danda'a |
+| Faayila maxxanfamaa sirrii kan maqaa faayilii qabu            |                              Ida'amu danda'a |                              Ida'amu danda'a |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Yommuu "Include inline pictures" dandeessifame (bifa durtii: ON), suuraaleen inline qaama deebii keessatti akka base64 data URItti ni kaa'amu; faayila maxxanfamaa ta'anii hin ida'aman. [Qindaa'ina](configuration#include-inline-pictures) ilaali.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Fakkeenya: Maxxansoonni muraasni mata‑duree muraasa dhabuu danda'u; garuu amma iyyuu faayiloota sirrii (inline/S/MIME miti). Darbuu cimaa keessatti homtuu hin argamne yoo ta'e, darbuu laafaan isaan fudhachuu fi maxxansu danda'a.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Walitti‑hidhata {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward kallattiidhaan hin jijjiiramu (Daangawwan gadi aanaa ilaali).
+- Sababoota maxxansi hin ida'amiin danda'uuf, “Maaliif maxxansoonni hin ida'amin ta'uu danda'u” ilaali.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Ibsaa Hojii {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Ittisa irra‑deddeebi'uu: Dabalataan taba qopheessuu akka hojjetame mallatteessuuf gatii session tabi‑tokkoon fi eegduu in‑memory fayyadama. Asxaa duraanii lammata hin ida'u.
+- Baniinsa qopheessuu cufuun fi irra deebi'ee banuun taba haaraa fakkaata (fakkeenyaaf, carraa haaraa ni hayyama).
+- Maxxansoota jiran kabaju: Yoo qopheessaa keessatti duraanuu maxxansi jiraateyyuu, asxaa duraanii yeroo tokkicha qofa ni ida'ama; maqaan faayilii duraan jiru walfakkaataa yoo ta'e ni dhiifama.
+- Haquu: Kutaaleen S/MIME fi suuraaleen inline faayiloota maxxanfaman keessaa ni baasamu. Homtuu darbuu jalqabaa irratti yoo hin mijanne, bakkabuusaan laafaan kutaa S/MIME miti ta'an irra deebi'ee ilaala. Suuraaleen inline addaan qoodamu: yommuu dandeessifame qaama deebii keessatti akka data URItti ni deebifamu.
+  - Maqaa faayilii: `smime.p7s`
+  - Gosa MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Suuraaleen inline: kutaa `image/*` kamiyyuu kan Content‑ID tiin waamame — faayila maxxanfamaa irraa alatti baafama garuu qaama deebii keessatti yommuu "Include inline pictures" ON ta'e ni maxxanfama
+  - Imeeloota maxxanfaman (`message/rfc822`): maqaa faayilii yoo qaban akka maxxansoota sirriitti ilaalamu; ida'amu danda'u (sakatta'iinsa irra‑deddeebi'uu fi tarree ugguraa jala).
+- Akeekkachiisa tarree ugguraa (yoo dandeessifame): Filatamtoonni tarree ugguraan yoo haquaman,
+  dabalataan moddalii xiqqaa agarsiisa kan faayiloota miidhamanii fi paatternii
+  walsimuu tarreessu. Akeekkachiisni kunis yeroo maxxansi kamiyyuu hin ida'amne ta'ees
+  mul'ata sababiin isaas wantoota hunda haquu ta'uu isaati.
 
 ---
 
-## Limitations {#limitations}
+## Gabaabina Kiiboordii {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Ijoo mirkaneessaa: Y/J = Eeyyee, N/Esc = Lakki; Tab/Shift+Tab fi furtuuwwan Arrow xiyyeeffannoo keessa naanna'u.
+  - “Default answer” kan [Qindaa'ina](configuration#confirmation) keessa jiru bantiin jalqaba irratti xiyyeeffannoo qabu akka ta'u ni saaxila.
+  - Enter bantiin irratti xiyyeeffannoon jiru akka hojjetu kakaasa. Tab/Shift+Tab fi arrows saaxilamummaaaf xiyyeeffannoo ni sochoosu.
+
+### Gabatee Gabaabaa Kiiboordii {#keyboard-cheat-sheet}
+
+| Furtuuwwan      | Gocha                                               |
+| --------------- | --------------------------------------------------- |
+| Y / J           | Eeyyee mirkaneessi                                  |
+| N / Esc         | Lakki mirkaneessi                                   |
+| Enter           | Bantii irratti xiyyeeffannoo qabu kakaasi           |
+| Tab / Shift+Tab | Xiyyeeffannoo gara fuulduraatti/dachaatii sochoosi  |
+| Arrow keys      | Xiyyeeffannoo bantiwwan gidduutti sochoosi          |
+| Default answer  | Xiyyeeffannoo jalqabaa saagi (Eeyyee yookaan Lakki) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Daangawwan {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward dabalataan kuniin hin jijjiiramu (Reply fi Reply all ni deggaramu).
+- Maxxansoonni baay'ee guddaan daangaa Thunderbird yookaan tajaajilaa jala ta'uu danda'u.
+  - Dabalataan faayiloota gara kutaa‑kutaa hin qoode yookaan hin cufsiisu; qunnamtii maxxansaa sirrii Thunderbird irratti ni hirkata.
+- Ergaalee iccitii‑qabamoo: kutaaleen S/MIME qindoominaan alatti baafamu.
 
 ---
 
-See also
+## Maaliif maxxansoonni hin ida'amin ta'uu danda'u {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Suuraaleen inline faayila maxxanfamaa ta'anii hin ida'aman. Yommuu "Include inline pictures" ON (bifa durtii) ta'u, bakka bu'utti qaama deebii keessatti akka data URItti ni kaa'amu. Sana OFF yoo taasifame, suuraaleen inline guutumaan guutuutti ni haqamu. [Qindaa'ina](configuration#include-inline-pictures) ilaali.
+- Kutaaleen mallattoo S/MIME yaadamee alatti baafamu: maqaa faayilii akka `smime.p7s` fi gosa MIME akka `application/pkcs7-signature` yookaan `application/pkcs7-mime` jiran ni dhiifamu.
+- Paatterniin tarree ugguraa filatamtoota faffacaasu danda'a: [Qindaa'ina](configuration#blacklist-glob-patterns) ilaali; walsimsiisni sensitiivii‑qubee miti, maqaa faayilii qofaan.
+- Maqaan faayilii irra‑deddeebi'u irra deebi'anii hin ida'aman: yoo qopheessaa keessatti maqaa sirreessamee walfakkaataa qabu faayilli duraan jiru, ni dhiifama.
+- Kutaaleen faayila miti yookaan maqaa faayilii dhabuu: qofa kutaan faayila fakkaatu kan maqaa faayilii hojiirra oolu qabu ida'uu irratti ni ilaalama.
+
+---
+
+Isaanis ilaali
+
+- [Qindaa'ina](configuration)

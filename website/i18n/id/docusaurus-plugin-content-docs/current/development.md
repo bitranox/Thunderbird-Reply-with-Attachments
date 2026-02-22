@@ -4,294 +4,296 @@ title: 'Pengembangan'
 sidebar_label: 'Pengembangan'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Panduan Pengembangan {#development-guide}
+
+:::note Hanya edit bahasa Inggris; terjemahan akan dirambatkan
+Perbarui dokumentasi hanya di bawah `website/docs` (Inggris). Terjemahan di bawah `website/i18n/<locale>/…` dihasilkan dan tidak boleh diedit secara manual. Gunakan tugas terjemahan (mis., `make translate_web_docs_batch`) untuk menyegarkan konten terlokalisasi.
 :::
 
-### Prerequisites {#prerequisites}
+### Prasyarat {#prasyarat}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ dan npm (dites dengan Node 22)
+- Thunderbird 128 ESR atau lebih baru (untuk pengujian manual)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Tata Letak Proyek (tingkat tinggi) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: skrip pengemasan `distribution_zip_packer.sh`, dokumentasi, tangkapan layar
+- `sources/`: kode add‑on utama (latar belakang, UI opsi/popup, manifes, ikon)
+- `tests/`: suite Vitest
+- `website/`: dokumentasi Docusaurus (dengan i18n di bawah `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Instalasi & Perkakas {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Instal dependensi root: `npm ci`
+- Dokumentasi (opsional): `cd website && npm ci`
+- Lihat target: `make help`
+
+---
+
+### Pengembangan Langsung (web‑ext run) {#live-dev-web-ext}
+
+- Siklus cepat di Firefox Desktop (hanya pengujian UI ringan):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Jalankan di Thunderbird (disarankan untuk MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
 - Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Biarkan Error Console Thunderbird tetap terbuka (Tools → Developer Tools → Error Console).
+- Halaman event MV3 ditangguhkan saat idle; muat ulang add‑on setelah perubahan kode, atau biarkan web‑ext memuat ulang otomatis.
+- Beberapa perilaku khusus Firefox berbeda; selalu verifikasi di Thunderbird untuk kesetaraan API.
+- Path biner Thunderbird (contoh):
+- Linux: `thunderbird` (mis., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Isolasi profil: Gunakan profil Thunderbird terpisah untuk pengembangan agar tidak memengaruhi pengaturan harian Anda.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Target Make (Alfabetis) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile menstandarkan alur pengembangan umum. Jalankan `make help` kapan saja untuk ringkasan satu baris dari setiap target.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tip: menjalankan `make` tanpa target membuka menu Whiptail sederhana untuk memilih target.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Deskripsi satu baris                                                                        |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Hapus artefak build/pratinjau lokal (tmp/, web-local-preview/, website/build/).             |
+| [`commit`](#mt-commit)                                   | Format, jalankan tes (termasuk i18n), perbarui changelog, commit & push.                    |
+| [`eslint`](#mt-eslint)                                   | Jalankan ESLint melalui konfigurasi flat (`npm run -s lint:eslint`).                        |
+| [`help`](#mt-help)                                       | Daftar semua target dengan dokumentasi satu baris (diurutkan).                              |
+| [`lint`](#mt-lint)                                       | web‑ext lint pada `sources/` (manifest sementara; mengabaikan ZIP; non‑fatal).              |
+| [`menu`](#mt-menu)                                       | Menu interaktif untuk memilih target dan argumen opsional.                                  |
+| [`pack`](#mt-pack)                                       | Bangun ZIP ATN & LOCAL (menjalankan linter; memanggil skrip packer).                        |
+| [`prettier`](#mt-prettier)                               | Format repositori di tempat (menulis perubahan).                                            |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier dalam mode cek (tanpa penulisan); gagal jika perlu pemformatan ulang.              |
+| [`prettier_write`](#mt-prettier_write)                   | Alias untuk `prettier`.                                                                     |
+| [`test`](#mt-test)                                       | Prettier (tulis), ESLint, lalu Vitest (cakupan jika dikonfigurasi).                         |
+| [`test_i18n`](#mt-test_i18n)                             | Tes khusus i18n: placeholder/keseragaman add‑on + keseragaman situs web.                    |
+| [`translate_app`](#mt-translation-app)                   | Alias untuk `translation_app`.                                                              |
+| [`translation_app`](#mt-translation-app)                 | Terjemahkan string UI aplikasi dari `sources/_locales/en/messages.json`.                    |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Terjemahkan dokumen situs web melalui OpenAI Batch API (disarankan).                        |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Terjemahkan dokumen situs web secara sinkron (warisan, non‑batch).                          |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias untuk `translation_web_index`.                                                        |
+| [`translation_web_index`](#mt-translation_web_index)     | Terjemahkan UI beranda/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`).  |
+| [`web_build`](#mt-web_build)                             | Bangun dokumentasi ke `website/build` (mendukung `--locales` / `BUILD_LOCALES`).            |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Pemeriksaan tautan aman‑offline (melewati HTTP[S] jarak jauh).                              |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Pratinjau gh‑pages lokal; layanan otomatis pada 8080–8090; tes/pemeriksaan tautan opsional. |
+| [`web_push_github`](#mt-web_push_github)                 | Dorong `website/build` ke branch `gh-pages`.                                                |
 
-Syntax for options
+Sintaks untuk opsi
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Gunakan `make <command> OPTS="…"` untuk meneruskan opsi (disarankan menggunakan tanda kutip). Setiap target di bawah menunjukkan contoh penggunaan.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Tips build locale {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Bangun subset locale: setel `BUILD_LOCALES="en de"` atau oper `OPTS="--locales en,de"` ke target web.
+- Pratinjau locale tertentu: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Bangun & Paket {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Bangun ZIP: `make pack`
+- Menghasilkan ZIP ATN dan LOCAL di root repo (jangan edit artefak secara manual)
+- Tip: perbarui versi di `sources/manifest_ATN.json` dan `sources/manifest_LOCAL.json` sebelum pengemasan
+- Instal manual (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → pilih ZIP yang dibangun
+
+---
+
+### Tes {#test}
+
+- Suite penuh: `make test` (Vitest)
+- Cakupan (opsional):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Jalankan `make test`; buka `coverage/index.html` untuk laporan HTML
+- Hanya i18n: `make test_i18n` (kunci/placeholders/titles UI + keseragaman situs web per‑locale per‑dokumen dengan pemeriksaan id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Debugging & Log {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Alihkan log verbose saat runtime:
+- Aktifkan: `messenger.storage.local.set({ debug: true })`
+- Nonaktifkan: `messenger.storage.local.set({ debug: false })`
+- Log muncul saat menulis/mengirim balasan
 
 ---
 
-### Docs (website) {#docs-website}
+### Dokumentasi (situs web) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Server dev: `cd website && npm run start`
+- Bangun situs statis: `cd website && npm run build`
+- Padanan Make (alfabetis): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Contoh penggunaan:
+- Hanya EN, lewati tes/pemeriksaan tautan, tanpa push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Semua locale, dengan tes/pemeriksaan tautan, lalu push: `make web_build_local_preview && make web_push_github`
+- Sebelum menerbitkan, jalankan pemeriksaan tautan aman‑offline: `make web_build_linkcheck`.
+- i18n: Bahasa Inggris ada di `website/docs/*.md`; terjemahan bahasa Jerman di `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Pencarian: Jika variabel lingkungan Algolia DocSearch disetel di CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), situs menggunakan pencarian Algolia; jika tidak, kembali ke pencarian lokal. Di beranda, tekan `/` atau `Ctrl+K` untuk membuka kotak pencarian.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Rute pengalihan donasi {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Rute: `/donate` (dan `/<locale>/donate`)
+- Perilaku:
+- Jika rute saat ini memiliki locale (mis., `/de/donate`), gunakan itu
+- Jika tidak, pilih kecocokan terbaik dari `navigator.languages` vs locale yang dikonfigurasi; kembali ke locale default
+- Mengalihkan ke:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- lainnya → `/<locale>/docs/donation`
+- Menggunakan `useBaseUrl` untuk penanganan baseUrl yang benar
+- Menyertakan meta refresh + tautan `noscript` sebagai cadangan
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Tips Pratinjau {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Hentikan pratinjau Node dengan bersih: buka `http://localhost:<port>/__stop` (dicetak setelah `Local server started`).
+- Jika gambar tidak dimuat di MDX/JSX, gunakan `useBaseUrl('/img/...')` untuk menghormati `baseUrl` situs.
+- Pratinjau dimulai terlebih dahulu; pemeriksaan tautan berjalan setelahnya dan tidak memblokir (tautan eksternal rusak tidak akan menghentikan pratinjau).
+- Contoh URL pratinjau: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (dicetak setelah “Local server started”).
+- Tautan eksternal dalam pemeriksaan tautan: Beberapa situs eksternal (mis., addons.thunderbird.net) memblokir perayap otomatis dan mungkin menampilkan 403 dalam pemeriksaan tautan. Pratinjau tetap dimulai; ini aman untuk diabaikan.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Terjemahkan Situs Web {#translate-website}
 
-What you can translate
+Apa yang bisa Anda terjemahkan
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Hanya UI situs web: beranda, navbar, footer, dan string UI lainnya. Konten dokumen tetap hanya bahasa Inggris untuk saat ini.
 
-Where to edit
+Di mana mengedit
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Edit `website/i18n/<locale>/code.json` (gunakan `en` sebagai referensi). Biarkan placeholder seperti `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` tidak berubah.
 
-Generate or refresh files
+Hasilkan atau segarkan file
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Buat stub yang hilang untuk semua locale: `npm --prefix website run i18n:stubs`
+- Timpa stub dari bahasa Inggris (setelah menambahkan string baru): `npm --prefix website run i18n:stubs:force`
+- Alternatif untuk satu locale: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Terjemahkan string UI beranda/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Setel kredensial sekali (shell atau .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Opsional: `export OPENAI_MODEL=gpt-4o-mini`
+- Sekali jalan (semua locale, lewati en): `make translate_web_index`
+- Batasi ke locale tertentu: `make translate_web_index OPTS="--locales de,fr"`
+- Timpa nilai yang ada: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Validasi & percobaan ulang
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Skrip terjemahan memvalidasi bentuk JSON, mempertahankan placeholder kurung kurawal, dan memastikan URL tidak berubah.
+- Jika validasi gagal, skrip mencoba lagi dengan umpan balik hingga 2 kali sebelum mempertahankan nilai yang ada.
 
-Preview your locale
+Pratinjau locale Anda
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Server dev: `npm --prefix website run start`
+- Kunjungi `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Pengiriman
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Buka PR dengan file `code.json` yang diedit. Jaga perubahan tetap fokus dan sertakan cuplikan layar cepat jika memungkinkan.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Tips Keamanan & Konfigurasi {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Jangan commit `sources/manifest.json` (dibuat sementara oleh build)
+- Jaga `browser_specific_settings.gecko.id` tetap stabil untuk mempertahankan saluran pembaruan
+
+---
+
+### Persistensi Pengaturan {#settings-persistence}
+
+- Penyimpanan: Semua pengaturan pengguna berada di `storage.local` dan bertahan lintas pembaruan add‑on.
+- Instal: Default diterapkan hanya ketika sebuah kunci benar‑benar tidak ada (undefined).
+- Pembaruan: Migrasi hanya mengisi kunci yang hilang; nilai yang ada tidak pernah ditimpa.
+- Penanda skema: `settingsVersion` (saat ini `1`).
+- Kunci dan default:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kode: lihat `sources/background.js` → `initializeOrMigrateSettings()` dan `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Alur kerja dev (menambahkan pengaturan baru)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Naikkan `SCHEMA_VERSION` di `sources/background.js`.
+- Tambahkan kunci baru + default ke objek `DEFAULTS` di `initializeOrMigrateSettings()`.
+- Gunakan aturan "only-if-undefined" saat menabur default; jangan timpa nilai yang ada.
+- Jika pengaturan terlihat oleh pengguna, hubungkan di `sources/options.js` dan tambahkan string terlokalisasi.
+- Tambahkan/sesuaikan tes (lihat `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Tips pengujian manual
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simulasikan instalasi baru: bersihkan direktori data ekstensi atau mulai dengan profil baru.
+- Simulasikan pembaruan: setel `settingsVersion` ke `0` di `storage.local` dan muat ulang; konfirmasikan nilai yang ada tetap tidak berubah dan hanya kunci yang hilang yang ditambahkan.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Pemecahan Masalah {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Pastikan Thunderbird 128 ESR atau lebih baru
+- Gunakan Error Console untuk masalah runtime
+- Jika pengaturan tersimpan tampak tidak diterapkan dengan benar, mulai ulang Thunderbird dan coba lagi. (Thunderbird dapat menyimpan cache status antar sesi; mulai ulang memastikan pengaturan baru dimuat.)
 
 ---
 
-### Translations
+### CI & Cakupan {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) menjalankan vitest dengan ambang cakupan (85% baris/fungsi/cabang/pernyataan). Jika ambang tidak terpenuhi, job gagal.
+- Workflow mengunggah artefak `coverage-html` dengan laporan HTML; unduh dari halaman run (Actions → run terbaru → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Kontribusi {#contributing}
 
-Screenshots for docs
+- Lihat CONTRIBUTING.md untuk panduan branch/commit/PR
+- Tip: Buat profil pengembangan Thunderbird terpisah untuk pengujian agar tidak memengaruhi profil harian Anda.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Terjemahan
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Menjalankan pekerjaan terjemahan besar “semua → semua” bisa lambat dan mahal. Mulailah dengan subset (mis., beberapa dokumen dan 1–2 locale), tinjau hasilnya, lalu perluas.
+
+---
+
+- Kebijakan percobaan ulang: pekerjaan terjemahan melakukan hingga 3 kali percobaan ulang dengan exponential backoff pada kesalahan API; lihat `scripts/translate_web_docs_batch.js` dan `scripts/translate_web_docs_sync.js`.
+
+Tangkapan layar untuk dokumen
+
+- Simpan gambar di bawah `website/static/img/`.
+- Rujuk mereka di MD/MDX melalui `useBaseUrl('/img/<filename>')` agar path bekerja dengan `baseUrl` situs.
+- Setelah menambahkan atau mengganti nama gambar di bawah `website/static/img/`, konfirmasikan semua referensi masih menggunakan `useBaseUrl('/img/…')` dan dirender dalam pratinjau lokal.
+  Favicon
+
+- File `favicon.ico` multi‑ukuran dihasilkan secara otomatis di semua jalur build (Make + skrip) melalui `website/scripts/build-favicon.mjs`.
+- Tidak diperlukan langkah manual; memperbarui `icon-*.png` sudah cukup.
+  Tip peninjauan
+
+- Pertahankan `id` front‑matter tidak berubah dalam dokumen terjemahan; terjemahkan hanya `title` dan `sidebar_label` bila ada.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Tujuan: menghapus artefak build/pratinjau lokal.
+- Penggunaan: `make clean`
+- Menghapus (jika ada):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Tujuan: memformat, menguji, memperbarui changelog, commit, dan push.
+- Penggunaan: `make commit`
+- Rincian: menjalankan Prettier (tulis), `make test`, `make test_i18n`; menambahkan changelog saat ada diff yang distage; mendorong ke `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Tujuan: menjalankan ESLint melalui konfigurasi flat.
+- Penggunaan: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Tujuan: mendaftar semua target dengan dokumentasi satu baris.
+- Penggunaan: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Tujuan: lint MailExtension menggunakan `web-ext`.
+- Penggunaan: `make lint`
+- Catatan: menyalin sementara `sources/manifest_LOCAL.json` → `sources/manifest.json`; mengabaikan ZIP yang dibangun; peringatan tidak menggagalkan pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Tujuan: menu interaktif untuk memilih target Make dan argumen opsional.
+- Penggunaan: jalankan `make` tanpa argumen.
+- Catatan: jika `whiptail` tidak tersedia, menu kembali ke `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Tujuan: membangun ZIP ATN dan LOCAL (bergantung pada `lint`).
+- Penggunaan: `make pack`
+- Tip: naikkan versi di keduanya `sources/manifest_*.json` sebelum pengemasan.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Tujuan: memformat repo di tempat.
+- Penggunaan: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Tujuan: memverifikasi pemformatan (tanpa penulisan).
+- Penggunaan: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Tujuan: alias untuk `prettier`.
+- Penggunaan: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Tujuan: menjalankan Prettier (tulis), ESLint, lalu Vitest (cakupan jika diinstal).
+- Penggunaan: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Tujuan: tes berfokus i18n untuk string add‑on dan dokumen situs web.
+- Penggunaan: `make test_i18n`
+- Menjalankan: `npm run test:i18n` dan `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Tujuan: menerjemahkan string UI add‑on dari EN ke locale lain.
+- Penggunaan: `make translation_app OPTS="--locales all|de,fr"`
+- Catatan: mempertahankan struktur kunci dan placeholder; mencatat ke `translation_app.log`. Bentuk skrip: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Tujuan: menerjemahkan dokumen situs web dari `website/docs/*.md` ke `website/i18n/<locale>/...`.
+- Disarankan: `translate_web_docs_batch` (OpenAI Batch API)
+  - Penggunaan (flag): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Posisi lama masih diterima: `OPTS="<doc|all> <lang|all>"`
+- Perilaku: membuat JSONL, mengunggah, polling setiap 30 dtk, mengunduh hasil, menulis file.
+- Catatan: pekerjaan batch dapat memakan waktu hingga 24 jam untuk selesai (sesuai jendela batch OpenAI). Konsol menampilkan waktu berlalu pada setiap polling.
+- Env: `OPENAI_API_KEY` (wajib), opsional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24 jam), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - Penggunaan (flag): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Posisi lama masih diterima: `OPTS="<doc|all> <lang|all>"`
+- Perilaku: permintaan per‑pasang sinkron (tanpa agregasi batch).
+- Catatan: Prompt interaktif saat `OPTS` dihilangkan. Kedua mode mempertahankan blok kode/kode inline dan menjaga `id` front‑matter tidak berubah; mencatat ke `translation_web_batch.log` (batch) atau `translation_web_sync.log` (sinkron).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Tujuan: menerjemahkan string UI situs web (beranda, navbar, footer) dari `website/i18n/en/code.json` ke semua locale di bawah `website/i18n/<locale>/code.json` (kecuali `en`).
+- Penggunaan: `make translate_web_index` atau `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Persyaratan: export `OPENAI_API_KEY` (opsional: `OPENAI_MODEL=gpt-4o-mini`).
+- Perilaku: memvalidasi struktur JSON, mempertahankan placeholder kurung kurawal, menjaga URL tidak berubah, dan mencoba ulang dengan umpan balik saat terjadi kesalahan validasi.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Tujuan: membangun situs dokumentasi ke `website/build`.
+- Penggunaan: `make web_build OPTS="--locales en|de,en|all"` (atau setel `BUILD_LOCALES="en de"`)
+- Internal: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Dependensi: menjalankan `npm ci` di `website/` hanya jika `website/node_modules/@docusaurus` tidak ada.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Tujuan: pemeriksaan tautan aman‑offline.
+- Penggunaan: `make web_build_linkcheck OPTS="--locales en|all"`
+- Catatan: membangun ke `tmp_linkcheck_web_pages`; menulis ulang `baseUrl` GH Pages menjadi `/`; melewati tautan HTTP(S) jarak jauh.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Tujuan: pratinjau gh‑pages lokal dengan tes/pemeriksaan tautan opsional.
+- Penggunaan: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Perilaku: mencoba server pratinjau Node terlebih dahulu (`scripts/preview-server.mjs`, mendukung `/__stop`), kembali ke `python3 -m http.server`; melayani pada 8080–8090; PID di `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Tujuan: push `website/build` ke branch `gh-pages`.
+- Penggunaan: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Tip: setel `NPM=…` untuk menimpa manajer paket yang digunakan oleh Makefile (default ke `npm`).
 
 ---

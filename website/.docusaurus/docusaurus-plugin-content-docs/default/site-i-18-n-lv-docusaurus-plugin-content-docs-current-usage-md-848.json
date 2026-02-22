@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Izmantošana",
-  "description": "Usage",
+  "title": "Lietošana",
+  "description": "---",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Izmantošana",
-    "sidebar_label": "Izmantošana"
+    "title": "Lietošana",
+    "sidebar_label": "Lietošana"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/configuration"
   },
   "next": {
-    "title": "Saderība",
+    "title": "Savietojamība",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/compatibility"
   }
 }

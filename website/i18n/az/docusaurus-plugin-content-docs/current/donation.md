@@ -1,31 +1,31 @@
 ---
 id: donation
-title: 'Bağış etmək'
-sidebar_label: 'Bağış etmək'
+title: 'İanə et'
+sidebar_label: 'İanə et'
 ---
 
-## Donate
+## İanə
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Əgər "Reply with Attachments" əlavəsini bəyənirsinizsə və inkişafına dəstək olmaq istəyirsinizsə, buradan ianə edə bilərsiniz:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe vasitəsilə ianə et" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>və ya</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal vasitəsilə ianə et" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>və ya</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy Me a Coffee" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +34,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Buy Me a Coffee almaq üçün skan edin"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Təşəkkürlər! Dəstəyiniz yeni Thunderbird buraxılışları ilə uyğunluğu qorumağa, əlçatanlığı və testləri yaxşılaşdırmağa və sənədləri aktual saxlamağa kömək edir.
 
-Notes
+Qeydlər
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- İanə linkləri yalnız onlara kliklədikdə açılır; əlavə arxa planda heç bir şəbəkə sorğusu yerinə yetirmir.
+- Müntəzəm dəstək uzunmüddətli texniki qulluq və vaxtında yeniləmələrə kömək edir, lakin tamamilə ixtiyaridir.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Şəkil düymələri yüklənmirsə, əvəzində bu keçidlərdən istifadə edin:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +58,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+İanələr könüllüdür; heç bir funksiya məhdudiyyəti yoxdur.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## İanənin görünməsi (90 günlük təxirə)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Əlavə, ianə etdikdən sonra bir müddət ianə istəklərini gizlətmək üçün rahatlıq funksiyası təqdim edir.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Haradan tapmaq olar
+  - Seçimlər → Dəstək bölməsi: “Mən ianə etdim” düyməsini və kiçik ipucu sahəsini görəcəksiniz.
+  - Göndərmə‑təsdiqi dialoqu da “İanə et” düyməsini göstərir; snooze aktiv olduqda o, avtomatik olaraq gizlənir.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Necə işləyir
+  - “Mən ianə etdim” üzərinə klikləmək ianə düymələrini və əlaqəli xatırlatmaları 90 günlüyünə gizlədir.
+  - Vəziyyət ipucunda “YYYY‑MM‑DD tarixinədək gizlidir” (yerli tarixinizlə) göstərilir. Görünürlüğü dərhal bərpa etmək üçün “İanəni yenidən göstər” düyməsi də var.
+  - 90 gündən sonra “İanə et” düyməsi yenidən avtomatik görünür.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Məxfilik və saxlanma
+  - Əlavə təxirə müddətini yadda saxlamaq üçün Thunderbird‑ün lokal yaddaşında bir zaman nişanını saxlayır. Açar: `donateHideUntil` (epoxa millisanələri).
+  - Bu tənzimləmə Thunderbird profilinizə lokaldır (buludla sinxronlaşdırılmır). Bu funksiya heç bir şəbəkə sorğusu göndərmir.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Problemlərin həlli
+  - “Mən ianə etdim”ə kliklədikdən dərhal sonra “İanə et” hələ də görünürsə, bir qədər gözləyin və ya Seçimlər səhifəsini yenidən açın; tənzimləmə saxlanılan kimi interfeys yenilənir.
+  - Əlilə sıfırlamaq üçün “İanəni yenidən göstər” düyməsini klikləyin. Həmçinin ipucunda göstərilən tarix keçənədək gözləyə bilərsiniz.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Bu funksiya yalnız rahatlıq üçündür; heç vaxt əlavə funksionallığını bloklamır və heç bir şəxsi məlumat toplamır.
 
 ---

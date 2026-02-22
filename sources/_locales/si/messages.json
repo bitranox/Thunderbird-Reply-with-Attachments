@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "කළු ලැයිස්තුව නිසා ඇමුණුම් ඉවත් කළ විට ඇඟවන්න"
   },
+  "uiIncludeInlineLabel": {
+    "message": "පේළිගත පින්තූර ඇතුළත් කරන්න (කාවැද්දූ රූප)"
+  },
   "uiDebugHeader": {
     "message": "උසස්"
   },

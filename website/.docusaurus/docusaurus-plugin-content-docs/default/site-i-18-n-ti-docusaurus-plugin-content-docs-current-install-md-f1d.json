@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "መግዛት",
-  "description": "መግዛት በ \"Thunderbird ኣድዞን እና ገጽታ\"",
+  "title": "ኢንስታላሽን",
+  "description": "---",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "መግዛት",
+    "title": "ኢንስታላሽን",
     "slug": "/install",
-    "sidebar_label": "መግዛት"
+    "sidebar_label": "ምትካን"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "መጀመሪያ መርምር",
+    "title": "ምጀመር ብቅልጡፍ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ti/docs/quickstart"
   },
   "next": {

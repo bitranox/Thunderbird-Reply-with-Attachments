@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "यदि ब्लैकलिस्ट से संलग्नक बाहर किए जाएँ तो चेतावनी दें"
   },
+  "uiIncludeInlineLabel": {
+    "message": "इनलाइन चित्र शामिल करें (एम्बेडेड चित्र)"
+  },
   "uiDebugHeader": {
     "message": "उन्नत"
   },

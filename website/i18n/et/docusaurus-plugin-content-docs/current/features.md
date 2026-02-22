@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Omadused'
-sidebar_label: 'Omadused'
+title: 'Funktsioonid'
+sidebar_label: 'Funktsioonid'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funktsioonid {#features}
 
-## How It Works {#how-it-works}
+- Lisab vastamisel automaatselt algse e-kirja manused.
+- Seadistatav käitumine: manused saab
+  - lisada automaatselt või
+  - lisada alles kinnituse järel (väike, ligipääsetav dialoog). Valikutes
+    saab kinnituse lubada ja valida vaikimisi vastuse (Jah/Ei).
+- Failinimede must nimekiri (glob-mustrid) takistab teatud failide
+  automaatset lisamist. Näited: `*intern*`, `*secret*`, `*passwor*`.
+  Vastendamine on tõstutundetu ja kontrollib ainult failinime; esita Valikutes
+  üks muster rea kohta.
+- Musta nimekirja hoiatus (valikuline, vaikimisi lubatud): kui failid jäetakse sinu
+  musta nimekirja tõttu välja, loetleb väike modaalaken faili ja sobiva(d) mustri(d).
+  Sobib tumerežiimiga ja on klaviatuuriga ligipääsetav (sulgemiseks Enter/Esc).
+- Töötab käskudega Vasta ja Vasta kõigile. Edastamist see lisandmoodul ei muuda.
+- Lisab algsed manused ka siis, kui oled juba midagi ise lisanud; väldib duplikaate failinime järgi.
+- Vahekaardi‑põhine duplikaadikaitse hoiab ära topeltlisamise samas koostamisvahekaardis.
+- Välistab vaikimisi S/MIME‑sertifikaadid, et vältida tarbetuid manuseid.
+- Kaasab reasisesed pildid (vaikimisi: sees). Manustatud pildid taastatakse otse
+  vastuse kehasse base64 andme‑URIdena, säilitades algse reasisese paigutuse. Keela
+  Valikutes, et jätta reasisesed pildid täielikult vahele.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Kuidas see töötab {#how-it-works}
+
+- Vastamisel loetleb lisandmoodul algsed manused.
+- Filtreerib failimanustest välja S/MIME‑allkirjad; reasisesed pildid taastatakse kehas (kui pole keelatud).
+- Soovi korral küsib kinnitust (klaviatuurisõbralik).
+- Lisab sobivad failid sinu koostatavasse kirja, vältides duplikaate failinime alusel.
+- Vaata jaotises Kasutamine teemat „Miks manuseid ei pruugita lisada”, et näha erijuhte.
+
+Privaatsusmärkus: kogu töötlemine toimub Thunderbirdis lokaalselt. Lisandmoodul ei tee taustal võrgupäringuid.
+
+---

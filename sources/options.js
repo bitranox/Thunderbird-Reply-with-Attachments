@@ -12,6 +12,7 @@
   const KEY_CONFIRM = 'confirmBeforeAdd';
   const KEY_CONFIRM_DEFAULT = 'confirmDefaultChoice';
   const KEY_WARN_BLACKLIST = 'warnOnBlacklistExcluded';
+  const KEY_INCLUDE_INLINE = 'includeInlinePictures';
   const KEY_DEBUG = 'debug';
   const DEFAULT_PATTERNS = ['*intern*', '*secret*', '*passwor*'];
 
@@ -63,6 +64,7 @@
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
         [KEY_WARN_BLACKLIST]: true,
+        [KEY_INCLUDE_INLINE]: false,
         [KEY_DEBUG]: false,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
@@ -71,6 +73,8 @@
       cb.checked = !!res?.[KEY_CONFIRM];
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = res?.[KEY_WARN_BLACKLIST] !== false;
+      const inlineCb = /** @type {HTMLInputElement} */ (getEl('include-inline'));
+      inlineCb.checked = !!res?.[KEY_INCLUDE_INLINE];
       const debugCb = /** @type {HTMLInputElement | null} */ (
         document.getElementById('debug-logging')
       );
@@ -83,9 +87,9 @@
         document.querySelector('input[name="confirm-default"][value="no"]')
       );
       if (def === 'no') {
-        no.checked = true;
+        if (no) no.checked = true;
       } else {
-        yes.checked = true;
+        if (yes) yes.checked = true;
       }
     } catch (_) {
       setTextareaLines('blacklist-patterns', []);
@@ -93,6 +97,8 @@
       cb.checked = false;
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = true;
+      const inlineCb = /** @type {HTMLInputElement} */ (getEl('include-inline'));
+      inlineCb.checked = false;
       const debugCb = /** @type {HTMLInputElement | null} */ (
         document.getElementById('debug-logging')
       );
@@ -103,8 +109,8 @@
       const no = /** @type {HTMLInputElement} */ (
         document.querySelector('input[name="confirm-default"][value="no"]')
       );
-      yes.checked = true;
-      no.checked = false;
+      if (yes) yes.checked = true;
+      if (no) no.checked = false;
     }
   }
 
@@ -126,6 +132,8 @@
       [KEY_CONFIRM_DEFAULT]: def?.value === 'no' ? 'no' : 'yes',
       [KEY_WARN_BLACKLIST]:
         /** @type {HTMLInputElement} */ (getEl('warn-blacklist')).checked !== false,
+      [KEY_INCLUDE_INLINE]:
+        /** @type {HTMLInputElement} */ (getEl('include-inline')).checked === true,
       [KEY_DEBUG]:
         /** @type {HTMLInputElement | null} */ (document.getElementById('debug-logging'))
           ?.checked === true,
@@ -149,6 +157,7 @@
       [KEY_CONFIRM]: false,
       [KEY_CONFIRM_DEFAULT]: 'yes',
       [KEY_WARN_BLACKLIST]: true,
+      [KEY_INCLUDE_INLINE]: false,
       [KEY_DEBUG]: false,
     });
     await load();

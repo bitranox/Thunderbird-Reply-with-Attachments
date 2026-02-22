@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ಕೋಶಾರಂಭ",
-  "description": "Quickstart",
+  "title": "ತ್ವರಿತ ಪ್ರಾರಂಭ",
+  "description": "---",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ಕೋಶಾರಂಭ",
-    "sidebar_label": "ಕೋಶಾರಂಭ"
+    "title": "ತ್ವರಿತ ಪ್ರಾರಂಭ",
+    "sidebar_label": "ತ್ವರಿತ ಆರಂಭ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ವಿಧಾನಗಳು",
+    "title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/features"
   },
   "next": {

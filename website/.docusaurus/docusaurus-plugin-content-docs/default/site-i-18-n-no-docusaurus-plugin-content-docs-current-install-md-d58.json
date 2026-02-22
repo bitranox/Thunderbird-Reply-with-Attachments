@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Installasjon",
-  "description": "Installasjon via \"Thunderbird Tillegg og Temaer\"",
+  "description": "---",
   "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kom i gang",
+    "title": "Hurtigstart",
     "permalink": "/Thunderbird-Reply-with-Attachments/no/docs/quickstart"
   },
   "next": {

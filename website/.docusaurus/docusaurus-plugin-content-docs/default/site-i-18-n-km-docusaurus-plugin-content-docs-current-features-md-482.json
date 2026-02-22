@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "អត្ថប្រយោជន៍",
-  "description": "Features",
+  "title": "លក្ខណៈពិសេស",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "អត្ថប្រយោជន៍",
-    "sidebar_label": "អត្ថប្រយោជន៍"
+    "title": "លក្ខណៈពិសេស",
+    "sidebar_label": "លក្ខណៈពិសេស"
   },
   "sidebar": "docs",
   "next": {
-    "title": "ការចាប់ផ្តើម",
+    "title": "ការចាប់ផ្តើមរហ័ស",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/quickstart"
   }
 }

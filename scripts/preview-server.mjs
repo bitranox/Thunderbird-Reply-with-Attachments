@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
   // Map to file on disk under root
   let filePath = path.join(root, pathname);
   try {
-    let stats = statSync(filePath);
+    const stats = statSync(filePath);
     if (stats.isDirectory()) {
       // serve index.html if present
       const indexPath = path.join(filePath, 'index.html');
@@ -60,12 +60,11 @@ const server = http.createServer((req, res) => {
                     : 'application/octet-stream';
     res.writeHead(200, { 'Content-Type': type });
     stream.pipe(res);
-  } catch (e) {
+  } catch (_e) {
     return send(res, 404, { 'Content-Type': 'text/plain' }, 'Not found');
   }
 });
 
 server.listen(port, '127.0.0.1', () => {
-  // eslint-disable-next-line no-console
   console.log(`Preview server listening on http://localhost:${port}`);
 });

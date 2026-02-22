@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Izstrādne",
-  "description": "Development Guide",
+  "title": "Izstrāde",
+  "description": "---",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Izstrādne",
-    "sidebar_label": "Izstrādne"
+    "title": "Izstrāde",
+    "sidebar_label": "Izstrāde"
   },
   "sidebar": "docs",
   "previous": {

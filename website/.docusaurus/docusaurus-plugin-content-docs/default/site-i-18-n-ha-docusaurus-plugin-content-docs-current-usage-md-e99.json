@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Amfani",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/configuration"
   },
   "next": {
-    "title": "Daidaito",
+    "title": "Daidaituwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/compatibility"
   }
 }

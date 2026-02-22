@@ -4,94 +4,95 @@ title: 'Penggunaan'
 sidebar_label: 'Penggunaan'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Penggunaan {#usage}
+
+- Balas dan add-on menambahkan lampiran asli secara otomatis — atau meminta konfirmasi terlebih dahulu, jika diaktifkan di Opsi.
+- Duplikasi dihilangkan berdasarkan nama file; bagian S/MIME selalu dilewati. Gambar inline dipulihkan di badan balasan secara default (nonaktifkan melalui "Include inline pictures" di Opsi).
+- Lampiran yang masuk daftar hitam juga dilewati (pola glob tidak peka huruf besar/kecil yang mencocokkan nama file, bukan path). Lihat [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Apa yang terjadi saat membalas {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Deteksi balasan → daftar lampiran asli → saring S/MIME + inline → konfirmasi opsional → tambahkan file yang memenuhi syarat (lewati duplikat) → pulihkan gambar inline di badan pesan.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Putaran ketat vs. longgar: Add-on terlebih dahulu mengecualikan bagian S/MIME dan inline dari lampiran file. Jika tidak ada yang memenuhi syarat, ia menjalankan putaran longgar yang tetap mengecualikan S/MIME/inline tetapi mentolerir lebih banyak kasus (lihat Detail Kode). Gambar inline tidak pernah ditambahkan sebagai lampiran file; sebagai gantinya, saat "Include inline pictures" diaktifkan (bawaan), gambar ditanam langsung di badan balasan sebagai data URI base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Jenis bagian                                                  |                        Putaran ketat |                      Putaran longgar |
+| ------------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
+| File tanda tangan S/MIME `smime.p7s`                          |                         Dikecualikan |                         Dikecualikan |
+| Tipe MIME S/MIME (`application/pkcs7-*`)                      |                         Dikecualikan |                         Dikecualikan |
+| Gambar inline yang direferensikan oleh Content‑ID (`image/*`) | Dikecualikan (dipulihkan di badan\*) | Dikecualikan (dipulihkan di badan\*) |
+| Email terlampir (`message/rfc822`) dengan nama file           |                    Tidak ditambahkan |                    Dapat ditambahkan |
+| Lampiran file biasa dengan nama file                          |                    Dapat ditambahkan |                    Dapat ditambahkan |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Saat "Include inline pictures" diaktifkan (default: ON), gambar inline ditanam di badan balasan sebagai data URI base64, bukan ditambahkan sebagai lampiran file. Lihat [Konfigurasi](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Contoh: Beberapa lampiran mungkin tidak memiliki header tertentu tetapi tetap merupakan file biasa (bukan inline/S/MIME). Jika putaran ketat tidak menemukan apa pun, putaran longgar dapat menerima dan melampirkannya.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Rujukan silang {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Teruskan (Forward) tidak dimodifikasi menurut desain (lihat Batasan di bawah).
+- Untuk alasan mengapa lampiran mungkin tidak ditambahkan, lihat “Mengapa lampiran mungkin tidak ditambahkan”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detail Perilaku {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Pencegahan duplikat: Add-on menandai tab penulisan sebagai telah diproses menggunakan nilai sesi per tab dan penjaga dalam memori. Add-on tidak akan menambahkan lampiran asli dua kali.
+- Menutup dan membuka kembali jendela penulisan dianggap sebagai tab baru (artinya, upaya baru diizinkan).
+- Menghormati lampiran yang sudah ada: Jika penulisan sudah berisi beberapa lampiran, lampiran asli tetap ditambahkan tepat satu kali, melewati nama file yang sudah ada.
+- Pengecualian: Artefak S/MIME dan gambar inline dikecualikan dari lampiran file. Jika tidak ada yang memenuhi syarat pada putaran pertama, fallback longgar memeriksa ulang bagian non‑S/MIME. Gambar inline ditangani secara terpisah: gambar dipulihkan di badan balasan sebagai data URI (jika diaktifkan).
+  - Nama file: `smime.p7s`
+  - Tipe MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Gambar inline: setiap bagian `image/*` yang direferensikan oleh Content‑ID — dikecualikan dari lampiran file tetapi ditanam di badan balasan saat "Include inline pictures" ON
+  - Email terlampir (`message/rfc822`): diperlakukan sebagai lampiran biasa jika memiliki nama file; dapat ditambahkan (tergantung pemeriksaan duplikat dan daftar hitam).
+- Peringatan daftar hitam (jika diaktifkan): Saat kandidat dikecualikan oleh daftar hitam Anda, add-on menampilkan modal kecil yang mencantumkan file yang terpengaruh dan pola yang cocok. Peringatan ini juga muncul dalam kasus ketika tidak ada lampiran yang akan ditambahkan karena semuanya dikecualikan.
 
 ---
 
-## Limitations {#limitations}
+## Pintasan keyboard {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialog konfirmasi: Y/J = Yes, N/Esc = No; Tab/Shift+Tab dan tombol panah mengalihkan fokus.
+  - “Default answer” di [Konfigurasi](configuration#confirmation) menetapkan tombol yang awalnya difokuskan.
+  - Enter menekan tombol yang difokuskan. Tab/Shift+Tab dan tombol panah memindahkan fokus untuk aksesibilitas.
+
+### Lembar contekan keyboard {#keyboard-cheat-sheet}
+
+| Tombol          | Aksi                                  |
+| --------------- | ------------------------------------- |
+| Y / J           | Konfirmasi Ya                         |
+| N / Esc         | Konfirmasi Tidak                      |
+| Enter           | Aktifkan tombol yang difokuskan       |
+| Tab / Shift+Tab | Pindahkan fokus maju/mundur           |
+| Tombol panah    | Pindahkan fokus antar tombol          |
+| Default answer  | Menetapkan fokus awal (Ya atau Tidak) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Batasan {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Teruskan (Forward) tidak dimodifikasi oleh add-on ini (Balas dan Balas semua didukung).
+- Lampiran yang sangat besar dapat tunduk pada batas Thunderbird atau penyedia.
+  - Add-on tidak memecah atau mengompresi file; add-on mengandalkan penanganan lampiran normal Thunderbird.
+- Pesan terenkripsi: bagian S/MIME sengaja dikecualikan.
 
 ---
 
-See also
+## Mengapa lampiran mungkin tidak ditambahkan {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Gambar inline tidak ditambahkan sebagai lampiran file. Saat "Include inline pictures" ON (bawaan), gambar ditanam di badan balasan sebagai data URI. Jika pengaturan OFF, gambar inline dihapus sepenuhnya. Lihat [Konfigurasi](configuration#include-inline-pictures).
+- Bagian tanda tangan S/MIME dikecualikan menurut desain: nama file seperti `smime.p7s` dan tipe MIME seperti `application/pkcs7-signature` atau `application/pkcs7-mime` dilewati.
+- Pola daftar hitam dapat menyaring kandidat: lihat [Konfigurasi](configuration#blacklist-glob-patterns); pencocokan tidak peka huruf besar/kecil dan hanya berdasarkan nama file.
+- Nama file duplikat tidak ditambahkan lagi: jika penulisan sudah berisi file dengan nama yang dinormalisasi sama, file tersebut dilewati.
+- Bagian non-file atau nama file yang hilang: hanya bagian mirip file dengan nama file yang dapat digunakan yang dipertimbangkan untuk ditambahkan.
+
+---
+
+Lihat juga
+
+- [Konfigurasi](configuration)

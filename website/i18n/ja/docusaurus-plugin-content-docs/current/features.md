@@ -4,31 +4,40 @@ title: '機能'
 sidebar_label: '機能'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## 機能 {#features}
 
-## How It Works {#how-it-works}
+- 返信時に元のメールの添付ファイルを自動的に添付します。
+- 設定可能な動作: 添付ファイルは
+  - 自動的に追加する、または
+  - 確認後にのみ追加する（小さく、アクセシブルなダイアログ）。オプションで
+    確認を有効にし、既定の回答（はい/いいえ）を選択できます。
+- ファイル名のブラックリスト（glob パターン）により、特定のファイルが
+  自動的に添付されるのを防ぎます。例: `*intern*`, `*secret*`, `*passwor*`.
+  照合は大文字小文字を区別せず、ファイル名のみをチェックします。オプションで
+  1 行につき 1 つのパターンを指定します。
+- ブラックリストの警告（任意、既定で有効）: ブラックリストによりファイルが除外された場合、
+  小さなモーダルにファイルと一致したパターンが表示されます。ダークモードに
+  やさしく、キーボードでも操作可能です（Enter/Esc で閉じます）。
+- 返信および全員に返信に対応します。転送はこのアドオンでは変更されません。
+- 自分で何かを添付していても元のファイルを追加します。ファイル名で重複を回避します。
+- タブごとの重複ガードにより、同じ作成タブでの二重追加を防ぎます。
+- 不要な添付を避けるため、既定で S/MIME 証明書はスキップします。
+- インライン画像を含めます（既定: ON）。埋め込み画像は
+  元のインラインレイアウトを保持したまま、返信本文内に base64 の data URI として直接復元されます。オプションで
+  無効にすると、インライン画像を完全にスキップします。
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## 動作の仕組み {#how-it-works}
+
+- 返信時に、アドオンが元の添付ファイルを一覧表示します。
+- 添付ファイルから S/MIME 署名を除外します。インライン画像は（無効化していない限り）本文内に復元されます。
+- 必要に応じて確認を求めます（キーボード操作に配慮）。
+- 対象のファイルを作成画面に追加し、ファイル名で重複を回避します。
+- 例外的なケースについては、使用方法の「添付ファイルが追加されない理由」を参照してください。
+
+プライバシーに関する注意: すべての処理は Thunderbird 内でローカルに行われます。このアドオンはバックグラウンドのネットワークリクエストを一切行いません。
+
+---

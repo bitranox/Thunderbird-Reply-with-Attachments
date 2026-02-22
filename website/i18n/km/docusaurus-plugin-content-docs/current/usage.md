@@ -4,94 +4,95 @@ title: 'ការប្រើប្រាស់'
 sidebar_label: 'ការប្រើប្រាស់'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## ការប្រើប្រាស់ {#usage}
+
+- ឆ្លើយតប ហើយផ្នែកបន្ថែមនឹងបន្ថែមឯកសារភ្ជាប់ដើមដោយស្វ័យប្រវត្តិ — ឬសួរមុន ប្រសិនបើបានបើកក្នុង Options។
+- បំបាត់ការស្ទួនតាមឈ្មោះឯកសារ; ផ្នែក S/MIME ត្រូវបានរំលងជានិច្ច។ រូបភាព inline ត្រូវបានស្តារឡើងវិញក្នុងខ្លឹមសារការឆ្លើយតបទៅតាមលំនាំដើម (អាចបិទតាម "Include inline pictures" ក្នុង Options)។
+- ឯកសារភ្ជាប់ដែលស្ថិតក្នុងបញ្ជីខ្មៅក៏ត្រូវបានរំលងផងដែរ (លំនាំ glob មិនគិតអក្សរធំតូច ផ្គូផ្គងតែឈ្មោះឯកសារ មិនមែនផ្លូវឯកសារ)។ សូមមើល [ការកំណត់](configuration#blacklist-glob-patterns)។
 
 ---
 
-### What happens on reply {#what-happens}
+### អ្វីកើតឡើងពេលឆ្លើយតប {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- រកឃើញការឆ្លើយតប → រាយបញ្ជីឯកសារភ្ជាប់ដើម → ត្រង S/MIME + inline → បញ្ជាក់ជាជម្រើស → បន្ថែមឯកសារដែលអាចបន្ថែមបាន (រំលងឯកសារស្ទួន) → ស្តាររូបភាព inline នៅក្នុងខ្លឹមសារ។
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+វគ្គតឹងរឹង ប្រៀបធៀបនឹង វគ្គបន្ធូរ: ផ្នែកបន្ថែមព្យាយាមដក S/MIME និងផ្នែក inline ចេញពីឯកសារភ្ជាប់ជាមុនសិន។ បើគ្មានអ្វីមានលក្ខណៈ សេវាកម្មនឹងរត់វគ្គបន្ធូរ ដែលនៅតែដក S/MIME/inline តែអនុញ្ញាតករណីច្រើនជាងមុន (សូមមើល Code Details)។ រូបភាព inline មិនត្រូវបានបន្ថែមជាឯកសារភ្ជាប់ទេ; ផ្ទុយទៅវិញ នៅពេល "Include inline pictures" ត្រូវបានបើក (លំនាំដើម) វាត្រូវបានបញ្ជូលដោយផ្ទាល់ក្នុងខ្លឹមសារការឆ្លើយតបជាទ្រង់ទ្រាយ base64 data URI ។
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| ប្រភេទផ្នែក                                      |                                វគ្គតឹងរឹង |                                វគ្គបន្ធូរ |
+| ------------------------------------------------ | ----------------------------------------: | ----------------------------------------: |
+| ឯកសារហត្ថលេខា S/MIME `smime.p7s`                 |                              ត្រូវបានរំលង |                              ត្រូវបានរំលង |
+| ប្រភេទ MIME របស់ S/MIME (`application/pkcs7-*`)  |                              ត្រូវបានរំលង |                              ត្រូវបានរំលង |
+| រូបភាព inline ដែលយោងតាម Content‑ID (`image/*`)   | ត្រូវបានរំលង (ស្តារឡើងវិញក្នុងខ្លឹមសារ\*) | ត្រូវបានរំលង (ស្តារឡើងវិញក្នុងខ្លឹមសារ\*) |
+| អ៊ីមែលភ្ជាប់ (`message/rfc822`) ដែលមានឈ្មោះឯកសារ |                                 មិនបន្ថែម |                         អាចត្រូវបានបន្ថែម |
+| ឯកសារភ្ជាប់ធម្មតាដែលមានឈ្មោះឯកសារ                |                         អាចត្រូវបានបន្ថែម |                         អាចត្រូវបានបន្ថែម |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* នៅពេល "Include inline pictures" ត្រូវបានបើក (លំនាំដើម: ON) រូបភាព inline នឹងត្រូវបញ្ជូលក្នុងខ្លឹមសារការឆ្លើយតបជាទ្រង់ទ្រាយ base64 data URI ជំនួសឲ្យបន្ថែមជាឯកសារភ្ជាប់។ សូមមើល [ការកំណត់](configuration#include-inline-pictures)។
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+ឧទាហរណ៍៖ ឯកសារភ្ជាប់ខ្លះអាចខ្វះបឋមកថាខ្លះ ប៉ុន្តែក៏នៅតែជាឯកសារធម្មតា (មិនមែន inline/S/MIME)។ ប្រសិនបើវគ្គតឹងរឹងរកមិនឃើញអ្វីទេ វគ្គបន្ធូរអាចទទួលយកវានិងភ្ជាប់វា។
 
 ---
 
-## Behavior Details {#behavior-details}
+### ឯកសារយោងឆ្លង {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward មិនត្រូវបានកែប្រែតាមរចនាបទទេ (សូមមើល ដែនកំណត់ ខាងក្រោម)។
+- សម្រាប់ហេតុផលដែលឯកសារភ្ជាប់អាចមិនត្រូវបានបន្ថែម សូមមើល “ហេតុអ្វីបានជា ឯកសារភ្ជាប់អាចមិនត្រូវបានបន្ថែម”។
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## លម្អិតអំពីអាកប្បកិរិយា {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **ការការពារការស្ទួន:** ផ្នែកបន្ថែមសម្គាល់ផ្ទាំងតែងសារថាត្រូវបានដំណើរការហើយ ដោយប្រើតម្លៃសម័យ (per‑tab session value) សម្រាប់មួយផ្ទាំង និងការការពារក្នុងអង្គចងចាំ។ វានឹងមិនបន្ថែមដើមជារហូតពីរដងទេ។
+- បិទហើយបើកឡើងវិញនូវបង្អួចតែងសារ ត្រូវបានចាត់ទុកជាផ្ទាំងថ្មី (មានន័យថា អាចព្យាយាមម្តងទៀតបាន)។
+- **គោរពឯកសារភ្ជាប់ដែលមានស្រាប់:** បើក្នុងការតែងសារមានឯកសារភ្ជាប់មួយចំនួនរួចហើយ ក៏នៅតែបន្ថែមដើមតែម្តងតែប៉ុណ្ណោះ ដោយរំលងឈ្មោះឯកសារដែលមានរួច។
+- **ការដកចេញ:** ផ្នែក S/MIME និងរូបភាព inline ត្រូវបានដកចេញពីឯកសារភ្ជាប់។ ប្រសិនបើវគ្គដំបូងមិនមានអ្វីមានលក្ខណៈ បន្ទាប់មកមានវគ្គបន្ធូរដែលពិនិត្យផ្នែកមិនមែន S/MIME ម្តងទៀត។ រូបភាព inline ត្រូវបានដោះស្រាយដាច់ដោយឡែក៖ វាត្រូវបានស្តារឡើងវិញក្នុងខ្លឹមសារការឆ្លើយតបជាទ្រង់ទ្រាយ data URI (នៅពេលបើក)។
+  - **ឈ្មោះឯកសារ:** `smime.p7s`
+  - **ប្រភេទ MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **រូបភាព inline:** ផ្នែក `image/*` ណាមួយដែលយោងតាម Content‑ID — ត្រូវបានដកចេញពីឯកសារភ្ជាប់ ប៉ុន្តែបញ្ជូលក្នុងខ្លឹមសារការឆ្លើយតប នៅពេល "Include inline pictures" នៅលើ (ON)
+  - **អ៊ីមែលភ្ជាប់ (`message/rfc822`):** ចាត់ទុកថាជាឯកសារភ្ជាប់ធម្មតាបើមានឈ្មោះឯកសារ; អាចត្រូវបានបន្ថែម (អាស្រ័យលើការត្រួតពិនិត្យស្ទួន និងបញ្ជីខ្មៅ)។
+- **ព្រមានបញ្ជីខ្មៅ (បើបានបើក):** នៅពេលបេក្ខជនត្រូវបានដកចេញដោយបញ្ជីខ្មៅរបស់អ្នក ផ្នែកបន្ថែមនឹងបង្ហាញប្រអប់តូចមួយ រាយឯកសារដែលទទួលផលប៉ះពាល់ និងលំនាំដែលផ្គូផ្គង។ ព្រមាននេះក៏នឹងបង្ហាញក្នុងករណីដែលមិនមានឯកសារភ្ជាប់ត្រូវបានបន្ថែមផងដែរ ព្រោះអ្វីៗត្រូវបានដកចេញទាំងអស់។
 
 ---
 
-## Limitations {#limitations}
+## ផ្លូវកាត់ក្តារចុច {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- ប្រអប់បញ្ជាក់: Y/J = បាទ/ចាស, N/Esc = ទេ; Tab/Shift+Tab និងគ្រាប់ចុចព្រួញ បម្លែងការផ្ដោតអារម្មណ៍ជុំវិញ។
+  - “Default answer” ក្នុង [ការកំណត់](configuration#confirmation) កំណត់ប៊ូតុងដែលផ្ដោតដំបូង។
+  - Enter បញ្ចូលប៊ូតុងដែលកំពុងផ្ដោត។ Tab/Shift+Tab និងគ្រាប់ចុចព្រួញ ផ្លាស់ទីការផ្ដោតសម្រាប់ភាពងាយស្រួលក្នុងការចូលដំណើរការ។
+
+### សន្លឹកឆិតផ្លូវកាត់ក្តារចុច {#keyboard-cheat-sheet}
+
+| គ្រាប់ចុច       | សកម្មភាព                          |
+| --------------- | --------------------------------- |
+| Y / J           | បញ្ជាក់ បាទ/ចាស                   |
+| N / Esc         | បញ្ជាក់ ទេ                        |
+| Enter           | ដំណើរការប៊ូតុងដែលកំពុងផ្ដោត       |
+| Tab / Shift+Tab | ផ្លាស់ទីការផ្ដោត ទៅមុខ/ថយក្រោយ    |
+| គ្រាប់ចុចព្រួញ  | ផ្លាស់ទីការផ្ដោតរវាងប៊ូតុង        |
+| Default answer  | កំណត់ការផ្ដោតដំបូង (បាទ/ចាស ឬ ទេ) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+##​ដែនកំណត់ {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward មិនត្រូវបានកែប្រែដោយផ្នែកបន្ថែមនេះ (គាំទ្រ Reply និង Reply all)។
+- ឯកសារភ្ជាប់ដែលមានទំហំធំពេក អាចត្រូវកំណត់ដោយ Thunderbird ឬក៏ដោយកម្រិតរបស់អ្នកផ្តល់សេវា។
+  - ផ្នែកបន្ថែមមិនបែងចែកឯកសារ​ជាផ្នែកៗ (chunk) ឬបង្ហាប់ទំហំទេ; វាពឹងផ្អែកលើវិធីដោះស្រាយឯកសារភ្ជាប់ធម្មតារបស់ Thunderbird។
+- សារ​ដែលបានអ៊ិនគ្រីប: ផ្នែក S/MIME ត្រូវបានដកចេញដោយចេតនា។
 
 ---
 
-See also
+## ហេតុអ្វីបានជា ឯកសារភ្ជាប់អាចមិនត្រូវបានបន្ថែម {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- រូបភាព inline មិនត្រូវបានបន្ថែមជាឯកសារភ្ជាប់ទេ។ នៅពេល "Include inline pictures" ស្ថិតនៅលើ (ON) ដែលជាលំនាំដើម វាត្រូវបានបញ្ជូលក្នុងខ្លឹមសារការឆ្លើយតបជា data URI ជំនួសវិញ។ បើកំណត់នេះ OFF រូបភាព inline នឹងត្រូវដកចេញទាំងស្រុង។ សូមមើល [ការកំណត់](configuration#include-inline-pictures)។
+- ផ្នែកហត្ថលេខា S/MIME ត្រូវបានដកចេញតាមរចនាបទ៖ ឈ្មោះឯកសារដូចជា `smime.p7s` និងប្រភេទ MIME ដូចជា `application/pkcs7-signature` ឬ `application/pkcs7-mime` ត្រូវបានរំលង។
+- លំនាំបញ្ជីខ្មៅអាចតម្រៀបចេញបេក្ខជនបាន៖ សូមមើល [ការកំណត់](configuration#blacklist-glob-patterns); ការផ្គូផ្គងមិនគិតអក្សរធំតូច ហើយគ្រាន់តែរៀបចំតាមឈ្មោះឯកសារ។
+- ឈ្មោះឯកសារស្ទួន នឹងមិនត្រូវបានបន្ថែមម្តងទៀតទេ៖ ប្រសិនបើក្នុងការតែងសារមានឯកសារដែលមានឈ្មោះដូចគ្នារួចហើយ វានឹងត្រូវបានរំលង។
+- ផ្នែកមិនមែនឯកសារ ឬខ្វះឈ្មោះឯកសារ៖ មានតែផ្នែកដែលស្រដៀងឯកសារ និងមានឈ្មោះអាចប្រើបានប៉ុណ្ណោះ ទើបត្រូវបានពិចារណាដើម្បីបន្ថែម។
+
+---
+
+មើលផងដែរ
+
+- [ការកំណត់](configuration)

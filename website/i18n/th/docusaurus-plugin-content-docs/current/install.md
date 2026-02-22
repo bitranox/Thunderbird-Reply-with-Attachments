@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'การติดตั้ง'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## การติดตั้งผ่าน "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important เวอร์ชันขั้นต่ำของ Thunderbird
+ส่วนเสริมนี้รองรับ Thunderbird **128 ESR ขึ้นไป** เวอร์ชันที่เก่ากว่าไม่รองรับ
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+นี่เป็นวิธีติดตั้งที่แนะนำ ส่วนเสริมที่ติดตั้งจาก ATN (addons.thunderbird.net) จะได้รับการอัปเดตอัตโนมัติ การติดตั้งแบบ LOCAL/dev จะไม่อัปเดตอัตโนมัติ
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- เวอร์ชันขั้นต่ำของ Thunderbird: 128 ESR ขึ้นไป
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. ใน Thunderbird ไปที่ **Tools > Add-ons and Themes**
+2. ค้นหา "reply with attachments"
+3. เพิ่มส่วนเสริม
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+หรือเปิดหน้าส่วนเสริมโดยตรง: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## การติดตั้งแบบแมนนวลจาก XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### ดาวน์โหลดไฟล์ XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. ไปที่ [หน้า Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+2. ดาวน์โหลดเวอร์ชันล่าสุดของส่วนเสริมเป็นไฟล์ XPI (`reply_with_attachments-x.y.z-tb.xpi`)
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### ติดตั้งใน Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. เปิด Thunderbird
+2. ไปที่ **Tools > Add-ons and Themes**
+3. ใน **Add-ons Manager** คลิกไอคอนรูปเฟืองที่มุมขวาบน
+4. เลือก **Install Add-on From File…** จากเมนู
+5. เลือกไฟล์ `reply_with_attachments-x.y.z-tb.xpi` ที่ดาวน์โหลดมา
+6. ยืนยันการติดตั้งเมื่อมีการแจ้งเตือน
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## การติดตั้งสำหรับการพัฒนา {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### ดาวน์โหลดรีโพสิโทรี {#download-the-repository}
 
-See also
+1. ดาวน์โหลดเวอร์ชันล่าสุดของรีโพสิโทรีบน GitHub
+2. รัน `make help` เพื่อดูข้อมูลเพิ่มเติม
 
-- [Quickstart](quickstart)
+### ติดตั้งใน Thunderbird {#install-in-thunderbird-dev}
+
+1. เปิด Thunderbird
+2. ไปที่ **Tools > Add-ons and Themes**
+3. ใน **Add-ons Manager** คลิกไอคอนรูปเฟืองที่มุมขวาบน
+4. เลือก **Install Add-on From File…** จากเมนู
+5. เลือกไฟล์ที่สร้างขึ้น `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`
+6. ยืนยันการติดตั้งเมื่อมีการแจ้งเตือน
+
+หมายเหตุ: หาก Thunderbird ไม่ยอมรับ `.zip` บนระบบของคุณ ให้เปลี่ยนชื่อเป็น `.xpi` แล้วลอง “Install Add‑on From File…” อีกครั้ง
+
+### หา LOCAL ZIP ได้ที่ไหน {#where-local-zip}
+
+- ขั้นแรก แพ็กส่วนเสริม: รัน `make pack` ที่รูทของรีโพสิโทรี
+- หลังจากแพ็กแล้ว ให้หาไฟล์ zip “LOCAL” ที่รูทของรีโพสิโทรี (เช่น `2025-..-reply-with-attachments-plugin-LOCAL.zip`)
+- ก่อนแพ็กใหม่สำหรับการทดสอบ ให้เพิ่มเลขเวอร์ชันทั้งใน `sources/manifest_ATN.json` และ `sources/manifest_LOCAL.json`
+
+---
+
+## ปิดใช้งาน ถอนการติดตั้ง และอัปเดต {#disable-uninstall-updates}
+
+- ปิดใช้งาน: Thunderbird → Tools → Add‑ons and Themes → ค้นหาส่วนเสริม → ปิดสวิตช์
+- ถอนการติดตั้ง: มุมมองเดียวกัน → เมนูสามจุด → Remove
+- อัปเดต: การติดตั้งจาก ATN จะอัปเดตอัตโนมัติเมื่อรุ่นใหม่ได้รับการอนุมัติ การติดตั้งแบบ LOCAL/dev จะไม่อัปเดตอัตโนมัติ; ติดตั้งบิลด์ LOCAL ใหม่ด้วยตนเอง
+- ลบการตั้งค่าออกทั้งหมด: ดู [ความเป็นส่วนตัว → การลบข้อมูล](privacy#data-removal)
+
+ดูเพิ่มเติม
+
+- [เริ่มต้นอย่างรวดเร็ว](quickstart)

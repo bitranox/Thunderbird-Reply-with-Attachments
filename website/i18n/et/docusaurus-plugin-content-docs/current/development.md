@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Arendamine'
-sidebar_label: 'Arendamine'
+title: 'Arendus'
+sidebar_label: 'Arendus'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Arendusjuhend {#development-guide}
+
+:::note Muuda ainult ingliskeelset; tõlked kanduvad üle
+Uuenda dokumentatsiooni ainult kausta `website/docs` (inglise keel). Kausta `website/i18n/<locale>/…` all olevad tõlked on genereeritud ja neid ei tohiks käsitsi muuta. Kasuta tõlkeülesandeid (nt `make translate_web_docs_batch`), et värskendada lokaliseeritud sisu.
 :::
 
-### Prerequisites {#prerequisites}
+### Eeltingimused {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ ja npm (testitud Node 22-ga)
+- Thunderbird 128 ESR või uuem (käsitsi testimiseks)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Projekti struktuur (kõrgtasandil) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Juurkaust: pakendamisskript `distribution_zip_packer.sh`, dokumendid, ekraanipildid
+- `sources/`: põhiline lisandmooduli kood (taust, valikute/hüpiku UI, manifestid, ikoonid)
+- `tests/`: Vitesti testikomplekt
+- `website/`: Docusauruse dokumendid (i18n asub kaustas `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Paigaldus ja tööriistad {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Paigalda juurkausta sõltuvused: `npm ci`
+- Dokumendid (valikuline): `cd website && npm ci`
+- Ava sihtmärkide loend: `make help`
+
+---
+
+### Otsearendus (web‑ext run) {#live-dev-web-ext}
+
+- Kiirtsükkel Firefox Desktopis (ainult UI suitsutestid):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Käivita Thunderbirdis (MailExtensionite puhul eelistatud):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Nõuanded:
+- Hoia Thunderbirdi veakonsool avatuna (Tools → Developer Tools → Error Console).
+- MV3 sündmuste lehed peatatakse jõudeolekus; laadi lisandmoodul pärast koodimuudatusi uuesti või lase web‑ext’il seda automaatselt teha.
+- Mõned ainult Firefoxile omased käitumised erinevad; kontrolli alati Thunderbirdis API vastavust.
+- Thunderbirdi binaari teed (näited):
+- Linux: `thunderbird` (nt `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profiili isoleerimine: kasuta arenduseks eraldi Thunderbirdi profiili, et vältida oma igapäevase seadistuse mõjutamist.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make’i sihtmärgid (tähestikulises järjekorras) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile ühtlustab levinud arendusvood. Käivita `make help` igal ajal, et näha igast sihtmärgist üherealist kokkuvõtet.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Vihje: `make` ilma sihtmärgita avab lihtsa Whiptaili menüü sihtmärgi valimiseks.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Sihtmärk                                                 | Üherealine kirjeldus                                                                               |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Eemalda lokaalsed ehitus/ eelvaate artefaktid (tmp/, web-local-preview/, website/build/).          |
+| [`commit`](#mt-commit)                                   | Vorminda, käivita testid (sh i18n), uuenda muutuste logi, commiti ja pushi.                        |
+| [`eslint`](#mt-eslint)                                   | Käivita ESLint lameda konfiguratsiooniga (`npm run -s lint:eslint`).                               |
+| [`help`](#mt-help)                                       | Loetle kõik sihtmärgid üherealiste kirjeldustega (sorditult).                                      |
+| [`lint`](#mt-lint)                                       | web‑ext lint kaustal `sources/` (ajutine manifest; eirab ZIP-e; mittefataalne).                    |
+| [`menu`](#mt-menu)                                       | Interaktiivne menüü sihtmärgi ja valikuliste argumentide valimiseks.                               |
+| [`pack`](#mt-pack)                                       | Ehita ATN- ja LOCAL‑ZIP-id (käivitab linteri; kutsub pakendamisskripti).                           |
+| [`prettier`](#mt-prettier)                               | Vorminda repositoorium kohapeal (kirjutab muudatused).                                             |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier kontrollrežiimis (kirjutamist pole); ebaõnnestub, kui vajab ümbervormindust.              |
+| [`prettier_write`](#mt-prettier_write)                   | Alias käsule `prettier`.                                                                           |
+| [`test`](#mt-test)                                       | Prettier (kirjuta), ESLint, seejärel Vitest (katvus, kui seadistatud).                             |
+| [`test_i18n`](#mt-test_i18n)                             | Ainult i18n‑testid: lisandmooduli kohatäited/vastavus + veebisaidi vastavus.                       |
+| [`translate_app`](#mt-translation-app)                   | Alias käsule `translation_app`.                                                                    |
+| [`translation_app`](#mt-translation-app)                 | Tõlgi rakenduse UI stringid allikast `sources/_locales/en/messages.json`.                          |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Tõlgi veebidokumendid OpenAI Batch API kaudu (eelistatud).                                         |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Tõlgi veebidokumendid sünkroonselt (pärand, mitte-batch).                                          |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias käsule `translation_web_index`.                                                              |
+| [`translation_web_index`](#mt-translation_web_index)     | Tõlgi avalehe/naviriba/jaluse UI (`website/i18n/en/code.json → .../<lang>/code.json`).             |
+| [`web_build`](#mt-web_build)                             | Ehita dokumendid kausta `website/build` (toetab `--locales` / `BUILD_LOCALES`).                    |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Võrguvaba‑turvaline linkide kontroll (jätab vahele kaug-HTTP[S]-lingid).                           |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Kohalik gh‑pages eelvaade; automaatne teenindus portidel 8080–8090; valikuline test/link‑kontroll. |
+| [`web_push_github`](#mt-web_push_github)                 | Pushi `website/build` harusse `gh-pages`.                                                          |
 
-Syntax for options
+Valikute süntaks
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Kasuta valikute edastamiseks `make <command> OPTS="…"` (soovitatav jutumärgid). Iga allpool olev sihtmärk näitab näidiskasutust.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Lokaali koostamise nõuanded {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Koosta lokaalid osaliselt: sea `BUILD_LOCALES="en de"` või anna `OPTS="--locales en,de"` veebisihtmärkidele.
+- Eelvaata konkreetset lokaali: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Koostamine ja pakendamine {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Ehita ZIP-id: `make pack`
+- Toodab ATN- ja LOCAL‑ZIP‑id repo juurkausta (artefakte ära käsitsi muuda)
+- Vihje: uuenda versioon nii failis `sources/manifest_ATN.json` kui ka `sources/manifest_LOCAL.json` enne pakendamist
+- Käsitsi paigaldus (arendus): Thunderbird → Tools → Add‑ons and Themes → hammasratas → Install Add‑on From File… → vali loodud ZIP
+
+---
+
+### Testimine {#test}
+
+- Täiskomplekt: `make test` (Vitest)
+- Katvus (valikuline):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Käivita `make test`; ava HTML‑aruande jaoks `coverage/index.html`
+- Ainult i18n: `make test_i18n` (UI võtmed/kohatäited/pealkirjad + veebisaidi vastavus lokaali ja dokumendi tasandil koos id/title/sidebar_label kontrollidega)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Silumine ja logid {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Veakonsool: Tools → Developer Tools → Error Console
+- Lülita põhjalikud logid käitusajal:
+- Lubamine: `messenger.storage.local.set({ debug: true })`
+- Keelamine: `messenger.storage.local.set({ debug: false })`
+- Logid ilmuvad vastuseid koostades/saates
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumendid (veebisait) {#docs-website}
+
+- Arendusserver: `cd website && npm run start`
+- Ehita staatiline sait: `cd website && npm run build`
+- Make’i ekvivalendid (tähestikulises järjekorras): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Kasutusnäited:
+- Ainult EN, jäta testid/link‑kontroll vahele, push puudub: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Kõik lokaalid, koos testide/link‑kontrolliga, seejärel push: `make web_build_local_preview && make web_push_github`
+- Enne avaldamist käivita võrguvaba‑turvaline linkide kontroll: `make web_build_linkcheck`.
+- i18n: inglise keel asub kaustas `website/docs/*.md`; saksa tõlked kaustas `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Otsing: Kui CI-s on seadistatud Algolia DocSearch’i keskkonnamuutujad (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), kasutab sait Algolia otsingut; vastasel juhul langeb üle kohalikule otsingule. Avalehel vajuta otsingukasti avamiseks `/` või `Ctrl+K`.
+
+---
+
+#### Annetuse ümbersuunamise marsruut {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Marsruut: `/donate` (ja `/<locale>/donate`)
+- Käitumine:
+- Kui praegusel marsruudil on lokaal (nt `/de/donate`), kasuta seda
+- Muidu vali parim vaste `navigator.languages` ja seadistatud lokaalide vahel; vajadusel lange vaike-lokaalile
+- Suunab ümber:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- teised → `/<locale>/docs/donation`
+- Kasutab `useBaseUrl` korrektseks baseUrl’i käsitlemiseks
+- Sisaldab meta refresh’i + varuvariandina linki `noscript`
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Eelvaate näpunäited {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Lõpeta Node’i eelvaade korrektselt: ava `http://localhost:<port>/__stop` (trükitakse pärast `Local server started`).
+- Kui pildid ei laadu MDX/JSX-is, kasuta `useBaseUrl('/img/...')`, et arvestada saidi `baseUrl`-iga.
+- Eelvaade käivitub esmalt; linkide kontroll töötab hiljem ja ei blokeeri (katkised välislingid ei peata eelvaadet).
+- Näidis eelvaate URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (trükitakse pärast teadet „Local server started“).
+- Välislingid link‑kontrollis: Mõned välissaidid (nt addons.thunderbird.net) blokeerivad automaatsed roomikud ja võivad link‑kontrollis anda 403. Eelvaade käivitub siiski; neid võib ohutult ignoreerida.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Tõlgi veebisait {#translate-website}
 
-What you can translate
+Mida saab tõlkida
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Ainult veebisaidi kasutajaliides: avaleht, naviriba, jalus ja muu UI‑sisu. Dokumentide sisu jääb hetkel ainult ingliskeelseks.
 
-Where to edit
+Kus muuta
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Muuda faili `website/i18n/<locale>/code.json` (kasuta võrdluseks `en`). Hoia kohatäited nagu `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` muutmata.
 
-Generate or refresh files
+Loo või värskenda faile
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Loo kõikidele lokaalidele puuduvad algfailid: `npm --prefix website run i18n:stubs`
+- Kirjuta algfailid inglise põhjal üle (pärast uute stringide lisamist): `npm --prefix website run i18n:stubs:force`
+- Alternatiiv ühele lokaalile: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Tõlgi avalehe/naviriba/jaluse UI stringid (OpenAI)
 
-- Set credentials once (shell or .env):
+- Sea mandaadid üks kord (shell või .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Valikuline: `export OPENAI_MODEL=gpt-4o-mini`
+- Ühekordne (kõik lokaalid, jäta en vahele): `make translate_web_index`
+- Piira kindlate lokaalidega: `make translate_web_index OPTS="--locales de,fr"`
+- Kirjuta olemasolevad väärtused üle: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Valideerimine ja korduskatsetused
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Tõlkeskript valideerib JSON‑struktuuri, säilitab looksulgudes kohatäited ja tagab, et URL-id ei muutu.
+- Valideerimise ebaõnnestumisel proovib kuni 2 korda uuesti, andes tagasisidet, enne kui jätab olemasolevad väärtused muutmata.
 
-Preview your locale
+Eelvaata oma lokaali
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Arendusserver: `npm --prefix website run start`
+- Külasta `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Esitamine
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Ava PR muudetud `code.json` faili(de)ga. Hoia muudatused fokusseeritud ja lisa võimalusel kiire ekraanipilt.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Turbe- ja seadistusnõuanded {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Ära commiti `sources/manifest.json` (luuakse ehituse käigus ajutiselt)
+- Hoia `browser_specific_settings.gecko.id` stabiilsena, et säilitada uuenduskanal
+
+---
+
+### Sätete püsivus {#settings-persistence}
+
+- Salvestus: Kõik kasutaja sätted asuvad `storage.local`-s ja püsivad lisandmooduli uuenduste vahel.
+- Paigaldus: vaikeväärtused rakendatakse ainult siis, kui võti on rangelt puuduv (undefined).
+- Uuendus: migratsioon täidab ainult puuduvaid võtmeid; olemasolevaid väärtusi ei kirjutata kunagi üle.
+- Skeemi tähis: `settingsVersion` (praegu `1`).
+- Võtmed ja vaikeväärtused:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kood: vt `sources/background.js` → `initializeOrMigrateSettings()` ja `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Arendusvoog (uue sätte lisamine)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Suurenda `SCHEMA_VERSION` failis `sources/background.js`.
+- Lisa uus võti + vaikeväärtus objekti `DEFAULTS` failis `initializeOrMigrateSettings()`.
+- Kasuta vaikeväärtuste külvamisel reeglit „ainult kui undefined“; ära kirjuta olemasolevaid väärtusi üle.
+- Kui säte on kasutajale nähtav, ühenda see `sources/options.js`-s ja lisa lokaliseeritud stringid.
+- Lisa/kohanda teste (vt `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Käsitsi testimise nõuanded
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Värske paigalduse simuleerimiseks: tühjenda laienduse andmekataloog või alusta uue profiiliga.
+- Uuenduse simuleerimiseks: sea `settingsVersion` väärtuseks `0` failis `storage.local` ja laadi uuesti; kontrolli, et olemasolevad väärtused jäävad muutmata ja lisatakse ainult puuduvad võtmed.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Tõrkeotsing {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Veendu, et Thunderbird on 128 ESR või uuem
+- Kasuta käitusprobleemide korral veakonsooli
+- Kui salvestatud sätted ei tundu rakenduvat, taaskäivita Thunderbird ja proovi uuesti. (Thunderbird võib seansside vahel seisundit puhverdada; taaskäivitus tagab, et värsked sätted laaditakse.)
 
 ---
 
-### Translations
+### CI ja katvus {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) käitab Vitesti katvuskünnistega (85% read/funktsioonid/harud/laused). Kui künniseid ei täideta, töö ebaõnnestub.
+- Töövoog üles laeb artefakti `coverage-html` koos HTML‑aruandega; laadi see alla jooksu lehelt (Actions → viimane jooks → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Kaastöö {#contributing}
 
-Screenshots for docs
+- Vaata haru/commit/PR juhisteks faili CONTRIBUTING.md
+- Nipp: Loo testimiseks eraldi Thunderbirdi arendusprofiil, et vältida oma igapäevase profiili mõjutamist.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Tõlked
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Suurte „all → all“ tõlketööde käitamine võib olla aeglane ja kulukas. Alusta väikesest alamhulgast (nt paar dokumenti ja 1–2 lokaali), vaata tulemus üle ja siis laienda.
+
+---
+
+- Taaskatsete poliitika: tõlketööd teevad API vigade korral kuni 3 uuestikatset eksponentsiaalse taganemisega; vt `scripts/translate_web_docs_batch.js` ja `scripts/translate_web_docs_sync.js`.
+
+Ekraanipildid dokumentidele
+
+- Hoia pilte kaustas `website/static/img/`.
+- Viita neile MD/MDX-is läbi `useBaseUrl('/img/<filename>')`, et rajad töötaksid koos saidi `baseUrl`-ga.
+- Pärast piltide lisamist või ümbernimetamist kaustas `website/static/img/` kinnita, et kõik viited kasutavad endiselt `useBaseUrl('/img/…')` ja renderduvad kohalikus eelvaates.
+  Favikonid
+
+- Mitmesuuruseline `favicon.ico` genereeritakse automaatselt kõigis ehitusteedes (Make + skriptid) tööriistaga `website/scripts/build-favicon.mjs`.
+- Käsitsi samme pole vaja; piisab `icon-*.png` uuendamisest.
+  Läbivaatamise nipp
+
+- Hoia tõlgitud dokumentides front-matter’i `id` muutmata; tõlgi ainult `title` ja `sidebar_label`, kui need on olemas.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Eesmärk: eemaldada kohalikud ehitus-/eelvaateartefaktid.
+- Kasutus: `make clean`
+- Eemaldab (kui olemas):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Eesmärk: vormindada, testida, uuendada muutuste logi, commitida ja pushida.
+- Kasutus: `make commit`
+- Detailid: käivitab Prettieri (kirjutus), `make test`, `make test_i18n`; lisab muutuste logisse sissekanded, kui on lavastatud erinevusi; pushib harusse `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Eesmärk: käivitada ESLint lameda konfiguratsiooniga.
+- Kasutus: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Eesmärk: loetleda kõik sihtmärgid üherealiste kirjeldustega.
+- Kasutus: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Eesmärk: lintida MailExtensionit tööriistaga `web-ext`.
+- Kasutus: `make lint`
+- Märkused: kopeerib ajutiselt `sources/manifest_LOCAL.json` → `sources/manifest.json`; eirab ehitatud ZIP-e; hoiatuste korral toru ei kuku läbi.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Eesmärk: interaktiivne menüü Make’i sihtmärgi ja valikuliste argumentide valimiseks.
+- Kasutus: käivita `make` ilma argumentideta.
+- Märkused: kui `whiptail` pole saadaval, langeb menüü `make help` peale.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Eesmärk: ehitada ATN- ja LOCAL‑ZIP‑id (sõltub `lint`-st).
+- Kasutus: `make pack`
+- Vihje: tõsta versioonid mõlemas `sources/manifest_*.json` enne pakendamist.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Eesmärk: vormindada repo kohapeal.
+- Kasutus: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Eesmärk: kontrollida vormindust (ilma kirjutamiseta).
+- Kasutus: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Eesmärk: alias käsule `prettier`.
+- Kasutus: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Eesmärk: käivitada Prettier (kirjutus), ESLint, seejärel Vitest (katvus, kui paigaldatud).
+- Kasutus: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Eesmärk: i18n‑keskne testimine lisandmooduli stringidele ja veebidokumentidele.
+- Kasutus: `make test_i18n`
+- Käivitab: `npm run test:i18n` ja `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Eesmärk: tõlkida lisandmooduli UI stringid inglise keelest teistesse lokaalidesse.
+- Kasutus: `make translation_app OPTS="--locales all|de,fr"`
+- Märkused: säilitab võtmestruktuuri ja kohatäited; logib faili `translation_app.log`. Skriptina: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Eesmärk: tõlkida veebidokumendid keelest `website/docs/*.md` keelde `website/i18n/<locale>/...`.
+- Eelistatud: `translate_web_docs_batch` (OpenAI Batch API)
+  - Kasutus (lipud): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pärandpositsiooniline on endiselt aktsepteeritud: `OPTS="<doc|all> <lang|all>"`
+- Käitumine: koostab JSONL-i, üleslaadib, küsitleb iga 30 s järel, laadib tulemused alla, kirjutab failid.
+- Märkus: pakettülesanne võib lõpuleviimiseks võtta kuni 24 tundi (vastavalt OpenAI batch-aknale). Konsool kuvab iga päringu järel möödunud aega.
+- Keskkond: `OPENAI_API_KEY` (nõutav), valikulised `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (vaikimisi 24 h), `BATCH_POLL_INTERVAL_MS`.
+- Pärand: `translate_web_docs_sync`
+  - Kasutus (lipud): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pärandpositsiooniline on endiselt aktsepteeritud: `OPTS="<doc|all> <lang|all>"`
+- Käitumine: sünkroonsed paarikaupa päringud (ilma partii agregeerimiseta).
+- Märkused: interaktiivsed päringud, kui `OPTS` on puudu. Mõlemad režiimid säilitavad koodiplokid/rea-koodi ja jätavad front-matter’i `id` muutmata; logib faili `translation_web_batch.log` (batch) või `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Eesmärk: tõlkida veebisaidi UI stringid (avaleht, naviriba, jalus) keelest `website/i18n/en/code.json` kõigisse `website/i18n/<locale>/code.json` all olevatesse lokaalidesse (välja arvatud `en`).
+- Kasutus: `make translate_web_index` või `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Nõuded: ekspordi `OPENAI_API_KEY` (valikuline: `OPENAI_MODEL=gpt-4o-mini`).
+- Käitumine: valideerib JSON‑struktuuri, säilitab looksulgudes kohatäited, hoiab URL-id muutumatuna ning proovib valideerimisvigade korral tagasisidega uuesti.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Eesmärk: ehitada dokumentatsioonisait kausta `website/build`.
+- Kasutus: `make web_build OPTS="--locales en|de,en|all"` (või sea `BUILD_LOCALES="en de"`)
+- Siseehitus: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Sõltuvused: käivitab `npm ci` kaustas `website/` ainult siis, kui `website/node_modules/@docusaurus` puudub.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Eesmärk: võrguvaba‑turvaline linkide kontroll.
+- Kasutus: `make web_build_linkcheck OPTS="--locales en|all"`
+- Märkused: ehitab kausta `tmp_linkcheck_web_pages`; kirjutab GH Pages’i `baseUrl` ümber `/`-ks; jätab vahele kaug-HTTP(S)-lingid.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Eesmärk: kohalik gh‑pages eelvaade koos valikuliste testide/link‑kontrolliga.
+- Kasutus: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Käitumine: proovib esmalt Node’i eelvaateserverit (`scripts/preview-server.mjs`, toetab `/__stop`), vajadusel langeb `python3 -m http.server` peale; teenindab portidel 8080–8090; PID asub failis `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Eesmärk: pushida `website/build` harusse `gh-pages`.
+- Kasutus: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Nipp: sea `NPM=…`, et tühistada Makefile’i kasutatav paketihaldur (vaikimisi `npm`).
 
 ---

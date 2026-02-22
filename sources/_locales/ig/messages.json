@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Gosi ìkìlọ ma a wepụ faịlụ ejikọrọ site na ndepụta ojii"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Tinye foto ndị dị n'ahịrị (foto ndị e jikọtara)"
+  },
   "uiDebugHeader": {
     "message": "Ntọala dị elu"
   },

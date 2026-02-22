@@ -4,94 +4,97 @@ title: 'الاستخدام'
 sidebar_label: 'الاستخدام'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## الاستخدام {#usage}
+
+- عند الرد، يضيف الملحق المرفقات الأصلية تلقائيًا — أو يسأل أولًا، إذا كان مفعّلًا في "الخيارات".
+- إزالة التكرار بحسب اسم الملف؛ يتم دائمًا تجاوز أجزاء S/MIME. تتم استعادة الصور المضمّنة في نص الرد افتراضيًا (يمكن التعطيل عبر "Include inline pictures" في "الخيارات").
+- يتم أيضًا تجاوز المرفقات المحظورة (أنماط glob غير حساسة لحالة الأحرف تطابق أسماء الملفات فقط، وليس المسارات). انظر [الإعدادات](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### ما الذي يحدث عند الرد {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- اكتشاف الرد → سرد المرفقات الأصلية → تصفية S/MIME + المضمّنة → تأكيد اختياري → إضافة الملفات المؤهّلة (تخطي المكرّرات) → استعادة الصور المضمّنة في نص الرسالة.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+تمرير صارم مقابل تمرير مرن: يستبعد الملحق أولًا أجزاء S/MIME والأجزاء المضمّنة من مرفقات الملفات. إذا لم يتأهل شيء، يجري تمريرًا مرنًا لا يزال يستبعد S/MIME/المضمّن لكنه يتسامح مع حالات أكثر (انظر تفاصيل الكود). لا تتم إضافة الصور المضمّنة كمرفقات ملفات مطلقًا؛ بدلًا من ذلك، عند تفعيل "Include inline pictures" (الإعداد الافتراضي)، تُضمَّن مباشرة في نص الرد على شكل base64 data URIs.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| نوع الجزء                                            |             التمرير الصارم |              التمرير المرن |
+| ---------------------------------------------------- | -------------------------: | -------------------------: |
+| ملف توقيع S/MIME `smime.p7s`                         |                     مستبعد |                     مستبعد |
+| أنواع MIME الخاصة بـ S/MIME (`application/pkcs7-*`)  |                     مستبعد |                     مستبعد |
+| صورة مضمنة يُشار إليها بواسطة Content‑ID (`image/*`) | مستبعد (تُستعاد في النص\*) | مستبعد (تُستعاد في النص\*) |
+| رسالة بريد مرفقة (`message/rfc822`) مع اسم ملف       |                 غير مُضافة |                   قد تُضاف |
+| مرفق ملف عادي مع اسم ملف                             |                   قد تُضاف |                   قد تُضاف |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* عند تفعيل "Include inline pictures" (الافتراضي: ON)، تُضمَّن الصور المضمّنة في نص الرد على شكل base64 data URIs بدلًا من إضافتها كمرفقات ملفات. انظر [الإعدادات](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+مثال: قد تفتقر بعض المرفقات إلى ترويسات معيّنة لكنها لا تزال ملفات عادية (ليست مضمّنة/S/MIME). إذا لم يجد التمرير الصارم شيئًا، فقد يقبل التمرير المرن تلك الحالات ويُرفقها.
 
 ---
 
-## Behavior Details {#behavior-details}
+### مراجع متبادلة {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- لا يتم تعديل "إعادة التوجيه" حسب التصميم (انظر القيود أدناه).
+- لأسباب قد تمنع إضافة مرفق، راجع "لماذا قد لا تتم إضافة المرفقات".
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## تفاصيل السلوك {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- منع التكرار: يعلِّم الملحق علامة تبويب الإنشاء كمُعالَجة باستخدام قيمة جلسة لكل تبويب وحارس داخل الذاكرة. لن يضيف الأصل مرتين.
+- يُعامل إغلاق نافذة الإنشاء وإعادة فتحها كعلامة تبويب جديدة (أي يُسمح بمحاولة جديدة).
+- احترام المرفقات الموجودة: إذا كانت نافذة الإنشاء تحتوي بالفعل على بعض المرفقات، فستُضاف الأصول مرة واحدة بالضبط، مع تخطي أسماء الملفات الموجودة مسبقًا.
+- الاستبعادات: تُستبعد مصArtifacts S/MIME والصور المضمّنة من مرفقات الملفات. إذا لم يتأهل شيء في التمرير الأول، يُعاد الفحص بتمرير مرن لأجزاء غير S/MIME. تُعالَج الصور المضمّنة بشكل منفصل: تُستعاد في نص الرد كـ data URIs (عند التفعيل).
+  - أسماء الملفات: `smime.p7s`
+  - أنواع MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - الصور المضمّنة: أي جزء `image/*` يُشار إليه بواسطة Content‑ID — مُستبعد من مرفقات الملفات لكن يُضمَّن في نص الرد عند تفعيل "Include inline pictures"
+  - رسائل البريد المرفقة (`message/rfc822`): تُعامَل كمرفقات عادية إذا كان لها اسم ملف؛ قد تُضاف (رهناً بفحوص التكرار والقائمة السوداء).
+- تحذير القائمة السوداء (إن كان مفعّلًا): عندما تُستبعَد المرشحات بفعل قائمتك السوداء،
+  يعرض الملحق نافذة صغيرة تسرد الملفات المتأثرة والنمط/الأنماط
+  المطابقة. يظهر هذا التحذير أيضًا في الحالات التي لن تُضاف فيها أي مرفقات لأن كل شيء قد تم استبعاده.
 
 ---
 
-## Limitations {#limitations}
+## اختصارات لوحة المفاتيح {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- مربع حوار التأكيد: Y/J = نعم، N/Esc = لا؛ مفاتيح Tab/Shift+Tab وأسهم الاتجاهات تتنقّل بالتركيز.
+  - يحدّد "Default answer" في [الإعدادات](configuration#confirmation) الزر المُركَّز مبدئيًا.
+  - مفتاح Enter يفعّل الزر المُركّز. مفاتيح Tab/Shift+Tab والأسهم تنقل التركيز لدعم سهولة الوصول.
+
+### ملخص اختصارات لوحة المفاتيح {#keyboard-cheat-sheet}
+
+| المفاتيح        | الإجراء                         |
+| --------------- | ------------------------------- |
+| Y / J           | تأكيد نعم                       |
+| N / Esc         | تأكيد لا                        |
+| Enter           | تنشيط الزر المركّز              |
+| Tab / Shift+Tab | نقل التركيز للأمام/للخلف        |
+| مفاتيح الأسهم   | تحريك التركيز بين الأزرار       |
+| Default answer  | يضبط التركيز الأولي (نعم أو لا) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## القيود {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- لا يتم تعديل "إعادة التوجيه" بواسطة هذا الملحق (الرد والرد على الكل مدعومان).
+- قد تخضع المرفقات الكبيرة جدًا لقيود Thunderbird أو المزوّد.
+  - لا يقوم الملحق بتجزئة الملفات أو ضغطها؛ بل يعتمد على معالجة المرفقات العادية في Thunderbird.
+- الرسائل المشفّرة: تُستبعد أجزاء S/MIME عمدًا.
 
 ---
 
-See also
+## لماذا قد لا تتم إضافة المرفقات {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- لا تُضاف الصور المضمّنة كمرفقات ملفات. عندما يكون "Include inline pictures" على وضع ON (الإعداد الافتراضي)، تُضمَّن في نص الرد كـ data URIs بدلًا من ذلك. إذا كان الإعداد على OFF، تُزال الصور المضمّنة بالكامل. انظر [الإعدادات](configuration#include-inline-pictures).
+- تُستبعَد أجزاء توقيع S/MIME حسب التصميم: تُتخطّى أسماء ملفات مثل `smime.p7s` وأنواع MIME مثل `application/pkcs7-signature` أو `application/pkcs7-mime`.
+- يمكن لأنماط القائمة السوداء تصفية المرشّحات: انظر [الإعدادات](configuration#blacklist-glob-patterns)؛ المطابقة غير حساسة لحالة الأحرف وعلى أسماء الملفات فقط.
+- لا يُعاد إضافة الأسماء المكرّرة: إذا كانت نافذة الإنشاء تحتوي بالفعل على ملف بنفس الاسم المُطبَّع، فسيتم تخطّيه.
+- أجزاء غير ملفية أو أسماء ملفات مفقودة: لا تؤخذ بعين الاعتبار إلا الأجزاء الشبيهة بالملفات التي لها أسماء ملفات قابلة للاستخدام.
+
+---
+
+راجع أيضًا
+
+- [الإعدادات](configuration)

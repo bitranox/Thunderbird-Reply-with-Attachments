@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Сәйкестік",
-  "description": "Compatibility",
+  "title": "Үйлесімділік",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Сәйкестік",
-    "sidebar_label": "Сәйкестік"
+    "title": "Үйлесімділік",
+    "sidebar_label": "Үйлесімділік"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Пайдалану",
+    "title": "Қолдану",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/usage"
   },
   "next": {

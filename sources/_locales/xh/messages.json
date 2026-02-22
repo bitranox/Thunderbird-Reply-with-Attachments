@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Lumkisa ukuba iifayile eziqhotyoshelweyo zikhutshelwe ngaphandle luluhlu olumnyama"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Bandakanya imifanekiso ye-inline (imifanekiso efakiweyo)"
+  },
   "uiDebugHeader": {
     "message": "Okuphambili"
   },

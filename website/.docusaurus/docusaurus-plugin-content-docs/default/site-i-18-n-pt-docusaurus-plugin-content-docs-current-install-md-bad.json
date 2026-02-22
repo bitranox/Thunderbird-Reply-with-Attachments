@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalação",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Início Rápido",
+    "title": "Início rápido",
     "permalink": "/Thunderbird-Reply-with-Attachments/pt/docs/quickstart"
   },
   "next": {

@@ -4,94 +4,95 @@ title: 'استعمال'
 sidebar_label: 'استعمال'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## استعمال {#usage}
+
+- جواب دِیو تہ ایڈ-آن خود بخود اصلی چیزہ شامل کرِت — یا پہلا پُچھِ، اگر آپشنس منز فعال آمُت۔
+- فائل نام مُطابق نقل ہٹاون؛ S/MIME پارٹ ہمیشہ چھوڑن۔ اِن لائن تصویرا بطور ڈیفالٹ جواب باڈی منز بحال کرن (آپشنس منز "Include inline pictures" ذریعے غیر فعال کرِو)۔
+- بلیک لِسٹ کرمُت اٹیچمنٹ بہ چھوڑن (کیس-اِن سینسِٹیو گلوب پیٹرن صرف فائل-نام سٕ میچ کران، پاتھس نئ)۔ [کنفیگریشن](configuration#blacklist-glob-patterns) چھو دیکھۍ۔
 
 ---
 
-### What happens on reply {#what-happens}
+### جواب کرن پیٹھ کیا گژھان {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- جواب ہِند پتہ لگان → اصل اٹیچمنٹہ گِنن → S/MIME + اِن لائن فلٹر کرن → اِختیاری تصدیق → اہل فائلہ شامل کرن (نقلہ چھوڑن) → باڈی منز اِن لائن تصویرا بحال کرن۔
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+سخت بمقابلہ نرم پاس: ایڈ-آن گاشہ سوره S/MIME تہ اِن لائن پارٹ فائل اٹیچمنٹن نِش خارج کرِت۔ اگر کٲہ اہل نئ ٹھہران، تہ یتہِ نرم پاس چلوان یوس سُڈ S/MIME/اِن لائن باہر ہِند مگر مزید حالتن کی معافی دیوان (کوڈ تفصیل دِرى)۔ اِن لائن تصویرا کبھی فائل اٹیچمنٹس حیثیتس منز شامل نئ کرن؛ اس کی بجاے، ییلہ "Include inline pictures" فعال آسے (ڈیفالٹ)، تی یم سِدھے جواب باڈی منز base64 ڈیٹا URI ہَسپد ضم کرن۔
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| پارٹ قِسم                                                   |                سخت پاس |                نرم پاس |
+| ----------------------------------------------------------- | ---------------------: | ---------------------: |
+| S/MIME دستخط فائل `smime.p7s`                               |                   خارج |                   خارج |
+| S/MIME MIME قِسماں (`application/pkcs7-*`)                  |                   خارج |                   خارج |
+| کانٹینٹ‑ID ذریعہ حوالہ کرن وْن اِن لائن تُصویٖر (`image/*`) | خارج (باڈی منز بحال\*) | خارج (باڈی منز بحال\*) |
+| فائل نام ہندس ساتھ لَگامُت ای میل (`message/rfc822`)        |         شامل نئ کْرمُت |        شامل گژھان ہیکہ |
+| عام فائل اٹیچمنٹ فائل نام سٕ                                |        شامل گژھان ہیکہ |        شامل گژھان ہیکہ |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* ییلہ "Include inline pictures" فعال آسے (ڈیفالٹ: ON)، اِن لائن تصویرا جواب باڈی منز base64 ڈیٹا URI ہَسپد ضم کرن بجاۄیکہ فائل اٹیچمنٹس پیٹھ شامل کرن۔ [کنفیگریشن](configuration#include-inline-pictures) چھو دیکھۍ۔
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+مثال: کنہ کنہ اٹیچمنٹن پیٹھ کینہ ہیڈر نئ آسِت مگر یم بہ عام فائلہ چھِ (اِن لائن/S/MIME نئ)۔ اگر سخت پاس کینہ نئ لَبِت، تہ نرم پاس یمن قبول کْرتھ تہ یم لَگاوِتھ۔
 
 ---
 
-## Behavior Details {#behavior-details}
+### باہمی حوالہ {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- فارورڈ ڈیزائن موجب تبدیل نئ کرن (نیچے حدود منز دیکھۍ)۔
+- یہِ وجوہات باپت یوس وجہ سٕ اٹیچمنٹ شاید شامل نئ گژھان، دیکھیو “کِیہ وجہ سٕ اٹیچمنٹ شاید شامل نئ گژھان”۔
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## روٗیے ہندس تفصیلاہ {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **نقل بچاوٕ:** ایڈ-آن کمپوز ٹیب نِشان زان پروسیسڈ، پر-ٹیب سیشن ویلیو تہ اکھ اِن-میموری گارڈ ذریعے۔ یہ اصلی چیزہ دوبار نئ شامل کرِت۔
+- کمپوز وینڈو بند کرُن تہ دوبارہ کھولن اکھ نَو ٹیب گِنن (یعنی نَو کوشش اجازتہ ہِند)۔
+- **موجود اٹیچمنٹ ہندس لحاظ:** ییلہ کمپوز منز گوڈے کنہ اٹیچمنٹ آسِت، اصلی بہ صرف اکھ وار شامل گژھان، وہی فائل-نام چھوڑِت یم گوڈے موجود آسِت۔
+- **مستثنیات:** S/MIME آرٹیفیکٹس تہ اِن لائن تصویرا فائل اٹیچمنٹن نِش خارج کرن۔ اگر پہرِ پاسس منز کینہ اہل نئ تھاوے، تہ نرم فال بیک نان‑S/MIME پارٹ دوبارا چک کران۔ اِن لائن تصویرا الگ سنبھالن: یم جواب باڈی منز ڈیٹا URI حیثیتس منز بحال کرن (ییلہ فعال آسے)۔
+  - **فائل-نام:** `smime.p7s`
+  - **MIME قِسماں:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **اِن لائن تصویرا:** کانٹینٹ‑ID ذریعہ حوالہ کرن وٲلِ کُنہ بھی `image/*` پارٹ — فائل اٹیچمنٹن پیٹھن نِش خارج مگر جواب باڈی منز ضم کرن ییلہ "Include inline pictures" ON آسے
+  - **لَگامُت ای میلن (`message/rfc822`):** اگر یمن فائل-نام آسِت تہ یم عام اٹیچمنٹ ہس حیثیتس منز ورتھاون؛ یم شامل گژھان ہیکن (نقل چک تہ بلیک لِسٹ مشروط)۔
+- **بلیک لِسٹ خبردارۍ (ییلہ فعال آسے):** ییلہ امیدوار توہند بلیک لِسٹ نِش خارج گژھان، تہ ایڈ-آن اکھ چھوکھا موڈل دِکھاون یم متاثر فائلہ تہ میل کھاون پیٹرن(س) گِنِت۔ یہ خبردارۍ تہین ظاہر گژھاں یِم حالتن منز ییلہ کینہ اٹیچمنٹ شامل نئ گژھان کیوں‌جو سٮ۪یتھ کُن باہر گژھ آمُت۔
 
 ---
 
-## Limitations {#limitations}
+## کیبورڈ شارٹ کٹہ {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- تصدیقی ڈائلاگ: Y/J = ہاں، N/Esc = نہ؛ Tab/Shift+Tab تہ Arrow کُنجیاں فوکس گژھان چکر منز۔
+  - [کنفیگریشن](configuration#confirmation) منز “ڈیفالٹ جواب” ابتدائی فوکس کرن وۄل بٹن طے کرِت۔
+  - Enter فوکس کرن مٹھ بٹن ٹرِگر کرِت۔ Tab/Shift+Tab تہ تیٚرن کُنجیاں فوکس موٗو کرن قابل رسائ باپت۔
+
+### کیبورڈ چیٹ شیٹ {#keyboard-cheat-sheet}
+
+| کُنجیاں         | کاروائی                          |
+| --------------- | -------------------------------- |
+| Y / J           | ہاں تْصدیق کرن                   |
+| N / Esc         | نہ تْصدیق کرن                    |
+| Enter           | فوکس کَرن مٹھ بٹن فعال کرن       |
+| Tab / Shift+Tab | فوکس آگے/پیٹھے موٗو کرن          |
+| Arrow کُنجیاں   | فوکس بٹنَن بیچ موٗو کرن          |
+| ڈیفالٹ جواب     | ابتدائی فوکس طے کرِت (ہاں یا نہ) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## حدود {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- یہ ایڈ-آن فارورڈ نئ بدلاؤن (Reply تہ Reply all حمایت شون)۔
+- بہت وْڈ اٹیچمنٹ تھنڈر برڈ یا فراہم کُن ہند حدن منز آسن ہیکن۔
+  - ایڈ-آن فائلہ نئ ٹکڑا کران نہ دباؤان؛ یہ تھنڈر برڈ ہندس معمول اٹیچمنٹ ہینڈلنگ پیٹھ اعتبار کرِت۔
+- مرموز پیغام: S/MIME پارٹ جان بوجھ کَرے خارج کرن۔
 
 ---
 
-See also
+## کِیہ وجہ سٕ اٹیچمنٹ شاید شامل نئ گژھان {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- اِن لائن تصویرا فائل اٹیچمنٹس حیثیتس منز شامل نئ کرن۔ ییلہ "Include inline pictures" ON آسے (ڈیفالٹ)، تہ یم جواب باڈی منز base64 ڈیٹا URI ہَسپد ضم گژھان۔ اگر سیٹنگ OFF آسے، تہ اِن لائن تصویرا پوری طرح ہٹاون۔ [کنفیگریشن](configuration#include-inline-pictures) چھو دیکھۍ۔
+- S/MIME دستخط پارٹ ڈیزائن موجب خارج کرن: یوان فائل-نام جیہے `smime.p7s` تہ MIME قِسماں یوان `application/pkcs7-signature` یا `application/pkcs7-mime` چھوڑن۔
+- بلیک لِسٹ پیٹرن امیدوار فلٹر کرن ہیکن: [کنفیگریشن](configuration#blacklist-glob-patterns) چھو دیکھۍ؛ میچ کرن چھ کیس‑اِن سینسِٹیو تہ صرف فائل-نام پیٹھ مبنی۔
+- نقل فائل-نام دوبار نئ شامل کرن: اگر کمپوز منز گوڈے اکھ ہیک فائل ہیو تہس ہی نارملائزڈ ناں، یہ چھوڑن۔
+- غیر‑فائل پارٹ یا غائب فائل-نام: صرف وہی فائل نما پارٹ یم قابل استعمال فائل-نام سٕ آسنِ، انہس شامل کرن باپت نظر منز آوِت۔
+
+---
+
+مزید دیکھیو
+
+- [کنفیگریشن](configuration)

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "कालोसूचीका कारण संलग्नकहरू बहिष्कृत भए चेतावनी दिनुहोस्"
   },
+  "uiIncludeInlineLabel": {
+    "message": "इनलाइन तस्बिरहरू समावेश गर्नुहोस् (इम्बेडेड तस्बिरहरू)"
+  },
   "uiDebugHeader": {
     "message": "उन्नत"
   },

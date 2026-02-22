@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Ndakọrịta",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Iji",
+    "title": "Ojiji",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/usage"
   },
   "next": {

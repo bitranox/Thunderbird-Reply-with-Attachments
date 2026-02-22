@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Funktionen",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",

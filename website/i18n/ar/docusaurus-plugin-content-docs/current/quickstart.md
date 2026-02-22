@@ -4,24 +4,26 @@ title: 'البدء السريع'
 sidebar_label: 'البدء السريع'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## البدء السريع
+
+:::important الحد الأدنى لإصدار Thunderbird
+تدعم هذه الإضافة Thunderbird **الإصدار 128 ESR أو الأحدث**. الإصدارات الأقدم غير مدعومة.
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note لا تيليمترية؛ لا شبكة في الخلفية
+الإضافة **لا** تجمع تحليلات/تيليمترية و**لا** تُجري طلبات شبكة في الخلفية. يحدث الوصول إلى الشبكة فقط عند نقر الروابط الخارجية (الوثائق، GitHub، التبرع).
 :::
 
 ---
 
-### Install
+### التثبيت
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. ثبّت الإضافة من إضافات Thunderbird.
+2. اختياري: فعّل التأكيد (الخيارات → "اسأل قبل إضافة المرفقات").
+3. اختياري: اترك تحذير القائمة السوداء مفعّلًا (الإعداد الافتراضي): "تحذير إذا تم استثناء المرفقات بواسطة القائمة السوداء".
+4. اختياري: أضف أنماط القائمة السوداء (واحد لكل سطر)، مثلًا:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+ملاحظة: إن “# …” الواردة أعلاه هي تعليق في هذا التوثيق؛ لا تُدرج التعليقات ضمن الأنماط التي تلصقها في "الخيارات". أدخل نمطًا واحدًا فقط في كل سطر.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+الآن رُدّ على رسالة تحتوي على مرفقات — ستُضاف النسخ الأصلية تلقائيًا أو بعد تأكيد سريع. إذا تم استثناء أي ملفات بواسطة قائمتك السوداء، ستظهر لك رسالة تحذير قصيرة تسردها.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### التحقق {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- قم بالرد على رسالة بها مرفقًا أو مرفقين وتحقق من إضافة النسخ الأصلية إلى نافذة الإنشاء.
+- لضبط السلوك، راجع [الإعدادات](configuration) (مفتاح تبديل التأكيد، الإجابة الافتراضية، أنماط القائمة السوداء).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### التحقق من تحذير القائمة السوداء {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- قم بالرد على رسالة تحتوي على ملف مثل “secret.txt”.
+- مع تفعيل خيار “تحذير إذا تم استثناء المرفقات بواسطة القائمة السوداء”، ستعرض نافذة حوار صغيرة الملفات المستبعَدة والنمط المطابق.
+
+إذا لم ترَ تحذيرًا، فتأكد من أن النمط يطابق اسم الملف تمامًا (اسم الملف فقط، غير حساس لحالة الأحرف). راجع الإعدادات → القائمة السوداء.
+
+---
+
+### ملاحظة حول لوحة المفاتيح {#keyboard-note}
+
+- يدعم مربع حوار التأكيد المفاتيح Y/J لِـ Yes و N/Esc لِـ No. على بعض لوحات المفاتيح غير اللاتينية قد تختلف مفاتيح الحروف؛ مفتاح Enter يؤكد الزر المُركَّز.
 
 ---

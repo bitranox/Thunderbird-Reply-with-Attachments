@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'ಕೋಶಾರಂಭ'
-sidebar_label: 'ಕೋಶಾರಂಭ'
+title: 'ತ್ವರಿತ ಪ್ರಾರಂಭ'
+sidebar_label: 'ತ್ವರಿತ ಆರಂಭ'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## ತ್ವರಿತ ಆರಂಭ
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ಕನಿಷ್ಠ Thunderbird ಆವೃತ್ತಿ
+ಈ ಆಡ್‑ಆನ್ Thunderbird **128 ESR ಅಥವಾ ಅದರಿಗಿಂತ ಹೊಸ** ಆವೃತ್ತಿಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ. ಹಳೆಯ ಆವೃತ್ತಿಗಳು ಬೆಂಬಲಿಸಲ್ಪಡುವುದಿಲ್ಲ.
+:::
+
+:::note ಟೆಲಿಮೆಟ್ರಿ ಇಲ್ಲ; ಹಿನ್ನಲೆ ಜಾಲವಿಲ್ಲ
+ಈ ಆಡ್‑ಆನ್ ವಿಶ್ಲೇಷಣೆ/ಟೆಲಿಮೆಟ್ರಿಯನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ ಮತ್ತು ಹಿನ್ನಲೆಯಲ್ಲಿ ಯಾವುದೇ ಜಾಲ ವಿನಂತಿಗಳನ್ನು ಮಾಡುವುದಿಲ್ಲ. ಜಾಲ ಪ್ರವೇಶವು ನೀವು ಬಾಹ್ಯ ಕೊಂಡಿಗಳನ್ನು (Docs, GitHub, Donate) ಕ್ಲಿಕ್ ಮಾಡಿದಾಗ ಮಾತ್ರ ಸಂಭವಿಸುತ್ತದೆ.
+:::
+
+---
+
+### ಸ್ಥಾಪನೆ
+
+1. Thunderbird Add‑ons ನಿಂದ ಆಡ್‑ಆನ್ ಅನ್ನು ಸ್ಥಾಪಿಸಿ.
+2. ಐಚ್ಛಿಕ: ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ (Options → “ಲಗತ್ತಿಗಳನ್ನು ಸೇರಿಸುವ ಮೊದಲು ಕೇಳಿ”).
+3. ಐಚ್ಛಿಕ: ಕಪ್ಪುಪಟ್ಟಿ ಎಚ್ಚರಿಕೆಯನ್ನು ಸಕ್ರಿಯವಾಗಿಯೇ ಇರಿಸಿ (ಡೀಫಾಲ್ಟ್): “ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಹೊರಗಿಟ್ಟಿದ್ದರೆ ಲಗತ್ತಿಗಳ ಬಗ್ಗೆ ಎಚ್ಚರಿಸಿ”.
+4. ಐಚ್ಛಿಕ: ಕಪ್ಪುಪಟ್ಟಿ ಮಾದರಿಗಳನ್ನು ಸೇರಿಸಿ (ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು), ಉದಾ.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+ಸೂಚನೆ: ಮೇಲಿನ “# …” ಇದು ಈ ದಸ್ತಾವೇಜಿನಲ್ಲಿನ ಒಂದು ಟಿಪ್ಪಣಿ; ನೀವು Options ಗೆ ಅಂಟಿಸುವ ಮಾದರಿಗಳಲ್ಲಿ ಟಿಪ್ಪಣಿಗಳನ್ನು ಸೇರಿಸಬೇಡಿ. ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದೇ ಮಾದರಿಯನ್ನು ನಮೂದಿಸಿ.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ಈಗ ಲಗತ್ತಿಗಳಿರುವ ಸಂದೇಶಕ್ಕೆ ಉತ್ತರಿಸಿ — ಮೂಲ ಕಡತಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಥವಾ ವೇಗದ ದೃಢೀಕರಣದ ನಂತರ ಸೇರಿಸಲಾಗುತ್ತವೆ. ನಿಮ್ಮ ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಯಾವುದಾದರೂ ಕಡತಗಳನ್ನು ಹೊರತುಪಡಿಸಿದರೆ, ಅವನ್ನು ಪಟ್ಟಿ ಮಾಡುವ ಒಂದು ಚಿಕ್ಕ ಎಚ್ಚರಿಕೆಯನ್ನು ನೀವು ಕಾಣುತ್ತೀರಿ.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### ಪರಿಶೀಲಿಸಿ {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 ಲಗತ್ತಿಗಳಿರುವ ಸಂದೇಶಕ್ಕೆ ಉತ್ತರಿಸಿ ಮತ್ತು ಮೂಲಗಳು ನಿಮ್ಮ ರಚನಾ ಕಿಟಕಿಗೆ ಸೇರಿಸಿರುವುದನ್ನು ದೃಢಪಡಿಸಿ.
+- ವರ್ತನೆಯನ್ನು ಹೊಂದಿಸಲು, [ಸಂರಚನೆ](configuration) ಅನ್ನು ನೋಡಿ (ದೃಢೀಕರಣ ಟಾಗಲ್, ಡೀಫಾಲ್ಟ್ ಉತ್ತರ, ಕಪ್ಪುಪಟ್ಟಿ ಮಾದರಿಗಳು).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ಕಪ್ಪುಪಟ್ಟಿ ಎಚ್ಚರಿಕೆಯನ್ನು ಪರಿಶೀಲಿಸಿ {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” ಎಂಬ ಕಡತವಿರುವ ಸಂದೇಶಕ್ಕೆ ಉತ್ತರಿಸಿ.
+- “ಕಪ್ಪುಪಟ್ಟಿಯಿಂದ ಹೊರಗಿಟ್ಟಿದ್ದರೆ ಲಗತ್ತಿಗಳ ಬಗ್ಗೆ ಎಚ್ಚರಿಸಿ” ಸಕ್ರಿಯವಾಗಿದ್ದರೆ, ಒಂದು ಸಣ್ಣ ಸಂವಾದ ಪೆಟ್ಟಿಗೆಯಲ್ಲಿ ಹೊರಗಿಟ್ಟ ಕಡತಗಳು ಮತ್ತು ಹೊಂದಿಕೊಂಡ ಮಾದರಿ ಪಟ್ಟಿ ಆಗುತ್ತದೆ.
+
+ನೀವು ಎಚ್ಚರಿಕೆಯನ್ನು ಕಾಣದಿದ್ದರೆ, ಮಾದರಿ ಕಡತದ ಹೆಸರಿಗೆ ನಿಖರವಾಗಿ ಹೊಂದಿಕೆಯಾಗುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ (ಕಡತ‑ಹೆಸರು ಮಾತ್ರ, ದೊಡ್ಡ/ಸಣ್ಣ ಅಕ್ಷರ ವ್ಯತ್ಯಾಸ ಲೆಕ್ಕಿಸದು). ಸಂರಚನೆ → ಕಪ್ಪುಪಟ್ಟಿ.
+
+---
+
+### ಕೀಬೋರ್ಡ್ ಟಿಪ್ಪಣಿ {#keyboard-note}
+
+- ದೃಢೀಕರಣ ಸಂವಾದವು ಹೌದುಗಾಗಿ Y/J ಮತ್ತು ಇಲ್ಲಗಾಗಿ N/Esc ಅನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ. ಕೆಲವು ಲ್ಯಾಟಿನ್‑ಅಲ್ಲದ ಕೀಬೋರ್ಡ್‌ಗಳಲ್ಲಿ, ಅಕ್ಷರ ಕೀಲಿಗಳು ಬದಲಾಗಿರಬಹುದು; Enter ಫೋಕಸ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಅನ್ನು ದೃಢಪಡಿಸುತ್ತದೆ.
 
 ---

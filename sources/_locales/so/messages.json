@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Digniin haddii lifaaqyada laga reebo liiska mamnuuca"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Ku dar sawirrada gudaha (sawirrada la dhex-dhigay)"
+  },
   "uiDebugHeader": {
     "message": "Horumarsan"
   },

@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Встановлення",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Швидкий початок",
+    "title": "Швидкий старт",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/quickstart"
   },
   "next": {

@@ -1,31 +1,33 @@
 ---
 id: donation
-title: ' donate  '
-sidebar_label: ' donate  '
+title: 'ይለግሱ'
+sidebar_label: 'ይለግሱ'
 ---
 
-## Donate
+---
+
+## ልገሳ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+“Reply with Attachments” ካወዳችሁ እና እድገቱን ለመደገፍ ከፈለጉ እዚህ ልገሳ መስጠት ትችላላችሁ፡
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="በStripe ልገሳ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ወይም</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="በPayPal ልገሳ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ወይም</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="ቡና ግዛልኝ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="ቡና ለመግዛት ስካን ያድርጉ"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+እናመሰግናለን! ድጋፎት ከአዳዲስ Thunderbird ልቀቶች ጋር ተስማሚነትን ለመጠበቅ፣ አካል ጉዳይ መዳረሻንና ሙከራዎችን ለማሻሻል፣ ሰነዶቹንም በዘመናዊነት እንዲቆዩ ይረዳል።
 
-Notes
+ማስታወሻዎች
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- የልገሳ አገናኞች ሲነኩአቸው ብቻ ይከፈታሉ፤ አድ‑ኦኑ በጀርባ ምንም የአውታረመረብ ጥያቄዎችን አያካሂድም።
+- የሚደጋገም ድጋፍ ረጅም‑ጊዜ እንክብካቤንና በጊዜው ዝማኔዎችን ይረዳል፣ ግን በፈቃድ ብቻ ነው።
 
 ---
 
-If the image buttons do not load, please use these links instead:
+ምስል አዝራሮቹ ካልተጫኑ እባክዎ instead? እነዚህን አገናኞች ይጠቀሙ፦
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+ልገሳዎች ፈቃዳዊ ናቸው፤ ምንም ባህሪ አይታገድም።
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## የልገሳ ታይነት (90‑ቀን ጊዜያዊ መደበቅ)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+አድ‑ኦኑ ከለገሱ በኋላ ለጥቂት ጊዜ የልገሳ ጥሪዎችን ለማደበቅ የሚረዳ ቀላል ባህሪ ይዟል።
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- የሚገኝበት
+  - Options → Support ክፍል፡ “I donated” የሚለውን አዝራር እና ትንሽ ማሳሰቢያ ቦታ ታያላችሁ።
+  - የመላክ‑ማረጋገጫ ንግግር ሳጥኑም የDonate አዝራር ያሳያል፤ ማቆሚያው ሲሰራ በራሱ ይደብቃል።
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- እንዴት እንደሚሰራ
+  - “I donated” ሲጫኑ የልገሳ አዝራሮችና ተዛማጅ ማስታወቂያዎች ለ90 ቀናት ይደበቃሉ።
+  - የሁኔታ ማሳሰቢያ “Hidden until YYYY‑MM‑DD” ብሎ ያሳያል (በአካባቢዎ ቀን). በተጨማሪም ታይነትን ወዲያውኑ ለመመለስ “Show Donate again” የሚለው አዝራር አለ።
+  - 90 ቀናት ከተለፉ በኋላ የDonate አዝራሩ በራሱ እንደገና ይታያል።
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- ግላዊነት እና ማከማቻ
+  - አድ‑ኦኑ የማቆሚያውን ጊዜ ለማስታወስ በThunderbird የአካባቢ ማከማቻ ውስጥ አንድ የጊዜ ማህተም ብቻ ይቆጠብራል። ቁልፍ፡ `donateHideUntil` (epoch milliseconds).
+  - ይህ ማሰናዳት ለThunderbird ፕሮፋይልዎ አካባቢ ነው (ከደመና ጋር አይተያይዝም). በዚህ ባህሪ ምንም የአውታረመረብ ጥያቄ አይላክም።
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- ችግኝ መፍትሄ
+  - “I donated” ካጫኑ በኋላ የDonate አዝራሩ እንደገና ካለ ቢታይ ጥቂት ይጠብቁ ወይም የOptions ገጹን እንደገና ይክፈቱ፤ ማሰናዳቱ ከተቀመጠ በኋላ UI ወዲያውኑ ይዘመናል።
+  - በእጅ ለማስጀመር “Show Donate again” ይጫኑ። እንዲሁም በማሳሰቢያው የተዘረዘረው ቀን እስኪለፍ መጠበቅ ትችላላችሁ።
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+ይህ ባህሪ ሙሉ በሙሉ ለምቾት ብቻ ነው፤ የአድ‑ኦኑን ተግባር በፍጹም አያግድም እና ምንም የግል መረጃ አያከማችም።
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Kugwiritsa Ntchito",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ny/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/configuration"
   },
   "next": {
-    "title": "Kulingana",
+    "title": "Kugwirizana",
     "permalink": "/Thunderbird-Reply-with-Attachments/ny/docs/compatibility"
   }
 }

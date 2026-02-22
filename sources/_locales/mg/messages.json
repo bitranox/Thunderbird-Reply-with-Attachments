@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Ampitandremo raha voahilika amin'ny lisitra mainty ny rakitra mifatotra"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Ampidiro ny sary an-tsipika (sary tafiditra)"
+  },
   "uiDebugHeader": {
     "message": "Mandroso"
   },

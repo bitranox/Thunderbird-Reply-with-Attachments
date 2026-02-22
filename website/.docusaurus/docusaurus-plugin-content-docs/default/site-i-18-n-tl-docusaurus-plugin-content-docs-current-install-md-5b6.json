@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Pag-install",
-  "description": "Pag-install via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mabilis na Panimula",
+    "title": "Mabilis na Pagsisimula",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/quickstart"
   },
   "next": {

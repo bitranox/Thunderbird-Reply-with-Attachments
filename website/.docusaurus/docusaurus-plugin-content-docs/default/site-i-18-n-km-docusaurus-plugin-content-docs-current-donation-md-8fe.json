@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "ផ្តល់ការគួរ",
-  "description": "Donate",
+  "title": "បរិច្ចាគ",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "ផ្តល់ការគួរ",
-    "sidebar_label": "ផ្តល់ការគួរ"
+    "title": "បរិច្ចាគ",
+    "sidebar_label": "បរិច្ចាគ"
   },
   "sidebar": "docs",
   "previous": {

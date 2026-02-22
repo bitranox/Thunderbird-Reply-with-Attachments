@@ -4,31 +4,40 @@ title: 'Özellikler'
 sidebar_label: 'Özellikler'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Özellikler {#features}
 
-## How It Works {#how-it-works}
+- Yanıt verirken orijinal e-postadaki dosyaları otomatik olarak ekler.
+- Yapılandırılabilir davranış: ekler
+  - otomatik olarak eklenebilir veya
+  - yalnızca onaydan sonra eklenebilir (küçük, erişilebilir bir iletişim kutusu). Seçenekler'de
+    onayı etkinleştirip varsayılan yanıtı (Evet/Hayır) seçebilirsiniz.
+- Dosya adlarının kara listesi (glob desenleri), belirli dosyaların
+  otomatik olarak eklenmesini engeller. Örnekler: `*intern*`, `*secret*`, `*passwor*`.
+  Eşleştirme büyük/küçük harfe duyarsızdır ve yalnızca dosya adını kontrol eder; Seçenekler'de
+  satır başına bir desen belirtin.
+- Kara liste uyarısı (isteğe bağlı, varsayılan olarak etkin): dosyalar kara listeniz
+  tarafından hariç tutulduğunda, küçük bir modal pencere dosyayı ve eşleşen desen(ler)i listeler. Karanlık mod
+  uyumlu ve klavye ile erişilebilirdir (kapatmak için Enter/Esc).
+- Yanıtla ve Tümünü Yanıtla ile çalışır. İlet, bu eklenti tarafından değiştirilmez.
+- Siz zaten bir şey eklemiş olsanız bile orijinal ekleri ekler; dosya adına göre yinelenenleri önler.
+- Sekme başına yinelenme koruması, aynı oluşturma sekmesinde iki kez eklemeyi önler.
+- Gereksiz ekleri önlemek için varsayılan olarak S/MIME sertifikalarını atlar.
+- Satır içi resimleri dahil et (varsayılan: AÇIK). Gömülü görüntüler,
+  orijinal satır içi yerleşimi koruyarak yanıt gövdesinde doğrudan base64 veri URI’leri olarak geri yüklenir. Seçenekler'den
+  satır içi görüntüleri tamamen atlamak için devre dışı bırakabilirsiniz.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Nasıl Çalışır {#how-it-works}
+
+- Yanıtlarken, eklenti orijinal ekleri listeler.
+- Dosya eklerinden S/MIME imzalarını süzer; satır içi görüntüler (devre dışı bırakılmadıkça) gövdede geri yüklenir.
+- İsteğe bağlı olarak onay ister (klavye dostudur).
+- Uygun dosyaları oluşturmanıza ekler, dosya adına göre yinelenenleri önler.
+- Uç durumlar için Kullanım bölümündeki “Ekler neden eklenmeyebilir” başlığına bakın.
+
+Gizlilik notu: Tüm işlemler Thunderbird içinde yerel olarak gerçekleşir. Eklenti arka planda ağ isteği yapmaz.
+
+---

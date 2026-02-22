@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalace",
-  "description": "Instalace pomocí \"Thunderbird doplňků a motivů\"",
+  "description": "---",
   "source": "@site/i18n/cs/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",

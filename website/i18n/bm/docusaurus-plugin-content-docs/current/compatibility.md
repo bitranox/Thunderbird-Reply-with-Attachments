@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Patampakan'
-sidebar_label: 'Patampakan'
+title: 'Ɲɔgɔnya'
+sidebar_label: 'Kɔmpatibilite'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Jɔyalen {#compatibility}
+
+:::important Thunderbird versiyɔn dɔgɔya
+Add‑on nin bɛ fara Thunderbird **128 ESR walima a kɔnɔ**. Versiyɔn kɔrɔw ma fara.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR walima a kɔnɔ bɛ fara (128.x+).
+- Thunderbird versiyɔn kɔrɔw ma fara.
+- A tɛste ka kɛ Windows, macOS ni Linux kan.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ma fara
+Manifest V2 ma fara. Add‑on nin bɛ ye **Manifest V3 (MV3)** kɛ Thunderbird 128 ESR+ kan.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Dɛpanaaji {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ni add‑on tɛ kɛ ni i na fisa, ɲɛ si k'i bɛ Thunderbird versiyɔn min bɛ fara (128 ESR walima a kɔnɔ) bɔ.
+- Ka naɲin Thunderbird error console (Tools > Developer Tools > Error Console) la, ka ɲɛ tɔɔrɔw minnu bɛ add‑on la.
+- Ni sɛtiniw sɔngɔ minnu lajɛ tɛ ka ɲɛ kɛ, Thunderbird daminɛ kɔfɛ o kuma, ka sɔnsɔn kɔfɛ. (Thunderbird bɛ se ka ɲɛfɔlɔ (state) sɔngɔ ɲɛsiraw kɔnɔ; daminɛcogo bɛ kɛ ka sɛtiniw kura don.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Tuguya minnu dòn {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- A tɛ dòn sisan. Ni i lajɛ sanbarananw dubulika walima add‑on wɛrɛw la ɲɛfɔw, i ka ko fɔ ni jɛkulu-jɛkulu minnu ka k'a ɲini.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta ni Daily (Nightly) builduw bɛ fara ko-jɔ, nka kalanba minnu bɛ kɛ kɔfɛ (upstream) tuma dɔ bɛ se ka add‑on ka lakɔrɔ bɔ. Ni i bɔ ɲɛsinw, i ka ko fɔ, ka Thunderbird versiyɔn fɔfɔlɔ di (misali: “Daily 131.0a1 2025‑09‑10”).
+- I na ɲɛgɛlɛn dɔ bɛɛ (regression) bɔ Beta/Nightly kan wa? I ka ko fɔ ni jɛkulu-jɛkulu minnu ka k'a ɲini — [Dɛmɛ](support) da — ni Thunderbird build string fɔfɔlɔ bɔ la.
 
 ---

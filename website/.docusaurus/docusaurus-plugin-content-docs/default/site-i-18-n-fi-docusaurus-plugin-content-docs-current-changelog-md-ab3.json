@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Muutospäiväkirja",
-  "description": "Changelog",
+  "title": "Muutosloki",
+  "description": "---",
   "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Muutospäiväkirja"
+    "title": "Muutosloki"
   },
   "sidebar": "docs",
   "previous": {

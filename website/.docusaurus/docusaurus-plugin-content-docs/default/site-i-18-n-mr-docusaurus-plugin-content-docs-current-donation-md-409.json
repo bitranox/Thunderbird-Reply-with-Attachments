@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "दान करा",
-  "description": "Donate",
+  "title": "देणगी द्या",
+  "description": "---",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "दान करा",
-    "sidebar_label": "दान करा"
+    "title": "देणगी द्या",
+    "sidebar_label": "देणगी द्या"
   },
   "sidebar": "docs",
   "previous": {

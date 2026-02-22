@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Gutanga'
-sidebar_label: 'Gutanga'
+title: 'Tanga inkunga'
+sidebar_label: 'Tanga inkunga'
 ---
 
-## Gutanga
+---
+
+## Tanga inkunga
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Niba ushaka "Gusubiza n'inyongera" kandi ukaba ushaka gushyigikira iterambere ryayo, ushobora gutanga hano:
+Nimba ukunda "Reply with Attachments" kandi wipfuza gushigikira iterambere ryayo, urashobora gutanga inkunga hano:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Gutanga binyuze kuri Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Tanga inkunga ukoresheje Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>cyangwa</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>canke</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Gutanga binyuze kuri PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Tanga inkunga ukoresheje PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>cyangwa</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>canke</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Ntemere igikombe" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Ungurire ikawa" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,54 @@ Niba ushaka "Gusubiza n'inyongera" kandi ukaba ushaka gushyigikira iterambere ry
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Soma kugirango unkemere ikawa"
-         width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Sikana ugure ikawa" width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Urakoze! Uruhare rwawe rufasha kubungabunga ihuzwa n'ibisubizo bishya bya Thunderbird, guteza imbere uburyo bw'ubwoko bwose n'ibizamini, no gukomeza gutanga amakuru agezweho.
+Urakoze cane! Inkunga yawe ifasha gukomeza guhuza n’amasohoka mashasha ya Thunderbird, kunoza accessibility n’igeragezwa, no kugumiza inyandiko zivuguruye.
 
-Ingingo
+Ibisobanuro
 
-- Imiyoboro yo gutanga ifungura gusa igihe uyiguye; uwo muddondora ntukora ibibazo by'ubuhanzi mu murongo.
-- Gushyigikira kenshi bifasha mu bikorwa by'igihe kirekire no mu mihindagurikire ikwiye, ariko ntibishoboka.
+- Amahuliro yo gutanga inkunga aruguruka gusa iyo uyakandaguye; umwongerezo (add‑on) ntiwongera gukora ibisabwa na internet (network) mu nyuma (background).
+- Inkunga yisubirako ifasha kubungabunga igihe kirekire no kuvugurura ku gihe, ariko si ngombwa na gato.
 
 ---
 
-Niba imishushyo itagaragaza, nyamuneka kanda izi links:
+Nimba utubonero twa mashusho tutaduga, koresha aya mahuriro aho kubindi:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Ntemere igikombe](https://buymeacoffee.com/bitranox)
+#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
 
 ---
 
-Ibyo gutanga ni ukugirango haboneke; nta gikorwa cyihanganisha.
+Inkunga itangwa ku bushake; nta na kimwe mu bikorwa gifungirwa inyuma y’ukutayitanga.
 
 ---
 
-## Icyerekezo cyo Gutanga (90‑umunsi w'ikiruhuko)
+## Ukugaragara kw’inkunga (gusinziza iminsi 90)
 
-Uwo muddondora ufite uburyo bworoheje bwo guhisha ubutumwa bwo gutanga mu gihe runaka nyuma yo gutanga.
+Umwongerezo urimwo igice corohereza gihisha uduhamagarira gutanga inkunga mu kiringo gito umaze gutanga.
 
-- Aho wabona
-  - Amahitamo → Igice cy'ubufasha: uzabona buto "Natanze" n'ahantu h'ubuyobozi.
-  - Dialog yo kohereza-ukwemeza nayo igaragaza buto yo Gutanga; ikurwaho automatic iyo ikiruhuko kiriho.
+- Aho wobisanga
+  - Options → igice Support: ubona akabuto “I donated” hamwe n’agace gatoya k’inyibutsa.
+  - Ikiganiro c’ukwemeza kurungika (Send‑confirmation) na co kirerekana akabuto Donate; karihisha ubwako iyo gusinziza (snooze) gukora.
 
-- Uko bikora
-  - Kanda "Natanze" bihisha buto zo gutanga n'ibisabwa bifitanye isano mu gihe cy'iminsi 90.
-  - Ikimenyetso cy'icyerekezo kigaragaza "Hishwe kugeza YYYY‑MM‑DD" (muri tariki yawe y'akarere). Hariho na buto "Garagaza Gutanga bundi bushya" yo kugarura urumuri ako kanya.
-  - Nyuma y'iminsi 90, buto yo Gutanga izagaragara automatic bundi bushya.
+- Ingene gikora
+  - Gukanda “I donated” bihisha udufato duto tw’inkunga n’utundi duhamagarira bijanye na two mu minsi 90.
+  - Inyibutsa y’ukugene vyifashe (status hint) yerekana “Hidden until YYYY‑MM‑DD” (itariki y’iwanyu). Hariho kandi akabuto “Show Donate again” ko gusubizaho ukugaragara ako kanya.
+  - Haciye iminsi 90, akabuto Donate kigaragara ubwako ukundi.
 
-- Ibanga & kubika
-  - Uwo muddondora ubika itariki imwe mu bubiko bwa Thunderbird kugirango wibuke igihe cy'ikiruhuko. Urufunguzo: `donateHideUntil` (ibikorwa bya epoch).
-  - Iyi setting ni umutekano wo mu murongo wawe wa Thunderbird (ntabwo ibikurikiranwa mu bicu). Nta bibazo by'uruhererekane bigira impact kuri ubu buryo.
+- Ubuzima bw’ibanga n’ububiko
+  - Umwongerezo ubika isaha imwe (timestamp) mu bubiko bwo kuri uno mukoresha bwa Thunderbird kugira wibuke igihe co gusinziza. Urufunguzo: `donateHideUntil` (milisegonda za epoch).
+  - Iri shirwaho riraguma muri porofayiro yawe ya Thunderbird (ntirisinkronizwa na cloud). Nta masabwe ya network akorwa n’iki gice.
 
-- Gukemura ibibazo
-  - Niba Gutanga ikigaragara nyuma yo gukanda "Natanze", tegereza akanya cyangwa ugarure urupapuro rw'amahitamo; UI ikomeza hazika igihe iyo setting yabitswe.
-  - Kugira ngo usubize ibyo mu buryo bwa manual, kanda "Garagaza Gutanga bundi bushya". Ushobora kandi gutegereza kugeza igihe cyanditse mu kimenyetso gishinzwe.
+- Gukemura ingorane
+  - Nimba Donate iguma yerekana ako kanya umaze gukanda “I donated”, rinda akanya canke wongere ugure urupapuro rwa Options; UI ivugurura ako kanya iyo ishirwaho (setting) ibitswe.
+  - Gusubizaho n’ukuboko, kanda “Show Donate again”. Ushobora kandi kurindira gushika itariki irimwo inyibutsa ihita.
 
-Ubu buryo burakoreshwa gusa kugirango bworohereze; ntibugira ingaruka ku mikorere y'ubutaka kandi ntikurura ibibazo byangirika ku dufunguzo dy'ibanga.
+Iki gice ni ico korohereza gusa; ntikigahagarika na rimwe imikorere y’umwongerezo kandi ntikitororokanya amakuru y’umuntu.
 
 ---

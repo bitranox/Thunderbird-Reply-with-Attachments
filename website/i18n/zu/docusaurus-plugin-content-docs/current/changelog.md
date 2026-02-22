@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'Ushintsho lwezinguquko'
+title: 'Umlando wezinguquko'
 ---
 
-## Ushintsho lwezinguquko
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Ilogu yezinguquko
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Ukuze uthole umlando ophelele, onemininingwane, bheka owerephozithri
+[CHANGELOG.md ku-GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" manje ifaka izithombe ngqo emzimbeni wempendulo njenge-base64 data URIs (default: ON); kuthuthukiswe ikhwalithi yekhodi futhi kwandiswa ukumbozwa kokuhlola.
+- 2.3.1: Igcina izinamathiselo ngemuva kokuthi i-Thunderbird ibeke ikhasi lomcimbi langemuva esimweni sokungasebenzi; ingeza ama-debug hook aqondiswe ekuxazululeni izinkinga.
+- 2.3.0: Kucokwe ukususwa kokuphindaphindwa kwezinamathiselo, kwandiswa ukumbozwa kokuhlola, futhi kwasuswa izimvume eziphelelwe yisikhathi ukuze kuhlangatshezwane nezinqubomgomo ze-AMO.
+- 2.1.0: Ukusekelwa kokwaziswa kwamazwe omhlaba okuphelele kwezilimi eziyi-100 eziphezulu
+- 2.0.0: kubhalwe kabusha kube inguqulo enezici ezigcwele (EN/DE)
+- 1.0.1: kushintshelwe ku messages.listAttachments()
+- 1.0.0: ukukhishwa kokuqala
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Izinsuku neziteshi {#dates-and-channels}
+
+- Ukukhishelwa ku-ATN kungase kuhlehlise amahora ambalwa ngemva kokupakishwa.
+- Ukwakhiwa kwe-LOCAL kuhloselwe ukuhlolwa konjiniyela kuphela futhi akusatshalaliswa nge-ATN.
+
+---

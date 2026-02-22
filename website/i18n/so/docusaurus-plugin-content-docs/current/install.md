@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Rakiba'
+title: 'Rakibid'
 slug: /install
-sidebar_label: 'Rakiba'
+sidebar_label: 'Rakibid'
 ---
 
-## Rakiba adoo isticmaalaya "Thunderbird Add-ons iyo Mawdho" {#installation-in-thunderbird-recommended}
+---
 
-:::important Nooca ugu yaraan ee Thunderbird
-Add‑on-ku wuxuu taageeraa Thunderbird **128 ESR ama ka cusub**. Noocyadii hore ma taageeraan.
+## Rakibid adigoo adeegsanaya "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Nooca ugu yar ee Thunderbird
+Kordhintani waxay taageertaa Thunderbird **128 ESR ama ka cusub**. Noocyadii hore lama taageero.
 :::
 
-Tani waa habka rakibidda ee la talinayo. Add‑on-yo laga rakibay ATN (addons.thunderbird.net) ayaa helaya cusboonaysi otomaatig ah. Rakiba LOCAL/dev ma cusbooneysiinayaan si otomaatig ah.
+Tani waa habka rakibidda ee lagu taliyey. Kordhinnada laga rakibo ATN (addons.thunderbird.net) waxay helaan cusboonaysiin otomaatig ah. Rakibaadaha LOCAL/dev si toos ah uma cusboonaysiiyaan.
 
 - Nooca ugu yaraan ee Thunderbird: 128 ESR ama ka cusub.
 
-1. Thunderbird-ka, tag **Tools > Add-ons iyo Mawdho**.
-2. Raadi "ka jawaab celin la raacayo lifaaqyada".
-3. Ku dar add-on-ka.
+1. Gudaha Thunderbird, tag **Tools > Add-ons and Themes**.
+2. Raadi "reply with attachments".
+3. Ku dar kordhinta.
 
-Ama fur bogga add-on-ka si toos ah: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Rakibidda gacanta laga bilaabo XPI {#local-installation-in-thunderbird}
-
-### Soo degsashada faylka XPI {#download-the-xpi-file}
-
-1. Tag bogga [Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Soo deji nooca ugu dambeeya ee add-on-ka sidii fayl XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Rakibida Thunderbird {#install-in-thunderbird-local}
-
-1. Fur Thunderbird.
-2. Tag **Tools > Add-ons iyo Mawdho**.
-3. Gudaha **Maareeyaha Add-ons**, guji astaanta gear ee geeska sare ee midig.
-4. Dooro **Rakib Add-on Fayl Ka...** liiska.
-5. Dooro faylka la soo dejiyey `reply_with_attachments-x.y.z-tb.xpi`.
-6. Xaqiiji rakibidda markii la waydiiyo.
+Ama si toos ah u fur bogga kordhinta: [Kordhinnada Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Rakibidda horumarinta {#installation-for-development}
+## Rakibid gacanta ah oo ka timid XPI {#local-installation-in-thunderbird}
 
-### Soo degsashada kaydka {#download-the-repository}
+### Soo deji faylka XPI {#download-the-xpi-file}
+
+1. Aad [bogga kordhinta Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Soo deji nooca ugu dambeeya ee kordhinta sidii fayl XPI (`reply_with_attachments-x.y.z-tb.xpi`).
+
+### Ku rakib gudaha Thunderbird {#install-in-thunderbird-local}
+
+1. Furo Thunderbird.
+2. Tag **Tools > Add-ons and Themes**.
+3. Gudaha **Add-ons Manager**-ka, guji astaanta qalabka ee geeska midig kore.
+4. Dooro **Install Add-on From File…** liiska.
+5. Dooro faylka `reply_with_attachments-x.y.z-tb.xpi` ee la soo dejiyey.
+6. Xaqiiji rakibidda marka lagugu wargeliyo.
+
+---
+
+## Rakibid loogu talagalay horumarinta {#installation-for-development}
+
+### Soo deji kaydka {#download-the-repository}
 
 1. Soo deji nooca ugu dambeeya ee kaydka GitHub.
-2. Orod `make help` si aad u hesho wax badan oo macluumaad ah.
+2. Orod `make help` si aad u hesho macluumaad dheeraad ah.
 
-### Rakibida Thunderbird {#install-in-thunderbird-dev}
+### Ku rakib gudaha Thunderbird {#install-in-thunderbird-dev}
 
-1. Fur Thunderbird.
-2. Tag **Tools > Add-ons iyo Mawdho**.
-3. Gudaha **Maareeyaha Add-ons**, guji astaanta gear ee geeska sare ee midig.
-4. Dooro **Rakib Add-on Fayl Ka...** liiska.
-5. Dooro faylka la abuuray `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Xaqiiji rakibidda markii la waydiiyo.
+1. Furo Thunderbird.
+2. Tag **Tools > Add-ons and Themes**.
+3. Gudaha **Add-ons Manager**-ka, guji astaanta qalabka ee geeska midig kore.
+4. Dooro **Install Add-on From File…** liiska.
+5. Dooro faylka la soo saaray `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Xaqiiji rakibidda marka lagugu wargeliyo.
 
-Fiiro gaar ah: Haddii Thunderbird aysan aqbalin `.zip` nidaamkaaga, dib u magacaw `.xpi` oo isku day "Rakib Add‑on Fayl Ka..." mar kale.
+Fiiro gaar ah: Haddii Thunderbird uusan aqbalin `.zip` nidaamkaaga, u baddel magaciisa `.xpi` oo mar kale isku day “Install Add‑on From File…”.
 
-### Halkee laga heli karaa LOCAL ZIP {#where-local-zip}
+### Halka laga helo LOCAL ZIP {#where-local-zip}
 
-- Marka hore, koobi add‑on-ka: orod `make pack` xididka kaydka.
-- Kadib koobi walba, ka raadi zip “LOCAL” xididka kaydka (tusaale, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Kahor inta aan la dib u koobin tijaabada, kordhi noocyada labadaba `sources/manifest_ATN.json` iyo `sources/manifest_LOCAL.json`.
+- Marka hore, samee xirmada kordhinta: orod `make pack` xididka kaydka.
+- Ka dib xirxiridda, ka hel zip-ka “LOCAL” xididka kaydka (tusaale, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Ka hor inta aan dib loogu xirxirin tijaabinta, kor u qaad noocyada labadaba `sources/manifest_ATN.json` iyo `sources/manifest_LOCAL.json`.
 
 ---
 
-## Demida, Ka saaris, iyo Cusboonaysiinta {#disable-uninstall-updates}
+## Demin, Ka saarid, iyo Cusboonaysiin {#disable-uninstall-updates}
 
-- Demida: Thunderbird → Tools → Add‑ons iyo Mawdho → hel add‑on-ka → toggole off.
-- Ka saaris: aragtidaas oo isku mid ah → menu saddexda dhibic → Ka saar.
-- Cusboonaysiinta: rakibaadaha ATN si otomaatig ah ayey u cusboonaysiiyaan marka noocyada cusub la ansixiyo. Rakibaadaha LOCAL/dev ma cusboonaysiinayaan si otomaatig ah; dib u rakib dhismaha LOCAL cusub gacanta.
-- Luminta dejinta gabi ahaanba: eeg [Aqoonsiga → Ka saarida xogta](privacy#data-removal).
+- Demi: Thunderbird → Tools → Add‑ons and Themes → hel kordhinta → u rogo dami.
+- Ka saar: isla aragtida → liiska saddex‑dhibcood → Remove.
+- Cusboonaysiin: Rakibaadaha ATN waxay helaan cusboonaysiin otomaatig ah marka noocyo cusub la ansixiyo. Rakibaadaha LOCAL/dev si otomaatig ah uma cusboonaysiiyaan; si gacanta ah u rakib dhisid LOCAL cusub.
+- Ka saar dejimaha gebi ahaan: eeg [Asturnaanta → Tirtirka xogta](privacy#data-removal).
 
 Sidoo kale eeg
 
-- [Degdeg](quickstart)
+- [Bilow degdeg ah](quickstart)

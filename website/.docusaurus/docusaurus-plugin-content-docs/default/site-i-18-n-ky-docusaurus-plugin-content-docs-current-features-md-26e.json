@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Өзгөчөлүктөр",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Тез баштоо",
+    "title": "Ыкчам баштоо",
     "permalink": "/Thunderbird-Reply-with-Attachments/ky/docs/quickstart"
   }
 }

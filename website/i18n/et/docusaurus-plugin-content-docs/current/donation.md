@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Annetage'
-sidebar_label: 'Annetage'
+title: 'Anneta'
+sidebar_label: 'Anneta'
 ---
 
-## Donate
+---
+
+## Anneta
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Kui sulle meeldib "Reply with Attachments" ja soovid selle arendust toetada, saad siin annetada:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Anneta Stripe'i kaudu" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>või</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Anneta PayPali kaudu" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>või</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Osta mulle kohv" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skanni, et osta mulle kohv"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Aitäh! Sinu toetus aitab säilitada ühilduvust Thunderbirdi uute väljalasetega, parandada ligipääsetavust ja teste ning hoida dokumentatsiooni ajakohasena.
 
-Notes
+Märkused
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Annetuslingid avanevad ainult siis, kui neile klõpsad; lisandmoodul ei tee taustal võrgupäringuid.
+- Korduv tugi aitab pikaajalist hooldust ja õigeaegseid uuendusi, kuid on täiesti vabatahtlik.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Kui pildinupud ei lae, kasuta palun nende asemel neid linke:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Buy Me a Coffee](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Annetused on vabatahtlikud; funktsioone ei lukustata.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Annetuste nähtavus (90‑päevane peitmine)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Lisandmoodul sisaldab mugavusfunktsiooni, mis peidab annetuse meeldetuletused mõneks ajaks pärast seda, kui oled annetanud.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Kust seda leida
+  - Sätted → Toe jaotis: näed nuppu „Ma annetasin” ja väikest vihjevälja.
+  - Saatmise kinnituse dialoogis kuvatakse samuti Anneta-nupp; see peidetakse automaatselt, kui peitmine on aktiivne.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Kuidas see töötab
+  - „Ma annetasin” klõpsamine peidab 90 päevaks annetusnupud ja seotud teated.
+  - Olekuvihje näitab „Peidetud kuni YYYY‑MM‑DD” (sinu kohaliku kuupäevana). Samuti on olemas nupp „Kuva Anneta uuesti”, mis taastab nähtavuse kohe.
+  - 90 päeva möödudes muutub Anneta-nupp taas automaatselt nähtavaks.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privaatsus ja salvestus
+  - Lisandmoodul salvestab Thunderbirdi kohalikku salvestusse ühe ajatempli, et meeles pidada peitmisperioodi. Võti: `donateHideUntil` (epohhi millisekundid).
+  - See säte on sinu Thunderbirdi profiilile kohalik (pilves ei sünkroonita). See funktsioon ei tee ühtegi võrgupäringut.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Tõrkeotsing
+  - Kui Anneta on endiselt nähtav kohe pärast „Ma annetasin” klõpsamist, oota hetk või ava Sätete leht uuesti; kasutajaliides uueneb niipea, kui säte on salvestatud.
+  - Käsitsi lähtestamiseks klõpsa „Kuva Anneta uuesti”. Võid ka oodata, kuni vihjes kuvatud kuupäev kätte jõuab.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+See funktsioon on puhtalt mugavuse jaoks; see ei blokeeri kunagi lisandmooduli funktsionaalsust ega kogu isikuandmeid.
 
 ---

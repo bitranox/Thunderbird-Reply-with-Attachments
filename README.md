@@ -18,6 +18,7 @@ Is it safe? Yes — it runs locally and uses a minimal set of permissions only t
 - Ask before adding attachments (optional). Choose the default answer (Yes/No) for quick keyboard entry.
 - Blacklist (glob patterns) to skip files automatically, case‑insensitive filename matching.
 - Warn if attachments are excluded by blacklist (default: ON). Shows a small, accessible modal listing the excluded files and the matching pattern(s). Works even if all candidates are excluded.
+- Include inline pictures (default: ON). Embedded images are restored directly in the reply body as base64 data URIs, preserving the original inline layout. Disable in Options to skip inline images entirely.
 
 See Configuration for details and examples.
 
@@ -50,6 +51,39 @@ Release process
 If you like this add‑on, please consider supporting it:
 
 ## <a href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/donate"><img src="website/static/img/donate.png" alt="Donate" width="120"></a>
+
+## Architecture
+
+The extension follows a **layered clean architecture** to keep business logic testable and framework‑independent:
+
+```
+Domain  →  Application  →  Adapters  →  Composition  →  Background
+```
+
+| Layer           | Directory                    | Responsibility                                                                                                                                            |
+| --------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Domain**      | `sources/app/domain/`        | Pure functions: attachment filtering (`includeStrict`, `includeRelaxed`), blacklist matching, content‑type helpers. No side effects.                      |
+| **Application** | `sources/app/application/`   | Use‑cases: `processReplyAttachments` orchestrates fetch → filter → attach. Depends on domain; receives adapters via injection.                            |
+| **Adapters**    | `sources/app/adapters/`      | Thunderbird WebExtension API wrappers (`messages.listAttachments`, `compose.addAttachment`, etc.). Isolates platform calls behind a consistent interface. |
+| **Composition** | `sources/app/composition.js` | Wires adapters into use‑cases, manages reactive settings (`storage.onChanged`), registers event listeners.                                                |
+| **Background**  | `sources/background.js`      | Entry point. Bootstraps install/migration, loads composition, seeds defaults.                                                                             |
+
+**Event pipeline** (reply flow):
+
+```
+compose.onStateChanged
+  → handleComposeStateChanged  (resolve tab, fetch details)
+    → ensureWrapper             (wait for settings, rebuild use‑case)
+      → ensure                  (processReplyAttachments: fetch → filter → attach)
+```
+
+Each compose tab is processed **at most once** per reply via session‑based idempotency (browser sessions API + in‑memory map).
+
+**Key design decisions:**
+
+- **Session markers** prevent duplicate processing across restarts.
+- **Reactive settings** — options changes propagate via `storage.onChanged` without restart.
+- **Confirm fallback chain** — scripting.compose → content script → messaging, with graceful degradation.
 
 ## Developer Notes (docs translations)
 

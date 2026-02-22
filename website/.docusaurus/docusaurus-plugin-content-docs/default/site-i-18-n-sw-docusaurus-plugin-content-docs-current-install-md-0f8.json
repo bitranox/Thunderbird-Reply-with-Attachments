@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Usanidi",
-  "description": "Usanidi kupitia \"Thunderbird Add-ons and Themes\"",
+  "title": "Usakinishaji",
+  "description": "---",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Usanidi",
+    "title": "Usakinishaji",
     "slug": "/install",
-    "sidebar_label": "Usanidi"
+    "sidebar_label": "Usakinishaji"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Mwanzoni",
+    "title": "Mwanzo wa Haraka",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/quickstart"
   },
   "next": {

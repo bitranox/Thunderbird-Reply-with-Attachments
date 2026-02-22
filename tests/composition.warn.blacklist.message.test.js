@@ -4,7 +4,7 @@
  * Intent: Verify that blacklist-excluded, non-inline attachments trigger a warning payload.
  */
 import { describe, it, expect } from 'vitest';
-import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
+import { createBrowserMock } from './helpers/browserMock.js';
 
 /**
  * Setup a mocked browser and composition wiring for blacklist warning tests.

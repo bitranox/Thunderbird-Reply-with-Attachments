@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Kàlàwà",
-  "description": "Features",
+  "title": "Karakteristikɛw",
+  "description": "---",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Kàlàwà",
-    "sidebar_label": "Kàlàwà"
+    "title": "Karakteristikɛw",
+    "sidebar_label": "Fonksyonalitew"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Fasa fasa",
+    "title": "Fɔlɔ cɛlɛ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/quickstart"
   }
 }

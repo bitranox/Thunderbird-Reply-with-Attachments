@@ -4,94 +4,98 @@ title: 'Pamakéan'
 sidebar_label: 'Pamakéan'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Pamakéan {#usage}
+
+- Bales sarta add‑on nambahkeun nu aslina sacara otomatis — atawa nanya heula, lamun diaktipkeun dina Opsi.
+- Duplikat dipiceun dumasar kana ngaran payil; bagian S/MIME sok diliwatan. Gambar inline dipulihkeun deui dina awak balesan sacara standar (pareuman via "Include inline pictures" dina Opsi).
+- Lampiran anu diasupkeun kana daptar hideung ogé diliwatan (pola glob teu peka hurup gede‑leutik nu nyocogkeun kana ngaran payil, lain jalur). Tingali [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Naon anu kajadian nalika ngabales {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Ndeteksi balesan → daptar lampiran aslina → saring S/MIME + inline → konfirmasi (opsional) → nambahkeun payil nu layak (ngaliwatkeun duplikat) → mulangkeun gambar inline dina awak.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Léngkah ketat vs. longgar: Add‑on mimiti ngaluarkeun bagian S/MIME jeung inline tina lampiran payil. Lamun euweuh anu layak, éta ngajalankeun léngkah longgar anu tetep ngaluarkeun S/MIME/inline tapi leuwih toleran kana sababaraha kasus (tempo Rincian Kode). Gambar inline teu kungsi ditambahkeun minangka lampiran payil; sabalikna, lamun "Include inline pictures" diaktipkeun (bawaan), éta dipasangan langsung dina awak balesan minangka data URI base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Jinis bagian                                                 |                          Léngkah ketat |                        Léngkah longgar |
+| ------------------------------------------------------------ | -------------------------------------: | -------------------------------------: |
+| Payil tanda‑tangan S/MIME `smime.p7s`                        |                           Dikaluarkeun |                           Dikaluarkeun |
+| Tipe MIME S/MIME (`application/pkcs7-*`)                     |                           Dikaluarkeun |                           Dikaluarkeun |
+| Gambar inline nu dirujuk ku Content‑ID (`image/*`)           | Dikaluarkeun (dipulihkeun dina awak\*) | Dikaluarkeun (dipulihkeun dina awak\*) |
+| Surélék dilampirkeun (`message/rfc822`) kalayan ngaran payil |                       Teu ditambahkeun |                      Bisa ditambahkeun |
+| Lampiran payil biasa kalayan ngaran payil                    |                      Bisa ditambahkeun |                      Bisa ditambahkeun |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Lamun "Include inline pictures" diaktipkeun (bawaan: HURUNG), gambar inline dipasangan dina awak balesan salaku data URI base64 tibatan ditambahkeun minangka lampiran payil. Tempo [Konfigurasi](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Conto: Sababaraha lampiran bisa waé kakurangan sababaraha header tapi tetep mangrupa payil biasa (henteu inline/S/MIME). Lamun léngkah ketat teu manggihan nanaon, léngkah longgar bisa narima éta sarta ngalampirkeunana.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Rujukan silang {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Neruskeun (Forward) teu dirobih ku rarancangna (tempo Watesan di handap).
+- Pikeun alesan kunaon lampiran bisa jadi teu ditambahkeun, tingali “Naha lampiran bisa jadi teu ditambahkeun”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Rincian Paripolah {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Nyegah duplikat:** Add‑on nandaan tab nyusun (compose) geus diprosés ngagunakeun nilai sési per‑tab jeung pangjaga dina mémori. Moal nambahkeun nu aslina dua kali.
+- Nutup lajeng muka deui jandéla nyusun dianggap salaku tab anyar (nyaéta, usaha anyar diidinan).
+- **Ngahargaan lampiran anu geus aya:** Lamun dina nyusun geus aya sababaraha lampiran, nu aslina tetep ditambahkeun sakali wungkul, bari ngalangkungan ngaran payil anu geus aya.
+- **Pangecualian:** Artefak S/MIME jeung gambar inline dikaluarkeun tina lampiran payil. Lamun teu aya anu layak dina léngkah kahiji, fallback longgar bakal mariksa deui bagian non‑S/MIME. Gambar inline diurus misah: dipulihkeun dina awak balesan salaku data URI (lamun diaktipkeun).
+  - **Ngaran payil:** `smime.p7s`
+  - **Tipe MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Gambar inline:** sakabéh bagian `image/*` nu dirujuk ku Content‑ID — dikaluarkeun tina lampiran payil tapi dipasangan dina awak balesan nalika "Include inline pictures" HURUNG
+  - **Surélék anu dilampirkeun (`message/rfc822`):** diperlakukeun salaku lampiran biasa lamun miboga ngaran payil; bisa ditambahkeun (gumantung kana pamariksaan duplikat jeung daptar hideung).
+- **Peringatan daptar hideung (lamun diaktipkeun):** Lamun calon dikaluarkeun ku daptar hideung anjeun,
+  add‑on bakal némbongkeun modal leutik anu daptar payil nu kapangaruhan jeung
+  pola anu nyocogkeun. Peringatan ieu ogé mucunghul dina kasus teu aya lampiran anu bakal
+  ditambahkeun lantaran sagalana dikaluarkeun.
 
 ---
 
-## Limitations {#limitations}
+## Pintasan kibor {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialog konfirmasi: Y/J = Enya, N/Esc = Henteu; Tab/Shift+Tab jeung konci Panah ngider fokus.
+  - “Waleran baku” dina [Konfigurasi](configuration#confirmation) netepkeun tombol anu awalna difokuskeun.
+  - Enter micu tombol nu keur difokuskeun. Tab/Shift+Tab jeung panah mindahkeun fokus pikeun akséssibilitas.
+
+### Pituduh ringkes kibor {#keyboard-cheat-sheet}
+
+| Konci           | Aksi                                     |
+| --------------- | ---------------------------------------- |
+| Y / J           | Konfirmasi Enya                          |
+| N / Esc         | Konfirmasi Henteu                        |
+| Enter           | Ngaktipkeun tombol nu difokuskeun        |
+| Tab / Shift+Tab | Mindahkeun fokus maju/mundur             |
+| Konci panah     | Mindahkeun fokus antara tombol           |
+| Waleran baku    | Netepkeun fokus awal (Enya atawa Henteu) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Watesan {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward teu dirobih ku ieu add‑on (Reply jeung Reply all didukung).
+- Lampiran anu pohara gede bisa kabeungkeut ku wates Thunderbird atawa panyadia.
+  - Add‑on ieu teu mecah atawa mampatkeun payil; ngandelkeun panangtayungan lampiran normal Thunderbird.
+- Pesen énkripsi: bagian S/MIME sengaja dikaluarkeun.
 
 ---
 
-See also
+## Naha lampiran bisa jadi teu ditambahkeun {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Gambar inline teu ditambahkeun minangka lampiran payil. Lamun "Include inline pictures" HURUNG (bawaan), éta dipasangan dina awak balesan salaku data URI sabalikna. Lamun setélanana PAREUM, gambar inline dileungitkeun sakabéhna. Tempo [Konfigurasi](configuration#include-inline-pictures).
+- Bagian tanda‑tangan S/MIME dikaluarkeun sacara rancangan: ngaran payil saperti `smime.p7s` jeung tipe MIME saperti `application/pkcs7-signature` atawa `application/pkcs7-mime` diliwatan.
+- Pola daptar hideung bisa nyaring calon: tingali [Konfigurasi](configuration#blacklist-glob-patterns); cocogna teu peka kana gedé‑leutikna hurup sarta ngan dumasar kana ngaran payil.
+- Ngaran payil duplikat teu ditambahkeun deui: lamun dina nyusun geus aya payil kalayan ngaran anu dinormalkeun sarua, éta bakal diliwatan.
+- Bagian anu lain payil atawa teu boga ngaran payil: ngan bagian kawas payil anu miboga ngaran anu bisa dianggo nu bakal dipertimbangkeun pikeun ditambahkeun.
+
+---
+
+Tingali ogé
+
+- [Konfigurasi](configuration)

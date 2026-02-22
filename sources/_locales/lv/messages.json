@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Brīdināt, ja pielikumi tiek izslēgti melnā saraksta dēļ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Iekļaut iekļautās bildes (iegultie attēli)"
+  },
   "uiDebugHeader": {
     "message": "Papildu"
   },

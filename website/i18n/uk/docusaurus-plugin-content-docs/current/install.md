@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Встановлення'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Встановлення через "Додатки і теми Thunderbird" {#installation-in-thunderbird-recommended}
+
+:::important Мінімальна версія Thunderbird
+Цей додаток підтримує Thunderbird **128 ESR або новішу**. Старіші версії не підтримуються.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Це рекомендований спосіб встановлення. Додатки, установлені з ATN (addons.thunderbird.net), отримують автоматичні оновлення. Інсталяції LOCAL/dev не оновлюються автоматично.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Мінімальна версія Thunderbird: 128 ESR або новіша.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. У Thunderbird перейдіть до **Інструменти > Додатки і теми**.
+2. Знайдіть "reply with attachments".
+3. Додайте додаток.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Або відкрийте сторінку додатка безпосередньо: [Додатки Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Ручне встановлення з XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Завантажте файл XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Перейдіть на [сторінку додатка Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Завантажте найновішу версію додатка як файл XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Встановлення в Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Відкрийте Thunderbird.
+2. Перейдіть до **Інструменти > Додатки і теми**.
+3. У **Менеджері додатків** натисніть піктограму шестерні у верхньому правому куті.
+4. У меню виберіть **Встановити додаток з файлу…**.
+5. Виберіть завантажений файл `reply_with_attachments-x.y.z-tb.xpi`.
+6. Підтвердіть встановлення, коли буде запропоновано.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Встановлення для розробки {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Завантажте репозиторій {#download-the-repository}
 
-See also
+1. Завантажте найновішу версію репозиторію GitHub.
+2. Запустіть `make help` для отримання додаткової інформації.
 
-- [Quickstart](quickstart)
+### Встановлення в Thunderbird {#install-in-thunderbird-dev}
+
+1. Відкрийте Thunderbird.
+2. Перейдіть до **Інструменти > Додатки і теми**.
+3. У **Менеджері додатків** натисніть піктограму шестерні у верхньому правому куті.
+4. У меню виберіть **Встановити додаток з файлу…**.
+5. Виберіть згенерований файл `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Підтвердіть встановлення, коли буде запропоновано.
+
+Примітка: Якщо Thunderbird не приймає `.zip` у вашій системі, перейменуйте його на `.xpi` і спробуйте «Встановити додаток з файлу…» ще раз.
+
+### Де знайти LOCAL ZIP {#where-local-zip}
+
+- Спершу запакуйте додаток: виконайте `make pack` у корені репозиторію.
+- Після пакування знайдіть zip «LOCAL» у корені репозиторію (наприклад, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Перед повторним пакуванням для тестування підвищте версії в `sources/manifest_ATN.json` і `sources/manifest_LOCAL.json`.
+
+---
+
+## Вимкнення, видалення та оновлення {#disable-uninstall-updates}
+
+- Вимкнути: Thunderbird → Інструменти → Додатки і теми → знайдіть додаток → вимкніть перемикач.
+- Видалити: у тому ж вікні → меню з трьома крапками → Видалити.
+- Оновлення: інсталяції з ATN оновлюються автоматично після затвердження нових версій. Інсталяції LOCAL/dev не оновлюються автоматично; установіть нову LOCAL-збірку вручну.
+- Повністю видалити налаштування: див. [Конфіденційність → Видалення даних](privacy#data-removal).
+
+Див. також
+
+- [Швидкий старт](quickstart)

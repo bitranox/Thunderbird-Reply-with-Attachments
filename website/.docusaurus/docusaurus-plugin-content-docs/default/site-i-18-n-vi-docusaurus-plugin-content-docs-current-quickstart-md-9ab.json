@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Khởi đầu nhanh",
-  "description": "Quickstart",
+  "title": "Bắt đầu nhanh",
+  "description": "---",
   "source": "@site/i18n/vi/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Khởi đầu nhanh",
-    "sidebar_label": "Khởi đầu nhanh"
+    "title": "Bắt đầu nhanh",
+    "sidebar_label": "Bắt đầu nhanh"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Тез баштоо",
-  "description": "Quickstart",
+  "title": "Ыкчам баштоо",
+  "description": "---",
   "source": "@site/i18n/ky/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Тез баштоо",
-    "sidebar_label": "Тез баштоо"
+    "title": "Ыкчам баштоо",
+    "sidebar_label": "Ыкчам баштоо"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "বিকাশ",
-  "description": "Development Guide",
+  "title": "উন্নয়ন",
+  "description": "---",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "বিকাশ",
-    "sidebar_label": "বিকাশ"
+    "title": "উন্নয়ন",
+    "sidebar_label": "উন্নয়ন"
   },
   "sidebar": "docs",
   "previous": {

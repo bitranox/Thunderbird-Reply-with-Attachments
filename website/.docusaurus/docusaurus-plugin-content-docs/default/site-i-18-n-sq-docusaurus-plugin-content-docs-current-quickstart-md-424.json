@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Shpejtësia e fillimit",
-  "description": "Quickstart",
+  "title": "Udhëzues i shpejtë",
+  "description": "---",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Shpejtësia e fillimit",
-    "sidebar_label": "Shpejtësia e fillimit"
+    "title": "Udhëzues i shpejtë",
+    "sidebar_label": "Fillim i shpejtë"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Karakteristikat",
+    "title": "Veçoritë",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/features"
   },
   "next": {
-    "title": "Instalimi",
+    "title": "Instalim",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/install"
   }
 }

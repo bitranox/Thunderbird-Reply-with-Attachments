@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalare",
-  "description": "Instalare prin \"Add-ons și teme Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Începere rapidă",
+    "title": "Pornire rapidă",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/quickstart"
   },
   "next": {

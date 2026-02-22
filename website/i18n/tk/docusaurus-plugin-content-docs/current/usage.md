@@ -4,93 +4,97 @@ title: 'Ulanyş'
 sidebar_label: 'Ulanyş'
 ---
 
-## Usage {#usage}
+---
 
-- Jawap beriň we goşmaça öz-özüni aňladyp berer — ýa-da ilkinji gezek sorar, Eltip bermekde mümkinçiligi açyk bolsa.
-- Faýl ady boýunça gaýtalanmaýar; S/MIME we düýpli şekiller hemişe geçilýär.
-- Garamaýan goşmaçalar hem geçilýär (faýl adlary bilen deňeşdirilýän, ýalňyş degişli glob nusgalary). [Konfigurasiýa](configuration#blacklist-glob-patterns) görüň.
+## Ulanylyş {#usage}
+
+- Jogap berilýär we goşundy asyllary awtomatiki goşýar — ýa-da Sazlamalarda açyk bolsa, ilki sorag berýär.
+- Faýl ady boýunça gaýtalanmalar aýrylýar; S/MIME bölekleri hemişe geçilip gidilýär. Öňünden bellenen ýagdaýda içerki (inline) suratlardyr şekiller jogabyň göwründe dikeldilýär (Sazlamalardaky "Include inline pictures" arkaly öçürip bolýar).
+- Gara sanawa goşulan goşundylary hem geçýär (uly/kiçi harpa duýgynsyz, faýl atlaryna gabat gelýän glob nagyşlary; ýollara däl). [Sazlama](configuration#blacklist-glob-patterns) bölümine serediň.
 
 ---
 
-### What happens on reply {#what-happens}
+### Jogap berilende näme bolýar {#what-happens}
 
-- Jawap detekçirlenýär → asl goşmaçalar sanawyna alynýar → S/MIME + düýpli şekilleri filtrle → islege görä tassykla → degişli faýllary goş (gaýtalanmalardan geç).
+- Jogapy anykla → asyl goşundylary sana → S/MIME + içerki bölekleri süz → islege bagly tassyk → laýyk faýllary goş (gaýtalanmalary geç) → içeri goýlan suratlary göwründe dikelt.
 
-Gaty çäklendirilen we rahat geçiş: Goşmaça ilkinji nobatda S/MIME we düýpli bölekleri dışlamaly. Eger hiç hili ýaramly bolsa, oňa ýumşak geçiş edilýär, bu S/MIME/inline geçirmese-de has köp ýagdaýlary kabul edýär (Kod Detallaryny görüň).
+Berk we ýumşadylan geçiriliş: Goşundy ilki bilen faýl goşundylaryndan S/MIME hem-de içerki (inline) bölekleri çykarmaga synanyşýar. Hiç zat laýyk gelmese, ýene-de S/MIME/inline böleklerini çykaryp, ýöne has köp ýagdaýy kabul edýän ýumşadylan geçirilişi işletýär (Kodyň Jikme-jikligi bölümine serediň). Içerki suratlar hiç haçan faýl goşundylary hökmünde goşulmaýar; muňa derek, "Include inline pictures" açyk bolsa (bellenşi ýaly), olar jogabyň göwründe gönüden-göni base64 data URI hökmünde gömülýär.
 
-| Pati türü                                             |    Gaty geçiş |   Rahat geçiş |
-| ----------------------------------------------------- | ------------: | ------------: |
-| S/MIME ýagdaý faýly `smime.p7s`                       |       Geçildi |       Geçildi |
-| S/MIME MIME görnüşleri (`application/pkcs7-*`)        |       Geçildi |       Geçildi |
-| Düýpli şekil, Mazmun-ID arkaly görkezilen (`image/*`) |       Geçildi |       Geçildi |
-| Garalan email (`message/rfc822`) faýl ady bilen       |    Goşulmaýar | Goşulyp biler |
-| Adatça faýl goşmasy faýl ady bilen                    | Goşulyp biler | Goşulyp biler |
+| Böleg görnüşi                                          |                    Berk geçiriliş |              Ýumşadylan geçiriliş |
+| ------------------------------------------------------ | --------------------------------: | --------------------------------: |
+| S/MIME gol faýly `smime.p7s`                           |                          Aýrylýar |                          Aýrylýar |
+| S/MIME MIME görnüşleri (`application/pkcs7-*`)         |                          Aýrylýar |                          Aýrylýar |
+| Content‑ID arkaly salgylanan içerki surat (`image/*`)  | Aýrylýar (göwründe dikeldilýär\*) | Aýrylýar (göwründe dikeldilýär\*) |
+| Faýl ady bolan birikdirilen e-poçta (`message/rfc822`) |                        Goşulmaýar |                    Goşulyp bilner |
+| Faýl ady bolan adaty faýl goşundysy                    |                    Goşulyp bilner |                    Goşulyp bilner |
 
-Mysal: Käbir goşmaçalar käbir baş ýazgylardan mahrum bolup biler, ýöne henizem adatça faýllardyr (düýpli/S/MIME däl). Eger gaty geçiş hiç hili tapmasa, rahat geçiş şolary kabul edip, goşup biler.
+\* "Include inline pictures" açyk ýagdaýda (default: ON), içerki suratlar faýl goşundylary hökmünde goşulmagyň ýerine jogabyň göwründe base64 data URI görnüşinde gömülýär. [Sazlama](configuration#include-inline-pictures) bölümine serediň.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Ilkiňi üýtgedilmeýär (aşakdaky Çäkler üçin görüň).
-- Goşmaçanyň goşulmazlygynyň sebäpleri üçin, “Goşmaçalar näme üçin goşulmaz” -a göz ýetiriň.
+Mysal: Käbir goşundylaryň käbir başlyklar (headers) bolman biler, ýöne şonda-da olar adaty faýllardyr (içerki/S/MIME däl). Berk geçiriliş hiç birini tapmasa, ýumşadylan geçiriliş şolary kabul edip, goşup biler.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Çapraz salgylanmalar {#cross-reference}
 
-- **Gaýtalanmalary öňüni almak:** Goşmaça amal gepleşigi işleýär we her bülbül üçin sessiýa bahasy we ýadylda howpsuzlyk nyşanyny ulanyp işjelini belleyýär. Şoň bilen asl goşmaçalar iki gezek goşulmaz.
-- Geçiriji gapany ýapmak we gaýtadan açmak täze bülbül aýdylypdyr (yani täze synanyşmaga mümkinçilik berilýär).
-- **Yşşyl goşmaçalar:** Eger gepleşigiň içinde käbir goşmaçalar bar bolsa, asl goşmaçalar bir gezek amala aşyrylýar, eýsem bar bolan faýl adlaryny geçýär.
-- **Geçirmeler:** S/MIME serişdeleri we düýpli şekiller görmezlikde çykýarlar. Eger ilkinji geçişde hiç hili ýaramly bolsa, ýumşak gaýtadan gözden geçiriş S/MIME däl bölekleri gaýtadan gözden geçirýär.
-  - **Faýl adlary:** `smime.p7s`
+- Ugratmak (Forward) niýet boýunça üýtgedilmeýär (aşakdaky Çäklemelere serediň).
+- Goşundynyň näme sebäplerden goşulman biljekdigine “Goşundylar näme üçin goşulman biler” bölüminden serediň.
+
+---
+
+## Hereketiň jikme-jik maglumatlary {#behavior-details}
+
+- **Gaýtalanmalaryň öňüni almak:** Goşundy her tab boýunça sessiýa gymmaty we ýatda saklanylýan goralgy bilen ýazuw (compose) tab-yny gaýtadan işlendi diýip belleýär. Asyllary iki gezek goşmaz.
+- Ýazuw penjiresini ýapyp-gaýtadan açmak täze tab hökmünde kabul edilýär (ýaňky ýaly täze synanyşyk rugsat berilýär).
+- **Bar goşundylara hormat:** Eger ýazuwda eýýäm käbir goşundylary bar bolsa, asyllar hem diňe bir gezek goşular; eýýäm bar bolan faýl adlary geçilip gidiler.
+- **Aýyrmalar:** S/MIME artefaktlary we içerki suratlar faýl goşundylaryndan çykarylýar. Ilki geçirilişte hiç zat laýyk gelmese, ýumşadylan ätiýaçlyk geçirilişi S/MIME däl bölekleri gaýtadan barlaýar. Içerki suratlar aýratynça gaýragoýulýar: olar jogabyň göwründe data URI hökmünde dikeldilýär (açyk bolan ýagdaýynda).
+  - **Faýl atlary:** `smime.p7s`
   - **MIME görnüşleri:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Düýpli şekiller:** E-poçta başyndaky Mazmun-ID arkaly görkezilen herhangi bir `image/*` bölegi
-  - **Garalan e-mailler (`message/rfc822`):** faýl ady bilen berk goşmaçalar hökmünde kabul edilýär; goşup biler (gaýtalanma ýygydynyň we gara lista görä).
-- **Geçiriji duýduryşy (eğer açyk bolsa):** Eger başdan geçirmede gözden geçirilmese, goşma geçiriji
-  goşulan faýllaryň we laýyk
-  nusgalaryň sanawyny görkezýän kiçi modal görkezýär. Bu duýduryş, hiç hili goşmaçanyň goşulmazlygy sebäpli hiç hili goşma geçirmese hem peýda bolýar.
+  - **Içerki suratlar:** Content‑ID arkaly salgylanan islendik `image/*` bölegi — faýl goşundylaryndan çykarylýar, ýöne "Include inline pictures" ON ýagdaýynda jogap göwrüne gömülýär
+  - **Birikdirilen e-poçtalar (`message/rfc822`):** faýl ady bar bolsa, adaty goşundy hökmünde garalýar; goşulyp bilner (gaýtalama barlaglaryna we gara sanawa bagly).
+- **Gara sanaw duýduryşy (açyk bolsa):** Kandidatlar gara sanawyňyz tarapyndan çykarylanda,
+  goşundy täsir eden faýllary we gabat gelen nagyş(lar)y görkezýän ownuk bir modal görkezýär.
+  Bu duýduryş hemme zat çykarylanlygy sebäpli hiç hili goşundy goşulmajak ýagdaýlarda hem peýda bolýar.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Klawiatura gysga ýollary {#keyboard-shortcuts}
 
-- Tassyklama dialogy: Y/J = Hawa, N/Esc = Hawa däl; Tab/Shift+Tab we Yönlendirme düwmesine üçüri.
-  - “Awtomatiki jogap” [Konfigurasiýa](configuration#confirmation) başlangyç üns berýän düwme üpjün etmelidir.
-  - Enter üns berýän düwmäni işledýär. Tab/Shift+Tab we tarapy üns berýän düwmeleriň arasynda hereket etdirýär.
+- Tassyklaýyş penjiräsi: Y/J = Hawa, N/Esc = Ýok; Tab/Shift+Tab we Ok düwmeleri fokusy aýlaýar.
+  - [Sazlama](configuration#confirmation) bölümindäki “Deslapky jogap” ilki fokus edilen düwmäni kesgitleýär.
+  - Enter fokus edilen düwmäni işledýär. Elýeterlilik üçin fokusy Tab/Shift+Tab we oklar üsti bilen süýşüriň.
 
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+### Klawiatura boýunça gysga nusga {#keyboard-cheat-sheet}
 
-| Düwme                 | İşlem                                     |
-| --------------------- | ----------------------------------------- |
-| Y / J                 | Hawa tassyklap geçiň                      |
-| N / Esc               | Hawa däl tassyklap geçiň                  |
-| Enter                 | Üns berýän düwmäni işledýär               |
-| Tab / Shift+Tab       | Üns berme(n) öňe/gatarda hereket etdiriň  |
-| Yönlendirme düwmeleri | Düwmeler arasyndaky üns bermegi geçirýär  |
-| Başlanjyç jogap       | Başlangyç üns berme (Hawa ýa-da Hawa däl) |
-
----
-
-## Limitations {#limitations}
-
-- Goşmaça hiç hili üýtgedilmeýär (Jawap we Jawaplar birikmesi goldanýar).
-- Çoň goşa goşmaçalar Thunderbird ýa-da üpjün ediji çäklendirmek bilen baglanyşykly bolup biler.
-  - Goşmaça faýllary birikdirmeýär ýa-da gurşaklamaz; Meta oňa Thunderbird‑iň adatça goşmaçalara garamagy bilen baglanyşýar.
-- Şifrlenen habarlar: S/MIME bölekleri öz-özüne geçilýär.
+| Düwmeler        | Hereket                                |
+| --------------- | -------------------------------------- |
+| Y / J           | Hawany tassykla                        |
+| N / Esc         | Ýogy tassykla                          |
+| Enter           | Bellenen düwmäni işjeňleşdir           |
+| Tab / Shift+Tab | Fokusy öňe/yzyna geçir                 |
+| Ok düwmeleri    | Fokusy düwmeleriň arasynda geçir       |
+| Deslapky jogap  | Ilkinji fokusy düzýär (Hawa ýa-da Ýok) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Çäklemeler {#limitations}
 
-- Düýpli şekiller geçilýär: habarda Mazmun-ID arkaly görkezilen bölekler faýllar hökmünde goşulmaýar.
-- S/MIME nyşan bölekleri öz-özüne geçilýär: ady `smime.p7s` ýaly faýllar we MIME görnüşleri `application/pkcs7-signature` ýa-da `application/pkcs7-mime` ýaly geçýär.
-- Garamaýan nusgalar kandidatlary süzgün eder: [Konfigurasiýa](configuration#blacklist-glob-patterns) görüň; uygunlykdan geçmek ýüze çykarylmaýar we faýl adyna geçýärler.
-- Gaýtalanýan faýl adlary goşulmaýar: eğer gepleşige öňden bar bolan faýl ady bilen kesgitlenendigi ýüze çykmasa, o geçilýär.
-- Faýl däl bölekler ýa-da ýok faýl adlary: diňe peýdalanyş faýllara degişli bolan bölekler goşmak üçin göz öňüne tutulýar.
+- Bu goşundy Ugratmagy (Forward) üýtgetmeýär (Jogap ber we Hemmesine jogap ber goldanýar).
+- Örän uly goşundylara Thunderbird ýa-da hyzmat berijiniň çäkleri degişlidir.
+  - Goşundy faýllary böleklemez ýa-da gysmaz; Thunderbird-iň adaty goşundy dolandyryşyna bil baglaýar.
+- Şifrlenen hatlar: S/MIME bölekleri ýörite çykarylýar.
 
 ---
 
-See also
+## Goşundylar näme üçin goşulman biler {#why-attachments-might-not-be-added}
 
-- [Konfigurasiýa](configuration)
+- Içerki suratlar faýl goşundylary hökmünde goşulmaýar. "Include inline pictures" ON ýagdaýynda (bellenşi ýaly), olar munuň ýerine jogabyň göwründe data URI hökmünde gömülýär. Sazlama üçin serediň: [Sazlama](configuration#include-inline-pictures).
+- S/MIME gol bölekleri niýet boýunça çykarylýar: `smime.p7s` ýaly faýl atlary we `application/pkcs7-signature` ýa-da `application/pkcs7-mime` ýaly MIME görnüşleri geçilip gidilýär.
+- Gara sanaw nagyşlary kandidatlary süzüp biler: [Sazlama](configuration#blacklist-glob-patterns); gabat gelme harp ululygyna duýgynsyz we diňe faýl ady boýunça amala aşyrylýar.
+- Gaýtalanýan faýl atlary täzeden goşulmaýar: eger ýazuwda eýýäm şol bir kadalaşdyrylan ada eýe faýl bar bolsa, ol geçilip gidilýär.
+- Faýl däl bölekler ýa-da faýl adynyň ýoklygy: diňe ulanyp boljak faýl ady bolan faýl-ýaly bölekler goşmaga seredilýär.
+
+---
+
+Şeýle hem serediň
+
+- [Sazlama](configuration)

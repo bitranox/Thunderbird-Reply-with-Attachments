@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Dembal",
-  "description": "Dembal",
+  "title": "Fuɗɗugol yaawre",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Dembal",
-    "sidebar_label": "Dembal"
+    "title": "Fuɗɗugol yaawre",
+    "sidebar_label": "Fuɗɗorde Yaawnde"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ndaari",
+    "title": "Fannuuji",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/features"
   },
   "next": {
-    "title": "Daɗo",
+    "title": "Aafgol",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/install"
   }
 }

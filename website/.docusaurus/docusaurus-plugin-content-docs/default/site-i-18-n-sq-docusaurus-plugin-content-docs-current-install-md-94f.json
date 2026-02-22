@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Instalimi",
-  "description": "Instalimi përmes \"Shtesave dhe Temave të Thunderbird\"",
+  "title": "Instalim",
+  "description": "---",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Instalimi",
+    "title": "Instalim",
     "slug": "/install",
-    "sidebar_label": "Instalimi"
+    "sidebar_label": "Instalim"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Shpejtësia e fillimit",
+    "title": "Fillim i shpejtë",
     "permalink": "/Thunderbird-Reply-with-Attachments/sq/docs/quickstart"
   },
   "next": {

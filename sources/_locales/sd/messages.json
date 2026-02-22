@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "جيڪڏهن منسلڪون بليڪ لسٽ سبب خارج ٿين، ته خبردار ڪيو"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ان لائن تصويرون شامل ڪريو (ايمبيڊ ٿيل تصويرون)"
+  },
   "uiDebugHeader": {
     "message": "ترقي يافته"
   },

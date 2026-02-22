@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'تەۋرىقنامە'
+title: 'ئۆزگىرىشلەر خاتىرىسى'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## ئۆزگىرىشلەر خاتىرىسى
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+تولۇق ۋە تەپسىلىي تارىخىنى كۆرۈش ئۈچۈن خەزىنىنىڭ
+[GitHub دىكى CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) نى كۆرۈڭ.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" ھازىر رەسىملەرنى ئىنكاس مەزمۇنىغا بىۋاسىتە base64 data URI سۈپىتىدە قىستۇرىدۇ (كۆڭۈلدىكى: ON); كود سۈپىتى ياخشىلاندى ۋە سىناق قاپلىمىسى كېڭەيتىلدى.
+- 2.3.1: Thunderbird ئارقا تەرەپ ۋاكە بەتنى بوش ھالىەتكە كىرگۈزگەندىن كېيىنمۇ قوشۇمچىلارنى ساقلاپ قالىدۇ; كاشىلىنى تۈزەتشكە ياردەم بېرىش ئۈچۈن نىشانلىق دەبەگلەش ئىلمەكلىرى قوشۇلدى.
+- 2.3.0: قوشۇمچىلارنى تەكرارلىنىشتىن ساقلاش مىخانىزمى نازۇكلاشتۇرۇلدى، سىناق قاپلىمىسى كېڭەيتىلدى، ۋە AMO سىياسىتىگە ماس كېلىشى ئۈچۈن ئەسكىرىگەن ئىجازەتلەر چىقىرىۋېتىلدى.
+- 2.1.0: ئالدىنقى 100 تىل ئۈچۈن تولۇق خەلقئارىلاشتىرىش قوللىشى
+- 2.0.0: تولۇق ئىقتىدارلىق نەشرگە قايتا يېزىلدى (EN/DE)
+- 1.0.1: messages.listAttachments() غا ئالماشتۇرۇلدى
+- 1.0.0: دەسلەپكى تارقىتىش
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## چېسلا ۋە كاناللار {#dates-and-channels}
+
+- قاپلاشتىن كېيىن ATN غا تارقىتىلىشى بىر قانچە سائەت كېچىكىشى مۇمكىن.
+- LOCAL يىغىلغان نەشرلەر پەقەت ئىجادىيەتچىلەرنىڭ سىناش ئۈچۈنلا بولۇپ، ATN ئارقىلىق تارقىتىلمايدۇ.
+
+---

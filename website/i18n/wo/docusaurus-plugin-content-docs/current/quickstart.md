@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Dafarekat'
-sidebar_label: 'Dafarekat'
+title: 'Tàmbali bu gaaw'
+sidebar_label: 'Tàmbali bu gaaw'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Tàmbali gaaw
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Wërsiyon u Thunderbird gën a tuuti
+Add‑on bi dafa jappandi Thunderbird **128 ESR walla yu bees**. Wërsiyon yu yàgg duñu ñu jappandi.
+:::
+
+:::note Amul telemeteri; amul jokkoo ci ginnaaw
+Add‑on bi du ràññee analitik/telemeteri te du def benn laaj jokkoo ci ginnaaw. Jokkoo bi dafay am rekk su nga bëssaale lëkkal yi biti (Docs, GitHub, Donate).
+:::
+
+---
+
+### Samp
+
+1. Samp add‑on bi ci Thunderbird Add‑ons.
+2. Teeylu: Suqal nottle (Options → “Laaj la ci kanam laata ñu yokk fichié yi”).
+3. Teeylu: Bàyyi artu “blacklist” bi suqal (defóo): “Yëgle su fichié yi ñu wàññi ci blacklist”.
+4. Teeylu: Yokk patterns yu blacklist (benn ci rëdd), misaal:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Wacce: “# …” bi ci kaw mooy xaatim (comment) ci dokimánt bii; bul dugal xaatim ci patterns yi nga takkaale ci Options. Dugalal benn pattern ci rëdd bu benn rekk rekk.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Leegi tontu ci benn bataaxal bu am fichié yi ñu yokk — yi jëkk yi dina ñu yokk leen bopp-bopp ndigal walla ginnaaw nottle bu gaaw. Su amee benn fichié bu ñu wàññi ci sa blacklist, dina nga gis yëgle bu gàtt buy lim leen.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Wóorl {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Tontu ci benn bataaxal bu am 1–2 fichié ñu yokk te wóor ni yi jëkk yi ñu yokk nañu leen ci palanteeru bind bi.
+- Ngir regle doxu bi, gis [Tànneefi](configuration) (suqali nottle, tontu bu defóo, patterns yu blacklist).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Wóorl artu blacklist {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Tontu ci benn bataaxal bu am benn fichié mel ni “secret.txt”.
+- Su “Yëgle su fichié yi ñu wàññi ci blacklist” suqal, waxtaanukaay bu ndaw dina lim fichié yi ñu wàññi ak pattern bi mët.
+
+Su boo gisul artu, wóorla ne pattern bi mët ak turu fichié bi bu mat (tur-fichié rekk, du xamm aarafi mag walla tuuti — case‑insensitive). Xool Tànneefi → Blacklist.
+
+---
+
+### Léeb ci klawiye {#keyboard-note}
+
+- Palanteeru nottle bi day jàpp Y/J ngir Waaw ak N/Esc ngir Déet. Ci ay klawiye yu du Latin, araf yi mëna soppiku; Enter mooy dëggal butoŋ bi am fokus.
 
 ---

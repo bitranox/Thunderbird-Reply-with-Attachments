@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Sazan'
+title: 'Sazkirin'
 slug: /install
-sidebar_label: 'Sazan'
+sidebar_label: 'Sazkirin'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Sazkirin bi rêya "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Guhertoya herî kêm ya Thunderbird
+Ev pêvek Thunderbird **128 ESR an jî nûtir** piştgirî dike. Guhertoyên kevintir nayên piştgirî kirin.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Ev rêbaza sazkirinê ya pêşniyarkirî ye. Pêvekên ku ji ATN (addons.thunderbird.net) hatine sazkirin nûvekirinên bixweber distînin. Sazkirinên LOCAL/dev nûvekirina bixweber nake.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Guhertoya herî kêm a Thunderbird: 128 ESR an jî nûtir.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Di Thunderbird de, here **Tools > Add-ons and Themes**.
+2. "reply with attachments" bigere.
+3. Pêvekê zêde bike.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+An jî rûpela pêvekê rasterast veke: [Pêvekên Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Sazkirina destanî ji XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Daxistina pelê XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Biçe [Rûpela Pêveka Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Wersiyona dawî ya pêvekê wek pelê XPI (`reply_with_attachments-x.y.z-tb.xpi`) daxe.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Sazkirin di Thunderbird de {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird veke.
+2. Here **Tools > Add-ons and Themes**.
+3. Di **Add-ons Manager** de, li kûna jor-rastê îkona çarxê bikirtîne.
+4. Ji pêşeka hilbijartinan re **Install Add-on From File…** hilbijêre.
+5. Pelê `reply_with_attachments-x.y.z-tb.xpi` ya daxistî hilbijêre.
+6. Dema ku tê xwestin, sazkirinê pejirîne.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Sazkirin ji bo pêşdebirin {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Daxistina depoyê {#download-the-repository}
 
-See also
+1. Wersiyona dawî ya depoyê li ser GitHubê daxe.
+2. Ji bo agahdariya zêdetir `make help` bixebitîne.
 
-- [Quickstart](quickstart)
+### Sazkirin di Thunderbird de {#install-in-thunderbird-dev}
+
+1. Thunderbird veke.
+2. Here **Tools > Add-ons and Themes**.
+3. Di **Add-ons Manager** de, li kûna jor-rastê îkona çarxê bikirtîne.
+4. Ji pêşeka hilbijartinan re **Install Add-on From File…** hilbijêre.
+5. Pelê `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ya hatî afirandin hilbijêre.
+6. Dema ku tê xwestin, sazkirinê pejirîne.
+
+Nîşe: Heke Thunderbird di pergalê te de `.zip` qebûl neke, navê wê biguherîne `.xpi` û dîsa “Install Add‑on From File…” biceribîne.
+
+### Li ku ZIP a LOCAL bibînin {#where-local-zip}
+
+- Pêşî, pêvekê pakêt bike: di kokê depoyê de `make pack` bixebitîne.
+- Piştî pakêt kirinê, ZIP‑a “LOCAL” di kokê depoyê de bibîne (mînak, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Berî ji bo ceribandinê careke din pakêt bikî, hejmarên guhertoyan di herdu `sources/manifest_ATN.json` û `sources/manifest_LOCAL.json` de berz bike.
+
+---
+
+## Neçalakkirin, Rakirin, û Nûvekirin {#disable-uninstall-updates}
+
+- Neçalakkirin: Thunderbird → Tools → Add‑ons and Themes → pêvekê bibîne → toggle off.
+- Rakirin: heman dîtin → pêşeka sê‑xalî → Remove.
+- Nûvekirin: Dema guhertoyên nû pejirandî bibin, sazkirinên ji ATNê nûvekirina bixweber distînin. Sazkirinên LOCAL/dev nûvekirina bixweber nake; bi destanî avakirina LOCAL ya nû careke din saz bike.
+- Rêzeyên mîhengê temamen rake: bibîne [Taybetî → Rakirina daneyan](privacy#data-removal).
+
+Her weha bibîne
+
+- [Destpêka zû](quickstart)

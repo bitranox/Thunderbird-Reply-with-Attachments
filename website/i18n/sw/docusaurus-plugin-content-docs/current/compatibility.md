@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Ulinganifu'
-sidebar_label: 'Ulinganifu'
+title: 'Uoanifu'
+sidebar_label: 'Uoanifu'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Uoanifu {#compatibility}
+
+:::important Toleo la chini kabisa la Thunderbird
+Kiongezi hiki kinaauni Thunderbird **128 ESR au jipya zaidi**. Matoleo ya zamani hayaungiwi mkono.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR au toleo jipya zaidi linaungwa mkono (128.x+).
+- Matoleo ya zamani ya Thunderbird hayaungiwi mkono.
+- Imejaribiwa kwenye Windows, macOS, na Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 haiungiwi mkono
+Manifest V2 haiungiwi mkono. Kiongezi kinalenga **Manifest V3 (MV3)** kwenye Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Utatuzi {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ikiwa kiongezi hakifanyi kazi kama inavyotarajiwa, hakikisha unatumia toleo linaloendana la Thunderbird (128 ESR au la baadaye).
+- Kagua konsoli ya makosa ya Thunderbird (**Tools > Developer Tools > Error Console**) kwa matatizo yoyote yanayohusiana na kiongezi.
+- Ikiwa mipangilio iliyohifadhiwa inaonekana haitumiki ipasavyo, anzisha upya Thunderbird na ujaribu tena. (Thunderbird inaweza kuhifadhi hali kwenye akiba kati ya vikao; kuanzisha upya kunahakikisha mipangilio mipya inapakiwa.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Migongano inayojulikana {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Hakuna inayojulikana kwa sasa. Ikiwa unaona viambatisho vinavyojirudia mara kwa mara au hitilafu unapotumia pamoja na viongezi vingine, tafadhali ripoti ukiweka hatua za kuzaa tatizo.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Matoleo ya Thunderbird Beta na Daily (Nightly) kwa ujumla yanaungwa mkono, lakini mabadiliko upande wa mradi mkuu (upstream) yanaweza wakati mwingine kuvuruga mienendo ya kiongezi. Ukikutana na matatizo, tafadhali yaripoti na ujumuishe toleo halisi la Thunderbird (mf., “Daily 131.0a1 2025‑09‑10”).
+- Umekutana na kurudi nyuma (regression) kwenye Beta/Nightly? Tafadhali liripoti ukiweka hatua za kuzaa tatizo — tazama [Usaidizi](support) — na ujumuishe maelezo kamili ya ujenzi wa Thunderbird.
 
 ---

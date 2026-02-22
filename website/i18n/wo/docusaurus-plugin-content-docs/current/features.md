@@ -1,34 +1,36 @@
 ---
 id: features
-title: 'Fonksyonalités'
-sidebar_label: 'Fonksyonalités'
+title: 'Kàttan yi'
+sidebar_label: 'Jikko yi'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Li muy def {#features}
 
-## How It Works {#how-it-works}
+- Bu tontu, dina yokk ci boppam dencukaay yi ci imeel bi jëkk.
+- Jikko bu ñu mën a réglé: dencukaay yi mën nañu
+  - ñu yokk leen ci boppam, walla
+  - ñu yokk leen rekk bu ñu tabb ko (waxtaanukaay wu ndaw, wu mën a dugg). Ci Options nga
+    mën suqali tabb gi te fal tontu bu ndaw (Waaw/Deedeet).
+- Liste bu tere bu tur-u dencukaay (glob patterns) dafay tere dencukaay yiy jafe ñu yokk leen ci boppam. Misaal: `*intern*`, `*secret*`, `*passwor*`. Jàppante bi du xamal araf yu mag walla yu ndaw te xool na turu dencukaay rekk; joxal benn pattern bu ne ci rëdd bu ne ci Options.
+- Artu ci liste bu tere bi (fal, te suqali na ko ci ndamir): su dencukaay yi ñu dàq ndax sa liste bu tere, benn modaal bu ndaw dina wone dencukaay bi ak pattern yi mu mat. Neex na ci dark‑mode te keyboard mën na ko jot (Enter/Esc ngir tëj).
+- Dox na ak Reply ak Reply all. Add-on bii du soppi Forward.
+- Dina yokk yi jëkk yooyu xeven boo yokkaloon dara; dafay moytu ñaari-yokk ci turu dencukaay bi.
+- Parru ñaari-yokk bu tab bu ne dafay tere yokk ñaar-yoon ci koñu bind bi benn rekk.
+- Ci ndamir, mu bàyyi S/MIME certificates yi ngir baña am dencukaay yu amul solo.
+- Boole nataali biir-tekki (default: ON). Nataali yu nëbbu dañu leen dellusi bu yoon ci jëmmalin u tontu bi niki base64 data URIs, di aar taxawaayu biir bi ni mu nekkkoon. Suuxal ko ci Options ngir bayyi nataali biir-tekki bépp.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Naka la dox {#how-it-works}
+
+- Bu tontu, add-on bi di lim dencukaay yi jëkk.
+- Dafay yàq S/MIME signatures yi ci dencukaay yi; nataali biir-tekki dañu leen dellusi ci mbind mi (buleesu suuxal bi).
+- Mana laaj tabb (neex na ci klawiye).
+- Dina yokk dencukaay yi mën a japp ci sa koñu bind, te moytu ñaari-yokk ci turu dencukaay.
+- Seetal “Loolu tax dencukaay yi mënul ñu yokk” ci Usage ngir mbir yu nemmeeku.
+
+Xelal suutar: Yépp doxalin bi am na ci biir Thunderbird. Add-on bi du def benn kër-jàpp ci lëkkalekaay ci ginnaaw.
+
+---

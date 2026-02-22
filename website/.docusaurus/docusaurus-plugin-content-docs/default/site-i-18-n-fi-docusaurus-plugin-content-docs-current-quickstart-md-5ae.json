@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Aloitusopas",
-  "description": "Aloitusopas",
+  "title": "Pikaopas",
+  "description": "---",
   "source": "@site/i18n/fi/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Aloitusopas",
-    "sidebar_label": "Aloitusopas"
+    "title": "Pikaopas",
+    "sidebar_label": "Pikaopas"
   },
   "sidebar": "docs",
   "previous": {

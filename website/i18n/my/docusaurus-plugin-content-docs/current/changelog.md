@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'တိကျမှုများ'
+title: 'အပြောင်းအလဲ မှတ်တမ်း'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## ပြောင်းလဲမှုမှတ်တမ်း
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+အသေးစိတ် အပြည့်အစုံသော မှတ်တမ်းအတွက်၊ repository ၏
+[GitHub ပေါ်ရှိ CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) ကိုကြည့်ပါ။
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" သည် ယခုတွင် ပြန်စာ၏ ကိုယ်ထည်အတွင်းသို့ ပုံများကို base64 data URI များအဖြစ် တိုက်ရိုက်ထည့်သွင်းပေးပါသည် (မူလသတ်မှတ်ချက်: ON)။ ကုဒ်အရည်အသွေး တိုးတက်ကောင်းမွန်စေခြင်းနှင့် စမ်းသပ်မှုအကျယ်အဝန်း တိုးချဲ့မှုများပါဝင်သည်။
+- 2.3.1: Thunderbird က background event page ကို idle လုပ်သည့်အချိန်တွင်လည်း ဆက်တွဲဖိုင်များကို ဆက်လက် ထိန်းသိမ်းထားပေးသည်; ပြဿနာဖြေရှင်းရန် ရည်ညွှန်းထားသော debug hooks များကို ထည့်သွင်းထားသည်။
+- 2.3.0: ဆက်တွဲဖိုင် ထပ်တူဖယ်ရှားမှုကို ပိုမိုမွမ်းမံကောင်းမွန်စေပြီး စမ်းသပ်မှု အကျယ်အဝန်းကို တိုးချဲ့ကာ AMO မူဝါဒများနှင့် ကိုက်ညီစေရန် မသုံးတော့သော ခွင့်ပြုချက်များကို ဖယ်ရှားခဲ့သည်။
+- 2.1.0: အများဆုံးအသုံးပြု ဘာသာစကား ၁၀၀ ခုအတွက် အပြည့်အဝ အပြည်ပြည်ဆိုင်ရာ ပံ့ပိုးမှု
+- 2.0.0: လုပ်ဆောင်ချက်အပြည့်ဖြစ်သော ဗားရှင်းသို့ ပြန်ရေးဆွဲထားသည် (EN/DE)
+- 1.0.1: messages.listAttachments() သို့ ပြောင်းလဲခဲ့သည်
+- 1.0.0: ပထမဦးဆုံး ထုတ်ဝေမှု
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## ရက်စွဲများနှင့် ချာနယ်များ {#dates-and-channels}
+
+- ATN သို့ ထုတ်ဝေမှုများသည် ထုပ်ပိုးပြီးနောက် နာရီအနည်းငယ် နောက်ကျနိုင်သည်။
+- LOCAL build များသည် ဖွံ့ဖြိုးရေးဆိုင်ရာ စမ်းသပ်ရန်အတွက်သာ ဖြစ်ပြီး ATN မှတဆင့် မဖြန့်ချိပါ။
+
+---

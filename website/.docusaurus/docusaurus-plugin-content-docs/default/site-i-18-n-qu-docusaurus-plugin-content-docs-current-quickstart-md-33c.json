@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Rikhuy",
-  "description": "Rikhuy",
+  "title": "Qallariy Utqay",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Rikhuy",
-    "sidebar_label": "Rikhuy"
+    "title": "Qallariy Utqay",
+    "sidebar_label": "Qallariy Utqaylla"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ñawiq",
+    "title": "Rikch'ayninkuna",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/features"
   },
   "next": {

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Përfshi fotot inline (imazhe të ngulitura)"
+  },
   "uiDebugHeader": {
     "message": "Të avancuara"
   },

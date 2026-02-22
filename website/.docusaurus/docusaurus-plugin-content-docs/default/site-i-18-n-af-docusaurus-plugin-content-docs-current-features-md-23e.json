@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Kenmerke",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/af/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Snelstart",
+    "title": "Kitsbegin",
     "permalink": "/Thunderbird-Reply-with-Attachments/af/docs/quickstart"
   }
 }

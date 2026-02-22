@@ -1,21 +1,28 @@
 ---
 id: changelog
-title: 'Prehľad zmien'
+title: 'Zoznam zmien'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Zoznam zmien
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Pre úplnú, podrobnú históriu si pozrite repozitár
+[CHANGELOG.md na GitHube](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" teraz vkladá obrázky priamo do tela odpovede ako dátové URI base64 (predvolené: ZAPNUTÉ); zlepšenia kvality kódu a rozšírené pokrytie testami.
+- 2.3.1: Zachová prílohy po tom, čo Thunderbird nechá stránku udalostí na pozadí prejsť do nečinnosti; pridáva cielené ladiace háčiky na odstraňovanie problémov.
+- 2.3.0: Spresnená deduplikácia príloh, rozšírené pokrytie testami a odstránené zastarané oprávnenia na splnenie zásad AMO.
+- 2.1.0: Úplná podpora internacionalizácie pre 100 najpoužívanejších jazykov
+- 2.0.0: prepísanie na plnohodnotnú verziu (EN/DE)
+- 1.0.1: prechod na messages.listAttachments()
+- 1.0.0: počiatočné vydanie
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## Dátumy a kanály {#dates-and-channels}
+
+- Vydania na ATN sa môžu oneskoriť o niekoľko hodín po zabalení.
+- Zostavenia LOCAL sú určené len na testovanie pre vývojárov a nešíria sa cez ATN.
 
 ---

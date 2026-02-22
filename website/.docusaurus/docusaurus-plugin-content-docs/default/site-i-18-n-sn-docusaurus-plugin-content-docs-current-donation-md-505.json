@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Pindura",
-  "description": "Pindura",
+  "title": "Ipa Mupiro",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Pindura",
-    "sidebar_label": "Pindura"
+    "title": "Ipa Mupiro",
+    "sidebar_label": "Ipa mupiro"
   },
   "sidebar": "docs",
   "previous": {

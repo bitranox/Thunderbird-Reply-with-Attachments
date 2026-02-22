@@ -4,94 +4,98 @@ title: 'ئىشلىتىش'
 sidebar_label: 'ئىشلىتىش'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## ئىشلتىش {#usage}
+
+- جاۋاب قايتۇرغاندا قىستۇرما ئەسلى قوشۇمچىلارنى ئاپتوماتىك قوشىدۇ — ياكى تاللانمىلاردا قوزغىتىلغان بولسا ئالدى بىلەن سورايدۇ.
+- تەكرارلاش فايىل ئاتى بويىچە تۈزىتىلىدۇ؛ S/MIME بۆلەكلەر ھەمىشە ئۆتكۈزۈۋېتىلىدۇ. ئىچكى سۈرەتلەر كۆڭۈلدىكى ھالەتتە جاۋاب مەزمۇنىدا ئەسلىگە كەلتۈرۈلىدۇ (تاللانمىلاردىكى "Include inline pictures" ئارقىلىق چەكلىگىلى بولىدۇ).
+- قارا تىزىملىككە كىرگۈزۈлگەن قوشۇمچىلارمۇ ئۆتكۈزۈۋېتىلىدۇ (ھەرىپلەر چوڭ-كىچىكلىكىگە سەزگۈر بولمايدىغان glob ئەندىزىلىرى پەقەت فايىل ئاتىنى ماسلاشتۇرىدۇ، يولنى ئەمەس). [سەپلىمە](configuration#blacklist-glob-patterns) غا قاراڭ.
 
 ---
 
-### What happens on reply {#what-happens}
+### جاۋاب قايتۇرغاندا نېمە بولىدۇ {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- جاۋابنى بايقىدۇ → ئەسلى قوشۇمچىلارنى تىزىدۇ → S/MIME + ئىچكى بۆلەكلەرنى سۈزۈدۇ → ئىختىيارى تەستىق → قوبۇل قىلىنغان فايىللارنى قوشىدۇ (تەكرارلارنى ئۆتكۈزۈپ كېتىدۇ) → ئىچكى سۈرەتلەرنى مەزمۇن ئىچىدە ئەسلىگە كەلتۈرىدۇ.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+قاتتىق ۋە بوش يۈرۈش: قىستۇرما ئاۋۋال فايىل قوشۇمچىلىرىدىن S/MIME ۋە ئىچكى بۆلەكلىرىنى چىقىرىۋېتىدۇ. ھېچنېمە ماس كەلمىسىلا، تېخىمۇ بوش يۈرۈشنى ئىجرا قىلىدۇ؛ بۇ يۈرۈشتەمۇ S/MIME/ئىچكى بۆلەك كېسىلىدۇ، ئەمما كۆپرەك ھالەتلەرگە يول قويىدۇ (كود تەپسىلاتلىرىغا قاراڭ). ئىچكى سۈرەتلەر ھېچقاچان فايىل قوشۇمچى سۈپىتىدە قوشۇلمايدۇ؛ ئۇنىڭغا ئورنىغا، "Include inline pictures" قوزغىتىلغان (كۆڭۈلدىكىسى)، ئۇلار جاۋاب مەزمۇنىغا بىۋاسىتە base64 data URI سۈپىتىدە سىڭدۈرۈلىدۇ.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| بۆلەك تىپى                                               |                                    قاتتىق يۈرۈش |                                       بوش يۈرۈش |
+| -------------------------------------------------------- | ----------------------------------------------: | ----------------------------------------------: |
+| S/MIME ئىمزا فايلى `smime.p7s`                           |                                  چىقىرىۋېتىلگەن |                                  چىقىرىۋېتىلگەن |
+| S/MIME MIME تىپلىرى (`application/pkcs7-*`)              |                                  چىقىرىۋېتىلگەن |                                  چىقىرىۋېتىلگەن |
+| Content‑ID ئارقىلىق مۇناسىۋەتلىك ئىچكى سۈرەت (`image/*`) | چىقىرىۋېتىلگەن (مەزمۇندا ئەسلىگە كەلتۈرۈلىدۇ\*) | چىقىرىۋېتىلگەن (مەزمۇندا ئەسلىگە كەلتۈرۈلىدۇ\*) |
+| فايىل ئاتى بار قوشۇلغان ئېلخەت (`message/rfc822`)        |                                      قوشۇلمايدۇ |                                 قوشۇلىشى مۇمكىن |
+| فايىل ئاتى بار ئادەتتىكى فايىل قوشۇمچىسى                 |                                 قوشۇلىشى مۇمكىن |                                 قوشۇلىشى مۇمكىن |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" قوزغىتىلغاندا (كۆڭۈلدىكىسى: قوزغىتىلغان)، ئىچكى سۈرەتلەر فايىل قوشۇمچىسى قىلىپ قوشۇشنىڭ ئورنىغا جاۋاب مەزمۇنىغا base64 data URI سۈپىتىدە سىڭدۈرۈلىدۇ. [سەپلىمە](configuration#include-inline-pictures) غا قاراڭ.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+مىسال: بەزى قوشۇمچىلاردا بەزى باشلىقلىرى يىتىشمەسلىكى مۇمكىن، ئەمما يەنىلا ئادەتتىكى فايىل (ئىچكى/S/MIME ئەمەس). قاتتىق يۈرۈش ھېچنىمە تاپالمىسا، بوش يۈرۈش ئۇلارنى قوبۇل قىلىپ قوشۇشى مۇمكىن.
 
 ---
 
-## Behavior Details {#behavior-details}
+### ئارا نەقىل {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- يوللاش (Forward) لايىھە بويىچە ئۆزگەرتىلمەيدۇ (تۆۋەندىكى چەكلىمىلەرگە قاراڭ).
+- قوشۇمچىلار نېمىشقا قوشۇلماسلىقى مۇمكىن دېگەن سەۋەبلەر ئۈچۈن، “نېمىشقا قوشۇمچىلار قوشۇلماسلىقى مۇمكىن” غا قاراڭ.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## ھەرىكەت تەپسىلاتلىرى {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Duplicate prevention: قىستۇرما ھەر بەتكۈچكە خاس يىغىن قىممىتى ۋە ئىچكى-ئەستە قوغدىغۇچنى ئىشلىتىپ، يېزىش بەتكۈچىنى ئىجرا قىلىنغان دەپ بەلگىلەيدۇ. ئەسلىلىرىنى ئىككى قېتىم قوشمايدۇ.
+- يېزىش كۆزنىكىنى تاقاپ قايتا ئاچقاندا يېڭى بەتكۈچ دەپ قارىلىدۇ (يېڭىۇرۇن تەكرار سىناشقا يول قويۇلىدۇ).
+- Respect existing attachments: يېزىشتا ئاللىقاچان بەزى قوشۇمچىلار بولسا، ئەسلىلىرى يەنىلا پەقەت بىر قېتىملا قوشۇلىدۇ، بار بولغان فايىل ئاتلىرى ئۆتكۈزۈۋېتىلىدۇ.
+- چىقىرىۋېتىشلار: S/MIME نەتىجىلىرى ۋە ئىچكى سۈرەتلەر فايىل قوشۇمچىلىرىدىن چىقىرىۋېتىلىدۇ. بىرىنچى يۈرۈشتە ھېچنېمە ماس كەلمىسە، بوش قايتىش S/MIME ئەمەس بۆلەكلەرنى قايتا تەكشۈرىدۇ. ئىچكى سۈرەتلەر ئايرىم بىر تەرەپ قىلىنىدۇ: قوزغىتىلغاندا جاۋاب مەزمۇنىدا data URI سۈپىتىدە ئەسلىگە كەلتۈرۈلىدۇ.
+  - فايىل ئاتلىرى: `smime.p7s`
+  - MIME تىپلىرى: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - ئىچكى سۈرەتلەر: Content‑ID ئارقىلىق كۆرسىتىلگەن ھەرقانداق `image/*` بۆلەك — فايىل قوشۇمچىسىدىن چىقىرىۋېتىلىدۇ، لېكىن "Include inline pictures" قوزغىتىلغاندا جاۋاب مەزمۇنىغا سىڭدۈرۈلىدۇ
+  - قوشۇلغان ئېلخەتلەر (`message/rfc822`): فايىل ئاتى بار بولسا ئادەتتىكى قوشۇمچىدەك قارىلىدۇ؛ قوشۇلىشى مۇمكىن (تەكرار تەكشۈرۈشى ۋە قارا تىزىملىككە باغلىق).
+- قارا تىزىملىك ئاگاھلاندۇرۇشى (قوزغىتىلغان بولسا): نامزاتلار قارا تىزىملىكىڭىز تەرىپىدىن چىقىرىۋېتىلغاندا،
+  قىستۇرما تەسىرگە ئۇچرىغان فايىللارنى ۋە ماس كەلگەن
+  ئەندىزە(لەر)نى كۆرسىتىدىغان كىچىك بىر مودالنى كۆرسىتىدۇ. بۇ ئاگاھلاندۇرۇش ھېچقانداق قوشۇمچا قوشۇلمايدىغان
+  ئەھۋاللاردامۇ كۆرۈنىدۇ، چۈنكى ھەممەسى چىقىرىۋېتىلگەن بولىدۇ.
 
 ---
 
-## Limitations {#limitations}
+## كۇنۇپكا قىسقا يوللىرى {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- جەزملەش سۆزلەشكۈسى: Y/J = ھەئە، N/Esc = ياق؛ Tab/Shift+Tab ۋە ئوق كۇنۇپكىلىرى فوكۇسنى ئايلىنىدۇ.
+  - [سەپلىمە](configuration#confirmation) دىكى “كۆڭۈلدىكى جاۋاب” دەسلەپكى فوكۇسلىق توپچىنى بەلگىلەيدۇ.
+  - Enter فوكۇسلىق توپچىنى قوزغىتىدۇ. Tab/Shift+Tab ۋە ئوق كۇنۇپكىلىرى قولايچانلىق ئۈچۈن فوكۇسنى يۆتكەيدۇ.
+
+### كۇنۇپكا قىسقا كۆرسەتمىسى {#keyboard-cheat-sheet}
+
+| كۇنۇپكىلار      | ھەرىكەت                                     |
+| --------------- | ------------------------------------------- |
+| Y / J           | ھەئە دەپ جەزملەش                            |
+| N / Esc         | ياق دەپ جەزملەش                             |
+| Enter           | فوكۇسلىق توپچىنى قوزغىتىش                   |
+| Tab / Shift+Tab | فوكۇسنى ئالدىغا/كەينىگە يۆتكەش              |
+| ئوق كۇنۇپكىلىرى | فوكۇسنى توپچىلار ئارىسىدا يۆتكەش            |
+| كۆڭۈلدىكى جاۋاب | دەسلەپكى فوكۇسنى بەلگىلەيدۇ (ھەئە ياكى ياق) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## چەكلىمىلەر {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- بۇ قىستۇرما يوللاش (Forward) نى ئۆزگەرتمەيدۇ (Reply ۋە Reply all قوللايدۇ).
+- بەك چوڭ قوشۇمچىلار Thunderbird ياكى تەمىنلىگۈچى چەكلىمىلىرىغا ئۇچرىشى مۇمكىن.
+  - قىستۇرما فايىللارنى پارچىلىمايدۇ ياكى پىسنتمايدۇ؛ Thunderbird نىڭ ئادەتتىكى قوشۇمچا باشقۇرۇشىغا تايىنىدۇ.
+- شىفىرلانغان ئۇچۇرلار: S/MIME بۆلەكلىرى مەقسەتلىك ھالدا چىقىرىۋېتىلىدۇ.
 
 ---
 
-See also
+## نېمىشقا قوشۇمچىلار قوشۇلماسلىقى مۇمكىن {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- ئىچكى سۈرەتلەر فايىل قوشۇمچىسى سۈپىتىدە قوشۇلمايدۇ. "Include inline pictures" قوزغىتىلغان (كۆڭۈلدىكىسى) ۋاقىتتا، ئۇلار جاۋاب مەزمۇنىغا data URI سۈپىتىدە سىڭدۈرۈلىدۇ. تەڭشەك ئۆچۈك بولسا، ئىچكى سۈرەتلەر پۈتۈنلەي چىقىرىۋېتىلىدۇ. [سەپلىمە](configuration#include-inline-pictures) غا قاراڭ.
+- S/MIME ئىمزا بۆلەكلەر لايىھە بويىچە چىقىرىۋېتىلىدۇ: `smime.p7s` دېگەندەك فايىل ئاتلىرى ۋە `application/pkcs7-signature` ياكى `application/pkcs7-mime` قاتارلىق MIME تىپلىرى ئۆتكۈزۈۋېتىلىدۇ.
+- قارا تىزىملىك ئەندىزىلىرى نامزاتلارنى سۈزۈپ چىقىرىشى مۇمكىن: [سەپلىمە](configuration#blacklist-glob-patterns) غا قاراڭ؛ ماسلاشتۇرۇش ھەرىپ چوڭ-كىچىكلىكىگە سەزگۈر ئەمەس بولۇپ، پەقەت فايىل ئاتىغا قارىتىلغان.
+- تەكرار فايىل ئاتلىرى قايتا قوشۇلمايدۇ: يېزىشتا ئوخشىشى نورماللاشتۇرۇلغان نامدىكى فايىل ئاللىقاچان بولسا، ئۇ ئۆتكۈزۈۋېتىلىدۇ.
+- فايىل ئەمەس بۆلەكلەر ياكى يوقاپ كەتكەن فايىل ئاتلىرى: پەقەت ئىشلىتىشكە بولىدىغان فايىل ئاتى بار فايىل-سىمان بۆلەكلەرلا قوشۇش ئۈچۈن قارىلىدۇ.
+
+---
+
+قوشۇمچە قاراڭ
+
+- [سەپلىمە](configuration)

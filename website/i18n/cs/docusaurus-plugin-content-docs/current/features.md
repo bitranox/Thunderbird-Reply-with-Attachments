@@ -4,31 +4,40 @@ title: 'Funkce'
 sidebar_label: 'Funkce'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funkce {#features}
 
-## How It Works {#how-it-works}
+- Při odpovědi automaticky připojí soubory z původního e‑mailu.
+- Konfigurovatelné chování: přílohy mohou být
+  - přidány automaticky, nebo
+  - přidány až po potvrzení (malý, přístupný dialog). V Možnostech
+    můžete povolení potvrzení zapnout a zvolit výchozí odpověď (Ano/Ne).
+- Černá listina názvů souborů (masky/glob) brání automatickému přidání
+  konkrétních souborů. Příklady: `*intern*`, `*secret*`, `*passwor*`.
+  Porovnávání nerozlišuje velikost písmen a kontroluje pouze název souboru; v Možnostech
+  uveďte jeden vzor na řádek.
+- Upozornění na černou listinu (volitelné, ve výchozím stavu zapnuto): když jsou soubory
+  vyloučeny vaší černou listinou, malé modální okno vypíše soubor a odpovídající vzor(y).
+  Přátelské k tmavému režimu a přístupné z klávesnice (Enter/Esc pro zavření).
+- Funguje s Odpovědět a Odpovědět všem. Přeposlat tento doplněk neupravuje.
+- Přidá původní přílohy, i když jste už nějaké připojili sami; vyhne se duplicitám podle názvu souboru.
+- Ochrana proti duplicitám na úrovni karty brání dvojímu přidání ve stejné kartě pro psaní zprávy.
+- Ve výchozím nastavení vynechává certifikáty S/MIME, aby se předešlo zbytečným přílohám.
+- Zahrnout vložené obrázky (výchozí: ZAPNUTO). Vložené obrázky jsou obnoveny přímo v těle
+  odpovědi jako base64 data URI, čímž se zachová původní vložené rozvržení. V Možnostech lze
+  vypnout, abyste vložené obrázky úplně přeskočili.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Jak to funguje {#how-it-works}
+
+- Při odpovědi doplněk vypíše původní přílohy.
+- Z příloh odfiltruje podpisy S/MIME; vložené obrázky jsou obnoveny v těle (pokud není zakázáno).
+- Volitelně požádá o potvrzení (přátelské pro ovládání z klávesnice).
+- Přidá vhodné soubory do rozepsané zprávy a vyhne se duplicitám podle názvu souboru.
+- Viz „Proč se přílohy nemusí přidat“ v části Použití pro okrajové případy.
+
+Poznámka k soukromí: Veškeré zpracování probíhá lokálně v Thunderbirdu. Doplněk neprovádí žádné síťové požadavky na pozadí.
+
+---

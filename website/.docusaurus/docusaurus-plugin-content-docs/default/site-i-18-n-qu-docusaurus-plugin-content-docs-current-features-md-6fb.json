@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Ñawiq",
-  "description": "Features",
+  "title": "Rikch'aykuna",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Ñawiq",
-    "sidebar_label": "Ñawiq"
+    "title": "Rikch'aykuna",
+    "sidebar_label": "Rikch'ayninkuna"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Rikhuy",
+    "title": "Qallariy Utqaylla",
     "permalink": "/Thunderbird-Reply-with-Attachments/qu/docs/quickstart"
   }
 }

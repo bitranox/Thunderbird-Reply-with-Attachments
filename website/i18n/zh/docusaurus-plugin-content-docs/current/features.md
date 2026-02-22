@@ -1,34 +1,42 @@
 ---
 id: features
-title: '特性'
-sidebar_label: '特性'
+title: '功能'
+sidebar_label: '功能'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## 功能 {#features}
 
-## How It Works {#how-it-works}
+- 回复时会自动附加原始邮件中的文件。
+- 可配置的行为：附件可以
+  - 自动添加，或
+  - 仅在确认后添加（一个小型且无障碍的对话框）。在“选项”中你
+    可以启用确认并选择默认答案（是/否）。
+- 文件名黑名单（glob 通配模式）可阻止特定文件被
+  自动附加。示例：`*intern*`、`*secret*`、`*passwor*`。
+  匹配不区分大小写，且只检查文件名；在“选项”中每行提供一个模式。
+- 黑名单警告（可选，默认启用）：当文件被你的
+  黑名单排除时，一个小型模态窗口会列出该文件及其匹配的模式。支持深色模式，
+  并可通过键盘操作（Enter/Esc 关闭）。
+- 适用于“回复”和“全部回复”。“转发”不受此附加组件修改。
+- 即使你已自行附加了内容，也会添加原始附件；按文件名避免重复。
+- 每个标签页的重复防护可防止在同一撰写标签页中重复添加。
+- 默认跳过 S/MIME 证书，以避免不必要的附件。
+- 包含内联图片（默认：开启）。嵌入的图像将直接以
+  base64 数据 URI 的形式还原到回复正文中，保留原始的内联布局。可在
+  “选项”中禁用以完全跳过内联图像。
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## 工作原理 {#how-it-works}
+
+- 当回复时，附加组件会列出原始附件。
+- 从文件附件中过滤掉 S/MIME 签名；内联图像会在正文中还原（除非已禁用）。
+- 可选地请求确认（便于键盘操作）。
+- 将符合条件的文件添加到撰写窗口中，并按文件名避免重复。
+- 边界情况请参见“用法”中的“为何可能未添加附件”。
+
+隐私说明：所有处理均在 Thunderbird 本地进行。该附加组件不会进行任何后台网络请求。
+
+---

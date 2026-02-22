@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "সামঞ্জস্য",
-  "description": "Compatibility",
+  "title": "সামঞ্জস্যতা",
+  "description": "---",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "সামঞ্জস্য",
-    "sidebar_label": "সামঞ্জস্য"
+    "title": "সামঞ্জস্যতা",
+    "sidebar_label": "সামঞ্জস্যতা"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Mibeko",
-  "description": "Features",
+  "title": "Makoki",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Mibeko",
-    "sidebar_label": "Mibeko"
+    "title": "Makoki",
+    "sidebar_label": "Bizaleli"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Kimisulu",
+    "title": "Kobanda noki",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/quickstart"
   }
 }

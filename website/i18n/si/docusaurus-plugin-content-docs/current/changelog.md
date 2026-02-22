@@ -1,23 +1,28 @@
 ---
 id: changelog
-title: 'සංශෝධනකොටුව'
+title: 'වෙනස්කම් සටහන'
 ---
-
-## Changelog
-
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
-
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
 
 ---
 
-## Dates and channels {#dates-and-channels}
+## වෙනස්වීම් ලේඛනය
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+සම්පූර්ණ, සවිස්තරිත ඉතිහාසය සඳහා, රෙපොසිටරියේ
+[GitHub හි CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) බලන්න.
+
+- 2.3.2: "Include inline pictures" දැන් පිළිතුරේ අන්තර්ගතයේ රූප base64 data URIs ලෙස සෘජුවම සවිකරයි (පෙරනිමි: ON); කේත ගුණාත්මකභාවය වැඩිදියුණු කිරීම සහ පරීක්ෂණ ආවරණය පුළුල් කිරීම.
+- 2.3.1: Thunderbird පසුබිම් සිදුවීම් පිටුව නිශ්චල කරන පසුද ඇමුණුම් පවත්වා ගනී; ගැටලු විසඳීම සඳහා ඉලක්කගත debug hooks එකතු කරයි.
+- 2.3.0: ඇමුණුම් අනුපිටපත් ඉවත් කිරීම නර්මල කර ඇත, පරීක්ෂණ ආවරණය පුළුල් කර ඇත, සහ AMO ප්‍රතිපත්ති සපුරාලීම සඳහා පැරණි අවසර ඉවත් කර ඇත.
+- 2.1.0: ඉහළම භාෂා 100 සඳහා සම්පූර්ණ ජාත්‍යන්ත්‍රණ සහාය
+- 2.0.0: පූර්ණ විශේෂාංග සහිත අනුවාදයකට නැවත ලිවීම (EN/DE)
+- 1.0.1: messages.listAttachments() වෙත මාරුවිය
+- 1.0.0: ආරම්භක නිකුතුව
+
+---
+
+## දිනයන් හා නාලිකා {#dates-and-channels}
+
+- පැකේජ කිරීමෙන් පසු ATN වෙත නිකුත් කිරීම් පැය කිහිපයකින් ප්‍රමාද විය හැක.
+- LOCAL බිල්ඩ් සංවර්ධක පරීක්ෂාව සඳහා පමණක් වන අතර ATN හරහා බෙදාහැරන්නේ නැත.
 
 ---

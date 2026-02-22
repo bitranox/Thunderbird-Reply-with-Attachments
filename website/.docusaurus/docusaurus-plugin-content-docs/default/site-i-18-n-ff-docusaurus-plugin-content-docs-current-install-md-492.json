@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Daɗo",
-  "description": "Daɗo via \"Thunderbird Add-ons and Themes\"",
+  "title": "Aafgol",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Daɗo",
+    "title": "Aafgol",
     "slug": "/install",
-    "sidebar_label": "Daɗo"
+    "sidebar_label": "Aafgol"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Dembal",
+    "title": "Fuɗɗorde Yaawnde",
     "permalink": "/Thunderbird-Reply-with-Attachments/ff/docs/quickstart"
   },
   "next": {

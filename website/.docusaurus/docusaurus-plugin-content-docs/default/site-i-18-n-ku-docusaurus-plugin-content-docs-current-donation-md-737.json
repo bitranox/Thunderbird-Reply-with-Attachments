@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donate",
-  "description": "Donate",
+  "title": "Alîkarî bike",
+  "description": "---",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donate",
-    "sidebar_label": "Donate"
+    "title": "Alîkarî bike",
+    "sidebar_label": "Bexşîne"
   },
   "sidebar": "docs",
   "previous": {

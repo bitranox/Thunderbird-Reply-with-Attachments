@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Rijje geesi",
-  "description": "Changelog",
+  "title": "Diiwaan waylaaji",
+  "description": "---",
   "source": "@site/i18n/ff/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Rijje geesi"
+    "title": "Diiwaan waylaaji"
   },
   "sidebar": "docs",
   "previous": {

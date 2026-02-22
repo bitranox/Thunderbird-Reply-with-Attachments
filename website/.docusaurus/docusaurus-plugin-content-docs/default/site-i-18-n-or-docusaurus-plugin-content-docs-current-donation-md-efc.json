@@ -1,7 +1,7 @@
 {
   "id": "donation",
   "title": "ଦାନ କରନ୍ତୁ",
-  "description": "Donate",
+  "description": "---",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",

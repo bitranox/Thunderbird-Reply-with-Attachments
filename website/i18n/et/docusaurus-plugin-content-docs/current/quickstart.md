@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Kiire algus'
-sidebar_label: 'Kiire algus'
+title: 'Kiirjuhend'
+sidebar_label: 'Kiire alustamine'
 ---
-
-## Kiire algus
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Kiirjuhend
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Minimaalne Thunderbirdi versioon
+See lisandmoodul toetab Thunderbirdi **128 ESR või uuemat**. Vanemaid versioone ei toetata.
+:::
+
+:::note Telemeetria puudub; taustvõrguliiklust ei toimu
+Lisandmoodul ei kogu analüütikat/telemeetriat ega tee taustal võrgupäringuid. Võrguühendust kasutatakse vaid siis, kui klõpsad välislinkidel (Docs, GitHub, Donate).
+:::
+
+---
+
+### Paigaldamine
+
+1. Paigalda lisandmoodul saidilt Thunderbird Add‑ons.
+2. Valikuline: Luba kinnitus (Sätted → „Küsi enne manuste lisamist”).
+3. Valikuline: Jäta musta nimekirja hoiatus lubatuks (vaikimisi): „Hoiata, kui manused jäetakse musta nimekirja tõttu välja”.
+4. Valikuline: Lisa musta nimekirja mustrid (üks rea kohta), nt:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Märkus: Ülalolev „# …” on selle dokumentatsiooni kommentaar; ära lisa Sätetesse kleebitavatesse mustritesse kommentaare. Sisesta igale reale ainult üks muster.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Nüüd vasta manustega kirjale — originaalid lisatakse automaatselt või pärast kiiret kinnitust. Kui mõni fail välistatakse sinu musta nimekirja tõttu, näed lühikest hoiatust koos nende loeteluga.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Kontrolli {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Vasta kirjale, millel on 1–2 manust, ja veendu, et originaalid lisatakse sinu koostamisaknasse.
+- Käitumise muutmiseks vaata [Seadistust](configuration) (kinnituse lüliti, vaikevastus, musta nimekirja mustrid).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Kontrolli musta nimekirja hoiatust {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Vasta kirjale, mis sisaldab faili nagu „secret.txt”.
+- Kui suvand „Hoiata, kui manused jäetakse musta nimekirja tõttu välja” on lubatud, kuvab väike dialoog välistatud failid ja vastava mustri.
+
+Kui hoiatust ei kuvata, veendu, et muster vastab failinimele täpselt (ainult failinimi, tõstutundetu). Vaata Seadistus → Must nimekiri.
+
+---
+
+### Klaviatuuri märkus {#keyboard-note}
+
+- Kinnitusdialoog toetab Jah jaoks klahve Y/J ja Ei jaoks N/Esc. Mõnel mitte‑ladina klaviatuuril võivad täheklahvid erineda; Enter kinnitab fookuses oleva nupu.
 
 ---

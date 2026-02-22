@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Installazione",
-  "description": "Installazione via \"Componenti aggiuntivi e Temi di Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Guida rapida",
+    "title": "Avvio rapido",
     "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/quickstart"
   },
   "next": {

@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Ịtọlite'
+title: 'Ịwụnye'
 slug: /install
-sidebar_label: 'Ịtọlite'
+sidebar_label: 'Ịwụnye'
 ---
 
-## Ịtọlite site na "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Version Thunderbird kacha nta
-Add-on a na-akwado Thunderbird **128 ESR ma ọ bụ ọhụrụ**. A naghị akwado ụdị ochie.
+## Ntinye site na "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Nsụgharị Thunderbird kacha nta
+Mgbakwunye a na-akwado Thunderbird **128 ESR ma ọ bụ nke dị ọhụrụ karịa**. A naghị akwado nsụgharị dị ochie.
 :::
 
-Nke a bụ usoro ịtọlite a na-atụ aro. Add-ons ndị a na-etinye site na ATN (addons.thunderbird.net) na-anata mmelite akpaka. Ntinye LOCAL/dev adịghị eme mmelite akpaka.
+Nke a bụ usoro ntinye a na-akwado. Mgbakwunye e tinyere site na ATN (addons.thunderbird.net) na-enweta mmelite akpaaka. Ntinye LOCAL/dev anaghị emelite akpaaka.
 
-- Version Thunderbird kacha nta: 128 ESR ma ọ bụ ọhụrụ.
+- Nsụgharị Thunderbird kacha nta: 128 ESR ma ọ bụ nke dị ọhụrụ karịa.
 
-1. Na Thunderbird, jee na **Ngwaọrụ > Add-ons na Themes**.
-2. Chọta "zaghachi na njikọ".
-3. Tinye add-on.
+1. N'ime Thunderbird, gaa na **Tools > Add-ons and Themes**.
+2. Chọọ "reply with attachments".
+3. Tinye mgbakwunye ahụ.
 
-Ma ọ bụ mepee ibe add-on ahụ kpọmkwem: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Ma ọ bụ mepee ibe mgbakwunye ozugbo: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Ịtọliteaka nke aka site na XPI {#local-installation-in-thunderbird}
+## Ntinye n'aka site na XPI {#local-installation-in-thunderbird}
 
 ### Budata faịlụ XPI {#download-the-xpi-file}
 
-1. Je na [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Budata ụdị kachasị ọhụrụ nke add-on dịka faịlụ XPI (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Gaa na [ibe mgbakwunye Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Budata nsụgharị kacha ọhụrụ nke mgbakwunye ahụ dị ka faịlụ XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Tinye na Thunderbird {#install-in-thunderbird-local}
+### Wunye na Thunderbird {#install-in-thunderbird-local}
 
 1. Mepee Thunderbird.
-2. Je na **Ngwaọrụ > Add-ons na Themes**.
-3. Na **Nchekwa Add-ons**, pịa akara igwe na-ekpo ọkụ na akụkụ aka nri elu.
-4. Họrọ **Tinye Add-on Site na Faịlụ…** si na menu.
-5. Họrọ faịlụ `reply_with_attachments-x.y.z-tb.xpi` a na-ebudata.
-6. Kwadoro itinye mgbe a jụrụ.
+2. Gaa na **Tools > Add-ons and Themes**.
+3. Na **Add-ons Manager**, pịa akara igwe (gear) dị n'akụkụ aka nri elu.
+4. Họrọ **Install Add-on From File…** n’ime menu ahụ.
+5. Họrọ faịlụ `reply_with_attachments-x.y.z-tb.xpi` e budatara.
+6. Kwenye ntinye ahụ mgbe e jụrụ gị.
 
 ---
 
-## Ịtọlite maka mmepe {#installation-for-development}
+## Ntinye maka mmepe {#installation-for-development}
 
-### Budata ụlọ akwụkwọ a {#download-the-repository}
+### Budata repozịtori {#download-the-repository}
 
-1. Budata ụdị kachasị ọhụrụ nke ụlọ akwụkwọ GitHub.
-2. Gba `make help` maka ozi ndị ọzọ.
+1. Budata nsụgharị kacha ọhụrụ nke repozịtori GitHub.
+2. Gbaa `make help` maka ozi ndị ọzọ.
 
-### Tinye na Thunderbird {#install-in-thunderbird-dev}
+### Wunye na Thunderbird {#install-in-thunderbird-dev}
 
 1. Mepee Thunderbird.
-2. Je na **Ngwaọrụ > Add-ons na Themes**.
-3. Na **Nchekwa Add-ons**, pịa akara igwe na-ekpo ọkụ na akụkụ aka nri elu.
-4. Họrọ **Tinye Add-on Site na Faịlụ…** si na menu.
-5. Họrọ faịlụ a mepụtara `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Kwadoro itinye mgbe a jụrụ.
+2. Gaa na **Tools > Add-ons and Themes**.
+3. Na **Add-ons Manager**, pịa akara igwe (gear) dị n'akụkụ aka nri elu.
+4. Họrọ **Install Add-on From File…** n’ime menu ahụ.
+5. Họrọ faịlụ emepụtara `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Kwenye ntinye ahụ mgbe e jụrụ gị.
 
-Nkwupụta: Ọ bụrụ na Thunderbird anaghi anabata `.zip` na sistemụ gị, gbanwee ya ka ọ bụrụ `.xpi` ma gbalịa “Tinye Add-on Site na Faịlụ…” ọzọ.
+Rịba ama: Ọ bụrụ na Thunderbird ekweghị `.zip` na sistemụ gị, gbanwee aha ya gaa `.xpi` ma nwalee “Install Add‑on From File…” ọzọ.
 
-### Ewhere ị ga-ahụ ZIP LOCAL {#where-local-zip}
+### Ebee ka ịchọta LOCAL ZIP {#where-local-zip}
 
-- Nke mbu, jigọpụta add-on ahụ: gba `make pack` na mgbọrọgwụ ụlọ akwụkwọ.
-- Mgbe ị na-agbagharị, chọta ZIP “LOCAL” na mgbọrọgwụ ụlọ akwụkwọ (dịka, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Tupu ịgagharịa maka nnwale, welie ụdị na `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
+- Mbụ, kpakọọ mgbakwunye ahụ: gbaa `make pack` na mgbọrọgwụ repozịtori.
+- Mgbe ikpakọchara, chọta zip “LOCAL” na mgbọrọgwụ repozịtori (dịka, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Tupu ịkpakọghachi maka nnwale, bulie nsụgharị na `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json` abụọ.
 
 ---
 
-## Gbanyụọ, Wepu, na Mmelite {#disable-uninstall-updates}
+## Gbanyụọ, Wepụ, na Mmelite {#disable-uninstall-updates}
 
-- Gbanyụọ: Thunderbird → Ngwaọrụ → Add‑ons na Themes → chọta add-on → toggle off.
-- Wepu: otu nchọpụta → menu atọ-dot → Wepu.
-- Mmelite: Ntinye ATN na-eme mmelite akpaka mgbe ụdị ọhụrụ kwadoro. Ntinye LOCAL/dev adịghị eme mmelite akpaka; nweta ụdị LOCAL ọhụrụ n'aka.
-- Wepu ntọala kpamkpam: lee [Nzuzo → Ikpochapụ data](privacy#data-removal).
+- Gbanyụọ: Thunderbird → Tools → Add‑ons and Themes → chọta mgbakwunye ahụ → gbanyụọ ya.
+- Wepụ: otu nlele ahụ → menu ntụpọ atọ → Remove.
+- Mmelite: Ntinye sitere na ATN na‑emelite akpaaka mgbe a kwadoro nsụgharị ọhụrụ. Ntinye LOCAL/dev anaghị emelite akpaaka; wụnye nrụpụta LOCAL ọhụrụ n’ụzọ aka.
+- Wepụ ntọala kpamkpam: hụ [Nzuzo → Wepu data](privacy#data-removal).
 
-Lee kwa
+Hụkwa
 
-- [Nmalite Oge](quickstart)
+- [Mbido ngwa ngwa](quickstart)

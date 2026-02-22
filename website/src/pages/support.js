@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -18,27 +18,32 @@ function pickLocale(available, def) {
 
 export default function SupportRedirect() {
   const {
+    siteConfig,
     i18n: { defaultLocale, locales, currentLocale },
   } = useDocusaurusContext();
 
-  const preferred = pickLocale(locales, defaultLocale);
-  const targetLocale = currentLocale && currentLocale !== defaultLocale ? currentLocale : preferred;
-  const targetPath =
-    targetLocale === defaultLocale ? '/docs/support' : `/${targetLocale}/docs/support`;
-  const href = useBaseUrl(targetPath);
+  // SSR fallback: useBaseUrl already includes the locale prefix in i18n builds
+  const fallbackHref = useBaseUrl('/docs/support');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.location.replace(href);
-    }
-  }, [href]);
+    if (typeof window === 'undefined') return;
+    const preferred = pickLocale(locales, defaultLocale);
+    const targetLocale = currentLocale !== defaultLocale ? currentLocale : preferred;
+    // Manually construct URL to support cross-locale redirect (useBaseUrl
+    // always resolves relative to the *current* locale, not the target).
+    const base = (siteConfig?.baseUrl || '/').replace(/\/+$/, '');
+    const localePath = targetLocale === defaultLocale ? '' : `/${targetLocale}`;
+    const url = `${base}${localePath}/docs/support`;
+    window.location.replace(url);
+  }, [currentLocale, defaultLocale, locales, siteConfig]);
 
   return (
     <>
-      <meta httpEquiv="refresh" content={`0; url=${href}`} />
+      <meta httpEquiv="refresh" content={`0; url=${fallbackHref}`} />
       <noscript>
         <p>
-          Redirecting to support page… If you are not redirected, <a href={href}>click here</a>.
+          Redirecting to support page… If you are not redirected,{' '}
+          <a href={fallbackHref}>click here</a>.
         </p>
       </noscript>
     </>

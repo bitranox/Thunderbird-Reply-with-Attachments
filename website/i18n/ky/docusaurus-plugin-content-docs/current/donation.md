@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Донордук'
-sidebar_label: 'Донордук'
+title: 'Кайрымдуулук кылуу'
+sidebar_label: 'Кайрымдуулук кылуу'
 ---
 
-## Donate
+---
+
+## Кайрымдуулук
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Эгерде сизге "Reply with Attachments" жакса жана анын өнүгүүсүн колдогуңуз келсе, бул жерден кайрымдуулук кыла аласыз:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe аркылуу кайрымдуулук кылуу" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>же</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal аркылуу кайрымдуулук кылуу" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>же</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Мага кофе алып бериңиз" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Кофе алып берүү үчүн сканерлөө"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Рахмат! Сиздин колдооңуз Thunderbird’дин жаңы чыгарылыштары менен шайкештикти сактоого, жеткиликтүүлүктү жана тесттерди жакшыртууга, ошондой эле документацияны өз убагында жаңыртып турууга жардам берет.
 
-Notes
+Эскертмелер
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Кайрымдуулук шилтемелери сиз аларды басканда гана ачылат; кошумча эч кандай фондук тармактык сурамдарды аткарбайт.
+- Мезгил-мезгили менен колдоо узак мөөнөттүү тейлөөгө жана өз учурунда жаңыртууларга көмөктөшөт, бирок бул толугу менен ыктыярдуу.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Эгер сүрөт баскычтары жүктөлбөсө, анын ордуна ушул шилтемелерди колдонуңуз:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Кайрымдуулуктар ыктыярдуу; функцияларга кирүүнү чектөө жок.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Кайрымдуулук көрүнүшү (90 күнгө убактылуу жашыруу)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Кошумча кайрымдуулук кылгандан кийин кайрымдуулук сурамдарын бир аз убакытка жашыруу үчүн ыңгайлуу функцияны камтыйт.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Кайдан табууга болот
+  - Параметрлер → Колдоо бөлүмү: “Мен кайрымдуулук кылдым” баскычы жана кичинекей кеңеш аймагы көрүнөт.
+  - Жөнөтүүнү ырастауу диалогунда да Кайрымдуулук баскычы көрсөтүлөт; убактылуу жашыруу активдүү болгондо ал автоматтык түрдө жашырылат.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Кантип иштейт
+  - “Мен кайрымдуулук кылдым” дегенди басканда кайрымдуулук баскычтары жана тиешелүү эскертмелер 90 күнгө жашырылат.
+  - Абал боюнча кеңеш “YYYY‑MM‑DD чейин жашырылган” (жергиликтүү күнүңүздө) деп көрсөтөт. Көрүнүштү дароо калыбына келтирүү үчүн “Кайрымдуулукту кайра көрсөт” баскычы да бар.
+  - 90 күн өткөндөн кийин, Кайрымдуулук баскычы кайра автоматтык түрдө көрүнөт.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Купуялуулук жана сактоо
+  - Кошумча убактылуу жашыруу мөөнөтүн эстеп калуу үчүн Thunderbird’дүн жергиликтүү сактагычына бир убакыт мөөрүн сактайт. Ачкыч: `donateHideUntil` (эпоханын миллисекунддары).
+  - Бул орнотуу сиздин Thunderbird профилиңизге гана тиешелүү (булут менен синхрондоштурулбайт). Бул функция эч кандай тармактык сурамдарды жасабайт.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Мүчүлүштүктөрдү оңдоо
+  - Эгер “Мен кайрымдуулук кылдым” дегенди баскандан кийин дароо эле Кайрымдуулук дагы эле көрүнүп турса, бир аз күтө туруңуз же Параметрлер бетин кайра ачыңыз; параметр сакталган замат интерфейс жаңыланат.
+  - Кол менен баштапкы абалга келтирүү үчүн “Кайрымдуулукту кайра көрсөт” дегенди басыңыз. Ошондой эле кеңештеги көрсөтүлгөн дата өткөнгө чейин күтсөңүз болот.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Бул функция толугу менен ыңгайлуулук үчүн; ал эч качан кошумчанын функционалдуулугун бөгөттебейт жана эч кандай жеке маалыматтарды чогултпайт.
 
 ---

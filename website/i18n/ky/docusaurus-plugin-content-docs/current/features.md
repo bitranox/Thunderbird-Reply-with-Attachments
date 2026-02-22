@@ -4,31 +4,40 @@ title: 'Өзгөчөлүктөр'
 sidebar_label: 'Өзгөчөлүктөр'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Өзгөчөлүктөр {#features}
 
-## How It Works {#how-it-works}
+- Жооп бергенде баштапкы каттагы файлдарды автоматтык түрдө тиркейт.
+- Жөндөөгө боло турган жүрүм‑турум: тиркемелер
+  - автоматтык түрдө кошулат, же
+  - ырастоодон кийин гана кошулат (кичинекей, жеткиликтүү диалог). Параметрлерде сиз
+    ырастоону иштетип, демейки жоопту тандай аласыз (Ооба/Жок).
+- Файл аттарынын кара тизмеси (glob үлгүлөрү) айрым файлдардын
+  автоматтык түрдө тиркелишине жол бербейт. Мисалдар: `*intern*`, `*secret*`, `*passwor*`.
+  Туура келтирүү тамганын чоң‑кичинесине сезгич эмес жана болгону файлдын атын текшерет; Параметрлерде ар бир үлгүнү
+  өзүнчө сапка жазыңыз.
+- Кара тизмеге байланышкан эскертүү (каалоого жараша, демейки боюнча күйгүзүлгөн): файлыңыз кара тизме аркылуу
+  четтетилсе, кичинекей модалдык терезе файлды жана дал келген үлгү(лер)дү көрсөтөт. Карангы режимге
+  ылайыктуу жана баскычтоп аркылуу жеткиликтүү (жабуу үчүн Enter/Esc).
+- Reply (Жооп берүү) жана Reply all (Баарына жооп берүү) менен иштейт. Forward (Алга жиберүү) бул кошумча тарабынан өзгөртүлбөйт.
+- Өзүңүз бир нерсени тиркеп койгонуңузда да баштапкы файлдарды кошот; файл аттары боюнча кайталоолордон качат.
+- Ар бир өтмөктө кайталоого каршы коргоо ошол эле түзүү өтмөгүндө эки ирет кошулуудан сактайт.
+- Керексиз тиркемелерди болтурбоо үчүн демейки боюнча S/MIME сертификаттарын өткөрүп жиберет.
+- Inline сүрөттөрдү кошуу (демейки: ON). Камтылган сүрөттөр жооп каттын денесинде түз эле
+  base64 data URI катары калыбына келтирилип, баштапкы inline жайгашуусу сакталат. Inline сүрөттөрдү таптакыр өткөрүп
+  жиберүү үчүн Параметрлерден өчүрүңүз.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Кантип иштейт {#how-it-works}
+
+- Жооп бергенде, кошумча баштапкы тиркемелердин тизмесин чыгарат.
+- Файл тиркемелеринен S/MIME кол тамгаларын чыпкалайт; inline сүрөттөр каттын денесинде калыбына келтирилет (өчүрүлбөсө).
+- Каалоого жараша ырастоону сурайт (баскычтопко ыңгайлуу).
+- Туура келген файлдарды түзүп жаткан катыңызга кошот, файл аттары боюнча кайталоодон качат.
+- Өзгөчө учурлар үчүн Колдонуудагы “Эмне үчүн тиркемелер кошулбай калышы мүмкүн” бөлүмүн караңыз.
+
+Купуялык боюнча эскертүү: Бардык иштетүүлөр Thunderbird ичинде жергиликтүү түрдө жүрөт. Кошумча эч кандай фондо тармактык сурамдарды жөнөтпөйт.
+
+---

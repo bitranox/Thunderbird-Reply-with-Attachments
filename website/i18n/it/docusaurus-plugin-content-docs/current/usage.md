@@ -1,97 +1,101 @@
 ---
 id: usage
 title: 'Utilizzo'
-sidebar_label: 'Utilizzo'
+sidebar_label: 'Uso'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Utilizzo {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Rispondi e il componente aggiuntivo aggiunge automaticamente gli originali — oppure chiede prima conferma, se abilitato nelle Opzioni.
+- De-duplicati per nome file; le parti S/MIME sono sempre ignorate. Le immagini inline vengono ripristinate nel corpo della risposta per impostazione predefinita (disattivabile tramite "Includi immagini inline" nelle Opzioni).
+- Gli allegati in blacklist vengono anch'essi ignorati (pattern glob senza distinzione tra maiuscole/minuscole che corrispondono ai nomi file, non ai percorsi). Vedi [Configurazione](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Cosa succede in caso di risposta {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Rileva la risposta → elenca gli allegati originali → filtra S/MIME + inline → conferma facoltativa → aggiunge i file idonei (salta i duplicati) → ripristina le immagini inline nel corpo.
 
----
+Passaggio rigoroso vs. rilassato: Il componente aggiuntivo esclude innanzitutto le parti S/MIME e inline dagli allegati file. Se nulla rientra nei criteri, esegue un passaggio rilassato che continua a escludere S/MIME/inline ma tollera più casi (vedi Dettagli del codice). Le immagini inline non vengono mai aggiunte come allegati file; invece, quando "Includi immagini inline" è abilitato (l'impostazione predefinita), vengono incorporate direttamente nel corpo della risposta come URI di dati base64.
 
-## Behavior Details {#behavior-details}
+| Tipo di parte                                          |                 Passaggio rigoroso |                Passaggio rilassato |
+| ------------------------------------------------------ | ---------------------------------: | ---------------------------------: |
+| File di firma S/MIME `smime.p7s`                       |                            Escluso |                            Escluso |
+| Tipi MIME S/MIME (`application/pkcs7-*`)               |                            Escluso |                            Escluso |
+| Immagine inline referenziata da Content‑ID (`image/*`) | Escluso (ripristinato nel corpo\*) | Escluso (ripristinato nel corpo\*) |
+| Email allegata (`message/rfc822`) con un nome file     |                       Non aggiunto |                Può essere aggiunto |
+| Allegato file normale con un nome file                 |                Può essere aggiunto |                Può essere aggiunto |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Quando "Includi immagini inline" è abilitato (predefinito: ON), le immagini inline vengono incorporate nel corpo della risposta come URI di dati base64 invece di essere aggiunte come allegati file. Vedi [Configurazione](configuration#include-inline-pictures).
+
+Esempio: Alcuni allegati potrebbero non avere determinate intestazioni ma essere comunque file normali (non inline/S/MIME). Se il passaggio rigoroso non ne trova, quello rilassato può accettarli e allegarli.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Riferimenti incrociati {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- L'inoltro non è modificato per progettazione (vedi Limitazioni sotto).
+- Per i motivi per cui un allegato potrebbe non essere aggiunto, vedi “Perché gli allegati potrebbero non essere aggiunti”.
 
 ---
 
-## Limitations {#limitations}
+## Dettagli del comportamento {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Prevenzione dei duplicati:** Il componente aggiuntivo contrassegna la scheda di composizione come elaborata usando un valore di sessione per scheda e una protezione in memoria. Non aggiungerà gli originali due volte.
+- Chiudere e riaprire una finestra di composizione è considerato come una nuova scheda (cioè è consentito un nuovo tentativo).
+- **Rispetto degli allegati esistenti:** Se la composizione contiene già alcuni allegati, gli originali vengono comunque aggiunti esattamente una volta, saltando i nomi file già esistenti.
+- **Esclusioni:** Gli artefatti S/MIME e le immagini inline sono esclusi dagli allegati file. Se nulla rientra nei criteri al primo passaggio, un fallback rilassato ricontrolla le parti non S/MIME. Le immagini inline sono gestite separatamente: vengono ripristinate nel corpo della risposta come URI di dati (quando abilitato).
+  - **Nomi file:** `smime.p7s`
+  - **Tipi MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Immagini inline:** qualsiasi parte `image/*` referenziata da Content‑ID — esclusa dagli allegati file ma incorporata nel corpo della risposta quando "Includi immagini inline" è ON
+  - **Email allegate (`message/rfc822`):** trattate come allegati normali se hanno un nome file; possono essere aggiunte (soggette al controllo duplicati e alla blacklist).
+- **Avviso blacklist (se abilitato):** Quando i candidati vengono esclusi dalla tua blacklist,
+  il componente aggiuntivo mostra una piccola finestra modale che elenca i file interessati e i
+  pattern corrispondenti. Questo avviso appare anche nei casi in cui non verrà
+  aggiunto alcun allegato perché tutto è stato escluso.
 
 ---
 
-See also
+## Scorciatoie da tastiera {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Finestra di conferma: Y/J = Sì, N/Esc = No; Tab/Shift+Tab e i tasti freccia fanno scorrere il focus.
+  - La “Risposta predefinita” in [Configurazione](configuration#confirmation) imposta il pulsante inizialmente messo a fuoco.
+  - Invio attiva il pulsante a fuoco. Tab/Shift+Tab e i tasti freccia spostano il focus per l’accessibilità.
+
+### Guida rapida tastiera {#keyboard-cheat-sheet}
+
+| Tasti                | Azione                              |
+| -------------------- | ----------------------------------- |
+| Y / J                | Conferma Sì                         |
+| N / Esc              | Conferma No                         |
+| Enter                | Attiva il pulsante a fuoco          |
+| Tab / Shift+Tab      | Sposta il focus avanti/indietro     |
+| Tasti freccia        | Sposta il focus tra i pulsanti      |
+| Risposta predefinita | Imposta il focus iniziale (Sì o No) |
+
+---
+
+## Limitazioni {#limitations}
+
+- L'inoltro non è modificato da questo componente aggiuntivo (Rispondi e Rispondi a tutti sono supportati).
+- Gli allegati molto grandi possono essere soggetti ai limiti di Thunderbird o del provider.
+  - Il componente aggiuntivo non suddivide né comprime i file; si affida alla normale gestione degli allegati di Thunderbird.
+- Messaggi crittografati: le parti S/MIME sono intenzionalmente escluse.
+
+---
+
+## Perché gli allegati potrebbero non essere aggiunti {#why-attachments-might-not-be-added}
+
+- Le immagini inline non vengono aggiunte come allegati file. Quando "Includi immagini inline" è ON (impostazione predefinita), vengono invece incorporate nel corpo della risposta come URI di dati. Se l'impostazione è OFF, le immagini inline vengono rimosse completamente. Vedi [Configurazione](configuration#include-inline-pictures).
+- Le parti di firma S/MIME sono escluse per progettazione: nomi file come `smime.p7s` e tipi MIME come `application/pkcs7-signature` o `application/pkcs7-mime` vengono ignorati.
+- I pattern di blacklist possono filtrare i candidati: vedi [Configurazione](configuration#blacklist-glob-patterns); il confronto non distingue maiuscole/minuscole ed è limitato al solo nome file.
+- I nomi file duplicati non vengono riaggiunti: se la composizione contiene già un file con lo stesso nome normalizzato, viene ignorato.
+- Parti non file o nomi file mancanti: vengono considerati per l'aggiunta solo le parti simili a file con nomi file utilizzabili.
+
+---
+
+Vedi anche
+
+- [Configurazione](configuration)

@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "Utilisation",
-  "description": "Usage",
+  "title": "Bosaleli",
+  "description": "---",
   "source": "@site/i18n/ln/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "Utilisation",
-    "sidebar_label": "Utilisation"
+    "title": "Bosaleli",
+    "sidebar_label": "Bosaleli"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/configuration"
   },
   "next": {
-    "title": "Compatibilité",
+    "title": "Bokokani",
     "permalink": "/Thunderbird-Reply-with-Attachments/ln/docs/compatibility"
   }
 }

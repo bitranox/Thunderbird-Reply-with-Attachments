@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Ukufakwa'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Ukufakwa ngokusebenzisa "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Inguqulo ye-Thunderbird okungenani
+Lesi sengezo sisekela i-Thunderbird **128 ESR noma entsha**. Izinhlobo ezindala azisekelwa.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Le yindlela yokufaka enconyiwe. Izengezo ezifakwe kusuka ku-ATN (addons.thunderbird.net) zithola izibuyekezo ngokuzenzakalelayo. Ukufakwa kwe-LOCAL/dev akuzibuyekezi ngokuzenzakalelayo.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Inguqulo encane ye-Thunderbird: 128 ESR noma entsha.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Ku-Thunderbird, iya ku-**Tools > Add-ons and Themes**.
+2. Sesha okuthi "reply with attachments".
+3. Nezela isengezo.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Noma uvule ikhasi lesengezo ngqo: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Ukufakwa ngesandla kusuka ku-XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Landa ifayela le-XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Iya ku-[Ikhasi le-Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Landa inguqulo yakamuva yesengezo njengefayela le-XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Faka ku-Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Vula i-Thunderbird.
+2. Iya ku-**Tools > Add-ons and Themes**.
+3. Ku-**Add-ons Manager**, chofoza isithonjana segiya ekhoneni eliphezulu kwesokudla.
+4. Khetha **Install Add-on From File…** kumenyu.
+5. Khetha ifayela elandiwe `reply_with_attachments-x.y.z-tb.xpi`.
+6. Qinisekisa ukufakwa uma ucelwa.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Ukufakwa kokuthuthukisa {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Landa i-repository {#download-the-repository}
 
-See also
+1. Landa inguqulo yakamuva ye-repository ye-GitHub.
+2. Sebenzisa `make help` ukuthola olunye ulwazi.
 
-- [Quickstart](quickstart)
+### Faka ku-Thunderbird {#install-in-thunderbird-dev}
+
+1. Vula i-Thunderbird.
+2. Iya ku-**Tools > Add-ons and Themes**.
+3. Ku-**Add-ons Manager**, chofoza isithonjana segiya ekhoneni eliphezulu kwesokudla.
+4. Khetha **Install Add-on From File…** kumenyu.
+5. Khetha ifayela elikhiqiziwe `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Qinisekisa ukufakwa uma ucelwa.
+
+Qaphela: Uma i-Thunderbird ingayamukeli i-`.zip` ohlelweni lwakho, yiqambe kabusha ibe `.xpi` bese uzama “Install Add‑on From File…” futhi.
+
+### Indawo yokuthola i-LOCAL ZIP {#where-local-zip}
+
+- Okokuqala, phaketha isengezo: sebenzisa `make pack` empandeni ye-repository.
+- Ngemva kokupakisha, thola i-zip ethi “LOCAL” empandeni ye-repository (isb., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Ngaphambi kokupakisha kabusha ngenhloso yokuhlola, nyusa izinguqulo ku-`sources/manifest_ATN.json` naku-`sources/manifest_LOCAL.json`.
+
+---
+
+## Khubaza, Khipha ukufakwa, nezibuyekezo {#disable-uninstall-updates}
+
+- Khubaza: Thunderbird → Tools → Add‑ons and Themes → thola isengezo → yivale.
+- Khipha ukufakwa: umbono ofanayo → imenyu yamachashazi amathathu → Susa.
+- Izibuyekezo: ukufakwa kwe-ATN kuzibuyekeza ngokuzenzakalelayo uma izinguqulo ezintsha zivunyelwe. Ukufakwa kwe-LOCAL/dev akuzibuyekezi; fakela kabusha ukwakhiwa okusha kwe-LOCAL mathupha.
+- Susa izilungiselelo ngokuphelele: bheka [Ubumfihlo → Ukususwa kwedatha](privacy#data-removal).
+
+Bona futhi
+
+- [Ukuqalisa okusheshayo](quickstart)

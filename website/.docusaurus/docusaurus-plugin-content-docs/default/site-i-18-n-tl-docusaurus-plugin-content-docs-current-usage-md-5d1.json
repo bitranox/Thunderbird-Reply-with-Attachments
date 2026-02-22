@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Paggamit",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/tl/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/configuration"
   },
   "next": {
-    "title": "Kompatibilidad",
+    "title": "Pagkakatugma",
     "permalink": "/Thunderbird-Reply-with-Attachments/tl/docs/compatibility"
   }
 }

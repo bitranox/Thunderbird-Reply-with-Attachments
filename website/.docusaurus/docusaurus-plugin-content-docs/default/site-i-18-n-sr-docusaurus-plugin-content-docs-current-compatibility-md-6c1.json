@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Kompatibilnost",
-  "description": "Compatibility",
+  "title": "Компатибилност",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Kompatibilnost",
-    "sidebar_label": "Kompatibilnost"
+    "title": "Компатибилност",
+    "sidebar_label": "Компатибилност"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Korišćenje",
+    "title": "Употреба",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/usage"
   },
   "next": {

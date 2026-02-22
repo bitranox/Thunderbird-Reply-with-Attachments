@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Hurtigstart'
-sidebar_label: 'Hurtigstart'
+title: 'Hurtig start'
+sidebar_label: 'Hurtig start'
 ---
 
-## Hurtigstart
+---
+
+## Hurtig start
 
 :::important Minimum Thunderbird-version
-Dette add-on understøtter Thunderbird **128 ESR eller nyere**. Ældre versioner understøttes ikke.
+Denne tilføjelse understøtter Thunderbird **128 ESR eller nyere**. Ældre versioner understøttes ikke.
 :::
 
-:::note Ingen telemetri; intet baggrundsnetværk
-Add-on'et indsamler **ikke** analyser/telemetri og foretager **ikke** baggrundsnetværksanmodninger. Netværksadgang forekommer kun, når du klikker på eksterne links (Docs, GitHub, Donate).
+:::note Ingen telemetri; intet netværk i baggrunden
+Tilføjelsen indsamler **ikke** analyse-/telemetridata og foretager **ingen** netværksforespørgsler i baggrunden. Netværksadgang sker kun, når du klikker på eksterne links (Dokumentation, GitHub, Doner).
 :::
 
 ---
 
 ### Installation
 
-1. Installer add-on'et fra Thunderbird Add-ons.
-2. Valgfrit: Aktiver bekræftelse (Indstillinger → “Spørg før vedhæftning af filer”).
-3. Valgfrit: Behold den sorte liste advarsel aktiveret (standard): “Advar hvis vedhæftninger udelukkes af svartelisten”.
-4. Valgfrit: Tilføj mønstre til svartelisten (et per linje), f.eks.:
+1. Installer tilføjelsen fra Thunderbird-tilføjelser.
+2. Valgfrit: Aktivér bekræftelse (Indstillinger → “Spørg før der tilføjes vedhæftninger”).
+3. Valgfrit: Lad advarsel for sortliste være aktiveret (standard): “Advar, hvis vedhæftninger udelukkes af sortlisten”.
+4. Valgfrit: Tilføj mønstre til sortliste (ét pr. linje), f.eks.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ Add-on'et indsamler **ikke** analyser/telemetri og foretager **ikke** baggrundsn
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Bemærk: “# …” ovenfor er en kommentar i denne dokumentation; inkluder ikke kommentarer i mønstre, du indsætter i indstillingerne. Indtast kun ét mønster per linje.
+Bemærk: “# …” ovenfor er en kommentar i denne dokumentation; medtag ikke kommentarer i de mønstre, du indsætter i Indstillinger. Indtast kun ét mønster pr. linje.
 
-Svar nu på en besked med vedhæftninger — originalerne vil blive tilføjet automatisk eller efter en hurtig bekræftelse. Hvis nogle filer udelukkes af din sortliste, vil du se en kort advarsel, der oplyser om dem.
-
----
-
-### Verificer {#verify}
-
-- Svar på en besked med 1–2 vedhæftninger og bekræft, at originalerne er tilføjet til dit kompositionsvindue.
-- For at justere adfærden, se [Konfiguration](configuration) (bekræftelses-skift, standard svar, mønstre til sortlisten).
+Svar nu på en meddelelse med vedhæftninger — originalerne bliver tilføjet automatisk eller efter en hurtig bekræftelse. Hvis nogle filer udelukkes af din sortliste, ser du en kort advarsel, der oplister dem.
 
 ---
 
-### Bekræft advarsel om sortlistning {#verify-blacklist-warning}
+### Bekræft {#verify}
 
-- Svar på en besked, der indeholder en fil som “secret.txt”.
-- Med “Advar hvis vedhæftninger udelukkes af svartelisten” aktiveret, viser en lille dialog de udelukkede filer og det matchende mønster.
-
-Hvis du ikke ser en advarsel, skal du sikre dig, at mønsteret matcher filnavnet nøjagtigt (kun filnavn, case-følsomt). Se Konfiguration → Sortliste.
+- Svar på en meddelelse med 1–2 vedhæftninger, og bekræft, at originalerne tilføjes i dit komponeringsvindue.
+- For at justere adfærden, se [Konfiguration](configuration) (bekræftelseskontakt, standardsvar, sortlistemønstre).
 
 ---
 
-### Tastaturnote {#keyboard-note}
+### Bekræft advarsel for sortliste {#verify-blacklist-warning}
 
-- Bekræftelsesdialogen understøtter Y/J for Ja og N/Esc for Nej. På nogle ikke-latinske tastaturer kan bogstavtasterne variere; Enter bekræfter den fokuserede knap.
+- Svar på en meddelelse, der indeholder en fil som “secret.txt”.
+- Med “Advar, hvis vedhæftninger udelukkes af sortlisten” aktiveret viser en lille dialogboks de udelukkede filer og det matchende mønster.
+
+Hvis du ikke ser en advarsel, skal du sikre, at mønsteret matcher filnavnet nøjagtigt (kun filnavn, uden skelnen mellem store og små bogstaver). Se Konfiguration → Sortliste.
+
+---
+
+### Bemærkning om tastatur {#keyboard-note}
+
+- Bekræftelsesdialogen understøtter Y/J for Ja og N/Esc for Nej. På nogle ikke‑latinske tastaturer kan bogstavtasterne variere; Enter bekræfter den fokuserede knap.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Donasyon",
-  "description": "Donasyon",
+  "title": "Fè don",
+  "description": "---",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Donasyon",
-    "sidebar_label": "Donasyon"
+    "title": "Fè don",
+    "sidebar_label": "Fè don"
   },
   "sidebar": "docs",
   "previous": {

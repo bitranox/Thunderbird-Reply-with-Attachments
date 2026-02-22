@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Dafarekat",
-  "description": "Quickstart",
+  "title": "Tàmbali bu gaaw",
+  "description": "---",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Dafarekat",
-    "sidebar_label": "Dafarekat"
+    "title": "Tàmbali bu gaaw",
+    "sidebar_label": "Tàmbali bu gaaw"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Fonksyonalités",
+    "title": "Jikko yi",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/features"
   },
   "next": {
-    "title": "Sosna",
+    "title": "Istalasiyoŋ",
     "permalink": "/Thunderbird-Reply-with-Attachments/wo/docs/install"
   }
 }

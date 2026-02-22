@@ -1,21 +1,28 @@
 ---
 id: changelog
-title: 'Changelog'
+title: 'Tikraykunapa willakuy'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## Hukchay qillqa
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+Llapan, detalladotaq ñawpaq willakuyta qhaway repositorioq
+[GitHubpi CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" kunanqa siqikunata chaymanta churaspa chaykuna kutichinapa qillqapim directa ch'ipisqa, base64 data URIs hina (predeterminado: ON); código-q calidad allinchasqa, hinallataq pruebakunapa cobertura wiñachisqa.
+- 2.3.1: Thunderbird 'background event page'-ta samayachisqapim qhipamanpas q'ipikuna waqaychasqa kachkan; pantay ñit'inakunata qhaway-t'aqiypaq qhawarichispa 'debug' hook-kuna yapasqa.
+- 2.3.0: q'ipikunapa duplicación pichanakuy allinchasqa, pruebakunapa cobertura wiñachisqa, hinallataq ñawpaqñasqa permiso-kuna qichusqa AMO kamachikunawan allin kasqanpaq.
+- 2.1.0: 100 ñawpaq simikunaqpaq tukuy internacionalización yanapay.
+- 2.0.0: qillqaymanta musuqmanta, tukuy funcionalidades-niyuq versiónman (EN/DE).
+- 1.0.1: messages.listAttachments()-man tikrasqa.
+- 1.0.0: ñawpaq qhapaqchay.
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## P'unchaykuna hinallataq kanales {#dates-and-channels}
+
+- ATN-man lanzamientukuna empaquetaymanta qhipa horas-kama qhipachakunman.
+- LOCAL build-kunaqa desarrolladorpa pruebakunallapuni, ATN ñanwan mana distribuidu kachkanchu.
 
 ---

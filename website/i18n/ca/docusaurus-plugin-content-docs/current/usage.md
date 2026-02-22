@@ -4,94 +4,98 @@ title: 'Ús'
 sidebar_label: 'Ús'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Ús {#usage}
+
+- Respon i el complement afegeix els originals automàticament — o bé pregunta abans, si està habilitat a Opcions.
+- Desduplicació pel nom de fitxer; les parts S/MIME sempre s'ometen. Les imatges en línia es restauren al cos de la resposta per defecte (desactiveu-ho mitjançant "Include inline pictures" a Opcions).
+- Els adjunts a la llista negra també s'ometen (patrons glob que no distingeixen entre majúscules i minúscules i que coincideixen amb noms de fitxer, no amb rutes). Vegeu [Configuració](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Què passa en respondre {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Detectar resposta → llistar els adjunts originals → filtrar S/MIME + en línia → confirmació opcional → afegir els fitxers elegibles (ometre duplicats) → restaurar les imatges en línia al cos.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Passada estricta vs. relaxada: El complement primer exclou les parts S/MIME i en línia dels adjunts de fitxer. Si no n'hi ha cap que compleixi els criteris, executa una passada relaxada que continua excloent S/MIME/en línia però tolera més casos (vegeu Detalls del codi). Les imatges en línia mai no s'afegeixen com a adjunts de fitxer; en lloc d'això, quan "Include inline pictures" està habilitat (el valor per defecte), s'incrusten directament al cos de la resposta com a URI de dades base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Tipus de part                                           |              Passada estricta |              Passada relaxada |
+| ------------------------------------------------------- | ----------------------------: | ----------------------------: |
+| Fitxer de signatura S/MIME `smime.p7s`                  |                        Exclòs |                        Exclòs |
+| Tipus MIME S/MIME (`application/pkcs7-*`)               |                        Exclòs |                        Exclòs |
+| Imatge en línia referenciada per Content‑ID (`image/*`) | Exclosa (restaurada al cos\*) | Exclosa (restaurada al cos\*) |
+| Correu adjunt (`message/rfc822`) amb un nom de fitxer   |                  No s'afegeix |                 Es pot afegir |
+| Adjunt de fitxer normal amb un nom de fitxer            |                 Es pot afegir |                 Es pot afegir |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Quan "Include inline pictures" està habilitat (per defecte: ON), les imatges en línia s'incrusten al cos de la resposta com a URI de dades base64 en lloc d'afegir-les com a fitxers adjunts. Vegeu [Configuració](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Exemple: Alguns adjunts poden mancar d'algunes capçaleres però continuen sent fitxers normals (no en línia/S/MIME). Si la passada estricta no en troba cap, la passada relaxada pot acceptar-los i adjuntar-los.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Referències creuades {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- El reenviament no es modifica per disseny (vegeu Limitacions més avall).
+- Per conèixer els motius pels quals un adjunt pot no afegir-se, vegeu «Per què pot ser que no s'afegeixin fitxers adjunts».
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Detalls del comportament {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Prevenció de duplicats:** El complement marca la pestanya de redacció com a processada mitjançant un valor de sessió per pestanya i una protecció en memòria. No afegirà els originals dues vegades.
+- Tancar i tornar a obrir una finestra de redacció es tracta com una pestanya nova (és a dir, es permet un nou intent).
+- **Respecte pels adjunts existents:** Si la redacció ja conté alguns adjunts, els originals encara s'afegeixen exactament una vegada, ometent els noms de fitxer que ja existeixen.
+- **Exclusions:** Les parts S/MIME i les imatges en línia s'exclouen dels adjunts de fitxer. Si res no compleix en la primera passada, una passada relaxada torna a comprovar les parts no S/MIME. Les imatges en línia es tracten per separat: es restauren al cos de la resposta com a URI de dades (quan està habilitat).
+  - **Noms de fitxer:** `smime.p7s`
+  - **Tipus MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Imatges en línia:** qualsevol part `image/*` referenciada per Content‑ID — exclosa dels adjunts de fitxer però incrustada al cos de la resposta quan "Include inline pictures" és ON
+  - **Correus adjunts (`message/rfc822`):** es tracten com a adjunts normals si tenen un nom de fitxer; es poden afegir (subjectes a comprovacions de duplicats i a la llista negra).
+- **Avís de llista negra (si està habilitat):** Quan els candidats s'exclouen per la vostra llista negra,
+  el complement mostra una petita finestra modal amb la llista dels fitxers afectats i els patrons
+  coincidents. Aquest avís també apareix en els casos en què no s'afegirà cap adjunt perquè tot s'ha
+  exclòs.
 
 ---
 
-## Limitations {#limitations}
+## Dreceres de teclat {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Diàleg de confirmació: Y/J = Sí, N/Esc = No; Tab/Shift+Tab i les tecles de fletxa canvien el focus.
+  - La «Resposta per defecte» a [Configuració](configuration#confirmation) estableix el botó enfocat inicialment.
+  - Enter activa el botó amb focus. Tab/Shift+Tab i les fletxes mouen el focus per a l'accessibilitat.
+
+### Guia ràpida de teclat {#keyboard-cheat-sheet}
+
+| Tecles               | Acció                               |
+| -------------------- | ----------------------------------- |
+| Y / J                | Confirmar Sí                        |
+| N / Esc              | Confirmar No                        |
+| Enter                | Activar el botó amb focus           |
+| Tab / Shift+Tab      | Moure el focus endavant/enrere      |
+| Tecles de fletxa     | Moure el focus entre botons         |
+| Resposta per defecte | Defineix el focus inicial (Sí o No) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Limitacions {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- El reenviament no és modificat per aquest complement (Respon i Respon a tothom estan admesos).
+- Els adjunts molt grans poden estar subjectes als límits de Thunderbird o del proveïdor.
+  - El complement no fragmenta ni comprimeix fitxers; es basa en la gestió normal d'adjunts de Thunderbird.
+- Missatges xifrats: les parts S/MIME s'exclouen intencionadament.
 
 ---
 
-See also
+## Per què pot ser que no s'afegeixin fitxers adjunts {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Les imatges en línia no s'afegeixen com a adjunts de fitxer. Quan "Include inline pictures" és ON (per defecte), en lloc d'això s'incrusten al cos de la resposta com a URI de dades. Si l'ajust és OFF, les imatges en línia s'eliminen completament. Vegeu [Configuració](configuration#include-inline-pictures).
+- Les parts de signatura S/MIME s'exclouen per disseny: noms de fitxer com `smime.p7s` i tipus MIME com `application/pkcs7-signature` o `application/pkcs7-mime` s'ometen.
+- Els patrons de llista negra poden filtrar candidats: vegeu [Configuració](configuration#blacklist-glob-patterns); la coincidència no distingeix majúscules/minúscules i és només pel nom de fitxer.
+- Els noms de fitxer duplicats no es tornen a afegir: si la redacció ja conté un fitxer amb el mateix nom normalitzat, s'omet.
+- Parts que no són fitxers o sense nom de fitxer: només es consideren per afegir les parts tipus fitxer amb noms de fitxer utilitzables.
+
+---
+
+Vegeu també
+
+- [Configuració](configuration)

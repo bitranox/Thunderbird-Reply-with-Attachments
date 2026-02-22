@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "İlk addım",
-  "description": "Quickstart",
+  "title": "Tez Başlanğıc",
+  "description": "---",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "İlk addım",
-    "sidebar_label": "İlk addım"
+    "title": "Tez Başlanğıc",
+    "sidebar_label": "Sürətli Başlanğıc"
   },
   "sidebar": "docs",
   "previous": {

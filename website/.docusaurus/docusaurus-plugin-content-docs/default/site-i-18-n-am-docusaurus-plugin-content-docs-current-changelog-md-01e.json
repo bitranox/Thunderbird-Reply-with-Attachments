@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "የለውጥ ታሪክ",
-  "description": "የለውጥ ታሪክ",
+  "title": "የለውጥ መዝገብ",
+  "description": "---",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "የለውጥ ታሪክ"
+    "title": "የለውጥ መዝገብ"
   },
   "sidebar": "docs",
   "previous": {

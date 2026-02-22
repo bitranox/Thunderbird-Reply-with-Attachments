@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "تحذير إذا تم استبعاد المرفقات بواسطة القائمة السوداء"
   },
+  "uiIncludeInlineLabel": {
+    "message": "تضمين الصور المضمنة (الصور المدمجة)"
+  },
   "uiDebugHeader": {
     "message": "خيارات متقدمة"
   },

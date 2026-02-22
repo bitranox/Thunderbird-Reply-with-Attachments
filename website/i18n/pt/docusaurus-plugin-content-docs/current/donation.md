@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Doe'
-sidebar_label: 'Doe'
+title: 'Doar'
+sidebar_label: 'Doar'
 ---
 
-## Donate
+---
+
+## Doar
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Se gosta de "Reply with Attachments" e deseja apoiar o seu desenvolvimento, pode fazer uma doação aqui:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Doar via Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ou</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Doar via PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ou</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Ofereça-me um café" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Leia o código para me oferecer um café"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Obrigado! O seu apoio ajuda a manter a compatibilidade com as novas versões do Thunderbird, a melhorar a acessibilidade e os testes, e a manter a documentação atualizada.
 
-Notes
+Notas
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Os links de doação só abrem quando clica neles; o complemento não efetua quaisquer pedidos de rede em segundo plano.
+- O apoio recorrente ajuda na manutenção a longo prazo e em atualizações atempadas, mas é totalmente opcional.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Se os botões de imagem não forem carregados, utilize estes links em alternativa:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+As doações são voluntárias; não há bloqueio de funcionalidades.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Visibilidade das doações (adiamento de 90 dias)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+O complemento inclui uma funcionalidade de conveniência para ocultar os pedidos de doação durante algum tempo após ter doado.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Onde encontrar
+  - Opções → secção Suporte: verá um botão “Eu doei” e uma pequena área de dica.
+  - O diálogo de confirmação de envio também mostra um botão Doar; é ocultado automaticamente quando o adiamento está ativo.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Como funciona
+  - Ao clicar em “Eu doei”, os botões de doação e as mensagens relacionadas ficam ocultos por 90 dias.
+  - Uma indicação de estado mostra “Oculto até YYYY‑MM‑DD” (na sua data local). Há também um botão “Mostrar Doar novamente” para restaurar a visibilidade imediatamente.
+  - Após 90 dias, o botão Doar volta a ficar visível automaticamente.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Privacidade e armazenamento
+  - O complemento armazena um único carimbo de data/hora no armazenamento local do Thunderbird para lembrar o período de adiamento. Chave: `donateHideUntil` (milissegundos desde a época Unix).
+  - Esta definição é local ao seu perfil do Thunderbird (não é sincronizada na nuvem). Esta funcionalidade não faz quaisquer pedidos de rede.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Resolução de problemas
+  - Se o botão Doar ainda aparecer logo após clicar em “Eu doei”, aguarde um momento ou reabra a página Opções; a interface é atualizada assim que a definição é guardada.
+  - Para repor manualmente, clique em “Mostrar Doar novamente”. Também pode esperar até que a data indicada na dica seja ultrapassada.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Esta funcionalidade é apenas por conveniência; nunca bloqueia a funcionalidade do complemento e não recolhe quaisquer dados pessoais.
 
 ---

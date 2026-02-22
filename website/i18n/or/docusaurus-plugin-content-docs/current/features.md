@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'ବିଶେଷତାଗୁଡ଼ିକ'
-sidebar_label: 'ବିଶେଷତାଗୁଡ଼ିକ'
+title: 'ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକ'
+sidebar_label: 'ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ବୈଶିଷ୍ଟ୍ୟଗୁଡ଼ିକ {#features}
 
-## How It Works {#how-it-works}
+- ପ୍ରତିଉତ୍ତର ଦେବାବେଳେ ମୂଳ ଇମେଲରୁ ଫାଇଲଗୁଡ଼ିକୁ ସ୍ୱୟଂଚାଳିତଭାବେ ଯୋଡ଼େ।
+- ବିନ୍ୟାସଯୋଗ୍ୟ ବ୍ୟବହାର: ଲଗନଗୁଡ଼ିକୁ
+  - ସ୍ୱୟଂଚାଳିତଭାବେ ଯୋଡ଼ାଯାଇପାରେ, କିମ୍ବା
+  - ନିଶ୍ଚିତିକରଣ ପରେମାତ୍ର ଯୋଡ଼ାଯାଇପାରେ (ଛୋଟ, ଅଭିଗମ୍ୟ ଡାଏଲଗ୍)। Options ରେ ଆପଣ
+    ନିଶ୍ଚିତିକରଣକୁ ସକ୍ରିୟ କରି ଡିଫଲ୍ଟ ଉତ୍ତର (Yes/No) ବାଛିପାରିବେ।
+- ଫାଇଲନାମଗୁଡ଼ିକର ବ୍ଲାକଲିସ୍ଟ (glob ପ୍ୟାଟର୍ନ) ନିର୍ଦ୍ଧିଷ୍ଟ ଫାଇଲକୁ
+  ସ୍ୱୟଂଚାଳିତଭାବେ ଲଗାଯିବାରୁ ବଞ୍ଚାଏ। ଉଦାହରଣ: `*intern*`, `*secret*`, `*passwor*`.
+  ମ୍ୟାଚିଂ case‑insensitive ଏବଂ କେବଳ ଫାଇଲନାମକୁ ଯାଞ୍ଚ କରେ; Options ରେ ପ୍ରତି ଲାଇନକୁ
+  ଗୋଟିଏ ପ୍ୟାଟର୍ନ ଦିଅନ୍ତୁ।
+- ବ୍ଲାକଲିସ୍ଟ ସଚେତନବାଣୀ (ଐଛିକ, ଡିଫଲ୍ଟରେ ସକ୍ରିୟ): ଆପଣଙ୍କର
+  ବ୍ଲାକଲିସ୍ଟ ଦ୍ୱାରା ଫାଇଲଗୁଡ଼ିକ ବହିଷ୍କୃତ ହେଲେ, ଏକ ଛୋଟ ମୋଡାଲ୍ ଫାଇଲ ଏବଂ ମେଳାଯାଇଥିବା ପ୍ୟାଟର୍ନ(ଗୁଡ଼ିକ) ଦେଖାଏ। ଡାର୍କ‑ମୋଡ୍
+  ସହଜସଂଗୀ ଏବଂ କୀବୋର୍ଡ ଅଭିଗମ୍ୟ (ବନ୍ଦ କରିବାକୁ Enter/Esc)।
+- Reply ଏବଂ Reply all ସହ କାମ କରେ। Forward କୁ ଏହି add‑on ପରିବର୍ତ୍ତନ କରେନାହିଁ।
+- ଆପଣ ଆଗରୁ କିଛି ଲଗାଇଥିଲେ ମଧ୍ୟ ମୂଳଗୁଡ଼ିକୁ ଯୋଡ଼େ; ଫାଇଲନାମ ଆଧାରରେ ଡୁପ୍ଲିକେଟ୍ ଏଡାଏ।
+- ପ୍ରତି‑ଟ୍ୟାବ୍ ଡୁପ୍ଲିକେଟ୍ ଗାର୍ଡ ସେଇ ରଚନା ଟ୍ୟାବ୍‌ରେ ଦୁଇଥର ଯୋଡ଼ିବାକୁ ରୋକେ।
+- ଅନାବଶ୍ୟକ ଲଗନ ଏଡାଇବା ପାଇଁ ଡିଫଲ୍ଟରେ S/MIME ସର୍ଟିଫିକେଟ୍‌ଗୁଡ଼ିକୁ ଏଡାଏ।
+- ଇନ୍ଲାଇନ୍ ଛବିଗୁଡ଼ିକୁ ଅନ୍ତର୍ଭୁକ୍ତ କରନ୍ତୁ (ଡିଫଲ୍ଟ: ON)। ସଂଯୁକ୍ତ ଇମେଜ୍‌ଗୁଡ଼ିକୁ
+  ପ୍ରତିଉତ୍ତର ଦେହରେ ସିଧାସଳଖ base64 data URIs ଭାବେ ପୁନଃସ୍ଥାପିତ କରାଯାଏ, ମୂଳ ଇନ୍ଲାଇନ୍ ବିନ୍ୟାସକୁ ଅକ୍ଷୁଣ ରଖି। Options ରେ
+  ନିଷ୍କ୍ରିୟ କରିଲେ ପୂରାପୁରି ଇନ୍ଲାଇନ୍ ଇମେଜ୍ ଏଡାଇହେବ।
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ଏହା କିପରି କାମ କରେ {#how-it-works}
+
+- ପ୍ରତିଉତ୍ତର ବେଳେ, add‑on ମୂଳ ଲଗନଗୁଡ଼ିକୁ ତାଲିକାଭୁକ୍ତ କରେ।
+- ଫାଇଲ ଲଗନରୁ S/MIME ସହିଗୁଡ଼ିକୁ ଛାଣି ଦିଏ; (ନିଷ୍କ୍ରିୟ ନ ଥିଲେ) ଇନ୍ଲାଇନ୍ ଇମେଜ୍‌ଗୁଡ଼ିକ ଦେହରେ ପୁନଃସ୍ଥାପିତ ହୁଏ।
+- ଐଛିକଭାବେ ନିଶ୍ଚିତିକରଣ ଚାହେ (କୀବୋର୍ଡ‑ସହଜ)।
+- ଯୋଗ୍ୟ ଫାଇଲଗୁଡ଼ିକୁ ଆପଣଙ୍କ ରଚନାରେ ଯୋଡ଼େ, ଫାଇଲନାମ ଆଧାରରେ ଡୁପ୍ଲିକେଟ୍ ଏଡାଇ।
+- ଏଜ୍ କେସ୍‌ଗୁଡ଼ିକ ପାଇଁ Usage ଭିତରେ “କାହିଁକି ଲଗନ ଯୋଡ଼ାଯାଇନପାରେ” ଦେଖନ୍ତୁ।
+
+ଗୋପନୀୟତା ଟୀକା: ସମସ୍ତ ପ୍ରକ୍ରିୟା Thunderbird ଭିତରେ ସ୍ଥାନୀୟରୁପେ ଘଟେ। ଏହି add‑on କୌଣସି ପୃଷ୍ଠଭୂମି ନେଟୱର୍କ ଅନୁରୋଧ କରେନାହିଁ।
+
+---

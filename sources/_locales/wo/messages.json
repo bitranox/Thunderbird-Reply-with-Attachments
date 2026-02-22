@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Artu su pièces jointes yi ñu daq ci blacklist bi"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Dugal nataal yi ci biir (nataal yi ñu tëral)"
+  },
   "uiDebugHeader": {
     "message": "Xeltéef yu xóot"
   },

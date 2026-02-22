@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ihinduka",
-  "description": "Changelog",
+  "title": "Amateka y'impinduka",
+  "description": "---",
   "source": "@site/i18n/rw/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ihinduka"
+    "title": "Amateka y'impinduka"
   },
   "sidebar": "docs",
   "previous": {

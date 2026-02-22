@@ -4,31 +4,40 @@ title: 'Zvimiro'
 sidebar_label: 'Zvimiro'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Zvimiro {#features}
 
-## How It Works {#how-it-works}
+- Inobatanidza mafaera otomatiki kubva muimeyiri yepakutanga paunenge uchipindura.
+- Maitiro anogadzirika: zvinobatanidzwa zvinogona
+  - kuwedzerwa otomatiki, kana
+  - kuwedzerwa chete mushure mekusimbisa (dhayalogi diki rinowanikwa nyore). Mu Options iwe
+    unogona kubvumidza kusimbisa uye kusarudza mhinduro yakasarudzika (Ehe/Kwete).
+- Rondedzero yekurambidza mazita emafaira (mapatani eglob) inodzivirira mafaera chaiwo kubva
+  kubatanidzwa otomatiki. Mienzaniso: `*intern*`, `*secret*`, `*passwor*`.
+  Kuenzanisa hakuna hanya nemavara makuru kana madiki (case‑insensitive) uye kunoongorora zita refaira chete; ipa pateni imwe
+  pamutsara mu Options.
+- Yambiro yerondedzero yekurambidza (optional, yakabatidzwa nekumisikidza): kana mafaera akabviswa ne
+  blacklist yako, modal diki rinonyora faira uye mapatani anowirirana. Dark‑mode
+  hushamwari uye hunowanikwa nekhibhodi (Enter/Esc kuvhara).
+- Inoshanda ne Reply uye Reply all. Forward haishandurwi nechiwedzero ichi.
+- Inowedzera zvekutanga kunyangwe wato batanidza chimwe chinhu wega; inodzivirira kudzokororwa nezita refaira.
+- Dziviriro yekudzokorora pa‑tab imwe neimwe inodzivirira kuwedzera kaviri mutab imwechete yekunyora.
+- Inosvetuka zvitupa zveS/MIME nekumisikidza kudzivirira zvinobatanidzwa zvisina basa.
+- Sanganisira mifananidzo iri-mutsara (default: ON). Mifananidzo yakaiswa inodzorerwa zvakananga mu
+  muviri wekupindura se base64 data URIs, ichichengetedza kurongeka kwepakutanga kwemutsara. Dzima mu
+  Options kuti usiye mifananidzo iri-mutsara zvachose.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Inoshanda Sei {#how-it-works}
+
+- Pakupindura, chiwedzero chinorondedzera zvinobatanidzwa zvekutanga.
+- Inobvisa masiginecha eS/MIME kubva kuzvinobatanidzwa zefaira; mifananidzo iri-mutsara inodzorerwa mumuviri (kunze kwekunge zvadzimwa).
+- Zvingasarudzwa kubvunza kusimbisa (inofambirana nekhibhodi).
+- Inowedzera mafaera akakodzera mukunyora kwako, ichidzivirira kudzokororwa nezita refaira.
+- Ona “Nei zvinobatanidzwa zvingasawedzerwa” mu Usage kune nyaya dzisina kujairika.
+
+Chiziviso chekuvanzika: Kugadzirisa kwese kunoitika munzvimbo muThunderbird. Chiwedzero hachiiti zvikumbiro zvenetiweki zvekumashure.
+
+---

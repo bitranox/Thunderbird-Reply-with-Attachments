@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Upozori ako su privitci isključeni zbog crne liste"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Uključi umetnute slike (ugrađene slike)"
+  },
   "uiDebugHeader": {
     "message": "Napredno"
   },

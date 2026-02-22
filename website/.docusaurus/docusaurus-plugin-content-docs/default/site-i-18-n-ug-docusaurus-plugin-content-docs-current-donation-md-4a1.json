@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "ۋەسئە ئۆتكۈزۈش",
-  "description": "Donate",
+  "title": "ئىئانە قىلىڭ",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "ۋەسئە ئۆتكۈزۈش",
-    "sidebar_label": "ۋەسئە ئۆتكۈزۈش"
+    "title": "ئىئانە قىلىڭ",
+    "sidebar_label": "ئىئانە قىلىش"
   },
   "sidebar": "docs",
   "previous": {

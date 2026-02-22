@@ -1,7 +1,7 @@
 {
   "id": "changelog",
   "title": "Ændringslog",
-  "description": "Changelog",
+  "description": "---",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",

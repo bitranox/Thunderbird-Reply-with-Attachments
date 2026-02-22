@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Utilizare",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",

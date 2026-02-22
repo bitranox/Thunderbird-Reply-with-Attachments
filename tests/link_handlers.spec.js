@@ -50,22 +50,30 @@ afterEach(() => {
   document.body.innerHTML = '';
 });
 
+async function loadSharedOpener() {
+  await import('../sources/shared_link_opener.js');
+}
+
 async function loadDonateHandler() {
+  await loadSharedOpener();
   await import('../sources/handle_donate_link.js');
   domReady();
 }
 
 async function loadDocsHandler() {
+  await loadSharedOpener();
   await import('../sources/handle_docs_link.js');
   domReady();
 }
 
 async function loadAtnHandler() {
+  await loadSharedOpener();
   await import('../sources/handle_atn_link.js');
   domReady();
 }
 
 async function loadGithubHandler() {
+  await loadSharedOpener();
   await import('../sources/handle_github_link.js');
   domReady();
 }

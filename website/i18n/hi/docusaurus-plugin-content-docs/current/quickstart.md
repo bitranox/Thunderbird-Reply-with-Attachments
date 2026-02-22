@@ -4,24 +4,26 @@ title: 'त्वरित प्रारंभ'
 sidebar_label: 'त्वरित प्रारंभ'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## त्वरित प्रारंभ
+
+:::important न्यूनतम Thunderbird संस्करण
+यह ऐड‑ऑन Thunderbird **128 ESR या नया** समर्थन करता है। पुराने संस्करण समर्थित नहीं हैं।
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note कोई टेलीमेट्री नहीं; कोई बैकग्राउंड नेटवर्क नहीं
+यह ऐड‑ऑन विश्लेषिकी/टेलीमेट्री एकत्र **नहीं** करता और **कोई** बैकग्राउंड नेटवर्क अनुरोध नहीं करता। नेटवर्क एक्सेस केवल तब होता है जब आप बाहरी लिंक (Docs, GitHub, Donate) पर क्लिक करते हैं।
 :::
 
 ---
 
-### Install
+### इंस्टॉल करें
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. Thunderbird Add‑ons से ऐड‑ऑन इंस्टॉल करें।
+2. वैकल्पिक: पुष्टि सक्षम करें (Options → “Ask before adding attachments”).
+3. वैकल्पिक: ब्लैकलिस्ट चेतावनी सक्षम ही रहने दें (default): “Warn if attachments are excluded by blacklist”.
+4. वैकल्पिक: ब्लैकलिस्ट पैटर्न जोड़ें (प्रति पंक्ति एक), उदाहरण:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+नोट: ऊपर दिया “# …” इस दस्तावेज़ में एक टिप्पणी है; Options में जो पैटर्न पेस्ट करें, उनमें टिप्पणियाँ शामिल न करें। प्रत्येक पंक्ति में केवल एक पैटर्न दर्ज करें।
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+अब संलग्नकों वाले संदेश का उत्तर दें — मूल फ़ाइलें स्वचालित रूप से या त्वरित पुष्टि के बाद जोड़ दी जाएँगी। यदि आपकी ब्लैकलिस्ट द्वारा कोई फ़ाइलें बाहर की जाती हैं, तो आपको उनका छोटा चेतावनी संदेश सूची दिखेगा।
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### सत्यापित करें {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 संलग्नकों वाले संदेश का उत्तर दें और पुष्टि करें कि मूल फ़ाइलें आपकी compose विंडो में जोड़ दी गई हैं।
+- व्यवहार समायोजित करने के लिए [कॉन्फ़िगरेशन](configuration) देखें (पुष्टि टॉगल, डिफ़ॉल्ट उत्तर, ब्लैकलिस्ट पैटर्न)।
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ब्लैकलिस्ट चेतावनी सत्यापित करें {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” जैसी फ़ाइल वाले संदेश का उत्तर दें।
+- “Warn if attachments are excluded by blacklist” सक्षम होने पर, एक छोटा डायलॉग बाहर की गई फ़ाइलों और मेल खाने वाले पैटर्न की सूची दिखाता है।
+
+यदि आपको चेतावनी नहीं दिखती, तो सुनिश्चित करें कि पैटर्न फ़ाइलनाम से बिल्कुल मेल खाता हो (केवल फ़ाइलनाम, केस‑इनसेंसिटिव)। कॉन्फ़िगरेशन → ब्लैकलिस्ट देखें।
+
+---
+
+### कीबोर्ड संबंधी नोट {#keyboard-note}
+
+- पुष्टिकरण डायलॉग में Yes के लिए Y/J और No के लिए N/Esc काम करते हैं। कुछ गैर‑लैटिन कीबोर्ड पर अक्षर कुंजियाँ अलग हो सकती हैं; Enter दबाने से फोकस किया हुआ बटन कन्फ़र्म होता है।
 
 ---

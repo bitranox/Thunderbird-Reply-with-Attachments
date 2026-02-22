@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ਕੁਇਕਸਟਾਰਟ",
-  "description": "ਕੁਇਕਸਟਾਰਟ",
+  "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+  "description": "---",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ਕੁਇਕਸਟਾਰਟ",
-    "sidebar_label": "ਕੁਇਕਸਟਾਰਟ"
+    "title": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ",
+    "sidebar_label": "ਤੁਰੰਤ ਸ਼ੁਰੂਆਤ"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/features"
   },
   "next": {
-    "title": "ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ",
+    "title": "ਇੰਸਟਾਲੇਸ਼ਨ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/install"
   }
 }

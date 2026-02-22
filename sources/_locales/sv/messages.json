@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Varna om bilagor utesluts av svartlistan"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inkludera infogade bilder (inbäddade bilder)"
+  },
   "uiDebugHeader": {
     "message": "Avancerat"
   },

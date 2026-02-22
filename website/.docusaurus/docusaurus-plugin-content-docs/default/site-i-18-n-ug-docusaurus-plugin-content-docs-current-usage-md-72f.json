@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "ئىشلىتىش",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/configuration"
   },
   "next": {
-    "title": "مەۋزۇغا ماسلىشىش",
+    "title": "ماس كېلىشچانلىق",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/compatibility"
   }
 }

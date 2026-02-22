@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Kus започи'
-sidebar_label: 'Kus започи'
+title: 'Kuyamba Mwamsanga'
+sidebar_label: 'Kuyamba mwamsanga'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Kuyamba Mwachangu
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Mtundu wa Thunderbird Wochepa Kwambiri
+Chowonjezerachi chimagwira ntchito ndi Thunderbird **128 ESR kapena yaposachedwa**. Mitundu yakale siyithandizidwa.
+:::
+
+:::note Palibe telemetry; palibe kulumikizana kwa kumbuyo
+Chowonjezerachi sichisonkhanitsa ziwerengero/telemetry ndipo sichipempha kulumikizana kwa netiweki kumbuyo. Kulumikizana kwa netiweki kumachitika pokhapokha mukadina maulalo akunja (Docs, GitHub, Donate).
+:::
+
+---
+
+### Kuyika
+
+1. Ikani chowonjezera kuchokera ku Thunderbird Add‑ons.
+2. Mwa kusankha: Yatsani chitsimikiziro (Options → “Ask before adding attachments”).
+3. Mwa kusankha: Siyani chenjezo cha blacklist chiyatsidwa (zosasintha): “Warn if attachments are excluded by blacklist”.
+4. Mwa kusankha: Onjezani mapatani a blacklist (chimodzi pa mzere), mwachitsanzo:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Zindikirani: “# …” pamwambapa ndi ndemanga mu zolemba izi; musayike ndemanga mu mapatani omwe mumamata mu Options. Lowetsani chitsanzo chimodzi pa mzere umodzi kokha.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Tsopano yankhani uthenga wokhala ndi zomangirizidwa — zoyambirira zidzawonjezedwa zokha kapena mutatsimikizira mwachangu. Ngati pali mafayilo omwe achotsedwa ndi blacklist yanu, muwona chenjezo chachifupi choatchula iwo.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Tsimikizirani {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Yankhani uthenga wokhala ndi zomangirizidwa 1–2 ndipo tsimikizirani kuti zoyambirira zawonjezedwa mu zenera lolembera.
+- Kuti musinthe momwe imagwira ntchito, onani [Kukhazikitsa](configuration) (kutsegula/kutseka chitsimikiziro, yankho losasintha, mapatani a blacklist).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Tsimikizirani chenjezo cha blacklist {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Yankhani uthenga wokhala ndi fayilo ngati “secret.txt”.
+- Ndi “Warn if attachments are excluded by blacklist” yayatsidwa, kukambirana kaching'ono kumasonyeza mafayilo ochotsedwa ndi chitsanzo chogwirizana.
+
+Ngati simukuona chenjezo, onetsetsani kuti chitsanzo chikugwirizana ndi dzina la fayilo molondola (dzina la fayilo lokha, osasiyanitsa zilembo zazikulu/zazing'ono). Onani Kukhazikitsa → Blacklist.
+
+---
+
+### Zindikirani pa kiyibodi {#keyboard-note}
+
+- Bokosi lotsimikizira limathandiza Y/J pa Inde ndipo N/Esc pa Ayi. Pa makiyibodi ena osakhala a Latin, makiyi a zilembo angasiyane; Enter imatsimikizira batani lomwe lili pa chidwi.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "जलद प्रारंभ",
-  "description": "जलद प्रारंभ",
+  "title": "त्वरित प्रारंभ",
+  "description": "---",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "जलद प्रारंभ",
-    "sidebar_label": "जलद प्रारंभ"
+    "title": "त्वरित प्रारंभ",
+    "sidebar_label": "त्वरित प्रारंभ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "विशेषताएं",
+    "title": "वैशिष्ट्ये",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/features"
   },
   "next": {
-    "title": "इंस्टॉलेशन",
+    "title": "स्थापना",
     "permalink": "/Thunderbird-Reply-with-Attachments/mr/docs/install"
   }
 }

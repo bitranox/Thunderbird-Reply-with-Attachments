@@ -4,7 +4,6 @@
 // fall back to a no-op that returns the default message.
 let translate = (opts) => (typeof opts === 'string' ? opts : (opts?.message ?? ''));
 try {
-  // eslint-disable-next-line global-require
   ({ translate } = require('@docusaurus/Translate'));
 } catch (_e) {
   // no-op fallback used in tests
@@ -137,7 +136,11 @@ const config = {
   organizationName: 'bitranox',
   projectName: 'Thunderbird-Reply-with-Attachments',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   // Use multi-resolution ICO for broad compatibility.
   favicon: 'img/favicon.ico',
   i18n: {
@@ -360,7 +363,7 @@ const config = {
           try {
             const localSearch = require.resolve('@easyops-cn/docusaurus-search-local');
             // Limit to languages supported by the local search plugin.
-            const supported = new Set([
+            const _supported = new Set([
               'ar',
               'bn',
               'cs',

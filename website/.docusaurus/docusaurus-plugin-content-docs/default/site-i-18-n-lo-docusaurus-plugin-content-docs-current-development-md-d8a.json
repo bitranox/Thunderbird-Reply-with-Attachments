@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ກໍ່ຕັ້ງ",
-  "description": "Development Guide",
+  "title": "ການພັດທະນາ",
+  "description": "---",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "ກໍ່ຕັ້ງ",
-    "sidebar_label": "ກໍ່ຕັ້ງ"
+    "title": "ການພັດທະນາ",
+    "sidebar_label": "ການພັດທະນາ"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'दान करा'
-sidebar_label: 'दान करा'
+title: 'देणगी द्या'
+sidebar_label: 'देणगी द्या'
 ---
 
-## Donate
+---
+
+## देणगी
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+जर तुम्हाला "Reply with Attachments" आवडत असेल आणि त्याच्या विकासाला पाठिंबा द्यायचा असेल, तर तुम्ही येथे देणगी देऊ शकता:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe द्वारे देणगी द्या" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>किंवा</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal द्वारे देणगी द्या" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>किंवा</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="मला कॉफी घ्या" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="मला कॉफी घेण्यासाठी स्कॅन करा"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+धन्यवाद! तुमच्या पाठिंब्यामुळे नवीन Thunderbird रिलीझेसशी सुसंगतता राखणे, प्रवेशयोग्यता व चाचण्या सुधारणे, आणि दस्तऐवजीकरण अद्ययावत ठेवणे शक्य होते.
 
-Notes
+टीपा
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- देणगी दुवे फक्त तुम्ही त्यांच्यावर क्लिक केल्यावरच उघडतात; अ‍ॅड‑ऑन कोणत्याही पार्श्वभूमी नेटवर्क विनंत्या करत नाही.
+- पुनरावर्ती पाठिंबा दीर्घकालीन देखभाल आणि वेळेवर अद्यतनांना मदत करतो, परंतु तो पूर्णपणे ऐच्छिक आहे.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+जर प्रतिमेची बटणे लोड झाली नाहीत, तर त्याऐवजी कृपया हे दुवे वापरा:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+देणग्या स्वैच्छिक आहेत; कोणतेही फिचर गेटिंग नाही.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## देणगी दृश्यमानता (90‑दिवसांची स्नुज)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+देणगी दिल्यानंतर थोड्या काळासाठी देणगीच्या विनंत्या लपवण्याची एक सोयीची सुविधा या अ‍ॅड‑ऑनमध्ये आहे.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- कुठे सापडेल
+  - पर्याय → समर्थन विभाग: तुम्हाला “मी देणगी दिली” बटण आणि एक लहान सूचनाक्षेत्र दिसेल.
+  - Send‑confirmation डायलॉगमध्येही Donate बटण दिसते; स्नुज सक्रिय असताना ते आपोआप लपते.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- कसे कार्य करते
+  - “मी देणगी दिली” वर क्लिक केल्यास 90 दिवसांसाठी देणगी बटणे आणि संबंधित सूचना लपतात.
+  - स्थिती सूचनामध्ये “YYYY‑MM‑DD पर्यंत लपवले” (तुमच्या स्थानिक तारखेनुसार) असे दिसते. त्वरित दृश्यमानता पुनर्संचयित करण्यासाठी “देणगी पुन्हा दाखवा” असे बटणही आहे.
+  - 90 दिवसांनंतर Donate बटण आपोआप पुन्हा दिसू लागते.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- गोपनीयता आणि संचयन
+  - स्नुज कालावधी लक्षात ठेवण्यासाठी अ‍ॅड‑ऑन Thunderbird च्या लोकल स्टोरेजमध्ये एकच टाईमस्टॅम्प साठवते. Key: `donateHideUntil` (एपॉक मिलीसेकंद).
+  - ही सेटिंग तुमच्या Thunderbird प्रोफाइलपुरती स्थानिक आहे (क्लाउड‑सिंक नाही). या सुविधेमुळे कोणत्याही नेटवर्क विनंत्या केल्या जात नाहीत.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- अडचण निवारण
+  - “मी देणगी दिली” क्लिक केल्यानंतरही लगेच Donate दिसत असल्यास, क्षणभर थांबा किंवा पर्याय पृष्ठ पुन्हा उघडा; सेटिंग जतन होताच UI अद्यतनित होते.
+  - हाताने रीसेट करण्यासाठी “देणगी पुन्हा दाखवा” क्लिक करा. किंवा सूचनेत दिलेली तारीख येईपर्यंत थांबा.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+ही सुविधा केवळ सोयीसाठी आहे; ती कधीही अ‍ॅड‑ऑनची कार्यक्षमता अवरोधित करत नाही आणि कोणतीही वैयक्तिक माहिती गोळा करत नाही.
 
 ---

@@ -1,42 +1,44 @@
 ---
 id: compatibility
 title: 'Fifanentanana'
-sidebar_label: 'Fifanentanana'
+sidebar_label: 'Fifanarahana'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Fifanentanana {#compatibility}
+
+:::important Dika Thunderbird farafahakeliny
+Ity fanitarana ity dia manohana Thunderbird **128 ESR na vaovao kokoa**. Tsy tohanana ny dika taloha.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR na vaovao kokoa dia tohanana (128.x+).
+- Tsy tohanana ny dikan'ny Thunderbird taloha.
+- Nosedraina tamin'ny Windows, macOS, ary Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Tsy tohanana ny Manifest V2
+Tsy tohanana ny Manifest V2. Ny fanitarana dia mikendry **Manifest V3 (MV3)** amin'ny Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Fikarohana olana {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Raha tsy miasa araka ny andrasana ny fanitarana, ataovy azo antoka fa mampiasa dikan'ny Thunderbird mifanaraka ianao (128 ESR na manomboka amin'izany miakatra).
+- Jereo ny konzolan'ny hadisoana ao amin'ny Thunderbird (**Tools > Developer Tools > Error Console**) raha misy olana mifandraika amin'ilay fanitarana.
+- Raha toa ka tsy mihatra araka ny tokony ho izy ny fikirakirana voatahiry, avereno alefa ny Thunderbird ary andramo indray. (Mety hitahiry toe-javatra i Thunderbird manerana ny session; ny famerenana dia miantoka fa alaina indray ny fikirakirana vaovao.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Fifandirana fantatra {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Tsy mbola misy fantatra amin'izao fotoana izao. Raha mahita rakitra miraikitra miverimberina na tsy fetezana miaraka amin'ny fanitarana hafa ianao, azafady tatitrao miaraka amin'ny dingana hamerina azy.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Ny build Thunderbird Beta sy Daily (Nightly) dia tohanana amin'ny ankapobeny, saingy indraindray mety hanimba ny fitondran'ny fanitarana ny fiovana avy any amontana (upstream). Raha sendra olana ianao, azafady tatitrao ary ampidiro koa ny dikan'ny Thunderbird mazava tsara (oh: “Daily 131.0a1 2025‑09‑10”).
+- Sendra fiverenana lesoka (regression) amin'ny Beta/Nightly ve? Azafady tatitrao miaraka amin'ny dingana hamerina azy — jereo [Fanohanana](support) — ary ampidiro koa ny tady build an'ny Thunderbird marina tanteraka.
 
 ---

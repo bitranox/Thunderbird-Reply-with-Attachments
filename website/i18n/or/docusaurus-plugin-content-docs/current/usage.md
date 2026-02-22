@@ -4,94 +4,98 @@ title: 'ବ୍ୟବହାର'
 sidebar_label: 'ବ୍ୟବହାର'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## ବ୍ୟବହାର {#usage}
+
+- ଜବାବ ଦିଅନ୍ତୁ ଏବଂ ଆଡ୍-ଅନ୍ ସ୍ୱୟଂଚାଳିତ ଭାବେ ମୂଳ ସଂଲଗ୍ନକଗୁଡିକୁ ଯୋଡିଦେଇଥାଏ — କିମ୍ବା ବିକଳ୍ପଗୁଡିକରେ ସକ୍ରିୟ ହେଲେ ପ୍ରଥମେ ପଚାରେ।
+- ଫାଇଲନାମ ଆଧାରରେ ନକଲ ହଟାଯାଏ; S/MIME ଅଂଶଗୁଡିକ ସବୁବେଳେ ଏଡ଼ାଯାଏ। ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକ ଡିଫଲ୍ଟ୍ ଭାବେ ଉତ୍ତର ବଡିରେ ପୁନଃସ୍ଥାପିତ ହୋଇଥାଏ (Options ଭିତରେ "Include inline pictures" ଦ୍ୱାରା ବନ୍ଦ କରନ୍ତୁ)।
+- ବ୍ଲାକ୍ଲିଷ୍ଟ୍ କରାଯାଇଥିବା ସଂଲଗ୍ନକଗୁଡିକୁ ମଧ୍ୟ ଏଡ଼ାଯାଏ (କେସ୍-ଅସଙ୍ଗତିଶୀଳ glob ପ୍ୟାଟର୍ନ ଯାହା କେବଳ ଫାଇଲନାମକୁ ମେଳାଏ, ପଥକୁ ନୁହେଁ)। [Configuration](configuration#blacklist-glob-patterns) ଦେଖନ୍ତୁ।
 
 ---
 
-### What happens on reply {#what-happens}
+### ଉତ୍ତର ଦେଲେ କଣ ହୁଏ {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- ଉତ୍ତର ଚିହ୍ନଟ → ମୂଳ ସଂଲଗ୍ନକଗୁଡିକର ତାଲିକା → S/MIME + ଇନ୍ଲାଇନ୍ ଫିଲ୍ଟର → ବୈକଳ୍ପିକ ସ୍ୱୀକୃତି → ଯୋଗ୍ୟ ଫାଇଲଗୁଡିକ ଯୋଡ଼ନ୍ତୁ (ନକଲ ଏଡ଼ନ୍ତୁ) → ବଡିରେ ଇନ୍ଲାଇନ୍ ଚିତ୍ରକୁ ପୁନଃସ୍ଥାପନ।
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+କଠୋର ବିରୁଦ୍ଧରେ ଶିଥିଳ ପାସ୍: ଆଡ୍-ଅନ୍ ପ୍ରଥମେ ଫାଇଲ ସଂଲଗ୍ନକରୁ S/MIME ଏବଂ ଇନ୍ଲାଇନ୍ ଅଂଶଗୁଡିକୁ ବାଦ ଦିଏ। କିଛି ଯୋଗ୍ୟ ନ ହେଲେ, ଏହା ଏକ ଶିଥିଳ ପାସ୍ ଚଳାଏ, ଯାହା ତଥାପି S/MIME/ଇନ୍ଲାଇନ୍ କୁ ବାଦ ଦିଏ କିନ୍ତୁ ଅଧିକ କେସ୍ ସହ ଉଦାର (Code Details ଦେଖନ୍ତୁ)। ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ କେବେ ମଧ୍ୟ ଫାଇଲ ସଂଲଗ୍ନକ ଭାବରେ ଯୋଡ଼ାଯାଏ ନାହିଁ; ପରିବର୍ତ୍ତେ, "Include inline pictures" ସକ୍ରିୟ ଥିବାବେଳେ (ଡିଫଲ୍ଟ୍), ସେଗୁଡିକ ଉତ୍ତର ବଡିରେ ସିଧାସଳଖ base64 data URI ଭାବେ ଏମ୍ବେଡ୍ ହୋଇଥାଏ।
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| ଅଂଶ ପ୍ରକାର                                            |                 କଠୋର ପାସ୍ |                ଶିଥିଳ ପାସ୍ |
+| ----------------------------------------------------- | ------------------------: | ------------------------: |
+| S/MIME ସହି ଫାଇଲ `smime.p7s`                           |                       ବାଦ |                       ବାଦ |
+| S/MIME MIME ପ୍ରକାରଗୁଡିକ (`application/pkcs7-*`)       |                       ବାଦ |                       ବାଦ |
+| Content‑ID ଦ୍ୱାରା ଉଲ୍ଲେଖିତ ଇନ୍ଲାଇନ୍ ଚିତ୍ର (`image/*`) | ବାଦ (ବଡିରେ ପୁନଃସ୍ଥାପିତ\*) | ବାଦ (ବଡିରେ ପୁନଃସ୍ଥାପିତ\*) |
+| ଏକ ଫାଇଲନାମ ସହିତ ସଂଲଗ୍ନ ଇମେଲ୍ (`message/rfc822`)       |                 ଯୋଡାଯାଇନି |               ଯୋଡାଯାଇପାରେ |
+| ଏକ ଫାଇଲନାମ ସହିତ ସାଧାରଣ ଫାଇଲ ସଂଲଗ୍ନକ                   |               ଯୋଡାଯାଇପାରେ |               ଯୋଡାଯାଇପାରେ |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" ସକ୍ରିୟ (ଡିଫଲ୍ଟ୍: ଚାଲୁ) ଥିବାବେଳେ, ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ ଫାଇଲ ସଂଲଗ୍ନକ ଭାବରେ ଯୋଡିବା ପରିବର୍ତ୍ତେ ଉତ୍ତର ବଡିରେ base64 data URI ଭାବେ ଏମ୍ବେଡ୍ କରାଯାଏ। [Configuration](configuration#include-inline-pictures) ଦେଖନ୍ତୁ।
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+ଉଦାହରଣ: କିଛି ସଂଲଗ୍ନକରେ କିଛି ହେଡର ନଥାଇ ପାରେ କିନ୍ତୁ ସେମାନେ ତଥାପି ସାଧାରଣ ଫାଇଲ (ଇନ୍ଲାଇନ୍/S/MIME ନୁହେଁ)। କଠୋର ପାସ୍ କିଛି ମିଳାଇନଥିଲେ, ଶିଥିଳ ପାସ୍ ସେଗୁଡିକୁ ଗ୍ରହଣ କରି ଯୋଡ଼ିଦେଇପାରେ।
 
 ---
 
-## Behavior Details {#behavior-details}
+### ପାରସ୍ପରିକ ସନ୍ଦର୍ଭ {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward କୁ ଡିଜାଇନ୍ ଅନୁଯାୟୀ ପରିବର୍ତ୍ତନ କରାଯାଇନାହିଁ (ନିମ୍ନରେ ଥିବା ସୀମାବଦ୍ଧତା ଦେଖନ୍ତୁ)।
+- କାହିଁକି ସଂଲଗ୍ନକ ଯୋଡାଯାଇନପାରେ, ଦେଖନ୍ତୁ “କାହିଁକି ସଂଲଗ୍ନକ ଯୋଡାଯାଇନପାରେ”।
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## ଆଚରଣ ବିବରଣୀ {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **ନକଲ ରୋକଥାମ:** ଆଡ୍-ଅନ୍ ପ୍ରତି-ଟାବ୍ ସେସନ୍ ମୂଲ୍ୟ ଏବଂ ଇନ୍-ମେମୋରି ଗାର୍ଡ ବ୍ୟବହାର କରି ରଚନା ଟାବ୍‌କୁ ପ୍ରକ୍ରିୟାକରିତ ଭାବେ ଚିହ୍ନଟ କରେ। ଏହା ମୂଳଗୁଡିକୁ ଦୁଇଥର ଯୋଡିବ ନାହିଁ।
+- ଏକ ରଚନା ଜାଣ୍ଲା ବନ୍ଦ କରି ପୁଣି ଖୋଲିବାକୁ ନୂତନ ଟାବ୍ ଭାବେ ଧରାଯାଏ (ଅର୍ଥାତ୍, ଏକ ନୂତନ ଚେଷ୍ଟାକୁ ଅନୁମତି ରହିଛି)।
+- **ବର୍ତ୍ତମାନ ସଂଲଗ୍ନକଗୁଡିକୁ ସମ୍ମାନ:** ଯଦି ରଚନାରେ ପୂର୍ବରୁ କିଛି ସଂଲଗ୍ନକ ଅଛି, ତେବେ ମୂଳଗୁଡିକୁ ଠିକ୍ ଏକଥର ଯୋଡାଯାଏ, ପୂର୍ବରୁ ଥିବା ଫାଇଲନାମଗୁଡିକୁ ଏଡ଼ାଇ।
+- **ବାଦଦେବାଗୁଡିକ:** S/MIME ଆର୍ଟିଫାକ୍ଟ ଏବଂ ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ ଫାଇଲ ସଂଲଗ୍ନକରୁ ବାଦ କରାଯାଏ। ପ୍ରଥମ ପାସ୍‌ରେ କିଛି ଯୋଗ୍ୟ ନଥାଇଲେ, ଏକ ଶିଥିଳ fallback ଅ‑S/MIME ଅଂଶଗୁଡିକୁ ପୁନଃଯାଞ୍ଚ କରେ। ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ ଅଲଗାଭାବେ ସମ୍ଭାଳାଯାଏ: ସେମାନେ (ସକ୍ରିୟ ଥିଲେ) ଉତ୍ତର ବଡିରେ data URI ଭାବେ ପୁନଃସ୍ଥାପିତ ହୁଅନ୍ତି।
+  - **ଫାଇଲନାମ:** `smime.p7s`
+  - **MIME ପ୍ରକାରଗୁଡିକ:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକ:** Content‑ID ଦ୍ୱାରା ଉଲ୍ଲେଖିତ ଯେକୌଣସି `image/*` ଅଂଶ — ଫାଇଲ ସଂଲଗ୍ନକରୁ ବାଦ କରାଯାଇଥାଏ କିନ୍ତୁ "Include inline pictures" ଚାଲୁ ଥିବାବେଳେ ଉତ୍ତର ବଡିରେ ଏମ୍ବେଡ୍ କରାଯାଏ
+  - **ସଂଲଗ୍ନ ଇମେଲଗୁଡିକ (`message/rfc822`):** ଯଦି ଫାଇଲନାମ ଥାଏ ତେବେ ସାଧାରଣ ସଂଲଗ୍ନକ ଭାବେ ବ୍ୟବହୃତ; ସେଗୁଡିକୁ ଯୋଡାଯାଇପାରେ (ନକଲ ଯାଞ୍ଚ ଏବଂ ବ୍ଲାକ୍ଲିଷ୍ଟ ପ୍ରୟୋଗୀ)।
+- **ବ୍ଲାକ୍ଲିଷ୍ଟ ସତର୍କବାଣୀ (ସକ୍ରିୟ ଥିଲେ):** ପ୍ରାର୍ଥୀଗୁଡିକୁ ଆପଣଙ୍କ ବ୍ଲାକ୍ଲିଷ୍ଟ ଦ୍ୱାରା ବାଦ କରାଯାଇଲେ,
+  ଆଡ୍-ଅନ୍ ପ୍ରଭାବିତ ଫାଇଲଗୁଡିକ ଏବଂ ମେଳାଉଥିବା
+  ପ୍ୟାଟର୍ନ(ଗୁଡିକ)ର ତାଲିକା ସହ ଏକ ଛୋଟ ମୋଡାଲ୍ ଦେଖାଏ। ଏହି ସତର୍କବାଣୀ ସେ କେସ୍‌ଗୁଡିକରେ ମଧ୍ୟ ଦେଖାଯାଏ ଯେଉଁଠି କୌଣସି ସଂଲଗ୍ନକ ଯୋଡାଯିବ ନାହିଁ
+  କାରଣ ସବୁକିଛି ବାଦ କରାଯାଇଥିଲା।
 
 ---
 
-## Limitations {#limitations}
+## କୀବୋର୍ଡ୍ ସର୍ଟକଟ୍‌ଗୁଡିକ {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- ନିଶ୍ଚିତକରଣ ଡାଏଲଗ୍: Y/J = Yes, N/Esc = No; Tab/Shift+Tab ଏବଂ Arrow କୀଗୁଡିକ ଫୋକସ୍ କୁ ସାଇକଲ୍ କରନ୍ତି।
+  - [Configuration](configuration#confirmation) ଭିତରେ “Default answer” ପ୍ରାରମ୍ଭିକ ଭାବରେ ଫୋକସ୍ ଥିବା ବଟନ୍‌କୁ ନିର୍ଦ୍ଧାରଣ କରେ।
+  - Enter ଫୋକସ୍ ଥିବା ବଟନ୍‌କୁ ସକ୍ରିୟ କରେ। ଉପଲବ୍ଧତା ପାଇଁ Tab/Shift+Tab ଏବଂ ଆରୋ କୀଗୁଡିକ ଫୋକସ୍ କୁ ସରାଏ।
+
+### କୀବୋର୍ଡ୍ ଚିଟ୍ ଶିଟ୍ {#keyboard-cheat-sheet}
+
+| କୀ                     | କାର୍ଯ୍ୟ                               |
+| ---------------------- | ------------------------------------- |
+| Y / J                  | ହଁ ନିଶ୍ଚିତ କରନ୍ତୁ                     |
+| N / Esc                | ନା ନିଶ୍ଚିତ କରନ୍ତୁ                     |
+| Enter                  | ଫୋକସ୍ ଥିବା ବଟନ୍‌କୁ ସକ୍ରିୟ କରନ୍ତୁ      |
+| Tab / Shift+Tab        | ଫୋକସ୍‌କୁ ଆଗକୁ/ପଛକୁ ସରାନ୍ତୁ            |
+| Arrow keys             | ବଟନ୍‌ମାନଙ୍କ ମଧ୍ୟରେ ଫୋକସ୍ ସରାନ୍ତୁ      |
+| ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଉତ୍ତର | ଆରମ୍ଭିକ ଫୋକସ୍ ସେଟ୍ କରେ (ହଁ କିମ୍ବା ନା) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ସୀମାବଦ୍ଧତା {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ଏହି ଆଡ୍-ଅନ୍ ଦ୍ୱାରା Forward ପରିବର୍ତ୍ତିତ ହୁଏନି (Reply ଏବଂ Reply all ସମର୍ଥିତ)।
+- ଅତ୍ୟଧିକ ବଡ଼ ସଂଲଗ୍ନକଗୁଡିକ Thunderbird କିମ୍ବା ପ୍ରଦାନକାରୀଙ୍କ ସୀମାରେ ପଡ଼ିପାରେ।
+  - ଆଡ୍-ଅନ୍ ଫାଇଲଗୁଡିକୁ ଖଣ୍ଡ କରେନି କିମ୍ବା ସଂକୋଚନ କରେନି; ଏହା Thunderbird ର ସାଧାରଣ ସଂଲଗ୍ନକ ବ୍ୟବହାରରେ ନିର୍ଭର କରେ।
+- ସଙ୍ଗୋପନ କରାଯାଇଥିବା ସନ୍ଦେଶଗୁଡିକ: S/MIME ଅଂଶଗୁଡିକୁ ଉଦ୍ଦେଶ୍ୟପୂର୍ବକ ବାଦ କରାଯାଇଛି।
 
 ---
 
-See also
+## କାହିଁକି ସଂଲଗ୍ନକ ଯୋଡାଯାଇନପାରେ {#why-attachments-might-not-be-added}
+
+- ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ ଫାଇଲ ସଂଲଗ୍ନକ ଭାବରେ ଯୋଡାଯାଏ ନାହିଁ। "Include inline pictures" ON (ଡିଫଲ୍ଟ୍) ଥିଲେ, ସେଗୁଡିକ ଉତ୍ତର ବଡିରେ data URI ଭାବେ ଏମ୍ବେଡ୍ ହୁଅନ୍ତି। ସେଟିଂ OFF ଥିଲେ, ଇନ୍ଲାଇନ୍ ଚିତ୍ରଗୁଡିକୁ ସମ୍ପୂର୍ଣ୍ଣ ହଟାଯାଏ। [Configuration](configuration#include-inline-pictures) ଦେଖନ୍ତୁ।
+- S/MIME ସହି ଅଂଶଗୁଡିକୁ ଡିଜାଇନ୍ ଅନୁଯାୟୀ ବାଦ କରାଯାଇଛି: `smime.p7s` ପରି ଫାଇଲନାମ ଏବଂ `application/pkcs7-signature` କିମ୍ବା `application/pkcs7-mime` ପରି MIME ପ୍ରକାରଗୁଡିକୁ ଏଡ଼ାଯାଏ।
+- ବ୍ଲାକ୍ଲିଷ୍ଟ ପ୍ୟାଟର୍ନଗୁଡିକ ପ୍ରାର୍ଥୀମାନଙ୍କୁ ଫିଲ୍ଟର କରିପାରନ୍ତି: [Configuration](configuration#blacklist-glob-patterns) ଦେଖନ୍ତୁ; ମେଳ କରିବା କେସ୍-ଅସଙ୍ଗତିଶୀଳ ଏବଂ କେବଳ ଫାଇଲନାମ-ଆଧାରିତ।
+- ନକଲ ଫାଇଲନାମଗୁଡିକୁ ପୁନର୍ବାର ଯୋଡାଯାଇନାହିଁ: ଯଦି ରଚନାରେ ପୂର୍ବରୁ ସମାନ ସାଧାରଣୀକୃତ ନାମ ସହ ଏକ ଫାଇଲ ଅଛି, ତାହାକୁ ଏଡ଼ାଯାଏ।
+- ଫାଇଲ୍ ନୁହେଁଥିବା ଅଂଶ କିମ୍ବା ଫାଇଲନାମ ନଥିବା: କେବଳ ଉପଯୋଗୀ ଫାଇଲନାମ ସହିତ ଫାଇଲ-ସଦୃଶ ଅଂଶଗୁଡିକୁ ଯୋଡିବା ପାଇଁ ବିଚାର କରାଯାଏ।
+
+---
+
+ଏହା ମଧ୍ୟ ଦେଖନ୍ତୁ
 
 - [Configuration](configuration)

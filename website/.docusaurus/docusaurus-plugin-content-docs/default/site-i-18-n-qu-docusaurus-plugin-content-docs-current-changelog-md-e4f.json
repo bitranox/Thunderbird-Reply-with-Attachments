@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Changelog",
-  "description": "Changelog",
+  "title": "Tikraykunapa willakuy",
+  "description": "---",
   "source": "@site/i18n/qu/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Changelog"
+    "title": "Tikraykunapa willakuy"
   },
   "sidebar": "docs",
   "previous": {

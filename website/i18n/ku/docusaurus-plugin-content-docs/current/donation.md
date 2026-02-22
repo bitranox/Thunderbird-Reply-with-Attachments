@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Donate'
-sidebar_label: 'Donate'
+title: 'Alîkarî bike'
+sidebar_label: 'Bexşîne'
 ---
 
-## Donate
+---
+
+## Bexş
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Heke "Reply with Attachments" ji te re hêja ye û dixwazî pêşveçûna wê piştgirî bikî, dikarî li vir bexş bikî:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Bi Stripe re bexş bike" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>an jî</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Bi PayPal re bexş bike" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>an jî</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Ji bo min qehwekek bikire" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skan bike ji bo kirina qehwekek ji bo min"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Spas! Piştgiriya te alîkar dibe ku lihevhatinê bi weşanên nû yên Thunderbird were parastin, gihîştîbûn û ceribandinên bête başkirin, û belgekirin rojane bimîne.
 
-Notes
+Têbînî
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Girêdanên bexşê tenê dema li ser wan tikîn veke; pêvek tu daxwazên torî yên paşperde nayê kirin.
+- Piştgiriya berdewam alîkarî dike li parastina demek dirêj û rojanekirinên demdemî, lê tevahî vebijarkî ye.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Heke bişkokên wêneyî nebarin, ji kerema xwe li gorî van girêdanan bikar bîne:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [Ji bo min qehwekek bikire](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Bexşan xwevolî ne; ti taybetmendiyek nayê astengkirin.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Dîtbûna Bexşê (rawestandina 90-rojî)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Pêvek taybetmendiyek asayî dihewîne ku piştî ku te bexş kir, ji bo demekî ragihandinên bexşê veşêre.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Li ku bê dîtin
+  - Vebijarkên → beşa Piştgirî: bişkokek “Ez bexş kir” û qada piçûk a nîşe dide nîşan.
+  - Di paceya piştrastkirina şandinê de jî bişkokek Bexş xuya dibe; dema rawestandin çalak be bixweber veşêre.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Çawa dixebite
+  - Tikandina “Ez bexş kir” bişkokên bexşê û ragihandinên têkildar ji bo 90 roj veşêre.
+  - Nîşaneyek rewşê “Veşartî heta YYYY‑MM‑DD” (bi dîroka herêmî ya te) nîşan dide. Heye jî bişkokek “Bexşê dîsa nîşan bide” ji bo vegerandina dîtbûnê di awayekê demdemî de.
+  - Piştî 90 roj, bişkoka Bexşê bixweber dîsa xuya dibe.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Taybetîtiyê û hilanîn
+  - Pêvek ji bo bîranînê demê rawestandinê demnîşanek yekane di hilanîna herêmî ya Thunderbird de dihilîne. Mifte: `donateHideUntil` (mîlîçirkeyên epoch).
+  - Ev mîheng herêmî ye ji bo profîla Thunderbird a te (ne bi cloudê tê hevxistin). Tu daxwazên torî ji aliyê vî taybetmendîyê ve nayên kirin.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Çareserkirina pirsgirêkan
+  - Heke Bexş hê jî dîsa xuya dibe paşê ku li ser “Ez bexş kir” tikî, demekî bisekine an jî rûpela Vebijarkan dîsa veke; rûyê bikarhêner di wextê ku mîheng tê tomar kirin de rojan dibe.
+  - Ji bo vegerandina bi destan, li ser “Bexşê dîsa nîşan bide” bitikîne. Dikarî jî bisekine heta dîroka ku di nîşeyê de hatiye nivîsandin derbas bibe.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Ev taybetmendî tenê ji bo asayî ye; qet xebatên pêvekê naqedexe û tu daneya kesane nakole.
 
 ---

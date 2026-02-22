@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'ცვლილებები'
+title: 'ცვლილებების ჟურნალი'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## ცვლილებების ჟურნალი
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+სრული და დეტალური ისტორიისთვის იხილეთ რეპოზიტორიის
+[CHANGELOG.md GitHub-ზე](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: „ჩასმული სურათების ჩართვა“ ახლა სურათებს უშუალოდ პასუხის სხეულში ამატებს base64 data URI-ებად (ნაგულისხმევი: ჩართული); კოდის ხარისხის გაუმჯობესება და ტესტების დაფარვის გაფართოება.
+- 2.3.1: მიმაგრებულ ფაილებს ინარჩუნებს მაშინაც, როცა Thunderbird ფონური event-გვერდი უმოქმედოდ გადადის; პრობლემების მოგვარებისთვის ამატებს მიზანმიმართულ გამართვის ჰუკებს.
+- 2.3.0: გაუმჯობესდა მიმაგრებული ფაილების დუბლიკატების მოცილება, გაფართოვდა ტესტების დაფარვა და AMO-ს პოლიტიკებთან შესაბამისობისთვის ამოღებულია მოძველებული ნებართვები.
+- 2.1.0: სრული ინტერნაციონალიზაციის მხარდაჭერა ყველაზე პოპულარული 100 ენისთვის
+- 2.0.0: სრულფასოვან ვერსიად გადაკეთება (EN/DE)
+- 1.0.1: გადართულია messages.listAttachments()-ზე
+- 1.0.0: საწყისი გამოშვება
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## თარიღები და არხები {#dates-and-channels}
+
+- ATN-ზე გამოშვებები შეფუთვის შემდეგ შეიძლება რამდენიმე საათით დაგვიანდეს.
+- LOCAL აგებები მხოლოდ დეველოპერის ტესტირებისთვისაა და ATN-ის მეშვეობით არ ვრცელდება.
+
+---

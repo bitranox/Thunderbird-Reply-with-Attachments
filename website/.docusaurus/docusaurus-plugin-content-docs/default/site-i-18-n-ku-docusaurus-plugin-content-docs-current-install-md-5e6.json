@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Sazan",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "Sazkirin",
+  "description": "---",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Sazan",
+    "title": "Sazkirin",
     "slug": "/install",
-    "sidebar_label": "Sazan"
+    "sidebar_label": "Sazkirin"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Destpêk",
+    "title": "Destpêkî zû",
     "permalink": "/Thunderbird-Reply-with-Attachments/ku/docs/quickstart"
   },
   "next": {

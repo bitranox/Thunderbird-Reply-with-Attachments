@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'መስጢር'
-sidebar_label: 'መስጢር'
+title: 'ልገሳ'
+sidebar_label: 'ልገሳ'
 ---
 
-## መስጢር
+---
+
+## ልገሳ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+እንተ እቲ "Reply with Attachments" ትዕወቱን ልምዓቱ ንትደግፉ ብደልዩን፣ ኣብዚ ልገሳ ትኽእሉ ኢኹም፦
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="ምልጋስ ብ Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ወይ</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="ምልጋስ ብ PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ወይ</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="ቡና ንኣነ ምግዛእ" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="ስካን ግበር ቡና ንኣነ ምግዛእ"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+የቐንየልና! ድጋፍኩም ምስ ሓድሽ መወዳእታታት Thunderbird ንምቑጣጥር ተስማሚነት ክንከኣል ይሓግዝ፣ ኣብጽሓንን ፈተናታትን ንምምሕዳር ይረዳ፣ ሰነድን ሓበሬታን ኣብ እዋን ንምቕመጥ ይሓግዝ።
 
 Notes
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- ልገሳ ሊንካት እንተ ጠውቑኣ ጥራይ ይክፈቱ፤ እቲ add‑on ናይ ጀርባ መርበብ ጥዒና ኣይገብርን።
+- ድጋፍ ብደጋጋሚ ረጅም‑ግዜ መኽሪ ንምጥቃምን ሕጂ‑ሕጂ ማሕደራት ንምምሕዳርን ይሓግዝ፣ ግን ብፍቃድ ጥራይ እዩ።
 
 ---
 
-If the image buttons do not load, please use these links instead:
+እቶም ናይ ምስሊ ቦታታት እንተ ኣይሰቱርን፣ በቲ እነዚ ሊንካት ክትጠቕሙ በጃኹም፦
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+ልገሳታት ፈቃድዋዊ እዮም፤ ባህሪ ብምዕባል የተዓገደ የለን።
 
 ---
 
-## መስጢር ዝርዝር (90‑day snooze)
+## ርእይቶ ልገሳ (90‑መዓልቲ ምንካብ)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+እቲ add‑on ንምጽዋዕ ተስማሚ ባህሪ ኣሎ፤ ልገሳ እንተ ሃበካ ድሕሪ ምንካብ ግዜ ንማእሰርታት ልገሳ እቲ ማስታወቂያ ምልክታት ክሕብ ይፈቅድ።
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- ኣበይ ክትረኽቦ ትኽእል
+  - Options → ክፍሊ ድጋፍ፡ “ልገሳ ሃበኩ” ዝብል ቁልፊን ንእሽቶ ምልክት ኦርሊ ቦታ ትረኽብ።
+  - እቲ ውድብ ናይ ምልክ‑ማረጋገጺ ደጊም መልክዕ ልገሳ ቁልፊ ይርከብ፤ ምንካብ እንተ ኣብ ስራሕ ኣሎ ራሱ ይሕትት እዩ።
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- ከመይ ይሰርሕ
+  - “ልገሳ ሃበኩ” እንተ ጠውቕካ መልክዓት ልገሳን ዝተዛረቡ ማእሰርታትን 90 መዓልታት ይሕትቱ።
+  - ምልክት ሁነታ ይርከብ “እስከ YYYY‑MM‑DD ዝተሰወረ” (ብኣካባቢ መዓልትካ)። “እንደገና ልገሳ ኣርእይ” ዝብል ቁልፊ ደጊም ብሓቂ እቲ ርእይቶ ክትመልስ ኣሎ።
+  - 90 መዓልታት ድሕሪት መልክዕ ልገሳ ራሱ ኢሉ ደጊም ይታይ እዩ።
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- ምስጢርነትን ምዕባልን
+  - እቲ add‑on ምንካብ ግዜ ንምትሕር ሓንቲ ግዜ‑ምልክት ኣብ ናይ Thunderbird ኣካባቢ ምዕባል ይዕብድ። ቁልፊ: `donateHideUntil` (ሚሊ‑ሰከንድ ናይ ኤፖክ)።
+  - እዚ ቅንብሊ ንፕሮፋይል Thunderbirdካ ብቀትሪ ይተዓቕብ (ከላውድ‑ስንክ ኣይኮነን)። እዚ ባህሪ መርበብ ጥዒና ኣይገብርን።
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- ምፍታሕ ጉዳይ
+  - “ልገሳ ሃበኩ” እንተ ጠውቕካ ድሕሪ ብዙሕ እንኳ መልክዕ ልገሳ እዩ እንተ ተረኽበ፣ ንጥቂያ እትበጽሓ ተጠቐም ወይ ገጻ Options እንደገና ክፈት፤ እቲ UI ቅንብሊ እንተ ተዓቐበ ብቅርብ ይተሓይሽ እዩ።
+  - ብእጅን ንምምላስ “እንደገና ልገሳ ኣርእይ” ጠውቕ። እንተደሊኻ ደጊም ኣብ ምልክቱ ዝተጻፈ መዓልቲ ክውረድ ትጠቐም ትኽእል ኢኻ።
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+እዚ ባህሪ ብብልሹ ንምቕላት ጥራይ ዝተሰርሐ እዩ፤ ድርጊት add‑on ኣብ ምኽፋል ኣይዕጋድን እንተዘይኮነ ውልቀ ሰብ ዝመለከተ ውሂብ ኣይሰብስብን።
 
 ---

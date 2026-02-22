@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Installation",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "Instalasiyɔn",
+  "description": "---",
   "source": "@site/i18n/bm/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Installation",
+    "title": "Instalasiyɔn",
     "slug": "/install",
-    "sidebar_label": "Installation"
+    "sidebar_label": "Instalasiyɔn"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Fasa fasa",
+    "title": "Fɔlɔ cɛlɛ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bm/docs/quickstart"
   },
   "next": {

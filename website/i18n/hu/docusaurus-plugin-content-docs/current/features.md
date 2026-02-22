@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Jellemzők'
-sidebar_label: 'Jellemzők'
+title: 'Funkciók'
+sidebar_label: 'Funkciók'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funkciók {#features}
 
-## How It Works {#how-it-works}
+- Válaszoláskor automatikusan csatolja az eredeti e‑mail mellékleteit.
+- Konfigurálható működés: a mellékletek lehetnek
+  - automatikusan hozzáadva, vagy
+  - csak megerősítés után hozzáadva (egy kicsi, akadálymentes párbeszédablak). A Beállításokban
+    engedélyezheti a megerősítést, és kiválaszthatja az alapértelmezett választ (Igen/Nem).
+- Fájlnév‑feketelista (glob minták) megakadályozza bizonyos fájlok
+  automatikus csatolását. Példák: `*intern*`, `*secret*`, `*passwor*`.
+  Az egyezés nem érzékeny a kis- és nagybetűkre, és csak a fájlnevet vizsgálja; a Beállításokban
+  soronként egy mintát adjon meg.
+- Feketelista‑figyelmeztetés (opcionális, alapértelmezés szerint engedélyezve): amikor fájlokat kizár a
+  feketelista, egy kis modális ablak felsorolja a fájlt és a megfelelő mintá(ka)t. Sötét mód‑
+  barát és billentyűzettel is kezelhető (Enter/Esc a bezáráshoz).
+- Működik a Válasz és a Válasz mindenkinek funkciókkal. A Továbbítást ez a kiegészítő nem módosítja.
+- Az eredetieket akkor is hozzáadja, ha már maga is csatolt valamit; a duplikátumokat fájlnév alapján elkerüli.
+- A laponkénti duplikátumvédelem megakadályozza a kétszeri hozzáadást ugyanabban a levélírási lapon.
+- Alapértelmezés szerint kihagyja az S/MIME tanúsítványokat a felesleges mellékletek elkerülése érdekében.
+- Beágyazott képek mellékelése (alapértelmezés: BE). A beágyazott képek közvetlenül a
+  válasz törzsébe kerülnek vissza base64 adat‑URI‑k formájában, megőrizve az eredeti beágyazott elrendezést. Tiltsa le a
+  Beállításokban, ha teljesen ki szeretné hagyni a beágyazott képeket.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Hogyan működik {#how-it-works}
+
+- Válaszoláskor a kiegészítő felsorolja az eredeti mellékleteket.
+- Kiszűri az S/MIME aláírásokat a fájlmellékletek közül; a beágyazott képeket a törzsben állítja vissza (hacsak nincs letiltva).
+- Opcionálisan megerősítést kér (billentyűzetbarát).
+- A megfelelő fájlokat hozzáadja a levélíráshoz, és fájlnév alapján elkerüli a duplikátumokat.
+- A különleges esetekhez lásd a „Miért nem kerülnek hozzáadásra a mellékletek” részt a Használat fejezetben.
+
+Adatvédelmi megjegyzés: Minden feldolgozás helyben, a Thunderbirdben történik. A kiegészítő nem végez háttérbeli hálózati kéréseket.
+
+---

@@ -4,31 +4,40 @@ title: 'ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ'
 sidebar_label: 'ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ {#features}
 
-## How It Works {#how-it-works}
+- ਜਵਾਬ ਦਿੰਦਿਆਂ ਮੂਲ ਈਮੇਲ ਤੋਂ ਫਾਈਲਾਂ ਆਪਣੇ-ਆਪ ਲਗਾ ਦਿੰਦਾ ਹੈ।
+- ਸੰਰਚਿਤ ਕੀਤਾ ਜਾਣ ਯੋਗ ਵਿਹਾਰ: ਅਟੈਚਮੈਂਟ
+  - ਆਪਣੇ-ਆਪ ਜੋੜੇ ਜਾ ਸਕਦੇ ਹਨ, ਜਾਂ
+  - ਪੁਸ਼ਟੀ ਮਗਰੋਂ ਹੀ ਜੋੜੇ ਜਾਣ (ਇੱਕ ਛੋਟਾ, ਸੁਗਮ ਡਾਇਲਾਗ)। Options ਵਿੱਚ ਤੁਸੀਂ
+    ਪੁਸ਼ਟੀ ਨੂੰ ਯੋਗ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਮੂਲ ਜਵਾਬ (Yes/No) ਚੁਣ ਸਕਦੇ ਹੋ।
+- ਫਾਇਲਨਾਂ ਦੀ ਬਲੈਕਲਿਸਟ (ਗਲੋਬ ਪੈਟਰਨ) ਖਾਸ ਫਾਈਲਾਂ ਨੂੰ ਆਪਣੇ-ਆਪ ਅਟੈਚ ਹੋਣ ਤੋਂ
+  ਰੋਕਦੀ ਹੈ। ਉਦਾਹਰਨਾਂ: `*intern*`, `*secret*`, `*passwor*`.
+  ਮੈਚਿੰਗ ਕੇਸ‑ਅਨਸੈਂਸਿਟਿਵ ਹੈ ਅਤੇ ਸਿਰਫ਼ ਫਾਇਲ-ਨਾਂ ਦੀ ਜਾਂਚ ਕਰਦੀ ਹੈ; ਪ੍ਰਤੀ ਲਾਈਨ ਇੱਕ ਪੈਟਰਨ
+  Options ਵਿੱਚ ਦਿਓ।
+- ਬਲੈਕਲਿਸਟ ਚੇਤਾਵਨੀ (ਵਿਕਲਪਿਕ, ਮੂਲ ਰੂਪ ਵਿੱਚ ਯੋਗ): ਜਦੋਂ ਤੁਹਾਡੀ
+  ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਫਾਈਲਾਂ ਬਾਹਰ ਰੱਖੀਆਂ ਜਾਂਦੀਆਂ ਹਨ, ਇੱਕ ਛੋਟੀ ਮੋਡਲ ਫਾਈਲ ਅਤੇ ਮੇਲ ਖਾਂਦੇ ਪੈਟਰਨ(ਜ਼) ਦੀ ਸੂਚੀ ਦਿੰਦੀ ਹੈ। ਡਾਰਕ‑ਮੋਡ
+  ਅਨੁਕੂਲ ਅਤੇ ਕੀਬੋਰਡ ਨਾਲ ਪਹੁੰਚਯੋਗ (ਬੰਦ ਕਰਨ ਲਈ Enter/Esc)।
+- Reply ਅਤੇ Reply all ਨਾਲ ਕੰਮ ਕਰਦਾ ਹੈ। Forward ਇਸ ਐਡ-ਆਨ ਦੁਆਰਾ ਸੋਧਿਆ ਨਹੀਂ ਜਾਂਦਾ।
+- ਭਾਵੇਂ ਤੁਸੀਂ ਖੁਦ ਕੁਝ ਲਗਾ ਚੁੱਕੇ ਹੋਵੋ, ਤਦ ਵੀ ਅਸਲੀ ਅਟੈਚਮੈਂਟ ਜੋੜਦਾ ਹੈ; ਫਾਇਲ-ਨਾਂ ਅਨੁਸਾਰ ਡੁਪਲੀਕੇਟਾਂ ਤੋਂ ਬਚਦਾ ਹੈ।
+- ਹਰ‑ਟੈਬ ਡੁਪਲੀਕੇਟ ਗਾਰਡ ਇੱਕੋ ਕੰਪੋਜ਼ ਟੈਬ ਵਿੱਚ ਦੋਹਰਾ ਜੋੜਨ ਤੋਂ ਰੋਕਦਾ ਹੈ।
+- ਜ਼ਰੂਰੀ ਨਾ ਹੋਣ ਵਾਲੀਆਂ ਅਟੈਚਮੈਂਟਾਂ ਤੋਂ ਬਚਣ ਲਈ ਮੂਲ ਰੂਪ ਵਿੱਚ S/MIME ਸਰਟੀਫਿਕੇਟਾਂ ਨੂੰ ਸਕਿਪ ਕਰਦਾ ਹੈ।
+- ਇਨਲਾਈਨ ਤਸਵੀਰਾਂ ਸ਼ਾਮਲ ਕਰੋ (ਡਿਫਾਲਟ: ON)। ਸੰਨਿਹਿਤ ਚਿੱਤਰਾਂ ਨੂੰ ਸਿੱਧੇ
+  ਜਵਾਬ ਦੇ ਬਾਡੀ ਵਿੱਚ base64 ਡਾਟਾ URIs ਵਜੋਂ ਮੁੜ-ਸਟੋਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਮੂਲ ਇਨਲਾਈਨ ਲੇਆਉਟ ਨੂੰ ਬਰਕਰਾਰ ਰੱਖਦਿਆਂ। ਇਨਲਾਈਨ
+  ਚਿੱਤਰਾਂ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸਕਿਪ ਕਰਨ ਲਈ Options ਵਿੱਚ ਅਯੋਗ ਕਰੋ।
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ {#how-it-works}
+
+- ਜਵਾਬ ਦੌਰਾਨ, ਐਡ-ਆਨ ਮੂਲ ਅਟੈਚਮੈਂਟਾਂ ਦੀ ਸੂਚੀ ਦਿਖਾਉਂਦਾ ਹੈ।
+- ਫਾਇਲ ਅਟੈਚਮੈਂਟਾਂ ਵਿੱਚੋਂ S/MIME ਦਸਤਖਤਾਂ ਨੂੰ ਫਿਲਟਰ ਕਰਦਾ ਹੈ; ਇਨਲਾਈਨ ਚਿੱਤਰਾਂ ਨੂੰ ਬਾਡੀ ਵਿੱਚ ਮੁੜ-ਸਟੋਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ (ਜੇਕਰ ਅਯੋਗ ਨਾ ਕੀਤੇ ਹੋਣ)।
+- ਚਾਹੇ ਤਾਂ ਪੁਸ਼ਟੀ ਮੰਗਦਾ ਹੈ (ਕੀਬੋਰਡ-ਅਨੁਕੂਲ)।
+- ਯੋਗ ਫਾਈਲਾਂ ਤੁਹਾਡੇ ਕੰਪੋਜ਼ ਵਿੱਚ ਜੋੜਦਾ ਹੈ, ਫਾਇਲ-ਨਾਂ ਮੁਤਾਬਕ ਡੁਪਲੀਕੇਟਾਂ ਤੋਂ ਬਚਦਿਆਂ।
+- ਐਜ ਕੇਸਾਂ ਲਈ ਵਰਤੋਂ (Usage) ਵਿੱਚ “ਅਟੈਚਮੈਂਟ ਸ਼ਾਇਦ ਕਿਉਂ ਨਾ ਜੋੜੇ ਜਾਣ” ਵੇਖੋ।
+
+ਗੋਪਨੀਯਤਾ ਨੋਟ: ਸਾਰੀ ਪ੍ਰਕਿਰਿਆ Thunderbird ਵਿੱਚ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਹੁੰਦੀ ਹੈ। ਐਡ-ਆਨ ਕੋਈ ਵੀ ਬੈਕਗਰਾਊਂਡ ਨੈੱਟਵਰਕ ਬੇਨਤੀਆਂ ਨਹੀਂ ਕਰਦਾ।
+
+---

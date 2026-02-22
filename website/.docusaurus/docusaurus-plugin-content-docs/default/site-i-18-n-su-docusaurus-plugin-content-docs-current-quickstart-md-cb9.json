@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Panduan Gancang",
-  "description": "Quickstart",
+  "title": "Mimitian Gancang",
+  "description": "---",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Panduan Gancang",
-    "sidebar_label": "Panduan Gancang"
+    "title": "Mimitian Gancang",
+    "sidebar_label": "Mimitian Gancang"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/features"
   },
   "next": {
-    "title": "Instalasi",
+    "title": "Pamasangan",
     "permalink": "/Thunderbird-Reply-with-Attachments/su/docs/install"
   }
 }

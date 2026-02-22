@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Pèngetna yen lampiran dikecualekake dening daftar ireng"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Kalebu gambar inline (gambar sing disematake)"
+  },
   "uiDebugHeader": {
     "message": "Lanjut"
   },

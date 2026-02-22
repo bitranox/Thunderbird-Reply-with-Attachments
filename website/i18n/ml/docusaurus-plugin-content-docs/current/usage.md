@@ -4,94 +4,97 @@ title: 'ഉപയോഗം'
 sidebar_label: 'ഉപയോഗം'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## ഉപയോഗം {#usage}
+
+- Reply ചെയ്താൽ ആഡ്‑ഓൺ അസൽ ഫയലുകൾ സ്വമേധയാ ചേർക്കും — അല്ലെങ്കിൽ Options-ൽ പ്രവർത്തനക്ഷമമാക്കിയിട്ടുണ്ടെങ്കിൽ ആദ്യം ചോദിക്കും.
+- ഫയൽനാമം അടിസ്ഥാനമാക്കി പകർപ്പുകൾ ഒഴിവാക്കുന്നു; S/MIME ഭാഗങ്ങൾ എല്ലായ്പ്പോഴും സ്‌കിപ്പ് ചെയ്യും. ഡി‌ഫോൾട്ടായി.inline ചിത്രങ്ങൾ മറുപടി ബോഡിയിലേയ്ക്ക് പുനഃസ്ഥാപിക്കും (Options ലെ "Include inline pictures" വഴി അപ്രാപ്തമാക്കാം).
+- ബ്ലാക്ക്‌ലിസ്റ്റ് ചെയ്ത അറ്റാച്ച്മെന്റുകളും സ്‌കിപ്പ് ചെയ്യും (കേസ്‑ഇൻസെൻസിറ്റീവ് ഗ്ലോബ് പാറ്റേണുകൾ ഫയൽനാമങ്ങളോട് മാത്രമാണ് പൊരുത്തപ്പെടുന്നത്, പാതകളോട് അല്ല). [ക്രമീകരണം](configuration#blacklist-glob-patterns) കാണുക.
 
 ---
 
-### What happens on reply {#what-happens}
+### Reply ചെയ്യുമ്പോൾ എന്താണ് സംഭവിക്കുന്നത് {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Reply കണ്ടെത്തൽ → അസൽ അറ്റാച്ച്മെന്റുകൾ ലിസ്റ്റ് ചെയ്യുക → S/MIME + inline ഫിൽറ്റർ ചെയ്യുക → ആവശ്യപ്പെട്ടാൽ സ്ഥിരീകരിക്കുക → യോഗ്യമുള്ള ഫയലുകൾ ചേർക്കുക (ഡ്യൂപ്പ്ലിക്കേറ്റുകൾ സ്‌കിപ്പ്) → inline ചിത്രങ്ങൾ ബോഡിയിൽ പുനഃസ്ഥാപിക്കുക.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+കടുപ്പമായ vs. ശിഥിലമായ പാസ്: ആദ്യം ആഡ്‑ഓൺ S/MIME, inline ഭാഗങ്ങൾ ഫയൽ അറ്റാച്ച്മെന്റുകളിൽ നിന്ന് ഒഴിവാക്കുന്നു. ഒന്നും യോഗ്യമാകുന്നില്ലെങ്കിൽ, S/MIME/inline ഒഴിവാക്കുന്നതു തന്നെ തുടർന്നുകൊണ്ട് കൂടുതൽ കേസുകൾ സഹിക്കുന്ന ഒരു ശിഥില പാസ് ഓടിക്കും (കോഡ് വിശദാംശങ്ങൾ കാണുക). Inline ചിത്രങ്ങൾ ഒരിക്കലും ഫയൽ അറ്റാച്ച്മെന്റുകളായി ചേർക്കുകയില്ല; പകരം, "Include inline pictures" പ്രവർത്തനക്ഷമമാണെങ്കിൽ (ഡി‌ഫോൾട്ട്), അവ മറുപടി ബോഡിയിൽ നേരിട്ട് base64 data URIകളായി ചേർക്കപ്പെടും.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| ഭാഗത്തിന്റെ തരം                                       |                               കടുപ്പമായ പാസ് |                                   ശിഥില പാസ് |
+| ----------------------------------------------------- | -------------------------------------------: | -------------------------------------------: |
+| S/MIME ഒപ്പുദാനം ഫയൽ `smime.p7s`                      |                                ഒഴിവാക്കുന്നു |                                ഒഴിവാക്കുന്നു |
+| S/MIME MIME തരങ്ങൾ (`application/pkcs7-*`)            |                                ഒഴിവാക്കുന്നു |                                ഒഴിവാക്കുന്നു |
+| Content‑ID വഴി സൂചിപ്പിച്ച inline ചിത്രം (`image/*`)  | ഒഴിവാക്കുന്നു (ബോഡിയിൽ പുനഃസ്ഥാപിക്കുന്നു\*) | ഒഴിവാക്കുന്നു (ബോഡിയിൽ പുനഃസ്ഥാപിക്കുന്നു\*) |
+| ഫയൽനാമമുള്ള അറ്റാച്ച് ചെയ്ത ഇമെയിൽ (`message/rfc822`) |                               ചേർക്കുന്നില്ല |                                     ചേർക്കാം |
+| ഫയൽനാമമുള്ള സാധാരണ ഫയൽ അറ്റാച്ച്മെന്റ്                |                                     ചേർക്കാം |                                     ചേർക്കാം |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" പ്രവർത്തനക്ഷമമാണെങ്കിൽ (ഡി‌ഫോൾട്ട്: ON), inline ചിത്രങ്ങൾ ഫയൽ അറ്റാച്ച്മെന്റുകളായി ചേർക്കുന്നതിനുപകരം മറുപടി ബോഡിയിൽ base64 data URIകളായി ചേർക്കപ്പെടുന്നു. [ക്രമീകരണം](configuration#include-inline-pictures) കാണുക.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+ഉദാഹരണം: ചില അറ്റാച്ച്മെന്റുകൾക്ക് ചില ഹെഡറുകൾ ഇല്ലായിരിക്കാം, പക്ഷേ അവ ഇപ്പോഴും സാധാരണ ഫയലുകളായിരിക്കും (inline/S/MIME അല്ല). കടുപ്പമായ പാസിൽ ഒന്നും കണ്ടെത്താനായില്ലെങ്കിൽ, ശിഥില പാസ് അവയെ സ്വീകരിച്ച് അറ്റാച്ച് ചെയ്യാൻ സാധ്യതയുണ്ട്.
 
 ---
 
-## Behavior Details {#behavior-details}
+### പരസ്‌പരം സൂചിക {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward രൂപകല്പനാപരമായി മാറ്റുന്നില്ല (താഴെയുള്ള പരിമിതികൾ കാണുക).
+- ഒരു അറ്റാച്ച്മെന്റ് ചേർക്കപ്പെടാതിരിക്കാനുള്ള കാരണംകൾക്കായി “Why attachments might not be added” കാണുക.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## പെരുമാറ്റത്തിന്റെ വിശദാംശങ്ങൾ {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **ഡ്യൂപ്പ്ലിക്കേറ്റ് പ്രതിരോധം:** ആഡ്‑ഓൺ ഓരോ ടാബിനുമുള്ള സെഷൻ മൂല്യമും ഒരു ഇൻ‑മെമ്മറി ഗാർഡും ഉപയോഗിച്ച് compose ടാബ് പ്രോസസ്സ് ചെയ്തതായി അടയാളപ്പെടുത്തുന്നു. ഇത് അസൽ ഫയലുകൾ രണ്ടുതവണ ചേർക്കില്ല.
+- compose വിൻഡോ അടച്ച് വീണ്ടും തുറക്കുന്നത് പുതിയ ടാബായി കണക്കാക്കപ്പെടുന്നു (അതിനാൽ ഒരു പുതിയ ശ്രമം അനുവദനീയമാണ്).
+- **നിലവിലെ അറ്റാച്ച്മെന്റുകൾ മാനിക്കുക:** compose ഇതിനകം ചില അറ്റാച്ച്മെന്റുകൾ അടങ്ങിയിട്ടുണ്ടെങ്കിൽ പോലും, അസൽ ഫയലുകൾ ഒരിക്കൽ മാത്രമേ ചേർക്കൂ; ഇതിനകം ഉള്ള ഫയൽനാമങ്ങൾ സ്‌കിപ്പ് ചെയ്യും.
+- **ഒഴിവാക്കലുകൾ:** S/MIME അവശിഷ്ടങ്ങളും inline ചിത്രങ്ങളും ഫയൽ അറ്റാച്ച്മെന്റുകളിൽ നിന്ന് ഒഴിവാക്കപ്പെടുന്നു. ആദ്യ പാസിൽ ഒന്നും യോഗ്യമല്ലെങ്കിൽ, ശിഥില fallback S/MIME അല്ലാത്ത ഭാഗങ്ങൾ വീണ്ടും പരിശോധിക്കും. Inline ചിത്രങ്ങൾ പ്രത്യേകം കൈകാര്യം ചെയ്യപ്പെടുന്നു: (പ്രവർത്തനക്ഷമമാണെങ്കിൽ) അവ മറുപടി ബോഡിയിൽ data URIകളായി പുനഃസ്ഥാപിക്കും.
+  - **ഫയൽനാമങ്ങൾ:** `smime.p7s`
+  - **MIME തരങ്ങൾ:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inline ചിത്രങ്ങൾ:** Content‑ID വഴി സൂചിപ്പിച്ച ഏതുമായ `image/*` ഭാഗം — ഫയൽ അറ്റാച്ച്മെന്റുകളിൽ നിന്ന് ഒഴിവാക്കും, പക്ഷേ "Include inline pictures" ON ആണെങ്കിൽ മറുപടി ബോഡിയിൽ എംബെഡ് ചെയ്യും
+  - **അറ്റാച്ച് ചെയ്ത ഇമെയിലുകൾ (`message/rfc822`):** ഫയൽനാമമുണ്ടെങ്കിൽ സാധാരണ അറ്റാച്ച്മെന്റുകളായി കണക്കാക്കും; (ഡ്യൂപ്പ്ലിക്കേറ്റ് പരിശോധനകളും ബ്ലാക്ക്‌ലിസ്റ്റും വിധേയമായി) അവ ചേർക്കാം.
+- **ബ്ലാക്ക്‌ലിസ്റ്റ് മുന്നറിയിപ്പ് (പ്രവർത്തനക്ഷമമാണെങ്കിൽ):** നിങ്ങളുടെ ബ്ലാക്ക്‌ലിസ്റ്റ് കാരണം സ്ഥാനാർത്ഥികളെ ഒഴിവാക്കിയാൽ,
+  ബാധിച്ച ഫയലുകളും പൊരുത്തപ്പെട്ട പാറ്റേൺ(കൾ)യും കാണിക്കുന്ന ചെറിയ ഒരു മോഡൽ ഈ ആഡ്‑ഓൺ പ്രദർശിപ്പിക്കും.
+  എല്ലാം ഒഴിവാക്കിയതിനാൽ ഒന്നും ചേർക്കപ്പെടില്ലാത്ത സാഹചര്യങ്ങളിലും ഈ മുന്നറിയിപ്പ് പ്രത്യക്ഷപ്പെടും.
 
 ---
 
-## Limitations {#limitations}
+## കീബോർഡ് ഷോർട്ട്‌കട്ടുകൾ {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- സ്ഥിരീകരണ ഡയലോഗ്: Y/J = Yes, N/Esc = No; Tab/Shift+Tab, Arrow കീകൾ ഫോക്കസ് സൈക്കിൾ ചെയ്യും.
+  - [ക്രമീകരണം](configuration#confirmation) ഉള്ള “Default answer” ആദ്യം ഫോക്കസ് ചെയ്യുന്ന ബട്ടൺ നിർണയിക്കുന്നു.
+  - Enter അമർത്തുമ്പോൾ ഫോക്കസിലുള്ള ബട്ടൺ പ്രവർത്തിക്കും. ആക്സസിബിലിറ്റിക്കായി Tab/Shift+Tab, Arrow കീകൾ ഫോക്കസ് മാറ്റാൻ ഉപയോഗിക്കുക.
+
+### കീബോർഡ് ചീറ്റ് ഷീറ്റ് {#keyboard-cheat-sheet}
+
+| കീകൾ            | പ്രവർത്തനം                                                  |
+| --------------- | ----------------------------------------------------------- |
+| Y / J           | Yes സ്ഥിരീകരിക്കുക                                          |
+| N / Esc         | No സ്ഥിരീകരിക്കുക                                           |
+| Enter           | ഫോക്കസിലുള്ള ബട്ടൺ സജീവമാക്കുക                              |
+| Tab / Shift+Tab | ഫോക്കസ് മുന്നോട്ട്/പിന്നോട്ട് മാറ്റുക                       |
+| Arrow കീകൾ      | ബട്ടണുകൾക്കിടയിൽ ഫോക്കസ് മാറ്റുക                            |
+| Default answer  | ആദ്യം ഫോക്കസ് ഏത് (Yes അല്ലെങ്കിൽ No) എന്ന് നിശ്ചയിക്കുന്നു |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## പരിമിതികൾ {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ഈ ആഡ്‑ഓൺ Forward മാറ്റുന്നില്ല (Reply, Reply all പിന്തുണയ്ക്കുന്നു).
+- വളരെ വലിയ അറ്റാച്ച്മെന്റുകൾ Thunderbird അല്ലെങ്കിൽ സേവനദാതാവിന്റെ പരിധികൾക്ക് വിധേയമായിരിക്കും.
+  - ആഡ്‑ഓൺ ഫയലുകൾ chunk ചെയ്യുകയോ കംപ്രസ് ചെയ്യുകയോ ചെയ്യുന്നില്ല; Thunderbirdയുടെ സാധാരണ അറ്റാച്ച്മെന്റ് കൈകാര്യം ചെയ്യലിനെ ആശ്രയിക്കുന്നു.
+- എൻക്രിപ്റ്റുചെയ്ത സന്ദേശങ്ങൾ: S/MIME ഭാഗങ്ങൾ ഉദ്ദേശ്യപൂർവ്വം ഒഴിവാക്കപ്പെടുന്നു.
 
 ---
 
-See also
+## അറ്റാച്ച്മെന്റുകൾ ചേർക്കപ്പെടാതിരിക്കാനുള്ള കാരണംകൾ {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inline ചിത്രങ്ങൾ ഫയൽ അറ്റാച്ച്മെന്റുകളായി ചേർക്കുന്നില്ല. "Include inline pictures" ON (ഡി‌ഫോൾട്ട്) ആണെങ്കിൽ, അവ മറുപടി ബോഡിയിൽ data URIകളായി ചേർക്കപ്പെടും. ക്രമീകരണം OFF ആണെങ്കിൽ, inline ചിത്രങ്ങൾ പൂർണ്ണമായും നീക്കം ചെയ്യും. [ക്രമീകരണം](configuration#include-inline-pictures) കാണുക.
+- S/MIME ഒപ്പുദാനം ഭാഗങ്ങൾ രൂപകല്പനാപരമായി ഒഴിവാക്കപ്പെടുന്നു: `smime.p7s` പോലുള്ള ഫയൽനാമങ്ങളും `application/pkcs7-signature` അല്ലെങ്കിൽ `application/pkcs7-mime` പോലുള്ള MIME തരങ്ങളും സ്‌കിപ്പ് ചെയ്യും.
+- ബ്ലാക്ക്‌ലിസ്റ്റ് പാറ്റേണുകൾ സ്ഥാനാർത്ഥികളെ ഫിൽറ്റർ ചെയ്യാം: [ക്രമീകരണം](configuration#blacklist-glob-patterns) കാണുക; പൊരുത്തപ്പെടുത്തൽ കേസ്‑ഇൻസെൻസിറ്റീവും ഫയൽനാമം‑മാത്രവുമാണ്.
+- പുനരാവർത്തിക്കുന്ന ഫയൽനാമങ്ങൾ വീണ്ടും ചേർക്കില്ല: compose ഇതിനകം അതേ സാധാരണികൃത പേരിലുള്ള ഒരു ഫയൽ ഉൾക്കൊള്ളുന്നുവെങ്കിൽ, അത് സ്‌കിപ്പ് ചെയ്യും.
+- ഫയൽ അല്ലാത്ത ഭാഗങ്ങൾ അല്ലെങ്കിൽ കാണാതായ ഫയൽനാമങ്ങൾ: ഉപയോഗിക്കാവുന്ന ഫയൽനാമമുള്ള ഫയൽ‑സാദൃശ്യമുള്ള ഭാഗങ്ങൾ മാത്രമേ ചേർക്കാൻ പരിഗണിക്കൂ.
+
+---
+
+ഇതും കാണുക
+
+- [ക്രമീകരണം](configuration)

@@ -4,24 +4,26 @@ title: 'Hızlı Başlangıç'
 sidebar_label: 'Hızlı Başlangıç'
 ---
 
-## Quickstart
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Hızlı Başlangıç
+
+:::important Minimum Thunderbird Sürümü
+Bu eklenti Thunderbird **128 ESR veya daha yenisini** destekler. Daha eski sürümler desteklenmez.
 :::
 
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
+:::note Telemetri yok; arka planda ağ yok
+Eklenti analiz/telemetri toplamaz ve arka planda ağ isteği yapmaz. Ağ erişimi yalnızca harici bağlantılara tıkladığınızda gerçekleşir (Belgeler, GitHub, Bağış).
 :::
 
 ---
 
-### Install
+### Kurulum
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+1. Eklentiyi Thunderbird Add‑ons üzerinden yükleyin.
+2. İsteğe bağlı: Onayı etkinleştirin (Seçenekler → “Ekleri eklemeden önce sor”).
+3. İsteğe bağlı: Kara liste uyarısını etkin bırakın (varsayılan): “Ekler kara liste nedeniyle hariç tutulursa uyar”.
+4. İsteğe bağlı: Kara liste kalıpları ekleyin (satır başına bir tane), örn.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Not: Yukarıdaki “# …” bu belgede bir yorumdur; Seçenekler’e yapıştırdığınız kalıplara yorum eklemeyin. Yalnızca her satıra bir kalıp girin.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Şimdi ek içeren bir mesaja yanıt verin — orijinal ekler otomatik olarak veya hızlı bir onayın ardından eklenecektir. Kara listeniz tarafından hariç tutulan dosyalar varsa, bunları listeleyen kısa bir uyarı görürsünüz.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Doğrulama {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 ek içeren bir mesaja yanıt verin ve orijinallerin oluşturma pencerenize eklendiğini doğrulayın.
+- Davranışı ayarlamak için [Yapılandırma](configuration) bölümüne bakın (onay geçişi, varsayılan yanıt, kara liste kalıpları).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Kara liste uyarısını doğrulayın {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” gibi bir dosya içeren bir mesaja yanıt verin.
+- “Ekler kara liste nedeniyle hariç tutulursa uyar” etkinleştirildiğinde, küçük bir iletişim kutusu hariç tutulan dosyaları ve eşleşen kalıbı listeler.
+
+Bir uyarı görmüyorsanız, kalıbın dosya adıyla tam olarak eşleştiğinden emin olun (yalnızca dosya adı, büyük/küçük harfe duyarsız). Yapılandırma → Kara liste.
+
+---
+
+### Klavye notu {#keyboard-note}
+
+- Onay iletişim kutusu, Evet için Y/J ve Hayır için N/Esc tuşlarını destekler. Bazı Latin olmayan klavyelerde harf tuşları değişebilir; Enter odaktaki düğmeyi onaylar.
 
 ---

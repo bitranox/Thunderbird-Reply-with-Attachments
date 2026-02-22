@@ -71,7 +71,17 @@ async function fetchWithRetry(url, opts = {}, label = 'request') {
   let lastErr;
   for (let i = 0; i < max; i++) {
     try {
-      const res = await fetch(url, opts);
+      const ctrl = new globalThis.AbortController();
+      const timer = globalThis.setTimeout(
+        () => ctrl.abort(),
+        Number(process.env.TRANSLATE_TIMEOUT_MS || 180_000)
+      );
+      let res;
+      try {
+        res = await fetch(url, { ...opts, signal: ctrl.signal });
+      } finally {
+        globalThis.clearTimeout(timer);
+      }
       if (!res.ok) {
         if (isRetriableHttp(res.status)) {
           lastErr = new Error(`${label} failed: ${res.status} ${res.statusText}`);
@@ -161,7 +171,7 @@ function stripCodeWrapper(s) {
   }
   return s;
 }
-function dedupeTopFrontMatter(text) {
+function _dedupeTopFrontMatter(text) {
   const lines = text.split(/\r?\n/);
   let i = 0;
   while (i < lines.length && /^\s*$/.test(lines[i])) i++;
@@ -556,7 +566,7 @@ function modelConfig() {
 }
 
 async function run() {
-  let args = process.argv.slice(2).filter(Boolean);
+  const args = process.argv.slice(2).filter(Boolean);
   // Support flags: --files <a,b> and --locales <l1,l2>
   const takeFlag = (names) => {
     const idx = args.findIndex((a) => names.some((n) => a === n || a.startsWith(n + '=')));
@@ -586,7 +596,7 @@ async function run() {
   if (!resumeId && process.env.OPENAI_BATCH_ID) resumeId = process.env.OPENAI_BATCH_ID;
 
   let docTokens = flatArgs.filter((t) => /\.md$/i.test(t));
-  let otherTokens = flatArgs.filter((t) => !docTokens.includes(t));
+  const otherTokens = flatArgs.filter((t) => !docTokens.includes(t));
 
   let docsAll = false;
   let langsAll = false;
@@ -770,7 +780,7 @@ async function run() {
     }
 
     // Rebuild front matter from original, applying translated title/sidebar_label
-    function updateFront(originalFront, returnedFront) {
+    function _updateFront(originalFront, returnedFront) {
       const pick = (fm, key) => {
         if (!fm) return null;
         const m = fm.match(new RegExp(`^\\s*${key}\\s*:\\s*(.*)$`, 'mi'));

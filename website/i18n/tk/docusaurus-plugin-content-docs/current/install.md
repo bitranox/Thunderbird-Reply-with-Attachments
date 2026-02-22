@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Gurnama'
 ---
 
-## Gurnama "Thunderbird Öňdebeli goşantlary we Tema" arkaly {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimal Thunderbird wersiýasy
-Bu goşmaça Thunderbird **128 ESR ýa-da has täze** wersiýalaryny goldaýar. Sargyt edilmedik wersiýalar goldanmaýar.
+## "Thunderbird Add-ons and Themes" arkaly gurmak {#installation-in-thunderbird-recommended}
+
+:::important Iň pes Thunderbird wersiýasy
+Bu goşmaça Thunderbird **128 ESR ýa-da ondan täze** wersiýalary goldaýar. Köne wersiýalar goldanylmaýar.
 :::
 
-Bu maslahat berlen gurnama usulydyr. ATN-dan (addons.thunderbird.net) gurnalan goşmaçalar avtomatiki täzelenmeleri alarlar. LOCAL/dev gurnamalary avtomatiki täzelenmeýär.
+Bu maslahat berilýän gurma usulydyr. ATN-den (addons.thunderbird.net) gurnalan goşmaçalar awtomatiki täzelenýär. LOCAL/dev gurnamalary awtomatiki täzelenme almaýar.
 
-- Minimal Thunderbird wersiýasy: 128 ESR ýa-da has täze.
+- Iň pes Thunderbird wersiýasy: 128 ESR ýa-da ondan täze.
 
-1. Thunderbird-da **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
-2. "göçürme bilen jogap ber" üçin gözleg ediň.
-3. goşanty goşuň.
+1. Thunderbird-de, **Tools > Add-ons and Themes** bölümine gidiň.
+2. "reply with attachments" gözläň.
+3. Goşmaçany goşuň.
 
-ýa-da goşmaça sahypasyna eseň: [Thunderbird Goşantlary (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## XPI ulanyp ýükläp gurnamak {#local-installation-in-thunderbird}
-
-### XPI faýlını ýükläň {#download-the-xpi-file}
-
-1. [Thunderbird Goşant sahypasyna](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) geçiň.
-2. goşant kopasiýa faýlyny goşmak üçin iň soňky wersiýasyny XPI faýly hökmünde ýükläň (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Thunderbird-da gurnamak {#install-in-thunderbird-local}
-
-1. Thunderbird-a açyň.
-2. **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
-3. **Goşmaçalar Meneceri** bölüminde, ýokarky sag köşede zyň zynjyryny basyň.
-4. Menýudan **Faýldan Goşant Gurmak...** saýlaň.
-5. ýüklän `reply_with_attachments-x.y.z-tb.xpi` faýlyny saýlaň.
-6. soralanda gurnamany tassyklanyň.
+Ýa-da goşmaça sahypasyny göni açyň: [Thunderbird Goşmaçalar (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Ösüş üçin gurnamak {#installation-for-development}
+## XPI arkaly el bilen gurmak {#local-installation-in-thunderbird}
 
-### Repo şol şertle öwreniň {#download-the-repository}
+### XPI faýlyny göçürip alyň {#download-the-xpi-file}
 
-1. GitHub repo-iň iň soňky wersiýasyny ýükläň.
-2. Has giňişleýin maglumat üçin `make help`运行.
+1. [Thunderbird goşmaça sahypasyna](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) gidiň.
+2. Goşmaçanyň iň soňky wersiýasyny XPI faýly ( `reply_with_attachments-x.y.z-tb.xpi` ) görnüşinde göçürip alyň.
 
-### Thunderbird-da gurnamak {#install-in-thunderbird-dev}
+### Thunderbird-de gurmak {#install-in-thunderbird-local}
 
-1. Thunderbird-a açyň.
-2. **Işläp Düzenlemeler > Goşmaçalar we Temalar** bölümine geçiň.
-3. **Goşmaçalar Meneceri** bölüminde, ýokarky sag köşede zyň zynjyryny basyň.
-4. Menýudan **Faýldan Goşant Gurmak...** saýlaň.
-5. döredilen `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` faýlyny saýlaň.
-6. soralanda gurnamany tassyklanyň.
-
-Belgi: Eger Thunderbird `.zip` sistemyňizde kabul etmese, ony `.xpi` diýip atlandyryň we "Faýldan Goşant Gurmak..." saýlamagyňyzy gaýtalaň.
-
-### LOCAL ZIP-i neritmek {#where-local-zip}
-
-- Ilkinji, goşanty paket ediň: repo kökünde `make pack` işlediň.
-- Paketlenenden soň, repo kökünde "LOCAL" zip-i tapyň (meselem, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Synag üçin gaýtadan paketlemekden öň, `sources/manifest_ATN.json` we `sources/manifest_LOCAL.json` iki üpjün ediş weight 分享.
+1. Thunderbird-i açyň.
+2. **Tools > Add-ons and Themes** bölümine gidiň.
+3. **Add-ons Manager**-de, ýokarky sag burçdaky dişli nyşany basyň.
+4. Menýudan **Install Add-on From File…** saýlaň.
+5. Göçürip alan `reply_with_attachments-x.y.z-tb.xpi` faýlyňyzy saýlaň.
+6. Soralsa, gurnamany tassyklaň.
 
 ---
 
-## Çekmek, Öçürmek, we Täzelikler {#disable-uninstall-updates}
+## Ösüş üçin gurmak {#installation-for-development}
 
-- Çekmek: Thunderbird → Işläp Düzenlemeler → Goşmaçalar we Temalar → goşanty tapyň → off-a geçiriň.
-- Öçürmek: şul bir görkezijinde → üç nokat menýusyna → Öçürmek.
-- Täzelikler: ATN gurnamalary täze wersiýalar kabul edilende awtomatiki täzelenýär. LOCAL/dev gurnamalary awtomatiki täzelenmeýär; täze LOCAL gurluşy öňki öz-özüne oňky edition gurnamaga täzeden eýe boluň.
-- Düzgünleri doly aýyrmak üçin: [Gizlinlik → Maglumat aýyrmak](privacy#data-removal) göz öňünde tutuň.
+### Repozitoriýany göçürip alyň {#download-the-repository}
 
-Şeýle hem görýär
+1. GitHub repozitoriýasynyň iň soňky wersiýasyny göçürip alyň.
+2. Has giňişleýin maglumat üçin `make help` işlediň.
 
-- [Gysgaça](quickstart)
+### Thunderbird-de gurmak {#install-in-thunderbird-dev}
+
+1. Thunderbird-i açyň.
+2. **Tools > Add-ons and Themes** bölümine gidiň.
+3. **Add-ons Manager**-de, ýokarky sag burçdaky dişli nyşany basyň.
+4. Menýudan **Install Add-on From File…** saýlaň.
+5. Dörän `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` faýlyny saýlaň.
+6. Soralsa, gurnamany tassyklaň.
+
+Bellik: Eger-de siziň ulgamyňyzda Thunderbird `.zip` kabul etmese, onuň adyny `.xpi` diýip üýtgedip, “Install Add‑on From File…” usulyny gaýtadan synanyşyň.
+
+### LOCAL ZIP-ni nireden tapmaly {#where-local-zip}
+
+- Ilki bilen, goşmaçany paketläň: repozitoriýanyň kökünde `make pack` işlediň.
+- Paketländikden soň, repozitoriýanyň kökünden “LOCAL” zip faýlyny tapyň (meselem, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Synag üçin gaýtadan paketlemezden öň, `sources/manifest_ATN.json` hem-de `sources/manifest_LOCAL.json` faýllarynyň ikisinde-de wersiýa belgilerini ýokarlandyryň.
+
+---
+
+## Öçürmek, Pozmak we Täzelenmeler {#disable-uninstall-updates}
+
+- Öçürmek: Thunderbird → Tools → Add‑ons and Themes → goşmaçany tapyň → açyk/ýapyk geçirişini öçüriň.
+- Pozmak: şol bir görnüş → üç nokat menýusy → Remove.
+- Täzelenmeler: Täze wersiýalar tassyk edilende ATN arkaly gurnalanlar awtomatiki täzelenýär. LOCAL/dev gurnamalary awtomatiki täzelenme almaýar; täze LOCAL ýygyndysyny el bilen gaýtadan gurnuň.
+- Sazlamalary doly aýyrmak: [Gizlinlik → Maglumatlary aýyrmak](privacy#data-removal) bölümine serediň.
+
+Şeýle hem serediň
+
+- [Çalt başlangyç](quickstart)

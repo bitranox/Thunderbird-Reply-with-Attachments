@@ -4,39 +4,41 @@ title: 'Ndakọrịta'
 sidebar_label: 'Ndakọrịta'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Ndakọrịta {#compatibility}
+
+:::important Ụdị Thunderbird kacha nta
+Mgbakwunye a na-akwado Thunderbird **128 ESR ma ọ bụ nke ka ọhụrụ**. A naghị akwado ụdị ndị ochie.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- A na-akwado Thunderbird 128 ESR ma ọ bụ nke ka ọhụrụ (128.x+).
+- A naghị akwado ụdị Thunderbird ndị ochie.
+- E nwaleela na Windows, macOS, na Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning A naghị akwado Manifest V2
+A naghị akwado Manifest V2. Mgbakwunye a na-elekwasị anya na **Manifest V3 (MV3)** na Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Idozi Nsogbu {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ọ bụrụ na mgbakwunye adịghị arụ ọrụ dịka a tụrụ anya, jide n'aka na ị na-eji ụdị Thunderbird kwekọrọ (128 ESR ma ọ bụ nke ka ọhụrụ).
+- Lelee kọnsọlụ njehie Thunderbird (**Tools > Developer Tools > Error Console**) maka nsogbu ọ bụla metụtara mgbakwunye.
+- Ọ bụrụ na ntọala echekwara adịghị etinye nke ọma, bidogharịa Thunderbird ma gbalịa ọzọ. (Thunderbird nwere ike ịchekwa ọnọdụ gafee nnọkọ; ibidogharịa na-eme ka a bulite ntọala ọhụrụ.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Esemokwu a maara {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Enweghị ihe a maara ugbu a. Ọ bụrụ na ị hụ faịlụ agbakwunyere na-apụta ugboro ugboro ma ọ bụ mmejọ na mgbakwunye ndị ọzọ, biko kọọ ya ma tinye nzọụkwụ esi mepụta ya.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- A na-akwado Thunderbird Beta na Daily (Nightly) n'ozuzu, ma mgbanwe sitere n'isi mmalite nwere ike mgbe ụfọdụ imebi omume mgbakwunye. Ọ bụrụ na ị zutere nsogbu, biko kọọ ha ma tinye ụdị Thunderbird kpọmkwem (dịka, “Daily 131.0a1 2025‑09‑10”).
+- Ị hụrụ mmegharị azụ (regression) na Beta/Nightly? Biko kọọ ya na nzọụkwụ esi mepụta ya — lee [Support](support) — ma tinye ahịrị owuwu Thunderbird kpọmkwem.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Značilnosti",
-  "description": "Features",
+  "title": "Funkcionalnosti",
+  "description": "---",
   "source": "@site/i18n/sl/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Značilnosti",
-    "sidebar_label": "Značilnosti"
+    "title": "Funkcionalnosti",
+    "sidebar_label": "Funkcije"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Hiter začetek",
+    "title": "Hitri začetek",
     "permalink": "/Thunderbird-Reply-with-Attachments/sl/docs/quickstart"
   }
 }

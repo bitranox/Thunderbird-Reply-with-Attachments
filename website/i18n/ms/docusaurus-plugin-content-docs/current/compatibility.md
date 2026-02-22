@@ -4,39 +4,41 @@ title: 'Keserasian'
 sidebar_label: 'Keserasian'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Keserasian {#compatibility}
+
+:::important Versi Thunderbird Minimum
+Pengaya ini menyokong Thunderbird **128 ESR atau lebih baharu**. Versi yang lebih lama tidak disokong.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR atau lebih baharu disokong (128.x+).
+- Versi Thunderbird yang lebih lama tidak disokong.
+- Diuji pada Windows, macOS dan Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 tidak disokong
+Manifest V2 tidak disokong. Pengaya ini menyasarkan **Manifest V3 (MV3)** pada Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Penyelesaian Masalah {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Jika pengaya tidak berfungsi seperti yang dijangka, pastikan anda menggunakan versi Thunderbird yang serasi (128 ESR atau lebih baharu).
+- Semak konsol ralat Thunderbird (**Tools > Developer Tools > Error Console**) untuk sebarang isu berkaitan pengaya.
+- Jika tetapan yang disimpan kelihatan tidak digunakan dengan betul, mulakan semula Thunderbird dan cuba lagi. (Thunderbird mungkin menyimpan keadaan merentas sesi; mulakan semula bagi memastikan tetapan baharu dimuatkan.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Konflik yang Diketahui {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Tiada yang diketahui pada masa ini. Jika anda melihat lampiran pendua berulang atau kegagalan dengan pengaya lain, sila laporkan bersama langkah untuk menghasilkan semula.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Binaan Thunderbird Beta dan Daily (Nightly) lazimnya disokong, tetapi perubahan huluan kadangkala boleh mengganggu fungsi pengaya. Jika anda menghadapi isu, sila laporkan dan sertakan versi Thunderbird yang tepat (cth, “Daily 131.0a1 2025‑09‑10”).
+- Mengalami regresi pada Beta/Nightly? Sila laporkannya dengan langkah untuk menghasilkan semula — lihat [Sokongan](support) — dan sertakan rentetan binaan Thunderbird yang tepat.
 
 ---

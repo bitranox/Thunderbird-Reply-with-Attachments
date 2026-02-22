@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Fanomezana'
-sidebar_label: 'Fanomezana'
+title: 'Hanome'
+sidebar_label: 'Manome'
 ---
 
-## Donate
+---
+
+## Manolotra fanomezana
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Raha tianao ny "Reply with Attachments" ary te hanohana ny fampandrosoana azy, azonao atao ny manolotra fanomezana eto:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Manolotra fanomezana amin'ny alalan'ny Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>na</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Manolotra fanomezana amin'ny alalan'ny PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>na</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Mividiana kafe ho ahy" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skanera mba hividy kafe ho ahy"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Misaotra! Ny fanohananao dia manampy hitazona ny fifanarahana amin'ireo famoahana Thunderbird vaovao, hanatsara ny fahafahana idirana sy ny fitsapana, ary hitazona ny antontan‑taratasy ho havaozina.
 
-Notes
+Fanamarihana
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Mivoha fotsiny rehefa tsindrianao ny rohy fanomezana; tsy manao fangatahana tambajotra ao ambadika ny fanitarana.
+- Ny fanohanana miverimberina dia manampy amin'ny fikojakojana maharitra sy fanavaozana ara‑potoana, saingy safidy tanteraka izy io.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Raha tsy miseho ireo bokotra sary, azafady ampiasao ireto rohy manaraka ireto:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+An-tsitrapo ny fanomezana; tsy misy endri‑asa sakanana.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Fisehon'ny fanomezana (fitsaharana 90 andro)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Misy endri‑asa manamora ao amin'ny fanitarana mba hanafenana vetivety ny tolo‑kevitra hanao fanomezana rehefa avy nanome ianao.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Aiza no ahitanao azy
+  - Options → Support section: hahita bokotra “I donated” sy faritra kely misy soso‑kevitra ianao.
+  - Asehon'ny boaty fifanakalozana Send‑confirmation koa ny bokotra Donate; miafina ho azy izy io rehefa mandeha ny fitsaharana.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Fomba fiasany
+  - Ny tsindriana ny “I donated” dia manafina ny bokotra fanomezana sy ny tolo‑kevitra mifandraika aminy mandritra ny 90 andro.
+  - Misy soso‑kevitra momba ny sata mampiseho hoe “Hidden until YYYY‑MM‑DD” (araka ny daty eo an‑toerana). Misy koa bokotra “Show Donate again” hanarenana avy hatrany ny fisehoana.
+  - Rehefa afaka 90 andro dia hita ho azy indray ny bokotra Donate.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Fiainana manokana sy fitahirizana
+  - Ny fanitarana dia mitahiry timestamp tokana ao amin'ny fitahirizana eo an‑toeran'i Thunderbird mba hahatsiarovana ny fe‑potoana fitsaharana. Key: `donateHideUntil` (milliseconda epoch).
+  - Ity fikirakirana ity dia eo an‑toeran'ny mombamomba anao ao Thunderbird (tsy ampifanarahana amin'ny rahona). Tsy misy fangatahana tambajotra ataon'ity endri‑asa ity.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Fanamboarana olana
+  - Raha mbola miseho ny Donate avy hatrany aorian'ny tsindriana “I donated”, miandrasa kely na sokafy indray ny pejy Options; havaozin'ny UI raha vao voatahiry ny fikirakirana.
+  - Mba hamerenana azy amin'ny tanana, tsindrio ny “Show Donate again”. Azonao atao koa ny miandry mandra‑pahatongan'ny daty voalaza ao amin'ilay soso‑kevitra.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Endri‑asa ho an'ny fahamoranana fotsiny io; tsy manakana mihitsy ny fiasa ao amin'ny fanitarana ary tsy manangona angon‑drakitra manokana.
 
 ---

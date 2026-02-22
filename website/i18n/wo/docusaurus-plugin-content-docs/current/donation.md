@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Daan'
-sidebar_label: 'Daan'
+title: 'Joxe ndimbal'
+sidebar_label: 'Joxe ndimbal'
 ---
 
-## Daan
+---
+
+## Joxe ndimbal
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Su "Reply with Attachments" la neex te bëgg nga dimbal ay doxalinam, man ngaa joxe fii:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Joxe ci yoonu Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>walla</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Joxe ci yoonu PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>walla</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Joxal ma kafe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan ngir joxal ma kafe"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Jërëjëf! Sa ndimbal mooy dimbal dellu mën a dox ak yeneeni sumb yu beesu Thunderbird, yokkal mën-a-ñu-dukki (accessibility) ak test yi, te tax dokimantaasioŋ bi nekk bu bees.
 
-Notes
+Tànneef yi
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Lëkkaleku joxe yi dañu ubbeeku rekk soo leen cuqal; mottali bi du def benn laaj lëkkalekaay ci ginnaaw.
+- Ndimbal bu dëpp dëpp mooy dimbal denc ak settantal bu yàgg ak yeesal yi ci jamono, waaye dooleel la rekk te fal-fal la.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Su butoŋu nataal yi bañ a yeb, jëfandikoolal lëkkaleku yii:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,29 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Joxe yi soppaliku la; amul benn tere ci jëf yi.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Wone joxe (suuxal 90 fan)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Mottali bi am na benn jëf buy yombal ngir nëbb ndiggal yi ci joxe bu yàggul ginaaw boo joxe na.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Fana la ngay gis ko
+  - Options → Support section: dina la feeñu benn butoŋ “I donated” ak benn dalal bu ndaw buy jox xibaar.
+  - Pencu Send‑confirmation bi itam wone na butoŋ Donate; dina nëbb boppam su suuxal bi dox.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Naka la mu dox
+  - Bu cuqaloo “I donated”, dina nëbb butoŋ yi ak ndiggal yi ci joxe ngir 90 fan.
+  - Xibaaru nekkin bi dina wone “Hidden until YYYY‑MM‑DD” (ci sa besu bopp). Am na itam butoŋ “Show Donate again” ngir dellu wone ko leegi-leegi.
+  - Ginnaaw 90 fan, butoŋ Donate dina dellu feeñ boppam boppam.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Sutura ak dencukaay
+  - Mottali bi denc na benn timestamp ci dencukaayu Thunderbird bi ngir fàttali jamono suuxal bi. Caabi: `donateHideUntil` (epoch milliseconds).
+  - Rëdd gi day toftali ci sa profeel Thunderbird rekk (du cloud‑synced). Jëf ji du def benn laaj lëkkalekaay.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Taatali jafe-jafe yi
+  - Su Donate di feeñ itam ci saa si ngay cuqal “I donated”, naanallal keneen saa walla ubbiwaatal xëtu Options bi; UI bi dina yeesal boppam ba ngay aar rëdd gi.
+  - Ngir tàmbaliwaat ak loxo, cuqal “Show Donate again”. Man ngaa it xaar ba bes bi nekkoon ci xibaar bi weesu na.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
-
----
+Jëf ji ngir yombal rekk la; du teg ndigal benn jëf ju mottali bi te duggul dara ci xibaaru bopp.

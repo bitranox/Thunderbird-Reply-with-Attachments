@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "ការតំឡើង",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "ការដំឡើង",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "ការតំឡើង",
+    "title": "ការដំឡើង",
     "slug": "/install",
-    "sidebar_label": "ការតំឡើង"
+    "sidebar_label": "ការដំឡើង"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ការចាប់ផ្តើម",
+    "title": "ការចាប់ផ្តើមរហ័ស",
     "permalink": "/Thunderbird-Reply-with-Attachments/km/docs/quickstart"
   },
   "next": {

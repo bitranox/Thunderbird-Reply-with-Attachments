@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'விசேஷங்கள்'
-sidebar_label: 'விசேஷங்கள்'
+title: 'அம்சங்கள்'
+sidebar_label: 'அம்சங்கள்'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## அம்சங்கள் {#features}
 
-## How It Works {#how-it-works}
+- பதிலளிக்கும் போது, அசல் மின்னஞ்சலில் உள்ள இணைப்புகளை தானாகச் சேர்க்கிறது.
+- கட்டுப்படுத்தக்கூடிய நடத்தை: இணைப்புகளை
+  - தானாகச் சேர்க்கலாம், அல்லது
+  - உறுதிப்படுத்தலுக்கு பிறகு மட்டும் சேர்க்கலாம் (சிறிய, பயன்பாட்டிற்கு எளிதான உரையாடல் சாளரம்). Options-ல் நீங்கள்
+    உறுதிப்படுத்தலை இயக்கு முடியும்; மேலும் இயல்புநிலை பதிலை (Yes/No) தேர்வு செய்யலாம்.
+- கோப்புப் பெயர்களுக்கான கருப்பட்டியல் (glob முறைமைகள்) குறிப்பிட்ட கோப்புகள் தானாகச்
+  சேர்க்கப்படுவதைக் தடுக்கிறது. உதாரணங்கள்: `*intern*`, `*secret*`, `*passwor*`.
+  பொருத்துதல் எழுத்தளவு (case) வேறுபாடு பொருட்படுத்தப்படாது; மேலும் கோப்புப் பெயரையே மட்டும் சரிபார்க்கும்; Options-ல்
+  ஒவ்வொரு வரியிலும் ஒரு முறைமையை வழங்கவும்.
+- கருப்பட்டியல் எச்சரிக்கை (விருப்பத்தேர்வு, இயல்பாக இயக்கு): உங்கள் கருப்பட்டியலால்
+  கோப்புகள் நீக்கப்பட்டால், ஒரு சிறிய modal பட்டியல் அந்த கோப்பையும் பொருந்திய முறை(கள்)யையும் காட்டும். Dark‑mode
+  நட்பு மற்றும் விசைப்பலகை மூலம் அணுகக்கூடியது (மூட Enter/Esc).
+- Reply மற்றும் Reply all-உடன் செயல்படுகிறது. இந்த add-on, Forward-ஐ மாற்றாது.
+- நீங்கள் ஏற்கனவே ஏதாவது இணைத்திருந்தாலும், அசல்களைச் சேர்க்கும்; கோப்புப் பெயரை அடிப்படையாகக் கொண்டு பிரதிகளைத் தவிர்க்கும்.
+- ஒவ்வொரு தாவலுக்கும் duplicate guard, அதே compose தாவலில் இருமுறைச் சேர்ப்பதைத் தடுக்கிறது.
+- தேவையற்ற இணைப்புகளைத் தவிர்க்க, இயல்பாக S/MIME சான்றிதழ்களை சேர்ப்பதைத் தவிர்க்கிறது.
+- inline படங்களைச் சேர்க்கவும் (இயல்புநிலை: ON). உட்பொருத்தப்பட்ட படங்கள்
+  பதில் உடலில் நேரடியாக base64 data URIகளாக மீட்டெடுக்கப்படும்; அசல் inline வடிவமைப்பு காக்கப்படும். Inline படங்களை
+  முழுவதும் தவிர்க்க Options-ல் முடக்கவும்.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## இது எப்படி வேலை செய்கிறது {#how-it-works}
+
+- பதிலளிக்கும் போது, add-on அசல் இணைப்புகளைப் பட்டியலிடும்.
+- கோப்பு இணைப்புகளில் உள்ள S/MIME கையொப்பங்களைப் பிரித்தெறிகிறது; inline படங்கள் உடலில் மீட்டெடுக்கப்படும் (முடக்கப்படவில்லை என்றால்).
+- விருப்பமாக உறுதிப்படுத்தலை கேட்கும் (விசைப்பலகை நட்பு).
+- தகுதியான கோப்புகளை உங்கள் compose-க்கு சேர்க்கும்; கோப்புப் பெயரின் அடிப்படையில் நகல்களைத் தவிர்க்கும்.
+- அரிய நிலைகளுக்கு Usage பகுதியில் உள்ள “Why attachments might not be added” ஐப் பார்க்கவும்.
+
+தனியுரிமை குறிப்பு: அனைத்து செயலாக்கமும் Thunderbird-ல் உள்ளூராகவே நடக்கிறது. இந்த add-on பின்னணி நெட்வொர்க் கோரிக்கைகளை எதையும் செய்யாது.
+
+---

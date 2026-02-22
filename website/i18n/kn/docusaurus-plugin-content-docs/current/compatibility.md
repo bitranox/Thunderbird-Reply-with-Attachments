@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ಸಂಗಣಕದ ಸಾಮರಸ್ಯ'
-sidebar_label: 'ಸಂಗಣಕದ ಸಾಮರಸ್ಯ'
+title: 'ಹೊಂದಾಣಿಕೆ'
+sidebar_label: 'ಹೊಂದಾಣಿಕೆ'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ಹೊಂದಾಣಿಕೆ {#compatibility}
+
+:::important ಕನಿಷ್ಠ Thunderbird ಆವೃತ್ತಿ
+ಈ ಆಡ್‑ಆನ್ Thunderbird **128 ESR ಅಥವಾ ಹೊಸದು** ಬೆಂಬಲಿಸುತ್ತದೆ. ಹಳೆಯ ಆವೃತ್ತಿಗಳನ್ನು ಬೆಂಬಲಿಸಲಾಗುವುದಿಲ್ಲ.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ಅಥವಾ ಹೊಸದು ಬೆಂಬಲಿತವಾಗಿದೆ (128.x+).
+- ಹಳೆಯ Thunderbird ಆವೃತ್ತಿಗಳಿಗೆ ಬೆಂಬಲ ಇಲ್ಲ.
+- Windows, macOS, ಮತ್ತು Linux ಮೇಲೆ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ಬೆಂಬಲಿತವಾಗಿಲ್ಲ
+Manifest V2 ಗೆ ಬೆಂಬಲ ಇಲ್ಲ. ಈ ಆಡ್‑ಆನ್ Thunderbird 128 ESR+ ನಲ್ಲಿ **Manifest V3 (MV3)** ಅನ್ನು ಗುರಿಯಾಗಿಸಿದೆ.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ಸಮಸ್ಯಾನಿರಾಕರಣೆ {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ಆಡ್‑ಆನ್ ನಿರೀಕ್ಷಿತ ರೀತಿಯಲ್ಲಿ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ, ನೀವು ಹೊಂದಾಣಿಕೆಯ Thunderbird ಆವೃತ್ತಿ (128 ESR ಅಥವಾ ನಂತರದದು) ಬಳಸುತ್ತಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿ.
+- ಆಡ್‑ಆನ್‌ಗೆ ಸಂಬಂಧಿಸಿದ ಯಾವುದೇ ಸಮಸ್ಯೆಗಳಿಗಾಗಿ Thunderbird ದೋಷ ಕಾನ್ಸೋಲ್ (**Tools > Developer Tools > Error Console**) ಅನ್ನು ಪರಿಶೀಲಿಸಿ.
+- ಸಂಗ್ರಹಿಸಲಾದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಸರಿಯಾಗಿ ಅನ್ವಯವಾಗದಂತೆ ಕಂಡುಬಂದರೆ, Thunderbird ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ ಹಾಗೂ ಮರುಪ್ರಯತ್ನಿಸಿ. (Thunderbird ಸೆಷನ್‌ಗಳ ನಡುವೆ ಸ್ಥಿತಿಯನ್ನು ಕ್ಯಾಶ್ ಮಾಡಿರಬಹುದು; ಮರುಪ್ರಾರಂಭಿಸಿದರೆ ಹೊಸ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಲೋಡ್ ಆಗುತ್ತವೆ.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## ತಿಳಿದಿರುವ ಸಂಘರ್ಷಗಳು {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- ಈ ಸಮಯಕ್ಕೆ ಯಾವುದೂ ತಿಳಿದಿಲ್ಲ. ನಿಮಗೆ ಮರುಮರು ನಕಲಿ ಲಗತ್ತೆಗಳು ಅಥವಾ ಇತರ ಆಡ್‑ಆನ್‌ಗಳೊಂದಿಗೆ ವೈಫಲ್ಯಗಳು ಕಂಡುಬಂದರೆ, ಪುನರುತ್ಪಾದಿಸಲು ಬೇಕಾದ ಹಂತಗಳೊಂದಿಗೆ ದಯವಿಟ್ಟು ವರದಿ ಮಾಡಿ.
+
+---
+
+## ಬಿಟಾ/ನೈಟ್‌ಲಿ {#beta-nightly}
+
+- Thunderbird ಬಿಟಾ ಮತ್ತು ಡೈಲಿ (ನೈಟ್‌ಲಿ) ಬಿಲ್ಡ್‌ಗಳು ಸಾಮಾನ್ಯವಾಗಿ ಬೆಂಬಲಿತವಾಗಿವೆ, ಆದರೆ ಅಪ್‌ಸ್ಟ್ರೀಮ್ ಬದಲಾವಣೆಗಳು ಕೆಲವೊಮ್ಮೆ ಆಡ್‑ಆನ್‌ನ ವರ್ತನೆಯನ್ನು ಹಾಳುಮಾಡಬಹುದು. ನೀವು ಸಮಸ್ಯೆಗಳನ್ನು ಎದುರಿಸಿದರೆ, ದಯವಿಟ್ಟು ಅವನ್ನು ವರದಿ ಮಾಡಿ ಮತ್ತು ನಿಖರವಾದ Thunderbird ಆವೃತ್ತಿಯನ್ನು ಸೇರಿಸಿ (ಉದಾ., “Daily 131.0a1 2025‑09‑10”).
+- ಬಿಟಾ/ನೈಟ್‌ಲಿಯಲ್ಲಿ ರಿಗ್ರೆಶನ್ ಎದುರಿಸಿದ್ದೀರಾ? ಅದನ್ನು ಪುನರುತ್ಪಾದಿಸುವ ಹಂತಗಳೊಂದಿಗೆ ದಯವಿಟ್ಟು ವರದಿ ಮಾಡಿ — [ಸಹಾಯ](support) ನೋಡಿ — ಮತ್ತು ನಿಖರವಾದ Thunderbird ಬಿಲ್ಡ್ ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಸೇರಿಸಿ.
 
 ---

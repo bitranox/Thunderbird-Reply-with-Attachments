@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "O'zgartirishlar jurnali",
-  "description": "Changelog",
+  "title": "O‘zgarishlar jurnali",
+  "description": "---",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "O'zgartirishlar jurnali"
+    "title": "O‘zgarishlar jurnali"
   },
   "sidebar": "docs",
   "previous": {

@@ -4,94 +4,97 @@ title: 'Kugwiritsa Ntchito'
 sidebar_label: 'Kugwiritsa Ntchito'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Kugwiritsa Ntchito {#usage}
+
+- Yankhani ndipo chowonjezera chimawonjezera zoyambirira zokha — kapena chimafunsa poyamba, ngati zayatsidwa mu Zosankha.
+- Kubwereza kumapewa potengera dzina la fayilo; magawo a S/MIME amapitilidwa nthawi zonse. Zithunzi za inline zimabwezeretsedwa mu thupi la yankho mwachikhazikitso (mutha kuzitseka kudzera mu "Include inline pictures" mu Zosankha).
+- Zomangiriridwa zomwe zili pa blacklist zimapitidwanso (mapatani a glob osasiyanitsa zilembo zazikulu/zazing'ono ofanana ndi maina a mafayilo, osati njira). Onani [Zokonza](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Zimachitika chiyani mukamayankha {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Kuzindikira yankho → kulemba mndandanda wa zomangiriridwa zoyambirira → kusefa S/MIME + inline → kutsimikizira posankha → kuwonjezera mafayilo oyenerera (dumphani zobwerezedwa) → kubwezeretsa zithunzi za inline m'thupi.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Kuyendera kolimba motsutsana ndi kofewa: Chowonjezera chimayamba pochotsa magawo a S/MIME ndi a inline ku zomangiriridwa za fayilo. Ngati palibe loyenera, chimayendetsa koyendera kofewa komwe komabe chimachotsa S/MIME/inline koma chimapirira milandu yochulukirapo (onani Code Details). Zithunzi za inline sazionjezedwa ngati zomangiriridwa za fayilo; m'malo mwake, pamene "Include inline pictures" yayatsidwa (mwachikhazikitso), zimamangidwamo mwachindunji mu thupi la yankho monga base64 data URIs.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Mtundu wa gawo                                                      |                       Kuyendera kolimba |                        Kuyendera kofewa |
+| ------------------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
+| Fayilo ya siginecha ya S/MIME `smime.p7s`                           |                             Zachotsedwa |                             Zachotsedwa |
+| Mitundu ya MIME ya S/MIME (`application/pkcs7-*`)                   |                             Zachotsedwa |                             Zachotsedwa |
+| Chithunzi cha inline chochitanidwa ndi Content‑ID (`image/*`)       | Zachotsedwa (zibwezeretsedwa m'thupi\*) | Zachotsedwa (zibwezeretsedwa m'thupi\*) |
+| Imelo yomangiriridwa (`message/rfc822`) yokhala ndi dzina la fayilo |                          Sinalowetsedwe |                          Ingawonjezedwe |
+| Chomangiriridwa cha fayilo wamba chokhala ndi dzina la fayilo       |                          Ingawonjezedwe |                          Ingawonjezedwe |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Pamene "Include inline pictures" yayatsidwa (mwachikhazikitso: ON), zithunzi za inline zimamangidwamo mu thupi la yankho monga base64 data URIs m'malo mowonjezedwa ngati zomangiriridwa za fayilo. Onani [Zokonza](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Chitsanzo: Zina mwa zomangiriridwa zitha kusowa ma header ena koma zikadali mafayilo wamba (osati inline/S/MIME). Ngati kuyendera kolimba sikapeza chilichonse, kuyendera kofewa kungavomereze zimenezo ndi kuziwonjezera.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Zolumikizana {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Kutumiza patsogolo (Forward) sikusinthidwa mwadala (onani Zolepheretsa pansipa).
+- Zifukwa zomwe chomangiriridwa chingasawonjezedwe, onani “Why attachments might not be added”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Tsatanetsatane wa Makhalidwe {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Kupewa zobwereza:** Chowonjezera chimazindikira tabu ya kulemba (compose) ngati yatayendetsedwa pogwiritsa ntchito mtengo wa gawo pa tabu iliyonse komanso chitetezo cha mkati mwa kukumbukira. Sichidzawonjezera zoyambirira kawiri.
+- Kutseka ndi kutsegulanso zenera lolembapo kumawerengedwa ngati tabu yatsopano (ndiko kuti, kuyesanso kovomerezeka).
+- **Kulemekeza zomangiriridwa zomwe zilipo kale:** Ngati zolembapo (compose) zili kale ndi zomangiriridwa zina, zoyambirira zidzawonjezedwabe kamodzi kokha, kudumphira maina a mafayilo omwe alipo kale.
+- **Zochotsedwa:** Zinthu za S/MIME ndi zithunzi za inline zimachotsedwa ku zomangiriridwa za fayilo. Ngati palibe loyenera pa kuyendera koyamba, kulowererapo kofewa kumayang'ana kachiwiri magawo osati a S/MIME. Zithunzi za inline zimathandizidwa padera: zimabwezeretsedwa mu thupi la yankho monga data URIs (zikayatsidwa).
+  - **Maina a mafayilo:** `smime.p7s`
+  - **Mitundu ya MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Zithunzi za inline:** gawo lililonse la `image/*` lotchulidwa ndi Content‑ID — amachotsedwa ku zomangiriridwa za fayilo koma amamangidwamo mu thupi la yankho pamene "Include inline pictures" ili ON
+  - **Ma imelo omangiriridwa (`message/rfc822`):** amachitidwa ngati zomangiriridwa wamba ngati ali ndi dzina la fayilo; angawonjezedwe (potengera kuyang'ana zobwerezedwa ndi blacklist).
+- **Chenjezo la blacklist (ngati yatsegulidwa):** Pamene omwe akuyembekezeredwa achotsedwa chifukwa cha blacklist yanu,
+  chowonjezera chimasonyeza modal yaying'ono yolembapo mafayilo omwe akhudzidwa ndi
+  mapatani ogwirizana (pattern(s)). Chenjezo limeneli limawonekanso pamikhalidwe yomwe palibe chomangiriridwa chimene chidzawonjezedwe chifukwa chilichonse chachotsedwa.
 
 ---
 
-## Limitations {#limitations}
+## Zachidule pa kiyibodi {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Zenera lotsimikizira: Y/J = Inde, N/Esc = Ayi; Tab/Shift+Tab ndi ma kiyi a Mivi (Arrow) amasinthasinthira cholunjika.
+  - “Yankho losasintha” mu [Zokonza](configuration#confirmation) limakhazikitsa batani lomwe layang'ana poyamba.
+  - Enter imayambitsa batani lolunjikidwa. Tab/Shift+Tab ndi mivi zimasuntha cholunjika kuti zithandize kupezeka.
+
+### Pepala Lachidule la Kiyibodi {#keyboard-cheat-sheet}
+
+| Makiyi            | Zochita                                             |
+| ----------------- | --------------------------------------------------- |
+| Y / J             | Tsimikizirani Inde                                  |
+| N / Esc           | Tsimikizirani Ayi                                   |
+| Enter             | Yambitsa batani lolunjikidwa                        |
+| Tab / Shift+Tab   | Sunsitsani cholunjika kutsogolo/mmbuyo              |
+| Ma mivi           | Sunsitsani cholunjika pakati pa mabatani            |
+| Yankho losasintha | Imakhazikitsa cholunjika choyamba (Inde kapena Ayi) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Zolepheretsa {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward sali kusinthidwa ndi chowonjezerachi (Yankhani ndi Yankhani onse zothandizidwa).
+- Zomangiriridwa zazikulu kwambiri zitha kukhala pansi pa malire a Thunderbird kapena a wopereka.
+  - Chowonjezera sichimagawanagawana (chunk) kapena kukanikiza (compress) mafayilo; chimadalira momwe Thunderbird imayang'anira zomangiriridwa mwachizolowezi.
+- Mauthenga obisidwa: magawo a S/MIME amachotsedwa mwadala.
 
 ---
 
-See also
+## Chifukwa chomwe zomangiriridwa sizingawonjezedwe {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Zithunzi za inline sizionjezedwa ngati zomangiriridwa za fayilo. Pamene "Include inline pictures" ili ON (mwachikhazikitso), zimamangidwamo mu thupi la yankho monga data URIs m'malo mwake. Ngati zoikamo zikadali OFF, zithunzi za inline zimachotsedwa kwathunthu. Onani [Zokonza](configuration#include-inline-pictures).
+- Magawo a siginecha a S/MIME amachotsedwa mwadala: maina a mafayilo monga `smime.p7s` ndi mitundu ya MIME ngati `application/pkcs7-signature` kapena `application/pkcs7-mime` amapitilidwa.
+- Mapatani a blacklist angasefe omwe akuyembekezeredwa: onani [Zokonza](configuration#blacklist-glob-patterns); kufananira sikusiyanitsa zilembo zazikulu/zazing'ono ndipo kumangotengera dzina la fayilo.
+- Maina a mafayilo obwereza samawonjezedwanso: ngati zolembapo zili kale ndi fayilo yokhala ndi dzina lofanana lomwe lasanjikizidwa, imadumphidwa.
+- Magawo osati a fayilo kapena osalibe maina a fayilo: magawo okhala ngati fayilo okha okhala ndi maina a fayilo ogwiritsidwa ntchito ndi amene amaganiziridwa kuti awonjezedwe.
+
+---
+
+Onaninso
+
+- [Zokonza](configuration)

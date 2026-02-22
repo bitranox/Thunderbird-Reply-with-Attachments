@@ -86,7 +86,7 @@ function createProcessReplyAttachments({
       return await attachSelectedFiles(compose, messages, tabId, messageId, selected);
     } catch (err) {
       try {
-        logger.warn?.({ err }, 'processReplyAttachments failed');
+        logger.warn?.({ err, tabId, messageId }, 'processReplyAttachments failed');
       } catch (_) {}
       return 0;
     }
@@ -198,6 +198,7 @@ function createEnsureReplyAttachments({
   matchBlacklist = null,
   logger = console,
   attachmentsRetry = ATTACHMENT_RETRY_DEFAULT,
+  includeInlinePictures = true,
 }) {
   const processReplyAttachments = createProcessReplyAttachments({
     compose,
@@ -288,8 +289,20 @@ function createEnsureReplyAttachments({
       );
 
       const added = await processReplyAttachments(tabId, messageId);
-      if (added > 0) {
-        debugLog(logger, { tabId, messageId, added }, 'ensureReplyAttachments: attachments added');
+
+      let inlineRestored = false;
+      if (includeInlinePictures) {
+        try {
+          inlineRestored = await restoreInlineImages(compose, messages, tabId, messageId, logger);
+        } catch (_) {}
+      }
+
+      if (added > 0 || inlineRestored) {
+        debugLog(
+          logger,
+          { tabId, messageId, added, inlineRestored },
+          'ensureReplyAttachments: attachments added'
+        );
         await markProcessed(sessions, tabId, sessionKey, state, messageId);
         return;
       }
@@ -496,8 +509,6 @@ function domainIncludeStrict() {
   return (att) => {
     const name = domainNormalizedName()(att);
     const ct = String(att?.contentType || '').toLowerCase();
-    const cd = String(att?.contentDisposition || '').toLowerCase();
-    const cid = !!att?.contentId;
     if (name === 'smime.p7s') return false;
     if (
       ct === 'application/pkcs7-signature' ||
@@ -505,8 +516,9 @@ function domainIncludeStrict() {
       ct === 'application/pkcs7-mime'
     )
       return false;
-    if (cid && ct.startsWith('image/')) return false;
-    if (cd.startsWith('inline')) return false;
+    if (att?.contentId && ct.startsWith('image/')) return false;
+    const disp = String(att?.contentDisposition || '').toLowerCase();
+    if (disp.startsWith('inline')) return false;
     return true;
   };
 }
@@ -515,6 +527,91 @@ function domainIncludeRelaxed() {
   const fn = globalThis.App?.Domain?.includeRelaxed;
   if (typeof fn === 'function') return fn;
   return domainIncludeStrict();
+}
+/** Strip angle brackets from a Content-ID value. */
+function stripAngleBrackets(s) {
+  return String(s || '')
+    .replace(/^</, '')
+    .replace(/>$/, '');
+}
+/** Convert a Blob to a data URI string. */
+async function blobToDataUri(blob, contentType) {
+  const buf = await blob.arrayBuffer();
+  const bytes = new Uint8Array(buf);
+  let binary = '';
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return `data:${contentType};base64,${globalThis.btoa(binary)}`;
+}
+/**
+ * Extract the part name from a Thunderbird internal URL query string.
+ * Handles both raw & and HTML-encoded &amp; separators, since
+ * getComposeDetails returns serialized HTML where & becomes &amp;.
+ * E.g. "imap://user@host/fetch...?part=1.2.2&amp;filename=img.png" → "1.2.2"
+ */
+function extractPartFromUrl(url) {
+  const m = /(?:[?&]|&amp;)part=([^&"']+)/.exec(url);
+  return m ? decodeURIComponent(m[1]) : null;
+}
+/**
+ * Restore inline images in the compose body by replacing internal references
+ * (cid: URLs or Thunderbird imap:/mailbox: URLs) with base64 data URIs
+ * fetched from the original message attachments.
+ * @returns {Promise<boolean>} true if any replacements were made
+ */
+async function restoreInlineImages(compose, messages, tabId, messageId, logger) {
+  const details = await compose.getDetails(tabId);
+  const body = details?.body || '';
+  if (!body) return false;
+
+  const allAttachments = await safe(() => messages.listAttachments(messageId), []);
+  if (!allAttachments || !allAttachments.length) return false;
+
+  // Build lookup maps: by contentId (for cid: refs) and by partName (for imap:/mailbox: refs)
+  const cidMap = new Map();
+  const partMap = new Map();
+  for (const att of allAttachments) {
+    if (att.contentId) cidMap.set(stripAngleBrackets(att.contentId), att);
+    if (att.partName) partMap.set(att.partName, att);
+  }
+
+  // Match cid: references and Thunderbird internal URLs (imap://, mailbox://, etc.)
+  // getComposeDetails returns serialized HTML, so & in URLs is encoded as &amp;
+  const inlinePattern =
+    /(?:src|background)\s*=\s*["'](cid:[^"']+|(?:imap|mailbox|news|snews)[^"']*(?:[?&]|&amp;)part=[^"']+)["']/gi;
+  const refs = [];
+  let m;
+  while ((m = inlinePattern.exec(body)) !== null) refs.push(m[1]);
+  if (!refs.length) return false;
+
+  let newBody = body;
+  let replaced = false;
+  for (const ref of refs) {
+    let att;
+    if (ref.startsWith('cid:')) {
+      const cid = ref.slice(4);
+      att = cidMap.get(cid) || cidMap.get(stripAngleBrackets(cid));
+    } else {
+      const part = extractPartFromUrl(ref);
+      if (part) att = partMap.get(part);
+    }
+    if (!att) continue;
+    try {
+      const file = await messages.getAttachmentFile(messageId, att.partName);
+      if (!file) continue;
+      const ct = String(att.contentType || 'application/octet-stream').toLowerCase();
+      const dataUri = await blobToDataUri(file, ct);
+      newBody = newBody.split(ref).join(dataUri);
+      replaced = true;
+    } catch (err) {
+      try {
+        logger?.warn?.({ err, ref }, 'restoreInlineImages: failed to fetch inline image');
+      } catch (_) {}
+    }
+  }
+
+  if (!replaced) return false;
+  await compose.setDetails(tabId, { body: newBody });
+  return true;
 }
 
 function asSelection(a) {

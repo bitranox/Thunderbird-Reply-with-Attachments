@@ -1,97 +1,100 @@
 ---
 id: usage
 title: '사용법'
-sidebar_label: '사용법'
+sidebar_label: '사용 방법'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## 사용법 {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- 회신하면 애드온이 원본을 자동으로 추가합니다 — 또는 옵션에서 활성화된 경우 먼저 확인을 요청합니다.
+- 파일명 기준으로 중복이 제거됩니다; S/MIME 파트는 항상 건너뜁니다. 인라인 이미지는 기본적으로 회신 본문에 복원됩니다(옵션의 "Include inline pictures"에서 비활성화 가능).
+- 블랙리스트에 포함된 첨부 파일도 건너뜁니다(경로가 아닌 파일명과 일치하는 대소문자 구분 없는 글롭 패턴). [구성](configuration#blacklist-glob-patterns)을 참조하세요.
 
 ---
 
-### Cross‑reference {#cross-reference}
+### 회신 시 동작 {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- 회신 감지 → 원본 첨부 파일 목록화 → S/MIME + 인라인 필터링 → 선택적 확인 → 적격 파일 추가(중복 건너뜀) → 본문에 인라인 이미지 복원.
 
----
+엄격 패스 vs. 완화 패스: 애드온은 먼저 S/MIME 및 인라인 파트를 파일 첨부에서 제외합니다. 해당되는 것이 없으면, S/MIME/인라인을 여전히 제외하되 더 많은 경우를 허용하는 완화 패스를 실행합니다(코드 세부정보 참조). 인라인 이미지는 파일 첨부로는 절대 추가되지 않습니다. 대신 "Include inline pictures"가 활성화되어 있을 때(기본값), 회신 본문에 base64 데이터 URI로 직접 임베드됩니다.
 
-## Behavior Details {#behavior-details}
+| 파트 유형                                      |              엄격 패스 |              완화 패스 |
+| ---------------------------------------------- | ---------------------: | ---------------------: |
+| S/MIME 서명 파일 `smime.p7s`                   |                 제외됨 |                 제외됨 |
+| S/MIME MIME 유형 (`application/pkcs7-*`)       |                 제외됨 |                 제외됨 |
+| Content‑ID로 참조된 인라인 이미지 (`image/*`)  | 제외됨 (본문에 복원\*) | 제외됨 (본문에 복원\*) |
+| 파일명이 있는 첨부된 이메일 (`message/rfc822`) |          추가되지 않음 |         추가될 수 있음 |
+| 파일명이 있는 일반 파일 첨부                   |         추가될 수 있음 |         추가될 수 있음 |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* "Include inline pictures"가 활성화되어 있을 때(기본값: ON), 인라인 이미지는 파일 첨부로 추가되는 대신 회신 본문에 base64 데이터 URI로 임베드됩니다. [구성](configuration#include-inline-pictures)을 참조하세요.
+
+예시: 일부 첨부 파일은 특정 헤더가 없더라도 여전히 일반 파일일 수 있습니다(인라인/S/MIME 아님). 엄격 패스에서 아무것도 찾지 못하면, 완화 패스가 이를 허용하여 첨부할 수 있습니다.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### 상호 참조 {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- 전달(Forward)은 설계상 수정되지 않습니다(아래 제한 사항 참조).
+- 첨부 파일이 추가되지 않을 수 있는 이유는 “첨부 파일이 추가되지 않을 수 있는 이유”를 참조하세요.
 
 ---
 
-## Limitations {#limitations}
+## 동작 세부사항 {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **중복 방지:** 애드온은 탭별 세션 값과 인메모리 가드를 사용해 작성 탭을 처리됨으로 표시합니다. 원본을 두 번 추가하지 않습니다.
+- 작성 창을 닫았다가 다시 열면 새 탭으로 간주됩니다(즉, 새 시도가 허용됨).
+- **기존 첨부 파일 존중:** 작성 창에 이미 첨부가 있더라도, 원본은 정확히 한 번만 추가하며 이미 존재하는 파일명은 건너뜁니다.
+- **제외 항목:** S/MIME 산출물과 인라인 이미지는 파일 첨부에서 제외됩니다. 첫 패스에서 해당되는 것이 없으면 완화형 폴백이 비(非) S/MIME 파트를 재검사합니다. 인라인 이미지는 별도로 처리됩니다: 활성화된 경우 데이터 URI로 회신 본문에 복원됩니다.
+  - **파일명:** `smime.p7s`
+  - **MIME 유형:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **인라인 이미지:** Content‑ID로 참조되는 모든 `image/*` 파트 — 파일 첨부에서는 제외되지만, "Include inline pictures"가 ON일 때 회신 본문에 임베드됨
+  - **첨부된 이메일(`message/rfc822`)**: 파일명이 있는 경우 일반 첨부로 취급됩니다. (중복 검사 및 블랙리스트 적용 대상)
+- **블랙리스트 경고(활성화된 경우):** 후보가 블랙리스트로 제외되면,
+  애드온이 해당 파일과 일치한 패턴을 나열하는 작은 모달을 표시합니다.
+  모든 항목이 제외되어 아무 첨부도 추가되지 않는 경우에도 이 경고가 표시됩니다.
 
 ---
 
-See also
+## 키보드 단축키 {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- 확인 대화상자: Y/J = Yes, N/Esc = No; Tab/Shift+Tab 및 화살표 키로 포커스를 순환합니다.
+  - [구성](configuration#confirmation)의 “Default answer”가 처음 포커스될 버튼을 설정합니다.
+  - Enter는 포커스된 버튼을 실행합니다. 접근성을 위해 Tab/Shift+Tab과 화살표로 포커스를 이동합니다.
+
+### 키보드 치트시트 {#keyboard-cheat-sheet}
+
+| 키              | 동작                             |
+| --------------- | -------------------------------- |
+| Y / J           | 예 확인                          |
+| N / Esc         | 아니오 확인                      |
+| Enter           | 포커스된 버튼 활성화             |
+| Tab / Shift+Tab | 포커스를 앞/뒤로 이동            |
+| 화살표 키       | 버튼 사이 포커스 이동            |
+| 기본 답변       | 초기 포커스 설정(예 또는 아니오) |
+
+---
+
+## 제한 사항 {#limitations}
+
+- 이 애드온은 전달(Forward)을 수정하지 않습니다(회신 및 전체 회신은 지원).
+- 매우 큰 첨부 파일은 Thunderbird 또는 제공업체의 제한을 받을 수 있습니다.
+  - 애드온은 파일을 청크로 나누거나 압축하지 않으며, Thunderbird의 일반 첨부 처리에 의존합니다.
+- 암호화된 메시지: S/MIME 파트는 의도적으로 제외됩니다.
+
+---
+
+## 첨부 파일이 추가되지 않을 수 있는 이유 {#why-attachments-might-not-be-added}
+
+- 인라인 이미지는 파일 첨부로 추가되지 않습니다. "Include inline pictures"가 ON(기본값)일 때는 회신 본문에 데이터 URI로 임베드됩니다. 설정이 OFF이면 인라인 이미지는 완전히 제거됩니다. [구성](configuration#include-inline-pictures)을 참조하세요.
+- S/MIME 서명 파트는 설계상 제외됩니다: `smime.p7s` 같은 파일명과 `application/pkcs7-signature` 또는 `application/pkcs7-mime` 같은 MIME 유형은 건너뜁니다.
+- 블랙리스트 패턴이 후보를 필터링할 수 있습니다: [구성](configuration#blacklist-glob-patterns)을 참조하세요. 일치는 대소문자 구분 없이 파일명만 기준입니다.
+- 중복 파일명은 다시 추가되지 않습니다: 작성 창에 동일한 정규화된 이름의 파일이 이미 있으면 건너뜁니다.
+- 파일이 아닌 파트 또는 파일명이 누락된 경우: 사용 가능한 파일명을 가진 파일 유사 파트만 추가 대상으로 간주됩니다.
+
+---
+
+함께 보기
+
+- [구성](configuration)

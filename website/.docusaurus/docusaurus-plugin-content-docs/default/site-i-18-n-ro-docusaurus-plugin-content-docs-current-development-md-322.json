@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Dezvoltare",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

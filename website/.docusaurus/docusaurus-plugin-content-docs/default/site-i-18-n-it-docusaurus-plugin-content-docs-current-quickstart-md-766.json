@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Guida rapida",
-  "description": "Quickstart",
+  "description": "---",
   "source": "@site/i18n/it/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -14,11 +14,11 @@
   "frontMatter": {
     "id": "quickstart",
     "title": "Guida rapida",
-    "sidebar_label": "Guida rapida"
+    "sidebar_label": "Avvio rapido"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Caratteristiche",
+    "title": "Funzionalità",
     "permalink": "/Thunderbird-Reply-with-Attachments/it/docs/features"
   },
   "next": {

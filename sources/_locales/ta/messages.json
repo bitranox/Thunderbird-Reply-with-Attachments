@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "கருப்புப்பட்டியலால் இணைப்புகள் விலக்கப்பட்டால் எச்சரிக்கவும்"
   },
+  "uiIncludeInlineLabel": {
+    "message": "இன்லைன் படங்களை சேர்க்கவும் (உட்பொதிக்கப்பட்ட படங்கள்)"
+  },
   "uiDebugHeader": {
     "message": "மேம்பட்டவை"
   },

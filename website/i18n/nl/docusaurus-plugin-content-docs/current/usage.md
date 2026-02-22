@@ -4,94 +4,98 @@ title: 'Gebruik'
 sidebar_label: 'Gebruik'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Gebruik {#usage}
+
+- Beantwoord en de add-on voegt originelen automatisch toe — of vraagt eerst om bevestiging, als dit is ingeschakeld in Opties.
+- Duplicaten voorkomen op basis van bestandsnaam; S/MIME-onderdelen worden altijd overgeslagen. Inline-afbeeldingen worden standaard hersteld in de antwoordtekst (uitschakelen via "Inline-afbeeldingen opnemen" in Opties).
+- Bijlagen op de zwarte lijst worden ook overgeslagen (hoofdletterongevoelige glob‑patronen die bestandsnamen matchen, niet paden). Zie [Configuratie](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Wat gebeurt er bij beantwoorden {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Antwoord detecteren → originele bijlagen opsommen → S/MIME + inline filteren → optioneel bevestigen → in aanmerking komende bestanden toevoegen (duplicaten overslaan) → inline‑afbeeldingen in de tekst herstellen.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Strikte vs. soepele doorloop: de add‑on sluit eerst S/MIME‑ en inline‑onderdelen uit van bestandsbijlagen. Als er niets in aanmerking komt, voert hij een soepele doorloop uit die S/MIME/inline nog steeds uitsluit maar meer gevallen tolereert (zie Codedetails). Inline‑afbeeldingen worden nooit als bestandsbijlagen toegevoegd; in plaats daarvan worden ze, wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (de standaard), direct in de antwoordtekst ingesloten als base64‑data‑URI's.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Onderdeeltype                                                         |                  Strikte doorloop |                  Soepele doorloop |
+| --------------------------------------------------------------------- | --------------------------------: | --------------------------------: |
+| S/MIME-handtekeningbestand `smime.p7s`                                |                       Uitgesloten |                       Uitgesloten |
+| S/MIME-MIME-typen (`application/pkcs7-*`)                             |                       Uitgesloten |                       Uitgesloten |
+| Inline‑afbeelding waarnaar wordt verwezen door Content‑ID (`image/*`) | Uitgesloten (hersteld in tekst\*) | Uitgesloten (hersteld in tekst\*) |
+| Bijgevoegde e‑mail (`message/rfc822`) met een bestandsnaam            |                   Niet toegevoegd |             Kan worden toegevoegd |
+| Normale bestandsbijlage met een bestandsnaam                          |             Kan worden toegevoegd |             Kan worden toegevoegd |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (standaard: AAN), worden inline‑afbeeldingen in de antwoordtekst ingesloten als base64‑data‑URI's in plaats van als bestandsbijlagen toegevoegd. Zie [Configuratie](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Voorbeeld: Sommige bijlagen missen bepaalde headers maar zijn toch reguliere bestanden (niet inline/S/MIME). Als de strikte doorloop er geen vindt, kan de soepele doorloop die accepteren en toevoegen.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kruisverwijzing {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Doorsturen wordt uit ontwerp niet aangepast (zie Beperkingen hieronder).
+- Voor redenen waarom een bijlage mogelijk niet wordt toegevoegd, zie “Waarom bijlagen mogelijk niet worden toegevoegd”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Gedragsdetails {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Duplicaatpreventie: de add‑on markeert het opstel‑tabblad als verwerkt met een sessiewaarde per tabblad en een bewaker in het geheugen. Hij voegt originelen niet twee keer toe.
+- Het sluiten en heropenen van een opstelvenster wordt behandeld als een nieuw tabblad (d.w.z. een nieuwe poging is toegestaan).
+- Bestaande bijlagen respecteren: als het opstelvenster al bijlagen bevat, worden originelen toch precies één keer toegevoegd, en worden bestandsnamen die al bestaan overgeslagen.
+- Uitsluitingen: S/MIME‑artefacten en inline‑afbeeldingen worden uitgesloten van bestandsbijlagen. Als er in de eerste doorloop niets in aanmerking komt, controleert een soepele terugval niet‑S/MIME‑onderdelen opnieuw. Inline‑afbeeldingen worden apart afgehandeld: ze worden in de antwoordtekst hersteld als data‑URI's (wanneer ingeschakeld).
+  - Bestandsnamen: `smime.p7s`
+  - MIME‑typen: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Inline‑afbeeldingen: elk `image/*`‑onderdeel waarnaar wordt verwezen door Content‑ID — uitgesloten van bestandsbijlagen maar ingesloten in de antwoordtekst wanneer "Inline‑afbeeldingen opnemen" AAN staat
+  - Bijgevoegde e‑mails (`message/rfc822`): worden behandeld als reguliere bijlagen als ze een bestandsnaam hebben; ze kunnen worden toegevoegd (onder voorbehoud van duplicaatcontroles en zwarte lijst).
+- Waarschuwing zwarte lijst (indien ingeschakeld): wanneer kandidaten door uw zwarte lijst worden uitgesloten,
+  toont de add‑on een klein modaal venster met de betrokken bestanden en het overeenkomende
+  patroon/patronen. Deze waarschuwing verschijnt ook in gevallen waarin geen bijlagen zullen worden
+  toegevoegd omdat alles is uitgesloten.
 
 ---
 
-## Limitations {#limitations}
+## Sneltoetsen {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Bevestigingsdialoog: Y/J = Ja, N/Esc = Nee; Tab/Shift+Tab en pijltoetsen wisselen de focus.
+  - De “Standaardantwoord” in [Configuratie](configuration#confirmation) bepaalt welke knop aanvankelijk focus heeft.
+  - Enter activeert de knop met focus. Tab/Shift+Tab en pijltoetsen verplaatsen de focus voor toegankelijkheid.
+
+### Sneltoetsen-spiekbriefje {#keyboard-cheat-sheet}
+
+| Toetsen           | Actie                               |
+| ----------------- | ----------------------------------- |
+| Y / J             | Bevestig Ja                         |
+| N / Esc           | Bevestig Nee                        |
+| Enter             | Gefocuste knop activeren            |
+| Tab / Shift+Tab   | Focus vooruit/achteruit verplaatsen |
+| Pijltoetsen       | Focus tussen knoppen verplaatsen    |
+| Standaardantwoord | Stelt initiële focus in (Ja of Nee) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Beperkingen {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Doorsturen wordt door deze add‑on niet aangepast (Beantwoorden en Allen beantwoorden worden ondersteund).
+- Zeer grote bijlagen kunnen onderhevig zijn aan limieten van Thunderbird of de provider.
+  - De add‑on segmenteert of comprimeert bestanden niet; hij vertrouwt op de normale bijlage‑afhandeling van Thunderbird.
+- Versleutelde berichten: S/MIME‑onderdelen worden bewust uitgesloten.
 
 ---
 
-See also
+## Waarom bijlagen mogelijk niet worden toegevoegd {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inline‑afbeeldingen worden niet als bestandsbijlagen toegevoegd. Als "Inline‑afbeeldingen opnemen" AAN staat (de standaard), worden ze in plaats daarvan in de antwoordtekst ingesloten als data‑URI's. Als de instelling UIT staat, worden inline‑afbeeldingen volledig verwijderd. Zie [Configuratie](configuration#include-inline-pictures).
+- S/MIME‑handtekeningonderdelen worden bewust uitgesloten: bestandsnamen zoals `smime.p7s` en MIME‑typen zoals `application/pkcs7-signature` of `application/pkcs7-mime` worden overgeslagen.
+- Patronen van de zwarte lijst kunnen kandidaten filteren: zie [Configuratie](configuration#blacklist-glob-patterns); overeenkomen is hoofdletterongevoelig en alleen op bestandsnaam.
+- Dubbele bestandsnamen worden niet opnieuw toegevoegd: als het opstelvenster al een bestand met dezelfde genormaliseerde naam bevat, wordt het overgeslagen.
+- Niet‑bestandsonderdelen of ontbrekende bestandsnamen: alleen bestandsachtige onderdelen met bruikbare bestandsnamen komen in aanmerking om te worden toegevoegd.
+
+---
+
+Zie ook
+
+- [Configuratie](configuration)

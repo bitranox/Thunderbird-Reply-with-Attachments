@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ఆరంభం",
-  "description": "ఆరంభం",
+  "title": "త్వరిత ప్రారంభం",
+  "description": "---",
   "source": "@site/i18n/te/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ఆరంభం",
-    "sidebar_label": "ఆరంభం"
+    "title": "త్వరిత ప్రారంభం",
+    "sidebar_label": "త్వరిత ప్రారంభం"
   },
   "sidebar": "docs",
   "previous": {
-    "title": " లక్షణాలు",
+    "title": "లక్షణాలు",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/features"
   },
   "next": {
-    "title": "ఇన్స్టాలేషన్",
+    "title": "ఇన్‌స్టాలేషన్",
     "permalink": "/Thunderbird-Reply-with-Attachments/te/docs/install"
   }
 }

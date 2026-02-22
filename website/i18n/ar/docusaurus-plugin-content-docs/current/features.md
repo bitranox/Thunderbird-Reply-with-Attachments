@@ -4,33 +4,40 @@ title: 'الميزات'
 sidebar_label: 'الميزات'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## الميزات {#features}
 
-## How It Works {#how-it-works}
+- يُرفِق الملفات من البريد الإلكتروني الأصلي تلقائيًا عند الرد.
+- سلوك قابل للتهيئة: يمكن أن تكون المرفقات
+  - مُضافة تلقائيًا، أو
+  - مُضافة فقط بعد التأكيد (مربع حوار صغير يسهل الوصول إليه). في الخيارات يمكنك
+    تمكين التأكيد واختيار الإجابة الافتراضية (نعم/لا).
+- قائمة سوداء لأسماء الملفات (أنماط glob) تمنع ملفات معيّنة من أن يتم
+  إرفاقها تلقائيًا. أمثلة: `*intern*`, `*secret*`, `*passwor*`.
+  المطابقة غير حسّاسة لحالة الأحرف وتتحقق من اسم الملف فقط؛ قدّم نمطًا واحدًا
+  لكل سطر في الخيارات.
+- تحذير القائمة السوداء (اختياري، مُمكّن افتراضيًا): عند استبعاد الملفات بواسطة
+  قائمتك السوداء، يعرض مربع حواري صغير اسم الملف والنمط/الأنماط المطابقة. الوضع الداكن
+  ملائم وسهل الوصول عبر لوحة المفاتيح (Enter/Esc للإغلاق).
+- يعمل مع الرد والرد على الجميع. لا يقوم هذا الملحق بتعديل إعادة التوجيه.
+- يُضيف المرفقات الأصلية حتى إذا كنت قد أرفقت شيئًا بنفسك؛ ويتجنب التكرارات بحسب اسم الملف.
+- حارس منع التكرار لكل علامة تبويب يمنع الإضافة المزدوجة في نفس علامة تبويب الإنشاء.
+- يتجاوز شهادات S/MIME افتراضيًا لتجنب المرفقات غير الضرورية.
+- تضمين الصور المضمّنة داخل النص (الافتراضي: مفعّل). تُعاد الصور المُضمَّنة مباشرةً في
+  نص الرد كعناوين URI لبيانات base64، مما يحافظ على التنسيق المضمّن الأصلي. عطِّل ذلك في
+  الخيارات لتخطي الصور المضمّنة تمامًا.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## كيف يعمل {#how-it-works}
+
+- عند الرد، يسرد الملحق المرفقات الأصلية.
+- يرشّح تواقيع S/MIME من مرفقات الملفات؛ بينما تُستعاد الصور المضمّنة في المتن (ما لم يتم التعطيل).
+- يطلب التأكيد اختياريًا (ملائم للاستخدام عبر لوحة المفاتيح).
+- يُضيف الملفات المؤهلة إلى رسالة الإنشاء، مع تجنب التكرار بحسب اسم الملف.
+- راجع "لماذا قد لا تُضاف المرفقات" في قسم "الاستخدام" للحالات الحدّية.
+
+ملاحظة تتعلق بالخصوصية: تتم جميع المعالجة محليًا في Thunderbird. لا يجري الملحق أي طلبات شبكة في الخلفية.
 
 ---

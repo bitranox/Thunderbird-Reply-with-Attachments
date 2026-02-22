@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Дараваць",
-  "description": "Дараваць",
+  "title": "Ахвяраваць",
+  "description": "---",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Дараваць",
-    "sidebar_label": "Дараваць"
+    "title": "Ахвяраваць",
+    "sidebar_label": "Ахвяраваць"
   },
   "sidebar": "docs",
   "previous": {

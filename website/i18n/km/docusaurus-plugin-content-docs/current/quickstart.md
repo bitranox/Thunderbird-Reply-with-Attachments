@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'ការចាប់ផ្តើម'
-sidebar_label: 'ការចាប់ផ្តើម'
+title: 'ការចាប់ផ្តើមរហ័ស'
+sidebar_label: 'ការចាប់ផ្តើមរហ័ស'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## ការចាប់ផ្តើមរហ័ស
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important ជំនាន់អប្បបរមា​របស់ Thunderbird
+ផ្នែកបន្ថែមនេះគាំទ្រ Thunderbird **128 ESR ឬថ្មីជាងនេះ**។ ជំនាន់ចាស់ៗមិនត្រូវបានគាំទ្រ។
+:::
+
+:::note គ្មានទិន្នន័យតាមដាន; គ្មានបណ្តាញនៅខាងក្រោយ
+ផ្នែកបន្ថែមនេះមិនប្រមូលទិន្នន័យវិភាគ/តាមដានទេ ហើយក៏មិនធ្វើសំណើបណ្តាញនៅខាងក្រោយឡើយ។ ការចូលប្រើបណ្តាញកើតឡើងតែពេលអ្នកចុចតំណភ្ជាប់ខាងក្រៅ (ឯកសារ, GitHub, បរិច្ចាគ) ប៉ុណ្ណោះ។
+:::
+
+---
+
+### ដំឡើង
+
+1. ដំឡើងផ្នែកបន្ថែមពី ផ្នែកបន្ថែមរបស់ Thunderbird។
+2. ជាជម្រើស៖ បើកការបញ្ជាក់ (ជម្រើស → “សួរមុនពេលបន្ថែមឯកសារភ្ជាប់”)។
+3. ជាជម្រើស៖ រក្សាទុកការព្រមានបញ្ជីខ្មៅឱ្យបើក (លំនាំដើម): “ព្រមាន ប្រសិនបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ”។
+4. ជាជម្រើស៖ បន្ថែមលំនាំបញ្ជីខ្មៅ (មួយក្នុងមួយបន្ទាត់) ឧទាហរណ៍៖
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+ចំណាំ៖ “# …” ខាងលើគឺជាការកំណត់សម្គាល់នៅក្នុងឯកសារនេះ; សូមកុំដាក់សម្គាល់ក្នុងលំនាំដែលអ្នកបិទភ្ជាប់ចូលទៅក្នុង ជម្រើស។ បញ្ចូលតែ​លំនាំមួយក្នុងមួយបន្ទាត់ប៉ុណ្ណោះ។
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+ឥឡូវនេះ ចូរឆ្លើយតបទៅសារមួយដែលមានឯកសារភ្ជាប់ — ឯកសារដើមនឹងត្រូវបានបន្ថែមដោយស្វ័យប្រវត្តិ ឬបន្ទាប់ពីការបញ្ជាក់រហ័សមួយ។ ប្រសិនបើមានឯកសារណាដែលត្រូវបានដកចេញដោយបញ្ជីខ្មៅរបស់អ្នក អ្នកនឹងឃើញសារព្រមានខ្លីមួយរាយបញ្ជីពួកវា។
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### ផ្ទៀងផ្ទាត់ {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- ឆ្លើយតបទៅសារមួយដែលមានឯកសារភ្ជាប់ 1–2 ហើយបញ្ជាក់ថាឯកសារដើមត្រូវបានបន្ថែមទៅក្នុងបង្អួចសរសេររបស់អ្នក។
+- ដើម្បីកែសម្រួលឥរិយាបថ សូមមើល [ការកំណត់រចនាសម្ព័ន្ធ](configuration) (បិទបើកការបញ្ជាក់, ចម្លើយលំនាំដើម, លំនាំបញ្ជីខ្មៅ)។
 
 ---
 
-### Keyboard note {#keyboard-note}
+### ផ្ទៀងផ្ទាត់ការព្រមានបញ្ជីខ្មៅ {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- ឆ្លើយតបទៅសារមួយដែលមានឯកសារដូចជា “secret.txt”។
+- នៅពេល “ព្រមាន ប្រសិនបើឯកសារភ្ជាប់ត្រូវបានដកចេញដោយបញ្ជីខ្មៅ” ត្រូវបានបើក ប្រអប់តូចមួយនឹងរាយឯកសារដែលត្រូវបានដកចេញ និងលំនាំដែលផ្គូផ្គង។
+
+បើអ្នកមិនឃើញសារព្រមាន សូមប្រាកដថាលំនាំផ្គូផ្គងឈ្មោះឯកសារយ៉ាងត្រឹមត្រូវ (តែឈ្មោះឯកសារប៉ុណ្ណោះ មិនគិតអក្សរ​ធំ/តូច)។ សូមមើល ការកំណត់រចនាសម្ព័ន្ធ → បញ្ជីខ្មៅ។
+
+---
+
+### ចំណាំអំពីក្ដារចុច {#keyboard-note}
+
+- ប្រអប់បញ្ជាក់​គាំទ្រ Y/J សម្រាប់ បាទ/ចាស និង N/Esc សម្រាប់ មិនព្រម។ លើក្ដារចុចមួយចំនួនដែលមិនមែនលាតាំង គ្រាប់ចុចអក្សរអាចខុសគ្នា; Enter បញ្ជាក់ប៊ូតុងដែលកំពុងផ្តោត។
 
 ---

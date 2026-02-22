@@ -4,35 +4,40 @@ title: 'Karakteristik'
 sidebar_label: 'Karakteristik'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Fonksyonalite yo {#features}
+
+- Mete fichye ki te nan mesaj orijinal la otomatikman kòm atachman lè w reponn.
+- Konpòtman konfigirab: atachman yo ka
+  - ajoute otomatikman, oswa
+  - ajoute sèlman apre konfimasyon (yon ti dyalòg aksesib). Nan Opsyon yo
+    ou ka aktive konfimasyon an epi chwazi repons pa defo a (Wi/Non).
+- Lis nwa non fichye yo (modèl glob) anpeche sèten fichye
+  atache otomatikman. Egzanp: `*intern*`, `*secret*`, `*passwor*`.
+  Konparezon an pa pran an kont majiskil/miniskil e li sèlman tcheke non fichye a; bay yon modèl
+  pa liy nan Opsyon yo.
+- Avètisman lis nwa (opsyonèl, aktive pa defo): lè fichye yo eskli pa
+  lis nwa ou, yon ti modal montre fichye a ak modèl ki matche yo. Zanmi ak mòd fènwa
+  epi aksesib ak klavye (Antre/Echap pou fèmen).
+- Mache ak Reponn ak Reponn pou tout moun. Transfere pa modifye pa add-on sa a.
+- Ajoute orijinal yo menm si ou te deja mete yon bagay; evite doublon selon non fichye a.
+- Pwoteksyon kont doublon pa tab anpeche ajoute yo de fwa nan menm onglet konpozisyon an.
+- Sote sètifika S/MIME pa defo pou evite atachman initil.
+- Enkli imaj inline (pa defo: ON). Imaj anndan yo retabli dirèkteman nan
+  kò repons lan kòm URI done base64, sa ki prezève aranjman inline orijinal la. Dezaktive nan
+  Opsyon pou sote tout imaj inline nèt.
 
 ---
 
-## How It Works {#how-it-works}
+## Kijan li fonksyone {#how-it-works}
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+- Lè w ap reponn, add-on an lis atachman orijinal yo.
+- Filtre siyati S/MIME yo soti nan atachman fichye; imaj inline yo retabli nan kò a (sòf si dezaktive).
+- Si ou vle, li mande konfimasyon (pratik ak klavye).
+- Ajoute fichye ki elijib yo nan konpozisyon w lan, evite doublon selon non fichye a.
+- Gade “Poukisa atachman yo ka pa ajoute” nan Itilizasyon pou ka limit yo.
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+Nòt sou vi prive: Tout pwosesis fèt lokalman nan Thunderbird. Add-on an pa fè okenn demann rezo an aryè-plan.
 
 ---

@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'İlk addım'
-sidebar_label: 'İlk addım'
+title: 'Tez Başlanğıc'
+sidebar_label: 'Sürətli Başlanğıc'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Sürətli başlanğıc
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Minimal Thunderbird versiyası
+Bu əlavə Thunderbird **128 ESR və ya daha yenisini** dəstəkləyir. Köhnə versiyalar dəstəklənmir.
+:::
+
+:::note Telemetriya yoxdur; arxa fonda şəbəkə yoxdur
+Əlavə **analitika/telemetriya toplamır** və **arxa planda** şəbəkə sorğuları etmir. Şəbəkə çıxışı yalnız siz xarici keçidlərə kliklədikdə baş verir (Sənədlər, GitHub, İanə).
+:::
+
+---
+
+### Quraşdırma
+
+1. Əlavəni Thunderbird Add‑ons‑dan quraşdırın.
+2. İstəyə bağlı: Təsdiqi aktivləşdirin (Seçimlər → “Qoşmaları əlavə etməzdən əvvəl soruş”).
+3. İstəyə bağlı: Qara siyahı xəbərdarlığını aktiv saxlayın (standart): “Qoşmalar qara siyahıya görə istisna edilərsə xəbərdar et”.
+4. İstəyə bağlı: Qara siyahı nümunələri əlavə edin (hər sətirdə bir), məsələn:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Qeyd: Yuxarıdakı “# …” bu sənədlərdə şərhdir; Seçimlərə yapışdırdığınız nümunələrə şərhlər daxil etməyin. Hər sətrə yalnız bir nümunə daxil edin.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+İndi qoşmaları olan bir mesaja cavab verin — orijinallar avtomatik olaraq və ya sürətli təsdiqdən sonra əlavə olunacaq. Qara siyahınız tərəfindən istisna edilən fayllar varsa, onları sadalayan qısa bir xəbərdarlıq görəcəksiniz.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Yoxlayın {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 qoşmalı bir mesaja cavab verin və orijinalların yazı pəncərənizə əlavə olunduğunu təsdiqləyin.
+- Davranışı tənzimləmək üçün [Konfiqurasiya](configuration) bölməsinə baxın (təsdiq keçidi, standart cavab, qara siyahı nümunələri).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Qara siyahı xəbərdarlığını yoxlayın {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” kimi fayl olan bir mesaja cavab verin.
+- “Qoşmalar qara siyahıya görə istisna edilərsə xəbərdar et” aktiv olduqda, kiçik bir dialoq pəncərəsi istisna edilən faylları və uyğun nümunəni siyahıya alacaq.
+
+Əgər xəbərdarlıq görmürsünüzsə, nümunənin fayl adına tam uyğun gəldiyindən əmin olun (yalnız fayl adı, böyük‑kiçik hərfə həssas deyil). Konfiqurasiya → Qara siyahı bölməsinə baxın.
+
+---
+
+### Klaviatura qeydi {#keyboard-note}
+
+- Təsdiq dialoqu Bəli üçün Y/J və Xeyr üçün N/Esc düymələrini dəstəkləyir. Bəzi qeyri‑latın klaviaturalarda hərf düymələri fərqli ola bilər; Enter fokuslanmış düyməni təsdiq edir.
 
 ---

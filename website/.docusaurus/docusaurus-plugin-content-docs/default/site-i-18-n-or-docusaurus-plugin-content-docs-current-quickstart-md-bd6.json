@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ସେବା ସାଧାରଣ",
-  "description": "Quickstart",
+  "title": "ଦ୍ରୁତ ଆରମ୍ଭ",
+  "description": "---",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ସେବା ସାଧାରଣ",
-    "sidebar_label": "ସେବା ସାଧାରଣ"
+    "title": "ଦ୍ରୁତ ଆରମ୍ଭ",
+    "sidebar_label": "ତ୍ୱରିତ ଆରମ୍ଭ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ବିଶେଷତାଗୁଡ଼ିକ",
+    "title": "ବୈଶିଷ୍ଟ୍ୟଗୁଡିକ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/features"
   },
   "next": {
-    "title": "ଇନ୍ସ୍ଟଲ୍ଲେସନ",
+    "title": "ସଂସ୍ଥାପନ",
     "permalink": "/Thunderbird-Reply-with-Attachments/or/docs/install"
   }
 }

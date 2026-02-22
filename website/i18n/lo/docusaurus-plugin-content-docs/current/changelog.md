@@ -1,23 +1,28 @@
 ---
 id: changelog
-title: 'ບັນທຶກການແກ້ໄຂ'
+title: 'ບັນທຶກການປ່ຽນແປງ'
 ---
-
-## Changelog
-
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
-
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
 
 ---
 
-## Dates and channels {#dates-and-channels}
+## ບັນທຶກການປ່ຽນແປງ
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+ສໍາລັບປະຫວັດລາຍລະອຽດຄົບຖ້ວນ, ເບິ່ງ
+[CHANGELOG.md ຢູ່ໃນ GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+
+- 2.3.2: "Include inline pictures" ໃນປັດຈຸບັນແຊກຮູບພາບໂດຍກົງໃນເນື້ອຫາການຕອບກັບເປັນ base64 data URIs (ຄ່າເລີ່ມຕົ້ນ: ON); ປັບປຸງຄຸນນະພາບໂຄດ ແລະ ຂະຫຍາຍຂອບເຂດການທົດສອບ.
+- 2.3.1: ເກັບໄຟລ໌ແນບໄວ້ຫຼັງຈາກ Thunderbird ໃຫ້ໜ້າເຫດການພື້ນຫຼັງເຂົ້າສູ່ສະພາບວ່າງ; ເພີ່ມ hook ດີບັກແບບເຈາະຈົງເພື່ອແກ້ໄຂບັນຫາ.
+- 2.3.0: ປັບປຸງການກໍາຈັດຂໍ້ມູນຊ້ໍາຂອງໄຟລ໌ແນບ, ຂະຫຍາຍການຄອບຄຸມການທົດສອບ, ແລະ ຖອນສິດທິທີ່ລ້າສະໄໝເພື່ອໃຫ້ສອດຄ່ອງກັບນະໂຍບາຍ AMO.
+- 2.1.0: ການຮອງຮັບການປັບໃຊ້ຫຼາຍພາສາຢ່າງເຕັມຮູບແບບ ສໍາລັບ 100 ພາສາອັນດັບຕົ້ນ
+- 2.0.0: ຂຽນໃໝ່ເປັນລຸ້ນທີ່ມີຟັງຊັນຄົບຖ້ວນ (EN/DE)
+- 1.0.1: ປ່ຽນໄປໃຊ້ messages.listAttachments()
+- 1.0.0: ປ່ອຍອອກເບື້ອງຕົ້ນ
+
+---
+
+## ວັນທີ ແລະ ຊ່ອງທາງ {#dates-and-channels}
+
+- ການປ່ອຍເຜີຍໄປຫາ ATN ອາດຈະຊ້າໄປຫຼາຍຊົ່ວໂມງຫຼັງຈາກການແພັກເກັດ.
+- ຊຸດສ້າງ LOCAL ແມ່ນສໍາລັບການທົດສອບຂອງນັກພັດທະນາເທົ່ານັ້ນ ແລະບໍ່ຖືກເຜີຍແຜ່ຜ່ານ ATN.
 
 ---

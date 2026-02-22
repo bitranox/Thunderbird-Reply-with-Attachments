@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "బ్లాక్‌లిస్ట్ వల్ల జోడింపులు మినహాయించబడితే హెచ్చరించు"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ఇన్‌లైన్ చిత్రాలను చేర్చండి (ఎంబెడెడ్ చిత్రాలు)"
+  },
   "uiDebugHeader": {
     "message": "అధునాతన"
   },

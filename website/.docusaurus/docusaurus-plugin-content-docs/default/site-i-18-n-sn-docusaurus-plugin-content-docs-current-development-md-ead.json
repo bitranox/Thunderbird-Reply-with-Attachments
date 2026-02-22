@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Kuvandudza",
-  "description": "Development Guide",
+  "title": "Budiriro",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Kuvandudza",
-    "sidebar_label": "Kuvandudza"
+    "title": "Budiriro",
+    "sidebar_label": "Budiriro"
   },
   "sidebar": "docs",
   "previous": {

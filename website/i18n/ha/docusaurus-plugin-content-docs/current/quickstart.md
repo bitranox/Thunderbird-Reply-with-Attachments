@@ -1,19 +1,19 @@
 ---
 id: quickstart
-title: 'Fara Hanya'
-sidebar_label: 'Fara Hanya'
+title: 'Farawa da sauri'
+sidebar_label: 'Farawa da Sauri'
 ---
 
-## Fara Hanya
+---
 
-:::important Mafi ƙarancin Sifofin Thunderbird
-Wannan ƙarin yana goyon bayan Thunderbird **128 ESR ko sabo**. Ana goyon bayan tsofaffin sigar ba.
+## Farawa cikin sauri
 
+:::important Mafi ƙanƙantar sigar Thunderbird
+Wannan ƙarin yana goyon bayan Thunderbird **128 ESR ko sabo fiye da haka**. Tsofaffin sigogi ba a goyon bayan su.
 :::
 
-:::note Babu tarihin amfani; babu hanyar sadarwa ta bayan gida
-Wannan ƙarin yana **kada** tattara bayanai/analyzing kuma yana yin **ba** buƙatun hanyar sadarwa ta bayan gida. Samun hanyar sadarwa yana faruwa ne kawai lokacin da ka danna hanyoyin haɗin waje (Docs, GitHub, Kyauta).
-
+:::note Babu telemetri; babu hanyar sadarwar bango
+Ƙarin baya tattara nazari/telemetri kuma baya yin buƙatun hanyar sadarwa a bango. Ana samun damar hanyar sadarwa ne kawai lokacin da ka danna hanyoyin waje (Docs, GitHub, Donate).
 :::
 
 ---
@@ -21,9 +21,9 @@ Wannan ƙarin yana **kada** tattara bayanai/analyzing kuma yana yin **ba** buƙa
 ### Shigar
 
 1. Shigar da ƙarin daga Thunderbird Add‑ons.
-2. Zabi: Kunna tabbaci (Zaɓuɓɓuka → “Tambayi kafin ƙara haɗe-haɗe”).
-3. Zabi: Bar gargaɗin ja-ɓangaren yana aiki (na tsoho): “Tuni idan an ware haɗe-haɗe ta hanyar ja-ɓangaren”.
-4. Zabi: Kara samfurin ja-ɓangaren (ɗaya a kowanne layi), misali:
+2. Na zaɓi: Kunna tabbaci (Zaɓuɓɓuka → “Tambaya kafin ƙara haɗe‑haɗe”).
+3. Na zaɓi: Bar gargaɗin jerin baƙaƙe a kunne (tsoho): “Gargaɗi idan an ware haɗe‑haɗe ta jerin baƙaƙe”.
+4. Na zaɓi: Ƙara tsarukan jerin baƙaƙe (ɗaya a kowace layi), misali:
 
 ```
 *intern*
@@ -31,28 +31,30 @@ Wannan ƙarin yana **kada** tattara bayanai/analyzing kuma yana yin **ba** buƙa
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Lura: “# …” a sama kamfani ne a cikin wannan takaddun; kada ku haɗa ƙarin bayanai a cikin samfuran da kuka liƙa cikin Zaɓuɓɓuka. Shigar da samfurin ɗaya a kowanne layi kawai.
+Lura: “# …” da ke sama sharhi ne a cikin wannan takaddar; kada ka haɗa sharhi a cikin tsarukan da kake liƙawa a Zaɓuɓɓuka. Shigar tsari ɗaya kawai a kowace layi.
 
-Yanzu amsa ga saƙo tare da haɗe-haɗe — asali za a ƙara su ta atomatik ko bayan tabbaci na gaggawa. Idan akwai kowane fayil da aka ware ta hanyar ja-ɓangaren ku, za ku ga gargaɗin gajere da ke lissafa su.
+Yanzu ka mayar da martani ga saƙo mai haɗe‑haɗe — na asali za a ƙara su ta atomatik ko bayan gajeren tabbaci. Idan wasu fayiloli an ware su ta jerin baƙaƙenka, za ka ga gajeren gargaɗi da ke jera su.
 
 ---
 
 ### Tabbatar {#verify}
 
-- Amsa ga saƙo tare da 1–2 haɗe-haɗe kuma tabbatar cewa asalin an ƙara su zuwa taga rubutun ku.
-- Don daidaita halayen, duba [Tsara](configuration) (mayan tabbaci, amsar tsoho, samfuran ja-ɓangaren).
+- Mayar da martani ga saƙo mai haɗe‑haɗe 1–2 kuma tabbatar an ƙara na asali a tagar rubuta saƙo.
+- Don daidaita halayya, duba [Saitawa](configuration) (kunna/ kashe tabbaci, amsa ta tsoho, tsarukan jerin baƙaƙe).
 
 ---
 
-### Tabbatar da gargaɗin ja-ɓangaren {#verify-blacklist-warning}
+### Tabbatar da gargaɗin jerin baƙaƙe {#verify-blacklist-warning}
 
-- Amsa ga saƙo wanda ya ƙunshi fayil kamar “secret.txt”.
-- Tare da “Tuni idan an ware haɗe-haɗe ta hanyar ja-ɓangaren” yana aiki, ƙananan taga yana lissafa fayilolin da aka ware da kuma samfurin da ya dace.
+- Mayar da martani ga saƙo da ke ɗauke da fayil kamar “secret.txt”.
+- Idan “Gargaɗi idan an ware haɗe‑haɗe ta jerin baƙaƙe” a kunne, ƙaramin taga tattaunawa zai jera fayilolin da aka ware da kuma tsarin da ya dace.
 
-Idan ba ku ga gargaɗin ba, tabbatar cewa samfurin yana daidai da sunan fayil (suna-fayil kawai, ba tare da launi ba). Duba Tsara → Ja-ɓangaren.
+Idan ba ka ga gargaɗi ba, tabbatar tsarin ya dace da sunan fayil ɗin daidai (sunan fayil kaɗai, ba ya bambance manyan/ƙananan haruffa). Duba Saitawa → Jerin baƙaƙe.
 
 ---
 
-### Lura akan maɓallin {#keyboard-note}
+### Lura kan madannai {#keyboard-note}
 
-- Taka tsantsan yana goyon bayan Y/J don Eh da N/Esc don A’a. A wasu maɓallan ba Latin ba, maɓallan suna iya bambanta; Shigar ya tabbatar da maɓallin da aka mai da hankali.
+- Taga na tabbaci yana goyon bayan Y/J don Ee da N/Esc don A’a. A wasu madannai marasa Latin, haruffan na iya bambanta; Enter yana tabbatar da maɓallin da aka mai da hankali a kai.
+
+---

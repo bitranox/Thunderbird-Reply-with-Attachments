@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'အသုံးပြုမှု'
-sidebar_label: 'အသုံးပြုမှု'
+title: 'အသုံးပြုပုံ'
+sidebar_label: 'အသုံးပြုပုံ'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## အသုံးပြုနည်း {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Reply လုပ်လိုက်ပါက add‑on က မူလ ပူးတွဲဖိုင်တွေကို အလိုအလျောက် ထည့်ပေးမည် — သို့မဟုတ် Options တွင် ဖွင့်ထားပါက အရင်မေးမြန်းမည်။
+- ဖိုင်နာမည်အလိုက် ထပ်တူများကို ချန်လှပ်သည်; S/MIME အစိတ်အပိုင်းများကို အမြဲ ကျော်ဟန်လုပ်သည်။ Inline ပုံများကို မူရာအနေဖြင့် reply ကိုယ်ထည်အတွင်း ပြန်လည်ထားရှိပေးထားသည် ("Include inline pictures" ကို Options တွင် ပိတ်နိုင်သည်)။
+- Blacklist ထဲဝင်ထားသော ပူးတွဲဖိုင်များကိုလည်း ကျော်သွားမည် (စာလုံးအကြီး/အသေး မခွဲခြားသော glob pattern များကို ဖိုင်နာမည်များနှင့်သာ တိုက်ဆိုင်စစ်ဆေးပြီး လမ်းကြောင်းများနှင့် မစစ်ဆေးပါ)။ [ပြင်ဆင်ချက်များ](configuration#blacklist-glob-patterns) ကိုကြည့်ပါ။
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Reply လုပ်သည့်အခါ ဖြစ်ပေါ်သည်များ {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Reply ကိုခံယူ → မူလ ပူးတွဲဖိုင်များ စာရင်းပြုစု → S/MIME + inline ကို စစ်ထုတ် → အတည်ပြုရန် မေးမြန်းနိုင်ခြင်း → ဖြတ်သန်းနိုင်သည့် ဖိုင်များကို ထည့် (ထပ်တူများကို ကျော်) → ကိုယ်ထည်တွင် inline ပုံများကို ပြန်ထား
+
+Strict နှင့် Relaxed စစ်ဆေးမှု: Add‑on သည် ဖိုင်ပူးတွဲများမှ S/MIME နှင့် inline အစိတ်အပိုင်းများကို အရင်ဆုံး ဖယ်ထုတ်ပါသည်။ သက်ဆိုင်သည့် အရာမတွေ့လျှင်၊ S/MIME/inline ကို ဆက်လက် ဖယ်ထုတ်ထားခြင်းအပြင် ပိုမို လွတ်လပ်စွာ ခွင့်ပြုသော Relaxed စစ်ဆေးမှုကို ဆောင်ရွက်ပါသည် (Code Details ကို ကြည့်ပါ)။ Inline ပုံများကို ဖိုင်ပူးတွဲများအဖြစ် မည်သည့်အခါမျှ မထည့်ပါ။ ၎င်းအစား "Include inline pictures" ကို ဖွင့်ထားလျှင် (မူရင်းအတိုင်း ဖွင့်ထားသည်) reply ကိုယ်ထည်တွင် base64 data URI များအဖြစ် တန်းဖြင့် ထည့်သွင်းပေးသည်။
+
+| အပိုင်း အမျိုးအစား                                      |                 Strict စစ်ဆေးမှု |                Relaxed စစ်ဆေးမှု |
+| ------------------------------------------------------- | -------------------------------: | -------------------------------: |
+| S/MIME လက်မှတ်ဖိုင် `smime.p7s`                         |                         Excluded |                         Excluded |
+| S/MIME MIME types (`application/pkcs7-*`)               |                         Excluded |                         Excluded |
+| Content‑ID ဖြင့် ရည်ညွှန်းထားသော inline ပုံ (`image/*`) | Excluded (body ထဲတွင် ပြန်ထား\*) | Excluded (body ထဲတွင် ပြန်ထား\*) |
+| ဖိုင်နာမည်ပါသော ပူးတွဲ email (`message/rfc822`)         |                        Not added |                     May be added |
+| ဖိုင်နာမည်ပါသော ပုံမှန် ဖိုင်ပူးတွဲ                     |                     May be added |                     May be added |
+
+\* "Include inline pictures" ကို ဖွင့်ထားသည့်အခါ (default: ON) inline ပုံများကို ဖိုင်ပူးတွဲများ အဖြစ် မထည့်ဘဲ reply ကိုယ်ထည်တွင် base64 data URI များအဖြစ် တန်းဖြင့် ထည့်သွင်းပေးသည်။ [ပြင်ဆင်ချက်များ](configuration#include-inline-pictures) ကိုကြည့်ပါ။
+
+ဥပမာ။ အချို့ ပူးတွဲဖိုင်များတွင် header အချို့ မပါရှိပေမယ့် ပုံမှန် ဖိုင်များ (inline/S/MIME မဟုတ်) ဖြစ်နိုင်သည်။ Strict စစ်ဆေးမှုတွင် မတွေ့ပါက Relaxed စစ်ဆေးမှုက ၎င်းတို့ကို လက်ခံပြီး ပူးတွဲနိုင်သည်။
 
 ---
 
-## Behavior Details {#behavior-details}
+### ကိုးကားချက် {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
+- Forward ကို ဒီဇိုင်းအရ မပြင်ဆင်ပါ (အောက်ဖော်ပြပါ ကန့်သတ်ချက်များ ကိုကြည့်ပါ)။
+- ဘာကြောင့် ပူးတွဲဖိုင်များကို မထည့်ရနိုင်နိုင်သလဲဆိုတာအတွက် “Why attachments might not be added” ကိုကြည့်ပါ။
+
+---
+
+## လုပ်ဆောင်ပုံ အသေးစိတ် {#behavior-details}
+
+- **ထပ်တူကာကွယ်ခြင်း:** Add‑on သည် tab နှိုင်း session တန်ဖိုးနှင့် in‑memory guard တစ်ခုကို အသုံးပြု၍ compose tab ကို လုပ်ဆောင်ပြီးဟု အမှတ်အသားပြုထားသည်။ မူလများကို နှစ်ခါ မထည့်ပါ။
+- Compose window ကို ပိတ်ပြီး ပြန်ဖွင့်ပါက အခြား tab အသစ်တစ်ခုအဖြစ် ဆိုလို့ (ကြိုးပမ်းမှုအသစ်တစ်ခု လက်ခံသည်)။
+- **ရှိပြီးသား ပူးတွဲဖိုင်များကို လေးစားခြင်း:** Compose တွင် အစအေနှင့် ပူးတွဲဖိုင်များ ပါရှိနေသော်လည်း မူလများကို တစ်ကြိမ်တည်းသာ ထပ်မံထည့်ပြီး ရှိပြီးသား ဖိုင်နာမည်များကို ကျော်သွားမည်။
+- **ဖယ်ရှားမှုများ:** S/MIME ဆိုင်ရာ အရာများနှင့် inline ပုံများကို ဖိုင်ပူးတွဲများမှ ဖယ်ရှားထားသည်။ ပထမအကြိမ်တွင် သင့်လျော်သည့် အရာ မရှိပါက Relaxed fallback မည်သည့် S/MIME မဟုတ်သော အပိုင်းများကို ပြန်စစ်မည်။ Inline ပုံများကို သီးခြား ဆောင်ရွက်သည် — ဖိုင်ပူးတွဲ မဖြစ်ဘဲ reply ကိုယ်ထည်တွင် data URI များအဖြစ် ပြန်ထားပေးသည် (ဖွင့်ထားသည့်အခါ)။
+  - **ဖိုင်နာမည်များ:** `smime.p7s`
   - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+  - **Inline ပုံများ:** Content‑ID ဖြင့် ရည်ညွှန်းထားသော မည်သည့် `image/*` အပိုင်းမဆို — ဖိုင်ပူးတွဲများမှ ဖယ်ထားပြီး "Include inline pictures" ကို ON ဖြစ်စဉ်တွင် reply ကိုယ်ထည်ထဲသို့ ပေါင်းထည့်ထားမည်
+  - **ပူးတွဲ emails (`message/rfc822`):** ဖိုင်နာမည်ရှိပါက ပုံမှန် ပူးတွဲအဖြစ် ဆက်စောင့်ထားသည်; ထည့်နိုင်ပါသည် (ထပ်တူစစ်ဆေးမှုနှင့် blacklist ကန့်သတ်ချက်များကို လိုက်နာသည်)။
+- **Blacklist သတိပေးချက် (ဖွင့်ထားလျှင်):** သင်၏ blacklist ကြောင့် ရွေးချယ်ခံနိုင်သူများကို ဖယ်ရှားလိုက်သောအခါ၊ add‑on သည် သက်ဆိုင်ရာ ဖိုင်များနှင့် ကိုက်ညီသည့် pattern(များ) ကို ပြသသည့် modal အသေးတစ်ခုကို ပြသမည်။ ဖယ်ရှားမှုများကြောင့် ဘာမှ မပူးတွဲနိုင်သော အခြေအနေများတွင်လည်း ဤသတိပေးချက် ပေါ်နေပါမည်။
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## ကီးဘုတ် ဖြတ်လမ်းချက်များ {#keyboard-shortcuts}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
+- အတည်ပြု dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab နှင့် Arrow keys များဖြင့် focus ကို လှည့်ပတ်ရွှေ့နိုင်သည်။
+  - [ပြင်ဆင်ချက်များ](configuration#confirmation) ထဲရှိ “Default answer” က စတင် ဖော်ကွင်းထားမည့် ခလုတ်ကို သတ်မှတ်ပေးသည်။
+  - Enter သည် focus ထားသည့် ခလုတ်ကို ခလုပ်ဆောင်မည်။ Tab/Shift+Tab နှင့် arrows များဖြင့် focus ကို ရွှေ့နိုင်သည် (အသုံးပြုရလွယ်ကူရေး အတွက်)။
 
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
+### ကီးဘုတ် အကျဉ်းချုပ်လမ်းညွှန် {#keyboard-cheat-sheet}
 
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
-
----
-
-## Limitations {#limitations}
-
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+| ကီးများ         | လုပ်ဆောင်ချက်                            |
+| --------------- | ---------------------------------------- |
+| Y / J           | Yes အတည်ပြုပါ                            |
+| N / Esc         | No အတည်မပြုပါ                            |
+| Enter           | focus ထားသည့် ခလုတ်ကို လှုပ်ရှားပါ       |
+| Tab / Shift+Tab | focus ကို ရှေ့/နောက် သွားအောင် ရွှေ့ပါ   |
+| Arrow keys      | ခလုတ်များအကြား focus ကို ရွှေ့ပါ         |
+| Default answer  | မူလ focus (Yes သို့မဟုတ် No) ကို သတ်မှတ် |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ကန့်သတ်ချက်များ {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Forward ကို ဒီ add‑on မပြင်ဆင်ပါ (Reply နှင့် Reply all ကိုသာ ပံ့ပိုးသည်)။
+- အလွန်ကြီးမားသော ပူးတွဲဖိုင်များသည် Thunderbird သို့မဟုတ် ဝန်ပေးသိမ်းထားသူ၏ ကန့်သတ်ချက်များကို ကိုင်တွယ်ရနိုင်သည်။
+  - Add‑on သည် ဖိုင်များကို အပိုင်းခြားခြင်း (chunk) သို့မဟုတ် ဖိသိပ်ခြင်း မလုပ်ပါ; Thunderbird ၏ ပုံမှန် ပူးတွဲဖိုင် ကိုင်တွယ်ပုံအပေါ် မူတည်သည်။
+- ကုဒ်ဖြင့် ကာကွယ်ထားသော စာများ: S/MIME အစိတ်အပိုင်းများကို ရည်ရွယ်ချင်သလို ဖယ်ထားပါသည်။
+
+---
+
+## ပူးတွဲဖိုင်များ မထည့်နိုင်သည့် အကြောင်းရင်းများ {#why-attachments-might-not-be-added}
+
+- Inline ပုံများကို ဖိုင်ပူးတွဲများအဖြစ် မထည့်ပါ။ "Include inline pictures" ကို ON (မူရင်း) ဖြစ်စဉ်တွင်၊ ၎င်းတို့ကို reply ကိုယ်ထည်အတွင်း data URI များအဖြစ် ထည့်သွင်းထားမည်။ Setting ကို OFF လုပ်ပါက inline ပုံများကို လုံးဝ ဖယ်ရှားပါမည်။ [ပြင်ဆင်ချက်များ](configuration#include-inline-pictures) ကိုကြည့်ပါ။
+- S/MIME လက်မှတ် ဆိုင်ရာ အပိုင်းများကို ဒီဇိုင်းအရ ဖယ်ထားသည် — `smime.p7s` ကဲ့သို့သော ဖိုင်နာမည်များနှင့် `application/pkcs7-signature` သို့မဟုတ် `application/pkcs7-mime` ကဲ့သို့သော MIME type များကို ကျော်ရန် ဆောင်ရွက်သည်။
+- Blacklist pattern များက မဲရှားရန် စစ်ထုတ်နိုင်သည် — [ပြင်ဆင်ချက်များ](configuration#blacklist-glob-patterns) ကိုကြည့်ပါ; ကိုက်ညီမှုသည် စာလုံးအကြီး/အသေး မခွဲခြားဘဲ ဖိုင်နာမည်တို့နှင့်သာ တိုက်ဆိုင်စစ်ဆေးသည်။
+- ထပ်တူ ဖိုင်နာမည်များကို ပြန်မထည့်ပါ — Compose ထဲတွင် ယခင်က တူညီသော နာမည် (normalize လုပ်ပြီး) ပါရှိနေပါက ကျော်သွားမည်။
+- ဖိုင် မဟုတ်သော အပိုင်းများ သို့မဟုတ် ဖိုင်နာမည် မရှိခြင်း — အသုံးပြုနိုင်သော ဖိုင်နာမည်များပါဝင်သည့် ဖိုင်နှင့် ဆင်တူသော အပိုင်းများကိုသာ ထည့်ရန် စဉ်းစားမည်။
 
 ---
 
 See also
 
-- [Configuration](configuration)
+- [ပြင်ဆင်ချက်များ](configuration)

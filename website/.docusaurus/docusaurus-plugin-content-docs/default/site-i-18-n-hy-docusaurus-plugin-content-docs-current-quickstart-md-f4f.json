@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ամենաբարձր մակարդակ",
-  "description": "Ամենաբարձր մակարդակ",
+  "title": "Արագ մեկնարկ",
+  "description": "---",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ամենաբարձր մակարդակ",
-    "sidebar_label": "Ամենաբարձր մակարդակ"
+    "title": "Արագ մեկնարկ",
+    "sidebar_label": "Արագ մեկնարկ"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Особенности",
+    "title": "Հատկություններ",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/features"
   },
   "next": {
-    "title": "Թողարկում",
+    "title": "Տեղադրում",
     "permalink": "/Thunderbird-Reply-with-Attachments/hy/docs/install"
   }
 }

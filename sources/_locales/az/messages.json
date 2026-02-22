@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Qoşmalar qara siyahıya görə istisna olunarsa xəbərdar et"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Daxili şəkilləri daxil et (daxil edilmiş şəkillər)"
+  },
   "uiDebugHeader": {
     "message": "Qabaqcıl"
   },

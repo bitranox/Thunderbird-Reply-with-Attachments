@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ਜੇ ਬਲੈਕਲਿਸਟ ਕਰਕੇ ਸੰਲਗਨ ਬਾਹਰ ਰੱਖੇ ਜਾਣ ਤਾਂ ਚੇਤਾਵਨੀ ਦਿਓ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ਇਨਲਾਈਨ ਤਸਵੀਰਾਂ ਸ਼ਾਮਲ ਕਰੋ (ਏਮਬੈਡਿਡ ਤਸਵੀਰਾਂ)"
+  },
   "uiDebugHeader": {
     "message": "ਉੱਨਤ"
   },

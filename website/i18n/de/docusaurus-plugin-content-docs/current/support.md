@@ -4,84 +4,88 @@ title: 'Unterstützung'
 sidebar_label: 'Unterstützung'
 ---
 
+---
+
 ## FAQ {#faq}
 
 ### Anhänge wurden nicht hinzugefügt — warum?
 
-- Inline-Bilder und S/MIME-Teile sind absichtlich ausgeschlossen.
-- Duplikate von Dateinamen werden übersprungen, wenn die E-Mail bereits dieselbe Datei enthält.
-- Blacklist-Muster können Kandidaten filtern; siehe [Konfiguration](configuration#blacklist-glob-patterns).
+- Inline‑Bilder und S/MIME‑Teile sind absichtlich ausgeschlossen.
+- Doppelte Dateinamen werden übersprungen, wenn das Verfassenfenster bereits dieselbe Datei enthält.
+- Blacklist‑Muster können Kandidaten herausfiltern; siehe [Konfiguration](configuration#blacklist-glob-patterns).
 
-### Kann ich bestätigen, bevor ich Anhänge hinzufüge?
+### Kann ich vor dem Hinzufügen von Anhängen bestätigen?
 
-Ja. Aktiviere „Vor dem Hinzufügen von Anhängen fragen“ unter [Konfiguration → Bestätigung](configuration#confirmation). Tastatur: Y/J = Ja, N/Esc = Nein.
+Ja. Aktivieren Sie „Vor dem Hinzufügen von Anhängen nachfragen“ unter [Konfiguration → Bestätigung](configuration#confirmation). Tastatur: Y/J = Ja, N/Esc = Nein.
 
-### Sendet das Add-on irgendwelche Daten oder verfolgt die Nutzung?
+### Sendet das Add‑on Daten oder zeichnet die Nutzung auf?
 
-Nein. Siehe [Datenschutz](privacy) — keine Telemetrie und keine Hintergrundnetzwerkanfragen.
+Nein. Siehe [Datenschutz](privacy) — keine Telemetrie und keine Netzwerkzugriffe im Hintergrund.
 
-### Weiterleiten fügt keine Anhänge hinzu — ist das zu erwarten?
+### Weiterleiten fügt keine Anhänge hinzu — ist das erwartungsgemäß?
 
-Ja. Nur Antworten und Allen antworten werden von diesem Add-on modifiziert; Weiterleiten bleibt unverändert. Siehe [Einschränkungen](usage#limitations).
+Ja. Nur Antworten und Allen antworten werden von diesem Add‑on geändert; Weiterleiten bleibt unverändert. Siehe [Einschränkungen](usage#limitations).
 
-### Wo ist das Spenden-Snooze?
+### Wo ist das Spenden‑Snooze?
 
-Optionen → Unterstützungsbereich. Siehe [Spenden-Sichtbarkeit](configuration#donation-visibility).
+Optionen → Bereich Support. Siehe [Spenden‑Sichtbarkeit](configuration#donation-visibility).
 
 ---
 
 ## Unterstützung
 
-Brauchst du Hilfe oder möchtest du einen Fehler melden?
+Brauchen Sie Hilfe oder möchten Sie einen Fehler melden?
 
 ---
 
-### Ein Problem auf GitHub melden:
+### Ein Issue auf GitHub eröffnen:
 
 - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
 - Issues: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
-- Thunderbird-Version (z.B. 128 ESR), Betriebssystem und Schritte zur Reproduktion angeben
-- Relevante Protokolle aus der Fehlerkonsole von Thunderbird anhängen (Extras → Entwicklertools → Fehlerkonsole)
+- Geben Sie Thunderbird‑Version (z. B. 128 ESR), Betriebssystem und Schritte zum Reproduzieren an
+- Fügen Sie relevante Protokolle aus der Thunderbird‑Fehlerkonsole bei (Extras → Entwickler‑Werkzeuge → Fehlerkonsole)
 
-- Add-on-Seite (ATN): Du kannst auch Feedback über die [Add-on-Seite](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) hinterlassen.
+- Add‑ons‑Website (ATN): Sie können auch über die [Add‑on‑Seite](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) Feedback hinterlassen.
 
 ---
 
 ### Tipps
 
-- Stelle sicher, dass du eine unterstützte Thunderbird-Version (128 ESR oder neuer) verwendest.
-- Überprüfe die Dokumentation zu Konfiguration und Nutzung für häufige Einrichtungfragen.
+- Stellen Sie sicher, dass Sie eine unterstützte Thunderbird‑Version verwenden (128 ESR oder neuer).
+- Prüfen Sie die Dokumentation zu Konfiguration und Nutzung bei häufigen Einrichtungsfragen.
 - Für Entwicklung/Tests siehe den Entwicklungsleitfaden.
-- Wenn gespeicherte Einstellungen scheinbar nicht richtig angewendet werden, starte Thunderbird neu und versuche es erneut. (Thunderbird kann den Status über Sitzungen hinweg cachen; ein Neustart garantiert, dass frische Einstellungen geladen werden.)
-- Minimale Reproduktion: Probiere es mit einer kleinen Test-E-Mail, die ein oder zwei einfache Datei-Anhänge enthält.
-- Vergleiche das Verhalten mit aktivierter und deaktivierter Bestätigung, um herauszufinden, ob der Dialogfluss betroffen ist.
+- Wenn gespeicherte Einstellungen scheinbar nicht korrekt angewendet werden, starten Sie Thunderbird neu und versuchen Sie es erneut. (Thunderbird kann Status über Sitzungen hinweg zwischenspeichern; ein Neustart stellt sicher, dass frische Einstellungen geladen werden.)
+- Minimales Repro: Versuchen Sie es mit einer kleinen Testmail mit ein oder zwei einfachen Dateianhängen.
+- Vergleichen Sie das Verhalten mit Bestätigung EIN vs. AUS, um einzugrenzen, ob der Dialogablauf beteiligt ist.
 
 ---
 
-### Was in einem Bericht enthalten sein sollte
+### Was in einen Bericht gehört
 
-- Thunderbird-Version und Betriebssystem
-- Exakte Schritte zur Reproduktion (was du getan hast, was du erwartet hast, was passiert ist)
-- Ob die Bestätigung aktiviert war und deine Standard-Antwort-Einstellung
-- Eine Beispiel deiner Blacklist-Muster (falls relevant)
-- Protokolle der Fehlerkonsole während der Reproduktion (Extras → Entwicklertools → Fehlerkonsole)
-- Debug-Logging aktivieren (optional):
-  - In der Fehlerkonsole von Thunderbird ausführen: `messenger.storage.local.set({ debug: true })`
-  - Das Problem reproduzieren und die relevanten `[RWA]` Protokollzeilen kopieren
+- Thunderbird‑Version und Betriebssystem
+- Genaue Schritte zum Reproduzieren (was Sie getan haben, was Sie erwartet haben, was passiert ist)
+- Ob die Bestätigung aktiviert war und welche Standardantwort eingestellt ist
+- Ein Beispiel Ihrer Blacklist‑Muster (falls relevant)
+- Protokolle der Fehlerkonsole beim Reproduzieren (Extras → Entwickler‑Werkzeuge → Fehlerkonsole)
+- Debug‑Protokollierung aktivieren (optional):
+  - In der Thunderbird‑Fehlerkonsole ausführen: `messenger.storage.local.set({ debug: true })`
+  - Das Problem reproduzieren und relevante `[RWA]` Logzeilen kopieren
 
 ---
 
-### Issues-Vorlage (Kopieren/Einfügen) {#issue-template}
+### Issue‑Vorlage (kopieren/einfügen) {#issue-template}
 
-- Thunderbird-Version und Betriebssystem:
-- Schritte zur Reproduktion:
+- Thunderbird‑Version und Betriebssystem:
+- Schritte zum Reproduzieren:
 - Bestätigung aktiviert? Standardantwort:
-- Beispiel-Blacklist-Muster:
-- Protokolle der Fehlerkonsole (Extras → Entwicklertools → Fehlerkonsole):
-- Sonst noch relevant:
+- Beispiel‑Blacklist‑Muster:
+- Fehlerkonsolen‑Protokolle (Extras → Entwickler‑Werkzeuge → Fehlerkonsole):
+- Alles Weitere Relevante:
 
 ---
 
 ### Spenden
 
-Wenn du dieses Projekt unterstützen möchtest, ziehe bitte einen kleinen Beitrag auf der [Spenden](donation)-Seite in Betracht. Vielen Dank!
+Wenn Sie dieses Projekt unterstützen möchten, erwägen Sie bitte einen kleinen Beitrag auf der Seite [Spenden](donation). Vielen Dank!
+
+---

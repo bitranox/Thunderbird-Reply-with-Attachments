@@ -4,31 +4,40 @@ title: 'Endri-javatra'
 sidebar_label: 'Endri-javatra'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Endri-javatra {#features}
 
-## How It Works {#how-it-works}
+- Mampiraikitra ho azy ireo rakitra avy amin'ny mailaka tany am-boalohany rehefa mamaly.
+- Azo amboarina ny fitondran-tena: ny rakitra miraikitra dia afaka
+  - ampiana ho azy, na
+  - ampiana rehefa avy nanamafy ihany (dialog kely, mora idirana). Ao amin'ny Options ianao
+    afaka mampandeha ny fanamafisana ary misafidy ny valiny default (Yes/No).
+- Lisitra mainty anaran-drakitra (glob patterns) misoroka ny rakitra sasany tsy ho
+  miraikitra ho azy. Ohatra: `*intern*`, `*secret*`, `*passwor*`.
+  Tsy manavaka sora-baventy sy sora-kely ny fampitahana ary ny anaran-drakitra ihany no zahana; omeo modely iray
+  isaky ny andalana ao amin'ny Options.
+- Fampitandremana lisitra mainty (tsy voatery, alefa amin'ny default): rehefa misy rakitra esorin'ny
+  lisitra maintinao, modal kely iray no milaza ny rakitra sy ny modely mifanaraka. Mety amin'ny maody maizina
+  ary azo idirana amin'ny fitendry (Enter/Esc hanakatona).
+- Miasa amin'ny Reply sy Reply all. Tsy ovain'ity add-on ity ny Forward.
+- Manampy ireo tany am-boalohany na dia efa nampiraikitra zavatra aza ianao; misoroka dika mitovy amin'ny alalan'ny anaran-drakitra.
+- Fiarovana dika mitovy isaky ny tabilao dia misoroka fanampiana indroa ao amin'ilay tabilao fanoratana mitovy.
+- Tsy ampidirina amin'ny default ny taratasy fanamarinana S/MIME mba hisorohana rakitra miraikitra tsy ilaina.
+- Ampidiro ireo sary inline (default: ON). Ny sary nampidirina dia averina mivantana ao amin'ny
+  vatan'ny valiny ho base64 data URIs, ka mitahiry ilay fandrindrana inline tany am-boalohany. Atsaharo ao amin'ny
+  Options raha te-hitsimbina tanteraka ireo sary inline.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Ahoana ny Fiasany {#how-it-works}
+
+- Rehefa mamaly, ny add-on dia manao lisitra ireo rakitra miraikitra tany am-boalohany.
+- Manivana sy manala ireo sonia S/MIME avy amin'ny rakitra miraikitra; averina ao amin'ny vatana ny sary inline (raha tsy nampandehanana ny fanafoanana).
+- Mety hangataka fanamafisana (mora ampiasaina amin'ny fitendry).
+- Manampy ireo rakitra mety ao amin'ny compose-nao, misoroka dika mitovy amin'ny anaran-drakitra.
+- Jereo ao amin'ny Usage ny “Antony mety tsy ampidirana ny attachments” ho an'ny tranga sisiny.
+
+Fanamarihana momba ny fiainana manokana: Eto an-toerana ao amin'ny Thunderbird no anaovana ny fikarakarana rehetra. Tsy manao fangatahana tambajotra amin'ny ambadika mihitsy ny add-on.
+
+---

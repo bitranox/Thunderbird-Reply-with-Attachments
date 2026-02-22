@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ترقی",
-  "description": "Development Guide",
+  "title": "ڈیولپمنٹ",
+  "description": "---",
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "ترقی",
+    "title": "ڈیولپمنٹ",
     "sidebar_label": "ترقی"
   },
   "sidebar": "docs",

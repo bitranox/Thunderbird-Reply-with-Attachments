@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ'
+title: 'ਇੰਸਟਾਲੇਸ਼ਨ'
 slug: /install
-sidebar_label: 'ಬಳಕೆಯ ਲਈ ಸ್ಥಾಪನೆ'
+sidebar_label: 'ਇੰਸਟਾਲੇਸ਼ਨ'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" ਰਾਹੀਂ ਇੰਸਟਾਲੇਸ਼ਨ {#installation-in-thunderbird-recommended}
+
+:::important ਘੱਟੋ-ਘੱਟ ਥੰਡਰਬਰਡ ਵਰਜਨ
+ਇਹ ਐਡ‑ਆਨ Thunderbird **128 ESR ਜਾਂ ਨਵਾਂ** ਸਮਰਥਨ ਕਰਦਾ ਹੈ। ਪੁਰਾਣੀਆਂ ਵਰਜਨਾਂ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਹੈ।
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+ਇਹ ਸਿਫਾਰਸ਼ੀ ਇੰਸਟਾਲੇਸ਼ਨ ਤਰੀਕਾ ਹੈ। ATN (addons.thunderbird.net) ਤੋਂ ਇੰਸਟਾਲ ਕੀਤੇ ਐਡ‑ਆਨਜ਼ ਨੂੰ ਆਪਣੇ‑ਆਪ ਅੱਪਡੇਟ ਮਿਲਦੇ ਹਨ। LOCAL/dev ਇੰਸਟਾਲ ਆਪਣੇ‑ਆਪ ਅੱਪਡੇਟ ਨਹੀਂ ਹੁੰਦੇ।
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- ਘੱਟੋ-ਘੱਟ Thunderbird ਵਰਜਨ: 128 ESR ਜਾਂ ਨਵਾਂ।
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird ਵਿੱਚ **Tools > Add-ons and Themes** 'ਤੇ ਜਾਓ।
+2. "reply with attachments" ਲਈ ਖੋਜ ਕਰੋ।
+3. ਐਡ‑ਆਨ ਜੋੜੋ।
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+ਜਾਂ ਐਡ‑ਆਨ ਪੇਜ ਸਿੱਧੇ ਖੋਲ੍ਹੋ: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI ਤੋਂ ਹੱਥੋਂ ਇੰਸਟਾਲੇਸ਼ਨ {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ਫਾਈਲ ਡਾਊਨਲੋਡ ਕਰੋ {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird ਐਡ‑ਆਨ ਪੰਨਾ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) 'ਤੇ ਜਾਓ।
+2. ਐਡ‑ਆਨ ਦੀ ਨਵੀਂਤਮ ਵਰਜਨ ਨੂੰ XPI ਫਾਈਲ ਵਜੋਂ ਡਾਊਨਲੋਡ ਕਰੋ (`reply_with_attachments-x.y.z-tb.xpi`)।
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird ਵਿੱਚ ਇੰਸਟਾਲ ਕਰੋ {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird ਖੋਲ੍ਹੋ।
+2. **Tools > Add-ons and Themes** 'ਤੇ ਜਾਓ।
+3. **Add-ons Manager** ਵਿੱਚ, ਸੱਜੇ-ਉਪਰਲੇ ਕੋਨੇ ਵਿੱਚ ਗੀਅਰ ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ।
+4. ਮੇਨੂ ਵਿੱਚੋਂ **Install Add-on From File…** ਚੁਣੋ।
+5. ਡਾਊਨਲੋਡ ਕੀਤੀ ਹੋਈ `reply_with_attachments-x.y.z-tb.xpi` ਫਾਈਲ ਚੁਣੋ।
+6. ਜਦੋਂ ਪੁੱਛਿਆ ਜਾਵੇ ਤਾਂ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## ਵਿਕਾਸ ਲਈ ਇੰਸਟਾਲੇਸ਼ਨ {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### ਰਿਪੋਜ਼ਟਰੀ ਡਾਊਨਲੋਡ ਕਰੋ {#download-the-repository}
 
-See also
+1. GitHub ਰਿਪੋਜ਼ਟਰੀ ਦੀ ਨਵੀਂਤਮ ਵਰਜਨ ਡਾਊਨਲੋਡ ਕਰੋ।
+2. ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ `make help` ਚਲਾਓ।
 
-- [Quickstart](quickstart)
+### Thunderbird ਵਿੱਚ ਇੰਸਟਾਲ ਕਰੋ {#install-in-thunderbird-dev}
+
+1. Thunderbird ਖੋਲ੍ਹੋ।
+2. **Tools > Add-ons and Themes** 'ਤੇ ਜਾਓ।
+3. **Add-ons Manager** ਵਿੱਚ, ਸੱਜੇ-ਉਪਰਲੇ ਕੋਨੇ ਵਿੱਚ ਗੀਅਰ ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ।
+4. ਮੇਨੂ ਵਿੱਚੋਂ **Install Add-on From File…** ਚੁਣੋ।
+5. ਤਿਆਰ ਕੀਤੀ ਫਾਈਲ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ਚੁਣੋ।
+6. ਜਦੋਂ ਪੁੱਛਿਆ ਜਾਵੇ ਤਾਂ ਇੰਸਟਾਲੇਸ਼ਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।
+
+ਨੋਟ: ਜੇ Thunderbird ਤੁਹਾਡੇ ਸਿਸਟਮ 'ਤੇ `.zip` ਕਬੂਲ ਨਹੀਂ ਕਰਦਾ, ਤਾਂ ਇਸਨੂੰ `.xpi` ਵਿੱਚ ਰੀਨੇਮ ਕਰੋ ਅਤੇ “Install Add‑on From File…” ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।
+
+### LOCAL ZIP ਕਿੱਥੇ ਮਿਲੇਗੀ {#where-local-zip}
+
+- ਸਭ ਤੋਂ ਪਹਿਲਾਂ, ਐਡ‑ਆਨ ਨੂੰ ਪੈਕੇਜ ਕਰੋ: ਰਿਪੋਜ਼ਟਰੀ ਰੂਟ ਵਿੱਚ `make pack` ਚਲਾਓ।
+- ਪੈਕੇਜ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਰਿਪੋਜ਼ਟਰੀ ਰੂਟ ਵਿੱਚ “LOCAL” zip ਲੱਭੋ (ਜਿਵੇਂ ਕਿ `2025-..-reply-with-attachments-plugin-LOCAL.zip`)।
+- ਟੈਸਟਿੰਗ ਲਈ ਮੁੜ‑ਪੈਕੇਜ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, `sources/manifest_ATN.json` ਅਤੇ `sources/manifest_LOCAL.json` ਦੋਹਾਂ ਵਿੱਚ ਵਰਜਨ ਵਧਾਓ।
+
+---
+
+## ਅਯੋਗ ਕਰੋ, ਅਨਇੰਸਟਾਲ ਕਰੋ, ਅਤੇ ਅੱਪਡੇਟਸ {#disable-uninstall-updates}
+
+- ਅਯੋਗ ਕਰੋ: Thunderbird → Tools → Add‑ons and Themes → ਐਡ‑ਆਨ ਲੱਭੋ → ਟੋਗਲ ਆਫ਼ ਕਰੋ।
+- ਅਨਇੰਸਟਾਲ ਕਰੋ: ਉਹੀ ਦ੍ਰਿਸ਼ → ਤਿੰਨ‑ਡਾਟ ਮੇਨੂ → Remove।
+- ਅੱਪਡੇਟਸ: ATN ਇੰਸਟਾਲ ਨਵੀਆਂ ਵਰਜਨਾਂ ਦੀ ਮਨਜ਼ੂਰੀ ਤੋਂ ਬਾਅਦ ਆਪਣੇ‑ਆਪ ਅੱਪਡੇਟ ਹੋ ਜਾਂਦੇ ਹਨ। LOCAL/dev ਇੰਸਟਾਲ ਆਪਣੇ‑ਆਪ ਅੱਪਡੇਟ ਨਹੀਂ ਹੁੰਦੇ; ਨਵੀਂ LOCAL ਬਿਲਡ ਹੱਥੋਂ ਮੁੜ ਇੰਸਟਾਲ ਕਰੋ।
+- ਸੈਟਿੰਗਾਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਹਟਾਓ: ਵੇਖੋ [ਪ੍ਰਾਈਵੇਸੀ → ਡਾਟਾ ਹਟਾਉਣਾ](privacy#data-removal)।
+
+ਇਹ ਵੀ ਵੇਖੋ
+
+- [ਕੁਇਕਸਟਾਰਟ](quickstart)

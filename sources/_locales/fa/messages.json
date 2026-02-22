@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "در صورت مستثنا شدن پیوست‌ها توسط فهرست سیاه، هشدار بده"
   },
+  "uiIncludeInlineLabel": {
+    "message": "شامل تصاویر درون‌خطی (تصاویر جاسازی‌شده)"
+  },
   "uiDebugHeader": {
     "message": "پیشرفته"
   },

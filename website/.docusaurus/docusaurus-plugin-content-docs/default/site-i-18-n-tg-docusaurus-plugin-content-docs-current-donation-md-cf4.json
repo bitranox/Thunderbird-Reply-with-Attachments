@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Бозгаштан",
-  "description": "Donate",
+  "title": "Хайрия кунед",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Бозгаштан",
-    "sidebar_label": "Бозгаштан"
+    "title": "Хайрия кунед",
+    "sidebar_label": "Хайрия кунед"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Daidaito'
-sidebar_label: 'Daidaito'
+title: 'Daidaituwa'
+sidebar_label: 'Daidaituwa'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Daidaituwa {#compatibility}
+
+:::important Mafi ƙarancin Sigar Thunderbird
+Wannan add‑on yana tallafawa Thunderbird **128 ESR ko daga baya**. Tsofaffin sigogi ba a tallafa musu ba.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Ana tallafawa Thunderbird 128 ESR ko daga baya (128.x+).
+- Tsofaffin sigogin Thunderbird ba a tallafa musu ba.
+- An gwada a kan Windows, macOS, da Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Ba a tallafa Manifest V2 ba
+Ba a tallafa Manifest V2 ba. Add‑on ɗin yana niyya ga **Manifest V3 (MV3)** a kan Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Warware Matsaloli {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Idan add-on bai yi aiki yadda ake tsammani ba, tabbatar kuna amfani da sigar Thunderbird mai jituwa (128 ESR ko daga baya).
+- Duba konsol ɗin kuskuren Thunderbird (**Tools > Developer Tools > Error Console**) don duk wata matsala da ta shafi add-on ɗin.
+- Idan saitunan da aka ajiye suna kama da ba sa aiki yadda ya kamata, sake kunna Thunderbird sannan ku gwada kuma. (Thunderbird na iya ɓoye yanayi tsakanin zaman; sake kunna zai tabbatar an loda sabbin saituna.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Rikice-rikicen da aka sani {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Babu da aka sani a wannan lokacin. Idan kun ga maimaita haɗe-haɗen kwafi ko gazawa tare da wasu add‑ons, don Allah ku ba da rahoto tare da matakan yadda za a maimaita.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Gine-ginen Thunderbird Beta da Daily (Nightly) ana tallafa musu gabaɗaya, amma canje-canje daga tushe wani lokaci na iya karya yadda add‑on ke aiki. Idan kun fuskanci matsaloli, don Allah ku ba da rahoto kuma ku haɗa da ainihin sigar Thunderbird (misali, “Daily 131.0a1 2025‑09‑10”).
+- Kun gamu da koma-baya a Beta/Nightly? Don Allah ku ba da rahoton tare da matakan yadda za a maimaita — duba [Taimako](support) — kuma ku haɗa da ainihin string ɗin ginin Thunderbird.
 
 ---

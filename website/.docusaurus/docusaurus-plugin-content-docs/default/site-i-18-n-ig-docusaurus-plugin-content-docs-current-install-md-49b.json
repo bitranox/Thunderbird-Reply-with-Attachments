@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Ịtọlite",
-  "description": "Ịtọlite site na \"Thunderbird Add-ons and Themes\"",
+  "title": "Ịwụnye",
+  "description": "---",
   "source": "@site/i18n/ig/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Ịtọlite",
+    "title": "Ịwụnye",
     "slug": "/install",
-    "sidebar_label": "Ịtọlite"
+    "sidebar_label": "Ịwụnye"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ntụziaka Mbụ",
+    "title": "Mbido Ngwa Ngwa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ig/docs/quickstart"
   },
   "next": {

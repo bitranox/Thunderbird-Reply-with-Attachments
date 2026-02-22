@@ -110,700 +110,1000 @@
       "direction": "ltr",
       "htmlLang": "en-US",
       "calendar": "gregory",
-      "path": "en"
+      "path": "en",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/"
     },
     "zh": {
       "label": "中文",
       "direction": "ltr",
       "htmlLang": "zh",
       "calendar": "gregory",
-      "path": "zh"
+      "path": "zh",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/zh/"
     },
     "hi": {
       "label": "हिन्दी",
       "direction": "ltr",
       "htmlLang": "hi-IN",
       "calendar": "gregory",
-      "path": "hi"
+      "path": "hi",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/hi/"
     },
     "es": {
       "label": "Español",
       "direction": "ltr",
       "htmlLang": "es-ES",
       "calendar": "gregory",
-      "path": "es"
+      "path": "es",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/es/"
     },
     "ar": {
       "label": "العربية",
       "direction": "rtl",
       "htmlLang": "ar",
       "calendar": "gregory",
-      "path": "ar"
+      "path": "ar",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ar/"
     },
     "fr": {
       "label": "Français",
       "direction": "ltr",
       "htmlLang": "fr-FR",
       "calendar": "gregory",
-      "path": "fr"
+      "path": "fr",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/fr/"
     },
     "bn": {
       "label": "বাংলা",
       "direction": "ltr",
       "htmlLang": "bn-BD",
       "calendar": "gregory",
-      "path": "bn"
+      "path": "bn",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/bn/"
     },
     "pt": {
       "label": "Português",
       "direction": "ltr",
       "htmlLang": "pt-PT",
       "calendar": "gregory",
-      "path": "pt"
+      "path": "pt",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/pt/"
     },
     "ru": {
       "label": "Русский",
       "direction": "ltr",
       "htmlLang": "ru-RU",
       "calendar": "gregory",
-      "path": "ru"
+      "path": "ru",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ru/"
     },
     "id": {
       "label": "Indonesia",
       "direction": "ltr",
       "htmlLang": "id-ID",
       "calendar": "gregory",
-      "path": "id"
+      "path": "id",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/id/"
     },
     "ur": {
       "label": "اردو",
       "direction": "rtl",
       "htmlLang": "ur-PK",
       "calendar": "gregory",
-      "path": "ur"
+      "path": "ur",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ur/"
     },
     "de": {
       "label": "Deutsch",
       "direction": "ltr",
       "htmlLang": "de-DE",
       "calendar": "gregory",
-      "path": "de"
+      "path": "de",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/de/"
     },
     "ja": {
       "label": "日本語",
       "direction": "ltr",
       "htmlLang": "ja-JP",
       "calendar": "gregory",
-      "path": "ja"
+      "path": "ja",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ja/"
     },
     "pa": {
       "label": "ਪੰਜਾਬੀ",
       "direction": "ltr",
       "htmlLang": "pa-IN",
       "calendar": "gregory",
-      "path": "pa"
+      "path": "pa",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/pa/"
     },
     "jv": {
       "label": "Jawa",
       "direction": "ltr",
       "htmlLang": "jv-ID",
       "calendar": "gregory",
-      "path": "jv"
+      "path": "jv",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/jv/"
     },
     "ms": {
       "label": "Melayu",
       "direction": "ltr",
       "htmlLang": "ms-MY",
       "calendar": "gregory",
-      "path": "ms"
+      "path": "ms",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ms/"
     },
     "te": {
       "label": "తెలుగు",
       "direction": "ltr",
       "htmlLang": "te-IN",
       "calendar": "gregory",
-      "path": "te"
+      "path": "te",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/te/"
     },
     "vi": {
       "label": "Tiếng Việt",
       "direction": "ltr",
       "htmlLang": "vi-VN",
       "calendar": "gregory",
-      "path": "vi"
+      "path": "vi",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/vi/"
     },
     "ko": {
       "label": "한국어",
       "direction": "ltr",
       "htmlLang": "ko-KR",
       "calendar": "gregory",
-      "path": "ko"
+      "path": "ko",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ko/"
     },
     "mr": {
       "label": "मराठी",
       "direction": "ltr",
       "htmlLang": "mr-IN",
       "calendar": "gregory",
-      "path": "mr"
+      "path": "mr",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/mr/"
     },
     "ta": {
       "label": "தமிழ்",
       "direction": "ltr",
       "htmlLang": "ta-IN",
       "calendar": "gregory",
-      "path": "ta"
+      "path": "ta",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ta/"
     },
     "tr": {
       "label": "Türkçe",
       "direction": "ltr",
       "htmlLang": "tr-TR",
       "calendar": "gregory",
-      "path": "tr"
+      "path": "tr",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/tr/"
     },
     "it": {
       "label": "Italiano",
       "direction": "ltr",
       "htmlLang": "it-IT",
       "calendar": "gregory",
-      "path": "it"
+      "path": "it",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/it/"
     },
     "th": {
       "label": "ไทย",
       "direction": "ltr",
       "htmlLang": "th-TH",
       "calendar": "buddhist",
-      "path": "th"
+      "path": "th",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/th/"
     },
     "gu": {
       "label": "ગુજરાતી",
       "direction": "ltr",
       "htmlLang": "gu-IN",
       "calendar": "gregory",
-      "path": "gu"
+      "path": "gu",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/gu/"
     },
     "fa": {
       "label": "فارسی",
       "direction": "rtl",
       "htmlLang": "fa-IR",
       "calendar": "persian",
-      "path": "fa"
+      "path": "fa",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/fa/"
     },
     "pl": {
       "label": "Polski",
       "direction": "ltr",
       "htmlLang": "pl-PL",
       "calendar": "gregory",
-      "path": "pl"
+      "path": "pl",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/pl/"
     },
     "ps": {
       "label": "پښتو",
       "direction": "rtl",
       "htmlLang": "ps-AF",
       "calendar": "persian",
-      "path": "ps"
+      "path": "ps",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ps/"
     },
     "kn": {
       "label": "ಕನ್ನಡ",
       "direction": "ltr",
       "htmlLang": "kn-IN",
       "calendar": "gregory",
-      "path": "kn"
+      "path": "kn",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/kn/"
     },
     "ml": {
       "label": "മലയാളം",
       "direction": "ltr",
       "htmlLang": "ml-IN",
       "calendar": "gregory",
-      "path": "ml"
+      "path": "ml",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ml/"
     },
     "or": {
       "label": "ଓଡ଼ିଆ",
       "direction": "ltr",
       "htmlLang": "or-IN",
       "calendar": "gregory",
-      "path": "or"
+      "path": "or",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/or/"
     },
     "my": {
       "label": "မြန်မာ",
       "direction": "ltr",
       "htmlLang": "my-MM",
       "calendar": "gregory",
-      "path": "my"
+      "path": "my",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/my/"
     },
     "uk": {
       "label": "Українська",
       "direction": "ltr",
       "htmlLang": "uk-UA",
       "calendar": "gregory",
-      "path": "uk"
+      "path": "uk",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/uk/"
     },
     "ro": {
       "label": "Română",
       "direction": "ltr",
       "htmlLang": "ro-RO",
       "calendar": "gregory",
-      "path": "ro"
+      "path": "ro",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ro/"
     },
     "nl": {
       "label": "Nederlands",
       "direction": "ltr",
       "htmlLang": "nl-NL",
       "calendar": "gregory",
-      "path": "nl"
+      "path": "nl",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/nl/"
     },
     "ha": {
       "label": "Hausa",
       "direction": "ltr",
       "htmlLang": "ha-NG",
       "calendar": "gregory",
-      "path": "ha"
+      "path": "ha",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ha/"
     },
     "sw": {
       "label": "Kiswahili",
       "direction": "ltr",
       "htmlLang": "sw-TZ",
       "calendar": "gregory",
-      "path": "sw"
+      "path": "sw",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sw/"
     },
     "am": {
       "label": "አማርኛ",
       "direction": "ltr",
       "htmlLang": "am-ET",
       "calendar": "gregory",
-      "path": "am"
+      "path": "am",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/am/"
     },
     "hu": {
       "label": "Magyar",
       "direction": "ltr",
       "htmlLang": "hu-HU",
       "calendar": "gregory",
-      "path": "hu"
+      "path": "hu",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/hu/"
     },
     "az": {
       "label": "Azərbaycan",
       "direction": "ltr",
       "htmlLang": "az-AZ",
       "calendar": "gregory",
-      "path": "az"
+      "path": "az",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/az/"
     },
     "uz": {
       "label": "O‘zbek",
       "direction": "ltr",
       "htmlLang": "uz-UZ",
       "calendar": "gregory",
-      "path": "uz"
+      "path": "uz",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/uz/"
     },
     "sd": {
       "label": "سنڌي",
       "direction": "rtl",
       "htmlLang": "sd-PK",
       "calendar": "gregory",
-      "path": "sd"
+      "path": "sd",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sd/"
     },
     "he": {
       "label": "עברית",
       "direction": "rtl",
       "htmlLang": "he-IL",
       "calendar": "gregory",
-      "path": "he"
+      "path": "he",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/he/"
     },
     "el": {
       "label": "Ελληνικά",
       "direction": "ltr",
       "htmlLang": "el-GR",
       "calendar": "gregory",
-      "path": "el"
+      "path": "el",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/el/"
     },
     "cs": {
       "label": "Čeština",
       "direction": "ltr",
       "htmlLang": "cs-CZ",
       "calendar": "gregory",
-      "path": "cs"
+      "path": "cs",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/cs/"
     },
     "sv": {
       "label": "Svenska",
       "direction": "ltr",
       "htmlLang": "sv-SE",
       "calendar": "gregory",
-      "path": "sv"
+      "path": "sv",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sv/"
     },
     "bg": {
       "label": "Български",
       "direction": "ltr",
       "htmlLang": "bg-BG",
       "calendar": "gregory",
-      "path": "bg"
+      "path": "bg",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/bg/"
     },
     "da": {
       "label": "Dansk",
       "direction": "ltr",
       "htmlLang": "da-DK",
       "calendar": "gregory",
-      "path": "da"
+      "path": "da",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/da/"
     },
     "fi": {
       "label": "Suomi",
       "direction": "ltr",
       "htmlLang": "fi-FI",
       "calendar": "gregory",
-      "path": "fi"
+      "path": "fi",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/fi/"
     },
     "no": {
       "label": "Norsk",
       "direction": "ltr",
       "htmlLang": "no-NO",
       "calendar": "gregory",
-      "path": "no"
+      "path": "no",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/no/"
     },
     "sk": {
       "label": "Slovenčina",
       "direction": "ltr",
       "htmlLang": "sk-SK",
       "calendar": "gregory",
-      "path": "sk"
+      "path": "sk",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sk/"
     },
     "sr": {
       "label": "Српски",
       "direction": "ltr",
       "htmlLang": "sr-RS",
       "calendar": "gregory",
-      "path": "sr"
+      "path": "sr",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sr/"
     },
     "hr": {
       "label": "Hrvatski",
       "direction": "ltr",
       "htmlLang": "hr-HR",
       "calendar": "gregory",
-      "path": "hr"
+      "path": "hr",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/hr/"
     },
     "bs": {
       "label": "Bosanski",
       "direction": "ltr",
       "htmlLang": "bs-BA",
       "calendar": "gregory",
-      "path": "bs"
+      "path": "bs",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/bs/"
     },
     "sl": {
       "label": "Slovenščina",
       "direction": "ltr",
       "htmlLang": "sl-SI",
       "calendar": "gregory",
-      "path": "sl"
+      "path": "sl",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sl/"
     },
     "lt": {
       "label": "Lietuvių",
       "direction": "ltr",
       "htmlLang": "lt-LT",
       "calendar": "gregory",
-      "path": "lt"
+      "path": "lt",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/lt/"
     },
     "lv": {
       "label": "Latviešu",
       "direction": "ltr",
       "htmlLang": "lv-LV",
       "calendar": "gregory",
-      "path": "lv"
+      "path": "lv",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/lv/"
     },
     "et": {
       "label": "Eesti",
       "direction": "ltr",
       "htmlLang": "et-EE",
       "calendar": "gregory",
-      "path": "et"
+      "path": "et",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/et/"
     },
     "hy": {
       "label": "Հայերեն",
       "direction": "ltr",
       "htmlLang": "hy-AM",
       "calendar": "gregory",
-      "path": "hy"
+      "path": "hy",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/hy/"
     },
     "ka": {
       "label": "Ქართული",
       "direction": "ltr",
       "htmlLang": "ka-GE",
       "calendar": "gregory",
-      "path": "ka"
+      "path": "ka",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ka/"
     },
     "kk": {
       "label": "Қазақ тілі",
       "direction": "ltr",
       "htmlLang": "kk-KZ",
       "calendar": "gregory",
-      "path": "kk"
+      "path": "kk",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/kk/"
     },
     "ky": {
       "label": "Кыргызча",
       "direction": "ltr",
       "htmlLang": "ky-KG",
       "calendar": "gregory",
-      "path": "ky"
+      "path": "ky",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ky/"
     },
     "tg": {
       "label": "Тоҷикӣ",
       "direction": "ltr",
       "htmlLang": "tg-TJ",
       "calendar": "gregory",
-      "path": "tg"
+      "path": "tg",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/tg/"
     },
     "tk": {
       "label": "Türkmen dili",
       "direction": "ltr",
       "htmlLang": "tk-TM",
       "calendar": "gregory",
-      "path": "tk"
+      "path": "tk",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/tk/"
     },
     "ne": {
       "label": "नेपाली",
       "direction": "ltr",
       "htmlLang": "ne-NP",
       "calendar": "gregory",
-      "path": "ne"
+      "path": "ne",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ne/"
     },
     "si": {
       "label": "සිංහල",
       "direction": "ltr",
       "htmlLang": "si-LK",
       "calendar": "gregory",
-      "path": "si"
+      "path": "si",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/si/"
     },
     "km": {
       "label": "ខ្មែរ",
       "direction": "ltr",
       "htmlLang": "km-KH",
       "calendar": "gregory",
-      "path": "km"
+      "path": "km",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/km/"
     },
     "lo": {
       "label": "ລາວ",
       "direction": "ltr",
       "htmlLang": "lo-LA",
       "calendar": "gregory",
-      "path": "lo"
+      "path": "lo",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/lo/"
     },
     "mn": {
       "label": "Монгол",
       "direction": "ltr",
       "htmlLang": "mn-MN",
       "calendar": "gregory",
-      "path": "mn"
+      "path": "mn",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/mn/"
     },
     "su": {
       "label": "Basa Sunda",
       "direction": "ltr",
       "htmlLang": "su-ID",
       "calendar": "gregory",
-      "path": "su"
+      "path": "su",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/su/"
     },
     "yo": {
       "label": "Èdè Yorùbá",
       "direction": "ltr",
       "htmlLang": "yo-NG",
       "calendar": "gregory",
-      "path": "yo"
+      "path": "yo",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/yo/"
     },
     "ig": {
       "label": "Igbo",
       "direction": "ltr",
       "htmlLang": "ig-NG",
       "calendar": "gregory",
-      "path": "ig"
+      "path": "ig",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ig/"
     },
     "om": {
       "label": "Oromoo",
       "direction": "ltr",
       "htmlLang": "om-ET",
       "calendar": "gregory",
-      "path": "om"
+      "path": "om",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/om/"
     },
     "zu": {
       "label": "IsiZulu",
       "direction": "ltr",
       "htmlLang": "zu-ZA",
       "calendar": "gregory",
-      "path": "zu"
+      "path": "zu",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/zu/"
     },
     "xh": {
       "label": "IsiXhosa",
       "direction": "ltr",
       "htmlLang": "xh-ZA",
       "calendar": "gregory",
-      "path": "xh"
+      "path": "xh",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/xh/"
     },
     "af": {
       "label": "Afrikaans",
       "direction": "ltr",
       "htmlLang": "af-ZA",
       "calendar": "gregory",
-      "path": "af"
+      "path": "af",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/af/"
     },
     "so": {
       "label": "Soomaali",
       "direction": "ltr",
       "htmlLang": "so-SO",
       "calendar": "gregory",
-      "path": "so"
+      "path": "so",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/so/"
     },
     "rw": {
       "label": "Ikinyarwanda",
       "direction": "ltr",
       "htmlLang": "rw-RW",
       "calendar": "gregory",
-      "path": "rw"
+      "path": "rw",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/rw/"
     },
     "rn": {
       "label": "Ikirundi",
       "direction": "ltr",
       "htmlLang": "rn-BI",
       "calendar": "gregory",
-      "path": "rn"
+      "path": "rn",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/rn/"
     },
     "ln": {
       "label": "Lingála",
       "direction": "ltr",
       "htmlLang": "ln-CD",
       "calendar": "gregory",
-      "path": "ln"
+      "path": "ln",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ln/"
     },
     "sn": {
       "label": "ChiShona",
       "direction": "ltr",
       "htmlLang": "sn-ZW",
       "calendar": "gregory",
-      "path": "sn"
+      "path": "sn",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sn/"
     },
     "ak": {
       "label": "Akan",
       "direction": "ltr",
       "htmlLang": "ak-GH",
       "calendar": "gregory",
-      "path": "ak"
+      "path": "ak",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ak/"
     },
     "ff": {
       "label": "Pulaar",
       "direction": "ltr",
       "htmlLang": "ff-SN",
       "calendar": "gregory",
-      "path": "ff"
+      "path": "ff",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ff/"
     },
     "bm": {
       "label": "Bamanakan",
       "direction": "ltr",
       "htmlLang": "bm-ML",
       "calendar": "gregory",
-      "path": "bm"
+      "path": "bm",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/bm/"
     },
     "ny": {
       "label": "Nyanja",
       "direction": "ltr",
       "htmlLang": "ny-MW",
       "calendar": "gregory",
-      "path": "ny"
+      "path": "ny",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ny/"
     },
     "ti": {
       "label": "ትግርኛ",
       "direction": "ltr",
       "htmlLang": "ti-ER",
       "calendar": "gregory",
-      "path": "ti"
+      "path": "ti",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ti/"
     },
     "ug": {
       "label": "ئۇيغۇرچە",
       "direction": "rtl",
       "htmlLang": "ug-CN",
       "calendar": "gregory",
-      "path": "ug"
+      "path": "ug",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ug/"
     },
     "ks": {
       "label": "کٲشُر",
       "direction": "rtl",
       "htmlLang": "ks-IN",
       "calendar": "gregory",
-      "path": "ks"
+      "path": "ks",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ks/"
     },
     "as": {
       "label": "অসমীয়া",
       "direction": "ltr",
       "htmlLang": "as-IN",
       "calendar": "gregory",
-      "path": "as"
+      "path": "as",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/as/"
     },
     "tl": {
       "label": "Filipino",
       "direction": "ltr",
       "htmlLang": "tl-PH",
       "calendar": "gregory",
-      "path": "tl"
+      "path": "tl",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/tl/"
     },
     "ca": {
       "label": "Català",
       "direction": "ltr",
       "htmlLang": "ca-ES",
       "calendar": "gregory",
-      "path": "ca"
+      "path": "ca",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ca/"
     },
     "be": {
       "label": "Беларуская",
       "direction": "ltr",
       "htmlLang": "be-BY",
       "calendar": "gregory",
-      "path": "be"
+      "path": "be",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/be/"
     },
     "sq": {
       "label": "Shqip",
       "direction": "ltr",
       "htmlLang": "sq-AL",
       "calendar": "gregory",
-      "path": "sq"
+      "path": "sq",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/sq/"
     },
     "qu": {
       "label": "Runasimi",
       "direction": "ltr",
       "htmlLang": "qu-PE",
       "calendar": "gregory",
-      "path": "qu"
+      "path": "qu",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/qu/"
     },
     "ht": {
       "label": "Haiti-Kreolisch",
       "direction": "ltr",
       "htmlLang": "ht-HT",
       "calendar": "gregory",
-      "path": "ht"
+      "path": "ht",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ht/"
     },
     "mg": {
       "label": "Malagasy",
       "direction": "ltr",
       "htmlLang": "mg-MG",
       "calendar": "gregory",
-      "path": "mg"
+      "path": "mg",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/mg/"
     },
     "ku": {
       "label": "Kurdî (kurmancî)",
       "direction": "ltr",
       "htmlLang": "ku-TR",
       "calendar": "gregory",
-      "path": "ku"
+      "path": "ku",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ku/"
     },
     "wo": {
       "label": "Wolof",
       "direction": "ltr",
       "htmlLang": "wo-SN",
       "calendar": "gregory",
-      "path": "wo"
+      "path": "wo",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/wo/"
     },
     "ga": {
       "label": "Gaeilge",
       "direction": "ltr",
       "htmlLang": "ga-IE",
       "calendar": "gregory",
-      "path": "ga"
+      "path": "ga",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/ga/"
     },
     "is": {
       "label": "Íslenska",
       "direction": "ltr",
       "htmlLang": "is-IS",
       "calendar": "gregory",
-      "path": "is"
+      "path": "is",
+      "translate": true,
+      "url": "https://bitranox.github.io",
+      "baseUrl": "/Thunderbird-Reply-with-Attachments/is/"
     }
   }
 }

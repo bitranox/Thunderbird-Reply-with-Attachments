@@ -4,37 +4,41 @@ title: 'תאימות'
 sidebar_label: 'תאימות'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## תאימות {#compatibility}
+
+:::important גרסת Thunderbird המינימלית
+תוסף זה תומך ב‑Thunderbird **128 ESR או חדש יותר**. גרסאות ישנות אינן נתמכות.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR או חדש יותר נתמך (128.x+).
+- גרסאות Thunderbird ישנות אינן נתמכות.
+- נבדק על Windows, macOS ו‑Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 אינו נתמך
+Manifest V2 אינו נתמך. התוסף מכוון אל **Manifest V3 (MV3)** ב‑Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## פתרון תקלות {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- אם התוסף אינו פועל כמצופה, ודאו שאתם משתמשים בגרסה תואמת של Thunderbird (128 ESR או מאוחרת יותר).
+- בדקו את קונסולת השגיאות של Thunderbird (**Tools > Developer Tools > Error Console**) עבור בעיות הקשורות לתוסף.
+- אם נראה שההגדרות השמורות אינן מוחלות כראוי, אתחלו את Thunderbird ונסו שוב. (ייתכן ש‑Thunderbird שומר מטמון מצב בין הפעלות; אתחול מבטיח שהגדרות חדשות נטענות.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## התנגשויות ידועות {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- לא ידועות בשלב זה. אם אתם רואים קבצים מצורפים כפולים חוזרים או כשלים עם תוספים אחרים, אנא דווחו בצירוף צעדים לשחזור.
+
+---
+
+## בטא/נייטלי {#beta-nightly}
+
+- גרסאות Thunderbird Beta ו‑Daily (Nightly) נתמכות בדרך כלל, אך שינויים במעלה הזרם עלולים לעתים לשבור את התנהגות התוסף. אם נתקלתם בבעיות, אנא דווחו עליהן והוסיפו את גרסת Thunderbird המדויקת (לדוגמה, “Daily 131.0a1 2025‑09‑10”).
+- נתקלתם ברגרסיה ב‑Beta/Nightly? אנא דווחו עליה בצירוף צעדים לשחזור — ראו [תמיכה](support) — והוסיפו את מחרוזת הבנייה המדויקת של Thunderbird.
+
+---

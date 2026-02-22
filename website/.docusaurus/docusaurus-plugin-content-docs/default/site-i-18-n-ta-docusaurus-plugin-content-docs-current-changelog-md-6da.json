@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "இதழமை மாற்றங்கள்",
-  "description": "Changelog",
+  "title": "மாற்றப் பதிவு",
+  "description": "---",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "இதழமை மாற்றங்கள்"
+    "title": "மாற்றப் பதிவு"
   },
   "sidebar": "docs",
   "previous": {

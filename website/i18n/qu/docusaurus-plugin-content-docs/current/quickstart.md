@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Rikhuy'
-sidebar_label: 'Rikhuy'
+title: 'Qallariy Utqay'
+sidebar_label: 'Qallariy Utqaylla'
 ---
-
-## Rikhuy
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Qallariy utqay
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Thunderbird versiónnin pisinchaq
+Kay add‑onqa Thunderbird **128 ESR utaq musuq**-ta yanapachkan. Ñawpaq versiónkunaqa manam yanapaku.
+:::
+
+:::note Mana telemetría; mana ukhu llikapi mayi
+Kay add‑onqa manam analytics/telemetría-ta huñusqachu, manapas ukhu llikapi mayikunata ruwanchu. Llikaman apaykuyqa chaylla hawa t’inkikunaqa klikyachkaptinqa rurasqa (Docs, GitHub, Donate).
+:::
+
+---
+
+### Churay
+
+1. Thunderbird Add‑onsmanta add‑on‑ta churay.
+2. Munasqayki: Chiqaqchayta aktivar (Options → “Ask before adding attachments”).
+3. Munasqayki: Blacklist willayta aktivosqa qichariy (default): “Warn if attachments are excluded by blacklist”.
+4. Munasqayki: Blacklist patrónkuna yapay (sapa siq’ipi huk‑lla), hina kayhina:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Yuyariy: Chay “# …” ñawpaqpiqa kay qillqasqapi komentariom; ama komentariokunata patronesman apachkaptinkichu Optionspi. Sapa siq’ipi huklla patrón qillqay.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Kunanqa q’ipikunawan willayta kutichiy — originalkunaqa automáticamenta yapakunqa utaq utqaylla chiqaqchaymanta. Blacklistniki hark’achkanchik archivokunaqa kachkaptinqa, uchuy willakuyta qhawanki, chaykunaq sutinta qillqaspa.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Qhawariy {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Huk–iskay q’ipikunawan willayta kutichiy, chaymanta originalkuna qillqay ventana‑yki‑man yapasqanta chiqaqchay.
+- Ruraynin allinchaypaq, [Konfiguración](configuration)-ta qhaway (chiqaqchay ñit’i, default kutichiy, blacklist patrónkuna).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Blacklist willayta qhawariy {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” hina huk archivuwan kachkan willayta kutichiy.
+- “Warn if attachments are excluded by blacklist” aktivosqa kaqtin, uchuy diálogo hark’asqa archivokunata hinallataq tupaq patrón‑ta sut’inchkan.
+
+Mana willakuyta qhawanki chayqa, patrónqa archivopa sutinman ch’aqllaspa tupaq kachkanchu (suti‑sapaqlla, mayúscula/minúscula mana chaninchaspa). Qhaway Konfiguración → Blacklist.
+
+---
+
+### Teclado yuyariy {#keyboard-note}
+
+- Chiqaqchay diálogom “ari”paq Y/J, “mana”paq N/Esc‑ta yanapachkan. Imaymana mana‑Latin tecladokunapiqa, qallqakunaqa hukllaña kachkan; Enter‑qa qhawasqa botón‑ta chiqaqchachin.
 
 ---

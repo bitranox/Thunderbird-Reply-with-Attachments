@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "தானம் அளிக்கவும்",
-  "description": "Donate",
+  "title": "நன்கொடை அளிக்கவும்",
+  "description": "---",
   "source": "@site/i18n/ta/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "தானம் அளிக்கவும்",
-    "sidebar_label": "தானம் அளிக்கவும்"
+    "title": "நன்கொடை அளிக்கவும்",
+    "sidebar_label": "நன்கொடை அளிக்கவும்"
   },
   "sidebar": "docs",
   "previous": {

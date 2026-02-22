@@ -1,19 +1,28 @@
 ---
 id: changelog
-title: 'చేంజ్‌లాగ్'
+title: 'మార్పుల చిట్టా'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## మార్పుల చిట్టా
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+పూర్తి, విశదమైన చరిత్ర కోసం, రిపోజిటరీలోని
+[GitHub‌లోని CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) చూడండి.
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Include inline pictures" ఇప్పుడు ప్రత్యుత్తర బాడీలో చిత్రాలను నేరుగా base64 data URIలుగా ఎంబెడ్ చేస్తుంది (డిఫాల్ట్: ON); కోడ్ నాణ్యతలో మెరుగులు మరియు విస్తృతమైన టెస్ట్ కవరేజ్.
+- 2.3.1: Thunderbird నేపథ్య ఈవెంట్ పేజీ idle స్థితికి వెళ్లిన తర్వాత కూడా అనుబంధాలను కొనసాగిస్తుంది; ట్రబుల్‌షూటింగ్ కోసం లక్ష్యిత డీబగ్ హుక్స్‌ను జోడించింది.
+- 2.3.0: అనుబంధాల డూప్లికేట్ తొలగింపును పదును పెట్టింది, టెస్ట్ కవరేజ్‌ను విస్తరించింది, మరియు AMO విధానాలను అనుసరించేందుకు పాతబడిన అనుమతులను తొలగించింది.
+- 2.1.0: తొలి 100 భాషల కోసం సంపూర్ణ అంతర్జాతీయీకరణ మద్దతు
+- 2.0.0: పూర్తి-సామర్థ్యాలున్న వెర్షన్‌గా పునర్రచన (EN/DE)
+- 1.0.1: messages.listAttachments() కు మార్చబడింది
+- 1.0.0: ప్రారంభ విడుదల
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## తేదీలు మరియు ఛానెల్లు {#dates-and-channels}
+
+- ప్యాకేజింగ్ తరువాత ATN కు విడుదలలు కొన్ని గంటల వరకు ఆలస్యమవవచ్చు.
+- LOCAL బిల్డ్లు డెవలపర్ టెస్టింగ్ కోసం మాత్రమే మరియు ATN ద్వారా పంపిణీ చేయబడవు.
+
+---

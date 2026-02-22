@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Inštalácia",
-  "description": "Inštalácia cez \"Doplnky a témy Thunderbirdu\"",
+  "description": "---",
   "source": "@site/i18n/sk/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Rýchly začiatok",
+    "title": "Rýchly štart",
     "permalink": "/Thunderbird-Reply-with-Attachments/sk/docs/quickstart"
   },
   "next": {

@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Shpejtësia e fillimit'
-sidebar_label: 'Shpejtësia e fillimit'
+title: 'Udhëzues i shpejtë'
+sidebar_label: 'Fillim i shpejtë'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Udhëzues i shpejtë
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Versioni minimal i Thunderbird
+Kjo shtesë mbështet Thunderbird **128 ESR ose më të ri**. Versionet më të vjetra nuk mbështeten.
+:::
+
+:::note Pa telemetri; pa rrjet në sfond
+Shtesa **nuk** mbledh analiza/telemetri dhe **nuk** bën kërkesa rrjeti në sfond. Qasja në rrjet ndodh vetëm kur klikoni lidhje të jashtme (Dokumentacioni, GitHub, Dhuro).
+:::
+
+---
+
+### Instalim
+
+1. Instaloni shtesën nga Thunderbird Add‑ons.
+2. Opsionale: Aktivizoni konfirmimin (Opsione → “Pyet para se të shtohen bashkëngjitjet”).
+3. Opsionale: Lëreni të aktivizuar paralajmërimin për listën e zezë (parazgjedhje): “Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë”.
+4. Opsionale: Shtoni modele të listës së zezë (një për rresht), p.sh.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Shënim: “# …” më sipër është një koment në këtë dokumentacion; mos përfshini komente në modelet që ngjitni te Opsionet. Futni vetëm një model për çdo rresht.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Tani përgjigjuni një mesazhi me bashkëngjitje — origjinalet do të shtohen automatikisht ose pas një konfirmimi të shpejtë. Nëse ndonjë skedar përjashtohet nga lista juaj e zezë, do të shfaqet një paralajmërim i shkurtër që i rendit ato.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Verifikim {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Përgjigjuni një mesazhi me 1–2 bashkëngjitje dhe konfirmoni që origjinalet shtohen në dritaren tuaj të hartimit.
+- Për të rregulluar sjelljen, shihni [Konfigurimi](configuration) (ndërprerësi i konfirmimit, përgjigjja e parazgjedhur, modelet e listës së zezë).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Verifikim i paralajmërimit të listës së zezë {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Përgjigjuni një mesazhi që përmban një skedar si “secret.txt”.
+- Me “Paralajmëro nëse bashkëngjitjet përjashtohen nga lista e zezë” të aktivizuar, një dialog i vogël i rendit skedarët e përjashtuar dhe modelin përkatës.
+
+Nëse nuk shihni një paralajmërim, sigurohuni që modeli të përputhet saktësisht me emrin e skedarit (vetëm emri i skedarit, pa dallim shkronjash të mëdha/vogla). Shih Konfigurimi → Lista e zezë.
+
+---
+
+### Shënim për tastierën {#keyboard-note}
+
+- Dialogu i konfirmimit mbështet Y/J për Po dhe N/Esc për Jo. Në disa tastiera jo-latine, tastet e shkronjave mund të ndryshojnë; Enter konfirmon butonin e fokusuar.
 
 ---

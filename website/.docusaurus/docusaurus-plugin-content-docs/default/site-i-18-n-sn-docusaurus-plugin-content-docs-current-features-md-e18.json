@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Zvimiro",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Kutanga Pamusoro",
+    "title": "Kutanga nekukurumidza",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/quickstart"
   }
 }

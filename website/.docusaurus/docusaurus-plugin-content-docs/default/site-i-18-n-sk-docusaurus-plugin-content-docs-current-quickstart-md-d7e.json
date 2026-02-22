@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Rýchly začiatok",
-  "description": "Rýchly začiatok",
+  "title": "Rýchly štart",
+  "description": "---",
   "source": "@site/i18n/sk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Rýchly začiatok",
-    "sidebar_label": "Rýchly začiatok"
+    "title": "Rýchly štart",
+    "sidebar_label": "Rýchly štart"
   },
   "sidebar": "docs",
   "previous": {

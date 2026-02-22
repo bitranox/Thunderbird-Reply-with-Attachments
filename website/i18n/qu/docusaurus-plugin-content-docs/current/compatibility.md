@@ -1,40 +1,44 @@
 ---
 id: compatibility
-title: 'Compatibilidad'
-sidebar_label: 'Compatibilidad'
+title: 'Allin tinkuy'
+sidebar_label: 'Uyanakuy'
 ---
 
-## Compatibilidad {#compatibility}
+---
 
-:::important Versión mínima de Thunderbird
-Este complemento es compatible con Thunderbird **128 ESR o más reciente**. Las versiones anteriores no son compatibles.
+## Tinkinakuy {#compatibility}
+
+:::important Thunderbirdpa versión mínima
+Kay add‑onqa Thunderbird **128 ESR utaq aswan musuq**-ta yanapaq. Ñawpaq versiónkunaqa mana yanapasqa.
 :::
 
-- Se admite Thunderbird 128 ESR o más reciente (128.x+).
-- Las versiones más antiguas de Thunderbird no son compatibles.
-- Probado en Windows, macOS y Linux.
+- Thunderbird 128 ESR utaq aswan musuq yanapasqa (128.x+).
+- Thunderbirdpa ñawpaq versiónkunanqa mana yanapasqa.
+- Windows, macOS, Linuxpi qhawarisqa.
 
-:::warning Manifest V2 no soportado
-Manifest V2 no es compatible. El complemento está dirigido a **Manifest V3 (MV3)** en Thunderbird 128 ESR+.
+:::warning Manifest V2 mana yanapasqa
+Manifest V2 mana yanapasqa. Add‑onqa Thunderbird 128 ESR+pi **Manifest V3 (MV3)**-manmi churakusqa.
 :::
 
 ---
 
-## Solución de problemas {#troubleshooting}
+## Pantaykunata allinchay {#troubleshooting}
 
-- Si el complemento no funciona como se esperaba, asegúrate de estar usando una versión compatible de Thunderbird (128 ESR o posterior).
-- Revisa la consola de errores de Thunderbird (**Herramientas > Herramientas de desarrollador > Consola de errores**) para cualquier problema relacionado con el complemento.
-- Si las configuraciones almacenadas parecen no aplicarse correctamente, reinicia Thunderbird y vuelve a intentarlo. (Thunderbird puede almacenar en caché el estado a través de sesiones; un reinicio asegura que se carguen configuraciones frescas.)
+- Add-onqa mana suyusqaykiman hina llamk'achkaptin, qhawariy compatible Thunderbird versiónta (128 ESR utaq qhepaq).
+- Thunderbirdpa pantay qhawaqta (Tools > Developer Tools > Error Console) qhawariy, add‑onwan tinkiq sasakunapaq.
+- Qolqosqa configuracionkuna mana allin hinalla ruwachkan hina rikch'ariptin, Thunderbirdta hukmanta qallarichiy hinaspa wakmanta yachay. (Thunderbirdqa sesionkunamanta kayninata waqaychaman; hukmanta qallarisqa, musuq configuracionkuna chaniykuqta churachinman.)
 
 ---
 
-## Conflictos conocidos {#known-conflicts}
+## Yachasqa tinkukuna {#known-conflicts}
 
-- Ninguno conocido en este momento. Si ves adjuntos duplicados repetidos o fallos con otros complementos, por favor reporta con los pasos para reproducir.
+- Kunan p'unchawqa mana yachasqa kashanchu. Kutikutikunalla adjuntokuna iskaychasqa rikhuriptin utaq huk add‑onkunawan pantaykuna tariptin, ama hina, willawaripayku kutichinapaq ruwanakunawan (steps to reproduce).
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Las versiones Beta y Diarias (Nightly) de Thunderbird son generalmente compatibles, pero los cambios en la parte superior pueden ocasionalmente romper el comportamiento del complemento. Si encuentras problemas, por favor repórtalos e incluye la versión exacta de Thunderbird (por ejemplo, “Daily 131.0a1 2025‑09‑10”).
-- ¿Experimentaste una regresión en Beta/Nightly? Por favor repórtalo con los pasos para reproducir — consulta [Soporte](support) — e incluye la cadena exacta de compilación de Thunderbird.
+- Thunderbird Beta hinallataq Daily (Nightly) buildkunanqa sapallanpi yanapasqa kachkan, ichaqa hawanmanta tukusqaykuqa sapa kuti add‑onpa ruwayninta p'akikuchinman. Sasakuna topariptin, ama hina, willawaripayku hinaspa churay Thunderbirdpa ch'iqaq versiónnin (e.g., “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightlypi regresión rikurirqanki? Ama hina, willawaripayku, kutichinapaq ruwanakunawan — [Yanapa](support) qhaway — hinaspa churay Thunderbirdpa ch'iqaq build sut'in.
+
+---

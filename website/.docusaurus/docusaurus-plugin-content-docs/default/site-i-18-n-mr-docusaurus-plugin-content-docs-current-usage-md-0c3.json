@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "उपयोग",
-  "description": "Usage",
+  "title": "वापर",
+  "description": "---",
   "source": "@site/i18n/mr/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "उपयोग",
-    "sidebar_label": "उपयोग"
+    "title": "वापर",
+    "sidebar_label": "वापर"
   },
   "sidebar": "docs",
   "previous": {

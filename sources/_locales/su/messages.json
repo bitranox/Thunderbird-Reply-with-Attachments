@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Élingkeun lamun lampiran teu diasupkeun ku daptar hideung"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Kalebet gambar inline (gambar anu disematkeun)"
+  },
   "uiDebugHeader": {
     "message": "Lanjutan"
   },

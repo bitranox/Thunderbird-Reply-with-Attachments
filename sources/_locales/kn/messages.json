@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ಕಪ್ಪುಪಟ್ಟಿ ಲಗತ್ತುಗಳನ್ನು ಹೊರತುಪಡಿಸಿದರೆ ಎಚ್ಚರಿಸಿ"
   },
+  "uiIncludeInlineLabel": {
+    "message": "ಇನ್‌ಲೈನ್ ಚಿತ್ರಗಳನ್ನು ಸೇರಿಸಿ (ಎಂಬೆಡೆಡ್ ಚಿತ್ರಗಳು)"
+  },
   "uiDebugHeader": {
     "message": "ಸುಧಾರಿತ"
   },

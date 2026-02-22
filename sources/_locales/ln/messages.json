@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Yebisa soki ba pièces jointes eboyami na lisi ya kopekisa"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Bakisa bilili ya inline (bilili oyo ekɔtisami)"
+  },
   "uiDebugHeader": {
     "message": "Avancé"
   },

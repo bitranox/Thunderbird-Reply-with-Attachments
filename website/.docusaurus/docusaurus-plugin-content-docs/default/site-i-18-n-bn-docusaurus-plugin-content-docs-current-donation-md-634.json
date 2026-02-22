@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "দান করুন",
-  "description": "Donate",
+  "title": "অনুদান দিন",
+  "description": "---",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "দান করুন",
+    "title": "অনুদান দিন",
     "sidebar_label": "দান করুন"
   },
   "sidebar": "docs",

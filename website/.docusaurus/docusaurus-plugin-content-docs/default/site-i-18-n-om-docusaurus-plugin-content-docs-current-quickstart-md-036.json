@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Dhiyaannaa",
-  "description": "Dhiyaannaa",
+  "title": "Jalqaba Ariifataa",
+  "description": "---",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Dhiyaannaa",
-    "sidebar_label": "Dhiyaannaa"
+    "title": "Jalqaba Ariifataa",
+    "sidebar_label": "Jalqaba Ariifataa"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/features"
   },
   "next": {
-    "title": "Kuusaa",
+    "title": "Instooleshinii",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/install"
   }
 }

@@ -4,39 +4,41 @@ title: 'Kompatibilitet'
 sidebar_label: 'Kompatibilitet'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilitet {#compatibility}
+
+:::important Lägsta Thunderbird-version
+Detta tillägg stöder Thunderbird **128 ESR eller nyare**. Äldre versioner stöds inte.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR eller nyare stöds (128.x+).
+- Äldre Thunderbird-versioner stöds inte.
+- Testat på Windows, macOS och Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 stöds inte
+Manifest V2 stöds inte. Tillägget är inriktat på **Manifest V3 (MV3)** på Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Felsökning {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Om tillägget inte fungerar som förväntat, kontrollera att du använder en kompatibel version av Thunderbird (128 ESR eller senare).
+- Kontrollera Thunderbirds felkonsol (**Verktyg > Utvecklarverktyg > Felkonsol**) för eventuella problem relaterade till tillägget.
+- Om sparade inställningar inte verkar tillämpas korrekt, starta om Thunderbird och försök igen. (Thunderbird kan cachelagra tillstånd mellan sessioner; en omstart säkerställer att inställningarna läses in på nytt.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Kända konflikter {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Inga kända för närvarande. Om du ser upprepade dubbla bilagor eller fel med andra tillägg, rapportera gärna med steg för att återskapa.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta och Daily (Nightly)-byggen stöds i allmänhet, men ändringar uppströms kan ibland påverka tilläggets beteende. Om du stöter på problem, rapportera dem och inkludera den exakta Thunderbird-versionen (t.ex. ”Daily 131.0a1 2025‑09‑10”).
+- Stött på en regression i Beta/Nightly? Rapportera den med steg för att återskapa — se [Support](support) — och inkludera den exakta Thunderbird-build‑strängen.
 
 ---

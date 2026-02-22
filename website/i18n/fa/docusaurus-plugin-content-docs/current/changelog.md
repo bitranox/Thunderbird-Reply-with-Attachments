@@ -1,23 +1,28 @@
 ---
 id: changelog
-title: 'تغییرات'
+title: 'گزارش تغییرات'
 ---
-
-## Changelog
-
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
-
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
 
 ---
 
-## Dates and channels {#dates-and-channels}
+## گزارش تغییرات
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+برای تاریخچهٔ کامل و جزئیات، به مخزن
+[CHANGELOG.md در GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) مراجعه کنید.
+
+- 2.3.2: "گنجاندن تصاویر درون‌خطی" اکنون تصاویر را مستقیماً در بدنهٔ پاسخ به‌شکل URIهای داده‌ای base64 جاسازی می‌کند (پیش‌فرض: روشن)؛ بهبود کیفیت کد و گسترش پوشش تست.
+- 2.3.1: پیوست‌ها را پس از اینکه Thunderbird صفحهٔ رویداد پس‌زمینه را بیکار می‌کند حفظ می‌کند؛ قلاب‌های دیباگ هدفمند برای عیب‌یابی اضافه می‌کند.
+- 2.3.0: بهبود حذف موارد تکراریِ پیوست‌ها، گسترش پوشش تست، و حذف مجوزهای منسوخ برای انطباق با سیاست‌های AMO.
+- 2.1.0: پشتیبانی کامل بین‌المللی‌سازی برای ۱۰۰ زبان برتر
+- 2.0.0: بازنویسی به نسخهٔ کامل‌قابلیت (EN/DE)
+- 1.0.1: تغییر به messages.listAttachments()
+- 1.0.0: اولین انتشار
+
+---
+
+## تاریخ‌ها و کانال‌ها {#dates-and-channels}
+
+- انتشارها در ATN ممکن است چند ساعت پس از بسته‌بندی با تأخیر انجام شوند.
+- بیلدهای LOCAL فقط برای آزمایش توسعه‌دهندگان هستند و از طریق ATN توزیع نمی‌شوند.
 
 ---

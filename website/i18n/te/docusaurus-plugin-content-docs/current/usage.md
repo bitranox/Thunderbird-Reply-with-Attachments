@@ -1,97 +1,101 @@
 ---
 id: usage
-title: 'ఉపయోగం'
-sidebar_label: 'ఉపయోగం'
+title: 'వినియోగం'
+sidebar_label: 'వినియోగం'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## వినియోగం {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- ప్రతిస్పందించండి, అంతే యాడ్‑ఆన్ అసలు అనుబంధాలను ఆటోమేటిక్‌గా జోడిస్తుంది — లేదా ముందుగా అడుగుతుంది, మీరు ఎంపికల్లో ప్రారంభించి ఉంటే.
+- ఫైల్‌పేరుతో డీ‑డుప్లికేట్ చేయబడుతుంది; S/MIME భాగాలు ఎప్పుడూ దాటవేయబడతాయి. ఇన్‌లైన్ చిత్రాలు డిఫాల్ట్‌గా ప్రతిస్పందన బాడీలో పునరుద్ధరించబడతాయి ("Include inline pictures" ను ఎంపికల్లో ఆఫ్ చేసి నిలిపివేయండి).
+- బ్లాక్‌లిస్ట్ చేసిన అనుబంధాలు కూడా దాటవేయబడతాయి (కేస్‑ఇన్‌సెన్సిటివ్ గ్లోబ్ ప్యాటర్న్లు ఫైల్‌పేర్లను మాత్రమే సరిపోలుస్తాయి, పాథ్‌లను కాకుండా). [కాన్ఫిగరేషన్](configuration#blacklist-glob-patterns) చూడండి.
 
 ---
 
-### Cross‑reference {#cross-reference}
+### ప్రతిస్పందనలో ఏమి జరుగుతుంది {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- ప్రతిస్పందనను గుర్తించు → అసలు అనుబంధాల జాబితా → S/MIME + ఇన్‌లైన్‌ను ఫిల్టర్ చేయి → ఐచ్చిక నిర్ధారణ → అర్హమైన ఫైళ్లను జోడించు (నకిలీలను దాటు) → ఇన్‌లైన్ చిత్రాలను బాడీలో పునరుద్ధరించు.
 
----
+కఠిన పాస్ vs. సడలించిన పాస్: యాడ్‑ఆన్ ముందుగా ఫైల్ అనుబంధాల నుంచి S/MIME మరియు ఇన్‌లైన్ భాగాలను మినహాయిస్తుంది. ఏదీ అర్హత సాధించకపోతే, ఇది ఇంకా S/MIME/ఇన్‌లైన్‌ను మినహాయిస్తూ, మరిన్ని సందర్భాలను సహించే సడలించిన పాస్‌ను నడుపుతుంది (కోడ్ వివరాలు చూడండి). ఇన్‌లైన్ చిత్రాలను ఎప్పుడూ ఫైల్ అనుబంధాలుగా జోడించరు; బదులుగా, "Include inline pictures" ప్రారంభించబడినప్పుడు (డిఫాల్ట్), అవి నేరుగా ప్రతిస్పందన బాడీలో base64 డేటా URIలుగా ఎంబెడ్ చేయబడతాయి.
 
-## Behavior Details {#behavior-details}
+| భాగం రకం                                               |                                     కఠిన పాస్ |                                 సడలించిన పాస్ |
+| ------------------------------------------------------ | --------------------------------------------: | --------------------------------------------: |
+| S/MIME సంతకం ఫైల్ `smime.p7s`                          |                                 తప్పించబడింది |                                 తప్పించబడింది |
+| S/MIME MIME రకాలు (`application/pkcs7-*`)              |                                 తప్పించబడింది |                                 తప్పించబడింది |
+| కంటెంట్‑ID ద్వారా సూచించిన ఇన్‌లైన్ చిత్రం (`image/*`) | తప్పించబడింది (బాడీలో పునరుద్ధరించబడుతుంది\*) | తప్పించబడింది (బాడీలో పునరుద్ధరించబడుతుంది\*) |
+| ఫైల్‌పేరుతో కూడిన జతచేయబడిన ఇమెయిల్ (`message/rfc822`) |                                    జోడించబడదు |                                   జోడించవచ్చు |
+| ఫైల్‌పేరుతో ఉన్న సాధారణ ఫైల్ అనుబంధం                   |                                   జోడించవచ్చు |                                   జోడించవచ్చు |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* "Include inline pictures" ప్రారంభించబడినప్పుడు (డిఫాల్ట్: ON), ఇన్‌లైన్ చిత్రాలు ఫైల్ అనుబంధాలుగా జోడించబడటానికి బదులుగా ప్రతిస్పందన బాడీలో base64 డేటా URIలుగా ఎంబెడ్ చేయబడతాయి. [కాన్ఫిగరేషన్](configuration#include-inline-pictures) చూడండి.
+
+ఉదాహరణ: కొన్ని అనుబంధాలకు కొన్ని హెడ్డర్‌లు లేకపోయినా అవి ఇంకా సాధారణ ఫైళ్లే (ఇన్‌లైన్/S/MIME కాదు). కఠిన పాస్ ఏదీ కనుగొనలేకపోతే, సడలించిన పాస్ వాటిని అంగీకరించి జోడించవచ్చు.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### క్రాస్‑రిఫరెన్స్ {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- రూపకల్పన ప్రకారం ఫార్వర్డ్ మార్చబడదు (క్రింద పరిమితులు చూడండి).
+- ఒక అనుబంధం ఎందుకు జోడించబడకపోవచ్చో తెలుసుకోవడానికి “అనుబంధాలు ఎందుకు జోడించబడకపోవచ్చు” చూడండి.
 
 ---
 
-## Limitations {#limitations}
+## ప్రవర్తన వివరాలు {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **డూప్లికేట్ నిరోధం:** యాడ్‑ఆన్ ప్రతి ట్యాబ్ సెషన్ విలువ మరియు ఇన్‑మెమరీ గార్డ్ ఉపయోగించి కంపోజ్ ట్యాబ్‌ను ప్రాసెస్ అయినట్లు గుర్తిస్తుంది. ఇది అసలైనవాటిని రెండుసార్లు జోడించదు.
+- కంపోజ్ విండోను మూసి మళ్లీ తెరవడాన్ని కొత్త ట్యాబ్‌గా పరిగణిస్తారు (అంటే, కొత్త ప్రయత్నం అనుమతించబడుతుంది).
+- **ఉన్న అనుబంధాలకు గౌరవం:** కంపోజ్‌లో ఇప్పటికే కొన్ని అనుబంధాలు ఉన్నా, అసలైనవాటిని ఒకసారి మాత్రమే జోడిస్తుంది; ఇప్పటికే ఉన్న ఫైల్‌పేర్లను దాటవేస్తుంది.
+- **మినహాయింపులు:** S/MIME ఆర్టిఫాక్ట్‌లు మరియు ఇన్‌లైన్ చిత్రాలు ఫైల్ అనుబంధాల నుంచి మినహాయించబడతాయి. మొదటి పాస్‌లో ఏదీ అర్హత పొందనప్పుడు, సడలించిన ఫాల్‌బ్యాక్ non‑S/MIME భాగాలను మళ్లీ చెక్ చేస్తుంది. ఇన్‌లైన్ చిత్రాలను వేరుగా నిర్వహిస్తారు: అవి (సెటింగ్ ప్రారంభించబడినప్పుడు) ప్రతిస్పందన బాడీలో డేటా URIలుగా పునరుద్ధరించబడతాయి.
+  - **ఫైల్‌పేర్లు:** `smime.p7s`
+  - **MIME రకాలు:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **ఇన్‌లైన్ చిత్రాలు:** Content‑ID ద్వారా సూచించబడిన ఏదైనా `image/*` భాగం — ఫైల్ అనుబంధాల నుంచి మినహాయించబడుతుంది కానీ "Include inline pictures" ON అయినప్పుడు ప్రతిస్పందన బాడీలో ఎంబెడ్ చేయబడుతుంది
+  - **జతచేయబడిన ఇమెయిల్లు (`message/rfc822`):** ఫైల్‌పేరు ఉంటే సాధారణ అనుబంధాలుగా పరిగణిస్తారు; అవి జోడించవచ్చు (డూప్లికేట్ చెక్స్ మరియు బ్లాక్‌లిస్ట్ వర్తిస్తుంది).
+- **బ్లాక్‌లిస్ట్ హెచ్చరిక (ప్రారంభించబడితే):** మీ బ్లాక్‌లిస్ట్ కారణంగా అభ్యర్థులు మినహాయించబడినప్పుడు,
+  యాడ్‑ఆన్ ప్రభావిత ఫైళ్లను మరియు సరిపోలిన ప్యాటర్న్(లు)ను చూపించే చిన్న మోడల్‌ను చూపిస్తుంది.
+  ప్రతిదీ మినహాయించబడిన కారణంగా ఏ అనుబంధాలూ
+  జోడించబడని సందర్భాల్లో కూడా ఈ హెచ్చరిక కనిపిస్తుంది.
 
 ---
 
-See also
+## కీబోర్డ్ షార్ట్‌కట్లు {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- నిర్ధారణ డైలాగ్: Y/J = అవును, N/Esc = కాదు; Tab/Shift+Tab మరియు Arrow కీలు ఫోకస్‌ను సైకిల్ చేస్తాయి.
+  - [కాన్ఫిగరేషన్](configuration#confirmation) లోని “Default answer” ప్రారంభంలో ఫోకస్ అయ్యే బటన్‌ను సెట్ చేస్తుంది.
+  - Enter ఫోకస్ చేసిన బటన్‌ను ట్రిగర్ చేస్తుంది. Tab/Shift+Tab మరియు బాణం కీలు యాక్సెసిబిలిటీ కోసం ఫోకస్‌ను కదిలిస్తాయి.
+
+### కీబోర్డ్ చీట్ షīt {#keyboard-cheat-sheet}
+
+| కీలు             | చర్య                                              |
+| ---------------- | ------------------------------------------------- |
+| Y / J            | అవును అని నిర్ధారించు                             |
+| N / Esc          | కాదు అని నిర్ధారించు                              |
+| Enter            | ఫోకస్ చేసిన బటన్‌ను యాక్టివేట్ చేయి               |
+| Tab / Shift+Tab  | ఫోకస్‌ను ముందుకు/వెనుకకు కదిలించు                 |
+| బాణం కీలు        | బటన్ల మధ్య ఫోకస్ కదిలించు                         |
+| డీఫాల్ట్ సమాధానం | ప్రారంభ ఫోకస్‌ను సెట్ చేస్తుంది (అవును లేదా కాదు) |
+
+---
+
+## పరిమితులు {#limitations}
+
+- ఈ యాడ్‑ఆన్ ఫార్వర్డ్‌ను మార్చదు (Reply మరియు Reply all మద్దతిస్తుంది).
+- చాలా పెద్ద అనుబంధాలు Thunderbird లేదా ప్రొవైడర్ పరిమితులకు లోబడి ఉండవచ్చు.
+  - యాడ్‑ఆన్ ఫైళ్లను భాగాలుగా చేయదు లేదా కాంప్రెస్ చేయదు; ఇది Thunderbird యొక్క సాధారణ అనుబంధ నిర్వహణపైనే ఆధారపడుతుంది.
+- సంకేతీకరించిన సందేశాలు: S/MIME భాగాలు ఉద్దేశపూర్వకంగా మినహాయించబడతాయి.
+
+---
+
+## అనుబంధాలు ఎందుకు జోడించబడకపోవచ్చు {#why-attachments-might-not-be-added}
+
+- ఇన్‌లైన్ చిత్రాలు ఫైల్ అనుబంధాలుగా జోడించబడవు. "Include inline pictures" ON (డిఫాల్ట్) ఉన్నప్పుడు, అవి బదులుగా ప్రతిస్పందన బాడీలో డేటా URIలుగా ఎంబెడ్ చేయబడతాయి. సెటింగ్ OFF అయితే, ఇన్‌లైన్ చిత్రాలు పూర్తిగా తీసివేయబడతాయి. [కాన్ఫిగరేషన్](configuration#include-inline-pictures) చూడండి.
+- S/MIME సంతకం భాగాలు రూపకల్పన ప్రకారం మినహాయించబడతాయి: `smime.p7s` వంటి ఫైల్‌పేర్లు మరియు `application/pkcs7-signature` లేదా `application/pkcs7-mime` వంటి MIME రకాలు దాటవేయబడతాయి.
+- బ్లాక్‌లిస్ట్ ప్యాటర్న్లు అభ్యర్థులను ఫిల్టర్ చేయగలవు: [కాన్ఫిగరేషన్](configuration#blacklist-glob-patterns) చూడండి; సరిపోలిక కేస్‑ఇన్‌సెన్సిటివ్ మరియు ఫైల్‌పేరు‑ప్రధానమైనది.
+- డూప్లికేట్ ఫైల్‌పేర్లు మళ్లీ జోడించబడవు: అదే సాధారణీకృత పేరుగల ఫైల్ ఇప్పటికే కంపోజ్‌లో ఉంటే, అది దాటవేయబడుతుంది.
+- ఫైల్ కాని భాగాలు లేదా లేని ఫైల్‌పేర్లు: ఉపయోగించగల ఫైల్‌పేర్లున్న ఫైల్‑లా భాగాలనే జోడించడానికి పరిగణిస్తారు.
+
+---
+
+ఇవీ కూడా చూడండి
+
+- [కాన్ఫిగరేషన్](configuration)

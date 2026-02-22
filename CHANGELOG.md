@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.3.2] - 2026-02-19
+
+- Feature: "Include inline pictures" now embeds images directly in the reply body as base64 data URIs instead of adding them as file attachments. This preserves the original inline layout so recipients see images exactly where they appeared in the original message. Supports Thunderbird's internal `imap://` and `mailbox://` URL schemes as well as standard `cid:` references. Default: ON.
+- Code quality: Extracted shared `shared_link_opener.js` utility to eliminate duplicate `openHref()` logic across four link handler files (-82 LOC).
+- Code quality: Added JSDoc annotations to 10 key functions in `background.js`.
+- Tests: Added 91 new tests covering link handlers, composition.js branches, and background.js branches.
+- Coverage: Raised branch coverage from 76.5% to 81.5%, with `composition.js` branches 69% → 87.5% and `background.js` branches 71% → 84.4%.
+- i18n: Added `uiIncludeInlineLabel` translation across all 100+ supported locales.
+
 ## [2.3.1] - 2025-10-20
 
 - Attachments: Trigger an ensure pass as soon as compose content wakes the background page and reprocess tabs on bootstrap so attachments remain in place even after Thunderbird idles the event page.

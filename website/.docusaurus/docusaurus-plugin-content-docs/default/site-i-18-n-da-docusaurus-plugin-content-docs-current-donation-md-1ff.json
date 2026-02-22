@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Doner",
-  "description": "Doner",
+  "title": "Donér",
+  "description": "---",
   "source": "@site/i18n/da/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Doner",
-    "sidebar_label": "Doner"
+    "title": "Donér",
+    "sidebar_label": "Donér"
   },
   "sidebar": "docs",
   "previous": {

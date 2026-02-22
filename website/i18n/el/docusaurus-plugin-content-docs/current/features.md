@@ -4,31 +4,40 @@ title: 'Χαρακτηριστικά'
 sidebar_label: 'Χαρακτηριστικά'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Χαρακτηριστικά {#features}
 
-## How It Works {#how-it-works}
+- Επισυνάπτει αυτόματα αρχεία από το αρχικό email κατά την απάντηση.
+- Ρυθμιζόμενη συμπεριφορά: τα συνημμένα μπορούν να
+  - προστίθενται αυτόματα, ή
+  - προστίθενται μόνο μετά από επιβεβαίωση (ένα μικρό, προσβάσιμο παράθυρο διαλόγου). Στις Επιλογές
+    μπορείτε να ενεργοποιήσετε την επιβεβαίωση και να επιλέξετε την προεπιλεγμένη απάντηση (Ναι/Όχι).
+- Λίστα αποκλεισμού ονομάτων αρχείων (μοτίβα glob) αποτρέπει συγκεκριμένα αρχεία από το να
+  επισυνάπτονται αυτόματα. Παραδείγματα: `*intern*`, `*secret*`, `*passwor*`.
+  Η αντιστοίχιση δεν είναι ευαίσθητη σε πεζά/κεφαλαία και ελέγχει μόνο το όνομα αρχείου· δώστε ένα μοτίβο
+  ανά γραμμή στις Επιλογές.
+- Προειδοποίηση λίστας αποκλεισμού (προαιρετική, ενεργοποιημένη εξ ορισμού): όταν αρχεία αποκλείονται από τη
+  λίστα αποκλεισμού σας, ένα μικρό αναδυόμενο παράθυρο (modal) παραθέτει το αρχείο και τα μοτίβα που ταιριάζουν. Φιλικό προς τη
+  σκοτεινή λειτουργία και προσβάσιμο από πληκτρολόγιο (Enter/Esc για κλείσιμο).
+- Λειτουργεί με την Απάντηση και την Απάντηση σε όλους. Η Προώθηση δεν τροποποιείται από αυτό το πρόσθετο.
+- Προσθέτει τα αρχικά ακόμη κι αν έχετε ήδη επισυνάψει κάτι μόνοι σας· αποφεύγει τα διπλότυπα βάσει ονόματος αρχείου.
+- Προστασία διπλοεγγραφών ανά καρτέλα αποτρέπει τη διπλή προσθήκη στην ίδια καρτέλα σύνταξης.
+- Παραλείπει από προεπιλογή τα πιστοποιητικά S/MIME για να αποφύγει περιττά συνημμένα.
+- Συμπεριλαμβάνει ενσωματωμένες εικόνες (προεπιλογή: ON). Οι ενσωματωμένες εικόνες αποκαθίστανται απευθείας στο
+  σώμα της απάντησης ως URI δεδομένων base64, διατηρώντας την αρχική ενσωματωμένη διάταξη. Απενεργοποιήστε στις
+  Επιλογές για να παραλείψετε πλήρως τις ενσωματωμένες εικόνες.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Πώς λειτουργεί {#how-it-works}
+
+- Κατά την απάντηση, το πρόσθετο απαριθμεί τα αρχικά συνημμένα.
+- Φιλτράρει τις υπογραφές S/MIME από τα συνημμένα αρχεία· οι ενσωματωμένες εικόνες αποκαθίστανται στο σώμα (εκτός αν έχει απενεργοποιηθεί).
+- Προαιρετικά ζητά επιβεβαίωση (φιλικό στο πληκτρολόγιο).
+- Προσθέτει τα κατάλληλα αρχεία στο παράθυρο σύνταξης, αποφεύγοντας διπλότυπα βάσει ονόματος αρχείου.
+- Δείτε το “Γιατί ενδέχεται να μην προστεθούν συνημμένα” στη Χρήση για ακραίες περιπτώσεις.
+
+Σημείωση απορρήτου: Όλη η επεξεργασία γίνεται τοπικά στο Thunderbird. Το πρόσθετο δεν πραγματοποιεί αιτήματα δικτύου στο παρασκήνιο.
+
+---

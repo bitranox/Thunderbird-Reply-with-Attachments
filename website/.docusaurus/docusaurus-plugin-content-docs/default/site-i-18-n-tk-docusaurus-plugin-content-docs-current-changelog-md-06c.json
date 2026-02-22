@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Arhiw",
-  "description": "Changelog",
+  "title": "Üýtgeşmeler gündeligi",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Arhiw"
+    "title": "Üýtgeşmeler gündeligi"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Таҳлилҳо",
-  "description": "Таҳлилҳо",
+  "title": "Рӯйхати тағйирот",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Таҳлилҳо"
+    "title": "Рӯйхати тағйирот"
   },
   "sidebar": "docs",
   "previous": {

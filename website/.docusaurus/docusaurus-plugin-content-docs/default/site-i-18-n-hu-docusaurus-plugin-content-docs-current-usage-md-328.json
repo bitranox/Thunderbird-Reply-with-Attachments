@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Használat",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",

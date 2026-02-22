@@ -1,7 +1,7 @@
 {
   "id": "privacy",
   "title": "Datenschutz",
-  "description": "Datenschutz",
+  "description": "---",
   "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/privacy.md",
   "sourceDirName": ".",
   "slug": "/privacy",

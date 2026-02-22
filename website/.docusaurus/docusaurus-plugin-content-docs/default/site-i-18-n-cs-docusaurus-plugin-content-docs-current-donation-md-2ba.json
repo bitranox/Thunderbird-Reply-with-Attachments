@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Darujte",
-  "description": "Donate",
+  "title": "Přispět",
+  "description": "---",
   "source": "@site/i18n/cs/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Darujte",
-    "sidebar_label": "Darujte"
+    "title": "Přispět",
+    "sidebar_label": "Přispět"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "ସାମଞ୍ଜସ୍ୟତା",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "compatibility",
     "title": "ସାମଞ୍ଜସ୍ୟତା",
-    "sidebar_label": "ସାମଞ୍ଜସ୍ୟତା"
+    "sidebar_label": "ସୁସଂଗତତା"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Khởi đầu nhanh'
-sidebar_label: 'Khởi đầu nhanh'
+title: 'Bắt đầu nhanh'
+sidebar_label: 'Bắt đầu nhanh'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Bắt đầu nhanh
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Phiên bản Thunderbird tối thiểu
+Tiện ích bổ sung này hỗ trợ Thunderbird **128 ESR hoặc mới hơn**. Các phiên bản cũ hơn không được hỗ trợ.
+:::
+
+:::note Không thu thập telemetry; không có mạng nền
+Tiện ích bổ sung **không** thu thập phân tích/telemetry và **không** thực hiện yêu cầu mạng nền. Truy cập mạng chỉ diễn ra khi bạn bấm các liên kết bên ngoài (Docs, GitHub, Donate).
+:::
+
+---
+
+### Cài đặt
+
+1. Cài đặt tiện ích bổ sung từ Thunderbird Add‑ons.
+2. Tùy chọn: Bật xác nhận (Tùy chọn → “Hỏi trước khi thêm tệp đính kèm”).
+3. Tùy chọn: Giữ bật cảnh báo danh sách đen (mặc định): “Cảnh báo nếu tệp đính kèm bị loại trừ bởi danh sách đen”.
+4. Tùy chọn: Thêm các mẫu danh sách đen (mỗi dòng một mẫu), ví dụ:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Lưu ý: “# …” ở trên là chú thích trong tài liệu này; đừng đưa chú thích vào các mẫu bạn dán trong Tùy chọn. Chỉ nhập mỗi dòng một mẫu.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Bây giờ hãy trả lời một thư có tệp đính kèm — bản gốc sẽ được thêm tự động hoặc sau khi bạn xác nhận nhanh. Nếu có tệp nào bị loại trừ bởi danh sách đen của bạn, bạn sẽ thấy một cảnh báo ngắn liệt kê chúng.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Kiểm tra {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Trả lời một thư có 1–2 tệp đính kèm và xác nhận rằng các bản gốc được thêm vào cửa sổ soạn thảo.
+- Để điều chỉnh hành vi, xem [Cấu hình](configuration) (bật/tắt xác nhận, câu trả lời mặc định, mẫu danh sách đen).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Kiểm tra cảnh báo danh sách đen {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Trả lời một thư có tệp như “secret.txt”.
+- Khi “Cảnh báo nếu tệp đính kèm bị loại trừ bởi danh sách đen” được bật, một hộp thoại nhỏ sẽ liệt kê các tệp bị loại trừ và mẫu khớp.
+
+Nếu bạn không thấy cảnh báo, hãy đảm bảo mẫu khớp chính xác với tên tệp (chỉ tên tệp, không phân biệt hoa/thường). Xem Cấu hình → Danh sách đen.
+
+---
+
+### Ghi chú về bàn phím {#keyboard-note}
+
+- Hộp thoại xác nhận hỗ trợ Y/J cho Yes và N/Esc cho No. Trên một số bàn phím không dùng chữ Latin, các phím chữ có thể khác; Enter xác nhận nút đang được chọn.
 
 ---

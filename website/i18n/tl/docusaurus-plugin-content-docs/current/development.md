@@ -1,297 +1,299 @@
 ---
 id: development
 title: 'Pag-unlad'
-sidebar_label: 'Pag-unlad'
+sidebar_label: 'Pagpapaunlad'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Gabay sa Pag-develop {#development-guide}
+
+:::note I-edit ang English lang; kusang kumakalat ang mga salin
+I-update ang dokumentasyon **tanging** sa ilalim ng `website/docs` (English). Ang mga salin sa ilalim ng `website/i18n/<locale>/…` ay awtomatikong ginagawa at hindi dapat mano-manong i-edit. Gamitin ang mga gawain sa pagsasalin (hal., `make translate_web_docs_batch`) para i-refresh ang lokalisadong nilalaman.
 :::
 
-### Prerequisites {#prerequisites}
+### Mga Kinakailangan {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ at npm (nasubukan sa Node 22)
+- Thunderbird 128 ESR o mas bago (para sa manual na pag-test)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Istruktura ng Proyekto (high‑level) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: packaging script `distribution_zip_packer.sh`, docs, mga screenshot
+- `sources/`: pangunahing code ng add-on (background, options/popup UI, manifests, icons)
+- `tests/`: suite ng Vitest
+- `website/`: mga docs ng Docusaurus (na may i18n sa ilalim ng `website/i18n/de/...`)
+
+---
+
+### Pag-install at mga Tool {#install-and-tooling}
+
+- I-install ang mga dependency sa root: `npm ci`
+- Docs (opsyonal): `cd website && npm ci`
+- Tuklasin ang mga target: `make help`
 
 ---
 
 ### Live Dev (web‑ext run) {#live-dev-web-ext}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Mabilis na loop sa Firefox Desktop (UI smoke‑tests lang):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Patakbuhin sa Thunderbird (inirerekomenda para sa MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Mga tip:
+- Panatilihing bukas ang Error Console ng Thunderbird (Tools → Developer Tools → Error Console).
+- Ang MV3 event pages ay nasususpinde kapag idle; i-reload ang add‑on pagkatapos ng pagbabago sa code, o hayaan ang web‑ext na mag-auto‑reload.
+- May ilang pagkakaibang pang-Firefox lang; laging i-verify sa Thunderbird para sa API parity.
+- Mga path ng Thunderbird binary (mga halimbawa):
+- Linux: `thunderbird` (hal., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Paghiwalay ng profile: Gumamit ng hiwalay na Thunderbird profile para sa development upang maiwasang maapektuhan ang iyong araw‑araw na setup.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Mga Target ng Make (Alpabetikal) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Istandardisa ng Makefile ang mga karaniwang daloy ng dev. Patakbuhin ang `make help` anumang oras para sa isang one‑line na buod ng bawat target.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tip: ang pagpapatakbo ng `make` nang walang target ay magbubukas ng simpleng Whiptail menu para pumili ng target.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Isang linyang deskripsyon                                                                            |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Alisin ang lokal na build/preview artifacts (tmp/, web-local-preview/, website/build/).              |
+| [`commit`](#mt-commit)                                   | I-format, patakbuhin ang mga test (kasama ang i18n), i-update ang changelog, mag-commit at mag-push. |
+| [`eslint`](#mt-eslint)                                   | Patakbuhin ang ESLint via flat config (`npm run -s lint:eslint`).                                    |
+| [`help`](#mt-help)                                       | Ilista ang lahat ng target na may one‑line na docs (nakaayos).                                       |
+| [`lint`](#mt-lint)                                       | web‑ext lint sa `sources/` (pansamantalang manifest; hindi pinapansin ang mga ZIP; hindi fatal).     |
+| [`menu`](#mt-menu)                                       | Interaktibong menu para pumili ng target at opsyonal na argumento.                                   |
+| [`pack`](#mt-pack)                                       | Bumuo ng ATN at LOCAL ZIPs (pinapatakbo ang linter; tinatawag ang packer script).                    |
+| [`prettier`](#mt-prettier)                               | I-format ang repository in place (nagsusulat ng mga pagbabago).                                      |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier sa check mode (walang isinusulat); babagsak kung kailangan ng reformat.                     |
+| [`prettier_write`](#mt-prettier_write)                   | Alias para sa `prettier`.                                                                            |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, saka Vitest (coverage kung naka-configure).                                |
+| [`test_i18n`](#mt-test_i18n)                             | Mga test na pang‑i18n lang: placeholders/parity ng add‑on + parity ng website.                       |
+| [`translate_app`](#mt-translation-app)                   | Alias para sa `translation_app`.                                                                     |
+| [`translation_app`](#mt-translation-app)                 | Isalin ang mga string ng UI ng app mula sa `sources/_locales/en/messages.json`.                      |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Isalin ang mga docs ng website sa pamamagitan ng OpenAI Batch API (inirerekomenda).                  |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Isalin ang mga docs ng website nang sabay‑sabay (legacy, hindi batch).                               |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias para sa `translation_web_index`.                                                               |
+| [`translation_web_index`](#mt-translation_web_index)     | Isalin ang UI ng homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`).        |
+| [`web_build`](#mt-web_build)                             | I-build ang docs sa `website/build` (sumusuporta sa `--locales` / `BUILD_LOCALES`).                  |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe na link check (nilalaktawan ang remote HTTP[S]).                                        |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokal na gh‑pages preview; auto‑serve sa 8080–8090; opsyonal na tests/link‑check.                    |
+| [`web_push_github`](#mt-web_push_github)                 | I-push ang `website/build` sa sangang `gh-pages`.                                                    |
 
-Syntax for options
+Syntax para sa mga opsyon
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Gamitin ang `make <command> OPTS="…"` para ipasa ang mga opsyon (inirerekomenda ang quotes). Ipinapakita ng bawat target sa ibaba ang halimbawang paggamit.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Mga tip sa build ng locale {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
+- Bumuo ng subset ng mga locale: itakda ang `BUILD_LOCALES="en de"` o ipasa ang `OPTS="--locales en,de"` sa mga web target.
+- I-preview ang isang partikular na locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Build & Package {#build-and-package}
+### Pag-build at Pag-package {#build-and-package}
 
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Bumuo ng mga ZIP: `make pack`
+- Gumagawa ng ATN at LOCAL ZIPs sa repo root (huwag mano-manong i-edit ang mga artifact)
+- Tip: i-update ang bersyon sa parehong `sources/manifest_ATN.json` at `sources/manifest_LOCAL.json` bago mag-package
+- Manual na pag-install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → piliin ang na-build na ZIP
 
 ---
 
 ### Test {#test}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Buong suite: `make test` (Vitest)
+- Coverage (opsyonal):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Patakbuhin ang `make test`; buksan ang `coverage/index.html` para sa HTML report
+- i18n lang: `make test_i18n` (mga UI key/placeholders/titles + parity ng website per‑locale per‑doc na may id/title/sidebar_label checks)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Pag-debug at Mga Log {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
+- I-toggle ang verbose logs sa runtime:
 - Enable: `messenger.storage.local.set({ debug: true })`
 - Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Lumilitaw ang mga log habang gumagawa/nagpapadala ng mga reply
 
 ---
 
 ### Docs (website) {#docs-website}
 
 - Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- I-build ang static site: `cd website && npm run build`
+- Mga katumbas sa Make (alpabetikal): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Mga halimbawa ng paggamit:
+- EN lang, laktawan ang tests/link‑check, walang push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Lahat ng locale, may tests/link‑check, tapos push: `make web_build_local_preview && make web_push_github`
+- Bago mag-publish, patakbuhin ang offline‑safe na link check: `make web_build_linkcheck`.
+- i18n: Ang English ay nasa `website/docs/*.md`; ang German na mga salin ay nasa `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Paghahanap: Kung nakatakda sa CI ang mga env var ng Algolia DocSearch (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), gagamit ang site ng Algolia search; kung hindi, lilipat ito sa lokal na search. Sa homepage, pindutin ang `/` o `Ctrl+K` para buksan ang search box.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Ruta ng pag-redirect sa Donasyon {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Ruta: `/donate` (at `/<locale>/donate`)
+- Asal:
+- Kung ang kasalukuyang ruta ay may locale (hal., `/de/donate`), gamitin ito
+- Kung hindi, pumili ng pinakamahusay na tugma mula sa `navigator.languages` kumpara sa naka-configure na mga locale; fallback sa default na locale
+- Nagre-redirect sa:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- iba pa → `/<locale>/docs/donation`
+- Ginagamit ang `useBaseUrl` para sa tamang paghawak ng baseUrl
+- Kabilang ang meta refresh + link na `noscript` bilang fallback
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Mga Tip sa Preview {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Itigil nang malinis ang Node preview: buksan ang `http://localhost:<port>/__stop` (napi-print pagkatapos ng `Local server started`).
+- Kung hindi naglo-load ang mga larawan sa MDX/JSX, gamitin ang `useBaseUrl('/img/...')` para igalang ang site na `baseUrl`.
+- Ang preview ang nauuna; ang link check ay tatakbo pagkatapos at hindi nakahahadlang (ang sirang panlabas na mga link ay hindi pipigil sa preview).
+- Halimbawang preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (napi-print pagkatapos ng “Local server started”).
+- Mga panlabas na link sa link‑check: May ilang panlabas na site (hal., addons.thunderbird.net) na humaharang sa automated crawlers at maaaring magpakita ng 403 sa link checks. Magpapatuloy pa rin ang preview; ligtas na balewalain ang mga ito.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Isalin ang Website {#translate-website}
 
-What you can translate
+Ano ang maaari mong isalin
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Website UI lang: homepage, navbar, footer, at iba pang mga UI string. Mananatiling English‑only muna ang nilalaman ng Docs.
 
-Where to edit
+Saan mag-e-edit
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- I-edit ang `website/i18n/<locale>/code.json` (gamitin ang `en` bilang sanggunian). Panatilihing hindi nababago ang mga placeholder gaya ng `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Gumawa o i-refresh ang mga file
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Gumawa ng mga nawawalang stub para sa lahat ng locale: `npm --prefix website run i18n:stubs`
+- I-overwrite ang mga stub mula English (pagkatapos magdagdag ng mga bagong string): `npm --prefix website run i18n:stubs:force`
+- Alternatibo para sa isang locale lang: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Isalin ang mga string ng UI ng homepage/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Itakda ang mga kredensyal minsan (shell o .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Opsyonal: `export OPENAI_MODEL=gpt-4o-mini`
+- Isang pasada (lahat ng locale, laktawan ang en): `make translate_web_index`
+- Limitahan sa partikular na mga locale: `make translate_web_index OPTS="--locales de,fr"`
+- I-overwrite ang mga umiiral na value: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Pag-validate at mga retry
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Sina-validate ng translation script ang hugis ng JSON, pinapanatili ang mga curly‑brace placeholder, at tinitiyak na hindi nagbabago ang mga URL.
+- Kapag nabigo ang validation, nagre-retry ito na may feedback hanggang 2 beses bago panatilihin ang umiiral na mga value.
 
-Preview your locale
+I-preview ang iyong locale
 
 - Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Bisitahin ang `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Pagsusumite
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Magbukas ng PR na may na-edit na file(s) na `code.json`. Panatilihing nakatuon ang mga pagbabago at magdagdag ng mabilis na screenshot kung maaari.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Mga Tip sa Seguridad at Konfigurasyon {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Huwag i-commit ang `sources/manifest.json` (pansamantalang ginagawa ng build)
+- Panatilihing stable ang `browser_specific_settings.gecko.id` upang mapanatili ang update channel
+
+---
+
+### Pagpapanatili ng Mga Setting {#settings-persistence}
+
+- Storage: Nasa `storage.local` ang lahat ng user settings at nananatili sa mga update ng add‑on.
+- Install: Ina-apply lang ang mga default kapag ang isang key ay talagang wala (undefined).
+- Update: Pinupunan lang ng migration ang mga nawawalang key; ang umiiral na mga value ay hindi kailanman overwriten.
+- Schema marker: `settingsVersion` (kasalukuyang `1`).
+- Mga key at default:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Code: tingnan ang `sources/background.js` → `initializeOrMigrateSettings()` at `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Daloy ng dev (pagdaragdag ng bagong setting)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- I-bump ang `SCHEMA_VERSION` sa `sources/background.js`.
+- Idagdag ang bagong key + default sa object na `DEFAULTS` sa `initializeOrMigrateSettings()`.
+- Gamitin ang patakarang "only-if-undefined" kapag nagse-seed ng mga default; huwag i-overwrite ang umiiral na mga value.
+- Kung user‑visible ang setting, i-wire ito sa `sources/options.js` at magdagdag ng mga lokalisadong string.
+- Magdagdag/magbago ng mga test (tingnan ang `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Mga tip sa manu-manong pag-test
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- I-simulate ang fresh install: i-clear ang data dir ng extension o magsimula sa bagong profile.
+- I-simulate ang update: itakda ang `settingsVersion` sa `0` sa `storage.local` at i-reload; tiyaking nananatiling hindi nagbabago ang umiiral na mga value at tanging mga nawawalang key lang ang idinadagdag.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Pag-troubleshoot {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Tiyaking 128 ESR o mas bago ang Thunderbird
+- Gamitin ang Error Console para sa mga isyu sa runtime
+- Kung tila hindi maayos na naia-apply ang mga naimbak na setting, i-restart ang Thunderbird at subukan muli. (Maaaring mag-cache ang Thunderbird ng state sa mga session; tinitiyak ng restart na sariwang mga setting ang naloload.)
 
 ---
 
-### Translations
+### CI at Coverage {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- Ang GitHub Actions (`CI — Tests`) ay nagpapatakbo ng vitest na may coverage thresholds (85% lines/functions/branches/statements). Kung hindi naabot ang mga threshold, babagsak ang job.
+- Nag-u-upload ang workflow ng artifact na `coverage-html` na may HTML report; i-download ito mula sa run page (Actions → latest run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Pag-ambag {#contributing}
 
-Screenshots for docs
+- Tingnan ang CONTRIBUTING.md para sa mga patnubay sa branch/commit/PR
+- Tip: Gumawa ng hiwalay na Thunderbird development profile para sa pag-test upang maiwasang maapektuhan ang iyong daily profile.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Mga Pagsasalin
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Ang pagpapatakbo ng malalaking “all → all” na translation jobs ay maaaring mabagal at magastos. Magsimula sa subset (hal., ilang docs at 1–2 locale), suriin ang resulta, saka palawakin.
+
+---
+
+- Patakaran sa retry: ang mga translation job ay gumagawa ng hanggang 3 retry na may exponential backoff sa mga error ng API; tingnan ang `scripts/translate_web_docs_batch.js` at `scripts/translate_web_docs_sync.js`.
+
+Mga screenshot para sa docs
+
+- Iimbak ang mga imahe sa ilalim ng `website/static/img/`.
+- I-refer ang mga ito sa MD/MDX sa pamamagitan ng `useBaseUrl('/img/<filename>')` para gumana ang mga path sa site na `baseUrl`.
+- Pagkatapos magdagdag o mag-rename ng mga imahe sa ilalim ng `website/static/img/`, tiyaking lahat ng references ay gumagamit pa rin ng `useBaseUrl('/img/…')` at nagre-render sa lokal na preview.
+  Mga favicon
+
+- Ang multi‑size na `favicon.ico` ay awtomatikong ginagawa sa lahat ng build path (Make + scripts) sa pamamagitan ng `website/scripts/build-favicon.mjs`.
+- Walang kailangang manual na hakbang; sapat na ang pag-update ng `icon-*.png`.
+  Tip sa pagrebisa
+
+- Panatilihing hindi nababago ang front‑matter na `id` sa mga isinaling docs; isalin lamang ang `title` at `sidebar_label` kapag naroroon.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Layunin: alisin ang lokal na build/preview artifacts.
+- Paggamit: `make clean`
+- Inaalis (kung naroroon):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Layunin: i-format, i-test, i-update ang changelog, mag-commit, at mag-push.
+- Paggamit: `make commit`
+- Mga detalye: nagpapatakbo ng Prettier (write), `make test`, `make test_i18n`; nagdadagdag sa changelog kapag may staged diffs; nagpu-push sa `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Layunin: patakbuhin ang ESLint via flat config.
+- Paggamit: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Layunin: ilista ang lahat ng target na may one‑line na docs.
+- Paggamit: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Layunin: i-lint ang MailExtension gamit ang `web-ext`.
+- Paggamit: `make lint`
+- Tala: pansamantalang kinokopya ang `sources/manifest_LOCAL.json` → `sources/manifest.json`; hindi isinasama ang mga na-build na ZIP; ang mga babala ay hindi nagpapabagsak ng pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Layunin: interaktibong menu para pumili ng Make target at opsyonal na argumento.
+- Paggamit: patakbuhin ang `make` nang walang argumento.
+- Tala: kung hindi available ang `whiptail`, babagsak ang menu sa `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Layunin: bumuo ng ATN at LOCAL ZIPs (nakadepende sa `lint`).
+- Paggamit: `make pack`
+- Tip: i-bump ang mga bersyon sa parehong `sources/manifest_*.json` bago mag-package.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Layunin: i-format ang repo in place.
+- Paggamit: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Layunin: beripikahin ang formatting (walang isinusulat).
+- Paggamit: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Layunin: alias para sa `prettier`.
+- Paggamit: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Layunin: patakbuhin ang Prettier (write), ESLint, saka Vitest (coverage kung naka-install).
+- Paggamit: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Layunin: mga test na nakatuon sa i18n para sa mga string ng add‑on at website docs.
+- Paggamit: `make test_i18n`
+- Pinapatakbo: `npm run test:i18n` at `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Layunin: isalin ang mga string ng UI ng add‑on mula EN patungo sa ibang mga locale.
+- Paggamit: `make translation_app OPTS="--locales all|de,fr"`
+- Tala: pinapanatili ang istruktura ng key at mga placeholder; nagla-log sa `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Layunin: isalin ang mga website docs mula `website/docs/*.md` tungo sa `website/i18n/<locale>/...`.
+- Inirerekomenda: `translate_web_docs_batch` (OpenAI Batch API)
+  - Paggamit (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Tinatanggap pa rin ang legacy positional: `OPTS="<doc|all> <lang|all>"`
+- Asal: bumubuo ng JSONL, nag-a-upload, nagpo-poll bawat 30s, nagda-download ng resulta, nagsusulat ng mga file.
+- Tala: maaaring umabot ng hanggang 24 na oras ang isang batch job (ayon sa batch window ng OpenAI). Ipinapakita ng console ang lumipas na oras sa bawat poll.
+- Env: `OPENAI_API_KEY` (kailangan), opsyonal ang `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - Paggamit (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Tinatanggap pa rin ang legacy positional: `OPTS="<doc|all> <lang|all>"`
+- Asal: synchronous na per‑pair na mga request (walang batch aggregation).
+- Mga tala: Interaktibong mga prompt kapag hindi ibinigay ang `OPTS`. Pinapanatili ng parehong mode ang mga code block/inline code at pinananatiling hindi nababago ang front‑matter na `id`; nagla-log sa `translation_web_batch.log` (batch) o `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Layunin: isalin ang mga string ng UI ng website (homepage, navbar, footer) mula `website/i18n/en/code.json` sa lahat ng locale sa ilalim ng `website/i18n/<locale>/code.json` (maliban sa `en`).
+- Paggamit: `make translate_web_index` o `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Mga kailangan: i-export ang `OPENAI_API_KEY` (opsyonal: `OPENAI_MODEL=gpt-4o-mini`).
+- Asal: bina-validate ang istruktura ng JSON, pinapanatili ang mga curly‑brace placeholder, pinananatiling hindi nagbabago ang mga URL, at nagre-retry na may feedback kapag may validation errors.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Layunin: i-build ang docs site sa `website/build`.
+- Paggamit: `make web_build OPTS="--locales en|de,en|all"` (o itakda ang `BUILD_LOCALES="en de"`)
+- Internal: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Mga Dep: pinapatakbo ang `npm ci` sa `website/` lamang kung nawawala ang `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Layunin: offline‑safe na link check.
+- Paggamit: `make web_build_linkcheck OPTS="--locales en|all"`
+- Tala: bina-build sa `tmp_linkcheck_web_pages`; nire-rewrite ang GH Pages `baseUrl` tungo sa `/`; nilalaktawan ang mga remote na HTTP(S) link.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Layunin: lokal na gh‑pages preview na may opsyonal na tests/link‑check.
+- Paggamit: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Asal: sinusubukan muna ang Node preview server (`scripts/preview-server.mjs`, sumusuporta sa `/__stop`), babagsak sa `python3 -m http.server`; nagsi-serve sa 8080–8090; PID sa `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Layunin: i-push ang `website/build` sa sangang `gh-pages`.
+- Paggamit: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Tip: itakda ang `NPM=…` para i-override ang package manager na ginagamit ng Makefile (default sa `npm`).

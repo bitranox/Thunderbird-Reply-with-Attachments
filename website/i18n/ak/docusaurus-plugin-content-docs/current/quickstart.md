@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ntɛmntɛm'
-sidebar_label: 'Ntɛmntɛm'
+title: 'Hyɛ ase ntɛm'
+sidebar_label: 'Fi ase ntɛm'
 ---
-
-## Ntɛmntɛm
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Mfiase ntɛmntɛm
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Thunderbird vɛɛhyɛn a ɛsɛ koraa
+Add‑on yi yɛ adwuma wɔ Thunderbird **128 ESR anaa nea ɛto so akyire** mu. Vɛɛhyɛn tete no nni mmoa.
+:::
+
+:::note Nni telemetry; nni nɛtwɛɛk wɔ ekyir
+Add‑on no nnnye analytics/telemetry, na ɛnnyɛ nɛtwɛɛk mfrɛ biara wɔ ekyir. Nɛtwɛɛk no ba so pɛ bere a wopɛnkiti lɔnkɛ a ɛwɔ abɔnten (Docs, GitHub, Donate).
+:::
+
+---
+
+### Instɔl
+
+1. Instɔl add‑on no firi Thunderbird Add‑ons.
+2. Apɛdeɛ: Hyɛ confirmation no so (Options → “Ask before adding attachments”).
+3. Apɛdeɛ: Gya blacklist kɔkɔbɔ no ahyɛ so (default): “Warn if attachments are excluded by blacklist”.
+4. Apɛdeɛ: Fa blacklist patterns ka ho (baako wɔ lain biara so), sɛ:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Kae: “# …” a ɛwɔ soro no yɛ asɛm‑nkyerɛ (comment) wɔ krataa yi mu; mfa asɛm‑nkyerɛ nnnka patterns a wode bɛtɔ Options mu. Kyerɛw pattern baako pɛ wɔ lain biara so.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Afei, bu mmuae ma asɛm a ɛwɔ attachments — originals no bɛka ho otomatikɔ anaa akyiri ntɛm‑adanseɛ kakraa akyi. Sɛ w’blacklist yi yi fayl biara gu ho a, wobɛhu kɔkɔbɔ ketewa a ɛkyerɛ wɔn.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Sɔhwɛ {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Bu mmuae ma asɛm bi a ɛwɔ attachments 1–2 na kyerɛ adanseɛ sɛ originals no aka wo compose window no mu.
+- Sɛ wopɛ sɛ wosesa ɔkwan a ɛyɛ adwuma no a, hwɛ [Nhyehyɛe](configuration) (confirmation toggle, default answer, blacklist patterns).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Sɔhwɛ blacklist kɔkɔbɔ {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Bu mmuae ma asɛm bi a ɛwɔ fayl te sɛ “secret.txt”.
+- Sɛ “Warn if attachments are excluded by blacklist” ahyɛ so a, dialog ketewa bi bɛkyerɛ fayl a woyi wɔn gu ho ne pattern a ɛtɔ no mu.
+
+Sɛ wonhu kɔkɔbɔ a, si nkɔmɔ so sɛ pattern no pɛ filename no pɛpɛɛpɛ (filename nko ara, ɛmfa kɛse/ketewa ho hwee). Hwɛ Nhyehyɛe → Blacklist.
+
+---
+
+### Kibɔɔd nkyerɛmu {#keyboard-note}
+
+- Confirmation dialog no gye Y/J di ma Yes na N/Esc ma No. Wɔ kibɔɔd bi a ɛnyɛ Latin no, akyerɛwdeɛ nsaferɛ no betumi asesa; Enter di bɔtɔnn a ɛda so no adanseɛ.
 
 ---

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kiire algus",
-  "description": "Kiire algus",
+  "title": "Kiirjuhend",
+  "description": "---",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kiire algus",
-    "sidebar_label": "Kiire algus"
+    "title": "Kiirjuhend",
+    "sidebar_label": "Kiire alustamine"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Omadused",
+    "title": "Funktsioonid",
     "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/features"
   },
   "next": {

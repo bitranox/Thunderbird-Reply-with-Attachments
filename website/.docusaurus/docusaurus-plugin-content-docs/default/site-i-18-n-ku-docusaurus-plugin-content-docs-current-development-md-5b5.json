@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Pêşkeftin",
-  "description": "Pêşkeftin Guide",
+  "title": "Pêşveçûn",
+  "description": "---",
   "source": "@site/i18n/ku/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Pêşkeftin",
+    "title": "Pêşveçûn",
     "sidebar_label": "Pêşkeftin"
   },
   "sidebar": "docs",

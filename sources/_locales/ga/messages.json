@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Tabhair rabhadh má eisiatar ceangaltáin de bharr an dubhliosta"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Cuir pictiúir inlíne san áireamh (íomhánna leabaithe)"
+  },
   "uiDebugHeader": {
     "message": "Ardroghanna"
   },

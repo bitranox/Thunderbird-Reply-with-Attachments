@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "İnkişaf",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/az/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "İnkişaf",
-    "sidebar_label": "İnkişaf"
+    "sidebar_label": "Tərtibat"
   },
   "sidebar": "docs",
   "previous": {

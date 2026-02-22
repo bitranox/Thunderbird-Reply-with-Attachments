@@ -7,10 +7,10 @@ import { describe, it, expect } from 'vitest';
 import { createBrowserMock, triggerComposeState } from './helpers/browserMock.js';
 
 describe('Composition processReplyAttachments via wiring', () => {
-  // Test: adds only eligible attachments; skips S/MIME, inline and duplicates
-  it('adds only eligible attachments; skips S/MIME, inline and duplicates', async () => {
+  // Test: adds eligible attachments; skips S/MIME, duplicates, and inline images
+  it('adds eligible attachments; skips S/MIME, duplicates, and inline images', async () => {
     const attachments = [
-      { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'cid:logo' }, // inline
+      { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'cid:logo' }, // inline — excluded
       { name: 'smime.p7s', partName: 'p2', contentType: 'application/pkcs7-signature' }, // smime
       { name: 'Report.pdf', partName: 'p3', contentType: 'application/pdf' },
       { name: 'notes.txt', partName: 'p4', contentType: 'text/plain' },
@@ -30,7 +30,7 @@ describe('Composition processReplyAttachments via wiring', () => {
 
     await triggerComposeState(browser, 11);
     await triggerComposeState(browser, 11);
-    // Should attach 2 eligible files (Report.pdf and notes.txt)
+    // Should attach 2 eligible files (Report.pdf and notes.txt); S/MIME and inline excluded
     expect(browser.compose.addAttachment).toHaveBeenCalledTimes(2);
   });
 

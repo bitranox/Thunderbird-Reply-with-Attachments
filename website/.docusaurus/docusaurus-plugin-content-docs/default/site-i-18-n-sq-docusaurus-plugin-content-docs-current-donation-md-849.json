@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Dhuroni",
-  "description": "Dhuroni",
+  "title": "Dhuro",
+  "description": "---",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Dhuroni",
-    "sidebar_label": "Dhuroni"
+    "title": "Dhuro",
+    "sidebar_label": "Dhuro"
   },
   "sidebar": "docs",
   "previous": {

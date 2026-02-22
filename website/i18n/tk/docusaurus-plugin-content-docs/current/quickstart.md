@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Başlaňç'
-sidebar_label: 'Başlaňç'
+title: 'Çalt başlangyç'
+sidebar_label: 'Tiz başlangyç'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Çalt başlamak
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Iň az Thunderbird wersiýasy
+Bu goşundy Thunderbird **128 ESR ýa-da has täzesini** goldaýar. Köne wersiýalar goldanylmaýar.
+:::
+
+:::note Telemetriýa ýok; arkaplan tor ýok
+Goşundy analitika/telemetriýa ýygnamaýar we arkaplanda tor isleglerini etmýär. Tor elýeterliligi diňe daşarky baglanyşyklara (Resminamalar, GitHub, Bagyş) basanyňyzda ýüze çykýar.
+:::
+
+---
+
+### Gurmak
+
+1. Goşundyny Thunderbird Add‑ons arkaly gurnañ.
+2. Islege görä: Tassyklamany açyň (Saýlamalar → “Goşundylary goşmazdan öň sora”).
+3. Islege görä: Gara sanaw duýduryşyny açyk ýagdaýda goýuň (deslapky): “Goşundylary gara sanawdan çykarylanda duýdur”.
+4. Islege görä: Gara sanaw şablonlaryny goşuň (her setire biri), meselem:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Bellik: Ýokardaky “# …” şu dokumentasiýada teswir bolup durýar; Saýlamalara goýýan şablonlaryňyza teswirleri goşmaň. Her setire diňe bir şablon giriziň.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Indi goşundyly habara jogap beriň — asyl faýllar awtomatiki ýa-da çalt tassyklamadan soň goşular. Gara sanawyňyz tarapyndan haýsydyr faýllar çykarylsa, olary sanap görkezýän gysga duýduryşy görersiňiz.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Barla {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- 1–2 goşundyly habara jogap beriň we asyl faýllaryň hat düzmek penjäňize goşulandygyny tassyklaň.
+- Häsiýeti sazlamak üçin [Sazlama](configuration) bölümine serediň (tassyklama aç/ýap, deslapky jogap, gara sanaw şablonlary).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Gara sanaw duýduryşyny barla {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” ýaly faýly öz içine alýan habara jogap beriň.
+- “Goşundylary gara sanawdan çykarylanda duýdur” açyk bolan ýagdaýynda, kiçi dialog çykarylan faýllary we laýyk şablony görkezýär.
+
+Eger duýduryş görünmese, şablonyň faýl adyna takyk gabat gelýändigine göz ýetiriň (diňe faýl ady, harplaryň ululygyna üns berilmeýär). Sazlama → Gara sanaw.
+
+---
+
+### Klawiatura barada bellik {#keyboard-note}
+
+- Tassyklama dialogy “Hawa” üçin Y/J we “Ýok” üçin N/Esc düwmelerini goldaýar. Käbir latyn däl klawiaturalarda harp düwmeleri üýtgäp biler; Enter ünsi jemlenen düwmäni tassyklaýar.
 
 ---

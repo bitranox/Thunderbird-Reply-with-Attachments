@@ -4,11 +4,13 @@ title: 'Doneer'
 sidebar_label: 'Doneer'
 ---
 
+---
+
 ## Doneer
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Als je "Antwoorden met Bijlagen" leuk vindt en de ontwikkeling wilt ondersteunen, kun je hier doneren:
+Als je "Reply with Attachments" waardeert en de ontwikkeling wilt steunen, kun je hier doneren:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -25,7 +27,7 @@ Als je "Antwoorden met Bijlagen" leuk vindt en de ontwikkeling wilt ondersteunen
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>of</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Koop me een koffie" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy Me a Coffee" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ Als je "Antwoorden met Bijlagen" leuk vindt en de ontwikkeling wilt ondersteunen
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan om me een koffie te kopen"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan om me op een koffie te trakteren"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Bedankt! Jouw steun helpt bij het behoud van compatibiliteit met nieuwe Thunderbird-releases, het verbeteren van toegankelijkheid en tests, en het up-to-date houden van de documentatie.
+Dank je wel! Je steun helpt compatibiliteit met nieuwe Thunderbird-versies te behouden, de toegankelijkheid en tests te verbeteren en de documentatie up-to-date te houden.
 
-Notities
+Opmerkingen
 
-- Donatielinks openen alleen wanneer je erop klikt; de add-on voert geen achtergrond netwerkverzoeken uit.
-- Terugkerende steun helpt bij de lange termijn onderhoud en tijdige updates, maar is volledig optioneel.
+- Donatielinks worden alleen geopend wanneer je erop klikt; de add‑on voert geen netwerkverzoeken op de achtergrond uit.
+- Terugkerende steun helpt bij langetermijnonderhoud en tijdige updates, maar is volledig optioneel.
 
 ---
 
-Als de afbeeldingsknoppen niet laden, gebruik dan deze links in plaats daarvan:
+Als de afbeeldingsknoppen niet laden, gebruik dan in plaats daarvan deze links:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Koop me een Koffie](https://buymeacoffee.com/bitranox)
+#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donaties zijn vrijwillig; er is geen functie-afscherming.
+Donaties zijn vrijwillig; er worden geen functies geblokkeerd.
 
 ---
 
-## Donatiezichtbaarheid (90-dagen uitstel)
+## Zichtbaarheid van donaties (90 dagen sluimeren)
 
-De add-on bevat een handige functie om donatie-aanvragen tijdelijk te verbergen nadat je hebt gedoneerd.
+De add‑on bevat een handige functie om donatieverzoeken een tijdje te verbergen nadat je hebt gedoneerd.
 
-- Waar te vinden
-  - Opties → Ondersteuningssectie: je ziet een “Ik heb gedoneerd” knop en een klein hintgebied.
-  - De Verzend-bevestiging dialoog toont ook een Doneren knop; deze verbergt zichzelf automatisch wanneer het uitstel actief is.
+- Waar je het vindt
+  - Opties → sectie Ondersteuning: je ziet een knop “Ik heb gedoneerd” en een klein hintgebied.
+  - Het dialoogvenster voor verzendbevestiging toont ook een knop “Doneer”; die wordt automatisch verborgen wanneer de sluimering actief is.
 
 - Hoe het werkt
-  - Klikken op “Ik heb gedoneerd” verbergt donatieknoppen en gerelateerde aanvragen voor 90 dagen.
-  - Een statushint toont “Verborgen tot YYYY-MM-DD” (in jouw lokale datum). Er is ook een “Toon Doneren opnieuw” knop om de zichtbaarheid onmiddellijk te herstellen.
-  - Na 90 dagen wordt de Doneren knop automatisch weer zichtbaar.
+  - Als je op “Ik heb gedoneerd” klikt, worden donatieknoppen en gerelateerde prompts 90 dagen verborgen.
+  - Een statusmelding toont “Verborgen tot YYYY‑MM‑DD” (in je lokale datum). Er is ook een knop “Doneer opnieuw tonen” om de zichtbaarheid onmiddellijk te herstellen.
+  - Na 90 dagen wordt de knop “Doneer” automatisch weer zichtbaar.
 
-- Privacy & opslag
-  - De add-on slaat een enkele tijdstempel op in de lokale opslag van Thunderbird om de uitstelperiode te onthouden. Sleutel: `donateHideUntil` (epoch milliseconden).
-  - Deze instelling is lokaal voor jouw Thunderbird-profiel (niet cloud-gesynchroniseerd). Er worden geen netwerkverzoeken gedaan door deze functie.
+- Privacy en opslag
+  - De add‑on slaat één tijdstempel op in de lokale opslag van Thunderbird om de sluimerperiode te onthouden. Sleutel: `donateHideUntil` (epoch‑milliseconden).
+  - Deze instelling is lokaal voor je Thunderbird-profiel (niet cloud‑gesynchroniseerd). Door deze functie worden geen netwerkverzoeken gedaan.
 
 - Probleemoplossing
-  - Als Doneren nog steeds verschijnt direct na het klikken op “Ik heb gedoneerd”, wacht een moment of heropen de pagina Opties; de UI werkt bij zodra de instelling is opgeslagen.
-  - Om handmatig te resetten, klik op “Toon Doneren opnieuw”. Je kunt ook wachten tot de datum die in de hint staat verstrijkt.
+  - Als “Doneer” direct na het klikken op “Ik heb gedoneerd” toch nog wordt weergegeven, wacht even of open de pagina Opties opnieuw; de UI werkt bij zodra de instelling is opgeslagen.
+  - Om handmatig te resetten, klik op “Doneer opnieuw tonen”. Je kunt ook wachten tot de datum die in de hint staat is verstreken.
 
-Deze functie is puur voor gemak; het blokkeert nooit de functionaliteit van de add-on en verzamelt geen persoonlijke gegevens.
+Deze functie is puur voor het gemak; ze blokkeert nooit de functionaliteit van de add‑on en verzamelt geen persoonlijke gegevens.
 
 ---

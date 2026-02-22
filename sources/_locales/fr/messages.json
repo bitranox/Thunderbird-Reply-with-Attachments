@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Avertir si des pièces jointes sont exclues par la liste noire"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inclure les images en ligne (images intégrées)"
+  },
   "uiDebugHeader": {
     "message": "Avancé"
   },

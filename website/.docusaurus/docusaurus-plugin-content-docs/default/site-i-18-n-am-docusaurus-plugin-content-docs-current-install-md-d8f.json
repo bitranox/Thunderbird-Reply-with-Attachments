@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "እንዴት ትግበር እንደሚቻል",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "title": "መጫን",
+  "description": "---",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "እንዴት ትግበር እንደሚቻል",
+    "title": "መጫን",
     "slug": "/install",
-    "sidebar_label": "እንዴት ትግበር እንደሚቻል"
+    "sidebar_label": "መጫን"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ምርጫ በሳምንት",
+    "title": "ፈጣን መጀመር",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/quickstart"
   },
   "next": {

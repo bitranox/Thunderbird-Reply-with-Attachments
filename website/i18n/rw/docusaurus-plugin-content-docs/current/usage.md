@@ -1,97 +1,98 @@
 ---
 id: usage
-title: 'Gukoresha'
-sidebar_label: 'Gukoresha'
+title: 'Ikoreshwa'
+sidebar_label: 'Uko ikoreshwa'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Uko ikoreshwa {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Subiza hanyuma umugereka wongeramo inyomeko z’umwimerere ku buryo bwikora — cyangwa ubanze abaze, niba byakozwe muri Amahitamo.
+- Kwirinda gusubiramo hashingiwe ku izina ry’ifayilo; ibice bya S/MIME birasimbukwa buri gihe. Amashusho yinjijwe mu mubiri (inline) asubizwa mu mubiri w’igisubizo ku buryo mburabuzi (bihagarikwe binyuze muri "Include inline pictures" muri Amahitamo).
+- Inyomeko ziri ku rutonde rwabujijwe (blacklist) na zo zirirengagizwa (imiterere ya glob idatandukanya inyuguti nkuru/nto ihuza amazina y’amafayilo, atari inzira). Reba [Igenamiterere](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Ibyibera mu gusubiza {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Kumenya ko ari igisubizo → gutondeka inyomeko z’umwimerere → gusukura S/MIME + byinjijwe (inline) → kwemeza niba bikenewe → kongeramo amafayilo akwemerwa (gusimbuka abisanze) → gusubiza amashusho yinjijwe mu mubiri.
 
----
+Kugenzura rukaze ugereranyije n’ururuhutse: Umugereka ubanza gukuramo ibice bya S/MIME n’ibyinjijwe (inline) mu nyomeko z’amafayilo. Nta na kimwe kibashije, ukora urugendo ruruhutse rwemera ibindi bibayeho nubwo rukomeza gukuramo S/MIME/inline (reba Ibisobanuro by’Amabwiriza). Amashusho yinjijwe ntabwo yongerwa nk’inyomeko z’amafayilo; ahubwo, iyo "Include inline pictures" ikinguye (mburabuzi), ashyirwa mu mubiri w’igisubizo nk’adata ya base64 (data URI).
 
-## Behavior Details {#behavior-details}
+| Ubwoko bw’igice                                         |                   Kugenzura rukaze |                Kugenzura ruruhutse |
+| ------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
+| Ifayilo y’isinyature ya S/MIME `smime.p7s`              |                          Byakuweho |                          Byakuweho |
+| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)      |                          Byakuweho |                          Byakuweho |
+| Ishusho yinjijwe yerekejwe na Content‑ID (`image/*`)    | Ihagaritswe (isubizwa mu mubiri\*) | Ihagaritswe (isubizwa mu mubiri\*) |
+| Imeli yomekwa (`message/rfc822`) ifite izina ry’ifayilo |                          Ntongerwa |                  Ishobora kongerwa |
+| Inyomeko isanzwe y’ifayilo ifite izina                  |                  Ishobora kongerwa |                  Ishobora kongerwa |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Iyo "Include inline pictures" ikinguye (mburabuzi: ON), amashusho yinjijwe ashyirwa mu mubiri w’igisubizo nk’adata za base64 URI aho kongerwa nk’inyomeko z’ifayilo. Reba [Igenamiterere](configuration#include-inline-pictures).
+
+Urugero: Bimwe mu byomeko bishobora kubura bimwe mu mitwe (headers) nyamara bikaba amafayilo asanzwe (atari inline/S/MIME). Niba kugenzura rukaze ntacyo kibona, kugenzura ruruhutse gishobora kubyemera kandi kikabyomeka.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Ihuza {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Kohereza mbere (Forward) ntihindurwa nk’uko byateguwe (reba Ibingamizi hepfo).
+- Ku mpamvu inyomeko ishobora kudongerwa, reba “Impamvu inyomeko zishobora kutongerwa”.
 
 ---
 
-## Limitations {#limitations}
+## Ibisobanuro by’imikorere {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Kwirinda ko habaho ebyiri (duplicates):** Umugereka ugaragaza isimbuka (tab) yo kwandika nk’yarangijwe ukoresheje agaciro ka sesiyo kuri buri sambi (per‑tab) n’umurinzi ubitswe muri memory. Ntuzongera kongeramo umwimerere kabiri.
+- Gufunga no kongera gufungura idirishya ryo kwandika bifatwa nk’isimbuka (tab) nshya (ni ukuvuga ko undi mugerageza wemerewe).
+- **Kubaha inyomeko zisanzwe zihari:** Niba idirishya ryo kwandika risanganywe inyomeko zimwe, iz’umwimerere zirongerwaho rimwe gusa, ariko amazina y’amafayilo asanzweho akirengagizwa.
+- **Ibyo gukuramo:** Ibikoresho bya S/MIME n’amashusho yinjijwe (inline) bikurwa mu nyomeko z’amafayilo. Nta na kimwe kibonekeje mu rugendo rwa mbere, hasubirwamo mu buryo buruhutse hasuzumwa ibice bitari S/MIME. Amashusho yinjijwe akorwa ukwabyo: asubizwa mu mubiri w’igisubizo nka data URI (iyo byashyizweho).
+  - **Amazina y’amafayilo:** `smime.p7s`
+  - **Ubwoko bwa MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Amashusho yinjijwe (inline):** igice cya `image/*` cyerekejwe na Content‑ID — gikurwa mu nyomeko z’amafayilo ariko kigashyirwa mu mubiri w’igisubizo iyo "Include inline pictures" iri ON
+  - **Imeli zomekwa (`message/rfc822`):** zifatwa nk’inyomeko zisanzwe niba zifite izina ry’ifayilo; zishobora kongerwa (hashingiwe ku igenzura ry’ibisanze no ku rutonde rwabujijwe).
+- **Iburira ry’ururondabwizwa (blacklist) (iyo ryashyizweho):** Igihe abakandida bakuwemo n’ururondabwizwa rwawe, umugereka werekana akadirishya gato (modal) karimo urutonde rw’amafayilo byagizeho ingaruka hamwe n’imiterere (pattern) zihuye. Iri burira riranagaragara mu bihe aho nta nyomeko zizongerwa kuko byose byakuweho.
 
 ---
 
-See also
+## Inzira ngufi za keyboard {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Idirishya ryo kwemeza: Y/J = Yego, N/Esc = Oya; Tab/Shift+Tab n’imyambi bizunguruka aho focus iri.
+  - “Default answer” muri [Igenamiterere](configuration#confirmation) ishyiraho butoni ibanzaho.
+  - Enter ikurura butoni ibanzwemo. Tab/Shift+Tab n’imyambi bimura focus kugira ngo byorohereze ubushobozi bwo kugerwaho.
+
+### Umufasha wihuse wa keyboard {#keyboard-cheat-sheet}
+
+| Imfunguzo       | Igikorwa                                    |
+| --------------- | ------------------------------------------- |
+| Y / J           | Emeza Yego                                  |
+| N / Esc         | Emeza Oya                                   |
+| Enter           | Kakaza butoni yibanzweho                    |
+| Tab / Shift+Tab | Hindura focus imbere/inyuma                 |
+| Arrow keys      | Hindura focus hagati y’amabutoni            |
+| Default answer  | Ishyiraho focus ya mbere (Yego cyangwa Oya) |
+
+---
+
+## Ibingamizi {#limitations}
+
+- Kohereza mbere (Forward) ntibihindurwa n’uyu mugereka (Gusubiza na Gusubiza bose birashyigikiwe).
+- Inyomeko nini cyane zishobora kugirirwa ingaruka n’imipaka ya Thunderbird cyangwa iya utanga serivisi.
+  - Umugereka ntiwacagagura cyangwa ngo usunike (compress) amafayilo; wiringira uburyo busanzwe bwa Thunderbird bwo gutunganya inyomeko.
+- Ubutumwa buhishe (Encrypted): ibice bya S/MIME bikurwamo ku bushake.
+
+---
+
+## Impamvu inyomeko zishobora kutongerwa {#why-attachments-might-not-be-added}
+
+- Amashusho yinjijwe (inline) ntongerwa nk’inyomeko z’amafayilo. Iyo "Include inline pictures" iri ON (mburabuzi), ashyirwa mu mubiri w’igisubizo nk’adata ya URI aho kongerwa nk’inyomeko. Niba iryo genamiterere riri OFF, amashusho yinjijwe akurwaho burundu. Reba [Igenamiterere](configuration#include-inline-pictures).
+- Ibice by’isinyature ya S/MIME bikurwamo nkana: amazina y’amafayilo nka `smime.p7s` n’ubwoko bwa MIME nka `application/pkcs7-signature` cyangwa `application/pkcs7-mime` birasimbukwa.
+- Imiterere y’ururondabwizwa (blacklist patterns) ishobora gusohora abakandida: reba [Igenamiterere](configuration#blacklist-glob-patterns); guhuzwa ni nta tandukaniro ry’inyuguti nkuru/nto kandi bishingiye ku mazina y’amafayilo gusa.
+- Amazina y’amafayilo yisubiramo ntiyongera kongerwa: niba idirishya ryo kwandika risanganywe ifayilo ifite izina rihwanye ryahinduwe mu buryo busanzwe, irirengagizwa.
+- Ibice bitari amafayilo cyangwa kubura amazina y’amafayilo: gusa ibice bisa n’amafayilo bifite amazina ikoreshwa nibyo bitekerezwa kongerwaho.
+
+---
+
+Reba kandi
+
+- [Igenamiterere](configuration)

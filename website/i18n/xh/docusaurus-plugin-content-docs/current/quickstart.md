@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ukuqala'
-sidebar_label: 'Ukuqala'
+title: 'Ukuqalisa ngokukhawuleza'
+sidebar_label: 'Ukuqala ngokukhawuleza'
 ---
 
-## Ukuqala
+---
 
-:::important Uxholo lweMinimum lweThunderbird
-Lo mxholo uxhasa iThunderbird **128 ESR okanye ngaphezulu**. Iinguqulelo ezidala azixhaswanga.
+## Ukuqalisa okukhawulezayo
+
+:::important Uguqulelo lweThunderbird oluncinane
+Esi songezo sixhasa iThunderbird **128 ESR okanye entsha**. Iinguqulelo ezindala azixhaswanga.
 :::
 
-:::note Hayi i-telemetry; akukho nezikhumbuzo zovulindlela
-Lo mxholo **awuhlanganisi** uxwebhu/telemetry kwaye awenza **nanto** ezikhumbuzo zovulindlela. Ukufikelela kwinethiwekhi kwenzeka kuphela xa ucofa kwiingxaki zangaphandle (Documents, GitHub, Nika).
+:::note Akukho i-telemetry; akukho nethwekhi yangasemva
+Isongezo asiqokeleli uhlalutyo/itelemetri yaye asenzi zicelo zothungelwano lwangasemva. Ukufikelela kuthungelwano kwenzeka kuphela xa ucofa amakhonkco angaphandle (Amaxwebhu, GitHub, Nikela).
 :::
 
 ---
 
 ### Faka
 
-1. Faka lo mxholo kwiThunderbird Add-ons.
-2. Okukhethiweyo: Vula umqinisekiso (Izenzo → "Buza ngaphambi kokudibanisa iindidi").
-3. Okukhethiweyo: Susa umngcipheko wokuxwayisa (umgangatho) ophakathi: "xwayisa ukuba iindidi zixhonywe kwi-blocklist".
-4. Okukhethiweyo: Faka iipateni ze-blocklist (enye ngalinye), umzekelo:
+1. Faka isongezo usuka kwi‑Thunderbird Add‑ons.
+2. Okukhethwayo: Yenza isiqinisekiso sisebenze (Options → “Buza ngaphambi kokongeza izinamathiselo”).
+3. Okukhethwayo: Shiya isilumkiso seluhlu olumnyama sivuliwe (okusiseko): “Lumkisa ukuba izinamathiselo zikhutshiwe luluhlu olumnyama”.
+4. Okukhethwayo: Yongeza iipateni zoluhlu olumnyama (enye kumgca ngamnye), umzekelo:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Lo mxholo **awuhlanganisi** uxwebhu/telemetry kwaye awenza **nanto** ezikhumbuzo
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Cofana: I “# …” engenhla ikhumbuza kumqulu lo myalezo; ungalandi izikhumbuzo kwiipatheni ozifaki kwiZenzo. Faka ipatheni enye ngalinye kuphela.
+Qaphela: “# …” engentla sisimvo kolu xwebhu; musa ukufaka izimvo kwiipateni ozincamathisela ku-Options. Ngenisa ipateni enye kumgca ngamnye kuphela.
 
-Ngoku phendula kumyalezo onemidibaniso — imizekelo izongeza ngokuzenzekelayo okanye emva kokugqiba ukufakela. Ukuba naziphi na ifayile zixhonywe kwi-blocklist yakho, uzakubona umyalezo omfutshane ozibala.
+Ngoku phendula umyalezo onezinamathiselo — ezona zokuqala ziya kongezwa ngokuzenzekela okanye emva kokuqinisekisa okukhawulezayo. Ukuba naziphi na iifayile zikhutshiwe luluhlu lwakho olumnyama, uya kubona isilumkiso esifutshane esizibalayo.
 
 ---
 
 ### Qinisekisa {#verify}
 
-- Phendula kumyalezo onemidibaniso engu-1–2 kwaye uqinisekise ukuba iimeko ziya kwengezwa kwiwindow yokubhalela.
-- Ukuze ulungise uwenza, jonga [Ukwenzeka](configuration) (ukuzikhethela kokuqinisekiswa, impendulo engama-zer, iipateni ze-blocklist).
+- Phendula kumyalezo onezinamathiselo ezi-1–2 uze uqinisekise ukuba ezokuqala zongezwe kwifestile yakho yokubhala.
+- Ukulungisa indlela yokuziphatha, bona [Uqwalaselo](configuration) (iswitshi yesiqinisekiso, impendulo emiselweyo, iipateni zoluhlu olumnyama).
 
 ---
 
-### Qinisekisa umyalezo wokuxwayisa kwi-blocklist {#verify-blacklist-warning}
+### Qinisekisa isilumkiso soluhlu olumnyama {#verify-blacklist-warning}
 
-- Phendula kumyalezo onefayile efana ne “secret.txt”.
-- Ngokuxhoma "xwayisa ukuba iindidi zixhonywe kwi-blocklist", umxhelo omncinci ubala iifayile ezixhonywe kunye nephethini efanelekileyo.
+- Phendula kumyalezo oqulethe ifayile efana nethi “secret.txt”.
+- Xa “Lumkisa ukuba izinamathiselo zikhutshiwe luluhlu olumnyama” ivuliwe, incoko yababini encinci idwelisa iifayile ezikhutshiweyo kunye nepateni ehambelanayo.
 
-Ukuba awuboni umyalezo wokuxwayisa, qinisekisa ukuba ipatheni ifana ngokupheleleyo negama lefayile (igama lefayile kuphela, lingabikho mlinganiso). Jonga Ukwenzeka → I-Blocklist.
+Ukuba awuboni isilumkiso, qiniseka ukuba ipateni iyahambelana negama lefayile ngokuchanekileyo (igama lefayile kuphela, akunamsebenzi unobumba omkhulu/omncinci). Bona Uqwalaselo → Uluhlu olumnyama.
 
 ---
 
-### Umyalezo weKiibhodi {#keyboard-note}
+### Inqaku lekhiyibhodi {#keyboard-note}
 
-- Umyalezo otyebisiweyo uxhasa i-Y/J yeEwe kunye ne-N/Esc yeHayi. Kwiikhibhodi ezingezizo ezimnyama, iikhi yeletayi zingabamba; Ukufaka kuqinisekisa inkinobho igxininiswe.
+- Incoko yesiqinisekiso ixhasa u-Y/J ku-Ewe kunye no-N/Esc ku-Hayi. Kwezinye iikhiyibhodi ezingezizo ezesiLatin, amaqhosha oonobumba anokwahluka; u-Enter uqinisekisa iqhosha eligxilwe kulo.
+
+---

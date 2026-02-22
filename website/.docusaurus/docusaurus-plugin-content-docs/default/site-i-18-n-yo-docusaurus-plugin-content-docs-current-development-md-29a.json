@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Idagbasoke",
-  "description": "Development Guide",
+  "title": "Ìdàgbàsókè",
+  "description": "---",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Idagbasoke",
-    "sidebar_label": "Idagbasoke"
+    "title": "Ìdàgbàsókè",
+    "sidebar_label": "Ìdàgbàsókè"
   },
   "sidebar": "docs",
   "previous": {

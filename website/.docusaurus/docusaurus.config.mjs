@@ -11,7 +11,23 @@ export default {
   "organizationName": "bitranox",
   "projectName": "Thunderbird-Reply-with-Attachments",
   "onBrokenLinks": "warn",
-  "onBrokenMarkdownLinks": "warn",
+  "markdown": {
+    "hooks": {
+      "onBrokenMarkdownLinks": "warn",
+      "onBrokenMarkdownImages": "throw"
+    },
+    "format": "mdx",
+    "mermaid": false,
+    "emoji": true,
+    "mdx1Compat": {
+      "comments": true,
+      "admonitions": true,
+      "headingIds": true
+    },
+    "anchors": {
+      "maintainCase": false
+    }
+  },
   "favicon": "img/favicon.ico",
   "i18n": {
     "defaultLocale": "en",
@@ -120,44 +136,35 @@ export default {
     "localeConfigs": {
       "en": {
         "label": "English",
-        "htmlLang": "en-US",
-        "direction": "ltr"
+        "htmlLang": "en-US"
       },
       "zh": {
-        "htmlLang": "zh",
-        "direction": "ltr"
+        "htmlLang": "zh"
       },
       "hi": {
-        "htmlLang": "hi-IN",
-        "direction": "ltr"
+        "htmlLang": "hi-IN"
       },
       "es": {
-        "htmlLang": "es-ES",
-        "direction": "ltr"
+        "htmlLang": "es-ES"
       },
       "ar": {
         "htmlLang": "ar",
         "direction": "rtl"
       },
       "fr": {
-        "htmlLang": "fr-FR",
-        "direction": "ltr"
+        "htmlLang": "fr-FR"
       },
       "bn": {
-        "htmlLang": "bn-BD",
-        "direction": "ltr"
+        "htmlLang": "bn-BD"
       },
       "pt": {
-        "htmlLang": "pt-PT",
-        "direction": "ltr"
+        "htmlLang": "pt-PT"
       },
       "ru": {
-        "htmlLang": "ru-RU",
-        "direction": "ltr"
+        "htmlLang": "ru-RU"
       },
       "id": {
-        "htmlLang": "id-ID",
-        "direction": "ltr"
+        "htmlLang": "id-ID"
       },
       "ur": {
         "htmlLang": "ur-PK",
@@ -165,124 +172,96 @@ export default {
       },
       "de": {
         "label": "Deutsch",
-        "htmlLang": "de-DE",
-        "direction": "ltr"
+        "htmlLang": "de-DE"
       },
       "ja": {
-        "htmlLang": "ja-JP",
-        "direction": "ltr"
+        "htmlLang": "ja-JP"
       },
       "pa": {
-        "htmlLang": "pa-IN",
-        "direction": "ltr"
+        "htmlLang": "pa-IN"
       },
       "jv": {
-        "htmlLang": "jv-ID",
-        "direction": "ltr"
+        "htmlLang": "jv-ID"
       },
       "ms": {
-        "htmlLang": "ms-MY",
-        "direction": "ltr"
+        "htmlLang": "ms-MY"
       },
       "te": {
-        "htmlLang": "te-IN",
-        "direction": "ltr"
+        "htmlLang": "te-IN"
       },
       "vi": {
-        "htmlLang": "vi-VN",
-        "direction": "ltr"
+        "htmlLang": "vi-VN"
       },
       "ko": {
-        "htmlLang": "ko-KR",
-        "direction": "ltr"
+        "htmlLang": "ko-KR"
       },
       "mr": {
-        "htmlLang": "mr-IN",
-        "direction": "ltr"
+        "htmlLang": "mr-IN"
       },
       "ta": {
-        "htmlLang": "ta-IN",
-        "direction": "ltr"
+        "htmlLang": "ta-IN"
       },
       "tr": {
-        "htmlLang": "tr-TR",
-        "direction": "ltr"
+        "htmlLang": "tr-TR"
       },
       "it": {
-        "htmlLang": "it-IT",
-        "direction": "ltr"
+        "htmlLang": "it-IT"
       },
       "th": {
-        "htmlLang": "th-TH",
-        "direction": "ltr"
+        "htmlLang": "th-TH"
       },
       "gu": {
-        "htmlLang": "gu-IN",
-        "direction": "ltr"
+        "htmlLang": "gu-IN"
       },
       "fa": {
         "htmlLang": "fa-IR",
         "direction": "rtl"
       },
       "pl": {
-        "htmlLang": "pl-PL",
-        "direction": "ltr"
+        "htmlLang": "pl-PL"
       },
       "ps": {
         "htmlLang": "ps-AF",
         "direction": "rtl"
       },
       "kn": {
-        "htmlLang": "kn-IN",
-        "direction": "ltr"
+        "htmlLang": "kn-IN"
       },
       "ml": {
-        "htmlLang": "ml-IN",
-        "direction": "ltr"
+        "htmlLang": "ml-IN"
       },
       "or": {
-        "htmlLang": "or-IN",
-        "direction": "ltr"
+        "htmlLang": "or-IN"
       },
       "my": {
-        "htmlLang": "my-MM",
-        "direction": "ltr"
+        "htmlLang": "my-MM"
       },
       "uk": {
-        "htmlLang": "uk-UA",
-        "direction": "ltr"
+        "htmlLang": "uk-UA"
       },
       "ro": {
-        "htmlLang": "ro-RO",
-        "direction": "ltr"
+        "htmlLang": "ro-RO"
       },
       "nl": {
-        "htmlLang": "nl-NL",
-        "direction": "ltr"
+        "htmlLang": "nl-NL"
       },
       "ha": {
-        "htmlLang": "ha-NG",
-        "direction": "ltr"
+        "htmlLang": "ha-NG"
       },
       "sw": {
-        "htmlLang": "sw-TZ",
-        "direction": "ltr"
+        "htmlLang": "sw-TZ"
       },
       "am": {
-        "htmlLang": "am-ET",
-        "direction": "ltr"
+        "htmlLang": "am-ET"
       },
       "hu": {
-        "htmlLang": "hu-HU",
-        "direction": "ltr"
+        "htmlLang": "hu-HU"
       },
       "az": {
-        "htmlLang": "az-AZ",
-        "direction": "ltr"
+        "htmlLang": "az-AZ"
       },
       "uz": {
-        "htmlLang": "uz-UZ",
-        "direction": "ltr"
+        "htmlLang": "uz-UZ"
       },
       "sd": {
         "htmlLang": "sd-PK",
@@ -293,176 +272,133 @@ export default {
         "direction": "rtl"
       },
       "el": {
-        "htmlLang": "el-GR",
-        "direction": "ltr"
+        "htmlLang": "el-GR"
       },
       "cs": {
-        "htmlLang": "cs-CZ",
-        "direction": "ltr"
+        "htmlLang": "cs-CZ"
       },
       "sv": {
-        "htmlLang": "sv-SE",
-        "direction": "ltr"
+        "htmlLang": "sv-SE"
       },
       "bg": {
-        "htmlLang": "bg-BG",
-        "direction": "ltr"
+        "htmlLang": "bg-BG"
       },
       "da": {
-        "htmlLang": "da-DK",
-        "direction": "ltr"
+        "htmlLang": "da-DK"
       },
       "fi": {
-        "htmlLang": "fi-FI",
-        "direction": "ltr"
+        "htmlLang": "fi-FI"
       },
       "no": {
-        "htmlLang": "no-NO",
-        "direction": "ltr"
+        "htmlLang": "no-NO"
       },
       "sk": {
-        "htmlLang": "sk-SK",
-        "direction": "ltr"
+        "htmlLang": "sk-SK"
       },
       "sr": {
-        "htmlLang": "sr-RS",
-        "direction": "ltr"
+        "htmlLang": "sr-RS"
       },
       "hr": {
-        "htmlLang": "hr-HR",
-        "direction": "ltr"
+        "htmlLang": "hr-HR"
       },
       "bs": {
-        "htmlLang": "bs-BA",
-        "direction": "ltr"
+        "htmlLang": "bs-BA"
       },
       "sl": {
-        "htmlLang": "sl-SI",
-        "direction": "ltr"
+        "htmlLang": "sl-SI"
       },
       "lt": {
-        "htmlLang": "lt-LT",
-        "direction": "ltr"
+        "htmlLang": "lt-LT"
       },
       "lv": {
-        "htmlLang": "lv-LV",
-        "direction": "ltr"
+        "htmlLang": "lv-LV"
       },
       "et": {
-        "htmlLang": "et-EE",
-        "direction": "ltr"
+        "htmlLang": "et-EE"
       },
       "hy": {
-        "htmlLang": "hy-AM",
-        "direction": "ltr"
+        "htmlLang": "hy-AM"
       },
       "ka": {
-        "htmlLang": "ka-GE",
-        "direction": "ltr"
+        "htmlLang": "ka-GE"
       },
       "kk": {
-        "htmlLang": "kk-KZ",
-        "direction": "ltr"
+        "htmlLang": "kk-KZ"
       },
       "ky": {
-        "htmlLang": "ky-KG",
-        "direction": "ltr"
+        "htmlLang": "ky-KG"
       },
       "tg": {
-        "htmlLang": "tg-TJ",
-        "direction": "ltr"
+        "htmlLang": "tg-TJ"
       },
       "tk": {
-        "htmlLang": "tk-TM",
-        "direction": "ltr"
+        "htmlLang": "tk-TM"
       },
       "ne": {
-        "htmlLang": "ne-NP",
-        "direction": "ltr"
+        "htmlLang": "ne-NP"
       },
       "si": {
-        "htmlLang": "si-LK",
-        "direction": "ltr"
+        "htmlLang": "si-LK"
       },
       "km": {
-        "htmlLang": "km-KH",
-        "direction": "ltr"
+        "htmlLang": "km-KH"
       },
       "lo": {
-        "htmlLang": "lo-LA",
-        "direction": "ltr"
+        "htmlLang": "lo-LA"
       },
       "mn": {
-        "htmlLang": "mn-MN",
-        "direction": "ltr"
+        "htmlLang": "mn-MN"
       },
       "su": {
-        "htmlLang": "su-ID",
-        "direction": "ltr"
+        "htmlLang": "su-ID"
       },
       "yo": {
-        "htmlLang": "yo-NG",
-        "direction": "ltr"
+        "htmlLang": "yo-NG"
       },
       "ig": {
-        "htmlLang": "ig-NG",
-        "direction": "ltr"
+        "htmlLang": "ig-NG"
       },
       "om": {
-        "htmlLang": "om-ET",
-        "direction": "ltr"
+        "htmlLang": "om-ET"
       },
       "zu": {
-        "htmlLang": "zu-ZA",
-        "direction": "ltr"
+        "htmlLang": "zu-ZA"
       },
       "xh": {
-        "htmlLang": "xh-ZA",
-        "direction": "ltr"
+        "htmlLang": "xh-ZA"
       },
       "af": {
-        "htmlLang": "af-ZA",
-        "direction": "ltr"
+        "htmlLang": "af-ZA"
       },
       "so": {
-        "htmlLang": "so-SO",
-        "direction": "ltr"
+        "htmlLang": "so-SO"
       },
       "rw": {
-        "htmlLang": "rw-RW",
-        "direction": "ltr"
+        "htmlLang": "rw-RW"
       },
       "rn": {
-        "htmlLang": "rn-BI",
-        "direction": "ltr"
+        "htmlLang": "rn-BI"
       },
       "ln": {
-        "htmlLang": "ln-CD",
-        "direction": "ltr"
+        "htmlLang": "ln-CD"
       },
       "sn": {
-        "htmlLang": "sn-ZW",
-        "direction": "ltr"
+        "htmlLang": "sn-ZW"
       },
       "ak": {
-        "htmlLang": "ak-GH",
-        "direction": "ltr"
+        "htmlLang": "ak-GH"
       },
       "ff": {
-        "htmlLang": "ff-SN",
-        "direction": "ltr"
+        "htmlLang": "ff-SN"
       },
       "bm": {
-        "htmlLang": "bm-ML",
-        "direction": "ltr"
+        "htmlLang": "bm-ML"
       },
       "ny": {
-        "htmlLang": "ny-MW",
-        "direction": "ltr"
+        "htmlLang": "ny-MW"
       },
       "ti": {
-        "htmlLang": "ti-ER",
-        "direction": "ltr"
+        "htmlLang": "ti-ER"
       },
       "ug": {
         "htmlLang": "ug-CN",
@@ -473,52 +409,40 @@ export default {
         "direction": "rtl"
       },
       "as": {
-        "htmlLang": "as-IN",
-        "direction": "ltr"
+        "htmlLang": "as-IN"
       },
       "tl": {
-        "htmlLang": "tl-PH",
-        "direction": "ltr"
+        "htmlLang": "tl-PH"
       },
       "ca": {
-        "htmlLang": "ca-ES",
-        "direction": "ltr"
+        "htmlLang": "ca-ES"
       },
       "be": {
-        "htmlLang": "be-BY",
-        "direction": "ltr"
+        "htmlLang": "be-BY"
       },
       "sq": {
-        "htmlLang": "sq-AL",
-        "direction": "ltr"
+        "htmlLang": "sq-AL"
       },
       "qu": {
-        "htmlLang": "qu-PE",
-        "direction": "ltr"
+        "htmlLang": "qu-PE"
       },
       "ht": {
-        "htmlLang": "ht-HT",
-        "direction": "ltr"
+        "htmlLang": "ht-HT"
       },
       "mg": {
-        "htmlLang": "mg-MG",
-        "direction": "ltr"
+        "htmlLang": "mg-MG"
       },
       "ku": {
-        "htmlLang": "ku-TR",
-        "direction": "ltr"
+        "htmlLang": "ku-TR"
       },
       "wo": {
-        "htmlLang": "wo-SN",
-        "direction": "ltr"
+        "htmlLang": "wo-SN"
       },
       "ga": {
-        "htmlLang": "ga-IE",
-        "direction": "ltr"
+        "htmlLang": "ga-IE"
       },
       "is": {
-        "htmlLang": "is-IS",
-        "direction": "ltr"
+        "htmlLang": "is-IS"
       }
     },
     "path": "i18n"
@@ -608,7 +532,7 @@ export default {
           ]
         }
       ],
-      "copyright": "© 2025 Reply with Attachments"
+      "copyright": "© 2026 Reply with Attachments"
     },
     "docs": {
       "versionPersistence": "localStorage",
@@ -815,17 +739,5 @@ export default {
   "stylesheets": [],
   "clientModules": [],
   "titleDelimiter": "|",
-  "noIndex": false,
-  "markdown": {
-    "format": "mdx",
-    "mermaid": false,
-    "mdx1Compat": {
-      "comments": true,
-      "admonitions": true,
-      "headingIds": true
-    },
-    "anchors": {
-      "maintainCase": false
-    }
-  }
+  "noIndex": false
 };

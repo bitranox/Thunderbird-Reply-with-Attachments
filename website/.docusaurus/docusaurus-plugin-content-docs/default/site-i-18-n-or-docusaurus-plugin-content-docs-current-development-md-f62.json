@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "ବିକାଶ",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/or/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",

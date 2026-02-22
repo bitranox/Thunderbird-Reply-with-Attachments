@@ -4,31 +4,41 @@ title: 'Eiginleikar'
 sidebar_label: 'Eiginleikar'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Eiginleikar {#features}
 
-## How It Works {#how-it-works}
+- Hengir sjálfkrafa skrár úr upprunalega tölvupóstinum við þegar þú svarar.
+- Hægt er að stilla hegðun: viðhengi geta verið
+  - bætt við sjálfkrafa, eða
+  - bætt við aðeins eftir staðfestingu (lítill, aðgengilegur gluggi). Í Valkostum
+    geturðu virkjað staðfestingu og valið sjálfgefna svarið (Já/Nei).
+- Svartlisti skráarheita (glob-mynstur) kemur í veg fyrir að tilteknar skrár séu
+  hengdar við sjálfkrafa. Dæmi: `*intern*`, `*secret*`, `*passwor*`.
+  Samsvörun er óháð há- og lágstöfum og athugar aðeins skráarheitið; settu eitt mynstur
+  á línu í Valkostum.
+- Aðvörun vegna svartlista (valkvætt, virkt sjálfgefið): þegar skrám er sleppt samkvæmt
+  svartlistanum þínum, birtir lítill gluggi skrána og samsvarandi mynstur. Vinalegt í
+  dökkham og aðgengilegt með lyklaborði (Enter/Esc til að loka).
+- Virkar með Svara og Svara öllum. Áframsenda er ekki breytt af þessari viðbót.
+- Bætir við upprunalegum viðhengjum jafnvel þó þú hafir þegar bætt einhverju við; forðast
+  tvíteknar skrár eftir skráarheiti.
+- Endurtekningarvörn á hverjum flipa kemur í veg fyrir tvíbætingu í sama ritflipa.
+- Sleppir S/MIME-vottorðum sjálfgefið til að forðast óþarfa viðhengi.
+- Taka með innfelldar myndir (sjálfgefið: Á). Innfelldum myndum er skilað beint inn í
+  svartextann sem base64 data URI, þannig að upprunaleg framsetning í línu varðveitist.
+  Slökktu á þessu í Valkostum til að sleppa innfelldum myndum alveg.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Hvernig þetta virkar {#how-it-works}
+
+- Þegar svarað er, listar viðbótin upp upprunaleg viðhengi.
+- Síar burt S/MIME-undirskriftir úr viðhengjum; innfelldar myndir eru endurheimtar í meginmál (nema óvirkt).
+- Getur beðið um staðfestingu (lyklaborðsvænt).
+- Bætir hæfum skrám við ritgluggann þinn og forðast tvíteknar skrár eftir skráarheiti.
+- Sjá “Af hverju viðhengi gætu ekki verið bætt við” í Notkun fyrir jaðartilfelli.
+
+Athugasemd um persónuvernd: Öll vinnsla fer fram staðbundið í Thunderbird. Viðbótin gerir engar bakgrunnsnetbeiðnir.
+
+---

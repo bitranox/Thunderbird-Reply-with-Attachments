@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "خصوصیات",
-  "description": "Features",
+  "title": "ფუნქციები",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "خصوصیات",
-    "sidebar_label": "خصوصیات"
+    "title": "ფუნქციები",
+    "sidebar_label": "მახასიათებლები"
   },
   "sidebar": "docs",
   "next": {
-    "title": "დაწყების ინსტრუქტია",
+    "title": "სწრაფი დაწყება",
     "permalink": "/Thunderbird-Reply-with-Attachments/ka/docs/quickstart"
   }
 }

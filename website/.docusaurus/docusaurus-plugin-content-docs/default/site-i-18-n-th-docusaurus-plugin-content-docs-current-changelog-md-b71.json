@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ประวัติการเปลี่ยนแปลง",
-  "description": "Changelog",
+  "title": "บันทึกการเปลี่ยนแปลง",
+  "description": "---",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ประวัติการเปลี่ยนแปลง"
+    "title": "บันทึกการเปลี่ยนแปลง"
   },
   "sidebar": "docs",
   "previous": {

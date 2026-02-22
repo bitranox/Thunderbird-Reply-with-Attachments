@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
   "title": "Snelstart",
-  "description": "Snelstart",
+  "description": "---",
   "source": "@site/i18n/nl/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",

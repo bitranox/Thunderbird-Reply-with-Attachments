@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'സ്ഥാപനം'
+title: 'ഇൻസ്റ്റലേഷൻ'
 slug: /install
-sidebar_label: 'സ്ഥാപനം'
+sidebar_label: 'ഇൻസ്റ്റലേഷൻ'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" വഴി ഇൻസ്റ്റാളേഷൻ {#installation-in-thunderbird-recommended}
+
+:::important കുറഞ്ഞ Thunderbird പതിപ്പ്
+ഈ ആഡ്‑ഓൺ Thunderbird **128 ESR or newer** നെ പിന്തുണയ്ക്കുന്നു. പഴയ പതിപ്പുകൾക്ക് പിന്തുണയില്ല.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+ഇതാണ് ശുപാർശ ചെയ്ത ഇൻസ്റ്റാളേഷൻ മാർഗം. ATN (addons.thunderbird.net) വഴി ഇൻസ്റ്റാൾ ചെയ്യുന്ന ആഡ്‑ഓണുകൾക്ക് സ്വയമേവ അപ്‌ഡേറ്റുകൾ ലഭിക്കും. LOCAL/dev ഇൻസ്റ്റാളുകൾ സ്വയം അപ്‌ഡേറ്റ് ചെയ്യില്ല.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- കുറഞ്ഞ Thunderbird പതിപ്പ്: 128 ESR അല്ലെങ്കിൽ പുതിയത്.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird ൽ **Tools > Add-ons and Themes** ലേക്ക് പോകുക.
+2. "reply with attachments" എന്ന് തിരയുക.
+3. ആഡ്‑ഓൺ ചേർക്കുക.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+അല്ലെങ്കിൽ ആഡ്‑ഓൺ പേജ് നേരിട്ട് തുറക്കുക: [Thunderbird ആഡ്‑ഓണുകൾ (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI വഴി മാനുവൽ ഇൻസ്റ്റാളേഷൻ {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ഫയൽ ഡൗൺലോഡ് ചെയ്യുക {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird ആഡ്‑ഓൺ പേജ്](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) ലേക്ക് പോകുക.
+2. ആഡ്‑ഓണിന്റെ ഏറ്റവും പുതിയ പതിപ്പ് XPI ഫയലായി (`reply_with_attachments-x.y.z-tb.xpi`) ഡൗൺലോഡ് ചെയ്യുക.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird ൽ ഇൻസ്റ്റാൾ ചെയ്യുക {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird തുറക്കുക.
+2. **Tools > Add-ons and Themes** ലേക്ക് പോകുക.
+3. **Add-ons Manager** ൽ, മുകളിലെ വലത് വശത്തുള്ള ഗിയർ ഐക്കൺ ക്ലിക് ചെയ്യുക.
+4. മെനുവിൽ നിന്ന് **Install Add-on From File…** തിരഞ്ഞെടുക്കുക.
+5. ഡൗൺലോഡ് ചെയ്ത `reply_with_attachments-x.y.z-tb.xpi` ഫയൽ തിരഞ്ഞെടുക്കുക.
+6. പ്രോംപ്‌റ്റ് വരുമ്പോൾ ഇൻസ്റ്റാളേഷൻ സ്ഥിരീകരിക്കുക.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## ഡെവലപ്‌മെന്റിനുള്ള ഇൻസ്റ്റാളേഷൻ {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### റിപ്പോസിറ്ററി ഡൗൺലോഡ് ചെയ്യുക {#download-the-repository}
 
-See also
+1. GitHub റിപ്പോസിറ്ററിയുടെ ഏറ്റവും പുതിയ പതിപ്പ് ഡൗൺലോഡ് ചെയ്യുക.
+2. കൂടുതൽ വിവരങ്ങൾക്ക് `make help` റൺ ചെയ്യുക.
 
-- [Quickstart](quickstart)
+### Thunderbird ൽ ഇൻസ്റ്റാൾ ചെയ്യുക {#install-in-thunderbird-dev}
+
+1. Thunderbird തുറക്കുക.
+2. **Tools > Add-ons and Themes** ലേക്ക് പോകുക.
+3. **Add-ons Manager** ൽ, മുകളിലെ വലത് വശത്തുള്ള ഗിയർ ഐക്കൺ ക്ലിക് ചെയ്യുക.
+4. മെനുവിൽ നിന്ന് **Install Add-on From File…** തിരഞ്ഞെടുക്കുക.
+5. സൃഷ്ടിച്ച ഫയൽ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` തിരഞ്ഞെടുക്കുക.
+6. പ്രോംപ്‌റ്റ് വരുമ്പോൾ ഇൻസ്റ്റാളേഷൻ സ്ഥിരീകരിക്കുക.
+
+കുറിപ്പ്: നിങ്ങളുടെ സിസ്റ്റത്തിൽ Thunderbird `.zip` സ്വീകരിക്കാതെയാണെങ്കിൽ, അതിന്റെ പേര് `.xpi` ആയി മാറ്റി “Install Add‑on From File…” വീണ്ടും ശ്രമിക്കുക.
+
+### LOCAL ZIP എവിടെ കണ്ടെത്താം {#where-local-zip}
+
+- ആദ്യം, ആഡ്‑ഓൺ പാക്കേജ് ചെയ്യുക: റിപ്പോസിറ്ററിയുടെ റൂട്ടിൽ `make pack` റൺ ചെയ്യുക.
+- പാക്കേജിംഗ് കഴിഞ്ഞാൽ, റിപ്പോസിറ്ററി റൂട്ടിൽ “LOCAL” zip കണ്ടെത്തുക (ഉദാ., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- ടെസ്റ്റിംഗിനായി വീണ്ടും പാക്കേജുചെയ്യുന്നതിന് മുമ്പ്, `sources/manifest_ATN.json` യിലും `sources/manifest_LOCAL.json` യിലും പതിപ്പുകൾ കൂട്ടുക.
+
+---
+
+## ഡിസേബിൾ, അൺഇൻസ്റ്റാൾ, അപ്‌ഡേറ്റുകൾ {#disable-uninstall-updates}
+
+- ഡിസേബിൾ: Thunderbird → Tools → Add‑ons and Themes → ആഡ്‑ഓൺ കണ്ടെത്തുക → ഓഫ് ചെയ്യുക.
+- അൺഇൻസ്റ്റാൾ: അതേ വ്യൂ → മൂന്ന്‑ഡോട്ട് മെനു → Remove.
+- അപ്‌ഡേറ്റുകൾ: പുതിയ പതിപ്പുകൾ അംഗീകരിക്കുമ്പോൾ ATN ഇൻസ്റ്റാളുകൾ സ്വയം അപ്‌ഡേറ്റ് ചെയ്യും. LOCAL/dev ഇൻസ്റ്റാളുകൾ സ്വയം അപ്‌ഡേറ്റ് ചെയ്യില്ല; പുതിയ LOCAL ബിൽഡ് മാനുവലായി വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യണം.
+- സെറ്റിങ്ങുകൾ പൂർണ്ണമായും നീക്കുക: [സ്വകാര്യത → ഡാറ്റ നീക്കം](privacy#data-removal) കാണുക.
+
+കൂടുതൽ കാണുക
+
+- [ക്വിക്‌സ്റ്റാർട്ട്](quickstart)

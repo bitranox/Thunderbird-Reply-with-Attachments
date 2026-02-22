@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'அறிமுகம்'
-sidebar_label: 'அறிமுகம்'
+title: 'உருவாக்கம்'
+sidebar_label: 'அபிவிருத்தி'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## வளர்ச்சி வழிகாட்டி {#development-guide}
+
+:::note ஆங்கிலத்தை மட்டுமே திருத்தவும்; மொழிபெயர்ப்புகள் பரவப்படும்
+ஆவணங்களை `website/docs` (ஆங்கிலம்) கீழ் மட்டுமே புதுப்பிக்கவும். `website/i18n/<locale>/…` கீழுள்ள மொழிபெயர்ப்புகள் தானியங்கியாக உருவாக்கப்படுகின்றன; அவற்றை கையால் திருத்த வேண்டாம். உள்ளூர்மயமான உள்ளடக்கத்தைப் புதுப்பிக்க மொழிபெயர்ப்பு பணிகளை (எ.கா., `make translate_web_docs_batch`) பயன்படுத்தவும்.
 :::
 
-### Prerequisites {#prerequisites}
+### முன் தேவைகள் {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ மற்றும் npm (Node 22 உடன் சோதிக்கப்பட்டது)
+- Thunderbird 128 ESR அல்லது புதியது (கைமுறை சோதனைக்காக)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### திட்ட வடிவமைப்பு (உயர் நிலை) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: பொருத்துதல் ஸ்கிரிப்ட் `distribution_zip_packer.sh`, docs, screenshots
+- `sources/`: முதன்மை add‑on குறியீடு (background, options/popup UI, manifests, icons)
+- `tests/`: Vitest தொகுப்பு
+- `website/`: Docusaurus docs (i18n `website/i18n/de/...` கீழ்)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### நிறுவல் & கருவிகள் {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Root சார்புகளை நிறுவ: `npm ci`
+- Docs (விருப்பமானது): `cd website && npm ci`
+- இலக்குகளை கண்டறிதல்: `make help`
+
+---
+
+### நேரடி மேம்பாடு (web‑ext run) {#live-dev-web-ext}
+
+- Firefox Desktop-இல் விரைவு சுற்று (UI smoke‑tests மட்டும்):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird-இல் இயக்கவும் (MailExtensions-க்கு விருப்பமானது):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- குறிப்புகள்:
+- Thunderbird இன் Error Console-ஐ திறந்தவாறே வைத்திருக்கவும் (Tools → Developer Tools → Error Console).
+- MV3 event பக்கங்கள் செயலற்றபோது இடைநிறுத்தப்படும்; குறியீட்டு மாற்றங்களுக்குப் பிறகு add‑on-ஐ மீளேற்று, அல்லது web‑ext தானாக மீளேற்ற அனுமதிக்கவும்.
+- சில Firefox‑க்கு மட்டுமே உள்ள நடத்தை மாறுபடலாம்; API சமமா என்பதை எப்போதும் Thunderbird-இல் சரிபார்க்கவும்.
+- Thunderbird பைனரி பாதைகள் (உதாரணங்கள்):
+- Linux: `thunderbird` (உ.தா., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profile isolation: உங்கள் தினசரி அமைவை பாதிக்காமல் இருக்க, மேம்பாட்டுக்கு தனிப்பட்ட Thunderbird profile ஐ பயன்படுத்தவும்.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make இலக்குகள் (அகரவரிசை) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile பொதுவான dev ஓட்டங்களை ஒரே மாதிரியாக்குகிறது. ஒவ்வொரு இலக்கிற்குமான ஒரு வரி சுருக்கத்தைக் காண எந்த நேரமும் `make help` ஐ இயக்கவும்.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+குறிப்பு: எந்த இலக்கையும் கொடுக்காமல் `make` ஐ இயக்கினால், இலக்கைத் தேர்வதற்கான எளிய Whiptail மெனு திறக்கும்.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| இலக்கு                                                   | ஒரு வரிச் சுருக்கம்                                                                             |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | உள்ளூர் build/preview பொருட்களை அகற்று (tmp/, web-local-preview/, website/build/).              |
+| [`commit`](#mt-commit)                                   | வடிவமை, சோதனைகள் இயக்கு (i18n உட்பட), changelog புதுப்பி, commit & push.                        |
+| [`eslint`](#mt-eslint)                                   | Flat config (`npm run -s lint:eslint`) மூலம் ESLint ஐ இயக்கு.                                   |
+| [`help`](#mt-help)                                       | அனைத்து இலக்குகளையும் ஒரு வரிச் விளக்கத்துடன் பட்டியலிடு (வரிசைப்படுத்தப்பட்ட).                 |
+| [`lint`](#mt-lint)                                       | `sources/` மீது web‑ext lint (தற்காலிக manifest; ZIP-களை புறக்கணிக்கிறது; non‑fatal).           |
+| [`menu`](#mt-menu)                                       | இலக்கு மற்றும் விருப்ப arguments-ஐத் தேர்வதற்கான தொடர்பாடல் மெனு.                               |
+| [`pack`](#mt-pack)                                       | ATN & LOCAL ZIP-களை உருவாக்கு (linter இயக்கும்; packer script ஐ அழைக்கும்).                     |
+| [`prettier`](#mt-prettier)                               | Repository-ஐ உடனடியாக வடிவமை (மாற்றங்களை எழுதும்).                                              |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier check mode (எழுதாது); மறுவடிவமைப்பு தேவைப்பட்டால் தோல்வி.                              |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` க்கு Alias.                                                                          |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, பின்னர் Vitest (அமைக்கப்பட்டால் coverage).                            |
+| [`test_i18n`](#mt-test_i18n)                             | i18n‑மட்டும் சோதனைகள்: add‑on placeholders/parity + website parity.                             |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` க்கு Alias.                                                                   |
+| [`translation_app`](#mt-translation-app)                 | பயன்பாட்டு UI strings-ஐ `sources/_locales/en/messages.json` இலிருந்து மொழிபெயರ்க்கவும்.         |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Website docs-ஐ OpenAI Batch API மூலம் மொழிபெயர்க்கவும் (விருப்பமானது).                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Website docs-ஐ synchronous-ஆக மொழிபெயர்க்கவும் (பழமையானது, non-batch).                          |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` க்கு Alias.                                                             |
+| [`translation_web_index`](#mt-translation_web_index)     | Homepage/navbar/footer UI-ஐ மொழிபெயர்த்து (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Docs-ஐ `website/build` க்கு build செய் (`--locales` / `BUILD_LOCALES` ஐ ஆதரிக்கிறது).           |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (தொலை HTTP[S] தவிர்க்கிறது).                                            |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | உள்ளூர் gh‑pages preview; 8080–8090-ல் auto‑serve; விருப்பமான tests/link‑check.                 |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` ஐ `gh-pages` கிளைக்கு push செய்.                                                |
 
-Syntax for options
+விருப்பங்களுக்கான இலக்கணம்
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- விருப்பங்களை அனுப்ப `make <command> OPTS="…"` ஐப் பயன்படுத்தவும் (இருகோட்டுகள் பரிந்துரைக்கப்படுகிறது). கீழே உள்ள ஒவ்வொரு இலக்கும் எடுத்துக்காட்டு பயன்பாட்டைக் காட்டுகிறது.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Locale build குறிப்புகள் {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
+- சில உள்ளூர்மொழிகளுக்கே build செய்ய: `BUILD_LOCALES="en de"` வை அமைக்கவோ அல்லது web இலக்குகளுக்கு `OPTS="--locales en,de"` ஐ அனுப்பவோ செய்யவும்.
+- குறிப்பிட்ட ஒரு உள்ளூர்மொழியை preview செய்ய: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
 ### Build & Package {#build-and-package}
 
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- ZIP-களை build செய்: `make pack`
+- Repo root-இல் ATN மற்றும் LOCAL ZIP-களை உருவாக்கும் (பொருட்களை கையால் திருத்த வேண்டாம்)
+- குறிப்பு: package செய்வதற்கு முன் `sources/manifest_ATN.json` மற்றும் `sources/manifest_LOCAL.json` இரண்டிலும் பதிப்பை புதுப்பிக்கவும்
+- கைமுறை நிறுவல் (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → உருவாக்கப்பட்ட ZIP-ஐத் தேர்வு செய்க
 
 ---
 
-### Test {#test}
+### சோதனை {#test}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- முழு தொகுப்பு: `make test` (Vitest)
+- Coverage (விருப்பமானது):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` ஐ இயக்கவும்; HTML அறிக்கைக்காக `coverage/index.html` ஐத் திறக்கவும்
+- i18n மட்டும்: `make test_i18n` (UI keys/placeholders/titles + website-இல் ஒவ்வொரு உள்ளூர்மொழி/ஒவ்வொரு ஆவணத்திற்குமான parity, id/title/sidebar_label சரிபார்ப்புகளுடன்)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### பிழைத்திருத்தம் & பதிவுகள் {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
+- இயக்கநேரத்தில் verbose பதிவுகளை மாற்ற:
 - Enable: `messenger.storage.local.set({ debug: true })`
 - Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- பதிவுகள் பதில்களை உருவாக்கும்போது/அனுப்பும்போது தோன்றும்
 
 ---
 
 ### Docs (website) {#docs-website}
 
 - Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- நிலைத் தளம் Build: `cd website && npm run build`
+- Make சமமானவை (அகரவரிசை): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- பயன்பாட்டு எடுத்துக்காட்டுகள்:
+- EN மட்டும், tests/link‑check தவிர்த்து, push இல்லை: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- அனைத்து உள்ளூர்மொழிகளும், tests/link‑check உடன், பின்னர் push: `make web_build_local_preview && make web_push_github`
+- வெளியிடுவதற்கு முன், offline‑safe link check ஐ இயக்கவும்: `make web_build_linkcheck`.
+- i18n: ஆங்கிலம் `website/docs/*.md` இல் உள்ளது; ஜெர்மன் மொழிபெயர்ப்புகள் `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` இல்
+- Search: Algolia DocSearch சூழல் மாறிகள் CI-யில் அமைக்கப்பட்டிருந்தால் (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), தளம் Algolia தேடலைப் பயன்படுத்தும்; இல்லையெனில் local search-க்கு மாறும். முகப்புப் பக்கத்தில், தேடல் பெட்டியைத் திறக்க `/` அல்லது `Ctrl+K` ஐ அழுத்தவும்.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### நன்கொடை மாற்றுவழி {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- வழி: `/donate` (மற்றும் `/<locale>/donate`)
+- நடத்தை:
+- நடப்பு வழியில் locale இருந்தால் (உ.தா., `/de/donate`), அதையே பயன்படுத்தவும்
+- இல்லையெனில், `navigator.languages` மற்றும் கட்டமைக்கப்பட்ட locales உள்ளவற்றில் சிறந்த பொருத்தத்தைத் தேர்ந்தெடுக்கவும்; இயல்புநிலை locale-க்கு fallback செய்க
+- Redirect செய்யும் இடங்கள்:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- மற்றவை → `/<locale>/docs/donation`
+- சரியான baseUrl கையாளுதலுக்காக `useBaseUrl` ஐ பயன்படுத்துகிறது
+- மாற்று வழியாக meta refresh + `noscript` இணைப்பை உட்படுத்துகிறது
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Preview குறிப்புகள் {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node preview-ஐ சுத்தமாக நிறுத்த: `http://localhost:<port>/__stop` ஐத் திறக்கவும் (`Local server started` அச்சிடப்பட்ட பின்).
+- MDX/JSX இல் படங்கள் ஏறவில்லை என்றால், தள `baseUrl` ஐ மதிக்க `useBaseUrl('/img/...')` ஐப் பயன்படுத்தவும்.
+- Preview முதலில் தொடங்கும்; பின்னர் link check இயங்கும் மற்றும் அது non‑blocking (உடைந்த வெளிப்புற இணைப்புகள் preview-ஐ நிறுத்தாது).
+- Preview URL எடுத்துக்காட்டு: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” அச்சிடப்பட்ட பின்).
+- link‑check இல் வெளிப்புற இணைப்புகள்: சில வெளிப்புற தளங்கள் (உ.தா., addons.thunderbird.net) தானியங்கிக் கிராலர்களைத் தடுக்கின்றன; link checks இல் 403 காட்டலாம். Preview இவ்வாறே தொடங்கும்; இவை புறக்கணிக்க பாதுகாப்பானவை.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### வலைத்தளத்தை மொழிபெயர்க்கவும் {#translate-website}
 
-What you can translate
+நீங்கள் மொழிபெயர்க்கக்கூடியவை
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Website UI மட்டும்: homepage, navbar, footer மற்றும் பிற UI strings. Docs உள்ளடக்கம் இப்போது ஆங்கிலமாகவே இருக்கும்.
 
-Where to edit
+எங்கே திருத்துவது
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` ஐத் திருத்தவும் (`en` ஐ முன்மாதிரியாகப் பயன்படுத்தவும்). `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` போன்ற placeholders-ஐ மாற்றாமல் வைத்திருக்கவும்.
 
-Generate or refresh files
+கோப்புகளை உருவாக்க/புதுப்பிக்க
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- அனைத்து locales க்கும் இல்லாத stubs-ஐ உருவாக்கவும்: `npm --prefix website run i18n:stubs`
+- ஆங்கிலத்திலிருந்து stubs-ஐ மீட்டெழுதவும் (புதிய strings சேர்த்த பின்): `npm --prefix website run i18n:stubs:force`
+- மாற்று (ஒரு locale க்கு மட்டும்): `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Homepage/navbar/footer UI strings-ஐ மொழிபெயர்ப்பு (OpenAI)
 
-- Set credentials once (shell or .env):
+- சான்றுகள் ஒருமுறை அமைக்கவும் (shell அல்லது .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- விருப்பமானது: `export OPENAI_MODEL=gpt-4o-mini`
+- One‑shot (அனைத்து locales, en தவிர்த்து): `make translate_web_index`
+- குறிப்பிட்ட locales-களுக்கு மட்டுப்படுத்து: `make translate_web_index OPTS="--locales de,fr"`
+- ஏற்கனவே உள்ள மதிப்புகளை மீட்டெழுது: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+செல்லுபடியாக்கல் & மீள் முயற்சிகள்
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- மொழிபெயர்ப்பு script JSON வடிவத்தைச் சரிபார்க்கிறது, curly‑brace placeholders-ஐக் காக்கிறது, மற்றும் URLs மாற்றமில்லாமல் இருப்பதை உறுதி செய்கிறது.
+- செல்லுபடியாக்கல் தோல்வியடைந்தால், உள்ள feedback உடன் அதிகபட்சம் 2 முறை மீண்டும் முயறும்; பின்னர் இருக்கும் மதிப்புகளை வைத்திருக்கிறது.
 
-Preview your locale
+உங்கள் locale-ஐ preview செய்யவும்
 
 - Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/` ஐப் பார்வையிடவும்
 
-Submitting
+சமர்ப்பித்தல்
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- திருத்தப்பட்ட `code.json` கோப்பு(கள்) உடன் PR ஒன்றைத் திறக்கவும். மாற்றங்களைத் திரட்டமாக வைத்திருக்கவும்; இயன்றால் ஒரு விரைவு screenshot ஐச் சேர்க்கவும்.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### பாதுகாப்பு & கட்டமைப்பு குறிப்புகள் {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` ஐ commit செய்ய வேண்டாம் (build தற்காலிகமாக உருவாக்குகிறது)
+- Update channel-ஐப் பாதுகாக்க `browser_specific_settings.gecko.id` ஐ நிலையாக வைத்திருங்கள்
+
+---
+
+### அமைப்புகள் நிலைத்தன்மை {#settings-persistence}
+
+- சேமிப்பு: அனைத்து பயனர் அமைப்புகளும் `storage.local` இல் இருப்பதும் add‑on புதுப்பிப்புகளுக்குப் பொறுத்துப் பாதுகாக்கப்படுவதுமாகும்.
+- Install: ஒரு key முற்றிலும் இல்லாதபோது (undefined) மட்டுமே இயல்புகள் பயன்படுத்தப்படும்.
+- Update: Migration காணாமல் போன keys-ஐ மட்டும் நிரப்பும்; ஏற்கனவே உள்ள மதிப்புகள் ஒருபோதும் மீட்டெழுதப்படாது.
+- Schema marker: `settingsVersion` (தற்போது `1`).
+- Keys மற்றும் இயல்புகள்:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- குறியீடு: `sources/background.js` → `initializeOrMigrateSettings()` மற்றும் `SCHEMA_VERSION` ஐப் பார்க்கவும்.
 
-Dev workflow (adding a new setting)
+Dev பணிச்சுற்று (புதிய அமைப்பைச் சேர்த்தல்)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `sources/background.js` இல் `SCHEMA_VERSION` ஐ உயர்த்தவும்.
+- `initializeOrMigrateSettings()` இல் `DEFAULTS` பொருளில் புதிய key + default ஐச் சேர்க்கவும்.
+- இயல்புகளை seed செய்யும்போது "only‑if‑undefined" விதியைப் பயன்படுத்தவும்; ஏற்கனவே உள்ள மதிப்புகளை மீட்டெழுத வேண்டாம்.
+- அந்த அமைப்பு பயனருக்கு தெரியும் ஒன்று என்றால், `sources/options.js` இல் அதை இணைத்து உள்ளூர்மயமான strings சேர்க்கவும்.
+- சோதனைகளைச் சேர்க்க/சரிசெய்யவும் (`tests/background.settings.migration.test.js` ஐப் பார்க்கவும்).
 
-Manual testing tips
+கைமுறை சோதனை குறிப்புகள்
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- புதிய நிறுவலை உருவகப்படுத்த: extension இன் data dir ஐ சுத்தப்படுத்தவும் அல்லது புதிய profile-இல் தொடங்கவும்.
+- புதுப்பிப்பை உருவகப்படுத்த: `storage.local` இல் `settingsVersion` ஐ `0` ஆக அமைத்து, மீளேற்றவும்; உள்ள மதிப்புகள் மாற்றமின்றி உள்ளனவா, காணாமல் போன keys மட்டுமே சேர்க்கப்பட்டுள்ளனவா என்பதை உறுதி செய்யவும்.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### சிக்கல் தீர்ப்பு {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird 128 ESR அல்லது புதியது என்பதை உறுதி செய்யவும்
+- இயக்கநேர பிரச்சினைகளுக்கு Error Console-ஐப் பயன்படுத்தவும்
+- சேமிக்கப்பட்ட அமைப்புகள் சரியாக அமலாகவில்லை என்று தோன்றினால், Thunderbird ஐ மறுதொடக்கம் செய்து மீண்டும் முயற்சிக்கவும். (Thunderbird அமர்வுகளுக்கு இடையில் நிலையை cache செய்து வைத்திருக்கலாம்; மறுதொடக்கம் புதிய அமைப்புகள் ஏற்றப்படுவதை உறுதி செய்கிறது.)
 
 ---
 
-### Translations
+### CI & கவரேஜ் {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) vitest-ஐ coverage உச்சவரம்புகளுடன் (85% lines/functions/branches/statements) இயக்குகிறது. உச்சவரம்புகள் பூர்த்தியாகாவிட்டால், வேலை தோல்வியடையும்.
+- Workflow HTML அறிக்கையுடன் `coverage-html` எனும் artifact-ஐ பதிவேற்றுகிறது; run பக்கத்திலிருந்து அதை பதிவிறக்கவும் (Actions → latest run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### பங்களிப்பு {#contributing}
 
-Screenshots for docs
+- கிளை/commit/PR வழிகாட்டலுக்காக CONTRIBUTING.md ஐப் பார்க்கவும்
+- குறிப்பு: உங்கள் தினசரி profile-ஐ பாதிக்காமல் இருக்க சோதனைக்காக தனித்த Thunderbird மேம்பாட்டு profile ஒன்றை உருவாக்கவும்.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### மொழிபெயர்ப்புகள்
+
+- பெரிய “all → all” மொழிபெயர்ப்பு பணிகள் மெதுவாகவும் செலவானவகையும் இருக்கலாம். சில ஆவணங்கள் மற்றும் 1–2 உள்ளூர்மொழிகளுடன் தொடங்குங்கள், விளைவை மதிப்பாய்வு செய்து, பின்னர் விரிவாக்குங்கள்.
+
+---
+
+- Retry கொள்கை: மொழிபெயர்ப்பு பணிகள் API பிழைகளில் அதிகபட்சம் 3 retries வரை (exponential backoff உடன்) செய்யும்; `scripts/translate_web_docs_batch.js` மற்றும் `scripts/translate_web_docs_sync.js` ஐப் பார்க்கவும்.
+
+ஆவணங்களுக்கு screenshots
+
+- படங்களை `website/static/img/` கீழ் சேமிக்கவும்.
+- பாதைகள் தள `baseUrl` உடன் வேலை செய்ய `useBaseUrl('/img/<filename>')` வழியாக MD/MDX இல் அவற்றை குறிப்பிடவும்.
+- `website/static/img/` கீழ் படங்களைச் சேர்த்ததற்குப் பிறகு அல்லது பெயர் மாற்றம் செய்த பிறகு, அனைத்து குறிப்புகளும் இன்னும் `useBaseUrl('/img/…')` ஐப் பயன்படுத்துகின்றனவா மற்றும் உள்ளூர் preview-இல் render ஆகின்றனவா என்று உறுதி செய்யவும்.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
+- பல‑அளவு `favicon.ico` அனைத்து build பாதைகளிலும் (Make + scripts) `website/scripts/build-favicon.mjs` மூலம் தானாக உருவாக்கப்படுகிறது.
+- எந்த கைமுறை படியும் தேவையில்லை; `icon-*.png` ஐப் புதுப்பிப்பது போதுமானது.
   Review tip
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- மொழிபெயர்க்கப்பட்ட docs இல் front‑matter `id` மாற்றமின்றி இருக்கட்டும்; இருந்தால் `title` மற்றும் `sidebar_label` மட்டுமே மொழிபெயர்க்கவும்.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- நோக்கம்: உள்ளூர் build/preview பொருட்களை அகற்று.
+- பயன்பாடு: `make clean`
+- அகற்றும் (இருந்தால்):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- நோக்கம்: வடிவமை, சோதனை, changelog புதுப்பி, commit மற்றும் push செய்.
+- பயன்பாடு: `make commit`
+- விவரங்கள்: Prettier (write), `make test`, `make test_i18n` ஐ இயக்குகிறது; staged diffs இருந்தால் changelog ஐச் சேர்க்கிறது; `origin/<branch>` க்கு push செய்கிறது.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- நோக்கம்: Flat config மூலம் ESLint ஐ இயக்கு.
+- பயன்பாடு: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- நோக்கம்: அனைத்து இலக்குகளையும் ஒரு வரிச் சுருக்கத்துடன் பட்டியலிடு.
+- பயன்பாடு: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- நோக்கம்: `web-ext` ஐப் பயன்படுத்தி MailExtension-ஐ lint செய்.
+- பயன்பாடு: `make lint`
+- குறிப்புகள்: தற்காலிகமாக `sources/manifest_LOCAL.json` → `sources/manifest.json` ஆக நகலெடுக்கிறது; build செய்யப்பட்ட ZIP-களைப் புறக்கணிக்கிறது; எச்சரிக்கைகள் pipeline-ஐ தோல்வியடையச் செய்யாது.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- நோக்கம்: Make இலக்கு மற்றும் விருப்ப arguments தேர்வுக்கான தொடர்பாடல் மெனு.
+- பயன்பாடு: arguments இன்றி `make` ஐ இயக்கவும்.
+- குறிப்புகள்: `whiptail` கிடைக்காவிட்டால், மெனு `make help` க்கு fallback செய்கிறது.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- நோக்கம்: ATN மற்றும் LOCAL ZIP-களை build செய் (`lint` மீது பொறுத்துள்ளது).
+- பயன்பாடு: `make pack`
+- குறிப்பு: package செய்வதற்கு முன் இரண்டிலும் பதிப்புகளை உயர்த்தவும் `sources/manifest_*.json`.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- நோக்கம்: repo-வை உடனடியாக வடிவமை.
+- பயன்பாடு: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- நோக்கம்: formatting-ஐ உறுதிப்படுத்து (எழுதாது).
+- பயன்பாடு: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- நோக்கம்: `prettier` க்கான alias.
+- பயன்பாடு: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- நோக்கம்: Prettier (write), ESLint, பின்னர் Vitest (நிறுவப்பட்டால் coverage).
+- பயன்பாடு: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- நோக்கம்: add‑on strings மற்றும் website docs க்கான i18n‑க்கு மையப்படுத்தப்பட்ட சோதனைகள்.
+- பயன்பாடு: `make test_i18n`
+- இயக்குகிறது: `npm run test:i18n` மற்றும் `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- நோக்கம்: EN இலிருந்து பிற locales க்கு add‑on UI strings-ஐ மொழிபெயர்க்கவும்.
+- பயன்பாடு: `make translation_app OPTS="--locales all|de,fr"`
+- குறிப்புகள்: key அமைப்பும் placeholders-உம் காக்கப்படும்; `translation_app.log` இல் பதிவுகள். Script வடிவம்: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- நோக்கம்: website docs-ஐ `website/docs/*.md` இலிருந்து `website/i18n/<locale>/...` ஆக மொழிபெயர்க்கவும்.
+- விருப்பமானது: `translate_web_docs_batch` (OpenAI Batch API)
+  - பயன்பாடு (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - பழமையான positional இன்னும் ஏற்றுக்கொள்ளப்படும்: `OPTS="<doc|all> <lang|all>"`
+- நடத்தை: JSONL உருவாக்கும், பதிவேற்றும், ஒவ்வொரு 30s க்கும் poll செய்கிறது, முடிவுகளைப் பதிவிறக்கம் செய்கிறது, கோப்புகளை எழுதுகிறது.
+- குறிப்பு: ஒரு batch job முடிவடைய அதிகபட்சம் 24 மணி நேரம் எடுத்துக்கொள்ளலாம் (OpenAI இன் batch window படி). ஒவ்வொரு poll இலும் console elapsed நேரத்தை காட்டும்.
+- Env: `OPENAI_API_KEY` (தேவை), விருப்பமான `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (இயல்பு 24h), `BATCH_POLL_INTERVAL_MS`.
+- பழமையானது: `translate_web_docs_sync`
+  - பயன்பாடு (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - பழமையான positional இன்னும் ஏற்றுக்கொள்ளப்படும்: `OPTS="<doc|all> <lang|all>"`
+- நடத்தை: synchronous per‑pair கோரிக்கைகள் (batch aggregation இல்லை).
+- குறிப்புகள்: `OPTS` விடுபட்டால் தொடர்பாடல் prompts. இரு முறைகளும் code blocks/inline code-ஐக் காக்கின்றன மற்றும் front‑matter `id` மாற்றமின்றி இருக்கும்; `translation_web_batch.log` (batch) அல்லது `translation_web_sync.log` (sync) இல் பதிவுகள்.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- நோக்கம்: website UI strings (homepage, navbar, footer) ஐ `website/i18n/en/code.json` இலிருந்து `website/i18n/<locale>/code.json` கீழ் உள்ள அனைத்து locales க்கும் ( `en` தவிர) மொழிபெயர்க்கவும்.
+- பயன்பாடு: `make translate_web_index` அல்லது `make translate_web_index OPTS="--locales de,fr [--force]"`
+- தேவைகள்: `OPENAI_API_KEY` ஐ export செய்யவும் (விருப்பமானது: `OPENAI_MODEL=gpt-4o-mini`).
+- நடத்தை: JSON அமைப்பைச் சரிபார்க்கிறது, curly‑brace placeholders-ஐக் காக்கிறது, URLs மாற்றமின்றி இருக்கும், மற்றும் validation பிழைகளில் feedback உடன் மீண்டும் முயற்சிக்கிறது.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- நோக்கம்: docs தளத்தை `website/build` க்கு build செய்.
+- பயன்பாடு: `make web_build OPTS="--locales en|de,en|all"` (அல்லது `BUILD_LOCALES="en de"` ஐ அமைக்கவும்)
+- உள்ளமைவு: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- சார்புகள்: `website/node_modules/@docusaurus` இல்லை என்றால் மட்டுமே `website/` இல் `npm ci` ஐ இயக்கும்.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- நோக்கம்: offline‑safe link check.
+- பயன்பாடு: `make web_build_linkcheck OPTS="--locales en|all"`
+- குறிப்புகள்: `tmp_linkcheck_web_pages` க்கு build செய்கிறது; GH Pages `baseUrl` ஐ `/` ஆக மறுஎழுதுகிறது; தொலை HTTP(S) இணைப்புகளைத் தவிர்க்கிறது.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- நோக்கம்: விருப்பமான tests/link‑check உடன் உள்ளூர் gh‑pages preview.
+- பயன்பாடு: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- நடத்தை: முதலில் Node preview server ஐ முயற்சிக்கிறது (`scripts/preview-server.mjs`, `/__stop` ஐ ஆதரிக்கிறது), பின்னர் `python3 -m http.server` க்கு fallback செய்கிறது; 8080–8090-ல் சேவை செய்கிறது; PID `web-local-preview/.server.pid` இல்.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- நோக்கம்: `website/build` ஐ `gh-pages` கிளைக்கு push செய்.
+- பயன்பாடு: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+குறிப்பு: Makefile பயன்படுத்தும் package manager-ஐ override செய்ய `NPM=…` ஐ அமைக்கவும் (இயல்புநிலை `npm`).

@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "চেঞ্জলগ",
-  "description": "চেঞ্জলগ",
+  "title": "পৰিবৰ্তনৰ তালিকা",
+  "description": "---",
   "source": "@site/i18n/as/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "চেঞ্জলগ"
+    "title": "পৰিবৰ্তনৰ তালিকা"
   },
   "sidebar": "docs",
   "previous": {

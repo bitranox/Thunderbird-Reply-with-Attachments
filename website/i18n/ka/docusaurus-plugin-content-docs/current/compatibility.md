@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: ' თავსებადობა'
-sidebar_label: ' თავსებადობა'
+title: 'თავსებადობა'
+sidebar_label: 'თავსებადობა'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## თავსებადობა {#compatibility}
+
+:::important მინიმალური Thunderbird-ის ვერსია
+ეს დამატება თავსებადია Thunderbird‑ის **128 ESR ან უფრო ახალ** ვერსიებთან. უფრო ძველი ვერსიები არ არის მხარდაჭერილი.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- მხარდაჭერილია Thunderbird 128 ESR ან უფრო ახალი (128.x+).
+- Thunderbird‑ის უფრო ძველი ვერსიები არ არის მხარდაჭერილი.
+- გამოცადებულია Windows‑ზე, macOS‑ზე და Linux‑ზე.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 არ არის მხარდაჭერილი
+Manifest V2 არ არის მხარდაჭერილი. დამატება იყენებს **Manifest V3 (MV3)**‑ს Thunderbird 128 ESR+‑ზე.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## პრობლემების მოგვარება {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- თუ დამატება მოსალოდნელად არ მუშაობს, დარწმუნდით, რომ იყენებთ Thunderbird‑ის თავსებად ვერსიას (128 ESR ან უფრო ახალს).
+- შეამოწმეთ Thunderbird‑ის შეცდომების კონსოლი (**Tools > Developer Tools > Error Console**) დამატებასთან დაკავშირებული საკითხებისთვის.
+- თუ შენახული პარამეტრები, როგორც ჩანს, სწორად არ გამოიყენება, გადატვირთეთ Thunderbird და სცადეთ თავიდან. (Thunderbird‑მა შეიძლება მდგომარეობა სესიებს შორის ქეშში შეინახოს; გადატვირთვა უზრუნველყოფს, რომ ახალი პარამეტრები ჩაიტვირთოს.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## ცნობილი კონფლიქტები {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- ამ დროისთვის არაფერია ცნობილი. თუ ხედავთ განმეორებით დუბლირებულ მიმაგრებებს ან ხარვეზებს სხვა დამატებებთან, გთხოვთ, შეგვატყობინეთ გამეორების ნაბიჯებით.
+
+---
+
+## ბეტა/ნაიტლი {#beta-nightly}
+
+- Thunderbird‑ის Beta და Daily (Nightly) აგებები, ზოგადად, მხარდაჭერილია, თუმცა აპსტრიმში ცვლილებებმა შეიძლება დროდადრო დაარღვიოს დამატების ქცევა. თუ პრობლემებს წააწყდებით, გთხოვთ, გვაცნობეთ და მიუთითეთ ზუსტი Thunderbird‑ის ვერსია (მაგ., “Daily 131.0a1 2025‑09‑10”).
+- რეგრესიას გადააწყდით Beta/Nightly‑ზე? გთხოვთ, შეგვატყობინეთ გამეორების ნაბიჯებით — იხილეთ [მხარდაჭერა](support) — და მიუთითეთ Thunderbird‑ის აგების ზუსტი სტრიქონი.
 
 ---

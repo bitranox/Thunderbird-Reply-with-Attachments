@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Gukora'
+title: 'Gushiraho'
 slug: /install
-sidebar_label: 'Gukora'
+sidebar_label: 'Gushiraho'
 ---
 
-## Gukora ukoresheje "Thunderbird Add-ons na Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Ingingo y'ingenzi ku rwego rwa Thunderbird
-Iyi add-on yishyigikira Thunderbird **128 ESR cyangwa hejuru**. Inyandiko za kera ntizishigikirwa.
+## Kwinjiza biciye kuri "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Verisiyo nkeya ya Thunderbird
+Iki kiyunguruzwa gishigikira Thunderbird **128 ESR canke izishasha**. Verisiyo zishaje ntizishigikirwa.
 :::
 
-Ubu ni uburyo bwiza bwo gukorera. Add-on zishyizweho kuva kuri ATN (addons.thunderbird.net) zigira amakuru yihuse. Imitwe ya LOCAL/dev ntizishobora kwiyongera mu buryo bwikora.
+Ubu ni bwo buryo bwo kwinjiza bwasabwe. Ivyiyunguruzwa vyinjiijwe bivuye kuri ATN (addons.thunderbird.net) biraronka kuvugururwa kwikoresha. Iyinjizwa rya LOCAL/dev ntirivugururwa ryikoresha.
 
-- Urwego rwa Thunderbird rukeneye: 128 ESR cyangwa hejuru.
+- Verisiyo ya Thunderbird nkeya isabwa: 128 ESR canke iyishasha.
 
-1. Mu Thunderbird, jya ku **Ibikoresho > Add-ons na Themes**.
-2. Shakisha "gusubiza hamwe n'inyandiko".
-3. Ongera add-on.
+1. Muri Thunderbird, jya kuri **Tools > Add-ons and Themes**.
+2. Shaka "reply with attachments".
+3. Ongeramwo ikiyunguruzwa.
 
-Cyangwa fungura urupapuro rwa add-on mu buryo butaziguye: [Thunderbird Add-ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Canke fungura urupapuro rw'ikiyunguruzwa mu buryo butaziguye: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Gukora mu ntoki kuva kuri XPI {#local-installation-in-thunderbird}
+## Kwinjiza n’intoke uvuye kuri XPI {#local-installation-in-thunderbird}
 
-### Kuramo dosye ya XPI {#download-the-xpi-file}
+### Kuramura idosiye ya XPI {#download-the-xpi-file}
 
-1. Jya ku [paji ya Thunderbird Add-on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Kuramo version ya nyuma ya add-on nk'igikoresho cya XPI (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Jya kuri [urupapuro rwa Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Kuramura verisiyo nshasha y’ikiyunguruzwa nk’idosiye ya XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Gukora muri Thunderbird {#install-in-thunderbird-local}
+### Kwinjiza muri Thunderbird {#install-in-thunderbird-local}
 
 1. Fungura Thunderbird.
-2. Jya ku **Ibikoresho > Add-ons na Themes**.
-3. Mu **Manager wa Add-ons**, kanda ikiranga cy'icyuma mu gice cyo hejuru iburyo.
-4. Hitamo **Shyiramo Add-on Ukoresheje Dosye…** mu menu.
-5. Hitamo dosye ya `reply_with_attachments-x.y.z-tb.xpi` wakuyeyo.
-6. Emeza gukorana igihe bibasabiwe.
+2. Jya kuri **Tools > Add-ons and Themes**.
+3. Muri **Add-ons Manager**, kanda akamenyetso ka gear ku ruhande rwo hejuru iburyo.
+4. Hitamwo **Install Add-on From File…** muri menu.
+5. Hitemwo idosiye `reply_with_attachments-x.y.z-tb.xpi` waramuruye.
+6. Emeza iyinjizwa igihe ubisabwe.
 
 ---
 
-## Gukora ku rwego rwa Developer {#installation-for-development}
+## Kwinjiza ku iterambere {#installation-for-development}
 
-### Kuramo isoko {#download-the-repository}
+### Kuramura ububikoshingiro (repository) {#download-the-repository}
 
-1. Kuramo version ya nyuma y'isoko rya GitHub.
-2. Koresha `make help` kubisobanuro birambuye.
+1. Kuramura verisiyo nshasha y’ububikoshingiro bwa GitHub.
+2. Koresha `make help` kugira uronke ayandi makuru.
 
-### Gukora muri Thunderbird {#install-in-thunderbird-dev}
+### Kwinjiza muri Thunderbird {#install-in-thunderbird-dev}
 
 1. Fungura Thunderbird.
-2. Jya ku **Ibikoresho > Add-ons na Themes**.
-3. Mu **Manager wa Add-ons**, kanda ikiranga cy'icyuma mu gice cyo hejuru iburyo.
-4. Hitamo **Shyiramo Add-on Ukoresheje Dosye…** mu menu.
-5. Hitamo dosye y'ibikurikira `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Emeza gukorana igihe bibasabiwe.
+2. Jya kuri **Tools > Add-ons and Themes**.
+3. Muri **Add-ons Manager**, kanda akamenyetso ka gear ku ruhande rwo hejuru iburyo.
+4. Hitamwo **Install Add-on From File…** muri menu.
+5. Hitemwo idosiye yakorewe `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Emeza iyinjizwa igihe ubisabwe.
 
-Icyitonderwa: Niba Thunderbird idakiriye `.zip` kuri sisitemu yawe, hindura izina kuyita `.xpi` maze ugerageze “Shyiramo Add-on Ukoresheje Dosye…” ukundi.
+Noti: Nimba Thunderbird itemera `.zip` kuri sisitemu yawe, ihindurire izina ribe `.xpi` hanyuma wongere ugerageze “Install Add‑on From File…”.
 
-### Aho uri kubona LOCAL ZIP {#where-local-zip}
+### Aho woronkera LOCAL ZIP {#where-local-zip}
 
-- Mbere, pakiga add-on: kora `make pack` ku mizi y'ishakisha.
-- Nyuma yo gupakira, shaka "LOCAL" zip mu mizi y'ishakisha (nka `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Mbere yo kongera gupakira ku g 测试, ongera guhindura ibice mu `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
+- Ubanza, pakiša (package) ikiyunguruzwa: kora `make pack` mu mizi (root) y’ububikoshingiro.
+- Inyuma yo gupakira, rondera zip ya “LOCAL” mu mizi y’ububikoshingiro (urugero, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Imbere yo gusubira gupakira ku rwego rwo kugerageza, zamura verisiyo muri vyompi `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json`.
 
 ---
 
-## Guhagarika, Gukuraho, no Guhindura {#disable-uninstall-updates}
+## Guhagarika, Gukuramwo, no Kuvugurura {#disable-uninstall-updates}
 
-- Guhagarika: Thunderbird → Ibikoresho → Add-ons na Themes → shaka add-on → kanda guhindura.
-- Gukuraho: ishusho imwe → menu y'imitwe itatu → Kuramo.
-- Guhindura: Imitwe ya ATN ihinduka mu buryo bwikora igihe version nshya yemejwe. Imitwe ya LOCAL/dev ntabwo ihinduka mu buryo bwikora; subiza inyuma build ya LOCAL mu buryo bwimanukiriye.
-- Gukuramo ibikenewe byuzuye: reba [Ubwirinzi → Gukuramo amakuru](privacy#data-removal).
+- Guhagarika: Thunderbird → Tools → Add‑ons and Themes → rondera ikiyunguruzwa → kanda kuri toggle kugira kigire off.
+- Gukuramwo: aho nyene → menu y’udutudomo dutatu → Remove.
+- Kuvugurura: ivyinjijwe biciye kuri ATN birivugurura bwikoresha igihe verisiyo nshasha zemejwe. Iyinjizwa rya LOCAL/dev ntirivugururwa ryikoresha; winjiza ukundi (reinstall) LOCAL nshasha n’intoke.
+- Gukuraho burundu ivyo washizeho (settings): raba [Privacy → Data removal](privacy#data-removal).
 
-Reba kandi
+Raba kandi
 
-- [Iby'ibanze](quickstart)
+- [Gutangura vuba](quickstart)

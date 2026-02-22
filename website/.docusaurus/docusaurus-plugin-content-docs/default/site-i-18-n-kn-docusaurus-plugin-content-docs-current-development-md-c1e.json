@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "ವಿಕಾಸ",
-  "description": "Development Guide",
+  "title": "ಅಭಿವೃದ್ಧಿ",
+  "description": "---",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "ವಿಕಾಸ",
-    "sidebar_label": "ವಿಕಾಸ"
+    "title": "ಅಭಿವೃದ್ಧಿ",
+    "sidebar_label": "ಅಭಿವೃದ್ಧಿ"
   },
   "sidebar": "docs",
   "previous": {

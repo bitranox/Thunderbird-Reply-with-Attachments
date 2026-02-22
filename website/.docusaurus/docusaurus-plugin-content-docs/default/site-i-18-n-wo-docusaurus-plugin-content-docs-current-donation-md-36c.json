@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Daan",
-  "description": "Daan",
+  "title": "Joxe ndimbal",
+  "description": "---",
   "source": "@site/i18n/wo/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Daan",
-    "sidebar_label": "Daan"
+    "title": "Joxe ndimbal",
+    "sidebar_label": "Joxe ndimbal"
   },
   "sidebar": "docs",
   "previous": {

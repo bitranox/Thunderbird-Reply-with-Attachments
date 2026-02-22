@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "સ્થાપન",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ઝડપી અને સારું માર્ગદર્શન",
+    "title": "ઝડપી શરૂઆત",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/quickstart"
   },
   "next": {

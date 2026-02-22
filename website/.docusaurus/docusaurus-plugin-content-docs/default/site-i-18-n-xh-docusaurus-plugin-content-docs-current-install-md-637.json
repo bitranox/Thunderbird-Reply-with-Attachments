@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Fakelo",
-  "description": "Fakelo nge \"Thunderbird Add-ons and Themes\"",
+  "title": "Ufakelo",
+  "description": "---",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Fakelo",
+    "title": "Ufakelo",
     "slug": "/install",
-    "sidebar_label": "Fakelo"
+    "sidebar_label": "Ufakelo"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ukuqala",
+    "title": "Ukuqala ngokukhawuleza",
     "permalink": "/Thunderbird-Reply-with-Attachments/xh/docs/quickstart"
   },
   "next": {

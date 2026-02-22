@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'Dauki Gane'
-sidebar_label: 'Dauki Gane'
+title: 'Ba da gudummawa'
+sidebar_label: 'Ba da gudummawa'
 ---
 
-## Donate
+---
+
+## Ba da gudummawa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+Idan kana son "Reply with Attachments" kuma kana son tallafa wa ci gabansa, za ka iya ba da gudummawa a nan:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Ba da gudummawa ta Stripe" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ko</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Ba da gudummawa ta PayPal" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>ko</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Sayi min kofi" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,21 +36,21 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skena lambar QR don sayi min kofi"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+Na gode! Taimakonku yana taimaka wajen kiyaye dacewa da sabbin sigar Thunderbird, inganta damar amfani da gwaje‑gwaje, kuma a ci gaba da sabunta takardun bayanai.
 
-Notes
+Lura
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- Hanyoyin ba da gudummawa suna buɗewa ne kawai idan ka danna su; ƙarin (add‑on) ba ya aika da buƙatun cibiyar sadarwa a bango.
+- Tallafin da ake maimaitawa yana taimaka wa kiyayewa na dogon lokaci da sabuntawa a kan lokaci, amma gaba ɗaya na zaɓi ne.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+Idan maɓallan hoto ba su loda ba, don Allah yi amfani da waɗannan hanyoyin maimakon haka:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+Gudummawa na son rai ne; babu takaita fasali.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## Bayyanar Gudummawa (dakatarwa na kwanaki 90)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+Ƙarin (add‑on) yana ɗauke da fasalin sauƙi don ɓoye tunatarwar gudummawa na ɗan lokaci bayan ka yi gudummawa.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- Inda za a same shi
+  - Zaɓuɓɓuka → ɓangaren Taimako: za ka ga maɓallin “Na yi gudummawa” da ƙaramin yanki na shiriya.
+  - Tattaunawar tabbatar da aikawa ma tana nuna maɓallin Gudummawa; yana ɓoyuwa ta atomatik idan dakatarwar tana aiki.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- Yadda yake aiki
+  - Danna “Na yi gudummawa” yana ɓoye maɓallan gudummawa da saƙonnin da suka shafi hakan na kwanaki 90.
+  - Wata alamar matsayi tana nuna “An ɓoye har zuwa YYYY‑MM‑DD” (a ranakun yankinka). Hakanan akwai maɓallin “Nuna Gudummawa kuma” don dawo da bayyanuwa nan da nan.
+  - Bayan kwanaki 90, maɓallin Gudummawa zai sake bayyana ta atomatik.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- Sirri da ajiya
+  - Ƙarin yana ajiye alamar lokaci guda a ajiyar cikin gida na Thunderbird don tuna lokacin dakatarwa. Maɓalli: `donateHideUntil` (milisekan na epoch).
+  - Wannan saitin na cikin bayanin martabarka ta Thunderbird ne kawai (ba ya daidaita da girgije). Wannan fasalin ba ya yin kowace buƙatar hanyar sadarwa.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- Warware matsala
+  - Idan Gudummawa har yanzu ta bayyana bayan ka danna “Na yi gudummawa”, jira kaɗan ko buɗe shafin Zaɓuɓɓuka sake; UI zai sabunta da zaran an ajiye saitin.
+  - Don sake saita da hannu, danna “Nuna Gudummawa kuma”. Hakanan za ka iya jira har sai ranar da aka nuna a alamar ta wuce.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+Wannan fasalin na sauƙi ne kawai; baya toshe aikace‑aikacen ƙarin kuma baya tattara kowace bayanan sirri.
 
 ---

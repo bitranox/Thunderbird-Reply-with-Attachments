@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "사용법",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/ko/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "usage",
     "title": "사용법",
-    "sidebar_label": "사용법"
+    "sidebar_label": "사용 방법"
   },
   "sidebar": "docs",
   "previous": {

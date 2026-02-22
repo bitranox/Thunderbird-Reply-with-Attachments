@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Installatie'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Installatie via "Thunderbird Add-ons en thema's" {#installation-in-thunderbird-recommended}
+
+:::important Minimale Thunderbird-versie
+Deze add‑on ondersteunt Thunderbird **128 ESR of nieuwer**. Oudere versies worden niet ondersteund.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Dit is de aanbevolen installatiemethode. Add‑ons die vanaf ATN (addons.thunderbird.net) zijn geïnstalleerd, ontvangen automatische updates. LOCAL/dev‑installaties worden niet automatisch bijgewerkt.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Minimale Thunderbird‑versie: 128 ESR of nieuwer.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Ga in Thunderbird naar **Extra > Add-ons en thema's**.
+2. Zoek naar "reply with attachments".
+3. Voeg de add‑on toe.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Of open de add‑onpagina direct: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Manual installation from XPI {#local-installation-in-thunderbird}
+## Handmatige installatie via XPI {#local-installation-in-thunderbird}
 
-### Download the XPI file {#download-the-xpi-file}
+### Download het XPI-bestand {#download-the-xpi-file}
 
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Ga naar de [pagina van de Thunderbird‑add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Download de nieuwste versie van de add‑on als een XPI‑bestand (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-local}
+### Installeren in Thunderbird {#install-in-thunderbird-local}
 
 1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+2. Ga naar **Extra > Add-ons en thema's**.
+3. Klik in de **Add‑onbeheerder** op het tandwielpictogram rechtsboven.
+4. Kies **Add‑on installeren vanuit bestand…** in het menu.
+5. Selecteer het gedownloade bestand `reply_with_attachments-x.y.z-tb.xpi`.
+6. Bevestig de installatie wanneer daarom wordt gevraagd.
 
 ---
 
-## Installation for development {#installation-for-development}
+## Installatie voor ontwikkeling {#installation-for-development}
 
-### Download the repository {#download-the-repository}
+### De repository downloaden {#download-the-repository}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Download de nieuwste versie van de GitHub‑repository.
+2. Voer `make help` uit voor meer informatie.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Installeren in Thunderbird {#install-in-thunderbird-dev}
 
 1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
+2. Ga naar **Extra > Add-ons en thema's**.
+3. Klik in de **Add‑onbeheerder** op het tandwielpictogram rechtsboven.
+4. Kies **Add‑on installeren vanuit bestand…** in het menu.
+5. Selecteer het gegenereerde bestand `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Bevestig de installatie wanneer daarom wordt gevraagd.
 
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
+Opmerking: als Thunderbird de `.zip` op je systeem niet accepteert, hernoem deze dan naar `.xpi` en probeer “Add‑on installeren vanuit bestand…” opnieuw.
 
-### Where to find the LOCAL ZIP {#where-local-zip}
+### Waar vind je de LOCAL ZIP {#where-local-zip}
 
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+- Verpak eerst de add‑on: voer `make pack` uit in de hoofdmap van de repository.
+- Na het verpakken vind je de “LOCAL”-zip in de hoofdmap van de repository (bijv. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Verhoog vóór het opnieuw verpakken voor testen de versies in zowel `sources/manifest_ATN.json` als `sources/manifest_LOCAL.json`.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Uitschakelen, verwijderen en updates {#disable-uninstall-updates}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+- Uitschakelen: Thunderbird → Extra → Add‑ons en thema's → zoek de add‑on → schakel uit.
+- Verwijderen: dezelfde weergave → menu met drie puntjes → Verwijderen.
+- Updates: ATN‑installaties werken automatisch bij zodra nieuwe versies zijn goedgekeurd. LOCAL/dev‑installaties worden niet automatisch bijgewerkt; installeer handmatig een nieuwe LOCAL‑build.
+- Instellingen volledig verwijderen: zie [Privacy → Gegevensverwijdering](privacy#data-removal).
 
-See also
+Zie ook
 
-- [Quickstart](quickstart)
+- [Snelstart](quickstart)

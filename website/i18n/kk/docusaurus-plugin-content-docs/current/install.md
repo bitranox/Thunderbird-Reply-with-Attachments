@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Орнату'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Қондырмалары мен Тақырыптары" арқылы орнату {#installation-in-thunderbird-recommended}
+
+:::important Ең төменгі Thunderbird нұсқасы
+Бұл қондырма Thunderbird **128 ESR немесе жаңарақ** нұсқаларын қолдайды. Ескі нұсқалар қолдау көрсетілмейді.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Бұл орнатудың ұсынылған тәсілі. ATN (addons.thunderbird.net) арқылы орнатылған қондырмалар автоматты түрде жаңартылады. LOCAL/dev орнатулары автожаңартылмайды.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Ең төменгі Thunderbird нұсқасы: 128 ESR немесе жаңарақ.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird ішінде **Құралдар > Қондырмалар мен тақырыптар** бөліміне өтіңіз.
+2. "reply with attachments" деп іздеңіз.
+3. Қондырманы орнатыңыз.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Немесе қондырма парағын тікелей ашыңыз: [Thunderbird қондырмалары (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI арқылы қолмен орнату {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI файлын жүктеп алыңыз {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird қондырма парағына](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) өтіңіз.
+2. Қондырманың ең соңғы нұсқасын XPI файлы ретінде (`reply_with_attachments-x.y.z-tb.xpi`) жүктеп алыңыз.
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird-ке орнату {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird-ті ашыңыз.
+2. **Құралдар > Қондырмалар мен тақырыптар** бөліміне өтіңіз.
+3. **Қондырмалар менеджерінде** оң жақ жоғарғы бұрыштағы беріліс таңбасын басыңыз.
+4. Мәзірден **Install Add-on From File…** таңдаңыз.
+5. Жүктелген `reply_with_attachments-x.y.z-tb.xpi` файлын таңдаңыз.
+6. Сұралған кезде орнатуды растаңыз.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Дамытуға арналған орнату {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Репозиторийді жүктеп алу {#download-the-repository}
 
-See also
+1. GitHub репозиторийінің ең соңғы нұсқасын жүктеп алыңыз.
+2. Қосымша ақпарат үшін `make help` іске қосыңыз.
 
-- [Quickstart](quickstart)
+### Thunderbird-ке орнату {#install-in-thunderbird-dev}
+
+1. Thunderbird-ті ашыңыз.
+2. **Құралдар > Қондырмалар мен тақырыптар** бөліміне өтіңіз.
+3. **Қондырмалар менеджерінде** оң жақ жоғарғы бұрыштағы беріліс таңбасын басыңыз.
+4. Мәзірден **Install Add-on From File…** таңдаңыз.
+5. Жасалған `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` файлын таңдаңыз.
+6. Сұралған кезде орнатуды растаңыз.
+
+Ескерту: Егер сіздің жүйеңізде Thunderbird `.zip` файлын қабылдамаса, оны `.xpi` деп қайта атаңыз да, “Install Add‑on From File…” пәрменін тағы бір рет қолданып көріңіз.
+
+### LOCAL ZIP қайда орналасады {#where-local-zip}
+
+- Алдымен қондырманы пакеттеңіз: репозиторий түпкі қалтасында `make pack` іске қосыңыз.
+- Пакеттегеннен кейін репозиторий түбінен “LOCAL” zip файлын табыңыз (мысалы, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Тестілеу үшін қайта пакеттеместен бұрын, нұсқаларды `sources/manifest_ATN.json` және `sources/manifest_LOCAL.json` екеуінде де арттырыңыз.
+
+---
+
+## Сөндіру, Жою және Жаңартулар {#disable-uninstall-updates}
+
+- Сөндіру: Thunderbird → Tools → Add‑ons and Themes → қондырманы табыңыз → ауыстырғышты өшіріңіз.
+- Жою: сол көрініс → үш-нүкте мәзірі → Remove.
+- Жаңартулар: ATN арқылы орнатылғандар жаңа нұсқалар мақұлданғанда автожаңартылады. LOCAL/dev орнатулары автожаңартылмайды; жаңа LOCAL жинағын қолмен қайта орнатыңыз.
+- Баптауларды толық алып тастау: [Құпиялылық → Деректерді жою](privacy#data-removal) бөліміне қараңыз.
+
+Сондай-ақ қараңыз
+
+- [Жылдам бастау](quickstart)

@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Ukusetyenziswa",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/xh/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",

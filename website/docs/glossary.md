@@ -28,7 +28,7 @@ Canonical terms used in the add-on UI and documentation. Use these to keep trans
 - Explain that only filenames are matched; not paths.
 - **Confirm / Confirmation:** ask the user to proceed before adding attachments.
 - **Answers:** “Yes” (add), “No” (cancel). Keep button labels short.
-- **Inline image:** an image referenced by CID in message HTML; never added as a file.
+- **Inline image:** an image referenced by CID in message HTML; skipped by default but can be included via the "Include inline pictures" setting.
 - **S/MIME signature:** `smime.p7s` or PKCS7 signature parts; never added.
 - **Options / Settings:** the add-on’s configuration page in Thunderbird.
 - **Default answer:** the preselected answer for the confirmation dialog.

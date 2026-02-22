@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Gutanga",
-  "description": "Gutanga",
+  "title": "Tanga inkunga",
+  "description": "---",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Gutanga",
-    "sidebar_label": "Gutanga"
+    "title": "Tanga inkunga",
+    "sidebar_label": "Tanga inkunga"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Соснашоъӣ",
-  "description": "Compatibility",
+  "title": "Мутобиқат",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Соснашоъӣ",
-    "sidebar_label": "Соснашоъӣ"
+    "title": "Мутобиқат",
+    "sidebar_label": "Мутобиқат"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Использование",
+    "title": "Истифода",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/usage"
   },
   "next": {

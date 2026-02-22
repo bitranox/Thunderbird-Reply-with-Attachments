@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "အသုံးပြုမှု",
-  "description": "Usage",
+  "title": "အသုံးပြုပုံ",
+  "description": "---",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "အသုံးပြုမှု",
-    "sidebar_label": "အသုံးပြုမှု"
+    "title": "အသုံးပြုပုံ",
+    "sidebar_label": "အသုံးပြုပုံ"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/configuration"
   },
   "next": {
-    "title": "ထိန်းချုပ်မှု",
+    "title": "လိုက်ဖက်မှု",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/compatibility"
   }
 }

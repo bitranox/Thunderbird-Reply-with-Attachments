@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Ulanyş",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/configuration"
   },
   "next": {
-    "title": "Uygunlyk",
+    "title": "Uýgunlyk",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/compatibility"
   }
 }

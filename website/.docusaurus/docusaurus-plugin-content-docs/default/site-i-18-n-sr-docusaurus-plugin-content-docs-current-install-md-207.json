@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalacija",
-  "description": "Instalacija putem \"Thunderbird dodataka i tema\"",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -15,11 +15,11 @@
     "id": "install",
     "title": "Instalacija",
     "slug": "/install",
-    "sidebar_label": "Instalacija"
+    "sidebar_label": "Инсталација"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Brzi start",
+    "title": "Brzi početak",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/quickstart"
   },
   "next": {

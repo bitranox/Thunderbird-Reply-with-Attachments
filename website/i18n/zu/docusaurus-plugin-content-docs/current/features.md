@@ -4,31 +4,40 @@ title: 'Izici'
 sidebar_label: 'Izici'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Izici {#features}
 
-## How It Works {#how-it-works}
+- Inamathisela ngokuzenzakalela amafayela avela ku-imeyili yoqobo uma uphendula.
+- Ukuziphatha okungacushwa: izinamathiselo zingangezwa
+  - zengezwe ngokuzenzakalela, noma
+  - zengezwe kuphela ngemva kokuqinisekisa (idayalogi encane, efinyelelekayo). Kuzinketho u
+    ngakwazi ukuvula ukuqinisekiswa bese ukhetha impendulo ezenzakalelayo (Yebo/Cha).
+- Uhlu lokuvimba amagama amafayela (amaphethini e-glob) luvimbela amafayela athile ukuthi
+  ancamathiselwe ngokuzenzakalela. Izibonelo: `*intern*`, `*secret*`, `*passwor*`.
+  Ukufanisa akubandlululi phakathi kwezinhlamvu ezinkulu nezinci futhi kuhlola igama lefayela kuphela; nika iphethini eyodwa
+  kulayini ngamunye kuzinketho.
+- Isixwayiso sohlwini lokuvimba (okungokuzikhethela, kuvuliwe ngokwakhona): lapho amafayela ekhishwa
+  ohlwini lwakho lokuvimba, i-modal encane ibala ifayela nephethini(e) elihambisanayo. Ifanele imodi emnyama
+  futhi iyafinyeleleka ngekhibhodi (Enter/Esc ukuze uvale).
+- Isebenza ne-Reply kanye ne-Reply all. I-Forward ayishintshwa yilesi sithasiselo.
+- Ingeza okuqoqa okuqhamuka koqobo ngisho noma usuvele unamathisele okuthile; igwema ukuphindaphinda ngokuya ngegama lefayela.
+- Isivikeli sokuphindaphinda se-tab sivimbela ukwengeza kabili kuthebhu efanayo yokubhala.
+- Iyashiya eceleni izitifiketi ze‑S/MIME ngokuzenzakalela ukuze kugwemeke izinamathiselo ezingadingekile.
+- Faka izithombe ezisemgqeni (okuzenzakalelayo: KUVULIWE). Izithombe ezifakiwe zibuyiselwa ngqo emzimbeni
+  wempendulo njengezixhumanisi zedatha ze‑base64 (URI), kugcinwa ukuhlelwa kwangempela okusemgqeni. Khubaza ku
+  Zinketho ukuze ugweme ngokuphelele izithombe ezisemgqeni.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Kusebenza Kanjani {#how-it-works}
+
+- Lapho uphendula, isithasiselo sibonisa uhlu lwezinamathiselo zoqobo.
+- Sikhipha izisayinisha ze‑S/MIME ezinamathiselweni zamafayela; izithombe ezisemgqeni zibuyiselwa emzimbeni (ngaphandle uma kukhutshaziwe).
+- Ngokuzikhethela sicela ukuqinisekisa (okunobungane bekhibhodi).
+- Sengeza amafayela afanelekile ekubhaleni kwakho, sigwema ukuphindaphinda ngokuya ngegama lefayela.
+- Bheka “Kungani izinamathiselo zingase zingangezwe” ku-Usage ngezimo ezisemngceleni.
+
+Inothi lobumfihlo: Yonke inqubo yenzeka endaweni ku-Thunderbird. Lesi sithasiselo asenzi zicelo zenethiwekhi zangemuva.
+
+---

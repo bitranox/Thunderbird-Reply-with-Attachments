@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Швидкий початок",
-  "description": "Quickstart",
+  "title": "Швидкий старт",
+  "description": "---",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Швидкий початок",
-    "sidebar_label": "Швидкий початок"
+    "title": "Швидкий старт",
+    "sidebar_label": "Швидкий старт"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Особливості",
+    "title": "Можливості",
     "permalink": "/Thunderbird-Reply-with-Attachments/uk/docs/features"
   },
   "next": {

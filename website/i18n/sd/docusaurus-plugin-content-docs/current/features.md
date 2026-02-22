@@ -1,34 +1,37 @@
 ---
 id: features
 title: 'خصوصيتون'
-sidebar_label: 'خصوصيتون'
+sidebar_label: 'خاصيتون'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## خصوصيتون {#features}
 
-## How It Works {#how-it-works}
+- جواب ڏيندي اصل اي ميل مان فائلون پاڻمرادو منسلڪ ڪري ٿو.
+- ترتيب ڏيارڻ جو رويو: منسلڪات هيئن ٿي سگهن ٿيون
+  - پاڻمرادو شامل ڪيون وڃن، يا
+  - رڳو تصديق کان پوءِ شامل ڪيون وڃن (هڪ ننڍڙي، دستياب ڊائلاگ). اختيارات ۾ توهان
+    تصديق کي فعال ڪري سگهو ٿا ۽ طئي شده جواب (ها/نه) چونڊي سگهو ٿا।
+- فائل نالن جي بليڪ لسٽ (گلوب پيٽرنز) مخصوص فائلن کي پاڻمرادو منسلڪ ٿيڻ کان روڪي ٿي. مثال: `*intern*`, `*secret*`, `*passwor*`.
+  ميچنگ حرفن جي صورت کان بي پرواهه آهي ۽ رڳو فائل نالي کي جانچي ٿي؛ اختيارات ۾ هر سٽ تي هڪ نمونو ڏيو.
+- بليڪ لسٽ انتباهه (اختياري، طئي طور فعال): جڏهن فائلون توهان جي بليڪ لسٽ سبب خارج ٿين ٿيون، هڪ ننڍڙو موڊل فائل ۽ ملندڙ پيٽرن(س) جي فهرست ڏيکاري ٿو. Dark‑mode لاءِ موزون ۽ ڪي بورڊ سان دستياب (بند ڪرڻ لاءِ Enter/Esc).
+- Reply ۽ Reply all سان ڪم ڪري ٿو. هن ايڊ‑آن پاران Forward ۾ ڪا تبديلي نٿي اچي.
+- جيتوڻيڪ توهان پاڻ ڪا شيءِ اڳ ۾ منسلڪ ڪري چڪا هجو، تڏهن به اصل منسلڪات شامل ڪري ٿو؛ فائل نالي موجب نقلن کان بچي ٿو.
+- Per‑tab ڊپليڪيٽ گارڊ ساڳي ڪمپوز ٽيب ۾ ٻيهر شامل ڪرڻ کان روڪي ٿو.
+- غير ضروري منسلڪن کان بچڻ لاءِ طئي طور S/MIME سرٽيفڪيٽس کي ڇڏي ڏيندو آهي.
+- ان لائين تصويرون شامل ڪريو (ڊي فالٽ: ON). Embedded تصويرون جواب جي باڊي ۾ سڌو سنئون base64 data URIs طور بحال ڪيون وڃن ٿيون، اصلي ان لائين ترتيب کي برقرار رکندي. ان لائين تصويرون مڪمل طور ڇڏڻ لاءِ اختيارات ۾ غيرفعال ڪريو.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## اهو ڪيئن ڪم ڪري ٿو {#how-it-works}
+
+- جواب تي، ايڊ‑آن اصل منسلڪات جي فهرست ڏيکاري ٿو.
+- فائل منسلڪن مان S/MIME صحيحون فلٽر ڪري ڪڍي ٿو؛ ان لائين تصويرون باڊي ۾ بحال ٿين ٿيون (جيستائين غيرفعال نه ڪيون وڃن).
+- اختياري طور تصديق لاءِ پڇي ٿو (ڪي بورڊ لاءِ موزون).
+- اهل فائلون توهان جي ڪمپوز ۾ شامل ڪري ٿو، فائل نالي موجب نقلن کان بچندي.
+- ڪن ڇيڙن معاملن لاءِ استعمال ۾ “منسلڪات ڇو شايد شامل نه ٿين” ڏسو.
+
+رازداري نوٽ: سڄي پروسيسنگ Thunderbird ۾ مقامي طور ٿئي ٿي. ايڊ‑آن پسمنظر ۾ ڪا به نيٽورڪ درخواست نٿو موڪلي.
+
+---

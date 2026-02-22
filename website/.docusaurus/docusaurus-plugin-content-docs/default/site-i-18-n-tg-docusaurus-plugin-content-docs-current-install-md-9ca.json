@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Устензия",
-  "description": "Устензия тавассути \"Thunderbird Add-ons and Themes\"",
+  "title": "Насб",
+  "description": "---",
   "source": "@site/i18n/tg/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Устензия",
+    "title": "Насб",
     "slug": "/install",
-    "sidebar_label": "Устензия"
+    "sidebar_label": "Насб"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Роҳнамои зуд",
+    "title": "Оғози зуд",
     "permalink": "/Thunderbird-Reply-with-Attachments/tg/docs/quickstart"
   },
   "next": {

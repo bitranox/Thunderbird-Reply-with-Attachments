@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ವಿಧಾನಗಳು",
-  "description": "Features",
+  "title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+  "description": "---",
   "source": "@site/i18n/kn/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ವಿಧಾನಗಳು",
-    "sidebar_label": "ವಿಧಾನಗಳು"
+    "title": "ವೈಶಿಷ್ಟ್ಯಗಳು",
+    "sidebar_label": "ವೈಶಿಷ್ಟ್ಯಗಳು"
   },
   "sidebar": "docs",
   "next": {
-    "title": "ಕೋಶಾರಂಭ",
+    "title": "ತ್ವರಿತ ಆರಂಭ",
     "permalink": "/Thunderbird-Reply-with-Attachments/kn/docs/quickstart"
   }
 }

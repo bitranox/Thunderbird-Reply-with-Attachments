@@ -119,7 +119,7 @@ function main() {
   const report = [];
 
   for (const rel of targets) {
-    const enFile = r(rel);
+    const _enFile = r(rel);
     const [oldEN, curEN] = getEnglishVersions(rel);
     if (!curEN) {
       console.error(`EN file not found: ${rel}`);

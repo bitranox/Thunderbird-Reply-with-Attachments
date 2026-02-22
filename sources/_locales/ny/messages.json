@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Chenjeza ngati zolumikizidwa zachotsedwa ndi mndandanda wakuda"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Phatikizani zithunzi za inline (zithunzi zomwe zalowetsedwa)"
+  },
   "uiDebugHeader": {
     "message": "Zapamwamba"
   },

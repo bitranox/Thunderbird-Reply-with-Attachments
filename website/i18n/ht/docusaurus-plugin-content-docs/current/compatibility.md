@@ -4,37 +4,41 @@ title: 'Konpatibilite'
 sidebar_label: 'Konpatibilite'
 ---
 
+---
+
 ## Konpatibilite {#compatibility}
 
-:::important Vèsyon Minimòm Thunderbird
-Add-on sa a sipòte Thunderbird **128 ESR oswa pi resan**. Vèsyon ki pi ansyen yo pa sipòte.
+:::important Vèsyon minimòm Thunderbird
+Ekstansyon sa a sipòte Thunderbird **128 ESR oswa pi nouvo**. Vèsyon ki pi ansyen yo pa sipòte.
 :::
 
-- Thunderbird 128 ESR oswa pi resan sipòte (128.x+).
+- Thunderbird 128 ESR oswa pi nouvo yo sipòte (128.x+).
 - Vèsyon Thunderbird ki pi ansyen yo pa sipòte.
-- teste sou Windows, macOS, ak Linux.
+- Teste sou Windows, macOS, ak Linux.
 
 :::warning Manifest V2 pa sipòte
-Manifest V2 pa sipòte. Add-on sa a vize **Manifest V3 (MV3)** sou Thunderbird 128 ESR+.
+Manifest V2 pa sipòte. Ekstansyon an vize **Manifest V3 (MV3)** sou Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Rezoud Pwoblèm {#troubleshooting}
+## Rezolisyon pwoblèm {#troubleshooting}
 
-- Si add-on nan pa fonksyone jan ou espere, asire ou ap itilize yon vèsyon konpatib nan Thunderbird (128 ESR oswa pi tar).
-- Verifye konsòl erè Thunderbird la (**Tools > Developer Tools > Error Console**) pou nenpòt pwoblèm ki gen rapò ak add-on nan.
-- Si anviwònman ki estoke yo pa parèt aplike byen, rdemare Thunderbird epi eseye ankò. (Thunderbird ka cache eta a atravè sesyon; yon rdemaraj asire anviwònman fre yo chaje.)
+- Si ekstansyon an pa mache jan ou espere a, asire w ou ap itilize yon vèsyon Thunderbird ki konpatib (128 ESR oswa pita).
+- Tcheke konsole erè Thunderbird la (**Tools > Developer Tools > Error Console**) pou nenpòt pwoblèm ki gen rapò ak ekstansyon an.
+- Si anviwònman ki sove yo sanble yo pa aplike kòmsadwa, rekòmanse Thunderbird epi eseye ankò. (Thunderbird ka mete eta an kach atravè plizyè sesyon; yon rekòmanse asire nouvo anviwònman yo chaje.)
 
 ---
 
-## Konflik Konekte {#known-conflicts}
+## Konfli ki konnen {#known-conflicts}
 
-- Okenn ki konnen nan moman sa a. Si ou wè atachman kopye repete oswa echèk ak lòt add-ons, tanpri rapòte avèk etap pou repwodui.
+- Pa gen okenn ki konnen pou kounye a. Si ou wè atachman ki repete an doub oswa echèk ak lòt ekstansyon, tanpri rapòte li ak etap pou repwodui.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Konstriksyon Thunderbird Beta ak Daily (Nightly) yo jeneralman sipòte, men chanjman amont ka pafwa fè konpòtman add-on lan kase. Si ou rankontre pwoblèm, tanpri rapòte yo epi enkli vèsyon exact Thunderbird la (pa egzanp, “Daily 131.0a1 2025‑09‑10”).
-- Ou rankontre yon regresyon nan Beta/Nightly? Tanpri rapòte li avèk etap pou repwodui — gade [Sipò](support) — epi enkli chenn konstriksyon exact Thunderbird la.
+- Thunderbird Beta ak Daily (Nightly) an jeneral yo sipòte, men chanjman upstream pafwa ka kraze konpòtman ekstansyon an. Si ou rankontre pwoblèm, tanpri rapòte yo epi enkli vèsyon Thunderbird egzak la (egzanp: “Daily 131.0a1 2025‑09‑10”).
+- Te jwenn yon regresyon sou Beta/Nightly? Tanpri rapòte li ak etap pou repwodui — gade [Sipò](support) — epi enkli egzak Thunderbird build string la.
+
+---

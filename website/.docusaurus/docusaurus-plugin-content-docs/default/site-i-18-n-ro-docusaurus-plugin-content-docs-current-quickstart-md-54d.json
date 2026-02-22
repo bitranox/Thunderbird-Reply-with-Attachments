@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Începere rapidă",
-  "description": "Quickstart",
+  "title": "Ghid de pornire rapidă",
+  "description": "---",
   "source": "@site/i18n/ro/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Începere rapidă",
-    "sidebar_label": "Începere rapidă"
+    "title": "Ghid de pornire rapidă",
+    "sidebar_label": "Pornire rapidă"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Funcții",
+    "title": "Funcționalități",
     "permalink": "/Thunderbird-Reply-with-Attachments/ro/docs/features"
   },
   "next": {

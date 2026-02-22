@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "ዝግጅቶች",
-  "description": "Features",
+  "title": "ባህሪዎች",
+  "description": "---",
   "source": "@site/i18n/am/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "ዝግጅቶች",
-    "sidebar_label": "ዝግጅቶች"
+    "title": "ባህሪዎች",
+    "sidebar_label": "ባህሪያት"
   },
   "sidebar": "docs",
   "next": {
-    "title": "ምርጫ በሳምንት",
+    "title": "ፈጣን መጀመር",
     "permalink": "/Thunderbird-Reply-with-Attachments/am/docs/quickstart"
   }
 }

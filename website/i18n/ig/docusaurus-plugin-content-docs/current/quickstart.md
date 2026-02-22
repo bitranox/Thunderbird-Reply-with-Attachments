@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ntụziaka Mbụ'
-sidebar_label: 'Ntụziaka Mbụ'
+title: 'Mbido ngwa ngwa'
+sidebar_label: 'Mbido Ngwa Ngwa'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Mbido ngwa ngwa
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Nsụgharị Thunderbird kacha nta
+Mgbakwunye a na-akwado Thunderbird **128 ESR ma ọ bụ nke ọhụrụ**. A naghị-akwado nsụgharị ochie.
+:::
+
+:::note Enweghị telemetri; enweghị netwọkụ n'azụ
+Mgbakwunye a **adịghị** anakọta nyocha/telemetri ma **adịghị** eme arịrịọ netwọkụ n'azụ. Enweta netwọkụ na-eme naanị mgbe ị pịa njikọ mpụta (Docs, GitHub, Donate).
+:::
+
+---
+
+### Wụnye
+
+1. Wụnye mgbakwunye ahụ site na Thunderbird Add‑ons.
+2. Nhọrọ: Gbanye nkwenye (Options → “Jụọ tupu itinye faịlụ ejikọtara”).
+3. Nhọrọ: Hapụ ìkìlọ ndepụta machibidoro ka ọ na-arụ ọrụ (ndabara): “Dọa aka ná ntị ma ọ bụrụ na faịlụ ejikọtara e wepụrụ site na ndepụta machibidoro”.
+4. Nhọrọ: Tinye ụkpụrụ ndepụta machibidoro (otu kwa ahịrị), dịka:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Rịba ama: “# …” dị n’elu bụ nkọwa n’akwụkwọ a; e tinyela nkọwa n’ụkpụrụ ị na-etinye n’Options. Tinye naanị otu ụkpụrụ n’ahịrị ọ bụla.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Ugbu a zaa ozi nwere faịlụ ejikọtara — ndị mbụ ga-agbakwunyere na-akpaghị aka ma ọ bụ mgbe nkwenye ngwa ngwa. Ọ bụrụ na e wepụrụ faịlụ ọ bụla site na ndepụta machibidoro gị, ị ga-ahụ obere ìkìlọ na-edekọ ha.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Lelee {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Zaa ozi nwere faịlụ ejikọtara 1–2 ma jide n'aka na ndị mbụ agbakwunyere na windo ide ozi gị.
+- Iji hazie àgwà, hụ [Nhazi](configuration) (ntughari nkwenye, azịza ndabara, ụkpụrụ ndepụta machibidoro).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Lelee ìkìlọ ndepụta machibidoro {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Zaa ozi nwere faịlụ dịka “secret.txt”.
+- Mgbe “Dọa aka ná ntị ma ọ bụrụ na faịlụ ejikọtara e wepụrụ site na ndepụta machibidoro” gbanyere, mkparịta ụka nta ga-edepụta faịlụ e wepụrụ na ụkpụrụ kwekọrọ.
+
+Ọ bụrụ na ị naghị ahụ ìkìlọ, jide n'aka na ụkpụrụ ahụ kwekọrọ n'aha faịlụ ahụ nke ọma (aha faịlụ naanị, adịghị ele ụdị mkpụrụedemede anya). Hụ Nhazi → Ndepụta machibidoro.
+
+---
+
+### Rịba ama keyboard {#keyboard-note}
+
+- Mkparịta ụka nkwenye na-akwado Y/J maka Ee na N/Esc maka Mba. Na ụfọdụ keyboards na-abụghị Latin, mkpụrụedemede nwere ike ịdị iche; Enter na-ekwenye bọtịnụ lekwasịrị anya.
 
 ---

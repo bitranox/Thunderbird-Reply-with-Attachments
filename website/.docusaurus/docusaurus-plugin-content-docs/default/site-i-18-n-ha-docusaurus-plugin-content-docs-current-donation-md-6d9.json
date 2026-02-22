@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Dauki Gane",
-  "description": "Donate",
+  "title": "Ba da gudummawa",
+  "description": "---",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Dauki Gane",
-    "sidebar_label": "Dauki Gane"
+    "title": "Ba da gudummawa",
+    "sidebar_label": "Ba da gudummawa"
   },
   "sidebar": "docs",
   "previous": {

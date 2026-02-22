@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Ιστορικό Αλλαγών",
-  "description": "Changelog",
+  "title": "Αρχείο αλλαγών",
+  "description": "---",
   "source": "@site/i18n/el/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Ιστορικό Αλλαγών"
+    "title": "Αρχείο αλλαγών"
   },
   "sidebar": "docs",
   "previous": {

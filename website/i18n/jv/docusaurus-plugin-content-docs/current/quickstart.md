@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Pandhuan Cepet'
-sidebar_label: 'Pandhuan Cepet'
+title: 'Wiwitan Cepet'
+sidebar_label: 'Miwiti Cepet'
+---
+
 ---
 
 ## Pandhuan Cepet
 
-:::important Minimum Thunderbird Version
-Add-on iki ndhukung Thunderbird **128 ESR utawa anyar**. Versi lawas ora didhukung.
+:::important Versi Thunderbird Minimal
+Add‑on iki ndhukung Thunderbird **128 ESR utawa luwih anyar**. Versi sing luwih lawas ora didhukung.
 :::
 
-:::note No telemetry; no background network
-Add-on iki **ora** ngumpulake analitik/telemetry lan ora nggawe **ora** panjalukan jaringan latar mburi. Akses jaringan mung kedadeyan nalika sampeyan ngeklik pranala eksternal (Docs, GitHub, Donasi).
+:::note Ora ana telemetri; ora ana jaringan latar mburi
+Add‑on iki ora nglumpukaké analitik/telemetri lan ora nggawe panyuwunan jaringan ing latar mburi. Akses jaringan mung kelakon nalika sampeyan ngeklik pranala eksternal (Docs, GitHub, Donate).
 :::
 
 ---
 
-### Instal
+### Pasang
 
-1. Instal add-on saka Thunderbird Add‑ons.
-2. Opsional: Aktifake konfirmasi (Pilihan → “Takon sadurunge nambah lampiran”).
-3. Opsional: Tinggalake peringatan dhaptar ireng diaktifake (standar): “Peringatan yen lampiran dikecualikan dening dhaptar ireng”.
-4. Opsional: Tambah pola dhaptar ireng (siji saben baris), contone:
+1. Pasang add‑on saka Thunderbird Add‑ons.
+2. Opsional: Aktifaké konfirmasi (Options → "Ask before adding attachments").
+3. Opsional: Tetep aktifaké pèngetan blacklist (standar): "Warn if attachments are excluded by blacklist".
+4. Opsional: Tambahna pola blacklist (saben baris siji), umpamané:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ Add-on iki **ora** ngumpulake analitik/telemetry lan ora nggawe **ora** panjaluk
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Catatan: “# …” ing ndhuwur yaiku komentar ing dokumentasi iki; aja kalebu komentar ing pola sing sampeyan tempel ing Pilihan. Lebokake siji pola saben baris wae.
+Cathetan: “# …” ing ndhuwur kuwi komentar ing dokumentasi iki; aja kalebu komentar ing pola sing sampeyan tempel ing Options. Lebokna mung siji pola saben baris.
 
-Saiki bales pesen nganggo lampiran — asli bakal ditambahake kanthi otomatis utawa sawise konfirmasi cepet. Yen ana file sing dikecualikan dening dhaptar ireng sampeyan, sampeyan bakal ndeleng peringatan cekak sing ndhaptar.
-
----
-
-### Verifikasi {#verify}
-
-- Bales pesen kanthi 1–2 lampiran lan konfirmasi yen asli wis ditambahake ing jendhela nulis sampeyan.
-- Kanggo nyetel perilaku, deleng [Konfigurasi](configuration) (togol konfirmasi, jawaban standar, pola dhaptar ireng).
+Saiki wangsulana pesen sing ana lampirané — sing asli bakal ditambahaké kanthi otomatis utawa sawise konfirmasi cepet. Yen ana file sing dikecualèkaké dening blacklist sampeyan, sampeyan bakal ndeleng pèngetan cekak sing ndhaptar file-file mau.
 
 ---
 
-### Verifikasi peringatan dhaptar ireng {#verify-blacklist-warning}
+### Priksa {#verify}
 
-- Bales pesen sing ngemot file kaya “secret.txt”.
-- Kanthi “Peringatan yen lampiran dikecualikan dening dhaptar ireng” diaktifake, dialog cilik ndhaptar file sing dikecualikan lan pola sing cocog.
-
-Yen sampeyan ora ndeleng peringatan, priksa manawa pola cocog persis karo jeneng file (mung jeneng file, ora sensitif terhadap huruf). Deleng Konfigurasi → Dhaptar Ireng.
+- Balesa pesen sing ana 1–2 lampiran lan konfirmasèkna yen sing asli ditambahaké menyang jendhela nyusun (compose) sampeyan.
+- Kanggo nyetel prilaku, delengen [Konfigurasi](configuration) (tombol-ganti konfirmasi, jawaban standar, pola blacklist).
 
 ---
 
-### Cathetan keyboard {#keyboard-note}
+### Priksa pèngetan blacklist {#verify-blacklist-warning}
 
-- Dialog konfirmasi ndhukung Y/J kanggo Ya lan N/Esc kanggo Ora. Ing sawetara keyboard non-Latin, tombol huruf bisa uga beda; Enter konfirmasi tombol sing difokusake.
+- Balesa pesen sing isiné file kaya “secret.txt”.
+- Yen “Warn if attachments are excluded by blacklist” diaktifaké, dialog cilik bakal ndhaptar file sing dikecualèkaké lan polané sing cocog.
+
+Yèn sampeyan ora ndeleng pèngetan, pastèkna polané pas karo jeneng file kanthi persis (mung jeneng file, ora mbedakaké gedhé‑cilik huruf). Delengen Konfigurasi → Blacklist.
+
+---
+
+### Cathetan papan ketik {#keyboard-note}
+
+- Dialog konfirmasi ndhukung Y/J kanggo Yes lan N/Esc kanggo No. Ing sawetara papan ketik non‑Latin, tombol hurufé bisa béda; Enter ngonfirmasi tombol sing fokus.
 
 ---

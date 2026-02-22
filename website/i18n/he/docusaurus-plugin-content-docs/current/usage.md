@@ -4,94 +4,98 @@ title: 'שימוש'
 sidebar_label: 'שימוש'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## שימוש {#usage}
+
+- במענה, התוסף מוסיף את המקוריים אוטומטית — או מבקש תחילה, אם מופעל באפשרויות.
+- מניעת כפילויות לפי שם קובץ; רכיבי S/MIME תמיד מדולגים. תמונות מוטמעות משוחזרות בגוף המענה כברירת מחדל (ניתן להשבית דרך "Include inline pictures" באפשרויות).
+- קבצים מצורפים שברשימה שחורה גם מדולגים (דפוסי glob שאינם תלויי רישיות, תואמים לשמות קבצים, לא לנתיבים). ראו [תצורה](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### מה קורה בעת מענה {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- זיהוי מענה → רשימת הקבצים המצורפים המקוריים → סינון S/MIME + מוטמעים → אישור אופציונלי → הוספת קבצים כשירים (דילוג על כפילויות) → שחזור תמונות מוטמעות בגוף.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+מעבר קשוח לעומת רופף: התוסף תחילה מוציא רכיבי S/MIME ורכיבים מוטמעים מקבצים מצורפים. אם דבר לא כשיר, הוא מריץ מעבר רופף שעדיין מוציא S/MIME/מוטמעים אך סובלני ליותר מקרים (ראו פרטי קוד). תמונות מוטמעות אינן מתווספות כקבצים מצורפים; במקום זאת, כאשר "Include inline pictures" מופעל (ברירת המחדל), הן מוטמעות ישירות בגוף המענה כ-Data URI-ים בקידוד base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| סוג רכיב                                        |             מעבר קשוח |             מעבר רופף |
+| ----------------------------------------------- | --------------------: | --------------------: |
+| קובץ חתימת S/MIME `smime.p7s`                   |                 מוחרג |                 מוחרג |
+| סוגי MIME של S/MIME (`application/pkcs7-*`)     |                 מוחרג |                 מוחרג |
+| תמונה מוטמעת המופנית לפי Content‑ID (`image/*`) | מוחרג (משוחזר בגוף\*) | מוחרג (משוחזר בגוף\*) |
+| דוא״ל מצורף (`message/rfc822`) עם שם קובץ       |               לא נוסף |          עשוי להיווסף |
+| קובץ מצורף רגיל עם שם קובץ                      |          עשוי להיווסף |          עשוי להיווסף |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* כאשר "Include inline pictures" מופעל (ברירת מחדל: פועל), תמונות מוטמעות מוטמעות בגוף המענה כ-Data URI-ים בקידוד base64 במקום להתווסף כקבצים מצורפים. ראו [תצורה](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+דוגמה: ייתכן שלחלק מהקבצים המצורפים חסרות כותרות מסוימות אך הם עדיין קבצים רגילים (לא מוטמעים/לא S/MIME). אם המעבר הקשוח לא מוצא אף אחד, המעבר הרופף עשוי לקבל אותם ולצרפם.
 
 ---
 
-## Behavior Details {#behavior-details}
+### הפניה צולבת {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- העברה אינה משתנה לפי תכנון (ראו מגבלות להלן).
+- לסיבות שבגללן ייתכן שקובץ מצורף לא יתווסף, ראו "מדוע ייתכן שקבצים מצורפים לא יתווספו".
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## פרטי התנהגות {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- מניעת כפילויות: התוסף מסמן את לשונית הכתיבה כמעובדת באמצעות ערך סשן לכל לשונית ומחסום בזיכרון. הוא לא יוסיף את המקוריים פעמיים.
+- סגירה ופתיחה מחדש של חלון כתיבה נחשבת כלשונית חדשה (כלומר, מותר ניסיון חדש).
+- כיבוד מצורפים קיימים: אם בחלון הכתיבה כבר יש מצורפים, המקוריים עדיין יתווספו בדיוק פעם אחת, תוך דילוג על שמות קבצים שכבר קיימים.
+- החרגות: ארטיפקטים של S/MIME ותמונות מוטמעות מוחרגים מקבצים מצורפים. אם דבר לא כשיר במעבר הראשון, מעקף רופף בודק שוב רכיבים שאינם S/MIME. תמונות מוטמעות מטופלות בנפרד: הן משוחזרות בגוף המענה כ-Data URI-ים (כאשר מופעל).
+  - שמות קבצים: `smime.p7s`
+  - סוגי MIME: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - תמונות מוטמעות: כל רכיב `image/*` שמופנה לפי Content-ID — מוחרג מקבצים מצורפים אך מוטמע בגוף המענה כאשר "Include inline pictures" פעיל
+  - דוא״ל מצורף (`message/rfc822`): מטופל כמצורף רגיל אם יש לו שם קובץ; עשוי להיווסף (בכפוף לבדיקות כפילות ולרשימה השחורה).
+- אזהרת רשימה שחורה (אם הופעלה): כאשר מועמדים מוחרגים על ידי הרשימה השחורה שלך,
+  התוסף מציג חלון קטן שמפרט את הקבצים שהושפעו ואת דפוס(י) ההתאמה.
+  אזהרה זו מופיעה גם במקרים שבהם לא יתווספו מצורפים כלל
+  כי הכול הוחרג.
 
 ---
 
-## Limitations {#limitations}
+## קיצורי מקלדת {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- דו-שיח אישור: Y/J = כן, N/Esc = לא; Tab/Shift+Tab וחיצים מחליפים מיקוד.
+  - "Default answer" ב-[תצורה](configuration#confirmation) קובע את הכפתור שמקבל מיקוד בתחילה.
+  - Enter מפעיל את הכפתור שבמיקוד. Tab/Shift+Tab והחיצים מזיזים מיקוד לנגישות.
+
+### דף קיצורי מקלדת {#keyboard-cheat-sheet}
+
+| מקשים             | פעולה                          |
+| ----------------- | ------------------------------ |
+| Y / J             | אשר כן                         |
+| N / Esc           | אשר לא                         |
+| Enter             | הפעל כפתור שבמיקוד             |
+| Tab / Shift+Tab   | העבר מיקוד קדימה/אחורה         |
+| Arrow keys        | העבר מיקוד בין כפתורים         |
+| תשובת ברירת המחדל | מגדירה מיקוד התחלתי (כן או לא) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## מגבלות {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- העברה אינה משתנה על ידי תוסף זה ("השב" ו"השב לכולם" נתמכים).
+- קבצים מצורפים גדולים מאוד עשויים להיות כפופים למגבלות של Thunderbird או של הספק.
+  - התוסף אינו מפצל או דוחס קבצים; הוא נשען על מנגנון המצורפים הרגיל של Thunderbird.
+- הודעות מוצפנות: רכיבי S/MIME מוחרגים במתכוון.
 
 ---
 
-See also
+## מדוע ייתכן שקבצים מצורפים לא יתווספו {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- תמונות מוטמעות אינן מתווספות כקבצים מצורפים. כאשר "Include inline pictures" פועל (ברירת המחדל), הן מוטמעות בגוף המענה כ-Data URI-ים. אם ההגדרה כבויה, תמונות מוטמעות מוסרות לחלוטין. ראו [תצורה](configuration#include-inline-pictures).
+- רכיבי חתימה של S/MIME מוחרגים לפי תכנון: שמות קבצים כמו `smime.p7s` וסוגי MIME כגון `application/pkcs7-signature` או `application/pkcs7-mime` מדולגים.
+- תבניות רשימה שחורה יכולות לסנן מועמדים: ראו [תצורה](configuration#blacklist-glob-patterns); ההתאמה אינה תלויה רישיות ומבוססת על שם קובץ בלבד.
+- שמות קבצים כפולים לא יתווספו מחדש: אם בחלון הכתיבה כבר יש קובץ עם אותו שם מנורמל, הוא ידולג.
+- רכיבים שאינם קבצים או חסרי שם קובץ: רק רכיבים דמויי-קובץ עם שם קובץ שימושי נשקלים להוספה.
+
+---
+
+ראו גם
+
+- [תצורה](configuration)

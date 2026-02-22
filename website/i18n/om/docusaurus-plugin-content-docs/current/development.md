@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'Hojii guduunfaa'
-sidebar_label: 'Hojii guduunfaa'
+title: 'Misooma'
+sidebar_label: 'Misooma'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Qajeelfama Misoomaa {#development-guide}
+
+:::note Afaan Ingiliffaa qofaan gulaali; hiikkoonni ofumaan ni tamsa’u
+Sanadoota ragaa (documentation) **qofa** jalatti `website/docs` (Afaan Ingiliffaa) keessatti haaromsi. Hiikkoonni `website/i18n/<locale>/…` jalatti uumaman; harka qofaan hin gulaalamuu. Qabiyyee bifa‑naannoo (localized) haaromsuuf hojii hiikkaa fayyadami (fakkeenyaaf, `make translate_web_docs_batch`).
 :::
 
-### Prerequisites {#prerequisites}
+### Durtii {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ fi npm (Node 22 waliin qoratame)
+- Thunderbird 128 ESR yookaan isaa oli (qorannoo harkaatiin)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Sirna Projeektii (sadarkaa ol‑aanaa) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Bu’uura (root): sirna paakeejii `distribution_zip_packer.sh`, docs, suuraawwan (screenshots)
+- `sources/`: koodii dabalataa (background, options/popup UI, manifests, icons)
+- `tests/`: walgitiinsa Vitest
+- `website/`: Docusaurus docs (i18n jalatti `website/i18n/de/...` qaba)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Teessisuu fi Meeshaalee {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Deps bu’uuraa fe’i: `npm ci`
+- Docs (filannoo): `cd website && npm ci`
+- Taargatoota barbaadi: `make help`
+
+---
+
+### Misooma Itti‑Jiru (web‑ext run) {#live-dev-web-ext}
+
+- Muriidhaa saffisaa irratti Firefox Desktop (UI smoke‑tests qofa):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird keessa oofi (MailExtensions irratti filatamaa):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Gorsa:
+- Konsoolii Dogoggoraa Thunderbird banuu haala itti fufinsaatti eegi (Tools → Developer Tools → Error Console).
+- Fuuloleen event MV3 osoo hin hojjanne yemmuu turan ni dhaabbatu; koodiin jijjiiramee booda dabalataa irra deebiin fe’i, yookaan web‑ext akka ofumaan irra deebi’u hayyami.
+- Amaloonni kan Firefox‑qofa muraasni adda adda; walsimannaa API mirkaneessuuf yeroo hunda Thunderbird keessatti ilaali.
+- Karoora (path) binary Thunderbird (fakkeenya):
+- Linux: `thunderbird` (fakkeenya, `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Addaan baafannaa prooffaayilii: Sirna misoomaaf prooffaayilii Thunderbird addaa fayyadami akka qunnamtii hojii guyyaa kee hin miine.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Taargatoota Make (Alfaabeetiin) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile deebi’aa hojii misoomaa waloo sirreessa. Yeroo kamiyyuu `make help` oofi kallattiin ibsa sarara‑tokkoon taargatoota hunda argachuuf.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Tarsiimoo: `make` taargatiin alaa yoo oofte, foddaa Whiptail salphaa banama; achirraa taargatii filadhu.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Taargatii                                                | Ibsa sarara tokko                                                                             |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Oomishaalee/ilaalchii naannoo haqi (tmp/, web-local-preview/, website/build/).                |
+| [`commit`](#mt-commit)                                   | Sirreeffami (format), qorannoo (i18n dabalatee) oofi, changelog haaraa galchi, commit & push. |
+| [`eslint`](#mt-eslint)                                   | ESLint bifa flat configtiin oofi (`npm run -s lint:eslint`).                                  |
+| [`help`](#mt-help)                                       | Taargatoota hunda tarreessi ibsa sarara‑tokkoon (sirriitti qindaa’e).                         |
+| [`lint`](#mt-lint)                                       | web‑ext lint irratti `sources/` (manifest yeroo muraasa; ZIPs hin ilaalu; hin ajjeesu).       |
+| [`menu`](#mt-menu)                                       | Sajoo wal‑itti hidhata qindaa’e (interactive) taargatii fi filannoowwan dabalataa filachuuf.  |
+| [`pack`](#mt-pack)                                       | ATN fi LOCAL ZIPs ijaari (linter oofa; scripitii packer waama).                               |
+| [`prettier`](#mt-prettier)                               | Repo iddoo isa jirutti sirreeffami (barreessuu ni raawwata).                                  |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier haalata sakatta’aa (hin barreessu); yoo sirreeffamuu barbaachise kufa.               |
+| [`prettier_write`](#mt-prettier_write)                   | Aliyaasa `prettier`.                                                                          |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, booda Vitest (coverage yoo qophaa’e).                               |
+| [`test_i18n`](#mt-test_i18n)                             | Qorannoo i18n‑qofa: bakka bu’oota dabalataa/wwalfakkaataa + walsimannaa website.              |
+| [`translate_app`](#mt-translation-app)                   | Aliyaasa `translation_app`.                                                                   |
+| [`translation_app`](#mt-translation-app)                 | Maqaa UI app gara `sources/_locales/en/messages.json` irraa hiiki.                            |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Sanadoota website OpenAI Batch APIn hiiki (kan filatamaa).                                    |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Sanadoota website haala synchronous (legacy, non-batch) hiiki.                                |
+| [`translate_web_index`](#mt-translation_web_index)       | Aliyaasa `translation_web_index`.                                                             |
+| [`translation_web_index`](#mt-translation_web_index)     | UI fuula‑jalqabaa/navbar/footer hiiki (`website/i18n/en/code.json → .../<lang>/code.json`).   |
+| [`web_build`](#mt-web_build)                             | Docs gara `website/build` ijaari (`--locales` / `BUILD_LOCALES` ni deeggara).                 |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Sakatta’iinsa link offline‑safe (HTTP[S] fagoo ni darbata).                                   |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Itti‑yaadama gh‑pages naannoo; tajaajila 8080–8090 irratti; filannoo tests/link‑check.        |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` gara caancalaa `gh-pages` tti dhiibi (push).                                  |
 
-Syntax for options
+Syntax filannoowwan (options)f
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- `make <command> OPTS="…"` fayyadami filannoowwan dabarsuuf (qubeeleen “quotes” ni gorfamu). Taargatoota gadi aanan keessatti fakkeenyi itti fayyadama ni mul’ata.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Gorsa ijaarsa locale {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Locale muraasa qofa ijaaruuf: `BUILD_LOCALES="en de"` kaa’i yookaan `OPTS="--locales en,de"` taargatoota web irratti dabarsi.
+- Locale tokko qofa itti‑yaaduuf: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Ijaari & Paakeejii {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIPs ijaari: `make pack`
+- ATN fi LOCAL ZIPs bu’uura repo irratti uuma (oomishaalee harka qofaan hin gulaalin)
+- Tarsiimoo: bifa baay’ina lakkoofsa (version) lamaan `sources/manifest_ATN.json` fi `sources/manifest_LOCAL.json` keessatti haaromsi paakeejii dura
+- Harkaatiin fe’i (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → ZIP ijaarame filadhu
+
+---
+
+### Qorannoo {#test}
+
+- Walitti qabaa guutuu: `make test` (Vitest)
+- Coverage (filannoo):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` oofi; `coverage/index.html` bani gabaasa HTML ilaaluuf
+- i18n qofa: `make test_i18n` (mataa‑addeessa UI/placeholder/titles + walsimannaa website locale‑per‑doc waliin id/title/sidebar_label sakatta’i)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Sakatta’iinsa dogoggoraa fi Logoota {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Logoota bal’inaan yeroo hojjetu keessatti banu/cufu:
+- Banu: `messenger.storage.local.set({ debug: true })`
+- Cufu: `messenger.storage.local.set({ debug: false })`
+- Logoonni yeroo deebii barreessuu/erguu keessa mul’atu
 
 ---
 
 ### Docs (website) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Tajaajila misoomaa: `cd website && npm run start`
+- Bakka bultii suuta (static site) ijaari: `cd website && npm run build`
+- Waan walsimoo Make (alfaabeetiin): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Fakkeenya itti fayyadama:
+- EN qofa, tests/link‑check dhiisi, push hin taasifne: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Locale hunda, tests/link‑check waliin, booda push: `make web_build_local_preview && make web_push_github`
+- Maxxansiinsa dura, sakatta’iinsa link offline‑safe oofi: `make web_build_linkcheck`.
+- i18n: Afaan Ingiliffaan `website/docs/*.md` keessatti jira; hiikkoonni Jarmanii `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` keessatti
+- Barbaacha: Yoo bitaa naannawaa Algolia DocSearch CI keessatti qophaa’e (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), saayitiin barbaacha Algolia fayyadama; yoo hin jiraanne ammoo barbaacha naannoo fayyadama. Fuula‑jalqaba irratti, `/` yookaan `Ctrl+K` cuqaasi sanduuqa barbaachaa banuuf.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Gara deeggarsaatti qajeelchu {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Karaa: `/donate` (fi `/<locale>/donate`)
+- Amala:
+- Karaan ammaa locale qabaate (fkn, `/de/donate`) yoo ta’e, isa sanatti fayyadami
+- Yoo hin jirre, walfakkaataa gaarii `navigator.languages` fi locale qindaa’aman jidduu filadhu; dhimmichaaf locale sirrii ta’eetti deebi’a
+- Gara kanaatti qajeelcha:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- kan biroo → `/<locale>/docs/donation`
+- `useBaseUrl` fayyadama baseUrl sirnaan too’achuuf
+- Deebii bakkalcha ta’ee meta refresh + link `noscript` dabalata
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Gorsa Itti‑yaadama {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node preview sirnaan dhaabi: `http://localhost:<port>/__stop` banu (kan maxxanfamu `Local server started` booda).
+- Suuraaleen MDX/JSX keessatti hin fe’aanne yoo ta’e, `useBaseUrl('/img/...')` fayyadami akka `baseUrl` saayitii kabajamu.
+- Itti‑yaadami jalqaba; erga jalqabamee booda sakatta’iinsi link ni fiigaa fi to’annoo hin ugguru (link alaa caccabaa itti‑yaadama hin dhaabu).
+- Fakkeenya URL itti‑yaadama: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” booda ni maxxanfama).
+- Link alaa sakatta’iinsa link keessatti: Marsariitii alaa muraasni (fkn, addons.thunderbird.net) qaxxaamurtoota otomaatii ugguru; 403 agarsiisu danda’u. Itti‑yaadami garuu ni jalqaba; kanneen kana ni dhiifamu.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Websayitii Hiiki {#translate-website}
 
-What you can translate
+Wanti ati hiiku dandeessu
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- UI website qofa: fuula‑jalqabaa, navbar, footer, fi barruulee UI biroo. Qabiyyeen docs ammatti Ingiliffaa‑qofa ta’a.
 
-Where to edit
+Eessa gulaali
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` gulaali (`en` akka maddi tumsaa fayyadami). Bakka bu’oota akkuma `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` akkasumaatti eegi.
 
-Generate or refresh files
+Faayiloota uumi yookaan haaromsi
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Locale hundaaf stubs dhaban uumi: `npm --prefix website run i18n:stubs`
+- Stubs Ingiliffaarraa irra caqi (erga barruulee haaraa dabaltee booda): `npm --prefix website run i18n:stubs:force`
+- Filannoo locale tokko qofaaf: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Maqaalee UI fuula‑jalqabaa/navbar/footer hiiki (OpenAI)
 
-- Set credentials once (shell or .env):
+- Ragaa seenuu (credentials) yeroo tokkotti kaa’i (shell yookaan .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Filannoo: `export OPENAI_MODEL=gpt-4o-mini`
+- Yeroo tokkotti (locale hunda, en dhiisi): `make translate_web_index`
+- Locale murtaa’eef daangeessi: `make translate_web_index OPTS="--locales de,fr"`
+- Gatiin jiru irra deebi’i (overwrite): `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Mirkaneessa & yaaliwwan irra deebii
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Scriptiin hiikkaa Sirna JSON ni mirkaneessa, bakka bu’oota qal’insa kurkoofaa (curly‑brace) ni eega, URL‑otaas akka hin jijjiiramne ni mirkaneessa.
+- Mirkaneessi yoo kufe, yaada deebi’een hanga yeroo 2 tti irra deebi’a; boodarra gatii jiru ni tursiisa.
 
-Preview your locale
+Locale kee dursee ilaali
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Tajaajila misoomaa: `npm --prefix website run start`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/` daawwadhu
 
-Submitting
+Erguu
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Faayiloota `code.json` gulaalamaniin PR banu. Jijjiiramoota daangessii eegi; yemmuu danda’amu suuraa xiqqaa dabaluu yaali.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Nageenya fi Qindeessuu — Gorsa {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` hin commit’in (ijaarraan yeroo muraasaaf uumama)
+- `browser_specific_settings.gecko.id` tasgabbaa’aa eegi akka tajaajilli update hin jijjiiramne
+
+---
+
+### Turtii Seerota (Settings) {#settings-persistence}
+
+- Kuusaa: Qindaa’inoonni fayyadamaa hunda `storage.local` keessatti jiraatu; update dabalataan ni turu.
+- Teessisuu: Itti‑gaafatamni durtii iddoo bu’uun ni raawwatama yommuu furtuun dhabamuu (undefined) qofa.
+- Haaromsuu: Jijjiirraan (migration) furtuu dhabaman qofa guuta; gatiin jiru hin irra‑barreessamu.
+- Mallattoo schema: `settingsVersion` (ammatti `1`).
+- Furtuuwwan fi durtiwwan:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Koodii: `sources/background.js` → `initializeOrMigrateSettings()` fi `SCHEMA_VERSION` ilaali.
 
-Dev workflow (adding a new setting)
+Hojii misoomaa (qindaa’ina haaraa dabaluu)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `SCHEMA_VERSION` keessatti `sources/background.js` dabali.
+- Furtuu haaraa + durtii gara wanta `DEFAULTS` jedhu keessa `initializeOrMigrateSettings()` keessatti dabaluu.
+- Durtiiwwan “yommuu‑qofa‑hinjiru” jedhuun facaasi; gatiiwwan jiran hin irra‑barreessin.
+- Yoo qindaa’inni fayyadamaa itti mul’atu ta’e, `sources/options.js` keessatti walitti hidhi; barruulee bifa‑naannoo dabaluu.
+- Qorannoo dabaluu/yookaan fooyyessi (`tests/background.settings.migration.test.js` ilaali).
 
-Manual testing tips
+Gorsa qorannoo harkaatiin
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Teessisuu haaraa fakkeessuuf: kuusaa (data dir) extension haqii yookaan prooffaayilii haaraa jalqabi.
+- Haaromsuu fakkeessuuf: `settingsVersion` gara `0`tti `storage.local` keessatti saagi fi irra deebi’i fe’i; gatiin jiran akka hin jijjiiramne fi furtuun dhabaman qofa akka dabalaman mirkaneessi.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Hiika Rakkoo {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird 128 ESR yookaan isaa oli akka ta’e mirkaneessi
+- Rakkoo yeroo raawwii keessatti furuu: Error Console fayyadami
+- Qindaa’inni kuufame akka hin hojjanne fakkaatee yoo mul’ate, Thunderbird irra deebi’i banuu yaali. (Thunderbird haalata keessa qabachuu danda’a; irra deebiin banuun qindaa’inoota haarawa fe’a.)
 
 ---
 
-### Translations
+### CI fi Coverage {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) vitest coverage tajaajiltoota (85% lines/functions/branches/statements) waliin oofa. Yoo hanga caasaa hin guutamne, hojii ni kufa.
+- Adeemsi kun oomisha `coverage-html` of keessaa qabata gabaasa HTML’n; fuula raawwii irraa buusi (Actions → raawwii dhiyoo → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Hirmaannaa {#contributing}
 
-Screenshots for docs
+- CONTRIBUTING.md ilaali qajeelfama caancalaa/commit/PR
+- Tarsiimoo: Prooffaayilii misooma Thunderbird addaa uumi qorannoo irratti gochuuf akka prooffaayilii guyyaa kee hin miine.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Hiikkoota
+
+- Hojii hiikkaa “hunda → hunda” bal’aan gaabbii fi baasii qabaachuu danda’a. Locale muraasa fi docs muraasa irraa jalqabi, bu’aa ilaali, ergasii bal’isi.
+
+---
+
+- Sirna irra deebi’i: hojii hiikkaa hanga yeroo 3 tti irra deebi’a dogoggora API irrattis gadi‑lakkisii haala dhiphina dabalaa fayyadamuun; `scripts/translate_web_docs_batch.js` fi `scripts/translate_web_docs_sync.js` ilaali.
+
+Suuraawwan docs‑f
+
+- Suuraalee `website/static/img/` jala kaa’i.
+- MD/MDX keessatti `useBaseUrl('/img/<filename>')` fayyadami akka karaan (paths) waliin hojjatu `baseUrl` saayitii waliin.
+- Suuraalee `website/static/img/` jala dabaltee yookaan maqaa jijjiirte booda, hundi `useBaseUrl('/img/…')` fayyadamu akka itti fufu fi itti‑yaadama naannoo keessatti akka mul’atu mirkaneessi.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` baay’ina‑guddaa of keessaa qabu karaa hundumaa (Make + scripts) `website/scripts/build-favicon.mjs`n otomaatiin ni uumama.
+- Tarkaanfii harkaatiin hin barbaachisu; `icon-*.png` haaromsuun gahaa dha.
+  Tarsiimoo ilaalcha
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Docs hiikataman keessatti front‑matter `id` akka hin jijjiiramin eegi; yommuu jiraatan `title` fi `sidebar_label` qofa hiiki.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Kaayyoo: oomishaalee/ilaalchii naannoo haquu.
+- Fayyadama: `make clean`
+- Akkasuma ni haqa (yoo jiraatan):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Kaayyoo: sirreeffami, qorannoo, changelog haaromsuu, commit, fi push.
+- Fayyadama: `make commit`
+- Bal’inaan: Prettier (write), `make test`, `make test_i18n` oofa; yommuu sochiin stagii jiru jiraatu changelog itti dabala; gara `origin/<branch>` tti ni dhiiba.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Kaayyoo: ESLint bifa flat configtiin oofi.
+- Fayyadama: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Kaayyoo: taargatoota hunda ibsa sarara‑tokkoon tarreessi.
+- Fayyadama: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Kaayyoo: MailExtension `web-ext` fayyadamuun linti.
+- Fayyadama: `make lint`
+- Yaadannoowwan: `sources/manifest_LOCAL.json` → `sources/manifest.json` yeroo muraasaaf kophatti garagalcha; ZIP ijaaramanii hin ilaallaman; akeekkachiisni (warnings) paayipilaayinii hin kufisan.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Kaayyoo: sajoo wal‑itti hidhata qindaa’e taargatii fi filannoowwan dabalataa filachuuf.
+- Fayyadama: `make` homaa ala oofi.
+- Yaadannoowwan: `whiptail` yoo hin jirre, sajoo `make help`tti deebi’a.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Kaayyoo: ATN fi LOCAL ZIPs ijaaru (`lint` irratti hirkata).
+- Fayyadama: `make pack`
+- Tarsiimoo: baay’ina lamaan `sources/manifest_*.json` keessatti dabaluu paakeejii dura.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Kaayyoo: repo iddoo isa jirutti sirreessuu.
+- Fayyadama: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Kaayyoo: sirreessuu mirkaneessuu (hin barreessu).
+- Fayyadama: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Kaayyoo: aliyaasa `prettier`.
+- Fayyadama: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Kaayyoo: Prettier (write), ESLint, ergasii Vitest (coverage yoo fe’amte) oofu.
+- Fayyadama: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Kaayyoo: qorannoo i18n irratti xiyyeeffateef maqaalee app fi docs website.
+- Fayyadama: `make test_i18n`
+- Ni oofa: `npm run test:i18n` fi `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Kaayyoo: maqaalee UI add‑on EN irraa gara locale birootiitti hiiku.
+- Fayyadama: `make translation_app OPTS="--locales all|de,fr"`
+- Yaadannoowwan: sirna furtuu eega fi bakka bu’oota hin jijjiiru; gara `translation_app.log`tti galmeessa. Sirna scripitii: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Kaayyoo: sanadoota website `website/docs/*.md` irraa gara `website/i18n/<locale>/...`tti hiiku.
+- Kan filatamaa: `translate_web_docs_batch` (OpenAI Batch API)
+  - Fayyadama (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional amma illee ni fudhata: `OPTS="<doc|all> <lang|all>"`
+- Amala: JSONL ijaara, olkachiisa, osoo osoo 30s hunda gaafata, bu’aa buufata, faayiloota barreessa.
+- Yaada: hojii batch hanga sa’aatii 24 fudhachuu danda’a (batch window OpenAI). Koonsooliin yeroo darbe gaaffii hundaan ni agarsiisa.
+- Naannolee: `OPENAI_API_KEY` (dirqama), filannoo `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (bifa durtii 24h), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - Fayyadama (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional amma illee ni fudhata: `OPTS="<doc|all> <lang|all>"`
+- Amala: gaaffii wajiin‑wajiin synchronous (batch aggreg. malee).
+- Yaadannoowwan: `OPTS` yoo dhihaachuu baate gaaffii wal‑itti dhufeenya (interactive) geessisa. Haala lamaanis bifa koodii (code blocks/inline) ni eega; front‑matter `id` hin jijjiiru; gara `translation_web_batch.log` (batch) yookaan `translation_web_sync.log` (sync)tti galmeessa.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Kaayyoo: maqaalee UI website (fuula‑jalqabaa, navbar, footer) `website/i18n/en/code.json` irraa gara locale hundaatti jalatti `website/i18n/<locale>/code.json` (kan `en` hin dabalne) hiiku.
+- Fayyadama: `make translate_web_index` yookaan `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Dirqama: `OPENAI_API_KEY` export godhi (filannoo: `OPENAI_MODEL=gpt-4o-mini`).
+- Amala: Sirna JSON ni mirkaneessa, bakka bu’oota qal’insa kurkoofaa ni eega, URL‑ota hin jijjiiru, dogoggora mirkaneessaa irra deebi’uun yaali.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Kaayyoo: saayitii docs gara `website/build` ijaaru.
+- Fayyadama: `make web_build OPTS="--locales en|de,en|all"` (yookaan `BUILD_LOCALES="en de"` kaa’i)
+- Keessummaa: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Deps: `npm ci` `website/` keessatti ni oofa yoo `website/node_modules/@docusaurus` dhabame.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Kaayyoo: sakatta’iinsa link offline‑safe.
+- Fayyadama: `make web_build_linkcheck OPTS="--locales en|all"`
+- Yaadannoowwan: gara `tmp_linkcheck_web_pages`tti ijaara; `baseUrl` GH Pages gara `/`tti deeggarsa; HTTP(S) fagoo ni darbata.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Kaayyoo: itti‑yaadama gh‑pages naannoo tests/link‑check filannoo waliin.
+- Fayyadama: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Amala: jalqaba tajaajila itti‑yaadama Node yaala (`scripts/preview-server.mjs`, `/__stop` ni deeggara), booda `python3 -m http.server`tti ni deebi’a; tajaajila 8080–8090; PID `web-local-preview/.server.pid` irratti.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Kaayyoo: `website/build` gara caancalaa `gh-pages` tti dhiibuu.
+- Fayyadama: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Tarsiimoo: `NPM=…` kaa’i meeshaa paakeejii Makefile fayyadamu jijjiiruuf (bifa durtii `npm`).

@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Ўстаноўка",
-  "description": "Ўстаноўка праз \"Дадаткі і Тэмы Thunderbird\"",
+  "title": "Усталяванне",
+  "description": "---",
   "source": "@site/i18n/be/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,9 +13,9 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Ўстаноўка",
+    "title": "Усталяванне",
     "slug": "/install",
-    "sidebar_label": "Ўстаноўка"
+    "sidebar_label": "Усталяванне"
   },
   "sidebar": "docs",
   "previous": {

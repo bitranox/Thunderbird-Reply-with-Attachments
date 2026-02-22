@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Karakteristike",
-  "description": "Features",
+  "title": "Функционалности",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Karakteristike",
-    "sidebar_label": "Karakteristike"
+    "title": "Функционалности",
+    "sidebar_label": "Карактеристике"
   },
   "sidebar": "docs",
   "next": {
-    "title": "Brzi start",
+    "title": "Brzi početak",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/quickstart"
   }
 }

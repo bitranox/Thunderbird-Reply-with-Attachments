@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kutanga Pamusoro",
-  "description": "Quickstart",
+  "title": "Kutanga nekukurumidza",
+  "description": "---",
   "source": "@site/i18n/sn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kutanga Pamusoro",
-    "sidebar_label": "Kutanga Pamusoro"
+    "title": "Kutanga nekukurumidza",
+    "sidebar_label": "Kutanga nekukurumidza"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/features"
   },
   "next": {
-    "title": "Kuisirwa",
+    "title": "Kuiswa",
     "permalink": "/Thunderbird-Reply-with-Attachments/sn/docs/install"
   }
 }

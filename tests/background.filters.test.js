@@ -1,6 +1,6 @@
 /*
  * Test Module: background.filters.test.js
- * Scope: Domain filters and utils — lower, normalizedName, S/MIME/inline checks.
+ * Scope: Domain filters and utils — lower, normalizedName, S/MIME checks.
  * Intent: Validate pure helpers used by selection logic.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
@@ -57,8 +57,8 @@ describe('Domain filters and utils', () => {
     expect(App.Domain.includeStrict({ contentDisposition: 'inline' })).toBe(false);
   });
 
-  // Test: includeRelaxed excludes S/MIME and inline content
-  it('includeRelaxed excludes S/MIME and inline content', () => {
+  // Test: includeRelaxed excludes S/MIME, inline images, and inline disposition
+  it('includeRelaxed excludes S/MIME, inline images, and inline disposition', () => {
     const { App } = globalThis;
     expect(App.Domain.includeRelaxed({ name: 'smime.p7s' })).toBe(false);
     expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(

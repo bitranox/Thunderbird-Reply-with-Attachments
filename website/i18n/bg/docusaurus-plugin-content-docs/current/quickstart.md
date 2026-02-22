@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Бързо начало'
-sidebar_label: 'Бързо начало'
+title: 'Бърз старт'
+sidebar_label: 'Бърз старт'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Бързо начало
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Минимална версия на Thunderbird
+Тази добавка поддържа Thunderbird **128 ESR или по‑нова**. По‑старите версии не се поддържат.
+:::
+
+:::note Без телеметрия; без мрежова активност във фонов режим
+Добавката **не** събира анализи/телеметрия и **не** прави заявки към мрежата във фонов режим. Достъп до мрежата има само когато щракнете външни връзки (Документация, GitHub, Дарение).
+:::
+
+---
+
+### Инсталиране
+
+1. Инсталирайте добавката от Thunderbird Add‑ons.
+2. По избор: Активирайте потвърждение (Настройки → „Питай преди добавяне на прикачени файлове“).
+3. По избор: Оставете предупреждението за черен списък включено (по подразбиране): „Предупреждавай, ако прикачени файлове са изключени от черния списък“.
+4. По избор: Добавете шаблони за черния списък (по един на ред), напр.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Забележка: „# …“ по‑горе е коментар в тази документация; не включвайте коментари в шаблоните, които поставяте в Настройки. Въвеждайте само по един шаблон на ред.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Сега отговорете на съобщение с прикачени файлове — оригиналите ще бъдат добавени автоматично или след бързо потвърждение. Ако някои файлове са изключени от вашия черен списък, ще видите кратко предупреждение, което ги изброява.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Проверка {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Отговорете на съобщение с 1–2 прикачени файла и потвърдете, че оригиналите са добавени към прозореца за съставяне.
+- За да настроите поведението, вижте [Конфигурация](configuration) (превключвател за потвърждение, отговор по подразбиране, шаблони за черен списък).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Проверка на предупреждението за черния списък {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Отговорете на съобщение, съдържащо файл като „secret.txt“.
+- С включена опция „Предупреждавай, ако прикачени файлове са изключени от черния списък“ малък диалогов прозорец изброява изключените файлове и съответстващия шаблон.
+
+Ако не виждате предупреждение, уверете се, че шаблонът съвпада точно с името на файла (само името на файла, без значение главни/малки букви). Вижте Конфигурация → Черен списък.
+
+---
+
+### Бележка за клавиатурата {#keyboard-note}
+
+- Диалогът за потвърждение поддържа Y/J за Да и N/Esc за Не. При някои нелатински клавиатури буквите може да варират; Enter потвърждава фокусирания бутон.
 
 ---

@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Ndaari'
-sidebar_label: 'Ndaari'
+title: 'Fannuji'
+sidebar_label: 'Fannuuji'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Sifaaji {#features}
 
-## How It Works {#how-it-works}
+- Naatnataa piille e imeel asli nde so a jaaba, ko e jaajol.
+- Daartol teeltaaɗo: naatnuuji piille ena waawi
+  - naatnaa ko e jaajol, walla
+  - naatnaa tan caggal teeŋtinal (kaŋngol woowaande, weheende). E Cuɓe aɗa
+    waawi hurmita teeŋtinal ngal tee suɓo jaabawol goowol (Ee/Alaa).
+- Banndal inndeeji piille (pataanɗi glob) haɗata piille goɗɗi
+  naatnude ko e jaajol. Misalii: `*intern*`, `*secret*`, `*passwor*`.
+  Ƴeewndugol ndee hoolaaki alkule mawɗe/ñiiɓe, tee ƴeewta innde piilol tan; hokku patan
+  gooto kala e gorol gooto e Cuɓe.
+- Reentino banndal (suɓaaɗo, hurmita ko e goowol): so piille ɗe luɓaaki banndal maa,
+  kaŋngol modal woowaande innirta piilol e patan ɗe nannduɗe. Ɗum no jaɓii Dark‑mode
+  tee no weheende e tappirde (Enter/Esc ngam uddude).
+- Golle e Reply e Reply all. Forward ngal wonaa waylitaande ko ɓeydital ngol.
+- Ɓeydaa piille asli haa tan so a naatnii ko wontaa; reenti ɗoppiteeji e innde piilol.
+- Darnde ɗoppiteeji per‑tab haɗata naatnande ɗiɗi e tabbere winndorde gooto.
+- Ɓennu sartiifikooji S/MIME ko e goowol ngam haɗde naatnuuji waɗaaki.
+- Naatnaa nateji toɗɗitiiɗi (goowol: ON). Nateji ɓennditiiɗi artira toowde e
+  jikinol jaabgol, ko base64 data URIs, ndee sellina leñol toɗɗingol asli. Daaƴ ɗum e
+  Cuɓe ngam faalkiso nateji toɗɗitiiɗi fof.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Hol no ɗum Golle {#how-it-works}
+
+- So a jaaba, ɓeydital ngal innirta piille asli naatnaaɗi.
+- Siftina sañcooji S/MIME e naatnuuji piille; nate toɗɗitiiɗi artira e jikinol (so wonaa daaƴaa).
+- Ena naamna teeŋtinal (jaɓagol tappirde).
+- Naatnaa piille jaaɓduɗi e winndorde maa, reenti ɗoppiteeji e innde piilol.
+- Ɓeyno “Ko hono naatnuuji ena mbaawi wonaa ɓeydaade” e Kuutoragol ngam fannuuji ceertooje.
+
+Tiimtino suturo: Hojomaaji fof waɗi ko nokkuure e Thunderbird. Ɓeydital ngal waɗataani ɗaɓɓitannde geese e cakkitol.
+
+---

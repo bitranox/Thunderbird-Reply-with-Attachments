@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "مۇناسىۋەتلىك باشلامچى",
-  "description": "Quickstart",
+  "title": "تېز باشلاش",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "مۇناسىۋەتلىك باشلامچى",
-    "sidebar_label": "مۇناسىۋەتلىك باشلامچى"
+    "title": "تېز باشلاش",
+    "sidebar_label": "تېز باشلاش"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ئالاھىدە ئامىللەر",
+    "title": "ئىقتىدارلار",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/features"
   },
   "next": {
-    "title": "ئورنىتىش",
+    "title": "قاچىلاش",
     "permalink": "/Thunderbird-Reply-with-Attachments/ug/docs/install"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Ukufakwa",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Iqalelo Elisheshayo",
+    "title": "Ukuqalisa okusheshayo",
     "permalink": "/Thunderbird-Reply-with-Attachments/zu/docs/quickstart"
   },
   "next": {

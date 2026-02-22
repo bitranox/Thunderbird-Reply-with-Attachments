@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "使用法",
-  "description": "Usage",
+  "title": "使用方法",
+  "description": "---",
   "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "使用法",
-    "sidebar_label": "使用法"
+    "title": "使用方法",
+    "sidebar_label": "使用方法"
   },
   "sidebar": "docs",
   "previous": {

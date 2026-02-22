@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Ostrzegaj, gdy załączniki są wykluczone przez czarną listę"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Dołącz obrazy wstawione w treści (osadzone obrazy)"
+  },
   "uiDebugHeader": {
     "message": "Zaawansowane"
   },

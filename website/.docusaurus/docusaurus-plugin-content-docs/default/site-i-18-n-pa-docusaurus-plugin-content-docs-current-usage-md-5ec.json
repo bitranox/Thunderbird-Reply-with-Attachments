@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "ਇਸਤਮਾਲ",
-  "description": "Usage",
+  "title": "ਵਰਤੋਂ",
+  "description": "---",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "ਇਸਤਮਾਲ",
-    "sidebar_label": "ਇਸਤਮਾਲ"
+    "title": "ਵਰਤੋਂ",
+    "sidebar_label": "ਵਰਤੋਂ"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/configuration"
   },
   "next": {
-    "title": "ਸੁਚਾਰੂਤਾ",
+    "title": "ਅਨੁਕੂਲਤਾ",
     "permalink": "/Thunderbird-Reply-with-Attachments/pa/docs/compatibility"
   }
 }

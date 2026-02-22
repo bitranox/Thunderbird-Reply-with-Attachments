@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "Skrá yfir breytingar",
-  "description": "Skrá yfir breytingar",
+  "title": "Breytingaskrá",
+  "description": "---",
   "source": "@site/i18n/is/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "Skrá yfir breytingar"
+    "title": "Breytingaskrá"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Brzi start",
-  "description": "Quickstart",
+  "title": "Brzi početak",
+  "description": "---",
   "source": "@site/i18n/sr/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Brzi start",
-    "sidebar_label": "Brzi start"
+    "title": "Brzi početak",
+    "sidebar_label": "Brzi početak"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Karakteristike",
+    "title": "Карактеристике",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/features"
   },
   "next": {
-    "title": "Instalacija",
+    "title": "Инсталација",
     "permalink": "/Thunderbird-Reply-with-Attachments/sr/docs/install"
   }
 }

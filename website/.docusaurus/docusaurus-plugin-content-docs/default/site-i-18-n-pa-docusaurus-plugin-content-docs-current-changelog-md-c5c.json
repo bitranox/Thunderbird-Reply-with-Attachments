@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ਬਦਲਾਵਾਂ",
-  "description": "Changelog",
+  "title": "ਤਬਦੀਲੀਆਂ ਦੀ ਲਾਗ",
+  "description": "---",
   "source": "@site/i18n/pa/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ਬਦਲਾਵਾਂ"
+    "title": "ਤਬਦੀਲੀਆਂ ਦੀ ਲਾਗ"
   },
   "sidebar": "docs",
   "previous": {

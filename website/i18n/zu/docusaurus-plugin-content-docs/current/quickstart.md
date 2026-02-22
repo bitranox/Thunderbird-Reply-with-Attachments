@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Iqalelo Elisheshayo'
-sidebar_label: 'Iqalelo Elisheshayo'
+title: 'Ukuqalisa okusheshayo'
+sidebar_label: 'Ukuqalisa okusheshayo'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Ukuqalisa Okusheshayo
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Inguqulo encane ye-Thunderbird
+Le add‑on isekela i-Thunderbird **128 ESR noma entsha**. Izinhlobo ezindala azisekelwa.
+:::
+
+:::note Ayikho i-telemetry; ayikho inethiwekhi yangemuva
+I-add‑on ayiqoqi izibalo/itelemetri futhi ayenzi zicelo zenethiwekhi ngemuva. Ukufinyelela inethiwekhi kwenzeka kuphela uma uchofoza izixhumanisi zangaphandle (Docs, GitHub, Donate).
+:::
+
+---
+
+### Faka
+
+1. Faka i-add-on kusuka ku-Thunderbird Add‑ons.
+2. Okokuzikhethela: Nika amandla ukuqinisekisa (Options → “Buza ngaphambi kokungeza okunamathiselwe”).
+3. Okokuzikhethela: Shiya isexwayiso se-blacklist sivuliwe (okuzenzakalelayo): “Xwayisa uma okunamathiselwe kukhishwa i-blacklist”.
+4. Okokuzikhethela: Faka amaphethini e-blacklist (elinye umugqa ngamunye), isb.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Qaphela: “# …” ngenhla ukuphawula kulo mbhalo; ungafaki ukuphawula kumaphethini owadidiyelayo ku-Options. Faka iphethini eyodwa kumugqa ngamunye kuphela.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Manje phendula umlayezo onokunamathiselwe — okwangempela kuzofakwa ngokuzenzakalela noma ngemva kokuqinisekisa okusheshayo. Uma kukhona amafayela akhishiwe yi-blacklist yakho, uzobona isexwayiso esifushane esiwabala.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Qinisekisa {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Phendula umlayezo onokunamathiselwe okungu-1–2 futhi uqinisekise ukuthi okwangempela kufakwe ewindini lakho lokubhala.
+- Ukuhlela indlela yokuziphatha, bheka [Ukumiswa](configuration) (iswishi yokuqinisekisa, impendulo ezenzakalelayo, amaphethini e-blacklist).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Qinisekisa isexwayiso se-blacklist {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Phendula umlayezo oqukethe ifayela elinjengo “secret.txt”.
+- Lapho “Xwayisa uma okunamathiselwe kukhishwa i-blacklist” kuvuliwe, ibhokisi lengxoxo elincane libala amafayela akhishiwe kanye nephethini elihambisanayo.
+
+Uma ungaboni isexwayiso, qinisekisa ukuthi iphethini ifana negama lefayela ngokunembile (igama lefayela kuphela, akubhekwa ubukhulu bezinhlamvu). Bheka Ukumiswa → Blacklist.
+
+---
+
+### Inothi lekhibhodi {#keyboard-note}
+
+- Ibhokisi lokuqinisekisa lisekela u-Y/J ku-Yes kanye no-N/Esc ku-No. Kumanye amakhibhodi angesona esiLatin, okhiye bezinhlamvu bangahluka; u-Enter uqinisekisa inkinobho egxilisiwe.
 
 ---

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Varsle hvis vedlegg utelates av svartelisten"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inkluder innebygde bilder (innebygde bilder)"
+  },
   "uiDebugHeader": {
     "message": "Avansert"
   },

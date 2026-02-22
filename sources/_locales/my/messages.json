@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "တားဆီးစာရင်းကြောင့် ကူးတွဲဖိုင်များကို ဖယ်ထုတ်ထားပါက သတိပေးရန်"
   },
+  "uiIncludeInlineLabel": {
+    "message": "အတွင်းပုံများ ထည့်သွင်းပါ (မြှုပ်ထားသော ပုံများ)"
+  },
   "uiDebugHeader": {
     "message": "အဆင့်မြင့်"
   },

@@ -1,97 +1,98 @@
 ---
 id: usage
-title: '使用'
-sidebar_label: '使用'
+title: '用法'
+sidebar_label: '用法'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## 用法 {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- 回复时，附加组件会自动添加原始附件；或者（如果在“选项”中启用了提示）会先询问。
+- 按文件名去重；始终跳过 S/MIME 部分。默认情况下，内联图片会在回复正文中还原（可在“选项”中通过 "Include inline pictures" 禁用）。
+- 已列入黑名单的附件也会被跳过（对文件名的大小写不敏感的 glob 模式，仅匹配文件名而非路径）。参见[配置](configuration#blacklist-glob-patterns)。
 
 ---
 
-### Cross‑reference {#cross-reference}
+### 回复时会发生什么 {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- 侦测为回复 → 列出原始附件 → 过滤 S/MIME 与内联 → 可选确认 → 添加符合条件的文件（跳过重复）→ 在正文中还原内联图片。
 
----
+严格与宽松遍历：附加组件首先将 S/MIME 与内联部分从文件附件中排除。如果没有任何符合条件的项，则会进行一次宽松遍历，它同样排除 S/MIME/内联，但更宽容（见代码细节）。内联图片绝不会作为文件附件添加；相反，当启用 "Include inline pictures"（默认）时，它们会以 base64 数据 URI 的形式直接嵌入到回复正文中。
 
-## Behavior Details {#behavior-details}
+| 部分类型                                    |               严格遍历 |               宽松遍历 |
+| ------------------------------------------- | ---------------------: | ---------------------: |
+| S/MIME 签名文件 `smime.p7s`                 |                   排除 |                   排除 |
+| S/MIME MIME 类型 (`application/pkcs7-*`)    |                   排除 |                   排除 |
+| 由 Content‑ID 引用的内联图像 (`image/*`)    | 排除（在正文中还原\*） | 排除（在正文中还原\*） |
+| 带文件名的已附加电子邮件 (`message/rfc822`) |                 不添加 |             可能会添加 |
+| 带文件名的常规文件附件                      |             可能会添加 |             可能会添加 |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* 当启用 "Include inline pictures"（默认：ON）时，内联图片会以 base64 数据 URI 的形式嵌入到回复正文中，而不是作为文件附件添加。参见[配置](configuration#include-inline-pictures)。
+
+示例：某些附件可能缺少特定头，但仍是常规文件（非内联/S/MIME）。如果严格遍历没有找到任何项，宽松遍历可能会接受这些文件并将其附加。
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### 交叉引用 {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- 按设计，转发不会被修改（见下方“限制”）。
+- 关于附件可能未被添加的原因，参见“为什么可能不会添加附件”。
 
 ---
 
-## Limitations {#limitations}
+## 行为详情 {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- 复制品防护：附加组件通过每个标签页的会话值和内存保护标记撰写标签页为已处理。不会重复添加原始附件。
+- 关闭并重新打开撰写窗口被视为新标签页（即允许新的尝试）。
+- 尊重现有附件：如果撰写窗口中已包含一些附件，仍会恰好添加一次原始附件，并跳过已存在的文件名。
+- 排除项：S/MIME 产物与内联图片会从文件附件中排除。若首次遍历无符合项，将进行宽松的回退遍历以重新检查非 S/MIME 部分。内联图片单独处理：在启用时，它们会作为数据 URI 还原到回复正文中。
+  - 文件名：`smime.p7s`
+  - MIME 类型：`application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - 内联图片：任何由 Content‑ID 引用的 `image/*` 部分——从文件附件中排除，但当 "Include inline pictures" 处于 ON 时，会嵌入到回复正文中
+  - 已附加邮件（`message/rfc822`）：如果具有文件名，则按常规附件处理；可能会被添加（受重复检查和黑名单影响）。
+- 黑名单警告（若启用）：当候选项被您的黑名单排除时，附加组件会显示一个小的模态对话框，列出受影响的文件及匹配的模式。在所有内容都被排除、因此不会添加任何附件的情况下，也会显示此警告。
 
 ---
 
-See also
+## 键盘快捷键 {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- 确认对话框：Y/J = Yes，N/Esc = No；Tab/Shift+Tab 与方向键循环切换焦点。
+  - [配置](configuration#confirmation)中的“Default answer”设置初始聚焦的按钮。
+  - Enter 触发当前聚焦的按钮。为辅助功能，Tab/Shift+Tab 与方向键可移动焦点。
+
+### 键盘速查表 {#keyboard-cheat-sheet}
+
+| 按键            | 操作                      |
+| --------------- | ------------------------- |
+| Y / J           | 确认是（Yes）             |
+| N / Esc         | 确认否（No）              |
+| Enter           | 激活当前聚焦的按钮        |
+| Tab / Shift+Tab | 向前/向后移动焦点         |
+| 方向键          | 在按钮之间移动焦点        |
+| Default answer  | 设置初始焦点（Yes 或 No） |
+
+---
+
+## 限制 {#limitations}
+
+- 本附加组件不会修改“转发”（支持“回复”和“全部回复”）。
+- 非常大的附件可能受 Thunderbird 或服务提供商的限制。
+  - 附加组件不会对文件分块或压缩；它依赖 Thunderbird 的常规附件处理。
+- 加密邮件：会有意排除 S/MIME 部分。
+
+---
+
+## 为什么可能不会添加附件 {#why-attachments-might-not-be-added}
+
+- 内联图片不会作为文件附件添加。当 "Include inline pictures" 为 ON（默认）时，它们会以数据 URI 的形式嵌入到回复正文中；若该设置为 OFF，则会被完全移除。参见[配置](configuration#include-inline-pictures)。
+- 按设计会排除 S/MIME 签名部分：诸如 `smime.p7s` 之类的文件名，以及 `application/pkcs7-signature` 或 `application/pkcs7-mime` 等 MIME 类型都会被跳过。
+- 黑名单模式可以过滤候选项：参见[配置](configuration#blacklist-glob-patterns)；匹配对大小写不敏感，且仅基于文件名。
+- 重复的文件名不会被重新添加：如果撰写窗口中已包含同一规范化名称的文件，则会被跳过。
+- 非文件部分或缺少文件名：仅会考虑具有可用文件名的类文件部分。
+
+---
+
+另请参阅
+
+- [配置](configuration)

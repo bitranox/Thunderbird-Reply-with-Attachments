@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Shigarwa",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/ha/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Fara Hanya",
+    "title": "Farawa da Sauri",
     "permalink": "/Thunderbird-Reply-with-Attachments/ha/docs/quickstart"
   },
   "next": {

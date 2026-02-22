@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "ການຕິດຕັ້ງ",
-  "description": "Installation via \"Thunderbird Add-ons and Themes\"",
+  "description": "---",
   "source": "@site/i18n/lo/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ແບບຟອມດ່ຽວດ່ຽວໃນຄັ້ງທຳອິດ",
+    "title": "ເລີ່ມຕົ້ນດ່ວນ",
     "permalink": "/Thunderbird-Reply-with-Attachments/lo/docs/quickstart"
   },
   "next": {

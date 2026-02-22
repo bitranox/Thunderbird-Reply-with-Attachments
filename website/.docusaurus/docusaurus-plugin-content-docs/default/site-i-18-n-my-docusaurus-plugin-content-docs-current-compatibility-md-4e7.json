@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "ထိန်းချုပ်မှု",
-  "description": "Compatibility",
+  "title": "ကိုက်ညီမှု",
+  "description": "---",
   "source": "@site/i18n/my/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "ထိန်းချုပ်မှု",
-    "sidebar_label": "ထိန်းချုပ်မှု"
+    "title": "ကိုက်ညီမှု",
+    "sidebar_label": "လိုက်ဖက်မှု"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "အသုံးပြုမှု",
+    "title": "အသုံးပြုပုံ",
     "permalink": "/Thunderbird-Reply-with-Attachments/my/docs/usage"
   },
   "next": {

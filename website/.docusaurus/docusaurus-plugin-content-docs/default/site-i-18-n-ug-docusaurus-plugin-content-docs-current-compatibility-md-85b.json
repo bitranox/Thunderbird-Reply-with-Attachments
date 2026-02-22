@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "مەۋزۇغا ماسلىشىش",
-  "description": "Compatibility",
+  "title": "ماسلىشىشچانلىق",
+  "description": "---",
   "source": "@site/i18n/ug/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "مەۋزۇغا ماسلىشىش",
-    "sidebar_label": "مەۋزۇغا ماسلىشىش"
+    "title": "ماسلىشىشچانلىق",
+    "sidebar_label": "ماس كېلىشچانلىق"
   },
   "sidebar": "docs",
   "previous": {

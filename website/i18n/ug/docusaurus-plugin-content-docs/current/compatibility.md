@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'مەۋزۇغا ماسلىشىش'
-sidebar_label: 'مەۋزۇغا ماسلىشىش'
+title: 'ماسلىشىشچانلىق'
+sidebar_label: 'ماس كېلىشچانلىق'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ماسلىشىشچانلىق {#compatibility}
+
+:::important ئەڭ تۆۋەن Thunderbird نەشرى
+بۇ قىستۇرما Thunderbird **128 ESR ياكى يېڭىراق** نەشرىنى قوللايدۇ. كونا نەشرىلەر قوللانمايدۇ.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR ياكى ئۇنىڭدىن يېڭىراق نەشرى قوللىنىدۇ (128.x+).
+- كونا Thunderbird نەشرلىرى قوللانمايدۇ.
+- Windows، macOS ۋە Linux دە سىناق قىلىندى.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 قوللانمايدۇ
+Manifest V2 قوللانمايدۇ. بۇ قىستۇرما Thunderbird 128 ESR+ تا **Manifest V3 (MV3)** نى نىشان قىلىدۇ.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## كاشىلا يېشىش {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- قىستۇرما كۈتۈلگەندەك ئىشلەمىسە، Thunderbird نىڭ ماس كېلىدىغان نەشرىنى (128 ESR ياكى ئۇنىڭدىن كېيىنكى) ئىشلىتىۋاتقانلىقىڭىزنى جەزملەڭ.
+- Thunderbird نىڭ خاتالىق كانسولىنى (Tools > Developer Tools > Error Console) تەكشۈرۈپ، قىستۇرماغا مۇناسىۋەتلىك ھەر قانداق مەسىلىنىڭ بار-يوقلۇقىنى كۆرۈڭ.
+- ساقلانغان تەڭشەكلەر توغرا قوللىنىلمىغاندەك كۆرۈلسە، Thunderbird نى قايتا قوزغىتىپ قايتا سىناپ كۆرۈڭ. (Thunderbird سېئانسلار ئارىسىدا ھالەتنى غەملەپ ساقلىشى مۇمكىن؛ قايتا قوزغىتىش يېڭى تەڭشەكلەرنىڭ يېڭىدىن يۈكلەنگەنلىكىنى كاپالەتلەيدۇ.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## مەلۇم توقۇنۇشلار {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- ھازىرچە مەلۇم يوق. ئەگەر قايتىلانغان قوشۇمچە ھۆججەتلەر ياكى باشقا قىستۇرمىلار بىلەن كۆرۈلگەن مەسىلىلەرنى كۆرسىڭىز، قايتا ھاسىللاش قەدەملىرى بىلەن بىرگە دوكلات قىلىڭ.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird نىڭ Beta ۋە Daily (Nightly) بىنالىرى كۆپىنچە ماس كېلىدۇ، ئەمما يۇقىرى قانال ئۆزگىرىشلەرى بەزىدە قىستۇرمىنىڭ ھەرىكەت-قىلىقىنى بۇزۇشى مۇمكىن. مەسىلىگە دۇچ كلسىڭىز، ئېنىق Thunderbird نەشرىنى (مەسىلەن، “Daily 131.0a1 2025‑09‑10”) قوشۇپ دوكلات قىلىڭ.
+- Beta/Nightly دە قايتىش (regression) قا ئۇچرىدىڭىزمۇ؟ ئۇنى قايتا ھاسىللاش قەدەملىرى بىلەن بىللە دوكلات قىلىڭ — [قوللاش](support) نى كۆرۈڭ — ۋە ئېنىق Thunderbird قۇرۇلۇش ھەرپ-بەلگە تىزىمىنى قوشۇڭ.
 
 ---

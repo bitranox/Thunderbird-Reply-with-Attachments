@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Iqalelo Elisheshayo",
-  "description": "Quickstart",
+  "title": "Ukuqalisa okusheshayo",
+  "description": "---",
   "source": "@site/i18n/zu/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Iqalelo Elisheshayo",
-    "sidebar_label": "Iqalelo Elisheshayo"
+    "title": "Ukuqalisa okusheshayo",
+    "sidebar_label": "Ukuqalisa okusheshayo"
   },
   "sidebar": "docs",
   "previous": {

@@ -4,11 +4,13 @@ title: 'Donera'
 sidebar_label: 'Donera'
 ---
 
+---
+
 ## Donera
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Om du gillar "Reply with Attachments" och vill stödja dess utveckling, kan du donera här:
+Om du gillar "Reply with Attachments" och vill stödja dess utveckling kan du donera här:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -25,7 +27,7 @@ Om du gillar "Reply with Attachments" och vill stödja dess utveckling, kan du d
   <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>eller</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Köp mig en kaffe" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy Me a Coffee" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,27 +36,27 @@ Om du gillar "Reply with Attachments" och vill stödja dess utveckling, kan du d
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skanna för att köpa mig en kaffe"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Skanna för att bjuda mig på en kaffe"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Tack! Ditt stöd hjälper till att bibehålla kompatibilitet med nya Thunderbird-versioner, förbättra tillgänglighet och tester, samt hålla dokumentationen uppdaterad.
+Tack! Ditt stöd hjälper till att behålla kompatibiliteten med nya Thunderbird‑versioner, förbättra tillgänglighet och tester samt hålla dokumentationen uppdaterad.
 
-Noteringar
+Obs
 
-- Donera-länkar öppnas endast när du klickar på dem; tillägget gör inga bakgrundsnätverksanrop.
-- Återkommande stöd hjälper långsiktig underhåll och punktliga uppdateringar, men är helt valfritt.
+- Donationslänkar öppnas bara när du klickar på dem; tillägget gör inga nätverksförfrågningar i bakgrunden.
+- Återkommande stöd hjälper långsiktigt underhåll och snabba uppdateringar, men är helt frivilligt.
 
 ---
 
-Om bildknapparna inte laddas, vänligen använd dessa länkar istället:
+Om bildknapparna inte laddas, använd dessa länkar i stället:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Köp mig en Kaffe](https://buymeacoffee.com/bitranox)
+#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
 
 ---
 
@@ -62,27 +64,27 @@ Donationer är frivilliga; det finns ingen funktionslåsning.
 
 ---
 
-## Synlighet för donationer (90-dagars paus)
+## Donationssynlighet (90‑dagars paus)
 
-Tillägget inkluderar en bekvämlighetsfunktion för att dölja donationsuppmaningar under en tid efter att du har donerat.
+Tillägget innehåller en bekvämlighetsfunktion för att dölja donationsuppmaningar en tid efter att du har donerat.
 
-- Var du hittar den
-  - Alternativ → Stödsektion: du kommer att se en "Jag donerade" knapp och ett litet hintområde.
-  - Dialogrutan för att bekräfta skick visar också en Donera-knapp; den döljs automatiskt när pausen är aktiv.
+- Var du hittar det
+  - Alternativ → avsnittet Support: du ser en knapp "Jag har donerat" och ett litet tipsområde.
+  - Dialogrutan för sändningsbekräftelse visar också en Donera‑knapp; den döljs automatiskt när pausen är aktiv.
 
-- Hur det fungerar
-  - Genom att klicka på "Jag donerade" döljs donationsknappar och relaterade uppmaningar i 90 dagar.
-  - En statushint visar "Dold tills YYYY-MM-DD" (i ditt lokala datum). Det finns också en "Visa Donera igen" knapp för att återställa synligheten omedelbart.
-  - Efter 90 dagar blir Donera-knappen automatiskt synlig igen.
+- Så här fungerar det
+  - Att klicka på "Jag har donerat" döljer donationsknappar och relaterade uppmaningar i 90 dagar.
+  - En statusindikering visar "Dold till YYYY‑MM‑DD" (i ditt lokala datum). Det finns också en knapp "Visa Donera igen" för att återställa synligheten omedelbart.
+  - Efter 90 dagar blir Donera‑knappen automatiskt synlig igen.
 
-- Integritet & lagring
-  - Tillägget lagrar en enda tidsstämpel i Thunderbirds lokala lagring för att komma ihåg pausperioden. Nyckel: `donateHideUntil` (epoch millisekunder).
-  - Denna inställning är lokal för din Thunderbird-profil (inte moln-synkroniserad). Inga nätverksanrop görs av denna funktion.
+- Integritet och lagring
+  - Tillägget lagrar en enda tidsstämpel i Thunderbirds lokala lagring för att komma ihåg pausperioden. Nyckel: `donateHideUntil` (epok‑millisekunder).
+  - Denna inställning är lokal för din Thunderbird‑profil (inte molnsynkad). Ingen nätverksförfrågan görs av denna funktion.
 
 - Felsökning
-  - Om Donera fortfarande visas direkt efter att ha klickat på "Jag donerade", vänta en stund eller återöppna Alternativsidan; gränssnittet uppdateras så snart inställningen är sparad.
-  - För att återställa manuellt, klicka på "Visa Donera igen". Du kan också vänta tills det datum som anges i hintet passerar.
+  - Om Donera fortfarande visas direkt efter att du klickat på "Jag har donerat", vänta en stund eller öppna sidan Alternativ igen; gränssnittet uppdateras så snart inställningen har sparats.
+  - För att återställa manuellt, klicka på "Visa Donera igen". Du kan också vänta tills datumet som anges i tipset har passerat.
 
-Denna funktion är enbart för bekvämlighet; den blockerar aldrig tilläggsfunktionalitet och samlar inte in några personuppgifter.
+Denna funktion är enbart för bekvämlighet; den blockerar aldrig tilläggets funktioner och samlar inte in några personuppgifter.
 
 ---

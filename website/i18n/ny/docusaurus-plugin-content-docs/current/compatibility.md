@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Kulingana'
-sidebar_label: 'Kulingana'
+title: 'Kugwirizana'
+sidebar_label: 'Kugwirizana'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kugwirizana {#compatibility}
+
+:::important Mtundu wocheperako wa Thunderbird
+Chowonjezera ichi chimathandiza Thunderbird **128 ESR kapena yatsopano**. Mitundu yakale siyithandizidwa.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR kapena yatsopano imathandizidwa (128.x+).
+- Mitundu yakale ya Thunderbird siyithandizidwa.
+- Zayesedwa pa Windows, macOS, ndi Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 sikuthandizidwa
+Manifest V2 sikuthandizidwa. Chowonjezerachi chimalunjika ku **Manifest V3 (MV3)** pa Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Kuthetsa mavuto {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ngati chowonjezera sichigwira ntchito monga mwayembekezera, onetsetsani kuti mukugwiritsa ntchito mtundu wa Thunderbird womwe umagwirizana (128 ESR kapena kupitirira apo).
+- Onani konzolo ya zolakwika ya Thunderbird (**Tools > Developer Tools > Error Console**) kuti muwone mavuto okhudzana ndi chowonjezeracho.
+- Ngati zoikamo zosungidwa zikuwoneka kuti sizikugwira bwino, yambitsaninso Thunderbird ndikuyesanso. (Thunderbird angasunge mkhalidwe kudutsa m'magawo; kuyambitsanso kumatsimikizira kuti zoikamo zatsopano zikutsitsidwa.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Mikangano yodziwika {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Palibe podziwa pano. Ngati muona zomangirizidwa zobwerezedwa mobwerezabwereza kapena kulephera ndi zowonjezera zina, chonde lipotani ndi masitepe obwerezera.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Ma build a Thunderbird Beta ndi Daily (Nightly) amathandizidwa nthawi zambiri, koma zosintha za upstream zitha nthawi zina kusokoneza momwe chowonjezeracho chimagwira ntchito. Ngati mukumana ndi mavuto, chonde lipotani ndiponso phatikizani mtundu wa Thunderbird wolondola (mwachitsanzo, “Daily 131.0a1 2025‑09‑10”).
+- Mwakumana ndi regression pa Beta/Nightly? Chonde lipotani ndi masitepe obwereza — onani [Thandizo](support) — ndiponso phatikizani string ya build ya Thunderbird yolondola.
 
 ---

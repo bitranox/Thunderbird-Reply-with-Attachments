@@ -4,31 +4,40 @@ title: 'Ciri-ciri'
 sidebar_label: 'Ciri-ciri'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Ciri-ciri {#features}
 
-## How It Works {#how-it-works}
+- Melampirkan fail daripada e-mel asal secara automatik apabila membalas.
+- Tingkah laku boleh dikonfigurasi: lampiran boleh
+  - ditambah secara automatik, atau
+  - ditambah hanya selepas pengesahan (dialog kecil yang boleh diakses). Dalam Pilihan anda
+    boleh mengaktifkan pengesahan dan memilih jawapan lalai (Ya/Tidak).
+- Senarai hitam nama fail (pola glob) menghalang fail tertentu daripada
+  dilampirkan secara automatik. Contoh: `*intern*`, `*secret*`, `*passwor*`.
+  Pemadanan adalah tidak peka huruf besar/kecil dan hanya menyemak nama fail; sediakan satu pola
+  setiap baris dalam Pilihan.
+- Amaran senarai hitam (pilihan, diaktifkan secara lalai): apabila fail dikecualikan oleh
+  senarai hitam anda, satu modal kecil menyenaraikan fail dan pola yang sepadan. Mesra mod gelap
+  dan boleh diakses papan kekunci (Enter/Esc untuk menutup).
+- Berfungsi dengan Balas dan Balas semua. Teruskan tidak diubah oleh pengaya ini.
+- Menambah yang asal walaupun anda telah melampirkan sesuatu sendiri; mengelakkan pendua mengikut nama fail.
+- Perlindungan pendua per tab mengelakkan penambahan dua kali dalam tab Tulis yang sama.
+- Melangkau sijil S/MIME secara lalai untuk mengelakkan lampiran yang tidak perlu.
+- Sertakan gambar sebaris (lalai: AKTIF). Imej tertanam dipulihkan terus dalam
+  badan balasan sebagai URI data base64, mengekalkan susun atur sebaris asal. Lumpuhkan dalam
+  Pilihan untuk melangkau imej sebaris sepenuhnya.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Cara Ia Berfungsi {#how-it-works}
+
+- Apabila membalas, pengaya menyenaraikan lampiran asal.
+- Menapis tandatangan S/MIME daripada lampiran fail; imej sebaris dipulihkan dalam badan (melainkan dilumpuhkan).
+- Secara pilihan meminta pengesahan (mesra papan kekunci).
+- Menambah fail yang layak ke tetingkap Tulis anda, mengelakkan pendua mengikut nama fail.
+- Lihat “Mengapa lampiran mungkin tidak ditambahkan” dalam Penggunaan untuk kes pinggir.
+
+Nota privasi: Semua pemprosesan berlaku secara setempat dalam Thunderbird. Pengaya ini tidak membuat sebarang permintaan rangkaian latar belakang.
+
+---

@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Gurnama",
-  "description": "Gurnama \"Thunderbird Öňdebeli goşantlary we Tema\" arkaly",
+  "description": "---",
   "source": "@site/i18n/tk/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Başlaňç",
+    "title": "Tiz başlangyç",
     "permalink": "/Thunderbird-Reply-with-Attachments/tk/docs/quickstart"
   },
   "next": {

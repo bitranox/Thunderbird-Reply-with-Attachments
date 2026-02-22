@@ -4,294 +4,296 @@ title: 'అభివృద్ధి'
 sidebar_label: 'అభివృద్ధి'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## అభివృద్ధి మార్గదర్శిని {#development-guide}
+
+:::note ఆంగ్ల పాఠ్యాన్ని మాత్రమే సవరించండి; అనువాదాలు వ్యాప్తి చెందుతాయి
+డాక్యుమెంటేషన్‌ను **కేవలం** `website/docs` (English) క్రింద మాత్రమే అప్డేట్ చేయండి. `website/i18n/<locale>/…` క్రింద ఉన్న అనువాదాలు ఆటోమేటిక్‌గా ఉత్పత్తి అవుతాయి; వాటిని చేతితో సవరించకండి. లోకలైజ్డ్ కంటెంట్‌ను రిఫ్రెష్ చేయడానికి అనువాద పనులను (ఉదా., `make translate_web_docs_batch`) ఉపయోగించండి.
 :::
 
-### Prerequisites {#prerequisites}
+### పూర్వావసరాలు {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ మరియు npm (Node 22తో పరీక్షించబడింది)
+- Thunderbird 128 ESR లేదా దానికి పైనివి (మాన్యువల్ టెస్టింగ్ కోసం)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### ప్రాజెక్ట్ లేఅవుట్ (హై‑లెవల్) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- రూట్: ప్యాకేజింగ్ స్క్రిప్ట్ `distribution_zip_packer.sh`, డాక్స్, స్క్రీన్‌షాట్‌లు
+- `sources/`: ప్రధాన యాడ్‑ఆన్ కోడ్ (బ్యాక్‌గ్రౌండ్, ఎంపికలు/పాప్‌అప్ UI, మానిఫెస్ట్లు, చిహ్నాలు)
+- `tests/`: Vitest సూట్
+- `website/`: Docusaurus డాక్స్ (`website/i18n/de/...` క్రింద i18n తో)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### ఇన్‌స్టాల్ & టూలింగ్ {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- రూట్ డిపెండెన్సీలు ఇన్‌స్టాల్ చేయండి: `npm ci`
+- డాక్స్ (ఐచ్చికం): `cd website && npm ci`
+- టార్గెట్లను తెలుసుకోండి: `make help`
+
+---
+
+### లైవ్ డెవ్ (web‑ext run) {#live-dev-web-ext}
+
+- Firefox డెస్క్‌టాప్‌లో క్విక్ లూప్ (UI స్మోక్‑టెస్టులు మాత్రమే):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird లో రన్ చేయండి (MailExtensions కోసం సిఫార్సు):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- చిట్కాలు:
+- Thunderbird యొక్క Error Console తెరిచి ఉంచండి (Tools → Developer Tools → Error Console).
+- MV3 ఈవెంట్ పేజీలు నిరాకార స్థితిలో నిలిపివేయబడతాయి; కోడ్ మార్పుల తర్వాత యాడ్‑ఆన్‌ను రీలోడ్ చేయండి లేదా web‑ext ఆటో‑రీలోడ్ అయ్యేలా ఉంచండి.
+- కేవలం Firefox‑లో మాత్రమే ఉండే కొన్ని ప్రవర్తనలు భిన్నంగా ఉండవచ్చు; API సమానత్వం కోసం ఎల్లప్పుడూ Thunderbird లో ధృవీకరించండి.
+- Thunderbird బైనరీ మార్గాలు (ఉదాహరణలు):
+- Linux: `thunderbird` (ఉదా., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- ప్రొఫైల్ వేరుచేయడం: మీ రోజువారీ సెటప్‌పై ప్రభావం పడకుండా అభివృద్ధి కోసం వేరే Thunderbird ప్రొఫైల్ వాడండి.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### మెక్ టార్గెట్లు (అక్షరక్రమంలో) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile సాధారణ డెవలప్‌మెంట్ ప్రవాహాలను ప్రమాణీకరిస్తుంది. ప్రతి టార్గెట్‌కు ఒక్క పంక్తి సారాంశం కోసం ఎప్పుడైనా `make help` నడపండి.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+చిట్కా: ఎలాంటి టార్గెట్ లేకుండా `make` నడపడం ద్వారా, టార్గెట్‌ను ఎంచుకునే సాధారణ Whiptail మెను తెరుచుకుంటుంది.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| లక్ష్యం                                                  | ఒక్క పంక్తి వివరణ                                                                              |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | స్థానిక build/preview ఆర్టిఫాక్ట్‌లను తీసివేయండి (tmp/, web-local-preview/, website/build/).   |
+| [`commit`](#mt-commit)                                   | ఫార్మాట్ చేయండి, టెస్టులు నడపండి (i18n సహా), చేంజ్‌లాగ్ అప్డేట్ చేయండి, commit & push.         |
+| [`eslint`](#mt-eslint)                                   | ఫ్లాట్ కాన్ఫిగ్ ద్వారా ESLint నడపండి (`npm run -s lint:eslint`).                               |
+| [`help`](#mt-help)                                       | ఒక్క పంక్తి డాక్స్‌తో అన్ని టార్గెట్లను జాబితా చేయండి (క్రమబద్ధీకరించి).                       |
+| [`lint`](#mt-lint)                                       | `sources/` పై web‑ext lint (తాత్కాలిక మానిఫెస్ట్; ZIPలను పాస్ చేస్తుంది; ఫేటల్ కాదు).          |
+| [`menu`](#mt-menu)                                       | టార్గెట్ మరియు ఐచ్చిక ఆర్గ్యుమెంట్‌లను ఎంచుకునే ఇంటరాక్టివ్ మెను.                              |
+| [`pack`](#mt-pack)                                       | ATN & LOCAL ZIPలను బిల్డ్ చేయండి (లింటర్ నడుపుతుంది; ప్యాకర్ స్క్రిప్ట్‌ను కాల్ చేస్తుంది).    |
+| [`prettier`](#mt-prettier)                               | రీపోను స్థానంలోనే ఫార్మాట్ చేయండి (మార్పులను రాస్తుంది).                                       |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier చెక్ మోడ్‌లో (రాతలు లేవు); రీఫార్మాట్ అవసరం అయితే ఫెయిల్ అవుతుంది.                    |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` కు అలియాస్.                                                                         |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, తరువాత Vitest (కాన్ఫిగర్ ఐతే కవరేజ్).                                |
+| [`test_i18n`](#mt-test_i18n)                             | i18n‑మాత్రమే టెస్టులు: యాడ్‑ఆన్ ప్లేస్‌హోల్డర్లు/ప్యారిటీ + వెబ్‌సైట్ ప్యారిటీ.                |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` కు అలియాస్.                                                                  |
+| [`translation_app`](#mt-translation-app)                 | `sources/_locales/en/messages.json` నుండి యాప్ UI స్ట్రింగ్‌లను అనువదించండి.                   |
+| [`translate_web_docs_batch`](#mt-translation-web)        | OpenAI Batch API ద్వారా వెబ్‌సైట్ డాక్స్‌ను అనువదించండి (ప్రాధాన్యం).                          |
+| [`translate_web_docs_sync`](#mt-translation-web)         | వెబ్‌సైట్ డాక్స్‌ను సమకాలికంగా అనువదించండి (లెగసీ, నాన్‑బ్యాచ్).                               |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` కు అలియాస్.                                                            |
+| [`translation_web_index`](#mt-translation_web_index)     | హోమ్‌పేజ్/నావ్‌బార్/ఫుటర్ UI అనువదించండి (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | డాక్స్‌ను `website/build` కు బిల్డ్ చేయండి (`--locales` / `BUILD_LOCALES` సపోర్ట్‌తో).         |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | ఆఫ్లైన్‑సేఫ్ లింక్ చెక్ (దూరపు HTTP[S] ను స్కిప్ చేస్తుంది).                                   |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | స్థానిక gh‑pages ప్రివ్యూ; ఆటో‑సర్వ్ 8080–8090; ఐచ్చిక టెస్టులు/లింక్‑చెక్.                    |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` ను `gh-pages` బ్రాంచ్‌కి పుష్ చేయండి.                                          |
 
 Syntax for options
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- ఆప్షన్‌లను పంపడానికి `make <command> OPTS="…"` వాడండి (కోట్స్ సిఫార్సు). క్రింది ప్రతి టార్గెట్ దానికి ఉదాహరణ వాడకాన్ని చూపుతుంది.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### లోకేల్ బిల్డ్ చిట్కాలు {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- లోకేల్స్‌లో కొన్నింటినే బిల్డ్ చేయండి: `BUILD_LOCALES="en de"` సెట్ చేయండి లేదా వెబ్ టార్గెట్లకు `OPTS="--locales en,de"` పాస్ చేయండి.
+- నిర్దిష్ట లోకేల్‌ను ప్రివ్యూ చేయండి: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### బిల్డ్ & ప్యాకేజ్ {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIPలను బిల్డ్ చేయండి: `make pack`
+- రీపో రూట్‌లో ATN మరియు LOCAL ZIPలను ఉత్పత్తి చేస్తుంది (ఆర్టిఫాక్ట్‌లను చేతితో సవరించవద్దు)
+- చిట్కా: ప్యాకేజింగ్‌కు ముందు `sources/manifest_ATN.json` మరియు `sources/manifest_LOCAL.json` రెండింటిలోనూ వెర్షన్‌ను అప్డేట్ చేయండి
+- మాన్యువల్ ఇన్‌స్టాల్ (డెవ్): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → నిర్మించబడిన ZIP‌ను ఎంచుకోండి
+
+---
+
+### పరీక్ష {#test}
+
+- పూర్తి సూట్: `make test` (Vitest)
+- కవరేజ్ (ఐచ్చికం):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` నడపండి; HTML రిపోర్ట్ కోసం `coverage/index.html` ఓపెన్ చేయండి
+- i18n మాత్రమే: `make test_i18n` (UI కీలు/ప్లేస్‌హోల్డర్లు/టైటిల్‌లు + వెబ్‌సైట్ per‑locale per‑doc ప్యారిటీ id/title/sidebar_label చెక్‌లతో)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### డీబగ్గింగ్ & లాగ్స్ {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- రన్‌టైమ్‌లో వర్బోస్ లాగ్‌లను టాగ్‌ల్ చేయండి:
+- సక్రియం: `messenger.storage.local.set({ debug: true })`
+- నిష్క్రియం: `messenger.storage.local.set({ debug: false })`
+- స్పందనలు తయారు/పంపించే సమయంలో లాగ్‌లు కనిపిస్తాయి
 
 ---
 
-### Docs (website) {#docs-website}
+### డాక్స్ (వెబ్‌సైట్) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- డెవ్ సర్వర్: `cd website && npm run start`
+- స్టాటిక్ సైట్ బిల్డ్: `cd website && npm run build`
+- సమానమైన Make టార్గెట్లు (అక్షరక్రమంలో): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- వాడుక ఉదాహరణలు:
+- EN మాత్రమే, టెస్టులు/లింక్‑చెక్ స్కిప్, పుష్ లేదు: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- అన్ని లోకేల్స్, టెస్టులు/లింక్‑చెక్‌తో, తరువాత పుష్: `make web_build_local_preview && make web_push_github`
+- ప్రచురించే ముందు, ఆఫ్లైన్‑సేఫ్ లింక్ చెక్ నడపండి: `make web_build_linkcheck`.
+- i18n: English `website/docs/*.md` లో ఉంటుంది; German అనువాదాలు `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` లో
+- శోధన: CIలో Algolia DocSearch ఎన్విరాన్‌మెంట్ వేరియబుల్స్ (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`) సెట్ అయితే, సైట్ Algolia శోధనను ఉపయోగిస్తుంది; లేకపోతే లోకల్ శోధనకు ఫాల్‌బ్యాక్ అవుతుంది. హోమ్‌పేజ్‌పై, శోధన బాక్స్ తెరవడానికి `/` లేదా `Ctrl+K` నొక్కండి.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### దానం రీడైరెక్ట్ {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- రూట్: `/donate` (మరియు `/<locale>/donate`)
+- ప్రవర్తన:
+- ప్రస్తుత రూట్‌లో లోకేల్ ఉంటే (ఉదా., `/de/donate`), దానినే ఉపయోగించండి
+- లేకపోతే, `navigator.languages` మరియు కాన్ఫిగర్ చేసిన లోకేల్స్‌లో ఉత్తమ సరిపోలికను ఎంచుకోండి; డిఫాల్ట్ లోకేల్‌కు ఫాల్‌బ్యాక్ అవుతుంది
+- దారి మళ్లింపు:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- ఇతరవి → `/<locale>/docs/donation`
+- సరైన baseUrl హ్యాండ్లింగ్ కోసం `useBaseUrl` ఉపయోగిస్తుంది
+- ఫాల్‌బ్యాక్‌గా meta refresh + `noscript` లింక్‌ను కలిగి ఉంటుంది
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### ప్రివ్యూ చిట్కాలు {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node ప్రివ్యూ‌ను శుభ్రంగా ఆపండి: `http://localhost:<port>/__stop` ఓపెన్ చేయండి (`Local server started` తరువాత ముద్రించబడుతుంది).
+- MDX/JSXలో చిత్రాలు లోడ్ కాకపోతే, సైట్ `baseUrl`ను గౌరవించడానికి `useBaseUrl('/img/...')` ఉపయోగించండి.
+- ప్రివ్యూ ముందుగా ప్రారంభమవుతుంది; లింక్ చెక్ తర్వాత నడుస్తుంది మరియు అది బ్లాక్ చేయదు (బ్రోకెన్ ఎక్స్‌టర్నల్ లింక్‌లు ప్రివ్యూను ఆపవు).
+- ఉదాహరణ ప్రివ్యూ URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” తరువాత ముద్రించబడుతుంది).
+- లింక్‑చెక్‌లో బయటి లింక్‌లు: కొన్ని బాహ్య సైట్లు (ఉదా., addons.thunderbird.net) ఆటోమేటెడ్ క్రాలర్‌లను బ్లాక్ చేస్తాయి మరియు లింక్ చెక్‌లలో 403 చూపవచ్చు. ప్రివ్యూ ఇంకా ప్రారంభమవుతుంది; వీటిని నిర్లక్ష్యం చేయడం సురక్షితం.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### వెబ్‌సైట్‌ను అనువదించండి {#translate-website}
 
-What you can translate
+మీరు ఏమి అనువదించవచ్చు
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- వెబ్‌సైట్ UI మాత్రమే: హోమ్‌పేజ్, నావ్‌బార్, ఫుటర్ మరియు ఇతర UI స్ట్రింగ్‌లు. డాక్స్ కంటెంట్ ప్రస్తుతం English‑మాత్రమే ఉంటుంది.
 
-Where to edit
+ఎక్కడ సవరించాలి
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` సవరించండి (`en` ను సూచనగా వాడండి). `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` వంటి ప్లేస్‌హోల్డర్‌లను మార్పు చేయకండి.
 
-Generate or refresh files
+ఫైళ్లను సృష్టించండి లేదా రీఫ్రెష్ చేయండి
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- అన్ని లోకేల్స్‌కు కావలసిన స్టబ్‌లను సృష్టించండి: `npm --prefix website run i18n:stubs`
+- English నుంచి స్టబ్‌లను ఓవర్‌రైట్ చేయండి (క్రొత్త స్ట్రింగ్‌లు జోడించిన తర్వాత): `npm --prefix website run i18n:stubs:force`
+- ఒక్క లోకేల్‌కు ప్రత్యామ్నాయం: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+హోమ్‌పేజ్/నావ్‌బార్/ఫుటర్ UI స్ట్రింగ్‌లను అనువదించండి (OpenAI)
 
-- Set credentials once (shell or .env):
+- ఒకసారి క్రెడెన్షియల్స్ సెట్ చేయండి (షెల్ లేదా .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- ఐచ్చికం: `export OPENAI_MODEL=gpt-4o-mini`
+- వన్‑షాట్ (అన్ని లోకేల్స్, en స్కిప్): `make translate_web_index`
+- నిర్దిష్ట లోకేల్స్‌కు పరిమితం చేయండి: `make translate_web_index OPTS="--locales de,fr"`
+- ఉన్న విలువలను ఓవర్‌రైట్ చేయండి: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+ధృవీకరణ & రీట్రైలు
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- అనువాద స్క్రిప్ట్ JSON ఆకారాన్ని ధృవీకరిస్తుంది, కర్లీ‑బ్రేస్ ప్లేస్‌హోల్డర్లు అలాగే ఉంచుతుంది, మరియు URLలు మారలేదు అని నిర్ధారిస్తుంది.
+- ధృవీకరణ విఫలమైతే, ప్రస్తుత విలువలను అలాగే ఉంచే ముందు ఫీడ్‌బ్యాక్‌తో గరిష్టంగా 2 సార్లు మళ్లీ ప్రయత్నిస్తుంది.
 
-Preview your locale
+మీ లోకేల్‌ను ప్రివ్యూ చేయండి
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- డెవ్ సర్వర్: `npm --prefix website run start`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/` ను సందర్శించండి
 
-Submitting
+సమర్పణ
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- సవరించిన `code.json` ఫైల్(లు)తో PR ఓపెన్ చేయండి. మార్పులను కేంద్రీకరించండి మరియు సాధ్యమైతే త్వరిత స్క్రీన్‌షాట్‌ను చేర్చండి.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### భద్రత & కాన్ఫిగరేషన్ చిట్కాలు {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` ను commit చేయవద్దు (బిల్డ్ ద్వారా తాత్కాలికంగా సృష్టించబడింది)
+- అప్డేట్ ఛానల్ నిలిచి ఉండేందుకు `browser_specific_settings.gecko.id` ను స్థిరంగా ఉంచండి
+
+---
+
+### సెట్టింగ్‌ల నిల్వ {#settings-persistence}
+
+- నిల్వ: అన్ని యూజర్ సెట్టింగ్‌లు `storage.local` లో ఉంటాయి మరియు యాడ్‑ఆన్ అప్‌డేట్స్ అంతటా కొనసాగుతాయి.
+- ఇన్‌స్టాల్: కీ నిజంగా మిస్సింగ్ (undefined) ఉన్నప్పుడే డిఫాల్ట్స్ వర్తిస్తాయి.
+- అప్‌డేట్: మైగ్రేషన్ కేవలం మిస్సింగ్ కీలను మాత్రమే నింపుతుంది; ఉన్న విలువలు ఎప్పుడూ ఓవర్‌రైట్ చేయబడవు.
+- స్కీమా మార్కర్: `settingsVersion` (ప్రస్తుతం `1`).
+- కీలు మరియు డిఫాల్టులు:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- కోడ్: `sources/background.js` → `initializeOrMigrateSettings()` మరియు `SCHEMA_VERSION` చూడండి.
 
-Dev workflow (adding a new setting)
+డెవలప్‌మెంట్ వర్క్‌ఫ్లో (క్రొత్త సెట్టింగ్ జోడించడం)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `sources/background.js` లో `SCHEMA_VERSION` ను బంప్ చేయండి.
+- `initializeOrMigrateSettings()` లోని `DEFAULTS` ఆబ్జెక్ట్‌లో క్రొత్త కీ + డిఫాల్ట్ జోడించండి.
+- డిఫాల్ట్స్ సీడ్ చేసే సమయంలో "only-if-undefined" నియమాన్ని ఉపయోగించండి; ఉన్న విలువలను ఓవర్‌రైట్ చేయకండి.
+- సెట్టింగ్ యూజర్‑విజిబుల్ అయితే, దాన్ని `sources/options.js` లో వైర్ చేసి, లోకలైజ్డ్ స్ట్రింగ్‌లను జోడించండి.
+- టెస్టులను జోడించండి/సర్దుబాటు చేయండి (`tests/background.settings.migration.test.js` చూడండి).
 
-Manual testing tips
+మాన్యువల్ టెస్టింగ్ చిట్కాలు
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- క్రొత్త ఇన్‌స్టాల్‌ను అనుకరించండి: ఎక్స్‌టెన్షన్ డేటా డైరెక్టరీని క్లియర్ చేయండి లేదా కొత్త ప్రొఫైల్‌తో ప్రారంభించండి.
+- అప్‌డేట్‌ను అనుకరించండి: `storage.local` లో `settingsVersion` ను `0` కు సెట్ చేసి రీ‑లోడ్ చేయండి; ఉన్న విలువలు మారలేదు మరియు మిస్సింగ్ కీలు మాత్రమే జోడించబడ్డాయని నిర్ధారించండి.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### ట్రబుల్‌షూటింగ్ {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Thunderbird 128 ESR లేదా దాని కంటే కొత్తదై ఉందని నిర్ధారించండి
+- రన్‌టైమ్ సమస్యల కోసం Error Console ను ఉపయోగించండి
+- నిల్వ చేసిన సెట్టింగ్‌లు సరిగా వర్తించనిట్లు అనిపిస్తే, Thunderbird ను రీస్టార్ట్ చేసి మళ్లీ ప్రయత్నించండి. (Thunderbird సెషన్‌ల మధ్య స్టేట్‌ను క్యాష్ చేయవచ్చు; రీస్టార్ట్ తాజా సెట్టింగ్‌లు లోడ్ అయ్యేలా చేస్తుంది.)
 
 ---
 
-### Translations
+### CI & కవరేజ్ {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) కవరేజ్ థ్రెషోల్డ్‌లతో (లైన్లు/ఫంక్షన్‌లు/బ్రాంచ్‌లు/స్టేట్మెంట్‌లు 85%) vitest నడుపుతుంది. థ్రెషోల్డ్‌లు చేరుకోకపోతే, జాబ్ ఫెయిల్ అవుతుంది.
+- వర్క్‌ఫ్లో HTML రిపోర్ట్‌తో `coverage-html` అనే ఆర్టిఫాక్ట్‌ను అప్‌లోడ్ చేస్తుంది; రన్ పేజీ నుంచి డౌన్‌లోడ్ చేయండి (Actions → latest run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### సహకారం {#contributing}
 
-Screenshots for docs
+- బ్రాంచ్/కమిట్/PR మార్గదర్శకాల కోసం CONTRIBUTING.md చూడండి
+- చిట్కా: మీ రోజువారీ ప్రొఫైల్‌పై ప్రభావం పడకుండా పరీక్షల కోసం వేరే Thunderbird డెవలప్‌మెంట్ ప్రొఫైల్ సృష్టించండి.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### అనువాదాలు
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- పెద్ద “all → all” అనువాద జాబ్స్ నెమ్మదిగా మరియు ఖర్చుతో కూడుకున్నవిగా ఉండవచ్చు. ముందుగా సబ్‌సెట్‌తో ప్రారంభించండి (ఉదా., కొద్ది డాక్స్ మరియు 1–2 లోకేల్స్), ఫలితాన్ని సమీక్షించి, తర్వాత విస్తరించండి.
+
+---
+
+- రీట్రై పాలసీ: అనువాద జాబ్స్ API లోపాలపై గరిష్టంగా 3 రీట్రైలను ఎక్స్‌పోనెన్షియల్ బ్యాక్‌آఫ్‌తో చేస్తాయి; `scripts/translate_web_docs_batch.js` మరియు `scripts/translate_web_docs_sync.js` చూడండి.
+
+డాక్స్ కోసం స్క్రీన్‌షాట్‌లు
+
+- చిత్రాలను `website/static/img/` క్రింద నిల్వ చేయండి.
+- వాటిని MD/MDXలో `useBaseUrl('/img/<filename>')` ద్వారా సూచించండి తద్వారా పాతులు సైట్ `baseUrl` తో పనిచేస్తాయి.
+- `website/static/img/` క్రింద చిత్రాలను జోడించిన తర్వాత లేదా పేరు మార్చిన తర్వాత, అన్ని సూచనలు ఇంకా `useBaseUrl('/img/…')` వాడుతున్నాయో మరియు స్థానిక ప్రివ్యూలో రెండర్ అవుతున్నాయో నిర్ధారించండి.
+  ఫేవికాన్లు
+
+- బహుళ‑సైజుల `favicon.ico` అన్ని బిల్డ్ పాత్‌లలో (Make + స్క్రిప్ట్‌లు) `website/scripts/build-favicon.mjs` ద్వారా ఆటోమేటిక్‌గా ఉత్పత్తి అవుతుంది.
+- ఎలాంటి మాన్యువల్ స్టెప్ అవసరం లేదు; `icon-*.png` ను అప్డేట్ చేయడం సరిపోతుంది.
+  సమీక్ష చిట్కా
+
+- అనువదించిన డాక్స్‌లో front‑matter `id` ను మార్చకండి; ఉంటే `title` మరియు `sidebar_label` మాత్రమే అనువదించండి.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- ఉద్దేశ్యం: స్థానిక build/preview ఆర్టిఫాక్ట్‌లను తీసివేయడం.
+- వినియోగం: `make clean`
+- తీసివేస్తుంది (ఉంటే):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- ఉద్దేశ్యం: ఫార్మాట్, టెస్ట్, చేంజ్‌లాగ్ అప్డేట్, commit, మరియు push.
+- వినియోగం: `make commit`
+- వివరాలు: Prettier (write), `make test`, `make test_i18n` నడుపుతుంది; staged డిఫ్‌లు ఉన్నప్పుడు చేంజ్‌లాగ్‌ను జోడిస్తుంది; `origin/<branch>` కు పుష్ చేస్తుంది.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- ఉద్దేశ్యం: ఫ్లాట్ కాన్ఫిగ్ ద్వారా ESLint నడపడం.
+- వినియోగం: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- ఉద్దేశ్యం: ఒక్క పంక్తి డాక్స్‌తో అన్ని టార్గెట్లను జాబితా చేయడం.
+- వినియోగం: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- ఉద్దేశ్యం: `web-ext` ను ఉపయోగించి MailExtension ను లింట్ చేయడం.
+- వినియోగం: `make lint`
+- గమనికలు: తాత్కాలికంగా `sources/manifest_LOCAL.json` → `sources/manifest.json` కాపీ చేస్తుంది; నిర్మించిన ZIPలను పాస్ చేస్తుంది; వార్నింగ్‌లు పైప్‌లైన్‌ను ఫెయిల్ చేయవు.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- ఉద్దేశ్యం: Make టార్గెట్ మరియు ఐచ్చిక ఆర్గ్యుమెంట్‌లను ఎంచుకునే ఇంటరాక్టివ్ మెను.
+- వినియోగం: ఎలాంటి ఆర్గ్యుమెంట్‌లు లేకుండా `make` నడపండి.
+- గమనికలు: `whiptail` అందుబాటులో లేకపోతే, మెను `make help` కు ఫాల్‌బ్యాక్ అవుతుంది.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- ఉద్దేశ్యం: ATN మరియు LOCAL ZIPలను బిల్డ్ చేయడం (`lint` పై ఆధారపడుతుంది).
+- వినియోగం: `make pack`
+- చిట్కా: ప్యాకేజింగ్‌కు ముందు `sources/manifest_*.json` రెండింటిలోనూ వెర్షన్‌లను బంప్ చేయండి.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- ఉద్దేశ్యం: రీపోను స్థానంలోనే ఫార్మాట్ చేయడం.
+- వినియోగం: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- ఉద్దేశ్యం: ఫార్మాటింగ్‌ను వెరిఫై చేయడం (రాతలు లేవు).
+- వినియోగం: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- ఉద్దేశ్యం: `prettier` కు అలియాస్.
+- వినియోగం: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- ఉద్దేశ్యం: Prettier (write), ESLint, తరువాత Vitest (ఇన్‌స్టాల్ అయితే కవరేజ్) నడపడం.
+- వినియోగం: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- ఉద్దేశ్యం: యాడ్‑ఆన్ స్ట్రింగ్‌లు మరియు వెబ్‌సైట్ డాక్స్ కోసం i18n‑కేంద్రీకృత టెస్టులు.
+- వినియోగం: `make test_i18n`
+- నడుపుతుంది: `npm run test:i18n` మరియు `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- ఉద్దేశ్యం: EN నుంచి ఇతర లోకేల్స్‌కి యాడ్‑ఆన్ UI స్ట్రింగ్‌లను అనువదించడం.
+- వినియోగం: `make translation_app OPTS="--locales all|de,fr"`
+- గమనికలు: కీ నిర్మాణం మరియు ప్లేస్‌హోల్డర్‌లను అలాగే ఉంచుతుంది; `translation_app.log` కు లాగ్ చేస్తుంది. స్క్రిప్ట్ రూపం: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- ఉద్దేశ్యం: `website/docs/*.md` నుంచి `website/i18n/<locale>/...` లోకి వెబ్‌సైట్ డాక్స్‌ను అనువదించడం.
+- ప్రాధాన్యం: `translate_web_docs_batch` (OpenAI Batch API)
+  - వాడకం (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - లెగసీ positional ఇంకా ఆమోదయోగ్యం: `OPTS="<doc|all> <lang|all>"`
+- ప్రవర్తన: JSONL నిర్మించి, అప్‌లోడ్ చేసి, ప్రతి 30s కి పోల్స్ చేసి, ఫలితాలను డౌన్‌లోడ్ చేసి, ఫైళ్లను రాస్తుంది.
+- గమనిక: బ్యాచ్ జాబ్ పూర్తయ్యేందుకు (OpenAI యొక్క బ్యాచ్ విండో ప్రకారం) గరిష్టంగా 24 గంటలు పడవచ్చు. ప్రతి పోలింగ్‌పై కన్సోల్ ఎలాప్స్‌డ్ టైమ్ చూపిస్తుంది.
+- Env: `OPENAI_API_KEY` (తప్పనిసరి), ఐచ్చికాలు `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (డిఫాల్ట్ 24h), `BATCH_POLL_INTERVAL_MS`.
+- లెగసీ: `translate_web_docs_sync`
+  - వాడకం (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - లెగసీ positional ఇంకా ఆమోదయోగ్యం: `OPTS="<doc|all> <lang|all>"`
+- ప్రవర్తన: ప్రతి జంటకు సమకాలిక రిక్వెస్ట్‌లు (బ్యాచ్ ఏకీకరణ లేదు).
+- గమనికలు: `OPTS` వదిలేస్తే ఇంటరాక్టివ్ ప్రాంప్ట్‌లు. రెండు మోడ్‌లు కోడ్ బ్లాక్‌లు/ఇన్‌లైన్ కోడ్‌ను అలాగే ఉంచుతాయి మరియు front‑matter `id` ను మార్పు చేయవు; `translation_web_batch.log` (batch) లేదా `translation_web_sync.log` (sync) కు లాగ్ చేస్తాయి.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- ఉద్దేశ్యం: `website/i18n/en/code.json` నుంచి `website/i18n/<locale>/code.json` క్రింద ఉన్న అన్ని లోకేల్స్‌కు ( `en` మినహా) వెబ్‌సైట్ UI స్ట్రింగ్‌లను (హోమ్‌పేజ్, నావ్‌బార్, ఫుటర్) అనువదించడం.
+- వినియోగం: `make translate_web_index` లేదా `make translate_web_index OPTS="--locales de,fr [--force]"`
+- అవసరాలు: `OPENAI_API_KEY` ఎక్స్‌పోర్ట్ చేయండి (ఐచ్చికం: `OPENAI_MODEL=gpt-4o-mini`).
+- ప్రవర్తన: JSON నిర్మాణాన్ని ధృవీకరిస్తుంది, కర్లీ‑బ్రేస్ ప్లేస్‌హోల్డర్‌లను అలాగే ఉంచుతుంది, URLలను మార్పు చేయదు, మరియు ధృవీకరణ లోపాలపై ఫీడ్‌బ్యాక్‌తో రీట్రై చేస్తుంది.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- ఉద్దేశ్యం: డాక్స్ సైట్‌ను `website/build` కు బిల్డ్ చేయడం.
+- వినియోగం: `make web_build OPTS="--locales en|de,en|all"` (లేదా `BUILD_LOCALES="en de"` సెట్ చేయండి)
+- అంతర్గతాలు: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- డెపెండెన్సీలు: `website/node_modules/@docusaurus` లేని పక్షంలో మాత్రమే `website/` లో `npm ci` నడుపుతుంది.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- ఉద్దేశ్యం: ఆఫ్లైన్‑సేఫ్ లింక్ చెక్.
+- వినియోగం: `make web_build_linkcheck OPTS="--locales en|all"`
+- గమనికలు: `tmp_linkcheck_web_pages` కు బిల్డ్ చేస్తుంది; GH Pages `baseUrl` ను `/` కు రీరైట్ చేస్తుంది; దూరపు HTTP(S) లింక్‌లను స్కిప్ చేస్తుంది.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- ఉద్దేశ్యం: ఐచ్చిక టెస్టులు/లింక్‑చెక్‌తో స్థానిక gh‑pages ప్రివ్యూ.
+- వినియోగం: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- ప్రవర్తన: ముందుగా Node ప్రివ్యూ సర్వర్‌ను ప్రయత్నిస్తుంది (`scripts/preview-server.mjs`, `/__stop` సపోర్ట్‌తో), తర్వాత `python3 -m http.server` కు ఫాల్‌బ్యాక్ అవుతుంది; 8080–8090 పై సర్వ్ చేస్తుంది; PID `web-local-preview/.server.pid` లో ఉంటుంది.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- ఉద్దేశ్యం: `website/build` ను `gh-pages` బ్రాంచ్‌కు పుష్ చేయడం.
+- వినియోగం: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+చిట్కా: Makefile ఉపయోగించే ప్యాకేజ్ మేనేజర్‌ను ఓవర్‌రైడ్ చేయడానికి `NPM=…` సెట్ చేయండి (డిఫాల్ట్ `npm`).

@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Namestitev'
 ---
 
-## Namestitev preko "Thunderbird Razširitev in Tem" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimalna različica Thunderbirda
-Ta razširitev podpira Thunderbird **128 ESR ali novejšo**. Starejše različice niso podprte.
+## Namestitev prek "Dodatki in teme v Thunderbirdu" {#installation-in-thunderbird-recommended}
+
+:::important Najmanjša različica Thunderbirda
+Ta dodatek podpira Thunderbird **128 ESR ali novejši**. Starejše različice niso podprte.
 :::
 
-To je priporočena metoda namestitve. Razširitve nameščene iz ATN (addons.thunderbird.net) prejemajo samodejna posodobitve. LOCAL/dev namestitve se ne posodabljajo samodejno.
+To je priporočeni način namestitve. Dodatki, nameščeni iz ATN (addons.thunderbird.net), prejemajo samodejne posodobitve. Namestitve LOCAL/dev se ne posodabljajo samodejno.
 
-- Minimalna različica Thunderbirda: 128 ESR ali novejša.
+- Najmanjša različica Thunderbirda: 128 ESR ali novejša.
 
-1. V Thunderbirdu pojdite na **Orodja > Razširitve in Temi**.
-2. Iščite "odgovori z priponkami".
-3. Dodajte razširitev.
+1. V Thunderbirdu odprite **Orodja > Dodatki in teme**.
+2. Poiščite "reply with attachments".
+3. Dodajte dodatek.
 
-Ali odprite stran razširitve neposredno: [Thunderbird Razširitve (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Ali odprite stran dodatka neposredno: [Dodatki za Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
 ## Ročna namestitev iz XPI {#local-installation-in-thunderbird}
 
-### Prenesi XPI datoteko {#download-the-xpi-file}
+### Prenos datoteke XPI {#download-the-xpi-file}
 
-1. Pojdite na [Thunderbird stran z Razširitvami](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Prenesite najnovejšo različico razširitve kot XPI datoteko (`reply_with_attachments-x.y.z-tb.xpi`).
+1. Pojdite na [stran dodatka za Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Prenesite najnovejšo različico dodatka kot datoteko XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
 ### Namestitev v Thunderbird {#install-in-thunderbird-local}
 
 1. Odprite Thunderbird.
-2. Pojdite na **Orodja > Razširitve in Temi**.
-3. V **Upravitelju Razširitev** kliknite ikono zobnika v zgornjem desnem kotu.
-4. Izberite **Namesti razširitev iz datoteke…** iz menija.
+2. Pojdite na **Orodja > Dodatki in teme**.
+3. V **Upravitelju dodatkov** kliknite ikono zobnika v zgornjem desnem kotu.
+4. V meniju izberite **Namesti dodatek iz datoteke…**.
 5. Izberite preneseno datoteko `reply_with_attachments-x.y.z-tb.xpi`.
-6. Potrdite namestitev, ko vas pozove.
+6. Ko boste pozvani, potrdite namestitev.
 
 ---
 
 ## Namestitev za razvoj {#installation-for-development}
 
-### Prenesite repozitorij {#download-the-repository}
+### Prenos repozitorija {#download-the-repository}
 
-1. Prenesite najnovejšo različico GitHub repozitorija.
+1. Prenesite najnovejšo različico repozitorija na GitHubu.
 2. Za več informacij zaženite `make help`.
 
 ### Namestitev v Thunderbird {#install-in-thunderbird-dev}
 
 1. Odprite Thunderbird.
-2. Pojdite na **Orodja > Razširitve in Temi**.
-3. V **Upravitelju Razširitev** kliknite ikono zobnika v zgornjem desnem kotu.
-4. Izberite **Namesti razširitev iz datoteke…** iz menija.
+2. Pojdite na **Orodja > Dodatki in teme**.
+3. V **Upravitelju dodatkov** kliknite ikono zobnika v zgornjem desnem kotu.
+4. V meniju izberite **Namesti dodatek iz datoteke…**.
 5. Izberite ustvarjeno datoteko `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Potrdite namestitev, ko vas pozove.
+6. Ko boste pozvani, potrdite namestitev.
 
-Opomba: Če Thunderbird ne sprejme `.zip` na vašem sistemu, ga preimenujte v `.xpi` in poskusite “Namesti razširitev iz datoteke…” znova.
+Opomba: Če Thunderbird na vašem sistemu ne sprejme `.zip`, ga preimenujte v `.xpi` in znova poskusite možnost »Namesti dodatek iz datoteke…«.
 
 ### Kje najti LOCAL ZIP {#where-local-zip}
 
-- Najprej pakirajte razširitev: zaženite `make pack` v korenu repozitorija.
-- Po pakiranju najdite “LOCAL” zip v korenu repozitorija (npr. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Pred prepakiranjem za testiranje posodobite različice v `sources/manifest_ATN.json` in `sources/manifest_LOCAL.json`.
+- Najprej zapakirajte dodatek: v korenu repozitorija zaženite `make pack`.
+- Po pakiranju v korenu repozitorija poiščite arhiv »LOCAL« (npr. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Pred ponovnim pakiranjem za testiranje povečajte številke različice v `sources/manifest_ATN.json` in `sources/manifest_LOCAL.json`.
 
 ---
 
-## Onemogočanje, Uninstalliranje in Posodobitve {#disable-uninstall-updates}
+## Onemogočanje, odstranitev in posodobitve {#disable-uninstall-updates}
 
-- Onemogočite: Thunderbird → Orodja → Razširitve in Temi → poiščite razširitev → izklopite.
-- Odstranite: ista vista → meni s tremi pikami → Odstrani.
-- Posodobitve: ATN namestitve se samodejno posodabljajo, ko so nove različice potrjene. LOCAL/dev namestitve se ne posodabljajo samodejno; ročno namestite novo LOCAL različico.
-- Popolnoma odstranite nastavitve: glejte [Zasebnost → Odstranitev podatkov](privacy#data-removal).
+- Onemogoči: Thunderbird → Orodja → Dodatki in teme → poiščite dodatek → preklopite stikalo na izklopljeno.
+- Odstrani: isti pogled → meni s tremi pikami → Odstrani.
+- Posodobitve: Namestitve iz ATN se samodejno posodabljajo, ko so nove različice odobrene. Namestitve LOCAL/dev se ne posodabljajo samodejno; novo različico LOCAL znova namestite ročno.
+- Popolna odstranitev nastavitev: glejte [Zasebnost → Odstranitev podatkov](privacy#data-removal).
 
-Glejte tudi
+Glej tudi
 
-- [Hitri začetek](quickstart)
+- [Hiter začetek](quickstart)

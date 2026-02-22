@@ -4,294 +4,296 @@ title: 'ការអភិវឌ្ឍន៍'
 sidebar_label: 'ការអភិវឌ្ឍន៍'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## មគ្គុទេសក៍អភិវឌ្ឍន៍ {#development-guide}
+
+:::note កែសម្រួលតែភាសាអង់គ្លេស; ការបកប្រែត្រូវបានចម្រេញដោយស្វ័យប្រវត្តិ
+ធ្វើបច្ចុប្បន្នភាពឯកសារ **តែ** ក្រោម `website/docs` (English) ប៉ុណ្ណោះ។ ការបកប្រែក្រោម `website/i18n/<locale>/…` ត្រូវបានបង្កើតស្វ័យប្រវត្តិ ហើយមិនគួរត្រូវបានកែសម្រួលដោយដៃទេ។ ប្រើភារកិច្ចបកប្រែ (ឧ., `make translate_web_docs_batch`) ដើម្បីធ្វើឲ្យមាតិកាទាន់សម័យតាមមូលដ្ឋានភាសា។
 :::
 
-### Prerequisites {#prerequisites}
+### លក្ខខណ្ឌមុន {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ និង npm (បានសាកល្បងជាមួយ Node 22)
+- Thunderbird 128 ESR ឬថ្មីជាងនេះ (សម្រាប់ការសាកល្បងដោយដៃ)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### តម្រៀបគម្រោង (កម្រិតខ្ពស់) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: ស្គ្រីបកញ្ចប់ `distribution_zip_packer.sh`, ឯកសារ, រូបថតអេក្រង់
+- `sources/`: កូដស្នូលរបស់ add-on (background, options/popup UI, manifests, icons)
+- `tests/`: សំណុំតេស្ត Vitest
+- `website/`: ឯកសារ Docusaurus (មាន i18n ក្រោម `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### ដំឡើង និង ឧបករណ៍ {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- ដំឡើង dependencies នៅ root: `npm ci`
+- ឯកសារ (ស្រេចចិត្ត): `cd website && npm ci`
+- រកឃើញគោលដៅ: `make help`
+
+---
+
+### អភិវឌ្ឍន៍ផ្ទាល់ (web‑ext run) {#live-dev-web-ext}
+
+- រង្វិលរហ័សក្នុង Firefox Desktop (សម្រាប់តេស្ត UI កម្រិតផ្ទៃ):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- រត់ក្នុង Thunderbird (ពេញចិត្តសម្រាប់ MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- គន្លឹះ:
+- ត្រូវបើក Error Console របស់ Thunderbird ជានិច្ច (Tools → Developer Tools → Error Console)។
+- MV3 event pages នឹងត្រូវបានផ្អាកពេលទំនេរ; សូម reload add‑on បន្ទាប់ពីផ្លាស់ប្តូរកូដ ឬអនុញ្ញាតឲ្យ web‑ext auto‑reload។
+- អាកប្បកិរិយាដែលមានតែ Firefox មួយចំនួនខុសគ្នា; តែងតែផ្ទៀងផ្ទាត់ក្នុង Thunderbird សម្រាប់ភាពស្មើគ្នា API។
+- ផ្លូវកម្មវិធី Thunderbird (ឧទាហរណ៍):
+- Linux: `thunderbird` (ឧ., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- ការដាច់ដោយឡែកប្រវត្តិរូប: ប្រើប្រវត្តិរូប Thunderbird ដាច់ដោយឡែកសម្រាប់អភិវឌ្ឍន៍ ដើម្បីជៀសវាងប៉ះពាល់ដល់ការកំណត់ប្រចាំថ្ងៃរបស់អ្នក។
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### គោលដៅ Make (តាមអក្ខរក្រម) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile គ្រប់គ្រងលំហូរការអភិវឌ្ឍន៍ទូទៅឲ្យមានស្តង់ដារ។ រត់ `make help` ពេលណាក៏បាន ដើម្បីទទួលបានសេចក្ដីសង្ខេបមួយបន្ទាត់នៃគោលដៅទាំងអស់។
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+គន្លឹះ: ការរត់ `make` ដោយគ្មានគោលដៅ នឹងបើកម៉ឺនុយ Whiptail ងាយៗសម្រាប់ជ្រើសគោលដៅ។
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| គោលដៅ                                                    | សេចក្ដីពិពណ៌នាជួរមួយបន្ទាត់                                                                            |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [`clean`](#mt-clean)                                     | លុប artifact បង្កើត/មើលជាមុនក្នុងមូលដ្ឋាន (tmp/, web-local-preview/, website/build/)។                  |
+| [`commit`](#mt-commit)                                   | ដាក់ទ្រង់ទ្រាយ, រត់តេស្ត (រួមទាំង i18n), អាប់ដេត changelog, commit និង push។                           |
+| [`eslint`](#mt-eslint)                                   | រត់ ESLint តាម flat config (`npm run -s lint:eslint`)។                                                 |
+| [`help`](#mt-help)                                       | បង្ហាញបញ្ជីគោលដៅទាំងអស់ជាមួយឯកសារសង្ខេបមួយបន្ទាត់ (តម្រៀប)។                                            |
+| [`lint`](#mt-lint)                                       | web‑ext lint លើ `sources/` (manifest បណ្តោះអាសន្ន; មិនអើពើ ZIPs; មិនគ្រោះថ្នាក់)។                      |
+| [`menu`](#mt-menu)                                       | ម៉ឺនុយអន្តរកម្ម ដើម្បីជ្រើសគោលដៅ និងអាគ្យូម៉ង់ស្រេចចិត្ត។                                              |
+| [`pack`](#mt-pack)                                       | បង្កើត ZIPs ATN & LOCAL (រត់ linter; ហៅស្គ្រីប packer)។                                                |
+| [`prettier`](#mt-prettier)                               | ដាក់ទ្រង់ទ្រាយឃ្លាំងកូដនៅកន្លែង (សរសេរផ្លាស់ប្តូរ)។                                                    |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier ក្នុងរបៀបពិនិត្យ (មិនសរសេរ); បរាជ័យ បើត្រូវការកែលម្អទ្រង់ទ្រាយ។                               |
+| [`prettier_write`](#mt-prettier_write)                   | Alias សម្រាប់ `prettier`។                                                                              |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, បន្ទាប់មក Vitest (coverage បើបានកំណត់)។                                      |
+| [`test_i18n`](#mt-test_i18n)                             | តេស្ត i18n ប៉ុណ្ណោះ: placeholders/parity របស់ add‑on + parity គេហទំព័រ។                                |
+| [`translate_app`](#mt-translation-app)                   | Alias សម្រាប់ `translation_app`។                                                                       |
+| [`translation_app`](#mt-translation-app)                 | បកប្រែខ្សែអក្សរ UI អាប់មិនរបស់កម្មវិធីពី `sources/_locales/en/messages.json`។                          |
+| [`translate_web_docs_batch`](#mt-translation-web)        | បកប្រែឯកសារគេហទំព័រតាម OpenAI Batch API (ផ្តល់អទិភាព)។                                                 |
+| [`translate_web_docs_sync`](#mt-translation-web)         | បកប្រែឯកសារគេហទំព័រជាសមកាលកម្ម (ចាស់, មិនជា batch)។                                                    |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias សម្រាប់ `translation_web_index`។                                                                 |
+| [`translation_web_index`](#mt-translation_web_index)     | បកប្រែខ្សែអក្សរ UI នៃ ទំព័រដើម/របាររុករក/បាតកថា (`website/i18n/en/code.json → .../<lang>/code.json`)។  |
+| [`web_build`](#mt-web_build)                             | សាងសង់ឯកសារទៅ `website/build` (គាំទ្រ `--locales` / `BUILD_LOCALES`)។                                  |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | ពិនិត្យតំណក្នុងលក្ខណៈ offline‑safe (រំលង HTTP[S] ដោះស្រាយពីចម្ងាយ)។                                    |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | ការមើលជាមុន gh‑pages ក្នុងមូលដ្ឋាន; បម្រើស្វ័យប្រវត្តិលើ 8080–8090; ជាមួយតេស្ត/ពិនិត្យតំណជាស្រេចចិត្ត។ |
+| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` ទៅខាងសាខា `gh-pages`។                                                             |
 
-Syntax for options
+វាក្យសម្ពន្ធសម្រាប់ជម្រើស
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- ប្រើ `make <command> OPTS="…"` ដើម្បីបញ្ជូនជម្រើស (ណែនាំឲ្យដាក់សញ្ញាដកឃ្លា)។ គោលដៅនីមួយៗខាងក្រោមបង្ហាញឧទាហរណ៍ការប្រើប្រាស់។
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### គន្លឹះសម្រាប់បង្កើតតាមភាសា {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- បង្កើតត្រឹមកំណុំភាសាមួយចំណែក: កំណត់ `BUILD_LOCALES="en de"` ឬបញ្ជូន `OPTS="--locales en,de"` ទៅគោលដៅគេហទំព័រ។
+- មើលជាមុនភាសាជាក់លាក់: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`។
 
 ---
 
-### Test {#test}
+### សាងសង់ និង កញ្ចប់ {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- បង្កើត ZIPs: `make pack`
+- បង្កើត ZIPs ATN និង LOCAL នៅ root របស់ឃ្លាំង (កុំកែកម្មសិទ្ធិអត្ថបទស្នូលដោយដៃ)
+- គន្លឹះ: ធ្វើបច្ចុប្បន្នភាពកំណែទាំងក្នុង `sources/manifest_ATN.json` និង `sources/manifest_LOCAL.json` មុនពេលចាក់កញ្ចប់
+- ដំឡើងដោយដៃ (dev): Thunderbird → Tools → Add‑ons and Themes → រន្ធកង់ → Install Add‑on From File… → ជ្រើស ZIP ដែលបានបង្កើត
+
+---
+
+### តេស្ត {#test}
+
+- សំណុំពេញលេញ: `make test` (Vitest)
+- ការគ្របដណ្តប់ (ស្រេចចិត្ត):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- រត់ `make test`; បើក `coverage/index.html` សម្រាប់របាយការណ៍ HTML
+- i18n ប៉ុណ្ណោះ: `make test_i18n` (UI keys/placeholders/titles + parity គេហទំព័រតាមភាសា និងឯកសារ ដោយពិនិត្យ id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### ដិបហ្គឹង និង កំណត់ហេតុ {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- បិទ/បើកកំណត់ហេតុលម្អិតនៅពេលដំណើរការ:
+- បើក: `messenger.storage.local.set({ debug: true })`
+- បិទ: `messenger.storage.local.set({ debug: false })`
+- កំណត់ហេតុបង្ហាញខណៈពេលកំពុងតែង/ផ្ញើចម្លើយ
 
 ---
 
-### Docs (website) {#docs-website}
+### ឯកសារ (គេហទំព័រ) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- ម៉ាស៊ីនបម្រើអភិវឌ្ឍន៍: `cd website && npm run start`
+- សាងសង់គេហទំព័រថ្មីជា static: `cd website && npm run build`
+- សមមូល Make (តាមអក្ខរក្រម): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- ឧទាហរណ៍ប្រើប្រាស់:
+- តែ EN ប៉ុណ្ណោះ, រំលងតេស្ត/ពិនិត្យតំណ, គ្មាន push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- ភាសាទាំងអស់, ជាមួយតេស្ត/ពិនិត្យតំណ, បន្ទាប់មក push: `make web_build_local_preview && make web_push_github`
+- មុននឹងផ្សព្វផ្សាយ សូមរត់ការពិនិត្យតំណដែលអាចប្រើបានក្រៅបណ្តាញ: `make web_build_linkcheck`។
+- i18n: អង់គ្លេសនៅ `website/docs/*.md`; ការបកប្រែអាល្លឺម៉ង់នៅ `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- ស្វែងរក: ប្រសិនបើមានកំណត់អថេរបរិស្ថាន Algolia DocSearch នៅក្នុង CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`) គេហទំព័រនឹងប្រើសេវាស្វែងរក Algolia; បើមិនដូច្នេះទេ នឹងត្រឡប់ទៅស្វែងរកក្នុងមូលដ្ឋាន។ នៅទំព័រដើម ចុច `/` ឬ `Ctrl+K` ដើម្បីបើកប្រអប់ស្វែងរក។
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### ផ្លូវបង្វែរ ស្នើបរិច្ចាគ {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- ផ្លូវ: `/donate` (និង `/<locale>/donate`)
+- អាកប្បកិរិយា:
+- បើផ្លូវបច្ចុប្បន្នមានភាសា (ឧ., `/de/donate`) សូមប្រើវា
+- បើមិនដូច្នេះទេ ជ្រើសការផ្គូផ្គងល្អបំផុតពី `navigator.languages` ជាមួយភាសាដែលបានកំណត់; ប្រសិនបើមិនមាន សូមត្រឡប់ទៅភាសាលំនាំដើម
+- បង្វែរទៅ:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- ផ្សេងទៀត → `/<locale>/docs/donation`
+- ប្រើ `useBaseUrl` សម្រាប់គ្រប់គ្រង baseUrl ឲ្យត្រឹមត្រូវ
+- រួមមាន meta refresh + តំណ `noscript` ជាជម្រើសបម្រុង
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### គន្លឹះមើលជាមុន {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- បញ្ឈប់ការមើលជាមុនរបស់ Node ឲ្យបានស្អាត: បើក `http://localhost:<port>/__stop` (បោះពុម្ពបន្ទាប់ពី `Local server started`)។
+- បើរូបភាពមិនផ្ទុកនៅក្នុង MDX/JSX សូមប្រើ `useBaseUrl('/img/...')` ដើម្បីគោរព `baseUrl` របស់គេហទំព័រ។
+- ការមើលជាមុនចាប់ផ្តើមជាមុន; ការត្រួតពិនិត្យតំណរត់បន្តក្រោយ ហើយមិនរារាំងទេ (តំណខាងក្រៅដែលខូចមិនធ្វើឲ្យបញ្ឈប់ការមើលជាមុនទេ)។
+- ឧទាហរណ៍ URL សម្រាប់មើលជាមុន: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (បោះពុម្ពបន្ទាប់ពី “Local server started”)។
+- តំណខាងក្រៅក្នុងការត្រួតពិនិត្យតំណ: គេហទំព័រខាងក្រៅមួយចំនួន (ឧ., addons.thunderbird.net) ទប់ស្កាត់ crawler ស្វយៈ និងអាចបង្ហាញ 403 ក្នុងការត្រួតពិនិត្យតំណ។ ការមើលជាមុននៅតែចាប់ផ្តើម; អាចមើលរំលងបានយ៉ាងសុវត្ថិ។
 
 ---
 
-#### Translate the Website {#translate-website}
+#### បកប្រែកេហទំព័រ {#translate-website}
 
-What you can translate
+អ្វីដែលអ្នកអាចបកប្រែបាន
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- តែ UI របស់គេហទំព័រ: ទំព័រដើម, របាររុករក, បាតកថា និងខ្សែអក្សរ UI ផ្សេងៗ។ មាតិកាឯកសារនៅតែមែនជាអង់គ្លេសសិន។
 
-Where to edit
+កន្លែងកែសម្រួល
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- កែសម្រួល `website/i18n/<locale>/code.json` (ប្រើ `en` ជាវិភាគ)។ រក្សា placeholders ដូចជា `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` មិនប្តូរ។
 
-Generate or refresh files
+បង្កើត ឬធ្វើឲ្យឯកសារស្រស់ឡើងវិញ
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- បង្កើត stubs ដែលបាត់សម្រាប់ភាសាទាំងអស់: `npm --prefix website run i18n:stubs`
+- សរសេរ​ជាន់​លើ stubs ពីអង់គ្លេស (បន្ទាប់ពីបន្ថែមខ្សែអក្សរថ្មី): `npm --prefix website run i18n:stubs:force`
+- ជម្រើសសម្រាប់ភាសាតែមួយ: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+បកប្រែខ្សែអក្សរ UI នៃ ទំព័រដើម/របាររុករក/បាតកថា (OpenAI)
 
-- Set credentials once (shell or .env):
+- កំណត់លិខិតសម្គាល់ម្តង (shell ឬ .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- ស្រេចចិត្ត: `export OPENAI_MODEL=gpt-4o-mini`
+- ម្តងសម្រាប់ភាសាទាំងអស់ (រំលង en): `make translate_web_index`
+- កំណត់ត្រឹមភាសាជាក់លាក់: `make translate_web_index OPTS="--locales de,fr"`
+- សរសេរជាន់លើតម្លៃដែលមានរួច: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+សុពលភាព និង ការព្យាយាមឡើងវិញ
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- ស្គ្រីបបកប្រែធ្វើសុពលភាពរូបរាង JSON រក្សា placeholders សញ្ញាវង់ និងធានាថា URLs មិនត្រូវបានប្តូរ។
+- នៅពេលបរាជ័យក្នុងការធ្វើសុពលភាព វានឹងព្យាយាមឡើងវិញជាមួយមតិយោបល់ រហូតដល់ 2 ដង មុនពេលរក្សាតម្លៃដើម។
 
-Preview your locale
+មើលជាមុនភាសារបស់អ្នក
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- ម៉ាស៊ីនបម្រើអភិវឌ្ឍន៍: `npm --prefix website run start`
+- ទស្សនា `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+ការដាក់ស្នើ
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- បើក PR ជាមួយឯកសារ `code.json` ដែលបានកែសម្រួល។ រក្សាការផ្លាស់ប្តូរឲ្យមានគោលដៅច្បាស់ និងភ្ជាប់រូបថតអេក្រង់រហ័សបើអាចធ្វើបាន។
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### គន្លឹះសុវត្ថិភាព និង ការកំណត់រចនាសម្ព័ន្ធ {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- កុំ commit `sources/manifest.json` (បង្កើតបណ្តោះអាសន្នដោយដំណើរការ build)
+- រក្សា `browser_specific_settings.gecko.id` ឲ្យមានស្ថិរភាព ដើម្បីថែរក្សាឆានែលអាប់ដេត
+
+---
+
+### ការរក្សាទុកការកំណត់ {#settings-persistence}
+
+- កន្លែងផ្ទុក: ការកំណត់អ្នកប្រើទាំងអស់ស្ថិតនៅក្នុង `storage.local` ហើយត្រូវបានរក្សាទុកឆ្លងកាត់ការអាប់ដេត add‑on។
+- ដំឡើង: តម្លៃលំនាំដើមត្រូវបានអនុវត្ត នៅពេលដែលសោខ្វះពិតប្រាកដ (undefined) ប៉ុណ្ណោះ។
+- ធ្វើបច្ចុប្បន្នភាព: ការផ្លាស់ទីបំពេញតែសោដែលខ្វះ; តម្លៃដែលមានរួចមិនត្រូវបានសរសេរជាន់លើឡើយ។
+- សញ្ញាស្គីម៉ា: `settingsVersion` (បច្ចុប្បន្ន `1`)។
+- សោ និង តម្លៃលំនាំដើម:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- កូដ: សូមមើល `sources/background.js` → `initializeOrMigrateSettings()` និង `SCHEMA_VERSION`។
 
-Dev workflow (adding a new setting)
+លំហូរការងារ dev (បន្ថែមការកំណត់ថ្មី)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- បំប្លែងកំណែ `SCHEMA_VERSION` នៅក្នុង `sources/background.js`।
+- បន្ថែមសោថ្មី + តម្លៃលំនាំដើមទៅក្នុងវត្ថុ `DEFAULTS` នៅក្នុង `initializeOrMigrateSettings()`។
+- ប្រើច្បាប់ "only-if-undefined" ពេលបង្កើតតម្លៃលំនាំដើម; កុំសរសេរជាន់លើតម្លៃដែលមានរួច។
+- បើការកំណត់មើលឃើញដោយអ្នកប្រើ ត្រូវភ្ជាប់វានៅក្នុង `sources/options.js` ហើយបន្ថែមខ្សែអក្សរតាមមូលដ្ឋានភាសា។
+- បន្ថែម/លៃតម្រូវតេស្ត (សូមមើល `tests/background.settings.migration.test.js`)។
 
-Manual testing tips
+គន្លឹះសាកល្បងដោយដៃ
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- ក្លែងធ្វើការដំឡើងថ្មី: សម្អាតថតទិន្នន័យរបស់ extension ឬចាប់ផ្តើមជាមួយប្រវត្តិរូបថ្មី។
+- ក្លែងធ្វើអាប់ដេត: កំណត់ `settingsVersion` ទៅ `0` នៅក្នុង `storage.local` ហើយផ្ទុកឡើងវិញ; ប្រាកដថាតម្លៃដែលមានមិនប្តូរ ហើយបន្ថែមតែលេខសោដែលខ្វះប៉ុណ្ណោះ។
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### ដោះស្រាយបញ្ហា {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- ប្រាកដថា Thunderbird ជា 128 ESR ឬក៏ថ្មីជាងនេះ
+- ប្រើ Error Console សម្រាប់បញ្ហាពេលដំណើរការ
+- បើទំនាក់ទំនងការកំណត់ដែលបានរក្សាទុកមើលទៅមិនអនុវត្តត្រឹមត្រូវ សូមចាប់ផ្តើម Thunderbird ឡើងវិញ ហើយសាកល្បងម្ដងទៀត។ (Thunderbird អាចរក្សាទុកស្ថានភាពអំឡុងសម័យ; ការចាប់ផ្តើមឡើងវិញធានាថាការកំណត់ថ្មីត្រូវបានផ្ទុកឡើង)
 
 ---
 
-### Translations
+### CI និង ការគ្របដណ្តប់ {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) រត់ vitest ជាមួយកម្រិតទទួលយកការគ្របដណ្តប់ (85% លើបន្ទាត់/មុខងារ/សាខា/សេចក្ដីថ្លែងការណ៍)។ បើមិនឆ្លើយតាមកម្រិត ការងារនឹងបរាជ័យ។
+- លំហូរការងារនេះអាប់ឡូដ artifact `coverage-html` ជាមួយរបាយការណ៍ HTML; ទាញយកវាពីទំព័ររត់ (Actions → latest run → Artifacts)។
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### ការរួមចំណែក {#contributing}
 
-Screenshots for docs
+- សូមមើល CONTRIBUTING.md សម្រាប់បណ្តាញនីតិវិធី branch/commit/PR
+- គន្លឹះ: បង្កើតប្រវត្តិរូបអភិវឌ្ឍន៍ Thunderbird ដាច់ដោយឡែកសម្រាប់សាកល្បង ដើម្បីជៀសវាងប៉ះពាល់ដល់ប្រវត្តិរូបប្រចាំថ្ងៃ។
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### ការបកប្រែ
+
+- ការរត់ភារកិច្ចបកប្រែទំហំធំ “all → all” អាចយឺត និងចំណាយថ្លៃ។ ចាប់ផ្តើមពីសំណុំតូចមួយ (ឧ., ឯកសារប៉ុន្មាន និងភាសា 1–2), ពិនិត្យលទ្ធផល បន្ទាប់មកពង្រីកបន្ថែម។
+
+---
+
+- គោលនយោបាយព្យាយាមឡើងវិញ: ភារកិច្ចបកប្រែអនុវត្តបានរហូតដល់ 3 ដងដោយប្រើ exponential backoff នៅពេលមានកំហុស API; សូមមើល `scripts/translate_web_docs_batch.js` និង `scripts/translate_web_docs_sync.js`។
+
+រូបថតអេក្រង់សម្រាប់ឯកសារ
+
+- រក្សាទុករូបភាពក្រោម `website/static/img/`។
+- យោងវាក្នុង MD/MDX តាមរយៈ `useBaseUrl('/img/<filename>')` ដើម្បីឲ្យផ្លូវដំណើរការជាមួយ `baseUrl` របស់គេហទំព័រ។
+- បន្ទាប់ពីបន្ថែម ឬប្តូរឈ្មោះរូបភាពក្រោម `website/static/img/`, សូមបញ្ជាក់ថាការយោងទាំងអស់នៅតែប្រើ `useBaseUrl('/img/…')` ហើយបង្ហាញបានក្នុងការមើលជាមុនក្នុងមូលដ្ឋាន។
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` ច្រើនទំហំ ត្រូវបានបង្កើតស្វ័យប្រវត្តិតាមផ្លូវ build ទាំងអស់ (Make + scripts) តាមរយៈ `website/scripts/build-favicon.mjs`។
+- មិនចាំបាច់ជំហានដោយដៃទេ; ការអាប់ដេត `icon-*.png` គ្រប់គ្រាន់។
+  គន្លឹះពិនិត្យឡើងវិញ
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- រក្សា front‑matter `id` មិនប្តូរនៅក្នុងឯកសារបកប្រែ; បកប្រែតែ `title` និង `sidebar_label` ប៉ុណ្ណោះ បើមាន។
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- គោលបំណង: លុប artifact បង្កើត/មើលជាមុនក្នុងមូលដ្ឋាន។
+- ការប្រើប្រាស់: `make clean`
+- លុប (បើមាន):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- គោលបំណង: ដាក់ទ្រង់ទ្រាយ, តេស្ត, អាប់ដេត changelog, commit និង push។
+- ការប្រើប្រាស់: `make commit`
+- សេចក្ដីលម្អិត: រត់ Prettier (write), `make test`, `make test_i18n`; បន្ថែមចំណូលធ្វើបច្ចុប្បន្នភាពក្នុង changelog នៅពេលមាន diff ត្រូវបាន staged; push ទៅ `origin/<branch>`។
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- គោលបំណង: រត់ ESLint តាម flat config។
+- ការប្រើប្រាស់: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- គោលបំណង: បង្ហាញគោលដៅទាំងអស់ជាមួយឯកសារសង្ខេបមួយបន្ទាត់។
+- ការប្រើប្រាស់: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- គោលបំណង: lint MailExtension ដោយប្រើ `web-ext`។
+- ការប្រើប្រាស់: `make lint`
+- កំណត់ចំណាំ: ចម្លងបណ្តោះអាសន្ន `sources/manifest_LOCAL.json` → `sources/manifest.json`; មិនអើពើ ZIPs ដែលបានបង្កើត; ព្រមានមិនធ្វើឲ្យបំពានបំពង់។
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- គោលបំណង: ម៉ឺនុយអន្តរកម្មសម្រាប់ជ្រើសគោលដៅ Make និងអាគ្យូម៉ង់ស្រេចចិត្ត។
+- ការប្រើប្រាស់: រត់ `make` ដោយគ្មានអាគ្យូម៉ង់។
+- កំណត់ចំណាំ: បើ `whiptail` មិនមាន ទេ ម៉ឺនុយនឹងត្រឡប់ទៅ `make help`។
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- គោលបំណង: បង្កើត ZIPs ATN និង LOCAL (អាស្រ័យលើ `lint`)។
+- ការប្រើប្រាស់: `make pack`
+- គន្លឹះ: បំប្លែងកំណែទាំងពីរ​នៅក្នុង `sources/manifest_*.json` មុនពេលចាក់កញ្ចប់។
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- គោលបំណង: ដាក់ទ្រង់ទ្រាយឃ្លាំងកូដនៅកន្លែង។
+- ការប្រើប្រាស់: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- គោលបំណង: ផ្ទៀងផ្ទាត់ទ្រង់ទ្រាយ (គ្មានការសរសេរ)។
+- ការប្រើប្រាស់: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- គោលបំណង: alias សម្រាប់ `prettier`។
+- ការប្រើប្រាស់: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- គោលបំណង: រត់ Prettier (write), ESLint បន្ទាប់មក Vitest (coverage បើបានដំឡើង)។
+- ការប្រើប្រាស់: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- គោលបំណង: តេស្តផ្តោតលើ i18n សម្រាប់ខ្សែអក្សរ add‑on និងឯកសារគេហទំព័រ។
+- ការប្រើប្រាស់: `make test_i18n`
+- រត់: `npm run test:i18n` និង `npm run -s test:website-i18n`។
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- គោលបំណង: បកប្រែខ្សែអក្សរ UI របស់ add‑on ពី EN ទៅភាសាផ្សេងទៀត។
+- ការប្រើប្រាស់: `make translation_app OPTS="--locales all|de,fr"`
+- កំណត់ចំណាំ: រក្សារចនាសម្ព័ន្ធសោ និង placeholders; កំណត់ហេតុទៅ `translation_app.log`។ ទម្រង់ស្គ្រីប: `node scripts/translate_app.js --locales …`។
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- គោលបំណង: បកប្រែឯកសារគេហទំព័រពី `website/docs/*.md` ទៅ `website/i18n/<locale>/...`។
+- ផ្តល់អាទិភាព: `translate_web_docs_batch` (OpenAI Batch API)
+  - ការប្រើប្រាស់ (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - ទម្រង់ positional ចាស់នៅតែទទួលយក: `OPTS="<doc|all> <lang|all>"`
+- អាកប្បកិរិយា: សាងសង់ JSONL, អាប់ឡូដ, ស្ទង់មើលរៀងរាល់ 30 វិនាទី, ទាញយកលទ្ធផល, សរសេរឯកសារ។
+- កំណត់ចំណាំ: ការងារ batch អាចចំណាយពេលរហូតដល់ 24 ម៉ោង (តាមបង្អួច batch របស់ OpenAI)។ Console បង្ហាញពេលកន្លងផុតលើរាល់ការស្ទង់មើល។
+- បរិស្ថាន: `OPENAI_API_KEY` (ត្រូវការ), ស្រេចចិត្ត `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (លំនាំដើម 24h), `BATCH_POLL_INTERVAL_MS`។
+- ចាស់: `translate_web_docs_sync`
+  - ការប្រើប្រាស់ (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - ទម្រង់ positional ចាស់នៅតែទទួលយក: `OPTS="<doc|all> <lang|all>"`
+- អាកប្បកិរិយា: សំណើជាសមកាលកម្មតាមគូ (គ្មានការបូកបញ្ចូលជា batch)។
+- កំណត់ចំណាំ: មានការសួរអន្តរកម្ម នៅពេលបោះបង់ `OPTS`។ របៀបទាំងពីររក្សា code blocks/inline code ហើយរក្សា front‑matter `id` មិនប្តូរ; កំណត់ហេតុទៅ `translation_web_batch.log` (batch) ឬ `translation_web_sync.log` (sync)។
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- គោលបំណង: បកប្រែខ្សែអក្សរ UI គេហទំព័រ (ទំព័រដើម, របាររុករក, បាតកថា) ពី `website/i18n/en/code.json` ទៅភាសាទាំងអស់ក្រោម `website/i18n/<locale>/code.json` (មិនរាប់បញ្ចូល `en`)។
+- ការប្រើប្រាស់: `make translate_web_index` ឬ `make translate_web_index OPTS="--locales de,fr [--force]"`
+- តម្រូវការ: export `OPENAI_API_KEY` (ស្រេចចិត្ត: `OPENAI_MODEL=gpt-4o-mini`)។
+- អាកប្បកិរិយា: ផ្ទៀងផ្ទាត់រចនាសម្ព័ន្ធ JSON, រក្សា placeholders សញ្ញាវង់, រក្សា URLs មិនប្តូរ, និងព្យាយាមឡើងវិញជាមួយមតិយោបល់នៅពេលមានកំហុសការផ្ទៀងផ្ទាត់។
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- គោលបំណង: សាងសង់គេហទំព័រឯកសារទៅ `website/build`។
+- ការប្រើប្រាស់: `make web_build OPTS="--locales en|de,en|all"` (ឬកំណត់ `BUILD_LOCALES="en de"`)
+- ខាងក្នុង: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`។
+- អាស្រ័យធាតុ: រត់ `npm ci` នៅក្នុង `website/` តែប៉ុណ្ណោះ បើ `website/node_modules/@docusaurus` បាត់។
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- គោលបំណង: ពិនិត្យតំណក្នុងលក្ខណៈ offline‑safe។
+- ការប្រើប្រាស់: `make web_build_linkcheck OPTS="--locales en|all"`
+- កំណត់ចំណាំ: សាងសង់ទៅ `tmp_linkcheck_web_pages`; សរសេរឡើងវិញ GH Pages `baseUrl` ទៅ `/`; រំលងតំណ HTTP(S) ខាងក្រៅ។
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- គោលបំណង: មើលជាមុន gh‑pages ក្នុងមូលដ្ឋាន ជាមួយតេស្ត/ពិនិត្យតំណជាស្រេចចិត្ត។
+- ការប្រើប្រាស់: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- អាកប្បកិរិយា: ព្យាយាមម៉ាស៊ីនបម្រើមើលជាមុនរបស់ Node ជាមុន (`scripts/preview-server.mjs`, គាំទ្រ `/__stop`), បើមិនសម្រេច ត្រឡប់ទៅ `python3 -m http.server`; បម្រើលើ 8080–8090; PID នៅ `web-local-preview/.server.pid`។
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- គោលបំណង: push `website/build` ទៅសាខា `gh-pages`។
+- ការប្រើប្រាស់: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+គន្លឹះ: កំណត់ `NPM=…` ដើម្បីបដិសេធ package manager ដែល Makefile ប្រើ (លំនាំដើម `npm`)។
+
+---

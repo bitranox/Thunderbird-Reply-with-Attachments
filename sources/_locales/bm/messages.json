@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Ka ɲɛsin ni pièces jointes tugu kɛra liste noire la"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include inline pictures (embedded images)"
+  },
   "uiDebugHeader": {
     "message": "Avancé"
   },

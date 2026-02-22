@@ -4,94 +4,98 @@ title: 'Úsáid'
 sidebar_label: 'Úsáid'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Úsáid {#usage}
+
+- Nuair a thugtar freagra, cuireann an breiseán na buncheangaltáin leis go huathoibríoch — nó iarrann sé cead ar dtús, más cumasaithe sna Roghanna.
+- Baintear dúbailtí de réir ainm comhaid; ní chuirtear páirteanna S/MIME san áireamh riamh. Athchóirítear íomhánna inlíne i gcorp an fhreagra de réir réamhshocraithe (díchumasaigh trí "Include inline pictures" i Roghanna).
+- Scipeáiltear ceangaltáin ar an liosta dubh freisin (patrúin glob neamhíogaire don chás a mheaitseálann ainmneacha comhaid, ní cosáin). Féach [Cumraíocht](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Cad a tharlaíonn ar fhreagairt {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Braith freagra → liostaigh na bunchiangaltáin → scag S/MIME + inlíne → deimhniú roghnach → cuir na comhaid incháilithe leis (scipeáil dúbailtí) → athchóirigh íomhánna inlíne sa chorp.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Pas docht vs. pas scaoilte: Cuireann an breiseán páirteanna S/MIME agus inlíne as an áireamh ó cheangaltáin chomhaid ar dtús. Mura gcáilíonn faic, ritheann sé pas níos scaoilte a chuireann S/MIME/inlíne as an áireamh fós ach a cheadaíonn tuilleadh cásanna (féach Mionsonraí Cóid). Ní chuirtear íomhánna inlíne leis mar cheangaltáin chomhaid riamh; ina ionad sin, nuair a bhíonn "Include inline pictures" cumasaithe (an réamhshocrú), leabhaítear iad go díreach i gcorp an fhreagra mar URIanna sonraí base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Cineál páirte                                             |                         Pas docht |                      Pas scaoilte |
+| --------------------------------------------------------- | --------------------------------: | --------------------------------: |
+| Comhad sínithe S/MIME `smime.p7s`                         |                           Eisiata |                           Eisiata |
+| Cineálacha MIME S/MIME (`application/pkcs7-*`)            |                           Eisiata |                           Eisiata |
+| Íomhá inlíne a ndéanann Content‑ID tagairt di (`image/*`) | Eisiata (athchóirithe sa chorp\*) | Eisiata (athchóirithe sa chorp\*) |
+| R-phost ceangailte (`message/rfc822`) le hainm comhaid    |                 Ní chuirtear leis |               Féadfar a chur leis |
+| Gnáthcheangaltán comhaid le hainm comhaid                 |               Féadfar a chur leis |               Féadfar a chur leis |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Nuair a bhíonn "Include inline pictures" cumasaithe (réamhshocrú: ON), leabhaítear íomhánna inlíne i gcorp an fhreagra mar URIanna sonraí base64 seachas iad a chur leis mar cheangaltáin chomhaid. Féach [Cumraíocht](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Sampla: D’fhéadfadh roinnt ceangaltán a bheith in easnamh ar cheanntásca áirithe ach is comhaid ghnáthacha iad fós (ní inlíne/S/MIME iad). Mura n-aimsíonn an pas docht aon cheann, féadfaidh an pas scaoilte iad sin a ghlacadh agus a cheangal.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Tras‑tagairt {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Ní mhodhnaítear Forward de réir dearadh (féach Teorainneacha thíos).
+- Le cúiseanna nach bhféadfaí ceangaltán a chur leis, féach “Cén fáth nach bhféadfaí ceangaltáin a chur leis”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Mionsonraí Iompraíochta {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Cosc dúbailtí:** Marcálann an breiseán an cluaisín cumadóireachta mar phróiseáilte ag úsáid luach seisiúin in aghaidh cluaisín agus cosantóir i gcuimhne. Ní chuirfidh sé na buncheangaltáin leis faoi dhó.
+- Meastar gur cluaisín nua é fuinneog chumadóireachta a dhúnadh agus a athoscailt (is é sin, ceadaítear iarracht nua).
+- **Meas ar cheangaltáin atá ann:** Má tá roinnt ceangaltán sa chumadóireacht cheana féin, cuirtear na buncheangaltáin leis go díreach uair amháin fós, agus déantar aon ainmneacha comhaid atá ann cheana a scipeáil.
+- **Eisiaimh:** Cuirtear déantáin S/MIME agus íomhánna inlíne as an áireamh ó cheangaltáin chomhaid. Mura gcáilíonn faic ar an gcéad phas, déanann cúlshocrú níos scaoilte athsheiceáil ar chodanna neamh‑S/MIME. Déileáiltear le híomhánna inlíne ar leith: athchóirítear iad i gcorp an fhreagra mar URIanna sonraí (nuair a bhíonn sé cumasaithe).
+  - **Ainmneacha comhaid:** `smime.p7s`
+  - **Cineálacha MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Íomhánna inlíne:** aon chuid `image/*` a ndéanann Content‑ID tagairt di — cuirtear as an áireamh ó cheangaltáin chomhaid í ach leabhaítear í i gcorp an fhreagra nuair atá "Include inline pictures" ar ON
+  - **Ríomhphoist cheangailte (`message/rfc822`):** déileáiltear leo mar ghnáthcheangaltáin má tá ainm comhaid acu; féadfar iad a chur leis (faoi réir seiceálacha dúbailtí agus liosta dubh).
+- **Rabhadh liosta dubh (má tá cumasaithe):** Nuair a dhéantar iarrthóirí a eisiamh de bharr do liosta dubh,
+  taispeánann an breiseán módal beag ag liostú na gcomhad lena mbaineann agus na bpatrún
+  comhoiriúnaithe. Taispeántar an rabhadh seo freisin i gcásanna nach gcuirfear aon cheangaltáin leis
+  toisc gur eisiadh gach rud.
 
 ---
 
-## Limitations {#limitations}
+## Aicearraí méarchláir {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Dialóg deimhnithe: Y/J = Tá, N/Esc = Níl; rothlaíonn Tab/Shift+Tab agus na saigheadeochracha an fócas.
+  - Socraíonn an “Freagra réamhshocraithe” i [Cumraíocht](configuration#confirmation) an cnaipe a fhaigheann an fócas ar dtús.
+  - Spreagann Enter an cnaipe faoi fhócas. Bogann Tab/Shift+Tab agus saigheadeochracha an fócas ar mhaithe le hinrochtaineacht.
+
+### Bileog Chuimhne Méarchláir {#keyboard-cheat-sheet}
+
+| Eochracha               | Gníomh                                 |
+| ----------------------- | -------------------------------------- |
+| Y / J                   | Deimhnigh Tá                           |
+| N / Esc                 | Deimhnigh Níl                          |
+| Enter                   | Gníomhachtaigh an cnaipe faoi fhócas   |
+| Tab / Shift+Tab         | Bog an fócas ar aghaidh/ar gcúl        |
+| Saigheadeochracha       | Bog an fócas idir cnaipí               |
+| Freagra réamhshocraithe | Socraíonn an fócas tosaigh (Tá nó Níl) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Teorainneacha {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Ní mhodhnaíonn an breiseán seo Forward (tacaítear le Reply agus Reply all).
+- D’fhéadfadh teorainneacha Thunderbird nó an tsoláthraí a bheith i bhfeidhm ar cheangaltáin an‑mhóra.
+  - Ní dhéanann an breiseán roinnt ina phíosaí ná comhbhrú ar chomhaid; braitheann sé ar ghnáthláimhseáil ceangaltán Thunderbird.
+- Teachtaireachtaí criptithe: cuirtear páirteanna S/MIME as an áireamh d’aon turas.
 
 ---
 
-See also
+## Cén fáth nach bhféadfaí ceangaltáin a chur leis {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Ní chuirtear íomhánna inlíne leis mar cheangaltáin chomhaid. Nuair a bhíonn "Include inline pictures" ar ON (an réamhshocrú), leabhaítear iad i gcorp an fhreagra mar URIanna sonraí ina ionad sin. Má tá an socrú ar OFF, baintear íomhánna inlíne go hiomlán. Féach [Cumraíocht](configuration#include-inline-pictures).
+- Cuirtear páirteanna sínithe S/MIME as an áireamh de réir dearadh: scipeáiltear ainmneacha comhaid cosúil le `smime.p7s` agus cineálacha MIME ar nós `application/pkcs7-signature` nó `application/pkcs7-mime`.
+- Is féidir le patrúin liosta dubh iarrthóirí a scagadh: féach [Cumraíocht](configuration#blacklist-glob-patterns); tá an comhoiriúnú neamhíogaire don chás agus dírithe ar ainm comhaid amháin.
+- Ní chuirtear ainmneacha comhaid dúblacha leis arís: má tá comhad leis an ainm céanna caighdeánaithe sa chumadóireacht cheana féin, scipeáiltear é.
+- Páirteanna nach comhaid iad nó ainmneacha comhaid ar iarraidh: ní chuirtear san áireamh ach codanna cosúil le comhad a bhfuil ainmneacha comhaid in‑úsáidte acu.
+
+---
+
+Féach freisin
+
+- [Cumraíocht](configuration)

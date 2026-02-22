@@ -1,297 +1,299 @@
 ---
 id: development
-title: 'ဖွံ့ဖြိုးတိုးတက်ရေး'
-sidebar_label: 'ဖွံ့ဖြိုးတိုးတက်ရေး'
+title: 'ဖွံ့ဖြိုးတိုးတက်မှု'
+sidebar_label: 'ဖွံ့ဖြိုးတိုးတက်မှု'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## ဖွံ့ဖြိုးရေး လမ်းညွှန် {#development-guide}
+
+:::note အင်္ဂလိပ်ကိုသာ ပြင်ဆင်ပါ; ဘာသာပြန်ချက်များ အလိုအလျောက် ဖြန့်ချိမည်
+စာရွက်တမ်းများကို `website/docs` (English) အောက်တွင်သာ အပ်ဒိတ်လုပ်ပါ။ `website/i18n/<locale>/…` အောက်ရှိ ဘာသာပြန်ချက်များသည် အလိုအလျောက် 생성ထားခြင်းဖြစ်ပြီး ကိုယ်တိုင် မပြင်ဆင်သင့်ပါ။ Localized content ကို ပြန်လည်အသစ်ဆောင်ရွက်ရန် ဘာသာပြန်လုပ်ဆောင်ခြင်း tasks (ဥပမာ `make translate_web_docs_batch`) များကို အသုံးပြုပါ။
 :::
 
-### Prerequisites {#prerequisites}
+### ကြိုတင် လိုအပ်ချက်များ {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ နှင့် npm (Node 22 ဖြင့် စမ်းသပ်ထားသည်)
+- Thunderbird 128 ESR သို့မဟုတ် ထို့ထက်အသစ် (လက်ဖြင့် စမ်းသပ်ရန်)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### ပရောဂျက် ဖွဲ့စည်းပုံ (အထွေထွေ) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: packaging script `distribution_zip_packer.sh`, စာတမ်းများ, မျက်နှာပြင်ပုံများ
+- `sources/`: အဓိက add-on code (background, options/popup UI, manifests, icons)
+- `tests/`: Vitest စုံစမ်းမှု အစု
+- `website/`: Docusaurus စာတမ်းများ (i18n ကို `website/i18n/de/...` အောက်တွင်)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### တပ်ဆင်ခြင်းနှင့် ကိရိယာများ {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Root မူတည်ချက်များ တပ်ဆင်ရန်: `npm ci`
+- Docs (ရွေးချယ်နိုင်): `cd website && npm ci`
+- targets များ ရှာဖွေကြည့်ရန်: `make help`
+
+---
+
+### တိုက်ရိုက် ဖွံ့ဖြိုး (web‑ext run) {#live-dev-web-ext}
+
+- Firefox Desktop တွင် အမြန် စမ်းသပ် လှုပ်ရှားမှု (UI smoke‑tests သာ):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Thunderbird တွင် run လုပ်ရန် (MailExtensions အတွက် ဦးစားပေး):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- အကြံပြုချက်များ:
+- Thunderbird ၏ Error Console ကို ဖွင့်ထားပါ (Tools → Developer Tools → Error Console)။
+- MV3 event pages များသည် အလုပ်မရှိသွားပါက အကြားရပ်သွားနိုင်သည်; code ပြောင်းလဲပြီးတိုင်း add‑on ကို reload လုပ်ပါ၊ သို့မဟုတ် web‑ext အလိုအလျောက် reload ကို အသုံးပြုပါ။
+- Firefox‑only အပြုအမူအချို့သည် ကွာခြားနိုင်သည်; API parity အတွက် အမြဲ Thunderbird တွင် စစ်ဆေးပါ။
+- Thunderbird binary လမ်းကြောင်းများ (ဥပမာ):
+- Linux: `thunderbird` (ဥပမာ `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profile ကို သီးသန့်ထားခြင်း: သင်၏ နေ့စဉ် အသုံးပြုမှုကို မထိခိုက်စေရန် ဖွံ့ဖြိုးရေးအတွက် Thunderbird profile သီးသန့်တစ်ခုကို အသုံးပြုပါ။
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make Targets (အက္ခရာစဉ်) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile တွင် ပုံမှန် dev flows များကို စံပြထားသည်။ target တစ်ခုစီ၏ တစ်ကြောင်း짜 စာမူကို ကြည့်ရန် အချိန်မရွေး `make help` ကို run လုပ်ပါ။
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+အကြံပြုချက်: `make` ကို target မဖော်ပြဘဲ run လုပ်ပါက တိုတောင်းသော Whiptail menu တစ်ခုကို ဖွင့်ပေးပြီး target ကို ရွေးချယ်နိုင်ပါသည်။
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | တစ်ကြောင်း짜 ဖော်ပြချက်                                                                         |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Local build/preview artifacts (tmp/, web-local-preview/, website/build/) များကို ဖယ်ရှားပါ။     |
+| [`commit`](#mt-commit)                                   | Format, စမ်းသပ်မှုများ (i18n ပါဝင်) ကို chạy, changelog အပ်ဒိတ်, commit & push လုပ်ပါ။          |
+| [`eslint`](#mt-eslint)                                   | ESLint ကို flat config (`npm run -s lint:eslint`) ဖြင့် run လုပ်ပါ။                             |
+| [`help`](#mt-help)                                       | အားလုံး target များကို တစ်ကြောင်း짜 docs ဖြင့် (အစဉ်လိုက်) စာရင်းပြပါ။                          |
+| [`lint`](#mt-lint)                                       | `sources/` ပေါ်တွင် web‑ext lint (temp manifest; ZIPs မာထည့်မစစ်; non‑fatal)                    |
+| [`menu`](#mt-menu)                                       | Target နှင့် အပို arguments များကို ရွေးချယ်နိုင်သော အပြန်အလှန် menu။                           |
+| [`pack`](#mt-pack)                                       | ATN & LOCAL ZIPs များကို Build လုပ်ပါ (linter ကို chạy; packer script ကို ခေါ်)                 |
+| [`prettier`](#mt-prettier)                               | Repository ကို နေရာတွင်တင် format လုပ်ပါ (ရေးသား ပြုပြင်မည်)                                    |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier ကို check mode (မရေးသား); ပြန်ဖော်ထုတ်လုပ်ရန် လိုအပ်ပါက fail ဖြစ်မည်                   |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` ၏ alias                                                                              |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, ထို့နောက် Vitest (configure ပြီးပါက coverage)                         |
+| [`test_i18n`](#mt-test_i18n)                             | i18n‑သာ စမ်းသပ်မှုများ: add‑on placeholders/parity + website parity                             |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` ၏ alias                                                                       |
+| [`translation_app`](#mt-translation-app)                 | App UI strings များကို `sources/_locales/en/messages.json` ထံမှ ဘာသာပြန်                        |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Website docs များကို OpenAI Batch API (ဦးစားပေး) ဖြင့် ဘာသာပြန်                                 |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Website docs များကို synchronous (အဟောင်း, non-batch) ဖြင့် ဘာသာပြန်                            |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` ၏ alias                                                                 |
+| [`translation_web_index`](#mt-translation_web_index)     | Homepage/navbar/footer UI များကို ဘာသာပြန် (`website/i18n/en/code.json → .../<lang>/code.json`) |
+| [`web_build`](#mt-web_build)                             | Docs များကို `website/build` သို့ build ( `--locales` / `BUILD_LOCALES` ကိုပံ့ပိုး)             |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (remote HTTP[S] မစစ်)                                                   |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; 8080–809ို auto‑serve; optional tests/link‑check                        |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` ကို `gh-pages` ဌာန शाखသို့ push                                                 |
 
 Syntax for options
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Options များကို ပေးပို့ရန် `make <command> OPTS="…"` ကို အသုံးပြုပါ (စျေးကွက်ချဉ်းကပ်ချက်အလိုက် quotes ကို အကြံပြု)။ အောက်ပါ target တစ်ခုစီတွင် usage ဥပမာ များကို ပြထားသည်။
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Locale build အကြံပြုချက်များ {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Locales အစိတ်အပိုင်းတစ်စုံတစ်ရာသာ build လုပ်ရန်: `BUILD_LOCALES="en de"` ကို သတ်မှတ်ပါ သို့မဟုတ် `OPTS="--locales en,de"` ကို web targets များထံ ပေးပို့ပါ။
+- Locale တစ်ခုထူးထူးအား Preview လုပ်ရန်: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`။
 
 ---
 
-### Test {#test}
+### တည်ဆောက်ခြင်းနှင့် ထုပ်ပိုးခြင်း {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIPs များ build လုပ်ရန်: `make pack`
+- Repo root တွင် ATN နှင့် LOCAL ZIPs များ ထုတ်လုပ်ပေးမည် (artifacts များကို ကိုယ်တိုင် မပြင်ဆင်ပါ)
+- အကြံပြုချက်: ထုပ်ပိုးမှု မလုပ်ခင် `sources/manifest_ATN.json` နှင့် `sources/manifest_LOCAL.json` နှစ်ခုစလုံး၏ version ကို အပ်ဒိတ်လုပ်ပါ
+- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → build ပြီးသော ZIP ကို ရွေးချယ်ပါ
+
+---
+
+### စမ်းသပ်ခြင်း {#test}
+
+- စုံလင်သော စုံစမ်းမှုများ: `make test` (Vitest)
+- Coverage (ရွေးချယ်နိုင်):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` ကို run လုပ်ပါ; HTML report အတွက် `coverage/index.html` ကို ဖွင့်ကြည့်ပါ
+- i18n သာ: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
 
 ---
 
 ### Debugging & Logs {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
+- Runtime တွင် verbose logs ကို Toggle လုပ်ရန်:
 - Enable: `messenger.storage.local.set({ debug: true })`
 - Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- ဖြေကြာ/ပို့လွှာ များရေးနေစဉ် logs များ ပေါ်လာမည်
 
 ---
 
-### Docs (website) {#docs-website}
+### စာတမ်းများ (website) {#docs-website}
 
 - Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Static site build: `cd website && npm run build`
+- Make နှိုင်းယှဉ် (အက္ခရာစဉ်): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- အသုံးပြုပုံ ဥပမာများ:
+- EN သာ, tests/link‑check မပြု, push မလုပ်: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- အားလုံး locales, tests/link‑check ပါ, ထို့နောက် push: `make web_build_local_preview && make web_push_github`
+- ထုတ်ဝေမီ offline‑safe link check ကို run လုပ်ပါ: `make web_build_linkcheck`.
+- i18n: English သည် `website/docs/*.md` တွင်; ဂျာမန်ဘာသာပြန်ချက်များသည် `website/i18n/de/docusaurus-plugin-content-docs/current/*.md` တွင်ရှိသည်
+- ရှာဖွေရန်: CI တွင် Algolia DocSearch env vars (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`) များကို သတ်မှတ်ထားပါက site သည် Algolia search ကို အသုံးပြုမည်; မသတ်မှတ်ထားပါက local search သို့ ပြန်ကျမည်။ Homepage ပေါ်တွင် `/` သို့မဟုတ် `Ctrl+K` ကို နှိပ်၍ ရှာဖွေမှု box ကို ဖွင့်ပါ။
 
 ---
 
 #### Donate redirect route {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- လမ်းကြောင်း: `/donate` (နှင့် `/<locale>/donate`)
+- အပြုအမူ:
+- လက်ရှိ လမ်းကြောင်းတွင် locale ရှိပါက (ဥပမာ `/de/donate`) အဆိုပါ locale ကို အသုံးပြုပါ
+- မဟုတ်ပါက `navigator.languages` နှင့် configuration ထားသည့် locales များမှ အကောင်းဆုံး ကိုက်ညီမှုကို ရွေးပါ; default locale သို့ fallback ဖြစ်မည်
+- ပြန်ညွှန်းသည့်နေရာ:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- အခြား → `/<locale>/docs/donation`
+- `useBaseUrl` ကို အသုံးပြု၍ baseUrl ကို မှန်ကန်စွာ ကိုင်တွယ်သည်
+- fallback အဖြစ် meta refresh + `noscript` link ကို ပါဝင်စေသည်
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Preview အကြံပြုချက်များ {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Node preview ကို သန့်ရှင်းစွာ ပိတ်ရန်: `http://localhost:<port>/__stop` ကို ဖွင့်ပါ (`Local server started` ပြီးနောက် print ထုတ်ပြသည်)။
+- MDX/JSX တွင် ပုံများ မတင်ရင်၊ site ၏ `baseUrl` ကို လေးစားစေရန် `useBaseUrl('/img/...')` ကို အသုံးပြုပါ။
+- Preview သည် ပထမဦးစွာ စတင်ပြီးနောက် link check ကို ပြုလုပ်မည်ဖြစ်ပြီး non‑blocking ဖြစ်သည် (ပြင်ပ link မတည့်မှုများကြောင့် preview မရပ်မနား)။
+- Preview URL ဥပမာ: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (“Local server started” ပြသပြီးနောက် print ထုတ်ပြသည်)။
+- Link‑check ထဲရှိ ပြင်ပ link များ: အချို့ ပြင်ပ site များ (ဥပမာ addons.thunderbird.net) သည် အလိုအလျောက် crawler များကို တားဆီးပြီး link checks တွင် 403 ပြနိုင်သည်။ Preview သည်Nonetheless စတင်မည်; ထို error များကို မပူရပါ။
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Website ကို ဘာသာပြန်ပါ {#translate-website}
 
-What you can translate
+ဘာတွေ ဘာသာပြန်လို့ ရနိုင်သလဲ
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Website UI သာ: homepage, navbar, footer နှင့် အခြား UI strings များ။ Docs အကြောင်းအရာများကို ယခုအချိန်တွင် အင်္ဂလိပ်သာ ထားရှိမည်။
 
-Where to edit
+ဘယ်မှာ တည်းဖြတ်မလဲ
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` ကို တည်းဖြတ်ပါ (`en` ကို ရည်ညွှန်းအဖြစ် အသုံးပြု)။ `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` ကဲ့သို့သော placeholders များကို မပြောင်းလဲပါနှင့်။
 
-Generate or refresh files
+ဖိုင်များ ဖန်တီး/နောက်ဆုံးတင်
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- ဘာသာစကားအားလုံးအတွက် မရှိသေးသော stubs များကို ဖန်တီးရန်: `npm --prefix website run i18n:stubs`
+- (string အသစ်များ ထည့်ပြီးနောက်) English မှ stubs များကို ပြန်ရေးရန်: `npm --prefix website run i18n:stubs:force`
+- Locale တစ်ခုတည်းအတွက် အခြားရွေးချယ်စရာ: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Homepage/navbar/footer UI strings များကို ဘာသာပြန်ရန် (OpenAI)
 
-- Set credentials once (shell or .env):
+- ခွင့်ပြုချက်များကို တစ်ကြိမ်သာ သတ်မှတ်ပါ (shell သို့မဟုတ် .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- ရွေးချယ်နိုင်: `export OPENAI_MODEL=gpt-4o-mini`
+- တစ်ကြိမ်တည်း (locales အားလုံး၊ en ကို ကျော်): `make translate_web_index`
+- Locale သတ်မှတ်ထားသော အပိုင်းများသာ: `make translate_web_index OPTS="--locales de,fr"`
+- ရှိပြီးသားတန်ဖိုးများကို အစားထိုးရေးသားရန်: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+အတည်ပြုခြင်း & ပြန်လည်ကြိုးစားခြင်း
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- ဘာသာပြန် script သည် JSON အကွက်ပုံစံကို အတည်ပြုပြီး curly‑brace placeholders များကို ထိန်းသိမ်းပြီး URLs မပြောင်းလဲထားကြောင်း သေချာစေသည်။
+- အတည်ပြုမှု မအောင်မြင်ပါက အကြံပြုချက်နှင့်အတူ အများဆုံး 2 ကြိမ် ထပ်မံကြိုးစားပြီးမှ ရှိပြီးသားတန်ဖိုးများကို ထိန်းသိမ်းထားမည်။
 
-Preview your locale
+သင့် locale ကို Preview လုပ်ပါ
 
 - Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/` သို့ သွားပါ
 
-Submitting
+တင်သွင်းခြင်း
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- ပြင်ထားသော `code.json` ဖိုင်(များ) ဖြင့် PR တစ်ခုဖွင့်ပါ။ ပြောင်းလဲမှုများကို အဓိကအချက်အလက်များပေါ်သာ အာရုံပြုပြီး ဖြစ်နိုင်လျှင် screenshot တစ်ပုံ ပါထည့်ပါ။
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### လုံခြုံရေးနှင့် ပြင်ဆင်မှု အကြံပြုချက်များ {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- `sources/manifest.json` ကို commit မလုပ်ပါ (build မှ ခေတ္တ ဖန်တီးထားသည်)
+- Update channel ကို ထိန်းသိမ်းရန် `browser_specific_settings.gecko.id` ကို တည်မြဲစွာ ထားရှိပါ
+
+---
+
+### Settings ထိန်းသိမ်းမှု {#settings-persistence}
+
+- Storage: အသုံးပြုသူ၏ settings အားလုံးသည် `storage.local` တွင် ထားရှိပြီး add‑on updates များအကြား ဆက်လက် ရှိနေမည်။
+- Install: key တစ်ခုကို အပြီးအပြတ် မရှိသည့် (undefined) အခြေအနေတွင်သာ defaults များ ကားပေးမည်။
+- Update: Migration သည် မရှိသေးသော keys များကိုသာ ဖြည့်ပေးပြီး ရှိနေပြီးသား တန်ဖိုးများကို မအစားထိုးပါ။
+- Schema marker: `settingsVersion` (လက်ရှိ `1`)။
+- Keys နှင့် defaults:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Code: `sources/background.js` → `initializeOrMigrateSettings()` နှင့် `SCHEMA_VERSION` ကို ကြည့်ပါ။
 
-Dev workflow (adding a new setting)
+Dev workflow (setting အသစ် တစ်ခုထည့်ခြင်း)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- `sources/background.js` ထဲတွင် `SCHEMA_VERSION` ကို အဆင့်မြှင့်ပါ။
+- `initializeOrMigrateSettings()` ထဲရှိ `DEFAULTS` object တွင် key အသစ် + default ကို ထည့်ပါ။
+- Defaults များကို seed လုပ်ရာတွင် "only‑if‑undefined" စည်းမျဉ်းကို အသုံးပြုပါ; ရှိနေပြီးသား တန်ဖိုးများကို မအစားထိုးပါနှင့်။
+- သတ်မှတ်ချက်သည် အသုံးပြုသူ မြင်တွေ့နိုင်သည့်အရာဖြစ်လျှင် `sources/options.js` တွင် ချိတ်ဆက်ပြီး localized strings များကို ထည့်ပါ။
+- စမ်းသပ်မှုများကို ထည့်ဆောင်း/ချိန်ညှိပါ (`tests/background.settings.migration.test.js` ကို ကြည့်ပါ)။
 
-Manual testing tips
+လက်ဖြင့် စမ်းသပ်မှု အကြံပြုချက်များ
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
+- Fresh install ကို မျှော်မှန်းရန်: extension ၏ data directory ကို ရှင်းပါ သို့မဟုတ် profile အသစ်တစ်ခုဖြင့် စတင်ပါ။
+- Update ကို မျှော်မှန်းရန်: `storage.local` ထဲတွင် `settingsVersion` ကို `0` သို့ သတ်မှတ်ပြီး အသစ် reload လုပ်ပါ; ရှိပြီးသား တန်ဖိုးများ မပြောင်းလဲကြောင်းနှင့် မရှိသေးသော keys များသာ ထည့်ပေးထားကြောင်း အတည်ပြုပါ။
 
 ---
 
-### Troubleshooting {#troubleshooting}
+### ပြဿနာရှင်းလိုက်ခြင်း {#troubleshooting}
 
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Thunderbird သည် 128 ESR သို့မဟုတ် ထို့ထက်အသစ် ဖြစ်ကြောင်း သေချာပါစေ
+- Runtime ပြဿနာများအတွက် Error Console ကို အသုံးပြုပါ
+- သိမ်းထားသည့် settings များ မသင့်တင့်ကာ မအသုံးမဝင်ပါက Thunderbird ကို ပြန်စလိုက်ပြီး ထပ်မံ စမ်းကြည့်ပါ။ (Thunderbird သည် sessions အကြား state ကို cache ပြုလုပ်နိုင်သည်; restart ပြုလုပ်ခြင်းဖြင့် settings အသစ်များကို သေချာစွာ လုပ်ဆောင်စေမည်)။
 
 ---
 
 ### CI & Coverage {#ci-and-coverage}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
+- GitHub Actions (`CI — Tests`) သည် vitest ကို coverage thresholds (လိုင်း/ဖင်ခွင်/မှောက်ခွာ/စတိတ်မင့်များ 85%) ဖြင့် run လုပ်ပါသည်။ Threshold မပြည့်ပါက job သည် fail ဖြစ်မည်။
+- Workflow သည် HTML report ပါဝင်သည့် artifact `coverage-html` ကို upload လုပ်မည်; run စာမျက်နှာမှ download လုပ်ပါ (Actions → latest run → Artifacts)။
 
 ---
 
-### Contributing {#contributing}
+### ကူညီပံ့ပိုးခြင်း {#contributing}
 
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
-
----
-
-### Translations
-
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- Branch/commit/PR လမ်းညွှန်များအတွက် CONTRIBUTING.md ကို ကြည့်ပါ
+- အကြံပြုချက်: နေ့စဉ် profile ကို မထိခိုက်စေရန် စမ်းသပ်မှု အတွက် Thunderbird ဖွံ့ဖြိုးရေး profile သီးသန့်တစ်ခု ဖန်တီးပါ။
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### ဘာသာပြန်ချက်များ
 
-Screenshots for docs
+- “all → all” ကဲ့သို့ သီးချီ job ကြီးများကို လုပ်ခြင်းသည် နှေးကွေးနိုင်ပြီး ကုန်ကျစရိတ်များလည်း တက်နိုင်သည်။ စတင်ရာတွင် အစိတ်အပိုင်းတစ်ချို့သာ (ဥပမာ docs အနည်းငယ်နှင့် locales 1–2 ခုခန့်) ဖြင့် စတင်ပြီး ရလဒ်ကို ချီးမွမ်းအတည်ပြုထားကာ ထို့နောက် တဖြည်းဖြည်း တိုးချဲ့ပါ။
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+- Retry policy: ဘာသာပြန် job များသည် API errors များအပေါ် ၃ ကြိမ်ထိ exponential backoff ဖြင့် ပြန်ကြိုးစားမည်; `scripts/translate_web_docs_batch.js` နှင့် `scripts/translate_web_docs_sync.js` ကို ကြည့်ပါ။
+
+Docs အတွက် မျက်နှာပြင်ပုံများ
+
+- ပုံများကို `website/static/img/` အောက်တွင် သိမ်းဆည်းပါ။
+- MD/MDX တွင် `useBaseUrl('/img/<filename>')` ဖြင့် ရည်ညွှန်းပါ၊ ထို့ကြောင့် site ၏ `baseUrl` နှင့် လမ်းကြောင်းများ ကိုက်ညီမည်။
+- `website/static/img/` အောက်တွင် ပုံများကို ထည့်သွင်း/အမည်ပြောင်းပြီးနောက်၊ ရည်ညွှန်းချက်များအားလုံးသည် မ stále `useBaseUrl('/img/…')` ကို အသုံးပြုနေကြောင်းနှင့် local preview တွင် မှန်ကန်ထည့်သွင်းပြသနေကြောင်း အတည်ပြုပါ။
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- multi‑size `favicon.ico` ကို Make + scripts များပါဝင်သည့် build လမ်းကြောင်းအားလုံးတွင် အလိုအလျောက် ဖန်တီးပေးထားသည် (`website/scripts/build-favicon.mjs` ဖြင့်)။
+- လက်ဖြင့် အဆင့်တစ်ခုမျှ မလိုပါ; `icon-*.png` ကို အပ်ဒိတ်လုပ်ပေးရုံပါပဲ။
+  Review အကြံပြုချက်
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- ဘာသာပြန်ထားသော docs များတွင် front‑matter `id` ကို မပြောင်းလဲပါနှင့်; ရှိပါက `title` နှင့် `sidebar_label` ကိုသာ ဘာသာပြန်ပါ။
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- ရည်ရွယ်ချက်: local build/preview artifacts များကို ဖယ်ရှားသည်။
+- အသုံးပြုပုံ: `make clean`
+- ဖယ်ရှားမည့်အရာများ (ရှိပါက):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- ရည်ရွယ်ချက်: format, စမ်းသပ်, changelog အပ်ဒိတ်, commit နှင့် push။
+- အသုံးပြုပုံ: `make commit`
+- အသေးစိတ်: Prettier (write), `make test`, `make test_i18n` များကို run လုပ်သည်; staged diffs ရှိသည့်အခါ changelog သို့လည်း ပူးတွဲထည့်သည်; `origin/<branch>` သို့ push လုပ်သည်။
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- ရည်ရွယ်ချက်: flat config ဖြင့် ESLint ကို run လုပ်။
+- အသုံးပြုပုံ: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- ရည်ရွယ်ချက်: one‑line docs ဖြင့် targets အားလုံးကို စာရင်းပြ။
+- အသုံးပြုပုံ: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- ရည်ရွယ်ချက်: `web-ext` ကို အသုံးပြု၍ MailExtension ကို lint လုပ်။
+- အသုံးပြုပုံ: `make lint`
+- မှတ်ချက်များ: `sources/manifest_LOCAL.json` → `sources/manifest.json` သို့ ခေတ္တရေးစရာကူးကူးလဲလှယ်သည်; build ပြီးသော ZIPs များကို မစစ်; အမြင့်မားမား မဟုတ်သည့် သတိပေးချက်များကြောင့် pipeline ကို မပျက်စီးစေ။
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- ရည်ရွယ်ချက်: Make target နှင့် optional arguments များကို ရွေးချယ်နိုင်သော အပြန်အလှန် menu။
+- အသုံးပြုပုံ: `make` ကို arguments မည်မျှမပါဘဲ run လုပ်ပါ။
+- မှတ်ချက်များ: `whiptail` မရှိပါက menu သည် `make help` သို့ fallback ဖြစ်မည်။
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- ရည်ရွယ်ချက်: ATN နှင့် LOCAL ZIPs များ build ( `lint` အပေါ် မူတည်)။
+- အသုံးပြုပုံ: `make pack`
+- အကြံပြုချက်: ထုပ်ပိုးမည်မီ `sources/manifest_*.json` နှစ်ခုစလုံး၏ version များကို bump လုပ်ပါ။
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- ရည်ရွယ်ချက်: repo ကို နေရာတွင်တင် format လုပ်ရန်။
+- အသုံးပြုပုံ: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- ရည်ရွယ်ချက်: formatting ကို သေချာစစ် (ရေးသားခြင်း မရှိ)။
+- အသုံးပြုပုံ: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- ရည်ရွယ်ချက်: `prettier` ၏ alias။
+- အသုံးပြုပုံ: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- ရည်ရွယ်ချက်: Prettier (write), ESLint, ထို့နောက် Vitest (တပ်ဆင်ထားပါက coverage) ကို run လုပ်။
+- အသုံးပြုပုံ: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- ရည်ရွယ်ချက်: add‑on strings နှင့် website docs အတွက် i18n အထူးစမ်းသပ်မှုများ။
+- အသုံးပြုပုံ: `make test_i18n`
+- Run လုပ်သည့်အရာများ: `npm run test:i18n` နှင့် `npm run -s test:website-i18n`။
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- ရည်ရွယ်ချက်: add‑on UI strings များကို EN မှ အခြား locales များသို့ ဘာသာပြန်။
+- အသုံးပြုပုံ: `make translation_app OPTS="--locales all|de,fr"`
+- မှတ်ချက်များ: key ဖွဲ့စည်းမှုနှင့် placeholders များကို ထိန်းသိမ်းထားသည်; `translation_app.log` သို့ log ထုတ်သည်။ Script ပုံစံ: `node scripts/translate_app.js --locales …`။
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- ရည်ရွယ်ချက်: website docs များကို `website/docs/*.md` မှ `website/i18n/<locale>/...` သို့ ဘာသာပြန်။
+- ဦးစားပေး: `translate_web_docs_batch` (OpenAI Batch API)
+  - အသုံးပြုပုံ (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional ကို မထည့်မထား လက်ခံထားသေးသည်: `OPTS="<doc|all> <lang|all>"`
+- အပြုအမူ: JSONL ဖွဲ့စည်း, upload, 30s ပြီးတိုင်း poll, result များ download, ဖိုင်များရေးသား။
+- မှတ်ချက်: batch job တစ်ခုသည် (OpenAI ၏ batch window အရ) 24 နာရီအထိ ကြာနိုင်သည်။ Console တွင် poll တစ်ကြိမ်ချင်းစီအတွက် ကုန်လွန်ထားသည့် အချိန်ကို ပြသမည်။
+- Env: `OPENAI_API_KEY` (လိုအပ်), ရွေးချယ်နိုင်: `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`။
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - အသုံးပြုပုံ (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional ကို မထည့်မထား လက်ခံထားသေးသည်: `OPTS="<doc|all> <lang|all>"`
+- အပြုအမူ: synchronous per‑pair requests (batch စုစည်းခြင်း မပါ)။
+- မှတ်ချက်များ: `OPTS` မထည့်ပါက အပြန်အလှန် prompts များဖြင့် ညွှန်ကြားမည်။ ပုံစံနှစ်မျိုးလုံးတွင် code blocks/inline code များကို ထိန်းသိမ်းပြီး front‑matter `id` ကို မပြောင်းဘဲ ထားရှိသည်; logs ကို `translation_web_batch.log` (batch) သို့မဟုတ် `translation_web_sync.log` (sync) သို့ စုဆောင်းသည်။
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- ရည်ရွယ်ချက်: website UI strings (homepage, navbar, footer) ကို `website/i18n/en/code.json` မှ `website/i18n/<locale>/code.json` အောက်ရှိ locales အားလုံးသို့ (`en` ကို ချန်) ဘာသာပြန်။
+- အသုံးပြုပုံ: `make translate_web_index` သို့မဟုတ် `make translate_web_index OPTS="--locales de,fr [--force]"`
+- လိုအပ်ချက်များ: `OPENAI_API_KEY` ကို export ပြု (ရွေးချယ်နိုင်: `OPENAI_MODEL=gpt-4o-mini`)။
+- အပြုအမူ: JSON ဖွဲ့စည်းမှုကို အတည်ပြု၊ curly‑brace placeholders များကို ထိန်းသိမ်း၊ URLs မပြောင်းလဲ၊ အတည်ပြုမှု အမှားများရှိပါက feedback ဖြင့် ပြန်ကြိုးစားသည်။
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- ရည်ရွယ်ချက်: docs site ကို `website/build` သို့ build လုပ်ရန်။
+- အသုံးပြုပုံ: `make web_build OPTS="--locales en|de,en|all"` (သို့မဟုတ် `BUILD_LOCALES="en de"` ကို သတ်မှတ်)
+- အတွင်းခံ: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`။
+- အားတင်ချက်: `website/` တွင်သာ `website/node_modules/@docusaurus` မရှိပါက `npm ci` ကို run လုပ်မည်။
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- ရည်ရွယ်ချက်: offline‑safe link check။
+- အသုံးပြုပုံ: `make web_build_linkcheck OPTS="--locales en|all"`
+- မှတ်ချက်များ: `tmp_linkcheck_web_pages` သို့ build လုပ်သည်; GH Pages `baseUrl` ကို `/` သို့ rewrite လုပ်သည်; remote HTTP(S) links များကို ကျော်လွန်ပါမည်။
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- ရည်ရွယ်ချက်: tests/link‑check ရွေးချယ်နိုင်မှုများပါဝင်သည့် local gh‑pages preview။
+- အသုံးပြုပုံ: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- အပြုအမူ: ပထမဦးစွာ Node preview server (`scripts/preview-server.mjs`, `/__stop` ကို ပံ့ပိုး) ကို ကြိုးစားပြီး မအောင်မြင်လျှင် `python3 -m http.server` သို့ fallback လုပ်သည်; 8080–8090 တို့တွင် serve; PID ကို `web-local-preview/.server.pid` တွင် သိမ်းဆည်းသည်။
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- ရည်ရွယ်ချက်: `website/build` ကို `gh-pages` ချန်နယ်သို့ push လုပ်ရန်။
+- အသုံးပြုပုံ: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+အကြံပြုချက်: Makefile မှ အသုံးပြုမည့် package manager ကို ချိန်ညှိလိုပါက `NPM=…` ကို သတ်မှတ်ပါ (default ဟာ `npm`)။
 
 ---

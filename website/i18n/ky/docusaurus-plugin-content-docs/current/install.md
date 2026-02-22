@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Орнотуу'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## "Thunderbird Add-ons and Themes" аркылуу орнотуу {#installation-in-thunderbird-recommended}
+
+:::important Минималдуу Thunderbird версиясы
+Бул кошумча Thunderbird'дин **128 ESR же андан жаңысын** колдойт. Эски версиялар колдоого алынбайт.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Бул сунушталган орнотуу ыкмасы. ATN'ден (addons.thunderbird.net) орнотулган кошумчалар автоматтык жаңыртууларды алышат. LOCAL/dev орнотуулары авто‑жаңыртылбайт.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Минималдуу Thunderbird версиясы: 128 ESR же андан жаңысы.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird'де **Tools > Add-ons and Themes** бөлүмүнө өтүңүз.
+2. "reply with attachments" издеңиз.
+3. Кошумчаны орнотуңуз.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Же кошумчанын барагын түз ачсаңыз болот: [Thunderbird кошумчалары (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI файлынан кол менен орнотуу {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI файлын жүктөп алуу {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird кошумча барагына](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) барыңыз.
+2. Кошумчанын акыркы версиясын XPI файлы катары жүктөп алыңыз (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird'ге орнотуу {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird'ди ачыңыз.
+2. **Tools > Add-ons and Themes** бөлүмүнө өтүңүз.
+3. **Add-ons Manager** ичинде, жогорку оң бурчундагы тишче сүрөтчөсүн басыңыз.
+4. Менюдан **Install Add-on From File…** дегенди тандаңыз.
+5. Жүктөлгөн `reply_with_attachments-x.y.z-tb.xpi` файлын тандаңыз.
+6. Сурам чыкканда орнотууну ырастаңыз.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Өнүктүрүү үчүн орнотуу {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Репозиторийди жүктөп алуу {#download-the-repository}
 
-See also
+1. GitHub репозиторийинин акыркы версиясын жүктөп алыңыз.
+2. Көбүрөөк маалымат үчүн `make help` иштетиңиз.
 
-- [Quickstart](quickstart)
+### Thunderbird'ге орнотуу {#install-in-thunderbird-dev}
+
+1. Thunderbird'ди ачыңыз.
+2. **Tools > Add-ons and Themes** бөлүмүнө өтүңүз.
+3. **Add-ons Manager** ичинде, жогорку оң бурчундагы тишче сүрөтчөсүн басыңыз.
+4. Менюдан **Install Add-on From File…** дегенди тандаңыз.
+5. Жаратылган `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` файлын тандаңыз.
+6. Сурам чыкканда орнотууну ырастаңыз.
+
+Эскертүү: Эгер сиздин системаңызда Thunderbird `.zip` файлын кабыл албаса, аны `.xpi` деп атын өзгөртүп, “Install Add‑on From File…” аракетин дагы бир жолу жасап көрүңүз.
+
+### LOCAL ZIP кайдан табылат {#where-local-zip}
+
+- Адегенде, кошумчаны таңгактаңыз: репозиторийдин тамырында `make pack` иштетиңиз.
+- Таңгактагандан кийин, репозиторийдин тамырынан “LOCAL” zip файлын табыңыз (мисалы, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Тест үчүн кайра таңгактоодон мурун, версияларды `sources/manifest_ATN.json` жана `sources/manifest_LOCAL.json` экөөндө тең жогорулатыңыз.
+
+---
+
+## Өчүрүү, алып салуу жана жаңыртуулар {#disable-uninstall-updates}
+
+- Өчүрүү: Thunderbird → Tools → Add‑ons and Themes → кошумчаны табыңыз → өчүрүңүз.
+- Алып салуу: ошол эле көрүнүш → үч чекиттүү меню → Remove.
+- Жаңыртуулар: ATN аркылуу орнотулгандар жаңы версиялар бекитилгенде авто‑жаңыртылат. LOCAL/dev орнотуулары авто‑жаңырбайт; жаңы LOCAL жыйнагын кол менен кайра орнотуңуз.
+- Орнотууларды толугу менен алып салуу: [Купуялык → Маалыматты өчүрүү](privacy#data-removal) бөлүмүн караңыз.
+
+Ошондой эле көрүңүз
+
+- [Тез баштоо](quickstart)

@@ -1,97 +1,100 @@
 ---
 id: usage
-title: 'ተግባር'
-sidebar_label: 'ተግባር'
+title: 'ኣጠቓቕማ'
+sidebar_label: 'ኣጠቓቕማ'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## ኣጠቓቕማ {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- መልሲ ስትሕብ ኣድ‑ኦን ናይ መጀመርታ ዝተዓከቡ ፋይላት ብራስ ይወስድ — ወይ ብመጀመርያ ይሕተት እንተ ተፈቐደ ኣብ ምርጫታት (Options)።
+- ብስም ፋይል ድግግሞም ይተላለፍ፣ ክፋላት S/MIME ሓደሽ ሓደሽ ይተሓሸሙ። እንላይን ምስልታት ብነባሪ ኣብ ነቲ ናይ መልሲ ኣካል ይመልሱ (ኣብ ምርጫታት ብ "Include inline pictures" ክትሕቱ ትኽእል)።
+- ኣብ ብላክሊስት ዝተመዝገቡ ዝተዓከቡ ፋይላት እንከኣ ይተሓሸማሉ (ግሎብ ፓተርናት ብዘይ ልዕሊ/ታሕቲ ፊደል ምርካብ ስም ፋይል ጥራይ ይዛመዱ ፣ መንገዲ ኣይኮኑን)። ንምርካብ [ቅንብሮ](configuration#blacklist-glob-patterns) ንርእይ።
 
 ---
 
-### Cross‑reference {#cross-reference}
+### ኣብ መልሲ እንታይ ይከኣል {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- መልሲ ምርኣይ → ናይ መጀመርታ ዝተዓከቡ ፋይላት ምዝርዝር → S/MIME + እንላይን ምስፍረስ → ኣማራጺ ምርግጋጽ → ዝሕግዙ ፋይላት ምውሳኽ (ድግግሞም ምሕሳር) → እንላይን ምስልታት ኣብ ነቲ ናይ መልሲ ኣካል ምመላስ።
 
----
+ክብር ዝሓለፈ ኣቃራኒ (Strict) ንምቕራብ ዝዓለለ (Relaxed): ኣድ‑ኦን ቀዳማይ ናይ S/MIME እንተኾይኑ እና እንላይን ክፋላት ካብ ዝተዓከበ ፋይል ይረስዕ። ምንም ዝግበር እንተ ዘይረኽበ ፣ እቲ ዝተረፈ ምርመራ ይሰርሕ እዩ ፣ እሱስ ናይ S/MIME/እንላይን ክፋላት ይረስዕ እዩ ግን ንዝተለያዩ ክስክሳሶታት ይተሓስብ (ንምርካብ Code Details ንርእይ)። እንላይን ምስልታት ክሳብ እንተ ፋይል ክኮኑ ኣይታከቡን፤ ብርክብ ድግማት "Include inline pictures" እንተ ተኣክቲቡ (ነባሪ) ብ base64 data URI ብቀጥታ ኣብ ነቲ ናይ መልሲ ኣካል ይተኣተቱ።
 
-## Behavior Details {#behavior-details}
+| ዓይነት ክፋል                                    |              ውሑድ ምርመራ |             ዝተረፈ ምርመራ |
+| ------------------------------------------- | --------------------: | --------------------: |
+| ናይ S/MIME ምልላይ ፋይል `smime.p7s`              |                 ዝተሓሸረ |                 ዝተሓሸረ |
+| ናይ S/MIME MIME ዓይነት (`application/pkcs7-*`) |                 ዝተሓሸረ |                 ዝተሓሸረ |
+| ብ Content‑ID ዝተመልከተ እንላይን ምስሊ (`image/*`)   | ዝተሓሸረ (ኣብ ኣካል ይመልሱ\*) | ዝተሓሸረ (ኣብ ኣካል ይመልሱ\*) |
+| ዝተዓከበ ኢ‑መይል (`message/rfc822`) ስም ፋይል እንተ ሎ |                ኣይታከበን |             ክታከብ ይኽእል |
+| መደበን ዝተዓከበ ፋይል ስም ፋይል እንተ ሎ                 |             ክታከብ ይኽእል |             ክታከብ ይኽእል |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* "Include inline pictures" እንተ ተኣክቲቡ (ነባሪ: ON) እንላይን ምስልታት እንተ ፋይል ክታከቡ ብምግባር ኣይኮኑን፣ ንጥፈታት base64 data URI እንደሆነ ብቀጥታ ኣብ ነቲ ናይ መልሲ ኣካል ይተኣተቱ። ንምርካብ [ቅንብሮ](configuration#include-inline-pictures) ንርእይ።
+
+ምሳሌ፡ እቶም ዝተዓከቡ ፋይላት ንዝኾነ ሓደ ርእስ ምልክታት ክንዲ ይጎድሉ ይኽእሉ ግን መደበን ፋይላት እዮም (ኣይኮኑን እንላይን/S/MIME)። እቲ ውሑድ ምርመራ ምንም እንተ ኣይረኽበ ፣ እቲ ዝተረፈ ምርመራ እዚኦም ንስዕብ ክቕበል እንከኣ ይኽእልን እንዲሁም ክድቅም ይኽእል።
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### ክሮስ‑ረፈረንስ {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- ፎርዋርድ ብዕቤሉ አይተሓስረን (ንቀጻሊ ገለ ገደባታት ኣታይ ታሕቲ ንርእይ)።
+- ምእንቲ ኣንታቶ ዝተዓከቡ ፋይላት ኣይተወሰኹን እንተ ኾይኑ ምእንቲ ምኽንያታት "ስለምንታይ ዝተዓከቡ ፋይላት ኣይተጨመሩን" ንርእይ።
 
 ---
 
-## Limitations {#limitations}
+## ዝርዝር ኣገባብ {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- **መከላኸሊ ድግግሞም፡** ኣድ‑ኦን ታብ ናይ ኮምፖዝ እንተ ተተግበረ ብ ናይ ታብ ሶሽን ዋጋ እና ብማእከል ሓሳብ መከላኸሊ ይምልከት። ናይ መጀመርታ ዝተዓከቡ ፋይላት ክነድድ ኣይደለን።
+- መስኮት ኮምፖዝ ምዝጋብካ ድሕሪኡ ካልእ ጊዜ ምክፋትካ እንተ ሓዱሽ ታብ እንዳተከኣለ ይቆጽር (ማለት፡ ሓድሽ መሞከር ፍቓድ ኣሎ)።
+- **ናይ ዝሑሉ ዝተዓከቡ ፋይላት ክትከብር፡** ኮምፖዝ እዋን እዚ እዚ እቲ ዝተዓከቡ ፋይላት እንተ ሎም እዚኦም ንድግግሞም ስም ፋይል ዝኾኑ እቲ ኣብዚ ዘሎ ክድልይ ይግብር እዩ እንተኾይኑ ናይ መጀመርታ ይተኣክባ ሓደ ጊዜ ጥራይ ይተወስድ።
+- **ምስፍረስ፡** ናይ S/MIME እና እንላይን ክፋላት ካብ ዝተዓከበ ፋይል ይረስዑ። ቀዳማይ ምርመራ ምንም እንተ ዘይረኽበ ፣ ዝተረፈ ፋል ባክ ደጊም ነቲ ዘይ S/MIME ክፋላት ይመርመር። እንላይን ምስልታት ብተለይቲ ይተኣክቱ፡ ኣብ ነቲ ናይ መልሲ ኣካል እንደ data URI ይመልሱ (እንተ ተኣክቲቡ)።
+  - **ስም ፋይል፡** `smime.p7s`
+  - **MIME ዓይነት፡** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **እንላይን ምስልታት፡** እዋን `image/*` ክፋል ብ Content‑ID ዝተመልከተ — ካብ ዝተዓከበ ፋይል ይረስዕ ግን እንተ "Include inline pictures" ON እዩ እንተ ኾይኑ ኣብ ነቲ ናይ መልሲ ኣካል ይተኣተት
+  - **ዝተዓከበ ኢ‑መይል (`message/rfc822`)፡** ስም ፋይል እንተ ሎ እንተ መደበን ዝተዓከበ ፋይል እንዳተቆጸረ ይተኣክብ ይኽእል (ብድግግሞም ምሕሳር እና ብላክሊስት ይግበር)።
+- **ማእከላይ ብላክሊስት ማስጠንቀቂ (እንተ ተኣክቲቡ)፡** ዝተመርጹ እቶም ተዋዕሎ ብብላክሊስትካ እንተ ተረስዑ ፣
+  ኣድ‑ኦን ንእዋኑ ዝተፈፀመሉ ፋይላት እና ዝዛመዱ ፓተርን(ኣት) ዝሓበረ ንንእሽቶ ሞዳል ይርከብ።
+  እዚ ማስጠንቀቂ እንከኣ ይበል እዋን ምንም ዝተዓከበ ፋይል ኣይተወሰኹን እንተ ኾይኑ እቶም ኩሉ እንተ ተረስዑ እዩ።
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## ኣቀራኒ ቁልፍታት {#keyboard-shortcuts}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ናይ ምርግጋጽ ውይይት፡ Y/J = እወ፣ N/Esc = ኣይፋል; Tab/Shift+Tab እና ቀስታ ቁልፍታት ትኩረት ይዞሩ።
+  - "ነባሪ መልሲ" ኣብ [ቅንብሮ](configuration#confirmation) ብጀርባ ዝተቆመ ቁልፊ ንምምርጋጽ ይምርጽ።
+  - Enter እቲ ተንቀሳቓሲ ቁልፊ ይኣክትት። Tab/Shift+Tab እና ቀስታት ትኩረት ንኽርከብ ይንቀሳቐሱ (accessibility)።
+
+### ናይ ቁልፍታት ናጽነት መመልከቲ {#keyboard-cheat-sheet}
+
+| ቁልፊ             | ተግባር                          |
+| --------------- | ----------------------------- |
+| Y / J           | እወ ንምርግጋጽ                     |
+| N / Esc         | ኣይፋል ንምርግጋጽ                   |
+| Enter           | ተንቀሳቓሲ ቁልፊ ንምኣክትት             |
+| Tab / Shift+Tab | ትኩረት ወደ ንፊት/ወደ ድሕሪ ምንቅስቓስ     |
+| ቀስታ ቁልፍታት       | ትኩረት ብዝርከብ ቁልፍታት ምቅያር         |
+| ነባሪ መልሲ         | መጀመርታዊ ትኩረት ይወስን (እወ ወይ ኣይፋል) |
+
+---
+
+## ገደባታት {#limitations}
+
+- ፎርዋርድ ብዚ ኣድ‑ኦን ኣይተሓስረን (Reply እና Reply all ድሕሪ ተደጋጋሚ ይደግፍ)።
+- ብዙሓት ዝነበሩ ዝተዓከቡ ፋይላት ውሑስ ገደባታት ናይ Thunderbird ወይ ኣብ ኣቕሑ ዝርከብ ኣበርክቱ ክምልከት ይኽእሉ።
+  - ኣድ‑ኦን ፋይላት ኣብ ቁራንዕ ኣይከፋፈልን ኣይጭክንስን፤ ናይ Thunderbird መደበን ናይ ኣታችመንት ምክንያት ይተሓስብ።
+- ዝምልከት ብመክፋት መልእኽቲ፡ ናይ S/MIME ክፋላት ብአብይ እዋን ይረስዑ።
+
+---
+
+## ስለምንታይ ዝተዓከቡ ፋይላት ኣይተጨመሩን {#why-attachments-might-not-be-added}
+
+- እንላይን ምስልታት እንተ ፋይል ክታከቡ ኣይተጨመሩን። "Include inline pictures" ON እንተ ኾይኑ (ነባሪ) እዚኦም ኣብ ነቲ ናይ መልሲ ኣካል እንደ data URI ይተኣተቱ። እቲ ምርጫ OFF እንተ ኾይኑ እንላይን ምስልታት ብብርቱካና ይሰርዩ። ንምርካብ [ቅንብሮ](configuration#include-inline-pictures) ንርእይ።
+- ናይ S/MIME ምልላይ ክፋላት ብዕቤሉ ይረስዑ፡ ከም ስም ፋይል `smime.p7s` እና ከም MIME ዓይነት `application/pkcs7-signature` ወይ `application/pkcs7-mime` ይተሓሸሙ።
+- ፓተርን ብላክሊስት ምምላስ ክኸውን ይኽእል፡ ንምርካብ [ቅንብሮ](configuration#blacklist-glob-patterns) ንርእይ፤ ምርካብ ብዘይ ልዕሊ/ታሕቲ ፊደል እዩ እና ስም ፋይል ጥራይ ይዛመድ።
+- ድግግሞም ስም ፋይል ኣይጨመርን፡ ኮምፖዝ እዚ ተጀሚሩ ብናይ ስም ስም ምክንያት ሓደ እንተ ሎ እቲ እሞ ይሓሸም።
+- ዘይፋይል ክፋላት ወይ ዝጎድለሉ ስም ፋይል፡ ዝኾኑ እንተ ፋይል ዝመሰሉ ክፋላት ስም ፋይል ዝርከብ ጥራይ ይተኣክቡ።
 
 ---
 
 See also
 
-- [Configuration](configuration)
+- [ቅንብሮ](configuration)

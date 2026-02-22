@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Varoita, jos liitteet jätetään pois estolistan takia"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Sisällytä upotetut kuvat (upotetut kuvat)"
+  },
   "uiDebugHeader": {
     "message": "Lisäasetukset"
   },

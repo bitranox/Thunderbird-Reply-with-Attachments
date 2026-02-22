@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Pag-install'
 ---
 
-## Pag-install via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Pag-install sa pamamagitan ng "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Minimum na Bersyon ng Thunderbird
+Sinusuportahan ng add‑on na ito ang Thunderbird **128 ESR o mas bago**. Hindi sinusuportahan ang mas lumang mga bersyon.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Ito ang inirerekomendang paraan ng pag-install. Ang mga add‑on na ini-install mula sa ATN (addons.thunderbird.net) ay tumatanggap ng awtomatikong update. Ang mga LOCAL/dev install ay hindi nag-a-auto‑update.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Pinakamababang bersyon ng Thunderbird: 128 ESR o mas bago.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Sa Thunderbird, pumunta sa **Tools > Add-ons and Themes**.
+2. Hanapin ang "reply with attachments".
+3. Idagdag ang add‑on.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+O buksan ang pahina ng add‑on nang direkta: [Mga Add‑on ng Thunderbird (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Manwal na pag-install mula sa XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### I-download ang XPI file {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Pumunta sa [pahina ng Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. I-download ang pinakabagong bersyon ng add‑on bilang XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### I-install sa Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Buksan ang Thunderbird.
+2. Pumunta sa **Tools > Add-ons and Themes**.
+3. Sa **Add-ons Manager**, i-click ang icon na gear sa kanang-itaas.
+4. Piliin ang **Install Add‑on From File…** mula sa menu.
+5. Piliin ang na-download na file na `reply_with_attachments-x.y.z-tb.xpi`.
+6. Kumpirmahin ang pag-install kapag na-prompt.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Pag-install para sa development {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### I-download ang repository {#download-the-repository}
 
-See also
+1. I-download ang pinakabagong bersyon ng GitHub repository.
+2. Patakbuhin ang `make help` para sa karagdagang impormasyon.
 
-- [Quickstart](quickstart)
+### I-install sa Thunderbird {#install-in-thunderbird-dev}
+
+1. Buksan ang Thunderbird.
+2. Pumunta sa **Tools > Add-ons and Themes**.
+3. Sa **Add-ons Manager**, i-click ang icon na gear sa kanang-itaas.
+4. Piliin ang **Install Add‑on From File…** mula sa menu.
+5. Piliin ang nabuong file na `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Kumpirmahin ang pag-install kapag na-prompt.
+
+Tandaan: Kung hindi tinatanggap ng Thunderbird ang `.zip` sa iyong system, palitan ang pangalan nito sa `.xpi` at subukang muli ang “Install Add‑on From File…”.
+
+### Saan mahahanap ang LOCAL ZIP {#where-local-zip}
+
+- Una, i-package ang add‑on: patakbuhin ang `make pack` sa root ng repository.
+- Pagkatapos mag-package, hanapin ang “LOCAL” zip sa root ng repository (hal., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Bago muling i-package para sa testing, itaas ang mga bersyon sa parehong `sources/manifest_ATN.json` at `sources/manifest_LOCAL.json`.
+
+---
+
+## Pag-disable, Pag-uninstall, at Mga Update {#disable-uninstall-updates}
+
+- I-disable: Thunderbird → Tools → Add‑ons and Themes → hanapin ang add‑on → i-toggle sa off.
+- I-uninstall: parehong view → three‑dot menu → Remove.
+- Mga update: Ang mga install mula sa ATN ay nag-a-auto‑update kapag may naaprubahang bagong bersyon. Ang mga LOCAL/dev install ay hindi nag-a-auto‑update; manu-manong muling i-install ang bagong LOCAL build.
+- Alisin nang lubusan ang mga setting: tingnan ang [Privacy → Pag-alis ng data](privacy#data-removal).
+
+Tingnan din
+
+- [Mabilis na Pagsisimula](quickstart)

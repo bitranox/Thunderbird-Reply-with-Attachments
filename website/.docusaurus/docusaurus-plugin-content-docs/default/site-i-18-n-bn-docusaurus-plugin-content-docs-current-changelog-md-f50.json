@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "চেঞ্জলগ",
-  "description": "চেঞ্জলগ",
+  "title": "পরিবর্তন লগ",
+  "description": "---",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "চেঞ্জলগ"
+    "title": "পরিবর্তন লগ"
   },
   "sidebar": "docs",
   "previous": {

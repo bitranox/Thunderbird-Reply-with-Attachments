@@ -1,97 +1,100 @@
 ---
 id: usage
-title: 'Utilisation'
-sidebar_label: 'Utilisation'
+title: 'Bosaleli'
+sidebar_label: 'Bosaleli'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Bosaleli {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Soki ozongisi (Reply), add‑on ebakisi ba pièces d’origine na ndenge ya automatique — to etuna liboso, soki esalemi na Options.
+- Kokanga ba doublons esalemaka kolanda kombo ya fisyé; biteni ya S/MIME babwakamaka ntango nyonso. Bifóto ya kati (inline) ezongisamaka na nzoto ya eyano (reply body) na ndenge ya liboso (okoki kokanga yango na "Include inline pictures" na Options).
+- Ba pièces oyo ezali na blacklist mpe babwakamaka (ba modèle glob ya kolanda ba kombo ya fisyé kaka, ezangaka kososola minúscule/majúscule; banzela te). Talá [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Eloko esalemaka soki ozongisi {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Koyeba eyano → kosangisa liste ya ba pièces d’origine → kofiltrɛ S/MIME + ya kati (inline) → kondimisa soki esengeli → kobakisa ba fisyé oyo ekoki (kobwaka ba doublons) → kozongisa bifóto ya kati na nzoto ya mokanda.
 
----
+Koleka makasi (strict) vs. koleka pɛtɛɛ (relaxed): Add‑on ebosaka liboso biteni ya S/MIME mpe ya kati (inline) na ba pièces jointes ya fisyé. Soki eloko moko te ekokani, esalaka koleka pɛtɛɛ oyo kaka ebosaka S/MIME/inline kasi endimi ba kesɛ ebele koleka (talá makambo ya kódi). Bifóto ya kati te bazali kobakisa yango lokola ba pièces jointes; na esika wana, soki "Include inline pictures" esalemi (ndakisa ya liboso), bazingamaka mbala moko na nzoto ya eyano lokola base64 data URIs.
 
-## Behavior Details {#behavior-details}
+| Lolenge ya eteni                                               |                               Koleka makasi |                                Koleka pɛtɛɛ |
+| -------------------------------------------------------------- | ------------------------------------------: | ------------------------------------------: |
+| Fisiye ya emekeli (signature) ya S/MIME `smime.p7s`            |                                    Ebwakami |                                    Ebwakami |
+| Ba lolenge ya MIME ya S/MIME (`application/pkcs7-*`)           |                                    Ebwakami |                                    Ebwakami |
+| Elilingi ya kati oyo Content‑ID etindisi (`image/*`)           | Ebwakami (ezongisami na nzoto ya mokanda\*) | Ebwakami (ezongisami na nzoto ya mokanda\*) |
+| E‑mail ekangami (`message/rfc822`) oyo ezali na kombo ya fisyé |                                Ebakisami te |                            Ekoki kobakisama |
+| Pièce jointe ya fisyé ya normal oyo ezali na kombo             |                            Ekoki kobakisama |                            Ekoki kobakisama |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Soki "Include inline pictures" esalemi (liboso: ON), bifóto ya kati bazingamaka na nzoto ya eyano lokola base64 data URIs na esika ya kobakisa yango lokola ba pièces jointes. Talá [Configuration](configuration#include-inline-pictures).
+
+Ndakisa: Ba pièces mosusu ekoki kozanga ba header mosusu kasi ezalaka naino ba fisyé ya normal (ezali te ya kati/S/MIME). Soki koleka makasi emoni ata moko te, koleka pɛtɛɛ ekoki kondima yango mpe ekangisa yango.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Kokangisa na biteni mosusu {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Forward ebongolamaka te na mokano (talá Limitations awa na nse).
+- Mpo na bantina oyo pièce moko ekoki kobakisama te, talá “Mpo na nini ba pièces ekoki kobakisama te”.
 
 ---
 
-## Limitations {#limitations}
+## Makambo ya ndenge esalaka {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Koboya ba doublons:** Add‑on etyá elembo na onglet ya kobongisa (compose) lokola esalemi, na kosalela motuya ya session ya onglet moko‑na‑moko mpe garde na mémoire. Ekobakisa ba ya ebandeli mbala mibale te.
+- Kokanga mpe kofungola lisusu fenetre ya kobongisa etalelamaka lokola onglet ya sika (elingi koloba, komeka lisusu endimami).
+- **Kokumisa ba pièces ezali déjà:** Soki compose ezali déjà na ba pièces, ba ya ebandeli ekobakisama kaka mbala moko, mpe ba kombo ya fisyé oyo ezali déjà ekobwakama.
+- **Ebwakiseli:** Biteni ya S/MIME mpe bifóto ya kati babwakami na ba pièces jointes. Soki eloko moko te ekokani na koleka ya liboso, koleka pɛtɛɛ ya sika ekomisala lisusu biteni oyo ezali te ya S/MIME. Bifóto ya kati esalelamaka na ndenge mosusu: bazongisamaka na nzoto ya eyano lokola data URIs (soki esalemi).
+  - **Ba kombo ya fisyé:** `smime.p7s`
+  - **Ba lolenge ya MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Bifóto ya kati (inline):** eteni nyonso `image/*` oyo Content‑ID etindisi — ebwakami na ba pièces jointes kasi ezingamaka na nzoto ya eyano tango "Include inline pictures" ezali ON
+  - **Ba e‑mail ekangami (`message/rfc822`):** emonamaka lokola ba pièces ya normal soki ezali na kombo ya fisyé; ekoki kobakisama (kolandana na kontrola ya doublon mpe blacklist).
+- **Litoló ya blacklist (soki esalemi):** Tango bakandida babwakami na blacklist na yo,
+  add‑on emonisaka mwa modal moke oyo ezali na liste ya ba fisyé oyo ebɛtami mpe ba modèle oyo ekokani.
+  Litoló oyo emonanaka mpe soki ata pièce moko te ekobakisama mpo nyonso ebwakami.
 
 ---
 
-See also
+## Bokuse ya klavye {#keyboard-shortcuts}
+
+- Liyangani ya kondimisa: Y/J = Ee, N/Esc = Te; Tab/Shift+Tab mpe ba Arrow keys ebongolaka focus.
+  - “Eyano ya liboso” na [Configuration](configuration#confirmation) etia bouton ya liboso na focus.
+  - Enter esalisa bouton oyo ezali na focus. Tab/Shift+Tab mpe ba fleches ebongola focus mpo na kobɔngisa kokota.
+
+### Lisalisi ya bokuse ya klavye {#keyboard-cheat-sheet}
+
+| Bakle           | Misala                             |
+| --------------- | ---------------------------------- |
+| Y / J           | Kondimisa Ee                       |
+| N / Esc         | Kondimisa Te                       |
+| Enter           | Kobatisa bouton oyo ezali na focus |
+| Tab / Shift+Tab | Kokatisa focus liboso/na sima      |
+| Ba Arrow keys   | Kokatisa focus kati na ba bouton   |
+| Eyano ya liboso | Etia focus ya ebandeli (Ee to Te)  |
+
+---
+
+## Bindelo {#limitations}
+
+- Forward ebongolamaka te na add‑on oyo (Reply mpe Reply all esungami).
+- Ba pièces monene mingi ekoki kozwa mindelo ya Thunderbird to ya mutu azali kopesa service.
+  - Add‑on ekabolaka to ekomisaka moke (compress) ba fisyé te; etekelemi na ndenge ya Thunderbird ya kosala na ba pièces jointes.
+- Mikanda ebombami (encrypted): biteni ya S/MIME babwakami na mokano.
+
+---
+
+## Mpo na nini ba pièces jointes ekoki kobakisama te {#why-attachments-might-not-be-added}
+
+- Bifóto ya kati (inline) babakisamaka te lokola ba pièces jointes. Tango "Include inline pictures" ezali ON (ndakisa ya liboso), bazingamaka na nzoto ya eyano lokola data URIs. Soki etindami OFF, bifóto ya kati elongolamaka mobimba. Talá [Configuration](configuration#include-inline-pictures).
+- Biteni ya emekeli (signature) ya S/MIME babwakami na mokano: ba kombo ya fisyé lokola `smime.p7s` mpe ba lolenge ya MIME lokola `application/pkcs7-signature` to `application/pkcs7-mime` babwakamaka.
+- Ba modèle ya blacklist ekoki kofiltrɛ bakandida: talá [Configuration](configuration#blacklist-glob-patterns); kokokana ezali case‑insensitive mpe esalemi kaka na kombo ya fisyé.
+- Ba kombo ya fisyé oyo ezali kopɔnaná (doublon) babakisamaka lisusu te: soki compose ezali déjà na fisyé na kombo yango (osilaki kosimbisa), ebwakami.
+- Biteni oyo ezali te fisyé to ezangi kombo ya fisyé: kaka biteni lokola fisyé oyo ezali na kombo oyo ekoki kosalelama nde bakanisaka kobakisa.
+
+---
+
+Talá mpe
 
 - [Configuration](configuration)

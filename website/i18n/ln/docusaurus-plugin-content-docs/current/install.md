@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Installation'
+title: 'Koinstala'
 slug: /install
-sidebar_label: 'Installation'
+sidebar_label: 'Instalasion'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kokɔtisa na nzela ya "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Version minimum ya Thunderbird
+Add‑on oyo esungi Thunderbird **128 ESR to ya sika koleka**. Ba version ya kala esungami te.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Oyo nde nzela ya kokɔtisa oyo esengami. Ba add‑on oyo batyami uta na ATN (addons.thunderbird.net) bazwaka mise à jour automatique. Ba install ya LOCAL/dev esalaka auto‑update te.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Version minimum ya Thunderbird: 128 ESR to koleka.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Na Thunderbird, kende na **Tools > Add-ons and Themes**.
+2. Luka "reply with attachments".
+3. Bakisa add‑on.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+To fungola lokasa ya add‑on mbala moko: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Kokɔtisa na maboko uta na XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Télécharger fisyé XPI {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Kende na [lokasa ya Thunderbird Add‑on](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Télécharger version ya sika koleka ya add‑on lokola fisyé XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Kokɔtisa na Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Fungola Thunderbird.
+2. Kende na **Tools > Add-ons and Themes**.
+3. Na **Add-ons Manager**, finá elembo ya gear na ngámbo ya likoló ya mobali.
+4. Póna **Install Add-on From File…** na menu.
+5. Pona fisyé `reply_with_attachments-x.y.z-tb.xpi` oyo otelechargaki.
+6. Bondimisa kokɔtisa soki basengi.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Kokɔtisa mpo na développement {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Télécharger dépôt {#download-the-repository}
 
-See also
+1. Télécharger version ya sika koleka ya dépôt GitHub.
+2. Tambwisa `make help` mpo na sango mosusu.
 
-- [Quickstart](quickstart)
+### Kokɔtisa na Thunderbird {#install-in-thunderbird-dev}
+
+1. Fungola Thunderbird.
+2. Kende na **Tools > Add-ons and Themes**.
+3. Na **Add-ons Manager**, finá elembo ya gear na ngámbo ya likoló ya mobali.
+4. Póna **Install Add-on From File…** na menu.
+5. Pona fisyé oyo esalemi `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Bondimisa kokɔtisa soki basengi.
+
+Toli: Soki Thunderbird andimí te `.zip` na sisteme na yo, bobenga kombo na yango na `.xpi` mpe meka lisusu “Install Add‑on From File…”.
+
+### Esika ya kokuta LOCAL ZIP {#where-local-zip}
+
+- Liboso, paketa add‑on: tambwisa `make pack` na racine ya dépôt.
+- Na sima ya kopaketer, okokuta zip “LOCAL” na racine ya dépôt (ndakisa, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Liboso ya kopaketer lisusu mpo na kotɛsta, tombola ba version na `sources/manifest_ATN.json` mpe `sources/manifest_LOCAL.json`.
+
+---
+
+## Kofungola te, Kolongola, mpe Mise à jour {#disable-uninstall-updates}
+
+- Kofungola te: Thunderbird → Tools → Add‑ons and Themes → zwa add‑on → salá “toggle off”.
+- Kolongola: vue yango moko → menu ya bitendi misato → Remove.
+- Mise à jour: ba install uta ATN esalaka auto‑update tango ba version ya sika endimisami. Ba install ya LOCAL/dev esalaka auto‑update te; tia lisusu na maboko build ya sika ya LOCAL.
+- Kolongola baparamètre mobimba: tala [Privacy → Data removal](privacy#data-removal).
+
+Talá mpe
+
+- [Kobanda nokinoki](quickstart)

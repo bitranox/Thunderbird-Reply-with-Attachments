@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Ātrā uzsākšana",
-  "description": "Ātrā uzsākšana",
+  "title": "Ātrā sākšana",
+  "description": "---",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Ātrā uzsākšana",
-    "sidebar_label": "Ātrā uzsākšana"
+    "title": "Ātrā sākšana",
+    "sidebar_label": "Ātrā sākšana"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/features"
   },
   "next": {
-    "title": "Instalācija",
+    "title": "Instalēšana",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/install"
   }
 }

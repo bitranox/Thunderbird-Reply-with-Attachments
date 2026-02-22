@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "Zhvillimi",
-  "description": "Development Guide",
+  "title": "Zhvillim",
+  "description": "---",
   "source": "@site/i18n/sq/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "Zhvillimi",
-    "sidebar_label": "Zhvillimi"
+    "title": "Zhvillim",
+    "sidebar_label": "Zhvillim"
   },
   "sidebar": "docs",
   "previous": {

@@ -1,78 +1,81 @@
 ---
 id: install
-title: 'መግዛት'
+title: 'ኢንስታላሽን'
 slug: /install
-sidebar_label: 'መግዛት'
+sidebar_label: 'ምትካን'
 ---
 
-## መግዛት በ "Thunderbird ኣድዞን እና ገጽታ" {#installation-in-thunderbird-recommended}
+---
 
-:::important ኣዋጅ ዝኾነ መነሻ ኣበባ
-እቲ ኣድዞን ኪሳርፍ መዋቅር በምስ **128 ESR ወንበር** ወይ ኮይኑ እንተ ኣይምህርዋን። ኮይን ይሓዊ አመለክቲ ኣይርከብን።
+## መትከል ብ "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important ንእሽተይ ስሪት ናይ Thunderbird
+እዚ add‑on Thunderbird **128 ESR ወይ ዝሓደሽ** ይደግፍ። ዝቐድሙ ስሪታት ኣይተደግፉን።
 :::
 
-እዚ ኣረፈት መግዛት ዓይነት ኢዩ። ኣድዞን በATN (addons.thunderbird.net) ዝግዕዝብ ተንሳምዕኑ ክንቀብሉ ይዕቢር ኣየው። LOCAL/dev መግዛት ኣወዐውዕ ኣይተወዉን።
+እዚ ዝመከረ መንገዲ መትከል እዩ። ካብ ATN (addons.thunderbird.net) ዝተተኸሉ add‑ons ሓራስ ሓደሽታት ይቕበሉ። LOCAL/dev መትከላት ሓራስ ኣይተሻሽሉን።
 
-- ኣዋጅ ዝኾነ መነሻ ኣበባ: 128 ESR ወንበር ወንበር ኮይኑ።
+- ንእሽተይ ስሪት ናይ Thunderbird: 128 ESR ወይ ዝሓደሽ።
 
-1. በThunderbird ይእበይ ወይን **Tools > ኣድዞን እና ገጽታ** ይህዩ።
-2. "ምስዓጥ ኣምርግን" ይርዕወ።
-3. ኣድዞን ይውርውር።
+1. ኣብ Thunderbird, ናብ **Tools > Add-ons and Themes** ኪድ።
+2. "reply with attachments" ድለፍ።
+3. add‑on ውሰኽ።
 
-ወይ ኣድዞን ገጽ ቀዳም ንቅዐ እግዓይ፡ [Thunderbird ኣድዞን (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## መምርጥ ኣድዞን ኣብ XPI {#local-installation-in-thunderbird}
-
-### XPI ፋይል ይእምነዋ {#download-the-xpi-file}
-
-1. ኣይምዐ ንቅዐ [Thunderbird ኣድዞን ገጽ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) ክጽርፊ።
-2. ኣድዞን ዘኸውን ወንበር ነየ ኣምርጓ እንተ ፋይል ኣይክደለ እንምህረይ (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### በThunderbird ይእምነዋ {#install-in-thunderbird-local}
-
-1. በThunderbird ይእበይ።
-2. ወይን **Tools > ኣድዞን እና ገጽታ** ይህዩ።
-3. በ **ኣድዞን ኣስተዳዳሪ** ውሲፈ፣ አቀ ውቤታት ኣለክ-ሲሉን ሒዝባይ ፈንቲ ወይን።
-4. **በፋይል ውሸም ኣድዞን ይሽተይ** ሒዚባ ወዉ።
-5. ኣውን `reply_with_attachments-x.y.z-tb.xpi` ፋይል ይምስጻ።
-6. ምድሬን ይቅርብ መምልኣን።
+ወይ ቀጥታ ገጽ ናይ add‑on ክፈት: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## በምስርን ምርመር {#installation-for-development}
+## ብእጅ መትከል ካብ XPI {#local-installation-in-thunderbird}
 
-### የምርመር ዕለት ይመር {#download-the-repository}
+### ፋይል XPI ውርድ {#download-the-xpi-file}
 
-1. ዕለት ነየ ምዕወቱ መፍረይ ውሳንም ሓመን ጉጉል ይይዝሁ ዝቅዋ፣ ደቕነቱን ወዛዩስ `make help` ኣንፈወዩ።
+1. ናብ [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) ኪድ።
+2. ሓደሽቲ ስሪት ናይ add‑on ከም ፋይል XPI (`reply_with_attachments-x.y.z-tb.xpi`) ውርድ።
 
-### በThunderbird ይእምነዋ {#install-in-thunderbird-dev}
+### ኣብ Thunderbird ክትከል {#install-in-thunderbird-local}
 
-1. በThunderbird ይእበይ።
-2. ወይን **Tools > ኣድዞን እና ገጽታ** ይህዩ።
-3. በ **ኣድዞን ኣስተዳዳሪ** ውሲፈ፣ አቀ ውቤታት ኣለክ-ሲሉን ሒዝባይ ፈንቲ ወይን።
-4. **በፋይል ውሸም ኣድዞን ይሽተይ** ሒዚባ ወዉ።
-5. ኣውን `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ፋይል ይምስጻ።
-6. ምድሬን ይቅርብ መምልኣን።
-
-ዕረይ: እዚ መሙርኖ ንቅዐ `.zip` ዕንቁው ይገን/ወዚ ክይን ይስተርክ `.xpi` ኪሸከይ ሒይሙን “እንተ቗ሊ ኣድዞን ጓኣጊወ” ይቕርብ።
-
-### የት መንቀሃብ ዋበ በLOCAL ZIP {#where-local-zip}
-
-- በመጀመሪዕ እቲ ኣድዞን ክብረ ገጽፋ ንቅዐ: `make pack` በዓወ ውለይጓ ተጨጓም።
-- ኣእቀነ ወይን "LOCAL" ZIP ዝነው ገፀው ገዝም ሲጬይ የሳመነ ዕለቱ ዕዪንዚ( ይየ `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- በበእኮይ ይተዊዥኒ ወባሕቲ ዊንሱ ማይወብን ክደረይ ከብርን በ `sources/manifest_ATN.json` ወ `sources/manifest_LOCAL.json` ከጽርዕርን ወምርዕ።
+1. Thunderbird ክፈት።
+2. ናብ **Tools > Add-ons and Themes** ኪድ።
+3. ኣብ **Add-ons Manager**, ካብ ላዕሊ ቀንዲ ዘሎ ምልክት ጋር ጠውቕ።
+4. ካብ ማኑ **Install Add-on From File…** ምረጽ።
+5. ዝተወረደ `reply_with_attachments-x.y.z-tb.xpi` ፋይል ምረጽ።
+6. ምትከል እንተ ተጠይቐ ኣረጋግጽ።
 
 ---
 
-## ኣይወዝን፣ ኣብዚ፣ እና ንዳዋት {#disable-uninstall-updates}
+## ንልማት መትከል {#installation-for-development}
 
-- ኣይወዝን: በThunderbird → መርኘዋ → ኣድዞን እና ገጽታ → እዚ ዕረይ ኣድዞን → የዛይ ውዳይ እቕዡል።
-- ኣብዚ: እዚ ዕረይ → ኣርቱቅ→ ኣምርግ ይምረ ኣስፋታመዕ።
-- ንዳዋት: ኣድዞኖቹ ገመወርን ኑ የቀደመሉ፤ LOCAL/dev ኣድዞኖቹ መንገዲ ክውህኖ ወይን ወምርዕ ዘንይኦ እክርጽ እንትኩ።
-- ኣይኖክ ዲ ኣጋይ ድግግ
+### ሪፖዚቶሪ ውርድ {#download-the-repository}
 
-እንደዚሁ እዚ
+1. ሓደሽቲ ስሪት ናይ GitHub ሪፖዚቶሪ ውርድ።
+2. ንዝያዳ ሓበሬታ `make help` ኣስራሕ።
 
-- [ካእማ ዓመዳት](quickstart)
+### ኣብ Thunderbird ክትከል {#install-in-thunderbird-dev}
+
+1. Thunderbird ክፈት።
+2. ናብ **Tools > Add-ons and Themes** ኪድ።
+3. ኣብ **Add-ons Manager**, ካብ ላዕሊ ቀንዲ ዘሎ ምልክት ጋር ጠውቕ።
+4. ካብ ማኑ **Install Add-on From File…** ምረጽ።
+5. ዝተመርቐ `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ፋይል ምረጽ።
+6. ምትከል እንተ ተጠይቐ ኣረጋግጽ።
+
+መምለኢ: እንተ Thunderbird `.zip` ኣብ ስርዓትካ ኣይቕበለን እንተ ኾይኑ፣ ስሙ ናብ `.xpi` ቀይርካ እና እንደገና “Install Add‑on From File…” ፈትሽ።
+
+### እቲ LOCAL ZIP ኣበይ ክትረኽቦ ትኽእል {#where-local-zip}
+
+- ብጀሚሩ, add‑on ኣትሕድር: `make pack` ኣብ ሪፖዚቶሪ root ኣስራሕ።
+- ንድሕሪ ምትሕድራ, “LOCAL” zip ኣብ ሪፖዚቶሪ root ርኣይ ትኽእል (ምሳሌ፡ `2025-..-reply-with-attachments-plugin-LOCAL.zip`)።
+- ቅድሚ ምትሕድራ ንፈተና፣ ስሪታት ኣብ `sources/manifest_ATN.json` እና `sources/manifest_LOCAL.json` ኣሳሕት።
+
+---
+
+## ኣብል, ኣውግድ እና ሓደሽታት {#disable-uninstall-updates}
+
+- ኣብል: Thunderbird → Tools → Add‑ons and Themes → add‑on ድለፍ → ኣጥፍእ (toggle off)።
+- ኣውግድ: እቲ ዝሓለፈ ርእይቶ → ሶስተ‑ነጥቢ ማኑ → ኣስወግድ።
+- ሓደሽታት: ካብ ATN ዝተተኸሉ መትከላት እቲ ሓድሽ ስሪት እትፍቀዱ ግዜ ሓራስ ይተሻሽሉ። LOCAL/dev መትከላት ሓራስ ኣይተሻሽሉን፤ ሓድሽ LOCAL build ብእጅ ዳግማይ ኣትከል።
+- ቅንብሮታት ሙሉእ ኣስወግዱ: [Privacy → Data removal](privacy#data-removal) ርኣ።
+
+እዚኦም ርኣዩ
+
+- [ብቐሊል ምጀመር](quickstart)

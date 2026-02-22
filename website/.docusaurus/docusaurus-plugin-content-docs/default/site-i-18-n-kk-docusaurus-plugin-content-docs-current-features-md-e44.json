@@ -1,7 +1,7 @@
 {
   "id": "features",
   "title": "Мүмкіндіктер",
-  "description": "Features",
+  "description": "---",
   "source": "@site/i18n/kk/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "next": {
-    "title": "Жылдам бастама",
+    "title": "Жылдам бастау",
     "permalink": "/Thunderbird-Reply-with-Attachments/kk/docs/quickstart"
   }
 }

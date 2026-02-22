@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Fayyadama",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/om/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/configuration"
   },
   "next": {
-    "title": "Waliigaltee",
+    "title": "Walsimummaa",
     "permalink": "/Thunderbird-Reply-with-Attachments/om/docs/compatibility"
   }
 }

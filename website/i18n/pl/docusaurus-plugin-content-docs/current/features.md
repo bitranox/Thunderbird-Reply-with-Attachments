@@ -4,31 +4,39 @@ title: 'Funkcje'
 sidebar_label: 'Funkcje'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funkcje {#features}
 
-## How It Works {#how-it-works}
+- Automatycznie dołącza pliki z oryginalnej wiadomości podczas odpowiadania.
+- Konfigurowalne działanie: załączniki mogą być
+  - dodawane automatycznie lub
+  - dodawane dopiero po potwierdzeniu (małe, dostępne okno dialogowe). W Opcjach
+    możesz włączyć potwierdzenie i wybrać domyślną odpowiedź (Tak/Nie).
+- Czarna lista nazw plików (wzorce glob) zapobiega automatycznemu dołączaniu
+  określonych plików. Przykłady: `*intern*`, `*secret*`, `*passwor*`.
+  Dopasowanie jest niewrażliwe na wielkość liter i sprawdza wyłącznie nazwę pliku; w Opcjach podaj jeden wzorzec na linię.
+- Ostrzeżenie o czarnej liście (opcjonalne, domyślnie włączone): gdy pliki są wykluczane przez Twoją
+  czarną listę, małe okno modalne wyświetla plik oraz pasujące wzorce. Przyjazne
+  trybowi ciemnemu i dostępne z klawiatury (Enter/Esc, aby zamknąć).
+- Działa z Odpowiedz i Odpowiedz wszystkim. Przekazywanie (Forward) nie jest modyfikowane przez ten dodatek.
+- Dodaje oryginały, nawet jeśli już dołączyłeś własne załączniki; unika duplikatów według nazwy pliku.
+- Ochrona przed duplikatami per karta zapobiega podwójnemu dodaniu w tej samej karcie tworzenia.
+- Domyślnie pomija certyfikaty S/MIME, aby uniknąć zbędnych załączników.
+- Dołączaj obrazy w treści (domyślnie: WŁ.). Osadzone obrazy są odtwarzane bezpośrednio w
+  treści odpowiedzi jako identyfikatory URI danych base64, zachowując oryginalny układ w treści. Wyłącz w
+  Opcjach, aby całkowicie pominąć obrazy w treści.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Jak to działa {#how-it-works}
+
+- Przy odpowiedzi dodatek wyświetla listę oryginalnych załączników.
+- Odfiltrowuje podpisy S/MIME z załączników plikowych; obrazy w treści są przywracane w korpusie (o ile nie wyłączono).
+- Opcjonalnie prosi o potwierdzenie (przyjazne dla klawiatury).
+- Dodaje kwalifikujące się pliki do okna tworzenia, unikając duplikatów według nazwy pliku.
+- Zobacz „Dlaczego załączniki mogą nie zostać dodane” w sekcji Użycie — dla przypadków brzegowych.
+
+Informacja o prywatności: Całe przetwarzanie odbywa się lokalnie w Thunderbirdzie. Dodatek nie wykonuje żadnych sieciowych żądań w tle.
+
+---

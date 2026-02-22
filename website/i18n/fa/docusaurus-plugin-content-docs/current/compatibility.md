@@ -4,39 +4,41 @@ title: 'سازگاری'
 sidebar_label: 'سازگاری'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## سازگاری {#compatibility}
+
+:::important حداقل نسخهٔ Thunderbird
+این افزونه از Thunderbird **128 ESR یا جدیدتر** پشتیبانی می‌کند. نسخه‌های قدیمی پشتیبانی نمی‌شوند.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- ‏Thunderbird 128 ESR یا جدیدتر پشتیبانی می‌شود (128.x+).
+- نسخه‌های قدیمی‌تر Thunderbird پشتیبانی نمی‌شوند.
+- روی Windows، macOS و Linux آزمایش شده است.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 پشتیبانی نمی‌شود
+Manifest V2 پشتیبانی نمی‌شود. این افزونه برای **Manifest V3 (MV3)** در Thunderbird 128 ESR+ ساخته شده است.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## عیب‌یابی {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- اگر افزونه طبق انتظار کار نمی‌کند، مطمئن شوید از نسخهٔ سازگار Thunderbird (128 ESR یا جدیدتر) استفاده می‌کنید.
+- برای هرگونه مشکل مرتبط با افزونه، کنسول خطای Thunderbird را بررسی کنید (**Tools > Developer Tools > Error Console**).
+- اگر به‌نظر می‌رسد تنظیمات ذخیره‌شده به‌درستی اعمال نمی‌شوند، Thunderbird را راه‌اندازی مجدد کنید و دوباره امتحان کنید. (ممکن است Thunderbird وضعیت را بین نشست‌ها کش کند؛ راه‌اندازی مجدد تضمین می‌کند تنظیمات تازه بارگذاری شوند.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## تعارض‌های شناخته‌شده {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- در حال حاضر موردی شناخته‌شده نیست. اگر پیوست‌های تکراریِ پی‌درپی یا مشکلاتی با افزونه‌های دیگر مشاهده می‌کنید، لطفاً با ذکر گام‌های بازتولید گزارش دهید.
+
+---
+
+## بتا/نایتلی {#beta-nightly}
+
+- ساخت‌های Thunderbird Beta و Daily (Nightly) عموماً پشتیبانی می‌شوند، اما تغییرات بالادستی گاهی می‌توانند رفتار افزونه را مختل کنند. اگر با مشکلی مواجه شدید، لطفاً آن را گزارش کنید و نسخهٔ دقیق Thunderbird را ذکر کنید (مثلاً “Daily 131.0a1 2025‑09‑10”).
+- در Beta/Nightly با پسرفت روبه‌رو شده‌اید؟ لطفاً با ذکر گام‌های بازتولید آن را گزارش کنید — به [Support](support) مراجعه کنید — و رشتهٔ ساخت دقیق Thunderbird را نیز درج کنید.
 
 ---

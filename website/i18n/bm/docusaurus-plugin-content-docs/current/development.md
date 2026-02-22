@@ -1,297 +1,300 @@
 ---
 id: development
-title: 'Développement'
-sidebar_label: 'Développement'
+title: 'Dɛvɛlopimɛ'
+sidebar_label: 'Ɲɛtaa'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Gidiki dɛnɛkɛla {#development-guide}
+
+:::note Ka sɛbɛnɛlen English kelen de; tarikɛli bɛ ta fɛ
+Ka dɔkumenti minnu bɛ yen bɛɛ sɛbɛn kɔnɔ `website/docs` (English) dɔ. Tarikɛliw minnu bɛ yen `website/i18n/<locale>/…` kɔfɛ bɛ ɲɛgɛnna, o kɔfɛ ma na ka kɛ sɛbɛnna dɔni dɔ. Ka tarikɛli min (misali, `make translate_web_docs_batch`) ka na ka bɛɛ sɛbɛnna kɛnɛ ye.
 :::
 
-### Prerequisites {#prerequisites}
+### Kɔfɛw (Prerequisites) {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ ni npm (a tɛstɛ ka done Node 22 kɔfɛ)
+- Thunderbird 128 ESR walima kɔrɔsen dɔ (manu sɛgɛsɛgɛ tɛstila walasa)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Projekiti lajɔ (high‑level) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Root: pakajiŋ scripiti `distribution_zip_packer.sh`, dɔkumentiw, sikanjɛw
+- `sources/`: add‑on bɛɛ bɔ (background, options/popup UI, manifests, icons)
+- `tests/`: Vitest sɛgɛsɛgɛw
+- `website/`: Docusaurus dɔkumentiw (i18n bɛ yen `website/i18n/de/...` kɔfɛ)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Sɛbɛnni ni Jalakɛlaw {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Sɛbɛn root dependencies: `npm ci`
+- Dɔkumentiw (tɔɔrɔ bɛɛ min ye): `cd website && npm ci`
+- Ka targetw sɔrɔ: `make help`
+
+---
+
+### Live dɛnɛkɛla (web‑ext run) {#live-dev-web-ext}
+
+- Siraba kɔrɔ kɔrɔ Firefox Desktop la (UI smoke‑tests kelen de):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Ka kalan Thunderbird la (MailExtensions na ye ka da la):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Dɛmɛcogo:
+- Ka Thunderbird Error Console bɔ minɛn (Tools → Developer Tools → Error Console).
+- MV3 event pages bɛ na kɔrɔ kɔrɔ sɔn ka taa sisan sisan; ka add‑on yɔrɔ kɔlɔsili a bɛɛ lajɛ ka code bɛ yenna ko dɔ, walima bɔ web‑ext ka a ye auto‑reload kɛ.
+- Firefox kelen de ka hakɛw dɔ bɛ kɛ dɔrɔn ye; ka a fɛɛrɛ kelen kelen Thunderbird la walasa API ye bɛnni kɛ.
+- Thunderbird binary pathw (misaliw):
+- Linux: `thunderbird` (misali, `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Profile jɛlajɛli: Ka Thunderbird profile dɔ bɛɛ yera dɛnɛkɛla walasa a ma i ɲɔgɔn dɔ ka tɛ i sariya kelen kan.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make Targetw (a ka sugu fɛ) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile bɛ ka dɛnɛkɛla baaraw caman ɲɛtaa kɛlen ma. Ka `make help` kalan waati bɛɛ walasa ka target bɛɛ jɛkaba dɔ fɔlɔ min na.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Dɛmɛcogo: `make` ka kalan bila target fɔ ko tɛ bɛ bɔ Whiptail menu dɔ ɲɛrɛrɛ walasa ka target dɔ minɛn.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Jɛkaba dɔ fɔlɔ                                                                              |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Ka buildu/preview local artefactiw jiri (tmp/, web-local-preview/, website/build/).         |
+| [`commit`](#mt-commit)                                   | Ka format kɛ, ka tɛstiw kɛ (i18n dɔrɔn kɔnɔ), ka changelog yen, ka commit kɛ & push kɛ.     |
+| [`eslint`](#mt-eslint)                                   | Ka ESLint kɛ flat config kɔnɔ (`npm run -s lint:eslint`).                                   |
+| [`help`](#mt-help)                                       | Ka targetw bɛɛ lajɛ kɔfɛ jɛkaba dɔ fɔlɔ (a ka sugu fɛ).                                     |
+| [`lint`](#mt-lint)                                       | web‑ext lint `sources/` kan (manifest tɛmɛna; ZIPw yamaruya; ka a ma yɔrɔ bɔ fɛ).           |
+| [`menu`](#mt-menu)                                       | Menu ɲɛrɛrɛ walasa ka target dɔ fila ka filennen ni arguumenti minnu ye.                    |
+| [`pack`](#mt-pack)                                       | Ka ATN & LOCAL ZIPw sɔrɔ (linter bɛ na; packer script bɛ na).                               |
+| [`prettier`](#mt-prettier)                               | Ka repository format kɛ kɔnɔ (ka yɔrɔw bɔ).                                                 |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier check mode la (ka yɔrɔw ma bɔ); bɛ ban ka a taara ni format bɛ se ka yɛlɛma.       |
+| [`prettier_write`](#mt-prettier_write)                   | Alias `prettier` ma.                                                                        |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, o kɔfɛ Vitest (coverage ni a sɔrɔ).                               |
+| [`test_i18n`](#mt-test_i18n)                             | i18n dɔrɔn tɛstiw: add‑on placeholders/parity + website parity.                             |
+| [`translate_app`](#mt-translation-app)                   | Alias `translation_app` ma.                                                                 |
+| [`translation_app`](#mt-translation-app)                 | Ka app UI sɔrɔbaw tarikɛli `sources/_locales/en/messages.json` kɔfɛ.                        |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Ka website dɔkumentiw tarikɛli OpenAI Batch API la (na ye ka da).                           |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Ka website dɔkumentiw tarikɛli kelen kelen (kɔrɔ, batch tɛ).                                |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias `translation_web_index` ma.                                                           |
+| [`translation_web_index`](#mt-translation_web_index)     | Ka homepage/navbar/footer UI tarikɛli (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Ka dɔkumentiw build kɛ `website/build` kɔfɛ (bɛ na `--locales` / `BUILD_LOCALES` dɛmɛ).     |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Link check offline‑safe (HTTP[S] dyɛlila minnu tɛ sɔrɔ).                                    |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve 8080–8090 kan; tɛsti/link‑check tɔɔrɔ ye.                |
+| [`web_push_github`](#mt-web_push_github)                 | Ka `website/build` push kɛ `gh-pages` branch kɔfɛ.                                          |
 
-Syntax for options
+Options la sigicogo
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- `make <command> OPTS="…"` bɛ ka options fɔ (quotes bɛ se ka bɛɛ). Targetw minnu bɛ kɔnɔ bɛ bɔ misali jate.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Locale build dɛmɛcogo {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Ka locale dɔw dɔ build dɔ: ka `BUILD_LOCALES="en de"` sɛbɛn walima ka `OPTS="--locales en,de"` fara web targetw kan.
+- Locale dɔ min dɔ ka lajɛ: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Build & Pakajiŋ {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- ZIPw build: `make pack`
+- ATN ni LOCAL ZIPw bɛ bɛɛ na repo root kɔnɔ (i ma na artisɛtiw ɲɛnabɔ kɛ ka sɛbɛnna dɔ)
+- Dɛmɛcogo: ka version yelema `sources/manifest_ATN.json` ni `sources/manifest_LOCAL.json` kɔnɔ kɔfɛ sisan ka pakajiŋ kɛra.
+- Sɛbɛn manu (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → ka ZIP sɔrɔbaw lajɛ min bɛ build kɔnɔ
+
+---
+
+### Tɛsti {#test}
+
+- Suite bɛɛ: `make test` (Vitest)
+- Coverage (tɔɔrɔ ye):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- `make test` ka kalan; `coverage/index.html` bɔ walasa HTML rapɔri na
+- i18n dɔrɔn: `make test_i18n` (UI keyw/placeholders/titles + website per‑locale per‑doc parity ni id/title/sidebar_label checkw)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Debugging ni Logw {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Ka logw jɔ yɔrɔcogo bɔ waati la:
+- Ka kunnafoni: `messenger.storage.local.set({ debug: true })`
+- Ka ka ladilan: `messenger.storage.local.set({ debug: false })`
+- Logw bɛ bɔ waati min na i bɛ de kɛ ka ɲɛsin ni ka a labɔ
 
 ---
 
-### Docs (website) {#docs-website}
+### Dɔkumentiw (website) {#docs-website}
 
 - Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Ka site stati kɛ: `cd website && npm run build`
+- Make ka nyininw (a ka sugu fɛ): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Jate misaliw:
+- EN dɔ kelen de, ka tɛsti/link‑check ka taa, push tɛ: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Locale bɛɛ, ka tɛsti/link‑check kɛ, o kɔfɛ ka push: `make web_build_local_preview && make web_push_github`
+- Ka bɔra kɔfɛ ko bɛɛ na, ka link check offline‑safe kɛ: `make web_build_linkcheck`.
+- i18n: English bɛ yen `website/docs/*.md` kɔfɛ; Alemaŋ kan tarikɛliw bɛ yen `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Sɛrci: Ni Algolia DocSearch env variables bɛ CI kɔnɔ (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), site bɛ Algolia search ka bali; o tɛ, a bɛ segin local search la. Homepage kan, `/` walima `Ctrl+K` na ka search box bɔ.
 
 ---
 
 #### Donate redirect route {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Route: `/donate` (ni `/<locale>/donate`)
+- Ka kɛra la:
+- Ni route min ka sisan bɛ locale dɔ na (misali, `/de/donate`), a bɛ a ye.
+- O tɛ, ka ka ɲɛsin wɛrɛw `navigator.languages` ni localew sɛbɛnna la; ni o tɛ sɔrɔ, ka segin default locale ma.
+- Bɛ ɲɔgɔn ye:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- wɛrɛw → `/<locale>/docs/donation`
+- `useBaseUrl` bɛ na walasa baseUrl ka kɛ kɛnɛ ye
+- Meta refresh bɛ kɔnɔ + `noscript` link bɛ yen sɛgɛsɛgɛ ma
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Preview dɛmɛcogo {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Ka Node preview da kɛ kɛnɛ ye: ka `http://localhost:<port>/__stop` bɔ (a bɛ printi waati min na `Local server started`).
+- Ni sikanjɛw tɛ bɔ MDX/JSX kɔnɔ, ka `useBaseUrl('/img/...')` bɔ walasa site `baseUrl` ka sɔn.
+- Preview bɛ bɔ fɔlɔ; link check bɛ kɔfɛ bɔ kɔrɔ kɔrɔ ni o tɛ bɔ kɔfɛ (external linkw minnu bɛ tiɲɛ ɲɛ kɛra tɛ bɛ ɲininna preview ma).
+- Preview URL misali: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (a bɛ printi waati min na “Local server started”).
+- External linkw link‑check kɔnɔ: Sitew dɔw (misali, addons.thunderbird.net) bɛ ka bɛ kelenw sɔrɔbaliw farafinw dafa, o tun bɛ 403 lajɛ link check kɔnɔ. Preview bɛ bɔ kɔnɔ; i bɛ se ka o ɲɛfɔ kɔrɔw ɲininka.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Ka Website tarikɛli {#translate-website}
 
-What you can translate
+Fɛnw minnu i bɛ se ka tarikɛli
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Website UI dɔ kelen de: homepage, navbar, footer, ni UI sɔrɔbaw wɛrɛw. Dɔkumenti ɲɛfɔw bɛna sɛbɛn English kelen de sisan.
 
-Where to edit
+Fɛ min na ka sɛbɛn
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- `website/i18n/<locale>/code.json` sɛbɛn (ka `en` dɔ ye na referensi ye). Ka placeholders minnu bɛ fɛ ka kɛ ni `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` i ma ɲɛnabɔ kɛ.
 
-Generate or refresh files
+Ka fɛnw sɔrɔ walima ka kura kɛ
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Ka stubs minnu bɛ sɔrɔ bɛɛ sɔrɔ locale bɛɛ ma: `npm --prefix website run i18n:stubs`
+- Ka stubs tɛma English kɔfɛ (sisan ni i tɛmɛna kalimen kura): `npm --prefix website run i18n:stubs:force`
+- Alaŋɛrɛnika locale dɔ kelen de: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Ka homepage/navbar/footer UI sɔrɔbaw tarikɛli (OpenAI)
 
-- Set credentials once (shell or .env):
+- Ka credentials sɛbɛn kelen de (shell walima .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Tɔɔrɔ ye: `export OPENAI_MODEL=gpt-4o-mini`
+- One‑shot (locale bɛɛ, en tɛ bɛ bɔ): `make translate_web_index`
+- Ka ɲɔgɔn ɲɛmɔgɔ dɔ la: `make translate_web_index OPTS="--locales de,fr"`
+- Ka kɛ ka ka minnu bɛ yen yɔrɔw ɲɛlɛma: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Valideyisɔni ni seginniw
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Tarikɛli script bɛ JSON shape validera, ka curly‑brace placeholders ɲini, ni ka URLw ma yelema.
+- Valideyisɔni bɔra la, a bɛ segin 2 waati ɲɛmɔgɔ ni ɲɛfɔ kɔfɛ kɔ before ka minnu bɛ yen yɔrɔw daminɛ.
 
-Preview your locale
+I ka locale lajɛ
 
 - Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Ka taa `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
 Submitting
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
+- Ka PR dɔ bɔ ni `code.json` faili(w) minnu i tɛmɛna. Ka yelemaw bɔ dɔgɔya, ka sikanjɛ ɲɛ na waati min bɛ se.
 
 ---
 
-### Security & Configuration Tips {#security-and-configuration-tips}
+### Securite ni Kɔnfigurasi dɛmɛcogo {#security-and-configuration-tips}
 
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Ka `sources/manifest.json` ma commit kɛ (build bɛna a sɛbɛn waati dɔ kelen).
+- Ka `browser_specific_settings.gecko.id` kɛ kelen kelen walasa update channel ka ɲɛfa.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Settings jirali {#settings-persistence}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Storage: Baraw bɛɛ minnu sɛbɛnna bɛ yen `storage.local` kɔnɔ, o bɛ taa add‑on updatew ɲa la.
+- Install: Defaults bɛna kɛ waati min na key dɔ ɲɛsin fila (undefined).
+- Update: Migration bɛ keyw minnu ɲɛsin dɔ fɔlɔ daminɛ kelen de; valuyɛw min bɛ yen tɛna yelema la.
+- Schema marker: `settingsVersion` (sisan `1`).
+- Keyw ni defaultw:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Code: ɲininka `sources/background.js` → `initializeOrMigrateSettings()` ni `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Dɛnɛkɛla baarakɛcogo (setting kura fara)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Ka `SCHEMA_VERSION` bɔ `sources/background.js` kɔnɔ.
+- Ka key kura + default ɲɛna `DEFAULTS` object kɔnɔ `initializeOrMigrateSettings()` la.
+- Ka "only-if-undefined" sariyala bɔ waati min na defaultw bɛna ɲɛ; i ma na valuw min bɛ yen yɔrɔw ɲɛlɛma.
+- Ni setting min na ka ɲɛsin ɲɛ na barakekelen kan, ka a ɲɛna `sources/options.js` kɔnɔ ni ka kalimew lokalize kɛ.
+- Ka tɛstiw fara/tɛmɛ (ɲininka `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Manu tɛstila dɛmɛcogo
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Ka install kura ɲinin: ka extension data dir ka dɔn, walima ka profile kura ɲɛ.
+- Ka update ɲinin: ka `settingsVersion` sɛbɛn `0` ma `storage.local` kɔnɔ o kɔfɛ ka re‑load; ka ɲini ka valuyɛw minnu bɛ yen ma yelema, keyw minnu ɲɛsin dɔ kelen de bɛna dɔ bɔ.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Kɛnɛya sɔrɔyacogo {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Ka kɛ kɛlen Thunderbird 128 ESR walima kɔrɔsen dɔ ye
+- Error Console bɛ sɛgɛsɛgɛ baara waati la
+- Ni settings minnu sɛbɛnna bɛ ɲininka ladilan, ka Thunderbird segin lajɛ ka segin na. (Thunderbird bɛ se ka ɲɔgɔn ɲɛ dɔ min na; ka segin lajɛ bɛ ma settings kura bɔ kɛnɛ ye.)
 
 ---
 
-### Translations
+### CI ni Coverage {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) bɛ vitest kɛ ni coverage thresholdw (85% lines/functions/branches/statements). Ni thresholdw tɛ na, ka baara bɔ.
+- Workflow bɛ artefact dɔ ɲɛ `coverage-html` ni HTML rapɔri la; ka a downloadi ka bɔ run paji kɔnɔ (Actions → run kɔfɛ kɔrɔ → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Ka dɛmɛ (Contributing) {#contributing}
 
-Screenshots for docs
+- Ka lajɛ CONTRIBUTING.md la branch/commit/PR sariyaw kɔfɛ
+- Dɛmɛcogo: Ka Thunderbird development profile dɔ kelen kɛ tɛstila walasa a ma i ka profile sariya kelen kan ta.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Tarikɛliw
+
+- “all → all” tarikɛli baara kalanw bɛ kɔrɔbɔ ka sɔrɔ ni jamanadenw bɛɛ kɛ. Ka segin dɔgɔya (misali, dɔkumentiw dɔw ni locale 1–2), ka ɲɛsin a ka ɲɔgɔn, o kɔfɛ ka sɛbɛnni bɔ yen.
+
+---
+
+- Seginni sari: tarikɛli baaraw bɛ kɛ seginni 3 waati kɔfɛ ni API errorw bɛ na ni backoff (exponential); ɲininka `scripts/translate_web_docs_batch.js` ni `scripts/translate_web_docs_sync.js`.
+
+Sikanjɛw walasa dɔkumentiw
+
+- Ka sikanjɛw ji `website/static/img/` kɔnɔ.
+- Ka a fɔ MD/MDX kɔnɔ ni `useBaseUrl('/img/<filename>')` walasa pathw bɛ na ka taa site `baseUrl` kan.
+- Sisan ni i tɛmɛna walima sɔrɔbali la sikanjɛw `website/static/img/` kɔnɔ, ka ɲini ka referensi bɛɛ bɛ se ka `useBaseUrl('/img/…')` fɛ ni ka render kɛ local preview kɔnɔ.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` multi‑size bɛna ɲɛgɛnna automatique build path bɛɛ kɔnɔ (Make + scripitiw) `website/scripts/build-favicon.mjs` la.
+- Sariya manu tɛ ɲɛ; `icon-*.png` yelema de bɛ na.
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+  Dɛmɛcogo walasa lajɛ
+
+- Ka front‑matter `id` ma yelema dɔkumenti tarikɛli kɔnɔ; ka `title` ni `sidebar_label` dɔ de tarikɛli waati min bɛ yen.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Jatigi: ka buildu/preview artisɛtiw minnu bɛ yen yere la sini.
+- Jate: `make clean`
+- Bɛ jiri (ni a bɛ yen):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +303,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Jatigi: ka format kɛ, ka tɛsti kɛ, ka changelog yen, ka commit kɛ, ka push kɛ.
+- Jate: `make commit`
+- Dɛɲɔw: Prettier (write), `make test`, `make test_i18n` bɛ na; ka changelog ɲɛ fɔ waati min na staged diffs bɛ yen; ka push kɛ `origin/<branch>` ma.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Jatigi: ka ESLint kɛ flat config kɔnɔ.
+- Jate: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Jatigi: ka targetw bɛɛ lajɛ ni jɛkaba dɔ fɔlɔ.
+- Jate: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Jatigi: ka MailExtension lint kɛ `web-ext` bɔ.
+- Jate: `make lint`
+- Notew: ka `sources/manifest_LOCAL.json` tɛmɛna → `sources/manifest.json`; ZIPw minnu sɔrɔra bɛna kɛ yamaruya; warningw tɛ bɔ pipeline ma.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Jatigi: menu ɲɛrɛrɛ walasa ka Make target dɔ filennen ni arguamentiw tɔɔrɔ ye.
+- Jate: ka `make` kalan bila arguamenti tɛ.
+- Notew: ni `whiptail` tɛ sɔrɔ, menu bɛ segin `make help` ma.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Jatigi: ka ATN ni LOCAL ZIPw build kɛ (`lint` kan).
+- Jate: `make pack`
+- Dɛmɛcogo: ka versionw yelema `sources/manifest_*.json` kɔfɛ sisan ka pakajiŋ kɛ.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Jatigi: ka repo format kɛ kɔnɔ.
+- Jate: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Jatigi: ka format verify kɛ (ka yɔrɔ ma bɔ).
+- Jate: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Jatigi: alias `prettier` ma.
+- Jate: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Jatigi: ka Prettier (write), ESLint, o kɔfɛ Vitest (coverage ni a sɔrɔ) kɛ.
+- Jate: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Jatigi: i18n dɔrɔn tɛstiw add‑on kalimew ni website dɔkumentiw ma.
+- Jate: `make test_i18n`
+- Bɛ ka: `npm run test:i18n` ni `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Jatigi: ka add‑on UI kalimew tarikɛli EN kɔfɛ ka a taa locale wɛrɛw ma.
+- Jate: `make translation_app OPTS="--locales all|de,fr"`
+- Notew: key structure ni placeholders bɛna ɲɛ; logw bɛna `translation_app.log` ma. Scripiti ɲɛ: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Jatigi: ka website dɔkumentiw tarikɛli `website/docs/*.md` kɔfɛ ka taa `website/i18n/<locale>/...` ma.
+- Nafɔ bɛ se: `translate_web_docs_batch` (OpenAI Batch API)
+  - Jate (flagiw): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional tɛna ka ɲɛ: `OPTS="<doc|all> <lang|all>"`
+- Ka kɛra la: ka JSONL buildi, ka uploadi, ka polli 30s kɔfɛ kɔrɔ kɔrɔ, ka resultw downloadi, ka faili sɛbɛn.
+- Note: batch baara dɔ bɛ se ka taa 24 waati kɔfɛ (OpenAI batch window ma). Console bɛ na waati min bɛ ban kɔrɔ kɔrɔ ni a bɛ polli.
+- Env: `OPENAI_API_KEY` (dɔrɔn), tɔɔrɔw ye `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - Jate (flagiw): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Legacy positional tɛna ka ɲɛ: `OPTS="<doc|all> <lang|all>"`
+- Ka kɛra la: requestw kelen kelen per‑pair (batch aggregation tɛ).
+- Notew: Ka promptu ɲɛrɛrɛ bɛ bɔ waati min na `OPTS` tɛ. Modew bɛɛ bɛ na ka code blockw/inline codew ɲini ni ka front‑matter `id` ma yelema; logw bɛna `translation_web_batch.log` (batch) walima `translation_web_sync.log` (sync) ma.
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Jatigi: ka website UI kalimew tarikɛli (homepage, navbar, footer) `website/i18n/en/code.json` kɔfɛ ka taa locale bɛɛ ma `website/i18n/<locale>/code.json` kɔnɔ (`en` na min tɛ).
+- Jate: `make translate_web_index` walima `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Baara kɔfɛw: ka `OPENAI_API_KEY` exporti (tɔɔrɔ ye: `OPENAI_MODEL=gpt-4o-mini`).
+- Ka kɛra la: ka JSON structure validate kɛ, ka curly‑brace placeholders ɲini, ka URLw ma yelema, ka segin kɛ ɲɛfɔ kɔfɛ walasa validasɔni errorw ma.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Jatigi: ka dɔkumentiw site build kɛ `website/build` ma.
+- Jate: `make web_build OPTS="--locales en|de,en|all"` (walima ka `BUILD_LOCALES="en de"` sɛbɛn)
+- Kɔnɔko: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Dɛmɛw: `npm ci` bɛna kɛ `website/` kɔnɔ kelen de ni `website/node_modules/@docusaurus` tɛ sɔrɔ.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Jatigi: link check offline‑safe.
+- Jate: `make web_build_linkcheck OPTS="--locales en|all"`
+- Notew: build bɛ `tmp_linkcheck_web_pages` ma; bɛ GH Pages `baseUrl` sɛbɛn `/` ma; HTTP(S) linkw dɔrɔn tɛ ɲinina.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Jatigi: local gh‑pages preview ni tɛsti/link‑check tɔɔrɔ ye.
+- Jate: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Ka kɛra la: bɛ se ka Node preview server dɔ fɔlɔ (`scripts/preview-server.mjs`, bɛ na `/__stop` dɛmɛ), ni o tɛ, bɛ segin `python3 -m http.server` ma; bɛna serve 8080–8090 kan; PID bɛ `web-local-preview/.server.pid` kɔnɔ.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Jatigi: ka `website/build` push kɛ `gh-pages` branch ma.
+- Jate: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Dɛmɛcogo: ka `NPM=…` sɛbɛn walasa ka package manager min Makefile bɛ na kɛ ɲɛlɛma (default `npm`).

@@ -4,94 +4,98 @@ title: 'გამოყენება'
 sidebar_label: 'გამოყენება'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## გამოყენება {#usage}
+
+- უპასუხეთ და დამატება ავტომატურად დაამატებს ორიგინალებს — ან ჯერ მოგკითხავთ, თუ ჩართულია Options-ში.
+- დუბლიკატები იშლება ფაილის სახელის მიხედვით; S/MIME ნაწილები ყოველთვის გამოტოვებულია. ინლაინ სურათები ნაგულისხმებად აღდგება პასუხის სხეულში (გამორთვა შესაძლებელია Options-ში, პარამეტრით "Include inline pictures").
+- შეიბლექლისტებული დანართებიც გამოტოვებულია (რეგისტრისგან დამოუკიდებელი glob ნიმუშები, რომლებიც ემთხვევა ფაილის სახელებს და არა ბილიკებს). იხილეთ [კონფიგურაცია](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### პასუხისას რა ხდება {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- პასუხის აღმოჩენა → ორიგინალი დანართების ჩამონათვალი → S/MIME + ინლაინის გაფილტვრა → არჩევითი დადასტურება → შესაბამისი ფაილების დამატება (დუბლიკატების გამოტოვებით) → ინლაინ სურათების აღდგენა სხეულში.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+მკაცრი vs. რბილი გავლა: დამატება ჯერ გამორიცხავს S/MIME და ინლაინ ნაწილებს ფაილის დანართებიდან. თუ არაფერია მისაღები, გააკეთებს რბილ გავლას, რომელიც მაინც გამორიცხავს S/MIME/ინლაინის ნაწილებს, მაგრამ უფრო მეტ შემთხვევას ითმენს (იხილეთ Code Details). ინლაინ სურათები არასოდეს ემატება ფაილის დანართებად; ამის ნაცვლად, როცა ჩართულია "Include inline pictures" (ნაგულისხმები), ისინი პირდაპირ ინერგება პასუხის სხეულში base64 data URI-ების სახით.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| ნაწილის ტიპი                                             |                        მკაცრი გავლა |                         რბილი გავლა |
+| -------------------------------------------------------- | ----------------------------------: | ----------------------------------: |
+| S/MIME ხელმოწერის ფაილი `smime.p7s`                      |                        გამორიცხულია |                        გამორიცხულია |
+| S/MIME MIME ტიპები (`application/pkcs7-*`)               |                        გამორიცხულია |                        გამორიცხულია |
+| ინლაინ სურათი, რომელსაც Content‑ID მიუთითებს (`image/*`) | გამორიცხულია (აღდგენილია სხეულში\*) | გამორიცხულია (აღდგენილია სხეულში\*) |
+| მიმაგრებული ელფოსტა (`message/rfc822`) ფაილის სახელით    |                  არ არის დამატებული |                   შეიძლება დაემატოს |
+| ჩვეულებრივი ფაილის დანართი სახელით                       |                   შეიძლება დაემატოს |                   შეიძლება დაემატოს |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* როცა ჩართულია "Include inline pictures" (ნაგულისხმები: ON), ინლაინ სურათები პასუხის სხეულში ნერგება base64 data URI-ების სახით და არა ფაილის დანართებად. იხილეთ [კონფიგურაცია](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+მაგალითი: ზოგ დანართს შეიძლება 일부 ჰედერები აკლდეს, მაგრამ მაინც ჩვეულებრივ ფაილს წარმოადგენდეს (არა ინლაინ/S/MIME). თუ მკაცრმა გავლამ ვერაფერი იპოვა, რბილმა გავლამ შეიძლება ისინი მიიღოს და მიამაგროს.
 
 ---
 
-## Behavior Details {#behavior-details}
+### ჯვარედინი მითითება {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Forward განზრახ არ იცვლება (იხ. ქვემოთ „შეზღუდვები“).
+- რატომ შეიძლება დანართი არ დაემატოს, იხილეთ „რატომ შეიძლება დანართები არ დამატდეს“.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## ქცევის დეტალები {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- დუბლიკატების თავიდან აცილება: დამატება აღნიშნავს შედგენის ჩანართს, როგორც დამუშავებულს, თითო-ჩანართიანი სესიის მნიშვნელობით და მეხსიერებაში არსებულ მცველით. ორიგინალებს ორჯერ არ დაამატებს.
+- შედგენის ფანჯრის დახურვა და თავიდან გახსნა ითვლება ახალ ჩანართად (ანუ ნებადართულია ახალი მცდელობა).
+- არსებული დანართების პატივისცემა: თუ შედგენაში უკვე არის დანართები, ორიგინალები მაინც დაემატება ზუსტად ერთხელ, და უკვე არსებულ ფაილის სახელებს გამოტოვებს.
+- გამორიცხვები: S/MIME არტიფაქტები და ინლაინ სურათები ფაილის დანართებიდან გამორიცხულია. თუ პირველ გავლაზე არაფერი აკმაყოფილებს კრიტერიუმებს, რბილი რეზერვი ხელახლა ამოწმებს არა‑S/MIME ნაწილებს. ინლაინ სურათები ცალკე მუშავდება: ისინი აღდგება პასუხის სხეულში data URI-ებად (როცა ჩართულია).
+  - ფაილის სახელები: `smime.p7s`
+  - MIME ტიპები: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - ინლაინ სურათები: ნებისმიერი `image/*` ნაწილი, რომელსაც Content‑ID მიუთითებს — ფაილის დანართებიდან გამორიცხულია, მაგრამ პასუხის სხეულში ინერგება, როცა "Include inline pictures" არის ON
+  - მიმაგრებული ელფოსტები (`message/rfc822`): თუ აქვთ ფაილის სახელი, ჩვეულებრივ დანართებად ითვლება; შეიძლება დაემატოს (დუბლიკატების შემოწმებისა და შავი სიის გათვალისწინებით).
+- შავი სიის გაფრთხილება (თუ ჩართულია): როცა კანდიდატები გამოირიცხება თქვენი შავი სიის გამო,
+  დამატება აჩვენებს პატარა მოდალურ ფანჯარას, სადაც ჩამოთვლილია გავლენადი ფაილები და
+  შესაბამისი ნიმუში(ები). ეს გაფრთხილებაც გამოჩნდება იმ შემთხვევებში, როცა არაფერი დაემატება,
+  რადგან ყველაფერი გამოირიცხა.
 
 ---
 
-## Limitations {#limitations}
+## კლავიატურის მალსახმობები {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- დადასტურების დიალოგი: Y/J = Yes, N/Esc = No; Tab/Shift+Tab და ისრების კლავიშები ცვლიან ფოკუსს.
+  - „Default answer“ [კონფიგურაცია](configuration#confirmation)-ში ადგენს საწყისად ფოკუსირებულ ღილაკს.
+  - Enter აჩქარებს/გააქტიურებს ფოკუსირებულ ღილაკს. Tab/Shift+Tab და ისრები გადაადგილებს ფოკუსს ხელმისაწვდომობისთვის.
+
+### კლავიატურის სწრაფი გზამკვლევი {#keyboard-cheat-sheet}
+
+| კლავიშები         | ქმედება                           |
+| ----------------- | --------------------------------- |
+| Y / J             | დადასტურება Yes                   |
+| N / Esc           | დადასტურება No                    |
+| Enter             | ფოკუსირებული ღილაკის აქტივაცია    |
+| Tab / Shift+Tab   | ფოკუსის გადატანა წინ/უკან         |
+| ისრების კლავიშები | ფოკუსის გადატანა ღილაკებს შორის   |
+| Default answer    | აყენებს საწყის ფოკუსს (Yes or No) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## შეზღუდვები {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- ეს დამატება არ ცვლის Forward-ს (მხარდაჭერილია Reply და Reply all).
+- ძალიან დიდი დანართები შეიძლება დაექვემდებაროს Thunderbird-ის ან პროვაიდერის შეზღუდვებს.
+  - დამატება არ ყოფს ნაწილებად და არ აჭერს (compress) ფაილებს; ეყრდნობა Thunderbird-ის ჩვეულებრივ დანართების დამუშავებას.
+- დაშიფრული შეტყობინებები: S/MIME ნაწილები განზრახ გამორიცხულია.
 
 ---
 
-See also
+## რატომ შეიძლება დანართები არ დამატდეს {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- ინლაინ სურათები ფაილის დანართებად არ ემატება. როცა "Include inline pictures" არის ON (ნაგულისხმები), ისინი პასუხის სხეულში ინერგება data URI-ებად. თუ პარამეტრი არის OFF, ინლაინ სურათები სრულად იშლება. იხილეთ [კონფიგურაცია](configuration#include-inline-pictures).
+- S/MIME ხელმოწერის ნაწილები განზრახაა გამორიცხული: ფაილის სახელები, როგორიცაა `smime.p7s`, და MIME ტიპები, როგორიცაა `application/pkcs7-signature` ან `application/pkcs7-mime`, გამოტოვებულია.
+- შავი სიის ნიმუშებს შეუძლიათ კანდიდატების გაფილტვრა: იხილეთ [კონფიგურაცია](configuration#blacklist-glob-patterns); დამთხვევა რეგისტრისგან დამოუკიდებელია და ითვალისწინებს მხოლოდ ფაილის სახელს.
+- დუბლიკატური ფაილის სახელები თავიდან არ ემატება: თუ შედგენაში უკვე არის იმავე ნორმალიზებული სახელის ფაილი, ის გამოტოვდება.
+- არა‑ფაილური ნაწილები ან ფაილის სახელის არქონა: დამატებისთვის განიხილება მხოლოდ ფაილურ ნაწილად მისაღები ობიექტები გამოყენებადი ფაილის სახელებით.
+
+---
+
+ასევე იხილეთ
+
+- [კონფიგურაცია](configuration)

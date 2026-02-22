@@ -4,94 +4,98 @@ title: 'Fampiasana'
 sidebar_label: 'Fampiasana'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Fampiasana {#usage}
+
+- Mamaly ianao dia manampy ho azy ny fanitarana ny tany am-boalohany — na mangataka fanamafisana aloha, raha alefa ao amin'ny Safidy.
+- Esorina dika mitovy araka ny anaran-drakitra; ny ampahany S/MIME dia hadinoina hatrany. Ny sary inline dia averina ao amin'ny vatana valiny amin'ny toe-javatra mahazatra (azo vonoina amin'ny "Include inline pictures" ao amin'ny Safidy).
+- Ny fampiarahana voasokajy ao anaty lisitra mainty dia tsy asiana koa (glob pattern tsy miankina amin'ny litera lehibe/kely mifanaraka amin'ny anaran-drakitra, fa tsy amin'ny làlana). Jereo ny [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Inona no mitranga rehefa mamaly {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Hamarino fa valiny → farito ny fampiarahana tany am-boalohany → sivano S/MIME + inline → fanamafisana an-tsafidy → ampio ireo rakitra mahafeno fepetra (adiaho ny dika mitovy) → avereno ny sary inline ao amin'ny vatana.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Fandaloana henjana vs. malalaka: Voalohany, esorin'ny fanitarana amin'ny fampiarahana rakitra ny ampahany S/MIME sy inline. Raha tsy misy mahafeno fepetra, mampandeha fandaloana malalaka izy izay mbola manilika ny S/MIME/inline ihany fa mandefitra tranga maro kokoa (jereo ny Code Details). Tsy asiana ho fampiarahana rakitra mihitsy ny sary inline; fa raha alefa ny "Include inline pictures" (masontsivana tsy miova), dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI izy ireo.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Karazana ampahany                                          |                    Fandaloana henjana |                   Fandaloana malalaka |
+| ---------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
+| Rakitra sonia S/MIME `smime.p7s`                           |                               Esorina |                               Esorina |
+| Karazana MIME an'ny S/MIME (`application/pkcs7-*`)         |                               Esorina |                               Esorina |
+| Sary inline voatonona amin'ny Content‑ID (`image/*`)       | Esorina (averina ao amin'ny vatana\*) | Esorina (averina ao amin'ny vatana\*) |
+| Mailaka miraikitra (`message/rfc822`) misy anaran-drakitra |                           Tsy ampiana |                           Azo ampiana |
+| Fampiarahana rakitra mahazatra misy anaran-drakitra        |                           Azo ampiana |                           Azo ampiana |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Rehefa alefa ny "Include inline pictures" (default: ON), ny sary inline dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI fa tsy asiana ho fampiarahana rakitra. Jereo ny [Configuration](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Ohatra: Misy fampiarahana mety tsy hanana lohateny sasany nefa rakitra mahazatra ihany (tsy inline/S/MIME). Raha tsy mahita na inona na inona ny fandaloana henjana, mety heken'ny fandaloana malalaka ireo ka miraikitra.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Fifanondroana {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Ny Forward dia tsy ovain'ny famolavolana (jereo ny Famerana etsy ambany).
+- Raha mila antony mahatonga ny fampiarahana mety tsy ho ampiana, jereo ny “Nahoana no mety tsy ho ampiana ny fampiarahana”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Antsipirin'ny fitondran-tena {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Fisorohana dika mitovy:** Manamarika ny tabilao fanoratana ho efa voahodina ny fanitarana amin'ny alalan'ny sanda fivoriana isaky ny tabilao sy fiarovana ao anaty fitadidiana. Tsy hanampy indroa ny tany am-boalohany izy.
+- Ny fanidiana sy fanokafana indray varavarankely fanoratana dia heverina ho tabilao vaovao (midika hoe avela ny ezaka vaovao).
+- **Fanajàna ireo fampiarahana efa misy:** Raha efa misy fampiarahana ao amin'ny fanoratana, dia mbola ampiana indray mandeha ihany ireo tany am-boalohany, sady tsy asiana ireo anaran-drakitra izay efa misy.
+- **Fanalana:** Esorina amin'ny fampiarahana rakitra ny sisan-javatra S/MIME sy ny sary inline. Raha tsy misy mahafeno fepetra amin'ny fandaloana voalohany, dia misy dila malalaka mamerina manamarina ireo tsy S/MIME. Tokana ny fitantanana ny sary inline: averina ao amin'ny vatan'ny valiny ho data URI izy ireo (rehefa alefa).
+  - **Anaran-drakitra:** `smime.p7s`
+  - **Karazana MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Sary inline:** ny ampahany `image/*` rehetra voatonona amin'ny Content‑ID — esorina amin'ny fampiarahana rakitra fa ampidirina ao amin'ny vatan'ny valiny rehefa "Include inline pictures" no ON
+  - **Mailaka miraikitra (`message/rfc822`):** heverina ho fampiarahana mahazatra raha manana anaran-drakitra; mety ho ampiana (miankina amin'ny fanamarinana dika mitovy sy ny lisitra mainty).
+- **Fampitandremana lisitra mainty (raha alefa):** Rehefa esorin'ny lisitra maintinao ny kandidà,
+  mampiseho maodely kely milahatra ireo rakitra voakasika sy ny
+  pattern(s) mifanaraka. Miseho ihany koa ity fampitandremana ity amin'ny tranga izay tsy hisy fampiarahana ho
+  ampiana satria nesorina daholo ny zava-drehetra.
 
 ---
 
-## Limitations {#limitations}
+## Lalana fohy amin'ny fitendry {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Varavarankely fanamafisana: Y/J = Eny, N/Esc = Tsia; Tab/Shift+Tab sy zana-tsipìka dia mamindra ny fifantohana.
+  - Ny “Valiny tsy misy fanovana” ao amin'ny [Configuration](configuration#confirmation) no mametraka ny bokotra ifantohana voalohany.
+  - Enter dia mampihetsika ny bokotra ifantohana. Tab/Shift+Tab sy zana-tsipìka dia mamindra ny fifantohana ho an'ny fidirana mora.
+
+### Taratasy fohy amin'ny fitendry {#keyboard-cheat-sheet}
+
+| Kitendry                 | Asa                                                  |
+| ------------------------ | ---------------------------------------------------- |
+| Y / J                    | Manamafy Eny                                         |
+| N / Esc                  | Manamafy Tsia                                        |
+| Enter                    | Manahetsika ny bokotra ifantohana                    |
+| Tab / Shift+Tab          | Mampandroso/Mamerina ny fifantohana                  |
+| Zana-tsipìka             | Mampihetsika ny fifantohana eo anelanelan'ny bokotra |
+| Valiny tsy misy fanovana | Mametraka ny fifantohana voalohany (Eny na Tsia)     |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Famerana {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Tsy ovain'ity fanitarana ity ny Forward (tohana ny Reply sy Reply all).
+- Ny fampiarahana lehibe be dia mety ho voafetran'ny Thunderbird na ny mpanome.
+  - Tsy mizara na manindry rakitra ny fanitarana; miankina amin'ny fitantanana fampiarahana mahazatra an'ny Thunderbird izy.
+- Hafatra voaaro: Esorina tamin'ny fikasana ny ampahany S/MIME.
 
 ---
 
-See also
+## Nahoana no mety tsy ho ampiana ny fampiarahana {#why-attachments-might-not-be-added}
+
+- Tsy asiana ho fampiarahana rakitra ny sary inline. Rehefa "Include inline pictures" no ON (fepetra default), dia ampidirina ao amin'ny vatan'ny valiny ho data URI izy ireo. Raha OFF ilay masontsivana, dia esorina tanteraka ny sary inline. Jereo ny [Configuration](configuration#include-inline-pictures).
+- Esorina amin'ny endrika noforonina ny ampahany sonia S/MIME: anaran-drakitra toa ny `smime.p7s` sy karazana MIME toy ny `application/pkcs7-signature` na `application/pkcs7-mime` dia hadinoina.
+- Afaka manivana kandidà ny modely lisitra mainty: jereo ny [Configuration](configuration#blacklist-glob-patterns); tsy miankina amin'ny haben-tsoratra ny fifanarahana ary amin'ny anaran-drakitra ihany.
+- Tsy averina ampiana ny anaran-drakitra mitovy: raha efa misy rakitra mitovy anarana ao amin'ny fanoratana, dia tsipahina izy.
+- Ampahany tsy rakitra na tsy manana anaran-drakitra: ireo ampahany mitovitovy amin'ny rakitra manana anarana azo ampiasaina ihany no heverina ho ampiana.
+
+---
+
+Jereo koa
 
 - [Configuration](configuration)

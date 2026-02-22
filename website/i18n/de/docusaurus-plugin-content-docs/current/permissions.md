@@ -3,52 +3,54 @@ id: permissions
 title: 'Berechtigungen'
 ---
 
-## Permissions
+---
 
-:::note Minimal permissions
-No host (web) permissions are requested by this add‑on. The add‑on does not collect telemetry or make background network requests. See [Privacy](privacy).
+## Berechtigungen
+
+:::note Minimale Berechtigungen
+Dieses Add‑on fordert keine Host‑ (Web‑) Berechtigungen an. Das Add‑on erfasst keine Telemetrie und stellt keine Netzwerk‑Anfragen im Hintergrund. Siehe [Datenschutz](privacy).
 :::
 
 ---
 
-The add-on requests a small, focused set of permissions only. Why each is needed:
+Das Add‑on fordert nur einen kleinen, fokussierten Satz an Berechtigungen an. Warum jede benötigt wird:
 
-- `compose`: observe compose events, list/add attachments in your reply.
-- `messagesRead`: read metadata and fetch attachment files from the original message.
-- `scripting`: inject the small in‑compose confirmation dialog when enabled.
-- `windows`: open a tiny confirmation popup as a last resort when messaging fails.
-- `sessions`: store a per‑tab flag to avoid duplicate processing.
-- `storage`: persist options (blacklist, confirmation toggle, default answer).
-- `tabs`: targeted messaging to the compose tab for confirmation requests.
+- `compose`: Verfassen‑Ereignisse beobachten, Anhänge in Ihrer Antwort auflisten/hinzufügen.
+- `messagesRead`: Metadaten lesen und Anhangsdateien aus der Originalnachricht abrufen.
+- `scripting`: den kleinen Bestätigungsdialog im Verfassen‑Fenster einfügen, wenn aktiviert.
+- `windows`: als letzte Möglichkeit ein kleines Bestätigungs‑Popup öffnen, wenn Messaging fehlschlägt.
+- `sessions`: eine pro‑Tab‑Markierung speichern, um doppelte Verarbeitung zu vermeiden.
+- `storage`: Optionen dauerhaft speichern (Blockliste, Bestätigungsschalter, Standardantwort).
+- `tabs`: gezieltes Messaging an den Verfassen‑Tab für Bestätigungsanfragen.
 
-Additional notes:
+Zusätzliche Hinweise:
 
-- No host permissions (web origins) are requested by this add‑on.
-- The `tabs` permission is used only to target the compose tab when coordinating the optional confirmation dialog; it is not used to read history or navigate pages.
+- Dieses Add‑on fordert keine Host‑Berechtigungen (Web‑Ursprünge) an.
+- Die Berechtigung `tabs` wird nur verwendet, um beim Koordinieren des optionalen Bestätigungsdialogs gezielt den Verfassen‑Tab anzusprechen; sie wird nicht zum Lesen des Verlaufs oder zum Navigieren auf Seiten verwendet.
 
-These are documented in the source and tested in CI. The add-on does not collect telemetry.
-
----
-
-### Summary (permissions → purpose) {#permissions-summary}
-
-| Permission     | Why it’s needed                                                   |
-| -------------- | ----------------------------------------------------------------- |
-| `compose`      | Observe compose events; list and add attachments in your reply.   |
-| `messagesRead` | List original message attachments and fetch the file data.        |
-| `scripting`    | Inject/coordinate lightweight UI for confirmation when enabled.   |
-| `windows`      | Fallback popup if messaging fails (rare).                         |
-| `sessions`     | Store a per‑tab flag to prevent duplicate processing.             |
-| `storage`      | Persist options (blacklist, confirmation toggle, default answer). |
-| `tabs`         | Targeted messaging to the compose tab for confirmation requests.  |
-| (host perms)   | None — the add‑on does not request web origins.                   |
+Dies ist im Quellcode dokumentiert und in der CI getestet. Das Add‑on erhebt keine Telemetrie.
 
 ---
 
-## Not requested {#not-requested}
+### Zusammenfassung (Berechtigungen → Zweck) {#permissions-summary}
 
-- `compose.save`, `compose.send` — the add-on does not save or send mail on your behalf.
+| Berechtigung          | Warum sie benötigt wird                                                             |
+| --------------------- | ----------------------------------------------------------------------------------- |
+| `compose`             | Verfassen‑Ereignisse beobachten; Anhänge in Ihrer Antwort auflisten und hinzufügen. |
+| `messagesRead`        | Anhänge der Originalnachricht auflisten und die Dateidaten abrufen.                 |
+| `scripting`           | Leichtgewichtiges UI für die Bestätigung einfügen/koordinieren, wenn aktiviert.     |
+| `windows`             | Fallback‑Popup, falls Messaging fehlschlägt (selten).                               |
+| `sessions`            | Eine pro‑Tab‑Markierung speichern, um doppelte Verarbeitung zu verhindern.          |
+| `storage`             | Optionen persistent speichern (Blockliste, Bestätigungsschalter, Standardantwort).  |
+| `tabs`                | Gezieltes Messaging an den Verfassen‑Tab für Bestätigungsanfragen.                  |
+| (Host‑Berechtigungen) | Keine — das Add‑on fordert keine Web‑Ursprünge an.                                  |
 
-See also: [Privacy](privacy) — no telemetry, no background network, user‑initiated links only.
+---
+
+## Nicht angefordert {#not-requested}
+
+- `compose.save`, `compose.send` — das Add‑on speichert oder sendet keine E‑Mails in Ihrem Namen.
+
+Siehe auch: [Datenschutz](privacy) — keine Telemetrie, kein Hintergrundnetzwerk, nur vom Benutzer initiierte Links.
 
 ---

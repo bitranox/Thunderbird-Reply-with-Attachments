@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Kompatibilitas'
-sidebar_label: 'Kompatibilitas'
+title: 'Kasaluyuan'
+sidebar_label: 'Kacocokan'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kacocokan {#compatibility}
+
+:::important Vérsi Thunderbird panghandapna
+Add‑on ieu ngadukung Thunderbird **128 ESR atawa anu leuwih anyar**. Vérsi anu leuwih kolot teu didukung.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR atawa anu leuwih anyar didukung (128.x+).
+- Vérsi Thunderbird anu leuwih kolot teu didukung.
+- Diujikeun dina Windows, macOS, jeung Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 teu didukung
+Manifest V2 teu didukung. Add‑on ieu nyasarkeun **Manifest V3 (MV3)** dina Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Ngabéréskeun Masalah {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Lamun add‑on teu jalan sakumaha dipiharep, pastikeun anjeun ngagunakeun vérsi Thunderbird anu cocog (128 ESR atawa leuwih anyar).
+- Pariksa konsol kasalahan Thunderbird (**Tools > Developer Tools > Error Console**) pikeun masalah anu patali jeung add‑on.
+- Lamun setélan nu disimpen siga teu nerap kalayan bener, balikan deui Thunderbird teras cobian deui. (Thunderbird bisa nyimpen kaayaan antarsési; ngamimitian deui mastikeun setélan anyar dimuat.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Konflik anu dipikanyaho {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Teu aya anu dipikanyaho ayeuna. Lamun anjeun ningali lampiran duplikat anu mucunghul sababaraha kali atawa kagagalan jeung add‑on séjén, punten laporkeun kalayan léngkah-léngkah pikeun ngareproduksi.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Rilisan Thunderbird Beta jeung Daily (Nightly) umumna didukung, tapi parobahan hulu kadang tiasa ngaruksak paripolah add‑on. Lamun anjeun ngalaman masalah, punten laporkeun sarta kalebetkeun vérsi Thunderbird anu pasti (contona, “Daily 131.0a1 2025‑09‑10”).
+- Ngahaja kapanggih régrési dina Beta/Nightly? Punten laporkeun kalayan léngkah-léngkah pikeun ngareproduksi — tingali [Support](support) — sarta kalebetkeun string build Thunderbird anu pasti.
 
 ---

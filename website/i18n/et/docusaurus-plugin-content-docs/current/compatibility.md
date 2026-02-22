@@ -4,39 +4,41 @@ title: 'Ühilduvus'
 sidebar_label: 'Ühilduvus'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Ühilduvus {#compatibility}
+
+:::important Miinimum Thunderbirdi versioon
+See lisandmoodul toetab Thunderbirdi **128 ESR-i või uuemat**. Vanemaid versioone ei toetata.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Toetatud on Thunderbirdi 128 ESR või uuem (128.x+).
+- Vanemaid Thunderbirdi versioone ei toetata.
+- Testitud Windowsis, macOS-is ja Linuxis.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 pole toetatud
+Manifest V2 pole toetatud. Lisandmoodul sihib Thunderbirdi 128 ESR+ puhul **Manifest V3 (MV3)**‑i.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Tõrkeotsing {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Kui lisandmoodul ei tööta ootuspäraselt, veendu, et kasutad Thunderbirdi ühilduvat versiooni (128 ESR või uuemat).
+- Kontrolli Thunderbirdi veakonsooli (**Tööriistad > Arendaja tööriistad > Veakonsool**) kõigi lisandmooduliga seotud probleemide tuvastamiseks.
+- Kui salvestatud sätted ei paista korrektselt rakenduvat, taaskäivita Thunderbird ja proovi uuesti. (Thunderbird võib seansside vahel olekut puhverda; taaskäivitamine tagab, et laaditakse värsked sätted.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Teadaolevad konfliktid {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Praegu pole teada. Kui näed korduvaid dubleeritud manuseid või tõrkeid koos teiste lisandmoodulitega, anna sellest teada koos taasesitamise sammudega.
+
+---
+
+## Beeta/Nightly {#beta-nightly}
+
+- Thunderbirdi Beta ja Daily (Nightly) koosted on üldiselt toetatud, kuid arengumuudatused võivad aeg-ajalt lisandmooduli töö katkestada. Kui satud probleemidele, palun teata neist ja lisa täpne Thunderbirdi versioon (nt “Daily 131.0a1 2025‑09‑10”).
+- Leidsid regressiooni Beeta/Nightly versioonis? Palun teata sellest koos taasesitamise sammudega — vaata [Tugi](support) — ja lisa täpne Thunderbirdi koostetähis.
 
 ---

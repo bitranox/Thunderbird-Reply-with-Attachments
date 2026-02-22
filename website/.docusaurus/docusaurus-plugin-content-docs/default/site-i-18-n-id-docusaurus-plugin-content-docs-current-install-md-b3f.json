@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Instalasi",
-  "description": "Instalasi melalui \"Thunderbird Add-ons dan Tema\"",
+  "description": "---",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Panduan Awal",
+    "title": "Mulai Cepat",
     "permalink": "/Thunderbird-Reply-with-Attachments/id/docs/quickstart"
   },
   "next": {

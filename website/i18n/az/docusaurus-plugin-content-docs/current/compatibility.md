@@ -4,39 +4,41 @@ title: 'Uyğunluq'
 sidebar_label: 'Uyğunluq'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Uyğunluq {#compatibility}
+
+:::important Minimal Thunderbird versiyası
+Bu əlavə Thunderbird **128 ESR və ya daha yenisini** dəstəkləyir. Köhnə versiyalar dəstəklənmir.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR və ya daha yenisi dəstəklənir (128.x+).
+- Daha köhnə Thunderbird versiyaları dəstəklənmir.
+- Windows, macOS və Linux üzərində sınaqdan keçirilib.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 dəstəklənmir
+Manifest V2 dəstəklənmir. Əlavə Thunderbird 128 ESR+ üçün **Manifest V3 (MV3)**-i hədəfləyir.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Problemlərin aradan qaldırılması {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Əlavə gözlənildiyi kimi işləmirsə, Thunderbird-in uyğun versiyasından (128 ESR və ya daha yeni) istifadə etdiyinizə əmin olun.
+- Əlavə ilə bağlı hər hansı problem üçün Thunderbird səhv konsolunu (**Tools > Developer Tools > Error Console**) yoxlayın.
+- Saxlanmış ayarlar düzgün tətbiq olunmur kimi görünürsə, Thunderbird-i yenidən başladın və yenidən cəhd edin. (Thunderbird seanslar arasında vəziyyəti keşləyə bilər; yenidən başlatmaq yeni ayarların yüklənməsini təmin edir.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Məlum ziddiyyətlər {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Hazırda heç bir məlum ziddiyyət yoxdur. Əgər təkrarlanan dublikat qoşmalar görürsünüzsə və ya digər əlavələrlə bağlı nasazlıqlar baş verirsə, xahiş edirik, təkrarlamaq üçün addımlarla bildirin.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta və Daily (Nightly) yığımları ümumiyyətlə dəstəklənir, lakin üst mənbədəki dəyişikliklər bəzən əlavənin davranışını poza bilər. Problemlərlə qarşılaşsanız, xahiş edirik onları bildirin və dəqiq Thunderbird versiyasını daxil edin (məs., “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly-də geriləmə ilə üzləşdiniz? Xahiş edirik, bunu təkrarlamaq üçün addımlarla bildirin — [Dəstək](support) bölməsinə baxın — və dəqiq Thunderbird build sətrini daxil edin.
 
 ---

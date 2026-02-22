@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Suiteáil",
-  "description": "Suiteáil tríd \"Ionchur agus Téamaí Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/ga/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -19,7 +19,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Tús Tapa",
+    "title": "Tús tapa",
     "permalink": "/Thunderbird-Reply-with-Attachments/ga/docs/quickstart"
   },
   "next": {

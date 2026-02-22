@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kom i gang",
-  "description": "Quickstart",
+  "title": "Hurtigstart",
+  "description": "---",
   "source": "@site/i18n/no/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kom i gang",
-    "sidebar_label": "Kom i gang"
+    "title": "Hurtigstart",
+    "sidebar_label": "Hurtigstart"
   },
   "sidebar": "docs",
   "previous": {

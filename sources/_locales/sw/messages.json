@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Onya ikiwa viambatisho vimeondolewa na orodha ya kuzuia"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Jumuisha picha za ndani (picha zilizopachikwa)"
+  },
   "uiDebugHeader": {
     "message": "Ya hali ya juu"
   },

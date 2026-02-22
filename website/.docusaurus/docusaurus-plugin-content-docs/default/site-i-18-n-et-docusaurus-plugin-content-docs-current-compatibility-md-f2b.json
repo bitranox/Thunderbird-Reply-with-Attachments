@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Ühilduvus",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/et/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -18,7 +18,7 @@
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Kasutus",
+    "title": "Kasutamine",
     "permalink": "/Thunderbird-Reply-with-Attachments/et/docs/usage"
   },
   "next": {

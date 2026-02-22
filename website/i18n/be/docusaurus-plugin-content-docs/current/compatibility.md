@@ -4,39 +4,41 @@ title: 'Сумяшчальнасць'
 sidebar_label: 'Сумяшчальнасць'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Сумяшчальнасць {#compatibility}
+
+:::important Мінімальная версія Thunderbird
+Гэты дадатак падтрымлівае Thunderbird **128 ESR або навей**. Старэйшыя версіі не падтрымліваюцца.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Падтрымліваюцца Thunderbird 128 ESR або навей (128.x+).
+- Старэйшыя версіі Thunderbird не падтрымліваюцца.
+- Пратэставана на Windows, macOS і Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 не падтрымліваецца
+Manifest V2 не падтрымліваецца. Дадатак арыентаваны на **Manifest V3 (MV3)** у Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Устараненне праблем {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Калі дадатак працуе не так, як чакаецца, пераканайцеся, што вы карыстаецеся сумяшчальнай версіяй Thunderbird (128 ESR або навей).
+- Праверце кансоль памылак Thunderbird (**Прылады > Інструменты распрацоўшчыка > Кансоль памылак**) на наяўнасць праблем, звязаных з дадаткам.
+- Калі здаецца, што захаваныя налады не прымяняюцца карэктна, перазапусціце Thunderbird і паспрабуйце яшчэ раз. (Thunderbird можа кэшаваць стан паміж сеансамі; перазапуск гарантуе загрузку свежых налад.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Вядомыя канфлікты {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- На дадзены момант невядомыя. Калі вы бачыце паўторныя дублікаты далучэнняў або збоі з іншымі дадаткамі, паведаміце пра гэта, указаўшы крокі для ўзнаўлення.
+
+---
+
+## Бэта/Ночныя {#beta-nightly}
+
+- Звычайна падтрымліваюцца зборкі Thunderbird Beta і Daily (Nightly), але часам змены ў аснове могуць парушыць паводзіны дадатка. Калі сутыкнецеся з праблемамі, паведаміце пра іх і ўкажыце дакладную версію Thunderbird (напрыклад, “Daily 131.0a1 2025‑09‑10”).
+- Сутыкнуліся з рэгрэсіяй у Beta/Nightly? Калі ласка, паведаміце пра гэта з крокамі для ўзнаўлення — глядзіце [Падтрымка](support) — і дадайце дакладны радок зборкі Thunderbird.
 
 ---

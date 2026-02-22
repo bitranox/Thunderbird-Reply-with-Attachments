@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Darowizna",
-  "description": "Donate",
+  "title": "Przekaż darowiznę",
+  "description": "---",
   "source": "@site/i18n/pl/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Darowizna",
-    "sidebar_label": "Darowizna"
+    "title": "Przekaż darowiznę",
+    "sidebar_label": "Wesprzyj"
   },
   "sidebar": "docs",
   "previous": {

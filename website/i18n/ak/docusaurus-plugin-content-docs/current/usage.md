@@ -1,97 +1,101 @@
 ---
 id: usage
-title: 'Mmomma'
-sidebar_label: 'Mmomma'
+title: 'Sɛnea Wɔde Di Dwuma'
+sidebar_label: 'Sɛnea wɔde di dwuma'
 ---
-
-## Usage {#usage}
-
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+## Sɛnea wobɛdi dwuma {#usage}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
-
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
-
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
-
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+- Bu mmuae na add‑on no bɛka ntamafɔde a edi kan no ho otomatik — anaaso ɛbɛbisa kan, sɛ woahyɛ no mu wɔ Nhyɛe (Options) mu.
+- Wɔpam nsɛsoɔ so fa fael‑din so; S/MIME nkyekyɛmu no da biara wɔgyae. Mfonini a wɔahyɛ mu (inline images) no wɔsan de wɔn bɔ mmuae krataa no mu teteɛ so (wobetumi adum no fa "Include inline pictures" wɔ Nhyɛe mu).
+- Ntamafɔde a wode agu blacklist so no nso, wɔgyae wɔn (glob nhyehyɛe a ɛnhu akɛse/kɛse nsonsonoe; ɛde fa fael‑din pɛ, na ɛnyɛ akwan). Hwɛ [Nhyehyɛe](configuration#blacklist-glob-patterns).
 
 ---
 
-### Cross‑reference {#cross-reference}
+### Nea ɛba so bere a wobu mmuae {#what-happens}
 
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+- Hu sɛ wobuu mmuae → lista ntamafɔde a edi kan → sifte S/MIME + inline → pɛnee‑ho bisaeɛ → fa fael a ɛfata ka ho (yi nsɛsoɔ) → san de mfonini a wɔahyɛ mu no bɔ mmuae no mu.
 
----
+Twɛ a ɛyɛ den (strict) ne nea ɛyɛ mmerɛw (relaxed): Add‑on no di kan yi S/MIME ne inline nkyekyɛmu firi fael ntamafɔde mu. Sɛ biribiara mmfata a, ɛhyɛ twɛ a ɛyɛ mmerɛw mu a na ɛsɛe S/MIME/inline nso, nanso ɛma nsɛm pii so (hwɛ Code Details). Mfonini a wɔahyɛ mu no renka ho sɛ fael ntamafɔde da; mmom, sɛ "Include inline pictures" wɔ so (the default) a, wɔde wɔn bɛhyɛ mmuae krataa no mu pɛpɛɛpɛ te sɛ base64 data URI.
 
-## Behavior Details {#behavior-details}
+| Fã no tebea                                                |               Twɛ a ɛyɛ den |            Twɛ a ɛyɛ mmerɛw |
+| ---------------------------------------------------------- | --------------------------: | --------------------------: |
+| S/MIME nsain (signature) fael `smime.p7s`                  |                    Wɔpoo no |                    Wɔpoo no |
+| S/MIME MIME type (`application/pkcs7-*`)                   |                    Wɔpoo no |                    Wɔpoo no |
+| Mfonini a wɔahyɛ mu a Content‑ID de rekyerɛ no (`image/*`) | Wɔpoo no (wɔsan de gu mu\*) | Wɔpoo no (wɔsan de gu mu\*) |
+| Email a wɔde aka ho (`message/rfc822`) a ɛwɔ fael‑din      |                    Wɔnka ho |               Betumi aka ho |
+| Fael ntamafɔde a ɛwɔ fael‑din                              |               Betumi aka ho |               Betumi aka ho |
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+\* Sɛ "Include inline pictures" wɔ so (default: ON) a, mfonini a wɔahyɛ mu no wɔde wɔn bɛhyɛ mmuae no mu te sɛ base64 data URIs, na mmom ɛnyɛ sɛ wɔde wɔn ka ho sɛ fael ntamafɔde. Hwɛ [Nhyehyɛe](configuration#include-inline-pictures).
+
+Nsɛmhwɛne: Ntamafɔde bi betumi asɛe atifi‑ti (headers) bi, nanso wɔyɛ fael pa ara (na ɛnyɛ inline/S/MIME). Sɛ twɛ a ɛyɛ den no nnya biara a, twɛ a ɛyɛ mmerɛw no betumi agye saa deɛ no atom na aka ho.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+### Nsɛnkanee {#cross-reference}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- Forward nni nsakrae biara (hwɛ Ahokyere—Limitations—ase hɔ).
+- Sɛ wopɛ nsɛm a enti ntamafɔde betumi nnya ho a, hwɛ “Adɛn nti na ntamafɔde betumi nnya ho”.
 
 ---
 
-## Limitations {#limitations}
+## Sɛnea ɛyɛ adwuma ho nsɛm {#behavior-details}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
-
----
-
-## Why attachments might not be added {#why-attachments-might-not-be-added}
-
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- **Sɛe nsɛsoɔ mmienu (duplicate) ho banbɔ:** Add‑on no hyɛ compose tab no sɛ wɔadi so de per‑tab session value ne banbɔ a ɛwɔ memri (in‑memory) di dwuma. Ɛrenka originals no ho mpɛn abien.
+- Sɛ wokum na wopae compose tokuro no bio a, wɔhwɛ no sɛ tab foforo (kyerɛ sɛ wobɛtumi asɔ hwɛ bio).
+- **Di ntamafɔde a ɛwɔ hɔ dada so ni:** Sɛ compose no wɔ ntamafɔde bi dada a, wɔde originals no ka ho prɛko pɛ, na wɔsiei fael‑din a ɛwɔ hɔ dada.
+- **Nnɔbae a wɔyi (exclusions):** S/MIME akyinkyim ne mfonini a wɔahyɛ mu no wɔpo wɔn firi fael ntamafɔde mu. Sɛ nea edi kan no nnya biara a, twɛ a ɛyɛ mmerɛw no bɛsan ahwehwɛ nkyekyɛmu a ɛnyɛ S/MIME. Mfonini a wɔahyɛ mu no wɔhwɛ wɔn ho fa a ɛtete: wɔsan de wɔn bɔ mmuae krataa no mu te sɛ data URIs (sɛ wɔahyɛ mu).
+  - **Fael‑din:** `smime.p7s`
+  - **MIME type:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Mfonini a wɔahyɛ mu:** `image/*` fã biara a Content‑ID de rekyerɛ no — wɔpo no firi fael ntamafɔde mu, nanso wobɛhyɛ no mmuae no mu sɛ "Include inline pictures" Wɔ SO (ON)
+  - **Email a wɔde aka ho (`message/rfc822`):** wɔhwɛ no sɛ ntamafɔde pa sɛ ɛwɔ fael‑din; wobɛtumi aka ho (ɛsɛ sɛ wosiw nsɛsoɔ ne blacklist so).
+- **Blacklist kɔkɔbɔ (sɛ woahyɛ no mu):** Sɛ wo blacklist yi apo nnidisoɔ a,
+  add‑on no bɛda kyerɛ modal ketewa bi a ɛkyerɛw fael a ɛka ho ne nhyehyɛe
+  a ɛtɔ wɔn so. Saa kɔkɔbɔ yi nso da adi asɛm a
+  ntamafɔde biara renka ho efisɛ wɔapo ade nyinaa.
 
 ---
 
-See also
+## Keyboa ntwitwa kwan {#keyboard-shortcuts}
 
-- [Configuration](configuration)
+- Nhyehyɛe a wopenee (confirmation) dialog: Y/J = Aane, N/Esc = Daabi; Tab/Shift+Tab ne Arrow keys de sesa focus no mu.
+  - “Default answer” no wɔ [Nhyehyɛe](configuration#confirmation) mu na ɛhyɛ batɔn a ɛdi kan no so.
+  - Enter hyɛ batɔn a ɛwɔ focus so no ase. Tab/Shift+Tab ne arrows de yi/move focus ma accessibility.
+
+### Keyboa Cheat Sheet {#keyboard-cheat-sheet}
+
+| Akɛy            | Dwuma                                    |
+| --------------- | ---------------------------------------- |
+| Y / J           | Pene so Aane                             |
+| N / Esc         | Pene so Daabi                            |
+| Enter           | Sɔ batɔn a ɛwɔ focus so                  |
+| Tab / Shift+Tab | Soa focus kɔ anim/akyi                   |
+| Arrow keys      | Soa focus ntam batɔn no mu               |
+| Default answer  | Hyehyɛ focus a ɛdi kan (Aane anaa Daabi) |
+
+---
+
+## Ahokyere {#limitations}
+
+- Add‑on yi nnsesa Forward (Reply ne Reply all na wɔboa).
+- Ntamafɔde kɛse paa betumi afa Thunderbird anaa wo somfo (provider) ahokyere ho.
+  - Add‑on no ɛnnkyekyere anaa ɛmpia fael; ɛgye Thunderbird anammɔn ntamafɔde dwumadie so.
+- Nkratoɔ a wɔabɔ ban (encrypted): S/MIME nkyekyɛmu no wɔapo wɔn pɛpɛɛpɛ.
+
+---
+
+## Adɛn nti na ntamafɔde betumi nnya ho {#why-attachments-might-not-be-added}
+
+- Mfonini a wɔahyɛ mu no ɛnkɔ ho sɛ fael ntamafɔde. Sɛ "Include inline pictures" Wɔ SO (the default) a, wɔde wɔn bɛhyɛ mmuae no mu te sɛ data URIs mmom. Sɛ woahyɛ no sɛ OFF a, wɔpepa mfonini a wɔahyɛ mu no nyinaa. Hwɛ [Nhyehyɛe](configuration#include-inline-pictures).
+- S/MIME nsain (signature) nkyekyɛmu no wɔpo wɔn firi adwuma ase: fael‑din te sɛ `smime.p7s` ne MIME type te sɛ `application/pkcs7-signature` anaa `application/pkcs7-mime` wɔgyae wɔn.
+- Blacklist nhyehyɛe betumi asɛe nnidisoɔ: hwɛ [Nhyehyɛe](configuration#blacklist-glob-patterns); pam no yɛ case‑insensitive na ɛfa fael‑din pɛ.
+- Fael‑din a ɛte pɛpɛɛpɛ menka ho bio: sɛ compose no wɔ fael bi a ne din ne nea ɛbɛka no te pɛpɛɛpɛ a, wɔgyae no.
+- Nkyekyɛmu a ɛnyɛ fael anaa fael‑din a wɔahwere: fã a ɛte sɛ fael na ɛwɔ fael‑din a wobɛtumi de di dwuma nko na wɔbɛka ho.
+
+---
+
+Hwɛ nso
+
+- [Nhyehyɛe](configuration)

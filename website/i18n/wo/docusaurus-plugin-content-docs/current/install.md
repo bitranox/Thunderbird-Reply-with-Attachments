@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Sosna'
+title: 'Samp'
 slug: /install
-sidebar_label: 'Sosna'
+sidebar_label: 'Istalasiyoŋ'
 ---
 
-## Sosna ci "Thunderbird Add-ons ak Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Dafa jeex Thunderbird Yuuyal
-Sosna bu ñuy wàcce add-on bi **128 ESR walla yeneen**. Version yu njëkk dañu sëriñ.
+## Istalaasioŋ ci “Thunderbird Add-ons and Themes” {#installation-in-thunderbird-recommended}
+
+:::important Sumbu Thunderbird wu najmadi
+Add‑on bii dafa dëggal Thunderbird **128 ESR walla yu bees**. Sumb yu gën ko xóot ñu ko dëggalul.
 :::
 
-Lii mooy sosna bu jeexal. Add-ons yu jot ci ATN (addons.thunderbird.net) amna àttan jëfandikoo. LOCAL/dev sosnañul àttan jëfandikoo.
+Lii mooy anam bi ñuy laaj. Yokk‑yokk yi ñu istale ci ATN (addons.thunderbird.net) dañuy jot yeesal otomatik. Istalaasioŋ LOCAL/dev du yeesal boppam.
 
-- Dafa jeex Thunderbird yuuyal: 128 ESR walla yeneen.
+- Sumbu Thunderbird wu najmadi: 128 ESR walla yu bees.
 
-1. Ci Thunderbird, joge ci **Tools > Add-ons ak Themes**.
-2. Soppali "reply with attachments".
-3. Jotee add-on bi.
+1. Ci Thunderbird, demal ci **Tools > Add-ons and Themes**.
+2. Seetal "reply with attachments".
+3. Istalel add‑on bi.
 
-Wall ak alal add-on bi ci: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Sosna bu nekk ci XPI {#local-installation-in-thunderbird}
-
-### Jottali XPI file bi {#download-the-xpi-file}
-
-1. Jogee ci [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Jottali version bu jëkk ci add-on bi ni XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Sosna ci Thunderbird {#install-in-thunderbird-local}
-
-1. Soor Thunderbird.
-2. Jogee ci **Tools > Add-ons ak Themes**.
-3. Ci **Add-ons Manager**, suqali icon bi ci kaw-gis.
-4. Rëw ci **Install Add-on From File…** ci menu bi.
-5. Sëggee XPI file bi `reply_with_attachments-x.y.z-tb.xpi`.
-6. Wënee sosna bi sooy jàngale.
+Walla ubbi xët add‑on bi bamu yoon: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Sosna ci jëlel {#installation-for-development}
+## Istalaasioŋ ci loxo ci XPI {#local-installation-in-thunderbird}
 
-### Jottali repository bi {#download-the-repository}
+### Yebbi fis XPI bi {#download-the-xpi-file}
 
-1. Jottali version bu jëkk ci GitHub repository bi.
-2. Jàppale `make help` ngir seetlu lien.
+1. Demal ci [xët Thunderbird Add‑on bi](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Yebbi sumbu bi gëna beesu add‑on bi muy fis XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Sosna ci Thunderbird {#install-in-thunderbird-dev}
+### Istalel ci Thunderbird {#install-in-thunderbird-local}
 
-1. Soor Thunderbird.
-2. Jogee ci **Tools > Add-ons ak Themes**.
-3. Ci **Add-ons Manager**, suqali icon bi ci kaw-gis.
-4. Rëw ci **Install Add-on From File…** ci menu bi.
-5. Sëggee file bi aada bu `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Wënee sosna bi sooy jàngale.
-
-Nota: Su Thunderbird mënul ànd ak `.zip` ci sa système, yewwi ko ci `.xpi` te jàpp “Install Add‑on From File…” bu baax.
-
-### Fu jéem LOCAL ZIP {#where-local-zip}
-
-- Lu jeex, boxal add‑on bi: jàppale `make pack` ci root bi.
-- Ba mu boxal, jëfandikoo “LOCAL” zip ci root bi (ndax, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Mbind bi ci true jéek, sañ-sañ ak version yi ci `sources/manifest_ATN.json` ak `sources/manifest_LOCAL.json`.
+1. Ubbi Thunderbird.
+2. Demal ci **Tools > Add-ons and Themes**.
+3. Ci **Add-ons Manager**, bëss palanteer bi am na beneen dencukaay (gear) ci kow ndeyjoor.
+4. Tann **Install Add-on From File…** ci menu bi.
+5. Tannal fis `reply_with_attachments-x.y.z-tb.xpi` bi nga yebbi.
+6. Dëggal istalaasioŋ bi su ñu la laaj.
 
 ---
 
-## Yewwi, Lekk, ak Updates {#disable-uninstall-updates}
+## Istalaasioŋ ngir defar (development) {#installation-for-development}
 
-- Yewwi: Thunderbird → Tools → Add‑ons ak Themes → cankoo add‑on bi → togglée off.
-- Lekk: sañ-sañ bi → three‑dot menu → Remove.
-- Updates: ATN installations àttan jëfandikoo sooy sédd, new versions ci jàngale. LOCAL/dev installations doo sükk, nangu jëfandikoo jéem LOCAL bi.
-- Wutee settings képp: bëgge [Privacy → Data removal](privacy#data-removal).
+### Yebbi repo bi {#download-the-repository}
 
-Wujj nag
+1. Yebbi sumbu bi gëna beesu repo GitHub bi.
+2. Dooral `make help` ngir xibaar yu gën bari.
 
-- [Quickstart](quickstart)
+### Istalel ci Thunderbird {#install-in-thunderbird-dev}
+
+1. Ubbi Thunderbird.
+2. Demal ci **Tools > Add-ons and Themes**.
+3. Ci **Add-ons Manager**, bëss palanteer bi am na beneen dencukaay (gear) ci kow ndeyjoor.
+4. Tann **Install Add-on From File…** ci menu bi.
+5. Tannal fis bi ñu génne `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Dëggal istalaasioŋ bi su ñu la laaj.
+
+Xamal: Bu Thunderbird bañee nangu `.zip` ci sa sistem, soppi turam ci `.xpi` te jéemaat “Install Add‑on From File…”.
+
+### Fa nga gën a gis LOCAL ZIP bi {#where-local-zip}
+
+- Jëkk, pakkal add‑on bi: dooral `make pack` ci boppu repo bi.
+- Ginnaaw pakk, gis “LOCAL” zip bi ci boppu repo bi (misal, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Laata nga pakkaat ngir test, yëkkati sumb yi ci ñaari fis yii: `sources/manifest_ATN.json` ak `sources/manifest_LOCAL.json`.
+
+---
+
+## Tëj, Dindi, ak Yeesal yi {#disable-uninstall-updates}
+
+- Tëj: Thunderbird → Tools → Add‑ons and Themes → seetal add‑on bi → toggale off.
+- Dindi: wone bi itam → menu “tànk-ñeent” (three‑dot) → Remove.
+- Yeesal yi: ATN dafay istale auto‑update bu ñu nangu sumb yu bees. Istalaasioŋ LOCAL/dev du auto‑update; istallelal sumbu LOCAL bu bees ci loxo.
+- Dindi réglaj yi lépp: xool [Sutura (Privacy) → Mabb donn yi (Data removal)](privacy#data-removal).
+
+Xool itam
+
+- [Nataalu gaaw](quickstart)

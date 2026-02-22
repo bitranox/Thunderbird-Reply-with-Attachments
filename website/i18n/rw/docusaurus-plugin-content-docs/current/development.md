@@ -4,294 +4,296 @@ title: 'Iterambere'
 sidebar_label: 'Iterambere'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Imfashanyigisho y'Iterambere {#development-guide}
+
+:::note Hindura Icyongereza gusa; ubusobanuro bukwirakwira
+Hindura inyandiko gusa muri `website/docs` (Icyongereza). Ubusobanuro buri muri `website/i18n/<locale>/…` buremwa ku buryo bwikora kandi ntibukwiriye guhindurwa intoki. Koresha imirimo yo gusemura (urugero, `make translate_web_docs_batch`) ukuze uvugurure ibikubiyemo byahinduwe mu ndimi.
 :::
 
-### Prerequisites {#prerequisites}
+### Ibisabwa by'ibanze {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ na npm (byapimwe na Node 22)
+- Thunderbird 128 ESR cyangwa iyisumbuyeho (ku kugerageza intoki)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Imiterere y’umushinga (ku rwego rusumbuye) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Imizi: senari yo gupakira `distribution_zip_packer.sh`, inyandiko, amashusho yafashwe kuri ecran
+- `sources/`: kode nyamukuru ya add‑on (munsi y'ibikorwa, amahitamo/popup UI, manifests, icons)
+- `tests/`: urutonde rwa Vitest
+- `website/`: inyandiko za Docusaurus (hamwe na i18n iri muri `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Kwinjiza no Ibikoresho {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Kwinjiza dependencies ku mizi: `npm ci`
+- Inyandiko (optional): `cd website && npm ci`
+- Reba targets: `make help`
+
+---
+
+### Iterambere ry’ako kanya (web‑ext run) {#live-dev-web-ext}
+
+- Umuzenguruko wihuse muri Firefox Desktop (UI smoke‑tests gusa):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Kwirukana muri Thunderbird (byiza kuri MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Inama:
+- Gumana Error Console ya Thunderbird ifunguye (Tools → Developer Tools → Error Console).
+- Amapaji ya MV3 event arahindukira igihe nta bikorwa bihari; ongeraho kongera gutangiza add‑on nyuma y’impinduka muri kode, cyangwa ureke web‑ext yisubiremo.
+- Bimwe mu myitwarire igenewe Firefox gusa iratandukana; buri gihe wemeze muri Thunderbird kugira ngo API ihure.
+- Inzira za bineri za Thunderbird (ingero):
+- Linux: `thunderbird` (urugero, `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Gukomatanya porofayi: Koresha porofayi ya Thunderbird itandukanye yo kw'iterambere kugira ngo utangize udashobora kwangiza imikoreshereze ya buri munsi.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make Targets (mu nyuguti) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile igena imigendekere isanzwe y’iterambere. Iruka `make help` igihe cyose kugira ngo ubone incamake y’umurongo umwe kuri buri target.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Inama: kwirukana `make` nta target bifungura menu yoroshye ya Whiptail yo guhitamo target.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Target                                                   | Ibisobanuro by’umurongo umwe                                                                     |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [`clean`](#mt-clean)                                     | Kuraho ibisigarira by’inyubako/irebwa ryo ku murongo (tmp/, web-local-preview/, website/build/). |
+| [`commit`](#mt-commit)                                   | Gufomata, gukoresha tests (harimo i18n), kuvugurura changelog, gukora commit no push.            |
+| [`eslint`](#mt-eslint)                                   | Gukoresha ESLint binyuze muri flat config (`npm run -s lint:eslint`).                            |
+| [`help`](#mt-help)                                       | Gutondeka targets zose n’inyandiko z’umurongo umwe (ziteguye).                                   |
+| [`lint`](#mt-lint)                                       | web‑ext lint kuri `sources/` (manifest ya by’agateganyo; yirengagiza ZIPs; ntibangamira).        |
+| [`menu`](#mt-menu)                                       | Menu ikorana (interactive) yo guhitamo target n’amasezerano (arguments) y'inyongera.             |
+| [`pack`](#mt-pack)                                       | Kubaka ZIPs za ATN & LOCAL (ikoresha linter; ihamagara packer script).                           |
+| [`prettier`](#mt-prettier)                               | Gufomata repository aho iri (yandika impinduka).                                                 |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier muri mode yo kugenzura (nta kwandika); itezwa imbere niba bisaba kongera gufomata.      |
+| [`prettier_write`](#mt-prettier_write)                   | Izina risimbura `prettier`.                                                                      |
+| [`test`](#mt-test)                                       | Prettier (write), ESLint, hanyuma Vitest (coverage niba yateguwe).                               |
+| [`test_i18n`](#mt-test_i18n)                             | Tests za i18n gusa: placeholders/parity za add‑on + parity y’urubuga.                            |
+| [`translate_app`](#mt-translation-app)                   | Izina risimbura `translation_app`.                                                               |
+| [`translation_app`](#mt-translation-app)                 | Guhindura imiterere ya UI ya porogaramu bivuye muri `sources/_locales/en/messages.json`.         |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Guhindura inyandiko z’urubuga ukoresheje OpenAI Batch API (byifuzwa).                            |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Guhindura inyandiko z’urubuga mu buryo buhuza ako kanya (legacy, non-batch).                     |
+| [`translate_web_index`](#mt-translation_web_index)       | Izina risimbura `translation_web_index`.                                                         |
+| [`translation_web_index`](#mt-translation_web_index)     | Guhindura UI ya homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`).     |
+| [`web_build`](#mt-web_build)                             | Kubaka inyandiko muri `website/build` (ishyigikira `--locales` / `BUILD_LOCALES`).               |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Kugenzura amalink ku murongo atiriho Internet (asimbuka HTTP[S] yo hanze).                       |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Igaragaza rya gh‑pages ryo mu rwego rw’aho; yikoresha kuri 8080–8090; optional tests/link‑check. |
+| [`web_push_github`](#mt-web_push_github)                 | Gukoresha push ya `website/build` kuri ishami `gh-pages`.                                        |
 
-Syntax for options
+Imikoreshereze y'amahitamo
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Koresha `make <command> OPTS="…"` mu gutambutsa amahitamo (gukoresha quotes birasabwa). Buri target hepfo igaragaza urugero rwo kuyikoresha.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Inama zo kubaka ku ndimi {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Kubaka agace k’indimi: shyiraho `BUILD_LOCALES="en de"` cyangwa utange `OPTS="--locales en,de"` kuri web targets.
+- Kureba indimi runaka: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Kubaka & Gupakira {#build-and-package}
 
-- Full suite: `make test` (Vitest)
+- Kubaka ZIPs: `make pack`
+- Ibisohoka ni ZIPs za ATN na LOCAL ku mizi ya repo (ntukahindure ibisohoka n’intoki)
+- Inama: vugurura verisiyo muri byombi `sources/manifest_ATN.json` na `sources/manifest_LOCAL.json` mbere yo gupakira
+- Kwinjiza intoki (iterambere): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → hitamo ZIP wubakiwe
+
+---
+
+### Igerageza {#test}
+
+- Urutonde rwose: `make test` (Vitest)
 - Coverage (optional):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Koresha `make test`; fungura `coverage/index.html` kugirango ubone raporo ya HTML
+- i18n gusa: `make test_i18n` (imfunguzo za UI/placeholders/titles + parity ya website kuri buri rurimi no kuri buri nyandiko n’igenzura rya id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Gukurikirana & Logs {#debugging-and-logs}
 
 - Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
+- Hindura logs zisesenguye mu gihe ikoreshwa:
+- Gukoresha: `messenger.storage.local.set({ debug: true })`
+- Guhagarika: `messenger.storage.local.set({ debug: false })`
+- Logs zigaragara mu gihe wandika/wohereza ibisubizo
 
 ---
 
-### Docs (website) {#docs-website}
+### Inyandiko (urubuga) {#docs-website}
 
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Seriveri y’iterambere: `cd website && npm run start`
+- Kubaka urubuga ruhamye: `cd website && npm run build`
+- Make zingana (mu nyuguti): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Ingero z’imikoreshereze:
+- EN gusa, skippa tests/link‑check, nta push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Indimi zose, hamwe na tests/link‑check, hanyuma push: `make web_build_local_preview && make web_push_github`
+- Mbere yo gusohora, kora igenzura rya links ritagendera kuri internet: `make web_build_linkcheck`.
+- i18n: Icyongereza kiri muri `website/docs/*.md`; ubusobanuro mu kidage buri muri `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Gushaka: Niba ibidukikije bya Algolia DocSearch byashyizwe muri CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), urubuga rukoresha Algolia search; ubundi rugaruka kuri local search. Ku rupapuro rw’itangiriro, kanda `/` cyangwa `Ctrl+K` kugira ngo ufungure akazu ko gushakisha.
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+#### Inzira yo gusubirayo yo gutanga inkunga {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Inzira: `/donate` (na `/<locale>/donate`)
+- Imikorere:
+- Niba inzira iriho ifite ururimi (urugero, `/de/donate`), rukoreshwe
+- Ubundi, hitamo ihura ryiza hagati ya `navigator.languages` n’indimi zateguwe; niba bidashobotse, ukoreshe ururimi rwa default
+- Igaragaza kuri:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- izindi → `/<locale>/docs/donation`
+- Ikoresha `useBaseUrl` kugira ngo igenzure neza baseUrl
+- Irimo meta refresh + isano ya `noscript` nk’inyongera y’inyuma
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Inama z’Igaragaza rya mbere {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Hagarika neza Node preview: fungura `http://localhost:<port>/__stop` (icapa nyuma ya `Local server started`).
+- Niba amashusho adakorwa muri MDX/JSX, koresha `useBaseUrl('/img/...')` kugira ngo wubahirize `baseUrl` y’urubuga.
+- Igaragaza ritangira mbere; igenzura ry’amalink rikurikira kandi ntiribuza (amalink yo hanze yavunitse ntazabuza preview).
+- Urugero rwa URL y’igaragaza: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (icapa nyuma ya “Local server started”).
+- Amalink yo hanze muri link‑check: Bimwe mu mbuga zo hanze (urugero, addons.thunderbird.net) zibuza abashakisha batomatiki kandi zishobora kugaragaza 403 mu igenzura ry’amalink. Preview iracyatangira; ibi biroroshye kwirengagizwa.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Hindura Urubuga {#translate-website}
 
-What you can translate
+Ibyo ushobora guhindura
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- UI y’urubuga gusa: homepage, navbar, footer, n’andi mazina ya UI. Ibirimo by’inyandiko biguma mu Cyongereza ubu.
 
-Where to edit
+Aho uhindurira
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Hindura `website/i18n/<locale>/code.json` (koresha `en` nk’icyitegererezo). Gumana placeholders nka `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` bidahinduwe.
 
-Generate or refresh files
+Kora cyangwa uvugurure dosiye
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Hindura cyangwa ukore stubs zibura z’indimi zose: `npm --prefix website run i18n:stubs`
+- Gusimbuza stubs uhereye ku Cyongereza (nyuma yo kongeramo imirongo mishya): `npm --prefix website run i18n:stubs:force`
+- Uburyo bw’inyongera kuri ururimi rumwe: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Hindura imirongo ya UI ya homepage/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Shyiraho ibyangombwa inshuro imwe (shell cyangwa .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Ku bushake: `export OPENAI_MODEL=gpt-4o-mini`
+- Rimwe gusa (indimi zose, usibye en): `make translate_web_index`
+- Gabanya ku ndimi runaka: `make translate_web_index OPTS="--locales de,fr"`
+- Simbuza agaciro gasanzweho: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Kugenzura no gusubiramo
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Script yo gusemura igenzura imiterere ya JSON, ikarinda placeholders z’udusode (curly braces), kandi igakomeza ko URLs zidahinduka.
+- Iyo kugenzura binaniranye, isubiramo ifite ibitekerezo inshuro zigeze kuri 2 mbere yo kugumana agaciro gasanzweho.
 
-Preview your locale
+Reba ururimi rwawe
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Seriveri y’iterambere: `npm --prefix website run start`
+- Sura `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Gutanga
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Fungura PR ifite dosiye(zi) za `code.json` wahinduye. Gumana impinduka zifashe neza kandi wongereho screenshot yihuse igihe bishoboka.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Inama z'Umutekano n’Igenamiterere {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Ntukore commit kuri `sources/manifest.json` (ikorwa by’akanya gato n’igihe cyo kubaka)
+- Gumana `browser_specific_settings.gecko.id` idahinduka kugira ngo urinde update channel
+
+---
+
+### Kuramba kw’Igenamiterere {#settings-persistence}
+
+- Ububiko: Amagenamiterere yose y’umukoresha abarizwa muri `storage.local` kandi arakomera no mu gihe habayeho updates za add‑on.
+- Kwinjiza: Ibisanzwe (defaults) bikoreshwa gusa iyo urufunguzo rubuze by’ukuri (undefined).
+- Kuvugurura: Migration yuzuzamo gusa imfunguzo zibuze; agaciro kariho ntikigera gasimbuzwa.
+- Ikimenyetso cya schema: `settingsVersion` (ubu `1`).
+- Utubari (keys) n’ibisanzwe:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kode: reba `sources/background.js` → `initializeOrMigrateSettings()` na `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Imikorere y’iterambere (kongeramo isetting nshya)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Zamuza `SCHEMA_VERSION` muri `sources/background.js`.
+- Ongeraho urufunguzo rushya + default mu kintu `DEFAULTS` muri `initializeOrMigrateSettings()`.
+- Koresha itegeko "only-if-undefined" mu gusakaza defaults; ntusimbuze agaciro kariho.
+- Niba isetting igaragara ku mukoresha, yihuza muri `sources/options.js` kandi wongereho imirongo yahinduwe mu ndimi.
+- Ongeramo/hindura tests (reba `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Inama zo kugerageza intoki
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
+- Gerekanya kwinjiza gishya: saba directory y’amakuru ya extension cyangwa tangira na porofayi nshya.
+- Gerekanya update: shyira `settingsVersion` kuri `0` muri `storage.local` hanyuma wongere u‑load; wemeze ko agaciro kariho kadasimbuwe kandi gusa imfunguzo zaburaga zongerwaho.
 
 ---
 
-### Troubleshooting {#troubleshooting}
+### Gukemura Ibibazo {#troubleshooting}
 
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Menya neza ko Thunderbird ari 128 ESR cyangwa hejuru
+- Koresha Error Console mu bibazo byo mu gihe cyo gukora
+- Niba amagenamiterere abitswe asa n’adafite imikorere nyayo, tangira bundi bushya Thunderbird kandi wongere ugerageze. (Thunderbird ishobora kubika imiterere hagati y’ibihe; kuyitangiza bundi bushya bituma isoma amagenamiterere mashya.)
 
 ---
 
 ### CI & Coverage {#ci-and-coverage}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
+- GitHub Actions (`CI — Tests`) ikoresha vitest n’imipaka ya coverage (85% lines/functions/branches/statements). Niba imipaka itagezweho, akazi karananirwa.
+- Workflow ishyiraho artifact `coverage-html` ifite raporo ya HTML; iyikure kuri page y’irushanwa (Actions → latest run → Artifacts).
 
 ---
 
-### Contributing {#contributing}
+### Gutanga Umusanzu {#contributing}
 
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
-
----
-
-### Translations
-
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- Reba CONTRIBUTING.md kugira ngo umenye amabwiriza ya branch/commit/PR
+- Inama: Kora porofayi y’iterambere ya Thunderbird itandukanye yo kugerageza kugira ngo udahungabanya porofayi ya buri munsi.
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Ubusobanuro bw’indimi
 
-Screenshots for docs
+- Gukoresha imirimo minini “all → all” yo gusemura bishobora gutinda kandi bikaba bihenze. Tangirira ku gice gito (nko ku nyandiko nke n’indimi 1–2), usuzume umusaruro, hanyuma wagure.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+- Politiki yo gusubiramo: imirimo yo gusemura ikora gusubiramo kugeza ku nshuro 3 hakoreshejwe exponential backoff ku makosa ya API; reba `scripts/translate_web_docs_batch.js` na `scripts/translate_web_docs_sync.js`.
+
+Amashusho yafashwe kuri ecran ku nyandiko
+
+- Bika amashusho munsi ya `website/static/img/`.
+- Ayavuge muri MD/MDX binyuze muri `useBaseUrl('/img/<filename>')` kugira ngo inzira zikorane n’iyo urubuga `baseUrl`.
+- Nyuma yo kongeramo cyangwa guha andi mazina amashusho munsi ya `website/static/img/`, emeza ko inzira zose zikoresha `useBaseUrl('/img/…')` kandi zigaragara mu igaragariza ryo mu rwego rw’aho.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` ifite ingano nyinshi ikorwa ku buryo bwikora mu nzira zose zo kubaka (Make + scripts) binyuze kuri `website/scripts/build-favicon.mjs`.
+- Nta ntambwe y’intoki ikenewe; kuvugurura `icon-*.png` birahagije.
+  Inama yo gusuzuma
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Gumana front‑matter `id` idahinduwe mu nyandiko zahinduwe; hindura gusa `title` na `sidebar_label` iyo bihari.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Intego: gukuraho ibisigarira by’inyubako/irebwa ryo ku murongo.
+- Uko ikoreshwa: `make clean`
+- Ikuraho (niba bihari):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Intego: gufomata, kugerageza, kuvugurura changelog, gukora commit, no gukora push.
+- Uko ikoreshwa: `make commit`
+- Ibisobanuro: ikoresha Prettier (write), `make test`, `make test_i18n`; yongereraho changelog iyo hari impinduka zashyizwe ku ruhande; ikora push kuri `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Intego: gukoresha ESLint binyuze muri flat config.
+- Uko ikoreshwa: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Intego: gutondeka targets zose n’inyandiko z’umurongo umwe.
+- Uko ikoreshwa: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Intego: kugenzura MailExtension ukoresheje `web-ext`.
+- Uko ikoreshwa: `make lint`
+- Ibisobanuro: gukoporora by’akanya gato `sources/manifest_LOCAL.json` → `sources/manifest.json`; yirengagiza ZIPs zubatswe; warnings ntizitera pipeline guhagarara.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Intego: menu ikorana yo guhitamo Make target n’amasezerano (arguments) y’inyongera.
+- Uko ikoreshwa: komeza `make` nta masezerano.
+- Ibisobanuro: niba `whiptail` itaboneka, menu igaruka kuri `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Intego: kubaka ZIPs za ATN na LOCAL (bishingiye kuri `lint`).
+- Uko ikoreshwa: `make pack`
+- Inama: zamuza verisiyo muri byombi `sources/manifest_*.json` mbere yo gupakira.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Intego: gufomata repo aho iri.
+- Uko ikoreshwa: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Intego: kugenzura ifomatike (nta kwandika).
+- Uko ikoreshwa: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Intego: izina risimbura `prettier`.
+- Uko ikoreshwa: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Intego: gukoresha Prettier (write), ESLint, hanyuma Vitest (coverage niba yashyizweho).
+- Uko ikoreshwa: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Intego: tests z’ijyanye na i18n ku mirongo ya add‑on n’inyandiko z’urubuga.
+- Uko ikoreshwa: `make test_i18n`
+- Ikora: `npm run test:i18n` na `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Intego: guhindura imirongo ya UI ya add‑on uvuye muri EN ujya mu zindi ndimi.
+- Uko ikoreshwa: `make translation_app OPTS="--locales all|de,fr"`
+- Ibisobanuro: ibika imiterere y’imfunguzo na placeholders; ishyira logs muri `translation_app.log`. Uburyo bwa script: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Intego: guhindura inyandiko z’urubuga uvuye muri `website/docs/*.md` ujya muri `website/i18n/<locale>/...`.
+- Byifuzwa: `translate_web_docs_batch` (OpenAI Batch API)
+  - Uko ikoreshwa (amabendera): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Uburyo bwa kera (positional) buracyakirwa: `OPTS="<doc|all> <lang|all>"`
+- Imikorere: yubaka JSONL, ikohereza, igenzura buri minota 30, ikuramo ibisubizo, ikandika dosiye.
+- Icyitonderwa: akazi ka batch gashobora gufata kugeza ku masaha 24 kurangira (ukurikije idirishya rya batch rya OpenAI). Console igaragaza igihe cyatambutse kuri buri igenzura.
+- Ibidukikije: `OPENAI_API_KEY` (bya ngombwa), ku bushake `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default amasaha 24), `BATCH_POLL_INTERVAL_MS`.
+- Uburyo bwa kera: `translate_web_docs_sync`
+  - Uko ikoreshwa (amabendera): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Uburyo bwa kera (positional) buracyakirwa: `OPTS="<doc|all> <lang|all>"`
+- Imikorere: ibisabwa byoherezwa ukoresheje uburyo buhuza ako kanya kuri buri mpanga (nta batch aggregation).
+- Ibisobanuro: Ibazwa ry’inyunganizi iyo `OPTS` itanzwe. Uburyo bwombi burinda code blocks/inline code kandi bugumana front‑matter `id` idahinduwe; logs zijya muri `translation_web_batch.log` (batch) cyangwa `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Intego: guhindura imirongo ya UI y’urubuga (homepage, navbar, footer) uvuye muri `website/i18n/en/code.json` ujya mu ndimi zose muri `website/i18n/<locale>/code.json` (usibye `en`).
+- Uko ikoreshwa: `make translate_web_index` cyangwa `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Ibisabwa: export `OPENAI_API_KEY` (ku bushake: `OPENAI_MODEL=gpt-4o-mini`).
+- Imikorere: igenzura imiterere ya JSON, irinda placeholders z’udusode, igakomeza URLs zidahindutse, kandi igasubiramo ifite ibitekerezo iyo habonetse amakosa yo kugenzura.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Intego: kubaka urubuga rw’inyandiko muri `website/build`.
+- Uko ikoreshwa: `make web_build OPTS="--locales en|de,en|all"` (cyangwa shyiraho `BUILD_LOCALES="en de"`)
+- Imikorere yo imbere: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Ibyo ishingiyeho: ikoresha `npm ci` muri `website/` gusa iyo `website/node_modules/@docusaurus` ibuze.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Intego: igenzura ryo ku mirongo ridakenera internet.
+- Uko ikoreshwa: `make web_build_linkcheck OPTS="--locales en|all"`
+- Ibisobanuro: yubakira muri `tmp_linkcheck_web_pages`; yandika GH Pages `baseUrl` muri `/`; isimbuka ama link yo hanze ya HTTP(S).
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Intego: igaragariza ryo mu rwego rw’aho rya gh‑pages rifite optional tests/link‑check.
+- Uko ikoreshwa: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Imikorere: ibanza kugerageza Node preview server (`scripts/preview-server.mjs`, ishyigikira `/__stop`), igasubira kuri `python3 -m http.server` niba bidakunze; itanga kuri 8080–8090; PID iri kuri `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Intego: gushyira `website/build` kuri ishami `gh-pages`.
+- Uko ikoreshwa: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Inama: shyiraho `NPM=…` kugira ngo usimbuze package manager ikoreshwa na Makefile (default ni `npm`).
 
 ---

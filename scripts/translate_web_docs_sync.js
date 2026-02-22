@@ -25,6 +25,13 @@ import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const FETCH_TIMEOUT_MS = Number(process.env.TRANSLATE_TIMEOUT_MS || 300_000);
+
+function fetchWithTimeout(url, opts) {
+  const ctrl = new globalThis.AbortController();
+  const timer = globalThis.setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => globalThis.clearTimeout(timer));
+}
 
 function readFile(p) {
   return fs.readFileSync(p, 'utf8');
@@ -110,7 +117,7 @@ async function callOpenAI(text, targetLang, locale) {
     const tv = Number(t);
     if (!Number.isNaN(tv)) payload.temperature = tv;
   }
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+  const res = await fetchWithTimeout('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify(payload),
@@ -153,7 +160,7 @@ async function callOpenAIShort(text, targetLang, locale) {
     const tv = Number(t);
     if (!Number.isNaN(tv)) payload.temperature = tv;
   }
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+  const res = await fetchWithTimeout('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify(payload),
@@ -381,7 +388,7 @@ function isLocaleToken(t) {
 }
 
 async function run() {
-  let args = process.argv.slice(2).filter(Boolean);
+  const args = process.argv.slice(2).filter(Boolean);
   // Support flags: --files <a,b> && --locales <l1,l2>
   const takeFlag = (names) => {
     const idx = args.findIndex((a) => names.some((n) => a === n || a.startsWith(n + '=')));
@@ -498,7 +505,7 @@ async function run() {
     }
     const en = readFile(srcPath);
     const { front, body } = splitFrontmatter(en);
-    let done = 0;
+    let _done = 0;
     for (const locale of locales) {
       try {
         // status line before processing this pair
@@ -507,7 +514,14 @@ async function run() {
           `\nStarting: ${doc} → ${locale} (${completedPairs + 1}/${totalPairs})\n`
         );
         logLine(`[PAIR-START] ${pairIso} file=${doc} locale=${locale}`);
-        const out = await translateMarkdown({ body, front }, locale, doc);
+        // Show a dot every 5s so the user knows the API call is in progress
+        const ticker = globalThis.setInterval(() => process.stdout.write('.'), 5000);
+        let out;
+        try {
+          out = await translateMarkdown({ body, front }, locale, doc);
+        } finally {
+          globalThis.clearInterval(ticker);
+        }
         if (!/^---\n[\s\S]*?\n---\n/.test(out + (out.endsWith('\n') ? '' : '\n'))) {
           logLine(
             `[FRONT] ${new Date().toISOString()} file=${doc} locale=${locale} final output missing front matter header`
@@ -521,7 +535,7 @@ async function run() {
           path.basename(doc)
         );
         writeFile(outPath, out);
-        done++;
+        _done++;
         completedPairs++;
         drawProgress();
         await sleep(200);

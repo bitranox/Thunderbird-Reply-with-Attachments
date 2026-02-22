@@ -1,7 +1,7 @@
 {
   "id": "install",
   "title": "Установка",
-  "description": "Установка через \"Дополнения и темы Thunderbird\"",
+  "description": "---",
   "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",

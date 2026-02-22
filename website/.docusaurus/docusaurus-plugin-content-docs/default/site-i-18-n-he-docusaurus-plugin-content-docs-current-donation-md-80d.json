@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "תר donations",
-  "description": "תר donations",
+  "title": "תרמו",
+  "description": "---",
   "source": "@site/i18n/he/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "תר donations",
-    "sidebar_label": "תר donations"
+    "title": "תרמו",
+    "sidebar_label": "תרומה"
   },
   "sidebar": "docs",
   "previous": {

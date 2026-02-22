@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Panduan Awal",
-  "description": "Quickstart",
+  "title": "Mulai Cepat",
+  "description": "---",
   "source": "@site/i18n/id/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Panduan Awal",
-    "sidebar_label": "Panduan Awal"
+    "title": "Mulai Cepat",
+    "sidebar_label": "Mulai Cepat"
   },
   "sidebar": "docs",
   "previous": {

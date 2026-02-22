@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "ઉપયોગ",
-  "description": "Usage",
+  "description": "---",
   "source": "@site/i18n/gu/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/configuration"
   },
   "next": {
-    "title": "સંગતતા",
+    "title": "સુસંગતતા",
     "permalink": "/Thunderbird-Reply-with-Attachments/gu/docs/compatibility"
   }
 }

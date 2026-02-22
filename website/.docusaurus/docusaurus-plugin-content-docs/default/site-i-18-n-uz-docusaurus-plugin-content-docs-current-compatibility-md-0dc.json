@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Mosliklar",
-  "description": "Compatibility",
+  "title": "Moslik",
+  "description": "---",
   "source": "@site/i18n/uz/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Mosliklar",
-    "sidebar_label": "Mosliklar"
+    "title": "Moslik",
+    "sidebar_label": "Moslik"
   },
   "sidebar": "docs",
   "previous": {

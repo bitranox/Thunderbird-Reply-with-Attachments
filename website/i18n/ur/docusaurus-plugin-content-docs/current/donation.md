@@ -1,31 +1,33 @@
 ---
 id: donation
-title: 'عطیہ دیں'
-sidebar_label: 'عطیہ دیں'
+title: 'عطیہ کریں'
+sidebar_label: 'عطیہ کریں'
 ---
 
-## Donate
+---
+
+## عطیہ دیں
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+اگر آپ کو "Reply with Attachments" پسند ہے اور آپ اس کی ترقی کی معاونت کرنا چاہتے ہیں، تو آپ یہاں عطیہ دے سکتے ہیں:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Donate via Stripe" width="320" height="64"
+    <img src={useBaseUrl('/img/stripe-donate-button.svg')} alt="Stripe کے ذریعے عطیہ دیں" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>یا</div>
   <a href="https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="Donate via PayPal" width="320" height="64"
+    <img src={useBaseUrl('/img/paypal-donate-button.svg')} alt="PayPal کے ذریعے عطیہ دیں" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
-  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>or</div>
+  <div style={{ opacity: 0.7, fontSize: '0.9rem' }}>یا</div>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw', height: '64px' }}>
-    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="Buy me a coffee" width="320" height="64"
+    <img src={useBaseUrl('/img/buymeacoffee-donate-button.svg')} alt="مجھے ایک کافی خریدیں" width="320" height="64"
          style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
   </a>
 </div>
@@ -34,55 +36,55 @@ If you like "Reply with Attachments" and want to support its development, you ca
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0 28px' }}>
   <a href="https://buymeacoffee.com/bitranox" target="_blank" rel="noopener noreferrer"
      style={{ display: 'inline-block', width: '320px', maxWidth: '90vw' }}>
-    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="Scan to buy me a coffee"
+    <img src={useBaseUrl('/img/buy_me_a_coffee_qrcode.png')} alt="مجھے کافی خریدنے کے لیے اسکین کریں"
          width="280" style={{ width: '280px', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+شکریہ! آپ کی معاونت نئے Thunderbird اجراء کے ساتھ مطابقت برقرار رکھنے، رسائی پذیری اور ٹیسٹس کو بہتر بنانے، اور دستاویزات کو تازہ رکھنے میں مدد دیتی ہے.
 
-Notes
+نوٹس
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- عطیہ کے روابط صرف آپ کے کلک کرنے پر ہی کھلتے ہیں؛ ایڈ‑آن کوئی پس منظر میں نیٹ ورک درخواستیں نہیں بھیجتا۔
+- مسلسل معاونت طویل مدتی دیکھ بھال اور بروقت اپڈیٹس میں مدد دیتی ہے، لیکن یہ مکمل طور پر اختیاری ہے۔
 
 ---
 
-If the image buttons do not load, please use these links instead:
+اگر تصویری بٹن لوڈ نہیں ہوتے، تو براہ کرم ان متبادل روابط کا استعمال کریں:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Buy me a Coffee](https://buymeacoffee.com/bitranox)
+#### [مجھے ایک کافی خریدیں](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donations are voluntary; there is no feature gating.
+عطیات رضاکارانہ ہیں؛ خصوصیات کی رسائی پر کوئی پابندی نہیں ہے۔
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## عطیہ کی نمائش (90 دن کا توقف)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+ایڈ‑آن میں سہولت کے لیے ایک فیچر شامل ہے جو آپ کے عطیہ دینے کے بعد کچھ عرصے کے لیے عطیہ کے پرامپٹس کو چھپا دیتا ہے۔
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- اسے کہاں تلاش کریں
+  - اختیارات → معاونت سیکشن: آپ کو “میں نے عطیہ دیا” بٹن اور ایک چھوٹا اشارہ نما حصہ نظر آئے گا۔
+  - Send‑confirmation ڈائیلاگ میں بھی ایک عطیہ بٹن ہوتا ہے؛ جب توقف فعال ہو تو یہ خود بخود چھپ جاتا ہے۔
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- یہ کیسے کام کرتا ہے
+  - “میں نے عطیہ دیا” پر کلک کرنے سے 90 دن کے لیے عطیہ کے بٹن اور متعلقہ پرامپٹس چھپ جاتے ہیں۔
+  - اسٹیٹس اشارہ “YYYY‑MM‑DD تک مخفی” (آپ کی مقامی تاریخ میں) دکھاتا ہے۔ فوری طور پر دوبارہ دکھانے کے لیے “عطیہ دوبارہ دکھائیں” بٹن بھی موجود ہے۔
+  - 90 دن کے بعد عطیہ بٹن خود بخود دوبارہ نظر آنے لگتا ہے۔
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- رازداری اور ذخیرہ
+  - یہ ایڈ‑آن توقف کی مدت یاد رکھنے کے لیے Thunderbird کے مقامی اسٹوریج میں ایک واحد ٹائم اسٹیمپ محفوظ کرتا ہے۔ کلید: `donateHideUntil` (ایپوک ملی سیکنڈز)۔
+  - یہ سیٹنگ آپ کے Thunderbird پروفائل تک مقامی ہے (کلاؤڈ سے ہم آہنگ نہیں ہوتی)۔ اس فیچر کے ذریعے کوئی نیٹ ورک درخواستیں نہیں بھیجی جاتیں۔
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- مشکلات کا حل
+  - اگر “میں نے عطیہ دیا” پر کلک کرنے کے فوراً بعد بھی عطیہ دکھ رہا ہو، تو کچھ دیر انتظار کریں یا اختیارات صفحہ دوبارہ کھولیں؛ سیٹنگ محفوظ ہوتے ہی انٹرفیس اپ ڈیٹ ہو جاتا ہے۔
+  - دستی طور پر ری سیٹ کرنے کے لیے “عطیہ دوبارہ دکھائیں” پر کلک کریں۔ آپ اشارے میں درج تاریخ گزرنے تک انتظار بھی کر سکتے ہیں۔
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+یہ فیچر محض سہولت کے لیے ہے؛ یہ کبھی بھی ایڈ‑آن کی فعالیت کو مسدود نہیں کرتا اور کوئی ذاتی ڈیٹا جمع نہیں کرتا۔
 
 ---

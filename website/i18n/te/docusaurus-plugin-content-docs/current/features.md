@@ -1,34 +1,43 @@
 ---
 id: features
-title: ' లక్షణాలు'
-sidebar_label: ' లక్షణాలు'
+title: 'లక్షణాలు'
+sidebar_label: 'లక్షణాలు'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## లక్షణాలు {#features}
 
-## How It Works {#how-it-works}
+- స్పందించినప్పుడు అసలు ఇమెయిల్‌లోని ఫైళ్లను స్వయంచాలకంగా జత చేస్తుంది.
+- సర్దుబాటు చేయదగిన ప్రవర్తన: అనుబంధాలు ఇలా ఉండవచ్చు
+  - స్వయంచాలకంగా జత చేయబడటం, లేదా
+  - నిర్ధారణ తర్వాత మాత్రమే జత చేయబడటం (చిన్న, అందుబాటులో ఉండే డైలాగ్). Options లో మీరు
+    నిర్ధారణను ఎనేబుల్ చేసి డిఫాల్ట్ సమాధానాన్ని (Yes/No) ఎంచుకోవచ్చు.
+- ఫైల్ పేర్ల బ్లాక్‌లిస్ట్ (glob patterns) కొన్ని నిర్దిష్ట ఫైళ్లను
+  ఆటోమేటిక్‌గా జత చేయకుండా నిరోధిస్తుంది. ఉదాహరణలు: `*intern*`, `*secret*`, `*passwor*`.
+  సరిపోలింపు కేస్‌కు సంబంధం లేకుండా జరుగుతుంది మరియు కేవలం ఫైల్ పేరునే తనిఖీ చేస్తుంది; ప్రతి నమూనాను
+  Options లో ఒక్క పంక్తికి ఒకటి చొప్పున ఇవ్వండి.
+- బ్లాక్‌లిస్ట్ హెచ్చరిక (ఐచ్చికం, డిఫాల్ట్‌గా ఎనేబుల్ చేయబడి ఉంటుంది): మీ
+  బ్లాక్‌లిస్ట్ వల్ల ఫైళ్లను మినహాయించినప్పుడు, ఒక చిన్న మోడల్ ఆ ఫైల్ మరియు సరిపోలిన నమూనా(లు)ను చూపిస్తుంది. డార్క్‑మోడ్‌కు
+  అనుకూలంగా ఉండి కీబోర్డ్ ద్వారా సులభంగా చేరుకోవచ్చు (మూసేందుకు Enter/Esc).
+- Reply మరియు Reply all తో పనిచేస్తుంది. Forward ను ఈ యాడ్‑ఆన్ మార్చదు.
+- మీరు ఇప్పటికే ఏదైనా జతచేసినా కూడా అసలులను జత చేస్తుంది; ఫైల్ పేరుతో డుప్లికేట్లను నివారిస్తుంది.
+- ప్రతి ట్యాబ్ స్థాయి డుప్లికేట్ గార్డ్, అదే కంపోజ్ ట్యాబ్‌లో రెండుసార్లు జతచేయడాన్ని నివారిస్తుంది.
+- అవసరం లేని అనుబంధాలను నివారించడానికి డిఫాల్ట్‌గా S/MIME ధృవపత్రాలను దాటవేస్తుంది.
+- ఇన్‌లైన్ చిత్రాలను చేర్చండి (డిఫాల్ట్: ON). ఎంబెడెడ్ చిత్రాలు
+  అసలైన ఇన్‌లైన్ అమరికను కాపాడుతూ ప్రత్యుత్తర బాడీలో నేరుగా base64 data URIs రూపంలో పునరుద్ధరించబడతాయి. పూర్తిగా ఇన్‌లైన్ చిత్రాలను దాటవేయాలనుకుంటే
+  Options లో అచేతనం చేయండి.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## ఇది ఎలా పనిచేస్తుంది {#how-it-works}
+
+- స్పందన ఇచ్చినప్పుడు, యాడ్‑ఆన్ అసలు అనుబంధాలను జాబితా చేస్తుంది.
+- ఫైల్ అనుబంధాల నుంచి S/MIME సంతకాలను వడపోస్తుంది; ఇన్‌లైన్ చిత్రాలు బాడీలో పునరుద్ధరించబడతాయి (అచేతనం చేయలేదంటే).
+- ఐచ్చికంగా నిర్ధారణ కోరుతుంది (కీబోర్డ్‌-ఫ్రెండ్లీ).
+- ఫైల్ పేరుల ఆధారంగా డుప్లికేట్లు రాకుండా, అర్హమైన ఫైళ్లను మీ కంపోజ్‌లో జత చేస్తుంది.
+- అంచనా వెలుపలి సందర్భాల కోసం Usage లోని “Why attachments might not be added” ని చూడండి.
+
+గోప్యత గమనిక: మొత్తం ప్రాసెసింగ్ Thunderbird లో స్థానికంగా జరుగుతుంది. ఈ యాడ్‑ఆన్ ఎలాంటి నేపథ్యంలో నెట్‌వర్క్ అభ్యర్థనలు చేయదు.
+
+---

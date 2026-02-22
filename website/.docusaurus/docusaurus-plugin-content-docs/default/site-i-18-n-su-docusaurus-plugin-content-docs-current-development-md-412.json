@@ -1,7 +1,7 @@
 {
   "id": "development",
   "title": "Pangembangan",
-  "description": "Development Guide",
+  "description": "---",
   "source": "@site/i18n/su/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "development",
     "title": "Pangembangan",
-    "sidebar_label": "Pangembangan"
+    "sidebar_label": "Pamekaran"
   },
   "sidebar": "docs",
   "previous": {

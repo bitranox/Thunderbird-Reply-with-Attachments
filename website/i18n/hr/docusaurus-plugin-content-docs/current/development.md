@@ -4,294 +4,296 @@ title: 'Razvoj'
 sidebar_label: 'Razvoj'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Vodič za razvoj {#development-guide}
+
+:::note Uređujte samo englesku verziju; prijevodi se propagiraju
+Ažurirajte dokumentaciju samo pod `website/docs` (engleski). Prijevodi pod `website/i18n/<locale>/…` generiraju se i ne bi ih trebalo uređivati ručno. Upotrijebite zadatke za prijevod (npr. `make translate_web_docs_batch`) za osvježavanje lokaliziranog sadržaja.
 :::
 
-### Prerequisites {#prerequisites}
+### Preduvjeti {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ i npm (testirano s Node 22)
+- Thunderbird 128 ESR ili noviji (za ručno testiranje)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Struktura projekta (na visokoj razini) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Korijen: skripta za pakiranje `distribution_zip_packer.sh`, dokumentacija, snimke zaslona
+- `sources/`: glavni kôd dodatka (pozadina, UI opcija/skočnog prozora, manifesti, ikone)
+- `tests/`: skup testova Vitest
+- `website/`: Docusaurus dokumentacija (s i18n pod `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Instalacija i alati {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Instaliraj korijenske ovisnosti: `npm ci`
+- Dokumentacija (neobavezno): `cd website && npm ci`
+- Otkrij ciljeve: `make help`
+
+---
+
+### Razvoj uživo (web‑ext run) {#live-dev-web-ext}
+
+- Brza petlja u Firefox Desktopu (samo osnovni UI testovi):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Pokreni u Thunderbirdu (preporučeno za MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Savjeti:
+- Držite otvorenu Thunderbirdovu Konzolu pogrešaka (Alati → Alati za razvojne programere → Konzola pogrešaka).
+- MV3 stranice s događajima suspendiraju se kada su neaktivne; ponovno učitajte dodatak nakon promjena u kodu ili dopustite da web‑ext automatski ponovno učita.
+- Neka ponašanja specifična za Firefox razlikuju se; uvijek provjerite u Thunderbirdu radi pariteta API‑ja.
+- Putanje binarki Thunderbirda (primjeri):
+- Linux: `thunderbird` (npr. `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Izolacija profila: koristite zaseban Thunderbird profil za razvoj kako biste izbjegli utjecaj na vašu svakodnevnu postavu.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Make ciljevi (abecednim redom) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile standardizira uobičajene razvojne tokove. Pokrenite `make help` bilo kada za jednoredni sažetak svakog cilja.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Savjet: pokretanje `make` bez cilja otvara jednostavni Whiptail izbornik za odabir cilja.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Cilj                                                     | Jednoredni opis                                                                                       |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Ukloni lokalne artefakte izgradnje/pregleda (tmp/, web-local-preview/, website/build/).               |
+| [`commit`](#mt-commit)                                   | Formatiraj, pokreni testove (uklj. i18n), ažuriraj dnevnik promjena, commitaj i pushaj.               |
+| [`eslint`](#mt-eslint)                                   | Pokreni ESLint putem ravne konfiguracije (`npm run -s lint:eslint`).                                  |
+| [`help`](#mt-help)                                       | Popiši sve ciljeve s jednorednim opisima (sortirano).                                                 |
+| [`lint`](#mt-lint)                                       | web‑ext lint nad `sources/` (privremeni manifest; ignorira ZIP‑ove; ne‑fatalno).                      |
+| [`menu`](#mt-menu)                                       | Interaktivni izbornik za odabir cilja i neobaveznih argumenata.                                       |
+| [`pack`](#mt-pack)                                       | Izgradi ATN i LOCAL ZIP‑ove (pokreće linter; poziva skriptu za pakiranje).                            |
+| [`prettier`](#mt-prettier)                               | Formatira repozitorij na mjestu (zapisuje promjene).                                                  |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier u check modu (bez pisanja); pada ako je potrebno preformatiranje.                            |
+| [`prettier_write`](#mt-prettier_write)                   | Alias za `prettier`.                                                                                  |
+| [`test`](#mt-test)                                       | Prettier (pisanje), ESLint, zatim Vitest (pokrivenost ako je konfigurirano).                          |
+| [`test_i18n`](#mt-test_i18n)                             | Samo i18n testovi: rezervirana mjesta/paritet dodatka + paritet web‑stranice.                         |
+| [`translate_app`](#mt-translation-app)                   | Alias za `translation_app`.                                                                           |
+| [`translation_app`](#mt-translation-app)                 | Prevedi UI stringove aplikacije iz `sources/_locales/en/messages.json`.                               |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Prevedi web dokumentaciju putem OpenAI Batch API‑ja (preporučeno).                                    |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Prevedi web dokumentaciju sinkrono (naslijeđeno, bez batcha).                                         |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias za `translation_web_index`.                                                                     |
+| [`translation_web_index`](#mt-translation_web_index)     | Prevedi UI početne stranice/navigacije/podnožja (`website/i18n/en/code.json → .../<lang>/code.json`). |
+| [`web_build`](#mt-web_build)                             | Izgradi dokumente u `website/build` (podržava `--locales` / `BUILD_LOCALES`).                         |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Provjera poveznica sigurna za offline (preskače udaljene HTTP[S]).                                    |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Lokalni gh‑pages pregled; automatski poslužuje na 8080–8090; opcionalni testovi/provjera poveznica.   |
+| [`web_push_github`](#mt-web_push_github)                 | Gurni `website/build` na granu `gh-pages`.                                                            |
 
-Syntax for options
+Sintaksa za opcije
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Koristite `make <command> OPTS="…"` za prosljeđivanje opcija (preporučeni navodnici). Svaki cilj dolje prikazuje primjer upotrebe.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Savjeti za izgradnju za jezike {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Izgradite podskup lokalizacija: postavite `BUILD_LOCALES="en de"` ili proslijedite `OPTS="--locales en,de"` web ciljevima.
+- Pregled određenog jezika: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Izgradnja i pakiranje {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Izgradite ZIP‑ove: `make pack`
+- Stvara ATN i LOCAL ZIP‑ove u korijenu repozitorija (ne uređujte artefakte ručno)
+- Savjet: ažurirajte verziju i u `sources/manifest_ATN.json` i u `sources/manifest_LOCAL.json` prije pakiranja
+- Ručna instalacija (dev): Thunderbird → Alati → Dodaci i teme → zupčanik → Install Add‑on From File… → odaberite izgrađeni ZIP
+
+---
+
+### Testiranje {#test}
+
+- Puni paket: `make test` (Vitest)
+- Pokrivenost (neobavezno):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Pokrenite `make test`; otvorite `coverage/index.html` za HTML izvješće
+- Samo i18n: `make test_i18n` (UI ključevi/rezervirana mjesta/naslovi + paritet web‑stranice po jeziku i dokumentu s provjerama id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Otklanjanje pogrešaka i logovi {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Konzola pogrešaka: Alati → Alati za razvojne programere → Konzola pogrešaka
+- Uključi/isključi opširne logove u izvođenju:
+- Uključi: `messenger.storage.local.set({ debug: true })`
+- Isključi: `messenger.storage.local.set({ debug: false })`
+- Logovi se pojavljuju tijekom sastavljanja/slanja odgovora
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Dokumentacija (web‑stranica) {#docs-website}
+
+- Razvojni poslužitelj: `cd website && npm run start`
+- Izgradi statičku stranicu: `cd website && npm run build`
+- Make ekvivalenti (abecedno): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Primjeri upotrebe:
+- Samo EN, preskoči testove/provjeru poveznica, bez pushanja: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Svi jezici, s testovima/provjerom poveznica, zatim push: `make web_build_local_preview && make web_push_github`
+- Prije objave pokrenite provjeru poveznica sigurnu za offline: `make web_build_linkcheck`.
+- i18n: Engleski je u `website/docs/*.md`; njemački prijevodi u `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Pretraživanje: Ako su Algolia DocSearch varijable okoline postavljene u CI‑ju (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), stranica koristi Algolia pretraživanje; u suprotnom se vraća na lokalno pretraživanje. Na početnoj stranici pritisnite `/` ili `Ctrl+K` za otvaranje okvira za pretraživanje.
+
+---
+
+#### Ruta preusmjeravanja donacija {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Ruta: `/donate` (i `/<locale>/donate`)
+- Ponašanje:
+- Ako trenutna ruta ima lokalitet (npr. `/de/donate`), upotrijebite ga
+- Inače, odaberite najbolji podudarnik iz `navigator.languages` prema konfiguriranim jezicima; vratite se na zadani jezik
+- Preusmjerava na:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- ostale → `/<locale>/docs/donation`
+- Koristi `useBaseUrl` za ispravno rukovanje baseUrl‑om
+- Uključuje meta refresh + `noscript` poveznicu kao rezervu
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Savjeti za pregled {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Čisto zaustavite Node pregled: otvorite `http://localhost:<port>/__stop` (ispisano nakon `Local server started`).
+- Ako se slike ne učitavaju u MDX/JSX, koristite `useBaseUrl('/img/...')` kako biste poštovali `baseUrl` web‑mjesta.
+- Pregled započinje prvo; provjera poveznica pokreće se nakon i ne blokira (pokvarene vanjske poveznice neće zaustaviti pregled).
+- Primjer URL‑a pregleda: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (ispisano nakon “Local server started”).
+- Vanjske poveznice u provjeri poveznica: Neka vanjska web‑mjesta (npr. addons.thunderbird.net) blokiraju automatizirane crawlere i mogu prikazati 403 u provjerama poveznica. Pregled se i dalje pokreće; ovo je sigurno ignorirati.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Prevedite web‑stranicu {#translate-website}
 
-What you can translate
+Što možete prevesti
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Samo UI web‑stranice: početna stranica, navigacija, podnožje i ostali UI stringovi. Sadržaj dokumenata za sada ostaje samo na engleskom.
 
-Where to edit
+Gdje uređivati
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Uredite `website/i18n/<locale>/code.json` (koristite `en` kao referencu). Zadržite rezervirana mjesta poput `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` nepromijenjenima.
 
-Generate or refresh files
+Generiranje ili osvježavanje datoteka
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Kreirajte nedostajuće stubove za sve jezike: `npm --prefix website run i18n:stubs`
+- Prepišite stubove iz engleskog (nakon dodavanja novih stringova): `npm --prefix website run i18n:stubs:force`
+- Alternativa za jedan jezik: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Prevedite UI stringove početne stranice/navigacije/podnožja (OpenAI)
 
-- Set credentials once (shell or .env):
+- Postavite vjerodajnice jednom (shell ili .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Neobavezno: `export OPENAI_MODEL=gpt-4o-mini`
+- Jednokratno (svi jezici, bez en): `make translate_web_index`
+- Ograniči na određene jezike: `make translate_web_index OPTS="--locales de,fr"`
+- Prepiši postojeće vrijednosti: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Validacija i ponovni pokušaji
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Skripta za prijevod validira oblik JSON‑a, čuva rezervirana mjesta u vitičastim zagradama i osigurava da URL‑ovi ostanu nepromijenjeni.
+- U slučaju neuspjele validacije, pokušava ponovno s povratnom informacijom do 2 puta prije nego što zadrži postojeće vrijednosti.
 
-Preview your locale
+Pregledajte svoj jezik
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Razvojni poslužitelj: `npm --prefix website run start`
+- Posjetite `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Slanje
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Otvorite PR s uređenim datotekama `code.json`. Održite promjene fokusiranima i uključite brzi screenshot kad je moguće.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Savjeti za sigurnost i konfiguraciju {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Ne committajte `sources/manifest.json` (privremeno stvoren tijekom izgradnje)
+- Zadržite `browser_specific_settings.gecko.id` stabilnim kako biste sačuvali kanal ažuriranja
+
+---
+
+### Postojanost postavki {#settings-persistence}
+
+- Pohrana: Sve korisničke postavke nalaze se u `storage.local` i ostaju postojane kroz ažuriranja dodatka.
+- Instalacija: Zadane vrijednosti primjenjuju se samo kada ključ strogo nedostaje (undefined).
+- Ažuriranje: Migracija popunjava samo nedostajuće ključeve; postojeće vrijednosti se nikada ne prepisuju.
+- Oznaka sheme: `settingsVersion` (trenutno `1`).
+- Ključevi i zadane vrijednosti:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Kod: vidi `sources/background.js` → `initializeOrMigrateSettings()` i `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Razvojni tijek rada (dodavanje nove postavke)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Povećajte `SCHEMA_VERSION` u `sources/background.js`.
+- Dodajte novi ključ + zadanu vrijednost u objekt `DEFAULTS` u `initializeOrMigrateSettings()`.
+- Koristite pravilo "samo‑ako‑je‑undefined" pri inicijalnom postavljanju zadanih vrijednosti; ne prepisujte postojeće vrijednosti.
+- Ako je postavka vidljiva korisniku, povežite je u `sources/options.js` i dodajte lokalizirane stringove.
+- Dodajte/prilagodite testove (vidi `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Savjeti za ručno testiranje
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simulirajte svježu instalaciju: obrišite direktorij podataka proširenja ili započnite s novim profilom.
+- Simulirajte ažuriranje: postavite `settingsVersion` na `0` u `storage.local` i ponovno učitajte; potvrdite da postojeće vrijednosti ostaju nepromijenjene i da se dodaju samo nedostajući ključevi.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Rješavanje problema {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Provjerite da je Thunderbird 128 ESR ili noviji
+- Koristite Konzolu pogrešaka za probleme u izvođenju
+- Ako se čini da se pohranjene postavke ne primjenjuju pravilno, ponovno pokrenite Thunderbird i pokušajte ponovno. (Thunderbird može keširati stanje kroz sesije; ponovno pokretanje osigurava učitavanje svježih postavki.)
 
 ---
 
-### Translations
+### CI i pokrivenost {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) pokreće vitest s pragovima pokrivenosti (85% linije/funkcije/grane/izrazi). Ako pragovi nisu ispunjeni, posao pada.
+- Tijek rada učitava artefakt `coverage-html` s HTML izvješćem; preuzmite ga sa stranice pokretanja (Actions → najnovije pokretanje → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Doprinos {#contributing}
 
-Screenshots for docs
+- Pogledajte CONTRIBUTING.md za smjernice o granama/commitovima/PR‑ovima
+- Savjet: Kreirajte zaseban Thunderbird razvojni profil za testiranje kako biste izbjegli utjecaj na svoj svakodnevni profil.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
-  Favicons
+---
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+### Prijevodi
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Pokretanje velikih poslova prevođenja “sve → sve” može biti sporo i skupo. Započnite s podskupom (npr. nekoliko dokumenata i 1–2 jezika), pregledajte rezultat, zatim proširite.
+
+---
+
+- Politika ponovnih pokušaja: poslovi prijevoda izvode do 3 ponovna pokušaja s eksponencijalnim backoffom na pogreškama API‑ja; vidi `scripts/translate_web_docs_batch.js` i `scripts/translate_web_docs_sync.js`.
+
+Snimke zaslona za dokumentaciju
+
+- Pohranite slike pod `website/static/img/`.
+- Referencirajte ih u MD/MDX putem `useBaseUrl('/img/<filename>')` kako bi putanje radile s `baseUrl` web‑mjesta.
+- Nakon dodavanja ili preimenovanja slika pod `website/static/img/`, potvrdite da sve reference i dalje koriste `useBaseUrl('/img/…')` i da se renderiraju u lokalnom pregledu.
+  Favikone
+
+- Viševeličinski `favicon.ico` generira se automatski u svim putanjama izgradnje (Make + skripte) putem `website/scripts/build-favicon.mjs`.
+- Nije potreban nikakav ručni korak; dovoljno je ažurirati `icon-*.png`.
+  Savjet za pregled
+
+- Zadržite front‑matter `id` nepromijenjen u prevedenim dokumentima; prevedite samo `title` i `sidebar_label` kada su prisutni.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Svrha: ukloniti lokalne artefakte izgradnje/pregleda.
+- Upotreba: `make clean`
+- Uklanja (ako je prisutno):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Svrha: formatirati, testirati, ažurirati dnevnik promjena, commitati i pushati.
+- Upotreba: `make commit`
+- Detalji: pokreće Prettier (pisanje), `make test`, `make test_i18n`; dodaje dnevnik promjena kada postoje postavljene razlike; push na `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Svrha: pokrenuti ESLint putem ravne konfiguracije.
+- Upotreba: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Svrha: popisati sve ciljeve s jednorednim opisima.
+- Upotreba: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Svrha: lintati MailExtension koristeći `web-ext`.
+- Upotreba: `make lint`
+- Napomene: privremeno kopira `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignorira izgrađene ZIP‑ove; upozorenja ne ruše pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Svrha: interaktivni izbornik za odabir Make cilja i neobaveznih argumenata.
+- Upotreba: pokrenite `make` bez argumenata.
+- Napomene: ako `whiptail` nije dostupan, izbornik se vraća na `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Svrha: izgraditi ATN i LOCAL ZIP‑ove (ovisi o `lint`).
+- Upotreba: `make pack`
+- Savjet: povećajte verzije u oba `sources/manifest_*.json` prije pakiranja.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Svrha: formatirati repozitorij na mjestu.
+- Upotreba: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Svrha: provjeriti formatiranje (bez pisanja).
+- Upotreba: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Svrha: alias za `prettier`.
+- Upotreba: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Svrha: pokrenuti Prettier (pisanje), ESLint, zatim Vitest (pokrivenost ako je instalirana).
+- Upotreba: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Svrha: i18n‑fokusirani testovi za stringove dodatka i dokumente web‑stranice.
+- Upotreba: `make test_i18n`
+- Pokreće: `npm run test:i18n` i `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Svrha: prevesti UI stringove dodatka iz EN u druge jezike.
+- Upotreba: `make translation_app OPTS="--locales all|de,fr"`
+- Napomene: čuva strukturu ključeva i rezervirana mjesta; zapisuje u `translation_app.log`. Skripta: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Svrha: prevesti web dokumente iz `website/docs/*.md` u `website/i18n/<locale>/...`.
+- Preferirano: `translate_web_docs_batch` (OpenAI Batch API)
+  - Upotreba (zastavice): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Naslijeđeni pozicijski se i dalje prihvaća: `OPTS="<doc|all> <lang|all>"`
+- Ponašanje: gradi JSONL, učitava, provjerava svakih 30 s, preuzima rezultate, zapisuje datoteke.
+- Napomena: batch posao može potrajati do 24 sata (prema OpenAI prozoru). Konzola prikazuje proteklo vrijeme pri svakoj provjeri.
+- Okolina: `OPENAI_API_KEY` (obavezno), neobavezno `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (zadano 24h), `BATCH_POLL_INTERVAL_MS`.
+- Naslijeđeno: `translate_web_docs_sync`
+  - Upotreba (zastavice): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Naslijeđeni pozicijski se i dalje prihvaća: `OPTS="<doc|all> <lang|all>"`
+- Ponašanje: sinkrone zahtjeve po paru (bez batch agregacije).
+- Napomene: Interaktivni upiti kada je `OPTS` izostavljen. Oba moda čuvaju blokove koda/inline kôd i ostavljaju front‑matter `id` nepromijenjenim; zapisuje u `translation_web_batch.log` (batch) ili `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Svrha: prevesti UI stringove web‑stranice (početna, navigacija, podnožje) iz `website/i18n/en/code.json` na sve jezike pod `website/i18n/<locale>/code.json` (isključujući `en`).
+- Upotreba: `make translate_web_index` ili `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Zahtjevi: izvezite `OPENAI_API_KEY` (neobavezno: `OPENAI_MODEL=gpt-4o-mini`).
+- Ponašanje: validira JSON strukturu, čuva rezervirana mjesta u vitičastim zagradama, zadržava URL‑ove nepromijenjenima i ponovno pokušava s povratnim informacijama na greške validacije.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Svrha: izgraditi web stranicu dokumentacije u `website/build`.
+- Upotreba: `make web_build OPTS="--locales en|de,en|all"` (ili postavite `BUILD_LOCALES="en de"`)
+- Unutarnje: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Ovisnosti: pokreće `npm ci` u `website/` samo ako `website/node_modules/@docusaurus` nedostaje.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Svrha: provjera poveznica sigurna za offline.
+- Upotreba: `make web_build_linkcheck OPTS="--locales en|all"`
+- Napomene: gradi u `tmp_linkcheck_web_pages`; prepisuje GH Pages `baseUrl` u `/`; preskače udaljene HTTP(S) poveznice.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Svrha: lokalni gh‑pages pregled s neobaveznim testovima/provjerom poveznica.
+- Upotreba: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Ponašanje: najprije pokušava Node preview poslužitelj (`scripts/preview-server.mjs`, podržava `/__stop`), vraća se na `python3 -m http.server`; poslužuje na 8080–8090; PID na `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Svrha: gurnuti `website/build` na granu `gh-pages`.
+- Upotreba: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Savjet: postavite `NPM=…` za nadjačavanje upravitelja paketa kojeg koristi Makefile (zadano je `npm`).
+
+---

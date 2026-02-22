@@ -1,7 +1,7 @@
 {
   "id": "changelog",
-  "title": "ប្រវត្តិការផ្លាស់ប្ដូរ",
-  "description": "Changelog",
+  "title": "កំណត់ហេតុការផ្លាស់ប្តូរ",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/changelog.md",
   "sourceDirName": ".",
   "slug": "/changelog",
@@ -13,7 +13,7 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "changelog",
-    "title": "ប្រវត្តិការផ្លាស់ប្ដូរ"
+    "title": "កំណត់ហេតុការផ្លាស់ប្តូរ"
   },
   "sidebar": "docs",
   "previous": {

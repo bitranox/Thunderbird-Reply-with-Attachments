@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "เริ่มต้นอย่างรวดเร็ว",
-  "description": "Quickstart",
+  "title": "เริ่มต้นใช้งานอย่างรวดเร็ว",
+  "description": "---",
   "source": "@site/i18n/th/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "เริ่มต้นอย่างรวดเร็ว",
+    "title": "เริ่มต้นใช้งานอย่างรวดเร็ว",
     "sidebar_label": "เริ่มต้นอย่างรวดเร็ว"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ฟีเจอร์",
+    "title": "คุณสมบัติ",
     "permalink": "/Thunderbird-Reply-with-Attachments/th/docs/features"
   },
   "next": {

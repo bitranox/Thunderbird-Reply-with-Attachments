@@ -31,6 +31,7 @@ export function createBrowserMock({
     getComposeDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 101 }),
     listAttachments: vi.fn().mockResolvedValue(composeExisting),
     addAttachment: vi.fn().mockResolvedValue(undefined),
+    setComposeDetails: vi.fn().mockResolvedValue(undefined),
   };
   const messages = {
     listAttachments: vi.fn().mockResolvedValue(messageAttachments),

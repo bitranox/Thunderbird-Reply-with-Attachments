@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'Compatibiliteit'
-sidebar_label: 'Compatibiliteit'
+title: 'Versoenbaarheid'
+sidebar_label: 'Versoenbaarheid'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Verenigbaarheid {#compatibility}
+
+:::important Minimum Thunderbird-weergawe
+Hierdie byvoeging ondersteun Thunderbird **128 ESR of nuwer**. Ouer weergawes word nie ondersteun nie.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR of nuwer word ondersteun (128.x+).
+- Ouer Thunderbird-weergawes word nie ondersteun nie.
+- Getoets op Windows, macOS en Linux.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 nie ondersteun nie
+Manifest V2 word nie ondersteun nie. Die byvoeging teiken **Manifest V3 (MV3)** op Thunderbird 128 ESR+.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Probleemoplossing {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- As die byvoeging nie werk soos verwag nie, maak seker dat jy ’n versoenbare weergawe van Thunderbird gebruik (128 ESR of later).
+- Kyk in die Thunderbird-foutkonsole (**Gereedskap > Ontwikkelaarhulpmiddels > Foutkonsole**) vir enige kwessies wat met die byvoeging verband hou.
+- As gestoorde instellings nie behoorlik blyk toe te pas nie, herbegin Thunderbird en probeer weer. (Thunderbird kan toestand oor sessies kas; ’n herbegin verseker dat vars instellings gelaai word.)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## Bekende konflikte {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Geen wat tans bekend is nie. As jy herhalende duplikaat-aanhegsels of mislukkings met ander byvoegings sien, meld dit asseblief aan met stappe om dit te herhaal.
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta en Daily (Nightly)-bouweergawes word oor die algemeen ondersteun, maar opstroomveranderings kan soms die byvoeging se gedrag breek. As jy probleme teëkom, meld dit asseblief aan en sluit die presiese Thunderbird-weergawe in (bv. “Daily 131.0a1 2025‑09‑10”).
+- Teëgekom ’n regressie op Beta/Nightly? Meld dit aan met stappe om te herhaal — sien [Ondersteuning](support) — en sluit die presiese Thunderbird-boustring in.
 
 ---

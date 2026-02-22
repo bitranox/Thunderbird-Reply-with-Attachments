@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Installation'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Installation via "Thunderbird-tillägg och teman" {#installation-in-thunderbird-recommended}
+
+:::important Lägsta Thunderbird-version
+Detta tillägg stöder Thunderbird **128 ESR eller nyare**. Äldre versioner stöds inte.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+Detta är den rekommenderade installationsmetoden. Tillägg som installeras från ATN (addons.thunderbird.net) får automatiska uppdateringar. LOCAL/dev‑installationer uppdateras inte automatiskt.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Lägsta Thunderbird-version: 128 ESR eller nyare.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. I Thunderbird, gå till **Verktyg > Tillägg och teman**.
+2. Sök efter "reply with attachments".
+3. Lägg till tillägget.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Eller öppna tilläggets sida direkt: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Manuell installation från XPI {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Ladda ner XPI-filen {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Gå till [Thunderbird Add‑on-sidan](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Ladda ner den senaste versionen av tillägget som en XPI-fil (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Installera i Thunderbird {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Öppna Thunderbird.
+2. Gå till **Verktyg > Tillägg och teman**.
+3. I **Tilläggshanteraren**, klicka på kugghjulsikonen uppe till höger.
+4. Välj **Installera tillägg från fil…** i menyn.
+5. Välj den nedladdade filen `reply_with_attachments-x.y.z-tb.xpi`.
+6. Bekräfta installationen när du uppmanas.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Installation för utveckling {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Ladda ner förrådet {#download-the-repository}
 
-See also
+1. Ladda ner den senaste versionen av GitHub‑förrådet.
+2. Kör `make help` för mer information.
 
-- [Quickstart](quickstart)
+### Installera i Thunderbird {#install-in-thunderbird-dev}
+
+1. Öppna Thunderbird.
+2. Gå till **Verktyg > Tillägg och teman**.
+3. I **Tilläggshanteraren**, klicka på kugghjulsikonen uppe till höger.
+4. Välj **Installera tillägg från fil…** i menyn.
+5. Välj den genererade filen `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Bekräfta installationen när du uppmanas.
+
+Obs! Om Thunderbird inte accepterar `.zip` på ditt system, byt namn på den till `.xpi` och försök ”Installera tillägg från fil…” igen.
+
+### Var hittar du LOCAL ZIP {#where-local-zip}
+
+- Paketera först tillägget: kör `make pack` i förrådets rot.
+- Efter paketering hittar du ”LOCAL”-zippen i förrådets rot (t.ex. `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Innan du paketerar om för testning, höj versionerna i både `sources/manifest_ATN.json` och `sources/manifest_LOCAL.json`.
+
+---
+
+## Inaktivera, avinstallera och uppdateringar {#disable-uninstall-updates}
+
+- Inaktivera: Thunderbird → Verktyg → Tillägg och teman → hitta tillägget → stäng av.
+- Avinstallera: samma vy → meny med tre punkter → Ta bort.
+- Uppdateringar: Installationer från ATN uppdateras automatiskt när nya versioner godkänns. LOCAL/dev‑installationer uppdateras inte automatiskt; installera om ett nytt LOCAL‑bygge manuellt.
+- Ta bort inställningar helt: se [Integritet → Borttagning av data](privacy#data-removal).
+
+Se även
+
+- [Snabbstart](quickstart)

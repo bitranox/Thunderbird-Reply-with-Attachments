@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Fifanentanana",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -14,7 +14,7 @@
   "frontMatter": {
     "id": "compatibility",
     "title": "Fifanentanana",
-    "sidebar_label": "Fifanentanana"
+    "sidebar_label": "Fifanarahana"
   },
   "sidebar": "docs",
   "previous": {

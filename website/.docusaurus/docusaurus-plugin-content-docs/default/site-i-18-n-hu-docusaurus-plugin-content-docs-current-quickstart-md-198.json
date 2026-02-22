@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Gyors útmutató",
-  "description": "Gyors útmutató",
+  "title": "Gyors kezdés",
+  "description": "---",
   "source": "@site/i18n/hu/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Gyors útmutató",
-    "sidebar_label": "Gyors útmutató"
+    "title": "Gyors kezdés",
+    "sidebar_label": "Gyorstalpaló"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Jellemzők",
+    "title": "Funkciók",
     "permalink": "/Thunderbird-Reply-with-Attachments/hu/docs/features"
   },
   "next": {

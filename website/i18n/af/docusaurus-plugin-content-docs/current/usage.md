@@ -4,94 +4,95 @@ title: 'Gebruik'
 sidebar_label: 'Gebruik'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Gebruik {#usage}
+
+- Antwoord, en die byvoeging voeg oorspronklikes outomaties by — of vra eers, indien in Opsies geaktiveer.
+- Ontdubbel volgens lêernaam; S/MIME‑dele word altyd oorgeslaan. Inlynbeelde word standaard in die antwoordliggaam herstel (deaktiveer via "Sluit inlynprente in" in Opsies).
+- Aanhegsels op die swartlys word ook oorgeslaan (hoofletterongevoelige glob‑patrone wat by lêername pas, nie paaie nie). Sien [Konfigurasie](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Wat gebeur wanneer jy antwoord {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Bespeur antwoord → lys oorspronklike aanhegsels → filtreer S/MIME + inlyn → opsionele bevestiging → voeg kwalifiserende lêers by (slaan duplikate oor) → herstel inlynbeelde in die liggaam.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Streng vs. ontspanne deurloop: Die byvoeging sluit eers S/MIME- en inlyndele uit van lêeraanhegsels. As niks kwalifiseer nie, loop dit ’n ontspanne deurloop wat steeds S/MIME/inlyn uitsluit maar meer gevalle toelaat (sien Koodbesonderhede). Inlynbeelde word nooit as lêeraanhegsels bygevoeg nie; in plaas daarvan, wanneer "Sluit inlynprente in" geaktiveer is (die verstek), word hulle direk in die antwoordliggaam ingebed as base64 data‑URI's.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Onderdeeltipe                                             |                   Streng deurloop |                Ontspanne deurloop |
+| --------------------------------------------------------- | --------------------------------: | --------------------------------: |
+| S/MIME-handtekeninglêer `smime.p7s`                       |                        Uitgesluit |                        Uitgesluit |
+| S/MIME MIME‑tipes (`application/pkcs7-*`)                 |                        Uitgesluit |                        Uitgesluit |
+| Inlynbeeld waarna deur Content‑ID verwys word (`image/*`) | Uitgesluit (in liggaam herstel\*) | Uitgesluit (in liggaam herstel\*) |
+| Aangehegte e-pos (`message/rfc822`) met ’n lêernaam       |                  Nie bygevoeg nie |                 Kan bygevoeg word |
+| Gewone lêeraanhegsel met ’n lêernaam                      |                 Kan bygevoeg word |                 Kan bygevoeg word |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Wanneer "Sluit inlynprente in" geaktiveer is (verstek: AAN), word inlynbeelde in die antwoordliggaam as base64 data‑URI's ingebed eerder as om as lêeraanhegsels bygevoeg te word. Sien [Konfigurasie](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Voorbeeld: Sommige aanhegsels mag sekere kopvelde ontbreek, maar is steeds gewone lêers (nie inlyn/S/MIME nie). As die streng deurloop geen vind nie, kan die ontspanne deurloop daardie gevalle aanvaar en aanbeg.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kruisverwysing {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Aanstuur word doelbewus nie gewysig nie (sien Beperkings hieronder).
+- Vir redes waarom ’n aanhegsel dalk nie bygevoeg word nie, sien “Waarom aanhegsels dalk nie bygevoeg word nie”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Gedragsbesonderhede {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Voorkoming van duplikate:** Die byvoeging merk die opstel‑oortjie as verwerk deur ’n per‑oortjie sessiewaarde en ’n in‑geheue wag te gebruik. Dit sal nie oorspronklikes twee keer byvoeg nie.
+- Om ’n opstelvenster te sluit en weer oop te maak, word as ’n nuwe oortjie behandel (d.w.s. ’n nuwe poging word toegelaat).
+- **Respekteer bestaande aanhegsels:** As die opstel reeds aanhegsels bevat, word oorspronklikes steeds presies een keer bygevoeg, en lêername wat reeds bestaan, word oorgeslaan.
+- **Uitsluitings:** S/MIME‑artefakte en inlynbeelde word van lêeraanhegsels uitgesluit. As niks op die eerste deurloop kwalifiseer nie, herkontroleer ’n ontspanne terugval nie‑S/MIME‑dele. Inlynbeelde word afsonderlik hanteer: hulle word in die antwoordliggaam as data‑URI's herstel (wanneer geaktiveer).
+  - **Lêername:** `smime.p7s`
+  - **MIME‑tipes:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Inlynbeelde:** enige `image/*`‑deel waarna deur Content‑ID verwys word — uitgesluit van lêeraanhegsels maar in die antwoordliggaam ingebed wanneer "Sluit inlynprente in" AAN is
+  - **Aangehegte e‑posse (`message/rfc822`):** word as gewone aanhegsels behandel indien hulle ’n lêernaam het; hulle kan bygevoeg word (onderhewig aan duplikaatkontroles en swartlys).
+- **Swartlyswaarskuwing (indien geaktiveer):** Wanneer kandidate deur jou swartlys uitgesluit word, vertoon die byvoeging ’n klein modale venster wat die betrokke lêers en die ooreenstemmende patroon(ne) lys. Hierdie waarskuwing verskyn ook in gevalle waar geen aanhegsels bygevoeg sal word nie omdat alles uitgesluit is.
 
 ---
 
-## Limitations {#limitations}
+## Sleutelbordkortpaaie {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Bevestigingsdialoog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab en Pyltjies siklus deur fokus.
+  - Die “Verstekantwoord” in [Konfigurasie](configuration#confirmation) stel die aanvanklik gefokusde knoppie.
+  - Enter aktiveer die gefokusde knoppie. Tab/Shift+Tab en pyltjies verskuif fokus vir toeganklikheid.
+
+### Sleutelbord-spiekblad {#keyboard-cheat-sheet}
+
+| Sleutels        | Aksie                              |
+| --------------- | ---------------------------------- |
+| Y / J           | Bevestig Ja                        |
+| N / Esc         | Bevestig Nee                       |
+| Enter           | Aktiveer gefokusde knoppie         |
+| Tab / Shift+Tab | Skuif fokus vorentoe/agtertoe      |
+| Pyltjies        | Skuif fokus tussen knoppies        |
+| Verstekantwoord | Stel aanvanklike fokus (Ja of Nee) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Beperkings {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Aanstuur word nie deur hierdie byvoeging gewysig nie (Antwoord en Antwoord almal word ondersteun).
+- Baie groot aanhegsels kan aan Thunderbird‑ of verskafferbeperkings onderhewig wees.
+  - Die byvoeging segmenteer of komprimeer nie lêers nie; dit steun op Thunderbird se normale hantering van aanhegsels.
+- Geënkripteerde boodskappe: S/MIME‑dele word doelbewus uitgesluit.
 
 ---
 
-See also
+## Waarom aanhegsels dalk nie bygevoeg word nie {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Inlynbeelde word nie as lêeraanhegsels bygevoeg nie. Wanneer "Sluit inlynprente in" AAN is (die verstek), word hulle in plaas daarvan in die antwoordliggaam as data‑URI's ingebed. As die instelling AF is, word inlynbeelde volledig verwyder. Sien [Konfigurasie](configuration#include-inline-pictures).
+- S/MIME‑handtekeningdele word doelbewus uitgesluit: lêername soos `smime.p7s` en MIME‑tipes soos `application/pkcs7-signature` of `application/pkcs7-mime` word oorgeslaan.
+- Swartlys‑patrone kan kandidate filtreer: sien [Konfigurasie](configuration#blacklist-glob-patterns); passing is hoofletterongevoelig en slegs op lêernaam.
+- Duplikaat‑lêername word nie weer bygevoeg nie: as die opstel reeds ’n lêer met dieselfde genormaliseerde naam bevat, word dit oorgeslaan.
+- Nie‑lêerdeles of ontbrekende lêername: slegs lêeragtige dele met bruikbare lêername word oorweeg om by te voeg.
+
+---
+
+Sien ook
+
+- [Konfigurasie](configuration)

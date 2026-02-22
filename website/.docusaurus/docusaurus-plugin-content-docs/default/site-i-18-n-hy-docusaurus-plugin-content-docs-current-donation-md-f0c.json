@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "Դonate",
-  "description": "Դonate",
+  "title": "Նվիրաբերել",
+  "description": "---",
   "source": "@site/i18n/hy/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "Դonate",
-    "sidebar_label": "Դonate"
+    "title": "Նվիրաբերել",
+    "sidebar_label": "Նվիրաբերել"
   },
   "sidebar": "docs",
   "previous": {

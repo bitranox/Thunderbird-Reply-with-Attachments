@@ -4,39 +4,41 @@ title: 'Kompatibilitás'
 sidebar_label: 'Kompatibilitás'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Kompatibilitás {#compatibility}
+
+:::important Minimális Thunderbird-verzió
+Ez a kiegészítő a Thunderbird **128 ESR vagy újabb** verzióit támogatja. Régebbi verziók nem támogatottak.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- A Thunderbird 128 ESR vagy újabb támogatott (128.x+).
+- A régebbi Thunderbird-verziók nem támogatottak.
+- Tesztelve Windows, macOS és Linux rendszereken.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning A Manifest V2 nem támogatott
+A Manifest V2 nem támogatott. A kiegészítő a Thunderbird 128 ESR+ alatt a **Manifest V3-at (MV3)** célozza meg.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## Hibaelhárítás {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- Ha a kiegészítő nem a vártnak megfelelően működik, ellenőrizze, hogy kompatibilis Thunderbird-verziót használ (128 ESR vagy újabb).
+- Ellenőrizze a Thunderbird hibakonzolját (**Tools > Developer Tools > Error Console**), hogy van-e a kiegészítőhöz kapcsolódó probléma.
+- Ha az elmentett beállítások nem látszanak megfelelően érvényesülni, indítsa újra a Thunderbirdöt, és próbálja meg újra. (A Thunderbird a munkamenetek között gyorsítótárazhat állapotokat; az újraindítás biztosítja, hogy a friss beállítások töltődjenek be.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## Ismert konfliktusok {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Jelenleg nem ismert. Ha ismétlődő, duplikált mellékleteket vagy más kiegészítőkkel kapcsolatos hibákat tapasztal, kérjük, jelentse a reprodukció lépéseivel együtt.
+
+---
+
+## Béta/Nightly {#beta-nightly}
+
+- A Thunderbird Béta és Daily (Nightly) kiadások általában támogatottak, de az upstream változtatások időnként megtörhetik a kiegészítő működését. Ha problémákat tapasztal, kérjük, jelentse, és adja meg a pontos Thunderbird-verziót (például: “Daily 131.0a1 2025‑09‑10”).
+- Talált egy regressziót a Béta/Nightly kiadásokban? Kérjük, jelentse a reprodukció lépéseivel — lásd: [Support](support) —, és adja meg a pontos Thunderbird buildazonosítót.
 
 ---

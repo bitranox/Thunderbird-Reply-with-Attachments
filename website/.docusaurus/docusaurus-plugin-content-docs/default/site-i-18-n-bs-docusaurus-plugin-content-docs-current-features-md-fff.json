@@ -1,7 +1,7 @@
 {
   "id": "features",
-  "title": "Značajke",
-  "description": "Features",
+  "title": "Funkcionalnosti",
+  "description": "---",
   "source": "@site/i18n/bs/docusaurus-plugin-content-docs/current/features.md",
   "sourceDirName": ".",
   "slug": "/features",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "features",
-    "title": "Značajke",
-    "sidebar_label": "Značajke"
+    "title": "Funkcionalnosti",
+    "sidebar_label": "Funkcionalnosti"
   },
   "sidebar": "docs",
   "next": {

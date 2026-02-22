@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "Saderība",
-  "description": "Saderība",
+  "title": "Savietojamība",
+  "description": "---",
   "source": "@site/i18n/lv/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "Saderība",
-    "sidebar_label": "Saderība"
+    "title": "Savietojamība",
+    "sidebar_label": "Savietojamība"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Izmantošana",
+    "title": "Lietošana",
     "permalink": "/Thunderbird-Reply-with-Attachments/lv/docs/usage"
   },
   "next": {

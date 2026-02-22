@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": "ការប្រាណូឡាសារ",
-  "description": "Compatibility",
+  "title": "ភាពឆបគ្នា",
+  "description": "---",
   "source": "@site/i18n/km/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": "ការប្រាណូឡាសារ",
-    "sidebar_label": "ការប្រាណូឡាសារ"
+    "title": "ភាពឆបគ្នា",
+    "sidebar_label": "ភាពឆបគ្នា"
   },
   "sidebar": "docs",
   "previous": {

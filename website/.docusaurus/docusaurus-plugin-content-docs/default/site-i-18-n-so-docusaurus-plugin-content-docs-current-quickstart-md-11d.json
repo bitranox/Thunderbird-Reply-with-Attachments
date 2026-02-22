@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Bilowga Degdegga ah",
-  "description": "Quickstart",
+  "title": "Bilow Degdeg ah",
+  "description": "---",
   "source": "@site/i18n/so/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,16 +13,16 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Bilowga Degdegga ah",
-    "sidebar_label": "Bilowga Degdegga ah"
+    "title": "Bilow Degdeg ah",
+    "sidebar_label": "Bilow Degdeg ah"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Astaamaha",
+    "title": "Astaamo",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/features"
   },
   "next": {
-    "title": "Rakiba",
+    "title": "Rakibid",
     "permalink": "/Thunderbird-Reply-with-Attachments/so/docs/install"
   }
 }

@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Advar, hvis vedhæftninger udelukkes af sortlisten"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Inkluder indlejrede billeder (indlejrede billeder)"
+  },
   "uiDebugHeader": {
     "message": "Avanceret"
   },

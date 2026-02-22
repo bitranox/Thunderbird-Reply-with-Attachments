@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Fífi ẹ̀ka'
+title: 'Fifi sori ẹrọ'
 slug: /install
-sidebar_label: 'Fífi ẹ̀ka'
+sidebar_label: 'Fifi sori ẹrọ'
 ---
 
-## Fífi ẹ̀ka nipasẹ "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Ẹ̀ka Thunderbird to pọju
-Ẹ̀ka yìí ṣe atilẹyin fun Thunderbird **128 ESR tabi tuntun**. Ẹ̀ka atijọ ko ni atilẹyin.
+## Fifi sori ẹrọ nipasẹ "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Ẹya Thunderbird ti o kere ju
+Afikun yii n ṣe atilẹyin Thunderbird **128 ESR tàbí tuntun ju bẹ lọ**. A ko ṣe atilẹyin awọn ẹya atijọ.
 :::
 
-Eyi ni ọna fífi ẹ̀ka ti a ṣeduro. Awọn ẹ̀ka ti a fi sii lati ATN (addons.thunderbird.net) gba awọn imudojuiwọn aifọwọyi. Awọn fifi silẹ LOCAL/dev ko ṣe imudojuiwọn aifọwọyi.
+Eyi ni ọna fifi sori ẹrọ ti a ṣeduro. Awọn afikun ti a fi sori ẹrọ lati ATN (addons.thunderbird.net) maa n gba awọn imudojuiwọn aifọwọyi. Fifi sori LOCAL/dev kii ṣe aifọwọyi imudojuiwọn.
 
-- Ẹ̀ka Thunderbird to pọju: 128 ESR tabi tuntun.
+- Ẹya Thunderbird to kere ju: 128 ESR tàbí tuntun ju bẹ lọ.
 
-1. Ninu Thunderbird, lọ si **Awọn irinṣẹ > Awọn ẹ̀ka ati Awọn akori**.
-2. Wa fun "da esi pẹlu awọn asopọ".
-3. Fi ẹ̀ka kun.
+1. Nínú Thunderbird, lọ sí **Tools > Add-ons and Themes**.
+2. Wa “reply with attachments”.
+3. Fi afikun naa kun.
 
-Tabi ṣii oju-iwe ẹ̀ka taara: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Fífi ẹ̀ka ni ọwọ lati XPI {#local-installation-in-thunderbird}
-
-### Ṣe igbasilẹ faili XPI {#download-the-xpi-file}
-
-1. Lọ si [Oju-iwe Ẹ̀ka Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Ṣe igbasilẹ ẹya tuntun ti ẹ̀ka gẹgẹ bi faili XPI (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Fi sii ni Thunderbird {#install-in-thunderbird-local}
-
-1. Ṣii Thunderbird.
-2. Lọ si **Awọn irinṣẹ > Awọn ẹ̀ka ati Awọn akori**.
-3. Ninu **Alakoso Ẹ̀ka**, tẹ aami gियर ni igun oke-otun.
-4. Yan **Fi Ẹ̀ka Sii Lati Faili…** lati inu akojọ aṣayan.
-5. Yan faili `reply_with_attachments-x.y.z-tb.xpi` ti a ṣe igbasilẹ.
-6. Jẹrisi fifi sii nigbati a ba beere lọwọ rẹ.
+Tabi ṣí ojú‑iwe afikun taara: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Fífi ẹ̀ka fun idagbasoke {#installation-for-development}
+## Fifi sori ẹrọ ni ọwọ lati XPI {#local-installation-in-thunderbird}
 
-### Ṣe igbasilẹ àkójọ {#download-the-repository}
+### Gba faili XPI wọlé {#download-the-xpi-file}
 
-1. Ṣe igbasilẹ ẹya tuntun ti àkójọ GitHub.
-2. Ṣe ṣiṣe `make help` fun alaye siwaju sii.
+1. Lọ sí [Ojú-ìwé Afikun Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Gba ẹ̀dá tuntun jùlọ ti afikun naa gẹgẹ bí faili XPI (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Fi sii ni Thunderbird {#install-in-thunderbird-dev}
+### Fi sori ẹrọ ninu Thunderbird {#install-in-thunderbird-local}
 
-1. Ṣii Thunderbird.
-2. Lọ si **Awọn irinṣẹ > Awọn ẹ̀ka ati Awọn akori**.
-3. Ninu **Alakoso Ẹ̀ka**, tẹ aami gियर ni igun oke-otun.
-4. Yan **Fi Ẹ̀ka Sii Lati Faili…** lati inu akojọ aṣayan.
-5. Yan faili ti a ṣe `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Jẹrisi fifi sii nigbati a ba beere lọwọ rẹ.
-
-Note: Ti Thunderbird ko ba gba `.zip` lori eto rẹ, pe orukọ rẹ si `.xpi` ki o tun gbiyanju “Fi Ẹ̀ka Sii Lati Faili…” lẹẹkansii.
-
-### Nibo ni a ti le rii ZIP LOCAL {#where-local-zip}
-
-- Ni akọkọ, ṣe apoti ẹ̀ka: ṣiṣe `make pack` ni ipilẹ àkójọ.
-- Lẹhin gbigbe, wa ZIP “LOCAL” ni ipilẹ àkójọ (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Ṣaaju ki o to tun-apoti fun idanwo, gbe awọn ẹya ni mejeeji `sources/manifest_ATN.json` ati `sources/manifest_LOCAL.json`.
+1. Ṣí Thunderbird.
+2. Lọ sí **Tools > Add-ons and Themes**.
+3. Nínú **Add-ons Manager**, tẹ aami kẹkẹ ní igun ọtun òkè.
+4. Yan **Install Add-on From File…** láti inu akojọ aṣayan.
+5. Yan faili `reply_with_attachments-x.y.z-tb.xpi` tí o gbasilẹ.
+6. Jẹrisi fifi sori ẹrọ nígbà tí a bá bẹ̀rẹ̀.
 
 ---
 
-## Dènà, Yọkuro, ati Imudojuiwọn {#disable-uninstall-updates}
+## Fifi sori ẹrọ fun idagbasoke {#installation-for-development}
 
-- Dènà: Thunderbird → Awọn irinṣẹ → Awọn ẹ̀ka ati Awọn akori → wa ẹ̀ka → yipada pa.
-- Yọkuro: iwo kanna → akojọ mẹta-ọrun → Yọ.
-- Imudojuiwọn: Awọn fifi sori ATN ṣe imudojuiwọn aifọwọyi nigbati awọn ẹya tuntun ba jẹ akọsilẹ. Awọn fifi sori LOCAL/dev ko ṣe imudojuiwọn aifọwọyi; fi ẹya tuntun LOCAL sii ni ọwọ.
-- Yọ awọn eto patapata: wo [Asiri → Yiyo data](privacy#data-removal).
+### Gba ibi-ipamọ (repository) wọlé {#download-the-repository}
 
-Ri si tun
+1. Gba ẹ̀dá tuntun jùlọ ti ibi-ipamọ GitHub naa wọlé.
+2. Ṣe `make help` fun alaye siwaju sii.
 
-- [Ibẹrẹ Yara](quickstart)
+### Fi sori ẹrọ ninu Thunderbird {#install-in-thunderbird-dev}
+
+1. Ṣí Thunderbird.
+2. Lọ sí **Tools > Add-ons and Themes**.
+3. Nínú **Add-ons Manager**, tẹ aami kẹkẹ ní igun ọtun òkè.
+4. Yan **Install Add-on From File…** láti inu akojọ aṣayan.
+5. Yan faili tí a ti ṣẹda `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Jẹrisi fifi sori ẹrọ nígbà tí a bá bẹ̀rẹ̀.
+
+Akiyesi: Bí Thunderbird kò bá gba `.zip` lori eto rẹ, tún lorukọ rẹ sí `.xpi` kí o sì tún gbìyànjú “Install Add‑on From File…” lẹ́ẹ̀kansi.
+
+### Ibo ni a ti lè rí LOCAL ZIP {#where-local-zip}
+
+- Kọ́kọ́, ṣe package afikun naa: ṣiṣẹ `make pack` ní gbongbo ibi-ipamọ naa.
+- Lẹ́yìn didi package, wa zip “LOCAL” ní gbongbo ibi-ipamọ naa (àpẹẹrẹ, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Kí o tó ṣe package lẹ́ẹ̀kansi fún ìdánwò, mu awọn ẹya pọ si ní mejeeji `sources/manifest_ATN.json` àti `sources/manifest_LOCAL.json`.
+
+---
+
+## Pa iṣẹ, Yọ kuro, àti Imudojuiwọn {#disable-uninstall-updates}
+
+- Pa iṣẹ: Thunderbird → Tools → Add‑ons and Themes → wa afikun naa → yí pada sí pipa.
+- Yọ kuro: wiwo kanna → akojọ aṣayan mẹta‑dọ́tì → Remove.
+- Imudojuiwọn: Fifi sori lati ATN maa n ṣe aifọwọyi imudojuiwọn nígbà tí a bá fọwọsi awọn ẹya tuntun. Fifi sori LOCAL/dev kò ṣe aifọwọyi imudojuiwọn; tún fi kọ LOCAL tuntun sílẹ̀ ní ọwọ́.
+- Yọ awọn eto kuro patapata: wo [Asiri → Yiyọ data](privacy#data-removal).
+
+Wo tún
+
+- [Ìbẹrẹ kíákíá](quickstart)

@@ -4,294 +4,296 @@ title: 'Dezvoltare'
 sidebar_label: 'Dezvoltare'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Ghid de dezvoltare {#development-guide}
+
+:::note Editați doar în engleză; traducerile se propagă
+Actualizați documentația doar sub `website/docs` (engleză). Traducerile sub `website/i18n/<locale>/…` sunt generate și nu ar trebui editate manual. Folosiți sarcinile de traducere (de ex., `make translate_web_docs_batch`) pentru a reîmprospăta conținutul localizat.
 :::
 
-### Prerequisites {#prerequisites}
+### Cerințe prealabile {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ și npm (testat cu Node 22)
+- Thunderbird 128 ESR sau mai nou (pentru testare manuală)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Structura proiectului (nivel înalt) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Rădăcină: script de împachetare `distribution_zip_packer.sh`, documentație, capturi de ecran
+- `sources/`: codul principal al suplimentului (fundal, interfață opțiuni/popup, manifeste, pictograme)
+- `tests/`: suita Vitest
+- `website/`: documentație Docusaurus (cu i18n sub `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Instalare și instrumente {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Instalează dependențele din rădăcină: `npm ci`
+- Documentație (opțional): `cd website && npm ci`
+- Descoperă țintele: `make help`
+
+---
+
+### Dezvoltare live (web‑ext run) {#live-dev-web-ext}
+
+- Ciclu rapid în Firefox Desktop (doar teste UI de tip smoke):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Rulează în Thunderbird (preferat pentru MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Sfaturi:
+- Ține deschisă Consola de erori a Thunderbird (Tools → Developer Tools → Error Console).
+- Paginile de evenimente MV3 sunt suspendate când sunt inactive; reîncarcă suplimentul după modificări de cod sau lasă web‑ext să reîncarce automat.
+- Unele comportamente specifice Firefox diferă; verifică întotdeauna în Thunderbird pentru paritate API.
+- Căi binare Thunderbird (exemple):
+- Linux: `thunderbird` (de ex., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Izolarea profilului: Folosește un profil Thunderbird separat pentru dezvoltare pentru a nu afecta configurarea zilnică.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Ținte Make (în ordine alfabetică) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Makefile standardizează fluxurile comune de dezvoltare. Rulează `make help` oricând pentru un rezumat într-o linie pentru fiecare țintă.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Sfat: rularea `make` fără țintă deschide un meniu Whiptail simplu pentru a alege o țintă.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Țintă                                                    | Descriere într-o linie                                                                          |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Elimină artefactele locale de build/preview (tmp/, web-local-preview/, website/build/).         |
+| [`commit`](#mt-commit)                                   | Formatează, rulează testele (incl. i18n), actualizează changelog-ul, commit & push.             |
+| [`eslint`](#mt-eslint)                                   | Rulează ESLint prin flat config (`npm run -s lint:eslint`).                                     |
+| [`help`](#mt-help)                                       | Afișează toate țintele cu documentație într-o linie (sortate).                                  |
+| [`lint`](#mt-lint)                                       | web‑ext lint pe `sources/` (manifest temporar; ignoră ZIP-urile; ne-fatal).                     |
+| [`menu`](#mt-menu)                                       | Meniu interactiv pentru selectarea unei ținte și a argumentelor opționale.                      |
+| [`pack`](#mt-pack)                                       | Construiește ZIP-uri ATN și LOCAL (rulează linter-ul; apelează scriptul de împachetare).        |
+| [`prettier`](#mt-prettier)                               | Formatează depozitul in-place (scrie modificări).                                               |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier în modul de verificare (fără scrieri); eșuează dacă este necesară reformatatarea.      |
+| [`prettier_write`](#mt-prettier_write)                   | Alias pentru `prettier`.                                                                        |
+| [`test`](#mt-test)                                       | Prettier (scriere), ESLint, apoi Vitest (acoperire dacă este configurată).                      |
+| [`test_i18n`](#mt-test_i18n)                             | Teste doar i18n: placeholder-e/paritate pentru supliment + paritate site.                       |
+| [`translate_app`](#mt-translation-app)                   | Alias pentru `translation_app`.                                                                 |
+| [`translation_app`](#mt-translation-app)                 | Tradu șirurile UI ale aplicației din `sources/_locales/en/messages.json`.                       |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Tradu documentația site-ului prin OpenAI Batch API (preferat).                                  |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Tradu documentația site-ului sincron (legacy, non-batch).                                       |
+| [`translate_web_index`](#mt-translation_web_index)       | Alias pentru `translation_web_index`.                                                           |
+| [`translation_web_index`](#mt-translation_web_index)     | Tradu UI-ul homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`).        |
+| [`web_build`](#mt-web_build)                             | Construiește documentația în `website/build` (acceptă `--locales` / `BUILD_LOCALES`).           |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Verificare linkuri sigură offline (omite HTTP[S] la distanță).                                  |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Previzualizare gh‑pages locală; servește automat pe 8080–8090; teste/verificare link opționale. |
+| [`web_push_github`](#mt-web_push_github)                 | Fă push al `website/build` în ramura `gh-pages`.                                                |
 
-Syntax for options
+Sintaxă pentru opțiuni
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Folosește `make <command> OPTS="…"` pentru a pasa opțiuni (se recomandă ghilimelele). Fiecare țintă de mai jos arată un exemplu de utilizare.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Sfaturi de build pentru locale {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Construiește un subset de locale: setează `BUILD_LOCALES="en de"` sau pasează `OPTS="--locales en,de"` țintelor web.
+- Previzualizează un anumit locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Construire și împachetare {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Construiește ZIP-uri: `make pack`
+- Produce ZIP-uri ATN și LOCAL în rădăcina repo-ului (nu edita artefactele manual)
+- Sfat: actualizează versiunea atât în `sources/manifest_ATN.json`, cât și în `sources/manifest_LOCAL.json` înainte de împachetare
+- Instalare manuală (dev): Thunderbird → Tools → Add‑ons and Themes → rotiță → Install Add‑on From File… → selectează ZIP-ul construit
+
+---
+
+### Testare {#test}
+
+- Suită completă: `make test` (Vitest)
+- Acoperire (opțional):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Rulează `make test`; deschide `coverage/index.html` pentru raportul HTML
+- Doar i18n: `make test_i18n` (chei UI/placeholder-e/titluri + paritate site per‑locale per‑doc cu verificări pentru id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Depanare și jurnale {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Consolă de erori: Tools → Developer Tools → Error Console
+- Comută jurnalele verbose la runtime:
+- Activează: `messenger.storage.local.set({ debug: true })`
+- Dezactivează: `messenger.storage.local.set({ debug: false })`
+- Jurnalele apar în timp ce compui/trimiți răspunsuri
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Documentație (site) {#docs-website}
+
+- Server de dezvoltare: `cd website && npm run start`
+- Construiește site-ul static: `cd website && npm run build`
+- Echivalente Make (alfabetic): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Exemple de utilizare:
+- Doar EN, sari peste teste/verificare linkuri, fără push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Toate localele, cu teste/verificare linkuri, apoi push: `make web_build_local_preview && make web_push_github`
+- Înainte de publicare, rulează verificarea linkurilor sigură offline: `make web_build_linkcheck`.
+- i18n: Engleza se află în `website/docs/*.md`; traducerile germane în `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Căutare: Dacă variabilele de mediu Algolia DocSearch sunt setate în CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), site-ul folosește căutarea Algolia; altfel revine la căutarea locală. Pe pagina principală, apasă `/` sau `Ctrl+K` pentru a deschide caseta de căutare.
+
+---
+
+#### Rută de redirecționare pentru donații {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Rută: `/donate` (și `/<locale>/donate`)
+- Comportament:
+- Dacă ruta curentă are un locale (de ex., `/de/donate`), folosește-l
+- Altfel, alege cea mai bună potrivire dintre `navigator.languages` vs localele configurate; revine la locale implicit
+- Redirecționează către:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- altele → `/<locale>/docs/donation`
+- Folosește `useBaseUrl` pentru gestionarea corectă a baseUrl
+- Include meta refresh + link `noscript` ca rezervă
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Sfaturi pentru previzualizare {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Oprește curat previzualizarea Node: deschide `http://localhost:<port>/__stop` (tipărit după `Local server started`).
+- Dacă imaginile nu se încarcă în MDX/JSX, folosește `useBaseUrl('/img/...')` pentru a respecta `baseUrl` al site-ului.
+- Previzualizarea pornește mai întâi; verificarea linkurilor rulează ulterior și nu blochează (linkurile externe rupte nu vor opri previzualizarea).
+- URL de previzualizare exemplu: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (tipărit după „Local server started”).
+- Linkuri externe în verificarea de linkuri: Unele site-uri externe (de ex., addons.thunderbird.net) blochează crawler-ele automate și pot afișa 403 la verificări. Previzualizarea tot pornește; acestea pot fi ignorate în siguranță.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Tradu site-ul {#translate-website}
 
-What you can translate
+Ce poți traduce
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Doar interfața site-ului: pagina principală, bara de navigare, subsolul și alte șiruri UI. Conținutul documentației rămâne doar în engleză deocamdată.
 
-Where to edit
+Unde să editezi
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Editează `website/i18n/<locale>/code.json` (folosește `en` ca referință). Păstrează neschimbate placeholder-ele precum `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Generează sau actualizează fișierele
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Creează stub-urile lipsă pentru toate localele: `npm --prefix website run i18n:stubs`
+- Suprascrie stub-urile din engleză (după adăugarea de șiruri noi): `npm --prefix website run i18n:stubs:force`
+- Alternativ pentru un singur locale: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Tradu șirurile UI ale homepage/navbar/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Setează credențialele o singură dată (shell sau .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Opțional: `export OPENAI_MODEL=gpt-4o-mini`
+- O singură execuție (toate localele, omite en): `make translate_web_index`
+- Limitează la locale specifice: `make translate_web_index OPTS="--locales de,fr"`
+- Suprascrie valorile existente: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Validare și reîncercări
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Scriptul de traducere validează forma JSON, păstrează placeholder-ele cu acolade și se asigură că URL-urile rămân neschimbate.
+- La eșecul validării, reîncearcă cu feedback de până la 2 ori înainte de a păstra valorile existente.
 
-Preview your locale
+Previzualizează-ți locale-ul
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Server de dezvoltare: `npm --prefix website run start`
+- Vizitează `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Trimitere
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Deschide un PR cu fișierul/fișierele `code.json` editate. Păstrează schimbările focalizate și include o captură de ecran rapidă când este posibil.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Sfaturi de securitate și configurare {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Nu face commit la `sources/manifest.json` (creat temporar de build)
+- Păstrează `browser_specific_settings.gecko.id` stabil pentru a conserva canalul de actualizare
+
+---
+
+### Persistența setărilor {#settings-persistence}
+
+- Stocare: Toate setările utilizatorului trăiesc în `storage.local` și persistă între actualizările suplimentului.
+- Instalare: Valorile implicite se aplică doar când o cheie lipsește strict (undefined).
+- Actualizare: O migrare completează doar cheile lipsă; valorile existente nu sunt niciodată suprascrise.
+- Marcator schemă: `settingsVersion` (în prezent `1`).
+- Chei și valori implicite:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Cod: vezi `sources/background.js` → `initializeOrMigrateSettings()` și `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Flux de lucru pentru dezvoltare (adăugarea unei setări noi)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Crește `SCHEMA_VERSION` în `sources/background.js`.
+- Adaugă noua cheie + implicitul în obiectul `DEFAULTS` din `initializeOrMigrateSettings()`.
+- Folosește regula „only-if-undefined” când însămânțezi implicitele; nu suprascrie valorile existente.
+- Dacă setarea este vizibilă pentru utilizator, integreaz-o în `sources/options.js` și adaugă șiruri localizate.
+- Adaugă/ajustează testele (vezi `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Sfaturi pentru testare manuală
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Simulează o instalare proaspătă: golește directorul de date al extensiei sau pornește cu un profil nou.
+- Simulează o actualizare: setează `settingsVersion` la `0` în `storage.local` și reîncarcă; confirmă că valorile existente rămân neschimbate și doar cheile lipsă sunt adăugate.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Depanare {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Asigură-te că Thunderbird este 128 ESR sau mai nou
+- Folosește Consola de erori pentru probleme la runtime
+- Dacă setările stocate par să nu se aplice corect, repornește Thunderbird și încearcă din nou. (Thunderbird poate memora starea între sesiuni; o repornire asigură încărcarea setărilor proaspete.)
 
 ---
 
-### Translations
+### CI și acoperire {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- GitHub Actions (`CI — Tests`) rulează vitest cu praguri de acoperire (85% linii/funcții/ramuri/declarații). Dacă pragurile nu sunt îndeplinite, jobul eșuează.
+- Workflow-ul încarcă un artefact `coverage-html` cu raportul HTML; descarcă-l din pagina rularii (Actions → ultima rulare → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Contribuții {#contributing}
 
-Screenshots for docs
+- Vezi CONTRIBUTING.md pentru ghiduri de branch/commit/PR
+- Sfat: Creează un profil Thunderbird separat pentru dezvoltare, pentru testare, ca să nu îți afecteze profilul zilnic.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Traduceri
+
+- Rularea unor joburi mari de traducere „all → all” poate fi lentă și costisitoare. Începe cu un subset (de ex., câteva documente și 1–2 locale), revizuiește rezultatul, apoi extinde.
+
+---
+
+- Politică de reîncercare: joburile de traducere efectuează până la 3 reîncercări cu backoff exponențial la erori de API; vezi `scripts/translate_web_docs_batch.js` și `scripts/translate_web_docs_sync.js`.
+
+Capturi de ecran pentru documentație
+
+- Stochează imaginile sub `website/static/img/`.
+- Referențiază-le în MD/MDX prin `useBaseUrl('/img/<filename>')` astfel încât căile să funcționeze cu `baseUrl` al site-ului.
+- După adăugarea sau redenumirea imaginilor sub `website/static/img/`, confirmă că toate referințele folosesc în continuare `useBaseUrl('/img/…')` și se redau într-o previzualizare locală.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- `favicon.ico` multi‑dimensiune este generat automat în toate căile de build (Make + scripturi) prin `website/scripts/build-favicon.mjs`.
+- Nu este necesar niciun pas manual; actualizarea `icon-*.png` este suficientă.
+  Sfat de revizuire
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Păstrează front‑matter-ul `id` neschimbat în documentele traduse; traduce doar `title` și `sidebar_label` când sunt prezente.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Scop: elimină artefactele locale de build/preview.
+- Utilizare: `make clean`
+- Elimină (dacă există):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,134 +302,136 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Scop: formatează, testează, actualizează changelog-ul, face commit și push.
+- Utilizare: `make commit`
+- Detalii: rulează Prettier (scriere), `make test`, `make test_i18n`; adaugă la changelog când există diferențe în stage; face push către `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Scop: rulează ESLint prin flat config.
+- Utilizare: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Scop: listează toate țintele cu documentație într-o linie.
+- Utilizare: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Scop: rulează lint pe MailExtension folosind `web-ext`.
+- Utilizare: `make lint`
+- Note: copiază temporar `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignoră ZIP-urile construite; avertismentele nu eșuează pipeline-ul.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Scop: meniu interactiv pentru selectarea unei ținte și a argumentelor opționale.
+- Utilizare: rulează `make` fără argumente.
+- Note: dacă `whiptail` nu este disponibil, meniul revine la `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Scop: construiește ZIP-urile ATN și LOCAL (depinde de `lint`).
+- Utilizare: `make pack`
+- Sfat: ridică versiunile în ambele `sources/manifest_*.json` înainte de împachetare.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Scop: formatează repo-ul in-place.
+- Utilizare: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Scop: verifică formatarea (fără scrieri).
+- Utilizare: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Scop: alias pentru `prettier`.
+- Utilizare: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Scop: rulează Prettier (scriere), ESLint, apoi Vitest (acoperire dacă e instalat).
+- Utilizare: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Scop: teste axate pe i18n pentru șirurile suplimentului și documentația site-ului.
+- Utilizare: `make test_i18n`
+- Rulează: `npm run test:i18n` și `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Scop: traduce șirurile UI ale suplimentului din EN în alte locale.
+- Utilizare: `make translation_app OPTS="--locales all|de,fr"`
+- Note: păstrează structura cheilor și placeholder-ele; loghează în `translation_app.log`. Script: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
+- Scop: traduce documentația site-ului din `website/docs/*.md` în `website/i18n/<locale>/...`.
+- Preferat: `translate_web_docs_batch` (OpenAI Batch API)
+  - Utilizare (flaguri): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pozitionalul legacy este încă acceptat: `OPTS="<doc|all> <lang|all>"`
+- Comportament: construiește JSONL, încarcă, interoghează la fiecare 30s, descarcă rezultatele, scrie fișierele.
+- Notă: un job batch poate dura până la 24 de ore (conform ferestrei batch a OpenAI). Consola arată timpul scurs la fiecare interogare.
+- Mediu: `OPENAI_API_KEY` (obligatoriu), opționale `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (implicit 24h), `BATCH_POLL_INTERVAL_MS`.
 - Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+  - Utilizare (flaguri): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Pozitionalul legacy este încă acceptat: `OPTS="<doc|all> <lang|all>"`
+- Comportament: cereri sincron per‑pereche (fără agregare batch).
+- Note: Promptere interactive când `OPTS` este omis. Ambele moduri păstrează blocurile de cod/codul inline și mențin front‑matter-ul `id` neschimbat; loghează în `translation_web_batch.log` (batch) sau `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Scop: traduce șirurile UI ale site-ului (homepage, navbar, footer) din `website/i18n/en/code.json` în toate localele sub `website/i18n/<locale>/code.json` (excluzând `en`).
+- Utilizare: `make translate_web_index` sau `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Cerințe: exportă `OPENAI_API_KEY` (opțional: `OPENAI_MODEL=gpt-4o-mini`).
+- Comportament: validează structura JSON, păstrează placeholder-ele cu acolade, menține URL-urile neschimbate și reîncearcă cu feedback la erori de validare.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Scop: construiește site-ul de documentație în `website/build`.
+- Utilizare: `make web_build OPTS="--locales en|de,en|all"` (sau setează `BUILD_LOCALES="en de"`)
+- Intern: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Dependențe: rulează `npm ci` în `website/` doar dacă lipsește `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Scop: verificare de linkuri sigură offline.
+- Utilizare: `make web_build_linkcheck OPTS="--locales en|all"`
+- Note: construiește în `tmp_linkcheck_web_pages`; rescrie `baseUrl` de pe GH Pages în `/`; omite linkurile HTTP(S) la distanță.
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Scop: previzualizare gh‑pages locală cu teste/verificare link opționale.
+- Utilizare: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Comportament: încearcă mai întâi serverul de previzualizare Node (`scripts/preview-server.mjs`, acceptă `/__stop`), revine la `python3 -m http.server`; servește pe 8080–8090; PID la `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Scop: fă push al `website/build` în ramura `gh-pages`.
+- Utilizare: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
+Sfat: setează `NPM=…` pentru a suprascrie managerul de pachete folosit de Makefile (implicit `npm`).
+
+---

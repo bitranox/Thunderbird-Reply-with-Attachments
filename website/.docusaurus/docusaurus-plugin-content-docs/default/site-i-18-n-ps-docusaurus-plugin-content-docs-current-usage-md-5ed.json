@@ -1,7 +1,7 @@
 {
   "id": "usage",
-  "title": "کارول",
-  "description": "Usage",
+  "title": "استعمال",
+  "description": "---",
   "source": "@site/i18n/ps/docusaurus-plugin-content-docs/current/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "usage",
-    "title": "کارول",
-    "sidebar_label": "کارول"
+    "title": "استعمال",
+    "sidebar_label": "کارېدنه"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/configuration"
   },
   "next": {
-    "title": "پخوانیوالتیا",
+    "title": "سازګاري",
     "permalink": "/Thunderbird-Reply-with-Attachments/ps/docs/compatibility"
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "donation",
-  "title": "መስጢር",
-  "description": "መስጢር",
+  "title": "ልገሳ",
+  "description": "---",
   "source": "@site/i18n/ti/docusaurus-plugin-content-docs/current/donation.md",
   "sourceDirName": ".",
   "slug": "/donation",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "donation",
-    "title": "መስጢር",
-    "sidebar_label": "መስጢር"
+    "title": "ልገሳ",
+    "sidebar_label": "ልገሳ"
   },
   "sidebar": "docs",
   "previous": {

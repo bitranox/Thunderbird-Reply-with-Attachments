@@ -4,94 +4,98 @@ title: 'Выкарыстанне'
 sidebar_label: 'Выкарыстанне'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Выкарыстанне {#usage}
+
+- Пры адказе дадатак дадае арыгіналы аўтаматычна — або спачатку пытаецца, калі ўключана ў Наладах.
+- Дублікаты пазбягаюцца па назве файла; часткі S/MIME заўсёды прапускаюцца. Убудаваныя выявы па змаўчанні аднаўляюцца ў целе адказу (можна адключыць праз "Include inline pictures" у Наладах).
+- Укладанні з чорнага спісу таксама прапускаюцца (шаблоны glob, што параўноўваюць назвы файлаў, без уліку рэгістра; шляхі не ўлічваюцца). Гл. [Канфігурацыя](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Што адбываецца пры адказе {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Вызначыць адказ → пералічыць арыгінальныя ўкладанні → адфільтраваць S/MIME + убудаваныя → неабавязкова пацвердзіць → дадаць прыдатныя файлы (прапусціць дублікат) → аднавіць убудаваныя выявы ў целе.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Строгі супраць паслабленага праходу: дадатак спачатку выключае S/MIME і ўбудаваныя часткі з файлавых укладанняў. Калі нічога не падыходзіць, запускаецца паслаблены праход, які таксама выключае S/MIME/убудаваныя, але талеруе больш выпадкаў (гл. Падрабязнасці кода). Убудаваныя выявы ніколі не дадаюцца як файлавыя ўкладанні; замест гэтага, калі "Include inline pictures" уключана (па змаўчанні), яны ўбудоўваюцца непасрэдна ў цела адказу як URI з данымі ў base64.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Тып часткі                                                   |                    Строгі праход |                Паслаблены праход |
+| ------------------------------------------------------------ | -------------------------------: | -------------------------------: |
+| Файл подпісу S/MIME `smime.p7s`                              |                        Выключана |                        Выключана |
+| Тыпы MIME S/MIME (`application/pkcs7-*`)                     |                        Выключана |                        Выключана |
+| Убудаваная выява, на якую спасылаецца Content‑ID (`image/*`) | Выключана (аднаўляецца ў целе\*) | Выключана (аднаўляецца ў целе\*) |
+| Прыкрэплены ліст (`message/rfc822`) з назвай файла           |                      Не дадаецца |              Можа быць дададзена |
+| Звычайнае файлавае ўкладанне з назвай файла                  |              Можа быць дададзена |              Можа быць дададзена |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* Калі "Include inline pictures" уключана (па змаўчанні: УКЛ.), убудаваныя выявы ўбудоўваюцца ў цела адказу як URI з данымі ў base64 замест дадання ў выглядзе файлавых укладанняў. Гл. [Канфігурацыя](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Прыклад: Некаторыя ўкладанні могуць не мець пэўных загалоўкаў, але пры гэтым з’яўляюцца звычайнымі файламі (не ўбудаваныя/S/MIME). Калі строгі праход нічога не знаходзіць, паслаблены можа прыняць такія файлы і прыкласці іх.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Перакрыжаваныя спасылкі {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- Перасылка наўмысна не змяняецца (гл. Абмежаванні ніжэй).
+- Прычыны, чаму ўкладанне можа не быць дададзена: гл. “Чаму ўкладанні могуць не быць дададзены”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Падрабязнасці паводзінаў {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Прадухіленне дублікатаў:** дадатак пазначае ўкладку складання як апрацаваную, выкарыстоўваючы сеансавае значэнне для кожнай укладкі і ўнутрыпамятны ахоўны механізм. Ён не дадае арыгіналы двойчы.
+- Закрыццё і паўторнае адкрыццё акна складання разглядаецца як новая ўкладка (г.зн. дазваляецца новая спроба).
+- **Улік існуючых укладанняў:** калі ў акне складання ўжо ёсць нейкія ўкладанні, арыгіналы ўсё адно дадаюцца толькі адзін раз, прапускаючы назвы, якія ўжо існуюць.
+- **Выключэнні:** артэфакты S/MIME і ўбудаваныя выявы выключаюцца з файлавых укладанняў. Калі на першым праходзе нічога не падыходзіць, паслаблены рэзервовы праход паўторна правярае не‑S/MIME часткі. Убудаваныя выявы апрацоўваюцца асобна: яны аднаўляюцца ў целе адказу як URI з данымі (калі ўключана).
+  - **Назвы файлаў:** `smime.p7s`
+  - **Тыпы MIME:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Убудаваныя выявы:** любая частка `image/*`, на якую спасылаецца Content‑ID — выключаецца з файлавых укладанняў, але ўбудоўваецца ў цела адказу, калі "Include inline pictures" УКЛ.
+  - **Прыкрэпленыя лісты (`message/rfc822`):** разглядаюцца як звычайныя ўкладанні, калі маюць назву файла; могуць быць дададзены (з улікам праверак на дублікаты і чорны спіс).
+- **Папярэджанне пра чорны спіс (калі ўключана):** калі кандыдаты выключаюцца вашым чорным спісам,
+  дадатак паказвае невялікае мадальнае акно са спісам закранутых файлаў і адпаведных
+  шаблонаў. Гэта папярэджанне таксама з’яўляецца ў выпадках, калі ўкладанні не будуць
+  дададзены, бо ўсё было выключана.
 
 ---
 
-## Limitations {#limitations}
+## Спалучэнні клавіш {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Акно пацверджання: Y/J = Так, N/Esc = Не; Tab/Shift+Tab і стрэлкі цыклічна змяняюць фокус.
+  - Параметр “Адказ па змаўчанні” ў [Канфігурацыя](configuration#confirmation) вызначае кнопку з пачатковым фокусам.
+  - Enter актывуе сфакусаваную кнопку. Tab/Shift+Tab і стрэлкі змяняюць фокус для даступнасці.
+
+### Шпаргалка па клавіятуры {#keyboard-cheat-sheet}
+
+| Клавішы         | Дзеянне                            |
+| --------------- | ---------------------------------- |
+| Y / J           | Пацвердзіць Так                    |
+| N / Esc         | Пацвердзіць Не                     |
+| Enter           | Актываваць сфакусаваную кнопку     |
+| Tab / Shift+Tab | Перамясціць фокус наперад/назад    |
+| Arrow keys      | Перамяшчаць фокус паміж кнопкамі   |
+| Default answer  | Задае пачатковы фокус (Так або Не) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Абмежаванні {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- Перасылка гэтым дадаткам не змяняецца (падтрымліваюцца Адказ і Адказ усім).
+- Вельмі вялікія ўкладанні могуць падпадаць пад абмежаванні Thunderbird або пастаўшчыка.
+  - Дадатак не нарэзае і не сціскае файлы; ён абапіраецца на звычайную апрацоўку ўкладанняў у Thunderbird.
+- Зашыфраваныя паведамленні: часткі S/MIME наўмысна выключаюцца.
 
 ---
 
-See also
+## Чаму ўкладанні могуць не быць дададзены {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Убудаваныя выявы не дадаюцца як файлавыя ўкладанні. Калі "Include inline pictures" УКЛ. (па змаўчанні), яны ўбудоўваюцца ў цела адказу як URI з данымі ў base64. Калі налада ВЫКЛ., убудаваныя выявы цалкам выдаляюцца. Гл. [Канфігурацыя](configuration#include-inline-pictures).
+- Часткі подпісу S/MIME выключаюцца па задуме: назвы файлаў кшталту `smime.p7s` і тыпы MIME, такія як `application/pkcs7-signature` або `application/pkcs7-mime`, прапускаюцца.
+- Шаблоны чорнага спісу могуць фільтраваць кандыдаты: гл. [Канфігурацыя](configuration#blacklist-glob-patterns); супадзенне без уліку рэгістра і толькі па назве файла.
+- Дублікатныя назвы файлаў не дадаюцца паўторна: калі ў акне складання ўжо ёсць файл з той жа нармалізаванай назвай, ён прапускаецца.
+- Не файлавыя часткі або адсутныя назвы файлаў: для дадання разглядаюцца толькі падобныя да файла часткі з прыдатнымі назвамі.
+
+---
+
+Гл. таксама
+
+- [Канфігурацыя](configuration)

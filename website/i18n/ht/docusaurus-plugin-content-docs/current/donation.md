@@ -1,14 +1,16 @@
 ---
 id: donation
-title: 'Donasyon'
-sidebar_label: 'Donasyon'
+title: 'Fè don'
+sidebar_label: 'Fè don'
 ---
 
-## Donasyon
+---
+
+## Fè don
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Si ou renmen "Reponn ak Atachman" epi ou vle sipòte devlopman li, ou ka fè don isit la:
+Si ou renmen "Reply with Attachments" epi ou vle sipòte devlopman li, ou ka fè don isit la:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -39,12 +41,12 @@ Si ou renmen "Reponn ak Atachman" epi ou vle sipòte devlopman li, ou ka fè don
   </a>
 </div>
 
-Mèsi! Sipò ou ede mentni konpatibilite ak nouvo vèsyon Thunderbird, amelyore aksesibilite ak tès, epi kenbe dokiman an ajou.
+Mèsi! Sipò ou ede kenbe konpatibilite ak nouvo vèsyon Thunderbird yo, amelyore aksè/aksesibilite ak tès yo, epi kenbe dokiman yo ajou.
 
 Nòt
 
-- Lyen don yo louvri sèlman lè ou klike sou yo; add-on nan pa fè okenn demann rezo nan background.
-- Sipò repete ede mentni alontèm ak ajou alè, men li antyèman opsyonèl.
+- Lyen don yo louvri sèlman lè ou klike sou yo; ekstansyon an pa fè okenn demann rezo an background.
+- Sipò ki repete ede antretyen alontèm ak mizajou a tan, men li nètman opsyonèl.
 
 ---
 
@@ -54,33 +56,35 @@ Si bouton imaj yo pa chaje, tanpri itilize lyen sa yo olye:
 
 #### [PayPal](https://www.paypal.com/donate/?hosted_button_id=L2NQXHB7FQ5FJ)
 
-#### [Achte m yon Kafe](https://buymeacoffee.com/bitranox)
+#### [Achte m yon kafe](https://buymeacoffee.com/bitranox)
 
 ---
 
-Donasyon yo se volontè; pa gen okenn blokaj sou karakteristik.
+Don yo se volontè; pa gen okenn fonksyon ki fèmen dèyè don.
 
 ---
 
-## Vizibilite Donasyon (snooze 90 jou)
+## Vizibilite Don (pòz 90 jou)
 
-Add-on nan gen yon karakteristik pratik pou kache pwomotè donasyon pou yon ti tan apre ou fin fè don.
+Ekstansyon an genyen yon fonksyon pratik pou kache rapèl don pandan kèk tan apre ou fin bay.
 
 - Kote pou jwenn li
-  - Opsyon → Seksyon Sipò: ou pral wè yon bouton "Mwen fè don" ak yon ti zòn endikasyon.
-  - Dyalo kopi voye a montre yon bouton Donasyon; li otomatikman kache lè snooze a aktif.
+  - Opsyon → seksyon Sipò: w ap wè yon bouton “Mwen te bay” ak yon ti zòn endikasyon.
+  - Dyalòg Konfimasyon Voye a montre tou yon bouton Don; li kache otomatikman lè pòz la aktif.
 
-- Kijan sa mache
-  - Klike sou "Mwen fè don" kache bouton donasyon ak pwomotè ki gen rapò pou 90 jou.
-  - Yon endikasyon estati montre "Kache jouk YYYY‑MM‑DD" (nan dat lokal ou). Genyen tou yon bouton "Montre Donasyon ankò" pou retabli vizibilite imedyatman.
-  - Apre 90 jou, bouton Donasyon an wè otomatikman ankò.
+- Kijan li mache
+  - Lè w klike “Mwen te bay”, sa kache bouton don yo ak rapèl ki gen rapò pou 90 jou.
+  - Yon endikasyon estati montre “Kache jiska YYYY‑MM‑DD” (nan dat lokal ou). Genyen tou yon bouton “Montre Don ankò” pou retabli vizibilite imedyatman.
+  - Apre 90 jou, bouton Don an vin vizib ankò otomatikman.
 
-- Privatete & depo
-  - Add-on nan estoke yon sèl timestamp nan depo lokal Thunderbird pou sonje peryòd snooze la. Kle: `donateHideUntil` (milisani epoch).
-  - Paramèt sa a lokal pou pwofil Thunderbird ou (pa senkronize nan nwaj). Pa gen demann rezo ki fèt pa karakteristik sa a.
+- Vi prive ak depo
+  - Ekstansyon an sere yon sèl anprent tan nan depo lokal Thunderbird la pou sonje peryòd pòz la. Kle: `donateHideUntil` (milisèkond epòk).
+  - Paramèt sa a lokal pou pwofil Thunderbird ou (pa senkronize nan nwaj). Fonksyon sa a pa fè okenn demann rezo.
 
 - Rezoud pwoblèm
-  - Si Donasyon an toujou montre jis apre ou klike sou "Mwen fè don", tann yon moman oswa relanse paj Opsyon yo; UI a ap mete ajou dèske paramèt la sove.
-  - Pou réinitialisé manyèlman, klike sou "Montre Donasyon ankò". Ou ka tou tann jouk dat ki anrejistre nan endikasyon an pase.
+  - Si Don toujou parèt imedyatman apre ou klike “Mwen te bay”, tann yon ti moman oswa relouvri paj Opsyon yo; entèfas la ap mete ajou le pli vit ke paramèt la sove.
+  - Pou reyajiste manyèlman, klike “Montre Don ankò”. Ou ka tou tann jiskaske dat ki make nan endikasyon an pase.
 
-Karakteristik sa a se sèlman pou pratik; li pa janm bloke fonksyonalite add-on lan epi li pa kolekte okenn done pèsonèl.
+Fonksyon sa a se sèlman pou konvenyans; li pa janm bloke fonksyonalite ekstansyon an epi li pa ranmase okenn done pèsonèl.
+
+---

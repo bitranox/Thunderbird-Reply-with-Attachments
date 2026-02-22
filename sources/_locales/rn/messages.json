@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "Tanga impuruza igihe inyomeko zikuweko n'urwo rutonde rw'ibibujijwe"
   },
+  "uiIncludeInlineLabel": {
+    "message": "Include inline pictures (embedded images)"
+  },
   "uiDebugHeader": {
     "message": "Bihanitse"
   },

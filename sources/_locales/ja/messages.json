@@ -73,6 +73,9 @@
   "uiWarnBlacklistLabel": {
     "message": "ブラックリストにより添付ファイルが除外された場合に警告する"
   },
+  "uiIncludeInlineLabel": {
+    "message": "インライン画像を含める（埋め込み画像）"
+  },
   "uiDebugHeader": {
     "message": "詳細設定"
   },

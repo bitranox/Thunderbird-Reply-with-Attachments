@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Începere rapidă'
-sidebar_label: 'Începere rapidă'
+title: 'Ghid de pornire rapidă'
+sidebar_label: 'Pornire rapidă'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Ghid rapid
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Versiunea minimă de Thunderbird
+Acest supliment este compatibil cu Thunderbird **128 ESR sau mai nou**. Versiunile mai vechi nu sunt acceptate.
+:::
+
+:::note Fără telemetrie; fără rețea în fundal
+Suplimentul **nu** colectează analitice/telemetrie și **nu** face cereri de rețea în fundal. Accesul la rețea are loc doar când faci clic pe linkuri externe (Docs, GitHub, Donate).
+:::
+
+---
+
+### Instalare
+
+1. Instalează suplimentul din Thunderbird Add‑ons.
+2. Opțional: Activează confirmarea (Opțiuni → „Întreabă înainte de a adăuga atașamente”).
+3. Opțional: Lasă avertizarea listei negre activată (implicit): „Avertizează dacă atașamentele sunt excluse de pe lista neagră”.
+4. Opțional: Adaugă șabloane pentru lista neagră (câte unul pe linie), de ex.:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Notă: „# …” de mai sus este un comentariu în această documentație; nu include comentarii în șabloanele pe care le inserezi în Opțiuni. Introdu doar un singur șablon pe fiecare linie.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Acum răspunde la un mesaj cu atașamente — originalele vor fi adăugate automat sau după o confirmare rapidă. Dacă unele fișiere sunt excluse de lista ta neagră, vei vedea un avertisment scurt care le enumeră.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### Verifică {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Răspunde la un mesaj cu 1–2 atașamente și confirmă că originalele sunt adăugate în fereastra de compunere.
+- Pentru a ajusta comportamentul, vezi [Configurare](configuration) (comutator pentru confirmare, răspuns implicit, șabloane de listă neagră).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Verifică avertizarea listei negre {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Răspunde la un mesaj care conține un fișier precum „secret.txt”.
+- Cu „Avertizează dacă atașamentele sunt excluse de pe lista neagră” activată, un dialog mic listează fișierele excluse și șablonul care se potrivește.
+
+Dacă nu vezi un avertisment, asigură-te că șablonul se potrivește exact cu numele fișierului (doar numele fișierului, insensibil la majuscule/minuscule). Vezi Configurare → Lista neagră.
+
+---
+
+### Notă despre tastatură {#keyboard-note}
+
+- Fereastra de confirmare acceptă Y/J pentru Da și N/Esc pentru Nu. Pe unele tastaturi non‑latine, tastele literelor pot varia; Enter confirmă butonul focalizat.
+
+---

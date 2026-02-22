@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'ආරම්භක මාර්ගෝපදේශය'
-sidebar_label: 'ආරම්භක මාර්ගෝපදේශය'
+title: 'ඉක්මන් ආරම්භය'
+sidebar_label: 'ඉක්මන් ආරම්භය'
 ---
-
-## Quickstart
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## ඉක්මන් ආරම්භය
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important අවම Thunderbird ආවෘතිය
+මෙම ඇඩ්‑ඔන් Thunderbird **128 ESR හෝ ඊට වඩා නව** ආශ්‍රය කරයි. පරණ අනුවාද නොසහාය දක්වයි.
+:::
+
+:::note දත්ත එකතු කිරීම නැත; පසුබිම් ජාල ප්‍රවේශය නැත
+මෙම ඇඩ්‑ඔන් විශ්ලේෂණ/ටෙලිමෙට්‍රි **සම කැමති නැත** සහ **කිසිදු** පසුබිම් ජාල අයදුම් ඉදිරිපත් නොකරයි. ජාල ප්‍රවේශය සිදුවන්නේ ඔබ බාහිර සබැඳි (Docs, GitHub, Donate) ක්ලික් කරන විට පමණි.
+:::
+
+---
+
+### ස්ථාපනය
+
+1. Thunderbird Add‑ons වෙතින් ඇඩ්‑ඔන් එක ස්ථාපනය කරන්න.
+2. විකල්ප: තහවුරු කිරීම සක්‍රීය කරන්න (Options → “ඇමුණුම් එක් කිරීමට පෙර අසන්න”).
+3. විකල්ප: බ්ලැක්ලිස්ට් අනතුරු දැන්වීම සක්‍රීය තත්වයේ තබාගන්න (පෙරනිමි): “බ්ලැක්ලිස්ට් මගින් ඇමුණුම් බැහැර කර ඇත්නම් අවවාද කරන්න”.
+4. විකල්ප: බ්ලැක්ලිස්ට් රටා (පේළියකට එකක්) එක් කරන්න, උදාහරණයක් ලෙස:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+සටහන: ඉහත “# …” මෙම ලේඛනයේ ටිපණියක් (comment) ලෙස පාවිච්චි කර ඇත; Options තුළට ඔබ රටා ඇලවූ විට අදහස් (comments) එක් නොකරන්න. එක් පේළියකට රටාවක් පමණක් ඇතුළත් කරන්න.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+දැන් ඇමුණුම් සහිත පණිවිඩයකට පිළිතුරු දෙන්න — මුල් ඇමුණුම් ස්වයංක්‍රීයවම හෝ ඉක්මන් තහවුරු කිරීමකින් පසු එක් කෙරෙනු ඇත. ඔබගේ බ්ලැක්ලිස්ට් මගින් ගොනු කිහිපයක් බැහැර කර ඇත්නම්, ඒවා ලැයිස්තුගත කළ කෙටි අනතුරු දැන්වීමක් ඔබට පෙනෙනු ඇත.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### සත්‍යාපනය {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- ඇමුණුම් 1–2 ක් සහිත පණිවිඩයකට පිළිතුරු දෙන්න සහ මුල් ඒවා ඔබගේ රචනා කවුළුවට එක් වී ඇතිදැයි තහවුරු කරන්න.
+- හැසිරීම සකසීමට, [වින්‍යාසය](configuration) බලන්න (තහවුරු කිරීමේ මාරුව, පෙරනිමි පිළිතුර, බ්ලැක්ලිස්ට් රටා).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### බ්ලැක්ලිස්ට් අනතුරු දැන්වීම සත්‍යාපනය {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- “secret.txt” වැනි ගොනුවක් අඩංගු පණිවිඩයකට පිළිතුරු දෙන්න.
+- “බ්ලැක්ලිස්ට් මගින් ඇමුණුම් බැහැර කර ඇත්නම් අවවාද කරන්න” සක්‍රීය කර ඇති විට, කුඩා සංවාදයක් බැහැර කළ ගොනු සහ ගැලපෙන රටාව ලැයිස්තුගත කරයි.
+
+ඔබට අනතුරු දැන්වීමක් නොපෙනුනහොත්, රටාව ගොනු නාමයට සම්පූර්ණයෙන්ම ගැළපෙනවාදැයි සහතික වන්න (ගොනු නාමය පමණක්, අකුරු සීරුමාරුව නොසලකා). වින්‍යාසය → බ්ලැක්ලිස්ට් බලන්න.
+
+---
+
+### යතුරුපුවරු සටහන {#keyboard-note}
+
+- තහවුරු කිරීමේ සංවාදය Yes සඳහා Y/J සහ No සඳහා N/Esc සහය දක්වයි. සමහර ලතින් නොවන යතුරුපුවරුවල, අක්ෂර යතුරු වෙනස් විය හැක; Enter මඟින් අවධානය තිබෙන බොත්තම තහවුරු කරයි.
 
 ---

@@ -3,17 +3,25 @@ id: changelog
 title: 'چینج لاگ'
 ---
 
-## Changelog
+---
 
-For the complete, detailed history, see the repository’s
-[CHANGELOG.md on GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
+## تبدیلی نامہ
 
-- 2.1.0: Full internationalization support for the top 100 languages
-- 2.0.0: rewrite to a full-featured version (EN/DE)
-- 1.0.1: switched to messages.listAttachments()
-- 1.0.0: initial release
+مکمّل، تفصیلی تاریخ خٲطر، ریپوزِٹری ہُند [GitHub پر CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) دیکھیو۔
 
-## Dates and channels {#dates-and-channels}
+- 2.3.2: "Inline تصویراں شامل کرن" اب تصویراں سیدھے جواب باڈی منز بطور base64 data URIs ایمبیڈ کران (ڈیفالٹ: آن); کوڈ معیار منز بہتری تِہ ٹیسٹ کورَیج وِسعت۔
+- 2.3.1: Thunderbird جَد بیک گراؤنڈ ایونٹ پیج کُن idle بناوے، تَمۄس پتہ اٹیچمنٹس برقرار رہان; مسئلہ حل کرن خٲطر مخصوص debug hooks شامل کران۔
+- 2.3.0: اٹیچمنٹ deduplication مزید بہتر، ٹیسٹ کورَیج وِسعت، تِہ AMO پالیسیون مطابق بناؤن خٲطر فرسودہ permissions ہٹاون۔
+- 2.1.0: ٹاپ 100 زباناں خٲطر مکمل بین الاقوامیکرن سپورٹ۔
+- 2.0.0: مکمل خصوصیات والۍ ورژن ہُند دوبارہ لکھن (EN/DE)۔
+- 1.0.1: messages.listAttachments() استعمال کرن۔
+- 1.0.0: ابتدائی اجرا۔
 
-- Releases to ATN may lag a few hours after packaging.
-- LOCAL builds are for developer testing only and are not distributed via ATN.
+---
+
+## تاریخ تِہ چینلز {#dates-and-channels}
+
+- ATN پَر ریلیز پیکیجنگ پتہ کِہہ گھنٹہ تاخیر گژھی ہیکن۔
+- LOCAL بیلڈ صرف ڈیولپر ٹیسٹنگ خٲطر چھن تِہ ATN راہیں تقسیم نَہ کرنہ یوان۔
+
+---

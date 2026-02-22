@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Pengenalan Pantas'
-sidebar_label: 'Pengenalan Pantas'
+title: 'Mula Cepat'
+sidebar_label: 'Mula Cepat'
 ---
 
-## Pengenalan Pantas
+---
 
-:::important Minimum Thunderbird Version
-Add-on ini menyokong Thunderbird **128 ESR atau lebih baru**. Versi yang lebih lama tidak disokong.
+## Panduan Pantas
+
+:::important Versi Minimum Thunderbird
+Pengaya ini menyokong Thunderbird **128 ESR atau lebih baharu**. Versi terdahulu tidak disokong.
 :::
 
-:::note No telemetry; no background network
-Add-on ini **tidak** mengumpul analitik/telemetri dan tidak membuat permintaan rangkaian latar belakang. Akses rangkaian hanya berlaku apabila anda mengklik pautan luar (Dokumen, GitHub, Derma).
+:::note Tiada telemetri; tiada rangkaian latar belakang
+Pengaya ini **tidak** mengumpul analitik/telemetri dan **tidak** membuat permintaan rangkaian latar belakang. Akses rangkaian hanya berlaku apabila anda mengklik pautan luaran (Dokumentasi, GitHub, Derma).
 :::
 
 ---
 
 ### Pasang
 
-1. Pasang add-on dari Thunderbird Add-ons.
-2. Pilihan: Aktifkan pengesahan (Pilihan → “Tanya sebelum menambah lampiran”).
-3. Pilihan: Tinggalkan amaran senarai hitam diaktifkan (default): “Amaran jika lampiran dikecualikan oleh senarai hitam”.
-4. Pilihan: Tambah pola senarai hitam (satu setiap baris), contohnya:
+1. Pasang pengaya daripada Pengaya Thunderbird.
+2. Pilihan: Dayakan pengesahan (Pilihan → “Tanya sebelum menambah lampiran”).
+3. Pilihan: Biarkan amaran senarai hitam didayakan (lalai): “Amaran jika lampiran dikecualikan oleh senarai hitam”.
+4. Pilihan: Tambah corak senarai hitam (satu setiap baris), cth:
 
 ```
 *intern*
@@ -29,28 +31,30 @@ Add-on ini **tidak** mengumpul analitik/telemetri dan tidak membuat permintaan r
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Nota: “# …” di atas adalah komen dalam dokumentasi ini; jangan sertakan komen dalam pola yang anda tampal ke dalam Pilihan. Masukkan satu pola setiap baris sahaja.
+Nota: “# …” di atas ialah komen dalam dokumentasi ini; jangan sertakan komen dalam corak yang anda tampal ke dalam Pilihan. Masukkan satu corak bagi setiap baris sahaja.
 
-Sekarang balas kepada mesej dengan lampiran — asal akan ditambah secara automatik atau selepas pengesahan cepat. Jika ada fail yang dikecualikan oleh senarai hitam anda, anda akan melihat amaran pendek yang menyenaraikannya.
+Sekarang balas mesej yang mempunyai lampiran — yang asal akan ditambah secara automatik atau selepas pengesahan ringkas. Jika ada fail yang dikecualikan oleh senarai hitam anda, anda akan melihat amaran ringkas yang menyenaraikannya.
 
 ---
 
 ### Sahkan {#verify}
 
-- Balas kepada mesej dengan 1–2 lampiran dan sahkan bahawa asal ditambah ke tetingkap compose anda.
-- Untuk menyesuaikan tingkah laku, lihat [Konfigurasi](configuration) (toggel pengesahan, jawapan default, pola senarai hitam).
+- Balas mesej dengan 1–2 lampiran dan sahkan bahawa lampiran asal ditambah pada tetingkap gubahan anda.
+- Untuk melaras tingkah laku, lihat [Konfigurasi](configuration) (togol pengesahan, jawapan lalai, corak senarai hitam).
 
 ---
 
 ### Sahkan amaran senarai hitam {#verify-blacklist-warning}
 
-- Balas kepada mesej yang mengandungi fail seperti “secret.txt”.
-- Dengan “Amaran jika lampiran dikecualikan oleh senarai hitam” diaktifkan, dialog kecil menyenaraikan fail yang dikecualikan dan pola yang sepadan.
+- Balas mesej yang mengandungi fail seperti “secret.txt”.
+- Dengan “Amaran jika lampiran dikecualikan oleh senarai hitam” didayakan, dialog kecil akan menyenaraikan fail yang dikecualikan dan corak yang sepadan.
 
-Jika anda tidak melihat amaran, pastikan pola tersebut sepadan dengan nama fail tepat (hanya nama fail, tidak sensitif kepada kes). Lihat Konfigurasi → Senarai Hitam.
+Jika anda tidak melihat amaran, pastikan corak sepadan dengan nama fail dengan tepat (nama fail sahaja, tidak peka huruf besar/kecil). Lihat Konfigurasi → Senarai hitam.
 
 ---
 
 ### Nota papan kekunci {#keyboard-note}
 
-- Dialog pengesahan menyokong Y/J untuk Ya dan N/Esc untuk Tidak. Pada beberapa papan kekunci bukan Latin, huruf kunci mungkin berbeza; Enter mengesahkan butang yang difokuskan.
+- Dialog pengesahan menyokong Y/J untuk Ya dan N/Esc untuk Tidak. Pada sesetengah papan kekunci bukan Latin, kekunci huruf mungkin berbeza; Enter mengesahkan butang yang difokuskan.
+
+---

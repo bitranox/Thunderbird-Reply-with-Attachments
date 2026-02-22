@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Mabilis na Panimula'
-sidebar_label: 'Mabilis na Panimula'
+title: 'Mabilis na Pagsisimula'
+sidebar_label: 'Mabilis na Pagsisimula'
 ---
-
-## Mabilis na Panimula
-
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
-:::
-
-:::note No telemetry; no background network
-The add‑on does **not** collect analytics/telemetry and makes **no** background network requests. Network access occurs only when you click external links (Docs, GitHub, Donate).
-:::
 
 ---
 
-### Install
+## Mabilisang Pagsisimula
 
-1. Install the add-on from Thunderbird Add‑ons.
-2. Optional: Enable confirmation (Options → “Ask before adding attachments”).
-3. Optional: Leave the blacklist warning enabled (default): “Warn if attachments are excluded by blacklist”.
-4. Optional: Add blacklist patterns (one per line), e.g.:
+:::important Pinakamababang Bersyon ng Thunderbird
+Sinusuportahan ng add‑on na ito ang Thunderbird **128 ESR o mas bago**. Hindi sinusuportahan ang mas matatandang bersyon.
+:::
+
+:::note Walang telemetry; walang network sa background
+Ang add‑on ay **hindi** nangongolekta ng analytics/telemetry at **walang** mga kahilingang network sa background. Nagkakaroon lamang ng access sa network kapag nag-click ka ng mga panlabas na link (Docs, GitHub, Donate).
+:::
+
+---
+
+### I-install
+
+1. I-install ang add‑on mula sa Thunderbird Add‑ons.
+2. Opsyonal: I-enable ang kumpirmasyon (Options → “Magtanong bago magdagdag ng mga attachment”).
+3. Opsyonal: Iwanang naka-enable ang babala sa blacklist (default): “Magbabala kung may mga attachment na ibinukod ng blacklist”.
+4. Opsyonal: Magdagdag ng mga pattern para sa blacklist (isa kada linya), hal.:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ The add‑on does **not** collect analytics/telemetry and makes **no** backgroun
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Note: The “# …” above is a comment in this documentation; do not include comments in patterns you paste into Options. Enter one pattern per line only.
+Tandaan: Ang “# …” sa itaas ay isang komento sa dokumentasyong ito; huwag magsama ng mga komento sa mga pattern na ididikit mo sa Options. Maglagay lamang ng isang pattern sa bawat linya.
 
-Now reply to a message with attachments — originals will be added automatically or after a quick confirmation. If any files are excluded by your blacklist, you’ll see a short warning listing them.
-
----
-
-### Verify {#verify}
-
-- Reply to a message with 1–2 attachments and confirm the originals are added to your compose window.
-- To adjust behavior, see [Configuration](configuration) (confirmation toggle, default answer, blacklist patterns).
+Ngayon, mag-reply sa isang mensahe na may mga attachment — awtomatikong idaragdag ang mga orihinal o pagkatapos ng mabilis na kumpirmasyon. Kung may anumang file na ibinukod ng iyong blacklist, makakakita ka ng maikling babala na inililista ang mga iyon.
 
 ---
 
-### Verify blacklist warning {#verify-blacklist-warning}
+### I-verify {#verify}
 
-- Reply to a message containing a file like “secret.txt”.
-- With “Warn if attachments are excluded by blacklist” enabled, a small dialog lists excluded files and the matching pattern.
-
-If you don’t see a warning, ensure the pattern matches the filename exactly (filename‑only, case‑insensitive). See Configuration → Blacklist.
+- Mag-reply sa isang mensahe na may 1–2 attachment at tiyaking nadagdag ang mga orihinal sa iyong compose window.
+- Upang ayusin ang pag-uugali, tingnan ang [Configuration](configuration) (toggle ng kumpirmasyon, default na sagot, mga pattern ng blacklist).
 
 ---
 
-### Keyboard note {#keyboard-note}
+### Beripikahin ang babala sa blacklist {#verify-blacklist-warning}
 
-- The confirmation dialog supports Y/J for Yes and N/Esc for No. On some non‑Latin keyboards, the letter keys may vary; Enter confirms the focused button.
+- Mag-reply sa isang mensaheng may file na gaya ng “secret.txt”.
+- Kapag naka-enable ang “Warn if attachments are excluded by blacklist”, magpapakita ang isang maliit na dialog ng listahan ng mga ibinukod na file at ang tumutugmang pattern.
+
+Kung wala kang nakikitang babala, tiyaking eksaktong tumutugma ang pattern sa filename (filename‑only, hindi sensitibo sa laki ng titik). Tingnan ang Configuration → Blacklist.
+
+---
+
+### Tala tungkol sa keyboard {#keyboard-note}
+
+- Ang dialog ng kumpirmasyon ay sumusuporta sa Y/J para sa Yes at N/Esc para sa No. Sa ilang hindi Latin na keyboard, maaaring mag-iba ang mga titik na susi; pinagtitibay ng Enter ang nakapokus na button.
 
 ---

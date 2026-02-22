@@ -4,31 +4,32 @@ title: 'Fitur'
 sidebar_label: 'Fitur'
 ---
 
-## Features {#features}
+---
 
-- Secara otomatis melampirkan file dari email asli saat membalas.
-- Perilaku yang dapat dikonfigurasi: lampiran dapat
-  - ditambahkan secara otomatis, atau
-  - ditambahkan hanya setelah konfirmasi (dialog kecil yang dapat diakses). Di Opsi Anda
-    dapat mengaktifkan konfirmasi dan memilih jawaban default (Ya/Tidak).
-- Daftar hitam nama file (pola glob) mencegah file tertentu untuk dilampirkan
-  secara otomatis. Contoh: `*intern*`, `*secret*`, `*passwor*`.
-  Pencocokan tidak peka huruf besar/kecil dan hanya memeriksa nama file; berikan satu pola
-  per baris di Opsi.
-- Peringatan daftar hitam (opsional, diaktifkan secara default): saat file dikecualikan oleh
-  daftar hitam Anda, modal kecil mencantumkan file dan pola yang cocok. Ramah mode gelap
-  dan dapat diakses dengan keyboard (Enter/Esc untuk menutup).
-- Bekerja dengan Balas dan Balas Semua. Meneruskan tidak dimodifikasi oleh add-on ini.
-- Menambahkan asli bahkan jika Anda sudah melampirkan sesuatu sendiri; menghindari duplikat berdasarkan nama file.
-- Penjaga duplikat per-tab mencegah penambahan ganda di tab komposisi yang sama.
-- Melewatkan sertifikat S/MIME dan gambar inline untuk menghindari lampiran yang tidak perlu.
+## Fitur {#features}
 
-## How It Works {#how-it-works}
+- Otomatis ngalampirkeun berkas tina email aslina nalika ngawalon.
+- Paripolahna bisa diatur: lampiran bisa
+  - ditambahkeun otomatis, atawa
+  - ditambahkeun ngan sanggeus konfirmasi (dialog leutik, aksésibel). Dina Pilihan anjeun bisa ngaktipkeun konfirmasi jeung milih jawaban standar (Enya/Henteu).
+- Daptar hideung ngaran berkas (pola glob) nyegah berkas tangtu supaya teu otomatis dilampirkeun. Conto: `*intern*`, `*secret*`, `*passwor*`. Panyocokan teu ngabédakeun hurup gedé/leutik sarta ngan marios ngaran berkas wungkul; pasihkeun hiji pola per baris dina Pilihan.
+- Peringatan daptar hideung (pilihan, aktip sacara standar): nalika berkas dikecualikeun ku daptar hideung anjeun, kotak dialog modal leutik ngadaptarkeun berkas jeung pola anu nyocogkeun. Ramah mode poék sarta aksésibel ku kibor (Enter/Esc pikeun nutup).
+- Gawé dina Waler jeung Waler ka sadayana. Neruskeun teu dirobih ku add-on ieu.
+- Nambahkeun nu aslina sanajan anjeun geus nambahkeun hiji hal sorangan; nyingkahan duplikat dumasar ngaran berkas.
+- Pangajaga duplikat per‑tab nyegah nambah dua kali dina tab nyusun anu sarua.
+- Ngaliwatkeun sertipikat S/MIME sacara standar pikeun nyingkahan lampiran anu teu perlu.
+- Ngahijikeun gambar inline (standar: HURUNG). Gambar nu diselapkeun dipulihkeun langsung dina awak waleran minangka data URI base64, ngajaga tata perenah inline aslina. Pareuman dina Pilihan pikeun ngaliwatkeun gambar inline sakabéhna.
 
-- Saat membalas, add-on mencantumkan lampiran asli.
-- Menyaring tanda tangan S/MIME dan gambar inline.
-- Opsional meminta konfirmasi (ramah keyboard).
-- Menambahkan file yang memenuhi syarat ke komposisi Anda, menghindari duplikat berdasarkan nama file.
-- Lihat “Mengapa lampiran mungkin tidak ditambahkan” di Penggunaan untuk kasus khusus.
+---
 
-Catatan privasi: Semua pemrosesan terjadi secara lokal di Thunderbird. Add-on ini tidak melakukan permintaan jaringan latar belakang.
+## Kumaha Gawéna {#how-it-works}
+
+- Nalika ngawalon, add-on ngadaptarkeun lampiran aslina.
+- Nyaring kaluar tanda tangan S/MIME tina lampiran berkas; gambar inline dipulihkeun deui dina awak (kajaba dipareuman).
+- Pilihan: nanyakeun konfirmasi (ramah kibor).
+- Nambahkeun berkas anu layak kana nyusun anjeun, bari nyingkahan duplikat dumasar ngaran berkas.
+- Tingali “Naha lampiran bisa waé teu ditambahkeun” dina Pamakéan pikeun kasus-kasus wates.
+
+Catetan privasi: Sadaya pamrosésan lumangsung sacara lokal dina Thunderbird. Add-on ieu teu nyieun pamundut jaringan dina latar tukang.
+
+---

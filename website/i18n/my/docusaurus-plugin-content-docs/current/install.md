@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'ဦးတည်ရာ'
+title: 'တပ်ဆင်ခြင်း'
 slug: /install
-sidebar_label: 'ဦးတည်ရာ'
+sidebar_label: 'တပ်ဆင်ခြင်း'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## “Thunderbird Add-ons and Themes” ဖြင့် ထည့်သွင်းခြင်း {#installation-in-thunderbird-recommended}
+
+:::important အနည်းဆုံး Thunderbird ဗားရှင်း
+ဤ add‑on သည် Thunderbird **128 ESR သို့မဟုတ် နောက်ဆုံးဗားရှင်းများ** ကိုပံ့ပိုးပေးသည်။ အဟောင်းဗားရှင်းများကို မပံ့ပိုးပါ။
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+ဤနည်းလမ်းကို အကြံပြုထားပါသည်။ ATN (addons.thunderbird.net) မှ ထည့်သွင်းထားသော add‑ons များသည် အလိုအလျှောက် အပ်ဒိတ်များကို လက်ခံသည်။ LOCAL/dev ဖြင့် ထည့်သွင်းထားသောவைများသည် အလိုအလျှောက် အပ်ဒိတ် မဖြစ်ပါ။
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- အနည်းဆုံး Thunderbird ဗားရှင်း: 128 ESR သို့မဟုတ် ထို့နောက်ပိုင်း။
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbird အတွင်းတွင် **Tools > Add-ons and Themes** သို့ သွားပါ။
+2. "reply with attachments" ကို ရှာပါ။
+3. add‑on ကို ထည့်သွင်းပါ။
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+သို့မဟုတ် add‑on စာမျက်နှာကို တိုက်ရိုက် ဖွင့်ပါ- [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## XPI မှ လက်ဖြင့် ထည့်သွင်းခြင်း {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### XPI ဖိုင်ကို ဒေါင်းလုဒ်လုပ်ပါ {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. [Thunderbird Add‑on စာမျက်နှာ](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) သို့ သွားပါ။
+2. add‑on ၏ နောက်ဆုံးဗားရှင်းကို XPI ဖိုင်အဖြစ် (`reply_with_attachments-x.y.z-tb.xpi`) ကို ဒေါင်းလုဒ်လုပ်ပါ။
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Thunderbird တွင် ထည့်သွင်းရန် {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Thunderbird ကို ဖွင့်ပါ။
+2. **Tools > Add-ons and Themes** သို့ သွားပါ။
+3. **Add-ons Manager** တွင် ညာဘက်အပေါ်ထောင့်ရှိ ဂီယာ အိုင်ကွန်ကို နှိပ်ပါ။
+4. မီနူးမှ **Install Add-on From File…** ကို ရွေးချယ်ပါ။
+5. ဒေါင်းလုဒ်လုပ်ထားသော `reply_with_attachments-x.y.z-tb.xpi` ဖိုင်ကို ရွေးပါ။
+6. မေးမြန်းသောအခါ ထည့်သွင်းခြင်းကို အတည်ပြုပါ။
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## ဖွံ့ဖြိုးရေးအတွက် ထည့်သွင်းခြင်း {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### repository ကို ဒေါင်းလုဒ်လုပ်ပါ {#download-the-repository}
 
-See also
+1. GitHub repository ၏ နောက်ဆုံးဗားရှင်းကို ဒေါင်းလုဒ်လုပ်ပါ။
+2. အချက်အလက် ပိုမို သိရှိရန် `make help` ကို လုပ်ဆောင်ပါ။
 
-- [Quickstart](quickstart)
+### Thunderbird တွင် ထည့်သွင်းရန် {#install-in-thunderbird-dev}
+
+1. Thunderbird ကို ဖွင့်ပါ။
+2. **Tools > Add-ons and Themes** သို့ သွားပါ။
+3. **Add-ons Manager** တွင် ညာဘက်အပေါ်ထောင့်ရှိ ဂီယာ အိုင်ကွန်ကို နှိပ်ပါ။
+4. မီနူးမှ **Install Add-on From File…** ကို ရွေးချယ်ပါ။
+5. ဖန်တီးထားသော `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` ဖိုင်ကို ရွေးပါ။
+6. မေးမြန်းသောအခါ ထည့်သွင်းခြင်းကို အတည်ပြုပါ။
+
+မှတ်ချက်: သင်၏စနစ်တွင် Thunderbird မှ `.zip` ကို မလက်ခံပါက၊ ၎င်းကို `.xpi` ဟု အမည်ပြောင်းပြီး “Install Add‑on From File…” ကို ထပ်မံ စမ်းကြည့်ပါ။
+
+### LOCAL ZIP ကို ဘယ်မှာ ရှာနိုင်မလဲ {#where-local-zip}
+
+- ပထမဦးစွာ add‑on ကို ပက်ကေ့ချ်လုပ်ရန်: repository root တွင် `make pack` ကို လုပ်ဆောင်ပါ။
+- ပက်ကေ့ချ်လုပ်ပြီးနောက်၊ repository root တွင် “LOCAL” zip ကို ရှာပါ (ဥပမာ `2025-..-reply-with-attachments-plugin-LOCAL.zip`)။
+- စမ်းသပ်ရန် ပြန်လည် ပက်ကေ့ချ်လုပ်မည်မီ၊ `sources/manifest_ATN.json` နှင့် `sources/manifest_LOCAL.json` နှစ်ခုစလုံးတွင် ဗားရှင်းနံပါတ်များကို မြှင့်ပါ။
+
+---
+
+## ပိတ်ထားခြင်း၊ ဖယ်ရှားခြင်းနှင့် အပ်ဒိတ်များ {#disable-uninstall-updates}
+
+- ပိတ်ထား: Thunderbird → Tools → Add‑ons and Themes → add‑on ကို ရှာပါ → toggle ကို ပိတ်ပါ။
+- ဖယ်ရှား: အလားတူမျက်နှာပြင် → သုံးချက် မီနူး → Remove။
+- အပ်ဒိတ်များ: ATN မှ ထည့်သွင်းထားသောအရာများသည် ဗားရှင်းအသစ်များ အတည်ပြုပြီးပါက အလိုအလျှောက် အပ်ဒိတ်ဖြစ်သည်။ LOCAL/dev ဖြင့် ထည့်သွင်းထားသောအရာများ မအလိုအလျှောက် အပ်ဒိတ်ပါ၊ LOCAL build အသစ်ကို ကိုယ်တိုင် ပြန်လည် ထည့်သွင်းပါ။
+- ဆက်တင်များကို လုံးဝ ဖယ်ရှားရန်: [Privacy → Data removal](privacy#data-removal) ကို ကြည့်ပါ။
+
+ဆက်လက်ဖတ်ရှုရန်
+
+- [အမြန်စတင်](quickstart)

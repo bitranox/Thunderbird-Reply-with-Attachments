@@ -1,34 +1,35 @@
 ---
 id: features
-title: 'Nkyerɛkyerɛmu'
-sidebar_label: 'Nkyerɛkyerɛmu'
+title: 'Akanneɛ'
+sidebar_label: 'Adwumadi ahodoɔ'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Nhyɛnsodeɛ {#features}
 
-## How It Works {#how-it-works}
+- Ɛde fael a ɛfiri krataa-ɛ titiriw no ka ho otomatik bere a woresua mu (reply).
+- Ɛda so betumi asiesie: attachments betumi
+  - aka ho otomatik, anaasɛ
+  - wobetumi aka ho sɛɛ na wogye atɔ mu akyi pɛ (dialog ketewa a obiara betumi de di dwuma). Wɔ Options mu, wubetumi asɔ gyetɔmu no mu na wopaw mmuae difɔlt no (Yes/No).
+- Blacklist a ɛfa fael‑din (glob patterns) ho siw fael pɔtee bi kwan so sɛ wɔbɛka ho otomatik. Nsɛmmisa: `*intern*`, `*secret*`, `*passwor*`. Nhyia no yɛ case‑insensitive na ɛhwɛ fael‑din no nko ara; ma pɛtɛn koro pɛ wɔ lain biara so wɔ Options mu.
+- Kɔkɔbɔ fa blacklist ho (poptional, ɛhyɛ so dada): bere a wo blacklist yi fael bi fi ho no, modal ketewa bi bɛkyerɛ fael no ne pɛtɛn a ɛne no hyia no. Ɛyɛ Dark‑mode yie na wobɛtumi de keyboard di so dwuma (Enter/Esc de to mu).
+- Ɛyɛ adwuma wɔ Reply ne Reply all ho. Add‑on yi nnsesa Forward.
+- Ɛde originals ka ho mpo sɛ woka biribi ho dedaw; ɛbɔ ban fi nsɛsoɔ mprenu so fa fael‑din so.
+- Banbɔ tia nsɛsoɔ mprenu per‑tab ma ɛmmma nkaho mmienu mmfa mmɔ compose tab koro mu.
+- Difɔlt mu, ɛgyae S/MIME certificates de siw attachments a ɛnhia kwan.
+- Ka mfonini a wɔde gu nsɛm mu (inline) ho (difɔlt: ON). Mfonini a wɔahyehyɛ (embedded) no wɔsan de si mmuae no nipadua mu pɛpɛɛpɛ sɛ base64 data URIs, na ɛkora inline nhyehyɛe titiriw no. Wubetumi adum wɔ Options mu na wugu inline mfonini nyinaa.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Ɛyɛ Dɛn Na Ɛyɛ Adwuma {#how-it-works}
+
+- Sɛ woresua mu a, add‑on no kyerɛ attachment titiriw no lista.
+- Ɛtae S/MIME signatures fi fael attachments mu; mfonini a ɛwɔ nsɛm mu (inline) no wɔsan de si nipadua no mu (gye sɛ woadum no).
+- Sɛ wopɛ a, ɛbisa gyetɔmu (keyboard‑friendly).
+- Ɛde fael a ɛfata ka wo compose ho, na ɛde fael‑din so bɔ ban fi nsɛsoɔ mprenu ho.
+- Hwɛ “Why attachments might not be added” wɔ Usage mu ma nsɛm atitiriw (edge cases).
+
+Asɛm fa bɔban ho: Adwumadi nyinaa si fam wɔ Thunderbird mu. Add‑on no nsa nka ntanetwene mmrɛbɔ biara wɔ background mu.
+
+---

@@ -1,79 +1,81 @@
 ---
 id: install
-title: 'Kuusaa'
+title: 'Instaleeshinii'
 slug: /install
-sidebar_label: 'Kuusaa'
+sidebar_label: 'Instooleshinii'
 ---
 
-## Kuusaa "Thunderbird Add-ons and Themes" geggeessaa {#installation-in-thunderbird-recommended}
+---
 
-:::important Afaan Thunderbird Sanaa
-Add-on kun Thunderbird **128 ESR ykn haaraa** deeggaru. Sanyii duraanii hin deeggaramu.
+## Instooleshinii karaa "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+
+:::important Vershinii xiqqaa Thunderbird
+Add‑on kun Thunderbird **128 ESR yookaan isa haaraa** qofa ni deeggara. Vershinoonni duraanii hin deeggaraman.
 :::
 
-Kunniin mala kuusaa filatamaa ti. Add-onota ATN (addons.thunderbird.net) irraa kuufaman hamma annoo otomaatikii argatu. LOCAL/dev kuusaa otomaatikii hin argatu.
+Kuni mala instooleshinii kan gorsamuudha. Add‑onwwan ATN (addons.thunderbird.net) irraa instoolaman haaromsa of‑aanaa ni argatu. Instooleshinoonni LOCAL/dev ofiin hin haaromman.
 
-- Affaan Thunderbird ittiin fayyadamuu: 128 ESR ykn haaraa.
+- Vershinii xiqqaa Thunderbird: 128 ESR yookaan isa haaraa.
 
-1. Thunderbird keessatti, gara **Tools > Add-ons and Themes** deemi.
-2. "replay with attachments" barbaadi.
-3. Add-onni dabaluu.
+1. Thunderbird keessatti gara **Tools > Add-ons and Themes** deemi.
+2. "reply with attachments" barbaadi.
+3. Add‑on sana itti dabal.
 
-Yookaan fuula add-on thokkaatti ni fodda: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
+Yookaan fuula add‑on sanaa kallattiin bani: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Kuusaa Harka Irraan {#local-installation-in-thunderbird}
+## Instooleshinii harkaan XPI irraa {#local-installation-in-thunderbird}
 
-### XPI faayila buufadhu {#download-the-xpi-file}
+### Faayila XPI buufadhu {#download-the-xpi-file}
 
-1. Gara [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) deemi.
-2. XPI faayila `reply_with_attachments-x.y.z-tb.xpi` ta'ee add-on caalmaatti buufadhu.
+1. Gara [fuula Add‑on Thunderbird](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments) deemi.
+2. Vershinii haaraa add‑on kanaa akka faayila XPI (`reply_with_attachments-x.y.z-tb.xpi`) buufadhu.
 
-### Thunderbird keessatti kuusaa {#install-in-thunderbird-local}
+### Thunderbird keessatti instooli {#install-in-thunderbird-local}
 
-1. Thunderbird banadhu.
+1. Thunderbird bani.
 2. Gara **Tools > Add-ons and Themes** deemi.
-3. **Add-ons Manager** keessatti, icon gear mirga gubbaa tuqi.
-4. **Install Add-on From File…** filadhu.
-5. Faayila `reply_with_attachments-x.y.z-tb.xpi` buufatte filadhu.
-6. Kuusaa beekamtii gaafate mirkaneessi.
+3. Keessa **Add-ons Manager**, gubba mirgaa mallattoo gear tuqi.
+4. Menu irraa **Install Add-on From File…** fili.
+5. Faayila `reply_with_attachments-x.y.z-tb.xpi` buufame fili.
+6. Yeroo gaafatamu instooleshinii mirkaneessi.
 
 ---
 
-## Kuusaa qindeessuuf {#installation-for-development}
+## Instooleshinii misoomaaf {#installation-for-development}
 
-### Repositoorii buufadhu {#download-the-repository}
+### Repoziitoorii buufadhu {#download-the-repository}
 
-1. Repositoorii GitHub dhumaatti buufadhu.
-2. Odeefannoo dabalataaf `make help` hojjadhu.
+1. Vershinii haaraa repoziitoorii GitHub buufadhu.
+2. Odeeffannoo dabalataa argachuuf `make help` raawwadhu.
 
-### Thunderbird keessatti kuusaa {#install-in-thunderbird-dev}
+### Thunderbird keessatti instooli {#install-in-thunderbird-dev}
 
-1. Thunderbird banadhu.
+1. Thunderbird bani.
 2. Gara **Tools > Add-ons and Themes** deemi.
-3. **Add-ons Manager** keessatti, icon gear mirga gubbaa tuqi.
-4. **Install Add-on From File…** filadhu.
-5. Faayila uume `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` filadhu.
-6. Kuusaa beekamtii gaafate mirkaneessi.
+3. Keessa **Add-ons Manager**, gubba mirgaa mallattoo gear tuqi.
+4. Menu irraa **Install Add-on From File…** fili.
+5. Faayila uumame `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip` fili.
+6. Yeroo gaafatamu instooleshinii mirkaneessi.
 
-Xiinxalli: Yeroo Thunderbird `.zip` siif hin tule, maqaa isaa `.xpi` gochuu dandeessa, "Install Add-on From File…” deebisii.
+Yaadachiisa: Yoo Thunderbird `.zip` sirna kee irratti hin fudhanne, maqaa isaa gara `.xpi`tti jijjiiri; “Install Add‑on From File…” irra deebi'ii yaali.
 
-### LOCAL ZIP akka argachuuf {#where-local-zip}
+### LOCAL ZIP eessa argatta {#where-local-zip}
 
-- Jalqaba, add-on kuusaa: `make pack` banuufi raawwadhu.
-- Kuusaa booda, "LOCAL" zip repositoorii keessatti (fakkeenyaaf, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Qorannoo keessatti harkaa re-packaging akkasumas, `sources/manifest_ATN.json` fi `sources/manifest_LOCAL.json` keessatti fooyyeessuu.
+- Jalqaba, add‑on sana package gochii: `make pack` bu’uura repo keessatti raawwadhu.
+- Erga package gootee booda, zip “LOCAL” bu’uura repo keessatti argadhu (fakkeenyaaf, `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Qorannoo dura irra‑deebi'ee package gochuu dura, lakkoofsa vershinii lamaan, `sources/manifest_ATN.json` fi `sources/manifest_LOCAL.json`, olkaasi.
 
 ---
 
-## Dhoowwachuu, Haquu, fi Odeeffannoo Haaraa {#disable-uninstall-updates}
+## Dhaamsuu, Uninstoolii, fi Haaromsa {#disable-uninstall-updates}
 
-- Dhoowwachuu: Thunderbird → Tools → Add-ons and Themes → add-on argachuuf → toggle off.
-- Haquu: yaada wal fakkaatu → menu daqqii sadii → Haqi.
-- Odeeffannoo Haaraa: ATN kuusaa haaraa erga mirkaneeffamteetti otomaatikii hojjeta. LOCAL/dev kuusaa otomaatikii hin hojjatu; kuusaa LOCAL haarawaan harka qabeeyyii irra deebi'i.
-- Faayiloota guutummaatti haqi: ilaali [Privacy → Data removal](privacy#data-removal).
+- Dhaamsuu: Thunderbird → Tools → Add‑ons and Themes → add‑on sana barbaadi → toggle off godhi.
+- Uninstoolii: ilaalcha sana irra → three‑dot menu → Remove.
+- Haaromsa: ATN yeroo vershinoonni haaraan eeyyamaman auto‑update ni taasisa. Instooleshinoonni LOCAL/dev ofiin hin haaromman; LOCAL build haaraa harkaan irra deebi'ii instooli.
+- Qindaa'inoota guutumaan guutuutti haquu: [Privacy → Data removal](privacy#data-removal) ilaali.
 
-Akkasuma
+Kan biraa ilaali
 
-- [Quickstart](quickstart)
+- [Jalqabbi saffisaa](quickstart)

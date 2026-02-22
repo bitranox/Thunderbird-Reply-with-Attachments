@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
   "title": "Ibamu",
-  "description": "Compatibility",
+  "description": "---",
   "source": "@site/i18n/yo/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -14,11 +14,11 @@
   "frontMatter": {
     "id": "compatibility",
     "title": "Ibamu",
-    "sidebar_label": "Ibamu"
+    "sidebar_label": "Ìbaramu"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Uso",
+    "title": "Ìlò",
     "permalink": "/Thunderbird-Reply-with-Attachments/yo/docs/usage"
   },
   "next": {

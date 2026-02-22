@@ -1,7 +1,7 @@
 {
   "id": "development",
-  "title": "تطوير",
-  "description": "Development Guide",
+  "title": "التطوير",
+  "description": "---",
   "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/development.md",
   "sourceDirName": ".",
   "slug": "/development",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "development",
-    "title": "تطوير",
-    "sidebar_label": "تطوير"
+    "title": "التطوير",
+    "sidebar_label": "التطوير"
   },
   "sidebar": "docs",
   "previous": {

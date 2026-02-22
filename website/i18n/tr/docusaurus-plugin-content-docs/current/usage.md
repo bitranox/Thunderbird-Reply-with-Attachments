@@ -4,94 +4,97 @@ title: 'Kullanım'
 sidebar_label: 'Kullanım'
 ---
 
-## Usage {#usage}
+---
 
-- Reply and the add-on adds originals automatically — or asks first, if enabled in Options.
-- De‑duplicated by filename; S/MIME and inline images are always skipped.
-- Blacklisted attachments are also skipped (case‑insensitive glob patterns matching filenames, not paths). See [Configuration](configuration#blacklist-glob-patterns).
+## Kullanım {#usage}
+
+- Yanıtla ve eklenti orijinalleri otomatik olarak ekler — veya Seçenekler'de etkinse önce sorar.
+- Dosya adına göre yinelenenler kaldırılır; S/MIME parçaları her zaman atlanır. Satır içi görseller varsayılan olarak yanıt gövdesinde geri yüklenir (Seçenekler'de "Include inline pictures" üzerinden devre dışı bırakılabilir).
+- Kara listeye alınmış ekler de atlanır (büyük/küçük harfe duyarsız glob desenleri dosya adlarıyla eşleşir, yollarla değil). Bkz. [Yapılandırma](configuration#blacklist-glob-patterns).
 
 ---
 
-### What happens on reply {#what-happens}
+### Yanıtta ne olur {#what-happens}
 
-- Detect reply → list original attachments → filter S/MIME + inline → optional confirm → add eligible files (skip duplicates).
+- Yanıtı algıla → özgün ekleri listele → S/MIME + satır içini filtrele → isteğe bağlı onay → uygun dosyaları ekle (yinelenenleri atla) → gövdede satır içi görselleri geri yükle.
 
-Strict vs. relaxed pass: The add‑on first excludes S/MIME and inline parts. If nothing qualifies, it runs a relaxed pass that still excludes S/MIME/inline but tolerates more cases (see Code Details).
+Sıkı ve esnek geçiş: Eklenti önce dosya eklerinden S/MIME ve satır içi parçaları hariç tutar. Hiçbir şey uygun değilse, S/MIME/satır içini yine hariç tutan ancak daha fazla duruma tolerans gösteren esnek bir geçiş çalıştırır (bkz. Kod Ayrıntıları). Satır içi görseller asla dosya eki olarak eklenmez; bunun yerine "Include inline pictures" etkinleştirildiğinde (varsayılan), doğrudan yanıt gövdesine base64 veri URI'leri olarak gömülür.
 
-| Part type                                         |  Strict pass | Relaxed pass |
-| ------------------------------------------------- | -----------: | -----------: |
-| S/MIME signature file `smime.p7s`                 |     Excluded |     Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |     Excluded |     Excluded |
-| Inline image referenced by Content‑ID (`image/*`) |     Excluded |     Excluded |
-| Attached email (`message/rfc822`) with a filename |    Not added | May be added |
-| Regular file attachment with a filename           | May be added | May be added |
+| Parça türü                                                          |                              Sıkı geçiş |                             Esnek geçiş |
+| ------------------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
+| S/MIME imza dosyası `smime.p7s`                                     |                           Hariç tutulur |                           Hariç tutulur |
+| S/MIME MIME türleri (`application/pkcs7-*`)                         |                           Hariç tutulur |                           Hariç tutulur |
+| Content‑ID tarafından referans verilen satır içi görsel (`image/*`) | Hariç tutulur (gövdede geri yüklenir\*) | Hariç tutulur (gövdede geri yüklenir\*) |
+| Dosya adı olan ekli e-posta (`message/rfc822`)                      |                                Eklenmez |                             Eklenebilir |
+| Dosya adına sahip normal dosya eki                                  |                             Eklenebilir |                             Eklenebilir |
 
-Example: Some attachments might lack certain headers but are still regular files (not inline/S/MIME). If the strict pass finds none, the relaxed pass may accept those and attach them.
+\* "Include inline pictures" etkinleştirildiğinde (varsayılan: AÇIK), satır içi görseller dosya eki olarak eklenmek yerine yanıt gövdesine base64 veri URI'leri olarak gömülür. Bkz. [Yapılandırma](configuration#include-inline-pictures).
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Forward is not modified by design (see Limitations below).
-- For reasons an attachment might not be added, see “Why attachments might not be added”.
+Örnek: Bazı eklerde belirli başlıklar eksik olabilir ancak bunlar yine de normal dosyalardır (satır içi/S/MIME değil). Sıkı geçiş hiçbirini bulamazsa, esnek geçiş bunları kabul edip ekleyebilir.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Çapraz başvuru {#cross-reference}
 
-- **Duplicate prevention:** The add-on marks the compose tab as processed using a per‑tab session value and an in‑memory guard. It won’t add originals twice.
-- Closing and reopening a compose window is treated as a new tab (i.e., a new attempt is allowed).
-- **Respect existing attachments:** If the compose already contains some attachments, originals are still added exactly once, skipping filenames that already exist.
-- **Exclusions:** S/MIME artifacts and inline images are ignored. If nothing qualifies on the first pass, a relaxed fallback re-checks non‑S/MIME parts.
-  - **Filenames:** `smime.p7s`
-  - **MIME types:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline images:** any `image/*` part referenced by Content‑ID in the message body
-  - **Attached emails (`message/rfc822`):** treated as regular attachments if they have a filename; they may be added (subject to duplicate checks and blacklist).
-- **Blacklist warning (if enabled):** When candidates are excluded by your blacklist,
-  the add-on shows a small modal listing the affected files and the matching
-  pattern(s). This warning also appears in cases where no attachments will be
-  added because everything was excluded.
+- İletme tasarım gereği değiştirilmez (aşağıdaki Sınırlamalar bölümüne bakın).
+- Bir ekin neden eklenmeyebileceği için bkz. “Ekler neden eklenmeyebilir”.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Davranış Ayrıntıları {#behavior-details}
 
-- Confirmation dialog: Y/J = Yes, N/Esc = No; Tab/Shift+Tab and Arrow keys cycle focus.
-  - The “Default answer” in [Configuration](configuration#confirmation) sets the initially focused button.
-  - Enter triggers the focused button. Tab/Shift+Tab and arrows move focus for accessibility.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Keys            | Action                         |
-| --------------- | ------------------------------ |
-| Y / J           | Confirm Yes                    |
-| N / Esc         | Confirm No                     |
-| Enter           | Activate focused button        |
-| Tab / Shift+Tab | Move focus forward/back        |
-| Arrow keys      | Move focus between buttons     |
-| Default answer  | Sets initial focus (Yes or No) |
+- **Çoğaltmayı önleme:** Eklenti, sekme başına oturum değeri ve bellek içi bir koruyucu kullanarak yazma sekmesini işlendi olarak işaretler. Orijinalleri iki kez eklemez.
+- Bir yazma penceresini kapatıp yeniden açmak yeni bir sekme olarak kabul edilir (yani yeni bir denemeye izin verilir).
+- **Mevcut eklere saygı:** Yazma penceresi zaten bazı ekler içeriyorsa, orijinaller yine de tam olarak bir kez eklenir; hâlihazırda mevcut olan dosya adları atlanır.
+- **Dışlamalar:** S/MIME artıkları ve satır içi görseller dosya eklerinden hariç tutulur. İlk geçişte hiçbir şey uygun değilse, esnek bir geri dönüş S/MIME olmayan parçaları yeniden kontrol eder. Satır içi görseller ayrı ele alınır: etkinleştirildiğinde yanıt gövdesinde veri URI'leri olarak geri yüklenir.
+  - **Dosya adları:** `smime.p7s`
+  - **MIME türleri:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - **Satır içi görseller:** Content‑ID tarafından referans verilen herhangi bir `image/*` parçası — dosya eklerinden hariç tutulur ancak "Include inline pictures" AÇIK olduğunda yanıt gövdesine gömülür
+  - **Ekli e-postalar (`message/rfc822`):** bir dosya adları varsa normal ek gibi değerlendirilir; eklenebilirler (kopya denetimleri ve kara listeye tabidir).
+- **Kara liste uyarısı (etkinse):** Adaylar kara listeniz tarafından dışlandığında,
+  eklenti etkilenen dosyaları ve eşleşen desen(ler)i listeleyen küçük bir modal gösterir.
+  Her şey dışlandığı için hiçbir ekin eklenmeyeceği durumlarda da bu uyarı görünür.
 
 ---
 
-## Limitations {#limitations}
+## Klavye kısayolları {#keyboard-shortcuts}
 
-- Forward is not modified by this add-on (Reply and Reply all are supported).
-- Very large attachments may be subject to Thunderbird or provider limits.
-  - The add‑on does not chunk or compress files; it relies on Thunderbird’s normal attachment handling.
-- Encrypted messages: S/MIME parts are intentionally excluded.
+- Onay iletişim kutusu: Y/J = Evet, N/Esc = Hayır; Tab/Shift+Tab ve yön tuşları odağı dolaştırır.
+  - [Yapılandırma](configuration#confirmation) içindeki “Default answer” başlangıçta odaklanacak düğmeyi ayarlar.
+  - Enter odaktaki düğmeyi tetikler. Erişilebilirlik için Tab/Shift+Tab ve oklar odağı taşır.
+
+### Klavye Kısa Başvurusu {#keyboard-cheat-sheet}
+
+| Tuşlar          | Eylem                                        |
+| --------------- | -------------------------------------------- |
+| Y / J           | Evet'i onayla                                |
+| N / Esc         | Hayır'ı onayla                               |
+| Enter           | Odaklanmış düğmeyi etkinleştir               |
+| Tab / Shift+Tab | Odağı ileri/geri taşı                        |
+| Arrow keys      | Odağı düğmeler arasında taşı                 |
+| Default answer  | Başlangıç odağını belirler (Evet veya Hayır) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Sınırlamalar {#limitations}
 
-- Inline images are ignored: parts referenced via Content‑ID in the message body are not added as files.
-- S/MIME signature parts are excluded by design: filenames like `smime.p7s` and MIME types such as `application/pkcs7-signature` or `application/pkcs7-mime` are skipped.
-- Blacklist patterns can filter candidates: see [Configuration](configuration#blacklist-glob-patterns); matching is case‑insensitive and filename‑only.
-- Duplicate filenames are not re‑added: if the compose already contains a file with the same normalized name, it is skipped.
-- Non‑file parts or missing filenames: only file‑like parts with usable filenames are considered for adding.
+- İletme bu eklenti tarafından değiştirilmez (Yanıtla ve Tümünü yanıtla desteklenir).
+- Çok büyük ekler Thunderbird veya sağlayıcı sınırlarına tabi olabilir.
+  - Eklenti dosyaları bölmez veya sıkıştırmaz; Thunderbird’ün normal ek işleme özelliğine dayanır.
+- Şifreli iletiler: S/MIME parçaları bilerek hariç tutulur.
 
 ---
 
-See also
+## Ekler neden eklenmeyebilir {#why-attachments-might-not-be-added}
 
-- [Configuration](configuration)
+- Satır içi görseller dosya eki olarak eklenmez. "Include inline pictures" AÇIK olduğunda (varsayılan), bunun yerine yanıt gövdesine veri URI'leri olarak gömülürler. Ayar KAPALI ise satır içi görseller tamamen kaldırılır. Bkz. [Yapılandırma](configuration#include-inline-pictures).
+- S/MIME imza parçaları tasarım gereği hariç tutulur: `smime.p7s` gibi dosya adları ve `application/pkcs7-signature` veya `application/pkcs7-mime` gibi MIME türleri atlanır.
+- Kara liste desenleri adayları filtreleyebilir: bkz. [Yapılandırma](configuration#blacklist-glob-patterns); eşleştirme büyük/küçük harfe duyarsızdır ve yalnızca dosya adına göredir.
+- Yinelenen dosya adları yeniden eklenmez: yazma penceresi zaten aynı normalize adla bir dosya içeriyorsa atlanır.
+- Dosya olmayan parçalar veya eksik dosya adları: yalnızca kullanılabilir dosya adlarına sahip dosya benzeri parçalar eklemek için dikkate alınır.
+
+---
+
+Bkz. ayrıca
+
+- [Yapılandırma](configuration)

@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'خصوصیات'
-sidebar_label: 'خصوصیات'
+title: 'ფუნქციები'
+sidebar_label: 'მახასიათებლები'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## ფუნქციები {#features}
 
-## How It Works {#how-it-works}
+- პასუხისას ორიგინალი ელფოსტიდან ფაილებს ავტომატურად ამატებს.
+- კონფიგურირებადი ქცევა: მიმაგრებები შეიძლება იყოს
+  - ავტომატურად დამატებული, ან
+  - მხოლოდ დადასტურების შემდეგ დამატებული (პატარა, ხელმისაწვდომი დიალოგი). Options-ში თქვენ
+    შეგიძლიათ ჩართოთ დადასტურება და აირჩიოთ ნაგულისხმევი პასუხი (დიახ/არა).
+- ფაილის სახელების შავი სია (glob შაბლონები) ხელს უშლის კონკრეტული ფაილების
+  ავტომატურად დამატებას. მაგალითები: `*intern*`, `*secret*`, `*passwor*`.
+  დამთხვევა რეგისტრისგან დამოუკიდებელია და ამოწმებს მხოლოდ ფაილის სახელს; თითო შაბლონი
+  Options-ში ცალკე ხაზზე მიუთითეთ.
+- შავი სიის გაფრთხილება (არასავალდებულო, ნაგულისხმევად ჩართული): როცა ფაილები თქვენს
+  შავი სიაში მოხვედრის გამო გამოირიცხება, პატარა მოდალური ფანჯარა ჩამოთვლის ფაილს და შესაბამის შაბლონ(ებ)ს. მუქ რეჟიმთან
+  მეგობრული და კლავიატურით ხელმისაწვდომი (დასახურად Enter/Esc).
+- მუშაობს Reply და Reply all ბრძანებებთან. Forward ამ დანამატით არ იცვლება.
+- ორიგინალებს დაამატებს მაშინაც, თუ უკვე თავად გაქვთ რამე მიმაგრებული; დუბლირებებს ფაილის სახელის მიხედვით არიდებს.
+- ტაბის დონის დუბლირების დაცვა ერთი და იმავე შედგენის ტაბში ორჯერ დამატებას ხელს უშლის.
+- ნაგულისხმევად გამოტოვებს S/MIME სერტიფიკატებს, რათა არასაჭირო მიმაგრებები აიცილოს.
+- ხაზშიგა სურათების ჩართვა (ნაგულისხმევი: ჩართული). ჩადგმული გამოსახულებები პირდაპირ
+  პასუხის ტექსტში აღდგება base64 data URI-ებად, რაც ინარჩუნებს ორიგინალ ხაზშიგა განლაგებას. გამორთეთ
+  Options-ში, რათა ხაზშიგა სურათები მთლიანად გამოტოვოთ.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## როგორ მუშაობს {#how-it-works}
+
+- პასუხის დაწერისას დანამატი ორიგინალ მიმაგრებებს ჩამოთვლის.
+- ფაილის მიმაგრებებიდან ფილტრავს S/MIME ხელმოწერებს; ხაზშიგა სურათები აღდგება სხეულში (თუ გამორთული არ არის).
+- სურვილისამებრ სთხოვს დადასტურებას (კლავიატურისთვის მოსახერხებელია).
+- შესაფერის ფაილებს თქვენს შეტყობინების შედგენაში ამატებს და ფაილის სახელით დუბლირებებს არიდებს.
+- განსაკუთრებული შემთხვევებისთვის იხილეთ “რატომ შეიძლება მიმაგრებები არ დაემატოს” Usage სექციაში.
+
+კონფიდენციალურობის შენიშვნა: ყველა დამუშავება ლოკალურად Thunderbird-ში ხდება. დანამატი ფონურ ქსელურ მოთხოვნებს არ აგზავნის.
+
+---

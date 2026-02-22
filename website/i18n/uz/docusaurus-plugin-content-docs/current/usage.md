@@ -4,93 +4,98 @@ title: 'Foydalanish'
 sidebar_label: 'Foydalanish'
 ---
 
-## Usage {#usage}
+---
 
-- Javob bering va qo'shimcha avtomatik ravishda asl nusxalarni qo'shadi — yoki birinchi navbatda so'raydi, agar Opsiyalarda yoqilgan bo'lsa.
-- Fayl nomi bo'yicha dublikatlanadi; S/MIME va inline tasvirlar har doim o'tkazib yuboriladi.
-- Qora ro'yxatdagi ilovalar ham o'tkazilib yuboriladi (fayl nomlariga, yo'llarga mos keladigan ish-hujjatlari yordamida kiruvchi harflarni ko'rib chiqish). [Konfiguratsiya](configuration#blacklist-glob-patterns) ga qarang.
+## Foydalanish {#usage}
+
+- Javob berishda qo‘shimcha asl ilovalarni avtomatik qo‘shadi — yoki Sozlamalarda yoqilgan bo‘lsa, avval so‘raydi.
+- Fayl nomi bo‘yicha dublikatlar olib tashlanadi; S/MIME qismlari har doim o‘tkazib yuboriladi. Sukut bo‘yicha ichki rasmlar javob tanasida qayta tiklanadi (Sozlamalardagi "Include inline pictures" orqali o‘chirishingiz mumkin).
+- Qora ro‘yxatga kiritilgan ilovalar ham o‘tkazib yuboriladi (kattayu‑kichikni farqlamaydigan glob andozalari yo‘l emas, fayl nomi bo‘yicha moslashtiriladi). [Sozlamalar](configuration#blacklist-glob-patterns)ga qarang.
 
 ---
 
-### What happens on reply {#what-happens}
+### Javob berilganda nima bo‘ladi {#what-happens}
 
-- Javobni aniqlash → asl ilovalar ro'yxatini olish → S/MIME + inline ni filtrlash → zaruriy tasdiqlash → mos fayllarni qo'shish (dublikatlarni o'tkazish).
+- Javobni aniqlash → asl ilovalarni ro‘yxatlash → S/MIME + inline ni filtrlash → ixtiyoriy tasdiqlash → mos fayllarni qo‘shish (dublikatlarni o‘tkazib yuborish) → tanada ichki rasmlarni tiklash.
 
-Qattiq va erkin o‘tish: Qo’shíma avval S/MIME va inline qismlarni istisno qiladi. Agar hech narsa mos kelmasa, u S/MIME/inline ni istisno qilishga davom etadi, lekin ko'proq holatlarni qabul qiladi (Kod tafsilotlarini ko'ring).
+Qattiq va yengil tekshiruv: qo‘shimcha avval fayl ilovalaridan S/MIME va inline qismlarini chiqarib tashlaydi. Agar hech narsa mos kelmasa, u baribir S/MIME/inline ni chiqarib tashlaydigan, ammo ko‘proq holatlarga ruxsat beradigan yengil tekshiruvni ishga tushiradi (Kod tafsilotlariga qarang). Ichki rasmlar hech qachon fayl ilovalari sifatida qo‘shilmaydi; buning o‘rniga, "Include inline pictures" yoqilganida (sukut bo‘yicha), ular javob tanasiga to‘g‘ridan‑to‘g‘ri base64 data URI sifatida joylashtiriladi.
 
-| Qism turi                                                         |      Qattiq o‘tish |       Erkin o‘tish |
-| ----------------------------------------------------------------- | -----------------: | -----------------: |
-| S/MIME imzo fayli `smime.p7s`                                     |   Istisno qilingan |   Istisno qilingan |
-| S/MIME MIME turlari (`application/pkcs7-*`)                       |   Istisno qilingan |   Istisno qilingan |
-| Inline tasvirlar uchun Kontent-ID (`image/*`)                     |   Istisno qilingan |   Istisno qilingan |
-| Ilova qilingan elektron pochta (`message/rfc822`) fayl nomi bilan |       Qo'shilmaydi | Qo'shilishi mumkin |
-| Oddiy fayl ilovasi fayl nomi bilan                                | Qo'shilishi mumkin | Qo'shilishi mumkin |
+| Qism turi                                                |                      Qattiq tekshiruv |                      Yengil tekshiruv |
+| -------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
+| S/MIME imzo fayli `smime.p7s`                            |                      Istisno qilingan |                      Istisno qilingan |
+| S/MIME MIME turlari (`application/pkcs7-*`)              |                      Istisno qilingan |                      Istisno qilingan |
+| Content‑ID orqali havola qilingan ichki rasm (`image/*`) | Istisno qilingan (tanada tiklanadi\*) | Istisno qilingan (tanada tiklanadi\*) |
+| Fayl nomiga ega biriktirilgan xat (`message/rfc822`)     |                          Qo‘shilmaydi |                    Qo‘shilishi mumkin |
+| Fayl nomiga ega oddiy fayl ilovasi                       |                    Qo‘shilishi mumkin |                    Qo‘shilishi mumkin |
 
-Misol: Ba'zi ilovalar ma'lum заголовки yo'q bo'lishi mumkin, lekin ular hali ham oddiy fayllardir (inline/S/MIME emas). Agar qattiq o‘tish hech narsani topmasa, erkin o‘tish ularni qabul qilishi mumkin va ularni qo'shishi mumkin.
+\* "Include inline pictures" yoqilganida (sukut bo‘yicha: ON), ichki rasmlar fayl ilovalari sifatida qo‘shilmaydi, balki javob tanasiga base64 data URI ko‘rinishida joylashtiriladi. [Sozlamalar](configuration#include-inline-pictures)ga qarang.
 
----
-
-### Cross‑reference {#cross-reference}
-
-- Oldinga qaytarish butunlay o'zgartirilmaydi (quyida cheklovlar ko'ring).
-- Bir ilovaning qo'shilmasligi mumkin bo'lgan sabablarini ko'rish uchun "Nima uchun ilovalar qo'shilmasligi mumkin" ga qarang.
+Misol: Ba’zi ilovalarda ayrim sarlavhalar yetishmasligi mumkin, ammo ular baribir oddiy fayllardir (inline/S/MIME emas). Agar qattiq tekshiruv hech narsa topmasa, yengil tekshiruv ularni qabul qilib, biriktirishi mumkin.
 
 ---
 
-## Behavior Details {#behavior-details}
+### Kross‑havola {#cross-reference}
 
-- **Dublikatlarni oldini olish:** Qo'shimcha mix uchun o'lchov bo'lgan sessiya qiymati yordamida ishlangan soyalar muvaffaqiyatga erishadi. U asl nusxalarni ikki marta qo'shmaydi.
-- Taklif etish va qayta ochish yangi tab sifatida qabul qilinadi (ya'ni, yangi urinishga ruxsat beriladi).
-- **Mavjud ilovalarga hurmat:** Agar yaratuvchi allaqachon ba'zi ilovalar mavjud bo'lsa, asl nusxalar hali ham bir marta qo'shiladi, allaqachon mavjud bo'lgan fayl nomlarini o'tkazib yuboradi.
-- **Istisnolarning ro'yxati:** S/MIME ob'ektlari va inline tasvirlar e'tiborsiz qoldiriladi. Agar birinchi o'tishda hech narsa mos kelmasa, erkin qidirish S/MIME bo'lmagan qismlarni yana tekshiradi.
-  - **Fayl nomlari:** `smime.p7s`
-  - **MIME turlari:** `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
-  - **Inline tasvirlar:** xabar matnidagi Kontent-ID ga havola qilingan har qanday `image/*` qismi
-  - **Ilova qilingan elektron pochta (`message/rfc822`):** agar u fayl nomiga ega bo'lsa, oddiy ilovalar sifatida hisobga olinadi; Ular qo'shilishi mumkin (duplikatlarni tekshirishga va qora ro'yxatga bog'liq).
-- **Qora ro'yxat ogohlantiruvi (agar o'chirilgan bo'lsa):** Agar sizning qora ro'yxatingiz orqali nomzodlar istisno qilinsa,
-  qo'shimcha kichik modal oynada ta'sir etuvchi fayllarni va mos keladigan
-  naqsh(larni) ro'yxatini ko'rsatadi. Ushbu ogohlantirish shuningdek hech qanday ilovalar qo'shilmasligi mumkin bo'lgan vaqtlarda paydo bo'ladi, chunki hamma narsani istisno qilingan.
+- Yo‘naltirish dizayn bo‘yicha o‘zgartirilmaydi (quyidagi Cheklovlarga qarang).
+- Ilova nima sababdan qo‘shilmasligi mumkinligi uchun “Nega ilovalar qo‘shilmasligi mumkin” bo‘limiga qarang.
 
 ---
 
-## Keyboard shortcuts {#keyboard-shortcuts}
+## Xatti‑harakat tafsilotlari {#behavior-details}
 
-- Tasdiqlash oynasi: Y/J = Ha, N/Esc = Yo'q; Tab/Shift+Tab va Qavs tugmalari e'tiborni aylantiradi.
-  - [Konfiguratsiya](configuration#confirmation) da “Asosiy javob” boshlang'ich e'tiborni belgilaydi.
-  - Enter fokuse qilingan tugmani faollashtiradi. Tab/Shift+Tab va o'q e'tiborni harakatlantiradi.
-
-### Keyboard Cheat Sheet {#keyboard-cheat-sheet}
-
-| Tugmalar        | Harakat                                          |
-| --------------- | ------------------------------------------------ |
-| Y / J           | Ha tasdiqlash                                    |
-| N / Esc         | Yo'q tasdiqlash                                  |
-| Enter           | Fokuse qilingan tugmani faollashtirish           |
-| Tab / Shift+Tab | E'tiborni oldinga/ormiga harakatlantirish        |
-| O'q tugmalari   | Tugmalar orasida e'tiborni harakatlantirish      |
-| Asosiy javob    | Boshlang'ich e'tiborni belgilaydi (Ha yoki Yo'q) |
+- Dublikatlarning oldini olish: qo‘shimcha har bir varaq uchun seans qiymati va xotira darajasidagi himoyadan foydalanib, yozish varag‘ini qayta ishlangan deb belgilaydi. Asl fayllarni ikki marta qo‘shmaydi.
+- Yozish oynasini yopib qayta ochish yangi varaq sifatida ko‘riladi (ya’ni, yangi urinishga ruxsat beriladi).
+- Mavjud ilovalarni inobatga olish: agar yozilayotgan xatda allaqachon ba’zi ilovalar bo‘lsa, asl nusxalar baribir faqat bir marta qo‘shiladi, allaqachon mavjud bo‘lgan fayl nomlari o‘tkazib yuboriladi.
+- Istisnolar: S/MIME artefaktlar va ichki rasmlar fayl ilovalaridan chiqarib tashlanadi. Agar birinchi o‘tishda hech narsa mos kelmasa, yengil zahira tekshiruvi S/MIME bo‘lmagan qismlarni qayta tekshiradi. Ichki rasmlar alohida ko‘riladi: ular (yoqilganda) javob tanasida data URI sifatida tiklanadi.
+  - Fayl nomlari: `smime.p7s`
+  - MIME turlari: `application/pkcs7-signature`, `application/x-pkcs7-signature`, `application/pkcs7-mime`
+  - Ichki rasmlar: Content‑ID orqali havola qilingan har qanday `image/*` qismi — fayl ilovalaridan chiqarib tashlanadi, biroq "Include inline pictures" ON bo‘lganda javob tanasiga joylashtiriladi
+  - Biriktirilgan xatlar (`message/rfc822`): fayl nomi bo‘lsa, oddiy ilovalar sifatida ko‘riladi; ular qo‘shilishi mumkin (dublikat tekshiruvlari va qora ro‘yxatga bo‘ysunadi).
+- Qora ro‘yxat ogohlantirishi (yoqilgan bo‘lsa): Nomzodlar qora ro‘yxatingiz tomonidan chiqarib tashlanganda,
+  qo‘shimcha ta’sirlangan fayllar va mos keluvchi
+  andoza(lar) ro‘yxati bilan kichik modal oynani ko‘rsatadi. Ushbu ogohlantirish hammasi istisno qilingani sababli
+  hech qanday ilova qo‘shilmaydigan holatlarda ham paydo bo‘ladi.
 
 ---
 
-## Limitations {#limitations}
+## Klaviatura uchun qisqa tugmalar {#keyboard-shortcuts}
 
-- Oldinga qaytarish ushbu qo'shimcha tomonidan o'zgartirilmaydi (Javob va Hamma javoblar qo'llab-quvvatlanadi).
-- Juda katta ilovalar Thunderbird yoki provayder cheklovlariga duchor bo'lishi mumkin.
-  - Qo'shimcha fayllarni qismlarga bo'lmaydi yoki siqmaydi; u Thunderbird ning odatdagi ilova boshqarishiga asoslanadi.
-- Shifrlangan xabarlar: S/MIME qismlari qasddan istisno qilingan.
+- Tasdiqlash oynasi: Y/J = Yes, N/Esc = No; Tab/Shift+Tab va O‘q tugmalari fokusni aylantiradi.
+  - [Sozlamalar](configuration#confirmation) dagi “Default answer” dastlab fokuslangan tugmani belgilaydi.
+  - Enter fokusdagi tugmani ishga tushiradi. Tab/Shift+Tab va o‘qlar fokusni qulaylik uchun o‘zgartiradi.
+
+### Klaviatura uchun tezkor qo‘llanma {#keyboard-cheat-sheet}
+
+| Tugmalar        | Amal                                       |
+| --------------- | ------------------------------------------ |
+| Y / J           | Ha ni tasdiqlash                           |
+| N / Esc         | Yo‘qni tasdiqlash                          |
+| Enter           | Fokuslangan tugmani faollashtirish         |
+| Tab / Shift+Tab | Fokusni oldinga/orqaga ko‘chirish          |
+| O‘q tugmalari   | Tugmalar orasida fokusni ko‘chirish        |
+| Default answer  | Dastlabki fokusni o‘rnatadi (Ha yoki Yo‘q) |
 
 ---
 
-## Why attachments might not be added {#why-attachments-might-not-be-added}
+## Cheklovlar {#limitations}
 
-- Inline tasvirlar e'tiborsiz qoldiriladi: xabar matnida Kontent-ID orqali keltirilgan qismlar fayl sifatida qo'shilmaydi.
-- S/MIME imzo qismlari nazarda tutilgan: `smime.p7s` kabi fayl nomlari va `application/pkcs7-signature` yoki `application/pkcs7-mime` kabi MIME turlari o‘tkazib yuboriladi.
-- Qora ro'yxat naqshlari nomzodlarni filtrlashi mumkin: [Konfiguratsiya](configuration#blacklist-glob-patterns) ga qarang; moslashuv harfga sezgir emas va faqat fayl nomidir.
-- Dublikat fayl nomlari qayta qo'shilmaydi: agar yaratuvchi allaqachon shu normalizatsiya qilingan nomga ega bo'lsa, u o'tkazib yuboriladi.
-- Faylga oid bo'lmagan qismlar yoki fayl nomlari yo'q: faqat ishlatishga yaroqli fayl nomlari bo'lgan faylga o'xshash qismlar qo'shilishi kerak.
+- Yo‘naltirish ushbu qo‘shimcha tomonidan o‘zgartirilmaydi (Javob berish va Barchaga javob qo‘llab‑quvvatlanadi).
+- Juda katta ilovalar Thunderbird yoki provayder cheklovlariga bo‘ysunishi mumkin.
+  - Qo‘shimcha fayllarni bo‘laklamaydi yoki siqmaydi; u Thunderbird’ning odatdagi ilova ishloviga tayanadi.
+- Shifrlangan xabarlar: S/MIME qismlari ataylab chiqarib tashlanadi.
 
 ---
 
-See also
+## Nega ilovalar qo‘shilmasligi mumkin {#why-attachments-might-not-be-added}
 
-- [Konfiguratsiya](configuration)
+- Ichki rasmlar fayl ilovalari sifatida qo‘shilmaydi. "Include inline pictures" ON (sukut bo‘yicha) bo‘lganda, ular buning o‘rniga javob tanasiga data URI sifatida joylashtiriladi. Sozlama OFF bo‘lsa, ichki rasmlar butunlay olib tashlanadi. [Sozlamalar](configuration#include-inline-pictures)ga qarang.
+- S/MIME imzo qismlari dizayn bo‘yicha istisno qilingan: `smime.p7s` kabi fayl nomlari va `application/pkcs7-signature` yoki `application/pkcs7-mime` kabi MIME turlari o‘tkazib yuboriladi.
+- Qora ro‘yxat andozalari nomzodlarni filtrlashi mumkin: [Sozlamalar](configuration#blacklist-glob-patterns)ga qarang; moslashtirish kattayu‑kichikni farqlamaydigan va faqat fayl nomi bo‘yicha.
+- Dublikat fayl nomlari qayta qo‘shilmaydi: agar yozish oynasida allaqachon bir xil normallashtirilgan nomga ega fayl bo‘lsa, u o‘tkazib yuboriladi.
+- Fayl bo‘lmagan qismlar yoki yo‘qolgan fayl nomlari: faqat foydali fayl nomiga ega faylga o‘xshash qismlar qo‘shish uchun hisobga olinadi.
+
+---
+
+Shuningdek qarang
+
+- [Sozlamalar](configuration)

@@ -1,7 +1,7 @@
 {
   "id": "compatibility",
-  "title": " თავსებადობა",
-  "description": "Compatibility",
+  "title": "თავსებადობა",
+  "description": "---",
   "source": "@site/i18n/ka/docusaurus-plugin-content-docs/current/compatibility.md",
   "sourceDirName": ".",
   "slug": "/compatibility",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "compatibility",
-    "title": " თავსებადობა",
-    "sidebar_label": " თავსებადობა"
+    "title": "თავსებადობა",
+    "sidebar_label": "თავსებადობა"
   },
   "sidebar": "docs",
   "previous": {

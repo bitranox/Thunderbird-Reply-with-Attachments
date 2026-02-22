@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "শুরু করার নির্দেশনা",
-  "description": "Quickstart",
+  "title": "দ্রুত সূচনা",
+  "description": "---",
   "source": "@site/i18n/bn/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,12 +13,12 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "শুরু করার নির্দেশনা",
-    "sidebar_label": "শুরু করার নির্দেশনা"
+    "title": "দ্রুত সূচনা",
+    "sidebar_label": "দ্রুত শুরু"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "ফিচারগুলো",
+    "title": "বৈশিষ্ট্যসমূহ",
     "permalink": "/Thunderbird-Reply-with-Attachments/bn/docs/features"
   },
   "next": {

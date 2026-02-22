@@ -4,39 +4,41 @@ title: 'सुसंगतता'
 sidebar_label: 'सुसंगतता'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## सुसंगतता {#compatibility}
+
+:::important Thunderbird ची किमान आवृत्ती
+हे अॅड‑ऑन Thunderbird **128 ESR किंवा त्यापुढील** ला समर्थन करते. जुन्या आवृत्त्या समर्थित नाहीत.
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR किंवा त्यापुढील समर्थित आहे (128.x+).
+- Thunderbird च्या जुन्या आवृत्त्या समर्थित नाहीत.
+- Windows, macOS आणि Linux वर चाचणी केली आहे.
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 समर्थित नाही
+Manifest V2 समर्थित नाही. हे अॅड‑ऑन Thunderbird 128 ESR+ वर **Manifest V3 (MV3)** ला लक्ष्यित करते.
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## समस्या निवारण {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- अॅड‑ऑन अपेक्षेप्रमाणे कार्य करत नसेल, तर आपण सुसंगत Thunderbird आवृत्ती (128 ESR किंवा नंतरची) वापरत आहात याची खात्री करा.
+- अॅड‑ऑनशी संबंधित कोणत्याही समस्यांसाठी Thunderbird चा त्रुटी कन्सोल (**Tools > Developer Tools > Error Console**) तपासा.
+- जतन केलेल्या सेटिंग्ज योग्यरित्या लागू होत नसल्यास, Thunderbird पुन्हा सुरू करा आणि पुन्हा प्रयत्न करा. (Thunderbird सत्रांदरम्यान स्थिती कॅश करू शकतो; रीस्टार्टमुळे ताज्या सेटिंग्ज लोड होण्याची खात्री होते.)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## ज्ञात संघर्ष {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- सध्या कोणतेही ज्ञात नाहीत. जर तुम्हाला वारंवार दुबार संलग्नके दिसत असतील किंवा इतर अॅड‑ऑन्ससोबत बिघाड होत असतील, तर कृपया पुनरुत्पादनाच्या पायऱ्यांसह अहवाल द्या.
+
+---
+
+## बीटा/नाईटली {#beta-nightly}
+
+- Thunderbird Beta आणि Daily (Nightly) बिल्ड सामान्यतः समर्थित असतात, परंतु अपस्ट्रीम बदल कधीकधी अॅड‑ऑनचे वर्तन बिघडवू शकतात. तुम्हाला अडचणी आढळल्यास, कृपया त्या नोंदवा आणि अचूक Thunderbird आवृत्ती समाविष्ट करा (उदा., “Daily 131.0a1 2025‑09‑10”).
+- Beta/Nightly वर regression आढळले का? कृपया ते पुनरुत्पादनाच्या पायऱ्यांसह नोंदवा — [Support](support) पहा — आणि अचूक Thunderbird बिल्ड स्ट्रिंग समाविष्ट करा.
 
 ---

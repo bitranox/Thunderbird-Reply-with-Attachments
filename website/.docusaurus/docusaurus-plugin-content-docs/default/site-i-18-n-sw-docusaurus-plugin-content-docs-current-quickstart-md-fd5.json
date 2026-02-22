@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Mwanzoni",
-  "description": "Mwanzoni",
+  "title": "Kuanza Haraka",
+  "description": "---",
   "source": "@site/i18n/sw/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Mwanzoni",
-    "sidebar_label": "Mwanzoni"
+    "title": "Kuanza Haraka",
+    "sidebar_label": "Mwanzo wa Haraka"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/features"
   },
   "next": {
-    "title": "Usanidi",
+    "title": "Usakinishaji",
     "permalink": "/Thunderbird-Reply-with-Attachments/sw/docs/install"
   }
 }

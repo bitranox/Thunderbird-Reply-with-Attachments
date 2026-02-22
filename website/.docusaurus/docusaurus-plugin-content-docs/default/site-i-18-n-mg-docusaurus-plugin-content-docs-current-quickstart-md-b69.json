@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Fampidirana haingana",
-  "description": "Quickstart",
+  "title": "Fanombohana haingana",
+  "description": "---",
   "source": "@site/i18n/mg/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Fampidirana haingana",
-    "sidebar_label": "Fampidirana haingana"
+    "title": "Fanombohana haingana",
+    "sidebar_label": "Fanombohana haingana"
   },
   "sidebar": "docs",
   "previous": {

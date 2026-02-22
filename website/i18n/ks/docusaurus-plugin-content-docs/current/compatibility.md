@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ہم آہنگی'
-sidebar_label: 'ہم آہنگی'
+title: 'مطابقت'
+sidebar_label: 'مطابقت'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## مطابقت {#compatibility}
+
+:::important کم از کم تھنڈر برڈ ورژن
+یِہ ایڈ‑آن تھنڈر برڈ **128 ESR یا نَو تر** سُپورٹ کران۔ پُران ورژن سُپورٹ نَہٕ گژھان۔
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- تھنڈر برڈ 128 ESR یا نَو تر سُپورٹ گژھان (128.x+)۔
+- تھنڈر برڈ ہندس پُران ورژن سُپورٹ نَہٕ گژھان۔
+- Windows، macOS، تہٕ Linux پٔر ٹیسٹ کَرن آیہ۔
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 سُپورٹ نَہٕ
+Manifest V2 سُپورٹ نَہٕ آیہ۔ یِہ ایڈ‑آن تھنڈر برڈ 128 ESR+ پٔر **Manifest V3 (MV3)** ہِچ نِشانہ بَنان۔
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## مسئلہ کشائی {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
-
----
-
-## Known conflicts {#known-conflicts}
-
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- اگر ایڈ‑آن اُمید مطابق نَہٕ چَلان، یَقینی بَناؤ زِ تُہیہ تھنڈر برڈ ہُند ہم آہنگ ورژن استعمال کران (128 ESR یا بعد)۔
+- ایڈ‑آن سِت وابستہ کِہہ مسٔلہ خٲطرٕ تھنڈر برڈ ہُند ایرر کنسول (**Tools > Developer Tools > Error Console**) چِھیو جانچِوان۔
+- اگر محفوظ کَرِتھ سیٹنگس صحیح طرح لاگو نَہٕ دِسِہ، تھنڈر برڈ رِیسٹارٹ کَریو تہٕ دوبارٕ کوشش کَریو۔ (تھنڈر برڈ سیشنَن دریاہ بیچ حالت cache کَرِتھ ہوس؛ رِیسٹارٹ کَرن تازہ سیٹنگس لوڈ ہونا یقینی بَنٲوان۔)
 
 ---
 
-## Beta/Nightly {#beta-nightly}
+## معلُوم ٹکراؤ {#known-conflicts}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- اِس وَخت کٕنہ معلُوم۔ اگر تُہیہ بار بار دُہراوِتھ اٹیچمنٹس یا باقی ایڈ‑آنن سِت ناکامۍ دِسن، مہربانی کَریو ریپورت کَرن تہٕ ری پروڈیوس کرنچ قدم دِیو۔
+
+---
+
+## بیٹا/نائٹلی {#beta-nightly}
+
+- تھنڈر برڈ بیٹا تہٕ ڈیلی (نائٹلی) بلڈ عام طور سُپورٹ گژھان، مگر اپ اسٹریم تبدیلي کَدے کَدے ایڈ‑آن ہِند روِّیہ توڑِتھ۔ اگر مسٔلہ سامنٕے آو، مہربانی کَریو رپورٹ کَرن تہٕ ٹھیک ٹھیک تھنڈر برڈ ہُند ورژن شامل کَریو (مثال، “Daily 131.0a1 2025‑09‑10”)۔
+- بیٹا/نائٹلی پٔر ریگریشن لَگ؟ مہربانی کَریو یہ قدم‑بہ‑قدم ری پروڈیوس کرنچ طریقہ سَت رپورٹ کَریو — [سپورٹ](support) نِہٕ — تہٕ ٹھیک تھنڈر برڈ ہُند بلڈ سٹرنگ شامل کَریو۔
 
 ---

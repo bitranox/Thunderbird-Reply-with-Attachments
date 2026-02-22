@@ -1,14 +1,16 @@
 ---
 id: donation
-title: 'దానం చేయండి'
+title: 'విరాళం ఇవ్వండి'
 sidebar_label: 'దానం చేయండి'
 ---
 
-## Donate
+---
+
+## విరాళం
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you like "Reply with Attachments" and want to support its development, you can donate here:
+మీకు "Reply with Attachments" నచ్చితే మరియు దాని అభివృద్ధికి మద్దతు ఇవ్వాలని అనుకుంటే, ఇక్కడ విరాళం ఇవ్వవచ్చు:
 
 <div className="donate-buttons" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', margin: '12px 0' }}>
   <a href="https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00" target="_blank" rel="noopener noreferrer"
@@ -39,16 +41,16 @@ If you like "Reply with Attachments" and want to support its development, you ca
   </a>
 </div>
 
-Thank you! Your support helps maintain compatibility with new Thunderbird releases, improve accessibility and tests, and keep documentation up to date.
+ధన్యవాదాలు! మీ మద్దతు కొత్త Thunderbird విడుదలలతో అనుకూలతను నిలబెట్టడానికి, యాక్సెస్‌బిలిటీ మరియు పరీక్షలను మెరుగుపరచడానికి, మరియు డాక్యుమెంటేషన్‌ను తాజాగాను ఉంచడానికి సహాయపడుతుంది.
 
-Notes
+గమనికలు
 
-- Donate links open only when you click them; the add‑on does not perform any background network requests.
-- Recurring support helps long‑term maintenance and timely updates, but is entirely optional.
+- విరాళం లింకులు మీరు క్లిక్ చేసినప్పుడు మాత్రమే తెరుస్తాయి; యాడ్‑ఆన్ ఎలాంటి బ్యాక్‌గ్రౌండ్ నెట్‌వర్క్ అభ్యర్థనలు చేయదు.
+- పునరావృత మద్దతు దీర్ఘకాల నిర్వహణకు మరియు సమయానుకూల అప్డేట్‌లకు సహాయపడుతుంది, అయితే అది పూర్తిగా ఐచ్చికం.
 
 ---
 
-If the image buttons do not load, please use these links instead:
+ఇమేజ్ బటన్‌లు లోడ్ కాకపోతే, దయచేసి బదులుగా ఈ లింక్‌లను ఉపయోగించండి:
 
 #### [Stripe](https://buy.stripe.com/9B66oB3FDdbx2f2awK33W00)
 
@@ -58,31 +60,31 @@ If the image buttons do not load, please use these links instead:
 
 ---
 
-Donations are voluntary; there is no feature gating.
+విరాళాలు స్వచ్ఛందం; ఫీచర్ పరిమితులు లేవు.
 
 ---
 
-## Donation Visibility (90‑day snooze)
+## విరాళ సూచనల కనిపించడం (90‑రోజుల స్నూస్)
 
-The add‑on includes a convenience feature to hide donation prompts for a while after you’ve donated.
+మీరు విరాళం ఇచ్చిన తరువాత కొంతకాలం పాటు విరాళ సూచనలను దాచేందుకు యాడ్‑ఆన్‌లో ఒక సౌలభ్య ఫీచర్ ఉంటుంది.
 
-- Where to find it
-  - Options → Support section: you’ll see an “I donated” button and a small hint area.
-  - The Send‑confirmation dialog also shows a Donate button; it automatically hides when the snooze is active.
+- దాన్ని ఎక్కడ కనుగొనాలి
+  - Options → Support విభాగంలో: మీరు “I donated” బటన్ మరియు చిన్న సూచన ప్రాంతాన్ని చూస్తారు.
+  - Send‑confirmation డైలాగ్‌లో కూడా Donate బటన్ కనిపిస్తుంది; స్నూస్ సక్రియంగా ఉన్నప్పుడు అది ఆటోమేటిక్‌గా దాచబడుతుంది.
 
-- How it works
-  - Clicking “I donated” hides donation buttons and related prompts for 90 days.
-  - A status hint shows “Hidden until YYYY‑MM‑DD” (in your local date). There is also a “Show Donate again” button to restore visibility immediately.
-  - After 90 days, the Donate button becomes visible automatically again.
+- ఇది ఎలా పనిచేస్తుంది
+  - “I donated” క్లిక్ చేయగానే విరాళ బటన్‌లు మరియు సంబంధిత సూచనలు 90 రోజులు దాచబడతాయి.
+  - స్థితి సూచనలో “Hidden until YYYY‑MM‑DD” (మీ స్థానిక తేదీ ప్రకారం) అని చూపుతుంది. వెంటనే మళ్లీ కనిపించేందుకు “Show Donate again” బటన్ కూడా ఉంటుంది.
+  - 90 రోజులు తర్వాత, Donate బటన్ మళ్లీ ఆటోమేటిక్‌గా కనిపిస్తుంది.
 
-- Privacy & storage
-  - The add‑on stores a single timestamp in Thunderbird’s local storage to remember the snooze period. Key: `donateHideUntil` (epoch milliseconds).
-  - This setting is local to your Thunderbird profile (not cloud‑synced). No network requests are made by this feature.
+- గోప్యత మరియు నిల్వ
+  - స్నూస్ వ్యవధిని గుర్తుంచుకోవడానికి యాడ్‑ఆన్ Thunderbird యొక్క లోకల్ స్టోరేజ్‌లో ఒకే టైమ్‌స్టాంప్‌ను భద్రపరుస్తుంది. కీ: `donateHideUntil` (epoch milliseconds).
+  - ఈ సెట్టింగ్ మీ Thunderbird ప్రొఫైల్‌కే స్థానికం (క్లౌడ్‌తో సింక్ చేయబడదు). ఈ ఫీచర్ ఎలాంటి నెట్‌వర్క్ అభ్యర్థనలు చేయదు.
 
-- Troubleshooting
-  - If Donate still shows right after clicking “I donated”, wait a moment or reopen the Options page; the UI updates as soon as the setting is saved.
-  - To reset manually, click “Show Donate again”. You can also wait until the date listed in the hint passes.
+- సమస్య పరిష్కారం
+  - “I donated” క్లిక్ చేసిన వెంటనే కూడా Donate కనిపిస్తూనే ఉంటే, కాసేపు వేచి ఉండండి లేదా Options పేజీని మళ్లీ తెరవండి; సెట్టింగ్ సేవ్ అయిన వెంటనే UI అప్‌డేట్ అవుతుంది.
+  - మాన్యువల్‌గా రీసెట్ చేయడానికి, “Show Donate again” క్లిక్ చేయండి. సూచనలో చూపిన తేదీ దాటే వరకు కూడా వేచి ఉండవచ్చు.
 
-This feature is purely for convenience; it never blocks add‑on functionality and does not collect any personal data.
+ఈ ఫీచర్ పూర్తిగా సౌలభ్యం కోసం మాత్రమే; ఇది ఎప్పుడూ యాడ్‑ఆన్ పనితీరును అడ్డుకోదు మరియు ఎటువంటి వ్యక్తిగత డేటాను సేకరించదు.
 
 ---

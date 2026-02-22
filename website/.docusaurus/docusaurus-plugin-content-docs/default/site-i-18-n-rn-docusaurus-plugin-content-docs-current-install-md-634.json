@@ -1,7 +1,7 @@
 {
   "id": "install",
-  "title": "Gukora",
-  "description": "Gukora ukoresheje \"Thunderbird Add-ons na Themes\"",
+  "title": "Gushiraho",
+  "description": "---",
   "source": "@site/i18n/rn/docusaurus-plugin-content-docs/current/install.md",
   "sourceDirName": ".",
   "slug": "/install",
@@ -13,13 +13,13 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "install",
-    "title": "Gukora",
+    "title": "Gushiraho",
     "slug": "/install",
-    "sidebar_label": "Gukora"
+    "sidebar_label": "Gushiraho"
   },
   "sidebar": "docs",
   "previous": {
-    "title": "Ihindura Rya Mbere",
+    "title": "Gutangira vuba",
     "permalink": "/Thunderbird-Reply-with-Attachments/rn/docs/quickstart"
   },
   "next": {

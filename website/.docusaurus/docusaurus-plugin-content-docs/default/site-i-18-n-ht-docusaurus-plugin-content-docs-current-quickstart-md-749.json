@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "Kòmanse rapid",
-  "description": "Kòmanse rapid",
+  "title": "Demaraj rapid",
+  "description": "---",
   "source": "@site/i18n/ht/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "Kòmanse rapid",
-    "sidebar_label": "Kòmanse rapid"
+    "title": "Demaraj rapid",
+    "sidebar_label": "Demaraj rapid"
   },
   "sidebar": "docs",
   "previous": {

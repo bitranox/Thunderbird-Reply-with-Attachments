@@ -1,27 +1,29 @@
 ---
 id: quickstart
-title: 'Ibẹrẹ Rọrun'
-sidebar_label: 'Ibẹrẹ Rọrun'
+title: 'Ìbẹ̀rẹ̀ Kíákíá'
+sidebar_label: 'Ìbẹ̀rẹ̀ kíákíá'
 ---
 
-## Ibẹrẹ Rọrun
+---
 
-:::important Ẹya Thunderbird ti o K lowest
-Add-on yii ṣe atilẹyin Thunderbird **128 ESR tabi tuntun ju**. Awọn ẹya atijọ ko ni atilẹyin.
+## Ìbẹrẹ̀ kíákíá
+
+:::important Ẹ̀dà Thunderbird mínímọ̀
+Àfikún yìí ń ṣe àtìlẹ́yìn fún Thunderbird **128 ESR tàbí tuntun ju bẹ́ẹ̀ lọ**. A kò ṣe àtìlẹ́yìn fún àwọn ẹ̀dà atijọ́.
 :::
 
-:::note Kò sí telemetry; kò sí nẹtiwọki abẹlẹ
-Add-on yii **kò** gba awọn itupalẹ/telemetry ati pe ko ṣe **ko** awọn ibeere nẹtiwọki abẹlẹ. Iraye nẹtiwọki waye nikan nigbati o ba tẹ awọn itọsọna ita (Docs, GitHub, Donat).
+:::note Kò sí tẹlémẹ́tírì; kò sí nẹ́tíwọọ̀kì abẹ́lẹ̀
+Àfikún yìí **kò** kó ìtúpalẹ̀/tẹlémẹ́tírì kankan, kò sì ṣe ìbéèrè nẹ́tíwọọ̀kì abẹ́lẹ̀ **rárá**. Ìbọwọlé nẹ́tíwọọ̀kì máa ṣẹlẹ̀ nígbà nìkan tí o bá tẹ àwọn ìjápọ̀ òde (Docs, GitHub, Donate).
 :::
 
 ---
 
 ### Fi sori ẹrọ
 
-1. Fi add-on sii lati Thunderbird Add-ons.
-2. Aṣayan: Mu iṣeduro ṣiṣẹ (Iyipada → “Beere ṣaaju ki o to fi awọn asopọ kun”).
-3. Aṣayan: Rii i pe iwifunni blacklist wa ni agbara (aiyipada): “Kí fà ifọwọsi ti awọn asopọ ba wa ni ipamọ nipasẹ blacklist”.
-4. Aṣayan: Ṣafikun awọn ilana blacklist (ọkan fun ila), e.g.:
+1. Fi àfikún náà sori ẹrọ láti Thunderbird Add‑ons.
+2. Àṣàyàn: Mu ìmúdájú ṣiṣẹ́ (Options → “Ask before adding attachments”).
+3. Àṣàyàn: Jẹ́ kí ìkìlọ̀ àkójọ dídúdú wà ní múná (aṣètò aiyẹ́tọ̀): “Warn if attachments are excluded by blacklist”.
+4. Àṣàyàn: Ṣafikun àwọn àpẹrẹ àkójọ dídúdú (ọ̀kan ní ìlà kọọkan), àpẹẹrẹ:
 
 ```
 *intern*
@@ -29,30 +31,30 @@ Add-on yii **kò** gba awọn itupalẹ/telemetry ati pe ko ṣe **ko** awọn i
 *passwor*  # matches both “password” and “Passwort” families
 ```
 
-Akiyesi: “# …” loke jẹ asọye ninu iwe iroyin yii; ma ṣe ṣafikun awọn asọye si awọn ilana ti o fẹ paste sinu Ayipada. Tẹ ọkan ilana fun ila nikan.
+Akiyesi: “# …” lókè jẹ́ àsọyé ní inú ìwé ìtọ́nisọ́nà yìí; má ṣe fi àsọyé kankan sínú àwọn àpẹrẹ tí o bá lẹẹ̀mọ́ sí Options. Tẹ àpẹrẹ kan péré ní ìlà kọọkan.
 
-Bayi fesi si ifiranṣẹ pẹlu awọn asopọ — awọn atilẹba yoo wa ni afikun laifọwọyi tabi lẹyin ifọwọsi yiyara kan. Ti eyikeyi awọn faili ba ti wa ni itusilẹ nipasẹ blacklist rẹ, iwọ yoo rii iwifunni kukuru ti n ṣe akojọ wọn.
-
----
-
-### Ṣayẹwo {#verify}
-
-- Fesi si ifiranṣẹ pẹlu 1–2 awọn asopọ ki o si jẹrisi pe awọn atilẹba ti wa ni afikun si fenêtre ìkọ́ rẹ.
-- Lati ṣatunṣe ihuwasi, wo [Iṣeto](configuration) (iyipada iṣeduro, idahun aiyipada, awọn ilana blacklist).
+Ní báyìí, dáhùn sí ìfiránṣẹ́ tí ó ní attachments — àwọn atilẹ́ba yóò fi kun laifọwọyi tàbí lẹ́yìn ìmúdájú kíákíá. Bí fáìlì kankan bá jẹ́ pé àkójọ dídúdú rẹ yọ wọn kúrò, ìkìlọ̀ kéékèèké yóò hàn tí yóò ṣe àtòkọ wọn.
 
 ---
 
-### Ṣayẹwo iwifunni blacklist {#verify-blacklist-warning}
+### Ṣàyẹ̀wò {#verify}
 
-- Fesi si ifiranṣẹ ti o ni faili bi “secret.txt”.
-- Pẹlu “Kí fà ifọwọsi ti awọn asopọ ba wa ni ipamọ nipasẹ blacklist” ti wa ni agbara, iboju kekere kan ṣe akojọ awọn faili ti a ti yiya silẹ ati ilana ti o baamu.
-
-Ti o ko ba rii iwifunni kan, rii daju pe ilana naa ba orukọ faili naa mu ni deede (orukọ faili nikan, ti ko ba ni ọpọlọ). Wo Iṣeto → Blacklist.
+- Dáhùn sí ìfiránṣẹ́ tí ó ní attachments 1–2, kí o sì jẹ́rìí pé àwọn atilẹ́ba ni a fi kun sínú ferese ìkọ̀wé rẹ.
+- Láti tún ìhùwàsí ṣe, wo [Configuration](configuration) (ìyípadà ìmúdájú, ìdáhùn aiyẹ́tọ̀, àwọn àpẹrẹ àkójọ dídúdú).
 
 ---
 
-### Akiyesi bọtini itẹwe {#keyboard-note}
+### Ṣàyẹ̀wò ìkìlọ̀ àkójọ dídúdú {#verify-blacklist-warning}
 
-- Iboju iṣeduro naa ṣe atilẹyin Y/J fun Bẹẹni ati N/Esc fun Rara. Lori diẹ ninu awọn itẹwe ti kii ṣe Latin, awọn bọtini lẹta le yato; Tẹ Enter jẹrisi bọtini ti o ni idojukọ.
+- Dáhùn sí ìfiránṣẹ́ tí ó ní fáìlì bíi “secret.txt”.
+- Pẹ̀lú “Warn if attachments are excluded by blacklist” ní múná, dáyálọ́ọ̀gì kékeré kan yóò ṣe àtòkọ àwọn fáìlì tí a yọ kúrò àti àpẹrẹ tó báamu.
+
+Tí o kò bá rí ìkìlọ̀, jẹ́ kó dájú pé àpẹrẹ náà bá orúkọ fáìlì mu pátápátá (orúkọ fáìlì nìkan, kò fiyàtọ̀ sí lẹ́tà ńlá/kékèké). Wo Configuration → Blacklist.
+
+---
+
+### Àkọsilẹ̀ kìbódu {#keyboard-note}
+
+- Dáyálọ́ọ̀gì ìmúdájú ń gba Y/J fún Bẹ́ẹ̀ni àti N/Esc fún Rárá. Lórí díẹ̀ nínú àwọn kìbódu tí kì í ṣe Látìnì, àwọn bọ́tìnì lẹ́tà lè yàtọ̀; Enter ń jẹ́rìí bọ́tìnì tó wà ní fó́kúsì.
 
 ---

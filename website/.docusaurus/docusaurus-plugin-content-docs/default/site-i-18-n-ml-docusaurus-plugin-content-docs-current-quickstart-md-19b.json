@@ -1,7 +1,7 @@
 {
   "id": "quickstart",
-  "title": "ക്വിക്ക്സ്റ്റാർട്ട്",
-  "description": "ക്വിക്ക്സ്റ്റാർട്ട്",
+  "title": "ദ്രുതാരംഭം",
+  "description": "---",
   "source": "@site/i18n/ml/docusaurus-plugin-content-docs/current/quickstart.md",
   "sourceDirName": ".",
   "slug": "/quickstart",
@@ -13,8 +13,8 @@
   "lastUpdatedAt": 1757726723000,
   "frontMatter": {
     "id": "quickstart",
-    "title": "ക്വിക്ക്സ്റ്റാർട്ട്",
-    "sidebar_label": "ക്വിക്ക്സ്റ്റാർട്ട്"
+    "title": "ദ്രുതാരംഭം",
+    "sidebar_label": "ദ്രുതാരംഭം"
   },
   "sidebar": "docs",
   "previous": {
@@ -22,7 +22,7 @@
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/features"
   },
   "next": {
-    "title": "സ്ഥാപനം",
+    "title": "ഇൻസ്റ്റലേഷൻ",
     "permalink": "/Thunderbird-Reply-with-Attachments/ml/docs/install"
   }
 }

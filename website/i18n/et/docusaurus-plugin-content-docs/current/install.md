@@ -5,75 +5,77 @@ slug: /install
 sidebar_label: 'Paigaldamine'
 ---
 
-## Installation via "Thunderbird Add-ons and Themes" {#installation-in-thunderbird-recommended}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## Paigaldamine "Thunderbirdi lisad ja teemad" kaudu {#installation-in-thunderbird-recommended}
+
+:::important Minimaalne Thunderbirdi versioon
+See lisandmoodul toetab Thunderbirdi versiooni **128 ESR või uuemat**. Vanemad versioonid ei ole toetatud.
 :::
 
-This is the recommended installation method. Add‑ons installed from ATN (addons.thunderbird.net) receive automatic updates. LOCAL/dev installs do not auto‑update.
+See on soovitatav paigaldusmeetod. ATN-ist (addons.thunderbird.net) paigaldatud lisad saavad automaatsed värskendused. LOCAL/dev-paigaldused ei uuene automaatselt.
 
-- Minimum Thunderbird version: 128 ESR or newer.
+- Minimaalne Thunderbirdi versioon: 128 ESR või uuem.
 
-1. In Thunderbird, go to **Tools > Add-ons and Themes**.
-2. Search for "reply with attachments".
-3. Add the add-on.
+1. Thunderbirdis avage **Tööriistad > Lisad ja teemad**.
+2. Otsige „reply with attachments”.
+3. Lisage lisandmoodul.
 
-Or open the add‑on page directly: [Thunderbird Add‑ons (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
-
----
-
-## Manual installation from XPI {#local-installation-in-thunderbird}
-
-### Download the XPI file {#download-the-xpi-file}
-
-1. Go to the [Thunderbird Add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
-2. Download the latest version of the add-on as an XPI file (`reply_with_attachments-x.y.z-tb.xpi`).
-
-### Install in Thunderbird {#install-in-thunderbird-local}
-
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the downloaded `reply_with_attachments-x.y.z-tb.xpi` file.
-6. Confirm the installation when prompted.
+Või avage lisandmooduli leht otse: [Thunderbirdi lisad (ATN)](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments)
 
 ---
 
-## Installation for development {#installation-for-development}
+## Käsitsi paigaldamine XPI-st {#local-installation-in-thunderbird}
 
-### Download the repository {#download-the-repository}
+### Laadi alla XPI-fail {#download-the-xpi-file}
 
-1. Download the latest version of the GitHub repository.
-2. Run `make help` for more information.
+1. Minge [Thunderbirdi lisandmooduli lehele](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+2. Laadige alla lisandmooduli uusim versioon XPI-failina (`reply_with_attachments-x.y.z-tb.xpi`).
 
-### Install in Thunderbird {#install-in-thunderbird-dev}
+### Paigaldamine Thunderbirdis {#install-in-thunderbird-local}
 
-1. Open Thunderbird.
-2. Go to **Tools > Add-ons and Themes**.
-3. In the **Add-ons Manager**, click the gear icon in the top-right corner.
-4. Choose **Install Add-on From File…** from the menu.
-5. Select the generated file `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
-6. Confirm the installation when prompted.
-
-Note: If Thunderbird does not accept the `.zip` on your system, rename it to `.xpi` and try “Install Add‑on From File…” again.
-
-### Where to find the LOCAL ZIP {#where-local-zip}
-
-- First, package the add‑on: run `make pack` in the repository root.
-- After packaging, find the “LOCAL” zip in the repository root (e.g., `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
-- Before re‑packaging for testing, bump versions in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json`.
+1. Avage Thunderbird.
+2. Avage **Tööriistad > Lisad ja teemad**.
+3. **Lisade halduris** klõpsake paremas ülanurgas hammasratta ikooni.
+4. Valige menüüst **Paigalda lisandmoodul failist…**.
+5. Valige allalaaditud `reply_with_attachments-x.y.z-tb.xpi` fail.
+6. Kinnitage paigaldus, kui küsitakse.
 
 ---
 
-## Disable, Uninstall, and Updates {#disable-uninstall-updates}
+## Paigaldamine arenduseks {#installation-for-development}
 
-- Disable: Thunderbird → Tools → Add‑ons and Themes → find the add‑on → toggle off.
-- Uninstall: same view → three‑dot menu → Remove.
-- Updates: ATN installs auto‑update when new versions are approved. LOCAL/dev installs do not auto‑update; reinstall a new LOCAL build manually.
-- Remove settings completely: see [Privacy → Data removal](privacy#data-removal).
+### Laadi hoidla alla {#download-the-repository}
 
-See also
+1. Laadige alla GitHubi hoidla uusim versioon.
+2. Käivitage `make help` lisateabe saamiseks.
 
-- [Quickstart](quickstart)
+### Paigaldamine Thunderbirdis {#install-in-thunderbird-dev}
+
+1. Avage Thunderbird.
+2. Avage **Tööriistad > Lisad ja teemad**.
+3. **Lisade halduris** klõpsake paremas ülanurgas hammasratta ikooni.
+4. Valige menüüst **Paigalda lisandmoodul failist…**.
+5. Valige loodud fail `yyyy-mm-dd...reply-with-attachments-plugin-LOCAL.zip`.
+6. Kinnitage paigaldus, kui küsitakse.
+
+Märkus: Kui Thunderbird ei aktsepteeri teie süsteemis faili `.zip`, nimetage see ümber failiks `.xpi` ja proovige uuesti “Paigalda lisandmoodul failist…”.
+
+### Kust leida LOCAL ZIP {#where-local-zip}
+
+- Kõigepealt pakige lisandmoodul: käivitage `make pack` hoidla juurkaustas.
+- Pärast pakkimist leiate “LOCAL” zip-faili hoidla juurkaustast (nt `2025-..-reply-with-attachments-plugin-LOCAL.zip`).
+- Enne testimiseks uuesti pakkimist tõstke versiooninumbreid nii failis `sources/manifest_ATN.json` kui ka failis `sources/manifest_LOCAL.json`.
+
+---
+
+## Keelamine, eemaldamine ja värskendused {#disable-uninstall-updates}
+
+- Keela: Thunderbird → Tööriistad → Lisad ja teemad → leidke lisandmoodul → lülitage välja.
+- Desinstalli: samas vaates → kolmepunkti-menüü → Eemalda.
+- Värskendused: ATN-ist paigaldused uuenevad automaatselt, kui uued versioonid on heaks kiidetud. LOCAL/dev-paigaldused ei uuene automaatselt; paigaldage uus LOCAL-kooste käsitsi.
+- Seadete täielik eemaldamine: vt [Privaatsus → Andmete eemaldamine](privacy#data-removal).
+
+Vaata ka
+
+- [Kiirjuhend](quickstart)

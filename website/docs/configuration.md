@@ -67,6 +67,17 @@ Blacklisted files will not be added on reply automatically. See also the [Glossa
 
 ---
 
+#### Include inline pictures {#include-inline-pictures}
+
+- Toggle “Include inline pictures (embedded images)” (default: ON).
+- When enabled, images that are embedded in the original message body are restored
+  directly in the reply as base64 data URIs. This preserves the original inline
+  layout so recipients see images exactly where they appeared.
+- When disabled, inline images are removed from the reply body (Thunderbird's
+  default behavior strips them).
+
+---
+
 #### Warning on excluded attachments {#warning-on-excluded-attachments}
 
 - Toggle “Warn if attachments are excluded by blacklist” (default: ON).

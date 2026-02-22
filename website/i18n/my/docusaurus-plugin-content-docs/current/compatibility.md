@@ -1,42 +1,44 @@
 ---
 id: compatibility
-title: 'ထိန်းချုပ်မှု'
-sidebar_label: 'ထိန်းချုပ်မှု'
+title: 'ကိုက်ညီမှု'
+sidebar_label: 'လိုက်ဖက်မှု'
 ---
 
-## Compatibility {#compatibility}
+---
 
-:::important Minimum Thunderbird Version
-This add‑on supports Thunderbird **128 ESR or newer**. Older versions are not supported.
+## ကိုက်ညီမှု {#compatibility}
+
+:::important အနည်းဆုံး Thunderbird ဗားရှင်း
+ဤ add‑on သည် Thunderbird **128 ESR သို့မဟုတ် ထို့အထက်** ကို ပံ့ပိုးပါသည်။ အဟောင်းဗားရှင်းများကို မပံ့ပိုးပါ။
 :::
 
-- Thunderbird 128 ESR or newer is supported (128.x+).
-- Older Thunderbird versions are not supported.
-- Tested on Windows, macOS, and Linux.
+- Thunderbird 128 ESR သို့မဟုတ် ထို့အထက်ကို ပံ့ပိုးထားသည် (128.x+).
+- ဟောင်းသော Thunderbird ဗားရှင်းများကို မပံ့ပိုးပါ။
+- Windows, macOS နှင့် Linux တွင် စမ်းသပ်ပြီးဖြစ်သည်။
 
-:::warning Manifest V2 not supported
-Manifest V2 is not supported. The add‑on targets **Manifest V3 (MV3)** on Thunderbird 128 ESR+.
+:::warning Manifest V2 ကို မပံ့ပိုးပါ
+Manifest V2 ကို မပံ့ပိုးပါ။ ဤ add‑on သည် Thunderbird 128 ESR+ တွင် **Manifest V3 (MV3)** ကို ပစ်မှတ်ထားပါသည်။
 :::
 
 ---
 
-## Troubleshooting {#troubleshooting}
+## ပြဿနာဖြေရှင်းခြင်း {#troubleshooting}
 
-- If the add-on does not work as expected, ensure that you are using a compatible version of Thunderbird (128 ESR or later).
-- Check the Thunderbird error console (**Tools > Developer Tools > Error Console**) for any issues related to the add-on.
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- add‑on သည် မျှော်လင့်သကဲ့သို့ မလုပ်ဆောင်ပါက Thunderbird ၏ ကိုက်ညီသော ဗားရှင်း (128 ESR သို့မဟုတ် နောက်ပိုင်း) ကို အသုံးပြုနေကြောင်း သေချာပါစေ။
+- add‑on နှင့် ဆက်စပ်သော ပြဿနာများအတွက် Thunderbird error console (**Tools > Developer Tools > Error Console**) ကို စစ်ဆေးပါ။
+- သိမ်းထားသော ဆက်တင်များ မမှန်ကန်သလို မအားသာသကဲ့သို့ မြင်ရပါက Thunderbird ကို ပြန်လည်စတင်ပြီး ထပ်မံကြိုးစားပါ။ (Thunderbird သည် session များအကြား state ကို cache လုပ်ထားနိုင်ပါသည်; ပြန်လည်စတင်ခြင်းက ဆက်တင်အသစ်များကို သန့်လတ်စွာ ပြန်တင်ပေးနိုင်သည်။)
 
 ---
 
-## Known conflicts {#known-conflicts}
+## သိရှိပြီးသား ပဋိပက္ခများ {#known-conflicts}
 
-- None known at this time. If you see repeated duplicate attachments or failures with other add‑ons, please report with steps to reproduce.
+- လတ်တလောတွင် မည်သည့်အရာမျှ မသိရှိရသေးပါ။ ထပ်ခါထပ်ခါ ထပ်တူတွဲဖိုင်များ ပေါ်လာခြင်း သို့မဟုတ် အခြား add‑on များနှင့် မအောင်မြင်မှုများကို တွေ့ပါက ထပ်တူပြုနိုင်ရန် အဆင့်များနှင့်အတူ တင်ပြပေးပါ။
 
 ---
 
 ## Beta/Nightly {#beta-nightly}
 
-- Thunderbird Beta and Daily (Nightly) builds are generally supported, but upstream changes can occasionally break add‑on behavior. If you encounter issues, please report them and include the exact Thunderbird version (e.g., “Daily 131.0a1 2025‑09‑10”).
-- Hit a regression on Beta/Nightly? Please report it with steps to reproduce — see [Support](support) — and include the exact Thunderbird build string.
+- Thunderbird Beta နှင့် Daily (Nightly) build များကို ယေဘုယျအားဖြင့် ပံ့ပိုးထားသော်လည်း upstream ပြောင်းလဲမှုများကြောင့် add‑on ၏ အပြုအမူကို တခါတရံ ချိုးဖောက်နိုင်ပါသည်။ ပြဿနာများကို တွေ့ကြုံပါက တင်ပြပြီး Thunderbird ဗားရှင်းတိတိကျကျ (ဥပမာ “Daily 131.0a1 2025‑09‑10”) ကို ထည့်ပါ။
+- Beta/Nightly တွင် regression ကို ကြုံတွေ့ခဲ့ပါသလား? ထပ်တူပြုနိုင်သော အဆင့်များဖြင့် တင်ပြပေးပါ — [Support](support) ကို ကြည့်ပါ — နှင့် Thunderbird build string ကို တိတိကျကျ ပါဝင်စေပါ။
 
 ---

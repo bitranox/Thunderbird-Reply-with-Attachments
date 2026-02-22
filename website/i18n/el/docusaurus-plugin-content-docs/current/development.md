@@ -4,294 +4,296 @@ title: 'Ανάπτυξη'
 sidebar_label: 'Ανάπτυξη'
 ---
 
-## Development Guide {#development-guide}
+---
 
-:::note Edit English only; translations propagate
-Update documentation **only** under `website/docs` (English). Translations under `website/i18n/<locale>/…` are generated and should not be edited manually. Use the translation tasks (e.g., `make translate_web_docs_batch`) to refresh localized content.
+## Οδηγός Ανάπτυξης {#development-guide}
+
+:::note Επεξεργασία μόνο στα Αγγλικά· οι μεταφράσεις διαδίδονται
+Ενημερώστε την τεκμηρίωση μόνο κάτω από `website/docs` (Αγγλικά). Οι μεταφράσεις κάτω από `website/i18n/<locale>/…` παράγονται και δεν πρέπει να τροποποιούνται χειροκίνητα. Χρησιμοποιήστε τις εργασίες μετάφρασης (π.χ. `make translate_web_docs_batch`) για να ανανεώσετε το μεταφρασμένο περιεχόμενο.
 :::
 
-### Prerequisites {#prerequisites}
+### Προαπαιτούμενα {#prerequisites}
 
-- Node.js 22+ and npm (tested with Node 22)
-- Thunderbird 128 ESR or newer (for manual testing)
-
----
-
-### Project Layout (high‑level) {#project-layout-high-level}
-
-- Root: packaging script `distribution_zip_packer.sh`, docs, screenshots
-- `sources/`: main add-on code (background, options/popup UI, manifests, icons)
-- `tests/`: Vitest suite
-- `website/`: Docusaurus docs (with i18n under `website/i18n/de/...`)
+- Node.js 22+ και npm (δοκιμασμένο με Node 22)
+- Thunderbird 128 ESR ή νεότερο (για χειροκίνητες δοκιμές)
 
 ---
 
-### Install & Tooling {#install-and-tooling}
+### Δομή Έργου (υψηλού επιπέδου) {#project-layout-high-level}
 
-- Install root deps: `npm ci`
-- Docs (optional): `cd website && npm ci`
-- Discover targets: `make help`
+- Ρίζα: script συσκευασίας `distribution_zip_packer.sh`, έγγραφα, στιγμιότυπα οθόνης
+- `sources/`: κύριος κώδικας πρόσθετου (background, UI επιλογών/αναδυόμενου, manifests, εικονίδια)
+- `tests/`: σουίτα Vitest
+- `website/`: τεκμηρίωση Docusaurus (με i18n κάτω από `website/i18n/de/...`)
 
 ---
 
-### Live Dev (web‑ext run) {#live-dev-web-ext}
+### Εγκατάσταση & Εργαλεία {#install-and-tooling}
 
-- Quick loop in Firefox Desktop (UI smoke‑tests only):
+- Εγκατάσταση εξαρτήσεων ρίζας: `npm ci`
+- Έγγραφα (προαιρετικά): `cd website && npm ci`
+- Εύρεση στόχων: `make help`
+
+---
+
+### Ζωντανή Ανάπτυξη (web‑ext run) {#live-dev-web-ext}
+
+- Γρήγορος κύκλος στο Firefox Desktop (μόνο smoke‑tests UI):
 - `npx web-ext run --source-dir sources --target=firefox-desktop`
-- Run in Thunderbird (preferred for MailExtensions):
+- Εκτέλεση στο Thunderbird (προτιμώμενο για MailExtensions):
 - `npx web-ext run --source-dir sources --start-url about:addons --firefox-binary "$(command -v thunderbird || echo /path/to/thunderbird)"`
-- Tips:
-- Keep Thunderbird’s Error Console open (Tools → Developer Tools → Error Console).
-- MV3 event pages are suspended when idle; reload the add‑on after code changes, or let web‑ext auto‑reload.
-- Some Firefox‑only behaviors differ; always verify in Thunderbird for API parity.
-- Thunderbird binary paths (examples):
-- Linux: `thunderbird` (e.g., `/usr/bin/thunderbird`)
+- Συμβουλές:
+- Κρατήστε ανοιχτή την Κονσόλα Σφαλμάτων του Thunderbird (Εργαλεία → Εργαλεία προγραμματιστή → Κονσόλα σφαλμάτων).
+- Οι σελίδες συμβάντων MV3 αναστέλλονται όταν είναι ανενεργές· επαναφορτώστε το πρόσθετο μετά από αλλαγές κώδικα ή αφήστε το web‑ext να κάνει αυτόματη επαναφόρτωση.
+- Ορισμένες συμπεριφορές αποκλειστικά του Firefox διαφέρουν· να ελέγχετε πάντα στο Thunderbird για ισοτιμία API.
+- Διαδρομές binary του Thunderbird (παραδείγματα):
+- Linux: `thunderbird` (π.χ., `/usr/bin/thunderbird`)
 - macOS: `/Applications/Thunderbird.app/Contents/MacOS/thunderbird`
 - Windows: `"C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"`
-- Profile isolation: Use a separate Thunderbird profile for development to avoid impacting your daily setup.
+- Απομόνωση προφίλ: Χρησιμοποιήστε ξεχωριστό προφίλ Thunderbird για ανάπτυξη ώστε να μην επηρεάζεται το καθημερινό σας περιβάλλον.
 
 ---
 
-### Make Targets (Alphabetical) {#make-targets-alphabetical}
+### Στόχοι Make (αλφαβητικά) {#make-targets-alphabetical}
 
-The Makefile standardizes common dev flows. Run `make help` anytime for a one‑line summary of every target.
+Το Makefile τυποποιεί τις κοινές ροές ανάπτυξης. Εκτελέστε `make help` οποτεδήποτε για μια σύνοψη μίας γραμμής για κάθε στόχο.
 
-Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
+Συμβουλή: εκτελώντας το `make` χωρίς στόχο ανοίγει ένα απλό μενού Whiptail για να επιλέξετε στόχο.
 
-| Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
-| [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
-| [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |
-| [`help`](#mt-help)                                       | List all targets with one‑line docs (sorted).                                             |
-| [`lint`](#mt-lint)                                       | web‑ext lint on `sources/` (temp manifest; ignores ZIPs; non‑fatal).                      |
-| [`menu`](#mt-menu)                                       | Interactive menu to select a target and optional arguments.                               |
-| [`pack`](#mt-pack)                                       | Build ATN & LOCAL ZIPs (runs linter; calls packer script).                                |
-| [`prettier`](#mt-prettier)                               | Format repository in place (writes changes).                                              |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier in check mode (no writes); fails if reformat needed.                             |
-| [`prettier_write`](#mt-prettier_write)                   | Alias for `prettier`.                                                                     |
-| [`test`](#mt-test)                                       | Prettier (write), ESLint, then Vitest (coverage if configured).                           |
-| [`test_i18n`](#mt-test_i18n)                             | i18n‑only tests: add‑on placeholders/parity + website parity.                             |
-| [`translate_app`](#mt-translation-app)                   | Alias for `translation_app`.                                                              |
-| [`translation_app`](#mt-translation-app)                 | Translate app UI strings from `sources/_locales/en/messages.json`.                        |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Translate website docs via OpenAI Batch API (preferred).                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Translate website docs synchronously (legacy, non-batch).                                 |
-| [`translate_web_index`](#mt-translation_web_index)       | Alias for `translation_web_index`.                                                        |
-| [`translation_web_index`](#mt-translation_web_index)     | Translate homepage/navbar/footer UI (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Build docs to `website/build` (supports `--locales` / `BUILD_LOCALES`).                   |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Offline‑safe link check (skips remote HTTP[S]).                                           |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Local gh‑pages preview; auto‑serve on 8080–8090; optional tests/link‑check.               |
-| [`web_push_github`](#mt-web_push_github)                 | Push `website/build` to the `gh-pages` branch.                                            |
+| Στόχος                                                   | Περιγραφή σε μία γραμμή                                                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [`clean`](#mt-clean)                                     | Αφαίρεση τοπικών artifacts build/preview (tmp/, web-local-preview/, website/build/).                     |
+| [`commit`](#mt-commit)                                   | Μορφοποίηση, εκτέλεση δοκιμών (συμπ. i18n), ενημέρωση changelog, commit & push.                          |
+| [`eslint`](#mt-eslint)                                   | Εκτέλεση ESLint μέσω flat config (`npm run -s lint:eslint`).                                             |
+| [`help`](#mt-help)                                       | Λίστα όλων των στόχων με σύντομη περιγραφή (ταξινομημένα).                                               |
+| [`lint`](#mt-lint)                                       | web‑ext lint στο `sources/` (προσωρινό manifest· αγνοεί ZIPs· μη-κρίσιμο).                               |
+| [`menu`](#mt-menu)                                       | Διαδραστικό μενού για επιλογή στόχου και προαιρετικών ορισμάτων.                                         |
+| [`pack`](#mt-pack)                                       | Δημιουργία ATN & LOCAL ZIPs (τρέχει linter· καλεί script συσκευασίας).                                   |
+| [`prettier`](#mt-prettier)                               | Μορφοποίηση αποθετηρίου επί τόπου (γράφει αλλαγές).                                                      |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier σε λειτουργία ελέγχου (χωρίς εγγραφές)· αποτυγχάνει αν απαιτείται αναμόρφωση.                   |
+| [`prettier_write`](#mt-prettier_write)                   | Ψευδώνυμο για `prettier`.                                                                                |
+| [`test`](#mt-test)                                       | Prettier (εγγραφή), ESLint, μετά Vitest (coverage αν έχει ρυθμιστεί).                                    |
+| [`test_i18n`](#mt-test_i18n)                             | Μόνο i18n δοκιμές: placeholders/ισοτιμία πρόσθετου + ισοτιμία ιστότοπου.                                 |
+| [`translate_app`](#mt-translation-app)                   | Ψευδώνυμο για `translation_app`.                                                                         |
+| [`translation_app`](#mt-translation-app)                 | Μετάφραση συμβολοσειρών UI εφαρμογής από `sources/_locales/en/messages.json`.                            |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Μετάφραση εγγράφων ιστότοπου μέσω OpenAI Batch API (προτεινόμενο).                                       |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Μετάφραση εγγράφων ιστότοπου συγχρονισμένα (παλαιού τύπου, χωρίς batch).                                 |
+| [`translate_web_index`](#mt-translation_web_index)       | Ψευδώνυμο για `translation_web_index`.                                                                   |
+| [`translation_web_index`](#mt-translation_web_index)     | Μετάφραση UI αρχικής/γραμμής πλοήγησης/footer (`website/i18n/en/code.json → .../<lang>/code.json`).      |
+| [`web_build`](#mt-web_build)                             | Δημιουργία εγγράφων σε `website/build` (υποστηρίζει `--locales` / `BUILD_LOCALES`).                      |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Έλεγχος συνδέσμων με ασφάλεια εκτός σύνδεσης (παραλείπει απομακρυσμένα HTTP[S]).                         |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Τοπική προεπισκόπηση gh‑pages· αυτόματη εξυπηρέτηση στις 8080–8090· προαιρετικά tests/έλεγχος συνδέσμων. |
+| [`web_push_github`](#mt-web_push_github)                 | Προώθηση του `website/build` στο κλάδο `gh-pages`.                                                       |
 
 Syntax for options
 
-- Use `make <command> OPTS="…"` to pass options (quotes recommended). Each target below shows example usage.
+- Χρησιμοποιήστε `make <command> OPTS="…"` για να περάσετε επιλογές (συνιστώνται εισαγωγικά). Κάθε στόχος παρακάτω δείχνει παράδειγμα χρήσης.
 
 --
 
 -
 
-#### Locale build tips {#locale-build-tips}
+#### Συμβουλές δημιουργίας τοπικών εκδόσεων {#locale-build-tips}
 
-- Build a subset of locales: set `BUILD_LOCALES="en de"` or pass `OPTS="--locales en,de"` to web targets.
-- Preview a specific locale: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
-
----
-
-### Build & Package {#build-and-package}
-
-- Build ZIPs: `make pack`
-- Produces ATN and LOCAL ZIPs in the repo root (do not edit artifacts by hand)
-- Tip: update version in both `sources/manifest_ATN.json` and `sources/manifest_LOCAL.json` before packaging
-- Manual install (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → select the built ZIP
+- Δημιουργία υποσυνόλου γλωσσών: ορίστε `BUILD_LOCALES="en de"` ή περάστε `OPTS="--locales en,de"` στους web στόχους.
+- Προεπισκόπηση συγκεκριμένης γλώσσας: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/de/`.
 
 ---
 
-### Test {#test}
+### Δημιουργία & Συσκευασία {#build-and-package}
 
-- Full suite: `make test` (Vitest)
-- Coverage (optional):
+- Δημιουργία ZIPs: `make pack`
+- Παράγει ATN και LOCAL ZIPs στη ρίζα του repo (μην επεξεργάζεστε τα artifacts χειροκίνητα)
+- Συμβουλή: ενημερώστε την έκδοση και στα `sources/manifest_ATN.json` και `sources/manifest_LOCAL.json` πριν από τη συσκευασία
+- Εγκατάσταση με το χέρι (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → επιλέξτε το παραχθέν ZIP
+
+---
+
+### Δοκιμή {#test}
+
+- Πλήρης σουίτα: `make test` (Vitest)
+- Κάλυψη (προαιρετικά):
 - `npm i -D @vitest/coverage-v8`
-- Run `make test`; open `coverage/index.html` for HTML report
-- i18n only: `make test_i18n` (UI keys/placeholders/titles + website per‑locale per‑doc parity with id/title/sidebar_label checks)
+- Εκτελέστε `make test`; ανοίξτε `coverage/index.html` για την HTML αναφορά
+- Μόνο i18n: `make test_i18n` (κλειδιά UI/placeholders/titles + ισοτιμία ιστότοπου ανά γλώσσα και έγγραφο με ελέγχους id/title/sidebar_label)
 
 ---
 
-### Debugging & Logs {#debugging-and-logs}
+### Αποσφαλμάτωση & Καταγραφές {#debugging-and-logs}
 
-- Error Console: Tools → Developer Tools → Error Console
-- Toggle verbose logs at runtime:
-- Enable: `messenger.storage.local.set({ debug: true })`
-- Disable: `messenger.storage.local.set({ debug: false })`
-- Logs appear while composing/sending replies
-
----
-
-### Docs (website) {#docs-website}
-
-- Dev server: `cd website && npm run start`
-- Build static site: `cd website && npm run build`
-- Make equivalents (alphabetical): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
-- Usage examples:
-- EN only, skip tests/link‑check, no push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
-- All locales, with tests/link‑check, then push: `make web_build_local_preview && make web_push_github`
-- Before publishing, run the offline‑safe link check: `make web_build_linkcheck`.
-- i18n: English lives in `website/docs/*.md`; German translations in `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
-- Search: If Algolia DocSearch env vars are set in CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), the site uses Algolia search; otherwise it falls back to local search. On the homepage, press `/` or `Ctrl+K` to open the search box.
+- Κονσόλα Σφαλμάτων: Tools → Developer Tools → Error Console
+- Εναλλαγή αναλυτικών logs κατά την εκτέλεση:
+- Ενεργοποίηση: `messenger.storage.local.set({ debug: true })`
+- Απενεργοποίηση: `messenger.storage.local.set({ debug: false })`
+- Τα logs εμφανίζονται κατά τη σύνταξη/αποστολή απαντήσεων
 
 ---
 
-#### Donate redirect route {#donate-redirect}
+### Έγγραφα (ιστότοπος) {#docs-website}
+
+- Διακομιστής ανάπτυξης: `cd website && npm run start`
+- Δημιουργία στατικού ιστότοπου: `cd website && npm run build`
+- Ισοδύναμα Make (αλφαβητικά): `make web_build`, `make web_build_linkcheck`, `make web_build_local_preview`, `make web_push_github`
+- Παραδείγματα χρήσης:
+- Μόνο EN, χωρίς tests/έλεγχο συνδέσμων, χωρίς push: `make web_build_local_preview OPTS="--locales en --no-test --no-link-check --dry-run"`
+- Όλες οι γλώσσες, με tests/έλεγχο συνδέσμων, έπειτα push: `make web_build_local_preview && make web_push_github`
+- Πριν από τη δημοσίευση, εκτελέστε τον έλεγχο συνδέσμων με ασφάλεια εκτός σύνδεσης: `make web_build_linkcheck`.
+- i18n: Τα Αγγλικά βρίσκονται στο `website/docs/*.md`; οι γερμανικές μεταφράσεις στο `website/i18n/de/docusaurus-plugin-content-docs/current/*.md`
+- Αναζήτηση: Αν οι μεταβλητές περιβάλλοντος του Algolia DocSearch έχουν οριστεί στο CI (`DOCSEARCH_APP_ID`, `DOCSEARCH_API_KEY`, `DOCSEARCH_INDEX_NAME`), ο ιστότοπος χρησιμοποιεί την αναζήτηση Algolia· διαφορετικά γίνεται fallback στην τοπική αναζήτηση. Στην αρχική σελίδα, πατήστε `/` ή `Ctrl+K` για να ανοίξετε το πλαίσιο αναζήτησης.
+
+---
+
+#### Ανακατεύθυνση δωρεάς {#donate-redirect}
 
 - `website/src/pages/donate.js`
-- Route: `/donate` (and `/<locale>/donate`)
-- Behavior:
-- If the current route has a locale (e.g., `/de/donate`), use it
-- Otherwise, pick the best match from `navigator.languages` vs configured locales; fall back to default locale
-- Redirects to:
+- Διαδρομή: `/donate` (και `/<locale>/donate`)
+- Συμπεριφορά:
+- Εάν η τρέχουσα διαδρομή έχει locale (π.χ., `/de/donate`), χρησιμοποιήστε το
+- Διαφορετικά, επιλέξτε την καλύτερη αντιστοίχιση από `navigator.languages` έναντι των ρυθμισμένων locales· κάντε fallback στο προεπιλεγμένο locale
+- Ανακατευθύνει σε:
 - `en` → `/docs/donation`
-- others → `/<locale>/docs/donation`
-- Uses `useBaseUrl` for proper baseUrl handling
-- Includes meta refresh + `noscript` link as fallback
+- άλλες → `/<locale>/docs/donation`
+- Χρησιμοποιεί `useBaseUrl` για σωστό χειρισμό baseUrl
+- Περιλαμβάνει meta refresh + σύνδεσμο `noscript` ως εναλλακτική
 
 ---
 
 ---
 
-#### Preview Tips {#preview-tips}
+#### Συμβουλές προεπισκόπησης {#preview-tips}
 
-- Stop Node preview cleanly: open `http://localhost:<port>/__stop` (printed after `Local server started`).
-- If images don’t load in MDX/JSX, use `useBaseUrl('/img/...')` to respect the site `baseUrl`.
-- The preview starts first; the link check runs afterward and is non‑blocking (broken external links won’t stop the preview).
-- Example preview URL: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (printed after “Local server started”).
-- External links in link‑check: Some external sites (e.g., addons.thunderbird.net) block automated crawlers and may show 403 in link checks. The preview still starts; these are safe to ignore.
+- Τερματίστε καθαρά την προεπισκόπηση Node: ανοίξτε `http://localhost:<port>/__stop` (εκτυπώνεται μετά το `Local server started`).
+- Αν οι εικόνες δεν φορτώνουν σε MDX/JSX, χρησιμοποιήστε `useBaseUrl('/img/...')` ώστε να τηρείται το `baseUrl` του ιστότοπου.
+- Η προεπισκόπηση ξεκινά πρώτη· ο έλεγχος συνδέσμων εκτελείται αργότερα και δεν μπλοκάρει (χαλασμένοι εξωτερικοί σύνδεσμοι δεν θα σταματήσουν την προεπισκόπηση).
+- Παράδειγμα URL προεπισκόπησης: `http://localhost:<port>/Thunderbird-Reply-with-Attachments/` (εκτυπώνεται μετά το “Local server started”).
+- Εξωτερικοί σύνδεσμοι στον έλεγχο: Ορισμένοι εξωτερικοί ιστότοποι (π.χ. addons.thunderbird.net) μπλοκάρουν αυτόματους ανιχνευτές και μπορεί να εμφανίζουν 403 στους ελέγχους συνδέσμων. Η προεπισκόπηση εξακολουθεί να ξεκινά· αυτά είναι ασφαλή να αγνοηθούν.
 
 ---
 
-#### Translate the Website {#translate-website}
+#### Μετάφραση του ιστότοπου {#translate-website}
 
-What you can translate
+Τι μπορείτε να μεταφράσετε
 
-- Website UI only: homepage, navbar, footer, and other UI strings. Docs content stays English‑only for now.
+- Μόνο το UI του ιστότοπου: αρχική σελίδα, γραμμή πλοήγησης, footer και άλλες συμβολοσειρές UI. Το περιεχόμενο των εγγράφων παραμένει προς το παρόν μόνο στα Αγγλικά.
 
-Where to edit
+Πού να επεξεργαστείτε
 
-- Edit `website/i18n/<locale>/code.json` (use `en` as reference). Keep placeholders like `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}` unchanged.
+- Επεξεργαστείτε το `website/i18n/<locale>/code.json` (χρησιμοποιήστε το `en` ως αναφορά). Κρατήστε ανέπαφους τους placeholders όπως `{year}`, `{slash}`, `{ctrl}`, `{k}`, `{code1}`.
 
-Generate or refresh files
+Δημιουργία ή ανανέωση αρχείων
 
-- Create missing stubs for all locales: `npm --prefix website run i18n:stubs`
-- Overwrite stubs from English (after adding new strings): `npm --prefix website run i18n:stubs:force`
-- Alternative for a single locale: `npx --prefix website docusaurus write-translations --locale <locale>`
+- Δημιουργία ελλειπόντων stubs για όλες τις γλώσσες: `npm --prefix website run i18n:stubs`
+- Αντικατάσταση stubs από τα Αγγλικά (μετά την προσθήκη νέων συμβολοσειρών): `npm --prefix website run i18n:stubs:force`
+- Εναλλακτική για μία μόνο γλώσσα: `npx --prefix website docusaurus write-translations --locale <locale>`
 
-Translate homepage/navbar/footer UI strings (OpenAI)
+Μετάφραση συμβολοσειρών UI αρχικής/γραμμής πλοήγησης/footer (OpenAI)
 
-- Set credentials once (shell or .env):
+- Ορίστε διαπιστευτήρια μία φορά (shell ή .env):
 - `export OPENAI_API_KEY=sk-...`
-- Optional: `export OPENAI_MODEL=gpt-4o-mini`
-- One‑shot (all locales, skip en): `make translate_web_index`
-- Limit to specific locales: `make translate_web_index OPTS="--locales de,fr"`
-- Overwrite existing values: `make translate_web_index OPTS="--force"`
+- Προαιρετικό: `export OPENAI_MODEL=gpt-4o-mini`
+- One‑shot (όλες οι γλώσσες, παράλειψη en): `make translate_web_index`
+- Περιορισμός σε συγκεκριμένες γλώσσες: `make translate_web_index OPTS="--locales de,fr"`
+- Αντικατάσταση υπαρχουσών τιμών: `make translate_web_index OPTS="--force"`
 
-Validation & retries
+Επικύρωση & επαναπροσπάθειες
 
-- The translation script validates JSON shape, preserves curly‑brace placeholders, and ensures URLs are unchanged.
-- On validation failure, it retries with feedback up to 2 times before keeping existing values.
+- Το script μετάφρασης επικυρώνει το σχήμα JSON, διατηρεί τα placeholders με άγκιστρα και διασφαλίζει ότι τα URLs μένουν αμετάβλητα.
+- Σε αποτυχία επικύρωσης, επιχειρεί ξανά με ανατροφοδότηση έως 2 φορές πριν κρατήσει τις υπάρχουσες τιμές.
 
-Preview your locale
+Προεπισκόπηση της γλώσσας σας
 
-- Dev server: `npm --prefix website run start`
-- Visit `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
+- Διακομιστής ανάπτυξης: `npm --prefix website run start`
+- Επισκεφθείτε το `http://localhost:3000/<locale>/Thunderbird-Reply-with-Attachments/`
 
-Submitting
+Υποβολή
 
-- Open a PR with the edited `code.json` file(s). Keep changes focused and include a quick screenshot when possible.
-
----
-
-### Security & Configuration Tips {#security-and-configuration-tips}
-
-- Do not commit `sources/manifest.json` (created temporarily by the build)
-- Keep `browser_specific_settings.gecko.id` stable to preserve the update channel
+- Ανοίξτε PR με τα επεξεργασμένα αρχεία `code.json`. Κρατήστε τις αλλαγές στοχευμένες και συμπεριλάβετε ένα γρήγορο στιγμιότυπο όπου είναι δυνατό.
 
 ---
 
-### Settings Persistence {#settings-persistence}
+### Συμβουλές Ασφαλείας & Ρύθμισης {#security-and-configuration-tips}
 
-- Storage: All user settings live in `storage.local` and persist across add‑on updates.
-- Install: Defaults are applied only when a key is strictly missing (undefined).
-- Update: A migration fills only missing keys; existing values are never overwritten.
-- Schema marker: `settingsVersion` (currently `1`).
-- Keys and defaults:
+- Μην κάνετε commit το `sources/manifest.json` (δημιουργείται προσωρινά από το build)
+- Διατηρήστε το `browser_specific_settings.gecko.id` σταθερό για να διαφυλάξετε το κανάλι ενημερώσεων
+
+---
+
+### Διατήρηση Ρυθμίσεων {#settings-persistence}
+
+- Αποθήκευση: Όλες οι ρυθμίσεις χρήστη ζουν στο `storage.local` και διατηρούνται μεταξύ ενημερώσεων του πρόσθετου.
+- Εγκατάσταση: Τα προεπιλεγμένα εφαρμόζονται μόνο όταν λείπει αυστηρά ένα κλειδί (undefined).
+- Ενημέρωση: Ένα migration συμπληρώνει μόνο τα ελλείποντα κλειδιά· οι υπάρχουσες τιμές δεν αντικαθίστανται ποτέ.
+- Δείκτης σχήματος: `settingsVersion` (αυτή τη στιγμή `1`).
+- Κλειδιά και προεπιλογές:
 - `blacklistPatterns: string[]` → `['*intern*', '*secret*', '*passwor*']`
 - `confirmBeforeAdd: boolean` → `false`
 - `confirmDefaultChoice: 'yes'|'no'` → `'yes'`
 - `warnOnBlacklistExcluded: boolean` → `true`
-- Code: see `sources/background.js` → `initializeOrMigrateSettings()` and `SCHEMA_VERSION`.
+- Κώδικας: δείτε `sources/background.js` → `initializeOrMigrateSettings()` και `SCHEMA_VERSION`.
 
-Dev workflow (adding a new setting)
+Ροή εργασίας ανάπτυξης (προσθήκη νέας ρύθμισης)
 
-- Bump `SCHEMA_VERSION` in `sources/background.js`.
-- Add the new key + default to the `DEFAULTS` object in `initializeOrMigrateSettings()`.
-- Use the "only-if-undefined" rule when seeding defaults; do not overwrite existing values.
-- If the setting is user‑visible, wire it in `sources/options.js` and add localized strings.
-- Add/adjust tests (see `tests/background.settings.migration.test.js`).
+- Αυξήστε το `SCHEMA_VERSION` στο `sources/background.js`.
+- Προσθέστε το νέο κλειδί + προεπιλογή στο αντικείμενο `DEFAULTS` στο `initializeOrMigrateSettings()`.
+- Χρησιμοποιήστε τον κανόνα «only-if-undefined» κατά τη σπορά προεπιλογών· μην αντικαθιστάτε υπάρχουσες τιμές.
+- Αν η ρύθμιση είναι ορατή στον χρήστη, συνδέστε τη στο `sources/options.js` και προσθέστε μεταφρασμένες συμβολοσειρές.
+- Προσθέστε/προσαρμόστε δοκιμές (δείτε `tests/background.settings.migration.test.js`).
 
-Manual testing tips
+Συμβουλές χειροκίνητων δοκιμών
 
-- Simulate a fresh install: clear the extension’s data dir or start with a new profile.
-- Simulate an update: set `settingsVersion` to `0` in `storage.local` and re‑load; confirm existing values remain unchanged and only missing keys are added.
-
----
-
-### Troubleshooting {#troubleshooting}
-
-- Ensure Thunderbird is 128 ESR or newer
-- Use the Error Console for runtime issues
-- If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
+- Προσομοιώστε καθαρή εγκατάσταση: καθαρίστε τον κατάλογο δεδομένων της επέκτασης ή ξεκινήστε με νέο προφίλ.
+- Προσομοιώστε ενημέρωση: ορίστε `settingsVersion` σε `0` στο `storage.local` και επαναφορτώστε· επιβεβαιώστε ότι οι υπάρχουσες τιμές παραμένουν αμετάβλητες και προστίθενται μόνο τα ελλείποντα κλειδιά.
 
 ---
 
-### CI & Coverage {#ci-and-coverage}
+### Αντιμετώπιση προβλημάτων {#troubleshooting}
 
-- GitHub Actions (`CI — Tests`) runs vitest with coverage thresholds (85% lines/functions/branches/statements). If thresholds are not met, the job fails.
-- The workflow uploads an artifact `coverage-html` with the HTML report; download it from the run page (Actions → latest run → Artifacts).
-
----
-
-### Contributing {#contributing}
-
-- See CONTRIBUTING.md for branch/commit/PR guidelines
-- Tip: Create a separate Thunderbird development profile for testing to avoid impacting your daily profile.
+- Βεβαιωθείτε ότι το Thunderbird είναι 128 ESR ή νεότερο
+- Χρησιμοποιήστε την Κονσόλα Σφαλμάτων για θέματα χρόνου εκτέλεσης
+- Αν οι αποθηκευμένες ρυθμίσεις φαίνεται να μην εφαρμόζονται σωστά, επανεκκινήστε το Thunderbird και δοκιμάστε ξανά. (Το Thunderbird μπορεί να κάνει cache την κατάσταση μεταξύ συνεδριών· μια επανεκκίνηση διασφαλίζει ότι φορτώνονται φρέσκες ρυθμίσεις.)
 
 ---
 
-### Translations
+### CI & Κάλυψη {#ci-and-coverage}
 
-- Running large “all → all” translation jobs can be slow and expensive. Start with a subset (e.g., a few docs and 1–2 locales), review the result, then expand.
+- Τα GitHub Actions (`CI — Tests`) εκτελούν vitest με όρια κάλυψης (85% γραμμές/συναρτήσεις/κλάδοι/δηλώσεις). Αν δεν καλυφθούν τα όρια, η εργασία αποτυγχάνει.
+- Η ροή εργασίας ανεβάζει ένα artifact `coverage-html` με την HTML αναφορά· κατεβάστε το από τη σελίδα εκτέλεσης (Actions → latest run → Artifacts).
 
 ---
 
-- Retry policy: translation jobs perform up to 3 retries with exponential backoff on API errors; see `scripts/translate_web_docs_batch.js` and `scripts/translate_web_docs_sync.js`.
+### Συνεισφορά {#contributing}
 
-Screenshots for docs
+- Δείτε το CONTRIBUTING.md για οδηγίες branch/commit/PR
+- Συμβουλή: Δημιουργήστε ξεχωριστό προφίλ ανάπτυξης Thunderbird για δοκιμές ώστε να μην επηρεάζεται το καθημερινό σας προφίλ.
 
-- Store images under `website/static/img/`.
-- Reference them in MD/MDX via `useBaseUrl('/img/<filename>')` so paths work with the site `baseUrl`.
-- After adding or renaming images under `website/static/img/`, confirm all references still use `useBaseUrl('/img/…')` and render in a local preview.
+---
+
+### Μεταφράσεις
+
+- Η εκτέλεση μεγάλων εργασιών μετάφρασης «all → all» μπορεί να είναι αργή και δαπανηρή. Ξεκινήστε με υποσύνολο (π.χ. μερικά έγγραφα και 1–2 γλώσσες), ελέγξτε το αποτέλεσμα και μετά επεκταθείτε.
+
+---
+
+- Πολιτική επαναπροσπάθειας: οι εργασίες μετάφρασης κάνουν έως 3 επαναπροσπάθειες με εκθετική καθυστέρηση σε σφάλματα API· δείτε `scripts/translate_web_docs_batch.js` και `scripts/translate_web_docs_sync.js`.
+
+Στιγμιότυπα για τα έγγραφα
+
+- Αποθηκεύστε εικόνες κάτω από `website/static/img/`.
+- Αναφερθείτε σε αυτές σε MD/MDX μέσω `useBaseUrl('/img/<filename>')` ώστε τα μονοπάτια να λειτουργούν με το `baseUrl` του ιστότοπου.
+- Μετά την προσθήκη ή μετονομασία εικόνων κάτω από `website/static/img/`, επιβεβαιώστε ότι όλες οι αναφορές συνεχίζουν να χρησιμοποιούν `useBaseUrl('/img/…')` και αποδίδονται σε τοπική προεπισκόπηση.
   Favicons
 
-- The multi‑size `favicon.ico` is generated automatically in all build paths (Make + scripts) via `website/scripts/build-favicon.mjs`.
-- No manual step is required; updating `icon-*.png` is enough.
-  Review tip
+- Το πολλαπλών μεγεθών `favicon.ico` δημιουργείται αυτόματα σε όλα τα μονοπάτια build (Make + scripts) μέσω `website/scripts/build-favicon.mjs`.
+- Δεν απαιτείται χειροκίνητο βήμα· αρκεί η ενημέρωση του `icon-*.png`.
+  Συμβουλή ελέγχου
 
-- Keep the front‑matter `id` unchanged in translated docs; translate only `title` and `sidebar_label` when present.
+- Διατηρήστε το front‑matter `id` αμετάβλητο στα μεταφρασμένα έγγραφα· μεταφράστε μόνο τα `title` και `sidebar_label` όταν υπάρχουν.
 
 #### clean {#mt-clean}
 
-- Purpose: remove local build/preview artifacts.
-- Usage: `make clean`
-- Removes (if present):
+- Σκοπός: αφαίρεση τοπικών artifacts build/preview.
+- Χρήση: `make clean`
+- Καταργεί (αν υπάρχουν):
 - `tmp/`
 - `web-local-preview/`
 - `website/build/`
@@ -300,136 +302,134 @@ Screenshots for docs
 
 #### commit {#mt-commit}
 
-- Purpose: format, test, update changelog, commit, and push.
-- Usage: `make commit`
-- Details: runs Prettier (write), `make test`, `make test_i18n`; appends changelog when there are staged diffs; pushes to `origin/<branch>`.
+- Σκοπός: μορφοποίηση, δοκιμές, ενημέρωση changelog, commit και push.
+- Χρήση: `make commit`
+- Λεπτομέρειες: τρέχει Prettier (εγγραφή), `make test`, `make test_i18n`; προσθέτει στο changelog όταν υπάρχουν staged διαφορές· κάνει push στο `origin/<branch>`.
 
 ---
 
 #### eslint {#mt-eslint}
 
-- Purpose: run ESLint via flat config.
-- Usage: `make eslint`
+- Σκοπός: εκτέλεση ESLint μέσω flat config.
+- Χρήση: `make eslint`
 
 ---
 
 #### help {#mt-help}
 
-- Purpose: list all targets with one‑line docs.
-- Usage: `make help`
+- Σκοπός: λίστα όλων των στόχων με σύντομη περιγραφή.
+- Χρήση: `make help`
 
 ---
 
 #### lint {#mt-lint}
 
-- Purpose: lint the MailExtension using `web-ext`.
-- Usage: `make lint`
-- Notes: temp‑copies `sources/manifest_LOCAL.json` → `sources/manifest.json`; ignores built ZIPs; warnings do not fail the pipeline.
+- Σκοπός: lint του MailExtension με χρήση `web-ext`.
+- Χρήση: `make lint`
+- Σημειώσεις: αντιγράφει προσωρινά `sources/manifest_LOCAL.json` → `sources/manifest.json`; αγνοεί έτοιμα ZIPs· οι προειδοποιήσεις δεν αποτυγχάνουν την pipeline.
 
 ---
 
 #### menu {#mt-menu}
 
-- Purpose: interactive menu to select a Make target and optional arguments.
-- Usage: run `make` with no arguments.
-- Notes: if `whiptail` is not available, the menu falls back to `make help`.
+- Σκοπός: διαδραστικό μενού για επιλογή στόχου Make και προαιρετικών ορισμάτων.
+- Χρήση: εκτελέστε `make` χωρίς ορίσματα.
+- Σημειώσεις: αν το `whiptail` δεν είναι διαθέσιμο, το μενού υποχωρεί σε `make help`.
 
 ---
 
 #### pack {#mt-pack}
 
-- Purpose: build ATN and LOCAL ZIPs (depends on `lint`).
-- Usage: `make pack`
-- Tip: bump versions in both `sources/manifest_*.json` before packaging.
+- Σκοπός: δημιουργία ATN και LOCAL ZIPs (εξαρτάται από `lint`).
+- Χρήση: `make pack`
+- Συμβουλή: αυξήστε εκδόσεις και στα `sources/manifest_*.json` πριν από τη συσκευασία.
 
 ---
 
 #### prettier {#mt-prettier}
 
-- Purpose: format the repo in place.
-- Usage: `make prettier`
+- Σκοπός: μορφοποίηση του repo επί τόπου.
+- Χρήση: `make prettier`
 
 #### prettier_check {#mt-prettier_check}
 
-- Purpose: verify formatting (no writes).
-- Usage: `make prettier_check`
+- Σκοπός: επαλήθευση μορφοποίησης (χωρίς εγγραφές).
+- Χρήση: `make prettier_check`
 
 #### prettier_write {#mt-prettier_write}
 
-- Purpose: alias for `prettier`.
-- Usage: `make prettier_write`
+- Σκοπός: ψευδώνυμο για `prettier`.
+- Χρήση: `make prettier_write`
 
 ---
 
 #### test {#mt-test}
 
-- Purpose: run Prettier (write), ESLint, then Vitest (coverage if installed).
-- Usage: `make test`
+- Σκοπός: εκτέλεση Prettier (εγγραφή), ESLint, μετά Vitest (coverage αν είναι εγκατεστημένο).
+- Χρήση: `make test`
 
 #### test_i18n {#mt-test_i18n}
 
-- Purpose: i18n‑focused tests for add‑on strings and website docs.
-- Usage: `make test_i18n`
-- Runs: `npm run test:i18n` and `npm run -s test:website-i18n`.
+- Σκοπός: δοκιμές εστιασμένες στο i18n για συμβολοσειρές πρόσθετου και έγγραφα ιστότοπου.
+- Χρήση: `make test_i18n`
+- Εκτελεί: `npm run test:i18n` και `npm run -s test:website-i18n`.
 
 ---
 
 #### translate_app / translation_app {#mt-translation-app}
 
-- Purpose: translate add‑on UI strings from EN to other locales.
-- Usage: `make translation_app OPTS="--locales all|de,fr"`
-- Notes: preserves key structure and placeholders; logs to `translation_app.log`. Script form: `node scripts/translate_app.js --locales …`.
+- Σκοπός: μετάφραση συμβολοσειρών UI πρόσθετου από EN σε άλλες γλώσσες.
+- Χρήση: `make translation_app OPTS="--locales all|de,fr"`
+- Σημειώσεις: διατηρεί τη δομή κλειδιών και τα placeholders· καταγράφει στο `translation_app.log`. Μορφή script: `node scripts/translate_app.js --locales …`.
 
 #### translate_web_docs_batch / translate_web_docs_sync {#mt-translation-web}
 
-- Purpose: translate website docs from `website/docs/*.md` into `website/i18n/<locale>/...`.
-- Preferred: `translate_web_docs_batch` (OpenAI Batch API)
-  - Usage (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: builds JSONL, uploads, polls every 30s, downloads results, writes files.
-- Note: a batch job may take up to 24 hours to complete (per OpenAI’s batch window). The console shows elapsed time on each poll.
-- Env: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (default 24h), `BATCH_POLL_INTERVAL_MS`.
-- Legacy: `translate_web_docs_sync`
-  - Usage (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
-  - Legacy positional is still accepted: `OPTS="<doc|all> <lang|all>"`
-- Behavior: synchronous per‑pair requests (no batch aggregation).
-- Notes: Interactive prompts when `OPTS` omitted. Both modes preserve code blocks/inline code and keep front‑matter `id` unchanged; logs to `translation_web_batch.log` (batch) or `translation_web_sync.log` (sync).
+- Σκοπός: μετάφραση εγγράφων ιστότοπου από `website/docs/*.md` σε `website/i18n/<locale>/...`.
+- Προτεινόμενο: `translate_web_docs_batch` (OpenAI Batch API)
+  - Χρήση (flags): `make translate_web_docs_batch OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Γίνεται δεκτή και η παλιά positional μορφή: `OPTS="<doc|all> <lang|all>"`
+- Συμπεριφορά: δημιουργεί JSONL, ανεβάζει, ελέγχει κάθε 30s, κατεβάζει αποτελέσματα, γράφει αρχεία.
+- Σημείωση: μια εργασία batch μπορεί να διαρκέσει έως 24 ώρες για να ολοκληρωθεί (σύμφωνα με το παράθυρο batch του OpenAI). Η κονσόλα δείχνει τον χρόνο που πέρασε σε κάθε έλεγχο.
+- Περιβάλλον: `OPENAI_API_KEY` (απαραίτητο), προαιρετικά `OPENAI_MODEL`, `OPENAI_TEMPERATURE`, `OPENAI_BATCH_WINDOW` (προεπιλογή 24h), `BATCH_POLL_INTERVAL_MS`.
+- Παλιό: `translate_web_docs_sync`
+  - Χρήση (flags): `make translate_web_docs_sync OPTS="--files <doc1,doc2|all> --locales <lang1,lang2|all>"`
+  - Γίνεται δεκτή και η παλιά positional μορφή: `OPTS="<doc|all> <lang|all>"`
+- Συμπεριφορά: συγχρονιστικά αιτήματα ανά ζεύγος (χωρίς συνάθροιση batch).
+- Σημειώσεις: Διαδραστικές ερωτήσεις όταν παραλείπεται το `OPTS`. Και οι δύο λειτουργίες διατηρούν τα μπλοκ κώδικα/inline code και κρατούν το front‑matter `id` αμετάβλητο· καταγραφή στο `translation_web_batch.log` (batch) ή `translation_web_sync.log` (sync).
 
 ---
 
 #### translate_web_index / translation_web_index {#mt-translation_web_index}
 
-- Purpose: translate website UI strings (homepage, navbar, footer) from `website/i18n/en/code.json` to all locales under `website/i18n/<locale>/code.json` (excluding `en`).
-- Usage: `make translate_web_index` or `make translate_web_index OPTS="--locales de,fr [--force]"`
-- Requirements: export `OPENAI_API_KEY` (optional: `OPENAI_MODEL=gpt-4o-mini`).
-- Behavior: validates JSON structure, preserves curly‑brace placeholders, keeps URLs unchanged, and retries with feedback on validation errors.
+- Σκοπός: μετάφραση συμβολοσειρών UI ιστότοπου (αρχική, γραμμή πλοήγησης, footer) από `website/i18n/en/code.json` σε όλες τις γλώσσες κάτω από `website/i18n/<locale>/code.json` (εξαιρείται το `en`).
+- Χρήση: `make translate_web_index` ή `make translate_web_index OPTS="--locales de,fr [--force]"`
+- Απαιτήσεις: κάντε export το `OPENAI_API_KEY` (προαιρετικά: `OPENAI_MODEL=gpt-4o-mini`).
+- Συμπεριφορά: επικυρώνει τη δομή JSON, διατηρεί placeholders με άγκιστρα, κρατά τα URLs αμετάβλητα και επαναπροσπαθεί με ανατροφοδότηση σε σφάλματα επικύρωσης.
 
 ---
 
 #### web_build {#mt-web_build}
 
-- Purpose: build the docs site to `website/build`.
-- Usage: `make web_build OPTS="--locales en|de,en|all"` (or set `BUILD_LOCALES="en de"`)
-- Internals: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
-- Deps: runs `npm ci` in `website/` only if `website/node_modules/@docusaurus` is missing.
+- Σκοπός: δημιουργία του ιστότοπου τεκμηρίωσης σε `website/build`.
+- Χρήση: `make web_build OPTS="--locales en|de,en|all"` (ή ορίστε `BUILD_LOCALES="en de"`)
+- Εσωτερικά: `node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]`.
+- Εξαρτήσεις: τρέχει `npm ci` στο `website/` μόνο αν λείπει το `website/node_modules/@docusaurus`.
 
 #### web_build_linkcheck {#mt-web_build_linkcheck}
 
-- Purpose: offline‑safe link check.
-- Usage: `make web_build_linkcheck OPTS="--locales en|all"`
-- Notes: builds to `tmp_linkcheck_web_pages`; rewrites GH Pages `baseUrl` to `/`; skips remote HTTP(S) links.
+- Σκοπός: έλεγχος συνδέσμων με ασφάλεια εκτός σύνδεσης.
+- Χρήση: `make web_build_linkcheck OPTS="--locales en|all"`
+- Σημειώσεις: δημιουργεί σε `tmp_linkcheck_web_pages`· ξαναγράφει τα GH Pages `baseUrl` σε `/`· παραλείπει απομακρυσμένους συνδέσμους HTTP(S).
 
 #### web_build_local_preview {#mt-web_build_local_preview}
 
-- Purpose: local gh‑pages preview with optional tests/link‑check.
-- Usage: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
-- Behavior: tries Node preview server first (`scripts/preview-server.mjs`, supports `/__stop`), falls back to `python3 -m http.server`; serves on 8080–8090; PID at `web-local-preview/.server.pid`.
+- Σκοπός: τοπική προεπισκόπηση gh‑pages με προαιρετικά tests/έλεγχο συνδέσμων.
+- Χρήση: `make web_build_local_preview OPTS="--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]"`
+- Συμπεριφορά: δοκιμάζει πρώτα τον διακομιστή προεπισκόπησης Node (`scripts/preview-server.mjs`, υποστηρίζει `/__stop`), υποχωρεί σε `python3 -m http.server`· σερβίρει στις 8080–8090· PID στο `web-local-preview/.server.pid`.
 
 #### web_push_github {#mt-web_push_github}
 
-- Purpose: push `website/build` to the `gh-pages` branch.
-- Usage: `make web_push_github`
+- Σκοπός: push του `website/build` στον κλάδο `gh-pages`.
+- Χρήση: `make web_push_github`
 
-Tip: set `NPM=…` to override the package manager used by the Makefile (defaults to `npm`).
-
----
+Συμβουλή: ορίστε το `NPM=…` για να παρακάμψετε τον διαχειριστή πακέτων που χρησιμοποιεί το Makefile (προεπιλογή το `npm`).

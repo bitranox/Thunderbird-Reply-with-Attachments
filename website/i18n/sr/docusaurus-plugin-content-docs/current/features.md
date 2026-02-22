@@ -1,34 +1,43 @@
 ---
 id: features
-title: 'Karakteristike'
-sidebar_label: 'Karakteristike'
+title: 'Функционалности'
+sidebar_label: 'Карактеристике'
 ---
 
-## Features {#features}
+---
 
-- Automatically attaches files from the original email when replying.
-- Configurable behavior: attachments can be
-  - added automatically, or
-  - added only after confirmation (a small, accessible dialog). In Options you
-    can enable the confirmation and choose the default answer (Yes/No).
-- Blacklist of filenames (glob patterns) prevents specific files from being
-  attached automatically. Examples: `*intern*`, `*secret*`, `*passwor*`.
-  Matching is case‑insensitive and checks the filename only; provide one pattern
-  per line in Options.
-- Blacklist warning (optional, enabled by default): when files are excluded by your
-  blacklist, a small modal lists the file and the matching pattern(s). Dark‑mode
-  friendly and keyboard accessible (Enter/Esc to close).
-- Works with Reply and Reply all. Forward is not modified by this add-on.
-- Adds originals even if you already attached something yourself; avoids duplicates by filename.
-- Per‑tab duplicate guard prevents double‑adding in the same compose tab.
-- Skips S/MIME certificates and inline images to avoid unnecessary attachments.
+## Funkcionalnosti {#features}
 
-## How It Works {#how-it-works}
+- Automatski prilaže priloze iz originalne e‑pošte pri odgovaranju.
+- Ponašanje se može podesiti: prilozi mogu biti
+  - dodati automatski, ili
+  - dodati tek nakon potvrde (mali, pristupačan dijalog). U Opcijama
+    možete omogućiti potvrdu i izabrati podrazumevani odgovor (Da/Ne).
+- Crna lista naziva datoteka (glob obrasci) sprečava da se određene datoteke
+  prilože automatski. Primeri: `*intern*`, `*secret*`, `*passwor*`.
+  Poklapanje ne razlikuje velika i mala slova i proverava samo naziv datoteke; navedite po jedan obrazac
+  po liniji u Opcijama.
+- Upozorenje o crnoj listi (opciono, podrazumevano omogućeno): kada su datoteke isključene vašom
+  crnom listom, mali modalni prozor navodi datoteku i obrazac(e) koji se poklapaju. Prijateljski za tamni režim
+  i pristupačno tastaturom (Enter/Esc za zatvaranje).
+- Radi sa Reply i Reply all. Forward ovaj dodatak ne menja.
+- Dodaje originale čak i ako ste već nešto sami priložili; izbegava duplikate po nazivu datoteke.
+- Zaštita od duplikata po kartici sprečava dvostruko dodavanje u istoj kartici za pisanje.
+- Podrazumevano preskače S/MIME sertifikate kako bi se izbegli nepotrebni prilozi.
+- Uključuje ugrađene slike (podrazumevano: UKLJUČENO). Umetnute slike se obnavljaju direktno u
+  telu odgovora kao base64 data URI identifikatori, uz očuvanje originalnog rasporeda u liniji. Onemogućite u
+  Opcijama da biste u potpunosti preskočili ugrađene slike.
 
-- On reply, the add-on lists original attachments.
-- Filters out S/MIME signatures and inline images.
-- Optionally asks for confirmation (keyboard-friendly).
-- Adds eligible files to your compose, avoiding duplicates by filename.
-- See “Why attachments might not be added” in Usage for edge cases.
+---
 
-Privacy note: All processing happens locally in Thunderbird. The add-on makes no background network requests.
+## Kako funkcioniše {#how-it-works}
+
+- Prilikom odgovora, dodatak izlista originalne priloge.
+- Filtrira S/MIME potpise iz priloga sa datotekama; ugrađene slike se vraćaju u telo poruke (osim ako je onemogućeno).
+- Po potrebi traži potvrdu (prilagođeno radu sa tastaturom).
+- Dodaje odgovarajuće datoteke u vaš prozor za pisanje, izbegavajući duplikate po nazivu.
+- Pogledajte „Zašto prilozi možda neće biti dodati” u odeljku Upotreba za rubne slučajeve.
+
+Napomena o privatnosti: Sva obrada se odvija lokalno u Thunderbirdu. Dodatak ne upućuje nikakve mrežne zahteve u pozadini.
+
+---
