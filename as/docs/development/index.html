@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="as-IN" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-development" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">উন্নয়ন | Reply with Attachments</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development"><meta data-rh="true" property="og:locale" content="as_IN"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" property="og:locale:alternate" content="hi_IN"><meta data-rh="true" property="og:locale:alternate" content="es_ES"><meta data-rh="true" property="og:locale:alternate" content="ar"><meta data-rh="true" property="og:locale:alternate" content="fr_FR"><meta data-rh="true" property="og:locale:alternate" content="bn_BD"><meta data-rh="true" property="og:locale:alternate" content="pt_PT"><meta data-rh="true" property="og:locale:alternate" content="ru_RU"><meta data-rh="true" property="og:locale:alternate" content="id_ID"><meta data-rh="true" property="og:locale:alternate" content="ur_PK"><meta data-rh="true" property="og:locale:alternate" content="de_DE"><meta data-rh="true" property="og:locale:alternate" content="ja_JP"><meta data-rh="true" property="og:locale:alternate" content="pa_IN"><meta data-rh="true" property="og:locale:alternate" content="jv_ID"><meta data-rh="true" property="og:locale:alternate" content="ms_MY"><meta data-rh="true" property="og:locale:alternate" content="te_IN"><meta data-rh="true" property="og:locale:alternate" content="vi_VN"><meta data-rh="true" property="og:locale:alternate" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="mr_IN"><meta data-rh="true" property="og:locale:alternate" content="ta_IN"><meta data-rh="true" property="og:locale:alternate" content="tr_TR"><meta data-rh="true" property="og:locale:alternate" content="it_IT"><meta data-rh="true" property="og:locale:alternate" content="th_TH"><meta data-rh="true" property="og:locale:alternate" content="gu_IN"><meta data-rh="true" property="og:locale:alternate" content="fa_IR"><meta data-rh="true" property="og:locale:alternate" content="pl_PL"><meta data-rh="true" property="og:locale:alternate" content="ps_AF"><meta data-rh="true" property="og:locale:alternate" content="kn_IN"><meta data-rh="true" property="og:locale:alternate" content="ml_IN"><meta data-rh="true" property="og:locale:alternate" content="or_IN"><meta data-rh="true" property="og:locale:alternate" content="my_MM"><meta data-rh="true" property="og:locale:alternate" content="uk_UA"><meta data-rh="true" property="og:locale:alternate" content="ro_RO"><meta data-rh="true" property="og:locale:alternate" content="nl_NL"><meta data-rh="true" property="og:locale:alternate" content="ha_NG"><meta data-rh="true" property="og:locale:alternate" content="sw_TZ"><meta data-rh="true" property="og:locale:alternate" content="am_ET"><meta data-rh="true" property="og:locale:alternate" content="hu_HU"><meta data-rh="true" property="og:locale:alternate" content="az_AZ"><meta data-rh="true" property="og:locale:alternate" content="uz_UZ"><meta data-rh="true" property="og:locale:alternate" content="sd_PK"><meta data-rh="true" property="og:locale:alternate" content="he_IL"><meta data-rh="true" property="og:locale:alternate" content="el_GR"><meta data-rh="true" property="og:locale:alternate" content="cs_CZ"><meta data-rh="true" property="og:locale:alternate" content="sv_SE"><meta data-rh="true" property="og:locale:alternate" content="bg_BG"><meta data-rh="true" property="og:locale:alternate" content="da_DK"><meta data-rh="true" property="og:locale:alternate" content="fi_FI"><meta data-rh="true" property="og:locale:alternate" content="no_NO"><meta data-rh="true" property="og:locale:alternate" content="sk_SK"><meta data-rh="true" property="og:locale:alternate" content="sr_RS"><meta data-rh="true" property="og:locale:alternate" content="hr_HR"><meta data-rh="true" property="og:locale:alternate" content="bs_BA"><meta data-rh="true" property="og:locale:alternate" content="sl_SI"><meta data-rh="true" property="og:locale:alternate" content="lt_LT"><meta data-rh="true" property="og:locale:alternate" content="lv_LV"><meta data-rh="true" property="og:locale:alternate" content="et_EE"><meta data-rh="true" property="og:locale:alternate" content="hy_AM"><meta data-rh="true" property="og:locale:alternate" content="ka_GE"><meta data-rh="true" property="og:locale:alternate" content="kk_KZ"><meta data-rh="true" property="og:locale:alternate" content="ky_KG"><meta data-rh="true" property="og:locale:alternate" content="tg_TJ"><meta data-rh="true" property="og:locale:alternate" content="tk_TM"><meta data-rh="true" property="og:locale:alternate" content="ne_NP"><meta data-rh="true" property="og:locale:alternate" content="si_LK"><meta data-rh="true" property="og:locale:alternate" content="km_KH"><meta data-rh="true" property="og:locale:alternate" content="lo_LA"><meta data-rh="true" property="og:locale:alternate" content="mn_MN"><meta data-rh="true" property="og:locale:alternate" content="su_ID"><meta data-rh="true" property="og:locale:alternate" content="yo_NG"><meta data-rh="true" property="og:locale:alternate" content="ig_NG"><meta data-rh="true" property="og:locale:alternate" content="om_ET"><meta data-rh="true" property="og:locale:alternate" content="zu_ZA"><meta data-rh="true" property="og:locale:alternate" content="xh_ZA"><meta data-rh="true" property="og:locale:alternate" content="af_ZA"><meta data-rh="true" property="og:locale:alternate" content="so_SO"><meta data-rh="true" property="og:locale:alternate" content="rw_RW"><meta data-rh="true" property="og:locale:alternate" content="rn_BI"><meta data-rh="true" property="og:locale:alternate" content="ln_CD"><meta data-rh="true" property="og:locale:alternate" content="sn_ZW"><meta data-rh="true" property="og:locale:alternate" content="ak_GH"><meta data-rh="true" property="og:locale:alternate" content="ff_SN"><meta data-rh="true" property="og:locale:alternate" content="bm_ML"><meta data-rh="true" property="og:locale:alternate" content="ny_MW"><meta data-rh="true" property="og:locale:alternate" content="ti_ER"><meta data-rh="true" property="og:locale:alternate" content="ug_CN"><meta data-rh="true" property="og:locale:alternate" content="ks_IN"><meta data-rh="true" property="og:locale:alternate" content="tl_PH"><meta data-rh="true" property="og:locale:alternate" content="ca_ES"><meta data-rh="true" property="og:locale:alternate" content="be_BY"><meta data-rh="true" property="og:locale:alternate" content="sq_AL"><meta data-rh="true" property="og:locale:alternate" content="qu_PE"><meta data-rh="true" property="og:locale:alternate" content="ht_HT"><meta data-rh="true" property="og:locale:alternate" content="mg_MG"><meta data-rh="true" property="og:locale:alternate" content="ku_TR"><meta data-rh="true" property="og:locale:alternate" content="wo_SN"><meta data-rh="true" property="og:locale:alternate" content="ga_IE"><meta data-rh="true" property="og:locale:alternate" content="is_IS"><meta data-rh="true" name="docusaurus_locale" content="as"><meta data-rh="true" name="docsearch:language" content="as"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="উন্নয়ন | Reply with Attachments"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/Thunderbird-Reply-with-Attachments/as/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/development" hreflang="zh"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hi/docs/development" hreflang="hi-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/development" hreflang="es-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/development" hreflang="ar"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/development" hreflang="fr-FR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/development" hreflang="bn-BD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/development" hreflang="pt-PT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/development" hreflang="ru-RU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/development" hreflang="id-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ur/docs/development" hreflang="ur-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/development" hreflang="de-DE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/development" hreflang="ja-JP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/development" hreflang="pa-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/development" hreflang="jv-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/development" hreflang="ms-MY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/development" hreflang="te-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/development" hreflang="vi-VN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/development" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/development" hreflang="mr-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/development" hreflang="ta-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/development" hreflang="tr-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/development" hreflang="it-IT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/development" hreflang="th-TH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/development" hreflang="gu-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/development" hreflang="fa-IR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/development" hreflang="pl-PL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/development" hreflang="ps-AF"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/development" hreflang="kn-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/development" hreflang="ml-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/or/docs/development" hreflang="or-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/development" hreflang="my-MM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/development" hreflang="uk-UA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/development" hreflang="ro-RO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/development" hreflang="nl-NL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/development" hreflang="ha-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/development" hreflang="sw-TZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/development" hreflang="am-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development" hreflang="hu-HU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/development" hreflang="az-AZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/development" hreflang="uz-UZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/development" hreflang="sd-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/development" hreflang="he-IL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/development" hreflang="el-GR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/development" hreflang="cs-CZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/development" hreflang="sv-SE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bg/docs/development" hreflang="bg-BG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/development" hreflang="da-DK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/development" hreflang="fi-FI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/development" hreflang="no-NO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/development" hreflang="sk-SK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/development" hreflang="sr-RS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/development" hreflang="hr-HR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development" hreflang="bs-BA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/development" hreflang="sl-SI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/development" hreflang="lt-LT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/development" hreflang="lv-LV"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/development" hreflang="et-EE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/development" hreflang="hy-AM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/development" hreflang="ka-GE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/development" hreflang="kk-KZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/development" hreflang="ky-KG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/development" hreflang="tg-TJ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/development" hreflang="tk-TM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/development" hreflang="ne-NP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/development" hreflang="si-LK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/development" hreflang="km-KH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/development" hreflang="lo-LA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/development" hreflang="mn-MN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development" hreflang="su-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/yo/docs/development" hreflang="yo-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/development" hreflang="ig-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/development" hreflang="om-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/development" hreflang="zu-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/xh/docs/development" hreflang="xh-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/development" hreflang="af-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/development" hreflang="so-SO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rw/docs/development" hreflang="rw-RW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/development" hreflang="rn-BI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/development" hreflang="ln-CD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/development" hreflang="sn-ZW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/development" hreflang="ak-GH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/development" hreflang="ff-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/development" hreflang="bm-ML"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/development" hreflang="ny-MW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/development" hreflang="ti-ER"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ug/docs/development" hreflang="ug-CN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/development" hreflang="ks-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development" hreflang="as-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/development" hreflang="tl-PH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/development" hreflang="ca-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/development" hreflang="be-BY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/development" hreflang="sq-AL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/development" hreflang="qu-PE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/development" hreflang="ht-HT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/development" hreflang="mg-MG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/development" hreflang="ku-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/development" hreflang="wo-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/development" hreflang="ga-IE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/development" hreflang="is-IS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"উন্নয়ন","item":"https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development"}]}</script><link rel="stylesheet" href="/Thunderbird-Reply-with-Attachments/as/assets/css/styles.f70c06e1.css">
+<script src="/Thunderbird-Reply-with-Attachments/as/assets/js/runtime~main.507f336d.js" defer="defer"></script>
+<script src="/Thunderbird-Reply-with-Attachments/as/assets/js/main.00ba4934.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/Thunderbird-Reply-with-Attachments/as/"><div class="navbar__logo"><img src="/Thunderbird-Reply-with-Attachments/as/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/Thunderbird-Reply-with-Attachments/as/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reply with Attachments</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Thunderbird-Reply-with-Attachments/as/docs/features">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/as/docs/support">Support</a><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/as/docs/license">License</a><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/features"><span title="বৈশিষ্ট্যসমূহ" class="linkLabel_WmDU">বৈশিষ্ট্যসমূহ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/quickstart"><span title="দ্ৰুত আৰম্ভণি" class="linkLabel_WmDU">দ্ৰুত আৰম্ভণি</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/install"><span title="স্থাপন" class="linkLabel_WmDU">স্থাপন</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/configuration"><span title="আবস্থানসূচি" class="linkLabel_WmDU">আবস্থানসূচি</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/usage"><span title="ব্যৱহাৰ" class="linkLabel_WmDU">ব্যৱহাৰ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/compatibility"><span title="সামঞ্জস্যতা" class="linkLabel_WmDU">সামঞ্জস্যতা</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/permissions"><span title="অনুমতি" class="linkLabel_WmDU">অনুমতি</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Thunderbird-Reply-with-Attachments/as/docs/development"><span title="উন্নয়ন" class="linkLabel_WmDU">উন্নয়ন</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/languages"><span title="ভাষাসমূহ" class="linkLabel_WmDU">ভাষাসমূহ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/glossary"><span title="শব্দালংকাৰ" class="linkLabel_WmDU">শব্দালংকাৰ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/support"><span title="সহায়তা" class="linkLabel_WmDU">সহায়তা</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/privacy"><span title="গোপনীয়তা" class="linkLabel_WmDU">গোপনীয়তা</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/donation"><span title="দান কৰক" class="linkLabel_WmDU">দান কৰক</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/license"><span title="অনুজ্ঞাপত্ৰ" class="linkLabel_WmDU">অনুজ্ঞাপত্ৰ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/as/docs/changelog"><span title="পৰিবৰ্তনৰ তালিকা" class="linkLabel_WmDU">পৰিবৰ্তনৰ তালিকা</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/Thunderbird-Reply-with-Attachments/as/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">উন্নয়ন</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>উন্নয়ন</h1></header><hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-guide">উন্নয়ন গাইড<a href="#development-guide" class="hash-link" aria-label="Direct link to উন্নয়ন গাইড" title="Direct link to উন্নয়ন গাইড" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>কেৱল ইংৰাজী সম্পাদনা কৰক; অনুবাদসমূহ প্ৰসাৰিত হয়</div><div class="admonitionContent_BuS1"><p>দস্তাবেজকৰণ কেৱল <code>website/docs</code> (ইংৰাজী) ৰ অধীনত আপডেট কৰক। <code>website/i18n/&lt;locale&gt;/…</code> ৰ তলত থকা অনুবাদসমূহ স্বয়ংক্ৰিয়ভাৱে সৃষ্টি কৰা হয় আৰু হাতেৰে সম্পাদনা নকৰিব। স্থানীয়কৃত সমল ৰিফ্ৰেশ কৰিবলৈ অনুবাদ টাস্কসমূহ (উদাহৰণস্বৰূপে, <code>make translate_web_docs_batch</code>) ব্যৱহাৰ কৰক।</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">আগতীয়া শর্তসমূহ<a href="#prerequisites" class="hash-link" aria-label="Direct link to আগতীয়া শর্তসমূহ" title="Direct link to আগতীয়া শর্তসমূহ" translate="no">​</a></h3>
+<ul>
+<li class="">Node.js 22+ আৰু npm (Node 22 ৰ সৈতে পৰীক্ষিত)</li>
+<li class="">Thunderbird 128 ESR বা তাতো নতুন (হস্তচালিত পৰীক্ষাৰ বাবে)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-layout-high-level">প্ৰকল্পৰ বিন্যাস (উচ্চ‑স্তৰ)<a href="#project-layout-high-level" class="hash-link" aria-label="Direct link to প্ৰকল্পৰ বিন্যাস (উচ্চ‑স্তৰ)" title="Direct link to প্ৰকল্পৰ বিন্যাস (উচ্চ‑স্তৰ)" translate="no">​</a></h3>
+<ul>
+<li class="">Root: পেকেজিং স্ক্ৰিপ্ট <code>distribution_zip_packer.sh</code>, দস ্তাবেজ, স্ক্ৰীণশ্বটসমূহ</li>
+<li class=""><code>sources/</code>: মূল এড‑অন ক’ড (background, options/popup UI, manifests, icons)</li>
+<li class=""><code>tests/</code>: Vitest ছুইট</li>
+<li class=""><code>website/</code>: Docusaurus দস্তাবেজ (i18n <code>website/i18n/de/...</code> ৰ তলত)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-and-tooling">ইনষ্টল আৰু টুলিং<a href="#install-and-tooling" class="hash-link" aria-label="Direct link to ইনষ্টল আৰু টুলিং" title="Direct link to ইনষ্টল আৰু টুলিং" translate="no">​</a></h3>
+<ul>
+<li class="">ৰুট নিৰ্ভৰশীলতা ইনষ্টল কৰক: <code>npm ci</code></li>
+<li class="">দস্তাবেজ (ঐচ্ছিক): <code>cd website &amp;&amp; npm ci</code></li>
+<li class="">লক্ষ্যসমূহ সন্ধান কৰক: <code>make help</code></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="live-dev-web-ext">লাইভ ডেভ (web‑ext run)<a href="#live-dev-web-ext" class="hash-link" aria-label="Direct link to লাইভ ডেভ (web‑ext run)" title="Direct link to লাইভ ডেভ (web‑ext run)" translate="no">​</a></h3>
+<ul>
+<li class="">Firefox Desktop ত দ্ৰুত লুপ (কেৱল UI স্ম’ক‑টেষ্ট):</li>
+<li class=""><code>npx web-ext run --source-dir sources --target=firefox-desktop</code></li>
+<li class="">Thunderbird ত চলাওক (MailExtensions ৰ বাবে অগ্ৰাধিকাৰ):</li>
+<li class=""><code>npx web-ext run --source-dir sources --start-url about:addons --firefox-binary &quot;$(command -v thunderbird || echo /path/to/thunderbird)&quot;</code></li>
+<li class="">টিপছ:</li>
+<li class="">Thunderbird ৰ Error Console খোলা ৰাখক (Tools → Developer Tools → Error Console)।</li>
+<li class="">MV3 ইভেণ্ট পৃষ্ঠাসমূহ নিস্ক্ৰিয় হ’লে স্থগিত থাকে; ক’ড সলনি কৰাৰ পিছত এড‑অন ৰিল’ড কৰক, বা web‑ext ক স্বয়ংক্ৰিয়ভাৱে ৰিল’ড কৰিবলৈ দিয়ক।</li>
+<li class="">কিছুমান কেৱল Firefox‑ত থকা ব‍্যৱহাৰ ভিন্ন হ’ব পাৰে; API সমতা নিশ্চিত কৰিবলৈ সদায় Thunderbird ত যাচাই কৰক।</li>
+<li class="">Thunderbird বাইনাৰী পথসমূহ (উদাহৰণ):</li>
+<li class="">Linux: <code>thunderbird</code> (যেমন, <code>/usr/bin/thunderbird</code>)</li>
+<li class="">macOS: <code>/Applications/Thunderbird.app/Contents/MacOS/thunderbird</code></li>
+<li class="">Windows: <code>&quot;C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe&quot;</code></li>
+<li class="">প্ৰ’ফাইল পৃথকীকৰণ: আপোনাৰ দৈনন্দিন ছেটআপে প্ৰভাৱিত নহ’বলৈ উন্নয়নৰ বাবে পৃথক Thunderbird প্ৰ’ফাইল ব্যৱহাৰ কৰক।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-targets-alphabetical">Make লক্ষ্যসমূহ (বৰ্ণানুক্ৰমে)<a href="#make-targets-alphabetical" class="hash-link" aria-label="Direct link to Make লক্ষ্যসমূহ (বৰ্ণানুক্ৰমে)" title="Direct link to Make লক্ষ্যসমূহ (বৰ্ণানুক্ৰমে)" translate="no">​</a></h3>
+<p>Makefile এ সাধাৰণ ডেভ ফ্ল’সমূহ মানসম্মত কৰে। প্ৰতিটো লক্ষ্যৰ এক‑শাৰী সংক্ষিপ্তসাৰ পোৱাৰ বাবে যিকোনো সময়ত <code>make help</code> চলাওক।</p>
+<p>টিপ: কোনো লক্ষ্য নোহোৱাকৈ <code>make</code> চলালে লক্ষ্য বাছনিৰ বাবে এটা সহজ Whiptail মেনু খোলে।</p>
+<table><thead><tr><th>লক্ষ্য</th><th>এক‑শাৰী বৰ্ণনা</th></tr></thead><tbody><tr><td><a href="#mt-clean" class=""><code>clean</code></a></td><td>স্থানীয় build/preview আৰ্টিফেক্টসমূহ আঁতৰাওক (tmp/, web-local-preview/, website/build/)।</td></tr><tr><td><a href="#mt-commit" class=""><code>commit</code></a></td><td>ফৰমেট, টেষ্ট চলাওক (i18n সহ), চেঞ্জলগ আপডেট, কমিট আৰু পুশ।</td></tr><tr><td><a href="#mt-eslint" class=""><code>eslint</code></a></td><td>ফ্লেট কনফিগৰ দ্বাৰা ESLint চলাওক (<code>npm run -s lint:eslint</code>)।</td></tr><tr><td><a href="#mt-help" class=""><code>help</code></a></td><td>এক‑শাৰী দস্তাবেজসহ সকলো লক্ষ্য তালিকাভুক্ত কৰক (সজোৱা)।</td></tr><tr><td><a href="#mt-lint" class=""><code>lint</code></a></td><td><code>sources/</code> ত web‑ext lint (অস্থায়ী মেনিফেষ্ট; ZIPসমূহ উপেক্ষা কৰে; অ‑মাৰাত্মক)।</td></tr><tr><td><a href="#mt-menu" class=""><code>menu</code></a></td><td>লক্ষ্য আৰু ঐচ্ছিক আর্গুমেন্ট বাছনিৰ বাবে ইন্টাৰেক্টিভ মেনু।</td></tr><tr><td><a href="#mt-pack" class=""><code>pack</code></a></td><td>ATN আৰু LOCAL ZIP নিৰ্মাণ (লিন্টাৰ চলায়; পেকাৰ স্ক্ৰিপ্ট কল কৰে)।</td></tr><tr><td><a href="#mt-prettier" class=""><code>prettier</code></a></td><td>ৰেপ’জিট’ৰী ঠ াইতে ফৰমেট কৰক (সলনি লিখে)।</td></tr><tr><td><a href="#mt-prettier_check" class=""><code>prettier_check</code></a></td><td>চেক ম’ডত Prettier (লিখে নাযায়); পুনঃফৰমেট দরকাৰ হ’লে ফেইল কৰে।</td></tr><tr><td><a href="#mt-prettier_write" class=""><code>prettier_write</code></a></td><td><code>prettier</code> ৰ এলিয়াছ।</td></tr><tr><td><a href="#mt-test" class=""><code>test</code></a></td><td>Prettier (write), ESLint, তাৰ পিছত Vitest (কনফিগাৰ্ড হ’লে কভাৰেজ)।</td></tr><tr><td><a href="#mt-test_i18n" class=""><code>test_i18n</code></a></td><td>কেৱল i18n টেষ্ট: এড‑অন প্লেছহ’ল্ডাৰ/পেৰিটি + ৱেবছাইট পেৰিটি।</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translate_app</code></a></td><td><code>translation_app</code> ৰ এলিয়াছ।</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translation_app</code></a></td><td><code>sources/_locales/en/messages.json</code> ৰ পৰা এপ্‌ UI ষ্ট্ৰিংসমূহ অনুবাদ।</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_batch</code></a></td><td>OpenAI Batch API ৰ জৰিয়তে ৱেবছাইট দস্তাবেজ অনুবাদ (অগ্ৰাধিকাৰযোগ্য)।</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_sync</code></a></td><td>ৱেবছাইট দস্তাবেজ সিঙ্ক্ৰ’নাছভাৱে অনুবাদ (লিগেচি, নন‑বেচ)।</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translate_web_index</code></a></td><td><code>translation_web_index</code> ৰ এলিয়াছ।</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translation_web_index</code></a></td><td>হ’মপেইজ/নেভবাৰ/ফুটাৰ UI অনুবাদ (<code>website/i18n/en/code.json → .../&lt;lang&gt;/code.json</code>)।</td></tr><tr><td><a href="#mt-web_build" class=""><code>web_build</code></a></td><td>দস্তাবেজ <code>website/build</code> লৈ বিল্ড কৰক (<code>--locales</code> / <code>BUILD_LOCALES</code> সমৰ্থন কৰে)।</td></tr><tr><td><a href="#mt-web_build_linkcheck" class=""><code>web_build_linkcheck</code></a></td><td>অফলাইন‑সুৰক্ষিত লিংক চেক (দূৰৱৰ্তী HTTP[S] বাদ দিয়ে)।</td></tr><tr><td><a href="#mt-web_build_local_preview" class=""><code>web_build_local_preview</code></a></td><td>স্থানীয় gh‑pages প্ৰিভিউ; 8080–8090 ত স্বয়ংক্ৰিয় সেৱা; ঐচ্ছিক টেষ্ট/লিংক‑চেক।</td></tr><tr><td><a href="#mt-web_push_github" class=""><code>web_push_github</code></a></td><td><code>website/build</code> ক <code>gh-pages</code> শাখালৈ পুশ কৰক।</td></tr></tbody></table>
+<p>বিকল্পসমূহৰ সিনটেক্স</p>
+<ul>
+<li class="">অপচন পঠিয়াবলৈ <code>make &lt;command&gt; OPTS=&quot;…&quot;</code> ব্যৱহাৰ কৰক (উদ্ধৃতি চিহ্ন ব্যৱহাৰ কৰাৰ পৰামৰ্শ)। তলত প্ৰতিটো লক্ষ্যত উদাহৰণীয় ব্যৱহাৰ দেখুওৱা আছে।</li>
+</ul>
+<p>--</p>
+<ul>
+<li class=""></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="locale-build-tips">লোকেল বিল্ড টিপছ<a href="#locale-build-tips" class="hash-link" aria-label="Direct link to লোকেল বিল্ড টিপছ" title="Direct link to লোকেল বিল্ড টিপছ" translate="no">​</a></h4>
+<ul>
+<li class="">কিছুমান নির্দিষ্ট লোকেলহে বিল্ড কৰক: <code>BUILD_LOCALES=&quot;en de&quot;</code> ছেট কৰক বা ৱেব লক্ষ্যসমূহলৈ <code>OPTS=&quot;--locales en,de&quot;</code> পঠিয়াওক।</li>
+<li class="">কোনো এখন নির্দিষ্ট লোকেল প্ৰিভিউ কৰক: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/de/</code>।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-and-package">বিল্ড আৰু পেকেজ<a href="#build-and-package" class="hash-link" aria-label="Direct link to বিল্ড আৰু পেকেজ" title="Direct link to বিল্ড আৰু পেকেজ" translate="no">​</a></h3>
+<ul>
+<li class="">ZIP নিৰ্মাণ কৰক: <code>make pack</code></li>
+<li class="">ৰেপ’ ৰুটত ATN আৰু LOCAL ZIP উত্পন্ন কৰে (আৰ্টিফেক্টসমূহ হাতেৰে সম্পাদনা নকৰিব)</li>
+<li class="">টিপ: পেকেজিংৰ আগতে <code>sources/manifest_ATN.json</code> আৰু <code>sources/manifest_LOCAL.json</code> উভয়তেই সংস্কৰণ আপডেট কৰক</li>
+<li class="">হস্তচালিত ইনষ্টল (ডেভ): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → নিৰ্মিত ZIP বাছক</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test">টেষ্ট<a href="#test" class="hash-link" aria-label="Direct link to টেষ্ট" title="Direct link to টেষ্ট" translate="no">​</a></h3>
+<ul>
+<li class="">সম্পূৰ্ণ ছুইট: <code>make test</code> (Vitest)</li>
+<li class="">কভাৰেজ (ঐচ্ছিক):</li>
+<li class=""><code>npm i -D @vitest/coverage-v8</code></li>
+<li class=""><code>make test</code> চলাওক; HTML ৰিপ’ৰ্টৰ বাবে <code>coverage/index.html</code> খোলক</li>
+<li class="">কেৱল i18n: <code>make test_i18n</code> (UI কী/প্লেছহ’ল্ডাৰ/শীৰ্ষক + ৱেবছাইটত প্ৰতিটো লোকেল‑প্ৰতি দস্তাবেজ পেৰিটি id/title/sidebar_label পৰীক্ষাসহ)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="debugging-and-logs">ডিবাগিং আৰু লগছ<a href="#debugging-and-logs" class="hash-link" aria-label="Direct link to ডিবাগিং আৰু লগছ" title="Direct link to ডিবাগিং আৰু লগছ" translate="no">​</a></h3>
+<ul>
+<li class="">Error Console: Tools → Developer Tools → Error Console</li>
+<li class="">ৰাণটাইমত বৰ্ণনামূলক লগ ট’গল কৰক:</li>
+<li class="">সক্ৰিয় কৰক: <code>messenger.storage.local.set({ debug: true })</code></li>
+<li class="">নিষ্ক্ৰিয় কৰক: <code>messenger.storage.local.set({ debug: false })</code></li>
+<li class="">উত্তৰ সংকলন/পঠিওঁতে লগসমূহ দেখা যায়</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="docs-website">দস্তাবেজ (ৱেবছাইট)<a href="#docs-website" class="hash-link" aria-label="Direct link to দস্তাবেজ (ৱেবছাইট)" title="Direct link to দস্তাবেজ (ৱেবছাইট)" translate="no">​</a></h3>
+<ul>
+<li class="">ডেভ চাৰ্ভাৰ: <code>cd website &amp;&amp; npm run start</code></li>
+<li class="">ষ্টেটিক ছাইট বিল্ড কৰক: <code>cd website &amp;&amp; npm run build</code></li>
+<li class="">Make সমমান (বৰ্ণানুক্ৰমে): <code>make web_build</code>, <code>make web_build_linkcheck</code>, <code>make web_build_local_preview</code>, <code>make web_push_github</code></li>
+<li class="">ব্যৱহাৰৰ উদাহৰণসমূহ:</li>
+<li class="">কেৱল EN, টেষ্ট/লিংক‑চেক বাদ, কোনো পুশ নাহে: <code>make web_build_local_preview OPTS=&quot;--locales en --no-test --no-link-check --dry-run&quot;</code></li>
+<li class="">সকলো লোকেল, টেষ্ট/লিংক‑চেকসহ, তাৰ পিছত পুশ: <code>make web_build_local_preview &amp;&amp; make web_push_github</code></li>
+<li class="">প্ৰকাশৰ আগতে, অফলাইন‑সুৰক্ষিত লিংক চেক চলাওক: <code>make web_build_linkcheck</code>।</li>
+<li class="">i18n: ইংৰাজী <code>website/docs/*.md</code> ত থাকে; জাৰ্মান অনুবাদসমূহ <code>website/i18n/de/docusaurus-plugin-content-docs/current/*.md</code> ত</li>
+<li class="">অনুসন্ধান: CI ত Algolia DocSearch env ভেৰিয়েবলসমূহ ছেট থাকিলে (<code>DOCSEARCH_APP_ID</code>, <code>DOCSEARCH_API_KEY</code>, <code>DOCSEARCH_INDEX_NAME</code>), ছাইটে Algolia search ব্যৱহাৰ কৰে; নহ’লে স্থানীয় ছাৰ্চত ফলবেক কৰে। হ’মপেইজত, ছাৰ্চ বক্স খোলাৰ বাবে <code>/</code> বা <code>Ctrl+K</code> টিপক।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="donate-redirect">দান ৰিডাইৰেক্ট ৰুট<a href="#donate-redirect" class="hash-link" aria-label="Direct link to দান ৰিডাইৰেক্ট ৰুট" title="Direct link to দান ৰিডাইৰেক্ট ৰুট" translate="no">​</a></h4>
+<ul>
+<li class=""><code>website/src/pages/donate.js</code></li>
+<li class="">ৰুট: <code>/donate</code> (আৰু <code>/&lt;locale&gt;/donate</code>)</li>
+<li class="">আচৰণ:</li>
+<li class="">বৰ্তমান ৰুটত যদি কোনো লোকেল থাকে (যেমন, <code>/de/donate</code>), তেন্তে সেইটো ব্যৱহাৰ কৰক</li>
+<li class="">নচকলে, কনফিগাৰ্ড লোকেলসমূহৰ বিপৰীতে <code>navigator.languages</code> ৰ পৰা সৰ্বশ্ৰেষ্ঠ মিল বাছক; ডিফ’ল্ট লোকেললৈ ফলবেক কৰক</li>
+<li class="">ৰিডাইৰেক্ট হয়:</li>
+<li class=""><code>en</code> → <code>/docs/donation</code></li>
+<li class="">আনসমূহ → <code>/&lt;locale&gt;/docs/donation</code></li>
+<li class="">সঠিক baseUrl হেণ্ডলিংৰ বাবে <code>useBaseUrl</code> ব্যৱহাৰ কৰে</li>
+<li class="">ফলবেক হিচাপে meta refresh + <code>noscript</code> লিংক সন্নিৱেশিত আছে</li>
+</ul>
+<hr>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preview-tips">প্ৰিভিউ টিপছ<a href="#preview-tips" class="hash-link" aria-label="Direct link to প্ৰিভিউ টিপছ" title="Direct link to প্ৰিভিউ টিপছ" translate="no">​</a></h4>
+<ul>
+<li class="">Node প্ৰিভিউ সুচাৰতাভাৱে বন্ধ কৰক: <code>http://localhost:&lt;port&gt;/__stop</code> খোলক (<code>Local server started</code> ৰ পিছত প্ৰিন্ট হয়)।</li>
+<li class="">MDX/JSX ত ছবি ল’ড নোহ’লে, ছাইটৰ <code>baseUrl</code> মান্য কৰিবলৈ <code>useBaseUrl(&#x27;/img/...&#x27;)</code> ব্যৱহাৰ কৰক।</li>
+<li class="">প্ৰিভিউ প্ৰথমে আৰম্ভ হয়; লিংক চেক পাছত চলে আৰু নন‑ব্ল’কিং হয় (বাহ্যিক ভাঙি থকা লিংকে প্ৰিভিউ ৰোধ নকৰে)।</li>
+<li class="">প্ৰ  িভিউৰ উদাহৰণ URL: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/</code> (“Local server started” ৰ পিছত প্ৰিন্ট হয়)।</li>
+<li class="">লিংক‑চেকত বাহ্যিক লিংকসমূহ: কিছুমান বাহ্যিক ছাইট (যেমন, addons.thunderbird.net) স্বয়ংক্ৰিয় ক্ৰ’লাৰ ব্লক কৰে আৰু লিংক চেকত 403 দেখা দিব পাৰে। প্ৰিভিউ তথাপিও আৰম্ভ হয়; এইবোৰ নিৰাপদে উপেক্ষা কৰিব পাৰি।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate-website">ৱেবছাইট অনুবাদ কৰক<a href="#translate-website" class="hash-link" aria-label="Direct link to ৱেবছাইট অনুবাদ কৰক" title="Direct link to ৱেবছাইট অনুবাদ কৰক" translate="no">​</a></h4>
+<p>আপুনি কি অনুবাদ কৰিব পাৰে</p>
+<ul>
+<li class="">কেৱল ৱেবছাইট UI: হ’মপেইজ, নেভবাৰ, ফুটাৰ, আৰু অন্যান্য UI ষ্ট্ৰিং। দস্তাবেজৰ সমল এতিয়ালৈকে কেৱল ইংৰাজীতেই থাকিব।</li>
+</ul>
+<p>ক’ত সম্পাদনা কৰিব</p>
+<ul>
+<li class=""><code>website/i18n/&lt;locale&gt;/code.json</code> সম্পাদনা কৰক (<code>en</code> ক ৰেফাৰেন্স হিচাপে ব্যৱহাৰ কৰক)। <code>{year}</code>, <code>{slash}</code>, <code>{ctrl}</code>, <code>{k}</code>, <code>{code1}</code> যেনে প্লেছহ’ল্ডাৰসমূহ অপৰিবর্তিত ৰাখক।</li>
+</ul>
+<p>ফাইল সৃষ্টি বা ৰিফ্ৰেশ কৰক</p>
+<ul>
+<li class="">সকল  ো লোকেলৰ বাবে অভাৱী স্টাব সৃষ্টি কৰক: <code>npm --prefix website run i18n:stubs</code></li>
+<li class="">ইংৰাজীৰ পৰা স্টাবসমূহ অভাৰৰাইট কৰক (নতুন ষ্ট্ৰিং যোগ কৰাৰ পিছত): <code>npm --prefix website run i18n:stubs:force</code></li>
+<li class="">একে লোকেলৰ বিকল্প: <code>npx --prefix website docusaurus write-translations --locale &lt;locale&gt;</code></li>
+</ul>
+<p>হ’মপেইজ/নেভবাৰ/ফুটাৰ UI ষ্ট্ৰিং অনুবাদ (OpenAI)</p>
+<ul>
+<li class="">এবাৰ credential ছেট কৰক (shell বা .env):</li>
+<li class=""><code>export OPENAI_API_KEY=sk-...</code></li>
+<li class="">ঐচ্ছিক: <code>export OPENAI_MODEL=gpt-4o-mini</code></li>
+<li class="">একমুঠ (সকলো লোকেল, en বাদ): <code>make translate_web_index</code></li>
+<li class="">নিৰ্দিষ্ট লোকেললৈ সীমাবদ্ধ কৰক: <code>make translate_web_index OPTS=&quot;--locales de,fr&quot;</code></li>
+<li class="">বিদ্যমান মানসমূহ অভাৰৰাইট কৰক: <code>make translate_web_index OPTS=&quot;--force&quot;</code></li>
+</ul>
+<p>বৈধতা আৰু ৰিট্ৰাইসমূহ</p>
+<ul>
+<li class="">অনুবাদ স্ক্ৰিপ্টে JSON আকৃতি বৈধ কৰে, কুৰলি ব্রেচ প্লেছহ’ল্ডাৰ সংৰক্ষণ কৰে, আৰু URLসমূহ অপৰিবর্তিত ৰখা নিশ্চিত কৰে।</li>
+<li class="">বৈধতা বিফল হ’লে, ২বাৰলৈ ফিডব্যাকসহ পুনৰ চেষ্টা কৰে; তেতিয়াও বিফল হ’লে বিদ্যমান মান বজাই ৰাখে।</li>
+</ul>
+<p>আপোনাৰ   লোকেল প্ৰিভিউ কৰক</p>
+<ul>
+<li class="">ডেভ চাৰ্ভাৰ: <code>npm --prefix website run start</code></li>
+<li class="">ভিজিট কৰক <code>http://localhost:3000/&lt;locale&gt;/Thunderbird-Reply-with-Attachments/</code></li>
+</ul>
+<p>জমা দিয়া</p>
+<ul>
+<li class="">সম্পাদিত <code>code.json</code> ফাইল(সমূহ)ৰে এটা PR খোলক। সলনিসমূহ কেন্দ্ৰভূত ৰাখক আৰু সম্ভৱ হ’লে এটা দ্ৰুত স্ক্ৰীণশ্বট সংলগ্ন কৰক।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-and-configuration-tips">সুৰক্ষা আৰু কনফিগাৰেচন টিপছ<a href="#security-and-configuration-tips" class="hash-link" aria-label="Direct link to সুৰক্ষা আৰু কনফিগাৰেচন টিপছ" title="Direct link to সুৰক্ষা আৰু কনফিগাৰেচন টিপছ" translate="no">​</a></h3>
+<ul>
+<li class=""><code>sources/manifest.json</code> কমিট নকৰিব (বিল্ডে অস্থায়ীভাৱে সৃষ্টি কৰে)</li>
+<li class="">আপডেট চেনেল সংৰক্ষণ কৰিবলৈ <code>browser_specific_settings.gecko.id</code> স্থিৰ ৰাখক</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settings-persistence">ছেটিংস স্থায়িত্ব<a href="#settings-persistence" class="hash-link" aria-label="Direct link to ছেটিংস স্থায়িত্ব" title="Direct link to ছেটিংস স্থায়িত্ব" translate="no">​</a></h3>
+<ul>
+<li class="">সংৰক্ষণ: সকলো ব্যৱহাৰকাৰী ছেটিং <code>storage.local</code> ত সংৰক্ষিত থাকে আৰু এড‑অন আপডেটসমূহ জু ৰি স্থায়ী থাকে।</li>
+<li class="">ইনষ্টল: কেৱল কোনো কী একেবাৰেই অনুপস্থিত (undefined) হ’লে ডিফ’ল্টসমূহ প্ৰয়োগ হয়।</li>
+<li class="">আপডেট: মাইগ্ৰেচনে কেৱল অনুপস্থিত কীসমূহ ভৰে; বিদ্যমান মান কেতিয়াও অভাৰৰাইট নকৰে।</li>
+<li class="">স্কিমা মাৰ্কাৰ: <code>settingsVersion</code> (বৰ্তমানে <code>1</code>)।</li>
+<li class="">কী আৰু ডিফ’ল্টসমূহ:</li>
+<li class=""><code>blacklistPatterns: string[]</code> → <code>[&#x27;*intern*&#x27;, &#x27;*secret*&#x27;, &#x27;*passwor*&#x27;]</code></li>
+<li class=""><code>confirmBeforeAdd: boolean</code> → <code>false</code></li>
+<li class=""><code>confirmDefaultChoice: &#x27;yes&#x27;|&#x27;no&#x27;</code> → <code>&#x27;yes&#x27;</code></li>
+<li class=""><code>warnOnBlacklistExcluded: boolean</code> → <code>true</code></li>
+<li class="">ক’ড: <code>sources/background.js</code> → <code>initializeOrMigrateSettings()</code> আৰু <code>SCHEMA_VERSION</code> চাওক।</li>
+</ul>
+<p>ডেভ ৱাৰ্কফ্ল’ (এটা নতুন ছেটিং যোগ কৰা)</p>
+<ul>
+<li class=""><code>sources/background.js</code> ত <code>SCHEMA_VERSION</code> বাম্প কৰক।</li>
+<li class=""><code>initializeOrMigrateSettings()</code> ত <code>DEFAULTS</code> অবজেক্টত নতুন কী + ডিফ’ল্ট যোগ কৰক।</li>
+<li class="">ডিফ’ল্ট সিডিং কৰোঁতে &quot;only-if-undefined&quot; নিয়ম ব্যৱহাৰ কৰক; বিদ্যমান মান অভাৰৰাইট নকৰিব।</li>
+<li class="">ছেটিংটো ব্যৱহাৰকাৰীৰ বাবে দৃশ্যমান হ’  লে, <code>sources/options.js</code> ত ৱায়াৰ কৰক আৰু স্থানীয়কৃত ষ্ট্ৰিং যোগ কৰক।</li>
+<li class="">টেষ্টসমূহ যোগ/সংশোধন কৰক (<code>tests/background.settings.migration.test.js</code> চাওক)।</li>
+</ul>
+<p>হস্তচালিত পৰীক্ষা টিপছ</p>
+<ul>
+<li class="">একেবাৰে নতুন ইনষ্টল অনুকৰণ কৰক: এক্সটেনশ্যনৰ ডাটা ডাইৰেক্ট’ৰি পৰিষ্কাৰ কৰক বা এটা নতুন প্ৰ’ফাইল লৈ আৰম্ভ কৰক।</li>
+<li class="">আপডেট অনুকৰণ কৰক: <code>storage.local</code> ত <code>settingsVersion</code> ক <code>0</code> লৈ ছেট কৰক আৰু ৰি‑ল’ড কৰক; বিদ্যমান মানসমূহ অপৰিবর্তিত ৰোৱা আৰু কেৱল অনুপস্থিত কী যোগ হোৱা নিশ্চিত কৰক।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">সমস্যাসমাধান<a href="#troubleshooting" class="hash-link" aria-label="Direct link to সমস্যাসমাধান" title="Direct link to সমস্যাসমাধান" translate="no">​</a></h3>
+<ul>
+<li class="">Thunderbird 128 ESR বা তাতো নতুন হ’ব লাগিব</li>
+<li class="">ৰাণটাইম সমস্যাৰ বাবে Error Console ব্যৱহাৰ কৰক</li>
+<li class="">সংৰক্ষিত ছেটিংস সঠিকভাৱে প্ৰযোজ্য নোহ’লে, Thunderbird ৰিষ্টাৰ্ট কৰি পুনৰ চেষ্টা কৰক। (Thunderbird এ ছেছন জুড়ে কিছুমান অৱস্থা ক্যাশ কৰি ৰাখিব পাৰে; ৰিষ্ট াৰ্টে তাজা ছেটিং ল’ড নিশ্চিত কৰে।)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ci-and-coverage">CI আৰু কভাৰেজ<a href="#ci-and-coverage" class="hash-link" aria-label="Direct link to CI আৰু কভাৰেজ" title="Direct link to CI আৰু কভাৰেজ" translate="no">​</a></h3>
+<ul>
+<li class="">GitHub Actions (<code>CI — Tests</code>) এ কভাৰেজ থ্ৰেশ’ল্ডসহ vitest চলায় (85% lines/functions/branches/statements)। থ্ৰেশ’ল্ড পূৰণ নাহিলে, জ’ব ফেইল কৰে।</li>
+<li class="">ৱাৰ্কফ্ল’ৱ’এ HTML ৰিপ’ৰ্টসহ <code>coverage-html</code> নামৰ এটা আৰ্টিফেক্ট আপল’ড কৰে; রান পেইজৰ পৰা ডাউনল’ড কৰক (Actions → সৰ্বশেষ রান → Artifacts)।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">অৱদান<a href="#contributing" class="hash-link" aria-label="Direct link to অৱদান" title="Direct link to অৱদান" translate="no">​</a></h3>
+<ul>
+<li class="">শাখা/কমিট/PR গাইডলাইনৰ বাবে CONTRIBUTING.md চাওক</li>
+<li class="">টিপ: আপোনাৰ দৈনন্দিন প্ৰ’ফাইল প্ৰভাৱিত নকৰাকৈ পৰীক্ষাৰ বাবে পৃথক Thunderbird ডেভেলপমেন্ট প্ৰ’ফাইল বনাওক।</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="অনুবাদসমূহ">অনুবাদসমূহ<a href="#অনুবাদসমূহ" class="hash-link" aria-label="Direct link to অনুবাদসমূহ" title="Direct link to অনুবাদসমূহ" translate="no">​</a></h3>
+<ul>
+<li class="">বৃহৎ “all → all” অনু বাদ জ’ব চলোৱা ধীৰ গতিৰ আৰু ব্যয়বহুল হ’ব পাৰে। প্ৰথমে এটা উপসেট (যেমন, কিছুমান দস্তাবেজ আৰু ১–২টা লোকেল) লৈ আৰম্ভ কৰক, ফলাফল পৰ্যালোচনা কৰক, তাৰ পিছত বিস্তাৰ কৰক।</li>
+</ul>
+<hr>
+<ul>
+<li class="">ৰিট্ৰাই নীতি: অনুবাদ জ’বসমূহ API ত ত্ৰুটি হ’লে এক্স’প’নেঞ্চিয়েল ব্যাকঅ’ফসহ সৰ্বোচ্চ ৩বাৰলৈ পুনৰ চেষ্টা কৰে; <code>scripts/translate_web_docs_batch.js</code> আৰু <code>scripts/translate_web_docs_sync.js</code> চাওক।</li>
+</ul>
+<p>দস্তাবেজৰ বাবে স্ক্ৰীণশ্বটসমূহ</p>
+<ul>
+<li class="">
+<p>ছবিসমূহ <code>website/static/img/</code> ত সংৰক্ষণ কৰক।</p>
+</li>
+<li class="">
+<p>MD/MDX ত <code>useBaseUrl(&#x27;/img/&lt;filename&gt;&#x27;)</code> ৰ জৰিয়তে উল্লেখ কৰক যাতে ছাইটৰ <code>baseUrl</code> ৰ সৈতে পথসমূহ কৰ্মক্ষম থাকে।</p>
+</li>
+<li class="">
+<p><code>website/static/img/</code> ত ছবি যোগ বা নাম সলনি কৰাৰ পিছত, সকলো উল্লেখ এতিয়াও <code>useBaseUrl(&#x27;/img/…&#x27;)</code> ব্যৱহাৰ কৰিছে আৰু লোকেল প্ৰিভিউত ৰেণ্ডাৰ হৈছে নে নাই নিশ্চিত কৰক।
+ফেভিকন</p>
+</li>
+<li class="">
+<p>বহু‑আকাৰৰ <code>favicon.ico</code> টো Make + স্ক্ৰিপ্টসমূহে সকলো বিল্ড পথত স্বয়ংক্ৰিয়ভাৱে সৃষ্টি কৰে (<code>website/scripts/build-favicon.mjs</code> ৰ জৰিয়তে)।</p>
+</li>
+<li class="">
+<p>কোনো মেনুৱেল স্তৰ দরকাৰ নাই; <code>icon-*.png</code> আপডেট কৰাটোৱেই যথেষ্ট।
+পৰ্যালোচনা সূচনা</p>
+</li>
+<li class="">
+<p>অনুবাদিত দস্তাবেজত ফ্ৰণ্ট‑মেটাৰ <code>id</code> অপৰিবর্তিত ৰাখক; যদিহে থাকে, কেৱল <code>title</code> আৰু <code>sidebar_label</code> অনুবাদ কৰক।</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-clean">clean<a href="#mt-clean" class="hash-link" aria-label="Direct link to clean" title="Direct link to clean" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: স্থানীয় build/preview আৰ্টিফেক্টসমূহ আঁতৰোৱা।</li>
+<li class="">ব্যৱহাৰ: <code>make clean</code></li>
+<li class="">আঁতৰায় (থাকিলে):</li>
+<li class=""><code>tmp/</code></li>
+<li class=""><code>web-local-preview/</code></li>
+<li class=""><code>website/build/</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-commit">commit<a href="#mt-commit" class="hash-link" aria-label="Direct link to commit" title="Direct link to commit" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ফৰমেট, টেষ্ট, চেঞ্জলগ আপডেট, কমিট, আৰু পুশ।</li>
+<li class="">ব্যৱহাৰ: <code>make commit</code></li>
+<li class="">বিৱৰণ: Prettier (write), <code>make test</code>, <code>make test_i18n</code> চলায়; ষ্টেইজ্ড ডিফ্‌ছ থাকিলে চেঞ্জলগ সংযোজন কৰে; <code>origin/&lt;branch&gt;</code> ত পুশ কৰে।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-eslint">eslint<a href="#mt-eslint" class="hash-link" aria-label="Direct link to eslint" title="Direct link to eslint" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ফ্লেট কনফিগৰ জৰিয়তে ESLint চলোৱা।</li>
+<li class="">ব্যৱহাৰ: <code>make eslint</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-help">help<a href="#mt-help" class="hash-link" aria-label="Direct link to help" title="Direct link to help" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: এক‑শাৰী দস্তাবেজসহ সকলো লক্ষ্য তালিকাভুক্ত কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make help</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-lint">lint<a href="#mt-lint" class="hash-link" aria-label="Direct link to lint" title="Direct link to lint" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: <code>web-ext</code> ব্যৱহাৰ কৰি MailExtension লিন্ট কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make lint</code></li>
+<li class="">টীপপত্ৰ: অস্থায়ীভাৱে <code>sources/manifest_LOCAL.json</code> → <code>sources/manifest.json</code> কপি কৰে; বিল্ড কৰা ZIP উপেক্ষা কৰে; সতর্কতাই পাইপলাইন ফেইল নকৰে।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-menu">menu<a href="#mt-menu" class="hash-link" aria-label="Direct link to menu" title="Direct link to menu" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: এটা Make লক্ষ্য আৰু ঐচ্ছিক আৰ্গুমেন্ট বাছনিৰ বাবে ইন্টাৰেক্টিভ মেনু।</li>
+<li class="">ব্যৱহাৰ: কোনো আৰ্গুমেন্ট নোহোৱা  কৈ <code>make</code> চলাওক।</li>
+<li class="">টীপপত্ৰ: <code>whiptail</code> উপলব্ধ নাথাকিলে, মেনুটো <code>make help</code> লৈ ফলবেক কৰে।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-pack">pack<a href="#mt-pack" class="hash-link" aria-label="Direct link to pack" title="Direct link to pack" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ATN আৰু LOCAL ZIP নিৰ্মাণ ( <code>lint</code> ৰ ওপৰত নিৰ্ভৰশীল)।</li>
+<li class="">ব্যৱহাৰ: <code>make pack</code></li>
+<li class="">টিপ: পেকেজিংৰ আগতে <code>sources/manifest_*.json</code> উভয়তে সংস্কৰণ বাম্প কৰক।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier">prettier<a href="#mt-prettier" class="hash-link" aria-label="Direct link to prettier" title="Direct link to prettier" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ৰেপ’ক ঠাইতে ফৰমেট কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make prettier</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_check">prettier_check<a href="#mt-prettier_check" class="hash-link" aria-label="Direct link to prettier_check" title="Direct link to prettier_check" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ফৰমেটিং যাচাই (লিখে নাযায়)।</li>
+<li class="">ব্যৱহাৰ: <code>make prettier_check</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_write">prettier_write<a href="#mt-prettier_write" class="hash-link" aria-label="Direct link to prettier_write" title="Direct link to prettier_write" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: <code>prettier</code> ৰ এলিয়াছ।</li>
+<li class="">ব্ যৱহাৰ: <code>make prettier_write</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test">test<a href="#mt-test" class="hash-link" aria-label="Direct link to test" title="Direct link to test" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: Prettier (write), ESLint, তাৰ পিছত Vitest চলোৱা (ইনষ্টল থাকিলে কভাৰেজ)।</li>
+<li class="">ব্যৱহাৰ: <code>make test</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test_i18n">test_i18n<a href="#mt-test_i18n" class="hash-link" aria-label="Direct link to test_i18n" title="Direct link to test_i18n" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: এড‑অন ষ্ট্ৰিং আৰু ৱেবছাইট দস্তাবেজৰ i18n‑কেন্দ্ৰিত টেষ্ট।</li>
+<li class="">ব্যৱহাৰ: <code>make test_i18n</code></li>
+<li class="">চলে: <code>npm run test:i18n</code> আৰু <code>npm run -s test:website-i18n</code>।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-app">translate_app / translation_app<a href="#mt-translation-app" class="hash-link" aria-label="Direct link to translate_app / translation_app" title="Direct link to translate_app / translation_app" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: EN ৰ পৰা অন্য লোকেললৈ এড‑অন UI ষ্ট্ৰিংসমূহ অনুবাদ কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make translation_app OPTS=&quot;--locales all|de,fr&quot;</code></li>
+<li class="">টীপপত্ৰ: কী গঠন আৰু প্লেছহ’ল্ডাৰ সংৰক্ষণ কৰে; <code>translation_app.log</code> ল’গ কৰে। স্ক্ৰিপ্ট ৰূপ: <code>node scripts/translate_app.js --locales …</code>।</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-web">translate_web_docs_batch / translate_web_docs_sync<a href="#mt-translation-web" class="hash-link" aria-label="Direct link to translate_web_docs_batch / translate_web_docs_sync" title="Direct link to translate_web_docs_batch / translate_web_docs_sync" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ৱেবছাইট দস্তাবেজ <code>website/docs/*.md</code> ৰ পৰা <code>website/i18n/&lt;locale&gt;/...</code> লৈ অনুবাদ।</li>
+<li class="">অগ্ৰাধিকাৰযোগ্য: <code>translate_web_docs_batch</code> (OpenAI Batch API)<!-- -->
+<ul>
+<li class="">ব্যৱহাৰ (ফ্লেগ): <code>make translate_web_docs_batch OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">লিগেচি পজিচনেল এতিয়াও গ্ৰহণযোগ্য: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">আচৰণ: JSONL বিল্ড কৰে, আপল’ড কৰে, ৩০ ছেকেণ্ড অন্তৰে প’ল কৰে, ফলাফল ডাউনল’ড কৰি ফাইল লিখে।</li>
+<li class="">টিপপত্ৰ: ব্যাচ জ’ব সম্পূৰ্ণ হ’বলৈ সৰ্বোচ্চ ২৪ ঘণ্টালৈ লাগিব পাৰে (OpenAI ৰ ব্যাচ উইণ্ড’ অনুসৰি)। ক’নচ’লত প্ৰতিটো প’লত elapsed time দেখা যায়।</li>
+<li class="">Env: <code>OPENAI_API_KEY</code> (বাধ্যতামূলক), ঐচ্ছিক <code>OPENAI_MODEL</code>, <code>OPENAI_TEMPERATURE</code>, <code>OPENAI_BATCH_WINDOW</code> (ডিফ’ল্ট 24h), <code>BATCH_POLL_INTERVAL_MS</code>।</li>
+<li class="">লিগেচি: <code>translate_web_docs_sync</code>
+<ul>
+<li class="">ব্যৱহাৰ (ফ্লেগ): <code>make translate_web_docs_sync OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">লিগেচি পজিচনেল এতিয়াও গ্ৰহণযোগ্য: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">আচৰণ: প্ৰতিটো জোড়াৰ বাবে সিঙ্ক্ৰ’নাছ অনুৰোধ (কোনো ব্যাচ একত্রীকৰণ নাই)।</li>
+<li class="">টিপপত্ৰ: <code>OPTS</code> বাদ পৰিলে ইন্টাৰেক্টিভ প্ৰম্প্ট থাকে। দুয়ো ম’ডে ক’ড ব্লক/ইনলাইন ক’ড সংৰক্ষণ কৰে আৰু ফ্ৰণ্ট‑মেটাৰ <code>id</code> অপৰিবর্তিত ৰাখে; ল’গ কৰে <code>translation_web_batch.log</code> (ব্যাচ) বা <code>translation_web_sync.log</code> (ছিংক) লৈ।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation_web_index">translate_web_index / translation_web_index<a href="#mt-translation_web_index" class="hash-link" aria-label="Direct link to translate_web_index / translation_web_index" title="Direct link to translate_web_index / translation_web_index" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: হ’মপেইজ, নেভবাৰ, ফুটাৰ UI ষ্ট্ৰিংসমূহ <code>website/i18n/en/code.json</code> ৰ পৰা <code>website/i18n/&lt;locale&gt;/code.json</code> ৰ সকলো লোকেললৈ ( <code>en</code> বাদ দি) অনুবাদ।</li>
+<li class="">ব্যৱহাৰ: <code>make translate_web_index</code> বা <code>make translate_web_index OPTS=&quot;--locales de,fr [--force]&quot;</code></li>
+<li class="">আবশ্যকতা: <code>OPENAI_API_KEY</code> এক্স’পৰ্ট কৰক (ঐচ্ছিক: <code>OPENAI_MODEL=gpt-4o-mini</code>)।</li>
+<li class="">আচৰণ: JSON গঠন বৈধতা কৰে, কুৰলি‑ব্ৰেচ প্লেছহ’ল্ডাৰ সংৰক্ষণ কৰে, URL অপৰিবর্তিত ৰাখে, আৰু বৈধতা ত্ৰুটি হলে ফিডব্যাকসহ পুনৰ চেষ্টা কৰে।</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build">web_build<a href="#mt-web_build" class="hash-link" aria-label="Direct link to web_build" title="Direct link to web_build" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: দস্তাবেজ ছাইট <code>website/build</code> লৈ বিল্ড কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make web_build OPTS=&quot;--locales en|de,en|all&quot;</code> (বা <code>BUILD_LOCALES=&quot;en de&quot;</code> ছেট কৰক)</li>
+<li class="">ভিতৰকা কাম: <code>node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]</code>।</li>
+<li class="">নির্ভৰতা: <code>website/node_modules/@docusaurus</code> নাই থাকিলে কেৱল <code>website/</code> ত <code>npm ci</code> চলায়।</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_linkcheck">web_build_linkcheck<a href="#mt-web_build_linkcheck" class="hash-link" aria-label="Direct link to web_build_linkcheck" title="Direct link to web_build_linkcheck" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: অফলাইন‑সুৰক্ষিত লিংক চেক।</li>
+<li class="">ব্যৱহাৰ: <code>make web_build_linkcheck OPTS=&quot;--locales en|all&quot;</code></li>
+<li class="">টীপপত্ৰ: <code>tmp_linkcheck_web_pages</code> লৈ বিল্ড কৰে; GH Pages <code>baseUrl</code> ক <code>/</code> লৈ ৰিৰাইট কৰে; দূৰৱৰ্তী HTTP(S) লিংক স্কিপ কৰে ।</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_local_preview">web_build_local_preview<a href="#mt-web_build_local_preview" class="hash-link" aria-label="Direct link to web_build_local_preview" title="Direct link to web_build_local_preview" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: ঐচ্ছিক টেষ্ট/লিংক‑চেকসহ স্থানীয় gh‑pages প্ৰিভিউ।</li>
+<li class="">ব্যৱহাৰ: <code>make web_build_local_preview OPTS=&quot;--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]&quot;</code></li>
+<li class="">আচৰণ: প্ৰথমে Node প্ৰিভিউ ছাৰ্ভাৰ চেষ্টা কৰে (<code>scripts/preview-server.mjs</code>, <code>/__stop</code> সমৰ্থন কৰে), নাছকলে <code>python3 -m http.server</code> লৈ ফলবেক কৰে; 8080–8090 ত সেৱা দিয়ে; PID <code>web-local-preview/.server.pid</code> ত থাকে।</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_push_github">web_push_github<a href="#mt-web_push_github" class="hash-link" aria-label="Direct link to web_push_github" title="Direct link to web_push_github" translate="no">​</a></h4>
+<ul>
+<li class="">উদ্দেশ্য: <code>website/build</code> ক <code>gh-pages</code> শাখালৈ পুশ কৰা।</li>
+<li class="">ব্যৱহাৰ: <code>make web_push_github</code></li>
+</ul>
+<p>টিপ: Makefile এ ব্যৱহাৰ কৰা পেকেজ মেনেজাৰ অভাৰ্ৰাইড কৰিবলৈ <code>NPM=…</code> ছেট কৰক (ডিফ’ল্ট <code>npm</code>)।</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-09-13T01:25:23.000Z" itemprop="dateModified">১৩ ছেপ্তে ২০২৫</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/Thunderbird-Reply-with-Attachments/as/docs/permissions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">অনুমতি</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Thunderbird-Reply-with-Attachments/as/docs/languages"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ভাষাসমূহ</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#development-guide" class="table-of-contents__link toc-highlight">উন্নয়ন গাইড</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">আগতীয়া শর্তসমূহ</a></li><li><a href="#project-layout-high-level" class="table-of-contents__link toc-highlight">প্ৰকল্পৰ বিন্যাস (উচ্চ‑স্তৰ)</a></li><li><a href="#install-and-tooling" class="table-of-contents__link toc-highlight">ইনষ্টল আৰু টুলিং</a></li><li><a href="#live-dev-web-ext" class="table-of-contents__link toc-highlight">লাইভ ডেভ (web‑ext run)</a></li><li><a href="#make-targets-alphabetical" class="table-of-contents__link toc-highlight">Make লক্ষ্যসমূহ (বৰ্ণানুক্ৰমে)</a></li><li><a href="#build-and-package" class="table-of-contents__link toc-highlight">বিল্ড আৰু পেকেজ</a></li><li><a href="#test" class="table-of-contents__link toc-highlight">টেষ্ট</a></li><li><a href="#debugging-and-logs" class="table-of-contents__link toc-highlight">ডিবাগিং আৰু লগছ</a></li><li><a href="#docs-website" class="table-of-contents__link toc-highlight">দস্তাবেজ (ৱেবছাইট)</a></li><li><a href="#security-and-configuration-tips" class="table-of-contents__link toc-highlight">সুৰক্ষা আৰু কনফিগাৰেচন টিপছ</a></li><li><a href="#settings-persistence" class="table-of-contents__link toc-highlight">ছেটিংস স্থায়িত্ব</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">সমস্যাসমাধান</a></li><li><a href="#ci-and-coverage" class="table-of-contents__link toc-highlight">CI আৰু কভাৰেজ</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">অৱদান</a></li><li><a href="#অনুবাদসমূহ" class="table-of-contents__link toc-highlight">অনুবাদসমূহ</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/as/docs/features">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/as/docs/install">Install</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Project</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 Reply with Attachments</div></div></div></footer></div>
+</body>
+</html>

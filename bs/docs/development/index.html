@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="bs-BA" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-development" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Razvoj | Reply with Attachments</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development"><meta data-rh="true" property="og:locale" content="bs_BA"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" property="og:locale:alternate" content="hi_IN"><meta data-rh="true" property="og:locale:alternate" content="es_ES"><meta data-rh="true" property="og:locale:alternate" content="ar"><meta data-rh="true" property="og:locale:alternate" content="fr_FR"><meta data-rh="true" property="og:locale:alternate" content="bn_BD"><meta data-rh="true" property="og:locale:alternate" content="pt_PT"><meta data-rh="true" property="og:locale:alternate" content="ru_RU"><meta data-rh="true" property="og:locale:alternate" content="id_ID"><meta data-rh="true" property="og:locale:alternate" content="ur_PK"><meta data-rh="true" property="og:locale:alternate" content="de_DE"><meta data-rh="true" property="og:locale:alternate" content="ja_JP"><meta data-rh="true" property="og:locale:alternate" content="pa_IN"><meta data-rh="true" property="og:locale:alternate" content="jv_ID"><meta data-rh="true" property="og:locale:alternate" content="ms_MY"><meta data-rh="true" property="og:locale:alternate" content="te_IN"><meta data-rh="true" property="og:locale:alternate" content="vi_VN"><meta data-rh="true" property="og:locale:alternate" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="mr_IN"><meta data-rh="true" property="og:locale:alternate" content="ta_IN"><meta data-rh="true" property="og:locale:alternate" content="tr_TR"><meta data-rh="true" property="og:locale:alternate" content="it_IT"><meta data-rh="true" property="og:locale:alternate" content="th_TH"><meta data-rh="true" property="og:locale:alternate" content="gu_IN"><meta data-rh="true" property="og:locale:alternate" content="fa_IR"><meta data-rh="true" property="og:locale:alternate" content="pl_PL"><meta data-rh="true" property="og:locale:alternate" content="ps_AF"><meta data-rh="true" property="og:locale:alternate" content="kn_IN"><meta data-rh="true" property="og:locale:alternate" content="ml_IN"><meta data-rh="true" property="og:locale:alternate" content="or_IN"><meta data-rh="true" property="og:locale:alternate" content="my_MM"><meta data-rh="true" property="og:locale:alternate" content="uk_UA"><meta data-rh="true" property="og:locale:alternate" content="ro_RO"><meta data-rh="true" property="og:locale:alternate" content="nl_NL"><meta data-rh="true" property="og:locale:alternate" content="ha_NG"><meta data-rh="true" property="og:locale:alternate" content="sw_TZ"><meta data-rh="true" property="og:locale:alternate" content="am_ET"><meta data-rh="true" property="og:locale:alternate" content="hu_HU"><meta data-rh="true" property="og:locale:alternate" content="az_AZ"><meta data-rh="true" property="og:locale:alternate" content="uz_UZ"><meta data-rh="true" property="og:locale:alternate" content="sd_PK"><meta data-rh="true" property="og:locale:alternate" content="he_IL"><meta data-rh="true" property="og:locale:alternate" content="el_GR"><meta data-rh="true" property="og:locale:alternate" content="cs_CZ"><meta data-rh="true" property="og:locale:alternate" content="sv_SE"><meta data-rh="true" property="og:locale:alternate" content="bg_BG"><meta data-rh="true" property="og:locale:alternate" content="da_DK"><meta data-rh="true" property="og:locale:alternate" content="fi_FI"><meta data-rh="true" property="og:locale:alternate" content="no_NO"><meta data-rh="true" property="og:locale:alternate" content="sk_SK"><meta data-rh="true" property="og:locale:alternate" content="sr_RS"><meta data-rh="true" property="og:locale:alternate" content="hr_HR"><meta data-rh="true" property="og:locale:alternate" content="sl_SI"><meta data-rh="true" property="og:locale:alternate" content="lt_LT"><meta data-rh="true" property="og:locale:alternate" content="lv_LV"><meta data-rh="true" property="og:locale:alternate" content="et_EE"><meta data-rh="true" property="og:locale:alternate" content="hy_AM"><meta data-rh="true" property="og:locale:alternate" content="ka_GE"><meta data-rh="true" property="og:locale:alternate" content="kk_KZ"><meta data-rh="true" property="og:locale:alternate" content="ky_KG"><meta data-rh="true" property="og:locale:alternate" content="tg_TJ"><meta data-rh="true" property="og:locale:alternate" content="tk_TM"><meta data-rh="true" property="og:locale:alternate" content="ne_NP"><meta data-rh="true" property="og:locale:alternate" content="si_LK"><meta data-rh="true" property="og:locale:alternate" content="km_KH"><meta data-rh="true" property="og:locale:alternate" content="lo_LA"><meta data-rh="true" property="og:locale:alternate" content="mn_MN"><meta data-rh="true" property="og:locale:alternate" content="su_ID"><meta data-rh="true" property="og:locale:alternate" content="yo_NG"><meta data-rh="true" property="og:locale:alternate" content="ig_NG"><meta data-rh="true" property="og:locale:alternate" content="om_ET"><meta data-rh="true" property="og:locale:alternate" content="zu_ZA"><meta data-rh="true" property="og:locale:alternate" content="xh_ZA"><meta data-rh="true" property="og:locale:alternate" content="af_ZA"><meta data-rh="true" property="og:locale:alternate" content="so_SO"><meta data-rh="true" property="og:locale:alternate" content="rw_RW"><meta data-rh="true" property="og:locale:alternate" content="rn_BI"><meta data-rh="true" property="og:locale:alternate" content="ln_CD"><meta data-rh="true" property="og:locale:alternate" content="sn_ZW"><meta data-rh="true" property="og:locale:alternate" content="ak_GH"><meta data-rh="true" property="og:locale:alternate" content="ff_SN"><meta data-rh="true" property="og:locale:alternate" content="bm_ML"><meta data-rh="true" property="og:locale:alternate" content="ny_MW"><meta data-rh="true" property="og:locale:alternate" content="ti_ER"><meta data-rh="true" property="og:locale:alternate" content="ug_CN"><meta data-rh="true" property="og:locale:alternate" content="ks_IN"><meta data-rh="true" property="og:locale:alternate" content="as_IN"><meta data-rh="true" property="og:locale:alternate" content="tl_PH"><meta data-rh="true" property="og:locale:alternate" content="ca_ES"><meta data-rh="true" property="og:locale:alternate" content="be_BY"><meta data-rh="true" property="og:locale:alternate" content="sq_AL"><meta data-rh="true" property="og:locale:alternate" content="qu_PE"><meta data-rh="true" property="og:locale:alternate" content="ht_HT"><meta data-rh="true" property="og:locale:alternate" content="mg_MG"><meta data-rh="true" property="og:locale:alternate" content="ku_TR"><meta data-rh="true" property="og:locale:alternate" content="wo_SN"><meta data-rh="true" property="og:locale:alternate" content="ga_IE"><meta data-rh="true" property="og:locale:alternate" content="is_IS"><meta data-rh="true" name="docusaurus_locale" content="bs"><meta data-rh="true" name="docsearch:language" content="bs"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Razvoj | Reply with Attachments"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/Thunderbird-Reply-with-Attachments/bs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/development" hreflang="zh"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hi/docs/development" hreflang="hi-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/development" hreflang="es-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/development" hreflang="ar"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/development" hreflang="fr-FR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/development" hreflang="bn-BD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/development" hreflang="pt-PT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/development" hreflang="ru-RU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/development" hreflang="id-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ur/docs/development" hreflang="ur-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/development" hreflang="de-DE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/development" hreflang="ja-JP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/development" hreflang="pa-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/development" hreflang="jv-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/development" hreflang="ms-MY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/development" hreflang="te-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/development" hreflang="vi-VN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/development" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/development" hreflang="mr-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/development" hreflang="ta-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/development" hreflang="tr-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/development" hreflang="it-IT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/development" hreflang="th-TH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/development" hreflang="gu-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/development" hreflang="fa-IR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/development" hreflang="pl-PL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/development" hreflang="ps-AF"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/development" hreflang="kn-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/development" hreflang="ml-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/or/docs/development" hreflang="or-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/development" hreflang="my-MM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/development" hreflang="uk-UA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/development" hreflang="ro-RO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/development" hreflang="nl-NL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/development" hreflang="ha-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/development" hreflang="sw-TZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/development" hreflang="am-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development" hreflang="hu-HU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/development" hreflang="az-AZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/development" hreflang="uz-UZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/development" hreflang="sd-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/development" hreflang="he-IL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/development" hreflang="el-GR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/development" hreflang="cs-CZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/development" hreflang="sv-SE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bg/docs/development" hreflang="bg-BG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/development" hreflang="da-DK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/development" hreflang="fi-FI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/development" hreflang="no-NO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/development" hreflang="sk-SK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/development" hreflang="sr-RS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/development" hreflang="hr-HR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development" hreflang="bs-BA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/development" hreflang="sl-SI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/development" hreflang="lt-LT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/development" hreflang="lv-LV"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/development" hreflang="et-EE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/development" hreflang="hy-AM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/development" hreflang="ka-GE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/development" hreflang="kk-KZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/development" hreflang="ky-KG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/development" hreflang="tg-TJ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/development" hreflang="tk-TM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/development" hreflang="ne-NP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/development" hreflang="si-LK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/development" hreflang="km-KH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/development" hreflang="lo-LA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/development" hreflang="mn-MN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development" hreflang="su-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/yo/docs/development" hreflang="yo-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/development" hreflang="ig-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/development" hreflang="om-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/development" hreflang="zu-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/xh/docs/development" hreflang="xh-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/development" hreflang="af-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/development" hreflang="so-SO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rw/docs/development" hreflang="rw-RW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/development" hreflang="rn-BI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/development" hreflang="ln-CD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/development" hreflang="sn-ZW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/development" hreflang="ak-GH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/development" hreflang="ff-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/development" hreflang="bm-ML"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/development" hreflang="ny-MW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/development" hreflang="ti-ER"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ug/docs/development" hreflang="ug-CN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/development" hreflang="ks-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development" hreflang="as-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/development" hreflang="tl-PH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/development" hreflang="ca-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/development" hreflang="be-BY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/development" hreflang="sq-AL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/development" hreflang="qu-PE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/development" hreflang="ht-HT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/development" hreflang="mg-MG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/development" hreflang="ku-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/development" hreflang="wo-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/development" hreflang="ga-IE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/development" hreflang="is-IS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Razvoj","item":"https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development"}]}</script><link rel="stylesheet" href="/Thunderbird-Reply-with-Attachments/bs/assets/css/styles.f70c06e1.css">
+<script src="/Thunderbird-Reply-with-Attachments/bs/assets/js/runtime~main.b725423e.js" defer="defer"></script>
+<script src="/Thunderbird-Reply-with-Attachments/bs/assets/js/main.22ea860e.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/Thunderbird-Reply-with-Attachments/bs/"><div class="navbar__logo"><img src="/Thunderbird-Reply-with-Attachments/bs/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/Thunderbird-Reply-with-Attachments/bs/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reply with Attachments</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Thunderbird-Reply-with-Attachments/bs/docs/features">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/support">Support</a><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/license">License</a><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/features"><span title="Funkcionalnosti" class="linkLabel_WmDU">Funkcionalnosti</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/quickstart"><span title="Brzi početak" class="linkLabel_WmDU">Brzi početak</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/install"><span title="Instalacija" class="linkLabel_WmDU">Instalacija</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/configuration"><span title="Konfiguracija" class="linkLabel_WmDU">Konfiguracija</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/usage"><span title="Upotreba" class="linkLabel_WmDU">Upotreba</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/compatibility"><span title="Kompatibilnost" class="linkLabel_WmDU">Kompatibilnost</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/permissions"><span title="Dozvole" class="linkLabel_WmDU">Dozvole</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Thunderbird-Reply-with-Attachments/bs/docs/development"><span title="Razvoj" class="linkLabel_WmDU">Razvoj</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/languages"><span title="Jezici" class="linkLabel_WmDU">Jezici</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/glossary"><span title="Rječnik" class="linkLabel_WmDU">Rječnik</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/support"><span title="Podrška" class="linkLabel_WmDU">Podrška</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/privacy"><span title="Privatnost" class="linkLabel_WmDU">Privatnost</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/donation"><span title="Doniraj" class="linkLabel_WmDU">Doniraj</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/license"><span title="Licenca" class="linkLabel_WmDU">Licenca</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/bs/docs/changelog"><span title="Dnevnik promjena" class="linkLabel_WmDU">Dnevnik promjena</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/Thunderbird-Reply-with-Attachments/bs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Razvoj</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Razvoj</h1></header><hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-guide">Vodič za razvoj<a href="#development-guide" class="hash-link" aria-label="Direct link to Vodič za razvoj" title="Direct link to Vodič za razvoj" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Uređujte samo engleski; prijevodi se prenose</div><div class="admonitionContent_BuS1"><p>Ažurirajte dokumentaciju samo pod <code>website/docs</code> (engleski). Prijevodi pod <code>website/i18n/&lt;locale&gt;/…</code> se generiraju i ne treba ih ručno uređivati. Koristite zadatke prevođenja (npr. <code>make translate_web_docs_batch</code>) da osvježite lokalizirani sadržaj.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Preduvjeti<a href="#prerequisites" class="hash-link" aria-label="Direct link to Preduvjeti" title="Direct link to Preduvjeti" translate="no">​</a></h3>
+<ul>
+<li class="">Node.js 22+ i npm (testirano s Node 22)</li>
+<li class="">Thunderbird 128 ESR ili noviji (za ručno testiranje)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-layout-high-level">Struktura projekta (visokog nivoa)<a href="#project-layout-high-level" class="hash-link" aria-label="Direct link to Struktura projekta (visokog nivoa)" title="Direct link to Struktura projekta (visokog nivoa)" translate="no">​</a></h3>
+<ul>
+<li class="">Root: skripta za pakiranje <code>distribution_zip_packer.sh</code>, dokumentacija, snimke ekrana</li>
+<li class=""><code>sources/</code>: glavni kod dodatka (pozadina, UI za opcije/iskočni prozor, manifesti, ikone)</li>
+<li class=""><code>tests/</code>: Vitest skup</li>
+<li class=""><code>website/</code>: Docusaurus dokumenti (s i18n pod <code>website/i18n/de/...</code>)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-and-tooling">Instalacija i alati<a href="#install-and-tooling" class="hash-link" aria-label="Direct link to Instalacija i alati" title="Direct link to Instalacija i alati" translate="no">​</a></h3>
+<ul>
+<li class="">Instalirajte korijenske zavisnosti: <code>npm ci</code></li>
+<li class="">Dokumentacija (opcionalno): <code>cd website &amp;&amp; npm ci</code></li>
+<li class="">Otkrijte ciljeve: <code>make help</code></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="live-dev-web-ext">Razvoj uživo (web‑ext run)<a href="#live-dev-web-ext" class="hash-link" aria-label="Direct link to Razvoj uživo (web‑ext run)" title="Direct link to Razvoj uživo (web‑ext run)" translate="no">​</a></h3>
+<ul>
+<li class="">Brza petlja u Firefox Desktopu (samo osnovni UI testovi):</li>
+<li class=""><code>npx web-ext run --source-dir sources --target=firefox-desktop</code></li>
+<li class="">Pokreni u Thunderbirdu (preferirano za MailExtensions):</li>
+<li class=""><code>npx web-ext run --source-dir sources --start-url about:addons --firefox-binary &quot;$(command -v thunderbird || echo /path/to/thunderbird)&quot;</code></li>
+<li class="">Savjeti:</li>
+<li class="">Držite Thunderbirdovu Konzolu grešaka otvorenom (Alati → Razvojni alati → Konzola grešaka).</li>
+<li class="">MV3 event stranice se suspendiraju kada miruju; ponovno učitajte dodatak nakon izmjena koda ili dopustite web‑ext automatsko ponovno učitavanje.</li>
+<li class="">Neka ponašanja specifična za Firefox se razlikuju; uvijek provjerite u Thunderbirdu radi usklađenosti API‑ja.</li>
+<li class="">Putanje Thunderbird binarija (primjeri):</li>
+<li class="">Linux: <code>thunderbird</code> (npr. <code>/usr/bin/thunderbird</code>)</li>
+<li class="">macOS: <code>/Applications/Thunderbird.app/Contents/MacOS/thunderbird</code></li>
+<li class="">Windows: <code>&quot;C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe&quot;</code></li>
+<li class="">Izolacija profila: koristite poseban Thunderbird profil za razvoj kako biste izbjegli utjecaj na vašu svakodnevnu postavu.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-targets-alphabetical">Make mete (abecedno)<a href="#make-targets-alphabetical" class="hash-link" aria-label="Direct link to Make mete (abecedno)" title="Direct link to Make mete (abecedno)" translate="no">​</a></h3>
+<p>Makefile standardizira uobičajene razvojne tokove. Pokrenite <code>make help</code> u bilo kojem trenutku za jednoredni sažetak svake mete.</p>
+<p>Savjet: pokretanje <code>make</code> bez mete otvara jednostavan Whiptail meni za odabir mete.</p>
+<table><thead><tr><th>Meta</th><th>Jednoredni opis</th></tr></thead><tbody><tr><td><a href="#mt-clean" class=""><code>clean</code></a></td><td>Ukloni lokalne artefakte builda/pregleda (tmp/, web-local-preview/, website/build/).</td></tr><tr><td><a href="#mt-commit" class=""><code>commit</code></a></td><td>Formatiraj, pokreni testove (uklj. i18n), ažuriraj changelog, commit i push.</td></tr><tr><td><a href="#mt-eslint" class=""><code>eslint</code></a></td><td>Pokreni ESLint preko flat configa (<code>npm run -s lint:eslint</code>).</td></tr><tr><td><a href="#mt-help" class=""><code>help</code></a></td><td>Prikaži sve mete s jednorednim opisima (sortirano).</td></tr><tr><td><a href="#mt-lint" class=""><code>lint</code></a></td><td>web‑ext lint na <code>sources/</code> (privremeni manifest; ignoriše ZIP‑ove; ne‑fatalno).</td></tr><tr><td><a href="#mt-menu" class=""><code>menu</code></a></td><td>Interaktivni meni za odabir mete i opcionalnih argumenata.</td></tr><tr><td><a href="#mt-pack" class=""><code>pack</code></a></td><td>Izgradi ATN i LOCAL ZIP‑ove (pokreće linter; poziva skriptu za pakiranje).</td></tr><tr><td><a href="#mt-prettier" class=""><code>prettier</code></a></td><td>Formatiraj repozitorij na licu mjesta (upisuje promjene).</td></tr><tr><td><a href="#mt-prettier_check" class=""><code>prettier_check</code></a></td><td>Prettier u check režimu (bez upisa); pada ako je potrebno preformatiranje.</td></tr><tr><td><a href="#mt-prettier_write" class=""><code>prettier_write</code></a></td><td>Pseudonim za <code>prettier</code>.</td></tr><tr><td><a href="#mt-test" class=""><code>test</code></a></td><td>Prettier (upis), ESLint, zatim Vitest (pokrivenost ako je konfigurirana).</td></tr><tr><td><a href="#mt-test_i18n" class=""><code>test_i18n</code></a></td><td>Samo i18n testovi: zamjenska mjesta/usklađenost dodatka + usklađenost web‑stranice.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translate_app</code></a></td><td>Pseudonim za <code>translation_app</code>.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translation_app</code></a></td><td>Prevedi UI stringove aplikacije iz <code>sources/_locales/en/messages.json</code>.</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_batch</code></a></td><td>Prevedi web dokumente putem OpenAI Batch API‑ja (preporučeno).</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_sync</code></a></td><td>Prevedi web dokumente sinhrono (naslijeđeno, bez batcha).</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translate_web_index</code></a></td><td>Pseudonim za <code>translation_web_index</code>.</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translation_web_index</code></a></td><td>Prevedi UI početne stranice/navigacije/podnožja (<code>website/i18n/en/code.json → .../&lt;lang&gt;/code.json</code>).</td></tr><tr><td><a href="#mt-web_build" class=""><code>web_build</code></a></td><td>Izgradi dokumente u <code>website/build</code> (podržava <code>--locales</code> / <code>BUILD_LOCALES</code>).</td></tr><tr><td><a href="#mt-web_build_linkcheck" class=""><code>web_build_linkcheck</code></a></td><td>Provjera linkova sigurna za offline (preskače udaljene HTTP[S]).</td></tr><tr><td><a href="#mt-web_build_local_preview" class=""><code>web_build_local_preview</code></a></td><td>Lokalni gh‑pages pregled; automatsko serviranje na 8080–8090; opcionalni testovi/provjera linkova.</td></tr><tr><td><a href="#mt-web_push_github" class=""><code>web_push_github</code></a></td><td>Gurni <code>website/build</code> na granu <code>gh-pages</code>.</td></tr></tbody></table>
+<p>Sintaksa za opcije</p>
+<ul>
+<li class="">Koristite <code>make &lt;command&gt; OPTS=&quot;…&quot;</code> za prosljeđivanje opcija (preporučeni navodnici). Svaka meta ispod prikazuje primjer upotrebe.</li>
+</ul>
+<p>--</p>
+<ul>
+<li class=""></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="locale-build-tips">Savjeti za gradnju lokalizacija<a href="#locale-build-tips" class="hash-link" aria-label="Direct link to Savjeti za gradnju lokalizacija" title="Direct link to Savjeti za gradnju lokalizacija" translate="no">​</a></h4>
+<ul>
+<li class="">Gradite podskup jezika: postavite <code>BUILD_LOCALES=&quot;en de&quot;</code> ili proslijedite <code>OPTS=&quot;--locales en,de&quot;</code> web metama.</li>
+<li class="">Pregledajte određeni jezik: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/de/</code>.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-and-package">Izgradnja i pakiranje<a href="#build-and-package" class="hash-link" aria-label="Direct link to Izgradnja i pakiranje" title="Direct link to Izgradnja i pakiranje" translate="no">​</a></h3>
+<ul>
+<li class="">Izgradite ZIP‑ove: <code>make pack</code></li>
+<li class="">Proizvodi ATN i LOCAL ZIP‑ove u rootu repozitorija (ne uređujte artefakte ručno)</li>
+<li class="">Savjet: ažurirajte verziju i u <code>sources/manifest_ATN.json</code> i u <code>sources/manifest_LOCAL.json</code> prije pakiranja</li>
+<li class="">Ručna instalacija (dev): Thunderbird → Alati → Dodaci i teme → zupčanik → Instaliraj dodatak iz datoteke… → odaberite izgrađeni ZIP</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test">Testiranje<a href="#test" class="hash-link" aria-label="Direct link to Testiranje" title="Direct link to Testiranje" translate="no">​</a></h3>
+<ul>
+<li class="">Cijeli skup: <code>make test</code> (Vitest)</li>
+<li class="">Pokrivenost (opcionalno):</li>
+<li class=""><code>npm i -D @vitest/coverage-v8</code></li>
+<li class="">Pokrenite <code>make test</code>; otvorite <code>coverage/index.html</code> za HTML izvještaj</li>
+<li class="">Samo i18n: <code>make test_i18n</code> (UI ključevi/zamjene/naslovi + usklađenost web‑stranice po jeziku i dokumentu s provjerama id/title/sidebar_label)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="debugging-and-logs">Otklanjanje grešaka i logovi<a href="#debugging-and-logs" class="hash-link" aria-label="Direct link to Otklanjanje grešaka i logovi" title="Direct link to Otklanjanje grešaka i logovi" translate="no">​</a></h3>
+<ul>
+<li class="">Konzola grešaka: Alati → Razvojni alati → Konzola grešaka</li>
+<li class="">Uključivanje/isključivanje detaljnih logova u runtimeu:</li>
+<li class="">Omogući: <code>messenger.storage.local.set({ debug: true })</code></li>
+<li class="">Onemogući: <code>messenger.storage.local.set({ debug: false })</code></li>
+<li class="">Logovi se pojavljuju tokom sastavljanja/slanja odgovora</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="docs-website">Dokumentacija (web-stranica)<a href="#docs-website" class="hash-link" aria-label="Direct link to Dokumentacija (web-stranica)" title="Direct link to Dokumentacija (web-stranica)" translate="no">​</a></h3>
+<ul>
+<li class="">Dev server: <code>cd website &amp;&amp; npm run start</code></li>
+<li class="">Izgradi statičku stranicu: <code>cd website &amp;&amp; npm run build</code></li>
+<li class="">Make ekvivalenti (abecedno): <code>make web_build</code>, <code>make web_build_linkcheck</code>, <code>make web_build_local_preview</code>, <code>make web_push_github</code></li>
+<li class="">Primjeri upotrebe:</li>
+<li class="">Samo EN, preskoči testove/provjeru linkova, bez push: <code>make web_build_local_preview OPTS=&quot;--locales en --no-test --no-link-check --dry-run&quot;</code></li>
+<li class="">Svi jezici, s testovima/provjerom linkova, zatim push: <code>make web_build_local_preview &amp;&amp; make web_push_github</code></li>
+<li class="">Prije objave, pokrenite provjeru linkova sigurnu za offline: <code>make web_build_linkcheck</code>.</li>
+<li class="">i18n: Engleski je u <code>website/docs/*.md</code>; njemački prijevodi u <code>website/i18n/de/docusaurus-plugin-content-docs/current/*.md</code></li>
+<li class="">Pretraga: Ako su Algolia DocSearch varijable okruženja postavljene u CI (<code>DOCSEARCH_APP_ID</code>, <code>DOCSEARCH_API_KEY</code>, <code>DOCSEARCH_INDEX_NAME</code>), stranica koristi Algolia pretragu; inače pada na lokalnu pretragu. Na početnoj stranici pritisnite <code>/</code> ili <code>Ctrl+K</code> da otvorite polje za pretragu.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="donate-redirect">Ruta za preusmjeravanje donacija<a href="#donate-redirect" class="hash-link" aria-label="Direct link to Ruta za preusmjeravanje donacija" title="Direct link to Ruta za preusmjeravanje donacija" translate="no">​</a></h4>
+<ul>
+<li class=""><code>website/src/pages/donate.js</code></li>
+<li class="">Ruta: <code>/donate</code> (i <code>/&lt;locale&gt;/donate</code>)</li>
+<li class="">Ponašanje:</li>
+<li class="">Ako trenutna ruta ima jezik (npr. <code>/de/donate</code>), koristi ga</li>
+<li class="">Inače, izaberi najbolji par između <code>navigator.languages</code> i konfiguriranih jezika; u suprotnom koristi podrazumijevani jezik</li>
+<li class="">Preusmjerava na:</li>
+<li class=""><code>en</code> → <code>/docs/donation</code></li>
+<li class="">ostalo → <code>/&lt;locale&gt;/docs/donation</code></li>
+<li class="">Koristi <code>useBaseUrl</code> za pravilno rukovanje baseUrl‑om</li>
+<li class="">Uključuje meta refresh + <code>noscript</code> link kao rezervu</li>
+</ul>
+<hr>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preview-tips">Savjeti za pregled<a href="#preview-tips" class="hash-link" aria-label="Direct link to Savjeti za pregled" title="Direct link to Savjeti za pregled" translate="no">​</a></h4>
+<ul>
+<li class="">Zaustavite Node pregled čisto: otvorite <code>http://localhost:&lt;port&gt;/__stop</code> (ispisano nakon <code>Local server started</code>).</li>
+<li class="">Ako se slike ne učitavaju u MDX/JSX, koristite <code>useBaseUrl(&#x27;/img/...&#x27;)</code> da poštujete <code>baseUrl</code> stranice.</li>
+<li class="">Pregled se prvo pokreće; provjera linkova se pokreće nakon toga i ne blokira (pokvareni vanjski linkovi neće zaustaviti pregled).</li>
+<li class="">Primjer URL‑a pregleda: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/</code> (ispisano nakon “Local server started”).</li>
+<li class="">Vanjski linkovi u provjeri: Neke vanjske stranice (npr. addons.thunderbird.net) blokiraju automatizirane crawlere i mogu prikazati 403 u provjerama linkova. Pregled se i dalje pokreće; ovo je sigurno ignorirati.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate-website">Prevedite web-stranicu<a href="#translate-website" class="hash-link" aria-label="Direct link to Prevedite web-stranicu" title="Direct link to Prevedite web-stranicu" translate="no">​</a></h4>
+<p>Šta možete prevesti</p>
+<ul>
+<li class="">Samo web UI: početna stranica, navigacija, podnožje i drugi UI stringovi. Sadržaj dokumenata za sada ostaje samo na engleskom.</li>
+</ul>
+<p>Gdje uređivati</p>
+<ul>
+<li class="">Uredite <code>website/i18n/&lt;locale&gt;/code.json</code> (koristite <code>en</code> kao referencu). Ostavite zamjenska mjesta poput <code>{year}</code>, <code>{slash}</code>, <code>{ctrl}</code>, <code>{k}</code>, <code>{code1}</code> nepromijenjenim.</li>
+</ul>
+<p>Generišite ili osvježite datoteke</p>
+<ul>
+<li class="">Kreirajte nedostajuće stubove za sve jezike: <code>npm --prefix website run i18n:stubs</code></li>
+<li class="">Prepišite stubove iz engleskog (nakon dodavanja novih stringova): <code>npm --prefix website run i18n:stubs:force</code></li>
+<li class="">Alternativa za jedan jezik: <code>npx --prefix website docusaurus write-translations --locale &lt;locale&gt;</code></li>
+</ul>
+<p>Prevedite UI stringove početne/navigacije/podnožja (OpenAI)</p>
+<ul>
+<li class="">Postavite akreditive jednom (shell ili .env):</li>
+<li class=""><code>export OPENAI_API_KEY=sk-...</code></li>
+<li class="">Opcionalno: <code>export OPENAI_MODEL=gpt-4o-mini</code></li>
+<li class="">Jednokratno (svi jezici, osim en): <code>make translate_web_index</code></li>
+<li class="">Ograničite na određene jezike: <code>make translate_web_index OPTS=&quot;--locales de,fr&quot;</code></li>
+<li class="">Prepišite postojeće vrijednosti: <code>make translate_web_index OPTS=&quot;--force&quot;</code></li>
+</ul>
+<p>Validacija i ponovni pokušaji</p>
+<ul>
+<li class="">Skripta za prijevod validira strukturu JSON‑a, čuva zamjenska mjesta u vitičastim zagradama i osigurava da URL‑ovi ostanu nepromijenjeni.</li>
+<li class="">Ako validacija ne uspije, pokušava ponovo s povratnom informacijom do 2 puta prije nego zadrži postojeće vrijednosti.</li>
+</ul>
+<p>Pregledajte svoj jezik</p>
+<ul>
+<li class="">Dev server: <code>npm --prefix website run start</code></li>
+<li class="">Posjetite <code>http://localhost:3000/&lt;locale&gt;/Thunderbird-Reply-with-Attachments/</code></li>
+</ul>
+<p>Slanje</p>
+<ul>
+<li class="">Otvorite PR s izmijenjenim <code>code.json</code> datotekama. Neka promjene budu fokusirane i uključite brzi screenshot kada je moguće.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-and-configuration-tips">Sigurnosni i konfiguracijski savjeti<a href="#security-and-configuration-tips" class="hash-link" aria-label="Direct link to Sigurnosni i konfiguracijski savjeti" title="Direct link to Sigurnosni i konfiguracijski savjeti" translate="no">​</a></h3>
+<ul>
+<li class="">Nemojte committati <code>sources/manifest.json</code> (privremeno kreiran buildom)</li>
+<li class="">Održavajte <code>browser_specific_settings.gecko.id</code> stabilnim da biste sačuvali kanal ažuriranja</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settings-persistence">Postojanost postavki<a href="#settings-persistence" class="hash-link" aria-label="Direct link to Postojanost postavki" title="Direct link to Postojanost postavki" translate="no">​</a></h3>
+<ul>
+<li class="">Pohrana: Sve korisničke postavke nalaze se u <code>storage.local</code> i ostaju sačuvane kroz ažuriranja dodatka.</li>
+<li class="">Instalacija: Zadane vrijednosti se primjenjuju samo kada ključ striktno nedostaje (undefined).</li>
+<li class="">Ažuriranje: Migracija popunjava samo nedostajuće ključeve; postojeće vrijednosti se nikada ne prepisuju.</li>
+<li class="">Oznaka sheme: <code>settingsVersion</code> (trenutno <code>1</code>).</li>
+<li class="">Ključevi i zadane vrijednosti:</li>
+<li class=""><code>blacklistPatterns: string[]</code> → <code>[&#x27;*intern*&#x27;, &#x27;*secret*&#x27;, &#x27;*passwor*&#x27;]</code></li>
+<li class=""><code>confirmBeforeAdd: boolean</code> → <code>false</code></li>
+<li class=""><code>confirmDefaultChoice: &#x27;yes&#x27;|&#x27;no&#x27;</code> → <code>&#x27;yes&#x27;</code></li>
+<li class=""><code>warnOnBlacklistExcluded: boolean</code> → <code>true</code></li>
+<li class="">Kod: vidi <code>sources/background.js</code> → <code>initializeOrMigrateSettings()</code> i <code>SCHEMA_VERSION</code>.</li>
+</ul>
+<p>Razvojni tijek (dodavanje nove postavke)</p>
+<ul>
+<li class="">Povećajte <code>SCHEMA_VERSION</code> u <code>sources/background.js</code>.</li>
+<li class="">Dodajte novi ključ + zadanu vrijednost u objekt <code>DEFAULTS</code> u <code>initializeOrMigrateSettings()</code>.</li>
+<li class="">Koristite pravilo „only‑if‑undefined” pri inicijalnom postavljanju zadanih vrijednosti; ne prepisujte postojeće vrijednosti.</li>
+<li class="">Ako je postavka vidljiva korisniku, povežite je u <code>sources/options.js</code> i dodajte lokalizirane stringove.</li>
+<li class="">Dodajte/prilagodite testove (vidi <code>tests/background.settings.migration.test.js</code>).</li>
+</ul>
+<p>Savjeti za ručno testiranje</p>
+<ul>
+<li class="">Simulirajte svježu instalaciju: očistite direktorij podataka ekstenzije ili počnite s novim profilom.</li>
+<li class="">Simulirajte ažuriranje: postavite <code>settingsVersion</code> na <code>0</code> u <code>storage.local</code> i ponovo učitajte; potvrdite da postojeće vrijednosti ostaju nepromijenjene i da su dodani samo nedostajući ključevi.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Rješavanje problema<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Rješavanje problema" title="Direct link to Rješavanje problema" translate="no">​</a></h3>
+<ul>
+<li class="">Provjerite da je Thunderbird 128 ESR ili noviji</li>
+<li class="">Koristite Konzolu grešaka za probleme u izvođenju</li>
+<li class="">Ako se čini da pohranjene postavke nisu pravilno primijenjene, restartujte Thunderbird i pokušajte ponovo. (Thunderbird može keširati stanje kroz sesije; restart osigurava učitavanje svježih postavki.)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ci-and-coverage">CI i pokrivenost<a href="#ci-and-coverage" class="hash-link" aria-label="Direct link to CI i pokrivenost" title="Direct link to CI i pokrivenost" translate="no">​</a></h3>
+<ul>
+<li class="">GitHub Actions (<code>CI — Tests</code>) pokreće vitest s pragovima pokrivenosti (85% linija/funkcija/grana/izjava). Ako pragovi nisu ispunjeni, posao ne uspijeva.</li>
+<li class="">Tijek rada učitava artefakt <code>coverage-html</code> s HTML izvještajem; preuzmite ga sa stranice pokretanja (Actions → najnovije pokretanje → Artifacts).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">Doprinos<a href="#contributing" class="hash-link" aria-label="Direct link to Doprinos" title="Direct link to Doprinos" translate="no">​</a></h3>
+<ul>
+<li class="">Pogledajte CONTRIBUTING.md za smjernice o granama/commitima/PR‑ovima</li>
+<li class="">Savjet: Kreirajte zaseban Thunderbird razvojni profil za testiranje kako biste izbjegli utjecaj na vaš dnevni profil.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prijevodi">Prijevodi<a href="#prijevodi" class="hash-link" aria-label="Direct link to Prijevodi" title="Direct link to Prijevodi" translate="no">​</a></h3>
+<ul>
+<li class="">Pokretanje velikih poslova prevođenja „sve → sve” može biti sporo i skupo. Počnite s podskupom (npr. nekoliko dokumenata i 1–2 jezika), pregledajte rezultat, zatim proširite.</li>
+</ul>
+<hr>
+<ul>
+<li class="">Politika ponovnih pokušaja: poslovi prevođenja izvode do 3 pokušaja s eksponencijalnim odmakom pri API greškama; vidi <code>scripts/translate_web_docs_batch.js</code> i <code>scripts/translate_web_docs_sync.js</code>.</li>
+</ul>
+<p>Snimke ekrana za dokumente</p>
+<ul>
+<li class="">
+<p>Pohranite slike pod <code>website/static/img/</code>.</p>
+</li>
+<li class="">
+<p>Referencirajte ih u MD/MDX preko <code>useBaseUrl(&#x27;/img/&lt;filename&gt;&#x27;)</code> kako bi putanje radile s <code>baseUrl</code> stranice.</p>
+</li>
+<li class="">
+<p>Nakon dodavanja ili preimenovanja slika pod <code>website/static/img/</code>, potvrdite da sve reference i dalje koriste <code>useBaseUrl(&#x27;/img/…&#x27;)</code> i da se prikazuju u lokalnom pregledu.
+Favikone</p>
+</li>
+<li class="">
+<p>Višedimenzionalni <code>favicon.ico</code> generira se automatski u svim build putevima (Make + skripte) putem <code>website/scripts/build-favicon.mjs</code>.</p>
+</li>
+<li class="">
+<p>Nije potreban ručni korak; dovoljno je ažurirati <code>icon-*.png</code>.
+Savjet za pregled</p>
+</li>
+<li class="">
+<p>Zadržite front‑matter <code>id</code> nepromijenjenim u prevedenim dokumentima; prevodite samo <code>title</code> i <code>sidebar_label</code> kada su prisutni.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-clean">clean<a href="#mt-clean" class="hash-link" aria-label="Direct link to clean" title="Direct link to clean" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: ukloniti lokalne artefakte builda/pregleda.</li>
+<li class="">Upotreba: <code>make clean</code></li>
+<li class="">Uklanja (ako postoji):</li>
+<li class=""><code>tmp/</code></li>
+<li class=""><code>web-local-preview/</code></li>
+<li class=""><code>website/build/</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-commit">commit<a href="#mt-commit" class="hash-link" aria-label="Direct link to commit" title="Direct link to commit" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: formatirati, testirati, ažurirati changelog, commit i push.</li>
+<li class="">Upotreba: <code>make commit</code></li>
+<li class="">Detalji: pokreće Prettier (upis), <code>make test</code>, <code>make test_i18n</code>; dodaje u changelog kada postoje staged razlike; push-a na <code>origin/&lt;branch&gt;</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-eslint">eslint<a href="#mt-eslint" class="hash-link" aria-label="Direct link to eslint" title="Direct link to eslint" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: pokrenuti ESLint preko flat konfiguracije.</li>
+<li class="">Upotreba: <code>make eslint</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-help">help<a href="#mt-help" class="hash-link" aria-label="Direct link to help" title="Direct link to help" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: navesti sve mete s jednorednim opisima.</li>
+<li class="">Upotreba: <code>make help</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-lint">lint<a href="#mt-lint" class="hash-link" aria-label="Direct link to lint" title="Direct link to lint" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: lintati MailExtension koristeći <code>web-ext</code>.</li>
+<li class="">Upotreba: <code>make lint</code></li>
+<li class="">Napomene: privremeno kopira <code>sources/manifest_LOCAL.json</code> → <code>sources/manifest.json</code>; ignorira izgrađene ZIP‑ove; upozorenja ne ruše cjevovod.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-menu">menu<a href="#mt-menu" class="hash-link" aria-label="Direct link to menu" title="Direct link to menu" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: interaktivni meni za odabir Make mete i opcionalnih argumenata.</li>
+<li class="">Upotreba: pokrenite <code>make</code> bez argumenata.</li>
+<li class="">Napomene: ako <code>whiptail</code> nije dostupan, meni pada na <code>make help</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-pack">pack<a href="#mt-pack" class="hash-link" aria-label="Direct link to pack" title="Direct link to pack" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: izgraditi ATN i LOCAL ZIP‑ove (ovisi o <code>lint</code>).</li>
+<li class="">Upotreba: <code>make pack</code></li>
+<li class="">Savjet: povećajte verzije u oba <code>sources/manifest_*.json</code> prije pakiranja.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier">prettier<a href="#mt-prettier" class="hash-link" aria-label="Direct link to prettier" title="Direct link to prettier" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: formatirati repozitorij na licu mjesta.</li>
+<li class="">Upotreba: <code>make prettier</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_check">prettier_check<a href="#mt-prettier_check" class="hash-link" aria-label="Direct link to prettier_check" title="Direct link to prettier_check" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: verificirati formatiranje (bez upisa).</li>
+<li class="">Upotreba: <code>make prettier_check</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_write">prettier_write<a href="#mt-prettier_write" class="hash-link" aria-label="Direct link to prettier_write" title="Direct link to prettier_write" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: pseudonim za <code>prettier</code>.</li>
+<li class="">Upotreba: <code>make prettier_write</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test">test<a href="#mt-test" class="hash-link" aria-label="Direct link to test" title="Direct link to test" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: pokrenuti Prettier (upis), ESLint, zatim Vitest (pokrivenost ako je instalirana).</li>
+<li class="">Upotreba: <code>make test</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test_i18n">test_i18n<a href="#mt-test_i18n" class="hash-link" aria-label="Direct link to test_i18n" title="Direct link to test_i18n" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: i18n‑fokusirani testovi za stringove dodatka i web dokumente.</li>
+<li class="">Upotreba: <code>make test_i18n</code></li>
+<li class="">Pokreće: <code>npm run test:i18n</code> i <code>npm run -s test:website-i18n</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-app">translate_app / translation_app<a href="#mt-translation-app" class="hash-link" aria-label="Direct link to translate_app / translation_app" title="Direct link to translate_app / translation_app" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: prevesti UI stringove dodatka s EN na druge jezike.</li>
+<li class="">Upotreba: <code>make translation_app OPTS=&quot;--locales all|de,fr&quot;</code></li>
+<li class="">Napomene: čuva strukturu ključeva i zamjenska mjesta; logira u <code>translation_app.log</code>. Skripta: <code>node scripts/translate_app.js --locales …</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-web">translate_web_docs_batch / translate_web_docs_sync<a href="#mt-translation-web" class="hash-link" aria-label="Direct link to translate_web_docs_batch / translate_web_docs_sync" title="Direct link to translate_web_docs_batch / translate_web_docs_sync" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: prevesti web dokumente iz <code>website/docs/*.md</code> u <code>website/i18n/&lt;locale&gt;/...</code>.</li>
+<li class="">Preporučeno: <code>translate_web_docs_batch</code> (OpenAI Batch API)<!-- -->
+<ul>
+<li class="">Upotreba (zastavice): <code>make translate_web_docs_batch OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">Naslijeđena pozicijska sintaksa je i dalje prihvaćena: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Ponašanje: gradi JSONL, učitava, provjerava svakih 30 s, preuzima rezultate, zapisuje datoteke.</li>
+<li class="">Napomena: batch posao može trajati do 24 sata (prema OpenAI prozoru za batch). Konzola prikazuje proteklo vrijeme pri svakoj provjeri.</li>
+<li class="">Okruženje: <code>OPENAI_API_KEY</code> (obavezno), opcionalno <code>OPENAI_MODEL</code>, <code>OPENAI_TEMPERATURE</code>, <code>OPENAI_BATCH_WINDOW</code> (zadano 24h), <code>BATCH_POLL_INTERVAL_MS</code>.</li>
+<li class="">Naslijeđeno: <code>translate_web_docs_sync</code>
+<ul>
+<li class="">Upotreba (zastavice): <code>make translate_web_docs_sync OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">Naslijeđena pozicijska sintaksa je i dalje prihvaćena: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Ponašanje: sinhroni zahtjevi po paru (bez batch agregacije).</li>
+<li class="">Napomene: Interaktivni upiti kada je <code>OPTS</code> izostavljen. Oba moda čuvaju blokove koda/inline kod i ostavljaju front‑matter <code>id</code> nepromijenjenim; logira u <code>translation_web_batch.log</code> (batch) ili <code>translation_web_sync.log</code> (sync).</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation_web_index">translate_web_index / translation_web_index<a href="#mt-translation_web_index" class="hash-link" aria-label="Direct link to translate_web_index / translation_web_index" title="Direct link to translate_web_index / translation_web_index" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: prevesti UI stringove web‑stranice (početna, navigacija, podnožje) iz <code>website/i18n/en/code.json</code> u sve jezike pod <code>website/i18n/&lt;locale&gt;/code.json</code> (isključujući <code>en</code>).</li>
+<li class="">Upotreba: <code>make translate_web_index</code> ili <code>make translate_web_index OPTS=&quot;--locales de,fr [--force]&quot;</code></li>
+<li class="">Zahtjevi: export <code>OPENAI_API_KEY</code> (opcionalno: <code>OPENAI_MODEL=gpt-4o-mini</code>).</li>
+<li class="">Ponašanje: validira strukturu JSON‑a, čuva zamjenska mjesta u vitičastim zagradama, ostavlja URL‑ove nepromijenjene i ponovo pokušava s povratnim informacijama pri greškama validacije.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build">web_build<a href="#mt-web_build" class="hash-link" aria-label="Direct link to web_build" title="Direct link to web_build" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: izgraditi stranicu dokumentacije u <code>website/build</code>.</li>
+<li class="">Upotreba: <code>make web_build OPTS=&quot;--locales en|de,en|all&quot;</code> (ili postavite <code>BUILD_LOCALES=&quot;en de&quot;</code>)</li>
+<li class="">Unutrašnjost: <code>node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]</code>.</li>
+<li class="">Zavisnosti: pokreće <code>npm ci</code> u <code>website/</code> samo ako <code>website/node_modules/@docusaurus</code> nedostaje.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_linkcheck">web_build_linkcheck<a href="#mt-web_build_linkcheck" class="hash-link" aria-label="Direct link to web_build_linkcheck" title="Direct link to web_build_linkcheck" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: provjera linkova sigurna za offline.</li>
+<li class="">Upotreba: <code>make web_build_linkcheck OPTS=&quot;--locales en|all&quot;</code></li>
+<li class="">Napomene: gradi u <code>tmp_linkcheck_web_pages</code>; prepisuje GH Pages <code>baseUrl</code> u <code>/</code>; preskače udaljene HTTP(S) linkove.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_local_preview">web_build_local_preview<a href="#mt-web_build_local_preview" class="hash-link" aria-label="Direct link to web_build_local_preview" title="Direct link to web_build_local_preview" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: lokalni gh‑pages pregled s opcionalnim testovima/provjerom linkova.</li>
+<li class="">Upotreba: <code>make web_build_local_preview OPTS=&quot;--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]&quot;</code></li>
+<li class="">Ponašanje: prvo pokušava Node server za pregled (<code>scripts/preview-server.mjs</code>, podržava <code>/__stop</code>), zatim pada na <code>python3 -m http.server</code>; servira na 8080–8090; PID na <code>web-local-preview/.server.pid</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_push_github">web_push_github<a href="#mt-web_push_github" class="hash-link" aria-label="Direct link to web_push_github" title="Direct link to web_push_github" translate="no">​</a></h4>
+<ul>
+<li class="">Svrha: push <code>website/build</code> na granu <code>gh-pages</code>.</li>
+<li class="">Upotreba: <code>make web_push_github</code></li>
+</ul>
+<p>Savjet: postavite <code>NPM=…</code> da biste nadjačali upravitelja paketa kojeg koristi Makefile (po zadanom <code>npm</code>).</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-09-13T01:25:23.000Z" itemprop="dateModified">13. sep 2025.</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/Thunderbird-Reply-with-Attachments/bs/docs/permissions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Dozvole</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Thunderbird-Reply-with-Attachments/bs/docs/languages"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Jezici</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#development-guide" class="table-of-contents__link toc-highlight">Vodič za razvoj</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Preduvjeti</a></li><li><a href="#project-layout-high-level" class="table-of-contents__link toc-highlight">Struktura projekta (visokog nivoa)</a></li><li><a href="#install-and-tooling" class="table-of-contents__link toc-highlight">Instalacija i alati</a></li><li><a href="#live-dev-web-ext" class="table-of-contents__link toc-highlight">Razvoj uživo (web‑ext run)</a></li><li><a href="#make-targets-alphabetical" class="table-of-contents__link toc-highlight">Make mete (abecedno)</a></li><li><a href="#build-and-package" class="table-of-contents__link toc-highlight">Izgradnja i pakiranje</a></li><li><a href="#test" class="table-of-contents__link toc-highlight">Testiranje</a></li><li><a href="#debugging-and-logs" class="table-of-contents__link toc-highlight">Otklanjanje grešaka i logovi</a></li><li><a href="#docs-website" class="table-of-contents__link toc-highlight">Dokumentacija (web-stranica)</a></li><li><a href="#security-and-configuration-tips" class="table-of-contents__link toc-highlight">Sigurnosni i konfiguracijski savjeti</a></li><li><a href="#settings-persistence" class="table-of-contents__link toc-highlight">Postojanost postavki</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Rješavanje problema</a></li><li><a href="#ci-and-coverage" class="table-of-contents__link toc-highlight">CI i pokrivenost</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Doprinos</a></li><li><a href="#prijevodi" class="table-of-contents__link toc-highlight">Prijevodi</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/bs/docs/features">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/bs/docs/install">Install</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Project</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 Reply with Attachments</div></div></div></footer></div>
+</body>
+</html>

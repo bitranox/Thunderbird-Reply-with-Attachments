@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="hu-HU" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-development" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Fejlesztés | Reply with Attachments</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development"><meta data-rh="true" property="og:locale" content="hu_HU"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" property="og:locale:alternate" content="hi_IN"><meta data-rh="true" property="og:locale:alternate" content="es_ES"><meta data-rh="true" property="og:locale:alternate" content="ar"><meta data-rh="true" property="og:locale:alternate" content="fr_FR"><meta data-rh="true" property="og:locale:alternate" content="bn_BD"><meta data-rh="true" property="og:locale:alternate" content="pt_PT"><meta data-rh="true" property="og:locale:alternate" content="ru_RU"><meta data-rh="true" property="og:locale:alternate" content="id_ID"><meta data-rh="true" property="og:locale:alternate" content="ur_PK"><meta data-rh="true" property="og:locale:alternate" content="de_DE"><meta data-rh="true" property="og:locale:alternate" content="ja_JP"><meta data-rh="true" property="og:locale:alternate" content="pa_IN"><meta data-rh="true" property="og:locale:alternate" content="jv_ID"><meta data-rh="true" property="og:locale:alternate" content="ms_MY"><meta data-rh="true" property="og:locale:alternate" content="te_IN"><meta data-rh="true" property="og:locale:alternate" content="vi_VN"><meta data-rh="true" property="og:locale:alternate" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="mr_IN"><meta data-rh="true" property="og:locale:alternate" content="ta_IN"><meta data-rh="true" property="og:locale:alternate" content="tr_TR"><meta data-rh="true" property="og:locale:alternate" content="it_IT"><meta data-rh="true" property="og:locale:alternate" content="th_TH"><meta data-rh="true" property="og:locale:alternate" content="gu_IN"><meta data-rh="true" property="og:locale:alternate" content="fa_IR"><meta data-rh="true" property="og:locale:alternate" content="pl_PL"><meta data-rh="true" property="og:locale:alternate" content="ps_AF"><meta data-rh="true" property="og:locale:alternate" content="kn_IN"><meta data-rh="true" property="og:locale:alternate" content="ml_IN"><meta data-rh="true" property="og:locale:alternate" content="or_IN"><meta data-rh="true" property="og:locale:alternate" content="my_MM"><meta data-rh="true" property="og:locale:alternate" content="uk_UA"><meta data-rh="true" property="og:locale:alternate" content="ro_RO"><meta data-rh="true" property="og:locale:alternate" content="nl_NL"><meta data-rh="true" property="og:locale:alternate" content="ha_NG"><meta data-rh="true" property="og:locale:alternate" content="sw_TZ"><meta data-rh="true" property="og:locale:alternate" content="am_ET"><meta data-rh="true" property="og:locale:alternate" content="az_AZ"><meta data-rh="true" property="og:locale:alternate" content="uz_UZ"><meta data-rh="true" property="og:locale:alternate" content="sd_PK"><meta data-rh="true" property="og:locale:alternate" content="he_IL"><meta data-rh="true" property="og:locale:alternate" content="el_GR"><meta data-rh="true" property="og:locale:alternate" content="cs_CZ"><meta data-rh="true" property="og:locale:alternate" content="sv_SE"><meta data-rh="true" property="og:locale:alternate" content="bg_BG"><meta data-rh="true" property="og:locale:alternate" content="da_DK"><meta data-rh="true" property="og:locale:alternate" content="fi_FI"><meta data-rh="true" property="og:locale:alternate" content="no_NO"><meta data-rh="true" property="og:locale:alternate" content="sk_SK"><meta data-rh="true" property="og:locale:alternate" content="sr_RS"><meta data-rh="true" property="og:locale:alternate" content="hr_HR"><meta data-rh="true" property="og:locale:alternate" content="bs_BA"><meta data-rh="true" property="og:locale:alternate" content="sl_SI"><meta data-rh="true" property="og:locale:alternate" content="lt_LT"><meta data-rh="true" property="og:locale:alternate" content="lv_LV"><meta data-rh="true" property="og:locale:alternate" content="et_EE"><meta data-rh="true" property="og:locale:alternate" content="hy_AM"><meta data-rh="true" property="og:locale:alternate" content="ka_GE"><meta data-rh="true" property="og:locale:alternate" content="kk_KZ"><meta data-rh="true" property="og:locale:alternate" content="ky_KG"><meta data-rh="true" property="og:locale:alternate" content="tg_TJ"><meta data-rh="true" property="og:locale:alternate" content="tk_TM"><meta data-rh="true" property="og:locale:alternate" content="ne_NP"><meta data-rh="true" property="og:locale:alternate" content="si_LK"><meta data-rh="true" property="og:locale:alternate" content="km_KH"><meta data-rh="true" property="og:locale:alternate" content="lo_LA"><meta data-rh="true" property="og:locale:alternate" content="mn_MN"><meta data-rh="true" property="og:locale:alternate" content="su_ID"><meta data-rh="true" property="og:locale:alternate" content="yo_NG"><meta data-rh="true" property="og:locale:alternate" content="ig_NG"><meta data-rh="true" property="og:locale:alternate" content="om_ET"><meta data-rh="true" property="og:locale:alternate" content="zu_ZA"><meta data-rh="true" property="og:locale:alternate" content="xh_ZA"><meta data-rh="true" property="og:locale:alternate" content="af_ZA"><meta data-rh="true" property="og:locale:alternate" content="so_SO"><meta data-rh="true" property="og:locale:alternate" content="rw_RW"><meta data-rh="true" property="og:locale:alternate" content="rn_BI"><meta data-rh="true" property="og:locale:alternate" content="ln_CD"><meta data-rh="true" property="og:locale:alternate" content="sn_ZW"><meta data-rh="true" property="og:locale:alternate" content="ak_GH"><meta data-rh="true" property="og:locale:alternate" content="ff_SN"><meta data-rh="true" property="og:locale:alternate" content="bm_ML"><meta data-rh="true" property="og:locale:alternate" content="ny_MW"><meta data-rh="true" property="og:locale:alternate" content="ti_ER"><meta data-rh="true" property="og:locale:alternate" content="ug_CN"><meta data-rh="true" property="og:locale:alternate" content="ks_IN"><meta data-rh="true" property="og:locale:alternate" content="as_IN"><meta data-rh="true" property="og:locale:alternate" content="tl_PH"><meta data-rh="true" property="og:locale:alternate" content="ca_ES"><meta data-rh="true" property="og:locale:alternate" content="be_BY"><meta data-rh="true" property="og:locale:alternate" content="sq_AL"><meta data-rh="true" property="og:locale:alternate" content="qu_PE"><meta data-rh="true" property="og:locale:alternate" content="ht_HT"><meta data-rh="true" property="og:locale:alternate" content="mg_MG"><meta data-rh="true" property="og:locale:alternate" content="ku_TR"><meta data-rh="true" property="og:locale:alternate" content="wo_SN"><meta data-rh="true" property="og:locale:alternate" content="ga_IE"><meta data-rh="true" property="og:locale:alternate" content="is_IS"><meta data-rh="true" name="docusaurus_locale" content="hu"><meta data-rh="true" name="docsearch:language" content="hu"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Fejlesztés | Reply with Attachments"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/Thunderbird-Reply-with-Attachments/hu/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/development" hreflang="zh"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hi/docs/development" hreflang="hi-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/development" hreflang="es-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/development" hreflang="ar"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/development" hreflang="fr-FR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/development" hreflang="bn-BD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/development" hreflang="pt-PT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/development" hreflang="ru-RU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/development" hreflang="id-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ur/docs/development" hreflang="ur-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/development" hreflang="de-DE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/development" hreflang="ja-JP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/development" hreflang="pa-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/development" hreflang="jv-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/development" hreflang="ms-MY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/development" hreflang="te-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/development" hreflang="vi-VN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/development" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/development" hreflang="mr-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/development" hreflang="ta-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/development" hreflang="tr-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/development" hreflang="it-IT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/development" hreflang="th-TH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/development" hreflang="gu-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/development" hreflang="fa-IR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/development" hreflang="pl-PL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/development" hreflang="ps-AF"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/development" hreflang="kn-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/development" hreflang="ml-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/or/docs/development" hreflang="or-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/development" hreflang="my-MM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/development" hreflang="uk-UA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/development" hreflang="ro-RO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/development" hreflang="nl-NL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/development" hreflang="ha-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/development" hreflang="sw-TZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/development" hreflang="am-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development" hreflang="hu-HU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/development" hreflang="az-AZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/development" hreflang="uz-UZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/development" hreflang="sd-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/development" hreflang="he-IL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/development" hreflang="el-GR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/development" hreflang="cs-CZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/development" hreflang="sv-SE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bg/docs/development" hreflang="bg-BG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/development" hreflang="da-DK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/development" hreflang="fi-FI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/development" hreflang="no-NO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/development" hreflang="sk-SK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/development" hreflang="sr-RS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/development" hreflang="hr-HR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development" hreflang="bs-BA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/development" hreflang="sl-SI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/development" hreflang="lt-LT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/development" hreflang="lv-LV"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/development" hreflang="et-EE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/development" hreflang="hy-AM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/development" hreflang="ka-GE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/development" hreflang="kk-KZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/development" hreflang="ky-KG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/development" hreflang="tg-TJ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/development" hreflang="tk-TM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/development" hreflang="ne-NP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/development" hreflang="si-LK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/development" hreflang="km-KH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/development" hreflang="lo-LA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/development" hreflang="mn-MN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development" hreflang="su-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/yo/docs/development" hreflang="yo-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/development" hreflang="ig-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/development" hreflang="om-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/development" hreflang="zu-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/xh/docs/development" hreflang="xh-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/development" hreflang="af-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/development" hreflang="so-SO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rw/docs/development" hreflang="rw-RW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/development" hreflang="rn-BI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/development" hreflang="ln-CD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/development" hreflang="sn-ZW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/development" hreflang="ak-GH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/development" hreflang="ff-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/development" hreflang="bm-ML"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/development" hreflang="ny-MW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/development" hreflang="ti-ER"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ug/docs/development" hreflang="ug-CN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/development" hreflang="ks-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development" hreflang="as-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/development" hreflang="tl-PH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/development" hreflang="ca-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/development" hreflang="be-BY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/development" hreflang="sq-AL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/development" hreflang="qu-PE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/development" hreflang="ht-HT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/development" hreflang="mg-MG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/development" hreflang="ku-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/development" hreflang="wo-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/development" hreflang="ga-IE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/development" hreflang="is-IS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fejlesztés","item":"https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development"}]}</script><link rel="stylesheet" href="/Thunderbird-Reply-with-Attachments/hu/assets/css/styles.f70c06e1.css">
+<script src="/Thunderbird-Reply-with-Attachments/hu/assets/js/runtime~main.23e26209.js" defer="defer"></script>
+<script src="/Thunderbird-Reply-with-Attachments/hu/assets/js/main.90da5a01.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Ugrás a fő tartalomhoz"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Ugrás a fő tartalomhoz</a></div><nav aria-label="Fő" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Navigációs sáv ki- és bekapcsolása" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/Thunderbird-Reply-with-Attachments/hu/"><div class="navbar__logo"><img src="/Thunderbird-Reply-with-Attachments/hu/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/Thunderbird-Reply-with-Attachments/hu/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reply with Attachments</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Thunderbird-Reply-with-Attachments/hu/docs/features">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/support">Support</a><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/license">License</a><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Váltás a sötét és világos mód között (jelenleg system mode van beállítva)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Vissza a tetejére" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Dokumentációs oldalsáv" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/features"><span title="Funkciók" class="linkLabel_WmDU">Funkciók</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/quickstart"><span title="Gyorstalpaló" class="linkLabel_WmDU">Gyorstalpaló</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/install"><span title="Telepítés" class="linkLabel_WmDU">Telepítés</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/configuration"><span title="Beállítások" class="linkLabel_WmDU">Beállítások</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/usage"><span title="Használat" class="linkLabel_WmDU">Használat</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/compatibility"><span title="Kompatibilitás" class="linkLabel_WmDU">Kompatibilitás</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/permissions"><span title="Engedélyek" class="linkLabel_WmDU">Engedélyek</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Thunderbird-Reply-with-Attachments/hu/docs/development"><span title="Fejlesztés" class="linkLabel_WmDU">Fejlesztés</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/languages"><span title="Nyelvek" class="linkLabel_WmDU">Nyelvek</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/glossary"><span title="Szótár" class="linkLabel_WmDU">Szótár</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/support"><span title="Támogatás" class="linkLabel_WmDU">Támogatás</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/privacy"><span title="Adatvédelem" class="linkLabel_WmDU">Adatvédelem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/donation"><span title="Adományozás" class="linkLabel_WmDU">Adományozás</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/license"><span title="Licenc" class="linkLabel_WmDU">Licenc</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/hu/docs/changelog"><span title="Változási napló" class="linkLabel_WmDU">Változási napló</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Navigációs sáv a jelenlegi oldalhoz"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Kezdőlap" class="breadcrumbs__link" href="/Thunderbird-Reply-with-Attachments/hu/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Fejlesztés</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Ezen az oldalon</button></div><div class="theme-doc-markdown markdown"><header><h1>Fejlesztés</h1></header><hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-guide">Fejlesztési útmutató<a href="#development-guide" class="hash-link" aria-label="Közvetlen hivatkozás erre: Fejlesztési útmutató" title="Közvetlen hivatkozás erre: Fejlesztési útmutató" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Csak az angol verziót szerkeszd; a fordítások automatikusan frissülnek</div><div class="admonitionContent_BuS1"><p>A dokumentációt kizárólag a <code>website/docs</code> (angol) alatt frissítsd. A <code>website/i18n/&lt;locale&gt;/…</code> alatti fordítások generáltak, kézzel ne szerkeszd őket. Használd a fordítási feladatokat (pl. <code>make translate_web_docs_batch</code>) a lokalizált tartalom frissítéséhez.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Előfeltételek<a href="#prerequisites" class="hash-link" aria-label="Közvetlen hivatkozás erre: Előfeltételek" title="Közvetlen hivatkozás erre: Előfeltételek" translate="no">​</a></h3>
+<ul>
+<li class="">Node.js 22+ és npm (tesztelve Node 22-vel)</li>
+<li class="">Thunderbird 128 ESR vagy újabb (kézi teszteléshez)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-layout-high-level">Projektstruktúra (magas szintű)<a href="#project-layout-high-level" class="hash-link" aria-label="Közvetlen hivatkozás erre: Projektstruktúra (magas szintű)" title="Közvetlen hivatkozás erre: Projektstruktúra (magas szintű)" translate="no">​</a></h3>
+<ul>
+<li class="">Gyökér: csomagolási szkript <code>distribution_zip_packer.sh</code>, dokumentáció, képernyőképek</li>
+<li class=""><code>sources/</code>: fő bővítménykód (háttér, beállítások/felugró UI, manifestek, ikonok)</li>
+<li class=""><code>tests/</code>: Vitest tesztcsomag</li>
+<li class=""><code>website/</code>: Docusaurus dokumentáció (i18n a <code>website/i18n/de/...</code> alatt)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-and-tooling">Telepítés és eszközök<a href="#install-and-tooling" class="hash-link" aria-label="Közvetlen hivatkozás erre: Telepítés és eszközök" title="Közvetlen hivatkozás erre: Telepítés és eszközök" translate="no">​</a></h3>
+<ul>
+<li class="">Gyökérfüggőségek telepítése: <code>npm ci</code></li>
+<li class="">Dokumentáció (opcionális): <code>cd website &amp;&amp; npm ci</code></li>
+<li class="">Célok felfedezése: <code>make help</code></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="live-dev-web-ext">Élő fejlesztés (web‑ext run)<a href="#live-dev-web-ext" class="hash-link" aria-label="Közvetlen hivatkozás erre: Élő fejlesztés (web‑ext run)" title="Közvetlen hivatkozás erre: Élő fejlesztés (web‑ext run)" translate="no">​</a></h3>
+<ul>
+<li class="">Gyors ciklus Firefox Desktopon (csak UI smoke-tesztek):</li>
+<li class=""><code>npx web-ext run --source-dir sources --target=firefox-desktop</code></li>
+<li class="">Futtatás Thunderbirdben (MailExtensions esetén ajánlott):</li>
+<li class=""><code>npx web-ext run --source-dir sources --start-url about:addons --firefox-binary &quot;$(command -v thunderbird || echo /path/to/thunderbird)&quot;</code></li>
+<li class="">Tippek:</li>
+<li class="">Tartsd nyitva a Thunderbird hibakonzolját (Eszközök → Fejlesztői eszközök → Hibakonzol).</li>
+<li class="">Az MV3 eseményoldalak inaktivitáskor felfüggesztésre kerülnek; kódmódosítás után töltsd újra a bővítményt, vagy hagyd, hogy a web‑ext automatikusan újratöltse.</li>
+<li class="">Néhány kizárólag Firefoxban elérhető viselkedés eltérhet; az API‑egyezőség érdekében mindig ellenőrizd Thunderbirdben is.</li>
+<li class="">Thunderbird bináris elérési utak (példák):</li>
+<li class="">Linux: <code>thunderbird</code> (pl. <code>/usr/bin/thunderbird</code>)</li>
+<li class="">macOS: <code>/Applications/Thunderbird.app/Contents/MacOS/thunderbird</code></li>
+<li class="">Windows: <code>&quot;C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe&quot;</code></li>
+<li class="">Profilizoláció: Használj külön Thunderbird-profilt a fejlesztéshez, hogy ne befolyásold a napi beállításaidat.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-targets-alphabetical">Make célok (ábécésorrendben)<a href="#make-targets-alphabetical" class="hash-link" aria-label="Közvetlen hivatkozás erre: Make célok (ábécésorrendben)" title="Közvetlen hivatkozás erre: Make célok (ábécésorrendben)" translate="no">​</a></h3>
+<p>A Makefile egységesíti a gyakori fejlesztési folyamatokat. Futtasd a <code>make help</code> parancsot bármikor az összes cél egysoros összefoglalójáért.</p>
+<p>Tipp: ha a <code>make</code> parancsot cél nélkül futtatod, egy egyszerű Whiptail menü nyílik, ahol kiválaszthatod a célt.</p>
+<table><thead><tr><th>Cél</th><th>Egysoros leírás</th></tr></thead><tbody><tr><td><a href="#mt-clean" class=""><code>clean</code></a></td><td>Helyi build/előnézeti artefaktumok eltávolítása (tmp/, web-local-preview/, website/build/).</td></tr><tr><td><a href="#mt-commit" class=""><code>commit</code></a></td><td>Formázás, tesztek futtatása (i18n‑nel együtt), changelog frissítése, commit és push.</td></tr><tr><td><a href="#mt-eslint" class=""><code>eslint</code></a></td><td>ESLint futtatása flat konfigurációval (<code>npm run -s lint:eslint</code>).</td></tr><tr><td><a href="#mt-help" class=""><code>help</code></a></td><td>Minden cél listázása egysoros leírással (rendezve).</td></tr><tr><td><a href="#mt-lint" class=""><code>lint</code></a></td><td>web‑ext lint a <code>sources/</code>-on (ideiglenes manifest; figyelmen kívül hagyja a ZIP-eket; nem végzetes).</td></tr><tr><td><a href="#mt-menu" class=""><code>menu</code></a></td><td>Interaktív menü cél és opcionális argumentumok kiválasztásához.</td></tr><tr><td><a href="#mt-pack" class=""><code>pack</code></a></td><td>ATN és LOCAL ZIP-ek építése (linter futtatása; csomagolószkript hívása).</td></tr><tr><td><a href="#mt-prettier" class=""><code>prettier</code></a></td><td>A repó helyben történő formázása (módosításokat ír).</td></tr><tr><td><a href="#mt-prettier_check" class=""><code>prettier_check</code></a></td><td>Prettier ellenőrző módban (nincs írás); akkor hibázik, ha újraformázás szükséges.</td></tr><tr><td><a href="#mt-prettier_write" class=""><code>prettier_write</code></a></td><td>Alias a következőhöz: <code>prettier</code>.</td></tr><tr><td><a href="#mt-test" class=""><code>test</code></a></td><td>Prettier (írás), ESLint, majd Vitest (ha be van állítva, lefedettséggel).</td></tr><tr><td><a href="#mt-test_i18n" class=""><code>test_i18n</code></a></td><td>Csak i18n tesztek: bővítmény helyőrzők/egyezőség + webhely-egyezőség.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translate_app</code></a></td><td>Alias a következőhöz: <code>translation_app</code>.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translation_app</code></a></td><td>Alkalmazás UI‑sztringek fordítása innen: <code>sources/_locales/en/messages.json</code>.</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_batch</code></a></td><td>Webhely-dokumentumok fordítása OpenAI Batch API-n keresztül (ajánlott).</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_sync</code></a></td><td>Webhely-dokumentumok szinkron fordítása (örökölt, nem batch).</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translate_web_index</code></a></td><td>Alias a következőhöz: <code>translation_web_index</code>.</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translation_web_index</code></a></td><td>Kezdőlap/navigáció/lábléc UI fordítása (<code>website/i18n/en/code.json → .../&lt;lang&gt;/code.json</code>).</td></tr><tr><td><a href="#mt-web_build" class=""><code>web_build</code></a></td><td>Dokumentáció építése ide: <code>website/build</code> (támogatja: <code>--locales</code> / <code>BUILD_LOCALES</code>).</td></tr><tr><td><a href="#mt-web_build_linkcheck" class=""><code>web_build_linkcheck</code></a></td><td>Offline‑biztonságos hivatkozás‑ellenőrzés (kihagyja a távoli HTTP[S]).</td></tr><tr><td><a href="#mt-web_build_local_preview" class=""><code>web_build_local_preview</code></a></td><td>Helyi gh‑pages előnézet; automatikus kiszolgálás 8080–8090; opcionális tesztek/link‑ellenőrzés.</td></tr><tr><td><a href="#mt-web_push_github" class=""><code>web_push_github</code></a></td><td>A <code>website/build</code> feltöltése a <code>gh-pages</code> ágra.</td></tr></tbody></table>
+<p>Syntax for options</p>
+<ul>
+<li class="">Használd a <code>make &lt;command&gt; OPTS=&quot;…&quot;</code>-t az opciók átadásához (ajánlott idézőjelek). Az alábbi célok mindegyike példát mutat a használatra.</li>
+</ul>
+<p>--</p>
+<ul>
+<li class=""></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="locale-build-tips">Nyelvi build tippek<a href="#locale-build-tips" class="hash-link" aria-label="Közvetlen hivatkozás erre: Nyelvi build tippek" title="Közvetlen hivatkozás erre: Nyelvi build tippek" translate="no">​</a></h4>
+<ul>
+<li class="">Nyelvek egy részhalmazának építése: állítsd be <code>BUILD_LOCALES=&quot;en de&quot;</code>-t vagy add át a <code>OPTS=&quot;--locales en,de&quot;</code>-t a webes céloknak.</li>
+<li class="">Egy adott nyelv előnézete: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/de/</code>.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-and-package">Build és csomagolás<a href="#build-and-package" class="hash-link" aria-label="Közvetlen hivatkozás erre: Build és csomagolás" title="Közvetlen hivatkozás erre: Build és csomagolás" translate="no">​</a></h3>
+<ul>
+<li class="">ZIP-ek építése: <code>make pack</code></li>
+<li class="">ATN és LOCAL ZIP-eket hoz létre a repó gyökerében (artefaktumokat ne szerkeszd kézzel)</li>
+<li class="">Tipp: csomagolás előtt frissítsd a verziót mind a <code>sources/manifest_ATN.json</code>-ben, mind a <code>sources/manifest_LOCAL.json</code>-ben</li>
+<li class="">Kézi telepítés (fejlesztés): Thunderbird → Eszközök → Kiegészítők és témák → fogaskerék → Kiegészítő telepítése fájlból… → válaszd ki a felépített ZIP‑et</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test">Teszt<a href="#test" class="hash-link" aria-label="Közvetlen hivatkozás erre: Teszt" title="Közvetlen hivatkozás erre: Teszt" translate="no">​</a></h3>
+<ul>
+<li class="">Teljes csomag: <code>make test</code> (Vitest)</li>
+<li class="">Lefedettség (opcionális):</li>
+<li class=""><code>npm i -D @vitest/coverage-v8</code></li>
+<li class="">Futtasd: <code>make test</code>; nyisd meg: <code>coverage/index.html</code> a HTML jelentéshez</li>
+<li class="">Csak i18n: <code>make test_i18n</code> (UI kulcsok/helyőrzők/címek + webhely nyelvenként és dokumentumonkénti egyezőség id/title/sidebar_label ellenőrzésekkel)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="debugging-and-logs">Hibakeresés és naplók<a href="#debugging-and-logs" class="hash-link" aria-label="Közvetlen hivatkozás erre: Hibakeresés és naplók" title="Közvetlen hivatkozás erre: Hibakeresés és naplók" translate="no">​</a></h3>
+<ul>
+<li class="">Hibakonzol: Eszközök → Fejlesztői eszközök → Hibakonzol</li>
+<li class="">Részletes naplók kapcsolása futás közben:</li>
+<li class="">Engedélyezés: <code>messenger.storage.local.set({ debug: true })</code></li>
+<li class="">Kikapcsolás: <code>messenger.storage.local.set({ debug: false })</code></li>
+<li class="">A naplók az üzenetek szerkesztése/küldése közben jelennek meg</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="docs-website">Dokumentáció (webhely)<a href="#docs-website" class="hash-link" aria-label="Közvetlen hivatkozás erre: Dokumentáció (webhely)" title="Közvetlen hivatkozás erre: Dokumentáció (webhely)" translate="no">​</a></h3>
+<ul>
+<li class="">Fejlesztői szerver: <code>cd website &amp;&amp; npm run start</code></li>
+<li class="">Statikus webhely építése: <code>cd website &amp;&amp; npm run build</code></li>
+<li class="">Make megfelelői (ábécé szerint): <code>make web_build</code>, <code>make web_build_linkcheck</code>, <code>make web_build_local_preview</code>, <code>make web_push_github</code></li>
+<li class="">Használati példák:</li>
+<li class="">Csak EN, tesztek/link‑ellenőrzés kihagyása, nincs push: <code>make web_build_local_preview OPTS=&quot;--locales en --no-test --no-link-check --dry-run&quot;</code></li>
+<li class="">Minden nyelv, tesztekkel/link‑ellenőrzéssel, majd push: <code>make web_build_local_preview &amp;&amp; make web_push_github</code></li>
+<li class="">Közzététel előtt futtasd az offline‑biztonságos link‑ellenőrzést: <code>make web_build_linkcheck</code>.</li>
+<li class="">i18n: az angol a <code>website/docs/*.md</code> alatt található; a német fordítások a <code>website/i18n/de/docusaurus-plugin-content-docs/current/*.md</code> alatt</li>
+<li class="">Keresés: ha az Algolia DocSearch környezeti változók be vannak állítva a CI‑ban (<code>DOCSEARCH_APP_ID</code>, <code>DOCSEARCH_API_KEY</code>, <code>DOCSEARCH_INDEX_NAME</code>), az oldal az Algolia keresőt használja; ellenkező esetben helyi keresőre esik vissza. A kezdőlapon nyomd meg a <code>/</code> vagy <code>Ctrl+K</code> billentyűt a keresőmező megnyitásához.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="donate-redirect">Adományozás átirányító útvonal<a href="#donate-redirect" class="hash-link" aria-label="Közvetlen hivatkozás erre: Adományozás átirányító útvonal" title="Közvetlen hivatkozás erre: Adományozás átirányító útvonal" translate="no">​</a></h4>
+<ul>
+<li class=""><code>website/src/pages/donate.js</code></li>
+<li class="">Útvonal: <code>/donate</code> (és <code>/&lt;locale&gt;/donate</code>)</li>
+<li class="">Viselkedés:</li>
+<li class="">Ha az aktuális útvonal tartalmaz nyelvi kódot (pl. <code>/de/donate</code>), azt használja</li>
+<li class="">Ellenkező esetben a <code>navigator.languages</code> és a beállított nyelvek közül a legjobb egyezést választja; alapértelmezett nyelvre esik vissza</li>
+<li class="">Átirányítás ide:</li>
+<li class=""><code>en</code> → <code>/docs/donation</code></li>
+<li class="">egyéb → <code>/&lt;locale&gt;/docs/donation</code></li>
+<li class=""><code>useBaseUrl</code> használata a helyes baseUrl‑kezeléshez</li>
+<li class="">Meta frissítés + <code>noscript</code> hivatkozás tartalékmegoldásként</li>
+</ul>
+<hr>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preview-tips">Előnézeti tippek<a href="#preview-tips" class="hash-link" aria-label="Közvetlen hivatkozás erre: Előnézeti tippek" title="Közvetlen hivatkozás erre: Előnézeti tippek" translate="no">​</a></h4>
+<ul>
+<li class="">Node előnézet tiszta leállítása: nyisd meg a <code>http://localhost:&lt;port&gt;/__stop</code> fájlt (<code>Local server started</code> után kerül kiírásra).</li>
+<li class="">Ha a képek nem töltődnek be MDX/JSX-ben, használd a <code>useBaseUrl(&#x27;/img/...&#x27;)</code>-t a webhely <code>baseUrl</code> tiszteletben tartásához.</li>
+<li class="">Az előnézet először indul; a link‑ellenőrzés ezután fut, és nem blokkoló (a törött külső hivatkozások nem állítják le az előnézetet).</li>
+<li class="">Példa előnézeti URL: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/</code> („Local server started” után kerül kiírásra).</li>
+<li class="">Külső linkek a link‑ellenőrzésben: Egyes külső oldalak (pl. addons.thunderbird.net) blokkolják az automata feltérképezőket, és 403‑at adhatnak a link‑ellenőrzésben. Az előnézet ettől még elindul; ezeket biztonságosan figyelmen kívül hagyhatod.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate-website">A webhely fordítása<a href="#translate-website" class="hash-link" aria-label="Közvetlen hivatkozás erre: A webhely fordítása" title="Közvetlen hivatkozás erre: A webhely fordítása" translate="no">​</a></h4>
+<p>Mit fordíthatsz</p>
+<ul>
+<li class="">Csak a webhely UI‑t: kezdőlap, navigációs sáv, lábléc és egyéb UI‑sztringek. A dokumentációs tartalom egyelőre angol marad.</li>
+</ul>
+<p>Hol szerkessz</p>
+<ul>
+<li class="">Szerkeszd: <code>website/i18n/&lt;locale&gt;/code.json</code> (hivatkozásként használd: <code>en</code>). Hagyd érintetlenül az olyan helyőrzőket, mint <code>{year}</code>, <code>{slash}</code>, <code>{ctrl}</code>, <code>{k}</code>, <code>{code1}</code>.</li>
+</ul>
+<p>Fájlok létrehozása vagy frissítése</p>
+<ul>
+<li class="">Hiányzó csonkok létrehozása minden nyelvhez: <code>npm --prefix website run i18n:stubs</code></li>
+<li class="">Csonkok felülírása az angolból (új sztringek hozzáadása után): <code>npm --prefix website run i18n:stubs:force</code></li>
+<li class="">Alternatíva egyetlen nyelvhez: <code>npx --prefix website docusaurus write-translations --locale &lt;locale&gt;</code></li>
+</ul>
+<p>Kezdőlap/navigáció/lábléc UI‑sztringek fordítása (OpenAI)</p>
+<ul>
+<li class="">Hitelesítési adatok egyszeri beállítása (shell vagy .env):</li>
+<li class=""><code>export OPENAI_API_KEY=sk-...</code></li>
+<li class="">Opcionális: <code>export OPENAI_MODEL=gpt-4o-mini</code></li>
+<li class="">Egylépéses (minden nyelv, en kihagyása): <code>make translate_web_index</code></li>
+<li class="">Korlátozás megadott nyelvekre: <code>make translate_web_index OPTS=&quot;--locales de,fr&quot;</code></li>
+<li class="">Meglévő értékek felülírása: <code>make translate_web_index OPTS=&quot;--force&quot;</code></li>
+</ul>
+<p>Érvényesítés és újrapróbálkozás</p>
+<ul>
+<li class="">A fordítószkript ellenőrzi a JSON szerkezetét, megőrzi a kapcsos zárójelű helyőrzőket, és biztosítja, hogy az URL‑ek változatlanok maradjanak.</li>
+<li class="">Érvényesítési hiba esetén visszajelzéssel együtt legfeljebb kétszer próbálkozik újra, mielőtt meghagyná a meglévő értékeket.</li>
+</ul>
+<p>Saját nyelved előnézete</p>
+<ul>
+<li class="">Fejlesztői szerver: <code>npm --prefix website run start</code></li>
+<li class="">Látogasd meg: <code>http://localhost:3000/&lt;locale&gt;/Thunderbird-Reply-with-Attachments/</code></li>
+</ul>
+<p>Beküldés</p>
+<ul>
+<li class="">Nyiss PR‑t a szerkesztett <code>code.json</code> fájl(ok)kal. Tartsd fókuszáltan a változtatásokat, és ha lehet, mellékelj egy gyors képernyőfotót.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-and-configuration-tips">Biztonsági és konfigurációs tippek<a href="#security-and-configuration-tips" class="hash-link" aria-label="Közvetlen hivatkozás erre: Biztonsági és konfigurációs tippek" title="Közvetlen hivatkozás erre: Biztonsági és konfigurációs tippek" translate="no">​</a></h3>
+<ul>
+<li class="">Ne commitold a <code>sources/manifest.json</code> fájlt (a build ideiglenesen hozza létre)</li>
+<li class="">Tartsd stabilan a <code>browser_specific_settings.gecko.id</code>‑t a frissítési csatorna megőrzéséhez</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settings-persistence">Beállítások megőrzése<a href="#settings-persistence" class="hash-link" aria-label="Közvetlen hivatkozás erre: Beállítások megőrzése" title="Közvetlen hivatkozás erre: Beállítások megőrzése" translate="no">​</a></h3>
+<ul>
+<li class="">Tárolás: Minden felhasználói beállítás a <code>storage.local</code> alatt él, és a bővítményfrissítéseken át megmarad.</li>
+<li class="">Telepítés: Az alapértékek csak akkor alkalmazódnak, ha egy kulcs szigorúan hiányzik (undefined).</li>
+<li class="">Frissítés: A migráció csak a hiányzó kulcsokat tölti ki; meglévő értékeket soha nem ír felül.</li>
+<li class="">Sémajelző: <code>settingsVersion</code> (jelenleg: <code>1</code>).</li>
+<li class="">Kulcsok és alapértékek:</li>
+<li class=""><code>blacklistPatterns: string[]</code> → <code>[&#x27;*intern*&#x27;, &#x27;*secret*&#x27;, &#x27;*passwor*&#x27;]</code></li>
+<li class=""><code>confirmBeforeAdd: boolean</code> → <code>false</code></li>
+<li class=""><code>confirmDefaultChoice: &#x27;yes&#x27;|&#x27;no&#x27;</code> → <code>&#x27;yes&#x27;</code></li>
+<li class=""><code>warnOnBlacklistExcluded: boolean</code> → <code>true</code></li>
+<li class="">Kód: lásd: <code>sources/background.js</code> → <code>initializeOrMigrateSettings()</code> és <code>SCHEMA_VERSION</code>.</li>
+</ul>
+<p>Fejlesztői folyamat (új beállítás hozzáadása)</p>
+<ul>
+<li class="">Emeld a <code>SCHEMA_VERSION</code> értékét a <code>sources/background.js</code> fájlban.</li>
+<li class="">Add hozzá az új kulcsot + alapértéket a <code>DEFAULTS</code> objektumhoz a <code>initializeOrMigrateSettings()</code> fájlban.</li>
+<li class="">Az alapértékek bevetésénél használd az „csak-ha-undefined” szabályt; ne írd felül a meglévő értékeket.</li>
+<li class="">Ha a beállítás felhasználó számára látható, kösd be a <code>sources/options.js</code>-ben, és add hozzá a lokalizált sztringeket.</li>
+<li class="">Adj hozzá/igazíts teszteket (lásd: <code>tests/background.settings.migration.test.js</code>).</li>
+</ul>
+<p>Kézi tesztelési tippek</p>
+<ul>
+<li class="">Friss telepítés szimulálása: töröld a kiegészítő adatkönyvtárát, vagy indíts új profillal.</li>
+<li class="">Frissítés szimulálása: állítsd <code>settingsVersion</code> értékét <code>0</code>-re a <code>storage.local</code> fájlban, majd töltsd újra; ellenőrizd, hogy a meglévő értékek változatlanok maradnak, és csak a hiányzó kulcsok kerülnek hozzáadásra.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Hibaelhárítás<a href="#troubleshooting" class="hash-link" aria-label="Közvetlen hivatkozás erre: Hibaelhárítás" title="Közvetlen hivatkozás erre: Hibaelhárítás" translate="no">​</a></h3>
+<ul>
+<li class="">Győződj meg róla, hogy a Thunderbird 128 ESR vagy újabb</li>
+<li class="">Használd a Hibakonzolt futásidejű problémákhoz</li>
+<li class="">Ha úgy tűnik, hogy a tárolt beállítások nem alkalmazódnak megfelelően, indítsd újra a Thunderbirdöt, és próbáld újra. (A Thunderbird munkamenetek között állapotot gyorsíthatótárazhat; az újraindítás biztosítja a friss beállítások betöltését.)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ci-and-coverage">CI és lefedettség<a href="#ci-and-coverage" class="hash-link" aria-label="Közvetlen hivatkozás erre: CI és lefedettség" title="Közvetlen hivatkozás erre: CI és lefedettség" translate="no">​</a></h3>
+<ul>
+<li class="">A GitHub Actions (<code>CI — Tests</code>) a vitestet lefedettségi küszöbökkel futtatja (85% sorok/függvények/ágak/utasítások). Ha a küszöbök nem teljesülnek, a feladat meghiúsul.</li>
+<li class="">A workflow feltölt egy <code>coverage-html</code> artefaktumot a HTML jelentéssel; töltsd le a futás oldaláról (Actions → legutóbbi futás → Artifacts).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">Hozzájárulás<a href="#contributing" class="hash-link" aria-label="Közvetlen hivatkozás erre: Hozzájárulás" title="Közvetlen hivatkozás erre: Hozzájárulás" translate="no">​</a></h3>
+<ul>
+<li class="">Lásd a CONTRIBUTING.md fájlt az ág/commit/PR irányelvekért</li>
+<li class="">Tipp: Hozz létre külön Thunderbird fejlesztői profilt a teszteléshez, hogy ne befolyásold a mindennapi profilt.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fordítások">Fordítások<a href="#fordítások" class="hash-link" aria-label="Közvetlen hivatkozás erre: Fordítások" title="Közvetlen hivatkozás erre: Fordítások" translate="no">​</a></h3>
+<ul>
+<li class="">A nagy „all → all” fordítási feladatok lassúak és költségesek lehetnek. Kezdd egy részhalmazzal (pl. néhány dokumentum és 1–2 nyelv), vizsgáld felül az eredményt, majd bővítsd.</li>
+</ul>
+<hr>
+<ul>
+<li class="">Újrapróbálási irányelv: a fordítási feladatok legfeljebb 3 újrapróbálkozást végeznek exponenciális visszavárakozással API‑hibák esetén; lásd: <code>scripts/translate_web_docs_batch.js</code> és <code>scripts/translate_web_docs_sync.js</code>.</li>
+</ul>
+<p>Képernyőképek a dokumentációhoz</p>
+<ul>
+<li class="">
+<p>Képeket a <code>website/static/img/</code> alatt tárold.</p>
+</li>
+<li class="">
+<p>Hivatkozz rájuk MD/MDX-ben a <code>useBaseUrl(&#x27;/img/&lt;filename&gt;&#x27;)</code> segítségével, hogy az útvonalak működjenek a webhely <code>baseUrl</code>-val.</p>
+</li>
+<li class="">
+<p>Miután képeket adtál hozzá vagy nevezél át a <code>website/static/img/</code> alatt, ellenőrizd, hogy minden hivatkozás továbbra is a <code>useBaseUrl(&#x27;/img/…&#x27;)</code>-t használja, és megjelenik helyi előnézetben.
+Favikonok</p>
+</li>
+<li class="">
+<p>A többméretű <code>favicon.ico</code> automatikusan generálódik minden buildútvonalon (Make + szkriptek) a <code>website/scripts/build-favicon.mjs</code> segítségével.</p>
+</li>
+<li class="">
+<p>Nincs szükség kézi lépésre; a <code>icon-*.png</code> frissítése elegendő.
+Ellenőrzési tipp</p>
+</li>
+<li class="">
+<p>Hagyd változatlanul a <code>id</code> front‑matter mezőt a fordított dokumentumokban; csak a <code>title</code> és <code>sidebar_label</code> értékét fordítsd le, ha jelen vannak.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-clean">clean<a href="#mt-clean" class="hash-link" aria-label="Közvetlen hivatkozás erre: clean" title="Közvetlen hivatkozás erre: clean" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: helyi build/előnézeti artefaktumok eltávolítása.</li>
+<li class="">Használat: <code>make clean</code></li>
+<li class="">Eltávolítja (ha léteznek):</li>
+<li class=""><code>tmp/</code></li>
+<li class=""><code>web-local-preview/</code></li>
+<li class=""><code>website/build/</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-commit">commit<a href="#mt-commit" class="hash-link" aria-label="Közvetlen hivatkozás erre: commit" title="Közvetlen hivatkozás erre: commit" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: formázás, tesztelés, changelog frissítése, commit és push.</li>
+<li class="">Használat: <code>make commit</code></li>
+<li class="">Részletek: futtatja a Prettier‑t (írás), <code>make test</code>, <code>make test_i18n</code>; hozzáfűzi a changelogot, ha van stage-elt diff; push a <code>origin/&lt;branch&gt;</code>  ágra.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-eslint">eslint<a href="#mt-eslint" class="hash-link" aria-label="Közvetlen hivatkozás erre: eslint" title="Közvetlen hivatkozás erre: eslint" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: ESLint futtatása flat konfigurációval.</li>
+<li class="">Használat: <code>make eslint</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-help">help<a href="#mt-help" class="hash-link" aria-label="Közvetlen hivatkozás erre: help" title="Közvetlen hivatkozás erre: help" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: az összes cél listázása egysoros leírással.</li>
+<li class="">Használat: <code>make help</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-lint">lint<a href="#mt-lint" class="hash-link" aria-label="Közvetlen hivatkozás erre: lint" title="Közvetlen hivatkozás erre: lint" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a MailExtension lintelése <code>web-ext</code> használatával.</li>
+<li class="">Használat: <code>make lint</code></li>
+<li class="">Megjegyzések: ideiglenesen átmásolja: <code>sources/manifest_LOCAL.json</code> → <code>sources/manifest.json</code>; a felépített ZIP‑eket figyelmen kívül hagyja; a figyelmeztetések nem bukatják el a folyamatot.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-menu">menu<a href="#mt-menu" class="hash-link" aria-label="Közvetlen hivatkozás erre: menu" title="Közvetlen hivatkozás erre: menu" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: interaktív menü Make cél és opcionális argumentumok kiválasztásához.</li>
+<li class="">Használat: futtasd a <code>make</code> parancsot argumentumok nélkül.</li>
+<li class="">Megjegyzések: ha a <code>whiptail</code> nem érhető el, a menü a <code>make help</code>-re esik vissza.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-pack">pack<a href="#mt-pack" class="hash-link" aria-label="Közvetlen hivatkozás erre: pack" title="Közvetlen hivatkozás erre: pack" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: ATN és LOCAL ZIP‑ek építése (<code>lint</code> függőség).</li>
+<li class="">Használat: <code>make pack</code></li>
+<li class="">Tipp: csomagolás előtt emeld a verziókat mindkét <code>sources/manifest_*.json</code>-ben.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier">prettier<a href="#mt-prettier" class="hash-link" aria-label="Közvetlen hivatkozás erre: prettier" title="Közvetlen hivatkozás erre: prettier" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a repó helyben történő formázása.</li>
+<li class="">Használat: <code>make prettier</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_check">prettier_check<a href="#mt-prettier_check" class="hash-link" aria-label="Közvetlen hivatkozás erre: prettier_check" title="Közvetlen hivatkozás erre: prettier_check" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: formázás ellenőrzése (írás nélkül).</li>
+<li class="">Használat: <code>make prettier_check</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_write">prettier_write<a href="#mt-prettier_write" class="hash-link" aria-label="Közvetlen hivatkozás erre: prettier_write" title="Közvetlen hivatkozás erre: prettier_write" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: alias a következőhöz: <code>prettier</code>.</li>
+<li class="">Használat: <code>make prettier_write</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test">test<a href="#mt-test" class="hash-link" aria-label="Közvetlen hivatkozás erre: test" title="Közvetlen hivatkozás erre: test" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: Prettier (írás), ESLint, majd Vitest futtatása (ha telepítve, lefedettséggel).</li>
+<li class="">Használat: <code>make test</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test_i18n">test_i18n<a href="#mt-test_i18n" class="hash-link" aria-label="Közvetlen hivatkozás erre: test_i18n" title="Közvetlen hivatkozás erre: test_i18n" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: i18n‑fókuszú tesztek a bővítmény sztringjeire és a webhely dokumentumaira.</li>
+<li class="">Használat: <code>make test_i18n</code></li>
+<li class="">Futtatja: <code>npm run test:i18n</code> és <code>npm run -s test:website-i18n</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-app">translate_app / translation_app<a href="#mt-translation-app" class="hash-link" aria-label="Közvetlen hivatkozás erre: translate_app / translation_app" title="Közvetlen hivatkozás erre: translate_app / translation_app" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a bővítmény UI‑sztringjeinek fordítása angolról más nyelvekre.</li>
+<li class="">Használat: <code>make translation_app OPTS=&quot;--locales all|de,fr&quot;</code></li>
+<li class="">Megjegyzések: megőrzi a kulcsstruktúrát és a helyőrzőket; naplózás ide: <code>translation_app.log</code>. Szkriptes forma: <code>node scripts/translate_app.js --locales …</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-web">translate_web_docs_batch / translate_web_docs_sync<a href="#mt-translation-web" class="hash-link" aria-label="Közvetlen hivatkozás erre: translate_web_docs_batch / translate_web_docs_sync" title="Közvetlen hivatkozás erre: translate_web_docs_batch / translate_web_docs_sync" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a webhely dokumentumainak fordítása <code>website/docs/*.md</code> nyelvről <code>website/i18n/&lt;locale&gt;/...</code> nyelvekre.</li>
+<li class="">Előnyben részesített: <code>translate_web_docs_batch</code> (OpenAI Batch API)<!-- -->
+<ul>
+<li class="">Használat (flag-ek): <code>make translate_web_docs_batch OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">A régi pozicionális forma továbbra is elfogadott: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Működés: JSONL építése, feltöltés, 30 mp‑enkénti lekérdezés, eredmények letöltése, fájlok írása.</li>
+<li class="">Megjegyzés: egy batch feladat akár 24 óráig is eltarthat (az OpenAI batch ablakának megfelelően). A konzol minden lekérdezésnél kiírja az eltelt időt.</li>
+<li class="">Környezet: <code>OPENAI_API_KEY</code> (kötelező), opcionális: <code>OPENAI_MODEL</code>, <code>OPENAI_TEMPERATURE</code>, <code>OPENAI_BATCH_WINDOW</code> (alapértelmezés 24 óra), <code>BATCH_POLL_INTERVAL_MS</code>.</li>
+<li class="">Örökölt: <code>translate_web_docs_sync</code>
+<ul>
+<li class="">Használat (flag-ek): <code>make translate_web_docs_sync OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">A régi pozicionális forma továbbra is elfogadott: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Működés: szinkron, páronkénti kérések (nincs batch aggregáció).</li>
+<li class="">Megjegyzések: interaktív kérdések, ha a <code>OPTS</code> hiányzik. Mindkét mód megőrzi a kódtömböket/inline kódot, és változatlanul hagyja a front‑matter <code>id</code> értékét; naplózás ide: <code>translation_web_batch.log</code> (batch) vagy <code>translation_web_sync.log</code> (sync).</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation_web_index">translate_web_index / translation_web_index<a href="#mt-translation_web_index" class="hash-link" aria-label="Közvetlen hivatkozás erre: translate_web_index / translation_web_index" title="Közvetlen hivatkozás erre: translate_web_index / translation_web_index" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: webhely UI‑sztringek (kezdőlap, navigáció, lábléc) fordítása <code>website/i18n/en/code.json</code> nyelvről a <code>website/i18n/&lt;locale&gt;/code.json</code> alatti összes nyelvre (<code>en</code> kivételével).</li>
+<li class="">Használat: <code>make translate_web_index</code> vagy <code>make translate_web_index OPTS=&quot;--locales de,fr [--force]&quot;</code></li>
+<li class="">Követelmények: exportáld a <code>OPENAI_API_KEY</code> változót (opcionális: <code>OPENAI_MODEL=gpt-4o-mini</code>).</li>
+<li class="">Működés: ellenőrzi a JSON szerkezetét, megőrzi a kapcsos zárójelű helyőrzőket, változatlanul hagyja az URL‑eket, és érvényesítési hibák esetén visszajelzéssel újrapróbálkozik.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build">web_build<a href="#mt-web_build" class="hash-link" aria-label="Közvetlen hivatkozás erre: web_build" title="Közvetlen hivatkozás erre: web_build" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a dokumentációs oldal felépítése ide: <code>website/build</code>.</li>
+<li class="">Használat: <code>make web_build OPTS=&quot;--locales en|de,en|all&quot;</code> (vagy állítsd be: <code>BUILD_LOCALES=&quot;en de&quot;</code>)</li>
+<li class="">Belső működés: <code>node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]</code>.</li>
+<li class="">Függőségek: <code>npm ci</code> fut a <code>website/</code> alatt, csak ha a <code>website/node_modules/@docusaurus</code> hiányzik.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_linkcheck">web_build_linkcheck<a href="#mt-web_build_linkcheck" class="hash-link" aria-label="Közvetlen hivatkozás erre: web_build_linkcheck" title="Közvetlen hivatkozás erre: web_build_linkcheck" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: offline‑biztonságos hivatkozás‑ellenőrzés.</li>
+<li class="">Használat: <code>make web_build_linkcheck OPTS=&quot;--locales en|all&quot;</code></li>
+<li class="">Megjegyzések: ide épít: <code>tmp_linkcheck_web_pages</code>; átírja a GH Pages <code>baseUrl</code>-t erre: <code>/</code>; kihagyja a távoli HTTP(S) linkeket.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_local_preview">web_build_local_preview<a href="#mt-web_build_local_preview" class="hash-link" aria-label="Közvetlen hivatkozás erre: web_build_local_preview" title="Közvetlen hivatkozás erre: web_build_local_preview" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: helyi gh‑pages előnézet opcionális tesztekkel/link‑ellenőrzéssel.</li>
+<li class="">Használat: <code>make web_build_local_preview OPTS=&quot;--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]&quot;</code></li>
+<li class="">Működés: először a Node előnézeti szervert próbálja (<code>scripts/preview-server.mjs</code>, támogatja: <code>/__stop</code>), visszaesik erre: <code>python3 -m http.server</code>; a 8080–8090 portokon szolgál ki; PID: <code>web-local-preview/.server.pid</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_push_github">web_push_github<a href="#mt-web_push_github" class="hash-link" aria-label="Közvetlen hivatkozás erre: web_push_github" title="Közvetlen hivatkozás erre: web_push_github" translate="no">​</a></h4>
+<ul>
+<li class="">Cél: a <code>website/build</code> feltöltése a <code>gh-pages</code> ágra.</li>
+<li class="">Használat: <code>make web_push_github</code></li>
+</ul>
+<p>Tipp: állítsd be a <code>NPM=…</code> változót a Makefile által használt csomagkezelő felülírásához (alapértelmezés: <code>npm</code>).</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Utolsó frissítés<!-- --> <b><time datetime="2025-09-13T01:25:23.000Z" itemprop="dateModified">2025. szept. 13.</time></b> napján</span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentációs oldal"><a class="pagination-nav__link pagination-nav__link--prev" href="/Thunderbird-Reply-with-Attachments/hu/docs/permissions"><div class="pagination-nav__sublabel">Előző oldal</div><div class="pagination-nav__label">Engedélyek</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Thunderbird-Reply-with-Attachments/hu/docs/languages"><div class="pagination-nav__sublabel">Következő oldal</div><div class="pagination-nav__label">Nyelvek</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#development-guide" class="table-of-contents__link toc-highlight">Fejlesztési útmutató</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Előfeltételek</a></li><li><a href="#project-layout-high-level" class="table-of-contents__link toc-highlight">Projektstruktúra (magas szintű)</a></li><li><a href="#install-and-tooling" class="table-of-contents__link toc-highlight">Telepítés és eszközök</a></li><li><a href="#live-dev-web-ext" class="table-of-contents__link toc-highlight">Élő fejlesztés (web‑ext run)</a></li><li><a href="#make-targets-alphabetical" class="table-of-contents__link toc-highlight">Make célok (ábécésorrendben)</a></li><li><a href="#build-and-package" class="table-of-contents__link toc-highlight">Build és csomagolás</a></li><li><a href="#test" class="table-of-contents__link toc-highlight">Teszt</a></li><li><a href="#debugging-and-logs" class="table-of-contents__link toc-highlight">Hibakeresés és naplók</a></li><li><a href="#docs-website" class="table-of-contents__link toc-highlight">Dokumentáció (webhely)</a></li><li><a href="#security-and-configuration-tips" class="table-of-contents__link toc-highlight">Biztonsági és konfigurációs tippek</a></li><li><a href="#settings-persistence" class="table-of-contents__link toc-highlight">Beállítások megőrzése</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Hibaelhárítás</a></li><li><a href="#ci-and-coverage" class="table-of-contents__link toc-highlight">CI és lefedettség</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Hozzájárulás</a></li><li><a href="#fordítások" class="table-of-contents__link toc-highlight">Fordítások</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/hu/docs/features">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/hu/docs/install">Install</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Project</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 Reply with Attachments</div></div></div></footer></div>
+</body>
+</html>

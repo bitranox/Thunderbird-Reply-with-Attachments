@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="su-ID" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-development" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Pangembangan | Reply with Attachments</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development"><meta data-rh="true" property="og:locale" content="su_ID"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" property="og:locale:alternate" content="hi_IN"><meta data-rh="true" property="og:locale:alternate" content="es_ES"><meta data-rh="true" property="og:locale:alternate" content="ar"><meta data-rh="true" property="og:locale:alternate" content="fr_FR"><meta data-rh="true" property="og:locale:alternate" content="bn_BD"><meta data-rh="true" property="og:locale:alternate" content="pt_PT"><meta data-rh="true" property="og:locale:alternate" content="ru_RU"><meta data-rh="true" property="og:locale:alternate" content="id_ID"><meta data-rh="true" property="og:locale:alternate" content="ur_PK"><meta data-rh="true" property="og:locale:alternate" content="de_DE"><meta data-rh="true" property="og:locale:alternate" content="ja_JP"><meta data-rh="true" property="og:locale:alternate" content="pa_IN"><meta data-rh="true" property="og:locale:alternate" content="jv_ID"><meta data-rh="true" property="og:locale:alternate" content="ms_MY"><meta data-rh="true" property="og:locale:alternate" content="te_IN"><meta data-rh="true" property="og:locale:alternate" content="vi_VN"><meta data-rh="true" property="og:locale:alternate" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="mr_IN"><meta data-rh="true" property="og:locale:alternate" content="ta_IN"><meta data-rh="true" property="og:locale:alternate" content="tr_TR"><meta data-rh="true" property="og:locale:alternate" content="it_IT"><meta data-rh="true" property="og:locale:alternate" content="th_TH"><meta data-rh="true" property="og:locale:alternate" content="gu_IN"><meta data-rh="true" property="og:locale:alternate" content="fa_IR"><meta data-rh="true" property="og:locale:alternate" content="pl_PL"><meta data-rh="true" property="og:locale:alternate" content="ps_AF"><meta data-rh="true" property="og:locale:alternate" content="kn_IN"><meta data-rh="true" property="og:locale:alternate" content="ml_IN"><meta data-rh="true" property="og:locale:alternate" content="or_IN"><meta data-rh="true" property="og:locale:alternate" content="my_MM"><meta data-rh="true" property="og:locale:alternate" content="uk_UA"><meta data-rh="true" property="og:locale:alternate" content="ro_RO"><meta data-rh="true" property="og:locale:alternate" content="nl_NL"><meta data-rh="true" property="og:locale:alternate" content="ha_NG"><meta data-rh="true" property="og:locale:alternate" content="sw_TZ"><meta data-rh="true" property="og:locale:alternate" content="am_ET"><meta data-rh="true" property="og:locale:alternate" content="hu_HU"><meta data-rh="true" property="og:locale:alternate" content="az_AZ"><meta data-rh="true" property="og:locale:alternate" content="uz_UZ"><meta data-rh="true" property="og:locale:alternate" content="sd_PK"><meta data-rh="true" property="og:locale:alternate" content="he_IL"><meta data-rh="true" property="og:locale:alternate" content="el_GR"><meta data-rh="true" property="og:locale:alternate" content="cs_CZ"><meta data-rh="true" property="og:locale:alternate" content="sv_SE"><meta data-rh="true" property="og:locale:alternate" content="bg_BG"><meta data-rh="true" property="og:locale:alternate" content="da_DK"><meta data-rh="true" property="og:locale:alternate" content="fi_FI"><meta data-rh="true" property="og:locale:alternate" content="no_NO"><meta data-rh="true" property="og:locale:alternate" content="sk_SK"><meta data-rh="true" property="og:locale:alternate" content="sr_RS"><meta data-rh="true" property="og:locale:alternate" content="hr_HR"><meta data-rh="true" property="og:locale:alternate" content="bs_BA"><meta data-rh="true" property="og:locale:alternate" content="sl_SI"><meta data-rh="true" property="og:locale:alternate" content="lt_LT"><meta data-rh="true" property="og:locale:alternate" content="lv_LV"><meta data-rh="true" property="og:locale:alternate" content="et_EE"><meta data-rh="true" property="og:locale:alternate" content="hy_AM"><meta data-rh="true" property="og:locale:alternate" content="ka_GE"><meta data-rh="true" property="og:locale:alternate" content="kk_KZ"><meta data-rh="true" property="og:locale:alternate" content="ky_KG"><meta data-rh="true" property="og:locale:alternate" content="tg_TJ"><meta data-rh="true" property="og:locale:alternate" content="tk_TM"><meta data-rh="true" property="og:locale:alternate" content="ne_NP"><meta data-rh="true" property="og:locale:alternate" content="si_LK"><meta data-rh="true" property="og:locale:alternate" content="km_KH"><meta data-rh="true" property="og:locale:alternate" content="lo_LA"><meta data-rh="true" property="og:locale:alternate" content="mn_MN"><meta data-rh="true" property="og:locale:alternate" content="yo_NG"><meta data-rh="true" property="og:locale:alternate" content="ig_NG"><meta data-rh="true" property="og:locale:alternate" content="om_ET"><meta data-rh="true" property="og:locale:alternate" content="zu_ZA"><meta data-rh="true" property="og:locale:alternate" content="xh_ZA"><meta data-rh="true" property="og:locale:alternate" content="af_ZA"><meta data-rh="true" property="og:locale:alternate" content="so_SO"><meta data-rh="true" property="og:locale:alternate" content="rw_RW"><meta data-rh="true" property="og:locale:alternate" content="rn_BI"><meta data-rh="true" property="og:locale:alternate" content="ln_CD"><meta data-rh="true" property="og:locale:alternate" content="sn_ZW"><meta data-rh="true" property="og:locale:alternate" content="ak_GH"><meta data-rh="true" property="og:locale:alternate" content="ff_SN"><meta data-rh="true" property="og:locale:alternate" content="bm_ML"><meta data-rh="true" property="og:locale:alternate" content="ny_MW"><meta data-rh="true" property="og:locale:alternate" content="ti_ER"><meta data-rh="true" property="og:locale:alternate" content="ug_CN"><meta data-rh="true" property="og:locale:alternate" content="ks_IN"><meta data-rh="true" property="og:locale:alternate" content="as_IN"><meta data-rh="true" property="og:locale:alternate" content="tl_PH"><meta data-rh="true" property="og:locale:alternate" content="ca_ES"><meta data-rh="true" property="og:locale:alternate" content="be_BY"><meta data-rh="true" property="og:locale:alternate" content="sq_AL"><meta data-rh="true" property="og:locale:alternate" content="qu_PE"><meta data-rh="true" property="og:locale:alternate" content="ht_HT"><meta data-rh="true" property="og:locale:alternate" content="mg_MG"><meta data-rh="true" property="og:locale:alternate" content="ku_TR"><meta data-rh="true" property="og:locale:alternate" content="wo_SN"><meta data-rh="true" property="og:locale:alternate" content="ga_IE"><meta data-rh="true" property="og:locale:alternate" content="is_IS"><meta data-rh="true" name="docusaurus_locale" content="su"><meta data-rh="true" name="docsearch:language" content="su"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Pangembangan | Reply with Attachments"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/Thunderbird-Reply-with-Attachments/su/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zh/docs/development" hreflang="zh"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hi/docs/development" hreflang="hi-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/es/docs/development" hreflang="es-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ar/docs/development" hreflang="ar"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fr/docs/development" hreflang="fr-FR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bn/docs/development" hreflang="bn-BD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pt/docs/development" hreflang="pt-PT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ru/docs/development" hreflang="ru-RU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/id/docs/development" hreflang="id-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ur/docs/development" hreflang="ur-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/de/docs/development" hreflang="de-DE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ja/docs/development" hreflang="ja-JP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pa/docs/development" hreflang="pa-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/jv/docs/development" hreflang="jv-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ms/docs/development" hreflang="ms-MY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/te/docs/development" hreflang="te-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/vi/docs/development" hreflang="vi-VN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ko/docs/development" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mr/docs/development" hreflang="mr-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ta/docs/development" hreflang="ta-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tr/docs/development" hreflang="tr-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/it/docs/development" hreflang="it-IT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/th/docs/development" hreflang="th-TH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/gu/docs/development" hreflang="gu-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fa/docs/development" hreflang="fa-IR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/pl/docs/development" hreflang="pl-PL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ps/docs/development" hreflang="ps-AF"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kn/docs/development" hreflang="kn-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ml/docs/development" hreflang="ml-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/or/docs/development" hreflang="or-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/my/docs/development" hreflang="my-MM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uk/docs/development" hreflang="uk-UA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ro/docs/development" hreflang="ro-RO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/nl/docs/development" hreflang="nl-NL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ha/docs/development" hreflang="ha-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sw/docs/development" hreflang="sw-TZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/am/docs/development" hreflang="am-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hu/docs/development" hreflang="hu-HU"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/az/docs/development" hreflang="az-AZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/uz/docs/development" hreflang="uz-UZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sd/docs/development" hreflang="sd-PK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/he/docs/development" hreflang="he-IL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/el/docs/development" hreflang="el-GR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/cs/docs/development" hreflang="cs-CZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sv/docs/development" hreflang="sv-SE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bg/docs/development" hreflang="bg-BG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/da/docs/development" hreflang="da-DK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/fi/docs/development" hreflang="fi-FI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/no/docs/development" hreflang="no-NO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sk/docs/development" hreflang="sk-SK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sr/docs/development" hreflang="sr-RS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hr/docs/development" hreflang="hr-HR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bs/docs/development" hreflang="bs-BA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sl/docs/development" hreflang="sl-SI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lt/docs/development" hreflang="lt-LT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lv/docs/development" hreflang="lv-LV"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/et/docs/development" hreflang="et-EE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/hy/docs/development" hreflang="hy-AM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ka/docs/development" hreflang="ka-GE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/kk/docs/development" hreflang="kk-KZ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ky/docs/development" hreflang="ky-KG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tg/docs/development" hreflang="tg-TJ"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tk/docs/development" hreflang="tk-TM"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ne/docs/development" hreflang="ne-NP"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/si/docs/development" hreflang="si-LK"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/km/docs/development" hreflang="km-KH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/lo/docs/development" hreflang="lo-LA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mn/docs/development" hreflang="mn-MN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development" hreflang="su-ID"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/yo/docs/development" hreflang="yo-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ig/docs/development" hreflang="ig-NG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/om/docs/development" hreflang="om-ET"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/zu/docs/development" hreflang="zu-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/xh/docs/development" hreflang="xh-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/af/docs/development" hreflang="af-ZA"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/so/docs/development" hreflang="so-SO"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rw/docs/development" hreflang="rw-RW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/rn/docs/development" hreflang="rn-BI"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ln/docs/development" hreflang="ln-CD"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sn/docs/development" hreflang="sn-ZW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ak/docs/development" hreflang="ak-GH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ff/docs/development" hreflang="ff-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/bm/docs/development" hreflang="bm-ML"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ny/docs/development" hreflang="ny-MW"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ti/docs/development" hreflang="ti-ER"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ug/docs/development" hreflang="ug-CN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ks/docs/development" hreflang="ks-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/as/docs/development" hreflang="as-IN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/tl/docs/development" hreflang="tl-PH"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ca/docs/development" hreflang="ca-ES"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/be/docs/development" hreflang="be-BY"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sq/docs/development" hreflang="sq-AL"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/qu/docs/development" hreflang="qu-PE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ht/docs/development" hreflang="ht-HT"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/mg/docs/development" hreflang="mg-MG"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ku/docs/development" hreflang="ku-TR"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/wo/docs/development" hreflang="wo-SN"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/ga/docs/development" hreflang="ga-IE"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/is/docs/development" hreflang="is-IS"><link data-rh="true" rel="alternate" href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/development" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Pamekaran","item":"https://bitranox.github.io/Thunderbird-Reply-with-Attachments/su/docs/development"}]}</script><link rel="stylesheet" href="/Thunderbird-Reply-with-Attachments/su/assets/css/styles.f70c06e1.css">
+<script src="/Thunderbird-Reply-with-Attachments/su/assets/js/runtime~main.fd2e0166.js" defer="defer"></script>
+<script src="/Thunderbird-Reply-with-Attachments/su/assets/js/main.c1828d1c.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" target="_self" href="/Thunderbird-Reply-with-Attachments/su/"><div class="navbar__logo"><img src="/Thunderbird-Reply-with-Attachments/su/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/Thunderbird-Reply-with-Attachments/su/img/icon-48.png" alt="Reply with Attachments" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reply with Attachments</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/Thunderbird-Reply-with-Attachments/su/docs/features">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/su/docs/support">Support</a><a class="navbar__item navbar__link" href="/Thunderbird-Reply-with-Attachments/su/docs/license">License</a><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/features"><span title="Fitur" class="linkLabel_WmDU">Fitur</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/quickstart"><span title="Mimitian Gancang" class="linkLabel_WmDU">Mimitian Gancang</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/install"><span title="Pamasangan" class="linkLabel_WmDU">Pamasangan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/configuration"><span title="Konfigurasi" class="linkLabel_WmDU">Konfigurasi</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/usage"><span title="Pamakéan" class="linkLabel_WmDU">Pamakéan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/compatibility"><span title="Kacocokan" class="linkLabel_WmDU">Kacocokan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/permissions"><span title="Ijin" class="linkLabel_WmDU">Ijin</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/Thunderbird-Reply-with-Attachments/su/docs/development"><span title="Pamekaran" class="linkLabel_WmDU">Pamekaran</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/languages"><span title="Basa-basa" class="linkLabel_WmDU">Basa-basa</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/glossary"><span title="Kamus" class="linkLabel_WmDU">Kamus</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/support"><span title="Dukungan" class="linkLabel_WmDU">Dukungan</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/privacy"><span title="Privasi" class="linkLabel_WmDU">Privasi</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/donation"><span title="Nyumbang" class="linkLabel_WmDU">Nyumbang</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/license"><span title="Lisensi" class="linkLabel_WmDU">Lisensi</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/Thunderbird-Reply-with-Attachments/su/docs/changelog"><span title="Catetan parobahan" class="linkLabel_WmDU">Catetan parobahan</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/Thunderbird-Reply-with-Attachments/su/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Pamekaran</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Pangembangan</h1></header><hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="development-guide">Pituduh Pangembangan<a href="#development-guide" class="hash-link" aria-label="Direct link to Pituduh Pangembangan" title="Direct link to Pituduh Pangembangan" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Édit Inggris wungkul; tarjamahan bakal sumebar</div><div class="admonitionContent_BuS1"><p>Apdet dokuméntasi ngan ukur dina <code>website/docs</code> (Inggris). Tarjamahan dina <code>website/i18n/&lt;locale&gt;/…</code> dihasilkeun sarta ulah diédit manual. Paké pancén tarjamahan (misalna, <code>make translate_web_docs_batch</code>) pikeun nyegerkeun eusi lokal.</p></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Sarat awal<a href="#prerequisites" class="hash-link" aria-label="Direct link to Sarat awal" title="Direct link to Sarat awal" translate="no">​</a></h3>
+<ul>
+<li class="">Node.js 22+ jeung npm (diuji ku Node 22)</li>
+<li class="">Thunderbird 128 ESR atawa leuwih anyar (pikeun nguji manual)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-layout-high-level">Tata Léngkah Proyék (tingkat luhur)<a href="#project-layout-high-level" class="hash-link" aria-label="Direct link to Tata Léngkah Proyék (tingkat luhur)" title="Direct link to Tata Léngkah Proyék (tingkat luhur)" translate="no">​</a></h3>
+<ul>
+<li class="">Akar (root): skrip packaging <code>distribution_zip_packer.sh</code>, dokuméntasi, cuplikan layar</li>
+<li class=""><code>sources/</code>: kode add-on utama (latar tukang, pilihan/popup UI, manifés, ikon)</li>
+<li class=""><code>tests/</code>: pakét tés Vitest</li>
+<li class=""><code>website/</code>: dokuméntasi Docusaurus (kalebet i18n dina <code>website/i18n/de/...</code>)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="install-and-tooling">Masang &amp; Parabot<a href="#install-and-tooling" class="hash-link" aria-label="Direct link to Masang &amp; Parabot" title="Direct link to Masang &amp; Parabot" translate="no">​</a></h3>
+<ul>
+<li class="">Pasang gumantung root: <code>npm ci</code></li>
+<li class="">Dokuméntasi (opsional): <code>cd website &amp;&amp; npm ci</code></li>
+<li class="">Manggihan target: <code>make help</code></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="live-dev-web-ext">Pangembangan Langsung (web‑ext run)<a href="#live-dev-web-ext" class="hash-link" aria-label="Direct link to Pangembangan Langsung (web‑ext run)" title="Direct link to Pangembangan Langsung (web‑ext run)" translate="no">​</a></h3>
+<ul>
+<li class="">Siklus gancang dina Firefox Desktop (tés UI basajan wungkul):</li>
+<li class=""><code>npx web-ext run --source-dir sources --target=firefox-desktop</code></li>
+<li class="">Jalan dina Thunderbird (disarankeun keur MailExtensions):</li>
+<li class=""><code>npx web-ext run --source-dir sources --start-url about:addons --firefox-binary &quot;$(command -v thunderbird || echo /path/to/thunderbird)&quot;</code></li>
+<li class="">Tips:</li>
+<li class="">Tetepkeun Konsol Kasalahan Thunderbird kabuka (Tools → Developer Tools → Error Console).</li>
+<li class="">Kaca kajadian MV3 dibekukeun nalika nganggur; muat deui add‑on sanggeus parobahan kode, atawa tinggalkeun web‑ext auto‑reload.</li>
+<li class="">Sababaraha paripolah husus Firefox béda; salawasna verifikasi dina Thunderbird pikeun sarua API.</li>
+<li class="">Jalur binér Thunderbird (conto):</li>
+<li class="">Linux: <code>thunderbird</code> (contona, <code>/usr/bin/thunderbird</code>)</li>
+<li class="">macOS: <code>/Applications/Thunderbird.app/Contents/MacOS/thunderbird</code></li>
+<li class="">Windows: <code>&quot;C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe&quot;</code></li>
+<li class="">Isolasi profil: Paké profil Thunderbird misah pikeun pamekaran sangkan teu mangaruhan setélan sapopoé anjeun.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="make-targets-alphabetical">Target Make (urut alfabet)<a href="#make-targets-alphabetical" class="hash-link" aria-label="Direct link to Target Make (urut alfabet)" title="Direct link to Target Make (urut alfabet)" translate="no">​</a></h3>
+<p>Makefile ngamastikeun alur dev umum. Jalankeun <code>make help</code> iraha waé pikeun ringkesan sakalimat unggal target.</p>
+<p>Tip: ngajalankeun <code>make</code> tanpa target bakal muka ménu Whiptail basajan pikeun milih target.</p>
+<table><thead><tr><th>Target</th><th>Katerangan sakalimat</th></tr></thead><tbody><tr><td><a href="#mt-clean" class=""><code>clean</code></a></td><td>Pupus artifak build/preview lokal (tmp/, web-local-preview/, website/build/).</td></tr><tr><td><a href="#mt-commit" class=""><code>commit</code></a></td><td>Format, jalankeun tés (kaasup i18n), apdet changelog, commit &amp; push.</td></tr><tr><td><a href="#mt-eslint" class=""><code>eslint</code></a></td><td>Jalankeun ESLint ngaliwatan flat config (<code>npm run -s lint:eslint</code>).</td></tr><tr><td><a href="#mt-help" class=""><code>help</code></a></td><td>Daptarkeun sadaya target jeung dokuméntasi sakalimat (diurutkeun).</td></tr><tr><td><a href="#mt-lint" class=""><code>lint</code></a></td><td>web‑ext lint dina <code>sources/</code> (manifés samentara; malire ZIP; teu fatal).</td></tr><tr><td><a href="#mt-menu" class=""><code>menu</code></a></td><td>Ménu interaktif pikeun milih target jeung argumén opsional.</td></tr><tr><td><a href="#mt-pack" class=""><code>pack</code></a></td><td>Ngawangun ZIP ATN &amp; LOCAL (ngajalankeun linter; nyauran skrip packer).</td></tr><tr><td><a href="#mt-prettier" class=""><code>prettier</code></a></td><td>Méré format répositori di tempatna (nulis parobahan).</td></tr><tr><td><a href="#mt-prettier_check" class=""><code>prettier_check</code></a></td><td>Prettier dina modeu pariksa (tanpa nulis); gagal lamun butuh réformat.</td></tr><tr><td><a href="#mt-prettier_write" class=""><code>prettier_write</code></a></td><td>Alias keur <code>prettier</code>.</td></tr><tr><td><a href="#mt-test" class=""><code>test</code></a></td><td>Prettier (nulis), ESLint, tuluy Vitest (liputan lamun dikonpigurasikeun).</td></tr><tr><td><a href="#mt-test_i18n" class=""><code>test_i18n</code></a></td><td>Tés i18n wungkul: placeholders/paritas add‑on + paritas situs wéb.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translate_app</code></a></td><td>Alias keur <code>translation_app</code>.</td></tr><tr><td><a href="#mt-translation-app" class=""><code>translation_app</code></a></td><td>Narjamahkeun string UI aplikasi tina <code>sources/_locales/en/messages.json</code>.</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_batch</code></a></td><td>Narjamahkeun dokumén situs via OpenAI Batch API (disarankeun).</td></tr><tr><td><a href="#mt-translation-web" class=""><code>translate_web_docs_sync</code></a></td><td>Narjamahkeun dokumén situs sacara sinkron (legacy, non-batch).</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translate_web_index</code></a></td><td>Alias keur <code>translation_web_index</code>.</td></tr><tr><td><a href="#mt-translation_web_index" class=""><code>translation_web_index</code></a></td><td>Narjamahkeun UI homepage/navbar/footer (<code>website/i18n/en/code.json → .../&lt;lang&gt;/code.json</code>).</td></tr><tr><td><a href="#mt-web_build" class=""><code>web_build</code></a></td><td>Ngawangun dokumén kana <code>website/build</code> (ngadukung <code>--locales</code> / <code>BUILD_LOCALES</code>).</td></tr><tr><td><a href="#mt-web_build_linkcheck" class=""><code>web_build_linkcheck</code></a></td><td>Mariksa tautan anu aman offline (ngalangkungan HTTP[S] jauh).</td></tr><tr><td><a href="#mt-web_build_local_preview" class=""><code>web_build_local_preview</code></a></td><td>Préview gh‑pages lokal; otomatis ngaladénan dina 8080–8090; tés/link‑check opsional.</td></tr><tr><td><a href="#mt-web_push_github" class=""><code>web_push_github</code></a></td><td>Dorong <code>website/build</code> ka cabang <code>gh-pages</code>.</td></tr></tbody></table>
+<p>Sintaks pilihan</p>
+<ul>
+<li class="">Paké <code>make &lt;command&gt; OPTS=&quot;…&quot;</code> pikeun ngoper pilihan (disarankeun maké tanda petik). Unggal target di handap némbongkeun conto pamakean.</li>
+</ul>
+<p>--</p>
+<ul>
+<li class=""></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="locale-build-tips">Locale build tips<a href="#locale-build-tips" class="hash-link" aria-label="Direct link to Locale build tips" title="Direct link to Locale build tips" translate="no">​</a></h4>
+<ul>
+<li class="">Ngawangun sabagéan lokal: setél <code>BUILD_LOCALES=&quot;en de&quot;</code> atawa pasihkeun <code>OPTS=&quot;--locales en,de&quot;</code> ka target wéb.</li>
+<li class="">Préview hiji lokal husus: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/de/</code>.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-and-package">Ngawangun &amp; Mempaketkeun<a href="#build-and-package" class="hash-link" aria-label="Direct link to Ngawangun &amp; Mempaketkeun" title="Direct link to Ngawangun &amp; Mempaketkeun" translate="no">​</a></h3>
+<ul>
+<li class="">Ngawangun ZIP: <code>make pack</code></li>
+<li class="">Ngahasilkeun ZIP ATN jeung LOCAL dina akar répo (ulah ngédit artifak sacara manual)</li>
+<li class="">Tip: apdet vérsi dina duanana <code>sources/manifest_ATN.json</code> jeung <code>sources/manifest_LOCAL.json</code> saméméh packaging</li>
+<li class="">Pamasangan manual (dev): Thunderbird → Tools → Add‑ons and Themes → gear → Install Add‑on From File… → pilih ZIP anu geus diwangun</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test">Tés<a href="#test" class="hash-link" aria-label="Direct link to Tés" title="Direct link to Tés" translate="no">​</a></h3>
+<ul>
+<li class="">Pakét lengkep: <code>make test</code> (Vitest)</li>
+<li class="">Cakupan (opsional):</li>
+<li class=""><code>npm i -D @vitest/coverage-v8</code></li>
+<li class="">Jalankeun <code>make test</code>; buka <code>coverage/index.html</code> pikeun laporan HTML</li>
+<li class="">i18n wungkul: <code>make test_i18n</code> (konci UI/placeholder/judul + parity situs per‑lokal per‑dok kalawan pamariksaan id/title/sidebar_label)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="debugging-and-logs">Ngawanohkeun Kasalahan &amp; Log<a href="#debugging-and-logs" class="hash-link" aria-label="Direct link to Ngawanohkeun Kasalahan &amp; Log" title="Direct link to Ngawanohkeun Kasalahan &amp; Log" translate="no">​</a></h3>
+<ul>
+<li class="">Error Console: Tools → Developer Tools → Error Console</li>
+<li class="">Alihkeun log jéntré nalika runtime:</li>
+<li class="">Hurungkeun: <code>messenger.storage.local.set({ debug: true })</code></li>
+<li class="">Pareuman: <code>messenger.storage.local.set({ debug: false })</code></li>
+<li class="">Log mucunghul nalika nyusun/ngirim waleran</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="docs-website">Dokuméntasi (situs)<a href="#docs-website" class="hash-link" aria-label="Direct link to Dokuméntasi (situs)" title="Direct link to Dokuméntasi (situs)" translate="no">​</a></h3>
+<ul>
+<li class="">Server pamekaran: <code>cd website &amp;&amp; npm run start</code></li>
+<li class="">Ngawangun situs statik: <code>cd website &amp;&amp; npm run build</code></li>
+<li class="">Padanan Make (alfabétis): <code>make web_build</code>, <code>make web_build_linkcheck</code>, <code>make web_build_local_preview</code>, <code>make web_push_github</code></li>
+<li class="">Conto pamakean:</li>
+<li class="">EN wungkul, skip tés/link‑check, teu push: <code>make web_build_local_preview OPTS=&quot;--locales en --no-test --no-link-check --dry-run&quot;</code></li>
+<li class="">Sadaya lokal, kalayan tés/link‑check, tuluy push: <code>make web_build_local_preview &amp;&amp; make web_push_github</code></li>
+<li class="">Sateuacan nerbitkeun, jalankeun pariksa tautan aman‑offline: <code>make web_build_linkcheck</code>.</li>
+<li class="">i18n: Inggris aya di <code>website/docs/*.md</code>; tarjamahan Jérman di <code>website/i18n/de/docusaurus-plugin-content-docs/current/*.md</code></li>
+<li class="">Pilarian: Lamun variabel lingkungan Algolia DocSearch disetél dina CI (<code>DOCSEARCH_APP_ID</code>, <code>DOCSEARCH_API_KEY</code>, <code>DOCSEARCH_INDEX_NAME</code>), situs bakal maké pamilarian Algolia; upami henteu bakal balik kana pilarian lokal. Dina kaca utama, pencét <code>/</code> atawa <code>Ctrl+K</code> pikeun muka kotak pilarian.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="donate-redirect">Rute alihan sumbangan<a href="#donate-redirect" class="hash-link" aria-label="Direct link to Rute alihan sumbangan" title="Direct link to Rute alihan sumbangan" translate="no">​</a></h4>
+<ul>
+<li class=""><code>website/src/pages/donate.js</code></li>
+<li class="">Rute: <code>/donate</code> (jeung <code>/&lt;locale&gt;/donate</code>)</li>
+<li class="">Kalakuan:</li>
+<li class="">Lamun ruteu ayeuna miboga lokal (misalna, <code>/de/donate</code>), paké éta</li>
+<li class="">Upamana henteu, pilih nu pang cocogna tina <code>navigator.languages</code> lawan lokal nu dikonpigurasikeun; balik kana lokal standar</li>
+<li class="">Dialihkeun ka:</li>
+<li class=""><code>en</code> → <code>/docs/donation</code></li>
+<li class="">séjénna → <code>/&lt;locale&gt;/docs/donation</code></li>
+<li class="">Ngagunakeun <code>useBaseUrl</code> pikeun nanganan baseUrl kalayan hadé</li>
+<li class="">Kalebet meta refresh + tautan <code>noscript</code> minangka cadangan</li>
+</ul>
+<hr>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="preview-tips">Tips Préview<a href="#preview-tips" class="hash-link" aria-label="Direct link to Tips Préview" title="Direct link to Tips Préview" translate="no">​</a></h4>
+<ul>
+<li class="">Eureunkeun préview Node kalayan bener: buka <code>http://localhost:&lt;port&gt;/__stop</code> (dicitak sanggeus <code>Local server started</code>).</li>
+<li class="">Lamun gambar teu muat dina MDX/JSX, paké <code>useBaseUrl(&#x27;/img/...&#x27;)</code> supaya nurut kana <code>baseUrl</code> situs.</li>
+<li class="">Préview dimimitian heula; pariksa tautan dijalankeun sanggeusna jeung teu ngahalangan (tautan éksternal pegat moal ngeureunkeun préview).</li>
+<li class="">Conto URL préview: <code>http://localhost:&lt;port&gt;/Thunderbird-Reply-with-Attachments/</code> (dicitak sanggeus “Local server started”).</li>
+<li class="">Tautan éksternal dina link‑check: Sababaraha situs éksternal (misalna, addons.thunderbird.net) meungpeuk crawler otomatis sarta bisa némbongkeun 403 dina pamariksaan tautan. Préview tetep dimimitian; ieu bisa dipaliré.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="translate-website">Narjamahkeun Situs Wéb<a href="#translate-website" class="hash-link" aria-label="Direct link to Narjamahkeun Situs Wéb" title="Direct link to Narjamahkeun Situs Wéb" translate="no">​</a></h4>
+<p>Nu bisa anjeun tarjamahkeun</p>
+<ul>
+<li class="">UI situs wungkul: homepage, navbar, footer, jeung string UI séjén. Eusi dokumén tetep Inggris heula.</li>
+</ul>
+<p>Tempat ngédit</p>
+<ul>
+<li class="">Édit <code>website/i18n/&lt;locale&gt;/code.json</code> (paké <code>en</code> minangka rujukan). Tetepkeun placeholders saperti <code>{year}</code>, <code>{slash}</code>, <code>{ctrl}</code>, <code>{k}</code>, <code>{code1}</code> teu robah.</li>
+</ul>
+<p>Ngahasilkeun atawa nyegerkeun file</p>
+<ul>
+<li class="">Jieun stub nu leungit keur sakabéh lokal: <code>npm --prefix website run i18n:stubs</code></li>
+<li class="">Timpa stub tina Inggris (sanggeus nambahkeun string anyar): <code>npm --prefix website run i18n:stubs:force</code></li>
+<li class="">Alternatip keur hiji lokal: <code>npx --prefix website docusaurus write-translations --locale &lt;locale&gt;</code></li>
+</ul>
+<p>Narjamahkeun string UI homepage/navbar/footer (OpenAI)</p>
+<ul>
+<li class="">Setél kredensial sakali (shell atawa .env):</li>
+<li class=""><code>export OPENAI_API_KEY=sk-...</code></li>
+<li class="">Opsional: <code>export OPENAI_MODEL=gpt-4o-mini</code></li>
+<li class="">Sakali jalan (sadayana lokal, teu kaasup en): <code>make translate_web_index</code></li>
+<li class="">Watesan kana lokal tinangtu: <code>make translate_web_index OPTS=&quot;--locales de,fr&quot;</code></li>
+<li class="">Timpa nilai nu geus aya: <code>make translate_web_index OPTS=&quot;--force&quot;</code></li>
+</ul>
+<p>Validasi &amp; nyoba deui</p>
+<ul>
+<li class="">Skrip tarjamahan marios wangun JSON, ngajaga placeholders kurung curly, sarta mastikeun URL teu robah.</li>
+<li class="">Lamun validasi gagal, bakal nyoba deui kalawan eupan balik nepi ka 2 kali sateuacan ngajaga nilai nu aya.</li>
+</ul>
+<p>Préview lokal anjeun</p>
+<ul>
+<li class="">Server pamekaran: <code>npm --prefix website run start</code></li>
+<li class="">Kunjuan <code>http://localhost:3000/&lt;locale&gt;/Thunderbird-Reply-with-Attachments/</code></li>
+</ul>
+<p>Ngintun</p>
+<ul>
+<li class="">Buka PR jeung file <code>code.json</code> nu geus diédit. Tetepkeun parobahan fokus sarta tambihkeun screenshot gancang lamun mungkin.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-and-configuration-tips">Kaamanan &amp; Tips Konpigurasi<a href="#security-and-configuration-tips" class="hash-link" aria-label="Direct link to Kaamanan &amp; Tips Konpigurasi" title="Direct link to Kaamanan &amp; Tips Konpigurasi" translate="no">​</a></h3>
+<ul>
+<li class="">Ulah nge‑commit <code>sources/manifest.json</code> (dijieun samentara ku build)</li>
+<li class="">Tetepkeun <code>browser_specific_settings.gecko.id</code> stabil pikeun ngajaga saluran apdet</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settings-persistence">Ketahanan Setélan<a href="#settings-persistence" class="hash-link" aria-label="Direct link to Ketahanan Setélan" title="Direct link to Ketahanan Setélan" translate="no">​</a></h3>
+<ul>
+<li class="">Panyimpenan: Kabéh setélan pamaké aya dina <code>storage.local</code> sarta tetep salila apdet add‑on.</li>
+<li class="">Pamasangan: Nilai standar diterapkeun ngan lamun koncina bener‑bener teu aya (undefined).</li>
+<li class="">Apdet: Migrasi ngan ngeusian konci nu leungit; nilai nu geus aya teu kungsi ditimpa.</li>
+<li class="">Pananda skéma: <code>settingsVersion</code> (kiwari <code>1</code>).</li>
+<li class="">Konci jeung standar:</li>
+<li class=""><code>blacklistPatterns: string[]</code> → <code>[&#x27;*intern*&#x27;, &#x27;*secret*&#x27;, &#x27;*passwor*&#x27;]</code></li>
+<li class=""><code>confirmBeforeAdd: boolean</code> → <code>false</code></li>
+<li class=""><code>confirmDefaultChoice: &#x27;yes&#x27;|&#x27;no&#x27;</code> → <code>&#x27;yes&#x27;</code></li>
+<li class=""><code>warnOnBlacklistExcluded: boolean</code> → <code>true</code></li>
+<li class="">Kode: tingali <code>sources/background.js</code> → <code>initializeOrMigrateSettings()</code> jeung <code>SCHEMA_VERSION</code>.</li>
+</ul>
+<p>Alur pamekaran (nambahkeun setélan anyar)</p>
+<ul>
+<li class="">Naékkeun <code>SCHEMA_VERSION</code> dina <code>sources/background.js</code>.</li>
+<li class="">Tambahkeun konci anyar + standar kana obyék <code>DEFAULTS</code> dina <code>initializeOrMigrateSettings()</code>.</li>
+<li class="">Paké aturan &quot;only-if-undefined&quot; nalika ngeusian standar; ulah nimpah nilai nu geus aya.</li>
+<li class="">Lamun setélanna katingali ku pamaké, pasang dina <code>sources/options.js</code> sarta tambahkeun string lokal.</li>
+<li class="">Tambahkeun/saluyukeun tés (tempo <code>tests/background.settings.migration.test.js</code>).</li>
+</ul>
+<p>Tips nguji manual</p>
+<ul>
+<li class="">Simulasikeun pamasangan anyar: beberesih dir data éksténsi atawa mimitian ku profil anyar.</li>
+<li class="">Simulasikeun apdet: setél <code>settingsVersion</code> kana <code>0</code> dina <code>storage.local</code> lajeng muat deui; pastikeun nilai nu aya tetep teu robah sarta ngan konci nu leungit nu ditambahkeun.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting">Ngungkulan Masalah<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Ngungkulan Masalah" title="Direct link to Ngungkulan Masalah" translate="no">​</a></h3>
+<ul>
+<li class="">Pastikeun Thunderbird 128 ESR atawa leuwih anyar</li>
+<li class="">Paké Error Console pikeun masalah runtime</li>
+<li class="">Lamun setélan nu disimpen siga teu dilarapkeun leres, balikan deui Thunderbird lajeng cobian deui. (Thunderbird bisa nyimpen kaayaan antara sési; balikan ngajamin setélan anyar dimuat.)</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ci-and-coverage">CI &amp; Cakupan<a href="#ci-and-coverage" class="hash-link" aria-label="Direct link to CI &amp; Cakupan" title="Direct link to CI &amp; Cakupan" translate="no">​</a></h3>
+<ul>
+<li class="">GitHub Actions (<code>CI — Tests</code>) ngajalankeun vitest kalawan ambang cakupan (85% garis/fungsi/dahan/pernyataan). Lamun ambang teu kahontal, padamelan gagal.</li>
+<li class="">Alur kerja ngunggah artifak <code>coverage-html</code> jeung laporan HTML; undeur ti kaca run (Actions → run pangahirna → Artifacts).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="contributing">Nyumbang<a href="#contributing" class="hash-link" aria-label="Direct link to Nyumbang" title="Direct link to Nyumbang" translate="no">​</a></h3>
+<ul>
+<li class="">Tingali CONTRIBUTING.md pikeun pituduh branch/commit/PR</li>
+<li class="">Tip: Jieun profil pamekaran Thunderbird misah pikeun nguji sangkan teu mangaruhan profil sapopoé.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tarjamahan">Tarjamahan<a href="#tarjamahan" class="hash-link" aria-label="Direct link to Tarjamahan" title="Direct link to Tarjamahan" translate="no">​</a></h3>
+<ul>
+<li class="">Ngajalankeun padamelan tarjamahan “sadaya → sadaya” anu gedé bisa lalaunan jeung mahal. Mimitian ku sabagéan (mis., sababaraha dokumén jeung 1–2 lokal), tinjau hasilna, tuluy dilegaan.</li>
+</ul>
+<hr>
+<ul>
+<li class="">Kabijakan nyobaan deui: padamelan tarjamahan nepi ka 3 kali nyobaan deui kalawan backoff eksponénsial lamun aya kasalahan API; tingali <code>scripts/translate_web_docs_batch.js</code> jeung <code>scripts/translate_web_docs_sync.js</code>.</li>
+</ul>
+<p>Cuplikan layar pikeun dokumén</p>
+<ul>
+<li class="">
+<p>Simpen gambar di handapeun <code>website/static/img/</code>.</p>
+</li>
+<li class="">
+<p>Rujukkeun dina MD/MDX ngaliwatan <code>useBaseUrl(&#x27;/img/&lt;filename&gt;&#x27;)</code> sangkan jalur luyu jeung <code>baseUrl</code> situs.</p>
+</li>
+<li class="">
+<p>Sanggeus nambah atawa ngarobah ngaran gambar dina <code>website/static/img/</code>, pastikeun sakabéh rujukan masih maké <code>useBaseUrl(&#x27;/img/…&#x27;)</code> sarta katingali dina préview lokal.
+Favicons</p>
+</li>
+<li class="">
+<p><code>favicon.ico</code> multi‑ukuran dihasilkeun otomatis dina sakabéh jalur build (Make + skrip) ngaliwatan <code>website/scripts/build-favicon.mjs</code>.</p>
+</li>
+<li class="">
+<p>Teu perlu léngkah manual; ngapdet <code>icon-*.png</code> geus cekap.
+Tip marios</p>
+</li>
+<li class="">
+<p>Tetepkeun front‑matter <code>id</code> teu robah dina dokumén tarjamahan; tarjamahkeun ngan <code>title</code> jeung <code>sidebar_label</code> lamun aya.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-clean">clean<a href="#mt-clean" class="hash-link" aria-label="Direct link to clean" title="Direct link to clean" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: mupus artifak build/preview lokal.</li>
+<li class="">Pamakean: <code>make clean</code></li>
+<li class="">Mupus (lamun aya):</li>
+<li class=""><code>tmp/</code></li>
+<li class=""><code>web-local-preview/</code></li>
+<li class=""><code>website/build/</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-commit">commit<a href="#mt-commit" class="hash-link" aria-label="Direct link to commit" title="Direct link to commit" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: format, tés, apdet changelog, commit, sarta push.</li>
+<li class="">Pamakean: <code>make commit</code></li>
+<li class="">Rincian: ngajalankeun Prettier (nulis), <code>make test</code>, <code>make test_i18n</code>; nambahkeun changelog nalika aya diff nu distage; push ka <code>origin/&lt;branch&gt;</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-eslint">eslint<a href="#mt-eslint" class="hash-link" aria-label="Direct link to eslint" title="Direct link to eslint" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: ngajalankeun ESLint ngaliwatan flat config.</li>
+<li class="">Pamakean: <code>make eslint</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-help">help<a href="#mt-help" class="hash-link" aria-label="Direct link to help" title="Direct link to help" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: daptarkeun sadaya target jeung dokuméntasi sakalimat.</li>
+<li class="">Pamakean: <code>make help</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-lint">lint<a href="#mt-lint" class="hash-link" aria-label="Direct link to lint" title="Direct link to lint" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: lint MailExtension maké <code>web-ext</code>.</li>
+<li class="">Pamakean: <code>make lint</code></li>
+<li class="">Catetan: nyalin samentara <code>sources/manifest_LOCAL.json</code> → <code>sources/manifest.json</code>; malire ZIP nu geus diwangun; peringatan teu ngajadikeun pipa gagal.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-menu">menu<a href="#mt-menu" class="hash-link" aria-label="Direct link to menu" title="Direct link to menu" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: ménu interaktif pikeun milih target Make jeung argumén opsional.</li>
+<li class="">Pamakean: jalankeun <code>make</code> tanpa argumén.</li>
+<li class="">Catetan: lamun <code>whiptail</code> teu sayaga, ménu bakal balik kana <code>make help</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-pack">pack<a href="#mt-pack" class="hash-link" aria-label="Direct link to pack" title="Direct link to pack" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: ngawangun ZIP ATN jeung LOCAL (gumantung kana <code>lint</code>).</li>
+<li class="">Pamakean: <code>make pack</code></li>
+<li class="">Tip: naekeun vérsi dina duanana <code>sources/manifest_*.json</code> saméméh packaging.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier">prettier<a href="#mt-prettier" class="hash-link" aria-label="Direct link to prettier" title="Direct link to prettier" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: méré format répo di tempatna.</li>
+<li class="">Pamakean: <code>make prettier</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_check">prettier_check<a href="#mt-prettier_check" class="hash-link" aria-label="Direct link to prettier_check" title="Direct link to prettier_check" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: mastikeun formatting (tanpa nulis).</li>
+<li class="">Pamakean: <code>make prettier_check</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-prettier_write">prettier_write<a href="#mt-prettier_write" class="hash-link" aria-label="Direct link to prettier_write" title="Direct link to prettier_write" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: alias keur <code>prettier</code>.</li>
+<li class="">Pamakean: <code>make prettier_write</code></li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test">test<a href="#mt-test" class="hash-link" aria-label="Direct link to test" title="Direct link to test" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: ngajalankeun Prettier (nulis), ESLint, tuluy Vitest (cakupan lamun dipasang).</li>
+<li class="">Pamakean: <code>make test</code></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-test_i18n">test_i18n<a href="#mt-test_i18n" class="hash-link" aria-label="Direct link to test_i18n" title="Direct link to test_i18n" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: tés fokus i18n pikeun string add‑on jeung dokumén situs.</li>
+<li class="">Pamakean: <code>make test_i18n</code></li>
+<li class="">Ngajalankeun: <code>npm run test:i18n</code> jeung <code>npm run -s test:website-i18n</code>.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-app">translate_app / translation_app<a href="#mt-translation-app" class="hash-link" aria-label="Direct link to translate_app / translation_app" title="Direct link to translate_app / translation_app" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: narjamahkeun string UI add‑on tina EN ka lokal séjén.</li>
+<li class="">Pamakean: <code>make translation_app OPTS=&quot;--locales all|de,fr&quot;</code></li>
+<li class="">Catetan: ngajaga struktur konci jeung placeholders; log ka <code>translation_app.log</code>. Bentuk skrip: <code>node scripts/translate_app.js --locales …</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation-web">translate_web_docs_batch / translate_web_docs_sync<a href="#mt-translation-web" class="hash-link" aria-label="Direct link to translate_web_docs_batch / translate_web_docs_sync" title="Direct link to translate_web_docs_batch / translate_web_docs_sync" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: narjamahkeun dokumén situs tina <code>website/docs/*.md</code> kana <code>website/i18n/&lt;locale&gt;/...</code>.</li>
+<li class="">Disarankeun: <code>translate_web_docs_batch</code> (OpenAI Batch API)<!-- -->
+<ul>
+<li class="">Pamakean (flags): <code>make translate_web_docs_batch OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">Posisi legacy masih ditarima: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Kalakuan: nyusun JSONL, ngunggah, polling saban 30s, ngundeur hasilna, nulis file.</li>
+<li class="">Catetan: padamelan batch bisa nepi ka 24 jam (nurutan jandéla batch OpenAI). Konsol némbongkeun waktu kaliwat dina unggal polling.</li>
+<li class="">Lingkungan: <code>OPENAI_API_KEY</code> (perlu), opsional <code>OPENAI_MODEL</code>, <code>OPENAI_TEMPERATURE</code>, <code>OPENAI_BATCH_WINDOW</code> (standar 24h), <code>BATCH_POLL_INTERVAL_MS</code>.</li>
+<li class="">Legacy: <code>translate_web_docs_sync</code>
+<ul>
+<li class="">Pamakean (flags): <code>make translate_web_docs_sync OPTS=&quot;--files &lt;doc1,doc2|all&gt; --locales &lt;lang1,lang2|all&gt;&quot;</code></li>
+<li class="">Posisi legacy masih ditarima: <code>OPTS=&quot;&lt;doc|all&gt; &lt;lang|all&gt;&quot;</code></li>
+</ul>
+</li>
+<li class="">Kalakuan: paménta sinkron per‑pasangan (tanpa agregasi batch).</li>
+<li class="">Catetan: Prompt interaktif lamun <code>OPTS</code> teu disadiakeun. Duanana mode ngajaga blok kode/kode inline sarta tetepkeun front‑matter <code>id</code> teu robah; log ka <code>translation_web_batch.log</code> (batch) atawa <code>translation_web_sync.log</code> (sinkron).</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-translation_web_index">translate_web_index / translation_web_index<a href="#mt-translation_web_index" class="hash-link" aria-label="Direct link to translate_web_index / translation_web_index" title="Direct link to translate_web_index / translation_web_index" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: narjamahkeun string UI situs (homepage, navbar, footer) tina <code>website/i18n/en/code.json</code> ka sakabéh lokal dina <code>website/i18n/&lt;locale&gt;/code.json</code> (iwal <code>en</code>).</li>
+<li class="">Pamakean: <code>make translate_web_index</code> atawa <code>make translate_web_index OPTS=&quot;--locales de,fr [--force]&quot;</code></li>
+<li class="">Sarat: ekspor <code>OPENAI_API_KEY</code> (opsional: <code>OPENAI_MODEL=gpt-4o-mini</code>).</li>
+<li class="">Kalakuan: mariksa struktur JSON, ngajaga placeholders kurung curly, ngajaga URL teu robah, sarta nyobaan deui kalawan eupan balik lamun aya kasalahan validasi.</li>
+</ul>
+<hr>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build">web_build<a href="#mt-web_build" class="hash-link" aria-label="Direct link to web_build" title="Direct link to web_build" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: ngawangun situs dokumén kana <code>website/build</code>.</li>
+<li class="">Pamakean: <code>make web_build OPTS=&quot;--locales en|de,en|all&quot;</code> (atawa setél <code>BUILD_LOCALES=&quot;en de&quot;</code>)</li>
+<li class="">Internal: <code>node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build [--locale …]</code>.</li>
+<li class="">Gantunganna: ngajalankeun <code>npm ci</code> dina <code>website/</code> ngan lamun <code>website/node_modules/@docusaurus</code> teu aya.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_linkcheck">web_build_linkcheck<a href="#mt-web_build_linkcheck" class="hash-link" aria-label="Direct link to web_build_linkcheck" title="Direct link to web_build_linkcheck" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: pamariksaan tautan anu aman offline.</li>
+<li class="">Pamakean: <code>make web_build_linkcheck OPTS=&quot;--locales en|all&quot;</code></li>
+<li class="">Catetan: ngawangun kana <code>tmp_linkcheck_web_pages</code>; ngarobah <code>baseUrl</code> GH Pages jadi <code>/</code>; ngalangkungan tautan HTTP(S) jauh.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_build_local_preview">web_build_local_preview<a href="#mt-web_build_local_preview" class="hash-link" aria-label="Direct link to web_build_local_preview" title="Direct link to web_build_local_preview" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: préview gh‑pages lokal kalawan tés/link‑check opsional.</li>
+<li class="">Pamakean: <code>make web_build_local_preview OPTS=&quot;--locales en|all [--no-test] [--no-link-check] [--dry-run] [--no-serve]&quot;</code></li>
+<li class="">Kalakuan: nyobian server préview Node heula (<code>scripts/preview-server.mjs</code>, ngadukung <code>/__stop</code>), balik kana <code>python3 -m http.server</code> lamun perlu; ngaladénan dina 8080–8090; PID di <code>web-local-preview/.server.pid</code>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="mt-web_push_github">web_push_github<a href="#mt-web_push_github" class="hash-link" aria-label="Direct link to web_push_github" title="Direct link to web_push_github" translate="no">​</a></h4>
+<ul>
+<li class="">Tujuan: dorong <code>website/build</code> ka cabang <code>gh-pages</code>.</li>
+<li class="">Pamakean: <code>make web_push_github</code></li>
+</ul>
+<p>Tip: setél <code>NPM=…</code> pikeun ngaganti manajer pakét nu dipaké ku Makefile (standarna <code>npm</code>).</p>
+<hr></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2025-09-13T01:25:23.000Z" itemprop="dateModified">13 Sép, 2025</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/Thunderbird-Reply-with-Attachments/su/docs/permissions"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Ijin</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/Thunderbird-Reply-with-Attachments/su/docs/languages"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Basa-basa</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#development-guide" class="table-of-contents__link toc-highlight">Pituduh Pangembangan</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Sarat awal</a></li><li><a href="#project-layout-high-level" class="table-of-contents__link toc-highlight">Tata Léngkah Proyék (tingkat luhur)</a></li><li><a href="#install-and-tooling" class="table-of-contents__link toc-highlight">Masang &amp; Parabot</a></li><li><a href="#live-dev-web-ext" class="table-of-contents__link toc-highlight">Pangembangan Langsung (web‑ext run)</a></li><li><a href="#make-targets-alphabetical" class="table-of-contents__link toc-highlight">Target Make (urut alfabet)</a></li><li><a href="#build-and-package" class="table-of-contents__link toc-highlight">Ngawangun &amp; Mempaketkeun</a></li><li><a href="#test" class="table-of-contents__link toc-highlight">Tés</a></li><li><a href="#debugging-and-logs" class="table-of-contents__link toc-highlight">Ngawanohkeun Kasalahan &amp; Log</a></li><li><a href="#docs-website" class="table-of-contents__link toc-highlight">Dokuméntasi (situs)</a></li><li><a href="#security-and-configuration-tips" class="table-of-contents__link toc-highlight">Kaamanan &amp; Tips Konpigurasi</a></li><li><a href="#settings-persistence" class="table-of-contents__link toc-highlight">Ketahanan Setélan</a></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Ngungkulan Masalah</a></li><li><a href="#ci-and-coverage" class="table-of-contents__link toc-highlight">CI &amp; Cakupan</a></li><li><a href="#contributing" class="table-of-contents__link toc-highlight">Nyumbang</a></li><li><a href="#tarjamahan" class="table-of-contents__link toc-highlight">Tarjamahan</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/su/docs/features">Home</a></li><li class="footer__item"><a class="footer__link-item" href="/Thunderbird-Reply-with-Attachments/su/docs/install">Install</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Project</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/bitranox/Thunderbird-Reply-with-Attachments" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 Reply with Attachments</div></div></div></footer></div>
+</body>
+</html>
