@@ -313,7 +313,7 @@
         return;
       }
       await ensureRegistered;
-      let details = null;
+      let details;
       try {
         details = await compose.getDetails(id);
       } catch (err) {
@@ -350,7 +350,7 @@
         return {};
       }
       await ensureRegistered;
-      let details = null;
+      let details;
       try {
         details = await compose.getDetails(id);
       } catch (err) {

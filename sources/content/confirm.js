@@ -406,11 +406,12 @@
         e.preventDefault();
       }
     };
-    for (const type of types) document.addEventListener(type, blocker, { capture: true });
+    const opts = { capture: true, passive: false };
+    for (const type of types) document.addEventListener(type, blocker, opts);
     return () => {
       for (const type of types)
         try {
-          document.removeEventListener(type, blocker, { capture: true });
+          document.removeEventListener(type, blocker, opts);
         } catch (_) {}
     };
   }

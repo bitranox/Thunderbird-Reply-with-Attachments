@@ -1,4 +1,3 @@
-/* eslint-env node */
 // Guard: if an English doc has YAML front matter, localized copies must also have it.
 // Optional env:
 //   BUILD_LOCALES="lt de fr"  -> limit locales checked

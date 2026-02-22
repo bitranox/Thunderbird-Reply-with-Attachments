@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* global fetch */
 // Lightweight translation helper with pluggable providers.
 // Supports: openai, deepl, libre, none

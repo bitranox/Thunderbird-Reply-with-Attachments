@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* global fetch */
 // Translate website homepage/navbar/footer UI strings from website/i18n/en/code.json
 // into all other locales at website/i18n/<locale>/code.json.

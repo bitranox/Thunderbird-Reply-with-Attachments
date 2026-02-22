@@ -1,4 +1,3 @@
-/* eslint-env node */
 // Ensure all locale messages.json files contain the same keys as EN.
 // Missing keys are added with EN's message value. Extra keys are left intact.
 // This is a lightweight parity helper to keep tests green after adding new keys in EN.

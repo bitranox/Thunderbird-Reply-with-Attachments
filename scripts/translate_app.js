@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* global fetch */
 // Translate add-on UI strings from sources/_locales/en/messages.json
 // into all other locales found under sources/_locales/<lang>/messages.json.
@@ -229,7 +228,7 @@ async function run() {
       (a) => a === '--locales' || a === '-l' || a.startsWith('--locales=')
     );
     if (idx === -1) return 'all';
-    let val = '';
+    let val;
     const tok = argv[idx];
     if (tok.startsWith('--locales=')) {
       val = tok.split('=')[1] || '';
@@ -252,7 +251,7 @@ async function run() {
   } else {
     sel = parseCliLocales();
   }
-  let locales = [];
+  let locales;
   if (sel === 'all') {
     locales = listLocalesExceptEn();
   } else {

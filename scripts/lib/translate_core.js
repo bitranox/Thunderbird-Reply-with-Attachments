@@ -1,4 +1,3 @@
-/* eslint-env node */
 // Shared translation utilities for sync and batch flows
 
 export function splitFrontmatter(md) {

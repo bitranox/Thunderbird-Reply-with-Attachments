@@ -1,4 +1,3 @@
-/* eslint-env node */
 /* global fetch, FormData */
 // Translate website docs via OpenAI Batch API.
 // Reads OPENAI_API_KEY (required), optional OPENAI_MODEL, OPENAI_TEMPERATURE,
@@ -571,7 +570,7 @@ async function run() {
   const takeFlag = (names) => {
     const idx = args.findIndex((a) => names.some((n) => a === n || a.startsWith(n + '=')));
     if (idx === -1) return null;
-    let val = null;
+    let val;
     const tok = args[idx];
     const name = names.find((n) => tok === n || tok.startsWith(n + '='));
     if (tok.includes('=')) {

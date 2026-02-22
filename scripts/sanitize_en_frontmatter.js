@@ -1,4 +1,3 @@
-/* eslint-env node */
 // Ensure EN docs front matter (website/docs/*.md) quote title and sidebar_label with double quotes.
 // Also strips zero-width/combining marks and trims values. Leaves other fields untouched.
 
