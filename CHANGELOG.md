@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [2.4.0] - 2026-07-27
 
 - Fix: images are no longer dropped just because the sender put a `Content-ID` header on them. An image counts as inline only when the original message embeds it (a `cid:` reference in the message body) or when it is explicitly marked `Content-Disposition: inline`. Clients such as Apple Mail and Outlook stamp a `Content-ID` on every image part, so attached PNG and JPEG files were silently skipped: no confirmation dialog and no file in the reply, while PDF, DOCX and XLSX came through.
 - Removed: the "Include inline pictures" option and the body rewriting behind it. Thunderbird restores inline images in a reply itself, so the add-on no longer touches the compose body at all. This also drops the parsing of Thunderbird's internal `imap:`/`mailbox:` URLs, which are not a stable API (raised in the add-ons.thunderbird.net review of 2.3.2, see bug 1997519).
