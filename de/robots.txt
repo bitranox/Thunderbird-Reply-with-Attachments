@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/sitemap.xml
