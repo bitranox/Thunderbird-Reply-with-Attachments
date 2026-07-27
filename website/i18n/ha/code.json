@@ -54,7 +54,7 @@
     "message": "Tsallake SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "An ware sa hannun SMIME da hotunan cikin jiki (inline) domin amsoshi su kasance masu sauƙi."
+    "message": "Ba a taɓa kwafin sa hannun SMIME ba. Hotunan da aka saka a jikin sakon suna zama a jikin amsar, inda Thunderbird ke ajiye su, maimakon a sake haɗa su a matsayin abin liƙawa karo na biyu."
   },
   "homepage.features.blacklist.title": {
     "message": "Alamomin Jerin‑Baƙi"

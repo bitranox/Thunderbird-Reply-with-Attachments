@@ -54,7 +54,7 @@
     "message": "Lɛka SMIME mpe bililingi ya kati"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Ba sinyatire ya SMIME mpe bililingi ya kati (inline) babwakami mpo biyanoli ezala pɛto mpe pete."
+    "message": "Bisinye ya SMIME ekopyamaka ata mokolo moko te. Bafɔtɔ oyo ekɔtisami na kati ya nsango etikalaka kaka na eyano, esika Thunderbird ebombaka yango, na esika ya kobakisa yango lisusu lokola kanga."
   },
   "homepage.features.blacklist.title": {
     "message": "Bamotifi ya Blacklist"

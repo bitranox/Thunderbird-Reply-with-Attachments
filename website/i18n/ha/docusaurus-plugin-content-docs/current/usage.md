@@ -9,28 +9,29 @@ sidebar_label: 'Amfani'
 ## Amfani {#usage}
 
 - Amsa kuma ƙarin manhaja yana ƙara asalin fayiloli ta atomatik — ko kuma yana tambaya da farko, idan an kunna a Zaɓuɓɓuka.
-- Ana kawar da maimaituwa bisa sunan fayil; sassan S/MIME ana tsallake su koyaushe. Hotunan cikin-jiki (inline) ana mayar da su a jikin amsa ta tsoho (a kashe ta hanyar "Include inline pictures" a Zaɓuɓɓuka).
+- Ana cire kwafi ta amfani da sunan fayil; ana tsallake sassan S/MIME koyaushe. Hotunan da aka saka a cikin sakon asali suna zama a cikin jikin amsa, inda Thunderbird ke sanya su, kuma ba a kwafe su a matsayin fayiloli ba.
 - Abubuwan haɗe da ke cikin jerin-hana (blacklist) ma ana tsallake su (daidaiton glob mara bambancin manya/ƙananan haruffa ga sunayen fayil kawai, ba hanyoyi). Duba [Saituna](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Abin da yake faruwa lokacin amsawa {#what-happens}
 
-- Gano amsa → jerin ainihin abin haɗe → tace S/MIME + inline → tabbaci na zaɓi → ƙara fayilolin da suka cancanta (tsallake masu maimaituwa) → mayar da hotunan inline cikin jiki.
+- Gano amsa → lissafa abubuwan da aka makala na asali → tsallake S/MIME da hotunan da aka saka → tabbatarwa ta zaɓi → ƙara fayilolin da suka cancanta (ana tsallake kwafi).
 
-Wucewa mai tsauri vs. mai sassauci: Ƙarin manhaja na farko yana ware sassan S/MIME da inline daga abubuwan haɗe na fayil. Idan babu abin da ya cancanta, sai ya gudanar da wucewa mai sassauci wanda har yanzu ke ware S/MIME/inline amma yana lamunta ƙarin yanayi (duba Cikakken Lambar). Ba a taɓa ƙara hotunan inline a matsayin abubuwan haɗe na fayil ba; maimakon haka, idan "Include inline pictures" an kunna (tsoho), ana lulluɓe su kai tsaye cikin jikin amsa a matsayin base64 data URI.
+| Nau'in sashi                                                 | An kwafe zuwa amsa    |
+|--------------------------------------------------------------|----------------------:|
+| Fayil na sa hannu na S/MIME `smime.p7s`                      | A'a                   |
+| Nau'ikan MIME na S/MIME (`application/pkcs7-*`)              | A'a                   |
+| Hoton da jikin sakon ya saka ta hanyar `cid:`                | A'a (yana cikin jiki) |
+| Hoton da aka yiwa alama da `Content-Disposition: inline`     | A'a (yana cikin jiki) |
+| Hoton da ke da `Content-ID` wanda jiki bai taɓa ambatarsa ba | Ee                    |
+| Imel da aka haɗa (`message/rfc822`) tare da sunan fayil      | Ee                    |
+| Fayil na yau da kullum da aka haɗa tare da sunan fayil       | Ee                    |
 
-| Nau'in ɓangare                                           | Wucewa mai tsauri                  | Wucewa mai sassauci                |
-|----------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| Fayil ɗin sa hannun S/MIME `smime.p7s`                   | An ware                            | An ware                            |
-| Nau'ikan MIME na S/MIME (`application/pkcs7-*`)          | An ware                            | An ware                            |
-| Hoton inline da Content‑ID ya yi nuni da shi (`image/*`) | An ware (an mayar da shi a jiki\*) | An ware (an mayar da shi a jiki\*) |
-| Saƙon imel da aka haɗa (`message/rfc822`) mai suna fayil | Ba a ƙara ba                       | Ana iya ƙara shi                   |
-| Abin haɗe na fayil na yau da kullum mai suna fayil       | Ana iya ƙara shi                   | Ana iya ƙara shi                   |
-
-\* Idan "Include inline pictures" an kunna (tsoho: ON), ana lulluɓe hotunan inline a jikin amsa a matsayin base64 data URI maimakon a ƙara su a matsayin abubuwan haɗe na fayil. Duba [Saituna](configuration#include-inline-pictures).
-
-Misali: Wasu abubuwan haɗe na iya rasa wasu kanun bayanai amma har yanzu fayiloli ne na yau da kullum (ba inline/S/MIME ba). Idan wucewa mai tsauri bai sami komai ba, wucewa mai sassauci na iya karɓar waɗannan kuma ya haɗa su.
+Ana ɗaukar hoto a matsayin wanda aka saka ne kawai lokacin da sakon asali ya ambace shi da gaske,
+ko kuma lokacin da mai aikawa ya yiwa alama fili-fili da `Content-Disposition: inline`. Kawai
+kanun `Content-ID` bai isa ba: yawancin masu amfani da imel suna sanya ɗaya a kan kowane sashin hoto,
+har da kayan haɗi na gaskiya, kuma dole ne a kwafe waɗannan duk da haka.
 
 ---
 
@@ -88,7 +89,7 @@ Misali: Wasu abubuwan haɗe na iya rasa wasu kanun bayanai amma har yanzu fayilo
 
 ## Dalilin da ya sa abubuwan haɗe na iya kasa ƙaruwa {#why-attachments-might-not-be-added}
 
-- Ba a ƙara hotunan inline a matsayin abubuwan haɗe na fayil. Idan "Include inline pictures" yana ON (tsoho), ana lulluɓe su a jikin amsa a matsayin data URI maimakon haka. Idan saitin yana OFF, ana cire hotunan inline gaba ɗaya. Duba [Saituna](configuration#include-inline-pictures).
+- Hotunan da sakon asali ya saka a ciki ba a kwafe su a matsayin fayiloli ba. Sun riga sun kasance a jikin amsar, inda Thunderbird ya sanya su. Duba [Configuration](configuration#include-inline-pictures).
 - Sassan sa hannun S/MIME an ware su bisa ƙira: sunayen fayil kamar `smime.p7s` da nau'ikan MIME kamar `application/pkcs7-signature` ko `application/pkcs7-mime` ana tsallake su.
 - Tsare-tsaren jerin-hana na iya tace 'yan takara: duba [Saituna](configuration#blacklist-glob-patterns); daidaitawa ba ya la'akari da manya ko ƙananan haruffa kuma ga sunan fayil kaɗai.
 - Ba a ƙara sunayen fayil masu maimaituwa ba: idan shafin rubuta saƙo ya rigaya yana ƙunshe da fayil mai suna iri ɗaya da aka daidaita, ana tsallake shi.

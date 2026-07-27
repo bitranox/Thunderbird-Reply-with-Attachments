@@ -9,28 +9,28 @@ sidebar_label: 'Gebruik'
 ## Gebruik {#usage}
 
 - Beantwoord en de add-on voegt originelen automatisch toe — of vraagt eerst om bevestiging, als dit is ingeschakeld in Opties.
-- Duplicaten voorkomen op basis van bestandsnaam; S/MIME-onderdelen worden altijd overgeslagen. Inline-afbeeldingen worden standaard hersteld in de antwoordtekst (uitschakelen via "Inline-afbeeldingen opnemen" in Opties).
+- Gededupliceerd op bestandsnaam; S/MIME-onderdelen worden altijd overgeslagen. Afbeeldingen die in het oorspronkelijke bericht zijn ingesloten, blijven in de hoofdtekst van het antwoord staan, waar Thunderbird ze plaatst, en worden niet als bestand gekopieerd.
 - Bijlagen op de zwarte lijst worden ook overgeslagen (hoofdletterongevoelige glob‑patronen die bestandsnamen matchen, niet paden). Zie [Configuratie](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Wat gebeurt er bij beantwoorden {#what-happens}
 
-- Antwoord detecteren → originele bijlagen opsommen → S/MIME + inline filteren → optioneel bevestigen → in aanmerking komende bestanden toevoegen (duplicaten overslaan) → inline‑afbeeldingen in de tekst herstellen.
+- Antwoord detecteren → oorspronkelijke bijlagen opsommen → S/MIME en ingesloten afbeeldingen overslaan → optionele bevestiging → de geschikte bestanden toevoegen (duplicaten overslaan).
 
-Strikte vs. soepele doorloop: de add‑on sluit eerst S/MIME‑ en inline‑onderdelen uit van bestandsbijlagen. Als er niets in aanmerking komt, voert hij een soepele doorloop uit die S/MIME/inline nog steeds uitsluit maar meer gevallen tolereert (zie Codedetails). Inline‑afbeeldingen worden nooit als bestandsbijlagen toegevoegd; in plaats daarvan worden ze, wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (de standaard), direct in de antwoordtekst ingesloten als base64‑data‑URI's.
+| Onderdeeltype                                                     | Gekopieerd naar het antwoord |
+|-------------------------------------------------------------------|-----------------------------:|
+| S/MIME-handtekeningbestand `smime.p7s`                            | Nee                          |
+| S/MIME MIME-typen (`application/pkcs7-*`)                         | Nee                          |
+| Afbeelding die de berichttekst insluit via `cid:`                 | Nee (staat in de tekst)      |
+| Afbeelding gemarkeerd als `Content-Disposition: inline`           | Nee (staat in de tekst)      |
+| Afbeelding met een `Content-ID` waar de tekst nooit naar verwijst | Ja                           |
+| Bijgevoegde e-mail (`message/rfc822`) met een bestandsnaam        | Ja                           |
+| Gewone bestandsbijlage met een bestandsnaam                       | Ja                           |
 
-| Onderdeeltype                                                         | Strikte doorloop                  | Soepele doorloop                  |
-|-----------------------------------------------------------------------|----------------------------------:|----------------------------------:|
-| S/MIME-handtekeningbestand `smime.p7s`                                | Uitgesloten                       | Uitgesloten                       |
-| S/MIME-MIME-typen (`application/pkcs7-*`)                             | Uitgesloten                       | Uitgesloten                       |
-| Inline‑afbeelding waarnaar wordt verwezen door Content‑ID (`image/*`) | Uitgesloten (hersteld in tekst\*) | Uitgesloten (hersteld in tekst\*) |
-| Bijgevoegde e‑mail (`message/rfc822`) met een bestandsnaam            | Niet toegevoegd                   | Kan worden toegevoegd             |
-| Normale bestandsbijlage met een bestandsnaam                          | Kan worden toegevoegd             | Kan worden toegevoegd             |
-
-\* Wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (standaard: AAN), worden inline‑afbeeldingen in de antwoordtekst ingesloten als base64‑data‑URI's in plaats van als bestandsbijlagen toegevoegd. Zie [Configuratie](configuration#include-inline-pictures).
-
-Voorbeeld: Sommige bijlagen missen bepaalde headers maar zijn toch reguliere bestanden (niet inline/S/MIME). Als de strikte doorloop er geen vindt, kan de soepele doorloop die accepteren en toevoegen.
+Een afbeelding telt alleen als ingesloten wanneer het oorspronkelijke bericht er daadwerkelijk naar verwijst, of wanneer
+de afzender deze expliciet heeft gemarkeerd als `Content-Disposition: inline`. Een kale `Content-ID`-header is niet voldoende:
+sommige e-mailprogramma's plaatsen die op elk afbeeldingsonderdeel, inclusief echte bijlagen, en die moeten alsnog worden gekopieerd.
 
 ---
 
@@ -88,7 +88,7 @@ Voorbeeld: Sommige bijlagen missen bepaalde headers maar zijn toch reguliere bes
 
 ## Waarom bijlagen mogelijk niet worden toegevoegd {#why-attachments-might-not-be-added}
 
-- Inline‑afbeeldingen worden niet als bestandsbijlagen toegevoegd. Als "Inline‑afbeeldingen opnemen" AAN staat (de standaard), worden ze in plaats daarvan in de antwoordtekst ingesloten als data‑URI's. Als de instelling UIT staat, worden inline‑afbeeldingen volledig verwijderd. Zie [Configuratie](configuration#include-inline-pictures).
+- Afbeeldingen die het oorspronkelijke bericht insluit, worden niet als bestand gekopieerd. Ze staan al in de hoofdtekst van het antwoord, waar Thunderbird ze heeft geplaatst. Zie [Configuration](configuration#include-inline-pictures).
 - S/MIME‑handtekeningonderdelen worden bewust uitgesloten: bestandsnamen zoals `smime.p7s` en MIME‑typen zoals `application/pkcs7-signature` of `application/pkcs7-mime` worden overgeslagen.
 - Patronen van de zwarte lijst kunnen kandidaten filteren: zie [Configuratie](configuration#blacklist-glob-patterns); overeenkomen is hoofdletterongevoelig en alleen op bestandsnaam.
 - Dubbele bestandsnamen worden niet opnieuw toegevoegd: als het opstelvenster al een bestand met dezelfde genormaliseerde naam bevat, wordt het overgeslagen.

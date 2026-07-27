@@ -8,25 +8,9 @@ sidebar_label: 'Ciri-ciri'
 
 ## Ciri-ciri {#features}
 
-- Melampirkan fail daripada e-mel asal secara automatik apabila membalas.
-- Tingkah laku boleh dikonfigurasi: lampiran boleh
-  - ditambah secara automatik, atau
-  - ditambah hanya selepas pengesahan (dialog kecil yang boleh diakses). Dalam Pilihan anda
-    boleh mengaktifkan pengesahan dan memilih jawapan lalai (Ya/Tidak).
-- Senarai hitam nama fail (pola glob) menghalang fail tertentu daripada
-  dilampirkan secara automatik. Contoh: `*intern*`, `*secret*`, `*passwor*`.
-  Pemadanan adalah tidak peka huruf besar/kecil dan hanya menyemak nama fail; sediakan satu pola
-  setiap baris dalam Pilihan.
-- Amaran senarai hitam (pilihan, diaktifkan secara lalai): apabila fail dikecualikan oleh
-  senarai hitam anda, satu modal kecil menyenaraikan fail dan pola yang sepadan. Mesra mod gelap
-  dan boleh diakses papan kekunci (Enter/Esc untuk menutup).
-- Berfungsi dengan Balas dan Balas semua. Teruskan tidak diubah oleh pengaya ini.
-- Menambah yang asal walaupun anda telah melampirkan sesuatu sendiri; mengelakkan pendua mengikut nama fail.
-- Perlindungan pendua per tab mengelakkan penambahan dua kali dalam tab Tulis yang sama.
-- Melangkau sijil S/MIME secara lalai untuk mengelakkan lampiran yang tidak perlu.
-- Sertakan gambar sebaris (lalai: AKTIF). Imej tertanam dipulihkan terus dalam
-  badan balasan sebagai URI data base64, mengekalkan susun atur sebaris asal. Lumpuhkan dalam
-  Pilihan untuk melangkau imej sebaris sepenuhnya.
+- Imej terbenam diserahkan kepada Thunderbird: imej tersebut kekal dalam badan balasan dan tidak
+  disalin sebagai lampiran fail. Imej yang hanya membawa `Content-ID` tanpa dirujuk
+  dianggap sebagai lampiran biasa dan disalin.
 
 ---
 

@@ -9,28 +9,28 @@ sidebar_label: 'Penggunaan'
 ## Penggunaan {#usage}
 
 - Balas dan add-on menambah yang asal secara automatik — atau akan bertanya dahulu, jika didayakan dalam Pilihan.
-- Nyahpendua mengikut nama fail; bahagian S/MIME sentiasa diabaikan. Imej sebaris dipulihkan dalam badan balasan secara lalai (nyahdayakan melalui "Sertakan gambar sebaris" dalam Pilihan).
+- Dinyahduplikasi mengikut nama fail; bahagian S/MIME sentiasa dilangkau. Imej yang dibenamkan dalam mesej asal kekal dalam badan balasan, di tempat Thunderbird meletakkannya, dan tidak disalin sebagai fail.
 - Lampiran yang disenaraihitamkan juga diabaikan (corak glob tidak peka huruf besar/kecil yang memadankan nama fail, bukan laluan). Lihat [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Apa yang berlaku apabila membalas {#what-happens}
 
-- Kesan balasan → senaraikan lampiran asal → tapis S/MIME + sebaris → sahkan (pilihan) → tambah fail yang layak (langkau pendua) → pulihkan imej sebaris dalam badan.
+- Kesan balasan → senaraikan lampiran asal → langkau S/MIME dan imej terbenam → pengesahan pilihan → tambah fail yang layak (melangkau duplikat).
 
-Laluan tegas vs. santai: Add‑on terlebih dahulu mengecualikan bahagian S/MIME dan sebaris daripada lampiran fail. Jika tiada yang layak, ia menjalankan laluan santai yang masih mengecualikan S/MIME/sebaris tetapi bertolak ansur dengan lebih banyak kes (lihat Butiran Kod). Imej sebaris tidak pernah ditambah sebagai lampiran fail; sebaliknya, apabila "Sertakan gambar sebaris" didayakan (lalai), ia dibenamkan terus dalam badan balasan sebagai URI data base64.
+| Jenis bahagian                                                | Disalin ke balasan            |
+|---------------------------------------------------------------|------------------------------:|
+| Fail tandatangan S/MIME `smime.p7s`                           | Tidak                         |
+| Jenis MIME S/MIME (`application/pkcs7-*`)                     | Tidak                         |
+| Imej yang dibenamkan oleh badan mesej melalui `cid:`          | Tidak (ia berada dalam badan) |
+| Imej yang ditanda `Content-Disposition: inline`               | Tidak (ia berada dalam badan) |
+| Imej dengan `Content-ID` yang tidak pernah dirujuk oleh badan | Ya                            |
+| E-mel dilampirkan (`message/rfc822`) dengan nama fail         | Ya                            |
+| Lampiran fail biasa dengan nama fail                          | Ya                            |
 
-| Jenis bahagian                                        | Laluan tegas                            | Laluan santai                           |
-|-------------------------------------------------------|----------------------------------------:|----------------------------------------:|
-| Fail tandatangan S/MIME `smime.p7s`                   | Dikecualikan                            | Dikecualikan                            |
-| Jenis MIME S/MIME (`application/pkcs7-*`)             | Dikecualikan                            | Dikecualikan                            |
-| Imej sebaris yang dirujuk oleh Content‑ID (`image/*`) | Dikecualikan (dipulihkan dalam badan\*) | Dikecualikan (dipulihkan dalam badan\*) |
-| Emel terlampir (`message/rfc822`) dengan nama fail    | Tidak ditambah                          | Mungkin ditambah                        |
-| Lampiran fail biasa dengan nama fail                  | Mungkin ditambah                        | Mungkin ditambah                        |
-
-\* Apabila "Sertakan gambar sebaris" didayakan (lalai: AKTIF), imej sebaris dibenamkan dalam badan balasan sebagai URI data base64 dan bukan ditambah sebagai lampiran fail. Lihat [Konfigurasi](configuration#include-inline-pictures).
-
-Contoh: Sesetengah lampiran mungkin kekurangan pengepala tertentu tetapi masih merupakan fail biasa (bukan sebaris/S/MIME). Jika laluan tegas tidak menemui apa-apa, laluan santai mungkin menerima yang itu dan melampirkannya.
+Imej dikira sebagai dibenamkan hanya apabila mesej asal benar-benar merujuknya, atau apabila penghantar menandakannya
+secara jelas sebagai `Content-Disposition: inline`. Header `Content-ID` semata-mata tidak mencukupi: beberapa klien mel
+meletakkannya pada setiap bahagian imej, termasuk lampiran sebenar, dan itu masih perlu disalin.
 
 ---
 
@@ -88,7 +88,7 @@ Contoh: Sesetengah lampiran mungkin kekurangan pengepala tertentu tetapi masih m
 
 ## Mengapa lampiran mungkin tidak ditambah {#why-attachments-might-not-be-added}
 
-- Imej sebaris tidak ditambah sebagai lampiran fail. Apabila "Sertakan gambar sebaris" AKTIF (lalai), ia dibenamkan dalam badan balasan sebagai URI data. Jika tetapan itu DIMATIKAN, imej sebaris dialih keluar sepenuhnya. Lihat [Konfigurasi](configuration#include-inline-pictures).
+- Imej yang dibenamkan oleh mesej asal tidak disalin sebagai fail. Imej tersebut sudah pun berada dalam badan balasan, di tempat Thunderbird meletakkannya. Lihat [Configuration](configuration#include-inline-pictures).
 - Bahagian tandatangan S/MIME dikecualikan mengikut reka bentuk: nama fail seperti `smime.p7s` dan jenis MIME seperti `application/pkcs7-signature` atau `application/pkcs7-mime` diabaikan.
 - Corak senarai hitam boleh menapis calon: lihat [Konfigurasi](configuration#blacklist-glob-patterns); padanan adalah tidak peka huruf besar/kecil dan hanya berdasarkan nama fail.
 - Nama fail pendua tidak akan ditambah semula: jika gubahan sudah mengandungi fail dengan nama ternormal yang sama, ia akan dilangkau.

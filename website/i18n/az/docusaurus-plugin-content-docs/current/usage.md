@@ -9,28 +9,29 @@ sidebar_label: 'İstifadə'
 ## İstifadə {#usage}
 
 - Cavab verin və əlavə orijinal qoşmaları avtomatik əlavə etsin — yaxud Seçimlərdə aktivdirsə əvvəlcə soruşsun.
-- Fayl adına görə təkrarlanmalar aradan qaldırılır; S/MIME hissələri həmişə ötürülür. Sətirdaxili şəkillər standart olaraq cavab mətnində bərpa olunur ("Seçimlər"də "Sətirdaxili şəkilləri daxil et" vasitəsilə söndürmək olar).
+- Fayl adına görə təkrarlar aradan qaldırılır; S/MIME hissələri həmişə keçilir. Orijinal mesajda daxil edilmiş şəkillər cavabın gövdəsində qalır, Thunderbird onları harada yerləşdirirsə, və fayl kimi kopyalanmır.
 - Qara siyahıya salınmış qoşmalar da ötürülür (yollar deyil, fayl adlarına uyğun gələn, böyük‑kiçik hərfə həssas olmayan glob nümunələri). Bax: [Konfiqurasiya](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Cavab zamanı nə baş verir {#what-happens}
 
-- Cavabı aşkar et → orijinal qoşmaları siyahıla → S/MIME + sətirdaxili olanları filtrlə → istəyə bağlı təsdiq → uyğun faylları əlavə et (dublikatları ötür) → sətirdaxili şəkilləri mətndə bərpa et.
+- Cavabı aşkarla → orijinal əlavələri siyahıya al → S/MIME və daxil edilmiş şəkilləri keç → istəyə bağlı təsdiq → uyğun faylları əlavə et (dublikatları keçərək).
 
-Sərt və yumşaq keçid: Əlavə əvvəlcə fayl qoşmalarından S/MIME və sətirdaxili hissələri kənarlaşdırır. Heç nə uyğun gəlməzsə, S/MIME/sətirdaxilini yenə istisna edən, amma daha çox halı qəbul edən yumşaq keçid işə düşür (Kod Təfərrüatlarına baxın). Sətirdaxili şəkillər heç vaxt fayl qoşması kimi əlavə edilmir; əvəzində, "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), onlar birbaşa cavab mətninə base64 data URI kimi yerləşdirilir.
+| Hissə növü                                                     | Cavaba kopyalanır |
+|----------------------------------------------------------------|------------------:|
+| S/MIME imza faylı `smime.p7s`                                  | Xeyr              |
+| S/MIME MIME növləri (`application/pkcs7-*`)                    | Xeyr              |
+| Mesaj gövdəsinin `cid:` ilə daxil etdiyi şəkil                 | Xeyr (gövdədədir) |
+| `Content-Disposition: inline` kimi işarələnmiş şəkil           | Xeyr (gövdədədir) |
+| Gövdənin heç vaxt istinad etmədiyi `Content-ID`-yə malik şəkil | Bəli              |
+| Fayl adı olan əlavə edilmiş e-poçt (`message/rfc822`)          | Bəli              |
+| Fayl adı olan adi fayl əlavəsi                                 | Bəli              |
 
-| Hissə növü                                                  | Sərt keçid                              | Yumşaq keçid                            |
-|-------------------------------------------------------------|----------------------------------------:|----------------------------------------:|
-| S/MIME imza faylı `smime.p7s`                               | Kənarlaşdırılır                         | Kənarlaşdırılır                         |
-| S/MIME MIME tipləri (`application/pkcs7-*`)                 | Kənarlaşdırılır                         | Kənarlaşdırılır                         |
-| Content‑ID ilə istinad edilən sətirdaxili şəkil (`image/*`) | Kənarlaşdırılır (mətndə bərpa olunur\*) | Kənarlaşdırılır (mətndə bərpa olunur\*) |
-| Fayl adı olan qoşulmuş e‑poçt (`message/rfc822`)            | Əlavə edilmir                           | Əlavə oluna bilər                       |
-| Fayl adı olan adi fayl qoşması                              | Əlavə oluna bilər                       | Əlavə oluna bilər                       |
-
-\* "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), sətirdaxili şəkillər fayl qoşması kimi əlavə olunmaq əvəzinə cavab mətninə base64 data URI kimi yerləşdirilir. Bax: [Konfiqurasiya](configuration#include-inline-pictures).
-
-Nümunə: Bəzi qoşmalarda müəyyən başlıqlar çatışmaya bilər, lakin onlar yenə də adi fayllardır (sətirdaxili/S/MIME deyil). Sərt keçid heç nə tapmasa, yumşaq keçid onları qəbul edib qoşa bilər.
+Şəkil yalnız orijinal mesaj ona faktiki olaraq istinad etdikdə,
+və ya göndərən onu açıq şəkildə `Content-Disposition: inline` kimi işarələdikdə daxil edilmiş sayılır. Sadəcə
+`Content-ID` başlığı kifayət deyil: bir çox poçt proqramları hər şəkil hissəsinə onu qoyur,
+əsl əlavələr də daxil olmaqla, və onlar yenə də kopyalanmalıdır.
 
 ---
 
@@ -87,7 +88,7 @@ Nümunə: Bəzi qoşmalarda müəyyən başlıqlar çatışmaya bilər, lakin on
 
 ## Niyə qoşmalar əlavə olunmaya bilər {#why-attachments-might-not-be-added}
 
-- Sətirdaxili şəkillər fayl qoşması kimi əlavə edilmir. "Sətirdaxili şəkilləri daxil et" AÇIQ olduqda (defolt), onlar əvəzində cavab mətninə data URI kimi yerləşdirilir. Ayar SÖNÜK olarsa, sətirdaxili şəkillər tamamilə çıxarılır. Bax: [Konfiqurasiya](configuration#include-inline-pictures).
+- Orijinal mesajın daxil etdiyi şəkillər fayl kimi kopyalanmır. Onlar artıq Thunderbird-in yerləşdirdiyi cavabın mətnindədir. Bax: [Configuration](configuration#include-inline-pictures).
 - S/MIME imza hissələri dizayn etibarilə istisna edilir: `smime.p7s` kimi fayl adları və `application/pkcs7-signature` və ya `application/pkcs7-mime` kimi MIME tipləri ötürülür.
 - Qara siyahı nümunələri namizədləri filtrləyə bilər: bax [Konfiqurasiya](configuration#blacklist-glob-patterns); uyğunlaşdırma böyük‑kiçik hərfə həssas deyil və yalnız fayl adına görədir.
 - Dublikat fayl adları yenidən əlavə edilmir: yazmada eyni normallaşdırılmış ada malik fayl artıq varsa, o, ötürülür.

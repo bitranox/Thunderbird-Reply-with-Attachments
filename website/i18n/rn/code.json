@@ -54,7 +54,7 @@
     "message": "Kureka SMIME n'ibiri 'inline'"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Imikono ya SMIME n'amashusho ari 'inline' bikuwemwo kugira ibisubizo bigume vyoroheje."
+    "message": "Ibimenyetso vya SMIME ntibigera bigereranywa. Amashusho ari muri ubutumwa aguma mu gisubizo, aho Thunderbird ayabika, aho kongera kuyongerako nk'igishimikizo ca kabiri."
   },
   "homepage.features.blacklist.title": {
     "message": "Inyandikano zo kubuza"

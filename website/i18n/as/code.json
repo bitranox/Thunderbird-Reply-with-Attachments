@@ -54,7 +54,7 @@
     "message": "SMIME আৰু ইনলাইন বাদ"
   },
   "homepage.features.skipSmime.body": {
-    "message": "উত্তৰসমূহ সৰল ৰাখিবলৈ SMIME স্বাক্ষৰ আৰু ইনলাইন ছবিসমূহ বাদ দিয়া হয়।"
+    "message": "SMIME স্বাক্ষৰ কেতিয়াও কপি কৰা নহয়। বাৰ্তাৰ শৰীৰত সন্নিৱিষ্ট ছবিসমূহ প্ৰত্যুত্তৰৰ শৰীৰতে থাকে, য'ত Thunderbird -এ সিহতক ৰাখে, দ্বিতীয়বাৰ সংলগ্ন কৰাৰ পৰিবৰ্তে।"
   },
   "homepage.features.blacklist.title": {
     "message": "ব্লেকলিষ্ট পেটাৰ্ন"

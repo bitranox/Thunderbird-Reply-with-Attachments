@@ -9,28 +9,28 @@ sidebar_label: 'Kugwiritsa Ntchito'
 ## Kugwiritsa Ntchito {#usage}
 
 - Yankhani ndipo chowonjezera chimawonjezera zoyambirira zokha — kapena chimafunsa poyamba, ngati zayatsidwa mu Zosankha.
-- Kubwereza kumapewa potengera dzina la fayilo; magawo a S/MIME amapitilidwa nthawi zonse. Zithunzi za inline zimabwezeretsedwa mu thupi la yankho mwachikhazikitso (mutha kuzitseka kudzera mu "Include inline pictures" mu Zosankha).
+- Zosanthula zachiwirikiwiri zachotsedwa malinga ndi dzina la fayilo; magawo a S/MIME amadumphidwa nthawi zonse. Zithunzi zomwe zidalowetsedwa mu uthenga woyambirira zimakhalabe m'thupi la yankho, komwe Thunderbird amaziika, ndipo sizimakopedwa ngati mafayilo.
 - Zomangiriridwa zomwe zili pa blacklist zimapitidwanso (mapatani a glob osasiyanitsa zilembo zazikulu/zazing'ono ofanana ndi maina a mafayilo, osati njira). Onani [Zokonza](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Zimachitika chiyani mukamayankha {#what-happens}
 
-- Kuzindikira yankho → kulemba mndandanda wa zomangiriridwa zoyambirira → kusefa S/MIME + inline → kutsimikizira posankha → kuwonjezera mafayilo oyenerera (dumphani zobwerezedwa) → kubwezeretsa zithunzi za inline m'thupi.
+- Zindikira yankho → lembani zowonjezera zoyambirira → siyani S/MIME ndi zithunzi zolowetsedwa → chitsimikizo chosafunikira → onjezerani mafayilo oyenerera (kusiya zofanana).
 
-Kuyendera kolimba motsutsana ndi kofewa: Chowonjezera chimayamba pochotsa magawo a S/MIME ndi a inline ku zomangiriridwa za fayilo. Ngati palibe loyenera, chimayendetsa koyendera kofewa komwe komabe chimachotsa S/MIME/inline koma chimapirira milandu yochulukirapo (onani Code Details). Zithunzi za inline sazionjezedwa ngati zomangiriridwa za fayilo; m'malo mwake, pamene "Include inline pictures" yayatsidwa (mwachikhazikitso), zimamangidwamo mwachindunji mu thupi la yankho monga base64 data URIs.
+| Mtundu wa gawo                                                     | Kukopedwa ku yankho |
+|--------------------------------------------------------------------|--------------------:|
+| Fayilo yasayino ya S/MIME `smime.p7s`                              | Ayi                 |
+| Mitundu ya MIME ya S/MIME (`application/pkcs7-*`)                  | Ayi                 |
+| Chithunzi chomwe thupi la uthenga limalowetsa kudzera mu `cid:`    | Ayi (chili m'thupi) |
+| Chithunzi chosonyezedwa ngati `Content-Disposition: inline`        | Ayi (chili m'thupi) |
+| Chithunzi chokhala ndi `Content-ID` chomwe thupilo silimatchulapo  | Inde                |
+| Imelo yolumikizidwa (`message/rfc822`) yokhala ndi dzina la fayilo | Inde                |
+| Chowonjezera cha fayilo wamba chokhala ndi dzina la fayilo         | Inde                |
 
-| Mtundu wa gawo                                                      | Kuyendera kolimba                       | Kuyendera kofewa                        |
-|---------------------------------------------------------------------|----------------------------------------:|----------------------------------------:|
-| Fayilo ya siginecha ya S/MIME `smime.p7s`                           | Zachotsedwa                             | Zachotsedwa                             |
-| Mitundu ya MIME ya S/MIME (`application/pkcs7-*`)                   | Zachotsedwa                             | Zachotsedwa                             |
-| Chithunzi cha inline chochitanidwa ndi Content‑ID (`image/*`)       | Zachotsedwa (zibwezeretsedwa m'thupi\*) | Zachotsedwa (zibwezeretsedwa m'thupi\*) |
-| Imelo yomangiriridwa (`message/rfc822`) yokhala ndi dzina la fayilo | Sinalowetsedwe                          | Ingawonjezedwe                          |
-| Chomangiriridwa cha fayilo wamba chokhala ndi dzina la fayilo       | Ingawonjezedwe                          | Ingawonjezedwe                          |
-
-\* Pamene "Include inline pictures" yayatsidwa (mwachikhazikitso: ON), zithunzi za inline zimamangidwamo mu thupi la yankho monga base64 data URIs m'malo mowonjezedwa ngati zomangiriridwa za fayilo. Onani [Zokonza](configuration#include-inline-pictures).
-
-Chitsanzo: Zina mwa zomangiriridwa zitha kusowa ma header ena koma zikadali mafayilo wamba (osati inline/S/MIME). Ngati kuyendera kolimba sikapeza chilichonse, kuyendera kofewa kungavomereze zimenezo ndi kuziwonjezera.
+Chithunzi chimawerengedwa kuti chalowetsedwa pokhapokha uthenga woyambirira ukutchulapo, kapena wotumiza wachisonyeza
+mwachindunji ngati `Content-Disposition: inline`. Mutu wokhawokha wa `Content-ID` sukukwanira: makasitomala ambiri a imelo
+amaika izi pa gawo lililonse la chithunzi, kuphatikizapo zowonjezera zenizeni, ndipo izi ziyenera kukopedwabe.
 
 ---
 
@@ -87,7 +87,7 @@ Chitsanzo: Zina mwa zomangiriridwa zitha kusowa ma header ena koma zikadali mafa
 
 ## Chifukwa chomwe zomangiriridwa sizingawonjezedwe {#why-attachments-might-not-be-added}
 
-- Zithunzi za inline sizionjezedwa ngati zomangiriridwa za fayilo. Pamene "Include inline pictures" ili ON (mwachikhazikitso), zimamangidwamo mu thupi la yankho monga data URIs m'malo mwake. Ngati zoikamo zikadali OFF, zithunzi za inline zimachotsedwa kwathunthu. Onani [Zokonza](configuration#include-inline-pictures).
+- Zithunzi zomwe uthenga woyambirira umalowetsamo sizikopedwa ngati mafayilo. Zilipo kale m'thupi la yankho, komwe Thunderbird idaziika. Onani [Configuration](configuration#include-inline-pictures).
 - Magawo a siginecha a S/MIME amachotsedwa mwadala: maina a mafayilo monga `smime.p7s` ndi mitundu ya MIME ngati `application/pkcs7-signature` kapena `application/pkcs7-mime` amapitilidwa.
 - Mapatani a blacklist angasefe omwe akuyembekezeredwa: onani [Zokonza](configuration#blacklist-glob-patterns); kufananira sikusiyanitsa zilembo zazikulu/zazing'ono ndipo kumangotengera dzina la fayilo.
 - Maina a mafayilo obwereza samawonjezedwanso: ngati zolembapo zili kale ndi fayilo yokhala ndi dzina lofanana lomwe lasanjikizidwa, imadumphidwa.

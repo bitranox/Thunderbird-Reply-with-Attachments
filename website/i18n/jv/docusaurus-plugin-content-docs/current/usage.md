@@ -9,28 +9,26 @@ sidebar_label: 'Panganggone'
 ## Panganggone {#usage}
 
 - Wangsuli lan add‑on bakal otomatis nambahake sing asli — utawa takon dhisik, yen diaktifake ing Options.
-- Ora dobel adhedhasar jeneng file; bagean S/MIME mesthi dilewati. Gambar inline dipulihake maneh ing isi wangsulan sacara gawané (bisa dipateni liwat "Include inline pictures" ing Options).
+- Diduplikasi manut jeneng file; bagean S/MIME tansah dilewati. Gambar sing ditempelake ing pesen asli tetep ana ing awak balesan, panggonan Thunderbird nyelehake, lan ora dicopy dadi file.
 - Lampiran sing ana ing blacklist uga dilewati (pola glob sing ora mbedakake huruf gedhé‑cilik, cocog karo jeneng file, dudu path). Delengen [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Apa sing kelakon nalika wangsuli {#what-happens}
 
-- Ndeteksi wangsulan → ndhaptar lampiran asli → nyaring S/MIME + inline → konfirmasi opsional → nambahake file sing layak (ngliwati duplikat) → mulihake gambar inline ing isi.
+- Ndeteksi balesan → nampilake dhaftar lampiran asli → ngliwati S/MIME lan gambar sing ditempelake → konfirmasi opsional → nambahake file sing memenuhi syarat (ngliwati duplikat).
 
-Liwatan ketat vs. longgar: Add‑on dhisik ngecualekake bagean S/MIME lan inline saka lampiran file. Yen ora ana sing lolos, bakal mlaku liwatan longgar sing isih ngecualekake S/MIME/inline nanging luwih toleran marang sawetara kasus (delengen Rincian Kode). Gambar inline ora tau ditambahake minangka lampiran file; tinimbang kuwi, yen "Include inline pictures" diaktifake (gawané), gambar kasebut dilebokake langsung ing isi wangsulan minangka URI data base64.
+| Jinis bagean                                                     | Dicopy menyang balesan   |
+|------------------------------------------------------------------|-------------------------:|
+| File tandha tangan S/MIME `smime.p7s`                            | Ora                      |
+| Jinis MIME S/MIME (`application/pkcs7-*`)                        | Ora                      |
+| Gambar sing ditempelake awak pesen liwat `cid:`                  | Ora (ana ing awak pesen) |
+| Gambar sing ditandhani `Content-Disposition: inline`             | Ora (ana ing awak pesen) |
+| Gambar sing duwe `Content-ID` nanging ora tau dirujuk awak pesen | Ya                       |
+| Email sing dilampirake (`message/rfc822`) karo jeneng file       | Ya                       |
+| Lampiran file biasa karo jeneng file                             | Ya                       |
 
-| Jinis bagean                                                  | Liwatan ketat                        | Liwatan longgar                      |
-|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| Berkas tandha S/MIME `smime.p7s`                              | Dikecualekake                        | Dikecualekake                        |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                      | Dikecualekake                        | Dikecualekake                        |
-| Gambar inline sing dirujuk dening Content‑ID (`image/*`)      | Dikecualekake (dipulihake ing isi\*) | Dikecualekake (dipulihake ing isi\*) |
-| Email sing dilampirake (`message/rfc822`) nganggo jeneng file | Ora ditambahake                      | Bisa ditambahake                     |
-| Lampiran file biasa nganggo jeneng file                       | Bisa ditambahake                     | Bisa ditambahake                     |
-
-\* Yen "Include inline pictures" diaktifake (gawané: ON), gambar inline dilebokake ing isi wangsulan minangka URI data base64, dudu ditambahake minangka lampiran file. Delengen [Konfigurasi](configuration#include-inline-pictures).
-
-Conto: Sawetara lampiran bisa wae ora nduwèni header tartamtu nanging isih kalebu file biasa (dudu inline/S/MIME). Yen liwatan ketat ora nemokake apa‑apa, liwatan longgar bisa nampa kuwi lan nglampirake.
+Gambar diétung minangka sing ditempelake mung yèn pesen asli pancen ngrujuk marang gambar kasebut, utawa yèn pengirim kanthi cetha nandhani minangka `Content-Disposition: inline`. Header `Content-ID` waé ora cukup: sawetara klien email masang header kasebut ing saben bagean gambar, kalebu lampiran asli, lan kasebut isih kudu dicopy.
 
 ---
 
@@ -88,7 +86,7 @@ Conto: Sawetara lampiran bisa wae ora nduwèni header tartamtu nanging isih kale
 
 ## Napa lampiran bisa uga ora ditambahake {#why-attachments-might-not-be-added}
 
-- Gambar inline ora ditambahake minangka lampiran file. Nalika "Include inline pictures" ON (gawané), gambar kasebut dilebokake ing isi wangsulan minangka URI data. Yen setelan OFF, gambar inline dibusak sakabèhé. Delengen [Konfigurasi](configuration#include-inline-pictures).
+- Gambar sing ditempelake pesen asli ora disalin dadi file. Gambar kasebut wis ana ing awak balesan, ing ngendi Thunderbird nglebokake. Deleng [Konfigurasi](configuration#include-inline-pictures).
 - Bagean tandha S/MIME dikecualekake miturut rancangan: jeneng file kaya `smime.p7s` lan tipe MIME kayata `application/pkcs7-signature` utawa `application/pkcs7-mime` bakal dilewati.
 - Pola blacklist bisa nyaring calon: delengen [Konfigurasi](configuration#blacklist-glob-patterns); pencocokan ora mbedakake huruf gedhé‑cilik lan mung adhedhasar jeneng file.
 - Jeneng file duplikat ora ditambahake maneh: yen ing compose wis ana file kanthi jeneng sing wis dinormalake padha, bakal dilewati.

@@ -54,7 +54,7 @@
     "message": "Hoppa över S/MIME och inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "S/MIME‑signaturer och inline‑bilder utesluts för att hålla svaren lätta."
+    "message": "SMIME-signaturer kopieras aldrig. Bilder som är inbäddade i meddelandetexten stannar kvar i svarstexten, där Thunderbird redan har dem, i stället för att bifogas en andra gång."
   },
   "homepage.features.blacklist.title": {
     "message": "Svartlistningsmönster"

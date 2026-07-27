@@ -9,28 +9,29 @@ sidebar_label: 'Përdorimi'
 ## Përdorimi {#usage}
 
 - Përgjigju dhe shtesa i shton automatikisht origjinalet — ose pyet fillimisht, nëse është aktivizuar te Opsionet.
-- Pa dublikatë sipas emrit të skedarit; pjesët S/MIME anashkalohen gjithmonë. Imazhet inline rikthehen në trupin e përgjigjes si parazgjedhje (çaktivizoje te “Përfshi figurat inline” te Opsionet).
+- Të dyfishtat hiqen sipas emrit të skedarit; pjesët S/MIME kapërcehen gjithmonë. Imazhet e ngulitura në mesazhin origjinal mbeten në trupin e përgjigjes, aty ku i vendos Thunderbird, dhe nuk kopjohen si skedarë.
 - Bashkëngjitjet në listën e zezë anashkalohen gjithashtu (modele glob jo të ndjeshme ndaj shkronjave të mëdha/vogla që përputhen me emrat e skedarëve, jo me shtegun). Shih [Konfigurimi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Çfarë ndodh kur përgjigjesh {#what-happens}
 
-- Zbulon përgjigjen → liston bashkëngjitjet origjinale → filtron S/MIME + inline → konfirmim opsional → shton skedarët e përshtatshëm (anashkalon dublikatat) → rikthen imazhet inline në trup.
+- Zbulo përgjigjen → rendit bashkëngjitjet origjinale → kapërce S/MIME dhe imazhet e ngulitura → konfirmim opsional → shto skedarët e përshtatshëm (duke kapërcyer duplikatët).
 
-Kalimi strikt kundrejt atij të relaksuar: Shtesa fillimisht përjashton pjesët S/MIME dhe inline nga bashkëngjitjet e skedarëve. Nëse asgjë nuk kualifikohet, ajo kryen një kalim më të relaksuar që sërish përjashton S/MIME/inline por toleron më shumë raste (shih Detajet e Kodit). Imazhet inline nuk shtohen kurrë si bashkëngjitje skedarësh; në vend të kësaj, kur “Përfshi figurat inline” është aktiv (parazgjedhje), ato futen drejtpërdrejt në trupin e përgjigjes si data URI base64.
+| Lloji i pjesës                                           | Kopjohet në përgjigje |
+|----------------------------------------------------------|----------------------:|
+| Skedari i nënshkrimit S/MIME `smime.p7s`                 | Jo                    |
+| Llojet MIME të S/MIME (`application/pkcs7-*`)            | Jo                    |
+| Imazh i ngulitur nga trupi i mesazhit me `cid:`          | Jo (është në trup)    |
+| Imazh i shënuar si `Content-Disposition: inline`         | Jo (është në trup)    |
+| Imazh me `Content-ID` që trupi nuk e referon kurrë       | Po                    |
+| Email i bashkangjitur (`message/rfc822`) me emër skedari | Po                    |
+| Bashkëngjitje e zakonshme skedari me emër skedari        | Po                    |
 
-| Lloji i pjesës                                               | Kalim strikt                      | Kalim i relaksuar                 |
-|--------------------------------------------------------------|----------------------------------:|----------------------------------:|
-| Skedari i nënshkrimit S/MIME `smime.p7s`                     | Përjashtuar                       | Përjashtuar                       |
-| Llojet MIME të S/MIME (`application/pkcs7-*`)                | Përjashtuar                       | Përjashtuar                       |
-| Imazh inline i referuar nga Content‑ID (`image/*`)           | Përjashtuar (rikthehet në trup\*) | Përjashtuar (rikthehet në trup\*) |
-| Email i bashkëngjitur (`message/rfc822`) me një emër skedari | Nuk shtohet                       | Mund të shtohet                   |
-| Bashkëngjitje e zakonshme skedari me emër skedari            | Mund të shtohet                   | Mund të shtohet                   |
-
-\* Kur “Përfshi figurat inline” është aktiv (parazgjedhje: ON), imazhet inline futen në trupin e përgjigjes si data URI base64 në vend që të shtohen si bashkëngjitje skedarësh. Shih [Konfigurimi](configuration#include-inline-pictures).
-
-Shembull: Disa bashkëngjitje mund t’u mungojnë disa header-a, por sërish janë skedarë të zakonshëm (jo inline/S/MIME). Nëse kalimi strikt nuk gjen asnjë, kalimi i relaksuar mund t’i pranojë dhe t’i bashkëngjisë.
+Një imazh konsiderohet i ngulitur vetëm kur mesazhi origjinal e referon në të vërtetë,
+ose kur dërguesi e ka shënuar shprehimisht si `Content-Disposition: inline`. Vetëm një
+kokë `Content-ID` nuk mjafton: disa klientë email-i vendosin një të tillë në çdo pjesë
+imazhi, përfshirë bashkëngjitjet e vërteta, të cilat duhet të kopjohen prapëseprapë.
 
 ---
 
@@ -85,7 +86,7 @@ Shembull: Disa bashkëngjitje mund t’u mungojnë disa header-a, por sërish ja
 
 ## Pse bashkëngjitjet mund të mos shtohen {#why-attachments-might-not-be-added}
 
-- Imazhet inline nuk shtohen si bashkëngjitje skedarësh. Kur “Përfshi figurat inline” është ON (parazgjedhje), ato futen në trupin e përgjigjes si data URI. Nëse cilësimi është OFF, imazhet inline hiqen plotësisht. Shih [Konfigurimi](configuration#include-inline-pictures).
+- Imazhet që mesazhi origjinal i ngulit nuk kopjohen si skedarë. Ato ndodhen tashmë në trupin e përgjigjes, aty ku i ka vendosur Thunderbird. Shiko [Configuration](configuration#include-inline-pictures).
 - Pjesët e nënshkrimit S/MIME përjashtohen sipas dizajnit: emra skedarësh si `smime.p7s` dhe lloje MIME si `application/pkcs7-signature` ose `application/pkcs7-mime` anashkalohen.
 - Modelet e listës së zezë mund të filtrojnë kandidatët: shih [Konfigurimi](configuration#blacklist-glob-patterns); përputhja nuk është e ndjeshme ndaj shkronjave të mëdha/vogla dhe bëhet vetëm sipas emrit të skedarit.
 - Emrat e dublikuar të skedarëve nuk ri‑shtohen: nëse mesazhi në hartim përmban tashmë një skedar me të njëjtin emër të normalizuar, ai anashkalohet.

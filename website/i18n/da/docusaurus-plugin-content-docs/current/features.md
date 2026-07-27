@@ -8,17 +8,9 @@ sidebar_label: 'Funktioner'
 
 ## Funktioner {#features}
 
-- Vedhæfter automatisk filer fra den oprindelige e-mail, når du svarer.
-- Konfigurerbar adfærd: vedhæftninger kan
-  - tilføjes automatisk, eller
-  - tilføjes kun efter bekræftelse (en lille, tilgængelig dialog). I Indstillinger kan du aktivere bekræftelsen og vælge standardsvaret (Ja/Nej).
-- Sortliste over filnavne (glob‑mønstre) forhindrer, at bestemte filer vedhæftes automatisk. Eksempler: `*intern*`, `*secret*`, `*passwor*`. Matchning skelner ikke mellem store og små bogstaver og tjekker kun selve filnavnet; angiv ét mønster pr. linje i Indstillinger.
-- Advarsel om sortliste (valgfri, aktiveret som standard): når filer udelukkes af din sortliste, viser en lille modal filen og de matchende mønstre. Understøtter mørk tilstand og er tastaturtilgængelig (Enter/Esc for at lukke).
-- Virker med Besvar og Besvar alle. Videresend påvirkes ikke af denne tilføjelse.
-- Tilføjer originaler, selv hvis du allerede har vedhæftet noget; undgår dubletter efter filnavn.
-- Værn mod dubletter pr. fane forhindrer dobbelt‑tilføjelse i samme skrivefane.
-- Springer S/MIME‑certifikater over som standard for at undgå unødige vedhæftninger.
-- Medtag indsatte billeder (standard: TIL). Indlejrede billeder gendannes direkte i svarteksten som base64‑data‑URI'er, så det oprindelige inline‑layout bevares. Deaktiver i Indstillinger for helt at udelade inline‑billeder.
+- Indlejrede billeder overlades til Thunderbird: de forbliver i svarets brødtekst og
+  kopieres ikke som filvedhæftninger. Et billede, der kun bærer et `Content-ID` uden
+  at være refereret, behandles som en almindelig vedhæftning og kopieres.
 
 ---
 

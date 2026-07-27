@@ -54,7 +54,7 @@
     "message": "SMIME اور اِن لائن چھوڑیں"
   },
   "homepage.features.skipSmime.body": {
-    "message": "جوابات کو ہلکا رکھنے کے لیے SMIME دستخط اور اِن لائن تصاویر شامل نہیں کی جاتی ہیں۔"
+    "message": "SMIME دستخط کہیں بہ کاپی نہ کریو۔ پیامہ متن منز موجود تصویرہ جوابس متن منز ہی رہن, یتھ Thunderbird تہاونہ باپت رکھتھ, تہ دوبارہ منسلک نہ کرنہ۔"
   },
   "homepage.features.blacklist.title": {
     "message": "بلیک لسٹ پیٹرنز"

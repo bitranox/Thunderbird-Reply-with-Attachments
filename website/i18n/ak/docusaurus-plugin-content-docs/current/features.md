@@ -8,17 +8,9 @@ sidebar_label: 'Adwumadi ahodoɔ'
 
 ## Nhyɛnsodeɛ {#features}
 
-- Ɛde fael a ɛfiri krataa-ɛ titiriw no ka ho otomatik bere a woresua mu (reply).
-- Ɛda so betumi asiesie: attachments betumi
-  - aka ho otomatik, anaasɛ
-  - wobetumi aka ho sɛɛ na wogye atɔ mu akyi pɛ (dialog ketewa a obiara betumi de di dwuma). Wɔ Options mu, wubetumi asɔ gyetɔmu no mu na wopaw mmuae difɔlt no (Yes/No).
-- Blacklist a ɛfa fael‑din (glob patterns) ho siw fael pɔtee bi kwan so sɛ wɔbɛka ho otomatik. Nsɛmmisa: `*intern*`, `*secret*`, `*passwor*`. Nhyia no yɛ case‑insensitive na ɛhwɛ fael‑din no nko ara; ma pɛtɛn koro pɛ wɔ lain biara so wɔ Options mu.
-- Kɔkɔbɔ fa blacklist ho (poptional, ɛhyɛ so dada): bere a wo blacklist yi fael bi fi ho no, modal ketewa bi bɛkyerɛ fael no ne pɛtɛn a ɛne no hyia no. Ɛyɛ Dark‑mode yie na wobɛtumi de keyboard di so dwuma (Enter/Esc de to mu).
-- Ɛyɛ adwuma wɔ Reply ne Reply all ho. Add‑on yi nnsesa Forward.
-- Ɛde originals ka ho mpo sɛ woka biribi ho dedaw; ɛbɔ ban fi nsɛsoɔ mprenu so fa fael‑din so.
-- Banbɔ tia nsɛsoɔ mprenu per‑tab ma ɛmmma nkaho mmienu mmfa mmɔ compose tab koro mu.
-- Difɔlt mu, ɛgyae S/MIME certificates de siw attachments a ɛnhia kwan.
-- Ka mfonini a wɔde gu nsɛm mu (inline) ho (difɔlt: ON). Mfonini a wɔahyehyɛ (embedded) no wɔsan de si mmuae no nipadua mu pɛpɛɛpɛ sɛ base64 data URIs, na ɛkora inline nhyehyɛe titiriw no. Wubetumi adum wɔ Options mu na wugu inline mfonini nyinaa.
+- Wɔagyaw mfonini a wɔde ahyɛ mu (embedded images) ama Thunderbird: ɛtena mmuae no mu
+  na wɔmfa nyɛ fael a wɔde bata ho (attachment). Mfonini a ɛwɔ `Content-ID` nkutoo na
+  wɔnnyi no adi wɔ mmuae no mu no, wɔfa no sɛ attachment a wɔde bata ho na wɔkopi no.
 
 ---
 

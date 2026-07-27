@@ -8,19 +8,9 @@ sidebar_label: "Rikch'ayninkuna"
 
 ## Ruwanakuna {#features}
 
-- Kutichispa, original emailmanta arkhivu adjunto‑kunaqa automáticaman yapachikun.
-- Kamachisqasqa ruway: adjunto‑kunaqa
-  - automáticaman yapasqa, utaq
-  - sólo confirmaciónmanta qatiqpasqa (uchuy, accesible diálogo). Opcionespi
-    confirmaciónta aktivaspa, por defecto kutichiy (Ari/Manan) akllayta churasunki.
-- Arkhivu‑sutinakuna‑paq blacklist (glob patrones)qa mana saqiy chay arkhivokuna automáticaman adjuntakusqanpaq. Ejemplos: `*intern*`, `*secret*`, `*passwor*`.
-  Tupayqa manam mayúscula/minúscula‑ta qhawachimanchu, arkhivu‑sutillallam qhaway; Opcionespi sapa linea‑pi huk patrón churay.
-- Blacklist willay (opcional, por defecto activado): blacklistninki khipukunata qatispa, uchuy modal‑qa arkhivu‑ta hinallataq tupasqa patrón(kuna)‑ta siqinakun. Modo oscuro‑masiyoq, teclado‑manta apaykama atisqa (wisq'aypaq Enter/Esc).
-- Reply hinallataq Reply all‑wan llamkan. Forward‑taqa kay add‑on nisqawan manam hukch'asqa kachkanchu.
-- Qammi ima adjunto yaparqanki chaymantaña, original‑kunaqa yapachkanraqmi; arkhivu‑sutinwan iskayninta ama kaqpaq waqaychanku.
-- Tab sapa‑sapipaq iskay‑yapay hark'anaqa huk compose tab chaynillapi iskay yapayta ama churanapaq waqaychanku.
-- S/MIME certificado‑kunataqa por defecto pasachin, mana mosoq adjunto‑kunaqa churakusqanpaq.
-- Inline siqikunata churan (por defecto: ON). Embebido imágen‑kunaqa kutichisqa ukupi chaylla base64 data URI‑kunawan, original ukhunpi sayayninta waqaychaspa. Opcionespi hark'ay ruwaspa inline imágen‑kunata llipinta saqiy.
+- Yaqarisqa imagenkunaqa Thunderbird-man saqisqa kanku: kutichiy qillqapi kanku, mana
+  imayna archivo yapasqa hina copiakunchu. `Content-ID` nisqallayuq, mana rikuchisqa
+  imagenqa, kaqlla yapasqa hina qhawarikuspa copiakun.
 
 ---
 

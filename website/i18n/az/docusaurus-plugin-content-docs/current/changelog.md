@@ -9,7 +9,8 @@ title: 'Dəyişiklik qeydləri'
 
 Tam, ətraflı tarix üçün repozitoriyanın [GitHub-dakı CHANGELOG.md](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) faylına baxın.
 
-- 2.3.2: "Daxili şəkilləri daxil et" indi şəkilləri cavab mətninə birbaşa base64 data URI-ləri kimi yerləşdirir (standart olaraq: AÇIQ); kod keyfiyyətində təkmilləşdirmələr və genişləndirilmiş test əhatəsi.
+- 2.4.0: göndərənin `Content-ID` qoyması səbəbindən şəkillər artıq atılmır; "Include inline pictures" seçimi silindi, çünki Thunderbird daxil edilmiş şəkilləri cavabın mətnində özü saxlayır; keçidlər indi sistem brauzerində açılır; hər cavab üçün 50 əlavə / 100 MB tavanı, kənarda qalanlar bildirilir.
+- 2.3.2: "Include inline pictures" daxil edilmiş şəkilləri cavabın mətnində base64 data URI kimi göstərirdi (add-ons.thunderbird.net icmalından sonra yenidən silindi; Thunderbird bunu özü edir); kod keyfiyyəti təkmilləşdirmələri və genişləndirilmiş test əhatəsi.
 - 2.3.1: Thunderbird fon hadisə səhifəsini boş vəziyyətə keçirdikdən sonra əlavələri saxlayır; nasazlıqların aradan qaldırılması üçün hədəfli debug hook-ları əlavə edir.
 - 2.3.0: Təkmilləşdirilmiş əlavə deduplikasiyası, genişləndirilmiş test əhatəsi və AMO siyasətlərinə uyğunluq üçün köhnəlmiş icazələrin silinməsi.
 - 2.1.0: İlk 100 dil üçün tam beynəlmiləlləşdirmə dəstəyi

@@ -9,28 +9,30 @@ sidebar_label: 'Ukusetyenziswa'
 ## Ukusetyenziswa {#usage}
 
 - Phendula uze isongezelelo songeze izincamatheliso zokuqala ngokuzenzekelayo — okanye sibuze kuqala, ukuba sivuliwe kuZikhetho.
-- Kuthintelwa ukuphindaphindwa ngokwegama lefayile; amacandelo e-S/MIME ahlala etshiywa. Imifanekiso yangaphakathi ibuyiselwa emzimbeni wempendulo ngokungagqibekanga (cima nge "Include inline pictures" kuZikhetho).
+- Iikopi eziphindaphindiweyo zisuswa ngokusekelwe egameni lefayile; iindawo ze-S/MIME zisoloko zitsibelwa. Imifanekiso ehlomeleyo kumyalezo wokuqala ihlala kumzimba wempendulo, apho iThunderbird iyibeka khona, kwaye ayikhutshelwa njengeefayile.
 - Izincamatheliso ezikuluhlu olumnyama nazo ziyatshiywa (iipateni ze-glob ezingawahluli unobumba omkhulu nomncinci ezithelekisa amagama eefayile, hayi iindlela). Bona [Uqwalaselo](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kwenzeka ntoni xa uphendula {#what-happens}
 
-- Fumanisa impendulo → dwelisa izincamatheliso zokuqala → hlunga i-S/MIME + yangaphakathi → uqinisekiso oluzikhethelayo → yongeza iifayile ezifanelekileyo (tsiba eziphindaphindiweyo) → buyisela imifanekiso yangaphakathi emzimbeni.
+- Fumana impendulo → dwelisa izixhumaniso zoqobo → dlula i-S/MIME nemifanekiso engxamelweyo → ukuqinisekiswa okukhethekayo → yongeza iifayile ezifanelekileyo (udlula kwezifanayo).
 
-Udululo olungqongqo vs. olukhululekileyo: Isongezelelo siqala sikhuphe amacandelo e-S/MIME nawangaphakathi kwizincamatheliso zefayile. Ukuba akukho nto ifanelekile, siqhuba udlululo olukhululekileyo olusa kukhupha i-S/MIME/yangaphakathi kodwa luvumela iimeko ezingakumbi (bona Iinkcukacha zeKhodi). Imifanekiso yangaphakathi ayongezwa njengooncamathiselo zefayile; endaweni yoko, xa "Include inline pictures" ivuliwe (ingeniso), zifakwa ngqo emzimbeni wempendulo njengee-URI zedata ze-base64.
+| Uhlobo lwenxalenye                                            | Ikhutshelwe kwimpendulo |
+|---------------------------------------------------------------|------------------------:|
+| Ifayile yesignesha ye-S/MIME `smime.p7s`                      | Hayi                    |
+| Iintlobo ze-MIME ze-S/MIME (`application/pkcs7-*`)            | Hayi                    |
+| Umfanekiso ohlonyelwe ngumzimba womyalezo nge-`cid:`          | Hayi (ikhona kumzimba)  |
+| Umfanekiso ophawulwe nge-`Content-Disposition: inline`        | Hayi (ikhona kumzimba)  |
+| Umfanekiso one-`Content-ID` engasoze ibhekiswe kuwo ngumzimba | Ewe                     |
+| I-imeyile enamathiselweyo (`message/rfc822`) enegama lefayile | Ewe                     |
+| Isihlomelo sefayile esiqhelekileyo esinegama lefayile         | Ewe                     |
 
-| Uhlobo lwesahlulo                                               | Udlululo olungqongqo                | Udlululo olukhululekileyo           |
-|-----------------------------------------------------------------|------------------------------------:|------------------------------------:|
-| Ifayile yosayino ye-S/MIME `smime.p7s`                          | Ikhutshiwe                          | Ikhutshiwe                          |
-| Iindidi ze-MIME ze-S/MIME (`application/pkcs7-*`)               | Ikhutshiwe                          | Ikhutshiwe                          |
-| Umfanekiso wangaphakathi obhekiselwa yi-Content‑ID (`image/*`)  | Ikhutshiwe (ibuyiselwa emzimbeni\*) | Ikhutshiwe (ibuyiselwa emzimbeni\*) |
-| I-imeyile encanyathiselweyo (`message/rfc822`) enegama lefayile | Ayongezwanga                        | Ingongezwa                          |
-| Uncamathiselo lwefayile eqhelekileyo enegama lefayile           | Ingongezwa                          | Ingongezwa                          |
-
-\* Xa "Include inline pictures" ivuliwe (default: ON), imifanekiso yangaphakathi ifakwa emzimbeni wempendulo njengee-URI zedata ze-base64 endaweni yokubane yooncamathiselo zefayile. Bona [Uqwalaselo](configuration#include-inline-pictures).
-
-Umzekelo: Ezinye izincamatheliso zinokungabi neentloko ezithile kodwa ziseyifayile eziqhelekileyo (ezingeyongaphakathi/S/MIME). Ukuba udlululo olungqongqo alufumani nanye, olukhululekileyo lunokuzamkela ezo zize zongezwe.
+Umfanekiso ubalwa njengohlonyelweyo kuphela xa umyalezo wokuqala ngokwenene ubhekisa
+kuwo, okanye xa umthumeli ewuphawule ngokucacileyo nge-`Content-Disposition: inline`.
+Umbhalo we-`Content-ID` odwa awonelanga: iinkonzo ezithile zeimeyile zibeka lo mbhalo
+kwinxalenye nganye yomfanekiso, kubandakanywa nezihlomelo zokwenyani, ekufuneka
+zikhutshelwe nokuba kunjalo.
 
 ---
 
@@ -88,7 +90,7 @@ Umzekelo: Ezinye izincamatheliso zinokungabi neentloko ezithile kodwa ziseyifayi
 
 ## Kutheni izincamatheliso zingasongezwa {#why-attachments-might-not-be-added}
 
-- Imifanekiso yangaphakathi ayongezwa njengooncamathiselo zefayile. Xa "Include inline pictures" ivuliwe (ingeniso: ON), zifakwa emzimbeni wempendulo njengee-URI zedata endaweni yokongezwa njengooncamathiselo zefayile. Ukuba useto luvaliwe, imifanekiso yangaphakathi isuswa ngokupheleleyo. Bona [Uqwalaselo](configuration#include-inline-pictures).
+- Imifanekiso engxanyelwe ngumyalezo wokuqala ayikopishwa njengeefayile. Sele ikhona kumbhalo wempendulo, apho iThunderbird iyibeke khona. Jonga [Configuration](configuration#include-inline-pictures).
 - Amacandelo osayino e-S/MIME akhutshiwe ngokuyilwa: amagama eefayile afana no `smime.p7s` kunye neentlobo ze-MIME ezifana no `application/pkcs7-signature` okanye `application/pkcs7-mime` ayatshiywa.
 - Iipateni zoluhlu olumnyama zinokuhluza abakhethwayo: bona [Uqwalaselo](configuration#blacklist-glob-patterns); ukuthelekisa akunamsebenzi kubukhulu boonobumba kwaye kusekwe kuphela kwigama lefayile.
 - Amagama eefayile aphindaphindiweyo awasongezwa kwakhona: ukuba yokuqulunqa sele iqulethe ifayile enegama elifanayo elilungelelanisiweyo, iyatshiywa.

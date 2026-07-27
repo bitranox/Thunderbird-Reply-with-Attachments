@@ -9,28 +9,29 @@ sidebar_label: 'Matumizi'
 ## Matumizi {#usage}
 
 - Jibu na kiendelezi kitaongeza asili kiotomatiki — au kitauliza kwanza, ikiwa imewezeshwa katika Chaguo.
-- Uduplikishaji huondolewa kwa mujibu wa jina la faili; sehemu za S/MIME hurukwa kila wakati. Picha za ndani hurudishwa kwenye mwili wa jibu kwa chaguo-msingi (zima kupitia "Jumuisha picha za ndani" katika Chaguo).
+- Nakala zinazofanana huondolewa kwa kutumia jina la faili; sehemu za S/MIME huruka kila wakati. Picha zilizopachikwa kwenye ujumbe asilia hubaki kwenye mwili wa jibu, mahali Thunderbird huziweka, na hazinakiliwa kama faili.
 - Viambatisho vilivyo kwenye orodha nyeusi pia hurukwa (miundo ya glob isiyojali herufi kubwa/ndogo inayolingana na majina ya faili, si njia). Tazama [Usanidi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kinachotokea unapojibu {#what-happens}
 
-- Tambua jibu → orodhesha viambatisho asili → chuja S/MIME + vya ndani → thibitisha (hiari) → ongeza faili zinazostahiki (ruka vilivyojirudia) → rejesha picha za ndani kwenye mwili.
+- Gundua jibu → orodhesha viambatisho asili → ruka S/MIME na picha zilizopachikwa → uthibitisho wa hiari → ongeza faili zinazostahili (ukiruka nakala zinazofanana).
 
-Upitishaji mkali dhidi ya mlegevu: Kiendelezi kwanza huondoa sehemu za S/MIME na za ndani kutoka kwa viambatisho vya faili. Ikiwa hakuna kinachostahili, hufanya upitishaji mlegevu ambao bado huondoa S/MIME/vya ndani lakini huruhusu visa zaidi (tazama Maelezo ya Msimbo). Picha za ndani haziongezwi kamwe kama viambatisho vya faili; badala yake, wakati "Jumuisha picha za ndani" imewezeshwa (chaguo-msingi), huingizwa moja kwa moja kwenye mwili wa jibu kama data URI za base64.
+| Aina ya sehemu                                                      | Imenakiliwa kwenye jibu     |
+|---------------------------------------------------------------------|----------------------------:|
+| Faili la sahihi la S/MIME `smime.p7s`                               | Hapana                      |
+| Aina za MIME za S/MIME (`application/pkcs7-*`)                      | Hapana                      |
+| Picha inayopachikwa na mwili wa ujumbe kupitia `cid:`               | Hapana (iko ndani ya mwili) |
+| Picha iliyowekwa alama `Content-Disposition: inline`                | Hapana (iko ndani ya mwili) |
+| Picha yenye `Content-ID` ambayo mwili haurejelei kamwe              | Ndiyo                       |
+| Barua pepe iliyoambatanishwa (`message/rfc822`) yenye jina la faili | Ndiyo                       |
+| Kiambatisho cha kawaida cha faili chenye jina la faili              | Ndiyo                       |
 
-| Aina ya sehemu                                                    | Upitishaji mkali                       | Upitishaji mlegevu                     |
-|-------------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
-| Faili ya sahihi ya S/MIME `smime.p7s`                             | Imetengwa                              | Imetengwa                              |
-| Aina za MIME za S/MIME (`application/pkcs7-*`)                    | Imetengwa                              | Imetengwa                              |
-| Picha ya ndani iliyorejelewa na Content‑ID (`image/*`)            | Imetengwa (inarejeshwa kwenye mwili\*) | Imetengwa (inarejeshwa kwenye mwili\*) |
-| Barua pepe iliyoambatishwa (`message/rfc822`) yenye jina la faili | Haiongezwi                             | Huenda ikaongezwa                      |
-| Kiambatisho cha faili cha kawaida chenye jina la faili            | Huenda kikaongezwa                     | Huenda kikaongezwa                     |
-
-\* Wakati "Jumuisha picha za ndani" imewezeshwa (chaguo-msingi: IMEWASHWA), picha za ndani huingizwa kwenye mwili wa jibu kama data URI za base64 badala ya kuongezwa kama viambatisho vya faili. Tazama [Usanidi](configuration#include-inline-pictures).
-
-Mfano: Baadhi ya viambatisho vinaweza kukosa vichwa fulani lakini bado vikawa faili za kawaida (si za ndani/S/MIME). Ikiwa upitishaji mkali haupati chochote, upitishaji mlegevu unaweza kuvipokea na kuviambatisha.
+Picha huhesabiwa kuwa imepachikwa tu wakati ujumbe asilia unairejelea kwa hakika, au
+wakati mtumaji ameiweka alama waziwazi `Content-Disposition: inline`. Kichwa cha
+`Content-ID` peke yake hakitoshi: baadhi ya programu za barua pepe huweka kimoja kwenye
+kila sehemu ya picha, ikiwemo viambatisho halisi, ambavyo bado lazima vinakiliwe.
 
 ---
 
@@ -88,7 +89,7 @@ Mfano: Baadhi ya viambatisho vinaweza kukosa vichwa fulani lakini bado vikawa fa
 
 ## Kwa nini viambatisho vinaweza visiwekwe {#why-attachments-might-not-be-added}
 
-- Picha za ndani haziwekwi kama viambatisho vya faili. Wakati "Jumuisha picha za ndani" imewashwa (chaguo-msingi), huingizwa kwenye mwili wa jibu kama data URI badala yake. Ikiwa kiseti kimezimwa, picha za ndani huondolewa kabisa. Tazama [Usanidi](configuration#include-inline-pictures).
+- Picha ambazo ujumbe asili unazipachika hazinakiliwi kama faili. Tayari ziko katika mwili wa jibu, mahali Thunderbird ilipoziweka. Angalia [Configuration](configuration#include-inline-pictures).
 - Sehemu za sahihi za S/MIME zimeondolewa kimakusudi: majina ya faili kama `smime.p7s` na aina za MIME kama `application/pkcs7-signature` au `application/pkcs7-mime` hurukwa.
 - Miundo ya orodha nyeusi inaweza kuchuja wagombea: tazama [Usanidi](configuration#blacklist-glob-patterns); ulinganishaji haujali herufi kubwa/ndogo na unahusu jina la faili pekee.
 - Majina ya faili yaliyorudiwa hayaongezwi tena: ikiwa uandishi tayari una faili yenye jina sawa lililowekwa kawaida, huachwa.

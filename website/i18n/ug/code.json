@@ -54,7 +54,7 @@
     "message": "SMIME ۋە Inline نى ئۆتكۈزۈپ كېتىش"
   },
   "homepage.features.skipSmime.body": {
-    "message": "جاۋابلارنى يېنىك ساقلاش ئۈچۈن SMIME ئىمزالىرى ۋە inline سۈرەتلەر قوشۇلمايدۇ."
+    "message": "SMIME ئىمزالىرى ھەرگىز كۆچۈرۈلمەيدۇ. ئۇچۇر گەۋدىسىگە سىڭدۈرۈلگەن رەسىملەر Thunderbird ئۇلارنى ساقلايدىغان جاۋاب گەۋدىسىدە قالىدۇ، قايتا قوشۇلمايدۇ."
   },
   "homepage.features.blacklist.title": {
     "message": "قارا تىزىملىك ئەندىزىلىرى"

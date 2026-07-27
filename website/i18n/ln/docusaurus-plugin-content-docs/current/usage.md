@@ -9,28 +9,26 @@ sidebar_label: 'Bosaleli'
 ## Bosaleli {#usage}
 
 - Soki ozongisi (Reply), add‑on ebakisi ba pièces d’origine na ndenge ya automatique — to etuna liboso, soki esalemi na Options.
-- Kokanga ba doublons esalemaka kolanda kombo ya fisyé; biteni ya S/MIME babwakamaka ntango nyonso. Bifóto ya kati (inline) ezongisamaka na nzoto ya eyano (reply body) na ndenge ya liboso (okoki kokanga yango na "Include inline pictures" na Options).
+- Bakolongolaka bikopi kolanda nkombo ya fisiye; biteni ya S/MIME ekozalaka ntango nyonso kolekisama. Bililingi oyo ekɔtisami na kati ya nsango ya ebandeli ezali kotikala na kati ya nzoto ya eyano, esika Thunderbird atyaka yango, mpe ekopimaka te lokola fisiye.
 - Ba pièces oyo ezali na blacklist mpe babwakamaka (ba modèle glob ya kolanda ba kombo ya fisyé kaka, ezangaka kososola minúscule/majúscule; banzela te). Talá [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Eloko esalemaka soki ozongisi {#what-happens}
 
-- Koyeba eyano → kosangisa liste ya ba pièces d’origine → kofiltrɛ S/MIME + ya kati (inline) → kondimisa soki esengeli → kobakisa ba fisyé oyo ekoki (kobwaka ba doublons) → kozongisa bifóto ya kati na nzoto ya mokanda.
+- Komona eyano → kotanga liste ya kanda ya ebandeli → koleka S/MIME mpe bililingi oyo bakotisi → confirmation ya kopona → kobakisa ba fisye oyo ekoki (koleka ba doublons).
 
-Koleka makasi (strict) vs. koleka pɛtɛɛ (relaxed): Add‑on ebosaka liboso biteni ya S/MIME mpe ya kati (inline) na ba pièces jointes ya fisyé. Soki eloko moko te ekokani, esalaka koleka pɛtɛɛ oyo kaka ebosaka S/MIME/inline kasi endimi ba kesɛ ebele koleka (talá makambo ya kódi). Bifóto ya kati te bazali kobakisa yango lokola ba pièces jointes; na esika wana, soki "Include inline pictures" esalemi (ndakisa ya liboso), bazingamaka mbala moko na nzoto ya eyano lokola base64 data URIs.
+| Lolenge ya eteni                                                             | Ekopi na eyano                |
+|------------------------------------------------------------------------------|------------------------------:|
+| Fisiye ya sinyatire ya S/MIME `smime.p7s`                                    | Te                            |
+| Milongo ya MIME ya S/MIME (`application/pkcs7-*`)                            | Te                            |
+| Elilingi oyo nzoto ya nsango ekɔtisi na `cid:`                               | Te (ezali na nzoto ya nsango) |
+| Elilingi oyo elakisami `Content-Disposition: inline`                         | Te (ezali na nzoto ya nsango) |
+| Elilingi ezali na `Content-ID` kasi nzoto etalelaka yango ata mokolo moko te | Ee                            |
+| Emeili ekangami (`message/rfc822`) elongo na nkombo ya fisiye                | Ee                            |
+| Kobakisa fisiye ya momesano elongo na nkombo ya fisiye                       | Ee                            |
 
-| Lolenge ya eteni                                               | Koleka makasi                               | Koleka pɛtɛɛ                                |
-|----------------------------------------------------------------|--------------------------------------------:|--------------------------------------------:|
-| Fisiye ya emekeli (signature) ya S/MIME `smime.p7s`            | Ebwakami                                    | Ebwakami                                    |
-| Ba lolenge ya MIME ya S/MIME (`application/pkcs7-*`)           | Ebwakami                                    | Ebwakami                                    |
-| Elilingi ya kati oyo Content‑ID etindisi (`image/*`)           | Ebwakami (ezongisami na nzoto ya mokanda\*) | Ebwakami (ezongisami na nzoto ya mokanda\*) |
-| E‑mail ekangami (`message/rfc822`) oyo ezali na kombo ya fisyé | Ebakisami te                                | Ekoki kobakisama                            |
-| Pièce jointe ya fisyé ya normal oyo ezali na kombo             | Ekoki kobakisama                            | Ekoki kobakisama                            |
-
-\* Soki "Include inline pictures" esalemi (liboso: ON), bifóto ya kati bazingamaka na nzoto ya eyano lokola base64 data URIs na esika ya kobakisa yango lokola ba pièces jointes. Talá [Configuration](configuration#include-inline-pictures).
-
-Ndakisa: Ba pièces mosusu ekoki kozanga ba header mosusu kasi ezalaka naino ba fisyé ya normal (ezali te ya kati/S/MIME). Soki koleka makasi emoni ata moko te, koleka pɛtɛɛ ekoki kondima yango mpe ekangisa yango.
+Elilingi etangamaka lokola ekɔtisami kaka soki nsango ya ebandeli etalelaka yango solo, to soki motindi alakisaki yango polele lokola `Content-Disposition: inline`. Kaka moto ya `Content-ID` ekoki te: ba kliyan ya emeili ndenge na ndenge etyaka yango na eteni nyonso ya bililingi, ezala mpe biloko ya solosolo oyo ekangami, mpe yango esengeli kaka kopiama.
 
 ---
 
@@ -87,7 +85,7 @@ Ndakisa: Ba pièces mosusu ekoki kozanga ba header mosusu kasi ezalaka naino ba 
 
 ## Mpo na nini ba pièces jointes ekoki kobakisama te {#why-attachments-might-not-be-added}
 
-- Bifóto ya kati (inline) babakisamaka te lokola ba pièces jointes. Tango "Include inline pictures" ezali ON (ndakisa ya liboso), bazingamaka na nzoto ya eyano lokola data URIs. Soki etindami OFF, bifóto ya kati elongolamaka mobimba. Talá [Configuration](configuration#include-inline-pictures).
+- Bililingi oyo message ya ebandeli ekotisi ekopiama te lokola fisye. Ezali déjà na kati ya maloba ya eyano, esika Thunderbird atia yango. Talá [Configuration](configuration#include-inline-pictures).
 - Biteni ya emekeli (signature) ya S/MIME babwakami na mokano: ba kombo ya fisyé lokola `smime.p7s` mpe ba lolenge ya MIME lokola `application/pkcs7-signature` to `application/pkcs7-mime` babwakamaka.
 - Ba modèle ya blacklist ekoki kofiltrɛ bakandida: talá [Configuration](configuration#blacklist-glob-patterns); kokokana ezali case‑insensitive mpe esalemi kaka na kombo ya fisyé.
 - Ba kombo ya fisyé oyo ezali kopɔnaná (doublon) babakisamaka lisusu te: soki compose ezali déjà na fisyé na kombo yango (osilaki kosimbisa), ebwakami.

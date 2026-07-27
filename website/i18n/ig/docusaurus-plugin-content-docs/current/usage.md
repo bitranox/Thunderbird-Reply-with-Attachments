@@ -9,28 +9,26 @@ sidebar_label: 'Ojiji'
 ## Ojiji {#usage}
 
 - Zaa ma mgbakwunye ahụ na-etinye ndị mbụ n’onwe ya — ma ọ bụ jụọ tupu ya, ma ọ bụrụ na etinyere ya na Nhọrọ.
-- A naghị etinye ugboro ugboro dabere na aha faịlụ; akụkụ S/MIME a na-agbaghara mgbe niile. A na-weghachite onyonyo inline na ahụ nzaghachi n’ndabara (ị nwere ike gbanyụọ ya site na “Gụnye onyonyo inline” na Nhọrọ).
+- Ewepụrụ ndozigharị dabere na aha faịlụ; a na-ahapụ akụkụ S/MIME mgbe niile. Foto ndị e tinyere n'ime ozi mbụ na-anọgide n'ahụ nzaghachi, ebe Thunderbird na-edobe ha, ọ dịghịkwa na-edepụta ha dị ka faịlụ.
 - A na-agbagharakwa ndokwụnye faịlụ nọ na ndepụta ojii (usoro glob na-echefughị obere/akapkwọ mkpụrụedemede na-adabara aha faịlụ, ọ bụghị ụzọ). Lee [Nhazi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Gịnị na-eme mgbe azaghachi {#what-happens}
 
-- Chọpụta nzaghachi → depụta ndokwụnye faịlụ mbụ → sịpụ S/MIME + inline → nkwenye nhọrọ → tinye faịlụ kwekọrọ (hapụ ndị ugboro ugboro) → weghachite onyonyo inline n’ahụ ozi.
+- Chọpụta nzaghachi → depụta ihe mmado mbụ → hapụ S/MIME na foto agbakwunyere → nkwenye nhọrọ → tinye faịlụ ndị ruru eru (na-ahapụ ndị ọzọzọ).
 
-Njem “strict” megide “relaxed”: Mgbakwunye ahụ na-ebute ụzọ wepụ akụkụ S/MIME na inline n’ime ndokwụnye faịlụ. Ọ bụrụ na enweghị ihe ọ bụla kwekọrọ, ọ na-agba njem dị nro nke ka na-ewepụ S/MIME/inline ma na-anabata ọnọdụ ndị ọzọ (lee Nkọwa Koodu). A naghị etinye onyonyo inline dịka ndokwụnye faịlụ; kama, mgbe “Gụnye onyonyo inline” gbanyere (ndabara), a na-etinye ha kpọmkwem n’ahụ nzaghachi dịka base64 data URIs.
+| Ụdị akụkụ                                                   | Edepụtara na nzaghachi |
+|-------------------------------------------------------------|-----------------------:|
+| Faịlụ mbinye aka S/MIME `smime.p7s`                         | Mba                    |
+| Ụdị MIME nke S/MIME (`application/pkcs7-*`)                 | Mba                    |
+| Foto ahụ ozi ji `cid:` tinye                                | Mba (ọ nọ n'ahụ ozi)   |
+| Foto e tinyere akara `Content-Disposition: inline`          | Mba (ọ nọ n'ahụ ozi)   |
+| Foto nwere `Content-ID` nke ahụ ozi na-adịghị ezo aka na ya | Ee                     |
+| Email etinyere (`message/rfc822`) nwere aha faịlụ           | Ee                     |
+| Ihe mgbakwunye faịlụ nkịtị nwere aha faịlụ                  | Ee                     |
 
-| Ụdị akụkụ                                           | Njem Strict                     | Njem Relaxed                    |
-|-----------------------------------------------------|--------------------------------:|--------------------------------:|
-| Faịlụ mbinye aka S/MIME `smime.p7s`                 | E wepụrụ                        | E wepụrụ                        |
-| Ụdị MIME S/MIME (`application/pkcs7-*`)             | E wepụrụ                        | E wepụrụ                        |
-| Onyonyo inline nke Content‑ID kpọrọ (`image/*`)     | E wepụrụ (a weghachiri n’ahụ\*) | E wepụrụ (a weghachiri n’ahụ\*) |
-| Email e jikọtara (`message/rfc822`) nwere aha faịlụ | A na-adịghị etinye              | Enwere ike itinye               |
-| Ndokwụnye faịlụ nkịtị nwere aha faịlụ               | Enwere ike itinye               | Enwere ike itinye               |
-
-\* Mgbe “Gụnye onyonyo inline” gbanyere (ndabara: ON), a na-etinye onyonyo inline n’ahụ nzaghachi dịka base64 data URIs kama ịtinye ha dịka ndokwụnye faịlụ. Lee [Nhazi](configuration#include-inline-pictures).
-
-Ihe atụ: Ụfọdụ ndokwụnye nwere ike na-enweghị ụfọdụ isi headers ma ka bụ faịlụ nkịtị (ọ bụghị inline/S/MIME). Ọ bụrụ na njem strict achọtaghị ha, njem relaxed nwere ike ịnabata ha ma tinye ha.
+Foto na-agụ dị ka nke etinyere naanị mgbe ozi mbụ ahụ ezo aka na ya n'ezie, ma ọ bụ mgbe onye zitere ya kwuru hoo haa na ọ bụ `Content-Disposition: inline`. Naanị ihe isiokwu `Content-ID` ezughị ezu: ọtụtụ ngwa ozi email na-etinye otu n'akụkụ foto ọ bụla, gụnyere ezigbo ihe mgbakwunye, a ghaghịkwa idepụta ha.
 
 ---
 
@@ -87,7 +85,7 @@ Ihe atụ: Ụfọdụ ndokwụnye nwere ike na-enweghị ụfọdụ isi header
 
 ## Gịnị kpatara ndokwụnye nwere ike ọ gaghị etinye {#why-attachments-might-not-be-added}
 
-- A naghị etinye onyonyo inline dịka ndokwụnye faịlụ. Mgbe “Gụnye onyonyo inline” bụ ON (ndabara), a na-etinye ha n’ahụ nzaghachi dịka data URIs kama ya. Ọ bụrụ na ntọala bụ OFF, a na-ewepụ onyonyo inline kpamkpam. Lee [Nhazi](configuration#include-inline-pictures).
+- Foto ndị ozi mbụ ahụ gbakwunyere anaghị edobe ha dị ka faịlụ. Ha adịlarị n'ozi nzaghachi, ebe Thunderbird tinyere ha. Hụ [Nhazi](configuration#include-inline-pictures).
 - Akụkụ mbinye aka S/MIME a na-ewepụ ya n’imepụta: aha faịlụ dịka `smime.p7s` na ụdị MIME dịka `application/pkcs7-signature` ma ọ bụ `application/pkcs7-mime` a na-agbaghara ha.
 - Usoro ndepụta ojii nwere ike sịpụ ndị na-akwado: lee [Nhazi](configuration#blacklist-glob-patterns); nhazi kwekọrọ adịghị ele obere/akapkwọ mkpụrụedemede anya ma na-ele naanị aha faịlụ.
 - A naghị etinye aha faịlụ nke yiri nke dị: ọ bụrụ na compose enweela faịlụ nwere aha emezigharị nke yiri nke ahụ, a na-agbaghara ya.

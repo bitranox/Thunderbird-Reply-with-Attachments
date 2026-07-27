@@ -54,7 +54,7 @@
     "message": "SMIME û Navxistî derbas bike"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Ji bo ku bersîv sadeyî bimîne, îmzeyên SMIME û wêneyên navxistî tên derxistin."
+    "message": "Îmzeyên SMIME qet nayên kopîkirin. Wêneyên di nava peyamê de cîwar kirî, di nava bersivê de dimînin -- li cihê ku Thunderbird wan lê datîne -- li şûna ku dîsa wekî pêvek werin zêdekirin."
   },
   "homepage.features.blacklist.title": {
     "message": "Şablonên Lîsteya Reş"

@@ -9,28 +9,26 @@ sidebar_label: 'Penggunaan'
 ## Penggunaan {#usage}
 
 - Balas dan add-on menambahkan lampiran asli secara otomatis — atau meminta konfirmasi terlebih dahulu, jika diaktifkan di Opsi.
-- Duplikasi dihilangkan berdasarkan nama file; bagian S/MIME selalu dilewati. Gambar inline dipulihkan di badan balasan secara default (nonaktifkan melalui "Include inline pictures" di Opsi).
+- Dideduplikasi berdasarkan nama file; bagian S/MIME selalu dilewati. Gambar yang disematkan dalam pesan asli tetap berada di badan balasan, tempat Thunderbird menempatkannya, dan tidak disalin sebagai file.
 - Lampiran yang masuk daftar hitam juga dilewati (pola glob tidak peka huruf besar/kecil yang mencocokkan nama file, bukan path). Lihat [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Apa yang terjadi saat membalas {#what-happens}
 
-- Deteksi balasan → daftar lampiran asli → saring S/MIME + inline → konfirmasi opsional → tambahkan file yang memenuhi syarat (lewati duplikat) → pulihkan gambar inline di badan pesan.
+- Mendeteksi balasan → mendaftar lampiran asli → melewati S/MIME dan gambar tersemat → konfirmasi opsional → menambahkan file yang memenuhi syarat (melewati duplikat).
 
-Putaran ketat vs. longgar: Add-on terlebih dahulu mengecualikan bagian S/MIME dan inline dari lampiran file. Jika tidak ada yang memenuhi syarat, ia menjalankan putaran longgar yang tetap mengecualikan S/MIME/inline tetapi mentolerir lebih banyak kasus (lihat Detail Kode). Gambar inline tidak pernah ditambahkan sebagai lampiran file; sebagai gantinya, saat "Include inline pictures" diaktifkan (bawaan), gambar ditanam langsung di badan balasan sebagai data URI base64.
+| Jenis bagian                                                     | Disalin ke balasan         |
+|------------------------------------------------------------------|---------------------------:|
+| File tanda tangan S/MIME `smime.p7s`                             | Tidak                      |
+| Jenis MIME S/MIME (`application/pkcs7-*`)                        | Tidak                      |
+| Gambar yang disematkan badan pesan melalui `cid:`                | Tidak (ada di badan pesan) |
+| Gambar yang ditandai `Content-Disposition: inline`               | Tidak (ada di badan pesan) |
+| Gambar dengan `Content-ID` yang tidak pernah dirujuk badan pesan | Ya                         |
+| Email terlampir (`message/rfc822`) dengan nama file              | Ya                         |
+| Lampiran file biasa dengan nama file                             | Ya                         |
 
-| Jenis bagian                                                  | Putaran ketat                        | Putaran longgar                      |
-|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| File tanda tangan S/MIME `smime.p7s`                          | Dikecualikan                         | Dikecualikan                         |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                      | Dikecualikan                         | Dikecualikan                         |
-| Gambar inline yang direferensikan oleh Content‑ID (`image/*`) | Dikecualikan (dipulihkan di badan\*) | Dikecualikan (dipulihkan di badan\*) |
-| Email terlampir (`message/rfc822`) dengan nama file           | Tidak ditambahkan                    | Dapat ditambahkan                    |
-| Lampiran file biasa dengan nama file                          | Dapat ditambahkan                    | Dapat ditambahkan                    |
-
-\* Saat "Include inline pictures" diaktifkan (default: ON), gambar inline ditanam di badan balasan sebagai data URI base64, bukan ditambahkan sebagai lampiran file. Lihat [Konfigurasi](configuration#include-inline-pictures).
-
-Contoh: Beberapa lampiran mungkin tidak memiliki header tertentu tetapi tetap merupakan file biasa (bukan inline/S/MIME). Jika putaran ketat tidak menemukan apa pun, putaran longgar dapat menerima dan melampirkannya.
+Sebuah gambar dianggap disematkan hanya jika pesan asli benar-benar merujuknya, atau jika pengirim secara eksplisit menandainya `Content-Disposition: inline`. Header `Content-ID` saja tidak cukup: beberapa klien email memasangnya pada setiap bagian gambar, termasuk lampiran asli, dan itu tetap harus disalin.
 
 ---
 
@@ -85,7 +83,7 @@ Contoh: Beberapa lampiran mungkin tidak memiliki header tertentu tetapi tetap me
 
 ## Mengapa lampiran mungkin tidak ditambahkan {#why-attachments-might-not-be-added}
 
-- Gambar inline tidak ditambahkan sebagai lampiran file. Saat "Include inline pictures" ON (bawaan), gambar ditanam di badan balasan sebagai data URI. Jika pengaturan OFF, gambar inline dihapus sepenuhnya. Lihat [Konfigurasi](configuration#include-inline-pictures).
+- Gambar yang disematkan pesan asli tidak disalin sebagai file. Gambar tersebut sudah ada di badan balasan, tempat Thunderbird meletakkannya. Lihat [Konfigurasi](configuration#include-inline-pictures).
 - Bagian tanda tangan S/MIME dikecualikan menurut desain: nama file seperti `smime.p7s` dan tipe MIME seperti `application/pkcs7-signature` atau `application/pkcs7-mime` dilewati.
 - Pola daftar hitam dapat menyaring kandidat: lihat [Konfigurasi](configuration#blacklist-glob-patterns); pencocokan tidak peka huruf besar/kecil dan hanya berdasarkan nama file.
 - Nama file duplikat tidak ditambahkan lagi: jika penulisan sudah berisi file dengan nama yang dinormalisasi sama, file tersebut dilewati.

@@ -54,7 +54,7 @@
     "message": "SMIME fi Inlayin Darbi"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Mallattoolee SMIME fi suuraawwan inlayin deebiin salphaa akka ta'uuf irraa haqamanii jiru."
+    "message": "Mallattoon SMIME yeroo kamiyyuu hin garagalfamu. Suuraawwan qaama ergaa keessatti dabalaman qaama deebii keessatti kan Thunderbird tursu keessatti hafu malee, akka maxxansaa lammataatti hin dabalaman."
   },
   "homepage.features.blacklist.title": {
     "message": "Paaternoota Tarree Dhoorkaa"

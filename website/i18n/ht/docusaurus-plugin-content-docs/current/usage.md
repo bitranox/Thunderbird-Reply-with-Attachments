@@ -9,28 +9,26 @@ sidebar_label: 'Itilizasyon'
 ## Itilizasyon {#usage}
 
 - Reponn epi add-on nan ajoute orijinal yo otomatikman — oswa li mande w anvan, si sa aktive nan Opsyon yo.
-- Retire doublon dapre non fichye; pati S/MIME yo toujou sote. Imaj anliy yo retabli nan kò repons lan pa default (dezaktive atravè "Include inline pictures" nan Opsyon yo).
+- Yo elimine doublon selon non fichye a; pati S/MIME yo toujou sote. Imaj ki entegre nan mesaj orijinal la rete nan kò repons lan, kote Thunderbird mete yo, epi yo pa kopye kòm fichye.
 - Atachman ki sou lis nwa yo tou sote (modèl glob ki pa sansib a majiskil/miniskil ki matche non fichye yo, pa chemen yo). Gade [Konfigirasyon](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kisa k pase lè w reponn {#what-happens}
 
-- Detekte yon repons → lis atachman orijinal yo → filtre S/MIME + anliy → konfimasyon opsyonèl → ajoute fichye ki elijib (sote doublon) → retabli imaj anliy yo nan kò mesaj la.
+- Detekte repons → lis pyès jwen orijinal yo → sote S/MIME ak imaj entegre yo → konfimasyon opsyonèl → ajoute fichye ki elijib yo (an sotan duplikata).
 
-Pase strik kont pase relaks: Add-on nan ekskli dabor pati S/MIME ak anliy nan atachman fichye yo. Si pa gen anyen ki kalifye, li kouri yon pase relaks ki toujou ekskli S/MIME/anliy men tolere plis ka (gade Detay Kòd la). Imaj anliy yo pa janm ajoute kòm atachman fichye; olye de sa, lè "Include inline pictures" aktive (default), yo entegre dirèkteman nan kò repons lan kòm URI done base64.
+| Kalite pati                                               | Kopye nan repons lan |
+|-----------------------------------------------------------|---------------------:|
+| Fichye siyati S/MIME `smime.p7s`                          | Non                  |
+| Kalite MIME S/MIME (`application/pkcs7-*`)                | Non                  |
+| Imaj kò mesaj la entegre ak `cid:`                        | Non (li nan kò a)    |
+| Imaj make `Content-Disposition: inline`                   | Non (li nan kò a)    |
+| Imaj ki gen yon `Content-ID` men kò a pa janm refere a li | Wi                   |
+| Imèl tache (`message/rfc822`) ak yon non fichye           | Wi                   |
+| Pyès jwenn nòmal ak yon non fichye                        | Wi                   |
 
-| Kalite pati                                         | Pase strik                  | Pase relaks                 |
-|-----------------------------------------------------|----------------------------:|----------------------------:|
-| Fichye siyati S/MIME `smime.p7s`                    | Ekskli                      | Ekskli                      |
-| Tip MIME S/MIME (`application/pkcs7-*`)             | Ekskli                      | Ekskli                      |
-| Imaj anliy ki referans pa Content‑ID (`image/*`)    | Ekskli (retabli nan kò a\*) | Ekskli (retabli nan kò a\*) |
-| Imèl tache (`message/rfc822`) ki gen yon non fichye | Pa ajoute                   | Ka ajoute                   |
-| Atachman fichye nòmal ki gen yon non fichye         | Ka ajoute                   | Ka ajoute                   |
-
-\* Lè "Include inline pictures" aktive (default: ON), imaj anliy yo antere dirèkteman nan kò repons lan kòm URI done base64 olye yo ta ajoute yo kòm atachman fichye. Gade [Konfigirasyon](configuration#include-inline-pictures).
-
-Egzanp: Gen kèk atachman ki ka pa gen kèk header, men yo toujou fichye nòmal (pa anliy/S/MIME). Si pase strik la pa jwenn okenn, pase relaks la ka aksepte yo epi tache yo.
+Yon imaj konte kòm entegre sèlman lè mesaj orijinal la reyèlman refere a li, oswa lè moun ki voye a make li klèman kòm `Content-Disposition: inline`. Yon senp antèt `Content-ID` pa ase: plizyè kliyan imèl mete youn sou chak pati imaj, ki gen ladan tache reyèl yo, e yo dwe toujou kopye.
 
 ---
 
@@ -88,7 +86,7 @@ Egzanp: Gen kèk atachman ki ka pa gen kèk header, men yo toujou fichye nòmal 
 
 ## Poukisa atachman yo ka pa ajoute {#why-attachments-might-not-be-added}
 
-- Imaj anliy yo pa ajoute kòm atachman fichye. Lè "Include inline pictures" limen (default), yo antere nan kò repons lan kòm URI done olye. Si paramèt la OFF, imaj anliy yo retire nèt. Gade [Konfigirasyon](configuration#include-inline-pictures).
+- Imaj mesaj orijinal la entegre yo pa kopye kòm fichye. Yo deja nan kò repons lan, kote Thunderbird te mete yo. Gade [Konfigirasyon](configuration#include-inline-pictures).
 - Pati siyati S/MIME yo eskli pa konsepsyon: non fichye tankou `smime.p7s` ak tip MIME tankou `application/pkcs7-signature` oswa `application/pkcs7-mime` sote.
 - Modèl lis nwa ka filtre kandida yo: gade [Konfigirasyon](configuration#blacklist-glob-patterns); matche a pa sansib a majiskil/miniskil epi li gade sèlman non fichye a.
 - Non fichye ki an doub yo pa re‑ajoute: si fenèt konpozisyon an deja gen yon fichye ak menm non normalize a, yo sote li.

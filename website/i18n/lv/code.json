@@ -54,7 +54,7 @@
     "message": "Izlaist SMIME un iebūvēto saturu"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Lai atbildes būtu kompaktas, SMIME paraksti un iebūvētie attēli netiek iekļauti."
+    "message": "SMIME paraksti nekad netiek kopēti. Ziņojuma tekstā iegultie attēli paliek atbildes tekstā, kur tos saglabā Thunderbird, nevis tiek pievienoti otrreiz kā pielikums."
   },
   "homepage.features.blacklist.title": {
     "message": "Melnā saraksta maskas"

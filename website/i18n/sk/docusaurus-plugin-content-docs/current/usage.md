@@ -9,28 +9,28 @@ sidebar_label: 'Použitie'
 ## Použitie {#usage}
 
 - Pri odpovedi doplnok automaticky pridá pôvodné prílohy — alebo sa najprv opýta, ak je to povolené v Možnostiach.
-- Odstránenie duplikátov podľa názvu súboru; časti S/MIME sa vždy preskakujú. Vložené obrázky sa štandardne obnovia v tele odpovede (možno vypnúť cez „Include inline pictures“ v Možnostiach).
+- Duplicity sa odstraňujú podľa názvu súboru; časti S/MIME sa vždy vynechávajú. Obrázky vložené do pôvodnej správy zostávajú v tele odpovede, tam, kam ich umiestňuje Thunderbird, a nekopírujú sa ako súbory.
 - Prílohy na čiernej listine sa tiež preskakujú (na veľkosť písmen necitlivé glob vzory zodpovedajú názvom súborov, nie cestám). Pozri [Konfigurácia](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Čo sa stane pri odpovedi {#what-happens}
 
-- Zistiť odpoveď → vypísať pôvodné prílohy → filtrovať S/MIME + inline → voliteľné potvrdenie → pridať vhodné súbory (preskočiť duplikáty) → obnoviť vložené obrázky v tele.
+- Zisti odpoveď → vypíš pôvodné prílohy → preskoč S/MIME a vložené obrázky → voliteľné potvrdenie → pridaj vhodné súbory (preskočením duplicít).
 
-Prísny vs. uvoľnený priechod: Doplnok najprv vylúči časti S/MIME a inline z príloh súborov. Ak nič nespĺňa podmienky, spustí uvoľnený priechod, ktorý stále vylučuje S/MIME/inline, ale toleruje viac prípadov (pozri Podrobnosti kódu). Vložené obrázky sa nikdy nepridávajú ako súborové prílohy; namiesto toho, keď je zapnuté „Include inline pictures“ (predvolené), sú vložené priamo do tela odpovede ako base64 data URI.
+| Typ časti                                              | Skopírované do odpovede |
+|--------------------------------------------------------|------------------------:|
+| Súbor podpisu S/MIME `smime.p7s`                       | Nie                     |
+| Typy MIME S/MIME (`application/pkcs7-*`)               | Nie                     |
+| Obrázok vložený telom správy cez `cid:`                | Nie (je v tele)         |
+| Obrázok označený ako `Content-Disposition: inline`     | Nie (je v tele)         |
+| Obrázok s `Content-ID`, na ktorý telo nikdy neodkazuje | Áno                     |
+| Priložený e-mail (`message/rfc822`) s názvom súboru    | Áno                     |
+| Bežná príloha súboru s názvom súboru                   | Áno                     |
 
-| Typ časti                                             | Prísny priechod              | Uvoľnený priechod            |
-|-------------------------------------------------------|-----------------------------:|-----------------------------:|
-| Súbor podpisu S/MIME `smime.p7s`                      | Vylúčené                     | Vylúčené                     |
-| Typy MIME S/MIME (`application/pkcs7-*`)              | Vylúčené                     | Vylúčené                     |
-| Vložený obrázok odkazovaný cez Content‑ID (`image/*`) | Vylúčené (obnovené v tele\*) | Vylúčené (obnovené v tele\*) |
-| Priložený e‑mail (`message/rfc822`) s názvom súboru   | Nepridané                    | Môže byť pridané             |
-| Bežná súborová príloha s názvom súboru                | Môže byť pridané             | Môže byť pridané             |
-
-\* Keď je zapnuté „Include inline pictures“ (predvolené: ON), vložené obrázky sa vložia do tela odpovede ako base64 data URI namiesto pridania ako súborové prílohy. Pozri [Konfigurácia](configuration#include-inline-pictures).
-
-Príklad: Niektorým prílohám môžu chýbať určité hlavičky, no stále ide o bežné súbory (nie inline/S/MIME). Ak prísny priechod nenájde žiadne, uvoľnený priechod ich môže akceptovať a pripojiť.
+Obrázok sa považuje za vložený iba vtedy, keď naň pôvodná správa skutočne odkazuje, alebo keď ho odosielateľ výslovne
+označil ako `Content-Disposition: inline`. Samotná hlavička `Content-ID` nestačí: niektorí e-mailoví klienti ju umiestňujú
+na každú obrázkovú časť, vrátane skutočných príloh, a tie sa musia aj tak skopírovať.
 
 ---
 
@@ -85,7 +85,7 @@ Príklad: Niektorým prílohám môžu chýbať určité hlavičky, no stále id
 
 ## Prečo prílohy nemusia byť pridané {#why-attachments-might-not-be-added}
 
-- Vložené obrázky sa nepridávajú ako súborové prílohy. Keď je „Include inline pictures“ ZAP (predvolené), vložia sa do tela odpovede ako data URI. Ak je nastavenie VYP, vložené obrázky sa úplne odstránia. Pozri [Konfigurácia](configuration#include-inline-pictures).
+- Obrázky, ktoré vkladá pôvodná správa, sa nekopírujú ako súbory. Už sú v tele odpovede, tam, kam ich umiestnil Thunderbird. Pozri [Configuration](configuration#include-inline-pictures).
 - Časti podpisu S/MIME sú zámerne vylúčené: preskakujú sa názvy súborov ako `smime.p7s` a typy MIME ako `application/pkcs7-signature` alebo `application/pkcs7-mime`.
 - Vzory čiernej listiny môžu filtrovať kandidátov: pozri [Konfigurácia](configuration#blacklist-glob-patterns); porovnávanie nerozlišuje veľkosť písmen a týka sa iba názvov súborov.
 - Duplicitné názvy súborov sa znovu nepridávajú: ak už okno písania obsahuje súbor s rovnakým normalizovaným názvom, je preskočený.

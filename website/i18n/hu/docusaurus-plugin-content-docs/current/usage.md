@@ -9,28 +9,26 @@ sidebar_label: 'Használat'
 ## Használat {#usage}
 
 - Válasz esetén a kiegészítő automatikusan hozzáadja az eredeti mellékleteket — vagy előbb rákérdez, ha a Beállításokban engedélyezve van.
-- Duplikációmentesítés fájlnév alapján; az S/MIME részek mindig ki vannak hagyva. Az inline képek alapértelmezetten a válasz törzsében kerülnek visszaállításra (a Beállításokban az „Inline képek beillesztése” opcióval kikapcsolható).
+- Fájlnév szerint deduplikálva; az S/MIME részek mindig kimaradnak. Az eredeti üzenetbe ágyazott képek a válasz törzsében maradnak, ahova a Thunderbird helyezi őket, és nem kerülnek fájlként másolásra.
 - A feketelistázott mellékletek is kihagyásra kerülnek (kis- és nagybetűkre nem érzékeny glob minták, amelyek a fájlnevekre, nem pedig az elérési utakra illeszkednek). Lásd: [Beállítások](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Mi történik válasz esetén {#what-happens}
 
-- Válasz észlelése → eredeti mellékletek listázása → S/MIME + inline szűrése → opcionális megerősítés → jogosult fájlok hozzáadása (duplikátumok kihagyása) → inline képek visszaállítása a törzsben.
+- Válasz felismerése → az eredeti mellékletek listázása → S/MIME és beágyazott képek kihagyása → opcionális megerősítés → a jogosult fájlok hozzáadása (a duplikátumok kihagyásával).
 
-Szigorú vs. lazább futás: A kiegészítő először kizárja az S/MIME és az inline részeket a fájlmellékletek közül. Ha semmi sem felel meg, lefuttat egy lazább kört, amely továbbra is kizárja az S/MIME/inline elemeket, de több esetet elfogad (lásd: Kód részletei). Az inline képek soha nem kerülnek hozzáadásra fájlmellékletként; ehelyett, ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett), közvetlenül a válasz törzsébe ágyazódnak be base64 adat‑URI‑ként.
+| Rész típusa                                                       | Bemásolva a válaszba |
+|-------------------------------------------------------------------|---------------------:|
+| S/MIME aláírásfájl `smime.p7s`                                    | Nem                  |
+| S/MIME MIME-típusok (`application/pkcs7-*`)                       | Nem                  |
+| Az üzenet törzse által `cid:` révén beágyazott kép                | Nem (a törzsben van) |
+| `Content-Disposition: inline` jelöléssel ellátott kép             | Nem (a törzsben van) |
+| `Content-ID`-vel rendelkező kép, amelyre a törzs sosem hivatkozik | Igen                 |
+| Csatolt e-mail (`message/rfc822`) fájlnévvel                      | Igen                 |
+| Normál fájlmelléklet fájlnévvel                                   | Igen                 |
 
-| Rész típusa                                         | Szigorú futás                        | Lazább futás                         |
-|-----------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| S/MIME aláírásfájl `smime.p7s`                      | Kizárva                              | Kizárva                              |
-| S/MIME MIME‑típusok (`application/pkcs7-*`)         | Kizárva                              | Kizárva                              |
-| Content‑ID által hivatkozott inline kép (`image/*`) | Kizárva (a törzsben helyreállítva\*) | Kizárva (a törzsben helyreállítva\*) |
-| Csatolt e‑mail (`message/rfc822`) fájlnévvel        | Nem kerül hozzáadásra                | Hozzáadható                          |
-| Szokásos fájlmelléklet fájlnévvel                   | Hozzáadható                          | Hozzáadható                          |
-
-\* Ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett: BE), az inline képek fájlként való csatolás helyett base64 adat‑URI‑ként ágyazódnak be a válasz törzsébe. Lásd: [Beállítások](configuration#include-inline-pictures).
-
-Példa: Egyes mellékletekből hiányozhatnak bizonyos fejlécek, mégis szabályos fájlok (nem inline/S/MIME). Ha a szigorú futás nem talál ilyet, a lazább futás ezeket elfogadhatja és csatolhatja.
+Egy kép csak akkor számít beágyazottnak, ha az eredeti üzenet ténylegesen hivatkozik rá, vagy ha a küldő kifejezetten `Content-Disposition: inline`-ként jelölte meg. Önmagában egy `Content-ID` fejléc nem elég: több levelezőkliens minden képrészhez hozzáad egyet, beleértve a valódi mellékleteket is, ezeket pedig továbbra is másolni kell.
 
 ---
 
@@ -88,7 +86,7 @@ Példa: Egyes mellékletekből hiányozhatnak bizonyos fejlécek, mégis szabál
 
 ## Miért nem kerülhetnek hozzáadásra a mellékletek {#why-attachments-might-not-be-added}
 
-- Az inline képek nem kerülnek fájlként csatolásra. Ha az „Inline képek beillesztése” BE (alapértelmezett), akkor a válasz törzsébe adat‑URI‑ként ágyazódnak. Ha a beállítás KI, az inline képek teljesen eltávolításra kerülnek. Lásd: [Beállítások](configuration#include-inline-pictures).
+- Az eredeti üzenet által beágyazott képek nem kerülnek másolásra fájlként. Már ott vannak a válasz törzsében, ahová a Thunderbird helyezte őket. Lásd: [Konfiguráció](configuration#include-inline-pictures).
 - Az S/MIME aláírásrészek tervezetten ki vannak zárva: az olyan fájlnevek, mint `smime.p7s`, valamint az olyan MIME‑típusok, mint `application/pkcs7-signature` vagy `application/pkcs7-mime` kimaradnak.
 - A feketelista‑minták szűrhetik a jelölteket: lásd [Beállítások](configuration#blacklist-glob-patterns); az egyezés kis‑ és nagybetűkre nem érzékeny, és csak a fájlnévre vonatkozik.
 - Az ismétlődő fájlnevek nem kerülnek újra hozzáadásra: ha a levélírásban már szerepel azonos, normalizált nevű fájl, azt kihagyjuk.

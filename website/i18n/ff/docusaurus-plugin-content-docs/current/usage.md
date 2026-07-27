@@ -9,28 +9,29 @@ sidebar_label: 'Huutugol'
 ## Huutorgol {#usage}
 
 - Jaab, tee add‑on oo maa ɓeyda dokkoreeji jowe e jaajol — walla ɗaɓɓitii ko adii yo, so hurminaama e Cuɓe.
-- ɓennugol ɗiɗi momtaa ko e innde fiilde; geɗe S/MIME ɓe momtaa sahaa kala. Nataaji inline ɓe artiraa e jinnaaɗe jaabugol ko kallum (daaƴtu e "Include inline pictures" e Cuɓe).
+- Kôpe ɗe woni fotde ɗum ɗon ɓe ittude ɗum ɗon e innde fiilde; hedde S/MIME ɗen ko ɗen ɗon ittee sahaa fuu. Naatirɗe (images) ɗe naatinaama e ndee mbaydi jaŋtoo, ɗum ɗon heddoto e ɓataake jaabawol, ɗo Thunderbird waɗata ɗum, ɗum ɗon kôpaake wanaa fiilde.
 - Dokkoreeji e blacklist ɓe kadi momtaa (jiɓirɗe glob nde ɓe huuɓi innde fiilde tan, wonaa laawol; ɗe hoolaaka mawnde/majjuɗe case). Yiy [Teelte](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Hol ko waɗɗii so a jaabi {#what-happens}
 
-- Ƴeewta jaabugol → doggol dokkoreeji jowe → seɗda S/MIME + inline → teeŋtude so aɗa yiɗi → ɓeydu fiilde cuɓaaɗe (momtu ɓennuge) → artir nataaji inline e jinnaaɗe.
+- Anndu jaabawol → limtinaa ɓeydaari gadane ɗen → acor S/MIME e nate naatinaaɗe → jaɓnondiral suɓaaɗum → ɓeyda fiilde jogiiɗe si'i (accude kaɓɓe).
 
-Pass ɓurindi vs. pass ñalawol: add‑on oo nanndii tawo momtaa geɗe S/MIME e inline e dokkorde fiilde. So hay huunde laatoto, maa ɗowti pass ñalawol nde kadi momtaa S/MIME/inline kono waɗa faamde ɗiɗi e ko ɓurɗi balɗe (yiy Cariiɗe Code). Nataaji inline wonaa goɗɗaa ɓeydaa e ko dokkorde fiilde; wonaa ɗuum, so "Include inline pictures" hurminaama (ko kallum), ɓe mbaɗa woodude e jinnaaɗe jaabugol toowde no data URI base64.
+| Noode peccol                                            | Ina kôpee e jaabawol |
+|---------------------------------------------------------|---------------------:|
+| Fiilde winndannde S/MIME `smime.p7s`                    | Alaa                 |
+| Nooɗe MIME S/MIME (`application/pkcs7-*`)               | Alaa                 |
+| Naatirgel ɗi ɓataake naatinta e `cid:`                  | Alaa (ina e ɓataake) |
+| Naatirgel maandaa `Content-Disposition: inline`         | Alaa (ina e ɓataake) |
+| Naatirgel jogii `Content-ID` ɗo ɓataake meeɗaa jantaade | Eey                  |
+| Iimeel ɗeɓɓinaaɗo (`message/rfc822`) jogii innde fiilde | Eey                  |
+| Fiilde ɗeɓɓinaande gaddiindi jogii innde fiilde         | Eey                  |
 
-| Fannu geɗe                                             | Pass ɓurindi                  | Pass ñalawol                  |
-|--------------------------------------------------------|------------------------------:|------------------------------:|
-| Fiilde siŋillo S/MIME `smime.p7s`                      | Momtaa                        | Momtaa                        |
-| Fannu MIME S/MIME (`application/pkcs7-*`)              | Momtaa                        | Momtaa                        |
-| Nataande inline toowiraaɗo e Content‑ID (`image/*`)    | Momtaa (artiraa e jinnaaɗe\*) | Momtaa (artiraa e jinnaaɗe\*) |
-| Imeel dokkiraaɗo (`message/rfc822`) jogii innde fiilde | Wonaa ɓeydaa                  | Ena waawi ɓeydaade            |
-| Dokkorde fiilde loowdi jogii innde                     | Ena waawi ɓeydaade            | Ena waawi ɓeydaade            |
-
-\* So "Include inline pictures" hurminaama (kallum: ON), nataaji inline ɓe mbaɗa woodude e jinnaaɗe jaabugol no data URI base64, wonaa ɓeydaade e dokkorde fiilde. Yiy [Teelte](configuration#include-inline-pictures).
-
-Yimre: Dokkoreeji seeɗa ena waawi ŋakku e geɗe heɗiɗi kono aanon kadi fiilde goɗɗi (wonaa inline/S/MIME). So pass ɓurindi ngel nattii e ko woni, pass ñalawol maa jaɓi ɓe e ɓe ɓeydii.
+Naatirgel ɗon jotoo teeŋtinaa ko tuma ndee mbaydi jaŋtoo janttaade ɗum on tigi,
+walla tuma nulowo on maandii ɗum feeñnde `Content-Disposition: inline`. Hooréwal
+`Content-ID` tan yonaaki: jaaɓɓe iimeel ɗuɗɗe ɗi waɗata ɗum e kala peccol naatirgel,
+kaa e ɗeɓɓinaaɗe goonga, ɗum ɗon foti kôpaade non non.
 
 ---
 
@@ -85,7 +86,7 @@ Yimre: Dokkoreeji seeɗa ena waawi ŋakku e geɗe heɗiɗi kono aanon kadi fiild
 
 ## Hol ko waɗi dokkoreeji waawaani ɓeydanaade {#why-attachments-might-not-be-added}
 
-- Nataaji inline wonaa ɓeydaa e ko dokkorde fiilde. So "Include inline pictures" ON (ko kallum), ɓe mbaɗa woodude e jinnaaɗe jaabugol no data URI. So teelte nde OFF, nataaji inline ɓe momtaa haa timmi. Yiy [Teelte](configuration#include-inline-pictures).
+- Nate ɗe ɓataake gadanewol naatini ɗe copiraaki wa'a fiilde. Ɗe woodi ko jooni e ɓataake jaabawol, nokku Thunderbird waɗi ɗe. Yiylo [Configuration](configuration#include-inline-pictures).
 - Geɗe siŋillo S/MIME ɓe momtaa ko feewi: innden fiilde wano `smime.p7s` e fannu MIME wano `application/pkcs7-signature` walla `application/pkcs7-mime` ɓe momtaa.
 - Jiɓirɗe blacklist ena waawi seɗde cuɓe: yiy [Teelte](configuration#blacklist-glob-patterns); ƴeewndugol ɗee hoolaaka mawnde-mbadiɗo e innde fiilde tan.
 - Innden fiilde ɓennugol wonaa ɓeydaa kadi: so compose ngol ena jogii fiilde gooto jogii innde toɗɗii, ɗuum momtaa.

@@ -54,7 +54,7 @@
     "message": "SMIME ۽ Inline ڇڏڻ"
   },
   "homepage.features.skipSmime.body": {
-    "message": "جواب سادا رکڻ لاءِ SMIME دستخط ۽ اِن لائين تصويرون خارج ڪيون وڃن ٿيون."
+    "message": "SMIME صحيحون ڪڏھن به ڪاپي نه ٿينديون آھن. پيغام جي متن ۾ شامل تصويرون جواب جي متن ۾ ئي رھنديون آھن، جتي Thunderbird انھن کي رکي ٿو، بدران ٻيھر ضميمي طور شامل ڪرڻ جي."
   },
   "homepage.features.blacklist.title": {
     "message": "بليڪ لسٽ پيٽرنز"

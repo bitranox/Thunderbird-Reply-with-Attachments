@@ -9,7 +9,8 @@ title: 'Nhoroondo yezvachinja'
 
 Kuti muwane nhoroondo yakazara uye yakadzama, tarisai [CHANGELOG.md pa GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) yerepozitori.
 
-- 2.3.2: "Include inline pictures" zvino zvinobatanidza mifananidzo zvakananga mumuviri wemhinduro se base64 data URIs (default: ON); kuvandudzwa kwemhando yekodhi uye kuwedzerwa kwekuvharwa kwemiedzo.
+- 2.4.0: mifananidzo haichadzimwi nekuti chete mutumiri akaisa `Content-ID` pairi; sarudzo ye"Include inline pictures" yabviswa, sezvo Thunderbird pachayo inochengetedza mifananidzo yakabatanidzwa mumuviri wemhinduro; zvivhundutso (links) zvava kuvhurwa mubhurauza yesisitemu; muganho wezvinamatirwa 50 / 100 MB pamhinduro imwe neimwe, uye chero chinosiyiwa chinoshumwa.
+- 2.3.2: "Include inline pictures" yaibatanidza mifananidzo mumuviri wemhinduro se base64 data URI (yabviswazve mushure mekuongororwa kwe add-ons.thunderbird.net; Thunderbird inozviita pachayo); kuvandudzwa kwekunaka kwekodhi uye kuwedzerwa kwekuongororwa kwemiedzo.
 - 2.3.1: Inochengeta ma-attachment mushure mekunge Thunderbird yaisa background event page mu-idle; inowedzera targeted debug hooks ekugadzirisa matambudziko.
 - 2.3.0: Kugadziridzwa kwekubvisa ma-duplicate ema-attachment, kuwedzerwa kwekuvharwa kwemiedzo, uye kubviswa kwemvumo dzasakare kuti kugutse mitemo yeAMO.
 - 2.1.0: Tsigiro yakazara ye internationalization yemitauro 100 yepamusoro

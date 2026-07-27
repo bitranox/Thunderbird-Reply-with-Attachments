@@ -9,28 +9,29 @@ sidebar_label: 'Pamakéan'
 ## Pamakéan {#usage}
 
 - Bales sarta add‑on nambahkeun nu aslina sacara otomatis — atawa nanya heula, lamun diaktipkeun dina Opsi.
-- Duplikat dipiceun dumasar kana ngaran payil; bagian S/MIME sok diliwatan. Gambar inline dipulihkeun deui dina awak balesan sacara standar (pareuman via "Include inline pictures" dina Opsi).
+- Anu duplikat dihapus dumasar kana ngaran file; bagian S/MIME salawasna dilewat. Gambar anu diselapkeun dina pesen asli tetep aya dina awak balesan, dimana Thunderbird nempatkeunana, sarta henteu dikopi jadi file.
 - Lampiran anu diasupkeun kana daptar hideung ogé diliwatan (pola glob teu peka hurup gede‑leutik nu nyocogkeun kana ngaran payil, lain jalur). Tingali [Konfigurasi](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Naon anu kajadian nalika ngabales {#what-happens}
 
-- Ndeteksi balesan → daptar lampiran aslina → saring S/MIME + inline → konfirmasi (opsional) → nambahkeun payil nu layak (ngaliwatkeun duplikat) → mulangkeun gambar inline dina awak.
+- Deteksi balesan → daptarkeun lampiran aslina → liwatan S/MIME jeung gambar anu ditempelkeun → konfirmasi opsional → tambahkeun file nu layak (ngaliwatan nu duplikat).
 
-Léngkah ketat vs. longgar: Add‑on mimiti ngaluarkeun bagian S/MIME jeung inline tina lampiran payil. Lamun euweuh anu layak, éta ngajalankeun léngkah longgar anu tetep ngaluarkeun S/MIME/inline tapi leuwih toleran kana sababaraha kasus (tempo Rincian Kode). Gambar inline teu kungsi ditambahkeun minangka lampiran payil; sabalikna, lamun "Include inline pictures" diaktipkeun (bawaan), éta dipasangan langsung dina awak balesan minangka data URI base64.
+| Jenis bagian                                                     | Dikopi kana balesan    |
+|------------------------------------------------------------------|-----------------------:|
+| File tanda tangan S/MIME `smime.p7s`                             | Henteu                 |
+| Jenis MIME S/MIME (`application/pkcs7-*`)                        | Henteu                 |
+| Gambar anu diselapkeun ku awak pesen ngaliwatan `cid:`           | Henteu (aya dina awak) |
+| Gambar anu ditandaan `Content-Disposition: inline`               | Henteu (aya dina awak) |
+| Gambar kalayan `Content-ID` anu teu kungsi dirujuk ku awak pesen | Enya                   |
+| Email anu dilampirkeun (`message/rfc822`) kalayan ngaran file    | Enya                   |
+| Lampiran file biasa kalayan ngaran file                          | Enya                   |
 
-| Jinis bagian                                                 | Léngkah ketat                          | Léngkah longgar                        |
-|--------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
-| Payil tanda‑tangan S/MIME `smime.p7s`                        | Dikaluarkeun                           | Dikaluarkeun                           |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                     | Dikaluarkeun                           | Dikaluarkeun                           |
-| Gambar inline nu dirujuk ku Content‑ID (`image/*`)           | Dikaluarkeun (dipulihkeun dina awak\*) | Dikaluarkeun (dipulihkeun dina awak\*) |
-| Surélék dilampirkeun (`message/rfc822`) kalayan ngaran payil | Teu ditambahkeun                       | Bisa ditambahkeun                      |
-| Lampiran payil biasa kalayan ngaran payil                    | Bisa ditambahkeun                      | Bisa ditambahkeun                      |
-
-\* Lamun "Include inline pictures" diaktipkeun (bawaan: HURUNG), gambar inline dipasangan dina awak balesan salaku data URI base64 tibatan ditambahkeun minangka lampiran payil. Tempo [Konfigurasi](configuration#include-inline-pictures).
-
-Conto: Sababaraha lampiran bisa waé kakurangan sababaraha header tapi tetep mangrupa payil biasa (henteu inline/S/MIME). Lamun léngkah ketat teu manggihan nanaon, léngkah longgar bisa narima éta sarta ngalampirkeunana.
+Hiji gambar dianggap diselapkeun ngan lamun pesen asli leres-leres ngarujuk kana eta,
+atawa lamun nu ngirim sacara eksplisit nandaan `Content-Disposition: inline`. Ngan
+header `Content-ID` teu cukup: sababaraha klien email masang eta dina unggal bagian
+gambar, kaasup lampiran anu saenyana, anu tetep kudu dikopi.
 
 ---
 
@@ -88,7 +89,7 @@ Conto: Sababaraha lampiran bisa waé kakurangan sababaraha header tapi tetep man
 
 ## Naha lampiran bisa jadi teu ditambahkeun {#why-attachments-might-not-be-added}
 
-- Gambar inline teu ditambahkeun minangka lampiran payil. Lamun "Include inline pictures" HURUNG (bawaan), éta dipasangan dina awak balesan salaku data URI sabalikna. Lamun setélanana PAREUM, gambar inline dileungitkeun sakabéhna. Tempo [Konfigurasi](configuration#include-inline-pictures).
+- Gambar anu ditempelkeun ku pesen aslina henteu dikopi salaku file. Éta geus aya dina awak balesan, di tempat Thunderbird nempatkeunana. Tempo [Configuration](configuration#include-inline-pictures).
 - Bagian tanda‑tangan S/MIME dikaluarkeun sacara rancangan: ngaran payil saperti `smime.p7s` jeung tipe MIME saperti `application/pkcs7-signature` atawa `application/pkcs7-mime` diliwatan.
 - Pola daptar hideung bisa nyaring calon: tingali [Konfigurasi](configuration#blacklist-glob-patterns); cocogna teu peka kana gedé‑leutikna hurup sarta ngan dumasar kana ngaran payil.
 - Ngaran payil duplikat teu ditambahkeun deui: lamun dina nyusun geus aya payil kalayan ngaran anu dinormalkeun sarua, éta bakal diliwatan.

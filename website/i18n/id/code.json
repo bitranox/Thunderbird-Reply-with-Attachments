@@ -54,7 +54,7 @@
     "message": "Lewati SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Tanda tangan SMIME dan gambar inline dikecualikan agar balasan tetap ringkas."
+    "message": "Tanda tangan SMIME tidak pernah disalin. Gambar yang disematkan dalam isi pesan tetap berada di isi balasan, tempat Thunderbird sudah menyimpannya, alih-alih dilampirkan lagi untuk kedua kalinya."
   },
   "homepage.features.blacklist.title": {
     "message": "Pola Daftar Blokir"

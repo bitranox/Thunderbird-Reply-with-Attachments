@@ -54,7 +54,7 @@
     "message": "SMIME és beágyazottak kihagyása"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Az SMIME‑aláírások és a beágyazott képek nem kerülnek csatolásra, így a válaszok tömörek maradnak."
+    "message": "Az SMIME aláírásokat sosem másoljuk. Az üzenet törzsébe ágyazott képek a válasz törzsében maradnak, ott, ahol a Thunderbird már tárolja őket, ahelyett hogy másodszor is csatolnánk őket."
   },
   "homepage.features.blacklist.title": {
     "message": "Tiltólista‑minták"

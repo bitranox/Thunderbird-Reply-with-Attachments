@@ -54,7 +54,7 @@
     "message": "Anashkalo SMIME dhe inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Nënshkrimet SMIME dhe imazhet inline përjashtohen për t’i mbajtur përgjigjet të lehta."
+    "message": "Nënshkrimet SMIME nuk kopjohen kurrë. Imazhet e ngulitura në trupin e mesazhit qëndrojnë në trupin e përgjigjes, aty ku Thunderbird i mban, në vend që të bashkëngjiten sërish."
   },
   "homepage.features.blacklist.title": {
     "message": "Modele të listës së zezë"

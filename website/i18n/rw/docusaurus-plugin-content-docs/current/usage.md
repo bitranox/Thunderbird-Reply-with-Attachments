@@ -9,28 +9,28 @@ sidebar_label: 'Uko ikoreshwa'
 ## Uko ikoreshwa {#usage}
 
 - Subiza hanyuma umugereka wongeramo inyomeko z’umwimerere ku buryo bwikora — cyangwa ubanze abaze, niba byakozwe muri Amahitamo.
-- Kwirinda gusubiramo hashingiwe ku izina ry’ifayilo; ibice bya S/MIME birasimbukwa buri gihe. Amashusho yinjijwe mu mubiri (inline) asubizwa mu mubiri w’igisubizo ku buryo mburabuzi (bihagarikwe binyuze muri "Include inline pictures" muri Amahitamo).
+- Ibisubirwamo birakurwaho hashingiwe ku izina rya dosiye; ibice bya S/MIME buri gihe birasimburwa. Amashusho yashyizwemo mu butumwa nyakuri asigara mu mubiri w'igisubizo, aho Thunderbird abishyira, kandi ntabwo ayandukurwa nk'amadosiye.
 - Inyomeko ziri ku rutonde rwabujijwe (blacklist) na zo zirirengagizwa (imiterere ya glob idatandukanya inyuguti nkuru/nto ihuza amazina y’amafayilo, atari inzira). Reba [Igenamiterere](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Ibyibera mu gusubiza {#what-happens}
 
-- Kumenya ko ari igisubizo → gutondeka inyomeko z’umwimerere → gusukura S/MIME + byinjijwe (inline) → kwemeza niba bikenewe → kongeramo amafayilo akwemerwa (gusimbuka abisanze) → gusubiza amashusho yinjijwe mu mubiri.
+- Kumenya igisubizo → gutondeka imigereka nyakuri → kwirengagiza S/MIME n'amashusho yashyizwemo → kwemeza bitari ngombwa → kongeraho amadosiye abifitiye uburenganzira (twirinda ibisubiramo).
 
-Kugenzura rukaze ugereranyije n’ururuhutse: Umugereka ubanza gukuramo ibice bya S/MIME n’ibyinjijwe (inline) mu nyomeko z’amafayilo. Nta na kimwe kibashije, ukora urugendo ruruhutse rwemera ibindi bibayeho nubwo rukomeza gukuramo S/MIME/inline (reba Ibisobanuro by’Amabwiriza). Amashusho yinjijwe ntabwo yongerwa nk’inyomeko z’amafayilo; ahubwo, iyo "Include inline pictures" ikinguye (mburabuzi), ashyirwa mu mubiri w’igisubizo nk’adata ya base64 (data URI).
+| Ubwoko bw'igice                                               | Yanditse mu gisubizo |
+|---------------------------------------------------------------|---------------------:|
+| Dosiye y'umukono wa S/MIME `smime.p7s`                        | Oya                  |
+| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)            | Oya                  |
+| Ishusho umubiri w'ubutumwa ushyizemo ukoresheje `cid:`        | Oya (iri mu mubiri)  |
+| Ishusho yashyizweho akamenyetso `Content-Disposition: inline` | Oya (iri mu mubiri)  |
+| Ishusho ifite `Content-ID` umubiri utigeze uyerekanaho        | Yego                 |
+| Imeyili yometseho (`message/rfc822`) ifite izina rya dosiye   | Yego                 |
+| Icomatanyo cy'idosiye isanzwe gifite izina rya dosiye         | Yego                 |
 
-| Ubwoko bw’igice                                         | Kugenzura rukaze                   | Kugenzura ruruhutse                |
-|---------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| Ifayilo y’isinyature ya S/MIME `smime.p7s`              | Byakuweho                          | Byakuweho                          |
-| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)      | Byakuweho                          | Byakuweho                          |
-| Ishusho yinjijwe yerekejwe na Content‑ID (`image/*`)    | Ihagaritswe (isubizwa mu mubiri\*) | Ihagaritswe (isubizwa mu mubiri\*) |
-| Imeli yomekwa (`message/rfc822`) ifite izina ry’ifayilo | Ntongerwa                          | Ishobora kongerwa                  |
-| Inyomeko isanzwe y’ifayilo ifite izina                  | Ishobora kongerwa                  | Ishobora kongerwa                  |
-
-\* Iyo "Include inline pictures" ikinguye (mburabuzi: ON), amashusho yinjijwe ashyirwa mu mubiri w’igisubizo nk’adata za base64 URI aho kongerwa nk’inyomeko z’ifayilo. Reba [Igenamiterere](configuration#include-inline-pictures).
-
-Urugero: Bimwe mu byomeko bishobora kubura bimwe mu mitwe (headers) nyamara bikaba amafayilo asanzwe (atari inline/S/MIME). Niba kugenzura rukaze ntacyo kibona, kugenzura ruruhutse gishobora kubyemera kandi kikabyomeka.
+Ishusho ibarwa nk'iyashyizwemo gusa igihe ubutumwa nyakuri buyerekanaho koko, cyangwa igihe uwabwohereje yashyizeho
+neza akamenyetso `Content-Disposition: inline`. Umutwe wa `Content-ID` wenyine ntabwo uhagije: abakoresha porogaramu
+z'imeyili benshi bashyira iki kimenyetso ku gice cyose cy'ishusho, harimo n'ibyometseho by'ukuri, kandi ibyo bigomba kwandukurwa.
 
 ---
 
@@ -85,7 +85,7 @@ Urugero: Bimwe mu byomeko bishobora kubura bimwe mu mitwe (headers) nyamara bika
 
 ## Impamvu inyomeko zishobora kutongerwa {#why-attachments-might-not-be-added}
 
-- Amashusho yinjijwe (inline) ntongerwa nk’inyomeko z’amafayilo. Iyo "Include inline pictures" iri ON (mburabuzi), ashyirwa mu mubiri w’igisubizo nk’adata ya URI aho kongerwa nk’inyomeko. Niba iryo genamiterere riri OFF, amashusho yinjijwe akurwaho burundu. Reba [Igenamiterere](configuration#include-inline-pictures).
+- Amashusho ubutumwa nyakuri bwashyizemo ntabwo akoporwa nk'amadosiye. Asanzwe ari mu mubiri w'igisubizo, aho Thunderbird yayashyize. Reba [Configuration](configuration#include-inline-pictures).
 - Ibice by’isinyature ya S/MIME bikurwamo nkana: amazina y’amafayilo nka `smime.p7s` n’ubwoko bwa MIME nka `application/pkcs7-signature` cyangwa `application/pkcs7-mime` birasimbukwa.
 - Imiterere y’ururondabwizwa (blacklist patterns) ishobora gusohora abakandida: reba [Igenamiterere](configuration#blacklist-glob-patterns); guhuzwa ni nta tandukaniro ry’inyuguti nkuru/nto kandi bishingiye ku mazina y’amafayilo gusa.
 - Amazina y’amafayilo yisubiramo ntiyongera kongerwa: niba idirishya ryo kwandika risanganywe ifayilo ifite izina rihwanye ryahinduwe mu buryo busanzwe, irirengagizwa.

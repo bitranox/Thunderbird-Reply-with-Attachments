@@ -54,7 +54,7 @@
     "message": "Hopp over SMIME og innebygde bilder"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME-signaturer og innebygde bilder utelates for å holde svarene kompakte."
+    "message": "SMIME-signaturer blir aldri kopiert. Bilder som er lagt inn i meldingsteksten, blir værende i svarteksten, der Thunderbird plasserer dem, i stedet for å bli lagt ved på nytt som vedlegg."
   },
   "homepage.features.blacklist.title": {
     "message": "Svartelistemønstre"

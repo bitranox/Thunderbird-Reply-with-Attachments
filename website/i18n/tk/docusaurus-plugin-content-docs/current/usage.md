@@ -9,28 +9,29 @@ sidebar_label: 'Ulanyş'
 ## Ulanylyş {#usage}
 
 - Jogap berilýär we goşundy asyllary awtomatiki goşýar — ýa-da Sazlamalarda açyk bolsa, ilki sorag berýär.
-- Faýl ady boýunça gaýtalanmalar aýrylýar; S/MIME bölekleri hemişe geçilip gidilýär. Öňünden bellenen ýagdaýda içerki (inline) suratlardyr şekiller jogabyň göwründe dikeldilýär (Sazlamalardaky "Include inline pictures" arkaly öçürip bolýar).
+- Faýl ady boýunça gaýtalanmalar aýrylýar; S/MIME bölekleri hemişe geçirilýär. Asyl habarda gömülen suratlar jogabyň esasy böleginde galýar, Thunderbird olary ýerleşdirýän ýerinde, we faýl hökmünde göçürilmeýär.
 - Gara sanawa goşulan goşundylary hem geçýär (uly/kiçi harpa duýgynsyz, faýl atlaryna gabat gelýän glob nagyşlary; ýollara däl). [Sazlama](configuration#blacklist-glob-patterns) bölümine serediň.
 
 ---
 
 ### Jogap berilende näme bolýar {#what-happens}
 
-- Jogapy anykla → asyl goşundylary sana → S/MIME + içerki bölekleri süz → islege bagly tassyk → laýyk faýllary goş (gaýtalanmalary geç) → içeri goýlan suratlary göwründe dikelt.
+- Jogaby anykla → asyl goşundylary sanawla → S/MIME we gömülen suratlary geç → islege görä tassyklama → şert laýyk gelýän faýllary goş (gaýtalananlary geçirip).
 
-Berk we ýumşadylan geçiriliş: Goşundy ilki bilen faýl goşundylaryndan S/MIME hem-de içerki (inline) bölekleri çykarmaga synanyşýar. Hiç zat laýyk gelmese, ýene-de S/MIME/inline böleklerini çykaryp, ýöne has köp ýagdaýy kabul edýän ýumşadylan geçirilişi işletýär (Kodyň Jikme-jikligi bölümine serediň). Içerki suratlar hiç haçan faýl goşundylary hökmünde goşulmaýar; muňa derek, "Include inline pictures" açyk bolsa (bellenşi ýaly), olar jogabyň göwründe gönüden-göni base64 data URI hökmünde gömülýär.
+| Bölek görnüşi                                       | Jogaba göçürilendi    |
+|-----------------------------------------------------|----------------------:|
+| S/MIME gol faýly `smime.p7s`                        | Ýok                   |
+| S/MIME MIME görnüşleri (`application/pkcs7-*`)      | Ýok                   |
+| Habar esasy `cid:` arkaly gömen surat               | Ýok (ol esasynda bar) |
+| `Content-Disposition: inline` diýip bellenen surat  | Ýok (ol esasynda bar) |
+| Esasy hiç haçan salgylanmaýan `Content-ID`-li surat | Hawa                  |
+| Faýl ady bilen goşulan e-poçta (`message/rfc822`)   | Hawa                  |
+| Faýl ady bilen adaty faýl goşundysy                 | Hawa                  |
 
-| Böleg görnüşi                                          | Berk geçiriliş                    | Ýumşadylan geçiriliş              |
-|--------------------------------------------------------|----------------------------------:|----------------------------------:|
-| S/MIME gol faýly `smime.p7s`                           | Aýrylýar                          | Aýrylýar                          |
-| S/MIME MIME görnüşleri (`application/pkcs7-*`)         | Aýrylýar                          | Aýrylýar                          |
-| Content‑ID arkaly salgylanan içerki surat (`image/*`)  | Aýrylýar (göwründe dikeldilýär\*) | Aýrylýar (göwründe dikeldilýär\*) |
-| Faýl ady bolan birikdirilen e-poçta (`message/rfc822`) | Goşulmaýar                        | Goşulyp bilner                    |
-| Faýl ady bolan adaty faýl goşundysy                    | Goşulyp bilner                    | Goşulyp bilner                    |
-
-\* "Include inline pictures" açyk ýagdaýda (default: ON), içerki suratlar faýl goşundylary hökmünde goşulmagyň ýerine jogabyň göwründe base64 data URI görnüşinde gömülýär. [Sazlama](configuration#include-inline-pictures) bölümine serediň.
-
-Mysal: Käbir goşundylaryň käbir başlyklar (headers) bolman biler, ýöne şonda-da olar adaty faýllardyr (içerki/S/MIME däl). Berk geçiriliş hiç birini tapmasa, ýumşadylan geçiriliş şolary kabul edip, goşup biler.
+Surat diňe asyl habar oňa hakykatdanam salgylanýan wagty ýa-da ugradyjy ony açyk görnüşde
+`Content-Disposition: inline` diýip belleýän wagty gömülen hasaplanýar. Ýalňyz
+`Content-ID` sözbaşysy ýeterlik däl: käbir poçta müşderileri her surat bölegine ony
+goýýarlar, hakyky goşundylar hem şol sanda, olar barybir göçürilmeli.
 
 ---
 
@@ -87,7 +88,7 @@ Mysal: Käbir goşundylaryň käbir başlyklar (headers) bolman biler, ýöne ş
 
 ## Goşundylar näme üçin goşulman biler {#why-attachments-might-not-be-added}
 
-- Içerki suratlar faýl goşundylary hökmünde goşulmaýar. "Include inline pictures" ON ýagdaýynda (bellenşi ýaly), olar munuň ýerine jogabyň göwründe data URI hökmünde gömülýär. Sazlama üçin serediň: [Sazlama](configuration#include-inline-pictures).
+- Asyl habaryň gömen suratlary faýl hökmünde göçürilmeýär. Olar eýýäm jogabyň esasy tekstinde, Thunderbird goýan ýerinde bar. Serediň [Configuration](configuration#include-inline-pictures).
 - S/MIME gol bölekleri niýet boýunça çykarylýar: `smime.p7s` ýaly faýl atlary we `application/pkcs7-signature` ýa-da `application/pkcs7-mime` ýaly MIME görnüşleri geçilip gidilýär.
 - Gara sanaw nagyşlary kandidatlary süzüp biler: [Sazlama](configuration#blacklist-glob-patterns); gabat gelme harp ululygyna duýgynsyz we diňe faýl ady boýunça amala aşyrylýar.
 - Gaýtalanýan faýl atlary täzeden goşulmaýar: eger ýazuwda eýýäm şol bir kadalaşdyrylan ada eýe faýl bar bolsa, ol geçilip gidilýär.

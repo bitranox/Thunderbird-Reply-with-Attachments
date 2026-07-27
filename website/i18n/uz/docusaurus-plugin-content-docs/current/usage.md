@@ -9,28 +9,29 @@ sidebar_label: 'Foydalanish'
 ## Foydalanish {#usage}
 
 - Javob berishda qo‘shimcha asl ilovalarni avtomatik qo‘shadi — yoki Sozlamalarda yoqilgan bo‘lsa, avval so‘raydi.
-- Fayl nomi bo‘yicha dublikatlar olib tashlanadi; S/MIME qismlari har doim o‘tkazib yuboriladi. Sukut bo‘yicha ichki rasmlar javob tanasida qayta tiklanadi (Sozlamalardagi "Include inline pictures" orqali o‘chirishingiz mumkin).
+- Fayl nomi bo'yicha takroriy nusxalar olib tashlanadi; S/MIME qismlari har doim o'tkazib yuboriladi. Asl xabarga joylashtirilgan rasmlar javob matnida qoladi, Thunderbird ularni joylashtirgan joyda, va fayl sifatida nusxalanmaydi.
 - Qora ro‘yxatga kiritilgan ilovalar ham o‘tkazib yuboriladi (kattayu‑kichikni farqlamaydigan glob andozalari yo‘l emas, fayl nomi bo‘yicha moslashtiriladi). [Sozlamalar](configuration#blacklist-glob-patterns)ga qarang.
 
 ---
 
 ### Javob berilganda nima bo‘ladi {#what-happens}
 
-- Javobni aniqlash → asl ilovalarni ro‘yxatlash → S/MIME + inline ni filtrlash → ixtiyoriy tasdiqlash → mos fayllarni qo‘shish (dublikatlarni o‘tkazib yuborish) → tanada ichki rasmlarni tiklash.
+- Javobni aniqlash → asl biriktirmalarni ro'yxatlash → S/MIME va ichga joylashtirilgan rasmlarni o'tkazib yuborish → ixtiyoriy tasdiqlash → mos fayllarni qo'shish (takrorlanganlarni o'tkazib yuborib).
 
-Qattiq va yengil tekshiruv: qo‘shimcha avval fayl ilovalaridan S/MIME va inline qismlarini chiqarib tashlaydi. Agar hech narsa mos kelmasa, u baribir S/MIME/inline ni chiqarib tashlaydigan, ammo ko‘proq holatlarga ruxsat beradigan yengil tekshiruvni ishga tushiradi (Kod tafsilotlariga qarang). Ichki rasmlar hech qachon fayl ilovalari sifatida qo‘shilmaydi; buning o‘rniga, "Include inline pictures" yoqilganida (sukut bo‘yicha), ular javob tanasiga to‘g‘ridan‑to‘g‘ri base64 data URI sifatida joylashtiriladi.
+| Qism turi                                                     | Javobga nusxalandimi   |
+|---------------------------------------------------------------|-----------------------:|
+| S/MIME imzo fayli `smime.p7s`                                 | Yo'q                   |
+| S/MIME MIME turlari (`application/pkcs7-*`)                   | Yo'q                   |
+| Xabar matni `cid:` orqali joylashtirgan rasm                  | Yo'q (u matnda mavjud) |
+| `Content-Disposition: inline` deb belgilangan rasm            | Yo'q (u matnda mavjud) |
+| Matn hech qachon murojaat qilmaydigan `Content-ID`ga ega rasm | Ha                     |
+| Fayl nomi bilan biriktirilgan email (`message/rfc822`)        | Ha                     |
+| Fayl nomi bilan oddiy fayl ilovasi                            | Ha                     |
 
-| Qism turi                                                | Qattiq tekshiruv                      | Yengil tekshiruv                      |
-|----------------------------------------------------------|--------------------------------------:|--------------------------------------:|
-| S/MIME imzo fayli `smime.p7s`                            | Istisno qilingan                      | Istisno qilingan                      |
-| S/MIME MIME turlari (`application/pkcs7-*`)              | Istisno qilingan                      | Istisno qilingan                      |
-| Content‑ID orqali havola qilingan ichki rasm (`image/*`) | Istisno qilingan (tanada tiklanadi\*) | Istisno qilingan (tanada tiklanadi\*) |
-| Fayl nomiga ega biriktirilgan xat (`message/rfc822`)     | Qo‘shilmaydi                          | Qo‘shilishi mumkin                    |
-| Fayl nomiga ega oddiy fayl ilovasi                       | Qo‘shilishi mumkin                    | Qo‘shilishi mumkin                    |
-
-\* "Include inline pictures" yoqilganida (sukut bo‘yicha: ON), ichki rasmlar fayl ilovalari sifatida qo‘shilmaydi, balki javob tanasiga base64 data URI ko‘rinishida joylashtiriladi. [Sozlamalar](configuration#include-inline-pictures)ga qarang.
-
-Misol: Ba’zi ilovalarda ayrim sarlavhalar yetishmasligi mumkin, ammo ular baribir oddiy fayllardir (inline/S/MIME emas). Agar qattiq tekshiruv hech narsa topmasa, yengil tekshiruv ularni qabul qilib, biriktirishi mumkin.
+Rasm faqat asl xabar unga haqiqatan ham murojaat qilganda yoki jo'natuvchi uni ochiq
+ravishda `Content-Disposition: inline` deb belgilaganda joylashtirilgan hisoblanadi.
+Faqat `Content-ID` sarlavhasi yetarli emas: ba'zi pochta dasturlari uni har bir rasm
+qismiga qo'yadi, jumladan haqiqiy ilovalarga ham, ular baribir nusxalanishi kerak.
 
 ---
 
@@ -88,7 +89,7 @@ Misol: Ba’zi ilovalarda ayrim sarlavhalar yetishmasligi mumkin, ammo ular bari
 
 ## Nega ilovalar qo‘shilmasligi mumkin {#why-attachments-might-not-be-added}
 
-- Ichki rasmlar fayl ilovalari sifatida qo‘shilmaydi. "Include inline pictures" ON (sukut bo‘yicha) bo‘lganda, ular buning o‘rniga javob tanasiga data URI sifatida joylashtiriladi. Sozlama OFF bo‘lsa, ichki rasmlar butunlay olib tashlanadi. [Sozlamalar](configuration#include-inline-pictures)ga qarang.
+- Asl xabar ichga joylashtirgan rasmlar fayl sifatida nusxalanmaydi. Ular Thunderbird joylashtirgan joyda, javob matnida allaqachon mavjud. Qarang: [Configuration](configuration#include-inline-pictures).
 - S/MIME imzo qismlari dizayn bo‘yicha istisno qilingan: `smime.p7s` kabi fayl nomlari va `application/pkcs7-signature` yoki `application/pkcs7-mime` kabi MIME turlari o‘tkazib yuboriladi.
 - Qora ro‘yxat andozalari nomzodlarni filtrlashi mumkin: [Sozlamalar](configuration#blacklist-glob-patterns)ga qarang; moslashtirish kattayu‑kichikni farqlamaydigan va faqat fayl nomi bo‘yicha.
 - Dublikat fayl nomlari qayta qo‘shilmaydi: agar yozish oynasida allaqachon bir xil normallashtirilgan nomga ega fayl bo‘lsa, u o‘tkazib yuboriladi.

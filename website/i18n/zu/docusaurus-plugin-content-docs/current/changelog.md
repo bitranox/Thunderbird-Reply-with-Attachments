@@ -10,7 +10,8 @@ title: 'Umlando wezinguquko'
 Ukuze uthole umlando ophelele, onemininingwane, bheka owerephozithri
 [CHANGELOG.md ku-GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Include inline pictures" manje ifaka izithombe ngqo emzimbeni wempendulo njenge-base64 data URIs (default: ON); kuthuthukiswe ikhwalithi yekhodi futhi kwandiswa ukumbozwa kokuhlola.
+- 2.4.0: izithombe azisalahlwa nje ngoba umthumeli ubeke i-`Content-ID`; inketho ethi "Include inline pictures" isisusiwe, ngoba uThunderbird ngokwawo ugcina izithombe ezifakwe ngaphakathi emzimbeni wempendulo; izixhumanisi manje zivula kusiphequluli sesistimu; umkhawulo wezithasiselo ezingu-50 / 100 MB kwimpendulo ngayinye, konke okushiyiwe kuyabikwa.
+- 2.3.2: "Include inline pictures" yayifaka izithombe emzimbeni wempendulo njenge-base64 data URIs (isusiwe futhi ngemva kokubuyekezwa yi-add-ons.thunderbird.net; uThunderbird uyakwenza lokhu ngokwawo); ukuthuthukiswa kwekhwalithi yekhodi kanye nokwandiswa kokuhlolwa.
 - 2.3.1: Igcina izinamathiselo ngemuva kokuthi i-Thunderbird ibeke ikhasi lomcimbi langemuva esimweni sokungasebenzi; ingeza ama-debug hook aqondiswe ekuxazululeni izinkinga.
 - 2.3.0: Kucokwe ukususwa kokuphindaphindwa kwezinamathiselo, kwandiswa ukumbozwa kokuhlola, futhi kwasuswa izimvume eziphelelwe yisikhathi ukuze kuhlangatshezwane nezinqubomgomo ze-AMO.
 - 2.1.0: Ukusekelwa kokwaziswa kwamazwe omhlaba okuphelele kwezilimi eziyi-100 eziphezulu

@@ -54,7 +54,7 @@
     "message": "Preskočiť SMIME a vložené"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Podpisy SMIME a vložené obrázky sú vylúčené, aby odpovede zostali odľahčené."
+    "message": "Podpisy SMIME sa nikdy nekopírujú. Obrázky vložené do tela správy zostávajú v tele odpovede tam, kde ich už uchováva Thunderbird, namiesto toho, aby sa pripájali druhýkrát."
   },
   "homepage.features.blacklist.title": {
     "message": "Zakázané vzory"

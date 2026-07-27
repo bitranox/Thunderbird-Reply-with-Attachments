@@ -9,28 +9,26 @@ sidebar_label: 'Bikaranîn'
 ## Bikaranîn {#usage}
 
 - Bersiv bide û add‑on orîjînalan xweber zêde dike — an jî pêşî diprse, heke di Vebijarkan de çalak be.
-- Dubarekirin ji hêla navê pelê ve tê astengkirin; beşên S/MIME her gav têne derxistin. Wêneyên hundirî bi xwerû di laşê bersivê de tên vegerandin (bêçalakkirin bi vebijarka "Include inline pictures" di Vebijarkan de).
+- Li gorî navê pelê ji nû ve tê rakirin; beşên S/MIME her tim têne derbaskirin. Wêneyên di peyama orijînal de tên bicihkirin di nava beşa bersivê de dimînin, li cihê ku Thunderbird wan datîne, û wekî pel nayên kopîkirin.
 - Pêvekên ku di blacklist de hene jî têne derxistin (şêwazên glob ên bêhîstiya mezin/biçûk ku bi navên pelan li hev digerin, ne bi rêçikan). Binêre [Mîheng](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Çi dibe dema bersivê {#what-happens}
 
-- Bersiv tê tesbît kirin → pêvekên orîjînal têne lîstekirin → S/MIME + hundirî hatin parzûn → pejirandina vebijarkî → pelên lihevhatî tên zêdekirin (dubare têne derxistin) → wêneyên hundirî di laşê nivîsê de tên vegerandin.
+- Bersivê tespît bike → pêvekên orîjînal rêz bike → S/MIME û wêneyên tê de hatine bicihkirin derbas bike → erêkirina vebijarkî → pelên guncan zêde bike (dubareyan derbas bike).
 
-Derbasbûna tund li hember derbasbûna hêrgirt: Add‑on pêşî beşên S/MIME û hundirî ji pêvekên pelê derxistin dike. Heke tiştî lihevhat tune be, derbasbûnek hêrgirt dihêze ku hîn jî S/MIME/hundirî derxistin dike lê mijarên zêdetir qedandî dibe (binêre Hûragahiyên kodê). Wêneyên hundirî tu carî wek pêvekên pelê nayên zêdekirin; li gorî vê yekê, dema "Include inline pictures" çalak be (standard), ew rasterast di laşê bersivê de wekî base64 data URIs tên hevkirin.
+| Cureyê beşê                                                    | Li bersivê hatiye kopîkirin |
+|----------------------------------------------------------------|----------------------------:|
+| Pelê îmzeya S/MIME `smime.p7s`                                 | Na                          |
+| Cureyên MIME yên S/MIME (`application/pkcs7-*`)                | Na                          |
+| Wêneyê ku beşa peyamê bi `cid:` datîne                         | Na (ew di nava beşê de ye)  |
+| Wêneyê ku wekî `Content-Disposition: inline` hatiye nîşankirin | Na (ew di nava beşê de ye)  |
+| Wêneyê xwedî `Content-ID` ku beş qet behsa wê nake             | Erê                         |
+| E-nameya pêvekirî (`message/rfc822`) bi navekî pelê            | Erê                         |
+| Pêvek a pelê ya asayî bi navekî pelê                           | Erê                         |
 
-| Cureyê beşê                                                      | Derbasbûna tund                                    | Derbasbûna hêrgirt                                 |
-|------------------------------------------------------------------|---------------------------------------------------:|---------------------------------------------------:|
-| Pelê îmzeya S/MIME `smime.p7s`                                   | Hate derxistin                                     | Hate derxistin                                     |
-| Cureyên MIME yên S/MIME (`application/pkcs7-*`)                  | Hate derxistin                                     | Hate derxistin                                     |
-| Wêneyê hundirî ya bi Content‑ID re tê referans kirin (`image/*`) | Hate derxistin (di laşê nivîsê de tê vegerandin\*) | Hate derxistin (di laşê nivîsê de tê vegerandin\*) |
-| E-nameya girêdayî (`message/rfc822`) bi navê pelê                | Nayê zêdekirin                                     | Dikarê were zêdekirin                              |
-| Pêveka pelê ya asayî bi navê pelê                                | Dikarê were zêdekirin                              | Dikarê were zêdekirin                              |
-
-\* Dema "Include inline pictures" çalak be (standard: ON), wêneyên hundirî di laşê bersivê de wekî base64 data URIs tên hevkirin di nav nivîsê de, ne wek pêveka pelê. Binêre [Mîheng](configuration#include-inline-pictures).
-
-Mînak: Hin pêvek dikarin çend serepêşên winda bin lê hîn jî pelên asayî bin (ne hundirî/S/MIME). Heke derbasbûna tund tiştekê ne dît, derbasbûna hêrgirt dikare wan bipejirîne û bizêde bike.
+Wêneyek tenê wê demê wekî bicihkirî tê hesibandin ku peyama orijînal bi rastî behsa wê bike, an jî şander bi eşkere ew wekî `Content-Disposition: inline` nîşan kiribe. Serenavê `Content-ID` bitenê têrê nake: gelek nermalavên e-nameyê wê li ser her beşa wêneyê datînin, di nav de pêvekên rastîn jî, û ew hîn jî divê bêne kopîkirin.
 
 ---
 
@@ -88,7 +86,7 @@ Mînak: Hin pêvek dikarin çend serepêşên winda bin lê hîn jî pelên asay
 
 ## Çima pêvek dikarin neyên zêdekirin {#why-attachments-might-not-be-added}
 
-- Wêneyên hundirî wek pêvekên pelê nayên zêdekirin. Dema "Include inline pictures" ON be (standard), ew di laşê bersivê de wekî data URIs tên hevkirin. Heke mîheng OFF be, wêneyên hundirî tevahî têne rakirin. Binêre [Mîheng](configuration#include-inline-pictures).
+- Wêneyên ku peyama orîjînal tê de bicih kiriye wekî pelan nayên kopîkirin. Ew jixwe di laşê bersivê de ne, li cihê ku Thunderbird ew danîne. Binêre [Configuration](configuration#include-inline-pictures).
 - Beşên îmzeya S/MIME li gorî dizaynê hatine derxistin: navên pelan wek `smime.p7s` û cureyên MIME mîna `application/pkcs7-signature` an jî `application/pkcs7-mime` têne derxistin.
 - Şêwazên blacklist dikarin berheman parzûn bikin: binêre [Mîheng](configuration#blacklist-glob-patterns); lihevgirtin ji mezin/biçûk bûnê tîpan ne girîng e û tenê li ser navê pelê ye.
 - Navên pelan ên dubare nayên dîsa zêdekirin: heke di nivîsandinê de jixwe pelê bi heman navê normalkirî hebe, ew tê derxistin.

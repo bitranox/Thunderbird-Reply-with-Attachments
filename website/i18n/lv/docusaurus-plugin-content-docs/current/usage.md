@@ -9,28 +9,26 @@ sidebar_label: 'Lietošana'
 ## Lietošana {#usage}
 
 - Atbildiet, un papildinājums automātiski pievienos oriģinālos pielikumus — vai vispirms pajautās, ja opcijās tas ir iespējots.
-- Dublikāti tiek novērsti pēc faila nosaukuma; S/MIME daļas vienmēr tiek izlaistas. Pēc noklusējuma iegultie attēli tiek atjaunoti atbildes pamattekstā (var atslēgt, izmantojot “Iekļaut iegultos attēlus” opcijās).
+- Dublikāti tiek noņemti pēc faila nosaukuma; S/MIME daļas vienmēr tiek izlaistas. Attēli, kas iegulti sākotnējā ziņojumā, paliek atbildes pamattekstā, kur Thunderbird tos ievieto, un netiek kopēti kā faili.
 - Melnsarakstā iekļautie pielikumi arī tiek izlaisti (reģistrnejutīgi glob raksti, kas atbilst failu nosaukumiem, nevis ceļiem). Skatiet [Konfigurācija](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kas notiek, atbildot {#what-happens}
 
-- Noteikt atbildi → uzskaitīt oriģinālos pielikumus → atfiltrēt S/MIME + iegultos → izvēles apstiprinājums → pievienot atbilstošos failus (izlaist dublikātus) → atjaunot iegultos attēlus pamattekstā.
+- Atklāt atbildi → izveidot sākotnējo pielikumu sarakstu → izlaist S/MIME un iegultos attēlus → neobligāts apstiprinājums → pievienot atbilstošos failus (izlaižot dublikātus).
 
-Stingrā vs. pielaidīgā pārbaude: Papildinājums vispirms izslēdz S/MIME un iegultās daļas no failu pielikumiem. Ja nekas neatbilst, tas veic pielaidīgāku pārbaudi, kas joprojām izslēdz S/MIME/iegultās daļas, bet pieļauj vairāk gadījumu (skatīt koda detaļas). Iegultie attēli nekad netiek pievienoti kā failu pielikumi; tā vietā, ja ir iespējota opcija “Iekļaut iegultos attēlus” (noklusējums), tie tiek iegulti tieši atbildes pamattekstā kā base64 datu URI.
+| Daļas tips                                                   | Kopēts atbildē          |
+|--------------------------------------------------------------|------------------------:|
+| S/MIME paraksta fails `smime.p7s`                            | Nē                      |
+| S/MIME MIME tipi (`application/pkcs7-*`)                     | Nē                      |
+| Attēls, ko ziņojuma pamatteksts iegulst ar `cid:`            | Nē (tas ir pamattekstā) |
+| Attēls, kas atzīmēts kā `Content-Disposition: inline`        | Nē (tas ir pamattekstā) |
+| Attēls ar `Content-ID`, uz kuru pamatteksts nekad neatsaucas | Jā                      |
+| Pievienots e-pasts (`message/rfc822`) ar faila nosaukumu     | Jā                      |
+| Parasts faila pielikums ar faila nosaukumu                   | Jā                      |
 
-| Daļas tips                                                       | Stingrā pārbaude                   | Pielaidīgā pārbaude                |
-|------------------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| S/MIME paraksta fails `smime.p7s`                                | Izslēgts                           | Izslēgts                           |
-| S/MIME MIME tipi (`application/pkcs7-*`)                         | Izslēgts                           | Izslēgts                           |
-| Iegultais attēls, uz kuru atsaucas Content‑ID (`image/*`)        | Izslēgts (atjaunots pamattekstā\*) | Izslēgts (atjaunots pamattekstā\*) |
-| Pievienota e‑pasta vēstule (`message/rfc822`) ar faila nosaukumu | Netiek pievienots                  | Var tikt pievienots                |
-| Parasts faila pielikums ar faila nosaukumu                       | Var tikt pievienots                | Var tikt pievienots                |
-
-\* Ja ir iespējota opcija “Iekļaut iegultos attēlus” (noklusējums: IESLĒGTS), iegultie attēli tiek iegulti atbildes pamattekstā kā base64 datu URI, nevis pievienoti kā failu pielikumi. Skatiet [Konfigurācija](configuration#include-inline-pictures).
-
-Piemērs: Dažiem pielikumiem var trūkt noteiktu galveņu, bet tie joprojām ir parasti faili (nevis iegultie/S/MIME). Ja stingrā pārbaude neko neatrod, pielaidīgā pārbaude var tos akceptēt un pievienot.
+Attēls tiek uzskatīts par iegultu tikai tad, ja sākotnējais ziņojums patiešām uz to atsaucas vai ja sūtītājs to skaidri atzīmējis kā `Content-Disposition: inline`. Vienkārši `Content-ID` galvene nav pietiekama: vairāki e-pasta klienti to pievieno katrai attēla daļai, tostarp īstiem pielikumiem, un tie tomēr ir jākopē.
 
 ---
 
@@ -85,7 +83,7 @@ Piemērs: Dažiem pielikumiem var trūkt noteiktu galveņu, bet tie joprojām ir
 
 ## Kāpēc pielikumi var netikt pievienoti {#why-attachments-might-not-be-added}
 
-- Iegultie attēli netiek pievienoti kā failu pielikumi. Kad “Iekļaut iegultos attēlus” ir IESLĒGTS (noklusējums), tie tiek iegulti atbildes pamattekstā kā datu URI. Ja iestatījums ir IZSLĒGTS, iegultie attēli tiek pilnībā noņemti. Skatiet [Konfigurācija](configuration#include-inline-pictures).
+- Sākotnējā ziņojumā iegultie attēli netiek kopēti kā faili. Tie jau atrodas atbildes pamattekstā, kur tos ievietojis Thunderbird. Skatiet [Konfigurācija](configuration#include-inline-pictures).
 - S/MIME paraksta daļas tiek izslēgtas pēc konstrukcijas: tādi failu nosaukumi kā `smime.p7s` un MIME tipi, piemēram, `application/pkcs7-signature` vai `application/pkcs7-mime`, tiek izlaisti.
 - Melnsaraksta raksti var filtrēt kandidātus: skatiet [Konfigurācija](configuration#blacklist-glob-patterns); atbilstība ir reģistrnejutīga un tikai pēc faila nosaukuma.
 - Dublēti failu nosaukumi netiek pievienoti atkārtoti: ja sastādīšanā jau ir fails ar tādu pašu normalizētu nosaukumu, tas tiek izlaists.

@@ -54,7 +54,7 @@
     "message": "דילוג על SMIME ותוכן מוטמע"
   },
   "homepage.features.skipSmime.body": {
-    "message": "חתימות SMIME ותמונות מוטמעות אינן נכללות כדי לשמור על הודעות תשובה קלילות."
+    "message": "חתימות SMIME לעולם אינן מועתקות. תמונות המוטמעות בגוף ההודעה נשארות בגוף התגובה, במקום שבו Thunderbird כבר שומר אותן, במקום להיות מצורפות בשנית."
   },
   "homepage.features.blacklist.title": {
     "message": "תבניות חסימה"

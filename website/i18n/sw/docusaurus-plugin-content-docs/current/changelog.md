@@ -9,7 +9,8 @@ title: 'Kumbukumbu ya mabadiliko'
 
 Kwa historia kamili na ya kina, tazama [CHANGELOG.md kwenye GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) ya hifadhi (repository) husika.
 
-- 2.3.2: "Jumuisha picha za ndani ya maandishi" sasa hupachika picha moja kwa moja kwenye mwili wa jibu kama data URI za base64 (chaguo-msingi: ON); maboresho ya ubora wa msimbo na upanuzi wa ufunikaji wa majaribio.
+- 2.4.0: picha hazitupwi tena kwa sababu tu mtumaji aliweka `Content-ID`; chaguo la "Include inline pictures" limeondolewa, kwa kuwa Thunderbird yenyewe huhifadhi picha zilizopachikwa katika mwili wa jibu; viungo sasa vinafunguliwa kwenye kivinjari cha mfumo; kikomo cha viambatisho 50 / MB 100 kwa kila jibu, huku kila kilichoachwa kikiripotiwa.
+- 2.3.2: "Include inline pictures" ilipachika picha katika mwili wa jibu kama URI za data za base64 (iliondolewa tena baada ya ukaguzi wa add-ons.thunderbird.net; Thunderbird hufanya hivi yenyewe); maboresho ya ubora wa msimbo na upanuzi wa ufuatiliaji wa majaribio.
 - 2.3.1: Huhifadhi viambatisho baada ya Thunderbird kuweka ukurasa wa matukio wa usuli katika hali ya kusubiri (idle); huongeza viungio vya debug vilivyolengwa kwa utatuzi wa matatizo.
 - 2.3.0: Kuboresha uondoaji wa marudio ya viambatisho, kupanua ufunikaji wa majaribio, na kuondoa ruhusa zilizopitwa na wakati ili kutimiza sera za AMO.
 - 2.1.0: Usaidizi kamili wa kimataifa kwa lugha 100 za juu.

@@ -54,7 +54,7 @@
     "message": "SMIME અને ઇનલાઇન છોડો"
   },
   "homepage.features.skipSmime.body": {
-    "message": "જવાબોને હલકા રાખવા SMIME સહી અને ઇનલાઇન છબીઓને બહાર રાખવામાં આવે છે."
+    "message": "SMIME સહીઓ ક્યારેય કૉપિ કરવામાં આવતી નથી. મેસેજ બોડીમાં એમ્બેડ કરેલી છબીઓ રિપ્લાયના બોડીમાં જ રહે છે, જ્યાં Thunderbird તેમને રાખે છે, તેને બીજી વાર જોડવાને બદલે."
   },
   "homepage.features.blacklist.title": {
     "message": "બ્લૅકલિસ્ટ પેટર્ન્સ"

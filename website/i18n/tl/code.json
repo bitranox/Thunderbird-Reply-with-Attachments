@@ -54,7 +54,7 @@
     "message": "Laktawan ang SMIME at Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Hindi isinasama ang mga lagdang SMIME at mga larawang inline upang maging magaan ang mga tugon."
+    "message": "Hindi kailanman kinokopya ang mga lagda ng SMIME. Ang mga larawang naka-embed sa katawan ng mensahe ay nananatili sa reply, kung saan inilalagay ito ng Thunderbird, sa halip na i-attach itong muli."
   },
   "homepage.features.blacklist.title": {
     "message": "Mga Pattern sa Blacklist"

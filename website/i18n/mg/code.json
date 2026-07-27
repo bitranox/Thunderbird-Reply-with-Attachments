@@ -54,7 +54,7 @@
     "message": "Hialàna amin'ny SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Esorina ny sonia SMIME sy ny sary inline mba hitazonana ny valiny ho maivana."
+    "message": "Ny sonia SMIME dia tsy adika mihitsy. Ny sary tafiditra ao anaty vatan'ny hafatra dia mijanona ao amin'ny vatan'ny valiny, ao amin'ny toerana itehirizan'ny Thunderbird azy ireo, fa tsy averina atambatra indray."
   },
   "homepage.features.blacklist.title": {
     "message": "Lamina voasakana"

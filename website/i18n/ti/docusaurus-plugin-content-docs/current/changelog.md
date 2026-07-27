@@ -10,7 +10,8 @@ title: 'መዝገብ ለውጢታት'
 ንሙሉእን ዝርዝር ታሪኽ ተመልከት ኣብ ሪፖዚቶሪ
 [CHANGELOG.md ኣብ GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Include inline pictures" ሕጂ ምስሊታት ብቀጥታ ኣብ ዓካል መልሲ ከም base64 data URIs ይሕትት ይገብር (ነባሪ: ON); ጥራይ ኮድ ተሻሽሎ እና ክርኢ ፈተና ተስፋፊ ተደለየ.
+- 2.4.0: ስእልታት እቲ ልኣኺ `Content-ID` ስለ ዘንበረሎም ጥራይ ደጊም ኣይድርበዩን፣ ናይ "Include inline pictures" ምርጫ ጠፊኡ ኣሎ፣ ምኽንያቱ Thunderbird ባዕሉ ንዝተጠቕለሉ ስእልታት ኣብ ቤት ደብዳበ ምላሽ ስለ ዝሕዞም፣ ማእገዲታት ሕጂ ኣብ ሲስተም ብራውዘር ይኽፈቱ፣ መደብ 50 ተወሳኺታት / 100 MB ንነፍሲ ወከፍ ምላሽ፣ ዝተረፈ ኩሉ ይሕበር።
+- 2.3.2: "Include inline pictures" ስእልታት ኣብ ቤት ደብዳበ ምላሽ ከም base64 ዳታ URI ይጠቕልል ነይሩ (ድሕሪ ግምገማ add-ons.thunderbird.net እንደገና ተኣልዩ፣ Thunderbird ባዕሉ እዚ ይገብር)፣ ምምሕያሽ ጥራይ ኮድን ምዝርጋሕ ናይ ፈተነ ሽፋንን።
 - 2.3.1: ኣተችመንት እንኳ እቲ Thunderbird ናይ ባክግራውንድ ኢቨንት ገጽ ምስ ይእዳል ይቆም; ንመፍታን ጉዳይ ዝተመረጹ ዲባግ hooks ተደሓንጉ.
 - 2.3.0: ምድጋም ኣተችመንት ምትእስሳር ተንጽሮ ተሻሽሎ, ክርኢ ፈተና ተስፋፊ, እና ንምምሕዳር ፖሊሲ AMO ዝሓለፉ ፍቓድታት ተወግዱ.
 - 2.1.0: ሙሉእ ድገፍ ኢንተርናሽናላይዜሽን ንናይ ላዕሊ 100 ቋንቋታት

@@ -54,7 +54,7 @@
     "message": "Ruka SMIME na Vilivyopachikwa"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Saini za SMIME na picha zilizopachikwa hazijumuishwi ili kuweka majibu mepesi."
+    "message": "Sahihi za SMIME hazinakiliwa kamwe. Picha zilizowekwa ndani ya ujumbe hubaki kwenye sehemu ya jibu, pale Thunderbird huziweka, badala ya kuambatanishwa tena."
   },
   "homepage.features.blacklist.title": {
     "message": "Miundo ya Orodha Nyeusi"

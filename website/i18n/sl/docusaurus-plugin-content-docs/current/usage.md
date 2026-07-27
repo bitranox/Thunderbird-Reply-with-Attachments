@@ -9,28 +9,28 @@ sidebar_label: 'Uporaba'
 ## Uporaba {#usage}
 
 - Pri odgovoru dodatek samodejno doda izvirne priloge — ali pa najprej vpraša, če je to omogočeno v Možnostih.
-- Odstranjevanje dvojnikov po imenu datoteke; deli S/MIME so vedno izpuščeni. Vdelane slike so privzeto obnovljene v telesu odgovora (onemogočite prek "Vključi vdelane slike" v Možnostih).
+- Podvojeni deli so odstranjeni glede na ime datoteke; deli S/MIME so vedno preskočeni. Slike, vdelane v izvirno sporočilo, ostanejo v telesu odgovora, kamor jih postavi Thunderbird, in se ne kopirajo kot datoteke.
 - Priloge na črnem seznamu so prav tako izpuščene (vzorci glob brez razlikovanja velikosti črk, ki se ujemajo z imeni datotek, ne s potmi). Glejte [Konfiguracija](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kaj se zgodi ob odgovoru {#what-happens}
 
-- Zaznaj odgovor → naštej izvirne priloge → filtriraj S/MIME + vdelane → po potrebi potrdi → dodaj ustrezne datoteke (preskoči dvojnike) → obnovi vdelane slike v telesu.
+- Zaznaj odgovor → izpiši izvirne priponke → preskoči S/MIME in vdelane slike → izbirna potrditev → dodaj ustrezne datoteke (s preskokom podvojenih).
 
-Strogi vs. ohlapni prehod: Dodatek najprej izključi dele S/MIME in vdelane dele iz datotečnih prilog. Če se nič ne kvalificira, zažene ohlapni prehod, ki še vedno izključuje S/MIME/vdelane dele, a dopušča več primerov (glejte Podrobnosti kode). Vdelane slike se nikoli ne dodajo kot datotečne priloge; namesto tega, ko je omogočeno "Vključi vdelane slike" (privzeto), so neposredno vdelane v telo odgovora kot podatkovni URI-ji base64.
+| Vrsta dela                                                 | Kopirano v odgovor |
+|------------------------------------------------------------|-------------------:|
+| Datoteka podpisa S/MIME `smime.p7s`                        | Ne                 |
+| Vrste MIME S/MIME (`application/pkcs7-*`)                  | Ne                 |
+| Slika, ki jo telo sporočila vdela prek `cid:`              | Ne (je v telesu)   |
+| Slika, označena kot `Content-Disposition: inline`          | Ne (je v telesu)   |
+| Slika z `Content-ID`, na katero se telo nikoli ne sklicuje | Da                 |
+| Priložena e-pošta (`message/rfc822`) z imenom datoteke     | Da                 |
+| Navadna priloga datoteke z imenom datoteke                 | Da                 |
 
-| Vrsta dela                                                  | Strogi prehod                      | Ohlapni prehod                     |
-|-------------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| Datoteka podpisa S/MIME `smime.p7s`                         | Izključeno                         | Izključeno                         |
-| Vrste MIME S/MIME (`application/pkcs7-*`)                   | Izključeno                         | Izključeno                         |
-| Vdelana slika, na katero se sklicuje Content‑ID (`image/*`) | Izključeno (obnovljeno v telesu\*) | Izključeno (obnovljeno v telesu\*) |
-| Priloženo e‑sporočilo (`message/rfc822`) z imenom datoteke  | Ni dodano                          | Lahko se doda                      |
-| Običajna datotečna priloga z imenom datoteke                | Lahko se doda                      | Lahko se doda                      |
-
-\* Ko je "Vključi vdelane slike" omogočeno (privzeto: VKLJUČENO), so vdelane slike vdelane v telo odgovora kot podatkovni URI-ji base64, namesto da bi bile dodane kot datotečne priloge. Glejte [Konfiguracija](configuration#include-inline-pictures).
-
-Primer: Nekatere priloge morda nimajo določenih glave, a so vseeno običajne datoteke (ne vdelane/S/MIME). Če strogi prehod ne najde nobene, lahko ohlapni prehod te sprejme in jih priloži.
+Slika šteje za vdelano le, kadar se izvirno sporočilo dejansko sklicuje nanjo, ali kadar jo je pošiljatelj izrecno
+označil kot `Content-Disposition: inline`. Sama glava `Content-ID` ne zadošča: več e-poštnih odjemalcev jo doda vsakemu
+delu slike, vključno s pristnimi prilogami, te pa je še vedno treba kopirati.
 
 ---
 
@@ -85,7 +85,7 @@ Primer: Nekatere priloge morda nimajo določenih glave, a so vseeno običajne da
 
 ## Zakaj priloge morda ne bodo dodane {#why-attachments-might-not-be-added}
 
-- Vdelane slike se ne dodajo kot datotečne priloge. Ko je "Vključi vdelane slike" VKLJUČENO (privzeto), so namesto tega vdelane v telo odgovora kot podatkovni URI-ji. Če je nastavitev IZKLOPLJENA, so vdelane slike povsem odstranjene. Glejte [Konfiguracija](configuration#include-inline-pictures).
+- Slike, ki jih vdela izvirno sporočilo, niso kopirane kot datoteke. Že so v telesu odgovora, tam, kamor jih je postavil Thunderbird. Glej [Configuration](configuration#include-inline-pictures).
 - Deli podpisa S/MIME so po zasnovi izključeni: imena datotek, kot je `smime.p7s`, in vrste MIME, kot sta `application/pkcs7-signature` ali `application/pkcs7-mime`, so preskočene.
 - Vzorci črnega seznama lahko filtrirajo kandidate: glejte [Konfiguracija](configuration#blacklist-glob-patterns); ujemanje ne razlikuje velikih/malih črk in upošteva le ime datoteke.
 - Podvojena imena datotek se ne dodajo znova: če sestavljanje že vsebuje datoteko z enakim normaliziranim imenom, je preskočena.

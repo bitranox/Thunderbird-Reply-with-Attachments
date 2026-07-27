@@ -54,7 +54,7 @@
     "message": "Yeqa i‑SMIME ne‑Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Izimpawu zokusayina ze‑SMIME nezithombe ezise‑inline ziyakhishwa ukuze izimpendulo zihlale zilula."
+    "message": "Ama-signature e-SMIME awaphindwa neze. Izithombe ezifakwe ngaphakathi komlayezo zihlala esiphakamisweni sempendulo, lapho i-Thunderbird eziphathe khona, kunokuba zinamathiselwe futhi."
   },
   "homepage.features.blacklist.title": {
     "message": "Amaphethini Ohlwini Lokuvimba"

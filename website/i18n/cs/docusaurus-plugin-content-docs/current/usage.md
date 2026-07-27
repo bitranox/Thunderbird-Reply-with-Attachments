@@ -9,28 +9,29 @@ sidebar_label: 'Použití'
 ## Použití {#usage}
 
 - Odpovězte a doplněk přidá původní přílohy automaticky — nebo se nejprve zeptá, pokud je to povoleno v Možnostech.
-- Odstranění duplicit podle názvu souboru; části S/MIME jsou vždy přeskočeny. Vložené obrázky jsou ve výchozím nastavení obnoveny v těle odpovědi (vypnout lze přes "Include inline pictures" v Možnostech).
+- Duplicity se odstraňují podle názvu souboru; části S/MIME se vždy přeskočí. Obrázky vložené do původní zprávy zůstávají v těle odpovědi, kam je umístí Thunderbird, a nejsou kopírovány jako soubory.
 - Přílohy na černé listině se také přeskočí (glob vzory bez rozlišování velikosti písmen porovnávající názvy souborů, nikoli cesty). Viz [Konfigurace](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Co se děje při odpovědi {#what-happens}
 
-- Zjištění odpovědi → vypsání původních příloh → filtrování S/MIME + inline → volitelné potvrzení → přidání způsobilých souborů (přeskočení duplicit) → obnovení vložených obrázků v těle.
+- Rozpoznat odpověď → vypsat původní přílohy → přeskočit S/MIME a vložené obrázky → volitelné potvrzení → přidat vyhovující soubory (s přeskočením duplicit).
 
-Přísný vs. uvolněný průchod: Doplněk nejprve vyloučí části S/MIME a vložené části ze souborových příloh. Pokud nic neprojde, spustí uvolněný průchod, který stále vylučuje S/MIME/inline, ale toleruje více případů (viz podrobnosti kódu). Vložené obrázky se nikdy nepřidávají jako souborové přílohy; místo toho, když je povoleno "Include inline pictures" (výchozí), vkládají se přímo do těla odpovědi jako base64 data URI.
+| Typ části                                              | Kopíruje se do odpovědi |
+|--------------------------------------------------------|------------------------:|
+| Soubor podpisu S/MIME `smime.p7s`                      | Ne                      |
+| Typy MIME pro S/MIME (`application/pkcs7-*`)           | Ne                      |
+| Obrázek vložený tělem zprávy pomocí `cid:`             | Ne (je v těle)          |
+| Obrázek označený jako `Content-Disposition: inline`    | Ne (je v těle)          |
+| Obrázek s `Content-ID`, na který tělo nikdy neodkazuje | Ano                     |
+| Přiložený e-mail (`message/rfc822`) s názvem souboru   | Ano                     |
+| Běžná příloha souboru s názvem souboru                 | Ano                     |
 
-| Typ části                                                | Přísný průchod                | Uvolněný průchod              |
-|----------------------------------------------------------|------------------------------:|------------------------------:|
-| Soubor podpisu S/MIME `smime.p7s`                        | Vynecháno                     | Vynecháno                     |
-| Typy MIME S/MIME (`application/pkcs7-*`)                 | Vynecháno                     | Vynecháno                     |
-| Vložený obrázek odkazovaný pomocí Content‑ID (`image/*`) | Vynecháno (obnovené v těle\*) | Vynecháno (obnovené v těle\*) |
-| Přiložený e‑mail (`message/rfc822`) s názvem souboru     | Nepřidáno                     | Může být přidán               |
-| Běžná souborová příloha s názvem souboru                 | Může být přidán               | Může být přidán               |
-
-\* Když je "Include inline pictures" povoleno (výchozí: ZAPNUTO), vložené obrázky se vkládají do těla odpovědi jako datová URI místo přidání jako souborové přílohy. Viz [Konfigurace](configuration#include-inline-pictures).
-
-Příklad: Některým přílohám mohou chybět určité hlavičky, ale stále jde o běžné soubory (ne inline/S/MIME). Pokud přísný průchod žádné nenajde, uvolněný průchod je může přijmout a připojit.
+Obrázek se počítá jako vložený pouze tehdy, když na něj původní zpráva skutečně odkazuje,
+nebo když jej odesílatel výslovně označil jako `Content-Disposition: inline`. Pouhá
+hlavička `Content-ID` nestačí: mnoho e-mailových klientů ji umisťuje na každou obrázkovou část,
+včetně skutečných příloh, a ty je přesto nutné zkopírovat.
 
 ---
 
@@ -88,7 +89,7 @@ Příklad: Některým přílohám mohou chybět určité hlavičky, ale stále j
 
 ## Proč přílohy nemusí být přidány {#why-attachments-might-not-be-added}
 
-- Vložené obrázky se nepřidávají jako souborové přílohy. Když je "Include inline pictures" ZAPNUTO (výchozí), vkládají se místo toho do těla odpovědi jako datová URI. Pokud je nastavení VYPNUTO, vložené obrázky se zcela odstraní. Viz [Konfigurace](configuration#include-inline-pictures).
+- Obrázky, které vkládá původní zpráva, se nekopírují jako soubory. Už jsou v těle odpovědi, kam je Thunderbird umístil. Viz [Konfigurace](configuration#include-inline-pictures).
 - Části podpisu S/MIME jsou z principu vyloučeny: názvy souborů jako `smime.p7s` a typy MIME jako `application/pkcs7-signature` nebo `application/pkcs7-mime` se přeskočí.
 - Vzory černé listiny mohou kandidáty filtrovat: viz [Konfigurace](configuration#blacklist-glob-patterns); porovnává se bez rozlišování velikosti písmen a pouze podle názvu souboru.
 - Duplicitní názvy souborů se znovu nepřidávají: pokud editor již obsahuje soubor se stejným normalizovaným názvem, je přeskočen.

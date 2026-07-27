@@ -10,7 +10,8 @@ title: 'Pakeitimų žurnalas'
 Visą išsamią istoriją rasite repozitorijos
 [CHANGELOG.md „GitHub“ svetainėje](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Include inline pictures" dabar įterpia vaizdus tiesiai į atsakymo turinį kaip base64 duomenų URI (numatytasis: įjungta); kodo kokybės patobulinimai ir išplėsta testų aprėptis.
+- 2.4.0: paveikslėliai nebėra praleidžiami vien todėl, kad siuntėjas pridėjo prie jų `Content-ID`; parinktis "Include inline pictures" pašalinta, nes Thunderbird pati palaiko įterptus paveikslėlius atsakymo tekste; nuorodos dabar atveriamos sistemos naršyklėje; nustatyta 50 priedų / 100 MB riba vienam atsakymui, o apie viską, kas praleista, pranešama.
+- 2.3.2: "Include inline pictures" įterpdavo paveikslėlius į atsakymo tekstą kaip base64 duomenų URI (vėl pašalinta po add-ons.thunderbird.net peržiūros; Thunderbird tai atlieka pati); kodo kokybės patobulinimai ir išplėsta testų aprėptis.
 - 2.3.1: Išlaiko priedus po to, kai „Thunderbird“ pristabdo foninį įvykių puslapį; prideda tikslinius derinimo kablius trikčių šalinimui.
 - 2.3.0: Patobulinta priedų deduplikacija, išplėsta testų aprėptis ir pašalinti pasenę leidimai, kad atitiktų AMO taisykles.
 - 2.1.0: Visiškas internacionalizacijos palaikymas 100 populiariausių kalbų

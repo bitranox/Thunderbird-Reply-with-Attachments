@@ -54,7 +54,7 @@
     "message": "Praleisti SMIME ir įterptinius vaizdus"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME parašai ir įterptiniai vaizdai neįtraukiami, kad atsakymai būtų lengvi."
+    "message": "SMIME parašai niekada nekopijuojami. Pranešimo tekste įterptos nuotraukos lieka atsakymo tekste, kur jas palieka Thunderbird, o ne pridedamos dar kartą kaip priedas."
   },
   "homepage.features.blacklist.title": {
     "message": "Juodojo sąrašo šablonai"

@@ -9,28 +9,26 @@ sidebar_label: 'Fampiasana'
 ## Fampiasana {#usage}
 
 - Mamaly ianao dia manampy ho azy ny fanitarana ny tany am-boalohany — na mangataka fanamafisana aloha, raha alefa ao amin'ny Safidy.
-- Esorina dika mitovy araka ny anaran-drakitra; ny ampahany S/MIME dia hadinoina hatrany. Ny sary inline dia averina ao amin'ny vatana valiny amin'ny toe-javatra mahazatra (azo vonoina amin'ny "Include inline pictures" ao amin'ny Safidy).
+- Nesorina ny kopia mitovy araka ny anaran'ny rakitra; ny ampahany S/MIME dia hatrany tsy raharahaina. Ny sary miditra ao anatin'ny hafatra tany am-boalohany dia mitoetra ao amin'ny votoatin'ny valiny, izay apetraky ny Thunderbird, ary tsy adika ho rakitra.
 - Ny fampiarahana voasokajy ao anaty lisitra mainty dia tsy asiana koa (glob pattern tsy miankina amin'ny litera lehibe/kely mifanaraka amin'ny anaran-drakitra, fa tsy amin'ny làlana). Jereo ny [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Inona no mitranga rehefa mamaly {#what-happens}
 
-- Hamarino fa valiny → farito ny fampiarahana tany am-boalohany → sivano S/MIME + inline → fanamafisana an-tsafidy → ampio ireo rakitra mahafeno fepetra (adiaho ny dika mitovy) → avereno ny sary inline ao amin'ny vatana.
+- Mamantatra valiny → mitanisa ny rakitra mifamatotra tany am-boalohany → mihoatra ny S/MIME sy ny sary ao anaty → fanamafisana tsy tery → manampy ny rakitra mendrika (mihoatra ny kopia mitovy).
 
-Fandaloana henjana vs. malalaka: Voalohany, esorin'ny fanitarana amin'ny fampiarahana rakitra ny ampahany S/MIME sy inline. Raha tsy misy mahafeno fepetra, mampandeha fandaloana malalaka izy izay mbola manilika ny S/MIME/inline ihany fa mandefitra tranga maro kokoa (jereo ny Code Details). Tsy asiana ho fampiarahana rakitra mihitsy ny sary inline; fa raha alefa ny "Include inline pictures" (masontsivana tsy miova), dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI izy ireo.
+| Karazana ampahany                                               | Voadika ao amin'ny valiny       |
+|-----------------------------------------------------------------|--------------------------------:|
+| Rakitra sonia S/MIME `smime.p7s`                                | Tsia                            |
+| Karazana MIME S/MIME (`application/pkcs7-*`)                    | Tsia                            |
+| Sary ampidirin'ny votoatin'ny hafatra amin'ny alalan'ny `cid:`  | Tsia (ao anatin'ny votoaty izy) |
+| Sary voamarika `Content-Disposition: inline`                    | Tsia (ao anatin'ny votoaty izy) |
+| Sary manana `Content-ID` nefa tsy voatondron'ny votoaty mihitsy | Eny                             |
+| Mailaka mifikitra (`message/rfc822`) misy anaran-drakitra       | Eny                             |
+| Fifikirana rakitra mahazatra misy anaran-drakitra               | Eny                             |
 
-| Karazana ampahany                                          | Fandaloana henjana                    | Fandaloana malalaka                   |
-|------------------------------------------------------------|--------------------------------------:|--------------------------------------:|
-| Rakitra sonia S/MIME `smime.p7s`                           | Esorina                               | Esorina                               |
-| Karazana MIME an'ny S/MIME (`application/pkcs7-*`)         | Esorina                               | Esorina                               |
-| Sary inline voatonona amin'ny Content‑ID (`image/*`)       | Esorina (averina ao amin'ny vatana\*) | Esorina (averina ao amin'ny vatana\*) |
-| Mailaka miraikitra (`message/rfc822`) misy anaran-drakitra | Tsy ampiana                           | Azo ampiana                           |
-| Fampiarahana rakitra mahazatra misy anaran-drakitra        | Azo ampiana                           | Azo ampiana                           |
-
-\* Rehefa alefa ny "Include inline pictures" (default: ON), ny sary inline dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI fa tsy asiana ho fampiarahana rakitra. Jereo ny [Configuration](configuration#include-inline-pictures).
-
-Ohatra: Misy fampiarahana mety tsy hanana lohateny sasany nefa rakitra mahazatra ihany (tsy inline/S/MIME). Raha tsy mahita na inona na inona ny fandaloana henjana, mety heken'ny fandaloana malalaka ireo ka miraikitra.
+Ny sary iray dia raisina ho miditra ao anaty ihany raha toa ka voatondron'ny hafatra tany am-boalohany marina tokoa izy, na raha toa ka nomarihin'ny mpandefa mazava tsara ho `Content-Disposition: inline`. Tsy ampy ny lohateny `Content-ID` fotsiny: misy mpandray mailaka sasany mametraka izany amin'ny ampahany sary rehetra, anisan'izany ny fifikirana marina, ary tsy maintsy adika ihany ireo.
 
 ---
 
@@ -88,7 +86,7 @@ Ohatra: Misy fampiarahana mety tsy hanana lohateny sasany nefa rakitra mahazatra
 
 ## Nahoana no mety tsy ho ampiana ny fampiarahana {#why-attachments-might-not-be-added}
 
-- Tsy asiana ho fampiarahana rakitra ny sary inline. Rehefa "Include inline pictures" no ON (fepetra default), dia ampidirina ao amin'ny vatan'ny valiny ho data URI izy ireo. Raha OFF ilay masontsivana, dia esorina tanteraka ny sary inline. Jereo ny [Configuration](configuration#include-inline-pictures).
+- Ny sary nampidirin'ny hafatra tany am-boalohany dia tsy adika ho rakitra. Efa ao amin'ny votoatin'ny valiny izy ireo, izay nametrahan'ny Thunderbird azy. Jereo ny [Fandrindanana](configuration#include-inline-pictures).
 - Esorina amin'ny endrika noforonina ny ampahany sonia S/MIME: anaran-drakitra toa ny `smime.p7s` sy karazana MIME toy ny `application/pkcs7-signature` na `application/pkcs7-mime` dia hadinoina.
 - Afaka manivana kandidà ny modely lisitra mainty: jereo ny [Configuration](configuration#blacklist-glob-patterns); tsy miankina amin'ny haben-tsoratra ny fifanarahana ary amin'ny anaran-drakitra ihany.
 - Tsy averina ampiana ny anaran-drakitra mitovy: raha efa misy rakitra mitovy anarana ao amin'ny fanoratana, dia tsipahina izy.

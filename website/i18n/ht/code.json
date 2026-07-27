@@ -54,7 +54,7 @@
     "message": "Sote SMIME ak anliy"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Siyati SMIME ak imaj anliy yo pa enkli pou repons yo rete lejè."
+    "message": "Siyati SMIME yo pa janm kopye. Imaj ki entegre nan kò mesaj la rete nan kò repons lan, kote Thunderbird deja kenbe yo, olye yo tache yon dezyèm fwa."
   },
   "homepage.features.blacklist.title": {
     "message": "Modèl lis nwa"

@@ -10,7 +10,8 @@ title: 'Catatan Perubahan'
 Untuk sejarah lengkap dan terperinci, lihat
 [CHANGELOG.md di GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Sertakan gambar sebaris" kini membenamkan imej terus dalam badan balasan sebagai URI data base64 (lalai: AKTIF); penambahbaikan kualiti kod dan liputan ujian yang diperluas.
+- 2.4.0: imej tidak lagi digugurkan hanya kerana penghantar meletakkan `Content-ID` padanya; pilihan "Include inline pictures" telah dialih keluar, kerana Thunderbird sendiri mengekalkan imej terbenam dalam badan balasan; pautan kini dibuka dalam pelayar sistem; had 50 lampiran / 100 MB setiap balasan, dengan apa-apa yang ditinggalkan dilaporkan.
+- 2.3.2: "Include inline pictures" membenamkan imej dalam badan balasan sebagai URI data base64 (dialih keluar semula selepas semakan add-ons.thunderbird.net; Thunderbird melakukan ini sendiri); penambahbaikan kualiti kod dan liputan ujian yang diperluas.
 - 2.3.1: Mengekalkan lampiran selepas Thunderbird melahu halaman acara latar belakang; menambah cangkuk nyahpepijat yang disasarkan untuk penyelesaian masalah.
 - 2.3.0: Penyahgandaan lampiran diperhalus, liputan ujian diperluas, dan keizinan usang dibuang bagi memenuhi dasar AMO.
 - 2.1.0: Sokongan pengantarabangsaan penuh untuk 100 bahasa teratas

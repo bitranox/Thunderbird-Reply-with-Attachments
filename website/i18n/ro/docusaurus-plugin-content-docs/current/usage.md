@@ -9,28 +9,28 @@ sidebar_label: 'Utilizare'
 ## Utilizare {#usage}
 
 - Răspunde, iar suplimentul adaugă originalele automat — sau cere confirmare mai întâi, dacă este activat în Opțiuni.
-- De‑duplicare după numele fișierului; părțile S/MIME sunt întotdeauna omise. Imaginile inline sunt restabilite în corpul răspunsului în mod implicit (dezactivezi prin „Include inline pictures” în Opțiuni).
+- Se elimină duplicatele după numele fișierului; părțile S/MIME sunt întotdeauna omise. Imaginile incluse în mesajul original rămân în corpul răspunsului, acolo unde le plasează Thunderbird, și nu sunt copiate ca fișiere.
 - Atașamentele de pe lista neagră sunt, de asemenea, omise (modele glob insensibile la majuscule/minuscule care se potrivesc numelor de fișiere, nu căilor). Vezi [Configurare](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Ce se întâmplă la răspuns {#what-happens}
 
-- Detectează răspunsul → listează atașamentele originale → filtrează S/MIME + inline → confirmare opțională → adaugă fișierele eligibile (omite duplicatele) → restabilește imaginile inline în corp.
+- Detectează răspunsul → listează atașamentele originale → omite S/MIME și imaginile încorporate → confirmare opțională → adaugă fișierele eligibile (omițând duplicatele).
 
-Trecere strictă vs. relaxată: Suplimentul exclude mai întâi părțile S/MIME și inline din atașamentele de fișiere. Dacă nimic nu se califică, rulează o trecere relaxată care în continuare exclude S/MIME/inline, dar tolerează mai multe cazuri (vezi Detalii cod). Imaginile inline nu sunt niciodată adăugate ca atașamente de fișiere; în schimb, când „Include inline pictures” este activată (implicit: ON), acestea sunt încorporate direct în corpul răspunsului ca URI‑uri de date base64.
+| Tip de parte                                                         | Copiat în răspuns |
+|----------------------------------------------------------------------|------------------:|
+| Fișier de semnătură S/MIME `smime.p7s`                               | Nu                |
+| Tipuri MIME S/MIME (`application/pkcs7-*`)                           | Nu                |
+| Imagine inclusă de corpul mesajului prin `cid:`                      | Nu (este în corp) |
+| Imagine marcată `Content-Disposition: inline`                        | Nu (este în corp) |
+| Imagine cu un `Content-ID` la care corpul nu face niciodată referire | Da                |
+| E-mail atașat (`message/rfc822`) cu un nume de fișier                | Da                |
+| Atașament de fișier obișnuit cu un nume de fișier                    | Da                |
 
-| Tip de parte                                                        | Trecere strictă                 | Trecere relaxată                |
-|---------------------------------------------------------------------|--------------------------------:|--------------------------------:|
-| Fișier semnătură S/MIME `smime.p7s`                                 | Exclusă                         | Exclusă                         |
-| Tipuri MIME S/MIME (`application/pkcs7-*`)                          | Excluse                         | Excluse                         |
-| Imagine inline la care se face referire prin Content‑ID (`image/*`) | Exclusă (restabilită în corp\*) | Exclusă (restabilită în corp\*) |
-| E‑mail atașat (`message/rfc822`) cu un nume de fișier               | Nu este adăugat                 | Poate fi adăugat                |
-| Atașament de fișier obișnuit cu un nume de fișier                   | Poate fi adăugat                | Poate fi adăugat                |
-
-\* Când „Include inline pictures” este activată (implicit: ON), imaginile inline sunt încorporate în corpul răspunsului ca URI‑uri de date base64 în loc să fie adăugate ca atașamente de fișiere. Vezi [Configurare](configuration#include-inline-pictures).
-
-Exemplu: Unele atașamente pot să nu aibă anumite antete, dar sunt totuși fișiere obișnuite (nu inline/S/MIME). Dacă trecerea strictă nu găsește niciunul, trecerea relaxată le poate accepta și le poate atașa.
+O imagine este considerată inclusă doar atunci când mesajul original chiar face referire la ea, sau când expeditorul
+a marcat-o explicit `Content-Disposition: inline`. Un simplu antet `Content-ID` nu este suficient: mai multe clienți
+de e-mail îl pun pe fiecare parte de imagine, inclusiv pe atașamentele autentice, iar acestea trebuie totuși copiate.
 
 ---
 
@@ -88,7 +88,7 @@ Exemplu: Unele atașamente pot să nu aibă anumite antete, dar sunt totuși fi�
 
 ## De ce este posibil ca atașamentele să nu fie adăugate {#why-attachments-might-not-be-added}
 
-- Imaginile inline nu sunt adăugate ca atașamente de fișiere. Când „Include inline pictures” este ON (implicit), ele sunt încorporate în corpul răspunsului ca URI‑uri de date. Dacă setarea este OFF, imaginile inline sunt eliminate complet. Vezi [Configurare](configuration#include-inline-pictures).
+- Imaginile pe care mesajul original le încorporează nu sunt copiate ca fișiere. Ele sunt deja în corpul răspunsului, acolo unde le-a plasat Thunderbird. Vezi [Configuration](configuration#include-inline-pictures).
 - Părțile de semnătură S/MIME sunt excluse prin concepție: nume de fișiere precum `smime.p7s` și tipuri MIME precum `application/pkcs7-signature` sau `application/pkcs7-mime` sunt omise.
 - Modelele de listă neagră pot filtra candidații: vezi [Configurare](configuration#blacklist-glob-patterns); potrivirea nu ține cont de majuscule/minuscule și se face doar după numele fișierului.
 - Numele de fișier duplicate nu sunt readăugate: dacă în compunere există deja un fișier cu același nume normalizat, acesta este omis.

@@ -10,7 +10,8 @@ title: 'Seznam změn'
 Úplnou, podrobnou historii najdete v repozitáři
 [CHANGELOG.md na GitHubu](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Zahrnout vložené obrázky" nyní vkládá obrázky přímo do těla odpovědi jako datové URI base64 (výchozí: ZAPNUTO); zlepšení kvality kódu a rozšířené pokrytí testy.
+- 2.4.0: obrázky už nejsou zahazovány jen proto, že na ně odesílatel vložil `Content-ID`; možnost "Include inline pictures" byla odstraněna, protože Thunderbird sám udržuje vložené obrázky v těle odpovědi; odkazy se nyní otevírají v systémovém prohlížeči; strop 50 příloh / 100 MB na odpověď, přičemž vše vynechané je nahlášeno.
+- 2.3.2: "Include inline pictures" vkládala obrázky do těla odpovědi jako base64 datové URI (znovu odstraněno po recenzi add-ons.thunderbird.net; Thunderbird to dělá sám); vylepšení kvality kódu a rozšířené pokrytí testy.
 - 2.3.1: Ponechává přílohy i poté, co Thunderbird uspí stránku událostí na pozadí; přidává cílené ladicí háčky pro odstraňování potíží.
 - 2.3.0: Vylepšení deduplikace příloh, rozšíření pokrytí testy a odstranění zastaralých oprávnění pro splnění zásad AMO.
 - 2.1.0: Plná podpora internacionalizace pro 100 nejrozšířenějších jazyků

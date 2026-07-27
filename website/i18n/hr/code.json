@@ -54,7 +54,7 @@
     "message": "Preskakanje SMIME i ugrađenih slika"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME potpisi i ugrađene slike izostavljaju se kako bi odgovori ostali sažeti."
+    "message": "SMIME potpisi se nikada ne kopiraju. Slike ugrađene u tijelo poruke ostaju u tijelu odgovora, gdje ih Thunderbird već drži, umjesto da se ponovno prilažu kao privitak."
   },
   "homepage.features.blacklist.title": {
     "message": "Uzorci crne liste"

@@ -9,28 +9,28 @@ sidebar_label: 'Uso'
 ## Uso {#usage}
 
 - Responda e o complemento adiciona os originais automaticamente — ou pergunta antes, se ativado em Opções.
-- Desduplicado pelo nome do ficheiro; partes S/MIME são sempre ignoradas. As imagens incorporadas são restauradas no corpo da resposta por predefinição (desative em "Incluir imagens incorporadas" em Opções).
+- Deduplicado por nome de arquivo; as partes S/MIME são sempre ignoradas. Imagens incorporadas na mensagem original permanecem no corpo da resposta, onde o Thunderbird as coloca, e não são copiadas como arquivos.
 - Anexos na lista de bloqueio também são ignorados (padrões glob sem distinção entre maiúsculas e minúsculas que correspondem a nomes de ficheiro, não a caminhos). Veja [Configuração](configuration#blacklist-glob-patterns).
 
 ---
 
 ### O que acontece ao responder {#what-happens}
 
-- Detetar resposta → listar anexos originais → filtrar S/MIME + incorporados → confirmação opcional → adicionar ficheiros elegíveis (ignorar duplicados) → restaurar imagens incorporadas no corpo.
+- Detectar resposta → listar os anexos originais → ignorar S/MIME e imagens incorporadas → confirmação opcional → adicionar os arquivos elegíveis (ignorando duplicados).
 
-Passagem estrita vs. relaxada: O complemento primeiro exclui partes S/MIME e incorporadas dos anexos de ficheiros. Se nada se qualificar, executa uma passagem relaxada que ainda exclui S/MIME/incorporados, mas tolera mais casos (ver Detalhes do código). As imagens incorporadas nunca são adicionadas como anexos de ficheiro; em vez disso, quando "Incluir imagens incorporadas" está ativado (a predefinição), elas são incorporadas diretamente no corpo da resposta como URIs de dados em base64.
+| Tipo de parte                                           | Copiado para a resposta |
+|---------------------------------------------------------|------------------------:|
+| Arquivo de assinatura S/MIME `smime.p7s`                | Não                     |
+| Tipos MIME S/MIME (`application/pkcs7-*`)               | Não                     |
+| Imagem que o corpo da mensagem incorpora via `cid:`     | Não (está no corpo)     |
+| Imagem marcada como `Content-Disposition: inline`       | Não (está no corpo)     |
+| Imagem com um `Content-ID` que o corpo nunca referencia | Sim                     |
+| E-mail anexado (`message/rfc822`) com nome de arquivo   | Sim                     |
+| Anexo de arquivo comum com nome de arquivo              | Sim                     |
 
-| Tipo de parte                                              | Passagem estrita                 | Passagem relaxada                |
-|------------------------------------------------------------|---------------------------------:|---------------------------------:|
-| Ficheiro de assinatura S/MIME `smime.p7s`                  | Excluído                         | Excluído                         |
-| Tipos MIME S/MIME (`application/pkcs7-*`)                  | Excluído                         | Excluído                         |
-| Imagem incorporada referenciada por Content‑ID (`image/*`) | Excluído (restaurado no corpo\*) | Excluído (restaurado no corpo\*) |
-| E-mail anexado (`message/rfc822`) com um nome de ficheiro  | Não adicionado                   | Pode ser adicionado              |
-| Anexo de ficheiro normal com um nome de ficheiro           | Pode ser adicionado              | Pode ser adicionado              |
-
-\* Quando "Incluir imagens incorporadas" está ativado (predefinição: LIGADO), as imagens incorporadas são inseridas no corpo da resposta como URIs de dados em base64 em vez de adicionadas como anexos de ficheiro. Veja [Configuração](configuration#include-inline-pictures).
-
-Exemplo: Alguns anexos podem não ter certos cabeçalhos, mas ainda são ficheiros normais (não incorporados/S/MIME). Se a passagem estrita não encontrar nenhum, a passagem relaxada pode aceitar esses e anexá-los.
+Uma imagem só é considerada incorporada quando a mensagem original realmente a referencia, ou quando o remetente a
+marcou explicitamente como `Content-Disposition: inline`. Um cabeçalho `Content-ID` isolado não é suficiente: vários
+clientes de e-mail colocam um em cada parte de imagem, incluindo anexos genuínos, e esses ainda precisam ser copiados.
 
 ---
 
@@ -88,7 +88,7 @@ Exemplo: Alguns anexos podem não ter certos cabeçalhos, mas ainda são ficheir
 
 ## Por que os anexos podem não ser adicionados {#why-attachments-might-not-be-added}
 
-- As imagens incorporadas não são adicionadas como anexos de ficheiro. Quando "Incluir imagens incorporadas" está LIGADO (a predefinição), elas são incorporadas no corpo da resposta como URIs de dados. Se a definição estiver DESLIGADA, as imagens incorporadas são removidas completamente. Veja [Configuração](configuration#include-inline-pictures).
+- As imagens que a mensagem original incorpora não são copiadas como arquivos. Elas já estão no corpo da resposta, onde o Thunderbird as colocou. Consulte [Configuration](configuration#include-inline-pictures).
 - Partes de assinatura S/MIME são excluídas por design: nomes de ficheiro como `smime.p7s` e tipos MIME como `application/pkcs7-signature` ou `application/pkcs7-mime` são ignorados.
 - Padrões de lista de bloqueio podem filtrar candidatos: veja [Configuração](configuration#blacklist-glob-patterns); a correspondência não diferencia maiúsculas de minúsculas e considera apenas o nome do ficheiro.
 - Nomes de ficheiro duplicados não são readicionados: se a composição já contiver um ficheiro com o mesmo nome normalizado, ele é ignorado.

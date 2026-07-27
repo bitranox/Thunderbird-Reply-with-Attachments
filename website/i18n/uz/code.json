@@ -54,7 +54,7 @@
     "message": "SMIME va Inline-ni o‘tkazib yuborish"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Javoblarni yengil saqlash uchun SMIME imzolari va inline rasmlar qo‘shilmaydi."
+    "message": "SMIME imzolari hech qachon nusxalanmaydi. Xabar matniga joylashtirilgan rasmlar javob matnida qoladi, ya'ni Thunderbird ularni saqlaydigan joyda, qayta ilova qilinmaydi."
   },
   "homepage.features.blacklist.title": {
     "message": "Qora ro‘yxat shablonlari"

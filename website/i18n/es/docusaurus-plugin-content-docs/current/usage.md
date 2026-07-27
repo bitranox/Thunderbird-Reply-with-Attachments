@@ -9,28 +9,29 @@ sidebar_label: 'Uso'
 ## Uso {#usage}
 
 - Responder y el complemento añade los adjuntos originales automáticamente — o pregunta primero, si está habilitado en Opciones.
-- Evita duplicados por nombre de archivo; las partes S/MIME siempre se omiten. Las imágenes en línea se restauran en el cuerpo de la respuesta de forma predeterminada (puede desactivarse mediante "Include inline pictures" en Opciones).
+- Se eliminan los duplicados por nombre de archivo; las partes S/MIME siempre se omiten. Las imágenes incrustadas en el mensaje original permanecen en el cuerpo de la respuesta, donde Thunderbird las coloca, y no se copian como archivos.
 - Los adjuntos en la lista de bloqueo también se omiten (patrones glob sin distinción de mayúsculas/minúsculas que coinciden con nombres de archivo, no con rutas). Véase [Configuración](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Qué ocurre al responder {#what-happens}
 
-- Detectar respuesta → enumerar adjuntos originales → filtrar S/MIME + en línea → confirmación opcional → añadir archivos aptos (omitir duplicados) → restaurar imágenes en línea en el cuerpo.
+- Detectar la respuesta → listar los adjuntos originales → omitir S/MIME y las imágenes incrustadas → confirmación opcional → añadir los archivos elegibles (omitiendo duplicados).
 
-Pase estricto vs. pase relajado: El complemento primero excluye las partes S/MIME y en línea de los archivos adjuntos. Si nada cumple los requisitos, ejecuta un pase relajado que sigue excluyendo S/MIME/en línea pero tolera más casos (véase Detalles del código). Las imágenes en línea nunca se añaden como archivos adjuntos; en su lugar, cuando "Include inline pictures" está habilitado (el valor predeterminado), se incrustan directamente en el cuerpo de la respuesta como URI de datos base64.
+| Tipo de parte                                              | Se copia en la respuesta |
+|------------------------------------------------------------|-------------------------:|
+| Archivo de firma S/MIME `smime.p7s`                        | No                       |
+| Tipos MIME de S/MIME (`application/pkcs7-*`)               | No                       |
+| Imagen que el cuerpo del mensaje incrusta mediante `cid:`  | No (está en el cuerpo)   |
+| Imagen marcada como `Content-Disposition: inline`          | No (está en el cuerpo)   |
+| Imagen con un `Content-ID` que el cuerpo nunca referencia  | Sí                       |
+| Correo adjunto (`message/rfc822`) con un nombre de archivo | Sí                       |
+| Archivo adjunto normal con un nombre de archivo            | Sí                       |
 
-| Tipo de parte                                              | Pase estricto                        | Pase relajado                        |
-|------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| Archivo de firma S/MIME `smime.p7s`                        | Excluido                             | Excluido                             |
-| Tipos MIME de S/MIME (`application/pkcs7-*`)               | Excluido                             | Excluido                             |
-| Imagen en línea referenciada por Content‑ID (`image/*`)    | Excluido (restaurado en el cuerpo\*) | Excluido (restaurado en el cuerpo\*) |
-| Correo adjunto (`message/rfc822`) con un nombre de archivo | No se añade                          | Puede añadirse                       |
-| Archivo adjunto normal con un nombre de archivo            | Puede añadirse                       | Puede añadirse                       |
-
-\* Cuando "Include inline pictures" está habilitado (predeterminado: ON), las imágenes en línea se incrustan en el cuerpo de la respuesta como URI de datos base64 en lugar de añadirse como archivos adjuntos. Véase [Configuración](configuration#include-inline-pictures).
-
-Ejemplo: Algunos adjuntos pueden carecer de ciertos encabezados pero seguir siendo archivos normales (no en línea/S/MIME). Si el pase estricto no encuentra ninguno, el pase relajado puede aceptar esos y adjuntarlos.
+Una imagen se considera incrustada solo cuando el mensaje original realmente la referencia,
+o cuando el remitente la ha marcado explícitamente como `Content-Disposition: inline`. Un simple
+encabezado `Content-ID` no es suficiente: varios clientes de correo colocan uno en cada parte de imagen,
+incluidos los adjuntos genuinos, y estos deben copiarse de todos modos.
 
 ---
 
@@ -87,7 +88,7 @@ Ejemplo: Algunos adjuntos pueden carecer de ciertos encabezados pero seguir sien
 
 ## Por qué los adjuntos podrían no añadirse {#why-attachments-might-not-be-added}
 
-- Las imágenes en línea no se añaden como archivos adjuntos. Cuando "Include inline pictures" está ON (el valor predeterminado), en su lugar se incrustan en el cuerpo de la respuesta como URI de datos. Si el ajuste está en OFF, las imágenes en línea se eliminan por completo. Véase [Configuración](configuration#include-inline-pictures).
+- Las imágenes que incrusta el mensaje original no se copian como archivos. Ya están en el cuerpo de la respuesta, donde las ha colocado Thunderbird. Consulte [Configuración](configuration#include-inline-pictures).
 - Las partes de firma S/MIME se excluyen por diseño: se omiten nombres de archivo como `smime.p7s` y tipos MIME como `application/pkcs7-signature` o `application/pkcs7-mime`.
 - Los patrones de la lista de bloqueo pueden filtrar candidatos: véase [Configuración](configuration#blacklist-glob-patterns); la coincidencia no distingue mayúsculas/minúsculas y se basa solo en el nombre de archivo.
 - Los nombres de archivo duplicados no se vuelven a añadir: si la redacción ya contiene un archivo con el mismo nombre normalizado, se omite.

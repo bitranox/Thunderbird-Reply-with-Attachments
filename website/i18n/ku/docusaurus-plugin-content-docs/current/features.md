@@ -8,25 +8,7 @@ sidebar_label: 'Taybetmendîyên'
 
 ## Taybetmendî {#features}
 
-- Dema bersiv didî, pelên ji e-nameya orîjînalê bixweber têkilî dike.
-- Tevgera sazbar: têkelîyan dikarin
-  - bixweber were zêdekirin, an jî
-  - tenê piştî pejirandinê were zêdekirin (dîyalogek biçûk, gihîştbar). Di Vebijêrkan de tu
-    dikarî pejirandinê çalak bikî û bersiva xwerû (Erê/Na) hilbijêrî.
-- Lîsteya reş a navên pelan (şablonên glob) dike ku hin pel bin
-  bixweber têkilî nekin. Nimûne: `*intern*`, `*secret*`, `*passwor*`.
-  Lihevhatin ji mezin/biçûktî azad e û tenê navê pelê tê kontrol kirin; di Vebijêrkan de
-  her rêzê yek şablon bidin.
-- Hişyariya lîsteya reş (vebijartî, bi pêşdanasînê çalak): gava ku pêl ji hêla
-  lîsteya reş a te ve werin derxistin, modalek biçûk navê pel û şablon(ên) lihevhatî nîşan dide. Moda
-  tarî-heval û bi klavyeyê gihîştbar e (Enter/Esc ji bo girtin).
-- Bi Reply û Reply all re dixebite. Forward ji hêla vê pêveka zêdeyê ve nayê guherandin.
-- Herçiqas tu jixwe tiştek têkilî kiri be jî, orîjînalan zêde dike; dubarekirin bi navê pelê jê dûr dike.
-- Parêzvana dubarekirinê ya her-tabê, di heman tabê nivîsandê de zêdekirina care duyemîn asteng dike.
-- Bi pêşdanasînî sertîfîkayên S/MIME derbas dike da ku têkelîyên nehewce neyên zêdekirin.
-- Wêneyên navxê tevlî bike (pêşdanasîn: ÇALAK). Wêneyên têkelkirî rasterast di
-  laşê bersivê de wekî URIyên daneyan a base64 têne vegerandin, rêzbandina navxê ya orîjînal diparêzin. Neçalak bike di
-  Vebijêrkan de da ku wêneyên navxê bi tevahî bên derbas kirin.
+- Wêneyên tê de hatine bicihkirin ji bo Thunderbird têne hiştin: ew di laşê bersivê de dimînin û wekî pêvek têne kopîkirin. Wêneyek ku tenê `Content-ID` hilgirtiye lê referans nehatiye dayîn, wekî pêvekek asayî tê hesibandin û tê kopîkirin.
 
 ---
 

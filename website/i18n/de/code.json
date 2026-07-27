@@ -54,7 +54,7 @@
     "message": "SMIME & Inline überspringen"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME‑Signaturen und Inline‑Bilder werden ausgeschlossen, um Antworten schlank zu halten."
+    "message": "SMIME-Signaturen werden nie kopiert. Im Nachrichtentext eingebettete Bilder bleiben im Antworttext, wo Thunderbird sie ohnehin ablegt, statt ein zweites Mal als Anhang hinzugefügt zu werden."
   },
   "homepage.features.blacklist.title": {
     "message": "Blacklist‑Muster"

@@ -9,28 +9,29 @@ sidebar_label: 'Kɛcogo'
 ## Jɔyɔrɔ {#usage}
 
 - Ni i jabi, add‑on bɛ tɔgɔ sisan na daɲɛ tɛgɛli kɔrɔw (originals) la sisan‑sisan — walima a bɛ na i ma fɔ kɔfɛ, ni a bɛ daminɛ Options la.
-- Dɔgɔkun ye (de‑duplicate) bɛ kɛ tɔgɔ fɛ; S/MIME wɛrɛw bɛna bɔ kɔfɛ kelen kelen. Inline jɛgɛw bɛna san bɔ jabi bɔlɔ la ka default ye (ka a na ko "Include inline pictures" la, Options kɔnɔ).
+- Kopewew bɛ jate ka bɔ i n'a fɔ fila tɔgɔ; S/MIME yɔrɔw bɛ to yen tuma bɛɛ. Ja minnu bɛ don ci sɛbɛn kɔrɔ kɔnɔ, olu bɛ to jaabi kunnafoni kɔnɔ, yɔrɔ min na Thunderbird b'u bila, wa u tɛ kopi kɛ i ko filew.
 - Attachments minnu bɛ ka sɛbɛn ɲɛfon (blacklist) kɔnɔ la bɛna bɔ kɔfɛ fɔ (glob patternw minnu bɛ ɲɛgɛfɔ tɔgɔw kan, a tɛ sira ɲɔrɔw kan; ka ɲɛgɛ tɛ fila yɛrɛyɛrɛ ye). Ka ɲɛ [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Mun bɛ bɔ ni i jabi {#what-happens}
 
-- Jabi dɔn → originaali attachments ɲɛ → S/MIME + inline sɛgɛsɛgɛ → k’a ɲɛ (confirm) sɔrɔ sisan → tɔgɔ daɲɛw minnu bɛ se (dɔgɔkunw bɔ) → inline jɛgɛw san bɔ bɔlɔ la.
+- Jaabi dɔn → nɔɔnin fɔlɔw lasɛbɛn → S/MIME ni ja minnu bɛ sɛbɛnni kɔnɔ tɛmɛn → sɔrɔ sugandi la → nɔɔnin minnu bɛnnen bila (kopi filɛlenw tɛmɛnni).
 
-Pass tɛgɛ (strict) ni pass hakɛranna (relaxed): Add‑on bɛ fɔlɔ ka S/MIME ni inline wɛrɛw bɔ daɲɛ tɛgɛli kɔnɔ. Ni fɛɛn tɛ sɔrɔ, a bɛ na pass hakɛranna kɛ min bɛna ka S/MIME/inline bɔ kɔnɔ kɔfɛ, nka a bɛ na ɲɔgɔnna dɔw dɛmɛ (ka ɲɛ Code Details). Inline jɛgɛw tɛna kɛ daɲɛ tɛgɛliw ye; tuma mɛn na, ni "Include inline pictures" bɛ daminɛ (default ye), olu bɛna sare bɔ jabi bɔlɔ la ka base64 data URIw ye.
+| Yɔrɔ suguya                                                 | A bɛ kopi kɛ jaabi la wa? |
+|-------------------------------------------------------------|--------------------------:|
+| S/MIME bolodabaara file `smime.p7s`                         | Ayi                       |
+| S/MIME MIME suguyaw (`application/pkcs7-*`)                 | Ayi                       |
+| Ja min bɛ don ci kɔnɔ `cid:` fɛ                             | Ayi (a bɛ kɔnɔ la)        |
+| Ja min taamashyɛnna ye `Content-Disposition: inline`        | Ayi (a bɛ kɔnɔ la)        |
+| Ja min bɛ `Content-ID` sɔrɔ, nka ci kɔnɔ tɛ o fɔ abada      | Awo                       |
+| Imeli min tugulen bɛ (`message/rfc822`) min bɛ tɔgɔ file la | Awo                       |
+| File nɔrɔmali min tugulen bɛ, min bɛ tɔgɔ file la           | Awo                       |
 
-| Part type                                         | Strict pass                | Relaxed pass               |
-|---------------------------------------------------|---------------------------:|---------------------------:|
-| S/MIME signature file `smime.p7s`                 | Bɔ kɔfɛ                    | Bɔ kɔfɛ                    |
-| S/MIME MIME types (`application/pkcs7-*`)         | Bɔ kɔfɛ                    | Bɔ kɔfɛ                    |
-| Inline image referenced by Content‑ID (`image/*`) | Bɔ kɔfɛ (san bɔ bɔlɔ la\*) | Bɔ kɔfɛ (san bɔ bɔlɔ la\*) |
-| Attached email (`message/rfc822`) with a filename | Tɛ na tɔgɔ                 | Sɔrɔ ka tɔgɔ               |
-| Regular file attachment with a filename           | Sɔrɔ ka tɔgɔ               | Sɔrɔ ka tɔgɔ               |
-
-\* Ni "Include inline pictures" bɛ daminɛ (default: ON), inline jɛgɛw bɛna sare bɔ jabi bɔlɔ la ka base64 data URIw ye a ma bɛna tɔgɔ ka k’u kɛ daɲɛ tɛgɛliw ye. Ka ɲɛ [Configuration](configuration#include-inline-pictures).
-
-Misali: Attachmentw dɔ bɛna sɔrɔ ka headerw dɔ tɛ bɛ a la, nka olu tun bɛ daɲɛ hakɛ ye (tɛ inline/S/MIME). Ni pass tɛgɛ tɛ ye dɔ dɔ sɔrɔ, pass hakɛranna bɛna a la olu, ka tɔgɔ olu.
+Ja dɔ bɛ jate i n'a fɔ a donnen don ka to a la ni ci kɔrɔ tiɲɛn na b'a fɔ,
+walima ni cibaa y'a taamashyɛn kosɛbɛ ko `Content-Disposition: inline`. `Content-ID`
+kunbaara dɔrɔn tɛ se: imeli baaraminɛn caman bɛ o don ja yɔrɔ bɛɛ la,
+hali jamanadenw yɔrɔ tiɲɛnenw na, wa olu ka kan ka kopi kɛ hali bi.
 
 ---
 
@@ -85,7 +86,7 @@ Misali: Attachmentw dɔ bɛna sɔrɔ ka headerw dɔ tɛ bɛ a la, nka olu tun b�
 
 ## Mun na fa ka attachments tɛna tɔgɔ {#why-attachments-might-not-be-added}
 
-- Inline jɛgɛw tɛna kɛ daɲɛ tɛgɛliw ye. Ni "Include inline pictures" bɛ ON (default ye), olu bɛna sare bɔ jabi bɔlɔ la ka data URIw ye. Ni setting bɛ OFF, inline jɛgɛw bɛna bɔ bɛɛ. Ka ɲɛ [Configuration](configuration#include-inline-pictures).
+- Ja minnu bɛ sɛbɛnni fɔlɔ kɔnɔ, olu tɛ kopi kɛ i n'a fɔ fichier. U bɛ jaabi kɔnɔ kaban, yɔrɔ min na Thunderbird y'u bila. [Configuration](configuration#include-inline-pictures) lajɛ.
 - S/MIME signature wɛrɛw bɛ bɔ kɔfɛ ni don do ye: tɔgɔw wɛrɛw kama `smime.p7s` ni MIME suguw wɛrɛw kama `application/pkcs7-signature` walima `application/pkcs7-mime` bɛna bɔ.
 - Blacklist patternw bɛ se ka kanbinanw sɛgɛsɛgɛ: ka ɲɛ [Configuration](configuration#blacklist-glob-patterns); ɲɛgɛfɔ tɛ ɲɛ ka ɲɛ (case‑insensitive) ni tɔgɔ‑di ye dɔɔnin (path tɛ).
 - Tɔgɔ dɔgɔkunw tɛna tɔgɔ: ni compose kɔnɔ bɛna sɔrɔ daɲɛ dɔ min tɔgɔ sigilen kelen ye dɔ ɲɔgɔn ma, a bɛna bɔ kɔfɛ.

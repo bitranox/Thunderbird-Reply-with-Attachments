@@ -54,7 +54,7 @@
     "message": "تخطي SMIME والعناصر المضمَّنة"
   },
   "homepage.features.skipSmime.body": {
-    "message": "تُستبعَد توقيعات SMIME والصور المضمّنة لإبقاء الردود خفيفة."
+    "message": "لا يتم نسخ توقيعات SMIME أبدًا. الصور المضمّنة في نص الرسالة تبقى في نص الرد، حيث يحتفظ بها Thunderbird أصلًا، بدلاً من إرفاقها مرة أخرى."
   },
   "homepage.features.blacklist.title": {
     "message": "أنماط قائمة الحظر"

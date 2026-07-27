@@ -8,25 +8,9 @@ sidebar_label: 'Ominaisuudet'
 
 ## Ominaisuudet {#features}
 
-- Liittää alkuperäisen viestin tiedostot automaattisesti vastattaessa.
-- Muokattavissa oleva toiminta: liitteet voidaan
-  - lisätä automaattisesti, tai
-  - lisätä vasta vahvistuksen jälkeen (pieni, saavutettava valintaikkuna). Asetuksissa
-    voit ottaa vahvistuksen käyttöön ja valita oletusvastauksen (Kyllä/Ei).
-- Tiedostonimien estolista (glob-kuviot) estää tiettyjen tiedostojen
-  automaattisen liittämisen. Esimerkkejä: `*intern*`, `*secret*`, `*passwor*`.
-  Täsmäytys on kirjainkoosta riippumaton ja tarkistaa vain tiedostonimen; anna yksi malli
-  per rivi Asetuksissa.
-- Estolistan varoitus (valinnainen, oletuksena käytössä): kun estolistasi
-  sulkee pois tiedostoja, pieni modaalinen ikkuna luettelee tiedoston ja vastaavan(t) mallin(t). Tumman tilan
-  kanssa toimiva ja näppäimistöystävällinen (Enter/Esc sulkemiseen).
-- Toimii Vastaa- ja Vastaa kaikille -toiminnoissa. Välitä-toimintoon tämä lisäosa ei tee muutoksia.
-- Lisää alkuperäiset liitteet, vaikka olisit jo liittänyt jotain itse; välttää kaksoiskappaleet tiedostonimen perusteella.
-- Välilehtikohtainen kaksoislisäyksen esto estää tuplalisäyksen samassa kirjoitusvälilehdessä.
-- Ohittaa oletuksena S/MIME-varmenteet tarpeettomien liitteiden välttämiseksi.
-- Sisällytä upotetut kuvat (oletus: PÄÄLLÄ). Upotetut kuvat palautetaan suoraan
-  vastausrunkoon base64-data-URI-muodossa, jolloin alkuperäinen upotettu asettelu säilyy. Poista käytöstä
-  Asetuksissa, jos haluat ohittaa upotetut kuvat kokonaan.
+- Upotetut kuvat jätetään Thunderbirdin huoleksi: ne pysyvät vastauksen rungossa eikä
+  niitä kopioida tiedostoliitteinä. Kuvaa, jossa on vain `Content-ID` ilman että siihen
+  viitataan, kohdellaan tavallisena liitteenä ja se kopioidaan.
 
 ---
 

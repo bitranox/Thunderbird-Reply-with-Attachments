@@ -54,7 +54,7 @@
     "message": "Preskoči S/MIME in vdelano vsebino"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Podpisi S/MIME in vdelane slike so izključeni, da so odgovori lahki."
+    "message": "Podpisi SMIME se nikoli ne kopirajo. Slike, vdelane v telo sporočila, ostanejo v telesu odgovora, kjer jih Thunderbird že hrani, namesto da bi bile drugič dodane kot priloga."
   },
   "homepage.features.blacklist.title": {
     "message": "Vzorci črnega seznama"

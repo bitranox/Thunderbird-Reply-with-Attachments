@@ -54,7 +54,7 @@
     "message": "SMIME او Inline پرېښودل"
   },
   "homepage.features.skipSmime.body": {
-    "message": "د SMIME لاسليکونه او Inline انځورونه نه شاملېږي څو ځوابونه سپک پاتې شي."
+    "message": "د SMIME لاسلیکونه هیڅکله کاپي نه کیږي. په پیغام متن کې ځای پر ځای شوي انځورونه د ځواب په متن کې پاتې کیږي، هلته چې Thunderbird یې ساتي، پرځای دې چې بیا د یوې ضمیمې په توګه اضافه شي."
   },
   "homepage.features.blacklist.title": {
     "message": "تور لېست الګوګان"

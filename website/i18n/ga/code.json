@@ -54,7 +54,7 @@
     "message": "Fág SMIME agus Inlíne ar Lár"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Fágtar sínithe SMIME agus íomhánna inlíne ar lár chun na freagraí a choinneáil éadroma."
+    "message": "Ní chóipeáiltear sínithe SMIME riamh. Fanann íomhánna leabaithe i gcorp na teachtaireachta i gcorp an fhreagra, san áit a gcoinníonn Thunderbird iad, in ionad iad a cheangal an dara huair."
   },
   "homepage.features.blacklist.title": {
     "message": "Patrúin Liosta Dubh"

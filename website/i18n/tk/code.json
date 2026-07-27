@@ -54,7 +54,7 @@
     "message": "SMIME we içine ýerleşdirilenleri geç"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Jogaplary ýeňil saklamak üçin SMIME goly we içine ýerleşdirilen suratlar goşulmaýar."
+    "message": "SMIME gol çekmeleri hiç haçan göçürilmeýär. Habar mazmunyna ornaşdyrylan suratlar, Thunderbird olary saklaýan ýerinde, ýagny jogap mazmunynda galýar, ikinji gezek goşulmaýar."
   },
   "homepage.features.blacklist.title": {
     "message": "Gara sanaw şablonlary"

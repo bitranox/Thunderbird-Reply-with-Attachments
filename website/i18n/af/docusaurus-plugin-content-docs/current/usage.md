@@ -9,28 +9,29 @@ sidebar_label: 'Gebruik'
 ## Gebruik {#usage}
 
 - Antwoord, en die byvoeging voeg oorspronklikes outomaties by — of vra eers, indien in Opsies geaktiveer.
-- Ontdubbel volgens lêernaam; S/MIME‑dele word altyd oorgeslaan. Inlynbeelde word standaard in die antwoordliggaam herstel (deaktiveer via "Sluit inlynprente in" in Opsies).
+- Ontdubbel volgens lêernaam; S/MIME-dele word altyd oorgeslaan. Beelde wat in die oorspronklike boodskap ingebed is, bly in die antwoordliggaam, waar Thunderbird dit plaas, en word nie as lêers gekopieer nie.
 - Aanhegsels op die swartlys word ook oorgeslaan (hoofletterongevoelige glob‑patrone wat by lêername pas, nie paaie nie). Sien [Konfigurasie](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Wat gebeur wanneer jy antwoord {#what-happens}
 
-- Bespeur antwoord → lys oorspronklike aanhegsels → filtreer S/MIME + inlyn → opsionele bevestiging → voeg kwalifiserende lêers by (slaan duplikate oor) → herstel inlynbeelde in die liggaam.
+- Bespeur antwoord → lys die oorspronklike aanhegsels → slaan S/MIME en ingebedde beelde oor → opsionele bevestiging → voeg die geskikte lêers by (duplikate word oorgeslaan).
 
-Streng vs. ontspanne deurloop: Die byvoeging sluit eers S/MIME- en inlyndele uit van lêeraanhegsels. As niks kwalifiseer nie, loop dit ’n ontspanne deurloop wat steeds S/MIME/inlyn uitsluit maar meer gevalle toelaat (sien Koodbesonderhede). Inlynbeelde word nooit as lêeraanhegsels bygevoeg nie; in plaas daarvan, wanneer "Sluit inlynprente in" geaktiveer is (die verstek), word hulle direk in die antwoordliggaam ingebed as base64 data‑URI's.
+| Deeltipe                                                      | Na die antwoord gekopieer   |
+|---------------------------------------------------------------|----------------------------:|
+| S/MIME-handtekeninglêer `smime.p7s`                           | Nee                         |
+| S/MIME MIME-tipes (`application/pkcs7-*`)                     | Nee                         |
+| Beeld wat die boodskapliggaam by `cid:` inbed                 | Nee (dit is in die liggaam) |
+| Beeld gemerk `Content-Disposition: inline`                    | Nee (dit is in die liggaam) |
+| Beeld met 'n `Content-ID` waarna die liggaam nooit verwys nie | Ja                          |
+| Aangehegte e-pos (`message/rfc822`) met 'n lêernaam           | Ja                          |
+| Gewone lêeraanhegsel met 'n lêernaam                          | Ja                          |
 
-| Onderdeeltipe                                             | Streng deurloop                   | Ontspanne deurloop                |
-|-----------------------------------------------------------|----------------------------------:|----------------------------------:|
-| S/MIME-handtekeninglêer `smime.p7s`                       | Uitgesluit                        | Uitgesluit                        |
-| S/MIME MIME‑tipes (`application/pkcs7-*`)                 | Uitgesluit                        | Uitgesluit                        |
-| Inlynbeeld waarna deur Content‑ID verwys word (`image/*`) | Uitgesluit (in liggaam herstel\*) | Uitgesluit (in liggaam herstel\*) |
-| Aangehegte e-pos (`message/rfc822`) met ’n lêernaam       | Nie bygevoeg nie                  | Kan bygevoeg word                 |
-| Gewone lêeraanhegsel met ’n lêernaam                      | Kan bygevoeg word                 | Kan bygevoeg word                 |
-
-\* Wanneer "Sluit inlynprente in" geaktiveer is (verstek: AAN), word inlynbeelde in die antwoordliggaam as base64 data‑URI's ingebed eerder as om as lêeraanhegsels bygevoeg te word. Sien [Konfigurasie](configuration#include-inline-pictures).
-
-Voorbeeld: Sommige aanhegsels mag sekere kopvelde ontbreek, maar is steeds gewone lêers (nie inlyn/S/MIME nie). As die streng deurloop geen vind nie, kan die ontspanne deurloop daardie gevalle aanvaar en aanbeg.
+'n Beeld tel slegs as ingebed wanneer die oorspronklike boodskap werklik daarna verwys,
+of wanneer die sender dit uitdruklik as `Content-Disposition: inline` gemerk het. 'n Blote
+`Content-ID`-opskrif is nie genoeg nie: verskeie e-posprogramme plaas een op elke beelddeel,
+insluitend werklike aanhegsels, en dié moet steeds gekopieer word.
 
 ---
 
@@ -85,7 +86,7 @@ Voorbeeld: Sommige aanhegsels mag sekere kopvelde ontbreek, maar is steeds gewon
 
 ## Waarom aanhegsels dalk nie bygevoeg word nie {#why-attachments-might-not-be-added}
 
-- Inlynbeelde word nie as lêeraanhegsels bygevoeg nie. Wanneer "Sluit inlynprente in" AAN is (die verstek), word hulle in plaas daarvan in die antwoordliggaam as data‑URI's ingebed. As die instelling AF is, word inlynbeelde volledig verwyder. Sien [Konfigurasie](configuration#include-inline-pictures).
+- Beelde wat die oorspronklike boodskap inbed, word nie as lêers gekopieer nie. Hulle is reeds in die antwoordinhoud, waar Thunderbird hulle geplaas het. Sien [Konfigurasie](configuration#include-inline-pictures).
 - S/MIME‑handtekeningdele word doelbewus uitgesluit: lêername soos `smime.p7s` en MIME‑tipes soos `application/pkcs7-signature` of `application/pkcs7-mime` word oorgeslaan.
 - Swartlys‑patrone kan kandidate filtreer: sien [Konfigurasie](configuration#blacklist-glob-patterns); passing is hoofletterongevoelig en slegs op lêernaam.
 - Duplikaat‑lêername word nie weer bygevoeg nie: as die opstel reeds ’n lêer met dieselfde genormaliseerde naam bevat, word dit oorgeslaan.

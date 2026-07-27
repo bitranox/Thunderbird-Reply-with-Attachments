@@ -54,7 +54,7 @@
     "message": "Omite SMIME și elemente inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Semnăturile SMIME și imaginile inline sunt excluse pentru a păstra răspunsurile ușoare."
+    "message": "Semnăturile SMIME nu sunt niciodată copiate. Imaginile incluse în corpul mesajului rămân în corpul răspunsului, acolo unde Thunderbird le păstrează deja, în loc să fie atașate a doua oară."
   },
   "homepage.features.blacklist.title": {
     "message": "Tipare de blocare"

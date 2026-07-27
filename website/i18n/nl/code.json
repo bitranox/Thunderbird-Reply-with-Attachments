@@ -54,7 +54,7 @@
     "message": "SMIME en inline overslaan"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME-handtekeningen en inline afbeeldingen worden uitgesloten om antwoorden compact te houden."
+    "message": "SMIME-handtekeningen worden nooit gekopieerd. Afbeeldingen die in de berichttekst zijn ingesloten, blijven in de tekst van het antwoord staan, waar Thunderbird ze bewaart, in plaats van een tweede keer als bijlage te worden toegevoegd."
   },
   "homepage.features.blacklist.title": {
     "message": "Blokkeerlijstpatronen"

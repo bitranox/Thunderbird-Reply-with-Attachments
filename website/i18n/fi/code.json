@@ -54,7 +54,7 @@
     "message": "Ohita SMIME ja upotetut"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME-allekirjoitukset ja upotetut kuvat jätetään pois, jotta vastaukset pysyvät kevyinä."
+    "message": "SMIME-allekirjoituksia ei koskaan kopioida. Viestin runkoon upotetut kuvat pysyvät vastauksen rungossa, jonne Thunderbird ne sijoittaa, sen sijaan että ne liitettäisiin toiseen kertaan."
   },
   "homepage.features.blacklist.title": {
     "message": "Estolistan kuviot"

@@ -54,7 +54,7 @@
     "message": "SMIME እና ኢንላይን መተው"
   },
   "homepage.features.skipSmime.body": {
-    "message": "ምላሾችን ቀላል ለማድረግ የSMIME ፊርማዎች እና ኢንላይን ምስሎች አይካተሉም።"
+    "message": "SMIME ፊርማዎች በጭራሽ አይገለበጡም። በመልእክቱ ውስጥ የተካተቱ ምስሎች Thunderbird በሚያስቀምጣቸው ቦታ በምላሹ ውስጥ ይቆያሉ፣ ዳግመኛ እንደ አባሪ ከመጨመር ይልቅ።"
   },
   "homepage.features.blacklist.title": {
     "message": "ጥቁር ዝርዝር ንድፎች"

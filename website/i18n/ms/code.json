@@ -54,7 +54,7 @@
     "message": "Langkau SMIME & Sebaris"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Tandatangan SMIME dan imej sebaris dikecualikan untuk memastikan balasan ringkas."
+    "message": "Tandatangan SMIME tidak pernah disalin. Imej yang dibenamkan dalam badan mesej kekal dalam badan balasan, di tempat Thunderbird menyimpannya, dan bukan dilampirkan sekali lagi."
   },
   "homepage.features.blacklist.title": {
     "message": "Pola Senarai Hitam"

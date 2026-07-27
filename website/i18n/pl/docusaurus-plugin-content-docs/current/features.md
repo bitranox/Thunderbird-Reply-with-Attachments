@@ -8,24 +8,9 @@ sidebar_label: 'Funkcje'
 
 ## Funkcje {#features}
 
-- Automatycznie dołącza pliki z oryginalnej wiadomości podczas odpowiadania.
-- Konfigurowalne działanie: załączniki mogą być
-  - dodawane automatycznie lub
-  - dodawane dopiero po potwierdzeniu (małe, dostępne okno dialogowe). W Opcjach
-    możesz włączyć potwierdzenie i wybrać domyślną odpowiedź (Tak/Nie).
-- Czarna lista nazw plików (wzorce glob) zapobiega automatycznemu dołączaniu
-  określonych plików. Przykłady: `*intern*`, `*secret*`, `*passwor*`.
-  Dopasowanie jest niewrażliwe na wielkość liter i sprawdza wyłącznie nazwę pliku; w Opcjach podaj jeden wzorzec na linię.
-- Ostrzeżenie o czarnej liście (opcjonalne, domyślnie włączone): gdy pliki są wykluczane przez Twoją
-  czarną listę, małe okno modalne wyświetla plik oraz pasujące wzorce. Przyjazne
-  trybowi ciemnemu i dostępne z klawiatury (Enter/Esc, aby zamknąć).
-- Działa z Odpowiedz i Odpowiedz wszystkim. Przekazywanie (Forward) nie jest modyfikowane przez ten dodatek.
-- Dodaje oryginały, nawet jeśli już dołączyłeś własne załączniki; unika duplikatów według nazwy pliku.
-- Ochrona przed duplikatami per karta zapobiega podwójnemu dodaniu w tej samej karcie tworzenia.
-- Domyślnie pomija certyfikaty S/MIME, aby uniknąć zbędnych załączników.
-- Dołączaj obrazy w treści (domyślnie: WŁ.). Osadzone obrazy są odtwarzane bezpośrednio w
-  treści odpowiedzi jako identyfikatory URI danych base64, zachowując oryginalny układ w treści. Wyłącz w
-  Opcjach, aby całkowicie pominąć obrazy w treści.
+- Osadzone obrazy pozostawiane są Thunderbirdowi: pozostają w treści odpowiedzi i nie są
+  kopiowane jako załączniki plikowe. Obraz, który jedynie zawiera `Content-ID` bez
+  bycia przywoływanym, jest traktowany jako zwykły załącznik i kopiowany.
 
 ---
 

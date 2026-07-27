@@ -9,28 +9,29 @@ sidebar_label: 'Verwendung'
 ## Verwendung {#usage}
 
 - Antworten, und das Add‑on fügt die Originale automatisch hinzu — oder fragt vorher nach, falls in den Optionen aktiviert.
-- Dedupliziert nach Dateinamen; S/MIME‑Teile werden immer übersprungen. Inline‑Bilder werden standardmäßig im Antworttext wiederhergestellt (deaktivieren über „Inline‑Bilder einfügen“ in den Optionen).
+- Duplikate werden anhand des Dateinamens entfernt; S/MIME-Teile werden immer übersprungen. Bilder, die in der ursprünglichen Nachricht eingebettet sind, verbleiben im Textkörper der Antwort, wo Thunderbird sie platziert, und werden nicht als Dateien kopiert.
 - Gesperrte Anhänge werden ebenfalls übersprungen (Groß-/Kleinschreibung‑unabhängige Glob‑Muster, die Dateinamen, nicht Pfade, abgleichen). Siehe [Konfiguration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Was beim Antworten passiert {#what-happens}
 
-- Antwort erkennen → Originalanhänge auflisten → S/MIME + Inline filtern → optional bestätigen → berechtigte Dateien hinzufügen (Duplikate überspringen) → Inline‑Bilder im Text wiederherstellen.
+- Antwort erkennen → ursprüngliche Anhänge auflisten → S/MIME und eingebettete Bilder überspringen → optionale Bestätigung → geeignete Dateien hinzufügen (Duplikate überspringen).
 
-Strenger vs. entspannter Durchlauf: Das Add‑on schließt zunächst S/MIME‑ und Inline‑Teile von Datei‑Anhängen aus. Wenn nichts infrage kommt, führt es einen entspannteren Durchlauf aus, der weiterhin S/MIME/Inline ausschließt, aber mehr Fälle toleriert (siehe Code‑Details). Inline‑Bilder werden niemals als Datei‑Anhänge hinzugefügt; stattdessen werden sie, wenn „Inline‑Bilder einfügen“ aktiviert ist (der Standard), direkt im Antworttext als Base64‑Data‑URIs eingebettet.
+| Teiltyp                                                    | Wird in die Antwort kopiert     |
+|------------------------------------------------------------|--------------------------------:|
+| S/MIME-Signaturdatei `smime.p7s`                           | Nein                            |
+| S/MIME-MIME-Typen (`application/pkcs7-*`)                  | Nein                            |
+| Bild, das der Nachrichtentext per `cid:` einbettet         | Nein (es befindet sich im Text) |
+| Bild, das als `Content-Disposition: inline` markiert ist   | Nein (es befindet sich im Text) |
+| Bild mit einer `Content-ID`, auf die der Text nie verweist | Ja                              |
+| Angehängte E-Mail (`message/rfc822`) mit einem Dateinamen  | Ja                              |
+| Normaler Dateianhang mit einem Dateinamen                  | Ja                              |
 
-| Teiltyp                                                 | Strenger Durchlauf                           | Entspannter Durchlauf                        |
-|---------------------------------------------------------|---------------------------------------------:|---------------------------------------------:|
-| S/MIME‑Signaturdatei `smime.p7s`                        | Ausgeschlossen                               | Ausgeschlossen                               |
-| S/MIME‑MIME‑Typen (`application/pkcs7-*`)               | Ausgeschlossen                               | Ausgeschlossen                               |
-| Durch Content‑ID referenziertes Inline‑Bild (`image/*`) | Ausgeschlossen (im Text wiederhergestellt\*) | Ausgeschlossen (im Text wiederhergestellt\*) |
-| Angehängte E‑Mail (`message/rfc822`) mit Dateinamen     | Nicht hinzugefügt                            | Kann hinzugefügt werden                      |
-| Regulärer Dateianhang mit Dateinamen                    | Kann hinzugefügt werden                      | Kann hinzugefügt werden                      |
-
-\* Wenn „Inline‑Bilder einfügen“ aktiviert ist (Standard: EIN), werden Inline‑Bilder im Antworttext als Base64‑Data‑URIs eingebettet statt als Datei‑Anhänge hinzugefügt. Siehe [Konfiguration](configuration#include-inline-pictures).
-
-Beispiel: Bei einigen Anhängen fehlen möglicherweise bestimmte Header, sie sind aber dennoch reguläre Dateien (nicht Inline/S/MIME). Findet der strenge Durchlauf keine, kann der entspannte Durchlauf diese akzeptieren und anhängen.
+Ein Bild gilt nur dann als eingebettet, wenn die ursprüngliche Nachricht tatsächlich darauf verweist,
+oder wenn der Absender es ausdrücklich als `Content-Disposition: inline` markiert hat. Ein bloßer
+`Content-ID`-Header reicht nicht aus: Mehrere Mail-Clients setzen einen auf jeden Bildteil,
+einschließlich echter Anhänge, und diese müssen trotzdem kopiert werden.
 
 ---
 
@@ -88,7 +89,7 @@ Beispiel: Bei einigen Anhängen fehlen möglicherweise bestimmte Header, sie sin
 
 ## Warum Anhänge möglicherweise nicht hinzugefügt werden {#why-attachments-might-not-be-added}
 
-- Inline‑Bilder werden nicht als Datei‑Anhänge hinzugefügt. Wenn „Inline‑Bilder einfügen“ EIN ist (der Standard), werden sie stattdessen im Antworttext als Data‑URIs eingebettet. Ist die Einstellung AUS, werden Inline‑Bilder vollständig entfernt. Siehe [Konfiguration](configuration#include-inline-pictures).
+- Bilder, die die ursprüngliche Nachricht einbettet, werden nicht als Dateien kopiert. Sie stehen bereits im Antworttext, wo Thunderbird sie platziert hat. Siehe [Konfiguration](configuration#include-inline-pictures).
 - S/MIME‑Signaturteile sind absichtlich ausgeschlossen: Dateinamen wie `smime.p7s` und MIME‑Typen wie `application/pkcs7-signature` oder `application/pkcs7-mime` werden übersprungen.
 - Blacklist‑Muster können Kandidaten herausfiltern: siehe [Konfiguration](configuration#blacklist-glob-patterns); die Übereinstimmung ist groß-/kleinschreibungsunabhängig und nur auf den Dateinamen bezogen.
 - Doppelte Dateinamen werden nicht erneut hinzugefügt: Wenn das Verfassen‑Fenster bereits eine Datei mit demselben normalisierten Namen enthält, wird sie übersprungen.

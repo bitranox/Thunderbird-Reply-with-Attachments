@@ -8,25 +8,7 @@ sidebar_label: 'Astaamo'
 
 ## Astaamo {#features}
 
-- Si toos ah ayay ugu lifaaqdaa faylasha iimaylkii asalka ahaa markaad ka jawaabayso.
-- Dabeecad la habayn karo: lifaaqyadu waxay noqon karaan
-  - si toos ah loo daro, ama
-  - kaliya lagu daro kaddib xaqiijin (dood‑wareysi yar oo la heli karo). In Options you
-    waxaad dhaqaajin kartaa xaqiijinta oo waxaad dooran kartaa jawaabta caadiga ah (Haa/Maya).
-- Liiska madow ee magacyada faylasha (qaababka glob) wuxuu ka hortagaa faylal gaar ah in si toos ah
-  loo lifaaqo. Tusaalooyin: `*intern*`, `*secret*`, `*passwor*`.
-  Isku‑eegistu kama xasaas aha xarfaha waaweyn/yaryar waxayna hubisaa magaca faylka oo keliya; hal qaab
-  ku qor sadar kasta gudaha Options.
-- Digniin liis‑madow (ikhtiyaari, asal ahaan waa la daaran): marka faylal laga reebo
-  liiska madowgaaga, modal yar ayaa taxaya faylka iyo qaabka(yaasha) is‑waafaqa. Hab‑madow
-  saaxiib ah oo laga geli karo kiiboodhka (Enter/Esc si loo xiro).
-- Wuxuu ka shaqeeyaa Reply iyo Reply all. Forward lagama beddelo ku‑darkan.
-- Wuxuu ku daraa kuwii asalka ahaa xitaa haddii aad hore u lifaaqday wax; wuxuu ka fogaadaa ku‑celis magaca faylka ku saleysan.
-- Ilaalinta ku‑celiska tab‑kiiba waxay ka hortagtaa laba‑jeer lagu darista isla tab‑ka qorista.
-- Ka boodaa shahaadooyinka S/MIME caadi ahaan si looga fogaado lifaaqyo aan loo baahnayn.
-- Ku dar sawirrada inline (default: ON). Sawirrada ku‑dhafan waxaa si toos ah loogu soo celiyaa
-  jirka jawaabta ahaan base64 data URIs, iyadoo la ilaalinayo qaabka inline‑ka asalka ah. Demi gudaha
-  Options si aad gabi ahaanba uga booddo sawirrada inline.
+- Sawirrada ku dhex jira farriinta waxaa loo daayaa Thunderbird: waxay sii joogaan qoraalka jawaabta lamana koobiyeeyo sida faylal lifaaqan. Sawir kaliya sida `Content-ID` la siiyay isla markaana aan la tixraacin ayaa loo tixgaliyaa sida lifaaqe caadi ah oo la koobiyeeyo.
 
 ---
 

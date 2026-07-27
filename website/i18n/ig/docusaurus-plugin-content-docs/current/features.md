@@ -8,24 +8,7 @@ sidebar_label: 'Njirimara'
 
 ## Njirimara {#features}
 
-- Na-ejikọta faịlụ sitere n’ozi email mbụ na-akpaghị aka mgbe ị na-aza.
-- Omume nwere ike ịhazi: a pụrụ ime ka faịlụ ejikọtara
-  - tinye na-akpaghị aka, ma ọ bụ
-  - tinye naanị mgbe e kwadoro ya (obere, dị mfe iru dialog). Na Options i
-    nwere ike ime ka nkwenye dị ma họrọ azịza ndabara (Yes/No).
-- Ndekọ igbochi aha faịlụ (usoro glob) na-egbochi faịlụ ụfọdụ ka e jikọta ha
-  na-akpaghị aka. Ihe atụ: `*intern*`, `*secret*`, `*passwor*`.
-  Nhazi ntụnyere a enweghị mmetụta n’elu/ala mkpụrụedemede (case‑insensitive) ma na-enyocha naanị aha faịlụ; nye otu pattern kwa ahịrị na Options.
-- Ịdọ aka ná ntị maka ndekọ igbochi (nhọrọ, arụ ọrụ site na ndabara): mgbe a wepụrụ faịlụ n’ihi
-  ndekọ igbochi gị, obere modal na-egosi faịlụ ahụ na usoro kwekọrọ. Dị mma na Dark‑mode
-  ma nwee nnweta site na keyboard (Enter/Esc iji mechie).
-- Na-arụ ọrụ na Reply na Reply all. Forward a naghị agbanwe site na ndọtị a.
-- Na-etinye ndị mbụ ọbụnadị ma ọ bụrụ na ịtinyeworị ihe n’onwe gị; na-ezere oyiri site n’aha faịlụ.
-- Nchekwa megide oyiri kwa‑taabụ na-egbochi itinye ugboro abụọ n’otu taabụ ide.
-- Na-agafe asambodo S/MIME site na ndabara iji zere ijikọ faịlụ na-enweghị isi.
-- Ịgụnye onyonyo inline (ndabara: ON). A na-eweghachi onyonyo etinyere ozugbo n’ahụ
-  nzaghachi dịka base64 data URIs, na-edobe nhazi inline mbụ. Gbanyụọ ya na
-  Options iji hapụ onyonyo inline kpamkpam.
+- A na-ahapụ foto ndị agbakwunyere maka Thunderbird: ha na-anọgide n'ozi nzaghachi ahụ, a naghị edobe ha dị ka ihe mmado faịlụ. Foto nke nwere naanị `Content-ID` ma ọ bụghị nke a na-ezo aka na ya ka a na-ele dị ka ihe mmado nkịtị ma dobe ya.
 
 ---
 

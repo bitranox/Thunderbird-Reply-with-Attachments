@@ -9,28 +9,29 @@ sidebar_label: 'Användning'
 ## Användning {#usage}
 
 - Vid Svara lägger tillägget till originalbilagor automatiskt — eller frågar först, om aktiverat i Alternativ.
-- Dubbletter tas bort utifrån filnamn; S/MIME-delar hoppas alltid över. Inline‑bilder återställs i svarstexten som standard (inaktivera via "Include inline pictures" i Alternativ).
+- Dubbletter tas bort baserat på filnamn; S/MIME-delar hoppas alltid över. Bilder som är inbäddade i det ursprungliga meddelandet stannar kvar i svarets brödtext, där Thunderbird placerar dem, och kopieras inte som filer.
 - Bilagor på svartlistan hoppas också över (skiftlägesokänsliga glob‑mönster som matchar filnamn, inte sökvägar). Se [Konfiguration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Vad händer vid svar {#what-happens}
 
-- Upptäck svar → lista ursprungliga bilagor → filtrera S/MIME + inline → valfri bekräftelse → lägg till kvalificerade filer (hoppa över dubbletter) → återställ inline‑bilder i svarstexten.
+- Upptäck svar → lista de ursprungliga bilagorna → hoppa över S/MIME och inbäddade bilder → valfri bekräftelse → lägg till de kvalificerade filerna (och hoppa över dubbletter).
 
-Strikt vs. avslappnad genomgång: Tillägget utesluter först S/MIME‑ och inline‑delar från filbilagor. Om inget kvalificerar körs en mer tillåtande genomgång som fortfarande utesluter S/MIME/inline men tolererar fler fall (se Koddetaljer). Inline‑bilder läggs aldrig till som filbilagor; i stället, när "Include inline pictures" är aktiverat (standard), bäddas de in direkt i svarstexten som base64‑data‑URI:er.
+| Deltyp                                                     | Kopieras till svaret         |
+|------------------------------------------------------------|-----------------------------:|
+| S/MIME-signaturfil `smime.p7s`                             | Nej                          |
+| S/MIME MIME-typer (`application/pkcs7-*`)                  | Nej                          |
+| Bild som meddelandetexten bäddar in via `cid:`             | Nej (den finns i brödtexten) |
+| Bild märkt `Content-Disposition: inline`                   | Nej (den finns i brödtexten) |
+| Bild med `Content-ID` som brödtexten aldrig refererar till | Ja                           |
+| Bifogat e-postmeddelande (`message/rfc822`) med filnamn    | Ja                           |
+| Vanlig filbilaga med filnamn                               | Ja                           |
 
-| Deltyp                                                      | Strikt genomgång                       | Avslappnad genomgång                   |
-|-------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
-| S/MIME‑signaturfil `smime.p7s`                              | Utesluten                              | Utesluten                              |
-| S/MIME‑MIME‑typer (`application/pkcs7-*`)                   | Utesluten                              | Utesluten                              |
-| Inline‑bild refererad via Content‑ID (`image/*`)            | Utesluten (återställs i svarstexten\*) | Utesluten (återställs i svarstexten\*) |
-| Bifogat e‑postmeddelande (`message/rfc822`) med ett filnamn | Läggs inte till                        | Kan läggas till                        |
-| Vanlig filbilaga med ett filnamn                            | Kan läggas till                        | Kan läggas till                        |
-
-\* När "Include inline pictures" är aktiverat (standard: PÅ) bäddas inline‑bilder in i svarstexten som base64‑data‑URI:er i stället för att läggas till som filbilagor. Se [Konfiguration](configuration#include-inline-pictures).
-
-Exempel: Vissa bilagor kan sakna vissa headers men är ändå vanliga filer (inte inline/S/MIME). Om den strikta genomgången inte hittar några kan den avslappnade acceptera dem och bifoga dem.
+En bild räknas som inbäddad endast när det ursprungliga meddelandet faktiskt refererar
+till den, eller när avsändaren uttryckligen har märkt den `Content-Disposition: inline`.
+Enbart en `Content-ID`-header räcker inte: flera e-postklienter sätter en sådan på varje
+bilddel, inklusive äkta bilagor, som ändå måste kopieras.
 
 ---
 
@@ -88,7 +89,7 @@ Exempel: Vissa bilagor kan sakna vissa headers men är ändå vanliga filer (int
 
 ## Varför bilagor kanske inte läggs till {#why-attachments-might-not-be-added}
 
-- Inline‑bilder läggs inte till som filbilagor. När "Include inline pictures" är PÅ (standard) bäddas de i stället in i svarstexten som data‑URI:er. Om inställningen är AV tas inline‑bilder bort helt. Se [Konfiguration](configuration#include-inline-pictures).
+- Bilder som originalmeddelandet bäddar in kopieras inte som filer. De finns redan i svarets brödtext, där Thunderbird placerade dem. Se [Configuration](configuration#include-inline-pictures).
 - S/MIME‑signaturdelar utesluts enligt design: filnamn som `smime.p7s` och MIME‑typer som `application/pkcs7-signature` eller `application/pkcs7-mime` hoppas över.
 - Svartlistningsmönster kan filtrera kandidater: se [Konfiguration](configuration#blacklist-glob-patterns); matchning är skiftlägesokänslig och endast på filnamn.
 - Dubblettfilnamn läggs inte till igen: om skrivfönstret redan innehåller en fil med samma normaliserade namn hoppas den över.

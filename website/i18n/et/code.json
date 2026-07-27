@@ -54,7 +54,7 @@
     "message": "Jäta SMIME ja põimitud vahele"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME‑allkirjad ja põimitud pildid jäetakse vastustest välja, et need püsiksid kerged."
+    "message": "SMIME-allkirju ei kopeerita kunagi. Sõnumi sisusse põimitud pildid jäävad vastuse sisusse, kuhu Thunderbird need juba paigutab, selle asemel et need uuesti manusena lisada."
   },
   "homepage.features.blacklist.title": {
     "message": "Mustloendi mustrid"

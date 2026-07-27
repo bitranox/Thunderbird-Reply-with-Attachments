@@ -9,28 +9,26 @@ sidebar_label: 'Uso'
 ## Utilizzo {#usage}
 
 - Rispondi e il componente aggiuntivo aggiunge automaticamente gli originali — oppure chiede prima conferma, se abilitato nelle Opzioni.
-- De-duplicati per nome file; le parti S/MIME sono sempre ignorate. Le immagini inline vengono ripristinate nel corpo della risposta per impostazione predefinita (disattivabile tramite "Includi immagini inline" nelle Opzioni).
+- Deduplicati in base al nome file; le parti S/MIME vengono sempre ignorate. Le immagini incorporate nel messaggio originale restano nel corpo della risposta, dove Thunderbird le colloca, e non vengono copiate come file.
 - Gli allegati in blacklist vengono anch'essi ignorati (pattern glob senza distinzione tra maiuscole/minuscole che corrispondono ai nomi file, non ai percorsi). Vedi [Configurazione](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Cosa succede in caso di risposta {#what-happens}
 
-- Rileva la risposta → elenca gli allegati originali → filtra S/MIME + inline → conferma facoltativa → aggiunge i file idonei (salta i duplicati) → ripristina le immagini inline nel corpo.
+- Rilevare la risposta → elencare gli allegati originali → saltare S/MIME e le immagini incorporate → conferma opzionale → aggiungere i file idonei (saltando i duplicati).
 
-Passaggio rigoroso vs. rilassato: Il componente aggiuntivo esclude innanzitutto le parti S/MIME e inline dagli allegati file. Se nulla rientra nei criteri, esegue un passaggio rilassato che continua a escludere S/MIME/inline ma tollera più casi (vedi Dettagli del codice). Le immagini inline non vengono mai aggiunte come allegati file; invece, quando "Includi immagini inline" è abilitato (l'impostazione predefinita), vengono incorporate direttamente nel corpo della risposta come URI di dati base64.
+| Tipo di parte                                                      | Copiato nella risposta  |
+|--------------------------------------------------------------------|------------------------:|
+| File di firma S/MIME `smime.p7s`                                   | No                      |
+| Tipi MIME S/MIME (`application/pkcs7-*`)                           | No                      |
+| Immagine incorporata nel corpo del messaggio tramite `cid:`        | No (si trova nel corpo) |
+| Immagine contrassegnata `Content-Disposition: inline`              | No (si trova nel corpo) |
+| Immagine con un `Content-ID` a cui il corpo non fa mai riferimento | Sì                      |
+| Email allegata (`message/rfc822`) con un nome file                 | Sì                      |
+| Allegato di file normale con un nome file                          | Sì                      |
 
-| Tipo di parte                                          | Passaggio rigoroso                 | Passaggio rilassato                |
-|--------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| File di firma S/MIME `smime.p7s`                       | Escluso                            | Escluso                            |
-| Tipi MIME S/MIME (`application/pkcs7-*`)               | Escluso                            | Escluso                            |
-| Immagine inline referenziata da Content‑ID (`image/*`) | Escluso (ripristinato nel corpo\*) | Escluso (ripristinato nel corpo\*) |
-| Email allegata (`message/rfc822`) con un nome file     | Non aggiunto                       | Può essere aggiunto                |
-| Allegato file normale con un nome file                 | Può essere aggiunto                | Può essere aggiunto                |
-
-\* Quando "Includi immagini inline" è abilitato (predefinito: ON), le immagini inline vengono incorporate nel corpo della risposta come URI di dati base64 invece di essere aggiunte come allegati file. Vedi [Configurazione](configuration#include-inline-pictures).
-
-Esempio: Alcuni allegati potrebbero non avere determinate intestazioni ma essere comunque file normali (non inline/S/MIME). Se il passaggio rigoroso non ne trova, quello rilassato può accettarli e allegarli.
+Un'immagine è considerata incorporata solo quando il messaggio originale vi fa effettivamente riferimento, oppure quando il mittente l'ha contrassegnata esplicitamente come `Content-Disposition: inline`. Un semplice header `Content-ID` non è sufficiente: diversi client di posta ne aggiungono uno a ogni parte immagine, compresi gli allegati genuini, che devono comunque essere copiati.
 
 ---
 
@@ -88,7 +86,7 @@ Esempio: Alcuni allegati potrebbero non avere determinate intestazioni ma essere
 
 ## Perché gli allegati potrebbero non essere aggiunti {#why-attachments-might-not-be-added}
 
-- Le immagini inline non vengono aggiunte come allegati file. Quando "Includi immagini inline" è ON (impostazione predefinita), vengono invece incorporate nel corpo della risposta come URI di dati. Se l'impostazione è OFF, le immagini inline vengono rimosse completamente. Vedi [Configurazione](configuration#include-inline-pictures).
+- Le immagini incorporate dal messaggio originale non vengono copiate come file. Sono già nel corpo della risposta, dove le ha messe Thunderbird. Vedi [Configurazione](configuration#include-inline-pictures).
 - Le parti di firma S/MIME sono escluse per progettazione: nomi file come `smime.p7s` e tipi MIME come `application/pkcs7-signature` o `application/pkcs7-mime` vengono ignorati.
 - I pattern di blacklist possono filtrare i candidati: vedi [Configurazione](configuration#blacklist-glob-patterns); il confronto non distingue maiuscole/minuscole ed è limitato al solo nome file.
 - I nomi file duplicati non vengono riaggiunti: se la composizione contiene già un file con lo stesso nome normalizzato, viene ignorato.

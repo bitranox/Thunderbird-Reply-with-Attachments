@@ -9,28 +9,26 @@ sidebar_label: 'Notkun'
 ## Notkun {#usage}
 
 - Svaraðu og viðbótin bætir upprunalegum viðhengjum við sjálfkrafa — eða spyr fyrst, ef það er virkjað í Valkostum.
-- Tvítök eru forðuð eftir skráarheiti; S/MIME-hlutum er alltaf sleppt. Innfelldar myndir eru endursettar í texta svarsins sjálfgefið (slökktu í „Include inline pictures“ í Valkostum).
+- Afrit fjarlægð eftir skráarheiti; S/MIME hlutum er alltaf sleppt. Myndir sem eru felldar inn í upprunalega skilaboðið haldast í meginmáli svarsins, þar sem Thunderbird setur þær, og eru ekki afritaðar sem skrár.
 - Viðhengjum á svörtum lista er einnig sleppt (há-/lágstafsóháð glob-mynstur sem samsvara skráarheitum, ekki slóðum). Sjá [Stillingar](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Hvað gerist við svar {#what-happens}
 
-- Greinir svar → listar upprunaleg viðhengi → síar S/MIME + innfelld → valkvæð staðfesting → bætir við gjaldgengum skrám (sleppir tvítökum) → endursetur innfelldar myndir í meginmáli.
+- Greina svar → telja upp upprunaleg viðhengi → sleppa S/MIME og innfelldum myndum → valfrjáls staðfesting → bæta við gjaldgengum skrám (sleppa tvítekningum).
 
-Ströng vs. slök yfirferð: Viðbótin útilokar fyrst S/MIME og innfellda hluta úr skráarviðhengjum. Ef ekkert hæfir, keyrir hún slakari yfirferð sem útilokar áfram S/MIME/innfellda hluta en umber fleiri tilfelli (sjá Kóða‑nánar). Innfelldum myndum er aldrei bætt við sem skráarviðhengjum; þegar „Include inline pictures“ er virkjað (sjálfgefið), eru þær í staðinn felldar beint inn í svartextann sem base64 data‑URI.
+| Tegund hluta                                            | Afritað í svarið           |
+|---------------------------------------------------------|---------------------------:|
+| S/MIME undirskriftarskrá `smime.p7s`                    | Nei                        |
+| S/MIME MIME-tegundir (`application/pkcs7-*`)            | Nei                        |
+| Mynd sem meginmál skilaboðsins felur inn með `cid:`     | Nei (hún er í meginmálinu) |
+| Mynd merkt `Content-Disposition: inline`                | Nei (hún er í meginmálinu) |
+| Mynd með `Content-ID` sem meginmálið vísar aldrei í     | Já                         |
+| Viðhengt tölvupóstur (`message/rfc822`) með skráarheiti | Já                         |
+| Venjulegt skráarviðhengi með skráarheiti                | Já                         |
 
-| Tegund hlutar                                           | Ströng yfirferð                    | Slök yfirferð                      |
-|---------------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| S/MIME undirskriftarskrá `smime.p7s`                    | Útilokað                           | Útilokað                           |
-| S/MIME MIME‑tegundir (`application/pkcs7-*`)            | Útilokað                           | Útilokað                           |
-| Innfelld mynd sem vísað er í með Content‑ID (`image/*`) | Útilokað (endursett í meginmáli\*) | Útilokað (endursett í meginmáli\*) |
-| Viðhengt tölvupóstur (`message/rfc822`) með skráarheiti | Ekki bætt við                      | Gæti verið bætt við                |
-| Venjulegt skráarviðhengi með skráarheiti                | Gæti verið bætt við                | Gæti verið bætt við                |
-
-\* Þegar „Include inline pictures“ er virkjað (sjálfgefið: ON), eru innfelldar myndir felldar inn í svartextann sem base64 data‑URI í stað þess að vera bætt við sem skráarviðhengi. Sjá [Stillingar](configuration#include-inline-pictures).
-
-Dæmi: Sum viðhengi kunna að vanta tiltekna hausar en eru samt venjulegar skrár (ekki innfelld/S/MIME). Ef stranga yfirferðin finnur engin, gæti slaka yfirferðin tekið þau gild og hengt við.
+Mynd telst innfelld aðeins þegar upprunalega skilaboðið vísar í raun í hana, eða þegar sendandinn merkti hana sérstaklega sem `Content-Disposition: inline`. Einber `Content-ID` haus dugir ekki: sum tölvupóstforrit setja hann á sérhvern myndarhluta, þar með talin raunveruleg viðhengi, og þau verður samt að afrita.
 
 ---
 
@@ -88,7 +86,7 @@ Dæmi: Sum viðhengi kunna að vanta tiltekna hausar en eru samt venjulegar skr�
 
 ## Ástæður þess að viðhengjum gæti ekki verið bætt við {#why-attachments-might-not-be-added}
 
-- Innfelldum myndum er ekki bætt við sem skráarviðhengjum. Þegar „Include inline pictures“ er ON (sjálfgefið), eru þær felldar inn í svartextann sem data‑URI í staðinn. Ef stillingin er OFF, eru innfelldar myndir fjarlægðar alveg. Sjá [Stillingar](configuration#include-inline-pictures).
+- Myndir sem upprunalega skeytið fellir inn eru ekki afritaðar sem skrár. Þær eru þegar í meginmáli svarsins, þar sem Thunderbird setti þær. Sjá [Uppsetning](configuration#include-inline-pictures).
 - S/MIME undirskriftarhlutum er sleppt samkvæmt hönnun: skráarheitum eins og `smime.p7s` og MIME‑tegundum á borð við `application/pkcs7-signature` eða `application/pkcs7-mime` er sleppt.
 - Mynstur á svörtum lista geta síað frambjóðendur: sjá [Stillingar](configuration#blacklist-glob-patterns); samsvörun er há-/lágstafsóháð og eingöngu eftir skráarheiti.
 - Tvíteknu skráarheitum er ekki bætt við aftur: ef samsetningin inniheldur þegar skrá með sama samræmda heiti, er henni sleppt.

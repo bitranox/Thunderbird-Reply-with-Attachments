@@ -54,7 +54,7 @@
     "message": "Kwirengagiza SMIME n'ibiri mu murongo"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Imikono ya SMIME n'amashusho ari mu murongo ntibashyirwemo kugira ngo ibisubizo bigume byoroheje."
+    "message": "Umukono wa SMIME ntugera ukoporowa. Amashusho ari mu butumwa agumana mu gisubizo, aho Thunderbird ayabika, aho kongera kuyongeraho nk'inyongera ya kabiri."
   },
   "homepage.features.blacklist.title": {
     "message": "Imiterere yo ku rutonde rw'ibizirizwa"

@@ -10,7 +10,8 @@ title: 'የለውጥ መዝገብ'
 ሙሉና ዝርዝር ታሪኩን ለማየት የማከማቻውን
 [CHANGELOG.md በGitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md) ይመልከቱ።
 
-- 2.3.2: "Include inline pictures" አሁን ምስሎችን በመልስ ጽሁፍ ውስጥ በቀጥታ እንደ base64 data URIs ያጣብቃል (ነባር፡ ON)፤ የኮድ ጥራት ማሻሻያዎች እና የሙከራ ክልል መስፋፋት።
+- 2.4.0: ላኪው `Content-ID` ስላደረገበት ብቻ ምስሎች ከእንግዲህ አይጣሉም፤ Thunderbird የተካተቱ ምስሎችን በራሱ በምላሹ ይዘት ውስጥ ስለሚያቆይ "Include inline pictures" የተባለው አማራጭ ተወግዷል፤ አገናኞች አሁን በስርዓቱ አሳሽ ውስጥ ይከፈታሉ፤ በአንድ ምላሽ ውስጥ ከፍተኛው 50 አባሪዎች / 100 ሜባ ገደብ ተቀምጧል፣ የቀሩትም ይነገራሉ።
+- 2.3.2: "Include inline pictures" የተካተቱ ምስሎችን እንደ base64 data URIs በምላሹ ይዘት ውስጥ ያካትት ነበር (ከ add-ons.thunderbird.net ግምገማ በኋላ እንደገና ተወግዷል፤ Thunderbird ራሱ ይህን ያደርጋል)፤ የኮድ ጥራት መሻሻሎች እና የተስፋፋ የሙከራ ሽፋን።
 - 2.3.1: Thunderbird የጀርባ ክስተት ገፁን ሲያስቀምጥ (idle) ከዚያ በኋላ የተያያዥ ፋይሎችን ይጠብቃል፤ ለችግኝ መፍትሄ የተመረጡ የዲበግ (debug) መያዣዎችን ያክላል።
 - 2.3.0: የድብልቅ የአባሪ ማስወገድ ተሻሻለ፣ የሙከራ ክልል ተስፋፋ፣ እና የAMO ፖሊሲዎችን ለመሟላት የጊዜው ያለፉ ፍቃዶች ተወገዱ።
 - 2.1.0: ለከፍተኛው 100 ቋንቋዎች ሙሉ የኢንተርናሽናላይዜሽን ድጋፍ

@@ -8,25 +8,9 @@ sidebar_label: 'Funkcionalnosti'
 
 ## Funkcionalnosti {#features}
 
-- Automatski prilaže datoteke iz originalne e-poruke pri odgovaranju.
-- Ponašanje se može podesiti: prilozi mogu biti
-  - dodani automatski, ili
-  - dodani tek nakon potvrde (mali, pristupačan dijalog). U Opcijama možete
-    omogućiti potvrdu i izabrati podrazumijevani odgovor (Da/Ne).
-- Crna lista naziva datoteka (glob uzorci) sprječava da se određene datoteke
-  automatski prilože. Primjeri: `*intern*`, `*secret*`, `*passwor*`.
-  Podudaranje ne razlikuje velika/mala slova i provjerava samo naziv datoteke; navedite jedan uzorak
-  po liniji u Opcijama.
-- Upozorenje o crnoj listi (opcionalno, podrazumijevano uključeno): kada su datoteke isključene vašom
-  crnom listom, mali modalni prozor navodi datoteku i odgovarajuće uzorke. Prilagođeno tamnom modu
-  i pristupačno tastaturom (Enter/Esc za zatvaranje).
-- Radi s „Odgovori” i „Odgovori svima”. „Proslijedi” ovaj dodatak ne mijenja.
-- Dodaje originalne priloge čak i ako ste već nešto sami priložili; izbjegava duplikate po nazivu datoteke.
-- Zaštita od duplikata po kartici sprječava dvostruko dodavanje u istoj kartici za sastavljanje poruke.
-- Podrazumijevano preskače S/MIME certifikate kako bi izbjegao nepotrebne priloge.
-- Uključuje ugrađene slike (podrazumijevano: UKLJUČENO). Ugrađene slike se vraćaju direktno u
-  tijelo odgovora kao base64 data URI-ji, uz očuvanje izvornog inline rasporeda. Onemogućite u
-  Opcijama da biste u potpunosti preskočili ugrađene slike.
+- Ugrađene slike se prepuštaju Thunderbirdu: ostaju u tijelu odgovora i ne
+  kopiraju se kao prilozi. Slika koja samo nosi `Content-ID` bez da je
+  referencirana tretira se kao običan prilog i kopira se.
 
 ---
 

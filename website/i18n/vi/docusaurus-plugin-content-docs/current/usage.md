@@ -9,28 +9,29 @@ sidebar_label: 'Cách sử dụng'
 ## Cách sử dụng {#usage}
 
 - Khi trả lời, tiện ích sẽ tự động thêm các tệp gốc — hoặc sẽ hỏi trước nếu đã bật trong Tùy chọn.
-- Loại bỏ trùng lặp theo tên tệp; các phần S/MIME luôn bị bỏ qua. Ảnh nội tuyến được khôi phục trong phần nội dung thư trả lời theo mặc định (có thể tắt qua "Include inline pictures" trong Tùy chọn).
+- Các bản trùng lặp được loại bỏ theo tên tệp; các phần S/MIME luôn bị bỏ qua. Hình ảnh được nhúng trong thư gốc vẫn ở trong phần nội dung của thư trả lời, nơi Thunderbird đặt chúng, và không được sao chép thành tệp.
 - Các tệp đính kèm trong danh sách chặn cũng bị bỏ qua (mẫu glob không phân biệt hoa thường khớp với tên tệp, không phải đường dẫn). Xem [Cấu hình](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Điều gì xảy ra khi trả lời {#what-happens}
 
-- Phát hiện thao tác trả lời → liệt kê các tệp đính kèm gốc → lọc S/MIME + nội tuyến → xác nhận tùy chọn → thêm các tệp đủ điều kiện (bỏ qua bản trùng) → khôi phục ảnh nội tuyến trong phần nội dung.
+- Phát hiện thư trả lời → liệt kê các tệp đính kèm gốc → bỏ qua S/MIME và hình ảnh nhúng → xác nhận tùy chọn → thêm các tệp đủ điều kiện (bỏ qua các bản trùng lặp).
 
-Lượt kiểm tra nghiêm ngặt so với linh hoạt: Tiện ích trước tiên loại trừ các phần S/MIME và nội tuyến khỏi tệp đính kèm. Nếu không có gì đủ điều kiện, nó chạy một lượt linh hoạt vẫn loại trừ S/MIME/nội tuyến nhưng chấp nhận nhiều trường hợp hơn (xem Chi tiết mã). Ảnh nội tuyến không bao giờ được thêm như tệp đính kèm; thay vào đó, khi "Include inline pictures" được bật (mặc định), chúng được nhúng trực tiếp vào nội dung thư trả lời dưới dạng URI dữ liệu base64.
+| Loại phần                                                         | Được sao chép vào thư trả lời |
+|-------------------------------------------------------------------|------------------------------:|
+| Tệp chữ ký S/MIME `smime.p7s`                                     | Không                         |
+| Các loại MIME của S/MIME (`application/pkcs7-*`)                  | Không                         |
+| Hình ảnh được nội dung thư nhúng qua `cid:`                       | Không (đã có trong nội dung)  |
+| Hình ảnh được đánh dấu `Content-Disposition: inline`              | Không (đã có trong nội dung)  |
+| Hình ảnh có `Content-ID` mà nội dung không bao giờ tham chiếu tới | Có                            |
+| Thư đính kèm (`message/rfc822`) có tên tệp                        | Có                            |
+| Tệp đính kèm thông thường có tên tệp                              | Có                            |
 
-| Loại phần                                                | Lượt kiểm tra nghiêm ngặt            | Lượt kiểm tra linh hoạt              |
-|----------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| Tệp chữ ký S/MIME `smime.p7s`                            | Bị loại                              | Bị loại                              |
-| Kiểu MIME S/MIME (`application/pkcs7-*`)                 | Bị loại                              | Bị loại                              |
-| Ảnh nội tuyến được tham chiếu bởi Content‑ID (`image/*`) | Bị loại (khôi phục trong nội dung\*) | Bị loại (khôi phục trong nội dung\*) |
-| Email đính kèm (`message/rfc822`) có tên tệp             | Không thêm                           | Có thể được thêm                     |
-| Tệp đính kèm thông thường có tên tệp                     | Có thể được thêm                     | Có thể được thêm                     |
-
-\* Khi "Include inline pictures" được bật (mặc định: BẬT), ảnh nội tuyến được nhúng trực tiếp vào nội dung thư trả lời dưới dạng URI dữ liệu base64 thay vì được thêm làm tệp đính kèm. Xem [Cấu hình](configuration#include-inline-pictures).
-
-Ví dụ: Một số tệp đính kèm có thể thiếu một số header nhưng vẫn là tệp thông thường (không phải nội tuyến/S/MIME). Nếu lượt nghiêm ngặt không tìm thấy gì, lượt linh hoạt có thể chấp nhận và đính kèm chúng.
+Một hình ảnh chỉ được coi là nhúng khi thư gốc thực sự tham chiếu đến nó, hoặc khi
+người gửi đánh dấu rõ ràng là `Content-Disposition: inline`. Chỉ riêng tiêu đề
+`Content-ID` là chưa đủ: một số ứng dụng thư đặt tiêu đề này lên mọi phần hình ảnh, kể
+cả các tệp đính kèm thật sự, và những tệp đó vẫn phải được sao chép.
 
 ---
 
@@ -88,7 +89,7 @@ Ví dụ: Một số tệp đính kèm có thể thiếu một số header nhưn
 
 ## Vì sao tệp đính kèm có thể không được thêm {#why-attachments-might-not-be-added}
 
-- Ảnh nội tuyến không được thêm như tệp đính kèm. Khi "Include inline pictures" đang BẬT (mặc định), chúng được nhúng vào nội dung thư trả lời dưới dạng URI dữ liệu. Nếu cài đặt đang TẮT, ảnh nội tuyến sẽ bị loại bỏ hoàn toàn. Xem [Cấu hình](configuration#include-inline-pictures).
+- Hình ảnh mà thư gốc nhúng vào không được sao chép thành tệp. Chúng đã có sẵn trong nội dung thư trả lời, nơi Thunderbird đặt chúng. Xem [Configuration](configuration#include-inline-pictures).
 - Các phần chữ ký S/MIME bị loại trừ theo thiết kế: các tên tệp như `smime.p7s` và các kiểu MIME như `application/pkcs7-signature` hoặc `application/pkcs7-mime` sẽ bị bỏ qua.
 - Mẫu danh sách chặn có thể lọc các ứng viên: xem [Cấu hình](configuration#blacklist-glob-patterns); việc khớp không phân biệt hoa thường và chỉ theo tên tệp.
 - Tên tệp trùng lặp sẽ không được thêm lại: nếu khung soạn đã có một tệp với cùng tên đã chuẩn hóa, nó sẽ bị bỏ qua.

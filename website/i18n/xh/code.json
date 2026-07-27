@@ -54,7 +54,7 @@
     "message": "Tsiba i-SMIME ne Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Iisayini ze-SMIME nemifanekiso ye-inline ziyashiywa ngaphandle ukugcina iimpendulo zilula."
+    "message": "Ii-signature ze-SMIME azizange zikopishwe. Imifanekiso efakwe ngaphakathi komyalezo ihlala kwindawo yempendulo, apho i-Thunderbird eyigcina khona, kunokuba iqhotyoshelwe okwesibini."
   },
   "homepage.features.blacklist.title": {
     "message": "Iipateni zoluhlu olumnyama"

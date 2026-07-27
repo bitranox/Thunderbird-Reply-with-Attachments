@@ -54,7 +54,7 @@
     "message": "Ignorar S/MIME e imagens incorporadas"
   },
   "homepage.features.skipSmime.body": {
-    "message": "As assinaturas S/MIME e as imagens incorporadas são excluídas para manter as respostas leves."
+    "message": "As assinaturas SMIME nunca são copiadas. As imagens incorporadas no corpo da mensagem permanecem no corpo da resposta, onde o Thunderbird já as mantém, em vez de serem anexadas uma segunda vez."
   },
   "homepage.features.blacklist.title": {
     "message": "Padrões de bloqueio"

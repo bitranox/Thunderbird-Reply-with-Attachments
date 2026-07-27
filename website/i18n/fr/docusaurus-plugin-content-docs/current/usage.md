@@ -9,28 +9,29 @@ sidebar_label: 'Utilisation'
 ## Utilisation {#usage}
 
 - Répondre et le module complémentaire ajoute automatiquement les originaux — ou demande d’abord confirmation, si activé dans Options.
-- Dédupliqué par nom de fichier ; les parties S/MIME sont toujours ignorées. Les images en ligne sont restaurées dans le corps de la réponse par défaut (désactiver via "Include inline pictures" dans Options).
+- La déduplication se fait par nom de fichier ; les parties S/MIME sont toujours ignorées. Les images intégrées dans le message d'origine restent dans le corps de la réponse, là où Thunderbird les place, et ne sont pas copiées en tant que fichiers.
 - Les pièces jointes sur liste noire sont également ignorées (motifs glob insensibles à la casse correspondant aux noms de fichier, pas aux chemins). Voir [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Ce qui se passe lors d’une réponse {#what-happens}
 
-- Détecter la réponse → lister les pièces jointes d’origine → filtrer S/MIME + en ligne → confirmation optionnelle → ajouter les fichiers éligibles (ignorer les doublons) → restaurer les images en ligne dans le corps.
+- Détecter la réponse → lister les pièces jointes d'origine → ignorer S/MIME et les images intégrées → confirmation facultative → ajouter les fichiers éligibles (en ignorant les doublons).
 
-Passage strict vs. passage assoupli : le module complémentaire exclut d’abord les parties S/MIME et en ligne des pièces jointes fichiers. Si rien ne convient, il exécute un passage assoupli qui exclut toujours S/MIME/en ligne mais tolère plus de cas (voir Détails du code). Les images en ligne ne sont jamais ajoutées comme pièces jointes fichiers ; à la place, lorsque "Include inline pictures" est activé (valeur par défaut), elles sont intégrées directement dans le corps de la réponse sous forme d’URI de données base64.
+| Type de partie                                              | Copié dans la réponse        |
+|-------------------------------------------------------------|-----------------------------:|
+| Fichier de signature S/MIME `smime.p7s`                     | Non                          |
+| Types MIME S/MIME (`application/pkcs7-*`)                   | Non                          |
+| Image que le corps du message intègre via `cid:`            | Non (elle est dans le corps) |
+| Image marquée `Content-Disposition: inline`                 | Non (elle est dans le corps) |
+| Image avec un `Content-ID` que le corps ne référence jamais | Oui                          |
+| E-mail joint (`message/rfc822`) avec un nom de fichier      | Oui                          |
+| Pièce jointe normale avec un nom de fichier                 | Oui                          |
 
-| Type de partie                                           | Passage strict                   | Passage assoupli                 |
-|----------------------------------------------------------|---------------------------------:|---------------------------------:|
-| Fichier de signature S/MIME `smime.p7s`                  | Exclu                            | Exclu                            |
-| Types MIME S/MIME (`application/pkcs7-*`)                | Exclu                            | Exclu                            |
-| Image en ligne référencée par Content‑ID (`image/*`)     | Exclu (restauré dans le corps\*) | Exclu (restauré dans le corps\*) |
-| E‑mail attaché (`message/rfc822`) avec un nom de fichier | Non ajouté                       | Peut être ajouté                 |
-| Pièce jointe de fichier classique avec un nom de fichier | Peut être ajouté                 | Peut être ajouté                 |
-
-\* Lorsque "Include inline pictures" est activé (par défaut : ON), les images en ligne sont intégrées dans le corps de la réponse sous forme d’URI de données base64 plutôt qu’ajoutées comme pièces jointes fichiers. Voir [Configuration](configuration#include-inline-pictures).
-
-Exemple : Certaines pièces jointes peuvent manquer de certains en-têtes tout en restant des fichiers classiques (ni en ligne ni S/MIME). Si le passage strict n’en trouve aucune, le passage assoupli peut les accepter et les joindre.
+Une image n'est considérée comme intégrée que lorsque le message d'origine la référence réellement,
+ou lorsque l'expéditeur l'a explicitement marquée `Content-Disposition: inline`. Un simple
+en-tête `Content-ID` ne suffit pas : plusieurs clients de messagerie en placent un sur chaque partie image,
+y compris les pièces jointes authentiques, et celles-ci doivent quand même être copiées.
 
 ---
 
@@ -88,7 +89,7 @@ Exemple : Certaines pièces jointes peuvent manquer de certains en-têtes tout e
 
 ## Pourquoi des pièces jointes peuvent ne pas être ajoutées {#why-attachments-might-not-be-added}
 
-- Les images en ligne ne sont pas ajoutées comme pièces jointes fichiers. Lorsque "Include inline pictures" est sur ON (valeur par défaut), elles sont intégrées dans le corps de la réponse en tant qu’URI de données. Si le paramètre est sur OFF, les images en ligne sont entièrement supprimées. Voir [Configuration](configuration#include-inline-pictures).
+- Les images que le message d'origine intègre ne sont pas copiées comme fichiers. Elles se trouvent déjà dans le corps de la réponse, là où Thunderbird les a placées. Voir [Configuration](configuration#include-inline-pictures).
 - Les parties de signature S/MIME sont exclues par conception : des noms de fichier comme `smime.p7s` et des types MIME tels que `application/pkcs7-signature` ou `application/pkcs7-mime` sont ignorés.
 - Les motifs de liste noire peuvent filtrer des candidats : voir [Configuration](configuration#blacklist-glob-patterns) ; la correspondance est insensible à la casse et ne porte que sur le nom de fichier.
 - Les noms de fichier en double ne sont pas réajoutés : si la rédaction contient déjà un fichier avec le même nom normalisé, il est ignoré.

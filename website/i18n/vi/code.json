@@ -54,7 +54,7 @@
     "message": "Bỏ qua SMIME & nội tuyến"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Chữ ký SMIME và hình ảnh nội tuyến sẽ bị loại trừ để phần trả lời gọn nhẹ."
+    "message": "Chu ky SMIME khong bao gio duoc sao chep. Hinh anh nhung trong noi dung thu van o lai trong noi dung tra loi, noi Thunderbird da luu chung, thay vi bi dinh kem them mot lan nua."
   },
   "homepage.features.blacklist.title": {
     "message": "Mẫu danh sách đen"

@@ -54,7 +54,7 @@
     "message": "Svetuka SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Masiginecha eSMIME nemifananidzo ye-inline hazvisanganiswi kuti mhinduro dzigare dzakareruka."
+    "message": "Zvisainiwa zveSMIME hazvimboiswi kopi. Mifananidzo iri mumushumo yemeseji inoramba iri mumhinduro, uko Thunderbird inoichengeta, pane kuiisazve sechinyorwa chakabatanidzwa."
   },
   "homepage.features.blacklist.title": {
     "message": "Mapatani eKurambidza"

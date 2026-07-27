@@ -54,7 +54,7 @@
     "message": "Liwatkeun SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Tandatangan SMIME jeung gambar inline teu diasupkeun supaya balesan tetep enteng."
+    "message": "Tanda tangan SMIME henteu pernah dikopi. Gambar anu napel dina eusi pesen tetep aya dina eusi balesan, dimana Thunderbird nyimpenna, tibatan ditambahkeun deui salaku lampiran."
   },
   "homepage.features.blacklist.title": {
     "message": "Pola Daptar Hideung"

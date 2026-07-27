@@ -54,7 +54,7 @@
     "message": "Ignora SMIME e contenuti in linea"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Le firme SMIME e le immagini in linea vengono escluse per mantenere le risposte leggere."
+    "message": "Le firme SMIME non vengono mai copiate. Le immagini incorporate nel corpo del messaggio restano nel corpo della risposta, dove Thunderbird le colloca già, invece di essere allegate una seconda volta."
   },
   "homepage.features.blacklist.title": {
     "message": "Pattern della blacklist"

@@ -54,7 +54,7 @@
     "message": "Spring SMIME og inline over"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME-signaturer og indlejrede billeder udelades for at holde svarene lette."
+    "message": "SMIME-signaturer kopieres aldrig. Billeder indlejret i beskedens brødtekst forbliver i svarets brødtekst, hvor Thunderbird allerede placerer dem, i stedet for at blive vedhæftet endnu en gang."
   },
   "homepage.features.blacklist.title": {
     "message": "Blokeringslistemønstre"

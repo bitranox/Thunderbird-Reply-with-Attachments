@@ -8,17 +8,7 @@ sidebar_label: 'Fitur'
 
 ## Fitur {#features}
 
-- Otomatis ngalampirkeun berkas tina email aslina nalika ngawalon.
-- Paripolahna bisa diatur: lampiran bisa
-  - ditambahkeun otomatis, atawa
-  - ditambahkeun ngan sanggeus konfirmasi (dialog leutik, aksésibel). Dina Pilihan anjeun bisa ngaktipkeun konfirmasi jeung milih jawaban standar (Enya/Henteu).
-- Daptar hideung ngaran berkas (pola glob) nyegah berkas tangtu supaya teu otomatis dilampirkeun. Conto: `*intern*`, `*secret*`, `*passwor*`. Panyocokan teu ngabédakeun hurup gedé/leutik sarta ngan marios ngaran berkas wungkul; pasihkeun hiji pola per baris dina Pilihan.
-- Peringatan daptar hideung (pilihan, aktip sacara standar): nalika berkas dikecualikeun ku daptar hideung anjeun, kotak dialog modal leutik ngadaptarkeun berkas jeung pola anu nyocogkeun. Ramah mode poék sarta aksésibel ku kibor (Enter/Esc pikeun nutup).
-- Gawé dina Waler jeung Waler ka sadayana. Neruskeun teu dirobih ku add-on ieu.
-- Nambahkeun nu aslina sanajan anjeun geus nambahkeun hiji hal sorangan; nyingkahan duplikat dumasar ngaran berkas.
-- Pangajaga duplikat per‑tab nyegah nambah dua kali dina tab nyusun anu sarua.
-- Ngaliwatkeun sertipikat S/MIME sacara standar pikeun nyingkahan lampiran anu teu perlu.
-- Ngahijikeun gambar inline (standar: HURUNG). Gambar nu diselapkeun dipulihkeun langsung dina awak waleran minangka data URI base64, ngajaga tata perenah inline aslina. Pareuman dina Pilihan pikeun ngaliwatkeun gambar inline sakabéhna.
+- Gambar anu ditempelkeun (embedded) diserenkeun ka Thunderbird: éta tetep aya dina awak balesan sarta henteu dikopi salaku lampiran file. Gambar anu ngan ngabogaan `Content-ID` tanpa dirujuk dianggap salaku lampiran biasa jeung dikopi.
 
 ---
 

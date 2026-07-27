@@ -54,7 +54,7 @@
     "message": "SMIME və daxili məzmunu keç"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Cavabları yığcam saxlamaq üçün SMIME imzaları və daxili şəkillər istisna edilir."
+    "message": "SMIME imzaları heç vaxt kopyalanmır. Mesajın gövdəsinə yerləşdirilmiş şəkillər Thunderbird-in onları saxladığı yerdə, yəni cavabın gövdəsində qalır, ikinci dəfə qoşma kimi əlavə olunmaq əvəzinə."
   },
   "homepage.features.blacklist.title": {
     "message": "Qara siyahı şablonları"

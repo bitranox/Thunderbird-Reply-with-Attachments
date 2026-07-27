@@ -9,28 +9,29 @@ sidebar_label: 'Käyttö'
 ## Käyttö {#usage}
 
 - Vastaa ja lisäosa lisää alkuperäiset automaattisesti — tai kysyy ensin, jos asetus on otettu käyttöön Asetuksissa.
-- Duplikaatit poistetaan tiedostonimen perusteella; S/MIME‑osat ohitetaan aina. Upotetut kuvat palautetaan oletuksena vastauksen runkoon (poista käytöstä kohdasta "Include inline pictures" Asetuksissa).
+- Kaksoiskappaleet poistetaan tiedostonimen perusteella; S/MIME-osat ohitetaan aina. Alkuperäiseen viestiin upotetut kuvat pysyvät vastauksen rungossa, johon Thunderbird ne sijoittaa, eikä niitä kopioida tiedostoina.
 - Mustalistatut liitteet ohitetaan myös (kirjainkoosta riippumattomat glob‑kuviot, jotka täsmäävät tiedostonimiin, eivät polkuihin). Katso [Määritykset](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Mitä tapahtuu vastattaessa {#what-happens}
 
-- Tunnista vastaus → luetteloi alkuperäiset liitteet → suodata S/MIME + upotetut → valinnainen vahvistus → lisää kelpaavat tiedostot (ohita duplikaatit) → palauta upotetut kuvat runkoon.
+- Tunnista vastaus → listaa alkuperäiset liitteet → ohita S/MIME ja upotetut kuvat → valinnainen vahvistus → lisää kelvolliset tiedostot (kaksoiskappaleet ohittaen).
 
-Tiukka vs. sallivampi läpikäynti: Lisäosa sulkee ensin S/MIME‑ ja upotetut osat pois tiedostoliitteistä. Jos mikään ei täytä ehtoja, se suorittaa sallivamman läpikäynnin, joka yhä sulkee pois S/MIME/inline‑osat mutta sietää useampia tapauksia (katso Koodin yksityiskohdat). Upotettuja kuvia ei koskaan lisätä tiedostoliitteiksi; sen sijaan, kun "Include inline pictures" on käytössä (oletus), ne upotetaan suoraan vastauksen runkoon base64‑data‑URI:na.
+| Osan tyyppi                                                   | Kopioidaan vastaukseen |
+|---------------------------------------------------------------|-----------------------:|
+| S/MIME-allekirjoitustiedosto `smime.p7s`                      | Ei                     |
+| S/MIME MIME-tyypit (`application/pkcs7-*`)                    | Ei                     |
+| Kuva, jonka viestin runko upottaa `cid:`-viitteellä           | Ei (se on rungossa)    |
+| Kuva, joka on merkitty `Content-Disposition: inline`          | Ei (se on rungossa)    |
+| Kuva, jolla on `Content-ID`, johon runko ei koskaan viittaa   | Kyllä                  |
+| Liitetty sähköposti (`message/rfc822`), jolla on tiedostonimi | Kyllä                  |
+| Tavallinen tiedostoliite, jolla on tiedostonimi               | Kyllä                  |
 
-| Osatyyppi                                                     | Tiukka läpikäynti                    | Sallivampi läpikäynti                |
-|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| S/MIME‑allekirjoitustiedosto `smime.p7s`                      | Poissuljettu                         | Poissuljettu                         |
-| S/MIME MIME‑tyypit (`application/pkcs7-*`)                    | Poissuljettu                         | Poissuljettu                         |
-| Sisäinen kuva, johon viitataan Content‑ID:llä (`image/*`)     | Poissuljettu (palautetaan runkoon\*) | Poissuljettu (palautetaan runkoon\*) |
-| Liitteenä oleva sähköposti (`message/rfc822`) tiedostonimellä | Ei lisätä                            | Saatetaan lisätä                     |
-| Tavallinen tiedostoliite, jolla on tiedostonimi               | Saatetaan lisätä                     | Saatetaan lisätä                     |
-
-\* Kun "Include inline pictures" on käytössä (oletus: PÄÄLLÄ), upotetut kuvat upotetaan vastauksen runkoon base64‑data‑URI:na sen sijaan, että ne lisättäisiin tiedostoliitteiksi. Katso [Määritykset](configuration#include-inline-pictures).
-
-Esimerkki: Joiltakin liitteiltä voi puuttua tiettyjä otsakkeita, mutta ne ovat silti tavallisia tiedostoja (eivät upotettuja/S/MIME). Jos tiukka läpikäynti ei löydä yhtään, sallivampi läpikäynti voi hyväksyä ne ja liittää ne.
+Kuva lasketaan upotetuksi vain, kun alkuperäinen viesti todella viittaa siihen,
+tai kun lähettäjä on nimenomaisesti merkinnyt sen `Content-Disposition: inline`. Pelkkä
+`Content-ID`-otsake ei riitä: useat sähköpostiohjelmat asettavat sellaisen jokaiseen kuvaosaan,
+myös aitoihin liitteisiin, ja ne on silti kopioitava.
 
 ---
 
@@ -85,7 +86,7 @@ Esimerkki: Joiltakin liitteiltä voi puuttua tiettyjä otsakkeita, mutta ne ovat
 
 ## Miksi liitteitä ei ehkä lisätä {#why-attachments-might-not-be-added}
 
-- Upotettuja kuvia ei lisätä tiedostoliitteinä. Kun "Include inline pictures" on PÄÄLLÄ (oletus), ne upotetaan vastauksen runkoon data‑URI:na. Jos asetus on POIS, upotetut kuvat poistetaan kokonaan. Katso [Määritykset](configuration#include-inline-pictures).
+- Kuvia, jotka alkuperäinen viesti upottaa, ei kopioida tiedostoina. Ne ovat jo vastauksen rungossa, johon Thunderbird on ne asettanut. Katso [Asetukset](configuration#include-inline-pictures).
 - S/MIME‑allekirjoitusosat jätetään tarkoituksella pois: tiedostonimet kuten `smime.p7s` ja MIME‑tyypit kuten `application/pkcs7-signature` tai `application/pkcs7-mime` ohitetaan.
 - Mustalistan kuviot voivat suodattaa ehdokkaita: katso [Määritykset](configuration#blacklist-glob-patterns); täsmäys on kirjainkoosta riippumaton ja koskee vain tiedostonimeä.
 - Päällekkäisiä tiedostonimiä ei lisätä uudelleen: jos kirjoitettava viesti sisältää jo tiedoston, jolla on sama normalisoitu nimi, se ohitetaan.

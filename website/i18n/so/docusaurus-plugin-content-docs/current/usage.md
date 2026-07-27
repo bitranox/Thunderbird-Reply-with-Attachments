@@ -9,28 +9,29 @@ sidebar_label: 'Isticmaalka'
 ## Isticmaalka {#usage}
 
 - Ku jawaab, kadibna kordhintu (add‑on) si toos ah ayay u dari doontaa asalka — ama marka hore way ku waydiin doontaa, haddii lagu daaray Xulashooyinka (Options).
-- Is‑ku‑celcelis waxaa laga saaraa magaca faylka; qaybaha S/MIME mar walba waa la dhaafaa. Sawirrada inline waxaa caadi ahaan dib loogu soo celinayaa jidhka jawaabta (waxaad damin kartaa adigoo ka damiya "Ku dar sawirrada inline" ee Xulashooyinka).
+- Nuqulaha isku mid ah ee magaca faylka waa laga saaraa; qaybaha S/MIME had iyo jeer waa la boodaa. Sawirrada ku dhex jira fariinta asalka ah waxay ku sii jiraan jawaabta jidhkeeda, meesha Thunderbird ay geliyaan, mana koobiyeeyaan sida fayl.
 - Lifaaqyada liiska madow ku jira sidoo kale waa la dhaafaa (qaababka glob ee aan kala soocin xarfo waaweyn/yaryar oo ku ekaada magacyada faylka, ma aha waddooyinka). Eeg [Habayn](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Maxaa dhaca marka la jawaabo {#what-happens}
 
-- Ogaansho jawaab → tax lifaaqyadii asalka ahaa → shaandhee S/MIME + inline → xaqiijin ikhtiyaari ah → ku dar faylasha u qalma (ka bood kuwa soo noqnoqda) → ku soo celi sawirrada inline jidhka.
+- Ogow jawaabta → liiskoobi lifaaqyada asalka ah → ka bood S/MIME iyo sawirrada ku dhex jira → xaqiijin ikhtiyaari ah → ku dar faylasha u qalma (iyada oo laga boodayo kuwa isku mid ah).
 
-Wareeg adag vs. wareeg dabacsan: Kordhintu marka hore waxay ka reebtaa fayl‑lifaaqyada qaybaha S/MIME iyo kuwa inline. Haddii waxba u qalmin, waxay ordaa wareeg dabacsan oo weli ka reeba S/MIME/inline balse u dulqaata xaalado dheeraad ah (eeg Faahfaahinta Koodhka). Sawirrada inline waligood looma daro sidii fayl‑lifaaqyo; taa beddelkeeda, marka "Ku dar sawirrada inline" la daaray (caadiga), waxaa si toos ah loogu xidhaa jidhka jawaabta iyagoo ah base64 data URI‑yo.
+| Nooca qaybta                                           | Ku koobiyeeyay jawaabta      |
+|--------------------------------------------------------|-----------------------------:|
+| Faylka saxeexa S/MIME ee `smime.p7s`                   | Maya                         |
+| Noocyada MIME ee S/MIME (`application/pkcs7-*`)        | Maya                         |
+| Sawir uu jidhka fariintu ku daro `cid:`                | Maya (wuxuu ku jiraa jidhka) |
+| Sawir lagu calaamadeeyay `Content-Disposition: inline` | Maya (wuxuu ku jiraa jidhka) |
+| Sawir leh `Content-ID` aan jidhku weligiis tixraacin   | Haa                          |
+| Iimayl lifaaqan (`message/rfc822`) oo leh magac fayl   | Haa                          |
+| Lifaaqid fayl caadi ah oo leh magac fayl               | Haa                          |
 
-| Nooca qaybta                                           | Wareeg adag                                 | Wareeg dabacsan                             |
-|--------------------------------------------------------|--------------------------------------------:|--------------------------------------------:|
-| Fayl saxeex S/MIME `smime.p7s`                         | Laga reebay                                 | Laga reebay                                 |
-| Noocyada MIME ee S/MIME (`application/pkcs7-*`)        | Laga reebay                                 | Laga reebay                                 |
-| Sawir inline oo lagu tixraacay Content‑ID (`image/*`)  | Laga reebay (dib loogu soo celiyo jidhka\*) | Laga reebay (dib loogu soo celiyo jidhka\*) |
-| Email la lifaaqay (`message/rfc822`) oo leh magac fayl | Lama daro                                   | Waxaa laga yaabaa in la daro                |
-| Lifaaq fayl caadi ah oo leh magac                      | Waxaa laga yaabaa in la daro                | Waxaa laga yaabaa in la daro                |
-
-\* Marka "Ku dar sawirrada inline" la daaray (default: ON), sawirrada inline waxaa lagu dhex beeraa jidhka jawaabta iyagoo ah base64 data URI‑yo halkii lagu dari lahaa fayl‑lifaaqyo ahaan. Eeg [Habayn](configuration#include-inline-pictures).
-
-Tusaale: Lifaaqyo qaarkood waxaa ka maqan qaar ka mid ah cinwaanada (headers) hase yeeshee weli waa faylal caadi ah (ma aha inline/S/MIME). Haddii wareegga adag uusan wax helin, wareegga dabacsan ayaa aqbali kara kuwaas oo ku lifaaqi kara.
+Sawirku wuxuu u tiraahdaa mid ku dhex jira oo kaliya markuu fariinta asalka ahi runtii tixraacayo,
+ama marka soo diriyuhu si cad ugu calaamadeeyay `Content-Disposition: inline`. Titiraale
+`Content-ID` oo kaliya kuma filna: barnaamijyo iimayl badan ayaa mid ku dari qayb sawir kasta,
+oo ay ku jiraan lifaaqyo dhab ah, kuwaasoo weli looga baahan yahay in la koobiyeeyo.
 
 ---
 
@@ -87,7 +88,7 @@ Tusaale: Lifaaqyo qaarkood waxaa ka maqan qaar ka mid ah cinwaanada (headers) ha
 
 ## Sababaha lifaaqyada laga yaabo inaan la darin {#why-attachments-might-not-be-added}
 
-- Sawirrada inline looma darin fayl‑lifaaqyo ahaan. Marka "Ku dar sawirrada inline" ay ON tahay (caadiga), taa beddelkeeda waxaa lagu dhex beeraa jidhka jawaabta iyagoo ah data URI‑yo. Haddii dejintu OFF tahay, sawirrada inline si buuxda ayaa loo qaadaa. Eeg [Habayn](configuration#include-inline-pictures).
+- Sawirrada uu farriintii asalka ahi ku dhex geliyay lama koobiyeeyo sida faylal. Waxay horeba ugu jiraan qoraalka jawaabta, meesha Thunderbird ay geeyay. Fiiri [Configuration](configuration#include-inline-pictures).
 - Qaybaha saxeexa S/MIME si ula kac ah ayaa loo reebaa: magacyada faylka sida `smime.p7s` iyo noocyada MIME sida `application/pkcs7-signature` ama `application/pkcs7-mime` waa la dhaafaa.
 - Qaababka liiska madow waxay shaandhayn karaan musharrixiinta: eeg [Habayn](configuration#blacklist-glob-patterns); isku‑eegistu ma kala saarto xarfo waaweyn/yaryar oo waxay ku xaddidan tahay magaca faylka oo keliya.
 - Magacyada faylalka isku midka ah lama soo celceliyo: haddii qoristu durba hayso fayl leh magac la caadiyeeyey oo isku mid ah, waa la dhaafaa.

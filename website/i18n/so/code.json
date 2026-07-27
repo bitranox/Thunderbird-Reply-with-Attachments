@@ -54,7 +54,7 @@
     "message": "Ka bood SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Saxiixyada SMIME iyo sawirrada inline‑ka ayaa laga reebaa si jawaabaha ay u ahaadaan fudud."
+    "message": "Saxiixyada SMIME weligood lama koobiyeeyo. Sawirrada ku dhex jira qoraalka fariinta ayaa ku sii jira jawaabta, halka Thunderbird ay ku hayso, halkii lagu lifaaqi lahaa mar labaad."
   },
   "homepage.features.blacklist.title": {
     "message": "Qaabab Liiska Madow"

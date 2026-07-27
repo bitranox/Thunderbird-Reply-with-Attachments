@@ -9,28 +9,29 @@ sidebar_label: 'Kasutamine'
 ## Kasutamine {#usage}
 
 - Vastamisel lisab lisandmoodul algsed manused automaatselt — või küsib enne kinnitust, kui Options-is on see lubatud.
-- Duplikaadid eemaldatakse failinime alusel; S/MIME osad jäetakse alati vahele. Sisepildid taastatakse vaikimisi vastuse kehas (saab keelata valikuga "Include inline pictures" menüüs Options).
+- Duplikaadid eemaldatakse failinime järgi; S/MIME osad jäetakse alati vahele. Algsesse sõnumisse manustatud pildid jäävad vastuse põhiosasse, kuhu Thunderbird need paigutab, ega kopeerita failidena.
 - Mustas nimekirjas olevad manused jäetakse samuti vahele (tõstutundetud glob‑mustrid, mis vastenduvad failinimedele, mitte radadele). Vaata [Seadistus](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Mis vastamisel juhtub {#what-happens}
 
-- Tuvasta vastus → loetle algsed manused → filtreeri S/MIME + sisemised → valikuline kinnitus → lisa sobivad failid (jäta duplikaadid vahele) → taasta sisepildid kehas.
+- Tuvasta vastus → loetle algsed manused → jäta vahele S/MIME ja manustatud pildid → valikuline kinnitus → lisa sobivad failid (duplikaadid vahele jättes).
 
-Range vs. leebem läbikäik: Lisandmoodul välistab esmalt S/MIME ja sisemised osad failimanuste hulgast. Kui miski ei kvalifitseeru, tehakse leebem läbikäik, mis jätab endiselt S/MIME/sisemised osad välja, kuid talub rohkem juhte (vt Koodi üksikasjad). Sisepilte ei lisata kunagi failimanustena; selle asemel, kui "Include inline pictures" on lubatud (vaikimisi), põimitakse need otse vastuse kehasse base64 andme‑URI-dena.
+| Osa tüüp                                                | Kopeeritakse vastusesse |
+|---------------------------------------------------------|------------------------:|
+| S/MIME allkirjafail `smime.p7s`                         | Ei                      |
+| S/MIME MIME-tüübid (`application/pkcs7-*`)              | Ei                      |
+| Pilt, mille sõnumi põhiosa manustab `cid:` kaudu        | Ei (see on põhiosas)    |
+| Pilt, mis on märgitud kui `Content-Disposition: inline` | Ei (see on põhiosas)    |
+| Pilt `Content-ID`-ga, millele põhiosa kunagi ei viita   | Jah                     |
+| Manustatud e-kiri (`message/rfc822`) failinimega        | Jah                     |
+| Tavaline manustatud fail failinimega                    | Jah                     |
 
-| Osa tüüp                                                    | Range läbikäik                   | Leebem läbikäik                  |
-|-------------------------------------------------------------|---------------------------------:|---------------------------------:|
-| S/MIME allkirjafail `smime.p7s`                             | Välistatud                       | Välistatud                       |
-| S/MIME MIME‑tüübid (`application/pkcs7-*`)                  | Välistatud                       | Välistatud                       |
-| Sisemine pilt, millele viitab Content‑ID (`image/*`)        | Välistatud (taastatakse kehas\*) | Välistatud (taastatakse kehas\*) |
-| Manusena lisatud e‑kiri (`message/rfc822`) koos failinimega | Ei lisata                        | Võidakse lisada                  |
-| Tavaline failimanus koos failinimega                        | Võidakse lisada                  | Võidakse lisada                  |
-
-\* Kui "Include inline pictures" on lubatud (vaikimisi: ON), põimitakse sisepildid vastuse kehasse base64 andme‑URI-dena, mitte ei lisata failimanustena. Vaata [Seadistus](configuration#include-inline-pictures).
-
-Näide: Mõnel manusel võivad teatud päised puududa, kuid need on siiski tavalised failid (mitte sisemised/S/MIME). Kui range läbikäik ei leia ühtegi, võib leebem läbikäik need aktsepteerida ja manustada.
+Pilti loetakse manustatuks ainult siis, kui algne sõnum tegelikult sellele viitab,
+või kui saatja on selle sõnaselgelt märkinud kui `Content-Disposition: inline`. Pelgalt
+`Content-ID` päisest ei piisa: paljud e-posti kliendid lisavad selle igale pildiosale,
+sealhulgas tõelistele manustele, ja need tuleb sellegipoolest kopeerida.
 
 ---
 
@@ -85,7 +86,7 @@ Näide: Mõnel manusel võivad teatud päised puududa, kuid need on siiski taval
 
 ## Miks manuseid ei pruugita lisada {#why-attachments-might-not-be-added}
 
-- Sisemisi pilte ei lisata failimanustena. Kui "Include inline pictures" on ON (vaikimisi), põimitakse need vastuse kehasse andme‑URI-dena. Kui säte on OFF, eemaldatakse sisepildid täielikult. Vaata [Seadistus](configuration#include-inline-pictures).
+- Pilte, mida algne sõnum manustab, ei kopeerita failidena. Need on juba vastuse sisus, kuhu Thunderbird need pani. Vt [Konfiguratsioon](configuration#include-inline-pictures).
 - S/MIME allkirjaosad jäetakse disaini järgi välja: failinimed nagu `smime.p7s` ja MIME‑tüübid nagu `application/pkcs7-signature` või `application/pkcs7-mime` jäetakse vahele.
 - Musta nimekirja mustrid võivad kandidaate filtreerida: vt [Seadistus](configuration#blacklist-glob-patterns); sobitus on tõstutundetu ja ainult failinime põhine.
 - Duplitseerunud failinimesid ei lisata uuesti: kui koostamisel on juba sama normaliseeritud nimega fail, jäetakse see vahele.

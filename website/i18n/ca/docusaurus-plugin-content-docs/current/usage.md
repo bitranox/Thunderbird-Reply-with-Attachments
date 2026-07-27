@@ -9,28 +9,29 @@ sidebar_label: 'Ús'
 ## Ús {#usage}
 
 - Respon i el complement afegeix els originals automàticament — o bé pregunta abans, si està habilitat a Opcions.
-- Desduplicació pel nom de fitxer; les parts S/MIME sempre s'ometen. Les imatges en línia es restauren al cos de la resposta per defecte (desactiveu-ho mitjançant "Include inline pictures" a Opcions).
+- Es desduplica pel nom del fitxer; les parts S/MIME sempre s'ometen. Les imatges incrustades al missatge original es queden al cos de la resposta, on Thunderbird les col·loca, i no es copien com a fitxers.
 - Els adjunts a la llista negra també s'ometen (patrons glob que no distingeixen entre majúscules i minúscules i que coincideixen amb noms de fitxer, no amb rutes). Vegeu [Configuració](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Què passa en respondre {#what-happens}
 
-- Detectar resposta → llistar els adjunts originals → filtrar S/MIME + en línia → confirmació opcional → afegir els fitxers elegibles (ometre duplicats) → restaurar les imatges en línia al cos.
+- Detectar la resposta → llistar els adjunts originals → ometre S/MIME i les imatges incrustades → confirmació opcional → afegir els fitxers elegibles (ometent duplicats).
 
-Passada estricta vs. relaxada: El complement primer exclou les parts S/MIME i en línia dels adjunts de fitxer. Si no n'hi ha cap que compleixi els criteris, executa una passada relaxada que continua excloent S/MIME/en línia però tolera més casos (vegeu Detalls del codi). Les imatges en línia mai no s'afegeixen com a adjunts de fitxer; en lloc d'això, quan "Include inline pictures" està habilitat (el valor per defecte), s'incrusten directament al cos de la resposta com a URI de dades base64.
+| Tipus de part                                         | Es copia a la resposta |
+|-------------------------------------------------------|-----------------------:|
+| Fitxer de signatura S/MIME `smime.p7s`                | No                     |
+| Tipus MIME de S/MIME (`application/pkcs7-*`)          | No                     |
+| Imatge que el cos del missatge incrusta per `cid:`    | No (és al cos)         |
+| Imatge marcada com a `Content-Disposition: inline`    | No (és al cos)         |
+| Imatge amb un `Content-ID` que el cos mai referencia  | Sí                     |
+| Correu adjunt (`message/rfc822`) amb un nom de fitxer | Sí                     |
+| Fitxer adjunt normal amb un nom de fitxer             | Sí                     |
 
-| Tipus de part                                           | Passada estricta              | Passada relaxada              |
-|---------------------------------------------------------|------------------------------:|------------------------------:|
-| Fitxer de signatura S/MIME `smime.p7s`                  | Exclòs                        | Exclòs                        |
-| Tipus MIME S/MIME (`application/pkcs7-*`)               | Exclòs                        | Exclòs                        |
-| Imatge en línia referenciada per Content‑ID (`image/*`) | Exclosa (restaurada al cos\*) | Exclosa (restaurada al cos\*) |
-| Correu adjunt (`message/rfc822`) amb un nom de fitxer   | No s'afegeix                  | Es pot afegir                 |
-| Adjunt de fitxer normal amb un nom de fitxer            | Es pot afegir                 | Es pot afegir                 |
-
-\* Quan "Include inline pictures" està habilitat (per defecte: ON), les imatges en línia s'incrusten al cos de la resposta com a URI de dades base64 en lloc d'afegir-les com a fitxers adjunts. Vegeu [Configuració](configuration#include-inline-pictures).
-
-Exemple: Alguns adjunts poden mancar d'algunes capçaleres però continuen sent fitxers normals (no en línia/S/MIME). Si la passada estricta no en troba cap, la passada relaxada pot acceptar-los i adjuntar-los.
+Una imatge només compta com a incrustada quan el missatge original realment hi fa referència,
+o quan el remitent l'ha marcada explícitament com a `Content-Disposition: inline`. Una simple
+capçalera `Content-ID` no és suficient: molts clients de correu en posen una a cada part d'imatge,
+incloent-hi adjunts genuïns, i aquests s'han de copiar igualment.
 
 ---
 
@@ -88,7 +89,7 @@ Exemple: Alguns adjunts poden mancar d'algunes capçaleres però continuen sent 
 
 ## Per què pot ser que no s'afegeixin fitxers adjunts {#why-attachments-might-not-be-added}
 
-- Les imatges en línia no s'afegeixen com a adjunts de fitxer. Quan "Include inline pictures" és ON (per defecte), en lloc d'això s'incrusten al cos de la resposta com a URI de dades. Si l'ajust és OFF, les imatges en línia s'eliminen completament. Vegeu [Configuració](configuration#include-inline-pictures).
+- Les imatges que el missatge original incrusta no es copien com a fitxers. Ja són al cos de la resposta, on les ha posades el Thunderbird. Vegeu [Configuració](configuration#include-inline-pictures).
 - Les parts de signatura S/MIME s'exclouen per disseny: noms de fitxer com `smime.p7s` i tipus MIME com `application/pkcs7-signature` o `application/pkcs7-mime` s'ometen.
 - Els patrons de llista negra poden filtrar candidats: vegeu [Configuració](configuration#blacklist-glob-patterns); la coincidència no distingeix majúscules/minúscules i és només pel nom de fitxer.
 - Els noms de fitxer duplicats no es tornen a afegir: si la redacció ja conté un fitxer amb el mateix nom normalitzat, s'omet.

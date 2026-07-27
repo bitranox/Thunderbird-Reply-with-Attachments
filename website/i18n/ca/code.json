@@ -54,7 +54,7 @@
     "message": "Omet SMIME i elements en línia"
   },
   "homepage.features.skipSmime.body": {
-    "message": "S’exclouen les signatures SMIME i les imatges en línia per mantenir les respostes lleugeres."
+    "message": "Les signatures SMIME mai es copien. Les imatges incrustades al cos del missatge romanen al cos de la resposta, on Thunderbird ja les manté, en lloc de tornar-se a adjuntar."
   },
   "homepage.features.blacklist.title": {
     "message": "Patrons de bloqueig"

@@ -9,28 +9,30 @@ sidebar_label: 'Paggamit'
 ## Paggamit {#usage}
 
 - Mag-reply at awtomatikong idinadagdag ng add‑on ang mga orihinal — o magtatanong muna, kung naka-enable sa Options.
-- Walang duplikado batay sa filename; laging nilalaktawan ang mga bahagi ng S/MIME. Ang mga inline na larawan ay ibinabalik sa katawan ng reply bilang default (i-disable sa pamamagitan ng "Include inline pictures" sa Options).
+- Inaalis ang mga duplicate batay sa filename; laging nilalaktawan ang mga bahagi ng S/MIME. Ang mga larawang naka-embed sa orihinal na mensahe ay nananatili sa body ng tugon, kung saan inilalagay ito ng Thunderbird, at hindi kinokopya bilang mga file.
 - Ang mga attachment na nasa blacklist ay nilalaktawan din (case‑insensitive na mga glob pattern na tumutugma sa mga filename, hindi sa mga path). Tingnan ang [Configuration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Ano ang nangyayari kapag nag-reply {#what-happens}
 
-- Tukuyin ang reply → ilista ang mga orihinal na attachment → i-filter ang S/MIME + inline → opsyonal na kumpirmasyon → idagdag ang mga kuwalipikadong file (laktawan ang mga duplikado) → ibalik ang mga inline na larawan sa katawan.
+- Tukuyin ang tugon → ilista ang mga orihinal na attachment → laktawan ang S/MIME at mga naka-embed na larawan → opsyonal na kumpirmasyon → idagdag ang mga kwalipikadong file (laktawan ang mga duplicate).
 
-Mahigpit vs. maluwag na pass: Unang inaalis ng add‑on ang mga bahagi ng S/MIME at inline mula sa mga file attachment. Kung walang pumasa, nagpapatakbo ito ng isang maluwag na pass na patuloy na nag-eexclude ng S/MIME/inline ngunit mas maraming kaso ang tinatanggap (tingnan ang Code Details). Ang mga inline na larawan ay hindi kailanman idinadagdag bilang mga file attachment; sa halip, kapag naka-enable ang "Include inline pictures" (ang default), direktang ini-embed ang mga ito sa katawan ng reply bilang mga base64 data URI.
+| Uri ng bahagi                                                    | Kinopya sa tugon         |
+|------------------------------------------------------------------|-------------------------:|
+| File ng S/MIME signature `smime.p7s`                             | Hindi                    |
+| Mga uri ng MIME ng S/MIME (`application/pkcs7-*`)                | Hindi                    |
+| Larawang naka-embed ng body ng mensahe sa pamamagitan ng `cid:`  | Hindi (nasa body na ito) |
+| Larawang minarkahang `Content-Disposition: inline`               | Hindi (nasa body na ito) |
+| Larawan na may `Content-ID` na hindi kailanman tinutukoy ng body | Oo                       |
+| Naka-attach na email (`message/rfc822`) na may filename          | Oo                       |
+| Karaniwang file attachment na may filename                       | Oo                       |
 
-| Uri ng bahagi                                            | Mahigpit na pass                        | Maluwag na pass                         |
-|----------------------------------------------------------|----------------------------------------:|----------------------------------------:|
-| File ng lagdang S/MIME `smime.p7s`                       | Hindi isinama                           | Hindi isinama                           |
-| Mga uri ng MIME ng S/MIME (`application/pkcs7-*`)        | Hindi isinama                           | Hindi isinama                           |
-| Inline na larawan na tinutukoy ng Content‑ID (`image/*`) | Hindi isinama (ibinabalik sa katawan\*) | Hindi isinama (ibinabalik sa katawan\*) |
-| Nakakabit na email (`message/rfc822`) na may filename    | Hindi idinagdag                         | Maaaring idagdag                        |
-| Karaniwang file attachment na may filename               | Maaaring idagdag                        | Maaaring idagdag                        |
-
-\* Kapag naka-enable ang "Include inline pictures" (default: ON), ang mga inline na larawan ay ini-embed sa katawan ng reply bilang mga base64 data URI sa halip na idagdag bilang mga file attachment. Tingnan ang [Configuration](configuration#include-inline-pictures).
-
-Halimbawa: Maaaring kulang ang ilang attachment sa ilang header ngunit regular na mga file pa rin (hindi inline/S/MIME). Kung walang makita ang mahigpit na pass, maaaring tanggapin ng maluwag na pass ang mga iyon at i-attach ang mga ito.
+Ang isang larawan ay itinuturing na naka-embed lamang kapag talagang tinutukoy ito ng
+orihinal na mensahe, o kapag tahasang minarkahan ito ng nagpadala bilang
+`Content-Disposition: inline`. Hindi sapat ang isang `Content-ID` header lamang: naglalagay
+ang ilang email client nito sa bawat bahagi ng larawan, kasama na ang mga tunay na
+attachment, na dapat pa ring kopyahin.
 
 ---
 
@@ -88,7 +90,7 @@ Halimbawa: Maaaring kulang ang ilang attachment sa ilang header ngunit regular n
 
 ## Bakit maaaring hindi maidagdag ang mga attachment {#why-attachments-might-not-be-added}
 
-- Ang mga inline na larawan ay hindi idinadagdag bilang mga file attachment. Kapag naka-ON ang "Include inline pictures" (ang default), ini-embed ang mga ito sa katawan ng reply bilang mga data URI sa halip. Kung naka-OFF ang setting, ganap na inaalis ang mga inline na larawan. Tingnan ang [Configuration](configuration#include-inline-pictures).
+- Ang mga larawang naka-embed ng orihinal na mensahe ay hindi kino-copy bilang mga file. Nasa katawan na ng tugon ang mga ito, kung saan inilagay ito ni Thunderbird. Tingnan ang [Configuration](configuration#include-inline-pictures).
 - Ang mga bahagi ng lagdang S/MIME ay hindi isinasama ayon sa disenyo: ang mga filename gaya ng `smime.p7s` at mga uri ng MIME tulad ng `application/pkcs7-signature` o `application/pkcs7-mime` ay nilalaktawan.
 - Maaaring i-filter ng mga pattern ng blacklist ang mga kandidato: tingnan ang [Configuration](configuration#blacklist-glob-patterns); ang pagtutugma ay case‑insensitive at batay lamang sa filename.
 - Ang mga dobleng filename ay hindi muling idinaragdag: kung ang compose ay mayroon nang file na may parehong normalisadong pangalan, ito ay nilalaktawan.

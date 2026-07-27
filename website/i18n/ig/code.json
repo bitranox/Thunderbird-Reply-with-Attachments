@@ -54,7 +54,7 @@
     "message": "Hapụ SMIME na Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "A na‑ewepu mbinye aka SMIME na onyonyo dị n’ahịrị iji mee ka nzaghachi dị mfe."
+    "message": "Anaghị edobi mbinye aka SMIME ọzọ mgbe ọ bụla. Onyonyo etinyere n'ime ozi na-anọgide n'ime azịza ahụ, ebe Thunderbird na-edobe ha, kama ịmanye ha ọzọ dịka ihe mmaji nke abụọ."
   },
   "homepage.features.blacklist.title": {
     "message": "Ụkpụrụ ndepụta ojii"

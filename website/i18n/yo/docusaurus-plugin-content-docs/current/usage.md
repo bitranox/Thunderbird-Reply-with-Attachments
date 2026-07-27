@@ -9,28 +9,29 @@ sidebar_label: 'Ìlò'
 ## Ìlò {#usage}
 
 - Fèsì, kí àfikún náà sì fi àwọn atilẹba kún laifọwọyi — tàbí kó béèrè kọ́kọ́, bí a bá ti muu ṣiṣẹ́ nínú Àṣàyàn.
-- A yọ ẹ̀dá tó jọra kúrò gẹ́gẹ́ bí orúkọ fáìlì; àwọn apá S/MIME a máa kọjá sílẹ̀ nígbà gbogbo. Àwọn àwòrán inline a tún fi hàn nínú ara ìfèsì ní ìpinnu àkọ́kọ́ (pa a nípasẹ̀ "Include inline pictures" nínú Àṣàyàn).
+- A ń yọ awọn ẹda-jijọ kuro gẹgẹ bi orukọ faili; awọn apakan S/MIME ni a máa ń fori gbagbe nigbagbogbo. Awọn aworan ti a fi sinu ifiranṣẹ atilẹba wa ninu ara ìdáhùn náà, ibi ti Thunderbird ti ń gbe wọn si, wọn kì í sì í daakọ gẹgẹ bi faili.
 - Àwọn amúgbámu tó wà lórí àtòkọ́ dídẹ́kun náà a kọjá sílẹ̀ (àpẹrẹ glob tí kò fara mọ́ kíṣìín lẹ́tà, tó bá orúkọ fáìlì mu, kì í ṣe ọ̀nà). Wo [Ìṣètò](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kí ló ṣẹlẹ̀ nígbà ìfèsì {#what-happens}
 
-- Ṣàwárí ìfèsì → ṣe àkójọ àwọn amúgbámu atilẹba → fìlítà S/MIME + inline → ìmúlẹ̀rìí àṣàyàn → fi àwọn fáìlì tó bófin mu kún (fo ẹ̀dá tó jọra) → tún àwọn àwòrán inline ṣe nínú ara ìfèsì.
+- Ṣàwárí ìdáhùn → ṣe àkọsílẹ̀ àwọn àfikún ìpilẹ̀ → fò kọjá S/MIME àti àwòrán tí a fi sínú → ìjẹ́rìísí àṣàyàn → fi àwọn fáìlì tí ó yẹ kún (bí a ṣe ń fò kọjá àwọn tí ó jọra).
 
-Ìgbésẹ̀ líle sí ìgbésẹ̀ rọrùn: Àfikún náà kọ́kọ́ yọ S/MIME àti àwọn apá inline kúrò nínú amúgbámu fáìlì. Bí kò bá sí ohun tó yẹ, ó máa ṣiṣẹ́ ìgbésẹ̀ rọrùn kan tí ó tún yọ S/MIME/inline kúrò ṣùgbọ́n tó fara da ọ̀ràn míì síi (wo Alaye Kóòdù). Àwọn àwòrán inline kì í ṣeé ṣàfikún gẹ́gẹ́ bí amúgbámu fáìlì rárá; dípò bẹ́ẹ̀, nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́), a fi wọ́n sínú ara ìfèsì taara gẹ́gẹ́ bí base64 data URI.
+| Iru apakan                                             | Ṣe a daakọ sinu ìdáhùn           |
+|--------------------------------------------------------|---------------------------------:|
+| Faili ìforúkọsílẹ̀ S/MIME `smime.p7s`                  | Rárá                             |
+| Awọn iru MIME S/MIME (`application/pkcs7-*`)           | Rárá                             |
+| Aworan ti ara ifiranṣẹ fi sii nipasẹ `cid:`            | Rárá (ó ti wà nínú ara ifiranṣẹ) |
+| Aworan ti a ti fi àmì `Content-Disposition: inline` si | Rárá (ó ti wà nínú ara ifiranṣẹ) |
+| Aworan ti o ni `Content-ID` ti ara kò tọ́ka sí rí      | Bẹẹni                            |
+| Imeeli ti a so mọ (`message/rfc822`) pẹlu orukọ faili  | Bẹẹni                            |
+| Ohun àsomọ faili lasan pẹlu orukọ faili                | Bẹẹni                            |
 
-| Iru apá                                                 | Ìgbésẹ̀ líle                 | Ìgbésẹ̀ rọrùn                |
-|---------------------------------------------------------|-----------------------------:|-----------------------------:|
-| Fáìlì ìbuwọlu S/MIME `smime.p7s`                        | Yọkúrò                       | Yọkúrò                       |
-| Ìrú MIME S/MIME (`application/pkcs7-*`)                 | Yọkúrò                       | Yọkúrò                       |
-| Àwòrán inline tí Content‑ID tọ́ka sí (`image/*`)        | Yọkúrò (a tún ṣe nínú ara\*) | Yọkúrò (a tún ṣe nínú ara\*) |
-| Ìmeèlì tí a so mọ́ (`message/rfc822`) pẹ̀lú orúkọ fáìlì | Kò fi kún                    | Ó lè fi kún síi              |
-| Amúgbámu fáìlì deede pẹ̀lú orúkọ fáìlì                  | Ó lè fi kún síi              | Ó lè fi kún síi              |
-
-\* Nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́: ON), a fi àwọn àwòrán inline sínú ara ìfèsì gẹ́gẹ́ bí base64 data URI dípò kíkó wọn sílẹ̀ gẹ́gẹ́ bí amúgbámu fáìlì. Wo [Ìṣètò](configuration#include-inline-pictures).
-
-Àpẹẹrẹ: Diẹ̀ nínú àwọn amúgbámu lè ṣòro pé wọ́n ò ní àwọn header kan ṣùgbọ́n wọ́n ṣì jẹ́ fáìlì deede (kì í ṣe inline/S/MIME). Bí ìgbésẹ̀ líle kò bá rí ohunkóhun, ìgbésẹ̀ rọrùn lè gba wọ́n wọlé kí ó sì so wọn mọ́.
+Aworan kan kà sí eyi ti a fi sii nikan nigbati ifiranṣẹ atilẹba ba tọ́ka sí i ní ti gidi,
+tabi nigbati olùránṣẹ́ ba fi àmì rẹ̀ hàn ní kedere gẹgẹ bi `Content-Disposition: inline`.
+Orí-ọrọ `Content-ID` nikan kò to: ọ̀pọ̀ àwọn eto imeeli máa ń fi eyi si gbogbo apakan
+aworan, pẹlu àwọn àsomọ tòótọ́, èyí tí ó yẹ kí a tún daakọ síbẹ̀.
 
 ---
 
@@ -88,7 +89,7 @@ sidebar_label: 'Ìlò'
 
 ## Kí nìdí tí amúgbámu lè má ṣe kún {#why-attachments-might-not-be-added}
 
-- Àwọn àwòrán inline kì í ṣe àfikún gẹ́gẹ́ bí amúgbámu fáìlì. Nígbà tí "Include inline pictures" bá wà ní ON (aṣayan àkọ́kọ́), a fi wọ́n sínú ara ìfèsì gẹ́gẹ́ bí data URI dípò bẹ́ẹ̀. Bí ìṣètò bá jẹ́ OFF, a yọ àwọn àwòrán inline kúrò patapata. Wo [Ìṣètò](configuration#include-inline-pictures).
+- Àwọn àwòrán tí ìhìn ìpilẹ̀ fi sínú kò ní di ẹ̀dà gẹ́gẹ́ bí fáìlì. Wọ́n ti wà nínú ara ìdáhùn tẹ́lẹ̀, níbi tí Thunderbird ti fi wọ́n sí. Wo [Configuration](configuration#include-inline-pictures).
 - Àwọn apá ìbuwọlu S/MIME ni a yọ ní ìmọ̀lára: àwọn orúkọ fáìlì bíi `smime.p7s` àti awọn ìrú MIME gẹ́gẹ́ bí `application/pkcs7-signature` tàbí `application/pkcs7-mime` ni a kọjá sílẹ̀.
 - Àwọn àpẹrẹ àtòkọ́ dídẹ́kun lè fìlítà àwọn olùdíje: wo [Ìṣètò](configuration#blacklist-glob-patterns); fífi bà a mu kò fara mọ́ lẹ́tà ńlá/kékèké, orúkọ fáìlì nìkan ni a ka.
 - A kì í tún fi orúkọ fáìlì tó jọra kún: bí ìkọ̀wé bá ti ní fáìlì kan pẹ̀lú orúkọ tí a ti dọ́gba síi, a fo o.

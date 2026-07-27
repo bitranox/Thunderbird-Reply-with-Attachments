@@ -54,7 +54,7 @@
     "message": "SMIME とインラインをスキップ"
   },
   "homepage.features.skipSmime.body": {
-    "message": "返信をシンプルに保つため、SMIME 署名やインライン画像は除外されます。"
+    "message": "SMIME署名がコピーされることはありません。メッセージ本文に埋め込まれた画像は、Thunderbirdがもともと配置している返信本文内にそのまま残り、二重に添付されることはありません。"
   },
   "homepage.features.blacklist.title": {
     "message": "ブラックリストパターン"

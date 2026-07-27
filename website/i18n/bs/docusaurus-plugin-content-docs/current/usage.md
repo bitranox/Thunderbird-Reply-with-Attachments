@@ -9,28 +9,29 @@ sidebar_label: 'Upotreba'
 ## Upotreba {#usage}
 
 - Odgovorite i dodatak automatski dodaje originale — ili prvo pita, ako je omogućeno u Opcijama.
-- Duplikati se uklanjaju prema nazivu datoteke; S/MIME dijelovi se uvijek preskaču. Ugrađene slike se po zadanom vraćaju u tijelu odgovora (onemogućite putem "Include inline pictures" u Opcijama).
+- Duplikati se uklanjaju prema nazivu datoteke; S/MIME dijelovi se uvijek preskaču. Slike ugrađene u originalnu poruku ostaju u tijelu odgovora, gdje ih Thunderbird postavlja, i ne kopiraju se kao datoteke.
 - Prilozi na crnoj listi se također preskaču (glob obrasci neosjetljivi na veličinu slova koji se poklapaju s nazivima datoteka, ne s putanjama). Vidi [Konfiguracija](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Šta se dešava pri odgovoru {#what-happens}
 
-- Otkrije odgovor → nabroji izvorne priloge → filtrira S/MIME + inline → opcionalna potvrda → doda podobne datoteke (preskoči duplikate) → vrati ugrađene slike u tijelo odgovora.
+- Otkrij odgovor → izlistaj originalne priloge → preskoči S/MIME i ugrađene slike → opcionalna potvrda → dodaj podobne fajlove (preskačući duplikate).
 
-Strogi naspram opuštenog prolaza: Dodatak prvo isključuje S/MIME i inline dijelove iz datotečnih priloga. Ako ništa ne ispunjava uslove, pokreće opušteni prolaz koji i dalje isključuje S/MIME/inline, ali tolerira više slučajeva (vidi Detalje koda). Ugrađene slike se nikada ne dodaju kao datotečni prilozi; umjesto toga, kada je uključeno "Include inline pictures" (zadano), one se ugrađuju direktno u tijelo odgovora kao base64 data URI-ji.
+| Vrsta dijela                                             | Kopira se u odgovor     |
+|----------------------------------------------------------|------------------------:|
+| S/MIME datoteka potpisa `smime.p7s`                      | Ne                      |
+| S/MIME MIME tipovi (`application/pkcs7-*`)               | Ne                      |
+| Slika koju tijelo poruke ugrađuje putem `cid:`           | Ne (nalazi se u tijelu) |
+| Slika označena kao `Content-Disposition: inline`         | Ne (nalazi se u tijelu) |
+| Slika sa `Content-ID` na koju se tijelo nikada ne poziva | Da                      |
+| Priložena e-pošta (`message/rfc822`) sa nazivom datoteke | Da                      |
+| Obična priložena datoteka sa nazivom datoteke            | Da                      |
 
-| Vrsta dijela                                           | Strogi prolaz                   | Opušteni prolaz                 |
-|--------------------------------------------------------|--------------------------------:|--------------------------------:|
-| Datoteka S/MIME potpisa `smime.p7s`                    | Isključeno                      | Isključeno                      |
-| S/MIME MIME tipovi (`application/pkcs7-*`)             | Isključeno                      | Isključeno                      |
-| Ugrađena slika referencirana Content‑ID‑om (`image/*`) | Isključeno (vraćeno u tijelu\*) | Isključeno (vraćeno u tijelu\*) |
-| Priloženi email (`message/rfc822`) s nazivom datoteke  | Nije dodano                     | Može biti dodano                |
-| Uobičajeni datotečni prilog s nazivom datoteke         | Može biti dodano                | Može biti dodano                |
-
-\* Kada je "Include inline pictures" omogućeno (zadano: UKLJUČENO), ugrađene slike se umeću u tijelo odgovora kao base64 data URI-ji umjesto da se dodaju kao datotečni prilozi. Vidi [Konfiguracija](configuration#include-inline-pictures).
-
-Primjer: Nekim prilozima mogu nedostajati određena zaglavlja, ali su i dalje obične datoteke (ne inline/S/MIME). Ako strogi prolaz ne nađe nijedan, opušteni prolaz može prihvatiti te i priložiti ih.
+Slika se smatra ugrađenom samo kada se originalna poruka zaista poziva na nju,
+ili kada je pošiljalac izričito označi kao `Content-Disposition: inline`. Samo
+zaglavlje `Content-ID` nije dovoljno: mnogi e-mail klijenti stavljaju ga na svaki dio slike,
+uključujući stvarne priloge, a oni se ipak moraju kopirati.
 
 ---
 
@@ -88,7 +89,7 @@ Primjer: Nekim prilozima mogu nedostajati određena zaglavlja, ali su i dalje ob
 
 ## Zašto prilozi možda neće biti dodani {#why-attachments-might-not-be-added}
 
-- Ugrađene slike se ne dodaju kao datotečni prilozi. Kada je "Include inline pictures" UKLJUČENO (zadano), one se umjesto toga ugrađuju u tijelo odgovora kao data URI-ji. Ako je postavka ISKLJUČENA, ugrađene slike se u potpunosti uklanjaju. Vidi [Konfiguracija](configuration#include-inline-pictures).
+- Slike koje originalna poruka ugrađuje ne kopiraju se kao fajlovi. One su već u tijelu odgovora, gdje ih je Thunderbird stavio. Pogledajte [Konfiguracija](configuration#include-inline-pictures).
 - S/MIME dijelovi potpisa su po dizajnu isključeni: nazivi datoteka poput `smime.p7s` i MIME tipovi kao što su `application/pkcs7-signature` ili `application/pkcs7-mime` se preskaču.
 - Obrasci crne liste mogu filtrirati kandidate: vidi [Konfiguracija](configuration#blacklist-glob-patterns); podudaranje nije osjetljivo na veličinu slova i odnosi se samo na nazive datoteka.
 - Duplikatni nazivi datoteka se ne dodaju ponovno: ako prozor za pisanje već sadrži datoteku s istim normaliziranim nazivom, ona se preskače.

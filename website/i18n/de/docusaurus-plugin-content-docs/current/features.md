@@ -8,25 +8,9 @@ sidebar_label: 'Funktionen'
 
 ## Funktionen {#features}
 
-- Hängt beim Antworten automatisch Dateien aus der Original‑E‑Mail an.
-- Konfigurierbares Verhalten: Anhänge können
-  - automatisch hinzugefügt werden, oder
-  - erst nach Bestätigung hinzugefügt werden (ein kleiner, barrierefreier Dialog). In den Optionen
-    können Sie die Bestätigung aktivieren und die Standardantwort (Ja/Nein) wählen.
-- Blacklist von Dateinamen (Glob‑Muster) verhindert, dass bestimmte Dateien
-  automatisch angehängt werden. Beispiele: `*intern*`, `*secret*`, `*passwor*`.
-  Die Übereinstimmung ist unabhängig von der Groß-/Kleinschreibung und prüft nur den Dateinamen; geben Sie in den Optionen
-  pro Zeile ein Muster an.
-- Blacklist‑Warnung (optional, standardmäßig aktiviert): Wenn Dateien durch Ihre
-  Blacklist ausgeschlossen werden, listet ein kleines Modal die Datei und das/die passende(n) Muster auf. Dunkelmodus‑
-  freundlich und tastaturzugänglich (Enter/Esc zum Schließen).
-- Funktioniert mit Antworten und Allen antworten. Weiterleiten wird von diesem Add‑on nicht verändert.
-- Fügt Originale hinzu, selbst wenn Sie bereits etwas angehängt haben; vermeidet Duplikate anhand des Dateinamens.
-- Pro‑Tab‑Duplikatschutz verhindert doppeltes Hinzufügen im selben Verfassen‑Tab.
-- Überspringt S/MIME‑Zertifikate standardmäßig, um unnötige Anhänge zu vermeiden.
-- Inline‑Bilder einschließen (Standard: EIN). Eingebettete Bilder werden direkt im
-  Antworttext als base64‑Daten‑URIs wiederhergestellt und bewahren das ursprüngliche Inline‑Layout. In den
-  Optionen deaktivieren, um Inline‑Bilder vollständig zu überspringen.
+- Eingebettete Bilder werden Thunderbird überlassen: Sie bleiben im Antworttext und
+  werden nicht als Dateianhänge kopiert. Ein Bild, das nur eine `Content-ID` trägt, ohne
+  referenziert zu werden, gilt als normaler Anhang und wird kopiert.
 
 ---
 

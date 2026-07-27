@@ -9,28 +9,29 @@ sidebar_label: 'Brug'
 ## Brug {#usage}
 
 - Svar, og tilføjelsen tilføjer originalerne automatisk — eller spørger først, hvis aktiveret i Indstillinger.
-- Dubletter fjernes ud fra filnavn; S/MIME‑dele springes altid over. Inline‑billeder gendannes som standard i svarteksten (deaktiver via "Include inline pictures" i Indstillinger).
+- Fjernelse af dubletter sker efter filnavn; S/MIME-dele springes altid over. Billeder, der er indlejret i den oprindelige besked, forbliver i svarets brødtekst, hvor Thunderbird placerer dem, og kopieres ikke som filer.
 - Vedhæftninger på sortlisten springes også over (store/små‑bogstav‑uafhængige glob‑mønstre, der matcher filnavne, ikke stier). Se [Konfiguration](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Hvad sker der ved svar {#what-happens}
 
-- Registrer svar → list originale vedhæftninger → filtrer S/MIME + inline → evt. bekræftelse → tilføj kvalificerede filer (spring dubletter over) → gendan inline‑billeder i svarteksten.
+- Registrer svar → list de oprindelige vedhæftninger → spring S/MIME og indlejrede billeder over → valgfri bekræftelse → tilføj de kvalificerede filer (dubletter springes over).
 
-Streng kontra lempelig gennemgang: Tilføjelsen udelukker først S/MIME‑ og inline‑dele fra filvedhæftninger. Hvis intet kvalificerer sig, kører den en mere lempelig gennemgang, der stadig udelukker S/MIME/inline, men tolererer flere tilfælde (se Kodedetaljer). Inline‑billeder tilføjes aldrig som filvedhæftninger; i stedet, når "Include inline pictures" er aktiveret (standard), indlejres de direkte i svarteksten som base64‑data‑URI'er.
+| Deltype                                                           | Kopieres til svaret        |
+|-------------------------------------------------------------------|---------------------------:|
+| S/MIME-signaturfil `smime.p7s`                                    | Nej                        |
+| S/MIME MIME-typer (`application/pkcs7-*`)                         | Nej                        |
+| Billede som beskedens brødtekst indlejrer via `cid:`              | Nej (det er i brødteksten) |
+| Billede markeret som `Content-Disposition: inline`                | Nej (det er i brødteksten) |
+| Billede med en `Content-ID`, som brødteksten aldrig refererer til | Ja                         |
+| Vedhæftet e-mail (`message/rfc822`) med et filnavn                | Ja                         |
+| Almindelig filvedhæftning med et filnavn                          | Ja                         |
 
-| Part type                                         | Strict pass                           | Relaxed pass                          |
-|---------------------------------------------------|--------------------------------------:|--------------------------------------:|
-| S/MIME signature file `smime.p7s`                 | Excluded                              | Excluded                              |
-| S/MIME MIME types (`application/pkcs7-*`)         | Excluded                              | Excluded                              |
-| Inline image referenced by Content‑ID (`image/*`) | Udelukket (gendannes i svarteksten\*) | Udelukket (gendannes i svarteksten\*) |
-| Attached email (`message/rfc822`) with a filename | Not added                             | May be added                          |
-| Regular file attachment with a filename           | May be added                          | May be added                          |
-
-\* Når "Include inline pictures" er aktiveret (standard: TIL), indlejres inline‑billeder i svarteksten som base64‑data‑URI'er i stedet for at blive tilføjet som filvedhæftninger. Se [Konfiguration](configuration#include-inline-pictures).
-
-Eksempel: Nogle vedhæftninger kan mangle visse headere, men er stadig almindelige filer (ikke inline/S/MIME). Hvis den strenge gennemgang ikke finder nogen, kan den lempelige acceptere dem og vedhæfte dem.
+Et billede tæller kun som indlejret, når den oprindelige besked faktisk refererer til det,
+eller når afsenderen udtrykkeligt har markeret det som `Content-Disposition: inline`. Blot en
+`Content-ID`-header er ikke nok: flere mailklienter sætter en på hver billeddel,
+inklusive ægte vedhæftninger, og de skal stadig kopieres.
 
 ---
 
@@ -87,7 +88,7 @@ Eksempel: Nogle vedhæftninger kan mangle visse headere, men er stadig almindeli
 
 ## Hvorfor vedhæftninger muligvis ikke tilføjes {#why-attachments-might-not-be-added}
 
-- Inline‑billeder tilføjes ikke som filvedhæftninger. Når "Include inline pictures" er TIL (standard), indlejres de i svarteksten som data‑URI'er i stedet. Hvis indstillingen er FRA, fjernes inline‑billeder helt. Se [Konfiguration](configuration#include-inline-pictures).
+- Billeder, som den oprindelige besked indlejrer, kopieres ikke som filer. De er allerede i svarets brødtekst, hvor Thunderbird har placeret dem. Se [Konfiguration](configuration#include-inline-pictures).
 - S/MIME‑signaturdele udelukkes efter design: filnavne som `smime.p7s` og MIME‑typer såsom `application/pkcs7-signature` eller `application/pkcs7-mime` springes over.
 - Sortlistemønstre kan filtrere kandidater: se [Konfiguration](configuration#blacklist-glob-patterns); matchning er store/små‑bogstav‑uafhængig og kun på filnavn.
 - Dublerede filnavne tilføjes ikke igen: hvis komponeringen allerede indeholder en fil med det samme normaliserede navn, springes den over.

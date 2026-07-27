@@ -54,7 +54,7 @@
     "message": "SMIME እና ኢንላይን ኣልፍ"
   },
   "homepage.features.skipSmime.body": {
-    "message": "ፊርማታት SMIMEን ኢንላይን ምስልታትን ንመልሲ ንምቅናስ ኣይተካተቱን."
+    "message": "ፊርማታት SMIME ፈጺሙ ኣይቕዳሕን እዩ። ኣብ ውሽጢ መልእኽቲ ዝተጻመቑ ስእልታት፡ ኣብቲ Thunderbird ዘቐምጠሎም ቦታ፡ ማለት ኣብ ናይ መልሲ ትሕዝቶ ኮይኖም ይነብሩ፣ ካልኣይ ግዜ ኣይለጣጠፉን።"
   },
   "homepage.features.blacklist.title": {
     "message": "ፓተርናት ብላክሊስት"

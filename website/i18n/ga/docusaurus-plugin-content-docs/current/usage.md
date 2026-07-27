@@ -9,28 +9,29 @@ sidebar_label: 'Úsáid'
 ## Úsáid {#usage}
 
 - Nuair a thugtar freagra, cuireann an breiseán na buncheangaltáin leis go huathoibríoch — nó iarrann sé cead ar dtús, más cumasaithe sna Roghanna.
-- Baintear dúbailtí de réir ainm comhaid; ní chuirtear páirteanna S/MIME san áireamh riamh. Athchóirítear íomhánna inlíne i gcorp an fhreagra de réir réamhshocraithe (díchumasaigh trí "Include inline pictures" i Roghanna).
+- Baintear macasamhla de réir ainm comhaid; fágtar as an áireamh i gcónaí codanna S/MIME. Fanann íomhánna atá leabaithe sa teachtaireacht bhunaidh i gcorp an fhreagra, san áit a gcuireann Thunderbird iad, agus ní chóipeáiltear iad mar chomhaid.
 - Scipeáiltear ceangaltáin ar an liosta dubh freisin (patrúin glob neamhíogaire don chás a mheaitseálann ainmneacha comhaid, ní cosáin). Féach [Cumraíocht](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Cad a tharlaíonn ar fhreagairt {#what-happens}
 
-- Braith freagra → liostaigh na bunchiangaltáin → scag S/MIME + inlíne → deimhniú roghnach → cuir na comhaid incháilithe leis (scipeáil dúbailtí) → athchóirigh íomhánna inlíne sa chorp.
+- Braith an freagra → liostaigh na hiatáin bhunaidh → ná bac le S/MIME agus íomhánna leabaithe → deimhniú roghnach → cuir na comhaid incháilithe leis (ag scipeáil dhúblach).
 
-Pas docht vs. pas scaoilte: Cuireann an breiseán páirteanna S/MIME agus inlíne as an áireamh ó cheangaltáin chomhaid ar dtús. Mura gcáilíonn faic, ritheann sé pas níos scaoilte a chuireann S/MIME/inlíne as an áireamh fós ach a cheadaíonn tuilleadh cásanna (féach Mionsonraí Cóid). Ní chuirtear íomhánna inlíne leis mar cheangaltáin chomhaid riamh; ina ionad sin, nuair a bhíonn "Include inline pictures" cumasaithe (an réamhshocrú), leabhaítear iad go díreach i gcorp an fhreagra mar URIanna sonraí base64.
+| Cineál coda                                                               | Cóipeáilte chuig an bhfreagra |
+|---------------------------------------------------------------------------|------------------------------:|
+| Comhad sínithe S/MIME `smime.p7s`                                         | Níl                           |
+| Cineálacha MIME S/MIME (`application/pkcs7-*`)                            | Níl                           |
+| Íomhá a leabaíonn corp na teachtaireachta trí `cid:`                      | Níl (tá sí sa chorp)          |
+| Íomhá atá marcáilte mar `Content-Disposition: inline`                     | Níl (tá sí sa chorp)          |
+| Íomhá a bhfuil `Content-ID` uirthi nach ndéanann an corp tagairt riamh di | Tá                            |
+| Ríomhphost ceangailte (`message/rfc822`) a bhfuil ainm comhaid air        | Tá                            |
+| Gnáth-cheangaltán comhaid a bhfuil ainm comhaid air                       | Tá                            |
 
-| Cineál páirte                                             | Pas docht                         | Pas scaoilte                      |
-|-----------------------------------------------------------|----------------------------------:|----------------------------------:|
-| Comhad sínithe S/MIME `smime.p7s`                         | Eisiata                           | Eisiata                           |
-| Cineálacha MIME S/MIME (`application/pkcs7-*`)            | Eisiata                           | Eisiata                           |
-| Íomhá inlíne a ndéanann Content‑ID tagairt di (`image/*`) | Eisiata (athchóirithe sa chorp\*) | Eisiata (athchóirithe sa chorp\*) |
-| R-phost ceangailte (`message/rfc822`) le hainm comhaid    | Ní chuirtear leis                 | Féadfar a chur leis               |
-| Gnáthcheangaltán comhaid le hainm comhaid                 | Féadfar a chur leis               | Féadfar a chur leis               |
-
-\* Nuair a bhíonn "Include inline pictures" cumasaithe (réamhshocrú: ON), leabhaítear íomhánna inlíne i gcorp an fhreagra mar URIanna sonraí base64 seachas iad a chur leis mar cheangaltáin chomhaid. Féach [Cumraíocht](configuration#include-inline-pictures).
-
-Sampla: D’fhéadfadh roinnt ceangaltán a bheith in easnamh ar cheanntásca áirithe ach is comhaid ghnáthacha iad fós (ní inlíne/S/MIME iad). Mura n-aimsíonn an pas docht aon cheann, féadfaidh an pas scaoilte iad sin a ghlacadh agus a cheangal.
+Ní chomhairítear íomhá mar leabaithe ach amháin nuair a dhéanann an teachtaireacht bhunaidh tagairt di go firinneach,
+nó nuair a mharcáil an seoltóir go sonrach í mar `Content-Disposition: inline`. Ní leor
+ceanntásc `Content-ID` amháin: cuireann go leor cliant ríomhphoist ceann ar gach cuid íomhá,
+lena n-áirítear fíor-cheangaltáin, agus ní mór iad sin a chóipeáil fós.
 
 ---
 
@@ -88,7 +89,7 @@ Sampla: D’fhéadfadh roinnt ceangaltán a bheith in easnamh ar cheanntásca á
 
 ## Cén fáth nach bhféadfaí ceangaltáin a chur leis {#why-attachments-might-not-be-added}
 
-- Ní chuirtear íomhánna inlíne leis mar cheangaltáin chomhaid. Nuair a bhíonn "Include inline pictures" ar ON (an réamhshocrú), leabhaítear iad i gcorp an fhreagra mar URIanna sonraí ina ionad sin. Má tá an socrú ar OFF, baintear íomhánna inlíne go hiomlán. Féach [Cumraíocht](configuration#include-inline-pictures).
+- Ní dhéantar íomhánna a leabaíonn an teachtaireacht bhunaidh a chóipeáil mar chomhaid. Tá siad cheana féin i gcorp an fhreagra, san áit ar chuir Thunderbird iad. Féach [Cumraíocht](configuration#include-inline-pictures).
 - Cuirtear páirteanna sínithe S/MIME as an áireamh de réir dearadh: scipeáiltear ainmneacha comhaid cosúil le `smime.p7s` agus cineálacha MIME ar nós `application/pkcs7-signature` nó `application/pkcs7-mime`.
 - Is féidir le patrúin liosta dubh iarrthóirí a scagadh: féach [Cumraíocht](configuration#blacklist-glob-patterns); tá an comhoiriúnú neamhíogaire don chás agus dírithe ar ainm comhaid amháin.
 - Ní chuirtear ainmneacha comhaid dúblacha leis arís: má tá comhad leis an ainm céanna caighdeánaithe sa chumadóireacht cheana féin, scipeáiltear é.

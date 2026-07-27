@@ -54,7 +54,7 @@
     "message": "Slaan SMIME en inlyn oor"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME-handtekeninge en inlynbeelde word uitgesluit om antwoorde lig te hou."
+    "message": "SMIME-handtekeninge word nooit gekopieer nie. Beelde wat in die boodskapinhoud ingebed is, bly in die antwoord se inhoud, waar Thunderbird hulle reeds hou, in plaas daarvan om 'n tweede keer aangeheg te word."
   },
   "homepage.features.blacklist.title": {
     "message": "Swartlys-patrone"

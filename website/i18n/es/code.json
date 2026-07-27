@@ -54,7 +54,7 @@
     "message": "Omitir S/MIME e incrustados"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Se excluyen las firmas S/MIME y las imágenes incrustadas para mantener las respuestas ligeras."
+    "message": "Las firmas SMIME nunca se copian. Las imágenes incrustadas en el cuerpo del mensaje permanecen en el cuerpo de la respuesta, donde Thunderbird ya las mantiene, en lugar de adjuntarse de nuevo."
   },
   "homepage.features.blacklist.title": {
     "message": "Patrones de exclusión"

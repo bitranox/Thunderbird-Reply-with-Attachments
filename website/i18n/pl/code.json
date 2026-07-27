@@ -54,7 +54,7 @@
     "message": "Pomiń S/MIME i elementy inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Podpisy S/MIME i obrazy inline są wykluczane, aby odpowiedzi były zwięzłe."
+    "message": "Podpisy SMIME nigdy nie są kopiowane. Obrazy osadzone w treści wiadomości pozostają w treści odpowiedzi, tam gdzie umieszcza je Thunderbird, zamiast być dołączane po raz drugi jako załączniki."
   },
   "homepage.features.blacklist.title": {
     "message": "Wzorce blokujące"

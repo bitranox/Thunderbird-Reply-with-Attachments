@@ -54,7 +54,7 @@
     "message": "Sleppir SMIME og innfelldu efni"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME‑undirskriftum og innfelldum myndum er sleppt til að halda svörum léttum."
+    "message": "SMIME undirskriftir eru aldrei afritaðar. Myndir sem eru felldar inn í meginmál skilaboðanna haldast í meginmáli svarsins, þar sem Thunderbird geymir þær nú þegar, í stað þess að vera festar við í annað sinn."
   },
   "homepage.features.blacklist.title": {
     "message": "Svartlistamynstur"

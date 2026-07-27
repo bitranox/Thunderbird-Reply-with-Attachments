@@ -54,7 +54,7 @@
     "message": "SMIME жана inline'ды өткөрүп кетүү"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Жоопторду жеңил кылуу үчүн SMIME колтамгалары жана inline сүрөттөр кошулбайт."
+    "message": "SMIME кол тамгалары эч качан көчүрүлбөйт. Билдирүүнүн ичине киргизилген сүрөттөр Thunderbird аларды сактап калган жооптун ичинде калат, экинчи жолу тиркеме катары кошулбайт."
   },
   "homepage.features.blacklist.title": {
     "message": "Кара тизме үлгүлөрү"

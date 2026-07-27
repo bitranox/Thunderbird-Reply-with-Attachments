@@ -9,28 +9,26 @@ sidebar_label: 'Naudojimas'
 ## Naudojimas {#usage}
 
 - Atsakykite ir priedas automatiškai pridės originalus — arba pirmiausia paklaus, jei taip nustatyta Parinktyse.
-- Dublikatai šalinami pagal failo pavadinimą; S/MIME dalys visada praleidžiamos. Numatyta, kad įterptieji vaizdai atkuriami atsakymo tekste (galite išjungti per „Include inline pictures“ Parinktyse).
+- Pašalinami dublikatai pagal failo pavadinimą; S/MIME dalys visada praleidžiamos. Originaliame laiške įterpti vaizdai lieka atsakymo tekste, kur juos patalpina Thunderbird, ir nekopijuojami kaip failai.
 - Juodojo sąrašo priedai taip pat praleidžiami (didžiosiomis/mažosiomis neskiriami glob šablonai, atitinkantys failų pavadinimus, o ne kelius). Žr. [Konfigūracija](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Kas nutinka atsakant {#what-happens}
 
-- Aptikti atsakymą → išvardyti originalius priedus → filtruoti S/MIME + įterptuosius → neprivalomas patvirtinimas → pridėti tinkamus failus (praleisti dublikatus) → atkurti įterptuosius vaizdus tekste.
+- Aptikti atsakymą → surašyti originalius priedus → praleisti S/MIME ir įterptus paveikslėlius → neprivalomas patvirtinimas → pridėti tinkamus failus (praleidžiant dublikatus).
 
-Griežtas vs. laisvesnis praėjimas: Priedas pirmiausia iš failų priedų pašalina S/MIME ir įterptąsias dalis. Jei niekas netinka, vykdomas laisvesnis praėjimas, kuris vis dar atmeta S/MIME/įterptuosius, bet toleruoja daugiau atvejų (žr. Kodo detales). Įterptieji vaizdai niekada nepridedami kaip failų priedai; vietoje to, kai įjungta „Include inline pictures“ (numatyta), jie įterpiami tiesiai į atsakymo tekstą kaip base64 duomenų URI.
+| Dalies tipas                                                 | Nukopijuota į atsakymą |
+|--------------------------------------------------------------|-----------------------:|
+| S/MIME parašo failas `smime.p7s`                             | Ne                     |
+| S/MIME MIME tipai (`application/pkcs7-*`)                    | Ne                     |
+| Vaizdas, kurį laiško tekstas įterpia naudodamas `cid:`       | Ne (jis yra tekste)    |
+| Vaizdas, pažymėtas kaip `Content-Disposition: inline`        | Ne (jis yra tekste)    |
+| Vaizdas su `Content-ID`, į kurį tekstas niekada nenurodo     | Taip                   |
+| Prisegtas el. laiškas (`message/rfc822`) su failo pavadinimu | Taip                   |
+| Įprastas failo priedas su failo pavadinimu                   | Taip                   |
 
-| Dalies tipas                                                | Griežtas praėjimas           | Laisvesnis praėjimas         |
-|-------------------------------------------------------------|-----------------------------:|-----------------------------:|
-| S/MIME parašo failas `smime.p7s`                            | Atmesta                      | Atmesta                      |
-| S/MIME MIME tipai (`application/pkcs7-*`)                   | Atmesta                      | Atmesta                      |
-| Įterptasis vaizdas, į kurį nurodo Content‑ID (`image/*`)    | Atmesta (atkuriama tekste\*) | Atmesta (atkuriama tekste\*) |
-| Pridėtas el. laiškas (`message/rfc822`) su failo pavadinimu | Nepridedama                  | Gali būti pridėta            |
-| Įprastas failo priedas su failo pavadinimu                  | Gali būti pridėta            | Gali būti pridėta            |
-
-\* Kai „Include inline pictures“ įjungta (numatyta: ĮJUNGTA), įterptieji vaizdai įterpiami į atsakymo tekstą kaip base64 duomenų URI, o ne pridedami kaip failų priedai. Žr. [Konfigūracija](configuration#include-inline-pictures).
-
-Pavyzdys: Kai kuriems priedams gali trūkti tam tikrų antraščių, bet jie vis tiek yra įprasti failai (ne įterptieji/S/MIME). Jei griežtas praėjimas nieko neranda, laisvesnis praėjimas gali juos priimti ir pridėti.
+Vaizdas laikomas įterptu tik tada, kai originalus laiškas iš tikrųjų į jį nurodo, arba kai siuntėjas aiškiai jį pažymėjo kaip `Content-Disposition: inline`. Vien tik `Content-ID` antraštės nepakanka: kai kurios el. pašto programos ją prideda prie kiekvienos vaizdo dalies, įskaitant tikrus priedus, todėl juos vis tiek reikia nukopijuoti.
 
 ---
 
@@ -88,7 +86,7 @@ Pavyzdys: Kai kuriems priedams gali trūkti tam tikrų antraščių, bet jie vis
 
 ## Kodėl priedai gali būti nepridėti {#why-attachments-might-not-be-added}
 
-- Įterptieji vaizdai nepridedami kaip failų priedai. Kai „Include inline pictures“ yra ĮJUNGTA (numatyta), jie įterpiami į atsakymo tekstą kaip duomenų URI. Jei nustatymas IŠJUNGTA, įterptieji vaizdai visiškai pašalinami. Žr. [Konfigūracija](configuration#include-inline-pictures).
+- Originaliame laiške įterpti paveikslėliai nekopijuojami kaip failai. Jie jau yra atsakymo tekste, kur juos patalpino Thunderbird. Žr. [Konfigūracija](configuration#include-inline-pictures).
 - S/MIME parašo dalys pagal sumanymą neįtraukiamos: tokie failų pavadinimai kaip `smime.p7s` ir tokie MIME tipai kaip `application/pkcs7-signature` ar `application/pkcs7-mime` praleidžiami.
 - Juodojo sąrašo šablonai gali filtruoti kandidatus: žr. [Konfigūracija](configuration#blacklist-glob-patterns); atitikimas neskiria didžiųjų/mažųjų ir taikomas tik failo pavadinimui.
 - Pasikartojantys failų pavadinimai neperpridedami: jei rašomame laiške jau yra failas tuo pačiu normalizuotu pavadinimu, jis praleidžiamas.

@@ -54,7 +54,7 @@
     "message": "SMIME ve Satır İçi İçerikleri Atla"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Yanıtları sade tutmak için SMIME imzaları ve satır içi görseller hariç tutulur."
+    "message": "SMIME imzalari asla kopyalanmaz. Mesaj govdesine gomulu gorseller, Thunderbird'un onlari tuttugu yanit govdesinde kalir; ikinci kez eklenmez."
   },
   "homepage.features.blacklist.title": {
     "message": "Kara Liste Kalıpları"

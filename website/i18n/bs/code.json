@@ -54,7 +54,7 @@
     "message": "Preskoči SMIME i inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME potpisi i inline slike se isključuju kako bi odgovori ostali neopterećeni."
+    "message": "SMIME potpisi se nikada ne kopiraju. Slike ugrađene u tijelo poruke ostaju u tijelu odgovora, gdje ih Thunderbird već čuva, umjesto da se ponovo prilažu kao prilog."
   },
   "homepage.features.blacklist.title": {
     "message": "Obrasci crne liste"

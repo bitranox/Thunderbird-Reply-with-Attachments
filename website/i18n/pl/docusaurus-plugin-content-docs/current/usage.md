@@ -9,28 +9,28 @@ sidebar_label: 'Użycie'
 ## Użycie {#usage}
 
 - Odpowiedz, a dodatek automatycznie doda oryginały — lub najpierw zapyta, jeśli włączono to w Opcjach.
-- Usuwanie duplikatów po nazwie pliku; części S/MIME są zawsze pomijane. Obrazy inline są domyślnie przywracane w treści odpowiedzi (można wyłączyć przez "Include inline pictures" w Opcjach).
+- Duplikaty są usuwane na podstawie nazwy pliku; części S/MIME są zawsze pomijane. Obrazy osadzone w oryginalnej wiadomości pozostają w treści odpowiedzi, tam gdzie umieszcza je Thunderbird, i nie są kopiowane jako pliki.
 - Załączniki z czarnej listy są również pomijane (wzorce glob niewrażliwe na wielkość liter dopasowują nazwy plików, nie ścieżki). Zobacz [Konfiguracja](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Co się dzieje przy odpowiedzi {#what-happens}
 
-- Wykrycie odpowiedzi → lista oryginalnych załączników → filtr S/MIME + inline → opcjonalne potwierdzenie → dodanie kwalifikujących się plików (pominięcie duplikatów) → przywrócenie obrazów inline w treści.
+- Wykryj odpowiedź → wypisz oryginalne załączniki → pomiń S/MIME i osadzone obrazy → opcjonalne potwierdzenie → dodaj kwalifikujące się pliki (pomijając duplikaty).
 
-Ścisłe vs. luźne przejście: Dodatek najpierw wyklucza części S/MIME i inline z załączników plikowych. Jeśli nic się nie kwalifikuje, uruchamia luźniejsze przejście, które nadal wyklucza S/MIME/inline, ale toleruje więcej przypadków (zob. Szczegóły kodu). Obrazy inline nigdy nie są dodawane jako załączniki plikowe; zamiast tego, gdy "Include inline pictures" jest włączone (domyślnie), są one osadzane bezpośrednio w treści odpowiedzi jako URI danych base64.
+| Typ części                                                    | Kopiowane do odpowiedzi |
+|---------------------------------------------------------------|------------------------:|
+| Plik podpisu S/MIME `smime.p7s`                               | Nie                     |
+| Typy MIME S/MIME (`application/pkcs7-*`)                      | Nie                     |
+| Obraz osadzony w treści wiadomości przez `cid:`               | Nie (jest w treści)     |
+| Obraz oznaczony jako `Content-Disposition: inline`            | Nie (jest w treści)     |
+| Obraz z `Content-ID`, do którego treść nigdy się nie odwołuje | Tak                     |
+| Załączony e-mail (`message/rfc822`) z nazwą pliku             | Tak                     |
+| Zwykły załącznik pliku z nazwą pliku                          | Tak                     |
 
-| Typ części                                                 | Ścisłe przejście                    | Luźne przejście                     |
-|------------------------------------------------------------|------------------------------------:|------------------------------------:|
-| Plik podpisu S/MIME `smime.p7s`                            | Wykluczony                          | Wykluczony                          |
-| Typy MIME S/MIME (`application/pkcs7-*`)                   | Wykluczony                          | Wykluczony                          |
-| Obraz inline referencjonowany przez Content‑ID (`image/*`) | Wykluczony (przywrócony w treści\*) | Wykluczony (przywrócony w treści\*) |
-| Dołączony e‑mail (`message/rfc822`) z nazwą pliku          | Nie dodawany                        | Może zostać dodany                  |
-| Zwykły załącznik plikowy z nazwą pliku                     | Może zostać dodany                  | Może zostać dodany                  |
-
-\* Gdy "Include inline pictures" jest włączone (domyślnie: ON), obrazy inline są osadzane w treści odpowiedzi jako URI danych base64 zamiast być dodawanymi jako załączniki plikowe. Zobacz [Konfiguracja](configuration#include-inline-pictures).
-
-Przykład: Niektórym załącznikom mogą brakować pewnych nagłówków, ale nadal są zwykłymi plikami (nie inline/S/MIME). Jeśli ścisłe przejście nic nie znajdzie, luźne może je zaakceptować i dołączyć.
+Obraz jest uznawany za osadzony tylko wtedy, gdy oryginalna wiadomość faktycznie się do niego odwołuje, lub gdy nadawca
+wyraźnie oznaczył go jako `Content-Disposition: inline`. Sam nagłówek `Content-ID` nie wystarcza: wiele klientów pocztowych
+umieszcza go na każdej części obrazu, w tym na prawdziwych załącznikach, które nadal trzeba skopiować.
 
 ---
 
@@ -88,7 +88,7 @@ Przykład: Niektórym załącznikom mogą brakować pewnych nagłówków, ale na
 
 ## Dlaczego załączniki mogą nie zostać dodane {#why-attachments-might-not-be-added}
 
-- Obrazy inline nie są dodawane jako załączniki plikowe. Gdy "Include inline pictures" jest włączone (domyślnie), są one zamiast tego osadzane w treści odpowiedzi jako URI danych. Jeśli ustawienie jest OFF, obrazy inline są całkowicie usuwane. Zobacz [Konfiguracja](configuration#include-inline-pictures).
+- Obrazy osadzone przez oryginalną wiadomość nie są kopiowane jako pliki. Znajdują się już w treści odpowiedzi, tam gdzie umieścił je Thunderbird. Zobacz [Configuration](configuration#include-inline-pictures).
 - Części podpisu S/MIME są z założenia wykluczane: nazwy plików takie jak `smime.p7s` i typy MIME takie jak `application/pkcs7-signature` lub `application/pkcs7-mime` są pomijane.
 - Wzorce czarnej listy mogą odfiltrowywać kandydatów: zobacz [Konfiguracja](configuration#blacklist-glob-patterns); dopasowanie jest niewrażliwe na wielkość liter i dotyczy wyłącznie nazw plików.
 - Zduplikowane nazwy plików nie są ponownie dodawane: jeśli w oknie tworzenia jest już plik o tej samej znormalizowanej nazwie, zostaje pominięty.

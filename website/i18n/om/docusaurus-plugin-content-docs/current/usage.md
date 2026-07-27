@@ -9,28 +9,28 @@ sidebar_label: 'Fayyadama'
 ## Fayyadama {#usage}
 
 - Deebisi, dabalataan immoo asxaa duraanii ofumaan ida'a — yookaan jalqaba gaafata, yoo Filannoowwan keessatti dandeessifame.
-- Irra‑deddeebi'insa maqaa faayiliin to'ata; kutaan S/MIME yeroo hunda ni dhiifama. Suuraaleen inline bifa durtiiin qaama deebii keessatti deebi'u (Filannoowwan keessatti "Include inline pictures" dhaamsuun ni danda'ama).
+- Maqaa faayilii irratti hirmaannaan bal'aa hin qabne haqamee jira; kutaawwan S/MIME yeroo hunda ni darbamu. Suuraawwan ergaa jalqabaa keessatti hidhamanii jiran, iddoo Thunderbird itti isaan kaa'u, qaama deebii keessatti hafu; akka faayiliitti hin garagalfaman.
 - Maxxansoonni tarree ugguraatti galan akkuma kanaan ni dhiifamu (foormaati glob sensitiivii‑qubee miti kan maqaa faayilii waliin walsimu, karaa miti). [Qindaa'ina](configuration#blacklist-glob-patterns) ilaali.
 
 ---
 
 ### Yeroo deebitan maal ta'a {#what-happens}
 
-- Deebii argi → maxxansoota duraanii tarreessi → S/MIME + inline haqi → mirkaneessa filannoo qabu → faayiloota malan ida'i (waan irra‑deddeebi'u dhiisi) → suuraaleen inline qaama barruu keessatti deebisi.
+- Deebii adda baasi → miidhaginaalee jalqabaa tarreessi → S/MIME fi suuraalee hidhaman darbi → mirkaneessa filannoo → faayiloota ta'an dabali (kan wal fakkaatan darbuudhaan).
 
-Darbuu cimaa fi laafaa: Dabalataan jalqabatti kutaa S/MIME fi inline faayiloota maxxanfaman keessaa ni baasaa. Homtuu yoo hin mijanne, darbuu laafaa raawwata kan amma iyyuu S/MIME/inline alatti baasuu itti fufu garuu haala dabalataa fudhatu (Ibsa Koodii ilaali). Suuraaleen inline yommuu ta'u faayila maxxanfamaa ta'anii hin ida'aman; bakka sana, yommuu "Include inline pictures" dandeessifame (bifa durtii), isaan qaama deebii keessatti akka base64 data URItti qindaa'anii ni kaa'amu.
+| Gosa kutaa                                                         | Deebiitti garagalfamaa?   |
+|--------------------------------------------------------------------|--------------------------:|
+| Faayilii mallattoo S/MIME `smime.p7s`                              | Lakki                     |
+| Gosoota MIME S/MIME (`application/pkcs7-*`)                        | Lakki                     |
+| Suuraa qaamni ergaa `cid:` tiin hidhu                              | Lakki (qaama keessa jira) |
+| Suuraa `Content-Disposition: inline` jedhamee mallatteeffame       | Lakki (qaama keessa jira) |
+| Suuraa `Content-ID` kan qaamni ergaa gonkumaa hin wabeeffanne qabu | Eeyyee                    |
+| Imeelii maxxanfame (`message/rfc822`) maqaa faayilii qabu          | Eeyyee                    |
+| Maxxantuu faayilii idileerraa maqaa faayilii qabu                  | Eeyyee                    |
 
-| Part type                                                     | Strict pass                                  | Relaxed pass                                 |
-|---------------------------------------------------------------|---------------------------------------------:|---------------------------------------------:|
-| Faayila mallattoo S/MIME `smime.p7s`                          | Alatti baafame                               | Alatti baafame                               |
-| Gosoota MIME S/MIME (`application/pkcs7-*`)                   | Alatti baafame                               | Alatti baafame                               |
-| Suuraa inline kan Content‑ID tiin waamame (`image/*`)         | Alatti baafame (qaama keessatti deebifame\*) | Alatti baafame (qaama keessatti deebifame\*) |
-| Imeelii maxxanfame (`message/rfc822`) kan maqaa faayilii qabu | Hin ida'amne                                 | Ida'amu danda'a                              |
-| Faayila maxxanfamaa sirrii kan maqaa faayilii qabu            | Ida'amu danda'a                              | Ida'amu danda'a                              |
-
-\* Yommuu "Include inline pictures" dandeessifame (bifa durtii: ON), suuraaleen inline qaama deebii keessatti akka base64 data URItti ni kaa'amu; faayila maxxanfamaa ta'anii hin ida'aman. [Qindaa'ina](configuration#include-inline-pictures) ilaali.
-
-Fakkeenya: Maxxansoonni muraasni mata‑duree muraasa dhabuu danda'u; garuu amma iyyuu faayiloota sirrii (inline/S/MIME miti). Darbuu cimaa keessatti homtuu hin argamne yoo ta'e, darbuu laafaan isaan fudhachuu fi maxxansu danda'a.
+Suuraan tokko yeroo ergaan jalqabaa dhugumaan isa wabeeffatu, ykn yeroo ergaan sun ifatti `Content-Disposition: inline`
+jedhee mallatteessu qofa akka hidhametti lakkaa'ama. Mataduree `Content-ID` qofti gahaa miti: kilaayentoonni imeelii hedduun
+kutaa suuraa hunda irratti kana ni kaa'u, kanneen maxxantuu dhugaa ta'an dabalatee, kunis ammas garagalfamuu qaba.
 
 ---
 
@@ -88,7 +88,7 @@ Fakkeenya: Maxxansoonni muraasni mata‑duree muraasa dhabuu danda'u; garuu amma
 
 ## Maaliif maxxansoonni hin ida'amin ta'uu danda'u {#why-attachments-might-not-be-added}
 
-- Suuraaleen inline faayila maxxanfamaa ta'anii hin ida'aman. Yommuu "Include inline pictures" ON (bifa durtii) ta'u, bakka bu'utti qaama deebii keessatti akka data URItti ni kaa'amu. Sana OFF yoo taasifame, suuraaleen inline guutumaan guutuutti ni haqamu. [Qindaa'ina](configuration#include-inline-pictures) ilaali.
+- Suuraaleen ergaan jalqabaa keessatti hidhaman akka faayilitti hin garagalfaman. Isaan duraan qaama deebii keessa jiru, iddoo Thunderbird itti kaa'e. Ilaali [Configuration](configuration#include-inline-pictures).
 - Kutaaleen mallattoo S/MIME yaadamee alatti baafamu: maqaa faayilii akka `smime.p7s` fi gosa MIME akka `application/pkcs7-signature` yookaan `application/pkcs7-mime` jiran ni dhiifamu.
 - Paatterniin tarree ugguraa filatamtoota faffacaasu danda'a: [Qindaa'ina](configuration#blacklist-glob-patterns) ilaali; walsimsiisni sensitiivii‑qubee miti, maqaa faayilii qofaan.
 - Maqaan faayilii irra‑deddeebi'u irra deebi'anii hin ida'aman: yoo qopheessaa keessatti maqaa sirreessamee walfakkaataa qabu faayilli duraan jiru, ni dhiifama.

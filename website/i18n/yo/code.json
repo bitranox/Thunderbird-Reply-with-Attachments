@@ -54,7 +54,7 @@
     "message": "Foju kọ SMIME àti Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "A yọ àwọn ìbùwọ̀lú SMIME àti àwọn àwòrán inline kúrò kí fèsì lè rọrùn."
+    "message": "A o gbodo da awon iforuko sile SMIME ko laelae. Awon awoyan ti a fi sinu ara iranse maa n duro sinu ara esi, nibi ti Thunderbird ti n pa won mo, dipo ki won fi won kun un lekeji."
   },
   "homepage.features.blacklist.title": {
     "message": "Àwọn Àpẹrẹ Akójọ Ìdènà"

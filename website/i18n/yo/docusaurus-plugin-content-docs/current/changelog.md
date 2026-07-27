@@ -10,7 +10,8 @@ title: 'Akọsilẹ̀ Ìyípadà'
 Fún ìtàn pípé àti alaye kíkún, wo ti ibi-ipamọ náà
 [CHANGELOG.md lori GitHub](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Include inline pictures" báyìí ń fi àwọn àwòrán sínú ara ìdáhùn taara gẹ́gẹ́ bí base64 data URIs (default: ON); ìmúdára didara kóòdù àti ìmúgbòòrò ìdánwò.
+- 2.4.0: a kì yóò tún jù àwòrán sílẹ̀ mọ́ nítorí pé olùránṣẹ́ fi `Content-ID` sí i lásán; àṣàyàn "Include inline pictures" ti parẹ́, nítorí Thunderbird fúnra rẹ̀ ń pa àwọn àwòrán tí a fi sínú ọ̀rọ̀ mọ́ nínú ara ìdáhùn; àwọn ọ̀nà asopọ̀ ń ṣí nísisìyí nínú aṣàwárí (browser) ètò náà; ààlà 50 àfikún / 100 MB fún ìdáhùn kọ̀ọ̀kan, gbogbo ohun tí a fi sílẹ̀ ni a máa ròyìn.
+- 2.3.2: "Include inline pictures" máa ń fi àwòrán sínú ara ìdáhùn gẹ́gẹ́ bí URI data base64 (a tún yọ ọ́ kúrò lẹ́yìn àyẹ̀wò add-ons.thunderbird.net; Thunderbird ń ṣe èyí fúnra rẹ̀); ìmúgbòrò dídára kóòdù àti ìmúgbòrò ìdánwò.
 - 2.3.1: Pa àwọn àfikún mọ́ lẹ́yìn tí Thunderbird bá fi ojú-ìwé ìṣẹ̀lẹ̀ abẹ́lẹ̀ sí ìsinmi; fi kun àwọn ìmúpọ̀ debug tó dojú kọ ìṣòro.
 - 2.3.0: Ṣàtúnṣe ìparẹ́ ẹ̀dá méjì àwọn àfikún, gbòòrò ìdánwò, àti yọ àwọn ìyọ̀nda atijọ́ kúrò láti ba ìlànà AMO mu.
 - 2.1.0: Atilẹyin ìmúdọgba káríayé ní kikun fún àwọn èdè 100 àkọ́kọ́

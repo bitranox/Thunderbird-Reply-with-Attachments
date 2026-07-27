@@ -10,7 +10,8 @@ title: 'Dnevnik promjena'
 Za potpunu, detaljnu povijest pogledajte
 [CHANGELOG.md na GitHubu](https://github.com/bitranox/Thunderbird-Reply-with-Attachments/blob/master/CHANGELOG.md).
 
-- 2.3.2: "Uključi umetnute slike" sada umeće slike izravno u tijelo odgovora kao base64 data URI-jeve (zadano: UKLJUČENO); poboljšanja kvalitete koda i proširena pokrivenost testovima.
+- 2.4.0: slike se više ne izostavljaju samo zato što ih je pošiljatelj označio s `Content-ID`; opcija "Include inline pictures" je uklonjena, jer Thunderbird sam zadržava ugrađene slike u tijelu odgovora; poveznice se sada otvaraju u sistemskom pregledniku; ograničenje od 50 privitaka / 100 MB po odgovoru, a sve što je izostavljeno se prijavljuje.
+- 2.3.2: "Include inline pictures" ugrađivala je slike u tijelo odgovora kao base64 data URI-je (ponovno uklonjeno nakon recenzije na add-ons.thunderbird.net; Thunderbird to sam radi); poboljšanja kvalitete koda i prošireno pokrivanje testovima.
 - 2.3.1: Zadržava privitke nakon što Thunderbird stavi u mirovanje pozadinsku stranicu događaja; dodaje ciljane kuke za otklanjanje pogrešaka za rješavanje problema.
 - 2.3.0: Dorađena deduplikacija privitaka, proširena pokrivenost testovima i uklonjene zastarjele dozvole radi usklađivanja s pravilima AMO-a.
 - 2.1.0: Potpuna podrška za internacionalizaciju za 100 najkorištenijih jezika

@@ -8,25 +8,7 @@ sidebar_label: 'Àwọn àbùdá'
 
 ## Àwọn iṣẹ́ {#features}
 
-- Nígbà tá o bá ń dáhùn, ó ń ṣàfikún laifọwọyi àwọn fáìlì láti inú ìmeèlì àkọ́kọ́.
-- Ìhùwàsí tó lè ṣe àtúnṣe: àwọn àfikún lè jẹ́
-  - a ṣàfikún laifọwọyi, tàbí
-  - a fi kún lẹ́yìn ìfọwọ́sí nìkan (àpótí ìjíròrò kékeré tó rọrùn láti wọlé sí). Ní inú Àṣàyàn o
-    lè mú ìfọwọ́sí ṣiṣẹ́ kí o sì yan ìdáhùn àtọwọ́dá (Yes/No).
-- Àtòkọ́ ìdènà orúkọ fáìlì (àwòrán àpẹrẹ glob) ń dènà fífi àwọn fáìlì kan
-  ṣàfikún laifọwọyi. Àpẹẹrẹ: `*intern*`, `*secret*`, `*passwor*`.
-  Ìbámu kì í fiyè sí ìyàtọ̀ lẹ́tà ńlá/kékèké (case‑insensitive) ó sì ń ṣàyẹ̀wò orúkọ fáìlì nìkan; pèsè àpẹrẹ
-  kan ní ìlà kọọkan nínú Àṣàyàn.
-- Ìkìlọ̀ blacklist (àṣàyàn, a ti mú ṣiṣẹ́ ní àtọwọ́dá): nígbà tí blacklist rẹ bá yọ àwọn fáìlì kúrò,
-  àpótí modal kékeré yóò ṣe àtòkọ́ fáìlì náà àti àpẹrẹ tí ó bá a mu. Dark‑mode
-  ore‑ọrẹ́ àti rọrùn fún bọ́tìnì kọ́npútà (Enter/Esc láti tii).
-- Ó ń ṣiṣẹ́ pẹ̀lú Reply àti Reply all. Forward kò jẹ́ kí àfikún yìí yí i padà.
-- Ó tún fi àwọn oríjìnàlì kún bí o tilẹ̀ ti ti ṣàfikún nkankan; ó yàgò fún ẹ̀dà‑méjì nípa orúkọ fáìlì.
-- Abojútó ẹ̀dà‑méjì ní taabu kọọkan ń dènà fífi kún lẹ́ẹ̀mejì nínú taabu ìkọ̀wé kan naa.
-- Ní àtọwọ́dá, ó ń fo àwọn ìjẹrisi S/MIME kọjá láti yàgò fún àwọn àfikún tí kò ṣe pàtàkì.
-- Ṣàfikún àwọn àwòrán inline (àtọwọ́dá: ON). A tún gbe àwọn àwòrán tí a fi sínú padà taara sínú
-  ara ìdáhùn gẹ́gẹ́ bí base64 data URIs, kí a lè pa àtẹ̀jáde inline oríjìnàlì mọ́. Pa a ní
-  Àṣàyàn bí o bá fẹ́ kọjá gbogbo àwọn àwòrán inline.
+- Awọn àwòrán tí a fi sínú ọ̀rọ̀ ni a fi sílẹ̀ fún Thunderbird: wọ́n máa dúró nínú ara ìdáhùn kò sì ní di ẹ̀dà gẹ́gẹ́ bí fáìlì tí a so. Àwòrán tí ó ní `Content-ID` nìkan láìsí pé a tọ́ka sí i ni a máa kà sí bí àfikún lásán, a ó sì dá a kọ.
 
 ---
 

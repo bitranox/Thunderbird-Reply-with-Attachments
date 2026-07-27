@@ -54,7 +54,7 @@
     "message": "Lewati SMIME lan Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Tandha tangan SMIME lan gambar inline ora kalebu supaya wangsulan tetep entheng."
+    "message": "Tandha tangan SMIME ora tau disalin. Gambar sing kasusupake ing awak pesen tetep ana ing awak wangsulan, ing endi Thunderbird wis nyimpen, tinimbang dilampiri maneh kaping pindho."
   },
   "homepage.features.blacklist.title": {
     "message": "Pola Dhaftar Ireng"

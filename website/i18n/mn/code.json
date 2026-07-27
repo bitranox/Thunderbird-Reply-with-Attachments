@@ -54,7 +54,7 @@
     "message": "SMIME ба Inline‑ийг алгасах"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Хариуг цомхон байлгахын тулд SMIME гарын үсэг болон inline зургуудыг оруулахгүй."
+    "message": "SMIME гарын үсэг хэзээ ч хуулагддаггүй. Зурвасын бие махбодод шигтгэсэн зургууд Thunderbird хадгалдаг хариултын бие махбодод хэвээр үлдэж, дахин хавсралт болгон нэмэгддэггүй."
   },
   "homepage.features.blacklist.title": {
     "message": "Хар жагсаалтын загварууд"

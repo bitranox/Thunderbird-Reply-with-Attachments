@@ -54,7 +54,7 @@
     "message": "Bàyyi SMIME ak Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "Siñatüür SMIME ak nataal yi 'inline' ñu bàyyil leen, ngir tontu yi tënku te yomb."
+    "message": "Simboli SMIME yi duñu jamono la copié. Nataal yi nekk ci mbindeef bi dañuy des ci reply bi, fa mu Thunderbird di leen denc, tekki du leen dugalaat ci attachment."
   },
   "homepage.features.blacklist.title": {
     "message": "Pàttarni ñu bàyyil"

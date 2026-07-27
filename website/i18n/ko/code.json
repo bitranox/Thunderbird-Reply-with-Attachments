@@ -54,7 +54,7 @@
     "message": "SMIME 및 인라인 건너뛰기"
   },
   "homepage.features.skipSmime.body": {
-    "message": "회신을 간결하게 유지하기 위해 SMIME 서명과 인라인 이미지는 제외됩니다."
+    "message": "SMIME 서명은 절대 복사되지 않습니다. 본문에 삽입된 이미지는 Thunderbird가 보관하는 위치인 답장 본문에 그대로 남아 있으며, 다시 첨부되지 않습니다."
   },
   "homepage.features.blacklist.title": {
     "message": "블랙리스트 패턴"

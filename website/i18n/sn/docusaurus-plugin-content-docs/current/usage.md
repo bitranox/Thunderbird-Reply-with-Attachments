@@ -9,28 +9,28 @@ sidebar_label: 'Mashandisiro'
 ## Mashandisiro {#usage}
 
 - Pindura uye wedzero inowedzera zvekutanga otomatiki — kana kubvunza kutanga, kana zvagoneswa mu Options.
-- Kubvisa zvadzokororwa maererano nezita refaira; zvikamu zve S/MIME zvinogara zvichisvetukwa. Mifananidzo yeinline inodzorerwa mumuviri wemhinduro nekutadza (default) (unogona kudzima kuburikidza ne "Include inline pictures" mu Options).
+- Zvakadzokororwa zvinobviswa zvichienderana nezita refaira; zvikamu zveS/MIME zvinogara zvichidarikwa. Mifananidzo yakaiswa mumeseji rekutanga inoramba iri mumuviri wemhinduro, apo Thunderbird inoiisa, uye haikopwi sefaira.
 - Maattachment ari pa blacklist anosvetukwawo (mapatani eglob asingatarisi macase anowirirana nemazita efaira, kwete mapaths). Ona [Kumisikidzwa](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Zvinoitika paunopindura {#what-happens}
 
-- Kuona kupindura → kuratidza rondedzero yemaattachment ekutanga → kusefa S/MIME + inline → kusimbisa kana zvichidiwa → kuwedzera mafaera akakodzera (svetuka zvinodzokororwa) → kudzoreredza mifananidzo yeinline mumuviri.
+- Ziva mhinduro → nyorai zvakanamatirwa zvepakutanga → darika S/MIME nemifananidzo yakabatanidzwa → kusimbiswa kusingamanikidzi → wedzera mafaira akakodzera (uchidarika zvakafanana).
 
-Kupfuura kwakasimba vs. kwakapfava: Wedzero inotanga yabvisa zvikamu zve S/MIME uye zveinline kubva kumaattachment efaira. Kana pasina chinokodzera, inomhanya kupfuura kwakapfava kunoramba kuchibvisa S/MIME/inline asi kunobvumira mamiriro mazhinji (ona Tsananguro dzeKodhi). Mifananidzo yeinline haimbo wedzerwi seattachments efaira; panzvimbo pezvo, kana "Include inline pictures" yakagoneswa (default), inonyudzwa zvakananga mumuviri wemhinduro sebase64 data URIs.
+| Rudzi rwechikamu                                             | Rinokopwa muMhinduro |
+|--------------------------------------------------------------|---------------------:|
+| Faira resaino yeS/MIME `smime.p7s`                           | Kwete                |
+| Mhando dzeMIME dzeS/MIME (`application/pkcs7-*`)             | Kwete                |
+| Mufananidzo unoiswa nemuviri wemeseji kuburikidza ne`cid:`   | Kwete (uri mumuviri) |
+| Mufananidzo wakanyorwa kuti `Content-Disposition: inline`    | Kwete (uri mumuviri) |
+| Mufananidzo une `Content-ID` isingatongonongedzerwi nemuviri | Ehe                  |
+| Email yakabatanidzwa (`message/rfc822`) ine zita refaira     | Ehe                  |
+| Chinobatanidzwa chefaira chinowanzoitika chine zita refaira  | Ehe                  |
 
-| Rudzi rwechikamu                                           | Kupfuura kwakasimba                  | Kupfuura kwakapfava                  |
-|------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
-| Faira resiginecha re S/MIME `smime.p7s`                    | Rakabviswa                           | Rakabviswa                           |
-| Mhando dze S/MIME MIME (`application/pkcs7-*`)             | Rakabviswa                           | Rakabviswa                           |
-| Mufananidzo weinline unoreva Content‑ID (`image/*`)        | Rakabviswa (rinodzorerwa mumuviri\*) | Rakabviswa (rinodzorerwa mumuviri\*) |
-| Imeyili yakabatanidzwa (`message/rfc822`) ine zita refaira | Harina kuwedzerwa                    | Rinogona kuwedzerwa                  |
-| Attachment yefaira yakajairika ine zita refaira            | Rinogona kuwedzerwa                  | Rinogona kuwedzerwa                  |
-
-\* Kana "Include inline pictures" yakagoneswa (default: ON), mifananidzo yeinline inonyudzwa mumuviri wemhinduro se base64 data URIs panzvimbo pekuwedzerwa seattachments efaira. Ona [Kumisikidzwa](configuration#include-inline-pictures).
-
-Muenzaniso: Mamwe maattachment anogona kusashandisa mimwe misoro (headers) asi achiri mafaera akajairika (kwete inline/S/MIME). Kana kupfuura kwakasimba kusina kuwana, kupfuura kwakapfava kunogona kugamuchira iwayo nekuavaisa.
+Mufananidzo unoverengwa seiswa mukati chete kana meseji rekutanga richinyatsoita kuti unongedzerwe, kana kuti kana
+anotumira anyatso nyora kuti `Content-Disposition: inline`. Musoro we`Content-ID` woga hauna kukwana: maclients emakemikari
+akawanda anoisa izvi pane chikamu chega chega chemufananidzo, kusanganisira zvinobatanidzwa chaizvo, uye izvo zvinofanira kuramba zvichikopwa.
 
 ---
 
@@ -88,7 +88,7 @@ Muenzaniso: Mamwe maattachment anogona kusashandisa mimwe misoro (headers) asi a
 
 ## Nei maattachment angasawedzerwa {#why-attachments-might-not-be-added}
 
-- Mifananidzo yeinline haina kuwedzerwa seattachments efaira. Kana "Include inline pictures" iri ON (default), inonyudzwa mumuviri wemhinduro se data URIs panzvimbo pezvo. Kana marongero ari OFF, mifananidzo yeinline inobviswa zvachose. Ona [Kumisikidzwa](configuration#include-inline-pictures).
+- Mifananidzo yakabatanidzwa nemeseji yepakutanga haitorwi sezvakanamatirwa. Iyo yatove mumuviri wemhinduro, kwaakaiswa naThunderbird. Ona [Configuration](configuration#include-inline-pictures).
 - Zvikamu zvesiginecha ye S/MIME zvinobviswa nemaune: mazita efaira akaita se `smime.p7s` uye mhando dzeMIME dzakaita se `application/pkcs7-signature` kana `application/pkcs7-mime` zvinotsvetukwa.
 - Mapatani eblacklist anogona kusefa vanenge vakasarudzwa: ona [Kumisikidzwa](configuration#blacklist-glob-patterns); kuenzanisa hakutarisi misiyano yemacase uye kunobata chete zita refaira.
 - Mazita efaira anodzokororwa haadzokerwi kuwedzerwa: kana compose yatova nefaira rine zita rakajairikiswa rakafanana, rinotsvetukwa.

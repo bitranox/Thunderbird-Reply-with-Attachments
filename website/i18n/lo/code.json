@@ -54,7 +54,7 @@
     "message": "ຂ້າມ SMIME ແລະ ຮູບພາບແບບຝັງ"
   },
   "homepage.features.skipSmime.body": {
-    "message": "ລາຍເຊັນ SMIME ແລະ ຮູບພາບແບບຝັງຖືກຍົກເວັ້ນເພື່ອໃຫ້ການຕອບກັບເບົາ."
+    "message": "ລາຍເຊັນ SMIME ບໍ່ຖືກສຳເນົາເລີຍ. ຮູບພາບທີ່ຝັງຢູ່ໃນເນື້ອຫາຂໍ້ຄວາມຍັງຄົງຢູ່ໃນເນື້ອຫາການຕອບກັບ, ບ່ອນທີ່ Thunderbird ຮັກສາໄວ້, ແທນທີ່ຈະຖືກແນບອີກຄັ້ງ."
   },
   "homepage.features.blacklist.title": {
     "message": "ແບບແບບບັນຊີດຳ"

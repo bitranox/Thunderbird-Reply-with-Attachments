@@ -9,28 +9,29 @@ sidebar_label: 'Jëfandikoo'
 ## Jëfandikoo {#usage}
 
 - Tontu te modil bi dina yokk piis jowànt yi yu asal ci boppam — walla laaj ci kanam, bu ñu suqali ko ci Options.
-- Duppikat yi dañu sàq ci turu fichié; pacc S/MIME yi dañu leen bayyi saa su ne. Nataal yi ci biir (inline) dañu leen delloo ci jëmmalin bi saa su ne (mann ngaa suuxal ko ci "Include inline pictures" ci Options).
+- Ñu dindi ay kopi yu tembandi ci turu fichier bi; xaralu S/MIME yépp dañu koy dàqu. Nataal yi nekk ci kow bataaxal bi njëkk dañuy des ci digg mbind bi ci tontu bi, fa Thunderbird di leen def, te duñu leen kopi mel ni fichier.
 - Piis jowànt yi ci liñu dogal (blacklist) itam dañu koy bàyyi (glob patterns yi xam-xamu suuf-sukaale, di melal turu fichié rekk, du yoon). Gëna xam: [Tànneef](configuration#blacklist-glob-patterns).
 
 ---
 
 ### Lan la am bu ñu tontu {#what-happens}
 
-- Xam tontu → limi piis jowànt yi yu asal → séddi S/MIME + inline → dëggalu mandu → yokk fiichié yi mën a yokk (duppi yi sàq) → delloo nataal yi ci biir jëmmalin bi.
+- Xàmle tontu bi → limu pièce jointe yu njëkk yi → jóge S/MIME ak nataal yi nekk ci biir → confirmation bu ñu bëgg → yokk fichier yi jëfandikoo (te jóge doublons yi).
 
-Pass bu dëgër vs. pass bu yomb: Modil bi jëkk mooy bàyyi pacc S/MIME ak pacc yu inline ci piiñu tacc fiichié. Bu amul dara bu mën, dina def jàll bu yomb buy bàyyi itam S/MIME/inline waaye di mayy yu bari gëna am (xoolal Code Details). Nataal yi ci biir duñu kenn yokk leen ni fiichié yu tacc; lu ci gën a ëpp, bu “Include inline pictures” suqali (defóo la), dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64.
+| Xeetu xaral bi                                      | Kopi ci tontu bi                |
+|-----------------------------------------------------|--------------------------------:|
+| Fichier siñatir S/MIME `smime.p7s`                  | Déet                            |
+| Xeetu MIME S/MIME (`application/pkcs7-*`)           | Déet                            |
+| Nataal bi digg bataaxal bi jël ci `cid:`            | Déet (nekk na ci digg mbind bi) |
+| Nataal bi ñu marke `Content-Disposition: inline`    | Déet (nekk na ci digg mbind bi) |
+| Nataal am `Content-ID` bu digg bi mudul woon xool   | Waaw                            |
+| Email bu ñu dolli (`message/rfc822`) am tur fichier | Waaw                            |
+| Dolli fichier bu adduna am tur fichier              | Waaw                            |
 
-| Giiru pacc                                         | Pass bu dëgër                      | Pass bu yomb                       |
-|----------------------------------------------------|-----------------------------------:|-----------------------------------:|
-| Fichié siiñ S/MIME `smime.p7s`                     | Bàyyi na                           | Bàyyi na                           |
-| Xeetu MIME S/MIME (`application/pkcs7-*`)          | Bàyyi na                           | Bàyyi na                           |
-| Nataal bu inline bu joxe ko Content‑ID (`image/*`) | Bàyyi na (delloo ci jëmmalin bi\*) | Bàyyi na (delloo ci jëmmalin bi\*) |
-| Imeel bu tacc (`message/rfc822`) bu am turu fichié | Duggul                             | Mën nañu koy yokk                  |
-| Fichié bu tacc bu njort ci tur                     | Mën nañu koy yokk                  | Mën nañu koy yokk                  |
-
-\* Bu “Include inline pictures” suqali (defóo: ON), nataal yi ci biir dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64, du leen yokk ni fiichié yu tacc. Xoolal [Tànneef](configuration#include-inline-pictures).
-
-Misaal: Ay piis jowànt mën nañu amul ay header yu ñu bari waaye dañu fiichié yu dëgg rekk (du inline/S/MIME). Bu pass bu dëgër amul dara, pass bu yomb mën na ko nangu te koy tattali.
+Nataal du wone ni mu nekk ci kow bataaxal bi rekk bu bataaxal bi njëkk di ko xool wax,
+walla bu yónnee bi ko marke bu leer ni `Content-Disposition: inline`. Kilifeel
+`Content-ID` rekk du doy: yenn samp yu email dañuy def ko ci lépp xaralu nataal, ci lu
+bokk ay dolli yu wóor, yi war a des ay kopi.
 
 ---
 
@@ -85,7 +86,7 @@ Misaal: Ay piis jowànt mën nañu amul ay header yu ñu bari waaye dañu fiichi
 
 ## Lu tax piis jowànt yi mënul ñu yokk {#why-attachments-might-not-be-added}
 
-- Nataal yi ci biir duñu leen yokk ni fiichié yu tacc. Bu “Include inline pictures” ON (defóo) la, dañu leen sëf sedd ci jëmmalin bi ni data URI. Bu réglaj bi OFF, nataal yi ci biir dañu leen dindi totally. Xoolal [Tànneef](configuration#include-inline-pictures).
+- Nataal yi bataaxal bu njëkk bi dugal, duñu ko copyaat ni fichier. Ñoom nag nekk nañu ci tektu tontu bi, fu Thunderbird def ko. Xool [Configuration](configuration#include-inline-pictures).
 - Pacc siiñ S/MIME yi dañu leen bàyyi ci taxawaay: turu fichié yu mel ni `smime.p7s` ak xeetu MIME yu mel ni `application/pkcs7-signature` walla `application/pkcs7-mime` dañu leen sàq.
 - Pattern yi ci blacklist mën nañu sànni kandidaten yi: xoolal [Tànneef](configuration#blacklist-glob-patterns); dëpp bi du xam xajj majuskul/minuskul te di turu fichié rekk.
 - Turu fichié yu duppi du ñu re-yokk: bu koñu bind bi amoon na fiichié bu am tur bu dëpp, ñu koy sàq.

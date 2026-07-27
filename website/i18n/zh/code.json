@@ -54,7 +54,7 @@
     "message": "跳过 SMIME 和内联"
   },
   "homepage.features.skipSmime.body": {
-    "message": "为保持回复精简，会排除 SMIME 签名和内联图片。"
+    "message": "SMIME 签名永远不会被复制。嵌入在邮件正文中的图片会保留在回复正文里(Thunderbird 本来存放它们的位置),而不会被再次作为附件添加。"
   },
   "homepage.features.blacklist.title": {
     "message": "黑名单规则"
