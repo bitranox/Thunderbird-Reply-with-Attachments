@@ -80,12 +80,11 @@ web_build_local_preview: ## Preview to web-local-preview/, auto-serve 8080–809
 	  exit 1; \
 	fi
 
-web_push_github: ## Push website/build to GitHub Pages (stages in tmp_github_web_pages; uses scripts/web-push-github.sh). OPTS not used.
+web_push_github: ## Rebuild the site and push website/build to GitHub Pages (stages in tmp_github_web_pages; uses scripts/web-push-github.sh). OPTS not used.
 	@set -e; \
-	if [ ! -f website/build/index.html ]; then \
-	  echo "Docs not built yet. Running 'make web-build'…"; \
-	  $(MAKE) web-build; \
-	fi; \
+	echo "==> Rebuilding the site before publishing…"; \
+	rm -rf website/build; \
+	$(MAKE) web_build; \
 	if [ -x scripts/web-push-github.sh ]; then \
 	  bash scripts/web-push-github.sh; \
 	else \
@@ -164,8 +163,8 @@ translation_web: ## Translate website docs. Usage: make translation-web OPTS="<d
 	  node scripts/translate_web_docs.js $(OPTS); \
 	fi
 
-translate_web_index: ## Alias for 'make translation-web-index' (no args; translates website index UI strings)
-	@$(MAKE) translation_web-index
+translate_web_index: ## Alias for 'make translation_web_index' (no args; translates website index UI strings)
+	@$(MAKE) translation_web_index
 
 translation_web_index: ## Translate website UI strings (homepage/navbar/footer) from website/i18n/en/code.json to all locales under website/i18n (except en). Usage: make translation-web-index [OPTS="--locales de,fr --force"]
 	@set -e; \
