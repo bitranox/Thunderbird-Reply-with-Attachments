@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.4.1] - 2026-07-27
+
+- Manifest: declare `browser_specific_settings.gecko.data_collection_permissions` as `{"required": ["none"]}`. The add-on makes no network calls, and Mozilla requires the declaration for new extensions since 2025-11-03. Verified on the 128.0 floor: Thunderbird 128.14.0 ESR loads the add-on with the key present and logs no manifest complaint, so the key is ignored there rather than rejected.
+- i18n: the 2.4.0 wording is now translated into all 99 locales (homepage string, features, changelog and usage pages).
+
 ## [2.4.0] - 2026-07-27
 
 - Fix: images are no longer dropped just because the sender put a `Content-ID` header on them. An image counts as inline only when the original message embeds it (a `cid:` reference in the message body) or when it is explicitly marked `Content-Disposition: inline`. Clients such as Apple Mail and Outlook stamp a `Content-ID` on every image part, so attached PNG and JPEG files were silently skipped: no confirmation dialog and no file in the reply, while PDF, DOCX and XLSX came through.
