@@ -4,8 +4,11 @@
  *          the application layer. Adapters (e.g., Thunderbird APIs) provide
  *          concrete implementations in app/adapters/*, and the composition
  *          root wires them together.
- * Notes: These typedefs are for documentation and IDE help; they have no
- *        runtime cost and keep the application layer framework‑free.
+ * Notes: Types only. This file is never loaded at runtime - sources/background.html
+ *        lists every script and this is not one of them - so it carries no runtime
+ *        cost and keeps the application layer framework-free. It is a module so
+ *        `tsc --checkJs` can resolve the `import('./ports.js')` references used
+ *        throughout the application layer.
  */
 
 /** @typedef {{ id: number }} TabLike */
@@ -20,9 +23,19 @@
  */
 
 /**
+ * The slice of the compose surface the attachment copy step needs. Kept separate
+ * from ComposePort so a caller that only copies files does not have to fake the
+ * details/event members it never uses.
+ * @typedef {object} ComposeAttachPort
+ * @property {(tabId: number) => Promise<Array<{ name?: string, fileName?: string }>>} listAttachments
+ * @property {(tabId: number, att: { file: File|Blob }) => Promise<void>} addAttachment
+ */
+
+/**
  * @typedef {object} MessagesPort
  * @property {(messageId: number) => Promise<Array<{ name?: string, fileName?: string, partName: string, contentType?: string, contentDisposition?: string, contentId?: string }>>} listAttachments
  * @property {(messageId: number, partName: string) => Promise<File|Blob|null>} getAttachmentFile
+ * @property {(messageId: number) => Promise<Array<{ contentType?: string, content?: string }>>} [listInlineTextParts]
  */
 
 /**
@@ -48,6 +61,4 @@
 
 /** @typedef {(tabId: number, selected: Array<{ name: string }>) => Promise<boolean>} ConfirmFn */
 
-// Publish namespace for discoverability in the global App.* space.
-globalThis.App = globalThis.App || {};
-App.Ports = {};
+export {};

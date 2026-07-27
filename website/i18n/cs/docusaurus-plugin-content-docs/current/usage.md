@@ -20,13 +20,13 @@ sidebar_label: 'Použití'
 
 Přísný vs. uvolněný průchod: Doplněk nejprve vyloučí části S/MIME a vložené části ze souborových příloh. Pokud nic neprojde, spustí uvolněný průchod, který stále vylučuje S/MIME/inline, ale toleruje více případů (viz podrobnosti kódu). Vložené obrázky se nikdy nepřidávají jako souborové přílohy; místo toho, když je povoleno "Include inline pictures" (výchozí), vkládají se přímo do těla odpovědi jako base64 data URI.
 
-| Typ části                                                |                Přísný průchod |              Uvolněný průchod |
-| -------------------------------------------------------- | ----------------------------: | ----------------------------: |
-| Soubor podpisu S/MIME `smime.p7s`                        |                     Vynecháno |                     Vynecháno |
-| Typy MIME S/MIME (`application/pkcs7-*`)                 |                     Vynecháno |                     Vynecháno |
+| Typ části                                                | Přísný průchod                | Uvolněný průchod              |
+|----------------------------------------------------------|------------------------------:|------------------------------:|
+| Soubor podpisu S/MIME `smime.p7s`                        | Vynecháno                     | Vynecháno                     |
+| Typy MIME S/MIME (`application/pkcs7-*`)                 | Vynecháno                     | Vynecháno                     |
 | Vložený obrázek odkazovaný pomocí Content‑ID (`image/*`) | Vynecháno (obnovené v těle\*) | Vynecháno (obnovené v těle\*) |
-| Přiložený e‑mail (`message/rfc822`) s názvem souboru     |                     Nepřidáno |               Může být přidán |
-| Běžná souborová příloha s názvem souboru                 |               Může být přidán |               Může být přidán |
+| Přiložený e‑mail (`message/rfc822`) s názvem souboru     | Nepřidáno                     | Může být přidán               |
+| Běžná souborová příloha s názvem souboru                 | Může být přidán               | Může být přidán               |
 
 \* Když je "Include inline pictures" povoleno (výchozí: ZAPNUTO), vložené obrázky se vkládají do těla odpovědi jako datová URI místo přidání jako souborové přílohy. Viz [Konfigurace](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Příklad: Některým přílohám mohou chybět určité hlavičky, ale stále j
 ### Přehled klávesových zkratek {#keyboard-cheat-sheet}
 
 | Klávesy         | Akce                                  |
-| --------------- | ------------------------------------- |
+|-----------------|---------------------------------------|
 | Y / J           | Potvrdit Ano                          |
 | N / Esc         | Potvrdit Ne                           |
 | Enter           | Aktivovat zaměřené tlačítko           |

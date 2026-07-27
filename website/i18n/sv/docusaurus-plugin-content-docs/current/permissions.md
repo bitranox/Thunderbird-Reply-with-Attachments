@@ -33,7 +33,7 @@ Dessa är dokumenterade i källan och testade i CI. Tillägget samlar inte in te
 ### Sammanfattning (behörigheter → syfte) {#permissions-summary}
 
 | Behörighet          | Varför den behövs                                                                |
-| ------------------- | -------------------------------------------------------------------------------- |
+|---------------------|----------------------------------------------------------------------------------|
 | `compose`           | Observera kompositionshändelser; lista och tillsätta bilagor i ditt svar.        |
 | `messagesRead`      | Lista bilagor från det ursprungliga meddelandet och hämta fildata.               |
 | `scripting`         | Injicera/koordinera lättvikts UI för bekräftelse när det är aktiverat.           |

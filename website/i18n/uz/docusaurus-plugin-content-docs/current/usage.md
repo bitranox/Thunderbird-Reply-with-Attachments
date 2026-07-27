@@ -20,13 +20,13 @@ sidebar_label: 'Foydalanish'
 
 Qattiq va yengil tekshiruv: qo‘shimcha avval fayl ilovalaridan S/MIME va inline qismlarini chiqarib tashlaydi. Agar hech narsa mos kelmasa, u baribir S/MIME/inline ni chiqarib tashlaydigan, ammo ko‘proq holatlarga ruxsat beradigan yengil tekshiruvni ishga tushiradi (Kod tafsilotlariga qarang). Ichki rasmlar hech qachon fayl ilovalari sifatida qo‘shilmaydi; buning o‘rniga, "Include inline pictures" yoqilganida (sukut bo‘yicha), ular javob tanasiga to‘g‘ridan‑to‘g‘ri base64 data URI sifatida joylashtiriladi.
 
-| Qism turi                                                |                      Qattiq tekshiruv |                      Yengil tekshiruv |
-| -------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
-| S/MIME imzo fayli `smime.p7s`                            |                      Istisno qilingan |                      Istisno qilingan |
-| S/MIME MIME turlari (`application/pkcs7-*`)              |                      Istisno qilingan |                      Istisno qilingan |
+| Qism turi                                                | Qattiq tekshiruv                      | Yengil tekshiruv                      |
+|----------------------------------------------------------|--------------------------------------:|--------------------------------------:|
+| S/MIME imzo fayli `smime.p7s`                            | Istisno qilingan                      | Istisno qilingan                      |
+| S/MIME MIME turlari (`application/pkcs7-*`)              | Istisno qilingan                      | Istisno qilingan                      |
 | Content‑ID orqali havola qilingan ichki rasm (`image/*`) | Istisno qilingan (tanada tiklanadi\*) | Istisno qilingan (tanada tiklanadi\*) |
-| Fayl nomiga ega biriktirilgan xat (`message/rfc822`)     |                          Qo‘shilmaydi |                    Qo‘shilishi mumkin |
-| Fayl nomiga ega oddiy fayl ilovasi                       |                    Qo‘shilishi mumkin |                    Qo‘shilishi mumkin |
+| Fayl nomiga ega biriktirilgan xat (`message/rfc822`)     | Qo‘shilmaydi                          | Qo‘shilishi mumkin                    |
+| Fayl nomiga ega oddiy fayl ilovasi                       | Qo‘shilishi mumkin                    | Qo‘shilishi mumkin                    |
 
 \* "Include inline pictures" yoqilganida (sukut bo‘yicha: ON), ichki rasmlar fayl ilovalari sifatida qo‘shilmaydi, balki javob tanasiga base64 data URI ko‘rinishida joylashtiriladi. [Sozlamalar](configuration#include-inline-pictures)ga qarang.
 
@@ -67,7 +67,7 @@ Misol: Ba’zi ilovalarda ayrim sarlavhalar yetishmasligi mumkin, ammo ular bari
 ### Klaviatura uchun tezkor qo‘llanma {#keyboard-cheat-sheet}
 
 | Tugmalar        | Amal                                       |
-| --------------- | ------------------------------------------ |
+|-----------------|--------------------------------------------|
 | Y / J           | Ha ni tasdiqlash                           |
 | N / Esc         | Yo‘qni tasdiqlash                          |
 | Enter           | Fokuslangan tugmani faollashtirish         |

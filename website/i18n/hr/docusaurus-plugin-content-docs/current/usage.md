@@ -20,13 +20,13 @@ sidebar_label: 'Uporaba'
 
 Strogi naspram opuštenog prolaza: Dodatak najprije isključuje S/MIME i ugrađene dijelove iz privitaka datoteka. Ako ništa ne ispunjava uvjete, pokreće opušteni prolaz koji i dalje isključuje S/MIME/ugrađene, ali tolerira više slučajeva (vidi Pojedinosti o kodu). Ugrađene slike se nikada ne dodaju kao privici datoteka; umjesto toga, kada je uključeno "Uključi ugrađene slike" (zadano), one se ugrađuju izravno u tijelo odgovora kao base64 data URI-ji.
 
-| Vrsta dijela                                             |                   Strogi prolaz |                 Opušteni prolaz |
-| -------------------------------------------------------- | ------------------------------: | ------------------------------: |
-| S/MIME datoteka potpisa `smime.p7s`                      |                      Isključeno |                      Isključeno |
-| S/MIME MIME tipovi (`application/pkcs7-*`)               |                      Isključeno |                      Isključeno |
+| Vrsta dijela                                             | Strogi prolaz                   | Opušteni prolaz                 |
+|----------------------------------------------------------|--------------------------------:|--------------------------------:|
+| S/MIME datoteka potpisa `smime.p7s`                      | Isključeno                      | Isključeno                      |
+| S/MIME MIME tipovi (`application/pkcs7-*`)               | Isključeno                      | Isključeno                      |
 | Ugrađena slika na koju upućuje Content‑ID (`image/*`)    | Isključeno (vraćeno u tijelo\*) | Isključeno (vraćeno u tijelo\*) |
-| Priložena e‑poruka (`message/rfc822`) s nazivom datoteke |                     Nije dodano |                Može biti dodano |
-| Uobičajeni privitak datoteke s nazivom                   |                Može biti dodano |                Može biti dodano |
+| Priložena e‑poruka (`message/rfc822`) s nazivom datoteke | Nije dodano                     | Može biti dodano                |
+| Uobičajeni privitak datoteke s nazivom                   | Može biti dodano                | Može biti dodano                |
 
 \* Kada je "Uključi ugrađene slike" omogućeno (zadano: UKLJ.), ugrađene se slike umeću u tijelo odgovora kao base64 data URI-ji umjesto da se dodaju kao privici datoteka. Vidi [Konfiguraciju](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Primjer: Neki privici mogu nedostajati određenim zaglavljima, ali su i dalje ob
 ### Kratki podsjetnik za tipkovničke prečace {#keyboard-cheat-sheet}
 
 | Tipke               | Radnja                              |
-| ------------------- | ----------------------------------- |
+|---------------------|-------------------------------------|
 | Y / J               | Potvrdi Da                          |
 | N / Esc             | Potvrdi Ne                          |
 | Enter               | Aktiviraj fokusirani gumb           |

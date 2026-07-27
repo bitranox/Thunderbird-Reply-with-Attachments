@@ -61,7 +61,7 @@ Makefile standardizira običajne razvojne poteke. Kadarkoli zaženite `make help
 Namig: zagon `make` brez cilja odpre preprost meni Whiptail za izbiro cilja.
 
 | Cilj                                                     | Enovrstični opis                                                                                     |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Odstrani lokalne artefakte gradnje/predogleda (tmp/, web-local-preview/, website/build/).            |
 | [`commit`](#mt-commit)                                   | Formatiranje, zagon testov (vklj. i18n), posodobitev dnevnika sprememb, commit in push.              |
 | [`eslint`](#mt-eslint)                                   | Zaženi ESLint prek ravne konfiguracije (`npm run -s lint:eslint`).                                   |

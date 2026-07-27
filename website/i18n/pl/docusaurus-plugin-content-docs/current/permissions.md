@@ -33,7 +33,7 @@ Są one udokumentowane w źródle i testowane w CI. Dodatek nie zbiera danych te
 ### Podsumowanie (uprawnienia → cel) {#permissions-summary}
 
 | Uprawnienie         | Dlaczego jest potrzebne                                                              |
-| ------------------- | ------------------------------------------------------------------------------------ |
+|---------------------|--------------------------------------------------------------------------------------|
 | `compose`           | Obserwuj zdarzenia komponowania; wymieniaj i dodawaj załączniki w swojej odpowiedzi. |
 | `messagesRead`      | Wymieniaj załączniki oryginalnej wiadomości i pobieraj dane pliku.                   |
 | `scripting`         | Wstrzykuj/koordynuj lekkie UI dla potwierdzenia, gdy jest włączone.                  |

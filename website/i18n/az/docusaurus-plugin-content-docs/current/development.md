@@ -61,7 +61,7 @@ Makefile ümumi inkişaf axınlarını standartlaşdırır. Hər hədəf üçün
 Məsləhət: `make` hədəfsiz işlədildikdə hədəf seçmək üçün sadə Whiptail menyusu açılır.
 
 | Hədəf                                                    | Bir sətirlik təsvir                                                                               |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Yerli build/preview artifaktlarını sil (tmp/, web-local-preview/, website/build/).                |
 | [`commit`](#mt-commit)                                   | Formatla, testləri işə sal (i18n daxil), dəyişiklik jurnalını yenilə, commit et və push et.       |
 | [`eslint`](#mt-eslint)                                   | ESLint-i flat konfiq vasitəsilə işə sal (`npm run -s lint:eslint`).                               |

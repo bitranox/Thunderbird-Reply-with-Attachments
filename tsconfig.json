@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "strict": false,
+    "noImplicitAny": false,
+    "types": ["thunderbird-webext-browser"],
+    "skipLibCheck": true
+  },
+  "include": ["sources/**/*.js", "types/**/*.d.ts"]
+}

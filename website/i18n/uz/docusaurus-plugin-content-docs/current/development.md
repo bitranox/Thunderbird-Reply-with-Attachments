@@ -61,7 +61,7 @@ Makefile umumiy ishlab chiqish oqimlarini standartlashtiradi. Har bir maqsadning
 Maslahat: `make` ni maqsadsiz ishga tushirsangiz, maqsad tanlash uchun oddiy Whiptail menyusi ochiladi.
 
 | Maqsad                                                   | Bir qatorli tavsif                                                                                     |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Mahalliy build/preview artefaktlarini olib tashlash (tmp/, web-local-preview/, website/build/).        |
 | [`commit`](#mt-commit)                                   | Formatlash, testlarni ishga tushirish (i18n ham), changelog’ni yangilash, commit va push.              |
 | [`eslint`](#mt-eslint)                                   | ESLint’ni flat config orqali ishga tushirish (`npm run -s lint:eslint`).                               |

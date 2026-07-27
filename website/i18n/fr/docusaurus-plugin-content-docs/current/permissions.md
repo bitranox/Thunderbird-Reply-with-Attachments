@@ -33,7 +33,7 @@ Ceci est documenté dans la source et testé en CI. L'add-on ne collecte pas de 
 ### Summary (permissions → purpose) {#permissions-summary}
 
 | Permission     | Pourquoi c'est nécessaire                                                                         |
-| -------------- | ------------------------------------------------------------------------------------------------- |
+|----------------|---------------------------------------------------------------------------------------------------|
 | `compose`      | Observer les événements de composition ; lister et ajouter des pièces jointes dans votre réponse. |
 | `messagesRead` | Lister les pièces jointes du message original et récupérer les données du fichier.                |
 | `scripting`    | Injecter/coordonner une interface utilisateur légère pour confirmation lorsqu'elle est activée.   |

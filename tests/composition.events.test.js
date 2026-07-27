@@ -14,6 +14,7 @@ describe('Composition wiring — events', () => {
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 
@@ -40,6 +41,7 @@ describe('Composition wiring — events', () => {
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 
@@ -130,6 +132,7 @@ describe('Composition wiring — readiness', () => {
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 

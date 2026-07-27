@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Opozori, če so priloge izključene zaradi črnega seznama"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Vključi vdelane slike (vgrajene slike)"
-  },
   "uiDebugHeader": {
     "message": "Napredno"
   },

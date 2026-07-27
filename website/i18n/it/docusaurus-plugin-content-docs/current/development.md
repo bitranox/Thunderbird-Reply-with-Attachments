@@ -61,7 +61,7 @@ Il Makefile standardizza i flussi di sviluppo comuni. Esegui `make help` in qual
 Suggerimento: eseguire `make` senza target apre un semplice menu Whiptail per scegliere un target.
 
 | Target                                                   | Descrizione in una riga                                                                    |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Rimuove gli artefatti di build/preview locali (tmp/, web-local-preview/, website/build/).  |
 | [`commit`](#mt-commit)                                   | Format, esegue i test (incl. i18n), aggiorna il changelog, effettua commit e push.         |
 | [`eslint`](#mt-eslint)                                   | Esegue ESLint tramite flat config (`npm run -s lint:eslint`).                              |

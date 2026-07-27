@@ -27,7 +27,9 @@ function sanitizeFrontMatterBlock(text) {
       val = val.replace(/(?:\u200B|\u200C|\u200D|\uFEFF)/g, '');
       try {
         val = val.replace(/^\p{M}+/u, '');
-      } catch {}
+      } catch {
+        // older Node without Unicode property escapes: leave the value as-is
+      }
       val = val.trim();
       const quoted = JSON.stringify(val);
       if (m[2] !== quoted) changed = true;

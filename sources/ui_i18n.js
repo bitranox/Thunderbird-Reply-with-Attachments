@@ -1,6 +1,6 @@
 /*
  * Module: ui_i18n.js
- * Purpose: Lightweight i18n applier for options/popup pages.
+ * Purpose: Lightweight i18n applier for extension pages.
  * Usage:
  * - data-i18n="key"                        → sets textContent from i18n message
  * - data-i18n-attr="attr:key[,attr2:key2]" → sets attributes from i18n messages
@@ -10,8 +10,10 @@
   // Mark that JS is active early to avoid layout shift (no inline script needed)
   try {
     document.documentElement.classList.add('js');
-  } catch (_) {}
-  // Set document direction for RTL languages for better layout in options/popup.
+  } catch (_) {
+    // the js class only avoids a layout shift
+  }
+  // Set document direction for RTL languages for better layout.
   try {
     const lang = (
       globalThis.browser?.i18n?.getUILanguage?.() ||
@@ -23,7 +25,9 @@
     if (RTL.has(primary)) {
       document.documentElement.setAttribute('dir', 'rtl');
     }
-  } catch (_) {}
+  } catch (_) {
+    // i18n lookups fall through to the literal default below
+  }
   /**
    * Lookup a localized string by key using the MailExtension i18n API.
    * @param {string} key
@@ -34,7 +38,9 @@
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key) || '';
       if (globalThis.messenger?.i18n?.getMessage) return messenger.i18n.getMessage(key) || '';
-    } catch (_) {}
+    } catch (_) {
+      // i18n lookups fall through to the literal default below
+    }
     return '';
   }
 

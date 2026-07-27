@@ -61,7 +61,7 @@ I-Makefile ilungelelanisa imijelo eqhelekileyo yophuhliso. Sebenzisa `make help`
 Icebiso: ukuqhuba `make` ngaphandle kwethagethi kuvula imenyu elula ye-Whiptail ukukhetha ithagethi.
 
 | Target                                                   | Inkcazo yomgca omnye                                                                                                    |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Susa izinto ezakhiweyo/zokujonga (preview) zasekhaya (tmp/, web-local-preview/, website/build/).                        |
 | [`commit`](#mt-commit)                                   | Format, sebenzisa uvavanyo (kuquka i18n), hlaziya i-changelog, commit & push.                                           |
 | [`eslint`](#mt-eslint)                                   | Qhuba i-ESLint ngocwangciso lwe-flat (`npm run -s lint:eslint`).                                                        |

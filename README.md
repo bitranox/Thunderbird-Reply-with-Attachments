@@ -5,20 +5,20 @@
 ![Thunderbird](https://img.shields.io/badge/thunderbird-MV3-green)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-**Reply with Attachments** is a Thunderbird add‑on that automatically includes the original attachments when you reply.
+**Reply with Attachments** is a Thunderbird add-on that automatically includes the original attachments when you reply.
 
-What it does: When you reply to an email, it finds the original message’s attachments and adds them to your reply automatically. Optionally, a small confirmation dialog can ask before adding. If files are excluded by your blacklist, a short warning lists them (enabled by default).
+What it does: When you reply to an email, it finds the original message's attachments and adds them to your reply automatically. Optionally, a small confirmation dialog can ask before adding. If files are excluded by your blacklist, a short warning lists them (enabled by default).
 
-Is it safe? Yes — it runs locally and uses a minimal set of permissions only to read original attachments and add them to your reply. See Permissions: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/permissions
+Is it safe? Yes - it runs locally and uses a minimal set of permissions only to read original attachments and add them to your reply. See Permissions: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/permissions
 
 ---
 
 ## Configuration Highlights
 
 - Ask before adding attachments (optional). Choose the default answer (Yes/No) for quick keyboard entry.
-- Blacklist (glob patterns) to skip files automatically, case‑insensitive filename matching.
+- Blacklist (glob patterns) to skip files automatically, case-insensitive filename matching.
 - Warn if attachments are excluded by blacklist (default: ON). Shows a small, accessible modal listing the excluded files and the matching pattern(s). Works even if all candidates are excluded.
-- Include inline pictures (default: ON). Embedded images are restored directly in the reply body as base64 data URIs, preserving the original inline layout. Disable in Options to skip inline images entirely.
+- Embedded images are left to Thunderbird: they stay in the reply body and are not copied as file attachments. An image that merely carries a `Content-ID` without being referenced is a normal attachment and is copied.
 
 See Configuration for details and examples.
 
@@ -33,7 +33,7 @@ See Configuration for details and examples.
 
 Quickstart
 
-- Install from Thunderbird Add‑ons, then reply to a message with attachments — originals will be added automatically or after a quick confirmation (toggle in Options).
+- Install from Thunderbird Add-ons, then reply to a message with attachments - originals will be added automatically or after a quick confirmation (toggle in Options).
 - Read the Quickstart guide: https://bitranox.github.io/Thunderbird-Reply-with-Attachments/docs/quickstart
 
 CI & Coverage
@@ -48,24 +48,24 @@ Release process
 
 ## Support This Project
 
-If you like this add‑on, please consider supporting it:
+If you like this add-on, please consider supporting it:
 
 ## <a href="https://bitranox.github.io/Thunderbird-Reply-with-Attachments/donate"><img src="website/static/img/donate.png" alt="Donate" width="120"></a>
 
 ## Architecture
 
-The extension follows a **layered clean architecture** to keep business logic testable and framework‑independent:
+The extension follows a **layered clean architecture** to keep business logic testable and framework-independent:
 
 ```
 Domain  →  Application  →  Adapters  →  Composition  →  Background
 ```
 
 | Layer           | Directory                    | Responsibility                                                                                                                                            |
-| --------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Domain**      | `sources/app/domain/`        | Pure functions: attachment filtering (`includeStrict`, `includeRelaxed`), blacklist matching, content‑type helpers. No side effects.                      |
-| **Application** | `sources/app/application/`   | Use‑cases: `processReplyAttachments` orchestrates fetch → filter → attach. Depends on domain; receives adapters via injection.                            |
+|-----------------|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Domain**      | `sources/app/domain/`        | Pure functions: attachment filtering (`includeStrict`, `includeRelaxed`), blacklist matching, content-type helpers. No side effects.                      |
+| **Application** | `sources/app/application/`   | Use-cases: `processReplyAttachments` orchestrates fetch → filter → attach. Depends on domain; receives adapters via injection.                            |
 | **Adapters**    | `sources/app/adapters/`      | Thunderbird WebExtension API wrappers (`messages.listAttachments`, `compose.addAttachment`, etc.). Isolates platform calls behind a consistent interface. |
-| **Composition** | `sources/app/composition.js` | Wires adapters into use‑cases, manages reactive settings (`storage.onChanged`), registers event listeners.                                                |
+| **Composition** | `sources/app/composition.js` | Wires adapters into use-cases, manages reactive settings (`storage.onChanged`), registers event listeners.                                                |
 | **Background**  | `sources/background.js`      | Entry point. Bootstraps install/migration, loads composition, seeds defaults.                                                                             |
 
 **Event pipeline** (reply flow):
@@ -73,17 +73,17 @@ Domain  →  Application  →  Adapters  →  Composition  →  Background
 ```
 compose.onStateChanged
   → handleComposeStateChanged  (resolve tab, fetch details)
-    → ensureWrapper             (wait for settings, rebuild use‑case)
+    → ensureWrapper             (wait for settings, rebuild use-case)
       → ensure                  (processReplyAttachments: fetch → filter → attach)
 ```
 
-Each compose tab is processed **at most once** per reply via session‑based idempotency (browser sessions API + in‑memory map).
+Each compose tab is processed **at most once** per reply via session-based idempotency (browser sessions API + in-memory map).
 
 **Key design decisions:**
 
 - **Session markers** prevent duplicate processing across restarts.
-- **Reactive settings** — options changes propagate via `storage.onChanged` without restart.
-- **Confirm fallback chain** — scripting.compose → content script → messaging, with graceful degradation.
+- **Reactive settings** - options changes propagate via `storage.onChanged` without restart.
+- **Confirm fallback chain** - scripting.compose → content script → messaging, with graceful degradation.
 
 ## Developer Notes (docs translations)
 

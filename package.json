@@ -6,20 +6,24 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage || node node_modules/vitest/vitest.mjs run",
-    "test:i18n": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage tests/i18n.*.test.js || node node_modules/vitest/vitest.mjs run tests/i18n.*.test.js",
-    "test:website-i18n": "node node_modules/vitest/vitest.mjs run tests/website.*.test.js",
-    "test:watch": "node node_modules/vitest/vitest.mjs",
-    "lint:webext": "web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
-    "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
+    "ci:guard-doc-urls": "node scripts/ci-guard-doc-urls.mjs",
     "format": "node ./node_modules/prettier/bin/prettier.cjs --write .",
     "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check .",
+    "lint:eslint": "node ./node_modules/eslint/bin/eslint.js .",
+    "lint:eslint:quiet": "node ./node_modules/eslint/bin/eslint.js . --quiet",
+    "lint:webext": "web-ext lint --self-hosted --ignore-files 'reply-with-attachments-plugin*.zip' --source-dir sources",
+    "test": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage || node node_modules/vitest/vitest.mjs run",
+    "test:e2e": "python3 tests/e2e/run-e2e.py /opt/tb/esr/thunderbird",
+    "test:e2e:release": "python3 tests/e2e/run-e2e.py /opt/tb/release/thunderbird",
+    "test:i18n": "node -e \"try{require.resolve('@vitest/coverage-v8');process.exit(0)}catch(e){process.exit(1)}\" && node node_modules/vitest/vitest.mjs run --coverage tests/i18n.*.test.js || node node_modules/vitest/vitest.mjs run tests/i18n.*.test.js",
+    "test:watch": "node node_modules/vitest/vitest.mjs",
+    "test:website-i18n": "node node_modules/vitest/vitest.mjs run tests/website.*.test.js",
     "translate:i18n": "node scripts/translate-i18n.mjs --locales all --docs --messages",
-    "ci:guard-doc-urls": "node scripts/ci-guard-doc-urls.mjs",
-    "lint:eslint:quiet": "node ./node_modules/eslint/bin/eslint.js . --quiet"
+    "typecheck": "node ./node_modules/typescript/bin/tsc -p tsconfig.json"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/thunderbird-webext-browser": "^127.0.0",
     "@vitest/coverage-v8": "^4.0.18",
     "@vitest/ui": "^4.0.18",
     "eslint": "^10.0.1",
@@ -27,6 +31,7 @@
     "jsdom": "^28.1.0",
     "linkinator": "^7.5.3",
     "prettier": "^3.6.2",
+    "typescript": "^7.0.2",
     "vitest": "^4.0.18",
     "web-ext": "^9.3.0"
   }

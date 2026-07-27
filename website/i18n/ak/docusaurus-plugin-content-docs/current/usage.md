@@ -20,13 +20,13 @@ sidebar_label: 'Sɛnea wɔde di dwuma'
 
 Twɛ a ɛyɛ den (strict) ne nea ɛyɛ mmerɛw (relaxed): Add‑on no di kan yi S/MIME ne inline nkyekyɛmu firi fael ntamafɔde mu. Sɛ biribiara mmfata a, ɛhyɛ twɛ a ɛyɛ mmerɛw mu a na ɛsɛe S/MIME/inline nso, nanso ɛma nsɛm pii so (hwɛ Code Details). Mfonini a wɔahyɛ mu no renka ho sɛ fael ntamafɔde da; mmom, sɛ "Include inline pictures" wɔ so (the default) a, wɔde wɔn bɛhyɛ mmuae krataa no mu pɛpɛɛpɛ te sɛ base64 data URI.
 
-| Fã no tebea                                                |               Twɛ a ɛyɛ den |            Twɛ a ɛyɛ mmerɛw |
-| ---------------------------------------------------------- | --------------------------: | --------------------------: |
-| S/MIME nsain (signature) fael `smime.p7s`                  |                    Wɔpoo no |                    Wɔpoo no |
-| S/MIME MIME type (`application/pkcs7-*`)                   |                    Wɔpoo no |                    Wɔpoo no |
+| Fã no tebea                                                | Twɛ a ɛyɛ den               | Twɛ a ɛyɛ mmerɛw            |
+|------------------------------------------------------------|----------------------------:|----------------------------:|
+| S/MIME nsain (signature) fael `smime.p7s`                  | Wɔpoo no                    | Wɔpoo no                    |
+| S/MIME MIME type (`application/pkcs7-*`)                   | Wɔpoo no                    | Wɔpoo no                    |
 | Mfonini a wɔahyɛ mu a Content‑ID de rekyerɛ no (`image/*`) | Wɔpoo no (wɔsan de gu mu\*) | Wɔpoo no (wɔsan de gu mu\*) |
-| Email a wɔde aka ho (`message/rfc822`) a ɛwɔ fael‑din      |                    Wɔnka ho |               Betumi aka ho |
-| Fael ntamafɔde a ɛwɔ fael‑din                              |               Betumi aka ho |               Betumi aka ho |
+| Email a wɔde aka ho (`message/rfc822`) a ɛwɔ fael‑din      | Wɔnka ho                    | Betumi aka ho               |
+| Fael ntamafɔde a ɛwɔ fael‑din                              | Betumi aka ho               | Betumi aka ho               |
 
 \* Sɛ "Include inline pictures" wɔ so (default: ON) a, mfonini a wɔahyɛ mu no wɔde wɔn bɛhyɛ mmuae no mu te sɛ base64 data URIs, na mmom ɛnyɛ sɛ wɔde wɔn ka ho sɛ fael ntamafɔde. Hwɛ [Nhyehyɛe](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Nsɛmhwɛne: Ntamafɔde bi betumi asɛe atifi‑ti (headers) bi, nanso wɔyɛ fa
 ### Keyboa Cheat Sheet {#keyboard-cheat-sheet}
 
 | Akɛy            | Dwuma                                    |
-| --------------- | ---------------------------------------- |
+|-----------------|------------------------------------------|
 | Y / J           | Pene so Aane                             |
 | N / Esc         | Pene so Daabi                            |
 | Enter           | Sɔ batɔn a ɛwɔ focus so                  |

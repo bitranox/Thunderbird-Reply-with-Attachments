@@ -20,13 +20,13 @@ sidebar_label: 'İstifadə'
 
 Sərt və yumşaq keçid: Əlavə əvvəlcə fayl qoşmalarından S/MIME və sətirdaxili hissələri kənarlaşdırır. Heç nə uyğun gəlməzsə, S/MIME/sətirdaxilini yenə istisna edən, amma daha çox halı qəbul edən yumşaq keçid işə düşür (Kod Təfərrüatlarına baxın). Sətirdaxili şəkillər heç vaxt fayl qoşması kimi əlavə edilmir; əvəzində, "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), onlar birbaşa cavab mətninə base64 data URI kimi yerləşdirilir.
 
-| Hissə növü                                                  |                              Sərt keçid |                            Yumşaq keçid |
-| ----------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
-| S/MIME imza faylı `smime.p7s`                               |                         Kənarlaşdırılır |                         Kənarlaşdırılır |
-| S/MIME MIME tipləri (`application/pkcs7-*`)                 |                         Kənarlaşdırılır |                         Kənarlaşdırılır |
+| Hissə növü                                                  | Sərt keçid                              | Yumşaq keçid                            |
+|-------------------------------------------------------------|----------------------------------------:|----------------------------------------:|
+| S/MIME imza faylı `smime.p7s`                               | Kənarlaşdırılır                         | Kənarlaşdırılır                         |
+| S/MIME MIME tipləri (`application/pkcs7-*`)                 | Kənarlaşdırılır                         | Kənarlaşdırılır                         |
 | Content‑ID ilə istinad edilən sətirdaxili şəkil (`image/*`) | Kənarlaşdırılır (mətndə bərpa olunur\*) | Kənarlaşdırılır (mətndə bərpa olunur\*) |
-| Fayl adı olan qoşulmuş e‑poçt (`message/rfc822`)            |                           Əlavə edilmir |                       Əlavə oluna bilər |
-| Fayl adı olan adi fayl qoşması                              |                       Əlavə oluna bilər |                       Əlavə oluna bilər |
+| Fayl adı olan qoşulmuş e‑poçt (`message/rfc822`)            | Əlavə edilmir                           | Əlavə oluna bilər                       |
+| Fayl adı olan adi fayl qoşması                              | Əlavə oluna bilər                       | Əlavə oluna bilər                       |
 
 \* "Sətirdaxili şəkilləri daxil et" aktiv olduqda (defolt: AÇIQ), sətirdaxili şəkillər fayl qoşması kimi əlavə olunmaq əvəzinə cavab mətninə base64 data URI kimi yerləşdirilir. Bax: [Konfiqurasiya](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Nümunə: Bəzi qoşmalarda müəyyən başlıqlar çatışmaya bilər, lakin on
 ### Klaviatura üçün qısa bələdçi {#keyboard-cheat-sheet}
 
 | Düymələr        | Fəaliyyət                                 |
-| --------------- | ----------------------------------------- |
+|-----------------|-------------------------------------------|
 | Y / J           | Bəli‑ni təsdiqlə                          |
 | N / Esc         | Xeyr‑i təsdiqlə                           |
 | Enter           | Fokuslanmış düyməni aktivləşdir           |

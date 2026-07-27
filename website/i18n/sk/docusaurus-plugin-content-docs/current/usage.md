@@ -20,13 +20,13 @@ sidebar_label: 'Použitie'
 
 Prísny vs. uvoľnený priechod: Doplnok najprv vylúči časti S/MIME a inline z príloh súborov. Ak nič nespĺňa podmienky, spustí uvoľnený priechod, ktorý stále vylučuje S/MIME/inline, ale toleruje viac prípadov (pozri Podrobnosti kódu). Vložené obrázky sa nikdy nepridávajú ako súborové prílohy; namiesto toho, keď je zapnuté „Include inline pictures“ (predvolené), sú vložené priamo do tela odpovede ako base64 data URI.
 
-| Typ časti                                             |              Prísny priechod |            Uvoľnený priechod |
-| ----------------------------------------------------- | ---------------------------: | ---------------------------: |
-| Súbor podpisu S/MIME `smime.p7s`                      |                     Vylúčené |                     Vylúčené |
-| Typy MIME S/MIME (`application/pkcs7-*`)              |                     Vylúčené |                     Vylúčené |
+| Typ časti                                             | Prísny priechod              | Uvoľnený priechod            |
+|-------------------------------------------------------|-----------------------------:|-----------------------------:|
+| Súbor podpisu S/MIME `smime.p7s`                      | Vylúčené                     | Vylúčené                     |
+| Typy MIME S/MIME (`application/pkcs7-*`)              | Vylúčené                     | Vylúčené                     |
 | Vložený obrázok odkazovaný cez Content‑ID (`image/*`) | Vylúčené (obnovené v tele\*) | Vylúčené (obnovené v tele\*) |
-| Priložený e‑mail (`message/rfc822`) s názvom súboru   |                    Nepridané |             Môže byť pridané |
-| Bežná súborová príloha s názvom súboru                |             Môže byť pridané |             Môže byť pridané |
+| Priložený e‑mail (`message/rfc822`) s názvom súboru   | Nepridané                    | Môže byť pridané             |
+| Bežná súborová príloha s názvom súboru                | Môže byť pridané             | Môže byť pridané             |
 
 \* Keď je zapnuté „Include inline pictures“ (predvolené: ON), vložené obrázky sa vložia do tela odpovede ako base64 data URI namiesto pridania ako súborové prílohy. Pozri [Konfigurácia](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Príklad: Niektorým prílohám môžu chýbať určité hlavičky, no stále id
 ### Tahák klávesnice {#keyboard-cheat-sheet}
 
 | Klávesy            | Akcia                                        |
-| ------------------ | -------------------------------------------- |
+|--------------------|----------------------------------------------|
 | Y / J              | Potvrdiť Áno                                 |
 | N / Esc            | Potvrdiť Nie                                 |
 | Enter              | Aktivovať zamerané tlačidlo                  |

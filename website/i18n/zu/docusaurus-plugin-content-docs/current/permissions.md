@@ -33,7 +33,7 @@ Lezi zibhalwe emthonjeni futhi zihlolwe ku-CI. Lokhu kuhlanganisa akuqoqi i-tele
 ### Isifinyezo (izimvume → injongo) {#permissions-summary}
 
 | Imvume          | Kungani idingeka                                                                  |
-| --------------- | --------------------------------------------------------------------------------- |
+|-----------------|-----------------------------------------------------------------------------------|
 | `compose`       | Buka imicimbi yokuhlanganisa; bhala futhi faka izixhumi kwi-reply yakho.          |
 | `messagesRead`  | Bheka izixhumi ezisemlayezweni wokuqala futhi uthole idatha yefayela.             |
 | `scripting`     | Faka/uhlele i-UI elula yokugunyazisa uma ivuliwe.                                 |

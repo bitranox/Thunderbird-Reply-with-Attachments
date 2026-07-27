@@ -20,13 +20,13 @@ sidebar_label: 'Fayyadama'
 
 Darbuu cimaa fi laafaa: Dabalataan jalqabatti kutaa S/MIME fi inline faayiloota maxxanfaman keessaa ni baasaa. Homtuu yoo hin mijanne, darbuu laafaa raawwata kan amma iyyuu S/MIME/inline alatti baasuu itti fufu garuu haala dabalataa fudhatu (Ibsa Koodii ilaali). Suuraaleen inline yommuu ta'u faayila maxxanfamaa ta'anii hin ida'aman; bakka sana, yommuu "Include inline pictures" dandeessifame (bifa durtii), isaan qaama deebii keessatti akka base64 data URItti qindaa'anii ni kaa'amu.
 
-| Part type                                                     |                                  Strict pass |                                 Relaxed pass |
-| ------------------------------------------------------------- | -------------------------------------------: | -------------------------------------------: |
-| Faayila mallattoo S/MIME `smime.p7s`                          |                               Alatti baafame |                               Alatti baafame |
-| Gosoota MIME S/MIME (`application/pkcs7-*`)                   |                               Alatti baafame |                               Alatti baafame |
+| Part type                                                     | Strict pass                                  | Relaxed pass                                 |
+|---------------------------------------------------------------|---------------------------------------------:|---------------------------------------------:|
+| Faayila mallattoo S/MIME `smime.p7s`                          | Alatti baafame                               | Alatti baafame                               |
+| Gosoota MIME S/MIME (`application/pkcs7-*`)                   | Alatti baafame                               | Alatti baafame                               |
 | Suuraa inline kan Content‑ID tiin waamame (`image/*`)         | Alatti baafame (qaama keessatti deebifame\*) | Alatti baafame (qaama keessatti deebifame\*) |
-| Imeelii maxxanfame (`message/rfc822`) kan maqaa faayilii qabu |                                 Hin ida'amne |                              Ida'amu danda'a |
-| Faayila maxxanfamaa sirrii kan maqaa faayilii qabu            |                              Ida'amu danda'a |                              Ida'amu danda'a |
+| Imeelii maxxanfame (`message/rfc822`) kan maqaa faayilii qabu | Hin ida'amne                                 | Ida'amu danda'a                              |
+| Faayila maxxanfamaa sirrii kan maqaa faayilii qabu            | Ida'amu danda'a                              | Ida'amu danda'a                              |
 
 \* Yommuu "Include inline pictures" dandeessifame (bifa durtii: ON), suuraaleen inline qaama deebii keessatti akka base64 data URItti ni kaa'amu; faayila maxxanfamaa ta'anii hin ida'aman. [Qindaa'ina](configuration#include-inline-pictures) ilaali.
 
@@ -67,7 +67,7 @@ Fakkeenya: Maxxansoonni muraasni mata‑duree muraasa dhabuu danda'u; garuu amma
 ### Gabatee Gabaabaa Kiiboordii {#keyboard-cheat-sheet}
 
 | Furtuuwwan      | Gocha                                               |
-| --------------- | --------------------------------------------------- |
+|-----------------|-----------------------------------------------------|
 | Y / J           | Eeyyee mirkaneessi                                  |
 | N / Esc         | Lakki mirkaneessi                                   |
 | Enter           | Bantii irratti xiyyeeffannoo qabu kakaasi           |

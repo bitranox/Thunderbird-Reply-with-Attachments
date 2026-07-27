@@ -20,13 +20,13 @@ sidebar_label: 'Fampiasana'
 
 Fandaloana henjana vs. malalaka: Voalohany, esorin'ny fanitarana amin'ny fampiarahana rakitra ny ampahany S/MIME sy inline. Raha tsy misy mahafeno fepetra, mampandeha fandaloana malalaka izy izay mbola manilika ny S/MIME/inline ihany fa mandefitra tranga maro kokoa (jereo ny Code Details). Tsy asiana ho fampiarahana rakitra mihitsy ny sary inline; fa raha alefa ny "Include inline pictures" (masontsivana tsy miova), dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI izy ireo.
 
-| Karazana ampahany                                          |                    Fandaloana henjana |                   Fandaloana malalaka |
-| ---------------------------------------------------------- | ------------------------------------: | ------------------------------------: |
-| Rakitra sonia S/MIME `smime.p7s`                           |                               Esorina |                               Esorina |
-| Karazana MIME an'ny S/MIME (`application/pkcs7-*`)         |                               Esorina |                               Esorina |
+| Karazana ampahany                                          | Fandaloana henjana                    | Fandaloana malalaka                   |
+|------------------------------------------------------------|--------------------------------------:|--------------------------------------:|
+| Rakitra sonia S/MIME `smime.p7s`                           | Esorina                               | Esorina                               |
+| Karazana MIME an'ny S/MIME (`application/pkcs7-*`)         | Esorina                               | Esorina                               |
 | Sary inline voatonona amin'ny Content‑ID (`image/*`)       | Esorina (averina ao amin'ny vatana\*) | Esorina (averina ao amin'ny vatana\*) |
-| Mailaka miraikitra (`message/rfc822`) misy anaran-drakitra |                           Tsy ampiana |                           Azo ampiana |
-| Fampiarahana rakitra mahazatra misy anaran-drakitra        |                           Azo ampiana |                           Azo ampiana |
+| Mailaka miraikitra (`message/rfc822`) misy anaran-drakitra | Tsy ampiana                           | Azo ampiana                           |
+| Fampiarahana rakitra mahazatra misy anaran-drakitra        | Azo ampiana                           | Azo ampiana                           |
 
 \* Rehefa alefa ny "Include inline pictures" (default: ON), ny sary inline dia ampidirina mivantana ao amin'ny vatan'ny valiny ho base64 data URI fa tsy asiana ho fampiarahana rakitra. Jereo ny [Configuration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Ohatra: Misy fampiarahana mety tsy hanana lohateny sasany nefa rakitra mahazatra
 ### Taratasy fohy amin'ny fitendry {#keyboard-cheat-sheet}
 
 | Kitendry                 | Asa                                                  |
-| ------------------------ | ---------------------------------------------------- |
+|--------------------------|------------------------------------------------------|
 | Y / J                    | Manamafy Eny                                         |
 | N / Esc                  | Manamafy Tsia                                        |
 | Enter                    | Manahetsika ny bokotra ifantohana                    |

@@ -33,7 +33,7 @@ Estos están documentados en la fuente y probados en CI. El complemento no recog
 ### Resumen (permisos → propósito) {#permissions-summary}
 
 | Permiso            | Por qué es necesario                                                                 |
-| ------------------ | ------------------------------------------------------------------------------------ |
+|--------------------|--------------------------------------------------------------------------------------|
 | `compose`          | Observar eventos de composición; listar y agregar archivos adjuntos en su respuesta. |
 | `messagesRead`     | Listar archivos adjuntos del mensaje original y obtener los datos del archivo.       |
 | `scripting`        | Inyectar/coordinador UI liviana para confirmación cuando esté habilitado.            |

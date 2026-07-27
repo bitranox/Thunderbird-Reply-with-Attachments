@@ -33,7 +33,7 @@ Hizi zimeandikwa katika chanzo na zinajaribiwa katika CI. Nyongeza haitakusanya 
 ### Muhtasari (ruhusa → kusudi) {#permissions-summary}
 
 | Ruhusa               | Kwa nini inahitajika                                                         |
-| -------------------- | ---------------------------------------------------------------------------- |
+|----------------------|------------------------------------------------------------------------------|
 | `compose`            | Angalia matukio ya muundo; orodhesha na ongeza viambatisho katika jibu lako. |
 | `messagesRead`       | Orodhesha viambatisho vya ujumbe wa asili na pata data ya faili.             |
 | `scripting`          | weka/ratibu UI rahisi ya uthibitisho wakati inawezekana.                     |

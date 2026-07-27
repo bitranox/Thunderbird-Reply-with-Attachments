@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Hoiata, kui must nimekiri välistab manused"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Kaasa tekstisisesed pildid (manustatud pildid)"
-  },
   "uiDebugHeader": {
     "message": "Täpsemad"
   },

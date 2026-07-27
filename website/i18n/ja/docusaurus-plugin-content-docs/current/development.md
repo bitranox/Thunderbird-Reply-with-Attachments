@@ -60,30 +60,30 @@ Makefile は一般的な開発フローを標準化します。`make help` を�
 
 ヒント: ターゲットなしで `make` を実行すると、Whiptail の簡易メニューが開き、ターゲットを選択できます。
 
-| ターゲット                                               | 一行説明                                                                                           |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | ローカルのビルド/プレビュー成果物（tmp/、web-local-preview/、website/build/）を削除。              |
-| [`commit`](#mt-commit)                                   | 整形、テスト実行（i18n 含む）、変更履歴更新、コミット & プッシュ。                                 |
-| [`eslint`](#mt-eslint)                                   | フラット構成で ESLint を実行（`npm run -s lint:eslint`）。                                         |
-| [`help`](#mt-help)                                       | すべてのターゲットを一行ドキュメント付きで一覧表示（ソート済み）。                                 |
-| [`lint`](#mt-lint)                                       | `sources/` に対する web‑ext lint（仮マニフェスト; ZIP は無視; 致命的ではない）。                   |
+| ターゲット                                                    | 一行説明                                                                          |
+|----------------------------------------------------------|-------------------------------------------------------------------------------|
+| [`clean`](#mt-clean)                                     | ローカルのビルド/プレビュー成果物（tmp/、web-local-preview/、website/build/）を削除。                 |
+| [`commit`](#mt-commit)                                   | 整形、テスト実行（i18n 含む）、変更履歴更新、コミット & プッシュ。                                         |
+| [`eslint`](#mt-eslint)                                   | フラット構成で ESLint を実行（`npm run -s lint:eslint`）。                                 |
+| [`help`](#mt-help)                                       | すべてのターゲットを一行ドキュメント付きで一覧表示（ソート済み）。                                             |
+| [`lint`](#mt-lint)                                       | `sources/` に対する web‑ext lint（仮マニフェスト; ZIP は無視; 致命的ではない）。                      |
 | [`menu`](#mt-menu)                                       | ターゲットと任意の引数を選ぶ対話メニュー。                                                         |
-| [`pack`](#mt-pack)                                       | ATN と LOCAL の ZIP をビルド（linter 実行; packer スクリプト呼び出し）。                           |
-| [`prettier`](#mt-prettier)                               | リポジトリをその場で整形（上書き）。                                                               |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier のチェックモード（書き込みなし）。再整形が必要なら失敗。                                  |
-| [`prettier_write`](#mt-prettier_write)                   | `prettier` のエイリアス。                                                                          |
-| [`test`](#mt-test)                                       | Prettier（書き込み）、ESLint、続いて Vitest（設定されていればカバレッジ）。                        |
-| [`test_i18n`](#mt-test_i18n)                             | i18n 専用テスト: アドオンのプレースホルダー/整合性 + ウェブサイトの整合性。                        |
-| [`translate_app`](#mt-translation-app)                   | `translation_app` のエイリアス。                                                                   |
-| [`translation_app`](#mt-translation-app)                 | `sources/_locales/en/messages.json` からアプリの UI 文字列を翻訳。                                 |
-| [`translate_web_docs_batch`](#mt-translation-web)        | OpenAI Batch API 経由でウェブサイトのドキュメントを翻訳（推奨）。                                  |
-| [`translate_web_docs_sync`](#mt-translation-web)         | ウェブサイトのドキュメントを同期翻訳（レガシー、バッチなし）。                                     |
-| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` のエイリアス。                                                             |
+| [`pack`](#mt-pack)                                       | ATN と LOCAL の ZIP をビルド（linter 実行; packer スクリプト呼び出し）。                          |
+| [`prettier`](#mt-prettier)                               | リポジトリをその場で整形（上書き）。                                                            |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier のチェックモード（書き込みなし）。再整形が必要なら失敗。                                         |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` のエイリアス。                                                            |
+| [`test`](#mt-test)                                       | Prettier（書き込み）、ESLint、続いて Vitest（設定されていればカバレッジ）。                              |
+| [`test_i18n`](#mt-test_i18n)                             | i18n 専用テスト: アドオンのプレースホルダー/整合性 + ウェブサイトの整合性。                                   |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` のエイリアス。                                                     |
+| [`translation_app`](#mt-translation-app)                 | `sources/_locales/en/messages.json` からアプリの UI 文字列を翻訳。                         |
+| [`translate_web_docs_batch`](#mt-translation-web)        | OpenAI Batch API 経由でウェブサイトのドキュメントを翻訳（推奨）。                                     |
+| [`translate_web_docs_sync`](#mt-translation-web)         | ウェブサイトのドキュメントを同期翻訳（レガシー、バッチなし）。                                               |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` のエイリアス。                                               |
 | [`translation_web_index`](#mt-translation_web_index)     | ホームページ/ナビバー/フッターの UI を翻訳（`website/i18n/en/code.json → .../<lang>/code.json`）。 |
-| [`web_build`](#mt-web_build)                             | `website/build` にドキュメントをビルド（`--locales` / `BUILD_LOCALES` をサポート）。               |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | オフラインでも安全なリンクチェック（リモート HTTP[S] をスキップ）。                                |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | ローカル gh‑pages プレビュー。8080–8090 で自動提供。任意でテスト/リンクチェック。                  |
-| [`web_push_github`](#mt-web_push_github)                 | `website/build` を `gh-pages` ブランチへプッシュ。                                                 |
+| [`web_build`](#mt-web_build)                             | `website/build` にドキュメントをビルド（`--locales` / `BUILD_LOCALES` をサポート）。             |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | オフラインでも安全なリンクチェック（リモート HTTP[S] をスキップ）。                                        |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | ローカル gh‑pages プレビュー。8080–8090 で自動提供。任意でテスト/リンクチェック。                           |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build` を `gh-pages` ブランチへプッシュ。                                       |
 
 オプションの書式
 

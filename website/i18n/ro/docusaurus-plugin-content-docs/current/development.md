@@ -61,7 +61,7 @@ Makefile standardizează fluxurile comune de dezvoltare. Rulează `make help` or
 Sfat: rularea `make` fără țintă deschide un meniu Whiptail simplu pentru a alege o țintă.
 
 | Țintă                                                    | Descriere într-o linie                                                                          |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Elimină artefactele locale de build/preview (tmp/, web-local-preview/, website/build/).         |
 | [`commit`](#mt-commit)                                   | Formatează, rulează testele (incl. i18n), actualizează changelog-ul, commit & push.             |
 | [`eslint`](#mt-eslint)                                   | Rulează ESLint prin flat config (`npm run -s lint:eslint`).                                     |

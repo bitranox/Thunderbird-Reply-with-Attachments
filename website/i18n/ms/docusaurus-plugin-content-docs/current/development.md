@@ -61,7 +61,7 @@ Makefile menyeragamkan aliran pembangunan biasa. Jalankan `make help` pada bilaâ
 Petua: menjalankan `make` tanpa sasaran akan membuka menu Whiptail ringkas untuk memilih sasaran.
 
 | Sasaran                                                  | Penerangan satu baris                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Buang artifak binaan/pratonton tempatan (tmp/, web-local-preview/, website/build/).                     |
 | [`commit`](#mt-commit)                                   | Format, jalankan ujian (termasuk i18n), kemas kini changelog, komit & tolak.                            |
 | [`eslint`](#mt-eslint)                                   | Jalankan ESLint melalui konfigurasi rata (`npm run -s lint:eslint`).                                    |

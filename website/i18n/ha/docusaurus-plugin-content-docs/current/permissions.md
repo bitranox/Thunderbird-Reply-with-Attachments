@@ -33,7 +33,7 @@ Wannan yana cikin takardun tushen kuma an gwada shi a cikin CI. Ƙarin ba ya tat
 ### Takaitawa (izini → manufar) {#permissions-summary}
 
 | Izini                 | Me yasa ake buƙata                                                   |
-| --------------------- | -------------------------------------------------------------------- |
+|-----------------------|----------------------------------------------------------------------|
 | `compose`             | Lura da al'amuran rubutu; jerin da ƙara ɓangare a cikin amsar ku.    |
 | `messagesRead`        | Jerin ɓangarorin saƙon asali da samun bayanan fayil.                 |
 | `scripting`           | Shigar/tsara UI mai sauƙi don tabbaci lokacin da aka kunna.          |

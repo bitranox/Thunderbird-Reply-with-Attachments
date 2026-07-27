@@ -33,7 +33,7 @@ Ibi byanditswe mu musingi kandi byageragejwe muri CI. Uyu mwungururizo ntukusany
 ### Ibisobanuro (ubugenzuzi → intego) {#permissions-summary}
 
 | Ubugenzuzi                   | Impamvu bukenewe                                                                               |
-| ---------------------------- | ---------------------------------------------------------------------------------------------- |
+|------------------------------|------------------------------------------------------------------------------------------------|
 | `compose`                    | Gukurikirana ibikorwa byo kuvangavanga; urutonde no kongeramo inyongera mu gisubizo cyawe.     |
 | `messagesRead`               | Urutonde rw’inyongera z’ubutumwa bwa mbere no gukuramo amakuru y’inyandiko.                    |
 | `scripting`                  | Kwinjiza/kuhuza UI yoroshye yo kwemeza igihe ibayeho.                                          |

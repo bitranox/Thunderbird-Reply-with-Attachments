@@ -20,13 +20,13 @@ sidebar_label: 'Utilizare'
 
 Trecere strictă vs. relaxată: Suplimentul exclude mai întâi părțile S/MIME și inline din atașamentele de fișiere. Dacă nimic nu se califică, rulează o trecere relaxată care în continuare exclude S/MIME/inline, dar tolerează mai multe cazuri (vezi Detalii cod). Imaginile inline nu sunt niciodată adăugate ca atașamente de fișiere; în schimb, când „Include inline pictures” este activată (implicit: ON), acestea sunt încorporate direct în corpul răspunsului ca URI‑uri de date base64.
 
-| Tip de parte                                                        |                 Trecere strictă |                Trecere relaxată |
-| ------------------------------------------------------------------- | ------------------------------: | ------------------------------: |
-| Fișier semnătură S/MIME `smime.p7s`                                 |                         Exclusă |                         Exclusă |
-| Tipuri MIME S/MIME (`application/pkcs7-*`)                          |                         Excluse |                         Excluse |
+| Tip de parte                                                        | Trecere strictă                 | Trecere relaxată                |
+|---------------------------------------------------------------------|--------------------------------:|--------------------------------:|
+| Fișier semnătură S/MIME `smime.p7s`                                 | Exclusă                         | Exclusă                         |
+| Tipuri MIME S/MIME (`application/pkcs7-*`)                          | Excluse                         | Excluse                         |
 | Imagine inline la care se face referire prin Content‑ID (`image/*`) | Exclusă (restabilită în corp\*) | Exclusă (restabilită în corp\*) |
-| E‑mail atașat (`message/rfc822`) cu un nume de fișier               |                 Nu este adăugat |                Poate fi adăugat |
-| Atașament de fișier obișnuit cu un nume de fișier                   |                Poate fi adăugat |                Poate fi adăugat |
+| E‑mail atașat (`message/rfc822`) cu un nume de fișier               | Nu este adăugat                 | Poate fi adăugat                |
+| Atașament de fișier obișnuit cu un nume de fișier                   | Poate fi adăugat                | Poate fi adăugat                |
 
 \* Când „Include inline pictures” este activată (implicit: ON), imaginile inline sunt încorporate în corpul răspunsului ca URI‑uri de date base64 în loc să fie adăugate ca atașamente de fișiere. Vezi [Configurare](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Exemplu: Unele atașamente pot să nu aibă anumite antete, dar sunt totuși fi�
 ### Fișă de comenzi pentru tastatură {#keyboard-cheat-sheet}
 
 | Taste            | Acțiune                                  |
-| ---------------- | ---------------------------------------- |
+|------------------|------------------------------------------|
 | Y / J            | Confirmă Da                              |
 | N / Esc          | Confirmă Nu                              |
 | Enter            | Activează butonul focalizat              |

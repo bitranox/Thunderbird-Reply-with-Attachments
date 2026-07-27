@@ -20,13 +20,13 @@ sidebar_label: 'Ìlò'
 
 Ìgbésẹ̀ líle sí ìgbésẹ̀ rọrùn: Àfikún náà kọ́kọ́ yọ S/MIME àti àwọn apá inline kúrò nínú amúgbámu fáìlì. Bí kò bá sí ohun tó yẹ, ó máa ṣiṣẹ́ ìgbésẹ̀ rọrùn kan tí ó tún yọ S/MIME/inline kúrò ṣùgbọ́n tó fara da ọ̀ràn míì síi (wo Alaye Kóòdù). Àwọn àwòrán inline kì í ṣeé ṣàfikún gẹ́gẹ́ bí amúgbámu fáìlì rárá; dípò bẹ́ẹ̀, nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́), a fi wọ́n sínú ara ìfèsì taara gẹ́gẹ́ bí base64 data URI.
 
-| Iru apá                                               |                  Ìgbésẹ̀ líle |                 Ìgbésẹ̀ rọrùn |
-| ----------------------------------------------------- | ---------------------------: | ---------------------------: |
-| Fáìlì ìbuwọlu S/MIME `smime.p7s`                      |                       Yọkúrò |                       Yọkúrò |
-| Ìrú MIME S/MIME (`application/pkcs7-*`)               |                       Yọkúrò |                       Yọkúrò |
-| Àwòrán inline tí Content‑ID tọ́ka sí (`image/*`)       | Yọkúrò (a tún ṣe nínú ara\*) | Yọkúrò (a tún ṣe nínú ara\*) |
-| Ìmeèlì tí a so mọ́ (`message/rfc822`) pẹ̀lú orúkọ fáìlì |                    Kò fi kún |              Ó lè fi kún síi |
-| Amúgbámu fáìlì deede pẹ̀lú orúkọ fáìlì                 |              Ó lè fi kún síi |              Ó lè fi kún síi |
+| Iru apá                                                 | Ìgbésẹ̀ líle                 | Ìgbésẹ̀ rọrùn                |
+|---------------------------------------------------------|-----------------------------:|-----------------------------:|
+| Fáìlì ìbuwọlu S/MIME `smime.p7s`                        | Yọkúrò                       | Yọkúrò                       |
+| Ìrú MIME S/MIME (`application/pkcs7-*`)                 | Yọkúrò                       | Yọkúrò                       |
+| Àwòrán inline tí Content‑ID tọ́ka sí (`image/*`)        | Yọkúrò (a tún ṣe nínú ara\*) | Yọkúrò (a tún ṣe nínú ara\*) |
+| Ìmeèlì tí a so mọ́ (`message/rfc822`) pẹ̀lú orúkọ fáìlì | Kò fi kún                    | Ó lè fi kún síi              |
+| Amúgbámu fáìlì deede pẹ̀lú orúkọ fáìlì                  | Ó lè fi kún síi              | Ó lè fi kún síi              |
 
 \* Nígbà tí "Include inline pictures" bá jẹ́ pé a ti muu ṣiṣẹ́ (aṣayan àkọ́kọ́: ON), a fi àwọn àwòrán inline sínú ara ìfèsì gẹ́gẹ́ bí base64 data URI dípò kíkó wọn sílẹ̀ gẹ́gẹ́ bí amúgbámu fáìlì. Wo [Ìṣètò](configuration#include-inline-pictures).
 
@@ -66,13 +66,13 @@ sidebar_label: 'Ìlò'
 
 ### Àkọsílẹ̀ Kíkà-Kíákíá Keyboard {#keyboard-cheat-sheet}
 
-| Bọ́tìnnì         | Ìṣe                                    |
-| --------------- | -------------------------------------- |
-| Y / J           | Múlẹ̀ Bẹ́ẹ̀ni                             |
-| N / Esc         | Múlẹ̀ Rárá                              |
-| Enter           | Mú bọ́tìnnì tó wà ní ìfọkànsin ṣiṣẹ́     |
-| Tab / Shift+Tab | Gbé ìfọkànsin síwájú/sẹ́yìn             |
-| Arrow keys      | Gbé ìfọkànsin láàrín àwọn bọ́tìnnì      |
+| Bọ́tìnnì        | Ìṣe                                        |
+|-----------------|--------------------------------------------|
+| Y / J           | Múlẹ̀ Bẹ́ẹ̀ni                              |
+| N / Esc         | Múlẹ̀ Rárá                                 |
+| Enter           | Mú bọ́tìnnì tó wà ní ìfọkànsin ṣiṣẹ́       |
+| Tab / Shift+Tab | Gbé ìfọkànsin síwájú/sẹ́yìn                |
+| Arrow keys      | Gbé ìfọkànsin láàrín àwọn bọ́tìnnì         |
 | Ìdáhùn aiyídá   | Ṣètò ìfọkànsin ìbẹ̀rẹ̀ (Bẹ́ẹ̀ni tàbí Rárá) |
 
 ---

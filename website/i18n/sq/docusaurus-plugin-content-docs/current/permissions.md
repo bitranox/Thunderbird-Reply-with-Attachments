@@ -33,7 +33,7 @@ Këto janë të dokumentuara në burim dhe testuar në CI. Shtesa nuk mbledh tel
 ### Përmbledhje (lejet → qëllimi) {#permissions-summary}
 
 | Leja           | Pse është e nevojshme                                                                |
-| -------------- | ------------------------------------------------------------------------------------ |
+|----------------|--------------------------------------------------------------------------------------|
 | `compose`      | Vëzhgoni ngjarjet e kompozimit; listoni dhe shtoni bashkëngjitje në përgjigjen tuaj. |
 | `messagesRead` | Listoni bashkëngjitjet e mesazhit origjinal dhe merrni të dhënat e skedarit.         |
 | `scripting`    | Injeksioni/koordinimi i UI të lehtë për konfirmim kur është aktivizuar.              |

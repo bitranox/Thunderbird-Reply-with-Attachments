@@ -61,7 +61,7 @@ Makefile na-eme ka usoro mmepe a na-eme ugboro ugboro bụrụ otu. Gbaa `make h
 Ndụmọdụ: ịgba `make` na-enweghị ebumnuche mepee menu Whiptail dị mfe iji họrọ ebumnuche.
 
 | Ebumnuche                                                | Nkọwa ahịrị otu                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Wepụ ihe fọdụrụ owuwu/mbipụta ngosi mpaghara (tmp/, web-local-preview/, website/build/).          |
 | [`commit`](#mt-commit)                                   | Hazie, gbaa ule (gụnyere i18n), melite changelog, commit & push.                                  |
 | [`eslint`](#mt-eslint)                                   | Gbaa ESLint site na flat config (`npm run -s lint:eslint`).                                       |

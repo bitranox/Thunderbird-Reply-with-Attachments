@@ -61,7 +61,7 @@ Makefile yana daidaita kusan dukkanin hanyoyin dev. Gudanar da `make help` a kow
 Shawara: gudanar da `make` ba tare da manufa ba zai buɗe menu na Whiptail mai sauƙi don zaɓar manufa.
 
 | Manufa                                                   | Bayani a layi ɗaya                                                                         |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Cire abubuwan gini/preview na gida (tmp/, web-local-preview/, website/build/).             |
 | [`commit`](#mt-commit)                                   | Tsara, gudanar da gwaje-gwaje (har da i18n), sabunta changelog, yi commit & push.          |
 | [`eslint`](#mt-eslint)                                   | Gudanar da ESLint ta flat config (`npm run -s lint:eslint`).                               |

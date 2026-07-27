@@ -61,7 +61,7 @@ Makefile yhtenäistää yleiset kehitysprosessit. Aja `make help` milloin tahans
 Vinkki: suorittamalla `make` ilman kohdetta avautuu yksinkertainen Whiptail-valikko kohteen valintaan.
 
 | Kohde                                                    | Yhden rivin kuvaus                                                                                           |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Poista paikalliset buildi-/esikatseluartefaktit (tmp/, web-local-preview/, website/build/).                  |
 | [`commit`](#mt-commit)                                   | Muotoile, aja testit (ml. i18n), päivitä changelog, tee commit ja pushaa.                                    |
 | [`eslint`](#mt-eslint)                                   | Aja ESLint flat-konfigilla (`npm run -s lint:eslint`).                                                       |

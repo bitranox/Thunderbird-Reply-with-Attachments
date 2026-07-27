@@ -33,7 +33,7 @@ Disse er dokumentert i koden og testet i CI. Tillegget samler ikke inn telemetri
 ### Summary (permissions → purpose) {#permissions-summary}
 
 | Permission     | Why it’s needed                                                             |
-| -------------- | --------------------------------------------------------------------------- |
+|----------------|-----------------------------------------------------------------------------|
 | `compose`      | Observere komponeringshendelser; liste og legge til vedlegg i svaret ditt.  |
 | `messagesRead` | Liste vedlegg fra den originale meldingen og hente fildataene.              |
 | `scripting`    | Injisere/koordinere lettvekts UI for bekreftelse når den er aktivert.       |

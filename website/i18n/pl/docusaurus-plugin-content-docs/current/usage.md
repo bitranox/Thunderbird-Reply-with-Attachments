@@ -20,13 +20,13 @@ sidebar_label: 'Użycie'
 
 Ścisłe vs. luźne przejście: Dodatek najpierw wyklucza części S/MIME i inline z załączników plikowych. Jeśli nic się nie kwalifikuje, uruchamia luźniejsze przejście, które nadal wyklucza S/MIME/inline, ale toleruje więcej przypadków (zob. Szczegóły kodu). Obrazy inline nigdy nie są dodawane jako załączniki plikowe; zamiast tego, gdy "Include inline pictures" jest włączone (domyślnie), są one osadzane bezpośrednio w treści odpowiedzi jako URI danych base64.
 
-| Typ części                                                 |                    Ścisłe przejście |                     Luźne przejście |
-| ---------------------------------------------------------- | ----------------------------------: | ----------------------------------: |
-| Plik podpisu S/MIME `smime.p7s`                            |                          Wykluczony |                          Wykluczony |
-| Typy MIME S/MIME (`application/pkcs7-*`)                   |                          Wykluczony |                          Wykluczony |
+| Typ części                                                 | Ścisłe przejście                    | Luźne przejście                     |
+|------------------------------------------------------------|------------------------------------:|------------------------------------:|
+| Plik podpisu S/MIME `smime.p7s`                            | Wykluczony                          | Wykluczony                          |
+| Typy MIME S/MIME (`application/pkcs7-*`)                   | Wykluczony                          | Wykluczony                          |
 | Obraz inline referencjonowany przez Content‑ID (`image/*`) | Wykluczony (przywrócony w treści\*) | Wykluczony (przywrócony w treści\*) |
-| Dołączony e‑mail (`message/rfc822`) z nazwą pliku          |                        Nie dodawany |                  Może zostać dodany |
-| Zwykły załącznik plikowy z nazwą pliku                     |                  Może zostać dodany |                  Może zostać dodany |
+| Dołączony e‑mail (`message/rfc822`) z nazwą pliku          | Nie dodawany                        | Może zostać dodany                  |
+| Zwykły załącznik plikowy z nazwą pliku                     | Może zostać dodany                  | Może zostać dodany                  |
 
 \* Gdy "Include inline pictures" jest włączone (domyślnie: ON), obrazy inline są osadzane w treści odpowiedzi jako URI danych base64 zamiast być dodawanymi jako załączniki plikowe. Zobacz [Konfiguracja](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Przykład: Niektórym załącznikom mogą brakować pewnych nagłówków, ale na
 ### Ściągawka klawiaturowa {#keyboard-cheat-sheet}
 
 | Klawisze           | Akcja                                  |
-| ------------------ | -------------------------------------- |
+|--------------------|----------------------------------------|
 | Y / J              | Potwierdź Tak                          |
 | N / Esc            | Potwierdź Nie                          |
 | Enter              | Aktywuj wybrany przycisk               |

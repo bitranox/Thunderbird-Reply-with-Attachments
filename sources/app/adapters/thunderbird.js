@@ -18,6 +18,9 @@
 function makeThunderbirdPorts(browser) {
   const compose = {
     // Read compose details, list existing attachments, and add one.
+    // Deliberately no setComposeDetails: the add-on must never write the reply
+    // body. Thunderbird restores inline images itself, and writing the body back
+    // raced that conversion (bug 1997519). Re-adding this needs a conscious decision.
     async getDetails(tabId) {
       return browser.compose.getComposeDetails(tabId);
     },
@@ -26,9 +29,6 @@ function makeThunderbirdPorts(browser) {
     },
     async addAttachment(tabId, attachment) {
       return browser.compose.addAttachment(tabId, attachment);
-    },
-    async setDetails(tabId, details) {
-      return browser.compose.setComposeDetails(tabId, details);
     },
     onBeforeSend: browser.compose?.onBeforeSend,
     onStateChanged: browser.compose?.onComposeStateChanged,
@@ -41,6 +41,11 @@ function makeThunderbirdPorts(browser) {
     },
     async getAttachmentFile(messageId, partName) {
       return browser.messages.getAttachmentFile(messageId, partName);
+    },
+    // Thunderbird 128+. Optional-chained so an older host degrades to "nothing
+    // known to be embedded" instead of throwing.
+    async listInlineTextParts(messageId) {
+      return (await browser.messages.listInlineTextParts?.(messageId)) || [];
     },
   };
 
@@ -82,7 +87,9 @@ function makeThunderbirdPorts(browser) {
         if (browser.scripting?.compose?.executeScript) {
           return await browser.scripting.compose.executeScript({ tabId, files });
         }
-      } catch (_) {}
+      } catch (_) {
+        // callers treat a missing script as "not injected" and retry
+      }
     },
   };
 

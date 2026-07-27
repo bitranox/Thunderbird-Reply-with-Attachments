@@ -20,13 +20,13 @@ sidebar_label: 'Ukusetshenziswa'
 
 Ukudlula okuqinile vs. okuxegayo: I-add-on iqala ngokukhipha izingxenye ze-S/MIME nezangaphakathi kokunananyathiselwe kwefayela. Uma kungekho okuzofanela, isebenza ukudlula okuxegayo okusaqeda i-S/MIME/okungaphakathi kodwa kuvumele izimo eziningi (buka Imininingwane Yekhodi). Izithombe zangaphakathi azifakwa njengezinanyathiselwa zamafayela; esikhundleni salokho, uma "Include inline pictures" ivuliwe (okumisiwe), zifakwa ngqo emzimbeni wempendulo njenge-base64 data URIs.
 
-| Uhlobo lwengxenye                                              |                 Ukudlula okuqinile |                 Ukudlula okuxegayo |
-| -------------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| Ifayela losayini le-S/MIME `smime.p7s`                         |                           Kususiwe |                           Kususiwe |
-| Izinhlobo ze-MIME ze-S/MIME (`application/pkcs7-*`)            |                           Kususiwe |                           Kususiwe |
+| Uhlobo lwengxenye                                              | Ukudlula okuqinile                 | Ukudlula okuxegayo                 |
+|----------------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| Ifayela losayini le-S/MIME `smime.p7s`                         | Kususiwe                           | Kususiwe                           |
+| Izinhlobo ze-MIME ze-S/MIME (`application/pkcs7-*`)            | Kususiwe                           | Kususiwe                           |
 | Isithombe sangaphakathi esibhekiswe nge-Content‑ID (`image/*`) | Kususiwe (kubuyiselwa emzimbeni\*) | Kususiwe (kubuyiselwa emzimbeni\*) |
-| I-imeyili enanyathiselwe (`message/rfc822`) enegama lefayela   |                        Akufakwanga |                 Kungenzeka kufakwe |
-| Okunananyathiselwe kwefayela okuvamile okunegama lefayela      |                 Kungenzeka kufakwe |                 Kungenzeka kufakwe |
+| I-imeyili enanyathiselwe (`message/rfc822`) enegama lefayela   | Akufakwanga                        | Kungenzeka kufakwe                 |
+| Okunananyathiselwe kwefayela okuvamile okunegama lefayela      | Kungenzeka kufakwe                 | Kungenzeka kufakwe                 |
 
 \* Uma "Include inline pictures" ivuliwe (default: ON), izithombe zangaphakathi zifakwa emzimbeni wempendulo njenge-data URIs esikhundleni sokwengezwa njengezinanyathiselwa zamafayela. Bona [Izilungiselelo](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Isibonelo: Okunye okunanyathiselwe kungase kungabi nezinye izihloko (headers) ko
 ### Ishidi Lezinqamuleli Zekhibhodi {#keyboard-cheat-sheet}
 
 | Okhiye                   | Isenzo                                    |
-| ------------------------ | ----------------------------------------- |
+|--------------------------|-------------------------------------------|
 | Y / J                    | Qinisekisa u-Yebo                         |
 | N / Esc                  | Qinisekisa u-Cha                          |
 | Enter                    | Yenza kusebenze inkinobho egxilile        |

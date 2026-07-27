@@ -33,7 +33,7 @@ Nsɛm a ɛda so ara no yɛ a wɔakyerɛw mu na wɔabɔ ɔhwɛ a ɛyɛ akwan mu. 
 ### Kwan so (permissions → purpose) {#permissions-summary}
 
 | Mmara          | Adɛn a ɛyɛ a ɛda so no                                                        |
-| -------------- | ----------------------------------------------------------------------------- |
+|----------------|-------------------------------------------------------------------------------|
 | `compose`      | Hwɛ kɔmposi nsɛm; kyerɛw na kɔfa ho nsɛm wɔ wo mmuae mu.                      |
 | `messagesRead` | Kyerɛw abatoɔ a ɛda so ara no mu kɔfa ɔbɔmu nsɛm a ɛda so ara no.             |
 | `scripting`    | Ɛda so mfa a ɛda so a ɛda so no mu na kyɛ abatoɔ a ɛda so sɛ ɛda so.          |

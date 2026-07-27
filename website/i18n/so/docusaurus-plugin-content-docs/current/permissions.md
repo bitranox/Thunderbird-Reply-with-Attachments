@@ -33,7 +33,7 @@ Kuwani waxaa lagu diiwaan galiyay isha waxaana tijaabiyay CI. Add-on-ku ma ururi
 ### Dulmar (ogolaansho → ujeeddo) {#permissions-summary}
 
 | Ogolaansho               | Sababta loo baahan yahay                                                       |
-| ------------------------ | ------------------------------------------------------------------------------ |
+|--------------------------|--------------------------------------------------------------------------------|
 | `compose`                | Kormeer dhacdooyinka qoraalka; liiskiyo oo ku dar xiriiriyeyaasha jawaabtaada. |
 | `messagesRead`           | Liiska xiriiriyaha fariinta asalka ah iyo soo qaado xogta faylka.              |
 | `scripting`              | Ku dar/koordin karo UI gaaban oo khilaafka ah marka la ogolaado.               |

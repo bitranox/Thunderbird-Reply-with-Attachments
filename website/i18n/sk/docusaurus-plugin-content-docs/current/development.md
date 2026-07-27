@@ -61,7 +61,7 @@ Makefile štandardizuje bežné vývojové postupy. Spustite `make help` kedyko�
 Tip: spustením `make` bez cieľa sa otvorí jednoduché menu Whiptail na výber cieľa.
 
 | Cieľ                                                     | Jednoriadkový popis                                                                               |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Odstráni lokálne artefakty build/preview (tmp/, web-local-preview/, website/build/).              |
 | [`commit`](#mt-commit)                                   | Formátuje, spustí testy (vrátane i18n), aktualizuje changelog, urobí commit a push.               |
 | [`eslint`](#mt-eslint)                                   | Spustí ESLint cez flat config (`npm run -s lint:eslint`).                                         |

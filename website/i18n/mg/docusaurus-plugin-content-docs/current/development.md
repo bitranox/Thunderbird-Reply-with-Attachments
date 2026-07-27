@@ -61,7 +61,7 @@ Ny Makefile dia manara-penitra ny fikorianan'ny asa fampandrosoana mahazatra. Al
 Soso-kevitra: raha alefa `make` tsy misy tanjona dia misokatra menio Whiptail tsotra hisafidianana tanjona.
 
 | Tanjona                                                  | Famaritana andalana tokana                                                                                      |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Esory ny singa build/preview eo an-toerana (tmp/, web-local-preview/, website/build/).                          |
 | [`commit`](#mt-commit)                                   | Format, mihazakazaka fitsapana (anisan'izany i18n), manavao changelog, manao commit & push.                     |
 | [`eslint`](#mt-eslint)                                   | Mihazakazaka ESLint amin'ny flat config (`npm run -s lint:eslint`).                                             |

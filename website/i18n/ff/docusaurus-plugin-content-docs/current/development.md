@@ -61,7 +61,7 @@ Makefile ɗaɗndii joɓirde topirde baawɗe. Hurminde `make help` kala sahaa nga
 Tiɓɓe: hurminde `make` tawa alaa caasorde udditii menyu Whiptail woodnde ngam labo caasorde.
 
 | Caasorde                                                 | Cifagol daande gooto                                                                 |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ittu timmitte loowdi/jiigol leñol (tmp/, web-local-preview/, website/build/).        |
 | [`commit`](#mt-commit)                                   | Formate, hurmin ƴeewte (incl. i18n), hesɗitin changelog, commit & push.              |
 | [`eslint`](#mt-eslint)                                   | Hurminde ESLint tawa ko flat config (`npm run -s lint:eslint`).                      |

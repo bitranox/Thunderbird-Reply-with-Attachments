@@ -20,13 +20,13 @@ sidebar_label: 'Úsáid'
 
 Pas docht vs. pas scaoilte: Cuireann an breiseán páirteanna S/MIME agus inlíne as an áireamh ó cheangaltáin chomhaid ar dtús. Mura gcáilíonn faic, ritheann sé pas níos scaoilte a chuireann S/MIME/inlíne as an áireamh fós ach a cheadaíonn tuilleadh cásanna (féach Mionsonraí Cóid). Ní chuirtear íomhánna inlíne leis mar cheangaltáin chomhaid riamh; ina ionad sin, nuair a bhíonn "Include inline pictures" cumasaithe (an réamhshocrú), leabhaítear iad go díreach i gcorp an fhreagra mar URIanna sonraí base64.
 
-| Cineál páirte                                             |                         Pas docht |                      Pas scaoilte |
-| --------------------------------------------------------- | --------------------------------: | --------------------------------: |
-| Comhad sínithe S/MIME `smime.p7s`                         |                           Eisiata |                           Eisiata |
-| Cineálacha MIME S/MIME (`application/pkcs7-*`)            |                           Eisiata |                           Eisiata |
+| Cineál páirte                                             | Pas docht                         | Pas scaoilte                      |
+|-----------------------------------------------------------|----------------------------------:|----------------------------------:|
+| Comhad sínithe S/MIME `smime.p7s`                         | Eisiata                           | Eisiata                           |
+| Cineálacha MIME S/MIME (`application/pkcs7-*`)            | Eisiata                           | Eisiata                           |
 | Íomhá inlíne a ndéanann Content‑ID tagairt di (`image/*`) | Eisiata (athchóirithe sa chorp\*) | Eisiata (athchóirithe sa chorp\*) |
-| R-phost ceangailte (`message/rfc822`) le hainm comhaid    |                 Ní chuirtear leis |               Féadfar a chur leis |
-| Gnáthcheangaltán comhaid le hainm comhaid                 |               Féadfar a chur leis |               Féadfar a chur leis |
+| R-phost ceangailte (`message/rfc822`) le hainm comhaid    | Ní chuirtear leis                 | Féadfar a chur leis               |
+| Gnáthcheangaltán comhaid le hainm comhaid                 | Féadfar a chur leis               | Féadfar a chur leis               |
 
 \* Nuair a bhíonn "Include inline pictures" cumasaithe (réamhshocrú: ON), leabhaítear íomhánna inlíne i gcorp an fhreagra mar URIanna sonraí base64 seachas iad a chur leis mar cheangaltáin chomhaid. Féach [Cumraíocht](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Sampla: D’fhéadfadh roinnt ceangaltán a bheith in easnamh ar cheanntásca á
 ### Bileog Chuimhne Méarchláir {#keyboard-cheat-sheet}
 
 | Eochracha               | Gníomh                                 |
-| ----------------------- | -------------------------------------- |
+|-------------------------|----------------------------------------|
 | Y / J                   | Deimhnigh Tá                           |
 | N / Esc                 | Deimhnigh Níl                          |
 | Enter                   | Gníomhachtaigh an cnaipe faoi fhócas   |

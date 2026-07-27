@@ -20,13 +20,13 @@ sidebar_label: 'Pamakéan'
 
 Léngkah ketat vs. longgar: Add‑on mimiti ngaluarkeun bagian S/MIME jeung inline tina lampiran payil. Lamun euweuh anu layak, éta ngajalankeun léngkah longgar anu tetep ngaluarkeun S/MIME/inline tapi leuwih toleran kana sababaraha kasus (tempo Rincian Kode). Gambar inline teu kungsi ditambahkeun minangka lampiran payil; sabalikna, lamun "Include inline pictures" diaktipkeun (bawaan), éta dipasangan langsung dina awak balesan minangka data URI base64.
 
-| Jinis bagian                                                 |                          Léngkah ketat |                        Léngkah longgar |
-| ------------------------------------------------------------ | -------------------------------------: | -------------------------------------: |
-| Payil tanda‑tangan S/MIME `smime.p7s`                        |                           Dikaluarkeun |                           Dikaluarkeun |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                     |                           Dikaluarkeun |                           Dikaluarkeun |
+| Jinis bagian                                                 | Léngkah ketat                          | Léngkah longgar                        |
+|--------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
+| Payil tanda‑tangan S/MIME `smime.p7s`                        | Dikaluarkeun                           | Dikaluarkeun                           |
+| Tipe MIME S/MIME (`application/pkcs7-*`)                     | Dikaluarkeun                           | Dikaluarkeun                           |
 | Gambar inline nu dirujuk ku Content‑ID (`image/*`)           | Dikaluarkeun (dipulihkeun dina awak\*) | Dikaluarkeun (dipulihkeun dina awak\*) |
-| Surélék dilampirkeun (`message/rfc822`) kalayan ngaran payil |                       Teu ditambahkeun |                      Bisa ditambahkeun |
-| Lampiran payil biasa kalayan ngaran payil                    |                      Bisa ditambahkeun |                      Bisa ditambahkeun |
+| Surélék dilampirkeun (`message/rfc822`) kalayan ngaran payil | Teu ditambahkeun                       | Bisa ditambahkeun                      |
+| Lampiran payil biasa kalayan ngaran payil                    | Bisa ditambahkeun                      | Bisa ditambahkeun                      |
 
 \* Lamun "Include inline pictures" diaktipkeun (bawaan: HURUNG), gambar inline dipasangan dina awak balesan salaku data URI base64 tibatan ditambahkeun minangka lampiran payil. Tempo [Konfigurasi](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Conto: Sababaraha lampiran bisa waé kakurangan sababaraha header tapi tetep man
 ### Pituduh ringkes kibor {#keyboard-cheat-sheet}
 
 | Konci           | Aksi                                     |
-| --------------- | ---------------------------------------- |
+|-----------------|------------------------------------------|
 | Y / J           | Konfirmasi Enya                          |
 | N / Esc         | Konfirmasi Henteu                        |
 | Enter           | Ngaktipkeun tombol nu difokuskeun        |

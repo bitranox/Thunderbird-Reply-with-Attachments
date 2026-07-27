@@ -61,7 +61,7 @@ Makefile deebi’aa hojii misoomaa waloo sirreessa. Yeroo kamiyyuu `make help` o
 Tarsiimoo: `make` taargatiin alaa yoo oofte, foddaa Whiptail salphaa banama; achirraa taargatii filadhu.
 
 | Taargatii                                                | Ibsa sarara tokko                                                                             |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Oomishaalee/ilaalchii naannoo haqi (tmp/, web-local-preview/, website/build/).                |
 | [`commit`](#mt-commit)                                   | Sirreeffami (format), qorannoo (i18n dabalatee) oofi, changelog haaraa galchi, commit & push. |
 | [`eslint`](#mt-eslint)                                   | ESLint bifa flat configtiin oofi (`npm run -s lint:eslint`).                                  |

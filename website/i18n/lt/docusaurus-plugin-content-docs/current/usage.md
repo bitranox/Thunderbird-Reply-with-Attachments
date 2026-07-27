@@ -20,13 +20,13 @@ sidebar_label: 'Naudojimas'
 
 Griežtas vs. laisvesnis praėjimas: Priedas pirmiausia iš failų priedų pašalina S/MIME ir įterptąsias dalis. Jei niekas netinka, vykdomas laisvesnis praėjimas, kuris vis dar atmeta S/MIME/įterptuosius, bet toleruoja daugiau atvejų (žr. Kodo detales). Įterptieji vaizdai niekada nepridedami kaip failų priedai; vietoje to, kai įjungta „Include inline pictures“ (numatyta), jie įterpiami tiesiai į atsakymo tekstą kaip base64 duomenų URI.
 
-| Dalies tipas                                                |           Griežtas praėjimas |         Laisvesnis praėjimas |
-| ----------------------------------------------------------- | ---------------------------: | ---------------------------: |
-| S/MIME parašo failas `smime.p7s`                            |                      Atmesta |                      Atmesta |
-| S/MIME MIME tipai (`application/pkcs7-*`)                   |                      Atmesta |                      Atmesta |
+| Dalies tipas                                                | Griežtas praėjimas           | Laisvesnis praėjimas         |
+|-------------------------------------------------------------|-----------------------------:|-----------------------------:|
+| S/MIME parašo failas `smime.p7s`                            | Atmesta                      | Atmesta                      |
+| S/MIME MIME tipai (`application/pkcs7-*`)                   | Atmesta                      | Atmesta                      |
 | Įterptasis vaizdas, į kurį nurodo Content‑ID (`image/*`)    | Atmesta (atkuriama tekste\*) | Atmesta (atkuriama tekste\*) |
-| Pridėtas el. laiškas (`message/rfc822`) su failo pavadinimu |                  Nepridedama |            Gali būti pridėta |
-| Įprastas failo priedas su failo pavadinimu                  |            Gali būti pridėta |            Gali būti pridėta |
+| Pridėtas el. laiškas (`message/rfc822`) su failo pavadinimu | Nepridedama                  | Gali būti pridėta            |
+| Įprastas failo priedas su failo pavadinimu                  | Gali būti pridėta            | Gali būti pridėta            |
 
 \* Kai „Include inline pictures“ įjungta (numatyta: ĮJUNGTA), įterptieji vaizdai įterpiami į atsakymo tekstą kaip base64 duomenų URI, o ne pridedami kaip failų priedai. Žr. [Konfigūracija](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Pavyzdys: Kai kuriems priedams gali trūkti tam tikrų antraščių, bet jie vis
 ### Klaviatūros atmintinė {#keyboard-cheat-sheet}
 
 | Klavišai           | Veiksmas                              |
-| ------------------ | ------------------------------------- |
+|--------------------|---------------------------------------|
 | Y / J              | Patvirtinti Taip                      |
 | N / Esc            | Patvirtinti Ne                        |
 | Enter              | Suaktyvinti sufokusuotą mygtuką       |

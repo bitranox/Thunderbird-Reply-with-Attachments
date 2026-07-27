@@ -8,6 +8,7 @@ import { describe, it, expect, vi } from 'vitest';
 describe('composition internals — small pure helpers', () => {
   // Test: yesNo maps truthy to yes except explicit no
   it('yesNo maps truthy to yes except explicit no', async () => {
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { yesNo } = globalThis.App.Composition.Internal;
     expect(yesNo('no')).toBe('no');
@@ -18,6 +19,7 @@ describe('composition internals — small pure helpers', () => {
 
   // Test: shouldAsk requires both toggle and non-empty selection
   it('shouldAsk requires both toggle and non-empty selection', async () => {
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { shouldAsk } = globalThis.App.Composition.Internal;
     expect(shouldAsk(true, [{ name: 'a' }])).toBe(true);
@@ -28,6 +30,7 @@ describe('composition internals — small pure helpers', () => {
 
   // Test: isDecision only true for explicit boolean ok
   it('isDecision only true for explicit boolean ok', async () => {
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { isDecision } = globalThis.App.Composition.Internal;
     expect(isDecision({ ok: true })).toBe(true);
@@ -38,6 +41,7 @@ describe('composition internals — small pure helpers', () => {
 
   // Test: buildConfirmUrl includes def=no and counts
   it('buildConfirmUrl includes def=no and counts', async () => {
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { buildConfirmUrl } = globalThis.App.Composition.Internal;
     const fake = { runtime: { getURL: (p) => `tb://ext/${p}` } };
@@ -48,15 +52,16 @@ describe('composition internals — small pure helpers', () => {
     expect(url).toContain('def=no');
   });
 
-  // Test: waitForConfirm resolves false on timeout
-  it('waitForConfirm resolves false on timeout', async () => {
+  // Test: waitForConfirm reports an unanswered popup as 'timeout', not as a decline
+  it("waitForConfirm resolves 'timeout' when nobody answers", async () => {
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;
     vi.useFakeTimers();
     const browser = { runtime: { onMessage: { addListener: vi.fn(), removeListener: vi.fn() } } };
     const p = waitForConfirm(browser, 't1');
-    await vi.advanceTimersByTimeAsync(20050);
-    await expect(p).resolves.toBe(false);
+    await vi.advanceTimersByTimeAsync(120050);
+    await expect(p).resolves.toBe('timeout');
     vi.useRealTimers();
   });
 });

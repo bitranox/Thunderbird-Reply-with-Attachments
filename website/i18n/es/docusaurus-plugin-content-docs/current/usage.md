@@ -20,13 +20,13 @@ sidebar_label: 'Uso'
 
 Pase estricto vs. pase relajado: El complemento primero excluye las partes S/MIME y en línea de los archivos adjuntos. Si nada cumple los requisitos, ejecuta un pase relajado que sigue excluyendo S/MIME/en línea pero tolera más casos (véase Detalles del código). Las imágenes en línea nunca se añaden como archivos adjuntos; en su lugar, cuando "Include inline pictures" está habilitado (el valor predeterminado), se incrustan directamente en el cuerpo de la respuesta como URI de datos base64.
 
-| Tipo de parte                                              |                        Pase estricto |                        Pase relajado |
-| ---------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| Archivo de firma S/MIME `smime.p7s`                        |                             Excluido |                             Excluido |
-| Tipos MIME de S/MIME (`application/pkcs7-*`)               |                             Excluido |                             Excluido |
+| Tipo de parte                                              | Pase estricto                        | Pase relajado                        |
+|------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| Archivo de firma S/MIME `smime.p7s`                        | Excluido                             | Excluido                             |
+| Tipos MIME de S/MIME (`application/pkcs7-*`)               | Excluido                             | Excluido                             |
 | Imagen en línea referenciada por Content‑ID (`image/*`)    | Excluido (restaurado en el cuerpo\*) | Excluido (restaurado en el cuerpo\*) |
-| Correo adjunto (`message/rfc822`) con un nombre de archivo |                          No se añade |                       Puede añadirse |
-| Archivo adjunto normal con un nombre de archivo            |                       Puede añadirse |                       Puede añadirse |
+| Correo adjunto (`message/rfc822`) con un nombre de archivo | No se añade                          | Puede añadirse                       |
+| Archivo adjunto normal con un nombre de archivo            | Puede añadirse                       | Puede añadirse                       |
 
 \* Cuando "Include inline pictures" está habilitado (predeterminado: ON), las imágenes en línea se incrustan en el cuerpo de la respuesta como URI de datos base64 en lugar de añadirse como archivos adjuntos. Véase [Configuración](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Ejemplo: Algunos adjuntos pueden carecer de ciertos encabezados pero seguir sien
 ### Guía rápida de teclado {#keyboard-cheat-sheet}
 
 | Teclas           | Acción                              |
-| ---------------- | ----------------------------------- |
+|------------------|-------------------------------------|
 | Y / J            | Confirmar Sí                        |
 | N / Esc          | Confirmar No                        |
 | Enter            | Activar el botón enfocado           |

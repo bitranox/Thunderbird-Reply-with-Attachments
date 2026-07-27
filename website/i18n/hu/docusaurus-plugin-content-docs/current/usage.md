@@ -20,13 +20,13 @@ sidebar_label: 'Használat'
 
 Szigorú vs. lazább futás: A kiegészítő először kizárja az S/MIME és az inline részeket a fájlmellékletek közül. Ha semmi sem felel meg, lefuttat egy lazább kört, amely továbbra is kizárja az S/MIME/inline elemeket, de több esetet elfogad (lásd: Kód részletei). Az inline képek soha nem kerülnek hozzáadásra fájlmellékletként; ehelyett, ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett), közvetlenül a válasz törzsébe ágyazódnak be base64 adat‑URI‑ként.
 
-| Rész típusa                                         |                        Szigorú futás |                         Lazább futás |
-| --------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| S/MIME aláírásfájl `smime.p7s`                      |                              Kizárva |                              Kizárva |
-| S/MIME MIME‑típusok (`application/pkcs7-*`)         |                              Kizárva |                              Kizárva |
+| Rész típusa                                         | Szigorú futás                        | Lazább futás                         |
+|-----------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| S/MIME aláírásfájl `smime.p7s`                      | Kizárva                              | Kizárva                              |
+| S/MIME MIME‑típusok (`application/pkcs7-*`)         | Kizárva                              | Kizárva                              |
 | Content‑ID által hivatkozott inline kép (`image/*`) | Kizárva (a törzsben helyreállítva\*) | Kizárva (a törzsben helyreállítva\*) |
-| Csatolt e‑mail (`message/rfc822`) fájlnévvel        |                Nem kerül hozzáadásra |                          Hozzáadható |
-| Szokásos fájlmelléklet fájlnévvel                   |                          Hozzáadható |                          Hozzáadható |
+| Csatolt e‑mail (`message/rfc822`) fájlnévvel        | Nem kerül hozzáadásra                | Hozzáadható                          |
+| Szokásos fájlmelléklet fájlnévvel                   | Hozzáadható                          | Hozzáadható                          |
 
 \* Ha az „Inline képek beillesztése” engedélyezve van (alapértelmezett: BE), az inline képek fájlként való csatolás helyett base64 adat‑URI‑ként ágyazódnak be a válasz törzsébe. Lásd: [Beállítások](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Példa: Egyes mellékletekből hiányozhatnak bizonyos fejlécek, mégis szabál
 ### Gyorsbillentyűk – összefoglaló {#keyboard-cheat-sheet}
 
 | Billentyűk             | Művelet                                     |
-| ---------------------- | ------------------------------------------- |
+|------------------------|---------------------------------------------|
 | Y / J                  | Igen megerősítése                           |
 | N / Esc                | Nem megerősítése                            |
 | Enter                  | Fókuszált gomb aktiválása                   |

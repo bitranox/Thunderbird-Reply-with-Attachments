@@ -61,7 +61,7 @@ Makefile inoenzanisa mafambiro akajairika e dev. Mhanya `make help` chero nguva 
 Zano: kumhanya `make` usina target kunovhura menyu reWhiptail riri nyore kusarudza target.
 
 | Target                                                   | Tsananguro yemutsara mumwe                                                                     |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Bvisa zvisaririra zvekuvaka/kutanga‑previu zvemuno (tmp/, web-local-preview/, website/build/). |
 | [`commit`](#mt-commit)                                   | Format, mhanya miedzo (kusanganisira i18n), gadziridza changelog, commit & push.               |
 | [`eslint`](#mt-eslint)                                   | Mhanya ESLint kuburikidza neflat config (`npm run -s lint:eslint`).                            |

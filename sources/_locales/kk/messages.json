@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Қара тізімге байланысты тіркемелер алынып тасталса, ескерту"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Кірістірілген суреттерді қосу (ендірілген суреттер)"
-  },
   "uiDebugHeader": {
     "message": "Кеңейтілген"
   },

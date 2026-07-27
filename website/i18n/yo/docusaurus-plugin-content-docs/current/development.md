@@ -60,30 +60,30 @@ Makefile ń bójú tó ọ̀nà iṣẹ́ ìdàgbàsókè tí wọ́pọ̀. Ṣe
 
 Ìmọ̀ràn: ṣiṣí `make` láì sọ àfojúsùn kankan yóò ṣí akojọ aṣayan Whiptail alákọ̀ọ́rẹ́ láti yan àfojúsùn kan.
 
-| Àfojúsùn                                                 | Apejuwe ìlà‑kan                                                                               |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Àfojúsùn                                                 | Apejuwe ìlà‑kan                                                                                 |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Yọ àwọn ohun èlò ikọ́/ìtẹ̀síwájú agbègbè kúrò (tmp/, web-local-preview/, website/build/).       |
-| [`commit`](#mt-commit)                                   | Ṣe fọ́ọ̀mù, ṣàgìmọ̀ ìdánwò (pẹ̀lú i18n), ṣe imúdójúìwọ̀n changelog, commit & push.                 |
-| [`eslint`](#mt-eslint)                                   | Ṣi ESLint nípasẹ̀ àtúnṣe flat (`npm run -s lint:eslint`).                                      |
-| [`help`](#mt-help)                                       | Ṣàkóso gbogbo àfojúsùn pẹ̀lú ìwé ìlà‑kan (tẹ̀lé ìtòlẹ́sẹẹsẹ).                                    |
-| [`lint`](#mt-lint)                                       | web‑ext lint lórí `sources/` (manifest ìgbàtẹ́lẹ̀; kọjá ZIP; kì í jẹ́ ìkùnà).                    |
-| [`menu`](#mt-menu)                                       | Akojọ aṣayan ìbáṣepọ̀ láti yan àfojúsùn kan àti àwọn ariyanjiyan àṣàyàn.                       |
-| [`pack`](#mt-pack)                                       | Kọ́ ATN & LOCAL ZIPs (nṣiṣẹ́ linter; pè ìkọ̀kọ̀ packer).                                          |
-| [`prettier`](#mt-prettier)                               | Ṣe fọ́ọ̀mù repọ̀ níbi rẹ̀ (kọ ohun ìyípadà sílẹ̀).                                                 |
+| [`commit`](#mt-commit)                                   | Ṣe fọ́ọ̀mù, ṣàgìmọ̀ ìdánwò (pẹ̀lú i18n), ṣe imúdójúìwọ̀n changelog, commit & push.              |
+| [`eslint`](#mt-eslint)                                   | Ṣi ESLint nípasẹ̀ àtúnṣe flat (`npm run -s lint:eslint`).                                       |
+| [`help`](#mt-help)                                       | Ṣàkóso gbogbo àfojúsùn pẹ̀lú ìwé ìlà‑kan (tẹ̀lé ìtòlẹ́sẹẹsẹ).                                   |
+| [`lint`](#mt-lint)                                       | web‑ext lint lórí `sources/` (manifest ìgbàtẹ́lẹ̀; kọjá ZIP; kì í jẹ́ ìkùnà).                   |
+| [`menu`](#mt-menu)                                       | Akojọ aṣayan ìbáṣepọ̀ láti yan àfojúsùn kan àti àwọn ariyanjiyan àṣàyàn.                        |
+| [`pack`](#mt-pack)                                       | Kọ́ ATN & LOCAL ZIPs (nṣiṣẹ́ linter; pè ìkọ̀kọ̀ packer).                                        |
+| [`prettier`](#mt-prettier)                               | Ṣe fọ́ọ̀mù repọ̀ níbi rẹ̀ (kọ ohun ìyípadà sílẹ̀).                                              |
 | [`prettier_check`](#mt-prettier_check)                   | Prettier ní ipo ayẹyẹ (kò kọ ohunkóhun); kùnà bí a bá nílò àtún‑fọ́ọ̀mù.                        |
-| [`prettier_write`](#mt-prettier_write)                   | Orúkọ míràn fún `prettier`.                                                                   |
-| [`test`](#mt-test)                                       | Prettier (kọ), ESLint, lẹ́yìn náà Vitest (ìbòjúbo bí a bá túnṣe bẹ́ẹ̀).                          |
+| [`prettier_write`](#mt-prettier_write)                   | Orúkọ míràn fún `prettier`.                                                                     |
+| [`test`](#mt-test)                                       | Prettier (kọ), ESLint, lẹ́yìn náà Vitest (ìbòjúbo bí a bá túnṣe bẹ́ẹ̀).                         |
 | [`test_i18n`](#mt-test_i18n)                             | Ìdánwò i18n‑nìkan: àwọn àfipamọ́/ìbámu àfikún + ìbámu ojúlé wẹẹ̀bù.                             |
-| [`translate_app`](#mt-translation-app)                   | Orúkọ míràn fún `translation_app`.                                                            |
-| [`translation_app`](#mt-translation-app)                 | Túmọ̀ àwọn okun UI app láti `sources/_locales/en/messages.json`.                               |
-| [`translate_web_docs_batch`](#mt-translation-web)        | Túmọ̀ ìwé ojúlé wẹẹ̀bù nípasẹ̀ OpenAI Batch API (tí a fẹ́ràn jù).                                 |
-| [`translate_web_docs_sync`](#mt-translation-web)         | Túmọ̀ ìwé ojúlé wẹẹ̀bù ní ìṣọ̀kan (atijọ́, kì í ṣe batch).                                        |
-| [`translate_web_index`](#mt-translation_web_index)       | Orúkọ míràn fún `translation_web_index`.                                                      |
+| [`translate_app`](#mt-translation-app)                   | Orúkọ míràn fún `translation_app`.                                                              |
+| [`translation_app`](#mt-translation-app)                 | Túmọ̀ àwọn okun UI app láti `sources/_locales/en/messages.json`.                                |
+| [`translate_web_docs_batch`](#mt-translation-web)        | Túmọ̀ ìwé ojúlé wẹẹ̀bù nípasẹ̀ OpenAI Batch API (tí a fẹ́ràn jù).                               |
+| [`translate_web_docs_sync`](#mt-translation-web)         | Túmọ̀ ìwé ojúlé wẹẹ̀bù ní ìṣọ̀kan (atijọ́, kì í ṣe batch).                                      |
+| [`translate_web_index`](#mt-translation_web_index)       | Orúkọ míràn fún `translation_web_index`.                                                        |
 | [`translation_web_index`](#mt-translation_web_index)     | Túmọ̀ UI ojú‑ìwé/agbègbè lilọ kiri/ìpẹ̀yà (`website/i18n/en/code.json → .../<lang>/code.json`). |
 | [`web_build`](#mt-web_build)                             | Kọ́ ìwé sí `website/build` (pamọ́ra `--locales` / `BUILD_LOCALES`).                             |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Ṣàyẹ̀wò ìjápọ̀ tí ó ní ààbò lórí aisinbọ (fo ọkọọkan HTTP[S] ìjìnìnlẹ̀).                         |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | Àkàwé gh‑pages agbègbè; iṣẹ́ àdáṣiṣẹ́ lórí 8080–8090; ìdánwò/ìjápọ̀‑ṣàyẹ̀wò àṣàyàn.               |
-| [`web_push_github`](#mt-web_push_github)                 | Fún `website/build` sí ẹka `gh-pages`.                                                        |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Ṣàyẹ̀wò ìjápọ̀ tí ó ní ààbò lórí aisinbọ (fo ọkọọkan HTTP[S] ìjìnìnlẹ̀).                        |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | Àkàwé gh‑pages agbègbè; iṣẹ́ àdáṣiṣẹ́ lórí 8080–8090; ìdánwò/ìjápọ̀‑ṣàyẹ̀wò àṣàyàn.             |
+| [`web_push_github`](#mt-web_push_github)                 | Fún `website/build` sí ẹka `gh-pages`.                                                          |
 
 Ìlànà ìṣàfilọ́lẹ̀ fún àwọn aṣayan
 

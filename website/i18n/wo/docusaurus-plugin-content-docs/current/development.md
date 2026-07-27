@@ -61,7 +61,7 @@ Makefile bi dafay àndal yoon yi ci sartu. Doxal `make help` ci biir bes bu nekk
 Ndimbal: su doxalee `make` te amuloo target, dina ubbi benn menu bu Whiptail bu yomb ngir tann ab target.
 
 | Target                                                   | Rëddaan bu benn rëdd                                                                              |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Mabb mboolem artefact yu build/preview yu ci sa kow (tmp/, web-local-preview/, website/build/).   |
 | [`commit`](#mt-commit)                                   | Fòormat, doxal test yi (ak i18n), yeesal changelog, commit & push.                                |
 | [`eslint`](#mt-eslint)                                   | Doxal ESLint ak flat config (`npm run -s lint:eslint`).                                           |

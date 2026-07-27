@@ -33,7 +33,7 @@ Ew di çavdêriyan de belgeyî ne dirêj dike û di CI de test kirin. Vê zêdek
 ### Kîjan (mafên → armanca) {#permissions-summary}
 
 | Maf            | Çima ew pêwîst e                                                    |
-| -------------- | ------------------------------------------------------------------- |
+|----------------|---------------------------------------------------------------------|
 | `compose`      | Binketin bûyerên kompoz; lîsteya girêdan û lêzêdanên di bersivê de. |
 | `messagesRead` | Lîsteya girêdanên peyama bingehîn bînin û pelên daneyê vegerînin.   |
 | `scripting`    | Inject/şopandina UI ya lightweight ya bo nîşankirin dema xwestî ye. |

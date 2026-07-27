@@ -23,6 +23,7 @@ describe('composition — askInPopup catch path when windows.create fails', () =
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { App } = globalThis;
     App.Composition.createAppWiring(browser);

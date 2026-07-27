@@ -10,7 +10,7 @@ describe('Composition processReplyAttachments via wiring', () => {
   // Test: adds eligible attachments; skips S/MIME, duplicates, and inline images
   it('adds eligible attachments; skips S/MIME, duplicates, and inline images', async () => {
     const attachments = [
-      { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'cid:logo' }, // inline — excluded
+      { name: 'logo.png', partName: 'p1', contentType: 'image/png', contentId: 'logo' }, // inline — excluded
       { name: 'smime.p7s', partName: 'p2', contentType: 'application/pkcs7-signature' }, // smime
       { name: 'Report.pdf', partName: 'p3', contentType: 'application/pdf' },
       { name: 'notes.txt', partName: 'p4', contentType: 'text/plain' },
@@ -18,6 +18,7 @@ describe('Composition processReplyAttachments via wiring', () => {
     const browser = createBrowserMock({
       composeExisting: [],
       messageAttachments: attachments,
+      messageHtml: '<p>hello</p><img src="cid:logo">',
       getFileByPart: async (id, part) => new Blob(['x']),
     });
 
@@ -25,6 +26,7 @@ describe('Composition processReplyAttachments via wiring', () => {
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 
@@ -49,6 +51,7 @@ describe('Composition processReplyAttachments via wiring', () => {
     await import('../sources/app/application/usecases.js');
     await import('../sources/app/domain/filters.js');
     const { App } = globalThis;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     App.Composition.createAppWiring(browser);
 

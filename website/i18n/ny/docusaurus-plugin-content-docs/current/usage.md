@@ -20,13 +20,13 @@ sidebar_label: 'Kugwiritsa Ntchito'
 
 Kuyendera kolimba motsutsana ndi kofewa: Chowonjezera chimayamba pochotsa magawo a S/MIME ndi a inline ku zomangiriridwa za fayilo. Ngati palibe loyenera, chimayendetsa koyendera kofewa komwe komabe chimachotsa S/MIME/inline koma chimapirira milandu yochulukirapo (onani Code Details). Zithunzi za inline sazionjezedwa ngati zomangiriridwa za fayilo; m'malo mwake, pamene "Include inline pictures" yayatsidwa (mwachikhazikitso), zimamangidwamo mwachindunji mu thupi la yankho monga base64 data URIs.
 
-| Mtundu wa gawo                                                      |                       Kuyendera kolimba |                        Kuyendera kofewa |
-| ------------------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
-| Fayilo ya siginecha ya S/MIME `smime.p7s`                           |                             Zachotsedwa |                             Zachotsedwa |
-| Mitundu ya MIME ya S/MIME (`application/pkcs7-*`)                   |                             Zachotsedwa |                             Zachotsedwa |
+| Mtundu wa gawo                                                      | Kuyendera kolimba                       | Kuyendera kofewa                        |
+|---------------------------------------------------------------------|----------------------------------------:|----------------------------------------:|
+| Fayilo ya siginecha ya S/MIME `smime.p7s`                           | Zachotsedwa                             | Zachotsedwa                             |
+| Mitundu ya MIME ya S/MIME (`application/pkcs7-*`)                   | Zachotsedwa                             | Zachotsedwa                             |
 | Chithunzi cha inline chochitanidwa ndi Content‑ID (`image/*`)       | Zachotsedwa (zibwezeretsedwa m'thupi\*) | Zachotsedwa (zibwezeretsedwa m'thupi\*) |
-| Imelo yomangiriridwa (`message/rfc822`) yokhala ndi dzina la fayilo |                          Sinalowetsedwe |                          Ingawonjezedwe |
-| Chomangiriridwa cha fayilo wamba chokhala ndi dzina la fayilo       |                          Ingawonjezedwe |                          Ingawonjezedwe |
+| Imelo yomangiriridwa (`message/rfc822`) yokhala ndi dzina la fayilo | Sinalowetsedwe                          | Ingawonjezedwe                          |
+| Chomangiriridwa cha fayilo wamba chokhala ndi dzina la fayilo       | Ingawonjezedwe                          | Ingawonjezedwe                          |
 
 \* Pamene "Include inline pictures" yayatsidwa (mwachikhazikitso: ON), zithunzi za inline zimamangidwamo mu thupi la yankho monga base64 data URIs m'malo mowonjezedwa ngati zomangiriridwa za fayilo. Onani [Zokonza](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Chitsanzo: Zina mwa zomangiriridwa zitha kusowa ma header ena koma zikadali mafa
 ### Pepala Lachidule la Kiyibodi {#keyboard-cheat-sheet}
 
 | Makiyi            | Zochita                                             |
-| ----------------- | --------------------------------------------------- |
+|-------------------|-----------------------------------------------------|
 | Y / J             | Tsimikizirani Inde                                  |
 | N / Esc           | Tsimikizirani Ayi                                   |
 | Enter             | Yambitsa batani lolunjikidwa                        |

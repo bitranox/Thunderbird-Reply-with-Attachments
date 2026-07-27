@@ -61,7 +61,7 @@ Makefile imakhazikitsa njira zofala za kukonza. Yendetsani `make help` nthawi il
 Upangiri: kuyendetsa `make` popanda target kumatsegula menyu ya Whiptail yosavuta yosankha target.
 
 | Cholinga                                                 | Kufotokozera kwa mzere umodzi                                                                    |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Chotsani zotuluka za kumanga/preview zakomweko (tmp/, web-local-preview/, website/build/).       |
 | [`commit`](#mt-commit)                                   | Kukonza mawonekedwe, kuthamanga mayeso (kuphatikiza i18n), kusintha changelog, commit & push.    |
 | [`eslint`](#mt-eslint)                                   | Thamangitsani ESLint kudzera mu flat config (`npm run -s lint:eslint`).                          |

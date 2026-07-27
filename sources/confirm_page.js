@@ -15,7 +15,9 @@
   const params = readParams();
   try {
     document.title = i18n('confirmTitle') || 'Confirm Attachments';
-  } catch (_) {}
+  } catch (_) {
+    // the page keeps its default title
+  }
   const els = grabElements();
   const text = buildText(params);
   render(text, els);
@@ -75,7 +77,9 @@
     const send = async (ok) => {
       try {
         await browser.runtime.sendMessage({ type: 'rwa:confirm-result', t: token, ok });
-      } catch (_) {}
+      } catch (_) {
+        // the background page falls back to its own timeout
+      }
       window.close();
     };
     els.yes.addEventListener('click', () => send(true));
@@ -103,12 +107,16 @@
   function focusDefault(def, els) {
     try {
       window.focus();
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
     const d = def === 'no' ? els.no : els.yes;
     try {
       d.setAttribute('autofocus', 'true');
       d.focus({ preventScroll: true });
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
   }
   function defer(fn) {
     globalThis.setTimeout ? globalThis.setTimeout(fn, 0) : setTimeout(fn, 0);

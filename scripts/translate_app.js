@@ -335,7 +335,9 @@ async function run() {
           logLine(
             `[PAIR] ${k}: en: ${JSON.stringify(enMsg)} | ${locale}: ${JSON.stringify(trMsg)}`
           );
-        } catch {}
+        } catch {
+          // the pair log is diagnostic only; never fail a translation run for it
+        }
       }
 
       writeJson(dstPath, outObj);

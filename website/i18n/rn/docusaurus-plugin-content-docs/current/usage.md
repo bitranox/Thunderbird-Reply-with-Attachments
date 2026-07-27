@@ -20,13 +20,13 @@ sidebar_label: 'Ikoreshwa'
 
 Urugendo rukomeye vs. urworuhutse: Inyongeramusango ubwa mbere ikura mu ngereka z’idosiye ibice vya S/MIME n’ivy’imbere. Nta na kimwe cemewe, ikora urugendo ruruhutse rukirinda S/MIME/ivy’imbere ariko rukihanganira izindi ngorane (raba Code Details). Amasanamu y’imbere ntazongerwa nk’ingereka z’idosiye; aho kubigira, iyo "Include inline pictures" yashizweho (ni ko bisanzwe), ashyirwa mu mubiri w’igisubizo nk’ama data URI ya base64.
 
-| Ubwoko bw’igice                                               |                 Urugendo rukomeye |                Urugendo ruruhutse |
-| ------------------------------------------------------------- | --------------------------------: | --------------------------------: |
-| Idosiye y’umukono wa S/MIME `smime.p7s`                       |                         Bikuwemwo |                         Bikuwemwo |
-| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)            |                         Bikuwemwo |                         Bikuwemwo |
+| Ubwoko bw’igice                                               | Urugendo rukomeye                 | Urugendo ruruhutse                |
+|---------------------------------------------------------------|----------------------------------:|----------------------------------:|
+| Idosiye y’umukono wa S/MIME `smime.p7s`                       | Bikuwemwo                         | Bikuwemwo                         |
+| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)            | Bikuwemwo                         | Bikuwemwo                         |
 | Isanamu y’imbere yerekejwe na Content‑ID (`image/*`)          | Bikuwemwo (bisubizwa mu mubiri\*) | Bikuwemwo (bisubizwa mu mubiri\*) |
-| E‑mail yafatanyijwe (`message/rfc822`) ifise izina ry’idosiye |                      Ntivyongerwa |             Birashobora kwongerwa |
-| Ingereka y’idosiye isanzwe ifise izina                        |             Birashobora kwongerwa |             Birashobora kwongerwa |
+| E‑mail yafatanyijwe (`message/rfc822`) ifise izina ry’idosiye | Ntivyongerwa                      | Birashobora kwongerwa             |
+| Ingereka y’idosiye isanzwe ifise izina                        | Birashobora kwongerwa             | Birashobora kwongerwa             |
 
 \* Iyo "Include inline pictures" yashizweho (bisanzwe: ON), amasanamu y’imbere ashyirwa mu mubiri w’igisubizo nka data URI ya base64 aho kwongerwa nk’ingereka z’idosiye. Raba [Igenamiterere](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Ingero: Zimwe mu ngereka zishobora kubura umutwe (headers) zimwe, ariko zigakome
 ### Ikigufashanyo c’utufunguro tw’ihutisha {#keyboard-cheat-sheet}
 
 | Utufunguro       | Igikorwa                                        |
-| ---------------- | ----------------------------------------------- |
+|------------------|-------------------------------------------------|
 | Y / J            | Kwemeza Ego                                     |
 | N / Esc          | Kwemeza Oya                                     |
 | Enter            | Gukoresha buto yibandwako                       |

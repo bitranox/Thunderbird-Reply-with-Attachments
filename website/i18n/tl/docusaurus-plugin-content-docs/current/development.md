@@ -61,7 +61,7 @@ Istandardisa ng Makefile ang mga karaniwang daloy ng dev. Patakbuhin ang `make h
 Tip: ang pagpapatakbo ng `make` nang walang target ay magbubukas ng simpleng Whiptail menu para pumili ng target.
 
 | Target                                                   | Isang linyang deskripsyon                                                                            |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Alisin ang lokal na build/preview artifacts (tmp/, web-local-preview/, website/build/).              |
 | [`commit`](#mt-commit)                                   | I-format, patakbuhin ang mga test (kasama ang i18n), i-update ang changelog, mag-commit at mag-push. |
 | [`eslint`](#mt-eslint)                                   | Patakbuhin ang ESLint via flat config (`npm run -s lint:eslint`).                                    |

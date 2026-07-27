@@ -33,7 +33,7 @@ Le miba ibhalwe kwisiseko kwaye ivavanyiswe kwi-CI. Lo msebenzi awuqokeleli i-te
 ### Isishwankathelo (imvume → injongo) {#permissions-summary}
 
 | Imvume           | Kungani ifunekayo                                                 |
-| ---------------- | ----------------------------------------------------------------- |
+|------------------|-------------------------------------------------------------------|
 | `compose`        | Observe compose events; list and add attachments in your reply.   |
 | `messagesRead`   | List original message attachments and fetch the file data.        |
 | `scripting`      | Inject/coordinate lightweight UI for confirmation when enabled.   |

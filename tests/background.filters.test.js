@@ -38,32 +38,47 @@ describe('Domain filters and utils', () => {
   // Test: isInlineImage and isInlineDisposition
   it('isInlineImage and isInlineDisposition', () => {
     const { App } = globalThis;
-    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(true);
-    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' })).toBe(
-      false
+    const refs = App.Domain.collectInlineCids('<img src="cid:cid">');
+    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' }, refs)).toBe(
+      true
     );
+    // A Content-ID the message body never embeds does not make an image inline.
+    expect(App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'image/png' })).toBe(false);
+    expect(
+      App.Domain.isInlineImage({ contentId: '<cid>', contentType: 'application/pdf' }, refs)
+    ).toBe(false);
+    expect(
+      App.Domain.isInlineImage({ contentType: 'image/png', contentDisposition: 'inline' })
+    ).toBe(true);
     expect(App.Domain.isInlineDisposition({ contentDisposition: 'inline; filename=x' })).toBe(true);
     expect(App.Domain.isInlineDisposition({ contentDisposition: 'attachment; filename=x' })).toBe(
       false
     );
   });
 
-  // Test: includeStrict excludes S/MIME, inline images, and inline disposition
-  it('includeStrict excludes S/MIME, inline images, and inline disposition', () => {
+  // Test: includeStrict excludes S/MIME, embedded inline images, and inline disposition
+  it('includeStrict excludes S/MIME, embedded inline images, and inline disposition', () => {
     const { App } = globalThis;
+    const refs = App.Domain.collectInlineCids('<img src="cid:cid">');
     expect(App.Domain.includeStrict({ name: 'a.pdf', contentType: 'application/pdf' })).toBe(true);
     expect(App.Domain.includeStrict({ name: 'smime.p7s' })).toBe(false);
-    expect(App.Domain.includeStrict({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(false);
+    expect(App.Domain.includeStrict({ contentId: '<cid>', contentType: 'image/jpeg' }, refs)).toBe(
+      false
+    );
+    // Same part, message body does not embed it: a real attachment, must be kept.
+    expect(App.Domain.includeStrict({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(true);
     expect(App.Domain.includeStrict({ contentDisposition: 'inline' })).toBe(false);
   });
 
-  // Test: includeRelaxed excludes S/MIME, inline images, and inline disposition
-  it('includeRelaxed excludes S/MIME, inline images, and inline disposition', () => {
+  // Test: includeRelaxed excludes S/MIME, embedded inline images, and inline disposition
+  it('includeRelaxed excludes S/MIME, embedded inline images, and inline disposition', () => {
     const { App } = globalThis;
+    const refs = App.Domain.collectInlineCids('<img src="cid:cid">');
     expect(App.Domain.includeRelaxed({ name: 'smime.p7s' })).toBe(false);
-    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(
+    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' }, refs)).toBe(
       false
     );
+    expect(App.Domain.includeRelaxed({ contentId: '<cid>', contentType: 'image/jpeg' })).toBe(true);
     expect(App.Domain.includeRelaxed({ contentDisposition: 'inline' })).toBe(false);
   });
 });

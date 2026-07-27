@@ -61,7 +61,7 @@ The Makefile standardizes common dev flows. Run `make help` anytime for a one‑
 Tip: running `make` with no target opens a simple Whiptail menu to pick a target.
 
 | Target                                                   | One‑line description                                                                      |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Remove local build/preview artifacts (tmp/, web-local-preview/, website/build/).          |
 | [`commit`](#mt-commit)                                   | Format, run tests (incl. i18n), update changelog, commit & push.                          |
 | [`eslint`](#mt-eslint)                                   | Run ESLint via flat config (`npm run -s lint:eslint`).                                    |

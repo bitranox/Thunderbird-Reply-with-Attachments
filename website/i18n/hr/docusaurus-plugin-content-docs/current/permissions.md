@@ -33,7 +33,7 @@ Sve je to dokumentirano u izvoru i testirano u CI-u. Dodatak ne prikuplja teleme
 ### Sažetak (dozvole → svrha) {#permissions-summary}
 
 | Dozvola         | Zašto je potrebna                                                                   |
-| --------------- | ----------------------------------------------------------------------------------- |
+|-----------------|-------------------------------------------------------------------------------------|
 | `compose`       | Promatranje događaja sastavljanja; popisivanje i dodavanje privitaka u vaš odgovor. |
 | `messagesRead`  | Popisivanje privitaka iz originalne poruke i preuzimanje podataka o datoteci.       |
 | `scripting`     | Umetanje/koordiranje laganog UI-a za potvrdu kada je omogućeno.                     |

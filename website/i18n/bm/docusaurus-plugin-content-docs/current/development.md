@@ -61,7 +61,7 @@ Makefile bɛ ka dɛnɛkɛla baaraw caman ɲɛtaa kɛlen ma. Ka `make help` kalan
 Dɛmɛcogo: `make` ka kalan bila target fɔ ko tɛ bɛ bɔ Whiptail menu dɔ ɲɛrɛrɛ walasa ka target dɔ minɛn.
 
 | Target                                                   | Jɛkaba dɔ fɔlɔ                                                                              |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ka buildu/preview local artefactiw jiri (tmp/, web-local-preview/, website/build/).         |
 | [`commit`](#mt-commit)                                   | Ka format kɛ, ka tɛstiw kɛ (i18n dɔrɔn kɔnɔ), ka changelog yen, ka commit kɛ & push kɛ.     |
 | [`eslint`](#mt-eslint)                                   | Ka ESLint kɛ flat config kɔnɔ (`npm run -s lint:eslint`).                                   |

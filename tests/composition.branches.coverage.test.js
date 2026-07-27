@@ -32,6 +32,7 @@ async function boot(overrides = {}, hooks = {}) {
   await import('../sources/app/domain/filters.js');
   await import('../sources/app/adapters/thunderbird.js');
   await import('../sources/app/application/usecases.js');
+  await import('../sources/app/confirm_flow.js');
   await import('../sources/app/composition.js');
 
   const wiring = globalThis.App.Composition.createAppWiring(browser);
@@ -77,6 +78,7 @@ describe('makeLocalLogger edge cases', () => {
   it('debug does nothing when disabled (line 44)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { makeLogger } = globalThis.App.Composition.Internal;
     const logger = makeLogger(false);
@@ -89,6 +91,7 @@ describe('makeLocalLogger edge cases', () => {
   it('debug logs when enabled', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { makeLogger } = globalThis.App.Composition.Internal;
     const logger = makeLogger(true);
@@ -101,6 +104,7 @@ describe('makeLocalLogger edge cases', () => {
   it('warn catches console.warn errors (line 56)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { makeLogger } = globalThis.App.Composition.Internal;
     const logger = makeLogger(false);
@@ -132,6 +136,7 @@ describe('logDebug catch blocks', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     // This should not throw despite logger.debug throwing
@@ -149,6 +154,7 @@ describe('logDebug catch blocks', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     expect(() => globalThis.App.Composition.createAppWiring(browser)).not.toThrow();
@@ -194,6 +200,7 @@ describe('applySettings edge cases', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     // Make storage return a non-array blacklistPatterns
@@ -202,7 +209,6 @@ describe('applySettings edge cases', () => {
       confirmBeforeAdd: false,
       confirmDefaultChoice: 'yes',
       warnOnBlacklistExcluded: true,
-      includeInlinePictures: false,
     });
     // createAppWiring calls loadSettings → applySettings with non-array patterns
     expect(() => globalThis.App.Composition.createAppWiring(browser)).not.toThrow();
@@ -216,6 +222,7 @@ describe('applySettings edge cases', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     // Temporarily remove globToRegExp
     const saved = globalThis.App.Domain.globToRegExp;
@@ -232,6 +239,7 @@ describe('applySettings edge cases', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     // Make makeNameExcluder throw
     const savedExcluder = globalThis.App.Domain.makeNameExcluder;
@@ -270,6 +278,7 @@ describe('matchBlacklist edge cases', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock({
       blacklistPatterns: ['*.pdf'],
@@ -330,11 +339,11 @@ describe('storage.onChanged individual setting keys', () => {
     // No error; warnOnBlacklist updated
   });
 
-  it('handles includeInlinePictures change (line 261)', async () => {
+  it('ignores an unrelated settings key', async () => {
     const { browser } = await boot();
     const storageListener = getStorageListener(browser);
-    storageListener({ includeInlinePictures: { newValue: true } }, 'local');
-    // No error; includeInline updated
+    storageListener({ someRemovedKey: { newValue: true } }, 'local');
+    // No error; no state to update
   });
 });
 
@@ -348,6 +357,7 @@ describe('ensureConfirmScriptRegistered', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     // Already registered
@@ -364,6 +374,7 @@ describe('ensureConfirmScriptRegistered', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     browser.scripting.compose.getRegisteredScripts.mockRejectedValue(new Error('no scripting'));
@@ -472,6 +483,7 @@ describe('globalThis.App assignment resilience', () => {
     await import('../sources/app/domain/filters.js');
     await import('../sources/app/adapters/thunderbird.js');
     await import('../sources/app/application/usecases.js');
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const browser = createBrowserMock();
     // The IIFE has already set App.Composition; now freeze it before createAppWiring
@@ -489,6 +501,7 @@ describe('ensureConfirmInjected via Internal', () => {
   it('skips injection when already injected (line 521)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { ensureConfirmInjected } = globalThis.App.Composition.Internal;
     const scripting = { executeScript: vi.fn() };
@@ -501,6 +514,7 @@ describe('ensureConfirmInjected via Internal', () => {
   it('adds to set on successful injection (line 528)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { ensureConfirmInjected } = globalThis.App.Composition.Internal;
     const scripting = { executeScript: vi.fn() };
@@ -513,6 +527,7 @@ describe('ensureConfirmInjected via Internal', () => {
   it('catches executeScript error (line 528-533)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { ensureConfirmInjected } = globalThis.App.Composition.Internal;
     const scripting = {
@@ -524,6 +539,7 @@ describe('ensureConfirmInjected via Internal', () => {
   it('handles logger.debug throw in emitDebug (lines 515, 518)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { ensureConfirmInjected } = globalThis.App.Composition.Internal;
     const scripting = { executeScript: vi.fn() };
@@ -570,6 +586,7 @@ describe('buildConfirmUrl edge cases', () => {
   it('sets more="" when files <= 5 (line 600)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { buildConfirmUrl } = globalThis.App.Composition.Internal;
     const browser = { runtime: { getURL: (p) => `moz-extension://x/${p}` } };
@@ -582,9 +599,10 @@ describe('buildConfirmUrl edge cases', () => {
 /* ── waitForConfirm: matching message, removeListener catch (lines 609, 612, 619) ── */
 
 describe('waitForConfirm edge cases', () => {
-  it('resolves true when matching message arrives (line 609)', async () => {
+  it("resolves 'yes' when a matching message arrives", async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;
     vi.useFakeTimers();
@@ -603,13 +621,14 @@ describe('waitForConfirm edge cases', () => {
     // Send matching message
     capturedListener({ type: 'rwa:confirm-result', t: 'tok123', ok: true });
     const result = await p;
-    expect(result).toBe(true);
+    expect(result).toBe('yes');
     vi.useRealTimers();
   });
 
   it('ignores non-matching messages', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;
     vi.useFakeTimers();
@@ -631,16 +650,17 @@ describe('waitForConfirm edge cases', () => {
     capturedListener({ type: 'rwa:confirm-result', t: 'wrong', ok: true });
     // null
     capturedListener(null);
-    // Timeout should resolve false
-    await vi.advanceTimersByTimeAsync(20100);
+    // Nothing matched, so the backstop reports that nobody answered.
+    await vi.advanceTimersByTimeAsync(120100);
     const result = await p;
-    expect(result).toBe(false);
+    expect(result).toBe('timeout');
     vi.useRealTimers();
   });
 
-  it('catches removeListener throw on match (line 612)', async () => {
+  it('catches removeListener throw on an answered popup', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;
     vi.useFakeTimers();
@@ -660,13 +680,14 @@ describe('waitForConfirm edge cases', () => {
     const p = waitForConfirm(browser, 'tok-rm');
     capturedListener({ type: 'rwa:confirm-result', t: 'tok-rm', ok: false });
     const result = await p;
-    expect(result).toBe(false);
+    expect(result).toBe('no');
     vi.useRealTimers();
   });
 
-  it('catches removeListener throw on timeout (line 619)', async () => {
+  it('catches removeListener throw on the backstop', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     const { waitForConfirm } = globalThis.App.Composition.Internal;
     vi.useFakeTimers();
@@ -681,9 +702,9 @@ describe('waitForConfirm edge cases', () => {
       },
     };
     const p = waitForConfirm(browser, 'tok-to');
-    await vi.advanceTimersByTimeAsync(20100);
+    await vi.advanceTimersByTimeAsync(120100);
     const result = await p;
-    expect(result).toBe(false);
+    expect(result).toBe('timeout');
     vi.useRealTimers();
   });
 });
@@ -694,6 +715,7 @@ describe('test-env export guard', () => {
   it('sets globals in test environment (line 654)', async () => {
     vi.resetModules();
     delete globalThis.App;
+    await import('../sources/app/confirm_flow.js');
     await import('../sources/app/composition.js');
     // In test env, SESSION_KEY and processedTabsState should be exposed
     expect(globalThis.SESSION_KEY).toBe('rwatt_processed');

@@ -61,7 +61,7 @@ Makefile husanifisha mikondo ya kawaida ya maendeleo. Endesha `make help` wakati
 Dokezo: kuendesha `make` bila lengo hufungua menyu rahisi ya Whiptail kuchagua lengo.
 
 | Lengo                                                    | Maelezo ya mstari mmoja                                                                                                      |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ondoa mabaki ya ujenzi/prevyuu ya ndani (tmp/, web-local-preview/, website/build/).                                          |
 | [`commit`](#mt-commit)                                   | Fomati, endesha majaribio (ikiwemo i18n), sasisha changelog, fanya commit na push.                                           |
 | [`eslint`](#mt-eslint)                                   | Endesha ESLint kupitia usanidi tambarare (`npm run -s lint:eslint`).                                                         |

@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Զգուշացնել, եթե կցորդները բացառված են սև ցուցակով"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Include inline pictures (embedded images)"
-  },
   "uiDebugHeader": {
     "message": "Ընդլայնված"
   },

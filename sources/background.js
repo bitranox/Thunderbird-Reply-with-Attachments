@@ -7,6 +7,20 @@
 
 let ensureDelegate = null;
 
+/**
+ * Report a problem without letting the reporting itself throw.
+ * Bootstrap runs before any logger exists and an exception from console here
+ * would take the whole add-on down; a logger must never break its caller.
+ * @param {...unknown} args
+ */
+function warnSafe(...args) {
+  try {
+    console.warn('[RWA]', ...args);
+  } catch (_) {
+    // a logger must never break the caller
+  }
+}
+
 (async function bootstrapBackground() {
   const logging = await createLoggingController(browser);
   const toNumericId = resolveNumericIdFn();
@@ -41,7 +55,8 @@ let ensureDelegate = null;
 
   registerApplySettingsListener(browser, {
     onApply: () => applySettingsToOpenComposers(applyContext),
-    reloadSettings: wiring.reloadSettings ? () => wiring.reloadSettings(browser) : null,
+    // reloadSettings closes over the browser it was wired with; it takes no argument.
+    reloadSettings: wiring.reloadSettings ? () => wiring.reloadSettings() : null,
     refreshDebug: logging.refresh,
     ensureForTab: ensureComposeForTab,
   });
@@ -89,9 +104,22 @@ function exposeTestingFacades({ toNumericId, getComposeDetails }) {
 // — Apply-settings orchestration --------------------------------------------
 
 /**
+ * @typedef {object} ApplySettingsContext
+ * @property {any} browser MailExtension browser/messenger object
+ * @property {{ log?: any, refresh?: Function }} logging
+ * @property {(value: any) => number|null} toNumericId
+ * @property {(tabId: number) => Promise<any>} getComposeDetails
+ * @property {() => ((tabId: number, details: any) => Promise<void>)|null} [ensure] Supplies the
+ *           current ensure function; it is re-created whenever settings change, so it is
+ *           looked up per call rather than captured.
+ * @property {Map<number, any>} [processedTabsState]
+ * @property {string} [sessionKey]
+ */
+
+/**
  * Re-apply settings to every currently open reply-compose tab by
  * clearing markers and re-running the ensure pipeline.
- * @param {object} context - Apply-settings context from buildApplySettingsContext
+ * @param {ApplySettingsContext} context - Apply-settings context from buildApplySettingsContext
  */
 async function applySettingsToOpenComposers(context) {
   try {
@@ -116,7 +144,7 @@ async function listAllTabs(browser) {
 /**
  * Determine whether a tab is a reply-compose window and return its id/details.
  * @param {object} tab - Tab object from browser.tabs.query
- * @param {object} context - Apply-settings context
+ * @param {ApplySettingsContext} context - Apply-settings context
  * @returns {Promise<{id: number, details: object}|null>} Resolved target or null
  */
 async function resolveReplyCompose(tab, context) {
@@ -129,18 +157,24 @@ async function resolveReplyCompose(tab, context) {
   return { id, details };
 }
 
+/**
+ * @param {Pick<ApplySettingsContext, 'browser'|'processedTabsState'|'sessionKey'>} context
+ * @param {number} tabId
+ */
 async function clearTabMarkers({ browser, processedTabsState, sessionKey }, tabId) {
   await safe(() => browser.sessions?.removeTabValue?.(tabId, sessionKey));
   try {
     processedTabsState?.delete?.(tabId);
-  } catch (_) {}
+  } catch (e) {
+    warnSafe('clearing per-tab state failed for tab', tabId, e);
+  }
 }
 
 /**
  * Execute the ensureReplyAttachments delegate for one tab, catching errors.
- * @param {object} context - Apply-settings context
+ * @param {ApplySettingsContext} context - Apply-settings context
  * @param {number} tabId - Compose tab identifier
- * @param {object} details - Compose details for the tab
+ * @param {any} details - Compose details for the tab
  * @returns {Promise<void>}
  */
 function runEnsure(context, tabId, details) {
@@ -162,9 +196,8 @@ function runEnsure(context, tabId, details) {
 
 async function settleAll(tasks) {
   if (!tasks.length) return;
-  try {
-    await Promise.allSettled(tasks);
-  } catch (_) {}
+  // allSettled never rejects; individual failures are reported by their own task.
+  await Promise.allSettled(tasks);
 }
 
 // — Logging -----------------------------------------------------------------
@@ -172,7 +205,7 @@ async function settleAll(tasks) {
 /**
  * Create a logging controller that reads the debug flag from storage
  * and rebuilds the logger when the flag changes.
- * @param {object} browser - WebExtension browser API
+ * @param {any} browser - WebExtension browser API
  * @returns {Promise<{log: object, refresh: Function}>} Controller with log getter and refresh method
  */
 async function createLoggingController(browser) {
@@ -195,7 +228,9 @@ async function createLoggingController(browser) {
     } catch (err) {
       try {
         console.warn('[RWA]', { err }, 'refreshDebugLogging failed');
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     }
   }
 
@@ -219,7 +254,9 @@ function assignGlobalLogger(logger) {
 function logWarn(logging, payload, message) {
   try {
     logging.log?.warn?.(payload, message);
-  } catch (_) {}
+  } catch (_) {
+    // a logger must never break the caller
+  }
 }
 
 // — Runtime wiring ----------------------------------------------------------
@@ -227,7 +264,7 @@ function logWarn(logging, payload, message) {
 /**
  * Register a runtime message listener that triggers settings re-application
  * or per-tab ensure when compose windows signal readiness.
- * @param {object} browser - WebExtension browser API
+ * @param {any} browser - WebExtension browser API
  * @param {object} callbacks
  * @param {Function} callbacks.onApply - Called to re-apply settings to all open composers
  * @param {Function|null} callbacks.reloadSettings - Reloads settings from storage
@@ -238,11 +275,17 @@ function registerApplySettingsListener(
   browser,
   { onApply, reloadSettings, refreshDebug, ensureForTab }
 ) {
+  if (typeof browser.runtime?.onMessage?.addListener !== 'function') {
+    warnSafe('runtime.onMessage is unavailable; the options page cannot reach us');
+    return;
+  }
+  // A host that rejects the registration must not take the whole bootstrap with
+  // it: the add-on still copies attachments, it just cannot be re-configured live.
   try {
     browser.runtime.onMessage.addListener((msg, sender) => {
       if (!msg || typeof msg.type !== 'string') return undefined;
       if (msg.type === 'rwa:apply-settings-open-compose') {
-        maybeReloadSettings(reloadSettings, msg);
+        maybeReloadSettings(reloadSettings);
         maybeRefreshDebug(refreshDebug);
         if (typeof onApply === 'function') onApply();
         return Promise.resolve({ ok: true });
@@ -257,13 +300,15 @@ function registerApplySettingsListener(
       }
       return undefined;
     });
-  } catch (_) {}
+  } catch (e) {
+    warnSafe('could not register the settings listener:', e);
+  }
 }
 
 /**
  * Extract a numeric tab ID from a runtime message sender or message payload.
- * @param {object} sender - Message sender (may contain sender.tab.id)
- * @param {object} msg - Message payload (may contain msg.tabId)
+ * @param {{ tab?: { id?: number } }} sender - Message sender
+ * @param {{ tabId?: number|string }} msg - Message payload
  * @returns {number|null} Finite tab ID or null
  */
 function extractTabId(sender, msg) {
@@ -277,23 +322,15 @@ function extractTabId(sender, msg) {
 
 /**
  * Reload settings from storage if a reload function is available.
- * On failure, attempts to open a URL from the message as a recovery action.
  * @param {Function|null} reloadSettings - Async function that reloads settings
- * @param {object} msg - Runtime message (may carry a fallback url)
  */
-function maybeReloadSettings(reloadSettings, msg) {
+function maybeReloadSettings(reloadSettings) {
   if (typeof reloadSettings !== 'function') return;
   try {
-    reloadSettings().catch((e) => {
-      console.error('[RWA] reloadSettings failed:', e);
-      if (msg && msg.type === 'rwa:open-url' && typeof msg.url === 'string') {
-        try {
-          browser.tabs?.create?.({ url: msg.url, active: true });
-        } catch (_) {}
-      }
-      return Promise.resolve({ ok: true });
-    });
-  } catch (_) {}
+    reloadSettings().catch((e) => console.error('[RWA] reloadSettings failed:', e));
+  } catch (e) {
+    warnSafe('reloadSettings threw synchronously:', e);
+  }
 }
 
 function maybeRefreshDebug(refreshDebug) {
@@ -305,13 +342,19 @@ function maybeRefreshDebug(refreshDebug) {
 }
 
 function registerDebugWatcher(browser, refreshDebug) {
+  if (typeof browser.storage?.onChanged?.addListener !== 'function') {
+    warnSafe('storage.onChanged is unavailable; the debug flag needs a restart');
+    return;
+  }
   try {
-    browser.storage?.onChanged?.addListener?.((changes, area) => {
+    browser.storage.onChanged.addListener((changes, area) => {
       if (area !== 'local') return;
       if (!changes || !Object.prototype.hasOwnProperty.call(changes, 'debug')) return;
       maybeRefreshDebug(refreshDebug);
     });
-  } catch (_) {}
+  } catch (e) {
+    warnSafe('could not watch the debug flag:', e);
+  }
 }
 
 // — Settings lifecycle ------------------------------------------------------
@@ -321,24 +364,29 @@ const SETTINGS_DEFAULTS = Object.freeze({
   confirmBeforeAdd: false,
   confirmDefaultChoice: 'yes',
   warnOnBlacklistExcluded: true,
-  includeInlinePictures: true,
 });
 
 function registerSettingsLifecycle(browser) {
   const SCHEMA_VERSION = 1;
+  if (typeof browser.runtime?.onInstalled?.addListener !== 'function') {
+    warnSafe('runtime.onInstalled is unavailable; default settings will not be seeded');
+    return;
+  }
   try {
-    browser.runtime?.onInstalled?.addListener?.((details) => {
+    browser.runtime.onInstalled.addListener((details) => {
       return initializeOrMigrateSettings(browser, details, SCHEMA_VERSION).catch((e) =>
         console.error('[RWA] settings init/migrate failed:', e)
       );
     });
-  } catch (_) {}
+  } catch (e) {
+    warnSafe('could not register the install/upgrade hook:', e);
+  }
 }
 
 /**
  * Seed default settings on fresh install or migrate missing keys on update.
- * @param {object} browser - WebExtension browser API
- * @param {object} details - Install/update details from runtime.onInstalled
+ * @param {any} browser - WebExtension browser API
+ * @param {{ reason?: string }} details - Install/update details from runtime.onInstalled
  * @param {number} targetVersion - Schema version to write after migration
  */
 async function initializeOrMigrateSettings(browser, details, targetVersion) {
@@ -359,7 +407,7 @@ async function readSchemaVersion(browser) {
 
 /**
  * Write default settings values for any keys not already present in storage.
- * @param {object} browser - WebExtension browser API
+ * @param {any} browser - WebExtension browser API
  * @param {object} defaults - Key/value map of default settings
  * @param {number} version - Schema version to stamp after seeding
  */
@@ -369,7 +417,6 @@ async function seedDefaultsOnInstall(browser, defaults, version) {
     confirmBeforeAdd: undefined,
     confirmDefaultChoice: undefined,
     warnOnBlacklistExcluded: undefined,
-    includeInlinePictures: undefined,
   });
   const toSet = onlyMissing(existing, defaults);
   if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);
@@ -378,7 +425,7 @@ async function seedDefaultsOnInstall(browser, defaults, version) {
 
 /**
  * Backfill any settings keys added in newer versions that are missing in storage.
- * @param {object} browser - WebExtension browser API
+ * @param {any} browser - WebExtension browser API
  * @param {object} defaults - Key/value map of default settings
  * @param {number} version - Schema version to stamp after migration
  */
@@ -388,7 +435,6 @@ async function migrateMissingDefaults(browser, defaults, version) {
     confirmBeforeAdd: undefined,
     confirmDefaultChoice: undefined,
     warnOnBlacklistExcluded: undefined,
-    includeInlinePictures: undefined,
   });
   const toSet = onlyMissing(snapshot, defaults);
   if (Object.keys(toSet).length) await browser.storage?.local?.set?.(toSet);
@@ -475,22 +521,30 @@ function makeLogger(enabled) {
       if (!enabled) return;
       try {
         console.debug('[RWA]', ...args);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     },
     info: (...args) => {
       try {
         console.info('[RWA]', ...args);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     },
     warn: (...args) => {
       try {
         console.warn('[RWA]', ...args);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     },
     error: (...args) => {
       try {
         console.error('[RWA]', ...args);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     },
   };
 }

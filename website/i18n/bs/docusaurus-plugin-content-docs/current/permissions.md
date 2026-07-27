@@ -33,7 +33,7 @@ Ove dozvole su dokumentovane u izvoru i testirane u CI. Dodatak ne prikuplja tel
 ### Sažetak (dozvole → svrha) {#permissions-summary}
 
 | Dozvola           | Zašto je potrebna                                                                   |
-| ----------------- | ----------------------------------------------------------------------------------- |
+|-------------------|-------------------------------------------------------------------------------------|
 | `compose`         | Posmatranje događaja sastavljanja; lista i dodavanje priloga u vašem odgovoru.      |
 | `messagesRead`    | Lista originalnih poruka i preuzimanje podataka datoteka.                           |
 | `scripting`       | Injektovanje/koordinacija laganog korisničkog sučelja za potvrdu kada je omogućeno. |

@@ -61,7 +61,7 @@ Makefile standaryzuje typowe przepływy developerskie. Uruchom `make help` w dow
 Wskazówka: uruchomienie `make` bez celu otwiera proste menu Whiptail do wyboru celu.
 
 | Cel                                                      | Jednolinijkowy opis                                                                                        |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Usuń lokalne artefakty build/preview (tmp/, web-local-preview/, website/build/).                           |
 | [`commit`](#mt-commit)                                   | Sformatuj, uruchom testy (w tym i18n), zaktualizuj changelog, commit i push.                               |
 | [`eslint`](#mt-eslint)                                   | Uruchom ESLint przez flat config (`npm run -s lint:eslint`).                                               |

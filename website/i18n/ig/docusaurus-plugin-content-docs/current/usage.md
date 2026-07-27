@@ -20,13 +20,13 @@ sidebar_label: 'Ojiji'
 
 Njem “strict” megide “relaxed”: Mgbakwunye ahụ na-ebute ụzọ wepụ akụkụ S/MIME na inline n’ime ndokwụnye faịlụ. Ọ bụrụ na enweghị ihe ọ bụla kwekọrọ, ọ na-agba njem dị nro nke ka na-ewepụ S/MIME/inline ma na-anabata ọnọdụ ndị ọzọ (lee Nkọwa Koodu). A naghị etinye onyonyo inline dịka ndokwụnye faịlụ; kama, mgbe “Gụnye onyonyo inline” gbanyere (ndabara), a na-etinye ha kpọmkwem n’ahụ nzaghachi dịka base64 data URIs.
 
-| Ụdị akụkụ                                           |                     Njem Strict |                    Njem Relaxed |
-| --------------------------------------------------- | ------------------------------: | ------------------------------: |
-| Faịlụ mbinye aka S/MIME `smime.p7s`                 |                        E wepụrụ |                        E wepụrụ |
-| Ụdị MIME S/MIME (`application/pkcs7-*`)             |                        E wepụrụ |                        E wepụrụ |
+| Ụdị akụkụ                                           | Njem Strict                     | Njem Relaxed                    |
+|-----------------------------------------------------|--------------------------------:|--------------------------------:|
+| Faịlụ mbinye aka S/MIME `smime.p7s`                 | E wepụrụ                        | E wepụrụ                        |
+| Ụdị MIME S/MIME (`application/pkcs7-*`)             | E wepụrụ                        | E wepụrụ                        |
 | Onyonyo inline nke Content‑ID kpọrọ (`image/*`)     | E wepụrụ (a weghachiri n’ahụ\*) | E wepụrụ (a weghachiri n’ahụ\*) |
-| Email e jikọtara (`message/rfc822`) nwere aha faịlụ |              A na-adịghị etinye |               Enwere ike itinye |
-| Ndokwụnye faịlụ nkịtị nwere aha faịlụ               |               Enwere ike itinye |               Enwere ike itinye |
+| Email e jikọtara (`message/rfc822`) nwere aha faịlụ | A na-adịghị etinye              | Enwere ike itinye               |
+| Ndokwụnye faịlụ nkịtị nwere aha faịlụ               | Enwere ike itinye               | Enwere ike itinye               |
 
 \* Mgbe “Gụnye onyonyo inline” gbanyere (ndabara: ON), a na-etinye onyonyo inline n’ahụ nzaghachi dịka base64 data URIs kama ịtinye ha dịka ndokwụnye faịlụ. Lee [Nhazi](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Ihe atụ: Ụfọdụ ndokwụnye nwere ike na-enweghị ụfọdụ isi header
 ### Akwụkwọ ntuziaka mkpirisi keyboard {#keyboard-cheat-sheet}
 
 | Igodo           | Omume                                      |
-| --------------- | ------------------------------------------ |
+|-----------------|--------------------------------------------|
 | Y / J           | Kwenye Ee                                  |
 | N / Esc         | Kwenye Mba                                 |
 | Enter           | Gbanye bọtịnụ e lekwasịrị anya             |

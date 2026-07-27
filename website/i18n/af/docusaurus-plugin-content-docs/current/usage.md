@@ -20,13 +20,13 @@ sidebar_label: 'Gebruik'
 
 Streng vs. ontspanne deurloop: Die byvoeging sluit eers S/MIME- en inlyndele uit van lêeraanhegsels. As niks kwalifiseer nie, loop dit ’n ontspanne deurloop wat steeds S/MIME/inlyn uitsluit maar meer gevalle toelaat (sien Koodbesonderhede). Inlynbeelde word nooit as lêeraanhegsels bygevoeg nie; in plaas daarvan, wanneer "Sluit inlynprente in" geaktiveer is (die verstek), word hulle direk in die antwoordliggaam ingebed as base64 data‑URI's.
 
-| Onderdeeltipe                                             |                   Streng deurloop |                Ontspanne deurloop |
-| --------------------------------------------------------- | --------------------------------: | --------------------------------: |
-| S/MIME-handtekeninglêer `smime.p7s`                       |                        Uitgesluit |                        Uitgesluit |
-| S/MIME MIME‑tipes (`application/pkcs7-*`)                 |                        Uitgesluit |                        Uitgesluit |
+| Onderdeeltipe                                             | Streng deurloop                   | Ontspanne deurloop                |
+|-----------------------------------------------------------|----------------------------------:|----------------------------------:|
+| S/MIME-handtekeninglêer `smime.p7s`                       | Uitgesluit                        | Uitgesluit                        |
+| S/MIME MIME‑tipes (`application/pkcs7-*`)                 | Uitgesluit                        | Uitgesluit                        |
 | Inlynbeeld waarna deur Content‑ID verwys word (`image/*`) | Uitgesluit (in liggaam herstel\*) | Uitgesluit (in liggaam herstel\*) |
-| Aangehegte e-pos (`message/rfc822`) met ’n lêernaam       |                  Nie bygevoeg nie |                 Kan bygevoeg word |
-| Gewone lêeraanhegsel met ’n lêernaam                      |                 Kan bygevoeg word |                 Kan bygevoeg word |
+| Aangehegte e-pos (`message/rfc822`) met ’n lêernaam       | Nie bygevoeg nie                  | Kan bygevoeg word                 |
+| Gewone lêeraanhegsel met ’n lêernaam                      | Kan bygevoeg word                 | Kan bygevoeg word                 |
 
 \* Wanneer "Sluit inlynprente in" geaktiveer is (verstek: AAN), word inlynbeelde in die antwoordliggaam as base64 data‑URI's ingebed eerder as om as lêeraanhegsels bygevoeg te word. Sien [Konfigurasie](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Voorbeeld: Sommige aanhegsels mag sekere kopvelde ontbreek, maar is steeds gewon
 ### Sleutelbord-spiekblad {#keyboard-cheat-sheet}
 
 | Sleutels        | Aksie                              |
-| --------------- | ---------------------------------- |
+|-----------------|------------------------------------|
 | Y / J           | Bevestig Ja                        |
 | N / Esc         | Bevestig Nee                       |
 | Enter           | Aktiveer gefokusde knoppie         |

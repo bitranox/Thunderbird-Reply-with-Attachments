@@ -33,7 +33,7 @@ Mí eza na mukanda mpe esalemi na CI. Add‑on ezali te kokata telemetry.
 ### Mibeko (mibeko → ebongiseli) {#permissions-summary}
 
 | Mibeko           | Nkuka ya mibeko ekoki kozwa                                       |
-| ---------------- | ----------------------------------------------------------------- |
+|------------------|-------------------------------------------------------------------|
 | `compose`        | Kotala mikanda ya mise; lisanga mpe kolakisa masolo na yo.        |
 | `messagesRead`   | Lisanga masolo ya ebonga ya motuya mpe kolanda ba fichier.        |
 | `scripting`      | Kopusa/kolanda UI ya moke mpo na bokeli soki ezali na bokeli.     |

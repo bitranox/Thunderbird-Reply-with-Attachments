@@ -61,7 +61,7 @@ Makefile ühtlustab levinud arendusvood. Käivita `make help` igal ajal, et näh
 Vihje: `make` ilma sihtmärgita avab lihtsa Whiptaili menüü sihtmärgi valimiseks.
 
 | Sihtmärk                                                 | Üherealine kirjeldus                                                                               |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Eemalda lokaalsed ehitus/ eelvaate artefaktid (tmp/, web-local-preview/, website/build/).          |
 | [`commit`](#mt-commit)                                   | Vorminda, käivita testid (sh i18n), uuenda muutuste logi, commiti ja pushi.                        |
 | [`eslint`](#mt-eslint)                                   | Käivita ESLint lameda konfiguratsiooniga (`npm run -s lint:eslint`).                               |

@@ -8,23 +8,23 @@ sidebar_label: 'Support'
 
 ## FAQ {#faq}
 
-### Attachments didn’t get added — why?
+### Attachments didn't get added - why?
 
-- Inline images and S/MIME parts are intentionally excluded.
+- Images embedded in the message body and S/MIME parts are intentionally not copied; the embedded ones are already in the reply body.
 - Duplicate filenames are skipped if the compose already has the same file.
 - Blacklist patterns may filter candidates; see [Configuration](configuration#blacklist-glob-patterns).
 
 ### Can I confirm before adding attachments?
 
-Yes. Enable “Ask before adding attachments” under [Configuration → Confirmation](configuration#confirmation). Keyboard: Y/J = Yes, N/Esc = No.
+Yes. Enable "Ask before adding attachments" under [Configuration → Confirmation](configuration#confirmation). Keyboard: Y/J = Yes, N/Esc = No.
 
-### Does the add‑on send any data or track usage?
+### Does the add-on send any data or track usage?
 
-No. See [Privacy](privacy) — no telemetry and no background network requests.
+No. See [Privacy](privacy) - no telemetry and no background network requests.
 
-### Forward doesn’t add attachments — is that expected?
+### Forward doesn't add attachments - is that expected?
 
-Yes. Only Reply and Reply all are modified by this add‑on; Forward is left unchanged. See [Limitations](usage#limitations).
+Yes. Only Reply and Reply all are modified by this add-on; Forward is left unchanged. See [Limitations](usage#limitations).
 
 ### Where is the Donate snooze?
 
@@ -43,15 +43,15 @@ Need help or want to report a bug?
 - Repository: `bitranox/Thunderbird-Reply-with-Attachments`
 - Issues: https://github.com/bitranox/Thunderbird-Reply-with-Attachments/issues
 - Include Thunderbird version (e.g., 128 ESR), OS, and steps to reproduce
-- Attach relevant logs from Thunderbird’s Error Console (Tools → Developer Tools → Error Console)
+- Attach relevant logs from Thunderbird's Error Console (Tools → Developer Tools → Error Console)
 
-- Add‑ons site (ATN): You can also leave feedback via the [add‑on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
+- Add-ons site (ATN): You can also leave feedback via the [add-on page](https://addons.thunderbird.net/thunderbird/addon/reply-with-attachments).
 
 ---
 
 ### Tips
 
-- Ensure you’re on a supported Thunderbird version (128 ESR or newer).
+- Ensure you're on a supported Thunderbird version (128 ESR or newer).
 - Check the Configuration and Usage docs for common setup questions.
 - For development/testing, see the Development guide.
 - If stored settings appear not to apply properly, restart Thunderbird and try again. (Thunderbird may cache state across sessions; a restart ensures fresh settings are loaded.)
@@ -68,7 +68,7 @@ Need help or want to report a bug?
 - A sample of your blacklist patterns (if relevant)
 - Error Console logs while reproducing (Tools → Developer Tools → Error Console)
 - Enable debug logging (optional):
-  - Run in Thunderbird’s Error Console: `messenger.storage.local.set({ debug: true })`
+  - Run in Thunderbird's Error Console: `messenger.storage.local.set({ debug: true })`
   - Reproduce the issue and copy relevant `[RWA]` log lines
 
 ---
@@ -86,6 +86,6 @@ Need help or want to report a bug?
 
 ### Donate
 
-If you’d like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
+If you'd like to support this project, please consider a small contribution on the [Donate](donation) page. Thank you!
 
 ---

@@ -33,7 +33,7 @@ Tieto sú zdokumentované v zdrojovom kóde a testované v CI. Doplnok nezbiera 
 ### Zhrnutie (oprávnenia → účel) {#permissions-summary}
 
 | Oprávnenie             | Prečo je potrebné                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------- |
+|------------------------|------------------------------------------------------------------------------------|
 | `compose`              | Pozorovať udalosti písania; zoznam a pridávať prílohy vo vašej odpovedi.           |
 | `messagesRead`         | Zoznam príloh pôvodnej správy a získať údaje o súboroch.                           |
 | `scripting`            | Injektovať/koordinovať ľahké užívateľské rozhranie na potvrdenie, keď je povolené. |

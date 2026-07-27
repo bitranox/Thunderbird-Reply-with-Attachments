@@ -20,13 +20,13 @@ sidebar_label: 'Brug'
 
 Streng kontra lempelig gennemgang: Tilføjelsen udelukker først S/MIME‑ og inline‑dele fra filvedhæftninger. Hvis intet kvalificerer sig, kører den en mere lempelig gennemgang, der stadig udelukker S/MIME/inline, men tolererer flere tilfælde (se Kodedetaljer). Inline‑billeder tilføjes aldrig som filvedhæftninger; i stedet, når "Include inline pictures" er aktiveret (standard), indlejres de direkte i svarteksten som base64‑data‑URI'er.
 
-| Part type                                         |                           Strict pass |                          Relaxed pass |
-| ------------------------------------------------- | ------------------------------------: | ------------------------------------: |
-| S/MIME signature file `smime.p7s`                 |                              Excluded |                              Excluded |
-| S/MIME MIME types (`application/pkcs7-*`)         |                              Excluded |                              Excluded |
+| Part type                                         | Strict pass                           | Relaxed pass                          |
+|---------------------------------------------------|--------------------------------------:|--------------------------------------:|
+| S/MIME signature file `smime.p7s`                 | Excluded                              | Excluded                              |
+| S/MIME MIME types (`application/pkcs7-*`)         | Excluded                              | Excluded                              |
 | Inline image referenced by Content‑ID (`image/*`) | Udelukket (gendannes i svarteksten\*) | Udelukket (gendannes i svarteksten\*) |
-| Attached email (`message/rfc822`) with a filename |                             Not added |                          May be added |
-| Regular file attachment with a filename           |                          May be added |                          May be added |
+| Attached email (`message/rfc822`) with a filename | Not added                             | May be added                          |
+| Regular file attachment with a filename           | May be added                          | May be added                          |
 
 \* Når "Include inline pictures" er aktiveret (standard: TIL), indlejres inline‑billeder i svarteksten som base64‑data‑URI'er i stedet for at blive tilføjet som filvedhæftninger. Se [Konfiguration](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Eksempel: Nogle vedhæftninger kan mangle visse headere, men er stadig almindeli
 ### Tastatursnydeark {#keyboard-cheat-sheet}
 
 | Taster          | Handling                          |
-| --------------- | --------------------------------- |
+|-----------------|-----------------------------------|
 | Y / J           | Bekræft Ja                        |
 | N / Esc         | Bekræft Nej                       |
 | Enter           | Aktivér fokuseret knap            |

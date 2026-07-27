@@ -1,7 +1,7 @@
 /*
  * Test Module: usecases.unit.test.js
  * Scope: Application use-cases — focused unit tests for selection/processing helpers.
- * Intent: Validate two-pass selection, safe helpers, and edge cases.
+ * Intent: Validate attachment selection, safe helpers, and edge cases.
  */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import fs from 'fs';
@@ -30,6 +30,7 @@ describe('UseCases — unit', () => {
     globalThis.isInlineDisposition = App.Domain.isInlineDisposition;
     globalThis.includeStrict = App.Domain.includeStrict;
     globalThis.includeRelaxed = App.Domain.includeRelaxed;
+    globalThis.collectInlineCids = App.Domain.collectInlineCids;
     // Load use cases factory
     loadScript(path.join(process.cwd(), 'sources', 'app', 'application', 'usecases.js'), {});
   });
@@ -46,6 +47,9 @@ describe('UseCases — unit', () => {
     ];
     const messages = {
       listAttachments: vi.fn().mockResolvedValue(attachments),
+      listInlineTextParts: vi
+        .fn()
+        .mockResolvedValue([{ contentType: 'text/html', content: '<img src="cid:cid">' }]),
       getAttachmentFile: vi
         .fn()
         .mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
@@ -110,6 +114,9 @@ describe('UseCases — unit', () => {
     ];
     const messages = {
       listAttachments: vi.fn().mockResolvedValue(attachments),
+      listInlineTextParts: vi
+        .fn()
+        .mockResolvedValue([{ contentType: 'text/html', content: '<img src="cid:cid">' }]),
       getAttachmentFile: vi
         .fn()
         .mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
@@ -125,17 +132,62 @@ describe('UseCases — unit', () => {
     expect(compose.addAttachment).toHaveBeenCalledTimes(0);
   });
 
-  // Test: restoreInlineImages replaces CID references with data URIs in the body
-  it('ensureReplyAttachments restores inline images as data URIs when includeInlinePictures is true', async () => {
-    const htmlBody = '<html><body><img src="cid:abc123"></body></html>';
-    const pngBytes = new Uint8Array([137, 80, 78, 71]); // minimal PNG header bytes
-    const pngBlob = new Blob([pngBytes], { type: 'image/png' });
+  // Test: an image whose Content-ID the body never references is a real attachment
+  it('createProcessReplyAttachments adds an image whose Content-ID the body never references', async () => {
     const compose = {
-      getDetails: vi.fn().mockResolvedValue({
-        type: 'reply',
-        referenceMessageId: 300,
-        body: htmlBody,
-      }),
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const attachments = [
+      {
+        name: 'photo.png',
+        partName: '2',
+        contentType: 'image/png',
+        contentId: '<5A3F@example.net>',
+        contentDisposition: 'attachment; filename=photo.png',
+      },
+    ];
+    const messages = {
+      listAttachments: vi.fn().mockResolvedValue(attachments),
+      getAttachmentFile: vi
+        .fn()
+        .mockImplementation(async (_mid, part) => ({ name: `part-${part}` })),
+    };
+    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, logger });
+    const added = await proc(1, 100);
+    expect(added).toBe(1);
+    expect(compose.addAttachment).toHaveBeenCalledTimes(1);
+  });
+
+  // Test: the confirm dialog is offered for such an attachment instead of silently skipped
+  it('createProcessReplyAttachments asks for confirmation for an unreferenced Content-ID image', async () => {
+    const compose = {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const messages = {
+      listAttachments: vi
+        .fn()
+        .mockResolvedValue([
+          { name: 'photo.jpeg', partName: '2', contentType: 'image/jpeg', contentId: '<abc>' },
+        ]),
+      getAttachmentFile: vi.fn().mockResolvedValue({ name: 'photo.jpeg' }),
+    };
+    const confirm = vi.fn().mockResolvedValue(true);
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, confirm });
+    await proc(1, 100);
+    expect(confirm).toHaveBeenCalledTimes(1);
+    expect(confirm.mock.calls[0][1]).toEqual([{ name: 'photo.jpeg', partName: '2' }]);
+  });
+
+  // Test: the reply body is never rewritten
+  it('ensureReplyAttachments never writes the compose body', async () => {
+    // Thunderbird restores inline images in the composer itself (bug 1997519).
+    // Writing the body back raced that conversion and relied on the internal
+    // imap:/mailbox: URL format, which is not a stable API.
+    const compose = {
+      getDetails: vi.fn().mockResolvedValue({ type: 'reply', referenceMessageId: 300 }),
       listAttachments: vi.fn().mockResolvedValue([]),
       addAttachment: vi.fn().mockResolvedValue(undefined),
       setDetails: vi.fn().mockResolvedValue(undefined),
@@ -146,162 +198,12 @@ describe('UseCases — unit', () => {
         .mockResolvedValue([
           { name: 'photo.png', partName: 'p1', contentType: 'image/png', contentId: '<abc123>' },
         ]),
-      getAttachmentFile: vi.fn().mockResolvedValue(pngBlob),
-    };
-    const _tab = new Map();
-    const sessions = {
-      async getTabValue(tab, key) {
-        return _tab.get(`${tab}:${key}`);
-      },
-      async setTabValue(tab, key, val) {
-        _tab.set(`${tab}:${key}`, val);
-      },
-      async removeTabValue(tab, key) {
-        _tab.delete(`${tab}:${key}`);
-      },
-    };
-    const state = new Map();
-    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
-    const ensure = App.UseCases.createEnsureReplyAttachments({
-      compose,
-      messages,
-      sessions,
-      state,
-      sessionKey: 'S',
-      logger,
-      includeInlinePictures: true,
-    });
-    await ensure(10, { type: 'reply', referenceMessageId: 300 });
-    expect(compose.setDetails).toHaveBeenCalledTimes(1);
-    const call = compose.setDetails.mock.calls[0];
-    expect(call[0]).toBe(10);
-    expect(call[1].body).toContain('data:image/png;base64,');
-    expect(call[1].body).not.toContain('cid:abc123');
-  });
-
-  // Test: restoreInlineImages replaces Thunderbird imap:// URLs with data URIs
-  // getComposeDetails returns serialized HTML where & in URLs becomes &amp;
-  it('ensureReplyAttachments restores inline images from imap:// URLs with &amp; encoding', async () => {
-    const imapUrl =
-      'imap://user@imap.example.com:993/fetch%3EUID%3E/INBOX%3E12345?header=quotebody&amp;part=1.2.2&amp;filename=Logo.png';
-    const htmlBody = `<html><body><img src="${imapUrl}"></body></html>`;
-    const pngBytes = new Uint8Array([137, 80, 78, 71]);
-    const pngBlob = new Blob([pngBytes], { type: 'image/png' });
-    const compose = {
-      getDetails: vi.fn().mockResolvedValue({
-        type: 'reply',
-        referenceMessageId: 350,
-        body: htmlBody,
-      }),
-      listAttachments: vi.fn().mockResolvedValue([]),
-      addAttachment: vi.fn().mockResolvedValue(undefined),
-      setDetails: vi.fn().mockResolvedValue(undefined),
-    };
-    const messages = {
-      listAttachments: vi.fn().mockResolvedValue([
-        {
-          name: 'Logo.png',
-          partName: '1.2.2',
-          contentType: 'image/png',
-          contentId: '<logo-cid>',
-        },
-      ]),
-      getAttachmentFile: vi.fn().mockResolvedValue(pngBlob),
-    };
-    const _tab = new Map();
-    const sessions = {
-      async getTabValue(tab, key) {
-        return _tab.get(`${tab}:${key}`);
-      },
-      async setTabValue(tab, key, val) {
-        _tab.set(`${tab}:${key}`, val);
-      },
-      async removeTabValue(tab, key) {
-        _tab.delete(`${tab}:${key}`);
-      },
-    };
-    const state = new Map();
-    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
-    const ensure = App.UseCases.createEnsureReplyAttachments({
-      compose,
-      messages,
-      sessions,
-      state,
-      sessionKey: 'S',
-      logger,
-      includeInlinePictures: true,
-    });
-    await ensure(13, { type: 'reply', referenceMessageId: 350 });
-    expect(compose.setDetails).toHaveBeenCalledTimes(1);
-    const call = compose.setDetails.mock.calls[0];
-    expect(call[0]).toBe(13);
-    expect(call[1].body).toContain('data:image/png;base64,');
-    expect(call[1].body).not.toContain('imap://');
-  });
-
-  // Test: restoreInlineImages is a no-op when body has no inline references
-  it('ensureReplyAttachments skips inline restore when body has no CID refs', async () => {
-    const compose = {
-      getDetails: vi.fn().mockResolvedValue({
-        type: 'reply',
-        referenceMessageId: 400,
-        body: '<html><body>No images here</body></html>',
-      }),
-      listAttachments: vi.fn().mockResolvedValue([]),
-      addAttachment: vi.fn().mockResolvedValue(undefined),
-      setDetails: vi.fn().mockResolvedValue(undefined),
-    };
-    const messages = {
-      listAttachments: vi.fn().mockResolvedValue([]),
-      getAttachmentFile: vi.fn().mockResolvedValue(null),
-    };
-    const _tab = new Map();
-    const sessions = {
-      async getTabValue(tab, key) {
-        return _tab.get(`${tab}:${key}`);
-      },
-      async setTabValue(tab, key, val) {
-        _tab.set(`${tab}:${key}`, val);
-      },
-      async removeTabValue(tab, key) {
-        _tab.delete(`${tab}:${key}`);
-      },
-    };
-    const state = new Map();
-    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
-    const ensure = App.UseCases.createEnsureReplyAttachments({
-      compose,
-      messages,
-      sessions,
-      state,
-      sessionKey: 'S',
-      logger,
-      includeInlinePictures: true,
-    });
-    await ensure(11, { type: 'reply', referenceMessageId: 400 });
-    expect(compose.setDetails).not.toHaveBeenCalled();
-  });
-
-  // Test: restoreInlineImages gracefully skips when attachment fetch fails
-  it('ensureReplyAttachments handles inline image fetch failure gracefully', async () => {
-    const htmlBody = '<html><body><img src="cid:fail-id"></body></html>';
-    const compose = {
-      getDetails: vi.fn().mockResolvedValue({
-        type: 'reply',
-        referenceMessageId: 500,
-        body: htmlBody,
-      }),
-      listAttachments: vi.fn().mockResolvedValue([]),
-      addAttachment: vi.fn().mockResolvedValue(undefined),
-      setDetails: vi.fn().mockResolvedValue(undefined),
-    };
-    const messages = {
-      listAttachments: vi
+      listInlineTextParts: vi
         .fn()
         .mockResolvedValue([
-          { name: 'broken.png', partName: 'p1', contentType: 'image/png', contentId: '<fail-id>' },
+          { contentType: 'text/html', content: '<html><body><img src="cid:abc123"></body></html>' },
         ]),
-      getAttachmentFile: vi.fn().mockRejectedValue(new Error('network error')),
+      getAttachmentFile: vi.fn().mockResolvedValue({ name: 'photo.png' }),
     };
     const _tab = new Map();
     const sessions = {
@@ -315,20 +217,106 @@ describe('UseCases — unit', () => {
         _tab.delete(`${tab}:${key}`);
       },
     };
-    const state = new Map();
     const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
     const ensure = App.UseCases.createEnsureReplyAttachments({
       compose,
       messages,
       sessions,
-      state,
+      state: new Map(),
       sessionKey: 'S',
       logger,
-      includeInlinePictures: true,
     });
-    await ensure(12, { type: 'reply', referenceMessageId: 500 });
-    // setDetails should not be called since the only image fetch failed
+    await ensure(10, { type: 'reply', referenceMessageId: 300 });
     expect(compose.setDetails).not.toHaveBeenCalled();
+    // The embedded image is left to Thunderbird, so it is not attached either.
+    expect(compose.addAttachment).not.toHaveBeenCalled();
+  });
+
+  // Test: the count limit caps a reply and reports what was left out
+  it('copies at most COPY_LIMITS.maxCount attachments and reports the rest', async () => {
+    const { maxCount } = App.UseCases.COPY_LIMITS;
+    const attachments = Array.from({ length: maxCount + 3 }, (_, i) => ({
+      name: `doc${i}.txt`,
+      partName: String(i),
+      contentType: 'text/plain',
+      size: 10,
+    }));
+    const compose = {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const messages = {
+      listAttachments: vi.fn().mockResolvedValue(attachments),
+      listInlineTextParts: vi.fn().mockResolvedValue([]),
+      getAttachmentFile: vi.fn().mockImplementation(async (_m, part) => ({ name: `part-${part}` })),
+    };
+    const warn = vi.fn().mockResolvedValue(undefined);
+    const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, warn, logger });
+
+    const added = await proc(1, 100);
+    expect(added).toBe(maxCount);
+    expect(warn).toHaveBeenCalledTimes(1);
+    const rows = warn.mock.calls[0][1];
+    expect(rows.map((r) => r.name)).toEqual([
+      `doc${maxCount}.txt`,
+      `doc${maxCount + 1}.txt`,
+      `doc${maxCount + 2}.txt`,
+    ]);
+    expect(rows[0].pattern).toBe(`> ${maxCount}`);
+  });
+
+  // Test: the size limit stops the copy once the budget is spent
+  it('stops copying once COPY_LIMITS.maxTotalBytes is exceeded', async () => {
+    const { maxTotalBytes } = App.UseCases.COPY_LIMITS;
+    const half = Math.floor(maxTotalBytes / 2);
+    const attachments = [
+      { name: 'a.bin', partName: '1', contentType: 'application/octet-stream', size: half },
+      { name: 'b.bin', partName: '2', contentType: 'application/octet-stream', size: half },
+      { name: 'c.bin', partName: '3', contentType: 'application/octet-stream', size: half },
+    ];
+    const compose = {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const messages = {
+      listAttachments: vi.fn().mockResolvedValue(attachments),
+      listInlineTextParts: vi.fn().mockResolvedValue([]),
+      getAttachmentFile: vi.fn().mockImplementation(async (_m, part) => ({ name: `part-${part}` })),
+    };
+    const warn = vi.fn().mockResolvedValue(undefined);
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, warn });
+
+    const added = await proc(1, 100);
+    expect(added).toBe(2);
+    const rows = warn.mock.calls[0][1];
+    expect(rows).toEqual([
+      { name: 'c.bin', pattern: `> ${Math.round(maxTotalBytes / 1048576)} MB` },
+    ]);
+  });
+
+  // Test: a single oversized attachment is still copied
+  it('copies a lone attachment that is larger than the whole byte budget', async () => {
+    // Dropping it would be the silent loss the limit exists to prevent: it is the
+    // only file, and it is what the user is replying about.
+    const { maxTotalBytes } = App.UseCases.COPY_LIMITS;
+    const attachments = [
+      { name: 'huge.zip', partName: '1', contentType: 'application/zip', size: maxTotalBytes * 3 },
+    ];
+    const compose = {
+      listAttachments: vi.fn().mockResolvedValue([]),
+      addAttachment: vi.fn().mockResolvedValue(undefined),
+    };
+    const messages = {
+      listAttachments: vi.fn().mockResolvedValue(attachments),
+      listInlineTextParts: vi.fn().mockResolvedValue([]),
+      getAttachmentFile: vi.fn().mockResolvedValue({ name: 'huge.zip' }),
+    };
+    const warn = vi.fn().mockResolvedValue(undefined);
+    const proc = App.UseCases.createProcessReplyAttachments({ compose, messages, warn });
+
+    expect(await proc(1, 100)).toBe(1);
+    expect(warn).not.toHaveBeenCalled();
   });
 
   it('retries fetching attachments when the first attempt is empty', async () => {

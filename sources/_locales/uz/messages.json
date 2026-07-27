@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Qora ro‘yxat tufayli ilovalar chiqarib tashlanganda ogohlantirish"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Inline rasmlarni qo'shish (joylashtirilgan rasmlar)"
-  },
   "uiDebugHeader": {
     "message": "Kengaytirilgan"
   },

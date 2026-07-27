@@ -61,7 +61,7 @@ Makefile menstandarkan alur pengembangan umum. Jalankan `make help` kapan saja u
 Tip: menjalankan `make` tanpa target membuka menu Whiptail sederhana untuk memilih target.
 
 | Target                                                   | Deskripsi satu baris                                                                        |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Hapus artefak build/pratinjau lokal (tmp/, web-local-preview/, website/build/).             |
 | [`commit`](#mt-commit)                                   | Format, jalankan tes (termasuk i18n), perbarui changelog, commit & push.                    |
 | [`eslint`](#mt-eslint)                                   | Jalankan ESLint melalui konfigurasi flat (`npm run -s lint:eslint`).                        |

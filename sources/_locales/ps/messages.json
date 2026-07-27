@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "که ضمیمې د تور لېست له مخې ونه نښلول شي، خبرداری وښیه"
   },
-  "uiIncludeInlineLabel": {
-    "message": "ان لاین انځورونه شامل کړئ (ایمبیډ شوي انځورونه)"
-  },
   "uiDebugHeader": {
     "message": "پرمختللي"
   },

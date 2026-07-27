@@ -1,24 +1,29 @@
 /*
  * Module: shared_link_opener.js
- * Purpose: Shared utility for opening links in a new Thunderbird tab,
- *          with a safe fallback to same-page navigation.
- *          Used by all handle_*_link.js modules.
+ * Purpose: Shared utility for opening our web links in the user's default
+ *          browser. Used by all handle_*_link.js modules.
+ * Notes: Thunderbird is a mail client, not a browser, so a documentation or
+ *        GitHub page belongs in the browser the user actually browses with.
+ *        windows.openDefaultBrowser hands the URL to the system default
+ *        (Thunderbird 85+); it needs no extra permission.
  */
 globalThis.RWA_LinkOpener = (function () {
   /**
-   * Open a link's href in a new tab when possible, otherwise fall back
-   * to navigating the current page. No-ops for empty/placeholder hrefs.
-   * @param {HTMLAnchorElement} a
+   * Open a link's href in the user's default browser.
+   * No-ops for empty, placeholder, and non-web hrefs.
+   * @param {HTMLElement|null} a
    * @param {Event} e
    */
   function openHref(a, e) {
     const href = a?.getAttribute('href');
     if (!href || href === '#') return;
+    // Only hand out web URLs; a file: or javascript: href must never be opened.
+    if (!/^https?:\/\//i.test(href)) return;
     e.preventDefault();
     try {
-      browser.tabs.create({ url: href, active: true });
-    } catch (_) {
-      if (/^https?:\/\//i.test(href)) location.href = href;
+      browser.windows.openDefaultBrowser(href);
+    } catch (err) {
+      console.warn('[RWA] could not open the link in the default browser:', href, err);
     }
   }
 

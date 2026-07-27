@@ -60,30 +60,30 @@ Makefile 规范了常见开发流程。随时运行 `make help` 获取所有目�
 
 提示：不带目标运行 `make` 会打开一个简单的 Whiptail 菜单以选择目标。
 
-| 目标                                                     | 单行描述                                                                        |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | 删除本地构建/预览产物（tmp/、web-local-preview/、website/build/）。             |
-| [`commit`](#mt-commit)                                   | 格式化、运行测试（含 i18n）、更新变更日志、提交并推送。                         |
-| [`eslint`](#mt-eslint)                                   | 通过扁平配置运行 ESLint（`npm run -s lint:eslint`）。                           |
-| [`help`](#mt-help)                                       | 列出所有目标及其单行说明（已排序）。                                            |
-| [`lint`](#mt-lint)                                       | 在 `sources/` 上进行 web‑ext lint（临时清单；忽略 ZIP；非致命）。               |
-| [`menu`](#mt-menu)                                       | 交互式菜单，可选择目标和可选参数。                                              |
-| [`pack`](#mt-pack)                                       | 构建 ATN 和 LOCAL ZIP（会运行 linter；调用打包脚本）。                          |
-| [`prettier`](#mt-prettier)                               | 就地格式化仓库（会写入变更）。                                                  |
-| [`prettier_check`](#mt-prettier_check)                   | 以检查模式运行 Prettier（不写入）；若需重新格式化则失败。                       |
-| [`prettier_write`](#mt-prettier_write)                   | `prettier` 的别名。                                                             |
-| [`test`](#mt-test)                                       | Prettier（写入）、ESLint，然后 Vitest（若已配置覆盖率）。                       |
-| [`test_i18n`](#mt-test_i18n)                             | 仅 i18n 的测试：附加组件占位符/一致性 + 网站一致性。                            |
-| [`translate_app`](#mt-translation-app)                   | `translation_app` 的别名。                                                      |
-| [`translation_app`](#mt-translation-app)                 | 从 `sources/_locales/en/messages.json` 翻译应用 UI 字符串。                     |
-| [`translate_web_docs_batch`](#mt-translation-web)        | 通过 OpenAI 批处理 API 翻译网站文档（推荐）。                                   |
-| [`translate_web_docs_sync`](#mt-translation-web)         | 同步翻译网站文档（传统，非批处理）。                                            |
-| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` 的别名。                                                |
+| 目标                                                       | 单行描述                                                                |
+|----------------------------------------------------------|---------------------------------------------------------------------|
+| [`clean`](#mt-clean)                                     | 删除本地构建/预览产物（tmp/、web-local-preview/、website/build/）。                |
+| [`commit`](#mt-commit)                                   | 格式化、运行测试（含 i18n）、更新变更日志、提交并推送。                                      |
+| [`eslint`](#mt-eslint)                                   | 通过扁平配置运行 ESLint（`npm run -s lint:eslint`）。                          |
+| [`help`](#mt-help)                                       | 列出所有目标及其单行说明（已排序）。                                                  |
+| [`lint`](#mt-lint)                                       | 在 `sources/` 上进行 web‑ext lint（临时清单；忽略 ZIP；非致命）。                     |
+| [`menu`](#mt-menu)                                       | 交互式菜单，可选择目标和可选参数。                                                   |
+| [`pack`](#mt-pack)                                       | 构建 ATN 和 LOCAL ZIP（会运行 linter；调用打包脚本）。                              |
+| [`prettier`](#mt-prettier)                               | 就地格式化仓库（会写入变更）。                                                     |
+| [`prettier_check`](#mt-prettier_check)                   | 以检查模式运行 Prettier（不写入）；若需重新格式化则失败。                                   |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier` 的别名。                                                     |
+| [`test`](#mt-test)                                       | Prettier（写入）、ESLint，然后 Vitest（若已配置覆盖率）。                             |
+| [`test_i18n`](#mt-test_i18n)                             | 仅 i18n 的测试：附加组件占位符/一致性 + 网站一致性。                                     |
+| [`translate_app`](#mt-translation-app)                   | `translation_app` 的别名。                                              |
+| [`translation_app`](#mt-translation-app)                 | 从 `sources/_locales/en/messages.json` 翻译应用 UI 字符串。                  |
+| [`translate_web_docs_batch`](#mt-translation-web)        | 通过 OpenAI 批处理 API 翻译网站文档（推荐）。                                       |
+| [`translate_web_docs_sync`](#mt-translation-web)         | 同步翻译网站文档（传统，非批处理）。                                                  |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index` 的别名。                                        |
 | [`translation_web_index`](#mt-translation_web_index)     | 翻译首页/导航栏/页脚 UI（`website/i18n/en/code.json → .../<lang>/code.json`）。 |
-| [`web_build`](#mt-web_build)                             | 将文档构建到 `website/build`（支持 `--locales` / `BUILD_LOCALES`）。            |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | 离线安全的链接检查（跳过远程 HTTP[S]）。                                        |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | 本地 gh‑pages 预览；自动在 8080–8090 提供服务；可选测试/链接检查。              |
-| [`web_push_github`](#mt-web_push_github)                 | 将 `website/build` 推送到 `gh-pages` 分支。                                     |
+| [`web_build`](#mt-web_build)                             | 将文档构建到 `website/build`（支持 `--locales` / `BUILD_LOCALES`）。           |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | 离线安全的链接检查（跳过远程 HTTP[S]）。                                            |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | 本地 gh‑pages 预览；自动在 8080–8090 提供服务；可选测试/链接检查。                        |
+| [`web_push_github`](#mt-web_push_github)                 | 将 `website/build` 推送到 `gh-pages` 分支。                                |
 
 选项语法
 

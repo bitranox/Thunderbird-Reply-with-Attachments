@@ -61,7 +61,7 @@ Makefile no de nneɛma a wɔyɛ dɛdaw wɔ asiesie mu kɔ tebea koro. Hyɛ `make
 Akɔnsɔm: Sɛ wudi `make` a, na woamfa atarget bi anhyɛ ho a, ɛbue Whiptail menu ketewa bi a wobɛpaw atarget.
 
 | Target                                                   | Nsɛnhyɛmu tiaa kɔtɔso baako                                                               |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Yi lokal build/preview nneɛma a wɔabɔ (tmp/, web-local-preview/, website/build/).         |
 | [`commit`](#mt-commit)                                   | Format, run tests (ka i18n ho), toatoaso changelog, commit na push.                       |
 | [`eslint`](#mt-eslint)                                   | Yi ESLint fi flat config (`npm run -s lint:eslint`) so.                                   |

@@ -20,13 +20,13 @@ sidebar_label: 'Mashandisiro'
 
 Kupfuura kwakasimba vs. kwakapfava: Wedzero inotanga yabvisa zvikamu zve S/MIME uye zveinline kubva kumaattachment efaira. Kana pasina chinokodzera, inomhanya kupfuura kwakapfava kunoramba kuchibvisa S/MIME/inline asi kunobvumira mamiriro mazhinji (ona Tsananguro dzeKodhi). Mifananidzo yeinline haimbo wedzerwi seattachments efaira; panzvimbo pezvo, kana "Include inline pictures" yakagoneswa (default), inonyudzwa zvakananga mumuviri wemhinduro sebase64 data URIs.
 
-| Rudzi rwechikamu                                           |                  Kupfuura kwakasimba |                  Kupfuura kwakapfava |
-| ---------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| Faira resiginecha re S/MIME `smime.p7s`                    |                           Rakabviswa |                           Rakabviswa |
-| Mhando dze S/MIME MIME (`application/pkcs7-*`)             |                           Rakabviswa |                           Rakabviswa |
+| Rudzi rwechikamu                                           | Kupfuura kwakasimba                  | Kupfuura kwakapfava                  |
+|------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| Faira resiginecha re S/MIME `smime.p7s`                    | Rakabviswa                           | Rakabviswa                           |
+| Mhando dze S/MIME MIME (`application/pkcs7-*`)             | Rakabviswa                           | Rakabviswa                           |
 | Mufananidzo weinline unoreva Content‑ID (`image/*`)        | Rakabviswa (rinodzorerwa mumuviri\*) | Rakabviswa (rinodzorerwa mumuviri\*) |
-| Imeyili yakabatanidzwa (`message/rfc822`) ine zita refaira |                    Harina kuwedzerwa |                  Rinogona kuwedzerwa |
-| Attachment yefaira yakajairika ine zita refaira            |                  Rinogona kuwedzerwa |                  Rinogona kuwedzerwa |
+| Imeyili yakabatanidzwa (`message/rfc822`) ine zita refaira | Harina kuwedzerwa                    | Rinogona kuwedzerwa                  |
+| Attachment yefaira yakajairika ine zita refaira            | Rinogona kuwedzerwa                  | Rinogona kuwedzerwa                  |
 
 \* Kana "Include inline pictures" yakagoneswa (default: ON), mifananidzo yeinline inonyudzwa mumuviri wemhinduro se base64 data URIs panzvimbo pekuwedzerwa seattachments efaira. Ona [Kumisikidzwa](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Muenzaniso: Mamwe maattachment anogona kusashandisa mimwe misoro (headers) asi a
 ### Chidimbu cheKhibhodi {#keyboard-cheat-sheet}
 
 | Makiyi          | Chiito                                |
-| --------------- | ------------------------------------- |
+|-----------------|---------------------------------------|
 | Y / J           | Simbisa Yes                           |
 | N / Esc         | Simbisa No                            |
 | Enter           | Shandisa bhatani riri pafocus         |

@@ -50,7 +50,9 @@ export default function Home() {
           window.location.replace(url);
         }
       }
-    } catch (_e) {}
+    } catch (_e) {
+      // locale redirect is best-effort; staying on the current page is acceptable
+    }
   }, [currentLocale, defaultLocale, locales, siteConfig]);
 
   return (

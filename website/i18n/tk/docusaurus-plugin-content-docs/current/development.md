@@ -61,7 +61,7 @@ Makefile umumy ösüş akymlaryny standarlaýar. Her bir nyşana barada bir seti
 Maslahat: nyşana görkezilmezden `make` işledilse, nyşana saýlamak üçin ýönekeý Whiptail menýusy açylýar.
 
 | Nyşana                                                   | Bir setirlik beýany                                                                                              |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ýerli build/preview artefaktlaryny aýyrmak (tmp/, web-local-preview/, website/build/).                           |
 | [`commit`](#mt-commit)                                   | Formatlaý, synaglary işledýär (i18n goşmak bilen), üýtgeşmeler gündeligini täzelýär, commit edýär we push edýär. |
 | [`eslint`](#mt-eslint)                                   | ESLint-i tekiz konfigurasiýa arkaly işledýär (`npm run -s lint:eslint`).                                         |

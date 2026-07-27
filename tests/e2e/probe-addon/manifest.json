@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "RWA E2E Probe",
+  "version": "1.0",
+  "description": "Opens a reply for every message in the RWA-Test folder and reports what the composer ended up with.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rwa-e2e-probe@example.net",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "accountsRead",
+    "accountsFolders",
+    "messagesRead",
+    "messagesImport",
+    "compose",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {
+    "scripts": ["vendor/filters.js", "vendor/thunderbird.js", "vendor/usecases.js", "probe.js"]
+  }
+}

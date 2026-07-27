@@ -61,13 +61,13 @@ I-Makefile ijwayelanisa ukugeleza okuvamile kwentuthuko. Sebenzisa `make help` n
 Ithiphu: ukusebenzisa `make` ngaphandle kwe-target kuvula imenyu elula ye-Whiptail yokukhetha i-target.
 
 | I-Target                                                 | Incazelo yomugqa owodwa                                                                                     |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Susa izinto zokwakha/ukubuka ngaphambilini zendawo (tmp/, web-local-preview/, website/build/).              |
 | [`commit`](#mt-commit)                                   | Format, sebenzisa izivivinyo (kuhlanganisa i-i18n), buyekeza i-changelog, commit & push.                    |
 | [`eslint`](#mt-eslint)                                   | Sebenzisa i-ESLint nge-flat config (`npm run -s lint:eslint`).                                              |
 | [`help`](#mt-help)                                       | Bhala wonke ama-target ngezimfuneko zomugqa owodwa (zihlelwe).                                              |
 | [`lint`](#mt-lint)                                       | i-web‑ext lint ku `sources/` (i-manifest yesikhashana; idlula ama-ZIP; akubulali).                          |
-| [`menu`](#mt-menu)                                       | Imenyu ehl互动 ukuze ukhethe i-target kanye nezinketho ozikhethelayo.                                       |
+| [`menu`](#mt-menu)                                       | Imenyu ehl互动 ukuze ukhethe i-target kanye nezinketho ozikhethelayo.                                         |
 | [`pack`](#mt-pack)                                       | Yakha ama-ZIP e-ATN & LOCAL (isebenzisa i-linter; ibiza i-skripthi le-packer).                              |
 | [`prettier`](#mt-prettier)                               | Hlela kabusha ifa elise-repository (libhala izinguquko).                                                    |
 | [`prettier_check`](#mt-prettier_check)                   | I-Prettier kumodi yokuhlola (akubhali); yehluleka uma kudingeka ukuhlelwa kabusha.                          |

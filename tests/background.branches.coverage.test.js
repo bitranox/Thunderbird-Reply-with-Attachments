@@ -73,6 +73,7 @@ async function boot(browser) {
   await import('../sources/app/adapters/thunderbird.js');
   await import('../sources/app/domain/filters.js');
   await import('../sources/app/application/usecases.js');
+  await import('../sources/app/confirm_flow.js');
   await import('../sources/app/composition.js');
   await import('../sources/background.js');
   await tick(10);

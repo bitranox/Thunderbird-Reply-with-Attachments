@@ -33,7 +33,7 @@ Essas permissões estão documentadas na fonte e testadas em CI. O complemento n
 ### Resumo (permissões → propósito) {#permissions-summary}
 
 | Permissão       | Por que é necessária                                                              |
-| --------------- | --------------------------------------------------------------------------------- |
+|-----------------|-----------------------------------------------------------------------------------|
 | `compose`       | Observar eventos de composição; listar e adicionar anexos em sua resposta.        |
 | `messagesRead`  | Listar anexos da mensagem original e buscar os dados do arquivo.                  |
 | `scripting`     | Injetar/coordenar UI leve para confirmação quando ativada.                        |

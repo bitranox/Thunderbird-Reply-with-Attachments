@@ -33,7 +33,7 @@ Hierdie is gedokumenteer in die bron en getoets in CI. Die toevoeging verskaf ni
 ### Samevatting (toestemmings → doel) {#permissions-summary}
 
 | Toestemming            | Waarom dit benodig word                                                           |
-| ---------------------- | --------------------------------------------------------------------------------- |
+|------------------------|-----------------------------------------------------------------------------------|
 | `compose`              | Observeer saamgestelde gebeurtenisse; lys en voeg aanhangsels by in jou antwoord. |
 | `messagesRead`         | Lys oorspronklike boodskap aanhangsels en haal die lêerdata.                      |
 | `scripting`            | Inspuit/koordineer liggewig UI vir bevestiging wanneer geaktiveer.                |

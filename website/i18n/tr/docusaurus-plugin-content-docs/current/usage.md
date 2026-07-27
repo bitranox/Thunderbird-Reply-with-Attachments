@@ -20,13 +20,13 @@ sidebar_label: 'Kullanım'
 
 Sıkı ve esnek geçiş: Eklenti önce dosya eklerinden S/MIME ve satır içi parçaları hariç tutar. Hiçbir şey uygun değilse, S/MIME/satır içini yine hariç tutan ancak daha fazla duruma tolerans gösteren esnek bir geçiş çalıştırır (bkz. Kod Ayrıntıları). Satır içi görseller asla dosya eki olarak eklenmez; bunun yerine "Include inline pictures" etkinleştirildiğinde (varsayılan), doğrudan yanıt gövdesine base64 veri URI'leri olarak gömülür.
 
-| Parça türü                                                          |                              Sıkı geçiş |                             Esnek geçiş |
-| ------------------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
-| S/MIME imza dosyası `smime.p7s`                                     |                           Hariç tutulur |                           Hariç tutulur |
-| S/MIME MIME türleri (`application/pkcs7-*`)                         |                           Hariç tutulur |                           Hariç tutulur |
+| Parça türü                                                          | Sıkı geçiş                              | Esnek geçiş                             |
+|---------------------------------------------------------------------|----------------------------------------:|----------------------------------------:|
+| S/MIME imza dosyası `smime.p7s`                                     | Hariç tutulur                           | Hariç tutulur                           |
+| S/MIME MIME türleri (`application/pkcs7-*`)                         | Hariç tutulur                           | Hariç tutulur                           |
 | Content‑ID tarafından referans verilen satır içi görsel (`image/*`) | Hariç tutulur (gövdede geri yüklenir\*) | Hariç tutulur (gövdede geri yüklenir\*) |
-| Dosya adı olan ekli e-posta (`message/rfc822`)                      |                                Eklenmez |                             Eklenebilir |
-| Dosya adına sahip normal dosya eki                                  |                             Eklenebilir |                             Eklenebilir |
+| Dosya adı olan ekli e-posta (`message/rfc822`)                      | Eklenmez                                | Eklenebilir                             |
+| Dosya adına sahip normal dosya eki                                  | Eklenebilir                             | Eklenebilir                             |
 
 \* "Include inline pictures" etkinleştirildiğinde (varsayılan: AÇIK), satır içi görseller dosya eki olarak eklenmek yerine yanıt gövdesine base64 veri URI'leri olarak gömülür. Bkz. [Yapılandırma](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Sıkı ve esnek geçiş: Eklenti önce dosya eklerinden S/MIME ve satır içi pa
 ### Klavye Kısa Başvurusu {#keyboard-cheat-sheet}
 
 | Tuşlar          | Eylem                                        |
-| --------------- | -------------------------------------------- |
+|-----------------|----------------------------------------------|
 | Y / J           | Evet'i onayla                                |
 | N / Esc         | Hayır'ı onayla                               |
 | Enter           | Odaklanmış düğmeyi etkinleştir               |

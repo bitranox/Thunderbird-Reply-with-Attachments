@@ -33,7 +33,7 @@ Tyto informace jsou zdokumentovány ve zdroji a testovány v CI. Doplněk nesbí
 ### Shrnutí (permissions → purpose) {#permissions-summary}
 
 | Oprávnění      | Proč je potřeba                                                                |
-| -------------- | ------------------------------------------------------------------------------ |
+|----------------|--------------------------------------------------------------------------------|
 | `compose`      | Pozorovat události při sestavování; seznam a přidat přílohy do vaší odpovědi.  |
 | `messagesRead` | Seznam příloh původní zprávy a stahovat data souboru.                          |
 | `scripting`    | Vložit/koordinovat lehké uživatelské rozhraní pro potvrzení, když je povoleno. |

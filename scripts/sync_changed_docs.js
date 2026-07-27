@@ -62,7 +62,9 @@ function getEnglishVersions(enFile) {
       .toString()
       .trim();
     hasWTChange = !!diffOut;
-  } catch {}
+  } catch {
+    // not a git checkout, or the file is untracked: treat as "no working-tree change"
+  }
 
   if (hasWTChange) {
     const oldHead = gitShow('HEAD', enFile);

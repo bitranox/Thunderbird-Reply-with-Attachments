@@ -20,13 +20,13 @@ sidebar_label: 'Lietošana'
 
 Stingrā vs. pielaidīgā pārbaude: Papildinājums vispirms izslēdz S/MIME un iegultās daļas no failu pielikumiem. Ja nekas neatbilst, tas veic pielaidīgāku pārbaudi, kas joprojām izslēdz S/MIME/iegultās daļas, bet pieļauj vairāk gadījumu (skatīt koda detaļas). Iegultie attēli nekad netiek pievienoti kā failu pielikumi; tā vietā, ja ir iespējota opcija “Iekļaut iegultos attēlus” (noklusējums), tie tiek iegulti tieši atbildes pamattekstā kā base64 datu URI.
 
-| Daļas tips                                                       |                   Stingrā pārbaude |                Pielaidīgā pārbaude |
-| ---------------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| S/MIME paraksta fails `smime.p7s`                                |                           Izslēgts |                           Izslēgts |
-| S/MIME MIME tipi (`application/pkcs7-*`)                         |                           Izslēgts |                           Izslēgts |
+| Daļas tips                                                       | Stingrā pārbaude                   | Pielaidīgā pārbaude                |
+|------------------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| S/MIME paraksta fails `smime.p7s`                                | Izslēgts                           | Izslēgts                           |
+| S/MIME MIME tipi (`application/pkcs7-*`)                         | Izslēgts                           | Izslēgts                           |
 | Iegultais attēls, uz kuru atsaucas Content‑ID (`image/*`)        | Izslēgts (atjaunots pamattekstā\*) | Izslēgts (atjaunots pamattekstā\*) |
-| Pievienota e‑pasta vēstule (`message/rfc822`) ar faila nosaukumu |                  Netiek pievienots |                Var tikt pievienots |
-| Parasts faila pielikums ar faila nosaukumu                       |                Var tikt pievienots |                Var tikt pievienots |
+| Pievienota e‑pasta vēstule (`message/rfc822`) ar faila nosaukumu | Netiek pievienots                  | Var tikt pievienots                |
+| Parasts faila pielikums ar faila nosaukumu                       | Var tikt pievienots                | Var tikt pievienots                |
 
 \* Ja ir iespējota opcija “Iekļaut iegultos attēlus” (noklusējums: IESLĒGTS), iegultie attēli tiek iegulti atbildes pamattekstā kā base64 datu URI, nevis pievienoti kā failu pielikumi. Skatiet [Konfigurācija](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Piemērs: Dažiem pielikumiem var trūkt noteiktu galveņu, bet tie joprojām ir
 ### Tastatūras atgādne {#keyboard-cheat-sheet}
 
 | Taustiņi            | Darbība                              |
-| ------------------- | ------------------------------------ |
+|---------------------|--------------------------------------|
 | Y / J               | Apstiprināt Jā                       |
 | N / Esc             | Apstiprināt Nē                       |
 | Enter               | Aktivizēt fokusēto pogu              |

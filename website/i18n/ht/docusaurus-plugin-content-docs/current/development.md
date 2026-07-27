@@ -61,7 +61,7 @@ Makefile la estandadize koule dev komen. Kouri `make help` nenpòt lè pou yon r
 Konsèy: kouri `make` san sib ouvri yon meni Whiptail senp pou chwazi yon sib.
 
 | Sib                                                      | Deskripsyon yon liy                                                                     |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Retire atifak build/preview lokal (tmp/, web-local-preview/, website/build/).           |
 | [`commit`](#mt-commit)                                   | Fòmate, kouri tès (inkl. i18n), mete ajou changelog, commit & push.                     |
 | [`eslint`](#mt-eslint)                                   | Kouri ESLint atravè flat config (`npm run -s lint:eslint`).                             |

@@ -35,7 +35,7 @@ Dies ist im Quellcode dokumentiert und in der CI getestet. Das Add‑on erhebt k
 ### Zusammenfassung (Berechtigungen → Zweck) {#permissions-summary}
 
 | Berechtigung          | Warum sie benötigt wird                                                             |
-| --------------------- | ----------------------------------------------------------------------------------- |
+|-----------------------|-------------------------------------------------------------------------------------|
 | `compose`             | Verfassen‑Ereignisse beobachten; Anhänge in Ihrer Antwort auflisten und hinzufügen. |
 | `messagesRead`        | Anhänge der Originalnachricht auflisten und die Dateidaten abrufen.                 |
 | `scripting`           | Leichtgewichtiges UI für die Bestätigung einfügen/koordinieren, wenn aktiviert.     |

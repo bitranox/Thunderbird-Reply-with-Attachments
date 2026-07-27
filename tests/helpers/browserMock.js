@@ -15,6 +15,8 @@ import { vi } from 'vitest';
  * @param {'yes'|'no'} [opts.confirmDefaultChoice]
  * @param {string[]} [opts.blacklistPatterns]
  * @param {boolean} [opts.warnOnBlacklistExcluded]
+ * @param {string} [opts.messageHtml] HTML body of the replied-to message; what it
+ *        references by cid: is what counts as an inline image
  */
 export function createBrowserMock({
   composeExisting = [],
@@ -24,6 +26,7 @@ export function createBrowserMock({
   confirmDefaultChoice = 'yes',
   blacklistPatterns = [],
   warnOnBlacklistExcluded = true,
+  messageHtml = '',
 } = {}) {
   const compose = {
     onComposeStateChanged: { addListener: vi.fn() },
@@ -36,6 +39,9 @@ export function createBrowserMock({
   const messages = {
     listAttachments: vi.fn().mockResolvedValue(messageAttachments),
     getAttachmentFile: vi.fn(getFileByPart),
+    listInlineTextParts: vi
+      .fn()
+      .mockResolvedValue(messageHtml ? [{ contentType: 'text/html', content: messageHtml }] : []),
   };
   const sessionStore = new Map();
   const keyFor = (tabId, key) => `${tabId}:${key}`;

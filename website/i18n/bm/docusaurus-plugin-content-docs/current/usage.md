@@ -20,13 +20,13 @@ sidebar_label: 'Kɛcogo'
 
 Pass tɛgɛ (strict) ni pass hakɛranna (relaxed): Add‑on bɛ fɔlɔ ka S/MIME ni inline wɛrɛw bɔ daɲɛ tɛgɛli kɔnɔ. Ni fɛɛn tɛ sɔrɔ, a bɛ na pass hakɛranna kɛ min bɛna ka S/MIME/inline bɔ kɔnɔ kɔfɛ, nka a bɛ na ɲɔgɔnna dɔw dɛmɛ (ka ɲɛ Code Details). Inline jɛgɛw tɛna kɛ daɲɛ tɛgɛliw ye; tuma mɛn na, ni "Include inline pictures" bɛ daminɛ (default ye), olu bɛna sare bɔ jabi bɔlɔ la ka base64 data URIw ye.
 
-| Part type                                         |                Strict pass |               Relaxed pass |
-| ------------------------------------------------- | -------------------------: | -------------------------: |
-| S/MIME signature file `smime.p7s`                 |                    Bɔ kɔfɛ |                    Bɔ kɔfɛ |
-| S/MIME MIME types (`application/pkcs7-*`)         |                    Bɔ kɔfɛ |                    Bɔ kɔfɛ |
+| Part type                                         | Strict pass                | Relaxed pass               |
+|---------------------------------------------------|---------------------------:|---------------------------:|
+| S/MIME signature file `smime.p7s`                 | Bɔ kɔfɛ                    | Bɔ kɔfɛ                    |
+| S/MIME MIME types (`application/pkcs7-*`)         | Bɔ kɔfɛ                    | Bɔ kɔfɛ                    |
 | Inline image referenced by Content‑ID (`image/*`) | Bɔ kɔfɛ (san bɔ bɔlɔ la\*) | Bɔ kɔfɛ (san bɔ bɔlɔ la\*) |
-| Attached email (`message/rfc822`) with a filename |                 Tɛ na tɔgɔ |               Sɔrɔ ka tɔgɔ |
-| Regular file attachment with a filename           |               Sɔrɔ ka tɔgɔ |               Sɔrɔ ka tɔgɔ |
+| Attached email (`message/rfc822`) with a filename | Tɛ na tɔgɔ                 | Sɔrɔ ka tɔgɔ               |
+| Regular file attachment with a filename           | Sɔrɔ ka tɔgɔ               | Sɔrɔ ka tɔgɔ               |
 
 \* Ni "Include inline pictures" bɛ daminɛ (default: ON), inline jɛgɛw bɛna sare bɔ jabi bɔlɔ la ka base64 data URIw ye a ma bɛna tɔgɔ ka k’u kɛ daɲɛ tɛgɛliw ye. Ka ɲɛ [Configuration](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Misali: Attachmentw dɔ bɛna sɔrɔ ka headerw dɔ tɛ bɛ a la, nka olu tun b�
 ### Klaviyɛri ɲɛnabɔ {#keyboard-cheat-sheet}
 
 | Keys            | Kɛcogo                         |
-| --------------- | ------------------------------ |
+|-----------------|--------------------------------|
 | Y / J           | K’a ɲɛ Awo                     |
 | N / Esc         | K’a ɲɛ Ayi                     |
 | Enter           | Daminɛ butɔŋ min bɛ fokus kɔnɔ |

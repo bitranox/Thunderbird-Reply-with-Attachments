@@ -33,7 +33,7 @@ Ini didokumentasikan dalam sumber dan diuji di CI. Add-on ini tidak mengumpulkan
 ### Ringkasan (permissions → purpose) {#permissions-summary}
 
 | Izin           | Mengapa ini diperlukan                                                           |
-| -------------- | -------------------------------------------------------------------------------- |
+|----------------|----------------------------------------------------------------------------------|
 | `compose`      | Amati peristiwa penyusunan; daftar dan tambahkan lampiran dalam balasan Anda.    |
 | `messagesRead` | Daftar lampiran pesan asli dan ambil data file.                                  |
 | `scripting`    | Suntik/koordinasi UI ringan untuk konfirmasi saat diaktifkan.                    |

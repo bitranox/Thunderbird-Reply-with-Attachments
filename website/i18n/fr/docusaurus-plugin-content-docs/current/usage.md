@@ -20,13 +20,13 @@ sidebar_label: 'Utilisation'
 
 Passage strict vs. passage assoupli : le module complémentaire exclut d’abord les parties S/MIME et en ligne des pièces jointes fichiers. Si rien ne convient, il exécute un passage assoupli qui exclut toujours S/MIME/en ligne mais tolère plus de cas (voir Détails du code). Les images en ligne ne sont jamais ajoutées comme pièces jointes fichiers ; à la place, lorsque "Include inline pictures" est activé (valeur par défaut), elles sont intégrées directement dans le corps de la réponse sous forme d’URI de données base64.
 
-| Type de partie                                           |                   Passage strict |                 Passage assoupli |
-| -------------------------------------------------------- | -------------------------------: | -------------------------------: |
-| Fichier de signature S/MIME `smime.p7s`                  |                            Exclu |                            Exclu |
-| Types MIME S/MIME (`application/pkcs7-*`)                |                            Exclu |                            Exclu |
+| Type de partie                                           | Passage strict                   | Passage assoupli                 |
+|----------------------------------------------------------|---------------------------------:|---------------------------------:|
+| Fichier de signature S/MIME `smime.p7s`                  | Exclu                            | Exclu                            |
+| Types MIME S/MIME (`application/pkcs7-*`)                | Exclu                            | Exclu                            |
 | Image en ligne référencée par Content‑ID (`image/*`)     | Exclu (restauré dans le corps\*) | Exclu (restauré dans le corps\*) |
-| E‑mail attaché (`message/rfc822`) avec un nom de fichier |                       Non ajouté |                 Peut être ajouté |
-| Pièce jointe de fichier classique avec un nom de fichier |                 Peut être ajouté |                 Peut être ajouté |
+| E‑mail attaché (`message/rfc822`) avec un nom de fichier | Non ajouté                       | Peut être ajouté                 |
+| Pièce jointe de fichier classique avec un nom de fichier | Peut être ajouté                 | Peut être ajouté                 |
 
 \* Lorsque "Include inline pictures" est activé (par défaut : ON), les images en ligne sont intégrées dans le corps de la réponse sous forme d’URI de données base64 plutôt qu’ajoutées comme pièces jointes fichiers. Voir [Configuration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Exemple : Certaines pièces jointes peuvent manquer de certains en-têtes tout e
 ### Aide‑mémoire clavier {#keyboard-cheat-sheet}
 
 | Touches            | Action                                |
-| ------------------ | ------------------------------------- |
+|--------------------|---------------------------------------|
 | Y / J              | Confirmer Oui                         |
 | N / Échap          | Confirmer Non                         |
 | Entrée             | Activer le bouton focalisé            |

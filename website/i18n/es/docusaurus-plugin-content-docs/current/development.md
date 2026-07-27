@@ -61,7 +61,7 @@ El Makefile estandariza flujos de desarrollo comunes. Ejecuta `make help` en cua
 Consejo: ejecutar `make` sin objetivo abre un menú Whiptail simple para elegir un objetivo.
 
 | Objetivo                                                 | Descripción en una línea                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Elimina artefactos locales de build/preview (tmp/, web-local-preview/, website/build/).    |
 | [`commit`](#mt-commit)                                   | Formatea, ejecuta pruebas (incl. i18n), actualiza el changelog, hace commit y push.        |
 | [`eslint`](#mt-eslint)                                   | Ejecuta ESLint mediante flat config (`npm run -s lint:eslint`).                            |

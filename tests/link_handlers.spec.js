@@ -18,9 +18,9 @@ function arrangePage() {
 }
 
 function primeBrowser() {
-  const tabs = { create: vi.fn() };
-  globalThis.browser = { tabs };
-  return tabs;
+  const windows = { openDefaultBrowser: vi.fn() };
+  globalThis.browser = { windows };
+  return windows;
 }
 
 let registeredDomReadyHandlers = [];
@@ -80,22 +80,22 @@ async function loadGithubHandler() {
 
 describe('donate link handler', () => {
   test('ignores donate click when href is placeholder', async () => {
-    const tabs = primeBrowser();
+    const windows = primeBrowser();
     await loadDonateHandler();
     document.getElementById('donate-link').click();
-    expect(tabs.create.mock.calls).toEqual([]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([]);
   });
 
-  test('opens donate link in a new tab when href is https', async () => {
-    const tabs = primeBrowser();
+  test('opens donate link in the default browser when href is https', async () => {
+    const windows = primeBrowser();
     document.getElementById('donate-link').setAttribute('href', 'https://example.com/donate');
     await loadDonateHandler();
     document.getElementById('donate-link').click();
-    expect(tabs.create.mock.calls).toEqual([[{ url: 'https://example.com/donate', active: true }]]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([['https://example.com/donate']]);
   });
 
-  test('navigates to donate link when tabs.create throws', async () => {
-    const tabs = primeBrowser();
+  test('never navigates the options page when opening the donate link fails', async () => {
+    const windows = primeBrowser();
     const navigations = [];
     vi.stubGlobal('location', {
       get href() {
@@ -106,26 +106,29 @@ describe('donate link handler', () => {
       },
     });
     document.getElementById('donate-link').setAttribute('href', 'https://example.com/donate');
-    tabs.create.mockImplementation(() => {
-      throw new Error('create failed');
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    windows.openDefaultBrowser.mockImplementation(() => {
+      throw new Error('open failed');
     });
     await loadDonateHandler();
     document.getElementById('donate-link').click();
-    expect(navigations).toEqual(['https://example.com/donate']);
+    expect(navigations).toEqual([]);
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
   });
 });
 
 describe('docs link handler', () => {
-  test('opens docs link in a new tab when href is available', async () => {
-    const tabs = primeBrowser();
+  test('opens docs link in the default browser when href is available', async () => {
+    const windows = primeBrowser();
     document.getElementById('docs-link').setAttribute('href', 'https://example.com/docs');
     await loadDocsHandler();
     document.getElementById('docs-link').click();
-    expect(tabs.create.mock.calls).toEqual([[{ url: 'https://example.com/docs', active: true }]]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([['https://example.com/docs']]);
   });
 
-  test('falls back to location assignment when tabs.create fails for docs', async () => {
-    const tabs = primeBrowser();
+  test('never navigates the options page when opening the docs link fails', async () => {
+    const windows = primeBrowser();
     const navigations = [];
     vi.stubGlobal('location', {
       get href() {
@@ -136,53 +139,54 @@ describe('docs link handler', () => {
       },
     });
     document.getElementById('docs-link').setAttribute('href', 'https://example.com/docs');
-    tabs.create.mockImplementation(() => {
-      throw new Error('create failed');
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    windows.openDefaultBrowser.mockImplementation(() => {
+      throw new Error('open failed');
     });
     await loadDocsHandler();
     document.getElementById('docs-link').click();
-    expect(navigations).toEqual(['https://example.com/docs']);
+    expect(navigations).toEqual([]);
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
   });
 });
 
 describe('ATN link handler', () => {
-  test('opens ATN link in a new tab when href is set', async () => {
-    const tabs = primeBrowser();
+  test('opens ATN link in the default browser when href is set', async () => {
+    const windows = primeBrowser();
     document.getElementById('atn-link').setAttribute('href', 'https://addons.thunderbird.net/rwa');
     await loadAtnHandler();
     document.getElementById('atn-link').click();
-    expect(tabs.create.mock.calls).toEqual([
-      [{ url: 'https://addons.thunderbird.net/rwa', active: true }],
-    ]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([['https://addons.thunderbird.net/rwa']]);
   });
 });
 
 describe('GitHub link handler', () => {
   test('ignores GitHub link click when href is placeholder', async () => {
-    const tabs = primeBrowser();
+    const windows = primeBrowser();
     await loadGithubHandler();
     document.getElementById('github-link').click();
-    expect(tabs.create.mock.calls).toEqual([]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([]);
   });
 
-  test('opens GitHub text link in a new tab when href is set', async () => {
-    const tabs = primeBrowser();
+  test('opens GitHub text link in the default browser when href is set', async () => {
+    const windows = primeBrowser();
     document.getElementById('github-link').setAttribute('href', 'https://example.com/repo');
     await loadGithubHandler();
     document.getElementById('github-link').click();
-    expect(tabs.create.mock.calls).toEqual([[{ url: 'https://example.com/repo', active: true }]]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([['https://example.com/repo']]);
   });
 
-  test('opens GitHub logo link in a new tab when href is set', async () => {
-    const tabs = primeBrowser();
+  test('opens GitHub logo link in the default browser when href is set', async () => {
+    const windows = primeBrowser();
     document.getElementById('github-link-logo').setAttribute('href', 'https://example.com/repo');
     await loadGithubHandler();
     document.getElementById('github-link-logo').click();
-    expect(tabs.create.mock.calls).toEqual([[{ url: 'https://example.com/repo', active: true }]]);
+    expect(windows.openDefaultBrowser.mock.calls).toEqual([['https://example.com/repo']]);
   });
 
-  test('navigates to GitHub when tabs.create throws for logo link', async () => {
-    const tabs = primeBrowser();
+  test('never navigates the options page when opening the GitHub logo link fails', async () => {
+    const windows = primeBrowser();
     const navigations = [];
     vi.stubGlobal('location', {
       get href() {
@@ -193,11 +197,14 @@ describe('GitHub link handler', () => {
       },
     });
     document.getElementById('github-link-logo').setAttribute('href', 'https://example.com/repo');
-    tabs.create.mockImplementation(() => {
-      throw new Error('create failed');
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    windows.openDefaultBrowser.mockImplementation(() => {
+      throw new Error('open failed');
     });
     await loadGithubHandler();
     document.getElementById('github-link-logo').click();
-    expect(navigations).toEqual(['https://example.com/repo']);
+    expect(navigations).toEqual([]);
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
   });
 });

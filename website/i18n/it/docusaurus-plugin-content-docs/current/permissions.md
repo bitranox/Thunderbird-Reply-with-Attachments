@@ -33,7 +33,7 @@ Questi sono documentati nel codice sorgente e testati in CI. Il componente aggiu
 ### Sommario (permessi → scopo) {#permissions-summary}
 
 | Permesso        | Perché è necessario                                                                  |
-| --------------- | ------------------------------------------------------------------------------------ |
+|-----------------|--------------------------------------------------------------------------------------|
 | `compose`       | Osservare eventi di composizione; elencare e aggiungere allegati nella tua risposta. |
 | `messagesRead`  | Elencare gli allegati del messaggio originale e recuperare i dati del file.          |
 | `scripting`     | Iniettare/coordinare un'interfaccia utente leggera per la conferma quando abilitata. |

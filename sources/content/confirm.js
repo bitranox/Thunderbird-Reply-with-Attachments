@@ -14,11 +14,15 @@
   // — Top-level intent: listen for confirmation requests and show a tiny, accessible dialog.
   try {
     browser.runtime.onMessage.addListener(handleConfirmMessage);
-  } catch (_) {}
+  } catch (e) {
+    console.warn('[RWA] confirm dialog cannot receive messages', e);
+  }
 
   try {
     notifyBackgroundReady();
-  } catch (_) {}
+  } catch (_) {
+    // the ready ping is advisory; the background page also polls
+  }
 
   // — Message handling —
   /** Handle a runtime message asking to confirm adding attachments. */
@@ -47,7 +51,9 @@
       dispatched = true;
       try {
         rt.sendMessage({ type: 'rwa:compose-content-ready' }).catch(() => {});
-      } catch (_) {}
+      } catch (_) {
+        // the ready ping is advisory; the background page also polls
+      }
     };
     try {
       if (typeof document !== 'undefined' && document.readyState !== 'loading') {
@@ -108,7 +114,9 @@
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key, args) || '';
       if (globalThis.messenger?.i18n?.getMessage) return messenger.i18n.getMessage(key, args) || '';
-    } catch (_) {}
+    } catch (_) {
+      // i18n lookups fall through to the literal default below
+    }
     return '';
   }
   /** English fallback when i18n is missing. */
@@ -123,7 +131,9 @@
   function showDialogAndReturnResult(text, def) {
     try {
       if (document?.body) return renderDialogInDocument(text, def);
-    } catch (_) {}
+    } catch (_) {
+      // falls through to the native prompt below
+    }
     return Promise.resolve({ ok: confirm(text) });
   }
 
@@ -142,7 +152,9 @@
       const header = createHeader(i18n('warnBlacklistTitle') || 'Excluded by blacklist');
       try {
         header.querySelector('p').style.fontWeight = '700'; // bold title for blacklist warning
-      } catch (_) {}
+      } catch (_) {
+        // styling is cosmetic
+      }
       const intro = document.createElement('div');
       intro.textContent = i18n('warnBlacklistIntro') || 'The following files will not be attached:';
       intro.style.margin = '0 0 8px 0';
@@ -210,7 +222,9 @@
         try {
           const hidden = await isDonateSnoozed();
           if (hidden) btnDonate.style.display = 'none';
-        } catch (_) {}
+        } catch (_) {
+          // the donate button stays visible when the snooze cannot be read
+        }
       })();
       // Right: OK
       const btnOk = document.createElement('button');
@@ -345,7 +359,9 @@
       try {
         const hidden = await isDonateSnoozed();
         if (hidden) btnDonate.style.display = 'none';
-      } catch (_) {}
+      } catch (_) {
+        // the donate button stays visible when the snooze cannot be read
+      }
     })();
     const left = document.createElement('div');
     left.appendChild(btnDonate);
@@ -368,7 +384,7 @@
     row.appendChild(left);
     row.appendChild(right);
     // expose donate for focus trap ordering
-    row._btnDonate = btnDonate;
+    /** @type {any} */ (row)._btnDonate = btnDonate;
     return { row, btnYes, btnNo };
   }
   /** Append parts into the overlay. */
@@ -412,7 +428,9 @@
       for (const type of types)
         try {
           document.removeEventListener(type, blocker, opts);
-        } catch (_) {}
+        } catch (_) {
+          // best-effort teardown; a listener that is already gone is fine
+        }
     };
   }
   /** Trap focus and key handling; return a disposer. */
@@ -450,7 +468,9 @@
     return () => {
       try {
         overlay.removeEventListener('keydown', onKey);
-      } catch (_) {}
+      } catch (_) {
+        // best-effort teardown; a listener that is already gone is fine
+      }
     };
   }
   /** Ensure the dialog retains focus if the editor steals it; return a disposer. */
@@ -463,7 +483,9 @@
     return () => {
       try {
         document.removeEventListener('focusin', refocus);
-      } catch (_) {}
+      } catch (_) {
+        // best-effort teardown; a listener that is already gone is fine
+      }
     };
   }
   /** Prevent background scroll and focus the default button. */
@@ -472,7 +494,9 @@
     setTimeout(() => {
       try {
         overlay.focus({ preventScroll: true });
-      } catch (_) {}
+      } catch (_) {
+        // focus and click are cosmetic; ignore when the element is gone
+      }
       focusDefault(def, btnNo, btnYes);
     }, 0);
   }
@@ -485,19 +509,25 @@
   function focusDefault(def, btnNo, btnYes) {
     try {
       (def === 'no' ? btnNo : btnYes).focus({ preventScroll: true });
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
   }
   /** Click the first focusable control (usually No). */
   function clickFirst(list) {
     try {
       list[0].click();
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
   }
   /** Click the last focusable control (usually Yes). */
   function clickLast(list) {
     try {
       list[list.length - 1].click();
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
   }
   /**
    * Move focus between dialog buttons.
@@ -505,7 +535,7 @@
    * @param {boolean} backwards When true, move focus backwards
    */
   function focusNext(list, backwards) {
-    const idx = list.indexOf(document.activeElement);
+    const idx = list.indexOf(/** @type {HTMLElement} */ (document.activeElement));
     const next = backwards
       ? idx <= 0
         ? list.length - 1
@@ -515,7 +545,9 @@
         : idx + 1;
     try {
       list[next].focus();
-    } catch (_) {}
+    } catch (_) {
+      // focus and click are cosmetic; ignore when the element is gone
+    }
   }
 
   // — Document state —
@@ -532,19 +564,27 @@
     document.body.style.overflow = prev.overflow;
     try {
       document.body.contentEditable = prev.contentEditable;
-    } catch (_) {}
+    } catch (_) {
+      // restoring editor state is best-effort; the document may already be gone
+    }
     try {
       document.designMode = prev.designMode;
-    } catch (_) {}
+    } catch (_) {
+      // restoring editor state is best-effort; the document may already be gone
+    }
   }
   /** Temporarily disable editing in the compose document while modal is open. */
   function disableEditing() {
     try {
       document.body.contentEditable = 'false';
-    } catch (_) {}
+    } catch (_) {
+      // restoring editor state is best-effort; the document may already be gone
+    }
     try {
       document.designMode = 'off';
-    } catch (_) {}
+    } catch (_) {
+      // restoring editor state is best-effort; the document may already be gone
+    }
   }
   // Expose internals for focused tests
   globalThis.App = globalThis.App || {};
@@ -591,7 +631,9 @@
     } catch (_) {
       try {
         if (/^https?:\/\//i.test(url)) window.open(url, '_blank', 'noopener');
-      } catch (_) {}
+      } catch (e) {
+        console.warn('[RWA] could not open the link', e);
+      }
     }
   }
 

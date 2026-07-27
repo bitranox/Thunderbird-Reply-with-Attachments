@@ -20,13 +20,13 @@ sidebar_label: 'Gebruik'
 
 Strikte vs. soepele doorloop: de add‑on sluit eerst S/MIME‑ en inline‑onderdelen uit van bestandsbijlagen. Als er niets in aanmerking komt, voert hij een soepele doorloop uit die S/MIME/inline nog steeds uitsluit maar meer gevallen tolereert (zie Codedetails). Inline‑afbeeldingen worden nooit als bestandsbijlagen toegevoegd; in plaats daarvan worden ze, wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (de standaard), direct in de antwoordtekst ingesloten als base64‑data‑URI's.
 
-| Onderdeeltype                                                         |                  Strikte doorloop |                  Soepele doorloop |
-| --------------------------------------------------------------------- | --------------------------------: | --------------------------------: |
-| S/MIME-handtekeningbestand `smime.p7s`                                |                       Uitgesloten |                       Uitgesloten |
-| S/MIME-MIME-typen (`application/pkcs7-*`)                             |                       Uitgesloten |                       Uitgesloten |
+| Onderdeeltype                                                         | Strikte doorloop                  | Soepele doorloop                  |
+|-----------------------------------------------------------------------|----------------------------------:|----------------------------------:|
+| S/MIME-handtekeningbestand `smime.p7s`                                | Uitgesloten                       | Uitgesloten                       |
+| S/MIME-MIME-typen (`application/pkcs7-*`)                             | Uitgesloten                       | Uitgesloten                       |
 | Inline‑afbeelding waarnaar wordt verwezen door Content‑ID (`image/*`) | Uitgesloten (hersteld in tekst\*) | Uitgesloten (hersteld in tekst\*) |
-| Bijgevoegde e‑mail (`message/rfc822`) met een bestandsnaam            |                   Niet toegevoegd |             Kan worden toegevoegd |
-| Normale bestandsbijlage met een bestandsnaam                          |             Kan worden toegevoegd |             Kan worden toegevoegd |
+| Bijgevoegde e‑mail (`message/rfc822`) met een bestandsnaam            | Niet toegevoegd                   | Kan worden toegevoegd             |
+| Normale bestandsbijlage met een bestandsnaam                          | Kan worden toegevoegd             | Kan worden toegevoegd             |
 
 \* Wanneer "Inline‑afbeeldingen opnemen" is ingeschakeld (standaard: AAN), worden inline‑afbeeldingen in de antwoordtekst ingesloten als base64‑data‑URI's in plaats van als bestandsbijlagen toegevoegd. Zie [Configuratie](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Voorbeeld: Sommige bijlagen missen bepaalde headers maar zijn toch reguliere bes
 ### Sneltoetsen-spiekbriefje {#keyboard-cheat-sheet}
 
 | Toetsen           | Actie                               |
-| ----------------- | ----------------------------------- |
+|-------------------|-------------------------------------|
 | Y / J             | Bevestig Ja                         |
 | N / Esc           | Bevestig Nee                        |
 | Enter             | Gefocuste knop activeren            |

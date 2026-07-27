@@ -20,13 +20,13 @@ sidebar_label: 'Ús'
 
 Passada estricta vs. relaxada: El complement primer exclou les parts S/MIME i en línia dels adjunts de fitxer. Si no n'hi ha cap que compleixi els criteris, executa una passada relaxada que continua excloent S/MIME/en línia però tolera més casos (vegeu Detalls del codi). Les imatges en línia mai no s'afegeixen com a adjunts de fitxer; en lloc d'això, quan "Include inline pictures" està habilitat (el valor per defecte), s'incrusten directament al cos de la resposta com a URI de dades base64.
 
-| Tipus de part                                           |              Passada estricta |              Passada relaxada |
-| ------------------------------------------------------- | ----------------------------: | ----------------------------: |
-| Fitxer de signatura S/MIME `smime.p7s`                  |                        Exclòs |                        Exclòs |
-| Tipus MIME S/MIME (`application/pkcs7-*`)               |                        Exclòs |                        Exclòs |
+| Tipus de part                                           | Passada estricta              | Passada relaxada              |
+|---------------------------------------------------------|------------------------------:|------------------------------:|
+| Fitxer de signatura S/MIME `smime.p7s`                  | Exclòs                        | Exclòs                        |
+| Tipus MIME S/MIME (`application/pkcs7-*`)               | Exclòs                        | Exclòs                        |
 | Imatge en línia referenciada per Content‑ID (`image/*`) | Exclosa (restaurada al cos\*) | Exclosa (restaurada al cos\*) |
-| Correu adjunt (`message/rfc822`) amb un nom de fitxer   |                  No s'afegeix |                 Es pot afegir |
-| Adjunt de fitxer normal amb un nom de fitxer            |                 Es pot afegir |                 Es pot afegir |
+| Correu adjunt (`message/rfc822`) amb un nom de fitxer   | No s'afegeix                  | Es pot afegir                 |
+| Adjunt de fitxer normal amb un nom de fitxer            | Es pot afegir                 | Es pot afegir                 |
 
 \* Quan "Include inline pictures" està habilitat (per defecte: ON), les imatges en línia s'incrusten al cos de la resposta com a URI de dades base64 en lloc d'afegir-les com a fitxers adjunts. Vegeu [Configuració](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Exemple: Alguns adjunts poden mancar d'algunes capçaleres però continuen sent 
 ### Guia ràpida de teclat {#keyboard-cheat-sheet}
 
 | Tecles               | Acció                               |
-| -------------------- | ----------------------------------- |
+|----------------------|-------------------------------------|
 | Y / J                | Confirmar Sí                        |
 | N / Esc              | Confirmar No                        |
 | Enter                | Activar el botó amb focus           |

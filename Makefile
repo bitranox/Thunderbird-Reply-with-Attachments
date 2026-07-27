@@ -4,7 +4,7 @@ SHELL := bash
 # Tools (override via environment if needed)
 NPM ?= npm
 
-.PHONY: commit eslint help lint pack clean prettier prettier-check prettier-write test test-i18n \
+.PHONY: commit eslint help lint pack clean prettier prettier-check prettier-write test test-i18n typecheck \
   translate-web translate_web_docs_sync translate_web_docs_batch \
   translation-web translate-web-index translation-web-index \
   translate-app translation-app web-build web-build-linkcheck \
@@ -122,11 +122,15 @@ prettier_check: ## Prettier in check mode (no writes); fails if reformat needed
 prettier_write: ## Alias for 'make prettier' (write mode)
 	$(MAKE) prettier
 
-test: ## Prettier (write), ESLint, then Vitest (coverage if plugin installed; thresholds in vitest.config.mjs)
+test: ## Prettier (write), ESLint, tsc --checkJs, then Vitest (coverage if plugin installed; thresholds in vitest.config.mjs)
 	@set -e; \
 	$(MAKE) prettier_write; \
 	$(NPM) run -s lint:eslint:quiet; \
+	$(NPM) run -s typecheck; \
 	$(NPM) test
+
+typecheck: ## Type-check the add-on sources from their JSDoc (tsc --checkJs, no emit).
+	$(NPM) run -s typecheck
 
 test_i18n: ## i18n-only tests: add-on placeholders/parity + website i18n parity (Vitest)
 	$(NPM) run test:i18n && $(NPM) run -s test:website-i18n

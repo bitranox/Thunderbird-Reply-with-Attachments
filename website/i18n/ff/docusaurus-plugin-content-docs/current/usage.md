@@ -20,13 +20,13 @@ sidebar_label: 'Huutugol'
 
 Pass ɓurindi vs. pass ñalawol: add‑on oo nanndii tawo momtaa geɗe S/MIME e inline e dokkorde fiilde. So hay huunde laatoto, maa ɗowti pass ñalawol nde kadi momtaa S/MIME/inline kono waɗa faamde ɗiɗi e ko ɓurɗi balɗe (yiy Cariiɗe Code). Nataaji inline wonaa goɗɗaa ɓeydaa e ko dokkorde fiilde; wonaa ɗuum, so "Include inline pictures" hurminaama (ko kallum), ɓe mbaɗa woodude e jinnaaɗe jaabugol toowde no data URI base64.
 
-| Fannu geɗe                                             |                  Pass ɓurindi |                  Pass ñalawol |
-| ------------------------------------------------------ | ----------------------------: | ----------------------------: |
-| Fiilde siŋillo S/MIME `smime.p7s`                      |                        Momtaa |                        Momtaa |
-| Fannu MIME S/MIME (`application/pkcs7-*`)              |                        Momtaa |                        Momtaa |
+| Fannu geɗe                                             | Pass ɓurindi                  | Pass ñalawol                  |
+|--------------------------------------------------------|------------------------------:|------------------------------:|
+| Fiilde siŋillo S/MIME `smime.p7s`                      | Momtaa                        | Momtaa                        |
+| Fannu MIME S/MIME (`application/pkcs7-*`)              | Momtaa                        | Momtaa                        |
 | Nataande inline toowiraaɗo e Content‑ID (`image/*`)    | Momtaa (artiraa e jinnaaɗe\*) | Momtaa (artiraa e jinnaaɗe\*) |
-| Imeel dokkiraaɗo (`message/rfc822`) jogii innde fiilde |                  Wonaa ɓeydaa |            Ena waawi ɓeydaade |
-| Dokkorde fiilde loowdi jogii innde                     |            Ena waawi ɓeydaade |            Ena waawi ɓeydaade |
+| Imeel dokkiraaɗo (`message/rfc822`) jogii innde fiilde | Wonaa ɓeydaa                  | Ena waawi ɓeydaade            |
+| Dokkorde fiilde loowdi jogii innde                     | Ena waawi ɓeydaade            | Ena waawi ɓeydaade            |
 
 \* So "Include inline pictures" hurminaama (kallum: ON), nataaji inline ɓe mbaɗa woodude e jinnaaɗe jaabugol no data URI base64, wonaa ɓeydaade e dokkorde fiilde. Yiy [Teelte](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Yimre: Dokkoreeji seeɗa ena waawi ŋakku e geɗe heɗiɗi kono aanon kadi fiild
 ### Laaɓol ndokkal ordiiro {#keyboard-cheat-sheet}
 
 | Toɓɓe           | Golle                                    |
-| --------------- | ---------------------------------------- |
+|-----------------|------------------------------------------|
 | Y / J           | Teeŋtin Eey                              |
 | N / Esc         | Teeŋtin Alaa                             |
 | Enter           | Hurmin butoŋ nde ñippii                  |

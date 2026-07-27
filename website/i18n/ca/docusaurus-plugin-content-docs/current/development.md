@@ -61,7 +61,7 @@ El Makefile estandarditza fluxos de desenvolupament habituals. Executa `make hel
 Consell: executar `make` sense objectiu obre un menú senzill de Whiptail per triar un objectiu.
 
 | Objectiu                                                 | Descripció d'una línia                                                                                                    |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Elimina artefactes locals de build/previsualització (tmp/, web-local-preview/, website/build/).                           |
 | [`commit`](#mt-commit)                                   | Formata, executa proves (incl. i18n), actualitza el registre de canvis, fa commit i push.                                 |
 | [`eslint`](#mt-eslint)                                   | Executa ESLint amb la configuració plana (`npm run -s lint:eslint`).                                                      |

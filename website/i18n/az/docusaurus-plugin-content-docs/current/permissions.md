@@ -33,7 +33,7 @@ Bunlar mənbədə sənədləşdirilib və CI-də sınaqdan keçirilib. Əlavə t
 ### Xülasə (icazələr → məqsəd) {#permissions-summary}
 
 | İcazə            | Niyə lazım olduğu                                                                   |
-| ---------------- | ----------------------------------------------------------------------------------- |
+|------------------|-------------------------------------------------------------------------------------|
 | `compose`        | Tərtibat hadisələrini izləmək; cavabınıza əlavələri siyahıya salmaq və əlavə etmək. |
 | `messagesRead`   | Orijinal mesaj əlavələrini siyahıya almaq və fayl məlumatlarını əldə etmək.         |
 | `scripting`      | Aktiv edildikdə, təsdiq üçün yüngül UI inyekt etmək/koordinatlaşdırmaq.             |

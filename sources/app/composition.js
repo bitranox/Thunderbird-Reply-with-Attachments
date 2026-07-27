@@ -11,13 +11,9 @@
 // Composition Root: wire adapters to use-cases and register events
 
 (function () {
-  const CONFIRM_TIMEOUT_MS = 20000;
   const SESSION_KEY = 'rwatt_processed';
   /** @type {Map<number,{ stage:'processing'|'done', messageId:string|null }>} */
   const processedTabsState = new Map();
-
-  /** @type {Set<number>} Tabs where confirm content script has been injected */
-  const injectedConfirmScriptTabs = new Set();
 
   // small utilities
   const toNumericId = (v) =>
@@ -29,6 +25,18 @@
         ? 'no'
         : 'yes';
 
+  /**
+   * Report a problem without letting the reporting itself throw.
+   * @param {...unknown} args
+   */
+  function warnSafe(...args) {
+    try {
+      console.warn('[RWA]', ...args);
+    } catch (_) {
+      // a logger must never break the caller
+    }
+  }
+
   /** Pure helper: should we ask based on toggle and selection list. */
   function shouldAskHelper(askBeforeAdd, selected) {
     return !!(selected && selected.length) && !!askBeforeAdd;
@@ -36,6 +44,8 @@
 
   /**
    * Small local logger factory used when App.Shared.makeLogger is not provided.
+   * @param {boolean} enabled
+   * @returns {{debug:Function,info:Function,warn:Function,error:Function}}
    */
   function makeLocalLogger(enabled) {
     return {
@@ -43,22 +53,30 @@
         if (enabled)
           try {
             console.debug('[RWA]', ...args);
-          } catch (_) {}
+          } catch (_) {
+            // a logger must never break the caller
+          }
       },
       info: (...args) => {
         try {
           console.info('[RWA]', ...args);
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
       },
       warn: (...args) => {
         try {
           console.warn('[RWA]', ...args);
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
       },
       error: (...args) => {
         try {
           console.error('[RWA]', ...args);
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
       },
     };
   }
@@ -81,10 +99,14 @@
     const logDebug = (payload, message) => {
       try {
         logger.debug?.(payload, message);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
       try {
         globalThis.log?.debug?.(payload, message);
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
     };
 
     const normalizedTabRef = (value) =>
@@ -96,17 +118,17 @@
     let excludePatterns = [];
     let exclude = App.Domain.makeNameExcluder([]);
     let askBeforeAdd = false;
+    /** @type {'yes'|'no'} */
     let defaultAnswer = 'yes';
     let warnOnBlacklist = true;
-    let includeInline = true;
     /** @type {Array<{ pat: string, rx: RegExp }>} */
     let compiledBlacklist = [];
 
     /**
      * Apply loaded settings to local state and rebuild the blacklist matcher.
-     * @param {{ patterns: string[], ask: boolean, def: string, warnFlag: boolean, includeInlineFlag: boolean }} opts
+     * @param {{ patterns: string[], ask: boolean, def: string, warnFlag: boolean }} opts
      */
-    function applySettings({ patterns, ask, def, warnFlag, includeInlineFlag }) {
+    function applySettings({ patterns, ask, def, warnFlag }) {
       excludePatterns = patterns;
       exclude = App.Domain.makeNameExcluder(patterns);
       // Precompile blacklist regexes once for efficient matching during warnings
@@ -126,9 +148,8 @@
         compiledBlacklist = [];
       }
       askBeforeAdd = ask;
-      defaultAnswer = def;
+      defaultAnswer = yesNo(def);
       warnOnBlacklist = warnFlag;
-      includeInline = !!includeInlineFlag;
       logDebug(
         {
           blacklistPatterns: Array.isArray(patterns) ? patterns.length : 0,
@@ -175,7 +196,6 @@
         warnOnBlacklist,
         matchBlacklist: matchBlacklist,
         logger,
-        includeInlinePictures: includeInline,
       });
     }
     // bootstrap ensure with defaults so early compose events still process
@@ -189,10 +209,13 @@
         for (const { pat, rx } of compiledBlacklist) {
           try {
             if (rx.test(n)) hits.push(pat);
-          } catch (_) {}
+          } catch (e) {
+            warnSafe('blacklist pattern failed to match:', pat, e);
+          }
         }
         return hits;
-      } catch (_) {
+      } catch (e) {
+        warnSafe('blacklist matching failed for', name, e);
         return [];
       }
     }
@@ -203,7 +226,7 @@
      */
     async function warnBlacklisted(tabId, rows) {
       try {
-        await ensureConfirmInjected(tabId, scriptingCompose);
+        await App.ConfirmFlow.ensureConfirmInjected(tabId, scriptingCompose);
       } catch (e) {
         console.error('[RWA] warnBlacklisted: inject failed:', e);
       }
@@ -222,9 +245,9 @@
     async function confirmAddSelectedFiles(tabId, selected) {
       await ready;
       if (!shouldAsk(selected)) return true;
-      await ensureConfirmInjected(tabId, scriptingCompose, logger);
+      await App.ConfirmFlow.ensureConfirmInjected(tabId, scriptingCompose, logger);
       const files = selected.map((s) => s.name).filter(Boolean);
-      return await askUserForConfirmation(
+      return await App.ConfirmFlow.askUserForConfirmation(
         { files, def: defaultAnswer },
         tabId,
         browser,
@@ -236,35 +259,53 @@
       return shouldAskHelper(askBeforeAdd, selected);
     }
 
+    /**
+     * Apply a settings change coming from the options page.
+     * Split out of the listener so a throw from one key is reported with the key
+     * that caused it instead of silently disabling every later update.
+     * @param {Record<string, {newValue?: any}>} changes
+     */
+    function applySettingsChange(changes) {
+      if (changes.blacklistPatterns) {
+        excludePatterns = changes.blacklistPatterns.newValue || [];
+        exclude = App.Domain.makeNameExcluder(excludePatterns);
+        rebuildEnsure();
+      }
+      if (changes.confirmBeforeAdd) {
+        askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
+        rebuildEnsure();
+      }
+      if (changes.confirmDefaultChoice) {
+        defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
+      }
+      if (changes.warnOnBlacklistExcluded) {
+        warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
+        rebuildEnsure();
+      }
+    }
+
     // react to settings updates
-    try {
-      browser.storage?.onChanged?.addListener?.((changes, area) => {
-        if (area === 'local') {
-          const keys = Object.keys(changes || {});
-          logDebug({ area, keys }, 'storage.onChanged: settings update observed');
-        }
-        if (area === 'local' && changes?.blacklistPatterns) {
-          excludePatterns = changes.blacklistPatterns.newValue || [];
-          exclude = App.Domain.makeNameExcluder(excludePatterns);
-          rebuildEnsure();
-        }
-        if (area === 'local' && changes?.confirmBeforeAdd) {
-          askBeforeAdd = !!changes.confirmBeforeAdd.newValue;
-          rebuildEnsure();
-        }
-        if (area === 'local' && changes?.confirmDefaultChoice) {
-          defaultAnswer = yesNo(changes.confirmDefaultChoice.newValue);
-        }
-        if (area === 'local' && changes?.warnOnBlacklistExcluded) {
-          warnOnBlacklist = !!changes.warnOnBlacklistExcluded.newValue;
-          rebuildEnsure();
-        }
-        if (area === 'local' && changes?.includeInlinePictures) {
-          includeInline = !!changes.includeInlinePictures.newValue;
-          rebuildEnsure();
-        }
-      });
-    } catch (_) {}
+    if (typeof browser.storage?.onChanged?.addListener === 'function') {
+      // A host that rejects the registration must not take the whole wiring with it.
+      try {
+        browser.storage.onChanged.addListener((changes, area) => {
+          if (area !== 'local') return;
+          const safeChanges = changes || {};
+          logDebug({ area, keys: Object.keys(safeChanges) }, 'storage.onChanged: settings update');
+          try {
+            applySettingsChange(safeChanges);
+          } catch (err) {
+            warnSafe('applying a settings change failed:', err);
+          }
+        });
+      } catch (e) {
+        warnSafe('could not subscribe to settings changes:', e);
+      }
+    } else {
+      console.warn(
+        '[RWA] browser.storage.onChanged is unavailable; settings changes need a restart'
+      );
+    }
 
     // pre-register confirm content script for new compose windows
     // Register the confirm content script so it is available for new windows.
@@ -284,7 +325,9 @@
       } catch (err) {
         try {
           logger.debug({ err }, 'registerScripts failed');
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
         logDebug({ err }, 'confirmScript: registration error');
       }
     }
@@ -392,7 +435,7 @@
         logDebug({ tabId: id }, 'tabs.onRemoved: removeTabValue threw synchronously');
       }
       processedTabsState.delete(id);
-      injectedConfirmScriptTabs.delete(id);
+      App.ConfirmFlow?.forgetTab?.(id);
       logDebug({ tabId: id }, 'tabs.onRemoved: state cleared');
     }
     tabs?.onRemoved?.addListener?.(handleTabRemoved);
@@ -402,7 +445,7 @@
      * rebuilds the use-case closure if needed, and catches all errors so a single
      * tab failure never breaks the listener pipeline.
      * @param {number} tabId Compose tab id
-     * @param {object} details Compose details from compose.getDetails
+     * @param {{ type?: string }} details Compose details from compose.getDetails
      */
     async function ensureWrapper(tabId, details) {
       try {
@@ -429,7 +472,9 @@
       } catch (err) {
         try {
           logger.warn?.({ err, tabId }, 'ensureWrapper failed');
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
         logDebug({ tabId, err }, 'ensureWrapper: error captured');
         return undefined;
       }
@@ -437,9 +482,11 @@
     // Also expose a bound reloadSettings for background.js
     try {
       globalThis.App = globalThis.App || {};
-      App.Composition = App.Composition || {};
+      App.Composition = App.Composition || /** @type {AppComposition} */ ({});
       App.Composition.reloadSettings = () => reloadSettings();
-    } catch (_) {}
+    } catch (e) {
+      warnSafe('could not expose reloadSettings; the options page cannot refresh us', e);
+    }
     return {
       ensureReplyAttachments: ensureWrapper,
       processedTabsState,
@@ -450,14 +497,13 @@
 
   // — settings helpers —
   async function loadSettings(browser) {
-    const [patterns, ask, def, warnFlag, includeInlineFlag] = await Promise.all([
+    const [patterns, ask, def, warnFlag] = await Promise.all([
       readBlacklist(browser),
       readConfirmEnabled(browser),
       readConfirmDefault(browser),
       readWarnOnBlacklist(browser),
-      readIncludeInline(browser),
     ]);
-    return { patterns, ask, def, warnFlag, includeInlineFlag };
+    return { patterns, ask, def, warnFlag };
   }
   // applySettings is defined inside createAppWiring to access its local state
 
@@ -498,136 +544,12 @@
       return true;
     }
   }
-  /** Load include-inline-pictures toggle from storage (false on error). */
-  async function readIncludeInline(browser) {
-    try {
-      const r = await browser.storage?.local?.get?.({ includeInlinePictures: true });
-      return !!r?.includeInlinePictures;
-    } catch (_) {
-      return false;
-    }
-  }
-
-  // confirm helpers
-  /** Ensure the confirm content script is injected into the target compose tab. */
-  async function ensureConfirmInjected(tabId, scriptingCompose, logger = console) {
-    const emitDebug = (payload, message) => {
-      try {
-        logger.debug?.(payload, message);
-      } catch (_) {}
-      try {
-        globalThis.log?.debug?.(payload, message);
-      } catch (_) {}
-    };
-    try {
-      if (injectedConfirmScriptTabs.has(tabId)) {
-        emitDebug({ tabId }, 'ensureConfirmInjected: already injected');
-        return;
-      }
-      await scriptingCompose.executeScript?.(tabId, ['content/confirm.js']);
-      injectedConfirmScriptTabs.add(tabId);
-      emitDebug({ tabId }, 'ensureConfirmInjected: script executed');
-    } catch (err) {
-      try {
-        logger.debug({ err, tabId }, 'ensureConfirmInjected failed');
-      } catch (_) {}
-      emitDebug({ tabId, err }, 'ensureConfirmInjected: executeScript error');
-    }
-  }
-  /** Ask the user via content script; fall back progressively if needed. */
-  /**
-   * Ask the user via targeted tab → broadcast → popup fallback.
-   * @param {{files:string[], def:'yes'|'no'}} opts
-   */
-  async function askUserForConfirmation({ files, def }, tabId, browser, tabs, logger = console) {
-    const payload = { type: 'rwa:confirm-add', files, def };
-    const targeted = await tryTargetedConfirm(tabs, tabId, payload);
-    if (isDecision(targeted)) return targeted.ok;
-    const broadcast = await tryBroadcastConfirm(browser, payload);
-    if (isDecision(broadcast)) return broadcast.ok;
-    return await askInPopup(browser, files, def, logger);
-  }
-  /** Try targeted tab messaging; return decision or null on error. */
-  async function tryTargetedConfirm(tabs, tabId, payload) {
-    try {
-      return await tabs.sendMessage(tabId, payload);
-    } catch (_) {
-      return null;
-    }
-  }
-  /** Try runtime broadcast; return decision or null on error. */
-  async function tryBroadcastConfirm(browser, payload) {
-    try {
-      return await browser.runtime?.sendMessage?.(payload);
-    } catch (_) {
-      return null;
-    }
-  }
-  /** Predicate: object has a boolean `ok` field (confirm/warn result). */
-  function isDecision(x) {
-    return x && typeof x.ok === 'boolean';
-  }
-  /** Last resort: open a small popup window to ask for confirmation. */
-  async function askInPopup(browser, files, def, logger) {
-    try {
-      const token = Math.random().toString(36).slice(2);
-      const url = buildConfirmUrl(browser, token, files, def);
-      const result = waitForConfirm(browser, token);
-      const win = await browser.windows?.create?.({
-        url,
-        type: 'popup',
-        width: 520,
-        height: 180,
-        focused: true,
-      });
-      try {
-        if (win && typeof win.id === 'number')
-          await browser.windows?.update?.(win.id, { focused: true });
-      } catch (_) {}
-      return await result;
-    } catch (err) {
-      try {
-        logger?.warn?.({ err }, 'askInPopup failed');
-      } catch (_) {}
-      return false;
-    }
-  }
-  /** Build confirm.html URL with query parameters. */
-  function buildConfirmUrl(browser, token, files, def) {
-    const base =
-      (browser.runtime?.getURL && browser.runtime.getURL('confirm.html')) || 'confirm.html';
-    const count = files.length;
-    const list = files.slice(0, 5).join(', ');
-    const more = count > 5 ? String(count - 5) : '';
-    const q = new URLSearchParams({ t: token, c: String(count), list, more, def: def || 'yes' });
-    return `${base}?${q.toString()}`;
-  }
-  // matchBlacklist and warnBlacklisted are defined inside createAppWiring to access settings
-  /** Wait for the popup page to send its decision back via runtime messaging. */
-  /** Wait until confirm result arrives for the given token, with timeout. */
-  function waitForConfirm(browser, token) {
-    return new Promise((resolve) => {
-      const listener = (msg) => {
-        if (!msg || msg.type !== 'rwa:confirm-result' || msg.t !== token) return;
-        try {
-          browser.runtime.onMessage.removeListener(listener);
-        } catch (_) {}
-        resolve(!!msg.ok);
-      };
-      browser.runtime.onMessage.addListener(listener);
-      setTimeout(() => {
-        try {
-          browser.runtime.onMessage.removeListener(listener);
-        } catch (_) {}
-        resolve(false);
-      }, CONFIRM_TIMEOUT_MS);
-    });
-  }
 
   // exports for background/tests
   globalThis.App = globalThis.App || {};
   App.Composition = { createAppWiring };
   // Expose small internals for focused unit tests (non-breaking)
+  // Re-exported from App.ConfirmFlow so existing tests keep one import site.
   App.Composition.Internal = {
     makeLogger: makeLocalLogger,
     yesNo,
@@ -635,12 +557,7 @@
     readBlacklist,
     readConfirmEnabled,
     readConfirmDefault,
-    ensureConfirmInjected,
-    tryTargetedConfirm,
-    tryBroadcastConfirm,
-    isDecision,
-    buildConfirmUrl,
-    waitForConfirm,
+    ...(App.ConfirmFlow || {}),
   };
   try {
     const __TEST__ = !!(
@@ -651,7 +568,8 @@
     if (__TEST__) {
       globalThis.SESSION_KEY = SESSION_KEY;
       globalThis.processedTabsState = processedTabsState;
-      globalThis.injectedConfirmScriptTabs = injectedConfirmScriptTabs;
     }
-  } catch (_) {}
+  } catch (_) {
+    // test-only hook; absent outside the test runner
+  }
 })();

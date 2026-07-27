@@ -61,7 +61,7 @@ Makefile ngamastikeun alur dev umum. Jalankeun `make help` iraha waé pikeun rin
 Tip: ngajalankeun `make` tanpa target bakal muka ménu Whiptail basajan pikeun milih target.
 
 | Target                                                   | Katerangan sakalimat                                                                         |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Pupus artifak build/preview lokal (tmp/, web-local-preview/, website/build/).                |
 | [`commit`](#mt-commit)                                   | Format, jalankeun tés (kaasup i18n), apdet changelog, commit & push.                         |
 | [`eslint`](#mt-eslint)                                   | Jalankeun ESLint ngaliwatan flat config (`npm run -s lint:eslint`).                          |

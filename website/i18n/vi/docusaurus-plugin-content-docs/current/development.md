@@ -61,7 +61,7 @@ Makefile tiêu chuẩn hóa các luồng phát triển phổ biến. Chạy `mak
 Mẹo: chạy `make` không kèm mục tiêu sẽ mở menu Whiptail đơn giản để chọn mục tiêu.
 
 | Mục tiêu                                                 | Mô tả một dòng                                                                                             |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Xóa các tạo phẩm build/preview cục bộ (tmp/, web-local-preview/, website/build/).                          |
 | [`commit`](#mt-commit)                                   | Định dạng, chạy kiểm thử (bao gồm i18n), cập nhật changelog, commit & push.                                |
 | [`eslint`](#mt-eslint)                                   | Chạy ESLint qua cấu hình phẳng (`npm run -s lint:eslint`).                                                 |

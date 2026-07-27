@@ -61,7 +61,7 @@ Het Makefilebestand standaardiseert veelvoorkomende dev‑flows. Voer `make help
 Tip: `make` zonder target opent een eenvoudig Whiptail‑menu om een target te kiezen.
 
 | Doel                                                     | Beschrijving in één regel                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Verwijder lokale build-/preview‑artefacten (tmp/, web-local-preview/, website/build/).      |
 | [`commit`](#mt-commit)                                   | Formatteren, tests uitvoeren (incl. i18n), changelog bijwerken, committen & pushen.         |
 | [`eslint`](#mt-eslint)                                   | ESLint uitvoeren via flat config (`npm run -s lint:eslint`).                                |

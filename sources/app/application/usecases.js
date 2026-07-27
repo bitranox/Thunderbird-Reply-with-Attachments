@@ -4,34 +4,63 @@
  *          functions that coordinate domain rules and adapter ports.
  * Highlights:
  * - Pure decision making; no UI/HTTP details leak in.
- * - Two‑pass selection of attachments (strict → relaxed) for clarity.
+ * - One selection pass over the source attachments, driven by App.Domain predicates.
  * - Idempotency handled by the caller (composition) via sessions.
  * Domain:
  * - Helper predicates (includeStrict/Relaxed, normalizedName) come from App.Domain.
  */
 
-// Application layer: small, intention-revealing functions
-// Domain helpers are exposed on global App.Domain (loaded from domain/filters.js)
+// Application layer: small, intention-revealing functions.
+//
+// The domain predicates are used directly off App.Domain. That global is
+// guaranteed to exist: sources/background.html loads app/domain/filters.js
+// before this file, and every test that exercises these use cases imports
+// filters.js first. Do NOT reintroduce local fallback copies of the domain
+// rules - a second copy of a rule is a second place to forget when it changes,
+// and it silently applied a stale inline-image rule until it was removed.
 
 const ATTACHMENT_RETRY_DEFAULT = Object.freeze({ attempts: 5, delayMs: 150 });
 
 /**
- * @typedef {{ stage: 'processing'|'done', messageId: string|null }} TabProcessingState
+ * Ceilings on what one reply will copy.
+ *
+ * Each file is fetched whole before it is attached, so an unbounded reply to a
+ * message carrying dozens of large files moves gigabytes through the extension
+ * process while the compose window looks frozen. What is skipped is reported to
+ * the user rather than dropped quietly.
+ */
+const COPY_LIMITS = Object.freeze({
+  maxCount: 50,
+  maxTotalBytes: 100 * 1024 * 1024,
+});
+
+/**
+ * @typedef {{ debug?: Function, info?: Function, warn?: Function, error?: Function }} Logger
+ */
+
+/**
+ * Thunderbird hands out message ids as numbers, but a session marker round-trips
+ * through storage and can come back as a string, so both are accepted throughout.
+ * @typedef {{ stage: 'processing'|'done', messageId: string|number|null }} TabProcessingState
  */
 
 function debugLog(logger, payload, message) {
   try {
     logger?.debug?.(payload, message);
-  } catch (_) {}
+  } catch (_) {
+    // a logger must never break the caller
+  }
   try {
     globalThis.log?.debug?.(payload, message);
-  } catch (_) {}
+  } catch (_) {
+    // a logger must never break the caller
+  }
 }
 
 /**
- * Decide which attachments to add, in two passes (strict → relaxed).
- * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, warn?: (tabId: number, rows: any[]) => Promise<void>, warnOnBlacklist?: boolean, matchBlacklist?: Function|null, logger?: { debug?: Function, info?: Function, warn?: Function, error?: Function }, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
- * @returns {(tabId: number, messageId: number) => Promise<number>} processReplyAttachments
+ * Decide which attachments to add from the replied-to message.
+ * @param {{ compose: import('./ports.js').ComposeAttachPort, messages: import('./ports.js').MessagesPort, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, warn?: (tabId: number, rows: any[]) => Promise<void>, warnOnBlacklist?: boolean, matchBlacklist?: Function|null, logger?: Logger, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
+ * @returns {(tabId: number, messageId: string|number) => Promise<number>} processReplyAttachments
  */
 function createProcessReplyAttachments({
   compose,
@@ -57,20 +86,47 @@ function createProcessReplyAttachments({
       }
 
       const existingNames = await getExistingAttachmentNames(compose, tabId);
+      // What the original message embeds decides what counts as inline; a
+      // Content-ID on its own does not (see App.Domain.isInlineImage).
+      const inlineCids = await loadInlineCids(messages, messageId);
 
       // Warn about blacklist-excluded attachments (not inline/SMIME), if enabled — even
       // if ultimately no attachments will be added (e.g., everything was blacklisted).
       if (warnOnBlacklist) {
         try {
-          const rows = computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklist);
+          const rows = computeBlacklistedRows(
+            all,
+            existingNames,
+            shouldExclude,
+            matchBlacklist,
+            inlineCids
+          );
           if (rows.length) await warn(tabId, rows);
-        } catch (_) {}
+        } catch (err) {
+          // The warning is advisory; copying attachments must proceed without it.
+          logger.warn?.({ err, tabId }, 'blacklist warning could not be shown');
+        }
       }
 
-      const selected = pickFirstNonEmpty([
-        selectStrict(all, existingNames, shouldExclude),
-        selectRelaxed(all, existingNames, shouldExclude),
-      ]);
+      const { selected, skipped } = selectEligible(
+        all,
+        existingNames,
+        shouldExclude,
+        App.Domain.includeStrict,
+        inlineCids
+      );
+      if (skipped.length) {
+        logger.warn?.(
+          { tabId, messageId, skipped: skipped.length, limits: COPY_LIMITS },
+          'copy limit reached; some attachments were not copied'
+        );
+        try {
+          await warn(tabId, skipped);
+        } catch (err) {
+          // The notice is advisory; the files that fit must still be copied.
+          logger.warn?.({ err, tabId }, 'copy-limit notice could not be shown');
+        }
+      }
       if (isEmpty(selected)) {
         debugLog(
           logger,
@@ -87,7 +143,9 @@ function createProcessReplyAttachments({
     } catch (err) {
       try {
         logger.warn?.({ err, tabId, messageId }, 'processReplyAttachments failed');
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
       return 0;
     }
   };
@@ -98,6 +156,7 @@ function createProcessReplyAttachments({
  * Load all attachments for the source message, retrying when Thunderbird has not
  * yet hydrated the parts for IMAP-backed messages.
  */
+/** @param {Logger} [logger] */
 async function loadAllAttachments(messages, messageId, retryConfig, logger = console) {
   const { attempts, delayMs } = normalizeRetryConfig(retryConfig);
   let last = [];
@@ -131,23 +190,25 @@ async function getExistingAttachmentNames(compose, tabId) {
   const a = await safe(() => compose.listAttachments(tabId), []);
   return makeNameSet(a);
 }
-/** Select strictly eligible attachments (never inline/SMIME). */
-function selectStrict(all, existingNames, shouldExclude) {
-  return selectEligible(all, existingNames, shouldExclude, domainIncludeStrict());
-}
-/** Select relaxed eligible attachments as a fallback. */
-function selectRelaxed(all, existingNames, shouldExclude) {
-  return selectEligible(all, existingNames, shouldExclude, domainIncludeRelaxed());
-}
-/** Return the first non-empty array; otherwise an empty array. */
-function pickFirstNonEmpty(candidates) {
-  return candidates.find((x) => x && x.length) || [];
+/** Collect the Content-IDs the original message embeds in its HTML body. */
+async function loadInlineCids(messages, messageId) {
+  const parts = await safe(() => messages.listInlineTextParts?.(messageId), []);
+  const html = (parts || [])
+    .filter((p) =>
+      String(p?.contentType || '')
+        .toLowerCase()
+        .includes('html')
+    )
+    .map((p) => String(p?.content || ''))
+    .join('\n');
+  return App.Domain.collectInlineCids(html);
 }
 /** Ask the user to confirm selected files. */
 async function askUserToConfirm(confirm, tabId, selected) {
   return await confirm(tabId, selected.map(asSelection));
 }
 /** Attach selected files to the compose; returns the count added. */
+/** @param {Logger} [logger] */
 async function attachSelectedFiles(
   compose,
   messages,
@@ -170,7 +231,9 @@ async function attachSelectedFiles(
           { err, part: att?.partName },
           'attachSelectedFiles: getAttachmentFile/addAttachment failed; skipping'
         );
-      } catch (_) {}
+      } catch (_) {
+        // a logger must never break the caller
+      }
       continue;
     }
   }
@@ -182,7 +245,7 @@ function isEmpty(arr) {
 
 /**
  * Ensure original attachments for reply compose; idempotent per tab via memory + sessions.
- * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,TabProcessingState>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
+ * @param {{ compose: import('./ports.js').ComposePort, messages: import('./ports.js').MessagesPort, sessions: import('./ports.js').SessionsPort, state: Map<number,TabProcessingState>, sessionKey: string, shouldExclude?: (name: string) => boolean, confirm?: import('./ports.js').ConfirmFn, warn?: (tabId: number, rows: any[]) => Promise<void>, warnOnBlacklist?: boolean, matchBlacklist?: Function|null, logger?: Logger, attachmentsRetry?: { attempts?: number, delayMs?: number } }} deps
  * @returns {(tabId: number, details: any) => Promise<void>} ensureReplyAttachments
  */
 function createEnsureReplyAttachments({
@@ -198,7 +261,6 @@ function createEnsureReplyAttachments({
   matchBlacklist = null,
   logger = console,
   attachmentsRetry = ATTACHMENT_RETRY_DEFAULT,
-  includeInlinePictures = true,
 }) {
   const processReplyAttachments = createProcessReplyAttachments({
     compose,
@@ -290,19 +352,8 @@ function createEnsureReplyAttachments({
 
       const added = await processReplyAttachments(tabId, messageId);
 
-      let inlineRestored = false;
-      if (includeInlinePictures) {
-        try {
-          inlineRestored = await restoreInlineImages(compose, messages, tabId, messageId, logger);
-        } catch (_) {}
-      }
-
-      if (added > 0 || inlineRestored) {
-        debugLog(
-          logger,
-          { tabId, messageId, added, inlineRestored },
-          'ensureReplyAttachments: attachments added'
-        );
+      if (added > 0) {
+        debugLog(logger, { tabId, messageId, added }, 'ensureReplyAttachments: attachments added');
         await markProcessed(sessions, tabId, sessionKey, state, messageId);
         return;
       }
@@ -336,6 +387,10 @@ function createEnsureReplyAttachments({
  * @param {string|null} hint
  * @returns {Promise<{ processed: boolean, messageId: string|null }>}
  */
+/**
+ * @param {string|number|null} hint
+ * @returns {Promise<{ processed: boolean, messageId: string|number|null }>}
+ */
 async function wasAlreadyProcessed(sessions, tabId, key, hint) {
   const stored = await safe(() => sessions.getTabValue(tabId, key), null);
   if (!stored) return { processed: false, messageId: null };
@@ -364,7 +419,7 @@ async function wasAlreadyProcessed(sessions, tabId, key, hint) {
  * @param {number} tabId
  * @param {string} key
  * @param {Map<number, TabProcessingState>} state
- * @param {string|null} messageId
+ * @param {string|number|null} messageId
  */
 async function markProcessed(sessions, tabId, key, state, messageId) {
   markDone(state, tabId, messageId);
@@ -441,35 +496,57 @@ async function waitForMessageId(compose, tabId, initial, { attempts = 10, delayM
   return null;
 }
 
-/** Core selection loop: unique by part, not excluded, not already present. */
-function selectEligible(all, existingNames, shouldExclude, includeFn) {
-  // Select unique, non‑excluded, and not‑already‑present attachments.
+/**
+ * Core selection loop: unique by part, not excluded, not already present,
+ * and within the copy limits.
+ * @returns {{ selected: any[], skipped: Array<{name: string, pattern: string}> }}
+ *          `skipped` uses the same row shape as the blacklist notice so it can go
+ *          through the same warning channel.
+ */
+function selectEligible(all, existingNames, shouldExclude, includeFn, inlineCids, limits) {
+  const { maxCount, maxTotalBytes } = limits || COPY_LIMITS;
+  // Select unique, non-excluded, and not-already-present attachments.
   const takenParts = new Set();
   const selected = [];
-  const nn = domainNormalizedName();
+  const skipped = [];
+  let totalBytes = 0;
   for (const att of all) {
-    const name = nn(att);
+    const name = App.Domain.normalizedName(att);
     if (shouldExclude(name)) continue;
-    if (!includeFn(att)) continue;
+    if (!includeFn(att, inlineCids)) continue;
     if (takenParts.has(att.partName)) continue;
     if (name && existingNames.has(name)) continue;
+
+    const displayName = att.name || att.fileName || name;
+    if (selected.length >= maxCount) {
+      skipped.push({ name: displayName, pattern: `> ${maxCount}` });
+      continue;
+    }
+    const size = Number.isFinite(att?.size) ? Number(att.size) : 0;
+    // The first eligible file is always copied: a single attachment larger than
+    // the whole budget is exactly the one the user is replying about, and
+    // dropping it would be the silent loss this limit exists to avoid.
+    if (selected.length > 0 && totalBytes + size > maxTotalBytes) {
+      skipped.push({ name: displayName, pattern: `> ${Math.round(maxTotalBytes / 1048576)} MB` });
+      continue;
+    }
+
     selected.push(att);
+    totalBytes += size;
     takenParts.add(att.partName);
     if (name) existingNames.add(name);
   }
-  return selected;
+  return { selected, skipped };
 }
 
 /** Build blacklist warning rows: [{name, pattern}] */
-function computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklist) {
+function computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklist, inlineCids) {
   // Aggregate all matching patterns per normalized file name, emit a single row per file
-  const nn = domainNormalizedName();
-  const includeR = domainIncludeRelaxed();
   /** @type {Map<string,{display:string, patterns:Set<string>}>} */
   const acc = new Map();
   for (const att of all) {
-    if (!includeR(att)) continue; // skip inline/SMIME
-    const nameNorm = nn(att);
+    if (!App.Domain.includeRelaxed(att, inlineCids)) continue; // skip inline/SMIME
+    const nameNorm = App.Domain.normalizedName(att);
     if (!nameNorm) continue;
     if (existingNames.has(nameNorm)) continue;
     if (!shouldExclude(nameNorm)) continue;
@@ -490,128 +567,8 @@ function computeBlacklistedRows(all, existingNames, shouldExclude, matchBlacklis
 /** Build a case-insensitive set of names from compose attachments. */
 function makeNameSet(attachments) {
   // Build a case‑insensitive set of attachment names for quick membership tests.
-  const nn = domainNormalizedName();
-  const names = (attachments || []).map((a) => nn(a)).filter(Boolean);
+  const names = (attachments || []).map((a) => App.Domain.normalizedName(a)).filter(Boolean);
   return new Set(names);
-}
-
-// — domain fallbacks —
-/** Domain fallback for normalizedName if App.Domain is not loaded. */
-function domainNormalizedName() {
-  const fn = globalThis.App?.Domain?.normalizedName;
-  if (typeof fn === 'function') return fn;
-  return (att) => String(att?.name || att?.fileName || '').toLowerCase();
-}
-/** Domain fallback for includeStrict if App.Domain is not loaded. */
-function domainIncludeStrict() {
-  const fn = globalThis.App?.Domain?.includeStrict;
-  if (typeof fn === 'function') return fn;
-  return (att) => {
-    const name = domainNormalizedName()(att);
-    const ct = String(att?.contentType || '').toLowerCase();
-    if (name === 'smime.p7s') return false;
-    if (
-      ct === 'application/pkcs7-signature' ||
-      ct === 'application/x-pkcs7-signature' ||
-      ct === 'application/pkcs7-mime'
-    )
-      return false;
-    if (att?.contentId && ct.startsWith('image/')) return false;
-    const disp = String(att?.contentDisposition || '').toLowerCase();
-    if (disp.startsWith('inline')) return false;
-    return true;
-  };
-}
-/** Domain fallback for includeRelaxed if App.Domain is not loaded. */
-function domainIncludeRelaxed() {
-  const fn = globalThis.App?.Domain?.includeRelaxed;
-  if (typeof fn === 'function') return fn;
-  return domainIncludeStrict();
-}
-/** Strip angle brackets from a Content-ID value. */
-function stripAngleBrackets(s) {
-  return String(s || '')
-    .replace(/^</, '')
-    .replace(/>$/, '');
-}
-/** Convert a Blob to a data URI string. */
-async function blobToDataUri(blob, contentType) {
-  const buf = await blob.arrayBuffer();
-  const bytes = new Uint8Array(buf);
-  let binary = '';
-  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
-  return `data:${contentType};base64,${globalThis.btoa(binary)}`;
-}
-/**
- * Extract the part name from a Thunderbird internal URL query string.
- * Handles both raw & and HTML-encoded &amp; separators, since
- * getComposeDetails returns serialized HTML where & becomes &amp;.
- * E.g. "imap://user@host/fetch...?part=1.2.2&amp;filename=img.png" → "1.2.2"
- */
-function extractPartFromUrl(url) {
-  const m = /(?:[?&]|&amp;)part=([^&"']+)/.exec(url);
-  return m ? decodeURIComponent(m[1]) : null;
-}
-/**
- * Restore inline images in the compose body by replacing internal references
- * (cid: URLs or Thunderbird imap:/mailbox: URLs) with base64 data URIs
- * fetched from the original message attachments.
- * @returns {Promise<boolean>} true if any replacements were made
- */
-async function restoreInlineImages(compose, messages, tabId, messageId, logger) {
-  const details = await compose.getDetails(tabId);
-  const body = details?.body || '';
-  if (!body) return false;
-
-  const allAttachments = await safe(() => messages.listAttachments(messageId), []);
-  if (!allAttachments || !allAttachments.length) return false;
-
-  // Build lookup maps: by contentId (for cid: refs) and by partName (for imap:/mailbox: refs)
-  const cidMap = new Map();
-  const partMap = new Map();
-  for (const att of allAttachments) {
-    if (att.contentId) cidMap.set(stripAngleBrackets(att.contentId), att);
-    if (att.partName) partMap.set(att.partName, att);
-  }
-
-  // Match cid: references and Thunderbird internal URLs (imap://, mailbox://, etc.)
-  // getComposeDetails returns serialized HTML, so & in URLs is encoded as &amp;
-  const inlinePattern =
-    /(?:src|background)\s*=\s*["'](cid:[^"']+|(?:imap|mailbox|news|snews)[^"']*(?:[?&]|&amp;)part=[^"']+)["']/gi;
-  const refs = [];
-  let m;
-  while ((m = inlinePattern.exec(body)) !== null) refs.push(m[1]);
-  if (!refs.length) return false;
-
-  let newBody = body;
-  let replaced = false;
-  for (const ref of refs) {
-    let att;
-    if (ref.startsWith('cid:')) {
-      const cid = ref.slice(4);
-      att = cidMap.get(cid) || cidMap.get(stripAngleBrackets(cid));
-    } else {
-      const part = extractPartFromUrl(ref);
-      if (part) att = partMap.get(part);
-    }
-    if (!att) continue;
-    try {
-      const file = await messages.getAttachmentFile(messageId, att.partName);
-      if (!file) continue;
-      const ct = String(att.contentType || 'application/octet-stream').toLowerCase();
-      const dataUri = await blobToDataUri(file, ct);
-      newBody = newBody.split(ref).join(dataUri);
-      replaced = true;
-    } catch (err) {
-      try {
-        logger?.warn?.({ err, ref }, 'restoreInlineImages: failed to fetch inline image');
-      } catch (_) {}
-    }
-  }
-
-  if (!replaced) return false;
-  await compose.setDetails(tabId, { body: newBody });
-  return true;
 }
 
 function asSelection(a) {
@@ -683,4 +640,4 @@ function normalizeMessageId(value) {
 }
 
 globalThis.App = globalThis.App || {};
-App.UseCases = { createProcessReplyAttachments, createEnsureReplyAttachments };
+App.UseCases = { createProcessReplyAttachments, createEnsureReplyAttachments, COPY_LIMITS };

@@ -20,13 +20,13 @@ sidebar_label: 'Uporaba'
 
 Strogi vs. ohlapni prehod: Dodatek najprej izključi dele S/MIME in vdelane dele iz datotečnih prilog. Če se nič ne kvalificira, zažene ohlapni prehod, ki še vedno izključuje S/MIME/vdelane dele, a dopušča več primerov (glejte Podrobnosti kode). Vdelane slike se nikoli ne dodajo kot datotečne priloge; namesto tega, ko je omogočeno "Vključi vdelane slike" (privzeto), so neposredno vdelane v telo odgovora kot podatkovni URI-ji base64.
 
-| Vrsta dela                                                  |                      Strogi prehod |                     Ohlapni prehod |
-| ----------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| Datoteka podpisa S/MIME `smime.p7s`                         |                         Izključeno |                         Izključeno |
-| Vrste MIME S/MIME (`application/pkcs7-*`)                   |                         Izključeno |                         Izključeno |
+| Vrsta dela                                                  | Strogi prehod                      | Ohlapni prehod                     |
+|-------------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| Datoteka podpisa S/MIME `smime.p7s`                         | Izključeno                         | Izključeno                         |
+| Vrste MIME S/MIME (`application/pkcs7-*`)                   | Izključeno                         | Izključeno                         |
 | Vdelana slika, na katero se sklicuje Content‑ID (`image/*`) | Izključeno (obnovljeno v telesu\*) | Izključeno (obnovljeno v telesu\*) |
-| Priloženo e‑sporočilo (`message/rfc822`) z imenom datoteke  |                          Ni dodano |                      Lahko se doda |
-| Običajna datotečna priloga z imenom datoteke                |                      Lahko se doda |                      Lahko se doda |
+| Priloženo e‑sporočilo (`message/rfc822`) z imenom datoteke  | Ni dodano                          | Lahko se doda                      |
+| Običajna datotečna priloga z imenom datoteke                | Lahko se doda                      | Lahko se doda                      |
 
 \* Ko je "Vključi vdelane slike" omogočeno (privzeto: VKLJUČENO), so vdelane slike vdelane v telo odgovora kot podatkovni URI-ji base64, namesto da bi bile dodane kot datotečne priloge. Glejte [Konfiguracija](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Primer: Nekatere priloge morda nimajo določenih glave, a so vseeno običajne da
 ### Povzetek bližnjic na tipkovnici {#keyboard-cheat-sheet}
 
 | Tipke            | Dejanje                           |
-| ---------------- | --------------------------------- |
+|------------------|-----------------------------------|
 | Y / J            | Potrdi Da                         |
 | N / Esc          | Potrdi Ne                         |
 | Enter            | Aktiviraj izbrani gumb            |

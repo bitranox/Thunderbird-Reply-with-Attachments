@@ -32,16 +32,16 @@ Ko si àṣẹ (wẹẹbu) tí a beere nipasẹ ìfikún yìí. Ìfikún náà k
 
 ### Akopọ (iṣẹ́ àṣẹ → ìdí) {#permissions-summary}
 
-| Iṣẹ́ àṣẹ        | Kí nìdí tí ó yẹ                                                   |
-| -------------- | ----------------------------------------------------------------- |
+| Iṣẹ́ àṣẹ       | Kí nìdí tí ó yẹ                                                       |
+|----------------|-----------------------------------------------------------------------|
 | `compose`      | Ṣàkíyèsí ìṣẹ́lẹ̀ àkọ́kọ́; akojọ àti fi sítàkìkì tó wa nínú ìdáhùn rẹ. |
-| `messagesRead` | Akojọ àtẹ̀jáde ìṣẹ́ẹ̀là àkọ́kọ́ àti fa data faili.                     |
-| `scripting`    | Fi/ṣàkóso UI kékèké fún ìfaramọ́ nígbà tá a bá gba.                |
-| `windows`      | Àyè ìdáhùn tó kẹhin tí ìfaramọ́ bá kùn (díẹ̀).                      |
-| `sessions`     | Fipamọ́ àpẹẹrẹ kan fún gbogbo ×látí láti yago fún ìmúṣẹ àtún ṣe.   |
-| `storage`      | Pa àṣàyàn (àkọsílẹ̀ doudou, iyípadà ìfaramọ́, ìdáhùn aiyé).         |
+| `messagesRead` | Akojọ àtẹ̀jáde ìṣẹ́ẹ̀là àkọ́kọ́ àti fa data faili.                    |
+| `scripting`    | Fi/ṣàkóso UI kékèké fún ìfaramọ́ nígbà tá a bá gba.                   |
+| `windows`      | Àyè ìdáhùn tó kẹhin tí ìfaramọ́ bá kùn (díẹ̀).                        |
+| `sessions`     | Fipamọ́ àpẹẹrẹ kan fún gbogbo ×látí láti yago fún ìmúṣẹ àtún ṣe.      |
+| `storage`      | Pa àṣàyàn (àkọsílẹ̀ doudou, iyípadà ìfaramọ́, ìdáhùn aiyé).           |
 | `tabs`         | Ifiranṣẹ tí a fojú kọ́ sí àkọ́kọ́ fún ìbéèrè ìfaramọ́.                |
-| (àṣẹ wẹẹbu)    | Kò sí — ìfikún náà kò beere awọn orìṣà wẹẹbu.                     |
+| (àṣẹ wẹẹbu)    | Kò sí — ìfikún náà kò beere awọn orìṣà wẹẹbu.                         |
 
 ---
 

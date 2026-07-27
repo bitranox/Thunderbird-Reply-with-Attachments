@@ -61,7 +61,7 @@ Makefile standardizon rrjedhat e zakonshme të zhvillimit. Ekzekutoni `make help
 Këshillë: ekzekutimi i `make` pa një objektiv hap një menu të thjeshtë Whiptail për të zgjedhur një objektiv.
 
 | Objektivi                                                | Përshkrim me një rresht                                                                         |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Hiq artefaktet lokale të build/preview (tmp/, web-local-preview/, website/build/).              |
 | [`commit`](#mt-commit)                                   | Formato, ekzekuto testet (duke përfshirë i18n), përditëso changelog, bëj commit & push.         |
 | [`eslint`](#mt-eslint)                                   | Ekzekuto ESLint përmes flat config (`npm run -s lint:eslint`).                                  |

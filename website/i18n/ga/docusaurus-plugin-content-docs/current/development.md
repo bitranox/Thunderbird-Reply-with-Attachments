@@ -61,7 +61,7 @@ Comhchaighdeánaíonn an Makefile sreafaí forbartha coitianta. Rith `make help`
 Leid: má rithtear `make` gan sprioc, osclaítear roghchlár simplí Whiptail chun sprioc a roghnú.
 
 | Sprioc                                                   | Cur síos aonlíne                                                                                                    |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Bain déantáin tógála/réamhamhairc logánta (tmp/, web-local-preview/, website/build/).                               |
 | [`commit`](#mt-commit)                                   | Formáidigh, rith tástálacha (lena n‑áirítear i18n), nuashonraigh an changelog, déan tiomantas & brúigh.             |
 | [`eslint`](#mt-eslint)                                   | Rith ESLint trí chumraíocht chomhréidh (`npm run -s lint:eslint`).                                                  |

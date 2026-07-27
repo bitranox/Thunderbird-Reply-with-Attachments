@@ -20,13 +20,13 @@ sidebar_label: 'Kasutamine'
 
 Range vs. leebem läbikäik: Lisandmoodul välistab esmalt S/MIME ja sisemised osad failimanuste hulgast. Kui miski ei kvalifitseeru, tehakse leebem läbikäik, mis jätab endiselt S/MIME/sisemised osad välja, kuid talub rohkem juhte (vt Koodi üksikasjad). Sisepilte ei lisata kunagi failimanustena; selle asemel, kui "Include inline pictures" on lubatud (vaikimisi), põimitakse need otse vastuse kehasse base64 andme‑URI-dena.
 
-| Osa tüüp                                                    |                   Range läbikäik |                  Leebem läbikäik |
-| ----------------------------------------------------------- | -------------------------------: | -------------------------------: |
-| S/MIME allkirjafail `smime.p7s`                             |                       Välistatud |                       Välistatud |
-| S/MIME MIME‑tüübid (`application/pkcs7-*`)                  |                       Välistatud |                       Välistatud |
+| Osa tüüp                                                    | Range läbikäik                   | Leebem läbikäik                  |
+|-------------------------------------------------------------|---------------------------------:|---------------------------------:|
+| S/MIME allkirjafail `smime.p7s`                             | Välistatud                       | Välistatud                       |
+| S/MIME MIME‑tüübid (`application/pkcs7-*`)                  | Välistatud                       | Välistatud                       |
 | Sisemine pilt, millele viitab Content‑ID (`image/*`)        | Välistatud (taastatakse kehas\*) | Välistatud (taastatakse kehas\*) |
-| Manusena lisatud e‑kiri (`message/rfc822`) koos failinimega |                        Ei lisata |                  Võidakse lisada |
-| Tavaline failimanus koos failinimega                        |                  Võidakse lisada |                  Võidakse lisada |
+| Manusena lisatud e‑kiri (`message/rfc822`) koos failinimega | Ei lisata                        | Võidakse lisada                  |
+| Tavaline failimanus koos failinimega                        | Võidakse lisada                  | Võidakse lisada                  |
 
 \* Kui "Include inline pictures" on lubatud (vaikimisi: ON), põimitakse sisepildid vastuse kehasse base64 andme‑URI-dena, mitte ei lisata failimanustena. Vaata [Seadistus](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Näide: Mõnel manusel võivad teatud päised puududa, kuid need on siiski taval
 ### Klaviatuuri spikker {#keyboard-cheat-sheet}
 
 | Klahvid         | Tegevus                           |
-| --------------- | --------------------------------- |
+|-----------------|-----------------------------------|
 | Y / J           | Kinnita Jah                       |
 | N / Esc         | Kinnita Ei                        |
 | Enter           | Aktiveeri fookuses olev nupp      |

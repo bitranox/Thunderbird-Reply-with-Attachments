@@ -33,7 +33,7 @@ Ta so dokumentirana v izvoru in testirana v CI. Dodatek ne zbira telemetrije.
 ### Povzetek (dovoljenja → namen) {#permissions-summary}
 
 | Dovoljenje              | Zakaj je potrebno                                                                  |
-| ----------------------- | ---------------------------------------------------------------------------------- |
+|-------------------------|------------------------------------------------------------------------------------|
 | `compose`               | Opazovanje dogodkov sestavljanja; seznam in dodajanje priponk v vašo odgovor.      |
 | `messagesRead`          | Seznam priponk izvirnega sporočila in prenos datotek.                              |
 | `scripting`             | Vstavljanje/usklajevanje lahke uporabniške vmesnike za potrditev, ko je omogočeno. |

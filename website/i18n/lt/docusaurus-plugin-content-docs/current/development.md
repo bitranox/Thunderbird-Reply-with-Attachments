@@ -61,7 +61,7 @@ Makefile standartizuoja dažnas kūrimo eigas. Bet kada paleiskite `make help`, 
 Patarimas: paleidus `make` be tikslo, atsidarys paprastas Whiptail meniu tikslui pasirinkti.
 
 | Tikslas                                                  | Vienos eilutės aprašymas                                                                           |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Pašalinti lokalius kūrimo/peržiūros artefaktus (tmp/, web-local-preview/, website/build/).         |
 | [`commit`](#mt-commit)                                   | Suformatuoti, paleisti testus (įsk. i18n), atnaujinti changelogą, commit’inti ir push’inti.        |
 | [`eslint`](#mt-eslint)                                   | Paleisti ESLint per „flat config“ (`npm run -s lint:eslint`).                                      |

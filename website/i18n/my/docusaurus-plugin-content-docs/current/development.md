@@ -60,12 +60,12 @@ Makefile တွင် ပုံမှန် dev flows များကို စ�
 
 အကြံပြုချက်: `make` ကို target မဖော်ပြဘဲ run လုပ်ပါက တိုတောင်းသော Whiptail menu တစ်ခုကို ဖွင့်ပေးပြီး target ကို ရွေးချယ်နိုင်ပါသည်။
 
-| Target                                                   | တစ်ကြောင်း짜 ဖော်ပြချက်                                                                         |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Target                                                   | တစ်ကြောင်း짜 ဖော်ပြချက်                                                                          |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Local build/preview artifacts (tmp/, web-local-preview/, website/build/) များကို ဖယ်ရှားပါ။     |
 | [`commit`](#mt-commit)                                   | Format, စမ်းသပ်မှုများ (i18n ပါဝင်) ကို chạy, changelog အပ်ဒိတ်, commit & push လုပ်ပါ။          |
 | [`eslint`](#mt-eslint)                                   | ESLint ကို flat config (`npm run -s lint:eslint`) ဖြင့် run လုပ်ပါ။                             |
-| [`help`](#mt-help)                                       | အားလုံး target များကို တစ်ကြောင်း짜 docs ဖြင့် (အစဉ်လိုက်) စာရင်းပြပါ။                          |
+| [`help`](#mt-help)                                       | အားလုံး target များကို တစ်ကြောင်း짜 docs ဖြင့် (အစဉ်လိုက်) စာရင်းပြပါ။                           |
 | [`lint`](#mt-lint)                                       | `sources/` ပေါ်တွင် web‑ext lint (temp manifest; ZIPs မာထည့်မစစ်; non‑fatal)                    |
 | [`menu`](#mt-menu)                                       | Target နှင့် အပို arguments များကို ရွေးချယ်နိုင်သော အပြန်အလှန် menu။                           |
 | [`pack`](#mt-pack)                                       | ATN & LOCAL ZIPs များကို Build လုပ်ပါ (linter ကို chạy; packer script ကို ခေါ်)                 |

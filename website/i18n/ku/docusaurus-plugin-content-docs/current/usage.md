@@ -20,13 +20,13 @@ sidebar_label: 'Bikaranîn'
 
 Derbasbûna tund li hember derbasbûna hêrgirt: Add‑on pêşî beşên S/MIME û hundirî ji pêvekên pelê derxistin dike. Heke tiştî lihevhat tune be, derbasbûnek hêrgirt dihêze ku hîn jî S/MIME/hundirî derxistin dike lê mijarên zêdetir qedandî dibe (binêre Hûragahiyên kodê). Wêneyên hundirî tu carî wek pêvekên pelê nayên zêdekirin; li gorî vê yekê, dema "Include inline pictures" çalak be (standard), ew rasterast di laşê bersivê de wekî base64 data URIs tên hevkirin.
 
-| Cureyê beşê                                                      |                                    Derbasbûna tund |                                 Derbasbûna hêrgirt |
-| ---------------------------------------------------------------- | -------------------------------------------------: | -------------------------------------------------: |
-| Pelê îmzeya S/MIME `smime.p7s`                                   |                                     Hate derxistin |                                     Hate derxistin |
-| Cureyên MIME yên S/MIME (`application/pkcs7-*`)                  |                                     Hate derxistin |                                     Hate derxistin |
+| Cureyê beşê                                                      | Derbasbûna tund                                    | Derbasbûna hêrgirt                                 |
+|------------------------------------------------------------------|---------------------------------------------------:|---------------------------------------------------:|
+| Pelê îmzeya S/MIME `smime.p7s`                                   | Hate derxistin                                     | Hate derxistin                                     |
+| Cureyên MIME yên S/MIME (`application/pkcs7-*`)                  | Hate derxistin                                     | Hate derxistin                                     |
 | Wêneyê hundirî ya bi Content‑ID re tê referans kirin (`image/*`) | Hate derxistin (di laşê nivîsê de tê vegerandin\*) | Hate derxistin (di laşê nivîsê de tê vegerandin\*) |
-| E-nameya girêdayî (`message/rfc822`) bi navê pelê                |                                     Nayê zêdekirin |                              Dikarê were zêdekirin |
-| Pêveka pelê ya asayî bi navê pelê                                |                              Dikarê were zêdekirin |                              Dikarê were zêdekirin |
+| E-nameya girêdayî (`message/rfc822`) bi navê pelê                | Nayê zêdekirin                                     | Dikarê were zêdekirin                              |
+| Pêveka pelê ya asayî bi navê pelê                                | Dikarê were zêdekirin                              | Dikarê were zêdekirin                              |
 
 \* Dema "Include inline pictures" çalak be (standard: ON), wêneyên hundirî di laşê bersivê de wekî base64 data URIs tên hevkirin di nav nivîsê de, ne wek pêveka pelê. Binêre [Mîheng](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Mînak: Hin pêvek dikarin çend serepêşên winda bin lê hîn jî pelên asay
 ### Lîsteya kurteriyên klavyeyê {#keyboard-cheat-sheet}
 
 | Bişkok           | Çalakî                                   |
-| ---------------- | ---------------------------------------- |
+|------------------|------------------------------------------|
 | Y / J            | Pejirandin: Erê                          |
 | N / Esc          | Pejirandin: Na                           |
 | Enter            | Bişkokê ya fokusdar çalak bike           |

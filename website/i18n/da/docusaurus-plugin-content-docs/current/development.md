@@ -61,7 +61,7 @@ Makefile standardiserer almindelige udviklingsforløb. Kør `make help` når som
 Tip: at køre `make` uden mål åbner en simpel Whiptail‑menu til at vælge et mål.
 
 | Mål                                                      | Énlinjes beskrivelse                                                                       |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Fjern lokale build/preview‑artefakter (tmp/, web-local-preview/, website/build/).          |
 | [`commit`](#mt-commit)                                   | Formater, kør tests (inkl. i18n), opdater changelog, commit & push.                        |
 | [`eslint`](#mt-eslint)                                   | Kør ESLint via flat config (`npm run -s lint:eslint`).                                     |

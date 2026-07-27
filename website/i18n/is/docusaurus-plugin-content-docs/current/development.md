@@ -61,7 +61,7 @@ Makefile staðlar algengar þróunarvinnslur. Keyrðu `make help` hvenær sem er
 Ábending: að keyra `make` án marks opnar einfalt Whiptail‑valmynd til að velja markmið.
 
 | Markmið                                                  | Eins línu lýsing                                                                                  |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Fjarlægja staðbundnar smíða-/forskoðunarafurðir (tmp/, web-local-preview/, website/build/).       |
 | [`commit`](#mt-commit)                                   | Forsníða, keyra próf (þ.m.t. i18n), uppfæra changelog, gera commit og push.                       |
 | [`eslint`](#mt-eslint)                                   | Keyra ESLint með flatri stillingu (`npm run -s lint:eslint`).                                     |

@@ -61,7 +61,7 @@ Makefile yaygın geliştirme akışlarını standartlaştırır. Her hedefin tek
 İpucu: `make` komutunu bir hedef belirtmeden çalıştırmak, hedef seçmek için basit bir Whiptail menüsü açar.
 
 | Hedef                                                    | Tek satırlık açıklama                                                                           |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Yerel derleme/önizleme artifaktlarını kaldır (tmp/, web-local-preview/, website/build/).        |
 | [`commit`](#mt-commit)                                   | Biçimlendir, testleri çalıştır (i18n dâhil), değişiklik günlüğünü güncelle, commit ve push yap. |
 | [`eslint`](#mt-eslint)                                   | Düz (flat) yapılandırma ile ESLint çalıştır (`npm run -s lint:eslint`).                         |

@@ -20,13 +20,13 @@ sidebar_label: 'Uso'
 
 Passaggio rigoroso vs. rilassato: Il componente aggiuntivo esclude innanzitutto le parti S/MIME e inline dagli allegati file. Se nulla rientra nei criteri, esegue un passaggio rilassato che continua a escludere S/MIME/inline ma tollera più casi (vedi Dettagli del codice). Le immagini inline non vengono mai aggiunte come allegati file; invece, quando "Includi immagini inline" è abilitato (l'impostazione predefinita), vengono incorporate direttamente nel corpo della risposta come URI di dati base64.
 
-| Tipo di parte                                          |                 Passaggio rigoroso |                Passaggio rilassato |
-| ------------------------------------------------------ | ---------------------------------: | ---------------------------------: |
-| File di firma S/MIME `smime.p7s`                       |                            Escluso |                            Escluso |
-| Tipi MIME S/MIME (`application/pkcs7-*`)               |                            Escluso |                            Escluso |
+| Tipo di parte                                          | Passaggio rigoroso                 | Passaggio rilassato                |
+|--------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| File di firma S/MIME `smime.p7s`                       | Escluso                            | Escluso                            |
+| Tipi MIME S/MIME (`application/pkcs7-*`)               | Escluso                            | Escluso                            |
 | Immagine inline referenziata da Content‑ID (`image/*`) | Escluso (ripristinato nel corpo\*) | Escluso (ripristinato nel corpo\*) |
-| Email allegata (`message/rfc822`) con un nome file     |                       Non aggiunto |                Può essere aggiunto |
-| Allegato file normale con un nome file                 |                Può essere aggiunto |                Può essere aggiunto |
+| Email allegata (`message/rfc822`) con un nome file     | Non aggiunto                       | Può essere aggiunto                |
+| Allegato file normale con un nome file                 | Può essere aggiunto                | Può essere aggiunto                |
 
 \* Quando "Includi immagini inline" è abilitato (predefinito: ON), le immagini inline vengono incorporate nel corpo della risposta come URI di dati base64 invece di essere aggiunte come allegati file. Vedi [Configurazione](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Esempio: Alcuni allegati potrebbero non avere determinate intestazioni ma essere
 ### Guida rapida tastiera {#keyboard-cheat-sheet}
 
 | Tasti                | Azione                              |
-| -------------------- | ----------------------------------- |
+|----------------------|-------------------------------------|
 | Y / J                | Conferma Sì                         |
 | N / Esc              | Conferma No                         |
 | Enter                | Attiva il pulsante a fuoco          |

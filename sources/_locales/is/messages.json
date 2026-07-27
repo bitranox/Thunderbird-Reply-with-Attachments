@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Vara við ef viðhengi eru útilokuð af svartlista"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Hafa innfelldar myndir með (innfelldar myndir)"
-  },
   "uiDebugHeader": {
     "message": "Ítarlegt"
   },

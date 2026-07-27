@@ -61,7 +61,7 @@ Le Makefile standardise les flux de dev courants. Exécutez `make help` à tout 
 Astuce : exécuter `make` sans cible ouvre un simple menu Whiptail pour choisir une cible.
 
 | Cible                                                    | Description en une ligne                                                                                                          |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Supprime les artefacts de build/aperçu locaux (tmp/, web-local-preview/, website/build/).                                         |
 | [`commit`](#mt-commit)                                   | Formate, exécute les tests (y c. i18n), met à jour le changelog, commit et push.                                                  |
 | [`eslint`](#mt-eslint)                                   | Exécute ESLint via configuration plate (`npm run -s lint:eslint`).                                                                |

@@ -33,7 +33,7 @@ A na-edebe nke a na isi iyi ma bụrụ nke a nwara na CI. Mgbakwunye ahụ anag
 ### Nchịkọta (ikikwe → ebumnuche) {#permissions-summary}
 
 | Ikikwe              | Ihe kpatara ya ji mkpa                                           |
-| ------------------- | ---------------------------------------------------------------- |
+|---------------------|------------------------------------------------------------------|
 | `compose`           | Nyochaa ihe omume idekọ; depụta na tinye nkwado na nzaghachi gị. |
 | `messagesRead`      | Depụta nkwado ozi mbụ ma nweta data faịlụ.                       |
 | `scripting`         | Tinye/duzie UI dị mfe maka nkwenye mgbe emechara.                |

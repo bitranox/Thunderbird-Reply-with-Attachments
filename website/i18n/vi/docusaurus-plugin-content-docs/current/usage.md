@@ -20,13 +20,13 @@ sidebar_label: 'Cách sử dụng'
 
 Lượt kiểm tra nghiêm ngặt so với linh hoạt: Tiện ích trước tiên loại trừ các phần S/MIME và nội tuyến khỏi tệp đính kèm. Nếu không có gì đủ điều kiện, nó chạy một lượt linh hoạt vẫn loại trừ S/MIME/nội tuyến nhưng chấp nhận nhiều trường hợp hơn (xem Chi tiết mã). Ảnh nội tuyến không bao giờ được thêm như tệp đính kèm; thay vào đó, khi "Include inline pictures" được bật (mặc định), chúng được nhúng trực tiếp vào nội dung thư trả lời dưới dạng URI dữ liệu base64.
 
-| Loại phần                                                |            Lượt kiểm tra nghiêm ngặt |              Lượt kiểm tra linh hoạt |
-| -------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| Tệp chữ ký S/MIME `smime.p7s`                            |                              Bị loại |                              Bị loại |
-| Kiểu MIME S/MIME (`application/pkcs7-*`)                 |                              Bị loại |                              Bị loại |
+| Loại phần                                                | Lượt kiểm tra nghiêm ngặt            | Lượt kiểm tra linh hoạt              |
+|----------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| Tệp chữ ký S/MIME `smime.p7s`                            | Bị loại                              | Bị loại                              |
+| Kiểu MIME S/MIME (`application/pkcs7-*`)                 | Bị loại                              | Bị loại                              |
 | Ảnh nội tuyến được tham chiếu bởi Content‑ID (`image/*`) | Bị loại (khôi phục trong nội dung\*) | Bị loại (khôi phục trong nội dung\*) |
-| Email đính kèm (`message/rfc822`) có tên tệp             |                           Không thêm |                     Có thể được thêm |
-| Tệp đính kèm thông thường có tên tệp                     |                     Có thể được thêm |                     Có thể được thêm |
+| Email đính kèm (`message/rfc822`) có tên tệp             | Không thêm                           | Có thể được thêm                     |
+| Tệp đính kèm thông thường có tên tệp                     | Có thể được thêm                     | Có thể được thêm                     |
 
 \* Khi "Include inline pictures" được bật (mặc định: BẬT), ảnh nội tuyến được nhúng trực tiếp vào nội dung thư trả lời dưới dạng URI dữ liệu base64 thay vì được thêm làm tệp đính kèm. Xem [Cấu hình](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Ví dụ: Một số tệp đính kèm có thể thiếu một số header nhưn
 ### Phím tắt nhanh {#keyboard-cheat-sheet}
 
 | Phím            | Hành động                                 |
-| --------------- | ----------------------------------------- |
+|-----------------|-------------------------------------------|
 | Y / J           | Xác nhận Đồng ý                           |
 | N / Esc         | Xác nhận Không                            |
 | Enter           | Kích hoạt nút đang có tiêu điểm           |

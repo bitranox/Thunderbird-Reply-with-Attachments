@@ -20,13 +20,13 @@ sidebar_label: 'Amfani'
 
 Wucewa mai tsauri vs. mai sassauci: Ƙarin manhaja na farko yana ware sassan S/MIME da inline daga abubuwan haɗe na fayil. Idan babu abin da ya cancanta, sai ya gudanar da wucewa mai sassauci wanda har yanzu ke ware S/MIME/inline amma yana lamunta ƙarin yanayi (duba Cikakken Lambar). Ba a taɓa ƙara hotunan inline a matsayin abubuwan haɗe na fayil ba; maimakon haka, idan "Include inline pictures" an kunna (tsoho), ana lulluɓe su kai tsaye cikin jikin amsa a matsayin base64 data URI.
 
-| Nau'in ɓangare                                           |                  Wucewa mai tsauri |                Wucewa mai sassauci |
-| -------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| Fayil ɗin sa hannun S/MIME `smime.p7s`                   |                            An ware |                            An ware |
-| Nau'ikan MIME na S/MIME (`application/pkcs7-*`)          |                            An ware |                            An ware |
+| Nau'in ɓangare                                           | Wucewa mai tsauri                  | Wucewa mai sassauci                |
+|----------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| Fayil ɗin sa hannun S/MIME `smime.p7s`                   | An ware                            | An ware                            |
+| Nau'ikan MIME na S/MIME (`application/pkcs7-*`)          | An ware                            | An ware                            |
 | Hoton inline da Content‑ID ya yi nuni da shi (`image/*`) | An ware (an mayar da shi a jiki\*) | An ware (an mayar da shi a jiki\*) |
-| Saƙon imel da aka haɗa (`message/rfc822`) mai suna fayil |                       Ba a ƙara ba |                   Ana iya ƙara shi |
-| Abin haɗe na fayil na yau da kullum mai suna fayil       |                   Ana iya ƙara shi |                   Ana iya ƙara shi |
+| Saƙon imel da aka haɗa (`message/rfc822`) mai suna fayil | Ba a ƙara ba                       | Ana iya ƙara shi                   |
+| Abin haɗe na fayil na yau da kullum mai suna fayil       | Ana iya ƙara shi                   | Ana iya ƙara shi                   |
 
 \* Idan "Include inline pictures" an kunna (tsoho: ON), ana lulluɓe hotunan inline a jikin amsa a matsayin base64 data URI maimakon a ƙara su a matsayin abubuwan haɗe na fayil. Duba [Saituna](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Misali: Wasu abubuwan haɗe na iya rasa wasu kanun bayanai amma har yanzu fayilo
 ### Takardar Taƙaitaccen Makullan {#keyboard-cheat-sheet}
 
 | Makullan        | Aiki                               |
-| --------------- | ---------------------------------- |
+|-----------------|------------------------------------|
 | Y / J           | Tabbatar da Eh                     |
 | N / Esc         | Tabbatar da A'a                    |
 | Enter           | Kunna maballin da ya sami hankali  |

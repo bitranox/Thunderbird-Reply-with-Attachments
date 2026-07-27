@@ -20,13 +20,13 @@ sidebar_label: 'Apnaqay'
 
 Chiqaq ch'aqwa pasi vs. qasiyapaq pasi: Add‑on nisqaqa ñawpaqta S/MIME hinallataq inline parteskunata archivo qipaskunamanta qharqun. Mana imapas allin kaptin, huk qasiyapaq pasitam rurapun, chaypas S/MIME/inline nisqakunata qharquspa, ichaqa aswan aswan kaykunata allinchaspa (qhawariy Code Details). Inline imágenkunata manan chaytam archivo qipaskunamanta yapasqachu; hinapuniqa, “Include inline pictures” nisqa aktivasqa kaptin (default), chaykunata chaylla kutichiy ukhunpi base64 data URI‑kuna hinallataq incrustachkan.
 
-| Part tipo                                              |                       Chiqaq pasi |                    Qasiyapaq pasi |
-| ------------------------------------------------------ | --------------------------------: | --------------------------------: |
-| S/MIME firma archivo `smime.p7s`                       |                        Qharqusqam |                        Qharqusqam |
-| S/MIME MIME tipos (`application/pkcs7-*`)              |                        Qharqusqam |                        Qharqusqam |
+| Part tipo                                              | Chiqaq pasi                       | Qasiyapaq pasi                    |
+|--------------------------------------------------------|----------------------------------:|----------------------------------:|
+| S/MIME firma archivo `smime.p7s`                       | Qharqusqam                        | Qharqusqam                        |
+| S/MIME MIME tipos (`application/pkcs7-*`)              | Qharqusqam                        | Qharqusqam                        |
 | Content‑ID‑wan willakuchisqa inline imágen (`image/*`) | Qharqusqam (ukhunpi kutichisqa\*) | Qharqusqam (ukhunpi kutichisqa\*) |
-| Qipaq e‑mail (`message/rfc822`) sutiyuq                |                      Mana yapasqa |                  Yapaypuni kanman |
-| Rurasqa archivo qipaq sutiyuq                          |                  Yapaypuni kanman |                  Yapaypuni kanman |
+| Qipaq e‑mail (`message/rfc822`) sutiyuq                | Mana yapasqa                      | Yapaypuni kanman                  |
+| Rurasqa archivo qipaq sutiyuq                          | Yapaypuni kanman                  | Yapaypuni kanman                  |
 
 \* “Include inline pictures” aktivasqa kaptin (default: ON), inline imágenkunataqa kutichiy ukhunpi base64 data URI‑kuna hina chaylla churakun, manan archivo qipaskunata yapasqachu. Qhawariy [Configuration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Rikuchikuq: Ima qipaskunapas sutinchay ñawpaq willakuykuna mana tiyanmanchu, ic
 ### Tecladopaq qillqa qhilla {#keyboard-cheat-sheet}
 
 | Llavekuna        | Ruway                                    |
-| ---------------- | ---------------------------------------- |
+|------------------|------------------------------------------|
 | Y / J            | Arí‑ta chaskiy                           |
 | N / Esc          | Mana‑ta chaskiy                          |
 | Enter            | Chaskisqa botón llamk'achiy              |

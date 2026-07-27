@@ -34,7 +34,9 @@
         try {
           if (fn === console.debug && !enabled) return;
           fn('[RWA]', ...args);
-        } catch (_) {}
+        } catch (_) {
+          // a logger must never break the caller
+        }
       };
     return {
       debug: wrap(console.debug.bind(console)),

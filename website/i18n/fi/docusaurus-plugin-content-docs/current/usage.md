@@ -20,13 +20,13 @@ sidebar_label: 'Käyttö'
 
 Tiukka vs. sallivampi läpikäynti: Lisäosa sulkee ensin S/MIME‑ ja upotetut osat pois tiedostoliitteistä. Jos mikään ei täytä ehtoja, se suorittaa sallivamman läpikäynnin, joka yhä sulkee pois S/MIME/inline‑osat mutta sietää useampia tapauksia (katso Koodin yksityiskohdat). Upotettuja kuvia ei koskaan lisätä tiedostoliitteiksi; sen sijaan, kun "Include inline pictures" on käytössä (oletus), ne upotetaan suoraan vastauksen runkoon base64‑data‑URI:na.
 
-| Osatyyppi                                                     |                    Tiukka läpikäynti |                Sallivampi läpikäynti |
-| ------------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| S/MIME‑allekirjoitustiedosto `smime.p7s`                      |                         Poissuljettu |                         Poissuljettu |
-| S/MIME MIME‑tyypit (`application/pkcs7-*`)                    |                         Poissuljettu |                         Poissuljettu |
+| Osatyyppi                                                     | Tiukka läpikäynti                    | Sallivampi läpikäynti                |
+|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| S/MIME‑allekirjoitustiedosto `smime.p7s`                      | Poissuljettu                         | Poissuljettu                         |
+| S/MIME MIME‑tyypit (`application/pkcs7-*`)                    | Poissuljettu                         | Poissuljettu                         |
 | Sisäinen kuva, johon viitataan Content‑ID:llä (`image/*`)     | Poissuljettu (palautetaan runkoon\*) | Poissuljettu (palautetaan runkoon\*) |
-| Liitteenä oleva sähköposti (`message/rfc822`) tiedostonimellä |                            Ei lisätä |                     Saatetaan lisätä |
-| Tavallinen tiedostoliite, jolla on tiedostonimi               |                     Saatetaan lisätä |                     Saatetaan lisätä |
+| Liitteenä oleva sähköposti (`message/rfc822`) tiedostonimellä | Ei lisätä                            | Saatetaan lisätä                     |
+| Tavallinen tiedostoliite, jolla on tiedostonimi               | Saatetaan lisätä                     | Saatetaan lisätä                     |
 
 \* Kun "Include inline pictures" on käytössä (oletus: PÄÄLLÄ), upotetut kuvat upotetaan vastauksen runkoon base64‑data‑URI:na sen sijaan, että ne lisättäisiin tiedostoliitteiksi. Katso [Määritykset](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Esimerkki: Joiltakin liitteiltä voi puuttua tiettyjä otsakkeita, mutta ne ovat
 ### Pikanäppäinmuistilista {#keyboard-cheat-sheet}
 
 | Näppäimet       | Toiminto                                         |
-| --------------- | ------------------------------------------------ |
+|-----------------|--------------------------------------------------|
 | Y / J           | Vahvista Kyllä                                   |
 | N / Esc         | Vahvista Ei                                      |
 | Enter           | Aktivoi kohdistettu painike                      |

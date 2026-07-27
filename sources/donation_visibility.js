@@ -1,7 +1,7 @@
 /*
  * Module: donation_visibility.js
  * Purpose: Provide a simple one‑click "I donated" action that hides the Donate
- *          button for 90 days. Applies to options.html and popup.html.
+ *          button for 90 days. Applies to the options page.
  * Behavior:
  *  - Stores a timestamp `donateHideUntil` in storage.local.
  *  - On page load, hides the Donate link when now < donateHideUntil.
@@ -20,7 +20,9 @@
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key) || '';
       if (globalThis.messenger?.i18n?.getMessage) return messenger.i18n.getMessage(key) || '';
-    } catch (_) {}
+    } catch (_) {
+      // i18n lookups fall through to the literal default below
+    }
     return '';
   }
 
@@ -34,7 +36,9 @@
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key, subs) || '';
       if (globalThis.messenger?.i18n?.getMessage) return messenger.i18n.getMessage(key, subs) || '';
-    } catch (_) {}
+    } catch (_) {
+      // i18n lookups fall through to the literal default below
+    }
     return '';
   }
 
@@ -58,7 +62,9 @@
     const until = Date.now() + DAYS_90_MS;
     try {
       await browser.storage?.local?.set?.({ [KEY_HIDE_UNTIL]: until });
-    } catch (_) {}
+    } catch (e) {
+      console.warn('[RWA] could not persist the donation snooze', e);
+    }
     return until;
   }
 
@@ -66,7 +72,9 @@
   async function clearSnooze() {
     try {
       await browser.storage?.local?.set?.({ [KEY_HIDE_UNTIL]: 0 });
-    } catch (_) {}
+    } catch (e) {
+      console.warn('[RWA] could not persist the donation snooze', e);
+    }
   }
 
   /** Apply current visibility rules to Donate UI in this document. */
@@ -110,10 +118,14 @@
         setTimeout(() => {
           try {
             el.textContent = '';
-          } catch (_) {}
+          } catch (_) {
+            // clearing a status label that the page already removed is a no-op
+          }
         }, 1500);
       }
-    } catch (_) {}
+    } catch (_) {
+      // clearing a status label that the page already removed is a no-op
+    }
     return until;
   }
 
@@ -130,10 +142,14 @@
         setTimeout(() => {
           try {
             el.textContent = '';
-          } catch (_) {}
+          } catch (_) {
+            // clearing a status label that the page already removed is a no-op
+          }
         }, 1500);
       }
-    } catch (_) {}
+    } catch (_) {
+      // clearing a status label that the page already removed is a no-op
+    }
   }
 
   /** Format a Date as YYYY-MM-DD in local time. */

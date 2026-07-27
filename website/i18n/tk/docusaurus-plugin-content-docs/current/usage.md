@@ -20,13 +20,13 @@ sidebar_label: 'Ulanyş'
 
 Berk we ýumşadylan geçiriliş: Goşundy ilki bilen faýl goşundylaryndan S/MIME hem-de içerki (inline) bölekleri çykarmaga synanyşýar. Hiç zat laýyk gelmese, ýene-de S/MIME/inline böleklerini çykaryp, ýöne has köp ýagdaýy kabul edýän ýumşadylan geçirilişi işletýär (Kodyň Jikme-jikligi bölümine serediň). Içerki suratlar hiç haçan faýl goşundylary hökmünde goşulmaýar; muňa derek, "Include inline pictures" açyk bolsa (bellenşi ýaly), olar jogabyň göwründe gönüden-göni base64 data URI hökmünde gömülýär.
 
-| Böleg görnüşi                                          |                    Berk geçiriliş |              Ýumşadylan geçiriliş |
-| ------------------------------------------------------ | --------------------------------: | --------------------------------: |
-| S/MIME gol faýly `smime.p7s`                           |                          Aýrylýar |                          Aýrylýar |
-| S/MIME MIME görnüşleri (`application/pkcs7-*`)         |                          Aýrylýar |                          Aýrylýar |
+| Böleg görnüşi                                          | Berk geçiriliş                    | Ýumşadylan geçiriliş              |
+|--------------------------------------------------------|----------------------------------:|----------------------------------:|
+| S/MIME gol faýly `smime.p7s`                           | Aýrylýar                          | Aýrylýar                          |
+| S/MIME MIME görnüşleri (`application/pkcs7-*`)         | Aýrylýar                          | Aýrylýar                          |
 | Content‑ID arkaly salgylanan içerki surat (`image/*`)  | Aýrylýar (göwründe dikeldilýär\*) | Aýrylýar (göwründe dikeldilýär\*) |
-| Faýl ady bolan birikdirilen e-poçta (`message/rfc822`) |                        Goşulmaýar |                    Goşulyp bilner |
-| Faýl ady bolan adaty faýl goşundysy                    |                    Goşulyp bilner |                    Goşulyp bilner |
+| Faýl ady bolan birikdirilen e-poçta (`message/rfc822`) | Goşulmaýar                        | Goşulyp bilner                    |
+| Faýl ady bolan adaty faýl goşundysy                    | Goşulyp bilner                    | Goşulyp bilner                    |
 
 \* "Include inline pictures" açyk ýagdaýda (default: ON), içerki suratlar faýl goşundylary hökmünde goşulmagyň ýerine jogabyň göwründe base64 data URI görnüşinde gömülýär. [Sazlama](configuration#include-inline-pictures) bölümine serediň.
 
@@ -66,7 +66,7 @@ Mysal: Käbir goşundylaryň käbir başlyklar (headers) bolman biler, ýöne ş
 ### Klawiatura boýunça gysga nusga {#keyboard-cheat-sheet}
 
 | Düwmeler        | Hereket                                |
-| --------------- | -------------------------------------- |
+|-----------------|----------------------------------------|
 | Y / J           | Hawany tassykla                        |
 | N / Esc         | Ýogy tassykla                          |
 | Enter           | Bellenen düwmäni işjeňleşdir           |

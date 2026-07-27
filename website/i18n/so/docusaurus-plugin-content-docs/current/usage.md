@@ -20,13 +20,13 @@ sidebar_label: 'Isticmaalka'
 
 Wareeg adag vs. wareeg dabacsan: Kordhintu marka hore waxay ka reebtaa fayl‑lifaaqyada qaybaha S/MIME iyo kuwa inline. Haddii waxba u qalmin, waxay ordaa wareeg dabacsan oo weli ka reeba S/MIME/inline balse u dulqaata xaalado dheeraad ah (eeg Faahfaahinta Koodhka). Sawirrada inline waligood looma daro sidii fayl‑lifaaqyo; taa beddelkeeda, marka "Ku dar sawirrada inline" la daaray (caadiga), waxaa si toos ah loogu xidhaa jidhka jawaabta iyagoo ah base64 data URI‑yo.
 
-| Nooca qaybta                                           |                                 Wareeg adag |                             Wareeg dabacsan |
-| ------------------------------------------------------ | ------------------------------------------: | ------------------------------------------: |
-| Fayl saxeex S/MIME `smime.p7s`                         |                                 Laga reebay |                                 Laga reebay |
-| Noocyada MIME ee S/MIME (`application/pkcs7-*`)        |                                 Laga reebay |                                 Laga reebay |
+| Nooca qaybta                                           | Wareeg adag                                 | Wareeg dabacsan                             |
+|--------------------------------------------------------|--------------------------------------------:|--------------------------------------------:|
+| Fayl saxeex S/MIME `smime.p7s`                         | Laga reebay                                 | Laga reebay                                 |
+| Noocyada MIME ee S/MIME (`application/pkcs7-*`)        | Laga reebay                                 | Laga reebay                                 |
 | Sawir inline oo lagu tixraacay Content‑ID (`image/*`)  | Laga reebay (dib loogu soo celiyo jidhka\*) | Laga reebay (dib loogu soo celiyo jidhka\*) |
-| Email la lifaaqay (`message/rfc822`) oo leh magac fayl |                                   Lama daro |                Waxaa laga yaabaa in la daro |
-| Lifaaq fayl caadi ah oo leh magac                      |                Waxaa laga yaabaa in la daro |                Waxaa laga yaabaa in la daro |
+| Email la lifaaqay (`message/rfc822`) oo leh magac fayl | Lama daro                                   | Waxaa laga yaabaa in la daro                |
+| Lifaaq fayl caadi ah oo leh magac                      | Waxaa laga yaabaa in la daro                | Waxaa laga yaabaa in la daro                |
 
 \* Marka "Ku dar sawirrada inline" la daaray (default: ON), sawirrada inline waxaa lagu dhex beeraa jidhka jawaabta iyagoo ah base64 data URI‑yo halkii lagu dari lahaa fayl‑lifaaqyo ahaan. Eeg [Habayn](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Tusaale: Lifaaqyo qaarkood waxaa ka maqan qaar ka mid ah cinwaanada (headers) ha
 ### Xaashida kooban ee furayaasha {#keyboard-cheat-sheet}
 
 | Furayaasha            | Fal                                         |
-| --------------------- | ------------------------------------------- |
+|-----------------------|---------------------------------------------|
 | Y / J                 | Xaqiiji Haa                                 |
 | N / Esc               | Xaqiiji Maya                                |
 | Enter                 | Dhaqaaji badhanka diiradda saaranyahay      |

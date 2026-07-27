@@ -20,13 +20,13 @@ sidebar_label: 'Paggamit'
 
 Mahigpit vs. maluwag na pass: Unang inaalis ng add‑on ang mga bahagi ng S/MIME at inline mula sa mga file attachment. Kung walang pumasa, nagpapatakbo ito ng isang maluwag na pass na patuloy na nag-eexclude ng S/MIME/inline ngunit mas maraming kaso ang tinatanggap (tingnan ang Code Details). Ang mga inline na larawan ay hindi kailanman idinadagdag bilang mga file attachment; sa halip, kapag naka-enable ang "Include inline pictures" (ang default), direktang ini-embed ang mga ito sa katawan ng reply bilang mga base64 data URI.
 
-| Uri ng bahagi                                            |                        Mahigpit na pass |                         Maluwag na pass |
-| -------------------------------------------------------- | --------------------------------------: | --------------------------------------: |
-| File ng lagdang S/MIME `smime.p7s`                       |                           Hindi isinama |                           Hindi isinama |
-| Mga uri ng MIME ng S/MIME (`application/pkcs7-*`)        |                           Hindi isinama |                           Hindi isinama |
+| Uri ng bahagi                                            | Mahigpit na pass                        | Maluwag na pass                         |
+|----------------------------------------------------------|----------------------------------------:|----------------------------------------:|
+| File ng lagdang S/MIME `smime.p7s`                       | Hindi isinama                           | Hindi isinama                           |
+| Mga uri ng MIME ng S/MIME (`application/pkcs7-*`)        | Hindi isinama                           | Hindi isinama                           |
 | Inline na larawan na tinutukoy ng Content‑ID (`image/*`) | Hindi isinama (ibinabalik sa katawan\*) | Hindi isinama (ibinabalik sa katawan\*) |
-| Nakakabit na email (`message/rfc822`) na may filename    |                         Hindi idinagdag |                        Maaaring idagdag |
-| Karaniwang file attachment na may filename               |                        Maaaring idagdag |                        Maaaring idagdag |
+| Nakakabit na email (`message/rfc822`) na may filename    | Hindi idinagdag                         | Maaaring idagdag                        |
+| Karaniwang file attachment na may filename               | Maaaring idagdag                        | Maaaring idagdag                        |
 
 \* Kapag naka-enable ang "Include inline pictures" (default: ON), ang mga inline na larawan ay ini-embed sa katawan ng reply bilang mga base64 data URI sa halip na idagdag bilang mga file attachment. Tingnan ang [Configuration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Halimbawa: Maaaring kulang ang ilang attachment sa ilang header ngunit regular n
 ### Talaan ng mga Shortcut sa Keyboard {#keyboard-cheat-sheet}
 
 | Mga key         | Aksyon                                    |
-| --------------- | ----------------------------------------- |
+|-----------------|-------------------------------------------|
 | Y / J           | Kumpirmahin ang Yes                       |
 | N / Esc         | Kumpirmahin ang No                        |
 | Enter           | I-activate ang naka-focus na button       |

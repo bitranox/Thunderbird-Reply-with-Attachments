@@ -20,13 +20,13 @@ sidebar_label: 'Användning'
 
 Strikt vs. avslappnad genomgång: Tillägget utesluter först S/MIME‑ och inline‑delar från filbilagor. Om inget kvalificerar körs en mer tillåtande genomgång som fortfarande utesluter S/MIME/inline men tolererar fler fall (se Koddetaljer). Inline‑bilder läggs aldrig till som filbilagor; i stället, när "Include inline pictures" är aktiverat (standard), bäddas de in direkt i svarstexten som base64‑data‑URI:er.
 
-| Deltyp                                                      |                       Strikt genomgång |                   Avslappnad genomgång |
-| ----------------------------------------------------------- | -------------------------------------: | -------------------------------------: |
-| S/MIME‑signaturfil `smime.p7s`                              |                              Utesluten |                              Utesluten |
-| S/MIME‑MIME‑typer (`application/pkcs7-*`)                   |                              Utesluten |                              Utesluten |
+| Deltyp                                                      | Strikt genomgång                       | Avslappnad genomgång                   |
+|-------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
+| S/MIME‑signaturfil `smime.p7s`                              | Utesluten                              | Utesluten                              |
+| S/MIME‑MIME‑typer (`application/pkcs7-*`)                   | Utesluten                              | Utesluten                              |
 | Inline‑bild refererad via Content‑ID (`image/*`)            | Utesluten (återställs i svarstexten\*) | Utesluten (återställs i svarstexten\*) |
-| Bifogat e‑postmeddelande (`message/rfc822`) med ett filnamn |                        Läggs inte till |                        Kan läggas till |
-| Vanlig filbilaga med ett filnamn                            |                        Kan läggas till |                        Kan läggas till |
+| Bifogat e‑postmeddelande (`message/rfc822`) med ett filnamn | Läggs inte till                        | Kan läggas till                        |
+| Vanlig filbilaga med ett filnamn                            | Kan läggas till                        | Kan läggas till                        |
 
 \* När "Include inline pictures" är aktiverat (standard: PÅ) bäddas inline‑bilder in i svarstexten som base64‑data‑URI:er i stället för att läggas till som filbilagor. Se [Konfiguration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Exempel: Vissa bilagor kan sakna vissa headers men är ändå vanliga filer (int
 ### Fusklapp för tangentbordet {#keyboard-cheat-sheet}
 
 | Tangenter       | Åtgärd                               |
-| --------------- | ------------------------------------ |
+|-----------------|--------------------------------------|
 | Y / J           | Bekräfta Ja                          |
 | N / Esc         | Bekräfta Nej                         |
 | Enter           | Aktivera fokuserad knapp             |

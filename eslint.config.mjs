@@ -62,7 +62,9 @@ export default [
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-      'no-empty': ['error', { allowEmptyCatch: true }],
+      // A swallowed error must say why it is safe to swallow: either log it, or
+      // leave a comment in the catch block (which satisfies no-empty).
+      'no-empty': ['error', { allowEmptyCatch: false }],
       'no-useless-escape': 'off',
     },
   },

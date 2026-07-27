@@ -4,4 +4,21 @@ website/build/
 website/.docusaurus/
 .gh-pages/
 .idea/
+.remember/
 *.zip
+
+# Markdown tables are owned by the docs-md-table-formatting skill
+# (reformat_tables.py), which writes `|---|` with the dashes touching the pipes.
+# Prettier writes `| --- |` and the two rewrite each other forever, so every file
+# that carries a table is Prettier's business no longer. Realign them with:
+#   python3 <skill>/reformat_tables.py <file>...
+# If a new doc gains a table, add it here too.
+README.md
+CLAUDE.md
+tests/e2e/README.md
+website/docs/development.md
+website/docs/permissions.md
+website/docs/usage.md
+website/i18n/*/docusaurus-plugin-content-docs/current/development.md
+website/i18n/*/docusaurus-plugin-content-docs/current/permissions.md
+website/i18n/*/docusaurus-plugin-content-docs/current/usage.md

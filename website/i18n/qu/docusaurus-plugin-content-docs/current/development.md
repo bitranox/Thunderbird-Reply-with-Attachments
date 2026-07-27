@@ -61,7 +61,7 @@ Makefileqa común ruwakuy qatillaykuna standar churan. `make help` nisqata waqta
 Tip: `make` targetmana rurayqa, aslla Whiptail menuta kichan target akllanankupaq.
 
 | Target                                                   | Huk‑lineapi amaqonawan                                                                         |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Lokal build/preview ruwayninakunata qichuy (tmp/, web-local-preview/, website/build/).         |
 | [`commit`](#mt-commit)                                   | Formateay, testkuna purichiy (i18n chaywan), changelog kunanyachiy, commit & push.             |
 | [`eslint`](#mt-eslint)                                   | ESLintta purichiy flat configwan (`npm run -s lint:eslint`).                                   |

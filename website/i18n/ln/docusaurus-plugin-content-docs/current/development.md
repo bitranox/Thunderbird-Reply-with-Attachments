@@ -61,7 +61,7 @@ Makefile ebongisi ndenge ya misala ya bokeli ya ndakisa. Kanga `make help` na nt
 Lelɔmba: kokimisa `make` na boye te ya target efungola menu ya pete ya Whiptail mpo na kopona target.
 
 | Target                                                   | Maloba ya mokuse ya maloba moko                                                              |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Longola biloko ya batongi/preview ya lokalɛ (tmp/, web-local-preview/, website/build/).      |
 | [`commit`](#mt-commit)                                   | Formatɛ, sambisa ba test (ekɔtisi i18n), bɔtɔla changelog, commit & push.                    |
 | [`eslint`](#mt-eslint)                                   | Sambisa ESLint na nzela ya flat config (`npm run -s lint:eslint`).                           |

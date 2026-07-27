@@ -61,7 +61,7 @@ Makefile standardizira uobičajene razvojne tokove. Pokrenite `make help` u bilo
 Savjet: pokretanje `make` bez mete otvara jednostavan Whiptail meni za odabir mete.
 
 | Meta                                                     | Jednoredni opis                                                                                       |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ukloni lokalne artefakte builda/pregleda (tmp/, web-local-preview/, website/build/).                  |
 | [`commit`](#mt-commit)                                   | Formatiraj, pokreni testove (uklj. i18n), ažuriraj changelog, commit i push.                          |
 | [`eslint`](#mt-eslint)                                   | Pokreni ESLint preko flat configa (`npm run -s lint:eslint`).                                         |

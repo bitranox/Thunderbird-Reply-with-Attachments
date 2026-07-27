@@ -61,7 +61,7 @@ Makefile isanzweza imigendere y’iterambere isanzwe. Koresha `make help` igihe 
 Inama: gukoresha `make` ata ntego bitangura imenyu yoroshe ya Whiptail yo guhitamwo intego.
 
 | Inyungu                                                  | Insobanuro y’umurongo umwe                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Kurandura ivyakorewe hano (tmp/, web-local-preview/, website/build/).                                        |
 | [`commit`](#mt-commit)                                   | Gushyira ku murongo, gukoresha amagerageza (harimwo i18n), kuvugurura changelog, gukora commit & push.       |
 | [`eslint`](#mt-eslint)                                   | Gukoresha ESLint biciye kuri flat config (`npm run -s lint:eslint`).                                         |

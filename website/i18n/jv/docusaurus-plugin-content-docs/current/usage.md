@@ -20,13 +20,13 @@ sidebar_label: 'Panganggone'
 
 Liwatan ketat vs. longgar: Add‑on dhisik ngecualekake bagean S/MIME lan inline saka lampiran file. Yen ora ana sing lolos, bakal mlaku liwatan longgar sing isih ngecualekake S/MIME/inline nanging luwih toleran marang sawetara kasus (delengen Rincian Kode). Gambar inline ora tau ditambahake minangka lampiran file; tinimbang kuwi, yen "Include inline pictures" diaktifake (gawané), gambar kasebut dilebokake langsung ing isi wangsulan minangka URI data base64.
 
-| Jinis bagean                                                  |                        Liwatan ketat |                      Liwatan longgar |
-| ------------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| Berkas tandha S/MIME `smime.p7s`                              |                        Dikecualekake |                        Dikecualekake |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                      |                        Dikecualekake |                        Dikecualekake |
+| Jinis bagean                                                  | Liwatan ketat                        | Liwatan longgar                      |
+|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| Berkas tandha S/MIME `smime.p7s`                              | Dikecualekake                        | Dikecualekake                        |
+| Tipe MIME S/MIME (`application/pkcs7-*`)                      | Dikecualekake                        | Dikecualekake                        |
 | Gambar inline sing dirujuk dening Content‑ID (`image/*`)      | Dikecualekake (dipulihake ing isi\*) | Dikecualekake (dipulihake ing isi\*) |
-| Email sing dilampirake (`message/rfc822`) nganggo jeneng file |                      Ora ditambahake |                     Bisa ditambahake |
-| Lampiran file biasa nganggo jeneng file                       |                     Bisa ditambahake |                     Bisa ditambahake |
+| Email sing dilampirake (`message/rfc822`) nganggo jeneng file | Ora ditambahake                      | Bisa ditambahake                     |
+| Lampiran file biasa nganggo jeneng file                       | Bisa ditambahake                     | Bisa ditambahake                     |
 
 \* Yen "Include inline pictures" diaktifake (gawané: ON), gambar inline dilebokake ing isi wangsulan minangka URI data base64, dudu ditambahake minangka lampiran file. Delengen [Konfigurasi](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Conto: Sawetara lampiran bisa wae ora nduwèni header tartamtu nanging isih kale
 ### Ringkesan keyboard {#keyboard-cheat-sheet}
 
 | Tombol           | Tumindak                         |
-| ---------------- | -------------------------------- |
+|------------------|----------------------------------|
 | Y / J            | Konfirmasi Ya                    |
 | N / Esc          | Konfirmasi Ora                   |
 | Enter            | Ngaktifake tombol sing fokus     |

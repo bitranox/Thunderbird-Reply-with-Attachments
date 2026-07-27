@@ -33,7 +33,7 @@ Bular çeşmede dokumentirlenendir we CI-de synanylypdyr. Goşma telemetry ýygn
 ### Jemleýiş (baýatdanlar → maksat) {#permissions-summary}
 
 | Baýatdan          | Näme üçin zerurdyr                                                                      |
-| ----------------- | --------------------------------------------------------------------------------------- |
+|-------------------|-----------------------------------------------------------------------------------------|
 | `compose`         | Yazmak köpügi wakalaryna gözegçilik etmek; jogaplaryňyza goşmaçalary sanamak we goşmak. |
 | `messagesRead`    | Esasy hatdan goşmaça faýllaryny sanamak we faýl maglumatlaryny geçirmeli.               |
 | `scripting`       | Açyk goýlanda tassyklamak üçin ýalňyz UI goşmak/koordina etmek.                         |

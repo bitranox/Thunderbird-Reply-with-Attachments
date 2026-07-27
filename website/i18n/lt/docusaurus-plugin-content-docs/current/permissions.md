@@ -33,7 +33,7 @@ Tai yra dokumentuota šaltinyje ir išbandyta CI. Įskiepys neserga telemetrijos
 ### Santrauka (teisės → paskirtis) {#permissions-summary}
 
 | Teisė          | Kodėl ji reikalinga                                                                      |
-| -------------- | ---------------------------------------------------------------------------------------- |
+|----------------|------------------------------------------------------------------------------------------|
 | `compose`      | Stebėti komponavimo įvykius; sąrašu ir pridėti priedus jūsų atsakyme.                    |
 | `messagesRead` | Išvardyti originalios žinutės priedus ir gauti failo duomenis.                           |
 | `scripting`    | Įterpti/koordinuoti lengvą UI patvirtinimui, kai jis įjungtas.                           |

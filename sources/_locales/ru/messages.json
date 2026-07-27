@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Предупреждать, если вложения исключены черным списком"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Включать встроенные изображения (вложенные изображения)"
-  },
   "uiDebugHeader": {
     "message": "Дополнительно"
   },

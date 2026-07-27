@@ -61,14 +61,14 @@ Makefile nyeragamaké alur dev umum. Lakokna `make help` kapan waé kanggo ringk
 Tips: mbukak `make` tanpa target bakal mbukak menu Whiptail prasaja kanggo milih target.
 
 | Target                                                   | Katrangan sakbaris                                                                          |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Mbusak artefak build/preview lokal (tmp/, web-local-preview/, website/build/).              |
 | [`commit`](#mt-commit)                                   | Mformat, mbukak test (kalebu i18n), nganyari changelog, commit & push.                      |
 | [`eslint`](#mt-eslint)                                   | Mbukak ESLint liwat flat config (`npm run -s lint:eslint`).                                 |
 | [`help`](#mt-help)                                       | Dhaptar kabèh target karo dokumèn sakbaris (urut).                                          |
 | [`lint`](#mt-lint)                                       | web‑ext lint ing `sources/` (manifest samentara; nglirwakaké ZIP; ora fatal).               |
 | [`menu`](#mt-menu)                                       | Menu interaktif kanggo milih target lan argumèn opsional.                                   |
-| [`pack`](#mt-pack)                                       | Mbangún ATN & LOCAL ZIP (mbukak linter; nelpon skrip packer).                               |
+| [`pack`](#mt-pack)                                       | Mbangún ATN & LOCAL ZIP (mbukak linter; nelpon skrip packer).                              |
 | [`prettier`](#mt-prettier)                               | Mformat repositori ing panggonan (nulis owah‑owahan).                                       |
 | [`prettier_check`](#mt-prettier_check)                   | Prettier ing mode priksa (tanpa nulis); gagal yen butuh reformat.                           |
 | [`prettier_write`](#mt-prettier_write)                   | Alias kanggo `prettier`.                                                                    |
@@ -80,7 +80,7 @@ Tips: mbukak `make` tanpa target bakal mbukak menu Whiptail prasaja kanggo milih
 | [`translate_web_docs_sync`](#mt-translation-web)         | Nerjemahaké dokumèn situs sacara sinkron (warisan, non‑batch).                              |
 | [`translate_web_index`](#mt-translation_web_index)       | Alias kanggo `translation_web_index`.                                                       |
 | [`translation_web_index`](#mt-translation_web_index)     | Nerjemahaké UI homepage/navbar/footer (`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | Mbangún dokumèn menyang `website/build` (ndhukung `--locales` / `BUILD_LOCALES`).           |
+| [`web_build`](#mt-web_build)                             | Mbangún dokumèn menyang `website/build` (ndhukung `--locales` / `BUILD_LOCALES`).          |
 | [`web_build_linkcheck`](#mt-web_build_linkcheck)         | Priksa pranala sing aman offline (ngliwati HTTP[S] remot).                                  |
 | [`web_build_local_preview`](#mt-web_build_local_preview) | Pratayang gh‑pages lokal; auto‑serve ing 8080–8090; test/priksa pranala opsional.           |
 | [`web_push_github`](#mt-web_push_github)                 | Push `website/build` menyang cabang `gh-pages`.                                             |

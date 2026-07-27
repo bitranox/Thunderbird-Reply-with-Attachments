@@ -61,7 +61,7 @@ Makefile avahiyên çalakiyên pêşdebirinê ya hevpar standard dike. Her dem `
 Şîret: dema ku `make` bê hedefekê bixebitînî, pêşeka hêsan a Whiptail veke ji bo hilbijartina hedefekê.
 
 | Hedef                                                    | Daxuyaniya yek‑rêzikî                                                                                      |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Artîfaktên avakirina herêmî/preview (tmp/, web-local-preview/, website/build/) rake.                       |
 | [`commit`](#mt-commit)                                   | Format bike, testan bimeşe (bi tevahiya i18n), changelog nûve bike, commit û push bike.                    |
 | [`eslint`](#mt-eslint)                                   | ESLintê bi mîhenga flat (`npm run -s lint:eslint`) bixebitîne.                                             |

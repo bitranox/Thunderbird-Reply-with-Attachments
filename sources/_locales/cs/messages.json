@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Upozornit, pokud jsou přílohy vyloučeny blokovacím seznamem"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Zahrnout vložené obrázky (vložené obrázky)"
-  },
   "uiDebugHeader": {
     "message": "Pokročilé"
   },

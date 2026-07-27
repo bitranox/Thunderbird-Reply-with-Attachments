@@ -33,7 +33,7 @@ Ushbu ma’lumot manbada hujjatlashtirilgan va CI da sinovdan o‘tkazilgan. Qo�
 ### Xulosa (ruxsatlar → maqsad) {#permissions-summary}
 
 | Ruxsat         | Nima uchun kerak                                                                   |
-| -------------- | ---------------------------------------------------------------------------------- |
+|----------------|------------------------------------------------------------------------------------|
 | `compose`      | Tarkib hodisalarini kuzatish; javobingizda ilovalarni ro‘yxatga olish va qo‘shish. |
 | `messagesRead` | Dastlabki xabar ilovalarini ro‘yxatga olish va fayl ma’lumotlarini olish.          |
 | `scripting`    | Yo'qotilmaslik uchun yengil UI ni kiritish/muvofiqlashtirish.                      |

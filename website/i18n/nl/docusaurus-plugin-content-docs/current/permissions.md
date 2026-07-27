@@ -33,7 +33,7 @@ Deze zijn gedocumenteerd in de bron en getest in CI. De add-on verzamelt geen te
 ### Samenvatting (toegangen → doel) {#permissions-summary}
 
 | Toegang          | Waarom het nodig is                                                                |
-| ---------------- | ---------------------------------------------------------------------------------- |
+|------------------|------------------------------------------------------------------------------------|
 | `compose`        | Observeer samenstellingsgebeurtenissen; lijst en voeg bijlagen toe in je antwoord. |
 | `messagesRead`   | Lijst originele berichtbijlagen en haal de bestandsgegevens op.                    |
 | `scripting`      | Injecteer/coördineer lichte UI voor bevestiging wanneer ingeschakeld.              |

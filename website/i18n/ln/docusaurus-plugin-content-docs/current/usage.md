@@ -20,13 +20,13 @@ sidebar_label: 'Bosaleli'
 
 Koleka makasi (strict) vs. koleka pɛtɛɛ (relaxed): Add‑on ebosaka liboso biteni ya S/MIME mpe ya kati (inline) na ba pièces jointes ya fisyé. Soki eloko moko te ekokani, esalaka koleka pɛtɛɛ oyo kaka ebosaka S/MIME/inline kasi endimi ba kesɛ ebele koleka (talá makambo ya kódi). Bifóto ya kati te bazali kobakisa yango lokola ba pièces jointes; na esika wana, soki "Include inline pictures" esalemi (ndakisa ya liboso), bazingamaka mbala moko na nzoto ya eyano lokola base64 data URIs.
 
-| Lolenge ya eteni                                               |                               Koleka makasi |                                Koleka pɛtɛɛ |
-| -------------------------------------------------------------- | ------------------------------------------: | ------------------------------------------: |
-| Fisiye ya emekeli (signature) ya S/MIME `smime.p7s`            |                                    Ebwakami |                                    Ebwakami |
-| Ba lolenge ya MIME ya S/MIME (`application/pkcs7-*`)           |                                    Ebwakami |                                    Ebwakami |
+| Lolenge ya eteni                                               | Koleka makasi                               | Koleka pɛtɛɛ                                |
+|----------------------------------------------------------------|--------------------------------------------:|--------------------------------------------:|
+| Fisiye ya emekeli (signature) ya S/MIME `smime.p7s`            | Ebwakami                                    | Ebwakami                                    |
+| Ba lolenge ya MIME ya S/MIME (`application/pkcs7-*`)           | Ebwakami                                    | Ebwakami                                    |
 | Elilingi ya kati oyo Content‑ID etindisi (`image/*`)           | Ebwakami (ezongisami na nzoto ya mokanda\*) | Ebwakami (ezongisami na nzoto ya mokanda\*) |
-| E‑mail ekangami (`message/rfc822`) oyo ezali na kombo ya fisyé |                                Ebakisami te |                            Ekoki kobakisama |
-| Pièce jointe ya fisyé ya normal oyo ezali na kombo             |                            Ekoki kobakisama |                            Ekoki kobakisama |
+| E‑mail ekangami (`message/rfc822`) oyo ezali na kombo ya fisyé | Ebakisami te                                | Ekoki kobakisama                            |
+| Pièce jointe ya fisyé ya normal oyo ezali na kombo             | Ekoki kobakisama                            | Ekoki kobakisama                            |
 
 \* Soki "Include inline pictures" esalemi (liboso: ON), bifóto ya kati bazingamaka na nzoto ya eyano lokola base64 data URIs na esika ya kobakisa yango lokola ba pièces jointes. Talá [Configuration](configuration#include-inline-pictures).
 
@@ -66,7 +66,7 @@ Ndakisa: Ba pièces mosusu ekoki kozanga ba header mosusu kasi ezalaka naino ba 
 ### Lisalisi ya bokuse ya klavye {#keyboard-cheat-sheet}
 
 | Bakle           | Misala                             |
-| --------------- | ---------------------------------- |
+|-----------------|------------------------------------|
 | Y / J           | Kondimisa Ee                       |
 | N / Esc         | Kondimisa Te                       |
 | Enter           | Kobatisa bouton oyo ezali na focus |

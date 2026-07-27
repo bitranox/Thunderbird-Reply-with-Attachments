@@ -61,7 +61,7 @@ Makefile‑ku wuxuu mideeyaa qulqullo horumarineed oo caadi ah. Orod `make help`
 Talo: orodka `make` adigoon bartilmaameed gelin wuxuu furaa menu Whiptail fudud si aad u doorato bartilmaameed.
 
 | Bartilmaameed                                            | Sharaxaad hal-sadar ah                                                                                          |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Ka saar wax‑soo‑saarrada dhisid/hor‑eeg ee maxalliga ah (tmp/, web-local-preview/, website/build/).             |
 | [`commit`](#mt-commit)                                   | Qaabee, orod tijaabooyinka (oo ay ku jiraan i18n), cusboonaysii changelog, commit & push.                       |
 | [`eslint`](#mt-eslint)                                   | Orod ESLint adigoo adeegsanaya qaabeyn fidsan (`npm run -s lint:eslint`).                                       |

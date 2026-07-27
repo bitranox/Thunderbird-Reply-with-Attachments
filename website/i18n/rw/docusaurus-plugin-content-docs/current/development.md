@@ -61,7 +61,7 @@ Makefile igena imigendekere isanzwe y’iterambere. Iruka `make help` igihe cyos
 Inama: kwirukana `make` nta target bifungura menu yoroshye ya Whiptail yo guhitamo target.
 
 | Target                                                   | Ibisobanuro by’umurongo umwe                                                                     |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+|----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Kuraho ibisigarira by’inyubako/irebwa ryo ku murongo (tmp/, web-local-preview/, website/build/). |
 | [`commit`](#mt-commit)                                   | Gufomata, gukoresha tests (harimo i18n), kuvugurura changelog, gukora commit no push.            |
 | [`eslint`](#mt-eslint)                                   | Gukoresha ESLint binyuze muri flat config (`npm run -s lint:eslint`).                            |

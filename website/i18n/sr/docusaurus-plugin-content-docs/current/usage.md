@@ -20,13 +20,13 @@ sidebar_label: 'Употреба'
 
 Strogi naspram opuštenog prolaza: Dodatak najpre isključuje S/MIME i ugrađene delove iz datotečnih priloga. Ako ništa ne ispunjava uslove, pokreće opušteni prolaz koji i dalje isključuje S/MIME/ugrađene, ali toleriše više slučajeva (videti Detalje koda). Ugrađene slike se nikada ne dodaju kao datotečni prilozi; umesto toga, kada je „Uključi ugrađene slike” omogućeno (podrazumevano), one se neposredno ugrađuju u telo odgovora kao base64 data URI‑ji.
 
-| Tip dela                                                 |                 Strogi prolaz |               Opušteni prolaz |
-| -------------------------------------------------------- | ----------------------------: | ----------------------------: |
-| S/MIME datoteka potpisa `smime.p7s`                      |                    Isključeno |                    Isključeno |
-| S/MIME MIME tipovi (`application/pkcs7-*`)               |                    Isključeno |                    Isključeno |
+| Tip dela                                                 | Strogi prolaz                 | Opušteni prolaz               |
+|----------------------------------------------------------|------------------------------:|------------------------------:|
+| S/MIME datoteka potpisa `smime.p7s`                      | Isključeno                    | Isključeno                    |
+| S/MIME MIME tipovi (`application/pkcs7-*`)               | Isključeno                    | Isključeno                    |
 | Ugrađena slika na koju upućuje Content‑ID (`image/*`)    | Isključeno (vraćeno u telu\*) | Isključeno (vraćeno u telu\*) |
-| Priložena e‑pošta (`message/rfc822`) sa nazivom datoteke |                   Nije dodato |              Može biti dodato |
-| Uobičajeni datotečni prilog sa nazivom datoteke          |              Može biti dodato |              Može biti dodato |
+| Priložena e‑pošta (`message/rfc822`) sa nazivom datoteke | Nije dodato                   | Može biti dodato              |
+| Uobičajeni datotečni prilog sa nazivom datoteke          | Može biti dodato              | Može biti dodato              |
 
 \* Kada je „Uključi ugrađene slike” omogućeno (podrazumevano: UKLJUČENO), ugrađene slike se ubacuju u telo odgovora kao base64 data URI‑ji umesto da se dodaju kao datotečni prilozi. Videti [Konfiguracija](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Primer: Neki prilozi mogu da nemaju određena zaglavlja, ali su i dalje obične 
 ### Pregled prečica na tastaturi {#keyboard-cheat-sheet}
 
 | Tasteri               | Radnja                              |
-| --------------------- | ----------------------------------- |
+|-----------------------|-------------------------------------|
 | Y / J                 | Potvrdi Da                          |
 | N / Esc               | Potvrdi Ne                          |
 | Enter                 | Aktiviraj fokusirano dugme          |

@@ -20,13 +20,13 @@ sidebar_label: 'Ukusetyenziswa'
 
 Udululo olungqongqo vs. olukhululekileyo: Isongezelelo siqala sikhuphe amacandelo e-S/MIME nawangaphakathi kwizincamatheliso zefayile. Ukuba akukho nto ifanelekile, siqhuba udlululo olukhululekileyo olusa kukhupha i-S/MIME/yangaphakathi kodwa luvumela iimeko ezingakumbi (bona Iinkcukacha zeKhodi). Imifanekiso yangaphakathi ayongezwa njengooncamathiselo zefayile; endaweni yoko, xa "Include inline pictures" ivuliwe (ingeniso), zifakwa ngqo emzimbeni wempendulo njengee-URI zedata ze-base64.
 
-| Uhlobo lwesahlulo                                               |                Udlululo olungqongqo |           Udlululo olukhululekileyo |
-| --------------------------------------------------------------- | ----------------------------------: | ----------------------------------: |
-| Ifayile yosayino ye-S/MIME `smime.p7s`                          |                          Ikhutshiwe |                          Ikhutshiwe |
-| Iindidi ze-MIME ze-S/MIME (`application/pkcs7-*`)               |                          Ikhutshiwe |                          Ikhutshiwe |
+| Uhlobo lwesahlulo                                               | Udlululo olungqongqo                | Udlululo olukhululekileyo           |
+|-----------------------------------------------------------------|------------------------------------:|------------------------------------:|
+| Ifayile yosayino ye-S/MIME `smime.p7s`                          | Ikhutshiwe                          | Ikhutshiwe                          |
+| Iindidi ze-MIME ze-S/MIME (`application/pkcs7-*`)               | Ikhutshiwe                          | Ikhutshiwe                          |
 | Umfanekiso wangaphakathi obhekiselwa yi-Content‑ID (`image/*`)  | Ikhutshiwe (ibuyiselwa emzimbeni\*) | Ikhutshiwe (ibuyiselwa emzimbeni\*) |
-| I-imeyile encanyathiselweyo (`message/rfc822`) enegama lefayile |                        Ayongezwanga |                          Ingongezwa |
-| Uncamathiselo lwefayile eqhelekileyo enegama lefayile           |                          Ingongezwa |                          Ingongezwa |
+| I-imeyile encanyathiselweyo (`message/rfc822`) enegama lefayile | Ayongezwanga                        | Ingongezwa                          |
+| Uncamathiselo lwefayile eqhelekileyo enegama lefayile           | Ingongezwa                          | Ingongezwa                          |
 
 \* Xa "Include inline pictures" ivuliwe (default: ON), imifanekiso yangaphakathi ifakwa emzimbeni wempendulo njengee-URI zedata ze-base64 endaweni yokubane yooncamathiselo zefayile. Bona [Uqwalaselo](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Umzekelo: Ezinye izincamatheliso zinokungabi neentloko ezithile kodwa ziseyifayi
 ### Ishiti sekhibhodi {#keyboard-cheat-sheet}
 
 | Amaqhosha         | Isenzo                                      |
-| ----------------- | ------------------------------------------- |
+|-------------------|---------------------------------------------|
 | Y / J             | Qinisekisa Ewe                              |
 | N / Esc           | Qinisekisa Hayi                             |
 | Enter             | Sebenzisa iqhosha eligxininisiweyo          |

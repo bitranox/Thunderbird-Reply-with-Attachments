@@ -33,7 +33,7 @@ Nde ɓe njahi e nder source e ɓe testii e nder CI. Add‑on ngol kadi e waɗi t
 ### Ɓeeydu (hakki → ndiyam) {#permissions-summary}
 
 | Hakki          | Ko hay e waɗata                                                      |
-| -------------- | -------------------------------------------------------------------- |
+|----------------|----------------------------------------------------------------------|
 | `compose`      | Woɗɗo compose events; lissi e adda attachments e reply maa.          |
 | `messagesRead` | Lissi original message attachments e waɗi fetch file data.           |
 | `scripting`    | Wujjooɗo/coordinatir lightweight UI e njaɓi confirmation so tawii.   |

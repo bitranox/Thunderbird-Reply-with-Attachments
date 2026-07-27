@@ -20,13 +20,13 @@ sidebar_label: 'Bruk'
 
 Streng vs. avslappet gjennomgang: Tillegget ekskluderer først S/MIME‑ og inline‑deler fra filvedlegg. Hvis ingenting kvalifiserer, kjøres en mer avslappet gjennomgang som fortsatt ekskluderer S/MIME/inline, men tolererer flere tilfeller (se Kodedetaljer). Inline‑bilder legges aldri til som filvedlegg; i stedet, når "Include inline pictures" er aktivert (standard), bygges de direkte inn i svarteksten som base64‑data‑URIer.
 
-| Deltype                                          |                       Streng gjennomgang |                    Avslappet gjennomgang |
-| ------------------------------------------------ | ---------------------------------------: | ---------------------------------------: |
-| S/MIME‑signaturfil `smime.p7s`                   |                               Ekskludert |                               Ekskludert |
-| S/MIME‑MIME‑typer (`application/pkcs7-*`)        |                               Ekskludert |                               Ekskludert |
+| Deltype                                          | Streng gjennomgang                       | Avslappet gjennomgang                    |
+|--------------------------------------------------|-----------------------------------------:|-----------------------------------------:|
+| S/MIME‑signaturfil `smime.p7s`                   | Ekskludert                               | Ekskludert                               |
+| S/MIME‑MIME‑typer (`application/pkcs7-*`)        | Ekskludert                               | Ekskludert                               |
 | Inline‑bilde referert av Content‑ID (`image/*`)  | Ekskludert (gjenopprettes i brødtekst\*) | Ekskludert (gjenopprettes i brødtekst\*) |
-| Vedlagt e‑post (`message/rfc822`) med et filnavn |                            Ikke lagt til |                         Kan bli lagt til |
-| Vanlig filvedlegg med filnavn                    |                         Kan bli lagt til |                         Kan bli lagt til |
+| Vedlagt e‑post (`message/rfc822`) med et filnavn | Ikke lagt til                            | Kan bli lagt til                         |
+| Vanlig filvedlegg med filnavn                    | Kan bli lagt til                         | Kan bli lagt til                         |
 
 \* Når "Include inline pictures" er aktivert (standard: PÅ), bygges inline‑bilder inn i svarteksten som base64‑data‑URIer i stedet for å legges til som filvedlegg. Se [Konfigurasjon](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Eksempel: Noen vedlegg kan mangle visse headere, men er likevel vanlige filer (i
 ### Hurtigreferanse for tastatur {#keyboard-cheat-sheet}
 
 | Taster          | Handling                         |
-| --------------- | -------------------------------- |
+|-----------------|----------------------------------|
 | Y / J           | Bekreft Ja                       |
 | N / Esc         | Bekreft Nei                      |
 | Enter           | Aktiver fokusert knapp           |

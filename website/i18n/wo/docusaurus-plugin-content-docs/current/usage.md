@@ -20,13 +20,13 @@ sidebar_label: 'Jëfandikoo'
 
 Pass bu dëgër vs. pass bu yomb: Modil bi jëkk mooy bàyyi pacc S/MIME ak pacc yu inline ci piiñu tacc fiichié. Bu amul dara bu mën, dina def jàll bu yomb buy bàyyi itam S/MIME/inline waaye di mayy yu bari gëna am (xoolal Code Details). Nataal yi ci biir duñu kenn yokk leen ni fiichié yu tacc; lu ci gën a ëpp, bu “Include inline pictures” suqali (defóo la), dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64.
 
-| Giiru pacc                                         |                      Pass bu dëgër |                       Pass bu yomb |
-| -------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| Fichié siiñ S/MIME `smime.p7s`                     |                           Bàyyi na |                           Bàyyi na |
-| Xeetu MIME S/MIME (`application/pkcs7-*`)          |                           Bàyyi na |                           Bàyyi na |
+| Giiru pacc                                         | Pass bu dëgër                      | Pass bu yomb                       |
+|----------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| Fichié siiñ S/MIME `smime.p7s`                     | Bàyyi na                           | Bàyyi na                           |
+| Xeetu MIME S/MIME (`application/pkcs7-*`)          | Bàyyi na                           | Bàyyi na                           |
 | Nataal bu inline bu joxe ko Content‑ID (`image/*`) | Bàyyi na (delloo ci jëmmalin bi\*) | Bàyyi na (delloo ci jëmmalin bi\*) |
-| Imeel bu tacc (`message/rfc822`) bu am turu fichié |                             Duggul |                  Mën nañu koy yokk |
-| Fichié bu tacc bu njort ci tur                     |                  Mën nañu koy yokk |                  Mën nañu koy yokk |
+| Imeel bu tacc (`message/rfc822`) bu am turu fichié | Duggul                             | Mën nañu koy yokk                  |
+| Fichié bu tacc bu njort ci tur                     | Mën nañu koy yokk                  | Mën nañu koy yokk                  |
 
 \* Bu “Include inline pictures” suqali (defóo: ON), nataal yi ci biir dañu leen sëf sedd ci jëmmalin bi ni data URI yu base64, du leen yokk ni fiichié yu tacc. Xoolal [Tànneef](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Misaal: Ay piis jowànt mën nañu amul ay header yu ñu bari waaye dañu fiichi
 ### Kàrtu-jàmmu klawi {#keyboard-cheat-sheet}
 
 | Keys            | Jëf                                      |
-| --------------- | ---------------------------------------- |
+|-----------------|------------------------------------------|
 | Y / J           | Dëggal Waaw                              |
 | N / Esc         | Dëggal Déedéet                           |
 | Enter           | Sàjj butoŋ bi am fokusu                  |

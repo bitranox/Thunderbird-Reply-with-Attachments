@@ -33,7 +33,7 @@ Aquests es documenten en el codi font i es proven en CI. El complement no recull
 ### Resum (permissions → purpose) {#permissions-summary}
 
 | Permís             | Per què és necessari                                                                |
-| ------------------ | ----------------------------------------------------------------------------------- |
+|--------------------|-------------------------------------------------------------------------------------|
 | `compose`          | Observar esdeveniments de redacció; llistar i afegir adjunts en la seva resposta.   |
 | `messagesRead`     | Llistar adjunts del missatge original i obtenir les dades del fitxer.               |
 | `scripting`        | Injectar/coordinar una interfície lleugera per a la confirmació quan es permeti.    |

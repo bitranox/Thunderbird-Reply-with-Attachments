@@ -33,7 +33,7 @@ Aukaskýringar:
 ### Samantekt (heimildaskilmál → tilgangur) {#permissions-summary}
 
 | Heimild             | Hvers vegna er hún nauðsynleg?                                                  |
-| ------------------- | ------------------------------------------------------------------------------- |
+|---------------------|---------------------------------------------------------------------------------|
 | `compose`           | Fylgjast með samsetningaratburðum; lista og bæta við fylgiskjölum í svari þínu. |
 | `messagesRead`      | Lista fylgiskjöl úr upprunalega skilaboðunum og sækja skrár.                    |
 | `scripting`         | Innsetja/semja léttan UI fyrir staðfestingu þegar virkjað.                      |

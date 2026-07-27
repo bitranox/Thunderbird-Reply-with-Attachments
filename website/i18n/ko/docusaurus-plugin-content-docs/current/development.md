@@ -60,30 +60,30 @@ Makefile은 일반적인 개발 흐름을 표준화합니다. 모든 타깃의 �
 
 팁: 타깃 없이 `make`을(를) 실행하면 간단한 Whiptail 메뉴가 열려 타깃을 선택할 수 있습니다.
 
-| Target                                                   | 한 줄 설명                                                                               |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [`clean`](#mt-clean)                                     | 로컬 빌드/미리보기 산출물 제거(tmp/, web-local-preview/, website/build/).                |
-| [`commit`](#mt-commit)                                   | 포맷팅, 테스트(i18n 포함) 실행, 변경 로그 업데이트, 커밋 및 푸시.                        |
-| [`eslint`](#mt-eslint)                                   | 플랫 구성(`npm run -s lint:eslint`)으로 ESLint 실행.                                     |
-| [`help`](#mt-help)                                       | 모든 타깃을 한 줄 설명과 함께 나열(정렬됨).                                              |
-| [`lint`](#mt-lint)                                       | `sources/`에서 web‑ext lint(임시 매니페스트; ZIP 무시; 비치명적).                        |
-| [`menu`](#mt-menu)                                       | 대화형 메뉴로 타깃과 선택적 인자를 선택.                                                 |
-| [`pack`](#mt-pack)                                       | ATN 및 LOCAL ZIP 빌드(린터 실행; 패커 스크립트 호출).                                    |
-| [`prettier`](#mt-prettier)                               | 저장소를 제자리 포맷(변경 사항 기록).                                                    |
-| [`prettier_check`](#mt-prettier_check)                   | Prettier 체크 모드(쓰기 없음); 재포맷이 필요하면 실패.                                   |
-| [`prettier_write`](#mt-prettier_write)                   | `prettier`의 별칭.                                                                       |
-| [`test`](#mt-test)                                       | Prettier(쓰기), ESLint, 그 다음 Vitest(구성 시 커버리지).                                |
-| [`test_i18n`](#mt-test_i18n)                             | i18n 전용 테스트: 애드온 플레이스홀더/동등성 + 웹사이트 동등성.                          |
-| [`translate_app`](#mt-translation-app)                   | `translation_app`의 별칭.                                                                |
-| [`translation_app`](#mt-translation-app)                 | `sources/_locales/en/messages.json`에서 앱 UI 문자열 번역.                               |
-| [`translate_web_docs_batch`](#mt-translation-web)        | OpenAI 배치 API로 웹사이트 문서 번역(권장).                                              |
-| [`translate_web_docs_sync`](#mt-translation-web)         | 동기식으로 웹사이트 문서 번역(레거시, 배치 아님).                                        |
-| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index`의 별칭.                                                          |
+| Target                                                   | 한 줄 설명                                                                     |
+|----------------------------------------------------------|----------------------------------------------------------------------------|
+| [`clean`](#mt-clean)                                     | 로컬 빌드/미리보기 산출물 제거(tmp/, web-local-preview/, website/build/).               |
+| [`commit`](#mt-commit)                                   | 포맷팅, 테스트(i18n 포함) 실행, 변경 로그 업데이트, 커밋 및 푸시.                                 |
+| [`eslint`](#mt-eslint)                                   | 플랫 구성(`npm run -s lint:eslint`)으로 ESLint 실행.                               |
+| [`help`](#mt-help)                                       | 모든 타깃을 한 줄 설명과 함께 나열(정렬됨).                                                 |
+| [`lint`](#mt-lint)                                       | `sources/`에서 web‑ext lint(임시 매니페스트; ZIP 무시; 비치명적).                         |
+| [`menu`](#mt-menu)                                       | 대화형 메뉴로 타깃과 선택적 인자를 선택.                                                    |
+| [`pack`](#mt-pack)                                       | ATN 및 LOCAL ZIP 빌드(린터 실행; 패커 스크립트 호출).                                     |
+| [`prettier`](#mt-prettier)                               | 저장소를 제자리 포맷(변경 사항 기록).                                                     |
+| [`prettier_check`](#mt-prettier_check)                   | Prettier 체크 모드(쓰기 없음); 재포맷이 필요하면 실패.                                       |
+| [`prettier_write`](#mt-prettier_write)                   | `prettier`의 별칭.                                                            |
+| [`test`](#mt-test)                                       | Prettier(쓰기), ESLint, 그 다음 Vitest(구성 시 커버리지).                              |
+| [`test_i18n`](#mt-test_i18n)                             | i18n 전용 테스트: 애드온 플레이스홀더/동등성 + 웹사이트 동등성.                                    |
+| [`translate_app`](#mt-translation-app)                   | `translation_app`의 별칭.                                                     |
+| [`translation_app`](#mt-translation-app)                 | `sources/_locales/en/messages.json`에서 앱 UI 문자열 번역.                         |
+| [`translate_web_docs_batch`](#mt-translation-web)        | OpenAI 배치 API로 웹사이트 문서 번역(권장).                                             |
+| [`translate_web_docs_sync`](#mt-translation-web)         | 동기식으로 웹사이트 문서 번역(레거시, 배치 아님).                                              |
+| [`translate_web_index`](#mt-translation_web_index)       | `translation_web_index`의 별칭.                                               |
 | [`translation_web_index`](#mt-translation_web_index)     | 홈페이지/네비게이션 바/푸터 UI 번역(`website/i18n/en/code.json → .../<lang>/code.json`). |
-| [`web_build`](#mt-web_build)                             | 문서를 `website/build`로 빌드(`--locales` / `BUILD_LOCALES` 지원).                       |
-| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | 오프라인 안전 링크 검사(원격 HTTP[S] 건너뜀).                                            |
-| [`web_build_local_preview`](#mt-web_build_local_preview) | 로컬 gh‑pages 미리보기; 8080–8090에서 자동 제공; 선택적 테스트/링크 검사.                |
-| [`web_push_github`](#mt-web_push_github)                 | `website/build`를 `gh-pages` 브랜치로 푸시.                                              |
+| [`web_build`](#mt-web_build)                             | 문서를 `website/build`로 빌드(`--locales` / `BUILD_LOCALES` 지원).                 |
+| [`web_build_linkcheck`](#mt-web_build_linkcheck)         | 오프라인 안전 링크 검사(원격 HTTP[S] 건너뜀).                                             |
+| [`web_build_local_preview`](#mt-web_build_local_preview) | 로컬 gh‑pages 미리보기; 8080–8090에서 자동 제공; 선택적 테스트/링크 검사.                        |
+| [`web_push_github`](#mt-web_push_github)                 | `website/build`를 `gh-pages` 브랜치로 푸시.                                       |
 
 옵션 문법
 

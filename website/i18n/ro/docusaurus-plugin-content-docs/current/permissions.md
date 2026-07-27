@@ -33,7 +33,7 @@ Acestea sunt documentate în sursă și testate în CI. Add-on-ul nu colectează
 ### Rezumat (permisiuni → scop) {#permissions-summary}
 
 | Permisiune     | De ce este necesară                                                                |
-| -------------- | ---------------------------------------------------------------------------------- |
+|----------------|------------------------------------------------------------------------------------|
 | `compose`      | Observă evenimentele de compunere; listează și adaugă atașamente în răspunsul tău. |
 | `messagesRead` | Listează atașamentele mesajului original și obține datele fișierului.              |
 | `scripting`    | Injectează/coordonatează o interfață ușoară pentru confirmare când este activată.  |

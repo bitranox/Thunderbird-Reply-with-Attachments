@@ -33,7 +33,7 @@ Các quyền này được tài liệu hóa trong mã nguồn và được kiể
 ### Tóm tắt (quyền truy cập → mục đích) {#permissions-summary}
 
 | Quyền truy cập | Tại sao nó cần thiết                                                                 |
-| -------------- | ------------------------------------------------------------------------------------ |
+|----------------|--------------------------------------------------------------------------------------|
 | `compose`      | Quan sát các sự kiện soạn thảo; liệt kê và thêm tệp đính kèm trong phản hồi của bạn. |
 | `messagesRead` | Liệt kê các tệp đính kèm từ tin nhắn gốc và lấy dữ liệu tệp.                         |
 | `scripting`    | Tiêm/điều phối giao diện người dùng nhẹ để xác nhận khi được bật.                    |

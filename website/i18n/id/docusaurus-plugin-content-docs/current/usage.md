@@ -20,13 +20,13 @@ sidebar_label: 'Penggunaan'
 
 Putaran ketat vs. longgar: Add-on terlebih dahulu mengecualikan bagian S/MIME dan inline dari lampiran file. Jika tidak ada yang memenuhi syarat, ia menjalankan putaran longgar yang tetap mengecualikan S/MIME/inline tetapi mentolerir lebih banyak kasus (lihat Detail Kode). Gambar inline tidak pernah ditambahkan sebagai lampiran file; sebagai gantinya, saat "Include inline pictures" diaktifkan (bawaan), gambar ditanam langsung di badan balasan sebagai data URI base64.
 
-| Jenis bagian                                                  |                        Putaran ketat |                      Putaran longgar |
-| ------------------------------------------------------------- | -----------------------------------: | -----------------------------------: |
-| File tanda tangan S/MIME `smime.p7s`                          |                         Dikecualikan |                         Dikecualikan |
-| Tipe MIME S/MIME (`application/pkcs7-*`)                      |                         Dikecualikan |                         Dikecualikan |
+| Jenis bagian                                                  | Putaran ketat                        | Putaran longgar                      |
+|---------------------------------------------------------------|-------------------------------------:|-------------------------------------:|
+| File tanda tangan S/MIME `smime.p7s`                          | Dikecualikan                         | Dikecualikan                         |
+| Tipe MIME S/MIME (`application/pkcs7-*`)                      | Dikecualikan                         | Dikecualikan                         |
 | Gambar inline yang direferensikan oleh Content‑ID (`image/*`) | Dikecualikan (dipulihkan di badan\*) | Dikecualikan (dipulihkan di badan\*) |
-| Email terlampir (`message/rfc822`) dengan nama file           |                    Tidak ditambahkan |                    Dapat ditambahkan |
-| Lampiran file biasa dengan nama file                          |                    Dapat ditambahkan |                    Dapat ditambahkan |
+| Email terlampir (`message/rfc822`) dengan nama file           | Tidak ditambahkan                    | Dapat ditambahkan                    |
+| Lampiran file biasa dengan nama file                          | Dapat ditambahkan                    | Dapat ditambahkan                    |
 
 \* Saat "Include inline pictures" diaktifkan (default: ON), gambar inline ditanam di badan balasan sebagai data URI base64, bukan ditambahkan sebagai lampiran file. Lihat [Konfigurasi](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Contoh: Beberapa lampiran mungkin tidak memiliki header tertentu tetapi tetap me
 ### Lembar contekan keyboard {#keyboard-cheat-sheet}
 
 | Tombol          | Aksi                                  |
-| --------------- | ------------------------------------- |
+|-----------------|---------------------------------------|
 | Y / J           | Konfirmasi Ya                         |
 | N / Esc         | Konfirmasi Tidak                      |
 | Enter           | Aktifkan tombol yang difokuskan       |

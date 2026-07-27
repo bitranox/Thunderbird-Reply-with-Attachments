@@ -33,7 +33,7 @@ These are documented in the source and tested in CI. The add-on does not collect
 ### Summary (permissions → purpose) {#permissions-summary}
 
 | Permission     | Why it’s needed                                                   |
-| -------------- | ----------------------------------------------------------------- |
+|----------------|-------------------------------------------------------------------|
 | `compose`      | Observe compose events; list and add attachments in your reply.   |
 | `messagesRead` | List original message attachments and fetch the file data.        |
 | `scripting`    | Inject/coordinate lightweight UI for confirmation when enabled.   |

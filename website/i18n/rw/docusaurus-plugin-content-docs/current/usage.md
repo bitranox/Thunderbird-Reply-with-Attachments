@@ -20,13 +20,13 @@ sidebar_label: 'Uko ikoreshwa'
 
 Kugenzura rukaze ugereranyije n’ururuhutse: Umugereka ubanza gukuramo ibice bya S/MIME n’ibyinjijwe (inline) mu nyomeko z’amafayilo. Nta na kimwe kibashije, ukora urugendo ruruhutse rwemera ibindi bibayeho nubwo rukomeza gukuramo S/MIME/inline (reba Ibisobanuro by’Amabwiriza). Amashusho yinjijwe ntabwo yongerwa nk’inyomeko z’amafayilo; ahubwo, iyo "Include inline pictures" ikinguye (mburabuzi), ashyirwa mu mubiri w’igisubizo nk’adata ya base64 (data URI).
 
-| Ubwoko bw’igice                                         |                   Kugenzura rukaze |                Kugenzura ruruhutse |
-| ------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| Ifayilo y’isinyature ya S/MIME `smime.p7s`              |                          Byakuweho |                          Byakuweho |
-| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)      |                          Byakuweho |                          Byakuweho |
+| Ubwoko bw’igice                                         | Kugenzura rukaze                   | Kugenzura ruruhutse                |
+|---------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| Ifayilo y’isinyature ya S/MIME `smime.p7s`              | Byakuweho                          | Byakuweho                          |
+| Ubwoko bwa MIME bwa S/MIME (`application/pkcs7-*`)      | Byakuweho                          | Byakuweho                          |
 | Ishusho yinjijwe yerekejwe na Content‑ID (`image/*`)    | Ihagaritswe (isubizwa mu mubiri\*) | Ihagaritswe (isubizwa mu mubiri\*) |
-| Imeli yomekwa (`message/rfc822`) ifite izina ry’ifayilo |                          Ntongerwa |                  Ishobora kongerwa |
-| Inyomeko isanzwe y’ifayilo ifite izina                  |                  Ishobora kongerwa |                  Ishobora kongerwa |
+| Imeli yomekwa (`message/rfc822`) ifite izina ry’ifayilo | Ntongerwa                          | Ishobora kongerwa                  |
+| Inyomeko isanzwe y’ifayilo ifite izina                  | Ishobora kongerwa                  | Ishobora kongerwa                  |
 
 \* Iyo "Include inline pictures" ikinguye (mburabuzi: ON), amashusho yinjijwe ashyirwa mu mubiri w’igisubizo nk’adata za base64 URI aho kongerwa nk’inyomeko z’ifayilo. Reba [Igenamiterere](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Urugero: Bimwe mu byomeko bishobora kubura bimwe mu mitwe (headers) nyamara bika
 ### Umufasha wihuse wa keyboard {#keyboard-cheat-sheet}
 
 | Imfunguzo       | Igikorwa                                    |
-| --------------- | ------------------------------------------- |
+|-----------------|---------------------------------------------|
 | Y / J           | Emeza Yego                                  |
 | N / Esc         | Emeza Oya                                   |
 | Enter           | Kakaza butoni yibanzweho                    |

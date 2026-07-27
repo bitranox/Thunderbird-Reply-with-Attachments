@@ -20,13 +20,13 @@ sidebar_label: 'Uso'
 
 Passagem estrita vs. relaxada: O complemento primeiro exclui partes S/MIME e incorporadas dos anexos de ficheiros. Se nada se qualificar, executa uma passagem relaxada que ainda exclui S/MIME/incorporados, mas tolera mais casos (ver Detalhes do código). As imagens incorporadas nunca são adicionadas como anexos de ficheiro; em vez disso, quando "Incluir imagens incorporadas" está ativado (a predefinição), elas são incorporadas diretamente no corpo da resposta como URIs de dados em base64.
 
-| Tipo de parte                                              |                 Passagem estrita |                Passagem relaxada |
-| ---------------------------------------------------------- | -------------------------------: | -------------------------------: |
-| Ficheiro de assinatura S/MIME `smime.p7s`                  |                         Excluído |                         Excluído |
-| Tipos MIME S/MIME (`application/pkcs7-*`)                  |                         Excluído |                         Excluído |
+| Tipo de parte                                              | Passagem estrita                 | Passagem relaxada                |
+|------------------------------------------------------------|---------------------------------:|---------------------------------:|
+| Ficheiro de assinatura S/MIME `smime.p7s`                  | Excluído                         | Excluído                         |
+| Tipos MIME S/MIME (`application/pkcs7-*`)                  | Excluído                         | Excluído                         |
 | Imagem incorporada referenciada por Content‑ID (`image/*`) | Excluído (restaurado no corpo\*) | Excluído (restaurado no corpo\*) |
-| E-mail anexado (`message/rfc822`) com um nome de ficheiro  |                   Não adicionado |              Pode ser adicionado |
-| Anexo de ficheiro normal com um nome de ficheiro           |              Pode ser adicionado |              Pode ser adicionado |
+| E-mail anexado (`message/rfc822`) com um nome de ficheiro  | Não adicionado                   | Pode ser adicionado              |
+| Anexo de ficheiro normal com um nome de ficheiro           | Pode ser adicionado              | Pode ser adicionado              |
 
 \* Quando "Incluir imagens incorporadas" está ativado (predefinição: LIGADO), as imagens incorporadas são inseridas no corpo da resposta como URIs de dados em base64 em vez de adicionadas como anexos de ficheiro. Veja [Configuração](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Exemplo: Alguns anexos podem não ter certos cabeçalhos, mas ainda são ficheir
 ### Guia rápido de teclado {#keyboard-cheat-sheet}
 
 | Teclas               | Ação                               |
-| -------------------- | ---------------------------------- |
+|----------------------|------------------------------------|
 | Y / J                | Confirmar Sim                      |
 | N / Esc              | Confirmar Não                      |
 | Enter                | Ativar botão em foco               |

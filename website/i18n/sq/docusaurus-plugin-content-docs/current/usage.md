@@ -20,13 +20,13 @@ sidebar_label: 'Përdorimi'
 
 Kalimi strikt kundrejt atij të relaksuar: Shtesa fillimisht përjashton pjesët S/MIME dhe inline nga bashkëngjitjet e skedarëve. Nëse asgjë nuk kualifikohet, ajo kryen një kalim më të relaksuar që sërish përjashton S/MIME/inline por toleron më shumë raste (shih Detajet e Kodit). Imazhet inline nuk shtohen kurrë si bashkëngjitje skedarësh; në vend të kësaj, kur “Përfshi figurat inline” është aktiv (parazgjedhje), ato futen drejtpërdrejt në trupin e përgjigjes si data URI base64.
 
-| Lloji i pjesës                                               |                      Kalim strikt |                 Kalim i relaksuar |
-| ------------------------------------------------------------ | --------------------------------: | --------------------------------: |
-| Skedari i nënshkrimit S/MIME `smime.p7s`                     |                       Përjashtuar |                       Përjashtuar |
-| Llojet MIME të S/MIME (`application/pkcs7-*`)                |                       Përjashtuar |                       Përjashtuar |
+| Lloji i pjesës                                               | Kalim strikt                      | Kalim i relaksuar                 |
+|--------------------------------------------------------------|----------------------------------:|----------------------------------:|
+| Skedari i nënshkrimit S/MIME `smime.p7s`                     | Përjashtuar                       | Përjashtuar                       |
+| Llojet MIME të S/MIME (`application/pkcs7-*`)                | Përjashtuar                       | Përjashtuar                       |
 | Imazh inline i referuar nga Content‑ID (`image/*`)           | Përjashtuar (rikthehet në trup\*) | Përjashtuar (rikthehet në trup\*) |
-| Email i bashkëngjitur (`message/rfc822`) me një emër skedari |                       Nuk shtohet |                   Mund të shtohet |
-| Bashkëngjitje e zakonshme skedari me emër skedari            |                   Mund të shtohet |                   Mund të shtohet |
+| Email i bashkëngjitur (`message/rfc822`) me një emër skedari | Nuk shtohet                       | Mund të shtohet                   |
+| Bashkëngjitje e zakonshme skedari me emër skedari            | Mund të shtohet                   | Mund të shtohet                   |
 
 \* Kur “Përfshi figurat inline” është aktiv (parazgjedhje: ON), imazhet inline futen në trupin e përgjigjes si data URI base64 në vend që të shtohen si bashkëngjitje skedarësh. Shih [Konfigurimi](configuration#include-inline-pictures).
 
@@ -64,7 +64,7 @@ Shembull: Disa bashkëngjitje mund t’u mungojnë disa header-a, por sërish ja
 ### Përmbledhje e shkurtesave të tastierës {#keyboard-cheat-sheet}
 
 | Tastet                    | Veprimi                              |
-| ------------------------- | ------------------------------------ |
+|---------------------------|--------------------------------------|
 | Y / J                     | Konfirmo Po                          |
 | N / Esc                   | Konfirmo Jo                          |
 | Enter                     | Aktivo butonin në fokus              |

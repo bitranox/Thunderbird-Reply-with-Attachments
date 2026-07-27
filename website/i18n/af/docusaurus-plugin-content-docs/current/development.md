@@ -61,7 +61,7 @@ Die Makefile standaardiseer algemene ontwikkelingsvloeie. Hardloop `make help` e
 Wenk: as jy `make` sonder ’n teiken laat loop, open dit ’n eenvoudige Whiptail-kieslys om ’n teiken te kies.
 
 | Teiken                                                   | Eenreëlbeskrywing                                                                                 |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Verwyder plaaslike bou/voorskou-artefakte (tmp/, web-local-preview/, website/build/).             |
 | [`commit`](#mt-commit)                                   | Formatteer, hardloop toetse (incl. i18n), werk changelog by, commit & push.                       |
 | [`eslint`](#mt-eslint)                                   | Hardloop ESLint via plat konfigurasie (`npm run -s lint:eslint`).                                 |

@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Warnen, wenn Anhänge durch die Blacklist ausgeschlossen werden"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Inline-Bilder einschließen (eingebettete Bilder)"
-  },
   "uiDebugHeader": {
     "message": "Erweitert"
   },

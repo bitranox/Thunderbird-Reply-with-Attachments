@@ -33,7 +33,7 @@ Ini didokumentasikan dalam sumber dan diuji dalam CI. Add-on ini tidak mengumpul
 ### Ringkasan (kebenaran → tujuan) {#permissions-summary}
 
 | Kebenaran        | Mengapa ia diperlukan                                                    |
-| ---------------- | ------------------------------------------------------------------------ |
+|------------------|--------------------------------------------------------------------------|
 | `compose`        | Perhatikan acara kompos; senarai dan tambah lampiran dalam balasan anda. |
 | `messagesRead`   | Senarai lampiran mesej asal dan ambil data fail.                         |
 | `scripting`      | Suntik/koordinasi UI ringan untuk pengesahan apabila diaktifkan.         |

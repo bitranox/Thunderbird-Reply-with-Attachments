@@ -20,13 +20,13 @@ sidebar_label: 'Notkun'
 
 Ströng vs. slök yfirferð: Viðbótin útilokar fyrst S/MIME og innfellda hluta úr skráarviðhengjum. Ef ekkert hæfir, keyrir hún slakari yfirferð sem útilokar áfram S/MIME/innfellda hluta en umber fleiri tilfelli (sjá Kóða‑nánar). Innfelldum myndum er aldrei bætt við sem skráarviðhengjum; þegar „Include inline pictures“ er virkjað (sjálfgefið), eru þær í staðinn felldar beint inn í svartextann sem base64 data‑URI.
 
-| Tegund hlutar                                           |                    Ströng yfirferð |                      Slök yfirferð |
-| ------------------------------------------------------- | ---------------------------------: | ---------------------------------: |
-| S/MIME undirskriftarskrá `smime.p7s`                    |                           Útilokað |                           Útilokað |
-| S/MIME MIME‑tegundir (`application/pkcs7-*`)            |                           Útilokað |                           Útilokað |
+| Tegund hlutar                                           | Ströng yfirferð                    | Slök yfirferð                      |
+|---------------------------------------------------------|-----------------------------------:|-----------------------------------:|
+| S/MIME undirskriftarskrá `smime.p7s`                    | Útilokað                           | Útilokað                           |
+| S/MIME MIME‑tegundir (`application/pkcs7-*`)            | Útilokað                           | Útilokað                           |
 | Innfelld mynd sem vísað er í með Content‑ID (`image/*`) | Útilokað (endursett í meginmáli\*) | Útilokað (endursett í meginmáli\*) |
-| Viðhengt tölvupóstur (`message/rfc822`) með skráarheiti |                      Ekki bætt við |                Gæti verið bætt við |
-| Venjulegt skráarviðhengi með skráarheiti                |                Gæti verið bætt við |                Gæti verið bætt við |
+| Viðhengt tölvupóstur (`message/rfc822`) með skráarheiti | Ekki bætt við                      | Gæti verið bætt við                |
+| Venjulegt skráarviðhengi með skráarheiti                | Gæti verið bætt við                | Gæti verið bætt við                |
 
 \* Þegar „Include inline pictures“ er virkjað (sjálfgefið: ON), eru innfelldar myndir felldar inn í svartextann sem base64 data‑URI í stað þess að vera bætt við sem skráarviðhengi. Sjá [Stillingar](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Dæmi: Sum viðhengi kunna að vanta tiltekna hausar en eru samt venjulegar skr�
 ### Yfirlit flýtilykla {#keyboard-cheat-sheet}
 
 | Lyklar          | Aðgerð                                 |
-| --------------- | -------------------------------------- |
+|-----------------|----------------------------------------|
 | Y / J           | Staðfesta Já                           |
 | N / Esc         | Staðfesta Nei                          |
 | Enter           | Virkja valinn hnapp                    |

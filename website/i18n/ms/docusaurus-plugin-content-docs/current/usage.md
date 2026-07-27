@@ -20,13 +20,13 @@ sidebar_label: 'Penggunaan'
 
 Laluan tegas vs. santai: Add‑on terlebih dahulu mengecualikan bahagian S/MIME dan sebaris daripada lampiran fail. Jika tiada yang layak, ia menjalankan laluan santai yang masih mengecualikan S/MIME/sebaris tetapi bertolak ansur dengan lebih banyak kes (lihat Butiran Kod). Imej sebaris tidak pernah ditambah sebagai lampiran fail; sebaliknya, apabila "Sertakan gambar sebaris" didayakan (lalai), ia dibenamkan terus dalam badan balasan sebagai URI data base64.
 
-| Jenis bahagian                                        |                            Laluan tegas |                           Laluan santai |
-| ----------------------------------------------------- | --------------------------------------: | --------------------------------------: |
-| Fail tandatangan S/MIME `smime.p7s`                   |                            Dikecualikan |                            Dikecualikan |
-| Jenis MIME S/MIME (`application/pkcs7-*`)             |                            Dikecualikan |                            Dikecualikan |
+| Jenis bahagian                                        | Laluan tegas                            | Laluan santai                           |
+|-------------------------------------------------------|----------------------------------------:|----------------------------------------:|
+| Fail tandatangan S/MIME `smime.p7s`                   | Dikecualikan                            | Dikecualikan                            |
+| Jenis MIME S/MIME (`application/pkcs7-*`)             | Dikecualikan                            | Dikecualikan                            |
 | Imej sebaris yang dirujuk oleh Content‑ID (`image/*`) | Dikecualikan (dipulihkan dalam badan\*) | Dikecualikan (dipulihkan dalam badan\*) |
-| Emel terlampir (`message/rfc822`) dengan nama fail    |                          Tidak ditambah |                        Mungkin ditambah |
-| Lampiran fail biasa dengan nama fail                  |                        Mungkin ditambah |                        Mungkin ditambah |
+| Emel terlampir (`message/rfc822`) dengan nama fail    | Tidak ditambah                          | Mungkin ditambah                        |
+| Lampiran fail biasa dengan nama fail                  | Mungkin ditambah                        | Mungkin ditambah                        |
 
 \* Apabila "Sertakan gambar sebaris" didayakan (lalai: AKTIF), imej sebaris dibenamkan dalam badan balasan sebagai URI data base64 dan bukan ditambah sebagai lampiran fail. Lihat [Konfigurasi](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Contoh: Sesetengah lampiran mungkin kekurangan pengepala tertentu tetapi masih m
 ### Helaian Rujukan Pintasan Papan Kekunci {#keyboard-cheat-sheet}
 
 | Kekunci            | Tindakan                              |
-| ------------------ | ------------------------------------- |
+|--------------------|---------------------------------------|
 | Y / J              | Sahkan Ya                             |
 | N / Esc            | Sahkan Tidak                          |
 | Enter              | Aktifkan butang yang difokuskan       |

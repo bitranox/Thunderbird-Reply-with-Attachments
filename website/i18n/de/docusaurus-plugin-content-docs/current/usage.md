@@ -20,13 +20,13 @@ sidebar_label: 'Verwendung'
 
 Strenger vs. entspannter Durchlauf: Das Add‑on schließt zunächst S/MIME‑ und Inline‑Teile von Datei‑Anhängen aus. Wenn nichts infrage kommt, führt es einen entspannteren Durchlauf aus, der weiterhin S/MIME/Inline ausschließt, aber mehr Fälle toleriert (siehe Code‑Details). Inline‑Bilder werden niemals als Datei‑Anhänge hinzugefügt; stattdessen werden sie, wenn „Inline‑Bilder einfügen“ aktiviert ist (der Standard), direkt im Antworttext als Base64‑Data‑URIs eingebettet.
 
-| Teiltyp                                                 |                           Strenger Durchlauf |                        Entspannter Durchlauf |
-| ------------------------------------------------------- | -------------------------------------------: | -------------------------------------------: |
-| S/MIME‑Signaturdatei `smime.p7s`                        |                               Ausgeschlossen |                               Ausgeschlossen |
-| S/MIME‑MIME‑Typen (`application/pkcs7-*`)               |                               Ausgeschlossen |                               Ausgeschlossen |
+| Teiltyp                                                 | Strenger Durchlauf                           | Entspannter Durchlauf                        |
+|---------------------------------------------------------|---------------------------------------------:|---------------------------------------------:|
+| S/MIME‑Signaturdatei `smime.p7s`                        | Ausgeschlossen                               | Ausgeschlossen                               |
+| S/MIME‑MIME‑Typen (`application/pkcs7-*`)               | Ausgeschlossen                               | Ausgeschlossen                               |
 | Durch Content‑ID referenziertes Inline‑Bild (`image/*`) | Ausgeschlossen (im Text wiederhergestellt\*) | Ausgeschlossen (im Text wiederhergestellt\*) |
-| Angehängte E‑Mail (`message/rfc822`) mit Dateinamen     |                            Nicht hinzugefügt |                      Kann hinzugefügt werden |
-| Regulärer Dateianhang mit Dateinamen                    |                      Kann hinzugefügt werden |                      Kann hinzugefügt werden |
+| Angehängte E‑Mail (`message/rfc822`) mit Dateinamen     | Nicht hinzugefügt                            | Kann hinzugefügt werden                      |
+| Regulärer Dateianhang mit Dateinamen                    | Kann hinzugefügt werden                      | Kann hinzugefügt werden                      |
 
 \* Wenn „Inline‑Bilder einfügen“ aktiviert ist (Standard: EIN), werden Inline‑Bilder im Antworttext als Base64‑Data‑URIs eingebettet statt als Datei‑Anhänge hinzugefügt. Siehe [Konfiguration](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Beispiel: Bei einigen Anhängen fehlen möglicherweise bestimmte Header, sie sin
 ### Tastatur‑Spickzettel {#keyboard-cheat-sheet}
 
 | Tasten          | Aktion                               |
-| --------------- | ------------------------------------ |
+|-----------------|--------------------------------------|
 | Y / J           | Ja bestätigen                        |
 | N / Esc         | Nein bestätigen                      |
 | Enter           | Fokussierte Schaltfläche aktivieren  |

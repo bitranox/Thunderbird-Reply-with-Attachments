@@ -33,7 +33,7 @@ Iwọnyi ni a ṣe akọsilẹ ninu orisun ati idanwo ninu CI. Afikun naa ko gba
 ### Akopọ (iwe-aṣẹ → idi) {#permissions-summary}
 
 | Iwe-aṣẹ         | Idi ti o ṣe pataki                                                 |
-| --------------- | ------------------------------------------------------------------ |
+|-----------------|--------------------------------------------------------------------|
 | `compose`       | Wo awọn iṣẹlẹ akojọpọ; atokọ àti fikun awọn afikun ninu idahun rẹ. |
 | `messagesRead`  | Atokọ awọn afikun ifiranṣẹ atilẹba ati fa data faili.              |
 | `scripting`     | Ṣafikun/sọtọ UI to rọrun fun ìmúdájú nigbati o ba mu ṣiṣẹ.         |

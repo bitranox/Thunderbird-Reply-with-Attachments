@@ -33,7 +33,7 @@ Papildu piezīmes:
 ### Kopsavilkums (atļaujas → mērķis) {#permissions-summary}
 
 | Atļauja        | Kāpēc tā ir nepieciešama                                                             |
-| -------------- | ------------------------------------------------------------------------------------ |
+|----------------|--------------------------------------------------------------------------------------|
 | `compose`      | Novērot sastādīšanas notikumus; uzskaitīt un pievienot pielikumus jūsu atbildē.      |
 | `messagesRead` | Uzskaitīt oriģinālās ziņas pielikumus un iegūt faila datus.                          |
 | `scripting`    | Injicēt/koordinēt vieglo lietotāja interfeisu apstiprinājumam, kad tas ir iespējots. |

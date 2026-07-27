@@ -16,7 +16,9 @@ function normalizedName(att) {
   let s = String(att?.name || att?.fileName || '');
   try {
     if (s.normalize) s = s.normalize('NFC');
-  } catch (_) {}
+  } catch (_) {
+    // an exotic name that cannot be normalized is compared as-is
+  }
   // Trim outer whitespace and Windows-unfriendly trailing dots/spaces
   s = s.trim().replace(/[\.\s]+$/g, '');
   return lower(s);
@@ -34,11 +36,66 @@ function isSmime(att) {
   );
 }
 
-/** Inline images referenced by CID should not be copied as file attachments. */
-function isInlineImage(att) {
-  const hasCid = Boolean(att?.contentId);
-  const isImage = lower(att?.contentType).startsWith('image/');
-  return hasCid && isImage;
+/** True when the part carries an image content type. */
+function isImage(att) {
+  return lower(att?.contentType).startsWith('image/');
+}
+
+/** Strip angle brackets from a Content-ID value. */
+function stripAngleBrackets(s) {
+  return String(s || '')
+    .replace(/^</, '')
+    .replace(/>$/, '');
+}
+
+/**
+ * Collect the Content-IDs an HTML body embeds.
+ *
+ * Scans for `cid:` targets anywhere in the markup rather than only inside
+ * src/background attributes, because embedded images also reach the body
+ * through CSS `url(cid:...)` and through srcset. A bare "cid:" in prose cannot
+ * produce a false hit on its own: the value has to equal an attachment's
+ * Content-ID before anything downstream acts on it.
+ *
+ * The source is the ORIGINAL message, never the compose body. Thunderbird
+ * rewrites inline sources in the composer after loading it (bug 1997519), so a
+ * compose-body scan reads a different answer depending on when it runs.
+ * @param {string} html message body markup
+ * @returns {Set<string>} referenced Content-IDs, without angle brackets
+ */
+function collectInlineCids(html) {
+  const found = new Set();
+  const text = String(html || '');
+  if (!text) return found;
+  const rx = /cid:([^"'\s)>\\]+)/gi;
+  let m;
+  while ((m = rx.exec(text)) !== null) {
+    const cid = stripAngleBrackets(m[1]);
+    if (cid) found.add(cid);
+  }
+  return found;
+}
+
+/** True when the message body embeds this part by Content-ID. */
+function isReferencedInline(att, inlineCids) {
+  if (!inlineCids || typeof inlineCids.has !== 'function') return false;
+  const cid = stripAngleBrackets(att?.contentId);
+  return Boolean(cid && inlineCids.has(cid));
+}
+
+/**
+ * Inline images belong in the body, not in the attachment list.
+ *
+ * An image counts as inline only when the original message body embeds it, or
+ * when the sender explicitly marked it Content-Disposition: inline. A bare
+ * Content-ID is deliberately NOT enough: many mail clients stamp a Content-ID on
+ * every image part, genuine attachments included, so treating it as proof of
+ * inlineness dropped real attachments without any trace (no dialog, no file).
+ */
+function isInlineImage(att, inlineCids) {
+  if (!isImage(att)) return false;
+  if (isReferencedInline(att, inlineCids)) return true;
+  return isInlineDisposition(att);
 }
 
 /** Content-Disposition header explicitly set to inline should be skipped. */
@@ -47,18 +104,26 @@ function isInlineDisposition(att) {
   return disp.startsWith('inline');
 }
 
-/** Strict pass: exclude S/MIME, inline images, and inline disposition. */
-function includeStrict(att) {
+/**
+ * Selection predicate: exclude S/MIME, inline images, and inline disposition.
+ * `inlineCids` comes from collectInlineCids() over the original message body;
+ * omitting it means "nothing known to be embedded", which keeps images as
+ * regular attachments.
+ */
+function includeStrict(att, inlineCids) {
   if (isSmime(att)) return false;
-  if (isInlineImage(att)) return false;
+  if (isInlineImage(att, inlineCids)) return false;
   if (isInlineDisposition(att)) return false;
   return true;
 }
 
-/** Relaxed pass: exclude S/MIME, inline images, and inline disposition. */
-function includeRelaxed(att) {
+/**
+ * Same rule as includeStrict, applied when deciding which parts a user would
+ * recognise as attachments (used for the blacklist warning rows).
+ */
+function includeRelaxed(att, inlineCids) {
   if (isSmime(att)) return false;
-  if (isInlineImage(att)) return false;
+  if (isInlineImage(att, inlineCids)) return false;
   if (isInlineDisposition(att)) return false;
   return true;
 }
@@ -69,11 +134,18 @@ App.Domain = {
   lower,
   normalizedName,
   isSmime,
+  isImage,
+  stripAngleBrackets,
+  collectInlineCids,
+  isReferencedInline,
   isInlineImage,
   isInlineDisposition,
   includeStrict,
   includeRelaxed,
   globToRegExp,
+  // assigned after its definition below; declared here so the published shape is
+  // the whole domain surface in one place
+  makeNameExcluder: undefined,
 };
 
 // --- Glob matching utilities for blacklist ---------------------------------

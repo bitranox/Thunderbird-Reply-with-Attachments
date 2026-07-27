@@ -33,7 +33,7 @@ Ivyo biranditse mu mwandiko no mu mitsindo ya CI. Iyi nyongera ntikora ku makuru
 ### Inyunganizo (ibihe vyemerewe → igihe cose) {#permissions-summary}
 
 | Ibihe vyemerewe    | Impamvu bikeneye                                                                            |
-| ------------------ | ------------------------------------------------------------------------------------------- |
+|--------------------|---------------------------------------------------------------------------------------------|
 | `compose`          | Gukurikirana ibiranga gushira ku ngingo; urutonde no gushyiraho imiyoboro mu gisubizo cawe. |
 | `messagesRead`     | Urutonde rw’imiyoboro y'ubutumwa bwambere no gukurura amakuru y’amasano.                    |
 | `scripting`        | Gushira/gutegura UI yoroshye y’ukwemeza igihe bikoreshwa.                                   |

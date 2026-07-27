@@ -12,7 +12,6 @@
   const KEY_CONFIRM = 'confirmBeforeAdd';
   const KEY_CONFIRM_DEFAULT = 'confirmDefaultChoice';
   const KEY_WARN_BLACKLIST = 'warnOnBlacklistExcluded';
-  const KEY_INCLUDE_INLINE = 'includeInlinePictures';
   const KEY_DEBUG = 'debug';
   const DEFAULT_PATTERNS = ['*intern*', '*secret*', '*passwor*'];
 
@@ -64,7 +63,6 @@
         [KEY_CONFIRM]: false,
         [KEY_CONFIRM_DEFAULT]: 'yes',
         [KEY_WARN_BLACKLIST]: true,
-        [KEY_INCLUDE_INLINE]: true,
         [KEY_DEBUG]: false,
       });
       const stored = Array.isArray(res?.[KEY]) ? res[KEY] : undefined;
@@ -73,8 +71,6 @@
       cb.checked = !!res?.[KEY_CONFIRM];
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = res?.[KEY_WARN_BLACKLIST] !== false;
-      const inlineCb = /** @type {HTMLInputElement} */ (getEl('include-inline'));
-      inlineCb.checked = !!res?.[KEY_INCLUDE_INLINE];
       const debugCb = /** @type {HTMLInputElement | null} */ (
         document.getElementById('debug-logging')
       );
@@ -97,8 +93,6 @@
       cb.checked = false;
       const warnCb = /** @type {HTMLInputElement} */ (getEl('warn-blacklist'));
       warnCb.checked = true;
-      const inlineCb = /** @type {HTMLInputElement} */ (getEl('include-inline'));
-      inlineCb.checked = false;
       const debugCb = /** @type {HTMLInputElement | null} */ (
         document.getElementById('debug-logging')
       );
@@ -132,8 +126,6 @@
       [KEY_CONFIRM_DEFAULT]: def?.value === 'no' ? 'no' : 'yes',
       [KEY_WARN_BLACKLIST]:
         /** @type {HTMLInputElement} */ (getEl('warn-blacklist')).checked !== false,
-      [KEY_INCLUDE_INLINE]:
-        /** @type {HTMLInputElement} */ (getEl('include-inline')).checked === true,
       [KEY_DEBUG]:
         /** @type {HTMLInputElement | null} */ (document.getElementById('debug-logging'))
           ?.checked === true,
@@ -142,7 +134,9 @@
     // Ask background to re-apply settings to open reply composers once.
     try {
       await browser.runtime?.sendMessage?.({ type: 'rwa:apply-settings-open-compose' });
-    } catch (_) {}
+    } catch (e) {
+      console.warn('[RWA] the background page did not accept the settings update', e);
+    }
     setTimeout(() => setStatus(''), 1500);
   }
 
@@ -157,7 +151,6 @@
       [KEY_CONFIRM]: false,
       [KEY_CONFIRM_DEFAULT]: 'yes',
       [KEY_WARN_BLACKLIST]: true,
-      [KEY_INCLUDE_INLINE]: true,
       [KEY_DEBUG]: false,
     });
     await load();
@@ -184,7 +177,9 @@
     try {
       if (globalThis.browser?.i18n?.getMessage) return browser.i18n.getMessage(key) || '';
       if (globalThis.messenger?.i18n?.getMessage) return messenger.i18n.getMessage(key) || '';
-    } catch (_) {}
+    } catch (_) {
+      // i18n lookups fall through to the literal default below
+    }
     return '';
   }
 

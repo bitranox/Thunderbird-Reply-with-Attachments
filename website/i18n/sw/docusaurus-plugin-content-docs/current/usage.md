@@ -20,13 +20,13 @@ sidebar_label: 'Matumizi'
 
 Upitishaji mkali dhidi ya mlegevu: Kiendelezi kwanza huondoa sehemu za S/MIME na za ndani kutoka kwa viambatisho vya faili. Ikiwa hakuna kinachostahili, hufanya upitishaji mlegevu ambao bado huondoa S/MIME/vya ndani lakini huruhusu visa zaidi (tazama Maelezo ya Msimbo). Picha za ndani haziongezwi kamwe kama viambatisho vya faili; badala yake, wakati "Jumuisha picha za ndani" imewezeshwa (chaguo-msingi), huingizwa moja kwa moja kwenye mwili wa jibu kama data URI za base64.
 
-| Aina ya sehemu                                                    |                       Upitishaji mkali |                     Upitishaji mlegevu |
-| ----------------------------------------------------------------- | -------------------------------------: | -------------------------------------: |
-| Faili ya sahihi ya S/MIME `smime.p7s`                             |                              Imetengwa |                              Imetengwa |
-| Aina za MIME za S/MIME (`application/pkcs7-*`)                    |                              Imetengwa |                              Imetengwa |
+| Aina ya sehemu                                                    | Upitishaji mkali                       | Upitishaji mlegevu                     |
+|-------------------------------------------------------------------|---------------------------------------:|---------------------------------------:|
+| Faili ya sahihi ya S/MIME `smime.p7s`                             | Imetengwa                              | Imetengwa                              |
+| Aina za MIME za S/MIME (`application/pkcs7-*`)                    | Imetengwa                              | Imetengwa                              |
 | Picha ya ndani iliyorejelewa na Content‑ID (`image/*`)            | Imetengwa (inarejeshwa kwenye mwili\*) | Imetengwa (inarejeshwa kwenye mwili\*) |
-| Barua pepe iliyoambatishwa (`message/rfc822`) yenye jina la faili |                             Haiongezwi |                      Huenda ikaongezwa |
-| Kiambatisho cha faili cha kawaida chenye jina la faili            |                     Huenda kikaongezwa |                     Huenda kikaongezwa |
+| Barua pepe iliyoambatishwa (`message/rfc822`) yenye jina la faili | Haiongezwi                             | Huenda ikaongezwa                      |
+| Kiambatisho cha faili cha kawaida chenye jina la faili            | Huenda kikaongezwa                     | Huenda kikaongezwa                     |
 
 \* Wakati "Jumuisha picha za ndani" imewezeshwa (chaguo-msingi: IMEWASHWA), picha za ndani huingizwa kwenye mwili wa jibu kama data URI za base64 badala ya kuongezwa kama viambatisho vya faili. Tazama [Usanidi](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Mfano: Baadhi ya viambatisho vinaweza kukosa vichwa fulani lakini bado vikawa fa
 ### Mwongozo wa haraka wa kibodi {#keyboard-cheat-sheet}
 
 | Funguo             | Kitendo                                 |
-| ------------------ | --------------------------------------- |
+|--------------------|-----------------------------------------|
 | Y / J              | Thibitisha Ndiyo                        |
 | N / Esc            | Thibitisha Hapana                       |
 | Enter              | Amsha kitufe chenye mkazo               |

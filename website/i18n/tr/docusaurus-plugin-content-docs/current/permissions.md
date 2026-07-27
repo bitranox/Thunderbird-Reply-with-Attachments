@@ -33,7 +33,7 @@ Bunlar kaynakta belgelenmiştir ve CI'de test edilmiştir. Eklenti telemetri top
 ### Özeti (izinler → amaç) {#permissions-summary}
 
 | İzin           | Neden gerekli                                                                           |
-| -------------- | --------------------------------------------------------------------------------------- |
+|----------------|-----------------------------------------------------------------------------------------|
 | `compose`      | Kompozisyon olaylarını gözlemlemek; yanıtınızdaki ekleri listelemek ve eklemek için.    |
 | `messagesRead` | Orijinal mesaj eklerini listelemek ve dosya verilerini almak için.                      |
 | `scripting`    | Etkinleştirildiğinde onay için hafif bir kullanıcı arayüzü eklemek/koordine etmek için. |

@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Avisa si els fitxers adjunts són exclosos per la llista negra"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Inclou imatges en línia (imatges incrustades)"
-  },
   "uiDebugHeader": {
     "message": "Avançat"
   },

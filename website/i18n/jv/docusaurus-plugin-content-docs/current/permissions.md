@@ -33,7 +33,7 @@ Iki didokumentasikake ing sumber lan diuji ing CI. Tambahan iki ora ngumpulake t
 ### Ringkasan (hak akses → tujuan) {#permissions-summary}
 
 | Hak Akses      | Kenapa iki dibutuhake                                                      |
-| -------------- | -------------------------------------------------------------------------- |
+|----------------|----------------------------------------------------------------------------|
 | `compose`      | Mengawasi acara compose; mlisted lan nambah lampiran ing balasan sampeyan. |
 | `messagesRead` | Mlisted lampiran pesen asli lan njupuk data file.                          |
 | `scripting`    | Nyuntik/koordinasi UI ringan kanggo konfirmasi nalika diaktifake.          |

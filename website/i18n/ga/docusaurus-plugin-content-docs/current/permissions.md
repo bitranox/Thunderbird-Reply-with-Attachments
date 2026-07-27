@@ -33,7 +33,7 @@ Tá na ceadanna seo doiciméadaithe sa foinse agus tástáilte i CI. Ní bhailí
 ### Achoimre (ceadaíochtaí → cuspóir) {#permissions-summary}
 
 | Cead             | Cén fáth a bhfuil sé de dhíth                                     |
-| ---------------- | ----------------------------------------------------------------- |
+|------------------|-------------------------------------------------------------------|
 | `compose`        | Observe compose events; list and add attachments in your reply.   |
 | `messagesRead`   | List original message attachments and fetch the file data.        |
 | `scripting`      | Inject/coordinate lightweight UI for confirmation when enabled.   |

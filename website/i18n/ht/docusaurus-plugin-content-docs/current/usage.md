@@ -20,13 +20,13 @@ sidebar_label: 'Itilizasyon'
 
 Pase strik kont pase relaks: Add-on nan ekskli dabor pati S/MIME ak anliy nan atachman fichye yo. Si pa gen anyen ki kalifye, li kouri yon pase relaks ki toujou ekskli S/MIME/anliy men tolere plis ka (gade Detay Kòd la). Imaj anliy yo pa janm ajoute kòm atachman fichye; olye de sa, lè "Include inline pictures" aktive (default), yo entegre dirèkteman nan kò repons lan kòm URI done base64.
 
-| Kalite pati                                         |                  Pase strik |                 Pase relaks |
-| --------------------------------------------------- | --------------------------: | --------------------------: |
-| Fichye siyati S/MIME `smime.p7s`                    |                      Ekskli |                      Ekskli |
-| Tip MIME S/MIME (`application/pkcs7-*`)             |                      Ekskli |                      Ekskli |
+| Kalite pati                                         | Pase strik                  | Pase relaks                 |
+|-----------------------------------------------------|----------------------------:|----------------------------:|
+| Fichye siyati S/MIME `smime.p7s`                    | Ekskli                      | Ekskli                      |
+| Tip MIME S/MIME (`application/pkcs7-*`)             | Ekskli                      | Ekskli                      |
 | Imaj anliy ki referans pa Content‑ID (`image/*`)    | Ekskli (retabli nan kò a\*) | Ekskli (retabli nan kò a\*) |
-| Imèl tache (`message/rfc822`) ki gen yon non fichye |                   Pa ajoute |                   Ka ajoute |
-| Atachman fichye nòmal ki gen yon non fichye         |                   Ka ajoute |                   Ka ajoute |
+| Imèl tache (`message/rfc822`) ki gen yon non fichye | Pa ajoute                   | Ka ajoute                   |
+| Atachman fichye nòmal ki gen yon non fichye         | Ka ajoute                   | Ka ajoute                   |
 
 \* Lè "Include inline pictures" aktive (default: ON), imaj anliy yo antere dirèkteman nan kò repons lan kòm URI done base64 olye yo ta ajoute yo kòm atachman fichye. Gade [Konfigirasyon](configuration#include-inline-pictures).
 
@@ -67,7 +67,7 @@ Egzanp: Gen kèk atachman ki ka pa gen kèk header, men yo toujou fichye nòmal 
 ### Fèy rapèl klavye {#keyboard-cheat-sheet}
 
 | Touche            | Aksyon                           |
-| ----------------- | -------------------------------- |
+|-------------------|----------------------------------|
 | Y / J             | Konfime Wi                       |
 | N / Esc           | Konfime Non                      |
 | Enter             | Aktive bouton ki sou fokis la    |

@@ -73,9 +73,6 @@
   "uiWarnBlacklistLabel": {
     "message": "Тиркемелер кара тизмеге ылайык кошулбай калса, эскертүү"
   },
-  "uiIncludeInlineLabel": {
-    "message": "Ички сүрөттөрдү кошуу (кыстарылган сүрөттөр)"
-  },
   "uiSave": {
     "message": "Сактоо"
   },

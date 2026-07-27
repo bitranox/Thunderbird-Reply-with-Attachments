@@ -61,7 +61,7 @@ Makefile standartizē kopīgus izstrādes plūsmas. Palaidiet `make help` jebkur
 Padoms: palaižot `make` bez mērķa, atveras vienkārša Whiptail izvēlne mērķa izvēlei.
 
 | Mērķis                                                   | Vienrindas apraksts                                                                                   |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Noņemt lokālos būvēšanas/priekšskatījuma artefaktus (tmp/, web-local-preview/, website/build/).       |
 | [`commit`](#mt-commit)                                   | Formatēt, palaist testus (t.sk. i18n), atjaunināt izmaiņu žurnālu, veikt commit un push.              |
 | [`eslint`](#mt-eslint)                                   | Palaist ESLint, izmantojot plakanās konfigurācijas (`npm run -s lint:eslint`).                        |

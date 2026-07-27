@@ -61,7 +61,7 @@ A Makefile egységesíti a gyakori fejlesztési folyamatokat. Futtasd a `make he
 Tipp: ha a `make` parancsot cél nélkül futtatod, egy egyszerű Whiptail menü nyílik, ahol kiválaszthatod a célt.
 
 | Cél                                                      | Egysoros leírás                                                                                      |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | [`clean`](#mt-clean)                                     | Helyi build/előnézeti artefaktumok eltávolítása (tmp/, web-local-preview/, website/build/).          |
 | [`commit`](#mt-commit)                                   | Formázás, tesztek futtatása (i18n‑nel együtt), changelog frissítése, commit és push.                 |
 | [`eslint`](#mt-eslint)                                   | ESLint futtatása flat konfigurációval (`npm run -s lint:eslint`).                                    |
