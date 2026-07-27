@@ -54,7 +54,7 @@
     "message": "Skip SMIME & Inline"
   },
   "homepage.features.skipSmime.body": {
-    "message": "SMIME signatures and inline images are excluded to keep replies lean."
+    "message": "SMIME signatures are never copied. Images embedded in the message body stay in the reply body, where Thunderbird keeps them, rather than being attached a second time."
   },
   "homepage.features.blacklist.title": {
     "message": "Blacklist Patterns"
@@ -86,7 +86,6 @@
   "homepage.search.tip": {
     "message": "Tip: Press {slash} or {ctrl}+{k} to search the docs."
   },
-
   "site.title": {
     "message": "Reply with Attachments"
   },

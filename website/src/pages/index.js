@@ -168,14 +168,12 @@ export default function Home() {
           </article>
           <article className="card">
             <h3>
-              <Translate id="homepage.features.skipSmime.title">
-                Skip SMIME & Restore Inline
-              </Translate>
+              <Translate id="homepage.features.skipSmime.title">Skip SMIME & Inline</Translate>
             </h3>
             <p>
               <Translate id="homepage.features.skipSmime.body">
-                SMIME signatures are excluded. Inline images are embedded directly in the reply body
-                as data URIs so recipients see them exactly where they appeared.
+                SMIME signatures are never copied. Images embedded in the message body stay in the
+                reply body, where Thunderbird keeps them, rather than being attached a second time.
               </Translate>
             </p>
           </article>
