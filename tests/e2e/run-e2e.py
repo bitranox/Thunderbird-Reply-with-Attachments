@@ -5,8 +5,13 @@ Packs the add-on plus a probe extension into a throwaway profile, starts
 Thunderbird on a scratch X display, lets the probe open a real reply for every
 test message, and asserts on what the composer actually ended up holding.
 
+The Thunderbird binary is discovered automatically (see CANDIDATE_BINARIES); pass a
+path or set THUNDERBIRD to test a specific build, which is how the add-on gets checked
+against its 128.0 floor as well as current releases.
+
 Usage:
-  python3 tests/e2e/run-e2e.py /opt/tb/esr/thunderbird [--display :91] [--keep]
+  python3 tests/e2e/run-e2e.py [binary] [--display :91] [--keep]
+  THUNDERBIRD=/opt/tb/esr128/thunderbird python3 tests/e2e/run-e2e.py
 """
 
 from __future__ import annotations
@@ -149,6 +154,57 @@ def stop(process) -> None:
         process.kill()
 
 
+# Where to look for a Thunderbird when none is named on the command line, most
+# specific first. Any build from 128 upwards works; the add-on's floor is 128.0.
+CANDIDATE_BINARIES = (
+    "~/thunderbird/thunderbird",
+    "/opt/tb/release/thunderbird",
+    "/opt/tb/esr/thunderbird",
+    "/opt/tb/esr128/thunderbird",
+    "/usr/bin/thunderbird",
+    "/usr/local/bin/thunderbird",
+)
+
+
+def resolve_binary(explicit: str | None) -> str:
+    """Find a Thunderbird to test against.
+
+    Order: the path given on the command line, then $THUNDERBIRD, then the usual
+    install locations, then whatever is on PATH. Naming a directory instead of the
+    binary is a common slip, so say so rather than failing later with EACCES.
+    """
+    for candidate in (explicit, os.environ.get("THUNDERBIRD")):
+        if not candidate:
+            continue
+        path = pathlib.Path(candidate).expanduser()
+        if path.is_dir():
+            raise SystemExit(f"{path} is a directory; point at the binary, e.g. {path / 'thunderbird'}")
+        if not os.access(path, os.X_OK):
+            raise SystemExit(f"{path} is not executable")
+        return str(path)
+
+    for candidate in CANDIDATE_BINARIES:
+        path = pathlib.Path(candidate).expanduser()
+        if os.access(path, os.X_OK):
+            return str(path)
+
+    found = shutil.which("thunderbird")
+    if found:
+        return found
+    raise SystemExit(
+        "No Thunderbird found. Pass the binary path, set THUNDERBIRD, or install one at "
+        + " or ".join(CANDIDATE_BINARIES[:2])
+    )
+
+
+def binary_version(binary: str) -> str:
+    try:
+        out = subprocess.run([binary, "--version"], capture_output=True, text=True, timeout=60)
+        return out.stdout.strip() or "unknown version"
+    except Exception:
+        return "unknown version"
+
+
 def start_display(display: str) -> subprocess.Popen | None:
     if os.environ.get("DISPLAY") == display:
         return None
@@ -202,13 +258,20 @@ def report(payload: dict) -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("thunderbird")
+    ap.add_argument(
+        "thunderbird",
+        nargs="?",
+        help="path to the Thunderbird binary; discovered automatically when omitted",
+    )
     ap.add_argument("--display", default=":91")
     ap.add_argument("--profile", default=None)
     ap.add_argument("--timeout", type=int, default=180)
     ap.add_argument("--warmup", type=int, default=25)
     ap.add_argument("--keep", action="store_true")
     args = ap.parse_args()
+
+    binary = resolve_binary(args.thunderbird)
+    print(f"Using {binary} ({binary_version(binary)})")
 
     profile = pathlib.Path(args.profile or f"/tmp/rwa-e2e-{os.getpid()}")
     build_profile(profile)
@@ -220,7 +283,7 @@ def main() -> int:
     # Creating a folder and importing into it seconds after a profile is born
     # crashes the parent process ("Exiting due to channel error").
     warmup_log = profile.with_suffix(".warmup.log").open("w")
-    warmup = launch(args.thunderbird, profile, args.display, warmup_log)
+    warmup = launch(binary, profile, args.display, warmup_log)
     time.sleep(args.warmup)
     stop(warmup)
     warmup_log.close()
@@ -228,7 +291,7 @@ def main() -> int:
     # Phase 2: add the probe and run the real scenario.
     install_probe(profile)
     log = profile.with_suffix(".log").open("w")
-    tb = launch(args.thunderbird, profile, args.display, log)
+    tb = launch(binary, profile, args.display, log)
 
     logpath = pathlib.Path(log.name)
     payload = None

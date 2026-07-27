@@ -8,14 +8,21 @@ over messages that Thunderbird itself parsed.
 ## Running
 
 ```bash
-npm run test:e2e            # Thunderbird ESR   (/opt/tb/esr/thunderbird)
-npm run test:e2e:release    # current release   (/opt/tb/release/thunderbird)
+npm run test:e2e          # whichever Thunderbird is found (see below)
+npm run test:e2e:esr      # 140 ESR   (/opt/tb/esr/thunderbird)
+npm run test:e2e:floor    # 128 ESR   (/opt/tb/esr128/thunderbird), the declared minimum
 
 python3 tests/e2e/run-e2e.py /path/to/thunderbird --display :91 --keep
+THUNDERBIRD=/path/to/thunderbird npm run test:e2e
 ```
 
-Any Thunderbird 128+ build works; pass its binary path. `--keep` preserves the
-throwaway profile and its log for inspection.
+With no binary named, the runner searches `~/thunderbird/thunderbird`, then
+`/opt/tb/release`, `/opt/tb/esr`, `/opt/tb/esr128`, then `thunderbird` on PATH, and
+prints which one it picked with its version. Any 128+ build works, since 128.0 is the
+add-on's `strict_min_version`. Pointing at the install directory instead of the binary
+is reported as such rather than failing later with a permission error.
+
+`--keep` preserves the throwaway profile and its log for inspection.
 
 ## What it does
 
